@@ -5,7 +5,7 @@ import { ShieldCheck, Lock, Eye, Database, FileText, ArrowLeft, Mail, CheckCircl
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Rise Learner - AKU-EB Portal',
-  description: 'Privacy Policy and data protection guidelines for Rise Learner (AKU-EB Academic Intelligence Portal), including Google OAuth data usage.',
+  description: 'Privacy Policy and data protection guidelines for Rise Learner (AKU-EB Academic Intelligence Portal), including Google Sign-In data protection.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -132,10 +132,10 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.9rem', color: '#334155', lineHeight: 1.6 }}>
               <li>
-                <strong>Account Information:</strong> When registering via email or Google OAuth, we receive your name, email address, profile avatar picture, and assigned academic role (Student, Teacher, or Administrator).
+                <strong>Account Information:</strong> When registering via email or Google Sign-In, we receive your name, email address, profile avatar picture, and assigned academic role (Student, Teacher, or Administrator).
               </li>
               <li>
-                <strong>Google Authentication Data:</strong> If you sign in via Google OAuth, we receive your Google unique ID, primary email address, verified email status, and profile picture URL. We do not access your Google Drive, Gmail, contacts, or calendar.
+                <strong>Google Authentication Data:</strong> If you sign in via Google Sign-In, we receive your Google unique ID, primary email address, verified email status, and profile picture URL. We do not access your Google Drive, Gmail, contacts, or calendar.
               </li>
               <li>
                 <strong>Assessment & Quiz Activity:</strong> Student answers, test scores, completion timestamps, and integrity monitoring events (such as tab switches during active proctored assessments).
@@ -237,10 +237,9 @@ export default function PrivacyPolicyPage() {
             </p>
             <div style={{ fontSize: '0.88rem', color: '#0f172a', fontWeight: 600 }}>
               Email:{' '}
-              <a href="mailto:privacy@riselearner.com" style={{ color: '#0b5e4a', textDecoration: 'underline' }}>
-                privacy@riselearner.com
-              </a>{' '}
-              / <a href="mailto:support@riselearner.com" style={{ color: '#0b5e4a', textDecoration: 'underline' }}>support@riselearner.com</a>
+              <a href="mailto:support@riselearner.com" style={{ color: '#0b5e4a', textDecoration: 'underline' }}>
+                support@riselearner.com
+              </a>
             </div>
             <div style={{ fontSize: '0.82rem', color: '#64748b', marginTop: '0.35rem' }}>
               Rise Learner Academic Platform • Karachi, Pakistan

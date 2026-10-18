@@ -4,12 +4,18 @@ import path from 'path';
 import { PrismaClient } from '@prisma/client';
 import { exec } from 'child_process';
 import util from 'util';
+import { getSessionUser } from '@/lib/auth';
 
 const execAsync = util.promisify(exec);
 const prisma = new PrismaClient();
 
 export async function POST(req: NextRequest) {
   try {
+    const user = await getSessionUser(req);
+    if (!user || user.role !== 'ADMIN') {
+      return NextResponse.json({ error: 'Unauthorized: Admin role required for file upload' }, { status: 403 });
+    }
+
     const formData = await req.formData();
     const file = formData.get('file') as File;
     const type = formData.get('type') as string;

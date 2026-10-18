@@ -462,68 +462,6 @@ export default function Navbar() {
             );
           })}
 
-          {/* Direct Archive Link */}
-          <Link
-            href="/past-papers"
-            style={{
-              padding: '6px 12px',
-              fontSize: '0.9rem',
-              fontWeight: 700,
-              color: '#0b5e4a',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.35rem',
-              transition: 'background 0.15s ease'
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#f4f7f6')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
-          >
-            <span>📄 Past Papers Archive</span>
-          </Link>
-
-          {/* Unified Syllabus Tracker Link (Sole syllabus page on site) */}
-          <Link
-            href="/syllabus"
-            style={{
-              padding: '6px 12px',
-              fontSize: '0.9rem',
-              fontWeight: 600,
-              color: '#2c3e38',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.35rem',
-              transition: 'background 0.15s ease'
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#f4f7f6')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
-          >
-            <span>📚 Syllabus Tracker</span>
-          </Link>
-
-          {/* Downloads & Books */}
-          <Link
-            href="/resources"
-            style={{
-              padding: '6px 12px',
-              fontSize: '0.9rem',
-              fontWeight: 600,
-              color: '#2c3e38',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.35rem',
-              transition: 'background 0.15s ease'
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#f4f7f6')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
-          >
-            <span>📦 Downloads & Books</span>
-          </Link>
 
           {/* Quiz Portal Link */}
           <Link
@@ -625,7 +563,7 @@ export default function Navbar() {
               }}
             >
               <UserIcon size={15} />
-              <span>Sign In / Demo</span>
+              <span>Sign In</span>
             </button>
           )}
 

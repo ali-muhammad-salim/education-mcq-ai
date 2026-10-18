@@ -3,11 +3,17 @@ import fs from 'fs/promises';
 import path from 'path';
 import { prisma } from '../../../../lib/prisma';
 import { spawn } from 'child_process';
+import { getSessionUser } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
   try {
+    const user = await getSessionUser(req);
+    if (!user || user.role !== 'ADMIN') {
+      return NextResponse.json({ error: 'Unauthorized: Admin role required for resource upload' }, { status: 403 });
+    }
+
     const formData = await req.formData();
     const file = formData.get('file') as File;
     const keyFile = formData.get('keyFile') as File | null;

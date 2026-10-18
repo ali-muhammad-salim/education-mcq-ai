@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { BookOpen, GraduationCap, UploadCloud, ShieldCheck, ArrowRight } from 'lucide-react';
+import { BookOpen, GraduationCap, UploadCloud, ShieldCheck, ArrowRight, Mail } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
 export const metadata: Metadata = {
@@ -93,7 +93,7 @@ export default function RootLayout({
                   </li>
                   <li>
                     <Link href="/privacy" style={{ color: '#38bdf8', textDecoration: 'none', fontWeight: 600 }}>
-                      🛡️ Privacy Policy (Google OAuth)
+                      🛡️ Privacy Policy
                     </Link>
                   </li>
                   <li>
@@ -133,17 +133,17 @@ export default function RootLayout({
                 </ul>
               </div>
 
-              {/* Column 4: Teacher & Admin Upload Portal (Requested by user in footer) */}
+              {/* Column 4: Academic Support & Inquiries */}
               <div style={{ background: '#1e293b', padding: '1.5rem', borderRadius: '12px', border: '1px solid #334155' }}>
                 <h4 style={{ color: '#38bdf8', fontSize: '0.95rem', fontWeight: 800, marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                  <UploadCloud size={18} />
-                  <span>Teacher & Admin Portal</span>
+                  <Mail size={18} />
+                  <span>Support & Inquiries</span>
                 </h4>
                 <p style={{ fontSize: '0.82rem', color: '#cbd5e1', lineHeight: 1.5, marginBottom: '1.25rem' }}>
-                  Upload new past paper scans, E-marking examiner notes, answer keys, and curriculum files for automated OCR & AI verification.
+                  Have questions, feedback, or need academic assistance? Reach out directly to our dedicated support team.
                 </p>
-                <Link 
-                  href="/upload" 
+                <a 
+                  href="mailto:support@riselearner.com" 
                   style={{
                     background: '#0b5e4a',
                     color: '#ffffff',
@@ -155,14 +155,14 @@ export default function RootLayout({
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: '0.4rem',
+                    gap: '0.45rem',
                     boxShadow: '0 2px 8px rgba(11, 94, 74, 0.3)',
                     transition: 'all 0.15s ease'
                   }}
                 >
-                  <span>🚀 Ingest & Upload Papers</span>
-                  <ArrowRight size={15} />
-                </Link>
+                  <Mail size={15} />
+                  <span>support@riselearner.com</span>
+                </a>
               </div>
 
             </div>
@@ -191,7 +191,6 @@ export default function RootLayout({
                 <Link href="/terms" style={{ color: '#cbd5e1', textDecoration: 'none', fontWeight: 600 }}>Terms of Service</Link>
                 <Link href="/syllabus" style={{ color: '#64748b', textDecoration: 'none' }}>Syllabus Standards</Link>
                 <Link href="/past-papers" style={{ color: '#64748b', textDecoration: 'none' }}>Examination Archives</Link>
-                <Link href="/upload" style={{ color: '#64748b', textDecoration: 'none' }}>Admin Ingestion</Link>
               </div>
             </div>
           </footer>

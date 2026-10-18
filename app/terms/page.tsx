@@ -207,10 +207,9 @@ export default function TermsOfServicePage() {
             </p>
             <div style={{ fontSize: '0.88rem', color: '#0f172a', fontWeight: 600 }}>
               Email:{' '}
-              <a href="mailto:legal@riselearner.com" style={{ color: '#0b5e4a', textDecoration: 'underline' }}>
-                legal@riselearner.com
-              </a>{' '}
-              / <a href="mailto:support@riselearner.com" style={{ color: '#0b5e4a', textDecoration: 'underline' }}>support@riselearner.com</a>
+              <a href="mailto:support@riselearner.com" style={{ color: '#0b5e4a', textDecoration: 'underline' }}>
+                support@riselearner.com
+              </a>
             </div>
             <div style={{ fontSize: '0.82rem', color: '#64748b', marginTop: '0.35rem' }}>
               Rise Learner Academic Platform • Karachi, Pakistan

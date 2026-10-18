@@ -35,11 +35,11 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
       const authErr = params.get('auth_error');
       if (authErr) {
         if (authErr === 'google_not_configured') {
-          setError('Google OAuth is not configured yet. Please add GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET to environment variables.');
+          setError('Google Sign-In is temporarily unavailable. Please sign in with your email or try again shortly.');
         } else if (authErr === 'access_denied') {
           setError('Google sign-in was canceled.');
         } else {
-          setError(`Google sign-in error: ${decodeURIComponent(authErr)}`);
+          setError('Sign-in error occurred. Please try again or use email sign-in.');
         }
       }
     }
@@ -49,7 +49,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
 
   const handleGoogleSignIn = () => {
     if (googleConfigured === false) {
-      setError('Google Sign-In requires GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in Dokploy environment settings. In the meantime, you can use the 1-Click Demo Login or Email Login below!');
+      setError('Google Sign-In is temporarily unavailable. Please sign in with your email or contact support@riselearner.com.');
       return;
     }
     setLoading(true);
@@ -79,27 +79,6 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
         throw new Error(data.error || 'Authentication failed');
       }
 
-      if (onSuccess) onSuccess(data.user);
-      onClose();
-      window.location.reload();
-    } catch (err: any) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleQuickDemo = async (demoRole: 'student' | 'teacher' | 'admin') => {
-    setLoading(true);
-    setError(null);
-    try {
-      const res = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ demoRole })
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error);
       if (onSuccess) onSuccess(data.user);
       onClose();
       window.location.reload();
@@ -330,7 +309,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
             <input
               type="email"
               required
-              placeholder="name@example.com"
+              placeholder="your.email@gmail.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               style={{
@@ -382,72 +361,6 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
             {loading ? 'Please wait...' : mode === 'login' ? 'Sign In →' : 'Create Account →'}
           </button>
         </form>
-
-        {/* Quick Demo Access Collapsible / Section */}
-        <div style={{
-          background: '#f9fafb',
-          border: '1px dashed #d1d5db',
-          borderRadius: '10px',
-          padding: '0.75rem',
-          marginTop: '1.25rem'
-        }}>
-          <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4b5563', display: 'block', marginBottom: '0.4rem' }}>
-            ⚡ Fast Testing & Demo Login:
-          </span>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.4rem' }}>
-            <button
-              type="button"
-              onClick={() => handleQuickDemo('student')}
-              disabled={loading}
-              style={{
-                background: '#ffffff',
-                border: '1px solid #0b5e4a',
-                color: '#0b5e4a',
-                borderRadius: '6px',
-                padding: '5px 2px',
-                fontSize: '0.72rem',
-                fontWeight: 700,
-                cursor: 'pointer'
-              }}
-            >
-              🎓 Student
-            </button>
-            <button
-              type="button"
-              onClick={() => handleQuickDemo('teacher')}
-              disabled={loading}
-              style={{
-                background: '#0b5e4a',
-                border: '1px solid #0b5e4a',
-                color: '#ffffff',
-                borderRadius: '6px',
-                padding: '5px 2px',
-                fontSize: '0.72rem',
-                fontWeight: 700,
-                cursor: 'pointer'
-              }}
-            >
-              👨‍🏫 Teacher
-            </button>
-            <button
-              type="button"
-              onClick={() => handleQuickDemo('admin')}
-              disabled={loading}
-              style={{
-                background: '#111827',
-                border: '1px solid #111827',
-                color: '#ffffff',
-                borderRadius: '6px',
-                padding: '5px 2px',
-                fontSize: '0.72rem',
-                fontWeight: 700,
-                cursor: 'pointer'
-              }}
-            >
-              🛡️ Admin
-            </button>
-          </div>
-        </div>
 
         {/* Toggle Mode */}
         <div style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.82rem', color: '#6b7280' }}>

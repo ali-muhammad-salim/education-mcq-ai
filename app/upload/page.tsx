@@ -5,10 +5,11 @@ import Link from 'next/link';
 import { 
   UploadCloud, Play, CheckCircle2, AlertCircle, RefreshCw, 
   FileText, BookOpen, Layers, Award, Sparkles, Terminal, 
-  Clock, ArrowRight, ExternalLink, Check, Download, ShieldCheck
+  Clock, ArrowRight, ExternalLink, Check, Download, ShieldCheck, Lock
 } from 'lucide-react';
 import MathText from '@/components/MathText';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import AuthModal from '@/components/AuthModal';
 
 interface IngestProgress {
   status: 'IDLE' | 'RUNNING' | 'COMPLETED' | 'ERROR';
@@ -52,6 +53,21 @@ export default function ResourceUploadCenterPage() {
   const [uploading, setUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
+
+  // Admin authentication enforcement
+  const [currentUser, setCurrentUser] = useState<any>(null);
+  const [checkingAuth, setCheckingAuth] = useState(true);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+
+  useEffect(() => {
+    fetch('/api/auth/me')
+      .then(res => res.json())
+      .then(data => {
+        setCurrentUser(data.user);
+      })
+      .catch(() => setCurrentUser(null))
+      .finally(() => setCheckingAuth(false));
+  }, []);
 
   // Live Progress polling state
   const [progress, setProgress] = useState<IngestProgress>({
@@ -232,13 +248,97 @@ export default function ResourceUploadCenterPage() {
 
   const isRunning = progress.status === 'RUNNING';
 
+  if (checkingAuth) {
+    return (
+      <div style={{ maxWidth: '800px', margin: '4rem auto', textAlign: 'center', padding: '3rem' }}>
+        <RefreshCw size={28} className="animate-spin" style={{ color: '#0b5e4a', margin: '0 auto 1rem auto' }} />
+        <p style={{ color: '#64748b', fontSize: '0.92rem' }}>Verifying administrator credentials...</p>
+      </div>
+    );
+  }
+
+  if (!currentUser || currentUser.role !== 'ADMIN') {
+    return (
+      <div style={{ maxWidth: '580px', margin: '4.5rem auto', padding: '0 1rem' }}>
+        <div style={{
+          background: '#ffffff',
+          border: '1px solid #e2e8f0',
+          borderRadius: '16px',
+          padding: '3rem 2rem',
+          textAlign: 'center',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.06)'
+        }}>
+          <div style={{
+            background: '#fee2e2',
+            color: '#b91c1c',
+            width: '64px',
+            height: '64px',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto 1.25rem auto'
+          }}>
+            <Lock size={30} />
+          </div>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.5rem 0' }}>
+            Administrator Access Required
+          </h2>
+          <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.6, margin: '0 0 1.75rem 0' }}>
+            The Document Ingestion and Resource Upload center is restricted exclusively to platform administrators. Please sign in with an authorized administrator account to continue.
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <Link
+              href="/"
+              style={{
+                background: '#f1f5f9',
+                color: '#334155',
+                padding: '0.65rem 1.35rem',
+                borderRadius: '8px',
+                fontSize: '0.88rem',
+                fontWeight: 700,
+                textDecoration: 'none'
+              }}
+            >
+              Return to Home
+            </Link>
+            <button
+              onClick={() => setAuthModalOpen(true)}
+              style={{
+                background: '#0b5e4a',
+                color: '#ffffff',
+                border: 'none',
+                padding: '0.65rem 1.35rem',
+                borderRadius: '8px',
+                fontSize: '0.88rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                boxShadow: '0 2px 8px rgba(11, 94, 74, 0.25)'
+              }}
+            >
+              Sign In as Administrator
+            </button>
+          </div>
+        </div>
+        <AuthModal
+          isOpen={authModalOpen}
+          onClose={() => setAuthModalOpen(false)}
+          onSuccess={(u) => {
+            setCurrentUser(u);
+            setAuthModalOpen(false);
+          }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div style={{ maxWidth: '1240px', margin: '0 auto', paddingBottom: '6rem' }}>
       {/* Universal Breadcrumb */}
       <Breadcrumbs
         items={[
           { label: 'AKU-EB' },
-          { label: 'Teacher & Admin Ingestion Upload Portal', active: true }
+          { label: 'Admin Ingestion Upload Portal', active: true }
         ]}
       />
 
