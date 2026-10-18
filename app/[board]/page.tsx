@@ -108,6 +108,31 @@ export default async function BoardPage({ params }: PageProps) {
             <span style={{ fontSize: '0.85rem', color: '#c9a050', fontWeight: 700 }}>Switch Board:</span>
             {SUPPORTED_BOARDS.map((b) => {
               const isCurrent = b.id === board.id;
+              const isAvailable = b.id === 'akueb';
+
+              if (!isAvailable) {
+                return (
+                  <span
+                    key={b.id}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      color: 'rgba(255, 255, 255, 0.5)',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      padding: '5px 12px',
+                      borderRadius: '8px',
+                      fontSize: '0.82rem',
+                      fontWeight: 600,
+                      opacity: 0.5,
+                      cursor: 'not-allowed',
+                      userSelect: 'none'
+                    }}
+                    title="Board coming soon"
+                  >
+                    {b.name} (Soon)
+                  </span>
+                );
+              }
+
               return (
                 <Link
                   key={b.id}
@@ -147,7 +172,7 @@ export default async function BoardPage({ params }: PageProps) {
         </div>
       </div>
 
-      {/* Classes Grid - NO SUBJECTS ON THIS PAGE AS REQUESTED */}
+      {/* Classes Grid */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -155,16 +180,93 @@ export default async function BoardPage({ params }: PageProps) {
         marginBottom: '3rem'
       }}>
         {classes.map((cls) => {
-          const isFlagship = cls.roman === 'IX' || cls.roman === 'X';
+          const isClassReady = board.id === 'akueb' && (cls.roman === 'IX' || cls.roman === 'X');
+
+          if (!isClassReady) {
+            return (
+              <div
+                key={cls.roman}
+                style={{
+                  background: '#f9fafb',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '16px',
+                  padding: '2rem 1.75rem',
+                  opacity: 0.45,
+                  cursor: 'not-allowed',
+                  userSelect: 'none',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                    <div style={{
+                      width: '52px',
+                      height: '52px',
+                      borderRadius: '12px',
+                      background: '#f3f4f6',
+                      color: '#9ca3af',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1.4rem',
+                      fontWeight: 900
+                    }}>
+                      {cls.roman}
+                    </div>
+                    <span style={{
+                      background: '#f3f4f6',
+                      color: '#6b7280',
+                      padding: '4px 10px',
+                      borderRadius: '6px',
+                      fontSize: '0.8rem',
+                      fontWeight: 700
+                    }}>
+                      Coming Soon
+                    </span>
+                  </div>
+
+                  <h3 style={{ fontSize: '1.45rem', fontWeight: 700, color: '#4b5563', margin: '0 0 0.5rem 0' }}>
+                    {cls.name}
+                  </h3>
+
+                  <p style={{ fontSize: '0.92rem', color: '#6b7280', lineHeight: 1.55, margin: '0 0 1.25rem 0' }}>
+                    {cls.description}
+                  </p>
+                </div>
+
+                <div>
+                  <button
+                    disabled
+                    style={{
+                      width: '100%',
+                      padding: '0.85rem 1.25rem',
+                      borderRadius: '10px',
+                      background: '#e5e7eb',
+                      color: '#6b7280',
+                      border: 'none',
+                      fontWeight: 700,
+                      fontSize: '0.95rem',
+                      cursor: 'not-allowed'
+                    }}
+                  >
+                    Curriculum Ingestion Pending
+                  </button>
+                </div>
+              </div>
+            );
+          }
+
           return (
             <div
               key={cls.roman}
               style={{
                 background: '#ffffff',
-                border: isFlagship ? '2px solid #0b5e4a' : '1px solid #dce5e1',
+                border: '2px solid #0b5e4a',
                 borderRadius: '16px',
                 padding: '2rem 1.75rem',
-                boxShadow: isFlagship ? '0 10px 25px rgba(11, 94, 74, 0.08)' : '0 4px 15px rgba(0,0,0,0.03)',
+                boxShadow: '0 10px 25px rgba(11, 94, 74, 0.08)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -173,22 +275,20 @@ export default async function BoardPage({ params }: PageProps) {
                 overflow: 'hidden'
               }}
             >
-              {isFlagship && (
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  right: 0,
-                  background: '#0b5e4a',
-                  color: '#ffffff',
-                  fontSize: '0.7rem',
-                  fontWeight: 800,
-                  padding: '4px 12px',
-                  borderBottomLeftRadius: '10px',
-                  letterSpacing: '0.05em'
-                }}>
-                  ACTIVE PAPERS & SYLLABUS
-                </div>
-              )}
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                background: '#0b5e4a',
+                color: '#ffffff',
+                fontSize: '0.7rem',
+                fontWeight: 800,
+                padding: '4px 12px',
+                borderBottomLeftRadius: '10px',
+                letterSpacing: '0.05em'
+              }}>
+                ACTIVE PAPERS & SYLLABUS
+              </div>
 
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
@@ -196,8 +296,8 @@ export default async function BoardPage({ params }: PageProps) {
                     width: '52px',
                     height: '52px',
                     borderRadius: '12px',
-                    background: isFlagship ? '#e6f0ed' : '#f4f7f6',
-                    color: isFlagship ? '#0b5e4a' : '#4b5563',
+                    background: '#e6f0ed',
+                    color: '#0b5e4a',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -251,7 +351,7 @@ export default async function BoardPage({ params }: PageProps) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: '0.5rem',
-                    background: isFlagship ? '#0b5e4a' : '#1e3a34',
+                    background: '#0b5e4a',
                     color: '#ffffff',
                     padding: '0.85rem 1.25rem',
                     borderRadius: '10px',

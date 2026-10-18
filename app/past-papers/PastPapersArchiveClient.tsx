@@ -22,14 +22,15 @@ interface PastPaper {
 
 interface Props {
   pastPapers: PastPaper[];
+  initialGrade?: 'SSC-I' | 'SSC-II';
 }
 
-export default function PastPapersArchiveClient({ pastPapers }: Props) {
+export default function PastPapersArchiveClient({ pastPapers, initialGrade = 'SSC-I' }: Props) {
   const searchParams = useSearchParams();
   const paramGrade = searchParams?.get('grade');
 
   // Active Grade: SSC-I (Class IX) or SSC-II (Class X)
-  const [activeGrade, setActiveGrade] = useState<'SSC-I' | 'SSC-II'>('SSC-I');
+  const [activeGrade, setActiveGrade] = useState<'SSC-I' | 'SSC-II'>(initialGrade);
 
   useEffect(() => {
     if (paramGrade) {

@@ -127,6 +127,31 @@ export default function ClassSubjectsClient({ board, classDef, initialSubjects }
             <span style={{ fontSize: '0.85rem', color: '#c9a050', fontWeight: 700 }}>Switch Class:</span>
             {(['IX', 'X', 'XI', 'XII'] as const).map(roman => {
               const isCurrent = roman === classDef.roman;
+              const isReady = roman === 'IX' || roman === 'X';
+
+              if (!isReady) {
+                return (
+                  <span
+                    key={roman}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      color: 'rgba(255, 255, 255, 0.5)',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      padding: '5px 14px',
+                      borderRadius: '8px',
+                      fontSize: '0.85rem',
+                      fontWeight: 600,
+                      opacity: 0.5,
+                      cursor: 'not-allowed',
+                      userSelect: 'none'
+                    }}
+                    title="Class coming soon"
+                  >
+                    Class {roman} (Soon)
+                  </span>
+                );
+              }
+
               return (
                 <Link
                   key={roman}
@@ -258,11 +283,13 @@ export default function ClassSubjectsClient({ board, classDef, initialSubjects }
               <div
                 key={sub.id}
                 style={{
-                  background: '#ffffff',
-                  border: isPhysics ? '2px solid #0b5e4a' : '1px solid #dce5e1',
+                  background: isPhysics ? '#ffffff' : '#f9fafb',
+                  border: isPhysics ? '2px solid #0b5e4a' : '1px solid #e5e7eb',
                   borderRadius: '16px',
                   padding: '1.5rem',
-                  boxShadow: isPhysics ? '0 6px 20px rgba(11, 94, 74, 0.08)' : '0 2px 8px rgba(0,0,0,0.02)',
+                  opacity: isPhysics ? 1 : 0.45,
+                  cursor: isPhysics ? 'default' : 'not-allowed',
+                  boxShadow: isPhysics ? '0 6px 20px rgba(11, 94, 74, 0.08)' : 'none',
                   transition: 'all 0.2s',
                   position: 'relative'
                 }}
@@ -274,7 +301,7 @@ export default function ClassSubjectsClient({ board, classDef, initialSubjects }
                       width: '56px',
                       height: '56px',
                       borderRadius: '12px',
-                      background: isPhysics ? '#e6f0ed' : '#f4f7f6',
+                      background: isPhysics ? '#e6f0ed' : '#f3f4f6',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -285,7 +312,7 @@ export default function ClassSubjectsClient({ board, classDef, initialSubjects }
 
                     <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap', marginBottom: '0.35rem' }}>
-                        <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#1a2e26', margin: 0 }}>
+                        <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: isPhysics ? '#1a2e26' : '#4b5563', margin: 0 }}>
                           {sub.name}
                         </h2>
                         <span style={{
@@ -298,33 +325,46 @@ export default function ClassSubjectsClient({ board, classDef, initialSubjects }
                         }}>
                           {classDef.stageLabel}
                         </span>
-                        {sub.papersCount && sub.papersCount > 0 ? (
+                        {isPhysics ? (
+                          <>
+                            {sub.papersCount && sub.papersCount > 0 ? (
+                              <span style={{
+                                background: '#dcfce7',
+                                color: '#15803d',
+                                padding: '2px 8px',
+                                borderRadius: '4px',
+                                fontSize: '0.75rem',
+                                fontWeight: 800
+                              }}>
+                                ✓ {sub.papersCount} Papers Live
+                              </span>
+                            ) : null}
+                            <span style={{
+                              background: '#fef3c7',
+                              color: '#b45309',
+                              padding: '2px 8px',
+                              borderRadius: '4px',
+                              fontSize: '0.75rem',
+                              fontWeight: 800
+                            }}>
+                              ★ Model Papers Live
+                            </span>
+                          </>
+                        ) : (
                           <span style={{
-                            background: '#dcfce7',
-                            color: '#15803d',
+                            background: '#f3f4f6',
+                            color: '#6b7280',
                             padding: '2px 8px',
                             borderRadius: '4px',
                             fontSize: '0.75rem',
-                            fontWeight: 800
+                            fontWeight: 700
                           }}>
-                            ✓ {sub.papersCount} Papers Live
-                          </span>
-                        ) : null}
-                        {isPhysics && (
-                          <span style={{
-                            background: '#fef3c7',
-                            color: '#b45309',
-                            padding: '2px 8px',
-                            borderRadius: '4px',
-                            fontSize: '0.75rem',
-                            fontWeight: 800
-                          }}>
-                            ★ Model Papers Live
+                            Coming Soon
                           </span>
                         )}
                       </div>
 
-                      <p style={{ fontSize: '0.92rem', color: '#5a7a6f', margin: 0, lineHeight: 1.5, maxWidth: '780px' }}>
+                      <p style={{ fontSize: '0.92rem', color: isPhysics ? '#5a7a6f' : '#6b7280', margin: 0, lineHeight: 1.5, maxWidth: '780px' }}>
                         {sub.description}
                       </p>
                     </div>
@@ -332,133 +372,157 @@ export default function ClassSubjectsClient({ board, classDef, initialSubjects }
 
                   {/* Primary CTA */}
                   <div>
-                    <Link
-                      href={subjectHubUrl}
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        background: isPhysics ? '#0b5e4a' : '#1e3a34',
-                        color: '#ffffff',
-                        padding: '0.75rem 1.4rem',
-                        borderRadius: '10px',
-                        fontWeight: 700,
-                        fontSize: '0.92rem',
-                        textDecoration: 'none',
-                        transition: 'all 0.15s',
-                        whiteSpace: 'nowrap',
-                        boxShadow: '0 4px 12px rgba(11, 94, 74, 0.15)'
-                      }}
-                    >
-                      <span>Open Resource Hub</span>
-                      <ArrowRight size={16} />
-                    </Link>
+                    {isPhysics ? (
+                      <Link
+                        href={subjectHubUrl}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.5rem',
+                          background: '#0b5e4a',
+                          color: '#ffffff',
+                          padding: '0.75rem 1.4rem',
+                          borderRadius: '10px',
+                          fontWeight: 700,
+                          fontSize: '0.92rem',
+                          textDecoration: 'none',
+                          transition: 'all 0.15s',
+                          whiteSpace: 'nowrap',
+                          boxShadow: '0 4px 12px rgba(11, 94, 74, 0.15)'
+                        }}
+                      >
+                        <span>Open Resource Hub</span>
+                        <ArrowRight size={16} />
+                      </Link>
+                    ) : (
+                      <button
+                        disabled
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.5rem',
+                          background: '#e5e7eb',
+                          color: '#6b7280',
+                          padding: '0.75rem 1.4rem',
+                          borderRadius: '10px',
+                          fontWeight: 700,
+                          fontSize: '0.92rem',
+                          border: 'none',
+                          cursor: 'not-allowed',
+                          whiteSpace: 'nowrap'
+                        }}
+                      >
+                        <span>Coming Soon</span>
+                      </button>
+                    )}
                   </div>
                 </div>
 
                 {/* Categories & Quick Jump Links */}
-                <div style={{
-                  borderTop: '1px solid #f0f4f2',
-                  paddingTop: '0.9rem',
-                  marginTop: '0.9rem',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  flexWrap: 'wrap',
-                  gap: '0.75rem'
-                }}>
-                  {/* Category Tags */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: '0.78rem', color: '#7a968c', fontWeight: 600 }}>Available Resources:</span>
-                    {sub.categories.map(cat => (
-                      <span
-                        key={cat}
+                {isPhysics && (
+                  <div style={{
+                    borderTop: '1px solid #f0f4f2',
+                    paddingTop: '0.9rem',
+                    marginTop: '0.9rem',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                    gap: '0.75rem'
+                  }}>
+                    {/* Category Tags */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                      <span style={{ fontSize: '0.78rem', color: '#7a968c', fontWeight: 600 }}>Available Resources:</span>
+                      {sub.categories.map(cat => (
+                        <span
+                          key={cat}
+                          style={{
+                            background: '#f4f7f6',
+                            color: '#374151',
+                            padding: '3px 8px',
+                            borderRadius: '4px',
+                            fontSize: '0.75rem',
+                            fontWeight: 600
+                          }}
+                        >
+                          {cat}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Quick Access Direct Buttons */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                      <Link
+                        href={`${subjectHubUrl}/model-papers`}
                         style={{
-                          background: '#f4f7f6',
-                          color: '#374151',
-                          padding: '3px 8px',
-                          borderRadius: '4px',
-                          fontSize: '0.75rem',
-                          fontWeight: 600
+                          background: '#fef3c7',
+                          color: '#92400e',
+                          padding: '4px 10px',
+                          borderRadius: '6px',
+                          fontSize: '0.78rem',
+                          fontWeight: 700,
+                          textDecoration: 'none',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px'
                         }}
                       >
-                        {cat}
-                      </span>
-                    ))}
+                        📝 Model Papers
+                      </Link>
+                      <Link
+                        href={`${subjectHubUrl}/pastpapers`}
+                        style={{
+                          background: '#e6f0ed',
+                          color: '#0b5e4a',
+                          padding: '4px 10px',
+                          borderRadius: '6px',
+                          fontSize: '0.78rem',
+                          fontWeight: 700,
+                          textDecoration: 'none',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px'
+                        }}
+                      >
+                        📑 Past Papers
+                      </Link>
+                      <Link
+                        href={`${subjectHubUrl}/syllabus`}
+                        style={{
+                          background: '#f4f7f6',
+                          color: '#0b5e4a',
+                          padding: '4px 10px',
+                          borderRadius: '6px',
+                          fontSize: '0.78rem',
+                          fontWeight: 700,
+                          textDecoration: 'none',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px'
+                        }}
+                      >
+                        📖 Syllabus & SLOs
+                      </Link>
+                      <Link
+                        href={`${subjectHubUrl}/mcqs`}
+                        style={{
+                          background: '#f4f7f6',
+                          color: '#4b5563',
+                          padding: '4px 10px',
+                          borderRadius: '6px',
+                          fontSize: '0.78rem',
+                          fontWeight: 700,
+                          textDecoration: 'none',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px'
+                        }}
+                      >
+                        🎯 Chapter MCQs
+                      </Link>
+                    </div>
                   </div>
-
-                  {/* Quick Access Direct Buttons */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                    <Link
-                      href={`${subjectHubUrl}/model-papers`}
-                      style={{
-                        background: '#fef3c7',
-                        color: '#92400e',
-                        padding: '4px 10px',
-                        borderRadius: '6px',
-                        fontSize: '0.78rem',
-                        fontWeight: 700,
-                        textDecoration: 'none',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '4px'
-                      }}
-                    >
-                      📝 Model Papers
-                    </Link>
-                    <Link
-                      href={`${subjectHubUrl}/pastpapers`}
-                      style={{
-                        background: '#e6f0ed',
-                        color: '#0b5e4a',
-                        padding: '4px 10px',
-                        borderRadius: '6px',
-                        fontSize: '0.78rem',
-                        fontWeight: 700,
-                        textDecoration: 'none',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '4px'
-                      }}
-                    >
-                      📑 Past Papers
-                    </Link>
-                    <Link
-                      href={`${subjectHubUrl}/syllabus`}
-                      style={{
-                        background: '#f4f7f6',
-                        color: '#0b5e4a',
-                        padding: '4px 10px',
-                        borderRadius: '6px',
-                        fontSize: '0.78rem',
-                        fontWeight: 700,
-                        textDecoration: 'none',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '4px'
-                      }}
-                    >
-                      📖 Syllabus & SLOs
-                    </Link>
-                    <Link
-                      href={`${subjectHubUrl}/mcqs`}
-                      style={{
-                        background: '#f4f7f6',
-                        color: '#4b5563',
-                        padding: '4px 10px',
-                        borderRadius: '6px',
-                        fontSize: '0.78rem',
-                        fontWeight: 700,
-                        textDecoration: 'none',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '4px'
-                      }}
-                    >
-                      🎯 Chapter MCQs
-                    </Link>
-                  </div>
-                </div>
+                )}
               </div>
             );
           })}

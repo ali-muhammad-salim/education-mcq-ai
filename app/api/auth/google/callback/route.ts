@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
-import { generateToken } from '@/lib/auth';
+import { generateToken, ensureAuthTables } from '@/lib/auth';
 import { 
   getBaseUrl, 
   exchangeGoogleCodeForTokens, 
@@ -61,6 +61,9 @@ export async function GET(req: NextRequest) {
 
     const email = googleProfile.email.toLowerCase();
     const isAdminEmail = email === 'support@riselearner.com' || email === 'admin@riselearner.com';
+
+    // Ensure database auth tables exist
+    await ensureAuthTables();
 
     // Check if user already exists by googleId or email
     let user = await prisma.user.findFirst({

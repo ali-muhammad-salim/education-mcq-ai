@@ -9,8 +9,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -H 0.0.0.0 -p 3000",
+    "start": "prisma db push --skip-generate --accept-data-loss || true && next start -H 0.0.0.0 -p 3000",
     "postinstall": "prisma generate --generator client",
+    "db:push": "prisma db push --accept-data-loss",
     "lint": "next lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

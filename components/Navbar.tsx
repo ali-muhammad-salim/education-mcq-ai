@@ -6,8 +6,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import { 
   BookOpen, ChevronDown, Check, Sparkles, Building2, 
   Atom, FlaskConical, Dna, Calculator, Binary, BookText, 
-  Languages, Moon, MapPin, Menu, X, FileText, Layers, Download,
-  User as UserIcon, LogOut, LayoutDashboard
+  Languages, Moon, Sun, MapPin, Menu, X, FileText, Layers, Download,
+  User as UserIcon, LogOut, LayoutDashboard, Award, UploadCloud, ShieldCheck
 } from 'lucide-react';
 import AuthModal from '@/components/AuthModal';
 
@@ -17,76 +17,81 @@ interface SubjectItem {
   icon: string;
   badge?: string;
   highlight?: boolean;
+  isReady?: boolean;
 }
 
 const BOARDS = [
   { id: 'akueb', name: 'AKU-EB', fullName: 'Aga Khan University Examination Board', active: true, tag: 'Official Active' },
-  { id: 'fbise', name: 'Federal Board (FBISE)', fullName: 'Federal Board of Intermediate & Secondary Education', active: false, tag: 'National Curriculum' },
-  { id: 'sindh', name: 'Sindh Board (BSEK/BIEK)', fullName: 'Board of Secondary & Intermediate Education Karachi', active: false, tag: 'Curriculum Synced' },
-  { id: 'punjab', name: 'Punjab Board (BISE)', fullName: 'Board of Intermediate & Secondary Education Lahore', active: false, tag: 'Curriculum Synced' },
+  { id: 'sindh', name: 'Sindh Board (BSEK/BIEK)', fullName: 'Board of Secondary & Intermediate Education Karachi', active: false, tag: 'Coming Soon' },
+  { id: 'fbise', name: 'Federal Board (FBISE)', fullName: 'Federal Board of Intermediate & Secondary Education', active: false, tag: 'Coming Soon' },
+  { id: 'punjab', name: 'Punjab Board (BISE)', fullName: 'Board of Intermediate & Secondary Education Lahore', active: false, tag: 'Coming Soon' },
 ];
 
-const CLASS_SUBJECTS: Record<string, { label: string; subLabel: string; roman: string; subjects: SubjectItem[] }> = {
+const CLASS_SUBJECTS: Record<string, { label: string; subLabel: string; roman: string; isReady: boolean; subjects: SubjectItem[] }> = {
   'class-9': {
     label: 'Class 9',
     subLabel: 'SSC Part I',
     roman: 'IX',
+    isReady: true,
     subjects: [
-      { name: 'Physics', slug: 'physics', icon: '⚛️', badge: 'Solved Papers & Model', highlight: true },
-      { name: 'Chemistry', slug: 'chemistry', icon: '🧪', badge: 'Syllabus & Bank' },
-      { name: 'Biology', slug: 'biology', icon: '🧬', badge: 'Syllabus & Bank' },
-      { name: 'Mathematics', slug: 'mathematics', icon: '📐', badge: 'Syllabus & Bank' },
-      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'New SLOs' },
-      { name: 'English Compulsory', slug: 'english', icon: '📖' },
-      { name: 'Urdu Compulsory', slug: 'urdu', icon: '✍️' },
-      { name: 'Islamiyat / Ethics', slug: 'islamiyat', icon: '🕌' },
-      { name: 'Pakistan Studies', slug: 'pakistan-studies', icon: '🇵🇰' },
+      { name: 'Physics', slug: 'physics', icon: '⚛️', badge: 'Solved Papers & Model', highlight: true, isReady: true },
+      { name: 'Chemistry', slug: 'chemistry', icon: '🧪', badge: 'Coming Soon', isReady: false },
+      { name: 'Biology', slug: 'biology', icon: '🧬', badge: 'Coming Soon', isReady: false },
+      { name: 'Mathematics', slug: 'mathematics', icon: '📐', badge: 'Coming Soon', isReady: false },
+      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Coming Soon', isReady: false },
+      { name: 'English Compulsory', slug: 'english', icon: '📖', badge: 'Coming Soon', isReady: false },
+      { name: 'Urdu Compulsory', slug: 'urdu', icon: '✍️', badge: 'Coming Soon', isReady: false },
+      { name: 'Islamiyat / Ethics', slug: 'islamiyat', icon: '🕌', badge: 'Coming Soon', isReady: false },
+      { name: 'Pakistan Studies', slug: 'pakistan-studies', icon: '🇵🇰', badge: 'Coming Soon', isReady: false },
     ]
   },
   'class-10': {
     label: 'Class 10',
     subLabel: 'SSC Part II',
     roman: 'X',
+    isReady: true,
     subjects: [
-      { name: 'Physics', slug: 'physics', icon: '⚛️', badge: 'Model Papers & SLOs', highlight: true },
-      { name: 'Chemistry', slug: 'chemistry', icon: '🧪', badge: 'Syllabus & Bank' },
-      { name: 'Biology', slug: 'biology', icon: '🧬', badge: 'Syllabus & Bank' },
-      { name: 'Mathematics', slug: 'mathematics', icon: '📐', badge: 'Syllabus & Bank' },
-      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'New SLOs' },
-      { name: 'English Compulsory', slug: 'english', icon: '📖' },
-      { name: 'Urdu Compulsory', slug: 'urdu', icon: '✍️' },
-      { name: 'Islamiyat / Ethics', slug: 'islamiyat', icon: '🕌' },
-      { name: 'Pakistan Studies', slug: 'pakistan-studies', icon: '🇵🇰' },
+      { name: 'Physics', slug: 'physics', icon: '⚛️', badge: 'Model Papers & SLOs', highlight: true, isReady: true },
+      { name: 'Chemistry', slug: 'chemistry', icon: '🧪', badge: 'Coming Soon', isReady: false },
+      { name: 'Biology', slug: 'biology', icon: '🧬', badge: 'Coming Soon', isReady: false },
+      { name: 'Mathematics', slug: 'mathematics', icon: '📐', badge: 'Coming Soon', isReady: false },
+      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Coming Soon', isReady: false },
+      { name: 'English Compulsory', slug: 'english', icon: '📖', badge: 'Coming Soon', isReady: false },
+      { name: 'Urdu Compulsory', slug: 'urdu', icon: '✍️', badge: 'Coming Soon', isReady: false },
+      { name: 'Islamiyat / Ethics', slug: 'islamiyat', icon: '🕌', badge: 'Coming Soon', isReady: false },
+      { name: 'Pakistan Studies', slug: 'pakistan-studies', icon: '🇵🇰', badge: 'Coming Soon', isReady: false },
     ]
   },
   'class-11': {
     label: 'Class 11',
     subLabel: 'HSSC Part I',
     roman: 'XI',
+    isReady: false,
     subjects: [
-      { name: 'Physics', slug: 'physics', icon: '⚛️', badge: 'Curriculum Standard' },
-      { name: 'Chemistry', slug: 'chemistry', icon: '🧪' },
-      { name: 'Biology', slug: 'biology', icon: '🧬' },
-      { name: 'Mathematics', slug: 'mathematics', icon: '📐' },
-      { name: 'Computer Science', slug: 'computer-science', icon: '💻' },
-      { name: 'English', slug: 'english', icon: '📖' },
-      { name: 'Urdu', slug: 'urdu', icon: '✍️' },
-      { name: 'Islamic Education', slug: 'islamic-education', icon: '🕌' },
+      { name: 'Physics', slug: 'physics', icon: '⚛️', badge: 'Coming Soon', isReady: false },
+      { name: 'Chemistry', slug: 'chemistry', icon: '🧪', badge: 'Coming Soon', isReady: false },
+      { name: 'Biology', slug: 'biology', icon: '🧬', badge: 'Coming Soon', isReady: false },
+      { name: 'Mathematics', slug: 'mathematics', icon: '📐', badge: 'Coming Soon', isReady: false },
+      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Coming Soon', isReady: false },
+      { name: 'English', slug: 'english', icon: '📖', badge: 'Coming Soon', isReady: false },
+      { name: 'Urdu', slug: 'urdu', icon: '✍️', badge: 'Coming Soon', isReady: false },
+      { name: 'Islamic Education', slug: 'islamic-education', icon: '🕌', badge: 'Coming Soon', isReady: false },
     ]
   },
   'class-12': {
     label: 'Class 12',
     subLabel: 'HSSC Part II',
     roman: 'XII',
+    isReady: false,
     subjects: [
-      { name: 'Physics', slug: 'physics', icon: '⚛️', badge: 'Curriculum Standard' },
-      { name: 'Chemistry', slug: 'chemistry', icon: '🧪' },
-      { name: 'Biology', slug: 'biology', icon: '🧬' },
-      { name: 'Mathematics', slug: 'mathematics', icon: '📐' },
-      { name: 'Computer Science', slug: 'computer-science', icon: '💻' },
-      { name: 'English', slug: 'english', icon: '📖' },
-      { name: 'Urdu', slug: 'urdu', icon: '✍️' },
-      { name: 'Pakistan Studies', slug: 'pakistan-studies', icon: '🇵🇰' },
+      { name: 'Physics', slug: 'physics', icon: '⚛️', badge: 'Coming Soon', isReady: false },
+      { name: 'Chemistry', slug: 'chemistry', icon: '🧪', badge: 'Coming Soon', isReady: false },
+      { name: 'Biology', slug: 'biology', icon: '🧬', badge: 'Coming Soon', isReady: false },
+      { name: 'Mathematics', slug: 'mathematics', icon: '📐', badge: 'Coming Soon', isReady: false },
+      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Coming Soon', isReady: false },
+      { name: 'English', slug: 'english', icon: '📖', badge: 'Coming Soon', isReady: false },
+      { name: 'Urdu', slug: 'urdu', icon: '✍️', badge: 'Coming Soon', isReady: false },
+      { name: 'Pakistan Studies', slug: 'pakistan-studies', icon: '🇵🇰', badge: 'Coming Soon', isReady: false },
     ]
   }
 };
@@ -100,6 +105,32 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [authUser, setAuthUser] = useState<any>(null);
   const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+  // Load saved theme
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('riselearner_theme') as 'light' | 'dark' | null;
+      if (savedTheme === 'dark') {
+        setTheme('dark');
+        document.documentElement.classList.add('dark');
+      }
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('riselearner_theme', nextTheme);
+      if (nextTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  };
 
   // Sync selected board with current URL
   useEffect(() => {
@@ -127,11 +158,13 @@ export default function Navbar() {
   const handleLogout = async () => {
     await fetch('/api/auth/logout', { method: 'POST' });
     setAuthUser(null);
+    setProfileDropdownOpen(false);
     window.location.href = '/';
   };
 
   const boardRef = useRef<HTMLDivElement>(null);
   const classDropdownRef = useRef<HTMLDivElement>(null);
+  const profileDropdownRef = useRef<HTMLDivElement>(null);
 
   // Close dropdowns on outside click
   useEffect(() => {
@@ -141,6 +174,9 @@ export default function Navbar() {
       }
       if (classDropdownRef.current && !classDropdownRef.current.contains(event.target as Node)) {
         setOpenClassDropdown(null);
+      }
+      if (profileDropdownRef.current && !profileDropdownRef.current.contains(event.target as Node)) {
+        setProfileDropdownOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -152,6 +188,7 @@ export default function Navbar() {
     setBoardDropdownOpen(false);
     setOpenClassDropdown(null);
     setMobileMenuOpen(false);
+    setProfileDropdownOpen(false);
   }, [pathname]);
 
   return (
@@ -250,47 +287,60 @@ export default function Navbar() {
                 <div style={{ padding: '0.5rem 1rem', fontSize: '0.75rem', fontWeight: 800, color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.5px', borderBottom: '1px solid #f3f4f6' }}>
                   Select Examination Board
                 </div>
-                {BOARDS.map((b) => (
-                  <button
-                    key={b.id}
-                    onClick={() => {
-                      setSelectedBoard(b);
-                      setBoardDropdownOpen(false);
-                      router.push(`/${b.id}`);
-                    }}
-                    style={{
-                      width: '100%',
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      justifyContent: 'space-between',
-                      padding: '0.65rem 1rem',
-                      background: selectedBoard.id === b.id ? '#e6f0ed' : 'transparent',
-                      border: 'none',
-                      textAlign: 'left',
-                      cursor: 'pointer',
-                      transition: 'background 0.15s ease',
-                      gap: '0.75rem'
-                    }}
-                    onMouseEnter={(e) => {
-                      if (selectedBoard.id !== b.id) e.currentTarget.style.background = '#f9fafb';
-                    }}
-                    onMouseLeave={(e) => {
-                      if (selectedBoard.id !== b.id) e.currentTarget.style.background = 'transparent';
-                    }}
-                  >
-                    <div>
-                      <div style={{ fontWeight: 700, fontSize: '0.9rem', color: selectedBoard.id === b.id ? '#0b5e4a' : '#1f2937' }}>
-                        {b.fullName}
+                {BOARDS.map((b) => {
+                  const isAvailable = b.active;
+                  return (
+                    <button
+                      key={b.id}
+                      onClick={() => {
+                        if (!isAvailable) return;
+                        setSelectedBoard(b);
+                        setBoardDropdownOpen(false);
+                        router.push(`/${b.id}`);
+                      }}
+                      disabled={!isAvailable}
+                      style={{
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        justifyContent: 'space-between',
+                        padding: '0.65rem 1rem',
+                        background: selectedBoard.id === b.id ? '#e6f0ed' : 'transparent',
+                        border: 'none',
+                        textAlign: 'left',
+                        cursor: isAvailable ? 'pointer' : 'not-allowed',
+                        opacity: isAvailable ? 1 : 0.45,
+                        transition: 'background 0.15s ease',
+                        gap: '0.75rem'
+                      }}
+                      onMouseEnter={(e) => {
+                        if (isAvailable && selectedBoard.id !== b.id) e.currentTarget.style.background = '#f9fafb';
+                      }}
+                      onMouseLeave={(e) => {
+                        if (isAvailable && selectedBoard.id !== b.id) e.currentTarget.style.background = 'transparent';
+                      }}
+                    >
+                      <div>
+                        <div style={{ fontWeight: 700, fontSize: '0.9rem', color: selectedBoard.id === b.id ? '#0b5e4a' : '#1f2937' }}>
+                          {b.fullName}
+                        </div>
+                        <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '2px' }}>
+                          {b.tag}
+                        </div>
                       </div>
-                      <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '2px' }}>
-                        {b.tag}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', flexShrink: 0 }}>
+                        {!isAvailable && (
+                          <span style={{ fontSize: '0.68rem', fontWeight: 700, background: '#f3f4f6', color: '#6b7280', padding: '2px 6px', borderRadius: '4px' }}>
+                            Coming Soon
+                          </span>
+                        )}
+                        {selectedBoard.id === b.id && (
+                          <Check size={16} style={{ color: '#0b5e4a', marginTop: '2px' }} />
+                        )}
                       </div>
-                    </div>
-                    {selectedBoard.id === b.id && (
-                      <Check size={16} style={{ color: '#0b5e4a', flexShrink: 0, marginTop: '2px' }} />
-                    )}
-                  </button>
-                ))}
+                    </button>
+                  );
+                })}
               </div>
             )}
           </div>
@@ -301,47 +351,60 @@ export default function Navbar() {
           
           {Object.entries(CLASS_SUBJECTS).map(([classKey, classData]) => {
             const isOpen = openClassDropdown === classKey;
+            const isClassReady = classData.isReady;
+
             return (
               <div key={classKey} style={{ position: 'relative' }}>
                 <button
                   onClick={() => {
+                    if (!isClassReady) return;
                     setOpenClassDropdown(isOpen ? null : classKey);
                     setBoardDropdownOpen(false);
                   }}
+                  disabled={!isClassReady}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '0.35rem',
                     background: isOpen ? '#e6f0ed' : 'transparent',
-                    color: isOpen ? '#0b5e4a' : '#2c3e38',
+                    color: isOpen ? '#0b5e4a' : isClassReady ? '#2c3e38' : '#6b7280',
                     border: isOpen ? '1px solid #b7dfd2' : '1px solid transparent',
                     borderRadius: '8px',
                     padding: '6px 11px',
                     fontSize: '0.92rem',
                     fontWeight: 700,
-                    cursor: 'pointer',
+                    cursor: isClassReady ? 'pointer' : 'not-allowed',
+                    opacity: isClassReady ? 1 : 0.45,
                     transition: 'all 0.15s ease'
                   }}
                   onMouseEnter={(e) => {
-                    if (!isOpen) e.currentTarget.style.background = '#f4f7f6';
+                    if (!isOpen && isClassReady) e.currentTarget.style.background = '#f4f7f6';
                   }}
                   onMouseLeave={(e) => {
-                    if (!isOpen) e.currentTarget.style.background = 'transparent';
+                    if (!isOpen && isClassReady) e.currentTarget.style.background = 'transparent';
                   }}
+                  title={isClassReady ? `Explore ${classData.label}` : `${classData.label} - Coming Soon`}
                 >
                   <span>{classData.label}</span>
-                  <ChevronDown 
-                    size={14} 
-                    style={{ 
-                      color: isOpen ? '#0b5e4a' : '#6b7280', 
-                      transform: isOpen ? 'rotate(180deg)' : 'none', 
-                      transition: 'transform 0.2s ease' 
-                    }} 
-                  />
+                  {!isClassReady && (
+                    <span style={{ fontSize: '0.62rem', background: '#f3f4f6', color: '#6b7280', padding: '1px 5px', borderRadius: '4px', fontWeight: 700 }}>
+                      Coming Soon
+                    </span>
+                  )}
+                  {isClassReady && (
+                    <ChevronDown 
+                      size={14} 
+                      style={{ 
+                        color: isOpen ? '#0b5e4a' : '#6b7280', 
+                        transform: isOpen ? 'rotate(180deg)' : 'none', 
+                        transition: 'transform 0.2s ease' 
+                      }} 
+                    />
+                  )}
                 </button>
 
                 {/* Dropdown Menu listing all Subjects for this Class */}
-                {isOpen && (
+                {isOpen && isClassReady && (
                   <div 
                     style={{
                       position: 'absolute',
@@ -386,6 +449,43 @@ export default function Navbar() {
                     <div style={{ maxHeight: '380px', overflowY: 'auto', padding: '0.35rem 0' }}>
                       {classData.subjects.map((sub) => {
                         const targetHref = `/${selectedBoard.id}/${classData.roman}/${sub.slug}`;
+                        const isSubReady = sub.isReady;
+
+                        if (!isSubReady) {
+                          return (
+                            <div
+                              key={sub.slug}
+                              style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                padding: '0.55rem 1.15rem',
+                                color: '#9ca3af',
+                                fontSize: '0.88rem',
+                                opacity: 0.45,
+                                cursor: 'not-allowed',
+                                userSelect: 'none'
+                              }}
+                            >
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                                <span style={{ fontSize: '1.1rem', filter: 'grayscale(100%)' }}>{sub.icon}</span>
+                                <span>{sub.name}</span>
+                              </div>
+                              <span style={{
+                                fontSize: '0.68rem',
+                                fontWeight: 700,
+                                background: '#f3f4f6',
+                                color: '#6b7280',
+                                padding: '2px 6px',
+                                borderRadius: '4px',
+                                whiteSpace: 'nowrap'
+                              }}>
+                                Coming Soon
+                              </span>
+                            </div>
+                          );
+                        }
+
                         return (
                           <Link
                             key={sub.slug}
@@ -457,48 +557,24 @@ export default function Navbar() {
           })}
 
 
-          {/* Quiz Portal Link */}
-          <Link
-            href="/quizzes"
-            style={{
-              padding: '6px 12px',
-              fontSize: '0.9rem',
-              fontWeight: 700,
-              color: '#0b5e4a',
-              background: '#e6f0ed',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.35rem'
-            }}
-          >
-            <span>🎯 Quiz Portal</span>
-          </Link>
-
-          {/* User Authentication / Dashboard Section */}
+          {/* User Authentication / Profile Avatar Section */}
           {authUser ? (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginLeft: '0.5rem' }}>
-              <Link
-                href={
-                  authUser.role === 'TEACHER' 
-                    ? '/dashboard/teacher' 
-                    : authUser.role === 'ADMIN' 
-                    ? '/admin' 
-                    : '/dashboard/student'
-                }
+            <div ref={profileDropdownRef} style={{ position: 'relative', marginLeft: '0.5rem' }}>
+              <button
+                onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
+                title={authUser.name || 'Account'}
                 style={{
-                  background: authUser.role === 'TEACHER' ? '#0b5e4a' : authUser.role === 'ADMIN' ? '#111827' : '#2563eb',
-                  color: '#ffffff',
-                  padding: '6px 14px',
-                  borderRadius: '8px',
-                  fontSize: '0.85rem',
-                  fontWeight: 700,
-                  textDecoration: 'none',
+                  background: 'none',
+                  border: '2px solid #0b5e4a',
+                  borderRadius: '50%',
+                  padding: '2px',
+                  cursor: 'pointer',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.4rem',
-                  boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                  justifyContent: 'center',
+                  position: 'relative',
+                  transition: 'transform 0.15s ease',
+                  boxShadow: '0 2px 6px rgba(11, 94, 74, 0.25)'
                 }}
               >
                 {authUser.avatarUrl ? (
@@ -506,36 +582,215 @@ export default function Navbar() {
                     src={authUser.avatarUrl} 
                     alt={authUser.name || 'User'} 
                     style={{ 
-                      width: '20px', 
-                      height: '20px', 
+                      width: '36px', 
+                      height: '36px', 
                       borderRadius: '50%', 
-                      objectFit: 'cover',
-                      border: '1.5px solid rgba(255,255,255,0.8)' 
+                      objectFit: 'cover'
                     }} 
                   />
                 ) : (
-                  <LayoutDashboard size={14} />
+                  <div style={{
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '50%',
+                    background: '#0b5e4a',
+                    color: '#ffffff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontWeight: 800,
+                    fontSize: '0.95rem'
+                  }}>
+                    {authUser.name ? authUser.name.charAt(0).toUpperCase() : 'U'}
+                  </div>
                 )}
-                <span>
-                  {authUser.name ? authUser.name.split(' ')[0] : (authUser.role === 'TEACHER' ? 'Teacher Portal' : authUser.role === 'ADMIN' ? 'Admin Hub' : 'My Dashboard')}
-                </span>
-              </Link>
-              <button
-                onClick={handleLogout}
-                title="Logout"
-                style={{
-                  background: '#f3f4f6',
-                  border: '1px solid #d1d5db',
-                  color: '#4b5563',
-                  padding: '6px 10px',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center'
-                }}
-              >
-                <LogOut size={14} />
+                {/* Active Status Indicator Dot */}
+                <span style={{
+                  position: 'absolute',
+                  bottom: '1px',
+                  right: '1px',
+                  width: '10px',
+                  height: '10px',
+                  background: '#10b981',
+                  border: '2px solid #ffffff',
+                  borderRadius: '50%'
+                }} />
               </button>
+
+              {/* Profile Dropdown Menu */}
+              {profileDropdownOpen && (
+                <div style={{
+                  position: 'absolute',
+                  top: 'calc(100% + 8px)',
+                  right: 0,
+                  background: '#ffffff',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '12px',
+                  boxShadow: '0 16px 36px rgba(0,0,0,0.14)',
+                  width: '260px',
+                  zIndex: 2500,
+                  overflow: 'hidden'
+                }}>
+                  {/* User Profile Header */}
+                  <div style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', background: '#f9fafb' }}>
+                    <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#111827', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      {authUser.name || 'Authorized Learner'}
+                    </div>
+                    <div style={{ fontSize: '0.78rem', color: '#6b7280', marginTop: '2px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      {authUser.email}
+                    </div>
+                    <span style={{
+                      display: 'inline-block',
+                      marginTop: '6px',
+                      fontSize: '0.68rem',
+                      fontWeight: 800,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      padding: '2px 8px',
+                      borderRadius: '12px',
+                      background: authUser.role === 'ADMIN' ? '#111827' : authUser.role === 'TEACHER' ? '#0b5e4a' : '#2563eb',
+                      color: '#ffffff'
+                    }}>
+                      {authUser.role}
+                    </span>
+                  </div>
+
+                  {/* Menu Options */}
+                  <div style={{ padding: '0.4rem 0' }}>
+                    {/* 1. Dashboard */}
+                    <Link
+                      href={
+                        authUser.role === 'TEACHER' 
+                          ? '/dashboard/teacher' 
+                          : authUser.role === 'ADMIN' 
+                          ? '/admin' 
+                          : '/dashboard/student'
+                      }
+                      onClick={() => setProfileDropdownOpen(false)}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.65rem',
+                        padding: '0.65rem 1rem',
+                        fontSize: '0.88rem',
+                        fontWeight: 600,
+                        color: '#1f2937',
+                        textDecoration: 'none',
+                        transition: 'background 0.15s ease'
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = '#f3f4f6')}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+                    >
+                      <LayoutDashboard size={16} style={{ color: '#0b5e4a' }} />
+                      <span>Dashboard</span>
+                    </Link>
+
+                    {/* 2. Quiz Portal */}
+                    <Link
+                      href="/quizzes"
+                      onClick={() => setProfileDropdownOpen(false)}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.65rem',
+                        padding: '0.65rem 1rem',
+                        fontSize: '0.88rem',
+                        fontWeight: 600,
+                        color: '#1f2937',
+                        textDecoration: 'none',
+                        transition: 'background 0.15s ease'
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = '#f3f4f6')}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+                    >
+                      <Award size={16} style={{ color: '#d97706' }} />
+                      <span>Quiz Portal</span>
+                    </Link>
+
+                    {/* 3. Upload & Ingest (Admin only) */}
+                    {authUser.role === 'ADMIN' && (
+                      <Link
+                        href="/upload"
+                        onClick={() => setProfileDropdownOpen(false)}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.65rem',
+                          padding: '0.65rem 1rem',
+                          fontSize: '0.88rem',
+                          fontWeight: 600,
+                          color: '#1f2937',
+                          textDecoration: 'none',
+                          transition: 'background 0.15s ease'
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = '#f3f4f6')}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+                      >
+                        <UploadCloud size={16} style={{ color: '#7c3aed' }} />
+                        <span>Admin Ingestion Portal</span>
+                      </Link>
+                    )}
+
+                    {/* 4. Change Theme */}
+                    <button
+                      type="button"
+                      onClick={toggleTheme}
+                      style={{
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.65rem',
+                        padding: '0.65rem 1rem',
+                        fontSize: '0.88rem',
+                        fontWeight: 600,
+                        color: '#1f2937',
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        textAlign: 'left',
+                        transition: 'background 0.15s ease'
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = '#f3f4f6')}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+                    >
+                      {theme === 'dark' ? (
+                        <Sun size={16} style={{ color: '#f59e0b' }} />
+                      ) : (
+                        <Moon size={16} style={{ color: '#6366f1' }} />
+                      )}
+                      <span>Theme: {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</span>
+                    </button>
+
+                    <div style={{ borderTop: '1px solid #f3f4f6', margin: '0.35rem 0' }} />
+
+                    {/* 5. Sign Out */}
+                    <button
+                      type="button"
+                      onClick={handleLogout}
+                      style={{
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.65rem',
+                        padding: '0.65rem 1rem',
+                        fontSize: '0.88rem',
+                        fontWeight: 600,
+                        color: '#dc2626',
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        textAlign: 'left',
+                        transition: 'background 0.15s ease'
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = '#fef2f2')}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+                    >
+                      <LogOut size={16} style={{ color: '#dc2626' }} />
+                      <span>Sign Out</span>
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           ) : (
             <button

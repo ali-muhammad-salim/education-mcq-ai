@@ -32,8 +32,96 @@ export function generateToken(): string {
   return crypto.randomBytes(32).toString('hex');
 }
 
+let tablesInitialized = false;
+
+// Ensure database tables exist even if prisma db push hasn't run yet
+export async function ensureAuthTables() {
+  if (tablesInitialized) return;
+
+  // 1. Enums
+  try {
+    await prisma.$executeRawUnsafe(`
+      DO $$ BEGIN
+        CREATE TYPE "UserRole" AS ENUM ('STUDENT', 'TEACHER', 'ADMIN');
+      EXCEPTION
+        WHEN duplicate_object THEN null;
+      END $$;
+    `);
+  } catch (e) {
+    // Enum might already exist
+  }
+
+  try {
+    await prisma.$executeRawUnsafe(`
+      DO $$ BEGIN
+        CREATE TYPE "AccountStatus" AS ENUM ('ACTIVE', 'SUSPENDED', 'PENDING_VERIFICATION');
+      EXCEPTION
+        WHEN duplicate_object THEN null;
+      END $$;
+    `);
+  } catch (e) {
+    // Enum might already exist
+  }
+
+  // 2. User table
+  try {
+    await prisma.$executeRawUnsafe(`
+      CREATE TABLE IF NOT EXISTS "User" (
+        "id" TEXT NOT NULL,
+        "email" TEXT NOT NULL,
+        "name" TEXT NOT NULL,
+        "passwordHash" TEXT,
+        "role" "UserRole" NOT NULL DEFAULT 'STUDENT',
+        "status" "AccountStatus" NOT NULL DEFAULT 'ACTIVE',
+        "emailVerified" BOOLEAN NOT NULL DEFAULT false,
+        "googleId" TEXT,
+        "avatarUrl" TEXT,
+        "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+      );
+    `);
+  } catch (e) {
+    console.warn('User table creation notice:', e);
+  }
+
+  // 3. User indexes
+  try {
+    await prisma.$executeRawUnsafe(`CREATE UNIQUE INDEX IF NOT EXISTS "User_email_key" ON "User"("email");`);
+  } catch {}
+
+  try {
+    await prisma.$executeRawUnsafe(`CREATE UNIQUE INDEX IF NOT EXISTS "User_googleId_key" ON "User"("googleId");`);
+  } catch {}
+
+  // 4. UserSession table
+  try {
+    await prisma.$executeRawUnsafe(`
+      CREATE TABLE IF NOT EXISTS "UserSession" (
+        "id" TEXT NOT NULL,
+        "userId" TEXT NOT NULL,
+        "token" TEXT NOT NULL,
+        "expiresAt" TIMESTAMP(3) NOT NULL,
+        "ipAddress" TEXT,
+        "userAgent" TEXT,
+        "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        CONSTRAINT "UserSession_pkey" PRIMARY KEY ("id")
+      );
+    `);
+  } catch (e) {
+    console.warn('UserSession table creation notice:', e);
+  }
+
+  try {
+    await prisma.$executeRawUnsafe(`CREATE UNIQUE INDEX IF NOT EXISTS "UserSession_token_key" ON "UserSession"("token");`);
+  } catch {}
+
+  tablesInitialized = true;
+}
+
 // Ensure default verified admin and system accounts exist
 export async function ensureDemoUsers() {
+  await ensureAuthTables();
   try {
     const adminPassword = 'AdminPass123!';
     const defaultHash = hashPassword(adminPassword);
