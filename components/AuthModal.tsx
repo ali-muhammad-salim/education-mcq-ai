@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Sparkles, User, Lock, Mail, ShieldCheck, Check, ArrowRight, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Sparkles, User, Lock, Mail, ShieldCheck, Check, ArrowRight, X, AlertCircle } from 'lucide-react';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -18,8 +18,44 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [googleConfigured, setGoogleConfigured] = useState<boolean | null>(null);
+
+  // Check if Google OAuth is configured
+  useEffect(() => {
+    fetch('/api/auth/google?check=1')
+      .then(res => res.json())
+      .then(data => setGoogleConfigured(data.enabled))
+      .catch(() => setGoogleConfigured(false));
+  }, []);
+
+  // Check if there is an auth_error in URL
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const authErr = params.get('auth_error');
+      if (authErr) {
+        if (authErr === 'google_not_configured') {
+          setError('Google OAuth is not configured yet. Please add GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET to environment variables.');
+        } else if (authErr === 'access_denied') {
+          setError('Google sign-in was canceled.');
+        } else {
+          setError(`Google sign-in error: ${decodeURIComponent(authErr)}`);
+        }
+      }
+    }
+  }, [isOpen]);
 
   if (!isOpen) return null;
+
+  const handleGoogleSignIn = () => {
+    if (googleConfigured === false) {
+      setError('Google Sign-In requires GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in Dokploy environment settings. In the meantime, you can use the 1-Click Demo Login or Email Login below!');
+      return;
+    }
+    setLoading(true);
+    const returnUrl = encodeURIComponent(window.location.pathname + window.location.search);
+    window.location.href = `/api/auth/google?role=${role}&returnUrl=${returnUrl}`;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -94,6 +130,8 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
         borderRadius: '16px',
         width: '100%',
         maxWidth: '460px',
+        maxHeight: '92vh',
+        overflowY: 'auto',
         padding: '2rem',
         boxShadow: '0 20px 40px rgba(0, 0, 0, 0.25)',
         position: 'relative'
@@ -108,18 +146,19 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
             background: 'none',
             border: 'none',
             cursor: 'pointer',
-            color: '#6b7280'
+            color: '#6b7280',
+            padding: '4px'
           }}
         >
           <X size={20} />
         </button>
 
         {/* Modal Header */}
-        <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
           <span style={{
             background: '#e6f0ed',
             color: '#0b5e4a',
-            fontSize: '0.75rem',
+            fontSize: '0.72rem',
             fontWeight: 800,
             padding: '3px 10px',
             borderRadius: '20px',
@@ -129,181 +168,183 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
           }}>
             <ShieldCheck size={13} /> SECURE PORTAL AUTHENTICATION
           </span>
-          <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#111827', margin: '0.5rem 0 0.2rem 0' }}>
+          <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0.4rem 0 0.2rem 0' }}>
             {mode === 'login' ? 'Sign In to Your Account' : 'Create an Account'}
           </h3>
-          <p style={{ color: '#6b7280', fontSize: '0.88rem', margin: 0 }}>
-            Access personalized student quizzes or teacher management tools.
+          <p style={{ color: '#6b7280', fontSize: '0.85rem', margin: 0 }}>
+            Access student practice exams or teacher assessment tools.
           </p>
         </div>
 
-        {/* Quick Demo Access Buttons */}
-        <div style={{
-          background: '#f9fafb',
-          border: '1px solid #e5e7eb',
-          borderRadius: '10px',
-          padding: '0.85rem',
-          marginBottom: '1.25rem'
-        }}>
-          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4b5563', display: 'block', marginBottom: '0.5rem' }}>
-            ⚡ 1-Click Verification Login:
-          </span>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem' }}>
+        {error && (
+          <div style={{
+            background: '#fef2f2',
+            border: '1px solid #fecaca',
+            color: '#991b1b',
+            borderRadius: '8px',
+            padding: '0.75rem',
+            fontSize: '0.82rem',
+            marginBottom: '1rem',
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '0.5rem',
+            lineHeight: 1.4
+          }}>
+            <AlertCircle size={16} style={{ flexShrink: 0, marginTop: '2px' }} />
+            <div>{error}</div>
+          </div>
+        )}
+
+        {/* Role Selection for Google & Register */}
+        <div style={{ marginBottom: '0.85rem' }}>
+          <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 700, color: '#4b5563', marginBottom: '0.35rem' }}>
+            Choose Your Profile Role:
+          </label>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
             <button
               type="button"
-              onClick={() => handleQuickDemo('student')}
-              disabled={loading}
+              onClick={() => setRole('STUDENT')}
               style={{
-                background: '#ffffff',
-                border: '1.5px solid #0b5e4a',
-                color: '#0b5e4a',
-                borderRadius: '6px',
-                padding: '6px 4px',
-                fontSize: '0.75rem',
+                background: role === 'STUDENT' ? '#e6f0ed' : '#ffffff',
+                border: role === 'STUDENT' ? '2px solid #0b5e4a' : '1px solid #d1d5db',
+                color: role === 'STUDENT' ? '#0b5e4a' : '#4b5563',
+                borderRadius: '8px',
+                padding: '7px',
+                fontSize: '0.82rem',
                 fontWeight: 700,
-                cursor: 'pointer'
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.3rem'
               }}
             >
               🎓 Student
             </button>
             <button
               type="button"
-              onClick={() => handleQuickDemo('teacher')}
-              disabled={loading}
+              onClick={() => setRole('TEACHER')}
               style={{
-                background: '#0b5e4a',
-                border: '1.5px solid #0b5e4a',
-                color: '#ffffff',
-                borderRadius: '6px',
-                padding: '6px 4px',
-                fontSize: '0.75rem',
+                background: role === 'TEACHER' ? '#e6f0ed' : '#ffffff',
+                border: role === 'TEACHER' ? '2px solid #0b5e4a' : '1px solid #d1d5db',
+                color: role === 'TEACHER' ? '#0b5e4a' : '#4b5563',
+                borderRadius: '8px',
+                padding: '7px',
+                fontSize: '0.82rem',
                 fontWeight: 700,
-                cursor: 'pointer'
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.3rem'
               }}
             >
               👨‍🏫 Teacher
             </button>
-            <button
-              type="button"
-              onClick={() => handleQuickDemo('admin')}
-              disabled={loading}
-              style={{
-                background: '#111827',
-                border: '1.5px solid #111827',
-                color: '#ffffff',
-                borderRadius: '6px',
-                padding: '6px 4px',
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                cursor: 'pointer'
-              }}
-            >
-              🛡️ Admin
-            </button>
           </div>
         </div>
 
-        {error && (
-          <div style={{
-            background: '#fee2e2',
-            border: '1px solid #f87171',
-            color: '#b91c1c',
+        {/* Google Sign-In Button */}
+        <button
+          type="button"
+          onClick={handleGoogleSignIn}
+          disabled={loading}
+          style={{
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.75rem',
+            background: '#ffffff',
+            color: '#1f2937',
+            border: '1.5px solid #d1d5db',
             borderRadius: '8px',
-            padding: '0.65rem 0.85rem',
-            fontSize: '0.85rem',
-            marginBottom: '1rem'
-          }}>
-            {error}
-          </div>
-        )}
+            padding: '0.7rem 1rem',
+            fontSize: '0.92rem',
+            fontWeight: 700,
+            cursor: loading ? 'not-allowed' : 'pointer',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+            transition: 'all 0.15s ease',
+            position: 'relative'
+          }}
+          onMouseEnter={(e) => {
+            if (!loading) {
+              e.currentTarget.style.background = '#f9fafb';
+              e.currentTarget.style.borderColor = '#9ca3af';
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (!loading) {
+              e.currentTarget.style.background = '#ffffff';
+              e.currentTarget.style.borderColor = '#d1d5db';
+            }
+          }}
+        >
+          {/* Official Google SVG */}
+          <svg width="20" height="20" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+          </svg>
+          <span>Continue with Google</span>
+        </button>
 
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
+        {/* Divider */}
+        <div style={{ display: 'flex', alignItems: 'center', margin: '1rem 0' }}>
+          <div style={{ flex: 1, height: '1px', background: '#e5e7eb' }} />
+          <span style={{ padding: '0 0.65rem', fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700, textTransform: 'uppercase' }}>
+            or with email
+          </span>
+          <div style={{ flex: 1, height: '1px', background: '#e5e7eb' }} />
+        </div>
+
+        {/* Form */}
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
           {mode === 'register' && (
-            <>
-              <div>
-                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#374151', marginBottom: '0.3rem' }}>
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="e.g. Ali Raza"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  style={{
-                    width: '100%',
-                    padding: '0.65rem 0.85rem',
-                    borderRadius: '8px',
-                    border: '1px solid #d1d5db',
-                    fontSize: '0.9rem'
-                  }}
-                />
-              </div>
-
-              <div>
-                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#374151', marginBottom: '0.3rem' }}>
-                  Account Role
-                </label>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
-                  <button
-                    type="button"
-                    onClick={() => setRole('STUDENT')}
-                    style={{
-                      background: role === 'STUDENT' ? '#e6f0ed' : '#ffffff',
-                      border: role === 'STUDENT' ? '2px solid #0b5e4a' : '1px solid #d1d5db',
-                      color: role === 'STUDENT' ? '#0b5e4a' : '#4b5563',
-                      borderRadius: '8px',
-                      padding: '8px',
-                      fontSize: '0.85rem',
-                      fontWeight: 700,
-                      cursor: 'pointer'
-                    }}
-                  >
-                    🎓 Student
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setRole('TEACHER')}
-                    style={{
-                      background: role === 'TEACHER' ? '#e6f0ed' : '#ffffff',
-                      border: role === 'TEACHER' ? '2px solid #0b5e4a' : '1px solid #d1d5db',
-                      color: role === 'TEACHER' ? '#0b5e4a' : '#4b5563',
-                      borderRadius: '8px',
-                      padding: '8px',
-                      fontSize: '0.85rem',
-                      fontWeight: 700,
-                      cursor: 'pointer'
-                    }}
-                  >
-                    👨‍🏫 Teacher
-                  </button>
-                </div>
-              </div>
-            </>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#374151', marginBottom: '0.25rem' }}>
+                Full Name
+              </label>
+              <input
+                type="text"
+                required
+                placeholder="e.g. Ali Raza"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '0.6rem 0.8rem',
+                  borderRadius: '8px',
+                  border: '1px solid #d1d5db',
+                  fontSize: '0.88rem'
+                }}
+              />
+            </div>
           )}
 
           <div>
-            <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#374151', marginBottom: '0.3rem' }}>
+            <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#374151', marginBottom: '0.25rem' }}>
               Email Address
             </label>
             <input
               type="email"
               required
-              placeholder="name@akueb.edu.pk"
+              placeholder="name@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               style={{
                 width: '100%',
-                padding: '0.65rem 0.85rem',
+                padding: '0.6rem 0.8rem',
                 borderRadius: '8px',
                 border: '1px solid #d1d5db',
-                fontSize: '0.9rem'
+                fontSize: '0.88rem'
               }}
             />
           </div>
 
           <div>
-            <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#374151', marginBottom: '0.3rem' }}>
+            <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#374151', marginBottom: '0.25rem' }}>
               Password
             </label>
             <input
@@ -314,10 +355,10 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
               onChange={(e) => setPassword(e.target.value)}
               style={{
                 width: '100%',
-                padding: '0.65rem 0.85rem',
+                padding: '0.6rem 0.8rem',
                 borderRadius: '8px',
                 border: '1px solid #d1d5db',
-                fontSize: '0.9rem'
+                fontSize: '0.88rem'
               }}
             />
           </div>
@@ -330,11 +371,11 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
               color: '#ffffff',
               border: 'none',
               borderRadius: '8px',
-              padding: '0.75rem',
+              padding: '0.7rem',
               fontWeight: 800,
-              fontSize: '0.95rem',
+              fontSize: '0.92rem',
               cursor: 'pointer',
-              marginTop: '0.5rem',
+              marginTop: '0.25rem',
               boxShadow: '0 4px 12px rgba(11, 94, 74, 0.2)'
             }}
           >
@@ -342,7 +383,74 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
           </button>
         </form>
 
-        <div style={{ textAlign: 'center', marginTop: '1.25rem', fontSize: '0.85rem', color: '#6b7280' }}>
+        {/* Quick Demo Access Collapsible / Section */}
+        <div style={{
+          background: '#f9fafb',
+          border: '1px dashed #d1d5db',
+          borderRadius: '10px',
+          padding: '0.75rem',
+          marginTop: '1.25rem'
+        }}>
+          <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4b5563', display: 'block', marginBottom: '0.4rem' }}>
+            ⚡ Fast Testing & Demo Login:
+          </span>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.4rem' }}>
+            <button
+              type="button"
+              onClick={() => handleQuickDemo('student')}
+              disabled={loading}
+              style={{
+                background: '#ffffff',
+                border: '1px solid #0b5e4a',
+                color: '#0b5e4a',
+                borderRadius: '6px',
+                padding: '5px 2px',
+                fontSize: '0.72rem',
+                fontWeight: 700,
+                cursor: 'pointer'
+              }}
+            >
+              🎓 Student
+            </button>
+            <button
+              type="button"
+              onClick={() => handleQuickDemo('teacher')}
+              disabled={loading}
+              style={{
+                background: '#0b5e4a',
+                border: '1px solid #0b5e4a',
+                color: '#ffffff',
+                borderRadius: '6px',
+                padding: '5px 2px',
+                fontSize: '0.72rem',
+                fontWeight: 700,
+                cursor: 'pointer'
+              }}
+            >
+              👨‍🏫 Teacher
+            </button>
+            <button
+              type="button"
+              onClick={() => handleQuickDemo('admin')}
+              disabled={loading}
+              style={{
+                background: '#111827',
+                border: '1px solid #111827',
+                color: '#ffffff',
+                borderRadius: '6px',
+                padding: '5px 2px',
+                fontSize: '0.72rem',
+                fontWeight: 700,
+                cursor: 'pointer'
+              }}
+            >
+              🛡️ Admin
+            </button>
+          </div>
+        </div>
+
+        {/* Toggle Mode */}
+        <div style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.82rem', color: '#6b7280' }}>
           {mode === 'login' ? (
             <>
               Don&apos;t have an account?{' '}

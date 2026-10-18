@@ -569,9 +569,23 @@ export default function Navbar() {
                   boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
                 }}
               >
-                <LayoutDashboard size={14} />
+                {authUser.avatarUrl ? (
+                  <img 
+                    src={authUser.avatarUrl} 
+                    alt={authUser.name || 'User'} 
+                    style={{ 
+                      width: '20px', 
+                      height: '20px', 
+                      borderRadius: '50%', 
+                      objectFit: 'cover',
+                      border: '1.5px solid rgba(255,255,255,0.8)' 
+                    }} 
+                  />
+                ) : (
+                  <LayoutDashboard size={14} />
+                )}
                 <span>
-                  {authUser.role === 'TEACHER' ? 'Teacher Portal' : authUser.role === 'ADMIN' ? 'Admin Hub' : 'My Dashboard'}
+                  {authUser.name ? authUser.name.split(' ')[0] : (authUser.role === 'TEACHER' ? 'Teacher Portal' : authUser.role === 'ADMIN' ? 'Admin Hub' : 'My Dashboard')}
                 </span>
               </Link>
               <button
