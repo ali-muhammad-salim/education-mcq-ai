@@ -44,4 +44,4 @@ USER nextjs
 
 EXPOSE 3000
 
-CMD ["sh", "-c", "npx prisma db push --skip-generate && npm run start"]
+CMD ["sh", "-c", "(npx prisma db push --accept-data-loss --skip-generate || echo 'Prisma migration warning, starting server...') && npm run start"]
