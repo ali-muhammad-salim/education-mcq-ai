@@ -1,0 +1,169 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class IX",
+  "subject": "Physics",
+  "chapter": "Unit 2: Kinematics",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 2.1.1",
+      "definition": "define rest and motion;",
+      "slo_code": "2.1.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 2.2.1",
+      "definition": "differentiate among the different types of motion, i.e., translatory (linear, random, circular), rotatory and vibratory motion;",
+      "slo_code": "2.2.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 2.3.1",
+      "definition": "define the following terms: a. distance, b. displacement, c. speed, d. velocity, e. acceleration;",
+      "slo_code": "2.3.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 2.3.2",
+      "definition": "calculate average speed, average velocity and acceleration;",
+      "slo_code": "2.3.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 2.3.3",
+      "definition": "differentiate between: a. distance and displacement, b. speed and velocity, c. average speed and instantaneous speed, d. uniform and non-uniform velocity, e. uniform and non-uniform acceleration;",
+      "slo_code": "2.3.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 2.3.4",
+      "definition": "describe the universal speed limit of any object in the universe that is approximately 3 \u00d7 108 m/s;",
+      "slo_code": "2.3.4",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 2.4.1",
+      "definition": "interpret distance-time graph and speed-time graph;",
+      "slo_code": "2.4.1",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 2.4.2",
+      "definition": "determine the slope/ gradient of distance-time and speed-time graph;",
+      "slo_code": "2.4.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 2.4.3",
+      "definition": "infer the following states of a body based on the given graph: a. at rest, b. moving with constant speed, c. moving with positive acceleration, d. moving with negative acceleration;",
+      "slo_code": "2.4.3",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 2.4.4",
+      "definition": "calculate the area under the speed-time graph of uniformly accelerated objects to find out the distance covered by the objects;",
+      "slo_code": "2.4.4",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 2.5.1",
+      "definition": "define acceleration due to gravity;",
+      "slo_code": "2.5.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 2.5.2",
+      "definition": "solve word problems related to free-falling bodies using the relation g = \u0394v/ \u0394t.",
+      "slo_code": "2.5.2",
+      "cognitive_level": "A"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "5",
+      "stem_text": "All of the following are the scalar quantities EXCEPT",
+      "options": [
+        "A. time.",
+        "B. mass.",
+        "C. distance.",
+        "D. velocity."
+      ],
+      "correct_option": "D",
+      "explanation": "Velocity is a vector quantity because it has both magnitude and direction, whereas time, mass, and distance are scalar quantities.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "5",
+      "stem_text": "In a classroom, a student got up from his/ her desk and walked 3 m ahead towards his/ her friend's desk. He/ she collected a book and walked 3 m back to his/ her own desk.\\n\\nThe total displacement of the student would be",
+      "options": [
+        "A. 0 m.",
+        "B. 3 m.",
+        "C. 6 m.",
+        "D. 9 m."
+      ],
+      "correct_option": "A",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "6",
+      "stem_text": "In the given speed-time graph, the sum of areas representing the total distance covered by a body is",
+      "options": [
+        "A. W + Y + Z",
+        "B. W + X + Y",
+        "C. W + X + Z",
+        "D. W + X + Y + Z"
+      ],
+      "correct_option": "C",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "6",
+      "stem_text": "A child drops a tennis ball from a height of $10\\text{ m}$. The velocity of the ball just before it strikes the ground will be\n(Note: The value of acceleration due to gravity is $9.8\\text{ m/s}^2$.)",
+      "options": [
+        "A. $14.0\\text{ m/s}$.",
+        "B. $19.8\\text{ m/s}$.",
+        "C. $21.8\\text{ m/s}$.",
+        "D. $98.0\\text{ m/s}$."
+      ],
+      "correct_option": "A",
+      "explanation": "Using the equation of motion $v^2 = u^2 + 2as$, where $u = 0$, $a = 9.8\\text{ m/s}^2$, and $s = 10\\text{ m}$: $v^2 = 0 + 2(9.8)(10) = 196$, so $v = \\sqrt{196} = 14.0\\text{ m/s}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "7",
+      "stem_text": "The given table shows the distance covered by a car on a straight road in four different segments.\nSegment I: 0-10 m\nSegment II: 11-22 m (displacement = 11 m)\nSegment III: 23-35 m (displacement = 12 m)\nSegment IV: 36-49 m (displacement = 13 m)\nIf the car takes same interval of time to cover all four segments, then the car",
+      "options": [
+        "A. is accelerating.",
+        "B. is decelerating.",
+        "C. has uniform velocity.",
+        "D. comes to rest after each segment."
+      ],
+      "correct_option": "A",
+      "explanation": "The distance covered in equal time intervals increases in each subsequent segment (10 m, 11 m, 12 m, 13 m), meaning the speed is increasing, hence the car is accelerating.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "7",
+      "stem_text": "In the given distance-time graph, the line that represents a body in rest position is",
+      "options": [
+        "A. A",
+        "B. B",
+        "C. C",
+        "D. D"
+      ],
+      "correct_option": "B",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    }
+  ],
+  "crqs": [],
+  "erqs": [],
+  "numericals": []
+}

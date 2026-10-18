@@ -1,0 +1,642 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "If the volume of one cube is $1.76\\text{ cm}^3$, then the volume of twenty-one such cubes rounded off to three significant figures is",
+    "options": {
+      "A": "$36.0\\text{ cm}^3$.",
+      "B": "$36.9\\text{ cm}^3$.",
+      "C": "$36.96\\text{ cm}^3$.",
+      "D": "$37.0\\text{ cm}^3$."
+    },
+    "correctOption": "D",
+    "explanation": "Total volume = 21 * 1.76 = 36.96 cm³. When rounded off to 3 significant figures, 36.96 becomes 37.0 cm³.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 2,
+    "stem": "The number 123.4 can also be written in scientific notation as",
+    "options": {
+      "A": "$0.1234 \\times 10^3$",
+      "B": "$1.234 \\times 10^{-2}$",
+      "C": "$1.234 \\times 10^2$",
+      "D": "$12.34 \\times 10^1$"
+    },
+    "correctOption": "C",
+    "explanation": "To express 123.4 in standard scientific notation ($a \\times 10^n$ where $1 \\le |a| < 10$), the decimal point is moved two places to the left, giving $1.234 \\times 10^2$.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 3,
+    "stem": "The prefix used for the multiple value of $10^{-9}$ is",
+    "options": {
+      "A": "atto.",
+      "B": "pico.",
+      "C": "nano.",
+      "D": "femto."
+    },
+    "correctOption": "C",
+    "explanation": "The SI prefix for $10^{-9}$ is nano.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 4,
+    "stem": "Which of the following instruments is used to measure the internal diametre of a pipe?",
+    "options": {
+      "A": "Metre rule",
+      "B": "Screw gauge",
+      "C": "Vernier callipers",
+      "D": "Measuring cylinder"
+    },
+    "correctOption": "C",
+    "explanation": "Vernier callipers have internal jaws specifically designed to measure the internal diameter of pipes or cylinders.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 5,
+    "stem": "All of the following are the scalar quantities EXCEPT",
+    "options": {
+      "A": "time.",
+      "B": "mass.",
+      "C": "distance.",
+      "D": "velocity."
+    },
+    "correctOption": "D",
+    "explanation": "Velocity is a vector quantity because it has both magnitude and direction, whereas time, mass, and distance are scalar quantities.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 6,
+    "stem": "A child drops a tennis ball from a height of $10\\text{ m}$. The velocity of the ball just before it strikes the ground will be\n(Note: The value of acceleration due to gravity is $9.8\\text{ m/s}^2$.)",
+    "options": {
+      "A": "$14.0\\text{ m/s}$.",
+      "B": "$19.8\\text{ m/s}$.",
+      "C": "$21.8\\text{ m/s}$.",
+      "D": "$98.0\\text{ m/s}$."
+    },
+    "correctOption": "A",
+    "explanation": "Using the equation of motion $v^2 = u^2 + 2as$, where $u = 0$, $a = 9.8\\text{ m/s}^2$, and $s = 10\\text{ m}$: $v^2 = 0 + 2(9.8)(10) = 196$, so $v = \\sqrt{196} = 14.0\\text{ m/s}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 7,
+    "stem": "The given table shows the distance covered by a car on a straight road in four different segments.\nSegment I: 0-10 m\nSegment II: 11-22 m (displacement = 11 m)\nSegment III: 23-35 m (displacement = 12 m)\nSegment IV: 36-49 m (displacement = 13 m)\nIf the car takes same interval of time to cover all four segments, then the car",
+    "options": {
+      "A": "is accelerating.",
+      "B": "is decelerating.",
+      "C": "has uniform velocity.",
+      "D": "comes to rest after each segment."
+    },
+    "correctOption": "A",
+    "explanation": "The distance covered in equal time intervals increases in each subsequent segment (10 m, 11 m, 12 m, 13 m), meaning the speed is increasing, hence the car is accelerating.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 8,
+    "stem": "If a force of $10\\text{ N}$ is acting on a body along the x-axis, then the value of this force acting on the y-axis will be",
+    "options": {
+      "A": "$0\\text{ N}$.",
+      "B": "$5\\text{ N}$.",
+      "C": "$10\\text{ N}$.",
+      "D": "$20\\text{ N}$."
+    },
+    "correctOption": "A",
+    "explanation": "A force acting purely along the x-axis has no component along the perpendicular y-axis ($F_y = F \\sin(0^{\\circ}) = 0\\text{ N}$).",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 9,
+    "stem": "Consider the given speed-time graph. The speed of an object from point X to Y is",
+    "options": {
+      "A": "decreasing.",
+      "B": "increasing.",
+      "C": "uniform.",
+      "D": "zero."
+    },
+    "correctOption": "C",
+    "explanation": "In a standard speed-time graph where the curve/line from X to Y is horizontal (parallel to the time axis), the speed remains constant (uniform).",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": true,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 10,
+    "stem": "A $36\\text{ N}$ force pulls a system of three masses ($4\\text{ kg}$, $6\\text{ kg}$, $8\\text{ kg}$) on a horizontal frictionless surface as shown in the given figure. The acceleration of this system of masses is",
+    "options": {
+      "A": "$0.5\\text{ m/s}^2$.",
+      "B": "$2\\text{ m/s}^2$.",
+      "C": "$5\\text{ m/s}^2$.",
+      "D": "$18\\text{ m/s}^2$."
+    },
+    "correctOption": "B",
+    "explanation": "Total mass $m_{total} = 4\\text{ kg} + 6\\text{ kg} + 8\\text{ kg} = 18\\text{ kg}$. Acceleration $a = \\frac{F}{m_{total}} = \\frac{36\\text{ N}}{18\\text{ kg}} = 2\\text{ m/s}^2$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 11,
+    "stem": "An astronaut is sitting in a rocket on Earth which is ready to launch to the Moon. When the astronaut will reach the Moon, his/ her weight and mass would",
+    "options": {
+      "A": "Weight: Increase | Mass: remain the same",
+      "B": "Weight: remain the same | Mass: increase",
+      "C": "Weight: Decrease | Mass: remain the same",
+      "D": "Weight: remain the same | Mass: decrease"
+    },
+    "correctOption": "C",
+    "explanation": "The gravity on the Moon is about 1/6th of Earth's gravity, so the astronaut's weight decreases, while mass (the amount of matter) remains constant.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 12,
+    "stem": "How much centripetal force is needed to move a body of mass $10\\text{ kg}$ in a circle of radius $20\\text{ m}$ with a speed of $3\\text{ m/s}$?",
+    "options": {
+      "A": "$1.5\\text{ N}$.",
+      "B": "$4.5\\text{ N}$.",
+      "C": "$13\\text{ N}$.",
+      "D": "$33\\text{ N}$."
+    },
+    "correctOption": "B",
+    "explanation": "Centripetal force $F_c = \\frac{m v^2}{r} = \\frac{10 \\times (3)^2}{20} = \\frac{10 \\times 9}{20} = 4.5\\text{ N}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 13,
+    "stem": "If a body of mass $10\\text{ kg}$ is placed on the surface of the Earth, then the pull of the Earth on the body will be\n(Note: The value of acceleration due to gravity is $9.8\\text{ m/s}^2$.)",
+    "options": {
+      "A": "$0.98\\text{ N}$.",
+      "B": "$19.8\\text{ N}$.",
+      "C": "$98\\text{ N}$.",
+      "D": "$100\\text{ N}$."
+    },
+    "correctOption": "C",
+    "explanation": "The pull of Earth on a body is its weight $W = mg = 10\\text{ kg} \\times 9.8\\text{ m/s}^2 = 98\\text{ N}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 14,
+    "stem": "It is difficult to drive a car on an oily road because the frictional force",
+    "options": {
+      "A": "increases.",
+      "B": "decreases.",
+      "C": "becomes zero.",
+      "D": "remains unchanged."
+    },
+    "correctOption": "B",
+    "explanation": "Oil acts as a lubricant, smoothing out microscopic irregularities between the tires and the road, which decreases the frictional force.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 15,
+    "stem": "Two forces ($9\\text{ N}$ and $12\\text{ N}$) act at the right angle at point O, as shown in the given figure. What will be the magnitude and direction of the resultant force?",
+    "options": {
+      "A": "$15\\text{ N}$ along OQ",
+      "B": "$15\\text{ N}$ along PR",
+      "C": "$21\\text{ N}$ along OQ",
+      "D": "$21\\text{ N}$ along PR"
+    },
+    "correctOption": "A",
+    "explanation": "Magnitude $R = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15\\text{ N}$. By vector addition (head-to-tail / parallelogram law), the resultant lies along OQ.",
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 16,
+    "stem": "A sports racing car is made stable by",
+    "options": {
+      "A": "raising its height.",
+      "B": "increasing its speed.",
+      "C": "decreasing its width.",
+      "D": "lowering its centre of gravity."
+    },
+    "correctOption": "D",
+    "explanation": "Lowering the centre of gravity increases stability, preventing the car from tipping over during sharp turns.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 17,
+    "stem": "The perpendicular distance between axis of rotation and the line of action of force is called",
+    "options": {
+      "A": "momentum.",
+      "B": "acceleration.",
+      "C": "moment arm.",
+      "D": "displacement."
+    },
+    "correctOption": "C",
+    "explanation": "Moment arm (or lever arm) is defined as the perpendicular distance from the axis of rotation to the line of action of the force.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 18,
+    "stem": "After disturbance, if a body comes to rest and its centre of gravity remains unchanged, then this state of the body is/ are identified as\nI. stable equilibrium\nII. unstable equilibrium\nIII. neutral equilibrium",
+    "options": {
+      "A": "I only.",
+      "B": "III only.",
+      "C": "I and III.",
+      "D": "II and III."
+    },
+    "correctOption": "B",
+    "explanation": "In neutral equilibrium, when a body is displaced, its centre of gravity remains at the same height (unchanged).",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 19,
+    "stem": "Let suppose, a hole is drilled through the Earth along the diametre and a stone is dropped into it. Suppose when the stone reaches the Earth’s centre keeping same size and shape, it will have constant",
+    "options": {
+      "A": "mass.",
+      "B": "weight.",
+      "C": "momentum.",
+      "D": "acceleration."
+    },
+    "correctOption": "A",
+    "explanation": "Mass is an intrinsic property of matter and remains constant everywhere, including at the center of the Earth.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 20,
+    "stem": "A satellite is revolving around the Earth in a circular orbit with velocity v. If the gravitational force between the satellite and the Earth suddenly disappears, then the velocity of the satellite will be",
+    "options": {
+      "A": "0",
+      "B": "½ v",
+      "C": "v",
+      "D": "2v"
+    },
+    "correctOption": "C",
+    "explanation": "According to Newton's first law of motion (inertia), an object in motion will continue to move at a constant velocity in a straight line unless acted upon by an external net force. If the gravitational force disappears, there is no longer a centripetal force to keep it in a circular orbit, so it will continue to move tangentially with the same velocity v.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 21,
+    "stem": "If a planet comes closer to the Sun, then the planet will",
+    "options": {
+      "A": "orbit faster.",
+      "B": "orbit slower.",
+      "C": "fall into the Sun.",
+      "D": "keep moving with the same speed."
+    },
+    "correctOption": "A",
+    "explanation": "According to Kepler's Second Law of Planetary Motion (Law of Areas) and conservation of angular momentum, as a planet gets closer to the Sun (perihelion), its orbital speed increases.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 22,
+    "stem": "The gravitational force between two objects is directly proportional to the",
+    "options": {
+      "A": "sum of their masses.",
+      "B": "product of their masses.",
+      "C": "difference between their masses.",
+      "D": "square of the distance between them."
+    },
+    "correctOption": "B",
+    "explanation": "According to Newton's Law of Gravitation, the gravitational force $F$ between two point masses $m_1$ and $m_2$ separated by a distance $r$ is given by $F = G \\frac{m_1 m_2}{r^2}$. Thus, the force is directly proportional to the product of their masses.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 23,
+    "stem": "A car travels a distance of 150 m in the direction of a constant force of 50 N. The work done on the car is",
+    "options": {
+      "A": "3 J.",
+      "B": "100 J.",
+      "C": "200 J.",
+      "D": "7500 J."
+    },
+    "correctOption": "D",
+    "explanation": "Work done ($W$) is given by the formula $W = F \\times d$. Here, Force $F = 50\\text{ N}$ and distance $d = 150\\text{ m}$. $W = 50\\text{ N} \\times 150\\text{ m} = 7500\\text{ J}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 24,
+    "stem": "A car has stopped after screeching to avoid a crash with a van. With reference to the given situation, the kinetic energy of the car will then be converted into",
+    "options": {
+      "A": "sound energy only.",
+      "B": "heat and sound energy.",
+      "C": "heat and potential energy.",
+      "D": "potential and sound energy."
+    },
+    "correctOption": "B",
+    "explanation": "When a car screeches to a stop, friction between the tires and the road generates thermal energy (heat) and the screeching noise produces sound energy.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 25,
+    "stem": "If a loading truck has an output of 3600 J and its efficiency is 50%, then the input provided to the truck will be",
+    "options": {
+      "A": "18 J.",
+      "B": "72 J.",
+      "C": "7200 J.",
+      "D": "10800 J."
+    },
+    "correctOption": "C",
+    "explanation": "Efficiency = $(\\text{Output Energy} / \\text{Input Energy}) \\times 100$. Rearranging for Input Energy: $\\text{Input} = (\\text{Output} / \\text{Efficiency}) \\times 100 = (3600 / 50) \\times 100 = 7200\\text{ J}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 26,
+    "stem": "The kinetic energy of a 0.5 kg bullet moving with velocity of 500 m/s is",
+    "options": {
+      "A": "125 J.",
+      "B": "250 J.",
+      "C": "62500 J.",
+      "D": "125000 J."
+    },
+    "correctOption": "C",
+    "explanation": "Kinetic Energy ($KE$) = $\\frac{1}{2} m v^2 = \\frac{1}{2} \\times 0.5\\text{ kg} \\times (500\\text{ m/s})^2 = 0.25 \\times 250000 = 62500\\text{ J}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 27,
+    "stem": "If a person releases 500 J of energy by walking along a track in 125 seconds, then the required average muscular power is",
+    "options": {
+      "A": "0.25 W.",
+      "B": "4.0 W.",
+      "C": "375 W.",
+      "D": "625 W."
+    },
+    "correctOption": "B",
+    "explanation": "Power ($P$) = $\\text{Energy / Time} = 500\\text{ J} / 125\\text{ s} = 4.0\\text{ W}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 28,
+    "stem": "Compared to the sea level, the atmospheric pressure on mountains is",
+    "options": {
+      "A": "zero.",
+      "B": "equal.",
+      "C": "lower.",
+      "D": "higher."
+    },
+    "correctOption": "C",
+    "explanation": "Atmospheric pressure decreases with an increase in altitude because there is a smaller column of air above mountains compared to sea level.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 29,
+    "stem": "To push the liquid up in a straw, the air pressure inside the straw will",
+    "options": {
+      "A": "increase.",
+      "B": "decrease.",
+      "C": "become zero.",
+      "D": "remain constant."
+    },
+    "correctOption": "B",
+    "explanation": "When sucking on a straw, air is removed from inside the straw, causing the air pressure inside the straw to decrease. The higher atmospheric pressure on the liquid's surface outside then pushes the liquid up into the straw.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 30,
+    "stem": "According to the kinetic molecular model of matter, the molecules of a substance",
+    "options": {
+      "A": "are in the state of rest.",
+      "B": "are in the state of motion.",
+      "C": "have constant momentum.",
+      "D": "have same velocity during collision."
+    },
+    "correctOption": "B",
+    "explanation": "The kinetic molecular model states that matter is made up of particles that are constantly in random motion.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 31,
+    "stem": "A parcel box of weight 500 N is placed on a table. If the area of the bottom of the box is measured as 0.50 m2, then the pressure exerted by the box on the table will be",
+    "options": {
+      "A": "250 Pa.",
+      "B": "499.5 Pa.",
+      "C": "500.5 Pa.",
+      "D": "1000 Pa."
+    },
+    "correctOption": "D",
+    "explanation": "Pressure ($P$) = $\\text{Force} / \\text{Area} = 500\\text{ N} / 0.50\\text{ m}^2 = 1000\\text{ Pa}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 32,
+    "stem": "In a magic show, a performer lies down on a bed of nails without any injury. However, when the same performer steps on a single nail, it goes right through his foot. With reference to the given situation, which of the following statements is TRUE?",
+    "options": {
+      "A": "The area is same in both the cases, but more force is applied on the bed of nails.",
+      "B": "The force remains the same, but more pressure is applied on the bed of nails.",
+      "C": "More force is exerted on a single nail than on the entire bed of nails.",
+      "D": "Force increases, but less pressure is applied on the bed of nails."
+    },
+    "correctOption": "C",
+    "explanation": "When lying on a bed of nails, the weight (force) of the performer is distributed over a large number of contact points (large area), resulting in small pressure per nail. When stepping on a single nail, the entire weight acts on a single tiny area, creating extremely high pressure.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 33,
+    "stem": "In a clinical thermometer, mercury does NOT fall back to the bulb because",
+    "options": {
+      "A": "it is less in quantity.",
+      "B": "it is in a capillary tube.",
+      "C": "of the shape of the thermometer’s bulb.",
+      "D": "of the constriction in the capillary tube."
+    },
+    "correctOption": "D",
+    "explanation": "A clinical thermometer has a narrow constriction just above the bulb. When the temperature rises, mercury expands and pushes past the constriction. When removed from the body, the column breaks at the constriction, preventing the mercury from flowing back, allowing accurate reading of the maximum temperature.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 34,
+    "stem": "The escape of high kinetic energy molecules in the form of vapours from the surface of a liquid without heating is known as",
+    "options": {
+      "A": "fusion.",
+      "B": "boiling.",
+      "C": "evaporation.",
+      "D": "condensation."
+    },
+    "correctOption": "C",
+    "explanation": "Evaporation is the surface phenomenon where molecules with higher kinetic energy escape from the surface of a liquid at any temperature without requiring the liquid to boil.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 35,
+    "stem": "If an inflated tyre of a car bursts, then the temperature of air that will escape from the tyre",
+    "options": {
+      "A": "increases.",
+      "B": "decreases.",
+      "C": "becomes 100°C.",
+      "D": "remains constant."
+    },
+    "correctOption": "B",
+    "explanation": "When a tyre bursts, the escaping air undergoes rapid adiabatic expansion. According to thermodynamics, rapid expansion causes work to be done by the gas at the expense of its internal energy, resulting in a drop in temperature.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 36,
+    "stem": "If the temperature of a substance is 20°C, then its temperature in Kelvin scale will be",
+    "options": {
+      "A": "– 253 K.",
+      "B": "– 6.66 K.",
+      "C": "68 K.",
+      "D": "293 K."
+    },
+    "correctOption": "D",
+    "explanation": "$T(\\text{K}) = T(°\\text{C}) + 273 = 20 + 273 = 293\\text{ K}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 37,
+    "stem": "An example of a good conductor of heat is a",
+    "options": {
+      "A": "glass door.",
+      "B": "frying pan.",
+      "C": "wooden door.",
+      "D": "leather jacket."
+    },
+    "correctOption": "B",
+    "explanation": "Metals, such as those used to make a frying pan, are good conductors of heat, whereas glass, wood, and leather are poor conductors (insulators).",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 38,
+    "stem": "Radiations’ incident on a surface increases its temperature. Which of the following characteristics should be present in a surface that can protect itself MOST effectively against radiation?",
+    "options": {
+      "A": "Poor absorber and poor emitter",
+      "B": "Poor absorber and good emitter",
+      "C": "Good absorber and poor emitter",
+      "D": "Good absorber and good emitter"
+    },
+    "correctOption": "A",
+    "explanation": "To protect against radiation (such as shiny silver surfaces that reflect heat), a surface should be a poor absorber so it absorbs minimal thermal radiation, and consequently a poor emitter.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 39,
+    "stem": "The process of transfer of heat in liquids and gases is/ are called\nI. conduction\nII. convection\nIII. radiation",
+    "options": {
+      "A": "I only.",
+      "B": "II only.",
+      "C": "I and III.",
+      "D": "II and III."
+    },
+    "correctOption": "B",
+    "explanation": "Heat transfer in fluids (liquids and gases) primarily takes place through convection, due to the actual movement of fluid particles.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 40,
+    "stem": "When a wooden spoon is dipped in a bowl of soup, it does not become hot. In the given situation, the wooden spoon acts as a/ an",
+    "options": {
+      "A": "electrical conductor.",
+      "B": "electrical insulator.",
+      "C": "heat conductor.",
+      "D": "heat insulator."
+    },
+    "correctOption": "D",
+    "explanation": "Wood is a poor conductor of heat (thermal insulator), so it prevents heat from transferring through it from the soup, acting as a heat insulator.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  }
+]

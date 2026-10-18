@@ -1,0 +1,211 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class IX",
+  "subject": "Physics",
+  "chapter": "Unit 1: Measurement",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 1.1.1",
+      "definition": "differentiate between physical and non-physical quantities;",
+      "slo_code": "1.1.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 1.1.2",
+      "definition": "exemplify that physics is based on physical quantities only;",
+      "slo_code": "1.1.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 1.1.3",
+      "definition": "identify various physical quantities as base and derive quantities;",
+      "slo_code": "1.1.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 1.2.1",
+      "definition": "list the seven base quantities of International System (SI) along with their symbols and units;",
+      "slo_code": "1.2.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 1.2.2",
+      "definition": "differentiate between base and derived physical quantities and units;",
+      "slo_code": "1.2.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 1.3.1",
+      "definition": "convert prefixes and their symbols to indicate multiples and sub-multiples for base and derived units;",
+      "slo_code": "1.3.1",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 1.3.2",
+      "definition": "convert numerical values of measurement in scientific notation;",
+      "slo_code": "1.3.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 1.4.1",
+      "definition": "differentiate between scalar and vector quantities;",
+      "slo_code": "1.4.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 1.4.2",
+      "definition": "list out various physical quantities as scalar or vector;",
+      "slo_code": "1.4.2",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 1.4.3",
+      "definition": "describe the \u2018head to tail\u2019 rule of vector addition;",
+      "slo_code": "1.4.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 1.4.4",
+      "definition": "determine, using Pythagoras theorem and graphs, the resultant of two vectors at right angle;",
+      "slo_code": "1.4.4",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 1.5.1",
+      "definition": "identify measuring instruments;",
+      "slo_code": "1.5.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 1.5.2",
+      "definition": "determine the least count (LC) of the measuring instruments;",
+      "slo_code": "1.5.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 1.5.3",
+      "definition": "describe the working of measuring instruments;",
+      "slo_code": "1.5.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 1.5.4",
+      "definition": "determine an average value of the measurement by measuring multiples values of the quantity;",
+      "slo_code": "1.5.4",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 1.6.1",
+      "definition": "identify sources of errors (systematic and random) in the measurement;",
+      "slo_code": "1.6.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 1.6.2",
+      "definition": "differentiate between precision and accuracy;",
+      "slo_code": "1.6.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 1.7.1",
+      "definition": "describe significant figures;",
+      "slo_code": "1.7.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 1.7.2",
+      "definition": "apply the rules for rounding a number to the appropriate number of significant figures.",
+      "slo_code": "1.7.2",
+      "cognitive_level": "A"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "1",
+      "stem_text": "If the volume of one cube is $1.76\\text{ cm}^3$, then the volume of twenty-one such cubes rounded off to three significant figures is",
+      "options": [
+        "A. $36.0\\text{ cm}^3$.",
+        "B. $36.9\\text{ cm}^3$.",
+        "C. $36.96\\text{ cm}^3$.",
+        "D. $37.0\\text{ cm}^3$."
+      ],
+      "correct_option": "D",
+      "explanation": "Total volume = 21 * 1.76 = 36.96 cm\u00b3. When rounded off to 3 significant figures, 36.96 becomes 37.0 cm\u00b3.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "1",
+      "stem_text": "Which of the following is a base physical quantity?",
+      "options": [
+        "A. Time",
+        "B. Force",
+        "C. Density",
+        "D. Velocity"
+      ],
+      "correct_option": "A",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Knowledge"
+    },
+    {
+      "question_number": "2",
+      "stem_text": "The number 0.012345678 can be represented in scientific notation as",
+      "options": [
+        "A. 12.345678 \\times 10^2",
+        "B. 1.2345678 \\times 10^2",
+        "C. 1.2345678 \\times 10^{-2}",
+        "D. 12.345678 \\times 10^{-2}"
+      ],
+      "correct_option": "C",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "2",
+      "stem_text": "The number 123.4 can also be written in scientific notation as",
+      "options": [
+        "A. $0.1234 \\times 10^3$",
+        "B. $1.234 \\times 10^{-2}$",
+        "C. $1.234 \\times 10^2$",
+        "D. $12.34 \\times 10^1$"
+      ],
+      "correct_option": "C",
+      "explanation": "To express 123.4 in standard scientific notation ($a \\times 10^n$ where $1 \\le |a| < 10$), the decimal point is moved two places to the left, giving $1.234 \\times 10^2$.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "3",
+      "stem_text": "The prefix used for the multiple value of $10^{-9}$ is",
+      "options": [
+        "A. atto.",
+        "B. pico.",
+        "C. nano.",
+        "D. femto."
+      ],
+      "correct_option": "C",
+      "explanation": "The SI prefix for $10^{-9}$ is nano.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    },
+    {
+      "question_number": "3",
+      "stem_text": "All of the following quantities can be measured by using Vernier callipers EXCEPT",
+      "options": [
+        "A. depth.",
+        "B. length.",
+        "C. weight.",
+        "D. diametre."
+      ],
+      "correct_option": "C",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    }
+  ],
+  "crqs": [],
+  "erqs": [],
+  "numericals": []
+}

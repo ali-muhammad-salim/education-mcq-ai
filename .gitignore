@@ -14,7 +14,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -57,7 +56,11 @@ models/
 *.onnx
 
 # Data, Ingested documents & Uploads
-data/
+data/downloads/
+data/downloads_ai_sorted/
+data/raw_pdfs/
+data/uploads/
+data/intake/
 uploads/
 scratch/
 artifacts/

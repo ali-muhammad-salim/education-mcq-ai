@@ -1,0 +1,25 @@
+{"node_type": "board", "id": "board_akueb", "name": "AKU-EB"}
+{"node_type": "programme", "id": "prog_ssc", "board_id": "board_akueb", "name": "SSC"}
+{"node_type": "class", "id": "class_9", "programme_id": "prog_ssc", "name": "Class IX", "level": 9}
+{"node_type": "subject", "id": "subj_physics_9", "class_id": "class_9", "name": "Physics"}
+{"node_type": "syllabus_version", "id": "syl_v_phys_9_2022", "subject_id": "subj_physics_9", "version_name": "2022-2025", "valid_from": 2022, "valid_to": 2025}
+{"node_type": "examination_specification", "id": "exam_spec_phys_9_2022", "syllabus_version_id": "syl_v_phys_9_2022", "total_marks": 65, "mcq_marks": 25, "crq_marks": 40}
+{"node_type": "topic", "id": "topic_phys_9_1", "syllabus_version_id": "syl_v_phys_9_2022", "chapter_number": 1, "name": "Physical Quantities and Measurement"}
+{"node_type": "subtopic", "id": "subtopic_phys_9_1_1", "topic_id": "topic_phys_9_1", "name": "Introduction to Physics"}
+{"node_type": "slo", "id": "slo_phys_9_1_1_1", "subtopic_id": "subtopic_phys_9_1_1", "slo_code": "1.1.1", "description": "Describe the crucial role of Physics in Science, Technology and Society."}
+{"node_type": "concept", "id": "concept_role_of_physics", "slo_id": "slo_phys_9_1_1_1", "name": "Role of Physics in Society"}
+{"node_type": "command_word", "id": "cw_describe", "name": "Describe"}
+{"node_type": "cognitive_level", "id": "cl_knowledge", "name": "Knowledge", "code": "K"}
+{"node_type": "mapping", "source_type": "slo", "source_id": "slo_phys_9_1_1_1", "target_type": "command_word", "target_id": "cw_describe", "confidence": 1.0, "priority": 1}
+{"node_type": "mapping", "source_type": "slo", "source_id": "slo_phys_9_1_1_1", "target_type": "cognitive_level", "target_id": "cl_knowledge", "confidence": 1.0, "priority": 1}
+{"node_type": "past_paper", "id": "pp_phys_9_2024", "subject_id": "subj_physics_9", "year": 2024, "type": "Past Paper"}
+{"node_type": "past_paper_question", "id": "ppq_phys_9_2024_q1", "past_paper_id": "pp_phys_9_2024", "question_number": "1", "question_type": "MCQ_SINGLE", "marks": 1.0}
+{"node_type": "mapping", "source_type": "past_paper_question", "source_id": "ppq_phys_9_2024_q1", "target_type": "slo", "target_id": "slo_phys_9_1_1_1", "confidence": 0.95, "priority": 2, "evidence": "E-marking notes 2024 mapping"}
+{"node_type": "mapping", "source_type": "past_paper_question", "source_id": "ppq_phys_9_2024_q1", "target_type": "cognitive_level", "target_id": "cl_knowledge", "confidence": 1.0, "priority": 2}
+{"node_type": "book", "id": "book_phys_9_sindh", "subject_id": "subj_physics_9", "title": "Physics for Class IX - Sindh Textbook Board"}
+{"node_type": "book_content", "id": "bc_phys_9_ch1_p2", "book_id": "book_phys_9_sindh", "page": 2, "chunk_type": "paragraph"}
+{"node_type": "mapping", "source_type": "book_content", "source_id": "bc_phys_9_ch1_p2", "target_type": "slo", "target_id": "slo_phys_9_1_1_1", "confidence": 0.88, "priority": 5, "status": "PENDING_REVIEW"}
+{"node_type": "syllabus_version", "id": "syl_v_phys_9_2026", "subject_id": "subj_physics_9", "version_name": "2026", "valid_from": 2026, "valid_to": 2030}
+{"node_type": "topic", "id": "topic_phys_9_1_2026", "syllabus_version_id": "syl_v_phys_9_2026", "chapter_number": 1, "name": "Physical Quantities and Measurement (2026)"}
+{"node_type": "subtopic", "id": "subtopic_phys_9_1_1_2026", "topic_id": "topic_phys_9_1_2026", "name": "Introduction to Physics (2026)"}
+{"node_type": "slo", "id": "slo_phys_9_1_1_1_2026", "subtopic_id": "subtopic_phys_9_1_1_2026", "slo_code": "1.1.1", "description": "Describe the crucial role of Physics in Science, Technology and Society (2026 Updated)."}

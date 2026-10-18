@@ -1,0 +1,183 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class IX",
+  "subject": "Physics",
+  "chapter": "Unit 6: Work, Energy and Power",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 6.1.1",
+      "definition": "define work and state its SI unit;",
+      "slo_code": "6.1.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 6.1.2",
+      "definition": "solve word problems related to workdone;",
+      "slo_code": "6.1.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 6.2.1",
+      "definition": "define energy with its SI unit;",
+      "slo_code": "6.2.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 6.2.2",
+      "definition": "describe forms of energy stored in various objects such as gravitational potential, chemical, elastic (strain), nuclear, electrostatic and internal (thermal) energies;",
+      "slo_code": "6.2.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 6.3.1",
+      "definition": "compare kinetic energy (K.E) and potential energy (P.E);",
+      "slo_code": "6.3.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 6.3.2",
+      "definition": "derive the formulae of kinetic energy K.E = \u00bd mv2 and potential energy P.E = mg\u0394h;",
+      "slo_code": "6.3.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 6.3.3",
+      "definition": "solve word problems related to the kinetic and potential energy;",
+      "slo_code": "6.3.3",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 6.4.1",
+      "definition": "state law of conservation of energy;",
+      "slo_code": "6.4.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 6.4.2",
+      "definition": "describe the processes that convert energy from one form to another with reference to: a. biomass power generation b. car engines, c. geothermal power, d. hydroelectric generation, e. nuclear reactors, f. solar power panels, g. wind turbine,",
+      "slo_code": "6.4.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 6.4.3",
+      "definition": "discuss that perpetual machines do not work;",
+      "slo_code": "6.4.3",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 6.4.4",
+      "definition": "list the environmental issues associated with power generation;",
+      "slo_code": "6.4.4",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 6.4.5",
+      "definition": "differentiate between non-renewable and renewable energy sources with examples of each;",
+      "slo_code": "6.4.5",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 6.4.6",
+      "definition": "describe the advantages and disadvantages of different methods of power generation;",
+      "slo_code": "6.4.6",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 6.5.1",
+      "definition": "define the efficiency of a working system;",
+      "slo_code": "6.5.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 6.5.2",
+      "definition": "calculate the efficiency of an energy conversion system using the formula: Efficiency (%) = energy converted into the required form / total energy input;",
+      "slo_code": "6.5.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 6.5.3",
+      "definition": "explain that a system cannot have an efficiency of 100%;",
+      "slo_code": "6.5.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 6.6.1",
+      "definition": "define power;",
+      "slo_code": "6.6.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 6.6.2",
+      "definition": "solve word problems related to the concept of power;",
+      "slo_code": "6.6.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 6.6.3",
+      "definition": "explore different innovative energy transfer devices used in transportation and communication.",
+      "slo_code": "6.6.3",
+      "cognitive_level": "A"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "21",
+      "stem_text": "If a planet comes closer to the Sun, then the planet will",
+      "options": [
+        "A. orbit faster.",
+        "B. orbit slower.",
+        "C. fall into the Sun.",
+        "D. keep moving with the same speed."
+      ],
+      "correct_option": "A",
+      "explanation": "According to Kepler's Second Law of Planetary Motion (Law of Areas) and conservation of angular momentum, as a planet gets closer to the Sun (perihelion), its orbital speed increases.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "22",
+      "stem_text": "The gravitational force between two objects is directly proportional to the",
+      "options": [
+        "A. sum of their masses.",
+        "B. product of their masses.",
+        "C. difference between their masses.",
+        "D. square of the distance between them."
+      ],
+      "correct_option": "B",
+      "explanation": "According to Newton's Law of Gravitation, the gravitational force $F$ between two point masses $m_1$ and $m_2$ separated by a distance $r$ is given by $F = G \\frac{m_1 m_2}{r^2}$. Thus, the force is directly proportional to the product of their masses.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    },
+    {
+      "question_number": "23",
+      "stem_text": "A car travels a distance of 150 m in the direction of a constant force of 50 N. The work done on the car is",
+      "options": [
+        "A. 3 J.",
+        "B. 100 J.",
+        "C. 200 J.",
+        "D. 7500 J."
+      ],
+      "correct_option": "D",
+      "explanation": "Work done ($W$) is given by the formula $W = F \\times d$. Here, Force $F = 50\\text{ N}$ and distance $d = 150\\text{ m}$. $W = 50\\text{ N} \\times 150\\text{ m} = 7500\\text{ J}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "24",
+      "stem_text": "A car has stopped after screeching to avoid a crash with a van. With reference to the given situation, the kinetic energy of the car will then be converted into",
+      "options": [
+        "A. sound energy only.",
+        "B. heat and sound energy.",
+        "C. heat and potential energy.",
+        "D. potential and sound energy."
+      ],
+      "correct_option": "B",
+      "explanation": "When a car screeches to a stop, friction between the tires and the road generates thermal energy (heat) and the screeching noise produces sound energy.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    }
+  ],
+  "crqs": [],
+  "erqs": [],
+  "numericals": []
+}

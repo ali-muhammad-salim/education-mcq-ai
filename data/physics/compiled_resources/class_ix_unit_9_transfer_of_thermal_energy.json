@@ -1,0 +1,193 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class IX",
+  "subject": "Physics",
+  "chapter": "Unit 9: Transfer of Thermal Energy",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 9.1.1",
+      "definition": "explain thermal conduction in solids;",
+      "slo_code": "9.1.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 9.1.2",
+      "definition": "define the term \u2018thermal conductivity\u2019;",
+      "slo_code": "9.1.2",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 9.1.3",
+      "definition": "describe the factors affecting the transfer of heat through solid conductors;",
+      "slo_code": "9.1.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 9.1.4",
+      "definition": "solve word problems related to the thermal conductivity of solid conductors;",
+      "slo_code": "9.1.4",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 9.1.5",
+      "definition": "describe good and bad conductors of heat with examples;",
+      "slo_code": "9.1.5",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 9.1.6",
+      "definition": "list the uses of good and bad conductors;",
+      "slo_code": "9.1.6",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 9.2.1",
+      "definition": "explain convection in liquids and gases in terms of density changes with reference to the following real-life examples:\na. gliders,\nb. flying of birds,\nc. land breezes and sea breezes;",
+      "slo_code": "9.2.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 9.2.2",
+      "definition": "design a thought experiment to illustrate convection;",
+      "slo_code": "9.2.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 9.2.3",
+      "definition": "describe that convection currents in seawater facilitate the distribution of heat, nutrients, and oxygen in supporting marine ecosystems;",
+      "slo_code": "9.2.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 9.3.1",
+      "definition": "define the process of thermal energy transfer by radiation;",
+      "slo_code": "9.3.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 9.3.2",
+      "definition": "describe the effect of surface colour (black or white) and texture (dull or shiny) on the emission, absorption and reflection of infrared radiation;",
+      "slo_code": "9.3.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 9.3.3",
+      "definition": "describe that the rate of emission of radiation depends on the surface temperature and surface area of an object;",
+      "slo_code": "9.3.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 9.3.4",
+      "definition": "design experiments to distinguish between good and bad emitters of infrared radiation;",
+      "slo_code": "9.3.4",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 9.4.1",
+      "definition": "discuss everyday applications of conduction, convection and radiation including:\na. heating objects such as kitchen pans,\nb. heating of room by convection,\nc. measuring temperature using an infrared thermometer,\nd. using thermal insulation to maintain the temperature of a liquid and to reduce thermal energy transfer in buildings,\ne. the mechanism of a household hot-water system;",
+      "slo_code": "9.4.1",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 9.4.2",
+      "definition": "describe the greenhouse effect based on heat radiation emitted by the sun;",
+      "slo_code": "9.4.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 9.4.3",
+      "definition": "explore the impacts of heat transfer and conservation on people\u2019s bedding and clothing in various climatic regions of South Asia.",
+      "slo_code": "9.4.3",
+      "cognitive_level": "A"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "33",
+      "stem_text": "In a clinical thermometer, mercury does NOT fall back to the bulb because",
+      "options": [
+        "A. it is less in quantity.",
+        "B. it is in a capillary tube.",
+        "C. of the shape of the thermometer\u2019s bulb.",
+        "D. of the constriction in the capillary tube."
+      ],
+      "correct_option": "D",
+      "explanation": "A clinical thermometer has a narrow constriction just above the bulb. When the temperature rises, mercury expands and pushes past the constriction. When removed from the body, the column breaks at the constriction, preventing the mercury from flowing back, allowing accurate reading of the maximum temperature.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    },
+    {
+      "question_number": "33",
+      "stem_text": "The body temperature of a patient is recorded as $101^{\\circ}\\text{F}$. This temperature is equal to",
+      "options": [
+        "A. $38.3^{\\circ}\\text{C}$.",
+        "B. $43.3^{\\circ}\\text{C}$.",
+        "C. $57.0^{\\circ}\\text{C}$.",
+        "D. $69.0^{\\circ}\\text{C}$."
+      ],
+      "correct_option": "A",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "34",
+      "stem_text": "If $4\\text{ kg}$ of water cools from $80^{\\circ}\\text{C}$ to $30^{\\circ}\\text{C}$, it loses energy\n\n(Note: Take the specific heat of water as $4.2\\text{ J/g}^{\\circ}\\text{C}$.)",
+      "options": [
+        "A. $840\\text{ J}$.",
+        "B. $8400\\text{ J}$.",
+        "C. $84000\\text{ J}$.",
+        "D. $840000\\text{ J}$."
+      ],
+      "correct_option": "D",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "34",
+      "stem_text": "The escape of high kinetic energy molecules in the form of vapours from the surface of a liquid without heating is known as",
+      "options": [
+        "A. fusion.",
+        "B. boiling.",
+        "C. evaporation.",
+        "D. condensation."
+      ],
+      "correct_option": "C",
+      "explanation": "Evaporation is the surface phenomenon where molecules with higher kinetic energy escape from the surface of a liquid at any temperature without requiring the liquid to boil.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    },
+    {
+      "question_number": "35",
+      "stem_text": "If an inflated tyre of a car bursts, then the temperature of air that will escape from the tyre",
+      "options": [
+        "A. increases.",
+        "B. decreases.",
+        "C. becomes 100\u00b0C.",
+        "D. remains constant."
+      ],
+      "correct_option": "B",
+      "explanation": "When a tyre bursts, the escaping air undergoes rapid adiabatic expansion. According to thermodynamics, rapid expansion causes work to be done by the gas at the expense of its internal energy, resulting in a drop in temperature.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "35",
+      "stem_text": "The amount of heat required to convert $100\\text{ g}$ of ice at $0^{\\circ}\\text{C}$ to water at $0^{\\circ}\\text{C}$ is\n\n(Note: Take the latent heat of fusion of ice as $334\\text{ J/g}$.)",
+      "options": [
+        "A. $33.4\\text{ J}$.",
+        "B. $334\\text{ J}$.",
+        "C. $3340\\text{ J}$.",
+        "D. $33400\\text{ J}$."
+      ],
+      "correct_option": "D",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    }
+  ],
+  "crqs": [],
+  "erqs": [],
+  "numericals": []
+}

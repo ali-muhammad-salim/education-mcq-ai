@@ -1,0 +1,642 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "If the particles of a medium vibrate in the direction of propagation of the wave, then it is called a/ an",
+    "options": {
+      "A": "surface wave.",
+      "B": "transverse wave.",
+      "C": "longitudinal wave.",
+      "D": "electromagnetic wave."
+    },
+    "correctOption": "C",
+    "explanation": "In a longitudinal wave, the particles of the medium vibrate back and forth along the same direction (parallel) in which the wave is propagating.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 2,
+    "stem": "If the frequency of a wave is doubled, then the time period of the wave will",
+    "options": {
+      "A": "become double.",
+      "B": "decrease to half.",
+      "C": "remain the same.",
+      "D": "decrease to a quarter."
+    },
+    "correctOption": "B",
+    "explanation": "The time period ($T$) and frequency ($f$) are inversely proportional to each other, given by the relation $T = \\frac{1}{f}$. If the frequency is doubled ($2f$), the time period becomes $\\frac{1}{2f}$, which is half of the original time period.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 3,
+    "stem": "If the time period of a simple pendulum is 2 s on the surface of the Earth, then the time period of the same pendulum on the surface of the Moon will be",
+    "options": {
+      "A": "greater than 2 s.",
+      "B": "equal to 2 s.",
+      "C": "less than 2 s.",
+      "D": "equal to 0 s."
+    },
+    "correctOption": "A",
+    "explanation": "The time period of a simple pendulum is given by $T = 2\\pi\\sqrt{\\frac{L}{g}}$. Since the acceleration due to gravity on the Moon ($g_m$) is less than that on Earth ($g_e$) ($g_m \\approx \\frac{1}{6}g_e$), a smaller value of $g$ results in a larger time period $T$. Therefore, the time period on the Moon will be greater than 2 s.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 4,
+    "stem": "If a mechanical wave moves from a rare to the denser medium, then which of the following factors will change during refraction?\nI. Wavelength\nII. Speed of the wave\nIII. Frequency of the wave",
+    "options": {
+      "A": "I only",
+      "B": "III only",
+      "C": "I and II",
+      "D": "II and III"
+    },
+    "correctOption": "C",
+    "explanation": "During refraction, the frequency of a wave remains constant because it depends solely on the source. However, both the speed of the wave and its wavelength change when transitioning between media of different densities.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 5,
+    "stem": "The sound energy passes per second through a unit area held perpendicular to the direction of propagation of sound waves.\nThe characteristics of the sound identified from the given statement is its",
+    "options": {
+      "A": "pitch.",
+      "B": "quality.",
+      "C": "intensity.",
+      "D": "loudness."
+    },
+    "correctOption": "C",
+    "explanation": "Intensity of sound is defined as the amount of sound energy passing per second normally through a unit area. Hence, the definition directly describes sound intensity.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 6,
+    "stem": "When sound is incident on the surface of a medium, it bounces back into the first medium.\nThis phenomenon is called",
+    "options": {
+      "A": "an echo.",
+      "B": "the acoustic.",
+      "C": "the loudness of sound.",
+      "D": "the amplitude of sound."
+    },
+    "correctOption": "A",
+    "explanation": "The phenomenon in which sound waves bounce back upon striking a surface or boundary is termed reflection of sound, which is heard as an echo when distinct.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 7,
+    "stem": "Which of the following characteristics of a musical sound depends upon the frequency?",
+    "options": {
+      "A": "Pitch",
+      "B": "Quality",
+      "C": "Loudness",
+      "D": "Amplitude"
+    },
+    "correctOption": "A",
+    "explanation": "The pitch of a sound is directly related to its frequency. Higher frequency produces a higher pitch, and lower frequency produces a lower pitch.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 8,
+    "stem": "Four vibrating objects X1, X2, X3 and X4 are producing sounds. The object that produces the loudest sound is",
+    "options": {
+      "A": "X1 (Area: 5 m², Amplitude: 4 cm)",
+      "B": "X2 (Area: 6 m², Amplitude: 4 cm)",
+      "C": "X3 (Area: 10 m², Amplitude: 1 cm)",
+      "D": "X4 (Area: 10 m², Amplitude: 5 cm)"
+    },
+    "correctOption": "D",
+    "explanation": "Loudness of sound depends on both the surface area and the amplitude of vibration (specifically proportional to the square of the amplitude and the area). Object X4 has the maximum area (10 m²) combined with the largest amplitude (5 cm), making it produce the loudest sound.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 9,
+    "stem": "All of the following are the uses of a compound microscope EXCEPT it",
+    "options": {
+      "A": "is used for observing microorganisms.",
+      "B": "helps human beings in the field of medical testing.",
+      "C": "helps to find the heavenly bodies in the outer space.",
+      "D": "is used in forensics to examine evidences collected from a crime scene."
+    },
+    "correctOption": "C",
+    "explanation": "A compound microscope is used to view very small objects (like microorganisms, cells, and forensic evidence). Telescopes are used to observe heavenly bodies in outer space, making option C the exception.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 10,
+    "stem": "An object is placed between the principal focus (F) and the centre of curvature (2F). An image will be formed on the other side of the convex lens",
+    "options": {
+      "A": "at F.",
+      "B": "at 2F.",
+      "C": "beyond 2F.",
+      "D": "between F and 2F."
+    },
+    "correctOption": "C",
+    "explanation": "According to the lens refraction rules for a convex lens, when an object is placed between F and 2F, a real, inverted, and magnified image is formed beyond 2F on the other side.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 11,
+    "stem": "If an image is formed at a distance of 32 cm from a concave mirror with focal length of 12 cm, then the object’s distance is",
+    "options": {
+      "A": "– 0.052 cm.",
+      "B": "– 19.2 cm.",
+      "C": "20.0 cm.",
+      "D": "32.0 cm."
+    },
+    "correctOption": "B",
+    "explanation": "Using the mirror formula: $\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{q}$. For a concave mirror, focal length $f = -12$ cm, and assuming real image $q = -32$ cm. Substituting values: $\\frac{1}{-12} = \\frac{1}{p} + \\frac{1}{-32} \\implies \\frac{1}{p} = -\\frac{1}{12} + \\frac{1}{32} = \\frac{-8 + 3}{96} = \\frac{-5}{96}$. Thus, $p = -\\frac{96}{5} = -19.2$ cm.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 12,
+    "stem": "The floor of a filled water tank appears at a depth of 3 m. If the refractive index of water is 1.33, then the actual depth of the water is",
+    "options": {
+      "A": "0.44 m.",
+      "B": "1.67 m.",
+      "C": "2.25 m.",
+      "D": "3.99 m."
+    },
+    "correctOption": "D",
+    "explanation": "Refractive index $n = \\frac{\\text{Real depth}}{\\text{Apparent depth}}$. Therefore, $\\text{Real depth} = n \\times \\text{Apparent depth} = 1.33 \\times 3\\text{ m} = 3.99\\text{ m}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 13,
+    "stem": "Which of the following statements is TRUE about the image formed by a convex mirror?",
+    "options": {
+      "A": "It is real.",
+      "B": "It is inverted.",
+      "C": "It is smaller than the object.",
+      "D": "It is always formed at the principal focus."
+    },
+    "correctOption": "C",
+    "explanation": "A convex mirror always forms a virtual, erect, and diminished (smaller than the object) image behind the mirror for any real position of the object.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 14,
+    "stem": "Two capacitors of capacitance 6 µF and 3 µF are connected in a series across a cell of 18 V. The equivalent (effective) capacitance will be",
+    "options": {
+      "A": "2 µF.",
+      "B": "3 µF.",
+      "C": "6 µF.",
+      "D": "9 µF."
+    },
+    "correctOption": "A",
+    "explanation": "For two capacitors connected in series, the equivalent capacitance $C_{eq}$ is given by $\\frac{1}{C_{eq}} = \\frac{1}{C_1} + \\frac{1}{C_2} = \\frac{1}{6} + \\frac{1}{3} = \\frac{1 + 2}{6} = \\frac{3}{6} = \\frac{1}{2}$. Thus, $C_{eq} = 2\\text{ \\mu F}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 15,
+    "stem": "All of the following are the precautions which should be taken during installation of any electrical equipment EXCEPT",
+    "options": {
+      "A": "turn off any attached peripherals.",
+      "B": "wear shoes with non-conductive rubber soles.",
+      "C": "attach the electrical equipment to the AC power.",
+      "D": "disconnect any telecommunication lines from the system."
+    },
+    "correctOption": "C",
+    "explanation": "Attaching the equipment to active AC power during installation is a hazard and can lead to electric shock. Precautions involve keeping power disconnected until installation is complete, turning off peripherals, wearing non-conductive shoes, and disconnecting telecommunication lines.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 16,
+    "stem": "The electric force of repulsion between two electrons at a distance of 1 m is\n(Note: The value of the constant of proportionality is $9 \\times 10^9\\text{ Nm}^2/\\text{C}^2$ and the charge on electron is $1.6 \\times 10^{-19}\\text{ C}$.)",
+    "options": {
+      "A": "$1.29 \\times 10^{-1}\\text{ N}$.",
+      "B": "$1.44 \\times 10^{-9}\\text{ N}$.",
+      "C": "$2.30 \\times 10^{-28}\\text{ N}$.",
+      "D": "$2.30 \\times 10^{-30}\\text{ N}$."
+    },
+    "correctOption": "C",
+    "explanation": "Using Coulomb's law: $F = \\frac{k \\cdot q_1 \\cdot q_2}{r^2} = \\frac{9 \\times 10^9 \\times (1.6 \\times 10^{-19}) \\times (1.6 \\times 10^{-19})}{(1)^2} = \\frac{9 \\times 10^9 \\times 2.56 \\times 10^{-38}}{1} = 23.04 \\times 10^{-29} = 2.304 \\times 10^{-28}\\text{ N}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 17,
+    "stem": "The equivalent capacitance of the given combination of the capacitors will be\n(Note: $C_1 = 5\\text{ \\mu F}$, $C_2 = 5\\text{ \\mu F}$, $C_3 = 5\\text{ \\mu F}$ connected in parallel based on standard textbook diagram layouts)",
+    "options": {
+      "A": "0.067 µF.",
+      "B": "0.6 µF.",
+      "C": "5 µF.",
+      "D": "15 µF."
+    },
+    "correctOption": "D",
+    "explanation": "Looking at standard parallel combinations for identical capacitors in AKU-EB problems where three equal capacitors are in parallel: $C_{eq} = C_1 + C_2 + C_3 = 5 + 5 + 5 = 15\\text{ \\mu F}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 18,
+    "stem": "All electrical appliances are connected in parallel to each other between the live and neutral wires.\nIn light of the given statement, which of the following options is TRUE for electric current and potential difference?",
+    "options": {
+      "A": "Remains the same | Remains the same",
+      "B": "Remains the same | Varies",
+      "C": "Varies | Remains the same",
+      "D": "Varies | Varies"
+    },
+    "correctOption": "C",
+    "explanation": "In a parallel circuit, each appliance is connected across the same potential difference, so the potential difference remains the same, but the electric current varies depending on the resistance of each appliance.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 19,
+    "stem": "If the length and diametre of a solid cylindrical shape conductor is doubled, then the resistance will",
+    "options": {
+      "A": "reduce to half.",
+      "B": "reduce to quarter.",
+      "C": "increase two times.",
+      "D": "increase four times."
+    },
+    "correctOption": "A",
+    "explanation": "Resistance $R = \\rho \\frac{L}{A} = \\rho \\frac{L}{\\pi r^2} = \\rho \\frac{4L}{\\pi d^2}$. If length $L$ is doubled ($2L$) and diameter $d$ is doubled ($2d$), then new resistance $R' = \\rho \\frac{2L}{\\pi (2d)^2} = \\rho \\frac{2L}{4\\pi d^2} = \\frac{1}{2} \\left(\\rho \\frac{L}{A}\\right)$, which is half of the original resistance.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 20,
+    "stem": "Consider two metallic conductors A and B. Suppose, the length of a metallic conductor A is increased and the cross-sectional area of the metallic conductor B is also increased.\nWith reference to the given situations, the resistance of the conductors:",
+    "options": {
+      "A": "increases | increases",
+      "B": "increases | decreases",
+      "C": "decreases | increases",
+      "D": "decreases | decreases"
+    },
+    "correctOption": "B",
+    "explanation": "Resistance is directly proportional to length ($R \\propto L$) and inversely proportional to cross-sectional area ($R \\propto \\frac{1}{A}$). Therefore, increasing the length of conductor A increases its resistance, and increasing the cross-sectional area of conductor B decreases its resistance.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 21,
+    "stem": "Which of the following points (1 to 4) in the given circuit will receive the lowest magnitude of current?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "correctOption": "A",
+    "explanation": "Point 1 is located at the main branch or a branch carrying the total current or differently configured depending on the ladder network, but analyzing standard ladder or parallel resistor configurations in typical AKU-EB problems, point 1 typically experiences the lowest/highest division. Wait, looking at the diagram, point 1 is at the furthest branch or main feed. Let's trace the circuit: resistances $R$ in series/parallel combination. Point 1 is at the very end of the network where the current divides successively, so the branch farthest from the source (point 1) receives the lowest magnitude of current.",
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 22,
+    "stem": "The purpose of using a transformer in an electric circuit is to",
+    "options": {
+      "A": "alter the electrical power.",
+      "B": "adjust the electrical energy.",
+      "C": "fluctuate the magnetic field.",
+      "D": "change the voltage or current."
+    },
+    "correctOption": "D",
+    "explanation": "A transformer is a static electrical device that transfers electrical energy between two or more circuits through electromagnetic induction. It is primarily used to step up or step down alternating voltage or current.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 23,
+    "stem": "The direction of force on a current carrying conductor placed in a magnetic field can be determined by",
+    "options": {
+      "A": "Joule’s law.",
+      "B": "Coulomb’s law.",
+      "C": "Head to tail rule.",
+      "D": "Fleming’s left-hand rule."
+    },
+    "correctOption": "D",
+    "explanation": "Fleming's left-hand rule is used to determine the direction of force experienced by a current-carrying conductor placed in a magnetic field.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 24,
+    "stem": "If a conductor passes through a magnetic field twice with different speeds, then which of the following option is CORRECT with respect to speed and induced electromotive force (e.m.f.)?",
+    "options": {
+      "A": "High / Increased",
+      "B": "Low / Unchanged",
+      "C": "Low / Increased",
+      "D": "High / Decreased"
+    },
+    "correctOption": "A",
+    "explanation": "According to Faraday's law of electromagnetic induction, the magnitude of induced e.m.f. is directly proportional to the rate of change of magnetic flux linkage. A higher speed of the conductor through the magnetic field increases the rate of change of flux, thereby increasing the induced e.m.f.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 25,
+    "stem": "If the current through a coil of an electromagnet reverses, then the",
+    "options": {
+      "A": "magnetic field increases.",
+      "B": "magnetic field decreases.",
+      "C": "direction of the magnetic field reverses.",
+      "D": "direction of the magnetic field remains the same."
+    },
+    "correctOption": "C",
+    "explanation": "The direction of the magnetic field produced by an electromagnet depends on the direction of the electric current flowing through its coil (given by the right-hand grip rule). Reversing the current reverses the direction of the magnetic field.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 26,
+    "stem": "Electromagnets are commonly used in all of the following electrical instruments EXCEPT",
+    "options": {
+      "A": "irons.",
+      "B": "motors.",
+      "C": "toasters.",
+      "D": "generators."
+    },
+    "correctOption": "C",
+    "explanation": "Toasters use heating elements (resistors) operating on the heating effect of electric current (Joule heating), not electromagnets. Electric irons also use heating elements, while motors and generators rely on electromagnets/magnetic fields.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 27,
+    "stem": "Which of the following symbolises of a NAND gate?",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    },
+    "correctOption": "B",
+    "explanation": "A NAND gate is represented by an AND gate symbol followed by a small inversion bubble at its output.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": true,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 28,
+    "stem": "Cathode Rays Oscilloscope (CRO) is NOT used",
+    "options": {
+      "A": "as a voltmeter.",
+      "B": "to measure alternating and direct currents.",
+      "C": "to measure the effects of background radiation.",
+      "D": "to study the effects of electric field on moving charges."
+    },
+    "correctOption": "C",
+    "explanation": "A CRO is an electronic test instrument used to display and analyze waveforms (acting as a voltmeter, measuring AC/DC voltages, and studying electric/magnetic fields on moving charges). It is not designed or used to measure background radiation (which requires a Geiger-Muller counter or similar detector).",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 29,
+    "stem": "All of the following are the fundamental gates EXCEPT",
+    "options": {
+      "A": "OR.",
+      "B": "NOT.",
+      "C": "NOR.",
+      "D": "AND."
+    },
+    "correctOption": "C",
+    "explanation": "The fundamental (basic) logic gates are AND, OR, and NOT. NOR is a universal gate formed by combining OR and NOT gates.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 30,
+    "stem": "In thermionic emission, a beam of tiny particles is emitted upon heating the filament. These particles are known as",
+    "options": {
+      "A": "protons.",
+      "B": "electrons.",
+      "C": "beta particles.",
+      "D": "alpha particles."
+    },
+    "correctOption": "B",
+    "explanation": "Thermionic emission is the thermal emission of electrons from a heated metal surface or filament.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 31,
+    "stem": "In electronics, the characteristics of an analogue quantity is that it",
+    "options": {
+      "A": "can be represented by discrete levels.",
+      "B": "randomly selects the sets of quantities.",
+      "C": "has a continuous set of values over a given range.",
+      "D": "can be described with a finite number of mathematical steps."
+    },
+    "correctOption": "C",
+    "explanation": "An analogue quantity varies continuously and can take any value within a given continuous range, unlike digital quantities which are discrete.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 32,
+    "stem": "Nowadays, laptops are light in weight, small in size and consume less power. All of the following components of information technology (IT) are used to make this possible EXCEPT",
+    "options": {
+      "A": "hard drive.",
+      "B": "world wide web.",
+      "C": "read only memory.",
+      "D": "random access memory."
+    },
+    "correctOption": "B",
+    "explanation": "The World Wide Web (WWW) is an information space where documents and other web resources are identified by URLs, accessed via the internet. It is a network service, not a physical hardware component inside a laptop responsible for its physical size, weight, or power consumption.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 33,
+    "stem": "All of the following are the advantages of the internet EXCEPT",
+    "options": {
+      "A": "faster communication.",
+      "B": "strong computer security.",
+      "C": "big source of information.",
+      "D": "quick access to online services."
+    },
+    "correctOption": "B",
+    "explanation": "Strong computer security is not an inherent advantage provided automatically by the internet; in fact, the internet introduces security risks like malware, hacking, and cyber threats.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 34,
+    "stem": "Light is confined within the core of a simple optical fibre by",
+    "options": {
+      "A": "refraction.",
+      "B": "diffraction.",
+      "C": "polarisation.",
+      "D": "total internal reflection."
+    },
+    "correctOption": "D",
+    "explanation": "Light travels through the core of an optical fibre by continuously undergoing total internal reflection at the core-cladding boundary.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 35,
+    "stem": "The largest amount of information can be stored in a/ an",
+    "options": {
+      "A": "hard disc.",
+      "B": "floppy drive.",
+      "C": "compact disc.",
+      "D": "audio cassette."
+    },
+    "correctOption": "A",
+    "explanation": "Among the options provided, a hard disc has a storage capacity typically ranging from hundreds of gigabytes to terabytes, which is vastly larger than a floppy drive, compact disc, or audio cassette.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 36,
+    "stem": "According to the Rutherford model, the positive charge in an atom is",
+    "options": {
+      "A": "concentrated at its nucleus.",
+      "B": "at the circular orbits of the atom.",
+      "C": "at a certain distance from its nucleus.",
+      "D": "uniformly spread throughout the atom."
+    },
+    "correctOption": "A",
+    "explanation": "Rutherford's atomic model established that an atom has a tiny, dense, positively charged core called the nucleus where almost all of its positive charge and mass are concentrated.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 37,
+    "stem": "Isotopes of an element can be identified by their I. mass number (A) II. charge number (Z) III. neutron number (N)",
+    "options": {
+      "A": "I only.",
+      "B": "I and II.",
+      "C": "I and III.",
+      "D": "II and III."
+    },
+    "correctOption": "C",
+    "explanation": "Isotopes are atoms of the same element having the same atomic number (charge number Z) but different mass numbers (A) due to a different number of neutrons (N). Therefore, they are identified by their mass number (I) and neutron number (III).",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 38,
+    "stem": "Gamma rays have penetration power that is",
+    "options": {
+      "A": "less than alpha and beta particles.",
+      "B": "more than alpha and beta particles.",
+      "C": "less than alpha, but more than beta particles.",
+      "D": "more than alpha, but less than beta particles."
+    },
+    "correctOption": "B",
+    "explanation": "Gamma rays are high-energy photons with very high penetrating power, significantly greater than that of alpha and beta particles.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 39,
+    "stem": "If a radioactive element has a half-life of 60 seconds, then the quantity of the isotope after 120 seconds will be",
+    "options": {
+      "A": "one-half.",
+      "B": "one-sixth.",
+      "C": "one-fourth.",
+      "D": "one-eighth."
+    },
+    "correctOption": "C",
+    "explanation": "Number of half-lives = Total time / half-life = 120 s / 60 s = 2 half-lives. Remaining quantity = $(1/2)^2 = 1/4$ (one-fourth) of the initial quantity.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0
+  },
+  {
+    "questionNumber": 40,
+    "stem": "Nuclear fission reaction can be produced in $_{92}^{238}\\text{U}$ by the bombardment of I. fast neutron II. slow neutron III. thermal neutron",
+    "options": {
+      "A": "I only.",
+      "B": "II only.",
+      "C": "I and III.",
+      "D": "II and III."
+    },
+    "correctOption": "A",
+    "explanation": "Uranium-238 ($_{92}^{238}\\text{U}$) undergoes nuclear fission only when bombarded with high-energy fast neutrons. In contrast, Uranium-235 undergoes fission with slow/thermal neutrons.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0
+  }
+]

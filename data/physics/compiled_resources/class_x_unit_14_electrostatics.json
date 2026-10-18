@@ -1,0 +1,171 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class X",
+  "subject": "Physics",
+  "chapter": "Unit 14: Electrostatics",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 14.1.1",
+      "definition": "define charge and its types;",
+      "slo_code": "14.1.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 14.1.2",
+      "definition": "describe electric charge as an integral multiple of elementary charge (electron);",
+      "slo_code": "14.1.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 14.1.3",
+      "definition": "explain that charging of solids by friction involves only a transfer of negative charge (electrons);",
+      "slo_code": "14.1.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 14.1.4",
+      "definition": "describe production and detection of electric charge;",
+      "slo_code": "14.1.4",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 14.1.5",
+      "definition": "explain discharging of an insulator by:\na. putting it above a flame,\nb. exposing it;",
+      "slo_code": "14.1.5",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 14.2.1",
+      "definition": "state that unlike charges attract and like charges repel;",
+      "slo_code": "14.2.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 14.2.2",
+      "definition": "explain Coulomb\u2019s law;",
+      "slo_code": "14.2.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 14.2.3",
+      "definition": "solve word problems related to the electrostatic charges by using Coulomb\u2019s law;",
+      "slo_code": "14.2.3",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 14.3.1",
+      "definition": "describe the process of electrostatic induction;",
+      "slo_code": "14.3.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 14.3.2",
+      "definition": "explain charging of a conductor by electrostatic induction;",
+      "slo_code": "14.3.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 14.4.1",
+      "definition": "describe the application of electrostatics in electrostatic precipitator and photocopier;",
+      "slo_code": "14.4.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 14.4.2",
+      "definition": "explain the process of lightning in atmosphere during thunderstorms;",
+      "slo_code": "14.4.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 14.4.3",
+      "definition": "identify different kinds of electrical lightning includes:\na. ball lightning,\nb. elves,\nc. ghosts,\nd. jets,\ne. pixies,\nf. sprites,\ng. trolls;",
+      "slo_code": "14.4.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 14.5.1",
+      "definition": "define electric field and electric field intensity;",
+      "slo_code": "14.5.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 14.5.2",
+      "definition": "describe that the direction of an electric field line at a point is the direction of the force exerted on a positive charge at that point;",
+      "slo_code": "14.5.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 14.5.3",
+      "definition": "draw electric field lines for:\na. an isolated positive charge,\nb. an isolated negative point charge,\nc. two-point charges having opposite charge,\nd. two-point charges having identical charge;",
+      "slo_code": "14.5.3",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 14.5.4",
+      "definition": "explain phenomenon of electrical breakdown with its practical application in:\na. corona discharge ozone generator\nb. gas discharge lamp,\nc. lightning rod,\nd. plasma display;",
+      "slo_code": "14.5.4",
+      "cognitive_level": "U"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "13",
+      "stem_text": "Which of the following statements is TRUE about the image formed by a convex mirror?",
+      "options": [
+        "A. It is real.",
+        "B. It is inverted.",
+        "C. It is smaller than the object.",
+        "D. It is always formed at the principal focus."
+      ],
+      "correct_option": "C",
+      "explanation": "A convex mirror always forms a virtual, erect, and diminished (smaller than the object) image behind the mirror for any real position of the object.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "14",
+      "stem_text": "Two capacitors of capacitance 6 \u00b5F and 3 \u00b5F are connected in a series across a cell of 18 V. The equivalent (effective) capacitance will be",
+      "options": [
+        "A. 2 \u00b5F.",
+        "B. 3 \u00b5F.",
+        "C. 6 \u00b5F.",
+        "D. 9 \u00b5F."
+      ],
+      "correct_option": "A",
+      "explanation": "For two capacitors connected in series, the equivalent capacitance $C_{eq}$ is given by $\\frac{1}{C_{eq}} = \\frac{1}{C_1} + \\frac{1}{C_2} = \\frac{1}{6} + \\frac{1}{3} = \\frac{1 + 2}{6} = \\frac{3}{6} = \\frac{1}{2}$. Thus, $C_{eq} = 2\\text{ \\mu F}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "15",
+      "stem_text": "All of the following are the precautions which should be taken during installation of any electrical equipment EXCEPT",
+      "options": [
+        "A. turn off any attached peripherals.",
+        "B. wear shoes with non-conductive rubber soles.",
+        "C. attach the electrical equipment to the AC power.",
+        "D. disconnect any telecommunication lines from the system."
+      ],
+      "correct_option": "C",
+      "explanation": "Attaching the equipment to active AC power during installation is a hazard and can lead to electric shock. Precautions involve keeping power disconnected until installation is complete, turning off peripherals, wearing non-conductive shoes, and disconnecting telecommunication lines.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "16",
+      "stem_text": "The electric force of repulsion between two electrons at a distance of 1 m is\n(Note: The value of the constant of proportionality is $9 \\times 10^9\\text{ Nm}^2/\\text{C}^2$ and the charge on electron is $1.6 \\times 10^{-19}\\text{ C}$.)",
+      "options": [
+        "A. $1.29 \\times 10^{-1}\\text{ N}$.",
+        "B. $1.44 \\times 10^{-9}\\text{ N}$.",
+        "C. $2.30 \\times 10^{-28}\\text{ N}$.",
+        "D. $2.30 \\times 10^{-30}\\text{ N}$."
+      ],
+      "correct_option": "C",
+      "explanation": "Using Coulomb's law: $F = \\frac{k \\cdot q_1 \\cdot q_2}{r^2} = \\frac{9 \\times 10^9 \\times (1.6 \\times 10^{-19}) \\times (1.6 \\times 10^{-19})}{(1)^2} = \\frac{9 \\times 10^9 \\times 2.56 \\times 10^{-38}}{1} = 23.04 \\times 10^{-29} = 2.304 \\times 10^{-28}\\text{ N}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    }
+  ],
+  "crqs": [],
+  "erqs": [],
+  "numericals": []
+}

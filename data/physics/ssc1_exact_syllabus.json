@@ -1,0 +1,1232 @@
+[
+  {
+    "unitNumber": 1,
+    "name": "Measurement",
+    "subtopics": [
+      {
+        "subtopicNum": "1.1",
+        "name": "Physical Quantities",
+        "slos": [
+          {
+            "code": "1.1.1",
+            "description": "differentiate between physical and non-physical quantities;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "1.1.2",
+            "description": "exemplify that physics is based on physical quantities only;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "1.1.3",
+            "description": "identify various physical quantities as base and derive quantities;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.2",
+        "name": "The International System (SI) of Units",
+        "slos": [
+          {
+            "code": "1.2.1",
+            "description": "list the seven base quantities of International System (SI) along with their symbols and units;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "1.2.2",
+            "description": "differentiate between base and derived physical quantities and units;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.3",
+        "name": "Scientific Notation",
+        "slos": [
+          {
+            "code": "1.3.1",
+            "description": "convert prefixes and their symbols to indicate multiples and sub-multiples for base and derived units;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "1.3.2",
+            "description": "convert numerical values of measurement in scientific notation;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.4",
+        "name": "Scalars and Vectors",
+        "slos": [
+          {
+            "code": "1.4.1",
+            "description": "differentiate between scalar and vector quantities;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "1.4.2",
+            "description": "list out various physical quantities as scalar or vector;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "1.4.3",
+            "description": "describe the ‘head to tail’ rule of vector addition;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "1.4.4",
+            "description": "determine, using Pythagoras theorem and graphs, the resultant of two vectors at right angle;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.5",
+        "name": "Measuring Instruments",
+        "slos": [
+          {
+            "code": "1.5.1",
+            "description": "identify measuring instruments;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "1.5.2",
+            "description": "determine the least count (LC) of the measuring instruments;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "1.5.3",
+            "description": "describe the working of measuring instruments;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "1.5.4",
+            "description": "determine an average value of the measurement by measuring multiples values of the quantity;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.6",
+        "name": "Error and Accuracy",
+        "slos": [
+          {
+            "code": "1.6.1",
+            "description": "identify sources of errors (systematic and random) in the measurement;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "1.6.2",
+            "description": "differentiate between precision and accuracy;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.7",
+        "name": "Significant Figures",
+        "slos": [
+          {
+            "code": "1.7.1",
+            "description": "describe significant figures;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "1.7.2",
+            "description": "apply the rules for rounding a number to the appropriate number of significant figures.",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 2,
+    "name": "Kinematics",
+    "subtopics": [
+      {
+        "subtopicNum": "2.1",
+        "name": "Rest and Motion",
+        "slos": [
+          {
+            "code": "2.1.1",
+            "description": "define rest and motion;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "2.2",
+        "name": "Types of Motion",
+        "slos": [
+          {
+            "code": "2.2.1",
+            "description": "differentiate among the different types of motion, i.e., translatory (linear, random, circular), rotatory and vibratory motion;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "2.3",
+        "name": "Terms Associated with Motion",
+        "slos": [
+          {
+            "code": "2.3.1",
+            "description": "define the following terms: a. distance, b. displacement, c. speed, d. velocity, e. acceleration;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "2.3.2",
+            "description": "calculate average speed, average velocity and acceleration;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "2.3.3",
+            "description": "differentiate between: a. distance and displacement, b. speed and velocity, c. average speed and instantaneous speed, d. uniform and non-uniform velocity, e. uniform and non-uniform acceleration;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "2.3.4",
+            "description": "describe the universal speed limit of any object in the universe that is approximately 3 × 108 m/s;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "2.4",
+        "name": "Graphical Analysis of Motion",
+        "slos": [
+          {
+            "code": "2.4.1",
+            "description": "interpret distance-time graph and speed-time graph;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "2.4.2",
+            "description": "determine the slope/ gradient of distance-time and speed-time graph;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "2.4.3",
+            "description": "infer the following states of a body based on the given graph: a. at rest, b. moving with constant speed, c. moving with positive acceleration, d. moving with negative acceleration;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "2.4.4",
+            "description": "calculate the area under the speed-time graph of uniformly accelerated objects to find out the distance covered by the objects;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "2.5",
+        "name": "Motion due to Gravity",
+        "slos": [
+          {
+            "code": "2.5.1",
+            "description": "define acceleration due to gravity;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "2.5.2",
+            "description": "solve word problems related to free-falling bodies using the relation g = Δv/ Δt.",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 3,
+    "name": "Dynamics",
+    "subtopics": [
+      {
+        "subtopicNum": "3.1",
+        "name": "Mass and Weight",
+        "slos": [
+          {
+            "code": "3.1.1",
+            "description": "differentiate between mass and weight;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "3.1.2",
+            "description": "explain that the mass of an object resists changes from its state of rest or motion (inertia);",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "3.1.3",
+            "description": "define gravitational field strength;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "3.1.4",
+            "description": "solve word problems using the relation w = mg;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.2",
+        "name": "Force",
+        "slos": [
+          {
+            "code": "3.2.1",
+            "description": "describe the concept of force with its SI unit;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "3.2.2",
+            "description": "define contact and non-contact forces;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "3.2.3",
+            "description": "identify the following forces as contact and non-contact forces:\na. air resistance,\nb. drag force (push, pull),\nc. electrostatic force,\nd. force of friction,\ne. gravitational force,\nf. magnetic force,\ng. tension (elastic force),\nh. thrust (driving force);",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "3.2.4",
+            "description": "state four fundamental forces of nature in terms of their relative strength;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "3.2.5",
+            "description": "mention the role of Pakistani scientists in proving the weak forces and the electromagnetic force are unified;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "3.2.6",
+            "description": "represent the forces acting on a body using a free-body diagram;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.3",
+        "name": "Newton’s Laws of Motion",
+        "slos": [
+          {
+            "code": "3.3.1",
+            "description": "explain Newton’s laws of motion;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "3.3.2",
+            "description": "state the limitations of Newton’s laws of motion;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "3.3.3",
+            "description": "identify the effect of force on velocity of a body acting in the:\na. same direction,\nb. opposite direction,\nc. perpendicular direction;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "3.3.4",
+            "description": "determine the resultant of two or more forces acting along the same straight line;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "3.3.5",
+            "description": "identify those objects falling in the presence of a resistive force may reach a terminal (constant) velocity;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.4",
+        "name": "Momentum",
+        "slos": [
+          {
+            "code": "3.4.1",
+            "description": "define momentum with its units;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "3.4.2",
+            "description": "explain the relationship between force and momentum;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "3.4.3",
+            "description": "describe impulse with examples;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "3.4.4",
+            "description": "solve word problems related to momentum and impulse;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "3.4.5",
+            "description": "state the law of conservation of momentum;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "3.4.6",
+            "description": "solve word problems using the law of conservation of momentum in one dimension;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "3.4.7",
+            "description": "apply scientific and engineering ideas to design a device that minimises the force on an object during a collision (e.g., helmet or parachute);",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.5",
+        "name": "Friction",
+        "slos": [
+          {
+            "code": "3.5.1",
+            "description": "define friction;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "3.5.2",
+            "description": "differentiate between rolling friction and sliding friction;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "3.5.3",
+            "description": "list various methods to reduce friction;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.6",
+        "name": "Uniform Circular Motion",
+        "slos": [
+          {
+            "code": "3.6.1",
+            "description": "define centripetal force;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "3.6.2",
+            "description": "exemplify the sources of centripetal force during circular motion in terms of:\na. tension,\nb. frictional force,\nc. gravitational force.",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 4,
+    "name": "Turning Effect of Forces",
+    "subtopics": [
+      {
+        "subtopicNum": "4.1",
+        "name": "Forces on Bodies",
+        "slos": [
+          {
+            "code": "4.1.1",
+            "description": "define like and unlike parallel forces;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "4.1.2",
+            "description": "explain the turning effect of force by relating it to everyday life;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "4.1.3",
+            "description": "solve word problems related to the moment of force or torque = force × perpendicular distance from the pivot to the line of action of force;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "4.2",
+        "name": "Principle of Moments",
+        "slos": [
+          {
+            "code": "4.2.1",
+            "description": "state the principle of moments;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "4.2.2",
+            "description": "solve word problems related to the principle of moments;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "4.3",
+        "name": "Centre of Gravity",
+        "slos": [
+          {
+            "code": "4.3.1",
+            "description": "define centre of gravity and centre of mass of a body;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "4.3.2",
+            "description": "explain effects of position of the centre of gravity on the stability of simple objects;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "4.4",
+        "name": "Equilibrium",
+        "slos": [
+          {
+            "code": "4.4.1",
+            "description": "define equilibrium;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "4.4.2",
+            "description": "classify the different types of equilibrium by using examples from everyday life;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "4.4.3",
+            "description": "state the conditions of equilibrium;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "4.4.4",
+            "description": "explain different conditions of equilibrium with examples;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "4.4.5",
+            "description": "describe the states of equilibrium and classify them with common examples.",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 5,
+    "name": "Deformation of Solids",
+    "subtopics": [
+      {
+        "subtopicNum": "5.1",
+        "name": "Hook’s law",
+        "slos": [
+          {
+            "code": "5.1.1",
+            "description": "illustrate that force may produce a change in the size and shape of an object;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "5.1.2",
+            "description": "state Hooke’s law;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "5.1.3",
+            "description": "define spring constant;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "5.1.4",
+            "description": "solve word problems using the relation k = F/x;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "5.1.5",
+            "description": "describe applications of Hook’s law in measuring instruments such as spring scale, galvanometer, and balance wheel of mechanical clock;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "5.1.6",
+            "description": "interpret load extension graphs for elastic solids.",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 6,
+    "name": "Work, Energy and Power",
+    "subtopics": [
+      {
+        "subtopicNum": "6.1",
+        "name": "Work",
+        "slos": [
+          {
+            "code": "6.1.1",
+            "description": "define work and state its SI unit;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "6.1.2",
+            "description": "solve word problems related to workdone;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.2",
+        "name": "Forms of Energy",
+        "slos": [
+          {
+            "code": "6.2.1",
+            "description": "define energy with its SI unit;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "6.2.2",
+            "description": "describe forms of energy stored in various objects such as gravitational potential, chemical, elastic (strain), nuclear, electrostatic and internal (thermal) energies;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.3",
+        "name": "Kinetic Energy and Potential Energy",
+        "slos": [
+          {
+            "code": "6.3.1",
+            "description": "compare kinetic energy (K.E) and potential energy (P.E);",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "6.3.2",
+            "description": "derive the formulae of kinetic energy K.E = ½ mv2 and potential energy P.E = mgΔh;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "6.3.3",
+            "description": "solve word problems related to the kinetic and potential energy;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.4",
+        "name": "Conversion of Energy",
+        "slos": [
+          {
+            "code": "6.4.1",
+            "description": "state law of conservation of energy;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "6.4.2",
+            "description": "describe the processes that convert energy from one form to another with reference to: a. biomass power generation b. car engines, c. geothermal power, d. hydroelectric generation, e. nuclear reactors, f. solar power panels, g. wind turbine,",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "6.4.3",
+            "description": "discuss that perpetual machines do not work;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "6.4.4",
+            "description": "list the environmental issues associated with power generation;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "6.4.5",
+            "description": "differentiate between non-renewable and renewable energy sources with examples of each;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "6.4.6",
+            "description": "describe the advantages and disadvantages of different methods of power generation;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.5",
+        "name": "Efficiency",
+        "slos": [
+          {
+            "code": "6.5.1",
+            "description": "define the efficiency of a working system;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "6.5.2",
+            "description": "calculate the efficiency of an energy conversion system using the formula: Efficiency (%) = energy converted into the required form / total energy input;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "6.5.3",
+            "description": "explain that a system cannot have an efficiency of 100%;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.6",
+        "name": "Power",
+        "slos": [
+          {
+            "code": "6.6.1",
+            "description": "define power;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "6.6.2",
+            "description": "solve word problems related to the concept of power;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "6.6.3",
+            "description": "explore different innovative energy transfer devices used in transportation and communication.",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 7,
+    "name": "Pressure",
+    "subtopics": [
+      {
+        "subtopicNum": "7.1",
+        "name": "Density",
+        "slos": [
+          {
+            "code": "7.1.1",
+            "description": "define the term 'density';",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "7.1.2",
+            "description": "compare the densities of three states of matter (solids, liquids and gases);",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "7.1.3",
+            "description": "solve word problems using the relation of density;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "7.1.4",
+            "description": "compare the densities of different liquids to prepare a well-balanced shake/ smoothie for a restaurant;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "7.2",
+        "name": "Pressure",
+        "slos": [
+          {
+            "code": "7.2.1",
+            "description": "define the term 'pressure';",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "7.2.2",
+            "description": "explain that pressure varies with force and area with the help of real-life examples;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "7.3",
+        "name": "Atmospheric Pressure",
+        "slos": [
+          {
+            "code": "7.3.1",
+            "description": "explain atmospheric pressure;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "7.3.2",
+            "description": "describe the use of the height of a liquid column to measure the atmospheric pressure (barometer);",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "7.3.3",
+            "description": "describe that atmospheric pressure decreases with the increase in height above the earth's surface;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "7.3.4",
+            "description": "explain that changes in atmospheric pressure in a region may indicate a change in the weather;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "7.4",
+        "name": "Pressure in Liquids",
+        "slos": [
+          {
+            "code": "7.4.1",
+            "description": "state Pascal's law;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "7.4.2",
+            "description": "discuss the use of Pascal's law (including hydraulic press and hydraulic brakes on vehicles);",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "7.4.3",
+            "description": "explain pressure beneath a liquid surface increase with depth and depends on the density of the liquid, i.e., P = ρgh;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "7.4.4",
+            "description": "solve word problems related to the relationship between pressure, depth and liquid density;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "7.4.5",
+            "description": "discuss the working and applications of liquid manometer.",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 8,
+    "name": "Thermal Physics",
+    "subtopics": [
+      {
+        "subtopicNum": "8.1",
+        "name": "Kinetic Molecular Theory",
+        "slos": [
+          {
+            "code": "8.1.1",
+            "description": "state the basic assumptions of the kinetic theory of matter;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "8.1.2",
+            "description": "compare the structure of solids, liquids and gases based on the kinetic theory of matter;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "8.1.3",
+            "description": "describe plasma as the fourth state of matter;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "8.1.4",
+            "description": "state the relationship between the motion of particles and temperature;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "8.1.5",
+            "description": "discuss that an increase in the temperature of an object increases its internal energy;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.2",
+        "name": "Thermal Properties of Matter",
+        "slos": [
+          {
+            "code": "8.2.1",
+            "description": "describe the thermal expansion of solids in terms of: a. linear expansion, b. volumetric expansion;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "8.2.10",
+            "description": "describe factors that influence the rate of surface evaporation;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "8.2.2",
+            "description": "explain the thermal expansion of liquids as the: a. real expansion, b. apparent expansion;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "8.2.3",
+            "description": "define the terms 'heat capacity' and 'specific heat capacity';",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "8.2.4",
+            "description": "describe latent heat of fusion and latent heat of vaporisation;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "8.2.5",
+            "description": "describe melting, solidification, boiling and condensation in terms of energy transfer without the change in temperature;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "8.2.6",
+            "description": "determine heat of fusion and heat of vaporisation of ice and water respectively by sketching a temperature-time graph;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "8.2.7",
+            "description": "solve word problems involving the concept of specific heat capacity, latent heat of fusion and vaporisation;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "8.2.8",
+            "description": "describe the process of evaporation and how it is different from boiling;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "8.2.9",
+            "description": "explain that evaporation causes cooling;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.3",
+        "name": "Temperature Scale and Thermometer",
+        "slos": [
+          {
+            "code": "8.3.1",
+            "description": "describe the Celsius, Fahrenheit, and Kelvin temperature scales and their relationships using fixed reference points;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "8.3.2",
+            "description": "convert temperature from one scale to another (Fahrenheit, Celsius and Kelvin scales);",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "8.3.3",
+            "description": "explain that a physical property that varies with temperature can be used as a criteria to measure temperature;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "8.3.4",
+            "description": "illustrate the sensitivity, range and linearity of thermometers using diagram;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "8.3.5",
+            "description": "compare liquid in glass thermometer and thermo-couple on the bases of structure, sensitivity, range and linearity.",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 9,
+    "name": "Transfer of Thermal Energy",
+    "subtopics": [
+      {
+        "subtopicNum": "9.1",
+        "name": "Conduction",
+        "slos": [
+          {
+            "code": "9.1.1",
+            "description": "explain thermal conduction in solids;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "9.1.2",
+            "description": "define the term ‘thermal conductivity’;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "9.1.3",
+            "description": "describe the factors affecting the transfer of heat through solid conductors;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "9.1.4",
+            "description": "solve word problems related to the thermal conductivity of solid conductors;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "9.1.5",
+            "description": "describe good and bad conductors of heat with examples;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "9.1.6",
+            "description": "list the uses of good and bad conductors;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "9.2",
+        "name": "Convection",
+        "slos": [
+          {
+            "code": "9.2.1",
+            "description": "explain convection in liquids and gases in terms of density changes with reference to the following real-life examples:\na. gliders,\nb. flying of birds,\nc. land breezes and sea breezes;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "9.2.2",
+            "description": "design a thought experiment to illustrate convection;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "9.2.3",
+            "description": "describe that convection currents in seawater facilitate the distribution of heat, nutrients, and oxygen in supporting marine ecosystems;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "9.3",
+        "name": "Radiation",
+        "slos": [
+          {
+            "code": "9.3.1",
+            "description": "define the process of thermal energy transfer by radiation;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "9.3.2",
+            "description": "describe the effect of surface colour (black or white) and texture (dull or shiny) on the emission, absorption and reflection of infrared radiation;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "9.3.3",
+            "description": "describe that the rate of emission of radiation depends on the surface temperature and surface area of an object;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "9.3.4",
+            "description": "design experiments to distinguish between good and bad emitters of infrared radiation;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "9.4",
+        "name": "Effects of Heat Transfer",
+        "slos": [
+          {
+            "code": "9.4.1",
+            "description": "discuss everyday applications of conduction, convection and radiation including:\na. heating objects such as kitchen pans,\nb. heating of room by convection,\nc. measuring temperature using an infrared thermometer,\nd. using thermal insulation to maintain the temperature of a liquid and to reduce thermal energy transfer in buildings,\ne. the mechanism of a household hot-water system;",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          },
+          {
+            "code": "9.4.2",
+            "description": "describe the greenhouse effect based on heat radiation emitted by the sun;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          },
+          {
+            "code": "9.4.3",
+            "description": "explore the impacts of heat transfer and conservation on people’s bedding and clothing in various climatic regions of South Asia.",
+            "cognitiveLevel": "Application",
+            "isPractical": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 10,
+    "name": "Nature of Science",
+    "subtopics": [
+      {
+        "subtopicNum": "10.1",
+        "name": "Physics and its Interaction",
+        "slos": [
+          {
+            "code": "10.1.1",
+            "description": "describe Physics as the study of matter, energy, space, time and their interactions;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.2",
+        "name": "Sub-Fields of Physics",
+        "slos": [
+          {
+            "code": "10.2.1",
+            "description": "mention Physics as a subset of physical and natural science;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          },
+          {
+            "code": "10.2.2",
+            "description": "relate different branches of physics with real-life examples;",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.3",
+        "name": "Scientific Approach/ Method",
+        "slos": [
+          {
+            "code": "10.3.1",
+            "description": "define different scientific methods (hypothesis, theory and law) for carrying out investigations;",
+            "cognitiveLevel": "Remembering",
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.4",
+        "name": "Science, Technology and Engineering",
+        "slos": [
+          {
+            "code": "10.4.1",
+            "description": "describe the importance of Physics in science, technology and engineering.",
+            "cognitiveLevel": "Understanding",
+            "isPractical": false
+          }
+        ]
+      }
+    ]
+  }
+]

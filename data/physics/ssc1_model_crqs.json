@@ -1,0 +1,226 @@
+[
+  {
+    "questionNumber": "Q.7(b)(ii)",
+    "marks": 2.0,
+    "stem": "Explain the reason, why upthrust acts in the upward direction.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Mentioning that pressure in a fluid increases with depth"
+      },
+      {
+        "marks": 1,
+        "description": "Explaining that upward pressure at the bottom is greater than downward pressure at the top"
+      }
+    ],
+    "modelAnswer": "Pressure in a fluid increases with depth. Therefore, the upward force exerted by the fluid on the bottom of an immersed object is greater than the downward force exerted on the top, resulting in a net upward force called upthrust."
+  },
+  {
+    "questionNumber": "Q.7(b)(i)",
+    "marks": 4.0,
+    "stem": "Describe the types of forces that act on a body in a fluid, if it is I. partially immersed. II. completely immersed.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Description of forces acting on a partially immersed body (Weight downwards, Upthrust upwards)"
+      },
+      {
+        "marks": 2,
+        "description": "Description of forces acting on a completely immersed body (Weight downwards, Upthrust/Buoyant force upwards, and potentially tension/normal force)"
+      }
+    ],
+    "modelAnswer": "I. Partially immersed: Weight of the body acting downward and Upthrust acting upward. II. Completely immersed: Weight acting downward, Upthrust acting upward, and Net force determining sinking or floating."
+  },
+  {
+    "questionNumber": "Q.1",
+    "marks": 2.0,
+    "stem": "Write the name of the physical quantity which is measured by the given instruments.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correct identification of the first physical quantity"
+      },
+      {
+        "marks": 1,
+        "description": "Correct identification of the second physical quantity"
+      }
+    ],
+    "modelAnswer": "Depends on the provided instrument diagrams in the original paper."
+  },
+  {
+    "questionNumber": "Q.5(b)",
+    "marks": 2.0,
+    "stem": "Walking barefoot on a carpet feels warmer than walking on tiles. Give a scientific reason to support this statement.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Identifying carpets as poor conductors (good insulators) and tiles as good conductors"
+      },
+      {
+        "marks": 1,
+        "description": "Explaining heat transfer from feet to the surface"
+      }
+    ],
+    "modelAnswer": "Carpets are poor conductors of heat, so they do not conduct heat away from our feet. Tiles are better conductors of heat, conducting heat away from our feet rapidly, making them feel colder."
+  },
+  {
+    "questionNumber": "Q.2",
+    "marks": 3.0,
+    "stem": "There are three states of equilibrium. Write any ONE example of each state of equilibrium from daily life.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correct example for stable equilibrium"
+      },
+      {
+        "marks": 1,
+        "description": "Correct example for unstable equilibrium"
+      },
+      {
+        "marks": 1,
+        "description": "Correct example for neutral equilibrium"
+      }
+    ],
+    "modelAnswer": "Stable: A cone resting on its base. Unstable: A cone balancing on its apex. Neutral: A ball rolling on a flat surface."
+  },
+  {
+    "questionNumber": "Q.6(b)(ii)",
+    "marks": 3.0,
+    "stem": "Find the velocity of the car if momentum of both the vehicles is same.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Equating the momentum of car to the momentum of the bike"
+      },
+      {
+        "marks": 1,
+        "description": "Rearranging the formula to solve for car's velocity"
+      },
+      {
+        "marks": 1,
+        "description": "Correct calculation and unit for car's velocity"
+      }
+    ],
+    "modelAnswer": "Momentum of car = Momentum of bike = 12639.25 kg m/s. Mass of car = 1754 kg. Velocity of car = P / m = 12639.25 / 1754 = 7.21 m/s."
+  },
+  {
+    "questionNumber": "Q.5(a)",
+    "marks": 1.0,
+    "stem": "An animal fur coat is made in such a way that the inner surface of the material is the animal’s skin and the outer surface is fur/ hair. State the reason, why the coat is warmer if it is worn inside out (i.e. the inner surface becomes the outer)?",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Explaining trapping of air or better insulation properties"
+      }
+    ],
+    "modelAnswer": "When worn inside out, the fur traps a larger layer of dead air close to the body, which acts as a better insulator and reduces heat loss."
+  },
+  {
+    "questionNumber": "Q.7(a)",
+    "marks": 6.0,
+    "stem": "Describe renewable and non-renewable sources of energy and give any FOUR examples of each source.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Definition of renewable sources of energy"
+      },
+      {
+        "marks": 2,
+        "description": "Four examples of renewable sources of energy"
+      },
+      {
+        "marks": 1,
+        "description": "Definition of non-renewable sources of energy"
+      },
+      {
+        "marks": 2,
+        "description": "Four examples of non-renewable sources of energy"
+      }
+    ],
+    "modelAnswer": "Renewable energy sources are naturally replenished in a short time (e.g., Solar, Wind, Hydroelectric, Geothermal). Non-renewable sources are finite and cannot be replenished easily once consumed (e.g., Coal, Petroleum, Natural Gas, Nuclear/Uranium)."
+  },
+  {
+    "questionNumber": "Q.3",
+    "marks": 2.0,
+    "stem": "The masses of the Earth and the Moon are 5.98 \\times 10^{24} kg and 7.35 \\times 10^{22} kg respectively. The distance between the Earth and the Moon is 3.84 \\times 10^8 m. The value of gravitational constant is 6.67 \\times 10^{-11} Nm^2/kg^2. With reference to the given information, calculate the gravitational force exerted by the Earth on the Moon.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correct substitution of values into Newton's law of gravitation formula"
+      },
+      {
+        "marks": 1,
+        "description": "Correct calculation with proper unit"
+      }
+    ],
+    "modelAnswer": "F = G \\times (m_1 \\times m_2) / r^2 = (6.67 \\times 10^{-11} \\times 5.98 \\times 10^{24} \\times 7.35 \\times 10^{22}) / (3.84 \\times 10^8)^2 \\approx 1.99 \\times 10^{20} N"
+  },
+  {
+    "questionNumber": "Q.6(b)(i)",
+    "marks": 3.0,
+    "stem": "Find the momentum of the sports bike at the speed of 140 km/h.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Converting speed from km/h to m/s"
+      },
+      {
+        "marks": 1,
+        "description": "Stating the formula for momentum (P = mv)"
+      },
+      {
+        "marks": 1,
+        "description": "Correct calculation and unit for momentum"
+      }
+    ],
+    "modelAnswer": "Mass of bike (m) = 325 kg, Velocity (v) = 140 km/h = 140 \\times 1000 / 3600 = 38.89 m/s. Momentum P = m \\times v = 325 \\times 38.89 = 12639.25 kg m/s."
+  },
+  {
+    "questionNumber": "Q.6(a)",
+    "marks": 6.0,
+    "stem": "A sports car starts from rest. It covers a distance of 900 m to attain a speed of 80 m/s. Determine the acceleration of the car and the time required to reach this speed.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Identifying given data (v_i = 0, v_f = 80 m/s, S = 900 m)"
+      },
+      {
+        "marks": 2,
+        "description": "Using third equation of motion to find acceleration"
+      },
+      {
+        "marks": 1,
+        "description": "Correct value of acceleration with units"
+      },
+      {
+        "marks": 1,
+        "description": "Using first or second equation of motion to find time"
+      },
+      {
+        "marks": 1,
+        "description": "Correct value of time with units"
+      }
+    ],
+    "modelAnswer": "Given: v_i = 0 m/s, v_f = 80 m/s, S = 900 m. Using 2aS = v_f^2 - v_i^2 => 2a(900) = (80)^2 - 0 => 1800a = 6400 => a = 3.56 m/s^2. Using v_f = v_i + at => 80 = 0 + (3.56)t => t = 22.48 s."
+  },
+  {
+    "questionNumber": "Q.4",
+    "marks": 3.0,
+    "stem": "The temperature of a metal rim is increased before fixing it to a wooden cartwheel. Give a scientific reason to support this statement.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Mentioning thermal expansion of metals on heating"
+      },
+      {
+        "marks": 1,
+        "description": "Explaining that expansion allows the rim to easily fit over the wooden wheel"
+      },
+      {
+        "marks": 1,
+        "description": "Stating that cooling causes contraction, gripping the wheel tightly"
+      }
+    ],
+    "modelAnswer": "When the metal rim is heated, it expands due to thermal expansion, making it slightly larger so it can easily slip over the wooden wheel. Upon cooling, it contracts and forms a tight fit around the wheel."
+  }
+]

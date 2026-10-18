@@ -1,0 +1,147 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class X",
+  "subject": "Physics",
+  "chapter": "Unit 18: Electromagnetic Induction",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 18.1.1",
+      "definition": "describe that a changing magnetic field can induce electromotive force (e.m.f.) in a wire or coil;",
+      "slo_code": "18.1.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 18.1.2",
+      "definition": "describe that the magnitude of an induced e.m.f. is affected by the:\na. rate of change of the magnetic field or the rate of cutting of magnetic field lines,\nb. number of turns in a coil;",
+      "slo_code": "18.1.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 18.2.1",
+      "definition": "state Faraday\u2019s law of electromagnetic induction;",
+      "slo_code": "18.2.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 18.2.2",
+      "definition": "describe Lenz\u2019s law, setup an experiment to show that an e.m.f. induces with in a coil opposes the change that produces it;",
+      "slo_code": "18.2.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 18.3.1",
+      "definition": "describe the simple construction and working of an A.C. generator;",
+      "slo_code": "18.3.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 18.3.2",
+      "definition": "interpret graphs of e.m.f. against time for simple A.C. generators;",
+      "slo_code": "18.3.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 18.4.1",
+      "definition": "define self-induction;",
+      "slo_code": "18.4.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 18.4.2",
+      "definition": "define mutual induction;",
+      "slo_code": "18.4.2",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 18.4.3",
+      "definition": "describe inductance;",
+      "slo_code": "18.4.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 18.5.1",
+      "definition": "describe the construction and the principle of operation of a simple iron-cored transformer;",
+      "slo_code": "18.5.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 18.5.2",
+      "definition": "state the two types of transformers and their uses;",
+      "slo_code": "18.5.2",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 18.5.3",
+      "definition": "discuss the application of transformer in high voltage transmission;",
+      "slo_code": "18.5.3",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 18.5.4",
+      "definition": "solve word problem using the transformer equation Vs/Vp = Ip/Is = Ns/Np;",
+      "slo_code": "18.5.4",
+      "cognitive_level": "A"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "29",
+      "stem_text": "All of the following are the fundamental gates EXCEPT",
+      "options": [
+        "A. OR.",
+        "B. NOT.",
+        "C. NOR.",
+        "D. AND."
+      ],
+      "correct_option": "C",
+      "explanation": "The fundamental (basic) logic gates are AND, OR, and NOT. NOR is a universal gate formed by combining OR and NOT gates.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    },
+    {
+      "question_number": "30",
+      "stem_text": "In thermionic emission, a beam of tiny particles is emitted upon heating the filament. These particles are known as",
+      "options": [
+        "A. protons.",
+        "B. electrons.",
+        "C. beta particles.",
+        "D. alpha particles."
+      ],
+      "correct_option": "B",
+      "explanation": "Thermionic emission is the thermal emission of electrons from a heated metal surface or filament.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    },
+    {
+      "question_number": "31",
+      "stem_text": "In electronics, the characteristics of an analogue quantity is that it",
+      "options": [
+        "A. can be represented by discrete levels.",
+        "B. randomly selects the sets of quantities.",
+        "C. has a continuous set of values over a given range.",
+        "D. can be described with a finite number of mathematical steps."
+      ],
+      "correct_option": "C",
+      "explanation": "An analogue quantity varies continuously and can take any value within a given continuous range, unlike digital quantities which are discrete.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "32",
+      "stem_text": "Nowadays, laptops are light in weight, small in size and consume less power. All of the following components of information technology (IT) are used to make this possible EXCEPT",
+      "options": [
+        "A. hard drive.",
+        "B. world wide web.",
+        "C. read only memory.",
+        "D. random access memory."
+      ],
+      "correct_option": "B",
+      "explanation": "The World Wide Web (WWW) is an information space where documents and other web resources are identified by URLs, accessed via the internet. It is a network service, not a physical hardware component inside a laptop responsible for its physical size, weight, or power consumption.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    }
+  ],
+  "crqs": [],
+  "erqs": [],
+  "numericals": []
+}

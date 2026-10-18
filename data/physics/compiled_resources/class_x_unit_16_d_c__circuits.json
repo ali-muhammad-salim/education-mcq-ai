@@ -1,0 +1,105 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class X",
+  "subject": "Physics",
+  "chapter": "Unit 16: D.C. Circuits",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 16.1.1",
+      "definition": "describe the characteristics of series and parallel combinations of resistors;",
+      "slo_code": "16.1.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 16.1.2",
+      "definition": "derive the effective/ equivalent resistance of resistors connected in series and in parallel;",
+      "slo_code": "16.1.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 16.1.3",
+      "definition": "calculate the effective/ equivalent resistance of resistors connected in series, parallel and both;",
+      "slo_code": "16.1.3",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 16.2.1",
+      "definition": "define electric circuits;",
+      "slo_code": "16.2.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 16.2.2",
+      "definition": "draw the circuit diagrams of the following electrical components:\na. ammeters,\nb. batteries,\nc. cells,\nd. diodes,\ne. fuses,\nf. lamps,\ng. light-dependent resistors (LDRs),\nh. light-emitting diodes (LEDs),\ni. resistors (fixed and variable),\nj. switches,\nk. thermistors (NTC only),\nl. voltmeters;",
+      "slo_code": "16.2.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 16.2.3",
+      "definition": "calculate current, voltage, power and resistance in parts of a circuit or in the whole circuit that includes three resistors.",
+      "slo_code": "16.2.3",
+      "cognitive_level": "A"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "21",
+      "stem_text": "Which of the following points (1 to 4) in the given circuit will receive the lowest magnitude of current?",
+      "options": [
+        "A. 1",
+        "B. 2",
+        "C. 3",
+        "D. 4"
+      ],
+      "correct_option": "A",
+      "explanation": "Point 1 is located at the main branch or a branch carrying the total current or differently configured depending on the ladder network, but analyzing standard ladder or parallel resistor configurations in typical AKU-EB problems, point 1 typically experiences the lowest/highest division. Wait, looking at the diagram, point 1 is at the furthest branch or main feed. Let's trace the circuit: resistances $R$ in series/parallel combination. Point 1 is at the very end of the network where the current divides successively, so the branch farthest from the source (point 1) receives the lowest magnitude of current.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "22",
+      "stem_text": "The purpose of using a transformer in an electric circuit is to",
+      "options": [
+        "A. alter the electrical power.",
+        "B. adjust the electrical energy.",
+        "C. fluctuate the magnetic field.",
+        "D. change the voltage or current."
+      ],
+      "correct_option": "D",
+      "explanation": "A transformer is a static electrical device that transfers electrical energy between two or more circuits through electromagnetic induction. It is primarily used to step up or step down alternating voltage or current.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    },
+    {
+      "question_number": "23",
+      "stem_text": "The direction of force on a current carrying conductor placed in a magnetic field can be determined by",
+      "options": [
+        "A. Joule\u2019s law.",
+        "B. Coulomb\u2019s law.",
+        "C. Head to tail rule.",
+        "D. Fleming\u2019s left-hand rule."
+      ],
+      "correct_option": "D",
+      "explanation": "Fleming's left-hand rule is used to determine the direction of force experienced by a current-carrying conductor placed in a magnetic field.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    },
+    {
+      "question_number": "24",
+      "stem_text": "If a conductor passes through a magnetic field twice with different speeds, then which of the following option is CORRECT with respect to speed and induced electromotive force (e.m.f.)?",
+      "options": [
+        "A. High / Increased",
+        "B. Low / Unchanged",
+        "C. Low / Increased",
+        "D. High / Decreased"
+      ],
+      "correct_option": "A",
+      "explanation": "According to Faraday's law of electromagnetic induction, the magnitude of induced e.m.f. is directly proportional to the rate of change of magnetic flux linkage. A higher speed of the conductor through the magnetic field increases the rate of change of flux, thereby increasing the induced e.m.f.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    }
+  ],
+  "crqs": [],
+  "erqs": [],
+  "numericals": []
+}

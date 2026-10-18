@@ -1,0 +1,171 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class X",
+  "subject": "Physics",
+  "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 19.1.1",
+      "definition": "describe the production, transmission and reception of electromagnetic (EM) waves;",
+      "slo_code": "19.1.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 19.1.2",
+      "definition": "describe the main regions of the electromagnetic spectrum in order of frequency and order of wavelength with their applications;",
+      "slo_code": "19.1.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 19.1.3",
+      "definition": "describe the damages caused by electromagnetic radiation;",
+      "slo_code": "19.1.3",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 19.2.1",
+      "definition": "explain the process of thermionic emission emitted from a filament;",
+      "slo_code": "19.2.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 19.2.2",
+      "definition": "describe the simple construction and use of an electron gun as a source of electron beam;",
+      "slo_code": "19.2.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 19.3.1",
+      "definition": "describe the effect of electric and magnetic field on an electron beam;",
+      "slo_code": "19.3.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 19.3.2",
+      "definition": "describe the basic principle and uses of CRO and make a list of its uses;",
+      "slo_code": "19.3.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 19.3.3",
+      "definition": "interpret waveforms on oscilloscopes;",
+      "slo_code": "19.3.3",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 19.4.1",
+      "definition": "explain the importance of electronics;",
+      "slo_code": "19.4.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 19.4.2",
+      "definition": "compare analogue and digital electronics;",
+      "slo_code": "19.4.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 19.5.1",
+      "definition": "state Boolean algebra;",
+      "slo_code": "19.5.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 19.5.2",
+      "definition": "convert decimal numbers into binary numbers;",
+      "slo_code": "19.5.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 19.5.3",
+      "definition": "state the basic operations of digital electronics;",
+      "slo_code": "19.5.3",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 19.5.4",
+      "definition": "identify and make the symbols for the logic gates; (NOT, OR, AND, NOR and NAND)",
+      "slo_code": "19.5.4",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 19.5.5",
+      "definition": "state the action of logic gates in truth table form with two inputs;",
+      "slo_code": "19.5.5",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 19.5.6",
+      "definition": "use universal gates (NAND and NOR) to create NOT, OR and AND;",
+      "slo_code": "19.5.6",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 19.5.7",
+      "definition": "describe the uses of logic gates.",
+      "slo_code": "19.5.7",
+      "cognitive_level": "U"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "33",
+      "stem_text": "All of the following are the advantages of the internet EXCEPT",
+      "options": [
+        "A. faster communication.",
+        "B. strong computer security.",
+        "C. big source of information.",
+        "D. quick access to online services."
+      ],
+      "correct_option": "B",
+      "explanation": "Strong computer security is not an inherent advantage provided automatically by the internet; in fact, the internet introduces security risks like malware, hacking, and cyber threats.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "34",
+      "stem_text": "Light is confined within the core of a simple optical fibre by",
+      "options": [
+        "A. refraction.",
+        "B. diffraction.",
+        "C. polarisation.",
+        "D. total internal reflection."
+      ],
+      "correct_option": "D",
+      "explanation": "Light travels through the core of an optical fibre by continuously undergoing total internal reflection at the core-cladding boundary.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    },
+    {
+      "question_number": "35",
+      "stem_text": "The largest amount of information can be stored in a/ an",
+      "options": [
+        "A. hard disc.",
+        "B. floppy drive.",
+        "C. compact disc.",
+        "D. audio cassette."
+      ],
+      "correct_option": "A",
+      "explanation": "Among the options provided, a hard disc has a storage capacity typically ranging from hundreds of gigabytes to terabytes, which is vastly larger than a floppy drive, compact disc, or audio cassette.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    },
+    {
+      "question_number": "36",
+      "stem_text": "According to the Rutherford model, the positive charge in an atom is",
+      "options": [
+        "A. concentrated at its nucleus.",
+        "B. at the circular orbits of the atom.",
+        "C. at a certain distance from its nucleus.",
+        "D. uniformly spread throughout the atom."
+      ],
+      "correct_option": "A",
+      "explanation": "Rutherford's atomic model established that an atom has a tiny, dense, positively charged core called the nucleus where almost all of its positive charge and mass are concentrated.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    }
+  ],
+  "crqs": [],
+  "erqs": [],
+  "numericals": []
+}

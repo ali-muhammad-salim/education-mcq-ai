@@ -1,0 +1,171 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class X",
+  "subject": "Physics",
+  "chapter": "Unit 13: Geometrical Optics",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 13.4.1",
+      "definition": "define total internal reflection;",
+      "slo_code": "13.4.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 13.4.2",
+      "definition": "state the conditions necessary for total internal reflection;",
+      "slo_code": "13.4.2",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 13.4.3",
+      "definition": "describe the relation between critical angle and refractive index;",
+      "slo_code": "13.4.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 13.4.4",
+      "definition": "solve word problems related to the critical angle and refractive index;",
+      "slo_code": "13.4.4",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 13.4.5",
+      "definition": "describe the use of total internal reflection in:\na. optical fibre,\nb. periscope;",
+      "slo_code": "13.4.5",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 13.5.1",
+      "definition": "illustrate the action of thin converging and thin diverging lenses on a parallel beam of light;",
+      "slo_code": "13.5.1",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 13.5.2",
+      "definition": "draw images by placing objects at different positions in front of convex and concave lens;",
+      "slo_code": "13.5.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 13.5.3",
+      "definition": "differentiate between real and virtual images;",
+      "slo_code": "13.5.3",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 13.5.4",
+      "definition": "solve word problems related to the image location by lenses using lens formula;",
+      "slo_code": "13.5.4",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 13.6.1",
+      "definition": "define power of a lens and state its unit;",
+      "slo_code": "13.6.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 13.6.2",
+      "definition": "define magnifying power of lens;",
+      "slo_code": "13.6.2",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 13.7.1",
+      "definition": "define least distance of distinct vision;",
+      "slo_code": "13.7.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 13.7.2",
+      "definition": "describe the use of a single lens (magnifying glass) with its ray diagram;",
+      "slo_code": "13.7.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 13.8.1",
+      "definition": "define short-sightedness and long-sightedness;",
+      "slo_code": "13.8.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 13.8.2",
+      "definition": "draw ray diagrams to show the formation of images in the eye of an individual with reference to:\na. normal vision,\nb. short-sightedness,\nc. long-sightedness;",
+      "slo_code": "13.8.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 13.8.3",
+      "definition": "describe the correction of short-sightedness and long-sightedness using concave and convex lenses;",
+      "slo_code": "13.8.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 13.9.1",
+      "definition": "define the following:\na. acoustic lensing,\nb. gravitational lensing.",
+      "slo_code": "13.9.1",
+      "cognitive_level": "R"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "9",
+      "stem_text": "All of the following are the uses of a compound microscope EXCEPT it",
+      "options": [
+        "A. is used for observing microorganisms.",
+        "B. helps human beings in the field of medical testing.",
+        "C. helps to find the heavenly bodies in the outer space.",
+        "D. is used in forensics to examine evidences collected from a crime scene."
+      ],
+      "correct_option": "C",
+      "explanation": "A compound microscope is used to view very small objects (like microorganisms, cells, and forensic evidence). Telescopes are used to observe heavenly bodies in outer space, making option C the exception.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "10",
+      "stem_text": "An object is placed between the principal focus (F) and the centre of curvature (2F). An image will be formed on the other side of the convex lens",
+      "options": [
+        "A. at F.",
+        "B. at 2F.",
+        "C. beyond 2F.",
+        "D. between F and 2F."
+      ],
+      "correct_option": "C",
+      "explanation": "According to the lens refraction rules for a convex lens, when an object is placed between F and 2F, a real, inverted, and magnified image is formed beyond 2F on the other side.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "11",
+      "stem_text": "If an image is formed at a distance of 32 cm from a concave mirror with focal length of 12 cm, then the object\u2019s distance is",
+      "options": [
+        "A. \u2013 0.052 cm.",
+        "B. \u2013 19.2 cm.",
+        "C. 20.0 cm.",
+        "D. 32.0 cm."
+      ],
+      "correct_option": "B",
+      "explanation": "Using the mirror formula: $\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{q}$. For a concave mirror, focal length $f = -12$ cm, and assuming real image $q = -32$ cm. Substituting values: $\\frac{1}{-12} = \\frac{1}{p} + \\frac{1}{-32} \\implies \\frac{1}{p} = -\\frac{1}{12} + \\frac{1}{32} = \\frac{-8 + 3}{96} = \\frac{-5}{96}$. Thus, $p = -\\frac{96}{5} = -19.2$ cm.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "12",
+      "stem_text": "The floor of a filled water tank appears at a depth of 3 m. If the refractive index of water is 1.33, then the actual depth of the water is",
+      "options": [
+        "A. 0.44 m.",
+        "B. 1.67 m.",
+        "C. 2.25 m.",
+        "D. 3.99 m."
+      ],
+      "correct_option": "D",
+      "explanation": "Refractive index $n = \\frac{\\text{Real depth}}{\\text{Apparent depth}}$. Therefore, $\\text{Real depth} = n \\times \\text{Apparent depth} = 1.33 \\times 3\\text{ m} = 3.99\\text{ m}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    }
+  ],
+  "crqs": [],
+  "erqs": [],
+  "numericals": []
+}
