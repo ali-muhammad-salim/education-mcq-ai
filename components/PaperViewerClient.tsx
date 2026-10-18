@@ -264,7 +264,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
             }}
           >
             <Sparkles size={16} />
-            ✨ Generated Digital Paper
+            ✨ Text Form (Digital Paper)
           </button>
 
           <button
@@ -286,7 +286,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
             }}
           >
             <FileText size={16} />
-            📄 Original Board PDF
+            📄 Original PDF (Board Document)
           </button>
         </div>
       </div>
@@ -347,7 +347,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
       {/* ========================================================================= */}
       {displayMode === 'generated' && (
         <>
-          {/* Control Bar with "Show correct answers" Study Toggle & "Take A Quiz" */}
+          {/* Control Bar with "Show correct answer only" Study Toggle & "Take A Quiz" */}
           <div style={{
             display: 'flex',
             alignItems: 'center',
@@ -361,7 +361,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
             marginBottom: '2rem',
             boxShadow: '0 2px 10px rgba(11, 94, 74, 0.04)'
           }}>
-            {/* The Main Study Toggle: Show correct answers & Take A Quiz */}
+            {/* The Main Study Toggle: Show correct answer only & Take A Quiz */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <button
                 type="button"
@@ -383,7 +383,29 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                 }}
               >
                 <span style={{ fontSize: '1.15rem' }}>{showCorrectAnswers ? '✅' : '⚪'}</span>
-                <span>{showCorrectAnswers ? 'Hide correct answers' : 'Show correct answers'}</span>
+                <span>{showCorrectAnswers ? 'Hide correct answers' : 'Show correct answer only'}</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setInteractiveMode(!interactiveMode)}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.6rem',
+                  padding: '9px 20px',
+                  borderRadius: '30px',
+                  fontSize: '0.9rem',
+                  fontWeight: 800,
+                  cursor: 'pointer',
+                  border: interactiveMode ? '2px solid #2563eb' : '2px solid #cbd5e1',
+                  background: interactiveMode ? '#eff6ff' : '#f8fafc',
+                  color: interactiveMode ? '#1d4ed8' : '#475569',
+                  boxShadow: interactiveMode ? '0 2px 10px rgba(37, 99, 235, 0.15)' : 'none',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <span>{interactiveMode ? '📝 Practice Mode (Active)' : '✏️ Practice & Select Options'}</span>
               </button>
 
               {!isPaper2 && (
@@ -497,7 +519,19 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
             <div style={{ padding: '2.5rem' }}>
               {questions.map((q, idx) => {
                 const meta = parseSourceRegion(q.sourceRegion);
-                const choices = meta.choices || {};
+                const rawChoices = meta.choices || meta.options || (q as any).options || (q as any).choices || {};
+                const choices: Record<string, string> = {};
+                if (Array.isArray(rawChoices)) {
+                  rawChoices.forEach((opt: any, i: number) => {
+                    const k = (opt.id || opt.key || opt.label || ['A', 'B', 'C', 'D'][i] || '').toUpperCase();
+                    const t = typeof opt === 'string' ? opt : (opt.text || opt.value || opt.content || '');
+                    if (k) choices[k] = t;
+                  });
+                } else if (typeof rawChoices === 'object' && rawChoices !== null) {
+                  Object.entries(rawChoices).forEach(([k, v]) => {
+                    choices[k.toUpperCase()] = typeof v === 'string' ? v : (v as any)?.text || String(v);
+                  });
+                }
                 const qNum = q.questionNumber || (idx + 1).toString();
                 const isSolutionRevealed = revealedSolutions[qNum];
                 const marks = q.marks || (meta.rubric ? meta.rubric.reduce((acc: number, r: any) => acc + (r.marks || 1), 0) : 3);

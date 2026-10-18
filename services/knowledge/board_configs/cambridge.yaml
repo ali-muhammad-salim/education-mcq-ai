@@ -1,37 +1,110 @@
-id: Cambridge
-short_code: Cambridge
-name: Cambridge Assessment International Education (CAIE)
-country: United Kingdom
-description: Cambridge IGCSE and O/A Level Examinations
-status: ACTIVE
+# Cambridge Assessment International Education (CAIE)
+# Included to demonstrate multi-board flexibility — terminology differs significantly.
+
+id: "caie"
+name: "Cambridge Assessment International Education"
+short_code: "Cambridge"
+country: "United Kingdom"
+description: >
+  Cambridge Assessment International Education (formerly Cambridge International
+  Examinations) provides the Cambridge O Level, AS Level, A Level and
+  International GCSE (IGCSE) qualifications. Many private schools in Pakistan
+  follow Cambridge curriculum.
+status: "ACTIVE"
+website: "https://www.cambridgeinternational.org"
+headquarters: "Cambridge, UK"
+established_year: 1858
+
+terminology:
+  # Cambridge uses different terminology than Pakistani boards
+  chapter: "topic"          # Cambridge syllabuses use "topic" not "chapter"
+  concept: "concept"
+  examination: "examination"
+  class: "year group"       # Cambridge says "Year 10/11" not "Class 10"
+  board: "awarding body"
+  paper: "component"
+  marks: "marks"
+  # The word "matriculation" is not used in Cambridge
+  matriculation: "O Level / IGCSE"
+  intermediate: "A Level / AS Level"
 
 class_levels:
   - "O-Level"
+  - "AS-Level"
   - "A-Level"
   - "IGCSE"
 
 subjects_by_class:
   "O-Level":
-    - Physics
-    - Chemistry
-    - Biology
-    - Mathematics
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "Additional Mathematics"
+    - "Computer Science"
+    - "English Language"
+    - "English Literature"
+    - "Islamiyat"
+    - "Pakistan Studies"
+  "IGCSE":
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "Computer Science"
+    - "English as a Second Language"
+  "AS-Level":
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "Further Mathematics"
+    - "Computer Science"
   "A-Level":
-    - Physics
-    - Chemistry
-    - Biology
-    - Mathematics
-
-terminology:
-  chapter: topic
-  topic: subtopic
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "Further Mathematics"
+    - "Computer Science"
 
 exam_style:
   mcq_paper: true
   subjective_paper: true
   practical_component: true
   negative_marking: false
+  marks_per_mcq: 1.0
+  # MCQ count varies by subject and component
+  exam_duration_minutes: 180
   allowed_question_types:
     - MCQ_SINGLE
-    - STRUCTURED_QUESTION
-    - PRACTICAL_QUESTION
+    - MCQ_MULTIPLE
+    - SHORT_ANSWER
+    - LONG_ANSWER
+    - STRUCTURED
+    - DATA_RESPONSE
+    - ESSAY
+    - NUMERICAL
+    - DIAGRAM_BASED
+    - GRAPH_BASED
+    - CASE_BASED
+    - PASSAGE_BASED
+  notes: >
+    Cambridge uses "components" not papers. Each subject has 2–3 components.
+    Component 1 is usually MCQ, Component 2/3 are structured/essay.
+    Practical components are assessed separately.
+
+textbook_associations:
+  "Physics":
+    - "Cambridge IGCSE Physics (Hodder)"
+    - "Cambridge O Level Physics (Longman)"
+    - "Cambridge International AS and A Level Physics (Cambridge University Press)"
+  "Chemistry":
+    - "Cambridge IGCSE Chemistry (Hodder)"
+    - "Cambridge International AS and A Level Chemistry (Cambridge University Press)"
+  "Biology":
+    - "Cambridge IGCSE Biology (Hodder)"
+    - "Cambridge International AS and A Level Biology (Cambridge University Press)"
+  "Mathematics":
+    - "Cambridge IGCSE Mathematics (Cambridge University Press)"
+    - "Cambridge International AS and A Level Mathematics (Cambridge University Press)"

@@ -1,9 +1,24 @@
-id: BISE-Lahore
-short_code: BISE-Lahore
-name: Board of Intermediate and Secondary Education, Lahore
-country: Pakistan
-description: BISE Lahore Punjab Examination Board
-status: ACTIVE
+# BISE Lahore — Board of Intermediate and Secondary Education, Lahore
+
+id: "bise_lahore"
+name: "Board of Intermediate and Secondary Education Lahore"
+short_code: "BISE-Lahore"
+country: "Pakistan"
+description: >
+  BISE Lahore is one of the oldest and largest educational boards in Punjab,
+  responsible for Matric and Intermediate examinations in the Lahore Division.
+status: "ACTIVE"
+website: "https://biselahore.com"
+headquarters: "Lahore"
+established_year: 1954
+
+terminology:
+  chapter: "chapter"
+  topic: "topic"
+  concept: "concept"
+  examination: "examination"
+  # Some BISE Punjab boards use "exercise" for end-of-chapter problems
+  end_of_chapter: "exercise"
 
 class_levels:
   - "9"
@@ -13,28 +28,71 @@ class_levels:
 
 subjects_by_class:
   "9":
-    - Physics
-    - Chemistry
-    - Biology
-    - Mathematics
-    - Computer Science
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "Computer Science"
+    - "English"
+    - "Urdu"
+    - "Islamiat"
+    - "Pakistan Studies"
   "10":
-    - Physics
-    - Chemistry
-    - Biology
-    - Mathematics
-    - Computer Science
-
-terminology:
-  chapter: chapter
-  topic: topic
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "Computer Science"
+    - "English"
+    - "Urdu"
+    - "Islamiat"
+    - "Pakistan Studies"
+  "11":
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "English"
+    - "Commerce"
+  "12":
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "English"
+    - "Commerce"
 
 exam_style:
   mcq_paper: true
   subjective_paper: true
   practical_component: true
   negative_marking: false
+  marks_per_mcq: 1.0
+  total_mcq_count: 15
+  exam_duration_minutes: 195
   allowed_question_types:
     - MCQ_SINGLE
-    - SHORT_QUESTION
-    - LONG_QUESTION
+    - TRUE_FALSE
+    - SHORT_ANSWER
+    - LONG_ANSWER
+    - NUMERICAL
+    - DIAGRAM_BASED
+    - GRAPH_BASED
+    - EQUATION_BASED
+  notes: >
+    Similar structure to FBISE. Punjab boards follow the Punjab Curriculum
+    and Textbook Board (PCTB) prescribed textbooks and syllabi.
+
+textbook_associations:
+  "Physics":
+    - "Physics Class 9 (PCTB)"
+    - "Physics Class 10 (PCTB)"
+  "Chemistry":
+    - "Chemistry Class 9 (PCTB)"
+    - "Chemistry Class 10 (PCTB)"
+  "Biology":
+    - "Biology Class 9 (PCTB)"
+    - "Biology Class 10 (PCTB)"
+  "Mathematics":
+    - "Mathematics Class 9 (PCTB)"
+    - "Mathematics Class 10 (PCTB)"

@@ -4,13 +4,15 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
   Award, BookOpen, Clock, CheckCircle2, AlertCircle, ArrowRight, 
-  RotateCcw, Sparkles, Plus, Users, ShieldAlert, FileText, ChevronRight
+  RotateCcw, Sparkles, Plus, Users, ShieldAlert, FileText, ChevronRight, LogIn
 } from 'lucide-react';
+import AuthModal from '@/components/AuthModal';
 
 export default function StudentDashboardPage() {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'available' | 'history' | 'subjects'>('available');
+  const [authModalOpen, setAuthModalOpen] = useState(false);
 
   // Join Classroom Modal
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
@@ -115,6 +117,30 @@ export default function StudentDashboardPage() {
       {/* Main Container */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 flex flex-col gap-8">
         
+        {/* Guest Learner Welcome Banner */}
+        {data?.isGuest && (
+          <div className="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30 shrink-0">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-white">Previewing in Guest Mode</h3>
+                <p className="text-xs text-slate-400">
+                  You can attempt all official AKU-EB practice tests below. Sign in to save your examination scores and join school classrooms.
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={() => setAuthModalOpen(true)}
+              className="px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shrink-0 flex items-center gap-1.5 shadow-md shadow-indigo-950/40 transition-all"
+            >
+              <LogIn className="w-3.5 h-3.5" />
+              <span>Sign In / Register</span>
+            </button>
+          </div>
+        )}
+
         {/* Active Timed Exam Banner (If in progress) */}
         {inProgressList.length > 0 && (
           <div className="p-5 rounded-2xl bg-gradient-to-r from-amber-950/60 via-slate-900 to-slate-900 border border-amber-500/40 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -411,6 +437,13 @@ export default function StudentDashboardPage() {
           </form>
         </div>
       )}
+
+      {/* Auth Modal for guest users */}
+      <AuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        onSuccess={() => fetchDashboard()}
+      />
     </div>
   );
 }

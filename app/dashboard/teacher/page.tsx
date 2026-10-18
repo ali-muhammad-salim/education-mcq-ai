@@ -5,13 +5,15 @@ import Link from 'next/link';
 import { 
   Plus, BookOpen, Users, CheckCircle2, Clock, ShieldAlert, 
   Settings, ExternalLink, Trash2, Edit3, Eye, Search, 
-  Sparkles, Award, ArrowUpRight, Copy, Check
+  Sparkles, Award, ArrowUpRight, Copy, Check, LogIn
 } from 'lucide-react';
+import AuthModal from '@/components/AuthModal';
 
 export default function TeacherDashboardPage() {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'quizzes' | 'submissions' | 'classrooms' | 'integrity'>('quizzes');
+  const [authModalOpen, setAuthModalOpen] = useState(false);
   
   // Create classroom modal
   const [isClassModalOpen, setIsClassModalOpen] = useState(false);
@@ -148,6 +150,30 @@ export default function TeacherDashboardPage() {
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 flex flex-col gap-8">
         
+        {/* Guest Educator Preview Banner */}
+        {(!data?.teacher || data?.isGuest) && (
+          <div className="p-4 sm:p-5 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30 flex-shrink-0">
+                <Sparkles className="w-5 h-5 text-indigo-400" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-white">Guest Educator Preview</h3>
+                <p className="text-xs text-indigo-200/70 mt-0.5">
+                  Sign in or create a teacher account to build timed assessments, manage classrooms, and track anti-cheat telemetry.
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={() => setAuthModalOpen(true)}
+              className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-900/30 transition-all flex-shrink-0"
+            >
+              <LogIn className="w-3.5 h-3.5" />
+              <span>Sign In / Register</span>
+            </button>
+          </div>
+        )}
+
         {/* Metric Cards Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg flex flex-col gap-1">
@@ -538,6 +564,16 @@ export default function TeacherDashboardPage() {
           </form>
         </div>
       )}
+
+      {/* Auth Modal for Guest Teachers */}
+      <AuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        onSuccess={() => {
+          setAuthModalOpen(false);
+          fetchDashboard();
+        }}
+      />
     </div>
   );
 }

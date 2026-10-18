@@ -10,6 +10,7 @@ import PaperViewerClient from '@/components/PaperViewerClient';
 import { normalizeBoardId, normalizeClassRoman, CLASS_DEFINITIONS, SUPPORTED_BOARDS } from '@/lib/boardHierarchy';
 import { getSubjectMeta } from '@/lib/subjectMetadata';
 import prisma from '@/lib/prisma';
+import { getFallbackPaper } from '@/lib/paperDataService';
 
 export const dynamic = 'force-dynamic';
 
@@ -110,12 +111,19 @@ export default async function ModelPaperSubPage({ params }: PageProps) {
       console.error('Error fetching model paper questions:', err);
     }
 
-    if (paper && paper.questions) {
+    if (paper && paper.questions && paper.questions.length > 0) {
       sortedQuestions = [...paper.questions].sort((a, b) => {
         const numA = parseInt(a.questionNumber.replace(/\D/g, '')) || 0;
         const numB = parseInt(b.questionNumber.replace(/\D/g, '')) || 0;
         return numA - numB;
       });
+    } else {
+      // Automatic High-Fidelity Fallback from canonical JSON exports
+      const fallback = getFallbackPaper(paperCode);
+      if (fallback) {
+        paper = fallback as any;
+        sortedQuestions = fallback.questions as any;
+      }
     }
   }
 

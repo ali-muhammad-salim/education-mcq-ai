@@ -10,16 +10,16 @@ export async function POST(
     const resolvedParams = await Promise.resolve(params);
     const quizId = resolvedParams.id;
     const user = await getSessionUser(req, 'STUDENT');
-
-    if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const body = await req.json();
     const { attemptId, eventType, metadata = {} } = body;
 
     if (!attemptId || !eventType) {
       return NextResponse.json({ error: 'Missing attemptId or eventType' }, { status: 400 });
+    }
+
+    // Support guest students and sample quizzes
+    if (!user || attemptId?.startsWith('guest-attempt-') || quizId.startsWith('sample-quiz-')) {
+      return NextResponse.json({ success: true, eventLogged: false });
     }
 
     const attempt = await prisma.quizAttempt.findUnique({

@@ -299,92 +299,68 @@ export default function PastPapersArchiveClient({ pastPapers, initialGrade = 'SS
               alignItems: 'center'
             }}>
               {/* Model Paper I (MCQs) */}
-              {modelPaper1 ? (
-                <Link
-                  href={`/past-papers/${modelPaper1.paperCode || modelPaper1.id}`}
-                  style={{
-                    color: '#60a5fa',
-                    textDecoration: 'underline',
-                    fontSize: '1.25rem',
-                    fontWeight: 600,
-                    transition: 'color 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#93c5fd')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#60a5fa')}
-                >
-                  Physics-{gradeCode}-Paper-I-Model
-                </Link>
-              ) : (
-                <span style={{ color: '#64748b', fontSize: '1.15rem' }}>
-                  Physics-{gradeCode}-Paper-I-Model
-                </span>
-              )}
+              <Link
+                href={`/past-papers/${modelPaper1?.paperCode || `PHY-${gradeCode}-P1`}`}
+                style={{
+                  color: '#60a5fa',
+                  textDecoration: 'underline',
+                  fontSize: '1.25rem',
+                  fontWeight: 600,
+                  transition: 'color 0.2s ease'
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#93c5fd')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#60a5fa')}
+              >
+                Physics-{gradeCode}-Paper-I-Model
+              </Link>
 
               {/* Model Paper II (CRQs & ERQs Theory with Ruled Space) */}
-              {modelPaper2 ? (
-                <Link
-                  href={`/past-papers/${modelPaper2.paperCode || modelPaper2.id}`}
-                  style={{
-                    color: '#60a5fa',
-                    textDecoration: 'underline',
-                    fontSize: '1.25rem',
-                    fontWeight: 600,
-                    transition: 'color 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#93c5fd')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#60a5fa')}
-                >
-                  Physics-{gradeCode}-Paper-II-Model
-                </Link>
-              ) : (
-                <span style={{ color: '#64748b', fontSize: '1.15rem' }}>
-                  Physics-{gradeCode}-Paper-II-Model
-                </span>
-              )}
+              <Link
+                href={`/past-papers/${modelPaper2?.paperCode || `PHY-${gradeCode}-P2`}`}
+                style={{
+                  color: '#60a5fa',
+                  textDecoration: 'underline',
+                  fontSize: '1.25rem',
+                  fontWeight: 600,
+                  transition: 'color 0.2s ease'
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#93c5fd')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#60a5fa')}
+              >
+                Physics-{gradeCode}-Paper-II-Model
+              </Link>
 
               {/* Model Paper Keys */}
-              {modelPaper1 ? (
-                <Link
-                  href={`/past-papers/${modelPaper1.paperCode || modelPaper1.id}?view=answer_key`}
-                  style={{
-                    color: '#8ce99a',
-                    textDecoration: 'underline',
-                    fontSize: '1.25rem',
-                    fontWeight: 600,
-                    transition: 'color 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#bbf7d0')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#8ce99a')}
-                >
-                  Physics-{gradeCode}-Keys-Model
-                </Link>
-              ) : (
-                <span style={{ color: '#475569', fontSize: '1.15rem' }}>
-                  Physics-{gradeCode}-Keys-Model
-                </span>
-              )}
+              <Link
+                href={`/past-papers/${modelPaper1?.paperCode || `PHY-${gradeCode}-P1`}?view=answer_key`}
+                style={{
+                  color: '#8ce99a',
+                  textDecoration: 'underline',
+                  fontSize: '1.25rem',
+                  fontWeight: 600,
+                  transition: 'color 0.2s ease'
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#bbf7d0')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#8ce99a')}
+              >
+                Physics-{gradeCode}-Keys-Model
+              </Link>
 
               {/* Model E-marking Notes */}
-              {modelPaper2 ? (
-                <Link
-                  href={`/past-papers/${modelPaper2.paperCode || modelPaper2.id}?view=emarking_notes`}
-                  style={{
-                    color: '#8ce99a',
-                    textDecoration: 'underline',
-                    fontSize: '1.25rem',
-                    fontWeight: 600,
-                    transition: 'color 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#bbf7d0')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#8ce99a')}
-                >
-                  E-marking-Notes-Physics-{gradeCode}-Model
-                </Link>
-              ) : (
-                <span style={{ color: '#475569', fontSize: '1.15rem' }}>
-                  E-marking-Notes-Physics-{gradeCode}-Model
-                </span>
-              )}
+              <Link
+                href={`/past-papers/${modelPaper2?.paperCode || `PHY-${gradeCode}-P2`}?view=emarking_notes`}
+                style={{
+                  color: '#8ce99a',
+                  textDecoration: 'underline',
+                  fontSize: '1.25rem',
+                  fontWeight: 600,
+                  transition: 'color 0.2s ease'
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#bbf7d0')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#8ce99a')}
+              >
+                E-marking-Notes-Physics-{gradeCode}-Model
+              </Link>
 
               {/* Sample Practical Laboratory Exam */}
               <a

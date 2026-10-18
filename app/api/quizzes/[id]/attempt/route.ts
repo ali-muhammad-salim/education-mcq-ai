@@ -1,6 +1,61 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { getSessionUser } from '@/lib/auth';
+import { getFallbackPaper } from '@/lib/paperDataService';
+
+function buildSampleAttempt(quizId: string) {
+  const isClass10 = quizId.includes('10') || quizId.includes('waves');
+  const paperCode = isClass10 ? 'PHY-X-P1' : 'PHY-IX-P1';
+  const fallback = getFallbackPaper(paperCode);
+  
+  let rawQuestions = fallback?.questions || [];
+  if (quizId.includes('kinematics') || quizId.includes('waves')) {
+    rawQuestions = rawQuestions.slice(0, 15);
+  }
+  
+  const sanitized = rawQuestions.map((q, idx) => {
+    const meta = q.sourceRegion || {};
+    const choices = meta.choices || {};
+    const options = Object.entries(choices).map(([key, text]) => ({
+      id: key,
+      text: String(text)
+    }));
+    return {
+      id: q.id || `sample-q-${idx + 1}`,
+      orderIndex: idx + 1,
+      marks: q.marks || 1,
+      isRequired: true,
+      questionType: 'MCQ_SINGLE' as const,
+      stemText: q.questionText,
+      difficulty: q.difficulty || 'Medium',
+      cognitiveLevel: meta.cognitive_level || 'Understanding',
+      options,
+      matchingPairs: [],
+      drawingSvg: null
+    };
+  });
+
+  const durationMin = rawQuestions.length <= 15 ? 20 : 50;
+
+  return {
+    id: `guest-attempt-${quizId}`,
+    attemptNumber: 1,
+    startedAt: new Date().toISOString(),
+    deadline: new Date(Date.now() + durationMin * 60 * 1000).toISOString(),
+    remainingSeconds: durationMin * 60,
+    tabSwitchCount: 0,
+    answers: {},
+    quizTitle: fallback?.title || 'AKU-EB Examination Practice',
+    durationMin,
+    settings: {
+      tabMonitoringEnabled: false,
+      tabWarningThreshold: 3,
+      showCorrectAnswers: true,
+      immediateFeedback: true
+    },
+    questions: sanitized
+  };
+}
 
 // GET /api/quizzes/[id]/attempt - Recover active in-progress attempt
 export async function GET(
@@ -12,8 +67,8 @@ export async function GET(
     const quizId = resolvedParams.id;
     const user = await getSessionUser(req, 'STUDENT');
 
-    if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    if (!user || quizId.startsWith('sample-quiz-')) {
+      return NextResponse.json({ hasActiveAttempt: false });
     }
 
     const activeAttempt = await prisma.quizAttempt.findFirst({
@@ -118,24 +173,84 @@ export async function POST(
   try {
     const resolvedParams = await Promise.resolve(params);
     const quizId = resolvedParams.id;
-    const user = await getSessionUser(req, 'STUDENT');
 
-    if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    // Check if this is a sample quiz or if DB is empty
+    if (quizId.startsWith('sample-quiz-')) {
+      const sample = buildSampleAttempt(quizId);
+      return NextResponse.json({
+        success: true,
+        attempt: sample
+      });
     }
 
-    const quiz = await prisma.quiz.findUnique({
-      where: { id: quizId },
-      include: {
-        settings: true,
-        questions: {
-          orderBy: { orderIndex: 'asc' }
-        }
-      }
-    });
+    const user = await getSessionUser(req, 'STUDENT');
 
+    let quiz = null;
+    try {
+      quiz = await prisma.quiz.findUnique({
+        where: { id: quizId },
+        include: {
+          settings: true,
+          questions: {
+            orderBy: { orderIndex: 'asc' }
+          }
+        }
+      });
+    } catch (err) {
+      console.error('Database query quiz error:', err);
+    }
+
+    // Fallback if quiz is not found in database
     if (!quiz) {
-      return NextResponse.json({ error: 'Quiz not found' }, { status: 404 });
+      const sample = buildSampleAttempt(quizId);
+      return NextResponse.json({
+        success: true,
+        attempt: sample
+      });
+    }
+
+    // If guest user taking a published quiz from database
+    if (!user) {
+      const sanitizedQuestions = quiz.questions.map(q => {
+        const qData: any = typeof q.questionData === 'object' ? q.questionData : {};
+        const options = Array.isArray(qData.options)
+          ? qData.options.map((opt: any) => ({
+              id: opt.id || opt.text,
+              text: opt.text
+            }))
+          : [];
+
+        return {
+          id: q.id,
+          orderIndex: q.orderIndex,
+          marks: q.marks,
+          isRequired: q.isRequired,
+          questionType: qData.questionType || 'MCQ_SINGLE',
+          stemText: qData.stemText || '',
+          difficulty: qData.difficulty || 'Medium',
+          cognitiveLevel: qData.cognitiveLevel || 'Understanding',
+          options,
+          matchingPairs: qData.matchingPairs || [],
+          drawingSvg: qData.drawingSvg || null
+        };
+      });
+
+      return NextResponse.json({
+        success: true,
+        attempt: {
+          id: `guest-attempt-${quiz.id}`,
+          attemptNumber: 1,
+          startedAt: new Date().toISOString(),
+          deadline: new Date(Date.now() + (quiz.durationMin || 45) * 60 * 1000).toISOString(),
+          remainingSeconds: (quiz.durationMin || 45) * 60,
+          tabSwitchCount: 0,
+          answers: {},
+          quizTitle: quiz.title,
+          durationMin: quiz.durationMin || 45,
+          settings: quiz.settings,
+          questions: sanitizedQuestions
+        }
+      });
     }
 
     // Check existing attempts count

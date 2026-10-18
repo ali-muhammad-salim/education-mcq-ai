@@ -7,6 +7,7 @@ import prisma from '@/lib/prisma';
 import { normalizeBoardId, normalizeClassRoman, CLASS_DEFINITIONS, SUPPORTED_BOARDS } from '@/lib/boardHierarchy';
 import { getSubjectMeta } from '@/lib/subjectMetadata';
 import PastPapersArchiveClient from '@/app/past-papers/PastPapersArchiveClient';
+import { getAllStandardPapers } from '@/lib/paperDataService';
 
 interface PageProps {
   params: Promise<{ board: string; class: string; subject: string }>;
@@ -47,6 +48,18 @@ export default async function SubjectPastPapersPage({ params }: PageProps) {
     });
   } catch (err) {
     console.error('Error fetching past papers:', err);
+  }
+
+  // Always merge standard physics model papers & past papers so archive directory is complete
+  const standardPapers = getAllStandardPapers();
+  if (!pastPapers || pastPapers.length === 0) {
+    pastPapers = standardPapers;
+  } else {
+    for (const std of standardPapers) {
+      if (!pastPapers.some(p => p.paperCode === std.paperCode)) {
+        pastPapers.push(std as any);
+      }
+    }
   }
 
   const initialGrade = classRoman === 'X' ? 'SSC-II' : 'SSC-I';

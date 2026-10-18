@@ -3,6 +3,7 @@ import prisma from '@/lib/prisma';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PaperViewerClient from './PaperViewerClient';
+import { getFallbackPaper } from '@/lib/paperDataService';
 
 export const dynamic = 'force-dynamic';
 
@@ -39,8 +40,13 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     console.error('Error fetching past paper detail:', err);
   }
 
-  if (!paper) {
-    return notFound();
+  if (!paper || !paper.questions || paper.questions.length === 0) {
+    const fallback = getFallbackPaper(id);
+    if (fallback) {
+      paper = fallback;
+    } else {
+      return notFound();
+    }
   }
 
   // Sort questions numerically

@@ -1,9 +1,26 @@
-id: FBISE
-short_code: FBISE
-name: Federal Board of Intermediate and Secondary Education
-country: Pakistan
-description: Federal Board of Intermediate and Secondary Education, Islamabad
-status: ACTIVE
+# FBISE — Federal Board of Intermediate and Secondary Education
+# Adding a new board requires only a new YAML file like this one.
+# No application code changes are required.
+
+id: "fbise"
+name: "Federal Board of Intermediate and Secondary Education"
+short_code: "FBISE"
+country: "Pakistan"
+description: >
+  The Federal Board operates under the Ministry of Federal Education and
+  Professional Training, Government of Pakistan. It conducts examinations
+  for students in the Islamabad Capital Territory and AJK.
+status: "ACTIVE"
+website: "https://fbise.edu.pk"
+headquarters: "Islamabad"
+established_year: 1975
+
+terminology:
+  # FBISE uses standard terminology — no overrides needed
+  chapter: "chapter"
+  topic: "topic"
+  concept: "concept"
+  examination: "examination"
 
 class_levels:
   - "9"
@@ -13,39 +30,73 @@ class_levels:
 
 subjects_by_class:
   "9":
-    - Physics
-    - Chemistry
-    - Biology
-    - Mathematics
-    - Computer Science
-    - English
-    - Urdu
-    - Islamiat
-    - Pakistan Studies
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "Computer Science"
+    - "English"
+    - "Urdu"
+    - "Islamiat"
+    - "Pakistan Studies"
   "10":
-    - Physics
-    - Chemistry
-    - Biology
-    - Mathematics
-    - Computer Science
-    - English
-    - Urdu
-    - Islamiat
-    - Pakistan Studies
-
-terminology:
-  chapter: chapter
-  topic: topic
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "Computer Science"
+    - "English"
+    - "Urdu"
+    - "Islamiat"
+    - "Pakistan Studies"
+  "11":
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "Computer Science"
+    - "English"
+  "12":
+    - "Physics"
+    - "Chemistry"
+    - "Biology"
+    - "Mathematics"
+    - "Computer Science"
+    - "English"
 
 exam_style:
   mcq_paper: true
   subjective_paper: true
   practical_component: true
   negative_marking: false
+  marks_per_mcq: 1.0
+  total_mcq_count: 15
+  exam_duration_minutes: 195
   allowed_question_types:
     - MCQ_SINGLE
-    - SHORT_QUESTION
-    - LONG_QUESTION
+    - TRUE_FALSE
+    - SHORT_ANSWER
+    - LONG_ANSWER
     - NUMERICAL
-  marks_per_mcq: 1.0
-  total_mcq_count: 12
+    - DIAGRAM_BASED
+    - GRAPH_BASED
+    - EQUATION_BASED
+  notes: >
+    Paper I (Objective): 15 MCQs (15 marks, 20 min).
+    Paper II (Subjective): Short and long questions (68 marks, 175 min).
+
+textbook_associations:
+  "Physics":
+    - "Physics Class 9 (FBISE)"
+    - "Physics Class 10 (FBISE)"
+    - "Physics Class 11 Part I (FBISE)"
+    - "Physics Class 12 Part II (FBISE)"
+  "Chemistry":
+    - "Chemistry Class 9 (FBISE)"
+    - "Chemistry Class 10 (FBISE)"
+  "Biology":
+    - "Biology Class 9 (FBISE)"
+    - "Biology Class 10 (FBISE)"
+  "Mathematics":
+    - "Mathematics Class 9 (FBISE)"
+    - "Mathematics Class 10 (FBISE)"

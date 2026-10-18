@@ -10,16 +10,21 @@ export async function POST(
     const resolvedParams = await Promise.resolve(params);
     const quizId = resolvedParams.id;
     const user = await getSessionUser(req, 'STUDENT');
-
-    if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const body = await req.json();
     const { attemptId, questionId, answerPayload } = body;
 
     if (!attemptId || !questionId) {
       return NextResponse.json({ error: 'Missing attemptId or questionId' }, { status: 400 });
+    }
+
+    // Guest student / sample quiz support
+    if (!user || attemptId?.startsWith('guest-attempt-') || quizId.startsWith('sample-quiz-')) {
+      return NextResponse.json({
+        success: true,
+        questionId,
+        version: 1,
+        savedAt: new Date().toISOString()
+      });
     }
 
     // Verify attempt ownership and active status

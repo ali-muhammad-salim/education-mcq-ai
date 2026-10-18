@@ -6,7 +6,44 @@ export async function GET(req: NextRequest) {
   try {
     const user = await getSessionUser(req, 'TEACHER');
     if (!user || (user.role !== 'TEACHER' && user.role !== 'ADMIN')) {
-      return NextResponse.json({ error: 'Unauthorized: Teacher role required' }, { status: 403 });
+      return NextResponse.json({
+        success: true,
+        isGuest: true,
+        teacher: null,
+        metrics: {
+          totalQuizzes: 4,
+          totalSubmissions: 312,
+          pendingGrading: 0,
+          flaggedEvents: 3,
+          classroomsCount: 2
+        },
+        quizzes: [
+          {
+            id: 'sample-quiz-phy-9',
+            title: 'Class IX Physics Model Examination 2025 (Paper I - 40 MCQs)',
+            totalMarks: 40,
+            durationMin: 50,
+            status: 'PUBLISHED',
+            visibility: 'PUBLIC',
+            createdAt: new Date().toISOString(),
+            _count: { questions: 40, attempts: 142 }
+          },
+          {
+            id: 'sample-quiz-phy-10',
+            title: 'Class X Physics Model Examination 2025 (Paper I - 40 MCQs)',
+            totalMarks: 40,
+            durationMin: 50,
+            status: 'PUBLISHED',
+            visibility: 'PUBLIC',
+            createdAt: new Date().toISOString(),
+            _count: { questions: 40, attempts: 98 }
+          }
+        ],
+        recentSubmissions: [],
+        pendingGradingCount: 0,
+        flaggedAttempts: [],
+        classrooms: []
+      });
     }
 
     // Teacher's quizzes

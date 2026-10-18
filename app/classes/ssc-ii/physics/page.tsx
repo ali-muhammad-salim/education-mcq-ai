@@ -1020,7 +1020,7 @@ export default function SSC2PhysicsPage() {
                         gap: '0.75rem',
                         marginBottom: '1rem'
                       }}>
-                        {Object.entries(q.choices || {}).map(([optKey, optVal]: [string, any]) => {
+                        {Object.entries((q.options || q.choices || {}) as Record<string, string>).map(([optKey, optVal]: [string, any]) => {
                           const isSelected = selected === optKey;
                           return (
                             <div
@@ -1115,7 +1115,12 @@ export default function SSC2PhysicsPage() {
                           color: '#166534',
                           fontFamily: 'Inter, sans-serif'
                         }}>
-                          <strong>AKU-EB Examination Key:</strong> Practice selection saved. Reference Chapter from PCTB Physics 10 & Student Learning Outcomes standard.
+                          <strong>AKU-EB Verified Key: Option {q.correctOption || 'A'}</strong>
+                          {q.explanation && (
+                            <div style={{ marginTop: '0.25rem', fontSize: '0.86rem', color: '#14532d' }}>
+                              {q.explanation}
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>

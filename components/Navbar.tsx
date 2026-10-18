@@ -7,7 +7,8 @@ import {
   BookOpen, ChevronDown, Check, Sparkles, Building2, 
   Atom, FlaskConical, Dna, Calculator, Binary, BookText, 
   Languages, Moon, Sun, MapPin, Menu, X, FileText, Layers, Download,
-  User as UserIcon, LogOut, LayoutDashboard, Award, UploadCloud, ShieldCheck
+  User as UserIcon, LogOut, LayoutDashboard, Award, UploadCloud, ShieldCheck,
+  Monitor
 } from 'lucide-react';
 import AuthModal from '@/components/AuthModal';
 
@@ -106,30 +107,60 @@ export default function Navbar() {
   const [authUser, setAuthUser] = useState<any>(null);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [themeMode, setThemeMode] = useState<'system' | 'light' | 'dark'>('system');
+  const [isDarkEffective, setIsDarkEffective] = useState<boolean>(false);
 
-  // Load saved theme
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('riselearner_theme') as 'light' | 'dark' | null;
-      if (savedTheme === 'dark') {
-        setTheme('dark');
-        document.documentElement.classList.add('dark');
-      }
+  // Apply theme class based on mode
+  const applyTheme = (mode: 'system' | 'light' | 'dark') => {
+    let shouldBeDark = false;
+    if (mode === 'system') {
+      shouldBeDark = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    } else {
+      shouldBeDark = mode === 'dark';
     }
-  }, []);
 
-  const toggleTheme = () => {
-    const nextTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(nextTheme);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('riselearner_theme', nextTheme);
-      if (nextTheme === 'dark') {
+    setIsDarkEffective(shouldBeDark);
+    if (typeof document !== 'undefined') {
+      if (shouldBeDark) {
         document.documentElement.classList.add('dark');
       } else {
         document.documentElement.classList.remove('dark');
       }
     }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = (localStorage.getItem('riselearner_theme') || 'system') as 'system' | 'light' | 'dark';
+      const initialMode = (saved === 'light' || saved === 'dark' || saved === 'system') ? saved : 'system';
+      setThemeMode(initialMode);
+      applyTheme(initialMode);
+
+      // Listen to OS theme changes if in 'system' mode
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleChange = () => {
+        const currentSaved = (localStorage.getItem('riselearner_theme') || 'system') as 'system' | 'light' | 'dark';
+        if (currentSaved === 'system') {
+          applyTheme('system');
+        }
+      };
+
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
+    }
+  }, []);
+
+  const cycleTheme = () => {
+    let nextMode: 'system' | 'light' | 'dark' = 'system';
+    if (themeMode === 'system') nextMode = 'light';
+    else if (themeMode === 'light') nextMode = 'dark';
+    else nextMode = 'system';
+
+    setThemeMode(nextMode);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('riselearner_theme', nextMode);
+    }
+    applyTheme(nextMode);
   };
 
   // Sync selected board with current URL
@@ -194,13 +225,14 @@ export default function Navbar() {
   return (
     <nav 
       style={{
-        background: '#ffffff',
-        borderBottom: '2px solid #e6f0ed',
-        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.04)',
+        background: isDarkEffective ? '#0f172a' : '#ffffff',
+        borderBottom: isDarkEffective ? '2px solid #1e293b' : '2px solid #e6f0ed',
+        boxShadow: isDarkEffective ? '0 2px 12px rgba(0, 0, 0, 0.4)' : '0 2px 10px rgba(0, 0, 0, 0.04)',
         position: 'sticky',
         top: 0,
         zIndex: 1000,
-        fontFamily: "'Inter', sans-serif"
+        fontFamily: "'Inter', sans-serif",
+        transition: 'background 0.2s ease, border-color 0.2s ease'
       }}
     >
       <div 
@@ -734,7 +766,7 @@ export default function Navbar() {
                     {/* 4. Change Theme */}
                     <button
                       type="button"
-                      onClick={toggleTheme}
+                      onClick={cycleTheme}
                       style={{
                         width: '100%',
                         display: 'flex',
@@ -743,25 +775,27 @@ export default function Navbar() {
                         padding: '0.65rem 1rem',
                         fontSize: '0.88rem',
                         fontWeight: 600,
-                        color: '#1f2937',
+                        color: isDarkEffective ? '#f1f5f9' : '#1f2937',
                         background: 'none',
                         border: 'none',
                         cursor: 'pointer',
                         textAlign: 'left',
                         transition: 'background 0.15s ease'
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.background = '#f3f4f6')}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = isDarkEffective ? '#334155' : '#f3f4f6')}
                       onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                     >
-                      {theme === 'dark' ? (
-                        <Sun size={16} style={{ color: '#f59e0b' }} />
+                      {themeMode === 'system' ? (
+                        <Monitor size={16} style={{ color: '#38bdf8' }} />
+                      ) : themeMode === 'dark' ? (
+                        <Moon size={16} style={{ color: '#fbbf24' }} />
                       ) : (
-                        <Moon size={16} style={{ color: '#6366f1' }} />
+                        <Sun size={16} style={{ color: '#f59e0b' }} />
                       )}
-                      <span>Theme: {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</span>
+                      <span>Theme: {themeMode === 'system' ? 'System Default' : themeMode === 'dark' ? 'Dark Mode' : 'Light Mode'}</span>
                     </button>
 
-                    <div style={{ borderTop: '1px solid #f3f4f6', margin: '0.35rem 0' }} />
+                    <div style={{ borderTop: isDarkEffective ? '1px solid #334155' : '1px solid #f3f4f6', margin: '0.35rem 0' }} />
 
                     {/* 5. Sign Out */}
                     <button
@@ -782,7 +816,7 @@ export default function Navbar() {
                         textAlign: 'left',
                         transition: 'background 0.15s ease'
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.background = '#fef2f2')}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = isDarkEffective ? '#371e22' : '#fef2f2')}
                       onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                     >
                       <LogOut size={16} style={{ color: '#dc2626' }} />
@@ -815,6 +849,39 @@ export default function Navbar() {
               <span>Sign In</span>
             </button>
           )}
+
+          {/* Universal Theme Toggle (System / Light / Dark) - Accessible to ALL users */}
+          <button
+            type="button"
+            onClick={cycleTheme}
+            title={`Current Theme: ${themeMode === 'system' ? 'System Default' : themeMode === 'light' ? 'Light Mode' : 'Dark Mode'} (Click to cycle System / Light / Dark)`}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              background: isDarkEffective ? '#1e293b' : '#f4f7f6',
+              border: isDarkEffective ? '1px solid #334155' : '1px solid #dce5e1',
+              borderRadius: '8px',
+              padding: '7px 11px',
+              fontSize: '0.84rem',
+              fontWeight: 700,
+              color: isDarkEffective ? '#f1f5f9' : '#2c3e38',
+              cursor: 'pointer',
+              marginLeft: '0.4rem',
+              transition: 'all 0.15s ease'
+            }}
+          >
+            {themeMode === 'system' ? (
+              <Monitor size={15} style={{ color: isDarkEffective ? '#38bdf8' : '#0b5e4a' }} />
+            ) : themeMode === 'dark' ? (
+              <Moon size={15} style={{ color: '#fbbf24' }} />
+            ) : (
+              <Sun size={15} style={{ color: '#f59e0b' }} />
+            )}
+            <span style={{ fontSize: '0.78rem' }}>
+              {themeMode === 'system' ? 'System' : themeMode === 'dark' ? 'Dark' : 'Light'}
+            </span>
+          </button>
 
         </div>
 

@@ -42,7 +42,9 @@ export default async function ModelPapersPage({ params }: PageProps) {
       href: `${modelPapersBase}/P1`,
       icon: Award,
       actionText: 'Open Paper I (P1)',
-      pdfUrl: isClass9 && isPhysics ? '/materials/ssc/physics/ssc-1/physics-model-paper-ix-paper-i.pdf' : null
+      pdfUrl: isClass9 && isPhysics 
+        ? '/materials/ssc/physics/ssc-1/physics-model-paper-ix-paper-i.pdf' 
+        : (classRoman === 'X' && isPhysics ? '/materials/ssc/physics/ssc-2/physics-model-paper-x-paper-i.pdf' : null)
     },
     {
       id: 'P2',
@@ -53,7 +55,9 @@ export default async function ModelPapersPage({ params }: PageProps) {
       href: `${modelPapersBase}/P2`,
       icon: FileText,
       actionText: 'Open Paper II (P2)',
-      pdfUrl: isClass9 && isPhysics ? '/materials/ssc/physics/ssc-1/physics-model-paper-ix-paper-ii.pdf' : null
+      pdfUrl: isClass9 && isPhysics 
+        ? '/materials/ssc/physics/ssc-1/physics-model-paper-ix-paper-ii.pdf' 
+        : (classRoman === 'X' && isPhysics ? '/materials/ssc/physics/ssc-2/physics-model-paper-x-paper-ii.pdf' : null)
     },
     {
       id: 'P3',
