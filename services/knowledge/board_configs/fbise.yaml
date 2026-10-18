@@ -1,0 +1,51 @@
+id: FBISE
+short_code: FBISE
+name: Federal Board of Intermediate and Secondary Education
+country: Pakistan
+description: Federal Board of Intermediate and Secondary Education, Islamabad
+status: ACTIVE
+
+class_levels:
+  - "9"
+  - "10"
+  - "11"
+  - "12"
+
+subjects_by_class:
+  "9":
+    - Physics
+    - Chemistry
+    - Biology
+    - Mathematics
+    - Computer Science
+    - English
+    - Urdu
+    - Islamiat
+    - Pakistan Studies
+  "10":
+    - Physics
+    - Chemistry
+    - Biology
+    - Mathematics
+    - Computer Science
+    - English
+    - Urdu
+    - Islamiat
+    - Pakistan Studies
+
+terminology:
+  chapter: chapter
+  topic: topic
+
+exam_style:
+  mcq_paper: true
+  subjective_paper: true
+  practical_component: true
+  negative_marking: false
+  allowed_question_types:
+    - MCQ_SINGLE
+    - SHORT_QUESTION
+    - LONG_QUESTION
+    - NUMERICAL
+  marks_per_mcq: 1.0
+  total_mcq_count: 12

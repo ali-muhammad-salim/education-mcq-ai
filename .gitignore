@@ -38,8 +38,10 @@ venv.bak/
 # Environment variables
 .env*.local
 
-# Node.js
+# Node.js & Next.js
 node_modules/
+.next/
+*.tsbuildinfo
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -83,3 +85,6 @@ Desktop.ini
 .idea/
 *.swp
 *.swo
+
+# GitHub Workflows (Deployed directly via Dokploy)
+.github/

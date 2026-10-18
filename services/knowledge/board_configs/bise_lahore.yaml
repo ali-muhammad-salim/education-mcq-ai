@@ -1,0 +1,40 @@
+id: BISE-Lahore
+short_code: BISE-Lahore
+name: Board of Intermediate and Secondary Education, Lahore
+country: Pakistan
+description: BISE Lahore Punjab Examination Board
+status: ACTIVE
+
+class_levels:
+  - "9"
+  - "10"
+  - "11"
+  - "12"
+
+subjects_by_class:
+  "9":
+    - Physics
+    - Chemistry
+    - Biology
+    - Mathematics
+    - Computer Science
+  "10":
+    - Physics
+    - Chemistry
+    - Biology
+    - Mathematics
+    - Computer Science
+
+terminology:
+  chapter: chapter
+  topic: topic
+
+exam_style:
+  mcq_paper: true
+  subjective_paper: true
+  practical_component: true
+  negative_marking: false
+  allowed_question_types:
+    - MCQ_SINGLE
+    - SHORT_QUESTION
+    - LONG_QUESTION

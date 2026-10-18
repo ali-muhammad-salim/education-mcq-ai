@@ -1,4 +1,4 @@
-# System Architecture: AI-Powered MCQ Content Engine (v1.0)
+# System Architecture: AI-Powered Educational Content Engine (v1.0)
 
 **Document Status:** Architecture Baseline  
 **Target Environment:** Local Workstation (Intel Core i7-10850H, 32GB RAM, Quadro RTX 4000 8GB VRAM)  
@@ -27,8 +27,8 @@ flowchart TB
         DB_Boards[("boards & curricula")]
         DB_Ontology[("chapters, topics, learning_outcomes")]
         DB_PastPapers[("past_paper_questions (Year, Session, Q#)")]
-        DB_MCQs[("generated_mcqs & options")]
-        DB_Provenance[("mcq_provenance & evidence_links")]
+        DB_Questions[("generated_questions, options & notes")]
+        DB_Provenance[("question_provenance & evidence_links")]
     end
 
     subgraph Retrieval_Engine["3. Hybrid Retrieval & Context Assembly"]
@@ -36,11 +36,11 @@ flowchart TB
         HybridRetriever --> ContextPacker["Pedagogical Context Assembler"]
     end
 
-    subgraph Generation_Validation["4. AI Generation & Multi-Stage Validation"]
-        ContextPacker --> Generator["MCQ Generator (Qwen 8B / Cloud LLM)"]
-        Generator --> RawMCQ["Raw Structured MCQ (JSON + LaTeX)"]
+    subgraph Generation_Validation["4. AI Generation (Notes, MCQs, Subjective) & Multi-Stage Validation"]
+        ContextPacker --> Generator["Content Generator (Notes, MCQs, Subjective)"]
+        Generator --> RawOutput["Raw Structured Content (JSON + LaTeX)"]
         
-        RawMCQ --> Val1["Stage 1: Syntax & LaTeX Validator"]
+        RawOutput --> Val1["Stage 1: Syntax & Format Validator"]
         Val1 --> Val2["Stage 2: Blind Secondary Solver (Qwen 3B/4B)"]
         Val2 --> Val3["Stage 3: Distractor Quality & Ambiguity Checker"]
         Val3 --> Val4["Stage 4: Anti-Hallucination Grounding Auditor"]
@@ -66,7 +66,7 @@ The database schema is organized into four core relational clusters:
 1. **Curriculum Ontology Cluster:** Boards, Curricula, Subjects, Grades, Chapters, Topics, and Student Learning Outcomes (SLOs).
 2. **Document & Corpus Cluster:** Ingested Books, Past Paper series, Document Pages, and Embedded Chunks.
 3. **Past Paper Catalog Cluster:** Fine-grained historical exam questions tagged with Year, Session, Paper, Question Number, and Marks.
-4. **Question & Provenance Cluster:** Generated MCQs, Options, Validation Logs, Evidence Links, and Priority Metrics.
+4. **Question & Provenance Cluster:** Generated Questions (MCQs, Short/Long), Study Notes, Options, Validation Logs, Evidence Links, and Priority Metrics.
 
 ### 2.1 Entity Relationship Diagram (ERD)
 
@@ -86,15 +86,17 @@ erDiagram
     DOCUMENTS ||--o{ PAST_PAPER_QUESTIONS : deconstructed_into
     TOPICS ||--o{ PAST_PAPER_QUESTIONS : tags
 
-    TOPICS ||--o{ GENERATED_MCQS : targets
-    LEARNING_OUTCOMES ||--o{ GENERATED_MCQS : aligns_with
-    GENERATED_MCQS ||--o{ MCQ_OPTIONS : contains
-    GENERATED_MCQS ||--o{ MCQ_VALIDATIONS : verified_by
-    GENERATED_MCQS ||--o{ MCQ_TEXTBOOK_EVIDENCE : grounded_in
-    GENERATED_MCQS ||--o{ MCQ_PAST_PAPER_LINKS : referenced_by
+    TOPICS ||--o{ GENERATED_QUESTIONS : targets
+    TOPICS ||--o{ STUDY_NOTES : generates
+    LEARNING_OUTCOMES ||--o{ GENERATED_QUESTIONS : aligns_with
+    GENERATED_QUESTIONS ||--o{ QUESTION_OPTIONS : contains
+    GENERATED_QUESTIONS ||--o{ QUESTION_VALIDATIONS : verified_by
+    GENERATED_QUESTIONS ||--o{ QUESTION_TEXTBOOK_EVIDENCE : grounded_in
+    GENERATED_QUESTIONS ||--o{ QUESTION_PAST_PAPER_LINKS : referenced_by
 
-    DOCUMENT_CHUNKS ||--o{ MCQ_TEXTBOOK_EVIDENCE : cites
-    PAST_PAPER_QUESTIONS ||--o{ MCQ_PAST_PAPER_LINKS : references
+    DOCUMENT_CHUNKS ||--o{ QUESTION_TEXTBOOK_EVIDENCE : cites
+    DOCUMENT_CHUNKS ||--o{ STUDY_NOTES : summarizes
+    PAST_PAPER_QUESTIONS ||--o{ QUESTION_PAST_PAPER_LINKS : references
 ```
 
 ### 2.2 Relational Table Specifications & DDL Schemas
@@ -266,14 +268,22 @@ CREATE INDEX idx_past_paper_lookup ON past_paper_questions(board_id, subject_id,
 CREATE INDEX idx_past_paper_topic ON past_paper_questions(topic_id);
 ```
 
-#### D. Generated Questions & Provenance Graph
+#### D. Generated Content (Notes & Questions) & Provenance Graph
 ```sql
-CREATE TABLE generated_mcqs (
+CREATE TABLE study_notes (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    topic_id UUID NOT NULL REFERENCES topics(id) ON DELETE CASCADE,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,                  -- Markdown formatted summary preserving LaTeX and layouts
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE TABLE generated_questions (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     topic_id UUID NOT NULL REFERENCES topics(id) ON DELETE CASCADE,
     learning_outcome_id UUID NOT NULL REFERENCES learning_outcomes(id) ON DELETE CASCADE,
     
-    question_type VARCHAR(50) NOT NULL,     -- 'STANDARD_4_OPT', 'ASSERTION_REASON', 'EQUATION_BASED', 'FIGURE_BASED'
+    question_type VARCHAR(50) NOT NULL,     -- 'MCQ', 'SHORT_DESCRIPTIVE', 'NUMERICAL', 'LONG_DESCRIPTIVE'
     stem TEXT NOT NULL,                     -- Question prompt formatted in Markdown & LaTeX
     context_hint TEXT,
     difficulty_level VARCHAR(20) NOT NULL,  -- 'EASY', 'MEDIUM', 'HARD'
@@ -291,23 +301,23 @@ CREATE TABLE generated_mcqs (
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Options for each MCQ
-CREATE TABLE mcq_options (
+-- Options (Required for MCQs)
+CREATE TABLE question_options (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    mcq_id UUID NOT NULL REFERENCES generated_mcqs(id) ON DELETE CASCADE,
+    question_id UUID NOT NULL REFERENCES generated_questions(id) ON DELETE CASCADE,
     option_label CHAR(1) NOT NULL,          -- 'A', 'B', 'C', 'D'
     option_text TEXT NOT NULL,              -- Markdown / LaTeX content
     is_correct BOOLEAN NOT NULL DEFAULT FALSE,
     explanation TEXT NOT NULL,              -- Pedagogical reason why this option is correct/incorrect
     misconception_tag VARCHAR(255),         -- Description of the underlying cognitive trap
-    UNIQUE(mcq_id, option_label)
+    UNIQUE(question_id, option_label)
 );
 
 -- Automated Validation Audit Trail
-CREATE TABLE mcq_validations (
+CREATE TABLE question_validations (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    mcq_id UUID NOT NULL REFERENCES generated_mcqs(id) ON DELETE CASCADE,
-    validator_stage VARCHAR(100) NOT NULL,  -- 'SYNTAX_CHECK', 'BLIND_SOLVER', 'DISTRACTOR_AUDIT', 'GROUNDING_CHECK'
+    question_id UUID NOT NULL REFERENCES generated_questions(id) ON DELETE CASCADE,
+    validator_stage VARCHAR(100) NOT NULL,  -- 'SYNTAX_CHECK', 'BLIND_SOLVER', 'QUALITY_AUDIT', 'GROUNDING_CHECK'
     validator_model VARCHAR(100) NOT NULL,
     passed BOOLEAN NOT NULL,
     details JSONB NOT NULL,
@@ -315,20 +325,20 @@ CREATE TABLE mcq_validations (
 );
 
 -- Provenance Link 1: Source Textbook Evidence
-CREATE TABLE mcq_textbook_evidence (
+CREATE TABLE question_textbook_evidence (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    mcq_id UUID NOT NULL REFERENCES generated_mcqs(id) ON DELETE CASCADE,
+    question_id UUID NOT NULL REFERENCES generated_questions(id) ON DELETE CASCADE,
     chunk_id UUID NOT NULL REFERENCES document_chunks(id) ON DELETE RESTRICT,
     relevance_score NUMERIC(4,3) NOT NULL,
-    verbatim_quote TEXT NOT NULL,           -- Exact sentence/formula justifying the correct answer
+    verbatim_quote TEXT NOT NULL,           -- Exact sentence/formula justifying the correct answer/note
     page_number INT NOT NULL,
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 -- Provenance Link 2: Historical Past-Paper Precedents
-CREATE TABLE mcq_past_paper_links (
+CREATE TABLE question_past_paper_links (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    mcq_id UUID NOT NULL REFERENCES generated_mcqs(id) ON DELETE CASCADE,
+    question_id UUID NOT NULL REFERENCES generated_questions(id) ON DELETE CASCADE,
     past_paper_question_id UUID NOT NULL REFERENCES past_paper_questions(id) ON DELETE CASCADE,
     similarity_score NUMERIC(4,3) NOT NULL,
     relationship_type VARCHAR(50) NOT NULL, -- 'IDENTICAL_CONCEPT', 'NUMERICAL_VARIANT', 'PARAPHRASED_STEM'
@@ -364,6 +374,12 @@ sequenceDiagram
         end
     end
     IngestWorker->>Normalizer: Synthesize Markdown + Embedded LaTeX ($...$)
+    
+    opt Multi-Grade Document (e.g. Grades 9 & 10 Combined)
+        Normalizer->>Normalizer: Identify Grade Boundaries (ToC / Headers)
+        Normalizer->>Normalizer: Split into Grade-Specific Document Entities
+    end
+    
     Normalizer->>Normalizer: Partition into Hierarchical Chunks (300-600 tokens)
     Normalizer->>DB: Persist Chunks + Generate Vector Embeddings
 ```
@@ -371,7 +387,8 @@ sequenceDiagram
 ### Ingestion Components
 1. **PyMuPDF (`fitz`):** Primary fast extractor for native digital text PDFs. Extracts raw Unicode, font characteristics (to identify chapter/section headings by font size), and vector images.
 2. **PaddleOCR & PP-StructureV3:** High-precision layout analysis tool. Automatically classifies bounding boxes into `title`, `text`, `table`, `formula`, and `figure`. Converts tables into structured Markdown and formulas into standard $\LaTeX$.
-3. **Qwen2.5-VL-3B (Vision Fallback):** Invoked conditionally when:
+3. **Multi-Grade Partitioner:** A dedicated heuristic/LLM step that scans the Table of Contents or large section headers to split combined syllabus/resource documents (e.g. "Grade 9 & 10") into separate, grade-specific context streams before chunking.
+4. **Qwen2.5-VL-3B (Vision Fallback):** Invoked conditionally when:
    - A past paper or textbook page contains an unlabeled circuit diagram, biological diagram, or coordinate graph.
    - PaddleOCR formula confidence score drops below 0.85.
    - Visual transcription generates a semantic summary of the figure (e.g., *"A circuit with two resistors $R_1=4\Omega$ and $R_2=6\Omega$ connected in parallel across a $12\text{V}$ DC source"*).

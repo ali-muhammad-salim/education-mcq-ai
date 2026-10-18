@@ -1,0 +1,57 @@
+id: SINDH
+short_code: SINDH
+name: Sindh Board
+description: Board of Secondary Education Karachi and other Sindh regional boards
+country: Pakistan
+status: ACTIVE
+
+class_levels:
+  - "9"
+  - "10"
+  - "11"
+  - "12"
+
+subjects_by_class:
+  "9":
+    - Biology
+    - Computer Science
+    - Commerce
+    - Physics
+    - Chemistry
+    - Mathematics
+  "10":
+    - Biology
+    - Computer Science
+    - Commerce
+    - Physics
+    - Chemistry
+    - Mathematics
+  "11":
+    - Biology
+    - Computer Science
+    - Commerce
+    - Physics
+    - Chemistry
+    - Mathematics
+  "12":
+    - Biology
+    - Computer Science
+    - Commerce
+    - Physics
+    - Chemistry
+    - Mathematics
+
+terminology:
+  chapter: Chapter
+  topic: Topic
+  past_paper: Ten Years
+
+exam_style:
+  mcq_paper: true
+  subjective_paper: true
+  practical_component: true
+  negative_marking: false
+  allowed_question_types:
+    - MCQ_SINGLE
+    - STATEMENT_BASED
+    - SHORT_QUESTION

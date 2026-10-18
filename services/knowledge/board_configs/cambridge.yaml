@@ -1,0 +1,37 @@
+id: Cambridge
+short_code: Cambridge
+name: Cambridge Assessment International Education (CAIE)
+country: United Kingdom
+description: Cambridge IGCSE and O/A Level Examinations
+status: ACTIVE
+
+class_levels:
+  - "O-Level"
+  - "A-Level"
+  - "IGCSE"
+
+subjects_by_class:
+  "O-Level":
+    - Physics
+    - Chemistry
+    - Biology
+    - Mathematics
+  "A-Level":
+    - Physics
+    - Chemistry
+    - Biology
+    - Mathematics
+
+terminology:
+  chapter: topic
+  topic: subtopic
+
+exam_style:
+  mcq_paper: true
+  subjective_paper: true
+  practical_component: true
+  negative_marking: false
+  allowed_question_types:
+    - MCQ_SINGLE
+    - STRUCTURED_QUESTION
+    - PRACTICAL_QUESTION

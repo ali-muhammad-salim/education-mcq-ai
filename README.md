@@ -1,4 +1,4 @@
-# Board-Neutral Educational AI MCQ Platform (Content Engine v1.0)
+# Board-Neutral Educational AI Content Engine (v1.0)
 
 [![Architecture](https://img.shields.io/badge/Architecture-Hexagonal%20%2F%20Clean-blue.svg)](docs/ARCHITECTURE.md)
 [![Database](https://img.shields.io/badge/Database-PostgreSQL%20%2B%20pgvector-teal.svg)](docs/ARCHITECTURE.md#2-core-domain-data-model-postgresql--pgvector)
@@ -9,22 +9,23 @@
 
 ## 1. Project Overview
 
-The **Board-Neutral Educational AI MCQ Platform** is an enterprise-grade AI system engineered to ingest multiple educational curricula, process textbooks and historical past examination papers, construct concept dependency graphs, generate mathematically rigorous multiple-choice questions (MCQs), and execute multi-stage validation.
+The **Board-Neutral Educational AI Content Engine** is an enterprise-grade AI system engineered to ingest multiple educational curricula, process textbooks and historical past examination papers (while preserving complex document formatting), construct concept dependency graphs, and generate comprehensive study resources (Study Notes, MCQs, Short/Long Descriptive Questions, and Numerical Problems) aligned precisely with specific board paper patterns. It features a multi-stage validation gauntlet to ensure absolute accuracy.
 
 ### What Version 1.0 Builds
 Version 1.0 focuses **exclusively on the AI Content Engine and Database**.
 - Multi-board and curriculum ontology management (FBISE, Cambridge CAIE, Punjab Board, CBSE, etc.).
-- Document parsing for clean digital PDFs and scanned past papers (OCR + Layout Analysis + LaTeX extraction).
+- High-fidelity document parsing for textbooks and scanned past papers (preserving complex formatting, OCR, Layout Analysis, and LaTeX extraction).
+- Comprehensive resource generation from textbooks (creating Study Notes, Summaries, and diverse question types).
+- Multi-format question generation (MCQs, Short/Long Questions, Numerical problems) tailored to specific board paper patterns.
 - Historical past-paper question cataloging with exact citations (Year, Session, Paper Code, Question Number).
-- Dual-provenance question generation (linking each MCQ to textbook evidence and historical past-paper precedents).
-- Five-stage automated validation pipeline (Syntax, Blind Solver, Distractor Quality, Grounding, and Syllabus Alignment).
+- Dual-provenance question generation (linking each question to textbook evidence and historical past-paper precedents).
+- Five-stage automated validation pipeline (Syntax, Blind Solver, Quality, Grounding, and Syllabus Alignment).
 - Evidence-based Study Priority Analytics (Historical Frequency Index without misleading guarantees).
 
 ### What Version 1.0 Does NOT Build (Deferred to Future Versions)
 - Student web portal & mobile apps
 - Teacher / administrative management dashboards
 - Authentication & RBAC systems
-- Study notes & summary generator
 - Adaptive student recommendation engine
 - Public blogs & SEO pages
 - Payment & e-commerce systems
@@ -112,10 +113,11 @@ The system's complete architectural and design blueprints are documented in the 
                                            |
                                            v
 +---------------------------------------------------------------------------------------+
-| PHASE 5: MCQ Generation & 5-Stage Validation Gauntlet                                 |
+| PHASE 5: Content Generation & 5-Stage Validation Gauntlet                             |
 | - Implement Hybrid Retrieval (Vector HNSW + Sparse tsvector + Graph filter)           |
-| - Implement MCQ Generator with Misconception-Driven Distractors                       |
-| - Implement The Gatekeeper (Syntax, Blind Solver, Distractor Audit, Grounding Check)   |
+| - Implement Resource Generator (Study Notes, Summaries)                               |
+| - Implement Question Generator (MCQs, Short Qs, Numericals) mapped to Paper Patterns  |
+| - Implement The Gatekeeper (Syntax, Blind Solver, Quality Audit, Grounding Check)     |
 +---------------------------------------------------------------------------------------+
                                            |
                                            v

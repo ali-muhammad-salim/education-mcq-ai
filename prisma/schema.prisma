@@ -1,0 +1,1326 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+
+generator py {
+  provider             = "prisma-client-py"
+  interface            = "sync"
+  recursive_type_depth = 5
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+// ==================================================
+// 1. BOARD SYSTEM
+// ==================================================
+
+model Board {
+  id          String   @id @default(uuid())
+  name        String
+  shortCode   String   @unique
+  country     String
+  description String?
+  status      String   @default("ACTIVE")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  programmes  Programme[]
+  questions   Question[]
+}
+
+model Programme {
+  id          String   @id @default(uuid())
+  boardId     String
+  name        String
+  description String?
+
+  board       Board    @relation(fields: [boardId], references: [id])
+  academicClasses AcademicClass[]
+}
+
+model ProgrammeMapping {
+  id              String   @id @default(uuid())
+  sourceSystem    String
+  externalId      String
+  internalBoardId String
+  createdAt       DateTime @default(now())
+}
+
+// ==================================================
+// 2. ACADEMIC HIERARCHY
+// ==================================================
+
+model AcademicClass {
+  id           String          @id @default(uuid())
+  programmeId  String
+  name         String
+  level        Int
+
+  programme    Programme       @relation(fields: [programmeId], references: [id])
+  subjects     Subject[]
+  pastPapers   PastPaper[]
+
+  @@map("Class")
+}
+
+model Subject {
+  id               String          @id @default(uuid())
+  classId          String
+  name             String
+  code             String?
+
+  academicClass    AcademicClass   @relation(fields: [classId], references: [id])
+  syllabusVersions SyllabusVersion[]
+  pastPapers       PastPaper[]
+}
+
+model SyllabusVersion {
+  id           String          @id @default(uuid())
+  subjectId    String
+  versionName  String
+  validFrom    DateTime
+  validTo      DateTime?
+  isLatest     Boolean         @default(false)
+  fileUrl      String?
+  createdAt    DateTime        @default(now())
+
+  subject      Subject         @relation(fields: [subjectId], references: [id])
+  topics       Topic[]
+  examinationSpecifications ExaminationSpecification[]
+  pastPaperQuestions PastPaperQuestion[]
+}
+
+model Topic {
+  id                String          @id @default(uuid())
+  syllabusVersionId String
+  name              String
+  topicNumber       String?
+
+  syllabusVersion   SyllabusVersion @relation(fields: [syllabusVersionId], references: [id])
+  subtopics         Subtopic[]
+  pastPaperQuestions PastPaperQuestionTopic[]
+  bookContents       BookContentTopic[]
+  studyNotes         StudyNote[]
+
+  @@index([syllabusVersionId])
+}
+
+model Subtopic {
+  id           String          @id @default(uuid())
+  topicId      String
+  name         String
+  subtopicNum  String?
+
+  topic        Topic           @relation(fields: [topicId], references: [id])
+  slos         SLO[]
+  pastPaperQuestions PastPaperQuestionSubtopic[]
+  bookContents       BookContentSubtopic[]
+
+  @@index([topicId])
+}
+
+model SLO {
+  id           String          @id @default(uuid())
+  subtopicId   String
+  code         String?
+  description  String
+  cognitiveLevel String?       // R | U | A | An | E | C (inferred from command word unless stated)
+  isPractical    Boolean       @default(false)
+  fingerprint    String?       // normalized text hash for cross-version matching
+  sourcePage     Int?          // page in syllabus PDF
+  isFormative    Boolean       @default(false) // FA: not assessed under exam conditions
+  embedding      Unsupported("vector(768)")?
+
+  subtopic     Subtopic        @relation(fields: [subtopicId], references: [id])
+  concepts     Concept[]
+  commandWords CommandWord[]
+  pastPaperQuestions PastPaperQuestionSLO[]
+  bookContents       BookContentSLO[]
+
+  sourceMappings SLOMapping[] @relation("SourceSLO")
+  targetMappings SLOMapping[] @relation("TargetSLO")
+
+  @@unique([subtopicId, code])
+  @@index([subtopicId])
+}
+
+// Structured paper pattern (sections, marks, K/U/A split, chapter weightage)
+model PaperBlueprint {
+  id                String   @id @default(uuid())
+  syllabusVersionId String
+  paperCode         String
+  durationMin       Int?
+  totalMarks        Float
+  sections          Json
+  chapterWeightage  Json?
+  cognitiveSplit    Json?
+  source            String   @default("DERIVED") // SYLLABUS | MODEL_PAPER | DERIVED
+  confidence        Float?
+  createdAt         DateTime @default(now())
+
+  @@unique([syllabusVersionId, paperCode])
+}
+
+// Result of comparing two syllabus versions (see services/knowledge/syllabus_diff.py)
+model SyllabusDiffRecord {
+  id            String   @id @default(uuid())
+  fromVersionId String
+  toVersionId   String
+  summary       Json
+  changes       Json
+  createdAt     DateTime @default(now())
+
+  @@unique([fromVersionId, toVersionId])
+}
+
+model SLOMapping {
+  id                String   @id @default(uuid())
+  sourceSloId       String
+  targetSloId       String
+  mappingType       String   @default("EQUIVALENT") // e.g. EQUIVALENT, PARTIAL, SUPERSEDED
+  confidenceScore   Float?
+  createdAt         DateTime @default(now())
+
+  sourceSlo         SLO      @relation("SourceSLO", fields: [sourceSloId], references: [id])
+  targetSlo         SLO      @relation("TargetSLO", fields: [targetSloId], references: [id])
+  
+  @@unique([sourceSloId, targetSloId])
+}
+
+model Concept {
+  id           String          @id @default(uuid())
+  sloId        String
+  name         String
+  description  String?
+
+  slo          SLO             @relation(fields: [sloId], references: [id])
+  skills       Skill[]
+  pastPaperQuestions PastPaperQuestionConcept[]
+  bookContents       BookContentConcept[]
+
+  @@index([sloId])
+}
+
+model Skill {
+  id           String          @id @default(uuid())
+  conceptId    String
+  name         String
+
+  concept      Concept         @relation(fields: [conceptId], references: [id])
+}
+
+model CommandWord {
+  id           String          @id @default(uuid())
+  word         String          @unique
+  description  String?
+
+  slos         SLO[]
+  pastPaperQuestions PastPaperQuestionCommandWord[]
+}
+
+model CognitiveLevel {
+  id           String          @id @default(uuid())
+  level        String          @unique
+  description  String?
+
+  pastPaperQuestions PastPaperQuestionCognitiveLevel[]
+  bookContents       BookContentCognitiveLevel[]
+}
+
+model ExaminationSpecification {
+  id                String          @id @default(uuid())
+  syllabusVersionId String
+  details           Json
+
+  syllabusVersion   SyllabusVersion @relation(fields: [syllabusVersionId], references: [id])
+}
+
+// ==================================================
+// 3. BOOK SYSTEM
+// ==================================================
+
+model Book {
+  id               String   @id @default(uuid())
+  title            String
+  publisher        String?
+  subject          String?
+  className        String?
+  boardAssociation String?
+  language         String?
+  edition          String?
+  publicationYear  Int?
+  sourceFile       String?
+  sourceHash       String?
+  metadata         Json?
+  createdAt        DateTime @default(now())
+
+  editions         BookEdition[]
+  pages            BookPage[]
+  contents         BookContent[]
+}
+
+model BookEdition {
+  id        String   @id @default(uuid())
+  bookId    String
+  version   String
+  changes   Json?
+  createdAt DateTime @default(now())
+
+  book      Book     @relation(fields: [bookId], references: [id])
+}
+
+model BookPage {
+  id               String   @id @default(uuid())
+  bookId           String
+  pageNumber       Int
+  imagePath        String?
+  width            Int?
+  height           Int?
+  ocrStatus        String?
+  extractionStatus String?
+  confidence       Float?
+  sourceHash       String?
+
+  book             Book     @relation(fields: [bookId], references: [id])
+  extractions      Extraction[]
+}
+
+model BookSection {
+  id        String @id @default(uuid())
+  title     String
+  content   String
+}
+
+model ContentChunk {
+  id        String @id @default(uuid())
+  text      String
+}
+
+model MediaAsset {
+  id        String @id @default(uuid())
+  url       String
+  type      String
+}
+
+model Formula {
+  id        String @id @default(uuid())
+  latex     String
+}
+
+model Equation {
+  id        String @id @default(uuid())
+  latex     String
+}
+
+model Diagram {
+  id        String @id @default(uuid())
+  imagePath String
+}
+
+model Flowchart {
+  id        String @id @default(uuid())
+  data      Json
+}
+
+model TableRegion {
+  id        String @id @default(uuid())
+  data      Json
+}
+
+model BookContent {
+  id               String   @id @default(uuid())
+  bookId           String
+  content          String   @db.Text
+  pageNumber       Int?
+  section          String?
+  embedding        Unsupported("vector(768)")?
+  
+  book             Book     @relation(fields: [bookId], references: [id])
+  
+  topics           BookContentTopic[]
+  subtopics        BookContentSubtopic[]
+  slos             BookContentSLO[]
+  concepts         BookContentConcept[]
+  cognitiveLevels  BookContentCognitiveLevel[]
+}
+
+model BookContentTopic {
+  id            String @id @default(uuid())
+  bookContentId String
+  topicId       String
+  bookContent   BookContent @relation(fields: [bookContentId], references: [id], onDelete: Cascade)
+  topic         Topic       @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  @@unique([bookContentId, topicId])
+}
+
+model BookContentSubtopic {
+  id            String @id @default(uuid())
+  bookContentId String
+  subtopicId    String
+  bookContent   BookContent @relation(fields: [bookContentId], references: [id], onDelete: Cascade)
+  subtopic      Subtopic    @relation(fields: [subtopicId], references: [id], onDelete: Cascade)
+  @@unique([bookContentId, subtopicId])
+}
+
+model BookContentSLO {
+  id            String @id @default(uuid())
+  bookContentId String
+  sloId         String
+  bookContent   BookContent @relation(fields: [bookContentId], references: [id], onDelete: Cascade)
+  slo           SLO         @relation(fields: [sloId], references: [id], onDelete: Cascade)
+  @@unique([bookContentId, sloId])
+}
+
+model BookContentConcept {
+  id            String @id @default(uuid())
+  bookContentId String
+  conceptId     String
+  bookContent   BookContent @relation(fields: [bookContentId], references: [id], onDelete: Cascade)
+  concept       Concept     @relation(fields: [conceptId], references: [id], onDelete: Cascade)
+  @@unique([bookContentId, conceptId])
+}
+
+model BookContentCognitiveLevel {
+  id               String @id @default(uuid())
+  bookContentId    String
+  cognitiveLevelId String
+  bookContent      BookContent    @relation(fields: [bookContentId], references: [id], onDelete: Cascade)
+  cognitiveLevel   CognitiveLevel @relation(fields: [cognitiveLevelId], references: [id], onDelete: Cascade)
+  @@unique([bookContentId, cognitiveLevelId])
+}
+
+// ==================================================
+// 4. EXTRACTION
+// ==================================================
+
+model Extraction {
+  id               String   @id @default(uuid())
+  bookPageId       String
+  extractionEngine String
+  model            String?
+  modelVersion     String?
+  rawOutput        String   @db.Text
+  normalizedText   String   @db.Text
+  confidence       Float?
+  status           String
+  createdAt        DateTime @default(now())
+
+  bookPage         BookPage @relation(fields: [bookPageId], references: [id])
+}
+
+// ==================================================
+// 5. PAST PAPER SYSTEM
+// ==================================================
+
+model PastPaper {
+  id                 String   @id @default(uuid())
+  boardId            String
+  classId            String
+  subjectId          String
+  examYear           Int
+  examSession        String?
+  examType           String?
+  paperCode          String?
+  fileUrl            String?
+  title              String
+  sourceFile         String?
+  sourceHash         String?
+  pageCount          Int?
+  verificationStatus String   @default("PENDING")
+  createdAt          DateTime @default(now())
+
+  academicClass      AcademicClass @relation(fields: [classId], references: [id])
+  subject            Subject  @relation(fields: [subjectId], references: [id])
+  questions          PastPaperQuestion[]
+}
+
+model PastPaperPage {
+  id        String @id @default(uuid())
+  pageIndex Int
+}
+
+model PastPaperSection {
+  id        String @id @default(uuid())
+  name      String
+}
+
+model PastPaperQuestion {
+  id                     String   @id @default(uuid())
+  pastPaperId            String
+  section                String?
+  // 6. EXACT YEAR + QUESTION NUMBER
+  questionNumber         String
+  subQuestionNumber      String?
+  
+  questionText           String   @db.Text
+  normalizedQuestionText String   @db.Text
+  questionType           String
+  marks                  Float?
+  pageNumber             Int?
+  sourceRegion           Json?
+  
+  syllabusVersionId      String?
+  topicId                String?
+  subtopicId             String?
+  sloId                  String?
+  conceptId              String?
+  
+  difficulty             String?
+  
+  numericalOrConceptual  String?
+  diagramBased           Boolean  @default(false)
+  imageBased             Boolean  @default(false)
+  graphBased             Boolean  @default(false)
+  tableBased             Boolean  @default(false)
+  equationBased          Boolean  @default(false)
+  
+  verified               Boolean  @default(false)
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+
+  pastPaper              PastPaper @relation(fields: [pastPaperId], references: [id])
+  syllabusVersion        SyllabusVersion? @relation(fields: [syllabusVersionId], references: [id])
+  
+  // 7. PAST PAPER ↔ ACADEMIC HIERARCHY
+  topics                 PastPaperQuestionTopic[]
+  subtopics              PastPaperQuestionSubtopic[]
+  slos                   PastPaperQuestionSLO[]
+  concepts               PastPaperQuestionConcept[]
+  commandWords           PastPaperQuestionCommandWord[]
+  cognitiveLevels        PastPaperQuestionCognitiveLevel[]
+  
+  parts                  PastPaperQuestionPart[]
+  media                  PastPaperQuestionMedia[]
+  generatedReferences    QuestionPastPaperReference[]
+
+  @@index([pastPaperId])
+  @@index([questionNumber])
+}
+
+model PastPaperQuestionPart {
+  id                  String   @id @default(uuid())
+  pastPaperQuestionId String
+  partIdentifier      String
+  text                String   @db.Text
+
+  question            PastPaperQuestion @relation(fields: [pastPaperQuestionId], references: [id])
+}
+
+model PastPaperQuestionTopic {
+  id                  String   @id @default(uuid())
+  pastPaperQuestionId String
+  topicId             String
+
+  question            PastPaperQuestion @relation(fields: [pastPaperQuestionId], references: [id])
+  topic               Topic             @relation(fields: [topicId], references: [id])
+
+  @@unique([pastPaperQuestionId, topicId])
+}
+
+model PastPaperQuestionSubtopic {
+  id                  String   @id @default(uuid())
+  pastPaperQuestionId String
+  subtopicId          String
+
+  question            PastPaperQuestion @relation(fields: [pastPaperQuestionId], references: [id])
+  subtopic            Subtopic          @relation(fields: [subtopicId], references: [id])
+
+  @@unique([pastPaperQuestionId, subtopicId])
+}
+
+model PastPaperQuestionSLO {
+  id                  String   @id @default(uuid())
+  pastPaperQuestionId String
+  sloId               String
+
+  question            PastPaperQuestion @relation(fields: [pastPaperQuestionId], references: [id])
+  slo                 SLO               @relation(fields: [sloId], references: [id])
+
+  @@unique([pastPaperQuestionId, sloId])
+}
+
+model PastPaperQuestionConcept {
+  id                  String   @id @default(uuid())
+  pastPaperQuestionId String
+  conceptId           String
+
+  question            PastPaperQuestion @relation(fields: [pastPaperQuestionId], references: [id])
+  concept             Concept           @relation(fields: [conceptId], references: [id])
+
+  @@unique([pastPaperQuestionId, conceptId])
+  @@index([conceptId])
+}
+
+model PastPaperQuestionCommandWord {
+  id                  String   @id @default(uuid())
+  pastPaperQuestionId String
+  commandWordId       String
+
+  question            PastPaperQuestion @relation(fields: [pastPaperQuestionId], references: [id])
+  commandWord         CommandWord       @relation(fields: [commandWordId], references: [id])
+
+  @@unique([pastPaperQuestionId, commandWordId])
+}
+
+model PastPaperQuestionCognitiveLevel {
+  id                  String   @id @default(uuid())
+  pastPaperQuestionId String
+  cognitiveLevelId    String
+
+  question            PastPaperQuestion @relation(fields: [pastPaperQuestionId], references: [id])
+  cognitiveLevel      CognitiveLevel    @relation(fields: [cognitiveLevelId], references: [id])
+
+  @@unique([pastPaperQuestionId, cognitiveLevelId])
+}
+
+model PastPaperQuestionMedia {
+  id                  String   @id @default(uuid())
+  pastPaperQuestionId String
+  mediaUrl            String
+  mediaType           String
+
+  question            PastPaperQuestion @relation(fields: [pastPaperQuestionId], references: [id])
+}
+
+// ==================================================
+// 8. GENERATED QUESTION SYSTEM
+// ==================================================
+
+enum QuestionType {
+  MCQ_SINGLE
+  MCQ_MULTIPLE
+  TRUE_FALSE
+  ASSERTION_REASON
+  STATEMENT_BASED
+  NEGATIVE_STEM
+  IMAGE_BASED
+  DIAGRAM_BASED
+  GRAPH_BASED
+  TABLE_BASED
+  EQUATION_BASED
+  NUMERICAL
+  CASE_BASED
+  PASSAGE_BASED
+  MATCHING
+  SEQUENCE
+  CLASSIFICATION
+  CRQ // Constructed Response Question (Short Answer)
+  ERQ // Extended Response Question (Long Answer)
+}
+
+model Question {
+  id                     String   @id @default(uuid())
+  questionType           QuestionType
+  stemText               String   @db.Text
+  
+  // 12. BOARD RELEVANCE
+  boardId                String?
+  curriculumRelevance    Float?
+  historicalEvidenceStrength Float?
+  sourceFaithfulness     Float?
+  questionQuality        Float?
+  difficultyConfidence   Float?
+  boardStyleEvidence     String?  @db.Text // Contains evidence supporting these scores
+
+  status                 String   @default("DRAFT")
+  difficulty             String?
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+
+  board                  Board?   @relation(fields: [boardId], references: [id])
+
+  options                QuestionOption[]
+  explanations           QuestionExplanation[]
+  solutions              QuestionSolution[]
+  media                  QuestionMedia[]
+  tags                   QuestionTag[]
+  versions               QuestionVersion[]
+  sources                QuestionSource[]
+  pastPaperReferences    QuestionPastPaperReference[]
+
+  @@index([boardId])
+  @@index([questionType])
+  @@index([status])
+  @@index([difficulty])
+}
+
+model QuestionOption {
+  id         String   @id @default(uuid())
+  questionId String
+  text       String   @db.Text
+  isCorrect  Boolean
+  orderIndex Int?
+
+  question   Question @relation(fields: [questionId], references: [id])
+}
+
+model QuestionExplanation {
+  id         String   @id @default(uuid())
+  questionId String
+  text       String   @db.Text
+
+  question   Question @relation(fields: [questionId], references: [id])
+}
+
+model QuestionSolution {
+  id         String   @id @default(uuid())
+  questionId String
+  steps      Json
+
+  question   Question @relation(fields: [questionId], references: [id])
+}
+
+// 9. MCQ CONTENT MODES
+model QuestionMedia {
+  id         String   @id @default(uuid())
+  questionId String
+  mediaUrl   String
+  mediaType  String
+  caption    String?
+
+  question   Question @relation(fields: [questionId], references: [id])
+}
+
+model QuestionTag {
+  id         String   @id @default(uuid())
+  questionId String
+  tag        String
+
+  question   Question @relation(fields: [questionId], references: [id])
+}
+
+model QuestionVersion {
+  id         String   @id @default(uuid())
+  questionId String
+  version    Int
+  data       Json
+
+  question   Question @relation(fields: [questionId], references: [id])
+}
+
+// ==================================================
+// 10. QUESTION PROVENANCE
+// ==================================================
+
+enum SourceType {
+  TEXTBOOK
+  CURRICULUM
+  PAST_PAPER
+  APPROVED_QUESTION
+  TEACHER_CREATED
+  OTHER_VERIFIED_SOURCE
+}
+
+model QuestionSource {
+  id           String   @id @default(uuid())
+  questionId   String
+  sourceType   SourceType
+  sourceId     String
+  pageNumber   Int?
+  region       Json?
+  evidenceText String   @db.Text
+  relationship String?
+  createdAt    DateTime @default(now())
+
+  question     Question @relation(fields: [questionId], references: [id])
+}
+
+// ==================================================
+// 11. CRITICAL: QUESTION ↔ PAST PAPER REFERENCES
+// ==================================================
+
+enum ReferenceRelationship {
+  DIRECT_CONCEPT
+  SAME_CONCEPT
+  SAME_PATTERN
+  SAME_FORMULA
+  SAME_NUMERICAL_METHOD
+  SAME_DIAGRAM_PATTERN
+  RELATED_CONCEPT
+  SEMANTICALLY_SIMILAR
+}
+
+model QuestionPastPaperReference {
+  id                   String   @id @default(uuid())
+  questionId           String
+  pastPaperQuestionId  String
+  relationshipType     ReferenceRelationship
+  similarityScore      Float?
+  
+  conceptMatch         Boolean  @default(false)
+  topicMatch           Boolean  @default(false)
+  patternMatch         Boolean  @default(false)
+  formulaMatch         Boolean  @default(false)
+  diagramMatch         Boolean  @default(false)
+  numericalMethodMatch Boolean  @default(false)
+  
+  evidenceStrength     Float?
+  rationale            String   @db.Text
+  createdAt            DateTime @default(now())
+
+  question             Question          @relation(fields: [questionId], references: [id])
+  pastPaperQuestion    PastPaperQuestion @relation(fields: [pastPaperQuestionId], references: [id])
+
+  @@index([questionId])
+  @@index([pastPaperQuestionId])
+}
+
+// ==================================================
+// 13. AI GENERATION
+// ==================================================
+
+model AIJob {
+  id        String   @id @default(uuid())
+  status    String
+}
+
+model AIGeneration {
+  id               String   @id @default(uuid())
+  model            String
+  modelVersion     String
+  promptVersion    String
+  inputHash        String
+  retrievedSources Json?
+  inputData        Json
+  rawOutput        String   @db.Text
+  normalizedOutput Json
+  createdAt        DateTime @default(now())
+}
+
+model AIPrompt {
+  id        String   @id @default(uuid())
+  content   String
+}
+
+model AIModel {
+  id        String   @id @default(uuid())
+  name      String
+}
+
+model AIEvaluation {
+  id        String   @id @default(uuid())
+  score     Float
+}
+
+model AIValidation {
+  id        String   @id @default(uuid())
+  isValid   Boolean
+}
+
+// ==================================================
+// 14. REVIEW
+// ==================================================
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  EDITED
+  REJECTED
+}
+
+model Review {
+  id                 String       @id @default(uuid())
+  status             ReviewStatus @default(PENDING)
+  originalAIOutput   Json?
+  finalHumanVersion  Json?
+  createdAt          DateTime     @default(now())
+}
+
+model ReviewComment {
+  id        String   @id @default(uuid())
+  comment   String
+}
+
+// ==================================================
+// 15. STUDY NOTES
+// ==================================================
+
+model StudyNote {
+  id        String   @id @default(uuid())
+  topicId   String
+  title     String
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+  // Citation-rich, SLO-anchored notes
+  sloId             String?
+  syllabusVersionId String?
+  blocks            Json?    // [{type,text,citations:[{sourceType,sourceId,page,sloId}]}]
+  coverageSummary   Json?    // {pastPaperYears:[...], bookPages:[...]}
+  status            String   @default("DRAFT")
+  staleReason       String?
+
+  topic     Topic    @relation(fields: [topicId], references: [id])
+  
+  @@index([topicId])
+  @@index([sloId])
+}
+
+model ReviewDecision {
+  id        String   @id @default(uuid())
+  decision  String
+}
+
+// ==================================================
+// 15. EMBEDDINGS
+// ==================================================
+
+// model VectorEmbedding {
+//   id             String   @id @default(uuid())
+//   sourceType     String
+//   sourceId       String
+//   embeddingModel String
+//   embedding      Unsupported("vector(1536)")?
+// 
+//   @@index([sourceType, sourceId])
+// }
+
+model ingest_document_pages {
+  id                    String                  @id @db.VarChar(36)
+  document_id           String                  @db.VarChar(36)
+  page_number           Int
+  image_path            String?
+  width                 Int?
+  height                Int?
+  orientation_angle     Float
+  ocr_status            String                  @db.VarChar(20)
+  processing_time_ms    Float
+  created_at            DateTime                @db.Timestamptz(6)
+  ingest_documents      ingest_documents        @relation(fields: [document_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  ingest_page_diagrams  ingest_page_diagrams[]
+  ingest_page_equations ingest_page_equations[]
+  ingest_page_questions ingest_page_questions[]
+  ingest_page_regions   ingest_page_regions[]
+  ingest_page_tables    ingest_page_tables[]
+
+  @@unique([document_id, page_number])
+}
+model ingest_documents {
+  id                    String                  @id @db.VarChar(36)
+  document_type         String                  @db.VarChar(20)
+  title                 String                  @db.VarChar(512)
+  file_path             String
+  file_hash_sha256      String                  @unique @db.VarChar(64)
+  total_pages           Int
+  processing_status     String                  @db.VarChar(20)
+  metadata_json         Json?                   @db.Json
+  created_at            DateTime                @db.Timestamptz(6)
+  updated_at            DateTime                @db.Timestamptz(6)
+  ingest_document_pages ingest_document_pages[]
+}
+model ingest_page_diagrams {
+  id                    String                @id @db.VarChar(36)
+  page_id               String                @db.VarChar(36)
+  region_id             String                @db.VarChar(32)
+  media_path            String?
+  caption               String
+  detected_labels       Json?                 @db.Json
+  description           String
+  associated_concept    String
+  bbox_x0               Float
+  bbox_y0               Float
+  bbox_x1               Float
+  bbox_y1               Float
+  confidence            Float
+  confidence_level      String                @db.VarChar(16)
+  vision_used           Boolean
+  created_at            DateTime              @db.Timestamptz(6)
+  ingest_document_pages ingest_document_pages @relation(fields: [page_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+model ingest_page_equations {
+  id                    String                @id @db.VarChar(36)
+  page_id               String                @db.VarChar(36)
+  region_id             String                @db.VarChar(32)
+  display_form          String
+  latex                 String
+  normalized_form       String
+  is_chemical           Boolean
+  chem_display          String
+  chem_normalized       String
+  chem_arrow            String                @db.VarChar(8)
+  chem_state_symbols    Json?                 @db.Json
+  chem_coefficients     Json?                 @db.Json
+  bbox_x0               Float
+  bbox_y0               Float
+  bbox_x1               Float
+  bbox_y1               Float
+  confidence            Float
+  confidence_level      String                @db.VarChar(16)
+  vision_used           Boolean
+  created_at            DateTime              @db.Timestamptz(6)
+  ingest_document_pages ingest_document_pages @relation(fields: [page_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+model ingest_page_questions {
+  id                    String                @id @db.VarChar(36)
+  page_id               String                @db.VarChar(36)
+  region_id             String                @db.VarChar(32)
+  question_number       String                @db.VarChar(16)
+  sub_question_number   String                @db.VarChar(16)
+  section               String                @db.VarChar(64)
+  question_type         String?               @db.VarChar(32) // e.g., MCQ, CRQ, ERQ
+  syllabus_version_id   String?               @db.VarChar(36)
+  marks                 Float?
+  question_text         String
+  options               Json?                 @db.Json
+  answer_space_y0       Float?
+  answer_space_y1       Float?
+  has_diagram           Boolean
+  has_formula           Boolean
+  has_table             Boolean
+  bbox_x0               Float
+  bbox_y0               Float
+  bbox_x1               Float
+  bbox_y1               Float
+  confidence            Float
+  confidence_level      String                @db.VarChar(16)
+  created_at            DateTime              @db.Timestamptz(6)
+  ingest_document_pages ingest_document_pages @relation(fields: [page_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+model ingest_page_regions {
+  id                    String                @id @db.VarChar(36)
+  page_id               String                @db.VarChar(36)
+  region_id             String                @db.VarChar(32)
+  region_type           String                @db.VarChar(32)
+  bbox_x0               Float
+  bbox_y0               Float
+  bbox_x1               Float
+  bbox_y1               Float
+  text                  String
+  confidence            Float
+  confidence_level      String                @db.VarChar(16)
+  vision_used           Boolean
+  reading_order         Int?
+  raw_ocr               Json?                 @db.Json
+  created_at            DateTime              @db.Timestamptz(6)
+  ingest_document_pages ingest_document_pages @relation(fields: [page_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+model ingest_page_tables {
+  id                    String                @id @db.VarChar(36)
+  page_id               String                @db.VarChar(36)
+  region_id             String                @db.VarChar(32)
+  headers               Json?                 @db.Json
+  rows                  Json?                 @db.Json
+  markdown              String
+  html                  String
+  bbox_x0               Float
+  bbox_y0               Float
+  bbox_x1               Float
+  bbox_y1               Float
+  confidence            Float
+  confidence_level      String                @db.VarChar(16)
+  vision_used           Boolean
+  created_at            DateTime              @db.Timestamptz(6)
+  ingest_document_pages ingest_document_pages @relation(fields: [page_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+// ==================================================
+// 16. USER & AUTHENTICATION SYSTEM
+// ==================================================
+
+enum UserRole {
+  STUDENT
+  TEACHER
+  ADMIN
+}
+
+enum AccountStatus {
+  ACTIVE
+  SUSPENDED
+  PENDING_VERIFICATION
+}
+
+model User {
+  id              String         @id @default(uuid())
+  email           String         @unique
+  name            String
+  passwordHash    String?
+  role            UserRole       @default(STUDENT)
+  status          AccountStatus  @default(ACTIVE)
+  emailVerified   Boolean        @default(false)
+  googleId        String?        @unique
+  avatarUrl       String?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  sessions             UserSession[]
+  teacherClassrooms    Classroom[]            @relation("TeacherClassrooms")
+  classroomMemberships ClassroomMembership[]
+  teacherQuizzes       Quiz[]                 @relation("TeacherQuizzes")
+  quizAttempts         QuizAttempt[]
+  gradedAnswers        AnswerGrade[]          @relation("TeacherGradedAnswers")
+  auditLogs            AuditLog[]
+
+  @@index([email])
+  @@index([role])
+}
+
+model UserSession {
+  id           String    @id @default(uuid())
+  userId       String
+  token        String    @unique
+  ipAddress    String?
+  userAgent    String?
+  expiresAt    DateTime
+  createdAt    DateTime  @default(now())
+
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([token])
+  @@index([userId])
+}
+
+// ==================================================
+// 17. CLASSROOM & ENROLLMENT SYSTEM
+// ==================================================
+
+model Classroom {
+  id          String   @id @default(uuid())
+  teacherId   String
+  name        String
+  description String?
+  boardId     String?
+  classLevel  Int      // 9, 10, 11, 12
+  session     String?  // e.g., "2025-2026"
+  code        String   @unique
+  status      String   @default("ACTIVE")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  teacher     User                  @relation("TeacherClassrooms", fields: [teacherId], references: [id])
+  memberships ClassroomMembership[]
+  quizzes     QuizAssignment[]
+
+  @@index([teacherId])
+  @@index([code])
+}
+
+model ClassroomMembership {
+  id          String   @id @default(uuid())
+  classroomId String
+  studentId   String
+  status      String   @default("ENROLLED") // ENROLLED, INVITED, REMOVED
+  enrolledAt  DateTime @default(now())
+
+  classroom   Classroom @relation(fields: [classroomId], references: [id], onDelete: Cascade)
+  student     User      @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([classroomId, studentId])
+  @@index([classroomId])
+  @@index([studentId])
+}
+
+// ==================================================
+// 18. QUIZ & ASSESSMENT SYSTEM
+// ==================================================
+
+enum QuizStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum QuizVisibility {
+  PUBLIC
+  UNLISTED
+  PRIVATE
+}
+
+enum AIGradingMode {
+  OFF
+  LENIENT
+  MEDIUM
+  STRICT
+  CUSTOM
+}
+
+model Quiz {
+  id             String         @id @default(uuid())
+  teacherId      String
+  title          String
+  description    String?        @db.Text
+  boardId        String?
+  classId        String?
+  subjectId      String?
+  totalMarks     Float          @default(0)
+  durationMin    Int?
+  status         QuizStatus     @default(DRAFT)
+  visibility     QuizVisibility @default(PUBLIC)
+  scheduleStart  DateTime?
+  scheduleEnd    DateTime?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  teacher        User             @relation("TeacherQuizzes", fields: [teacherId], references: [id])
+  settings       QuizSetting?
+  questions      QuizQuestion[]
+  attempts       QuizAttempt[]
+  assignments    QuizAssignment[]
+
+  @@index([teacherId])
+  @@index([status])
+  @@index([visibility])
+}
+
+model QuizSetting {
+  id                    String        @id @default(uuid())
+  quizId                String        @unique
+  maxAttempts           Int           @default(1)
+  allowRetries          Boolean       @default(false)
+  randomizeQuestions    Boolean       @default(false)
+  randomizeOptions      Boolean       @default(false)
+  immediateFeedback     Boolean       @default(true)
+  showCorrectAnswers    Boolean       @default(true)
+  resultVisibility      String        @default("IMMEDIATE") // IMMEDIATE, MANUAL_RELEASE, SCHEDULED
+  resultReleaseDate     DateTime?
+  manualGradingRequired Boolean       @default(false)
+  aiGradingMode         AIGradingMode @default(MEDIUM)
+  customRubric          Json?
+  negativeMarking       Boolean       @default(false)
+  negativeMarkValue     Float         @default(0)
+  tabMonitoringEnabled  Boolean       @default(true)
+  tabWarningThreshold   Int           @default(2)
+  lateSubmissionAllowed Boolean       @default(false)
+
+  quiz                  Quiz          @relation(fields: [quizId], references: [id], onDelete: Cascade)
+}
+
+model QuizAssignment {
+  id          String    @id @default(uuid())
+  quizId      String
+  classroomId String
+  assignedAt  DateTime  @default(now())
+  deadline    DateTime?
+
+  quiz        Quiz      @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  classroom   Classroom @relation(fields: [classroomId], references: [id], onDelete: Cascade)
+
+  @@unique([quizId, classroomId])
+}
+
+model QuizQuestion {
+  id                 String    @id @default(uuid())
+  quizId             String
+  bankQuestionId     String?
+  orderIndex         Int
+  marks              Float     @default(1)
+  isRequired         Boolean   @default(true)
+  questionData       Json
+
+  quiz               Quiz      @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  answers            QuizAnswer[]
+
+  @@index([quizId])
+  @@index([orderIndex])
+}
+
+// ==================================================
+// 19. ATTEMPTS & ASSESSMENT ENGINE
+// ==================================================
+
+enum AttemptStatus {
+  IN_PROGRESS
+  SUBMITTED
+  EXPIRED
+  GRADING_PENDING
+  GRADED
+}
+
+model QuizAttempt {
+  id              String        @id @default(uuid())
+  quizId          String
+  studentId       String
+  attemptNumber   Int           @default(1)
+  status          AttemptStatus @default(IN_PROGRESS)
+  startedAt       DateTime      @default(now())
+  deadline        DateTime
+  submittedAt     DateTime?
+  totalScore      Float?
+  autoScore       Float?
+  manualScore     Float?
+  tabSwitchCount  Int           @default(0)
+  ipAddress       String?
+  userAgent       String?
+
+  quiz            Quiz          @relation(fields: [quizId], references: [id])
+  student         User          @relation(fields: [studentId], references: [id])
+  answers         QuizAnswer[]
+  events          AssessmentEvent[]
+
+  @@index([quizId])
+  @@index([studentId])
+  @@index([status])
+}
+
+model QuizAnswer {
+  id             String       @id @default(uuid())
+  attemptId      String
+  questionId     String
+  answerPayload  Json
+  version        Int          @default(1)
+  isAutoGraded   Boolean      @default(false)
+  score          Float?
+  teacherComment String?      @db.Text
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  attempt        QuizAttempt  @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question       QuizQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  gradeRecords   AnswerGrade[]
+
+  @@unique([attemptId, questionId])
+  @@index([attemptId])
+}
+
+model AssessmentEvent {
+  id         String   @id @default(uuid())
+  attemptId  String
+  eventType  String
+  timestamp  DateTime @default(now())
+  metadata   Json?
+
+  attempt    QuizAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+
+  @@index([attemptId])
+  @@index([eventType])
+}
+
+model AnswerGrade {
+  id             String       @id @default(uuid())
+  quizAnswerId   String
+  graderId       String?
+  isAiGraded     Boolean      @default(false)
+  aiMode         AIGradingMode?
+  awardedMarks   Float
+  maxMarks       Float
+  feedback       String?      @db.Text
+  rubricScores   Json?
+  confidence     Float?
+  status         String       @default("FINAL")
+  createdAt      DateTime     @default(now())
+
+  quizAnswer     QuizAnswer   @relation(fields: [quizAnswerId], references: [id], onDelete: Cascade)
+  grader         User?        @relation("TeacherGradedAnswers", fields: [graderId], references: [id])
+
+  @@index([quizAnswerId])
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  userId     String?
+  action     String
+  resource   String
+  resourceId String?
+  details    Json?
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  user       User?    @relation(fields: [userId], references: [id])
+
+  @@index([action])
+  @@index([createdAt])
+}

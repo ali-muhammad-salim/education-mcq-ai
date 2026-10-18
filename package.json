@@ -1,0 +1,45 @@
+{
+  "name": "mcqs-project",
+  "version": "1.0.0",
+  "description": "[![Architecture](https://img.shields.io/badge/Architecture-Hexagonal%20%2F%20Clean-blue.svg)](docs/ARCHITECTURE.md) [![Database](https://img.shields.io/badge/Database-PostgreSQL%20%2B%20pgvector-teal.svg)](docs/ARCHITECTURE.md#2-core-domain-data-model-postgresql--pgvector) [![AI Runtimes](https://img.shields.io/badge/AI%20Inference-Local%20(Ollama%20Qwen)%20%2F%20Cloud%20Agnostic-orange.svg)](docs/ARCHITECTURE.md#9-ai-provider-abstraction-layer-hexagonal-interfaces) [![Hardware](https://img.shields.io/badge/Workstation-RTX%204000%20Max--Q%20(8GB)-green.svg)](docs/ENVIRONMENT.md)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "postinstall": "prisma generate",
+    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ali-muhammad-salim/education-mcq-ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ali-muhammad-salim/education-mcq-ai/issues"
+  },
+  "homepage": "https://github.com/ali-muhammad-salim/education-mcq-ai#readme",
+  "devDependencies": {
+    "@prisma/client": "^5.10.2",
+    "@types/katex": "^0.16.8",
+    "@types/node": "^26.6.2",
+    "@types/react": "19.3.0",
+    "prisma": "^5.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
+  },
+  "dependencies": {
+    "katex": "^0.19.0",
+    "lucide-react": "^1.51.0",
+    "next": "^16.3.8",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  }
+}
