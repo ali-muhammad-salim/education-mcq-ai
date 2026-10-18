@@ -68,7 +68,7 @@ export default function RootLayout({
               {/* Column 2: Quick Links */}
               <div>
                 <h4 style={{ color: '#ffffff', fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                  Academic Archives
+                  Academic Archives & Policies
                 </h4>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.88rem' }}>
                   <li>
@@ -89,6 +89,16 @@ export default function RootLayout({
                   <li>
                     <Link href="/resources" style={{ color: '#cbd5e1', textDecoration: 'none' }}>
                       📦 Official Books & Downloads
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/privacy" style={{ color: '#38bdf8', textDecoration: 'none', fontWeight: 600 }}>
+                      🛡️ Privacy Policy (Google OAuth)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/terms" style={{ color: '#38bdf8', textDecoration: 'none', fontWeight: 600 }}>
+                      📜 Terms of Service
                     </Link>
                   </li>
                 </ul>
@@ -169,14 +179,16 @@ export default function RootLayout({
                 alignItems: 'center', 
                 flexWrap: 'wrap', 
                 gap: '1rem',
-                fontSize: '0.8rem',
+                fontSize: '0.82rem',
                 color: '#64748b'
               }}
             >
               <div>
                 © {new Date().getFullYear()} AKU-EB Unofficial Academic Intelligence Platform. Built for teachers and students.
               </div>
-              <div style={{ display: 'flex', gap: '1.5rem' }}>
+              <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                <Link href="/privacy" style={{ color: '#cbd5e1', textDecoration: 'none', fontWeight: 600 }}>Privacy Policy</Link>
+                <Link href="/terms" style={{ color: '#cbd5e1', textDecoration: 'none', fontWeight: 600 }}>Terms of Service</Link>
                 <Link href="/syllabus" style={{ color: '#64748b', textDecoration: 'none' }}>Syllabus Standards</Link>
                 <Link href="/past-papers" style={{ color: '#64748b', textDecoration: 'none' }}>Examination Archives</Link>
                 <Link href="/upload" style={{ color: '#64748b', textDecoration: 'none' }}>Admin Ingestion</Link>
