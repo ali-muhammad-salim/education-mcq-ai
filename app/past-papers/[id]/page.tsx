@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
-import { PrismaClient } from '@prisma/client';
+import prisma from '@/lib/prisma';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PaperViewerClient from './PaperViewerClient';
 
-const prisma = new PrismaClient();
+export const dynamic = 'force-dynamic';
 
 interface PageProps {
   params: Promise<{ id: string }> | { id: string };
@@ -15,13 +15,15 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
   const id = resolvedParams.id;
 
   // Search by UUID or by paperCode
-  let paper = await prisma.pastPaper.findFirst({
-    where: {
-      OR: [
-        { id: id },
-        { paperCode: id }
-      ]
-    },
+  let paper: any = null;
+  try {
+    paper = await prisma.pastPaper.findFirst({
+      where: {
+        OR: [
+          { id: id },
+          { paperCode: id }
+        ]
+      },
     include: {
       academicClass: true,
       subject: true,
@@ -33,6 +35,9 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
       }
     }
   });
+  } catch (err) {
+    console.error('Error fetching past paper detail:', err);
+  }
 
   if (!paper) {
     return notFound();

@@ -1,29 +1,32 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '@/lib/prisma';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
-const prisma = new PrismaClient();
+export const dynamic = 'force-dynamic';
 
 export default async function SubjectSyllabusPage({ params }: { params: Promise<{ subjectId: string }> | { subjectId: string } }) {
   const resolvedParams = await Promise.resolve(params);
   
-  const subject = await prisma.subject.findUnique({
-    where: { id: resolvedParams.subjectId },
-    include: {
-      academicClass: {
-        include: { programme: true }
-      },
-      syllabusVersions: {
-        where: { isLatest: true },
-        include: {
-          topics: {
-            orderBy: { topicNumber: 'asc' },
-            include: {
-              subtopics: {
-                orderBy: { subtopicNum: 'asc' },
-                include: {
-                  slos: {
-                    orderBy: { code: 'asc' }
+  let subject: any = null;
+  try {
+    subject = await prisma.subject.findUnique({
+      where: { id: resolvedParams.subjectId },
+      include: {
+        academicClass: {
+          include: { programme: true }
+        },
+        syllabusVersions: {
+          where: { isLatest: true },
+          include: {
+            topics: {
+              orderBy: { topicNumber: 'asc' },
+              include: {
+                subtopics: {
+                  orderBy: { subtopicNum: 'asc' },
+                  include: {
+                    slos: {
+                      orderBy: { code: 'asc' }
+                    }
                   }
                 }
               }
@@ -31,8 +34,10 @@ export default async function SubjectSyllabusPage({ params }: { params: Promise<
           }
         }
       }
-    }
-  });
+    });
+  } catch (err) {
+    console.error('Error fetching subject syllabus:', err);
+  }
 
   if (!subject) {
     return (
@@ -75,7 +80,7 @@ export default async function SubjectSyllabusPage({ params }: { params: Promise<
         </div>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          {syllabus.topics.map((topic) => (
+          {syllabus.topics.map((topic: any) => (
             <div key={topic.id} className="card">
               <h2 style={{ fontSize: '1.5rem', color: 'var(--primary-color)', marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
                 <span style={{ color: 'var(--secondary-color)', marginRight: '0.5rem' }}>{topic.topicNumber}</span> 
@@ -83,7 +88,7 @@ export default async function SubjectSyllabusPage({ params }: { params: Promise<
               </h2>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {topic.subtopics.map((sub) => (
+                {topic.subtopics.map((sub: any) => (
                   <div key={sub.id} style={{ paddingLeft: '1rem', borderLeft: '2px solid var(--secondary-color)' }}>
                     <h3 style={{ fontSize: '1.25rem', color: '#444', marginBottom: '0.5rem' }}>
                       <span style={{ color: '#888', marginRight: '0.5rem' }}>{sub.subtopicNum}</span>
@@ -91,7 +96,7 @@ export default async function SubjectSyllabusPage({ params }: { params: Promise<
                     </h3>
                     
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                      {sub.slos.map((slo) => {
+                      {sub.slos.map((slo: any) => {
                         const sloAnchor = slo.code ? `slo-${slo.code}` : `slo-${slo.id}`;
                         return (
                           <li

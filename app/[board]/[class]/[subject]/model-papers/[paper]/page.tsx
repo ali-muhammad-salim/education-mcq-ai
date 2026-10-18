@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { PrismaClient } from '@prisma/client';
 import { 
   ArrowLeft, Download, Award, FileText, 
   FlaskConical, CheckCircle2, ChevronRight, Eye 
@@ -10,8 +9,9 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import PaperViewerClient from '@/components/PaperViewerClient';
 import { normalizeBoardId, normalizeClassRoman, CLASS_DEFINITIONS, SUPPORTED_BOARDS } from '@/lib/boardHierarchy';
 import { getSubjectMeta } from '@/lib/subjectMetadata';
+import prisma from '@/lib/prisma';
 
-const prisma = new PrismaClient();
+export const dynamic = 'force-dynamic';
 
 interface PageProps {
   params: Promise<{ board: string; class: string; subject: string; paper: string }>;
@@ -87,24 +87,28 @@ export default async function ModelPaperSubPage({ params }: PageProps) {
   let sortedQuestions: any[] = [];
 
   if (isP1 || isP2) {
-    paper = await prisma.pastPaper.findFirst({
-      where: {
-        OR: [
-          { paperCode: paperCode },
-          { paperCode: { contains: isP1 ? 'P1' : 'P2' }, examType: 'MODEL_EXAM', academicClass: { name: { contains: classRoman } } }
-        ]
-      },
-      include: {
-        academicClass: true,
-        subject: true,
-        questions: {
-          include: {
-            topics: { include: { topic: true } },
-            slos: { include: { slo: true } }
+    try {
+      paper = await prisma.pastPaper.findFirst({
+        where: {
+          OR: [
+            { paperCode: paperCode },
+            { paperCode: { contains: isP1 ? 'P1' : 'P2' }, examType: 'MODEL_EXAM', academicClass: { name: { contains: classRoman } } }
+          ]
+        },
+        include: {
+          academicClass: true,
+          subject: true,
+          questions: {
+            include: {
+              topics: { include: { topic: true } },
+              slos: { include: { slo: true } }
+            }
           }
         }
-      }
-    });
+      });
+    } catch (err) {
+      console.error('Error fetching model paper questions:', err);
+    }
 
     if (paper && paper.questions) {
       sortedQuestions = [...paper.questions].sort((a, b) => {

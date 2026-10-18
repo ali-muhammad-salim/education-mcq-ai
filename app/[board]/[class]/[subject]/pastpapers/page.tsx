@@ -14,6 +14,8 @@ interface PageProps {
   params: Promise<{ board: string; class: string; subject: string }>;
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function SubjectPastPapersPage({ params }: PageProps) {
   const { board: rawBoard, class: rawClass, subject: rawSubject } = await params;
   const boardId = normalizeBoardId(rawBoard);

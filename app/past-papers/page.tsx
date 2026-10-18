@@ -1,27 +1,34 @@
 import React from 'react';
-import { PrismaClient } from '@prisma/client';
 import Link from 'next/link';
 import { FileText, Download, Award, ArrowRight, ExternalLink } from 'lucide-react';
 import PastPapersArchiveClient from './PastPapersArchiveClient';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import prisma from '@/lib/prisma';
 
-const prisma = new PrismaClient();
+export const dynamic = 'force-dynamic';
 
 export default async function PastPapersPage() {
-  const pastPapers = await prisma.pastPaper.findMany({
-    include: {
-      academicClass: true,
-      subject: true,
-      _count: {
-        select: { questions: true }
-      }
-    },
-    orderBy: { examYear: 'desc' }
-  });
+  let pastPapers: any[] = [];
+  let books: any[] = [];
 
-  const books = await prisma.book.findMany({
-    orderBy: { publicationYear: 'desc' }
-  });
+  try {
+    pastPapers = await prisma.pastPaper.findMany({
+      include: {
+        academicClass: true,
+        subject: true,
+        _count: {
+          select: { questions: true }
+        }
+      },
+      orderBy: { examYear: 'desc' }
+    });
+
+    books = await prisma.book.findMany({
+      orderBy: { publicationYear: 'desc' }
+    });
+  } catch (err) {
+    console.error('Error fetching past papers:', err);
+  }
 
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '4rem' }}>

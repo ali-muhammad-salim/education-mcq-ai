@@ -1,27 +1,32 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '@/lib/prisma';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
-const prisma = new PrismaClient();
+export const dynamic = 'force-dynamic';
 
 export default async function SyllabusPage() {
-  const programmes = await prisma.programme.findMany({
-    include: {
-      academicClasses: {
-        orderBy: { level: 'asc' },
-        include: {
-          subjects: {
-            orderBy: { name: 'asc' },
-            include: {
-              _count: {
-                select: { syllabusVersions: true }
+  let programmes: any[] = [];
+  try {
+    programmes = await prisma.programme.findMany({
+      include: {
+        academicClasses: {
+          orderBy: { level: 'asc' },
+          include: {
+            subjects: {
+              orderBy: { name: 'asc' },
+              include: {
+                _count: {
+                  select: { syllabusVersions: true }
+                }
               }
             }
           }
         }
       }
-    }
-  });
+    });
+  } catch (err) {
+    console.error('Error fetching syllabus programmes:', err);
+  }
 
   return (
     <main>
@@ -47,14 +52,14 @@ export default async function SyllabusPage() {
           </h2>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', marginTop: '2rem' }}>
-            {prog.academicClasses.map((cls) => (
+            {prog.academicClasses.map((cls: any) => (
               <div key={cls.id} className="card">
                 <h3 style={{ color: 'var(--primary-color)', marginBottom: '1rem', fontSize: '1.5rem' }}>
                   Class {cls.name} <span style={{ fontSize: '1rem', color: '#666', fontWeight: 'normal' }}>(Grade {cls.level})</span>
                 </h3>
                 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-                  {cls.subjects.map((sub) => (
+                  {cls.subjects.map((sub: any) => (
                     <Link 
                       key={sub.id} 
                       href={`/syllabus/${sub.id}`}

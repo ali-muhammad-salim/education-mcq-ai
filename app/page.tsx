@@ -5,7 +5,7 @@ import prisma from '@/lib/prisma';
 import BoardClassSubjectHierarchy, { BoardData, ClassData, SubjectData } from '@/components/BoardClassSubjectHierarchy';
 import { getSubjectMeta } from '@/lib/subjectMetadata';
 
-export const revalidate = 60; // Cache for 60 seconds
+export const dynamic = 'force-dynamic';
 
 async function getHierarchyData(): Promise<BoardData> {
   try {
