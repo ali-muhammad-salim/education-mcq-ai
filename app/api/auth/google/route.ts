@@ -1,12 +1,32 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getBaseUrl, getGoogleOAuthUrl, isGoogleAuthEnabled } from '@/lib/google-auth';
+import { 
+  getBaseUrl, 
+  getGoogleOAuthUrl, 
+  isGoogleAuthEnabled, 
+  getGoogleClientId, 
+  getGoogleClientSecret 
+} from '@/lib/google-auth';
 
 export async function GET(req: NextRequest) {
   try {
     const checkOnly = req.nextUrl.searchParams.get('check');
     if (checkOnly === '1') {
+      const cid = getGoogleClientId();
+      const csec = getGoogleClientSecret();
+      const detectedKeys = Object.keys(process.env).filter(k => 
+        k.toUpperCase().includes('GOOGLE') || k.toUpperCase().includes('OAUTH')
+      );
+
       return NextResponse.json({
-        enabled: isGoogleAuthEnabled()
+        enabled: isGoogleAuthEnabled(),
+        hasClientId: Boolean(cid),
+        hasClientSecret: Boolean(csec),
+        clientIdSnippet: cid ? `${cid.slice(0, 10)}...${cid.slice(-12)}` : null,
+        detectedRedirectUri: `${getBaseUrl(req)}/api/auth/google/callback`,
+        googleEnvKeysFoundInProcess: detectedKeys,
+        instructions: isGoogleAuthEnabled() 
+          ? 'Google Auth is active and ready!' 
+          : 'Please add GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET to Dokploy Environment variables and click Redeploy.'
       });
     }
 

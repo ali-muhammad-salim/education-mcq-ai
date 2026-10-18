@@ -32,12 +32,65 @@ export function generateToken(): string {
   return crypto.randomBytes(32).toString('hex');
 }
 
-// Ensure default verified demo accounts exist for immediate verification
+// Ensure default verified admin and system accounts exist
 export async function ensureDemoUsers() {
   try {
+    const adminPassword = 'AdminPass123!';
+    const defaultHash = hashPassword(adminPassword);
+
+    // 1. Primary Default Admin: admin@riselearner.com
+    const adminEmail = 'admin@riselearner.com';
+    const admin = await prisma.user.findUnique({ where: { email: adminEmail } });
+    if (!admin) {
+      await prisma.user.create({
+        data: {
+          email: adminEmail,
+          name: 'Rise Learner Administrator',
+          role: 'ADMIN',
+          passwordHash: defaultHash,
+          emailVerified: true,
+          status: 'ACTIVE'
+        }
+      });
+    } else {
+      await prisma.user.update({
+        where: { id: admin.id },
+        data: {
+          role: 'ADMIN',
+          status: 'ACTIVE',
+          ...(!admin.passwordHash ? { passwordHash: defaultHash } : {})
+        }
+      });
+    }
+
+    // 2. Secondary Official Support Admin: support@riselearner.com
+    const supportEmail = 'support@riselearner.com';
+    const support = await prisma.user.findUnique({ where: { email: supportEmail } });
+    if (!support) {
+      await prisma.user.create({
+        data: {
+          email: supportEmail,
+          name: 'Support & Admin Desk',
+          role: 'ADMIN',
+          passwordHash: defaultHash,
+          emailVerified: true,
+          status: 'ACTIVE'
+        }
+      });
+    } else {
+      await prisma.user.update({
+        where: { id: support.id },
+        data: {
+          role: 'ADMIN',
+          status: 'ACTIVE',
+          ...(!support.passwordHash ? { passwordHash: defaultHash } : {})
+        }
+      });
+    }
+
+    // 3. Fallback teacher / student for demonstration if needed
     const teacherEmail = 'teacher@akueb.edu.pk';
     const studentEmail = 'student@akueb.edu.pk';
-    const adminEmail = 'admin@akueb.edu.pk';
 
     const teacher = await prisma.user.findUnique({ where: { email: teacherEmail } });
     if (!teacher) {
@@ -47,7 +100,8 @@ export async function ensureDemoUsers() {
           name: 'Prof. Tariq Siddiqui',
           role: 'TEACHER',
           passwordHash: hashPassword('TeacherPass123!'),
-          emailVerified: true
+          emailVerified: true,
+          status: 'ACTIVE'
         }
       });
     }
@@ -60,30 +114,18 @@ export async function ensureDemoUsers() {
           name: 'Ali Raza (Class IX)',
           role: 'STUDENT',
           passwordHash: hashPassword('StudentPass123!'),
-          emailVerified: true
-        }
-      });
-    }
-
-    const admin = await prisma.user.findUnique({ where: { email: adminEmail } });
-    if (!admin) {
-      await prisma.user.create({
-        data: {
-          email: adminEmail,
-          name: 'System Administrator',
-          role: 'ADMIN',
-          passwordHash: hashPassword('AdminPass123!'),
-          emailVerified: true
+          emailVerified: true,
+          status: 'ACTIVE'
         }
       });
     }
   } catch (err) {
-    console.error('Error ensuring demo users:', err);
+    console.error('Error ensuring default users:', err);
   }
 }
 
 // Helper to get authenticated user from NextRequest or fallback
-export async function getSessionUser(req: any, fallbackRole: 'STUDENT' | 'TEACHER' = 'STUDENT') {
+export async function getSessionUser(req: any, fallbackRole?: 'STUDENT' | 'TEACHER') {
   await ensureDemoUsers();
   const token = req.cookies?.get?.('mcqs_session')?.value || req.headers?.get?.('authorization')?.replace('Bearer ', '');
   if (token) {
@@ -96,8 +138,12 @@ export async function getSessionUser(req: any, fallbackRole: 'STUDENT' | 'TEACHE
     }
   }
 
-  // Fallback to demo user if not logged in
-  const demoEmail = fallbackRole === 'TEACHER' ? 'teacher@akueb.edu.pk' : 'student@akueb.edu.pk';
-  return await prisma.user.findUnique({ where: { email: demoEmail } });
+  // Only fallback if explicit role is requested (for backward compatibility in quiz taking)
+  if (fallbackRole) {
+    const fallbackEmail = fallbackRole === 'TEACHER' ? 'teacher@akueb.edu.pk' : 'student@akueb.edu.pk';
+    return await prisma.user.findUnique({ where: { email: fallbackEmail } });
+  }
+
+  return null;
 }
 

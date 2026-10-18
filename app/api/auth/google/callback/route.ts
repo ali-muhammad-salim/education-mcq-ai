@@ -4,12 +4,13 @@ import { generateToken } from '@/lib/auth';
 import { 
   getBaseUrl, 
   exchangeGoogleCodeForTokens, 
-  getGoogleUserProfile 
+  getGoogleUserProfile,
+  verifyOAuthState
 } from '@/lib/google-auth';
 
 export async function GET(req: NextRequest) {
   const baseUrl = getBaseUrl(req);
-  const redirectUri = `${baseUrl}/api/auth/google/callback`;
+  const fallbackRedirectUri = `${baseUrl}/api/auth/google/callback`;
 
   try {
     const error = req.nextUrl.searchParams.get('error');
@@ -30,7 +31,7 @@ export async function GET(req: NextRequest) {
     }
 
     // Decode and parse state payload
-    let stateData: { token: string; role: 'STUDENT' | 'TEACHER'; returnUrl: string };
+    let stateData: { token: string; sig?: string; redirectUri?: string; role: 'STUDENT' | 'TEACHER'; returnUrl: string };
     try {
       stateData = JSON.parse(Buffer.from(stateParam, 'base64url').toString('utf-8'));
     } catch {
@@ -39,20 +40,27 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    // Verify anti-CSRF state token
+    // Verify anti-CSRF state token via cookie OR HMAC signature
     const storedStateCookie = req.cookies.get('google_oauth_state')?.value;
-    if (!storedStateCookie || storedStateCookie !== stateData.token) {
-      console.error('CSRF state token mismatch');
+    const cookieMatches = storedStateCookie && storedStateCookie === stateData.token;
+    const signatureValid = stateData.sig ? verifyOAuthState(stateData.token, stateData.sig) : false;
+
+    if (!cookieMatches && !signatureValid) {
+      console.error('CSRF state verification failed');
       return NextResponse.redirect(
         new URL('/?auth_error=csrf_verification_failed', baseUrl)
       );
     }
 
+    // Use the exact redirectUri that was sent during the authorization request
+    const tokenRedirectUri = stateData.redirectUri || fallbackRedirectUri;
+
     // Exchange authorization code for Google access token
-    const tokenData = await exchangeGoogleCodeForTokens(code, redirectUri);
+    const tokenData = await exchangeGoogleCodeForTokens(code, tokenRedirectUri);
     const googleProfile = await getGoogleUserProfile(tokenData.access_token);
 
     const email = googleProfile.email.toLowerCase();
+    const isAdminEmail = email === 'support@riselearner.com' || email === 'admin@riselearner.com';
 
     // Check if user already exists by googleId or email
     let user = await prisma.user.findFirst({
@@ -64,7 +72,7 @@ export async function GET(req: NextRequest) {
       }
     });
 
-    const chosenRole = stateData.role === 'TEACHER' ? 'TEACHER' : 'STUDENT';
+    const chosenRole = isAdminEmail ? 'ADMIN' : (stateData.role === 'TEACHER' ? 'TEACHER' : 'STUDENT');
 
     if (!user) {
       // Create new user account via Google
@@ -80,13 +88,14 @@ export async function GET(req: NextRequest) {
         }
       });
     } else {
-      // Link Google ID and update avatar/verification if missing
+      // Link Google ID and update avatar/verification if missing, ensuring admin if official email
       user = await prisma.user.update({
         where: { id: user.id },
         data: {
           googleId: user.googleId || googleProfile.id,
           avatarUrl: googleProfile.picture || user.avatarUrl,
-          emailVerified: true
+          emailVerified: true,
+          ...(isAdminEmail ? { role: 'ADMIN' } : {})
         }
       });
     }

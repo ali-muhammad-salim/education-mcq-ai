@@ -35,11 +35,15 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
       const authErr = params.get('auth_error');
       if (authErr) {
         if (authErr === 'google_not_configured') {
-          setError('Google Sign-In is temporarily unavailable. Please sign in with your email or try again shortly.');
+          setError('Google Sign-In is not configured yet. Please ensure GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET are saved in Dokploy Environment variables and click Redeploy.');
+        } else if (authErr === 'csrf_verification_failed') {
+          setError('Security session timed out. Please click Continue with Google again to sign in.');
         } else if (authErr === 'access_denied') {
           setError('Google sign-in was canceled.');
+        } else if (authErr.includes('redirect_uri_mismatch')) {
+          setError('Google OAuth Redirect URI mismatch. Please verify https://riselearner.com/api/auth/google/callback in Google Cloud Console.');
         } else {
-          setError('Sign-in error occurred. Please try again or use email sign-in.');
+          setError(`Sign-in notice: ${decodeURIComponent(authErr)}`);
         }
       }
     }
@@ -48,10 +52,6 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
   if (!isOpen) return null;
 
   const handleGoogleSignIn = () => {
-    if (googleConfigured === false) {
-      setError('Google Sign-In is temporarily unavailable. Please sign in with your email or contact support@riselearner.com.');
-      return;
-    }
     setLoading(true);
     const returnUrl = encodeURIComponent(window.location.pathname + window.location.search);
     window.location.href = `/api/auth/google?role=${role}&returnUrl=${returnUrl}`;
@@ -134,6 +134,18 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
 
         {/* Modal Header */}
         <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}>
+            <img 
+              src="/logo.png" 
+              alt="Rise Learner" 
+              style={{
+                height: '42px',
+                width: 'auto',
+                maxWidth: '220px',
+                objectFit: 'contain'
+              }}
+            />
+          </div>
           <span style={{
             background: '#e6f0ed',
             color: '#0b5e4a',

@@ -12,13 +12,59 @@ export interface GoogleUserProfile {
   locale?: string;
 }
 
+// Secret used to cryptographically sign OAuth state tokens to prevent CSRF
+const STATE_SECRET = process.env.SESSION_SECRET || 'rise-learner-oauth-state-secret-2026';
+
+export function signOAuthState(token: string): string {
+  return crypto.createHmac('sha256', STATE_SECRET).update(token).digest('hex');
+}
+
+export function verifyOAuthState(token: string, signature: string): boolean {
+  try {
+    const expected = signOAuthState(token);
+    return crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(signature));
+  } catch {
+    return false;
+  }
+}
+
+// Robust resolution for Google Client ID (case-insensitive & trimmed)
+export function getGoogleClientId(): string | undefined {
+  if (process.env.GOOGLE_CLIENT_ID?.trim()) return process.env.GOOGLE_CLIENT_ID.trim();
+  if (process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID?.trim()) return process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID.trim();
+  if (process.env.GOOGLE_OAUTH_CLIENT_ID?.trim()) return process.env.GOOGLE_OAUTH_CLIENT_ID.trim();
+  if (process.env.GOOGLE_ID?.trim()) return process.env.GOOGLE_ID.trim();
+
+  // Dynamic search across process.env for keys with extra spaces or different casing
+  for (const [key, val] of Object.entries(process.env)) {
+    const cleanKey = key.trim().toUpperCase();
+    if (cleanKey.includes('GOOGLE') && cleanKey.includes('CLIENT') && cleanKey.includes('ID')) {
+      if (val && val.trim().length > 0) return val.trim();
+    }
+  }
+  return undefined;
+}
+
+// Robust resolution for Google Client Secret (case-insensitive & trimmed)
+export function getGoogleClientSecret(): string | undefined {
+  if (process.env.GOOGLE_CLIENT_SECRET?.trim()) return process.env.GOOGLE_CLIENT_SECRET.trim();
+  if (process.env.GOOGLE_OAUTH_CLIENT_SECRET?.trim()) return process.env.GOOGLE_OAUTH_CLIENT_SECRET.trim();
+  if (process.env.GOOGLE_SECRET?.trim()) return process.env.GOOGLE_SECRET.trim();
+
+  // Dynamic search across process.env for keys with extra spaces or different casing
+  for (const [key, val] of Object.entries(process.env)) {
+    const cleanKey = key.trim().toUpperCase();
+    if (cleanKey.includes('GOOGLE') && (cleanKey.includes('SECRET') || cleanKey.includes('KEY'))) {
+      if (val && val.trim().length > 0) return val.trim();
+    }
+  }
+  return undefined;
+}
+
 export function isGoogleAuthEnabled(): boolean {
-  return Boolean(
-    process.env.GOOGLE_CLIENT_ID &&
-    process.env.GOOGLE_CLIENT_SECRET &&
-    process.env.GOOGLE_CLIENT_ID.trim().length > 0 &&
-    process.env.GOOGLE_CLIENT_SECRET.trim().length > 0
-  );
+  const cid = getGoogleClientId();
+  const csec = getGoogleClientSecret();
+  return Boolean(cid && csec && cid.length > 5 && csec.length > 5);
 }
 
 export function getBaseUrl(req?: NextRequest): string {
@@ -30,14 +76,16 @@ export function getBaseUrl(req?: NextRequest): string {
   // If request is provided, inspect host headers
   if (req) {
     const host = req.headers.get('x-forwarded-host') || req.headers.get('host');
-    const proto = req.headers.get('x-forwarded-proto') || (process.env.NODE_ENV === 'production' ? 'https' : 'http');
     if (host) {
+      // Any public domain (not localhost) must always use https
+      const isLocal = host.includes('localhost') || host.includes('127.0.0.1');
+      const proto = isLocal ? 'http' : 'https';
       return `${proto}://${host}`;
     }
   }
 
   // Sensible default fallback for production
-  return process.env.NODE_ENV === 'production' ? 'https://riselearner.com' : 'http://localhost:3000';
+  return 'https://riselearner.com';
 }
 
 export function getGoogleOAuthUrl(options: {
@@ -45,16 +93,19 @@ export function getGoogleOAuthUrl(options: {
   returnUrl?: string;
   baseUrl: string;
 }): { url: string; stateToken: string } {
-  const clientId = process.env.GOOGLE_CLIENT_ID;
+  const clientId = getGoogleClientId();
   if (!clientId) {
     throw new Error('GOOGLE_CLIENT_ID is not configured');
   }
 
   const stateToken = crypto.randomBytes(24).toString('hex');
+  const signature = signOAuthState(stateToken);
   const redirectUri = `${options.baseUrl}/api/auth/google/callback`;
 
   const statePayload = {
     token: stateToken,
+    sig: signature,
+    redirectUri,
     role: options.role === 'TEACHER' ? 'TEACHER' : 'STUDENT',
     returnUrl: options.returnUrl || '/'
   };
@@ -80,8 +131,8 @@ export async function exchangeGoogleCodeForTokens(
   code: string,
   redirectUri: string
 ): Promise<{ access_token: string; id_token?: string }> {
-  const clientId = process.env.GOOGLE_CLIENT_ID;
-  const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+  const clientId = getGoogleClientId();
+  const clientSecret = getGoogleClientSecret();
 
   if (!clientId || !clientSecret) {
     throw new Error('Google OAuth credentials not configured');

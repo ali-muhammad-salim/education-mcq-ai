@@ -5,9 +5,16 @@ import { BookOpen, GraduationCap, UploadCloud, ShieldCheck, ArrowRight, Mail } f
 import Navbar from '@/components/Navbar';
 
 export const metadata: Metadata = {
-  title: 'AKU-EB Learning Portal | Past Papers, Syllabus & E-Books',
+  title: 'Rise Learner | AKU-EB Learning Portal | Past Papers, Syllabus & E-Books',
   description: 'AI-Powered Education Platform for AKU-EB Resources. Download Past Papers, Syllabi, Solved MCQs, and access high-quality textual learning material online for SSC and HSSC.',
-  keywords: ['AKU-EB', 'Past Papers', 'Syllabus', 'SSC', 'HSSC', 'MCQs', 'Aga Khan University Examination Board'],
+  keywords: ['AKU-EB', 'Past Papers', 'Syllabus', 'SSC', 'HSSC', 'MCQs', 'Aga Khan University Examination Board', 'Rise Learner'],
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/favicon.ico' }
+    ],
+    apple: '/logo-icon.png'
+  }
 };
 
 export default function RootLayout({
@@ -50,11 +57,25 @@ export default function RootLayout({
               
               {/* Column 1: Brand & Overview */}
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', color: '#ffffff', marginBottom: '1rem' }}>
-                  <div style={{ background: '#0b5e4a', padding: '6px', borderRadius: '8px', color: '#fff' }}>
-                    <BookOpen size={20} />
-                  </div>
-                  <span style={{ fontFamily: 'Outfit', fontWeight: 800, fontSize: '1.25rem' }}>AKU-EB Portal</span>
+                <div style={{
+                  background: '#ffffff',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  padding: '6px 14px',
+                  borderRadius: '10px',
+                  marginBottom: '1.25rem',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
+                }}>
+                  <img 
+                    src="/logo.png" 
+                    alt="Rise Learner" 
+                    style={{
+                      height: '34px',
+                      width: 'auto',
+                      maxWidth: '180px',
+                      objectFit: 'contain'
+                    }} 
+                  />
                 </div>
                 <p style={{ fontSize: '0.88rem', lineHeight: 1.6, color: '#94a3b8', marginBottom: '1rem' }}>
                   A specialized academic intelligence repository for the Aga Khan University Examination Board (AKU-EB), aligning examination items with official Student Learning Outcomes (SLOs).

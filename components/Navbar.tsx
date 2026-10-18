@@ -186,27 +186,21 @@ export default function Navbar() {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '0.65rem',
-              fontFamily: "'Outfit', sans-serif",
-              fontWeight: 800,
-              fontSize: '1.45rem',
-              color: '#0b5e4a',
               textDecoration: 'none',
-              letterSpacing: '-0.4px'
+              padding: '2px 0'
             }}
+            title="Rise Learner - Academic Intelligence Portal"
           >
-            <div style={{
-              background: '#0b5e4a',
-              color: '#ffffff',
-              borderRadius: '8px',
-              padding: '6px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-              <BookOpen size={22} />
-            </div>
-            <span>AKU-EB Portal</span>
+            <img 
+              src="/logo.png" 
+              alt="Rise Learner" 
+              style={{
+                height: '44px',
+                width: 'auto',
+                maxWidth: '230px',
+                objectFit: 'contain'
+              }}
+            />
           </Link>
 
           {/* Board Selector Dropdown */}
