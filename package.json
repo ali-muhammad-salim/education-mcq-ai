@@ -10,7 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "postinstall": "prisma generate",
+    "postinstall": "prisma generate --generator client",
     "lint": "next lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
