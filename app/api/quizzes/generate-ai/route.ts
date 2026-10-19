@@ -17,7 +17,13 @@ export async function POST(req: NextRequest) {
       customInstructions = ''
     } = body;
 
-    const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+    const rawKeys = process.env.GEMINI_API_KEYS || process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '';
+    const apiKeys = rawKeys
+      .split(/[,;\n\r]+/)
+      .map(k => k.trim())
+      .filter(k => k.length > 8 && !k.startsWith('your_'));
+
+    const candidateModels = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
 
     // Prompt construction strictly aligned with AKU-EB curriculum guidelines
     const prompt = `You are a Senior Examination Architect for the Aga Khan University Examination Board (AKU-EB).
@@ -57,30 +63,43 @@ CRITICAL AKU-EB STANDARDS:
 
     let generatedQuestions: any[] = [];
 
-    if (apiKey) {
-      try {
-        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-        const geminiRes = await fetch(geminiUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: {
-              temperature: 0.3,
-              responseMimeType: 'application/json'
-            }
-          })
-        });
+    if (apiKeys.length > 0) {
+      let callSuccess = false;
+      for (const model of candidateModels) {
+        if (callSuccess) break;
+        for (const key of apiKeys) {
+          try {
+            const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`;
+            const geminiRes = await fetch(geminiUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                contents: [{ parts: [{ text: prompt }] }],
+                generationConfig: {
+                  temperature: 0.3,
+                  responseMimeType: 'application/json'
+                }
+              })
+            });
 
-        if (geminiRes.ok) {
-          const geminiData = await geminiRes.json();
-          const rawText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (rawText) {
-            generatedQuestions = JSON.parse(rawText);
+            if (geminiRes.ok) {
+              const geminiData = await geminiRes.json();
+              const rawText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text;
+              if (rawText) {
+                generatedQuestions = JSON.parse(rawText);
+                if (Array.isArray(generatedQuestions) && generatedQuestions.length > 0) {
+                  callSuccess = true;
+                  break;
+                }
+              }
+            } else if (geminiRes.status === 429) {
+              // Rate limited or quota exhausted on this key, rotate to next key
+              continue;
+            }
+          } catch (geminiErr) {
+            console.warn(`Gemini call on model ${model} with key ${key.slice(0, 4)}... failed:`, geminiErr);
           }
         }
-      } catch (geminiErr) {
-        console.warn('Gemini API call failed, falling back to curriculum question bank:', geminiErr);
       }
     }
 

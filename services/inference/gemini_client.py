@@ -19,6 +19,7 @@ import json
 import logging
 import os
 import random
+import re
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -105,24 +106,20 @@ class GeminiKeyPool:
         # Parse keys from parameters or environment
         raw_keys = keys or []
         if not raw_keys:
-            env_keys_str = os.environ.get("GEMINI_API_KEYS", "")
-            if env_keys_str:
+            # Check GEMINI_API_KEYS (plural), GEMINI_API_KEY (singular), or GOOGLE_API_KEY
+            combined_env = (
+                os.environ.get("GEMINI_API_KEYS")
+                or os.environ.get("GEMINI_API_KEY")
+                or os.environ.get("GOOGLE_API_KEY")
+                or ""
+            )
+            if combined_env:
                 # Comma, semicolon, or newline separated
-                for sep in [",", ";", "\n"]:
-                    if sep in env_keys_str:
-                        raw_keys = [k.strip() for k in env_keys_str.split(sep) if k.strip()]
-                        break
-                if not raw_keys and env_keys_str.strip():
-                    raw_keys = [env_keys_str.strip()]
-
-        if not raw_keys:
-            # Fallback to single key env vars
-            single = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
-            if single and single.strip():
-                raw_keys = [single.strip()]
+                tokens = re.split(r'[,;\n\r]+', combined_env)
+                raw_keys = [t.strip() for t in tokens if t.strip() and not t.strip().startswith("your_")]
 
         for idx, k in enumerate(raw_keys):
-            if k and len(k.strip()) > 8:
+            if k and len(k.strip()) > 8 and not k.strip().startswith("your_"):
                 self._keys.append(KeyState(key=k.strip(), key_index=idx))
 
     @property
@@ -222,7 +219,7 @@ class GeminiClient:
         self.default_model = (
             default_model
             or os.environ.get("GEMINI_MODEL")
-            or "gemini-3.5-flash-lite"
+            or "gemini-2.5-flash"
         )
         self.max_rpm = max_rpm
         self.max_concurrency = max_concurrency
@@ -344,137 +341,136 @@ class GeminiClient:
             }
 
         start_time = time.perf_counter()
-
-        # Try across keys in the pool with cooldown cycles
-        tried_keys_count = 0
         total_available_keys = self.pool.total_keys
-        max_attempts = max(15, total_available_keys * 3)
 
-        while tried_keys_count < max_attempts:
-            key_state = await self.pool.get_active_key()
-            if not key_state:
-                # All keys in pool are exhausted!
-                latency = (time.perf_counter() - start_time) * 1000.0
-                return GeminiResponse(
-                    text="",
-                    model=active_model,
-                    success=False,
-                    error=(
-                        f"All {total_available_keys} Gemini API keys have exhausted their daily free quota. "
-                        "Progress can be saved to checkpoint and safely resumed tomorrow."
-                    ),
-                    status_code=429,
-                    latency_ms=latency,
-                    all_keys_exhausted=True,
-                )
+        # Build candidate model cascade: try requested/default model first, then fall back to alternate families
+        initial_model = model or self.default_model
+        candidate_models = [initial_model]
+        for fb in ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]:
+            if fb not in candidate_models:
+                candidate_models.append(fb)
 
-            tried_keys_count += 1
+        last_error = ""
 
-            url = f"{GEMINI_API_BASE}/models/{active_model}:generateContent?key={key_state.key}"
+        for active_model in candidate_models:
+            tried_keys_count = 0
+            max_attempts = max(15, total_available_keys * 3)
 
-            async with self._semaphore:
-                for attempt in range(max_retries_per_key + 1):
-                    await self._enforce_rate_limit(key_state.key_index)
-                    try:
-                        async with httpx.AsyncClient(timeout=self.timeout_seconds) as client:
-                            response = await client.post(url, json=payload)
-                            latency = (time.perf_counter() - start_time) * 1000.0
+            while tried_keys_count < max_attempts:
+                key_state = await self.pool.get_active_key()
+                if not key_state:
+                    # All keys exhausted for this model, cascade to next model family
+                    break
 
-                            if response.status_code == 200:
-                                data = response.json()
-                                candidates = data.get("candidates", [])
-                                if not candidates:
+                tried_keys_count += 1
+                url = f"{GEMINI_API_BASE}/models/{active_model}:generateContent?key={key_state.key}"
+
+                async with self._semaphore:
+                    for attempt in range(max_retries_per_key + 1):
+                        await self._enforce_rate_limit(key_state.key_index)
+                        try:
+                            async with httpx.AsyncClient(timeout=self.timeout_seconds) as client:
+                                response = await client.post(url, json=payload)
+                                latency = (time.perf_counter() - start_time) * 1000.0
+
+                                if response.status_code == 200:
+                                    data = response.json()
+                                    candidates = data.get("candidates", [])
+                                    if not candidates:
+                                        return GeminiResponse(
+                                            text="",
+                                            model=active_model,
+                                            success=False,
+                                            error="No candidates returned (possibly blocked by safety filters).",
+                                            status_code=200,
+                                            latency_ms=latency,
+                                            key_used=key_state.masked_key,
+                                            raw_response=data,
+                                        )
+
+                                    first_cand = candidates[0]
+                                    parts_out = first_cand.get("content", {}).get("parts", [])
+                                    out_text = "".join(p.get("text", "") for p in parts_out)
+
+                                    usage = data.get("usageMetadata", {})
+                                    pt = usage.get("promptTokenCount", 0)
+                                    ct = usage.get("candidatesTokenCount", 0)
+                                    tt = usage.get("totalTokenCount", 0)
+
+                                    key_state.daily_requests += 1
+                                    key_state.total_tokens += tt
+                                    key_state.consecutive_errors = 0
+
+                                    self.metrics.prompt_tokens += pt
+                                    self.metrics.candidate_tokens += ct
+                                    self.metrics.total_tokens += tt
+                                    self.metrics.total_requests += 1
+                                    self.metrics.total_latency_ms += latency
+                                    self.metrics.active_key_index = key_state.key_index
+
                                     return GeminiResponse(
-                                        text="",
+                                        text=out_text,
                                         model=active_model,
-                                        success=False,
-                                        error="No candidates returned (possibly blocked by safety filters).",
+                                        success=True,
                                         status_code=200,
+                                        prompt_tokens=pt,
+                                        candidate_tokens=ct,
+                                        total_tokens=tt,
                                         latency_ms=latency,
                                         key_used=key_state.masked_key,
                                         raw_response=data,
                                     )
 
-                                first_cand = candidates[0]
-                                parts_out = first_cand.get("content", {}).get("parts", [])
-                                out_text = "".join(p.get("text", "") for p in parts_out)
+                                elif response.status_code == 429:
+                                    logger.warning(
+                                        "Gemini Key %s (Index %d) hit 429 on %s. Rotating key...",
+                                        key_state.masked_key, key_state.key_index, active_model
+                                    )
+                                    await self.pool.mark_key_exhausted(key_state, reason="HTTP 429 Resource Exhausted")
+                                    last_error = f"Model {active_model} rate limit / quota exceeded"
+                                    break
 
-                                usage = data.get("usageMetadata", {})
-                                pt = usage.get("promptTokenCount", 0)
-                                ct = usage.get("candidatesTokenCount", 0)
-                                tt = usage.get("totalTokenCount", 0)
+                                elif response.status_code == 404:
+                                    logger.warning("Model %s returned 404 (Not Found). Cascading to next model...", active_model)
+                                    last_error = f"Model {active_model} not found"
+                                    break
 
-                                key_state.daily_requests += 1
-                                key_state.total_tokens += tt
-                                key_state.consecutive_errors = 0
+                                elif response.status_code == 503:
+                                    if attempt < max_retries_per_key:
+                                        backoff = 2.0 + random.uniform(0.5, 1.5)
+                                        await asyncio.sleep(backoff)
+                                        continue
+                                    else:
+                                        logger.warning("Gemini 503 on key %s. Rotating key.", key_state.masked_key)
+                                        break
 
-                                self.metrics.prompt_tokens += pt
-                                self.metrics.candidate_tokens += ct
-                                self.metrics.total_tokens += tt
-                                self.metrics.total_requests += 1
-                                self.metrics.total_latency_ms += latency
-                                self.metrics.active_key_index = key_state.key_index
-
-                                return GeminiResponse(
-                                    text=out_text,
-                                    model=active_model,
-                                    success=True,
-                                    status_code=200,
-                                    prompt_tokens=pt,
-                                    candidate_tokens=ct,
-                                    total_tokens=tt,
-                                    latency_ms=latency,
-                                    key_used=key_state.masked_key,
-                                    raw_response=data,
-                                )
-
-                            elif response.status_code == 429:
-                                # Rate Limit or Daily Quota Exceeded on this key
-                                logger.warning(
-                                    "Gemini Key %s (Index %d) hit 429. Rotating to next key in pool...",
-                                    key_state.masked_key, key_state.key_index
-                                )
-                                await self.pool.mark_key_exhausted(key_state, reason="HTTP 429 Resource Exhausted")
-                                break  # Break inner loop and try next key from pool
-
-                            elif response.status_code == 503:
-                                # Transient server overload: backoff once, then rotate if still failing
-                                if attempt < max_retries_per_key:
-                                    backoff = 2.0 + random.uniform(0.5, 1.5)
-                                    await asyncio.sleep(backoff)
-                                    continue
                                 else:
-                                    logger.warning("Gemini 503 on key %s. Rotating key.", key_state.masked_key)
-                                    break
+                                    if response.status_code in (401, 403):
+                                        await self.pool.mark_key_exhausted(key_state, reason=f"HTTP {response.status_code} Auth/Permission Error")
+                                        break
+                                    return GeminiResponse(
+                                        text="",
+                                        model=active_model,
+                                        success=False,
+                                        error=f"Gemini API error {response.status_code}: {response.text}",
+                                        status_code=response.status_code,
+                                        latency_ms=latency,
+                                        key_used=key_state.masked_key,
+                                    )
 
+                        except httpx.RequestError as exc:
+                            if attempt < max_retries_per_key:
+                                await asyncio.sleep(1.0 + random.uniform(0.2, 0.8))
                             else:
-                                # Permanent error (e.g. 400 Bad Request, 401 Invalid Key)
-                                if response.status_code == 401 or response.status_code == 403:
-                                    await self.pool.mark_key_exhausted(key_state, reason=f"HTTP {response.status_code} Auth/Permission Error")
-                                    break
-                                return GeminiResponse(
-                                    text="",
-                                    model=active_model,
-                                    success=False,
-                                    error=f"Gemini API error {response.status_code}: {response.text}",
-                                    status_code=response.status_code,
-                                    latency_ms=latency,
-                                    key_used=key_state.masked_key,
-                                )
-
-                    except httpx.RequestError as exc:
-                        if attempt < max_retries_per_key:
-                            await asyncio.sleep(1.0 + random.uniform(0.2, 0.8))
-                        else:
-                            logger.warning("Network failure on key %s: %s. Rotating key.", key_state.masked_key, exc)
-                            break
+                                logger.warning("Network failure on key %s: %s. Rotating key.", key_state.masked_key, exc)
+                                break
 
         latency = (time.perf_counter() - start_time) * 1000.0
         return GeminiResponse(
             text="",
-            model=active_model,
+            model=initial_model,
             success=False,
-            error=f"All {total_available_keys} configured Gemini API keys exhausted their quotas.",
+            error=f"All {total_available_keys} configured Gemini API keys exhausted their quotas across all models ({', '.join(candidate_models)}). {last_error}",
             status_code=429,
             latency_ms=latency,
             all_keys_exhausted=True,
