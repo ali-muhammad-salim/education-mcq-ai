@@ -349,22 +349,21 @@ export default function TakeQuizModal({
     } catch (e) {}
   };
 
-  // Multi-pass cascading clipboard poisoner to neutralize Windows PrtScn capture
+  // Multi-pass cascading clipboard poisoner to neutralize screenshot capture
   const poisonClipboard = useCallback(() => {
     const candidateName = student?.name || 'Proctored Candidate';
-    const violationNotice = 
-      `⚠️ [AKU-EB EXAMINATION SECURITY VIOLATION]\n` +
-      `Screen capture and printing are strictly prohibited under AKU-EB examination anti-cheat regulations.\n` +
+    const protectionNotice = 
+      `🔒 [AKU-EB EXAMINATION CONTENT PROTECTED]\n` +
+      `Screen capture is disabled during the active examination.\n` +
       `Candidate: ${candidateName}\n` +
       `Paper: ${paperCode}\n` +
-      `Timestamp: ${new Date().toLocaleString()}\n` +
-      `Audit Status: Unauthorized screen capture attempt logged to candidate profile.`;
+      `Timestamp: ${new Date().toLocaleString()}`;
 
     // 1. Synchronous fallback via hidden textarea (executes immediately on event thread)
     try {
       const textarea = document.getElementById('aku-clipboard-poison-textarea') as HTMLTextAreaElement | null;
       if (textarea) {
-        textarea.value = violationNotice;
+        textarea.value = protectionNotice;
         textarea.select();
         textarea.setSelectionRange(0, 99999);
         document.execCommand('copy');
@@ -374,7 +373,7 @@ export default function TakeQuizModal({
     // 2. Modern Clipboard API writeText
     try {
       if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(violationNotice).catch(() => {});
+        navigator.clipboard.writeText(protectionNotice).catch(() => {});
       }
     } catch (e) {}
 
@@ -386,7 +385,7 @@ export default function TakeQuizModal({
         canvas.height = 1;
         const ctx = canvas.getContext('2d');
         if (ctx) {
-          ctx.fillStyle = '#000000';
+          ctx.fillStyle = '#ffffff';
           ctx.fillRect(0, 0, 1, 1);
           canvas.toBlob((blob) => {
             if (blob) {
@@ -410,7 +409,7 @@ export default function TakeQuizModal({
   }, [poisonClipboard]);
 
   const triggerScreenshotDefense = useCallback(() => {
-    // 1. Synchronous direct DOM blackout (0ms latency, precedes browser paint)
+    // 1. Synchronous direct DOM shielding (0ms latency, precedes browser paint)
     const blackoutEl = document.getElementById('aku-fullscreen-blackout');
     const activeBody = document.getElementById('aku-active-quiz-content');
     if (blackoutEl) {
@@ -422,16 +421,17 @@ export default function TakeQuizModal({
       activeBody.style.filter = 'blur(60px)';
       activeBody.style.opacity = '0';
       activeBody.style.visibility = 'hidden';
+      activeBody.setAttribute('aria-hidden', 'true');
     }
 
-    // 2. Multi-pass cascading clipboard poison
+    // 2. Multi-pass cascading clipboard protection
     poisonClipboardCascading();
 
     // 3. React state update
     setScreenshotAlert(true);
     setScreenshotAttemptCount((prev) => prev + 1);
 
-    // 4. Reset blackout after 2.5 seconds
+    // 4. Auto-restore after 2.2 seconds if user does not click resume button
     setTimeout(() => {
       setScreenshotAlert(false);
       if (blackoutEl) {
@@ -443,11 +443,34 @@ export default function TakeQuizModal({
         activeBody.style.filter = 'none';
         activeBody.style.opacity = '1';
         activeBody.style.visibility = 'visible';
+        activeBody.removeAttribute('aria-hidden');
       }
-    }, 2500);
+    }, 2200);
   }, [poisonClipboardCascading]);
 
-  // Robust Anti-Screenshot, Snipping Tool, and Focus Concealment Engine
+  // Clean dismissal of screenshot defense or focus loss shield
+  const dismissScreenshotDefense = useCallback(() => {
+    setScreenshotAlert(false);
+    setIsFocusLost(false);
+    const blackoutEl = document.getElementById('aku-fullscreen-blackout');
+    const activeBody = document.getElementById('aku-active-quiz-content');
+    if (blackoutEl) {
+      blackoutEl.style.display = 'none';
+      blackoutEl.style.opacity = '0';
+      blackoutEl.style.pointerEvents = 'none';
+    }
+    if (activeBody) {
+      activeBody.style.filter = 'none';
+      activeBody.style.opacity = '1';
+      activeBody.style.visibility = 'visible';
+      activeBody.removeAttribute('aria-hidden');
+    }
+    if (typeof window !== 'undefined') {
+      window.focus();
+    }
+  }, []);
+
+  // Robust Anti-Screenshot, Windows Snipping (Win+Shift+S), Mobile Buttons, and Assistant Concealment Engine
   useEffect(() => {
     if (phase !== 'active') return;
 
@@ -468,15 +491,36 @@ export default function TakeQuizModal({
         return;
       }
 
-      // 2. Windows Snipping: Win + Shift + S or Ctrl + Shift + S
-      if ((e.metaKey || e.ctrlKey) && e.shiftKey && (e.key === 'S' || e.key === 's')) {
+      // 2. Windows Key interception (preempts Win + Shift + S before Snipping Tool can capture)
+      const isMetaKey = 
+        e.key === 'Meta' || 
+        e.key === 'OS' || 
+        e.code === 'MetaLeft' || 
+        e.code === 'MetaRight';
+
+      if (isMetaKey) {
+        // Synchronously shield DOM immediately
+        triggerScreenshotDefense();
+        return;
+      }
+
+      // 3. Windows Snipping / Capture: Win + Shift + S or Ctrl + Shift + S or Alt + Shift + S
+      if ((e.metaKey || e.ctrlKey || e.altKey) && e.shiftKey && (e.key === 'S' || e.key === 's' || e.code === 'KeyS')) {
         e.preventDefault();
         e.stopPropagation();
         triggerScreenshotDefense();
         return;
       }
 
-      // 3. Mac Screenshot shortcuts: Cmd + Shift + 3 / 4 / 5 / 6
+      // 4. Windows / Mac save or screen shortcuts (Ctrl+S / Cmd+S)
+      if ((e.metaKey || e.ctrlKey) && (e.key === 'S' || e.key === 's' || e.code === 'KeyS')) {
+        e.preventDefault();
+        e.stopPropagation();
+        triggerScreenshotDefense();
+        return;
+      }
+
+      // 5. Mac Screenshot shortcuts: Cmd + Shift + 3 / 4 / 5 / 6
       if (e.metaKey && e.shiftKey && ['3', '4', '5', '6'].includes(e.key)) {
         e.preventDefault();
         e.stopPropagation();
@@ -484,7 +528,17 @@ export default function TakeQuizModal({
         return;
       }
 
-      // 4. Alt + PrintScreen
+      // 6. Mobile hardware volume buttons (frequently paired with Power for Android screenshots)
+      if (
+        ['VolumeDown', 'VolumeUp', 'AudioVolumeDown', 'AudioVolumeUp'].includes(e.key) ||
+        ['AudioVolumeDown', 'AudioVolumeUp'].includes(e.code)
+      ) {
+        e.preventDefault();
+        triggerScreenshotDefense();
+        return;
+      }
+
+      // 7. Alt + PrintScreen
       if (e.altKey && (isPrtScn || e.key === 'PrintScreen')) {
         e.preventDefault();
         e.stopPropagation();
@@ -492,15 +546,15 @@ export default function TakeQuizModal({
         return;
       }
 
-      // 5. Print Dialog: Ctrl+P or Cmd+P
-      if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+      // 8. Print Dialog: Ctrl+P or Cmd+P
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p' || e.code === 'KeyP')) {
         e.preventDefault();
         e.stopPropagation();
         triggerScreenshotDefense();
         return;
       }
 
-      // 6. Developer Tools: F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
+      // 9. Developer Tools: F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
       if (
         e.key === 'F12' ||
         ((e.ctrlKey || e.metaKey) && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key)) ||
@@ -521,46 +575,82 @@ export default function TakeQuizModal({
         e.key === 'Snapshot' ||
         e.code === 'Snapshot';
 
-      if (isPrtScn) {
+      const isMeta = 
+        e.key === 'Meta' || 
+        e.key === 'OS' || 
+        e.code === 'MetaLeft' || 
+        e.code === 'MetaRight';
+
+      if (isPrtScn || isMeta) {
         e.preventDefault();
         triggerScreenshotDefense();
       }
     };
 
     const handleWindowBlur = () => {
-      // Whenever focus is lost (Snipping Tool, Alt+Tab, Screen capture app), immediately conceal quiz
+      // Whenever focus is lost (Snipping Tool, Alt+Tab, Google Assistant, Power button), immediately conceal quiz
       setIsFocusLost(true);
       poisonClipboardCascading();
       const activeBody = document.getElementById('aku-active-quiz-content');
       if (activeBody) {
-        activeBody.style.filter = 'blur(45px)';
-        activeBody.style.opacity = '0.05';
+        activeBody.style.filter = 'blur(60px)';
+        activeBody.style.opacity = '0';
+        activeBody.style.visibility = 'hidden';
+        activeBody.setAttribute('aria-hidden', 'true');
       }
     };
 
     const handleWindowFocus = () => {
-      // Refocused: Poison clipboard again in case a capture was taken while outside
+      // Refocused: Poison clipboard again in case a capture was attempted while outside
       poisonClipboardCascading();
-      setTimeout(() => {
-        setIsFocusLost(false);
-        const activeBody = document.getElementById('aku-active-quiz-content');
-        if (activeBody) {
-          activeBody.style.filter = 'none';
-          activeBody.style.opacity = '1';
+    };
+
+    // Mobile touch protection: prevent long-press escalation near navigation bar
+    let touchHoldTimeout: NodeJS.Timeout | null = null;
+    const handleTouchStart = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      if (touch) {
+        // If touch starts within bottom 55px (near Android nav bar), stop propagation
+        if (window.innerHeight - touch.clientY < 55) {
+          e.stopPropagation();
         }
-      }, 100);
+      }
+      if (touchHoldTimeout) clearTimeout(touchHoldTimeout);
+      touchHoldTimeout = setTimeout(() => {
+        poisonClipboardCascading();
+      }, 350);
+    };
+
+    const handleTouchEnd = () => {
+      if (touchHoldTimeout) clearTimeout(touchHoldTimeout);
+    };
+
+    const handleContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
     };
 
     window.addEventListener('keydown', handleKeyDown, true);
     window.addEventListener('keyup', handleKeyUp, true);
     window.addEventListener('blur', handleWindowBlur);
     window.addEventListener('focus', handleWindowFocus);
+    window.addEventListener('pagehide', handleWindowBlur);
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
+    window.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+    window.addEventListener('contextmenu', handleContextMenu, true);
 
     return () => {
+      if (touchHoldTimeout) clearTimeout(touchHoldTimeout);
       window.removeEventListener('keydown', handleKeyDown, true);
       window.removeEventListener('keyup', handleKeyUp, true);
       window.removeEventListener('blur', handleWindowBlur);
       window.removeEventListener('focus', handleWindowFocus);
+      window.removeEventListener('pagehide', handleWindowBlur);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchend', handleTouchEnd);
+      window.removeEventListener('touchcancel', handleTouchEnd);
+      window.removeEventListener('contextmenu', handleContextMenu, true);
     };
   }, [phase, triggerScreenshotDefense, poisonClipboardCascading]);
 
@@ -740,6 +830,21 @@ export default function TakeQuizModal({
       setTabSwitchCount(0);
       setCheatWarningVisible(false);
       setPhase('active');
+
+      // On mobile / handheld devices, request immersive fullscreen to hide Android navigation bar
+      try {
+        if (typeof window !== 'undefined' && window.innerWidth <= 840) {
+          const docEl = document.documentElement as any;
+          if (docEl.requestFullscreen) {
+            docEl.requestFullscreen({ navigationUI: 'hide' }).then(() => {
+              setIsFullscreen(true);
+            }).catch(() => {});
+          } else if (docEl.webkitRequestFullscreen) {
+            docEl.webkitRequestFullscreen();
+            setIsFullscreen(true);
+          }
+        }
+      } catch (fsErr) {}
     } catch (err: any) {
       console.error('Failed to start quiz:', err);
       setStartQuizError(err?.message || 'Failed to start quiz');
@@ -898,7 +1003,7 @@ export default function TakeQuizModal({
 
   return (
     <>
-      {/* Global CSS to prevent printing and disable user selection */}
+      {/* Global CSS to prevent printing, manage single scrollbar, and disable selection */}
       <style jsx global>{`
         @media print {
           body, #quiz-modal-container, #aku-active-quiz-content {
@@ -906,6 +1011,37 @@ export default function TakeQuizModal({
             visibility: hidden !important;
             opacity: 0 !important;
           }
+        }
+        #quiz-modal-container {
+          overflow: hidden !important;
+          scrollbar-width: none !important;
+        }
+        #quiz-modal-container::-webkit-scrollbar {
+          display: none !important;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none !important;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none !important;
+          scrollbar-width: none !important;
+        }
+        .aku-single-scroll {
+          scrollbar-width: thin;
+          scrollbar-color: #cbd5e1 transparent;
+        }
+        .aku-single-scroll::-webkit-scrollbar {
+          width: 6px;
+        }
+        .aku-single-scroll::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .aku-single-scroll::-webkit-scrollbar-thumb {
+          background: #cbd5e1;
+          border-radius: 9999px;
+        }
+        .aku-single-scroll::-webkit-scrollbar-thumb:hover {
+          background: #94a3b8;
         }
       `}</style>
 
@@ -924,61 +1060,113 @@ export default function TakeQuizModal({
           opacity: 0,
           pointerEvents: 'none'
         }}
-        value={`⚠️ [AKU-EB EXAMINATION SECURITY VIOLATION]\nScreen capture and printing are strictly prohibited under AKU-EB examination anti-cheat regulations.\nCandidate: ${student?.name || 'Proctored Candidate'}\nPaper: ${paperCode}\nTimestamp: ${new Date().toLocaleString()}\nAudit Status: Unauthorized screen capture attempt logged to candidate profile.`}
+        value={`🔒 [AKU-EB EXAMINATION CONTENT PROTECTED]\nScreen capture is disabled during the active examination.\nCandidate: ${student?.name || 'Proctored Candidate'}\nPaper: ${paperCode}\nTimestamp: ${new Date().toLocaleString()}`}
       />
 
-      {/* FULLSCREEN ZERO-LATENCY BLACKOUT SHIELD (Neutralizes Hardware PrtScn Key) */}
+      {/* LIGHT SCREENSHOT & PRIVACY SHIELD (Reassuring, Clean & Non-Dangerous) */}
       <div
         id="aku-fullscreen-blackout"
         style={{
           position: 'fixed',
           inset: 0,
-          background: '#020617',
+          background: 'rgba(248, 250, 252, 0.97)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
           zIndex: 99999999,
           display: screenshotAlert ? 'flex' : 'none',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#ffffff',
+          color: '#0f172a',
           textAlign: 'center',
-          padding: '2rem',
+          padding: '1.5rem',
           opacity: screenshotAlert ? 1 : 0,
           pointerEvents: screenshotAlert ? 'all' : 'none',
-          transition: 'opacity 0.08s ease'
+          transition: 'opacity 0.12s ease'
         }}
+        onClick={dismissScreenshotDefense}
       >
-        <div style={{
-          width: '92px',
-          height: '92px',
-          borderRadius: '50%',
-          background: 'rgba(239, 68, 68, 0.15)',
-          border: '2px solid rgba(239, 68, 68, 0.5)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginBottom: '1.5rem',
-          color: '#ef4444'
-        }}>
-          <ShieldAlert size={50} />
-        </div>
-        <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#f87171', margin: '0 0 0.75rem 0', letterSpacing: '-0.02em' }}>
-          SCREEN CAPTURE BLOCKED
-        </h2>
-        <p style={{ fontSize: '1.05rem', color: '#e2e8f0', maxWidth: '580px', lineHeight: 1.6, margin: '0 0 1.25rem 0' }}>
-          Screen capture (PrintScreen), snipping tools, and page recording are strictly prohibited during AKU-EB examinations.
-        </p>
-        <div style={{
-          background: 'rgba(239, 68, 68, 0.12)',
-          border: '1.5px solid rgba(239, 68, 68, 0.35)',
-          borderRadius: '12px',
-          padding: '14px 24px',
-          color: '#fca5a5',
-          fontSize: '0.92rem',
-          fontWeight: 600,
-          maxWidth: '540px',
-          lineHeight: 1.5
-        }}>
-          🛡️ Your clipboard has been scrubbed with a security notice. This capture attempt has been recorded in your examination audit trail.
+        <div 
+          style={{
+            background: '#ffffff',
+            borderRadius: '20px',
+            padding: '2.5rem 2rem',
+            maxWidth: '460px',
+            width: '92%',
+            boxShadow: '0 20px 45px -10px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0,0,0,0.03)',
+            border: '1.5px solid #e2e8f0',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center'
+          }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Friendly Emerald Badge */}
+          <div style={{
+            width: '76px',
+            height: '76px',
+            borderRadius: '50%',
+            background: '#ecfdf5',
+            border: '2px solid #a7f3d0',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: '1.25rem',
+            color: '#0b5e4a',
+            boxShadow: '0 4px 14px rgba(11, 94, 74, 0.12)'
+          }}>
+            <ShieldCheck size={42} strokeWidth={2.2} />
+          </div>
+
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.5rem 0', letterSpacing: '-0.02em' }}>
+            Screen Protected
+          </h2>
+
+          <p style={{ fontSize: '0.94rem', color: '#64748b', maxWidth: '380px', lineHeight: 1.6, margin: '0 0 1.25rem 0' }}>
+            Examination content is protected. Screen capture shortcuts and external overlays are paused during your quiz.
+          </p>
+
+          <div style={{
+            background: '#f8fafc',
+            border: '1px solid #e2e8f0',
+            borderRadius: '10px',
+            padding: '10px 16px',
+            color: '#0b5e4a',
+            fontSize: '0.86rem',
+            fontWeight: 600,
+            marginBottom: '1.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            width: '100%',
+            justifyContent: 'center'
+          }}>
+            <Info size={16} color="#0b5e4a" style={{ flexShrink: 0 }} />
+            <span>Your answers & timer are safely saved</span>
+          </div>
+
+          <button
+            type="button"
+            onClick={dismissScreenshotDefense}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '12px 28px',
+              background: '#0b5e4a',
+              border: 'none',
+              borderRadius: '10px',
+              color: '#ffffff',
+              fontSize: '0.94rem',
+              fontWeight: 700,
+              cursor: 'pointer',
+              boxShadow: '0 4px 14px rgba(11, 94, 74, 0.25)',
+              transition: 'transform 0.1s ease'
+            }}
+          >
+            <Eye size={17} /> Resume Quiz
+          </button>
         </div>
       </div>
 
@@ -1001,7 +1189,8 @@ export default function TakeQuizModal({
           userSelect: 'none',
           WebkitUserSelect: 'none',
           MozUserSelect: 'none',
-          msUserSelect: 'none'
+          msUserSelect: 'none',
+          overflow: 'hidden'
         }}
         onCopy={(e) => { e.preventDefault(); poisonClipboardCascading(); }}
         onCut={(e) => { e.preventDefault(); poisonClipboardCascading(); }}
@@ -1009,87 +1198,101 @@ export default function TakeQuizModal({
         onContextMenu={(e) => { e.preventDefault(); }}
         onDragStart={(e) => { e.preventDefault(); }}
       >
-        <div style={{
-          background: 'var(--card-bg, #ffffff)',
-          color: 'var(--text-color, #1e293b)',
-          borderRadius: phase === 'active' || phase === 'completed' ? '0px' : '20px',
-          maxWidth: phase === 'active' || phase === 'completed' ? '100vw' : '620px',
-          width: phase === 'active' || phase === 'completed' ? '100vw' : '100%',
-          height: phase === 'active' || phase === 'completed' ? '100vh' : 'auto',
-          maxHeight: phase === 'active' || phase === 'completed' ? '100vh' : '94vh',
-          overflowY: 'auto',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.45)',
-          position: 'relative',
-          display: 'flex',
-          flexDirection: 'column'
+        <div 
+          id="quiz-modal-card"
+          style={{
+            background: 'var(--card-bg, #ffffff)',
+            color: 'var(--text-color, #1e293b)',
+            borderRadius: phase === 'active' || phase === 'completed' ? '0px' : '20px',
+            maxWidth: phase === 'active' || phase === 'completed' ? '100vw' : '620px',
+            width: phase === 'active' || phase === 'completed' ? '100vw' : '100%',
+            height: phase === 'active' ? '100dvh' : (phase === 'completed' ? '100vh' : 'auto'),
+            maxHeight: phase === 'active' ? '100dvh' : (phase === 'completed' ? '100vh' : '94vh'),
+            overflowY: phase === 'active' ? 'hidden' : 'auto',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.45)',
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column'
         }}>
 
-          {/* Examination Privacy & Anti-Snipping Shield (Active when window loses focus) */}
+          {/* Examination Privacy & Anti-Snipping Shield (Active when window loses focus - Light Sign) */}
           {isFocusLost && !screenshotAlert && phase === 'active' && (
             <div
               style={{
                 position: 'absolute',
                 top: 0, left: 0, right: 0, bottom: 0,
-                background: 'rgba(15, 23, 42, 0.98)',
-                backdropFilter: 'blur(25px)',
+                background: 'rgba(248, 250, 252, 0.97)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
                 zIndex: 999998,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#ffffff',
+                color: '#0f172a',
                 textAlign: 'center',
-                padding: '2.5rem',
-                borderRadius: '20px'
+                padding: '1.5rem'
               }}
-              onClick={() => {
-                setIsFocusLost(false);
-                window.focus();
-              }}
+              onClick={dismissScreenshotDefense}
             >
-              <div style={{
-                width: '76px',
-                height: '76px',
-                borderRadius: '50%',
-                background: 'rgba(239, 68, 68, 0.15)',
-                border: '2px solid rgba(239, 68, 68, 0.4)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '1.25rem',
-                color: '#f87171'
-              }}>
-                <Lock size={38} />
-              </div>
-              <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem 0' }}>
-                Examination Privacy Shield Active
-              </h3>
-              <p style={{ fontSize: '0.94rem', color: '#94a3b8', maxWidth: '480px', lineHeight: 1.6, margin: '0 0 1.5rem 0' }}>
-                Question content is automatically concealed while the examination window is unfocused to protect against screen capture and snipping tools.
-              </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setIsFocusLost(false);
-                  window.focus();
-                }}
+              <div 
                 style={{
-                  display: 'inline-flex',
+                  background: '#ffffff',
+                  borderRadius: '20px',
+                  padding: '2.5rem 2rem',
+                  maxWidth: '460px',
+                  width: '92%',
+                  boxShadow: '0 20px 45px -10px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0,0,0,0.03)',
+                  border: '1.5px solid #e2e8f0',
+                  display: 'flex',
+                  flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '0.5rem',
-                  padding: '10px 22px',
-                  background: '#0b5e4a',
-                  border: 'none',
-                  borderRadius: '8px',
-                  color: '#ffffff',
-                  fontSize: '0.92rem',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  boxShadow: '0 4px 14px rgba(11, 94, 74, 0.35)'
+                  textAlign: 'center'
                 }}
+                onClick={(e) => e.stopPropagation()}
               >
-                <Eye size={17} /> Click here to return to examination
-              </button>
+                <div style={{
+                  width: '76px',
+                  height: '76px',
+                  borderRadius: '50%',
+                  background: '#ecfdf5',
+                  border: '2px solid #a7f3d0',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1.25rem',
+                  color: '#0b5e4a',
+                  boxShadow: '0 4px 14px rgba(11, 94, 74, 0.12)'
+                }}>
+                  <ShieldCheck size={42} strokeWidth={2.2} />
+                </div>
+                <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.5rem 0', letterSpacing: '-0.02em' }}>
+                  Screen Protected
+                </h3>
+                <p style={{ fontSize: '0.94rem', color: '#64748b', maxWidth: '380px', lineHeight: 1.6, margin: '0 0 1.25rem 0' }}>
+                  Question content is temporarily concealed while outside the quiz window. Click below to continue your examination.
+                </p>
+                <button
+                  type="button"
+                  onClick={dismissScreenshotDefense}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    padding: '12px 28px',
+                    background: '#0b5e4a',
+                    border: 'none',
+                    borderRadius: '10px',
+                    color: '#ffffff',
+                    fontSize: '0.94rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 14px rgba(11, 94, 74, 0.25)'
+                  }}
+                >
+                  <Eye size={17} /> Resume Quiz
+                </button>
+              </div>
             </div>
           )}
 
@@ -1730,28 +1933,36 @@ export default function TakeQuizModal({
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
+                maxHeight: '100%',
+                overflow: 'hidden',
                 position: 'relative',
                 filter: isWindowMasked ? 'blur(35px)' : 'none',
-                transition: 'filter 0.15s ease'
+                transition: 'filter 0.15s ease',
+                WebkitTouchCallout: 'none',
+                WebkitUserSelect: 'none',
+                userSelect: 'none',
+                touchAction: 'pan-y'
               }}
             >
-              {/* Tab Switch Warning Toast with Exact Away Duration */}
+              {/* Tab Switch Warning Toast (Friendly notice) */}
               {cheatWarningVisible && (
                 <div style={{
-                  background: '#dc2626',
-                  color: '#ffffff',
-                  padding: '10px 16px',
-                  fontSize: '0.85rem',
-                  fontWeight: 700,
+                  background: '#fffbeb',
+                  borderBottom: '1px solid #fde68a',
+                  color: '#92400e',
+                  padding: '9px 16px',
+                  fontSize: '0.84rem',
+                  fontWeight: 600,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  zIndex: 20
+                  zIndex: 20,
+                  flexShrink: 0
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <AlertTriangle size={18} />
+                    <Info size={17} color="#d97706" />
                     <span>
-                      Cheating Check Warning: Tab switch #{tabSwitchCount} detected! (Away for {lastSwitchDuration}s). Logged to audit trail.
+                      Notice: Window departure #{tabSwitchCount} noted ({lastSwitchDuration}s away). Please remain on the examination window.
                     </span>
                   </div>
                   <button
@@ -1761,13 +1972,14 @@ export default function TakeQuizModal({
                       setCheatWarningVisible(false);
                     }}
                     style={{
-                      background: 'rgba(255,255,255,0.25)',
-                      border: 'none',
-                      color: '#ffffff',
-                      padding: '2px 8px',
-                      borderRadius: '4px',
+                      background: 'rgba(217, 119, 6, 0.12)',
+                      border: '1px solid rgba(217, 119, 6, 0.25)',
+                      color: '#92400e',
+                      padding: '3px 10px',
+                      borderRadius: '6px',
                       cursor: 'pointer',
-                      fontSize: '0.78rem'
+                      fontSize: '0.78rem',
+                      fontWeight: 700
                     }}
                   >
                     Dismiss
@@ -1785,7 +1997,8 @@ export default function TakeQuizModal({
                 background: '#f8fafc',
                 flexWrap: 'wrap',
                 gap: '0.75rem',
-                zIndex: 2
+                zIndex: 2,
+                flexShrink: 0
               }}>
                 <div>
                   <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0b5e4a', textTransform: 'uppercase' }}>
@@ -1906,18 +2119,23 @@ export default function TakeQuizModal({
                 </div>
               </div>
 
-              {/* Quick Question Jump Drawer (Grid View) */}
+              {/* Quick Question Jump Drawer (Grid View - No separate scrollbar track) */}
               {showQuestionGrid && (
-                <div style={{
-                  padding: '1rem',
-                  background: '#ffffff',
-                  borderBottom: '1px solid #e2e8f0',
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(40px, 1fr))',
-                  gap: '6px',
-                  maxHeight: '160px',
-                  overflowY: 'auto'
-                }}>
+                <div 
+                  className="no-scrollbar"
+                  style={{
+                    padding: '1rem',
+                    background: '#ffffff',
+                    borderBottom: '1px solid #e2e8f0',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(40px, 1fr))',
+                    gap: '6px',
+                    maxHeight: '160px',
+                    overflowY: 'auto',
+                    scrollbarWidth: 'none',
+                    flexShrink: 0
+                  }}
+                >
                   {activeQuestions.map((q, idx) => {
                     const answered = Boolean(userSelections[q.displayNumber.toString()]);
                     const isCurrent = idx === currentIndex;
@@ -1946,8 +2164,19 @@ export default function TakeQuizModal({
                 </div>
               )}
 
-              {/* Active Question Body (Text Selection Blocked) */}
-              <div style={{ padding: '1.75rem', overflowY: 'auto', flex: 1 }}>
+              {/* Active Question Body (SINGLE AND ONLY SCROLLBAR CONTAINER) */}
+              <div 
+                id="aku-question-scroll-body"
+                className="aku-single-scroll"
+                style={{ 
+                  padding: '1.75rem', 
+                  overflowY: 'auto', 
+                  flex: 1, 
+                  minHeight: 0,
+                  WebkitOverflowScrolling: 'touch',
+                  overscrollBehavior: 'contain'
+                }}
+              >
                 {/* Question Stem Text */}
                 <div style={{
                   fontSize: '1.15rem',
@@ -2106,7 +2335,8 @@ export default function TakeQuizModal({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                background: '#ffffff'
+                background: '#ffffff',
+                flexShrink: 0
               }}>
                 <button
                   type="button"
@@ -2206,7 +2436,7 @@ export default function TakeQuizModal({
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <ShieldAlert size={22} color="#dc2626" />
+                    <ShieldCheck size={22} color="#0b5e4a" />
                     <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
                       Tab-Switch & Away Time Audit
                     </h3>
@@ -2220,27 +2450,27 @@ export default function TakeQuizModal({
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.65rem', marginBottom: '1.25rem' }}>
-                  <div style={{ background: '#fef2f2', padding: '0.75rem', borderRadius: '10px', border: '1px solid #fecaca' }}>
-                    <div style={{ fontSize: '0.72rem', color: '#991b1b', fontWeight: 600 }}>Tab Switches</div>
-                    <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#dc2626' }}>{tabSwitchLogs.length}</div>
+                  <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 600 }}>Tab Switches</div>
+                    <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a' }}>{tabSwitchLogs.length}</div>
                   </div>
                   <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
                     <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 600 }}>Time Away</div>
                     <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a' }}>{totalAwayTime}s</div>
                   </div>
-                  <div style={{ background: screenshotAttemptCount > 0 ? '#fff1f2' : '#f0fdf4', padding: '0.75rem', borderRadius: '10px', border: screenshotAttemptCount > 0 ? '1px solid #fecdd3' : '1px solid #bbf7d0' }}>
-                    <div style={{ fontSize: '0.72rem', color: screenshotAttemptCount > 0 ? '#991b1b' : '#166534', fontWeight: 600 }}>Snips Blocked</div>
-                    <div style={{ fontSize: '1.25rem', fontWeight: 800, color: screenshotAttemptCount > 0 ? '#dc2626' : '#16a34a' }}>{screenshotAttemptCount}</div>
+                  <div style={{ background: '#f0fdf4', padding: '0.75rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
+                    <div style={{ fontSize: '0.72rem', color: '#166534', fontWeight: 600 }}>Snips Paused</div>
+                    <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0b5e4a' }}>{screenshotAttemptCount}</div>
                   </div>
                 </div>
 
                 {screenshotAttemptCount > 0 && (
                   <div style={{
-                    background: '#fef2f2',
-                    border: '1px solid #fecaca',
+                    background: '#f8fafc',
+                    border: '1px solid #e2e8f0',
                     borderRadius: '8px',
                     padding: '0.65rem 0.9rem',
-                    color: '#991b1b',
+                    color: '#0b5e4a',
                     fontSize: '0.82rem',
                     fontWeight: 600,
                     marginBottom: '1rem',
@@ -2248,8 +2478,8 @@ export default function TakeQuizModal({
                     alignItems: 'center',
                     gap: '0.4rem'
                   }}>
-                    <ShieldAlert size={16} />
-                    <span>Anti-Capture Shield: {screenshotAttemptCount} screenshot / PrintScreen attempt(s) intercepted & clipboard scrubbed.</span>
+                    <ShieldCheck size={16} />
+                    <span>Privacy Shield: {screenshotAttemptCount} screen capture attempt(s) paused & examination questions protected.</span>
                   </div>
                 )}
 
