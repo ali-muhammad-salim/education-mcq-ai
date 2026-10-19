@@ -208,27 +208,53 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setDownloadModalOpen(true)}
-            style={{
-              background: '#0b5e4a',
-              color: '#ffffff',
-              padding: '0.65rem 1.25rem',
-              borderRadius: '8px',
-              fontSize: '0.88rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.4rem',
-              fontWeight: 700,
-              border: 'none',
-              cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(11, 94, 74, 0.2)'
-            }}
-          >
-            <Download size={16} />
-            <span>Download Official PDF</span>
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+            {!isPaper2 && (
+              <button
+                type="button"
+                onClick={() => setQuizModalOpen(true)}
+                style={{
+                  background: '#0b5e4a',
+                  color: '#ffffff',
+                  padding: '0.65rem 1.25rem',
+                  borderRadius: '8px',
+                  fontSize: '0.88rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  fontWeight: 700,
+                  border: 'none',
+                  cursor: 'pointer',
+                  boxShadow: '0 2px 8px rgba(11, 94, 74, 0.2)'
+                }}
+              >
+                <Award size={16} />
+                <span>Take A Quiz</span>
+              </button>
+            )}
+
+            <button
+              type="button"
+              onClick={() => setDownloadModalOpen(true)}
+              style={{
+                background: !isPaper2 ? '#ffffff' : '#0b5e4a',
+                color: !isPaper2 ? '#0b5e4a' : '#ffffff',
+                border: !isPaper2 ? '1.5px solid #0b5e4a' : 'none',
+                padding: '0.65rem 1.25rem',
+                borderRadius: '8px',
+                fontSize: '0.88rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                boxShadow: !isPaper2 ? 'none' : '0 2px 8px rgba(11, 94, 74, 0.2)'
+              }}
+            >
+              <Download size={16} />
+              <span>Download Official PDF</span>
+            </button>
+          </div>
         </div>
       )}
 

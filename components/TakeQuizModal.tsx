@@ -58,6 +58,7 @@ interface TakeQuizModalProps {
 
 // Fisher-Yates array shuffle
 function shuffleArray<T>(array: T[]): T[] {
+  if (!array || !Array.isArray(array)) return [];
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -77,6 +78,10 @@ const parseSourceRegion = (sourceRegion: any) => {
 
 // Prepares questions with random question order AND randomized options (A, B, C, D)
 function randomizeQuestionsAndOptions(rawQuestions: Question[]): ShuffledQuestion[] {
+  if (!rawQuestions || !Array.isArray(rawQuestions) || rawQuestions.length === 0) {
+    return [];
+  }
+
   const shuffledRaw = shuffleArray(rawQuestions);
 
   return shuffledRaw.map((q, qIndex) => {
@@ -93,21 +98,42 @@ function randomizeQuestionsAndOptions(rawQuestions: Question[]): ShuffledQuestio
       rawChoices = mapped;
     }
 
-    if (!rawChoices || Object.keys(rawChoices).length === 0) {
-      rawChoices = {
-        A: 'Option A',
-        B: 'Option B',
-        C: 'Option C',
-        D: 'Option D'
-      };
+    // Normalize keys to uppercase 'A', 'B', 'C', 'D'
+    const normalizedChoices: Record<string, string> = {};
+    if (rawChoices && typeof rawChoices === 'object') {
+      Object.entries(rawChoices).forEach(([k, v]) => {
+        const upperKey = k.trim().toUpperCase();
+        if (['A', 'B', 'C', 'D'].includes(upperKey)) {
+          normalizedChoices[upperKey] = String(v);
+        }
+      });
     }
 
-    const origCorrect = (meta.correct_answer || meta.correctOption || anyQ.correctOption || anyQ.correctAnswer || anyQ.answer || 'A').toUpperCase().trim();
-    const correctText = rawChoices[origCorrect] || rawChoices['A'] || '';
+    if (Object.keys(normalizedChoices).length === 0) {
+      if (rawChoices && typeof rawChoices === 'object' && Object.keys(rawChoices).length > 0) {
+        const vals = Object.values(rawChoices);
+        ['A', 'B', 'C', 'D'].forEach((k, idx) => {
+          normalizedChoices[k] = vals[idx] !== undefined ? String(vals[idx]) : `Option ${k}`;
+        });
+      } else {
+        normalizedChoices['A'] = 'Option A';
+        normalizedChoices['B'] = 'Option B';
+        normalizedChoices['C'] = 'Option C';
+        normalizedChoices['D'] = 'Option D';
+      }
+    }
+
+    // Extract correct answer safely
+    const rawCorrect = String(
+      meta.correct_answer || meta.correctOption || anyQ.correctOption || anyQ.correctAnswer || anyQ.answer || 'A'
+    ).trim();
+    const correctMatch = rawCorrect.match(/([A-D])/i);
+    const origCorrect = correctMatch ? correctMatch[1].toUpperCase() : 'A';
+    const correctText = normalizedChoices[origCorrect] || normalizedChoices['A'] || Object.values(normalizedChoices)[0] || '';
 
     // Permute choice text values
-    const choiceKeys = ['A', 'B', 'C', 'D'].filter(k => rawChoices[k] !== undefined);
-    const textValues = choiceKeys.map(k => rawChoices[k]);
+    const choiceKeys = ['A', 'B', 'C', 'D'].filter(k => normalizedChoices[k] !== undefined);
+    const textValues = choiceKeys.map(k => normalizedChoices[k]);
     const shuffledValues = shuffleArray(textValues);
 
     const randomizedChoices: Record<string, string> = {};
@@ -121,7 +147,8 @@ function randomizeQuestionsAndOptions(rawQuestions: Question[]): ShuffledQuestio
     });
 
     const origExpl = meta.explanation || anyQ.explanation || 'Refer to official AKU-EB Syllabus Student Learning Outcomes for detailed conceptual background.';
-    const updatedExpl = origExpl.replace(new RegExp(`Option\\s+${origCorrect}`, 'gi'), `Option ${randomizedCorrectKey}`);
+    const safeRegexKey = origCorrect.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const updatedExpl = origExpl.replace(new RegExp(`Option\\s+${safeRegexKey}`, 'gi'), `Option ${randomizedCorrectKey}`);
 
     const topic = q.topics?.[0]?.topic;
     const slo = q.slos?.[0]?.slo;
@@ -155,6 +182,8 @@ export default function TakeQuizModal({
 }: TakeQuizModalProps) {
   // Navigation / Phase State: 'auth' -> 'setup' -> 'active' -> 'completed'
   const [phase, setPhase] = useState<'auth' | 'setup' | 'active' | 'completed'>('setup');
+  const [loadingQuizQuestions, setLoadingQuizQuestions] = useState<boolean>(false);
+  const [startQuizError, setStartQuizError] = useState<string | null>(null);
 
   // Student Authentication State
   const [student, setStudent] = useState<{ id?: string; name: string; age?: number; classLevel?: string } | null>(null);
@@ -202,9 +231,20 @@ export default function TakeQuizModal({
   const [completionData, setCompletionData] = useState<any>(null);
   const [reviewFilter, setReviewFilter] = useState<'all' | 'incorrect' | 'correct'>('incorrect');
 
-  // Check existing session on modal open
+  // Check existing session on modal open & reset when closed
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) {
+      setPhase('setup');
+      setCurrentIndex(0);
+      setUserSelections({});
+      setCompletionData(null);
+      setScreenshotAlert(false);
+      setCheatWarningVisible(false);
+      setShowSwitchAuditModal(false);
+      setIsWindowMasked(false);
+      setStartQuizError(null);
+      return;
+    }
 
     const checkActiveUser = async () => {
       try {
@@ -536,8 +576,6 @@ export default function TakeQuizModal({
     return () => clearInterval(timer);
   }, [phase, isTimed, activeQuestions, userSelections]);
 
-  if (!isOpen) return null;
-
   // ==========================================
   // AUTH ACTION HANDLERS
   // ==========================================
@@ -635,21 +673,71 @@ export default function TakeQuizModal({
   // QUIZ ENGINE: START & RANDOMIZATION
   // ==========================================
 
-  const handleStartQuiz = () => {
-    // 1. Generate randomized questions and randomized choices
-    const randomized = randomizeQuestionsAndOptions(questions);
-    setActiveQuestions(randomized);
+  const handleStartQuiz = async () => {
+    setStartQuizError(null);
+    try {
+      let rawQs = (questions && Array.isArray(questions)) ? [...questions] : [];
 
-    // 2. Setup timer
-    const finalMinutes = isTimed ? (parseInt(customDuration) || selectedDurationMin || 50) : 0;
-    setTimeLeftSeconds(finalMinutes * 60);
-    setQuizStartTime(Date.now());
-    setCurrentIndex(0);
-    setUserSelections({});
-    setTabSwitchLogs([]);
-    setTabSwitchCount(0);
-    setCheatWarningVisible(false);
-    setPhase('active');
+      // If no questions in props, fetch from API
+      if (rawQs.length === 0 && paperCode) {
+        setLoadingQuizQuestions(true);
+        try {
+          const res = await fetch(`/api/quizzes/by-code?code=${encodeURIComponent(paperCode)}`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data?.quiz?.questions && Array.isArray(data.quiz.questions) && data.quiz.questions.length > 0) {
+              rawQs = data.quiz.questions;
+            }
+          }
+        } catch (fetchErr) {
+          console.warn('Failed to fetch quiz questions by code:', fetchErr);
+        } finally {
+          setLoadingQuizQuestions(false);
+        }
+      }
+
+      // If still empty and it's a P2 or theory paper, attempt P1 fallback
+      if (rawQs.length === 0 && paperCode) {
+        try {
+          const p1Code = paperCode.replace(/P2/i, 'P1').replace(/PAPER-2/i, 'PAPER-1');
+          const res = await fetch(`/api/quizzes/by-code?code=${encodeURIComponent(p1Code)}`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data?.quiz?.questions && Array.isArray(data.quiz.questions) && data.quiz.questions.length > 0) {
+              rawQs = data.quiz.questions;
+            }
+          }
+        } catch (e) {}
+      }
+
+      if (rawQs.length === 0) {
+        setStartQuizError('No questions are available for this paper at the moment. Please try another paper.');
+        return;
+      }
+
+      // 1. Generate randomized questions and randomized choices
+      const randomized = randomizeQuestionsAndOptions(rawQs);
+      if (randomized.length === 0) {
+        setStartQuizError('Could not process questions for this quiz.');
+        return;
+      }
+
+      setActiveQuestions(randomized);
+
+      // 2. Setup timer
+      const finalMinutes = isTimed ? (parseInt(customDuration) || selectedDurationMin || 50) : 0;
+      setTimeLeftSeconds(finalMinutes * 60);
+      setQuizStartTime(Date.now());
+      setCurrentIndex(0);
+      setUserSelections({});
+      setTabSwitchLogs([]);
+      setTabSwitchCount(0);
+      setCheatWarningVisible(false);
+      setPhase('active');
+    } catch (err: any) {
+      console.error('Failed to start quiz:', err);
+      setStartQuizError(err?.message || 'Failed to start quiz');
+    }
   };
 
   // Answer selection (Instant evaluation)
@@ -799,6 +887,8 @@ export default function TakeQuizModal({
   const isCurrentCorrect = isAnswered && currentQ && currentSelected === currentQ.correctOption;
 
   const totalAwayTime = tabSwitchLogs.reduce((acc, cur) => acc + cur.durationSeconds, 0);
+
+  if (!isOpen) return null;
 
   return (
     <>
@@ -1503,6 +1593,25 @@ export default function TakeQuizModal({
                 </div>
               </div>
 
+              {/* Error Notice if Questions Failed to Load */}
+              {startQuizError && (
+                <div style={{
+                  background: '#fef2f2',
+                  border: '1.5px solid #fecaca',
+                  borderRadius: '10px',
+                  padding: '12px 16px',
+                  marginBottom: '1.25rem',
+                  color: '#991b1b',
+                  fontSize: '0.88rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.6rem'
+                }}>
+                  <AlertTriangle size={18} color="#dc2626" />
+                  <span>{startQuizError}</span>
+                </div>
+              )}
+
               {/* Launch Button */}
               <div style={{ display: 'flex', gap: '0.75rem' }}>
                 <button
@@ -1525,16 +1634,17 @@ export default function TakeQuizModal({
                 <button
                   type="button"
                   onClick={handleStartQuiz}
+                  disabled={loadingQuizQuestions}
                   style={{
                     flex: 2,
-                    background: '#0b5e4a',
+                    background: loadingQuizQuestions ? '#94a3b8' : '#0b5e4a',
                     color: '#ffffff',
                     border: 'none',
                     padding: '14px',
                     borderRadius: '10px',
                     fontWeight: 800,
                     fontSize: '1rem',
-                    cursor: 'pointer',
+                    cursor: loadingQuizQuestions ? 'not-allowed' : 'pointer',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -1542,10 +1652,65 @@ export default function TakeQuizModal({
                     boxShadow: '0 4px 12px rgba(11, 94, 74, 0.2)'
                   }}
                 >
-                  <span>Start Quiz ({questions.length} Randomized Items)</span>
+                  <span>
+                    {loadingQuizQuestions ? 'Loading Questions...' : `Start Quiz (${questions?.length || activeQuestions?.length || 40} Items)`}
+                  </span>
                   <ArrowRight size={18} />
                 </button>
               </div>
+            </div>
+          )}
+
+          {/* Fallback if Phase is Active but No Question Loaded */}
+          {phase === 'active' && !currentQ && (
+            <div style={{
+              padding: '3.5rem 2rem',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: '#ffffff',
+              borderRadius: '16px'
+            }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                borderRadius: '50%',
+                background: '#fef3c7',
+                color: '#d97706',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '1.25rem'
+              }}>
+                <AlertTriangle size={32} />
+              </div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.5rem 0' }}>
+                Questions Unavailable
+              </h3>
+              <p style={{ color: '#64748b', fontSize: '0.92rem', maxWidth: '420px', lineHeight: 1.5, margin: '0 0 1.5rem 0' }}>
+                We could not load multiple choice questions for this assessment. Please return to the paper and select another session.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setPhase('setup');
+                  onClose();
+                }}
+                style={{
+                  background: '#0b5e4a',
+                  color: '#ffffff',
+                  border: 'none',
+                  padding: '10px 24px',
+                  borderRadius: '8px',
+                  fontWeight: 700,
+                  fontSize: '0.9rem',
+                  cursor: 'pointer'
+                }}
+              >
+                Close Examination
+              </button>
             </div>
           )}
 
