@@ -5,9 +5,12 @@ import { getSessionUser } from '@/lib/auth';
 // GET /api/classrooms - List teacher's classrooms
 export async function GET(req: NextRequest) {
   try {
-    const user = await getSessionUser(req, 'TEACHER');
+    const user = await getSessionUser(req);
     if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ error: 'Unauthorized: Authentication required.' }, { status: 401 });
+    }
+    if (user.role === 'STUDENT') {
+      return NextResponse.json({ error: 'Forbidden: Classrooms management is restricted to educators.' }, { status: 403 });
     }
 
     const classrooms = await prisma.classroom.findMany({
@@ -28,9 +31,9 @@ export async function GET(req: NextRequest) {
 // POST /api/classrooms - Create new teacher classroom
 export async function POST(req: NextRequest) {
   try {
-    const user = await getSessionUser(req, 'TEACHER');
+    const user = await getSessionUser(req);
     if (!user || (user.role !== 'TEACHER' && user.role !== 'ADMIN')) {
-      return NextResponse.json({ error: 'Unauthorized: Teacher role required' }, { status: 403 });
+      return NextResponse.json({ error: 'Unauthorized: Teacher credentials required.' }, { status: 403 });
     }
 
     const body = await req.json();

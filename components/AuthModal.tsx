@@ -8,11 +8,12 @@ interface AuthModalProps {
   onClose: () => void;
   onSuccess?: (user: any) => void;
   initialMode?: 'login' | 'register';
+  initialRole?: 'STUDENT' | 'TEACHER';
 }
 
-export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'login' }: AuthModalProps) {
+export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'login', initialRole = 'STUDENT' }: AuthModalProps) {
   const [mode, setMode] = useState<'login' | 'register'>(initialMode);
-  const [role, setRole] = useState<'STUDENT' | 'TEACHER'>('STUDENT');
+  const [role, setRole] = useState<'STUDENT' | 'TEACHER'>(initialRole);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -81,7 +82,13 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
 
       if (onSuccess) onSuccess(data.user);
       onClose();
-      window.location.reload();
+      if (data.user?.role === 'TEACHER') {
+        window.location.href = '/dashboard/teacher';
+      } else if (data.user?.role === 'STUDENT') {
+        window.location.href = '/dashboard/student';
+      } else {
+        window.location.reload();
+      }
     } catch (err: any) {
       setError(err.message);
     } finally {

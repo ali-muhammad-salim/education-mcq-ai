@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { getFallbackPaper } from '@/lib/paperDataService';
 import { getQuizFromStore } from '@/lib/submissionStore';
+import { getSessionUser } from '@/lib/auth';
 
 export async function GET(
   req: NextRequest,
@@ -162,17 +163,63 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> | { id: string } }
 ) {
   try {
+    const user = await getSessionUser(req);
+    if (!user || (user.role !== 'TEACHER' && user.role !== 'ADMIN')) {
+      return NextResponse.json({ error: 'Unauthorized: Educator credentials required' }, { status: 403 });
+    }
+
     const resolvedParams = await Promise.resolve(params);
     const quizId = resolvedParams.id;
 
-    await prisma.quizQuestion.deleteMany({ where: { quizId } });
-    await prisma.quizSetting.deleteMany({ where: { quizId } });
+    // Verify quiz exists and check ownership
+    const quiz = await prisma.quiz.findUnique({
+      where: { id: quizId },
+      select: { id: true, teacherId: true }
+    });
+
+    if (!quiz) {
+      return NextResponse.json({ error: 'Assessment not found' }, { status: 404 });
+    }
+
+    if (user.role !== 'ADMIN' && quiz.teacherId !== user.id) {
+      return NextResponse.json({ error: 'Unauthorized: You can only delete assessments you authored.' }, { status: 403 });
+    }
+
+    // Cascaded deletion of attempts, events, answers, assignments, settings, questions
+    const attemptIds = (await prisma.quizAttempt.findMany({
+      where: { quizId },
+      select: { id: true }
+    })).map(a => a.id);
+
+    if (attemptIds.length > 0) {
+      try {
+        await prisma.assessmentEvent.deleteMany({ where: { attemptId: { in: attemptIds } } });
+      } catch {}
+      try {
+        await prisma.quizAnswer.deleteMany({ where: { attemptId: { in: attemptIds } } });
+      } catch {}
+      try {
+        await prisma.quizAttempt.deleteMany({ where: { quizId } });
+      } catch {}
+    }
+
+    try {
+      await prisma.quizAssignment.deleteMany({ where: { quizId } });
+    } catch {}
+    try {
+      await prisma.quizQuestion.deleteMany({ where: { quizId } });
+    } catch {}
+    try {
+      await prisma.quizSetting.deleteMany({ where: { quizId } });
+    } catch {}
+
     await prisma.quiz.delete({ where: { id: quizId } });
 
-    return NextResponse.json({ success: true, message: 'Quiz deleted successfully' });
+    return NextResponse.json({ success: true, message: 'Assessment deleted successfully' });
   } catch (err: any) {
     console.error('Delete quiz error:', err);
     return NextResponse.json({ error: err.message || 'Failed to delete quiz' }, { status: 500 });
   }
 }
+
 

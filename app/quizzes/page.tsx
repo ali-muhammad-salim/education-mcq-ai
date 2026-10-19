@@ -14,6 +14,16 @@ export default function QuizzesCatalogPage() {
   const [search, setSearch] = useState('');
   const [selectedClass, setSelectedClass] = useState<string>('ALL');
   const [selectedSubject, setSelectedSubject] = useState<string>('ALL');
+  const [userRole, setUserRole] = useState<'STUDENT' | 'TEACHER' | 'ADMIN' | null>(null);
+
+  useEffect(() => {
+    fetch('/api/auth/me')
+      .then(res => res.json())
+      .then(data => {
+        if (data?.user?.role) setUserRole(data.user.role);
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     async function fetchQuizzes() {
@@ -207,7 +217,7 @@ export default function QuizzesCatalogPage() {
             flexShrink: 0
           }}>
             <Link
-              href="/dashboard/student"
+              href={userRole === 'TEACHER' || userRole === 'ADMIN' ? '/dashboard/teacher' : '/dashboard/student'}
               style={{
                 padding: '0.85rem 1.25rem',
                 borderRadius: '12px',
@@ -228,7 +238,7 @@ export default function QuizzesCatalogPage() {
               }}
             >
               <GraduationCap size={16} color="#6ee7b7" />
-              <span>Student Learning Portal</span>
+              <span>{userRole === 'TEACHER' || userRole === 'ADMIN' ? 'Teacher Assessment Portal' : 'Student Learning Portal'}</span>
             </Link>
 
             <Link

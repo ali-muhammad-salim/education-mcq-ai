@@ -6,13 +6,15 @@ import {
   Plus, BookOpen, Users, CheckCircle2, Clock, ShieldAlert, 
   Settings, ExternalLink, Trash2, Edit3, Eye, Search, 
   Sparkles, Award, ArrowUpRight, Copy, Check, LogIn,
-  GraduationCap
+  GraduationCap, LogOut, ArrowRight, ShieldCheck
 } from 'lucide-react';
 import AuthModal from '@/components/AuthModal';
 
 export default function TeacherDashboardPage() {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [isStudentBlocked, setIsStudentBlocked] = useState(false);
+  const [authRequired, setAuthRequired] = useState(false);
   const [activeTab, setActiveTab] = useState<'quizzes' | 'submissions' | 'classrooms' | 'integrity'>('quizzes');
   const [authModalOpen, setAuthModalOpen] = useState(false);
   
@@ -34,8 +36,27 @@ export default function TeacherDashboardPage() {
       setLoading(true);
       const res = await fetch('/api/dashboard/teacher');
       const json = await res.json();
+
+      // If user is a STUDENT, teacher dashboard is strictly unavailable!
+      if (!json.success && json.role === 'STUDENT') {
+        setIsStudentBlocked(true);
+        setTimeout(() => {
+          window.location.replace('/dashboard/student');
+        }, 1200);
+        return;
+      }
+
+      // If unauthenticated, require educator login
+      if (!json.success && json.requireAuth) {
+        setAuthRequired(true);
+        setData(null);
+        return;
+      }
+
       if (json.success) {
         setData(json);
+        setAuthRequired(false);
+        setIsStudentBlocked(false);
       }
     } catch (err) {
       console.error('Failed to fetch teacher dashboard:', err);
@@ -43,6 +64,15 @@ export default function TeacherDashboardPage() {
       setLoading(false);
     }
   }
+
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/auth/logout', { method: 'POST' });
+      window.location.href = '/dashboard/student';
+    } catch {
+      window.location.reload();
+    }
+  };
 
   const handleDeleteQuiz = async (quizId: string) => {
     if (!confirm('Are you sure you want to delete this assessment? This will also remove associated student responses.')) return;
@@ -96,6 +126,206 @@ export default function TeacherDashboardPage() {
     setTimeout(() => setCopiedCode(null), 2000);
   };
 
+  // 1. STUDENT BLOCKED GUARD SCREEN
+  if (isStudentBlocked) {
+    return (
+      <div style={{
+        minHeight: '100vh',
+        backgroundColor: 'var(--bg-color, #f4f7f6)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '2rem',
+        fontFamily: "'Inter', sans-serif"
+      }}>
+        <div style={{
+          maxWidth: '520px',
+          width: '100%',
+          backgroundColor: 'var(--card-bg, #ffffff)',
+          border: '1.5px solid rgba(239, 68, 68, 0.4)',
+          borderRadius: '24px',
+          padding: '2.5rem',
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '1.25rem',
+          boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+        }}>
+          <div style={{
+            width: '68px',
+            height: '68px',
+            borderRadius: '20px',
+            backgroundColor: '#fee2e2',
+            color: '#dc2626',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <ShieldAlert size={36} />
+          </div>
+          <h2 style={{ fontSize: '1.35rem', fontWeight: 900, color: 'var(--text-color, #2c3e38)', margin: 0 }}>
+            Student Account Detected
+          </h2>
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-light, #5a7a6f)', margin: 0, lineHeight: 1.6 }}>
+            The <strong>Teacher Assessment Portal</strong> is restricted to verified teachers and faculty. As a student, your practice assessments and results are located in the <strong>Student Learning Portal</strong>.
+          </p>
+          <div style={{
+            fontSize: '0.8rem',
+            color: '#b91c1c',
+            backgroundColor: '#fef2f2',
+            padding: '0.6rem 1rem',
+            borderRadius: '10px',
+            fontWeight: 600,
+            width: '100%'
+          }}>
+            Redirecting to Student Dashboard automatically...
+          </div>
+          <Link
+            href="/dashboard/student"
+            style={{
+              width: '100%',
+              padding: '0.85rem',
+              borderRadius: '12px',
+              fontSize: '0.88rem',
+              fontWeight: 800,
+              backgroundColor: '#0b5e4a',
+              color: '#ffffff',
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              boxShadow: '0 4px 10px rgba(11, 94, 74, 0.25)'
+            }}
+          >
+            <span>Go to Student Learning Portal Now</span>
+            <ArrowRight size={16} />
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  // 2. EDUCATOR AUTHENTICATION REQUIRED SCREEN
+  if (authRequired) {
+    return (
+      <div style={{
+        minHeight: '100vh',
+        backgroundColor: 'var(--bg-color, #f4f7f6)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '2rem',
+        fontFamily: "'Inter', sans-serif"
+      }}>
+        <div style={{
+          maxWidth: '520px',
+          width: '100%',
+          backgroundColor: 'var(--card-bg, #ffffff)',
+          border: '1.5px solid var(--border-color, #dce5e1)',
+          borderRadius: '24px',
+          padding: '2.5rem',
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '1.25rem',
+          boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+        }}>
+          <div style={{
+            width: '72px',
+            height: '72px',
+            borderRadius: '22px',
+            backgroundColor: '#e6f0ed',
+            color: '#0b5e4a',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <GraduationCap size={40} />
+          </div>
+          <span style={{
+            padding: '0.25rem 0.75rem',
+            borderRadius: '9999px',
+            fontSize: '0.72rem',
+            fontWeight: 800,
+            backgroundColor: 'rgba(201, 160, 80, 0.2)',
+            color: '#b45309',
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em'
+          }}>
+            Educator Access Required
+          </span>
+          <h2 style={{ fontSize: '1.35rem', fontWeight: 900, color: 'var(--text-color, #2c3e38)', margin: 0 }}>
+            Teacher Assessment Management Portal
+          </h2>
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-light, #5a7a6f)', margin: 0, lineHeight: 1.6 }}>
+            This portal is strictly reserved for verified teachers, examiners, and academic faculty to create assessments, inspect student submissions, and manage classrooms.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%', marginTop: '0.5rem' }}>
+            <button
+              onClick={() => setAuthModalOpen(true)}
+              style={{
+                width: '100%',
+                padding: '0.85rem',
+                borderRadius: '12px',
+                fontSize: '0.88rem',
+                fontWeight: 800,
+                backgroundColor: '#0b5e4a',
+                color: '#ffffff',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                boxShadow: '0 4px 10px rgba(11, 94, 74, 0.25)'
+              }}
+            >
+              <LogIn size={16} />
+              <span>Sign In as Verified Teacher</span>
+            </button>
+
+            <Link
+              href="/dashboard/student"
+              style={{
+                width: '100%',
+                padding: '0.85rem',
+                borderRadius: '12px',
+                fontSize: '0.88rem',
+                fontWeight: 700,
+                backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                color: 'var(--text-color, #2c3e38)',
+                border: '1px solid var(--border-color, #dce5e1)',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                boxSizing: 'border-box'
+              }}
+            >
+              <span>Go to Student Learning Portal</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Teacher Auth Modal */}
+        <AuthModal
+          isOpen={authModalOpen}
+          initialRole="TEACHER"
+          onClose={() => setAuthModalOpen(false)}
+          onSuccess={() => fetchDashboard()}
+        />
+      </div>
+    );
+  }
+
+  // 3. LOADING STATE
   if (loading) {
     return (
       <div style={{
@@ -232,6 +462,27 @@ export default function TeacherDashboardPage() {
             <Plus size={15} />
             <span>Create Assessment</span>
           </Link>
+
+          <button
+            onClick={handleLogout}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.35rem',
+              padding: '0.55rem 0.85rem',
+              borderRadius: '10px',
+              fontSize: '0.78rem',
+              fontWeight: 600,
+              backgroundColor: 'rgba(239, 68, 68, 0.08)',
+              color: '#dc2626',
+              border: '1px solid rgba(239, 68, 68, 0.25)',
+              cursor: 'pointer'
+            }}
+            title="Sign out of teacher account"
+          >
+            <LogOut size={14} />
+            <span>Sign Out</span>
+          </button>
         </div>
       </header>
 
@@ -244,66 +495,6 @@ export default function TeacherDashboardPage() {
         flexDirection: 'column',
         gap: '2rem'
       }}>
-        
-        {/* Guest Educator Preview Banner */}
-        {(!data?.teacher || data?.isGuest) && (
-          <div style={{
-            padding: '1.25rem 1.5rem',
-            borderRadius: '16px',
-            background: 'linear-gradient(135deg, rgba(11, 94, 74, 0.08) 0%, rgba(201, 160, 80, 0.08) 100%)',
-            border: '1px solid rgba(11, 94, 74, 0.2)',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '1rem',
-            boxShadow: 'var(--shadow-sm)'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-              <div style={{
-                width: '42px',
-                height: '42px',
-                borderRadius: '12px',
-                backgroundColor: '#e6f0ed',
-                color: '#0b5e4a',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0
-              }}>
-                <Sparkles size={20} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: '0.95rem', fontWeight: 800, margin: '0 0 0.2rem 0', color: 'var(--text-color, #2c3e38)' }}>
-                  Guest Educator Preview Mode
-                </h3>
-                <p style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)', margin: 0 }}>
-                  Sign in or create a teacher account to build timed assessments, manage student cohorts, and track anti-cheat telemetry.
-                </p>
-              </div>
-            </div>
-            <button
-              onClick={() => setAuthModalOpen(true)}
-              style={{
-                padding: '0.6rem 1.2rem',
-                borderRadius: '10px',
-                fontSize: '0.82rem',
-                fontWeight: 700,
-                backgroundColor: '#0b5e4a',
-                color: '#ffffff',
-                border: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                cursor: 'pointer',
-                boxShadow: '0 4px 6px rgba(11, 94, 74, 0.2)'
-              }}
-            >
-              <LogIn size={15} />
-              <span>Sign In / Register</span>
-            </button>
-          </div>
-        )}
 
         {/* Metric Cards Grid */}
         <div style={{
@@ -875,7 +1066,7 @@ export default function TeacherDashboardPage() {
                     <div>
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                         <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-light, #5a7a6f)' }}>
-                          Class {c.gradeLevel}
+                          Class {c.gradeLevel || c.classLevel || 9}
                         </span>
                         <span style={{
                           fontSize: '0.68rem',
@@ -885,16 +1076,16 @@ export default function TeacherDashboardPage() {
                           color: '#0b5e4a',
                           fontWeight: 700
                         }}>
-                          {c.academicYear}
+                          {c.academicYear || c.session || '2025-2026'}
                         </span>
                       </div>
                       <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-color, #2c3e38)', margin: '0.4rem 0' }}>
                         {c.name}
                       </h4>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.78rem', color: 'var(--text-light, #5a7a6f)' }}>
-                        <span style={{ fontWeight: 700, color: '#0b5e4a' }}>{c.studentCount} Students</span>
+                        <span style={{ fontWeight: 700, color: '#0b5e4a' }}>{c.studentCount ?? c._count?.memberships ?? 0} Students</span>
                         <span>•</span>
-                        <span>{c.assignmentCount} Assignments</span>
+                        <span>{c.assignmentCount ?? c._count?.quizzes ?? 0} Assignments</span>
                       </div>
                     </div>
 
@@ -974,7 +1165,7 @@ export default function TeacherDashboardPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {data.flaggedAttempts.map((f: any) => (
                   <div
-                    key={f.attemptId}
+                    key={f.attemptId || f.id}
                     style={{
                       padding: '1rem 1.25rem',
                       borderRadius: '14px',
@@ -1004,10 +1195,10 @@ export default function TeacherDashboardPage() {
                       </div>
                       <div>
                         <strong style={{ fontSize: '0.88rem', color: 'var(--text-color, #2c3e38)', display: 'block' }}>
-                          {f.studentName}
+                          {f.studentName || f.student?.name}
                         </strong>
                         <span style={{ fontSize: '0.78rem', color: 'var(--text-light, #5a7a6f)' }}>
-                          {f.quizTitle}
+                          {f.quizTitle || f.quiz?.title}
                         </span>
                       </div>
                     </div>
@@ -1019,7 +1210,7 @@ export default function TeacherDashboardPage() {
                         </strong>
                       </div>
                       <Link
-                        href={`/quizzes/${f.attemptId}/results?attemptId=${f.attemptId}`}
+                        href={`/quizzes/${f.quizId || f.quiz?.id || f.attemptId || f.id}/results?attemptId=${f.attemptId || f.id}`}
                         style={{
                           padding: '0.45rem 0.85rem',
                           borderRadius: '8px',
@@ -1199,14 +1390,12 @@ export default function TeacherDashboardPage() {
         </div>
       )}
 
-      {/* Auth Modal for Guest Teachers */}
+      {/* Auth Modal for Teacher Access */}
       <AuthModal
         isOpen={authModalOpen}
+        initialRole="TEACHER"
         onClose={() => setAuthModalOpen(false)}
-        onSuccess={() => {
-          setAuthModalOpen(false);
-          fetchDashboard();
-        }}
+        onSuccess={() => fetchDashboard()}
       />
     </div>
   );

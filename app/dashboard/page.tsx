@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function DashboardRootPage() {
   const cookieStore = await cookies();
-  const token = cookieStore.get('auth_token')?.value;
+  const token = cookieStore.get('mcqs_session')?.value || cookieStore.get('auth_token')?.value;
 
   if (token) {
     try {
@@ -16,11 +16,8 @@ export default async function DashboardRootPage() {
       });
 
       if (session && session.expiresAt > new Date()) {
-        if (session.user.role === 'TEACHER') {
+        if (session.user.role === 'TEACHER' || session.user.role === 'ADMIN') {
           redirect('/dashboard/teacher');
-        }
-        if (session.user.role === 'ADMIN') {
-          redirect('/admin');
         }
         redirect('/dashboard/student');
       }

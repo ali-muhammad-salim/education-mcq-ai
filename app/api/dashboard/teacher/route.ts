@@ -29,48 +29,25 @@ export async function GET(req: NextRequest) {
 
     const storedFlagged = storedFormatted.filter(a => a.tabSwitchCount > 1);
 
-    const user = await getSessionUser(req, 'TEACHER');
+    const user = await getSessionUser(req);
+    
+    // If logged-in user is a STUDENT, teacher dashboard is strictly unavailable for them!
+    if (user && user.role === 'STUDENT') {
+      return NextResponse.json({
+        success: false,
+        role: 'STUDENT',
+        error: 'Teacher dashboard is restricted to verified educators.',
+        redirect: '/dashboard/student'
+      }, { status: 403 });
+    }
+
+    // If unauthenticated (no teacher logged in), require teacher authentication
     if (!user || (user.role !== 'TEACHER' && user.role !== 'ADMIN')) {
       return NextResponse.json({
-        success: true,
-        isGuest: true,
-        teacher: null,
-        metrics: {
-          totalQuizzes: 4,
-          totalSubmissions: 142 + stored.length,
-          pendingGrading: 0,
-          flaggedEvents: storedFlagged.length,
-          classroomsCount: 2
-        },
-        quizzes: [
-          {
-            id: 'sample-quiz-phy-9',
-            code: 'TEACH-PHY9-401',
-            title: 'Class IX Physics Model Examination 2025 (Paper I - 40 MCQs)',
-            totalMarks: 40,
-            durationMin: 50,
-            status: 'PUBLISHED',
-            visibility: 'PUBLIC',
-            createdAt: new Date().toISOString(),
-            _count: { questions: 40, attempts: 142 + stored.length }
-          },
-          {
-            id: 'sample-quiz-phy-10',
-            code: 'TEACH-PHY10-822',
-            title: 'Class X Physics Model Examination 2025 (Paper I - 40 MCQs)',
-            totalMarks: 40,
-            durationMin: 50,
-            status: 'PUBLISHED',
-            visibility: 'PUBLIC',
-            createdAt: new Date().toISOString(),
-            _count: { questions: 40, attempts: 98 }
-          }
-        ],
-        recentSubmissions: storedFormatted.slice(0, 20),
-        pendingGradingCount: 0,
-        flaggedAttempts: storedFlagged.slice(0, 10),
-        classrooms: []
-      });
+        success: false,
+        requireAuth: true,
+        error: 'Educator authentication required to access the Teacher Dashboard.'
+      }, { status: 401 });
     }
 
     // Attempt database fetches with graceful error catching
@@ -177,12 +154,23 @@ export async function GET(req: NextRequest) {
 
     let classrooms: any[] = [];
     try {
-      classrooms = await prisma.classroom.findMany({
+      const dbClassrooms = await prisma.classroom.findMany({
         where: { teacherId: user.id },
         include: {
           _count: { select: { memberships: true, quizzes: true } }
-        }
+        },
+        orderBy: { createdAt: 'desc' }
       });
+      classrooms = dbClassrooms.map(c => ({
+        id: c.id,
+        name: c.name,
+        description: c.description,
+        gradeLevel: c.classLevel,
+        academicYear: c.session || '2025-2026',
+        code: c.code,
+        studentCount: c._count?.memberships || 0,
+        assignmentCount: c._count?.quizzes || 0
+      }));
     } catch (e) {}
 
     return NextResponse.json({

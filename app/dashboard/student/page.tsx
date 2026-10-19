@@ -5,13 +5,14 @@ import Link from 'next/link';
 import { 
   Award, BookOpen, Clock, CheckCircle2, AlertCircle, ArrowRight, 
   RotateCcw, Sparkles, Plus, Users, ShieldAlert, FileText, ChevronRight, LogIn,
-  GraduationCap, TrendingUp, CheckSquare, Compass
+  GraduationCap, TrendingUp, CheckSquare, Compass, LogOut
 } from 'lucide-react';
 import AuthModal from '@/components/AuthModal';
 
 export default function StudentDashboardPage() {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [isTeacherBlocked, setIsTeacherBlocked] = useState(false);
   const [activeTab, setActiveTab] = useState<'available' | 'history' | 'subjects'>('available');
   const [authModalOpen, setAuthModalOpen] = useState(false);
 
@@ -30,6 +31,16 @@ export default function StudentDashboardPage() {
       setLoading(true);
       const res = await fetch('/api/dashboard/student');
       const json = await res.json();
+      
+      // If user is a TEACHER or ADMIN, student dashboard is unavailable!
+      if (!json.success && json.redirect) {
+        setIsTeacherBlocked(true);
+        setTimeout(() => {
+          window.location.replace(json.redirect);
+        }, 1200);
+        return;
+      }
+
       if (json.success) {
         setData(json);
       }
@@ -40,9 +51,28 @@ export default function StudentDashboardPage() {
     }
   }
 
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/auth/logout', { method: 'POST' });
+      window.location.href = '/dashboard/student';
+    } catch {
+      window.location.reload();
+    }
+  };
+
   const handleJoinClassroom = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!joinCode.trim()) return;
+
+    if (data?.isGuest) {
+      setJoinMessage('Please sign in or register as a student to enroll in teacher classrooms.');
+      setTimeout(() => {
+        setIsJoinModalOpen(false);
+        setAuthModalOpen(true);
+      }, 1200);
+      return;
+    }
+
     try {
       setIsJoining(true);
       setJoinMessage(null);
@@ -70,6 +100,89 @@ export default function StudentDashboardPage() {
     }
   };
 
+  // 1. TEACHER BLOCKED GUARD SCREEN
+  if (isTeacherBlocked) {
+    return (
+      <div style={{
+        minHeight: '100vh',
+        backgroundColor: 'var(--bg-color, #f4f7f6)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '2rem',
+        fontFamily: "'Inter', sans-serif"
+      }}>
+        <div style={{
+          maxWidth: '520px',
+          width: '100%',
+          backgroundColor: 'var(--card-bg, #ffffff)',
+          border: '1.5px solid rgba(245, 158, 11, 0.4)',
+          borderRadius: '24px',
+          padding: '2.5rem',
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '1.25rem',
+          boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+        }}>
+          <div style={{
+            width: '68px',
+            height: '68px',
+            borderRadius: '20px',
+            backgroundColor: '#fef3c7',
+            color: '#d97706',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <ShieldAlert size={36} />
+          </div>
+          <h2 style={{ fontSize: '1.35rem', fontWeight: 900, color: 'var(--text-color, #2c3e38)', margin: 0 }}>
+            Teacher Account Detected
+          </h2>
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-light, #5a7a6f)', margin: 0, lineHeight: 1.6 }}>
+            The <strong>Student Learning Portal</strong> is reserved for students. As a verified teacher, your assessment builder, student gradebook, and classroom rosters are located in the <strong>Teacher Assessment Portal</strong>.
+          </p>
+          <div style={{
+            fontSize: '0.8rem',
+            color: '#b45309',
+            backgroundColor: '#fffbeb',
+            padding: '0.6rem 1rem',
+            borderRadius: '10px',
+            fontWeight: 600,
+            width: '100%'
+          }}>
+            Redirecting to Teacher Dashboard automatically...
+          </div>
+          <Link
+            href="/dashboard/teacher"
+            style={{
+              width: '100%',
+              padding: '0.85rem',
+              borderRadius: '12px',
+              fontSize: '0.88rem',
+              fontWeight: 800,
+              backgroundColor: '#0b5e4a',
+              color: '#ffffff',
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              boxShadow: '0 4px 10px rgba(11, 94, 74, 0.25)'
+            }}
+          >
+            <span>Go to Teacher Dashboard Now</span>
+            <ArrowRight size={16} />
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  // 2. LOADING STATE
   if (loading) {
     return (
       <div style={{
@@ -209,6 +322,29 @@ export default function StudentDashboardPage() {
             <BookOpen size={15} />
             <span>Browse All Quizzes</span>
           </Link>
+
+          {!data?.isGuest && (
+            <button
+              onClick={handleLogout}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+                padding: '0.55rem 0.85rem',
+                borderRadius: '10px',
+                fontSize: '0.78rem',
+                fontWeight: 600,
+                backgroundColor: 'rgba(239, 68, 68, 0.08)',
+                color: '#dc2626',
+                border: '1px solid rgba(239, 68, 68, 0.25)',
+                cursor: 'pointer'
+              }}
+              title="Sign out of student account"
+            >
+              <LogOut size={14} />
+              <span>Sign Out</span>
+            </button>
+          )}
         </div>
       </header>
 
@@ -1001,6 +1137,7 @@ export default function StudentDashboardPage() {
       {/* Auth Modal for guest users */}
       <AuthModal
         isOpen={authModalOpen}
+        initialRole="STUDENT"
         onClose={() => setAuthModalOpen(false)}
         onSuccess={() => fetchDashboard()}
       />

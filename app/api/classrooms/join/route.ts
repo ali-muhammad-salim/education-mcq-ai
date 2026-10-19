@@ -4,9 +4,12 @@ import { getSessionUser } from '@/lib/auth';
 
 export async function POST(req: NextRequest) {
   try {
-    const user = await getSessionUser(req, 'STUDENT');
+    const user = await getSessionUser(req);
     if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ error: 'Please sign in or register to join a classroom.' }, { status: 401 });
+    }
+    if (user.role === 'TEACHER') {
+      return NextResponse.json({ error: 'Teachers cannot join classrooms as students.' }, { status: 403 });
     }
 
     const body = await req.json();

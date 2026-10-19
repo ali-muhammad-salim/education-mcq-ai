@@ -57,7 +57,17 @@ const SAMPLE_QUIZZES = [
 
 export async function GET(req: NextRequest) {
   try {
-    const user = await getSessionUser(req, 'STUDENT');
+    const user = await getSessionUser(req);
+
+    // If logged-in user is a TEACHER or ADMIN, student dashboard is not available for them!
+    if (user && (user.role === 'TEACHER' || user.role === 'ADMIN')) {
+      return NextResponse.json({
+        success: false,
+        role: user.role,
+        error: 'Student dashboard is not available for teachers.',
+        redirect: '/dashboard/teacher'
+      }, { status: 403 });
+    }
 
     // Available quizzes from DB
     let dbQuizzes: any[] = [];
