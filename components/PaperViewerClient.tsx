@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
   FileText, Award, CheckCircle2, XCircle, AlertCircle, 
@@ -55,6 +55,17 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
   const [revealedSolutions, setRevealedSolutions] = useState<Record<string, boolean>>({});
   const [quizModalOpen, setQuizModalOpen] = useState<boolean>(false);
   const [downloadModalOpen, setDownloadModalOpen] = useState<boolean>(false);
+
+  // Auto-open quiz modal if URL query indicates ?quiz=1, ?take=true, or #quiz
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const search = window.location.search || '';
+      const hash = window.location.hash || '';
+      if (search.includes('quiz') || search.includes('take') || hash === '#quiz') {
+        setQuizModalOpen(true);
+      }
+    }
+  }, []);
   
   // Interactive Simulator State (for Paper 1 MCQs)
   const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
@@ -86,9 +97,11 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
     return sourceRegion;
   };
 
-  const isPaper2 = (paper.paperCode && paper.paperCode.toUpperCase().includes('P2')) || 
-                   (paper.title && paper.title.toUpperCase().includes('PAPER II')) || 
-                   questions.some(q => q.questionType === 'CONSTRUCTED_RESPONSE' || q.questionType === 'EXTENDED_RESPONSE');
+  const isPaper2 = !paper.paperCode?.toUpperCase().includes('CHAP') && (
+    (paper.paperCode && (paper.paperCode.toUpperCase().includes('-P2') || paper.paperCode.toUpperCase().endsWith('P2'))) || 
+    (paper.title && paper.title.toUpperCase().includes('PAPER II')) || 
+    questions.some(q => q.questionType === 'CONSTRUCTED_RESPONSE' || q.questionType === 'EXTENDED_RESPONSE')
+  );
 
   const className = paper.academicClass?.name || 'Class IX';
   const isGrade9 = className.includes('IX') || paper.academicClass?.level === 9;
