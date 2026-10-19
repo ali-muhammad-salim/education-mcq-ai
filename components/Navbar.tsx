@@ -314,7 +314,11 @@ export default function Navbar() {
               display: 'flex',
               alignItems: 'center',
               textDecoration: 'none',
-              padding: '2px 0'
+              padding: isDarkEffective ? '3px 10px' : '2px 0',
+              background: isDarkEffective ? '#ffffff' : 'transparent',
+              borderRadius: isDarkEffective ? '8px' : '0',
+              boxShadow: isDarkEffective ? '0 1px 6px rgba(0,0,0,0.2)' : 'none',
+              transition: 'all 0.2s ease'
             }}
             title="Rise Learner - Academic Intelligence Portal"
           >
@@ -322,7 +326,7 @@ export default function Navbar() {
               src="/logo.png" 
               alt="Rise Learner" 
               style={{
-                height: '44px',
+                height: isDarkEffective ? '38px' : '44px',
                 width: 'auto',
                 maxWidth: '230px',
                 objectFit: 'contain'
