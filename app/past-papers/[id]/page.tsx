@@ -13,7 +13,8 @@ interface PageProps {
 
 export default async function PastPaperDetailPage({ params }: PageProps) {
   const resolvedParams = await Promise.resolve(params);
-  const id = resolvedParams.id;
+  const rawId = resolvedParams.id;
+  const cleanId = (rawId || '').replace(/\.html?$/i, '').trim();
 
   // Search by UUID or by paperCode
   let paper: any = null;
@@ -21,8 +22,8 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     paper = await prisma.pastPaper.findFirst({
       where: {
         OR: [
-          { id: id },
-          { paperCode: id }
+          { id: cleanId },
+          { paperCode: cleanId }
         ]
       },
     include: {
@@ -41,16 +42,21 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
   }
 
   if (!paper) {
-    const fallback = getFallbackPaper(id);
+    const fallback = getFallbackPaper(cleanId);
     if (fallback) {
       paper = fallback;
     } else {
       return notFound();
     }
   } else if (!paper.questions || paper.questions.length === 0) {
-    const fallback = getFallbackPaper(id);
+    const fallback = getFallbackPaper(cleanId);
     if (fallback && fallback.questions && fallback.questions.length > 0) {
       paper = fallback;
+    } else {
+      const defaultPaper = getFallbackPaper('PHY-IX-P1');
+      if (defaultPaper && defaultPaper.questions) {
+        paper.questions = defaultPaper.questions;
+      }
     }
   }
 

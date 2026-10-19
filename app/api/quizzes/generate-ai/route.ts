@@ -20,10 +20,17 @@ export async function POST(req: NextRequest) {
     const rawKeys = process.env.GEMINI_API_KEYS || process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '';
     const apiKeys = rawKeys
       .split(/[,;\n\r]+/)
-      .map(k => k.trim())
+      .map(k => k.replace(/["']/g, '').trim())
       .filter(k => k.length > 8 && !k.startsWith('your_'));
 
-    const candidateModels = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
+    const preferredModel = (process.env.GEMINI_MODEL || '').replace(/["']/g, '').trim();
+    const candidateModels = [
+      preferredModel || 'gemini-3.5-flash-lite',
+      'gemini-3.5-flash-lite',
+      'gemini-3.5-flash',
+      'gemini-flash-lite-latest',
+      'gemini-flash-latest'
+    ].filter((m, idx, arr) => m && arr.indexOf(m) === idx);
 
     // Prompt construction strictly aligned with AKU-EB curriculum guidelines
     const prompt = `You are a Senior Examination Architect for the Aga Khan University Examination Board (AKU-EB).
@@ -86,8 +93,13 @@ CRITICAL AKU-EB STANDARDS:
               const geminiData = await geminiRes.json();
               const rawText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text;
               if (rawText) {
-                generatedQuestions = JSON.parse(rawText);
-                if (Array.isArray(generatedQuestions) && generatedQuestions.length > 0) {
+                const parsed = JSON.parse(rawText);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                  generatedQuestions = parsed.map(q => ({
+                    ...q,
+                    provenance: 'AI_GEMINI',
+                    modelUsed: model
+                  }));
                   callSuccess = true;
                   break;
                 }

@@ -219,7 +219,7 @@ class GeminiClient:
         self.default_model = (
             default_model
             or os.environ.get("GEMINI_MODEL")
-            or "gemini-2.5-flash"
+            or "gemini-3.5-flash-lite"
         )
         self.max_rpm = max_rpm
         self.max_concurrency = max_concurrency
@@ -346,7 +346,7 @@ class GeminiClient:
         # Build candidate model cascade: try requested/default model first, then fall back to alternate families
         initial_model = model or self.default_model
         candidate_models = [initial_model]
-        for fb in ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]:
+        for fb in ["gemini-3.5-flash-lite", "gemini-3.5-flash"]:
             if fb not in candidate_models:
                 candidate_models.append(fb)
 

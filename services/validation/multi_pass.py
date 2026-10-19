@@ -55,7 +55,7 @@ class VerificationRecord(BaseModel):
     status: VerificationStatus
     passes_executed: List[str] = Field(default_factory=list)
     primary_provider: str = "google_gemini"
-    primary_model: str = "gemini-2.5-flash"
+    primary_model: str = "gemini-3.5-flash-lite"
     verifier_provider: Optional[str] = None
     verifier_model: Optional[str] = None
     defects_found: List[VerificationDefect] = Field(default_factory=list)
@@ -205,9 +205,9 @@ class MultiPassVerifier:
             status=status,
             passes_executed=passes,
             primary_provider="google_gemini",
-            primary_model="gemini-2.5-flash",
+            primary_model="gemini-3.5-flash-lite",
             verifier_provider="google_gemini" if "PASS_B" in passes else None,
-            verifier_model="gemini-2.5-flash" if "PASS_B" in passes else None,
+            verifier_model="gemini-3.5-flash-lite" if "PASS_B" in passes else None,
             defects_found=defects,
             adjudication_notes=adjudication_notes,
             source_citation=source_citation,

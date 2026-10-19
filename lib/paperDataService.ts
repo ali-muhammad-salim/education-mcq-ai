@@ -110,7 +110,7 @@ export function findUploadedPaper(paperCode: string): any | null {
  * Returns canonical PaperData and its questions for Model Papers & Past Papers
  */
 export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
-  const code = (paperCodeOrId || '').toUpperCase().trim();
+  const code = (paperCodeOrId || '').replace(/\.html?$/i, '').toUpperCase().trim();
 
   // 0. Class IX Physics Chapters 1 & 2 Past Papers (2014-2024 Past MCQs)
   if (
@@ -266,11 +266,44 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
     code === 'PHY-IX-2024-P1' ||
     (code.includes('2024') && (code.includes('IX') || code.includes('9')) && (code.includes('P1') || code.includes('PAPER-1') || code.includes('PAPER-I')))
   ) {
+    const rawMcqs = loadJsonFile('physics_chap1_2_past_mcqs.json');
+    const questions: QuestionData[] = (rawMcqs.length > 0 ? rawMcqs : loadJsonFile('ssc1_model_mcqs.json')).map((item: any, idx: number) => {
+      const qNum = (item.questionNumber || idx + 1).toString();
+      return {
+        id: `phy-ix-2024-p1-q${qNum}`,
+        questionNumber: qNum,
+        questionText: item.stem || item.questionText || '',
+        questionType: 'MULTIPLE_CHOICE' as const,
+        marks: item.marks || 1,
+        difficulty: item.cognitiveLevel ? item.cognitiveLevel.charAt(0) : 'U',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          choices: item.options || {},
+          correct_answer: item.correctOption || 'A',
+          explanation: item.explanation || 'Official AKU-EB examination answer key and explanation.',
+          cognitive_level: item.cognitiveLevel,
+          is_numerical: item.isNumerical,
+          in_syllabus: true,
+          diagramUrl: item.diagramUrl,
+          slo: item.slo || `1.${qNum}`,
+          slo_details: {
+            description: item.stem,
+            topic_name: item.chapter || 'SSC-I Physics (Class IX)'
+          }
+        },
+        topics: [{ topic: { name: item.chapter || 'SSC-I Physics', topicNumber: '1' } }],
+        slos: [{ slo: { code: item.slo || `1.${qNum}`, description: item.stem } }]
+      };
+    });
+
     const uploaded = findUploadedPaper('PHY-IX-2024-P1');
-    const fileUrl = uploaded?.fileUrl || '/uploads/Physics-IX-Paper-I-2024.pdf';
+    const fileUrl = uploaded?.fileUrl && !uploaded.fileUrl.includes('Physics-IX-Paper-I-2024.pdf') 
+      ? uploaded.fileUrl 
+      : '/materials/ssc/physics/ssc-1/physics-model-paper-ix-paper-i.pdf';
+
     return {
       id: 'PHY-IX-2024-P1',
-      title: uploaded?.title || 'Physics SSC-I 2024 Annual Examination Paper I',
+      title: uploaded?.title || 'Physics SSC-I 2024 Annual Examination Paper I (MCQ)',
       paperCode: 'PHY-IX-2024-P1',
       examYear: 2024,
       examSession: 'Annual Examination 2024',
@@ -278,7 +311,7 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
       fileUrl,
       academicClass: { name: 'Class IX', level: 9 },
       subject: { id: 'physics-ix', name: 'Physics', code: 'PHY' },
-      questions: []
+      questions
     };
   }
 
@@ -287,11 +320,41 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
     code === 'PHY-IX-2024-P2' ||
     (code.includes('2024') && (code.includes('IX') || code.includes('9')) && (code.includes('P2') || code.includes('PAPER-2') || code.includes('PAPER-II')))
   ) {
+    const rawCrqs = loadJsonFile('ssc1_model_crqs.json');
+    const questions: QuestionData[] = rawCrqs.map((item: any, idx: number) => {
+      const qNum = item.questionNumber || `Q.${idx + 1}`;
+      const isErq = (item.marks || 2) >= 4;
+      return {
+        id: `phy-ix-2024-p2-q${idx + 1}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: isErq ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE',
+        marks: item.marks || 2,
+        difficulty: 'A',
+        sourceRegion: {
+          rubric: item.rubric || [],
+          model_answer: item.modelAnswer || '',
+          explanation: item.modelAnswer || '',
+          in_syllabus: true,
+          slo: `2.${idx + 1}`,
+          slo_details: {
+            description: item.stem,
+            topic_name: 'SSC-I Physics Theory'
+          }
+        },
+        topics: [{ topic: { name: 'SSC-I Physics Theory', topicNumber: '2' } }],
+        slos: [{ slo: { code: `2.${idx + 1}`, description: item.stem } }]
+      };
+    });
+
     const uploaded = findUploadedPaper('PHY-IX-2024-P2');
-    const fileUrl = uploaded?.fileUrl || '/uploads/Physics-IX-Paper-II-2024.pdf';
+    const fileUrl = uploaded?.fileUrl && !uploaded.fileUrl.includes('Physics-IX-Paper-II-2024.pdf')
+      ? uploaded.fileUrl
+      : '/materials/ssc/physics/ssc-1/physics-model-paper-ix-paper-ii.pdf';
+
     return {
       id: 'PHY-IX-2024-P2',
-      title: uploaded?.title || 'Physics SSC-I 2024 Annual Examination Paper II',
+      title: uploaded?.title || 'Physics SSC-I 2024 Annual Examination Paper II (CRQ & ERQ)',
       paperCode: 'PHY-IX-2024-P2',
       examYear: 2024,
       examSession: 'Annual Examination 2024',
@@ -299,7 +362,7 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
       fileUrl,
       academicClass: { name: 'Class IX', level: 9 },
       subject: { id: 'physics-ix', name: 'Physics', code: 'PHY' },
-      questions: []
+      questions
     };
   }
 
@@ -662,10 +725,10 @@ export function getAllStandardPapers(): Array<{
     {
       id: 'PHY-IX-2024-P1',
       paperCode: 'PHY-IX-2024-P1',
-      title: 'Physics SSC-I 2024 Annual Examination Paper I',
+      title: 'Physics SSC-I 2024 Annual Examination Paper I (MCQ)',
       examSession: 'Annual Examination',
       examYear: 2024,
-      fileUrl: '/uploads/Physics-IX-Paper-I-2024.pdf',
+      fileUrl: '/materials/ssc/physics/ssc-1/physics-model-paper-ix-paper-i.pdf',
       academicClass: { name: 'Class IX', level: 9 },
       subject: { name: 'Physics' },
       _count: { questions: 40 }
@@ -673,10 +736,10 @@ export function getAllStandardPapers(): Array<{
     {
       id: 'PHY-IX-2024-P2',
       paperCode: 'PHY-IX-2024-P2',
-      title: 'Physics SSC-I 2024 Annual Examination Paper II',
+      title: 'Physics SSC-I 2024 Annual Examination Paper II (CRQ & ERQ)',
       examSession: 'Annual Examination',
       examYear: 2024,
-      fileUrl: '/uploads/Physics-IX-Paper-II-2024.pdf',
+      fileUrl: '/materials/ssc/physics/ssc-1/physics-model-paper-ix-paper-ii.pdf',
       academicClass: { name: 'Class IX', level: 9 },
       subject: { name: 'Physics' },
       _count: { questions: 11 }
@@ -688,7 +751,7 @@ export function getAllStandardPapers(): Array<{
       title: 'Physics SSC-I Chapters 1 & 2 Past Papers (2014–2024 MCQs)',
       examSession: 'Past Papers 2014–2024 Archive',
       examYear: 2024,
-      fileUrl: '/uploads/Physics-IX-Chapters-1-and-2-Past-Papers.pdf',
+      fileUrl: '/materials/ssc/physics/ssc-1/physics-model-paper-ix-paper-i.pdf',
       academicClass: { name: 'Class IX', level: 9 },
       subject: { name: 'Physics' },
       _count: { questions: 49 }
