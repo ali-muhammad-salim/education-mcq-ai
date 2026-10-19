@@ -72,9 +72,32 @@ export default function StudentDashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1d] flex flex-col items-center justify-center text-slate-500 gap-3">
-        <div className="w-10 h-10 rounded-full border-4 border-emerald-500/20 border-t-emerald-600 animate-spin" />
-        <span className="text-xs font-semibold">Loading Student Examination Dashboard...</span>
+      <div style={{
+        minHeight: '100vh',
+        backgroundColor: 'var(--bg-color, #f4f7f6)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1rem',
+        color: 'var(--text-light, #5a7a6f)',
+        fontFamily: "'Inter', sans-serif"
+      }}>
+        <div style={{
+          width: '44px',
+          height: '44px',
+          borderRadius: '50%',
+          border: '4px solid rgba(11, 94, 74, 0.15)',
+          borderTopColor: '#0b5e4a',
+          animation: 'spin 0.8s linear infinite'
+        }} />
+        <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Loading Student Examination Dashboard...</span>
+        <style>{`
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+        `}</style>
       </div>
     );
   }
@@ -89,65 +112,171 @@ export default function StudentDashboardPage() {
   const inProgressList = data?.inProgressAttempts || [];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1d] text-slate-900 dark:text-slate-100 font-sans pb-20 transition-colors">
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: 'var(--bg-color, #f4f7f6)',
+      color: 'var(--text-color, #2c3e38)',
+      fontFamily: "'Inter', sans-serif",
+      paddingBottom: '5rem',
+      transition: 'background-color 0.2s ease, color 0.2s ease'
+    }}>
       
       {/* Top Navigation & Profile Bar */}
-      <header className="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-sm">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0b5e4a] to-emerald-600 text-white flex items-center justify-center font-bold text-sm shadow-md shadow-emerald-950/20">
+      <header style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 40,
+        backgroundColor: 'var(--card-bg, #ffffff)',
+        borderBottom: '1px solid var(--border-color, #dce5e1)',
+        padding: '0.85rem 1.5rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.03)'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+          <div style={{
+            width: '40px',
+            height: '40px',
+            borderRadius: '12px',
+            background: 'linear-gradient(135deg, #0b5e4a 0%, #10b981 100%)',
+            color: '#ffffff',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontWeight: 800,
+            fontSize: '1rem',
+            boxShadow: '0 4px 6px rgba(11, 94, 74, 0.2)'
+          }}>
             {data?.student?.name ? data.student.name.charAt(0).toUpperCase() : 'S'}
           </div>
           <div>
-            <h1 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white leading-tight">
+            <h1 style={{
+              fontSize: '1rem',
+              fontWeight: 800,
+              color: 'var(--text-color, #2c3e38)',
+              margin: 0,
+              lineHeight: 1.2
+            }}>
               {data?.student?.name || 'Student Learning Portal'}
             </h1>
-            <span className="text-[11px] text-slate-500 dark:text-slate-400">
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)' }}>
               AKU-EB Academic Assessment Track • Class IX–XII
             </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <button
             onClick={() => setIsJoinModalOpen(true)}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 transition-all shadow-sm"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              padding: '0.55rem 0.95rem',
+              borderRadius: '10px',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              backgroundColor: '#e6f0ed',
+              color: '#0b5e4a',
+              border: '1px solid rgba(11, 94, 74, 0.2)',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease'
+            }}
           >
-            <Users className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+            <Users size={15} color="#0b5e4a" />
             <span>Join Class by Code</span>
           </button>
 
           <Link
             href="/quizzes"
-            className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-[#0b5e4a] hover:bg-[#084737] text-white transition-all shadow-sm"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              padding: '0.55rem 1.1rem',
+              borderRadius: '10px',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              backgroundColor: '#0b5e4a',
+              color: '#ffffff',
+              border: 'none',
+              textDecoration: 'none',
+              boxShadow: '0 2px 6px rgba(11, 94, 74, 0.25)',
+              transition: 'background-color 0.2s ease'
+            }}
           >
-            <BookOpen className="w-4 h-4" />
+            <BookOpen size={15} />
             <span>Browse All Quizzes</span>
           </Link>
         </div>
       </header>
 
       {/* Main Container */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 pt-8 flex flex-col gap-8">
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '2rem 1.5rem 0 1.5rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2rem'
+      }}>
         
         {/* Guest Learner Welcome Banner */}
         {data?.isGuest && (
-          <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-900/20 via-teal-900/10 to-transparent border border-emerald-600/30 dark:border-emerald-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-700 dark:text-emerald-400 flex items-center justify-center border border-emerald-600/30 shrink-0">
-                <Sparkles className="w-5 h-5" />
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            background: 'linear-gradient(135deg, rgba(11, 94, 74, 0.08) 0%, rgba(201, 160, 80, 0.08) 100%)',
+            border: '1px solid rgba(11, 94, 74, 0.2)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1rem',
+            boxShadow: 'var(--shadow-sm)'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+              <div style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '12px',
+                backgroundColor: '#e6f0ed',
+                color: '#0b5e4a',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0
+              }}>
+                <Sparkles size={20} />
               </div>
               <div>
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white">Previewing in Guest Candidate Mode</h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 800, margin: '0 0 0.2rem 0', color: 'var(--text-color, #2c3e38)' }}>
+                  Previewing in Guest Candidate Mode
+                </h3>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)', margin: 0 }}>
                   You can attempt official AKU-EB benchmark tests below. Sign in to save permanent score transcripts and join teacher classrooms.
                 </p>
               </div>
             </div>
             <button
               onClick={() => setAuthModalOpen(true)}
-              className="px-4 py-2 rounded-xl text-xs font-bold bg-[#0b5e4a] hover:bg-[#084737] text-white shrink-0 flex items-center gap-1.5 shadow-md shadow-emerald-950/20 transition-all"
+              style={{
+                padding: '0.6rem 1.2rem',
+                borderRadius: '10px',
+                fontSize: '0.82rem',
+                fontWeight: 700,
+                backgroundColor: '#0b5e4a',
+                color: '#ffffff',
+                border: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                cursor: 'pointer',
+                boxShadow: '0 4px 6px rgba(11, 94, 74, 0.2)'
+              }}
             >
-              <LogIn className="w-3.5 h-3.5" />
+              <LogIn size={15} />
               <span>Sign In / Register</span>
             </button>
           </div>
@@ -155,17 +284,47 @@ export default function StudentDashboardPage() {
 
         {/* Active Timed Exam Banner (If session in progress) */}
         {inProgressList.length > 0 && (
-          <div className="p-5 rounded-2xl bg-gradient-to-r from-amber-500/15 via-amber-500/5 to-transparent border border-amber-500/40 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center border border-amber-500/30 shrink-0">
-                <Clock className="w-6 h-6 animate-pulse" />
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(201, 160, 80, 0.08) 100%)',
+            border: '1.5px solid rgba(245, 158, 11, 0.4)',
+            boxShadow: '0 6px 15px -3px rgba(245, 158, 11, 0.15)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1rem'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div style={{
+                width: '46px',
+                height: '46px',
+                borderRadius: '14px',
+                backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                color: '#d97706',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0
+              }}>
+                <Clock size={24} />
               </div>
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 block">
+                <span style={{
+                  fontSize: '0.7rem',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  color: '#b45309',
+                  display: 'block'
+                }}>
                   Active In-Progress Assessment
                 </span>
-                <h3 className="text-base font-bold text-slate-900 dark:text-white">{inProgressList[0].title}</h3>
-                <span className="text-xs text-slate-500 dark:text-slate-400">
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, margin: '0.2rem 0', color: 'var(--text-color, #2c3e38)' }}>
+                  {inProgressList[0].title}
+                </h3>
+                <span style={{ fontSize: '0.8rem', color: 'var(--text-light, #5a7a6f)' }}>
                   Timer is ticking on the authoritative server clock!
                 </span>
               </div>
@@ -173,148 +332,377 @@ export default function StudentDashboardPage() {
 
             <Link
               href={`/quizzes/${inProgressList[0].quizId}/take`}
-              className="px-5 py-2.5 rounded-xl font-bold text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-md shadow-amber-950/20 flex items-center gap-2 transition-all shrink-0"
+              style={{
+                padding: '0.75rem 1.25rem',
+                borderRadius: '10px',
+                fontWeight: 800,
+                fontSize: '0.85rem',
+                backgroundColor: '#f59e0b',
+                color: '#0f172a',
+                border: 'none',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                boxShadow: '0 4px 10px rgba(245, 158, 11, 0.3)'
+              }}
             >
               <span>Resume Assessment Now</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight size={16} />
             </Link>
           </div>
         )}
 
         {/* KPI Metrics Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1">
-            <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Available Tests</span>
-            <strong className="text-2xl font-black text-slate-900 dark:text-white">{metrics.totalQuizzesAvailable}</strong>
-            <span className="text-[11px] text-emerald-700 dark:text-emerald-400 mt-1 font-medium">Curriculum tests</span>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gap: '1rem'
+        }}>
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            backgroundColor: 'var(--card-bg, #ffffff)',
+            border: '1px solid var(--border-color, #dce5e1)',
+            boxShadow: 'var(--shadow-sm)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.25rem'
+          }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
+              Available Tests
+            </span>
+            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: 'var(--text-color, #2c3e38)' }}>
+              {metrics.totalQuizzesAvailable}
+            </strong>
+            <span style={{ fontSize: '0.75rem', color: '#0b5e4a', fontWeight: 600 }}>
+              Curriculum tests ready
+            </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1">
-            <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Completed</span>
-            <strong className="text-2xl font-black text-emerald-700 dark:text-emerald-400">{metrics.totalAttempts}</strong>
-            <span className="text-[11px] text-emerald-600/80 dark:text-emerald-300/80 mt-1 font-medium">Submitted attempts</span>
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            backgroundColor: 'var(--card-bg, #ffffff)',
+            border: '1px solid var(--border-color, #dce5e1)',
+            boxShadow: 'var(--shadow-sm)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.25rem'
+          }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
+              Completed
+            </span>
+            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#0b5e4a' }}>
+              {metrics.totalAttempts}
+            </strong>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', fontWeight: 600 }}>
+              Submitted attempts
+            </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1">
-            <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Average Score</span>
-            <strong className="text-2xl font-black text-[#c9a050]">{metrics.avgPercentage}%</strong>
-            <span className="text-[11px] text-amber-700 dark:text-amber-400 mt-1 font-medium">Across all tests</span>
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            backgroundColor: 'var(--card-bg, #ffffff)',
+            border: '1px solid var(--border-color, #dce5e1)',
+            boxShadow: 'var(--shadow-sm)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.25rem'
+          }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
+              Average Score
+            </span>
+            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#c9a050' }}>
+              {metrics.avgPercentage}%
+            </strong>
+            <span style={{ fontSize: '0.75rem', color: '#b45309', fontWeight: 600 }}>
+              Across all tests
+            </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1">
-            <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">In-Progress</span>
-            <strong className="text-2xl font-black text-amber-600 dark:text-amber-400">{metrics.inProgressCount}</strong>
-            <span className="text-[11px] text-amber-700 dark:text-amber-300/80 mt-1 font-medium">Active sessions</span>
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            backgroundColor: 'var(--card-bg, #ffffff)',
+            border: '1px solid var(--border-color, #dce5e1)',
+            boxShadow: 'var(--shadow-sm)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.25rem'
+          }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
+              In-Progress
+            </span>
+            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#d97706' }}>
+              {metrics.inProgressCount}
+            </strong>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', fontWeight: 600 }}>
+              Active timer sessions
+            </span>
           </div>
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          borderBottom: '2px solid var(--border-color, #dce5e1)',
+          paddingBottom: '0.5rem',
+          overflowX: 'auto'
+        }}>
           <button
             onClick={() => setActiveTab('available')}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${
-              activeTab === 'available'
-                ? 'bg-[#0b5e4a] text-white shadow-md shadow-emerald-950/20'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
-            }`}
+            style={{
+              padding: '0.65rem 1.25rem',
+              borderRadius: '12px',
+              fontSize: '0.85rem',
+              fontWeight: 700,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              backgroundColor: activeTab === 'available' ? '#0b5e4a' : 'transparent',
+              color: activeTab === 'available' ? '#ffffff' : 'var(--text-light, #5a7a6f)',
+              boxShadow: activeTab === 'available' ? '0 4px 6px rgba(11, 94, 74, 0.2)' : 'none'
+            }}
           >
-            <BookOpen className="w-3.5 h-3.5" />
+            <BookOpen size={15} />
             <span>Available Assessments</span>
-            <span className={`px-2 py-0.5 rounded-full text-[10px] ${
-              activeTab === 'available' ? 'bg-emerald-800 text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
-            }`}>
+            <span style={{
+              padding: '0.15rem 0.5rem',
+              borderRadius: '9999px',
+              fontSize: '0.72rem',
+              backgroundColor: activeTab === 'available' ? '#084737' : 'rgba(220, 229, 225, 0.6)',
+              color: activeTab === 'available' ? '#ffffff' : 'var(--text-color, #2c3e38)'
+            }}>
               {(data?.availableQuizzes || []).length}
             </span>
           </button>
 
           <button
             onClick={() => setActiveTab('history')}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${
-              activeTab === 'history'
-                ? 'bg-[#0b5e4a] text-white shadow-md shadow-emerald-950/20'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
-            }`}
+            style={{
+              padding: '0.65rem 1.25rem',
+              borderRadius: '12px',
+              fontSize: '0.85rem',
+              fontWeight: 700,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              backgroundColor: activeTab === 'history' ? '#0b5e4a' : 'transparent',
+              color: activeTab === 'history' ? '#ffffff' : 'var(--text-light, #5a7a6f)',
+              boxShadow: activeTab === 'history' ? '0 4px 6px rgba(11, 94, 74, 0.2)' : 'none'
+            }}
           >
-            <Award className="w-3.5 h-3.5" />
-            <span>Completed Results & RAG Explanations</span>
-            <span className={`px-2 py-0.5 rounded-full text-[10px] ${
-              activeTab === 'history' ? 'bg-emerald-800 text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
-            }`}>
+            <Award size={15} />
+            <span>Completed Results & Explanations</span>
+            <span style={{
+              padding: '0.15rem 0.5rem',
+              borderRadius: '9999px',
+              fontSize: '0.72rem',
+              backgroundColor: activeTab === 'history' ? '#084737' : 'rgba(220, 229, 225, 0.6)',
+              color: activeTab === 'history' ? '#ffffff' : 'var(--text-color, #2c3e38)'
+            }}>
               {(data?.completedAttempts || []).length}
             </span>
           </button>
 
           <button
             onClick={() => setActiveTab('subjects')}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${
-              activeTab === 'subjects'
-                ? 'bg-[#0b5e4a] text-white shadow-md shadow-emerald-950/20'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
-            }`}
+            style={{
+              padding: '0.65rem 1.25rem',
+              borderRadius: '12px',
+              fontSize: '0.85rem',
+              fontWeight: 700,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              backgroundColor: activeTab === 'subjects' ? '#0b5e4a' : 'transparent',
+              color: activeTab === 'subjects' ? '#ffffff' : 'var(--text-light, #5a7a6f)',
+              boxShadow: activeTab === 'subjects' ? '0 4px 6px rgba(11, 94, 74, 0.2)' : 'none'
+            }}
           >
-            <Compass className="w-3.5 h-3.5" />
+            <Compass size={15} />
             <span>Subject Resource Archives</span>
           </button>
         </div>
 
         {/* TAB 1: AVAILABLE ASSESSMENTS */}
         {activeTab === 'available' && (
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <h3 style={{
+                fontSize: '0.8rem',
+                fontWeight: 800,
+                color: 'var(--text-light, #5a7a6f)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                margin: 0
+              }}>
                 Practice Tests & Model Assessments
               </h3>
               <Link
                 href="/quizzes"
-                className="text-xs font-bold text-emerald-700 dark:text-emerald-400 hover:underline flex items-center gap-1"
+                style={{
+                  fontSize: '0.82rem',
+                  fontWeight: 700,
+                  color: '#0b5e4a',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.25rem'
+                }}
               >
                 <span>View Full Catalog</span>
-                <ChevronRight className="w-3.5 h-3.5" />
+                <ChevronRight size={15} />
               </Link>
             </div>
 
             {(data?.availableQuizzes || []).length === 0 ? (
-              <div className="py-14 text-center text-xs text-slate-500 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+              <div style={{
+                padding: '3.5rem 1.5rem',
+                textAlign: 'center',
+                fontSize: '0.88rem',
+                color: 'var(--text-light, #5a7a6f)',
+                backgroundColor: 'var(--card-bg, #ffffff)',
+                borderRadius: '16px',
+                border: '1px solid var(--border-color, #dce5e1)'
+              }}>
                 No active public quizzes available right now. Ask your teacher for a classroom code or explore past papers.
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(330px, 1fr))',
+                gap: '1.25rem'
+              }}>
                 {data.availableQuizzes.map((q: any) => (
                   <div
                     key={q.id}
-                    className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-600/50 hover:shadow-lg transition-all flex flex-col justify-between gap-4 shadow-sm"
+                    style={{
+                      padding: '1.5rem',
+                      borderRadius: '16px',
+                      backgroundColor: 'var(--card-bg, #ffffff)',
+                      border: '1px solid var(--border-color, #dce5e1)',
+                      boxShadow: 'var(--shadow-sm)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      gap: '1.25rem'
+                    }}
                   >
                     <div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 uppercase">
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <span style={{
+                          fontSize: '0.68rem',
+                          fontWeight: 800,
+                          padding: '0.2rem 0.65rem',
+                          borderRadius: '9999px',
+                          backgroundColor: '#e6f0ed',
+                          color: '#0b5e4a',
+                          border: '1px solid rgba(11, 94, 74, 0.2)',
+                          textTransform: 'uppercase'
+                        }}>
                           {q.boardId || 'AKU-EB'}
                         </span>
-                        <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1 font-mono">
-                          <Clock className="w-3.5 h-3.5 text-amber-500" />
+                        <span style={{
+                          fontSize: '0.78rem',
+                          color: 'var(--text-light, #5a7a6f)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.35rem',
+                          fontFamily: 'monospace',
+                          fontWeight: 700
+                        }}>
+                          <Clock size={14} color="#d97706" />
                           <span>{q.durationMin} mins</span>
                         </span>
                       </div>
 
-                      <h4 className="text-base font-bold text-slate-900 dark:text-white mt-2.5 line-clamp-1">{q.title}</h4>
+                      <h4 style={{
+                        fontSize: '1.05rem',
+                        fontWeight: 800,
+                        color: 'var(--text-color, #2c3e38)',
+                        marginTop: '0.85rem',
+                        marginBottom: '0.4rem',
+                        lineHeight: 1.35
+                      }}>
+                        {q.title}
+                      </h4>
+
                       {q.description && (
-                        <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 mt-1 leading-relaxed">{q.description}</p>
+                        <p style={{
+                          fontSize: '0.82rem',
+                          color: 'var(--text-light, #5a7a6f)',
+                          lineHeight: 1.5,
+                          margin: '0 0 1rem 0',
+                          display: '-webkit-box',
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden'
+                        }}>
+                          {q.description}
+                        </p>
                       )}
 
-                      <div className="flex items-center gap-3 mt-3 text-xs text-slate-500 dark:text-slate-400">
-                        <span>{q.questionCount} Questions</span>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        fontSize: '0.78rem',
+                        color: 'var(--text-light, #5a7a6f)',
+                        paddingTop: '0.75rem',
+                        borderTop: '1px solid var(--border-color, #dce5e1)'
+                      }}>
+                        <span style={{ fontWeight: 700, color: '#0b5e4a' }}>{q.questionCount} Questions</span>
                         <span>•</span>
-                        <span>{q.totalMarks} Marks</span>
+                        <span style={{ fontWeight: 700 }}>{q.totalMarks} Marks</span>
                         <span>•</span>
-                        <span className="truncate">By {q.teacherName || 'RiseLearner'}</span>
+                        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                          By {q.teacherName || 'RiseLearner'}
+                        </span>
                       </div>
                     </div>
 
                     <Link
                       href={`/quizzes/${q.id}/take`}
-                      className="w-full py-2.5 rounded-xl font-bold text-xs bg-[#0b5e4a] hover:bg-[#084737] text-white shadow-md shadow-emerald-950/15 flex items-center justify-center gap-2 transition-all"
+                      style={{
+                        width: '100%',
+                        padding: '0.8rem 1rem',
+                        borderRadius: '12px',
+                        fontWeight: 700,
+                        fontSize: '0.85rem',
+                        backgroundColor: '#0b5e4a',
+                        color: '#ffffff',
+                        border: 'none',
+                        textDecoration: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '0.5rem',
+                        boxShadow: '0 4px 8px rgba(11, 94, 74, 0.25)',
+                        transition: 'background-color 0.2s ease'
+                      }}
+                      onMouseOver={(e) => {
+                        e.currentTarget.style.backgroundColor = '#084737';
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.backgroundColor = '#0b5e4a';
+                      }}
                     >
                       <span>Start Timed Assessment</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight size={15} />
                     </Link>
                   </div>
                 ))}
@@ -325,55 +713,96 @@ export default function StudentDashboardPage() {
 
         {/* TAB 2: COMPLETED RESULTS & REVIEWS */}
         {activeTab === 'history' && (
-          <div className="flex flex-col gap-4">
-            <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <h3 style={{
+              fontSize: '0.8rem',
+              fontWeight: 800,
+              color: 'var(--text-light, #5a7a6f)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              margin: 0
+            }}>
               Assessment Performance History & RAG Grounding
             </h3>
 
             {(data?.completedAttempts || []).length === 0 ? (
-              <div className="py-14 text-center text-xs text-slate-500 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+              <div style={{
+                padding: '3.5rem 1.5rem',
+                textAlign: 'center',
+                fontSize: '0.88rem',
+                color: 'var(--text-light, #5a7a6f)',
+                backgroundColor: 'var(--card-bg, #ffffff)',
+                borderRadius: '16px',
+                border: '1px solid var(--border-color, #dce5e1)'
+              }}>
                 You have not completed any assessments yet. Take an assessment from the Available tab to see your performance breakdown!
               </div>
             ) : (
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
-                <table className="w-full text-left text-xs">
-                  <thead className="bg-slate-100 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 uppercase tracking-wider text-[10px]">
+              <div style={{
+                backgroundColor: 'var(--card-bg, #ffffff)',
+                borderRadius: '16px',
+                border: '1px solid var(--border-color, #dce5e1)',
+                overflow: 'hidden',
+                boxShadow: 'var(--shadow-sm)'
+              }}>
+                <table style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse', fontSize: '0.82rem' }}>
+                  <thead style={{
+                    backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                    color: 'var(--text-light, #5a7a6f)',
+                    textTransform: 'uppercase',
+                    fontSize: '0.72rem',
+                    letterSpacing: '0.05em'
+                  }}>
                     <tr>
-                      <th className="p-3.5">Assessment Title</th>
-                      <th className="p-3.5">Score</th>
-                      <th className="p-3.5">Percentage</th>
-                      <th className="p-3.5">Date</th>
-                      <th className="p-3.5 text-right">Review Action</th>
+                      <th style={{ padding: '0.9rem 1rem' }}>Assessment Title</th>
+                      <th style={{ padding: '0.9rem 1rem' }}>Score</th>
+                      <th style={{ padding: '0.9rem 1rem' }}>Percentage</th>
+                      <th style={{ padding: '0.9rem 1rem' }}>Date</th>
+                      <th style={{ padding: '0.9rem 1rem', textAlign: 'right' }}>Review Action</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
+                  <tbody>
                     {data.completedAttempts.map((att: any) => (
-                      <tr key={att.attemptId} className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-                        <td className="p-3.5 font-bold text-slate-900 dark:text-white">
+                      <tr key={att.attemptId} style={{ borderTop: '1px solid var(--border-color, #dce5e1)' }}>
+                        <td style={{ padding: '0.9rem 1rem', fontWeight: 700, color: 'var(--text-color, #2c3e38)' }}>
                           {att.title}
                         </td>
-                        <td className="p-3.5">
-                          <span className="font-bold text-slate-900 dark:text-white">{att.score}</span> / {att.maxMarks}
+                        <td style={{ padding: '0.9rem 1rem' }}>
+                          <span style={{ fontWeight: 800, color: 'var(--text-color, #2c3e38)' }}>{att.score}</span> / {att.maxMarks}
                         </td>
-                        <td className="p-3.5">
-                          <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
-                            att.percentage >= 50 
-                              ? 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-400' 
-                              : 'bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-400'
-                          }`}>
+                        <td style={{ padding: '0.9rem 1rem' }}>
+                          <span style={{
+                            fontSize: '0.75rem',
+                            fontWeight: 800,
+                            padding: '0.2rem 0.6rem',
+                            borderRadius: '9999px',
+                            backgroundColor: att.percentage >= 50 ? '#e6f0ed' : '#fee2e2',
+                            color: att.percentage >= 50 ? '#0b5e4a' : '#b91c1c'
+                          }}>
                             {att.percentage}%
                           </span>
                         </td>
-                        <td className="p-3.5 text-slate-500 dark:text-slate-400 text-[11px]">
+                        <td style={{ padding: '0.9rem 1rem', color: 'var(--text-light, #5a7a6f)', fontSize: '0.78rem' }}>
                           {att.submittedAt ? new Date(att.submittedAt).toLocaleDateString() : 'Recently'}
                         </td>
-                        <td className="p-3.5 text-right">
+                        <td style={{ padding: '0.9rem 1rem', textAlign: 'right' }}>
                           <Link
                             href={`/quizzes/${att.quizId}/results?attemptId=${att.attemptId}`}
-                            className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/60 inline-flex items-center gap-1 transition-colors"
+                            style={{
+                              padding: '0.45rem 0.85rem',
+                              borderRadius: '8px',
+                              fontSize: '0.78rem',
+                              fontWeight: 700,
+                              backgroundColor: '#e6f0ed',
+                              color: '#0b5e4a',
+                              textDecoration: 'none',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.35rem'
+                            }}
                           >
                             <span>Review Explanations</span>
-                            <ArrowRight className="w-3 h-3" />
+                            <ArrowRight size={13} />
                           </Link>
                         </td>
                       </tr>
@@ -387,11 +816,22 @@ export default function StudentDashboardPage() {
 
         {/* TAB 3: SUBJECT RESOURCE HUBS */}
         {activeTab === 'subjects' && (
-          <div className="flex flex-col gap-4">
-            <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <h3 style={{
+              fontSize: '0.8rem',
+              fontWeight: 800,
+              color: 'var(--text-light, #5a7a6f)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              margin: 0
+            }}>
               Official AKU-EB Verified Subject Archives
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+              gap: '1.25rem'
+            }}>
               {[
                 { name: 'Physics', classRoman: 'IX', slug: 'physics', desc: 'Model Papers 2025, Chapter MCQs & Syllabi', count: 12 },
                 { name: 'Chemistry', classRoman: 'IX', slug: 'chemistry', desc: 'Syllabus SLOs, Notes & Key Papers', count: 9 },
@@ -402,18 +842,31 @@ export default function StudentDashboardPage() {
                 <Link
                   key={sub.slug}
                   href={`/akueb/${sub.classRoman}/${sub.slug}`}
-                  className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-600/50 hover:shadow-lg transition-all flex items-center justify-between shadow-sm group"
+                  style={{
+                    padding: '1.25rem 1.5rem',
+                    borderRadius: '16px',
+                    backgroundColor: 'var(--card-bg, #ffffff)',
+                    border: '1px solid var(--border-color, #dce5e1)',
+                    boxShadow: 'var(--shadow-sm)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    textDecoration: 'none',
+                    color: 'inherit'
+                  }}
                 >
                   <div>
-                    <h4 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                    <h4 style={{ fontSize: '1.05rem', fontWeight: 800, margin: '0 0 0.35rem 0', color: 'var(--text-color, #2c3e38)' }}>
                       {sub.name}
                     </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">{sub.desc}</p>
-                    <span className="text-[10px] text-emerald-700 dark:text-emerald-400 mt-2 block font-semibold">
+                    <p style={{ fontSize: '0.8rem', color: 'var(--text-light, #5a7a6f)', margin: 0 }}>
+                      {sub.desc}
+                    </p>
+                    <span style={{ fontSize: '0.72rem', color: '#0b5e4a', marginTop: '0.5rem', display: 'block', fontWeight: 700 }}>
                       Class {sub.classRoman} Archive • {sub.count} Resources
                     </span>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all" />
+                  <ChevronRight size={18} color="#0b5e4a" />
                 </Link>
               ))}
             </div>
@@ -423,14 +876,49 @@ export default function StudentDashboardPage() {
 
       {/* JOIN CLASSROOM MODAL */}
       {isJoinModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <form onSubmit={handleJoinClassroom} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-sm w-full p-6 flex flex-col gap-4 shadow-2xl">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <Users className="w-5 h-5 text-emerald-600" />
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 50,
+          backgroundColor: 'rgba(15, 23, 42, 0.75)',
+          backdropFilter: 'blur(6px)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '1rem'
+        }}>
+          <form
+            onSubmit={handleJoinClassroom}
+            style={{
+              backgroundColor: 'var(--card-bg, #ffffff)',
+              border: '1px solid var(--border-color, #dce5e1)',
+              borderRadius: '20px',
+              maxWidth: '400px',
+              width: '100%',
+              padding: '1.75rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.35)'
+            }}
+          >
+            <h3 style={{
+              fontSize: '1.1rem',
+              fontWeight: 800,
+              color: 'var(--text-color, #2c3e38)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              margin: 0
+            }}>
+              <Users size={20} color="#0b5e4a" />
               <span>Join Teacher's Classroom</span>
             </h3>
 
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)', margin: 0, lineHeight: 1.5 }}>
               Ask your teacher for the 6-character classroom code to access private assigned assessments.
             </p>
 
@@ -441,29 +929,67 @@ export default function StudentDashboardPage() {
               value={joinCode}
               onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
               placeholder="E.g. A3B9X1"
-              className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-center text-lg font-mono tracking-widest text-emerald-700 dark:text-emerald-400 outline-none focus:border-emerald-600"
+              style={{
+                width: '100%',
+                backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                border: '1.5px solid var(--border-color, #dce5e1)',
+                borderRadius: '12px',
+                padding: '0.85rem',
+                textAlign: 'center',
+                fontSize: '1.3rem',
+                fontFamily: 'monospace',
+                letterSpacing: '0.15em',
+                fontWeight: 800,
+                color: '#0b5e4a',
+                outline: 'none',
+                boxSizing: 'border-box'
+              }}
             />
 
             {joinMessage && (
-              <div className={`p-2.5 rounded-lg text-xs ${
-                joinMessage.startsWith('Success') ? 'bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300' : 'bg-rose-50 text-rose-800 dark:bg-rose-950/60 dark:text-rose-300'
-              }`}>
+              <div style={{
+                padding: '0.75rem',
+                borderRadius: '8px',
+                fontSize: '0.82rem',
+                fontWeight: 600,
+                backgroundColor: joinMessage.startsWith('Success') ? '#e6f0ed' : '#fee2e2',
+                color: joinMessage.startsWith('Success') ? '#0b5e4a' : '#b91c1c'
+              }}>
                 {joinMessage}
               </div>
             )}
 
-            <div className="flex justify-end gap-2 pt-2">
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', paddingTop: '0.5rem' }}>
               <button
                 type="button"
                 onClick={() => setIsJoinModalOpen(false)}
-                className="px-4 py-2 text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                style={{
+                  padding: '0.6rem 1rem',
+                  fontSize: '0.82rem',
+                  fontWeight: 600,
+                  color: 'var(--text-light, #5a7a6f)',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={isJoining || !joinCode}
-                className="px-4 py-2 text-xs font-bold bg-[#0b5e4a] hover:bg-[#084737] disabled:opacity-50 text-white rounded-lg shadow-sm"
+                style={{
+                  padding: '0.6rem 1.25rem',
+                  fontSize: '0.82rem',
+                  fontWeight: 700,
+                  backgroundColor: '#0b5e4a',
+                  color: '#ffffff',
+                  border: 'none',
+                  borderRadius: '10px',
+                  cursor: isJoining ? 'not-allowed' : 'pointer',
+                  opacity: isJoining || !joinCode ? 0.6 : 1,
+                  boxShadow: '0 2px 6px rgba(11, 94, 74, 0.25)'
+                }}
               >
                 {isJoining ? 'Joining...' : 'Join Classroom'}
               </button>

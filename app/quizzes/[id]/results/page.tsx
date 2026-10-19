@@ -67,23 +67,81 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1d] flex flex-col items-center justify-center text-slate-500 gap-3">
-        <div className="w-10 h-10 rounded-full border-4 border-emerald-500/20 border-t-emerald-600 animate-spin" />
-        <span className="text-xs font-semibold">Calculating grades & compiling RAG explanations...</span>
+      <div style={{
+        minHeight: '100vh',
+        backgroundColor: 'var(--bg-color, #f4f7f6)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1rem',
+        color: 'var(--text-light, #5a7a6f)',
+        fontFamily: "'Inter', sans-serif"
+      }}>
+        <div style={{
+          width: '44px',
+          height: '44px',
+          borderRadius: '50%',
+          border: '4px solid rgba(11, 94, 74, 0.15)',
+          borderTopColor: '#0b5e4a',
+          animation: 'spin 0.8s linear infinite'
+        }} />
+        <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Calculating grades & compiling RAG explanations...</span>
+        <style>{`
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+        `}</style>
       </div>
     );
   }
 
   if (error || !result) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1d] flex flex-col items-center justify-center p-6 text-slate-900 dark:text-slate-100">
-        <div className="max-w-md w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center gap-4 shadow-xl">
-          <AlertCircle className="w-12 h-12 text-rose-500" />
-          <h2 className="text-lg font-bold">Results Unavailable</h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400">{error}</p>
+      <div style={{
+        minHeight: '100vh',
+        backgroundColor: 'var(--bg-color, #f4f7f6)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '1.5rem',
+        fontFamily: "'Inter', sans-serif"
+      }}>
+        <div style={{
+          maxWidth: '450px',
+          width: '100%',
+          backgroundColor: 'var(--card-bg, #ffffff)',
+          border: '1px solid var(--border-color, #dce5e1)',
+          borderRadius: '20px',
+          padding: '2rem',
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '1rem',
+          boxShadow: 'var(--shadow-md)'
+        }}>
+          <AlertCircle size={48} color="#ef4444" />
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, color: 'var(--text-color, #2c3e38)' }}>
+            Results Unavailable
+          </h2>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-light, #5a7a6f)', margin: 0 }}>
+            {error}
+          </p>
           <Link
             href="/dashboard/student"
-            className="px-4 py-2 rounded-xl text-xs font-bold bg-[#0b5e4a] hover:bg-[#084737] text-white"
+            style={{
+              padding: '0.65rem 1.25rem',
+              borderRadius: '10px',
+              fontSize: '0.85rem',
+              fontWeight: 700,
+              backgroundColor: '#0b5e4a',
+              color: '#ffffff',
+              textDecoration: 'none',
+              marginTop: '0.5rem'
+            }}
           >
             Go to Student Dashboard
           </Link>
@@ -95,37 +153,98 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
   const isPassed = result.percentage >= 50;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1d] text-slate-900 dark:text-slate-100 font-sans pb-20 transition-colors">
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: 'var(--bg-color, #f4f7f6)',
+      color: 'var(--text-color, #2c3e38)',
+      fontFamily: "'Inter', sans-serif",
+      paddingBottom: '5rem',
+      transition: 'background-color 0.2s ease, color 0.2s ease'
+    }}>
       
       {/* Top Bar */}
-      <header className="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-sm">
-        <div className="flex items-center gap-3">
+      <header style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 40,
+        backgroundColor: 'var(--card-bg, #ffffff)',
+        borderBottom: '1px solid var(--border-color, #dce5e1)',
+        padding: '0.85rem 1.5rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.03)'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <Link
             href="/dashboard/student"
-            className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+            style={{
+              padding: '0.4rem',
+              borderRadius: '8px',
+              color: 'var(--text-light, #5a7a6f)',
+              display: 'flex',
+              alignItems: 'center',
+              textDecoration: 'none'
+            }}
           >
-            <ArrowLeft className="w-5 h-5" />
+            <ArrowLeft size={20} />
           </Link>
           <div>
-            <h1 className="text-sm font-bold text-slate-900 dark:text-white truncate max-w-sm">
+            <h1 style={{
+              fontSize: '0.95rem',
+              fontWeight: 800,
+              color: 'var(--text-color, #2c3e38)',
+              margin: 0,
+              maxWidth: '380px',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap'
+            }}>
               {result.quizTitle}
             </h1>
-            <span className="text-xs text-slate-500 dark:text-slate-400">Assessment Performance Report</span>
+            <span style={{ fontSize: '0.72rem', color: 'var(--text-light, #5a7a6f)' }}>
+              Assessment Performance Report
+            </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <Link
             href={`/quizzes/${quizId}/take`}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-all"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              padding: '0.45rem 0.85rem',
+              borderRadius: '8px',
+              fontSize: '0.78rem',
+              fontWeight: 600,
+              backgroundColor: 'rgba(244, 247, 246, 0.8)',
+              color: 'var(--text-color, #2c3e38)',
+              border: '1px solid var(--border-color, #dce5e1)',
+              textDecoration: 'none'
+            }}
           >
-            <RotateCcw className="w-3.5 h-3.5" />
+            <RotateCcw size={14} />
             <span>Retake Assessment</span>
           </Link>
 
           <Link
             href="/dashboard/student"
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0b5e4a] hover:bg-[#084737] text-white shadow-md shadow-emerald-950/20 transition-all"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              padding: '0.5rem 1rem',
+              borderRadius: '8px',
+              fontSize: '0.78rem',
+              fontWeight: 700,
+              backgroundColor: '#0b5e4a',
+              color: '#ffffff',
+              border: 'none',
+              textDecoration: 'none',
+              boxShadow: '0 2px 6px rgba(11, 94, 74, 0.25)'
+            }}
           >
             <span>Student Dashboard</span>
           </Link>
@@ -133,55 +252,103 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
       </header>
 
       {/* Main Container */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 flex flex-col gap-8">
+      <div style={{
+        maxWidth: '900px',
+        margin: '0 auto',
+        padding: '2rem 1.5rem 0 1.5rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2rem'
+      }}>
         
         {/* Performance Scorecard Card */}
-        <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm relative overflow-hidden">
-          <div className={`absolute top-0 left-0 right-0 h-2 ${
-            isPassed ? 'bg-gradient-to-r from-emerald-600 to-teal-500' : 'bg-gradient-to-r from-rose-500 to-amber-500'
-          }`} />
+        <div style={{
+          backgroundColor: 'var(--card-bg, #ffffff)',
+          borderRadius: '24px',
+          border: '1px solid var(--border-color, #dce5e1)',
+          padding: '1.75rem 2rem',
+          boxShadow: 'var(--shadow-sm)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '6px',
+            background: isPassed 
+              ? 'linear-gradient(90deg, #0b5e4a 0%, #10b981 100%)' 
+              : 'linear-gradient(90deg, #ef4444 0%, #f59e0b 100%)'
+          }} />
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-5">
-              <div className={`w-20 h-20 rounded-2xl flex flex-col items-center justify-center border shadow-sm ${
-                isPassed 
-                  ? 'bg-emerald-50 dark:bg-emerald-500/10 border-emerald-200 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-400' 
-                  : 'bg-rose-50 dark:bg-rose-500/10 border-rose-200 dark:border-rose-500/30 text-rose-700 dark:text-rose-400'
-              }`}>
-                <span className="text-2xl font-black">{result.percentage}%</span>
-                <span className="text-[10px] font-bold uppercase tracking-wider">
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1.5rem'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+              <div style={{
+                width: '84px',
+                height: '84px',
+                borderRadius: '18px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: isPassed ? '#e6f0ed' : '#fee2e2',
+                border: isPassed ? '1.5px solid rgba(11, 94, 74, 0.3)' : '1.5px solid rgba(239, 68, 68, 0.3)',
+                color: isPassed ? '#0b5e4a' : '#b91c1c'
+              }}>
+                <span style={{ fontSize: '1.5rem', fontWeight: 900 }}>{result.percentage}%</span>
+                <span style={{ fontSize: '0.65rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                   {isPassed ? 'Passed' : 'Needs Review'}
                 </span>
               </div>
 
               <div>
-                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Candidate Name</span>
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white">{result.studentName}</h2>
-                <div className="flex items-center gap-3 mt-1 text-xs text-slate-500 dark:text-slate-400">
-                  <span>Score: <strong className="text-slate-900 dark:text-white">{result.score}</strong> / {result.maxMarks} marks</span>
+                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                  Candidate Name
+                </span>
+                <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-color, #2c3e38)', margin: '0.2rem 0' }}>
+                  {result.studentName}
+                </h2>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: 'var(--text-light, #5a7a6f)' }}>
+                  <span>Score: <strong style={{ color: 'var(--text-color, #2c3e38)' }}>{result.score}</strong> / {result.maxMarks} marks</span>
                   <span>•</span>
-                  <span>Status: <strong className={result.status === 'GRADING_PENDING' ? 'text-amber-600 dark:text-amber-400' : 'text-emerald-700 dark:text-emerald-400'}>{result.status.replace('_', ' ')}</strong></span>
+                  <span>Status: <strong style={{ color: result.status === 'GRADING_PENDING' ? '#d97706' : '#0b5e4a' }}>{result.status.replace('_', ' ')}</strong></span>
                 </div>
               </div>
             </div>
 
             {/* Quick Metrics */}
-            <div className="flex items-center gap-4 bg-slate-50 dark:bg-slate-950/60 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 text-xs">
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-amber-500" />
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
+              backgroundColor: 'rgba(244, 247, 246, 0.7)',
+              padding: '0.85rem 1.25rem',
+              borderRadius: '16px',
+              border: '1px solid var(--border-color, #dce5e1)',
+              fontSize: '0.8rem'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Clock size={16} color="#d97706" />
                 <div>
-                  <span className="text-slate-500 block text-[10px]">Time Taken</span>
-                  <strong className="text-slate-800 dark:text-slate-200">{formatTime(result.timeSpentSec)}</strong>
+                  <span style={{ color: 'var(--text-light, #5a7a6f)', display: 'block', fontSize: '0.68rem' }}>Time Taken</span>
+                  <strong style={{ color: 'var(--text-color, #2c3e38)' }}>{formatTime(result.timeSpentSec)}</strong>
                 </div>
               </div>
 
-              <div className="w-px h-8 bg-slate-200 dark:bg-slate-800" />
+              <div style={{ width: '1px', height: '28px', backgroundColor: 'var(--border-color, #dce5e1)' }} />
 
-              <div className="flex items-center gap-2">
-                <ShieldAlert className={`w-4 h-4 ${result.tabSwitchCount > 2 ? 'text-rose-500' : 'text-cyan-600 dark:text-cyan-400'}`} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <ShieldAlert size={16} color={result.tabSwitchCount > 2 ? '#ef4444' : '#0b5e4a'} />
                 <div>
-                  <span className="text-slate-500 block text-[10px]">Tab Switches</span>
-                  <strong className={result.tabSwitchCount > 2 ? 'text-rose-600 dark:text-rose-400' : 'text-slate-800 dark:text-slate-200'}>
+                  <span style={{ color: 'var(--text-light, #5a7a6f)', display: 'block', fontSize: '0.68rem' }}>Tab Switches</span>
+                  <strong style={{ color: result.tabSwitchCount > 2 ? '#ef4444' : 'var(--text-color, #2c3e38)' }}>
                     {result.tabSwitchCount} {result.tabSwitchCount > 2 ? '(Flagged)' : ''}
                   </strong>
                 </div>
@@ -192,28 +359,46 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
 
         {/* Written grading notice if applicable */}
         {result.status === 'GRADING_PENDING' && (
-          <div className="p-4 rounded-2xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 flex items-start gap-3 text-xs text-amber-800 dark:text-amber-200">
-            <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+          <div style={{
+            padding: '1rem 1.25rem',
+            borderRadius: '14px',
+            backgroundColor: '#fef3c7',
+            border: '1px solid #fde68a',
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '0.75rem',
+            fontSize: '0.82rem',
+            color: '#92400e'
+          }}>
+            <AlertCircle size={18} color="#d97706" style={{ flexShrink: 0, marginTop: '2px' }} />
             <div>
-              <strong className="block text-amber-900 dark:text-amber-300 font-semibold mb-0.5">Written Grading in Progress</strong>
+              <strong style={{ display: 'block', fontWeight: 800, marginBottom: '0.2rem' }}>Written Grading in Progress</strong>
               Objective MCQs and Numerical problems have been auto-graded. Extended response questions are currently queued for AI-assisted / teacher rubric evaluation.
             </div>
           </div>
         )}
 
         {/* Question Review Section */}
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center justify-between">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <BookOpen className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <h3 style={{
+              fontSize: '1rem',
+              fontWeight: 800,
+              color: 'var(--text-color, #2c3e38)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              margin: 0
+            }}>
+              <BookOpen size={16} color="#0b5e4a" />
               <span>Question-by-Question Review & RAG Explanations</span>
             </h3>
-            <span className="text-xs text-slate-500 dark:text-slate-400 font-semibold">
+            <span style={{ fontSize: '0.8rem', color: 'var(--text-light, #5a7a6f)', fontWeight: 700 }}>
               {result.questions.filter((q: any) => q.scoreAwarded === q.marks).length} of {result.questions.length} Correct
             </span>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {result.questions.map((q: any, idx: number) => {
               const isCorrect = q.scoreAwarded === q.marks;
               const isPartial = q.scoreAwarded > 0 && q.scoreAwarded < q.marks;
@@ -222,97 +407,157 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
               return (
                 <div 
                   key={q.questionId}
-                  className={`bg-white dark:bg-slate-900 rounded-2xl border transition-all p-5 sm:p-6 flex flex-col gap-4 shadow-sm ${
-                    isCorrect 
-                      ? 'border-emerald-300 dark:border-emerald-500/30' 
+                  style={{
+                    backgroundColor: 'var(--card-bg, #ffffff)',
+                    borderRadius: '16px',
+                    border: isCorrect 
+                      ? '1.5px solid rgba(16, 185, 129, 0.4)' 
                       : isPartial
-                      ? 'border-amber-300 dark:border-amber-500/30'
-                      : 'border-rose-300 dark:border-rose-500/30'
-                  }`}
+                      ? '1.5px solid rgba(245, 158, 11, 0.4)'
+                      : '1.5px solid rgba(239, 68, 68, 0.35)',
+                    padding: '1.25rem 1.5rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1rem',
+                    boxShadow: 'var(--shadow-sm)'
+                  }}
                 >
                   {/* Question Header */}
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex items-center gap-2.5">
-                      <span className={`w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs ${
-                        isCorrect 
-                          ? 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-500/40' 
-                          : isPartial
-                          ? 'bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-400 border border-amber-300 dark:border-amber-500/40'
-                          : 'bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-400 border border-rose-300 dark:border-rose-500/40'
-                      }`}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                      <span style={{
+                        width: '26px',
+                        height: '26px',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontWeight: 800,
+                        fontSize: '0.75rem',
+                        backgroundColor: isCorrect ? '#e6f0ed' : isPartial ? '#fef3c7' : '#fee2e2',
+                        color: isCorrect ? '#0b5e4a' : isPartial ? '#b45309' : '#b91c1c'
+                      }}>
                         {idx + 1}
                       </span>
-                      <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                      <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase' }}>
                         Question {idx + 1}
                       </span>
                       {q.pastPaperRef && (
-                        <span className="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-emerald-700 dark:text-emerald-400 border border-slate-200 dark:border-slate-700 font-semibold">
+                        <span style={{
+                          fontSize: '0.68rem',
+                          padding: '0.15rem 0.5rem',
+                          borderRadius: '6px',
+                          backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                          color: '#0b5e4a',
+                          border: '1px solid var(--border-color, #dce5e1)',
+                          fontWeight: 700
+                        }}>
                           {q.pastPaperRef}
                         </span>
                       )}
                     </div>
 
-                    <div className="flex items-center gap-2">
-                      <span className={`px-2.5 py-1 rounded-lg text-xs font-bold border ${
-                        isCorrect 
-                          ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/30' 
-                          : isPartial
-                          ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-400 border-amber-200 dark:border-amber-500/30'
-                          : 'bg-rose-50 dark:bg-rose-500/10 text-rose-800 dark:text-rose-400 border-rose-200 dark:border-rose-500/30'
-                      }`}>
+                    <div>
+                      <span style={{
+                        padding: '0.25rem 0.65rem',
+                        borderRadius: '8px',
+                        fontSize: '0.75rem',
+                        fontWeight: 800,
+                        backgroundColor: isCorrect ? '#e6f0ed' : isPartial ? '#fef3c7' : '#fee2e2',
+                        color: isCorrect ? '#0b5e4a' : isPartial ? '#b45309' : '#b91c1c'
+                      }}>
                         {q.scoreAwarded} / {q.marks} {q.marks === 1 ? 'Mark' : 'Marks'}
                       </span>
                     </div>
                   </div>
 
                   {/* Question Stem with KaTeX math */}
-                  <div className="text-sm sm:text-base font-medium text-slate-900 dark:text-slate-100 leading-relaxed">
+                  <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-color, #2c3e38)', lineHeight: 1.55 }}>
                     <MathText text={q.stemText} />
                   </div>
 
                   {/* Visual SVG diagram if present */}
                   {q.drawingSvg && (
                     <div 
-                      className="p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 max-w-sm"
+                      style={{
+                        padding: '0.75rem',
+                        backgroundColor: 'rgba(244, 247, 246, 0.6)',
+                        borderRadius: '12px',
+                        border: '1px solid var(--border-color, #dce5e1)',
+                        maxWidth: '380px'
+                      }}
                       dangerouslySetInnerHTML={{ __html: q.drawingSvg }}
                     />
                   )}
 
                   {/* Options & Choices */}
                   {Array.isArray(q.options) && q.options.length > 0 && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                      gap: '0.6rem',
+                      paddingTop: '0.25rem'
+                    }}>
                       {q.options.map((opt: any, oIdx: number) => {
                         const isStudentChoice = q.studentAnswer?.selectedOptionId === opt.id || 
                           (Array.isArray(q.studentAnswer?.selectedOptionIds) && q.studentAnswer.selectedOptionIds.includes(opt.id));
                         const isCorrectOption = opt.isCorrect;
 
-                        let cardStyle = 'bg-slate-50 dark:bg-slate-950/50 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400';
+                        let bg = 'rgba(244, 247, 246, 0.5)';
+                        let border = '1px solid var(--border-color, #dce5e1)';
+                        let textColor = 'var(--text-color, #2c3e38)';
+                        let textDecoration = 'none';
+
                         if (isCorrectOption) {
-                          cardStyle = 'bg-emerald-50 dark:bg-emerald-500/15 border-emerald-400 dark:border-emerald-500 text-emerald-900 dark:text-emerald-200 font-semibold';
+                          bg = '#e6f0ed';
+                          border = '1.5px solid #10b981';
+                          textColor = '#065f46';
                         } else if (isStudentChoice && !isCorrectOption) {
-                          cardStyle = 'bg-rose-50 dark:bg-rose-500/15 border-rose-400 dark:border-rose-500 text-rose-900 dark:text-rose-200 line-through';
+                          bg = '#fee2e2';
+                          border = '1.5px solid #ef4444';
+                          textColor = '#991b1b';
+                          textDecoration = 'line-through';
                         }
 
                         return (
                           <div
                             key={opt.id}
-                            className={`p-3 rounded-xl border text-xs flex items-center justify-between gap-2 ${cardStyle}`}
+                            style={{
+                              padding: '0.75rem 1rem',
+                              borderRadius: '10px',
+                              backgroundColor: bg,
+                              border: border,
+                              color: textColor,
+                              fontSize: '0.82rem',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'space-between',
+                              gap: '0.5rem'
+                            }}
                           >
-                            <div className="flex items-center gap-2">
-                              <span className="font-bold text-slate-500">{String.fromCharCode(65 + oIdx)}.</span>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: textDecoration }}>
+                              <span style={{ fontWeight: 800, color: 'var(--text-light, #5a7a6f)' }}>
+                                {String.fromCharCode(65 + oIdx)}.
+                              </span>
                               <MathText text={opt.text} />
                             </div>
-                            <div className="flex items-center gap-1.5 shrink-0">
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
                               {isStudentChoice && (
-                                <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold">
+                                <span style={{
+                                  fontSize: '0.65rem',
+                                  padding: '0.15rem 0.4rem',
+                                  borderRadius: '4px',
+                                  backgroundColor: 'rgba(0,0,0,0.06)',
+                                  fontWeight: 700
+                                }}>
                                   Your Choice
                                 </span>
                               )}
                               {isCorrectOption && (
-                                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                                <CheckCircle2 size={16} color="#059669" />
                               )}
                               {isStudentChoice && !isCorrectOption && (
-                                <XCircle className="w-4 h-4 text-rose-600 dark:text-rose-400" />
+                                <XCircle size={16} color="#dc2626" />
                               )}
                             </div>
                           </div>
@@ -323,15 +568,24 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
 
                   {/* Numerical / Short Answer response */}
                   {q.questionType === 'NUMERICAL' && (
-                    <div className="p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 text-xs flex items-center justify-between">
+                    <div style={{
+                      padding: '0.75rem 1rem',
+                      backgroundColor: 'rgba(244, 247, 246, 0.6)',
+                      borderRadius: '10px',
+                      border: '1px solid var(--border-color, #dce5e1)',
+                      fontSize: '0.82rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between'
+                    }}>
                       <div>
-                        <span className="text-slate-500 block text-[10px]">Your Answer:</span>
-                        <strong className="text-slate-900 dark:text-white">{q.studentAnswer?.numericAnswer || 'None'}</strong>
+                        <span style={{ color: 'var(--text-light, #5a7a6f)', display: 'block', fontSize: '0.68rem' }}>Your Answer:</span>
+                        <strong style={{ color: 'var(--text-color, #2c3e38)' }}>{q.studentAnswer?.numericAnswer || 'None'}</strong>
                       </div>
                       {result.canViewCorrectAnswers && (
                         <div>
-                          <span className="text-slate-500 block text-[10px]">Target Value:</span>
-                          <strong className="text-emerald-700 dark:text-emerald-400">{q.correctAnswerText}</strong>
+                          <span style={{ color: 'var(--text-light, #5a7a6f)', display: 'block', fontSize: '0.68rem' }}>Target Value:</span>
+                          <strong style={{ color: '#0b5e4a' }}>{q.correctAnswerText}</strong>
                         </div>
                       )}
                     </div>
@@ -339,30 +593,67 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
 
                   {/* Explanation Accordion (RAG Grounded) */}
                   {result.canViewCorrectAnswers && (
-                    <div className="pt-2 border-t border-slate-100 dark:border-slate-800">
+                    <div style={{ paddingTop: '0.5rem', borderTop: '1px solid var(--border-color, #dce5e1)' }}>
                       <button
                         onClick={() => toggleExpand(q.questionId)}
-                        className="flex items-center justify-between w-full text-xs font-bold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 py-1"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          width: '100%',
+                          fontSize: '0.8rem',
+                          fontWeight: 700,
+                          color: '#0b5e4a',
+                          background: 'none',
+                          border: 'none',
+                          cursor: 'pointer',
+                          padding: '0.4rem 0'
+                        }}
                       >
-                        <span className="flex items-center gap-1.5">
-                          <HelpCircle className="w-3.5 h-3.5" />
+                        <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                          <HelpCircle size={15} />
                           <span>Concept Explanation & Study Material</span>
                         </span>
-                        {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                        {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                       </button>
 
                       {isExpanded && (
-                        <div className="mt-2.5 p-4 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-emerald-200 dark:border-emerald-500/20 text-xs text-slate-700 dark:text-slate-300 flex flex-col gap-2">
-                          <div className="flex items-center gap-1.5 text-emerald-800 dark:text-emerald-300 font-bold text-[11px]">
-                            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                        <div style={{
+                          marginTop: '0.5rem',
+                          padding: '1rem 1.25rem',
+                          borderRadius: '12px',
+                          backgroundColor: 'rgba(244, 247, 246, 0.7)',
+                          border: '1px solid rgba(11, 94, 74, 0.2)',
+                          fontSize: '0.82rem',
+                          color: 'var(--text-color, #2c3e38)',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '0.5rem'
+                        }}>
+                          <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.4rem',
+                            color: '#0b5e4a',
+                            fontWeight: 800,
+                            fontSize: '0.75rem'
+                          }}>
+                            <Sparkles size={14} color="#c9a050" />
                             <span>Verified Curriculum RAG Grounding</span>
                           </div>
-                          <div className="leading-relaxed">
+                          <div style={{ lineHeight: 1.6 }}>
                             <MathText text={q.explanation} />
                           </div>
                           {q.rubric && (
-                            <div className="pt-2 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-400">
-                              <span className="font-semibold text-slate-900 dark:text-slate-300 block mb-0.5">Scoring Rubric:</span>
+                            <div style={{
+                              paddingTop: '0.5rem',
+                              borderTop: '1px solid var(--border-color, #dce5e1)',
+                              fontSize: '0.75rem',
+                              color: 'var(--text-light, #5a7a6f)'
+                            }}>
+                              <span style={{ fontWeight: 800, color: 'var(--text-color, #2c3e38)', display: 'block', marginBottom: '0.2rem' }}>
+                                Scoring Rubric:
+                              </span>
                               <MathText text={q.rubric} />
                             </div>
                           )}

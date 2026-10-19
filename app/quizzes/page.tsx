@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { 
   Search, BookOpen, Clock, Award, ArrowRight, Sparkles, 
   Plus, Users, Filter, CheckCircle2, FileText, ChevronRight,
-  ShieldAlert, Compass, GraduationCap, Flame
+  ShieldAlert, Compass, GraduationCap, Flame, Check
 } from 'lucide-react';
 
 export default function QuizzesCatalogPage() {
@@ -38,65 +38,220 @@ export default function QuizzesCatalogPage() {
       ? q.title.toLowerCase().includes(search.toLowerCase()) || 
         (q.description && q.description.toLowerCase().includes(search.toLowerCase()))
       : true;
-    return matchSearch;
+
+    const matchClass = selectedClass === 'ALL' 
+      ? true 
+      : (q.classId ? q.classId.toString() === selectedClass : true);
+
+    const matchSubject = selectedSubject === 'ALL'
+      ? true
+      : (q.subjectId ? q.subjectId.toLowerCase() === selectedSubject.toLowerCase() : true);
+
+    return matchSearch && matchClass && matchSubject;
   });
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1d] text-slate-900 dark:text-slate-100 font-sans pb-20 transition-colors">
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: 'var(--bg-color, #f4f7f6)',
+      color: 'var(--text-color, #2c3e38)',
+      fontFamily: "'Inter', sans-serif",
+      paddingBottom: '5rem',
+      transition: 'background-color 0.2s ease, color 0.2s ease'
+    }}>
       
       {/* Premium Hero Header */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0b5e4a] via-[#094d3c] to-[#052e24] text-white pt-12 pb-16 px-4 sm:px-8 border-b border-emerald-800/40 shadow-xl">
-        {/* Subtle decorative background circles */}
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-emerald-400/10 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 -mb-20 w-96 h-96 rounded-full bg-[#c9a050]/10 blur-3xl pointer-events-none" />
+      <section style={{
+        position: 'relative',
+        overflow: 'hidden',
+        background: 'linear-gradient(135deg, #0b5e4a 0%, #084737 50%, #052e24 100%)',
+        color: '#ffffff',
+        paddingTop: '3.5rem',
+        paddingBottom: '4.5rem',
+        paddingLeft: '1.5rem',
+        paddingRight: '1.5rem',
+        borderBottom: '1px solid rgba(16, 185, 129, 0.25)',
+        boxShadow: '0 10px 25px -5px rgba(11, 94, 74, 0.3)'
+      }}>
+        {/* Subtle decorative glowing background shapes */}
+        <div style={{
+          position: 'absolute',
+          top: '-80px',
+          right: '-80px',
+          width: '320px',
+          height: '320px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(52, 211, 153, 0.15) 0%, transparent 70%)',
+          pointerEvents: 'none'
+        }} />
+        <div style={{
+          position: 'absolute',
+          bottom: '-60px',
+          left: '30%',
+          width: '360px',
+          height: '360px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(201, 160, 80, 0.12) 0%, transparent 70%)',
+          pointerEvents: 'none'
+        }} />
 
-        <div className="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-[#c9a050]/20 text-amber-200 border border-[#c9a050]/30 uppercase tracking-wider mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          position: 'relative',
+          zIndex: 10,
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '2rem'
+        }}>
+          <div style={{ maxWidth: '680px', flex: '1 1 500px' }}>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.35rem 0.85rem',
+              borderRadius: '9999px',
+              fontSize: '0.75rem',
+              fontWeight: 800,
+              backgroundColor: 'rgba(201, 160, 80, 0.2)',
+              color: '#fef08a',
+              border: '1px solid rgba(201, 160, 80, 0.4)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              marginBottom: '1rem'
+            }}>
+              <Sparkles size={14} color="#fde047" />
               <span>Official AKU-EB Examination Engine</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight font-serif">
+            <h1 style={{
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              fontWeight: 900,
+              color: '#ffffff',
+              letterSpacing: '-0.025em',
+              lineHeight: 1.15,
+              fontFamily: "'Outfit', 'Inter', sans-serif",
+              margin: '0 0 1rem 0'
+            }}>
               Examinations & Practice Tests
             </h1>
 
-            <p className="text-sm sm:text-base text-emerald-100/80 mt-3 leading-relaxed">
+            <p style={{
+              fontSize: '1rem',
+              color: 'rgba(230, 240, 237, 0.9)',
+              lineHeight: 1.6,
+              margin: '0 0 1.5rem 0'
+            }}>
               Curriculum-aligned timed assessments for SSC & HSSC (Classes IX, X, XI, XII). Featuring server-authoritative countdown timing, RAG-grounded curriculum explanations, and real-time score analytics.
             </p>
 
             {/* Feature Highlights */}
-            <div className="flex flex-wrap items-center gap-4 mt-6 text-xs text-emerald-200/90 font-medium">
-              <span className="flex items-center gap-1.5 bg-emerald-950/40 px-3 py-1.5 rounded-lg border border-emerald-700/50">
-                <Clock className="w-3.5 h-3.5 text-amber-400" />
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              gap: '0.75rem',
+              fontSize: '0.78rem',
+              color: '#d1fae5',
+              fontWeight: 600
+            }}>
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                backgroundColor: 'rgba(6, 78, 59, 0.5)',
+                padding: '0.4rem 0.8rem',
+                borderRadius: '8px',
+                border: '1px solid rgba(16, 185, 129, 0.3)'
+              }}>
+                <Clock size={14} color="#facc15" />
                 <span>Timed Exam Engine</span>
               </span>
-              <span className="flex items-center gap-1.5 bg-emerald-950/40 px-3 py-1.5 rounded-lg border border-emerald-700/50">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-300" />
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                backgroundColor: 'rgba(6, 78, 59, 0.5)',
+                padding: '0.4rem 0.8rem',
+                borderRadius: '8px',
+                border: '1px solid rgba(16, 185, 129, 0.3)'
+              }}>
+                <CheckCircle2 size={14} color="#6ee7b7" />
                 <span>Instant Auto-Grading</span>
               </span>
-              <span className="flex items-center gap-1.5 bg-emerald-950/40 px-3 py-1.5 rounded-lg border border-emerald-700/50">
-                <ShieldAlert className="w-3.5 h-3.5 text-cyan-300" />
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                backgroundColor: 'rgba(6, 78, 59, 0.5)',
+                padding: '0.4rem 0.8rem',
+                borderRadius: '8px',
+                border: '1px solid rgba(16, 185, 129, 0.3)'
+              }}>
+                <ShieldAlert size={14} color="#67e8f9" />
                 <span>Proctoring & Anti-Cheat</span>
               </span>
             </div>
           </div>
 
           {/* Quick CTA Links */}
-          <div className="flex flex-col sm:flex-row md:flex-col gap-3 w-full sm:w-auto shrink-0">
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.75rem',
+            width: '100%',
+            maxWidth: '260px',
+            flexShrink: 0
+          }}>
             <Link
               href="/dashboard/student"
-              className="px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm text-center flex items-center justify-center gap-2 transition-all shadow-sm"
+              style={{
+                padding: '0.85rem 1.25rem',
+                borderRadius: '12px',
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                backgroundColor: 'rgba(255, 255, 255, 0.12)',
+                color: '#ffffff',
+                border: '1px solid rgba(255, 255, 255, 0.25)',
+                backdropFilter: 'blur(8px)',
+                textAlign: 'center',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+              }}
             >
-              <GraduationCap className="w-4 h-4 text-emerald-300" />
-              <span>Student Performance Portal</span>
+              <GraduationCap size={16} color="#6ee7b7" />
+              <span>Student Learning Portal</span>
             </Link>
 
             <Link
               href="/teacher/quizzes/builder"
-              className="px-6 py-3 rounded-xl text-xs sm:text-sm font-bold bg-[#c9a050] hover:bg-[#b58e42] text-slate-950 shadow-lg shadow-black/20 text-center flex items-center justify-center gap-2 transition-all"
+              style={{
+                padding: '0.85rem 1.25rem',
+                borderRadius: '12px',
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                backgroundColor: '#c9a050',
+                color: '#0f172a',
+                border: 'none',
+                textAlign: 'center',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+                boxShadow: '0 4px 12px rgba(201, 160, 80, 0.3)'
+              }}
             >
-              <Plus className="w-4 h-4 text-slate-950" />
+              <Plus size={16} color="#0f172a" />
               <span>Create Custom Assessment</span>
             </Link>
           </div>
@@ -104,27 +259,90 @@ export default function QuizzesCatalogPage() {
       </section>
 
       {/* Main Content Hub */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 -mt-6 flex flex-col gap-8 relative z-20">
+      <div style={{
+        maxWidth: '1200px',
+        margin: '-1.75rem auto 0 auto',
+        padding: '0 1.5rem',
+        position: 'relative',
+        zIndex: 20,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2rem'
+      }}>
         
         {/* Search & Filter Toolbar */}
-        <div className="bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col md:flex-row gap-3 items-center justify-between">
-          <div className="relative flex-1 w-full">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+        <div style={{
+          backgroundColor: 'var(--card-bg, #ffffff)',
+          padding: '1.25rem 1.5rem',
+          borderRadius: '16px',
+          border: '1px solid var(--border-color, #dce5e1)',
+          boxShadow: '0 10px 25px -5px rgba(11, 94, 74, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03)',
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '1rem',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        }}>
+          {/* Search Box */}
+          <div style={{
+            position: 'relative',
+            flex: '1 1 320px',
+            minWidth: '260px'
+          }}>
+            <Search 
+              size={18} 
+              color="#94a3b8" 
+              style={{
+                position: 'absolute',
+                left: '14px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                pointerEvents: 'none'
+              }} 
+            />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search assessment by title, concept, or topic..."
-              className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-600 outline-none focus:border-emerald-600 dark:focus:border-emerald-500 transition-colors"
+              placeholder="Search assessment by title, topic, or keyword..."
+              style={{
+                width: '100%',
+                backgroundColor: 'rgba(244, 247, 246, 0.7)',
+                border: '1px solid var(--border-color, #dce5e1)',
+                borderRadius: '10px',
+                padding: '0.65rem 1rem 0.65rem 2.6rem',
+                fontSize: '0.88rem',
+                color: 'var(--text-color, #2c3e38)',
+                outline: 'none',
+                fontFamily: 'inherit',
+                transition: 'border-color 0.2s ease, box-shadow 0.2s ease'
+              }}
             />
           </div>
 
-          <div className="flex items-center gap-3 w-full md:w-auto">
+          {/* Filter Dropdowns */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.75rem',
+            flexWrap: 'wrap'
+          }}>
             <select
               value={selectedClass}
               onChange={(e) => setSelectedClass(e.target.value)}
               aria-label="Filter by academic class"
-              className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs text-slate-700 dark:text-slate-300 outline-none focus:border-emerald-600"
+              style={{
+                backgroundColor: 'rgba(244, 247, 246, 0.7)',
+                border: '1px solid var(--border-color, #dce5e1)',
+                borderRadius: '10px',
+                padding: '0.65rem 1rem',
+                fontSize: '0.82rem',
+                fontWeight: 600,
+                color: 'var(--text-color, #2c3e38)',
+                outline: 'none',
+                cursor: 'pointer',
+                fontFamily: 'inherit'
+              }}
             >
               <option value="ALL">All Classes (IX–XII)</option>
               <option value="9">Class IX (SSC I)</option>
@@ -137,7 +355,18 @@ export default function QuizzesCatalogPage() {
               value={selectedSubject}
               onChange={(e) => setSelectedSubject(e.target.value)}
               aria-label="Filter by subject"
-              className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs text-slate-700 dark:text-slate-300 outline-none focus:border-emerald-600"
+              style={{
+                backgroundColor: 'rgba(244, 247, 246, 0.7)',
+                border: '1px solid var(--border-color, #dce5e1)',
+                borderRadius: '10px',
+                padding: '0.65rem 1rem',
+                fontSize: '0.82rem',
+                fontWeight: 600,
+                color: 'var(--text-color, #2c3e38)',
+                outline: 'none',
+                cursor: 'pointer',
+                fontFamily: 'inherit'
+              }}
             >
               <option value="ALL">All Subjects</option>
               <option value="Physics">Physics</option>
@@ -149,79 +378,223 @@ export default function QuizzesCatalogPage() {
           </div>
         </div>
 
-        {/* Quizzes Grid */}
+        {/* Quizzes Grid or States */}
         {loading ? (
-          <div className="py-24 text-center text-slate-500 flex flex-col items-center gap-3">
-            <div className="w-10 h-10 rounded-full border-4 border-emerald-500/20 border-t-emerald-600 animate-spin" />
-            <span className="text-xs font-semibold">Loading verified examinations...</span>
+          <div style={{
+            padding: '5rem 1rem',
+            textAlign: 'center',
+            color: 'var(--text-light, #5a7a6f)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '1rem'
+          }}>
+            <div style={{
+              width: '44px',
+              height: '44px',
+              borderRadius: '50%',
+              border: '4px solid rgba(11, 94, 74, 0.15)',
+              borderTopColor: '#0b5e4a',
+              animation: 'spin 0.8s linear infinite'
+            }} />
+            <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Loading verified curriculum examinations...</span>
+            <style>{`
+              @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+              }
+            `}</style>
           </div>
         ) : filtered.length === 0 ? (
-          <div className="py-20 text-center bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col items-center gap-4 p-8 shadow-sm">
-            <div className="w-16 h-16 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 flex items-center justify-center">
-              <BookOpen className="w-8 h-8" />
+          <div style={{
+            padding: '4rem 2rem',
+            textAlign: 'center',
+            backgroundColor: 'var(--card-bg, #ffffff)',
+            borderRadius: '20px',
+            border: '1px solid var(--border-color, #dce5e1)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '1rem',
+            boxShadow: 'var(--shadow-sm)'
+          }}>
+            <div style={{
+              width: '64px',
+              height: '64px',
+              borderRadius: '16px',
+              backgroundColor: '#e6f0ed',
+              color: '#0b5e4a',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <BookOpen size={32} />
             </div>
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white">No assessments found matching filter</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md">
+            <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, color: 'var(--text-color, #2c3e38)' }}>
+              No assessments found matching filter
+            </h3>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-light, #5a7a6f)', maxWidth: '440px', margin: 0, lineHeight: 1.5 }}>
               Try adjusting your search keywords, or build a custom test using the unified AKU-EB Quiz Builder.
             </p>
-            <div className="flex gap-3">
+            <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.5rem' }}>
               <button
                 onClick={() => { setSearch(''); setSelectedClass('ALL'); setSelectedSubject('ALL'); }}
-                className="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                style={{
+                  padding: '0.6rem 1.25rem',
+                  borderRadius: '10px',
+                  fontSize: '0.82rem',
+                  fontWeight: 600,
+                  backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                  color: 'var(--text-color, #2c3e38)',
+                  border: '1px solid var(--border-color, #dce5e1)',
+                  cursor: 'pointer'
+                }}
               >
                 Reset Filters
               </button>
               <Link
                 href="/teacher/quizzes/builder"
-                className="px-5 py-2 rounded-xl text-xs font-bold bg-[#0b5e4a] hover:bg-[#084737] text-white shadow-md"
+                style={{
+                  padding: '0.6rem 1.25rem',
+                  borderRadius: '10px',
+                  fontSize: '0.82rem',
+                  fontWeight: 700,
+                  backgroundColor: '#0b5e4a',
+                  color: '#ffffff',
+                  textDecoration: 'none',
+                  boxShadow: '0 4px 6px rgba(11, 94, 74, 0.2)'
+                }}
               >
                 Create New Assessment
               </Link>
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(330px, 1fr))',
+            gap: '1.25rem'
+          }}>
             {filtered.map((q) => (
               <div
                 key={q.id}
-                className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-600/50 hover:shadow-xl hover:shadow-emerald-950/5 transition-all flex flex-col justify-between gap-5 shadow-sm group"
+                style={{
+                  padding: '1.5rem',
+                  borderRadius: '16px',
+                  backgroundColor: 'var(--card-bg, #ffffff)',
+                  border: '1px solid var(--border-color, #dce5e1)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '1.25rem',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease'
+                }}
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 uppercase tracking-wider">
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
+                    <span style={{
+                      padding: '0.2rem 0.65rem',
+                      borderRadius: '9999px',
+                      fontSize: '0.68rem',
+                      fontWeight: 800,
+                      backgroundColor: '#e6f0ed',
+                      color: '#0b5e4a',
+                      border: '1px solid rgba(11, 94, 74, 0.2)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em'
+                    }}>
                       {q.boardId || 'AKU-EB'}
                     </span>
-                    <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1 font-mono font-semibold">
-                      <Clock className="w-3.5 h-3.5 text-amber-500" />
+                    <span style={{
+                      fontSize: '0.78rem',
+                      color: 'var(--text-light, #5a7a6f)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.35rem',
+                      fontFamily: 'monospace',
+                      fontWeight: 700
+                    }}>
+                      <Clock size={14} color="#d97706" />
                       <span>{q.durationMin} mins</span>
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white mt-3 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
+                  <h3 style={{
+                    fontSize: '1.05rem',
+                    fontWeight: 800,
+                    color: 'var(--text-color, #2c3e38)',
+                    marginTop: '0.85rem',
+                    marginBottom: '0.5rem',
+                    lineHeight: 1.35
+                  }}>
                     {q.title}
                   </h3>
                   
                   {q.description && (
-                    <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 mt-2 leading-relaxed">
+                    <p style={{
+                      fontSize: '0.82rem',
+                      color: 'var(--text-light, #5a7a6f)',
+                      lineHeight: 1.5,
+                      margin: '0 0 1rem 0',
+                      display: '-webkit-box',
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden'
+                    }}>
                       {q.description}
                     </p>
                   )}
 
-                  <div className="flex items-center gap-3 mt-4 text-xs text-slate-500 dark:text-slate-400 pt-3 border-t border-slate-100 dark:border-slate-800">
-                    <span className="font-semibold">{q.questionCount} Questions</span>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    marginTop: '0.75rem',
+                    fontSize: '0.78rem',
+                    color: 'var(--text-light, #5a7a6f)',
+                    paddingTop: '0.75rem',
+                    borderTop: '1px solid var(--border-color, #dce5e1)'
+                  }}>
+                    <span style={{ fontWeight: 700, color: '#0b5e4a' }}>{q.questionCount} Questions</span>
                     <span>•</span>
-                    <span className="font-semibold">{q.totalMarks} Marks</span>
+                    <span style={{ fontWeight: 700 }}>{q.totalMarks} Marks</span>
                     <span>•</span>
-                    <span className="truncate">{q.teacherName || 'RiseLearner Team'}</span>
+                    <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      {q.teacherName || 'RiseLearner Team'}
+                    </span>
                   </div>
                 </div>
 
                 <Link
                   href={`/quizzes/${q.id}/take`}
-                  className="w-full py-3 rounded-xl font-bold text-xs bg-[#0b5e4a] hover:bg-[#084737] text-white shadow-md shadow-emerald-900/15 flex items-center justify-center gap-2 transition-all group-hover:bg-[#084737]"
+                  style={{
+                    width: '100%',
+                    padding: '0.8rem 1rem',
+                    borderRadius: '12px',
+                    fontWeight: 700,
+                    fontSize: '0.85rem',
+                    backgroundColor: '#0b5e4a',
+                    color: '#ffffff',
+                    border: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.5rem',
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 10px rgba(11, 94, 74, 0.25)',
+                    transition: 'background-color 0.2s ease, transform 0.15s ease'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.backgroundColor = '#084737';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.backgroundColor = '#0b5e4a';
+                  }}
                 >
                   <span>Start Timed Assessment</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={15} />
                 </Link>
               </div>
             ))}

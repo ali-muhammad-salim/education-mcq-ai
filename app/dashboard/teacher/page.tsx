@@ -98,9 +98,32 @@ export default function TeacherDashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1d] flex flex-col items-center justify-center text-slate-500 gap-3">
-        <div className="w-10 h-10 rounded-full border-4 border-emerald-500/20 border-t-emerald-600 animate-spin" />
-        <span className="text-xs font-semibold">Loading Teacher Assessment Portal...</span>
+      <div style={{
+        minHeight: '100vh',
+        backgroundColor: 'var(--bg-color, #f4f7f6)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1rem',
+        color: 'var(--text-light, #5a7a6f)',
+        fontFamily: "'Inter', sans-serif"
+      }}>
+        <div style={{
+          width: '44px',
+          height: '44px',
+          borderRadius: '50%',
+          border: '4px solid rgba(11, 94, 74, 0.15)',
+          borderTopColor: '#0b5e4a',
+          animation: 'spin 0.8s linear infinite'
+        }} />
+        <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Loading Teacher Assessment Portal...</span>
+        <style>{`
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+        `}</style>
       </div>
     );
   }
@@ -114,97 +137,274 @@ export default function TeacherDashboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1d] text-slate-900 dark:text-slate-100 font-sans pb-20 transition-colors">
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: 'var(--bg-color, #f4f7f6)',
+      color: 'var(--text-color, #2c3e38)',
+      fontFamily: "'Inter', sans-serif",
+      paddingBottom: '5rem',
+      transition: 'background-color 0.2s ease, color 0.2s ease'
+    }}>
       
       {/* Top Banner */}
-      <header className="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-sm">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0b5e4a] to-emerald-600 text-white flex items-center justify-center font-bold text-sm shadow-md shadow-emerald-950/20">
+      <header style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 40,
+        backgroundColor: 'var(--card-bg, #ffffff)',
+        borderBottom: '1px solid var(--border-color, #dce5e1)',
+        padding: '0.85rem 1.5rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.03)'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+          <div style={{
+            width: '40px',
+            height: '40px',
+            borderRadius: '12px',
+            background: 'linear-gradient(135deg, #0b5e4a 0%, #10b981 100%)',
+            color: '#ffffff',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontWeight: 800,
+            fontSize: '1rem',
+            boxShadow: '0 4px 6px rgba(11, 94, 74, 0.2)'
+          }}>
             T
           </div>
           <div>
-            <h1 className="text-base font-bold text-slate-900 dark:text-white leading-tight">
+            <h1 style={{
+              fontSize: '1rem',
+              fontWeight: 800,
+              color: 'var(--text-color, #2c3e38)',
+              margin: 0,
+              lineHeight: 1.2
+            }}>
               {data?.teacher?.name || 'Educator Portal'}
             </h1>
-            <span className="text-xs text-slate-500 dark:text-slate-400">AKU-EB Assessment Management Hub</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)' }}>
+              AKU-EB Assessment Management Hub
+            </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <button
             onClick={() => setIsClassModalOpen(true)}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 transition-all shadow-sm"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              padding: '0.55rem 0.95rem',
+              borderRadius: '10px',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              backgroundColor: '#e6f0ed',
+              color: '#0b5e4a',
+              border: '1px solid rgba(11, 94, 74, 0.2)',
+              cursor: 'pointer'
+            }}
           >
-            <Users className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-            <span className="hidden sm:inline">New Classroom</span>
+            <Users size={15} color="#0b5e4a" />
+            <span>New Classroom</span>
           </button>
 
           <Link
             href="/teacher/quizzes/builder"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-[#0b5e4a] hover:bg-[#084737] text-white shadow-md shadow-emerald-950/15 transition-all"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              padding: '0.55rem 1.1rem',
+              borderRadius: '10px',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              backgroundColor: '#0b5e4a',
+              color: '#ffffff',
+              border: 'none',
+              textDecoration: 'none',
+              boxShadow: '0 2px 6px rgba(11, 94, 74, 0.25)'
+            }}
           >
-            <Plus className="w-4 h-4" />
+            <Plus size={15} />
             <span>Create Assessment</span>
           </Link>
         </div>
       </header>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 pt-8 flex flex-col gap-8">
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '2rem 1.5rem 0 1.5rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2rem'
+      }}>
         
         {/* Guest Educator Preview Banner */}
         {(!data?.teacher || data?.isGuest) && (
-          <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-900/20 via-teal-900/10 to-transparent border border-emerald-600/30 dark:border-emerald-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-700 dark:text-emerald-400 flex items-center justify-center border border-emerald-600/30 flex-shrink-0">
-                <Sparkles className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            background: 'linear-gradient(135deg, rgba(11, 94, 74, 0.08) 0%, rgba(201, 160, 80, 0.08) 100%)',
+            border: '1px solid rgba(11, 94, 74, 0.2)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1rem',
+            boxShadow: 'var(--shadow-sm)'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+              <div style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '12px',
+                backgroundColor: '#e6f0ed',
+                color: '#0b5e4a',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0
+              }}>
+                <Sparkles size={20} />
               </div>
               <div>
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white">Guest Educator Preview Mode</h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 800, margin: '0 0 0.2rem 0', color: 'var(--text-color, #2c3e38)' }}>
+                  Guest Educator Preview Mode
+                </h3>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)', margin: 0 }}>
                   Sign in or create a teacher account to build timed assessments, manage student cohorts, and track anti-cheat telemetry.
                 </p>
               </div>
             </div>
             <button
               onClick={() => setAuthModalOpen(true)}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-[#0b5e4a] hover:bg-[#084737] text-white shadow-md shadow-emerald-950/20 transition-all flex-shrink-0"
+              style={{
+                padding: '0.6rem 1.2rem',
+                borderRadius: '10px',
+                fontSize: '0.82rem',
+                fontWeight: 700,
+                backgroundColor: '#0b5e4a',
+                color: '#ffffff',
+                border: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                cursor: 'pointer',
+                boxShadow: '0 4px 6px rgba(11, 94, 74, 0.2)'
+              }}
             >
-              <LogIn className="w-3.5 h-3.5" />
+              <LogIn size={15} />
               <span>Sign In / Register</span>
             </button>
           </div>
         )}
 
         {/* Metric Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1">
-            <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Assessments</span>
-            <strong className="text-2xl font-black text-slate-900 dark:text-white">{metrics.totalQuizzes}</strong>
-            <span className="text-[11px] text-emerald-700 dark:text-emerald-400 mt-1 font-medium">Ready for testing</span>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gap: '1rem'
+        }}>
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            backgroundColor: 'var(--card-bg, #ffffff)',
+            border: '1px solid var(--border-color, #dce5e1)',
+            boxShadow: 'var(--shadow-sm)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.25rem'
+          }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
+              Assessments
+            </span>
+            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: 'var(--text-color, #2c3e38)' }}>
+              {metrics.totalQuizzes}
+            </strong>
+            <span style={{ fontSize: '0.75rem', color: '#0b5e4a', fontWeight: 600 }}>
+              Ready for testing
+            </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1">
-            <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Submissions</span>
-            <strong className="text-2xl font-black text-slate-900 dark:text-white">{metrics.totalSubmissions}</strong>
-            <span className="text-[11px] text-emerald-600 dark:text-emerald-400 mt-1 font-medium">Student attempts</span>
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            backgroundColor: 'var(--card-bg, #ffffff)',
+            border: '1px solid var(--border-color, #dce5e1)',
+            boxShadow: 'var(--shadow-sm)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.25rem'
+          }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
+              Submissions
+            </span>
+            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: 'var(--text-color, #2c3e38)' }}>
+              {metrics.totalSubmissions}
+            </strong>
+            <span style={{ fontSize: '0.75rem', color: '#0b5e4a', fontWeight: 600 }}>
+              Student attempts
+            </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1">
-            <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Pending Grading</span>
-            <strong className="text-2xl font-black text-amber-600 dark:text-amber-400">{metrics.pendingGrading}</strong>
-            <span className="text-[11px] text-amber-700 dark:text-amber-300/80 mt-1 font-medium">Written evaluations</span>
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            backgroundColor: 'var(--card-bg, #ffffff)',
+            border: '1px solid var(--border-color, #dce5e1)',
+            boxShadow: 'var(--shadow-sm)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.25rem'
+          }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
+              Pending Grading
+            </span>
+            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#d97706' }}>
+              {metrics.pendingGrading}
+            </strong>
+            <span style={{ fontSize: '0.75rem', color: '#b45309', fontWeight: 600 }}>
+              Written evaluations
+            </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-1">
-            <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Integrity Alerts</span>
-            <strong className="text-2xl font-black text-rose-600 dark:text-rose-400">{metrics.flaggedEvents}</strong>
-            <span className="text-[11px] text-rose-700 dark:text-rose-300/80 mt-1 font-medium">Tab-switch flags</span>
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            backgroundColor: 'var(--card-bg, #ffffff)',
+            border: '1px solid var(--border-color, #dce5e1)',
+            boxShadow: 'var(--shadow-sm)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.25rem'
+          }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
+              Integrity Alerts
+            </span>
+            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#dc2626' }}>
+              {metrics.flaggedEvents}
+            </strong>
+            <span style={{ fontSize: '0.75rem', color: '#b91c1c', fontWeight: 600 }}>
+              Tab-switch flags
+            </span>
           </div>
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          borderBottom: '2px solid var(--border-color, #dce5e1)',
+          paddingBottom: '0.5rem',
+          overflowX: 'auto'
+        }}>
           {[
             { id: 'quizzes', label: 'My Assessments', count: (data?.quizzes || []).length },
             { id: 'submissions', label: 'Submissions & Grades', count: (data?.recentSubmissions || []).length },
@@ -214,16 +414,30 @@ export default function TeacherDashboardPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${
-                activeTab === tab.id
-                  ? 'bg-[#0b5e4a] text-white shadow-md shadow-emerald-950/20'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
-              }`}
+              style={{
+                padding: '0.65rem 1.25rem',
+                borderRadius: '12px',
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                backgroundColor: activeTab === tab.id ? '#0b5e4a' : 'transparent',
+                color: activeTab === tab.id ? '#ffffff' : 'var(--text-light, #5a7a6f)',
+                boxShadow: activeTab === tab.id ? '0 4px 6px rgba(11, 94, 74, 0.2)' : 'none'
+              }}
             >
               <span>{tab.label}</span>
-              <span className={`px-2 py-0.5 rounded-full text-[10px] ${
-                activeTab === tab.id ? 'bg-emerald-800 text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
-              }`}>
+              <span style={{
+                padding: '0.15rem 0.5rem',
+                borderRadius: '9999px',
+                fontSize: '0.72rem',
+                backgroundColor: activeTab === tab.id ? '#084737' : 'rgba(220, 229, 225, 0.6)',
+                color: activeTab === tab.id ? '#ffffff' : 'var(--text-color, #2c3e38)'
+              }}>
                 {tab.count}
               </span>
             </button>
@@ -232,74 +446,167 @@ export default function TeacherDashboardPage() {
 
         {/* TAB 1: ASSESSMENTS LIST */}
         {activeTab === 'quizzes' && (
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs text-slate-500 dark:text-slate-400">Total {data?.quizzes?.length || 0} assessments created</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)' }}>
+                Total {data?.quizzes?.length || 0} assessments created
+              </span>
               <Link
                 href="/teacher/quizzes/builder"
-                className="text-xs font-bold text-emerald-700 dark:text-emerald-400 hover:underline flex items-center gap-1"
+                style={{
+                  fontSize: '0.82rem',
+                  fontWeight: 700,
+                  color: '#0b5e4a',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.35rem'
+                }}
               >
-                <Plus className="w-3.5 h-3.5" />
+                <Plus size={15} />
                 <span>Create with AI or Question Bank</span>
               </Link>
             </div>
 
             {(data?.quizzes || []).length === 0 ? (
-              <div className="py-16 text-center bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col items-center gap-4 p-8 shadow-sm">
-                <BookOpen className="w-12 h-12 text-slate-400" />
-                <h3 className="text-base font-bold text-slate-900 dark:text-white">No assessments created yet</h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 max-w-sm">
+              <div style={{
+                padding: '4rem 2rem',
+                textAlign: 'center',
+                backgroundColor: 'var(--card-bg, #ffffff)',
+                borderRadius: '20px',
+                border: '1px solid var(--border-color, #dce5e1)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1rem',
+                boxShadow: 'var(--shadow-sm)'
+              }}>
+                <BookOpen size={48} color="#94a3b8" />
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, margin: 0, color: 'var(--text-color, #2c3e38)' }}>
+                  No assessments created yet
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-light, #5a7a6f)', maxWidth: '420px', margin: 0, lineHeight: 1.5 }}>
                   Create your first assessment using our Google Forms-style builder, pull questions from the official AKU-EB Question Bank, or generate with Gemini AI.
                 </p>
                 <Link
                   href="/teacher/quizzes/builder"
-                  className="px-5 py-2.5 rounded-xl text-xs font-bold bg-[#0b5e4a] hover:bg-[#084737] text-white shadow-md"
+                  style={{
+                    padding: '0.65rem 1.25rem',
+                    borderRadius: '10px',
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    backgroundColor: '#0b5e4a',
+                    color: '#ffffff',
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 6px rgba(11, 94, 74, 0.2)'
+                  }}
                 >
                   Open Assessment Builder
                 </Link>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(330px, 1fr))',
+                gap: '1.25rem'
+              }}>
                 {data.quizzes.map((q: any) => (
                   <div
                     key={q.id}
-                    className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-600/50 hover:shadow-lg transition-all flex flex-col justify-between gap-4 shadow-sm"
+                    style={{
+                      padding: '1.5rem',
+                      borderRadius: '16px',
+                      backgroundColor: 'var(--card-bg, #ffffff)',
+                      border: '1px solid var(--border-color, #dce5e1)',
+                      boxShadow: 'var(--shadow-sm)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      gap: '1.25rem'
+                    }}
                   >
                     <div>
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="flex items-center gap-2">
-                          <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
-                            q.status === 'PUBLISHED' 
-                              ? 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-500/30' 
-                              : 'bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-500/30'
-                          }`}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          <span style={{
+                            padding: '0.2rem 0.65rem',
+                            borderRadius: '9999px',
+                            fontSize: '0.68rem',
+                            fontWeight: 800,
+                            textTransform: 'uppercase',
+                            backgroundColor: q.status === 'PUBLISHED' ? '#e6f0ed' : '#fef3c7',
+                            color: q.status === 'PUBLISHED' ? '#0b5e4a' : '#b45309',
+                            border: q.status === 'PUBLISHED' ? '1px solid rgba(11, 94, 74, 0.2)' : '1px solid rgba(245, 158, 11, 0.3)'
+                          }}>
                             {q.status}
                           </span>
-                          <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+                          <span style={{
+                            padding: '0.2rem 0.5rem',
+                            borderRadius: '6px',
+                            fontSize: '0.68rem',
+                            fontFamily: 'monospace',
+                            fontWeight: 700,
+                            backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                            color: '#0b5e4a',
+                            border: '1px solid var(--border-color, #dce5e1)'
+                          }}>
                             Code: {q.code || q.id}
                           </span>
                         </div>
-                        <span className="text-[11px] text-slate-500 dark:text-slate-400">{q.visibility}</span>
+                        <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)' }}>{q.visibility}</span>
                       </div>
 
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white mt-2 line-clamp-1">{q.title}</h3>
+                      <h3 style={{
+                        fontSize: '1.05rem',
+                        fontWeight: 800,
+                        color: 'var(--text-color, #2c3e38)',
+                        marginTop: '0.85rem',
+                        marginBottom: '0.4rem',
+                        lineHeight: 1.35
+                      }}>
+                        {q.title}
+                      </h3>
                       {q.description && (
-                        <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 mt-1 leading-relaxed">{q.description}</p>
+                        <p style={{
+                          fontSize: '0.82rem',
+                          color: 'var(--text-light, #5a7a6f)',
+                          lineHeight: 1.5,
+                          margin: '0 0 1rem 0',
+                          display: '-webkit-box',
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden'
+                        }}>
+                          {q.description}
+                        </p>
                       )}
 
-                      <div className="flex items-center gap-3 mt-3 text-xs text-slate-500 dark:text-slate-400">
-                        <span>{q.questionCount} Questions</span>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        marginTop: '0.75rem',
+                        fontSize: '0.78rem',
+                        color: 'var(--text-light, #5a7a6f)'
+                      }}>
+                        <span style={{ fontWeight: 700, color: '#0b5e4a' }}>{q.questionCount} Questions</span>
                         <span>•</span>
-                        <span>{q.totalMarks} Marks</span>
+                        <span style={{ fontWeight: 700 }}>{q.totalMarks} Marks</span>
                         <span>•</span>
                         <span>{q.durationMin} Min</span>
                         <span>•</span>
-                        <span className="text-emerald-700 dark:text-emerald-400 font-semibold">{q.attemptCount} Attempts</span>
+                        <span style={{ color: '#0b5e4a', fontWeight: 700 }}>{q.attemptCount} Attempts</span>
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800">
-                      <div className="flex items-center gap-2">
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      paddingTop: '0.75rem',
+                      borderTop: '1px solid var(--border-color, #dce5e1)'
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                         <button
                           onClick={() => {
                             const code = q.code || q.id;
@@ -308,35 +615,73 @@ export default function TeacherDashboardPage() {
                             copyCode(code);
                             alert(`Copied Student Link:\n${url}\n\nStudents can also type Quiz Code: "${code}" into the top menu bar.`);
                           }}
-                          className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/60 flex items-center gap-1.5 transition-colors"
-                          title="Copy student link and quiz code"
+                          style={{
+                            padding: '0.45rem 0.85rem',
+                            borderRadius: '8px',
+                            fontSize: '0.78rem',
+                            fontWeight: 700,
+                            backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                            color: '#0b5e4a',
+                            border: '1px solid var(--border-color, #dce5e1)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.35rem',
+                            cursor: 'pointer'
+                          }}
                         >
-                          <Copy className="w-3.5 h-3.5" />
+                          <Copy size={13} />
                           <span>{copiedCode === (q.code || q.id) ? 'Copied Link!' : 'Share Code'}</span>
                         </button>
                         <Link
                           href={`/teacher/quizzes/builder?id=${q.id}`}
-                          className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 flex items-center gap-1 transition-colors"
+                          style={{
+                            padding: '0.45rem 0.85rem',
+                            borderRadius: '8px',
+                            fontSize: '0.78rem',
+                            fontWeight: 700,
+                            backgroundColor: '#e6f0ed',
+                            color: '#0b5e4a',
+                            textDecoration: 'none',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.35rem'
+                          }}
                         >
-                          <Edit3 className="w-3.5 h-3.5" />
+                          <Edit3 size={13} />
                           <span>Edit</span>
                         </Link>
                         <Link
                           href={`/quizzes/${q.id}/take`}
-                          className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-1 transition-colors"
-                          title="Preview student experience"
+                          style={{
+                            padding: '0.45rem 0.85rem',
+                            borderRadius: '8px',
+                            fontSize: '0.78rem',
+                            fontWeight: 600,
+                            backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                            color: 'var(--text-color, #2c3e38)',
+                            textDecoration: 'none',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.35rem'
+                          }}
                         >
-                          <Eye className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+                          <Eye size={13} color="#0284c7" />
                           <span>Preview</span>
                         </Link>
                       </div>
 
                       <button
                         onClick={() => handleDeleteQuiz(q.id)}
-                        className="p-1.5 text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 rounded transition-colors"
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          color: '#ef4444',
+                          cursor: 'pointer',
+                          padding: '0.35rem'
+                        }}
                         title="Delete assessment"
                       >
-                        <Trash2 className="w-4 h-4" />
+                        <Trash2 size={16} />
                       </button>
                     </div>
 
@@ -349,69 +694,114 @@ export default function TeacherDashboardPage() {
 
         {/* TAB 2: SUBMISSIONS & GRADES */}
         {activeTab === 'submissions' && (
-          <div className="flex flex-col gap-4">
-            <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <h3 style={{
+              fontSize: '0.8rem',
+              fontWeight: 800,
+              color: 'var(--text-light, #5a7a6f)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              margin: 0
+            }}>
               Recent Student Submissions ({data?.recentSubmissions?.length || 0})
             </h3>
 
             {(data?.recentSubmissions || []).length === 0 ? (
-              <div className="py-12 text-center text-xs text-slate-500 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+              <div style={{
+                padding: '3.5rem 1.5rem',
+                textAlign: 'center',
+                fontSize: '0.88rem',
+                color: 'var(--text-light, #5a7a6f)',
+                backgroundColor: 'var(--card-bg, #ffffff)',
+                borderRadius: '16px',
+                border: '1px solid var(--border-color, #dce5e1)'
+              }}>
                 No student submissions recorded yet. Share assessments with your students to collect results.
               </div>
             ) : (
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
-                <table className="w-full text-left text-xs">
-                  <thead className="bg-slate-100 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 uppercase tracking-wider text-[10px]">
+              <div style={{
+                backgroundColor: 'var(--card-bg, #ffffff)',
+                borderRadius: '16px',
+                border: '1px solid var(--border-color, #dce5e1)',
+                overflow: 'hidden',
+                boxShadow: 'var(--shadow-sm)'
+              }}>
+                <table style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse', fontSize: '0.82rem' }}>
+                  <thead style={{
+                    backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                    color: 'var(--text-light, #5a7a6f)',
+                    textTransform: 'uppercase',
+                    fontSize: '0.72rem',
+                    letterSpacing: '0.05em'
+                  }}>
                     <tr>
-                      <th className="p-3.5">Student</th>
-                      <th className="p-3.5">Assessment</th>
-                      <th className="p-3.5">Score</th>
-                      <th className="p-3.5">Status</th>
-                      <th className="p-3.5">Tab Switches</th>
-                      <th className="p-3.5 text-right">Action</th>
+                      <th style={{ padding: '0.9rem 1rem' }}>Student</th>
+                      <th style={{ padding: '0.9rem 1rem' }}>Assessment</th>
+                      <th style={{ padding: '0.9rem 1rem' }}>Score</th>
+                      <th style={{ padding: '0.9rem 1rem' }}>Status</th>
+                      <th style={{ padding: '0.9rem 1rem' }}>Tab Switches</th>
+                      <th style={{ padding: '0.9rem 1rem', textAlign: 'right' }}>Action</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
+                  <tbody>
                     {data.recentSubmissions.map((s: any) => (
-                      <tr key={s.attemptId} className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-                        <td className="p-3.5">
-                          <strong className="text-slate-900 dark:text-white block">{s.studentName}</strong>
-                          <span className="text-[10px] text-slate-500">{s.studentEmail}</span>
+                      <tr key={s.attemptId} style={{ borderTop: '1px solid var(--border-color, #dce5e1)' }}>
+                        <td style={{ padding: '0.9rem 1rem' }}>
+                          <strong style={{ color: 'var(--text-color, #2c3e38)', display: 'block' }}>{s.studentName}</strong>
+                          <span style={{ fontSize: '0.72rem', color: 'var(--text-light, #5a7a6f)' }}>{s.studentEmail}</span>
                         </td>
-                        <td className="p-3.5 text-slate-700 dark:text-slate-300 font-medium">
+                        <td style={{ padding: '0.9rem 1rem', fontWeight: 600, color: 'var(--text-color, #2c3e38)' }}>
                           {s.quizTitle}
                         </td>
-                        <td className="p-3.5">
-                          <span className="font-bold text-slate-900 dark:text-white">{s.score}</span> / {s.maxMarks}
-                          <span className={`ml-2 text-[10px] font-bold px-1.5 py-0.5 rounded ${
-                            s.percentage >= 50 
-                              ? 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-400' 
-                              : 'bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-400'
-                          }`}>
+                        <td style={{ padding: '0.9rem 1rem' }}>
+                          <span style={{ fontWeight: 800, color: 'var(--text-color, #2c3e38)' }}>{s.score}</span> / {s.maxMarks}
+                          <span style={{
+                            marginLeft: '0.5rem',
+                            fontSize: '0.72rem',
+                            fontWeight: 800,
+                            padding: '0.15rem 0.45rem',
+                            borderRadius: '4px',
+                            backgroundColor: s.percentage >= 50 ? '#e6f0ed' : '#fee2e2',
+                            color: s.percentage >= 50 ? '#0b5e4a' : '#b91c1c'
+                          }}>
                             {s.percentage}%
                           </span>
                         </td>
-                        <td className="p-3.5">
-                          <span className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
-                            s.status === 'GRADING_PENDING' 
-                              ? 'bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-500/30' 
-                              : 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/30'
-                          }`}>
+                        <td style={{ padding: '0.9rem 1rem' }}>
+                          <span style={{
+                            fontSize: '0.72rem',
+                            fontWeight: 700,
+                            padding: '0.2rem 0.6rem',
+                            borderRadius: '9999px',
+                            backgroundColor: s.status === 'GRADING_PENDING' ? '#fef3c7' : '#e6f0ed',
+                            color: s.status === 'GRADING_PENDING' ? '#b45309' : '#0b5e4a'
+                          }}>
                             {s.status.replace('_', ' ')}
                           </span>
                         </td>
-                        <td className="p-3.5">
-                          <span className={s.tabSwitchCount > 2 ? 'text-rose-600 dark:text-rose-400 font-bold' : 'text-slate-500 dark:text-slate-400'}>
+                        <td style={{ padding: '0.9rem 1rem' }}>
+                          <span style={{ color: s.tabSwitchCount > 2 ? '#dc2626' : 'var(--text-light, #5a7a6f)', fontWeight: s.tabSwitchCount > 2 ? 800 : 500 }}>
                             {s.tabSwitchCount} {s.tabSwitchCount > 2 ? '⚠️' : ''}
                           </span>
                         </td>
-                        <td className="p-3.5 text-right">
+                        <td style={{ padding: '0.9rem 1rem', textAlign: 'right' }}>
                           <Link
                             href={`/quizzes/${s.quizId}/results?attemptId=${s.attemptId}`}
-                            className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#0b5e4a] hover:bg-[#084737] text-white inline-flex items-center gap-1 shadow-sm"
+                            style={{
+                              padding: '0.45rem 0.85rem',
+                              borderRadius: '8px',
+                              fontSize: '0.78rem',
+                              fontWeight: 700,
+                              backgroundColor: '#0b5e4a',
+                              color: '#ffffff',
+                              textDecoration: 'none',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.35rem'
+                            }}
                           >
                             <span>Inspect & Grade</span>
-                            <ArrowUpRight className="w-3.5 h-3.5" />
+                            <ArrowUpRight size={13} />
                           </Link>
                         </td>
                       </tr>
@@ -425,50 +815,122 @@ export default function TeacherDashboardPage() {
 
         {/* TAB 3: CLASSROOMS */}
         {activeTab === 'classrooms' && (
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs text-slate-500 dark:text-slate-400">Classrooms & Student Groups</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)' }}>Classrooms & Student Groups</span>
               <button
                 onClick={() => setIsClassModalOpen(true)}
-                className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-[#0b5e4a] hover:bg-[#084737] text-white flex items-center gap-1 shadow-sm"
+                style={{
+                  padding: '0.45rem 0.95rem',
+                  borderRadius: '10px',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  backgroundColor: '#0b5e4a',
+                  color: '#ffffff',
+                  border: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                  cursor: 'pointer'
+                }}
               >
-                <Plus className="w-3.5 h-3.5" />
+                <Plus size={14} />
                 <span>Create Classroom</span>
               </button>
             </div>
 
             {(data?.classrooms || []).length === 0 ? (
-              <div className="py-12 text-center text-xs text-slate-500 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+              <div style={{
+                padding: '3.5rem 1.5rem',
+                textAlign: 'center',
+                fontSize: '0.88rem',
+                color: 'var(--text-light, #5a7a6f)',
+                backgroundColor: 'var(--card-bg, #ffffff)',
+                borderRadius: '16px',
+                border: '1px solid var(--border-color, #dce5e1)'
+              }}>
                 No classrooms created yet. Create a classroom to assign assessments to specific student cohorts.
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                gap: '1.25rem'
+              }}>
                 {data.classrooms.map((c: any) => (
-                  <div key={c.id} className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between gap-4 shadow-sm">
+                  <div
+                    key={c.id}
+                    style={{
+                      padding: '1.5rem',
+                      borderRadius: '16px',
+                      backgroundColor: 'var(--card-bg, #ffffff)',
+                      border: '1px solid var(--border-color, #dce5e1)',
+                      boxShadow: 'var(--shadow-sm)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      gap: '1.25rem'
+                    }}
+                  >
                     <div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">Class {c.gradeLevel}</span>
-                        <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 font-semibold">{c.academicYear}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-light, #5a7a6f)' }}>
+                          Class {c.gradeLevel}
+                        </span>
+                        <span style={{
+                          fontSize: '0.68rem',
+                          padding: '0.15rem 0.5rem',
+                          borderRadius: '4px',
+                          backgroundColor: '#e6f0ed',
+                          color: '#0b5e4a',
+                          fontWeight: 700
+                        }}>
+                          {c.academicYear}
+                        </span>
                       </div>
-                      <h4 className="text-base font-bold text-slate-900 dark:text-white mt-1">{c.name}</h4>
-                      <div className="flex items-center gap-3 mt-3 text-xs text-slate-500 dark:text-slate-400">
-                        <span>{c.studentCount} Students</span>
+                      <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-color, #2c3e38)', margin: '0.4rem 0' }}>
+                        {c.name}
+                      </h4>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.78rem', color: 'var(--text-light, #5a7a6f)' }}>
+                        <span style={{ fontWeight: 700, color: '#0b5e4a' }}>{c.studentCount} Students</span>
                         <span>•</span>
                         <span>{c.assignmentCount} Assignments</span>
                       </div>
                     </div>
 
-                    <div className="p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                    <div style={{
+                      padding: '0.85rem 1rem',
+                      backgroundColor: 'rgba(244, 247, 246, 0.7)',
+                      borderRadius: '12px',
+                      border: '1px solid var(--border-color, #dce5e1)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between'
+                    }}>
                       <div>
-                        <span className="text-[10px] text-slate-500 block uppercase tracking-wider">Join Code</span>
-                        <strong className="text-sm font-mono text-emerald-700 dark:text-emerald-400 tracking-wider">{c.code}</strong>
+                        <span style={{ fontSize: '0.68rem', color: 'var(--text-light, #5a7a6f)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                          Join Code
+                        </span>
+                        <strong style={{ fontSize: '1.1rem', fontFamily: 'monospace', color: '#0b5e4a', letterSpacing: '0.08em' }}>
+                          {c.code}
+                        </strong>
                       </div>
                       <button
                         onClick={() => copyCode(c.code)}
-                        className="p-1.5 text-slate-500 hover:text-slate-900 dark:hover:text-white rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
+                        style={{
+                          padding: '0.45rem',
+                          borderRadius: '8px',
+                          border: 'none',
+                          backgroundColor: 'var(--card-bg, #ffffff)',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+                        }}
                         title="Copy student join code"
                       >
-                        {copiedCode === c.code ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+                        {copiedCode === c.code ? <Check size={16} color="#059669" /> : <Copy size={16} color="#5a7a6f" />}
                       </button>
                     </div>
                   </div>
@@ -480,37 +942,94 @@ export default function TeacherDashboardPage() {
 
         {/* TAB 4: INTEGRITY SENTINEL */}
         {activeTab === 'integrity' && (
-          <div className="flex flex-col gap-4">
-            <h3 className="text-xs font-bold text-rose-600 dark:text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
-              <ShieldAlert className="w-4 h-4" />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <h3 style={{
+              fontSize: '0.8rem',
+              fontWeight: 800,
+              color: '#dc2626',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              margin: 0
+            }}>
+              <ShieldAlert size={16} />
               <span>Flagged Anti-Cheating Incidents</span>
             </h3>
 
             {(data?.flaggedAttempts || []).length === 0 ? (
-              <div className="py-12 text-center text-xs text-slate-500 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+              <div style={{
+                padding: '3.5rem 1.5rem',
+                textAlign: 'center',
+                fontSize: '0.88rem',
+                color: 'var(--text-light, #5a7a6f)',
+                backgroundColor: 'var(--card-bg, #ffffff)',
+                borderRadius: '16px',
+                border: '1px solid var(--border-color, #dce5e1)'
+              }}>
                 No integrity threshold breaches logged. All student assessments completed within acceptable browser focus limits.
               </div>
             ) : (
-              <div className="flex flex-col gap-3">
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {data.flaggedAttempts.map((f: any) => (
-                  <div key={f.attemptId} className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-500/30 flex items-center justify-between gap-4 shadow-sm">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-500/20 text-rose-600 dark:text-rose-400 flex items-center justify-center font-bold text-xs border border-rose-300 dark:border-rose-500/30">
+                  <div
+                    key={f.attemptId}
+                    style={{
+                      padding: '1rem 1.25rem',
+                      borderRadius: '14px',
+                      backgroundColor: 'var(--card-bg, #ffffff)',
+                      border: '1.5px solid rgba(239, 68, 68, 0.35)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: '1rem',
+                      boxShadow: 'var(--shadow-sm)'
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+                      <div style={{
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '10px',
+                        backgroundColor: '#fee2e2',
+                        color: '#b91c1c',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontWeight: 900,
+                        fontSize: '0.9rem'
+                      }}>
                         !
                       </div>
                       <div>
-                        <strong className="text-xs text-slate-900 dark:text-white block">{f.studentName}</strong>
-                        <span className="text-[11px] text-slate-500 dark:text-slate-400">{f.quizTitle}</span>
+                        <strong style={{ fontSize: '0.88rem', color: 'var(--text-color, #2c3e38)', display: 'block' }}>
+                          {f.studentName}
+                        </strong>
+                        <span style={{ fontSize: '0.78rem', color: 'var(--text-light, #5a7a6f)' }}>
+                          {f.quizTitle}
+                        </span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4">
-                      <div className="text-right">
-                        <span className="text-[10px] text-slate-500 block">Tab Switches</span>
-                        <strong className="text-xs text-rose-600 dark:text-rose-400 font-bold">{f.tabSwitchCount} switches</strong>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                      <div style={{ textAlign: 'right' }}>
+                        <span style={{ fontSize: '0.68rem', color: 'var(--text-light, #5a7a6f)', display: 'block' }}>Tab Switches</span>
+                        <strong style={{ fontSize: '0.88rem', color: '#dc2626', fontWeight: 800 }}>
+                          {f.tabSwitchCount} switches
+                        </strong>
                       </div>
                       <Link
                         href={`/quizzes/${f.attemptId}/results?attemptId=${f.attemptId}`}
-                        className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200"
+                        style={{
+                          padding: '0.45rem 0.85rem',
+                          borderRadius: '8px',
+                          fontSize: '0.78rem',
+                          fontWeight: 700,
+                          backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                          color: 'var(--text-color, #2c3e38)',
+                          border: '1px solid var(--border-color, #dce5e1)',
+                          textDecoration: 'none'
+                        }}
                       >
                         Audit
                       </Link>
@@ -525,31 +1044,90 @@ export default function TeacherDashboardPage() {
 
       {/* CREATE CLASSROOM MODAL */}
       {isClassModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <form onSubmit={handleCreateClassroom} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-md w-full p-6 flex flex-col gap-4 shadow-2xl">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <Users className="w-5 h-5 text-emerald-600" />
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 50,
+          backgroundColor: 'rgba(15, 23, 42, 0.75)',
+          backdropFilter: 'blur(6px)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '1rem'
+        }}>
+          <form
+            onSubmit={handleCreateClassroom}
+            style={{
+              backgroundColor: 'var(--card-bg, #ffffff)',
+              border: '1px solid var(--border-color, #dce5e1)',
+              borderRadius: '20px',
+              maxWidth: '440px',
+              width: '100%',
+              padding: '1.75rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.35)'
+            }}
+          >
+            <h3 style={{
+              fontSize: '1.1rem',
+              fontWeight: 800,
+              color: 'var(--text-color, #2c3e38)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              margin: 0
+            }}>
+              <Users size={20} color="#0b5e4a" />
               <span>Create New Classroom</span>
             </h3>
 
             <div>
-              <label className="text-xs text-slate-600 dark:text-slate-400 block mb-1">Classroom Name</label>
+              <label style={{ fontSize: '0.78rem', color: 'var(--text-light, #5a7a6f)', display: 'block', marginBottom: '0.35rem', fontWeight: 600 }}>
+                Classroom Name
+              </label>
               <input
                 type="text"
                 required
                 value={className}
                 onChange={(e) => setClassName(e.target.value)}
                 placeholder="E.g., Class IX-A Physics (Morning)"
-                className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-2.5 text-xs text-slate-900 dark:text-white outline-none focus:border-emerald-600"
+                style={{
+                  width: '100%',
+                  backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                  border: '1px solid var(--border-color, #dce5e1)',
+                  borderRadius: '10px',
+                  padding: '0.65rem 0.85rem',
+                  fontSize: '0.85rem',
+                  color: 'var(--text-color, #2c3e38)',
+                  outline: 'none',
+                  boxSizing: 'border-box'
+                }}
               />
             </div>
 
             <div>
-              <label className="text-xs text-slate-600 dark:text-slate-400 block mb-1">Grade Level</label>
+              <label style={{ fontSize: '0.78rem', color: 'var(--text-light, #5a7a6f)', display: 'block', marginBottom: '0.35rem', fontWeight: 600 }}>
+                Grade Level
+              </label>
               <select
                 value={classGrade}
                 onChange={(e) => setClassGrade(Number(e.target.value))}
-                className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-2.5 text-xs text-slate-900 dark:text-white outline-none focus:border-emerald-600"
+                style={{
+                  width: '100%',
+                  backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                  border: '1px solid var(--border-color, #dce5e1)',
+                  borderRadius: '10px',
+                  padding: '0.65rem 0.85rem',
+                  fontSize: '0.85rem',
+                  color: 'var(--text-color, #2c3e38)',
+                  outline: 'none',
+                  boxSizing: 'border-box'
+                }}
               >
                 <option value={9}>Class IX (9th)</option>
                 <option value={10}>Class X (10th)</option>
@@ -559,28 +1137,60 @@ export default function TeacherDashboardPage() {
             </div>
 
             <div>
-              <label className="text-xs text-slate-600 dark:text-slate-400 block mb-1">Description (Optional)</label>
+              <label style={{ fontSize: '0.78rem', color: 'var(--text-light, #5a7a6f)', display: 'block', marginBottom: '0.35rem', fontWeight: 600 }}>
+                Description (Optional)
+              </label>
               <textarea
                 value={classDesc}
                 onChange={(e) => setClassDesc(e.target.value)}
                 rows={2}
                 placeholder="Notes for student cohort..."
-                className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-2.5 text-xs text-slate-900 dark:text-white outline-none focus:border-emerald-600"
+                style={{
+                  width: '100%',
+                  backgroundColor: 'rgba(244, 247, 246, 0.8)',
+                  border: '1px solid var(--border-color, #dce5e1)',
+                  borderRadius: '10px',
+                  padding: '0.65rem 0.85rem',
+                  fontSize: '0.85rem',
+                  color: 'var(--text-color, #2c3e38)',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                  fontFamily: 'inherit'
+                }}
               />
             </div>
 
-            <div className="flex justify-end gap-2 pt-2">
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', paddingTop: '0.5rem' }}>
               <button
                 type="button"
                 onClick={() => setIsClassModalOpen(false)}
-                className="px-4 py-2 text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                style={{
+                  padding: '0.6rem 1rem',
+                  fontSize: '0.82rem',
+                  fontWeight: 600,
+                  color: 'var(--text-light, #5a7a6f)',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={creatingClass}
-                className="px-4 py-2 text-xs font-bold bg-[#0b5e4a] hover:bg-[#084737] disabled:opacity-50 text-white rounded-lg shadow-sm"
+                style={{
+                  padding: '0.6rem 1.25rem',
+                  fontSize: '0.82rem',
+                  fontWeight: 700,
+                  backgroundColor: '#0b5e4a',
+                  color: '#ffffff',
+                  border: 'none',
+                  borderRadius: '10px',
+                  cursor: creatingClass ? 'not-allowed' : 'pointer',
+                  opacity: creatingClass ? 0.6 : 1,
+                  boxShadow: '0 2px 6px rgba(11, 94, 74, 0.25)'
+                }}
               >
                 {creatingClass ? 'Creating...' : 'Create Classroom'}
               </button>
