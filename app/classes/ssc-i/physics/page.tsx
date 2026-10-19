@@ -10,6 +10,7 @@ import {
   Maximize2, ZoomIn, Check, RotateCcw
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import MathText from '@/components/MathText';
 
 // Static Data Imports
 import ssc1ExactSyllabus from '../../../../data/physics/ssc1_exact_syllabus.json';
@@ -1205,15 +1206,15 @@ export default function SSC1PhysicsPage() {
                       </div>
 
                       {/* Question Stem (Dicto Same Typography) */}
-                      <p style={{
+                      <div style={{
                         fontSize: '1.1rem',
                         color: '#1e293b',
                         fontWeight: 500,
                         lineHeight: 1.6,
                         margin: '0 0 1rem 0'
                       }}>
-                        {q.stem}
-                      </p>
+                        <MathText text={q.stem} />
+                      </div>
 
                       {/* Embedded Vector Diagram Crop if this is a Diagram Question */}
                       {q.isDiagram && (
@@ -1274,13 +1275,15 @@ export default function SSC1PhysicsPage() {
                                 fontSize: '0.85rem',
                                 display: 'flex',
                                 alignItems: 'center',
+                                justifySelf: 'center',
                                 justifyContent: 'center',
-                                fontFamily: 'Inter, sans-serif'
+                                fontFamily: 'Inter, sans-serif',
+                                flexShrink: 0
                               }}>
                                 {optKey}
                               </span>
-                              <span style={{ fontSize: '1rem', color: '#1e293b', fontWeight: isSelected ? 700 : 400 }}>
-                                {optVal}
+                              <span style={{ fontSize: '1rem', color: '#1e293b', fontWeight: isSelected ? 700 : 400, flexGrow: 1 }}>
+                                <MathText text={String(optVal)} />
                               </span>
                             </div>
                           );
@@ -1346,7 +1349,7 @@ export default function SSC1PhysicsPage() {
                           <strong>AKU-EB Verified Key: Option {q.correctOption || 'A'}</strong>
                           {q.explanation && (
                             <div style={{ marginTop: '0.25rem', fontSize: '0.86rem', color: '#14532d' }}>
-                              {q.explanation}
+                              <MathText text={q.explanation} />
                             </div>
                           )}
                         </div>

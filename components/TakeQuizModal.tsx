@@ -78,15 +78,29 @@ function randomizeQuestionsAndOptions(rawQuestions: Question[]): ShuffledQuestio
   const shuffledRaw = shuffleArray(rawQuestions);
 
   return shuffledRaw.map((q, qIndex) => {
+    const anyQ = q as any;
     const meta = parseSourceRegion(q.sourceRegion);
-    const rawChoices: Record<string, string> = meta.choices || {
-      A: 'Option A',
-      B: 'Option B',
-      C: 'Option C',
-      D: 'Option D'
-    };
 
-    const origCorrect = (meta.correct_answer || 'A').toUpperCase().trim();
+    let rawChoices: Record<string, string> = meta.choices || meta.options || anyQ.options || anyQ.choices;
+    if (Array.isArray(rawChoices)) {
+      const mapped: Record<string, string> = {};
+      rawChoices.forEach((item, idx) => {
+        const key = item.id || String.fromCharCode(65 + idx);
+        mapped[key] = item.text || String(item);
+      });
+      rawChoices = mapped;
+    }
+
+    if (!rawChoices || Object.keys(rawChoices).length === 0) {
+      rawChoices = {
+        A: 'Option A',
+        B: 'Option B',
+        C: 'Option C',
+        D: 'Option D'
+      };
+    }
+
+    const origCorrect = (meta.correct_answer || meta.correctOption || anyQ.correctOption || anyQ.correctAnswer || anyQ.answer || 'A').toUpperCase().trim();
     const correctText = rawChoices[origCorrect] || rawChoices['A'] || '';
 
     // Permute choice text values
@@ -104,25 +118,26 @@ function randomizeQuestionsAndOptions(rawQuestions: Question[]): ShuffledQuestio
       }
     });
 
-    const origExpl = meta.explanation || 'Refer to official AKU-EB Syllabus Student Learning Outcomes for detailed conceptual background.';
+    const origExpl = meta.explanation || anyQ.explanation || 'Refer to official AKU-EB Syllabus Student Learning Outcomes for detailed conceptual background.';
     const updatedExpl = origExpl.replace(new RegExp(`Option\\s+${origCorrect}`, 'gi'), `Option ${randomizedCorrectKey}`);
 
     const topic = q.topics?.[0]?.topic;
     const slo = q.slos?.[0]?.slo;
+    const questionText = q.questionText || anyQ.stem || anyQ.text || anyQ.stemText || 'Question';
 
     return {
-      id: q.id,
+      id: q.id || `q-${qIndex + 1}`,
       displayNumber: qIndex + 1,
-      originalQuestionNumber: q.questionNumber,
-      questionText: q.questionText,
-      questionType: q.questionType,
-      marks: q.marks || 1,
-      difficulty: q.difficulty,
-      diagramUrl: meta.diagram_url,
+      originalQuestionNumber: q.questionNumber || (anyQ.questionNumber ? String(anyQ.questionNumber) : String(qIndex + 1)),
+      questionText,
+      questionType: q.questionType || anyQ.questionType || 'MCQ_SINGLE',
+      marks: q.marks || anyQ.marks || 1,
+      difficulty: q.difficulty || anyQ.cognitiveLevel || 'U',
+      diagramUrl: meta.diagram_url || anyQ.diagramUrl || (anyQ.isDiagram ? `/materials/scans/ssc1_p1_page_${anyQ.pageNumber}.png` : undefined),
       options: randomizedChoices,
       correctOption: randomizedCorrectKey,
       explanation: updatedExpl,
-      topicName: topic?.name || meta.slo_details?.topic_name || 'General Physics',
+      topicName: topic?.name || meta.slo_details?.topic_name || anyQ.unitName || 'General Physics',
       topicNumber: topic?.topicNumber,
       sloCode: slo?.code || meta.slo
     };

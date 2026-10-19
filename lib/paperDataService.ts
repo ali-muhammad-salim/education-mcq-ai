@@ -1,6 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 
+import ssc1ModelMcqs from '@/data/physics/ssc1_model_mcqs.json';
+import ssc1ModelCrqs from '@/data/physics/ssc1_model_crqs.json';
+import ssc2ModelMcqs from '@/data/physics/ssc2_model_mcqs.json';
+import ssc2ModelCrqs from '@/data/physics/ssc2_model_crqs.json';
+
 export interface QuestionData {
   id: string;
   questionNumber: string;
@@ -48,7 +53,17 @@ export interface PaperData {
   questions: QuestionData[];
 }
 
+const JSON_BUNDLES: Record<string, any[]> = {
+  'ssc1_model_mcqs.json': ssc1ModelMcqs as any[],
+  'ssc1_model_crqs.json': ssc1ModelCrqs as any[],
+  'ssc2_model_mcqs.json': ssc2ModelMcqs as any[],
+  'ssc2_model_crqs.json': ssc2ModelCrqs as any[]
+};
+
 function loadJsonFile(filename: string): any[] {
+  if (JSON_BUNDLES[filename]) {
+    return JSON_BUNDLES[filename];
+  }
   try {
     const fullPath = path.join(process.cwd(), 'data', 'physics', filename);
     if (fs.existsSync(fullPath)) {

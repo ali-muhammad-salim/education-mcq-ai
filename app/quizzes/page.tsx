@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
   Search, BookOpen, Clock, Award, ArrowRight, Sparkles, 
-  Plus, Users, Filter, CheckCircle2, FileText, ChevronRight
+  Plus, Users, Filter, CheckCircle2, FileText, ChevronRight,
+  ShieldAlert, Compass, GraduationCap, Flame
 } from 'lucide-react';
 
 export default function QuizzesCatalogPage() {
@@ -34,69 +35,96 @@ export default function QuizzesCatalogPage() {
 
   const filtered = quizzes.filter(q => {
     const matchSearch = search 
-      ? q.title.toLowerCase().includes(search.toLowerCase()) || (q.description && q.description.toLowerCase().includes(search.toLowerCase()))
+      ? q.title.toLowerCase().includes(search.toLowerCase()) || 
+        (q.description && q.description.toLowerCase().includes(search.toLowerCase()))
       : true;
     return matchSearch;
   });
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans pb-16">
-      {/* Hero Header */}
-      <div className="bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-800 px-4 sm:px-8 pt-10 pb-12">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 uppercase tracking-wider">
-                Official AKU-EB Testing Engine
-              </span>
+    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1d] text-slate-900 dark:text-slate-100 font-sans pb-20 transition-colors">
+      
+      {/* Premium Hero Header */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0b5e4a] via-[#094d3c] to-[#052e24] text-white pt-12 pb-16 px-4 sm:px-8 border-b border-emerald-800/40 shadow-xl">
+        {/* Subtle decorative background circles */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-emerald-400/10 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/3 -mb-20 w-96 h-96 rounded-full bg-[#c9a050]/10 blur-3xl pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-[#c9a050]/20 text-amber-200 border border-[#c9a050]/30 uppercase tracking-wider mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+              <span>Official AKU-EB Examination Engine</span>
             </div>
-            <h1 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
+
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight font-serif">
               Examinations & Practice Tests
             </h1>
-            <p className="text-sm text-slate-400 mt-2 max-w-xl">
-              Curriculum-aligned timed assessments for Classes IX, X, XI, and XII. Server-authoritative timing, instant grading, and verified RAG-grounded explanations.
+
+            <p className="text-sm sm:text-base text-emerald-100/80 mt-3 leading-relaxed">
+              Curriculum-aligned timed assessments for SSC & HSSC (Classes IX, X, XI, XII). Featuring server-authoritative countdown timing, RAG-grounded curriculum explanations, and real-time score analytics.
             </p>
+
+            {/* Feature Highlights */}
+            <div className="flex flex-wrap items-center gap-4 mt-6 text-xs text-emerald-200/90 font-medium">
+              <span className="flex items-center gap-1.5 bg-emerald-950/40 px-3 py-1.5 rounded-lg border border-emerald-700/50">
+                <Clock className="w-3.5 h-3.5 text-amber-400" />
+                <span>Timed Exam Engine</span>
+              </span>
+              <span className="flex items-center gap-1.5 bg-emerald-950/40 px-3 py-1.5 rounded-lg border border-emerald-700/50">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-300" />
+                <span>Instant Auto-Grading</span>
+              </span>
+              <span className="flex items-center gap-1.5 bg-emerald-950/40 px-3 py-1.5 rounded-lg border border-emerald-700/50">
+                <ShieldAlert className="w-3.5 h-3.5 text-cyan-300" />
+                <span>Proctoring & Anti-Cheat</span>
+              </span>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+          {/* Quick CTA Links */}
+          <div className="flex flex-col sm:flex-row md:flex-col gap-3 w-full sm:w-auto shrink-0">
             <Link
               href="/dashboard/student"
-              className="w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-center transition-all"
+              className="px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm text-center flex items-center justify-center gap-2 transition-all shadow-sm"
             >
-              Student Portal
+              <GraduationCap className="w-4 h-4 text-emerald-300" />
+              <span>Student Performance Portal</span>
             </Link>
+
             <Link
               href="/teacher/quizzes/builder"
-              className="w-full sm:w-auto px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-900/40 text-center flex items-center justify-center gap-2 transition-all"
+              className="px-6 py-3 rounded-xl text-xs sm:text-sm font-bold bg-[#c9a050] hover:bg-[#b58e42] text-slate-950 shadow-lg shadow-black/20 text-center flex items-center justify-center gap-2 transition-all"
             >
-              <Plus className="w-4 h-4" />
-              <span>Create Assessment</span>
+              <Plus className="w-4 h-4 text-slate-950" />
+              <span>Create Custom Assessment</span>
             </Link>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Main Content */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 pt-8 flex flex-col gap-6">
+      {/* Main Content Hub */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 -mt-6 flex flex-col gap-8 relative z-20">
         
-        {/* Search & Filters */}
-        <div className="bg-slate-900 p-4 rounded-2xl border border-slate-800 shadow-lg flex flex-col sm:flex-row gap-3 items-center justify-between">
+        {/* Search & Filter Toolbar */}
+        <div className="bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col md:flex-row gap-3 items-center justify-between">
           <div className="relative flex-1 w-full">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search by assessment title, concept, or topic..."
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder:text-slate-600 outline-none focus:border-indigo-500"
+              placeholder="Search assessment by title, concept, or topic..."
+              className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-600 outline-none focus:border-emerald-600 dark:focus:border-emerald-500 transition-colors"
             />
           </div>
 
-          <div className="flex items-center gap-3 w-full sm:w-auto">
+          <div className="flex items-center gap-3 w-full md:w-auto">
             <select
               value={selectedClass}
               onChange={(e) => setSelectedClass(e.target.value)}
-              className="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-300 outline-none focus:border-indigo-500"
+              aria-label="Filter by academic class"
+              className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs text-slate-700 dark:text-slate-300 outline-none focus:border-emerald-600"
             >
               <option value="ALL">All Classes (IX–XII)</option>
               <option value="9">Class IX (SSC I)</option>
@@ -108,7 +136,8 @@ export default function QuizzesCatalogPage() {
             <select
               value={selectedSubject}
               onChange={(e) => setSelectedSubject(e.target.value)}
-              className="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-300 outline-none focus:border-indigo-500"
+              aria-label="Filter by subject"
+              className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs text-slate-700 dark:text-slate-300 outline-none focus:border-emerald-600"
             >
               <option value="ALL">All Subjects</option>
               <option value="Physics">Physics</option>
@@ -122,64 +151,74 @@ export default function QuizzesCatalogPage() {
 
         {/* Quizzes Grid */}
         {loading ? (
-          <div className="py-20 text-center text-slate-400 flex flex-col items-center gap-3">
-            <div className="w-8 h-8 rounded-full border-4 border-indigo-500/20 border-t-indigo-500 animate-spin" />
-            <span className="text-xs">Loading published examinations...</span>
+          <div className="py-24 text-center text-slate-500 flex flex-col items-center gap-3">
+            <div className="w-10 h-10 rounded-full border-4 border-emerald-500/20 border-t-emerald-600 animate-spin" />
+            <span className="text-xs font-semibold">Loading verified examinations...</span>
           </div>
         ) : filtered.length === 0 ? (
-          <div className="py-20 text-center bg-slate-900 rounded-3xl border border-slate-800 flex flex-col items-center gap-4">
-            <BookOpen className="w-12 h-12 text-slate-600" />
-            <h3 className="text-base font-bold text-white">No assessments found matching filter</h3>
-            <p className="text-xs text-slate-400 max-w-sm">
-              Try adjusting your search keywords, or build a custom test using the unified Quiz Builder.
+          <div className="py-20 text-center bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col items-center gap-4 p-8 shadow-sm">
+            <div className="w-16 h-16 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 flex items-center justify-center">
+              <BookOpen className="w-8 h-8" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white">No assessments found matching filter</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md">
+              Try adjusting your search keywords, or build a custom test using the unified AKU-EB Quiz Builder.
             </p>
-            <Link
-              href="/teacher/quizzes/builder"
-              className="px-5 py-2.5 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg"
-            >
-              Create New Assessment
-            </Link>
+            <div className="flex gap-3">
+              <button
+                onClick={() => { setSearch(''); setSelectedClass('ALL'); setSelectedSubject('ALL'); }}
+                className="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+              >
+                Reset Filters
+              </button>
+              <Link
+                href="/teacher/quizzes/builder"
+                className="px-5 py-2 rounded-xl text-xs font-bold bg-[#0b5e4a] hover:bg-[#084737] text-white shadow-md"
+              >
+                Create New Assessment
+              </Link>
+            </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((q) => (
               <div
                 key={q.id}
-                className="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 hover:shadow-indigo-950/20 transition-all flex flex-col justify-between gap-5 shadow-lg group"
+                className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-600/50 hover:shadow-xl hover:shadow-emerald-950/5 transition-all flex flex-col justify-between gap-5 shadow-sm group"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2">
-                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 uppercase tracking-wider">
                       {q.boardId || 'AKU-EB'}
                     </span>
-                    <span className="text-xs text-slate-400 flex items-center gap-1 font-mono">
-                      <Clock className="w-3.5 h-3.5 text-amber-400" />
-                      <span>{q.durationMin}m</span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1 font-mono font-semibold">
+                      <Clock className="w-3.5 h-3.5 text-amber-500" />
+                      <span>{q.durationMin} mins</span>
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white mt-3 group-hover:text-indigo-300 transition-colors line-clamp-2">
+                  <h3 className="text-base font-bold text-slate-900 dark:text-white mt-3 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
                     {q.title}
                   </h3>
                   
                   {q.description && (
-                    <p className="text-xs text-slate-400 line-clamp-2 mt-1.5 leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 mt-2 leading-relaxed">
                       {q.description}
                     </p>
                   )}
 
-                  <div className="flex items-center gap-3 mt-4 text-xs text-slate-400 pt-3 border-t border-slate-800/80">
-                    <span>{q.questionCount} Questions</span>
+                  <div className="flex items-center gap-3 mt-4 text-xs text-slate-500 dark:text-slate-400 pt-3 border-t border-slate-100 dark:border-slate-800">
+                    <span className="font-semibold">{q.questionCount} Questions</span>
                     <span>•</span>
-                    <span>{q.totalMarks} Marks</span>
+                    <span className="font-semibold">{q.totalMarks} Marks</span>
                     <span>•</span>
-                    <span className="text-slate-500 truncate">{q.teacherName}</span>
+                    <span className="truncate">{q.teacherName || 'RiseLearner Team'}</span>
                   </div>
                 </div>
 
                 <Link
                   href={`/quizzes/${q.id}/take`}
-                  className="w-full py-2.5 rounded-xl font-bold text-xs bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-900/30 flex items-center justify-center gap-2 transition-all group-hover:bg-indigo-500"
+                  className="w-full py-3 rounded-xl font-bold text-xs bg-[#0b5e4a] hover:bg-[#084737] text-white shadow-md shadow-emerald-900/15 flex items-center justify-center gap-2 transition-all group-hover:bg-[#084737]"
                 >
                   <span>Start Timed Assessment</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

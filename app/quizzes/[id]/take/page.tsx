@@ -344,7 +344,7 @@ export default function TakeQuizPage({ params }: { params: Promise<{ id: string 
       {/* Top Authoritative Header */}
       <header className="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 px-4 sm:px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-indigo-600/30 text-indigo-400 flex items-center justify-center font-bold text-sm border border-indigo-500/40">
+          <div className="w-8 h-8 rounded-lg bg-emerald-600/30 text-emerald-400 flex items-center justify-center font-bold text-sm border border-emerald-500/40">
             AKU
           </div>
           <div>
@@ -379,7 +379,7 @@ export default function TakeQuizPage({ params }: { params: Promise<{ id: string 
           {/* Submit Assessment Button */}
           <button
             onClick={() => setIsSubmitModalOpen(true)}
-            className="flex items-center gap-1.5 px-4 py-1.5 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-900/30 transition-all"
+            className="flex items-center gap-1.5 px-4 py-1.5 rounded-xl text-xs font-semibold bg-[#0b5e4a] hover:bg-[#084737] text-white shadow-md shadow-emerald-900/30 transition-all"
           >
             <Send className="w-3.5 h-3.5" />
             <span>Finish & Submit</span>
@@ -397,7 +397,7 @@ export default function TakeQuizPage({ params }: { params: Promise<{ id: string 
               {/* Question Meta Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-800">
                 <div className="flex items-center gap-2">
-                  <span className="w-7 h-7 rounded-full bg-indigo-600 text-white font-bold text-xs flex items-center justify-center">
+                  <span className="w-7 h-7 rounded-full bg-[#0b5e4a] text-white font-bold text-xs flex items-center justify-center">
                     {currentIndex + 1}
                   </span>
                   <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
@@ -417,7 +417,7 @@ export default function TakeQuizPage({ params }: { params: Promise<{ id: string 
                     onClick={() => toggleMarkForReview(currentQ.id)}
                     className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium border transition-all ${
                       markedForReview.has(currentQ.id)
-                        ? 'bg-purple-600/20 text-purple-300 border-purple-500/50 shadow-sm'
+                        ? 'bg-amber-600/20 text-amber-300 border-amber-500/50 shadow-sm'
                         : 'bg-slate-800 text-slate-400 border-slate-700 hover:text-white'
                     }`}
                   >
@@ -464,12 +464,12 @@ export default function TakeQuizPage({ params }: { params: Promise<{ id: string 
                           onClick={() => handleSelectOption(currentQ.id, opt.id, false)}
                           className={`p-4 rounded-xl border cursor-pointer flex items-center gap-3.5 transition-all ${
                             isChosen
-                              ? 'bg-indigo-600/20 border-indigo-500 text-white shadow-md shadow-indigo-950/40 ring-1 ring-indigo-500/40'
+                              ? 'bg-emerald-950/40 border-emerald-500 text-white shadow-md shadow-emerald-950/40 ring-1 ring-emerald-500/40'
                               : 'bg-slate-950/50 border-slate-800 hover:border-slate-700 text-slate-300'
                           }`}
                         >
                           <div className={`w-5 h-5 rounded-full border flex items-center justify-center transition-all ${
-                            isChosen ? 'border-indigo-400 bg-indigo-600' : 'border-slate-600'
+                            isChosen ? 'border-emerald-400 bg-emerald-600' : 'border-slate-600'
                           }`}>
                             {isChosen && <div className="w-2 h-2 rounded-full bg-white" />}
                           </div>
@@ -488,7 +488,7 @@ export default function TakeQuizPage({ params }: { params: Promise<{ id: string 
                 {/* MCQ MULTIPLE SELECT */}
                 {currentQ.questionType === 'MCQ_MULTIPLE' && (
                   <div className="flex flex-col gap-3">
-                    <span className="text-xs text-indigo-400">Select all options that apply:</span>
+                    <span className="text-xs text-emerald-400">Select all options that apply:</span>
                     {currentQ.options.map((opt, optIdx) => {
                       const selectedIds: string[] = answers[currentQ.id]?.selectedOptionIds || [];
                       const isChosen = selectedIds.includes(opt.id);
@@ -498,12 +498,12 @@ export default function TakeQuizPage({ params }: { params: Promise<{ id: string 
                           onClick={() => handleSelectOption(currentQ.id, opt.id, true)}
                           className={`p-4 rounded-xl border cursor-pointer flex items-center gap-3.5 transition-all ${
                             isChosen
-                              ? 'bg-indigo-600/20 border-indigo-500 text-white shadow-md shadow-indigo-950/40'
+                              ? 'bg-emerald-950/40 border-emerald-500 text-white shadow-md shadow-emerald-950/40'
                               : 'bg-slate-950/50 border-slate-800 hover:border-slate-700 text-slate-300'
                           }`}
                         >
                           <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${
-                            isChosen ? 'border-indigo-400 bg-indigo-600' : 'border-slate-600'
+                            isChosen ? 'border-emerald-400 bg-emerald-600' : 'border-slate-600'
                           }`}>
                             {isChosen && <Check className="w-3.5 h-3.5 text-white" />}
                           </div>
@@ -606,7 +606,7 @@ export default function TakeQuizPage({ params }: { params: Promise<{ id: string 
                 {currentIndex < questions.length - 1 ? (
                   <button
                     onClick={() => setCurrentIndex(prev => Math.min(questions.length - 1, prev + 1))}
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-900/30 transition-all"
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-[#0b5e4a] hover:bg-[#084737] text-white shadow-md shadow-emerald-900/30 transition-all"
                   >
                     <span>Next</span>
                     <ChevronRight className="w-4 h-4" />
