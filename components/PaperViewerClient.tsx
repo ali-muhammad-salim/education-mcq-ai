@@ -8,6 +8,8 @@ import {
   ShieldCheck, AlertTriangle, Lightbulb, CheckSquare, Edit3, ArrowLeft
 } from 'lucide-react';
 import MathText from '@/components/MathText';
+import StructuredContent from '@/components/StructuredContent';
+import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 import DownloadCountdownModal from '@/components/DownloadCountdownModal';
 import TakeQuizModal from '@/components/TakeQuizModal';
 
@@ -583,7 +585,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                           );
                         })()}
                         <div style={{ fontSize: '1.1rem', color: '#1f2937', lineHeight: 1.6, flexGrow: 1 }}>
-                          {renderQuestionContent(q.questionText)}
+                          <StructuredContent text={q.questionText} />
                         </div>
                       </div>
                       {isPaper2 && (
@@ -673,24 +675,29 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                       )}
                     </div>
 
-                    {/* Cropped Diagram / Graph (if present) */}
-                    {meta.diagram_url && (
-                      <div style={{ textAlign: 'center', margin: '1.25rem 0', marginLeft: '2.5rem' }}>
-                        <img
-                          src={meta.diagram_url}
-                          alt={`Diagram for Question ${qNum}`}
-                          style={{
-                            maxWidth: '100%',
-                            maxHeight: '280px',
-                            objectFit: 'contain',
-                            border: '1px solid #d1d5db',
-                            borderRadius: '6px',
-                            padding: '6px',
-                            background: '#ffffff'
-                          }}
-                        />
-                      </div>
-                    )}
+                    {/* Cropped Diagram / Graph / Circuit (if present) */}
+                    {(() => {
+                      const diagramSrc = resolveQuestionDiagram(paper.paperCode || paper.title, qNum, q);
+                      if (!diagramSrc) return null;
+                      return (
+                        <div style={{ textAlign: 'center', margin: '1.25rem 0', marginLeft: '2.5rem' }}>
+                          <img
+                            src={diagramSrc}
+                            alt={`Diagram for Question ${qNum}`}
+                            style={{
+                              maxWidth: '100%',
+                              maxHeight: '300px',
+                              objectFit: 'contain',
+                              border: '1.5px solid var(--border-color, #d1d5db)',
+                              borderRadius: '8px',
+                              padding: '8px',
+                              background: '#ffffff',
+                              boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+                            }}
+                          />
+                        </div>
+                      );
+                    })()}
 
                     {/* ---------------------------------------------------- */}
                     {/* PAPER 1: OPTIONS & VERIFIED KEY                      */}

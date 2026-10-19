@@ -8,8 +8,10 @@ import {
   Sparkles, Database, Upload, Check, AlertCircle, ArrowLeft, 
   HelpCircle, Calculator, CheckCircle2,
   FileText, ShieldAlert, Clock, CheckSquare, Radio, GripVertical,
-  X, SlidersHorizontal, Layers, Award, Lightbulb, ChevronDown
+  X, SlidersHorizontal, Layers, Award, Lightbulb, ChevronDown,
+  Share2, KeyRound
 } from 'lucide-react';
+
 import MathText from '@/components/MathText';
 import RichMathChemDiagramEditor from '@/components/RichMathChemDiagramEditor';
 import './builder.css';
@@ -172,8 +174,11 @@ function GoogleFormsQuizBuilderContent() {
   const [isAiModalOpen, setIsAiModalOpen] = useState(false);
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
   const [isPreviewModalOpen, setIsPreviewModalOpen] = useState(false);
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+  const [quizCode, setQuizCode] = useState<string | null>(null);
 
   // Rich Math / Chem / Diagram Editor State
+
   const [richEditorState, setRichEditorState] = useState<{
     isOpen: boolean;
     questionIndex: number;
@@ -205,6 +210,8 @@ function GoogleFormsQuizBuilderContent() {
       if (data.success && data.quiz) {
         const q = data.quiz;
         setQuizId(q.id);
+        if (q.code) setQuizCode(q.code);
+        else setQuizCode(q.id);
         setTitle(q.title || 'Untitled Assessment');
         setDescription(q.description || '');
         setBoardId(q.boardId || 'AKU-EB');
@@ -269,6 +276,7 @@ function GoogleFormsQuizBuilderContent() {
 
       const payload = {
         id: quizId,
+        code: quizCode,
         title: title.trim() || 'Untitled Assessment',
         description,
         boardId,
@@ -290,9 +298,13 @@ function GoogleFormsQuizBuilderContent() {
       const data = await res.json();
       if (data.success) {
         setQuizId(data.quizId);
-        if (publish) setStatus('PUBLISHED');
+        if (data.code) setQuizCode(data.code);
+        if (publish) {
+          setStatus('PUBLISHED');
+          setIsShareModalOpen(true);
+        }
         setSaveStatus('saved');
-        triggerToast(publish ? 'Assessment published successfully!' : 'All changes saved to cloud.');
+        triggerToast(publish ? `Assessment published! Code: ${data.code || ''}` : 'All changes saved to cloud.');
       } else {
         setSaveStatus('error');
         triggerToast(`Save error: ${data.error || 'Server error'}`);
@@ -303,6 +315,7 @@ function GoogleFormsQuizBuilderContent() {
       triggerToast('Error saving assessment to database.');
     }
   };
+
 
   // Question operations
   const addQuestion = (type: QuizQuestionData['questionType'] = 'MCQ_SINGLE', insertAfterIdx?: number) => {
@@ -578,6 +591,18 @@ function GoogleFormsQuizBuilderContent() {
 
         {/* Right Action Buttons */}
         <div className="gf-nav-right">
+          {/* Question Bank Quick Loader Button */}
+          <button
+            type="button"
+            onClick={() => setIsBankModalOpen(true)}
+            className="gf-draft-btn"
+            style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+            title="Import questions from official AKU-EB Question Bank"
+          >
+            <Database size={16} color="#673ab7" />
+            <span>Question Bank</span>
+          </button>
+
           <button
             type="button"
             onClick={() => setIsPreviewModalOpen(true)}
@@ -614,7 +639,26 @@ function GoogleFormsQuizBuilderContent() {
             <CheckCircle2 size={16} />
             <span>Publish</span>
           </button>
+
+          {/* Share Unique Quiz Code Button */}
+          <button
+            type="button"
+            onClick={() => {
+              if (!quizCode) {
+                handleSaveQuiz(true);
+              } else {
+                setIsShareModalOpen(true);
+              }
+            }}
+            className="gf-publish-btn"
+            style={{ background: '#2563eb' }}
+            title="Share unique quiz code and direct join link"
+          >
+            <Share2 size={16} />
+            <span>{quizCode ? `Share (${quizCode})` : 'Share Code'}</span>
+          </button>
         </div>
+
       </header>
 
       {/* 2. GOOGLE FORMS MAIN WORKSPACE CANVAS */}
@@ -1486,6 +1530,15 @@ function GoogleFormsQuizBuilderContent() {
         />
       )}
 
+      {/* SHARE QUIZ MODAL */}
+      {isShareModalOpen && quizCode && (
+        <ShareQuizModal
+          code={quizCode}
+          title={title}
+          onClose={() => setIsShareModalOpen(false)}
+        />
+      )}
+
       {/* RICH MATH / CHEM / DIAGRAM POPUP */}
       <RichMathChemDiagramEditor
         isOpen={richEditorState.isOpen}
@@ -1514,6 +1567,7 @@ function QuestionBankModal({
   onClose: () => void;
   onAddQuestions: (selected: QuizQuestionData[]) => void;
 }) {
+  const [selectedClass, setSelectedClass] = useState<string>(String(classLevel));
   const [bankQuestions, setBankQuestions] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
@@ -1522,14 +1576,14 @@ function QuestionBankModal({
 
   useEffect(() => {
     fetchBank();
-  }, [boardId, classLevel, subject, difficultyFilter]);
+  }, [boardId, selectedClass, subject, difficultyFilter]);
 
   async function fetchBank() {
     try {
       setLoading(true);
       const params = new URLSearchParams({
         boardId,
-        classLevel: String(classLevel),
+        classLevel: selectedClass,
         subject,
         difficulty: difficultyFilter
       });
@@ -1590,7 +1644,7 @@ function QuestionBankModal({
             <Database size={22} color="#673ab7" />
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#202124' }}>AKU-EB Question Bank</h3>
-              <span style={{ fontSize: '12px', color: '#5f6368' }}>Class {classLevel} • {subject} • Official Past Papers</span>
+              <span style={{ fontSize: '12px', color: '#5f6368' }}>Class {selectedClass === 'ALL' ? '9 & 10' : selectedClass} • {subject} • Solved Model Papers & Units</span>
             </div>
           </div>
           <button onClick={onClose} className="gf-icon-btn">
@@ -1599,14 +1653,23 @@ function QuestionBankModal({
         </div>
 
         {/* Filters */}
-        <div style={{ padding: '12px 24px', background: '#f8f9fa', borderBottom: '1px solid #dadce0', display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <div style={{ padding: '12px 24px', background: '#f8f9fa', borderBottom: '1px solid #dadce0', display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by topic, formula, or keyword..."
-            style={{ flex: 1, background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '6px 12px', fontSize: '13px', outline: 'none' }}
+            placeholder="Search questions by topic, formula, or keyword..."
+            style={{ flex: 1, minWidth: '200px', background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '6px 12px', fontSize: '13px', outline: 'none' }}
           />
+          <select
+            value={selectedClass}
+            onChange={(e) => setSelectedClass(e.target.value)}
+            style={{ background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '6px 12px', fontSize: '13px', outline: 'none', fontWeight: 600 }}
+          >
+            <option value="9">Class 9 (SSC-I)</option>
+            <option value="10">Class 10 (SSC-II)</option>
+            <option value="ALL">All Classes (Combine SSC-I & II)</option>
+          </select>
           <select
             value={difficultyFilter}
             onChange={(e) => setDifficultyFilter(e.target.value)}
@@ -1624,6 +1687,7 @@ function QuestionBankModal({
             {selectedIds.size === filtered.length && filtered.length > 0 ? 'Deselect All' : 'Select All'}
           </button>
         </div>
+
 
         {/* List */}
         <div className="gf-modal-body">
@@ -2189,7 +2253,108 @@ function StudentPreviewModal({
   );
 }
 
+// -------------------------------------------------------------------------------------
+// SHARE QUIZ MODAL
+// -------------------------------------------------------------------------------------
+
+function ShareQuizModal({
+  code,
+  title,
+  onClose
+}: {
+  code: string;
+  title: string;
+  onClose: () => void;
+}) {
+  const [copiedCode, setCopiedCode] = useState(false);
+  const [copiedUrl, setCopiedUrl] = useState(false);
+  const shareUrl = `https://riselearner.com/?code=${code}`;
+
+  const copyCode = () => {
+    navigator.clipboard.writeText(code);
+    setCopiedCode(true);
+    setTimeout(() => setCopiedCode(false), 2000);
+  };
+
+  const copyUrl = () => {
+    navigator.clipboard.writeText(shareUrl);
+    setCopiedUrl(true);
+    setTimeout(() => setCopiedUrl(false), 2000);
+  };
+
+  return (
+    <div className="gf-modal-backdrop" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <div className="gf-modal-content" style={{ maxWidth: '520px', padding: '28px', borderRadius: '16px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: '#e0f2fe', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0284c7' }}>
+              <Share2 size={24} />
+            </div>
+            <div>
+              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 800, color: '#0f172a' }}>Share Assessment</h3>
+              <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748b' }}>Distribute this code or link directly to students</p>
+            </div>
+          </div>
+          <button onClick={onClose} className="gf-icon-btn">
+            <X size={20} />
+          </button>
+        </div>
+
+        <div style={{ marginBottom: '18px' }}>
+          <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#475569', marginBottom: '6px' }}>
+            Unique Student Quiz Code
+          </label>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <div style={{ flex: 1, background: '#f8fafc', border: '2px solid #cbd5e1', borderRadius: '8px', padding: '12px 16px', fontSize: '18px', fontWeight: 800, letterSpacing: '2px', color: '#0b5e4a' }}>
+              {code}
+            </div>
+            <button
+              onClick={copyCode}
+              style={{ padding: '12px 18px', background: copiedCode ? '#059669' : '#0b5e4a', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 700, fontSize: '13px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              {copiedCode ? <Check size={16} /> : <Copy size={16} />}
+              <span>{copiedCode ? 'Copied' : 'Copy Code'}</span>
+            </button>
+          </div>
+        </div>
+
+        <div style={{ marginBottom: '20px' }}>
+          <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#475569', marginBottom: '6px' }}>
+            Direct Shareable URL
+          </label>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <input
+              type="text"
+              readOnly
+              value={shareUrl}
+              style={{ flex: 1, background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '10px 14px', fontSize: '12px', color: '#334155', outline: 'none' }}
+            />
+            <button
+              onClick={copyUrl}
+              style={{ padding: '10px 16px', background: copiedUrl ? '#059669' : '#2563eb', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 700, fontSize: '12px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              {copiedUrl ? <Check size={14} /> : <Copy size={14} />}
+              <span>{copiedUrl ? 'Copied' : 'Copy Link'}</span>
+            </button>
+          </div>
+        </div>
+
+        <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '10px', padding: '14px', fontSize: '12px', color: '#166534', lineHeight: 1.5, marginBottom: '22px' }}>
+          💡 <strong>Student Instructions:</strong> Students can open <strong>riselearner.com</strong>, sign in, and click <strong>"Enter Quiz Code"</strong> in the top menu bar to start. All student answers, marks, and tab-switch records will be delivered live to your Teacher Dashboard.
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <button onClick={onClose} className="gf-publish-btn" style={{ padding: '9px 28px' }}>
+            Done
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function GoogleFormsQuizBuilder() {
+
   return (
     <React.Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'sans-serif' }}>Loading Quiz Builder...</div>}>
       <GoogleFormsQuizBuilderContent />

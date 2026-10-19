@@ -10,6 +10,8 @@ import {
 import { BoardInfo, ClassDefinition } from '@/lib/boardHierarchy';
 import { SubjectMeta } from '@/lib/subjectMetadata';
 import MathText from '@/components/MathText';
+import StructuredContent from '@/components/StructuredContent';
+import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 import TakeQuizModal from '@/components/TakeQuizModal';
 
 interface Props {
@@ -1041,21 +1043,34 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                       </button>
                     </div>
 
-                    {/* Question Stem rendered with MathText (KaTeX) */}
-                    <div style={{ fontSize: '1.05rem', color: '#1a2e26', fontWeight: 600, lineHeight: 1.6, marginBottom: '1.25rem' }}>
-                      <MathText text={q.stem || q.questionText || ''} />
+                    {/* Question Stem rendered with StructuredContent (Tables + KaTeX) */}
+                    <div style={{ fontSize: '1.05rem', color: 'var(--text-color, #1a2e26)', fontWeight: 600, lineHeight: 1.6, marginBottom: '1.25rem' }}>
+                      <StructuredContent text={q.stem || q.questionText || ''} />
                     </div>
 
                     {/* Diagram if available */}
-                    {q.diagramUrl && (
-                      <div style={{ marginBottom: '1.25rem', textAlign: 'center' }}>
-                        <img
-                          src={q.diagramUrl}
-                          alt={`Diagram for Question ${qNum}`}
-                          style={{ maxWidth: '100%', maxHeight: '240px', objectFit: 'contain', borderRadius: '8px', border: '1px solid #eef2f0' }}
-                        />
-                      </div>
-                    )}
+                    {(() => {
+                      const diagramSrc = resolveQuestionDiagram(classDef.roman === 'X' ? 'PHY-X-P1' : 'PHY-IX-P1', qNum, q);
+                      if (!diagramSrc) return null;
+                      return (
+                        <div style={{ marginBottom: '1.25rem', textAlign: 'center' }}>
+                          <img
+                            src={diagramSrc}
+                            alt={`Diagram for Question ${qNum}`}
+                            style={{
+                              maxWidth: '100%',
+                              maxHeight: '260px',
+                              objectFit: 'contain',
+                              borderRadius: '8px',
+                              border: '1.5px solid var(--border-color, #eef2f0)',
+                              padding: '6px',
+                              background: '#ffffff',
+                              boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                            }}
+                          />
+                        </div>
+                      );
+                    })()}
 
                     {/* Options rendered with MathText */}
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>

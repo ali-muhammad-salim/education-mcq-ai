@@ -267,13 +267,18 @@ export default function TeacherDashboardPage() {
                   >
                     <div>
                       <div className="flex items-center justify-between gap-2">
-                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
-                          q.status === 'PUBLISHED' 
-                            ? 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-500/30' 
-                            : 'bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-500/30'
-                        }`}>
-                          {q.status}
-                        </span>
+                        <div className="flex items-center gap-2">
+                          <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                            q.status === 'PUBLISHED' 
+                              ? 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-500/30' 
+                              : 'bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-500/30'
+                          }`}>
+                            {q.status}
+                          </span>
+                          <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+                            Code: {q.code || q.id}
+                          </span>
+                        </div>
                         <span className="text-[11px] text-slate-500 dark:text-slate-400">{q.visibility}</span>
                       </div>
 
@@ -295,6 +300,20 @@ export default function TeacherDashboardPage() {
 
                     <div className="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800">
                       <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => {
+                            const code = q.code || q.id;
+                            const url = `https://riselearner.com/?code=${code}`;
+                            navigator.clipboard.writeText(url);
+                            copyCode(code);
+                            alert(`Copied Student Link:\n${url}\n\nStudents can also type Quiz Code: "${code}" into the top menu bar.`);
+                          }}
+                          className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/60 flex items-center gap-1.5 transition-colors"
+                          title="Copy student link and quiz code"
+                        >
+                          <Copy className="w-3.5 h-3.5" />
+                          <span>{copiedCode === (q.code || q.id) ? 'Copied Link!' : 'Share Code'}</span>
+                        </button>
                         <Link
                           href={`/teacher/quizzes/builder?id=${q.id}`}
                           className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 flex items-center gap-1 transition-colors"
@@ -320,6 +339,7 @@ export default function TeacherDashboardPage() {
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
+
                   </div>
                 ))}
               </div>

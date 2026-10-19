@@ -8,9 +8,11 @@ import {
   Atom, FlaskConical, Dna, Calculator, Binary, BookText, 
   Languages, Moon, Sun, MapPin, Menu, X, FileText, Layers, Download,
   User as UserIcon, LogOut, LayoutDashboard, Award, UploadCloud, ShieldCheck,
-  Monitor
+  Monitor, KeyRound, Play, AlertCircle, Loader2
 } from 'lucide-react';
 import AuthModal from '@/components/AuthModal';
+import TakeQuizModal from '@/components/TakeQuizModal';
+
 
 interface SubjectItem {
   name: string;
@@ -109,6 +111,62 @@ export default function Navbar() {
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
   const [themeMode, setThemeMode] = useState<'system' | 'light' | 'dark'>('system');
   const [isDarkEffective, setIsDarkEffective] = useState<boolean>(false);
+
+  // Quiz Code Join Modal States
+  const [quizCodeModalOpen, setQuizCodeModalOpen] = useState(false);
+  const [inputCode, setInputCode] = useState('');
+  const [codeLoading, setCodeLoading] = useState(false);
+  const [codeError, setCodeError] = useState<string | null>(null);
+  const [activeQuizData, setActiveQuizData] = useState<any | null>(null);
+  const [pendingQuizCode, setPendingQuizCode] = useState<string | null>(null);
+
+  // URL Query Param Detection (?code=...)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const codeParam = params.get('code');
+      if (codeParam) {
+        setInputCode(codeParam.toUpperCase().trim());
+        setQuizCodeModalOpen(true);
+      }
+    }
+  }, [pathname]);
+
+  const handleJoinQuiz = async (codeToJoin?: string) => {
+    const code = (codeToJoin || inputCode).trim().toUpperCase();
+    if (!code) {
+      setCodeError('Please enter a valid Quiz Code.');
+      return;
+    }
+
+    // Require student signup/login before taking quiz
+    if (!authUser) {
+      setPendingQuizCode(code);
+      setQuizCodeModalOpen(false);
+      setAuthModalOpen(true);
+      return;
+    }
+
+    setCodeLoading(true);
+    setCodeError(null);
+
+    try {
+      const res = await fetch(`/api/quizzes/by-code?code=${encodeURIComponent(code)}`);
+      const data = await res.json();
+      if (data.success && data.quiz) {
+        setActiveQuizData(data.quiz);
+        setQuizCodeModalOpen(false);
+        setInputCode('');
+      } else {
+        setCodeError(data.error || `Quiz with code "${code}" could not be found.`);
+      }
+    } catch (err) {
+      setCodeError('Unable to connect to quiz service. Please verify your connection.');
+    } finally {
+      setCodeLoading(false);
+    }
+  };
+
 
   // Apply theme class based on mode
   const applyTheme = (mode: 'system' | 'light' | 'dark') => {
@@ -589,8 +647,45 @@ export default function Navbar() {
           })}
 
 
+          {/* Enter Quiz Code Button */}
+          <button
+            type="button"
+            onClick={() => {
+              setQuizCodeModalOpen(true);
+              setCodeError(null);
+            }}
+            title="Enter unique Teacher Quiz Code to join assessment"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              background: isDarkEffective ? '#1e293b' : '#f0fdf4',
+              border: isDarkEffective ? '1px solid #334155' : '1px solid #bbf7d0',
+              color: isDarkEffective ? '#4ade80' : '#15803d',
+              borderRadius: '8px',
+              padding: '7px 13px',
+              fontSize: '0.86rem',
+              fontWeight: 700,
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+              marginLeft: '0.25rem'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-1px)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(16, 185, 129, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
+            <KeyRound size={15} />
+            <span>Enter Quiz Code</span>
+          </button>
+
           {/* User Authentication / Profile Avatar Section */}
           {authUser ? (
+
             <div ref={profileDropdownRef} style={{ position: 'relative', marginLeft: '0.5rem' }}>
               <button
                 onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
@@ -890,9 +985,240 @@ export default function Navbar() {
       {/* Authentication Modal */}
       <AuthModal
         isOpen={authModalOpen}
-        onClose={() => setAuthModalOpen(false)}
-        onSuccess={(user) => setAuthUser(user)}
+        onClose={() => {
+          setAuthModalOpen(false);
+          setPendingQuizCode(null);
+        }}
+        onSuccess={(user) => {
+          setAuthUser(user);
+          if (pendingQuizCode) {
+            const code = pendingQuizCode;
+            setPendingQuizCode(null);
+            handleJoinQuiz(code);
+          }
+        }}
       />
+
+      {/* 1. Enter Quiz Code Modal Dialog */}
+      {quizCodeModalOpen && (
+        <div 
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 3000,
+            background: 'rgba(15, 23, 42, 0.75)',
+            backdropFilter: 'blur(6px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1rem'
+          }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setQuizCodeModalOpen(false);
+          }}
+        >
+          <div 
+            style={{
+              background: isDarkEffective ? '#151f32' : '#ffffff',
+              border: isDarkEffective ? '1px solid #334155' : '1px solid #e2e8f0',
+              borderRadius: '16px',
+              padding: '2rem',
+              maxWidth: '460px',
+              width: '100%',
+              boxShadow: '0 24px 48px -12px rgba(0, 0, 0, 0.35)',
+              position: 'relative'
+            }}
+          >
+            {/* Close button */}
+            <button
+              type="button"
+              onClick={() => setQuizCodeModalOpen(false)}
+              style={{
+                position: 'absolute',
+                top: '1.25rem',
+                right: '1.25rem',
+                background: 'none',
+                border: 'none',
+                color: isDarkEffective ? '#94a3b8' : '#64748b',
+                cursor: 'pointer',
+                padding: '4px',
+                borderRadius: '6px'
+              }}
+            >
+              <X size={20} />
+            </button>
+
+            {/* Header Icon */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1.25rem' }}>
+              <div 
+                style={{
+                  width: '46px',
+                  height: '46px',
+                  borderRadius: '12px',
+                  background: isDarkEffective ? 'rgba(16, 185, 129, 0.15)' : '#ecfdf5',
+                  border: isDarkEffective ? '1px solid #059669' : '1px solid #a7f3d0',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#10b981'
+                }}
+              >
+                <KeyRound size={24} />
+              </div>
+              <div>
+                <h3 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 800, color: isDarkEffective ? '#f8fafc' : '#0f172a' }}>
+                  Join Assessment
+                </h3>
+                <p style={{ margin: '2px 0 0', fontSize: '0.84rem', color: isDarkEffective ? '#94a3b8' : '#64748b' }}>
+                  Enter your teacher's unique quiz code
+                </p>
+              </div>
+            </div>
+
+            {/* If user is not authenticated, alert them that signup/signin is required */}
+            {!authUser && (
+              <div 
+                style={{
+                  background: isDarkEffective ? 'rgba(234, 179, 8, 0.1)' : '#fefce8',
+                  border: isDarkEffective ? '1px solid #854d0e' : '1px solid #fef08a',
+                  borderRadius: '10px',
+                  padding: '0.85rem 1rem',
+                  marginBottom: '1.25rem',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '0.65rem'
+                }}
+              >
+                <AlertCircle size={18} style={{ color: '#ca8a04', flexShrink: 0, marginTop: '2px' }} />
+                <div style={{ fontSize: '0.82rem', color: isDarkEffective ? '#fef08a' : '#854d0e', lineHeight: 1.45 }}>
+                  <strong>Account Required:</strong> You must sign in or register before starting the quiz so your marks and anti-cheating logs are sent to your teacher.
+                </div>
+              </div>
+            )}
+
+            {/* Code Input */}
+            <div style={{ marginBottom: '1.25rem' }}>
+              <label 
+                style={{
+                  display: 'block',
+                  fontSize: '0.82rem',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  color: isDarkEffective ? '#94a3b8' : '#475569',
+                  marginBottom: '0.5rem'
+                }}
+              >
+                Quiz Code
+              </label>
+              <input
+                type="text"
+                value={inputCode}
+                onChange={(e) => {
+                  setInputCode(e.target.value.toUpperCase());
+                  setCodeError(null);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') handleJoinQuiz();
+                }}
+                placeholder="e.g. TEACH-PHY9-401"
+                autoFocus
+                style={{
+                  width: '100%',
+                  padding: '0.75rem 1rem',
+                  fontSize: '1.15rem',
+                  fontWeight: 800,
+                  letterSpacing: '1.5px',
+                  borderRadius: '10px',
+                  border: codeError 
+                    ? '2px solid #ef4444' 
+                    : isDarkEffective ? '2px solid #334155' : '2px solid #cbd5e1',
+                  background: isDarkEffective ? '#0f172a' : '#f8fafc',
+                  color: isDarkEffective ? '#f8fafc' : '#0f172a',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                  textTransform: 'uppercase'
+                }}
+              />
+              {codeError && (
+                <div style={{ color: '#ef4444', fontSize: '0.82rem', marginTop: '0.4rem', fontWeight: 600 }}>
+                  {codeError}
+                </div>
+              )}
+            </div>
+
+            {/* Action Buttons */}
+            <div style={{ display: 'flex', gap: '0.75rem' }}>
+              <button
+                type="button"
+                onClick={() => setQuizCodeModalOpen(false)}
+                style={{
+                  flex: 1,
+                  padding: '0.75rem',
+                  borderRadius: '10px',
+                  border: isDarkEffective ? '1px solid #334155' : '1px solid #cbd5e1',
+                  background: 'transparent',
+                  color: isDarkEffective ? '#94a3b8' : '#64748b',
+                  fontWeight: 700,
+                  fontSize: '0.9rem',
+                  cursor: 'pointer'
+                }}
+              >
+                Cancel
+              </button>
+
+              <button
+                type="button"
+                onClick={() => handleJoinQuiz()}
+                disabled={codeLoading}
+                style={{
+                  flex: 2,
+                  padding: '0.75rem',
+                  borderRadius: '10px',
+                  border: 'none',
+                  background: '#0b5e4a',
+                  color: '#ffffff',
+                  fontWeight: 800,
+                  fontSize: '0.92rem',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.5rem',
+                  boxShadow: '0 4px 12px rgba(11, 94, 74, 0.35)'
+                }}
+              >
+                {codeLoading ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" />
+                    <span>Loading Assessment...</span>
+                  </>
+                ) : !authUser ? (
+                  <>
+                    <span>Sign In to Continue</span>
+                  </>
+                ) : (
+                  <>
+                    <Play size={16} fill="#ffffff" />
+                    <span>Start Assessment</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 2. Fullscreen Proctored Take Quiz Modal */}
+      {activeQuizData && (
+        <TakeQuizModal
+          isOpen={!!activeQuizData}
+          onClose={() => setActiveQuizData(null)}
+          paperTitle={activeQuizData.title}
+          paperCode={activeQuizData.code || activeQuizData.id}
+          questions={activeQuizData.questions || []}
+        />
+      )}
     </nav>
   );
 }

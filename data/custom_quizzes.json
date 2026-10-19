@@ -1,0 +1,35 @@
+[
+  {
+    "id": "d737133f-1f93-44cb-99a5-d17d2bc4de6f",
+    "code": "TEACH-PHY9-V91Z",
+    "title": "Test Electric Currents Quiz",
+    "boardId": "AKU-EB",
+    "classLevel": 9,
+    "subject": "Physics",
+    "totalMarks": 1,
+    "durationMin": 30,
+    "status": "PUBLISHED",
+    "visibility": "PUBLIC",
+    "teacherName": "Prof. Tariq Siddiqui",
+    "settings": {},
+    "questions": [
+      {
+        "stemText": "Unit of current is Ampere",
+        "marks": 1,
+        "options": [
+          {
+            "id": "opt-A",
+            "text": "Ampere",
+            "isCorrect": true
+          },
+          {
+            "id": "opt-B",
+            "text": "Volt",
+            "isCorrect": false
+          }
+        ]
+      }
+    ],
+    "createdAt": "2026-10-19T07:32:57.122Z"
+  }
+]

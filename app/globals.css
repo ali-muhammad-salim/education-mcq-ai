@@ -104,6 +104,87 @@ html.dark textarea {
   border-color: #334155 !important;
 }
 
+/* Eye-Friendly Dark Theme Overrides for Cards, Modals, Options & Tables */
+html.dark [style*="background: #ffffff"],
+html.dark [style*="background:#ffffff"],
+html.dark [style*="background: rgb(255, 255, 255)"],
+html.dark [style*="background:#fff"] {
+  background: #151f32 !important;
+  color: #f1f5f9 !important;
+  border-color: #27354f !important;
+}
+
+html.dark [style*="background: #f8fafc"],
+html.dark [style*="background:#f8fafc"],
+html.dark [style*="background: #f8faf9"],
+html.dark [style*="background:#f8faf9"],
+html.dark [style*="background: #f4f7f6"],
+html.dark [style*="background:#f4f7f6"],
+html.dark [style*="background: #f1f5f9"],
+html.dark [style*="background:#f1f5f9"] {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+  border-color: #27354f !important;
+}
+
+html.dark [style*="color: #111827"],
+html.dark [style*="color:#111827"],
+html.dark [style*="color: #1a2e26"],
+html.dark [style*="color:#1a2e26"],
+html.dark [style*="color: #1e293b"],
+html.dark [style*="color:#1e293b"],
+html.dark [style*="color: #0f172a"],
+html.dark [style*="color:#0f172a"],
+html.dark [style*="color: #1f2937"],
+html.dark [style*="color:#1f2937"] {
+  color: #f8fafc !important;
+}
+
+html.dark [style*="color: #4b5563"],
+html.dark [style*="color:#4b5563"],
+html.dark [style*="color: #5a7a6f"],
+html.dark [style*="color:#5a7a6f"],
+html.dark [style*="color: #64748b"],
+html.dark [style*="color:#64748b"],
+html.dark [style*="color: #6b7280"],
+html.dark [style*="color:#6b7280"] {
+  color: #94a3b8 !important;
+}
+
+html.dark [style*="border: 1.5px solid #dce5e1"],
+html.dark [style*="border: 1.5px solid #eef2f0"],
+html.dark [style*="border: 1px solid #cbd5e1"],
+html.dark [style*="border: 1px solid #e2e8f0"],
+html.dark [style*="border: 1px solid #e5e7eb"] {
+  border-color: #27354f !important;
+}
+
+html.dark #quiz-modal-container > div {
+  background: #111827 !important;
+  color: #f8fafc !important;
+  border-color: #1f2937 !important;
+}
+
+html.dark table {
+  border-color: #27354f !important;
+}
+
+html.dark table th {
+  background: #17253b !important;
+  color: #34d399 !important;
+  border-color: #27354f !important;
+}
+
+html.dark table td {
+  background: #111827 !important;
+  color: #e2e8f0 !important;
+  border-color: #1e293b !important;
+}
+
+html.dark table tr:nth-child(even) td {
+  background: #141e30 !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Outfit', sans-serif;
   color: var(--primary-color);
