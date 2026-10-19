@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { getSessionUser } from '@/lib/auth';
 import { getSubmissionsFromStore, getAllQuizzesFromStore } from '@/lib/submissionStore';
+import { getDoubtQueue, getPendingDoubtCount } from '@/lib/aiDoubtStore';
 
 
 export async function GET(req: NextRequest) {
@@ -173,6 +174,9 @@ export async function GET(req: NextRequest) {
       }));
     } catch (e) {}
 
+    const aiDoubts = getDoubtQueue();
+    const pendingDoubtsCount = getPendingDoubtCount();
+
     return NextResponse.json({
       success: true,
       teacher: { id: user.id, name: user.name, email: user.email },
@@ -181,13 +185,15 @@ export async function GET(req: NextRequest) {
         totalSubmissions: mergedSubmissions.length,
         pendingGrading: pendingGradingCount,
         flaggedEvents: mergedFlagged.length,
-        classroomsCount: classrooms.length
+        classroomsCount: classrooms.length,
+        pendingDoubts: pendingDoubtsCount
       },
       quizzes,
       recentSubmissions: mergedSubmissions,
       pendingGradingCount,
       flaggedAttempts: mergedFlagged,
-      classrooms
+      classrooms,
+      aiDoubtQueue: aiDoubts
     });
   } catch (err: any) {
     console.error('Teacher Dashboard API Error:', err);

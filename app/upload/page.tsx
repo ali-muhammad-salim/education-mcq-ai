@@ -45,6 +45,7 @@ export default function ResourceUploadCenterPage() {
   const [detectedBadge, setDetectedBadge] = useState<{
     year?: string;
     classLevel?: string;
+    subject?: string;
     paper?: string;
     solution?: string;
     resourceType?: 'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'pacing_guide';
@@ -85,6 +86,7 @@ export default function ResourceUploadCenterPage() {
     const result: {
       year?: string;
       classLevel?: string;
+      subject?: string;
       paper?: string;
       solution?: string;
       resourceType?: 'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'pacing_guide';
@@ -110,7 +112,6 @@ export default function ResourceUploadCenterPage() {
     }
 
     // 3. Class Level (Class IX vs Class X)
-    // Check Class X / SSC-II first to avoid 'ssc-i' matching inside 'ssc-ii'
     if (
       fn.includes('ssc-ii') || fn.includes('ssc2') || fn.includes('ssc_2') ||
       fn.includes('class-10') || fn.includes('class_10') || fn.includes('grade-10') ||
@@ -127,8 +128,26 @@ export default function ResourceUploadCenterPage() {
       result.classLevel = 'Class IX';
     }
 
-    // 4. Paper Component (Paper 1 vs Paper 2)
-    // Check Paper 2 / Paper II FIRST so 'paper-i' does not falsely match inside 'paper-ii'
+    // 4. Subject Auto-Detection (Physics, Chemistry, Biology, Mathematics, Computer Science, English, Urdu, Islamiat)
+    if (fn.includes('chem') || fn.includes('chemistry') || fn.includes('kemiya')) {
+      result.subject = 'Chemistry';
+    } else if (fn.includes('bio') || fn.includes('biology') || fn.includes('hayatiyat')) {
+      result.subject = 'Biology';
+    } else if (fn.includes('math') || fn.includes('mathematics') || fn.includes('riazi') || fn.includes('algebra')) {
+      result.subject = 'Mathematics';
+    } else if (fn.includes('comp') || fn.includes('computer') || fn.includes('cs') || fn.includes('it')) {
+      result.subject = 'Computer Science';
+    } else if (fn.includes('eng') || fn.includes('english')) {
+      result.subject = 'English';
+    } else if (fn.includes('urdu')) {
+      result.subject = 'Urdu';
+    } else if (fn.includes('islam') || fn.includes('islamiat')) {
+      result.subject = 'Islamiat';
+    } else if (fn.includes('phy') || fn.includes('physics') || fn.includes('tabiyat')) {
+      result.subject = 'Physics';
+    }
+
+    // 5. Paper Component (Paper 1 vs Paper 2)
     if (
       fn.includes('paper-2') || fn.includes('paper_2') || fn.includes('paper 2') ||
       fn.includes('paper-ii') || fn.includes('paper_ii') || fn.includes('paper ii') ||
@@ -145,7 +164,7 @@ export default function ResourceUploadCenterPage() {
       result.paper = 'both';
     }
 
-    // 5. Solution Status
+    // 6. Solution Status
     if (fn.includes('solved') || fn.includes('marking') || fn.includes('scheme') || fn.includes('key') || fn.includes('solution') || fn.includes('with-answers')) {
       result.solution = 'solved_has_key';
     } else if (fn.includes('unsolved') || fn.includes('without-key') || fn.includes('question-paper')) {
@@ -166,6 +185,7 @@ export default function ResourceUploadCenterPage() {
 
     if (detected.resourceType) setResourceType(detected.resourceType);
     if (detected.classLevel) setClassLevel(detected.classLevel);
+    if (detected.subject) setSubject(detected.subject);
     if (detected.year) setExamYear(detected.year);
     if (detected.paper) setPaperComponent(detected.paper);
     if (detected.solution) setSolutionStatus(detected.solution);
@@ -473,7 +493,12 @@ export default function ResourceUploadCenterPage() {
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                     <Sparkles size={16} color="#2563eb" />
-                    <span><strong>AI Auto-Detected from Filename:</strong></span>
+                    <span><strong>AI Auto-Detected:</strong></span>
+                    {detectedBadge.subject && (
+                      <span style={{ background: '#dbeafe', color: '#1e40af', padding: '2px 8px', borderRadius: '4px', fontWeight: 700 }}>
+                        📚 {detectedBadge.subject}
+                      </span>
+                    )}
                     {detectedBadge.year && (
                       <span style={{ background: '#dbeafe', color: '#1e40af', padding: '2px 8px', borderRadius: '4px', fontWeight: 700 }}>
                         Year {detectedBadge.year}
@@ -529,11 +554,15 @@ export default function ResourceUploadCenterPage() {
                   onChange={(e) => setSubject(e.target.value)}
                   style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1px solid #dce5e1', fontSize: '0.9rem', outline: 'none' }}
                 >
+                  <option value="auto">✨ Auto-Detect Subject (Physics, Chemistry, Biology, Math, CS)</option>
                   <option value="Physics">Physics</option>
                   <option value="Chemistry">Chemistry</option>
                   <option value="Biology">Biology</option>
                   <option value="Mathematics">Mathematics</option>
                   <option value="Computer Science">Computer Science</option>
+                  <option value="English">English</option>
+                  <option value="Urdu">Urdu</option>
+                  <option value="Islamiat">Islamiat</option>
                 </select>
               </div>
             </div>

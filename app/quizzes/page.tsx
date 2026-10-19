@@ -342,7 +342,7 @@ export default function QuizzesCatalogPage() {
               onChange={(e) => setSelectedClass(e.target.value)}
               aria-label="Filter by academic class"
               style={{
-                backgroundColor: 'rgba(244, 247, 246, 0.7)',
+                backgroundColor: 'var(--card-bg, #ffffff)',
                 border: '1px solid var(--border-color, #dce5e1)',
                 borderRadius: '10px',
                 padding: '0.65rem 1rem',
@@ -366,7 +366,7 @@ export default function QuizzesCatalogPage() {
               onChange={(e) => setSelectedSubject(e.target.value)}
               aria-label="Filter by subject"
               style={{
-                backgroundColor: 'rgba(244, 247, 246, 0.7)',
+                backgroundColor: 'var(--card-bg, #ffffff)',
                 border: '1px solid var(--border-color, #dce5e1)',
                 borderRadius: '10px',
                 padding: '0.65rem 1rem',
@@ -509,9 +509,9 @@ export default function QuizzesCatalogPage() {
                       borderRadius: '9999px',
                       fontSize: '0.68rem',
                       fontWeight: 800,
-                      backgroundColor: '#e6f0ed',
-                      color: '#0b5e4a',
-                      border: '1px solid rgba(11, 94, 74, 0.2)',
+                      backgroundColor: 'var(--primary-light, #e6f0ed)',
+                      color: 'var(--primary-color, #0b5e4a)',
+                      border: '1px solid rgba(16, 185, 129, 0.25)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.04em'
                     }}>
@@ -567,7 +567,7 @@ export default function QuizzesCatalogPage() {
                     paddingTop: '0.75rem',
                     borderTop: '1px solid var(--border-color, #dce5e1)'
                   }}>
-                    <span style={{ fontWeight: 700, color: '#0b5e4a' }}>{q.questionCount} Questions</span>
+                    <span style={{ fontWeight: 700, color: 'var(--primary-color, #0b5e4a)' }}>{q.questionCount} Questions</span>
                     <span>•</span>
                     <span style={{ fontWeight: 700 }}>{q.totalMarks} Marks</span>
                     <span>•</span>

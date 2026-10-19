@@ -131,6 +131,41 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // Subject auto-detection from filename and user input
+    let finalSubject = subject;
+    const fn = file.name.toLowerCase();
+    if (!finalSubject || finalSubject === 'auto') {
+      if (fn.includes('chem') || fn.includes('chemistry') || fn.includes('kemiya')) {
+        finalSubject = 'Chemistry';
+      } else if (fn.includes('bio') || fn.includes('biology') || fn.includes('hayatiyat')) {
+        finalSubject = 'Biology';
+      } else if (fn.includes('math') || fn.includes('mathematics') || fn.includes('riazi') || fn.includes('algebra')) {
+        finalSubject = 'Mathematics';
+      } else if (fn.includes('comp') || fn.includes('computer') || fn.includes('cs') || fn.includes('it')) {
+        finalSubject = 'Computer Science';
+      } else if (fn.includes('eng') || fn.includes('english')) {
+        finalSubject = 'English';
+      } else if (fn.includes('urdu')) {
+        finalSubject = 'Urdu';
+      } else if (fn.includes('islam') || fn.includes('islamiat')) {
+        finalSubject = 'Islamiat';
+      } else {
+        finalSubject = 'Physics';
+      }
+    }
+
+    const subjectCodeMap: Record<string, string> = {
+      'Physics': 'PHY',
+      'Chemistry': 'CHM',
+      'Biology': 'BIO',
+      'Mathematics': 'MTH',
+      'Computer Science': 'CSC',
+      'English': 'ENG',
+      'Urdu': 'URD',
+      'Islamiat': 'ISL'
+    };
+    const subjectCode = subjectCodeMap[finalSubject] || finalSubject.substring(0, 3).toUpperCase();
+
     // Extract standardized year, grade, and component
     let parsedYear = 2024;
     if (examYear && examYear !== 'auto' && !isNaN(parseInt(examYear))) {
@@ -145,7 +180,6 @@ export async function POST(req: NextRequest) {
     const gradeLevel = isClass10 ? 10 : 9;
     const gradeName = isClass10 ? 'Class X' : 'Class IX';
 
-    const fn = file.name.toLowerCase();
     const pc = (paperComponent || '').toLowerCase();
     const isP2 = pc.includes('2') || pc.includes('ii') || pc.includes('crq') || pc.includes('theory') ||
       fn.includes('paper-2') || fn.includes('paper_2') || fn.includes('paper 2') ||
@@ -154,13 +188,14 @@ export async function POST(req: NextRequest) {
     const comp = isP2 ? 'P2' : 'P1';
 
     const isModel = resourceType === 'model_paper';
-    const paperCode = isModel ? `PHY-${gradeCode}-${comp}` : `PHY-${gradeCode}-${parsedYear}-${comp}`;
-    const paperTitle = `Physics SSC-${gradeCode === 'X' ? 'II' : 'I'} ${isModel ? 'Model' : parsedYear} Annual Examination Paper ${comp === 'P1' ? 'I (MCQ)' : 'II (CRQ & ERQ)'}`;
+    const paperCode = isModel ? `${subjectCode}-${gradeCode}-${comp}` : `${subjectCode}-${gradeCode}-${parsedYear}-${comp}`;
+    const paperTitle = `${finalSubject} SSC-${gradeCode === 'X' ? 'II' : 'I'} ${isModel ? 'Model' : parsedYear} Annual Examination Paper ${comp === 'P1' ? 'I (MCQ)' : 'II (CRQ & ERQ)'}`;
 
     const meta = {
       board,
       classLevel: gradeName,
-      subject,
+      subject: finalSubject,
+      subjectCode,
       resourceType,
       year: parsedYear.toString(),
       paperComponent: comp,
@@ -238,15 +273,15 @@ export async function POST(req: NextRequest) {
       let subjectRecord = await prisma.subject.findFirst({
         where: {
           classId: academicClass.id,
-          name: { contains: 'Physics', mode: 'insensitive' }
+          name: { contains: finalSubject, mode: 'insensitive' }
         }
       });
       if (!subjectRecord) {
         subjectRecord = await prisma.subject.create({
           data: {
             classId: academicClass.id,
-            name: 'Physics',
-            code: 'PHY'
+            name: finalSubject,
+            code: subjectCode
           }
         });
       }
@@ -307,7 +342,7 @@ export async function POST(req: NextRequest) {
         examYear: parsedYear,
         fileUrl: publicUrl,
         academicClass: { name: gradeName, level: gradeLevel },
-        subject: { name: 'Physics' },
+        subject: { name: finalSubject, code: subjectCode },
         _count: { questions: comp === 'P1' ? 40 : 11 }
       };
       const idx = existingList.findIndex((p: any) => p.paperCode === paperCode);

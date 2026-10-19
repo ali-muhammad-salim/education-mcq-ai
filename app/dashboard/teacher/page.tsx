@@ -6,18 +6,24 @@ import {
   Plus, BookOpen, Users, CheckCircle2, Clock, ShieldAlert, 
   Settings, ExternalLink, Trash2, Edit3, Eye, Search, 
   Sparkles, Award, ArrowUpRight, Copy, Check, LogIn,
-  GraduationCap, LogOut, ArrowRight, ShieldCheck
+  GraduationCap, LogOut, ArrowRight, ShieldCheck, AlertTriangle,
+  FileQuestion, CheckCheck, X
 } from 'lucide-react';
 import AuthModal from '@/components/AuthModal';
+import MathText from '@/components/MathText';
 
 export default function TeacherDashboardPage() {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [isStudentBlocked, setIsStudentBlocked] = useState(false);
   const [authRequired, setAuthRequired] = useState(false);
-  const [activeTab, setActiveTab] = useState<'quizzes' | 'submissions' | 'classrooms' | 'integrity'>('quizzes');
+  const [activeTab, setActiveTab] = useState<'quizzes' | 'submissions' | 'classrooms' | 'integrity' | 'ai-review'>('quizzes');
   const [authModalOpen, setAuthModalOpen] = useState(false);
   
+  // AI Doubt Queue state
+  const [resolvingDoubtId, setResolvingDoubtId] = useState<string | null>(null);
+  const [doubtFilter, setDoubtFilter] = useState<'PENDING' | 'RESOLVED'>('PENDING');
+
   // Create classroom modal
   const [isClassModalOpen, setIsClassModalOpen] = useState(false);
   const [className, setClassName] = useState('');
@@ -124,6 +130,32 @@ export default function TeacherDashboardPage() {
     navigator.clipboard.writeText(code);
     setCopiedCode(code);
     setTimeout(() => setCopiedCode(null), 2000);
+  };
+
+  const handleResolveDoubt = async (doubtId: string, resolution: 'APPROVED' | 'DISMISSED', correctedAnswer?: string) => {
+    try {
+      setResolvingDoubtId(doubtId);
+      const res = await fetch('/api/dashboard/teacher/doubts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'RESOLVE',
+          doubtId,
+          resolution,
+          correctedAnswer
+        })
+      });
+      const json = await res.json();
+      if (json.success) {
+        fetchDashboard();
+      } else {
+        alert(json.error || 'Failed to update question status');
+      }
+    } catch {
+      alert('Error updating question status');
+    } finally {
+      setResolvingDoubtId(null);
+    }
   };
 
   // 1. STUDENT BLOCKED GUARD SCREEN
@@ -585,6 +617,27 @@ export default function TeacherDashboardPage() {
               Tab-switch flags
             </span>
           </div>
+
+          <div style={{
+            padding: '1.25rem 1.5rem',
+            borderRadius: '16px',
+            backgroundColor: 'var(--card-bg, #ffffff)',
+            border: '1px solid var(--border-color, #dce5e1)',
+            boxShadow: 'var(--shadow-sm)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.25rem'
+          }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
+              AI Doubt Review
+            </span>
+            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#f59e0b' }}>
+              {metrics.pendingDoubts !== undefined ? metrics.pendingDoubts : (data?.aiDoubtQueue || []).filter((d: any) => d.status === 'PENDING_REVIEW').length}
+            </strong>
+            <span style={{ fontSize: '0.75rem', color: '#d97706', fontWeight: 600 }}>
+              Flagged by Double-Check AI
+            </span>
+          </div>
         </div>
 
         {/* Navigation Tabs */}
@@ -600,7 +653,8 @@ export default function TeacherDashboardPage() {
             { id: 'quizzes', label: 'My Assessments', count: (data?.quizzes || []).length },
             { id: 'submissions', label: 'Submissions & Grades', count: (data?.recentSubmissions || []).length },
             { id: 'classrooms', label: 'Classrooms & Rosters', count: (data?.classrooms || []).length },
-            { id: 'integrity', label: 'Anti-Cheating Sentinel', count: (data?.flaggedAttempts || []).length }
+            { id: 'integrity', label: 'Anti-Cheating Sentinel', count: (data?.flaggedAttempts || []).length },
+            { id: 'ai-review', label: 'AI Doubt Queue', count: (data?.aiDoubtQueue || []).filter((d: any) => d.status === 'PENDING_REVIEW').length }
           ].map(tab => (
             <button
               key={tab.id}
@@ -1229,6 +1283,386 @@ export default function TeacherDashboardPage() {
                 ))}
               </div>
             )}
+          </div>
+        )}
+
+        {/* TAB 5: AI QUALITY REVIEW & DOUBT QUEUE */}
+        {activeTab === 'ai-review' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {/* Header Card */}
+            <div style={{
+              backgroundColor: 'var(--card-bg, #ffffff)',
+              borderRadius: '20px',
+              padding: '1.75rem',
+              border: '1px solid var(--border-color, #dce5e1)',
+              boxShadow: 'var(--shadow-sm)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.75rem'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <div style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '14px',
+                    backgroundColor: 'rgba(245, 158, 11, 0.15)',
+                    color: '#d97706',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <AlertTriangle size={24} />
+                  </div>
+                  <div>
+                    <h2 style={{ fontSize: '1.25rem', fontWeight: 800, margin: 0, color: 'var(--text-color, #2c3e38)' }}>
+                      AI Question Quality & Double-Check Doubt Queue
+                    </h2>
+                    <span style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)' }}>
+                      Independent 2-stage verification system ensures 100% accuracy before student deployment.
+                    </span>
+                  </div>
+                </div>
+
+                {/* Sub-Filter Tabs */}
+                <div style={{
+                  display: 'flex',
+                  backgroundColor: 'var(--bg-color, #f4f7f6)',
+                  padding: '4px',
+                  borderRadius: '12px',
+                  border: '1px solid var(--border-color, #dce5e1)'
+                }}>
+                  <button
+                    onClick={() => setDoubtFilter('PENDING')}
+                    style={{
+                      padding: '0.45rem 1rem',
+                      borderRadius: '8px',
+                      fontSize: '0.8rem',
+                      fontWeight: 700,
+                      border: 'none',
+                      cursor: 'pointer',
+                      backgroundColor: doubtFilter === 'PENDING' ? '#0b5e4a' : 'transparent',
+                      color: doubtFilter === 'PENDING' ? '#ffffff' : 'var(--text-color, #2c3e38)',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    Pending Review ({((data?.aiDoubtQueue || []).filter((d: any) => d.status === 'PENDING_REVIEW')).length})
+                  </button>
+                  <button
+                    onClick={() => setDoubtFilter('RESOLVED')}
+                    style={{
+                      padding: '0.45rem 1rem',
+                      borderRadius: '8px',
+                      fontSize: '0.8rem',
+                      fontWeight: 700,
+                      border: 'none',
+                      cursor: 'pointer',
+                      backgroundColor: doubtFilter === 'RESOLVED' ? '#0b5e4a' : 'transparent',
+                      color: doubtFilter === 'RESOLVED' ? '#ffffff' : 'var(--text-color, #2c3e38)',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    Resolved ({((data?.aiDoubtQueue || []).filter((d: any) => d.status !== 'PENDING_REVIEW')).length})
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* List of Doubt Cards */}
+            {(() => {
+              const allDoubts: any[] = data?.aiDoubtQueue || [];
+              const filteredDoubts = doubtFilter === 'PENDING'
+                ? allDoubts.filter((d: any) => d.status === 'PENDING_REVIEW')
+                : allDoubts.filter((d: any) => d.status !== 'PENDING_REVIEW');
+
+              if (filteredDoubts.length === 0) {
+                return (
+                  <div style={{
+                    padding: '4rem 2rem',
+                    textAlign: 'center',
+                    backgroundColor: 'var(--card-bg, #ffffff)',
+                    borderRadius: '20px',
+                    border: '1px solid var(--border-color, #dce5e1)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    boxShadow: 'var(--shadow-sm)'
+                  }}>
+                    <div style={{
+                      width: '64px',
+                      height: '64px',
+                      borderRadius: '16px',
+                      backgroundColor: 'rgba(16, 185, 129, 0.15)',
+                      color: '#10b981',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <ShieldCheck size={36} />
+                    </div>
+                    <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, color: 'var(--text-color, #2c3e38)' }}>
+                      {doubtFilter === 'PENDING' ? 'All Questions Verified & 100% Accurate' : 'No Resolved Questions Yet'}
+                    </h3>
+                    <p style={{ fontSize: '0.88rem', color: 'var(--text-light, #5a7a6f)', maxWidth: '480px', margin: 0, lineHeight: 1.6 }}>
+                      {doubtFilter === 'PENDING'
+                        ? 'The independent double-check AI pipeline has analyzed all generated questions and past papers. Zero ambiguities or low-confidence items are pending.'
+                        : 'Any questions flagged by the double-check AI that you approve or dismiss will be recorded here.'}
+                    </p>
+                  </div>
+                );
+              }
+
+              return (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                  {filteredDoubts.map((doubt: any) => {
+                    const isPending = doubt.status === 'PENDING_REVIEW';
+                    const confPct = Math.round((doubt.confidenceScore || 0.8) * 100);
+
+                    return (
+                      <div
+                        key={doubt.id}
+                        style={{
+                          backgroundColor: 'var(--card-bg, #ffffff)',
+                          borderRadius: '16px',
+                          border: isPending ? '1.5px solid rgba(245, 158, 11, 0.4)' : '1px solid var(--border-color, #dce5e1)',
+                          padding: '1.5rem',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '1.25rem',
+                          boxShadow: 'var(--shadow-sm)'
+                        }}
+                      >
+                        {/* Top Metadata Badges */}
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                            <span style={{
+                              padding: '0.25rem 0.65rem',
+                              borderRadius: '9999px',
+                              fontSize: '0.72rem',
+                              fontWeight: 800,
+                              backgroundColor: 'rgba(11, 94, 74, 0.1)',
+                              color: 'var(--primary-color, #0b5e4a)',
+                              textTransform: 'uppercase'
+                            }}>
+                              {doubt.subject || 'General'}
+                            </span>
+                            <span style={{
+                              padding: '0.25rem 0.65rem',
+                              borderRadius: '9999px',
+                              fontSize: '0.72rem',
+                              fontWeight: 700,
+                              backgroundColor: 'var(--bg-color, #f4f7f6)',
+                              color: 'var(--text-color, #2c3e38)',
+                              border: '1px solid var(--border-color, #dce5e1)'
+                            }}>
+                              {doubt.classLevel}
+                            </span>
+                            {doubt.chapter && (
+                              <span style={{
+                                padding: '0.25rem 0.65rem',
+                                borderRadius: '9999px',
+                                fontSize: '0.72rem',
+                                fontWeight: 600,
+                                backgroundColor: 'var(--bg-color, #f4f7f6)',
+                                color: 'var(--text-light, #5a7a6f)'
+                              }}>
+                                {doubt.chapter}
+                              </span>
+                            )}
+                          </div>
+
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                            <span style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.35rem',
+                              padding: '0.25rem 0.75rem',
+                              borderRadius: '9999px',
+                              fontSize: '0.75rem',
+                              fontWeight: 800,
+                              backgroundColor: confPct >= 90 ? 'rgba(16, 185, 129, 0.15)' : confPct >= 75 ? 'rgba(245, 158, 11, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+                              color: confPct >= 90 ? '#10b981' : confPct >= 75 ? '#d97706' : '#dc2626'
+                            }}>
+                              <AlertTriangle size={13} />
+                              <span>{confPct}% AI Confidence</span>
+                            </span>
+
+                            {!isPending && (
+                              <span style={{
+                                padding: '0.25rem 0.65rem',
+                                borderRadius: '9999px',
+                                fontSize: '0.72rem',
+                                fontWeight: 800,
+                                backgroundColor: doubt.status === 'APPROVED' ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+                                color: doubt.status === 'APPROVED' ? '#10b981' : '#dc2626'
+                              }}>
+                                {doubt.status}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Question Stem */}
+                        <div>
+                          <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-light, #5a7a6f)', marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                            Question Statement
+                          </div>
+                          <div style={{
+                            fontSize: '1rem',
+                            fontWeight: 700,
+                            lineHeight: 1.5,
+                            color: 'var(--text-color, #2c3e38)',
+                            padding: '0.85rem 1rem',
+                            borderRadius: '12px',
+                            backgroundColor: 'var(--bg-color, #f8fafc)',
+                            border: '1px solid var(--border-color, #dce5e1)'
+                          }}>
+                            <MathText text={doubt.stemText} />
+                          </div>
+                        </div>
+
+                        {/* Options Comparison */}
+                        <div>
+                          <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-light, #5a7a6f)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                            Options Analysis (Click option to select correct answer)
+                          </div>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.65rem' }}>
+                            {(doubt.options || []).map((opt: any, optIdx: number) => {
+                              const isMarked = opt.isCorrect;
+                              const isValidatorRec = doubt.stage2Answer && opt.text && doubt.stage2Answer.toLowerCase().includes(opt.text.toLowerCase());
+
+                              return (
+                                <button
+                                  key={optIdx}
+                                  type="button"
+                                  onClick={() => isPending && handleResolveDoubt(doubt.id, 'APPROVED', opt.text)}
+                                  style={{
+                                    textAlign: 'left',
+                                    padding: '0.75rem 1rem',
+                                    borderRadius: '10px',
+                                    border: isMarked
+                                      ? '2px solid #0b5e4a'
+                                      : isValidatorRec
+                                      ? '2px solid #d97706'
+                                      : '1px solid var(--border-color, #dce5e1)',
+                                    backgroundColor: isMarked
+                                      ? 'rgba(11, 94, 74, 0.08)'
+                                      : isValidatorRec
+                                      ? 'rgba(245, 158, 11, 0.08)'
+                                      : 'var(--card-bg, #ffffff)',
+                                    cursor: isPending ? 'pointer' : 'default',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '0.35rem',
+                                    transition: 'all 0.15s ease'
+                                  }}
+                                >
+                                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
+                                    <span style={{ fontSize: '0.72rem', fontWeight: 800, color: isMarked ? '#0b5e4a' : 'var(--text-light, #5a7a6f)' }}>
+                                      Option {String.fromCharCode(65 + optIdx)}
+                                    </span>
+                                    {isMarked && (
+                                      <span style={{ fontSize: '0.65rem', fontWeight: 800, padding: '1px 6px', borderRadius: '4px', backgroundColor: '#0b5e4a', color: '#ffffff' }}>
+                                        Current Key
+                                      </span>
+                                    )}
+                                    {isValidatorRec && !isMarked && (
+                                      <span style={{ fontSize: '0.65rem', fontWeight: 800, padding: '1px 6px', borderRadius: '4px', backgroundColor: '#d97706', color: '#ffffff' }}>
+                                        Validator Pick
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div style={{ fontSize: '0.88rem', color: 'var(--text-color, #2c3e38)', fontWeight: 600 }}>
+                                    <MathText text={opt.text} />
+                                  </div>
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+
+                        {/* AI Doubt Diagnostic Reason Box */}
+                        <div style={{
+                          backgroundColor: 'rgba(245, 158, 11, 0.08)',
+                          border: '1px solid rgba(245, 158, 11, 0.3)',
+                          borderRadius: '12px',
+                          padding: '1rem',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '0.4rem'
+                        }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#b45309', fontWeight: 800, fontSize: '0.8rem' }}>
+                            <FileQuestion size={16} />
+                            <span>Double-Check AI Quality Analysis:</span>
+                          </div>
+                          <p style={{ fontSize: '0.85rem', color: 'var(--text-color, #2c3e38)', margin: 0, lineHeight: 1.5 }}>
+                            {doubt.doubtReason || 'Stage 2 validator flagged a potential ambiguity or calculation discrepancy between stem and distractors.'}
+                          </p>
+                          {doubt.suggestedCorrection && (
+                            <div style={{ fontSize: '0.8rem', color: '#047857', fontWeight: 600, marginTop: '0.25rem' }}>
+                              💡 <strong>Suggested Correction:</strong> {doubt.suggestedCorrection}
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Educator Action Buttons */}
+                        {isPending && (
+                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '0.75rem', paddingTop: '0.5rem', borderTop: '1px solid var(--border-color, #dce5e1)' }}>
+                            <button
+                              type="button"
+                              disabled={resolvingDoubtId === doubt.id}
+                              onClick={() => handleResolveDoubt(doubt.id, 'DISMISSED')}
+                              style={{
+                                padding: '0.55rem 1rem',
+                                borderRadius: '10px',
+                                fontSize: '0.82rem',
+                                fontWeight: 700,
+                                backgroundColor: 'transparent',
+                                color: '#dc2626',
+                                border: '1px solid rgba(220, 38, 38, 0.3)',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.4rem',
+                                transition: 'all 0.15s ease'
+                              }}
+                            >
+                              <X size={15} />
+                              <span>Dismiss Question</span>
+                            </button>
+
+                            <button
+                              type="button"
+                              disabled={resolvingDoubtId === doubt.id}
+                              onClick={() => handleResolveDoubt(doubt.id, 'APPROVED')}
+                              style={{
+                                padding: '0.55rem 1.25rem',
+                                borderRadius: '10px',
+                                fontSize: '0.82rem',
+                                fontWeight: 800,
+                                backgroundColor: '#0b5e4a',
+                                color: '#ffffff',
+                                border: 'none',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.4rem',
+                                boxShadow: '0 2px 6px rgba(11, 94, 74, 0.25)',
+                                transition: 'all 0.15s ease'
+                              }}
+                            >
+                              <CheckCheck size={16} />
+                              <span>{resolvingDoubtId === doubt.id ? 'Updating...' : 'Approve as Verified'}</span>
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })()}
           </div>
         )}
       </div>

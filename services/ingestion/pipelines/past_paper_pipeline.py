@@ -82,8 +82,26 @@ async def detect_past_paper_metadata(client: GeminiClient, pdf_path: str, user_m
 
     has_solved_kw = any(k in filename for k in ["solved", "key", "solution", "marking-scheme"])
 
+    detected_subject = None
+    if any(k in filename for k in ["chem", "chemistry", "kemiya"]):
+        detected_subject = "Chemistry"
+    elif any(k in filename for k in ["bio", "biology", "hayatiyat"]):
+        detected_subject = "Biology"
+    elif any(k in filename for k in ["math", "mathematics", "riazi", "algebra"]):
+        detected_subject = "Mathematics"
+    elif any(k in filename for k in ["comp", "computer", "cs"]):
+        detected_subject = "Computer Science"
+    elif any(k in filename for k in ["eng", "english"]):
+        detected_subject = "English"
+    elif any(k in filename for k in ["urdu"]):
+        detected_subject = "Urdu"
+    elif any(k in filename for k in ["islam", "islamiat"]):
+        detected_subject = "Islamiat"
+    elif any(k in filename for k in ["phy", "physics", "tabiyat"]):
+        detected_subject = "Physics"
+
     # If any is still unknown, consult Gemini with Cover Page text
-    if not detected_year or not detected_class or not detected_paper:
+    if not detected_year or not detected_class or not detected_paper or not detected_subject:
         cover_text = ""
         for p in range(1, min(len(doc) + 1, 3)):
             cover_text += f"\n--- PAGE {p} ---\n" + doc[p - 1].get_text()
@@ -99,13 +117,15 @@ Cover Page Text:
 Determine:
 1. "year": 4-digit integer (e.g. 2024, 2023, 2022). If unknown, return 2024.
 2. "class": "Class IX" (for SSC-I, Grade 9) or "Class X" (for SSC-II, Grade 10).
-3. "paper_type": "MCQ" (for Paper I multiple choice) or "CRQ_ERQ" (for Paper II constructed/extended response).
-4. "has_answer_key": boolean (true if document includes answer keys/marking scheme, false if unsolved exam questions only).
+3. "subject": "Physics", "Chemistry", "Biology", "Mathematics", "Computer Science", etc.
+4. "paper_type": "MCQ" (for Paper I multiple choice) or "CRQ_ERQ" (for Paper II constructed/extended response).
+5. "has_answer_key": boolean (true if document includes answer keys/marking scheme, false if unsolved exam questions only).
 
 Return pure JSON only:
 {{
   "year": 2023,
   "class": "Class IX",
+  "subject": "Physics",
   "paper_type": "MCQ",
   "has_answer_key": false
 }}
@@ -117,6 +137,8 @@ Return pure JSON only:
                 detected_year = int(ai_data["year"])
             if not detected_class and ai_data.get("class"):
                 detected_class = ai_data["class"]
+            if not detected_subject and ai_data.get("subject"):
+                detected_subject = ai_data["subject"]
             if not detected_paper and ai_data.get("paper_type"):
                 detected_paper = ai_data["paper_type"]
         except Exception:
@@ -125,6 +147,7 @@ Return pure JSON only:
     # Apply overrides from user if not 'auto'
     final_year = int(user_meta.get("year")) if (user_meta.get("year") and str(user_meta.get("year")).isdigit()) else (detected_year or 2024)
     final_class = user_meta.get("classLevel") if user_meta.get("classLevel") and user_meta.get("classLevel") != "auto" else (detected_class or "Class IX")
+    final_subject = user_meta.get("subject") if user_meta.get("subject") and user_meta.get("subject") != "auto" else (detected_subject or "Physics")
     
     user_paper = user_meta.get("paperComponent", "auto")
     if user_paper == "paper_1":
@@ -149,12 +172,12 @@ Return pure JSON only:
         "class": final_class,
         "paper_type": final_paper,
         "solution_mode": final_sol,
-        "subject": user_meta.get("subject", "Physics"),
+        "subject": final_subject,
         "board": user_meta.get("board", "Aga Khan University Examination Board"),
         "keyFilePath": user_meta.get("keyFilePath")
     }
 
-    log_cb(f"📋 [Metadata Confirmed] Year: {final_year} | Class: {final_class} | Type: {final_paper} | Solution Mode: {final_sol}")
+    log_cb(f"📋 [Metadata Confirmed] Subject: {final_subject} | Year: {final_year} | Class: {final_class} | Type: {final_paper} | Solution Mode: {final_sol}")
     return meta
 
 
@@ -245,7 +268,7 @@ async def run_past_paper_pipeline(conn, client: GeminiClient, pdf_path: str, use
     key_map = {}
     key_pdf_path = user_meta.get("keyFilePath")
     if key_pdf_path and os.path.exists(key_pdf_path):
-        key_map = await extract_official_answer_key_pdf(client, key_pdf_path, f"Physics {class_name} ({year})", log_cb=log_cb)
+        key_map = await extract_official_answer_key_pdf(client, key_pdf_path, f"{subject_name} {class_name} ({year})", log_cb=log_cb)
 
     # 1. Resolve Subject & Board
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
@@ -256,17 +279,45 @@ async def run_past_paper_pipeline(conn, client: GeminiClient, pdf_path: str, use
         WHERE c.name = %s AND s.name ILIKE %s
     ''', (class_name, f"%{subject_name}%"))
     s_row = cur.fetchone()
+    
+    subject_code_map = {
+        "Physics": "PHY",
+        "Chemistry": "CHM",
+        "Biology": "BIO",
+        "Mathematics": "MTH",
+        "Computer Science": "CSC",
+        "English": "ENG",
+        "Urdu": "URD",
+        "Islamiat": "ISL"
+    }
+    subject_code = subject_code_map.get(subject_name, subject_name[:3].upper())
+
     if not s_row:
-        raise ValueError(f"Subject {subject_name} for {class_name} not found in database.")
-    subject_id, class_id = s_row[0], s_row[1]
+        # Gracefully find class and create subject if missing
+        cur.execute('SELECT id FROM "Class" WHERE name = %s LIMIT 1;', (class_name,))
+        c_row = cur.fetchone()
+        if c_row:
+            class_id = c_row[0]
+            subject_id = str(uuid.uuid4())
+            cur.execute('''
+                INSERT INTO "Subject" (id, "classId", name, code)
+                VALUES (%s, %s, %s, %s)
+                RETURNING id;
+            ''', (subject_id, class_id, subject_name, subject_code))
+            conn.commit()
+            log_cb(f"✅ Created new subject record in database: {subject_name} ({subject_code})")
+        else:
+            raise ValueError(f"Class {class_name} not found in database.")
+    else:
+        subject_id, class_id = s_row[0], s_row[1]
 
     cur.execute('SELECT id FROM "Board" LIMIT 1')
     board_id = cur.fetchone()[0]
 
     grade_code = "IX" if "IX" in class_name else "X"
     paper_subcode = "P1" if paper_type == "MCQ" else ("P2" if paper_type == "CRQ_ERQ" else "COMBINED")
-    paper_code = f"PHY-{grade_code}-{year}-{paper_subcode}"
-    title = f"Physics {class_name} ({year}) Paper {1 if paper_type == 'MCQ' else 2} - Past Examination"
+    paper_code = f"{subject_code}-{grade_code}-{year}-{paper_subcode}"
+    title = f"{subject_name} {class_name} ({year}) Paper {1 if paper_type == 'MCQ' else 2} - Past Examination"
 
     # 0. Precision AI Diagram Detection & Cropping (Gemini Vision)
     log_cb(f"🎨 Running AI Diagram Detection & Precision Cropper on PDF...")

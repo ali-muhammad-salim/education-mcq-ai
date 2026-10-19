@@ -64,54 +64,83 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-html.dark body {
+html.dark body,
+[data-theme="dark"] body {
   background-color: #0a0f1d !important;
   color: #f1f5f9 !important;
 }
 
 html.dark nav,
-html.dark .navbar {
+html.dark .navbar,
+[data-theme="dark"] nav,
+[data-theme="dark"] .navbar {
   background: #111827 !important;
   border-bottom: 2px solid #1f2937 !important;
+  color: #f8fafc !important;
 }
 
 html.dark .card,
 html.dark .panel,
-html.dark .resource-content {
+html.dark .resource-content,
+html.dark [class*="card"],
+[data-theme="dark"] .card,
+[data-theme="dark"] .panel,
+[data-theme="dark"] [class*="card"] {
   background: #111827 !important;
   border-color: #1f2937 !important;
   color: #f1f5f9 !important;
 }
 
-html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
-  color: #f8fafc;
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6,
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, 
+[data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6 {
+  color: #f8fafc !important;
 }
 
 html.dark .prose p,
-html.dark .prose li {
+html.dark .prose li,
+[data-theme="dark"] .prose p,
+[data-theme="dark"] .prose li {
   color: #cbd5e1 !important;
 }
 
-html.dark .card-desc {
+html.dark .card-desc,
+[data-theme="dark"] .card-desc {
   color: #94a3b8 !important;
 }
 
 html.dark input,
 html.dark select,
-html.dark textarea {
+html.dark textarea,
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
   background: #1e293b !important;
   color: #f1f5f9 !important;
   border-color: #334155 !important;
 }
 
-/* Eye-Friendly Dark Theme Overrides for Cards, Modals, Options & Tables */
+html.dark input::placeholder,
+html.dark textarea::placeholder,
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Universal High-Contrast Dark Theme Overrides for Cards, Modals & Panels */
 html.dark [style*="background: #ffffff"],
 html.dark [style*="background:#ffffff"],
+html.dark [style*="background-color: #ffffff"],
+html.dark [style*="background-color:#ffffff"],
 html.dark [style*="background: rgb(255, 255, 255)"],
-html.dark [style*="background:#fff"] {
-  background: #151f32 !important;
+html.dark [style*="background-color: rgb(255, 255, 255)"],
+html.dark [style*="background:#fff"],
+html.dark [style*="background: #fff"],
+[data-theme="dark"] [style*="background: #ffffff"],
+[data-theme="dark"] [style*="background: rgb(255, 255, 255)"] {
+  background: #111827 !important;
   color: #f1f5f9 !important;
-  border-color: #27354f !important;
+  border-color: #1f2937 !important;
 }
 
 html.dark [style*="background: #f8fafc"],
@@ -120,26 +149,97 @@ html.dark [style*="background: #f8faf9"],
 html.dark [style*="background:#f8faf9"],
 html.dark [style*="background: #f4f7f6"],
 html.dark [style*="background:#f4f7f6"],
+html.dark [style*="background: #fbfcfc"],
+html.dark [style*="background:#fbfcfc"],
 html.dark [style*="background: #f1f5f9"],
-html.dark [style*="background:#f1f5f9"] {
+html.dark [style*="background:#f1f5f9"],
+html.dark [style*="background-color: #f4f7f6"],
+html.dark [style*="background-color: #f8fafc"],
+html.dark [style*="background: rgba(244, 247, 246"],
+html.dark [style*="background-color: rgba(244, 247, 246"],
+[data-theme="dark"] [style*="background: #f4f7f6"],
+[data-theme="dark"] [style*="background: #f8fafc"] {
   background: #0f172a !important;
   color: #e2e8f0 !important;
   border-color: #27354f !important;
 }
 
+/* High-Contrast Badge Overrides for Dark Mode */
+html.dark [style*="background: #e6f0ed"],
+html.dark [style*="background:#e6f0ed"],
+html.dark [style*="background-color: #e6f0ed"],
+html.dark [style*="background-color:#e6f0ed"],
+html.dark [style*="background: rgb(230, 240, 237)"],
+[data-theme="dark"] [style*="background: #e6f0ed"] {
+  background: rgba(16, 185, 129, 0.16) !important;
+  color: #34d399 !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+}
+
+html.dark [style*="background: #fef3c7"],
+html.dark [style*="background:#fef3c7"],
+html.dark [style*="background: #fffbeb"],
+html.dark [style*="background:#fffbeb"],
+html.dark [style*="background: rgb(254, 243, 199)"] {
+  background: rgba(245, 158, 11, 0.16) !important;
+  color: #fbbf24 !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+html.dark [style*="background: #fee2e2"],
+html.dark [style*="background:#fee2e2"],
+html.dark [style*="background: #fef2f2"],
+html.dark [style*="background:#fef2f2"],
+html.dark [style*="background: rgb(254, 226, 226)"] {
+  background: rgba(239, 68, 68, 0.16) !important;
+  color: #f87171 !important;
+  border-color: rgba(239, 68, 68, 0.35) !important;
+}
+
+html.dark [style*="background: #e0f2fe"],
+html.dark [style*="background:#e0f2fe"],
+html.dark [style*="background: #f0f9ff"],
+html.dark [style*="background:#f0f9ff"],
+html.dark [style*="background: rgb(224, 242, 254)"] {
+  background: rgba(14, 165, 233, 0.16) !important;
+  color: #38bdf8 !important;
+  border-color: rgba(14, 165, 233, 0.35) !important;
+}
+
+/* Primary/Deep Green Text in Dark Mode -> Vibrant Emerald */
+html.dark [style*="color: #0b5e4a"],
+html.dark [style*="color:#0b5e4a"],
+html.dark [style*="color: rgb(11, 94, 74)"],
+html.dark [style*="color: #084737"],
+html.dark [style*="color:#084737"],
+html.dark [style*="color: #1a3b32"],
+html.dark [style*="color:#1a3b32"] {
+  color: #34d399 !important;
+}
+
+/* Dark Body Text -> Bright Crisp Off-White */
 html.dark [style*="color: #111827"],
 html.dark [style*="color:#111827"],
 html.dark [style*="color: #1a2e26"],
 html.dark [style*="color:#1a2e26"],
+html.dark [style*="color: #2c3e38"],
+html.dark [style*="color:#2c3e38"],
 html.dark [style*="color: #1e293b"],
 html.dark [style*="color:#1e293b"],
 html.dark [style*="color: #0f172a"],
 html.dark [style*="color:#0f172a"],
 html.dark [style*="color: #1f2937"],
-html.dark [style*="color:#1f2937"] {
+html.dark [style*="color:#1f2937"],
+html.dark [style*="color: #334155"],
+html.dark [style*="color:#334155"],
+html.dark [style*="color: #444"],
+html.dark [style*="color:#444"],
+html.dark [style*="color: #333"],
+html.dark [style*="color:#333"] {
   color: #f8fafc !important;
 }
 
+/* Secondary / Subtitle Text -> Readable Slate/Silver */
 html.dark [style*="color: #4b5563"],
 html.dark [style*="color:#4b5563"],
 html.dark [style*="color: #5a7a6f"],
@@ -147,16 +247,32 @@ html.dark [style*="color:#5a7a6f"],
 html.dark [style*="color: #64748b"],
 html.dark [style*="color:#64748b"],
 html.dark [style*="color: #6b7280"],
-html.dark [style*="color:#6b7280"] {
+html.dark [style*="color:#6b7280"],
+html.dark [style*="color: #718096"],
+html.dark [style*="color:#718096"] {
   color: #94a3b8 !important;
 }
 
+/* Light Borders -> Dark Theme Subtle Separation */
 html.dark [style*="border: 1.5px solid #dce5e1"],
 html.dark [style*="border: 1.5px solid #eef2f0"],
 html.dark [style*="border: 1px solid #cbd5e1"],
+html.dark [style*="border: 1px solid #dce5e1"],
+html.dark [style*="border: 1px solid #e1e8e5"],
 html.dark [style*="border: 1px solid #e2e8f0"],
-html.dark [style*="border: 1px solid #e5e7eb"] {
+html.dark [style*="border: 1px solid #e5e7eb"],
+html.dark [style*="border-color: #dce5e1"],
+html.dark [style*="border-color:#dce5e1"] {
   border-color: #27354f !important;
+}
+
+/* Secondary & Filter Buttons High Contrast */
+html.dark button[style*="background: rgba(244, 247, 246"],
+html.dark button[style*="background: #ffffff"],
+html.dark button[style*="background:#ffffff"] {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
 }
 
 html.dark #quiz-modal-container > div {

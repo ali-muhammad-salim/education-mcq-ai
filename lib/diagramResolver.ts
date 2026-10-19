@@ -94,10 +94,12 @@ export function resolveQuestionDiagram(
   let targetPaperKey = '';
   if (verifiedManifest[pCode]) {
     targetPaperKey = pCode;
-  } else if (isClass9) {
-    targetPaperKey = isPaper2 ? 'PHY-IX-2025-P2' : 'PHY-IX-2025-P1';
-  } else if (isClass10) {
-    targetPaperKey = isPaper2 ? 'PHY-X-2025-P2' : 'PHY-X-2025-P1';
+  } else if (pCode.startsWith('PHY') || (!pCode.startsWith('CHM') && !pCode.startsWith('BIO') && !pCode.startsWith('MTH') && !pCode.startsWith('CSC') && !pCode.startsWith('ENG') && !pCode.startsWith('URD'))) {
+    if (isClass9) {
+      targetPaperKey = isPaper2 ? 'PHY-IX-2025-P2' : 'PHY-IX-2025-P1';
+    } else if (isClass10) {
+      targetPaperKey = isPaper2 ? 'PHY-X-2025-P2' : 'PHY-X-2025-P1';
+    }
   }
 
   if (targetPaperKey && verifiedManifest[targetPaperKey]) {
