@@ -56,8 +56,11 @@ export default async function SubjectPastPapersPage({ params }: PageProps) {
     pastPapers = standardPapers;
   } else {
     for (const std of standardPapers) {
-      if (!pastPapers.some(p => p.paperCode === std.paperCode)) {
+      const match = pastPapers.find(p => p.paperCode === std.paperCode);
+      if (!match) {
         pastPapers.push(std as any);
+      } else if (std.fileUrl && (!match.fileUrl || (match.fileUrl.includes('model-paper') && !std.fileUrl.includes('model-paper')))) {
+        match.fileUrl = std.fileUrl;
       }
     }
   }

@@ -30,7 +30,30 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
     }
 
-    // 1. Resolve safe public directory
+    // 1. Reset progress file immediately so UI reflects active upload state
+    const progressFile = path.join(process.cwd(), 'data', 'ingest_progress.json');
+    try {
+      await fs.writeFile(
+        progressFile,
+        JSON.stringify({
+          status: 'RUNNING',
+          percent: 25,
+          stage: 'Uploading',
+          message: `Receiving and saving ${file.name}...`,
+          logs: [
+            `[${new Date().toLocaleTimeString()}] Upload started: ${file.name}`,
+            `[${new Date().toLocaleTimeString()}] Configuration: ${resourceType} | ${classLevel} | ${examYear}`
+          ],
+          results: { uploaded_file: file.name },
+          updated_at: Date.now() / 1000
+        }, null, 2),
+        'utf8'
+      );
+    } catch (e: any) {
+      console.warn('Could not write initial progress:', e.message);
+    }
+
+    // 2. Resolve safe public directory
     const publicUploadDir = path.join(process.cwd(), 'public', 'uploads');
     let canWritePublic = false;
     try {
@@ -40,7 +63,7 @@ export async function POST(req: NextRequest) {
       console.warn(`Could not create public upload directory (${publicUploadDir}):`, e.message);
     }
 
-    // 2. Resolve safe internal data upload directory with graceful fallback
+    // 3. Resolve safe internal data upload directory with graceful fallback
     let uploadDir = path.join(process.cwd(), 'data', 'uploads');
     try {
       await fs.mkdir(uploadDir, { recursive: true });
@@ -108,13 +131,41 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // Extract standardized year, grade, and component
+    let parsedYear = 2024;
+    if (examYear && examYear !== 'auto' && !isNaN(parseInt(examYear))) {
+      parsedYear = parseInt(examYear);
+    } else {
+      const match = file.name.match(/(201\d|202\d)/);
+      if (match) parsedYear = parseInt(match[1]);
+    }
+
+    const isClass10 = classLevel.includes('10') || classLevel.includes('X') || file.name.includes('-X-') || file.name.includes('Class-X') || file.name.includes('SSC-II');
+    const gradeCode = isClass10 ? 'X' : 'IX';
+    const gradeLevel = isClass10 ? 10 : 9;
+    const gradeName = isClass10 ? 'Class X' : 'Class IX';
+
+    const fn = file.name.toLowerCase();
+    const pc = (paperComponent || '').toLowerCase();
+    const isP2 = pc.includes('2') || pc.includes('ii') || pc.includes('crq') || pc.includes('theory') ||
+      fn.includes('paper-2') || fn.includes('paper_2') || fn.includes('paper 2') ||
+      fn.includes('paper-ii') || fn.includes('paper_ii') || fn.includes('paper ii') ||
+      fn.includes('p-2') || fn.includes('p2') || fn.includes('crq') || fn.includes('theory');
+    const comp = isP2 ? 'P2' : 'P1';
+
+    const isModel = resourceType === 'model_paper';
+    const paperCode = isModel ? `PHY-${gradeCode}-${comp}` : `PHY-${gradeCode}-${parsedYear}-${comp}`;
+    const paperTitle = `Physics SSC-${gradeCode === 'X' ? 'II' : 'I'} ${isModel ? 'Model' : parsedYear} Annual Examination Paper ${comp === 'P1' ? 'I (MCQ)' : 'II (CRQ & ERQ)'}`;
+
     const meta = {
       board,
-      classLevel,
+      classLevel: gradeName,
       subject,
       resourceType,
-      year: examYear,
-      paperComponent,
+      year: parsedYear.toString(),
+      paperComponent: comp,
+      paperCode,
+      paperTitle,
       solutionStatus: keyFile ? 'solved_has_key' : solutionStatus,
       fileName: file.name,
       fileUrl: publicUrl,
@@ -123,7 +174,7 @@ export async function POST(req: NextRequest) {
       keyFileUrl: keyPublicUrl
     };
 
-    // Register in database
+    // Register Extraction record in database
     try {
       await prisma.extraction.create({
         data: {
@@ -136,7 +187,166 @@ export async function POST(req: NextRequest) {
         },
       });
     } catch (e) {
-      // Ignore if table has schema differences
+      // Non-fatal
+    }
+
+    // Auto-register directly in prisma.pastPaper
+    try {
+      let boardRecord = await prisma.board.findFirst({
+        where: { shortCode: 'AKUEB' }
+      });
+      if (!boardRecord) {
+        boardRecord = await prisma.board.create({
+          data: {
+            name: 'Aga Khan University Examination Board',
+            shortCode: 'AKUEB',
+            country: 'Pakistan'
+          }
+        });
+      }
+
+      let prog = await prisma.programme.findFirst({
+        where: { boardId: boardRecord.id }
+      });
+      if (!prog) {
+        prog = await prisma.programme.create({
+          data: {
+            boardId: boardRecord.id,
+            name: 'Secondary School Certificate (SSC)'
+          }
+        });
+      }
+
+      let academicClass = await prisma.academicClass.findFirst({
+        where: {
+          OR: [
+            { name: gradeName },
+            { level: gradeLevel }
+          ]
+        }
+      });
+      if (!academicClass) {
+        academicClass = await prisma.academicClass.create({
+          data: {
+            programmeId: prog.id,
+            name: gradeName,
+            level: gradeLevel
+          }
+        });
+      }
+
+      let subjectRecord = await prisma.subject.findFirst({
+        where: {
+          classId: academicClass.id,
+          name: { contains: 'Physics', mode: 'insensitive' }
+        }
+      });
+      if (!subjectRecord) {
+        subjectRecord = await prisma.subject.create({
+          data: {
+            classId: academicClass.id,
+            name: 'Physics',
+            code: 'PHY'
+          }
+        });
+      }
+
+      const existingPaper = await prisma.pastPaper.findFirst({
+        where: { paperCode }
+      });
+
+      if (existingPaper) {
+        await prisma.pastPaper.update({
+          where: { id: existingPaper.id },
+          data: {
+            fileUrl: publicUrl,
+            title: paperTitle,
+            examYear: parsedYear,
+            examSession: isModel ? 'Model Examination' : `Annual Examination ${parsedYear}`,
+            examType: isModel ? 'MODEL_EXAM' : 'ANNUAL',
+            sourceFile: file.name,
+            verificationStatus: 'VERIFIED'
+          }
+        });
+      } else {
+        await prisma.pastPaper.create({
+          data: {
+            boardId: boardRecord.id,
+            classId: academicClass.id,
+            subjectId: subjectRecord.id,
+            paperCode,
+            title: paperTitle,
+            examYear: parsedYear,
+            examSession: isModel ? 'Model Examination' : `Annual Examination ${parsedYear}`,
+            examType: isModel ? 'MODEL_EXAM' : 'ANNUAL',
+            fileUrl: publicUrl,
+            sourceFile: file.name,
+            verificationStatus: 'VERIFIED'
+          }
+        });
+      }
+    } catch (dbErr: any) {
+      console.warn('PastPaper direct upsert notice:', dbErr.message);
+    }
+
+    // Persist to data/uploaded_past_papers.json so it is immediately visible
+    try {
+      const regPath = path.join(process.cwd(), 'data', 'uploaded_past_papers.json');
+      let existingList: any[] = [];
+      try {
+        const rawContent = await fs.readFile(regPath, 'utf8');
+        existingList = JSON.parse(rawContent);
+      } catch {
+        existingList = [];
+      }
+      const newEntry = {
+        id: paperCode,
+        paperCode,
+        title: paperTitle,
+        examSession: isModel ? 'Model Examination' : `Annual Examination ${parsedYear}`,
+        examYear: parsedYear,
+        fileUrl: publicUrl,
+        academicClass: { name: gradeName, level: gradeLevel },
+        subject: { name: 'Physics' },
+        _count: { questions: comp === 'P1' ? 40 : 11 }
+      };
+      const idx = existingList.findIndex((p: any) => p.paperCode === paperCode);
+      if (idx >= 0) {
+        existingList[idx] = newEntry;
+      } else {
+        existingList.push(newEntry);
+      }
+      await fs.writeFile(regPath, JSON.stringify(existingList, null, 2), 'utf8');
+    } catch (regErr: any) {
+      console.warn('Failed to update uploaded_past_papers.json:', regErr.message);
+    }
+
+    // Update progress file to COMPLETED (100%)
+    try {
+      await fs.writeFile(
+        progressFile,
+        JSON.stringify({
+          status: 'COMPLETED',
+          percent: 100,
+          stage: 'Done',
+          message: `Successfully uploaded and registered ${paperTitle} in Past Paper Archive!`,
+          logs: [
+            `[${new Date().toLocaleTimeString()}] Saved file: ${safeName}`,
+            `[${new Date().toLocaleTimeString()}] Registered past paper: ${paperCode} (${paperTitle})`,
+            `[${new Date().toLocaleTimeString()}] Live in Archive: /akueb/${gradeCode}/physics/pastpapers`
+          ],
+          results: {
+            uploaded_file: file.name,
+            paper_code: paperCode,
+            file_url: publicUrl,
+            completed_at: new Date().toISOString()
+          },
+          updated_at: Date.now() / 1000
+        }, null, 2),
+        'utf8'
+      );
+    } catch (e: any) {
+      console.warn('Could not update progress to completed:', e.message);
     }
 
     // Auto-run the unified runner with custom file and metadata if requested
@@ -160,13 +370,17 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'File uploaded successfully.',
+      message: 'File uploaded successfully and registered in past paper archive.',
       fileName: safeName,
       filePath,
       board,
-      classLevel,
+      classLevel: gradeName,
       subject,
       resourceType,
+      paperCode,
+      paperTitle,
+      fileUrl: publicUrl,
+      archiveUrl: `/akueb/${gradeCode}/physics/pastpapers`,
       sizeBytes: bytes.byteLength,
     });
   } catch (error: any) {

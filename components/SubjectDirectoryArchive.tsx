@@ -108,6 +108,40 @@ export default function SubjectDirectoryArchive({
           type: 'notes'
         }
       ]
+    },
+    {
+      title: '2024',
+      subtitle: 'Annual Examination Papers',
+      links: [
+        {
+          title: `${subjectTitle}-${isClass9 ? 'IX' : 'X'}-Paper-I-2024`,
+          href: isPhysics && isClass9 
+            ? '/past-papers/PHY-IX-2024-P1' 
+            : `/past-papers?year=2024&subject=${encodeURIComponent(subjectTitle)}`,
+          type: 'paper'
+        },
+        {
+          title: `${subjectTitle}-${isClass9 ? 'IX' : 'X'}-Paper-II-2024`,
+          href: isPhysics && isClass9 
+            ? '/past-papers/PHY-IX-2024-P2' 
+            : `/past-papers?year=2024&subject=${encodeURIComponent(subjectTitle)}`,
+          type: 'paper'
+        },
+        {
+          title: `${subjectTitle}-${isClass9 ? 'IX' : 'X'}-Keys-2024`,
+          href: isPhysics && isClass9 
+            ? '/past-papers/PHY-IX-2024-P1#key' 
+            : `/past-papers?year=2024&subject=${encodeURIComponent(subjectTitle)}`,
+          type: 'key'
+        },
+        {
+          title: `E-marking-Notes-${subjectTitle}-${isClass9 ? 'IX' : 'X'}-2024`,
+          href: isPhysics && isClass9 
+            ? '/past-papers/PHY-IX-2024-P2#emarking' 
+            : `/past-papers?year=2024&subject=${encodeURIComponent(subjectTitle)}`,
+          type: 'notes'
+        }
+      ]
     }
   ];
 

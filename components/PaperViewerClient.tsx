@@ -47,7 +47,9 @@ interface Props {
 }
 
 export default function PaperViewerClient({ paper, questions, backUrl, hideHeader = false, pdfUrl }: Props) {
-  const [displayMode, setDisplayMode] = useState<'generated' | 'original_pdf'>('generated');
+  const [displayMode, setDisplayMode] = useState<'generated' | 'original_pdf'>(
+    questions && questions.length > 0 ? 'generated' : 'original_pdf'
+  );
   const [showCorrectAnswers, setShowCorrectAnswers] = useState<boolean>(false);
   const [interactiveMode, setInteractiveMode] = useState<boolean>(false);
   const [revealedSolutions, setRevealedSolutions] = useState<Record<string, boolean>>({});

@@ -40,19 +40,24 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     console.error('Error fetching past paper detail:', err);
   }
 
-  if (!paper || !paper.questions || paper.questions.length === 0) {
+  if (!paper) {
     const fallback = getFallbackPaper(id);
     if (fallback) {
       paper = fallback;
     } else {
       return notFound();
     }
+  } else if (!paper.questions || paper.questions.length === 0) {
+    const fallback = getFallbackPaper(id);
+    if (fallback && fallback.questions && fallback.questions.length > 0) {
+      paper = fallback;
+    }
   }
 
   // Sort questions numerically
-  const sortedQuestions = [...paper.questions].sort((a, b) => {
-    const numA = parseInt(a.questionNumber.replace(/\D/g, '')) || 0;
-    const numB = parseInt(b.questionNumber.replace(/\D/g, '')) || 0;
+  const sortedQuestions = [...(paper.questions || [])].sort((a, b) => {
+    const numA = parseInt((a.questionNumber || '').replace(/\D/g, '')) || 0;
+    const numB = parseInt((b.questionNumber || '').replace(/\D/g, '')) || 0;
     return numA - numB;
   });
 

@@ -1,0 +1,234 @@
+[
+  {
+    "questionNumber": "7.a",
+    "stem": "Sara has mass of 30 kg. While running in the playground, she accelerates from 2 m/s to 4 m/s in 5 s. Calculate the power consumed in the given situation.",
+    "marks": 6.0,
+    "questionType": "EXTENDED_RESPONSE",
+    "modelAnswer": "Given data:\nMass ($m$) = 30 kg\nInitial velocity ($v_i$) = 2 m/s\nFinal velocity ($v_f$) = 4 m/s\nTime ($t$) = 5 s\n\nWork done ($W$) = Change in kinetic energy ($\\Delta KE$)\n$W = \\frac{1}{2} m v_f^2 - \\frac{1}{2} m v_i^2$\n$W = \\frac{1}{2} (30) (4)^2 - \\frac{1}{2} (30) (2)^2$\n$W = 15(16) - 15(4)$\n$W = 240 - 60 = 180$ J\n\nPower ($P$) = $\\frac{W}{t}$\n$P = \\frac{180 \\text{ J}}{5 \\text{ s}} = 36$ W",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Formula F = ma substituted with m = 30 kg."
+      },
+      {
+        "marks": 1,
+        "description": "Correct acceleration calculation and units."
+      }
+    ],
+    "slo": "6.6.2",
+    "isDiagram": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": "7.b.i",
+    "stem": "Explain why walls of a dam filled with water are usually wedge-shaped. Relate this with the pressure of liquid at different depths.",
+    "marks": 3.0,
+    "questionType": "EXTENDED_RESPONSE",
+    "modelAnswer": "Liquid pressure increases with depth due to the weight of the water column above ($P = \\rho g h$). Consequently, the pressure exerted by water at the bottom of a dam is much greater than at the surface. To withstand this tremendously high pressure at greater depths, the walls of a dam are made thicker at the bottom and thinner at the top, giving them a wedge-shaped profile.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Liquid pressure increases linearly with depth: P = ρgh."
+      },
+      {
+        "marks": 1,
+        "description": "Wedge shape provides greater thickness and strength at the bottom to withstand immense hydrostatic pressure."
+      }
+    ],
+    "slo": "7.4.3",
+    "isDiagram": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": "7.b.ii",
+    "stem": "If the density of water is 1,000 kg/m3, then calculate the depth of water in a dam when the pressure at the bottom is 1,00,000 Pa. (Note: Take the value of acceleration due to gravity as 9.8 m/s2.)",
+    "marks": 3.0,
+    "questionType": "EXTENDED_RESPONSE",
+    "modelAnswer": "Given data:\nDensity of water ($\\rho$) = $1000 \\text{ kg/m}^3$\nPressure ($P$) = $100,000 \\text{ Pa}$\nAcceleration due to gravity ($g$) = $9.8 \\text{ m/s}^2$\n\nFormula:\n$P = \\rho g h$\n\nCalculation:\n$100,000 = 1000 \\times 9.8 \\times h$\n$100,000 = 9800 \\times h$\n$h = \\frac{100,000}{9800}$\n$h \\approx 10.2$ m",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Formula: P = ρgh rearranged to h = P / (ρg)"
+      },
+      {
+        "marks": 1,
+        "description": "Substitution: h = P / (1000 * 9.8)"
+      },
+      {
+        "marks": 1,
+        "description": "Calculation of depth h with metres (m) unit."
+      }
+    ],
+    "slo": "7.4.4",
+    "isDiagram": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": "3",
+    "stem": "The orbits of comets are large and elliptical as compared to the orbits of planets which are smaller and circular. Describe the difference in the shapes of orbits with the help of TWO reasons.",
+    "marks": 2.0,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "modelAnswer": "1. Gravitational Influence: Planets are influenced primarily by the Sun's strong, consistent gravitational field at relatively close range, maintaining nearly circular orbits, whereas comets travel far into the outer solar system where gravitational forces vary greatly, leading to highly elongated elliptical paths.\n2. Origin and Formation: Comets originate from the distant Oort cloud or Kuiper belt with random high-velocity vectors resulting in eccentric orbits, while planets formed within the protoplanetary disk in more stable, circularized paths.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Reason 1: Comets originate from outer solar system (Kuiper Belt/Oort Cloud) with high orbital eccentricity."
+      },
+      {
+        "marks": 1,
+        "description": "Reason 2: Planets formed in a protoplanetary disk under uniform gravitational pull leading to nearly circular orbits."
+      }
+    ],
+    "slo": "5.5.4",
+    "isDiagram": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": "6.b",
+    "stem": "State and explain Newton’s 2nd law of motion and prove that the rate of change of momentum is equal to force.",
+    "marks": 6.0,
+    "questionType": "EXTENDED_RESPONSE",
+    "modelAnswer": "Statement: When a net force acts on a body, it produces acceleration in the direction of the force. The acceleration is directly proportional to the net force and inversely proportional to the mass of the body.\n\nExplanation and Proof:\nLet a body of mass '$m$' move with initial velocity '$v_i$'. Let a force '$F$' act on it for time '$t$' so that its velocity becomes '$v_f$' .\nInitial momentum ($P_i$) = $mv_i$\nFinal momentum ($P_f$) = $mv_f$\nChange in momentum = $P_f - P_i = mv_f - mv_i = m(v_f - v_i)$\nRate of change of momentum = $\\frac{m(v_f - v_i)}{t}$\nSince acceleration $a = \\frac{v_f - v_i}{t}$,\nRate of change of momentum = $ma$\nAccording to Newton's second law, $F = ma$.\nTherefore, $F = \\text{Rate of change of momentum}$.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Statement: Acceleration is directly proportional to applied net force and inversely proportional to mass."
+      },
+      {
+        "marks": 1,
+        "description": "Mathematical derivation showing a ∝ F and a ∝ 1/m leading to F = ma."
+      },
+      {
+        "marks": 1,
+        "description": "Definition of unit force: 1 Newton is force required to produce 1 m/s² acceleration in 1 kg mass."
+      }
+    ],
+    "slo": "3.4.2",
+    "isDiagram": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": "4",
+    "stem": "Write any THREE differences between evaporation and boiling.",
+    "marks": 3.0,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "modelAnswer": "1. Evaporation takes place at all temperatures, whereas boiling takes place at a specific constant temperature (boiling point).\n2. Evaporation is a surface phenomenon, whereas boiling is a bulk phenomenon.\n3. Evaporation causes cooling, whereas boiling does not cause cooling.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Difference 1: Evaporation occurs at all temperatures, whereas boiling occurs only at a specific fixed boiling point."
+      },
+      {
+        "marks": 1,
+        "description": "Difference 2: Evaporation is a surface phenomenon; boiling is a bulk phenomenon occurring throughout the liquid."
+      },
+      {
+        "marks": 1,
+        "description": "Difference 3: Evaporation causes cooling; during boiling temperature remains constant."
+      }
+    ],
+    "slo": "8.2.8",
+    "isDiagram": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": "1.i",
+    "stem": "How many significant figures are there in 0.0102030?",
+    "marks": 1.0,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "modelAnswer": "There are 6 significant figures in 0.0102030.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for writing the correct number of significant figures (6 significant figures)."
+      }
+    ],
+    "slo": "1.7.1",
+    "isDiagram": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": "1.ii",
+    "stem": "List the rules of significant figures applied on the number given part (i).",
+    "marks": 1.0,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "modelAnswer": "1. Leading zeros (zeros before the first non-zero digit) are not significant. \n2. Zeros between non-zero digits are significant. \n3. Trailing zeros after a decimal point are significant.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for stating any ONE valid rule of significant figures applied to 0.0102030."
+      }
+    ],
+    "slo": "1.7.1",
+    "isDiagram": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": "6.a",
+    "stem": "Zohan dropped a ball from a certain height. Its final velocity becomes 25 m/s when it reaches the ground. Now from the same height, if he throws the ball vertically downward with an initial velocity of 25 m/s, then calculate its final velocity. (Note: Take the value of acceleration due to gravity as 9.8 m/s2.)",
+    "marks": 6.0,
+    "questionType": "EXTENDED_RESPONSE",
+    "modelAnswer": "First scenario:\nInitial velocity ($v_i$) = 0 m/s\nFinal velocity ($v_f$) = 25 m/s\nAcceleration ($g$) = 9.8 $\\text{m/s}^2$\nUsing third equation of motion:\n$v_f^2 = v_i^2 + 2gs$\n$(25)^2 = (0)^2 + 2(9.8)s$\n$625 = 19.6s$\n$s = \\frac{625}{19.6} \\approx 31.89$ m\n\nSecond scenario:\nInitial velocity ($v_i$) = 25 m/s\nDistance ($s$) = 31.89 m\nAcceleration ($g$) = 9.8 $\\text{m/s}^2$\nUsing third equation of motion:\n$v_f^2 = v_i^2 + 2gs$\n$v_f^2 = (25)^2 + 2(9.8)(31.89)$\n$v_f^2 = 625 + 625 = 1250$\n$v_f = \\sqrt{1250} \\approx 35.36$ m/s",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Using appropriate equation of motion: v_f^2 = v_i^2 + 2gh or v_f = gt"
+      },
+      {
+        "marks": 1,
+        "description": "Correct substitution and final numerical answer with units (m/s)."
+      }
+    ],
+    "slo": "2.5.2",
+    "isDiagram": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": "5",
+    "stem": "A copper rod is 20 m long with the cross-sectional area of 4 m2. If its two ends are kept at temperatures 200oC and 300oC respectively, calculate the amount of heat flowing across the rod in one second. (Note: Take the co-efficient of thermal conductivity as 386.4 J/m.K.s.)",
+    "marks": 3.0,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "modelAnswer": "Given data:\nLength ($L$) = 20 m\nArea ($A$) = 4 $\\text{m}^2$\nTemperature $T_1$ = 200 $^{\\circ}\\text{C}$, $T_2$ = 300 $^{\\circ}\\text{C}$\nTemperature difference ($\\Delta T$) = $300 - 200 = 100$ K\nTime ($t$) = 1 s\nCoefficient of thermal conductivity ($k$) = 386.4 $\\text{J/m}\\cdot\\text{K}\\cdot\\text{s}$\n\nFormula:\n$\\frac{Q}{t} = \\frac{k \\cdot A \\cdot (T_2 - T_1)}{L}$\n\nCalculation:\n$\\frac{Q}{1} = \\frac{386.4 \\times 4 \\times 100}{20}$\n$\\frac{Q}{1} = \\frac{154560}{20} = 7728$ J/s\n\nAmount of heat flowing in one second ($Q$) = 7728 J",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correct formula: Q/t = k * A * (T2 - T1) / L"
+      },
+      {
+        "marks": 1,
+        "description": "Correct substitution: Q/t = 386.4 * 4 * (300 - 200) / 20"
+      },
+      {
+        "marks": 1,
+        "description": "Correct calculation and units: Rate of heat flow = 7728 J/s (or Watts)"
+      }
+    ],
+    "slo": "9.1.4",
+    "isDiagram": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": "2",
+    "stem": "Describe the THREE states of equilibrium on the basis of centre of gravity.",
+    "marks": 3.0,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "modelAnswer": "1. Stable Equilibrium: A body is in stable equilibrium if, when slightly displaced, its centre of gravity rises and it returns to its original position.\n2. Unstable Equilibrium: A body is in unstable equilibrium if, when slightly displaced, its centre of gravity lowers and it does not return to its original position but tumbles down.\n3. Neutral Equilibrium: A body is in neutral equilibrium if, when displaced, its centre of gravity remains at the same height and it stays in its new position.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Stable Equilibrium: Centre of gravity rises when tilted and body returns to original position."
+      },
+      {
+        "marks": 1,
+        "description": "Unstable Equilibrium: Centre of gravity lowers when tilted and body topples over."
+      },
+      {
+        "marks": 1,
+        "description": "Neutral Equilibrium: Centre of gravity remains at the same height and body remains in new position."
+      }
+    ],
+    "slo": "4.4.5",
+    "isDiagram": false,
+    "diagramUrl": null
+  }
+]

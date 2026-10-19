@@ -1,29 +1,8 @@
 {
-  "status": "COMPLETED",
-  "percent": 100,
-  "stage": "Done",
-  "message": "All resources successfully processed and verified!",
-  "logs": [
-    "[14:56:30] Verifying Gemini Multi-Key Pool & Database connectivity...",
-    "[14:56:30] Executing Dedicated Paper Pipeline on past_paper_Class_IX_1791885389646_Physics-IX-Paper-II-2025.pdf...",
-    "[14:56:30] \ud83d\ude80 [Past Paper Pipeline] Slicing and inspecting past_paper_Class_IX_1791885389646_Physics-IX-Paper-II-2025.pdf (8 pages)...",
-    "[14:56:30] \ud83d\udccb [Metadata Confirmed] Year: 2025 | Class: Class IX | Type: CRQ_ERQ | Solution Mode: HAS_KEY",
-    "[14:56:30] \ud83d\udd11 [Answer Key PDF] Extracting official marking scheme from key_past_paper_Class_IX_1791885389655_E-marking-Notes-Physics-IX-2025.pdf...",
-    "[14:56:35] \ud83d\udd11 Successfully mapped 9 official answer keys from Answer Key PDF!",
-    "[14:56:35] \ud83d\udcc4 Extracting Subjective Questions (Section B & C: CRQs / ERQs)...",
-    "[14:56:43] \u2705 Extracted 11 Subjective Questions (CRQs / ERQs) with marking schemes.",
-    "[14:56:43] \ud83c\udf89 [Completed] Physics Class IX (2025) Paper 2 - Past Examination successfully ingested: 11 examination questions saved in DB.",
-    "[14:56:43] Updating chapter study packs and search index...",
-    "[14:56:43] Compiling chapter resource packs and study guides...",
-    "[14:56:43] \u2705 Compiled 20 Chapter Bundles in data/physics/compiled_resources.",
-    "[14:56:43] Exporting updated JSON data...",
-    "[14:56:45] \ud83c\udf89 Ingestion pipeline finished with 100% verification."
-  ],
-  "results": {
-    "uploaded_file": "past_paper_Class_IX_1791885389646_Physics-IX-Paper-II-2025.pdf",
-    "extracted_questions": 11,
-    "total_questions_in_db": 138,
-    "completed_at": "2026-10-13 14:56:45"
-  },
-  "updated_at": 1791885405.7190108
+  "status": "IDLE",
+  "percent": 0,
+  "stage": "Ready",
+  "message": "System ready for resource intake.",
+  "logs": [],
+  "results": {}
 }

@@ -195,6 +195,14 @@ export default function ResourceUploadCenterPage() {
     setUploading(true);
     setUploadError(null);
     setUploadSuccess(null);
+    setProgress({
+      status: 'RUNNING',
+      percent: 25,
+      stage: 'Uploading',
+      message: `Uploading "${file.name}" to server...`,
+      logs: [`Uploading "${file.name}"...`],
+      results: {}
+    });
 
     const formData = new FormData();
     formData.append('file', file);
@@ -217,7 +225,10 @@ export default function ResourceUploadCenterPage() {
       });
       const data = await res.json();
       if (res.ok) {
-        setUploadSuccess(`Uploaded "${file.name}" ${keyFile ? `with Answer Key "${keyFile.name}"` : ''} successfully! Pipeline execution started.`);
+        const successMsg = data.paperCode
+          ? `🎉 Uploaded "${file.name}" successfully! Registered as ${data.paperCode} (${data.paperTitle || ''}) in the Past Paper Archive.`
+          : `Uploaded "${file.name}" ${keyFile ? `with Answer Key "${keyFile.name}"` : ''} successfully! Registered in archive.`;
+        setUploadSuccess(successMsg);
         setFile(null);
         setKeyFile(null);
         setDetectedBadge(null);
