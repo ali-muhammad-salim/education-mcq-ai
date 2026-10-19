@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
+import { getFallbackPaper } from '@/lib/paperDataService';
+import { getQuizFromStore } from '@/lib/submissionStore';
 
 export async function GET(
   req: NextRequest,
@@ -11,20 +13,86 @@ export async function GET(
     const { searchParams } = new URL(req.url);
     const mode = searchParams.get('mode') || 'take'; // 'take' (student) or 'edit' (teacher)
 
-    const quiz = await prisma.quiz.findUnique({
-      where: { id: quizId },
-      include: {
-        settings: true,
-        questions: {
-          orderBy: { orderIndex: 'asc' }
-        },
-        teacher: {
-          select: { id: true, name: true, email: true }
+    let quiz = null;
+    try {
+      quiz = await prisma.quiz.findUnique({
+        where: { id: quizId },
+        include: {
+          settings: true,
+          questions: {
+            orderBy: { orderIndex: 'asc' }
+          },
+          teacher: {
+            select: { id: true, name: true, email: true }
+          }
         }
-      }
-    });
+      });
+    } catch (e) {
+      console.warn('Prisma quiz lookup error, checking fallbacks:', e);
+    }
 
     if (!quiz) {
+      const stored = getQuizFromStore(quizId);
+      if (stored) {
+        return NextResponse.json({
+          id: stored.id,
+          code: stored.code,
+          title: stored.title,
+          durationMin: stored.durationMin || 55,
+          totalMarks: stored.totalMarks || stored.questions.length,
+          status: stored.status || 'PUBLISHED',
+          visibility: stored.visibility || 'PUBLIC',
+          settings: stored.settings || {},
+          questions: stored.questions.map((q, idx) => ({
+            id: `q-${idx + 1}`,
+            orderIndex: idx + 1,
+            marks: q.marks || 1,
+            isRequired: true,
+            questionType: 'MCQ_SINGLE',
+            stemText: q.stemText,
+            difficulty: 'Medium',
+            cognitiveLevel: 'Understanding',
+            options: (q.options || []).map((opt: any) => ({
+              id: opt.id || opt.text,
+              text: opt.text
+            })),
+            drawingSvg: q.drawingSvg || null
+          })),
+          teacher: { id: 'teacher-1', name: stored.teacherName || 'AKU-EB Faculty', email: 'faculty@akueb.edu.pk' }
+        });
+      }
+
+      // Check fallback paper
+      const fallback = getFallbackPaper(quizId);
+      if (fallback) {
+        return NextResponse.json({
+          id: quizId,
+          code: fallback.paperCode,
+          title: fallback.title,
+          durationMin: fallback.questions.length > 20 ? 55 : 30,
+          totalMarks: fallback.questions.length,
+          status: 'PUBLISHED',
+          visibility: 'PUBLIC',
+          settings: { immediateFeedback: true, showCorrectAnswers: true },
+          questions: fallback.questions.map((q, idx) => ({
+            id: q.id,
+            orderIndex: idx + 1,
+            marks: q.marks || 1,
+            isRequired: true,
+            questionType: 'MCQ_SINGLE',
+            stemText: q.questionText,
+            difficulty: q.difficulty || 'Medium',
+            cognitiveLevel: q.sourceRegion?.cognitive_level || 'Understanding',
+            options: Object.entries(q.sourceRegion?.choices || {}).map(([key, text]) => ({
+              id: key,
+              text: String(text)
+            })),
+            drawingSvg: q.sourceRegion?.diagramUrl ? `<div style="text-align: center;"><img src="${q.sourceRegion.diagramUrl}" alt="Question Diagram" style="max-width: 100%; max-height: 280px; object-fit: contain; margin: 0 auto; display: block;" /></div>` : null
+          })),
+          teacher: { id: 'faculty-1', name: 'AKU-EB Physics Faculty', email: 'physics@akueb.edu.pk' }
+        });
+      }
+
       return NextResponse.json({ error: 'Quiz not found' }, { status: 404 });
     }
 

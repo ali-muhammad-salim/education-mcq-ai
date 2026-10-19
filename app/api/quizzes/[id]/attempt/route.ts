@@ -4,12 +4,13 @@ import { getSessionUser } from '@/lib/auth';
 import { getFallbackPaper } from '@/lib/paperDataService';
 
 function buildSampleAttempt(quizId: string) {
-  const isClass10 = quizId.includes('10') || quizId.includes('waves');
-  const paperCode = isClass10 ? 'PHY-X-P1' : 'PHY-IX-P1';
+  const isChap12 = quizId.toLowerCase().includes('chap') || quizId === 'sample-quiz-phy-chap-1-2' || quizId === 'PHY-IX-CHAP1-2' || quizId === 'physics-chap-1-and-2-past-papers';
+  const isClass10 = !isChap12 && (quizId.includes('10') || quizId.includes('waves'));
+  const paperCode = isChap12 ? 'PHY-IX-CHAP1-2' : isClass10 ? 'PHY-X-P1' : 'PHY-IX-P1';
   const fallback = getFallbackPaper(paperCode);
   
   let rawQuestions = fallback?.questions || [];
-  if (quizId.includes('kinematics') || quizId.includes('waves')) {
+  if (!isChap12 && (quizId.includes('kinematics') || quizId.includes('waves'))) {
     rawQuestions = rawQuestions.slice(0, 15);
   }
   
@@ -20,6 +21,9 @@ function buildSampleAttempt(quizId: string) {
       id: key,
       text: String(text)
     }));
+    const diagramUrl = meta.diagramUrl || (q as any).diagramUrl;
+    const drawingSvg = diagramUrl ? `<div style="text-align: center;"><img src="${diagramUrl}" alt="Question Diagram" style="max-width: 100%; max-height: 280px; object-fit: contain; margin: 0 auto; display: block;" /></div>` : null;
+
     return {
       id: q.id || `sample-q-${idx + 1}`,
       orderIndex: idx + 1,
@@ -31,11 +35,11 @@ function buildSampleAttempt(quizId: string) {
       cognitiveLevel: meta.cognitive_level || 'Understanding',
       options,
       matchingPairs: [],
-      drawingSvg: null
+      drawingSvg
     };
   });
 
-  const durationMin = rawQuestions.length <= 15 ? 20 : 50;
+  const durationMin = isChap12 ? 55 : rawQuestions.length <= 15 ? 20 : 50;
 
   return {
     id: `guest-attempt-${quizId}`,

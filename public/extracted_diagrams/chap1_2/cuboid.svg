@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" width="360" height="220" style="background:#ffffff; border-radius:8px;">
+  <!-- Front Face -->
+  <polygon points="50,150 250,150 250,70 50,70" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5" />
+  <!-- Top Face -->
+  <polygon points="50,70 250,70 300,30 100,30" fill="#e2e8f0" stroke="#1e293b" stroke-width="2.5" />
+  <!-- Right Face -->
+  <polygon points="250,150 300,110 300,30 250,70" fill="#cbd5e1" stroke="#1e293b" stroke-width="2.5" />
+  
+  <!-- Dashed Hidden Edges -->
+  <line x1="50" y1="150" x2="100" y2="110" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4,4" />
+  <line x1="100" y1="110" x2="300" y2="110" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4,4" />
+  <line x1="100" y1="110" x2="100" y2="30" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4,4" />
+
+  <!-- Dimension Labels & Double-sided Arrows -->
+  <!-- Length 0.5 m -->
+  <line x1="50" y1="170" x2="250" y2="170" stroke="#0b5e4a" stroke-width="1.8" />
+  <polygon points="50,170 58,166 58,174" fill="#0b5e4a" />
+  <polygon points="250,170 242,166 242,174" fill="#0b5e4a" />
+  <text x="150" y="190" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0b5e4a">0.5 m</text>
+
+  <!-- Width 0.2 m -->
+  <line x1="265" y1="155" x2="315" y2="115" stroke="#0b5e4a" stroke-width="1.8" />
+  <polygon points="265,155 273,150 269,158" fill="#0b5e4a" />
+  <polygon points="315,115 307,120 311,112" fill="#0b5e4a" />
+  <text x="305" y="145" text-anchor="start" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0b5e4a">0.2 m</text>
+
+  <!-- Height x -->
+  <line x1="320" y1="30" x2="320" y2="110" stroke="#dc2626" stroke-width="2" />
+  <polygon points="320,30 316,38 324,38" fill="#dc2626" />
+  <polygon points="320,110 316,102 324,102" fill="#dc2626" />
+  <text x="332" y="75" text-anchor="start" font-family="serif" font-size="20" font-weight="bold" font-style="italic" fill="#dc2626">x</text>
+</svg>

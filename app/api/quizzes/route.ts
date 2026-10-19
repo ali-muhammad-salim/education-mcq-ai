@@ -75,6 +75,24 @@ const DEFAULT_QUIZZES = [
     attemptCount: 51,
     teacherName: 'AKU-EB Physics Cell',
     settings: { immediateFeedback: true, showCorrectAnswers: true, tabMonitoringEnabled: true }
+  },
+  {
+    id: 'sample-quiz-phy-chap-1-2',
+    code: 'PHY-IX-CHAP1-2',
+    title: 'Class IX Physics Past Papers (Chap 1 & 2: 2014–2024)',
+    description: 'Complete 49 Past Paper Questions covering Physical Quantities & Measurements (Chap 1) and Kinematics (Chap 2) with 100% verified step-by-step solutions.',
+    boardId: 'AKU-EB',
+    classId: '9',
+    subjectId: 'Physics',
+    totalMarks: 49,
+    durationMin: 55,
+    status: 'PUBLISHED',
+    visibility: 'PUBLIC',
+    createdAt: new Date().toISOString(),
+    questionCount: 49,
+    attemptCount: 189,
+    teacherName: 'AKU-EB Physics Faculty',
+    settings: { immediateFeedback: true, showCorrectAnswers: true, tabMonitoringEnabled: true }
   }
 ];
 

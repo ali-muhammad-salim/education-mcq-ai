@@ -7,6 +7,7 @@ import ssc2ModelMcqs from '@/data/physics/ssc2_model_mcqs.json';
 import ssc2ModelCrqs from '@/data/physics/ssc2_model_crqs.json';
 import ssc1Past2025Mcqs from '@/data/physics/ssc1_2025_past_mcqs.json';
 import ssc1Past2025Crqs from '@/data/physics/ssc1_2025_past_crqs.json';
+import physicsChap12Mcqs from '@/data/physics/physics_chap1_2_past_mcqs.json';
 
 export interface QuestionData {
   id: string;
@@ -63,6 +64,7 @@ const JSON_BUNDLES: Record<string, any[]> = {
   'ssc2_model_crqs.json': ssc2ModelCrqs as any[],
   'ssc1_2025_past_mcqs.json': ssc1Past2025Mcqs as any[],
   'ssc1_2025_past_crqs.json': ssc1Past2025Crqs as any[],
+  'physics_chap1_2_past_mcqs.json': physicsChap12Mcqs as any[],
 };
 
 function loadJsonFile(filename: string): any[] {
@@ -109,6 +111,58 @@ export function findUploadedPaper(paperCode: string): any | null {
  */
 export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
   const code = (paperCodeOrId || '').toUpperCase().trim();
+
+  // 0. Class IX Physics Chapters 1 & 2 Past Papers (2014-2024 Past MCQs)
+  if (
+    code === 'PHY-IX-CHAP1-2' ||
+    code === 'PHYSICS-CHAP-1-AND-2-PAST-PAPERS' ||
+    code === 'SAMPLE-QUIZ-PHY-CHAP-1-2' ||
+    code.includes('CHAP1-2') ||
+    (code.includes('CHAP') && (code.includes('1') && code.includes('2')))
+  ) {
+    const rawMcqs = loadJsonFile('physics_chap1_2_past_mcqs.json');
+    const questions: QuestionData[] = rawMcqs.map((item: any, idx: number) => {
+      const qNum = (item.questionNumber || idx + 1).toString();
+      return {
+        id: `phy-ix-chap1-2-q${qNum}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: 'MULTIPLE_CHOICE',
+        marks: item.marks || 1,
+        difficulty: item.cognitiveLevel ? item.cognitiveLevel.charAt(0) : 'U',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          choices: item.options || {},
+          correct_answer: item.correctOption || 'A',
+          explanation: item.explanation || 'Official AKU-EB examination answer key and derivation.',
+          cognitive_level: item.cognitiveLevel,
+          is_numerical: item.isNumerical,
+          in_syllabus: true,
+          diagramUrl: item.diagramUrl,
+          slo: item.slo || `1.${qNum}`,
+          slo_details: {
+            description: item.stem,
+            topic_name: item.chapter || 'SSC-I Physics (Class IX)'
+          }
+        },
+        topics: [{ topic: { name: item.chapter || 'SSC-I Physics', topicNumber: '1' } }],
+        slos: [{ slo: { code: item.slo || `1.${qNum}`, description: item.stem } }]
+      };
+    });
+
+    return {
+      id: 'PHY-IX-CHAP1-2',
+      title: 'Physics SSC-I Chapters 1 & 2 Past Papers (2014–2024 MCQs)',
+      paperCode: 'PHY-IX-CHAP1-2',
+      examYear: 2024,
+      examSession: 'Past Papers 2014–2024 Archive',
+      examType: 'ANNUAL',
+      fileUrl: '/uploads/Physics-IX-Chapters-1-and-2-Past-Papers.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { id: 'physics-ix', name: 'Physics', code: 'PHY' },
+      questions
+    };
+  }
 
   // 1. 2025 Annual Past Paper 1 (Class IX) - Authentic Board MCQs
   if (
@@ -626,6 +680,18 @@ export function getAllStandardPapers(): Array<{
       academicClass: { name: 'Class IX', level: 9 },
       subject: { name: 'Physics' },
       _count: { questions: 11 }
+    },
+    // Past Papers Compilation: Chapters 1 & 2 (2014-2024)
+    {
+      id: 'PHY-IX-CHAP1-2',
+      paperCode: 'PHY-IX-CHAP1-2',
+      title: 'Physics SSC-I Chapters 1 & 2 Past Papers (2014–2024 MCQs)',
+      examSession: 'Past Papers 2014–2024 Archive',
+      examYear: 2024,
+      fileUrl: '/uploads/Physics-IX-Chapters-1-and-2-Past-Papers.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Physics' },
+      _count: { questions: 49 }
     }
   ];
 

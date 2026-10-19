@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 320" width="100%" height="100%" style="background:#ffffff; font-family: Inter, system-ui, -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1f2937"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="225" y="30" text-anchor="middle" font-size="15" font-weight="600" fill="#111827">Speed-Time Graph</text>
+
+  <!-- Axes -->
+  <!-- Y axis -->
+  <line x1="70" y1="260" x2="70" y2="60" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- X axis -->
+  <line x1="70" y1="260" x2="400" y2="260" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Origin label -->
+  <text x="60" y="275" text-anchor="end" font-size="13" font-weight="600" fill="#374151">0</text>
+
+  <!-- Axis Titles -->
+  <text x="35" y="155" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2937" transform="rotate(-90 35 155)">Speed</text>
+  <text x="235" y="295" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2937">Time</text>
+
+  <!-- Trapzoid Graph line: (70, 260) -> X(140, 100) -> Y(300, 100) -> (370, 260) -->
+  <polyline points="70,260 140,100 300,100 370,260" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Points X and Y -->
+  <circle cx="140" cy="100" r="5" fill="#1e40af"/>
+  <circle cx="300" cy="100" r="5" fill="#1e40af"/>
+
+  <!-- Labels X and Y -->
+  <text x="140" y="85" text-anchor="middle" font-size="16" font-weight="700" fill="#1e40af">X</text>
+  <text x="300" y="85" text-anchor="middle" font-size="16" font-weight="700" fill="#1e40af">Y</text>
+
+  <!-- Segment X to Y highlighted with label -->
+  <line x1="140" y1="100" x2="300" y2="100" stroke="#ef4444" stroke-width="3.5"/>
+  <text x="220" y="125" text-anchor="middle" font-size="12" font-weight="600" fill="#dc2626">Constant Speed (Uniform)</text>
+</svg>
