@@ -34,11 +34,20 @@ ENV HOSTNAME="0.0.0.0"
 RUN groupadd --system --gid 1001 nodejs && \
     useradd --system --uid 1001 -g nodejs nextjs
 
+# Pre-create data and upload directories and grant full permissions to nextjs user
+RUN mkdir -p /app/data/uploads /app/public/uploads /app/media /app/data/downloads && \
+    chown -R nextjs:nodejs /app
+
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
 COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+COPY --from=builder --chown=nextjs:nodejs /app/data ./data
+COPY --from=builder --chown=nextjs:nodejs /app/services ./services
+COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
+
+RUN chown -R nextjs:nodejs /app
 
 USER nextjs
 

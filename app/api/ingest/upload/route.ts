@@ -30,20 +30,55 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
     }
 
-    const uploadDir = path.join(process.cwd(), 'data', 'uploads');
+    // 1. Resolve safe public directory
     const publicUploadDir = path.join(process.cwd(), 'public', 'uploads');
-    await fs.mkdir(uploadDir, { recursive: true });
-    await fs.mkdir(publicUploadDir, { recursive: true });
+    let canWritePublic = false;
+    try {
+      await fs.mkdir(publicUploadDir, { recursive: true });
+      canWritePublic = true;
+    } catch (e: any) {
+      console.warn(`Could not create public upload directory (${publicUploadDir}):`, e.message);
+    }
+
+    // 2. Resolve safe internal data upload directory with graceful fallback
+    let uploadDir = path.join(process.cwd(), 'data', 'uploads');
+    try {
+      await fs.mkdir(uploadDir, { recursive: true });
+    } catch (e: any) {
+      console.warn(`Could not create ${uploadDir}, falling back to OS temp directory:`, e.message);
+      uploadDir = path.join(path.sep === '\\' ? process.cwd() : '/tmp', 'uploads');
+      try {
+        await fs.mkdir(uploadDir, { recursive: true });
+      } catch (err2: any) {
+        uploadDir = process.platform === 'win32' ? path.join(process.cwd(), 'uploads') : '/tmp';
+      }
+    }
 
     const safeName = `${resourceType}_${classLevel.replace(/\s+/g, '_')}_${Date.now()}_${file.name.replace(/[^a-zA-Z0-9._-]/g, '_')}`;
-    const filePath = path.join(uploadDir, safeName);
+    let filePath = path.join(uploadDir, safeName);
     const publicFilePath = path.join(publicUploadDir, safeName);
     const publicUrl = `/uploads/${safeName}`;
 
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
-    await fs.writeFile(filePath, buffer);
-    await fs.writeFile(publicFilePath, buffer);
+
+    // Save to uploadDir (primary pipeline ingestion path)
+    try {
+      await fs.writeFile(filePath, buffer);
+    } catch (e: any) {
+      console.warn(`Failed writing to ${filePath}, writing to fallback temp file:`, e.message);
+      filePath = path.join(path.sep === '\\' ? process.cwd() : '/tmp', safeName);
+      await fs.writeFile(filePath, buffer);
+    }
+
+    // Save to publicFilePath if possible so browser/PDF viewer can load it directly
+    if (canWritePublic) {
+      try {
+        await fs.writeFile(publicFilePath, buffer);
+      } catch (e: any) {
+        console.warn(`Could not write to ${publicFilePath} (non-fatal):`, e.message);
+      }
+    }
 
     // Save optional separate Answer Key PDF if provided
     let keyFilePath: string | undefined;
@@ -58,8 +93,19 @@ export async function POST(req: NextRequest) {
 
       const keyBytes = await keyFile.arrayBuffer();
       const keyBuffer = Buffer.from(keyBytes);
-      await fs.writeFile(keyFilePath, keyBuffer);
-      await fs.writeFile(keyPublicFilePath, keyBuffer);
+      try {
+        await fs.writeFile(keyFilePath, keyBuffer);
+      } catch (e: any) {
+        keyFilePath = path.join(path.sep === '\\' ? process.cwd() : '/tmp', safeKeyName);
+        await fs.writeFile(keyFilePath, keyBuffer);
+      }
+      if (canWritePublic) {
+        try {
+          await fs.writeFile(keyPublicFilePath, keyBuffer);
+        } catch (e: any) {
+          console.warn(`Could not write key to ${keyPublicFilePath}:`, e.message);
+        }
+      }
     }
 
     const meta = {
@@ -93,15 +139,23 @@ export async function POST(req: NextRequest) {
       // Ignore if table has schema differences
     }
 
-    // Auto-run the unified runner with custom file and metadata
+    // Auto-run the unified runner with custom file and metadata if requested
     if (autoRun) {
-      const scriptPath = path.join(process.cwd(), 'services', 'ingestion', 'unified_runner.py');
-      const child = spawn('python', [scriptPath, resourceType, filePath, JSON.stringify(meta)], {
-        cwd: process.cwd(),
-        detached: true,
-        stdio: 'ignore',
-      });
-      child.unref();
+      try {
+        const scriptPath = path.join(process.cwd(), 'services', 'ingestion', 'unified_runner.py');
+        const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
+        const child = spawn(pythonCmd, [scriptPath, resourceType, filePath, JSON.stringify(meta)], {
+          cwd: process.cwd(),
+          detached: true,
+          stdio: 'ignore',
+        });
+        child.on('error', (err) => {
+          console.warn('Background ingestion spawn notice:', err.message);
+        });
+        child.unref();
+      } catch (err: any) {
+        console.warn('Could not spawn background ingestion runner:', err.message);
+      }
     }
 
     return NextResponse.json({
