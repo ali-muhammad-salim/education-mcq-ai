@@ -123,9 +123,11 @@
     "correctOption": "D",
     "explanation": "Loudness of sound depends on both the surface area and the amplitude of vibration (specifically proportional to the square of the amplitude and the area). Object X4 has the maximum area (10 m²) combined with the largest amplitude (5 cm), making it produce the loudest sound.",
     "cognitiveLevel": "Application",
-    "isDiagram": false,
+    "isDiagram": true,
     "isNumerical": true,
-    "marks": 1.0
+    "marks": 1.0,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q8.png",
+    "diagramDescription": "Table showing vibrating objects, area of objects, and amplitude of vibration"
   },
   {
     "questionNumber": 9,
@@ -269,7 +271,9 @@
     "cognitiveLevel": "Application",
     "isDiagram": true,
     "isNumerical": true,
-    "marks": 1.0
+    "marks": 1.0,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q17.png",
+    "diagramDescription": "Circuit diagram showing three capacitors connected in parallel across wires"
   },
   {
     "questionNumber": 18,
@@ -283,9 +287,11 @@
     "correctOption": "C",
     "explanation": "In a parallel circuit, each appliance is connected across the same potential difference, so the potential difference remains the same, but the electric current varies depending on the resistance of each appliance.",
     "cognitiveLevel": "Understanding",
-    "isDiagram": false,
+    "isDiagram": true,
     "isNumerical": false,
-    "marks": 1.0
+    "marks": 1.0,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q18.png",
+    "diagramDescription": "Table showing options for electric current and potential difference for appliances connected in parallel."
   },
   {
     "questionNumber": 19,
@@ -315,9 +321,11 @@
     "correctOption": "B",
     "explanation": "Resistance is directly proportional to length ($R \\propto L$) and inversely proportional to cross-sectional area ($R \\propto \\frac{1}{A}$). Therefore, increasing the length of conductor A increases its resistance, and increasing the cross-sectional area of conductor B decreases its resistance.",
     "cognitiveLevel": "Understanding",
-    "isDiagram": false,
+    "isDiagram": true,
     "isNumerical": false,
-    "marks": 1.0
+    "marks": 1.0,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q20.png",
+    "diagramDescription": "Table showing options for the resistance of metallic conductors A and B under different conditions."
   },
   {
     "questionNumber": 21,
@@ -333,7 +341,9 @@
     "cognitiveLevel": "Application",
     "isDiagram": true,
     "isNumerical": false,
-    "marks": 1.0
+    "marks": 1.0,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q21.png",
+    "diagramDescription": "Electric circuit diagram showing parallel branches with resistors and points numbered 1 to 4 and a voltage source V"
   },
   {
     "questionNumber": 22,
@@ -379,9 +389,11 @@
     "correctOption": "A",
     "explanation": "According to Faraday's law of electromagnetic induction, the magnitude of induced e.m.f. is directly proportional to the rate of change of magnetic flux linkage. A higher speed of the conductor through the magnetic field increases the rate of change of flux, thereby increasing the induced e.m.f.",
     "cognitiveLevel": "Understanding",
-    "isDiagram": false,
+    "isDiagram": true,
     "isNumerical": false,
-    "marks": 1.0
+    "marks": 1.0,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q24.png",
+    "diagramDescription": "Table comparing speed and induced electromotive force options A, B, C, D"
   },
   {
     "questionNumber": 25,
@@ -429,7 +441,9 @@
     "cognitiveLevel": "Remembering",
     "isDiagram": true,
     "isNumerical": false,
-    "marks": 1.0
+    "marks": 1.0,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q27.png",
+    "diagramDescription": "Logic gate symbols labeled A, B, C, and D"
   },
   {
     "questionNumber": 28,

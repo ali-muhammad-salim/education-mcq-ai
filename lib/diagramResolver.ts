@@ -1,3 +1,26 @@
+import verifiedManifestJson from '@/data/physics/verified_diagrams_manifest.json';
+
+interface DiagramEntry {
+  diagramUrl: string;
+  description?: string;
+  page?: number;
+  box_2d?: number[];
+  width?: number;
+  height?: number;
+}
+
+const verifiedManifest = verifiedManifestJson as Record<string, Record<string, DiagramEntry>>;
+
+/**
+ * Resolves verified cropped diagram, circuit, or graph image URLs for examination questions.
+ * 
+ * Strict Accuracy Rules:
+ * 1. If a question is flagged as having NO diagram (`isDiagram === false` or `diagramBased === false`),
+ *    it ALWAYS returns undefined to prevent erroneous rough-work boxes or unrelated images.
+ * 2. Checks direct question object diagram properties (diagramUrl, imageUrl, sourceRegion).
+ * 3. Consults the verified AI-cropped diagrams manifest (`data/physics/verified_diagrams_manifest.json`).
+ * 4. Correctly distinguishes Class IX (SSC-1) from Class X (SSC-2) papers without false positives.
+ */
 export function resolveQuestionDiagram(
   paperCode?: string,
   questionNumber?: string | number,
@@ -5,64 +28,83 @@ export function resolveQuestionDiagram(
 ): string | undefined {
   if (!questionNumber && !question) return undefined;
 
-  // 1. Direct properties
-  if (question?.diagramUrl) return question.diagramUrl;
-  if (question?.diagram_url) return question.diagram_url;
-  if (question?.image) return question.image;
-  if (question?.imageUrl) return question.imageUrl;
-
-  const meta = typeof question?.sourceRegion === 'string' 
+  // 1. HARD GUARD: If explicitly marked as not having a diagram, NEVER show an image
+  const meta = typeof question?.sourceRegion === 'string'
     ? (() => { try { return JSON.parse(question.sourceRegion); } catch { return {}; } })()
     : (question?.sourceRegion || {});
 
-  if (meta.diagram_url) return meta.diagram_url;
-  if (meta.diagramUrl) return meta.diagramUrl;
-  if (meta.image_url) return meta.image_url;
-
-  const num = parseInt(String(questionNumber || question?.questionNumber || '0').replace(/\D/g, ''), 10);
-  const pCode = (paperCode || '').toUpperCase();
-  const isSSC2 = pCode.includes('X') || pCode.includes('SSC-2') || pCode.includes('SSC2') || pCode.includes('SSC-II');
-
-  if (!isSSC2) {
-    // SSC-1 / Class IX Diagrams
-    const ssc1Map: Record<number, string> = {
-      6: '/extracted_diagrams/PHY-IX-2025-P1_Q6.png',
-      7: '/extracted_diagrams/PHY-IX-2025-P1_Q7.png',
-      9: '/extracted_diagrams/PHY-IX-2025-P1_p5_drawing.png',
-      10: '/extracted_diagrams/PHY-IX-2025-P1_p5_img0_0.png',
-      15: '/extracted_diagrams/PHY-IX-2025-P1_Q15.png',
-      16: '/extracted_diagrams/PHY-IX-2025-P1_Q16.png',
-      17: '/extracted_diagrams/PHY-IX-2025-P1_Q17.png',
-      28: '/extracted_diagrams/PHY-IX-2025-P1_Q28.png',
-      29: '/extracted_diagrams/PHY-IX-2025-P1_Q29.png',
-      36: '/extracted_diagrams/PHY-IX-2025-P1_Q36.png'
-    };
-    if (ssc1Map[num]) return ssc1Map[num];
-  } else {
-    // SSC-2 / Class X Diagrams
-    const ssc2Map: Record<number, string> = {
-      17: '/materials/scans/diagrams/ssc2_p1_p5_diagram.png',
-      21: '/materials/scans/diagrams/ssc2_p1_p6_diagram.png',
-      27: '/materials/scans/diagrams/ssc2_p1_p7_diagram.png',
-      35: '/materials/scans/diagrams/ssc2_p1_p10_diagram.png',
-      38: '/materials/scans/diagrams/ssc2_p1_p11_diagram.png',
-      40: '/materials/scans/diagrams/ssc2_p1_p12_diagram.png'
-    };
-    if (ssc2Map[num]) return ssc2Map[num];
+  if (
+    question?.isDiagram === false ||
+    question?.diagramBased === false ||
+    meta?.isDiagram === false ||
+    meta?.diagramBased === false
+  ) {
+    return undefined;
   }
 
-  // Paper 2 CRQ diagrams
-  if (pCode.includes('P2') || pCode.includes('PAPER 2') || pCode.includes('PAPER II')) {
-    const crqMap: Record<number, string> = {
-      3: '/extracted_diagrams/PHY-IX-2025-P2_p3_drawing.png',
-      7: '/extracted_diagrams/PHY-IX-2025-P2_p7_drawing.png',
-      8: '/extracted_diagrams/PHY-IX-2025-P2_p8_drawing.png'
-    };
-    if (crqMap[num]) return crqMap[num];
+  // 2. Direct properties on the question object
+  if (typeof question?.diagramUrl === 'string' && question.diagramUrl.trim()) return question.diagramUrl.trim();
+  if (typeof question?.diagram_url === 'string' && question.diagram_url.trim()) return question.diagram_url.trim();
+  if (typeof question?.image === 'string' && question.image.trim()) return question.image.trim();
+  if (typeof question?.imageUrl === 'string' && question.imageUrl.trim()) return question.imageUrl.trim();
+
+  // 3. Properties inside sourceRegion metadata
+  if (typeof meta?.diagram_url === 'string' && meta.diagram_url.trim()) return meta.diagram_url.trim();
+  if (typeof meta?.diagramUrl === 'string' && meta.diagramUrl.trim()) return meta.diagramUrl.trim();
+  if (typeof meta?.image_url === 'string' && meta.image_url.trim()) return meta.image_url.trim();
+
+  // 4. Manifest lookup for verified examination diagrams
+  const numStr = String(questionNumber || question?.questionNumber || '0').replace(/\D/g, '');
+  if (!numStr) return undefined;
+
+  const pCode = (paperCode || '').toUpperCase().trim();
+
+  // Check Class IX before Class X because Roman numeral 'IX' contains the letter 'X'
+  const isClass9 =
+    pCode.includes('IX') ||
+    pCode.includes('SSC-1') ||
+    pCode.includes('SSC1') ||
+    pCode.includes('SSC-I') ||
+    pCode.includes('CLASS 9') ||
+    pCode.includes('CLASS-9') ||
+    pCode.includes('GRADE 9') ||
+    pCode.includes('GRADE-9');
+
+  const isClass10 =
+    !isClass9 &&
+    (pCode.includes('X') ||
+      pCode.includes('SSC-2') ||
+      pCode.includes('SSC2') ||
+      pCode.includes('SSC-II') ||
+      pCode.includes('CLASS 10') ||
+      pCode.includes('CLASS-10') ||
+      pCode.includes('GRADE 10') ||
+      pCode.includes('GRADE-10'));
+
+  const isPaper2 =
+    pCode.includes('P2') ||
+    pCode.includes('P-2') ||
+    pCode.includes('PAPER 2') ||
+    pCode.includes('PAPER-2') ||
+    pCode.includes('PAPER II') ||
+    pCode.includes('PAPER-II') ||
+    pCode.includes('CRQ');
+
+  // Determine paper key for manifest
+  let targetPaperKey = '';
+  if (verifiedManifest[pCode]) {
+    targetPaperKey = pCode;
+  } else if (isClass9) {
+    targetPaperKey = isPaper2 ? 'PHY-IX-2025-P2' : 'PHY-IX-2025-P1';
+  } else if (isClass10) {
+    targetPaperKey = isPaper2 ? 'PHY-X-2025-P2' : 'PHY-X-2025-P1';
   }
 
-  if (question?.isDiagram && question?.pageNumber) {
-    return `/materials/scans/ssc1_p1_page_${question.pageNumber}.png`;
+  if (targetPaperKey && verifiedManifest[targetPaperKey]) {
+    const entry = verifiedManifest[targetPaperKey][numStr];
+    if (entry && entry.diagramUrl) {
+      return entry.diagramUrl;
+    }
   }
 
   return undefined;

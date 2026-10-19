@@ -29,7 +29,8 @@
         "description": "Fourth point explaining persistence of human hearing / distinction of sound"
       }
     ],
-    "modelAnswer": "i. Phenomenon: Echo.\nDefinition: The reflection of sound from a surface back to the listener, creating a repetition of the original sound.\nii. Explanation:\n1. When Ali produces sound, sound waves travel outwards through the air in the hall.\n2. These waves strike the hard, distant walls, floor, or ceiling of the big empty hall.\n3. Upon striking, the sound waves bounce back (reflect) towards the source.\n4. If the distance to the reflecting surface is sufficient, the reflected sound reaches Ali's ears at least 0.1 seconds after the original sound, allowing him to perceive it distinctly as an echo."
+    "modelAnswer": "i. Phenomenon: Echo.\nDefinition: The reflection of sound from a surface back to the listener, creating a repetition of the original sound.\nii. Explanation:\n1. When Ali produces sound, sound waves travel outwards through the air in the hall.\n2. These waves strike the hard, distant walls, floor, or ceiling of the big empty hall.\n3. Upon striking, the sound waves bounce back (reflect) towards the source.\n4. If the distance to the reflecting surface is sufficient, the reflected sound reaches Ali's ears at least 0.1 seconds after the original sound, allowing him to perceive it distinctly as an echo.",
+    "isDiagram": false
   },
   {
     "questionNumber": "Q.2(a)",
@@ -45,7 +46,8 @@
         "description": "Accurate definition of the principle"
       }
     ],
-    "modelAnswer": "Principle: Mutual Induction.\nDefinition: It is the phenomenon in which a changing current in one coil induces an electromotive force (emf) in a nearby second coil."
+    "modelAnswer": "Principle: Mutual Induction.\nDefinition: It is the phenomenon in which a changing current in one coil induces an electromotive force (emf) in a nearby second coil.",
+    "isDiagram": false
   },
   {
     "questionNumber": "Q.1",
@@ -65,7 +67,8 @@
         "description": "Third correct use of total internal reflection"
       }
     ],
-    "modelAnswer": "1. In optical fibres for telecommunication and endoscopy.\n2. In totally reflecting prisms used in binoculars and periscopes.\n3. In optical sensors and refractometers."
+    "modelAnswer": "1. In optical fibres for telecommunication and endoscopy.\n2. In totally reflecting prisms used in binoculars and periscopes.\n3. In optical sensors and refractometers.",
+    "isDiagram": false
   },
   {
     "questionNumber": "Q.2(b)",
@@ -77,7 +80,8 @@
         "description": "Correct use of a transformer"
       }
     ],
-    "modelAnswer": "To step up or step down alternating voltage in power transmission systems."
+    "modelAnswer": "To step up or step down alternating voltage in power transmission systems.",
+    "isDiagram": false
   },
   {
     "questionNumber": "Q.7(a)",
@@ -109,7 +113,8 @@
         "description": "Prevention of explosion or fire hazards for inflammable materials"
       }
     ],
-    "modelAnswer": "i. Large electrostatic charges can cause sudden electrical discharges (sparks) that may lead to electric shocks, damage sensitive electronic components, or cause fires and explosions in flammable environments.\nExamples: 1. Lightning strikes during thunderstorms. 2. Sparks produced while fueling aircraft or vehicles.\nii. Explanation: As long vehicles move, continuous friction between the air and the vehicle body, as well as between the tires and the road, causes static electricity to build up on the vehicle's surface. If allowed to accumulate, this static charge could discharge as a spark, which is extremely dangerous when carrying inflammable materials. To prevent this, a metallic chain touching the ground is used to safely conduct the accumulated charges directly into the Earth (earthing), neutralizing the static buildup."
+    "modelAnswer": "i. Large electrostatic charges can cause sudden electrical discharges (sparks) that may lead to electric shocks, damage sensitive electronic components, or cause fires and explosions in flammable environments.\nExamples: 1. Lightning strikes during thunderstorms. 2. Sparks produced while fueling aircraft or vehicles.\nii. Explanation: As long vehicles move, continuous friction between the air and the vehicle body, as well as between the tires and the road, causes static electricity to build up on the vehicle's surface. If allowed to accumulate, this static charge could discharge as a spark, which is extremely dangerous when carrying inflammable materials. To prevent this, a metallic chain touching the ground is used to safely conduct the accumulated charges directly into the Earth (earthing), neutralizing the static buildup.",
+    "isDiagram": false
   },
   {
     "questionNumber": "Q.7(b)",
@@ -141,7 +146,8 @@
         "description": "Clarity and scientific correctness of the overall explanation"
       }
     ],
-    "modelAnswer": "1. A metallic conductor consists of a lattice of positive ions through which free electrons move freely to conduct electricity.\n2. At higher temperatures, the thermal energy of the metal increases, causing the positive ions to vibrate more violently about their mean positions with larger amplitudes.\n3. As free electrons flow through the conductor under an electric field, they collide more frequently with these rapidly vibrating positive ions.\n4. These frequent and intense collisions impede and scatter the flow of free electrons, increasing the obstruction to current flow.\n5. Since electrical resistance is a measure of the opposition to the flow of current, this increased scattering and collision rate causes the resistance of the metallic conductor to rise as temperature increases."
+    "modelAnswer": "1. A metallic conductor consists of a lattice of positive ions through which free electrons move freely to conduct electricity.\n2. At higher temperatures, the thermal energy of the metal increases, causing the positive ions to vibrate more violently about their mean positions with larger amplitudes.\n3. As free electrons flow through the conductor under an electric field, they collide more frequently with these rapidly vibrating positive ions.\n4. These frequent and intense collisions impede and scatter the flow of free electrons, increasing the obstruction to current flow.\n5. Since electrical resistance is a measure of the opposition to the flow of current, this increased scattering and collision rate causes the resistance of the metallic conductor to rise as temperature increases.",
+    "isDiagram": false
   },
   {
     "questionNumber": "Q.6(a)",
@@ -173,7 +179,8 @@
         "description": "Proper substitution and rounding in calculations"
       }
     ],
-    "modelAnswer": "Given: Length L = 4 m, g = 9.8 m/s^2, a = 8 m/s^2\ni. Elevator moving upwards:\nEffective gravity g' = g + a = 9.8 + 8 = 17.8 m/s^2\nT = 2 * pi * sqrt(L / g') = 2 * 3.14 * sqrt(4 / 17.8) = 2.97 seconds.\nii. Elevator moving downwards:\nEffective gravity g' = g - a = 9.8 - 8 = 1.8 m/s^2\nT = 2 * pi * sqrt(L / g') = 2 * 3.14 * sqrt(4 / 1.8) = 9.36 seconds."
+    "modelAnswer": "Given: Length L = 4 m, g = 9.8 m/s^2, a = 8 m/s^2\ni. Elevator moving upwards:\nEffective gravity g' = g + a = 9.8 + 8 = 17.8 m/s^2\nT = 2 * pi * sqrt(L / g') = 2 * 3.14 * sqrt(4 / 17.8) = 2.97 seconds.\nii. Elevator moving downwards:\nEffective gravity g' = g - a = 9.8 - 8 = 1.8 m/s^2\nT = 2 * pi * sqrt(L / g') = 2 * 3.14 * sqrt(4 / 1.8) = 9.36 seconds.",
+    "isDiagram": false
   },
   {
     "questionNumber": "Q.3",
@@ -189,7 +196,8 @@
         "description": "Explanation of magnetic force (Lorentz force) deflecting the electron beam"
       }
     ],
-    "modelAnswer": "Cathode rays are beams of fast-moving electrons. When a powerful magnet is brought near the screen, the magnetic field exerts a magnetic force (Lorentz force) on these moving electrons, deflecting them from their original path and causing the picture on the screen to distort."
+    "modelAnswer": "Cathode rays are beams of fast-moving electrons. When a powerful magnet is brought near the screen, the magnetic field exerts a magnetic force (Lorentz force) on these moving electrons, deflecting them from their original path and causing the picture on the screen to distort.",
+    "isDiagram": false
   },
   {
     "questionNumber": "Q.4",
@@ -205,7 +213,8 @@
         "description": "Second correct benefit of optical fibre transmission"
       }
     ],
-    "modelAnswer": "1. High data carrying capacity and faster transmission speed.\n2. Immune to electromagnetic interference and signal degradation over long distances."
+    "modelAnswer": "1. High data carrying capacity and faster transmission speed.\n2. Immune to electromagnetic interference and signal degradation over long distances.",
+    "isDiagram": false
   },
   {
     "questionNumber": "Q.5",
@@ -225,6 +234,7 @@
         "description": "Third valid scientific point regarding containment challenges (plasma)"
       }
     ],
-    "modelAnswer": "1. Positively charged nuclei repel each other strongly due to electrostatic forces, requiring huge amounts of energy to bring them close enough for fusion.\n2. Extremely high temperatures (millions of degrees Celsius) are required to give nuclei enough kinetic energy to overcome this electrostatic repulsion.\n3. Containing such extremely hot plasma in a controlled environment is technologically very difficult compared to initiating a neutron-induced fission reaction."
+    "modelAnswer": "1. Positively charged nuclei repel each other strongly due to electrostatic forces, requiring huge amounts of energy to bring them close enough for fusion.\n2. Extremely high temperatures (millions of degrees Celsius) are required to give nuclei enough kinetic energy to overcome this electrostatic repulsion.\n3. Containing such extremely hot plasma in a controlled environment is technologically very difficult compared to initiating a neutron-induced fission reaction.",
+    "isDiagram": false
   }
 ]

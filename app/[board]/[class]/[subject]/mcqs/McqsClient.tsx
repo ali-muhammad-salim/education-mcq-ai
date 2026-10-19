@@ -1050,6 +1050,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
 
                     {/* Diagram if available */}
                     {(() => {
+                      if (q.diagramBased === false || (q as any).isDiagram === false) return null;
                       const diagramSrc = resolveQuestionDiagram(classDef.roman === 'X' ? 'PHY-X-P1' : 'PHY-IX-P1', qNum, q);
                       if (!diagramSrc) return null;
                       return (
@@ -1057,6 +1058,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                           <img
                             src={diagramSrc}
                             alt={`Diagram for Question ${qNum}`}
+                            onError={(e) => { e.currentTarget.style.display = 'none'; }}
                             style={{
                               maxWidth: '100%',
                               maxHeight: '260px',

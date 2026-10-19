@@ -33,6 +33,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from services.inference.gemini_client import GeminiClient
+from services.ingestion.diagram_cropper import extract_verified_diagrams
 
 
 def safe_json_loads(raw_text: str):
@@ -267,6 +268,10 @@ async def run_past_paper_pipeline(conn, client: GeminiClient, pdf_path: str, use
     paper_code = f"PHY-{grade_code}-{year}-{paper_subcode}"
     title = f"Physics {class_name} ({year}) Paper {1 if paper_type == 'MCQ' else 2} - Past Examination"
 
+    # 0. Precision AI Diagram Detection & Cropping (Gemini Vision)
+    log_cb(f"🎨 Running AI Diagram Detection & Precision Cropper on PDF...")
+    diagram_map = await extract_verified_diagrams(pdf_path, paper_code, client, log_cb=log_cb)
+
     file_url = user_meta.get("fileUrl") or f"/uploads/{os.path.basename(pdf_path)}"
 
     # 2. Create or Reset PastPaper record
@@ -420,7 +425,10 @@ Return pure valid JSON only matching:
                 explanation = q.get("explanation", "")
                 has_official = (solution_mode == "HAS_KEY")
 
-            is_diag = bool(q.get("is_diagram", False))
+            clean_q = str(q_num).replace("Q.", "").replace("Q", "").replace(".", "").strip()
+            diag_info = diagram_map.get(clean_q)
+            is_diag = bool(diag_info)
+            diagram_url = diag_info["diagramUrl"] if diag_info else None
             is_num = bool(q.get("is_numerical", False))
 
             meta_data = {
@@ -432,6 +440,10 @@ Return pure valid JSON only matching:
                 "explanation": explanation,
                 "cognitive_level": cog,
                 "has_official_key": has_official,
+                "diagramUrl": diagram_url,
+                "diagram_url": diagram_url,
+                "diagramDescription": diag_info.get("description") if diag_info else None,
+                "isDiagram": is_diag,
                 "ai_extracted": True,
                 "ai_verified": True,
                 "exam_year": year
@@ -548,15 +560,24 @@ Return pure valid JSON only:
                 sub_count = 0
                 for idx, q in enumerate(qs):
                     q_num = q.get("question_number", f"Q.{idx + 1}")
+                    clean_q = str(q_num).replace("Q.", "").replace("Q", "").replace(".", "").strip()
                     stem = q.get("stem", "")
                     marks = float(q.get("marks", 3.0))
                     q_type = q.get("question_type", "CONSTRUCTED_RESPONSE")
                     rubric = q.get("rubric", [])
                     model_ans = q.get("model_answer", "")
 
+                    diag_info = diagram_map.get(clean_q)
+                    is_diag = bool(diag_info)
+                    diagram_url = diag_info["diagramUrl"] if diag_info else None
+
                     meta_data = {
                         "rubric": rubric,
                         "model_answer": model_ans,
+                        "diagramUrl": diagram_url,
+                        "diagram_url": diagram_url,
+                        "diagramDescription": diag_info.get("description") if diag_info else None,
+                        "isDiagram": is_diag,
                         "ai_extracted": True,
                         "exam_year": year
                     }
@@ -565,14 +586,14 @@ Return pure valid JSON only:
                     cur.execute('''
                         INSERT INTO "PastPaperQuestion" (
                             id, "pastPaperId", "questionNumber", "questionText", "normalizedQuestionText",
-                            "questionType", marks, "sourceRegion", verified, "createdAt", "updatedAt"
+                            "questionType", marks, "diagramBased", "sourceRegion", verified, "createdAt", "updatedAt"
                         ) VALUES (
                             %s, %s, %s, %s, %s,
-                            %s, %s, %s, true, NOW(), NOW()
+                            %s, %s, %s, %s, true, NOW(), NOW()
                         )
                     ''', (
                         q_id, paper_id, q_num, stem, stem.lower().strip(),
-                        q_type, marks, json.dumps(meta_data)
+                        q_type, marks, is_diag, json.dumps(meta_data)
                     ))
                     sub_count += 1
                     total_extracted += 1

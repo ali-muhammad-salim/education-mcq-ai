@@ -33,6 +33,9 @@ export interface ShuffledQuestion {
   marks: number;
   difficulty?: string;
   diagramUrl?: string;
+  diagramBased?: boolean;
+  isDiagram?: boolean;
+  sourceRegion?: any;
   options: Record<string, string>;
   correctOption: string;
   explanation: string;
@@ -162,7 +165,10 @@ function randomizeQuestionsAndOptions(rawQuestions: Question[]): ShuffledQuestio
       questionType: q.questionType || anyQ.questionType || 'MCQ_SINGLE',
       marks: q.marks || anyQ.marks || 1,
       difficulty: q.difficulty || anyQ.cognitiveLevel || 'U',
-      diagramUrl: meta.diagram_url || anyQ.diagramUrl || (anyQ.isDiagram ? `/materials/scans/ssc1_p1_page_${anyQ.pageNumber}.png` : undefined),
+      diagramUrl: meta.diagram_url || meta.diagramUrl || anyQ.diagramUrl || undefined,
+      diagramBased: q.diagramBased !== undefined ? q.diagramBased : (anyQ.diagramBased !== undefined ? anyQ.diagramBased : meta.diagramBased),
+      isDiagram: anyQ.isDiagram !== undefined ? anyQ.isDiagram : (meta.isDiagram !== undefined ? meta.isDiagram : q.diagramBased),
+      sourceRegion: q.sourceRegion || anyQ.sourceRegion,
       options: randomizedChoices,
       correctOption: randomizedCorrectKey,
       explanation: updatedExpl,
@@ -1958,6 +1964,7 @@ export default function TakeQuizModal({
 
                 {/* Cropped Diagram / Graph / Circuit (if present) */}
                 {(() => {
+                  if (currentQ.diagramBased === false || (currentQ as any).isDiagram === false) return null;
                   const diagramSrc = resolveQuestionDiagram(paperCode, currentQ.originalQuestionNumber || currentQ.displayNumber, currentQ);
                   if (!diagramSrc) return null;
                   return (
@@ -1965,6 +1972,7 @@ export default function TakeQuizModal({
                       <img
                         src={diagramSrc}
                         alt={`Diagram for Question ${currentQ.displayNumber}`}
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
                         style={{
                           maxWidth: '100%',
                           maxHeight: '280px',

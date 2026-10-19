@@ -29,6 +29,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from services.inference.gemini_client import GeminiClient
+from services.ingestion.diagram_cropper import extract_verified_diagrams
 
 
 def safe_json_loads(raw_text: str) -> dict:
@@ -104,6 +105,10 @@ async def run_model_paper_pipeline(conn, client: GeminiClient, pdf_path: str, cl
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
     total_extracted = 0
+
+    # 0. Precision AI Diagram Detection & Cropping (Gemini Vision)
+    log_cb(f"🎨 Running AI Diagram Detection & Precision Cropper on PDF...")
+    diagram_map = await extract_verified_diagrams(pdf_path, paper_code, client, log_cb=log_cb)
 
     if paper_type == "MCQ":
         log_cb(f"📄 Processing MCQ Pages in high-precision batches...")
@@ -184,18 +189,27 @@ Return pure valid JSON only matching:
 
         for q in data.get("questions", []):
             q_num = str(q.get("question_number", total_extracted + 1))
+            clean_q = q_num.replace("Q.", "").replace("Q", "").replace(".", "").strip()
             stem = q.get("stem", "")
             choices = q.get("choices", {})
             correct_opt = q.get("solved_correct_option", "B")
             explanation = q.get("explanation", "")
             cog = q.get("cognitive_level", "Understanding")
-            is_diag = bool(q.get("is_diagram", False))
+
+            # Link AI cropped diagram if verified for this question
+            diag_info = diagram_map.get(clean_q)
+            is_diag = bool(diag_info)
+            diagram_url = diag_info["diagramUrl"] if diag_info else None
             is_num = bool(q.get("is_numerical", False))
 
             meta = {
                 "choices": choices,
                 "correct_answer": correct_opt,
                 "explanation": explanation,
+                "diagramUrl": diagram_url,
+                "diagram_url": diagram_url,
+                "diagramDescription": diag_info.get("description") if diag_info else None,
+                "isDiagram": is_diag,
                 "ai_extracted": True,
                 "ai_verified": True
             }
@@ -272,15 +286,24 @@ Return pure valid JSON only:
         qs = data if isinstance(data, list) else data.get("questions", [])
         for idx, q in enumerate(qs):
             q_num = q.get("question_number", f"Q.{idx + 1}")
+            clean_q = str(q_num).replace("Q.", "").replace("Q", "").replace(".", "").strip()
             stem = q.get("stem", "")
             marks = float(q.get("marks", 3.0))
             q_type = q.get("question_type", "CONSTRUCTED_RESPONSE")
             rubric = q.get("rubric", [])
             model_ans = q.get("model_answer", "")
 
+            diag_info = diagram_map.get(clean_q)
+            is_diag = bool(diag_info)
+            diagram_url = diag_info["diagramUrl"] if diag_info else None
+
             meta = {
                 "rubric": rubric,
                 "model_answer": model_ans,
+                "diagramUrl": diagram_url,
+                "diagram_url": diagram_url,
+                "diagramDescription": diag_info.get("description") if diag_info else None,
+                "isDiagram": is_diag,
                 "ai_extracted": True
             }
 
@@ -288,14 +311,14 @@ Return pure valid JSON only:
             cur.execute('''
                 INSERT INTO "PastPaperQuestion" (
                     id, "pastPaperId", "questionNumber", "questionText", "normalizedQuestionText",
-                    "questionType", marks, "sourceRegion", verified, "createdAt", "updatedAt"
+                    "questionType", marks, "diagramBased", "sourceRegion", verified, "createdAt", "updatedAt"
                 ) VALUES (
                     %s, %s, %s, %s, %s,
-                    %s, %s, %s, true, NOW(), NOW()
+                    %s, %s, %s, %s, true, NOW(), NOW()
                 )
             ''', (
                 q_id, paper_id, q_num, stem, stem.lower().strip(),
-                q_type, marks, json.dumps(meta)
+                q_type, marks, is_diag, json.dumps(meta)
             ))
             total_extracted += 1
 

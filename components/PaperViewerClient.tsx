@@ -703,6 +703,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
 
                     {/* Cropped Diagram / Graph / Circuit (if present) */}
                     {(() => {
+                      if (q.diagramBased === false || (q as any).isDiagram === false) return null;
                       const diagramSrc = resolveQuestionDiagram(paper.paperCode || paper.title, qNum, q);
                       if (!diagramSrc) return null;
                       return (
@@ -710,6 +711,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                           <img
                             src={diagramSrc}
                             alt={`Diagram for Question ${qNum}`}
+                            onError={(e) => { e.currentTarget.style.display = 'none'; }}
                             style={{
                               maxWidth: '100%',
                               maxHeight: '300px',
