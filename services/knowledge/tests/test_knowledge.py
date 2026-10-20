@@ -161,16 +161,16 @@ def _make_textbook_mapper(curriculum_version_id: str) -> TextbookMapper:
 def _make_past_papers() -> list[dict]:
     return [
         {
-            "id": "ppq-2022-q1",
-            "board": "FBISE", "year": 2022, "subject": "Physics",
+            "verified": True, "id": "ppq-2022-q1",
+            "class_level": "10", "board": "FBISE", "year": 2022, "subject": "Physics",
             "chapter": "Motion", "topic": "Acceleration", "concept": "Acceleration",
             "question_number": "Q1", "page": 1,
             "text": "A car accelerates from 0 to 20 m/s in 5 seconds. Calculate the acceleration.",
             "confidence": 1.0,
         },
         {
-            "id": "ppq-2023-q2",
-            "board": "FBISE", "year": 2023, "subject": "Physics",
+            "verified": True, "id": "ppq-2023-q2",
+            "class_level": "10", "board": "FBISE", "year": 2023, "subject": "Physics",
             "chapter": "Force and Laws of Motion", "topic": "Newton's Second Law",
             "concept": "Newton's Second Law",
             "question_number": "Q2", "page": 2,
@@ -178,8 +178,8 @@ def _make_past_papers() -> list[dict]:
             "confidence": 1.0,
         },
         {
-            "id": "ppq-bise-2021-q1",
-            "board": "BISE-Lahore", "year": 2021, "subject": "Physics",
+            "verified": True, "id": "ppq-bise-2021-q1",
+            "class_level": "10", "board": "BISE-Lahore", "year": 2021, "subject": "Physics",
             "chapter": "Motion", "topic": "Acceleration", "concept": "Acceleration",
             "question_number": "Q1", "page": 1,
             "text": "Define acceleration. A body starts from rest and reaches 30 m/s in 10s.",
@@ -192,7 +192,7 @@ def _make_approved() -> list[dict]:
     return [
         {
             "id": "aq-001",
-            "board": "FBISE", "concept": "Acceleration",
+            "class_level": "10", "subject": "Physics", "board": "FBISE", "concept": "Acceleration",
             "chapter": "Motion", "topic": "Acceleration",
             "text": "Teacher-created: What is the SI unit of acceleration?",
             "confidence": 0.95,
@@ -204,7 +204,7 @@ def _make_ai_questions() -> list[dict]:
     return [
         {
             "id": "ai-001",
-            "board": "FBISE", "concept": "Acceleration",
+            "class_level": "10", "subject": "Physics", "board": "FBISE", "concept": "Acceleration",
             "chapter": "Motion", "topic": "Acceleration",
             "text": "AI-generated: Which of the following best describes acceleration?",
             "confidence": 0.7,
@@ -591,7 +591,7 @@ class TestConceptGraph:
         store, v2022_id, _ = _make_curriculum_store()
         mapper = _make_textbook_mapper(v2022_id)
         model_paper_item = {
-            "id": "model_q1",
+            "verified": True, "id": "model_q1", "class_level": "10", "subject": "Physics",
             "concept": "Acceleration",
             "chapter": "Motion",
             "topic": "Acceleration",
@@ -760,7 +760,7 @@ class TestSemanticRetrieval:
 
     def test_semantic_retrieval_returns_results(self):
         dim = 8  # Small dimension for tests
-        pg_client, mock_backend = PgVectorClient.with_mock()
+        pg_client, mock_backend = PgVectorClient.with_mock({"board": "FBISE", "class_level": "10", "subject": "Physics"})
 
         # Store a vector for a curriculum item
         asyncio.run(mock_backend.upsert(
@@ -796,7 +796,7 @@ class TestSemanticRetrieval:
 
     def test_vector_search_respects_min_similarity(self):
         dim = 4
-        pg_client, mock_backend = PgVectorClient.with_mock()
+        pg_client, mock_backend = PgVectorClient.with_mock({"board": "FBISE", "class_level": "10", "subject": "Physics"})
 
         # Store orthogonal vector (similarity = 0.0)
         asyncio.run(mock_backend.upsert(

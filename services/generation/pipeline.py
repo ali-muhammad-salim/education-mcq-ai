@@ -92,9 +92,6 @@ class GenerationPipeline:
 
     def stage_to_database(self, candidate: MCQCandidate) -> str:
         """
-        Mocks staging the candidate to the database.
-        In a real implementation, this would insert a Question record with status DRAFT.
+        Retired persistence shim. The durable website worker owns draft storage.
         """
-        logger.info("Staged candidate for concept: %s. Type: %s", candidate.concept, candidate.questionType)
-        # Returns a mock UUID
-        return "draft-uuid-1234"
+        raise NotImplementedError("Use the durable AI generation worker and educator review queue. This offline parser does not persist drafts.")

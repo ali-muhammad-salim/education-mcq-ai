@@ -1,0 +1,17 @@
+*
+!package.json
+!package-lock.json
+!tsconfig.json
+!prisma
+!prisma/**
+!lib
+!lib/**
+!repositories
+!repositories/**
+!services
+!services/**
+!scripts
+!scripts/job-worker.ts
+**/__pycache__
+**/*.pyc
+**/*-DESKTOP-*

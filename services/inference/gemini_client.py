@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import asyncio
 import base64
+import hashlib
 import json
 import logging
 import os
@@ -45,6 +46,8 @@ class KeyState:
     is_exhausted: bool = False
     exhaustion_timestamp: float = 0.0
     consecutive_errors: int = 0
+    disabled: bool = False
+    retry_at: float = 0.0
 
     @property
     def masked_key(self) -> str:
@@ -104,8 +107,8 @@ class GeminiKeyPool:
         self._lock = asyncio.Lock()
 
         # Parse keys from parameters or environment
-        raw_keys = keys or []
-        if not raw_keys:
+        raw_keys = keys if keys is not None else []
+        if keys is None:
             # Check GEMINI_API_KEYS (plural), GEMINI_API_KEY (singular), or GOOGLE_API_KEY
             combined_env = (
                 os.environ.get("GEMINI_API_KEYS")
@@ -141,45 +144,32 @@ class GeminiKeyPool:
             self._keys.append(KeyState(key=api_key.strip(), key_index=new_idx))
             logger.info("Added API key to pool (total: %d keys).", len(self._keys))
 
+    def is_all_exhausted(self) -> bool:
+        now = time.monotonic()
+        return not any(not k.disabled and (not k.is_exhausted or now >= k.retry_at) for k in self._keys)
+
     async def get_active_key(self) -> Optional[KeyState]:
-        """Returns the next non-exhausted key in round-robin fashion."""
+        # Never sleep holding the pool lock. The durable worker schedules retries.
         async with self._lock:
-            if not self._keys:
-                return None
-
             now = time.monotonic()
-            # RPM window reset: free tier 429 quota resets after 25s
-            for k in self._keys:
-                if k.is_exhausted and (now - k.exhaustion_timestamp > 25.0):
-                    k.is_exhausted = False
-                    logger.info("Key %s RPM rate-limit window cooled down and reset.", k.masked_key)
-
-            # Find next non-exhausted key starting from current index
             for _ in range(len(self._keys)):
-                key_state = self._keys[self._current_index % len(self._keys)]
+                key = self._keys[self._current_index % len(self._keys)]
                 self._current_index = (self._current_index + 1) % len(self._keys)
-                if not key_state.is_exhausted:
-                    return key_state
+                if key.disabled:
+                    continue
+                if key.is_exhausted and now >= key.retry_at:
+                    key.is_exhausted = False
+                if not key.is_exhausted:
+                    return key
+            return None
 
-            # If all keys are currently cooling down from 429, wait for the soonest one to cool down
-            oldest_key = min(self._keys, key=lambda k: k.exhaustion_timestamp)
-            time_passed = now - oldest_key.exhaustion_timestamp
-            wait_time = max(1.0, 25.0 - time_passed + 1.0)
-            logger.info("All keys temporarily rate-limited. Waiting %.1fs for key %s to cool down...", wait_time, oldest_key.masked_key)
-            await asyncio.sleep(wait_time)
-            oldest_key.is_exhausted = False
-            return oldest_key
-
-    async def mark_key_exhausted(self, key_state: KeyState, reason: str = "RPM Rate Limited (429)") -> None:
-        """Mark a specific key for 25s cooling down before re-use."""
+    async def mark_key_exhausted(self, key_state: KeyState, reason: str = "HTTP 429", retry_seconds: float = 60.0) -> None:
         async with self._lock:
             key_state.is_exhausted = True
             key_state.exhaustion_timestamp = time.monotonic()
-            active_count = sum(1 for k in self._keys if not k.is_exhausted)
-            logger.warning(
-                "Gemini API key %s (Index %d) hit 429 (%s). Cooling down for 25s. Active keys remaining: %d/%d.",
-                key_state.masked_key, key_state.key_index, reason, active_count, len(self._keys)
-            )
+            key_state.disabled = any(code in reason for code in ("401", "403"))
+            key_state.retry_at = key_state.exhaustion_timestamp + max(60.0, retry_seconds)
+            logger.warning("Gemini credential index %d unavailable (%s)", key_state.key_index, "permission" if key_state.disabled else "quota")
 
     def summary(self) -> Dict[str, Any]:
         """Diagnostic summary of key pool status."""
@@ -214,7 +204,7 @@ class GeminiClient:
         timeout_seconds: float = 120.0,
         checkpoint_dir: str = "checkpoints",
     ):
-        raw_keys = api_keys or ([api_key] if api_key else None)
+        raw_keys = api_keys if api_keys is not None else ([api_key] if api_key else None)
         self.pool = GeminiKeyPool(keys=raw_keys)
         self.default_model = (
             default_model
@@ -228,7 +218,7 @@ class GeminiClient:
         self.checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
         self._semaphore = asyncio.Semaphore(max_concurrency)
-        self._request_timestamps: Dict[int, List[float]] = {}
+        self._request_timestamps: Dict[str, List[float]] = {}
         self._lock = asyncio.Lock()
         self.metrics = GeminiUsageMetrics()
 
@@ -238,28 +228,27 @@ class GeminiClient:
         return self.pool.has_keys
 
     async def _enforce_rate_limit(self, key_index: int) -> None:
-        """Enforces rolling RPM limit per specific key."""
-        async with self._lock:
-            now = time.monotonic()
-            if key_index not in self._request_timestamps:
-                self._request_timestamps[key_index] = []
-
-            # Retain timestamps from last 60s
-            timestamps = [t for t in self._request_timestamps[key_index] if now - t < 60.0]
-            if len(timestamps) >= self.max_rpm:
-                oldest = timestamps[0]
-                sleep_needed = 60.0 - (now - oldest) + 0.2
-                if sleep_needed > 0:
-                    logger.info("Throttling key %d for %.2fs to respect RPM limit.", key_index, sleep_needed)
-                    await asyncio.sleep(sleep_needed)
-            self._request_timestamps[key_index].append(time.monotonic())
+        # Legacy local client: one conservative shared bucket unless project IDs
+        # are supplied. Production requests use the PostgreSQL gateway.
+        projects = re.split(r"[,;\n\r]+", os.environ.get("GEMINI_PROJECT_IDS", ""))
+        bucket = projects[key_index].strip() if key_index < len(projects) and projects[key_index].strip() else "unmapped"
+        while True:
+            async with self._lock:
+                now = time.monotonic()
+                timestamps = [t for t in self._request_timestamps.get(bucket, []) if now - t < 60]
+                self._request_timestamps[bucket] = timestamps
+                if len(timestamps) < self.max_rpm:
+                    timestamps.append(now)
+                    return
+                delay = 60 - (now - timestamps[0]) + 0.05
+            await asyncio.sleep(delay)
 
     def save_quota_checkpoint(self, doc_id: str, last_completed_page: int, pending_items: Optional[List[Any]] = None) -> str:
         """
         Saves a progress checkpoint when daily quotas are exhausted across all keys.
         Allows exact next-day resumption without rework or loss of quality.
         """
-        checkpoint_path = self.checkpoint_dir / f"checkpoint_{doc_id}.json"
+        checkpoint_path = self.checkpoint_dir / f"checkpoint_{hashlib.sha256(doc_id.encode()).hexdigest()}.json"
         data = {
             "doc_id": doc_id,
             "last_completed_page": last_completed_page,
@@ -267,11 +256,7 @@ class GeminiClient:
             "iso_time": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             "pool_status": self.pool.summary(),
             "pending_items_count": len(pending_items or []),
-            "resumption_note": (
-                f"Processing stopped safely after Page {last_completed_page} due to daily quota exhaustion. "
-                "All extractions are saved in PostgreSQL. Next execution will resume from "
-                f"Page {last_completed_page + 1}."
-            ),
+            "resumption_note": f"Last saved progress: Page {last_completed_page}. Check provider availability before retrying Page {last_completed_page + 1}. The durable production worker owns resumable processing.",
         }
         with open(checkpoint_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
@@ -346,15 +331,15 @@ class GeminiClient:
         # Build candidate model cascade: try requested/default model first, then fall back to alternate families
         initial_model = model or self.default_model
         candidate_models = [initial_model]
-        for fb in ["gemini-3.5-flash-lite", "gemini-3.5-flash"]:
-            if fb not in candidate_models:
+        for fb in re.split(r"[,;]", os.environ.get("GEMINI_MODELS", "")):
+            if fb.strip() and fb not in candidate_models:
                 candidate_models.append(fb)
 
         last_error = ""
 
         for active_model in candidate_models:
             tried_keys_count = 0
-            max_attempts = max(15, total_available_keys * 3)
+            max_attempts = total_available_keys
 
             while tried_keys_count < max_attempts:
                 key_state = await self.pool.get_active_key()
@@ -363,14 +348,14 @@ class GeminiClient:
                     break
 
                 tried_keys_count += 1
-                url = f"{GEMINI_API_BASE}/models/{active_model}:generateContent?key={key_state.key}"
+                url = f"{GEMINI_API_BASE}/models/{active_model}:generateContent"
 
                 async with self._semaphore:
                     for attempt in range(max_retries_per_key + 1):
                         await self._enforce_rate_limit(key_state.key_index)
                         try:
                             async with httpx.AsyncClient(timeout=self.timeout_seconds) as client:
-                                response = await client.post(url, json=payload)
+                                response = await client.post(url, json=payload, headers={"x-goog-api-key": key_state.key})
                                 latency = (time.perf_counter() - start_time) * 1000.0
 
                                 if response.status_code == 200:
@@ -433,6 +418,7 @@ class GeminiClient:
                                 elif response.status_code == 404:
                                     logger.warning("Model %s returned 404 (Not Found). Cascading to next model...", active_model)
                                     last_error = f"Model {active_model} not found"
+                                    tried_keys_count = max_attempts
                                     break
 
                                 elif response.status_code == 503:
@@ -452,7 +438,7 @@ class GeminiClient:
                                         text="",
                                         model=active_model,
                                         success=False,
-                                        error=f"Gemini API error {response.status_code}: {response.text}",
+                                        error=f"Gemini API error {response.status_code}",
                                         status_code=response.status_code,
                                         latency_ms=latency,
                                         key_used=key_state.masked_key,
@@ -462,7 +448,7 @@ class GeminiClient:
                             if attempt < max_retries_per_key:
                                 await asyncio.sleep(1.0 + random.uniform(0.2, 0.8))
                             else:
-                                logger.warning("Network failure on key %s: %s. Rotating key.", key_state.masked_key, exc)
+                                logger.warning("Gemini network failure (%s)", type(exc).__name__)
                                 break
 
         latency = (time.perf_counter() - start_time) * 1000.0
@@ -470,10 +456,10 @@ class GeminiClient:
             text="",
             model=initial_model,
             success=False,
-            error=f"All {total_available_keys} configured Gemini API keys exhausted their quotas across all models ({', '.join(candidate_models)}). {last_error}",
-            status_code=429,
+            error=f"No configured Gemini credential completed the request. {last_error}",
+            status_code=429 if self.pool.is_all_exhausted() else 503,
             latency_ms=latency,
-            all_keys_exhausted=True,
+            all_keys_exhausted=self.pool.is_all_exhausted(),
         )
 
     async def embed_content(
@@ -491,7 +477,8 @@ class GeminiClient:
         endpoint_model = model if model.startswith("models/") else f"models/{model}"
         payload = {
             "model": endpoint_model,
-            "content": {"parts": [{"text": text[:2048]}]},
+            "content": {"parts": [{"text": text}]},
+            "taskType": "RETRIEVAL_DOCUMENT",
             "outputDimensionality": output_dimensionality,
         }
 
@@ -503,11 +490,11 @@ class GeminiClient:
                 break
 
             await self._enforce_rate_limit(key_state.key_index)
-            url = f"{GEMINI_API_BASE}/{endpoint_model}:embedContent?key={key_state.key}"
+            url = f"{GEMINI_API_BASE}/{endpoint_model}:embedContent"
 
             try:
                 async with httpx.AsyncClient(timeout=30.0) as client:
-                    resp = await client.post(url, json=payload)
+                    resp = await client.post(url, json=payload, headers={"x-goog-api-key": key_state.key})
                     if resp.status_code == 200:
                         data = resp.json()
                         key_state.daily_requests += 1
@@ -516,9 +503,9 @@ class GeminiClient:
                         await self.pool.mark_key_exhausted(key_state, reason="HTTP 429 on embedContent")
                         continue
                     else:
-                        logger.warning("Embed error on key %s (%d): %s", key_state.masked_key, resp.status_code, resp.text)
+                        logger.warning("Embedding request failed with HTTP %d", resp.status_code)
             except Exception as e:
-                logger.warning("Exception on embed key %s: %s", key_state.masked_key, e)
+                logger.warning("Embedding request failed (%s)", type(e).__name__)
 
         return []
 

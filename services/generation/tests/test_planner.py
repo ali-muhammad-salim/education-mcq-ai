@@ -26,17 +26,17 @@ def _setup_retriever() -> KnowledgeRetriever:
     
     past_papers = [
         {
-            "id": "pp1", "board": "FBISE", "year": 2022, "subject": "Physics",
+            "id": "pp1", "board": "FBISE", "class_level": "10", "verified": True, "year": 2022, "subject": "Physics",
             "chapter": "Motion", "concept": "Acceleration",
             "text": "Find acceleration...", "page": 1, "question_number": "1"
         },
         {
-            "id": "pp2", "board": "FBISE", "year": 2023, "subject": "Physics",
+            "id": "pp2", "board": "FBISE", "class_level": "10", "verified": True, "year": 2023, "subject": "Physics",
             "chapter": "Motion", "concept": "Acceleration",
             "text": "Calculate acceleration...", "page": 2, "question_number": "2"
         },
         {
-            "id": "pp3", "board": "FBISE", "year": 2024, "subject": "Physics",
+            "id": "pp3", "board": "FBISE", "class_level": "10", "verified": True, "year": 2024, "subject": "Physics",
             "chapter": "Motion", "concept": "Acceleration",
             "text": "What is acceleration...", "page": 3, "question_number": "3"
         }

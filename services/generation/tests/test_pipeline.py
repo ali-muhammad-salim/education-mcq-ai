@@ -117,5 +117,5 @@ def test_pipeline_validates_correct_json():
     assert candidate.question == "What is acceleration?"
     assert candidate.options[0].isCorrect is True
     
-    staged_id = pipeline.stage_to_database(candidate)
-    assert staged_id.startswith("draft-uuid-")
+    with pytest.raises(NotImplementedError, match="does not persist"):
+        pipeline.stage_to_database(candidate)

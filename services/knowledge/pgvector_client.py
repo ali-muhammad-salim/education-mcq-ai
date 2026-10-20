@@ -4,14 +4,14 @@ pgvector Client — semantic nearest-neighbour retrieval via PostgreSQL pgvector
 Design principles
 -----------------
 * Embedding dimension is NOT hard-coded. It is read from the environment
-  variable EMBEDDING_DIM (default 1536 to match the existing schema).
+  variable EMBEDDING_DIM (default 768 to match the canonical knowledge namespace).
   If your Ollama model produces 768-dim vectors, set EMBEDDING_DIM=768
   and run a DB migration to change vector(1536) → vector(768).
 
-* All DB operations are async-first (asyncpg-compatible).
+* Backend operations use an async interface.
 
 * If the DB is unavailable, every method degrades gracefully:
-  - store() logs a warning and returns.
+  - store() fails explicitly.
   - search() returns an empty list.
 
 * The client is intentionally thin — it does NOT embed text itself.
@@ -24,14 +24,15 @@ Design principles
 from __future__ import annotations
 
 import logging
+import math
 import os
 from dataclasses import dataclass
 from typing import Optional, Protocol
 
 logger = logging.getLogger(__name__)
 
-# The embedding dimension — read from environment, default 1536
-EMBEDDING_DIM: int = int(os.getenv("EMBEDDING_DIM", "1536"))
+# The embedding dimension — read from environment, default 768
+EMBEDDING_DIM: int = int(os.getenv("EMBEDDING_DIM", "768"))
 
 
 @dataclass
@@ -41,6 +42,9 @@ class VectorSearchResult:
     source_id: str         # UUID of the originating record
     similarity: float      # cosine similarity [0.0, 1.0]
     text_snippet: str = ""
+    board: str = ""
+    class_level: str = ""
+    subject: str = ""
 
 
 class VectorBackend(Protocol):
@@ -80,7 +84,8 @@ class MockVectorBackend:
     No DB required.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, scope: Optional[dict] = None) -> None:
+        self._scope = scope or {}
         self._store: list[tuple[str, str, list[float]]] = []  # (source_type, source_id, vec)
 
     async def upsert(
@@ -125,6 +130,7 @@ class MockVectorBackend:
                     source_type=source_type,
                     source_id=source_id,
                     similarity=sim,
+                    **self._scope,
                 ))
 
         results.sort(key=lambda r: -r.similarity)
@@ -135,15 +141,14 @@ class PgVectorClient:
     """
     Thin async client for pgvector nearest-neighbour retrieval.
 
-    Usage (with real DB)
-    --------------------
-    client = PgVectorClient()  # uses asyncpg + DATABASE_URL
-    await client.store("PAST_PAPER", "uuid-123", embedding_vector, "nomic-embed-text")
-    results = await client.search(query_vector, top_k=10, source_types=["PAST_PAPER"])
+    Production indexing and scoped PostgreSQL search live in
+    services/knowledge/search.ts. This Python planner adapter requires an
+    explicitly injected backend; construction alone never establishes a DB
+    connection.
 
     Usage (in tests)
     ----------------
-    mock = MockVectorBackend()
+    mock = MockVectorBackend(scope)
     client = PgVectorClient(backend=mock)
     """
 
@@ -169,30 +174,27 @@ class PgVectorClient:
         """
         Store or update a vector embedding.
 
-        If the backend is unavailable, logs a warning and returns silently.
+        Storage failure is explicit: callers must not claim indexing succeeded.
         """
         if not self._available or self._backend is None:
-            logger.warning(
-                "PgVectorClient.store: backend unavailable — embedding for '%s/%s' not stored.",
-                source_type, source_id,
-            )
-            return
+            raise RuntimeError("Vector backend unavailable; production indexing uses services/knowledge/search.ts")
 
-        if len(embedding) != EMBEDDING_DIM:
+        if len(embedding) != EMBEDDING_DIM or any(not math.isfinite(v) for v in embedding) or not any(embedding):
             logger.warning(
                 "PgVectorClient.store: embedding dimension mismatch. "
                 "Expected %d, got %d for %s/%s.",
                 EMBEDDING_DIM, len(embedding), source_type, source_id,
             )
-            # Still store it — don't silently corrupt data, but warn loudly.
+            raise ValueError("Embedding dimension does not match its namespace")
 
         try:
             await self._backend.upsert(source_type, source_id, embedding, embedding_model)
         except Exception as exc:
             logger.error(
                 "PgVectorClient.store: failed to store embedding for '%s/%s': %s",
-                source_type, source_id, exc,
+                source_type, source_id, type(exc).__name__,
             )
+            raise
 
     async def search(
         self,
@@ -224,9 +226,9 @@ class PgVectorClient:
         return self._available
 
     @classmethod
-    def with_mock(cls) -> tuple["PgVectorClient", MockVectorBackend]:
+    def with_mock(cls, scope: Optional[dict] = None) -> tuple["PgVectorClient", MockVectorBackend]:
         """Factory for tests: returns (client, mock_backend)."""
-        mock = MockVectorBackend()
+        mock = MockVectorBackend(scope)
         return cls(backend=mock), mock
 
     @classmethod

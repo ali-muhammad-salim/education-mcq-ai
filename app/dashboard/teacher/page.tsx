@@ -1620,6 +1620,7 @@ export default function TeacherDashboardPage() {
                               💡 <strong>Suggested Correction:</strong> {doubt.suggestedCorrection}
                             </div>
                           )}
+                          {Array.isArray(doubt.evidence) && doubt.evidence.length > 0 && <div style={{display:'flex',gap:'.5rem',flexWrap:'wrap',marginTop:'.6rem'}}>{doubt.evidence.map((source: {id:string;pageNumber:number}) => <a className="btn" style={{fontSize:'.8rem',padding:'.6rem .8rem'}} key={source.id} href={'/api/knowledge/sources/'+encodeURIComponent(source.id)+'?format=image'} target="_blank" rel="noreferrer">Check source page {source.pageNumber} ↗</a>)}</div>}
                         </div>
 
                         {/* Educator Action Buttons */}

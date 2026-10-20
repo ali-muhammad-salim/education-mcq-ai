@@ -42,5 +42,18 @@ jobs:
       - run: npm audit --omit=dev --audit-level=high
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
       - run: python -m compileall -q services/api services/ingestion/unified_runner.py services/ingestion/__main__.py
+      - run: pip install -r requirements-ai-tests.txt
+      - name: Offline AI and ingestion regression tests
+        env:
+          GEMINI_API_KEY: ''
+          GEMINI_API_KEYS: ''
+          GOOGLE_API_KEY: ''
+        run: python -m pytest services/knowledge/tests services/generation/tests services/validation/tests/test_validators.py services/inference/tests/test_gemini_pool.py services/ingestion/tests/test_trusted_renderer.py services/ingestion/tests/test_pipeline.py tests/test_rag_classification.py -q -o addopts= -o log_cli=false --disable-warnings
+      - name: Build isolated AI worker
+        run: docker build -f Dockerfile.ai-worker -t mcqs-ai-worker:ci .
+      - name: Check worker PDF runtime
+        run: docker run --rm --entrypoint /opt/pdf-runtime/bin/python mcqs-ai-worker:ci -c "from services.ingestion.trusted_renderer import validate_box; assert validate_box([10, 10, 100, 100]); print('Worker PDF runtime ready')"
+      - name: Check worker AI module imports
+        run: docker run --rm --entrypoint node mcqs-ai-worker:ci --import tsx -e "Promise.all([import('./services/ingestion/trusted.ts'),import('./services/ai/generate.ts'),import('./services/knowledge/search.ts')]).then(()=>console.log('Worker AI modules ready'))"
