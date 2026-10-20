@@ -627,7 +627,7 @@ export default function StudentDashboardPage() {
               padding: '0.15rem 0.5rem',
               borderRadius: '9999px',
               fontSize: '0.72rem',
-              backgroundColor: activeTab === 'available' ? '#084737' : 'rgba(220, 229, 225, 0.6)',
+              backgroundColor: activeTab === 'available' ? '#084737' : 'var(--surface-muted)',
               color: activeTab === 'available' ? '#ffffff' : 'var(--text-color, #2c3e38)'
             }}>
               {(data?.availableQuizzes || []).length}
@@ -658,7 +658,7 @@ export default function StudentDashboardPage() {
               padding: '0.15rem 0.5rem',
               borderRadius: '9999px',
               fontSize: '0.72rem',
-              backgroundColor: activeTab === 'history' ? '#084737' : 'rgba(220, 229, 225, 0.6)',
+              backgroundColor: activeTab === 'history' ? '#084737' : 'var(--surface-muted)',
               color: activeTab === 'history' ? '#ffffff' : 'var(--text-color, #2c3e38)'
             }}>
               {(data?.completedAttempts || []).length}

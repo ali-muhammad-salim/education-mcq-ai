@@ -1,3 +1,4 @@
+import { Prisma } from '@prisma/client';
 import { sessionTokenHash } from '@/lib/auth';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
@@ -18,5 +19,8 @@ export async function POST(req: NextRequest) {
     const response = NextResponse.json({ success: true, user: { id: user.id, email: user.email, name: user.name, role: user.role } });
     response.cookies.set('mcqs_session', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax', path: '/', expires: expiresAt });
     return response;
-  } catch (error) { return apiError(error); }
+  } catch (error) {
+    if(error instanceof Prisma.PrismaClientKnownRequestError && error.code==='P2002' && String(error.meta?.target).includes('email')) return apiError(new ApiError(409,'ACCOUNT_EXISTS','An account with this email already exists. Sign in instead.'));
+    return apiError(error);
+  }
 }

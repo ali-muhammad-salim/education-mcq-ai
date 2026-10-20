@@ -696,7 +696,7 @@ export default function TeacherDashboardPage() {
                 padding: '0.15rem 0.5rem',
                 borderRadius: '9999px',
                 fontSize: '0.72rem',
-                backgroundColor: activeTab === tab.id ? '#084737' : 'rgba(220, 229, 225, 0.6)',
+                backgroundColor: activeTab === tab.id ? '#084737' : 'var(--surface-muted)',
                 color: activeTab === tab.id ? '#ffffff' : 'var(--text-color, #2c3e38)'
               }}>
                 {tab.count}

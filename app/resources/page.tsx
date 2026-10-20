@@ -213,27 +213,27 @@ export default function ResourcesPage() {
         marginBottom: '2.5rem'
       }}>
         <div style={{ background: '#ffffff', border: '1px solid #e1e8e5', padding: '1.25rem', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
-          <div style={{ fontSize: '0.85rem', color: '#666', fontWeight: 600 }}>Total Compiled Units</div>
+          <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: 600 }}>Total Compiled Units</div>
           <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0b5e4a', marginTop: '0.25rem' }}>{resources.length}</div>
-          <div style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.2rem' }}>{resources.filter(r => r.classLevel === 'Class IX').length} Class IX • {resources.filter(r => r.classLevel === 'Class X').length} Class X</div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>{resources.filter(r => r.classLevel === 'Class IX').length} Class IX • {resources.filter(r => r.classLevel === 'Class X').length} Class X</div>
         </div>
 
         <div style={{ background: '#ffffff', border: '1px solid #e1e8e5', padding: '1.25rem', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
-          <div style={{ fontSize: '0.85rem', color: '#666', fontWeight: 600 }}>Active SLO Definitions</div>
+          <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: 600 }}>Active SLO Definitions</div>
           <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0b5e4a', marginTop: '0.25rem' }}>{totalSLOs}</div>
-          <div style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.2rem' }}>With cognitive domains (R, U, A)</div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>With cognitive domains (R, U, A)</div>
         </div>
 
         <div style={{ background: '#ffffff', border: '1px solid #e1e8e5', padding: '1.25rem', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
-          <div style={{ fontSize: '0.85rem', color: '#666', fontWeight: 600 }}>Model Paper MCQs</div>
+          <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: 600 }}>Model Paper MCQs</div>
           <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#27ae60', marginTop: '0.25rem' }}>{totalMCQs}</div>
-          <div style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.2rem' }}>With detailed keys & formulas</div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>With detailed keys & formulas</div>
         </div>
 
         <div style={{ background: '#ffffff', border: '1px solid #e1e8e5', padding: '1.25rem', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
-          <div style={{ fontSize: '0.85rem', color: '#666', fontWeight: 600 }}>CRQ & ERQ Items</div>
-          <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#2980b9', marginTop: '0.25rem' }}>{totalCRQs}</div>
-          <div style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.2rem' }}>With marking rubrics & points</div>
+          <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: 600 }}>CRQ & ERQ Items</div>
+          <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--info-text)', marginTop: '0.25rem' }}>{totalCRQs}</div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>With marking rubrics & points</div>
         </div>
       </div>
 
@@ -257,7 +257,7 @@ export default function ResourcesPage() {
               padding: '8px 16px',
               borderRadius: '8px',
               border: 'none',
-              background: classFilter === 'all' ? '#0b5e4a' : '#f0f5f3',
+              background: classFilter === 'all' ? '#0b5e4a' : 'var(--surface-muted)',
               color: classFilter === 'all' ? '#ffffff' : '#2c3e38',
               fontWeight: 600,
               fontSize: '0.9rem',
@@ -272,7 +272,7 @@ export default function ResourcesPage() {
               padding: '8px 16px',
               borderRadius: '8px',
               border: 'none',
-              background: classFilter === 'Class IX' ? '#0b5e4a' : '#f0f5f3',
+              background: classFilter === 'Class IX' ? '#0b5e4a' : 'var(--surface-muted)',
               color: classFilter === 'Class IX' ? '#ffffff' : '#2c3e38',
               fontWeight: 600,
               fontSize: '0.9rem',
@@ -287,7 +287,7 @@ export default function ResourcesPage() {
               padding: '8px 16px',
               borderRadius: '8px',
               border: 'none',
-              background: classFilter === 'Class X' ? '#0b5e4a' : '#f0f5f3',
+              background: classFilter === 'Class X' ? '#0b5e4a' : 'var(--surface-muted)',
               color: classFilter === 'Class X' ? '#ffffff' : '#2c3e38',
               fontWeight: 600,
               fontSize: '0.9rem',
@@ -299,7 +299,7 @@ export default function ResourcesPage() {
         </div>
 
         <div style={{ position: 'relative', minWidth: '280px' }}>
-          <Search size={18} style={{ position: 'absolute', left: '12px', top: '10px', color: '#888' }} />
+          <Search size={18} style={{ position: 'absolute', left: '12px', top: '10px', color: 'var(--text-light)' }} />
           <input
             type="text"
             placeholder="Search chapter or unit..."
@@ -319,12 +319,12 @@ export default function ResourcesPage() {
 
       {/* Grid of Chapter Packs */}
       {loading ? (
-        <div style={{ textAlign: 'center', padding: '4rem 0', color: '#666' }}>
+        <div style={{ textAlign: 'center', padding: '4rem 0', color: 'var(--text-light)' }}>
           Loading AI-compiled chapter resources...
         </div>
       ) : filteredResources.length === 0 ? (
         <div style={{ textAlign: 'center', padding: '4rem 0', background: '#ffffff', borderRadius: '12px', border: '1px dashed #ccc' }}>
-          <p style={{ color: '#888', fontSize: '1.1rem' }}>No chapters match your search query.</p>
+          <p style={{ color: 'var(--text-light)', fontSize: '1.1rem' }}>No chapters match your search query.</p>
         </div>
       ) : (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 360px), 1fr))', gap: '1.5rem' }}>
@@ -352,8 +352,8 @@ export default function ResourcesPage() {
                     fontWeight: 700,
                     padding: '3px 10px',
                     borderRadius: '6px',
-                    background: isGrade9 ? '#e6f0ed' : '#eaf2f8',
-                    color: isGrade9 ? '#0b5e4a' : '#2980b9'
+                    background: isGrade9 ? '#e6f0ed' : 'var(--info-bg)',
+                    color: isGrade9 ? '#0b5e4a' : 'var(--info-text)'
                   }}>
                     {item.classLevel} • {isGrade9 ? 'SSC-I' : 'SSC-II'}
                   </span>
@@ -550,7 +550,7 @@ export default function ResourcesPage() {
                     padding: '8px',
                     borderRadius: '8px',
                     cursor: 'pointer',
-                    color: '#666'
+                    color: 'var(--text-light)'
                   }}
                 >
                   <X size={24} />
@@ -574,7 +574,7 @@ export default function ResourcesPage() {
                   borderBottom: activeTab === 'slos' ? '3px solid #0b5e4a' : '3px solid transparent',
                   padding: '8px 12px',
                   fontWeight: 700,
-                  color: activeTab === 'slos' ? '#0b5e4a' : '#666',
+                  color: activeTab === 'slos' ? '#0b5e4a' : 'var(--text-light)',
                   cursor: 'pointer',
                   fontSize: '0.95rem'
                 }}
@@ -590,7 +590,7 @@ export default function ResourcesPage() {
                   borderBottom: activeTab === 'mcqs' ? '3px solid #0b5e4a' : '3px solid transparent',
                   padding: '8px 12px',
                   fontWeight: 700,
-                  color: activeTab === 'mcqs' ? '#0b5e4a' : '#666',
+                  color: activeTab === 'mcqs' ? '#0b5e4a' : 'var(--text-light)',
                   cursor: 'pointer',
                   fontSize: '0.95rem'
                 }}
@@ -606,7 +606,7 @@ export default function ResourcesPage() {
                   borderBottom: activeTab === 'crqs' ? '3px solid #0b5e4a' : '3px solid transparent',
                   padding: '8px 12px',
                   fontWeight: 700,
-                  color: activeTab === 'crqs' ? '#0b5e4a' : '#666',
+                  color: activeTab === 'crqs' ? '#0b5e4a' : 'var(--text-light)',
                   cursor: 'pointer',
                   fontSize: '0.95rem'
                 }}
@@ -622,7 +622,7 @@ export default function ResourcesPage() {
                   borderBottom: activeTab === 'raw' ? '3px solid #0b5e4a' : '3px solid transparent',
                   padding: '8px 12px',
                   fontWeight: 700,
-                  color: activeTab === 'raw' ? '#0b5e4a' : '#666',
+                  color: activeTab === 'raw' ? '#0b5e4a' : 'var(--text-light)',
                   cursor: 'pointer',
                   fontSize: '0.95rem',
                   marginLeft: 'auto'
@@ -635,11 +635,11 @@ export default function ResourcesPage() {
             {/* Modal Body Content */}
             <div style={{ padding: '1.5rem 2rem', overflowY: 'auto', flexGrow: 1, background: '#fafcfb' }}>
               {detailLoading ? (
-                <div style={{ textAlign: 'center', padding: '3rem 0', color: '#666' }}>
+                <div style={{ textAlign: 'center', padding: '3rem 0', color: 'var(--text-light)' }}>
                   Loading chapter breakdown...
                 </div>
               ) : !resourceDetail ? (
-                <div style={{ color: '#888', textAlign: 'center', padding: '3rem 0' }}>
+                <div style={{ color: 'var(--text-light)', textAlign: 'center', padding: '3rem 0' }}>
                   No details found for this resource.
                 </div>
               ) : (
@@ -648,7 +648,7 @@ export default function ResourcesPage() {
                   {activeTab === 'slos' && (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                       {(!resourceDetail.definitions_and_laws || resourceDetail.definitions_and_laws.length === 0) ? (
-                        <div style={{ padding: '2rem', background: '#fff', borderRadius: '8px', textAlign: 'center', color: '#888' }}>
+                        <div style={{ padding: '2rem', background: '#fff', borderRadius: '8px', textAlign: 'center', color: 'var(--text-light)' }}>
                           No explicit definitions listed for this sub-unit.
                         </div>
                       ) : (
@@ -678,7 +678,7 @@ export default function ResourcesPage() {
                   {activeTab === 'mcqs' && (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                       {(!resourceDetail.past_paper_mcqs || resourceDetail.past_paper_mcqs.length === 0) ? (
-                        <div style={{ padding: '2rem', background: '#fff', borderRadius: '8px', textAlign: 'center', color: '#888' }}>
+                        <div style={{ padding: '2rem', background: '#fff', borderRadius: '8px', textAlign: 'center', color: 'var(--text-light)' }}>
                           No model paper MCQs associated with this sub-unit.
                         </div>
                       ) : (
@@ -691,7 +691,7 @@ export default function ResourcesPage() {
                                   Question {mcq.question_number || i + 1}
                                 </span>
                                 {mcq.cognitive_level && (
-                                  <span style={{ fontSize: '0.75rem', background: '#eaf2f8', color: '#2980b9', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
+                                  <span style={{ fontSize: '0.75rem', background: 'var(--info-bg)', color: 'var(--info-text)', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
                                     Cognitive Level: {mcq.cognitive_level}
                                   </span>
                                 )}
@@ -762,7 +762,7 @@ export default function ResourcesPage() {
                   {activeTab === 'crqs' && (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                       {(!resourceDetail.crqs || resourceDetail.crqs.length === 0) ? (
-                        <div style={{ padding: '2rem', background: '#fff', borderRadius: '8px', textAlign: 'center', color: '#888' }}>
+                        <div style={{ padding: '2rem', background: '#fff', borderRadius: '8px', textAlign: 'center', color: 'var(--text-light)' }}>
                           No constructed response questions listed for this sub-unit.
                         </div>
                       ) : (
@@ -772,7 +772,7 @@ export default function ResourcesPage() {
                               <span style={{ fontWeight: 700, color: '#0b5e4a', fontSize: '0.95rem' }}>
                                 {crq.question_number || `CRQ ${i + 1}`}
                               </span>
-                              <span style={{ background: '#eaf2f8', color: '#2980b9', padding: '2px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
+                              <span style={{ background: 'var(--info-bg)', color: 'var(--info-text)', padding: '2px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
                                 {crq.marks || 3} Marks
                               </span>
                             </div>
@@ -798,7 +798,7 @@ export default function ResourcesPage() {
                   {activeTab === 'raw' && (
                     <div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                        <span style={{ fontSize: '0.85rem', color: '#666' }}>Structured JSON payload direct from AI intake</span>
+                        <span style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>Structured JSON payload direct from AI intake</span>
                         <button
                           onClick={handleCopyJson}
                           style={{

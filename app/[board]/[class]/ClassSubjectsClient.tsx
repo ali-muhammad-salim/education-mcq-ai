@@ -141,7 +141,7 @@ export default function ClassSubjectsClient({ board, classDef, initialSubjects }
                       borderRadius: '8px',
                       fontSize: '0.85rem',
                       fontWeight: 600,
-                      opacity: 0.5,
+                      opacity: 1,
                       cursor: 'not-allowed',
                       userSelect: 'none'
                     }}
@@ -287,7 +287,7 @@ export default function ClassSubjectsClient({ board, classDef, initialSubjects }
                   border: isPhysics ? '2px solid #0b5e4a' : '1px solid #e5e7eb',
                   borderRadius: '16px',
                   padding: '1.5rem',
-                  opacity: isPhysics ? 1 : 0.45,
+                  opacity: 1,
                   cursor: isPhysics ? 'default' : 'not-allowed',
                   boxShadow: isPhysics ? '0 6px 20px rgba(11, 94, 74, 0.08)' : 'none',
                   transition: 'all 0.2s',

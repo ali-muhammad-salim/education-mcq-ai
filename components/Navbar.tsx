@@ -699,12 +699,15 @@ export default function Navbar() {
             <div ref={profileDropdownRef} style={{ position: 'relative', marginLeft: '0.5rem' }}>
               <button
                 onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
-                title={authUser.name || 'Account'}
+                title={authUser.name || 'Account'} aria-label="Account menu" aria-expanded={profileDropdownOpen}
                 style={{
                   background: 'none',
-                  border: '2px solid #0b5e4a',
-                  borderRadius: '50%',
-                  padding: '2px',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: '10px',
+                  padding: '4px 10px 4px 4px',
+                  gap: '8px',
+                  color:'var(--text-color)',
+                  fontWeight:700,
                   cursor: 'pointer',
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -741,17 +744,7 @@ export default function Navbar() {
                     {authUser.name ? authUser.name.charAt(0).toUpperCase() : 'U'}
                   </div>
                 )}
-                {/* Active Status Indicator Dot */}
-                <span style={{
-                  position: 'absolute',
-                  bottom: '1px',
-                  right: '1px',
-                  width: '10px',
-                  height: '10px',
-                  background: '#10b981',
-                  border: '2px solid #ffffff',
-                  borderRadius: '50%'
-                }} />
+                <span>Account</span><ChevronDown size={14}/>
               </button>
 
               {/* Profile Dropdown Menu */}
@@ -794,13 +787,14 @@ export default function Navbar() {
 
                   {/* Menu Options */}
                   <div style={{ padding: '0.4rem 0' }}>
+                    <Link href="/account" onClick={()=>setProfileDropdownOpen(false)} className="account-menu-link"><UserIcon size={16}/><span>Profile & security</span></Link>
                     {/* 1. Dashboard */}
                     <Link
                       href={
                         authUser.role === 'TEACHER'
                           ? '/dashboard/teacher'
                           : authUser.role === 'ADMIN'
-                          ? '/admin'
+                          ? '/admin/users'
                           : '/dashboard/student'
                       }
                       onClick={() => setProfileDropdownOpen(false)}
@@ -951,11 +945,10 @@ export default function Navbar() {
               }}
             >
               <UserIcon size={15} />
-              <span>Sign In</span>
+              <span>Sign in / Sign up</span>
             </button>
           )}
 
-          <Link href="/account" style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-color)' }}>Account</Link>
           {/* Universal Theme Toggle (System / Light / Dark) - Accessible to ALL users */}
           <button
             type="button"

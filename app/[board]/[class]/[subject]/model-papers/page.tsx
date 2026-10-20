@@ -93,8 +93,8 @@ export default async function ModelPapersPage({ params }: PageProps) {
           <span style={{
             fontSize: '0.8rem',
             fontWeight: 700,
-            color: '#0b5e4a',
-            background: '#e8f5f1',
+            color: 'var(--primary-color)',
+            background: 'var(--primary-light)',
             padding: '3px 10px',
             borderRadius: '6px',
             letterSpacing: '0.3px',
@@ -105,7 +105,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
           <span style={{
             fontSize: '0.8rem',
             fontWeight: 600,
-            color: '#64748b'
+            color: 'var(--text-light)'
           }}>
             {classDef.name} • {classDef.stageLabel}
           </span>
@@ -116,7 +116,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
           <h1 style={{
             fontSize: '2rem',
             fontWeight: 700,
-            color: '#0f172a',
+            color: 'var(--text-color)',
             margin: 0,
             letterSpacing: '-0.4px'
           }}>
@@ -125,7 +125,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
         </div>
 
         <p style={{
-          color: '#64748b',
+          color: 'var(--text-light)',
           fontSize: '0.98rem',
           margin: '0.5rem 0 0 0',
           lineHeight: 1.5
@@ -141,42 +141,42 @@ export default async function ModelPapersPage({ params }: PageProps) {
           marginTop: '1rem'
         }}>
           <div style={{
-            background: '#f8fafc',
+            background: 'var(--surface-muted)',
             border: '1px solid #e2e8f0',
             borderRadius: '8px',
             padding: '6px 12px',
             fontSize: '0.82rem',
             color: '#334155'
           }}>
-            <strong style={{ color: '#0b5e4a' }}>Paper I:</strong> 40 MCQs (40 Marks • 50 Mins)
+            <strong style={{ color: 'var(--primary-color)' }}>Paper I:</strong> 40 MCQs (40 Marks • 50 Mins)
           </div>
           <div style={{
-            background: '#f8fafc',
+            background: 'var(--surface-muted)',
             border: '1px solid #e2e8f0',
             borderRadius: '8px',
             padding: '6px 12px',
             fontSize: '0.82rem',
             color: '#334155'
           }}>
-            <strong style={{ color: '#0b5e4a' }}>Paper II:</strong> CRQs & ERQs (see original PDF)
+            <strong style={{ color: 'var(--primary-color)' }}>Paper II:</strong> CRQs & ERQs (see original PDF)
           </div>
           <div style={{
-            background: '#f8fafc',
+            background: 'var(--surface-muted)',
             border: '1px solid #e2e8f0',
             borderRadius: '8px',
             padding: '6px 12px',
             fontSize: '0.82rem',
             color: '#334155'
           }}>
-            <strong style={{ color: '#0b5e4a' }}>Paper III:</strong> Practical (15 Marks • 1 Hour)
+            <strong style={{ color: 'var(--primary-color)' }}>Paper III:</strong> Practical (15 Marks • 1 Hour)
           </div>
           <div style={{
-            background: '#e8f5f1',
+            background: 'var(--primary-light)',
             border: '1px solid #c2e2d7',
             borderRadius: '8px',
             padding: '6px 12px',
             fontSize: '0.82rem',
-            color: '#07382c',
+            color: 'var(--text-color)',
             fontWeight: 700
           }}>
             Refer to each original paper for examination specifications
@@ -186,7 +186,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
 
       {/* The List of Lines for Model Papers */}
       <div style={{
-        background: '#ffffff',
+        background: 'var(--card-bg)',
         border: '1px solid #e2e8f0',
         borderRadius: '12px',
         overflow: 'hidden',
@@ -205,7 +205,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 padding: '1.2rem 1.4rem',
-                borderBottom: isLast ? 'none' : '1px solid #f1f5f9',
+                borderBottom: isLast ? 'none' : '1px solid var(--border-color)',
                 transition: 'background-color 0.15s ease'
               }}
               className="paper-list-item"
@@ -227,9 +227,9 @@ export default async function ModelPapersPage({ params }: PageProps) {
                   width: '42px',
                   height: '42px',
                   borderRadius: '8px',
-                  background: '#f8fafc',
+                  background: 'var(--surface-muted)',
                   border: '1px solid #e2e8f0',
-                  color: '#0b5e4a',
+                  color: 'var(--primary-color)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -243,14 +243,14 @@ export default async function ModelPapersPage({ params }: PageProps) {
                     <span style={{
                       fontSize: '0.78rem',
                       fontWeight: 700,
-                      color: '#0b5e4a',
-                      background: '#e8f5f1',
+                      color: 'var(--primary-color)',
+                      background: 'var(--primary-light)',
                       padding: '2px 8px',
                       borderRadius: '4px'
                     }}>
                       {paper.code}
                     </span>
-                    <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>
+                    <span style={{ fontSize: '0.8rem', color: 'var(--text-light)', fontWeight: 600 }}>
                       {paper.meta}
                     </span>
                   </div>
@@ -258,7 +258,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
                   <div style={{
                     fontSize: '1.05rem',
                     fontWeight: 600,
-                    color: '#0f172a',
+                    color: 'var(--text-color)',
                     marginBottom: '0.15rem'
                   }}>
                     {paper.title}
@@ -266,7 +266,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
 
                   <div style={{
                     fontSize: '0.86rem',
-                    color: '#64748b',
+                    color: 'var(--text-light)',
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis'
@@ -291,8 +291,8 @@ export default async function ModelPapersPage({ params }: PageProps) {
                       padding: '0.4rem 0.65rem',
                       fontSize: '0.78rem',
                       fontWeight: 600,
-                      color: '#475569',
-                      background: '#f1f5f9',
+                      color: 'var(--text-color)',
+                      background: 'var(--surface-muted)',
                       borderRadius: '6px',
                       textDecoration: 'none',
                       border: '1px solid #e2e8f0',
@@ -314,8 +314,8 @@ export default async function ModelPapersPage({ params }: PageProps) {
                     padding: '0.5rem 0.95rem',
                     fontSize: '0.86rem',
                     fontWeight: 600,
-                    color: '#0b5e4a',
-                    background: '#e8f5f1',
+                    color: 'var(--primary-color)',
+                    background: 'var(--primary-light)',
                     borderRadius: '6px',
                     textDecoration: 'none',
                     transition: 'all 0.15s ease'
@@ -339,7 +339,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '0.4rem',
-            color: '#64748b',
+            color: 'var(--text-light)',
             textDecoration: 'none',
             fontSize: '0.9rem',
             fontWeight: 600
@@ -353,15 +353,15 @@ export default async function ModelPapersPage({ params }: PageProps) {
       {/* Embedded CSS for Hover Interactions */}
       <style dangerouslySetInnerHTML={{ __html: `
         .paper-list-item:hover {
-          background-color: #fafbfc;
+          background-color: var(--surface-muted);
         }
         .paper-list-item:hover .open-link-btn {
-          background-color: #0b5e4a;
+          background-color: var(--action-bg);
           color: #ffffff;
         }
         .direct-pdf-btn:hover {
-          background-color: #e2e8f0;
-          color: #0f172a;
+          background-color: var(--surface-muted);
+          color: var(--text-color);
         }
         @media (max-width: 640px) {
           .paper-list-item {

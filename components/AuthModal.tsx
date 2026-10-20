@@ -1,7 +1,7 @@
 'use client';
 
 import { useDialog } from '@/lib/use-dialog';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Sparkles, User, Lock, Mail, ShieldCheck, Check, ArrowRight, X, AlertCircle } from 'lucide-react';
 
 interface AuthModalProps {
@@ -20,6 +20,10 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [notice,setNotice]=useState<string|null>(null);
+  const passwordInput=useRef<HTMLInputElement>(null);
+  useEffect(()=>{if(isOpen){setMode(initialMode);setRole(initialRole);setNotice(null);setError(null);}},[isOpen,initialMode,initialRole]);
+  useEffect(()=>{if(mode==='login'&&notice)passwordInput.current?.focus();},[mode,notice]);
   const [googleConfigured, setGoogleConfigured] = useState<boolean | null>(null);
 
   // Check if Google OAuth is configured
@@ -63,7 +67,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
+    setError(null);setNotice(null);
 
     try {
       const endpoint = mode === 'login' ? '/api/auth/login' : '/api/auth/register';
@@ -79,6 +83,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
 
       const data = await res.json();
       if (!res.ok) {
+        if(mode==='register' && res.status===409 && data.error?.code==='ACCOUNT_EXISTS'){setMode('login');setPassword('');setNotice('An account with this email already exists. Sign in instead.');return;}
         throw new Error(typeof data.error === 'string' ? data.error : data.error?.message || 'Authentication failed');
       }
 
@@ -177,8 +182,9 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
         </div>
 
         <a href="/account" style={{ color: '#0b5e4a', display: 'block', marginBottom: '1rem' }}>Password recovery, email verification & teacher access</a>
+        {notice && <p className="auth-notice" role="status">{notice}</p>}
         {error && (
-          <div style={{
+          <div role="alert" style={{
             background: '#fef2f2',
             border: '1px solid #fecaca',
             color: '#991b1b',
@@ -309,6 +315,8 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
               </label>
               <input
                 type="text"
+                autoComplete="name"
+                aria-label="Full name"
                 required
                 placeholder="e.g. Ali Raza"
                 value={name}
@@ -330,6 +338,8 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
             </label>
             <input
               type="email"
+              autoComplete="email"
+              aria-label="Email address"
               required
               placeholder="your.email@gmail.com"
               value={email}
@@ -349,7 +359,12 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
               Password
             </label>
             <input
+              ref={passwordInput}
               type="password"
+              autoComplete={mode==='login'?'current-password':'new-password'}
+              minLength={mode==='register'?12:undefined}
+              maxLength={256}
+              aria-label="Password"
               required
               placeholder="••••••••"
               value={password}
@@ -391,7 +406,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
               Don&apos;t have an account?{' '}
               <button
                 type="button"
-                onClick={() => setMode('register')}
+                disabled={loading} onClick={() => {setMode('register');setError(null);setNotice(null);setPassword('');}}
                 style={{ background: 'none', border: 'none', color: '#0b5e4a', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline' }}
               >
                 Sign Up
@@ -402,7 +417,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
               Already have an account?{' '}
               <button
                 type="button"
-                onClick={() => setMode('login')}
+                disabled={loading} onClick={() => {setMode('login');setError(null);setNotice(null);setPassword('');}}
                 style={{ background: 'none', border: 'none', color: '#0b5e4a', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline' }}
               >
                 Sign In
