@@ -27,7 +27,8 @@ export function revisionQuestions(attempts:InsightAttempt[],topic?:string,count=
     const answers=new Map(attempt.answers.map(a=>[a.questionId,a]));
     for(const q of parsed.data){const answer=answers.get(q.id);
       if(answer?.score===null||answer?.score===undefined||answer.score>=q.marks||(topic&&topicOf(q)!==topic))continue;
-      const key=JSON.stringify([q.content.stemText,q.content.options]);if(!selected.has(key))selected.set(key,q);
+      const options=[...q.content.options].sort((a,b)=>a.text.localeCompare(b.text)||String(a.id).localeCompare(String(b.id)));
+      const key=JSON.stringify([q.content.stemText,q.content.questionType,options.map(o=>({text:o.text,isCorrect:o.isCorrect})),q.content.correctAnswerText,q.content.matchingPairs]);if(!selected.has(key))selected.set(key,q);
       if(selected.size>=count)return [...selected.values()];
     }
   }

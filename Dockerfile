@@ -52,8 +52,6 @@ COPY --from=builder --chown=nextjs:nodejs /app/lib ./lib
 COPY --from=builder --chown=nextjs:nodejs /app/repositories ./repositories
 COPY --from=builder --chown=nextjs:nodejs /app/tsconfig.json ./tsconfig.json
 
-RUN chown -R nextjs:nodejs /app
-
 USER nextjs
 
 EXPOSE 3000
