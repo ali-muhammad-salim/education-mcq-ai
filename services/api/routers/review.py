@@ -1,33 +1,22 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from typing import Optional
+from typing import Literal
+from prisma import Json
+from services.api.database import prisma
 
 router = APIRouter(prefix="/api/review", tags=["Review"])
 
 class ReviewActionPayload(BaseModel):
-    action: str  # "APPROVE", "EDIT", "REJECT"
-    editedQuestion: Optional[dict] = None
-    reason: Optional[str] = None
+    action: Literal["APPROVE", "REJECT"]
+    reason: str = ""
 
-@router.post("/{mcq_id}")
-def review_mcq(mcq_id: str, payload: ReviewActionPayload):
-    """
-    Mock endpoint to review an MCQ.
-    Wraps the MCQReviewService.
-    """
-    if payload.action == "REJECT" and not payload.reason:
-        raise HTTPException(status_code=400, detail="Rejection reason is required")
-        
-    if payload.action == "EDIT" and not payload.editedQuestion:
-        raise HTTPException(status_code=400, detail="Edited question data is required")
-        
-    # In a real system:
-    # service = MCQReviewService(db)
-    # service.process_review(mcq_id, payload)
-    
-    return {
-        "status": "success",
-        "mcq_id": mcq_id,
-        "action_taken": payload.action,
-        "message": f"Successfully processed {payload.action} for {mcq_id}"
-    }
+@router.post("/{record_id}")
+def review_question(record_id: str, payload: ReviewActionPayload):
+    record = prisma.aidoubtrecord.find_unique(where={"id": record_id})
+    if not record:
+        raise HTTPException(404, "Review item not found")
+    status = "APPROVED" if payload.action == "APPROVE" else "DISMISSED"
+    with prisma.tx() as tx:
+        updated = tx.aidoubtrecord.update(where={"id": record_id}, data={"status": status})
+        tx.auditlog.create(data={"action": "INTERNAL_REVIEW_" + status, "resource": "AIDoubtRecord", "resourceId": record_id, "details": Json({"reason": payload.reason})})
+    return updated.model_dump(mode="json")

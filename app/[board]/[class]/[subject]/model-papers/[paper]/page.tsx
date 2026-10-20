@@ -1,3 +1,4 @@
+import ContentUnavailable from '@/components/ContentUnavailable';
 import React, { Suspense } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -30,6 +31,7 @@ export default async function ModelPaperSubPage({ params }: PageProps) {
   const board = SUPPORTED_BOARDS.find(b => b.id === boardId) || SUPPORTED_BOARDS[0];
   const classDef = CLASS_DEFINITIONS[classRoman];
   const meta = getSubjectMeta(rawSubject);
+  if (board.id !== 'akueb' || !['IX', 'X'].includes(classRoman) || meta.slug !== 'physics') return <ContentUnavailable title={classDef.name + ' ' + meta.title + ' resources'} />;
   const isPhysics = meta.slug === 'physics';
   const isClass9 = classRoman === 'IX';
 
@@ -42,6 +44,7 @@ export default async function ModelPaperSubPage({ params }: PageProps) {
   const isP2 = paperUpper === 'P2' || paperUpper === 'PAPER-2' || paperUpper === '2';
   const isP3 = paperUpper === 'P3' || paperUpper === 'PAPER-3' || paperUpper === '3' || paperUpper === 'PRACTICAL';
 
+  if (isP3 && classRoman === 'X') return <ContentUnavailable title="Class X practical examination material" />;
   if (!isP1 && !isP2 && !isP3) {
     notFound();
   }

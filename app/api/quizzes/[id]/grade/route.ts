@@ -1,97 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
-import { getSessionUser } from '@/lib/auth';
-
-export async function POST(
-  req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
-) {
+import { z } from 'zod';
+import { requireUser } from '@/lib/security';
+import { apiError, ApiError } from '@/lib/api';
+import { serializable } from '@/repositories/transaction';
+import { snapshotSchema } from '@/services/assessment/scoring';
+export async function POST(req: NextRequest, context: { params: Promise<{ id: string }> }) {
   try {
-    const resolvedParams = await Promise.resolve(params);
-    const quizId = resolvedParams.id;
-    const teacher = await getSessionUser(req, 'TEACHER');
-
-    if (!teacher || (teacher.role !== 'TEACHER' && teacher.role !== 'ADMIN')) {
-      return NextResponse.json({ error: 'Unauthorized: Teacher or Admin role required' }, { status: 403 });
-    }
-
-    const body = await req.json();
-    const {
-      attemptId,
-      quizAnswerId,
-      awardedMarks,
-      feedback,
-      aiMode = 'MEDIUM',
-      isAiGraded = false
-    } = body;
-
-    if (!quizAnswerId || awardedMarks === undefined) {
-      return NextResponse.json({ error: 'Missing quizAnswerId or awardedMarks' }, { status: 400 });
-    }
-
-    const quizAnswer = await prisma.quizAnswer.findUnique({
-      where: { id: quizAnswerId },
-      include: {
-        question: true,
-        attempt: true
-      }
+    const user = await requireUser(req, ['TEACHER', 'ADMIN']), { id } = await context.params;
+    const input = z.object({ quizAnswerId: z.string().min(1), awardedMarks: z.coerce.number().finite().nonnegative(), feedback: z.string().max(20000).default('') }).parse(await req.json());
+    const result = await serializable(async tx => {
+      const answer = await tx.quizAnswer.findUnique({ where: { id: input.quizAnswerId }, include: { attempt: { include: { quiz: true } } } });
+      if (!answer || answer.attempt.quizId !== id || (user.role !== 'ADMIN' && answer.attempt.quiz.teacherId !== user.id)) throw new ApiError(403, 'FORBIDDEN', 'You cannot grade this answer.');
+      await tx.$queryRaw`SELECT "id" FROM "QuizAttempt" WHERE "id" = ${answer.attemptId} FOR UPDATE`;
+      if (['IN_PROGRESS','SUBMITTED'].includes(answer.attempt.status)) throw new ApiError(409, 'ATTEMPT_ACTIVE', 'Wait until submission processing has completed.');
+      const question = snapshotSchema.parse(answer.attempt.questionSnapshot).find(q => q.id === answer.questionId);
+      if (!question || input.awardedMarks > question.marks) throw new ApiError(400, 'INVALID_MARKS', 'Marks exceed the available marks.');
+      const gradeRecord = await tx.answerGrade.create({ data: { quizAnswerId: answer.id, graderId: user.id, awardedMarks: input.awardedMarks, maxMarks: question.marks, feedback: input.feedback, isAiGraded: false } });
+      await tx.quizAnswer.update({ where: { id: answer.id }, data: { score: input.awardedMarks, isAutoGraded: false, teacherComment: input.feedback } });
+      const answers = await tx.quizAnswer.findMany({ where: { attemptId: answer.attemptId } }), totalScore = answers.reduce((sum, a) => sum + (a.score ?? 0), 0);
+      const status = answers.some(a => a.score === null) ? 'GRADING_PENDING' : 'GRADED';
+      await tx.quizAttempt.update({ where: { id: answer.attemptId }, data: { totalScore, manualScore: totalScore - (answer.attempt.autoScore ?? 0), status } });
+      await tx.auditLog.create({ data: { userId: user.id, action: 'ANSWER_GRADED', resource: 'QuizAnswer', resourceId: answer.id, details: { gradeId: gradeRecord.id, awardedMarks: input.awardedMarks } } });
+      return { gradeRecord, totalScore, status };
     });
-
-    if (!quizAnswer) {
-      return NextResponse.json({ error: 'Quiz answer not found' }, { status: 404 });
-    }
-
-    const maxMarks = quizAnswer.question.marks || 1;
-    const validatedMarks = Math.max(0, Math.min(maxMarks, parseFloat(awardedMarks) || 0));
-
-    // Create or update AnswerGrade
-    const gradeRecord = await prisma.answerGrade.create({
-      data: {
-        quizAnswerId,
-        graderId: teacher.id,
-        isAiGraded,
-        aiMode: (aiMode as any) || 'MEDIUM',
-        awardedMarks: validatedMarks,
-        maxMarks,
-        feedback: feedback || 'Evaluated against published scoring rubric.',
-        status: 'FINAL'
-      }
-    });
-
-    // Update QuizAnswer score
-    await prisma.quizAnswer.update({
-      where: { id: quizAnswerId },
-      data: {
-        score: validatedMarks,
-        teacherComment: feedback
-      }
-    });
-
-    // Recalculate QuizAttempt totalScore
-    const allAnswers = await prisma.quizAnswer.findMany({
-      where: { attemptId: quizAnswer.attemptId }
-    });
-
-    const totalScore = allAnswers.reduce((sum, a) => sum + (a.score || 0), 0);
-    const hasRemainingUngraded = allAnswers.some(a => a.score === null);
-
-    const updatedAttempt = await prisma.quizAttempt.update({
-      where: { id: quizAnswer.attemptId },
-      data: {
-        manualScore: totalScore - (quizAnswer.attempt.autoScore || 0),
-        totalScore,
-        status: hasRemainingUngraded ? 'GRADING_PENDING' : 'GRADED'
-      }
-    });
-
-    return NextResponse.json({
-      success: true,
-      gradeRecord,
-      totalScore,
-      attemptStatus: updatedAttempt.status
-    });
-  } catch (err: any) {
-    console.error('Grading evaluation error:', err);
-    return NextResponse.json({ error: err.message || 'Failed to grade answer' }, { status: 500 });
-  }
+    return NextResponse.json({ success: true, ...result });
+  } catch (error) { return apiError(error); }
 }

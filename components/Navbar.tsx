@@ -3,14 +3,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { 
-  BookOpen, ChevronDown, Check, Sparkles, Building2, 
-  Atom, FlaskConical, Dna, Calculator, Binary, BookText, 
+import {
+  BookOpen, ChevronDown, Check, Sparkles, Building2,
+  Atom, FlaskConical, Dna, Calculator, Binary, BookText,
   Languages, Moon, Sun, MapPin, Menu, X, FileText, Layers, Download,
   User as UserIcon, LogOut, LayoutDashboard, Award, UploadCloud, ShieldCheck,
   Monitor, KeyRound, Play, AlertCircle, Loader2
 } from 'lucide-react';
 import AuthModal from '@/components/AuthModal';
+import { useDialog } from '@/lib/use-dialog';
 import TakeQuizModal from '@/components/TakeQuizModal';
 
 
@@ -158,7 +159,7 @@ export default function Navbar() {
         setQuizCodeModalOpen(false);
         setInputCode('');
       } else {
-        setCodeError(data.error || `Quiz with code "${code}" could not be found.`);
+        setCodeError(typeof data.error === 'string' ? data.error : data.error?.message || `Quiz with code "${code}" could not be found.`);
       }
     } catch (err) {
       setCodeError('Unable to connect to quiz service. Please verify your connection.');
@@ -247,7 +248,9 @@ export default function Navbar() {
   }, []);
 
   const handleLogout = async () => {
-    await fetch('/api/auth/logout', { method: 'POST' });
+    const response = await fetch('/api/auth/logout', { method: 'POST' });
+    if (!response.ok) return;
+    await (await import('@/lib/exam-cache')).clearExamCache().catch(() => undefined);
     setAuthUser(null);
     setProfileDropdownOpen(false);
     window.location.href = '/';
@@ -282,8 +285,9 @@ export default function Navbar() {
     setProfileDropdownOpen(false);
   }, [pathname]);
 
+  const codeDialog = useDialog(quizCodeModalOpen, 'Enter assessment code', () => setQuizCodeModalOpen(false));
   return (
-    <nav 
+    <nav
       style={{
         background: isDarkEffective ? '#0f172a' : '#ffffff',
         borderBottom: isDarkEffective ? '2px solid #1e293b' : '2px solid #e6f0ed',
@@ -295,7 +299,7 @@ export default function Navbar() {
         transition: 'background 0.2s ease, border-color 0.2s ease'
       }}
     >
-      <div 
+      <div
         style={{
           maxWidth: '1440px',
           margin: '0 auto',
@@ -307,11 +311,11 @@ export default function Navbar() {
           flexWrap: 'wrap'
         }}
       >
-        
+
         {/* Left Section: Brand & Board Selector */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -324,9 +328,9 @@ export default function Navbar() {
             }}
             title="Rise Learner - Academic Intelligence Portal"
           >
-            <img 
-              src="/logo.png" 
-              alt="Rise Learner" 
+            <img
+              src="/logo.png"
+              alt="Rise Learner"
               style={{
                 height: isDarkEffective ? '38px' : '44px',
                 width: 'auto',
@@ -365,7 +369,7 @@ export default function Navbar() {
             </button>
 
             {boardDropdownOpen && (
-              <div 
+              <div
                 style={{
                   position: 'absolute',
                   top: 'calc(100% + 6px)',
@@ -444,7 +448,7 @@ export default function Navbar() {
 
         {/* Center / Right Section: Class Options & Subject Dropdowns */}
         <div ref={classDropdownRef} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-          
+
           {Object.entries(CLASS_SUBJECTS).map(([classKey, classData]) => {
             const isOpen = openClassDropdown === classKey;
             const isClassReady = classData.isReady;
@@ -488,20 +492,20 @@ export default function Navbar() {
                     </span>
                   )}
                   {isClassReady && (
-                    <ChevronDown 
-                      size={14} 
-                      style={{ 
-                        color: isOpen ? '#0b5e4a' : '#6b7280', 
-                        transform: isOpen ? 'rotate(180deg)' : 'none', 
-                        transition: 'transform 0.2s ease' 
-                      }} 
+                    <ChevronDown
+                      size={14}
+                      style={{
+                        color: isOpen ? '#0b5e4a' : '#6b7280',
+                        transform: isOpen ? 'rotate(180deg)' : 'none',
+                        transition: 'transform 0.2s ease'
+                      }}
                     />
                   )}
                 </button>
 
                 {/* Dropdown Menu listing all Subjects for this Class */}
                 {isOpen && isClassReady && (
-                  <div 
+                  <div
                     style={{
                       position: 'absolute',
                       top: 'calc(100% + 6px)',
@@ -638,7 +642,7 @@ export default function Navbar() {
                       color: '#6b7280',
                       textAlign: 'center'
                     }}>
-                      <Link 
+                      <Link
                         href={`/${selectedBoard.id}/${classData.roman}`}
                         onClick={() => setOpenClassDropdown(null)}
                         style={{ color: '#0b5e4a', fontWeight: 700, textDecoration: 'none' }}
@@ -711,15 +715,15 @@ export default function Navbar() {
                 }}
               >
                 {authUser.avatarUrl ? (
-                  <img 
-                    src={authUser.avatarUrl} 
-                    alt={authUser.name || 'User'} 
-                    style={{ 
-                      width: '36px', 
-                      height: '36px', 
-                      borderRadius: '50%', 
+                  <img
+                    src={authUser.avatarUrl}
+                    alt={authUser.name || 'User'}
+                    style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '50%',
                       objectFit: 'cover'
-                    }} 
+                    }}
                   />
                 ) : (
                   <div style={{
@@ -793,10 +797,10 @@ export default function Navbar() {
                     {/* 1. Dashboard */}
                     <Link
                       href={
-                        authUser.role === 'TEACHER' 
-                          ? '/dashboard/teacher' 
-                          : authUser.role === 'ADMIN' 
-                          ? '/admin' 
+                        authUser.role === 'TEACHER'
+                          ? '/dashboard/teacher'
+                          : authUser.role === 'ADMIN'
+                          ? '/admin'
                           : '/dashboard/student'
                       }
                       onClick={() => setProfileDropdownOpen(false)}
@@ -951,6 +955,7 @@ export default function Navbar() {
             </button>
           )}
 
+          <Link href="/account" style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-color)' }}>Account</Link>
           {/* Universal Theme Toggle (System / Light / Dark) - Accessible to ALL users */}
           <button
             type="button"
@@ -997,6 +1002,7 @@ export default function Navbar() {
         }}
         onSuccess={(user) => {
           setAuthUser(user);
+          if (!pendingQuizCode && window.location.pathname.startsWith('/dashboard')) { window.location.href = user.role === 'STUDENT' ? '/dashboard/student' : '/dashboard/teacher'; return; }
           if (pendingQuizCode) {
             const code = pendingQuizCode;
             setPendingQuizCode(null);
@@ -1007,7 +1013,7 @@ export default function Navbar() {
 
       {/* 1. Enter Quiz Code Modal Dialog */}
       {quizCodeModalOpen && (
-        <div 
+        <div {...codeDialog}
           style={{
             position: 'fixed',
             inset: 0,
@@ -1023,7 +1029,7 @@ export default function Navbar() {
             if (e.target === e.currentTarget) setQuizCodeModalOpen(false);
           }}
         >
-          <div 
+          <div
             style={{
               background: isDarkEffective ? '#151f32' : '#ffffff',
               border: isDarkEffective ? '1px solid #334155' : '1px solid #e2e8f0',
@@ -1038,7 +1044,7 @@ export default function Navbar() {
             {/* Close button */}
             <button
               type="button"
-              onClick={() => setQuizCodeModalOpen(false)}
+              aria-label="Close code dialog" onClick={() => setQuizCodeModalOpen(false)}
               style={{
                 position: 'absolute',
                 top: '1.25rem',
@@ -1056,7 +1062,7 @@ export default function Navbar() {
 
             {/* Header Icon */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1.25rem' }}>
-              <div 
+              <div
                 style={{
                   width: '46px',
                   height: '46px',
@@ -1083,7 +1089,7 @@ export default function Navbar() {
 
             {/* If user is not authenticated, alert them that signup/signin is required */}
             {!authUser && (
-              <div 
+              <div
                 style={{
                   background: isDarkEffective ? 'rgba(234, 179, 8, 0.1)' : '#fefce8',
                   border: isDarkEffective ? '1px solid #854d0e' : '1px solid #fef08a',
@@ -1104,7 +1110,7 @@ export default function Navbar() {
 
             {/* Code Input */}
             <div style={{ marginBottom: '1.25rem' }}>
-              <label 
+              <label
                 style={{
                   display: 'block',
                   fontSize: '0.82rem',
@@ -1136,8 +1142,8 @@ export default function Navbar() {
                   fontWeight: 800,
                   letterSpacing: '1.5px',
                   borderRadius: '10px',
-                  border: codeError 
-                    ? '2px solid #ef4444' 
+                  border: codeError
+                    ? '2px solid #ef4444'
                     : isDarkEffective ? '2px solid #334155' : '2px solid #cbd5e1',
                   background: isDarkEffective ? '#0f172a' : '#f8fafc',
                   color: isDarkEffective ? '#f8fafc' : '#0f172a',

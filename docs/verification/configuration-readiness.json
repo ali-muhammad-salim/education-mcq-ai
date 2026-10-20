@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-20T05:23:03.872Z",
+  "mode": "Configuration presence only; no secret values or external requests.",
+  "groups": [
+    {
+      "name": "Database",
+      "status": "CONFIGURED",
+      "missing": [],
+      "notes": [
+        "Connection, schema drift, backups and migrations must be checked separately."
+      ]
+    },
+    {
+      "name": "Canonical website address",
+      "status": "UNAVAILABLE",
+      "missing": [
+        "NEXT_PUBLIC_APP_URL"
+      ],
+      "notes": []
+    },
+    {
+      "name": "Google sign-in",
+      "status": "UNAVAILABLE",
+      "missing": [
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET"
+      ],
+      "notes": [
+        "Provider callback must match /api/auth/google/callback. Live browser authorization is a separate check."
+      ]
+    },
+    {
+      "name": "Email delivery",
+      "status": "UNAVAILABLE",
+      "missing": [
+        "RESEND_API_KEY",
+        "EMAIL_FROM"
+      ],
+      "notes": [
+        "Verify the sender domain and actual delivery; credentials alone do not prove delivery."
+      ]
+    },
+    {
+      "name": "Persistent file storage",
+      "status": "UNAVAILABLE",
+      "missing": [
+        "ASSET_ROOT"
+      ],
+      "notes": [
+        "Confirm the configured path is shared by web and workers and persists across releases. Development-only storage is not a production guarantee."
+      ]
+    },
+    {
+      "name": "AI generation",
+      "status": "CONFIGURED",
+      "missing": [],
+      "notes": [
+        "Model access, linked syllabus/textbook evidence, worker execution and educator review require separate checks."
+      ]
+    },
+    {
+      "name": "Internal Python API",
+      "status": "UNAVAILABLE",
+      "missing": [
+        "INTERNAL_API_TOKEN",
+        "INTERNAL_SERVICE_USER_ID"
+      ],
+      "notes": [
+        "Verify the configured identity is an active administrator."
+      ]
+    },
+    {
+      "name": "Deadline worker",
+      "status": "REQUIRES_RUNTIME_CHECK",
+      "missing": [],
+      "notes": [
+        "Run a separate worker with WORKER_KINDS=EXAM_FINALIZE; inspect overdue queue age and finalization."
+      ]
+    }
+  ]
+}

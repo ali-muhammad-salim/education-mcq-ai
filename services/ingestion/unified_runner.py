@@ -36,7 +36,7 @@ from services.ingestion.pipelines.model_paper_pipeline import run_model_paper_pi
 from services.ingestion.pipelines.past_paper_pipeline import run_past_paper_pipeline
 
 DB_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/mcqs")
-PROGRESS_FILE = Path("data/ingest_progress.json")
+PROGRESS_FILE = Path(os.getenv("INGEST_PROGRESS_FILE", "data/ingest_progress.json"))
 PROGRESS_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 
@@ -371,6 +371,7 @@ async def run_unified_pipeline(resource_type="all_defaults", custom_file=None, c
         import traceback
         traceback.print_exc()
         tracker.error(str(e))
+        raise
     finally:
         conn.close()
 

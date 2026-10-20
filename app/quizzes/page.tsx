@@ -9,7 +9,9 @@ import {
 } from 'lucide-react';
 
 export default function QuizzesCatalogPage() {
+  const [page, setPage] = useState(1), [hasMore, setHasMore] = useState(false);
   const [quizzes, setQuizzes] = useState<any[]>([]);
+  const [loadError, setLoadError] = useState('');
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [selectedClass, setSelectedClass] = useState<string>('ALL');
@@ -29,19 +31,20 @@ export default function QuizzesCatalogPage() {
     async function fetchQuizzes() {
       try {
         setLoading(true);
-        const res = await fetch('/api/quizzes?visibility=PUBLIC&status=PUBLISHED');
+        const res = await fetch('/api/quizzes?visibility=PUBLIC&status=PUBLISHED&page=' + page);
         const data = await res.json();
+        if (!res.ok) throw new Error(data.error?.message || 'Unable to load assessments.');
         if (data.success && Array.isArray(data.quizzes)) {
-          setQuizzes(data.quizzes);
+          setQuizzes(prev => page === 1 ? data.quizzes : [...prev, ...data.quizzes]); setHasMore(Boolean(data.hasMore));
         }
       } catch (err) {
-        console.error('Failed to fetch quizzes:', err);
+        setLoadError(err instanceof Error ? err.message : 'Unable to load assessments.');
       } finally {
         setLoading(false);
       }
     }
     fetchQuizzes();
-  }, []);
+  }, [page]);
 
   const filtered = quizzes.filter(q => {
     const matchSearch = search 
@@ -51,11 +54,11 @@ export default function QuizzesCatalogPage() {
 
     const matchClass = selectedClass === 'ALL' 
       ? true 
-      : (q.classId ? q.classId.toString() === selectedClass : true);
+      : (q.classLevel ? String(q.classLevel) === selectedClass : false);
 
     const matchSubject = selectedSubject === 'ALL'
       ? true
-      : (q.subjectId ? q.subjectId.toLowerCase() === selectedSubject.toLowerCase() : true);
+      : (q.subject ? q.subject.toLowerCase() === selectedSubject.toLowerCase() : false);
 
     return matchSearch && matchClass && matchSubject;
   });
@@ -134,7 +137,7 @@ export default function QuizzesCatalogPage() {
               marginBottom: '1rem'
             }}>
               <Sparkles size={14} color="#fde047" />
-              <span>Official AKU-EB Examination Engine</span>
+              <span>AKU-EB Practice & Assessment Engine</span>
             </div>
 
             <h1 style={{
@@ -202,7 +205,7 @@ export default function QuizzesCatalogPage() {
                 border: '1px solid rgba(16, 185, 129, 0.3)'
               }}>
                 <ShieldAlert size={14} color="#67e8f9" />
-                <span>Proctoring & Anti-Cheat</span>
+                <span>Session Monitoring</span>
               </span>
             </div>
           </div>
@@ -268,6 +271,7 @@ export default function QuizzesCatalogPage() {
         </div>
       </section>
 
+      {loadError && <p role="alert" style={{ padding: '1rem', textAlign: 'center' }}>{loadError}</p>}
       {/* Main Content Hub */}
       <div style={{
         maxWidth: '1200px',
@@ -442,7 +446,7 @@ export default function QuizzesCatalogPage() {
               <BookOpen size={32} />
             </div>
             <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, color: 'var(--text-color, #2c3e38)' }}>
-              No assessments found matching filter
+              {loadError || 'No assessments found matching filter'}
             </h3>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-light, #5a7a6f)', maxWidth: '440px', margin: 0, lineHeight: 1.5 }}>
               Try adjusting your search keywords, or build a custom test using the unified AKU-EB Quiz Builder.
@@ -483,7 +487,7 @@ export default function QuizzesCatalogPage() {
         ) : (
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(330px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 330px), 1fr))',
             gap: '1.25rem'
           }}>
             {filtered.map((q) => (
@@ -610,6 +614,7 @@ export default function QuizzesCatalogPage() {
             ))}
           </div>
         )}
+        {hasMore && <button className="btn" disabled={loading} onClick={() => setPage(p => p + 1)}>Load more assessments</button>}
       </div>
     </div>
   );

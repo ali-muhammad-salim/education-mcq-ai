@@ -6,13 +6,13 @@ router = APIRouter(prefix="/api/search", tags=["Search"])
 
 @router.get("/")
 def global_search(
-    q: str = Query(..., description="The search query"),
-    limit: int = Query(20, description="Max results per category")
+    q: str = Query(..., min_length=1, max_length=200, description="The search query"),
+    limit: int = Query(20, ge=1, le=100, description="Max results per category")
 ):
     """
     Search across multiple entities: PastPaperQuestion, BookContent, Topic, SLO
     """
-    
+
     # 1. Search Past Paper Questions
     questions = prisma.pastpaperquestion.find_many(
         where={
@@ -31,7 +31,7 @@ def global_search(
             }
         }
     )
-    
+
     # 2. Search Book Contents (Study Notes/Textbooks)
     contents = prisma.bookcontent.find_many(
         where={
@@ -47,7 +47,7 @@ def global_search(
             }
         }
     )
-    
+
     # 3. Search Topics
     topics = prisma.topic.find_many(
         where={
@@ -62,7 +62,7 @@ def global_search(
             }
         }
     )
-    
+
     # 4. Search SLOs
     slos = prisma.slo.find_many(
         where={
@@ -77,7 +77,7 @@ def global_search(
             }
         }
     )
-    
+
     return {
         "query": q,
         "results": {

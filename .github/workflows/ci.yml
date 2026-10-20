@@ -1,0 +1,46 @@
+name: Validation
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: mcqs_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/mcqs_test
+      TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/mcqs_test
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx prisma validate
+      - run: npx prisma generate --generator client
+      - run: npm run db:migrate
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: node scripts/rehearse-auth-bootstrap.cjs
+      - run: npm run build
+      - run: node scripts/test_routes.js
+      - run: npm audit --omit=dev --audit-level=high
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m compileall -q services/api services/ingestion/unified_runner.py services/ingestion/__main__.py

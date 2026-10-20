@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ filename: string }> | { filename: string } }
+  { params }: { params: Promise<{ filename: string }> }
 ) {
   try {
     const resolvedParams = await Promise.resolve(params);
@@ -109,7 +109,7 @@ export async function GET(
       const allMcqs = [...(data.past_paper_mcqs || []), ...(data.book_mcqs || [])];
       allMcqs.forEach((mcq: any) => {
         const type = 'MCQ';
-        const num = `"${(mcq.question_number || '').replace(/"/g, '""')}"`;
+        const num = `"${String(mcq.question_number ?? '').replace(/"/g, '""')}"`;
         const cog = `"${(mcq.cognitive_level || '').replace(/"/g, '""')}"`;
         const marks = mcq.marks || 1;
         const stem = `"${(mcq.stem_text || '').replace(/"/g, '""')}"`;
@@ -121,7 +121,7 @@ export async function GET(
       const allCrqs = [...(data.crqs || []), ...(data.erqs || [])];
       allCrqs.forEach((crq: any) => {
         const type = 'CRQ';
-        const num = `"${(crq.question_number || '').replace(/"/g, '""')}"`;
+        const num = `"${String(crq.question_number ?? '').replace(/"/g, '""')}"`;
         const cog = `"${(crq.cognitive_level || '').replace(/"/g, '""')}"`;
         const marks = crq.marks || 3;
         const stem = `"${(crq.question_text || crq.stem_text || '').replace(/"/g, '""')}"`;

@@ -13,7 +13,7 @@ export interface GoogleUserProfile {
 }
 
 // Secret used to cryptographically sign OAuth state tokens to prevent CSRF
-const STATE_SECRET = process.env.SESSION_SECRET || 'rise-learner-oauth-state-secret-2026';
+const STATE_SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
 
 export function signOAuthState(token: string): string {
   return crypto.createHmac('sha256', STATE_SECRET).update(token).digest('hex');
@@ -72,6 +72,7 @@ export function getBaseUrl(req?: NextRequest): string {
   if (process.env.NEXT_PUBLIC_APP_URL && process.env.NEXT_PUBLIC_APP_URL.trim().length > 0) {
     return process.env.NEXT_PUBLIC_APP_URL.trim().replace(/\/$/, '');
   }
+  if (process.env.NODE_ENV === 'production') throw new Error('NEXT_PUBLIC_APP_URL must be configured');
 
   // If request is provided, inspect host headers
   if (req) {
@@ -147,6 +148,7 @@ export async function exchangeGoogleCodeForTokens(
   });
 
   const res = await fetch('https://oauth2.googleapis.com/token', {
+    signal: AbortSignal.timeout(15000),
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -164,6 +166,7 @@ export async function exchangeGoogleCodeForTokens(
 
 export async function getGoogleUserProfile(accessToken: string): Promise<GoogleUserProfile> {
   const res = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+    signal: AbortSignal.timeout(15000),
     headers: {
       Authorization: `Bearer ${accessToken}`
     }

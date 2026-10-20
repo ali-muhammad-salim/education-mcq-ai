@@ -1,3 +1,4 @@
+import { getAllStandardPapers, getFallbackPaper } from '@/lib/paperDataService';
 import { NextResponse } from 'next/server';
 import { prisma } from '../../../lib/prisma';
 
@@ -15,7 +16,7 @@ export async function GET(request: Request) {
       whereClause.paperCode = paperCode;
     }
 
-    const papers = await prisma.pastPaper.findMany({
+    const papers: any[] = await prisma.pastPaper.findMany({
       where: whereClause,
       include: {
         academicClass: true,
@@ -37,6 +38,7 @@ export async function GET(request: Request) {
       ],
     });
 
+    for (const entry of getAllStandardPapers()) { if (!papers.some(p => p.paperCode === entry.paperCode) && (!paperCode || entry.paperCode === paperCode)) { const paper = getFallbackPaper(entry.paperCode); if (paper) papers.push(paper); } }
     const filteredPapers = papers.filter(p => {
       if (!classLevel || classLevel === 'all') return true;
       if (classLevel === '9') return p.academicClass?.level === 9;
@@ -54,8 +56,8 @@ export async function GET(request: Request) {
         const pTitle = `"${p.title.replace(/"/g, '""')}"`;
         const clsName = `Class ${p.academicClass?.name || p.academicClass?.level || ''}`;
 
-        p.questions.forEach(q => {
-          const qNum = `"${q.questionNumber.replace(/"/g, '""')}"`;
+        p.questions.forEach((q: any) => {
+          const qNum = `"${String(q.questionNumber).replace(/"/g, '""')}"`;
           const qType = q.questionType;
           const marks = q.marks || 1;
           const cog = q.difficulty || '';

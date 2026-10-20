@@ -1,5 +1,6 @@
 'use client';
 
+import { useDialog } from '@/lib/use-dialog';
 import React, { useState, useEffect } from 'react';
 import { Sparkles, User, Lock, Mail, ShieldCheck, Check, ArrowRight, X, AlertCircle } from 'lucide-react';
 
@@ -50,6 +51,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
     }
   }, [isOpen]);
 
+  const dialogProps = useDialog(isOpen, 'Sign in or register', onClose);
   if (!isOpen) return null;
 
   const handleGoogleSignIn = () => {
@@ -65,7 +67,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
 
     try {
       const endpoint = mode === 'login' ? '/api/auth/login' : '/api/auth/register';
-      const payload = mode === 'login' 
+      const payload = mode === 'login'
         ? { email, password }
         : { email, password, name, role };
 
@@ -77,10 +79,10 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
 
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.error || 'Authentication failed');
+        throw new Error(typeof data.error === 'string' ? data.error : data.error?.message || 'Authentication failed');
       }
 
-      if (onSuccess) onSuccess(data.user);
+      if (onSuccess) { onSuccess(data.user); onClose(); return; }
       onClose();
       if (data.user?.role === 'TEACHER') {
         window.location.href = '/dashboard/teacher';
@@ -97,7 +99,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
   };
 
   return (
-    <div style={{
+    <div {...dialogProps} style={{
       position: 'fixed',
       top: 0,
       left: 0,
@@ -124,7 +126,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
       }}>
         {/* Close Button */}
         <button
-          onClick={onClose}
+          aria-label="Close dialog" onClick={onClose}
           style={{
             position: 'absolute',
             top: '1rem',
@@ -142,9 +144,9 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
         {/* Modal Header */}
         <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}>
-            <img 
-              src="/logo.png" 
-              alt="Rise Learner" 
+            <img
+              src="/logo.png"
+              alt="Rise Learner"
               style={{
                 height: '42px',
                 width: 'auto',
@@ -170,10 +172,11 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
             {mode === 'login' ? 'Sign In to Your Account' : 'Create an Account'}
           </h3>
           <p style={{ color: '#6b7280', fontSize: '0.85rem', margin: 0 }}>
-            Access student practice exams or teacher assessment tools.
+            Student accounts are created immediately. Teacher access requires approval from your account page.
           </p>
         </div>
 
+        <a href="/account" style={{ color: '#0b5e4a', display: 'block', marginBottom: '1rem' }}>Password recovery, email verification & teacher access</a>
         {error && (
           <div style={{
             background: '#fef2f2',

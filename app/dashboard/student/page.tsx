@@ -7,10 +7,13 @@ import {
   RotateCcw, Sparkles, Plus, Users, ShieldAlert, FileText, ChevronRight, LogIn,
   GraduationCap, TrendingUp, CheckSquare, Compass, LogOut
 } from 'lucide-react';
+import { clearExamCache } from '@/lib/exam-cache';
 import AuthModal from '@/components/AuthModal';
 
 export default function StudentDashboardPage() {
+  const [page, setPage] = useState(1);
   const [data, setData] = useState<any>(null);
+  const [loadError, setLoadError] = useState('');
   const [loading, setLoading] = useState(true);
   const [isTeacherBlocked, setIsTeacherBlocked] = useState(false);
   const [activeTab, setActiveTab] = useState<'available' | 'history' | 'subjects'>('available');
@@ -24,13 +27,18 @@ export default function StudentDashboardPage() {
 
   useEffect(() => {
     fetchDashboard();
-  }, []);
+  }, [page]);
 
   async function fetchDashboard() {
     try {
-      setLoading(true);
-      const res = await fetch('/api/dashboard/student');
+      setLoading(true); setLoadError('');
+      const res = await fetch('/api/dashboard/student?page=' + page);
       const json = await res.json();
+      if (!res.ok) {
+        if (res.status === 401) { setData({ isGuest: true }); return; }
+        if (res.status === 403) { setIsTeacherBlocked(true); setTimeout(() => window.location.replace('/dashboard/teacher'), 1200); return; }
+        throw new Error(typeof json.error === 'string' ? json.error : json.error?.message || 'Unable to load dashboard.');
+      }
       
       // If user is a TEACHER or ADMIN, student dashboard is unavailable!
       if (!json.success && json.redirect) {
@@ -45,6 +53,7 @@ export default function StudentDashboardPage() {
         setData(json);
       }
     } catch (err) {
+      setLoadError(err instanceof Error ? err.message : 'Unable to load dashboard.');
       console.error('Failed to load student dashboard:', err);
     } finally {
       setLoading(false);
@@ -53,6 +62,7 @@ export default function StudentDashboardPage() {
 
   const handleLogout = async () => {
     try {
+      await clearExamCache().catch(() => undefined);
       await fetch('/api/auth/logout', { method: 'POST' });
       window.location.href = '/dashboard/student';
     } catch {
@@ -99,6 +109,8 @@ export default function StudentDashboardPage() {
       setIsJoining(false);
     }
   };
+
+  if (loadError && !loading) return <main className="dashboard-error" style={{ padding: '3rem', textAlign: 'center' }}><h2>Unable to load your dashboard</h2><p role="alert">{loadError}</p><button className="btn" onClick={fetchDashboard}>Retry</button></main>;
 
   // 1. TEACHER BLOCKED GUARD SCREEN
   if (isTeacherBlocked) {
@@ -235,7 +247,7 @@ export default function StudentDashboardPage() {
     }}>
       
       {/* Top Navigation & Profile Bar */}
-      <header style={{
+      <header className="assessment-header" style={{ flexWrap: 'wrap',
         position: 'sticky',
         top: 0,
         zIndex: 40,
@@ -279,7 +291,7 @@ export default function StudentDashboardPage() {
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <button
             onClick={() => setIsJoinModalOpen(true)}
             style={{
@@ -347,6 +359,7 @@ export default function StudentDashboardPage() {
           )}
         </div>
       </header>
+      {!data?.isGuest && <nav aria-label="Dashboard pages" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', padding: '1rem' }}><button disabled={page === 1} onClick={() => setPage(p => p - 1)}>Previous page</button><span>Page {page}</span><button disabled={!data?.hasMore} onClick={() => setPage(p => p + 1)}>Next page</button></nav>}
 
       {/* Main Container */}
       <div style={{
@@ -391,7 +404,7 @@ export default function StudentDashboardPage() {
                   Previewing in Guest Candidate Mode
                 </h3>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)', margin: 0 }}>
-                  You can attempt official AKU-EB benchmark tests below. Sign in to save permanent score transcripts and join teacher classrooms.
+                  Browse benchmark assessments below. Sign in to begin an attempt, save results and join teacher classrooms.
                 </p>
               </div>
             </div>
@@ -419,6 +432,7 @@ export default function StudentDashboardPage() {
         )}
 
         {/* Active Timed Exam Banner (If session in progress) */}
+        {data?.classrooms?.length > 0 && <section style={{ background: 'var(--card-bg)', padding: '1rem', borderRadius: 12 }}><h3>Your classrooms</h3><ul>{data.classrooms.map((c: {id: string; name: string}) => <li key={c.id}>{c.name}</li>)}</ul><p>Assigned assessments appear in the Available tab.</p></section>}
         {inProgressList.length > 0 && (
           <div style={{
             padding: '1.25rem 1.5rem',
@@ -554,7 +568,7 @@ export default function StudentDashboardPage() {
               {metrics.avgPercentage}%
             </strong>
             <span style={{ fontSize: '0.75rem', color: '#b45309', fontWeight: 600 }}>
-              Across all tests
+              Recent released results
             </span>
           </div>
 
@@ -715,12 +729,12 @@ export default function StudentDashboardPage() {
                 borderRadius: '16px',
                 border: '1px solid var(--border-color, #dce5e1)'
               }}>
-                No active public quizzes available right now. Ask your teacher for a classroom code or explore past papers.
+                {data?.isGuest ? 'Sign in to load your assessments, or browse the public catalog.' : 'No assessments are available on this page. Explore the catalog or ask your teacher for a classroom code.'}
               </div>
             ) : (
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(330px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 330px), 1fr))',
                 gap: '1.25rem'
               }}>
                 {data.availableQuizzes.map((q: any) => (
@@ -858,7 +872,7 @@ export default function StudentDashboardPage() {
               letterSpacing: '0.05em',
               margin: 0
             }}>
-              Assessment Performance History & RAG Grounding
+              Assessment History & Submission Receipts
             </h3>
 
             {(data?.completedAttempts || []).length === 0 ? (
@@ -904,7 +918,7 @@ export default function StudentDashboardPage() {
                           {att.title}
                         </td>
                         <td style={{ padding: '0.9rem 1rem' }}>
-                          <span style={{ fontWeight: 800, color: 'var(--text-color, #2c3e38)' }}>{att.score}</span> / {att.maxMarks}
+                          <span style={{ fontWeight: 800, color: 'var(--text-color, #2c3e38)' }}>{att.released ? att.score : 'Held'}</span> / {att.maxMarks}
                         </td>
                         <td style={{ padding: '0.9rem 1rem' }}>
                           <span style={{
@@ -915,7 +929,7 @@ export default function StudentDashboardPage() {
                             backgroundColor: att.percentage >= 50 ? '#e6f0ed' : '#fee2e2',
                             color: att.percentage >= 50 ? '#0b5e4a' : '#b91c1c'
                           }}>
-                            {att.percentage}%
+                            {att.percentage == null ? (att.released ? 'Awaiting grading' : 'Awaiting release') : att.percentage + '%'}
                           </span>
                         </td>
                         <td style={{ padding: '0.9rem 1rem', color: 'var(--text-light, #5a7a6f)', fontSize: '0.78rem' }}>
@@ -937,7 +951,7 @@ export default function StudentDashboardPage() {
                               gap: '0.35rem'
                             }}
                           >
-                            <span>Review Explanations</span>
+                            <span>View Submission</span>
                             <ArrowRight size={13} />
                           </Link>
                         </td>
@@ -965,7 +979,7 @@ export default function StudentDashboardPage() {
             </h3>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))',
               gap: '1.25rem'
             }}>
               {[
@@ -1055,7 +1069,7 @@ export default function StudentDashboardPage() {
             </h3>
 
             <p style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)', margin: 0, lineHeight: 1.5 }}>
-              Ask your teacher for the 6-character classroom code to access private assigned assessments.
+              Ask your teacher for the 6–8 character classroom code to access private assigned assessments.
             </p>
 
             <input

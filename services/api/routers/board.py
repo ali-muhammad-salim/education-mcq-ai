@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict, Any, Optional
 import yaml
+import re
 from pathlib import Path
 
 from services.knowledge.board_registry import BoardRegistry
@@ -33,21 +34,24 @@ def create_or_update_board(board_data: dict):
     """Create or update a board's syllabus configuration."""
     BoardRegistry.reset_default()
     registry = BoardRegistry.default()
-    
+
     # We expect raw dictionary that matches BoardProfile
     try:
         short_code = board_data.get("short_code", "").lower()
         if not short_code:
             raise HTTPException(status_code=400, detail="short_code is required")
-        
+        if not re.fullmatch(r"[a-z0-9][a-z0-9_-]{1,31}", short_code):
+            raise HTTPException(status_code=400, detail="Invalid board code")
+        BoardProfile.model_validate(board_data)
+
         # Ensure _BOARD_CONFIGS_DIR exists
         _BOARD_CONFIGS_DIR.mkdir(parents=True, exist_ok=True)
-        
+
         # Save to yaml
         yaml_path = _BOARD_CONFIGS_DIR / f"{short_code}.yaml"
         with open(yaml_path, "w", encoding="utf-8") as f:
             yaml.dump(board_data, f, sort_keys=False)
-        
+
         # Reload in registry
         profile = registry.from_yaml(yaml_path)
         return {"status": "success", "message": f"Board {short_code} saved successfully", "data": profile.model_dump()}

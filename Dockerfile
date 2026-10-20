@@ -17,6 +17,8 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+ARG NEXT_PUBLIC_APP_URL
+ENV NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}
 ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/mcqs"
 
 RUN npx prisma generate --generator client
@@ -46,6 +48,9 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/data ./data
 COPY --from=builder --chown=nextjs:nodejs /app/services ./services
 COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
+COPY --from=builder --chown=nextjs:nodejs /app/lib ./lib
+COPY --from=builder --chown=nextjs:nodejs /app/repositories ./repositories
+COPY --from=builder --chown=nextjs:nodejs /app/tsconfig.json ./tsconfig.json
 
 RUN chown -R nextjs:nodejs /app
 
@@ -53,4 +58,4 @@ USER nextjs
 
 EXPOSE 3000
 
-CMD ["sh", "-c", "(npx prisma db push --accept-data-loss --skip-generate || echo 'Prisma migration warning, starting server...') && npm run start"]
+CMD ["npm", "run", "start"]

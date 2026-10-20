@@ -89,8 +89,16 @@ Desktop.ini
 *.swp
 *.swo
 
-# GitHub Workflows (Deployed directly via Dokploy)
-.github/
 
 # OneDrive sync duplicate files
 *-DESKTOP-*
+
+# Private runtime assets and job workspaces
+data/assets/
+data/jobs/
+.hardening-test.env
+.next-hardening/
+checkpoints/*.dump
+
+.next-audit/
+checkpoints/prepare-ui-review.cjs

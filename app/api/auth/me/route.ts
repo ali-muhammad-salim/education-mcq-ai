@@ -1,41 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
-import { ensureDemoUsers } from '@/lib/auth';
-
+import { getSessionUser } from '@/lib/auth';
+import { apiError } from '@/lib/api';
 export async function GET(req: NextRequest) {
   try {
-    await ensureDemoUsers();
-    const token = req.cookies.get('mcqs_session')?.value || req.headers.get('authorization')?.replace('Bearer ', '');
-
-    if (!token) {
-      return NextResponse.json({ user: null });
-    }
-
-    const session = await prisma.userSession.findUnique({
-      where: { token },
-      include: {
-        user: {
-          select: {
-            id: true,
-            email: true,
-            name: true,
-            role: true,
-            status: true,
-            avatarUrl: true
-          }
-        }
-      }
-    });
-
-    if (!session || session.expiresAt < new Date()) {
-      return NextResponse.json({ user: null });
-    }
-
-    return NextResponse.json({
-      user: session.user
-    });
-  } catch (err: any) {
-    console.error('Auth verification error:', err);
-    return NextResponse.json({ user: null });
-  }
+    const user = await getSessionUser(req);
+    return NextResponse.json({ user: user ? { id: user.id, email: user.email, name: user.name, role: user.role, status: user.status, avatarUrl: user.avatarUrl } : null }, { headers: { 'Cache-Control': 'no-store' } });
+  } catch (error) { return apiError(error); }
 }

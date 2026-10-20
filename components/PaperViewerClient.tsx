@@ -204,7 +204,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                 {paper.paperCode || (isPaper2 ? `PHY-${isGrade9 ? 'IX' : 'X'}-${paper.examYear}-P2` : `PHY-${isGrade9 ? 'IX' : 'X'}-${paper.examYear}-P1`)}
               </span>
               <span style={{ fontSize: '0.8rem', color: '#666', background: '#f3f4f6', padding: '4px 8px', borderRadius: '4px', fontWeight: 600 }}>
-                {isPaper2 ? '25 Marks • 1h 40m' : '40 Marks • 50 Minutes'}
+                {isPaper2 ? 'Theory questions • Refer to original PDF' : '40 Marks • 50 Minutes'}
               </span>
               <span style={{ fontSize: '0.8rem', color: isPaper2 ? '#7c2d12' : '#1e3a8a', background: isPaper2 ? '#ffedd5' : '#dbeafe', padding: '4px 8px', borderRadius: '4px', fontWeight: 700 }}>
                 {isPaper2 ? 'Paper II (Theory • CRQs & ERQs)' : 'Paper I (Multiple Choice Questions)'}
@@ -484,7 +484,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                   transition: 'all 0.2s ease'
                 }}
               >
-                <span>{interactiveMode ? '📝 Practice Mode (Active)' : '✏️ Practice & Select Options'}</span>
+                <span>{interactiveMode ? '📝 Practice Mode (Active)' : isPaper2 ? '✏️ Written practice' : '✏️ Practice & Select Options'}</span>
               </button>
 
               {!isPaper2 && (
@@ -543,7 +543,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                 Physics {isPaper2 ? 'Paper II (Theory)' : 'Paper I (Multiple Choice Questions)'}
               </div>
               <div style={{ fontSize: '0.98rem', fontWeight: 600, color: '#374151' }}>
-                {isPaper2 ? 'Time: 1 hour 45 minutes • Marks: 35' : 'Time: 1 hour 10 minutes • Marks: 40'}
+                {isPaper2 ? 'Digital theory item collection • Refer to the original PDF for time and section choices' : 'Time: 50 minutes • Marks: 40'}
               </div>
 
               {/* Instructions Box (hidden in quick study mode to minimize clutter) */}
@@ -562,8 +562,8 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                   {isPaper2 ? (
                     <ol style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.85rem', color: '#374151', lineHeight: 1.5 }}>
                       <li>This question paper contains two sections: <strong>Section B (CRQs)</strong> and <strong>Section C (ERQs)</strong>.</li>
-                      <li>Answer <strong>ALL questions</strong> in Section B. Answer <strong>any ONE question</strong> in Section C.</li>
-                      <li>Write your answers strictly inside the <strong>designated ruled writing lines</strong> provided for each question.</li>
+                      <li>This digital collection is for study. Use the original PDF for required questions, section choices, time and total marks.</li>
+                      <li>Use a notebook for written practice. The model responses below are study guidance.</li>
                     </ol>
                   ) : (
                     <ol style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.85rem', color: '#374151', lineHeight: 1.5 }}>
@@ -623,17 +623,17 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                 const topicName = meta.slo_details?.topic_name || (q.topics && q.topics[0]?.topic?.name);
 
                 // Correct answer and candidate responses (pure text)
-                const correctKey = meta.correct_answer || meta.solved_correct_option || 'A';
+                const correctKey = meta.correct_answer || meta.solved_correct_option || '';
                 const correctOptionText = choices[correctKey] || '';
                 const betterResponse = meta.better_response || meta.model_answer || (
                   isPaper2
-                    ? meta.explanation || "Candidate clearly stated the relevant formula, substituted numerical values with appropriate units, and provided the final answer with correct SI units."
-                    : `Option ${correctKey} (${correctOptionText}) is verified through direct physical principles.`
+                    ? meta.explanation || 'A reviewed model response is not available for this item.'
+                    : correctKey ? `Answer key: ${correctKey} (${correctOptionText}).` : 'A reviewed answer key is not available.'
                 );
                 const weakResponse = meta.weaker_response || meta.weak_response || (
                   isPaper2
-                    ? "Common errors: Omitted units or incorrect algebraic rearrangement resulted in lost marks."
-                    : `Common misconception: Confusing base quantities or incorrect rounding.`
+                    ? 'No reviewed misconception notes are available.'
+                    : 'No reviewed misconception notes are available.'
                 );
                 const examinerGuidance = meta.suggestions || meta.examiner_guidance;
 
@@ -1028,7 +1028,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                         }}>
                           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                             <span style={{ background: '#16a34a', color: '#fff', padding: '3px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 800 }}>
-                              ✓ BETTER RESPONSE (Full Marks Standard)
+                              ✓ MODEL RESPONSE (Study Guidance)
                             </span>
                             <span style={{ fontSize: '0.82rem', color: '#166534', fontWeight: 700 }}>
                               Score: {marks}/{marks} Marks

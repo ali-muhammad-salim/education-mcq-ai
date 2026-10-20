@@ -1,9 +1,10 @@
+import { sessionTokenHash } from '@/lib/auth';
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
-import { generateToken, ensureAuthTables } from '@/lib/auth';
-import { 
-  getBaseUrl, 
-  exchangeGoogleCodeForTokens, 
+import { generateToken } from '@/lib/auth';
+import {
+  getBaseUrl,
+  exchangeGoogleCodeForTokens,
   getGoogleUserProfile,
   verifyOAuthState
 } from '@/lib/google-auth';
@@ -45,7 +46,7 @@ export async function GET(req: NextRequest) {
     const cookieMatches = storedStateCookie && storedStateCookie === stateData.token;
     const signatureValid = stateData.sig ? verifyOAuthState(stateData.token, stateData.sig) : false;
 
-    if (!cookieMatches && !signatureValid) {
+    if (!cookieMatches) {
       console.error('CSRF state verification failed');
       return NextResponse.redirect(
         new URL('/?auth_error=csrf_verification_failed', baseUrl)
@@ -53,17 +54,14 @@ export async function GET(req: NextRequest) {
     }
 
     // Use the exact redirectUri that was sent during the authorization request
-    const tokenRedirectUri = stateData.redirectUri || fallbackRedirectUri;
+    const tokenRedirectUri = fallbackRedirectUri;
 
     // Exchange authorization code for Google access token
     const tokenData = await exchangeGoogleCodeForTokens(code, tokenRedirectUri);
     const googleProfile = await getGoogleUserProfile(tokenData.access_token);
+    if (!googleProfile.verified_email) throw new Error('Google email is not verified');
 
     const email = googleProfile.email.toLowerCase();
-    const isAdminEmail = email === 'support@riselearner.com' || email === 'admin@riselearner.com';
-
-    // Ensure database auth tables exist
-    await ensureAuthTables();
 
     // Check if user already exists by googleId or email
     let user = await prisma.user.findFirst({
@@ -75,7 +73,7 @@ export async function GET(req: NextRequest) {
       }
     });
 
-    const chosenRole = isAdminEmail ? 'ADMIN' : (stateData.role === 'TEACHER' ? 'TEACHER' : 'STUDENT');
+    const chosenRole = 'STUDENT';
 
     if (!user) {
       // Create new user account via Google
@@ -98,11 +96,11 @@ export async function GET(req: NextRequest) {
           googleId: user.googleId || googleProfile.id,
           avatarUrl: googleProfile.picture || user.avatarUrl,
           emailVerified: true,
-          ...(isAdminEmail ? { role: 'ADMIN' } : {})
         }
       });
     }
 
+    if (user.status !== 'ACTIVE') throw new Error('Account is not active');
     // Create session in userSession table
     const sessionToken = generateToken();
     const expiresAt = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000); // 14 days
@@ -110,7 +108,7 @@ export async function GET(req: NextRequest) {
     await prisma.userSession.create({
       data: {
         userId: user.id,
-        token: sessionToken,
+        token: sessionTokenHash(sessionToken),
         expiresAt,
         ipAddress: req.headers.get('x-forwarded-for') || '127.0.0.1',
         userAgent: req.headers.get('user-agent') || 'Unknown'
@@ -120,15 +118,15 @@ export async function GET(req: NextRequest) {
     // Determine target redirect destination
     let destination = stateData.returnUrl || '/';
     if (destination === '/' || destination === '') {
-      destination = user.role === 'TEACHER' 
-        ? '/dashboard/teacher' 
-        : user.role === 'ADMIN' 
-        ? '/admin' 
+      destination = user.role === 'TEACHER'
+        ? '/dashboard/teacher'
+        : user.role === 'ADMIN'
+        ? '/admin/users'
         : '/dashboard/student';
     }
 
     // Ensure safe relative destination
-    if (!destination.startsWith('/') || destination.startsWith('//')) {
+    if (!destination.startsWith('/') || destination.startsWith('//') || new URL(destination, baseUrl).origin !== new URL(baseUrl).origin) {
       destination = '/';
     }
 

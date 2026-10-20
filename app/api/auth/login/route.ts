@@ -1,77 +1,23 @@
+import { sessionTokenHash } from '@/lib/auth';
 import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
 import prisma from '@/lib/prisma';
-import { verifyPassword, generateToken, ensureDemoUsers } from '@/lib/auth';
-
+import { verifyPassword, hashPassword, generateToken } from '@/lib/auth';
+import { assertOrigin, rateLimit } from '@/lib/security';
+import { apiError, ApiError } from '@/lib/api';
 export async function POST(req: NextRequest) {
   try {
-    await ensureDemoUsers();
-    const body = await req.json();
-    const { email, password, demoRole } = body;
-
-    // Handle Quick Demo Login for testing
-    let user;
-    if (demoRole) {
-      const demoEmail = demoRole.toLowerCase() === 'teacher' 
-        ? 'teacher@akueb.edu.pk' 
-        : demoRole.toLowerCase() === 'admin'
-        ? 'admin@akueb.edu.pk'
-        : 'student@akueb.edu.pk';
-      user = await prisma.user.findUnique({ where: { email: demoEmail } });
-    } else {
-      if (!email || !password) {
-        return NextResponse.json({ error: 'Email and password are required' }, { status: 400 });
-      }
-      user = await prisma.user.findUnique({ where: { email: email.toLowerCase() } });
-      if (!user || !user.passwordHash || !verifyPassword(password, user.passwordHash)) {
-        return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
-      }
-    }
-
-    if (!user) {
-      return NextResponse.json({ error: 'User account not found' }, { status: 404 });
-    }
-
-    if (user.status !== 'ACTIVE') {
-      return NextResponse.json({ error: 'Account is suspended or pending verification' }, { status: 403 });
-    }
-
-    // Create session
-    const token = generateToken();
-    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
-
-    await prisma.userSession.create({
-      data: {
-        userId: user.id,
-        token,
-        expiresAt,
-        ipAddress: req.headers.get('x-forwarded-for') || '127.0.0.1',
-        userAgent: req.headers.get('user-agent') || 'Unknown'
-      }
-    });
-
-    const response = NextResponse.json({
-      success: true,
-      user: {
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        role: user.role,
-        avatarUrl: user.avatarUrl
-      }
-    });
-
-    // Set secure cookie
-    response.cookies.set('mcqs_session', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      path: '/',
-      expires: expiresAt
-    });
-
+    assertOrigin(req);
+    const input = z.object({ email: z.string().trim().email().max(254).transform(s => s.toLowerCase()), password: z.string().min(1).max(256) }).strict().parse(await req.json());
+    await rateLimit('login:' + input.email, 10, 900);
+    const user = await prisma.user.findUnique({ where: { email: input.email } });
+    if (!user?.passwordHash || !await verifyPassword(input.password, user.passwordHash)) throw new ApiError(401, 'INVALID_LOGIN', 'Invalid email or password.');
+    if (user.status !== 'ACTIVE') throw new ApiError(403, 'ACCOUNT_INACTIVE', 'This account is not active.');
+    if (!user.passwordHash.startsWith('scrypt:')) await prisma.user.update({ where: { id: user.id }, data: { passwordHash: await hashPassword(input.password) } });
+    const token = generateToken(), expiresAt = new Date(Date.now() + 7 * 86400000);
+    await prisma.userSession.create({ data: { userId: user.id, token: sessionTokenHash(token), expiresAt } });
+    const response = NextResponse.json({ success: true, user: { id: user.id, email: user.email, name: user.name, role: user.role, avatarUrl: user.avatarUrl } });
+    response.cookies.set('mcqs_session', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax', path: '/', expires: expiresAt });
     return response;
-  } catch (err: any) {
-    console.error('Login error:', err);
-    return NextResponse.json({ error: err.message || 'Internal server error' }, { status: 500 });
-  }
+  } catch (error) { return apiError(error); }
 }

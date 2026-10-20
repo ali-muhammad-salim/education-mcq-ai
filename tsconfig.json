@@ -25,7 +25,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     }
   },
   "include": [
@@ -37,7 +39,15 @@
     "lib/**/*.ts",
     "lib/**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "services/**/*.ts",
+    "repositories/**/*.ts",
+    "tests/**/*.ts",
+    "scripts/job-worker.ts",
+    "scripts/bootstrap-admin.ts",
+    "scripts/archive-legacy.ts",
+    "vitest.config.ts",
+    "scripts/db-preflight.ts"
   ],
   "exclude": [
     "node_modules",

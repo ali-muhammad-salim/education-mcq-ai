@@ -9,11 +9,16 @@ import {
   GraduationCap, LogOut, ArrowRight, ShieldCheck, AlertTriangle,
   FileQuestion, CheckCheck, X
 } from 'lucide-react';
+import { clearExamCache } from '@/lib/exam-cache';
+import { AssessmentActions, ClassroomRoster } from '@/components/AssessmentManagement';
 import AuthModal from '@/components/AuthModal';
+import ReviewQuestionEditor from '@/components/ReviewQuestionEditor';
 import MathText from '@/components/MathText';
 
 export default function TeacherDashboardPage() {
+  const [page, setPage] = useState(1);
   const [data, setData] = useState<any>(null);
+  const [loadError, setLoadError] = useState('');
   const [loading, setLoading] = useState(true);
   const [isStudentBlocked, setIsStudentBlocked] = useState(false);
   const [authRequired, setAuthRequired] = useState(false);
@@ -35,13 +40,18 @@ export default function TeacherDashboardPage() {
 
   useEffect(() => {
     fetchDashboard();
-  }, []);
+  }, [page]);
 
   async function fetchDashboard() {
     try {
-      setLoading(true);
-      const res = await fetch('/api/dashboard/teacher');
+      setLoading(true); setLoadError('');
+      const res = await fetch('/api/dashboard/teacher?page=' + page);
       const json = await res.json();
+      if (!res.ok) {
+        if (res.status === 401) { setAuthRequired(true); setData(null); return; }
+        if (res.status === 403) { setIsStudentBlocked(true); setTimeout(() => window.location.replace('/dashboard/student'), 1200); return; }
+        throw new Error(typeof json.error === 'string' ? json.error : json.error?.message || 'Unable to load dashboard.');
+      }
 
       // If user is a STUDENT, teacher dashboard is strictly unavailable!
       if (!json.success && json.role === 'STUDENT') {
@@ -65,6 +75,7 @@ export default function TeacherDashboardPage() {
         setIsStudentBlocked(false);
       }
     } catch (err) {
+      setLoadError(err instanceof Error ? err.message : 'Unable to load dashboard.');
       console.error('Failed to fetch teacher dashboard:', err);
     } finally {
       setLoading(false);
@@ -73,6 +84,7 @@ export default function TeacherDashboardPage() {
 
   const handleLogout = async () => {
     try {
+      await clearExamCache().catch(() => undefined);
       await fetch('/api/auth/logout', { method: 'POST' });
       window.location.href = '/dashboard/student';
     } catch {
@@ -81,14 +93,14 @@ export default function TeacherDashboardPage() {
   };
 
   const handleDeleteQuiz = async (quizId: string) => {
-    if (!confirm('Are you sure you want to delete this assessment? This will also remove associated student responses.')) return;
+    if (!confirm('Archive this assessment? Existing student responses and grades will be preserved.')) return;
     try {
       const res = await fetch(`/api/quizzes/${quizId}`, { method: 'DELETE' });
       const json = await res.json();
       if (json.success) {
         fetchDashboard();
       } else {
-        alert(json.error || 'Failed to delete assessment');
+        alert((typeof json.error === 'string' ? json.error : json.error?.message) || 'Failed to delete assessment');
       }
     } catch (err) {
       alert('Error deleting assessment');
@@ -117,7 +129,7 @@ export default function TeacherDashboardPage() {
         setClassDesc('');
         fetchDashboard();
       } else {
-        alert(json.error || 'Failed to create classroom');
+        alert((typeof json.error === 'string' ? json.error : json.error?.message) || 'Failed to create classroom');
       }
     } catch {
       alert('Error creating classroom');
@@ -149,7 +161,7 @@ export default function TeacherDashboardPage() {
       if (json.success) {
         fetchDashboard();
       } else {
-        alert(json.error || 'Failed to update question status');
+        alert((typeof json.error === 'string' ? json.error : json.error?.message) || 'Failed to update question status');
       }
     } catch {
       alert('Error updating question status');
@@ -157,6 +169,8 @@ export default function TeacherDashboardPage() {
       setResolvingDoubtId(null);
     }
   };
+
+  if (loadError && !loading) return <main className="dashboard-error" style={{ padding: '3rem', textAlign: 'center' }}><h2>Unable to load your dashboard</h2><p role="alert">{loadError}</p><button className="btn" onClick={fetchDashboard}>Retry</button></main>;
 
   // 1. STUDENT BLOCKED GUARD SCREEN
   if (isStudentBlocked) {
@@ -409,7 +423,7 @@ export default function TeacherDashboardPage() {
     }}>
       
       {/* Top Banner */}
-      <header style={{
+      <header className="assessment-header" style={{ flexWrap: 'wrap',
         position: 'sticky',
         top: 0,
         zIndex: 40,
@@ -453,7 +467,7 @@ export default function TeacherDashboardPage() {
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <button
             onClick={() => setIsClassModalOpen(true)}
             style={{
@@ -518,6 +532,7 @@ export default function TeacherDashboardPage() {
         </div>
       </header>
 
+      <nav aria-label="Dashboard pages" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', padding: '1rem' }}><button disabled={page === 1} onClick={() => setPage(p => p - 1)}>Previous page</button><span>Page {page}</span><button disabled={!Object.values(data?.hasMore || {}).some(Boolean)} onClick={() => setPage(p => p + 1)}>Next page</button></nav>
       {/* Main Content */}
       <div style={{
         maxWidth: '1200px',
@@ -551,7 +566,7 @@ export default function TeacherDashboardPage() {
               {metrics.totalQuizzes}
             </strong>
             <span style={{ fontSize: '0.75rem', color: '#0b5e4a', fontWeight: 600 }}>
-              Ready for testing
+              Created assessments
             </span>
           </div>
 
@@ -635,7 +650,7 @@ export default function TeacherDashboardPage() {
               {metrics.pendingDoubts !== undefined ? metrics.pendingDoubts : (data?.aiDoubtQueue || []).filter((d: any) => d.status === 'PENDING_REVIEW').length}
             </strong>
             <span style={{ fontSize: '0.75rem', color: '#d97706', fontWeight: 600 }}>
-              Flagged by Double-Check AI
+              Awaiting educator review
             </span>
           </div>
         </div>
@@ -653,7 +668,7 @@ export default function TeacherDashboardPage() {
             { id: 'quizzes', label: 'My Assessments', count: (data?.quizzes || []).length },
             { id: 'submissions', label: 'Submissions & Grades', count: (data?.recentSubmissions || []).length },
             { id: 'classrooms', label: 'Classrooms & Rosters', count: (data?.classrooms || []).length },
-            { id: 'integrity', label: 'Anti-Cheating Sentinel', count: (data?.flaggedAttempts || []).length },
+            { id: 'integrity', label: 'Session Activity', count: (data?.flaggedAttempts || []).length },
             { id: 'ai-review', label: 'AI Doubt Queue', count: (data?.aiDoubtQueue || []).filter((d: any) => d.status === 'PENDING_REVIEW').length }
           ].map(tab => (
             <button
@@ -752,7 +767,7 @@ export default function TeacherDashboardPage() {
             ) : (
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(330px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 330px), 1fr))',
                 gap: '1.25rem'
               }}>
                 {data.quizzes.map((q: any) => (
@@ -811,7 +826,8 @@ export default function TeacherDashboardPage() {
                       }}>
                         {q.title}
                       </h3>
-                      {q.description && (
+                      <AssessmentActions quizId={q.id} classrooms={data?.classrooms || []} onSaved={fetchDashboard} />
+                    {q.description && (
                         <p style={{
                           fontSize: '0.82rem',
                           color: 'var(--text-light, #5a7a6f)',
@@ -878,7 +894,7 @@ export default function TeacherDashboardPage() {
                           <span>{copiedCode === (q.code || q.id) ? 'Copied Link!' : 'Share Code'}</span>
                         </button>
                         <Link
-                          href={`/teacher/quizzes/builder?id=${q.id}`}
+                          href={`/teacher/quizzes/builder?id=${q.id}${q.attemptCount > 0 ? '&duplicate=1' : ''}`}
                           style={{
                             padding: '0.45rem 0.85rem',
                             borderRadius: '8px',
@@ -924,7 +940,7 @@ export default function TeacherDashboardPage() {
                           cursor: 'pointer',
                           padding: '0.35rem'
                         }}
-                        title="Delete assessment"
+                        title="Archive assessment"
                       >
                         <Trash2 size={16} />
                       </button>
@@ -999,7 +1015,7 @@ export default function TeacherDashboardPage() {
                           {s.quizTitle}
                         </td>
                         <td style={{ padding: '0.9rem 1rem' }}>
-                          <span style={{ fontWeight: 800, color: 'var(--text-color, #2c3e38)' }}>{s.score}</span> / {s.maxMarks}
+                          <span style={{ fontWeight: 800, color: 'var(--text-color, #2c3e38)' }}>{s.score ?? 'Pending'}</span> / {s.maxMarks}
                           <span style={{
                             marginLeft: '0.5rem',
                             fontSize: '0.72rem',
@@ -1009,7 +1025,7 @@ export default function TeacherDashboardPage() {
                             backgroundColor: s.percentage >= 50 ? '#e6f0ed' : '#fee2e2',
                             color: s.percentage >= 50 ? '#0b5e4a' : '#b91c1c'
                           }}>
-                            {s.percentage}%
+                            {s.percentage == null ? 'Awaiting grading' : s.percentage + '%'}
                           </span>
                         </td>
                         <td style={{ padding: '0.9rem 1rem' }}>
@@ -1099,7 +1115,7 @@ export default function TeacherDashboardPage() {
             ) : (
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))',
                 gap: '1.25rem'
               }}>
                 {data.classrooms.map((c: any) => (
@@ -1133,7 +1149,7 @@ export default function TeacherDashboardPage() {
                           {c.academicYear || c.session || '2025-2026'}
                         </span>
                       </div>
-                      <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-color, #2c3e38)', margin: '0.4rem 0' }}>
+                      <ClassroomRoster id={c.id} onSaved={fetchDashboard} /><h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-color, #2c3e38)', margin: '0.4rem 0' }}>
                         {c.name}
                       </h4>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.78rem', color: 'var(--text-light, #5a7a6f)' }}>
@@ -1301,7 +1317,7 @@ export default function TeacherDashboardPage() {
               gap: '0.75rem'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
                   <div style={{
                     width: '44px',
                     height: '44px',
@@ -1319,7 +1335,7 @@ export default function TeacherDashboardPage() {
                       AI Question Quality & Double-Check Doubt Queue
                     </h2>
                     <span style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)' }}>
-                      Independent 2-stage verification system ensures 100% accuracy before student deployment.
+                      Generated questions require educator review before publication.
                     </span>
                   </div>
                 </div>
@@ -1402,11 +1418,11 @@ export default function TeacherDashboardPage() {
                       <ShieldCheck size={36} />
                     </div>
                     <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, color: 'var(--text-color, #2c3e38)' }}>
-                      {doubtFilter === 'PENDING' ? 'All Questions Verified & 100% Accurate' : 'No Resolved Questions Yet'}
+                      {doubtFilter === 'PENDING' ? 'No Questions Awaiting Review' : 'No Resolved Questions Yet'}
                     </h3>
                     <p style={{ fontSize: '0.88rem', color: 'var(--text-light, #5a7a6f)', maxWidth: '480px', margin: 0, lineHeight: 1.6 }}>
                       {doubtFilter === 'PENDING'
-                        ? 'The independent double-check AI pipeline has analyzed all generated questions and past papers. Zero ambiguities or low-confidence items are pending.'
+                        ? 'Your review queue is empty. This does not certify the accuracy of all content.'
                         : 'Any questions flagged by the double-check AI that you approve or dismiss will be recorded here.'}
                     </p>
                   </div>
@@ -1417,7 +1433,7 @@ export default function TeacherDashboardPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                   {filteredDoubts.map((doubt: any) => {
                     const isPending = doubt.status === 'PENDING_REVIEW';
-                    const confPct = Math.round((doubt.confidenceScore || 0.8) * 100);
+                    const confPct = doubt.confidenceScore == null ? null : Math.round(doubt.confidenceScore * 100);
 
                     return (
                       <div
@@ -1481,11 +1497,11 @@ export default function TeacherDashboardPage() {
                               borderRadius: '9999px',
                               fontSize: '0.75rem',
                               fontWeight: 800,
-                              backgroundColor: confPct >= 90 ? 'rgba(16, 185, 129, 0.15)' : confPct >= 75 ? 'rgba(245, 158, 11, 0.15)' : 'rgba(239, 68, 68, 0.15)',
-                              color: confPct >= 90 ? '#10b981' : confPct >= 75 ? '#d97706' : '#dc2626'
+                              backgroundColor: (confPct ?? 0) >= 90 ? 'rgba(16, 185, 129, 0.15)' : (confPct ?? 0) >= 75 ? 'rgba(245, 158, 11, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+                              color: (confPct ?? 0) >= 90 ? '#10b981' : (confPct ?? 0) >= 75 ? '#d97706' : '#dc2626'
                             }}>
                               <AlertTriangle size={13} />
-                              <span>{confPct}% AI Confidence</span>
+                              <span>{confPct == null ? 'Unavailable' : confPct + '%'} AI Confidence</span>
                             </span>
 
                             {!isPending && (
@@ -1518,7 +1534,7 @@ export default function TeacherDashboardPage() {
                             backgroundColor: 'var(--bg-color, #f8fafc)',
                             border: '1px solid var(--border-color, #dce5e1)'
                           }}>
-                            <MathText text={doubt.stemText} />
+                            <MathText text={doubt.stemText} /><ReviewQuestionEditor id={doubt.id} question={doubt.question} onSaved={fetchDashboard} />
                           </div>
                         </div>
 

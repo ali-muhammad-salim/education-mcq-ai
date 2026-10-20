@@ -325,7 +325,7 @@ export default function ModelPapersPage() {
               <a
                 href={activeGrade === 'SSC-I'
                   ? "/materials/ssc/physics/ssc-1/pacing-guide-2025-for-ssc-i-physics.pdf"
-                  : "/materials/ssc/physics/ssc-2/pacing-guide-2025-for-ssc-ii-physics.pdf"}
+                  : "/materials/ssc/physics/ssc-2/pacing-guide-for-ssc-ii-physics.pdf"}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -334,7 +334,7 @@ export default function ModelPapersPage() {
                   fontSize: '1.15rem'
                 }}
               >
-                Teacher-Pacing-Guide-Physics-{gradeCode}-2025
+                {activeGrade === 'SSC-I' ? 'Teacher Pacing Guide — Physics IX' : 'Teacher Pacing Guide — Physics X'}
               </a>
             </div>
           </div>

@@ -1,0 +1,115 @@
+{
+  "runId": "load-a2110fab-2978-451a-9fe3-2e68e46943dc",
+  "date": "2026-10-20T05:18:19.683Z",
+  "environment": {
+    "platform": "win32",
+    "cpu": "Intel(R) Core(TM) i7-10850H CPU @ 2.70GHz",
+    "logicalCpus": 12,
+    "memoryGiB": 32,
+    "node": "v24.21.0"
+  },
+  "scenario": "Same quiz, distinct students, 40 MCQs each. HTTP start burst, HTTP answer-save burst, HTTP submit burst, duplicate-submit burst. No client retries. Answer fixtures seeded before saves.",
+  "rounds": [
+    {
+      "concurrency": 10,
+      "starts": {
+        "requests": 10,
+        "successful": 6,
+        "errors": {
+          "409:CONCURRENT_UPDATE": 4
+        },
+        "elapsedMs": 922,
+        "successfulPerSecond": 6.5,
+        "p50Ms": 800,
+        "p95Ms": 890,
+        "maxMs": 890
+      },
+      "saves": {
+        "requests": 6,
+        "successful": 6,
+        "errors": {},
+        "elapsedMs": 149,
+        "successfulPerSecond": 40.3,
+        "p50Ms": 39,
+        "p95Ms": 147,
+        "maxMs": 147
+      },
+      "submissions": {
+        "requests": 6,
+        "successful": 4,
+        "errors": {
+          "409:CONCURRENT_UPDATE": 2
+        },
+        "elapsedMs": 316,
+        "successfulPerSecond": 12.7,
+        "p50Ms": 186,
+        "p95Ms": 314,
+        "maxMs": 314
+      },
+      "duplicateSubmissions": {
+        "requests": 6,
+        "successful": 6,
+        "errors": {},
+        "elapsedMs": 83,
+        "successfulPerSecond": 72,
+        "p50Ms": 33,
+        "p95Ms": 83,
+        "maxMs": 83
+      },
+      "verifiedAttempts": 6,
+      "correctScoresAndSingleFinalization": true
+    },
+    {
+      "concurrency": 25,
+      "starts": {
+        "requests": 25,
+        "successful": 8,
+        "errors": {
+          "409:CONCURRENT_UPDATE": 17
+        },
+        "elapsedMs": 1237,
+        "successfulPerSecond": 6.5,
+        "p50Ms": 1067,
+        "p95Ms": 1224,
+        "maxMs": 1236
+      },
+      "saves": {
+        "requests": 8,
+        "successful": 7,
+        "errors": {
+          "409:CONCURRENT_UPDATE": 1
+        },
+        "elapsedMs": 221,
+        "successfulPerSecond": 31.7,
+        "p50Ms": 42,
+        "p95Ms": 220,
+        "maxMs": 220
+      },
+      "submissions": {
+        "requests": 8,
+        "successful": 4,
+        "errors": {
+          "409:CONCURRENT_UPDATE": 4
+        },
+        "elapsedMs": 279,
+        "successfulPerSecond": 14.3,
+        "p50Ms": 275,
+        "p95Ms": 279,
+        "maxMs": 279
+      },
+      "duplicateSubmissions": {
+        "requests": 8,
+        "successful": 8,
+        "errors": {},
+        "elapsedMs": 226,
+        "successfulPerSecond": 35.4,
+        "p50Ms": 34,
+        "p95Ms": 226,
+        "maxMs": 226
+      },
+      "verifiedAttempts": 8,
+      "correctScoresAndSingleFinalization": true
+    }
+  ],
+  "failure": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'IN_PROGRESS'\n- 'GRADED'\n"
+}

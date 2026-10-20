@@ -1,5 +1,6 @@
 'use client';
 
+import { useDialog } from '@/lib/use-dialog';
 import React, { useState, useEffect } from 'react';
 import { Download, CheckCircle2, Clock, X, FileText, AlertCircle } from 'lucide-react';
 
@@ -18,6 +19,7 @@ export default function DownloadCountdownModal({
   paperTitle,
   paperCode
 }: DownloadCountdownModalProps) {
+  const [downloadError, setDownloadError] = useState('');
   const [countdown, setCountdown] = useState<number>(5);
   const [downloadTriggered, setDownloadTriggered] = useState<boolean>(false);
 
@@ -45,7 +47,9 @@ export default function DownloadCountdownModal({
     return () => clearInterval(interval);
   }, [isOpen, pdfUrl]);
 
-  const triggerDownload = () => {
+  const triggerDownload = async () => {
+    setDownloadError('');
+    try { const response = await fetch(pdfUrl, { method: 'HEAD' }); if (!response.ok || !response.headers.get('content-type')?.includes('pdf')) throw new Error('The PDF is unavailable. Please try another document or report the missing file.'); } catch (error) { setDownloadError(error instanceof Error ? error.message : 'Unable to check document.'); return; }
     setDownloadTriggered(true);
     // Programmatically trigger download
     const link = document.createElement('a');
@@ -56,12 +60,13 @@ export default function DownloadCountdownModal({
     document.body.removeChild(link);
   };
 
+  const dialogProps = useDialog(isOpen, 'Download document', onClose);
   if (!isOpen) return null;
 
   const progressPercent = ((5 - countdown) / 5) * 100;
 
   return (
-    <div style={{
+    <div {...dialogProps} style={{
       position: 'fixed',
       top: 0,
       left: 0,
@@ -88,7 +93,7 @@ export default function DownloadCountdownModal({
       }}>
         {/* Close Button */}
         <button
-          onClick={onClose}
+          aria-label="Close dialog" onClick={onClose}
           style={{
             position: 'absolute',
             top: '16px',
@@ -144,7 +149,7 @@ export default function DownloadCountdownModal({
           color: '#0f172a',
           margin: '0 0 0.5rem 0'
         }}>
-          {downloadTriggered ? 'Download Started!' : 'Preparing Official PDF'}
+          {downloadTriggered ? 'Download requested' : 'Preparing Official PDF'}
         </h3>
 
         <p style={{
@@ -154,6 +159,7 @@ export default function DownloadCountdownModal({
           margin: '0 0 1.5rem 0'
         }}>
           {paperTitle}
+          {downloadError && <span role="alert">{downloadError} <button type="button" onClick={() => void triggerDownload()}>Retry document</button></span>}
         </p>
 
         {/* 5-Second Countdown Display */}

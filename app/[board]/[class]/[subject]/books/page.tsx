@@ -1,3 +1,4 @@
+import ContentUnavailable from '@/components/ContentUnavailable';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -25,9 +26,10 @@ export default async function SubjectBooksPage({ params }: PageProps) {
   const board = SUPPORTED_BOARDS.find(b => b.id === boardId) || SUPPORTED_BOARDS[0];
   const classDef = CLASS_DEFINITIONS[classRoman];
   const meta = getSubjectMeta(rawSubject);
+  if (board.id !== 'akueb' || !['IX', 'X'].includes(classRoman) || meta.slug !== 'physics') return <ContentUnavailable title={classDef.name + ' ' + meta.title + ' resources'} />;
   const baseUrl = `/${board.id}/${classRoman}/${meta.slug}`;
 
-  const textbooks = [
+  const textbooks = classRoman === 'X' ? [{ title: 'Class X Physics — Book References & Concordance', publisher: board.fullName, badge: 'Class X Resource Guide', desc: 'The available SSC-II resource guide contains textbook references and chapter concordance. Consult the original guide for the prescribed editions and mappings.', concordance: 'SSC-II / Class X references' }] : [
     {
       title: "Punjab Curriculum and Textbook Board (PCTB) Physics 9",
       publisher: "Punjab Curriculum & Textbook Board, Lahore",
@@ -58,7 +60,7 @@ export default async function SubjectBooksPage({ params }: PageProps) {
     }
   ];
 
-  const resourcePdfUrl = '/materials/ssc/physics/ssc-1/resources-guide-2025-ssc-i-physics-dedicated.pdf';
+  const resourcePdfUrl = classRoman === 'X' ? '/materials/ssc/physics/ssc-2/resources-guide-2025-ssc-ii-physics-dedicated.pdf' : '/materials/ssc/physics/ssc-1/resources-guide-2025-ssc-i-physics-dedicated.pdf';
 
   return (
     <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem 1rem 5rem 1rem', fontFamily: "'Inter', sans-serif" }}>
@@ -149,7 +151,7 @@ export default async function SubjectBooksPage({ params }: PageProps) {
       </div>
 
       {/* Textbook Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
         {textbooks.map((b, i) => (
           <div
             key={i}

@@ -1,37 +1,15 @@
-import logging
+"""The Python API uses the generated synchronous Prisma client.
+Prisma owns the educational schema; Alembic owns only ingestion-region tables.
+Generate this client with: python -m prisma generate --generator py
+"""
+from prisma import Prisma
 
-logger = logging.getLogger(__name__)
-
-class DummyModel:
-    def find_many(self, **kwargs):
-        return []
-    def find_unique(self, **kwargs):
-        return None
-
-class DummyPrisma:
-    def __init__(self):
-        self.board = DummyModel()
-        self.syllabusversion = DummyModel()
-        self.slo = DummyModel()
-        self.pastpaperquestion = DummyModel()
-        self.bookcontent = DummyModel()
-        self.topic = DummyModel()
-
-    def is_connected(self):
-        return False
-
-    def connect(self, timeout=3):
-        pass
-
-    def disconnect(self):
-        pass
-
-prisma = DummyPrisma()
+prisma = Prisma()
 
 def connect_db():
-    pass
+    if not prisma.is_connected():
+        prisma.connect()
 
 def disconnect_db():
-    pass
-
-
+    if prisma.is_connected():
+        prisma.disconnect()

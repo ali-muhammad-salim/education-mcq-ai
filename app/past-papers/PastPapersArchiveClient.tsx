@@ -514,7 +514,7 @@ export default function PastPapersArchiveClient({ pastPapers, initialGrade = 'SS
 
       {/* VIEW MODE 2: VISUAL CARD GRID */}
       {viewMode === 'cards' && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1.5rem', marginBottom: '3.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: '1.5rem', marginBottom: '3.5rem' }}>
           {gradePapers.map((paper) => {
             const isModel = (paper.paperCode && (paper.paperCode === 'PHY-IX-P1' || paper.paperCode === 'PHY-IX-P2' || paper.paperCode === 'PHY-X-P1' || paper.paperCode === 'PHY-X-P2')) || 
                             (paper.title && paper.title.includes('Model Paper') && !paper.paperCode?.includes('2025'));

@@ -1,3 +1,4 @@
+import ContentUnavailable from '@/components/ContentUnavailable';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -26,6 +27,7 @@ export default async function SubjectPracticalsPage({ params }: PageProps) {
   const board = SUPPORTED_BOARDS.find(b => b.id === boardId) || SUPPORTED_BOARDS[0];
   const classDef = CLASS_DEFINITIONS[classRoman];
   const meta = getSubjectMeta(rawSubject);
+  if (board.id !== 'akueb' || !['IX', 'X'].includes(classRoman) || meta.slug !== 'physics' || classRoman !== 'IX') return <ContentUnavailable title={classDef.name + ' ' + meta.title + ' resources'} />;
   const baseUrl = `/${board.id}/${classRoman}/${meta.slug}`;
 
   const practicalPdfUrl = '/materials/ssc/physics/ssc-1/ssc-i-physics-sample-practical.pdf';
