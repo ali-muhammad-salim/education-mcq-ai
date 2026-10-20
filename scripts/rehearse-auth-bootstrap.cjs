@@ -18,9 +18,10 @@ async function main(){
   if(result.status!==0){console.error(result.stdout);throw new Error(result.stderr||'Bootstrap rehearsal failed.');}
   const account=await copy.user.findUniqueOrThrow({where:{id:'bootstrap-test-user'}});
   assert.equal(account.passwordHash,'legacy-test-hash');assert.equal(account.role,'TEACHER');assert.equal(await copy.userSession.count(),0);
-  const migrations=await copy.$queryRaw`SELECT COUNT(*)::int AS count FROM "_prisma_migrations" WHERE finished_at IS NOT NULL`;
-  assert.equal(migrations[0].count,2);await copy.quizAttempt.count();await copy.durableJob.count();
-  const report={date:new Date().toISOString(),scenario:'Account-only schema bootstrap matching the observed production table layout.',preservedAccounts:true,revokedLegacySessions:true,appliedMigrations:migrations[0].count,assessmentTablesAvailable:true,postgresMajor:'16 (local rehearsal; production PostgreSQL 18 still requires its own backup/restore check)'};
+  const migrations=await copy.$queryRaw`SELECT migration_name FROM "_prisma_migrations" WHERE finished_at IS NOT NULL AND rolled_back_at IS NULL ORDER BY migration_name`;
+  const expected=fs.readdirSync('prisma/migrations',{withFileTypes:true}).filter(entry=>entry.isDirectory()&&fs.existsSync('prisma/migrations/'+entry.name+'/migration.sql')).map(entry=>entry.name).sort();
+  assert.deepEqual(migrations.map(row=>row.migration_name),expected);await copy.quizAttempt.count();await copy.durableJob.count();await copy.knowledgeDocument.count();await copy.knowledgeArtifact.count();await copy.workerHeartbeat.count();
+  const report={date:new Date().toISOString(),scenario:'Account-only schema bootstrap matching the observed production table layout.',preservedAccounts:true,revokedLegacySessions:true,appliedMigrations:migrations.length,assessmentTablesAvailable:true,knowledgeTablesAvailable:true,postgresMajor:'16 (local rehearsal; production PostgreSQL 18 still requires its own backup/restore check)'};
   fs.writeFileSync('docs/verification/auth-bootstrap.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 }
 main().catch(error=>{console.error(error.message);process.exitCode=1;}).finally(async()=>{if(copy)await copy.$disconnect();await admin.$disconnect();});
