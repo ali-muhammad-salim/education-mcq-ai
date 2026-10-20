@@ -145,10 +145,13 @@ Return pure JSON only:
             pass
 
     # Apply overrides from user if not 'auto'
-    final_year = int(user_meta.get("year")) if (user_meta.get("year") and str(user_meta.get("year")).isdigit()) else (detected_year or 2024)
-    final_class = user_meta.get("classLevel") if user_meta.get("classLevel") and user_meta.get("classLevel") != "auto" else (detected_class or "Class IX")
-    final_subject = user_meta.get("subject") if user_meta.get("subject") and user_meta.get("subject") != "auto" else (detected_subject or "Physics")
+    final_year = int((user_meta.get("examYear") or user_meta.get("year"))) if (user_meta.get("year") and str(user_meta.get("year")).isdigit()) else detected_year
+    final_class = user_meta.get("classLevel") if user_meta.get("classLevel") and user_meta.get("classLevel") != "auto" else detected_class
+    final_subject = user_meta.get("subject") if user_meta.get("subject") and user_meta.get("subject") != "auto" else detected_subject
     
+    if not final_year or not final_class or not final_subject:
+        raise ValueError('Unable to determine paper year, class or subject. Select these values explicitly and retry.')
+
     user_paper = user_meta.get("paperComponent", "auto")
     if user_paper == "paper_1":
         final_paper = "MCQ"

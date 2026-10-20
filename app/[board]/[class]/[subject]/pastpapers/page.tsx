@@ -1,3 +1,4 @@
+import ContentUnavailable from '@/components/ContentUnavailable';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -27,6 +28,7 @@ export default async function SubjectPastPapersPage({ params }: PageProps) {
   const board = SUPPORTED_BOARDS.find(b => b.id === boardId) || SUPPORTED_BOARDS[0];
   const classDef = CLASS_DEFINITIONS[classRoman];
   const meta = getSubjectMeta(rawSubject);
+  if (board.id !== 'akueb' || !['IX', 'X'].includes(classRoman) || meta.slug !== 'physics') return <ContentUnavailable title={classDef.name + ' ' + meta.title + ' resources'} />;
 
   // Fetch all past papers from database
   let pastPapers: any[] = [];
@@ -100,7 +102,7 @@ export default async function SubjectPastPapersPage({ params }: PageProps) {
           <h2 style={{ fontSize: '1.5rem', color: '#0b5e4a', marginBottom: '1.25rem', fontWeight: 800 }}>
             Curriculum Documents & Pacing Guides ({books.length})
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: '1.5rem' }}>
             {books.map((book) => (
               <div key={book.id} className="card" style={{ display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>

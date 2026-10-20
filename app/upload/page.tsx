@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { 
-  UploadCloud, Play, CheckCircle2, AlertCircle, RefreshCw, 
-  FileText, BookOpen, Layers, Award, Sparkles, Terminal, 
+import {
+  UploadCloud, Play, CheckCircle2, AlertCircle, RefreshCw,
+  FileText, BookOpen, Layers, Award, Sparkles, Terminal,
   Clock, ArrowRight, ExternalLink, Check, Download, ShieldCheck, Lock
 } from 'lucide-react';
 import MathText from '@/components/MathText';
@@ -12,7 +12,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import AuthModal from '@/components/AuthModal';
 
 interface IngestProgress {
-  status: 'IDLE' | 'RUNNING' | 'COMPLETED' | 'ERROR';
+  status: 'IDLE' | 'QUEUED' | 'RUNNING' | 'COMPLETED' | 'FAILED' | 'ERROR';
   percent: number;
   stage: string;
   message: string;
@@ -51,6 +51,7 @@ export default function ResourceUploadCenterPage() {
     resourceType?: 'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'pacing_guide';
   } | null>(null);
 
+  const [jobId, setJobId] = useState('');
   const [uploading, setUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
@@ -183,7 +184,8 @@ export default function ResourceUploadCenterPage() {
     const detected = analyzeFilename(newFile.name);
     setDetectedBadge(detected);
 
-    if (detected.resourceType) setResourceType(detected.resourceType);
+    if (detected.resourceType && detected.resourceType !== 'pacing_guide') setResourceType(detected.resourceType);
+    if (detected.resourceType === 'pacing_guide') setUploadError('Pacing-guide processing is unavailable. Choose a supported document type.');
     if (detected.classLevel) setClassLevel(detected.classLevel);
     if (detected.subject) setSubject(detected.subject);
     if (detected.year) setExamYear(detected.year);
@@ -195,9 +197,9 @@ export default function ResourceUploadCenterPage() {
   useEffect(() => {
     const pollStatus = async () => {
       try {
-        const res = await fetch('/api/ingest/status');
+        const res = await fetch('/api/ingest/status' + (jobId ? '?jobId=' + encodeURIComponent(jobId) : ''));
         const data = await res.json();
-        setProgress(data);
+        if (res.ok) setProgress(data);
       } catch (e) {
         // quiet error
       }
@@ -217,7 +219,7 @@ export default function ResourceUploadCenterPage() {
     setUploadSuccess(null);
     setProgress({
       status: 'RUNNING',
-      percent: 25,
+      percent: 0,
       stage: 'Uploading',
       message: `Uploading "${file.name}" to server...`,
       logs: [`Uploading "${file.name}"...`],
@@ -247,13 +249,13 @@ export default function ResourceUploadCenterPage() {
       if (res.ok) {
         const successMsg = data.paperCode
           ? `🎉 Uploaded "${file.name}" successfully! Registered as ${data.paperCode} (${data.paperTitle || ''}) in the Past Paper Archive.`
-          : `Uploaded "${file.name}" ${keyFile ? `with Answer Key "${keyFile.name}"` : ''} successfully! Registered in archive.`;
+          : `Uploaded "${file.name}" ${keyFile ? `with Answer Key "${keyFile.name}"` : ''} successfully. Processing is queued; the archive updates after successful ingestion.`;
         setUploadSuccess(successMsg);
         setFile(null);
         setKeyFile(null);
         setDetectedBadge(null);
       } else {
-        setUploadError(data.error || 'Failed to upload document.');
+        setUploadError(typeof data.error === 'string' ? data.error : data.error?.message || 'Failed to upload document.');
       }
     } catch (err: any) {
       setUploadError(err.message || 'Network error occurred.');
@@ -277,7 +279,7 @@ export default function ResourceUploadCenterPage() {
     }
   };
 
-  const isRunning = progress.status === 'RUNNING';
+  const isRunning = progress.status === 'RUNNING' || progress.status === 'QUEUED';
 
   if (checkingAuth) {
     return (
@@ -426,7 +428,7 @@ export default function ResourceUploadCenterPage() {
 
       {/* Grid: Upload Form (Left) + Live Progress Terminal (Right) */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(480px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
-        
+
         {/* Upload Card */}
         <div style={{
           background: '#ffffff',
@@ -443,7 +445,7 @@ export default function ResourceUploadCenterPage() {
           </div>
 
           <form onSubmit={handleManualUpload} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            
+
             {/* File Dropzone */}
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#444', marginBottom: '0.5rem' }}>
@@ -599,7 +601,7 @@ export default function ResourceUploadCenterPage() {
                   <option value="model_paper">📝 Official Model Exam Paper</option>
                   <option value="syllabus">📘 Curriculum / Syllabus Standard</option>
                   <option value="textbook">📚 Official Textbook</option>
-                  <option value="pacing_guide">⏱️ Teacher Pacing & Instructional Guide</option>
+                  <option disabled value="pacing_guide">⏱️ Teacher Pacing Guide (processing not available yet)</option>
                 </select>
               </div>
             </div>
@@ -881,11 +883,11 @@ export default function ResourceUploadCenterPage() {
                 </div>
                 <div style={{ background: '#21252b', padding: '8px', borderRadius: '8px', textAlign: 'center' }}>
                   <div style={{ fontSize: '0.7rem', color: '#abb2bf' }}>Verified SLOs</div>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#98c379' }}>{progress.results.slos || 299}</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#98c379' }}>{progress.results.slos ?? 'Not reported'}</div>
                 </div>
                 <div style={{ background: '#21252b', padding: '8px', borderRadius: '8px', textAlign: 'center' }}>
                   <div style={{ fontSize: '0.7rem', color: '#abb2bf' }}>Exam Questions</div>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#e5c07b' }}>{progress.results.questions || 99}</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#e5c07b' }}>{progress.results.questions ?? 'Not reported'}</div>
                 </div>
               </div>
 

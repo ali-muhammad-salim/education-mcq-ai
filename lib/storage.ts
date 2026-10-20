@@ -1,76 +1,40 @@
-/**
- * Cloudflare R2 / Object Storage Adapter
- * 
- * Securely uploads educational files, diagrams, and past-paper PDFs to Cloudflare R2
- * using server-side credentials with safe local filesystem fallback for development.
- */
-
-import fs from 'fs';
-import path from 'path';
-
-export interface UploadResult {
-  url: string;
-  storageKey: string;
-  fileSize: number;
-  mimeType: string;
+import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
+import { randomUUID } from 'node:crypto';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { ApiError } from '@/lib/api';
+export interface UploadResult { url: string; storageKey: string; fileSize: number; mimeType: string }
+const root = () => path.resolve(process.env.ASSET_ROOT || path.join(process.cwd(), 'data', 'assets'));
+function client() {
+  const account = process.env.R2_ACCOUNT_ID, accessKeyId = process.env.R2_ACCESS_KEY_ID, secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
+  if ((account || accessKeyId || secretAccessKey) && !(account && accessKeyId && secretAccessKey)) throw new ApiError(503, 'STORAGE_NOT_CONFIGURED', 'Complete the object storage credentials before uploading.');
+  if (account && accessKeyId && secretAccessKey) return new S3Client({ region: 'auto', endpoint: `https://${account}.r2.cloudflarestorage.com`, credentials: { accessKeyId, secretAccessKey } });
+  if (process.env.NODE_ENV === 'production' && !process.env.ASSET_ROOT) throw new ApiError(503, 'STORAGE_NOT_CONFIGURED', 'Configure object storage or a persistent ASSET_ROOT.');
+  return null;
 }
-
-export async function uploadEducationalAsset(
-  buffer: Buffer,
-  filename: string,
-  mimeType: string,
-  isPublic = false
-): Promise<UploadResult> {
-  // Validate file size (max 50MB)
-  if (buffer.length > 50 * 1024 * 1024) {
-    throw new Error('File exceeds maximum permitted size of 50MB');
+export function validateAsset(buffer: Buffer, mimeType: string) {
+  if (!buffer.length || buffer.length > 50 * 1024 * 1024) throw new ApiError(400, 'INVALID_FILE_SIZE', 'Files must be between 1 byte and 50 MB.');
+  const valid = mimeType === 'application/pdf' ? buffer.subarray(0, 5).toString() === '%PDF-' : mimeType === 'image/png' ? buffer.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])) : mimeType === 'image/jpeg' ? buffer[0] === 255 && buffer[1] === 216 && buffer[2] === 255 : mimeType === 'image/webp' ? buffer.subarray(0, 4).toString() === 'RIFF' && buffer.subarray(8, 12).toString() === 'WEBP' : false;
+  if (!valid) throw new ApiError(400, 'INVALID_FILE_TYPE', 'File contents do not match a supported PDF or image type.');
+}
+export function validateStorageKey(key: string) {
+  if (!/^(private|public)\/resources\/[a-f0-9-]{36}-[A-Za-z0-9._-]{1,160}$/.test(key)) throw new ApiError(400, 'INVALID_ASSET_KEY', 'Invalid asset key.');
+  return key;
+}
+export async function uploadEducationalAsset(buffer: Buffer, filename: string, mimeType: string, isPublic = false): Promise<UploadResult> {
+  validateAsset(buffer, mimeType);
+  const safeName = filename.replace(/[^A-Za-z0-9._-]/g, '_').slice(-150) || 'document.pdf';
+  const storageKey = `${isPublic ? 'public' : 'private'}/resources/${randomUUID()}-${safeName}`, s3 = client();
+  if (s3) await s3.send(new PutObjectCommand({ Bucket: process.env.R2_BUCKET_NAME || 'education-mcq-hub', Key: storageKey, Body: buffer, ContentType: mimeType, CacheControl: isPublic ? 'public, max-age=3600' : 'private, no-store' }));
+  else { const file = path.join(root(), storageKey); await fs.mkdir(path.dirname(file), { recursive: true }); await fs.writeFile(file, buffer, { flag: 'wx' }); }
+  return { storageKey, url: '/api/assets/' + storageKey, fileSize: buffer.length, mimeType };
+}
+export async function readEducationalAsset(key: string) {
+  validateStorageKey(key); const s3 = client();
+  if (s3) {
+    const object = await s3.send(new GetObjectCommand({ Bucket: process.env.R2_BUCKET_NAME || 'education-mcq-hub', Key: key }));
+    if (!object.Body) throw new ApiError(404, 'ASSET_NOT_FOUND', 'Asset not found.');
+    return { buffer: Buffer.from(await object.Body.transformToByteArray()), mimeType: object.ContentType || 'application/octet-stream' };
   }
-
-  // Validate mime type
-  const allowedTypes = [
-    'application/pdf',
-    'image/png',
-    'image/jpeg',
-    'image/svg+xml',
-    'image/webp'
-  ];
-  if (!allowedTypes.includes(mimeType)) {
-    throw new Error(`File type ${mimeType} is not permitted.`);
-  }
-
-  const safeFilename = `${Date.now()}-${filename.replace(/[^a-zA-Z0-9._-]/g, '_')}`;
-  const storageKey = `resources/${safeFilename}`;
-
-  // Check if Cloudflare R2 credentials are configured
-  const r2AccountId = process.env.R2_ACCOUNT_ID;
-  const r2AccessKey = process.env.R2_ACCESS_KEY_ID;
-  const r2SecretKey = process.env.R2_SECRET_ACCESS_KEY;
-  const r2BucketName = process.env.R2_BUCKET_NAME || 'education-mcq-hub';
-  const r2PublicDomain = process.env.R2_PUBLIC_DOMAIN;
-
-  if (r2AccountId && r2AccessKey && r2SecretKey) {
-    // When R2 AWS-compatible SDK is present, upload to R2
-    return {
-      url: r2PublicDomain ? `https://${r2PublicDomain}/${storageKey}` : `https://${r2AccountId}.r2.cloudflarestorage.com/${r2BucketName}/${storageKey}`,
-      storageKey,
-      fileSize: buffer.length,
-      mimeType
-    };
-  }
-
-  // Development Fallback: Store in public/uploads/
-  const uploadDir = path.join(process.cwd(), 'public', 'uploads');
-  if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true });
-  }
-
-  const filePath = path.join(uploadDir, safeFilename);
-  fs.writeFileSync(filePath, buffer);
-
-  return {
-    url: `/uploads/${safeFilename}`,
-    storageKey,
-    fileSize: buffer.length,
-    mimeType
-  };
+  return { buffer: await fs.readFile(path.join(root(), key)), mimeType: key.endsWith('.pdf') ? 'application/pdf' : 'application/octet-stream' };
 }

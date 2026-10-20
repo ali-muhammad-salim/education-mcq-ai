@@ -8,12 +8,23 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "prisma db push --skip-generate --accept-data-loss || true && next start -H 0.0.0.0 -p 3000",
+    "build": "next build --webpack",
+    "start": "next start -H 0.0.0.0 -p 3000",
     "postinstall": "prisma generate --generator client",
-    "db:push": "prisma db push --accept-data-loss",
-    "lint": "next lint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "db:push": "prisma db push",
+    "lint": "eslint app components lib repositories services tests scripts/*.ts",
+    "test": "vitest run",
+    "db:migrate": "prisma migrate deploy",
+    "typecheck": "tsc --noEmit --incremental false",
+    "worker": "tsx scripts/job-worker.ts",
+    "db:bootstrap-admin": "tsx scripts/bootstrap-admin.ts",
+    "db:archive-legacy": "tsx scripts/archive-legacy.ts",
+    "db:preflight": "tsx scripts/db-preflight.ts",
+    "db:rehearse": "node scripts/rehearse-migration.js",
+    "test:http": "node scripts/test_routes.js",
+    "check:readiness": "node scripts/check-readiness.cjs",
+    "test:load": "node scripts/load-assessment.cjs",
+    "test:deadline": "node scripts/test-deadline-worker.cjs"
   },
   "repository": {
     "type": "git",
@@ -31,16 +42,21 @@
     "@types/katex": "^0.16.8",
     "@types/node": "^26.6.2",
     "@types/react": "19.3.0",
+    "eslint": "^10.13.0",
     "prisma": "^5.10.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.0",
     "vitest": "^4.1.11"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1152.0",
     "katex": "^0.19.0",
     "lucide-react": "^1.51.0",
     "next": "^16.3.8",
     "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "react-dom": "^19.3.0",
+    "tsx": "^4.23.15",
+    "zod": "^4.6.7"
   }
 }

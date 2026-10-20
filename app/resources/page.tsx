@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
   BookOpen, Download, Search, FileText, CheckCircle2, 
@@ -8,6 +8,7 @@ import {
   Check, ArrowRight, HelpCircle, Code, ChevronRight
 } from 'lucide-react';
 import MathText from '@/components/MathText';
+import { useDialog } from '@/lib/use-dialog';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 interface ResourceItem {
@@ -22,6 +23,8 @@ interface ResourceItem {
 }
 
 export default function ResourcesPage() {
+  const [loadError, setLoadError] = useState('');
+  const detailRequest = React.useRef(0);
   const [resources, setResources] = useState<ResourceItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [classFilter, setClassFilter] = useState<'all' | 'Class IX' | 'Class X'>('all');
@@ -30,6 +33,7 @@ export default function ResourcesPage() {
   // Modal / Drawer state for viewing content
   const [selectedResource, setSelectedResource] = useState<ResourceItem | null>(null);
   const [resourceDetail, setResourceDetail] = useState<any | null>(null);
+  const dialogProps = useDialog(Boolean(selectedResource), 'Resource preview', () => setSelectedResource(null));
   const [detailLoading, setDetailLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<'slos' | 'mcqs' | 'crqs' | 'raw'>('slos');
   const [revealedAnswers, setRevealedAnswers] = useState<Record<number, boolean>>({});
@@ -37,7 +41,7 @@ export default function ResourcesPage() {
 
   useEffect(() => {
     fetch('/api/resources')
-      .then(res => res.json())
+      .then(async res => { const data = await res.json(); if (!res.ok) throw new Error(data.error?.message || 'Unable to load resources.'); return data; })
       .then(data => {
         if (data.resources) {
           setResources(data.resources);
@@ -45,27 +49,30 @@ export default function ResourcesPage() {
         setLoading(false);
       })
       .catch(err => {
+        setLoadError('Unable to load resources. Please reload to retry.');
         console.error('Failed to load resources:', err);
         setLoading(false);
       });
   }, []);
 
   const handleOpenDetail = async (item: ResourceItem) => {
-    setSelectedResource(item);
-    setDetailLoading(true);
+    setLoadError(''); setSelectedResource(item);
+    setDetailLoading(true); setResourceDetail(null); const requestId = ++detailRequest.current;
     setRevealedAnswers({});
     setActiveTab('slos');
 
     try {
       const res = await fetch(`/api/resources/${item.fileName}`);
       const data = await res.json();
-      if (data.data) {
+      if (!res.ok) throw new Error(data.error?.message || 'Unable to load resource.');
+      if (data.data && requestId === detailRequest.current) {
         setResourceDetail(data.data);
       }
     } catch (e) {
+      setLoadError('Unable to load this resource. Close this preview and retry.');
       console.error('Error fetching detail:', e);
     } finally {
-      setDetailLoading(false);
+      if (requestId === detailRequest.current) setDetailLoading(false);
     }
   };
 
@@ -95,6 +102,7 @@ export default function ResourcesPage() {
 
   return (
     <div style={{ maxWidth: '1240px', margin: '0 auto', paddingBottom: '5rem' }}>
+      {loadError && <p role="alert">{loadError}</p>}
       {/* Universal Breadcrumb */}
       <Breadcrumbs
         items={[
@@ -126,7 +134,7 @@ export default function ResourcesPage() {
             marginBottom: '1rem',
             letterSpacing: '0.5px'
           }}>
-            <Sparkles size={15} /> 100% AI-FIRST VERIFIED ACADEMIC KNOWLEDGE BASE
+            <Sparkles size={15} /> STRUCTURED ACADEMIC RESOURCE LIBRARY
           </div>
           <h1 style={{ fontSize: '2.6rem', fontWeight: 800, margin: '0 0 0.75rem 0', lineHeight: 1.2 }}>
             Physics Chapter Resource Packs & Download Hub
@@ -191,7 +199,7 @@ export default function ResourcesPage() {
                 gap: '0.5rem'
               }}
             >
-              <Download size={18} /> Master 39-Unit Pack (Complete JSON)
+              <Download size={18} /> All Available Units (Complete JSON)
             </a>
           </div>
         </div>
@@ -207,7 +215,7 @@ export default function ResourcesPage() {
         <div style={{ background: '#ffffff', border: '1px solid #e1e8e5', padding: '1.25rem', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
           <div style={{ fontSize: '0.85rem', color: '#666', fontWeight: 600 }}>Total Compiled Units</div>
           <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0b5e4a', marginTop: '0.25rem' }}>{resources.length}</div>
-          <div style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.2rem' }}>21 Class IX • 18 Class X</div>
+          <div style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.2rem' }}>{resources.filter(r => r.classLevel === 'Class IX').length} Class IX • {resources.filter(r => r.classLevel === 'Class X').length} Class X</div>
         </div>
 
         <div style={{ background: '#ffffff', border: '1px solid #e1e8e5', padding: '1.25rem', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
@@ -319,7 +327,7 @@ export default function ResourcesPage() {
           <p style={{ color: '#888', fontSize: '1.1rem' }}>No chapters match your search query.</p>
         </div>
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 360px), 1fr))', gap: '1.5rem' }}>
           {filteredResources.map((item) => {
             const isGrade9 = item.classLevel === 'Class IX';
             return (
@@ -482,7 +490,7 @@ export default function ResourcesPage() {
 
       {/* FULL-SCREEN INTERACTIVE VIEWER MODAL */}
       {selectedResource && (
-        <div style={{
+        <div {...dialogProps} style={{
           position: 'fixed',
           top: 0,
           left: 0,
@@ -535,7 +543,7 @@ export default function ResourcesPage() {
                   <Download size={14} /> Download JSON
                 </a>
                 <button
-                  onClick={() => setSelectedResource(null)}
+                  aria-label="Close resource preview" onClick={() => { detailRequest.current++; setSelectedResource(null); }}
                   style={{
                     background: 'transparent',
                     border: 'none',

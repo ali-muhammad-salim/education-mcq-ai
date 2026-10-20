@@ -4,9 +4,9 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const dynamic = 'force-dynamic';
 
-export default async function SubjectSyllabusPage({ params }: { params: Promise<{ subjectId: string }> | { subjectId: string } }) {
+export default async function SubjectSyllabusPage({ params }: { params: Promise<{ subjectId: string }> }) {
   const resolvedParams = await Promise.resolve(params);
-  
+
   let subject: any = null;
   try {
     subject = await prisma.subject.findUnique({
@@ -83,10 +83,10 @@ export default async function SubjectSyllabusPage({ params }: { params: Promise<
           {syllabus.topics.map((topic: any) => (
             <div key={topic.id} className="card">
               <h2 style={{ fontSize: '1.5rem', color: 'var(--primary-color)', marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
-                <span style={{ color: 'var(--secondary-color)', marginRight: '0.5rem' }}>{topic.topicNumber}</span> 
+                <span style={{ color: 'var(--secondary-color)', marginRight: '0.5rem' }}>{topic.topicNumber}</span>
                 {topic.name}
               </h2>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {topic.subtopics.map((sub: any) => (
                   <div key={sub.id} style={{ paddingLeft: '1rem', borderLeft: '2px solid var(--secondary-color)' }}>
@@ -94,7 +94,7 @@ export default async function SubjectSyllabusPage({ params }: { params: Promise<
                       <span style={{ color: '#888', marginRight: '0.5rem' }}>{sub.subtopicNum}</span>
                       {sub.name}
                     </h3>
-                    
+
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       {sub.slos.map((slo: any) => {
                         const sloAnchor = slo.code ? `slo-${slo.code}` : `slo-${slo.id}`;
@@ -115,11 +115,11 @@ export default async function SubjectSyllabusPage({ params }: { params: Promise<
                               transition: 'all 0.25s ease'
                             }}
                           >
-                            <span style={{ 
-                              background: 'var(--primary-color, #0b5e4a)', 
-                              color: '#fff', 
-                              padding: '3px 10px', 
-                              borderRadius: '5px', 
+                            <span style={{
+                              background: 'var(--primary-color, #0b5e4a)',
+                              color: '#fff',
+                              padding: '3px 10px',
+                              borderRadius: '5px',
                               fontSize: '0.82rem',
                               fontWeight: 800,
                               whiteSpace: 'nowrap',

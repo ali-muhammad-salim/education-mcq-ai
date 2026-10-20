@@ -1,33 +1,10 @@
-import { NextResponse } from 'next/server';
-import { spawn } from 'child_process';
-import path from 'path';
-
-export const dynamic = 'force-dynamic';
-
-export async function POST(request: Request) {
-  try {
-    const body = await request.json().catch(() => ({}));
-    const resourceType = body.resourceType || 'all_defaults';
-
-    const scriptPath = path.join(process.cwd(), 'services', 'ingestion', 'unified_runner.py');
-
-    // Spawn detached python runner process
-    const child = spawn('python', [scriptPath, resourceType], {
-      cwd: process.cwd(),
-      detached: true,
-      stdio: 'ignore',
-    });
-
-    child.unref();
-
-    return NextResponse.json({
-      success: true,
-      message: 'Ingestion pipeline launched successfully in background.',
-      pid: child.pid,
-      resourceType,
-    });
-  } catch (error: any) {
-    console.error('Failed to trigger pipeline:', error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
+import { NextRequest, NextResponse } from 'next/server';
+import { requireUser } from '@/lib/security';
+import { apiError } from '@/lib/api';
+import { ingestionPayloadSchema } from '@/services/ingestion/upload';
+import { enqueueJob } from '@/services/jobs/queue';
+export async function POST(req: NextRequest) {
+  try { const user = await requireUser(req, ['ADMIN']), input = ingestionPayloadSchema.parse(await req.json()), job = await enqueueJob(user.id, 'INGESTION', input);
+    return NextResponse.json({ success: true, jobId: job.id, status: job.status }, { status: 202 });
+  } catch (error) { return apiError(error); }
 }

@@ -18,7 +18,7 @@ export const SUPPORTED_BOARDS: BoardInfo[] = [
     shortCode: 'AKU-EB',
     fullName: 'Aga Khan University Examination Board',
     status: 'ACTIVE',
-    tag: 'Flagship Partner',
+    tag: 'Available Curriculum',
     description: 'Autonomous examination board providing SLO-based conceptual assessments, cognitive domain testing (Remembering, Understanding, Application), and electronic e-marking.'
   },
   {

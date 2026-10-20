@@ -1,67 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getSessionUser } from '@/lib/auth';
-import { getDoubtQueue, resolveDoubtItem, addDoubtItem } from '@/lib/aiDoubtStore';
-
+import { requireUser } from '@/lib/security';
+import { apiError } from '@/lib/api';
+import { getDoubtQueue, resolveDoubtItem, addDoubtItem, doubtDataSchema } from '@/lib/aiDoubtStore';
+import prisma from '@/lib/prisma';
+import { ApiError } from '@/lib/api';
+import { questionSchema } from '@/lib/validations/assessment';
+import { z } from 'zod';
 export async function GET(req: NextRequest) {
-  try {
-    const user = await getSessionUser(req);
-    if (!user || (user.role !== 'TEACHER' && user.role !== 'ADMIN')) {
-      return NextResponse.json({ error: 'Unauthorized: Teacher or Admin access required' }, { status: 403 });
-    }
-
-    const queue = getDoubtQueue();
-    const pending = queue.filter(d => d.status === 'PENDING_REVIEW');
-    const resolved = queue.filter(d => d.status !== 'PENDING_REVIEW');
-
-    return NextResponse.json({
-      success: true,
-      pendingCount: pending.length,
-      pending,
-      resolved
-    });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message || 'Failed to fetch doubt queue' }, { status: 500 });
-  }
+  try { const user = await requireUser(req, ['TEACHER', 'ADMIN']), queue = await getDoubtQueue(user.role === 'ADMIN' ? undefined : user.id);
+    return NextResponse.json({ success: true, pendingCount: queue.filter(q => q.status === 'PENDING_REVIEW').length, pending: queue.filter(q => q.status === 'PENDING_REVIEW'), resolved: queue.filter(q => q.status !== 'PENDING_REVIEW') });
+  } catch (error) { return apiError(error); }
 }
-
 export async function POST(req: NextRequest) {
   try {
-    const user = await getSessionUser(req);
-    if (!user || (user.role !== 'TEACHER' && user.role !== 'ADMIN')) {
-      return NextResponse.json({ error: 'Unauthorized: Teacher or Admin access required' }, { status: 403 });
-    }
-
-    const body = await req.json();
-    const { action, doubtId, resolution, correctedAnswer } = body;
-
-    if (action === 'RESOLVE' && doubtId && resolution) {
-      const updated = resolveDoubtItem(doubtId, resolution, user.name || user.email, correctedAnswer);
-      if (!updated) {
-        return NextResponse.json({ error: 'Doubt item not found' }, { status: 404 });
-      }
-      return NextResponse.json({ success: true, item: updated });
-    }
-
-    // Manual creation of flagged question for review
-    if (action === 'CREATE' && body.stemText) {
-      const created = addDoubtItem({
-        stemText: body.stemText,
-        subject: body.subject || 'General',
-        classLevel: body.classLevel || 'Class IX',
-        chapter: body.chapter || 'Curriculum',
-        options: body.options || [],
-        stage1Answer: body.stage1Answer || 'Pending',
-        stage2Answer: body.stage2Answer || 'Teacher Flagged',
-        doubtReason: body.doubtReason || 'Flagged manually by educator for syllabus review',
-        confidenceScore: body.confidenceScore || 0.70,
-        suggestedCorrection: body.suggestedCorrection,
-        provenance: 'TEACHER_FLAGGED'
-      });
-      return NextResponse.json({ success: true, item: created });
-    }
-
-    return NextResponse.json({ error: 'Invalid action or parameters' }, { status: 400 });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message || 'Failed to update doubt item' }, { status: 500 });
-  }
+    const user = await requireUser(req, ['TEACHER', 'ADMIN']), body: unknown = await req.json();
+    const input = z.discriminatedUnion('action', [
+      z.object({ action: z.literal('RESOLVE'), doubtId: z.string(), resolution: z.enum(['APPROVED', 'DISMISSED']), correctedAnswer: z.string().max(4000).optional() }),
+      z.object({ action: z.literal('REVISE'), doubtId: z.string(), question: questionSchema }),
+      z.object({ action: z.literal('CREATE'), data: doubtDataSchema }),
+    ]).parse(body);
+    if (input.action === 'REVISE') { const record = await prisma.aIDoubtRecord.findUnique({ where: { id: input.doubtId } }); if (!record || (user.role !== 'ADMIN' && record.ownerId !== user.id)) throw new ApiError(403, 'FORBIDDEN', 'You cannot revise this question.'); const data = doubtDataSchema.parse(record.data); await prisma.aIDoubtRecord.update({ where: { id: record.id }, data: { status: 'PENDING_REVIEW', data: { ...data, question: input.question, doubtReason: 'Educator revision requires review.' } } }); await prisma.auditLog.create({ data: { userId: user.id, action: 'AI_QUESTION_REVISED', resource: 'AIDoubtRecord', resourceId: record.id } }); return NextResponse.json({ success: true }); }
+    const item = input.action === 'RESOLVE' ? await resolveDoubtItem(input.doubtId, user.id, user.role === 'ADMIN', input.resolution, input.correctedAnswer) : await addDoubtItem(user.id, input.data);
+    return NextResponse.json({ success: true, item });
+  } catch (error) { return apiError(error); }
 }

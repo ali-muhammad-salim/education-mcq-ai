@@ -1,3 +1,5 @@
+> **Current implementation and rollout:** See [Assessment hardening](docs/HARDENING.md) for the secure exam engine, required migrations, worker setup and validation results. The original quiz presentation is retained. See [Website remediation status](docs/REMEDIATION-STATUS.md) for the current UI/workflow fixes and remaining validation. The architectural proposal below is historical and includes roadmap items that are not implemented.
+
 # Board-Neutral Educational AI Content Engine (v1.0)
 
 [![Architecture](https://img.shields.io/badge/Architecture-Hexagonal%20%2F%20Clean-blue.svg)](docs/ARCHITECTURE.md)
@@ -34,8 +36,8 @@ Version 1.0 focuses **exclusively on the AI Content Engine and Database**.
 
 ## 2. Fundamental Architectural Principle
 
-> **Board Knowledge must never be embedded permanently into AI model weights.**  
-> The system operates on an explicit separation between intelligence and domain knowledge:  
+> **Board Knowledge must never be embedded permanently into AI model weights.**
+> The system operates on an explicit separation between intelligence and domain knowledge:
 > `BOARD DATA + CURRICULUM DATA + TEXTBOOK DATA + PAST PAPER DATA + RETRIEVAL + LLM + VALIDATION`
 
 The engine does not rely on a monolithic LLM that "knows" physics or biology for a specific board. Instead, every board's curriculum, syllabus learning outcomes, textbook paragraphs, and past paper histories reside in an auditable relational and vector knowledge graph. The AI acts purely as an analytical and generative agent grounded strictly by retrieved facts.

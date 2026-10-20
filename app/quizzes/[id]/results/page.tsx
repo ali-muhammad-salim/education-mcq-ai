@@ -3,11 +3,12 @@
 import React, { use, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { 
-  CheckCircle2, XCircle, AlertCircle, ArrowLeft, RotateCcw, 
-  HelpCircle, Clock, ShieldAlert, Award, FileText, ChevronDown, 
+import {
+  CheckCircle2, XCircle, AlertCircle, ArrowLeft, RotateCcw,
+  HelpCircle, Clock, ShieldAlert, Award, FileText, ChevronDown,
   ChevronUp, Sparkles, BookOpen, ExternalLink, ArrowRight
 } from 'lucide-react';
+import { QuestionMarker } from '@/components/AssessmentManagement';
 import MathText from '@/components/MathText';
 
 export default function AssessmentResultsPage({ params }: { params: Promise<{ id: string }> }) {
@@ -21,12 +22,32 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<any>(null);
   const [expandedExplanation, setExpandedExplanation] = useState<Record<string, boolean>>({});
+  useEffect(() => {
+    if(result?.status !== 'SUBMITTED' || !attemptId) return;
+    let cancelled=false, delay=5000, timer:ReturnType<typeof setTimeout>;
+    const poll=async () => {
+      try {
+        if(document.hidden) return;
+        const response=await fetch(`/api/quizzes/${quizId}/attempt/status?attemptId=${attemptId}`,{signal:AbortSignal.timeout(10000)});
+        if(!response.ok) return;
+        const state=await response.json();
+        if(state.status && state.status !== 'SUBMITTED') {
+          const refreshed=await fetch(`/api/quizzes/${quizId}/results?attemptId=${attemptId}`,{signal:AbortSignal.timeout(10000)});
+          const data=await refreshed.json();
+          if(!cancelled && refreshed.ok && data.result) setResult(data.result);
+        }
+      } catch { /* Keep the durable receipt visible while reconnecting. */ }
+      finally { if(!cancelled) { delay=Math.min(delay*2,30000);timer=setTimeout(poll,delay+Math.random()*2000); } }
+    };
+    timer=setTimeout(poll,delay+Math.random()*2000);
+    return ()=>{cancelled=true;clearTimeout(timer);};
+  },[result?.status,quizId,attemptId]);
 
   useEffect(() => {
     async function fetchResult() {
       try {
         setLoading(true);
-        const url = attemptId 
+        const url = attemptId
           ? `/api/quizzes/${quizId}/results?attemptId=${attemptId}`
           : `/api/quizzes/${quizId}/results`;
         const res = await fetch(url);
@@ -42,7 +63,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
           });
           setExpandedExplanation(initialExpanded);
         } else {
-          setError(data.error || 'Failed to load assessment results.');
+          setError(typeof data.error === 'string' ? data.error : data.error?.message || 'Failed to load assessment results.');
         }
       } catch (err: any) {
         console.error('Fetch results error:', err);
@@ -86,7 +107,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
           borderTopColor: '#0b5e4a',
           animation: 'spin 0.8s linear infinite'
         }} />
-        <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Calculating grades & compiling RAG explanations...</span>
+        <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Loading saved assessment results…</span>
         <style>{`
           @keyframes spin {
             from { transform: rotate(0deg); }
@@ -131,7 +152,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
             {error}
           </p>
           <Link
-            href="/dashboard/student"
+            href={result?.educatorView ? '/dashboard/teacher' : '/dashboard/student'}
             style={{
               padding: '0.65rem 1.25rem',
               borderRadius: '10px',
@@ -150,7 +171,9 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
     );
   }
 
-  const isPassed = result.percentage >= 50;
+  if(result.status === 'SUBMITTED') return <div className="card" style={{maxWidth:'650px',margin:'3rem auto',padding:'2rem'}} role="status"><h1>Submission received</h1><p>Your saved answers are safely recorded. Your result is being processed and will appear here automatically.</p><p>Receipt: {attemptId || result.attemptId}</p><p>Submitted: {result.submittedAt ? new Date(result.submittedAt).toLocaleString() : 'Recorded'}</p><Link href="/dashboard/student">Go to dashboard</Link></div>;
+  const provisional = result.status !== 'GRADED';
+  const isPassed = !provisional && result.percentage >= 50;
 
   return (
     <div style={{
@@ -161,9 +184,9 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
       paddingBottom: '5rem',
       transition: 'background-color 0.2s ease, color 0.2s ease'
     }}>
-      
+
       {/* Top Bar */}
-      <header style={{
+      <header className="assessment-header" style={{ flexWrap: 'wrap',
         position: 'sticky',
         top: 0,
         zIndex: 40,
@@ -175,7 +198,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
         justifyContent: 'space-between',
         boxShadow: '0 2px 4px rgba(0,0,0,0.03)'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <Link
             href="/dashboard/student"
             style={{
@@ -208,8 +231,8 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <Link
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
+          {result.canRetake && <Link
             href={`/quizzes/${quizId}/take`}
             style={{
               display: 'flex',
@@ -227,7 +250,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
           >
             <RotateCcw size={14} />
             <span>Retake Assessment</span>
-          </Link>
+          </Link>}
 
           <Link
             href="/dashboard/student"
@@ -246,7 +269,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
               boxShadow: '0 2px 6px rgba(11, 94, 74, 0.25)'
             }}
           >
-            <span>Student Dashboard</span>
+            <span>{result.educatorView ? 'Teacher Dashboard' : 'Student Dashboard'}</span>
           </Link>
         </div>
       </header>
@@ -260,7 +283,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
         flexDirection: 'column',
         gap: '2rem'
       }}>
-        
+
         {/* Performance Scorecard Card */}
         <div style={{
           backgroundColor: 'var(--card-bg, #ffffff)',
@@ -277,8 +300,8 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
             left: 0,
             right: 0,
             height: '6px',
-            background: isPassed 
-              ? 'linear-gradient(90deg, #0b5e4a 0%, #10b981 100%)' 
+            background: isPassed
+              ? 'linear-gradient(90deg, #0b5e4a 0%, #10b981 100%)'
               : 'linear-gradient(90deg, #ef4444 0%, #f59e0b 100%)'
           }} />
 
@@ -302,9 +325,9 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
                 border: isPassed ? '1.5px solid rgba(11, 94, 74, 0.3)' : '1.5px solid rgba(239, 68, 68, 0.3)',
                 color: isPassed ? '#0b5e4a' : '#b91c1c'
               }}>
-                <span style={{ fontSize: '1.5rem', fontWeight: 900 }}>{result.percentage}%</span>
+                <span style={{ fontSize: '1.5rem', fontWeight: 900 }}>{provisional ? 'Pending' : result.percentage + '%'}</span>
                 <span style={{ fontSize: '0.65rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                  {isPassed ? 'Passed' : 'Needs Review'}
+                  {provisional ? 'Awaiting marking' : 'Graded'}
                 </span>
               </div>
 
@@ -373,7 +396,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
             <AlertCircle size={18} color="#d97706" style={{ flexShrink: 0, marginTop: '2px' }} />
             <div>
               <strong style={{ display: 'block', fontWeight: 800, marginBottom: '0.2rem' }}>Written Grading in Progress</strong>
-              Objective MCQs and Numerical problems have been auto-graded. Extended response questions are currently queued for AI-assisted / teacher rubric evaluation.
+              Objective MCQs and Numerical problems have been auto-graded. Written responses are awaiting teacher evaluation.
             </div>
           </div>
         )}
@@ -391,7 +414,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
               margin: 0
             }}>
               <BookOpen size={16} color="#0b5e4a" />
-              <span>Question-by-Question Review & RAG Explanations</span>
+              <span>Question Review & Teacher Feedback</span>
             </h3>
             <span style={{ fontSize: '0.8rem', color: 'var(--text-light, #5a7a6f)', fontWeight: 700 }}>
               {result.questions.filter((q: any) => q.scoreAwarded === q.marks).length} of {result.questions.length} Correct
@@ -400,18 +423,19 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {result.questions.map((q: any, idx: number) => {
+              const awaiting = q.scoreAwarded == null;
               const isCorrect = q.scoreAwarded === q.marks;
               const isPartial = q.scoreAwarded > 0 && q.scoreAwarded < q.marks;
               const isExpanded = expandedExplanation[q.questionId] ?? !isCorrect;
 
               return (
-                <div 
+                <div
                   key={q.questionId}
                   style={{
                     backgroundColor: 'var(--card-bg, #ffffff)',
                     borderRadius: '16px',
-                    border: isCorrect 
-                      ? '1.5px solid rgba(16, 185, 129, 0.4)' 
+                    border: awaiting ? '1px solid var(--border-color, #cbd5e1)' : isCorrect
+                      ? '1.5px solid rgba(16, 185, 129, 0.4)'
                       : isPartial
                       ? '1.5px solid rgba(245, 158, 11, 0.4)'
                       : '1.5px solid rgba(239, 68, 68, 0.35)',
@@ -434,8 +458,8 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
                         justifyContent: 'center',
                         fontWeight: 800,
                         fontSize: '0.75rem',
-                        backgroundColor: isCorrect ? '#e6f0ed' : isPartial ? '#fef3c7' : '#fee2e2',
-                        color: isCorrect ? '#0b5e4a' : isPartial ? '#b45309' : '#b91c1c'
+                        backgroundColor: awaiting ? '#f1f5f9' : isCorrect ? '#e6f0ed' : isPartial ? '#fef3c7' : '#fee2e2',
+                        color: awaiting ? '#475569' : isCorrect ? '#0b5e4a' : isPartial ? '#b45309' : '#b91c1c'
                       }}>
                         {idx + 1}
                       </span>
@@ -466,19 +490,23 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
                         backgroundColor: isCorrect ? '#e6f0ed' : isPartial ? '#fef3c7' : '#fee2e2',
                         color: isCorrect ? '#0b5e4a' : isPartial ? '#b45309' : '#b91c1c'
                       }}>
-                        {q.scoreAwarded} / {q.marks} {q.marks === 1 ? 'Mark' : 'Marks'}
+                        {awaiting ? 'Awaiting marking' : q.scoreAwarded + ' / ' + q.marks} {q.marks === 1 ? 'Mark' : 'Marks'}
                       </span>
                     </div>
                   </div>
 
+                  {q.studentAnswer?.textAnswer && <div style={{ whiteSpace: 'pre-wrap', borderLeft: '3px solid #0b5e4a', padding: '0.75rem' }}><strong>Submitted response</strong><p>{q.studentAnswer.textAnswer}</p></div>}
+                  {q.studentAnswer?.matchedPairs && <ul>{q.studentAnswer.matchedPairs.map((p: {left: string; right: string}, i: number) => <li key={i}>{p.left} → {p.right}</li>)}</ul>}
+                  {q.teacherComment && <p><strong>Teacher feedback:</strong> {q.teacherComment}</p>}
+                  {result.canGrade && <QuestionMarker quizId={quizId} answerId={q.quizAnswerId} maximum={q.marks} score={q.scoreAwarded} feedback={q.teacherComment} />}
                   {/* Question Stem with KaTeX math */}
                   <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-color, #2c3e38)', lineHeight: 1.55 }}>
                     <MathText text={q.stemText} />
                   </div>
 
                   {/* Visual SVG diagram if present */}
-                  {q.drawingSvg && (
-                    <div 
+                  {q.diagramUrl && (
+                    <div
                       style={{
                         padding: '0.75rem',
                         backgroundColor: 'rgba(244, 247, 246, 0.6)',
@@ -486,7 +514,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
                         border: '1px solid var(--border-color, #dce5e1)',
                         maxWidth: '380px'
                       }}
-                      dangerouslySetInnerHTML={{ __html: q.drawingSvg }}
+                      children={<img src={q.diagramUrl} alt="Question diagram" style={{ maxWidth: '100%' }} />}
                     />
                   )}
 
@@ -499,7 +527,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
                       paddingTop: '0.25rem'
                     }}>
                       {q.options.map((opt: any, oIdx: number) => {
-                        const isStudentChoice = q.studentAnswer?.selectedOptionId === opt.id || 
+                        const isStudentChoice = q.studentAnswer?.selectedOptionId === opt.id ||
                           (Array.isArray(q.studentAnswer?.selectedOptionIds) && q.studentAnswer.selectedOptionIds.includes(opt.id));
                         const isCorrectOption = opt.isCorrect;
 
@@ -639,7 +667,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
                             fontSize: '0.75rem'
                           }}>
                             <Sparkles size={14} color="#c9a050" />
-                            <span>Verified Curriculum RAG Grounding</span>
+                            <span>Study Guidance & Marking Rubric</span>
                           </div>
                           <div style={{ lineHeight: 1.6 }}>
                             <MathText text={q.explanation} />

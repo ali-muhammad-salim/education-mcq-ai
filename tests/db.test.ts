@@ -1,126 +1,81 @@
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { PrismaClient } from '@prisma/client';
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
-
-const prisma = new PrismaClient();
-
-describe('Educational AI Database Constraints', () => {
+import { randomUUID } from 'node:crypto';
+import { NextRequest } from 'next/server';
+const url = process.env.TEST_DATABASE_URL;
+// Integration tests must never connect to the developer's normal DATABASE_URL.
+if (url && !new URL(url).pathname.includes('_test')) throw new Error('TEST_DATABASE_URL must identify a dedicated _test database');
+describe.skipIf(!url)('Database-backed assessment integrity', () => {
+  let db: PrismaClient;
+  let service: typeof import('@/services/assessment/service');
+  let teacher: { id: string; email: string; name: string; role: 'TEACHER' };
+  let student: { id: string; email: string; name: string; role: 'STUDENT' };
+  let outsider: { id: string; email: string; name: string; role: 'TEACHER' };
+  let quizId: string, questionId: string;
+  const suffix = randomUUID();
   beforeAll(async () => {
-    // Rely on seed data for tests
+    process.env.DATABASE_URL = url;
+    db = new PrismaClient({ datasources: { db: { url } } });
+    service = await import('@/services/assessment/service');
+    const t = await db.user.create({ data: { email: 'teacher-' + suffix + '@example.test', name: 'Teacher', role: 'TEACHER' } });
+    const s = await db.user.create({ data: { email: 'student-' + suffix + '@example.test', name: 'Student' } });
+    const o = await db.user.create({ data: { email: 'other-' + suffix + '@example.test', name: 'Other', role: 'TEACHER' } });
+    teacher = { ...t, role: 'TEACHER' }; student = { ...s, role: 'STUDENT' }; outsider = { ...o, role: 'TEACHER' };
+    const quiz = await db.quiz.create({ data: { teacherId: t.id, title: 'Integrity test', status: 'PUBLISHED', visibility: 'PUBLIC', durationMin: 15,
+      settings: { create: { maxAttempts: 1, showCorrectAnswers: true } }, questions: { create: { orderIndex: 1, marks: 2, questionData: { questionType: 'MCQ_SINGLE', stemText: 'Force unit?', options: [{ id: 'a', text: 'Newton', isCorrect: true }, { id: 'b', text: 'Watt', isCorrect: false }] } } } }, include: { questions: true } });
+    quizId = quiz.id; questionId = quiz.questions[0].id;
   });
-
   afterAll(async () => {
-    await prisma.$disconnect();
+    if (!db) return;
+    if (quizId) { const attempts = await db.quizAttempt.findMany({ where: { quizId }, select: { id: true } }); await db.quizAnswer.deleteMany({ where: { attemptId: { in: attempts.map(a => a.id) } } }); await db.quizAttempt.deleteMany({ where: { quizId } }); await db.quiz.delete({ where: { id: quizId } }); }
+    if (teacher) { await db.durableJob.deleteMany({ where: { ownerId: { in: [teacher.id, student.id, outsider.id] } } }); await db.user.deleteMany({ where: { id: { in: [teacher.id, student.id, outsider.id] } } }); }
+    await db.$disconnect(); const { default: shared } = await import('@/lib/prisma'); await shared.$disconnect();
   });
-
-  it('1. one board can have many subjects', async () => {
-    const board = await prisma.board.findUnique({
-      where: { shortCode: 'SINDH_DEMO' },
-      include: {
-        curriculums: {
-          include: {
-            classes: {
-              include: {
-                subjects: true
-              }
-            }
-          }
-        }
-      }
-    });
-    
-    expect(board).toBeDefined();
-    const subjects = board!.curriculums.flatMap((c: any) => c.classes.flatMap((cls: any) => cls.subjects));
-    expect(subjects.length).toBeGreaterThanOrEqual(1);
+  it('does not authenticate a fallback teacher or suspended session', async () => {
+    const { getSessionUser, sessionTokenHash } = await import('@/lib/auth');
+    expect(await getSessionUser(new NextRequest('http://localhost/api'), 'TEACHER')).toBeNull();
+    await db.userSession.create({ data: { userId: outsider.id, token: sessionTokenHash(suffix), expiresAt: new Date(Date.now() + 60000) } });
+    expect((await getSessionUser(new NextRequest('http://localhost/api', { headers: { authorization: 'Bearer ' + suffix } })))?.id).toBe(outsider.id);
+    await db.user.update({ where: { id: outsider.id }, data: { status: 'SUSPENDED' } });
+    expect(await getSessionUser(new NextRequest('http://localhost/api', { headers: { authorization: 'Bearer ' + suffix } }))).toBeNull();
   });
-
-  it('2. one subject can have many chapters', async () => {
-    const subject = await prisma.subject.findFirst({
-      where: { name: 'Physics' },
-      include: { chapters: true }
-    });
-    expect(subject).toBeDefined();
-    expect(subject!.chapters.length).toBeGreaterThanOrEqual(1);
+  it('claims durable jobs once and recovers stale worker leases', async () => {
+    const { claimJob } = await import('@/services/jobs/queue');
+    const kind = 'TEST_' + suffix;
+    const job = await db.durableJob.create({ data: { ownerId: student.id, kind, payload: {} } });
+    const claims = await Promise.all([claimJob([kind]), claimJob([kind])]);
+    expect(claims.filter(Boolean)).toHaveLength(1); expect(claims.find(Boolean)?.id).toBe(job.id);
+    await db.durableJob.update({ where: { id: job.id }, data: { lockedAt: new Date(Date.now() - 180000) } });
+    const recovered = await claimJob([kind]); expect(recovered?.id).toBe(job.id); expect(recovered?.attempts).toBe(2);
+    expect(recovered?.leaseToken).not.toBe(claims.find(Boolean)?.leaseToken);
+    await db.durableJob.delete({ where: { id: job.id } });
   });
-
-  it('3. one chapter can have many topics', async () => {
-    const chapter = await prisma.chapter.findFirst({
-      where: { name: 'Kinematics' },
-      include: { topics: true }
-    });
-    expect(chapter).toBeDefined();
-    expect(chapter!.topics.length).toBeGreaterThanOrEqual(1);
+  it('creates only one active attempt under simultaneous starts', async () => {
+    const [a, b] = await Promise.all([service.startAttempt(quizId, student, { practiceDurationMin: 1, practiceUntimed: true }), service.startAttempt(quizId, student)]);
+    expect(a.id).toBe(b.id); expect(await db.quizAttempt.count({ where: { quizId } })).toBe(1);
+    expect(new Date(a.deadline).getTime() - Date.now()).toBeGreaterThan(14 * 60000);
+    expect(new Date(a.deadline).getTime() - Date.now()).toBeLessThan(16 * 60000);
+    expect(JSON.stringify(a.questions)).not.toContain('isCorrect');
   });
-
-  it('4. one topic can have many concepts', async () => {
-    const topic = await prisma.topic.findFirst({
-      where: { name: 'Motion in One Dimension' },
-      include: { concepts: true }
-    });
-    expect(topic).toBeDefined();
-    expect(topic!.concepts.length).toBeGreaterThanOrEqual(1);
+  it('checks question membership, owner and answer versions', async () => {
+    const attempt = await service.startAttempt(quizId, student);
+    await expect(service.saveAnswer(quizId, outsider, { attemptId: attempt.id, questionId, version: 0, answerPayload: { selectedOptionId: 'a' } })).rejects.toThrow();
+    await expect(service.saveAnswer(quizId, student, { attemptId: attempt.id, questionId: 'foreign', version: 0, answerPayload: {} })).rejects.toThrow();
+    await service.saveAnswer(quizId, student, { attemptId: attempt.id, questionId, version: 0, answerPayload: { selectedOptionId: 'b' } });
+    await expect(service.saveAnswer(quizId, student, { attemptId: attempt.id, questionId, version: 0, answerPayload: { selectedOptionId: 'a' } })).rejects.toThrow();
+    const saved = await service.saveAnswer(quizId, student, { attemptId: attempt.id, questionId, version: 1, answerPayload: { selectedOptionId: 'a' } }); expect(saved.version).toBe(2);
   });
-
-  it('5. one past paper has many questions', async () => {
-    const paper = await prisma.pastPaper.findFirst({
-      where: { title: 'Physics Paper 1' },
-      include: { questions: true }
-    });
-    expect(paper).toBeDefined();
-    expect(paper!.questions.length).toBeGreaterThanOrEqual(1);
+  it('hides active results and prevents another teacher reading the attempt', async () => {
+    const attempt = await service.startAttempt(quizId, student);
+    await expect(service.getResults(quizId, student, attempt.id)).rejects.toThrow();
+    await expect(service.getResults(quizId, outsider, attempt.id)).rejects.toThrow();
   });
-
-  it('6. past-paper questions retain exact year and question number', async () => {
-    const question = await prisma.pastPaperQuestion.findFirst({
-      where: { pastPaper: { examYear: 2025 }, questionNumber: '3', subQuestionNumber: 'b' },
-      include: { pastPaper: true }
-    });
-    expect(question).toBeDefined();
-    expect(question!.pastPaper.examYear).toBe(2025);
-    expect(question!.questionNumber).toBe('3');
-    expect(question!.subQuestionNumber).toBe('b');
-  });
-
-  it('7. one generated MCQ can reference many past-paper questions', async () => {
-    const mcq = await prisma.question.findFirst({
-      where: { questionType: 'MCQ_SINGLE' },
-      include: { pastPaperReferences: true }
-    });
-    expect(mcq).toBeDefined();
-    expect(mcq!.pastPaperReferences.length).toBeGreaterThanOrEqual(1);
-  });
-
-  it('8. one past-paper question can support many generated MCQs', async () => {
-    const ppQuestion = await prisma.pastPaperQuestion.findFirst({
-      where: { questionNumber: '3' },
-      include: { generatedReferences: true }
-    });
-    expect(ppQuestion).toBeDefined();
-    expect(ppQuestion!.generatedReferences.length).toBeGreaterThanOrEqual(1);
-  });
-
-  it('9. one MCQ can have multiple textbook sources', async () => {
-    const mcq = await prisma.question.findFirst({
-      where: { questionType: 'MCQ_SINGLE' },
-      include: { sources: true }
-    });
-    expect(mcq).toBeDefined();
-    expect(mcq!.sources.length).toBeGreaterThanOrEqual(1);
-    expect(mcq!.sources[0].sourceType).toBe('TEXTBOOK');
-  });
-
-  it('10. one MCQ can have multiple media assets', async () => {
-    const mcq = await prisma.question.findFirst({
-      where: { questionType: 'MCQ_SINGLE' },
-      include: { media: true }
-    });
-    expect(mcq).toBeDefined();
-    expect(mcq!.media.length).toBeGreaterThanOrEqual(1);
-    expect(mcq!.media[0].mediaType).toBe('GRAPH');
-  });
-
-  it('11. curriculum versions can coexist', async () => {
-    const versions = await prisma.boardVersion.findMany();
-    // In our seed there is at least one, and the schema supports many without uniqueness constraint on boardId alone
-    expect(versions.length).toBeGreaterThanOrEqual(1);
+  it('grades frozen keys and commits concurrent submissions once', async () => {
+    const attempt = await service.startAttempt(quizId, student);
+    await db.quizQuestion.update({ where: { id: questionId }, data: { marks: 99 } });
+    await Promise.all([service.submitAttempt(quizId, student, attempt.id), service.submitAttempt(quizId, student, attempt.id)]);
+    const result = await service.getResults(quizId, student, attempt.id); expect(result.score).toBe(2); expect(result.maxMarks).toBe(2);
+    expect(await db.assessmentEvent.count({ where: { attemptId: attempt.id, eventType: 'SUBMITTED' } })).toBe(1);
+    await expect(service.saveAnswer(quizId, student, { attemptId: attempt.id, questionId, version: 2, answerPayload: { selectedOptionId: 'b' } })).rejects.toThrow();
   });
 });

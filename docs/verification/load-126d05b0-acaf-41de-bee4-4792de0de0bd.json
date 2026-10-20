@@ -1,0 +1,149 @@
+{
+  "runId": "load-126d05b0-acaf-41de-bee4-4792de0de0bd",
+  "date": "2026-10-20T05:21:38.427Z",
+  "environment": {
+    "platform": "win32",
+    "cpu": "Intel(R) Core(TM) i7-10850H CPU @ 2.70GHz",
+    "logicalCpus": 12,
+    "memoryGiB": 32,
+    "node": "v24.21.0"
+  },
+  "scenario": "Same quiz, distinct students, 40 MCQs each. HTTP start burst, HTTP answer-save burst, HTTP submit burst, duplicate-submit burst. No client retries. Answer fixtures seeded before saves.",
+  "rounds": [
+    {
+      "concurrency": 200,
+      "starts": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 1713,
+        "successfulPerSecond": 116.8,
+        "p50Ms": 1203,
+        "p95Ms": 1599,
+        "maxMs": 1636
+      },
+      "saves": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 742,
+        "successfulPerSecond": 269.7,
+        "p50Ms": 547,
+        "p95Ms": 691,
+        "maxMs": 700
+      },
+      "submissions": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 947,
+        "successfulPerSecond": 211.2,
+        "p50Ms": 632,
+        "p95Ms": 909,
+        "maxMs": 922
+      },
+      "duplicateSubmissions": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 614,
+        "successfulPerSecond": 325.8,
+        "p50Ms": 464,
+        "p95Ms": 586,
+        "maxMs": 593
+      },
+      "verifiedAttempts": 200,
+      "correctScoresAndSingleFinalization": true
+    },
+    {
+      "concurrency": 200,
+      "starts": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 1347,
+        "successfulPerSecond": 148.4,
+        "p50Ms": 902,
+        "p95Ms": 1307,
+        "maxMs": 1333
+      },
+      "saves": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 660,
+        "successfulPerSecond": 303,
+        "p50Ms": 496,
+        "p95Ms": 636,
+        "maxMs": 644
+      },
+      "submissions": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 971,
+        "successfulPerSecond": 205.9,
+        "p50Ms": 687,
+        "p95Ms": 946,
+        "maxMs": 953
+      },
+      "duplicateSubmissions": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 622,
+        "successfulPerSecond": 321.8,
+        "p50Ms": 444,
+        "p95Ms": 595,
+        "maxMs": 606
+      },
+      "verifiedAttempts": 200,
+      "correctScoresAndSingleFinalization": true
+    },
+    {
+      "concurrency": 200,
+      "starts": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 1458,
+        "successfulPerSecond": 137.1,
+        "p50Ms": 973,
+        "p95Ms": 1419,
+        "maxMs": 1443
+      },
+      "saves": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 758,
+        "successfulPerSecond": 263.8,
+        "p50Ms": 541,
+        "p95Ms": 732,
+        "maxMs": 740
+      },
+      "submissions": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 1803,
+        "successfulPerSecond": 110.9,
+        "p50Ms": 615,
+        "p95Ms": 913,
+        "maxMs": 1785
+      },
+      "duplicateSubmissions": {
+        "requests": 200,
+        "successful": 200,
+        "errors": {},
+        "elapsedMs": 574,
+        "successfulPerSecond": 348.7,
+        "p50Ms": 432,
+        "p95Ms": 543,
+        "maxMs": 550
+      },
+      "verifiedAttempts": 200,
+      "correctScoresAndSingleFinalization": true
+    }
+  ]
+}

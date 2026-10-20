@@ -1,3 +1,4 @@
+import { getFallbackPaper } from '@/lib/paperDataService';
 import Link from 'next/link';
 import { prisma } from '../../lib/prisma';
 import { Award, CheckCircle2, Download, Sparkles, ArrowRight, HelpCircle } from 'lucide-react';
@@ -7,8 +8,8 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 export const dynamic = 'force-dynamic';
 
 export default async function McqBankPage() {
-  const mcqs = await prisma.pastPaperQuestion.findMany({
-    where: { questionType: 'MCQ_SINGLE' },
+  const mcqs: any[] = await prisma.pastPaperQuestion.findMany({
+    where: { questionType: { in: ['MCQ_SINGLE', 'MULTIPLE_CHOICE'] } },
     include: {
       pastPaper: {
         include: { academicClass: true }
@@ -20,6 +21,7 @@ export default async function McqBankPage() {
     ]
   });
 
+  if (!mcqs.length) for (const code of ['PHY-IX-P1', 'PHY-X-P1']) { const paper = getFallbackPaper(code); if (paper) mcqs.push(...paper.questions.map(q => ({ ...q, pastPaper: paper }))); }
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '5rem' }}>
       {/* Universal Breadcrumb */}
@@ -55,8 +57,8 @@ export default async function McqBankPage() {
           Official Physics MCQ Question Bank ({mcqs.length} Items)
         </h1>
         <p style={{ fontSize: '1.1rem', opacity: 0.95, lineHeight: 1.6, margin: '0 0 2rem 0', maxWidth: '800px' }}>
-          Practice with all 80 official AKU-EB 2025 Physics multiple-choice questions for Class IX & X.
-          Complete with LaTeX formulas, option sets, verified answer keys, and step-by-step working.
+          Practice the available Physics multiple-choice questions for Class IX and X.
+          Complete with LaTeX formulas, option sets, answer keys, and step-by-step working.
         </p>
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

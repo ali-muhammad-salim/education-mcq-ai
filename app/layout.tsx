@@ -90,11 +90,11 @@ export default function RootLayout({
                   />
                 </div>
                 <p style={{ fontSize: '0.88rem', lineHeight: 1.6, color: '#94a3b8', marginBottom: '1rem' }}>
-                  A specialized academic intelligence repository for the Aga Khan University Examination Board (AKU-EB), aligning examination items with official Student Learning Outcomes (SLOs).
+                  A specialized academic intelligence repository for the Aga Khan University Examination Board (AKU-EB), with examination resources, practice questions and Student Learning Outcome (SLO) references.
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.78rem', color: '#34d399' }}>
                   <ShieldCheck size={14} />
-                  <span>Curriculum Verified • 2025–2028 Standards</span>
+                  <span>Independent learning resource • Check source documents</span>
                 </div>
               </div>
 
@@ -106,12 +106,12 @@ export default function RootLayout({
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.88rem' }}>
                   <li>
                     <Link href="/past-papers" style={{ color: '#cbd5e1', textDecoration: 'none' }}>
-                      📄 Past Papers Archive (2025 Annual)
+                      📄 Past Papers Archive
                     </Link>
                   </li>
                   <li>
                     <Link href="/model-papers" style={{ color: '#cbd5e1', textDecoration: 'none' }}>
-                      📝 Official Model Examination Papers
+                      📝 Model Examination Papers
                     </Link>
                   </li>
                   <li>
@@ -121,7 +121,7 @@ export default function RootLayout({
                   </li>
                   <li>
                     <Link href="/resources" style={{ color: '#cbd5e1', textDecoration: 'none' }}>
-                      📦 Official Books & Downloads
+                      📦 Books & Downloads
                     </Link>
                   </li>
                   <li>

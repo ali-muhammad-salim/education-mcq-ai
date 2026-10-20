@@ -52,8 +52,8 @@ export default function Breadcrumbs({ items, style }: BreadcrumbsProps) {
         <span>Home</span>
       </Link>
 
-      {items.map((item, idx) => {
-        const isLast = idx === items.length - 1 || item.active;
+      {items.filter(item => item.href !== '/').map((item, idx, visibleItems) => {
+        const isLast = idx === visibleItems.length - 1 || item.active;
         return (
           <React.Fragment key={idx}>
             <ChevronRight size={14} style={{ color: '#6b7280', flexShrink: 0 }} />

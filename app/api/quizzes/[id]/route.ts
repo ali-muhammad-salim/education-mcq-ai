@@ -1,225 +1,30 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
-import { getFallbackPaper } from '@/lib/paperDataService';
-import { getQuizFromStore } from '@/lib/submissionStore';
 import { getSessionUser } from '@/lib/auth';
-
-export async function GET(
-  req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
-) {
+import { requireUser, rateLimit } from '@/lib/security';
+import { apiError, ApiError } from '@/lib/api';
+import prisma from '@/lib/prisma';
+import { enrichQuizMetadata } from '@/services/assessment/catalog';
+import { resolveQuiz, assertQuizAccess } from '@/services/assessment/service';
+import { normalizeQuestion, studentQuestion } from '@/services/assessment/scoring';
+export async function GET(req: NextRequest, context: { params: Promise<{ id: string }> }) {
   try {
-    const resolvedParams = await Promise.resolve(params);
-    const quizId = resolvedParams.id;
-    const { searchParams } = new URL(req.url);
-    const mode = searchParams.get('mode') || 'take'; // 'take' (student) or 'edit' (teacher)
-
-    let quiz = null;
-    try {
-      quiz = await prisma.quiz.findUnique({
-        where: { id: quizId },
-        include: {
-          settings: true,
-          questions: {
-            orderBy: { orderIndex: 'asc' }
-          },
-          teacher: {
-            select: { id: true, name: true, email: true }
-          }
-        }
-      });
-    } catch (e) {
-      console.warn('Prisma quiz lookup error, checking fallbacks:', e);
-    }
-
-    if (!quiz) {
-      const stored = getQuizFromStore(quizId);
-      if (stored) {
-        return NextResponse.json({
-          id: stored.id,
-          code: stored.code,
-          title: stored.title,
-          durationMin: stored.durationMin || 55,
-          totalMarks: stored.totalMarks || stored.questions.length,
-          status: stored.status || 'PUBLISHED',
-          visibility: stored.visibility || 'PUBLIC',
-          settings: stored.settings || {},
-          questions: stored.questions.map((q, idx) => ({
-            id: `q-${idx + 1}`,
-            orderIndex: idx + 1,
-            marks: q.marks || 1,
-            isRequired: true,
-            questionType: 'MCQ_SINGLE',
-            stemText: q.stemText,
-            difficulty: 'Medium',
-            cognitiveLevel: 'Understanding',
-            options: (q.options || []).map((opt: any) => ({
-              id: opt.id || opt.text,
-              text: opt.text
-            })),
-            drawingSvg: q.drawingSvg || null
-          })),
-          teacher: { id: 'teacher-1', name: stored.teacherName || 'AKU-EB Faculty', email: 'faculty@akueb.edu.pk' }
-        });
-      }
-
-      // Check fallback paper
-      const fallback = getFallbackPaper(quizId);
-      if (fallback) {
-        return NextResponse.json({
-          id: quizId,
-          code: fallback.paperCode,
-          title: fallback.title,
-          durationMin: fallback.questions.length > 20 ? 55 : 30,
-          totalMarks: fallback.questions.length,
-          status: 'PUBLISHED',
-          visibility: 'PUBLIC',
-          settings: { immediateFeedback: true, showCorrectAnswers: true },
-          questions: fallback.questions.map((q, idx) => ({
-            id: q.id,
-            orderIndex: idx + 1,
-            marks: q.marks || 1,
-            isRequired: true,
-            questionType: 'MCQ_SINGLE',
-            stemText: q.questionText,
-            difficulty: q.difficulty || 'Medium',
-            cognitiveLevel: q.sourceRegion?.cognitive_level || 'Understanding',
-            options: Object.entries(q.sourceRegion?.choices || {}).map(([key, text]) => ({
-              id: key,
-              text: String(text)
-            })),
-            drawingSvg: q.sourceRegion?.diagramUrl ? `<div style="text-align: center;"><img src="${q.sourceRegion.diagramUrl}" alt="Question Diagram" style="max-width: 100%; max-height: 280px; object-fit: contain; margin: 0 auto; display: block;" /></div>` : null
-          })),
-          teacher: { id: 'faculty-1', name: 'AKU-EB Physics Faculty', email: 'physics@akueb.edu.pk' }
-        });
-      }
-
-      return NextResponse.json({ error: 'Quiz not found' }, { status: 404 });
-    }
-
-    // Process questions: If student taking exam, STRIP isCorrect and explanations to prevent cheating!
-    const questions = quiz.questions.map(q => {
-      const qData: any = typeof q.questionData === 'object' ? q.questionData : {};
-      
-      if (mode === 'take') {
-        // Safe student payload
-        const sanitizedOptions = Array.isArray(qData.options)
-          ? qData.options.map((opt: any) => ({
-              id: opt.id || opt.text,
-              text: opt.text
-            }))
-          : [];
-
-        return {
-          id: q.id,
-          orderIndex: q.orderIndex,
-          marks: q.marks,
-          isRequired: q.isRequired,
-          questionType: qData.questionType || 'MCQ_SINGLE',
-          stemText: qData.stemText || '',
-          difficulty: qData.difficulty || 'Medium',
-          cognitiveLevel: qData.cognitiveLevel || 'Understanding',
-          options: sanitizedOptions,
-          drawingSvg: qData.drawingSvg || null
-        };
-      }
-
-      // Teacher edit payload
-      return {
-        id: q.id,
-        orderIndex: q.orderIndex,
-        marks: q.marks,
-        isRequired: q.isRequired,
-        ...qData
-      };
-    });
-
-    return NextResponse.json({
-      success: true,
-      quiz: {
-        id: quiz.id,
-        title: quiz.title,
-        description: quiz.description,
-        boardId: quiz.boardId,
-        totalMarks: quiz.totalMarks,
-        durationMin: quiz.durationMin,
-        status: quiz.status,
-        visibility: quiz.visibility,
-        scheduleStart: quiz.scheduleStart,
-        scheduleEnd: quiz.scheduleEnd,
-        teacherName: quiz.teacher.name,
-        settings: quiz.settings,
-        questions
-      }
-    });
-  } catch (err: any) {
-    console.error('Fetch quiz error:', err);
-    return NextResponse.json({ error: err.message || 'Failed to fetch quiz' }, { status: 500 });
-  }
+    const { id } = await context.params, user = await getSessionUser(req);
+    if (id.includes('-SET-')) { if (!user) throw new ApiError(401, 'AUTH_REQUIRED', 'Sign in to prepare selected practice questions.'); await rateLimit('practice-preview:' + user.id, 60, 60); }
+    const quiz = await resolveQuiz(id);
+    await assertQuizAccess(quiz, user);
+    const edit = req.nextUrl.searchParams.get('mode') === 'edit';
+    if (edit && (!user || (user.role !== 'ADMIN' && quiz.teacherId !== user.id))) throw new ApiError(403, 'FORBIDDEN', 'Only the author can edit this assessment.');
+    return NextResponse.json({ success: true, quiz: { ...(await enrichQuizMetadata([quiz]))[0], settings: edit ? quiz.settings : { maxAttempts: quiz.settings?.maxAttempts, showCorrectAnswers: quiz.settings?.showCorrectAnswers, immediateFeedback: quiz.settings?.immediateFeedback }, teacherName: quiz.teacher.name,
+      questions: quiz.questions.map(q => { const content = normalizeQuestion(q.questionData);
+        return edit ? { ...content, id: q.id, orderIndex: q.orderIndex, marks: q.marks } : studentQuestion({ id: q.id, orderIndex: q.orderIndex, marks: q.marks, content }); }) } });
+  } catch (error) { return apiError(error); }
 }
-
-export async function DELETE(
-  req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
-) {
+export async function DELETE(req: NextRequest, context: { params: Promise<{ id: string }> }) {
   try {
-    const user = await getSessionUser(req);
-    if (!user || (user.role !== 'TEACHER' && user.role !== 'ADMIN')) {
-      return NextResponse.json({ error: 'Unauthorized: Educator credentials required' }, { status: 403 });
-    }
-
-    const resolvedParams = await Promise.resolve(params);
-    const quizId = resolvedParams.id;
-
-    // Verify quiz exists and check ownership
-    const quiz = await prisma.quiz.findUnique({
-      where: { id: quizId },
-      select: { id: true, teacherId: true }
-    });
-
-    if (!quiz) {
-      return NextResponse.json({ error: 'Assessment not found' }, { status: 404 });
-    }
-
-    if (user.role !== 'ADMIN' && quiz.teacherId !== user.id) {
-      return NextResponse.json({ error: 'Unauthorized: You can only delete assessments you authored.' }, { status: 403 });
-    }
-
-    // Cascaded deletion of attempts, events, answers, assignments, settings, questions
-    const attemptIds = (await prisma.quizAttempt.findMany({
-      where: { quizId },
-      select: { id: true }
-    })).map(a => a.id);
-
-    if (attemptIds.length > 0) {
-      try {
-        await prisma.assessmentEvent.deleteMany({ where: { attemptId: { in: attemptIds } } });
-      } catch {}
-      try {
-        await prisma.quizAnswer.deleteMany({ where: { attemptId: { in: attemptIds } } });
-      } catch {}
-      try {
-        await prisma.quizAttempt.deleteMany({ where: { quizId } });
-      } catch {}
-    }
-
-    try {
-      await prisma.quizAssignment.deleteMany({ where: { quizId } });
-    } catch {}
-    try {
-      await prisma.quizQuestion.deleteMany({ where: { quizId } });
-    } catch {}
-    try {
-      await prisma.quizSetting.deleteMany({ where: { quizId } });
-    } catch {}
-
-    await prisma.quiz.delete({ where: { id: quizId } });
-
-    return NextResponse.json({ success: true, message: 'Assessment deleted successfully' });
-  } catch (err: any) {
-    console.error('Delete quiz error:', err);
-    return NextResponse.json({ error: err.message || 'Failed to delete quiz' }, { status: 500 });
-  }
+    const user = await requireUser(req, ['TEACHER', 'ADMIN']), { id } = await context.params;
+    const quiz = await prisma.quiz.findUnique({ where: { id } });
+    if (!quiz || (user.role !== 'ADMIN' && quiz.teacherId !== user.id)) throw new ApiError(403, 'FORBIDDEN', 'Only the author can archive this assessment.');
+    await prisma.quiz.update({ where: { id }, data: { status: 'ARCHIVED' } });
+    return NextResponse.json({ success: true, message: 'Assessment archived. Existing records are preserved.' });
+  } catch (error) { return apiError(error); }
 }
-
-

@@ -1,3 +1,4 @@
+import ContentUnavailable from '@/components/ContentUnavailable';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -25,6 +26,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
   const board = SUPPORTED_BOARDS.find(b => b.id === boardId) || SUPPORTED_BOARDS[0];
   const classDef = CLASS_DEFINITIONS[classRoman];
   const meta = getSubjectMeta(rawSubject);
+  if (board.id !== 'akueb' || !['IX', 'X'].includes(classRoman) || meta.slug !== 'physics') return <ContentUnavailable title={classDef.name + ' ' + meta.title + ' resources'} />;
   const isPhysics = meta.slug === 'physics';
   const isClass9 = classRoman === 'IX';
 
@@ -50,8 +52,8 @@ export default async function ModelPapersPage({ params }: PageProps) {
       id: 'P2',
       code: 'Paper II (P2)',
       title: 'Model Examination Paper II — Constructed & Extended Response (CRQs & ERQs)',
-      desc: 'Section B (7 CRQs of 3 marks each) and Section C (2 ERQs of 4 marks each) with calculation areas and mark schemes.',
-      meta: '25 Marks • 1h 40m',
+      desc: 'Constructed and extended response questions with study guidance. Refer to the original PDF for section choices and marks.',
+      meta: 'Theory • See original PDF',
       href: `${modelPapersBase}/P2`,
       icon: FileText,
       actionText: 'Open Paper II (P2)',
@@ -156,7 +158,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
             fontSize: '0.82rem',
             color: '#334155'
           }}>
-            <strong style={{ color: '#0b5e4a' }}>Paper II:</strong> CRQs & ERQs (25 Marks • 1h 40m)
+            <strong style={{ color: '#0b5e4a' }}>Paper II:</strong> CRQs & ERQs (see original PDF)
           </div>
           <div style={{
             background: '#f8fafc',
@@ -177,7 +179,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
             color: '#07382c',
             fontWeight: 700
           }}>
-            Composite: 80 Marks Total
+            Refer to each original paper for examination specifications
           </div>
         </div>
       </div>

@@ -341,7 +341,7 @@ export default function Home() {
                 Class IX (Grade 9)
               </h3>
               <p style={{ fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
-                Physics SSC-I complete pack: 8 chapters, 145 SLOs, Model Paper I & II, Practical Paper III, and 2025 Annual Solved Examination Papers.
+                Physics SSC-I resources: syllabus and SLO directory, Model Paper I & II, Practical Paper III, and available 2025 examination papers.
               </p>
 
               {/* Subject Badges */}
@@ -438,7 +438,7 @@ export default function Home() {
                 Class X (Grade 10)
               </h3>
               <p style={{ fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
-                Physics SSC-II complete pack: 9 units, 176 SLOs, Interactive Model Paper I (MCQs), Model Paper II (CRQs), and Pacing Guides.
+                Physics SSC-II resources: syllabus and SLO directory, interactive Model Paper I (MCQs), and Model Paper II theory items.
               </p>
 
               {/* Subject Badges */}

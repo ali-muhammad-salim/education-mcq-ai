@@ -3,15 +3,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { 
-  Plus, Trash2, Copy, ArrowUp, ArrowDown, Settings, Eye, 
-  Sparkles, Database, Upload, Check, AlertCircle, ArrowLeft, 
+import {
+  Plus, Trash2, Copy, ArrowUp, ArrowDown, Settings, Eye,
+  Sparkles, Database, Upload, Check, AlertCircle, ArrowLeft,
   HelpCircle, Calculator, CheckCircle2,
   FileText, ShieldAlert, Clock, CheckSquare, Radio, GripVertical,
   X, SlidersHorizontal, Layers, Award, Lightbulb, ChevronDown,
   Share2, KeyRound
 } from 'lucide-react';
 
+import { useDialog } from '@/lib/use-dialog';
+import { questionSchema } from '@/lib/validations/assessment';
 import MathText from '@/components/MathText';
 import RichMathChemDiagramEditor from '@/components/RichMathChemDiagramEditor';
 import './builder.css';
@@ -29,6 +31,8 @@ export interface MatchingPair {
 }
 
 export interface QuizQuestionData {
+  reviewId?: string;
+  sloId?: string;
   id: string;
   orderIndex: number;
   questionType: 'MCQ_SINGLE' | 'MCQ_MULTIPLE' | 'TRUE_FALSE' | 'SHORT_ANSWER' | 'NUMERICAL' | 'MATCHING' | 'LONG_ANSWER';
@@ -48,7 +52,7 @@ export interface QuizQuestionData {
   matchingPairs?: MatchingPair[];
   rubric?: string;
   explanation?: string;
-  drawingSvg?: string;
+  drawingSvg?: string; diagramUrl?: string;
 }
 
 export interface QuizSettings {
@@ -58,9 +62,10 @@ export interface QuizSettings {
   randomizeOptions: boolean;
   immediateFeedback: boolean;
   showCorrectAnswers: boolean;
-  resultVisibility: 'IMMEDIATE' | 'AFTER_DEADLINE' | 'MANUAL';
+  resultVisibility: 'IMMEDIATE' | 'SCHEDULED' | 'MANUAL_RELEASE';
+  resultReleaseDate?: string | null;
   manualGradingRequired: boolean;
-  aiGradingMode: 'LENIENT' | 'MEDIUM' | 'STRICT' | 'CUSTOM';
+  aiGradingMode: 'OFF' | 'LENIENT' | 'MEDIUM' | 'STRICT' | 'CUSTOM';
   tabMonitoringEnabled: boolean;
   tabWarningThreshold: number;
 }
@@ -99,7 +104,8 @@ function GoogleFormsQuizBuilderContent() {
 
   // Quiz Meta State
   const [quizId, setQuizId] = useState<string | null>(editQuizId);
-  const [title, setTitle] = useState('Physics Mid-Term Examination 2026');
+  const [title, setTitle] = useState('Untitled assessment');
+  const [scheduleStart, setScheduleStart] = useState(''), [scheduleEnd, setScheduleEnd] = useState('');
   const [description, setDescription] = useState('Official curriculum assessment aligned with AKU-EB Student Learning Objectives (SLOs). Answer all questions.');
   const [boardId, setBoardId] = useState('AKU-EB');
   const [classLevel, setClassLevel] = useState(9);
@@ -118,52 +124,16 @@ function GoogleFormsQuizBuilderContent() {
     showCorrectAnswers: true,
     resultVisibility: 'IMMEDIATE',
     manualGradingRequired: false,
-    aiGradingMode: 'MEDIUM',
+    aiGradingMode: 'OFF',
     tabMonitoringEnabled: true,
     tabWarningThreshold: 2
   });
 
   // Questions State
-  const [questions, setQuestions] = useState<QuizQuestionData[]>([
-    {
-      id: 'q-init-1',
-      orderIndex: 1,
-      questionType: 'MCQ_SINGLE',
-      stemText: 'Which of the following is a derived physical quantity in SI units?',
-      difficulty: 'Easy',
-      cognitiveLevel: 'Knowledge',
-      marks: 1,
-      isRequired: true,
-      provenance: 'PAST_PAPER',
-      pastPaperRef: 'AKU-EB 2025 Paper 1 Q1',
-      options: [
-        { id: 'opt-1', text: 'Mass ($m$)', isCorrect: false },
-        { id: 'opt-2', text: 'Length ($l$)', isCorrect: false },
-        { id: 'opt-3', text: 'Density ($\\rho = \\frac{m}{V}$)', isCorrect: true },
-        { id: 'opt-4', text: 'Time ($t$)', isCorrect: false }
-      ],
-      explanation: 'Density is defined as mass per unit volume ($\\rho = \\frac{m}{V}$), derived from the base SI units kilograms (kg) and cubic meters ($m^3$).'
-    },
-    {
-      id: 'q-init-2',
-      orderIndex: 2,
-      questionType: 'NUMERICAL',
-      stemText: 'A car accelerates uniformly from rest at a rate of $2.5\\text{ m/s}^2$ for $8\\text{ s}$. Calculate the distance traveled by the car in meters.',
-      difficulty: 'Medium',
-      cognitiveLevel: 'Application',
-      marks: 2,
-      isRequired: true,
-      provenance: 'TEACHER_CREATED',
-      options: [],
-      correctAnswerText: '80',
-      numericalTolerance: 1.0,
-      unit: 'm',
-      explanation: 'Using the second equation of motion: $S = v_i t + \\frac{1}{2} a t^2$. Since $v_i = 0$, $S = \\frac{1}{2} (2.5)(8)^2 = 0.5 \\times 2.5 \\times 64 = 80\\text{ meters}$.'
-    }
-  ]);
+  const [questions, setQuestions] = useState<QuizQuestionData[]>([]);
 
   const [activeQuestionIndex, setActiveQuestionIndex] = useState<number>(0);
-  const [saveStatus, setSaveStatus] = useState<'saved' | 'saving' | 'unsaved' | 'error'>('saved');
+  const [saveStatus, setSaveStatus] = useState<'saved' | 'saving' | 'unsaved' | 'error'>('unsaved');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Answer Key Drawer toggle per question
@@ -195,6 +165,8 @@ function GoogleFormsQuizBuilderContent() {
     label: ''
   });
 
+  useEffect(() => { const warn = (event: BeforeUnloadEvent) => { if (saveStatus === 'unsaved' || saveStatus === 'error') { event.preventDefault(); event.returnValue = ''; } }; window.addEventListener('beforeunload', warn); return () => window.removeEventListener('beforeunload', warn); }, [saveStatus]);
+
   // Load existing quiz if edit mode
   useEffect(() => {
     if (editQuizId) {
@@ -207,23 +179,28 @@ function GoogleFormsQuizBuilderContent() {
       setSaveStatus('saving');
       const res = await fetch(`/api/quizzes/${id}?mode=edit`);
       const data = await res.json();
+      if (!res.ok) throw new Error(data.error?.message || 'Unable to load this assessment.');
       if (data.success && data.quiz) {
         const q = data.quiz;
-        setQuizId(q.id);
-        if (q.code) setQuizCode(q.code);
+        const duplicate = searchParams?.get('duplicate') === '1';
+        setQuizId(duplicate ? null : q.id);
+      if (duplicate) setQuizCode(null);
+        else if (q.code) setQuizCode(q.code);
         else setQuizCode(q.id);
-        setTitle(q.title || 'Untitled Assessment');
+        setTitle((duplicate ? 'Copy of ' : '') + (q.title || 'Untitled Assessment'));
+        setClassLevel(q.classLevel || 9); setSubject(q.subject || 'Physics');
+        setScheduleStart(q.scheduleStart || ''); setScheduleEnd(q.scheduleEnd || '');
         setDescription(q.description || '');
         setBoardId(q.boardId || 'AKU-EB');
         setDurationMin(q.durationMin || 45);
         setVisibility(q.visibility || 'PUBLIC');
-        setStatus(q.status || 'DRAFT');
+        setStatus(duplicate ? 'DRAFT' : q.status || 'DRAFT');
         if (q.settings) {
-          setSettings(prev => ({ ...prev, ...q.settings }));
+          setSettings(prev => ({ ...prev, ...q.settings, aiGradingMode: 'OFF' }));
         }
-        if (Array.isArray(q.questions) && q.questions.length > 0) {
+        if (Array.isArray(q.questions)) {
           setQuestions(q.questions.map((item: any, idx: number) => ({
-            id: item.id || `q-${idx}`,
+            ...item, id: item.id || `q-${idx}`,
             orderIndex: idx + 1,
             questionType: item.questionType || 'MCQ_SINGLE',
             stemText: item.stemText || '',
@@ -248,14 +225,20 @@ function GoogleFormsQuizBuilderContent() {
             drawingSvg: item.drawingSvg || ''
           })));
         }
-        setSaveStatus('saved');
+        setSaveStatus(duplicate ? 'unsaved' : 'saved');
       }
     } catch (err) {
+      triggerToast(err instanceof Error ? err.message : 'Unable to load assessment.');
       console.error('Failed to load quiz:', err);
       setSaveStatus('error');
     }
   }
 
+  const draftKey = useRef('');
+  const [draftAvailable, setDraftAvailable] = useState(false);
+  useEffect(() => { void fetch('/api/auth/me').then(r => r.json()).then(data => { if (data.user) { draftKey.current = 'builder-draft:' + data.user.id + ':' + (editQuizId || 'new'); setDraftAvailable(Boolean(sessionStorage.getItem(draftKey.current))); } }); }, [editQuizId]);
+  useEffect(() => { if (draftAvailable || saveStatus !== 'unsaved' || !draftKey.current) return; const timer = setTimeout(() => { try { sessionStorage.setItem(draftKey.current, JSON.stringify({ quizId, title, description, boardId, classLevel, subject, durationMin, visibility, scheduleStart, scheduleEnd, settings, questions })); } catch { /* The online save action remains available if browser storage is full. */ } }, 500); return () => clearTimeout(timer); }, [title, description, boardId, classLevel, subject, durationMin, visibility, scheduleStart, scheduleEnd, settings, questions, saveStatus, draftAvailable, quizId]);
+  const restoreDraft = () => { try { const draft = JSON.parse(sessionStorage.getItem(draftKey.current) || 'null'); if (!draft || !Array.isArray(draft.questions)) return; setQuizId(draft.quizId || null); setTitle(draft.title); setDescription(draft.description); setBoardId(draft.boardId); setClassLevel(draft.classLevel); setSubject(draft.subject); setDurationMin(draft.durationMin); setVisibility(draft.visibility); setScheduleStart(draft.scheduleStart || ''); setScheduleEnd(draft.scheduleEnd || ''); setSettings(draft.settings); setQuestions(draft.questions); setSaveStatus('unsaved'); setDraftAvailable(false); } catch { triggerToast('This local draft could not be restored.'); } };
   // Calculate total points
   const totalPoints = questions.reduce((sum, q) => sum + (Number(q.marks) || 1), 0);
 
@@ -268,6 +251,10 @@ function GoogleFormsQuizBuilderContent() {
     setSaveStatus('unsaved');
   };
 
+  async function syncReviews() {
+    try { const response = await fetch('/api/dashboard/teacher/doubts'); const data = await response.json(); if (!response.ok) throw new Error(data.error?.message || 'Unable to load reviews.'); setQuestions(previous => previous.map(q => { const approved = data.resolved.find((r: any) => r.id === q.reviewId && r.status === 'APPROVED'); return approved ? { ...q, ...approved.question, id: q.id, reviewId: approved.id, provenance: 'AI_GENERATED' } : q; })); markUnsaved(); triggerToast('Approved question revisions synchronized.'); } catch (error) { triggerToast(error instanceof Error ? error.message : 'Unable to synchronize reviews.'); }
+  }
+  async function reviseQuestion(question: QuizQuestionData) { try { const response = await fetch('/api/dashboard/teacher/doubts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'REVISE', doubtId: question.reviewId, question }) }); const data = await response.json(); if (!response.ok) throw new Error(data.error?.message || 'Unable to submit revision.'); triggerToast('Revision sent to the educator review queue. Approve it before publishing.'); } catch (error) { triggerToast(error instanceof Error ? error.message : 'Unable to submit revision.'); } }
   // Save Quiz
   const handleSaveQuiz = async (publish = false) => {
     try {
@@ -285,7 +272,7 @@ function GoogleFormsQuizBuilderContent() {
         durationMin,
         visibility,
         status: targetStatus,
-        settings,
+        scheduleStart: scheduleStart || null, scheduleEnd: scheduleEnd || null, settings,
         questions
       };
 
@@ -298,6 +285,7 @@ function GoogleFormsQuizBuilderContent() {
       const data = await res.json();
       if (data.success) {
         setQuizId(data.quizId);
+        if (draftKey.current) sessionStorage.removeItem(draftKey.current);
         if (data.code) setQuizCode(data.code);
         if (publish) {
           setStatus('PUBLISHED');
@@ -307,7 +295,7 @@ function GoogleFormsQuizBuilderContent() {
         triggerToast(publish ? `Assessment published! Code: ${data.code || ''}` : 'All changes saved to cloud.');
       } else {
         setSaveStatus('error');
-        triggerToast(`Save error: ${data.error || 'Server error'}`);
+        triggerToast(`Save error: ${typeof data.error === 'string' ? data.error : data.error?.message || 'Server error'}`);
       }
     } catch (err: any) {
       console.error('Save error:', err);
@@ -465,7 +453,7 @@ function GoogleFormsQuizBuilderContent() {
   // Rich editor modal helper
   const openRichEditor = (
     qIdx: number,
-    fieldName: 'stemText' | 'option' | 'explanation' | 'rubric', 
+    fieldName: 'stemText' | 'option' | 'explanation' | 'rubric',
     optIdx: number | null = null
   ) => {
     const q = questions[qIdx];
@@ -524,7 +512,7 @@ function GoogleFormsQuizBuilderContent() {
 
   return (
     <div className="gf-page">
-      
+
       {/* 1. GOOGLE FORMS TOP BAR */}
       <header className="gf-navbar">
         {/* Left: Brand Icon & Title Input */}
@@ -550,10 +538,10 @@ function GoogleFormsQuizBuilderContent() {
                 className="gf-title-header-input"
                 placeholder="Untitled form"
               />
-              <span style={{ 
-                fontSize: '11px', 
-                fontWeight: 700, 
-                padding: '2px 8px', 
+              <span style={{
+                fontSize: '11px',
+                fontWeight: 700,
+                padding: '2px 8px',
                 borderRadius: '12px',
                 background: status === 'PUBLISHED' ? '#e6f4ea' : '#fef7e0',
                 color: status === 'PUBLISHED' ? '#137333' : '#b06000'
@@ -561,7 +549,7 @@ function GoogleFormsQuizBuilderContent() {
                 {status}
               </span>
             </div>
-            
+
             <div className="gf-save-badge">
               {saveStatus === 'saved' && <><Check size={14} color="#137333" /> All changes saved in cloud</>}
               {saveStatus === 'saving' && <>Saving changes...</>}
@@ -573,14 +561,14 @@ function GoogleFormsQuizBuilderContent() {
 
         {/* Center Tabs (Google Forms Signature Navigation) */}
         <div className="gf-nav-tabs">
-          <button 
+          <button
             type="button"
             onClick={() => setActiveTab('questions')}
             className={`gf-tab-btn ${activeTab === 'questions' ? 'active' : ''}`}
           >
             Questions
           </button>
-          <button 
+          <button
             type="button"
             onClick={() => setActiveTab('settings')}
             className={`gf-tab-btn ${activeTab === 'settings' ? 'active' : ''}`}
@@ -663,7 +651,7 @@ function GoogleFormsQuizBuilderContent() {
 
       {/* 2. GOOGLE FORMS MAIN WORKSPACE CANVAS */}
       <div className="gf-main-container">
-        
+
         {/* Floating Toast Notification */}
         {toastMessage && (
           <div className="gf-toast">
@@ -820,6 +808,7 @@ function GoogleFormsQuizBuilderContent() {
                       )}
 
                       {/* Attached Visual Diagram preview */}
+                      {q.reviewId && <button type="button" className="gf-draft-btn" onClick={() => void reviseQuestion(q)}>Submit edited question for review</button>}
                       {q.drawingSvg && (
                         <div style={{
                           padding: '12px',
@@ -832,9 +821,9 @@ function GoogleFormsQuizBuilderContent() {
                           marginTop: '6px'
                         }}>
                           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                            <div 
+                            <div
                               style={{ width: '80px', height: '60px', background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', overflow: 'hidden', padding: '4px' }}
-                              dangerouslySetInnerHTML={{ __html: q.drawingSvg }}
+                              children={<img alt="Question diagram" src={'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(q.drawingSvg)} style={{ maxWidth: '100%' }} />}
                             />
                             <div>
                               <strong style={{ fontSize: '13px', color: '#202124', display: 'block' }}>Visual Diagram Attached</strong>
@@ -873,7 +862,7 @@ function GoogleFormsQuizBuilderContent() {
 
                   {/* Options List / Answer Configuration */}
                   <div className="gf-options-list">
-                    
+
                     {/* MCQ SINGLE & MULTIPLE */}
                     {(q.questionType === 'MCQ_SINGLE' || q.questionType === 'MCQ_MULTIPLE') && (
                       <>
@@ -1307,6 +1296,7 @@ function GoogleFormsQuizBuilderContent() {
               </div>
             </div>
 
+            <div className="gf-question-card"><h3>Availability & attempts</h3><label>Opens <input type="datetime-local" value={scheduleStart ? new Date(new Date(scheduleStart).getTime() - new Date(scheduleStart).getTimezoneOffset()*60000).toISOString().slice(0,16) : ''} onChange={e => { setScheduleStart(e.target.value ? new Date(e.target.value).toISOString() : ''); markUnsaved(); }} /></label><label> Closes <input type="datetime-local" value={scheduleEnd ? new Date(new Date(scheduleEnd).getTime() - new Date(scheduleEnd).getTimezoneOffset()*60000).toISOString().slice(0,16) : ''} onChange={e => { setScheduleEnd(e.target.value ? new Date(e.target.value).toISOString() : ''); markUnsaved(); }} /></label><p><label><input type="checkbox" checked={settings.allowRetries} onChange={e => { setSettings(p => ({ ...p, allowRetries: e.target.checked })); markUnsaved(); }} /> Allow retries</label> <label>Maximum attempts <input type="number" min={1} max={100} value={settings.maxAttempts} onChange={e => { setSettings(p => ({ ...p, maxAttempts: Number(e.target.value) })); markUnsaved(); }} /></label></p><p>Required items should be answered before submission; unanswered items receive zero. Written responses require teacher marking.</p></div>
             {/* Setting Card 2: Security & Anti-Cheating Sentinel */}
             <div className="gf-question-card" style={{ cursor: 'default' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
@@ -1365,6 +1355,7 @@ function GoogleFormsQuizBuilderContent() {
                 <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#202124' }}>Release Scores & Feedback</h3>
               </div>
 
+              <label style={{display:'block',padding:'0.75rem 0'}}>Result release policy <select className="gf-type-select" value={settings.resultVisibility} onChange={e=>{const policy=e.target.value as QuizSettings['resultVisibility'];setSettings(p=>({...p,resultVisibility:policy,immediateFeedback:policy==='IMMEDIATE'}));markUnsaved();}}><option value="IMMEDIATE">After submission</option><option value="MANUAL_RELEASE">Hold until teacher release</option><option value="SCHEDULED">At a scheduled time</option></select></label>{settings.resultVisibility==='SCHEDULED'&&<label>Release at <input type="datetime-local" required value={settings.resultReleaseDate?new Date(new Date(settings.resultReleaseDate).getTime()-new Date(settings.resultReleaseDate).getTimezoneOffset()*60000).toISOString().slice(0,16):''} onChange={e=>{setSettings(p=>({...p,resultReleaseDate:e.target.value?new Date(e.target.value).toISOString():null}));markUnsaved();}}/></label>}
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #dadce0' }}>
                 <div>
                   <strong style={{ fontSize: '14px', color: '#202124', display: 'block' }}>Immediately after each submission</strong>
@@ -1375,7 +1366,7 @@ function GoogleFormsQuizBuilderContent() {
                     type="checkbox"
                     checked={settings.immediateFeedback}
                     onChange={(e) => {
-                      setSettings(prev => ({ ...prev, immediateFeedback: e.target.checked }));
+                      setSettings(prev => ({ ...prev, immediateFeedback: e.target.checked, resultVisibility: e.target.checked ? 'IMMEDIATE' : 'MANUAL_RELEASE' }));
                       markUnsaved();
                     }}
                   />
@@ -1405,6 +1396,8 @@ function GoogleFormsQuizBuilderContent() {
         )}
       </div>
 
+      <div style={{ maxWidth: 770, margin: '1rem auto' }}>{questions.some(q => q.reviewId) && <button className="gf-draft-btn" onClick={() => void syncReviews()}>Sync approved question revisions</button>}</div>
+      {draftAvailable && <div role="status" style={{ maxWidth: 770, margin: '1rem auto', padding: '1rem', background: '#fef3c7', borderRadius: 10 }}><p>A local unsaved draft is available in this browser tab.</p><button onClick={restoreDraft}>Restore local draft</button><button onClick={() => { sessionStorage.removeItem(draftKey.current); setDraftAvailable(false); }}>Discard local draft</button></div>}
       {/* 3. ICONIC GOOGLE FORMS FLOATING TOOL DOCK */}
       <div className="gf-floating-toolbar">
         <button
@@ -1567,6 +1560,10 @@ function QuestionBankModal({
   onClose: () => void;
   onAddQuestions: (selected: QuizQuestionData[]) => void;
 }) {
+  const dialogProps = useDialog(true, 'Question Bank Modal', onClose);
+  const bankRequest = useRef(0);
+  const [bankPage, setBankPage] = useState(1), [bankHasMore, setBankHasMore] = useState(false);
+  const [bankError, setBankError] = useState('');
   const [selectedClass, setSelectedClass] = useState<string>(String(classLevel));
   const [bankQuestions, setBankQuestions] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -1575,24 +1572,26 @@ function QuestionBankModal({
   const [difficultyFilter, setDifficultyFilter] = useState('ALL');
 
   useEffect(() => {
-    fetchBank();
-  }, [boardId, selectedClass, subject, difficultyFilter]);
+    const timer = setTimeout(() => void fetchBank(), 300); return () => clearTimeout(timer);
+  }, [boardId, selectedClass, subject, difficultyFilter, search]);
 
-  async function fetchBank() {
+  async function fetchBank(page = 1) {
     try {
-      setLoading(true);
+      setLoading(true); setBankError(''); const requestId = ++bankRequest.current;
       const params = new URLSearchParams({
-        boardId,
+        page: String(page), boardId,
         classLevel: selectedClass,
         subject,
         difficulty: difficultyFilter
       });
       const res = await fetch(`/api/questions/bank?${params.toString()}`);
       const data = await res.json();
-      if (data.success) {
-        setBankQuestions(data.questions || []);
+      if (!res.ok) throw new Error(data.error?.message || 'Unable to load question bank.');
+      if (data.success && requestId === bankRequest.current) {
+        setBankQuestions(previous => page === 1 ? data.questions || [] : [...previous, ...(data.questions || [])]); setBankPage(page); setBankHasMore(Boolean(data.hasMore));
       }
     } catch (err) {
+      setBankQuestions([]); setBankError(err instanceof Error ? err.message : 'Unable to load question bank.');
       console.error('Failed to load bank questions:', err);
     } finally {
       setLoading(false);
@@ -1632,12 +1631,12 @@ function QuestionBankModal({
     onAddQuestions(chosen);
   };
 
-  const filtered = bankQuestions.filter(q => 
+  const filtered = bankQuestions.filter(q =>
     search ? q.stemText.toLowerCase().includes(search.toLowerCase()) : true
   );
 
   return (
-    <div className="gf-modal-backdrop">
+    <div {...dialogProps} className="gf-modal-backdrop">
       <div className="gf-modal-content">
         <div className="gf-modal-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -1647,7 +1646,7 @@ function QuestionBankModal({
               <span style={{ fontSize: '12px', color: '#5f6368' }}>Class {selectedClass === 'ALL' ? '9 & 10' : selectedClass} • {subject} • Solved Model Papers & Units</span>
             </div>
           </div>
-          <button onClick={onClose} className="gf-icon-btn">
+          <button aria-label="Close dialog" onClick={onClose} className="gf-icon-btn">
             <X size={20} />
           </button>
         </div>
@@ -1690,7 +1689,7 @@ function QuestionBankModal({
 
 
         {/* List */}
-        <div className="gf-modal-body">
+        <div className="gf-modal-body">{bankError && <p role="alert">{bankError}</p>}
           {loading ? (
             <div style={{ textAlign: 'center', padding: '40px', color: '#5f6368', fontSize: '13px' }}>Loading questions from bank...</div>
           ) : filtered.length === 0 ? (
@@ -1722,15 +1721,15 @@ function QuestionBankModal({
                       <p style={{ fontSize: '14px', fontWeight: 500, color: '#202124' }}>
                         <MathText text={item.stemText} />
                       </p>
-                      
+
                       {Array.isArray(item.options) && item.options.length > 0 && (
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', marginTop: '8px' }}>
                           {item.options.map((opt: any, oIdx: number) => (
-                            <div 
-                              key={oIdx} 
-                              style={{ 
-                                fontSize: '12px', 
-                                padding: '4px 8px', 
+                            <div
+                              key={oIdx}
+                              style={{
+                                fontSize: '12px',
+                                padding: '4px 8px',
                                 borderRadius: '4px',
                                 background: opt.isCorrect ? '#e6f4ea' : '#f1f3f4',
                                 color: opt.isCorrect ? '#137333' : '#3c4043',
@@ -1759,7 +1758,7 @@ function QuestionBankModal({
         </div>
 
         {/* Footer */}
-        <div className="gf-modal-footer">
+        <div className="gf-modal-footer">{bankHasMore && <button type="button" disabled={loading} onClick={() => void fetchBank(bankPage + 1)}>Load more questions</button>}
           <span style={{ fontSize: '13px', color: '#5f6368', marginRight: 'auto' }}>
             Selected: <strong style={{ color: '#673ab7' }}>{selectedIds.size}</strong> questions
           </span>
@@ -1794,6 +1793,10 @@ function AiGeneratorModal({
   onClose: () => void;
   onAddQuestions: (generated: QuizQuestionData[]) => void;
 }) {
+  const dialogProps = useDialog(true, 'Ai Generator Modal', onClose);
+  const [pastJobs, setPastJobs] = useState<any[]>([]);
+  const refreshJobs = () => { void fetch('/api/jobs?kind=AI_GENERATION').then(r => r.json()).then(data => setPastJobs(data.jobs || [])); };
+  useEffect(() => { refreshJobs(); const timer = setInterval(refreshJobs, 10000); return () => clearInterval(timer); }, []);
   const [topic, setTopic] = useState('Kinematics, Newton Laws & Gravitation');
   const [count, setCount] = useState(5);
   const [includeEquations, setIncludeEquations] = useState(true);
@@ -1827,16 +1830,27 @@ function AiGeneratorModal({
         })
       });
 
-      const data = await res.json();
+      let data = await res.json();
+      if (res.status === 202 && data.jobId) {
+        const jobId = data.jobId;
+        for (let poll = 0; poll < 300; poll++) {
+          await new Promise(resolve => setTimeout(resolve, 2000));
+          const statusResponse = await fetch('/api/jobs/' + encodeURIComponent(jobId));
+          const statusData = await statusResponse.json();
+          if (!statusResponse.ok) throw new Error(statusData.error?.message || 'Could not read generation status.');
+          if (statusData.job.status === 'FAILED') throw new Error(statusData.job.error || 'Generation failed.');
+          if (statusData.job.status === 'COMPLETED') { data = { success: true, ...statusData.job.result }; break; }
+        }
+      }
       if (data.success && Array.isArray(data.questions)) {
         setGeneratedList(data.questions);
         setSelectedIds(new Set(data.questions.map((_: any, idx: number) => idx)));
       } else {
-        alert(data.error || 'Failed to generate questions');
+        alert(typeof data.error === 'string' ? data.error : data.error?.message || 'Generation is still queued. Check the review queue when processing finishes.');
       }
     } catch (err: any) {
       console.error('AI Generation error:', err);
-      alert('Error connecting to Gemini AI generator');
+      alert(err.message || 'Error connecting to Gemini AI generator');
     } finally {
       setGenerating(false);
     }
@@ -1853,6 +1867,10 @@ function AiGeneratorModal({
       marks: q.marks || 1,
       isRequired: true,
       provenance: 'AI_GENERATED' as const,
+      reviewId: q.reviewId,
+      sloId: q.sloId,
+      correctAnswerText: q.correctAnswerText,
+      rubric: q.rubric,
       options: q.options || [],
       explanation: q.explanation || ''
     }));
@@ -1860,7 +1878,7 @@ function AiGeneratorModal({
   };
 
   return (
-    <div className="gf-modal-backdrop">
+    <div {...dialogProps} className="gf-modal-backdrop">
       <div className="gf-modal-content">
         <div className="gf-modal-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -1870,10 +1888,10 @@ function AiGeneratorModal({
               <span style={{ fontSize: '12px', color: '#5f6368' }}>AKU-EB Syllabus Aligned</span>
             </div>
           </div>
-          <button onClick={onClose} className="gf-icon-btn"><X size={20} /></button>
+          <button aria-label="Close dialog" onClick={onClose} className="gf-icon-btn"><X size={20} /></button>
         </div>
 
-        <div className="gf-modal-body">
+        <div className="gf-modal-body"><details><summary>Recent generation jobs</summary>{pastJobs.map(job => <p key={job.id}>{new Date(job.createdAt).toLocaleString()} — {job.status} {job.error} {Array.isArray(job.result?.questions) && <button type="button" onClick={() => { setGeneratedList(job.result.questions); setSelectedIds(new Set(job.result.questions.map((_: unknown, index: number) => index))); }}>Restore generated questions</button>}</p>)}</details>
           {generatedList.length === 0 ? (
             <>
               <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '12px' }}>
@@ -2024,6 +2042,7 @@ function ImportQuestionsModal({
   onClose: () => void;
   onImport: (questions: QuizQuestionData[]) => void;
 }) {
+  const dialogProps = useDialog(true, 'Import Questions Modal', onClose);
   const [jsonText, setJsonText] = useState(`[
   {
     "stemText": "What is the SI unit of electric current?",
@@ -2044,8 +2063,9 @@ function ImportQuestionsModal({
     try {
       const parsed = JSON.parse(jsonText);
       if (!Array.isArray(parsed)) throw new Error('Input must be a JSON array of questions');
+      parsed.forEach(item => questionSchema.parse(item));
       const formatted = parsed.map((item, idx) => ({
-        id: `q-imp-${Date.now()}-${idx}`,
+        ...item, id: `q-imp-${Date.now()}-${idx}`,
         orderIndex: 1,
         questionType: item.questionType || 'MCQ_SINGLE',
         stemText: item.stemText || '',
@@ -2064,14 +2084,14 @@ function ImportQuestionsModal({
   };
 
   return (
-    <div className="gf-modal-backdrop">
+    <div {...dialogProps} className="gf-modal-backdrop">
       <div className="gf-modal-content">
         <div className="gf-modal-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <Upload size={20} color="#673ab7" />
             <h3 style={{ fontSize: '16px', fontWeight: 600 }}>Import Questions JSON</h3>
           </div>
-          <button onClick={onClose} className="gf-icon-btn"><X size={20} /></button>
+          <button aria-label="Close dialog" onClick={onClose} className="gf-icon-btn"><X size={20} /></button>
         </div>
         <div className="gf-modal-body">
           <textarea
@@ -2112,10 +2132,11 @@ function StudentPreviewModal({
   questions: QuizQuestionData[];
   onClose: () => void;
 }) {
+  const dialogProps = useDialog(true, 'Student Preview Modal', onClose);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, any>>({});
 
   return (
-    <div className="gf-modal-backdrop">
+    <div {...dialogProps} className="gf-modal-backdrop">
       <div className="gf-modal-content" style={{ maxWidth: '780px', maxHeight: '90vh' }}>
         <div className="gf-modal-header" style={{ background: '#f8f9fa' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2151,7 +2172,7 @@ function StudentPreviewModal({
               </div>
 
               {q.drawingSvg && (
-                <div 
+                <div
                   style={{ padding: '8px', background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', maxWidth: '300px' }}
                   dangerouslySetInnerHTML={{ __html: q.drawingSvg }}
                 />
@@ -2266,6 +2287,7 @@ function ShareQuizModal({
   title: string;
   onClose: () => void;
 }) {
+  const dialogProps = useDialog(true, 'Share Quiz Modal', onClose);
   const [copiedCode, setCopiedCode] = useState(false);
   const [copiedUrl, setCopiedUrl] = useState(false);
   const shareUrl = `https://riselearner.com/?code=${code}`;
@@ -2283,7 +2305,7 @@ function ShareQuizModal({
   };
 
   return (
-    <div className="gf-modal-backdrop" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+    <div {...dialogProps} className="gf-modal-backdrop" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="gf-modal-content" style={{ maxWidth: '520px', padding: '28px', borderRadius: '16px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -2295,7 +2317,7 @@ function ShareQuizModal({
               <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748b' }}>Distribute this code or link directly to students</p>
             </div>
           </div>
-          <button onClick={onClose} className="gf-icon-btn">
+          <button aria-label="Close dialog" onClick={onClose} className="gf-icon-btn">
             <X size={20} />
           </button>
         </div>

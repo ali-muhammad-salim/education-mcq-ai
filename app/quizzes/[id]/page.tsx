@@ -3,14 +3,13 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import prisma from '@/lib/prisma';
 import { getFallbackPaper } from '@/lib/paperDataService';
-import { getQuizFromStore } from '@/lib/submissionStore';
 import { PlayCircle, Clock, BookOpen, CheckCircle, ArrowRight, ShieldCheck } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
 interface PageProps {
-  params: Promise<{ id: string }> | { id: string };
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }> | { [key: string]: string | string[] | undefined };
+  params: Promise<{ id: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export default async function QuizDetailPage({ params }: PageProps) {

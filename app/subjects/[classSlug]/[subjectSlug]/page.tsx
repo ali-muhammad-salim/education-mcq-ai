@@ -1,16 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { 
-  FileText, BookOpen, Award, CheckCircle2, Download, 
-  Layers, ExternalLink, ArrowRight, Sparkles, Check, 
+import { notFound, redirect } from 'next/navigation';
+import {
+  FileText, BookOpen, Award, CheckCircle2, Download,
+  Layers, ExternalLink, ArrowRight, Sparkles, Check,
   HelpCircle, Calendar, GraduationCap, ChevronRight, BookMarked
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubjectDirectoryArchive from '@/components/SubjectDirectoryArchive';
 
 interface PageProps {
-  params: Promise<{ classSlug: string; subjectSlug: string }> | { classSlug: string; subjectSlug: string };
+  params: Promise<{ classSlug: string; subjectSlug: string }>;
 }
 
 const CLASS_NAMES: Record<string, { name: string; grade: number; levelLabel: string }> = {
@@ -165,7 +165,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
 
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '5rem' }}>
-      
+
       {/* Authentic Breadcrumb Navigation */}
       <Breadcrumbs
         items={[
@@ -176,7 +176,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
       />
 
       {/* Hero Header */}
-      <div 
+      <div
         style={{
           background: 'linear-gradient(135deg, #0b5e4a 0%, #157a62 100%)',
           borderRadius: '16px',
@@ -255,7 +255,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
 
         {pastPaper1Code && pastPaper2Code ? (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '1.5rem' }}>
-            
+
             {/* Paper 1: MCQs */}
             <div style={{
               background: '#ffffff',
@@ -440,7 +440,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
 
         {modelPaper1Code && modelPaper2Code ? (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '1.5rem' }}>
-            
+
             {/* Model Paper 1 */}
             <div style={{
               background: '#ffffff',
@@ -548,9 +548,9 @@ export default async function SubjectHubPage({ params }: PageProps) {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: '1rem' }}>
           {subjectInfo.chapters.map((chap, cIdx) => (
-            <div 
+            <div
               key={cIdx}
               style={{
                 background: '#ffffff',
@@ -653,8 +653,8 @@ export default async function SubjectHubPage({ params }: PageProps) {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
-          
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '1.25rem' }}>
+
           <div style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '1.25rem' }}>
             <h4 style={{ fontSize: '1.1rem', color: '#111827', margin: '0 0 0.35rem 0' }}>
               Dedicated {subjectInfo.title} Curriculum PDF
@@ -662,7 +662,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
             <p style={{ fontSize: '0.85rem', color: '#6b7280', margin: '0 0 1rem 0' }}>
               Full course learning outcomes, scheme of assessment, and exam pattern.
             </p>
-            <a 
+            <a
               href="/materials/ssc/physics/ssc-1/physics-ssc-i-syllabus-grade-9-dedicated.pdf"
               target="_blank"
               style={{ color: '#0b5e4a', fontWeight: 700, fontSize: '0.88rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
@@ -678,7 +678,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
             <p style={{ fontSize: '0.85rem', color: '#6b7280', margin: '0 0 1rem 0' }}>
               Weekly breakdown of instructional hours and laboratory experiment sessions.
             </p>
-            <a 
+            <a
               href="/materials/ssc/physics/ssc-1/pacing-guide-2025-for-ssc-i-physics.pdf"
               target="_blank"
               style={{ color: '#0b5e4a', fontWeight: 700, fontSize: '0.88rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
@@ -694,7 +694,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
             <p style={{ fontSize: '0.85rem', color: '#6b7280', margin: '0 0 1rem 0' }}>
               Required student practical demonstrations, apparatus lists, and reporting rubrics.
             </p>
-            <a 
+            <a
               href="/materials/ssc/physics/ssc-1/ssc-i-physics-sample-practical.pdf"
               target="_blank"
               style={{ color: '#0b5e4a', fontWeight: 700, fontSize: '0.88rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}

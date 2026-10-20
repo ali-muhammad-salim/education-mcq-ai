@@ -12,6 +12,7 @@ import { SubjectMeta } from '@/lib/subjectMetadata';
 import MathText from '@/components/MathText';
 import StructuredContent from '@/components/StructuredContent';
 import { resolveQuestionDiagram } from '@/lib/diagramResolver';
+import past2025 from '@/data/physics/ssc1_2025_past_mcqs.json';
 import TakeQuizModal from '@/components/TakeQuizModal';
 
 interface Props {
@@ -197,11 +198,12 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
   const unitsList = classDef.roman === 'IX' ? CLASS_IX_UNITS : CLASS_X_UNITS;
 
   // Filtered Questions for Practice Mode
-  const activeQuestions = questions.filter(q => {
+  const questionPool = hubTab === 'past_papers' ? (classDef.roman === 'IX' ? past2025.map(q => ({ ...q, questionNumber: Number(q.questionNumber), cognitiveLevel: ({K:'Remembering', U:'Understanding', A:'Application'} as Record<string,string>)[q.cognitiveLevel] || q.cognitiveLevel })) : []) : questions;
+  const activeQuestions = questionPool.filter(q => {
     // If a unit is selected, filter by question number range
     if (selectedUnit) {
       const qNum = q.questionNumber || 0;
-      if (qNum < selectedUnit.qRange[0] || qNum > selectedUnit.qRange[1]) {
+      if (hubTab === 'past_papers' ? !String(q.slo || '').startsWith(selectedUnit.unitNumber + '.') : qNum < selectedUnit.qRange[0] || qNum > selectedUnit.qRange[1]) {
         return false;
       }
     }
@@ -256,7 +258,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
   // Score stats
   const answeredCount = Object.keys(selectedAnswers).length;
   const correctCount = Object.entries(selectedAnswers).filter(([qNum, choice]) => {
-    const q = questions.find(item => item.questionNumber === parseInt(qNum));
+    const q = questionPool.find(item => Number(item.questionNumber) === Number(qNum));
     const correctKey = q?.correctOption || q?.correctAnswer;
     return q && correctKey === choice;
   }).length;
@@ -355,7 +357,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
           }}>
             {[
               { id: 'chapter_wise', label: '📖 Chapter Wise MCQs', count: `${unitsList.length} Units` },
-              { id: 'past_papers', label: '📄 Chapter Wise MCQs (Past Papers)', count: '2018–2024 Archive' },
+              { id: 'past_papers', label: '📄 Chapter Wise MCQs (Past Papers)', count: '2025 Archive' },
               { id: 'full_book', label: '🏆 Full Book MCQs & Mock Exams', count: '4 Full Papers' },
               { id: 'cognitive', label: '⚡ Cognitive Domain Sprints', count: 'K / U / A Levels' },
             ].map(tab => (
@@ -400,11 +402,11 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                   Chapter-Wise Curriculum Practice Bank
                 </h2>
                 <p style={{ fontSize: '0.92rem', color: '#64748b', margin: 0 }}>
-                  Master individual units with interactive feedback, verified answer keys, and detailed conceptual rationales.
+                  Practice model question groups with answer feedback. Chapter assignments are provisional and are awaiting curriculum review.
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.25rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '1.25rem' }}>
                 {unitsList.map((unit) => {
                   const unitQCount = unit.qRange[1] - unit.qRange[0] + 1;
                   return (
@@ -484,14 +486,14 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
             <div>
               <div style={{ marginBottom: '1.5rem' }}>
                 <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#111827', margin: '0 0 0.35rem 0' }}>
-                  Chapter-Wise Past Examination Questions (2018–2024)
+                  Chapter-Wise Past Examination Questions (2025)
                 </h2>
                 <p style={{ fontSize: '0.92rem', color: '#64748b', margin: 0 }}>
                   Authentic questions asked in past AKU-EB Annual Examinations categorized chapter by chapter.
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.25rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '1.25rem' }}>
                 {unitsList.map((unit) => (
                   <div
                     key={unit.unitNumber}
@@ -520,7 +522,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                           PAST PAPERS • UNIT {unit.unitNumber}
                         </span>
                         <span style={{ fontSize: '0.8rem', color: '#0b5e4a', fontWeight: 700 }}>
-                          {unit.pastPaperCount} Verified Items
+                          {questionPool.filter(q => String(q.slo || '').startsWith(unit.unitNumber + '.')).length} Verified Items
                         </span>
                       </div>
 
@@ -529,7 +531,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                       </h3>
 
                       <p style={{ fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5, margin: 0 }}>
-                        Features questions from Annual 2024, Annual 2023, Annual 2022, and Annual 2019 examinations.
+                        Questions from the available 2025 paper, grouped by supplied SLO mappings.
                       </p>
                     </div>
 
@@ -575,7 +577,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.25rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '1.25rem' }}>
                 {[
                   {
                     title: 'Physics Model Paper I (Official Standard)',
@@ -710,7 +712,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '1.25rem' }}>
                 <div style={{ background: '#ffffff', border: '1.5px solid #fef3c7', borderRadius: '14px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
                   <span style={{ background: '#fef3c7', color: '#92400e', fontWeight: 800, fontSize: '0.78rem', padding: '3px 9px', borderRadius: '6px' }}>
                     K-LEVEL • REMEMBERING
@@ -850,7 +852,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
 
             <div style={{ display: 'flex', gap: '0.5rem' }}>
               <button
-                onClick={() => setQuizModalOpen(true)}
+                disabled={!activeQuestions.length} onClick={() => setQuizModalOpen(true)}
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -1173,7 +1175,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
         isOpen={quizModalOpen}
         onClose={() => setQuizModalOpen(false)}
         paperTitle={practiceTitle}
-        paperCode={`${meta.code || 'PHY'}-${classDef.roman}-MCQS`}
+        paperCode={`PHY-${classDef.roman}${hubTab === 'past_papers' ? '-2025' : ''}-P1-SET-${activeQuestions.map(q => Number(q.questionNumber)).sort((a, b) => a - b).join('-')}`}
         questions={activeQuestions}
       />
     </div>

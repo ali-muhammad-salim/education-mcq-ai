@@ -1,13 +1,17 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { 
-  Sparkles, CheckCircle2, XCircle, AlertTriangle, Clock, 
-  ArrowRight, ArrowLeft, ShieldCheck, Award, RotateCcw, 
+import {
+  Sparkles, CheckCircle2, XCircle, AlertTriangle, Clock,
+  ArrowRight, ArrowLeft, ShieldCheck, Award, RotateCcw,
   Eye, EyeOff, Check, X, FileText, ChevronRight, User, Lock, Mail, Smartphone,
   ShieldAlert, Shield, Info, Maximize, Minimize
 } from 'lucide-react';
 import MathText from '@/components/MathText';
+import AuthModal from '@/components/AuthModal';
+import { useDialog } from '@/lib/use-dialog';
+import { useSecureExam } from '@/lib/use-secure-exam';
+import { z } from 'zod';
 import StructuredContent from '@/components/StructuredContent';
 import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 
@@ -59,133 +63,14 @@ interface TakeQuizModalProps {
   questions: Question[];
 }
 
-// Fisher-Yates array shuffle
-function shuffleArray<T>(array: T[]): T[] {
-  if (!array || !Array.isArray(array)) return [];
-  const arr = [...array];
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
-// Helper to safely parse source region
-const parseSourceRegion = (sourceRegion: any) => {
-  if (!sourceRegion) return {};
-  if (typeof sourceRegion === 'string') {
-    try { return JSON.parse(sourceRegion); } catch { return {}; }
-  }
-  return sourceRegion;
-};
-
-// Prepares questions with random question order AND randomized options (A, B, C, D)
-function randomizeQuestionsAndOptions(rawQuestions: Question[]): ShuffledQuestion[] {
-  if (!rawQuestions || !Array.isArray(rawQuestions) || rawQuestions.length === 0) {
-    return [];
-  }
-
-  const shuffledRaw = shuffleArray(rawQuestions);
-
-  return shuffledRaw.map((q, qIndex) => {
-    const anyQ = q as any;
-    const meta = parseSourceRegion(q.sourceRegion);
-
-    let rawChoices: Record<string, string> = meta.choices || meta.options || anyQ.options || anyQ.choices;
-    if (Array.isArray(rawChoices)) {
-      const mapped: Record<string, string> = {};
-      rawChoices.forEach((item, idx) => {
-        const key = item.id || String.fromCharCode(65 + idx);
-        mapped[key] = item.text || String(item);
-      });
-      rawChoices = mapped;
-    }
-
-    // Normalize keys to uppercase 'A', 'B', 'C', 'D'
-    const normalizedChoices: Record<string, string> = {};
-    if (rawChoices && typeof rawChoices === 'object') {
-      Object.entries(rawChoices).forEach(([k, v]) => {
-        const upperKey = k.trim().toUpperCase();
-        if (['A', 'B', 'C', 'D'].includes(upperKey)) {
-          normalizedChoices[upperKey] = String(v);
-        }
-      });
-    }
-
-    if (Object.keys(normalizedChoices).length === 0) {
-      if (rawChoices && typeof rawChoices === 'object' && Object.keys(rawChoices).length > 0) {
-        const vals = Object.values(rawChoices);
-        ['A', 'B', 'C', 'D'].forEach((k, idx) => {
-          normalizedChoices[k] = vals[idx] !== undefined ? String(vals[idx]) : `Option ${k}`;
-        });
-      } else {
-        normalizedChoices['A'] = 'Option A';
-        normalizedChoices['B'] = 'Option B';
-        normalizedChoices['C'] = 'Option C';
-        normalizedChoices['D'] = 'Option D';
-      }
-    }
-
-    // Extract correct answer safely
-    const rawCorrect = String(
-      meta.correct_answer || meta.correctOption || anyQ.correctOption || anyQ.correctAnswer || anyQ.answer || 'A'
-    ).trim();
-    const correctMatch = rawCorrect.match(/([A-D])/i);
-    const origCorrect = correctMatch ? correctMatch[1].toUpperCase() : 'A';
-    const correctText = normalizedChoices[origCorrect] || normalizedChoices['A'] || Object.values(normalizedChoices)[0] || '';
-
-    // Permute choice text values
-    const choiceKeys = ['A', 'B', 'C', 'D'].filter(k => normalizedChoices[k] !== undefined);
-    const textValues = choiceKeys.map(k => normalizedChoices[k]);
-    const shuffledValues = shuffleArray(textValues);
-
-    const randomizedChoices: Record<string, string> = {};
-    let randomizedCorrectKey = 'A';
-
-    choiceKeys.forEach((key, idx) => {
-      randomizedChoices[key] = shuffledValues[idx];
-      if (shuffledValues[idx] === correctText) {
-        randomizedCorrectKey = key;
-      }
-    });
-
-    const origExpl = meta.explanation || anyQ.explanation || 'Refer to official AKU-EB Syllabus Student Learning Outcomes for detailed conceptual background.';
-    const safeRegexKey = origCorrect.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const updatedExpl = origExpl.replace(new RegExp(`Option\\s+${safeRegexKey}`, 'gi'), `Option ${randomizedCorrectKey}`);
-
-    const topic = q.topics?.[0]?.topic;
-    const slo = q.slos?.[0]?.slo;
-    const questionText = q.questionText || anyQ.stem || anyQ.text || anyQ.stemText || 'Question';
-
-    return {
-      id: q.id || `q-${qIndex + 1}`,
-      displayNumber: qIndex + 1,
-      originalQuestionNumber: q.questionNumber || (anyQ.questionNumber ? String(anyQ.questionNumber) : String(qIndex + 1)),
-      questionText,
-      questionType: q.questionType || anyQ.questionType || 'MCQ_SINGLE',
-      marks: q.marks || anyQ.marks || 1,
-      difficulty: q.difficulty || anyQ.cognitiveLevel || 'U',
-      diagramUrl: meta.diagram_url || meta.diagramUrl || anyQ.diagramUrl || undefined,
-      diagramBased: q.diagramBased !== undefined ? q.diagramBased : (anyQ.diagramBased !== undefined ? anyQ.diagramBased : meta.diagramBased),
-      isDiagram: anyQ.isDiagram !== undefined ? anyQ.isDiagram : (meta.isDiagram !== undefined ? meta.isDiagram : q.diagramBased),
-      sourceRegion: q.sourceRegion || anyQ.sourceRegion,
-      options: randomizedChoices,
-      correctOption: randomizedCorrectKey,
-      explanation: updatedExpl,
-      topicName: topic?.name || meta.slo_details?.topic_name || anyQ.unitName || 'General Physics',
-      topicNumber: topic?.topicNumber,
-      sloCode: slo?.code || meta.slo
-    };
-  });
-}
-
 export default function TakeQuizModal({
   isOpen,
   onClose,
-  paperTitle,
+  paperTitle: initialPaperTitle,
   paperCode,
   questions
 }: TakeQuizModalProps) {
+  const dialogProps = useDialog(isOpen, 'Assessment', onClose);
   // Navigation / Phase State: 'auth' -> 'setup' -> 'active' -> 'completed'
   const [phase, setPhase] = useState<'auth' | 'setup' | 'active' | 'completed'>('setup');
   const [loadingQuizQuestions, setLoadingQuizQuestions] = useState<boolean>(false);
@@ -237,755 +122,76 @@ export default function TakeQuizModal({
   const [completionData, setCompletionData] = useState<any>(null);
   const [reviewFilter, setReviewFilter] = useState<'all' | 'incorrect' | 'correct'>('incorrect');
 
-  // Check existing session on modal open & reset when closed
+  const engine = useSecureExam({ isOpen: isOpen && phase === 'active', paperCode, practiceDurationMin: selectedDurationMin, practiceUntimed: !isTimed });
+  const [preview, setPreview] = useState<{ title: string; count: number; practice: boolean } | null>(null);
+  const paperTitle = engine.exam?.quizTitle || preview?.title || initialPaperTitle;
+  useEffect(() => { if (phase === 'setup') setLoadingQuizQuestions(false); }, [phase]);
   useEffect(() => {
-    if (!isOpen) {
-      setPhase('setup');
-      setCurrentIndex(0);
-      setUserSelections({});
-      setCompletionData(null);
-      setScreenshotAlert(false);
-      setCheatWarningVisible(false);
-      setShowSwitchAuditModal(false);
-      setIsWindowMasked(false);
-      setStartQuizError(null);
-      return;
-    }
-
-    const checkActiveUser = async () => {
-      try {
-        const res = await fetch('/api/auth/me');
-        if (res.ok) {
-          const data = await res.json();
-          if (data?.user) {
-            setStudent({
-              id: data.user.id,
-              name: data.user.name,
-              classLevel: 'Class IX'
-            });
-            setPhase('setup');
-            return;
-          }
-        }
-      } catch (e) {
-        // Fall back to setup
+    if (!engine.submitted) return;
+    const resultSchema = z.object({ score: z.number(), maxMarks: z.number(), percentage: z.number(), studentName: z.string(), submittedAt: z.string().nullable(), tabSwitchCount: z.number(), status: z.string(), canViewCorrectAnswers: z.boolean(),
+      questions: z.array(z.object({ questionId: z.string(), marks: z.number(), scoreAwarded: z.number().nullable().optional(), explanation: z.string().optional(), options: z.array(z.object({ id: z.string().optional(), text: z.string(), isCorrect: z.boolean().optional() })) })) });
+    void fetch('/api/quizzes/' + encodeURIComponent(engine.submitted.quizId) + '/results?attemptId=' + encodeURIComponent(engine.submitted.attemptId)).then(async response => {
+      if (!response.ok) { setCompletionData({ pending: true }); setPhase('completed'); return; }
+      const result = resultSchema.parse((await response.json()).result);
+      if (result.status !== 'GRADED') { setCompletionData({ pending: true }); setPhase('completed'); return; }
+      const reviewed = activeQuestions.map(q => { const server = result.questions.find(r => r.questionId === q.id), source = engine.exam?.questions.find(s => s.id === q.id);
+        const correct = server?.options.find(o => o.isCorrect)?.id, index = source?.options.findIndex(o => o.id === correct) ?? -1;
+        return { ...q, correctOption: index >= 0 ? String.fromCharCode(65 + index) : '', explanation: server?.explanation || '' };
+      });
+      setActiveQuestions(reviewed);
+      setCompletionData({ ...result, totalMarks: result.maxMarks, weakTopics: [], dynamicMessage: 'Your assessment has been submitted and graded.',
+        incorrectQuestions: reviewed.filter(q => { const server = result.questions.find(r => r.questionId === q.id); return server?.scoreAwarded !== null && server?.scoreAwarded !== undefined && server.scoreAwarded < server.marks; }).map(q => ({ ...q, questionNumber: q.displayNumber, selectedOption: userSelections[String(q.displayNumber)] })) });
+      setPhase('completed');
+    }).catch(() => { setCompletionData({ pending: true }); setPhase('completed'); });
+  }, [engine.submitted]);
+  useEffect(() => {
+    if (!isOpen) return;
+    void fetch('/api/quizzes/' + encodeURIComponent(paperCode)).then(r => r.json()).then(data => {
+      if (data.quiz) {
+        const practice = String(data.quiz.id).startsWith('practice-');
+        setPreview({ title: data.quiz.title, count: data.quiz.questions.length, practice });
+        if (!practice) { setSelectedDurationMin(data.quiz.durationMin || 45); setIsTimed(true); }
       }
-      setPhase('setup');
-    };
-
-    checkActiveUser();
+    }).catch(() => undefined);
+  }, [isOpen, paperCode]);
+  useEffect(() => {
+    if (!isOpen) { setPhase('setup'); setCurrentIndex(0); return; }
+    void fetch('/api/auth/me').then(r => r.json()).then(data => { if (data.user) setStudent(data.user); }).catch(() => undefined);
   }, [isOpen]);
-
-  // Tab-Switch & Departure Duration Tracking (Standard Page Visibility API)
-  // Ensures removing/dismissing a notification NEVER triggers a tab switch!
+  useEffect(() => { if (engine.auth) { engine.closeAuth(); setPhase('auth'); } }, [engine.auth]);
+  useEffect(() => { setTimeLeftSeconds(engine.remaining); }, [engine.remaining]);
+  useEffect(() => { setTabSwitchCount(engine.tabSwitchCount); }, [engine.tabSwitchCount]);
   useEffect(() => {
-    if (phase !== 'active') return;
-
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        // Candidate switched away from examination tab
-        isAwayRef.current = true;
-        switchLeaveTimeRef.current = Date.now();
-        setIsWindowMasked(true); // Content blur shield
-      } else {
-        // Candidate returned back to examination tab
-        setIsWindowMasked(false);
-        if (isAwayRef.current && switchLeaveTimeRef.current) {
-          const durationMs = Date.now() - switchLeaveTimeRef.current;
-          // Ignore micro-flickers under 500ms
-          if (durationMs >= 500) {
-            const durationSec = Math.max(1, Math.round(durationMs / 1000));
-            const leftDate = new Date(switchLeaveTimeRef.current);
-            const returnDate = new Date();
-
-            const newRecord: TabSwitchRecord = {
-              index: tabSwitchLogs.length + 1,
-              leftAt: leftDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
-              returnedAt: returnDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
-              durationSeconds: durationSec
-            };
-
-            setTabSwitchLogs(prev => [...prev, newRecord]);
-            setTabSwitchCount(prev => prev + 1);
-            setLastSwitchDuration(durationSec);
-            setCheatWarningVisible(true);
-          }
-          isAwayRef.current = false;
-          switchLeaveTimeRef.current = null;
-        }
-      }
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, [phase, tabSwitchLogs.length]);
-
-  // Fullscreen tracking & helper
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      setIsFullscreen(Boolean(document.fullscreenElement));
-    };
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => {
-      document.removeEventListener('fullscreenchange', handleFullscreenChange);
-    };
-  }, []);
-
-  const toggleFullscreen = () => {
-    try {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().then(() => {
-          setIsFullscreen(true);
-        }).catch(() => {});
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen().then(() => {
-            setIsFullscreen(false);
-          }).catch(() => {});
-        }
-      }
-    } catch (e) {}
-  };
-
-  // Multi-pass cascading clipboard poisoner to neutralize screenshot capture
-  const poisonClipboard = useCallback(() => {
-    const candidateName = student?.name || 'Proctored Candidate';
-    const protectionNotice = 
-      `🔒 [AKU-EB EXAMINATION CONTENT PROTECTED]\n` +
-      `Screen capture is disabled during the active examination.\n` +
-      `Candidate: ${candidateName}\n` +
-      `Paper: ${paperCode}\n` +
-      `Timestamp: ${new Date().toLocaleString()}`;
-
-    // 1. Synchronous fallback via hidden textarea (executes immediately on event thread)
-    try {
-      const textarea = document.getElementById('aku-clipboard-poison-textarea') as HTMLTextAreaElement | null;
-      if (textarea) {
-        textarea.value = protectionNotice;
-        textarea.select();
-        textarea.setSelectionRange(0, 99999);
-        document.execCommand('copy');
-      }
-    } catch (e) {}
-
-    // 2. Modern Clipboard API writeText
-    try {
-      if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(protectionNotice).catch(() => {});
-      }
-    } catch (e) {}
-
-    // 3. Image format overwrite (wiping image clipboard if supported)
-    try {
-      if (typeof ClipboardItem !== 'undefined' && navigator.clipboard && navigator.clipboard.write) {
-        const canvas = document.createElement('canvas');
-        canvas.width = 1;
-        canvas.height = 1;
-        const ctx = canvas.getContext('2d');
-        if (ctx) {
-          ctx.fillStyle = '#ffffff';
-          ctx.fillRect(0, 0, 1, 1);
-          canvas.toBlob((blob) => {
-            if (blob) {
-              try {
-                const item = new ClipboardItem({ 'image/png': blob });
-                navigator.clipboard.write([item]).catch(() => {});
-              } catch (err) {}
-            }
-          });
-        }
-      }
-    } catch (e) {}
-  }, [student?.name, paperCode]);
-
-  const poisonClipboardCascading = useCallback(() => {
-    poisonClipboard();
-    // Cascading delayed sweeps to guarantee overwriting OS-level clipboard writes (at keydown, keyup, and driver latency delays)
-    [20, 50, 100, 200, 350, 600, 1000, 1500].forEach((ms) => {
-      setTimeout(poisonClipboard, ms);
-    });
-  }, [poisonClipboard]);
-
-  const triggerScreenshotDefense = useCallback(() => {
-    // 1. Synchronous direct DOM shielding (0ms latency, precedes browser paint)
-    const blackoutEl = document.getElementById('aku-fullscreen-blackout');
-    const activeBody = document.getElementById('aku-active-quiz-content');
-    if (blackoutEl) {
-      blackoutEl.style.display = 'flex';
-      blackoutEl.style.opacity = '1';
-      blackoutEl.style.pointerEvents = 'all';
-    }
-    if (activeBody) {
-      activeBody.style.filter = 'blur(60px)';
-      activeBody.style.opacity = '0';
-      activeBody.style.visibility = 'hidden';
-      activeBody.setAttribute('aria-hidden', 'true');
-    }
-
-    // 2. Multi-pass cascading clipboard protection
-    poisonClipboardCascading();
-
-    // 3. React state update
-    setScreenshotAlert(true);
-    setScreenshotAttemptCount((prev) => prev + 1);
-
-    // 4. Auto-restore after 2.2 seconds if user does not click resume button
-    setTimeout(() => {
-      setScreenshotAlert(false);
-      if (blackoutEl) {
-        blackoutEl.style.display = 'none';
-        blackoutEl.style.opacity = '0';
-        blackoutEl.style.pointerEvents = 'none';
-      }
-      if (activeBody) {
-        activeBody.style.filter = 'none';
-        activeBody.style.opacity = '1';
-        activeBody.style.visibility = 'visible';
-        activeBody.removeAttribute('aria-hidden');
-      }
-    }, 2200);
-  }, [poisonClipboardCascading]);
-
-  // Clean dismissal of screenshot defense or focus loss shield
-  const dismissScreenshotDefense = useCallback(() => {
-    setScreenshotAlert(false);
-    setIsFocusLost(false);
-    const blackoutEl = document.getElementById('aku-fullscreen-blackout');
-    const activeBody = document.getElementById('aku-active-quiz-content');
-    if (blackoutEl) {
-      blackoutEl.style.display = 'none';
-      blackoutEl.style.opacity = '0';
-      blackoutEl.style.pointerEvents = 'none';
-    }
-    if (activeBody) {
-      activeBody.style.filter = 'none';
-      activeBody.style.opacity = '1';
-      activeBody.style.visibility = 'visible';
-      activeBody.removeAttribute('aria-hidden');
-    }
-    if (typeof window !== 'undefined') {
-      window.focus();
-    }
-  }, []);
-
-  // Robust Anti-Screenshot, Windows Snipping (Win+Shift+S), Mobile Buttons, and Assistant Concealment Engine
-  useEffect(() => {
-    if (phase !== 'active') return;
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // 1. PrintScreen key (any code / key variant across Windows, Mac, Linux)
-      const isPrtScn = 
-        e.key === 'PrintScreen' || 
-        e.keyCode === 44 || 
-        e.which === 44 || 
-        e.code === 'PrintScreen' ||
-        e.key === 'Snapshot' ||
-        e.code === 'Snapshot';
-
-      if (isPrtScn) {
-        e.preventDefault();
-        e.stopPropagation();
-        triggerScreenshotDefense();
-        return;
-      }
-
-      // 2. Windows Key interception (preempts Win + Shift + S before Snipping Tool can capture)
-      const isMetaKey = 
-        e.key === 'Meta' || 
-        e.key === 'OS' || 
-        e.code === 'MetaLeft' || 
-        e.code === 'MetaRight';
-
-      if (isMetaKey) {
-        // Synchronously shield DOM immediately
-        triggerScreenshotDefense();
-        return;
-      }
-
-      // 3. Windows Snipping / Capture: Win + Shift + S or Ctrl + Shift + S or Alt + Shift + S
-      if ((e.metaKey || e.ctrlKey || e.altKey) && e.shiftKey && (e.key === 'S' || e.key === 's' || e.code === 'KeyS')) {
-        e.preventDefault();
-        e.stopPropagation();
-        triggerScreenshotDefense();
-        return;
-      }
-
-      // 4. Windows / Mac save or screen shortcuts (Ctrl+S / Cmd+S)
-      if ((e.metaKey || e.ctrlKey) && (e.key === 'S' || e.key === 's' || e.code === 'KeyS')) {
-        e.preventDefault();
-        e.stopPropagation();
-        triggerScreenshotDefense();
-        return;
-      }
-
-      // 5. Mac Screenshot shortcuts: Cmd + Shift + 3 / 4 / 5 / 6
-      if (e.metaKey && e.shiftKey && ['3', '4', '5', '6'].includes(e.key)) {
-        e.preventDefault();
-        e.stopPropagation();
-        triggerScreenshotDefense();
-        return;
-      }
-
-      // 6. Mobile hardware volume buttons (frequently paired with Power for Android screenshots)
-      if (
-        ['VolumeDown', 'VolumeUp', 'AudioVolumeDown', 'AudioVolumeUp'].includes(e.key) ||
-        ['AudioVolumeDown', 'AudioVolumeUp'].includes(e.code)
-      ) {
-        e.preventDefault();
-        triggerScreenshotDefense();
-        return;
-      }
-
-      // 7. Alt + PrintScreen
-      if (e.altKey && (isPrtScn || e.key === 'PrintScreen')) {
-        e.preventDefault();
-        e.stopPropagation();
-        triggerScreenshotDefense();
-        return;
-      }
-
-      // 8. Print Dialog: Ctrl+P or Cmd+P
-      if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p' || e.code === 'KeyP')) {
-        e.preventDefault();
-        e.stopPropagation();
-        triggerScreenshotDefense();
-        return;
-      }
-
-      // 9. Developer Tools: F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
-      if (
-        e.key === 'F12' ||
-        ((e.ctrlKey || e.metaKey) && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key)) ||
-        ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u'))
-      ) {
-        e.preventDefault();
-        e.stopPropagation();
-        return;
-      }
-    };
-
-    const handleKeyUp = (e: KeyboardEvent) => {
-      const isPrtScn = 
-        e.key === 'PrintScreen' || 
-        e.keyCode === 44 || 
-        e.which === 44 || 
-        e.code === 'PrintScreen' ||
-        e.key === 'Snapshot' ||
-        e.code === 'Snapshot';
-
-      const isMeta = 
-        e.key === 'Meta' || 
-        e.key === 'OS' || 
-        e.code === 'MetaLeft' || 
-        e.code === 'MetaRight';
-
-      if (isPrtScn || isMeta) {
-        e.preventDefault();
-        triggerScreenshotDefense();
-      }
-    };
-
-    const handleWindowBlur = () => {
-      // Whenever focus is lost (Snipping Tool, Alt+Tab, Google Assistant, Power button), immediately conceal quiz
-      setIsFocusLost(true);
-      poisonClipboardCascading();
-      const activeBody = document.getElementById('aku-active-quiz-content');
-      if (activeBody) {
-        activeBody.style.filter = 'blur(60px)';
-        activeBody.style.opacity = '0';
-        activeBody.style.visibility = 'hidden';
-        activeBody.setAttribute('aria-hidden', 'true');
-      }
-    };
-
-    const handleWindowFocus = () => {
-      // Refocused: Poison clipboard again in case a capture was attempted while outside
-      poisonClipboardCascading();
-    };
-
-    // Mobile touch protection: prevent long-press escalation near navigation bar
-    let touchHoldTimeout: NodeJS.Timeout | null = null;
-    const handleTouchStart = (e: TouchEvent) => {
-      const touch = e.touches[0];
-      if (touch) {
-        // If touch starts within bottom 55px (near Android nav bar), stop propagation
-        if (window.innerHeight - touch.clientY < 55) {
-          e.stopPropagation();
-        }
-      }
-      if (touchHoldTimeout) clearTimeout(touchHoldTimeout);
-      touchHoldTimeout = setTimeout(() => {
-        poisonClipboardCascading();
-      }, 350);
-    };
-
-    const handleTouchEnd = () => {
-      if (touchHoldTimeout) clearTimeout(touchHoldTimeout);
-    };
-
-    const handleContextMenu = (e: MouseEvent) => {
-      e.preventDefault();
-      e.stopPropagation();
-    };
-
-    window.addEventListener('keydown', handleKeyDown, true);
-    window.addEventListener('keyup', handleKeyUp, true);
-    window.addEventListener('blur', handleWindowBlur);
-    window.addEventListener('focus', handleWindowFocus);
-    window.addEventListener('pagehide', handleWindowBlur);
-    window.addEventListener('touchstart', handleTouchStart, { passive: true });
-    window.addEventListener('touchend', handleTouchEnd, { passive: true });
-    window.addEventListener('touchcancel', handleTouchEnd, { passive: true });
-    window.addEventListener('contextmenu', handleContextMenu, true);
-
-    return () => {
-      if (touchHoldTimeout) clearTimeout(touchHoldTimeout);
-      window.removeEventListener('keydown', handleKeyDown, true);
-      window.removeEventListener('keyup', handleKeyUp, true);
-      window.removeEventListener('blur', handleWindowBlur);
-      window.removeEventListener('focus', handleWindowFocus);
-      window.removeEventListener('pagehide', handleWindowBlur);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchend', handleTouchEnd);
-      window.removeEventListener('touchcancel', handleTouchEnd);
-      window.removeEventListener('contextmenu', handleContextMenu, true);
-    };
-  }, [phase, triggerScreenshotDefense, poisonClipboardCascading]);
-
-  // Timer countdown during active quiz
-  useEffect(() => {
-    if (phase !== 'active' || !isTimed) return;
-
-    const timer = setInterval(() => {
-      setTimeLeftSeconds(prev => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          handleSubmitQuiz();
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [phase, isTimed, activeQuestions, userSelections]);
-
-  // ==========================================
-  // AUTH ACTION HANDLERS
-  // ==========================================
-
-  const handleSendOtp = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setAuthLoading(true);
-    setAuthError(null);
-    try {
-      const res = await fetch('/api/auth/otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          action: 'send',
-          identifier: otpPhoneOrEmail,
-          name: otpName,
-          age: otpAge,
-          classLevel: otpClass
-        })
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to send OTP');
-      setOtpSent(true);
-      setDevOtpCode(data.devOtp || '123456');
-    } catch (err: any) {
-      setAuthError(err.message);
-    } finally {
-      setAuthLoading(false);
-    }
-  };
-
-  const handleVerifyOtp = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setAuthLoading(true);
-    setAuthError(null);
-    try {
-      const res = await fetch('/api/auth/otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          action: 'verify',
-          identifier: otpPhoneOrEmail,
-          otp: otpCode,
-          name: otpName,
-          age: otpAge,
-          classLevel: otpClass
-        })
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Invalid OTP code');
-      setStudent(data.user);
-      setPhase('setup');
-    } catch (err: any) {
-      setAuthError(err.message);
-    } finally {
-      setAuthLoading(false);
-    }
-  };
-
-  const handleGoogleLogin = async () => {
-    setAuthLoading(true);
-    setAuthError(null);
-    try {
-      const res = await fetch('/api/auth/otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          action: 'google',
-          identifier: 'student.google@akueb.edu.pk',
-          name: 'Verified Google Student'
-        })
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Google login failed');
-      setStudent(data.user);
-      setPhase('setup');
-    } catch (err: any) {
-      setAuthError(err.message);
-    } finally {
-      setAuthLoading(false);
-    }
-  };
-
-  const handleQuickDemoLogin = (demoName: string) => {
-    setStudent({
-      id: 'demo-student-uuid',
-      name: demoName,
-      age: 15,
-      classLevel: 'Class IX'
-    });
-    setPhase('setup');
-  };
-
-  // ==========================================
-  // QUIZ ENGINE: START & RANDOMIZATION
-  // ==========================================
-
-  const handleStartQuiz = async () => {
-    setStartQuizError(null);
-    try {
-      let rawQs = (questions && Array.isArray(questions)) ? [...questions] : [];
-
-      // If no questions in props, fetch from API
-      if (rawQs.length === 0 && paperCode) {
-        setLoadingQuizQuestions(true);
-        try {
-          const res = await fetch(`/api/quizzes/by-code?code=${encodeURIComponent(paperCode)}`);
-          if (res.ok) {
-            const data = await res.json();
-            if (data?.quiz?.questions && Array.isArray(data.quiz.questions) && data.quiz.questions.length > 0) {
-              rawQs = data.quiz.questions;
-            }
-          }
-        } catch (fetchErr) {
-          console.warn('Failed to fetch quiz questions by code:', fetchErr);
-        } finally {
-          setLoadingQuizQuestions(false);
-        }
-      }
-
-      // If still empty and it's a P2 or theory paper, attempt P1 fallback
-      if (rawQs.length === 0 && paperCode) {
-        try {
-          const p1Code = paperCode.replace(/P2/i, 'P1').replace(/PAPER-2/i, 'PAPER-1');
-          const res = await fetch(`/api/quizzes/by-code?code=${encodeURIComponent(p1Code)}`);
-          if (res.ok) {
-            const data = await res.json();
-            if (data?.quiz?.questions && Array.isArray(data.quiz.questions) && data.quiz.questions.length > 0) {
-              rawQs = data.quiz.questions;
-            }
-          }
-        } catch (e) {}
-      }
-
-      if (rawQs.length === 0) {
-        setStartQuizError('No questions are available for this paper at the moment. Please try another paper.');
-        return;
-      }
-
-      // 1. Generate randomized questions and randomized choices
-      const randomized = randomizeQuestionsAndOptions(rawQs);
-      if (randomized.length === 0) {
-        setStartQuizError('Could not process questions for this quiz.');
-        return;
-      }
-
-      setActiveQuestions(randomized);
-
-      // 2. Setup timer
-      const finalMinutes = isTimed ? (parseInt(customDuration) || selectedDurationMin || 50) : 0;
-      setTimeLeftSeconds(finalMinutes * 60);
-      setQuizStartTime(Date.now());
-      setCurrentIndex(0);
-      setUserSelections({});
-      setTabSwitchLogs([]);
-      setTabSwitchCount(0);
-      setCheatWarningVisible(false);
-      setPhase('active');
-
-      // On mobile / handheld devices, request immersive fullscreen to hide Android navigation bar
-      try {
-        if (typeof window !== 'undefined' && window.innerWidth <= 840) {
-          const docEl = document.documentElement as any;
-          if (docEl.requestFullscreen) {
-            docEl.requestFullscreen({ navigationUI: 'hide' }).then(() => {
-              setIsFullscreen(true);
-            }).catch(() => {});
-          } else if (docEl.webkitRequestFullscreen) {
-            docEl.webkitRequestFullscreen();
-            setIsFullscreen(true);
-          }
-        }
-      } catch (fsErr) {}
-    } catch (err: any) {
-      console.error('Failed to start quiz:', err);
-      setStartQuizError(err?.message || 'Failed to start quiz');
-    }
-  };
-
-  // Answer selection (Instant evaluation)
+    if (!engine.exam) return;
+    const mapped = engine.exam.questions.map((q, i) => ({
+      id: q.id, displayNumber: i + 1, originalQuestionNumber: String(q.orderIndex), questionText: q.stemText, questionType: q.questionType, marks: q.marks,
+      diagramUrl: q.diagramUrl, options: Object.fromEntries(q.options.map((o, j) => [String.fromCharCode(65 + j), o.text])),
+      correctOption: '', explanation: '', topicName: '',
+    }));
+    setActiveQuestions(mapped);
+    setUserSelections(Object.fromEntries(engine.exam.questions.flatMap((q, i) => {
+      const payload = engine.exam?.answers[q.id]?.payload;
+      if (!payload) return [];
+      const selected = payload.selectedOptionId, optionIndex = q.options.findIndex(o => o.id === selected);
+      const value = optionIndex >= 0 ? String.fromCharCode(65 + optionIndex) : payload.selectedOptionIds?.length ? payload.selectedOptionIds.join(',') : payload.numericAnswer || payload.textAnswer || (payload.matchedPairs?.length ? 'Answered' : '');
+      return value ? [[String(i + 1), value]] : [];
+    })));
+    setLoadingQuizQuestions(false);
+  }, [engine.exam]);
+  const handleStartQuiz = async () => { setStartQuizError(null); setLoadingQuizQuestions(true); setPhase(student ? 'active' : 'auth'); };
   const handleSelectAnswer = (displayNum: number, optionKey: string) => {
-    const key = displayNum.toString();
-    if (userSelections[key]) return; // lock once answered
-    setUserSelections(prev => ({ ...prev, [key]: optionKey }));
+    const index = displayNum - 1, question = engine.exam?.questions[index], optionIndex = optionKey.charCodeAt(0) - 65;
+    if (!question) return;
+    const id = question.options[optionIndex]?.id;
+    if (!id) return;
+    if (question.questionType === 'MCQ_MULTIPLE') {
+      const selected = engine.exam?.answers[question.id]?.payload.selectedOptionIds || [];
+      engine.answer(index, { selectedOptionIds: selected.includes(id) ? selected.filter(value => value !== id) : [...selected, id] });
+    } else engine.answer(index, { selectedOptionId: id });
   };
-
-  const buildSubmissionPayload = useCallback((isAuto = false) => {
-    const answersList = activeQuestions.map(q => {
-      const selected = userSelections[q.displayNumber.toString()];
-      const isCorrect = selected === q.correctOption;
-
-      return {
-        questionNumber: q.originalQuestionNumber || q.displayNumber.toString(),
-        displayNumber: q.displayNumber,
-        questionText: q.questionText,
-        selectedOption: selected || null,
-        correctOption: q.correctOption,
-        selectedText: selected ? q.options[selected] : 'Not Attempted',
-        correctText: q.options[q.correctOption],
-        isCorrect,
-        explanation: q.explanation,
-        whyIncorrect: !isCorrect && selected 
-          ? `Your chosen option (${selected}: ${q.options[selected]}) is incorrect. According to AKU-EB curriculum rules, Option (${q.correctOption}: ${q.options[q.correctOption]}) is the correct answer.`
-          : null,
-        topicName: q.topicName,
-        topicNumber: q.topicNumber,
-        sloCode: q.sloCode,
-        marks: q.marks || 1
-      };
-    });
-
-    const timeTakenSec = Math.round((Date.now() - quizStartTime) / 1000);
-    const totalAwayTimeSeconds = tabSwitchLogs.reduce((acc, cur) => acc + cur.durationSeconds, 0);
-
-    return {
-      paperCode,
-      paperTitle,
-      studentId: student?.id,
-      studentName: student?.name || 'Student Candidate',
-      studentAge: student?.age || 15,
-      studentClass: student?.classLevel || 'Class IX',
-      timeTakenSeconds: timeTakenSec,
-      tabSwitchCount: tabSwitchLogs.length,
-      tabSwitchLogs,
-      totalAwayTimeSeconds,
-      screenshotAttempts: screenshotAttemptCount,
-      answers: answersList,
-      isAutoSubmitted: isAuto
-    };
-  }, [activeQuestions, userSelections, quizStartTime, tabSwitchLogs, screenshotAttemptCount, paperCode, paperTitle, student]);
-
-  // Prevent reload / back navigation during active examination & auto-submit on departure
-  useEffect(() => {
-    if (phase !== 'active') return;
-
-    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      e.preventDefault();
-      e.returnValue = 'Are you sure you want to reload or leave? Your quiz is currently in progress! If you leave, your score will be stored and submitted to your teacher.';
-      try {
-        const payload = buildSubmissionPayload(true);
-        if (navigator.sendBeacon) {
-          const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-          navigator.sendBeacon('/api/quizzes/submit-attempt', blob);
-        }
-      } catch (err) {}
-      return e.returnValue;
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    // Prevent accidental browser back button
-    window.history.pushState(null, '', window.location.href);
-    const handlePopState = () => {
-      const confirmLeave = window.confirm(
-        '⚠️ Are you sure you want to go back? Your quiz is currently in progress!\n\nIf you click OK, the quiz will finish now and your score will be recorded and sent to your teacher.'
-      );
-      if (confirmLeave) {
-        handleSubmitQuiz(true);
-      } else {
-        window.history.pushState(null, '', window.location.href);
-      }
-    };
-
-    window.addEventListener('popstate', handlePopState);
-
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, [phase, buildSubmissionPayload]);
-
-  // Submit Quiz and Compute Results
-  const handleSubmitQuiz = async (isAutoSubmitted: boolean = false) => {
-    setSubmitting(true);
-    const payload = buildSubmissionPayload(isAutoSubmitted);
-
-    try {
-      const res = await fetch('/api/quizzes/submit-attempt', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to submit quiz');
-      setCompletionData(data);
-      setPhase('completed');
-    } catch (err: any) {
-      console.warn('Submitting with resilient client fallback:', err);
-      let totalEarned = 0;
-      payload.answers.forEach((a: any) => { if (a.isCorrect) totalEarned += (a.marks || 1); });
-      const pct = Math.round((totalEarned / Math.max(1, payload.answers.length)) * 100);
-      setCompletionData({
-        success: true,
-        score: totalEarned,
-        totalMarks: payload.answers.length,
-        percentage: pct,
-        studentName: payload.studentName,
-        tabSwitchCount: payload.tabSwitchCount,
-        tabSwitchLogs: payload.tabSwitchLogs,
-        totalAwayTimeSeconds: payload.totalAwayTimeSeconds,
-        dynamicMessage: `Exam completed and submitted. Score: ${totalEarned}/${payload.answers.length} (${pct}%). Results sent to your teacher.`,
-        messageTone: pct >= 70 ? 'success' : 'info',
-        weakTopics: [],
-        incorrectQuestions: payload.answers.filter((a: any) => !a.isCorrect),
-        submittedAt: new Date().toISOString(),
-        isAutoSubmitted
-      });
-      setPhase('completed');
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
+  const handleSubmitQuiz = async (_automatic = false) => { setSubmitting(true); await engine.submit(engine.remaining <= 0); setSubmitting(false); };
+  const dismissScreenshotDefense = () => { setScreenshotAlert(false); setIsFocusLost(false); setIsWindowMasked(false); };
+  const toggleFullscreen = async () => { try { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); setIsFullscreen(Boolean(document.fullscreenElement)); } catch {} };
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -994,7 +200,7 @@ export default function TakeQuizModal({
 
   const currentQ = activeQuestions[currentIndex];
   const currentSelected = currentQ ? userSelections[currentQ.displayNumber.toString()] : null;
-  const isAnswered = Boolean(currentSelected);
+  const isAnswered = Boolean(currentSelected) && Boolean(currentQ?.correctOption);
   const isCurrentCorrect = isAnswered && currentQ && currentSelected === currentQ.correctOption;
 
   const totalAwayTime = tabSwitchLogs.reduce((acc, cur) => acc + cur.durationSeconds, 0);
@@ -1050,7 +256,7 @@ export default function TakeQuizModal({
         id="aku-clipboard-poison-textarea"
         readOnly
         aria-hidden="true"
-        tabIndex={-1}
+
         style={{
           position: 'fixed',
           top: '-9999px',
@@ -1086,7 +292,7 @@ export default function TakeQuizModal({
         }}
         onClick={dismissScreenshotDefense}
       >
-        <div 
+        <div
           style={{
             background: '#ffffff',
             borderRadius: '20px',
@@ -1171,7 +377,7 @@ export default function TakeQuizModal({
       </div>
 
       <div
-        id="quiz-modal-container"
+        {...dialogProps} id="quiz-modal-container"
         style={{
           position: 'fixed',
           top: 0,
@@ -1186,19 +392,15 @@ export default function TakeQuizModal({
           zIndex: 99999,
           padding: phase === 'active' || phase === 'completed' ? 0 : '1rem',
           fontFamily: "'Inter', sans-serif",
-          userSelect: 'none',
-          WebkitUserSelect: 'none',
-          MozUserSelect: 'none',
-          msUserSelect: 'none',
+          userSelect: 'auto',
+          WebkitUserSelect: 'auto',
+          MozUserSelect: 'auto',
+          msUserSelect: 'text',
           overflow: 'hidden'
         }}
-        onCopy={(e) => { e.preventDefault(); poisonClipboardCascading(); }}
-        onCut={(e) => { e.preventDefault(); poisonClipboardCascading(); }}
-        onPaste={(e) => { e.preventDefault(); }}
-        onContextMenu={(e) => { e.preventDefault(); }}
-        onDragStart={(e) => { e.preventDefault(); }}
+
       >
-        <div 
+        <div
           id="quiz-modal-card"
           style={{
             background: 'var(--card-bg, #ffffff)',
@@ -1214,6 +416,11 @@ export default function TakeQuizModal({
             display: 'flex',
             flexDirection: 'column'
         }}>
+
+          {phase === 'active' && <div role="status" style={{ padding: '8px 20px', background: '#f8fafc', borderBottom: '1px solid #e2e8f0', color: '#334155', fontSize: '0.82rem' }}>
+            {engine.error || engine.notice || (engine.saving ? 'Saving answers…' : engine.pending ? engine.pending + ' answers pending synchronization' : engine.exam ? 'All answers saved' : 'Loading saved assessment…')}
+            {engine.error && <button onClick={engine.reload} style={{ marginLeft: 12 }}>Retry</button>}
+          </div>}
 
           {/* Examination Privacy & Anti-Snipping Shield (Active when window loses focus - Light Sign) */}
           {isFocusLost && !screenshotAlert && phase === 'active' && (
@@ -1235,7 +442,7 @@ export default function TakeQuizModal({
               }}
               onClick={dismissScreenshotDefense}
             >
-              <div 
+              <div
                 style={{
                   background: '#ffffff',
                   borderRadius: '20px',
@@ -1299,7 +506,7 @@ export default function TakeQuizModal({
           {/* Global Close Button (Hidden during active examination to enforce completion) */}
           {phase !== 'active' && (
             <button
-              onClick={onClose}
+              aria-label="Close assessment" onClick={onClose}
               style={{
                 position: 'absolute',
                 top: '16px',
@@ -1324,321 +531,7 @@ export default function TakeQuizModal({
           {/* ========================================================================= */}
           {/* PHASE 1: STUDENT AUTHENTICATION GATE (OTP OR GOOGLE SIGNIN)              */}
           {/* ========================================================================= */}
-          {phase === 'auth' && (
-            <div style={{ padding: '2.5rem 2rem' }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
-                <div style={{
-                  width: '56px',
-                  height: '56px',
-                  borderRadius: '50%',
-                  background: '#e8f5f1',
-                  color: '#0b5e4a',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 1rem auto'
-                }}>
-                  <ShieldCheck size={30} />
-                </div>
-                <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', margin: '0 0 0.4rem 0' }}>
-                  Student Quiz Sign-in
-                </h2>
-                <p style={{ fontSize: '0.88rem', color: '#64748b', margin: 0 }}>
-                  Sign in to verify your identity, record your scores, and receive personalized weak topic recommendations.
-                </p>
-              </div>
-
-              {/* Auth Mode Tabs */}
-              <div style={{
-                display: 'flex',
-                background: '#f1f5f9',
-                padding: '4px',
-                borderRadius: '10px',
-                marginBottom: '1.5rem'
-              }}>
-                <button
-                  type="button"
-                  onClick={() => setAuthTab('otp')}
-                  style={{
-                    flex: 1,
-                    padding: '8px',
-                    borderRadius: '8px',
-                    border: 'none',
-                    fontSize: '0.86rem',
-                    fontWeight: authTab === 'otp' ? 700 : 500,
-                    background: authTab === 'otp' ? '#ffffff' : 'transparent',
-                    color: authTab === 'otp' ? '#0b5e4a' : '#64748b',
-                    boxShadow: authTab === 'otp' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
-                    cursor: 'pointer'
-                  }}
-                >
-                  📱 Mobile / Email OTP
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setAuthTab('google')}
-                  style={{
-                    flex: 1,
-                    padding: '8px',
-                    borderRadius: '8px',
-                    border: 'none',
-                    fontSize: '0.86rem',
-                    fontWeight: authTab === 'google' ? 700 : 500,
-                    background: authTab === 'google' ? '#ffffff' : 'transparent',
-                    color: authTab === 'google' ? '#0b5e4a' : '#64748b',
-                    boxShadow: authTab === 'google' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
-                    cursor: 'pointer'
-                  }}
-                >
-                  🌐 Google Sign-in
-                </button>
-              </div>
-
-              {authError && (
-                <div style={{
-                  background: '#fef2f2',
-                  border: '1px solid #fecaca',
-                  borderRadius: '8px',
-                  padding: '0.75rem',
-                  color: '#b91c1c',
-                  fontSize: '0.84rem',
-                  marginBottom: '1rem'
-                }}>
-                  {authError}
-                </div>
-              )}
-
-              {/* OTP Flow */}
-              {authTab === 'otp' && (
-                <div>
-                  {!otpSent ? (
-                    <form onSubmit={handleSendOtp} style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
-                      <div>
-                        <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 600, color: '#334155', marginBottom: '4px' }}>
-                          Student Full Name
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          placeholder="e.g. Hamza Khan"
-                          value={otpName}
-                          onChange={(e) => setOtpName(e.target.value)}
-                          style={{
-                            width: '100%',
-                            padding: '10px 12px',
-                            borderRadius: '8px',
-                            border: '1px solid #cbd5e1',
-                            fontSize: '0.9rem'
-                          }}
-                        />
-                      </div>
-
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-                        <div>
-                          <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 600, color: '#334155', marginBottom: '4px' }}>
-                            Age
-                          </label>
-                          <input
-                            type="number"
-                            required
-                            min="10"
-                            max="25"
-                            value={otpAge}
-                            onChange={(e) => setOtpAge(e.target.value)}
-                            style={{
-                              width: '100%',
-                              padding: '10px 12px',
-                              borderRadius: '8px',
-                              border: '1px solid #cbd5e1',
-                              fontSize: '0.9rem'
-                            }}
-                          />
-                        </div>
-
-                        <div>
-                          <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 600, color: '#334155', marginBottom: '4px' }}>
-                            Class / Grade
-                          </label>
-                          <select
-                            value={otpClass}
-                            onChange={(e) => setOtpClass(e.target.value)}
-                            style={{
-                              width: '100%',
-                              padding: '10px 12px',
-                              borderRadius: '8px',
-                              border: '1px solid #cbd5e1',
-                              fontSize: '0.9rem'
-                            }}
-                          >
-                            <option value="Class IX">Class IX (SSC-I)</option>
-                            <option value="Class X">Class X (SSC-II)</option>
-                            <option value="Class XI">Class XI (HSSC-I)</option>
-                            <option value="Class XII">Class XII (HSSC-II)</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div>
-                        <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 600, color: '#334155', marginBottom: '4px' }}>
-                          Mobile Phone or Email
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          placeholder="e.g. 03001234567 or student@gmail.com"
-                          value={otpPhoneOrEmail}
-                          onChange={(e) => setOtpPhoneOrEmail(e.target.value)}
-                          style={{
-                            width: '100%',
-                            padding: '10px 12px',
-                            borderRadius: '8px',
-                            border: '1px solid #cbd5e1',
-                            fontSize: '0.9rem'
-                          }}
-                        />
-                      </div>
-
-                      <button
-                        type="submit"
-                        disabled={authLoading}
-                        style={{
-                          background: '#0b5e4a',
-                          color: '#ffffff',
-                          border: 'none',
-                          padding: '12px',
-                          borderRadius: '8px',
-                          fontWeight: 700,
-                          fontSize: '0.92rem',
-                          cursor: 'pointer',
-                          marginTop: '0.5rem'
-                        }}
-                      >
-                        {authLoading ? 'Sending Verification Code...' : 'Send Verification OTP'}
-                      </button>
-                    </form>
-                  ) : (
-                    <form onSubmit={handleVerifyOtp} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                      <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '8px', padding: '0.85rem', fontSize: '0.86rem', color: '#166534' }}>
-                        OTP code sent to <strong>{otpPhoneOrEmail}</strong>
-                        {devOtpCode && (
-                          <div style={{ marginTop: '4px', fontWeight: 700 }}>
-                            Test Code: <span style={{ background: '#dcfce7', padding: '2px 6px', borderRadius: '4px' }}>{devOtpCode}</span>
-                          </div>
-                        )}
-                      </div>
-
-                      <div>
-                        <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 600, color: '#334155', marginBottom: '4px' }}>
-                          Enter 6-Digit OTP Code
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          maxLength={6}
-                          placeholder="123456"
-                          value={otpCode}
-                          onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ''))}
-                          style={{
-                            width: '100%',
-                            padding: '12px',
-                            letterSpacing: '4px',
-                            textAlign: 'center',
-                            fontWeight: 800,
-                            borderRadius: '8px',
-                            border: '2px solid #0b5e4a',
-                            fontSize: '1.25rem'
-                          }}
-                        />
-                      </div>
-
-                      <div style={{ display: 'flex', gap: '0.5rem' }}>
-                        <button
-                          type="button"
-                          onClick={() => setOtpSent(false)}
-                          style={{
-                            flex: 1,
-                            background: '#f1f5f9',
-                            color: '#475569',
-                            border: '1px solid #cbd5e1',
-                            padding: '10px',
-                            borderRadius: '8px',
-                            fontWeight: 600,
-                            cursor: 'pointer'
-                          }}
-                        >
-                          Back
-                        </button>
-                        <button
-                          type="submit"
-                          disabled={authLoading}
-                          style={{
-                            flex: 2,
-                            background: '#0b5e4a',
-                            color: '#ffffff',
-                            border: 'none',
-                            padding: '10px',
-                            borderRadius: '8px',
-                            fontWeight: 700,
-                            cursor: 'pointer'
-                          }}
-                        >
-                          {authLoading ? 'Verifying...' : 'Verify & Continue'}
-                        </button>
-                      </div>
-                    </form>
-                  )}
-                </div>
-              )}
-
-              {/* Google Sign-in */}
-              {authTab === 'google' && (
-                <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
-                  <button
-                    type="button"
-                    onClick={handleGoogleLogin}
-                    disabled={authLoading}
-                    style={{
-                      width: '100%',
-                      background: '#ffffff',
-                      border: '1.5px solid #cbd5e1',
-                      borderRadius: '10px',
-                      padding: '12px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '0.75rem',
-                      fontWeight: 700,
-                      color: '#1e293b',
-                      fontSize: '0.95rem',
-                      cursor: 'pointer',
-                      boxShadow: '0 1px 3px rgba(0,0,0,0.06)'
-                    }}
-                  >
-                    <span>Continue with Google Student Account</span>
-                  </button>
-                </div>
-              )}
-
-              {/* Quick Demo Bypass */}
-              <div style={{ textAlign: 'center', marginTop: '1.5rem', paddingTop: '1rem', borderTop: '1px solid #e2e8f0' }}>
-                <button
-                  type="button"
-                  onClick={() => handleQuickDemoLogin('Ali Raza (Candidate IX)')}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    color: '#0b5e4a',
-                    fontWeight: 600,
-                    fontSize: '0.85rem',
-                    cursor: 'pointer',
-                    textDecoration: 'underline'
-                  }}
-                >
-                  ⚡ Continue as Demo Student (Ali Raza, Class IX)
-                </button>
-              </div>
-            </div>
-          )}
+          <AuthModal isOpen={phase === 'auth'} onClose={() => setPhase('setup')} onSuccess={user => { setStudent(user); setPhase('active'); }} />
 
           {/* ========================================================================= */}
           {/* PHASE 2: QUIZ SETUP, TIMER, & RANDOMIZATION NOTICE                       */}
@@ -1673,7 +566,7 @@ export default function TakeQuizModal({
                 <div>
                   <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Candidate Logged In:</div>
                   <div style={{ fontSize: '0.98rem', fontWeight: 700, color: '#0f172a' }}>
-                    {student?.name || 'Guest Student (Class IX)'}
+                    {student?.name || 'Sign in to save your attempt'}
                   </div>
                 </div>
                 <button
@@ -1726,6 +619,7 @@ export default function TakeQuizModal({
 
                   <button
                     type="button"
+                    disabled={!preview?.practice}
                     onClick={() => setIsTimed(false)}
                     style={{
                       padding: '12px',
@@ -1741,7 +635,7 @@ export default function TakeQuizModal({
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '2px' }}>
                       <Sparkles size={16} />
-                      <span>Untimed Practice</span>
+                      <span>Extended Practice (24 hours)</span>
                     </div>
                     <div style={{ fontSize: '0.76rem', color: '#64748b', fontWeight: 500 }}>
                       Study questions at your own pace
@@ -1759,6 +653,7 @@ export default function TakeQuizModal({
                         <button
                           key={mins}
                           type="button"
+                          disabled={!preview?.practice}
                           onClick={() => {
                             setSelectedDurationMin(mins);
                             setCustomDuration(mins.toString());
@@ -1795,10 +690,10 @@ export default function TakeQuizModal({
                   <span>Secure Examination Anti-Cheat & Security Policy</span>
                 </div>
                 <div style={{ fontSize: '0.82rem', color: '#713f12', lineHeight: 1.6 }}>
-                  • <strong>Randomized Questions & Options:</strong> Both question sequence and A/B/C/D choices are freshly shuffled.<br />
-                  • <strong>No Text Selection & Copying:</strong> Copying, dragging, and context menus are disabled.<br />
-                  • <strong>Anti-Screenshot & Privacy Shield:</strong> Hardware PrintScreen, Windows Snipping Tool (Win+Shift+S), and focus departures are intercepted; content is instantly concealed and clipboard is scrubbed.<br />
-                  • <strong>Precise Tab-Switch Duration:</strong> Tab departures are accurately timed down to the second and logged in your security audit trail without false alarms from toast notifications.
+                  • <strong>Randomized Questions & Options:</strong> Question and option ordering follows the assessment settings.<br />
+                  • <strong>Answer Recovery:</strong> Answers are stored on this device and synchronized when connected.<br />
+                  • <strong>Secure Grading:</strong> Answers and marks are checked by the server after submission.<br />
+                  • <strong>Session Integrity:</strong> Visibility events are recorded when the teacher enables monitoring.
                 </div>
               </div>
 
@@ -1862,7 +757,7 @@ export default function TakeQuizModal({
                   }}
                 >
                   <span>
-                    {loadingQuizQuestions ? 'Loading Questions...' : `Start Quiz (${questions?.length || activeQuestions?.length || 40} Items)`}
+                    {loadingQuizQuestions ? 'Loading Questions...' : `Start Quiz (${preview?.count || questions?.length || activeQuestions?.length || 40} Items)`}
                   </span>
                   <ArrowRight size={18} />
                 </button>
@@ -1939,8 +834,8 @@ export default function TakeQuizModal({
                 filter: isWindowMasked ? 'blur(35px)' : 'none',
                 transition: 'filter 0.15s ease',
                 WebkitTouchCallout: 'none',
-                WebkitUserSelect: 'none',
-                userSelect: 'none',
+                WebkitUserSelect: 'auto',
+                userSelect: 'auto',
                 touchAction: 'pan-y'
               }}
             >
@@ -2002,7 +897,7 @@ export default function TakeQuizModal({
               }}>
                 <div>
                   <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0b5e4a', textTransform: 'uppercase' }}>
-                    {paperCode} • Item {currentIndex + 1} of {activeQuestions.length} (Randomized)
+                    {paperCode} • Item {currentIndex + 1} of {activeQuestions.length}
                   </div>
                   <div style={{ fontSize: '1rem', fontWeight: 700, color: '#0f172a' }}>
                     Question {currentQ.displayNumber}
@@ -2010,7 +905,7 @@ export default function TakeQuizModal({
                 </div>
 
                 {/* Status Indicators: Timer, Fullscreen & Clickable Anti-Cheat Warnings Pill */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', minWidth: 0, maxWidth: '100%', alignItems: 'center', gap: '0.65rem' }}>
                   {/* Fullscreen Examination Mode Button */}
                   <button
                     type="button"
@@ -2072,12 +967,12 @@ export default function TakeQuizModal({
                       border: (tabSwitchCount > 0 || screenshotAttemptCount > 0) ? '1px solid #fecaca' : '1px solid #a7f3d0',
                       cursor: 'pointer'
                     }}
-                    title="Click to view tab switch audit log, departure durations, and screenshot blocks"
+                    title="View recorded session events"
                   >
                     <Eye size={15} />
                     <span>
-                      👁️ {tabSwitchCount} Warnings 
-                      {screenshotAttemptCount > 0 ? ` • 📸 ${screenshotAttemptCount} Blocked` : ''} 
+                      👁️ {tabSwitchCount} Events
+                      {screenshotAttemptCount > 0 ? ` • 📸 ${screenshotAttemptCount} Blocked` : ''}
                       {totalAwayTime > 0 ? ` (${totalAwayTime}s Away)` : ''}
                     </span>
                   </button>
@@ -2121,7 +1016,7 @@ export default function TakeQuizModal({
 
               {/* Quick Question Jump Drawer (Grid View - No separate scrollbar track) */}
               {showQuestionGrid && (
-                <div 
+                <div
                   className="no-scrollbar"
                   style={{
                     padding: '1rem',
@@ -2165,13 +1060,13 @@ export default function TakeQuizModal({
               )}
 
               {/* Active Question Body (SINGLE AND ONLY SCROLLBAR CONTAINER) */}
-              <div 
+              <div
                 id="aku-question-scroll-body"
                 className="aku-single-scroll"
-                style={{ 
-                  padding: '1.75rem', 
-                  overflowY: 'auto', 
-                  flex: 1, 
+                style={{
+                  padding: '1.75rem',
+                  overflowY: 'auto',
+                  flex: 1,
                   minHeight: 0,
                   WebkitOverflowScrolling: 'touch',
                   overscrollBehavior: 'contain'
@@ -2220,7 +1115,9 @@ export default function TakeQuizModal({
                 {/* Randomized Multiple Choice Options (A, B, C, D) */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.5rem' }}>
                   {Object.entries(currentQ.options).map(([key, optText]) => {
-                    const isChosen = currentSelected === key;
+                    const serverQuestion = engine.exam?.questions[currentIndex];
+                    const optionId = serverQuestion?.options[key.charCodeAt(0) - 65]?.id;
+                    const isChosen = currentQ.questionType === 'MCQ_MULTIPLE' ? Boolean(optionId && engine.exam?.answers[currentQ.id]?.payload.selectedOptionIds?.includes(optionId)) : currentSelected === key;
                     const isRightAnswer = currentQ.correctOption === key;
 
                     let borderStyle = '1.5px solid #e2e8f0';
@@ -2289,6 +1186,17 @@ export default function TakeQuizModal({
                     );
                   })}
                 </div>
+
+                {!['MCQ_SINGLE', 'MCQ_MULTIPLE', 'TRUE_FALSE'].includes(currentQ.questionType) && (
+                  <div style={{ margin: '1rem 0 1.5rem', padding: '1rem', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 12 }}>
+                    {currentQ.questionType === 'MATCHING' ? engine.exam?.questions[currentIndex]?.matchingLeft?.map(left => <label key={left} style={{ display: 'block', marginBottom: 12 }}>{left}
+                      <select value={engine.exam?.answers[currentQ.id]?.payload.matchedPairs?.find(pair => pair.left === left)?.right || ''} onChange={event => engine.answer(currentIndex, { matchedPairs: [...(engine.exam?.answers[currentQ.id]?.payload.matchedPairs || []).filter(pair => pair.left !== left), { left, right: event.target.value }] })} style={{ marginLeft: 12, padding: 8 }}>
+                        <option value="">Select a match</option>{engine.exam?.questions[currentIndex]?.matchingRight?.map(right => <option key={right}>{right}</option>)}
+                      </select></label>)
+                    : currentQ.questionType === 'NUMERICAL' ? <label>Numerical answer<input aria-label="Numerical answer" value={engine.exam?.answers[currentQ.id]?.payload.numericAnswer || ''} onChange={event => engine.answer(currentIndex, { numericAnswer: event.target.value })} style={{ display: 'block', width: '100%', marginTop: 8, padding: 12, border: '1px solid #cbd5e1', borderRadius: 8 }} /></label>
+                    : <label>Your answer<textarea aria-label="Written answer" rows={8} value={engine.exam?.answers[currentQ.id]?.payload.textAnswer || ''} onChange={event => engine.answer(currentIndex, { textAnswer: event.target.value })} style={{ display: 'block', width: '100%', marginTop: 8, padding: 12, border: '1px solid #cbd5e1', borderRadius: 8 }} /></label>}
+                  </div>
+                )}
 
                 {/* Instant Answer Feedback & Detailed "Why It Is Incorrect" Reason */}
                 {isAnswered && (
@@ -2545,7 +1453,8 @@ export default function TakeQuizModal({
           {/* ========================================================================= */}
           {/* PHASE 4: COMPLETION SCREEN WITH TAB SWITCH BREAKDOWN & WEAK TOPICS        */}
           {/* ========================================================================= */}
-          {phase === 'completed' && completionData && (
+          {phase === 'completed' && completionData?.pending && <div style={{ padding: '3rem 2rem', textAlign: 'center' }}><ShieldCheck size={40} color="#0b5e4a" /><h2>Assessment submitted</h2><p>Your answers are saved. Results will be available when grading and release are complete.</p><p>Submission receipt: {engine.submitted?.attemptId}</p><p><a href={'/quizzes/' + engine.submitted?.quizId + '/results?attemptId=' + engine.submitted?.attemptId}>Check results</a></p><button onClick={onClose}>Close & Return to Paper</button></div>}
+          {phase === 'completed' && completionData && !completionData.pending && (
             <div style={{ padding: '2.5rem 2rem' }}>
               {/* Header Score Card */}
               <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
@@ -2606,7 +1515,7 @@ export default function TakeQuizModal({
                 <div>
                   <div style={{ fontSize: '0.75rem', color: '#64748b' }}>Integrity Warnings</div>
                   <div style={{ fontWeight: 700, color: (completionData.tabSwitchCount > 0 || (completionData.screenshotAttempts || screenshotAttemptCount) > 0) ? '#dc2626' : '#059669' }}>
-                    {completionData.tabSwitchCount} Switches ({completionData.totalAwayTimeSeconds || 0}s Away)
+                    {completionData.tabSwitchCount} Switches (visibility events)
                     {(completionData.screenshotAttempts || screenshotAttemptCount) > 0 ? ` • ${completionData.screenshotAttempts || screenshotAttemptCount} Snips Blocked` : ''}
                   </div>
                 </div>
@@ -2630,7 +1539,7 @@ export default function TakeQuizModal({
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <ShieldAlert size={20} color={tabSwitchLogs.length > 0 ? '#dc2626' : '#059669'} />
                     <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', margin: 0 }}>
-                      Tab-Switch & Anti-Capture Audit Trail (Stored in Database)
+                      Session Integrity Audit Trail
                     </h3>
                   </div>
                   <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -2711,7 +1620,7 @@ export default function TakeQuizModal({
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
                   <Sparkles size={20} color="#0b5e4a" />
                   <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', margin: 0 }}>
-                    Personalized Weak Topic Recommendations (Stored in Database)
+                    Topic Recommendations
                   </h3>
                 </div>
 
@@ -2755,13 +1664,13 @@ export default function TakeQuizModal({
                   </div>
                 ) : (
                   <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '10px', padding: '1rem', color: '#15803d', fontSize: '0.9rem' }}>
-                    🎉 Excellent mastery! No weak topics detected (&ge;65% achieved across all units).
+                    Topic recommendations will appear when your answers are linked to curriculum outcomes.
                   </div>
                 )}
               </div>
 
               {/* Comprehensive Review List of Incorrect Responses */}
-              <div style={{ marginBottom: '2rem' }}>
+              <div style={{ marginBottom: '2rem', display: completionData.canViewCorrectAnswers ? 'block' : 'none' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                   <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', margin: 0 }}>
                     Comprehensive Question-by-Question Review
@@ -2917,7 +1826,7 @@ export default function TakeQuizModal({
                   }}
                 >
                   <RotateCcw size={16} />
-                  <span>Retake Quiz (Fresh Shuffle)</span>
+                  <span>Start Another Attempt</span>
                 </button>
 
                 <button

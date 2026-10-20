@@ -25,10 +25,10 @@ export async function GET(request: Request) {
         const filePath = path.join(resourcesDir, file);
         try {
           const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-          if (classFilter === '9' && !content.class_level?.includes('IX') && !file.includes('class_ix')) {
+          if (classFilter === '9' && content.class_level !== 'Class IX' && !file.startsWith('class_ix_')) {
             continue;
           }
-          if (classFilter === '10' && !content.class_level?.includes('X') && !file.includes('class_x')) {
+          if (classFilter === '10' && content.class_level !== 'Class X' && !file.startsWith('class_x_')) {
             continue;
           }
           allBundles.push({
@@ -52,7 +52,7 @@ export async function GET(request: Request) {
         ? 'aku_eb_physics_class_ix_master_bundle.json'
         : classFilter === '10'
         ? 'aku_eb_physics_class_x_master_bundle.json'
-        : 'aku_eb_physics_complete_39_units_master_bundle.json';
+        : 'aku_eb_physics_complete_master_bundle.json';
 
       return new NextResponse(JSON.stringify(masterPayload, null, 2), {
         status: 200,

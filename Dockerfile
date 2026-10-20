@@ -17,6 +17,8 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+ARG NEXT_PUBLIC_APP_URL
+ENV NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}
 ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/mcqs"
 
 RUN npx prisma generate --generator client
@@ -35,7 +37,7 @@ RUN groupadd --system --gid 1001 nodejs && \
     useradd --system --uid 1001 -g nodejs nextjs
 
 # Pre-create data and upload directories and grant full permissions to nextjs user
-RUN mkdir -p /app/data/uploads /app/public/uploads /app/media /app/data/downloads && \
+RUN mkdir -p /app/data/uploads /app/data/assets /app/data/jobs /app/public/uploads /app/media /app/data/downloads && \
     chown -R nextjs:nodejs /app
 
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
@@ -46,11 +48,15 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/data ./data
 COPY --from=builder --chown=nextjs:nodejs /app/services ./services
 COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
+COPY --from=builder --chown=nextjs:nodejs /app/lib ./lib
+COPY --from=builder --chown=nextjs:nodejs /app/repositories ./repositories
+COPY --from=builder --chown=nextjs:nodejs /app/tsconfig.json ./tsconfig.json
 
 RUN chown -R nextjs:nodejs /app
 
 USER nextjs
 
 EXPOSE 3000
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 CMD node -e "fetch('http://127.0.0.1:'+(process.env.PORT||'3000')+'/api/health',{signal:AbortSignal.timeout(4000)}).then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
 
-CMD ["sh", "-c", "(npx prisma db push --accept-data-loss --skip-generate || echo 'Prisma migration warning, starting server...') && npm run start"]
+CMD ["node", "scripts/release-start.cjs"]

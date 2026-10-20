@@ -1487,7 +1487,7 @@ export default function SSC2PhysicsPage() {
               <h3 style={{ margin: '0 0 1rem 0', color: '#0b5e4a', fontSize: '1.2rem', fontWeight: 800 }}>
                 Complete Official Paper II Scan Book (All 8 Pages)
               </h3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '1.5rem' }}>
                 {Array.from({ length: 8 }, (_, i) => i + 1).map((pg) => (
                   <div key={pg} style={{ border: '1px solid #e2e8f0', borderRadius: '8px', overflow: 'hidden', background: '#f8fafc' }}>
                     <div style={{ padding: '8px 12px', background: '#0b5e4a', color: '#fff', fontSize: '0.8rem', fontWeight: 700 }}>
@@ -1518,7 +1518,7 @@ export default function SSC2PhysicsPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 360px), 1fr))', gap: '1.5rem' }}>
             {downloadableFiles.map((doc, idx) => (
               <div
                 key={idx}
@@ -1626,7 +1626,7 @@ export default function SSC2PhysicsPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1.25rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: '1.25rem' }}>
             {ssc2PacingData.map((week: any) => (
               <div
                 key={week.weekNumber}
@@ -1685,7 +1685,7 @@ export default function SSC2PhysicsPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '1.5rem' }}>
             <div style={{ background: '#ffffff', border: '2px solid #0b5e4a', borderRadius: '12px', padding: '1.5rem' }}>
               <span style={{ background: '#e6f0ed', color: '#0b5e4a', fontWeight: 800, fontSize: '0.75rem', padding: '3px 8px', borderRadius: '4px' }}>
                 PRIMARY KEY TEXTBOOK

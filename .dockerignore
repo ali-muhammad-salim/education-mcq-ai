@@ -1,5 +1,12 @@
 node_modules
 .next
+.next-hardening
+.hardening-test.env
+data/jobs
+data/assets
+frontend
+student-web
+checkpoints
 .git
 .env
 .env*.local
@@ -12,3 +19,5 @@ pnpm-debug.log*
 venv
 __pycache__
 scratch
+
+.next-audit

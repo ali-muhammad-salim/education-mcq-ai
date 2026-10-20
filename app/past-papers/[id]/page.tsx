@@ -8,7 +8,7 @@ import { getFallbackPaper } from '@/lib/paperDataService';
 export const dynamic = 'force-dynamic';
 
 interface PageProps {
-  params: Promise<{ id: string }> | { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export default async function PastPaperDetailPage({ params }: PageProps) {
@@ -52,18 +52,13 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     const fallback = getFallbackPaper(cleanId);
     if (fallback && fallback.questions && fallback.questions.length > 0) {
       paper = fallback;
-    } else {
-      const defaultPaper = getFallbackPaper('PHY-IX-P1');
-      if (defaultPaper && defaultPaper.questions) {
-        paper.questions = defaultPaper.questions;
-      }
     }
   }
 
   // Sort questions numerically
   const sortedQuestions = [...(paper.questions || [])].sort((a, b) => {
-    const numA = parseInt((a.questionNumber || '').replace(/\D/g, '')) || 0;
-    const numB = parseInt((b.questionNumber || '').replace(/\D/g, '')) || 0;
+    const numA = parseInt(String(a.questionNumber || '').replace(/\D/g, '')) || 0;
+    const numB = parseInt(String(b.questionNumber || '').replace(/\D/g, '')) || 0;
     return numA - numB;
   });
 

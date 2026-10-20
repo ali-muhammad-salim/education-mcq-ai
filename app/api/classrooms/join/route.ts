@@ -1,67 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
-import { getSessionUser } from '@/lib/auth';
-
+import { requireUser, rateLimit } from '@/lib/security';
+import { ApiError, apiError } from '@/lib/api';
+import { serializable } from '@/repositories/transaction';
+import { z } from 'zod';
 export async function POST(req: NextRequest) {
-  try {
-    const user = await getSessionUser(req);
-    if (!user) {
-      return NextResponse.json({ error: 'Please sign in or register to join a classroom.' }, { status: 401 });
-    }
-    if (user.role === 'TEACHER') {
-      return NextResponse.json({ error: 'Teachers cannot join classrooms as students.' }, { status: 403 });
-    }
-
-    const body = await req.json();
-    const { code } = body;
-
-    if (!code) {
-      return NextResponse.json({ error: 'Classroom code is required' }, { status: 400 });
-    }
-
-    const classroom = await prisma.classroom.findUnique({
-      where: { code: code.trim().toUpperCase() }
+  try { const user = await requireUser(req, ['STUDENT']); await rateLimit('class-join:' + user.id, 20, 900);
+    const { code } = z.object({ code: z.string().trim().min(6).max(20).transform(v => v.toUpperCase()) }).parse(await req.json());
+    const result = await serializable(async tx => {
+      const classroom = await tx.classroom.findUnique({ where: { code } });
+      if (!classroom || classroom.status !== 'ACTIVE') throw new ApiError(404, 'CLASS_UNAVAILABLE', 'This classroom is unavailable. Ask your teacher for an active code.');
+      const where = { classroomId_studentId: { classroomId: classroom.id, studentId: user.id } };
+      const existing = await tx.classroomMembership.findUnique({ where });
+      if (existing?.status === 'REMOVED') throw new ApiError(403, 'MEMBERSHIP_REMOVED', 'Your enrollment was removed. Ask the teacher to restore access.');
+      const membership = await tx.classroomMembership.upsert({ where, create: { classroomId: classroom.id, studentId: user.id, status: 'ENROLLED' }, update: { status: 'ENROLLED' } });
+      return { membership, classroom: { id: classroom.id, name: classroom.name }, alreadyMember: existing?.status === 'ENROLLED' };
     });
-
-    if (!classroom) {
-      return NextResponse.json({ error: 'Classroom with this code was not found.' }, { status: 404 });
-    }
-
-    // Check duplicate membership
-    const existing = await prisma.classroomMembership.findUnique({
-      where: {
-        classroomId_studentId: {
-          classroomId: classroom.id,
-          studentId: user.id
-        }
-      }
-    });
-
-    if (existing) {
-      return NextResponse.json({
-        success: true,
-        alreadyMember: true,
-        message: `You are already enrolled in ${classroom.name}`,
-        classroom
-      });
-    }
-
-    const membership = await prisma.classroomMembership.create({
-      data: {
-        classroomId: classroom.id,
-        studentId: user.id,
-        status: 'ENROLLED'
-      }
-    });
-
-    return NextResponse.json({
-      success: true,
-      message: `Enrolled successfully in ${classroom.name}`,
-      classroom,
-      membership
-    });
-  } catch (err: any) {
-    console.error('Join classroom error:', err);
-    return NextResponse.json({ error: err.message || 'Failed to join classroom' }, { status: 500 });
-  }
+    return NextResponse.json({ success: true, ...result, message: 'Enrolled in ' + result.classroom.name });
+  } catch (error) { return apiError(error); }
 }

@@ -1,6 +1,6 @@
 /**
  * Resend Email Transactional Service
- * 
+ *
  * Sends transactional notifications:
  * - Student assessment assigned
  * - Results released with score and RAG explanation review link
@@ -20,6 +20,7 @@ export async function sendTransactionalEmail(payload: EmailPayload): Promise<{ s
   if (apiKey) {
     try {
       const res = await fetch('https://api.resend.com/emails', {
+        signal: AbortSignal.timeout(15000),
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${apiKey}`,
@@ -41,7 +42,7 @@ export async function sendTransactionalEmail(payload: EmailPayload): Promise<{ s
 
   // Development mock log
   console.log(`[Email Mock (${payload.to})]: ${payload.subject}`);
-  return { success: true, messageId: `mock-${Date.now()}` };
+  return { success: false };
 }
 
 export async function sendQuizAssignedEmail(toEmail: string, studentName: string, quizTitle: string, quizUrl: string) {

@@ -1,27 +1,17 @@
-import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-
-export const dynamic = 'force-dynamic';
-
-export async function GET() {
+import { NextRequest, NextResponse } from 'next/server';
+import { requireUser } from '@/lib/security';
+import { apiError } from '@/lib/api';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { z } from 'zod';
+import prisma from '@/lib/prisma';
+export async function GET(req: NextRequest) {
   try {
-    const progressFile = path.join(process.cwd(), 'data', 'ingest_progress.json');
-    if (!fs.existsSync(progressFile)) {
-      return NextResponse.json({
-        status: 'IDLE',
-        percent: 0,
-        stage: 'Ready',
-        message: 'No pipeline is currently executing.',
-        logs: [],
-        results: {},
-      });
-    }
-
-    const raw = fs.readFileSync(progressFile, 'utf-8');
-    const data = JSON.parse(raw);
-    return NextResponse.json(data);
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
+    const user = await requireUser(req, ['ADMIN']), id = req.nextUrl.searchParams.get('jobId');
+    const job = await prisma.durableJob.findFirst({ where: { kind: 'INGESTION', ownerId: user.id, ...(id ? { id } : {}) }, orderBy: { createdAt: 'desc' } });
+    const progressSchema = z.object({ percent: z.number().min(0).max(100).default(0), stage: z.string().max(500).default('Processing'), message: z.string().max(2000).default('Processing document'), logs: z.array(z.string().max(4000)).max(200).default([]) });
+    let progress: z.infer<typeof progressSchema> | null = null;
+    if (job?.status === 'RUNNING') { try { progress = progressSchema.parse(JSON.parse(await fs.readFile(path.join(process.cwd(), 'data', 'jobs', job.id, 'progress.json'), 'utf8'))); } catch { /* A new job may not have a progress file yet. */ } }
+    return NextResponse.json({ success: true, jobId: job?.id, status: job?.status || 'IDLE', percent: job?.status === 'COMPLETED' ? 100 : Math.min(progress?.percent ?? 0, 99), stage: progress?.stage || job?.status || 'Ready', message: job?.error || progress?.message || 'Processing status: ' + (job?.status || 'IDLE'), results: job?.result && typeof job.result === 'object' && !Array.isArray(job.result) ? { ...job.result, slos: job.result.slos ?? job.result.slos_extracted, questions: job.result.questions ?? job.result.extracted_questions } : {}, logs: progress?.logs || [] });
+  } catch (error) { return apiError(error); }
 }
