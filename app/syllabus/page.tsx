@@ -38,7 +38,7 @@ export default async function SyllabusPage() {
       />
 
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1.5rem' }}>
-        <h1 style={{ margin: 0, textAlign: 'left', fontSize: '2.4rem' }}>Unified Syllabus Tracker</h1>
+        <h1 className="mobile-page-title" style={{ margin: 0, textAlign: 'left', fontSize: '2.4rem' }}>Unified Syllabus Tracker</h1>
       </div>
 
       <p style={{ color: '#666', marginBottom: '3rem', fontSize: '1.1rem' }}>

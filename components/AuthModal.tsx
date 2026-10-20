@@ -207,7 +207,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
           <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 700, color: '#4b5563', marginBottom: '0.35rem' }}>
             Choose Your Profile Role:
           </label>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+          <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
             <button
               type="button"
               onClick={() => setRole('STUDENT')}

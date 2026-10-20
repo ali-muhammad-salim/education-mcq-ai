@@ -126,7 +126,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <span style={{ fontSize: '2rem' }}>{meta.icon}</span>
-          <h1 style={{
+          <h1 className="mobile-page-title" style={{
             fontSize: '2rem',
             fontWeight: 700,
             color: 'var(--text-color)',

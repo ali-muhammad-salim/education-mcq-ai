@@ -58,7 +58,7 @@ export default function TermsOfServicePage() {
             <FileText size={14} />
             <span>Terms of Agreement</span>
           </div>
-          <h1 style={{ fontSize: '2.2rem', fontWeight: 800, margin: '0 0 0.5rem 0', color: '#ffffff', letterSpacing: '-0.5px' }}>
+          <h1 className="mobile-page-title" style={{ fontSize: '2.2rem', fontWeight: 800, margin: '0 0 0.5rem 0', color: '#ffffff', letterSpacing: '-0.5px' }}>
             Terms of Service
           </h1>
           <p style={{ margin: 0, fontSize: '0.95rem', color: '#cbd5e1', maxWidth: '650px', lineHeight: 1.6 }}>

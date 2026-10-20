@@ -285,9 +285,19 @@ export default function Navbar() {
     setProfileDropdownOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false);setBoardDropdownOpen(false);setOpenClassDropdown(null);setProfileDropdownOpen(false);
+      }
+    };
+    document.addEventListener('keydown', closeOnEscape);
+    return () => document.removeEventListener('keydown', closeOnEscape);
+  }, []);
+
   const codeDialog = useDialog(quizCodeModalOpen, 'Enter assessment code', () => setQuizCodeModalOpen(false));
   return (
-    <nav
+    <nav className={`site-nav ${mobileMenuOpen ? "mobile-open" : ""}`} aria-label="Main navigation"
       style={{
         background: isDarkEffective ? '#0f172a' : '#ffffff',
         borderBottom: isDarkEffective ? '2px solid #1e293b' : '2px solid #e6f0ed',
@@ -299,7 +309,7 @@ export default function Navbar() {
         transition: 'background 0.2s ease, border-color 0.2s ease'
       }}
     >
-      <div
+      <div className="site-nav-inner"
         style={{
           maxWidth: '1440px',
           margin: '0 auto',
@@ -313,7 +323,7 @@ export default function Navbar() {
       >
 
         {/* Left Section: Brand & Board Selector */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+        <div className="site-nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
           <Link
             href="/"
             style={{
@@ -341,7 +351,7 @@ export default function Navbar() {
           </Link>
 
           {/* Board Selector Dropdown */}
-          <div ref={boardRef} style={{ position: 'relative' }}>
+          <div className="site-board-picker" ref={boardRef} style={{ position: 'relative' }}>
             <button
               onClick={() => {
                 setBoardDropdownOpen(!boardDropdownOpen);
@@ -361,7 +371,7 @@ export default function Navbar() {
                 cursor: 'pointer',
                 transition: 'all 0.15s ease'
               }}
-              title="Select Examination Board"
+              aria-expanded={boardDropdownOpen} title="Select Examination Board"
             >
               <Building2 size={15} style={{ color: '#0b5e4a' }} />
               <span>Board: <strong>{selectedBoard.name}</strong></span>
@@ -446,22 +456,30 @@ export default function Navbar() {
           </div>
         </div>
 
+        <div className="mobile-nav-actions">
+          <button type="button" className="mobile-quiz-button" onClick={() => {setQuizCodeModalOpen(true);setCodeError(null);setMobileMenuOpen(false);}}><KeyRound size={18}/>Quiz code</button>
+          <button type="button" className="mobile-menu-button" aria-expanded={mobileMenuOpen} aria-controls="mobile-navigation" onClick={() => {setMobileMenuOpen(!mobileMenuOpen);setBoardDropdownOpen(false);setOpenClassDropdown(null);setProfileDropdownOpen(false);}}>{mobileMenuOpen ? <X size={21}/> : <Menu size={21}/>}<span>{mobileMenuOpen ? 'Close' : 'Menu'}</span></button>
+        </div>
         {/* Center / Right Section: Class Options & Subject Dropdowns */}
-        <div ref={classDropdownRef} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+        <div id="mobile-navigation" className="site-nav-links" onClick={event => {if ((event.target as Element).closest('a')) {setMobileMenuOpen(false);setOpenClassDropdown(null);setProfileDropdownOpen(false);}}} ref={classDropdownRef} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
 
+          <div className="mobile-menu-shortcuts">
+            <Link href="/">Home</Link><Link href="/quizzes">Practice quizzes</Link>
+            <Link href="/resources">Books & downloads</Link><Link href="/past-papers">Past papers</Link>
+          </div>
           {Object.entries(CLASS_SUBJECTS).map(([classKey, classData]) => {
             const isOpen = openClassDropdown === classKey;
             const isClassReady = classData.isReady;
 
             return (
-              <div key={classKey} style={{ position: 'relative' }}>
+              <div className="site-class-picker" key={classKey} style={{ position: 'relative' }}>
                 <button
                   onClick={() => {
                     if (!isClassReady) return;
                     setOpenClassDropdown(isOpen ? null : classKey);
                     setBoardDropdownOpen(false);
                   }}
-                  disabled={!isClassReady}
+                  aria-expanded={isOpen} disabled={!isClassReady}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',

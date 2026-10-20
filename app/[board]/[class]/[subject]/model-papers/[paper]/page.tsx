@@ -258,7 +258,7 @@ export default async function ModelPaperSubPage({ params }: PageProps) {
             The AKU-EB Grade 9 Practical Examination is a 1-hour assessment conducted in the school laboratory. Students perform hands-on apparatus handling, observation recording, and data graphing according to the following stages:
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginBottom: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.25rem', marginBottom: '2rem' }}>
             <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '1.25rem' }}>
               <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#0b5e4a', textTransform: 'uppercase', marginBottom: '0.3rem' }}>
                 Stage I • Apparatus Setup (3 Marks)

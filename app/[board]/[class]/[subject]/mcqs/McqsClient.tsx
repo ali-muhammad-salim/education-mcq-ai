@@ -294,7 +294,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                 </span>
               </div>
 
-              <h1 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem 0', letterSpacing: '-0.5px' }}>
+              <h1 className="mobile-page-title" style={{ fontSize: '2.4rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem 0', letterSpacing: '-0.5px' }}>
                 {meta.title} Multiple Choice Practice Hub
               </h1>
 
@@ -1077,7 +1077,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                     })()}
 
                     {/* Options rendered with MathText */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
                       {['A', 'B', 'C', 'D'].map(optKey => {
                         const optText = optionsObj[optKey];
                         if (!optText) return null;

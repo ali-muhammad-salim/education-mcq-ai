@@ -401,7 +401,7 @@ export default function ResourceUploadCenterPage() {
           }}>
             <Sparkles size={15} /> MULTI-RESOURCE AI EXTRACTION ENGINE
           </div>
-          <h1 style={{ fontSize: '2.6rem', fontWeight: 800, margin: '0 0 0.75rem 0', lineHeight: 1.2 }}>
+          <h1 className="mobile-page-title" style={{ fontSize: '2.6rem', fontWeight: 800, margin: '0 0 0.75rem 0', lineHeight: 1.2 }}>
             Resource Ingestion & AI Upload Center
           </h1>
           <p style={{ fontSize: '1.1rem', opacity: 0.95, lineHeight: 1.6, margin: '0 0 2rem 0' }}>
@@ -427,7 +427,7 @@ export default function ResourceUploadCenterPage() {
       </div>
 
       {/* Grid: Upload Form (Left) + Live Progress Terminal (Right) */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(480px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 480px), 1fr))', gap: '2rem', marginBottom: '3rem' }}>
 
         {/* Upload Card */}
         <div style={{
@@ -530,7 +530,7 @@ export default function ResourceUploadCenterPage() {
             </div>
 
             {/* Board & Subject */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#444', marginBottom: '0.4rem' }}>
                   Examination Board
@@ -570,7 +570,7 @@ export default function ResourceUploadCenterPage() {
             </div>
 
             {/* Class / Grade & Resource Category */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#444', marginBottom: '0.4rem' }}>
                   Academic Class / Level
@@ -876,7 +876,7 @@ export default function ResourceUploadCenterPage() {
           {/* Post-Completion Metrics & Navigation */}
           {progress.status === 'COMPLETED' && (
             <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid #2e3440' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
+              <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
                 <div style={{ background: '#21252b', padding: '8px', borderRadius: '8px', textAlign: 'center' }}>
                   <div style={{ fontSize: '0.7rem', color: '#abb2bf' }}>Units Extracted</div>
                   <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#61afef' }}>20 Units</div>
@@ -924,7 +924,7 @@ export default function ResourceUploadCenterPage() {
         Different Specialized AI Pipelines
       </h2>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.5rem' }}>
         <div className="card" style={{ border: '1px solid #e1e8e5', padding: '1.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem', color: '#0b5e4a' }}>
             <BookOpen size={20} />

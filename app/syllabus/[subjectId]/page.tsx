@@ -65,7 +65,7 @@ export default async function SubjectSyllabusPage({ params }: { params: Promise<
           ← Back
         </Link>
         <div>
-          <h1 style={{ margin: 0, textAlign: 'left', fontSize: '2rem' }}>{subject.name}</h1>
+          <h1 className="mobile-page-title" style={{ margin: 0, textAlign: 'left', fontSize: '2rem' }}>{subject.name}</h1>
           <p style={{ color: '#94a3b8', margin: 0 }}>
             {subject.academicClass.programme.name} • Class {subject.academicClass.name} (Grade {subject.academicClass.level})
           </p>

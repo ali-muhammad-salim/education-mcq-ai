@@ -413,7 +413,7 @@ export default function TeacherDashboardPage() {
   };
 
   return (
-    <div style={{
+    <div className="assessment-dashboard" style={{
       minHeight: '100vh',
       backgroundColor: 'var(--bg-color, #f4f7f6)',
       color: 'var(--text-color, #2c3e38)',
@@ -544,9 +544,9 @@ export default function TeacherDashboardPage() {
       }}>
 
         {/* Metric Cards Grid */}
-        <div style={{
+        <div className="dashboard-metrics" style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
           gap: '1rem'
         }}>
           <div style={{
@@ -656,7 +656,7 @@ export default function TeacherDashboardPage() {
         </div>
 
         {/* Navigation Tabs */}
-        <div style={{
+        <div className="dashboard-tabs" style={{
           display: 'flex',
           alignItems: 'center',
           gap: '0.5rem',
@@ -987,7 +987,7 @@ export default function TeacherDashboardPage() {
                 overflow: 'hidden',
                 boxShadow: 'var(--shadow-sm)'
               }}>
-                <table style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse', fontSize: '0.82rem' }}>
+                <table className="mobile-data-table" tabIndex={0} aria-label="Assessment results; scroll horizontally for all columns" style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse', fontSize: '0.82rem' }}>
                   <thead style={{
                     backgroundColor: 'rgba(244, 247, 246, 0.8)',
                     color: 'var(--text-light, #5a7a6f)',
@@ -1543,7 +1543,7 @@ export default function TeacherDashboardPage() {
                           <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-light, #5a7a6f)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                             Options Analysis (Click option to select correct answer)
                           </div>
-                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.65rem' }}>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '0.65rem' }}>
                             {(doubt.options || []).map((opt: any, optIdx: number) => {
                               const isMarked = opt.isCorrect;
                               const isValidatorRec = doubt.stage2Answer && opt.text && doubt.stage2Answer.toLowerCase().includes(opt.text.toLowerCase());

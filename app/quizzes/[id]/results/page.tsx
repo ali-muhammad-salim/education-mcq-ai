@@ -522,7 +522,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
                   {Array.isArray(q.options) && q.options.length > 0 && (
                     <div style={{
                       display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
                       gap: '0.6rem',
                       paddingTop: '0.25rem'
                     }}>

@@ -200,7 +200,7 @@ export default function SSC2PhysicsPage() {
               </span>
             </div>
             
-            <h1 style={{ color: '#ffffff', fontSize: '2.4rem', fontWeight: 800, marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>
+            <h1 className="mobile-page-title" style={{ color: '#ffffff', fontSize: '2.4rem', fontWeight: 800, marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>
               Physics SSC-II (Class 10)
             </h1>
             
@@ -394,7 +394,7 @@ export default function SSC2PhysicsPage() {
               </div>
 
               {/* Unit Dropdown */}
-              <div>
+              <div className="unit-filter">
                 <select
                   value={selectedUnit}
                   onChange={(e) => setSelectedUnit(e.target.value === 'all' ? 'all' : Number(e.target.value))}
@@ -418,7 +418,7 @@ export default function SSC2PhysicsPage() {
               </div>
 
               {/* Cognitive Level Filter */}
-              <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: '4px', alignItems: 'center', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: '0.8rem', color: '#5a7a6f', fontWeight: 700, marginRight: '4px' }}>Cognitive:</span>
                 {[
                   { id: 'all', label: 'All' },
@@ -549,7 +549,7 @@ export default function SSC2PhysicsPage() {
                                 borderBottom: '1px solid #dce5e1'
                               }}>
                                 Cognitive level¹
-                                <div style={{
+                                <div className="mobile-stack-grid" style={{
                                   display: 'grid',
                                   gridTemplateColumns: '1fr 1fr 1.6fr',
                                   marginTop: '6px',
@@ -864,7 +864,7 @@ export default function SSC2PhysicsPage() {
 
           {/* INTERACTIVE MODE */}
           {mcqViewMode === 'interactive' && (
-            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 280px', gap: '1.5rem', alignItems: 'start' }}>
+            <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 280px', gap: '1.5rem', alignItems: 'start' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {/* Exam Booklet Candidate Header */}
                 <div style={{
@@ -1017,7 +1017,7 @@ export default function SSC2PhysicsPage() {
 
                       <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
                         gap: '0.75rem',
                         marginBottom: '1rem'
                       }}>

@@ -95,7 +95,7 @@ export default async function BoardPage({ params }: PageProps) {
             </span>
           </div>
 
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.75rem 0', letterSpacing: '-0.5px' }}>
+          <h1 className="mobile-page-title" style={{ fontSize: '2.5rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.75rem 0', letterSpacing: '-0.5px' }}>
             {board.fullName} ({board.shortCode})
           </h1>
 
@@ -175,7 +175,7 @@ export default async function BoardPage({ params }: PageProps) {
       {/* Classes Grid */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
         gap: '1.5rem',
         marginBottom: '3rem'
       }}>

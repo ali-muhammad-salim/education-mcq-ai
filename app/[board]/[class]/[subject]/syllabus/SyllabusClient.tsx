@@ -80,7 +80,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units }
             </span>
           </div>
 
-          <h1 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem 0', letterSpacing: '-0.5px' }}>
+          <h1 className="mobile-page-title" style={{ fontSize: '2.4rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem 0', letterSpacing: '-0.5px' }}>
             {meta.title} Official Syllabus & SLOs ({units.length} Units)
           </h1>
 
@@ -252,7 +252,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units }
                       </h4>
 
                       <div style={{ overflowX: 'auto' }}>
-                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
+                        <table className="mobile-data-table" tabIndex={0} aria-label="Learning outcomes; scroll horizontally for all columns" style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
                           <thead>
                             <tr style={{ background: '#f0f5f2', borderBottom: '2px solid #dce5e1', textAlign: 'left' }}>
                               <th style={{ padding: '8px 12px', width: '120px', color: '#0b5e4a', fontWeight: 800 }}>SLO Code</th>

@@ -113,7 +113,7 @@ export default async function ModelPapersPage({ params }: PageProps) {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <span style={{ fontSize: '2rem' }}>📝</span>
-          <h1 style={{
+          <h1 className="mobile-page-title" style={{
             fontSize: '2rem',
             fontWeight: 700,
             color: 'var(--text-color)',
