@@ -14,7 +14,7 @@ async function main(){
   const sql=statements(fs.readFileSync('prisma/migrations/202610190001_baseline/migration.sql','utf8'));
   for(const statement of sql) if(/^CREATE TYPE "(?:UserRole|AccountStatus)"/.test(statement)||/^CREATE TABLE "(?:User|UserSession)"\s/.test(statement)||/^CREATE (?:UNIQUE )?INDEX .* ON "(?:User|UserSession)"/.test(statement)||/^ALTER TABLE "UserSession"/.test(statement)) await copy.$executeRawUnsafe(statement);
   await copy.user.create({data:{id:'bootstrap-test-user',email:'bootstrap-rehearsal@example.test',name:'Preserved account',passwordHash:'legacy-test-hash',role:'TEACHER',sessions:{create:{token:'legacy-disposable-session',expiresAt:new Date(Date.now()+60000)}}}});
-  const result=spawnSync(process.execPath,['scripts/bootstrap-auth-schema.cjs','--apply'],{windowsHide:true,encoding:'utf8',env:{...process.env,DATABASE_URL:target.toString(),AUTH_ONLY_BOOTSTRAP:'confirm-reviewed-backup'}});
+  const result=spawnSync(process.execPath,['scripts/release-start.cjs','--migrate-only'],{windowsHide:true,encoding:'utf8',env:{...process.env,DATABASE_URL:target.toString(),RUN_DATABASE_MIGRATIONS:'1',AUTH_ONLY_BOOTSTRAP:'confirm-reviewed-backup'}});
   if(result.status!==0){console.error(result.stdout);throw new Error(result.stderr||'Bootstrap rehearsal failed.');}
   const account=await copy.user.findUniqueOrThrow({where:{id:'bootstrap-test-user'}});
   assert.equal(account.passwordHash,'legacy-test-hash');assert.equal(account.role,'TEACHER');assert.equal(await copy.userSession.count(),0);

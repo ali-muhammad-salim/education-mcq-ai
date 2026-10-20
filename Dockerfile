@@ -37,7 +37,7 @@ RUN groupadd --system --gid 1001 nodejs && \
     useradd --system --uid 1001 -g nodejs nextjs
 
 # Pre-create data and upload directories and grant full permissions to nextjs user
-RUN mkdir -p /app/data/uploads /app/public/uploads /app/media /app/data/downloads && \
+RUN mkdir -p /app/data/uploads /app/data/assets /app/data/jobs /app/public/uploads /app/media /app/data/downloads && \
     chown -R nextjs:nodejs /app
 
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
@@ -58,4 +58,4 @@ USER nextjs
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+CMD ["node", "scripts/release-start.cjs"]
