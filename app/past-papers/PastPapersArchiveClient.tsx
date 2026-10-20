@@ -216,7 +216,7 @@ export default function PastPapersArchiveClient({ pastPapers, initialGrade = 'SS
                 fontWeight: 700,
                 border: 'none',
                 background: viewMode === 'directory' ? '#0b5e4a' : 'transparent',
-                color: viewMode === 'directory' ? '#fff' : '#888',
+                color: viewMode === 'directory' ? '#fff' : '#cbd5e1',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
@@ -234,7 +234,7 @@ export default function PastPapersArchiveClient({ pastPapers, initialGrade = 'SS
                 fontWeight: 700,
                 border: 'none',
                 background: viewMode === 'cards' ? '#0b5e4a' : 'transparent',
-                color: viewMode === 'cards' ? '#fff' : '#888',
+                color: viewMode === 'cards' ? '#fff' : '#cbd5e1',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
@@ -479,7 +479,7 @@ export default function PastPapersArchiveClient({ pastPapers, initialGrade = 'SS
                       Physics-{gradeCode}-Keys-{yr}
                     </Link>
                   ) : (
-                    <span style={{ color: '#475569', fontSize: '1.15rem' }}>
+                    <span style={{ color: '#cbd5e1', fontSize: '1.15rem' }}>
                       Physics-{gradeCode}-Keys-{yr}
                     </span>
                   )}
@@ -501,7 +501,7 @@ export default function PastPapersArchiveClient({ pastPapers, initialGrade = 'SS
                       E-marking-Notes-Physics-{gradeCode}-{yr}
                     </Link>
                   ) : (
-                    <span style={{ color: '#475569', fontSize: '1.15rem' }}>
+                    <span style={{ color: '#cbd5e1', fontSize: '1.15rem' }}>
                       E-marking-Notes-Physics-{gradeCode}-{yr}
                     </span>
                   )}

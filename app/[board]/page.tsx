@@ -122,7 +122,7 @@ export default async function BoardPage({ params }: PageProps) {
                       borderRadius: '8px',
                       fontSize: '0.82rem',
                       fontWeight: 600,
-                      opacity: 0.5,
+                      opacity: 1,
                       cursor: 'not-allowed',
                       userSelect: 'none'
                     }}
@@ -191,7 +191,7 @@ export default async function BoardPage({ params }: PageProps) {
                   border: '1px solid #e5e7eb',
                   borderRadius: '16px',
                   padding: '2rem 1.75rem',
-                  opacity: 0.45,
+                  opacity: 1,
                   cursor: 'not-allowed',
                   userSelect: 'none',
                   display: 'flex',

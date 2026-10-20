@@ -106,8 +106,8 @@ export default async function SubjectHubPage({ params }: PageProps) {
           <span style={{
             fontSize: '0.8rem',
             fontWeight: 700,
-            color: '#0b5e4a',
-            background: '#e8f5f1',
+            color: 'var(--primary-color)',
+            background: 'var(--primary-light)',
             padding: '3px 10px',
             borderRadius: '6px',
             letterSpacing: '0.3px',
@@ -118,7 +118,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
           <span style={{
             fontSize: '0.8rem',
             fontWeight: 600,
-            color: '#64748b'
+            color: 'var(--text-light)'
           }}>
             {classDef.name} • {classDef.stageLabel}
           </span>
@@ -129,7 +129,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
           <h1 style={{
             fontSize: '2rem',
             fontWeight: 700,
-            color: '#0f172a',
+            color: 'var(--text-color)',
             margin: 0,
             letterSpacing: '-0.4px'
           }}>
@@ -138,7 +138,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
         </div>
 
         <p style={{
-          color: '#64748b',
+          color: 'var(--text-light)',
           fontSize: '0.98rem',
           margin: '0.5rem 0 0 0',
           lineHeight: 1.5
@@ -149,7 +149,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
 
       {/* The List of Lines (Simple, Stress-Free Resource List) */}
       <div style={{
-        background: '#ffffff',
+        background: 'var(--card-bg)',
         border: '1px solid #e2e8f0',
         borderRadius: '12px',
         overflow: 'hidden',
@@ -167,7 +167,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 padding: '1.15rem 1.4rem',
-                borderBottom: isLast ? 'none' : '1px solid #f1f5f9',
+                borderBottom: isLast ? 'none' : '1px solid var(--border-color)',
                 transition: 'background-color 0.15s ease'
               }}
               className="resource-list-item"
@@ -189,9 +189,9 @@ export default async function SubjectHubPage({ params }: PageProps) {
                   width: '40px',
                   height: '40px',
                   borderRadius: '8px',
-                  background: '#f8fafc',
+                  background: 'var(--surface-muted)',
                   border: '1px solid #e2e8f0',
-                  color: '#0b5e4a',
+                  color: 'var(--primary-color)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -204,14 +204,14 @@ export default async function SubjectHubPage({ params }: PageProps) {
                   <div style={{
                     fontSize: '1.05rem',
                     fontWeight: 600,
-                    color: '#0f172a',
+                    color: 'var(--text-color)',
                     marginBottom: '0.15rem'
                   }}>
                     {item.title}
                   </div>
                   <div style={{
                     fontSize: '0.86rem',
-                    color: '#64748b',
+                    color: 'var(--text-light)',
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis'
@@ -236,8 +236,8 @@ export default async function SubjectHubPage({ params }: PageProps) {
                       padding: '0.4rem 0.65rem',
                       fontSize: '0.78rem',
                       fontWeight: 600,
-                      color: '#475569',
-                      background: '#f1f5f9',
+                      color: 'var(--text-color)',
+                      background: 'var(--surface-muted)',
                       borderRadius: '6px',
                       textDecoration: 'none',
                       border: '1px solid #e2e8f0',
@@ -259,8 +259,8 @@ export default async function SubjectHubPage({ params }: PageProps) {
                     padding: '0.45rem 0.85rem',
                     fontSize: '0.86rem',
                     fontWeight: 600,
-                    color: '#0b5e4a',
-                    background: '#e8f5f1',
+                    color: 'var(--primary-color)',
+                    background: 'var(--primary-light)',
                     borderRadius: '6px',
                     textDecoration: 'none',
                     transition: 'all 0.15s ease'
@@ -279,15 +279,15 @@ export default async function SubjectHubPage({ params }: PageProps) {
       {/* Embedded CSS for Hover Interactions and Clean Aesthetics */}
       <style dangerouslySetInnerHTML={{ __html: `
         .resource-list-item:hover {
-          background-color: #fafbfc;
+          background-color: var(--surface-muted);
         }
         .resource-list-item:hover .open-link-btn {
-          background-color: #0b5e4a;
+          background-color: var(--action-bg);
           color: #ffffff;
         }
         .direct-pdf-btn:hover {
-          background-color: #e2e8f0;
-          color: #0f172a;
+          background-color: var(--surface-muted);
+          color: var(--text-color);
         }
         @media (max-width: 640px) {
           .resource-list-item {
