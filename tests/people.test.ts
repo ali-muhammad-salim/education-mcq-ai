@@ -2,7 +2,8 @@ import {afterAll,beforeAll,describe,expect,it} from 'vitest';
 import {PrismaClient} from '@prisma/client';
 import {NextRequest} from 'next/server';
 import {randomUUID,createHash} from 'node:crypto';
-import {summarizeTopics} from '@/services/people/insights';
+import {summarizeTopics,revisionQuestions} from '@/services/people/insights';
+import { Prisma } from '@prisma/client';
 const url=process.env.TEST_DATABASE_URL;
 if(url&&!new URL(url).pathname.includes('_test'))throw Error('Dedicated test database required');
 describe.skipIf(!url)('Scoped people profiles and personal revision',()=>{
@@ -65,5 +66,10 @@ describe.skipIf(!url)('Scoped people profiles and personal revision',()=>{
  });
  it('does not misclassify measurement units as academic topics',()=>{
   const result=summarizeTopics([{id:'fixture',questionSnapshot:[{id:'q',orderIndex:1,marks:2,content:{stemText:'Force?',questionType:'NUMERICAL',correctAnswerText:'10',unit:'N'}}],answers:[{questionId:'q',score:0}]}]);expect(result.topics[0].topic).toBe('Topic not mapped');expect(result.unmapped).toBe(1);
+ });
+ it('deduplicates repeated missed questions despite shuffled or regenerated option IDs',()=>{
+  const options=[{id:'a',text:'Newton',isCorrect:true},{id:'b',text:'Watt',isCorrect:false}];
+  const samples=[options,[...options].reverse(),options.map(o=>({...o,id:'copy-'+o.id}))].map((choices,i)=>({id:'attempt-'+i,questionSnapshot:[{id:'q'+i,orderIndex:1,marks:2,content:{stemText:'Force unit?',questionType:'MCQ_SINGLE',options:choices}}] as Prisma.JsonArray,answers:[{questionId:'q'+i,score:0}]}));
+  expect(revisionQuestions(samples,undefined,20)).toHaveLength(1);
  });
 });
