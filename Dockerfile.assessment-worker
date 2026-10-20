@@ -1,0 +1,20 @@
+# Lightweight assessment worker: no Next build, Python, OCR or model runtime.
+FROM node:22-slim AS base
+WORKDIR /app
+RUN apt-get update && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
+COPY package.json package-lock.json* ./
+COPY prisma ./prisma/
+RUN npm ci --ignore-scripts
+RUN npx prisma generate --generator client
+COPY lib ./lib
+COPY repositories ./repositories
+COPY services ./services
+COPY scripts/job-worker.ts ./scripts/job-worker.ts
+COPY data/physics ./data/physics
+COPY tsconfig.json ./tsconfig.json
+ENV NODE_ENV=production
+ENV WORKER_KINDS=EXAM_FINALIZE,EXAM_GRADE
+ENV NODE_OPTIONS=--max-old-space-size=512
+RUN groupadd --system --gid 1001 nodejs && useradd --system --uid 1001 -g nodejs worker && mkdir -p /app/data/assets /app/data/jobs && chown -R worker:nodejs /app
+USER worker
+CMD ["node", "node_modules/tsx/dist/cli.mjs", "scripts/job-worker.ts"]
