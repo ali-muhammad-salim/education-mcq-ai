@@ -47,3 +47,25 @@ export function gradeAnswer(q: FrozenQuestion, input: unknown): number | null {
   }
   return null;
 }
+
+/** Explain the grading rule using only the frozen key; never invent subject guidance. */
+export function answerFeedback(q: FrozenQuestion, input: unknown, score: number | null | undefined): string {
+  if (score == null) return 'This response is awaiting teacher marking.';
+  if (!hasAnswer(q,input)) return 'No answer was submitted for this question.';
+  if (score >= q.marks) return 'Your answer matches the answer key.';
+  const a = answerPayloadSchema.parse(input), c = q.content;
+  if (['MCQ_SINGLE','TRUE_FALSE'].includes(c.questionType)) {
+    const chosen = c.options.find(o=>o.id===a.selectedOptionId)?.text || 'Unknown option';
+    const expected = c.options.find(o=>o.isCorrect)?.text || '';
+    return `Your answer “${chosen}” does not match the correct answer “${expected}”.`;
+  }
+  if (c.questionType === 'MCQ_MULTIPLE') {
+    const selected = new Set(a.selectedOptionIds || []);
+    const extra = c.options.filter(o=>selected.has(o.id!)&&!o.isCorrect).map(o=>o.text);
+    const missing = c.options.filter(o=>o.isCorrect&&!selected.has(o.id!)).map(o=>o.text);
+    return ['All correct choices must be selected for credit.', extra.length ? 'Incorrect choices selected: '+extra.join('; ')+'.' : '', missing.length ? 'Correct choices missed: '+missing.join('; ')+'.' : ''].filter(Boolean).join(' ');
+  }
+  if (c.questionType === 'NUMERICAL') return `Your value ${a.numericAnswer} is outside the accepted range: ${c.correctAnswerText} ± ${c.numericalTolerance}${c.unit ? ' '+c.unit : ''}.`;
+  if (c.questionType === 'MATCHING') return 'Some pairs do not match the answer key. Credit is awarded for each correctly matched pair.';
+  return 'Your response did not earn full marks. Review the teacher feedback and marking rubric below.';
+}

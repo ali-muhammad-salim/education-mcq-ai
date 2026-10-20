@@ -5,7 +5,7 @@ import { AuthUser } from '@/lib/auth';
 import { getFallbackPaper } from '@/lib/paperDataService';
 import { lockedTransaction } from '@/repositories/transaction';
 import { answerPayloadSchema, saveAnswerSchema } from '@/lib/validations/assessment';
-import { FrozenQuestion, gradeAnswer, hasAnswer, normalizeQuestion, snapshotSchema, studentQuestion } from './scoring';
+import { FrozenQuestion, answerFeedback, gradeAnswer, hasAnswer, normalizeQuestion, snapshotSchema, studentQuestion } from './scoring';
 import { z } from 'zod';
 import { randomInt } from 'node:crypto';
 
@@ -209,5 +209,5 @@ export async function getResults(identifier: string, user: AuthUser, attemptId?:
     percentage: maximum ? Math.round(score / maximum * 100) : 0, submittedAt: attempt.submittedAt, startedAt: attempt.startedAt, tabSwitchCount: attempt.tabSwitchCount,
     processing, timeSpentSec: Math.round(((attempt.submittedAt?.getTime() ?? Date.now()) - attempt.startedAt.getTime()) / 1000), canViewCorrectAnswers: showKey, educatorView: Boolean(educator), canRetake: canRetake && !processing, canGrade: Boolean(educator && !['IN_PROGRESS','SUBMITTED'].includes(attempt.status)),
     questions: questions.map(q => { const a = answers.get(q.id); return { ...studentQuestion(q), questionId: q.id, quizAnswerId: educator ? a?.id : undefined, teacherComment: a?.teacherComment, gradeRecords: a?.gradeRecords.map(g => ({ awardedMarks: g.awardedMarks, feedback: g.feedback, createdAt: g.createdAt })), studentAnswer: a?.answerPayload, scoreAwarded: a?.score, isAutoGraded: a?.isAutoGraded,
-      ...(showKey ? { options: q.content.options, correctAnswerText: q.content.correctAnswerText, explanation: q.content.explanation, rubric: q.content.rubric } : {}) }; }) };
+      ...(showKey ? { options: q.content.options, correctAnswerText: q.content.correctAnswerText, explanation: q.content.explanation, answerFeedback: answerFeedback(q,a?.answerPayload,a?.score), matchingPairs: q.content.matchingPairs, rubric: q.content.rubric } : {}) }; }) };
 }

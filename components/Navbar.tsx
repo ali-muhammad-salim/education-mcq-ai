@@ -192,7 +192,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const saved = (localStorage.getItem('riselearner_theme') || 'system') as 'system' | 'light' | 'dark';
+      let saved = 'system';try{saved=localStorage.getItem('riselearner_theme')||'system';}catch{/* Theme selection still works when browser storage is unavailable. */}
       const initialMode = (saved === 'light' || saved === 'dark' || saved === 'system') ? saved : 'system';
       setThemeMode(initialMode);
       applyTheme(initialMode);
@@ -200,7 +200,7 @@ export default function Navbar() {
       // Listen to OS theme changes if in 'system' mode
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
       const handleChange = () => {
-        const currentSaved = (localStorage.getItem('riselearner_theme') || 'system') as 'system' | 'light' | 'dark';
+        let currentSaved='system';try{currentSaved=localStorage.getItem('riselearner_theme')||'system';}catch{/* Use the system preference. */}
         if (currentSaved === 'system') {
           applyTheme('system');
         }
@@ -219,7 +219,7 @@ export default function Navbar() {
 
     setThemeMode(nextMode);
     if (typeof window !== 'undefined') {
-      localStorage.setItem('riselearner_theme', nextMode);
+      try{localStorage.setItem('riselearner_theme', nextMode);}catch{/* Apply the selection for this page even without storage. */}
     }
     applyTheme(nextMode);
   };
