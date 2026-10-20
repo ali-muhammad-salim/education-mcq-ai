@@ -30,7 +30,7 @@ export default function SSC1Page() {
         <div style={{ display: 'inline-block', background: 'rgba(255, 255, 255, 0.2)', padding: '4px 14px', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
           SECONDARY SCHOOL CERTIFICATE • GRADE 9
         </div>
-        <h1 style={{ color: 'white', fontSize: '2.5rem', marginBottom: '1rem' }}>
+        <h1 className="mobile-page-title" style={{ color: 'white', fontSize: '2.5rem', marginBottom: '1rem' }}>
           AKU-EB SSC-I Academic Portal
         </h1>
         <p style={{ fontSize: '1.15rem', opacity: 0.95, maxWidth: '750px', lineHeight: 1.6 }}>
@@ -52,7 +52,7 @@ export default function SSC1Page() {
             <span style={{ background: '#e6f0ed', color: '#0b5e4a', fontWeight: 700, fontSize: '0.75rem', padding: '4px 10px', borderRadius: '6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               ⭐ FULL RESOURCE PACK LIVE
             </span>
-            <h2 style={{ fontSize: '2rem', marginTop: '0.5rem', color: '#0b5e4a' }}>
+            <h2 className="mobile-page-title" style={{ fontSize: '2rem', marginTop: '0.5rem', color: '#0b5e4a' }}>
               Physics (Class IX • SSC-I)
             </h2>
             <p style={{ color: '#5a7a6f', marginTop: '0.25rem' }}>
@@ -68,7 +68,7 @@ export default function SSC1Page() {
           </Link>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginTop: '1.5rem', borderTop: '1px solid #eef2f0', paddingTop: '1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1rem', marginTop: '1.5rem', borderTop: '1px solid #eef2f0', paddingTop: '1.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <CheckCircle2 size={20} color="#0b5e4a" />
             <span style={{ fontSize: '0.95rem', color: '#2c3e38' }}>Dedicated Grade 9 Syllabus</span>
@@ -100,7 +100,7 @@ export default function SSC1Page() {
       <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#2c3e38' }}>
         All SSC-I Subjects
       </h3>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: '1.5rem' }}>
         {[
           { name: 'Physics', code: 'PHY-IX', desc: 'Syllabus, 40 MCQs, CRQs, Practicals & Pacing Guide', ready: true, href: '/classes/ssc-i/physics' },
           { name: 'Mathematics', code: 'MTH-IX', desc: 'Algebra, Geometry, Trigonometry & Past Papers', ready: false, href: '/syllabus' },

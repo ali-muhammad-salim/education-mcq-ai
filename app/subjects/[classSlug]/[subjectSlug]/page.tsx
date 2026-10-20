@@ -200,7 +200,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
           </span>
         </div>
 
-        <h1 style={{ fontSize: '2.75rem', color: '#ffffff', margin: '0 0 0.85rem 0', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <h1 className="mobile-page-title" style={{ fontSize: '2.75rem', color: '#ffffff', margin: '0 0 0.85rem 0', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <span>{subjectInfo.icon}</span>
           <span>{subjectInfo.title} Resource Archive</span>
         </h1>
@@ -254,7 +254,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
         </div>
 
         {pastPaper1Code && pastPaper2Code ? (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))', gap: '1.5rem' }}>
 
             {/* Paper 1: MCQs */}
             <div style={{
@@ -439,7 +439,7 @@ export default async function SubjectHubPage({ params }: PageProps) {
         </div>
 
         {modelPaper1Code && modelPaper2Code ? (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))', gap: '1.5rem' }}>
 
             {/* Model Paper 1 */}
             <div style={{
@@ -632,11 +632,11 @@ export default async function SubjectHubPage({ params }: PageProps) {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.4rem',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'normal'
               }}
             >
               <BookOpen size={17} />
-              <span>Explore Interactive Syllabus Tracker →</span>
+              <span style={{minWidth:0,whiteSpace:"normal"}}>Explore Interactive Syllabus Tracker →</span>
             </Link>
           </div>
         </div>

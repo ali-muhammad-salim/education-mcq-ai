@@ -101,7 +101,7 @@ export default function PastPapersArchiveClient({ pastPapers, initialGrade = 'SS
         boxShadow: '0 8px 24px rgba(0,0,0,0.18)'
       }}>
         {/* Huge Subject Title */}
-        <h1 style={{
+        <h1 className="mobile-page-title" style={{
           fontSize: '3rem',
           fontWeight: 800,
           margin: '0 0 0.5rem 0',
@@ -281,7 +281,7 @@ export default function PastPapersArchiveClient({ pastPapers, initialGrade = 'SS
               Curriculum Blueprint • 2025–2028
             </div>
             
-            <h2 style={{
+            <h2 className="mobile-page-title" style={{
               fontSize: '2.6rem',
               fontWeight: 800,
               color: '#ffffff',
@@ -394,7 +394,7 @@ export default function PastPapersArchiveClient({ pastPapers, initialGrade = 'SS
                 borderBottom: idx === allYears.length - 1 ? 'none' : '1px solid #3e4451'
               }}>
                 {/* Year Header (e.g. 2025, 2024, 2023) */}
-                <h2 style={{
+                <h2 className="mobile-page-title" style={{
                   fontSize: '2.6rem',
                   fontWeight: 800,
                   color: '#ffffff',

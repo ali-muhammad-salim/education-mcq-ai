@@ -49,7 +49,7 @@ export default function ModelPapersPage() {
         boxShadow: '0 8px 24px rgba(0,0,0,0.18)'
       }}>
         {/* Large Subject Title */}
-        <h1 style={{
+        <h1 className="mobile-page-title" style={{
           fontSize: '3rem',
           fontWeight: 800,
           margin: '0 0 0.5rem 0',
@@ -222,7 +222,7 @@ export default function ModelPapersPage() {
               Curriculum Standard • 2025–2028 Blueprint
             </div>
             
-            <h2 style={{
+            <h2 className="mobile-page-title" style={{
               fontSize: '2.75rem',
               fontWeight: 800,
               color: '#ffffff',
@@ -343,7 +343,7 @@ export default function ModelPapersPage() {
 
       {/* VIEW MODE 2: VISUAL CARD PREVIEWS */}
       {viewMode === 'cards' && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(480px, 1fr))', gap: '1.75rem', marginBottom: '3.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 480px), 1fr))', gap: '1.75rem', marginBottom: '3.5rem' }}>
           
           {/* Card 1: Model Paper 1 */}
           <div style={{

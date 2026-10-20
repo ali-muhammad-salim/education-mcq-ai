@@ -237,7 +237,7 @@ export default function StudentDashboardPage() {
   const inProgressList = data?.inProgressAttempts || [];
 
   return (
-    <div style={{
+    <div className="assessment-dashboard" style={{
       minHeight: '100vh',
       backgroundColor: 'var(--bg-color, #f4f7f6)',
       color: 'var(--text-color, #2c3e38)',
@@ -504,9 +504,9 @@ export default function StudentDashboardPage() {
         )}
 
         {/* KPI Metrics Grid */}
-        <div style={{
+        <div className="dashboard-metrics" style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
           gap: '1rem'
         }}>
           <div style={{
@@ -595,7 +595,7 @@ export default function StudentDashboardPage() {
         </div>
 
         {/* Navigation Tabs */}
-        <div style={{
+        <div className="dashboard-tabs" style={{
           display: 'flex',
           alignItems: 'center',
           gap: '0.5rem',
@@ -895,7 +895,7 @@ export default function StudentDashboardPage() {
                 overflow: 'hidden',
                 boxShadow: 'var(--shadow-sm)'
               }}>
-                <table style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse', fontSize: '0.82rem' }}>
+                <table className="mobile-data-table" tabIndex={0} aria-label="Assessment results; scroll horizontally for all columns" style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse', fontSize: '0.82rem' }}>
                   <thead style={{
                     backgroundColor: 'rgba(244, 247, 246, 0.8)',
                     color: 'var(--text-light, #5a7a6f)',

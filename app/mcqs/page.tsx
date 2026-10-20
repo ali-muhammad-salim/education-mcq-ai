@@ -53,7 +53,7 @@ export default async function McqBankPage() {
         }}>
           <Sparkles size={14} /> OFFICIAL AI-EXTRACTED MODEL EXAMINATION ITEMS
         </div>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0 0 0.75rem 0' }}>
+        <h1 className="mobile-page-title" style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0 0 0.75rem 0' }}>
           Official Physics MCQ Question Bank ({mcqs.length} Items)
         </h1>
         <p style={{ fontSize: '1.1rem', opacity: 0.95, lineHeight: 1.6, margin: '0 0 2rem 0', maxWidth: '800px' }}>
@@ -145,7 +145,7 @@ export default async function McqBankPage() {
 
               {/* Options */}
               {choices && Object.keys(choices).length > 0 && (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.75rem', marginBottom: '1.25rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '0.75rem', marginBottom: '1.25rem' }}>
                   {Object.entries(choices).map(([key, text]) => (
                     <div
                       key={key}

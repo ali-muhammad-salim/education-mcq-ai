@@ -5,7 +5,7 @@
   /* AKU Green Theme Palette */
   --bg-color: #f4f7f6;
   --text-color: #2c3e38;
-  --text-light: #5a7a6f;
+  --text-light: #4f6c61;
   --primary-color: #0b5e4a; /* Deep Educational Green */
   --primary-hover: #084737;
   --primary-light: #e6f0ed;
@@ -766,3 +766,5 @@ html.dark :is([style*="background:#f4f8f6"],[style*="background: rgb(244, 248, 2
 
 html.dark :is([style*="background:#c9a050"],[style*="background: rgb(201, 160, 80)"],[style*="background-color:#c9a050"],[style*="background-color: rgb(201, 160, 80)"]){background:#422f17!important;color:#fde68a!important}
 html.dark :is([style^="color:#713f12"],[style*=";color:#713f12"],[style^="color: rgb(113, 63, 18)"],[style*="; color: rgb(113, 63, 18)"],[style^="color:#854d0e"],[style*=";color:#854d0e"],[style^="color: rgb(133, 77, 14)"],[style*="; color: rgb(133, 77, 14)"]){color:#fde68a!important}
+
+html:not(.dark) button:disabled{color:var(--disabled-text)!important;opacity:1}

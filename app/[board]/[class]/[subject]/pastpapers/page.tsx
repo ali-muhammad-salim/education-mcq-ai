@@ -83,7 +83,7 @@ export default async function SubjectPastPapersPage({ params }: PageProps) {
       />
 
       <div style={{ marginBottom: '1.5rem' }}>
-        <h1 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#0b5e4a', margin: '0 0 0.5rem 0', letterSpacing: '-0.5px' }}>
+        <h1 className="mobile-page-title" style={{ fontSize: '2.4rem', fontWeight: 800, color: '#0b5e4a', margin: '0 0 0.5rem 0', letterSpacing: '-0.5px' }}>
           AKU-EB Examination Archive & Solved Papers
         </h1>
         <p style={{ color: '#5a7a6f', fontSize: '1.05rem', margin: 0, lineHeight: 1.5 }}>

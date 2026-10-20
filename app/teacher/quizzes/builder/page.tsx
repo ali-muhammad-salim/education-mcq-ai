@@ -1243,7 +1243,7 @@ function GoogleFormsQuizBuilderContent() {
                 <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#202124' }}>Exam Schedule & Academic Board</h3>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                 <div>
                   <label style={{ fontSize: '13px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Board</label>
                   <select
@@ -1272,7 +1272,7 @@ function GoogleFormsQuizBuilderContent() {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '12px' }}>
+              <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '12px' }}>
                 <div>
                   <label style={{ fontSize: '13px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Subject</label>
                   <select
@@ -1731,7 +1731,7 @@ function QuestionBankModal({
                       </p>
 
                       {Array.isArray(item.options) && item.options.length > 0 && (
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', marginTop: '8px' }}>
+                        <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', marginTop: '8px' }}>
                           {item.options.map((opt: any, oIdx: number) => (
                             <div
                               key={oIdx}
@@ -1902,7 +1902,7 @@ function AiGeneratorModal({
         <div className="gf-modal-body"><details><summary>Recent generation jobs</summary>{pastJobs.map(job => <p key={job.id}>{new Date(job.createdAt).toLocaleString()} — {job.status} {job.error} {Array.isArray(job.result?.questions) && <button type="button" onClick={() => { setGeneratedList(job.result.questions); setSelectedIds(new Set(job.result.questions.map((_: unknown, index: number) => index))); }}>Restore generated questions</button>}</p>)}</details>
           {generatedList.length === 0 ? (
             <>
-              <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '12px' }}>
+              <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '12px' }}>
                 <div>
                   <label style={{ fontSize: '12px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Topic / Chapter</label>
                   <input
@@ -1933,7 +1933,7 @@ function AiGeneratorModal({
 
               <div>
                 <label style={{ fontSize: '12px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Difficulty Breakdown</label>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
+                <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
                   <div style={{ padding: '8px', background: '#f8f9fa', borderRadius: '4px', border: '1px solid #dadce0' }}>
                     <span style={{ fontSize: '12px', fontWeight: 700, color: '#137333', display: 'block', marginBottom: '2px' }}>Easy</span>
                     <input
@@ -2014,7 +2014,7 @@ function AiGeneratorModal({
                   <p style={{ fontSize: '13px', fontWeight: 600 }}>
                     <MathText text={item.stemText} />
                   </p>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px', marginTop: '6px' }}>
+                  <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px', marginTop: '6px' }}>
                     {(item.options || []).map((opt: any, oIdx: number) => (
                       <div key={oIdx} style={{ fontSize: '11px', color: opt.isCorrect ? '#137333' : '#5f6368', fontWeight: opt.isCorrect ? 700 : 400 }}>
                         {String.fromCharCode(65 + oIdx)}. <MathText text={opt.text} />

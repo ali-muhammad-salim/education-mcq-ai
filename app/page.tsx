@@ -166,7 +166,7 @@ export default function Home() {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))',
           gap: '1rem'
         }}>
           {ALL_BOARDS.map((board) => {
@@ -283,10 +283,10 @@ export default function Home() {
                 Flagship Curriculum
               </span>
             </div>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#0b5e4a', margin: 0 }}>
+            <h2 className="mobile-page-title" style={{ fontSize: '2rem', fontWeight: 800, color: '#0b5e4a', margin: 0 }}>
               Aga Khan University Examination Board (AKU-EB)
             </h2>
-            <p style={{ color: '#5a7a6f', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>
+            <p style={{ color: 'var(--text-light)', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>
               Official SLO-based syllabus, cognitive domain distribution, model examination papers, and annual solved past papers.
             </p>
           </div>
@@ -314,7 +314,7 @@ export default function Home() {
         {/* AKU-EB Classes Cards: 9, 10 (Active), 11, 12 (Coming Soon) */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 270px), 1fr))',
           gap: '1.5rem'
         }}>
           {/* Class IX (SSC-I) - Active */}
@@ -333,7 +333,7 @@ export default function Home() {
                 <span style={{ fontSize: '0.78rem', background: '#e6f0ed', color: '#0b5e4a', padding: '3px 8px', borderRadius: '6px', fontWeight: 800 }}>
                   SSC Part I • Grade 9
                 </span>
-                <span style={{ fontSize: '0.75rem', color: '#059669', fontWeight: 800 }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--primary-color)', fontWeight: 800 }}>
                   ✓ Available Now
                 </span>
               </div>
@@ -378,7 +378,7 @@ export default function Home() {
               >
                 Access Class IX Physics Hub →
               </Link>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
+              <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
                 <Link
                   href="/akueb/IX/physics/pastpapers"
                   style={{
@@ -430,7 +430,7 @@ export default function Home() {
                 <span style={{ fontSize: '0.78rem', background: '#e6f0ed', color: '#0b5e4a', padding: '3px 8px', borderRadius: '6px', fontWeight: 800 }}>
                   SSC Part II • Grade 10
                 </span>
-                <span style={{ fontSize: '0.75rem', color: '#059669', fontWeight: 800 }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--primary-color)', fontWeight: 800 }}>
                   ✓ Available Now
                 </span>
               </div>
@@ -475,7 +475,7 @@ export default function Home() {
               >
                 Access Class X Physics Hub →
               </Link>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
+              <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
                 <Link
                   href="/akueb/X/physics/pastpapers"
                   style={{
@@ -633,7 +633,7 @@ export default function Home() {
                 Provincial Examination Board
               </span>
             </div>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-light)', margin: 0 }}>
+            <h2 className="mobile-page-title" style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-light)', margin: 0 }}>
               Sindh Board (BSEK / BIEK Karachi)
             </h2>
             <p style={{ color: 'var(--text-light)', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>
@@ -657,7 +657,7 @@ export default function Home() {
         {/* Sindh Board Classes Cards (All with low opacity and Coming Soon) */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
           gap: '1.5rem'
         }}>
           {['Class IX (SSC Part I)', 'Class X (SSC Part II)', 'Class XI (HSSC Part I)', 'Class XII (HSSC Part II)'].map((className, idx) => (
@@ -739,7 +739,7 @@ export default function Home() {
                 National Curriculum
               </span>
             </div>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-light)', margin: 0 }}>
+            <h2 className="mobile-page-title" style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-light)', margin: 0 }}>
               Federal Board (FBISE Islamabad)
             </h2>
             <p style={{ color: 'var(--text-light)', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>
@@ -763,7 +763,7 @@ export default function Home() {
         {/* Federal Board Classes Cards (Low Opacity, Coming Soon) */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
           gap: '1.5rem'
         }}>
           {['Class IX (SSC Part I)', 'Class X (SSC Part II)', 'Class XI (HSSC Part I)', 'Class XII (HSSC Part II)'].map((className, idx) => (
@@ -845,7 +845,7 @@ export default function Home() {
                 Provincial Board
               </span>
             </div>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-light)', margin: 0 }}>
+            <h2 className="mobile-page-title" style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-light)', margin: 0 }}>
               Punjab Board (BISE Lahore / Rawalpindi)
             </h2>
             <p style={{ color: 'var(--text-light)', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>
@@ -869,7 +869,7 @@ export default function Home() {
         {/* Punjab Board Classes Cards (Low Opacity, Coming Soon) */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
           gap: '1.5rem'
         }}>
           {['Class IX (SSC Part I)', 'Class X (SSC Part II)', 'Class XI (HSSC Part I)', 'Class XII (HSSC Part II)'].map((className, idx) => (

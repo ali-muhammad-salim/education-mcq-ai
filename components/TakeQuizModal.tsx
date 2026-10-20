@@ -418,8 +418,8 @@ export default function TakeQuizModal({
             borderRadius: phase === 'active' || phase === 'completed' ? '0px' : '20px',
             maxWidth: phase === 'active' || phase === 'completed' ? '100vw' : '620px',
             width: phase === 'active' || phase === 'completed' ? '100vw' : '100%',
-            height: phase === 'active' ? '100dvh' : (phase === 'completed' ? '100vh' : 'auto'),
-            maxHeight: phase === 'active' ? '100dvh' : (phase === 'completed' ? '100vh' : '94vh'),
+            height: phase === 'active' ? '100dvh' : (phase === 'completed' ? '100dvh' : 'auto'),
+            maxHeight: phase === 'active' ? '100dvh' : (phase === 'completed' ? '100dvh' : '94dvh'),
             overflowY: phase === 'active' ? 'hidden' : 'auto',
             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.45)',
             position: 'relative',
@@ -547,7 +547,7 @@ export default function TakeQuizModal({
           {/* PHASE 2: QUIZ SETUP, TIMER, & RANDOMIZATION NOTICE                       */}
           {/* ========================================================================= */}
           {phase === 'setup' && (
-            <div style={{ padding: '2.5rem 2rem' }}>
+            <div className="exam-phase-panel" style={{ padding: '2.5rem 2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
                 <div style={{ background: '#0b5e4a', color: '#ffffff', borderRadius: '10px', padding: '8px', display: 'flex' }}>
                   <Award size={24} />
@@ -602,7 +602,7 @@ export default function TakeQuizModal({
                   1. Examination Timer (Optional)
                 </label>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
+                <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
                   <button
                     type="button"
                     onClick={() => setIsTimed(true)}
@@ -837,7 +837,8 @@ export default function TakeQuizModal({
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                height: '100%',
+                flex: 1,
+                minHeight: 0,
                 maxHeight: '100%',
                 overflow: 'hidden',
                 position: 'relative',
@@ -893,7 +894,7 @@ export default function TakeQuizModal({
               )}
 
               {/* Quiz Header Bar */}
-              <div style={{
+              <div className="exam-header" style={{
                 padding: '1rem 1.5rem',
                 borderBottom: '1px solid #e2e8f0',
                 display: 'flex',
@@ -1027,7 +1028,7 @@ export default function TakeQuizModal({
               {/* Quick Question Jump Drawer (Grid View - No separate scrollbar track) */}
               {showQuestionGrid && (
                 <div
-                  className="no-scrollbar"
+                  className="no-scrollbar exam-question-grid"
                   style={{
                     padding: '1rem',
                     background: '#ffffff',
@@ -1247,7 +1248,7 @@ export default function TakeQuizModal({
               </div>
 
               {/* Bottom Stepper Controls (Previous / Next / Finish) */}
-              <div style={{
+              <div className="exam-stepper" style={{
                 padding: '1rem 1.5rem',
                 borderTop: '1px solid #e2e8f0',
                 display: 'flex',
@@ -1367,7 +1368,7 @@ export default function TakeQuizModal({
                   </button>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.65rem', marginBottom: '1.25rem' }}>
+                <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.65rem', marginBottom: '1.25rem' }}>
                   <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
                     <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 600 }}>Tab Switches</div>
                     <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a' }}>{tabSwitchLogs.length}</div>
@@ -1465,7 +1466,7 @@ export default function TakeQuizModal({
           {/* ========================================================================= */}
           {phase === 'completed' && completionData?.pending && <div style={{ padding: '3rem 2rem', textAlign: 'center' }}><ShieldCheck size={40} color="#0b5e4a" /><h2>Assessment submitted</h2><p>{completionData.held ? 'Your answers are saved. Your teacher has not released these results yet.' : completionData.manual ? 'Your answers are saved. Written responses are awaiting teacher marking.' : 'Your answers are saved. We’re preparing your score and will show it here automatically.'}</p><p>Submission receipt: {engine.submitted?.attemptId}</p><p><a href={'/quizzes/' + engine.submitted?.quizId + '/results?attemptId=' + engine.submitted?.attemptId}>Check results</a></p><button onClick={onClose}>Close & Return to Paper</button></div>}
           {phase === 'completed' && completionData && !completionData.pending && (
-            <div style={{ padding: '2.5rem 2rem' }}>
+            <div className="exam-phase-panel" style={{ padding: '2.5rem 2rem' }}>
               {/* Header Score Card */}
               <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                 <div style={{
@@ -1766,7 +1767,7 @@ export default function TakeQuizModal({
                           <MathText text={qText} />
                         </div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '0.5rem', marginBottom: '0.75rem' }}>
                           <div style={{
                             background: isRight ? '#ecfdf5' : '#fef2f2',
                             padding: '8px 12px',

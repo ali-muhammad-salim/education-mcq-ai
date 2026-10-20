@@ -136,7 +136,7 @@ export default function ResourcesPage() {
           }}>
             <Sparkles size={15} /> STRUCTURED ACADEMIC RESOURCE LIBRARY
           </div>
-          <h1 style={{ fontSize: '2.6rem', fontWeight: 800, margin: '0 0 0.75rem 0', lineHeight: 1.2 }}>
+          <h1 className="mobile-page-title" style={{ fontSize: '2.6rem', fontWeight: 800, margin: '0 0 0.75rem 0', lineHeight: 1.2 }}>
             Physics Chapter Resource Packs & Download Hub
           </h1>
           <p style={{ fontSize: '1.1rem', opacity: 0.95, lineHeight: 1.6, margin: '0 0 2rem 0' }}>
@@ -208,7 +208,7 @@ export default function ResourcesPage() {
       {/* Metrics Bar */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
         gap: '1.25rem',
         marginBottom: '2.5rem'
       }}>
@@ -226,7 +226,7 @@ export default function ResourcesPage() {
 
         <div style={{ background: '#ffffff', border: '1px solid #e1e8e5', padding: '1.25rem', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
           <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: 600 }}>Model Paper MCQs</div>
-          <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#27ae60', marginTop: '0.25rem' }}>{totalMCQs}</div>
+          <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--primary-color)', marginTop: '0.25rem' }}>{totalMCQs}</div>
           <div style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>With detailed keys & formulas</div>
         </div>
 
@@ -298,7 +298,7 @@ export default function ResourcesPage() {
           </button>
         </div>
 
-        <div style={{ position: 'relative', minWidth: '280px' }}>
+        <div style={{ position: 'relative', minWidth: 'min(280px, 100%)' }}>
           <Search size={18} style={{ position: 'absolute', left: '12px', top: '10px', color: 'var(--text-light)' }} />
           <input
             type="text"
@@ -357,7 +357,7 @@ export default function ResourcesPage() {
                   }}>
                     {item.classLevel} • {isGrade9 ? 'SSC-I' : 'SSC-II'}
                   </span>
-                  <span style={{ fontSize: '0.75rem', color: '#999' }}>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-light)' }}>
                     {(item.sizeBytes / 1024).toFixed(1)} KB
                   </span>
                 </div>
@@ -406,7 +406,7 @@ export default function ResourcesPage() {
                 </button>
 
                 {/* Download Actions Strip */}
-                <div style={{
+                <div className="mobile-stack-grid" style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr 1fr',
                   gap: '0.5rem',
@@ -701,7 +701,7 @@ export default function ResourcesPage() {
                                 <MathText text={mcq.stem_text} />
                               </div>
 
-                              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
+                              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
                                 {(mcq.options || []).map((opt: string, optIdx: number) => (
                                   <div key={optIdx} style={{
                                     padding: '10px 14px',

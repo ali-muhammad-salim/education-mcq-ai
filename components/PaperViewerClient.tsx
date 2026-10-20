@@ -786,7 +786,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                         
                         {/* Interactive Practice Mode */}
                         {interactiveMode ? (
-                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0.65rem' }}>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '0.65rem' }}>
                             {['A', 'B', 'C', 'D'].map(optKey => {
                               const optText = choices[optKey] || '';
                               if (!optText) return null;
@@ -819,7 +819,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                           </div>
                         ) : (
                           /* Standard / Quick Study Mode Options */
-                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0.65rem' }}>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '0.65rem' }}>
                             {['A', 'B', 'C', 'D'].map(optKey => {
                               const optText = choices[optKey] || '';
                               if (!optText) return null;

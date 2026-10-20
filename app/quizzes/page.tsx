@@ -301,7 +301,7 @@ export default function QuizzesCatalogPage() {
           <div style={{
             position: 'relative',
             flex: '1 1 320px',
-            minWidth: '260px'
+            minWidth: 'min(260px, 100%)'
           }}>
             <Search 
               size={18} 

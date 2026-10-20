@@ -1,4 +1,5 @@
 import './globals.css';
+import './mobile.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BookOpen, GraduationCap, UploadCloud, ShieldCheck, ArrowRight, Mail } from 'lucide-react';
@@ -41,9 +42,10 @@ export default function RootLayout({
         <div className="app-layout">
           
           {/* Global Multi-Board & Subject Navigation */}
+          <a href="#main-content" className="skip-link">Skip to content</a>
           <Navbar />
 
-          <main className="main-content">
+          <main id="main-content" className="main-content">
             {children}
           </main>
 
@@ -62,7 +64,7 @@ export default function RootLayout({
                 maxWidth: '1400px', 
                 margin: '0 auto', 
                 display: 'grid', 
-                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
                 gap: '2.5rem',
                 marginBottom: '2.5rem'
               }}
@@ -214,7 +216,7 @@ export default function RootLayout({
                 flexWrap: 'wrap', 
                 gap: '1rem',
                 fontSize: '0.82rem',
-                color: '#64748b'
+                color: '#94a3b8'
               }}
             >
               <div>
@@ -223,8 +225,8 @@ export default function RootLayout({
               <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                 <Link href="/privacy" style={{ color: '#cbd5e1', textDecoration: 'none', fontWeight: 600 }}>Privacy Policy</Link>
                 <Link href="/terms" style={{ color: '#cbd5e1', textDecoration: 'none', fontWeight: 600 }}>Terms of Service</Link>
-                <Link href="/syllabus" style={{ color: '#64748b', textDecoration: 'none' }}>Syllabus Standards</Link>
-                <Link href="/past-papers" style={{ color: '#64748b', textDecoration: 'none' }}>Examination Archives</Link>
+                <Link href="/syllabus" style={{ color: '#94a3b8', textDecoration: 'none' }}>Syllabus Standards</Link>
+                <Link href="/past-papers" style={{ color: '#94a3b8', textDecoration: 'none' }}>Examination Archives</Link>
               </div>
             </div>
           </footer>

@@ -114,7 +114,7 @@ export default function ClassSubjectsClient({ board, classDef, initialSubjects }
             </span>
           </div>
 
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem 0', letterSpacing: '-0.5px' }}>
+          <h1 className="mobile-page-title" style={{ fontSize: '2.5rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem 0', letterSpacing: '-0.5px' }}>
             {classDef.name} Subjects ({initialSubjects.length})
           </h1>
 

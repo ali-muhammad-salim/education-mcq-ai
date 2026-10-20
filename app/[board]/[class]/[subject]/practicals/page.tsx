@@ -68,7 +68,7 @@ export default async function SubjectPracticalsPage({ params }: PageProps) {
             </span>
           </div>
 
-          <h1 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem 0', letterSpacing: '-0.5px' }}>
+          <h1 className="mobile-page-title" style={{ fontSize: '2.4rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem 0', letterSpacing: '-0.5px' }}>
             {meta.title} Practical Activities & Lab Paper III
           </h1>
 

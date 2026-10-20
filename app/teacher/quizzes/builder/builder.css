@@ -892,3 +892,22 @@ html.dark :is(.gf-back-btn,.gf-icon-btn,.gf-dock-btn,.gf-footer-icon-btn):hover{
 @media(max-width:800px){.gf-navbar{position:relative;padding:12px}.gf-nav-left{flex:1 1 100%}.gf-nav-tabs{gap:12px}.gf-nav-right{gap:8px}.gf-nav-right button{padding:8px 12px}.gf-floating-toolbar{position:sticky;bottom:12px;left:auto;right:auto;top:auto;transform:none;flex-direction:row;flex-wrap:wrap;width:max-content;max-width:95%;margin:0 auto 1rem}.gf-title-card,.gf-question-card{padding:18px}.gf-q-header-row{flex-wrap:wrap}.gf-main-title-input{font-size:22px}}
 
 html.dark .gf-page{--builder-accent:#c4b5fd}
+@media(max-width:700px){
+  .gf-nav-left{flex-wrap:nowrap!important;gap:8px}
+  .gf-nav-left .gf-form-icon{display:none}
+  .gf-nav-left>div:last-child{flex:1;min-width:0}
+  .gf-title-header-input{width:100%;min-width:0}
+  .gf-nav-right{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .gf-nav-right button{justify-content:center;min-width:0;max-width:100%;white-space:normal}
+  .gf-nav-right button[title="Settings & Anti-Cheating"]{display:none}
+  .gf-nav-right button:last-child{grid-column:span 2}
+  .gf-dock-btn,.gf-footer-icon-btn,.gf-opt-action-btn,.gf-icon-btn{min-width:44px;min-height:44px}
+  .gf-main-container{padding-left:8px;padding-right:8px}
+  .gf-q-header-row>*{min-width:0;max-width:100%}
+}
+@media(max-width:700px){
+  .gf-nav-right button{padding:8px 4px!important;font-size:12px;gap:4px!important}
+  .gf-nav-left>div:last-child>div>span{flex-shrink:0;white-space:nowrap}
+  .gf-floating-toolbar{gap:2px;max-width:100%;padding:4px}
+  .gf-dock-btn{margin:0;width:44px;flex-shrink:0}
+}
