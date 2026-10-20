@@ -14,6 +14,7 @@ import { AssessmentActions, ClassroomRoster } from '@/components/AssessmentManag
 import AuthModal from '@/components/AuthModal';
 import ReviewQuestionEditor from '@/components/ReviewQuestionEditor';
 import MathText from '@/components/MathText';
+import PeopleDirectory from '@/components/PeopleDirectory';
 
 export default function TeacherDashboardPage() {
   const [page, setPage] = useState(1);
@@ -22,7 +23,7 @@ export default function TeacherDashboardPage() {
   const [loading, setLoading] = useState(true);
   const [isStudentBlocked, setIsStudentBlocked] = useState(false);
   const [authRequired, setAuthRequired] = useState(false);
-  const [activeTab, setActiveTab] = useState<'quizzes' | 'submissions' | 'classrooms' | 'integrity' | 'ai-review'>('quizzes');
+  const [activeTab, setActiveTab] = useState<'quizzes' | 'submissions' | 'classrooms' | 'integrity' | 'ai-review' | 'students'>('quizzes');
   const [authModalOpen, setAuthModalOpen] = useState(false);
   
   // AI Doubt Queue state
@@ -668,6 +669,7 @@ export default function TeacherDashboardPage() {
             { id: 'quizzes', label: 'My Assessments', count: (data?.quizzes || []).length },
             { id: 'submissions', label: 'Submissions & Grades', count: (data?.recentSubmissions || []).length },
             { id: 'classrooms', label: 'Classrooms & Rosters', count: (data?.classrooms || []).length },
+            { id: 'students', label: 'Student Progress', count: '↗' },
             { id: 'integrity', label: 'Session Activity', count: (data?.flaggedAttempts || []).length },
             { id: 'ai-review', label: 'AI Doubt Queue', count: (data?.aiDoubtQueue || []).filter((d: any) => d.status === 'PENDING_REVIEW').length }
           ].map(tab => (
@@ -705,6 +707,7 @@ export default function TeacherDashboardPage() {
         </div>
 
         {/* TAB 1: ASSESSMENTS LIST */}
+        {activeTab === 'students' && <PeopleDirectory />}
         {activeTab === 'quizzes' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

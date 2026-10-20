@@ -1,3 +1,5 @@
+Release update: the approved production rollout is complete. See [live release verification](verification/PRODUCTION-RELEASE-2026-10-20.md) for current migration, worker and queue status, and [people dashboards](PEOPLE-DASHBOARDS.md) for the subsequent administrator/teacher enhancement. Pre-release statements below describe the earlier local audit.
+
 # Website remediation status
 
 20 October 2026. Read alongside the historical [37-item audit](WEBSITE-AUDIT-2026-10-20.md).

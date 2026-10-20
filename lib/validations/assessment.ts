@@ -6,6 +6,7 @@ export const questionSchema = z.object({
   marks: z.coerce.number().positive().max(100).default(1), isRequired: z.boolean().default(true),
   difficulty: z.string().max(80).default('Medium'), cognitiveLevel: z.string().max(80).default('Understanding'),
   sloCode: z.string().max(160).optional(), sloId: z.string().max(160).optional(), explanation: z.string().max(20000).optional(), correctAnswerText: z.string().max(20000).optional(),
+  topicName: z.string().trim().max(160).optional(),
   numericalTolerance: z.coerce.number().nonnegative().max(1000000).default(0.05), rubric: z.string().max(20000).nullable().optional(),
   unit: z.string().max(100).optional(), acceptedAnswers: z.array(z.string().max(4000)).max(50).optional(),
   pastPaperRef: z.string().max(500).optional(), customDifficultyDesc: z.string().max(2000).optional(),

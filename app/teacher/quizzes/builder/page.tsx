@@ -31,6 +31,7 @@ export interface MatchingPair {
 }
 
 export interface QuizQuestionData {
+  topicName?: string;
   reviewId?: string;
   sloId?: string;
   id: string;
@@ -734,6 +735,9 @@ function GoogleFormsQuizBuilderContent() {
                   </div>
 
                   {/* Question Stem & Question Type Dropdown Row */}
+                  <label style={{display:'grid',gap:6,padding:'0 20px 12px',fontSize:13}}>Topic / chapter (optional)
+                    <input aria-label={`Topic for question ${qIdx + 1}`} maxLength={160} placeholder="E.g. Kinematics — used in learning progress" value={q.topicName||''} onChange={e=>updateQuestion(qIdx,{topicName:e.target.value})} style={{padding:'10px 12px',border:'1px solid var(--border-color, #dadce0)',borderRadius:8,background:'var(--card-bg, white)',color:'var(--text-color, #263e35)'}}/>
+                  </label>
                   <div className="gf-q-header-row">
                     <div className="gf-stem-wrapper">
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
