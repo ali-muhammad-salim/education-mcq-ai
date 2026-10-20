@@ -8,7 +8,7 @@ const url = process.env.TEST_DATABASE_URL;
 if (!url || !new URL(url).pathname.includes('_test')) throw new Error('A dedicated TEST_DATABASE_URL is required.');
 const db = new PrismaClient({ datasources: { db: { url } } });
 const port = Number(process.env.TEST_PORT || 3102), base = 'http://localhost:' + port;
-let child;
+let child, gradingWorker;
 const password = 'Local-smoke-test-Password!42';
 async function main() {
   const salt = randomBytes(16).toString('hex'), passwordHash = 'scrypt:' + salt + ':' + scryptSync(password, salt, 64).toString('hex');
@@ -44,7 +44,17 @@ async function main() {
   assert.equal((await call('/api/quizzes/' + id + '/attempt/answer', 'POST', { ...answer, answerPayload: { ...answer.answerPayload, isCorrect: true } }, studentToken)).status, 400);
   assert.equal((await call('/api/quizzes/' + id + '/attempt/answer', 'POST', answer, studentToken)).status, 200);
   assert.equal((await call('/api/quizzes/' + id + '/results?attemptId=' + attempt.id, 'GET', undefined, studentToken)).status, 403);
-  assert.equal((await call('/api/quizzes/' + id + '/attempt/submit', 'POST', { attemptId: attempt.id }, studentToken)).status, 200);
+  const receipt = await call('/api/quizzes/' + id + '/attempt/submit', 'POST', { attemptId: attempt.id }, studentToken);
+  assert.ok([200,202].includes(receipt.status));
+  assert.equal((await call('/api/quizzes/' + id + '/attempt/status?attemptId=' + attempt.id, 'GET', undefined, otherToken)).status,403);
+  if(receipt.status===202) {
+    const pending=await call('/api/quizzes/' + id + '/results?attemptId=' + attempt.id,'GET',undefined,studentToken);
+    assert.equal(pending.data.result.processing,true);assert.equal(pending.data.result.canViewCorrectAnswers,false);
+    assert.ok(!JSON.stringify(pending.data.result).includes('isCorrect'));
+    assert.equal((await call('/api/quizzes/' + id + '/attempt/answer','POST',{...answer,version:1},studentToken)).status,409);
+    gradingWorker=spawn(process.execPath,['node_modules/tsx/dist/cli.mjs','scripts/job-worker.ts'],{windowsHide:true,stdio:'ignore',env:{...process.env,DATABASE_URL:url,WORKER_KINDS:'EXAM_GRADE',WORKER_ONCE:'0'}});
+    for(let i=0;i<80;i++) {const state=await call('/api/quizzes/' + id + '/attempt/status?attemptId=' + attempt.id,'GET',undefined,studentToken);if(state.data.status!=='SUBMITTED')break;await new Promise(resolve=>setTimeout(resolve,250));}
+  }
   const result = await call('/api/quizzes/' + id + '/results?attemptId=' + attempt.id, 'GET', undefined, studentToken);
   assert.equal(result.status, 200); assert.equal(result.data.result.score, 2);
   const storedAnswer = await db.quizAnswer.findFirst({ where: { attemptId: attempt.id } });
@@ -53,4 +63,4 @@ async function main() {
   assert.equal((await call('/api/quizzes', 'POST', { id, title: 'Changed', status: 'PUBLISHED', questions: [{ stemText: 'Changed', options: [{ text: 'One', isCorrect: true }, { text: 'Two', isCorrect: false }] }] }, teacherToken)).status, 409);
   console.log('HTTP integration checks passed: login bypasses, roles, hidden keys, answer validation, scoring, ownership and frozen exams.');
 }
-main().catch(error => { console.error(error); process.exitCode = 1; }).finally(async () => { if (child) child.kill(); await db.$disconnect(); });
+main().catch(error => { console.error(error); process.exitCode = 1; }).finally(async () => { if (child) child.kill(); if(gradingWorker)gradingWorker.kill('SIGTERM'); await db.$disconnect(); });
