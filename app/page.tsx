@@ -151,14 +151,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* TOP REQUIREMENT: LIST OF ALL BOARDS (AKU-EB only clickable, rest Coming Soon with low opacity) */}
+      {/* TOP REQUIREMENT: LIST OF ALL BOARDS (AKU-EB only clickable, rest Coming Soon with readable status labels) */}
       <div style={{ marginBottom: '3.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.25rem' }}>
           <div>
             <h2 style={{ fontSize: '1.45rem', fontWeight: 800, color: '#1a2e26', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Building2 size={22} color="#0b5e4a" /> Examination Boards
             </h2>
-            <p style={{ fontSize: '0.88rem', color: '#6b7280', margin: '4px 0 0 0' }}>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', margin: '4px 0 0 0' }}>
               Only ready boards are accessible. Additional educational boards will unlock soon.
             </p>
           </div>
@@ -203,7 +203,7 @@ export default function Home() {
                     <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1f2937', margin: '0 0 0.4rem 0' }}>
                       {board.fullName}
                     </h3>
-                    <p style={{ fontSize: '0.8rem', color: '#4b5563', lineHeight: 1.45, margin: 0 }}>
+                    <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', lineHeight: 1.45, margin: 0 }}>
                       {board.description}
                     </p>
                   </div>
@@ -215,16 +215,16 @@ export default function Home() {
               );
             }
 
-            // Non-ready board: low opacity & Coming Soon badge
+            // Non-ready board: readable disabled state & Coming Soon badge
             return (
               <div
                 key={board.id}
                 style={{
-                  background: '#f9fafb',
+                  background: 'var(--card-bg)',
                   border: '1px solid #e5e7eb',
                   borderRadius: '14px',
                   padding: '1.25rem 1.15rem',
-                  opacity: 0.45,
+                  opacity: 1,
                   cursor: 'not-allowed',
                   display: 'flex',
                   flexDirection: 'column',
@@ -235,21 +235,21 @@ export default function Home() {
               >
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                    <span style={{ fontSize: '0.72rem', background: '#f3f4f6', color: '#6b7280', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
+                    <span style={{ fontSize: '0.72rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
                       Coming Soon
                     </span>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#9ca3af' }}>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-light)' }}>
                       {board.shortCode}
                     </span>
                   </div>
-                  <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#4b5563', margin: '0 0 0.4rem 0' }}>
+                  <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-light)', margin: '0 0 0.4rem 0' }}>
                     {board.fullName}
                   </h3>
-                  <p style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: 1.45, margin: 0 }}>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', lineHeight: 1.45, margin: 0 }}>
                     {board.description}
                   </p>
                 </div>
-                <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#9ca3af', fontWeight: 700, fontSize: '0.82rem' }}>
+                <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--text-light)', fontWeight: 700, fontSize: '0.82rem' }}>
                   <Clock size={14} />
                   <span>Curriculum Ingestion Pending</span>
                 </div>
@@ -340,7 +340,7 @@ export default function Home() {
               <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: '#1a2e26', margin: '0 0 0.5rem 0' }}>
                 Class IX (Grade 9)
               </h3>
-              <p style={{ fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
                 Physics SSC-I resources: syllabus and SLO directory, Model Paper I & II, Practical Paper III, and available 2025 examination papers.
               </p>
 
@@ -349,13 +349,13 @@ export default function Home() {
                 <span style={{ fontSize: '0.75rem', background: '#dcfce7', color: '#166534', padding: '2px 8px', borderRadius: '4px', fontWeight: 700 }}>
                   ⚛️ Physics (Active)
                 </span>
-                <span style={{ fontSize: '0.75rem', background: '#f3f4f6', color: '#9ca3af', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.75rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
                   🧪 Chemistry (Soon)
                 </span>
-                <span style={{ fontSize: '0.75rem', background: '#f3f4f6', color: '#9ca3af', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.75rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
                   🧬 Biology (Soon)
                 </span>
-                <span style={{ fontSize: '0.75rem', background: '#f3f4f6', color: '#9ca3af', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.75rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
                   📐 Maths (Soon)
                 </span>
               </div>
@@ -437,7 +437,7 @@ export default function Home() {
               <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: '#1a2e26', margin: '0 0 0.5rem 0' }}>
                 Class X (Grade 10)
               </h3>
-              <p style={{ fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
                 Physics SSC-II resources: syllabus and SLO directory, interactive Model Paper I (MCQs), and Model Paper II theory items.
               </p>
 
@@ -446,13 +446,13 @@ export default function Home() {
                 <span style={{ fontSize: '0.75rem', background: '#dcfce7', color: '#166534', padding: '2px 8px', borderRadius: '4px', fontWeight: 700 }}>
                   ⚛️ Physics (Active)
                 </span>
-                <span style={{ fontSize: '0.75rem', background: '#f3f4f6', color: '#9ca3af', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.75rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
                   🧪 Chemistry (Soon)
                 </span>
-                <span style={{ fontSize: '0.75rem', background: '#f3f4f6', color: '#9ca3af', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.75rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
                   🧬 Biology (Soon)
                 </span>
-                <span style={{ fontSize: '0.75rem', background: '#f3f4f6', color: '#9ca3af', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.75rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
                   📐 Maths (Soon)
                 </span>
               </div>
@@ -511,13 +511,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Class XI (HSSC-I) - Coming Soon with low opacity */}
+          {/* Class XI (HSSC-I) - Coming Soon with readable status labels */}
           <div style={{
-            background: '#f9fafb',
+            background: 'var(--card-bg)',
             border: '1px solid #e5e7eb',
             borderRadius: '16px',
             padding: '1.75rem 1.5rem',
-            opacity: 0.45,
+            opacity: 1,
             cursor: 'not-allowed',
             userSelect: 'none',
             display: 'flex',
@@ -526,17 +526,17 @@ export default function Home() {
           }}>
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                <span style={{ fontSize: '0.78rem', background: '#f3f4f6', color: '#6b7280', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
+                <span style={{ fontSize: '0.78rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
                   HSSC Part I • Grade 11
                 </span>
-                <span style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700 }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', fontWeight: 700 }}>
                   Coming Soon
                 </span>
               </div>
-              <h3 style={{ fontSize: '1.45rem', fontWeight: 700, color: '#4b5563', margin: '0 0 0.5rem 0' }}>
+              <h3 style={{ fontSize: '1.45rem', fontWeight: 700, color: 'var(--text-light)', margin: '0 0 0.5rem 0' }}>
                 Class XI (Grade 11)
               </h3>
-              <p style={{ fontSize: '0.88rem', color: '#6b7280', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
                 Higher Secondary School Certificate curriculum: Pre-Medical, Pre-Engineering, and Computer Science streams.
               </p>
             </div>
@@ -548,7 +548,7 @@ export default function Home() {
                 padding: '0.75rem 1rem',
                 borderRadius: '8px',
                 background: '#e5e7eb',
-                color: '#6b7280',
+                color: 'var(--text-light)',
                 border: 'none',
                 fontWeight: 700,
                 fontSize: '0.88rem',
@@ -559,13 +559,13 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Class XII (HSSC-II) - Coming Soon with low opacity */}
+          {/* Class XII (HSSC-II) - Coming Soon with readable status labels */}
           <div style={{
-            background: '#f9fafb',
+            background: 'var(--card-bg)',
             border: '1px solid #e5e7eb',
             borderRadius: '16px',
             padding: '1.75rem 1.5rem',
-            opacity: 0.45,
+            opacity: 1,
             cursor: 'not-allowed',
             userSelect: 'none',
             display: 'flex',
@@ -574,17 +574,17 @@ export default function Home() {
           }}>
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                <span style={{ fontSize: '0.78rem', background: '#f3f4f6', color: '#6b7280', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
+                <span style={{ fontSize: '0.78rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
                   HSSC Part II • Grade 12
                 </span>
-                <span style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700 }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', fontWeight: 700 }}>
                   Coming Soon
                 </span>
               </div>
-              <h3 style={{ fontSize: '1.45rem', fontWeight: 700, color: '#4b5563', margin: '0 0 0.5rem 0' }}>
+              <h3 style={{ fontSize: '1.45rem', fontWeight: 700, color: 'var(--text-light)', margin: '0 0 0.5rem 0' }}>
                 Class XII (Grade 12)
               </h3>
-              <p style={{ fontSize: '0.88rem', color: '#6b7280', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
                 Higher Secondary School Certificate Part II college exit standards, past papers, and university prep.
               </p>
             </div>
@@ -596,7 +596,7 @@ export default function Home() {
                 padding: '0.75rem 1rem',
                 borderRadius: '8px',
                 background: '#e5e7eb',
-                color: '#6b7280',
+                color: 'var(--text-light)',
                 border: 'none',
                 fontWeight: 700,
                 fontSize: '0.88rem',
@@ -626,24 +626,24 @@ export default function Home() {
         }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
-              <span style={{ background: '#f3f4f6', color: '#6b7280', fontSize: '0.75rem', fontWeight: 700, padding: '3px 10px', borderRadius: '6px' }}>
+              <span style={{ background: 'var(--bg-color)', color: 'var(--text-light)', fontSize: '0.75rem', fontWeight: 700, padding: '3px 10px', borderRadius: '6px' }}>
                 COMING SOON
               </span>
-              <span style={{ color: '#9ca3af', fontWeight: 600, fontSize: '0.85rem' }}>
+              <span style={{ color: 'var(--text-light)', fontWeight: 600, fontSize: '0.85rem' }}>
                 Provincial Examination Board
               </span>
             </div>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#4b5563', margin: 0 }}>
+            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-light)', margin: 0 }}>
               Sindh Board (BSEK / BIEK Karachi)
             </h2>
-            <p style={{ color: '#6b7280', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>
+            <p style={{ color: 'var(--text-light)', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>
               Board of Secondary Education Karachi & Board of Intermediate Education Karachi syllabuses and past examination archives.
             </p>
           </div>
 
           <span style={{
-            background: '#f9fafb',
-            color: '#9ca3af',
+            background: 'var(--card-bg)',
+            color: 'var(--text-light)',
             border: '1px solid #e5e7eb',
             padding: '6px 14px',
             borderRadius: '8px',
@@ -664,11 +664,11 @@ export default function Home() {
             <div
               key={className}
               style={{
-                background: '#f9fafb',
+                background: 'var(--card-bg)',
                 border: '1px solid #e5e7eb',
                 borderRadius: '16px',
                 padding: '1.75rem 1.5rem',
-                opacity: 0.45,
+                opacity: 1,
                 cursor: 'not-allowed',
                 userSelect: 'none',
                 display: 'flex',
@@ -678,17 +678,17 @@ export default function Home() {
             >
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                  <span style={{ fontSize: '0.78rem', background: '#f3f4f6', color: '#6b7280', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
+                  <span style={{ fontSize: '0.78rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
                     Grade {idx + 9}
                   </span>
-                  <span style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700 }}>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', fontWeight: 700 }}>
                     Coming Soon
                   </span>
                 </div>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#4b5563', margin: '0 0 0.5rem 0' }}>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: 'var(--text-light)', margin: '0 0 0.5rem 0' }}>
                   {className}
                 </h3>
-                <p style={{ fontSize: '0.88rem', color: '#6b7280', lineHeight: 1.5, margin: 0 }}>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: 1.5, margin: 0 }}>
                   Sindh Board syllabus alignment, model papers, and solved 5-year past papers.
                 </p>
               </div>
@@ -701,7 +701,7 @@ export default function Home() {
                   padding: '0.7rem 1rem',
                   borderRadius: '8px',
                   background: '#e5e7eb',
-                  color: '#6b7280',
+                  color: 'var(--text-light)',
                   border: 'none',
                   fontWeight: 700,
                   fontSize: '0.85rem',
@@ -732,24 +732,24 @@ export default function Home() {
         }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
-              <span style={{ background: '#f3f4f6', color: '#6b7280', fontSize: '0.75rem', fontWeight: 700, padding: '3px 10px', borderRadius: '6px' }}>
+              <span style={{ background: 'var(--bg-color)', color: 'var(--text-light)', fontSize: '0.75rem', fontWeight: 700, padding: '3px 10px', borderRadius: '6px' }}>
                 COMING SOON
               </span>
-              <span style={{ color: '#9ca3af', fontWeight: 600, fontSize: '0.85rem' }}>
+              <span style={{ color: 'var(--text-light)', fontWeight: 600, fontSize: '0.85rem' }}>
                 National Curriculum
               </span>
             </div>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#4b5563', margin: 0 }}>
+            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-light)', margin: 0 }}>
               Federal Board (FBISE Islamabad)
             </h2>
-            <p style={{ color: '#6b7280', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>
+            <p style={{ color: 'var(--text-light)', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>
               Federal Board of Intermediate & Secondary Education Islamabad standard SLO framework and exams.
             </p>
           </div>
 
           <span style={{
-            background: '#f9fafb',
-            color: '#9ca3af',
+            background: 'var(--card-bg)',
+            color: 'var(--text-light)',
             border: '1px solid #e5e7eb',
             padding: '6px 14px',
             borderRadius: '8px',
@@ -770,11 +770,11 @@ export default function Home() {
             <div
               key={className}
               style={{
-                background: '#f9fafb',
+                background: 'var(--card-bg)',
                 border: '1px solid #e5e7eb',
                 borderRadius: '16px',
                 padding: '1.75rem 1.5rem',
-                opacity: 0.45,
+                opacity: 1,
                 cursor: 'not-allowed',
                 userSelect: 'none',
                 display: 'flex',
@@ -784,17 +784,17 @@ export default function Home() {
             >
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                  <span style={{ fontSize: '0.78rem', background: '#f3f4f6', color: '#6b7280', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
+                  <span style={{ fontSize: '0.78rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
                     Grade {idx + 9}
                   </span>
-                  <span style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700 }}>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', fontWeight: 700 }}>
                     Coming Soon
                   </span>
                 </div>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#4b5563', margin: '0 0 0.5rem 0' }}>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: 'var(--text-light)', margin: '0 0 0.5rem 0' }}>
                   {className}
                 </h3>
-                <p style={{ fontSize: '0.88rem', color: '#6b7280', lineHeight: 1.5, margin: 0 }}>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: 1.5, margin: 0 }}>
                   Federal National Curriculum examination rubrics, question banks, and annual past papers.
                 </p>
               </div>
@@ -807,7 +807,7 @@ export default function Home() {
                   padding: '0.7rem 1rem',
                   borderRadius: '8px',
                   background: '#e5e7eb',
-                  color: '#6b7280',
+                  color: 'var(--text-light)',
                   border: 'none',
                   fontWeight: 700,
                   fontSize: '0.85rem',
@@ -838,24 +838,24 @@ export default function Home() {
         }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
-              <span style={{ background: '#f3f4f6', color: '#6b7280', fontSize: '0.75rem', fontWeight: 700, padding: '3px 10px', borderRadius: '6px' }}>
+              <span style={{ background: 'var(--bg-color)', color: 'var(--text-light)', fontSize: '0.75rem', fontWeight: 700, padding: '3px 10px', borderRadius: '6px' }}>
                 COMING SOON
               </span>
-              <span style={{ color: '#9ca3af', fontWeight: 600, fontSize: '0.85rem' }}>
+              <span style={{ color: 'var(--text-light)', fontWeight: 600, fontSize: '0.85rem' }}>
                 Provincial Board
               </span>
             </div>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#4b5563', margin: 0 }}>
+            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-light)', margin: 0 }}>
               Punjab Board (BISE Lahore / Rawalpindi)
             </h2>
-            <p style={{ color: '#6b7280', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>
+            <p style={{ color: 'var(--text-light)', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>
               Boards of Intermediate and Secondary Education across Punjab aligned with PCTB textbooks.
             </p>
           </div>
 
           <span style={{
-            background: '#f9fafb',
-            color: '#9ca3af',
+            background: 'var(--card-bg)',
+            color: 'var(--text-light)',
             border: '1px solid #e5e7eb',
             padding: '6px 14px',
             borderRadius: '8px',
@@ -876,11 +876,11 @@ export default function Home() {
             <div
               key={className}
               style={{
-                background: '#f9fafb',
+                background: 'var(--card-bg)',
                 border: '1px solid #e5e7eb',
                 borderRadius: '16px',
                 padding: '1.75rem 1.5rem',
-                opacity: 0.45,
+                opacity: 1,
                 cursor: 'not-allowed',
                 userSelect: 'none',
                 display: 'flex',
@@ -890,17 +890,17 @@ export default function Home() {
             >
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                  <span style={{ fontSize: '0.78rem', background: '#f3f4f6', color: '#6b7280', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
+                  <span style={{ fontSize: '0.78rem', background: 'var(--bg-color)', color: 'var(--text-light)', padding: '3px 8px', borderRadius: '6px', fontWeight: 700 }}>
                     Grade {idx + 9}
                   </span>
-                  <span style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 700 }}>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', fontWeight: 700 }}>
                     Coming Soon
                   </span>
                 </div>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#4b5563', margin: '0 0 0.5rem 0' }}>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: 'var(--text-light)', margin: '0 0 0.5rem 0' }}>
                   {className}
                 </h3>
-                <p style={{ fontSize: '0.88rem', color: '#6b7280', lineHeight: 1.5, margin: 0 }}>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: 1.5, margin: 0 }}>
                   Punjab Curriculum and Textbook Board model papers, MCQs bank, and past examinations.
                 </p>
               </div>
@@ -913,7 +913,7 @@ export default function Home() {
                   padding: '0.7rem 1rem',
                   borderRadius: '8px',
                   background: '#e5e7eb',
-                  color: '#6b7280',
+                  color: 'var(--text-light)',
                   border: 'none',
                   fontWeight: 700,
                   fontSize: '0.85rem',
