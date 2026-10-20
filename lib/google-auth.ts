@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server';
 import crypto from 'crypto';
+import { configuredSiteUrl } from '@/lib/site-url';
 
 export interface GoogleUserProfile {
   id: string;
@@ -69,8 +70,9 @@ export function isGoogleAuthEnabled(): boolean {
 
 export function getBaseUrl(req?: NextRequest): string {
   // If explicitly set in environment, use it
-  if (process.env.NEXT_PUBLIC_APP_URL && process.env.NEXT_PUBLIC_APP_URL.trim().length > 0) {
-    return process.env.NEXT_PUBLIC_APP_URL.trim().replace(/\/$/, '');
+  const configured = configuredSiteUrl();
+  if (configured) {
+    return configured.replace(/\/$/, '');
   }
   if (process.env.NODE_ENV === 'production') throw new Error('NEXT_PUBLIC_APP_URL must be configured');
 

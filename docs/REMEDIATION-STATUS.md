@@ -27,7 +27,7 @@
 
 ## Verification
 
-- Automated regression suite: 38 tests passing at the latest recorded run, including private-classroom assignment/enrollment, authorization, written grading/release with hidden keys, server-owned practice subsets, contradictory matching rejection, content provenance, field preservation and single-use password-reset/session revocation.
+- Automated regression suite: 39 tests passing at the latest recorded run, including private-classroom assignment/enrollment, authorization, written grading/release with hidden keys, server-owned practice subsets, contradictory matching rejection, content provenance, field preservation and single-use password-reset/session revocation.
 - Production compilation, standalone type checking and lint passed. HTTP integration checks passed for login bypass rejection, roles, hidden keys, answer validation, scoring, ownership and frozen exams.
 - Browser verification covered student access guards, held-result history, selected practice questions, teacher marking/feedback and result release, classroom roster controls, keyboard Escape/focus restoration, and desktop plus 375px teacher/exam layouts. A clipped mobile Finish Quiz control was fixed and rechecked. Screenshots are saved in verification/.
 - Separate deadline and grading worker smoke checks passed. A fresh full-schema migration rehearsal preserved all 10 historical local attempts. The account-only bootstrap rehearsal preserved account data and applied both migrations.

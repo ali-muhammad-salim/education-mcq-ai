@@ -3,10 +3,11 @@ import { getSessionUser } from '@/lib/auth';
 import { ApiError } from '@/lib/api';
 import prisma from '@/lib/prisma';
 import { createHash } from 'node:crypto';
+import { configuredSiteUrl } from '@/lib/site-url';
 export function assertOrigin(req: NextRequest) {
   const origin = req.headers.get('origin');
   if (!['GET', 'HEAD', 'OPTIONS'].includes(req.method)) {
-    const expected = new URL(process.env.NEXT_PUBLIC_APP_URL || req.url).origin;
+    const expected = new URL(configuredSiteUrl() || req.url).origin;
     if (req.headers.get('sec-fetch-site') === 'cross-site' || (origin && origin !== expected)) throw new ApiError(403, 'INVALID_ORIGIN', 'Cross-site request rejected.');
   }
 }

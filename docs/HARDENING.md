@@ -19,7 +19,7 @@ The Python API uses its generated Prisma client, requires an internal service to
 ## Validation performed
 
 - Production webpack build, TypeScript and ESLint checks.
-- 38 automated tests covering server grading, forged correctness flags, answer-key filtering, ownership, suspended sessions, concurrent starts/submissions, answer versions, frozen marks, job claiming and stale-lease recovery, AI review behavior and storage adapter failures.
+- 39 automated tests covering server grading, forged correctness flags, answer-key filtering, ownership, suspended sessions, concurrent starts/submissions, answer versions, frozen marks, job claiming and stale-lease recovery, AI review behavior and storage adapter failures.
 - HTTP checks against the production application using a dedicated test database.
 - Browser checks of the restored setup, answer selection, reload recovery and original results presentation.
 - Python API/database connection, authenticated search/question/syllabus requests and disabled fine-tuning behavior.

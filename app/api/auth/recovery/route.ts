@@ -7,6 +7,7 @@ import { ApiError, apiError } from '@/lib/api';
 import { serializable } from '@/repositories/transaction';
 import { hashPassword } from '@/lib/passwords';
 import { sendTransactionalEmail } from '@/lib/email';
+import { configuredSiteUrl } from '@/lib/site-url';
 export async function POST(req: NextRequest) {
   try { assertOrigin(req);
     const input = z.object({ action: z.enum(['SEND_RESET','RESET','SEND_VERIFY','VERIFY']), email: z.string().trim().email().max(254).transform(s => s.toLowerCase()).optional(), token: z.string().regex(/^[a-f0-9]{64}$/).optional(), password: z.string().min(12).max(256).optional() }).parse(await req.json());
@@ -22,7 +23,7 @@ export async function POST(req: NextRequest) {
       if (account?.status === 'ACTIVE') {
         const token = randomBytes(32).toString('hex'), codeHash = createHash('sha256').update(token).digest('hex');
         await prisma.authChallenge.upsert({ where: { identifier }, create: { identifier, codeHash, name: account.id, expiresAt: new Date(Date.now() + 1800000) }, update: { codeHash, name: account.id, attempts: 0, expiresAt: new Date(Date.now() + 1800000) } });
-        const origin = process.env.NEXT_PUBLIC_APP_URL;
+        const origin = configuredSiteUrl();
         if (!origin) throw new ApiError(503, 'CONFIGURATION_REQUIRED', 'The site address must be configured before sending account links.');
         const url = new URL('/account', origin); url.searchParams.set('action', verification ? 'VERIFY' : 'RESET'); url.searchParams.set('token', token); url.searchParams.set('email', email);
         const sent = await sendTransactionalEmail({ to: email, subject: verification ? 'Verify your email' : 'Reset your password', html: '<p>Use this single-use link within 30 minutes:</p><p><a href="' + url.toString().replaceAll('&', '&amp;') + '">' + (verification ? 'Verify email' : 'Reset password') + '</a></p><p>If you did not request this, ignore this email.</p>' });

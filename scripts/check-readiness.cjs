@@ -5,10 +5,11 @@ function inspect(env) {
   const groups = [];
   function group(name, keys, notes = []) { const missing=keys.filter(k=>!present(k)); groups.push({name,status:missing.length?'UNAVAILABLE':'CONFIGURED',missing,notes}); }
   group('Database',['DATABASE_URL'],['Connection, schema drift, backups and migrations must be checked separately.']);
-  group('Canonical website address',['NEXT_PUBLIC_APP_URL']);
-  if(present('NEXT_PUBLIC_APP_URL')) {
+  const originKey=present('APP_URL')?'APP_URL':'NEXT_PUBLIC_APP_URL';
+  group('Canonical website address',[originKey]);
+  if(present(originKey)) {
     const item=groups.at(-1);
-    try {const url=new URL(env.NEXT_PUBLIC_APP_URL); if(!['http:','https:'].includes(url.protocol)||url.username||url.password||url.search||url.hash||url.pathname!=='/') throw new Error(); if(env.NODE_ENV==='production'&&url.protocol!=='https:'&&!['localhost','127.0.0.1','[::1]'].includes(url.hostname)) throw new Error();}
+    try {const url=new URL(env[originKey]); if(!['http:','https:'].includes(url.protocol)||url.username||url.password||url.search||url.hash||url.pathname!=='/') throw new Error(); if(env.NODE_ENV==='production'&&url.protocol!=='https:'&&!['localhost','127.0.0.1','[::1]'].includes(url.hostname)) throw new Error();}
     catch {item.status='INVALID';item.notes.push('Use a canonical HTTP(S) origin; public production origins require HTTPS.');}
   }
   group('Google sign-in',['GOOGLE_CLIENT_ID','GOOGLE_CLIENT_SECRET'],['Provider callback must match /api/auth/google/callback. Live browser authorization is a separate check.']);
