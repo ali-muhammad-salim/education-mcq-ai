@@ -128,21 +128,31 @@ export default function TakeQuizModal({
   useEffect(() => { if (phase === 'setup') setLoadingQuizQuestions(false); }, [phase]);
   useEffect(() => {
     if (!engine.submitted) return;
-    const resultSchema = z.object({ score: z.number(), maxMarks: z.number(), percentage: z.number(), studentName: z.string(), submittedAt: z.string().nullable(), tabSwitchCount: z.number(), status: z.string(), canViewCorrectAnswers: z.boolean(),
-      questions: z.array(z.object({ questionId: z.string(), marks: z.number(), scoreAwarded: z.number().nullable().optional(), explanation: z.string().optional(), options: z.array(z.object({ id: z.string().optional(), text: z.string(), isCorrect: z.boolean().optional() })) })) });
-    void fetch('/api/quizzes/' + encodeURIComponent(engine.submitted.quizId) + '/results?attemptId=' + encodeURIComponent(engine.submitted.attemptId)).then(async response => {
-      if (!response.ok) { setCompletionData({ pending: true }); setPhase('completed'); return; }
+    const resultSchema = z.object({ score: z.number(), maxMarks: z.number(), percentage: z.number(), studentName: z.string(), submittedAt: z.string().nullable(), tabSwitchCount: z.number(), status: z.string(), canRetake:z.boolean(), canViewCorrectAnswers: z.boolean(),
+      questions: z.array(z.object({ questionId: z.string(), marks: z.number(), scoreAwarded: z.number().nullable().optional(), explanation: z.string().optional(), answerFeedback:z.string().optional(), correctAnswerText:z.string().optional(), studentAnswer:z.object({selectedOptionId:z.string().optional(),selectedOptionIds:z.array(z.string()).optional(),numericAnswer:z.string().optional(),textAnswer:z.string().optional()}).nullable().optional(), options: z.array(z.object({ id: z.string().optional(), text: z.string(), isCorrect: z.boolean().optional() })) })) });
+    let cancelled = false, timer: ReturnType<typeof setTimeout>;
+    let checks = 0;
+    const checkResult = () => { void (async()=>{ if(checks>0){const response=await fetch('/api/quizzes/'+encodeURIComponent(engine.submitted!.quizId)+'/attempt/status?attemptId='+encodeURIComponent(engine.submitted!.attemptId),{signal:AbortSignal.timeout(10000)});if(response.ok){const state=await response.json();if(state.status==='SUBMITTED'){schedule();return null;}}} return fetch('/api/quizzes/' + encodeURIComponent(engine.submitted!.quizId) + '/results?attemptId=' + encodeURIComponent(engine.submitted!.attemptId),{signal:AbortSignal.timeout(10000)}); })().then(async response => {
+      if(!response)return;
+      if (cancelled) return;
+      if (!response.ok) { const body = await response.json().catch(() => null); setCompletionData({ pending: true, held: body?.error?.code === 'RESULTS_PENDING' }); setPhase('completed'); if (response.status >= 500 || response.status === 429) schedule(); return; }
       const result = resultSchema.parse((await response.json()).result);
-      if (result.status !== 'GRADED') { setCompletionData({ pending: true }); setPhase('completed'); return; }
+      if (result.status !== 'GRADED') { setCompletionData({ pending: true, manual: result.status !== 'SUBMITTED' }); setPhase('completed'); if (result.status === 'SUBMITTED') schedule(); return; }
       const reviewed = activeQuestions.map(q => { const server = result.questions.find(r => r.questionId === q.id), source = engine.exam?.questions.find(s => s.id === q.id);
-        const correct = server?.options.find(o => o.isCorrect)?.id, index = source?.options.findIndex(o => o.id === correct) ?? -1;
-        return { ...q, correctOption: index >= 0 ? String.fromCharCode(65 + index) : '', explanation: server?.explanation || '' };
+        const correct = server?.options.filter(o => o.isCorrect) || [];
+        const correctLabels = correct.map(o=>{const index=source?.options.findIndex(s=>s.id===o.id)??-1;return (index>=0?'('+String.fromCharCode(65+index)+') ':'')+o.text;}).join('; ');
+        const selectedIds = server?.studentAnswer?.selectedOptionIds || [server?.studentAnswer?.selectedOptionId];
+        const selectedText=server?.options.filter(o=>selectedIds.includes(o.id)).map(o=>o.text).join('; ') || server?.studentAnswer?.numericAnswer || server?.studentAnswer?.textAnswer || '';
+        return { ...q, correctOption: correctLabels || server?.correctAnswerText || 'See complete answer review', selectedText, explanation: [server?.answerFeedback,server?.explanation].filter(Boolean).join(' '), serverScore: server?.scoreAwarded, serverMarks: server?.marks };
       });
       setActiveQuestions(reviewed);
       setCompletionData({ ...result, totalMarks: result.maxMarks, weakTopics: [], dynamicMessage: 'Your assessment has been submitted and graded.',
         incorrectQuestions: reviewed.filter(q => { const server = result.questions.find(r => r.questionId === q.id); return server?.scoreAwarded !== null && server?.scoreAwarded !== undefined && server.scoreAwarded < server.marks; }).map(q => ({ ...q, questionNumber: q.displayNumber, selectedOption: userSelections[String(q.displayNumber)] })) });
       setPhase('completed');
-    }).catch(() => { setCompletionData({ pending: true }); setPhase('completed'); });
+    }).catch(() => { if (!cancelled) { setCompletionData({ pending: true }); setPhase('completed'); schedule(); } }); };
+    const schedule = () => { if (!cancelled && checks++ < 60) timer = setTimeout(checkResult, Math.min(2000 + checks * 500, 10000) + Math.random()*1000); };
+    checkResult();
+    return () => { cancelled = true; clearTimeout(timer); };
   }, [engine.submitted]);
   useEffect(() => {
     if (!isOpen) return;
@@ -1453,7 +1463,7 @@ export default function TakeQuizModal({
           {/* ========================================================================= */}
           {/* PHASE 4: COMPLETION SCREEN WITH TAB SWITCH BREAKDOWN & WEAK TOPICS        */}
           {/* ========================================================================= */}
-          {phase === 'completed' && completionData?.pending && <div style={{ padding: '3rem 2rem', textAlign: 'center' }}><ShieldCheck size={40} color="#0b5e4a" /><h2>Assessment submitted</h2><p>Your answers are saved. Results will be available when grading and release are complete.</p><p>Submission receipt: {engine.submitted?.attemptId}</p><p><a href={'/quizzes/' + engine.submitted?.quizId + '/results?attemptId=' + engine.submitted?.attemptId}>Check results</a></p><button onClick={onClose}>Close & Return to Paper</button></div>}
+          {phase === 'completed' && completionData?.pending && <div style={{ padding: '3rem 2rem', textAlign: 'center' }}><ShieldCheck size={40} color="#0b5e4a" /><h2>Assessment submitted</h2><p>{completionData.held ? 'Your answers are saved. Your teacher has not released these results yet.' : completionData.manual ? 'Your answers are saved. Written responses are awaiting teacher marking.' : 'Your answers are saved. We’re preparing your score and will show it here automatically.'}</p><p>Submission receipt: {engine.submitted?.attemptId}</p><p><a href={'/quizzes/' + engine.submitted?.quizId + '/results?attemptId=' + engine.submitted?.attemptId}>Check results</a></p><button onClick={onClose}>Close & Return to Paper</button></div>}
           {phase === 'completed' && completionData && !completionData.pending && (
             <div style={{ padding: '2.5rem 2rem' }}>
               {/* Header Score Card */}
@@ -1710,15 +1720,16 @@ export default function TakeQuizModal({
                   </div>
                 </div>
 
+                <p style={{marginBottom:'1rem'}}><a className="btn" href={'/quizzes/'+engine.submitted?.quizId+'/results?attemptId='+engine.submitted?.attemptId}>Open complete answer review</a></p>
                 {/* Items List */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {(reviewFilter === 'incorrect' ? completionData.incorrectQuestions : activeQuestions).map((item: any, i: number) => {
                     const isIncList = reviewFilter === 'incorrect';
                     const qNum = isIncList ? item.questionNumber : item.displayNumber;
                     const qText = item.questionText;
-                    const userAns = isIncList ? item.selectedOption : userSelections[item.displayNumber.toString()];
+                    const userAns = item.selectedText || (isIncList ? item.selectedOption : userSelections[item.displayNumber.toString()]);
                     const correctAns = isIncList ? item.correctOption : item.correctOption;
-                    const isRight = userAns === correctAns;
+                    const isRight = item.serverScore === item.serverMarks;
                     const expl = item.explanation;
 
                     return (
@@ -1762,7 +1773,7 @@ export default function TakeQuizModal({
                             borderRadius: '8px',
                             fontSize: '0.85rem'
                           }}>
-                            <strong>Your Answer:</strong> ({userAns || 'None'}) {item.selectedText ? `— ${item.selectedText}` : ''}
+                            <strong>Your Answer:</strong> <MathText text={userAns || 'Not answered'} />
                           </div>
                           <div style={{
                             background: '#ecfdf5',
@@ -1771,7 +1782,7 @@ export default function TakeQuizModal({
                             fontSize: '0.85rem',
                             color: '#065f46'
                           }}>
-                            <strong>Correct Answer:</strong> ({correctAns}) {item.correctText ? `— ${item.correctText}` : ''}
+                            <strong>Correct Answer:</strong> <MathText text={correctAns}/>
                           </div>
                         </div>
 
@@ -1803,8 +1814,8 @@ export default function TakeQuizModal({
               </div>
 
               {/* Bottom Actions */}
-              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-                <button
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center',flexWrap:'wrap' }}>
+                {completionData.canRetake && <button
                   type="button"
                   onClick={() => {
                     setPhase('setup');
@@ -1827,7 +1838,7 @@ export default function TakeQuizModal({
                 >
                   <RotateCcw size={16} />
                   <span>Start Another Attempt</span>
-                </button>
+                </button>}
 
                 <button
                   type="button"

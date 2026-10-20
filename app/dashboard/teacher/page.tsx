@@ -139,10 +139,9 @@ export default function TeacherDashboardPage() {
     }
   };
 
-  const copyCode = (code: string) => {
-    navigator.clipboard.writeText(code);
-    setCopiedCode(code);
-    setTimeout(() => setCopiedCode(null), 2000);
+  const copyCode = async (value: string, label = value) => {
+    try { await navigator.clipboard.writeText(value);setCopiedCode(label);setTimeout(()=>setCopiedCode(null),2000); }
+    catch { alert('Copy is unavailable. Please select and copy this manually:\n'+value); }
   };
 
   const handleResolveDoubt = async (doubtId: string, resolution: 'APPROVED' | 'DISMISSED', correctedAnswer?: string) => {
@@ -874,10 +873,8 @@ export default function TeacherDashboardPage() {
                         <button
                           onClick={() => {
                             const code = q.code || q.id;
-                            const url = `https://riselearner.com/?code=${code}`;
-                            navigator.clipboard.writeText(url);
-                            copyCode(code);
-                            alert(`Copied Student Link:\n${url}\n\nStudents can also type Quiz Code: "${code}" into the top menu bar.`);
+                            const url = `${window.location.origin}/?code=${encodeURIComponent(code)}`;
+                            void copyCode(url,code);
                           }}
                           style={{
                             padding: '0.45rem 0.85rem',

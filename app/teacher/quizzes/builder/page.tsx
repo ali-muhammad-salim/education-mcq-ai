@@ -15,6 +15,7 @@ import {
 import { useDialog } from '@/lib/use-dialog';
 import { questionSchema } from '@/lib/validations/assessment';
 import MathText from '@/components/MathText';
+import { QuizSharingSettings } from '@/components/AssessmentManagement';
 import RichMathChemDiagramEditor from '@/components/RichMathChemDiagramEditor';
 import './builder.css';
 
@@ -112,7 +113,7 @@ function GoogleFormsQuizBuilderContent() {
   const [classLevel, setClassLevel] = useState(9);
   const [subject, setSubject] = useState('Physics');
   const [durationMin, setDurationMin] = useState(45);
-  const [visibility, setVisibility] = useState<'PUBLIC' | 'UNLISTED' | 'PRIVATE'>('PUBLIC');
+  const [visibility, setVisibility] = useState<'PUBLIC' | 'UNLISTED' | 'PRIVATE'>('UNLISTED');
   const [status, setStatus] = useState<'DRAFT' | 'PUBLISHED'>('DRAFT');
 
   // Quiz Settings State
@@ -121,9 +122,9 @@ function GoogleFormsQuizBuilderContent() {
     allowRetries: false,
     randomizeQuestions: false,
     randomizeOptions: false,
-    immediateFeedback: true,
-    showCorrectAnswers: true,
-    resultVisibility: 'IMMEDIATE',
+    immediateFeedback: false,
+    showCorrectAnswers: false,
+    resultVisibility: 'MANUAL_RELEASE',
     manualGradingRequired: false,
     aiGradingMode: 'OFF',
     tabMonitoringEnabled: true,
@@ -636,6 +637,7 @@ function GoogleFormsQuizBuilderContent() {
               if (!quizCode) {
                 handleSaveQuiz(true);
               } else {
+                if(saveStatus==='unsaved'||saveStatus==='error'){triggerToast('Save your changes before opening sharing settings.');return;}
                 setIsShareModalOpen(true);
               }
             }}
@@ -702,7 +704,7 @@ function GoogleFormsQuizBuilderContent() {
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: '#673ab7',
+                    color: 'var(--builder-accent, #673ab7)',
                     fontSize: '13px',
                     fontWeight: 600,
                     cursor: 'pointer',
@@ -804,7 +806,7 @@ function GoogleFormsQuizBuilderContent() {
                       {/* Live LaTeX preview */}
                       {q.stemText && (q.stemText.includes('$') || q.stemText.includes('\\')) && (
                         <div className="gf-katex-preview-box">
-                          <span style={{ fontSize: '10px', fontWeight: 700, color: '#673ab7', textTransform: 'uppercase', display: 'block', marginBottom: '2px' }}>
+                          <span style={{ fontSize: '10px', fontWeight: 700, color: 'var(--builder-accent, #673ab7)', textTransform: 'uppercase', display: 'block', marginBottom: '2px' }}>
                             Live Math Preview:
                           </span>
                           <MathText text={q.stemText} />
@@ -1290,8 +1292,8 @@ function GoogleFormsQuizBuilderContent() {
                   <label style={{ fontSize: '13px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Time Allowed (Minutes)</label>
                   <input
                     type="number"
-                    min={5}
-                    max={240}
+                    min={1}
+                    max={600}
                     value={durationMin}
                     onChange={(e) => { setDurationMin(Number(e.target.value)); markUnsaved(); }}
                     style={{ width: '100%', background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '10px 14px', fontSize: '14px', outline: 'none' }}
@@ -1381,7 +1383,7 @@ function GoogleFormsQuizBuilderContent() {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 0' }}>
                 <div>
                   <strong style={{ fontSize: '14px', color: '#202124', display: 'block' }}>Show Correct Answers in Review</strong>
-                  <span style={{ fontSize: '12px', color: '#5f6368' }}>Display correct answer choices and RAG explanations to student</span>
+                  <span style={{ fontSize: '12px', color: '#5f6368' }}>Show the answer key and teacher-provided explanations after results are released</span>
                 </div>
                 <div className="gf-switch">
                   <input
@@ -1531,6 +1533,8 @@ function GoogleFormsQuizBuilderContent() {
       {isShareModalOpen && quizCode && (
         <ShareQuizModal
           code={quizCode}
+          quizId={quizId!}
+          onSaved={async()=>{try{const r=await fetch('/api/quizzes/'+quizId+'/release');if(r.ok){const {quiz:q}=await r.json();setSettings(p=>({...p,...q.settings,aiGradingMode:'OFF'}));setDurationMin(q.durationMin);setVisibility(q.visibility);setScheduleStart(q.scheduleStart||'');setScheduleEnd(q.scheduleEnd||'');}}catch{triggerToast('Settings saved. Reload to refresh the builder values.');}}}
           title={title}
           onClose={() => setIsShareModalOpen(false)}
         />
@@ -1685,7 +1689,7 @@ function QuestionBankModal({
           </select>
           <button
             onClick={handleSelectAll}
-            style={{ background: 'none', border: 'none', color: '#673ab7', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}
+            style={{ background: 'none', border: 'none', color: 'var(--builder-accent, #673ab7)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}
           >
             {selectedIds.size === filtered.length && filtered.length > 0 ? 'Deselect All' : 'Select All'}
           </button>
@@ -1764,7 +1768,7 @@ function QuestionBankModal({
         {/* Footer */}
         <div className="gf-modal-footer">{bankHasMore && <button type="button" disabled={loading} onClick={() => void fetchBank(bankPage + 1)}>Load more questions</button>}
           <span style={{ fontSize: '13px', color: '#5f6368', marginRight: 'auto' }}>
-            Selected: <strong style={{ color: '#673ab7' }}>{selectedIds.size}</strong> questions
+            Selected: <strong style={{ color: 'var(--builder-accent, #673ab7)' }}>{selectedIds.size}</strong> questions
           </span>
           <button onClick={onClose} className="gf-draft-btn">Cancel</button>
           <button
@@ -1987,7 +1991,7 @@ function AiGeneratorModal({
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#5f6368' }}>
                 <span>Select questions to insert:</span>
-                <button onClick={() => setGeneratedList([])} style={{ color: '#673ab7', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600 }}>Generate Again</button>
+                <button onClick={() => setGeneratedList([])} style={{ color: 'var(--builder-accent, #673ab7)', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600 }}>Generate Again</button>
               </div>
 
               {generatedList.map((item, idx) => (
@@ -2284,33 +2288,34 @@ function StudentPreviewModal({
 
 function ShareQuizModal({
   code,
+  quizId,
+  onSaved,
   title,
   onClose
 }: {
   code: string;
+  quizId: string;
+  onSaved: () => void;
   title: string;
   onClose: () => void;
 }) {
   const dialogProps = useDialog(true, 'Share Quiz Modal', onClose);
   const [copiedCode, setCopiedCode] = useState(false);
   const [copiedUrl, setCopiedUrl] = useState(false);
-  const shareUrl = `https://riselearner.com/?code=${code}`;
+  const [copyError,setCopyError]=useState('');
+  const shareUrl = `${typeof window==='undefined'?'':window.location.origin}/?code=${encodeURIComponent(code)}`;
 
-  const copyCode = () => {
-    navigator.clipboard.writeText(code);
-    setCopiedCode(true);
-    setTimeout(() => setCopiedCode(false), 2000);
+  const copy = async (value:string, kind:'code'|'url') => {
+    setCopyError('');
+    try { await navigator.clipboard.writeText(value); if(kind==='code')setCopiedCode(true);else setCopiedUrl(true);setTimeout(()=>{setCopiedCode(false);setCopiedUrl(false);},2000); }
+    catch { setCopyError('Copy is unavailable. Select and copy the code or link manually.'); }
   };
-
-  const copyUrl = () => {
-    navigator.clipboard.writeText(shareUrl);
-    setCopiedUrl(true);
-    setTimeout(() => setCopiedUrl(false), 2000);
-  };
+  const copyCode=()=>void copy(code,'code');
+  const copyUrl=()=>void copy(shareUrl,'url');
 
   return (
     <div {...dialogProps} className="gf-modal-backdrop" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
-      <div className="gf-modal-content" style={{ maxWidth: '520px', padding: '28px', borderRadius: '16px' }}>
+      <div className="gf-modal-content" style={{ maxWidth: '760px', padding: '28px', borderRadius: '16px', maxHeight:'90dvh', overflowY:'auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: '#e0f2fe', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0284c7' }}>
@@ -2318,7 +2323,7 @@ function ShareQuizModal({
             </div>
             <div>
               <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 800, color: '#0f172a' }}>Share Assessment</h3>
-              <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748b' }}>Distribute this code or link directly to students</p>
+              <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748b' }}>{title} · Code, link and student settings</p>
             </div>
           </div>
           <button aria-label="Close dialog" onClick={onClose} className="gf-icon-btn">
@@ -2331,7 +2336,7 @@ function ShareQuizModal({
             Unique Student Quiz Code
           </label>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <div style={{ flex: 1, background: '#f8fafc', border: '2px solid #cbd5e1', borderRadius: '8px', padding: '12px 16px', fontSize: '18px', fontWeight: 800, letterSpacing: '2px', color: '#0b5e4a' }}>
+            <div style={{ flex: 1, minWidth:0, overflowWrap:'anywhere', background: '#f8fafc', border: '2px solid #cbd5e1', borderRadius: '8px', padding: '12px 16px', fontSize: '18px', fontWeight: 800, letterSpacing: '2px', color: '#0b5e4a' }}>
               {code}
             </div>
             <button
@@ -2353,7 +2358,7 @@ function ShareQuizModal({
               type="text"
               readOnly
               value={shareUrl}
-              style={{ flex: 1, background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '10px 14px', fontSize: '12px', color: '#334155', outline: 'none' }}
+              style={{ flex: 1, minWidth:0, overflowWrap:'anywhere', background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '10px 14px', fontSize: '12px', color: '#334155', outline: 'none' }}
             />
             <button
               onClick={copyUrl}
@@ -2366,10 +2371,12 @@ function ShareQuizModal({
         </div>
 
         <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '10px', padding: '14px', fontSize: '12px', color: '#166534', lineHeight: 1.5, marginBottom: '22px' }}>
-          💡 <strong>Student Instructions:</strong> Students can open <strong>riselearner.com</strong>, sign in, and click <strong>"Enter Quiz Code"</strong> in the top menu bar to start. All student answers, marks, and tab-switch records will be delivered live to your Teacher Dashboard.
+          💡 <strong>Student Instructions:</strong> Students can open <strong>riselearner.com</strong>, sign in, and click <strong>"Enter Quiz Code"</strong> in the top menu bar to start. Students need an account. Private quizzes also require classroom enrollment. Results and recorded events appear in your Teacher Dashboard.
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        {copyError && <p role="alert">{copyError}</p>}
+        <QuizSharingSettings quizId={quizId} onSaved={onSaved}/>
+        <div style={{ display: 'flex', justifyContent: 'flex-end',marginTop:'1rem' }}>
           <button onClick={onClose} className="gf-publish-btn" style={{ padding: '9px 28px' }}>
             Done
           </button>

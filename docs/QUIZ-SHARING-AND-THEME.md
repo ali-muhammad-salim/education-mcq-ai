@@ -1,0 +1,13 @@
+# Account, theme and quiz sharing update
+
+The account page now separates profile/access, session security, recovery and teacher requests into responsive cards. Reset-password fields appear only for reset links. Light/dark/system preferences persist; the initial page paint uses the stored preference. Dark builder surfaces, native controls, semantic answer feedback and button contrast are corrected while preserving the site's layout and identity.
+
+Practice submissions automatically check the durable submission status with bounded, jittered retries and retrieve the full score/review when grading finishes. Held results and teacher marking use distinct messages. Released reviews identify the selected incorrect option, missing/extra multiple-choice selections, numerical tolerance and matching rules from the frozen answer key. Subject explanations use the author's stored explanation; missing guidance is explicitly identified rather than invented. Hidden answer keys also exclude this feedback from the API.
+
+New teacher assessments default to unlisted access, held scores and hidden keys. Existing quizzes retain their policies. The share dialog and dashboard allow classroom/code/public access, 1–600 minute limits, opening/closing dates, retries and attempt limits, question/option shuffling, tab monitoring, score release now/manually/at a date, and answer visibility. Existing attempt deadlines and question snapshots are preserved. Owners/admins alone can read or update these policies; changes are audited. Question editing remains frozen after attempts.
+
+The code and link are available in the builder; dashboard copy now copies the URL once, rather than overwriting it with the code. Links use the current site origin and encoded code. Clipboard failure never reports success.
+
+Validation: 50 isolated-database/unit tests, lint, TypeScript and production build. New tests cover policy ownership, hidden feedback, scheduled/manual release, invalid dates/limits, saved timer stability and deterministic answer feedback. No schema migration is needed.
+
+Browser verification used isolated synthetic accounts at 1280px and 390px widths. A two-question queued practice submission changed automatically from a durable receipt to a 1/2 score, displaying the wrong selection, correct answer and stored calculation. Sharing settings saved a 17-minute limit on an assessment with existing attempts; the builder reflected the saved value. Clipboard verification returned the full coded URL. Production-build HTTP integration checks passed in queued mode. Screenshots are in docs/verification/account-*.png, quiz-sharing-dark.png and quiz-answer-review-dark.png.

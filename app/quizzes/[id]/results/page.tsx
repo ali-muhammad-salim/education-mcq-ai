@@ -670,7 +670,9 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
                             <span>Study Guidance & Marking Rubric</span>
                           </div>
                           <div style={{ lineHeight: 1.6 }}>
-                            <MathText text={q.explanation} />
+                            {q.answerFeedback && <p><MathText text={q.answerFeedback}/></p>}
+                            {q.explanation ? <MathText text={q.explanation} /> : <p>No additional concept explanation has been provided for this question.</p>}
+                            {q.matchingPairs?.length>0 && <ul>{q.matchingPairs.map((pair:{left:string;right:string},i:number)=><li key={i}>{pair.left} → {pair.right}</li>)}</ul>}
                           </div>
                           {q.rubric && (
                             <div style={{

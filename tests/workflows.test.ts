@@ -74,6 +74,33 @@ describe.skipIf(!url)('Teacher and student workflows', () => {
     expect(JSON.stringify(attempt.questions)).not.toContain('isCorrect');
     await expect(service.startAttempt('PHY-IX-P1-SET-99',student)).rejects.toThrow();
   });
+  it('enforces sharing ownership, release policy and future-attempt timers without changing saved attempts', async () => {
+    const { GET, POST } = await import('@/app/api/quizzes/[id]/release/route');
+    const ctx = {params:Promise.resolve({id:quizId})}, path='/api/quizzes/'+quizId+'/release';
+    expect((await GET(request(path,'outsider'),ctx)).status).toBe(403);
+    expect((await POST(request(path,'outsider',{durationMin:2}),ctx)).status).toBe(403);
+    expect((await POST(request(path,'teacher',{resultVisibility:'SCHEDULED'}),ctx)).status).toBe(400);
+    expect((await POST(request(path,'teacher',{durationMin:0}),ctx)).status).toBe(400);
+    expect((await POST(request(path,'teacher',{scheduleStart:'2030-01-02T00:00:00Z',scheduleEnd:'2030-01-01T00:00:00Z'}),ctx)).status).toBe(400);
+    const student={id:studentId,email:'student@example.test',name:'Student',role:'STUDENT' as const};
+    const service=await import('@/services/assessment/service');
+    await POST(request(path,'teacher',{resultVisibility:'IMMEDIATE',showCorrectAnswers:true,durationMin:7,visibility:'UNLISTED',maxAttempts:3,allowRetries:true,randomizeQuestions:true,randomizeOptions:true}),ctx);
+    const review=await service.getResults(quizId,student);expect(review.canViewCorrectAnswers).toBe(true);expect(review.questions[0].answerFeedback).toContain('full marks');
+    const teacher={id:teacherId,email:'teacher@example.test',name:'Teacher',role:'TEACHER' as const};
+    const attempt=await service.startAttempt(quizId,teacher);
+    expect(new Date(attempt.deadline).getTime()-new Date(attempt.startedAt).getTime()).toBe(7*60000);
+    await POST(request(path,'teacher',{resultVisibility:'MANUAL_RELEASE',showCorrectAnswers:false,durationMin:2}),ctx);
+    await expect(service.getResults(quizId,student)).rejects.toThrow('not been released');
+    const recovered=await service.recoverAttempt(quizId,teacher);expect(recovered.attempt?.deadline).toEqual(attempt.deadline);
+    const loaded=await (await GET(request(path,'teacher'),ctx)).json();expect(loaded.quiz.durationMin).toBe(2);expect(loaded.quiz.settings.maxAttempts).toBe(3);
+    await POST(request(path,'teacher',{resultVisibility:'SCHEDULED',releaseAt:new Date(Date.now()+60000).toISOString()}),ctx);
+    await expect(service.getResults(quizId,student)).rejects.toThrow('not been released');
+    await POST(request(path,'teacher',{durationMin:3}),ctx);
+    const stillHeld=await (await GET(request(path,'teacher'),ctx)).json();expect(stillHeld.quiz.settings.resultVisibility).toBe('SCHEDULED');
+    await expect(service.getResults(quizId,student)).rejects.toThrow('not been released');
+    await POST(request(path,'teacher',{resultVisibility:'IMMEDIATE',showCorrectAnswers:false}),ctx);
+    const hidden=await service.getResults(quizId,student);expect(hidden.score).toBe(2);expect(hidden.questions[0]).not.toHaveProperty('answerFeedback');expect(hidden.questions[0]).not.toHaveProperty('explanation');
+  });
   it('uses purpose-bound single-use password reset tokens and revokes existing sessions', async () => {
     const email = 'student-' + suffix + '@example.test', token = 'a'.repeat(64);
     await db.authChallenge.create({ data: { identifier: 'reset:' + email, codeHash: createHash('sha256').update(token).digest('hex'), name: studentId, expiresAt: new Date(Date.now() + 60000) } });
