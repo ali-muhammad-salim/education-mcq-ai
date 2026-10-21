@@ -379,3 +379,9 @@
   }
 }
 .block ol,.block ul{padding-left:1.4rem;margin-left:0}
+
+.chapterList { list-style: none; padding: 0; margin: 0; display: grid; gap: .65rem; }
+.chapterLink { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.2rem; border: 1px solid var(--border-color); border-radius: 12px; background: var(--card-bg); text-decoration: none; min-height: 64px; }
+.chapterLink span { min-width: 0; }
+.chapterLink small { display: block; margin-top: .25rem; }
+.chapterLink:hover { border-color: var(--primary-color); }

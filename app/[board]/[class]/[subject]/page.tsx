@@ -34,11 +34,11 @@ export default async function SubjectHubPage({ params }: PageProps) {
   const resources = [
     {
       id: 'study-library',
-      title: 'Study Library',
-      desc: 'Reviewed chapter notes, worked numericals, formula sheets, flashcards and revision resources.',
-      href: '/study?' + new URLSearchParams({ board: board.shortCode, classLevel: String(classDef.level), subject: meta.title }),
+      title: 'Chapter Study Material',
+      desc: 'Choose a chapter, then open its notes, worked numericals or revision resources.',
+      href: `${baseUrl}/study`,
       icon: BookOpen,
-      actionText: 'Open Study Library',
+      actionText: 'Choose Chapter',
       pdfUrl: null
     },
     {

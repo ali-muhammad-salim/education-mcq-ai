@@ -392,6 +392,16 @@ describe.skipIf(!url)("Source-backed study library in PostgreSQL", () => {
   it("serves only published, current, correctly scoped resources and hides withdrawn evidence", async () => {
     const { GET: list } = await import("@/app/api/study/route");
     const { GET: read } = await import("@/app/api/study/[id]/route");
+    const { studyScope, studyChapters } = await import("@/services/study/navigation");
+    expect(studyScope("unknown-board", "9", "physics")).toBeNull();
+    const scope = studyScope("akueb", "IX", "physics")!;
+    scope.board = { ...scope.board, shortCode: "STUDY-" + suffix };
+    const chapters = await studyChapters(scope);
+    expect(chapters.map(c => c.id)).toEqual([topicId]);
+    expect(chapters[0].kinds.find(k => k.kind === "CHAPTER_NOTES")?.count).toBe(1);
+    expect(await studyChapters({ ...scope, classDef: { ...scope.classDef, level: 10 } })).toEqual([]);
+    expect(await studyChapters({ ...scope, board: { ...scope.board, shortCode: "unrelated-board" } })).toEqual([]);
+
     const base =
       "http://localhost/api/study?board=" +
       encodeURIComponent("STUDY-" + suffix) +
@@ -432,6 +442,8 @@ describe.skipIf(!url)("Source-backed study library in PostgreSQL", () => {
       where: { id: sourceId },
       data: { status: "REJECTED" },
     });
+    expect((await studyChapters(scope))[0].kinds.every(k => k.count === 0)).toBe(true);
+
     expect(
       (await (await list(new NextRequest(base + "9"))).json()).resources,
     ).toEqual([]);

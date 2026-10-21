@@ -70,7 +70,7 @@ export default function StudyReader({ id }: { id: string }) {
   return (
     <section className={styles.root} data-study-reader>
       <div className={styles.noPrint}>
-        <Link href={resource?.libraryUrl || "/study"}>← Study library</Link>
+        <Link href={resource?.libraryUrl || "/study"}>← Chapter material</Link>
       </div>
       {busy ? (
         <p role="status">Opening your study resource…</p>
@@ -120,7 +120,7 @@ export default function StudyReader({ id }: { id: string }) {
               <h2>Keep learning</h2>
               <div className={styles.actions}>
                 <Link className={styles.button} href={resource.libraryUrl}>
-                  More resources for this subject
+                  More material for this chapter
                 </Link>
                 <Link className={styles.button} href={resource.syllabusUrl}>
                   Syllabus & learning outcomes
