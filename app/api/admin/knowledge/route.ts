@@ -6,6 +6,7 @@ import { ApiError, apiError } from '@/lib/api';
 import { pageExtraction, searchableSource } from '@/services/ingestion/trust';
 import { createHash } from 'node:crypto';
 import { Prisma } from '@prisma/client';
+import { scheduleStudyPack } from '@/services/study/library';
 
 export async function GET(req: NextRequest) {
   try {
@@ -53,6 +54,16 @@ export async function PATCH(req: NextRequest) {
       }
       await tx.auditLog.create({ data: { userId: user.id, action: 'KNOWLEDGE_' + input.status, resource: 'KnowledgeArtifact', resourceId: artifact.id, details: { previousHash: input.contentHash, approvedHash: contentHash, note: input.note, sourceSha256: artifact.document.sha256 } } });
       if (input.status === 'APPROVED' && process.env.GEMINI_EMBEDDING_MODEL) await tx.durableJob.create({ data: { ownerId: user.id, kind: 'AI_EMBEDDING', payload: { artifactId: artifact.id } } });
+      if (input.status === 'APPROVED' && artifact.document.resourceType === 'textbook' && artifact.document.autoStudyResources) {
+        const pending = await tx.knowledgeArtifact.count({ where: { documentId: artifact.documentId, status: { not: 'APPROVED' } } });
+        if (!pending) {
+          try { await scheduleStudyPack(tx, user.id, { documentId: artifact.documentId }); }
+          catch (error) {
+            if (!(error instanceof ApiError) || !['CHAPTER_EVIDENCE_REQUIRED', 'BOOK_REVIEW_REQUIRED', 'BOOK_CURRENT_CURRICULUM_REQUIRED', 'STUDY_PACK_TOO_LARGE', 'STUDY_BOOK_SCOPE_TOO_LARGE'].includes(error.code)) throw error;
+            await tx.auditLog.create({ data: { userId: user.id, action: 'STUDY_PACK_NEEDS_MAPPING', resource: 'KnowledgeDocument', resourceId: artifact.documentId, details: { reason: error.code } } });
+          }
+        }
+      }
       return { id: artifact.id, status: input.status };
     });
     return NextResponse.json(result);

@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import prisma from '@/lib/prisma';
 import { Prisma, DurableJob } from '@prisma/client';
-export function enqueueJob(ownerId: string, kind: 'AI_GENERATION' | 'INGESTION' | 'AI_EMBEDDING', payload: Prisma.InputJsonValue) {
+export function enqueueJob(ownerId: string, kind: 'AI_GENERATION' | 'INGESTION' | 'AI_EMBEDDING' | 'STUDY_GENERATION', payload: Prisma.InputJsonValue) {
   return prisma.durableJob.create({ data: { ownerId, kind, payload } });
 }
 export async function claimJob(kinds: readonly string[]) {

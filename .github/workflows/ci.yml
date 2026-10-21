@@ -56,4 +56,4 @@ jobs:
       - name: Check worker PDF runtime
         run: docker run --rm --entrypoint /opt/pdf-runtime/bin/python mcqs-ai-worker:ci -c "from services.ingestion.trusted_renderer import validate_box; assert validate_box([10, 10, 100, 100]); print('Worker PDF runtime ready')"
       - name: Check worker AI module imports
-        run: docker run --rm --entrypoint node mcqs-ai-worker:ci --import tsx -e "Promise.all([import('./services/ingestion/trusted.ts'),import('./services/ai/generate.ts'),import('./services/knowledge/search.ts')]).then(()=>console.log('Worker AI modules ready'))"
+        run: docker run --rm --entrypoint node mcqs-ai-worker:ci --import tsx -e "Promise.all([import('./services/ingestion/trusted.ts'),import('./services/ai/generate.ts'),import('./services/knowledge/search.ts'),import('./services/study/library.ts')]).then(()=>console.log('Worker AI modules ready'))"

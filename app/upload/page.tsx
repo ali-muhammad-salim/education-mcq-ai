@@ -32,6 +32,7 @@ interface IngestProgress {
 
 export default function ResourceUploadCenterPage() {
   const [reprocess, setReprocess] = useState(false);
+  const [studyResources, setStudyResources] = useState(true);
   const [file, setFile] = useState<File | null>(null);
   const [board, setBoard] = useState('AKU-EB');
   const [classLevel, setClassLevel] = useState('Class IX');
@@ -232,6 +233,7 @@ export default function ResourceUploadCenterPage() {
     const formData = new FormData();
     formData.append('file', file);
     formData.append('reprocess', String(reprocess));
+    formData.append('studyResources', String(resourceType === 'textbook' && studyResources));
     if (keyFile) {
       formData.append('keyFile', keyFile);
     }
@@ -435,6 +437,7 @@ export default function ResourceUploadCenterPage() {
 
           <form onSubmit={handleManualUpload} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <label style={{display:'flex',alignItems:'center',gap:'.7rem',minHeight:'44px',lineHeight:1.5}}><input type="checkbox" checked={reprocess} onChange={e=>setReprocess(e.target.checked)} style={{width:'20px',height:'20px',accentColor:'#087859',flexShrink:0}}/>Re-analyze an existing source as a new review revision</label>
+            {resourceType === 'textbook' && <label style={{display:'flex',alignItems:'flex-start',gap:'.7rem',minHeight:'44px',lineHeight:1.5}}><input type="checkbox" checked={studyResources} onChange={e=>setStudyResources(e.target.checked)} style={{width:'20px',height:'20px',accentColor:'#087859',flexShrink:0}}/><span>Create chapter notes, numerical guides, formula sheets, cheat sheets, flashcards, practice questions and chapter readers after all source pages are approved. Generated resources remain drafts until reviewed.</span></label>}
 
             {/* File Dropzone */}
             <div>

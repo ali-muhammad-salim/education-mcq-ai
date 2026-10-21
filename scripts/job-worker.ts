@@ -12,7 +12,7 @@ process.on('SIGTERM', () => { stopping = true; controller?.abort(); });
 process.on('SIGINT', () => { stopping = true; controller?.abort(); });
 async function run() {
   console.log('Durable worker started');
-  const kinds = z.array(z.enum(['AI_GENERATION', 'INGESTION', 'AI_EMBEDDING', 'EXAM_FINALIZE', 'EXAM_GRADE'])).min(1).parse((process.env.WORKER_KINDS || 'AI_GENERATION,INGESTION,AI_EMBEDDING,EXAM_FINALIZE,EXAM_GRADE').split(',').map(s => s.trim()));
+  const kinds = z.array(z.enum(['AI_GENERATION', 'INGESTION', 'AI_EMBEDDING', 'STUDY_GENERATION', 'EXAM_FINALIZE', 'EXAM_GRADE'])).min(1).parse((process.env.WORKER_KINDS || 'AI_GENERATION,INGESTION,AI_EMBEDDING,STUDY_GENERATION,EXAM_FINALIZE,EXAM_GRADE').split(',').map(s => s.trim()));
   if (process.env.NODE_ENV === 'production' && kinds.some(k => k.startsWith('EXAM_')) && kinds.some(k => !k.startsWith('EXAM_'))) throw new Error('Production assessment and AI jobs must use separate workers.');
   const workerId = randomUUID();
   const heartbeatWorker = async () => {
@@ -32,6 +32,7 @@ async function run() {
       let result: Prisma.InputJsonValue;
       if (job.kind === 'AI_GENERATION') result = await (await import('../services/ai/generate')).generateQuestions(job.ownerId, job.payload, job.id, controller.signal);
       else if (job.kind === 'INGESTION') result = await (await import('../services/ingestion/trusted')).ingestTrustedDocument(job, controller.signal);
+      else if (job.kind === 'STUDY_GENERATION') result = await (await import('../services/study/library')).generateStudyResource(job.ownerId, z.object({ noteId: z.string() }).parse(job.payload).noteId, job.id, controller.signal);
       else if (job.kind === 'AI_EMBEDDING') result = await (await import('../services/knowledge/search')).indexApprovedArtifact(z.object({ artifactId: z.string() }).parse(job.payload).artifactId, controller.signal);
       else if (job.kind === 'EXAM_FINALIZE' || job.kind === 'EXAM_GRADE') {
         const payload = z.object({ quizId: z.string(), attemptId: z.string() }).parse(job.payload);
@@ -46,6 +47,10 @@ async function run() {
       const deferred = error instanceof AIBackpressure;
       const retry = deferred || (!(error instanceof ApiError && error.status < 500) && job.attempts < 3);
       await prisma.durableJob.updateMany({ where: lease, data: { status: retry ? 'QUEUED' : 'FAILED', availableAt: error instanceof AIBackpressure ? error.retryAt : new Date(Date.now() + 10000 * job.attempts), ...(deferred ? { attempts: { decrement: 1 } } : {}), lockedAt: null, leaseToken: null, error: error instanceof ApiError ? error.message : 'Processing failed. Check worker logs and configuration.' } });
+      if (!retry && job.kind === 'STUDY_GENERATION') {
+        const payload = z.object({ noteId: z.string() }).safeParse(job.payload);
+        if (payload.success) await prisma.studyNote.updateMany({ where: { id: payload.data.noteId, ownerId: job.ownerId, status: 'DRAFT' }, data: { status: 'FAILED', staleReason: error instanceof ApiError ? error.message : 'Generation failed. Review the source scope and retry as a new revision.' } });
+      }
       if (error instanceof AIBackpressure) console.log('AI job deferred', job.id, error.retryAt.toISOString());
       else console.error('Job failed', job.id, error instanceof ApiError ? { code: error.code, status: error.status } : error instanceof Error ? error.name : 'unknown');
       if (process.env.WORKER_ONCE === '1') stopping = true;

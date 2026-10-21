@@ -53,6 +53,7 @@ export async function ingestTrustedDocument(job: DurableJob, signal: AbortSignal
     if (!parent || parent.id === document.id) throw new ApiError(422, 'INVALID_SOURCE_REFERENCE', 'The answer key must reference a source in the same curriculum scope.');
     await prisma.knowledgeReference.upsert({ where: { documentId_referenceId: { documentId: parent.id, referenceId: document.id } }, create: { documentId: parent.id, referenceId: document.id, kind: 'CANDIDATE_ANSWER_KEY' }, update: {} });
   }
+  if (input.resourceType === 'textbook' && input.studyResources) await prisma.knowledgeDocument.update({ where: { id: document.id }, data: { autoStudyResources: true } });
   let continuation = '';
   try {
     for (let page = 1; page <= info.totalPages; page++) {

@@ -127,6 +127,7 @@ export default function RootLayout({
                       📦 Books & Downloads
                     </Link>
                   </li>
+                  <li><Link href="/study" style={{color:'#cbd5e1',textDecoration:'none'}}>📖 Reviewed Study Library</Link></li>
                   <li>
                     <Link href="/privacy" style={{ color: '#38bdf8', textDecoration: 'none', fontWeight: 600 }}>
                       🛡️ Privacy Policy

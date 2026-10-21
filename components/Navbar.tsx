@@ -465,7 +465,7 @@ export default function Navbar() {
 
           <div className="mobile-menu-shortcuts">
             <Link href="/">Home</Link><Link href="/quizzes">Practice quizzes</Link>
-            <Link href="/resources">Books & downloads</Link><Link href="/past-papers">Past papers</Link>
+            <Link href="/study">Study library</Link><Link href="/resources">Books & downloads</Link><Link href="/past-papers">Past papers</Link>
           </div>
           {Object.entries(CLASS_SUBJECTS).map(([classKey, classData]) => {
             const isOpen = openClassDropdown === classKey;

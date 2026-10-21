@@ -55,6 +55,10 @@ Adding a new service with database, asset and model-credential access requires t
 
 ## Explicit limits and remaining work
 
+Production activation of PR #7 completed on 2026-10-21 at commit `53728598ad1ee92ad229e3ac1c3458c1bb8e2a6a`. A fresh backup was restored into an isolated server database, all five additive migrations applied, and the separate private AI worker and assessment worker both reported recent heartbeats. The web service was healthy and all five attempts were preserved. A synthetic source completed through the deployed AI image against the restored test database and remained pending review. See `docs/verification/AI-PRODUCTION-RELEASE-2026-10-21.json`.
+
+The subsequent book-study library is documented separately in `docs/BOOK-STUDY-LIBRARY.md`; it extends the existing notes model and retains the educator publication gate.
+
 - This is a trust foundation, not a declaration that all existing content has been academically recertified. Older published resources and frozen assessments remain intact; they need source-based academic review before being treated as verified evidence in the new RAG corpus.
 - Source approval makes evidence retrievable. It does not silently replace the active syllabus hierarchy or publish a newly uploaded paper into the public archive. A separate reviewed curriculum/paper publication workflow is still required for those actions.
 - Very long source pages remain lexically searchable; pages above the embedding input cap require smaller reviewed chunks for semantic indexing. No silent 2,048-character embedding truncation is used in the new path.

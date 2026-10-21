@@ -33,6 +33,15 @@ export default async function SubjectHubPage({ params }: PageProps) {
   // Clean, linear list of resources
   const resources = [
     {
+      id: 'study-library',
+      title: 'Study Library',
+      desc: 'Reviewed chapter notes, worked numericals, formula sheets, flashcards and revision resources.',
+      href: '/study?' + new URLSearchParams({ board: board.shortCode, classLevel: String(classDef.level), subject: meta.title }),
+      icon: BookOpen,
+      actionText: 'Open Study Library',
+      pdfUrl: null
+    },
+    {
       id: 'syllabus',
       title: 'Syllabus',
       desc: 'Official curriculum guidelines, unit breakdown, and Student Learning Outcomes (SLOs).',
