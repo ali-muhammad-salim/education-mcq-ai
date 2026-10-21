@@ -214,7 +214,7 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
       examYear: 2025,
       examSession: 'Annual Examination 2025',
       examType: 'ANNUAL',
-      fileUrl: '/uploads/past_paper_auto_1791881747833_Physics-IX-Paper-I-2025.pdf',
+      fileUrl: '/materials/ssc/physics/ssc-1/physics-ix-2025-paper-i.pdf',
       academicClass: { name: 'Class IX', level: 9 },
       subject: { id: 'physics-ix', name: 'Physics', code: 'PHY' },
       questions
@@ -262,7 +262,7 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
       examYear: 2025,
       examSession: 'Annual Examination 2025',
       examType: 'ANNUAL',
-      fileUrl: '/uploads/past_paper_Class_IX_1791885389646_Physics-IX-Paper-II-2025.pdf',
+      fileUrl: '/materials/ssc/physics/ssc-1/physics-ix-2025-paper-ii.pdf',
       academicClass: { name: 'Class IX', level: 9 },
       subject: { id: 'physics-ix', name: 'Physics', code: 'PHY' },
       questions
@@ -542,7 +542,7 @@ export function getAllStandardPapers(): Array<{
       title: 'Physics SSC-I 2025 Annual Examination Paper I',
       examSession: 'Annual Examination',
       examYear: 2025,
-      fileUrl: '/uploads/past_paper_auto_1791881747833_Physics-IX-Paper-I-2025.pdf',
+      fileUrl: '/materials/ssc/physics/ssc-1/physics-ix-2025-paper-i.pdf',
       academicClass: { name: 'Class IX', level: 9 },
       subject: { name: 'Physics' },
       _count: { questions: 40 }
@@ -553,7 +553,7 @@ export function getAllStandardPapers(): Array<{
       title: 'Physics SSC-I 2025 Annual Examination Paper II',
       examSession: 'Annual Examination',
       examYear: 2025,
-      fileUrl: '/uploads/past_paper_Class_IX_1791885389646_Physics-IX-Paper-II-2025.pdf',
+      fileUrl: '/materials/ssc/physics/ssc-1/physics-ix-2025-paper-ii.pdf',
       academicClass: { name: 'Class IX', level: 9 },
       subject: { name: 'Physics' },
       _count: { questions: 11 }
