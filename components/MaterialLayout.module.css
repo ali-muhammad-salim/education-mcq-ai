@@ -1,0 +1,200 @@
+.page {
+  max-width: 960px;
+  margin: 1.2rem auto;
+  padding: 0 1rem 2rem;
+  color: var(--text-color);
+}
+.page h1 {
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  margin: 1rem 0;
+  line-height: 1.25;
+}
+.page h2 {
+  font-size: 1.1rem;
+  margin: 1.3rem 0 0.6rem;
+}
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--card-bg);
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1rem;
+  min-height: 52px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+  text-decoration: none;
+}
+.list > li:last-child .row {
+  border-bottom: 0;
+}
+.row:hover {
+  background: var(--surface-muted);
+}
+.label {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-weight: 600;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--primary-color);
+}
+.muted {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.8rem 0;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  min-height: 44px;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.button[aria-pressed="true"] {
+  background: var(--primary-color);
+  color: var(--card-bg);
+}
+.page input {
+  font: inherit;
+  padding: 0.65rem 0.8rem;
+  min-height: 44px;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.original {
+  width: 100%;
+  height: 75vh;
+  min-height: 420px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.digital {
+  max-width: 780px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.source {
+  margin: 1.2rem 0;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border-color);
+  white-space: pre-wrap;
+}
+.source img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.7rem 0;
+}
+.page :focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+}
+@media (max-width: 480px) {
+  .row {
+    padding: 0.7rem 0.8rem;
+  }
+  .muted {
+    font-size: 0.78rem;
+  }
+  .actions {
+    gap: 0.4rem;
+  }
+  .page {
+    margin: 0.8rem auto;
+  }
+}
+
+.question {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.options {
+  border: 0;
+  margin: 0.6rem 0;
+  padding: 0;
+  min-width: 0;
+}
+.option {
+  display: flex;
+  gap: 0.55rem;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+.option input {
+  min-height: 0;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--primary-color);
+}
+.sloLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.pdfPage {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+}
+.pdfPage select {
+  font: inherit;
+  color: var(--text-color);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  min-height: 44px;
+  padding: 0 0.4rem;
+}

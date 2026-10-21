@@ -65,11 +65,7 @@ export default async function ChapterStudy({
           </span>
           <h1>{selected ? studyLabels[selected] : title}</h1>
           <p className={styles.muted}>
-            {selected
-              ? chapter?.name
-              : chapter
-                ? "Choose what you want to study."
-                : "Open a chapter to find its notes, numericals and revision tools."}
+            {selected ? chapter?.name : chapter ? "" : "Choose a chapter."}
           </p>
         </div>
       </header>
@@ -81,7 +77,12 @@ export default async function ChapterStudy({
                 <li key={c.id}>
                   <Link
                     className={styles.chapterLink}
-                    href={scope.baseUrl + "/study/" + encodeURIComponent(c.id)}
+                    href={
+                      scope.baseUrl +
+                      "/study/" +
+                      encodeURIComponent(c.id) +
+                      (selected ? "?kind=" + selected : "")
+                    }
                   >
                     <span>
                       <strong>
@@ -89,9 +90,7 @@ export default async function ChapterStudy({
                         {c.name}
                       </strong>
                       <small className={styles.muted}>
-                        {c.kinds.some((k) => k.count)
-                          ? "Study material available"
-                          : "Study material being prepared"}
+                        {c.kinds.some((k) => k.count) ? "" : "Coming soon"}
                       </small>
                     </span>
                     <span aria-hidden="true">→</span>
@@ -101,11 +100,8 @@ export default async function ChapterStudy({
             </ol>
           ) : (
             <div className={styles.panel}>
-              <h2>Chapter material is being prepared</h2>
-              <p>
-                The chapter list will appear when the current curriculum is
-                mapped.
-              </p>
+              <h2>Coming soon</h2>
+              <p></p>
               <Link href={scope.baseUrl + "/syllabus"}>
                 View syllabus & learning outcomes →
               </Link>

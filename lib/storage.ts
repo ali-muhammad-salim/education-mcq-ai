@@ -1,4 +1,6 @@
-import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
+import { S3Client, PutObjectCommand, GetObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
+import {createReadStream} from 'node:fs';
+import {Readable} from 'node:stream';
 import { randomUUID } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -37,4 +39,16 @@ export async function readEducationalAsset(key: string) {
     return { buffer: Buffer.from(await object.Body.transformToByteArray()), mimeType: object.ContentType || 'application/octet-stream' };
   }
   return { buffer: await fs.readFile(path.join(root(), key)), mimeType: key.endsWith('.pdf') ? 'application/pdf' : key.endsWith('.png') ? 'image/png' : key.endsWith('.jpg') || key.endsWith('.jpeg') ? 'image/jpeg' : key.endsWith('.webp') ? 'image/webp' : 'application/octet-stream' };
+}
+// Student downloads stream from disk/object storage rather than buffering an
+// entire textbook for every reader or every PDF byte-range request.
+export async function educationalAssetInfo(key:string){
+  validateStorageKey(key);const s3=client();
+  if(s3){const info=await s3.send(new HeadObjectCommand({Bucket:process.env.R2_BUCKET_NAME||'education-mcq-hub',Key:key}));return {size:info.ContentLength||0,mimeType:info.ContentType||'application/octet-stream'};}
+  const info=await fs.stat(path.join(root(),key));return {size:info.size,mimeType:key.endsWith('.pdf')?'application/pdf':key.endsWith('.png')?'image/png':'application/octet-stream'};
+}
+export async function streamEducationalAsset(key:string,range?:{start:number;end:number}):Promise<ReadableStream<Uint8Array>>{
+  validateStorageKey(key);const s3=client();
+  if(s3){const object=await s3.send(new GetObjectCommand({Bucket:process.env.R2_BUCKET_NAME||'education-mcq-hub',Key:key,...(range?{Range:`bytes=${range.start}-${range.end}`}:{})}));if(!object.Body)throw new ApiError(404,'ASSET_NOT_FOUND','Asset not found.');return object.Body.transformToWebStream();}
+  return Readable.toWeb(createReadStream(path.join(root(),key),range?{start:range.start,end:range.end}:{})) as ReadableStream<Uint8Array>;
 }

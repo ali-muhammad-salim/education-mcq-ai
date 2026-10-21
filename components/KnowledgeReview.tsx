@@ -53,7 +53,7 @@ export default function KnowledgeReview() {
         <p>Check the full transcription after correcting an individual region. Original crop boundaries stay unchanged.</p>
         {draft.regions.map((region, index) => <RegionEditor key={index} index={index} region={region} outcomes={outcomes} onChange={change => editRegion(index, change)}/>)}
         <label>Review notes<textarea value={note} onChange={e => setNote(e.target.value)} placeholder="Explain what you checked and how you resolved any conflicts." maxLength={4000}/></label>
-        <p>Approval confirms you checked the original source and replaces older approved transcriptions of the same source page and syllabus. Atom balance alone does not prove a chemical reaction is scientifically correct.</p>
+        <p>For uploads marked “Publish after review”, approving every page makes the original PDF and digital text public in its subject. Approval confirms you checked the original source and replaces older approved transcriptions of the same source page and syllabus. Atom balance alone does not prove a chemical reaction is scientifically correct.</p>
         <div className={styles.actions}><button disabled={busy || !selected.data.checksComplete || selected.document.status !== 'NEEDS_REVIEW' || note.trim().length < 10 || selected.status !== 'PENDING_REVIEW'} onClick={() => void review('APPROVED')}>Approve source</button><button disabled={busy || !selected.data.checksComplete || note.trim().length < 10 || selected.status === 'REJECTED'} onClick={() => void review('REJECTED')}>Reject source</button>{selected.status !== 'PENDING_REVIEW' && <button disabled={busy || note.trim().length < 10} onClick={() => void review('PENDING_REVIEW')}>Reopen review</button>}</div>
       </div></div>
     </>}

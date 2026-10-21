@@ -142,11 +142,11 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
         diagramBased: !!item.isDiagram,
         sourceRegion: {
           choices: item.options || {},
-          correct_answer: item.correctOption || 'A',
-          explanation: item.explanation || 'Official AKU-EB examination answer key and derivation.',
+          correct_answer: item.correctOption || '',
+          explanation: item.explanation || '',
           cognitive_level: item.cognitiveLevel,
           is_numerical: item.isNumerical,
-          in_syllabus: false,
+          in_syllabus: undefined,
           diagramUrl: item.diagramUrl,
           slo: item.slo || undefined,
           slo_details: {
@@ -190,11 +190,11 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
         diagramBased: !!item.isDiagram,
         sourceRegion: {
           choices: item.options || {},
-          correct_answer: item.correctOption || 'A',
-          explanation: item.explanation || 'Official AKU-EB examination answer key.',
+          correct_answer: item.correctOption || '',
+          explanation: item.explanation || '',
           cognitive_level: item.cognitiveLevel,
           is_numerical: item.isNumerical,
-          in_syllabus: false,
+          in_syllabus: undefined,
           diagramUrl: item.diagramUrl,
           slo: item.slo || undefined,
           slo_details: {
@@ -242,7 +242,7 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
           rubric: item.rubric || [],
           model_answer: item.modelAnswer || '',
           explanation: item.modelAnswer || '',
-          in_syllabus: false,
+          in_syllabus: undefined,
           diagramUrl: item.diagramUrl,
           slo: item.slo || undefined,
           slo_details: {
@@ -297,11 +297,11 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
         diagramBased: !!item.isDiagram,
         sourceRegion: {
           choices: item.options || {},
-          correct_answer: item.correctOption || 'A',
+          correct_answer: item.correctOption || '',
           explanation: item.explanation || '',
           cognitive_level: item.cognitiveLevel,
           is_numerical: item.isNumerical,
-          in_syllabus: false,
+          in_syllabus: undefined,
           slo: undefined,
           slo_details: {
             description: item.stem,
@@ -351,7 +351,7 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
           rubric: item.rubric || [],
           model_answer: item.modelAnswer || '',
           explanation: item.modelAnswer || '',
-          in_syllabus: false,
+          in_syllabus: undefined,
           slo: undefined,
           slo_details: {
             description: item.stem,
@@ -396,19 +396,19 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
         diagramBased: !!item.isDiagram,
         sourceRegion: {
           choices: item.options || {},
-          correct_answer: item.correctOption || 'A',
+          correct_answer: item.correctOption || '',
           explanation: item.explanation || '',
           cognitive_level: item.cognitiveLevel,
           is_numerical: item.isNumerical,
-          in_syllabus: false,
-          slo: `10.${qNum}`,
+          in_syllabus: undefined,
+          slo: undefined,
           slo_details: {
             description: item.stem,
             topic_name: 'SSC-II Physics (Class X)'
           }
         },
         topics: [{ topic: { name: 'SSC-II Physics', topicNumber: '10' } }],
-        slos: [{ slo: { code: `10.${qNum}`, description: item.stem } }]
+        slos: []
       };
     });
 
@@ -447,15 +447,15 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
           rubric: item.rubric || [],
           model_answer: item.modelAnswer || '',
           explanation: item.modelAnswer || '',
-          in_syllabus: false,
-          slo: `10.${idx + 1}`,
+          in_syllabus: undefined,
+          slo: undefined,
           slo_details: {
             description: item.stem,
             topic_name: 'SSC-II Physics Theory'
           }
         },
         topics: [{ topic: { name: 'SSC-II Physics Theory', topicNumber: '10' } }],
-        slos: [{ slo: { code: `10.${idx + 1}`, description: item.stem } }]
+        slos: []
       };
     });
 

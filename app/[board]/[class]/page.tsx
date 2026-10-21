@@ -1,8 +1,13 @@
-import React from 'react';
-import { notFound } from 'next/navigation';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import { getClassSubjects, normalizeBoardId, normalizeClassRoman } from '@/lib/boardHierarchy';
-import ClassSubjectsClient from './ClassSubjectsClient';
+import React from "react";
+import styles from "@/components/MaterialLayout.module.css";
+import { notFound } from "next/navigation";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import {
+  getClassSubjects,
+  normalizeBoardId,
+  normalizeClassRoman,
+} from "@/lib/boardHierarchy";
+import ClassSubjectsClient from "./ClassSubjectsClient";
 
 interface PageProps {
   params: Promise<{ board: string; class: string }>;
@@ -26,13 +31,13 @@ export default async function ClassPage({ params }: PageProps) {
   const { board, classDef, subjects } = data;
 
   return (
-    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem 1rem 5rem 1rem', fontFamily: "'Inter', sans-serif" }}>
+    <div className={styles.page}>
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
-          { label: 'Home', href: '/' },
+          { label: "Home", href: "/" },
           { label: board.name, href: `/${board.id}` },
-          { label: `${classDef.name} (${classDef.stageLabel})`, active: true }
+          { label: `${classDef.name} (${classDef.stageLabel})`, active: true },
         ]}
       />
 

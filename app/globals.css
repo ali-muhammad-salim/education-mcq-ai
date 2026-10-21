@@ -70,9 +70,9 @@ html.dark body,
   color: #f1f5f9 !important;
 }
 
-html.dark nav,
+html.dark nav:not([aria-label="Breadcrumb"]),
 html.dark .navbar,
-[data-theme="dark"] nav,
+[data-theme="dark"] nav:not([aria-label="Breadcrumb"]),
 [data-theme="dark"] .navbar {
   background: #111827 !important;
   border-bottom: 2px solid #1f2937 !important;
