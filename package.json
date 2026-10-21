@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "node scripts/copy-pdf-runtime.cjs && next build --webpack",
     "start": "next start -H 0.0.0.0 -p 3000",
     "postinstall": "prisma generate --generator client",
     "db:push": "prisma db push",
@@ -55,6 +55,7 @@
     "katex": "^0.19.0",
     "lucide-react": "^1.51.0",
     "next": "^16.3.8",
+    "pdfjs-dist": "^6.4.299",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "tsx": "^4.23.15",

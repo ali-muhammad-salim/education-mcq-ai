@@ -33,6 +33,7 @@ interface IngestProgress {
 export default function ResourceUploadCenterPage() {
   const [reprocess, setReprocess] = useState(false);
   const [studyResources, setStudyResources] = useState(true);
+  const [publishAfterReview, setPublishAfterReview] = useState(true);
   const [file, setFile] = useState<File | null>(null);
   const [board, setBoard] = useState('AKU-EB');
   const [classLevel, setClassLevel] = useState('Class IX');
@@ -233,6 +234,7 @@ export default function ResourceUploadCenterPage() {
     const formData = new FormData();
     formData.append('file', file);
     formData.append('reprocess', String(reprocess));
+    formData.append('publishAfterReview', String(publishAfterReview));
     formData.append('studyResources', String(resourceType === 'textbook' && studyResources));
     if (keyFile) {
       formData.append('keyFile', keyFile);
@@ -437,6 +439,7 @@ export default function ResourceUploadCenterPage() {
 
           <form onSubmit={handleManualUpload} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <label style={{display:'flex',alignItems:'center',gap:'.7rem',minHeight:'44px',lineHeight:1.5}}><input type="checkbox" checked={reprocess} onChange={e=>setReprocess(e.target.checked)} style={{width:'20px',height:'20px',accentColor:'#087859',flexShrink:0}}/>Re-analyze an existing source as a new review revision</label>
+            <label style={{display:'flex',gap:'.6rem',alignItems:'center',minHeight:'44px'}}><input type="checkbox" checked={publishAfterReview} onChange={e=>setPublishAfterReview(e.target.checked)}/>Publish original and digital text in the subject after all pages pass review</label>
             {resourceType === 'textbook' && <label style={{display:'flex',alignItems:'flex-start',gap:'.7rem',minHeight:'44px',lineHeight:1.5}}><input type="checkbox" checked={studyResources} onChange={e=>setStudyResources(e.target.checked)} style={{width:'20px',height:'20px',accentColor:'#087859',flexShrink:0}}/><span>Create chapter notes, numerical guides, formula sheets, cheat sheets, flashcards, practice questions and chapter readers after all source pages are approved. Generated resources remain drafts until reviewed.</span></label>}
 
             {/* File Dropzone */}

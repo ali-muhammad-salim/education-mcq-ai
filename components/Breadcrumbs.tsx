@@ -17,36 +17,37 @@ interface BreadcrumbsProps {
 
 export default function Breadcrumbs({ items, style }: BreadcrumbsProps) {
   return (
-    <nav 
+    <nav
       aria-label="Breadcrumb"
       style={{
-        background: '#111827',
-        color: '#e5e7eb',
+        background: 'transparent',
+        color: 'var(--text-color)',
         borderRadius: '10px',
-        padding: '0.75rem 1.25rem',
-        marginBottom: '1.5rem',
+        padding: '0',
+        marginBottom: '0.75rem',
         display: 'flex',
         alignItems: 'center',
         flexWrap: 'wrap',
         gap: '0.5rem',
         fontSize: '0.88rem',
         fontWeight: 500,
-        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+        boxShadow: 'none',
         ...style
       }}
     >
-      <Link 
-        href="/" 
-        style={{ 
-          display: 'inline-flex', 
-          alignItems: 'center', 
-          gap: '0.35rem', 
-          color: '#9ca3af', 
+      <Link
+        href="/"
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.35rem',
+          color: 'var(--text-light)',
           textDecoration: 'none',
+          minHeight: '44px',
           transition: 'color 0.15s ease'
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = '#34d399')}
-        onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
+        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
+        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-light)')}
       >
         <Home size={15} />
         <span>Home</span>
@@ -56,26 +57,27 @@ export default function Breadcrumbs({ items, style }: BreadcrumbsProps) {
         const isLast = idx === visibleItems.length - 1 || item.active;
         return (
           <React.Fragment key={idx}>
-            <ChevronRight size={14} style={{ color: '#6b7280', flexShrink: 0 }} />
+            <ChevronRight size={14} style={{ color: 'var(--text-light)', flexShrink: 0 }} />
             {isLast || !item.href ? (
-              <span style={{ 
-                color: item.active || isLast ? '#34d399' : '#f3f4f6', 
+              <span aria-current={isLast ? 'page' : undefined} style={{
+                color: item.active || isLast ? 'var(--primary-color)' : 'var(--text-color)',
                 fontWeight: 700,
-                whiteSpace: 'nowrap'
+                overflowWrap: 'anywhere'
               }}>
                 {item.label}
               </span>
             ) : (
-              <Link 
+              <Link
                 href={item.href}
-                style={{ 
-                  color: '#9ca3af', 
+                style={{
+                  color: 'var(--text-light)',
                   textDecoration: 'none',
-                  whiteSpace: 'nowrap',
+                  minHeight: '44px', display: 'inline-flex', alignItems: 'center',
+                  overflowWrap: 'anywhere',
                   transition: 'color 0.15s ease'
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#34d399')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-light)')}
               >
                 {item.label}
               </Link>

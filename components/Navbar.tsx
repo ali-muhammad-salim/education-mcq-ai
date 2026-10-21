@@ -26,9 +26,9 @@ interface SubjectItem {
 
 const BOARDS = [
   { id: 'akueb', name: 'AKU-EB', fullName: 'Aga Khan University Examination Board', active: true, tag: 'Official Active' },
-  { id: 'sindh', name: 'Sindh Board (BSEK/BIEK)', fullName: 'Board of Secondary & Intermediate Education Karachi', active: false, tag: 'Coming Soon' },
+  { id: 'bise-karachi', name: 'Sindh Board (BSEK/BIEK)', fullName: 'Board of Secondary & Intermediate Education Karachi', active: false, tag: 'Coming Soon' },
   { id: 'fbise', name: 'Federal Board (FBISE)', fullName: 'Federal Board of Intermediate & Secondary Education', active: false, tag: 'Coming Soon' },
-  { id: 'punjab', name: 'Punjab Board (BISE)', fullName: 'Board of Intermediate & Secondary Education Lahore', active: false, tag: 'Coming Soon' },
+  { id: 'bise-lahore', name: 'Punjab Board (BISE)', fullName: 'Board of Intermediate & Secondary Education Lahore', active: false, tag: 'Coming Soon' },
 ];
 
 const CLASS_SUBJECTS: Record<string, { label: string; subLabel: string; roman: string; isReady: boolean; subjects: SubjectItem[] }> = {
@@ -104,6 +104,11 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const [selectedBoard, setSelectedBoard] = useState(BOARDS[0]);
+  const [catalogClasses,setCatalogClasses]=useState<{roman:string;subjects:{name:string;slug:string;icon:string;available:boolean}[]}[]>([]);
+  useEffect(()=>{const controller=new AbortController();const load=()=>{void fetch('/api/navigation?board='+encodeURIComponent(selectedBoard.id),{signal:controller.signal}).then(r=>r.ok?r.json():Promise.reject()).then(d=>setCatalogClasses(d.classes)).catch(()=>{});};load();window.addEventListener('focus',load);return()=>{controller.abort();window.removeEventListener('focus',load);};},[selectedBoard.id,pathname]);
+  useEffect(()=>{const slug=pathname.split('/')[1];const board=BOARDS.find(b=>b.id===slug);if(board)setSelectedBoard(board);},[pathname]);
+  const navigationClasses=Object.fromEntries(Object.entries(CLASS_SUBJECTS).map(([key,grade])=>[key,{...grade,isReady:true,subjects:catalogClasses.find(c=>c.roman===grade.roman)?.subjects.map(s=>({...s,isReady:true,badge:s.available?undefined:'Coming soon'}))||grade.subjects.map(s=>({...s,isReady:true,badge:undefined}))}])) as typeof CLASS_SUBJECTS;
+
   const [boardDropdownOpen, setBoardDropdownOpen] = useState(false);
   const [openClassDropdown, setOpenClassDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -398,7 +403,7 @@ export default function Navbar() {
                   Select Examination Board
                 </div>
                 {BOARDS.map((b) => {
-                  const isAvailable = b.active;
+                  const isAvailable = true;
                   return (
                     <button
                       key={b.id}
@@ -465,9 +470,9 @@ export default function Navbar() {
 
           <div className="mobile-menu-shortcuts">
             <Link href="/">Home</Link><Link href="/quizzes">Practice quizzes</Link>
-            <Link href="/study">Study library</Link><Link href="/resources">Books & downloads</Link><Link href="/past-papers">Past papers</Link>
+            <Link href="/resources">Books & downloads</Link><Link href="/past-papers">Past papers</Link>
           </div>
-          {Object.entries(CLASS_SUBJECTS).map(([classKey, classData]) => {
+          {Object.entries(navigationClasses).map(([classKey, classData]) => {
             const isOpen = openClassDropdown === classKey;
             const isClassReady = classData.isReady;
 
@@ -567,7 +572,7 @@ export default function Navbar() {
                     <div style={{ maxHeight: '380px', overflowY: 'auto', padding: '0.35rem 0' }}>
                       {classData.subjects.map((sub) => {
                         const targetHref = `/${selectedBoard.id}/${classData.roman}/${sub.slug}`;
-                        const isSubReady = sub.isReady;
+                        const isSubReady = true;
 
                         if (!isSubReady) {
                           return (

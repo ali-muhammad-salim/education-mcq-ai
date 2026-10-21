@@ -1343,6 +1343,8 @@ model KnowledgeDocument {
   totalPages        Int
   pipelineVersion   String
   autoStudyResources Boolean @default(false)
+  publishAfterReview Boolean @default(false)
+  catalogMetadata   Json?
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
   owner             User @relation(fields: [ownerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
