@@ -113,6 +113,7 @@ model Topic {
   studyNotes         StudyNote[]
 
   @@index([syllabusVersionId])
+  @@unique([id, syllabusVersionId])
 }
 
 model Subtopic {
@@ -858,11 +859,39 @@ model StudyNote {
   coverageSummary   Json?    // {pastPaperYears:[...], bookPages:[...]}
   status            String   @default("DRAFT")
   staleReason       String?
+  sourceDocumentId  String?
+  kind              String @default("CHAPTER_NOTES")
+  revision          Int @default(1)
+  partIndex         Int @default(1)
+  partTotal         Int @default(1)
+  ownerId           String?
+  reviewerId        String?
+  reviewedAt        DateTime?
+  reviewNote        String? @db.Text
+  contentHash       String?
+  generation        Json?
+  updatedAt         DateTime @default(now()) @updatedAt
 
   topic     Topic    @relation(fields: [topicId], references: [id])
+  sourceDocument KnowledgeDocument? @relation(fields: [sourceDocumentId, syllabusVersionId], references: [id, syllabusVersionId], onDelete: NoAction, onUpdate: NoAction)
+  owner User? @relation("StudyOwner", fields: [ownerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  reviewer User? @relation("StudyReviewer", fields: [reviewerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  sources StudyNoteSource[]
   
   @@index([topicId])
   @@index([sloId])
+  @@unique([sourceDocumentId, topicId, kind, revision, partIndex], map: "StudyNote_source_revision_key")
+  @@index([status, syllabusVersionId, topicId])
+}
+
+model StudyNoteSource {
+  noteId String
+  artifactId String
+  contentHash String
+  note StudyNote @relation(fields: [noteId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  artifact KnowledgeArtifact @relation(fields: [artifactId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  @@id([noteId, artifactId])
+  @@index([artifactId])
 }
 
 model ReviewDecision {
@@ -1039,6 +1068,8 @@ enum AccountStatus {
 }
 
 model User {
+  ownedStudyNotes StudyNote[] @relation("StudyOwner")
+  reviewedStudyNotes StudyNote[] @relation("StudyReviewer")
   knowledgeDocuments KnowledgeDocument[]
   reviewedKnowledge KnowledgeArtifact[]
   id              String         @id @default(uuid())
@@ -1311,6 +1342,7 @@ model KnowledgeDocument {
   status            String @default("PROCESSING")
   totalPages        Int
   pipelineVersion   String
+  autoStudyResources Boolean @default(false)
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
   owner             User @relation(fields: [ownerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
@@ -1319,6 +1351,8 @@ model KnowledgeDocument {
   artifacts         KnowledgeArtifact[]
   references        KnowledgeReference[] @relation("KnowledgeSource")
   referencedBy      KnowledgeReference[] @relation("KnowledgeReference")
+  studyNotes        StudyNote[]
+  @@unique([id, syllabusVersionId])
   @@unique([sha256, subjectId, resourceType, pipelineVersion], map: "KnowledgeDocument_source_scope_key")
   @@index([subjectId, syllabusVersionId, status], map: "KnowledgeDocument_scope_idx")
 }
@@ -1351,6 +1385,7 @@ model KnowledgeArtifact {
   updatedAt            DateTime @updatedAt
   document             KnowledgeDocument @relation(fields: [documentId], references: [id], onDelete: Cascade, onUpdate: NoAction)
   reviewer             User? @relation(fields: [reviewerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  studyCitations       StudyNoteSource[]
   @@unique([documentId, pageNumber])
   @@index([status, createdAt])
 }

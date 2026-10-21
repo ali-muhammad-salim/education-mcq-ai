@@ -107,9 +107,10 @@ export default function ResourcesPage() {
       <Breadcrumbs
         items={[
           { label: 'AKU-EB' },
-          { label: 'Official AI Chapter Resource Packs & Downloads', active: true }
+          { label: 'Chapter Resource Packs & Downloads', active: true }
         ]}
       />
+      <p style={{margin:'1rem 0',lineHeight:1.6}}><Link className="btn" href="/study">Open the reviewed study library →</Link></p>
 
       <div style={{
         background: 'linear-gradient(135deg, #0b5e4a 0%, #064032 100%)',
@@ -747,7 +748,7 @@ export default function ResourcesPage() {
                                 }}>
                                   <strong>Step-by-Step Solution / Answer Key:</strong>
                                   <div style={{ margin: '0.5rem 0 0 0' }}>
-                                    <MathText text={mcq.explanation || 'Answer verified from official key.'} />
+                                    <MathText text={mcq.explanation || 'An explanation is not available for this answer. Check the original source or ask your teacher.'} />
                                   </div>
                                 </div>
                               )}

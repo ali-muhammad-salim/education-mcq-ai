@@ -13,7 +13,7 @@ COPY scripts/job-worker.ts ./scripts/job-worker.ts
 COPY tsconfig.json ./tsconfig.json
 ENV NODE_ENV=production
 ENV PYTHON_EXECUTABLE=/opt/pdf-runtime/bin/python
-ENV WORKER_KINDS=AI_GENERATION,INGESTION,AI_EMBEDDING
+ENV WORKER_KINDS=AI_GENERATION,INGESTION,AI_EMBEDDING,STUDY_GENERATION
 ENV NODE_OPTIONS=--max-old-space-size=512
 RUN groupadd --system --gid 1001 nodejs && useradd --system --uid 1001 -g nodejs worker && mkdir -p /app/data/assets /app/data/jobs && chown worker:nodejs /app/data/assets /app/data/jobs
 USER worker

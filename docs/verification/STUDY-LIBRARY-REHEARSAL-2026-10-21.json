@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-21T03:32:25.290Z",
+  "testOnly": true,
+  "fixture": "Synthetic F = ma; 2 kg × 3 m/s² = 6 N.",
+  "documentId": "550e862e-64b2-4be9-a64b-c6350e3cb74c",
+  "deferred": null,
+  "resources": [
+    {
+      "id": "54953ffe-e9e9-4af5-ac69-18b58a40a0cb",
+      "kind": "CHAPTER_NOTES",
+      "status": "PENDING_REVIEW",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "policy": "EDUCATOR_APPROVAL_REQUIRED",
+        "evidenceHash": "5926cf5ae1ba852efe53d4d33be5f596129323d09bcd26edf534d1d5018867a7",
+        "verification": {
+          "checked": true,
+          "conflicts": []
+        },
+        "verifierModel": "gemini-3.6-flash"
+      },
+      "contentHash": "0b457bb7a0667a69da0b81f6b59a60a38c969b16241efe0a7b7810391b95ccec",
+      "_count": {
+        "sources": 1
+      }
+    },
+    {
+      "id": "60cf4582-0ffb-4abb-b498-74e865e0a20f",
+      "kind": "CHAPTER_READER",
+      "status": "PENDING_REVIEW",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "policy": "EDUCATOR_APPROVAL_REQUIRED",
+        "evidenceHash": "4e320224316b32a45f520ffaf8d52032b2187d17a5802d2f315e2e5e3e057d59",
+        "verification": {
+          "checked": true,
+          "conflicts": []
+        },
+        "verifierModel": "gemini-3.6-flash"
+      },
+      "contentHash": "35278734ab9d4b79881304300808be9309fe60ebf45b3b8b78bdb3730db0f62b",
+      "_count": {
+        "sources": 1
+      }
+    },
+    {
+      "id": "f87fe16b-c1e0-4ef1-9447-7102355262d6",
+      "kind": "FLASHCARDS",
+      "status": "PENDING_REVIEW",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "policy": "EDUCATOR_APPROVAL_REQUIRED",
+        "evidenceHash": "34c3167016607c96aecb96d1628fb0c3b7f139c2d26cb324fc2bc400308d16f1",
+        "verification": {
+          "checked": true,
+          "conflicts": []
+        },
+        "verifierModel": "gemini-3.6-flash"
+      },
+      "contentHash": "a2cbad9c61fdfdd9487d0885d932e5ca5bf924576b5eeac5039510c33cd5e08f",
+      "_count": {
+        "sources": 1
+      }
+    },
+    {
+      "id": "8eb6d4d7-0044-4403-bff5-a4bd9ef81e16",
+      "kind": "CHEAT_SHEET",
+      "status": "PENDING_REVIEW",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "policy": "EDUCATOR_APPROVAL_REQUIRED",
+        "evidenceHash": "e4d2f8454931fb271b802bbd369b6a2932e1920b494f9694f7ae304528a42425",
+        "verification": {
+          "checked": true,
+          "conflicts": []
+        },
+        "verifierModel": "gemini-3.6-flash"
+      },
+      "contentHash": "6c33a93ed445544db31c940a87d11939b7f594f73ea12266de6dae732d9b2095",
+      "_count": {
+        "sources": 1
+      }
+    },
+    {
+      "id": "1fe007e4-b257-4e64-9d4e-2b0a7d1b2705",
+      "kind": "FORMULA_SHEET",
+      "status": "PENDING_REVIEW",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "policy": "EDUCATOR_APPROVAL_REQUIRED",
+        "evidenceHash": "e6766e20e46f76ca94d0971a08359dce2b6a54b51bc77138d9f31c48c57d2161",
+        "verification": {
+          "checked": true,
+          "conflicts": []
+        },
+        "verifierModel": "gemini-3.6-flash"
+      },
+      "contentHash": "a96cf4862ac8c7ab2344f9b5f35b12cbe1f9a0fad0c6840e5b115559f7837c0b",
+      "_count": {
+        "sources": 1
+      }
+    },
+    {
+      "id": "d6f3c12d-b886-467e-8db0-c2799d6f1f1e",
+      "kind": "PRACTICE_SET",
+      "status": "PENDING_REVIEW",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "policy": "EDUCATOR_APPROVAL_REQUIRED",
+        "evidenceHash": "34c1dfecb72fe535cb3069efbb0e8c5a21b608412265f97d73b6e184fc4c6162",
+        "verification": {
+          "checked": true,
+          "conflicts": []
+        },
+        "verifierModel": "gemini-3.6-flash"
+      },
+      "contentHash": "088af2e49ad39596209daed00411ccb98ed455e4612f5754197143bcff0b4c54",
+      "_count": {
+        "sources": 1
+      }
+    },
+    {
+      "id": "2f13638a-8cf5-4cad-bf68-089b5616b06b",
+      "kind": "NUMERICAL_GUIDE",
+      "status": "PENDING_REVIEW",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "policy": "EDUCATOR_APPROVAL_REQUIRED",
+        "evidenceHash": "e35c28b621c5020522b608cf97cadc2cbbed4a5839510e6d1044f2fff45b9835",
+        "verification": {
+          "checked": true,
+          "conflicts": []
+        },
+        "verifierModel": "gemini-3.6-flash"
+      },
+      "contentHash": "86b72cca6f312e06a982a0c64c65be42b97c13eac74c44e9dba6f75e8e5c1bdb",
+      "_count": {
+        "sources": 1
+      }
+    }
+  ],
+  "publicResources": 0
+}

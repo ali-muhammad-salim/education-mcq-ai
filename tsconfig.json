@@ -48,8 +48,8 @@
     "scripts/archive-legacy.ts",
     "vitest.config.ts",
     "scripts/db-preflight.ts",
-    "scripts/job-worker.ts",
-    "scripts/rehearse-ai-trust.ts"
+    "scripts/rehearse-ai-trust.ts",
+    "scripts/rehearse-study-library.ts"
   ],
   "exclude": [
     "node_modules",
