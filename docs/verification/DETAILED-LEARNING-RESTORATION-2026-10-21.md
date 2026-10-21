@@ -11,9 +11,12 @@ The owner requested keeping compact home/board/class/subject lists while restori
 - Cognitive controls normalize full-word source values to R/U/A. Search filters individual outcomes; numeric code order places 8.2.10 after 8.2.9. The complete unfiltered view retains every outcome and exact stored description.
 - Printed scientific exponents flattened in the JSON (3 × 10^8 and mv^2) are formatted for display without rewriting source descriptions.
 - Checked-question practice scores and reset remain available in the restored paper interface. Unknown answer keys cannot be checked as if they were known.
+- Full-book cards list only the available model paper and, for Class IX, the 2025 annual paper. The older UI falsely named additional papers while opening the same model questions. Practice, diagrams and timed assessments now consistently use the selected source. The mobile practice heading wraps without crushing the back button.
 
 ## Source check
 
 All 151 Class IX stored outcome descriptions matched the dedicated PDF under whitespace/punctuation normalization. Class X retained all 175 stored outcomes; three formula-containing descriptions need mathematical-glyph-aware comparison rather than a plain text substring check. No academic remapping was inferred from identical code numbers.
 
 All 144 tests across 26 files passed. The production bundle and TypeScript checks passed. Browser verification is recorded during release. No new schema migration is required beyond the already applied catalogue migration.
+
+An isolated local HTTP check started the annual assessment with 40 questions, confirmed answer keys were absent from the student snapshot, saved an answer and submitted successfully with GRADED status. Disposable test users and attempts were removed from the dedicated test database afterward.

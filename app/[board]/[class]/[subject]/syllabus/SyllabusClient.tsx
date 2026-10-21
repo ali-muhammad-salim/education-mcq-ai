@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { 
-  BookOpen, Search, Download, ChevronDown, ChevronUp, 
-  ArrowLeft, ArrowRight, Filter, Sparkles, CheckCircle2 
+import {
+  BookOpen, Search, Download, ChevronDown, ChevronUp,
+  ArrowLeft, ArrowRight, Filter, Sparkles, CheckCircle2
 } from 'lucide-react';
 import { BoardInfo, ClassDefinition } from '@/lib/boardHierarchy';
 import {filterSyllabus,syllabusLevel,syllabusDisplayText} from '@/lib/syllabusPresentation';
@@ -39,7 +39,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units }
 
   const filteredUnits=filterSyllabus(units,searchQuery,cognitiveFilter,selectedUnit);
 
-  const pdfUrl = classDef.roman === 'IX' 
+  const pdfUrl = classDef.roman === 'IX'
     ? '/materials/ssc/physics/ssc-1/physics-ssc-i-syllabus-grade-9-dedicated.pdf'
     : '/materials/ssc/physics/ssc-2/physics-ssc-ii-syllabus-grade-10-dedicated.pdf';
 

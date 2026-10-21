@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { 
-  Award, CheckCircle2, AlertCircle, ArrowLeft, ArrowRight, 
-  RotateCcw, Eye, Sparkles, Filter, BookOpen, Layers, 
+import {
+  Award, CheckCircle2, AlertCircle, ArrowLeft, ArrowRight,
+  RotateCcw, Eye, Sparkles, Filter, BookOpen, Layers,
   Clock, Calendar, Flame, Zap, Check, ChevronRight, FileText
 } from 'lucide-react';
 import { BoardInfo, ClassDefinition } from '@/lib/boardHierarchy';
@@ -197,24 +197,31 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
 
   const unitsList = classDef.roman === 'IX' ? CLASS_IX_UNITS : CLASS_X_UNITS;
 
+  const [practiceSource, setPracticeSource] = useState<'model' | 'annual'>('model');
+  const fullPapers = [
+    { title: 'Physics Model Paper I', desc: 'Practice the available model-paper MCQs with answer feedback.', items: questions.length, time: 'Custom timer', badge: 'MODEL PAPER', annual: false },
+    ...(classDef.roman === 'IX' ? [{ title: 'Annual Examination 2025 — Paper I', desc: 'Original 2025 examination MCQs. Current syllabus mappings are reviewed separately.', items: past2025.length, time: 'Custom timer', badge: 'ANNUAL 2025', annual: true }] : []),
+  ];
+
   // Filtered Questions for Practice Mode
-  const questionPool = hubTab === 'past_papers' ? (classDef.roman === 'IX' ? past2025.map(q => ({ ...q, questionNumber: Number(q.questionNumber), cognitiveLevel: ({K:'Remembering', U:'Understanding', A:'Application'} as Record<string,string>)[q.cognitiveLevel] || q.cognitiveLevel })) : []) : questions;
+  const questionPool = practiceSource === 'annual' ? (classDef.roman === 'IX' ? past2025.map(q => ({ ...q, questionNumber: Number(q.questionNumber), cognitiveLevel: ({K:'Remembering', U:'Understanding', A:'Application'} as Record<string,string>)[q.cognitiveLevel] || q.cognitiveLevel })) : []) : questions;
   const activeQuestions = questionPool.filter(q => {
     // If a unit is selected, filter by question number range
     if (selectedUnit) {
       const qNum = q.questionNumber || 0;
-      if (hubTab === 'past_papers' ? !String(q.slo || '').startsWith(selectedUnit.unitNumber + '.') : qNum < selectedUnit.qRange[0] || qNum > selectedUnit.qRange[1]) {
+      if (practiceSource === 'annual' ? !String(q.slo || '').startsWith(selectedUnit.unitNumber + '.') : qNum < selectedUnit.qRange[0] || qNum > selectedUnit.qRange[1]) {
         return false;
       }
     }
     if (cognitiveFilter === 'all') return true;
-    if (cognitiveFilter === 'diagram') return q.isDiagram;
+    if (cognitiveFilter === 'diagram') return Boolean(q.diagramBased || q.isDiagram || q.diagramUrl);
     return q.cognitiveLevel === cognitiveFilter;
   });
 
   const handleStartChapterPractice = (unit: ChapterDef, isPastPaper = false) => {
+    setPracticeSource(isPastPaper ? 'annual' : 'model');
     setSelectedUnit(unit);
-    setPracticeTitle(isPastPaper 
+    setPracticeTitle(isPastPaper
       ? `Unit ${unit.unitNumber}: ${unit.name} • Past Examination Archive`
       : `Unit ${unit.unitNumber}: ${unit.name} • Chapter Practice`
     );
@@ -224,7 +231,8 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
     setCurrentView('practice');
   };
 
-  const handleStartFullBookPractice = (title: string) => {
+  const handleStartFullBookPractice = (title: string, annual = false) => {
+    setPracticeSource(annual ? 'annual' : 'model');
     setSelectedUnit(null);
     setPracticeTitle(title);
     setSelectedAnswers({});
@@ -235,6 +243,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
 
   const handleStartCognitiveSprint = (level: 'Remembering' | 'Understanding' | 'Application') => {
     setSelectedUnit(null);
+    setPracticeSource('model');
     setPracticeTitle(`${level} Cognitive Domain Sprint`);
     setSelectedAnswers({});
     setRevealedAnswers({});
@@ -358,7 +367,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
             {[
               { id: 'chapter_wise', label: '📖 Chapter Wise MCQs', count: `${unitsList.length} Units` },
               { id: 'past_papers', label: '📄 Chapter Wise MCQs (Past Papers)', count: '2025 Archive' },
-              { id: 'full_book', label: '🏆 Full Book MCQs & Mock Exams', count: '4 Full Papers' },
+              { id: 'full_book', label: '🏆 Full Book MCQs & Mock Exams', count: `${fullPapers.length} Papers` },
               { id: 'cognitive', label: '⚡ Cognitive Domain Sprints', count: 'K / U / A Levels' },
             ].map(tab => (
               <button
@@ -573,41 +582,12 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                   Full Book Grand Tests & Official Mock Papers
                 </h2>
                 <p style={{ fontSize: '0.92rem', color: '#64748b', margin: 0 }}>
-                  Take full 40-question mock exams covering the complete curriculum with official 50-minute examination timers.
+                  Choose an available paper for practice or set your own timed assessment.
                 </p>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '1.25rem' }}>
-                {[
-                  {
-                    title: 'Physics Model Paper I (Official Standard)',
-                    desc: '40 authentic multiple-choice items covering Units 1 to 9 with verified answer keys and detailed explanations.',
-                    items: 40,
-                    time: '50 Minutes',
-                    badge: 'OFFICIAL AKU-EB'
-                  },
-                  {
-                    title: 'Physics Model Paper II Benchmark Test',
-                    desc: '40 comprehensive multiple-choice items testing remembering, understanding, and numerical calculations.',
-                    items: 40,
-                    time: '50 Minutes',
-                    badge: 'BENCHMARK'
-                  },
-                  {
-                    title: 'Annual Examination 2024 Full Paper',
-                    desc: 'Official 2024 AKU-EB board paper items with cognitive domain breakdown and numerical solving steps.',
-                    items: 40,
-                    time: '50 Minutes',
-                    badge: 'ANNUAL 2024'
-                  },
-                  {
-                    title: 'Annual Examination 2023 Full Paper',
-                    desc: 'Official 2023 AKU-EB board examination questions with step-by-step formula derivations.',
-                    items: 40,
-                    time: '50 Minutes',
-                    badge: 'ANNUAL 2023'
-                  }
-                ].map((paper, pIdx) => (
+                {fullPapers.map((paper, pIdx) => (
                   <div
                     key={pIdx}
                     style={{
@@ -650,7 +630,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
 
                     <div style={{ display: 'flex', gap: '0.65rem', paddingTop: '0.75rem', borderTop: '1px solid #f1f5f9' }}>
                       <button
-                        onClick={() => handleStartFullBookPractice(paper.title)}
+                        onClick={() => handleStartFullBookPractice(paper.title, paper.annual)}
                         style={{
                           flex: 1,
                           padding: '0.65rem 1rem',
@@ -673,7 +653,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
 
                       <button
                         onClick={() => {
-                          handleStartFullBookPractice(paper.title);
+                          handleStartFullBookPractice(paper.title, paper.annual);
                           setQuizModalOpen(true);
                         }}
                         style={{
@@ -819,7 +799,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
             gap: '1rem',
             boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', minWidth: 0 }}>
               <button
                 onClick={() => setCurrentView('hub')}
                 style={{
@@ -837,7 +817,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                 }}
               >
                 <ArrowLeft size={16} />
-                <span>Back to All Categories</span>
+                <span>All Categories</span>
               </button>
 
               <div>
@@ -980,7 +960,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                 const userChoice = selectedAnswers[qNum];
                 const isRevealed = revealedAnswers[qNum];
                 const isAnswered = !!userChoice;
-                const correctKey = q.correctOption || q.correctAnswer || 'A';
+                const correctKey = q.correctOption || q.correctAnswer;
                 const isCorrect = userChoice === correctKey;
 
                 // Extract options map
@@ -1053,7 +1033,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
                     {/* Diagram if available */}
                     {(() => {
                       if (q.diagramBased === false || (q as any).isDiagram === false) return null;
-                      const diagramSrc = resolveQuestionDiagram(classDef.roman === 'X' ? 'PHY-X-P1' : 'PHY-IX-P1', qNum, q);
+                      const diagramSrc = resolveQuestionDiagram(`PHY-${classDef.roman}${practiceSource === 'annual' ? '-2025' : ''}-P1`, qNum, q);
                       if (!diagramSrc) return null;
                       return (
                         <div style={{ marginBottom: '1.25rem', textAlign: 'center' }}>
@@ -1175,7 +1155,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions }
         isOpen={quizModalOpen}
         onClose={() => setQuizModalOpen(false)}
         paperTitle={practiceTitle}
-        paperCode={`PHY-${classDef.roman}${hubTab === 'past_papers' ? '-2025' : ''}-P1-SET-${activeQuestions.map(q => Number(q.questionNumber)).sort((a, b) => a - b).join('-')}`}
+        paperCode={`PHY-${classDef.roman}${practiceSource === 'annual' ? '-2025' : ''}-P1-SET-${activeQuestions.map(q => Number(q.questionNumber)).sort((a, b) => a - b).join('-')}`}
         questions={activeQuestions}
       />
     </div>

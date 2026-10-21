@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { 
-  FileText, Award, CheckCircle2, XCircle, AlertCircle, 
+import {
+  FileText, Award, CheckCircle2, XCircle, AlertCircle,
   HelpCircle, Sparkles, BookOpen, Clock, Download, ChevronRight, Check, Eye, EyeOff,
   ShieldCheck, AlertTriangle, Lightbulb, CheckSquare, Edit3, ArrowLeft
 } from 'lucide-react';
@@ -73,7 +73,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
       }
     }
   }, []);
-  
+
   // Interactive Simulator State (for Paper 1 MCQs)
   const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
   const [checkedAnswers, setCheckedAnswers] = useState<Record<string, boolean>>({});
@@ -105,8 +105,8 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
   };
 
   const isPaper2 = !paper.paperCode?.toUpperCase().includes('CHAP') && (
-    (paper.paperCode && (paper.paperCode.toUpperCase().includes('-P2') || paper.paperCode.toUpperCase().endsWith('P2'))) || 
-    (paper.title && paper.title.toUpperCase().includes('PAPER II')) || 
+    (paper.paperCode && (paper.paperCode.toUpperCase().includes('-P2') || paper.paperCode.toUpperCase().endsWith('P2'))) ||
+    (paper.title && paper.title.toUpperCase().includes('PAPER II')) ||
     questions.some(q => q.questionType === 'CONSTRUCTED_RESPONSE' || q.questionType === 'EXTENDED_RESPONSE')
   );
 
@@ -163,7 +163,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
 
   return (
     <div style={{ marginTop: '0.5rem' }}>
-      
+
       {/* Top Paper Header Bar (Rendered only if not hidden by parent page) */}
       {!hideHeader && (
         <div style={{
@@ -633,7 +633,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                     paddingBottom: showCorrectAnswers ? '1.75rem' : '2.5rem',
                     borderBottom: idx === questions.length - 1 ? 'none' : '1px solid #e5e7eb'
                   }}>
-                    
+
                     {/* Question Header & Marks */}
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.4rem' }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', flexGrow: 1 }}>
@@ -716,7 +716,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                     {/* ---------------------------------------------------- */}
                     {!isPaper2 && choices && Object.keys(choices).length > 0 && (
                       <div style={{ marginLeft: '2.5rem', marginBottom: '1rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                        
+
                         {/* Interactive Practice Mode */}
                         {interactiveMode ? (
                           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '0.65rem' }}>
@@ -906,7 +906,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                     {/* ---------------------------------------------------- */}
                     {isPaper2 && (
                       <div style={{ marginLeft: '2.5rem', marginTop: '0.75rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                        
+
                         {/* 1. Ruled lines for answering (Only shown when NOT in quick study mode) */}
                         {!showCorrectAnswers && (
                           <div style={{
