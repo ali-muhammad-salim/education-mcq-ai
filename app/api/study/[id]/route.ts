@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { studyScope } from "@/services/study/navigation";
 import prisma from "@/lib/prisma";
 import { ApiError, apiError } from "@/lib/api";
 import { assertStudyEvidence } from "@/services/study/library";
@@ -44,13 +45,9 @@ export async function GET(
         academicClass: { include: { programme: { include: { board: true } } } },
       },
     });
-    const libraryUrl =
-      "/study?" +
-      new URLSearchParams({
-        board: subject.academicClass.programme.board.shortCode,
-        classLevel: String(subject.academicClass.level),
-        subject: subject.name,
-      });
+    const scope = studyScope(subject.academicClass.programme.board.shortCode, String(subject.academicClass.level), subject.name);
+    const chapterUrl = scope ? scope.baseUrl + "/study/" + encodeURIComponent(note.topicId!) : "/study";
+    const libraryUrl = chapterUrl;
     return NextResponse.json(
       {
         resource: {
@@ -61,6 +58,7 @@ export async function GET(
           partTotal: note.partTotal,
           sections,
           libraryUrl,
+          chapterUrl,
           syllabusUrl: "/syllabus/" + subject.id,
           chapter: note.topic.name,
           reviewedAt: note.reviewedAt,

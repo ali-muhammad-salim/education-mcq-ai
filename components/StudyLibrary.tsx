@@ -12,12 +12,20 @@ type Item = {
   partIndex: number;
   partTotal: number;
 };
-export default function StudyLibrary() {
-  const [board, setBoard] = useState("AKU-EB"),
-    [grade, setGrade] = useState("9"),
-    [subject, setSubject] = useState("Physics"),
-    [kind, setKind] = useState(""),
-    [items, setItems] = useState<Item[]>([]),
+export default function StudyLibrary({
+  board,
+  grade,
+  subject,
+  topicId,
+  kind,
+}: {
+  board: string;
+  grade: string;
+  subject: string;
+  topicId: string;
+  kind: (typeof studyKinds)[number];
+}) {
+  const [items, setItems] = useState<Item[]>([]),
     [cursor, setCursor] = useState<string | null>(null),
     [busy, setBusy] = useState(true),
     [message, setMessage] = useState("");
@@ -31,6 +39,7 @@ export default function StudyLibrary() {
         board,
         classLevel: grade,
         subject,
+        topicId,
         ...(kind ? { kind } : {}),
         ...(after ? { cursor: after } : {}),
       });
@@ -50,82 +59,18 @@ export default function StudyLibrary() {
     }
   }
   useEffect(() => {
-    const q = new URLSearchParams(window.location.search);
-    setBoard(q.get("board") || "AKU-EB");
-    setGrade(q.get("classLevel") || "9");
-    setSubject(q.get("subject") || "Physics");
-  }, []);
-  useEffect(() => {
     request.current++;
     setItems([]);
     setCursor(null);
     setBusy(true);
     const timer = setTimeout(() => void load(), 300);
-    return () => clearTimeout(timer);
-  }, [board, grade, subject, kind]);
+    return () => {
+      clearTimeout(timer);
+      request.current++;
+    };
+  }, [board, grade, subject, topicId, kind]);
   return (
-    <section className={styles.root}>
-      <header className={styles.header}>
-        <div>
-          <span className={styles.eyebrow}>YOUR STUDY LIBRARY</span>
-          <h1>Understand. Practise. Revise.</h1>
-          <p className={styles.muted}>
-            Chapter resources with original source references, worked solutions
-            and clear revision tools.
-          </p>
-        </div>
-        <Link className={styles.button} href="/resources">
-          Books & archives →
-        </Link>
-      </header>
-      <form
-        className={styles.panel + " " + styles.filters}
-        onSubmit={(e) => {
-          e.preventDefault();
-          void load();
-        }}
-      >
-        <label>
-          Board
-          <input
-            value={board}
-            onChange={(e) => setBoard(e.target.value)}
-            maxLength={100}
-          />
-        </label>
-        <label>
-          Class
-          <select value={grade} onChange={(e) => setGrade(e.target.value)}>
-            {[9, 10, 11, 12].map((n) => (
-              <option key={n} value={n}>
-                Class {n}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Subject
-          <input
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            maxLength={160}
-          />
-        </label>
-        <label>
-          Resource type
-          <select value={kind} onChange={(e) => setKind(e.target.value)}>
-            <option value="">All resources</option>
-            {studyKinds.map((k) => (
-              <option key={k} value={k}>
-                {studyLabels[k]}
-              </option>
-            ))}
-          </select>
-        </label>
-        <button type="submit" className={styles.primary} disabled={busy}>
-          Find resources
-        </button>
-      </form>
+    <div>
       {message && (
         <p className={styles.notice} role="alert">
           {message}
@@ -134,12 +79,11 @@ export default function StudyLibrary() {
       {busy && <p role="status">Loading reviewed study resources…</p>}
       {!busy && !message && !items.length && (
         <div className={styles.panel}>
-          <h2>Study resources are being prepared</h2>
+          <h2>This resource is being prepared</h2>
           <p>
             Resources appear here after their textbook evidence and generated
             content have both been reviewed.
           </p>
-          <Link href="/syllabus">Explore the syllabus →</Link>
         </div>
       )}
       <div className={styles.grid}>
@@ -167,6 +111,6 @@ export default function StudyLibrary() {
           </button>
         </div>
       )}
-    </section>
+    </div>
   );
 }
