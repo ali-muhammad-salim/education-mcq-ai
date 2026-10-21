@@ -288,7 +288,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
         border: '1px solid #e2e8f0'
       }}>
         {/* Toggle between Generated Digital Paper and Original Board PDF */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', background: '#e2e8f0', padding: '3px', borderRadius: '8px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%', alignItems: 'stretch', gap: '0.35rem', background: 'var(--surface-muted)', padding: '3px', borderRadius: '8px' }}>
           <button
             type="button"
             onClick={() => setDisplayMode('generated')}
@@ -296,9 +296,12 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
               padding: '7px 16px',
               borderRadius: '6px',
               fontSize: '0.88rem',
+              flex: '1 1 130px',
+              justifyContent: 'center',
+              minHeight: '44px',
               fontWeight: displayMode === 'generated' ? 800 : 600,
               background: displayMode === 'generated' ? '#0b5e4a' : 'transparent',
-              color: displayMode === 'generated' ? '#ffffff' : '#475569',
+              color: displayMode === 'generated' ? '#ffffff' : 'var(--text-color)',
               border: 'none',
               cursor: 'pointer',
               display: 'flex',
@@ -308,7 +311,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
             }}
           >
             <Sparkles size={16} />
-            ✨ Text Form (Digital Paper)
+            Digital Paper
           </button>
 
           <button
@@ -318,9 +321,12 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
               padding: '7px 16px',
               borderRadius: '6px',
               fontSize: '0.88rem',
+              flex: '1 1 130px',
+              justifyContent: 'center',
+              minHeight: '44px',
               fontWeight: displayMode === 'original_pdf' ? 800 : 600,
               background: displayMode === 'original_pdf' ? '#0b5e4a' : 'transparent',
-              color: displayMode === 'original_pdf' ? '#ffffff' : '#475569',
+              color: displayMode === 'original_pdf' ? '#ffffff' : 'var(--text-color)',
               border: 'none',
               cursor: 'pointer',
               display: 'flex',
@@ -330,7 +336,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
             }}
           >
             <FileText size={16} />
-            📄 Original PDF (Board Document)
+            Original PDF
           </button>
         </div>
       </div>
@@ -356,7 +362,9 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
             alignItems: 'center',
             fontSize: '0.88rem',
             fontWeight: 600,
-            color: '#334151'
+            color: 'var(--text-color)',
+            flexWrap: 'wrap',
+            gap: '0.75rem'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <FileText size={18} color="#0b5e4a" />
@@ -368,7 +376,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                 <a
                   href={safeUrl}
                   download
-                  style={{ color: '#0b5e4a', fontWeight: 700, textDecoration: 'underline', fontSize: '0.82rem' }}
+                  style={{ color: 'var(--primary-color)', flexShrink: 0, fontWeight: 700, textDecoration: 'underline', fontSize: '0.82rem' }}
                 >
                   Direct Download ⬇
                 </a>
@@ -577,7 +585,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
             }}>
               <span>Physics {isPaper2 ? 'Paper II' : 'Paper I'} &bull; {gradeLabel}</span>
               <span>
-                {showCorrectAnswers ? '⭐ Quick Study Mode: Questions & Verified Correct Answers Only' : `Total ${questions.length} Examination Items`}
+                {showCorrectAnswers ? '⭐ Quick Study Mode: Questions & Answer Key Only' : `Total ${questions.length} Examination Items`}
               </span>
             </div>
 
@@ -874,7 +882,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                               }}
                             >
                               {isSolutionRevealed ? <EyeOff size={15} /> : <Eye size={15} />}
-                              {isSolutionRevealed ? 'Hide Solution' : 'View Verified Solution & Key'}
+                              {isSolutionRevealed ? 'Hide Solution' : 'View Solution & Key'}
                             </button>
 
                             {isSolutionRevealed && (
