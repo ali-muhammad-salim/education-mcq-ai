@@ -70,7 +70,7 @@ async def test_all_keys_exhausted_behavior(tmp_path):
     assert not resp.success
     assert resp.status_code == 429
     assert resp.all_keys_exhausted
-    assert "exhausted their daily free quota" in resp.error
+    assert "No configured Gemini credential" in resp.error
 
     # Verify Checkpoint writing
     checkpoint_file = client.save_quota_checkpoint(

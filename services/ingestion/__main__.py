@@ -199,7 +199,7 @@ def main() -> int:
     if result.errors:
         print(_col(f"\n  {len(result.errors)} page(s) failed to process:", _RED))
         for err in result.errors:
-            print(f"    → page {err['page']}: {err['error']}")
+            print(f"    → page {err.get('page', err.get('resumed_from_page', '?'))}: {err.get('error', err.get('message', 'Processing incomplete'))}")
 
     print(
         f"\n  {'Processing time':<22}: {_col(_fmt_time(result.processing_time_seconds), _GREEN)}"

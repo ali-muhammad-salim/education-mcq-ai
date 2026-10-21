@@ -17,6 +17,7 @@ AI-generated content is NEVER promoted to a higher priority level.
 from __future__ import annotations
 
 import logging
+from services.knowledge.scope import matches_scope
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Optional
 
@@ -215,6 +216,8 @@ class ConceptGraph:
             concept=concept,
         )
         for mapping in textbook_mappings:
+            if not mapping.is_human_verified and not self._include_ai:
+                continue
             node = _get_or_create(mapping.chapter, mapping.topic, mapping.concept)
             src = EvidenceSource(
                 source_type="TEXTBOOK",
@@ -236,12 +239,14 @@ class ConceptGraph:
 
         # 3. Past paper questions (priority 3)
         for ppq in self._past_papers:
+            if ppq.get("verified") is not True:
+                continue
             ppq_concept = ppq.get("concept", "")
             ppq_chapter = ppq.get("chapter", "")
             ppq_topic = ppq.get("topic", "")
             ppq_board = ppq.get("board", "")
 
-            if ppq_board and ppq_board != board:
+            if not matches_scope(ppq, board, class_level, subject):
                 continue
             if concept and ppq_concept.lower() != concept.lower():
                 continue
@@ -285,7 +290,7 @@ class ConceptGraph:
         for aq in self._approved:
             aq_concept = aq.get("concept", "")
             aq_board = aq.get("board", "")
-            if aq_board and aq_board != board:
+            if not matches_scope(aq, board, class_level, subject):
                 continue
             if concept and aq_concept.lower() != concept.lower():
                 continue
@@ -310,7 +315,7 @@ class ConceptGraph:
             for aiq in self._ai:
                 aiq_concept = aiq.get("concept", "")
                 aiq_board = aiq.get("board", "")
-                if aiq_board and aiq_board != board:
+                if not matches_scope(aiq, board, class_level, subject):
                     continue
                 if concept and aiq_concept.lower() != concept.lower():
                     continue

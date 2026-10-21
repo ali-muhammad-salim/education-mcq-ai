@@ -1,9 +1,10 @@
 {
-  "date": "2026-10-20T06:04:14.395Z",
+  "date": "2026-10-20T19:55:55.513Z",
   "scenario": "Account-only schema bootstrap matching the observed production table layout.",
   "preservedAccounts": true,
   "revokedLegacySessions": true,
-  "appliedMigrations": 2,
+  "appliedMigrations": 7,
   "assessmentTablesAvailable": true,
+  "knowledgeTablesAvailable": true,
   "postgresMajor": "16 (local rehearsal; production PostgreSQL 18 still requires its own backup/restore check)"
 }

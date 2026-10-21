@@ -5,9 +5,8 @@ import Link from 'next/link';
 import {
   UploadCloud, Play, CheckCircle2, AlertCircle, RefreshCw,
   FileText, BookOpen, Layers, Award, Sparkles, Terminal,
-  Clock, ArrowRight, ExternalLink, Check, Download, ShieldCheck, Lock
+  ArrowRight, ExternalLink, Check, Download, ShieldCheck, Lock
 } from 'lucide-react';
-import MathText from '@/components/MathText';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import AuthModal from '@/components/AuthModal';
 
@@ -21,6 +20,9 @@ interface IngestProgress {
     topics?: number;
     slos?: number;
     questions?: number;
+    pagesProcessed?: number;
+    totalPages?: number;
+    status?: string;
     classIX_units?: number;
     classX_units?: number;
     completed_at?: string;
@@ -29,9 +31,10 @@ interface IngestProgress {
 }
 
 export default function ResourceUploadCenterPage() {
+  const [reprocess, setReprocess] = useState(false);
   const [file, setFile] = useState<File | null>(null);
-  const [board, setBoard] = useState('Aga Khan University Examination Board');
-  const [classLevel, setClassLevel] = useState('auto');
+  const [board, setBoard] = useState('AKU-EB');
+  const [classLevel, setClassLevel] = useState('Class IX');
   const [subject, setSubject] = useState('Physics');
   const [resourceType, setResourceType] = useState<'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'pacing_guide'>('past_paper');
 
@@ -208,7 +211,7 @@ export default function ResourceUploadCenterPage() {
     pollStatus();
     const interval = setInterval(pollStatus, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [jobId]);
 
   const handleManualUpload = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -228,6 +231,7 @@ export default function ResourceUploadCenterPage() {
 
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('reprocess', String(reprocess));
     if (keyFile) {
       formData.append('keyFile', keyFile);
     }
@@ -261,21 +265,6 @@ export default function ResourceUploadCenterPage() {
       setUploadError(err.message || 'Network error occurred.');
     } finally {
       setUploading(false);
-    }
-  };
-
-  const handleTriggerDefaultIntake = async () => {
-    try {
-      const res = await fetch('/api/ingest/run', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ resourceType: 'all_defaults' }),
-      });
-      if (res.ok) {
-        setUploadSuccess('🚀 Launched Complete Physics Intake Pipeline (Syllabus Units 1-20 + Model Papers + AI Solver)!');
-      }
-    } catch (e: any) {
-      setUploadError(e.message || 'Failed to start pipeline.');
     }
   };
 
@@ -445,6 +434,7 @@ export default function ResourceUploadCenterPage() {
           </div>
 
           <form onSubmit={handleManualUpload} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <label style={{display:'flex',alignItems:'center',gap:'.7rem',minHeight:'44px',lineHeight:1.5}}><input type="checkbox" checked={reprocess} onChange={e=>setReprocess(e.target.checked)} style={{width:'20px',height:'20px',accentColor:'#087859',flexShrink:0}}/>Re-analyze an existing source as a new review revision</label>
 
             {/* File Dropzone */}
             <div>
@@ -495,7 +485,7 @@ export default function ResourceUploadCenterPage() {
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                     <Sparkles size={16} color="#2563eb" />
-                    <span><strong>AI Auto-Detected:</strong></span>
+                    <span><strong>Suggested from filename:</strong></span>
                     {detectedBadge.subject && (
                       <span style={{ background: '#dbeafe', color: '#1e40af', padding: '2px 8px', borderRadius: '4px', fontWeight: 700 }}>
                         📚 {detectedBadge.subject}
@@ -518,7 +508,7 @@ export default function ResourceUploadCenterPage() {
                     )}
                     {detectedBadge.solution && (
                       <span style={{ background: '#dbeafe', color: '#1e40af', padding: '2px 8px', borderRadius: '4px', fontWeight: 700 }}>
-                        {detectedBadge.solution === 'solved_has_key' ? 'Marking Key Detected' : 'Unsolved (AI Auto-Solver Active)'}
+                        {detectedBadge.solution === 'solved_has_key' ? 'Filename suggests an answer key' : 'Answer key not confirmed'}
                       </span>
                     )}
                   </div>
@@ -540,10 +530,10 @@ export default function ResourceUploadCenterPage() {
                   onChange={(e) => setBoard(e.target.value)}
                   style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1px solid #dce5e1', fontSize: '0.9rem', outline: 'none' }}
                 >
-                  <option value="Aga Khan University Examination Board">AKU-EB (Aga Khan University)</option>
-                  <option value="Federal Board of Intermediate and Secondary Education">FBISE (Federal Board)</option>
-                  <option value="Board of Intermediate and Secondary Education, Karachi">Sindh Board (BIEK/BSEK)</option>
-                  <option value="Board of Intermediate and Secondary Education, Lahore">Punjab Board (BISE Lahore)</option>
+                  <option value="AKU-EB">AKU-EB (Aga Khan University)</option>
+                  <option value="FBISE">FBISE (Federal Board)</option>
+                  <option value="BIEK">Sindh Board (BIEK/BSEK)</option>
+                  <option value="BISE-Lahore">Punjab Board (BISE Lahore)</option>
                 </select>
               </div>
 
@@ -556,7 +546,6 @@ export default function ResourceUploadCenterPage() {
                   onChange={(e) => setSubject(e.target.value)}
                   style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1px solid #dce5e1', fontSize: '0.9rem', outline: 'none' }}
                 >
-                  <option value="auto">✨ Auto-Detect Subject (Physics, Chemistry, Biology, Math, CS)</option>
                   <option value="Physics">Physics</option>
                   <option value="Chemistry">Chemistry</option>
                   <option value="Biology">Biology</option>
@@ -580,7 +569,6 @@ export default function ResourceUploadCenterPage() {
                   onChange={(e) => setClassLevel(e.target.value)}
                   style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1px solid #dce5e1', fontSize: '0.9rem', outline: 'none' }}
                 >
-                  <option value="auto">✨ Auto-Detect (Class IX or X from Document)</option>
                   <option value="Class IX">Class IX (Grade 9 • SSC-I)</option>
                   <option value="Class X">Class X (Grade 10 • SSC-II)</option>
                   <option value="Class XI">Class XI (Grade 11 • HSSC-I)</option>
@@ -681,7 +669,7 @@ export default function ResourceUploadCenterPage() {
                       style={{ width: '100%', padding: '8px 10px', borderRadius: '6px', border: '1px solid #dce5e1', fontSize: '0.85rem', outline: 'none', background: '#fff' }}
                     >
                       <option value="auto">✨ Auto-Detect Key Status</option>
-                      <option value="unsolved_ai_solve">Unsolved (AI Solver Active)</option>
+                      <option value="unsolved_ai_solve">Unsolved (source review required)</option>
                       <option value="solved_has_key">Solved (Official Marking Key)</option>
                     </select>
                   </div>
@@ -878,26 +866,26 @@ export default function ResourceUploadCenterPage() {
             <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid #2e3440' }}>
               <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
                 <div style={{ background: '#21252b', padding: '8px', borderRadius: '8px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.7rem', color: '#abb2bf' }}>Units Extracted</div>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#61afef' }}>20 Units</div>
+                  <div style={{ fontSize: '0.7rem', color: '#abb2bf' }}>Pages Extracted</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#61afef' }}>{progress.results.pagesProcessed ?? 'Not reported'}</div>
                 </div>
                 <div style={{ background: '#21252b', padding: '8px', borderRadius: '8px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.7rem', color: '#abb2bf' }}>Verified SLOs</div>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#98c379' }}>{progress.results.slos ?? 'Not reported'}</div>
+                  <div style={{ fontSize: '0.7rem', color: '#abb2bf' }}>Review State</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#98c379' }}>{progress.results.status ?? 'Awaiting review'}</div>
                 </div>
                 <div style={{ background: '#21252b', padding: '8px', borderRadius: '8px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.7rem', color: '#abb2bf' }}>Exam Questions</div>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#e5c07b' }}>{progress.results.questions ?? 'Not reported'}</div>
+                  <div style={{ fontSize: '0.7rem', color: '#abb2bf' }}>Source Pages</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#e5c07b' }}>{progress.results.totalPages ?? 'Not reported'}</div>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                 <Link
-                  href="/past-papers"
+                  href="/admin/knowledge"
                   className="btn"
                   style={{ flex: 1, textAlign: 'center', padding: '8px 12px', fontSize: '0.8rem', background: '#0b5e4a', color: '#fff', borderRadius: '6px' }}
                 >
-                  View Past Papers Archive →
+                  Review Source Evidence →
                 </Link>
                 <Link
                   href="/model-papers"
@@ -931,10 +919,10 @@ export default function ResourceUploadCenterPage() {
             <h3 style={{ fontSize: '1.15rem', margin: 0 }}>Syllabus Pipeline</h3>
           </div>
           <p style={{ fontSize: '0.88rem', color: '#555', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
-            <strong>Two-Stage Index Discovery:</strong> First extracts canonical chapter bounds (Units 1-10 for Grade IX, Units 11-20 for Grade X). Then extracts exact subtopics, SLO codes, and Bloom's cognitive taxonomy (Recall, Understanding, Application).
+            <strong>Source-backed curriculum extraction:</strong> Preserves syllabus text and proposed learning-outcome mappings for review, without silently replacing the active curriculum.
           </p>
           <span style={{ fontSize: '0.75rem', background: '#e6f0ed', color: '#0b5e4a', padding: '3px 8px', borderRadius: '4px', fontWeight: 600 }}>
-            Index-First • No Topic Fragmentation
+            Source Pages • Reviewed Mappings
           </span>
         </div>
 
@@ -944,10 +932,10 @@ export default function ResourceUploadCenterPage() {
             <h3 style={{ fontSize: '1.15rem', margin: 0 }}>Model & Past Paper Pipeline</h3>
           </div>
           <p style={{ fontSize: '0.88rem', color: '#555', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
-            <strong>AI Solver & Math Parser:</strong> Extracts full question stems with LaTeX formulas (<MathText text="$1.76\text{ cm}^3$" />), detects diagrams, and solves every question step-by-step to compute the verified answer key (avoiding default fallbacks).
+            <strong>Source extraction and independent checks:</strong> Preserves question text, formulas, diagrams and answer-key candidates. Missing answers and conflicting interpretations are flagged for educator review.
           </p>
           <span style={{ fontSize: '0.75rem', background: '#dcfce7', color: '#15803d', padding: '3px 8px', borderRadius: '4px', fontWeight: 600 }}>
-            AI Answer Solver • KaTeX Rendering
+            Original Figures • Educator Review
           </span>
         </div>
 
@@ -964,47 +952,12 @@ export default function ResourceUploadCenterPage() {
           </span>
         </div>
 
-        <div className="card" style={{ border: '1px solid #e1e8e5', padding: '1.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem', color: '#8e44ad' }}>
-            <Clock size={20} />
-            <h3 style={{ fontSize: '1.15rem', margin: 0 }}>Pacing Guide Pipeline</h3>
-          </div>
-          <p style={{ fontSize: '0.88rem', color: '#555', lineHeight: 1.5, margin: '0 0 1rem 0' }}>
-            <strong>28-Week Instructional Mapping:</strong> Maps curriculum to academic calendars, weekly teaching targets, laboratory practical dates, and formative assessment milestones.
-          </p>
-          <span style={{ fontSize: '0.75rem', background: '#f3e8ff', color: '#7e22ce', padding: '3px 8px', borderRadius: '4px', fontWeight: 600 }}>
-            Weekly Periods • Assessment Milestones
-          </span>
-        </div>
       </div>
 
-      {/* Developer & Demo Utilities (Secondary) */}
-      <div style={{ marginTop: '3rem', padding: '1.5rem', background: '#f8fafc', border: '1px dashed #cbd5e1', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-        <div>
-          <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '0.95rem', color: '#334155', fontWeight: 700 }}>
-            Bundled Demo Data Intake (Developer Utility)
-          </h4>
-          <p style={{ margin: 0, fontSize: '0.82rem', color: '#64748b' }}>
-            Re-runs the pre-packaged sample SSC Physics syllabus (Units 1-20) and model papers bundled in the project repo.
-          </p>
-        </div>
-        <button
-          onClick={handleTriggerDefaultIntake}
-          disabled={isRunning}
-          style={{
-            background: '#475569',
-            color: '#fff',
-            fontSize: '0.82rem',
-            fontWeight: 600,
-            padding: '8px 16px',
-            borderRadius: '6px',
-            border: 'none',
-            cursor: isRunning ? 'not-allowed' : 'pointer',
-            opacity: isRunning ? 0.6 : 1
-          }}
-        >
-          {isRunning ? 'Processing...' : 'Run Bundled Demo Data'}
-        </button>
+      <div className="card" style={{ marginTop: '2rem', padding: '1.5rem' }}>
+        <h3>Review extracted source evidence</h3>
+        <p>New extractions remain unpublished until an educator checks their source pages, figures, scientific notation and curriculum mappings.</p>
+        <Link className="btn" href="/admin/knowledge">Open source review →</Link>
       </div>
     </div>
   );

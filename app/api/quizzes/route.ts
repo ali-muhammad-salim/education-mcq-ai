@@ -10,7 +10,7 @@ import { lockedTransaction } from '@/repositories/transaction';
 import { randomBytes } from 'node:crypto';
 import { resolveAcademicMetadata, enrichQuizMetadata } from '@/services/assessment/catalog';
 import { z } from 'zod';
-import { doubtDataSchema, matchesApprovedQuestion } from '@/lib/aiDoubtStore';
+import { doubtDataSchema, matchesApprovedQuestion, assertApprovedEvidence } from '@/lib/aiDoubtStore';
 export async function GET(req: NextRequest) {
   try {
     const user = await getSessionUser(req), params = req.nextUrl.searchParams, teacherId = params.get('teacherId');
@@ -42,7 +42,9 @@ export async function POST(req: NextRequest) {
         for (const question of aiQuestions) {
           const review = reviews.find(r => r.id === question.reviewId);
           if (!review) throw new ApiError(422, 'REVIEW_REQUIRED', 'AI questions must be approved in the review queue before publication.');
-          const approved = doubtDataSchema.parse(review.data).question;
+          const reviewed = doubtDataSchema.parse(review.data), approved = reviewed.question;
+          if (reviewed.board?.replace(/[^A-Za-z0-9]/g, '').toLowerCase() !== (input.boardId || 'AKU-EB').replace(/[^A-Za-z0-9]/g, '').toLowerCase() || reviewed.subject.toLowerCase() !== input.subject.toLowerCase() || Number(reviewed.classLevel) !== input.classLevel) throw new ApiError(422, 'SOURCE_SCOPE_CHANGED', 'An AI question belongs to a different class or subject.');
+          await assertApprovedEvidence(tx, reviewed);
           if (!matchesApprovedQuestion(question, approved)) throw new ApiError(422, 'REVIEW_CHANGED', 'An AI question changed after approval. Submit the revised question for review.');
         }
       }

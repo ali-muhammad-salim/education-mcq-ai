@@ -36,5 +36,5 @@ export async function readEducationalAsset(key: string) {
     if (!object.Body) throw new ApiError(404, 'ASSET_NOT_FOUND', 'Asset not found.');
     return { buffer: Buffer.from(await object.Body.transformToByteArray()), mimeType: object.ContentType || 'application/octet-stream' };
   }
-  return { buffer: await fs.readFile(path.join(root(), key)), mimeType: key.endsWith('.pdf') ? 'application/pdf' : 'application/octet-stream' };
+  return { buffer: await fs.readFile(path.join(root(), key)), mimeType: key.endsWith('.pdf') ? 'application/pdf' : key.endsWith('.png') ? 'image/png' : key.endsWith('.jpg') || key.endsWith('.jpeg') ? 'image/jpeg' : key.endsWith('.webp') ? 'image/webp' : 'application/octet-stream' };
 }

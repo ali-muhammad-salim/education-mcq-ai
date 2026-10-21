@@ -79,6 +79,7 @@ model Subject {
   academicClass    AcademicClass   @relation(fields: [classId], references: [id])
   syllabusVersions SyllabusVersion[]
   pastPapers       PastPaper[]
+  knowledgeDocuments KnowledgeDocument[]
 }
 
 model SyllabusVersion {
@@ -95,6 +96,8 @@ model SyllabusVersion {
   topics       Topic[]
   examinationSpecifications ExaminationSpecification[]
   pastPaperQuestions PastPaperQuestion[]
+  knowledgeDocuments KnowledgeDocument[]
+  @@unique([id, subjectId])
 }
 
 model Topic {
@@ -1036,6 +1039,8 @@ enum AccountStatus {
 }
 
 model User {
+  knowledgeDocuments KnowledgeDocument[]
+  reviewedKnowledge KnowledgeArtifact[]
   id              String         @id @default(uuid())
   email           String         @unique
   name            String
@@ -1287,6 +1292,88 @@ model DurableJob {
   updatedAt   DateTime @updatedAt
   @@index([status, availableAt])
   @@index([ownerId, createdAt])
+}
+
+enum KnowledgeReviewStatus {
+  PENDING_REVIEW
+  APPROVED
+  REJECTED
+}
+
+model KnowledgeDocument {
+  id                String @id @default(uuid())
+  ownerId           String
+  subjectId         String
+  syllabusVersionId String?
+  sha256            String
+  storageKey        String
+  resourceType      String
+  status            String @default("PROCESSING")
+  totalPages        Int
+  pipelineVersion   String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  owner             User @relation(fields: [ownerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  subject           Subject @relation(fields: [subjectId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  syllabusVersion   SyllabusVersion? @relation(fields: [syllabusVersionId, subjectId], references: [id, subjectId], onDelete: NoAction, onUpdate: NoAction)
+  artifacts         KnowledgeArtifact[]
+  references        KnowledgeReference[] @relation("KnowledgeSource")
+  referencedBy      KnowledgeReference[] @relation("KnowledgeReference")
+  @@unique([sha256, subjectId, resourceType, pipelineVersion], map: "KnowledgeDocument_source_scope_key")
+  @@index([subjectId, syllabusVersionId, status], map: "KnowledgeDocument_scope_idx")
+}
+
+model KnowledgeReference {
+  documentId  String
+  referenceId String
+  kind        String
+  document    KnowledgeDocument @relation("KnowledgeSource", fields: [documentId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  reference   KnowledgeDocument @relation("KnowledgeReference", fields: [referenceId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  @@id([documentId, referenceId])
+}
+
+model KnowledgeArtifact {
+  id                   String @id @default(uuid())
+  documentId           String
+  pageNumber           Int
+  content              String @db.Text
+  contentHash          String
+  data                 Json
+  sourceImageKey       String
+  status               KnowledgeReviewStatus @default(PENDING_REVIEW)
+  reviewerId           String?
+  reviewedAt           DateTime?
+  reviewNote           String? @db.Text
+  embedding            Unsupported("vector(768)")?
+  embeddingModel       String?
+  embeddingContentHash String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  document             KnowledgeDocument @relation(fields: [documentId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  reviewer             User? @relation(fields: [reviewerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  @@unique([documentId, pageNumber])
+  @@index([status, createdAt])
+}
+
+model AIProviderBudget {
+  id        String @id
+  requests  Int @default(0)
+  tokens    Int @default(0)
+  expiresAt DateTime
+  @@index([expiresAt])
+}
+
+model AIProviderState {
+  id            String @id
+  disabled      Boolean @default(false)
+  cooldownUntil DateTime?
+}
+
+model WorkerHeartbeat {
+  id       String @id
+  kinds    String[]
+  seenAt   DateTime
+  @@index([seenAt])
 }
 
 model AuthChallenge {

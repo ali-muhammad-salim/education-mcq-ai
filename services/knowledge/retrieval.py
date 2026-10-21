@@ -29,6 +29,8 @@ Each result is a RetrievalResult with full EvidenceSource provenance.
 from __future__ import annotations
 
 import asyncio
+import inspect
+from services.knowledge.scope import matches_scope
 import logging
 import re
 from typing import Optional
@@ -161,7 +163,10 @@ class KnowledgeRetriever:
             if not sources:
                 continue
 
-            text = _build_node_text(node)
+            text = next((s.text_snippet for s in sources if s.text_snippet), f"{node.chapter} / {node.topic} / {node.concept}")
+            relevance = _jaccard(_tokenise(query), _tokenise(text + ' ' + node.concept + ' ' + node.topic))
+            if not any((concept, chapter, topic)) and relevance < min_keyword_similarity:
+                continue
             results.append(RetrievalResult(
                 query=query,
                 board=board,
@@ -172,7 +177,8 @@ class KnowledgeRetriever:
                 text=text,
                 text_source=_build_source_label(sources[0]),
                 sources=sources,
-                top_priority=node.top_priority,
+                top_priority=sources[0].priority,
+                similarity_score=relevance,
                 retrieval_strategy="metadata",
                 curriculum_version_note=node.curriculum_version_note,
             ))
@@ -182,11 +188,13 @@ class KnowledgeRetriever:
         seen_ids: set[str] = {s.source_id for r in results for s in r.sources}
 
         for ppq in self._past_papers:
+            if ppq.get("verified") is not True:
+                continue
             ppq_id = ppq.get("id", "")
             if ppq_id in seen_ids:
                 continue
             ppq_board = ppq.get("board", "")
-            if ppq_board and ppq_board != board:
+            if not matches_scope(ppq, board, class_level, subject):
                 continue
             ppq_text = ppq.get("text", "")
             sim = _jaccard(query_tokens, _tokenise(ppq_text))
@@ -228,7 +236,8 @@ class KnowledgeRetriever:
         for mapping in self._textbooks.all_mappings():
             if mapping.id in seen_ids:
                 continue
-            if mapping.board_short_code != board:
+            if (not matches_scope(mapping.model_dump(), board, class_level, subject)
+                    or (not include_ai_generated and not mapping.is_human_verified)):
                 continue
             sim = _jaccard(query_tokens, _tokenise(mapping.text_snippet))
             if sim < min_keyword_similarity:
@@ -267,6 +276,8 @@ class KnowledgeRetriever:
         if self._pgvector.is_available() and self._embed_fn is not None:
             try:
                 query_vec = self._embed_fn(query)
+                if inspect.isawaitable(query_vec):
+                    query_vec = await query_vec
                 source_type_filter = (
                     ["CURRICULUM", "TEXTBOOK", "PAST_PAPER", "APPROVED_QUESTION"]
                     if not include_ai_generated
@@ -279,10 +290,14 @@ class KnowledgeRetriever:
                     min_similarity=min_semantic_similarity,
                 )
                 for hit in vector_hits:
+                    if not matches_scope(vars(hit), board, class_level, subject):
+                        continue
                     if hit.source_id in seen_ids:
                         continue
                     # Resolve priority from source_type
                     priority = _source_type_to_priority(hit.source_type)
+                    if not include_ai_generated and priority == SourcePriority.AI_GENERATED:
+                        continue
                     source = EvidenceSource(
                         source_type=hit.source_type,
                         source_id=hit.source_id,

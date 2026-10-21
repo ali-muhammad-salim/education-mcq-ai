@@ -35,7 +35,7 @@ from services.ingestion.schemas import (
     TableRegionSchema,
 )
 from services.ingestion.stages.validation import validate_and_hash
-from services.ingestion.stages.pdf_extraction import extract_pages
+from services.ingestion.stages.pdf_extraction import RenderedPages
 from services.ingestion.stages.orientation import detect_and_correct_orientation
 from services.ingestion.stages.ocr import run_ocr, run_plain_ocr, RawBlock
 from services.ingestion.stages.region_classifier import classify_blocks
@@ -131,7 +131,7 @@ class IngestionPipeline:
 
         # ---- Duplicate check -------------------------------------------------
         existing_id = self._repo.find_document_by_hash(sha256)
-        if existing_id and not force:
+        if existing_id and not force and self._repo.is_document_complete(existing_id):
             logger.info("Document already ingested (id=%s). Use --force to re-process.", existing_id)
             return IngestionResult(
                 file_path=str(resolved_path),
@@ -145,7 +145,7 @@ class IngestionPipeline:
 
         # ---- Stage 2: Render pages -------------------------------------------
         pages_dir = settings.media_root / "pages" / sha256[:16]
-        page_images = extract_pages(
+        page_images = RenderedPages(
             resolved_path,
             dpi=settings.ocr_page_render_dpi,
             save_dir=pages_dir,
@@ -180,7 +180,7 @@ class IngestionPipeline:
 
         use_gemini = (settings.primary_engine == "gemini" and self._gemini_client.is_configured)
         if use_gemini:
-            logger.info("Using AI-First Gemini Vision Engine (gemini-3.5-flash) with 5-Key Rotation Pool.")
+            logger.info("Using configured Gemini vision extraction; extracted regions are not independently verified.")
         else:
             logger.info("Using Local Hybrid Engine (PaddleOCR + Vision Fallback).")
 
@@ -203,14 +203,14 @@ class IngestionPipeline:
                         if self._gemini_client.pool.is_all_exhausted():
                             ckpt = self._gemini_client.save_quota_checkpoint(doc_id, page_num - 1)
                             logger.warning(
-                                "Daily free tier quota reached on all 5 Gemini keys. Safe checkpoint created: %s. "
+                                "Configured Gemini credentials are unavailable. Progress checkpoint: %s. "
                                 "Halting pipeline cleanly; progress is persisted in PostgreSQL.", ckpt
                             )
                             result.errors.append({
                                 "quota_exhausted": True,
                                 "checkpoint": ckpt,
                                 "resumed_from_page": page_num,
-                                "message": "All Gemini API keys exhausted their daily quota. Resume tomorrow without quality loss."
+                                "message": "Configured Gemini credentials are unavailable. Check provider status and retry after recovery."
                             })
                             break
                         else:
@@ -293,9 +293,14 @@ class IngestionPipeline:
                 result.errors.append({"page": page_num, "error": str(exc)})
 
         # ---- Finalise --------------------------------------------------------
-        self._repo.mark_document_completed(doc_id)
+        if result.errors or total_pages > settings.max_pages:
+            if total_pages > settings.max_pages:
+                result.errors.append({"error": "Document exceeds configured page limit", "page": settings.max_pages + 1})
+            self._repo.mark_document_failed(doc_id)
+        else:
+            self._repo.mark_document_completed(doc_id)
         
-        if doc_type_enum == DocumentType.CURRICULUM:
+        if doc_type_enum == DocumentType.CURRICULUM and not result.errors:
             from services.ingestion.stages.curriculum_extractor import extract_curriculum
             extract_curriculum(result, self._repo)
             

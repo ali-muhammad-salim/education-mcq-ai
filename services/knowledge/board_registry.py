@@ -112,6 +112,9 @@ class BoardRegistry:
         directory = Path(directory)
         profiles: list[BoardProfile] = []
         for yaml_file in sorted(directory.glob("*.yaml")):
+            if "-DESKTOP-" in yaml_file.name.upper():
+                logger.warning("Ignoring conflicted board profile: %s", yaml_file.name)
+                continue
             try:
                 p = self.from_yaml(yaml_file)
                 profiles.append(p)

@@ -47,7 +47,9 @@
     "scripts/bootstrap-admin.ts",
     "scripts/archive-legacy.ts",
     "vitest.config.ts",
-    "scripts/db-preflight.ts"
+    "scripts/db-preflight.ts",
+    "scripts/job-worker.ts",
+    "scripts/rehearse-ai-trust.ts"
   ],
   "exclude": [
     "node_modules",

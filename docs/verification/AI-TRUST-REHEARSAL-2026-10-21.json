@@ -1,0 +1,192 @@
+{
+  "testOnly": true,
+  "result": {
+    "documentId": "af101314-2c44-4bb6-ac72-ec7fe68fdd55",
+    "pagesProcessed": 1,
+    "status": "NEEDS_REVIEW",
+    "message": "Source extraction saved. Educator review is required before retrieval or publication."
+  },
+  "documentId": "af101314-2c44-4bb6-ac72-ec7fe68fdd55",
+  "sourceSha256": "1e4e3dc42c461b673bb900128358842886075c5ae758c40c57a55745209ab946",
+  "artifacts": [
+    {
+      "id": "9a3bed68-e8fc-41d7-bed4-b2bae475d916",
+      "status": "PENDING_REVIEW",
+      "pageNumber": 1,
+      "contentHash": "edb22e2a75a9382265defe8b8e6bb47dcfe517aed78091024954a84448f4c089",
+      "data": {
+        "crops": [
+          {
+            "region": 3,
+            "sha256": "f93ebca1eec66312728682cca64ec9e3a565121766dc812b4a816678a0e604af",
+            "storageKey": "private/resources/e70d9705-5dc8-4873-870b-908f372263a8-1e4e3dc42c461b67-p1-r3.png"
+          },
+          {
+            "region": 5,
+            "sha256": "317f168bafbfe6d65f3875cea235d1eff13436380b6b674466fe96dd0e6ac1ee",
+            "storageKey": "private/resources/883b1f74-b580-4cdc-b1b6-0249d34014b7-1e4e3dc42c461b67-p1-r5.png"
+          }
+        ],
+        "conflicts": [
+          "Region 1: curriculum mapping needs review.",
+          "Region 7: curriculum mapping needs review."
+        ],
+        "extraction": {
+          "text": "CHEMISTRY IX - SYNTHETIC PIPELINE TEST\n\n1. Balanced reaction: 2H2 + O2 -> 2H2O\nAtoms on each side: hydrogen = 4; oxygen = 2.\n\n2. Water molecule: two covalent O-H bonds.\nBond angle: 104.5 degrees. Two lone pairs on oxygen.\n\n3. Process flowchart: Reactants -> Reaction -> Products\n\nThis fixture tests transcription, labels, bonds, lone pairs and directed arrows.",
+          "regions": [
+            {
+              "box": [
+                40,
+                67,
+                56,
+                640
+              ],
+              "kind": "TEXT",
+              "text": "CHEMISTRY IX - SYNTHETIC PIPELINE TEST",
+              "labels": [],
+              "sloIds": [],
+              "uncertainty": "",
+              "relationships": [],
+              "questionNumber": ""
+            },
+            {
+              "box": [
+                82,
+                67,
+                134,
+                461
+              ],
+              "kind": "QUESTION",
+              "text": "1. Balanced reaction: 2H2 + O2 -> 2H2O\nAtoms on each side: hydrogen = 4; oxygen = 2.",
+              "labels": [],
+              "sloIds": [
+                "ai-trust-test-slo-0"
+              ],
+              "uncertainty": "",
+              "relationships": [],
+              "questionNumber": "1"
+            },
+            {
+              "box": [
+                178,
+                67,
+                222,
+                516
+              ],
+              "kind": "QUESTION",
+              "text": "2. Water molecule: two covalent O-H bonds.\nBond angle: 104.5 degrees. Two lone pairs on oxygen.",
+              "labels": [],
+              "sloIds": [
+                "ai-trust-test-slo-1"
+              ],
+              "uncertainty": "",
+              "relationships": [],
+              "questionNumber": "2"
+            },
+            {
+              "box": [
+                273,
+                290,
+                401,
+                592
+              ],
+              "kind": "BONDING",
+              "text": "O with two lone pairs bonded to two H atoms",
+              "labels": [
+                "O",
+                "H",
+                "H"
+              ],
+              "sloIds": [
+                "ai-trust-test-slo-1"
+              ],
+              "uncertainty": "",
+              "relationships": [
+                "O-H single covalent bond left",
+                "O-H single covalent bond right",
+                "Two lone pairs on oxygen"
+              ],
+              "questionNumber": "2"
+            },
+            {
+              "box": [
+                463,
+                67,
+                479,
+                613
+              ],
+              "kind": "QUESTION",
+              "text": "3. Process flowchart: Reactants -> Reaction -> Products",
+              "labels": [],
+              "sloIds": [
+                "ai-trust-test-slo-2"
+              ],
+              "uncertainty": "",
+              "relationships": [],
+              "questionNumber": "3"
+            },
+            {
+              "box": [
+                521,
+                71,
+                584,
+                919
+              ],
+              "kind": "FLOWCHART",
+              "text": "Reactants -> Reaction -> Products",
+              "labels": [
+                "Reactants",
+                "Reaction",
+                "Products"
+              ],
+              "sloIds": [
+                "ai-trust-test-slo-2"
+              ],
+              "uncertainty": "",
+              "relationships": [
+                "Reactants -> Reaction",
+                "Reaction -> Products"
+              ],
+              "questionNumber": "3"
+            },
+            {
+              "box": [
+                643,
+                67,
+                657,
+                633
+              ],
+              "kind": "TEXT",
+              "text": "This fixture tests transcription, labels, bonds, lone pairs and directed arrows.",
+              "labels": [],
+              "sloIds": [],
+              "uncertainty": "",
+              "relationships": [],
+              "questionNumber": ""
+            }
+          ],
+          "continuation": ""
+        },
+        "pageSha256": "b978db583bd7fada488fe9e87ad3b376409931273f94ee566df79703efafea23",
+        "reviewPolicy": "EDUCATOR_APPROVAL_REQUIRED",
+        "sourceSha256": "1e4e3dc42c461b673bb900128358842886075c5ae758c40c57a55745209ab946",
+        "verification": {
+          "complete": true,
+          "faithful": true,
+          "conflicts": [],
+          "mappingsCorrect": true
+        },
+        "checksComplete": true,
+        "chemicalChecks": [
+          {
+            "status": "BALANCED",
+            "equation": "2H2 + O2 -> 2H2O"
+          }
+        ],
+        "extractionModel": "gemini-3.5-flash-lite",
+        "enhancementPolicy": "ORIGINAL_ONLY",
+        "verificationModel": "gemini-3.5-flash"
+      }
+    }
+  ]
+}

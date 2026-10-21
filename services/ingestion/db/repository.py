@@ -11,7 +11,7 @@ from __future__ import annotations
 import logging
 from typing import Optional
 
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine, select, delete
 from sqlalchemy.orm import Session, sessionmaker
 
 from services.ingestion.config import settings
@@ -76,6 +76,11 @@ class IngestionRepository:
             ).scalar_one_or_none()
             return doc.id if doc else None
 
+    def is_document_complete(self, doc_id: str) -> bool:
+        with self._SessionFactory() as session:
+            doc = session.get(Document, doc_id)
+            return bool(doc and doc.processing_status == 'COMPLETED')
+
     def create_document(
         self,
         file_path: str,
@@ -139,6 +144,10 @@ class IngestionRepository:
 
             if existing:
                 db_page = existing
+                # A page is one transactional snapshot. Retrying must not append
+                # duplicate regions, equations, diagrams, tables or questions.
+                for model in (PageDiagram, PageEquation, PageQuestion, PageTable, DBPageRegion):
+                    session.execute(delete(model).where(model.page_id == db_page.id))
             else:
                 db_page = DocumentPage(
                     document_id=doc_id,
