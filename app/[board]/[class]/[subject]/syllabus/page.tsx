@@ -28,7 +28,7 @@ export default async function Page({
     scope.meta.slug === "physics" &&
     [9, 10].includes(scope.classDef.level);
   return (
-    <section className={styles.page}>
+    <section className={styles.page} style={{maxWidth:1280}}>
       <Breadcrumbs
         items={[
           { label: scope.board.name, href: "/" + scope.board.id },
@@ -40,7 +40,6 @@ export default async function Page({
           { label: "Syllabus", active: true },
         ]}
       />
-      <h1>Syllabus</h1>
       {docs.length > 0 && (
         <MaterialList
           items={docs.map((d) => ({
@@ -62,7 +61,7 @@ export default async function Page({
             "-dedicated.pdf"
           }
         >
-          <SyllabusClient
+          <SyllabusClient board={scope.board} classDef={scope.classDef} meta={scope.meta} baseUrl={scope.baseUrl}
             units={scope.classDef.level === 9 ? physicsIX : physicsX}
           />
         </DocumentViews>

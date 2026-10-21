@@ -801,16 +801,17 @@ export default function TakeQuizModal({
                 <AlertTriangle size={32} />
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.5rem 0' }}>
-                Questions Unavailable
+                {engine.error ? 'Unable to start assessment' : engine.exam ? 'No questions in this assessment' : 'Loading assessment…'}
               </h3>
               <p style={{ color: '#64748b', fontSize: '0.92rem', maxWidth: '420px', lineHeight: 1.5, margin: '0 0 1.5rem 0' }}>
-                We could not load multiple choice questions for this assessment. Please return to the paper and select another session.
+                {engine.error || (engine.exam ? 'This assessment has no questions. Please return to the paper.' : 'Loading your saved questions. This may take a few seconds.')}
               </p>
               <button
                 type="button"
                 onClick={() => {
                   setPhase('setup');
-                  onClose();
+                  setLoadingQuizQuestions(false);
+                  if (!engine.error) onClose();
                 }}
                 style={{
                   background: '#0b5e4a',
@@ -823,7 +824,7 @@ export default function TakeQuizModal({
                   cursor: 'pointer'
                 }}
               >
-                Close Examination
+                {engine.error ? 'Return to setup' : 'Close Examination'}
               </button>
             </div>
           )}

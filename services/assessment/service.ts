@@ -2,7 +2,7 @@ import { Prisma, QuizSetting } from '@prisma/client';
 import prisma from '@/lib/prisma';
 import { ApiError } from '@/lib/api';
 import { AuthUser } from '@/lib/auth';
-import { getFallbackPaper } from '@/lib/paperDataService';
+import { getFallbackPaper, type QuestionData } from '@/lib/paperDataService';
 import { lockedTransaction } from '@/repositories/transaction';
 import { answerPayloadSchema, saveAnswerSchema } from '@/lib/validations/assessment';
 import { FrozenQuestion, answerFeedback, gradeAnswer, hasAnswer, normalizeQuestion, snapshotSchema, studentQuestion } from './scoring';
@@ -17,6 +17,21 @@ const practiceCodes: Record<string, string> = {
   'SAMPLE-QUIZ-PHY-CHAP-1-2': 'PHY-IX-CHAP1-2',
 };
 const allowedPractice = new Set(['PHY-IX-P1', 'PHY-IX-P2', 'PHY-X-P1', 'PHY-X-P2', 'PHY-IX-CHAP1-2', 'PHY-IX-2025-P1', 'PHY-IX-2025-P2', 'PHY-IX-2024-P1', 'PHY-IX-2024-P2']);
+
+// Source JSON can represent an absent diagram as null; assessment input uses
+// omitted optional fields. Normalize at this boundary, keeping teacher input strict.
+export function sourcePracticeQuestion(q: QuestionData) {
+  const meta = q.sourceRegion;
+  return normalizeQuestion({
+    questionType: q.questionType === 'MULTIPLE_CHOICE' ? 'MCQ_SINGLE' : 'LONG_ANSWER',
+    stemText: q.questionText, marks: q.marks || 1, difficulty: q.difficulty,
+    cognitiveLevel: typeof meta.cognitive_level === 'string' ? meta.cognitive_level : undefined,
+    explanation: typeof meta.explanation === 'string' ? meta.explanation : undefined,
+    diagramUrl: typeof meta.diagramUrl === 'string' ? meta.diagramUrl : undefined,
+    options: Object.entries(meta.choices || {}).map(([id, text]) => ({ id, text, isCorrect: id === meta.correct_answer })),
+    rubric: meta.rubric ? JSON.stringify(meta.rubric) : undefined,
+  });
+}
 
 export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   const quiz = await prisma.quiz.findFirst({ where: { OR: [{ id: identifier }, { code: identifier.toUpperCase() }] }, include: quizInclude });
@@ -36,14 +51,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   }
   if (key.includes('KINEMATICS') || key.includes('WAVES')) source = source.slice(0, 15);
   const questions = source.map((q, i) => {
-    const meta = q.sourceRegion;
-    const content = normalizeQuestion({
-      questionType: q.questionType === 'MULTIPLE_CHOICE' ? 'MCQ_SINGLE' : 'LONG_ANSWER',
-      stemText: q.questionText, marks: q.marks || 1, difficulty: q.difficulty,
-      cognitiveLevel: meta.cognitive_level, explanation: meta.explanation, diagramUrl: meta.diagramUrl,
-      options: Object.entries(meta.choices || {}).map(([id, text]) => ({ id, text, isCorrect: id === meta.correct_answer })),
-      rubric: meta.rubric ? JSON.stringify(meta.rubric) : undefined,
-    });
+    const content = sourcePracticeQuestion(q);
     return { orderIndex: i + 1, marks: content.marks, questionData: content };
   });
   // A suspended, passwordless content owner can never authenticate.
