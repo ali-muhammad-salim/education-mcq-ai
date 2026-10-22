@@ -8,7 +8,7 @@ import { answerReviewPaper, legacyAnswerCases, type AnswerReviewCase, type Publi
 const action='LEGACY_PAPER_ANSWER_REVIEWED';
 const resource='LegacyPaperAnswer';
 const decisionSchema=z.object({number:z.number().int(),status:z.enum(['KEEP_OFFICIAL','APPROVE_CORRECTION']),answer:z.enum(['A','B','C','D']),note:z.string(),sourceFingerprint:z.string()});
-const fingerprint=(item:AnswerReviewCase)=>createHash('sha256').update(JSON.stringify({number:item.number,stem:item.stem,options:item.options,official:item.official,proposed:item.answer,reason:item.reason})).digest('hex');
+const fingerprint=(item:AnswerReviewCase)=>createHash('sha256').update(JSON.stringify({number:item.number,stem:item.stem,options:item.options,official:item.official})).digest('hex');
 type Db=Prisma.TransactionClient;
 // This small legacy correction ledger is append-only in the existing audit store.
 // Uploaded papers continue to use the source-backed question review workflow.
