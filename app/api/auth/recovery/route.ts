@@ -6,7 +6,7 @@ import { assertOrigin, rateLimit, requireUser } from '@/lib/security';
 import { ApiError, apiError } from '@/lib/api';
 import { serializable } from '@/repositories/transaction';
 import { hashPassword } from '@/lib/passwords';
-import { sendTransactionalEmail } from '@/lib/email';
+import { isEmailConfigured, sendTransactionalEmail } from '@/lib/email';
 import { configuredSiteUrl } from '@/lib/site-url';
 export async function POST(req: NextRequest) {
   try { assertOrigin(req);
@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     await rateLimit('recovery:' + input.action + ':' + email, input.action.startsWith('SEND') ? 3 : 10, 900);
     const identifier = (verification ? 'verify:' : 'reset:') + email;
     if (input.action.startsWith('SEND')) {
-      if (!process.env.RESEND_API_KEY) throw new ApiError(503, 'EMAIL_UNAVAILABLE', 'Email delivery is unavailable. Contact the site administrator.');
+      if (!isEmailConfigured()) throw new ApiError(503, 'EMAIL_UNAVAILABLE', 'Email delivery is unavailable. Contact the site administrator.');
       const account = await prisma.user.findUnique({ where: { email } });
       if (account?.status === 'ACTIVE') {
         const token = randomBytes(32).toString('hex'), codeHash = createHash('sha256').update(token).digest('hex');

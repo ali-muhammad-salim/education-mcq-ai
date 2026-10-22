@@ -13,11 +13,15 @@ export interface EmailPayload {
   html: string;
 }
 
+export function isEmailConfigured() {
+  return Boolean(process.env.RESEND_API_KEY?.trim() && process.env.EMAIL_FROM?.trim());
+}
+
 export async function sendTransactionalEmail(payload: EmailPayload): Promise<{ success: boolean; messageId?: string }> {
   const apiKey = process.env.RESEND_API_KEY;
-  const fromEmail = process.env.EMAIL_FROM || 'assessments@akueb-portal.edu.pk';
+  const fromEmail = process.env.EMAIL_FROM?.trim();
 
-  if (apiKey) {
+  if (apiKey && fromEmail) {
     try {
       const res = await fetch('https://api.resend.com/emails', {
         signal: AbortSignal.timeout(15000),
@@ -35,13 +39,11 @@ export async function sendTransactionalEmail(payload: EmailPayload): Promise<{ s
       });
       const data = await res.json();
       return { success: res.ok, messageId: data.id };
-    } catch (err) {
-      console.error('Resend email error:', err);
+    } catch {
+      console.error('Transactional email delivery failed.');
     }
   }
 
-  // Development mock log
-  console.log(`[Email Mock (${payload.to})]: ${payload.subject}`);
   return { success: false };
 }
 

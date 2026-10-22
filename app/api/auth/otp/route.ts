@@ -7,14 +7,14 @@ import { generateToken } from '@/lib/auth';
 import { assertOrigin, rateLimit } from '@/lib/security';
 import { apiError, ApiError } from '@/lib/api';
 import { serializable } from '@/repositories/transaction';
-import { sendTransactionalEmail } from '@/lib/email';
+import { isEmailConfigured, sendTransactionalEmail } from '@/lib/email';
 export async function POST(req: NextRequest) {
   try {
     assertOrigin(req);
     const input = z.object({ action: z.enum(['send', 'verify']), identifier: z.string().trim().email().max(254).transform(s => s.toLowerCase()), otp: z.string().regex(/^\d{6}$/).optional(), name: z.string().trim().min(1).max(160).default('Student') }).parse(await req.json());
-    await rateLimit('otp:' + input.identifier, input.action === 'send' ? 3 : 10, 600);
+    await rateLimit('otp:' + input.action + ':' + input.identifier, input.action === 'send' ? 3 : 10, 600);
     if (input.action === 'send') {
-      if (!process.env.RESEND_API_KEY) throw new ApiError(503, 'EMAIL_UNAVAILABLE', 'Email sign-in is unavailable. Please use your password or Google sign-in.');
+      if (!isEmailConfigured()) throw new ApiError(503, 'EMAIL_UNAVAILABLE', 'Email sign-in is unavailable. Please use your password or Google sign-in.');
       const code = randomInt(100000, 1000000).toString(), codeHash = createHash('sha256').update(code).digest('hex');
       await prisma.authChallenge.upsert({ where: { identifier: input.identifier }, create: { identifier: input.identifier, codeHash, name: input.name, expiresAt: new Date(Date.now() + 600000) }, update: { codeHash, name: input.name, attempts: 0, expiresAt: new Date(Date.now() + 600000) } });
       const sent = await sendTransactionalEmail({ to: input.identifier, subject: 'Your sign-in code', html: '<p>Your sign-in code is <strong>' + code + '</strong>. It expires in 10 minutes.</p>' });
