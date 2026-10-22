@@ -1,0 +1,7 @@
+'use client';
+import { useEffect, useState } from 'react';
+export default function PaperReferencePicker({ board, classLevel, subject, value, onChange }: { board: string; classLevel: string; subject: string; value: string; onChange: (id: string) => void }) {
+  const [papers, setPapers] = useState<{ id: string; title: string }[]>([]), [message, setMessage] = useState('');
+  useEffect(() => { const controller = new AbortController(); onChange(''); setPapers([]); setMessage('Loading papers…'); void fetch('/api/admin/knowledge/references?' + new URLSearchParams({ board, classLevel, subject }), { signal: controller.signal }).then(async r => { const data = await r.json(); if (!r.ok) throw Error(data.error?.message || 'Unable to load papers.'); setPapers(data.papers); setMessage(data.papers.length ? '' : 'Upload the matching paper first to connect its answer key or marking notes.'); }).catch(e => { if (!controller.signal.aborted) setMessage(e instanceof Error ? e.message : 'Unable to load papers.'); }); return () => controller.abort(); }, [board, classLevel, subject]);
+  return <label style={{ display: 'grid', gap: 8, margin: '1rem 0' }}>Matching paper<select value={value} onChange={e => onChange(e.target.value)} style={{ minHeight: 44, padding: 10, background: 'var(--card-bg)', color: 'var(--text-color)', border: '1px solid var(--border-color)', borderRadius: 8 }}><option value="">Choose the original paper</option>{papers.map(p => <option key={p.id} value={p.id}>{p.title}</option>)}</select>{message && <small role="status">{message}</small>}</label>;
+}

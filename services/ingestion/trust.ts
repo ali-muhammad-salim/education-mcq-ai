@@ -1,8 +1,10 @@
 import { z } from 'zod';
+import {learningPage,learningResponse} from './learning-schema';
 
 export const normalizedBox = z.tuple([z.number().finite().min(0).max(1000), z.number().finite().min(0).max(1000), z.number().finite().min(0).max(1000), z.number().finite().min(0).max(1000)])
   .refine(([y0, x0, y1, x1]) => y1 - y0 >= 5 && x1 - x0 >= 5 && !(y1 - y0 > 980 && x1 - x0 > 980), 'Invalid or full-page crop');
 export const pageExtraction = z.object({
+  learning:learningPage,
   text: z.string().max(60000),
   continuation: z.string().max(2000),
   regions: z.array(z.object({
@@ -15,11 +17,12 @@ export const pageExtraction = z.object({
   })).max(100),
 });
 export const extractionResponseSchema = { type: 'OBJECT', properties: {
+  learning:learningResponse,
   text: { type: 'STRING' }, continuation: { type: 'STRING' }, regions: { type: 'ARRAY', items: { type: 'OBJECT', properties: {
     kind: { type: 'STRING', enum: ['TEXT', 'QUESTION', 'EQUATION', 'CHEMICAL_EQUATION', 'BONDING', 'FLOWCHART', 'DIAGRAM', 'TABLE'] },
     text: { type: 'STRING' }, questionNumber: { type: 'STRING' }, box: { type: 'ARRAY', nullable: true, items: { type: 'NUMBER' } }, labels: { type: 'ARRAY', items: { type: 'STRING' } }, relationships: { type: 'ARRAY', items: { type: 'STRING' } }, sloIds: { type: 'ARRAY', items: { type: 'STRING' } }, uncertainty: { type: 'STRING' },
   }, required: ['kind', 'text', 'questionNumber', 'box', 'labels', 'relationships', 'sloIds', 'uncertainty'] } },
-}, required: ['text', 'continuation', 'regions'] };
+}, required: ['text', 'continuation', 'regions','learning'] };
 export const sourceVerification = z.object({ faithful: z.boolean(), complete: z.boolean(), mappingsCorrect: z.boolean(), conflicts: z.array(z.string().max(2000)).max(100) });
 export const verificationResponseSchema = { type: 'OBJECT', properties: { faithful: { type: 'BOOLEAN' }, complete: { type: 'BOOLEAN' }, mappingsCorrect: { type: 'BOOLEAN' }, conflicts: { type: 'ARRAY', items: { type: 'STRING' } } }, required: ['faithful', 'complete', 'mappingsCorrect', 'conflicts'] };
 

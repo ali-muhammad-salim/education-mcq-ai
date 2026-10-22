@@ -1,5 +1,7 @@
 import physicsIX from "@/data/physics/ssc1_exact_syllabus.json";
 import physicsX from "@/data/physics/ssc2_exact_syllabus.json";
+import {normalizeBoardId} from '@/lib/boardHierarchy';
+import {getSubjectMeta} from '@/lib/subjectMetadata';
 
 /** A missing/unreviewed mapping is not evidence that a question is outside a syllabus. */
 export function questionSyllabus(
@@ -12,6 +14,9 @@ export function questionSyllabus(
 ) {
   const originalCode =
     typeof meta.slo === "string" ? meta.slo : slos?.[0]?.slo.code;
+  const scoped=meta.mapping_scope;
+  const current=Array.isArray(meta.current_mapping)?meta.current_mapping[0]:undefined;
+  if(meta.current_syllabus_reviewed===true&&scoped?.grade===level&&normalizeBoardId(scoped.board)===normalizeBoardId(board)&&String(scoped.subject).toLowerCase()===subject.toLowerCase()&&typeof current?.code==='string'&&typeof current.description==='string'&&typeof current.topic==='string')return {status:'mapped' as const,originalCode,code:current.code,description:current.description,topic:current.topic,href:`/${normalizeBoardId(board)}/${({9:'IX',10:'X',11:'XI',12:'XII'} as Record<number,string>)[level]||level}/${getSubjectMeta(subject).slug}/syllabus#slo-${encodeURIComponent(current.code)}`};
   // An identical code in two editions does not establish an academic equivalence.
   const code = historical
     ? meta.current_syllabus_reviewed === true &&

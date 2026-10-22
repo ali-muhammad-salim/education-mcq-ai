@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export const optionSchema = z.object({ id: z.string().min(1).max(160).optional(), text: z.string().min(1).max(4000), isCorrect: z.boolean() });
+export const optionSchema = z.object({ id: z.string().min(1).max(160).optional(), text: z.string().min(1).max(4000), isCorrect: z.boolean(), feedback:z.string().max(4000).optional() });
 export const questionSchema = z.object({
   questionType: z.enum(['MCQ_SINGLE', 'MCQ_MULTIPLE', 'TRUE_FALSE', 'NUMERICAL', 'SHORT_ANSWER', 'LONG_ANSWER', 'CRQ', 'MATCHING']).default('MCQ_SINGLE'),
   stemText: z.string().trim().min(1).max(20000), options: z.array(optionSchema).max(20).default([]),
@@ -7,6 +7,7 @@ export const questionSchema = z.object({
   difficulty: z.string().max(80).default('Medium'), cognitiveLevel: z.string().max(80).default('Understanding'),
   sloCode: z.string().max(160).optional(), sloId: z.string().max(160).optional(), explanation: z.string().max(20000).optional(), correctAnswerText: z.string().max(20000).optional(),
   topicName: z.string().trim().max(160).optional(),
+  sourceQuestionId:z.string().max(160).optional(), sourceDocumentId:z.string().max(160).optional(),syllabusVersionId:z.string().max(160).optional(),
   numericalTolerance: z.coerce.number().nonnegative().max(1000000).default(0.05), rubric: z.string().max(20000).nullable().optional(),
   unit: z.string().max(100).optional(), acceptedAnswers: z.array(z.string().max(4000)).max(50).optional(),
   pastPaperRef: z.string().max(500).optional(), customDifficultyDesc: z.string().max(2000).optional(),

@@ -6,3 +6,5 @@
 .root .mapping{min-height:44px;padding:.2rem 0;box-sizing:border-box}.back{margin:.75rem 0}
 
 .item{overflow-wrap:anywhere;min-width:0}.item span,.item strong{min-width:0}
+
+.navigation{display:flex;gap:.5rem;flex-wrap:wrap;max-width:1280;margin:1.5rem auto;padding:0 1rem}.navigation a{display:inline-flex;align-items:center;min-height:44px;padding:.5rem .8rem;box-sizing:border-box;border:1px solid var(--border-color,#a8bdb4);border-radius:10px;color:var(--text-color,#173f35);background:var(--card-bg,#fff);text-decoration:none;font-weight:600}.navigation a:focus-visible{outline:3px solid #13a87f;outline-offset:3px}:global(html.dark) .navigation a{color:#a7f3d0}.columns>figure{min-width:0;margin:0}.root input[type=date]{font:inherit;min-height:44px;padding:.6rem;color:inherit;background:var(--card-bg,#fff);border:1px solid var(--border-color,#a8bdb4);border-radius:8px;max-width:100%;box-sizing:border-box}

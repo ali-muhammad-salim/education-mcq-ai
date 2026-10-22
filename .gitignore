@@ -101,5 +101,6 @@ data/jobs/
 checkpoints/*.dump
 
 .next-audit/
+.next-source-preview/
 public/pdfjs/
 checkpoints/prepare-ui-review.cjs

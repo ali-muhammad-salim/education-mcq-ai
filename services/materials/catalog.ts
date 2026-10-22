@@ -11,6 +11,7 @@ export const materialMetadata = z.object({
   examYear: z.string().max(20).optional(),
   paperCode: z.string().max(160).optional(),
   paperComponent: z.string().max(80).optional(),
+  compiledPaperId:z.string().max(160).optional(),
 });
 export { publicMaterialWhere } from "@/lib/materialVisibility";
 export async function publicMaterial(id: string) {
@@ -43,7 +44,7 @@ export async function subjectMaterials(
   rawBoard: string,
   rawClass: string,
   rawSubject: string,
-  type?: string,
+  type?: string | string[],
   after = "",
 ) {
   const scope = studyScope(rawBoard, rawClass, rawSubject);
@@ -70,7 +71,7 @@ export async function subjectMaterials(
       ...publicMaterialWhere,
       subjectId: { in: ids },
       ...(after ? { id: { gt: after } } : {}),
-      ...(type ? { resourceType: type } : {}),
+      ...(type ? { resourceType: typeof type==='string'?type:{in:type} } : {}),
     },
     select: {
       id: true,
@@ -119,5 +120,8 @@ export async function subjectMaterialTypes(
   const rows = await prisma.$queryRaw<{ resourceType: string }[]>(
     Prisma.sql`SELECT DISTINCT d."resourceType" FROM "KnowledgeDocument" d JOIN "User" u ON u.id=d."ownerId" WHERE d."subjectId" IN (${Prisma.join(ids)}) AND d."publishAfterReview" AND d.status='NEEDS_REVIEW' AND u.role='ADMIN' AND d."resourceType" IN ('syllabus','textbook','past_paper','model_paper') AND d."totalPages">0 AND (SELECT COUNT(*) FROM "KnowledgeArtifact" a WHERE a."documentId"=d.id)=d."totalPages" AND NOT EXISTS (SELECT 1 FROM "KnowledgeArtifact" a WHERE a."documentId"=d.id AND a.status<>'APPROVED')`,
   );
-  return new Set(rows.map((r) => r.resourceType));
+  const types=new Set(rows.map((r) => r.resourceType));
+  const curriculum=await prisma.syllabusVersion.findFirst({where:{subjectId:{in:ids},isLatest:true,sourceDocument:publicMaterialWhere},select:{sourceDocument:{select:{totalPages:true,_count:{select:{artifacts:true}}}}}});
+  if(curriculum?.sourceDocument&&curriculum.sourceDocument.totalPages>0&&curriculum.sourceDocument.totalPages===curriculum.sourceDocument._count.artifacts)types.add('syllabus');
+  return types;
 }

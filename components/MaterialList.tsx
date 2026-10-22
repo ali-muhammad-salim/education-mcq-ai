@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ChevronRight, FileText } from "lucide-react";
 import styles from "./MaterialLayout.module.css";
-export type MaterialItem = { label: string; href: string; pending?: boolean };
+export type MaterialItem = { label: string; href: string; pending?: boolean; year?:number };
 export default function MaterialList({ items }: { items: MaterialItem[] }) {
   return (
     <ul className={styles.list}>

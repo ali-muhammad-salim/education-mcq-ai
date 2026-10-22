@@ -55,9 +55,10 @@ export function answerFeedback(q: FrozenQuestion, input: unknown, score: number 
   if (score >= q.marks) return 'Your answer matches the answer key.';
   const a = answerPayloadSchema.parse(input), c = q.content;
   if (['MCQ_SINGLE','TRUE_FALSE'].includes(c.questionType)) {
-    const chosen = c.options.find(o=>o.id===a.selectedOptionId)?.text || 'Unknown option';
+    const option=c.options.find(o=>o.id===a.selectedOptionId);
+    const chosen = option?.text || 'Unknown option';
     const expected = c.options.find(o=>o.isCorrect)?.text || '';
-    return `Your answer “${chosen}” does not match the correct answer “${expected}”.`;
+    return `Your answer “${chosen}” does not match the correct answer “${expected}”.`+(option?.feedback?' '+option.feedback:'');
   }
   if (c.questionType === 'MCQ_MULTIPLE') {
     const selected = new Set(a.selectedOptionIds || []);

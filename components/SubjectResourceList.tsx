@@ -9,6 +9,7 @@ import { studyScope } from "@/services/study/navigation";
 import { subjectMaterials } from "@/services/materials/catalog";
 import { getAllStandardPapers } from "@/lib/paperDataService";
 import prisma from "@/lib/prisma";
+import {publicMaterialWhere} from '@/lib/materialVisibility';
 
 export default async function SubjectResourceList({
   params,
@@ -32,14 +33,15 @@ export default async function SubjectResourceList({
     params.board,
     params.class,
     params.subject,
-    type,
+    type==='past_paper'?['past_paper','answer_key','e_marking']:type,
     after,
   );
   const items: MaterialItem[] = documents
     .slice(0, 100)
     .map((doc) => ({
       label: doc.metadata.title || titles[type],
-      href: "/materials/" + doc.id,
+      href: doc.metadata.compiledPaperId?'/past-papers/'+doc.metadata.compiledPaperId:"/materials/" + doc.id,
+      year: /^\d{4}$/.test(doc.metadata.examYear||'')?Number(doc.metadata.examYear):undefined,
     }));
   const legacy =
     scope.board.id === "akueb" &&
@@ -58,20 +60,24 @@ export default async function SubjectResourceList({
         },
         subject: { name: { equals: scope.meta.title, mode: "insensitive" } },
         examType: type === "model_paper" ? "MODEL_EXAM" : "ANNUAL",
+        OR:[{sourceDocumentId:null},{sourceDocument:publicMaterialWhere}],
       },
       select: {
         id: true,
         paperCode: true,
         title: true,
         fileUrl: true,
+        examYear:true,
+        sourceDocument:{select:{catalogMetadata:true}},
         _count: { select: { questions: true } },
       },
       orderBy: { examYear: "desc" },
       take: 100,
     });
     const seen = new Set<string>();
+    const listed=new Set(items.map(i=>i.href));
     for (const paper of [
-      ...stored,
+      ...stored.filter(p=>!p.sourceDocument||(p.sourceDocument.catalogMetadata as Record<string,unknown>|null)?.compiledPaperId===p.id),
       ...(legacy
         ? getAllStandardPapers().filter(
             (p) =>
@@ -84,11 +90,13 @@ export default async function SubjectResourceList({
     ]) {
       const code = paper.paperCode || paper.id;
       if (seen.has(code)) continue;
+      if(listed.has('/past-papers/'+encodeURIComponent(code)))continue;
       seen.add(code);
       if (!paper.fileUrl && !paper._count.questions) continue;
       items.push({
         label: paperLabel(paper.paperCode,paper.title),
         href: "/past-papers/" + encodeURIComponent(code),
+        year:paper.examYear,
       });
     }
     if (
@@ -132,7 +140,7 @@ export default async function SubjectResourceList({
           }
         />
       ) : items.length ? (
-        <MaterialList items={items} />
+        type==='past_paper'?<>{[...new Set(items.map(i=>i.year))].sort((a,b)=>(b||0)-(a||0)).map(year=><section key={year||'other'}><h2 style={{margin:'1.5rem 0 .6rem'}}>{year||'Other resources'}</h2><MaterialList items={items.filter(i=>i.year===year)} /></section>)}</>:<MaterialList items={items} />
       ) : (
         <p className={styles.muted}>Coming soon</p>
       )}

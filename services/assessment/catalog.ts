@@ -1,11 +1,14 @@
 import { Prisma } from '@prisma/client';
 import prisma from '@/lib/prisma';
 import { createHash } from 'node:crypto';
+import {ApiError} from '@/lib/api';
 
 const stableId = (value: string) => 'catalog-' + createHash('sha256').update(value).digest('hex').slice(0, 24);
 export async function resolveAcademicMetadata(tx: Prisma.TransactionClient, boardCode: string, level: number, subjectName: string) {
   const code = boardCode.trim().toUpperCase(), name = subjectName.trim();
-  const board = await tx.board.upsert({ where: { shortCode: code }, update: {}, create: { shortCode: code, name: code, country: 'Pakistan' } });
+  const boards=await tx.board.findMany({where:{shortCode:{equals:code,mode:'insensitive'}},take:2});
+  if(boards.length>1)throw new ApiError(422,'AMBIGUOUS_BOARD','Resolve duplicate board codes before publishing curriculum.');
+  const board = boards[0] || await tx.board.upsert({ where: { shortCode: code }, update: {}, create: { shortCode: code, name: code, country: 'Pakistan' } });
   const programmeName = level <= 10 ? 'SSC' : 'HSSC';
   const programme = await tx.programme.findFirst({ where: { boardId: board.id, name: programmeName } }) ?? await tx.programme.upsert({ where: { id: stableId(board.id + ':' + programmeName) }, update: {}, create: { id: stableId(board.id + ':' + programmeName), boardId: board.id, name: programmeName } });
   const academicClass = await tx.academicClass.findFirst({ where: { programmeId: programme.id, level } }) ?? await tx.academicClass.upsert({ where: { id: stableId(programme.id + ':' + level) }, update: {}, create: { id: stableId(programme.id + ':' + level), programmeId: programme.id, level, name: 'Class ' + ({9: 'IX', 10: 'X', 11: 'XI', 12: 'XII'}[level] || level) } });

@@ -8,6 +8,8 @@ import DocumentViews from "@/components/DocumentViews";
 import ScientificText from "@/components/ScientificText";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import styles from "@/components/MaterialLayout.module.css";
+import {z} from 'zod';
+import {approvedEnhancement} from '@/services/ingestion/enhancement-review';
 export const dynamic = "force-dynamic";
 export default async function Page({
   params,
@@ -27,7 +29,7 @@ export default async function Page({
   );
   const pages = await prisma.knowledgeArtifact.findMany({
     where: { documentId: id },
-    select: { id: true, pageNumber: true, content: true },
+    select: { id: true, pageNumber: true, content: true,data:true,contentHash:true },
     orderBy: { pageNumber: "asc" },
     skip: (pageNumber - 1) * 10,
     take: 10,
@@ -71,6 +73,14 @@ export default async function Page({
             <section className={styles.source} key={page.id}>
               <h2>Page {page.pageNumber}</h2>
               <ScientificText text={page.content} />
+              {(()=>{
+                const data=z.object({crops:z.array(z.object({region:z.number().int().nonnegative()})),enhancements:z.array(approvedEnhancement).default([])}).safeParse(page.data);
+                return data.success?data.data.crops.map(c=><figure key={c.region} style={{margin:'1rem 0'}}>
+                  <img src={`/api/materials/${id}/regions/${page.id}/${c.region}`} alt={`Source figure on page ${page.pageNumber}`} style={{maxWidth:'100%',height:'auto',background:'#fff',borderRadius:8}}/>
+                  <figcaption className={styles.muted}>{data.data.enhancements.some(e=>e.region===c.region&&e.sourceHash===page.contentHash)?'Admin-approved enhanced figure':'Original source figure'} · Page {page.pageNumber}</figcaption>
+                  {data.data.enhancements.some(e=>e.region===c.region&&e.sourceHash===page.contentHash)&&<details><summary style={{minHeight:44,cursor:'pointer',padding:'10px 0'}}>Original diagram</summary><img loading="lazy" src={`/api/materials/${id}/regions/${page.id}/${c.region}?variant=original`} alt="Exact original source diagram" style={{maxWidth:'100%',height:'auto',background:'#fff'}}/></details>}
+                </figure>):null;
+              })()}
               <Link
                 href={"/api/materials/" + id + "/pages/" + page.id}
                 target="_blank"

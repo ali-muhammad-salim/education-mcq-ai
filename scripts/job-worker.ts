@@ -31,7 +31,10 @@ async function run() {
     try {
       let result: Prisma.InputJsonValue;
       if (job.kind === 'AI_GENERATION') result = await (await import('../services/ai/generate')).generateQuestions(job.ownerId, job.payload, job.id, controller.signal);
-      else if (job.kind === 'INGESTION') result = await (await import('../services/ingestion/trusted')).ingestTrustedDocument(job, controller.signal);
+      else if (job.kind === 'INGESTION') {
+        const task=job.payload&&typeof job.payload==='object'&&!Array.isArray(job.payload)?job.payload.task:undefined;
+        result=task==='COMPILE_LEARNING'?await (await import('../services/materials/compile-paper')).compileReviewedPaper(job,controller.signal):task==='ENHANCE_DIAGRAM'?await (await import('../services/ingestion/enhance-diagram')).enhanceReviewedDiagram(job,controller.signal):await (await import('../services/ingestion/trusted')).ingestTrustedDocument(job,controller.signal);
+      }
       else if (job.kind === 'STUDY_GENERATION') result = await (await import('../services/study/library')).generateStudyResource(job.ownerId, z.object({ noteId: z.string() }).parse(job.payload).noteId, job.id, controller.signal);
       else if (job.kind === 'AI_EMBEDDING') result = await (await import('../services/knowledge/search')).indexApprovedArtifact(z.object({ artifactId: z.string() }).parse(job.payload).artifactId, controller.signal);
       else if (job.kind === 'EXAM_FINALIZE' || job.kind === 'EXAM_GRADE') {
