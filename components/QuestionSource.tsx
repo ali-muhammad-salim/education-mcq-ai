@@ -10,5 +10,6 @@ export default function QuestionSource({ question, source, board, grade, subject
     {code ? <Link href={'/past-papers/'+encodeURIComponent(code)}>{label} · Q{question.originalQuestionNumber || question.questionNumber}</Link> : <span>{label}</span>}
     {mapping.originalCode && <span>Original SLO: {mapping.originalCode}{meta.original_reference_verified === true ? '' : ' (unverified)'}</span>}
     {mapping.status==='mapped' ? <Link href={mapping.href} title={mapping.description}>Current SLO {mapping.code} · {mapping.topic}</Link> : <span>{mapping.status==='outside'?'Reviewed: outside current syllabus':'Current syllabus: awaiting verified mapping'}</span>}
+    {meta.answer_review_note && <details style={{flexBasis:'100%',color:'var(--text-color)'}}><summary>Official answer requires review</summary>{meta.answer_review_note}</details>}
   </div>;
 }

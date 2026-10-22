@@ -5,9 +5,14 @@ export const physics2025Resources = [
   { label: 'Paper 1 · official answer key', href: '/resources/physics-ix-2025-key', year: 2025 },
   { label: 'E-marking notes', href: '/resources/physics-ix-2025-emarking', year: 2025 },
 ];
+export const annualAnswerReviews: Record<number, string> = {
+  12: 'Official key: D (80 N). The ideal-rope tension interpretation (40 N) needs educator review before approving a teaching explanation.',
+  39: 'Official key: C (poor absorbers and good emitters). This combination conflicts with the usual relationship between absorption and emission for the same radiation. An educator must review the source before this is used as a teaching explanation.',
+  40: 'Official key: B (white). This appears to conflict with the usual result that a dull black surface is the better heat radiator under comparable conditions. An educator must review the source before this is used as a teaching explanation.',
+};
 export function annualOriginalReference(number: string | number): {slo?:string;original_reference_verified?:boolean;original_reference_source?:string;cognitive_level?:string;answer_review_note?:string} {
   const entry = key.entries.find(row => row.questionNumber === Number(number));
-  return entry ? { slo: entry.slo, original_reference_verified: true, original_reference_source: '/resources/physics-ix-2025-key', cognitive_level: entry.cognitiveLevel, ...(entry.questionNumber===12?{answer_review_note:'Official key: D (80 N). The ideal-rope tension interpretation needs educator review before approving a teaching explanation.'}:{}) } : {};
+  return entry ? { slo: entry.slo, original_reference_verified: true, original_reference_source: '/resources/physics-ix-2025-key', cognitive_level: entry.cognitiveLevel, ...(annualAnswerReviews[entry.questionNumber]?{answer_review_note:annualAnswerReviews[entry.questionNumber]}:{}) } : {};
 }
 /** Apply a source-reviewed legacy mapping only while the exact stem and outcome
  * still match the reviewed content. A newer compiled syllabus must bypass this. */

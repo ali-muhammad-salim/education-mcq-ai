@@ -2,7 +2,7 @@
 
 The old annual-paper data mixed historical SLO codes with a newer syllabus and left every current mapping pending. The bundled official 2025 key confirms the printed exam-year codes and answers; these are separate from the current syllabus.
 
-This release transcribes all 40 official key rows, adds 35 source-reviewed semantic current-syllabus links, and leaves five uncertain questions pending. Legacy mappings require an exact known question stem and unchanged outcome text; a newer compiled curriculum disables these annotations. The ideal-rope tension interpretation in Q12 is separately flagged for an educator while preserving the board's printed D (80 N). Grades and existing attempts are not rewritten.
+This release transcribes all 40 official key rows, adds 35 source-reviewed semantic current-syllabus links, and leaves five uncertain questions pending. Legacy mappings require an exact known question stem and unchanged outcome text; a newer compiled curriculum disables these annotations. The ideal-rope tension interpretation in Q12 and apparent radiation-answer conflicts in Q39–40 are separately flagged for an educator while preserving the board's printed D (80 N). Grades and existing attempts are not rewritten.
 
 MCQs now have a compact category directory with four direct routes. Practice questions link back to their paper and distinguish original/current SLO references. Uploaded source-backed papers automatically list their published linked keys and e-marking notes. The legacy Physics IX 2025 key and 21-page e-marking PDF are bundled and linked from the annual archive and paper pages. A solved-view URL opens the existing answers and available explanations; it does not fabricate official marking notes or new explanations.
 
