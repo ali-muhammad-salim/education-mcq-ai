@@ -9,7 +9,7 @@ import { compileReviewedSyllabus } from '@/services/materials/compile-syllabus';
 import { scheduleMaterialCompilation } from '@/services/materials/schedule';
 const hash = (metadata: unknown) => createHash('sha256').update(JSON.stringify(metadata)).digest('hex');
 export async function GET(req: NextRequest) {
-  try {    
+  try {
 await requireUser(req, ['ADMIN']); const id = z.string().min(1).max(80).parse(req.nextUrl.searchParams.get('documentId'));
     const doc = await prisma.knowledgeDocument.findUniqueOrThrow({ where: { id }, select: { id: true, resourceType: true, catalogMetadata: true, totalPages: true, artifacts: { select: { pageNumber: true, sourceImageKey: true }, orderBy: { pageNumber: 'asc' } } } });
     if (doc.resourceType !== 'syllabus') throw new ApiError(422, 'NOT_SYLLABUS', 'Choose a syllabus document.');
@@ -17,7 +17,7 @@ await requireUser(req, ['ADMIN']); const id = z.string().min(1).max(80).parse(re
   } catch (error) { return apiError(error); }
 }
 export async function PATCH(req: NextRequest) {
-  try {    
+  try {
 const user = await requireUser(req, ['ADMIN']); const input = z.object({ documentId: z.string().max(80), metadataHash: z.string().length(64), effectiveFrom: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), plan: curriculumPlan, note: z.string().trim().min(30).max(4000) }).parse(await req.json());
     if (Number.isNaN(Date.parse(input.effectiveFrom)) || new Date(input.effectiveFrom).toISOString().slice(0, 10) !== input.effectiveFrom) throw new ApiError(422, 'INVALID_EDITION_DATE', 'Use the printed effective date.');
     const result = await prisma.$transaction(async tx => {

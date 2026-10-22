@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto';
 import prisma from '@/lib/prisma';
 import { requireUser } from '@/lib/security';
 import { ApiError, apiError } from '@/lib/api';
-import { resolution, questionResolutionConflicts } from '@/services/materials/compile-paper';
+import { resolution, questionResolutionConflicts,sourceFigureConflicts } from '@/services/materials/compile-paper';
 import { pageExtraction } from '@/services/ingestion/trust';
 const state = z.object({ status: z.literal('NEEDS_REVIEW'), revision: z.string(), documentId: z.string(), syllabusVersionId: z.string(), items: z.record(z.string(), z.object({ value: resolution, conflicts: z.array(z.string()), model: z.string(), verifier: z.string() })), blocked: z.array(z.object({ key: z.string(), conflicts: z.array(z.string()) })) });
 const digest = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex');
@@ -50,7 +50,7 @@ export async function PATCH(req: NextRequest) {
         for (const page of r.artifacts) { const source = pageExtraction.safeParse((page.data as Record<string, unknown>).extraction); if (source.success) for (const entry of source.data.learning.keyEntries) if (entry.number === question.number && entry.answer) answers.add(entry.answer); }
       }
       if (answers.size > 1) throw new ApiError(422, 'ANSWER_SOURCES_DISAGREE', 'Resolve the conflicting official keys in source review before approving an answer.');
-      const conflicts = questionResolutionConflicts(question, input.value, new Set(ids.map(i => i.id)), [...answers][0]);
+      const conflicts = [...questionResolutionConflicts(question, input.value, new Set(ids.map(i => i.id)), [...answers][0]),...sourceFigureConflicts(question,artifact.data)];
       // Fix source/key conflicts in the source review, rather than rewriting a printed key here.
       if (conflicts.length) throw new ApiError(422, 'QUESTION_NOT_RESOLVED', conflicts.join(' '));
       const previous = candidate.value; candidate.value = input.value; candidate.conflicts = [];

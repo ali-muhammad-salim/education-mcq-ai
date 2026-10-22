@@ -12,6 +12,12 @@ import { normalizeQuestion } from '@/services/assessment/scoring';
 export const resolution = z.object({ correctOption: z.string().max(8), explanation: z.string().max(12000), optionFeedback: z.array(z.object({ key: z.string().max(8), reason: z.string().max(4000) })).max(20), sloIds: z.array(z.string().max(80)).max(10), mappingStatus: z.enum(['IN_SCOPE', 'OUTSIDE', 'UNCERTAIN']).default('IN_SCOPE'), mappingReason: z.string().max(4000), uncertainty: z.string().max(4000) });
 export const questionResolutionResponse = { type: 'OBJECT', properties: { correctOption: { type: 'STRING' }, explanation: { type: 'STRING' }, optionFeedback: { type: 'ARRAY', items: { type: 'OBJECT', properties: { key: { type: 'STRING' }, reason: { type: 'STRING' } }, required: ['key', 'reason'] } }, sloIds: { type: 'ARRAY', items: { type: 'STRING' } }, mappingStatus: { type: 'STRING', enum: ['IN_SCOPE', 'OUTSIDE', 'UNCERTAIN'] }, mappingReason: { type: 'STRING' }, uncertainty: { type: 'STRING' } }, required: ['correctOption', 'explanation', 'optionFeedback', 'sloIds', 'mappingStatus', 'mappingReason', 'uncertainty'] };
 const digest = (value: string) => createHash('sha256').update(value).digest('hex');
+export function sourceFigureConflicts(question:{number:string;requiresFigure:boolean},data:unknown){
+  if(!question.requiresFigure)return [];
+  const source=z.object({extraction:pageExtraction,crops:z.array(z.object({region:z.number().int().nonnegative(),storageKey:z.string().min(1)}))}).safeParse(data);
+  const available=source.success&&source.data.crops.some(c=>{const r=source.data.extraction.regions[c.region];return r?.questionNumber===question.number&&Boolean(r.box)&&['DIAGRAM','BONDING','FLOWCHART','TABLE'].includes(r.kind);});
+  return available?[]:['The question requires an original figure, but no matching verified crop is available.'];
+}
 export function questionResolutionConflicts(question: { options: { key: string; text: string }[]; printedAnswer: string; continuation: boolean }, value: z.infer<typeof resolution>, allowedIds: Set<string>, officialAnswer?: string) {
   const conflicts: string[] = [];
   const keys = new Set(question.options.map(o => o.key));
@@ -85,7 +91,7 @@ export async function compileReviewedPaper(job: DurableJob, signal: AbortSignal)
     await prisma.durableJob.updateMany({ where: { id: job.id, leaseToken: job.leaseToken, status: 'RUNNING' }, data: { result: { revision, items } } });
   }
   // Cached or human-edited candidates must still obey the current printed keys.
-  for (const { q, key } of source) { const cached = items[key]; if (!cached) continue; cached.conflicts = [...new Set([...cached.conflicts, ...questionResolutionConflicts(q, cached.value, new Set(outcomes.map(o => o.id)), official.get(q.number)?.answer), ...(officialConflicts.has(q.number) ? ['Official answer sources disagree.'] : [])])]; }
+  for (const { q, key,artifact } of source) { const cached = items[key]; if (!cached) continue; cached.conflicts = [...new Set([...cached.conflicts, ...questionResolutionConflicts(q, cached.value, new Set(outcomes.map(o => o.id)), official.get(q.number)?.answer),...sourceFigureConflicts(q,artifact.data), ...(officialConflicts.has(q.number) ? ['Official answer sources disagree.'] : [])])]; }
   const blocked = Object.entries(items).filter(([, v]) => v.conflicts.length).map(([key, v]) => ({ key, conflicts: v.conflicts }));
   if (blocked.length) { await prisma.auditLog.create({ data: { userId: doc.ownerId, action: 'PAPER_QUESTION_REVIEW_REQUIRED', resource: 'KnowledgeDocument', resourceId: doc.id, details: { revision, blocked } } }); return { documentId, status: 'NEEDS_REVIEW', syllabusVersionId: version.id, revision, items, blocked }; }
   const paperId = 'practice-material-' + doc.id;

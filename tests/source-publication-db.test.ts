@@ -28,7 +28,7 @@ describe.skipIf(!url)('Compiled curriculum and human diagram publication', () =>
     page = (await db.knowledgeArtifact.create({ data: { documentId: doc, pageNumber: 1, sourceImageKey: original, content: 'Source', contentHash: sha('source'), data: { extraction: { text: 'Source', continuation: '', regions: [], learning } }, status: 'PENDING_REVIEW' } })).id;
   });
   afterAll(async () => {
-    if (db) {      
+    if (db) {
 const subjects = await db.subject.findMany({ where: { academicClass: { programmeId: programme } }, select: { id: true } }), ids = subjects.map(s => s.id);
       await db.auditLog.deleteMany({ where: { userId: owner } }); await db.durableJob.deleteMany({ where: { ownerId: owner } });
       await db.quiz.deleteMany({ where: { OR: [{ teacherId: owner }, { subjectId: { in: ids } }] } });
