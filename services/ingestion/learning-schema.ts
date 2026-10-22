@@ -1,0 +1,18 @@
+import { z } from 'zod';
+const string = (max: number) => z.string().max(max);
+export const learningPage = z.object({
+  printedExamYear: z.string().regex(/^(?:19\d{2}|20\d{2}|21\d{2}|2200)?$/).default(''),
+  outcomes: z.array(z.object({ grade: z.number().int().min(9).max(12), chapterCode: string(80), chapterTitle: string(500), subtopicCode: string(80), subtopicTitle: string(500), code: string(160), description: string(12000), cognitiveLevel: string(80) })).max(150).default([]),
+  questions: z.array(z.object({ number: string(80), stem: string(20000), marks: z.number().positive().max(100), options: z.array(z.object({ key: string(8), text: string(4000) })).max(20), printedAnswer: string(8), originalSloCode: string(160), continuation: z.boolean() })).max(80).default([]),
+  keyEntries: z.array(z.object({ number: string(80), answer: string(8), notes: string(20000) })).max(150).default([]),
+}).default({ printedExamYear: '', outcomes: [], questions: [], keyEntries: [] });
+const text = { type: 'STRING' };
+export const learningResponse = {  
+type: 'OBJECT', properties: {
+    printedExamYear: { type: 'STRING' },
+    outcomes: { type: 'ARRAY', items: { type: 'OBJECT', properties: { grade: { type: 'INTEGER' }, chapterCode: text, chapterTitle: text, subtopicCode: text, subtopicTitle: text, code: text, description: text, cognitiveLevel: text }, required: ['grade', 'chapterCode', 'chapterTitle', 'subtopicCode', 'subtopicTitle', 'code', 'description', 'cognitiveLevel'] } },
+    questions: { type: 'ARRAY', items: { type: 'OBJECT', properties: { number: text, stem: text, marks: { type: 'NUMBER' }, options: { type: 'ARRAY', items: { type: 'OBJECT', properties: { key: text, text }, required: ['key', 'text'] } }, printedAnswer: text, originalSloCode: text, continuation: { type: 'BOOLEAN' } }, required: ['number', 'stem', 'marks', 'options', 'printedAnswer', 'originalSloCode', 'continuation'] } },
+    keyEntries: { type: 'ARRAY', items: { type: 'OBJECT', properties: { number: text, answer: text, notes: text }, required: ['number', 'answer', 'notes'] } },
+  }, required: ['printedExamYear', 'outcomes', 'questions', 'keyEntries']
+};
+export const learningInstructions = `Also return learning, without replacing the exact page text. printedExamYear is the four-digit exam year explicitly printed in the title/header of this paper, key or marking notes; otherwise empty. Never use a copyright, referenced exam, syllabus year or upload date. For syllabuses, extract EVERY printed outcome with its exact code, wording, chapter and subtopic titles, cognitive level, and grade established by the document index classAllocationFromDocumentIndex; do not guess a grade or infer from chapter ranges. If grade cannot be established omit the row from outcomes but retain its full text and report uncertainty. Do not turn introductory instructions into outcomes. For papers, extract every question number/stem/option literally; printedAnswer and originalSloCode are empty unless actually printed. Never fabricate options or a key. Set continuation=true when the complete question/options are not visible on this page. For official answer-key/e-marking documents, keyEntries contain the exact printed question number, letter and full marking notes; keep explanatory notes verbatim. Nonapplicable arrays are empty. These structured fields must agree with the complete page transcription.`;

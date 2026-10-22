@@ -90,6 +90,8 @@ model SyllabusVersion {
   validTo      DateTime?
   isLatest     Boolean         @default(false)
   fileUrl      String?
+  sourceDocumentId String?
+  sourceDocument KnowledgeDocument? @relation("CompiledSyllabusSource",fields:[sourceDocumentId],references:[id],onDelete:NoAction,onUpdate:NoAction)
   createdAt    DateTime        @default(now())
 
   subject      Subject         @relation(fields: [subjectId], references: [id])
@@ -98,6 +100,7 @@ model SyllabusVersion {
   pastPaperQuestions PastPaperQuestion[]
   knowledgeDocuments KnowledgeDocument[]
   @@unique([id, subjectId])
+  @@index([sourceDocumentId])
 }
 
 model Topic {
@@ -436,6 +439,8 @@ model PastPaper {
   title              String
   sourceFile         String?
   sourceHash         String?
+  sourceDocumentId   String?
+  sourceDocument KnowledgeDocument? @relation("CompiledPaperSource",fields:[sourceDocumentId],references:[id],onDelete:NoAction,onUpdate:NoAction)
   pageCount          Int?
   verificationStatus String   @default("PENDING")
   createdAt          DateTime @default(now())
@@ -1176,6 +1181,8 @@ enum AIGradingMode {
 }
 
 model Quiz {
+  sourceDocumentId String?
+  sourceDocument KnowledgeDocument? @relation("CompiledQuizSource",fields:[sourceDocumentId],references:[id],onDelete:NoAction,onUpdate:NoAction)
   id             String         @id @default(uuid())
   code           String?        @unique
   teacherId      String
@@ -1354,6 +1361,9 @@ model KnowledgeDocument {
   references        KnowledgeReference[] @relation("KnowledgeSource")
   referencedBy      KnowledgeReference[] @relation("KnowledgeReference")
   studyNotes        StudyNote[]
+  compiledSyllabuses SyllabusVersion[] @relation("CompiledSyllabusSource")
+  compiledPapers PastPaper[] @relation("CompiledPaperSource")
+  compiledQuizzes Quiz[] @relation("CompiledQuizSource")
   @@unique([id, syllabusVersionId])
   @@unique([sha256, subjectId, resourceType, pipelineVersion], map: "KnowledgeDocument_source_scope_key")
   @@index([subjectId, syllabusVersionId, status], map: "KnowledgeDocument_scope_idx")

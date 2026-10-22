@@ -7,7 +7,7 @@ from pathlib import Path
 import pymupdf
 import pytest
 from PIL import Image
-from services.ingestion.trusted_renderer import render, validate_box
+from services.ingestion.trusted_renderer import render, validate_box, inventory
 from services.inference.gemini_client import GeminiKeyPool
 
 
@@ -29,6 +29,19 @@ def test_renderer_reaches_pages_after_fifteen_and_bounds_large_images(tmp_path):
     assert max(result['width'], result['height']) <= 2601
     crop = render(source, tmp_path / 'crop.png', 17, [100, 100, 500, 500])
     assert crop['sha256'] and crop['width'] > 0
+
+
+def test_inventory_finds_rear_grade_allocations_without_body_headings(tmp_path):
+    source = tmp_path / 'combined.pdf'
+    with pymupdf.open() as doc:
+        for index in range(24):
+            page = doc.new_page()
+            page.insert_text((40, 60), 'Learning outcomes only' if index != 20 else 'Grade IX topic allocation: Measurement; Grade X: Waves')
+        doc.save(source)
+    result = inventory(source)
+    assert result['totalPages'] == 24
+    assert 21 in result['indexCandidates']
+    assert 24 in result['indexCandidates']
 
 
 def test_exhausted_pool_returns_without_sleeping_and_permission_keys_stay_disabled():

@@ -14,6 +14,7 @@ export const ingestionPayloadSchema = z
       "model_paper",
       "textbook",
       "answer_key",
+      "e_marking",
       "all_defaults",
     ]),
     storageKey: z.string().optional(),
@@ -25,6 +26,7 @@ export const ingestionPayloadSchema = z
     meta: z
       .object({
         title: z.string().max(240).optional(),
+        syllabusEffectiveFrom:z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
         subject: z.string().max(160).default("Physics"),
         board: z.string().max(160).default("AKU-EB"),
         classLevel: z.string().max(80).default("Class IX"),
@@ -63,8 +65,9 @@ export async function handleUpload(req: NextRequest) {
         "Choose a PDF smaller than 50 MB.",
       );
     const resourceType = z
-      .enum(["syllabus", "past_paper", "model_paper", "textbook"])
+      .enum(["syllabus", "past_paper", "model_paper", "textbook","answer_key","e_marking"])
       .parse(form.get("resourceType") || form.get("type") || "syllabus");
+    if(['answer_key','e_marking'].includes(resourceType)&&!form.get('parentDocumentId'))throw new ApiError(422,'PAPER_REFERENCE_REQUIRED','Choose the matching original paper before uploading its answer key or marking notes.');
     const asset = await uploadEducationalAsset(
       Buffer.from(await file.arrayBuffer()),
       file.name,
@@ -93,9 +96,11 @@ export async function handleUpload(req: NextRequest) {
       studyResources:
         resourceType === "textbook" && form.get("studyResources") === "true",
       storageKey: asset.storageKey,
+      parentDocumentId:form.get('parentDocumentId') || undefined,
       keyStorageKey,
       meta: {
         title: file.name.slice(0, 240),
+        syllabusEffectiveFrom:form.get('syllabusEffectiveFrom') || undefined,
         paperCode: form.get("paperCode") || undefined,
         subject: form.get("subject") || "Physics",
         board: form.get("board") || "AKU-EB",

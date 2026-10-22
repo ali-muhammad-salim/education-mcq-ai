@@ -51,14 +51,36 @@ def render(source, output, page_number=0, box=None):
         return {"totalPages": len(doc), "pageNumber": page_number, "width": pix.width, "height": pix.height, "sha256": hashlib.sha256(target.read_bytes()).hexdigest()}
 
 
+def inventory(source):
+    """Read every page to locate rear class/chapter tables before page processing.
+
+    Return candidate page numbers only: no silent text truncation or OCR claims.
+    Scanned PDFs receive the final twelve pages for visual index discovery.
+    """
+    import re
+    with pymupdf.open(source) as doc:
+        if doc.needs_pass or not 0 < len(doc) <= 1000:
+            raise ValueError("Choose an unencrypted PDF with 1..1000 pages")
+        candidates = []
+        for index, page in enumerate(doc):
+            text = page.get_text()
+            allocation = re.search(r'(class|grade|ssc|hssc|year)\s*[-–:]?\s*(ix|xii|xi|x|9|10|11|12|i|ii|first|second)\b', text, re.I)
+            chapter = re.search(r'chapter|unit|topic|content|allocation|teaching\s+hours', text, re.I)
+            if allocation and chapter:
+                candidates.append(index + 1)
+        rear = list(range(max(1, len(doc) - 11), len(doc) + 1))
+        return {"totalPages": len(doc), "indexCandidates": sorted(set(candidates + rear))}
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("source")
     parser.add_argument("output")
     parser.add_argument("--page", type=int, default=0)
     parser.add_argument("--box")
+    parser.add_argument("--inventory", action="store_true")
     args = parser.parse_args()
-    print(json.dumps(render(args.source, args.output, args.page, json.loads(args.box) if args.box else None)))
+    print(json.dumps(inventory(args.source) if args.inventory else render(args.source, args.output, args.page, json.loads(args.box) if args.box else None)))
 
 
 if __name__ == "__main__":

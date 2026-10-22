@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import AuthModal from '@/components/AuthModal';
+import PaperReferencePicker from '@/components/PaperReferencePicker';
 
 interface IngestProgress {
   status: 'IDLE' | 'QUEUED' | 'RUNNING' | 'COMPLETED' | 'FAILED' | 'ERROR';
@@ -38,10 +39,12 @@ export default function ResourceUploadCenterPage() {
   const [board, setBoard] = useState('AKU-EB');
   const [classLevel, setClassLevel] = useState('Class IX');
   const [subject, setSubject] = useState('Physics');
-  const [resourceType, setResourceType] = useState<'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'pacing_guide'>('past_paper');
+  const [resourceType, setResourceType] = useState<'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'answer_key' | 'e_marking' | 'pacing_guide'>('past_paper');
 
   // Past / Model Paper specific configurations
   const [examYear, setExamYear] = useState<string>('auto');
+  const [syllabusEffectiveFrom,setSyllabusEffectiveFrom]=useState('');
+  const [parentDocumentId,setParentDocumentId]=useState('');
   const [paperComponent, setPaperComponent] = useState<string>('auto');
   const [solutionStatus, setSolutionStatus] = useState<string>('auto');
   const [keyFile, setKeyFile] = useState<File | null>(null);
@@ -53,7 +56,7 @@ export default function ResourceUploadCenterPage() {
     subject?: string;
     paper?: string;
     solution?: string;
-    resourceType?: 'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'pacing_guide';
+    resourceType?: 'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'answer_key' | 'e_marking' | 'pacing_guide';
   } | null>(null);
 
   const [jobId, setJobId] = useState('');
@@ -95,7 +98,7 @@ export default function ResourceUploadCenterPage() {
       subject?: string;
       paper?: string;
       solution?: string;
-      resourceType?: 'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'pacing_guide';
+      resourceType?: 'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'answer_key' | 'e_marking' | 'pacing_guide';
     } = {};
 
     // 1. Resource Type
@@ -218,6 +221,7 @@ export default function ResourceUploadCenterPage() {
   const handleManualUpload = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!file) return;
+    if(['answer_key','e_marking'].includes(resourceType)&&!parentDocumentId){setUploadError('Choose the matching original paper.');return;}
 
     setUploading(true);
     setUploadError(null);
@@ -243,7 +247,9 @@ export default function ResourceUploadCenterPage() {
     formData.append('classLevel', classLevel);
     formData.append('subject', subject);
     formData.append('resourceType', resourceType);
+    if(['answer_key','e_marking'].includes(resourceType)&&parentDocumentId)formData.append('parentDocumentId',parentDocumentId);
     formData.append('examYear', examYear);
+    if(resourceType==='syllabus'&&syllabusEffectiveFrom)formData.append('syllabusEffectiveFrom',syllabusEffectiveFrom);
     formData.append('paperComponent', paperComponent);
     formData.append('solutionStatus', keyFile ? 'solved_has_key' : solutionStatus);
     formData.append('autoRun', 'true');
@@ -595,13 +601,17 @@ export default function ResourceUploadCenterPage() {
                   <option value="model_paper">📝 Official Model Exam Paper</option>
                   <option value="syllabus">📘 Curriculum / Syllabus Standard</option>
                   <option value="textbook">📚 Official Textbook</option>
+                  <option value="answer_key">Answer key</option>
+                  <option value="e_marking">E-marking notes</option>
                   <option disabled value="pacing_guide">⏱️ Teacher Pacing Guide (processing not available yet)</option>
                 </select>
               </div>
             </div>
 
             {/* Specialized Past / Model Paper Controls */}
-            {(resourceType === 'past_paper' || resourceType === 'model_paper') && (
+            {['answer_key','e_marking'].includes(resourceType)&&<PaperReferencePicker board={board} classLevel={classLevel} subject={subject} value={parentDocumentId} onChange={setParentDocumentId}/>}
+            {resourceType==='syllabus'&&<label style={{display:'grid',gap:8,margin:'1rem 0'}}>Syllabus effective date<input type="date" value={syllabusEffectiveFrom} onChange={e=>setSyllabusEffectiveFrom(e.target.value)} style={{minHeight:44,padding:10,background:'var(--card-bg)',color:'var(--text-color)',border:'1px solid var(--border-color)',borderRadius:8}}/><small>Use the board’s effective date. The rear chapter index determines each class. An unknown date keeps the new edition in review.</small></label>}
+            {(['past_paper','model_paper','answer_key','e_marking'].includes(resourceType)) && (
               <div style={{
                 background: '#fbfcfc',
                 border: '1px solid #e1e8e5',

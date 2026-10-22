@@ -8,6 +8,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PaperViewerClient from "./PaperViewerClient";
 import { getFallbackPaper } from "@/lib/paperDataService";
+import {publicMaterialWhere} from '@/lib/materialVisibility';
 
 export const dynamic = "force-dynamic";
 
@@ -24,12 +25,11 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
   let paper: any = null;
   try {
     paper = await prisma.pastPaper.findFirst({
-      where: {
-        OR: [{ id: cleanId }, { paperCode: cleanId }],
-      },
+      where: {AND:[{OR: [{ id: cleanId }, { paperCode: cleanId }]},{OR:[{sourceDocumentId:null},{sourceDocument:publicMaterialWhere}]}]},
       include: {
         academicClass: { include: { programme: { include: { board: true } } } },
         subject: true,
+        sourceDocument:{select:{catalogMetadata:true}},
         questions: {
           include: {
             topics: { include: { topic: true } },
@@ -56,7 +56,14 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     }
   }
 
+  if(paper.sourceDocumentId&&paper.sourceDocument?.catalogMetadata?.compiledPaperId!==paper.id)return notFound();
+
   // Sort questions numerically
+  if(paper.sourceDocumentId){
+    const active=await prisma.syllabusVersion.findMany({where:{subjectId:paper.subjectId,isLatest:true,OR:[{sourceDocumentId:null},{sourceDocument:publicMaterialWhere}]},select:{id:true}});
+    const allowed=new Set(active.map(v=>v.id));
+    paper.questions=paper.questions.map((q:any)=>({...q,sourceRegion:{...q.sourceRegion,current_syllabus_reviewed:allowed.has(q.sourceRegion?.current_syllabus_version)}}));
+  }
   const sortedQuestions = [...(paper.questions || [])].sort((a, b) => {
     const numA =
       parseInt(String(a.questionNumber || "").replace(/\D/g, "")) || 0;

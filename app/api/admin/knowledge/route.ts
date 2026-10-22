@@ -7,6 +7,9 @@ import { pageExtraction, searchableSource } from '@/services/ingestion/trust';
 import { createHash } from 'node:crypto';
 import { Prisma } from '@prisma/client';
 import { scheduleStudyPack } from '@/services/study/library';
+import {compileReviewedSyllabus} from '@/services/materials/compile-syllabus';
+import {scheduleMaterialCompilation} from '@/services/materials/schedule';
+import {learningTranscriptionConflicts} from '@/services/ingestion/learning-validation';
 
 export async function GET(req: NextRequest) {
   try {
@@ -35,6 +38,7 @@ export async function PATCH(req: NextRequest) {
       if (artifact.document.status !== 'NEEDS_REVIEW') throw new ApiError(409, 'PROCESSING_INCOMPLETE', 'Wait for the document to finish processing before review.');
       if (input.status === 'APPROVED' && data.conflicts.length && input.note.length < 30) throw new ApiError(400, 'EXPLAIN_CONFLICT_RESOLUTION', 'Explain how you checked and resolved the flagged source conflicts (at least 30 characters).');
       const extraction = input.status === 'APPROVED' ? input.extraction || data.extraction : data.extraction;
+      if(input.status==='APPROVED'){const issues=learningTranscriptionConflicts(extraction);if(issues.length)throw new ApiError(422,'STRUCTURED_SOURCE_MISMATCH',issues.join(' '));}
       if (extraction.regions.length !== data.extraction.regions.length || extraction.regions.some((r, i) => JSON.stringify(r.box) !== JSON.stringify(data.extraction.regions[i].box) || r.kind !== data.extraction.regions[i].kind)) throw new ApiError(422, 'SOURCE_GEOMETRY_CHANGED', 'Keep region order, type and crop coordinates unchanged during review. Reprocess the source to change crop geometry.');
       const ids = [...new Set(extraction.regions.flatMap(r => r.sloIds))];
       const slos = ids.length ? await tx.sLO.count({ where: { id: { in: ids }, subtopic: { topic: { syllabusVersionId: artifact.document.syllabusVersionId || 'unmapped' } } } }) : 0;
@@ -64,8 +68,10 @@ export async function PATCH(req: NextRequest) {
           }
         }
       }
-      return { id: artifact.id, status: input.status };
-    });
+      const publication= input.status==='APPROVED' && artifact.document.resourceType==='syllabus' ? await compileReviewedSyllabus(tx,artifact.documentId):undefined;
+      if(input.status==='APPROVED')await scheduleMaterialCompilation(tx,artifact.documentId);
+      return { id: artifact.id, status: input.status,publication };
+    },{timeout:60000});
     return NextResponse.json(result);
   } catch (error) { return apiError(error); }
 }

@@ -8,6 +8,8 @@ import { answerPayloadSchema, saveAnswerSchema } from '@/lib/validations/assessm
 import { FrozenQuestion, answerFeedback, gradeAnswer, hasAnswer, normalizeQuestion, snapshotSchema, studentQuestion } from './scoring';
 import { z } from 'zod';
 import { randomInt } from 'node:crypto';
+import {publicMaterialWhere} from '@/lib/materialVisibility';
+import {mappedChapterQuestions,sourceChoiceContent} from '@/services/materials/practice';
 
 export const quizInclude = { settings: true, questions: { orderBy: { orderIndex: 'asc' as const } }, teacher: { select: { name: true } } } satisfies Prisma.QuizInclude;
 export type LoadedQuiz = Prisma.QuizGetPayload<{ include: typeof quizInclude }>;
@@ -34,6 +36,16 @@ export function sourcePracticeQuestion(q: QuestionData) {
 }
 
 export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
+  const chapter=/^CURRICULUM:([^:]{1,100}):(ALL|R|U|A|DIAGRAM)$/i.exec(identifier);
+  if(chapter){
+    const {topic,questions}=await mappedChapterQuestions(chapter[1],chapter[2].toUpperCase());
+    if(!questions.length)throw new ApiError(404,'CHAPTER_QUESTIONS_UNAVAILABLE','No reviewed questions are available for this chapter filter.');
+    const hash=(await import('node:crypto')).createHash('sha256').update(questions.map(q=>q.id).join(':')).digest('hex').slice(0,24);
+    const id='practice-chapter-'+hash;
+    const owner=await prisma.user.upsert({where:{email:'practice-content@system.invalid'},update:{},create:{email:'practice-content@system.invalid',name:'Practice Library',role:'TEACHER',status:'SUSPENDED'}});
+    const content=questions.map(sourceChoiceContent);
+    return prisma.quiz.upsert({where:{id},update:{},include:quizInclude,create:{id,code:id,teacherId:owner.id,subjectId:topic.syllabusVersion.subjectId,classId:topic.syllabusVersion.subject.classId,title:topic.name+' — mapped past questions',status:'PUBLISHED',visibility:'PUBLIC',durationMin:50,totalMarks:content.reduce((s,q)=>s+q.marks,0),questions:{create:content.map((q,i)=>({orderIndex:i+1,marks:q.marks,questionData:q}))},settings:{create:{maxAttempts:100,allowRetries:true,showCorrectAnswers:true,immediateFeedback:true,tabMonitoringEnabled:false}}}});
+  }
   const quiz = await prisma.quiz.findFirst({ where: { OR: [{ id: identifier }, { code: identifier.toUpperCase() }] }, include: quizInclude });
   if (quiz) return quiz;
   const key = identifier.toUpperCase();
@@ -62,6 +74,17 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
 }
 
 export async function assertQuizAccess(quiz: LoadedQuiz, user: AuthUser | null, taking = false, db: Prisma.TransactionClient = prisma) {
+  if(quiz.id.startsWith('practice-chapter-')){
+    const ids=quiz.questions.map(q=>(q.questionData as Record<string,Prisma.JsonValue>).sourceQuestionId).filter((id):id is string=>typeof id==='string');
+    const sources=await db.pastPaperQuestion.findMany({where:{id:{in:ids},verified:true,syllabusVersion:{isLatest:true,OR:[{sourceDocumentId:null},{sourceDocument:publicMaterialWhere}]},pastPaper:{sourceDocument:publicMaterialWhere}},select:{pastPaperId:true,pastPaper:{select:{sourceDocument:{select:{catalogMetadata:true,totalPages:true,_count:{select:{artifacts:true}}}}}}}});
+    if(ids.length!==quiz.questions.length||sources.length!==ids.length||sources.some(q=>{const d=q.pastPaper.sourceDocument;return !d||d.totalPages!==d._count.artifacts||(d.catalogMetadata as Record<string,unknown>|null)?.compiledPaperId!==q.pastPaperId;}))throw new ApiError(404,'CHAPTER_SOURCE_CHANGED','The chapter source or syllabus changed. Start a fresh chapter practice.');
+  }
+  if(quiz.sourceDocumentId){
+    const source=await db.knowledgeDocument.findFirst({where:{...publicMaterialWhere,id:quiz.sourceDocumentId},select:{catalogMetadata:true,totalPages:true,_count:{select:{artifacts:true}}}});
+    if(!source||source.totalPages!==source._count.artifacts||(source.catalogMetadata as Record<string,unknown>|null)?.compiledPaperId!==quiz.id)throw new ApiError(404,'SOURCE_WITHDRAWN','This source assessment was revised or is awaiting review. Start its current version.');
+    const current=await db.pastPaperQuestion.count({where:{pastPaperId:quiz.id,verified:true,syllabusVersion:{isLatest:true,OR:[{sourceDocumentId:null},{sourceDocument:publicMaterialWhere}]}}});
+    if(current!==quiz.questions.length)throw new ApiError(404,'CURRICULUM_CHANGED','This paper is being verified against the current syllabus.');
+  }
   const owner = user && (user.role === 'ADMIN' || quiz.teacherId === user.id);
   if (owner && !taking) return;
   if (quiz.status !== 'PUBLISHED') throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Assessment is not published.');

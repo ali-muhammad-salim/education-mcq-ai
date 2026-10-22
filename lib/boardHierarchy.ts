@@ -325,6 +325,10 @@ export async function getClassSubjects(
   );
 
   const subjectIds = subjects.map((s) => s.id);
+  if(subjectIds.length){
+    const editions=await prisma.syllabusVersion.findMany({where:{subjectId:{in:subjectIds},isLatest:true,sourceDocument:publicMaterialWhere},select:{subjectId:true,sourceDocument:{select:{totalPages:true,_count:{select:{artifacts:true}}}}}});
+    for(const edition of editions)if(edition.sourceDocument&&edition.sourceDocument.totalPages>0&&edition.sourceDocument.totalPages===edition.sourceDocument._count.artifacts)publishedSubjects.add(edition.subjectId);
+  }
   const noteSubjects = subjectIds.length
     ? await prisma.$queryRaw<{ subjectId: string }[]>(
         Prisma.sql`SELECT DISTINCT v."subjectId" FROM "StudyNote" n JOIN "KnowledgeDocument" d ON d.id=n."sourceDocumentId" JOIN "Topic" t ON t.id=n."topicId" JOIN "SyllabusVersion" v ON v.id=n."syllabusVersionId" AND v.id=t."syllabusVersionId" AND v.id=d."syllabusVersionId" WHERE v."subjectId" IN (${Prisma.join(subjectIds)}) AND ${publishedStudyWhere}`,

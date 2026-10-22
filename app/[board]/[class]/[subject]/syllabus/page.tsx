@@ -8,6 +8,7 @@ import styles from "@/components/MaterialLayout.module.css";
 import physicsIX from "@/data/physics/ssc1_exact_syllabus.json";
 import physicsX from "@/data/physics/ssc2_exact_syllabus.json";
 import SyllabusClient from "./SyllabusClient";
+import {publishedCurriculum} from '@/services/materials/curriculum';
 export const dynamic = "force-dynamic";
 export default async function Page({
   params,
@@ -17,6 +18,7 @@ export default async function Page({
   const raw = await params,
     scope = studyScope(raw.board, raw.class, raw.subject);
   if (!scope) notFound();
+  const compiled=await publishedCurriculum(scope.board.shortCode,scope.classDef.level,scope.meta.title);
   const docs = await subjectMaterials(
     raw.board,
     raw.class,
@@ -48,11 +50,11 @@ export default async function Page({
           }))}
         />
       )}{" "}
-      {legacy ? (
+      {legacy || compiled ? (
         <DocumentViews
           title="Physics syllabus"
           original={
-            "/materials/ssc/physics/ssc-" +
+            compiled?.original || "/materials/ssc/physics/ssc-" +
             (scope.classDef.level === 9 ? "1" : "2") +
             "/physics-ssc-" +
             (scope.classDef.level === 9 ? "i" : "ii") +
@@ -62,7 +64,7 @@ export default async function Page({
           }
         >
           <SyllabusClient board={scope.board} classDef={scope.classDef} meta={scope.meta} baseUrl={scope.baseUrl}
-            units={scope.classDef.level === 9 ? physicsIX : physicsX}
+            units={compiled?.units || (scope.classDef.level === 9 ? physicsIX : physicsX)}
           />
         </DocumentViews>
       ) : (
