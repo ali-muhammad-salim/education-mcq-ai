@@ -11,6 +11,9 @@ import {mappedChapterGroups} from '@/services/materials/practice';
 import MaterialList from '@/components/MaterialList';
 import { mcqCategories, type McqCategory } from '@/lib/mcqCategories';
 import { publishedCurriculum } from '@/services/materials/curriculum';
+import past2025 from '@/data/physics/ssc1_2025_past_mcqs.json';
+import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
+import { applyAnswerDecision } from '@/lib/legacyAnswerReview';
 
 interface PageProps {
   params: Promise<{ board: string; class: string; subject: string }>;
@@ -36,6 +39,7 @@ export default async function SubjectMcqsPage({ params, category }: PageProps) {
   const baseUrl = `/${board.id}/${classRoman}/${meta.slug}`;
 
   const mcqsData = legacy?(classRoman === 'IX' ? ssc1Mcqs : ssc2Mcqs):[];
+  const answerDecisions=category && legacy && classDef.level===9 ? await publishedAnswerDecisions() : [];
 
   return (
     <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem 1rem 5rem 1rem', fontFamily: "'Inter', sans-serif" }}>
@@ -55,6 +59,7 @@ export default async function SubjectMcqsPage({ params, category }: PageProps) {
         meta={meta}
         baseUrl={baseUrl}
         questions={mcqsData}
+        annualQuestions={legacy && classDef.level===9 ? past2025.map(q=>({...q,...applyAnswerDecision({},q.questionNumber,q.stem,q.options,answerDecisions)})) : []}
         mappedChapters={mappedChapters}
         initialCategory={category}
         useReviewedLegacy={legacy && classDef.level===9 && !await publishedCurriculum(board.shortCode,classDef.level,meta.title)}

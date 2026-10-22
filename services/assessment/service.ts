@@ -10,6 +10,8 @@ import { z } from 'zod';
 import { randomInt } from 'node:crypto';
 import {publicMaterialWhere} from '@/lib/materialVisibility';
 import {mappedChapterQuestions,sourceChoiceContent} from '@/services/materials/practice';
+import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
+import { applyAnswerDecision, legacyAnswerCases } from '@/lib/legacyAnswerReview';
 
 export const quizInclude = { settings: true, questions: { orderBy: { orderIndex: 'asc' as const } }, teacher: { select: { name: true } } } satisfies Prisma.QuizInclude;
 export type LoadedQuiz = Prisma.QuizGetPayload<{ include: typeof quizInclude }>;
@@ -95,6 +97,18 @@ export async function assertQuizAccess(quiz: LoadedQuiz, user: AuthUser | null, 
   if (taking && ((quiz.scheduleStart && quiz.scheduleStart > now) || (quiz.scheduleEnd && quiz.scheduleEnd <= now))) throw new ApiError(403, 'OUTSIDE_SCHEDULE', 'This assessment is outside its scheduled availability.');
 }
 
+async function freezeReviewedQuiz(quiz:LoadedQuiz,db:Prisma.TransactionClient) {
+  const legacyAnnual=!quiz.sourceDocumentId && (/^practice-PHY-IX-2025-P1(?:$|-SET-[0-9-]+$)/.test(quiz.id)||quiz.code==='PHY-IX-2025-P1');
+  if(!legacyAnnual)return freeze(quiz);
+  const decisions=await publishedAnswerDecisions(db);
+  if(!decisions.some(item=>item.status==='APPROVE_CORRECTION'))return freeze(quiz);
+  return freeze({...quiz,questions:quiz.questions.map(q=>{
+    const content=normalizeQuestion(q.questionData), options=Object.fromEntries(content.options.map(option=>[option.id,option.text]));
+    const item=legacyAnswerCases.find(candidate=>candidate.stem.replace(/\s+/g,' ').trim()===content.stemText.replace(/\s+/g,' ').trim());
+    const approved=item?applyAnswerDecision({},item.number,content.stemText,options,decisions):{};
+    return approved.correct_answer?{...q,questionData:{...content,explanation:approved.explanation,options:content.options.map(option=>({...option,isCorrect:option.id===approved.correct_answer,feedback:''}))}}:q;
+  })});
+}
 function freeze(quiz: LoadedQuiz): FrozenQuestion[] {
   const shuffle = <T,>(items: T[]) => { for (let i = items.length - 1; i > 0; i--) { const j = randomInt(i + 1); [items[i], items[j]] = [items[j], items[i]]; } return items; };
   const questions = quiz.questions.map(q => { const content = normalizeQuestion(q.questionData); if (quiz.settings?.randomizeOptions) content.options = shuffle([...content.options]); return { id: q.id, orderIndex: q.orderIndex, marks: q.marks, content }; });
@@ -124,7 +138,7 @@ export async function startAttempt(identifier: string, user: AuthUser, preferenc
     const assignmentDeadline = assigned.length ? Math.max(...assigned.map(a => a.deadline?.getTime() ?? Infinity)) : Infinity;
     if (assignmentDeadline <= now.getTime()) throw new ApiError(403, 'ASSIGNMENT_CLOSED', 'The assignment deadline has passed.');
     const deadline = new Date(Math.min(now.getTime() + duration * 60000, current.scheduleEnd?.getTime() ?? Infinity, assignmentDeadline));
-    const attempt = await tx.quizAttempt.create({ data: { quizId: quiz.id, studentId: user.id, attemptNumber: count + 1, startedAt: now, deadline, questionSnapshot: freeze(current) }, include: { answers: true } });
+    const attempt = await tx.quizAttempt.create({ data: { quizId: quiz.id, studentId: user.id, attemptNumber: count + 1, startedAt: now, deadline, questionSnapshot: await freezeReviewedQuiz(current,tx) }, include: { answers: true } });
     await tx.durableJob.create({ data: { ownerId: user.id, kind: 'EXAM_FINALIZE', availableAt: deadline, payload: { quizId: quiz.id, attemptId: attempt.id } } });
     await tx.assessmentEvent.create({ data: { attemptId: attempt.id, eventType: 'ATTEMPT_STARTED' } });
     return attemptResponse(attempt, current);

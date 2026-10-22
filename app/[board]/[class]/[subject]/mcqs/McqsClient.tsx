@@ -21,6 +21,7 @@ import TakeQuizModal from '@/components/TakeQuizModal';
 interface Props {
   initialCategory?: McqCategory;
   useReviewedLegacy?: boolean;
+  annualQuestions?: any[];
   mappedChapters?:{id:string;name:string;questions:any[]}[];
   board: BoardInfo;
   classDef: ClassDefinition;
@@ -188,7 +189,7 @@ const CLASS_X_UNITS: ChapterDef[] = [
   }
 ];
 
-export default function McqsClient({ board, classDef, meta, baseUrl, questions,mappedChapters=[],initialCategory,useReviewedLegacy=false }: Props) {
+export default function McqsClient({ board, classDef, meta, baseUrl, questions,mappedChapters=[],initialCategory,useReviewedLegacy=false,annualQuestions=past2025 }: Props) {
   const [mappedChapter,setMappedChapter]=useState<string|null>(null);
   // Navigation Track State: 'hub' (Category Directory) | 'practice'
   const [currentView, setCurrentView] = useState<'hub' | 'practice'>('hub');
@@ -211,7 +212,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   ];
 
   // Filtered Questions for Practice Mode
-  const questionPool = mappedChapter?mappedChapters.find(c=>c.id===mappedChapter)?.questions||[]:practiceSource === 'annual' ? (classDef.roman === 'IX' ? past2025.map(q => ({ ...q, ...annualOriginalReference(q.questionNumber), ...(useReviewedLegacy?annualCurrentMapping(q.questionNumber,q.stem):{}), questionNumber: Number(q.questionNumber), cognitiveLevel: ({K:'Remembering', U:'Understanding', A:'Application'} as Record<string,string>)[q.cognitiveLevel] || q.cognitiveLevel })) : []) : questions;
+  const questionPool = mappedChapter?mappedChapters.find(c=>c.id===mappedChapter)?.questions||[]:practiceSource === 'annual' ? (classDef.roman === 'IX' ? annualQuestions.map(q => ({ ...q, ...annualOriginalReference(q.questionNumber), ...(q.answer_review_note?{answer_review_note:q.answer_review_note}:{}), ...(useReviewedLegacy?annualCurrentMapping(q.questionNumber,q.stem):{}), questionNumber: Number(q.questionNumber), cognitiveLevel: ({K:'Remembering', U:'Understanding', A:'Application'} as Record<string,string>)[q.cognitiveLevel] || q.cognitiveLevel })) : []) : questions;
   const activeQuestions = questionPool.filter(q => {
     // If a unit is selected, filter by question number range
     if (selectedUnit) {
