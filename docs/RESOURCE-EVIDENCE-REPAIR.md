@@ -1,0 +1,13 @@
+# Resource evidence repair
+
+The old annual-paper data mixed historical SLO codes with a newer syllabus and left every current mapping pending. The bundled official 2025 key confirms the printed exam-year codes and answers; these are separate from the current syllabus.
+
+This release transcribes all 40 official key rows, adds 35 source-reviewed semantic current-syllabus links, and leaves five uncertain questions pending. Legacy mappings require an exact known question stem and unchanged outcome text; a newer compiled curriculum disables these annotations. The ideal-rope tension interpretation in Q12 is separately flagged for an educator while preserving the board's printed D (80 N). Grades and existing attempts are not rewritten.
+
+MCQs now have a compact category directory with four direct routes. Practice questions link back to their paper and distinguish original/current SLO references. Uploaded source-backed papers automatically list their published linked keys and e-marking notes. The legacy Physics IX 2025 key and 21-page e-marking PDF are bundled and linked from the annual archive and paper pages. A solved-view URL opens the existing answers and available explanations; it does not fabricate official marking notes or new explanations.
+
+The syllabus original control now opens the complete 58-page source. The class-specific digital tables remain searchable. The audit restores 11 missing Class X optics outcomes and the truncated phrase about damp conditions. All 151 Class IX and 186 Class X printed codes are present. Printed cognitive marks, including E, and selected displayed formulas were checked against source evidence. Code coverage alone is not a guarantee that every character and visual element in the digital tables is identical; original PDFs remain the authoritative full document.
+
+Future syllabus compilation rejects omitted printed SLO codes or chapters named by the reviewed class index. Answer-key extraction now retains printed original SLO codes and compilation propagates them separately from current semantic mappings. Source validation rejects original codes absent from the transcription. Existing independent answer/mapping audits and publication gates remain in place. Official answer keys and marking notes must be supplied as sources; generated explanations are supplementary.
+
+Validation: 171 tests; lint, TypeScript and production build; local Chrome verification of category routes, mobile width, official key table/PDF, current links and the complete original syllabus/e-marking PDFs. Read-only `scripts/audit-legacy-syllabus.py` compares the bundled outcomes with their original class sections. No schema migration.

@@ -32,7 +32,7 @@ export default function DocumentViews({
             onClick={() => setView("digital")}
           >
             <AlignLeft size={16} />
-            Digital
+            Digital text
           </button>
         )}
         {original && (
@@ -42,7 +42,7 @@ export default function DocumentViews({
             onClick={() => setView("original")}
           >
             <FileText size={16} />
-            Original
+            Original PDF
           </button>
         )}
         {original && (

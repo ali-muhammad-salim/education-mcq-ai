@@ -9,6 +9,9 @@ import { notFound } from "next/navigation";
 import PaperViewerClient from "./PaperViewerClient";
 import { getFallbackPaper } from "@/lib/paperDataService";
 import {publicMaterialWhere} from '@/lib/materialVisibility';
+import { annualOriginalReference, annualCurrentMapping, physics2025Resources } from '@/lib/legacyPaperEvidence';
+import { publishedCurriculum } from '@/services/materials/curriculum';
+import { paperResources } from '@/services/materials/references';
 
 export const dynamic = "force-dynamic";
 
@@ -72,7 +75,10 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     return numA - numB;
   });
 
-  const displayQuestions = sortedQuestions.map(presentPaperQuestion);
+  const legacyAnnual = !paper.sourceDocumentId && paper.paperCode==='PHY-IX-2025-P1';
+  const useReviewedLegacy = legacyAnnual && !await publishedCurriculum('AKU-EB',9,'Physics');
+  const resources = await paperResources(paper.sourceDocumentId);
+  const displayQuestions = sortedQuestions.map(q=>presentPaperQuestion(legacyAnnual?{...q,sourceRegion:{...q.sourceRegion,...annualOriginalReference(q.questionNumber),...(useReviewedLegacy?annualCurrentMapping(q.questionNumber,q.questionText):{})}}:q));
   const isGrade9 =
     paper.academicClass?.level === 9 ||
     paper.academicClass?.name?.includes("IX");
@@ -109,6 +115,8 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
         ]}
       />
       <h1 title={paper.title}>{paperLabel(paper.paperCode, paper.title)}</h1>
+      {resources.length>0 && <nav className={styles.actions} aria-label="Paper resources">{resources.map(item=><Link className={styles.button} key={item.href} href={item.href}>{item.label}</Link>)}</nav>}
+      {!paper.sourceDocumentId && /^PHY-IX-2025-P[12]$/.test(paper.paperCode||'') && <nav className={styles.actions} aria-label="Paper resources">{physics2025Resources.map(item=><Link className={styles.button} key={item.href} href={item.href}>{item.label}</Link>)}<Link className={styles.button} href="/past-papers/PHY-IX-2025-P1?view=solved">Paper 1 · answers & explanations</Link></nav>}
       <Suspense fallback={<p>Loading paper…</p>}>
         <PaperViewerClient
           paper={paper}

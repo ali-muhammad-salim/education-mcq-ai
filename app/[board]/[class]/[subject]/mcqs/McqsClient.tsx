@@ -13,9 +13,14 @@ import MathText from '@/components/MathText';
 import StructuredContent from '@/components/StructuredContent';
 import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 import past2025 from '@/data/physics/ssc1_2025_past_mcqs.json';
+import { mcqCategories, type McqCategory } from '@/lib/mcqCategories';
+import { annualOriginalReference, annualCurrentMapping } from '@/lib/legacyPaperEvidence';
+import QuestionSource from '@/components/QuestionSource';
 import TakeQuizModal from '@/components/TakeQuizModal';
 
 interface Props {
+  initialCategory?: McqCategory;
+  useReviewedLegacy?: boolean;
   mappedChapters?:{id:string;name:string;questions:any[]}[];
   board: BoardInfo;
   classDef: ClassDefinition;
@@ -183,11 +188,11 @@ const CLASS_X_UNITS: ChapterDef[] = [
   }
 ];
 
-export default function McqsClient({ board, classDef, meta, baseUrl, questions,mappedChapters=[] }: Props) {
+export default function McqsClient({ board, classDef, meta, baseUrl, questions,mappedChapters=[],initialCategory,useReviewedLegacy=false }: Props) {
   const [mappedChapter,setMappedChapter]=useState<string|null>(null);
   // Navigation Track State: 'hub' (Category Directory) | 'practice'
   const [currentView, setCurrentView] = useState<'hub' | 'practice'>('hub');
-  const [hubTab, setHubTab] = useState<'chapter_wise' | 'past_papers' | 'full_book' | 'cognitive'>(questions.length?'chapter_wise':'past_papers');
+  const [hubTab] = useState<'chapter_wise' | 'past_papers' | 'full_book' | 'cognitive'>(initialCategory || (questions.length?'chapter_wise':'past_papers'));
   const [selectedUnit, setSelectedUnit] = useState<ChapterDef | null>(null);
   const [practiceTitle, setPracticeTitle] = useState<string>('All Questions Practice');
 
@@ -206,7 +211,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   ];
 
   // Filtered Questions for Practice Mode
-  const questionPool = mappedChapter?mappedChapters.find(c=>c.id===mappedChapter)?.questions||[]:practiceSource === 'annual' ? (classDef.roman === 'IX' ? past2025.map(q => ({ ...q, questionNumber: Number(q.questionNumber), cognitiveLevel: ({K:'Remembering', U:'Understanding', A:'Application'} as Record<string,string>)[q.cognitiveLevel] || q.cognitiveLevel })) : []) : questions;
+  const questionPool = mappedChapter?mappedChapters.find(c=>c.id===mappedChapter)?.questions||[]:practiceSource === 'annual' ? (classDef.roman === 'IX' ? past2025.map(q => ({ ...q, ...annualOriginalReference(q.questionNumber), ...(useReviewedLegacy?annualCurrentMapping(q.questionNumber,q.stem):{}), questionNumber: Number(q.questionNumber), cognitiveLevel: ({K:'Remembering', U:'Understanding', A:'Application'} as Record<string,string>)[q.cognitiveLevel] || q.cognitiveLevel })) : []) : questions;
   const activeQuestions = questionPool.filter(q => {
     // If a unit is selected, filter by question number range
     if (selectedUnit) {
@@ -360,53 +365,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
             </div>
           </div>
 
-          {/* Hub Category Selection Tabs */}
-          <div style={{
-            display: 'flex',
-            gap: '0.65rem',
-            borderBottom: '2px solid #e2e8f0',
-            paddingBottom: '0.5rem',
-            marginBottom: '2rem',
-            overflowX: 'auto'
-          }}>
-            {[
-              { id: 'chapter_wise', label: '📖 Chapter Wise MCQs', count: `${unitsList.length} Units` },
-              { id: 'past_papers', label: '📄 Chapter Wise MCQs (Past Papers)', count: '2025 Archive' },
-              { id: 'full_book', label: '🏆 Full Book MCQs & Mock Exams', count: `${fullPapers.length} Papers` },
-              { id: 'cognitive', label: '⚡ Cognitive Domain Sprints', count: 'K / U / A Levels' },
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setHubTab(tab.id as any)}
-                style={{
-                  padding: '0.75rem 1.25rem',
-                  borderRadius: '10px 10px 0 0',
-                  border: 'none',
-                  background: hubTab === tab.id ? '#0b5e4a' : 'transparent',
-                  color: hubTab === tab.id ? '#ffffff' : '#475569',
-                  fontWeight: 800,
-                  fontSize: '0.92rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  whiteSpace: 'nowrap',
-                  transition: 'all 0.15s ease'
-                }}
-              >
-                <span>{tab.label}</span>
-                <span style={{
-                  fontSize: '0.74rem',
-                  padding: '2px 8px',
-                  borderRadius: '12px',
-                  background: hubTab === tab.id ? 'rgba(255,255,255,0.2)' : '#f1f5f9',
-                  color: hubTab === tab.id ? '#ffffff' : '#64748b'
-                }}>
-                  {tab.count}
-                </span>
-              </button>
-            ))}
-          </div>
+          <nav aria-label="MCQ categories" style={{display:'flex',flexWrap:'wrap',gap:'.6rem',marginBottom:'1.5rem'}}><Link href={baseUrl+'/mcqs'} style={{padding:'.7rem',color:'var(--primary-color)'}}>All categories</Link>{mcqCategories.map(item=><Link key={item.id} href={baseUrl+'/mcqs/'+item.id} aria-current={hubTab===item.key?'page':undefined} style={{padding:'.7rem 1rem',border:'1px solid var(--border-color)',borderRadius:8,color:hubTab===item.key?'#fff':'var(--text-color)',background:hubTab===item.key?'#0b5e4a':'var(--card-bg)',textDecoration:'none'}}>{item.label}</Link>)}</nav>
 
           {/* TAB 1: CHAPTER WISE MCQS */}
           {hubTab === 'chapter_wise' && (
@@ -504,7 +463,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                   Original exam-year references
                 </h2>
                 <p style={{ fontSize: '0.92rem', color: '#64748b', margin: 0 }}>
-                  Original exam-year references are grouped below. These supplied references are unverified and separate from reviewed current-syllabus mappings.
+                  Original exam-year references are grouped below. These references come from the official 2025 answer key and are separate from current-syllabus mappings.
                 </p>
               </div>
 
@@ -537,7 +496,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                           PAST PAPERS • UNIT {unit.unitNumber}
                         </span>
                         <span style={{ fontSize: '0.8rem', color: '#0b5e4a', fontWeight: 700 }}>
-                          {questionPool.filter(q => String(q.slo || '').startsWith(unit.unitNumber + '.')).length} Original references
+                          {past2025.filter(q => String(annualOriginalReference(q.questionNumber).slo || '').startsWith(unit.unitNumber + '.')).length} Original references
                         </span>
                       </div>
 
@@ -1030,6 +989,8 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                         <span>{isRevealed ? 'Hide Answer' : 'Show Answer'}</span>
                       </button>
                     </div>
+
+                    <QuestionSource question={q} source={mappedChapter?'mapped':practiceSource} board={board.shortCode} grade={classDef.level} subject={meta.title} />
 
                     {/* Question Stem rendered with StructuredContent (Tables + KaTeX) */}
                     <div style={{ fontSize: '1.05rem', color: 'var(--text-color, #1a2e26)', fontWeight: 600, lineHeight: 1.6, marginBottom: '1.25rem' }}>

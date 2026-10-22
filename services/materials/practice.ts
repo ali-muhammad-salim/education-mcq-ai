@@ -24,7 +24,7 @@ export async function mappedChapterGroups(board: string, grade: number, subject:
   for (const topic of topics) {
     const result = await mappedChapterQuestions(topic.id).catch(error => { if (error instanceof ApiError && error.status === 404) return null; throw error; });
     if (!result?.questions.length) continue;
-    groups.push({ id: topic.id, name: topic.name, questions: result.questions.map((q, i) => { const content = sourceChoiceContent(q), meta = paperMetadata(q.sourceRegion); return { id: q.id, questionNumber: i + 1, originalQuestionNumber: q.questionNumber, sourceTitle: q.pastPaper.title, stem: q.questionText, options: paperChoices(meta.choices), correctOption: paperAnswer(meta, paperChoices(meta.choices)), explanation: content.explanation, cognitiveLevel: content.cognitiveLevel, diagramUrl: content.diagramUrl, option_feedback: meta.option_feedback, sourceRegion: meta }; }) });
+    groups.push({ id: topic.id, name: topic.name, questions: result.questions.map((q, i) => { const content = sourceChoiceContent(q), meta = paperMetadata(q.sourceRegion); return { id: q.id, questionNumber: i + 1, originalQuestionNumber: q.questionNumber, sourceTitle: q.pastPaper.title, sourcePaperId:q.pastPaperId,sourceYear:q.pastPaper.examYear, stem: q.questionText, options: paperChoices(meta.choices), correctOption: paperAnswer(meta, paperChoices(meta.choices)), explanation: content.explanation, cognitiveLevel: content.cognitiveLevel, diagramUrl: content.diagramUrl, option_feedback: meta.option_feedback, sourceRegion: meta }; }) });
   }
   return groups;
 }
