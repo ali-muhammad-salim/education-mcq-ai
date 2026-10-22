@@ -1,6 +1,7 @@
 'use client';
 
 import { useDialog } from '@/lib/use-dialog';
+import EmailCodeSignIn from '@/components/EmailCodeSignIn';
 import React, { useState, useEffect, useRef } from 'react';
 import { Sparkles, User, Lock, Mail, ShieldCheck, Check, ArrowRight, X, AlertCircle } from 'lucide-react';
 
@@ -21,8 +22,9 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [notice,setNotice]=useState<string|null>(null);
+  const [useCode, setUseCode] = useState(false);
   const passwordInput=useRef<HTMLInputElement>(null);
-  useEffect(()=>{if(isOpen){setMode(initialMode);setRole(initialRole);setNotice(null);setError(null);}},[isOpen,initialMode,initialRole]);
+  useEffect(()=>{if(isOpen){setMode(initialMode);setRole(initialRole);setNotice(null);setError(null);setUseCode(false);}},[isOpen,initialMode,initialRole]);
   useEffect(()=>{if(mode==='login'&&notice)passwordInput.current?.focus();},[mode,notice]);
   const [googleConfigured, setGoogleConfigured] = useState<boolean | null>(null);
 
@@ -174,14 +176,14 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
             <ShieldCheck size={13} /> SECURE PORTAL AUTHENTICATION
           </span>
           <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0.4rem 0 0.2rem 0' }}>
-            {mode === 'login' ? 'Sign In to Your Account' : 'Create an Account'}
+            {useCode ? 'Sign in with an email code' : mode === 'login' ? 'Sign In to Your Account' : 'Create an Account'}
           </h3>
           <p style={{ color: '#6b7280', fontSize: '0.85rem', margin: 0 }}>
             Student accounts are created immediately. Teacher access requires approval from your account page.
           </p>
         </div>
 
-        <a href="/account" style={{ color: '#0b5e4a', display: 'block', marginBottom: '1rem' }}>Password recovery, email verification & teacher access</a>
+        <a href="/account" style={{ color: '#0b5e4a', display: 'block', marginBottom: '1rem' }}>Forgot your password?</a>
         {notice && <p className="auth-notice" role="status">{notice}</p>}
         {error && (
           <div role="alert" style={{
@@ -203,7 +205,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
         )}
 
         {/* Role Selection for Google & Register */}
-        <div style={{ marginBottom: '0.85rem' }}>
+        {!useCode && <div style={{ marginBottom: '0.85rem' }}>
           <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 700, color: '#4b5563', marginBottom: '0.35rem' }}>
             Choose Your Profile Role:
           </label>
@@ -251,6 +253,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
           </div>
         </div>
 
+        }
         {/* Google Sign-In Button */}
         <button
           type="button"
@@ -306,6 +309,8 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
           <div style={{ flex: 1, height: '1px', background: '#e5e7eb' }} />
         </div>
 
+        <button type="button" onClick={() => setUseCode(value => !value)} style={{width:'100%',minHeight:44,padding:'.65rem',marginBottom:'.75rem',border:'1px solid var(--border-color)',borderRadius:8,background:'var(--card-bg)',color:'var(--text-color)',fontWeight:700,cursor:'pointer'}}>{useCode ? 'Use email & password instead' : 'Sign in with an email code'}</button>
+        {useCode ? <EmailCodeSignIn onSuccess={user => { if(onSuccess) onSuccess(user); else window.location.reload(); onClose(); }} /> : <>
         {/* Form */}
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
           {mode === 'register' && (
@@ -425,6 +430,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess, initialMode = 'l
             </>
           )}
         </div>
+        </>}
       </div>
     </div>
   );
