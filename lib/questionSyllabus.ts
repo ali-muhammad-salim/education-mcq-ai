@@ -1,6 +1,6 @@
 import physicsIX from "@/data/physics/ssc1_exact_syllabus.json";
 import physicsX from "@/data/physics/ssc2_exact_syllabus.json";
-import {normalizeBoardId} from '@/lib/boardHierarchy';
+import {normalizeBoardId} from '@/lib/boardCatalog';
 import {getSubjectMeta} from '@/lib/subjectMetadata';
 
 /** A missing/unreviewed mapping is not evidence that a question is outside a syllabus. */

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import MaterialList from "@/components/MaterialList";
 import styles from "@/components/MaterialLayout.module.css";
-import type { BoardInfo, ClassDefinition } from "@/lib/boardHierarchy";
+import type { BoardInfo, ClassDefinition } from "@/lib/boardCatalog";
 type Subject = { id: string; name: string; slug: string; available?: boolean };
 export default function ClassSubjectsClient({
   board,

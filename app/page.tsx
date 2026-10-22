@@ -1,4 +1,4 @@
-import { SUPPORTED_BOARDS } from "@/lib/boardHierarchy";
+import { SUPPORTED_BOARDS } from "@/lib/boardCatalog";
 import MaterialList from "@/components/MaterialList";
 import styles from "@/components/MaterialLayout.module.css";
 export default function Home() {

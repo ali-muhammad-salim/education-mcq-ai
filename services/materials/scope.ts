@@ -4,7 +4,7 @@ import {
   CLASS_DEFINITIONS,
   normalizeBoardId,
   SUPPORTED_BOARDS,
-} from "@/lib/boardHierarchy";
+} from "@/lib/boardCatalog";
 
 /** Register only the administrator's declared catalogue scope, never curriculum outcomes. */
 export async function ensureUploadScope(input: {

@@ -2,7 +2,7 @@ import ContentUnavailable from '@/components/ContentUnavailable';
 import React from 'react';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { normalizeBoardId, normalizeClassRoman, CLASS_DEFINITIONS, SUPPORTED_BOARDS } from '@/lib/boardHierarchy';
+import { normalizeBoardId, normalizeClassRoman, CLASS_DEFINITIONS, SUPPORTED_BOARDS } from '@/lib/boardCatalog';
 import { getSubjectMeta } from '@/lib/subjectMetadata';
 import McqsClient from './McqsClient';
 import ssc1Mcqs from '@/data/physics/ssc1_model_mcqs.json';
