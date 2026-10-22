@@ -3,6 +3,7 @@ export function syllabusLevel(value: string) {
   if (['r', 'k', 'remembering', 'knowledge'].includes(text)) return 'R';
   if (['u', 'understanding'].includes(text)) return 'U';
   if (['a', 'application'].includes(text)) return 'A';
+  if (['e', 'evaluation'].includes(text)) return 'E';
   return undefined;
 }
 // Preserve wording while restoring superscripts flattened in the source JSON.

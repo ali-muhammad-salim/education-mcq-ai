@@ -52,18 +52,11 @@ export default async function Page({
       )}{" "}
       {legacy || compiled ? (
         <DocumentViews
-          title="Physics syllabus"
-          original={
-            compiled?.original || "/materials/ssc/physics/ssc-" +
-            (scope.classDef.level === 9 ? "1" : "2") +
-            "/physics-ssc-" +
-            (scope.classDef.level === 9 ? "i" : "ii") +
-            "-syllabus-grade-" +
-            scope.classDef.level +
-            "-dedicated.pdf"
-          }
+          title={scope.meta.title+" syllabus"}
+          original={compiled?.original || `/materials/ssc/physics/ssc-${scope.classDef.level===9?'1':'2'}/physics-ssc-full-syllabus-2025.pdf`}
         >
           <SyllabusClient board={scope.board} classDef={scope.classDef} meta={scope.meta} baseUrl={scope.baseUrl}
+            originalUrl={compiled?.original || `/materials/ssc/physics/ssc-${scope.classDef.level===9?'1':'2'}/physics-ssc-full-syllabus-2025.pdf`}
             units={compiled?.units || (scope.classDef.level === 9 ? physicsIX : physicsX)}
           />
         </DocumentViews>

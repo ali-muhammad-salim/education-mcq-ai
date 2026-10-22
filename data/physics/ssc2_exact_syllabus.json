@@ -16,7 +16,7 @@
           {
             "code": "11.1.2",
             "description": "discuss the factors on which the time period of a simple pendulum depends;",
-            "cognitiveLevel": "Application",
+            "cognitiveLevel": "Evaluation",
             "isPractical": false
           },
           {
@@ -165,7 +165,7 @@
         "slos": [
           {
             "code": "12.2.1",
-            "description": "define the terms 'pitch', 'loudness' and 'quality of sound';",
+            "description": "define the terms ‘pitch’, ‘loudness’ and ‘quality of sound’;",
             "cognitiveLevel": "Remembering",
             "isPractical": false
           },
@@ -262,6 +262,101 @@
     "name": "Geometrical Optics",
     "subtopics": [
       {
+        "subtopicNum": "13.1",
+        "name": "Reflection of Light",
+        "slos": [
+          {
+            "code": "13.1.1",
+            "description": "describe with reference to the reflection of light the following\nterms:\na. normal,\nb. angle of incidence,\nc. angle of reflection;",
+            "cognitiveLevel": "Understanding",
+            "sourcePage": 30,
+            "isPractical": false
+          },
+          {
+            "code": "13.1.2",
+            "description": "state laws of reflection of light;",
+            "cognitiveLevel": "Remembering",
+            "sourcePage": 30,
+            "isPractical": false
+          },
+          {
+            "code": "13.1.3",
+            "description": "discuss the relationship of the position of an object with the\ncharacteristics of image formed by a plane mirror;",
+            "cognitiveLevel": "Evaluation",
+            "sourcePage": 30,
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "13.2",
+        "name": "Refraction of Light",
+        "slos": [
+          {
+            "code": "13.2.1",
+            "description": "describe with reference to the refraction of light the following\nterms:\na. angle of incidence,\nb. angle of refraction,\nc. refractive index;",
+            "cognitiveLevel": "Understanding",
+            "sourcePage": 30,
+            "isPractical": false
+          },
+          {
+            "code": "13.2.2",
+            "description": "state laws of refraction of light;",
+            "cognitiveLevel": "Remembering",
+            "sourcePage": 30,
+            "isPractical": false
+          },
+          {
+            "code": "13.2.3",
+            "description": "solve word problems of refractive index using the given formulae:\na. sin ∠i/ sin ∠r,\nb. speed of light in vacuum/ speed of light in the given medium,\nc. real depth/ apparent depth;",
+            "cognitiveLevel": "Application",
+            "sourcePage": 30,
+            "isPractical": false
+          },
+          {
+            "code": "13.2.4",
+            "description": "illustrate the passage of light ray through parallel-sided\ntransparent material (glass slab);",
+            "cognitiveLevel": "Application",
+            "sourcePage": 30,
+            "isPractical": false
+          },
+          {
+            "code": "13.2.5",
+            "description": "illustrate the passage of light through a glass prism;",
+            "cognitiveLevel": "Application",
+            "sourcePage": 30,
+            "isPractical": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "13.3",
+        "name": "Dispersion of Light",
+        "slos": [
+          {
+            "code": "13.3.1",
+            "description": "explain the dispersion of light by a prism;",
+            "cognitiveLevel": "Understanding",
+            "sourcePage": 30,
+            "isPractical": false
+          },
+          {
+            "code": "13.3.2",
+            "description": "explain the scattering of light by the molecules in the air;",
+            "cognitiveLevel": "Understanding",
+            "sourcePage": 30,
+            "isPractical": false
+          },
+          {
+            "code": "13.3.3",
+            "description": "state the traditional seven colours of the visible spectrum in\norder of frequency and in order of wavelength;",
+            "cognitiveLevel": "Remembering",
+            "sourcePage": 30,
+            "isPractical": false
+          }
+        ]
+      },
+      {
         "subtopicNum": "13.4",
         "name": "Total Internal Reflection",
         "slos": [
@@ -292,7 +387,7 @@
           {
             "code": "13.4.5",
             "description": "describe the use of total internal reflection in:\na. optical fibre,\nb. periscope;",
-            "cognitiveLevel": "Application",
+            "cognitiveLevel": "Understanding",
             "isPractical": false
           }
         ]
@@ -316,7 +411,7 @@
           {
             "code": "13.5.3",
             "description": "differentiate between real and virtual images;",
-            "cognitiveLevel": "Remembering",
+            "cognitiveLevel": "Understanding",
             "isPractical": false
           },
           {
@@ -435,9 +530,10 @@
           },
           {
             "code": "14.1.5",
-            "description": "explain discharging of an insulator by:\na. putting it above a flame,\nb. exposing it;",
+            "description": "explain discharging of an insulator by:\na. putting it above a flame,\nb. exposing it to damp conditions;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "sourcePage": 33
           }
         ]
       },
@@ -567,7 +663,7 @@
           },
           {
             "code": "15.1.4",
-            "description": "solve word problems related to electric current using I = Q / t;",
+            "description": "solve word problems related to electric current using $I = \\frac{Q}{t}$;",
             "cognitiveLevel": "Application",
             "isPractical": false
           }
@@ -633,7 +729,7 @@
           },
           {
             "code": "15.4.2",
-            "description": "solve word problems related to potential difference using V = work / q;",
+            "description": "solve word problems related to potential difference using $V = \\frac{\\mathrm{work}}{q}$;",
             "cognitiveLevel": "Application",
             "isPractical": false
           },
@@ -670,7 +766,7 @@
           {
             "code": "15.5.2",
             "description": "interpret the I-V characteristics graph for a fixed resistor, a filament lamp and a thermistor;",
-            "cognitiveLevel": "Application",
+            "cognitiveLevel": "Evaluation",
             "isPractical": false
           }
         ]
@@ -772,7 +868,7 @@
           {
             "code": "16.1.1",
             "description": "describe the characteristics of series and parallel combinations of resistors;",
-            "cognitiveLevel": "Remembering",
+            "cognitiveLevel": "Understanding",
             "isPractical": false
           },
           {
@@ -1036,7 +1132,7 @@
           {
             "code": "18.3.2",
             "description": "interpret graphs of e.m.f. against time for simple A.C. generators;",
-            "cognitiveLevel": "Application",
+            "cognitiveLevel": "Evaluation",
             "isPractical": false
           }
         ]
@@ -1084,12 +1180,13 @@
           {
             "code": "18.5.3",
             "description": "discuss the application of transformer in high voltage transmission;",
-            "cognitiveLevel": "Application",
-            "isPractical": false
+            "cognitiveLevel": "Evaluation",
+            "isPractical": false,
+            "sourcePage": 41
           },
           {
             "code": "18.5.4",
-            "description": "solve word problem using the transformer equation Vs/Vp = Ip/Is = Ns/Np;",
+            "description": "solve word problem using the transformer equation $\\frac{V_s}{V_p} = \\frac{I_p}{I_s} = \\frac{N_s}{N_p}$;",
             "cognitiveLevel": "Application",
             "isPractical": false
           }
@@ -1120,7 +1217,7 @@
           {
             "code": "19.1.3",
             "description": "describe the damages caused by electromagnetic radiation;",
-            "cognitiveLevel": "Remembering",
+            "cognitiveLevel": "Understanding",
             "isPractical": false
           }
         ]
@@ -1246,7 +1343,7 @@
           {
             "code": "20.1.1",
             "description": "describe that the alpha particle scattering experiments provide evidence for:\na. a very small nucleus surrounded by mostly empty space,\nb. a nucleus containing most of the mass of the atom,\nc. a nucleus that is positively charged;",
-            "cognitiveLevel": "Remembering",
+            "cognitiveLevel": "Understanding",
             "isPractical": false
           }
         ]
@@ -1258,7 +1355,7 @@
           {
             "code": "20.2.1",
             "description": "describe the composition of the nucleus of an atom in terms of protons and neutrons;",
-            "cognitiveLevel": "Remembering",
+            "cognitiveLevel": "Understanding",
             "isPractical": false
           },
           {
@@ -1294,7 +1391,7 @@
           {
             "code": "20.3.3",
             "description": "describe the uses of isotopes in:\na. diagnosis and treatment of cancer,\nb. household fire (smoke) alarms,\nc. irradiating food to kill bacteria,\nd. measuring and controlling thicknesses of materials,\ne. sterilisation of equipment;",
-            "cognitiveLevel": "Remembering",
+            "cognitiveLevel": "Understanding",
             "isPractical": false
           }
         ]
@@ -1318,13 +1415,13 @@
           {
             "code": "20.4.3",
             "description": "describe the spontaneous and random emission of radiation from a nucleus;",
-            "cognitiveLevel": "Remembering",
+            "cognitiveLevel": "Understanding",
             "isPractical": false
           },
           {
             "code": "20.4.4",
             "description": "describe the properties of the three types of radiation (α, β and γ);",
-            "cognitiveLevel": "Remembering",
+            "cognitiveLevel": "Understanding",
             "isPractical": false
           },
           {
@@ -1384,7 +1481,7 @@
           {
             "code": "20.6.4",
             "description": "describe the process of carbon dating to estimate the age of ancient objects;",
-            "cognitiveLevel": "Remembering",
+            "cognitiveLevel": "Understanding",
             "isPractical": false
           }
         ]
@@ -1396,7 +1493,7 @@
           {
             "code": "20.7.1",
             "description": "describe nuclear fission and fusion reactions;",
-            "cognitiveLevel": "Remembering",
+            "cognitiveLevel": "Understanding",
             "isPractical": false
           },
           {

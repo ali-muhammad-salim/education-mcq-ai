@@ -17,12 +17,13 @@ interface Props {
   meta: SubjectMeta;
   baseUrl: string;
   units: any[];
+  originalUrl?: string;
 }
 
-export default function SyllabusClient({ board, classDef, meta, baseUrl, units }: Props) {
+export default function SyllabusClient({ board, classDef, meta, baseUrl, units, originalUrl }: Props) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedUnit, setSelectedUnit] = useState<number | 'all'>('all');
-  const [cognitiveFilter, setCognitiveFilter] = useState<'all' | 'R' | 'U' | 'A'>('all');
+  const [cognitiveFilter, setCognitiveFilter] = useState<'all' | 'R' | 'U' | 'A' | 'E'>('all');
   const [expandedUnits, setExpandedUnits] = useState<Record<number, boolean>>({
     1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true
   });
@@ -39,9 +40,9 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units }
 
   const filteredUnits=filterSyllabus(units,searchQuery,cognitiveFilter,selectedUnit);
 
-  const pdfUrl = classDef.roman === 'IX'
+  const pdfUrl = originalUrl || (classDef.roman === 'IX'
     ? '/materials/ssc/physics/ssc-1/physics-ssc-i-syllabus-grade-9-dedicated.pdf'
-    : '/materials/ssc/physics/ssc-2/physics-ssc-ii-syllabus-grade-10-dedicated.pdf';
+    : '/materials/ssc/physics/ssc-2/physics-ssc-ii-syllabus-grade-10-dedicated.pdf');
 
   return (
     <div>
@@ -74,7 +75,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units }
           </h1>
 
           <p style={{ fontSize: '1.05rem', color: '#e6f0ed', margin: '0 0 1.5rem 0', maxWidth: '820px', lineHeight: 1.6 }}>
-            Complete curriculum tables matching official printed {board.name} syllabus specifications. Every learning outcome is tagged by Cognitive Domain: Remembering (R), Understanding (U), and Application (A).
+            Class learning outcomes with search and cognitive-level filters. Open Original PDF for the complete source, including its introduction, practical activities and examination specifications.
           </p>
 
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -161,7 +162,8 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units }
             { id: 'all', label: 'All Cognitive Levels' },
             { id: 'R', label: 'Remembering (R)' },
             { id: 'U', label: 'Understanding (U)' },
-            { id: 'A', label: 'Application (A)' }
+            { id: 'A', label: 'Application (A)' },
+            { id: 'E', label: 'Evaluation (E)' }
           ].map(f => (
             <button
               key={f.id}

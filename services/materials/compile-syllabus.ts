@@ -4,6 +4,7 @@ import { pageExtraction } from '@/services/ingestion/trust';
 import { classForChapter, curriculumPlan } from '@/services/ingestion/curriculum-plan';
 import { resolveAcademicMetadata } from '@/services/assessment/catalog';
 import { ApiError } from '@/lib/api';
+import { syllabusCoverageConflicts } from '@/services/ingestion/learning-validation';
 const id = (s: string) => 'source-' + createHash('sha256').update(s).digest('hex').slice(0, 40);
 
 /** Called only after the source's complete transcription has been approved.
@@ -17,6 +18,8 @@ export async function compileReviewedSyllabus(tx: Prisma.TransactionClient, docu
   if (!plan.success || !plan.data.assignments.length || plan.data.conflicts.length) return { compiled: false, reason: 'CLASS_INDEX_REVIEW_REQUIRED' };
   const rows = doc.artifacts.flatMap(a => pageExtraction.parse((a.data as Record<string, unknown>).extraction).learning.outcomes.map(row => ({ ...row, page: a.pageNumber })));
   if (!rows.length) return { compiled: false, reason: 'STRUCTURED_OUTCOMES_REQUIRED' };
+  const missing = syllabusCoverageConflicts(doc.artifacts.map(a=>({pageNumber:a.pageNumber,extraction:pageExtraction.parse((a.data as Record<string,unknown>).extraction)})), plan.data.assignments);
+  if (missing.length) throw new ApiError(422,'SYLLABUS_COVERAGE_INCOMPLETE',missing.join(' '));
   if (rows.some(r => classForChapter(plan.data, r.chapterCode, r.chapterTitle) !== r.grade)) throw new ApiError(422, 'CLASS_INDEX_MISMATCH', 'Outcome classes must match the reviewed document index.');
   const duplicates = new Map<string, string>();
   for (const row of rows) {

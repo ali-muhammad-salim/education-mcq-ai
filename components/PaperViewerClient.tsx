@@ -68,6 +68,10 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
     if (typeof window !== 'undefined') {
       const search = window.location.search || '';
       const hash = window.location.hash || '';
+      if (new URLSearchParams(search).get('view')==='solved') {
+        setShowCorrectAnswers(true);
+        setRevealedSolutions(Object.fromEntries(questions.map(q=>[q.questionNumber,true])));
+      }
       if (search.includes('quiz') || search.includes('take') || hash === '#quiz') {
         setQuizModalOpen(true);
       }
@@ -636,7 +640,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                 const isCorrect = isChecked && selectedOpt === correctKey;
 
                 return (
-                  <div key={q.id} style={{
+                  <div id={"question-"+qNum} key={q.id} style={{
                     marginBottom: showCorrectAnswers ? '2.25rem' : '3rem',
                     paddingBottom: showCorrectAnswers ? '1.75rem' : '2.5rem',
                     borderBottom: idx === questions.length - 1 ? 'none' : '1px solid #e5e7eb'
@@ -675,7 +679,8 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                       flexWrap: 'wrap',
                       fontFamily: 'system-ui, -apple-system, sans-serif'
                     }}>
-                      {historical && mapping.originalCode && <span style={{fontSize:'.8rem',color:'var(--text-light)'}}>Original reference ({paper.examYear}): SLO {mapping.originalCode} · unverified</span>}
+                      {meta.answer_review_note && <details style={{fontSize:'.8rem',color:'var(--text-color)'}}><summary>Answer review</summary>{meta.answer_review_note}</details>}
+                      {historical && mapping.originalCode && <span style={{fontSize:'.8rem',color:'var(--text-light)'}}>Original reference ({paper.examYear}): SLO {mapping.originalCode} · {meta.original_reference_verified===true?<Link href={meta.original_reference_source || '#'}>Official key</Link>:'unverified'}</span>}
                       {mapping.status === 'mapped' ? <Link href={mapping.href!} title={mapping.description} style={{color:'var(--primary-color)',fontSize:'.82rem',fontWeight:700}}>SLO {sloCode}{topicName ? ` • ${topicName}` : ''} ↗</Link> : <span style={{fontSize:'.8rem',color:'var(--text-light)'}}>{mapping.status === 'outside' ? 'Outside current syllabus (reviewed)' : 'Current syllabus: Mapping pending'}</span>}
 
                       {q.difficulty && (
