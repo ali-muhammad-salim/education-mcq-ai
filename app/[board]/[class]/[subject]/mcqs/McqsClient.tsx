@@ -7,7 +7,7 @@ import {
   RotateCcw, Eye, Sparkles, Filter, BookOpen, Layers,
   Clock, Calendar, Flame, Zap, Check, ChevronRight, FileText
 } from 'lucide-react';
-import { BoardInfo, ClassDefinition } from '@/lib/boardHierarchy';
+import type { BoardInfo, ClassDefinition } from '@/lib/boardCatalog';
 import { SubjectMeta } from '@/lib/subjectMetadata';
 import MathText from '@/components/MathText';
 import StructuredContent from '@/components/StructuredContent';

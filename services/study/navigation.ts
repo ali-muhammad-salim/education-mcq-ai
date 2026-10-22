@@ -6,7 +6,7 @@ import {
   SUPPORTED_BOARDS,
   normalizeBoardId,
   normalizeClassRoman,
-} from "@/lib/boardHierarchy";
+} from "@/lib/boardCatalog";
 import { getSubjectMeta } from "@/lib/subjectMetadata";
 import { studyKinds } from "./contracts";
 import physicsIX from "@/data/physics/ssc1_exact_syllabus.json";

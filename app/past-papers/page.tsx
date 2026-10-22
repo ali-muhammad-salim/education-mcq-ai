@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import BrowseMaterials from "@/components/BrowseMaterials";
-import { normalizeClassRoman } from "@/lib/boardHierarchy";
+import { normalizeClassRoman } from "@/lib/boardCatalog";
 import { studyScope } from "@/services/study/navigation";
 export default async function Page({
   searchParams,

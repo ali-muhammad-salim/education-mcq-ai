@@ -6,7 +6,7 @@ import {
   BookOpen, Search, Download, ChevronDown, ChevronUp,
   ArrowLeft, ArrowRight, Filter, Sparkles, CheckCircle2
 } from 'lucide-react';
-import { BoardInfo, ClassDefinition } from '@/lib/boardHierarchy';
+import type { BoardInfo, ClassDefinition } from '@/lib/boardCatalog';
 import {filterSyllabus,syllabusLevel,syllabusDisplayText} from '@/lib/syllabusPresentation';
 import MathText from '@/components/MathText';
 import { SubjectMeta } from '@/lib/subjectMetadata';

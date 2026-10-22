@@ -1,4 +1,4 @@
-import { SUPPORTED_BOARDS } from "@/lib/boardHierarchy";
+import { SUPPORTED_BOARDS } from "@/lib/boardCatalog";
 import MaterialList from "./MaterialList";
 import styles from "./MaterialLayout.module.css";
 export default function BrowseMaterials({ title }: { title: string }) {
