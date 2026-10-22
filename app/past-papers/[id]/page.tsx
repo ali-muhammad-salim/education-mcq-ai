@@ -12,6 +12,8 @@ import {publicMaterialWhere} from '@/lib/materialVisibility';
 import { annualOriginalReference, annualCurrentMapping, physics2025Resources } from '@/lib/legacyPaperEvidence';
 import { publishedCurriculum } from '@/services/materials/curriculum';
 import { paperResources } from '@/services/materials/references';
+import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
+import { applyAnswerDecision } from '@/lib/legacyAnswerReview';
 
 export const dynamic = "force-dynamic";
 
@@ -78,7 +80,8 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
   const legacyAnnual = !paper.sourceDocumentId && paper.paperCode==='PHY-IX-2025-P1';
   const useReviewedLegacy = legacyAnnual && !await publishedCurriculum('AKU-EB',9,'Physics');
   const resources = await paperResources(paper.sourceDocumentId);
-  const displayQuestions = sortedQuestions.map(q=>presentPaperQuestion(legacyAnnual?{...q,sourceRegion:{...q.sourceRegion,...annualOriginalReference(q.questionNumber),...(useReviewedLegacy?annualCurrentMapping(q.questionNumber,q.questionText):{})}}:q));
+  const answerDecisions=legacyAnnual?await publishedAnswerDecisions():[];
+  const displayQuestions = sortedQuestions.map(q=>presentPaperQuestion(legacyAnnual?{...q,sourceRegion:applyAnswerDecision({...q.sourceRegion,...annualOriginalReference(q.questionNumber),...(useReviewedLegacy?annualCurrentMapping(q.questionNumber,q.questionText):{})},q.questionNumber,q.questionText,q.sourceRegion?.choices||{},answerDecisions)}:q));
   const isGrade9 =
     paper.academicClass?.level === 9 ||
     paper.academicClass?.name?.includes("IX");

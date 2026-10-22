@@ -20,6 +20,8 @@ describe('Source completeness and historical references',()=>{
     const original=annualOriginalReference(1);
     expect(original.slo).toBe('1.3.1');
     expect(original.original_reference_verified).toBe(true);
+    for (const number of [12,39,40]) expect(annualOriginalReference(number).answer_review_note).toContain('Official key:');
+    expect(annualOriginalReference(1).answer_review_note).toBeUndefined();
     expect(questionSyllabus(original,[],9,'Physics','AKU-EB',true).status).toBe('pending');
   });
   it('rejects a published syllabus missing a printed SLO or indexed chapter',()=>{
