@@ -2,9 +2,10 @@ import { createHash } from 'node:crypto';
 import prisma from '@/lib/prisma';
 import { ApiError } from '@/lib/api';
 import { z } from 'zod';
+import { JobDeferred } from '@/services/jobs/deferred';
 
-export class AIBackpressure extends ApiError {
-  constructor(public retryAt: Date) { super(503, 'AI_CAPACITY_DEFERRED', 'AI capacity is temporarily unavailable. Saved progress will resume automatically.'); }
+export class AIBackpressure extends JobDeferred {
+  constructor(retryAt: Date) { super(retryAt, 'AI_CAPACITY_DEFERRED', 'AI capacity is temporarily unavailable. Saved progress will resume automatically.'); }
 }
 const list = (value = '') => value.split(/[,;\r\n]+/).map(v => v.trim().replace(/^["']|["']$/g, '')).filter(Boolean);
 const digest = (text: string) => createHash('sha256').update(text).digest('hex');

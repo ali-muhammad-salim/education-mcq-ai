@@ -6,6 +6,10 @@ import { DurableJob, Prisma } from "@prisma/client";
 import { z } from "zod";
 import prisma from "@/lib/prisma";
 import { ApiError } from "@/lib/api";
+import { JobDeferred } from '@/services/jobs/deferred';
+import { publicMaterialWhere } from '@/lib/materialVisibility';
+import { approveCheckedPage } from './publication';
+import { scheduleStudyPack } from '@/services/study/library';
 import { readEducationalAsset, uploadEducationalAsset } from "@/lib/storage";
 import {
   modelJson,
@@ -172,6 +176,11 @@ export async function ingestTrustedDocument(
     );
   const subject = subjects[0],
     syllabusVersionId = subject.syllabusVersions[0]?.id;
+  if (input.meta.syllabusSourceSha256) {
+    const current = syllabusVersionId ? await prisma.syllabusVersion.findFirst({where:{id:syllabusVersionId,isLatest:true,sourceDocument:{...publicMaterialWhere,resourceType:'syllabus',sha256:input.meta.syllabusSourceSha256}},select:{sourceDocument:{select:{totalPages:true,_count:{select:{artifacts:true}}}}}}) : null;
+    if (!current?.sourceDocument || current.sourceDocument.totalPages < 1 || current.sourceDocument._count.artifacts !== current.sourceDocument.totalPages)
+      throw new JobDeferred(new Date(Date.now()+300000),'CURRICULUM_SOURCE_WAIT','Waiting for the reviewed syllabus from this import before mapping this source.');
+  }
   const slos = syllabusVersionId
     ? await prisma.sLO.findMany({
         where: { subtopic: { topic: { syllabusVersionId } } },
@@ -200,19 +209,28 @@ export async function ingestTrustedDocument(
     info = await render(source, pagePath, signal);
   const pipelineVersion =
     "source-trust-v3:" +
-    (syllabusVersionId || "unmapped") +
-    ':'+hash(JSON.stringify({effectiveFrom:input.meta.syllabusEffectiveFrom,examYear:input.meta.examYear,paperComponent:input.meta.paperComponent,paperCode:input.meta.paperCode})).slice(0,16)+
+    (input.resourceType === "syllabus" ? "source-curriculum" : syllabusVersionId || "unmapped") +
+    ':'+hash(JSON.stringify({effectiveFrom:input.meta.syllabusEffectiveFrom,examYear:input.meta.examYear,paperComponent:input.meta.paperComponent,paperCode:input.meta.paperCode,classLevels:input.meta.classLevels?[...new Set(input.meta.classLevels)].sort():undefined})).slice(0,16)+
     (input.reprocess ? ":revision:" + job.id : "");
-  const catalogMetadata = Object.fromEntries(
+  const catalogMetadata:Record<string,Prisma.InputJsonValue> = Object.fromEntries(
     Object.entries({
       title: input.meta.title,
+      importBatchId:input.meta.importBatchId,
+      classLevels:input.meta.classLevels,
+      importNote:input.meta.importNote,
+      studyKinds:input.meta.studyKinds,
       syllabusEffectiveFrom:input.meta.syllabusEffectiveFrom,
       examYear: input.meta.examYear,
       paperCode: input.meta.paperCode,
       paperComponent: input.meta.paperComponent,
       expectsAnswerKey:Boolean(input.keyStorageKey),
     }).filter(([, value]) => value !== undefined),
-  );
+  ) as Record<string,Prisma.InputJsonValue>;
+  if(input.meta.classLevels){
+    const scopes=await prisma.subject.findMany({where:{name:{equals:input.meta.subject,mode:'insensitive'},academicClass:{level:{in:input.meta.classLevels},programme:{boardId:board[0].id}}},select:{id:true,academicClass:{select:{level:true}}}});
+    if(input.meta.classLevels.some(grade=>scopes.filter(scope=>scope.academicClass.level===grade).length!==1))throw new ApiError(422,'AMBIGUOUS_MATERIAL_SCOPES','Every shared class needs one matching subject in the same board.');
+    catalogMetadata.scopeSubjectIds=scopes.map(scope=>scope.id);
+  }
   const document = await prisma.knowledgeDocument.upsert({
     where: {
       sha256_subjectId_resourceType_pipelineVersion: {
@@ -330,6 +348,7 @@ export async function ingestTrustedDocument(
         })
         .safeParse(previous?.data);
       if (saved.success && saved.data.checksComplete) {
+        if (input.publishAfterReview && previous) await prisma.$transaction(tx=>approveCheckedPage(tx,{id:previous.id,documentId:document.id,ownerId:job.ownerId,contentHash:previous.contentHash,data:previous.data,index:input.resourceType==='syllabus'||(input.meta.classLevels?.length||1)===1}));
         continuation = saved.data.extraction.continuation;
         continue;
       }
@@ -342,6 +361,8 @@ export async function ingestTrustedDocument(
       const scope = JSON.stringify({
         board: input.meta.board,
         class: input.meta.classLevel,
+        declaredClasses: input.meta.classLevels,
+        resourceType: input.resourceType,
         subject: input.meta.subject,
         page,
         outcomes: slos,
@@ -537,10 +558,7 @@ export async function ingestTrustedDocument(
           },
         },
       });
-      if(input.publishAfterReview && !conflicts.length && verification?.faithful && verification.complete && verification.mappingsCorrect){
-        const approved=await prisma.knowledgeArtifact.updateMany({where:{id:artifact.id,status:'PENDING_REVIEW'},data:{status:'APPROVED',reviewerId:job.ownerId,reviewedAt:new Date(),reviewNote:'Automatic publication checks passed: source transcription and independent model audit.'}});
-        if(approved.count)await prisma.auditLog.create({data:{userId:job.ownerId,action:'KNOWLEDGE_AUTO_APPROVED',resource:'KnowledgeArtifact',resourceId:artifact.id,details:{contentHash,extractionModel,verificationModel}}});
-      }
+      if(input.publishAfterReview) await prisma.$transaction(tx=>approveCheckedPage(tx,{id:artifact.id,documentId:document.id,ownerId:job.ownerId,contentHash,data:{...initial,checksComplete:true,verification,verificationModel,conflicts:[...new Set(conflicts)]},index:input.resourceType==='syllabus'||(input.meta.classLevels?.length||1)===1}));
       continuation = extraction.continuation;
       await prisma.durableJob.updateMany({
         where: { id: job.id, ownerId: job.ownerId, status: "RUNNING" },
@@ -560,7 +578,18 @@ export async function ingestTrustedDocument(
       where: { id: document.id },
       data: { status: "NEEDS_REVIEW" },
     });
-    const publication=await prisma.$transaction(async tx=>{const result=await compileReviewedSyllabus(tx,document.id);await scheduleMaterialCompilation(tx,document.id);return result;},{timeout:60000});
+    const publication=await prisma.$transaction(async tx=>{
+      const result=await compileReviewedSyllabus(tx,document.id);
+      await scheduleMaterialCompilation(tx,document.id);
+      if(input.resourceType==='textbook' && input.studyResources && input.publishAfterReview && !await tx.knowledgeArtifact.count({where:{documentId:document.id,status:{not:'APPROVED'}}})) {
+        try { await scheduleStudyPack(tx,job.ownerId,{documentId:document.id,kinds:input.meta.studyKinds}); }
+        catch(error){
+          if(!(error instanceof ApiError)||!['CHAPTER_EVIDENCE_REQUIRED','BOOK_REVIEW_REQUIRED','BOOK_CURRENT_CURRICULUM_REQUIRED','STUDY_PACK_TOO_LARGE','STUDY_BOOK_SCOPE_TOO_LARGE'].includes(error.code))throw error;
+          await tx.auditLog.create({data:{userId:job.ownerId,action:'STUDY_PACK_NEEDS_MAPPING',resource:'KnowledgeDocument',resourceId:document.id,details:{reason:error.code}}});
+        }
+      }
+      return result;
+    },{timeout:60000});
     if (input.keyStorageKey)
       await prisma.durableJob.upsert({
         where: { id: job.id + ":answer-key" },
@@ -588,7 +617,7 @@ export async function ingestTrustedDocument(
       message:pendingPages?`${pendingPages} source pages require review before publication.`:input.resourceType==='syllabus'&&!publication.compiled?'Source verified. Resolve the syllabus edition or class index in Source reviews before activating its class editions.':input.publishAfterReview?'Source verified and available. Answer and syllabus checks are queued separately; doubtful questions stay in admin review.':'Source verified. Publication was not requested for this upload.',
     };
   } catch (error) {
-    if (!(error instanceof AIBackpressure))
+    if (!(error instanceof JobDeferred))
       await prisma.knowledgeDocument.update({
         where: { id: document.id },
         data: { status: "FAILED" },

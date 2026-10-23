@@ -104,3 +104,7 @@ checkpoints/*.dump
 .next-source-preview/
 public/pdfjs/
 checkpoints/prepare-ui-review.cjs
+
+# Local document inventories and generated import reports
+output/
+.next-ssc-import-preview/

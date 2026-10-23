@@ -10,6 +10,9 @@ export interface SubjectMeta {
 }
 
 export const SUBJECT_METADATA: Record<string, SubjectMeta> = {
+  'mathematics-humanities-group': {title:'Mathematics Humanities Group',slug:'mathematics-humanities-group',code:'MTH-H',icon:'📐',description:'AKU-EB mathematics resources for the humanities group.',categories:['Official Syllabus','Model Papers','Study Notes']},
+  'literature-in-english': {title:'Literature in English',slug:'literature-in-english',code:'LIT',icon:'📖',description:'AKU-EB English literature syllabus and examination resources.',categories:['Official Syllabus','Model Papers','Study Notes']},
+  'food-and-nutrition': {title:'Food and Nutrition',slug:'food-and-nutrition',code:'FNU',icon:'📚',description:'AKU-EB food and nutrition syllabus and examination resources.',categories:['Official Syllabus','Model Papers','Practicals']},
   'physics': {
     title: 'Physics',
     slug: 'physics',
@@ -172,7 +175,9 @@ export function getSubjectMeta(rawName: string): SubjectMeta {
   if (normalized.includes('physics')) return SUBJECT_METADATA['physics'];
   if (normalized.includes('chemistry')) return SUBJECT_METADATA['chemistry'];
   if (normalized.includes('biology')) return SUBJECT_METADATA['biology'];
+  if (normalized.includes('math')&&normalized.includes('humanit')) return SUBJECT_METADATA['mathematics-humanities-group'];
   if (normalized.includes('math')) return SUBJECT_METADATA['mathematics-science-group'];
+  if (normalized.includes('literature')&&normalized.includes('english')) return SUBJECT_METADATA['literature-in-english'];
   if (normalized.includes('english')) return SUBJECT_METADATA['english-compulsory'];
   if (normalized.includes('urdu')) return SUBJECT_METADATA['urdu-compulsory'];
   if (normalized.includes('islam')) return SUBJECT_METADATA['islamiyat'];

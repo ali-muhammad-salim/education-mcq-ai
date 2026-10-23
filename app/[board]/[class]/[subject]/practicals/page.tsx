@@ -3,6 +3,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import DocumentViews from "@/components/DocumentViews";
 import { studyScope } from "@/services/study/navigation";
 import styles from "@/components/MaterialLayout.module.css";
+import { subjectMaterials } from '@/services/materials/catalog';
+import MaterialList from '@/components/MaterialList';
+export const dynamic='force-dynamic';
 export default async function Page({
   params,
 }: {
@@ -11,6 +14,7 @@ export default async function Page({
   const raw = await params,
     scope = studyScope(raw.board, raw.class, raw.subject);
   if (!scope) notFound();
+  const documents=await subjectMaterials(raw.board,raw.class,raw.subject,'practical_paper');
   const original =
     scope.board.id === "akueb" &&
     scope.meta.slug === "physics" &&
@@ -31,7 +35,7 @@ export default async function Page({
         ]}
       />
       <h1>Practicals</h1>
-      {original ? (
+      {documents.length ? <MaterialList items={documents.map(doc=>({label:doc.metadata.title||'Practical paper',href:'/materials/'+doc.id}))}/> : original ? (
         <DocumentViews title="Practical paper" original={original} />
       ) : (
         <p className={styles.muted}>Coming soon</p>

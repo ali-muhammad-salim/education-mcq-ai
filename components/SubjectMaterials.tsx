@@ -4,6 +4,7 @@ import MaterialList from "./MaterialList";
 import styles from "./MaterialLayout.module.css";
 import { studyScope, studyChapters } from "@/services/study/navigation";
 import { subjectMaterialTypes } from "@/services/materials/catalog";
+import { supportingMaterialLabels } from '@/lib/materialTypes';
 
 export default async function SubjectMaterials({
   params,
@@ -60,12 +61,13 @@ export default async function SubjectMaterials({
         c.kinds.some((k) => k.kind === kind && k.count > 0),
       ),
     })),
-    { label: "MCQs", href: scope.baseUrl + "/mcqs", pending: !legacy },
+    { label: "MCQs", href: scope.baseUrl + "/mcqs", pending: !legacy&&!available("mcq") },
     {
       label: "Practicals",
       href: scope.baseUrl + "/practicals",
-      pending: !(legacy && scope.classDef.level === 9),
+      pending: !(legacy && scope.classDef.level === 9)&&!available('practical_paper'),
     },
+    ...Object.entries(supportingMaterialLabels).filter(([kind])=>kind!=='practical_paper'&&available(kind)).map(([kind,label])=>({label,href:scope.baseUrl+'/resources/'+kind})),
   ];
   return (
     <section className={styles.page}>
