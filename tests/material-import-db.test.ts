@@ -27,7 +27,7 @@ describe.skipIf(!url)('Reviewed folder import',()=>{
     await db.subject.deleteMany({where:{name}});
     await db.userSession.deleteMany({where:{userId:{in:[owner,student]}}});
     await db.user.deleteMany({where:{id:{in:[owner,student]}}});
-    const limits=[owner,student].flatMap(id=>['bulk-upload:','bulk-upload-bytes:'].map(prefix=>sha(prefix+id))).concat(sha('weighted:'+suffix));
+    const limits=[owner,student].flatMap(id=>['bulk-upload:','bulk-upload-bytes:','bulk-recheck:'].map(prefix=>sha(prefix+id))).concat(sha('weighted:'+suffix));
     await db.requestLimit.deleteMany({where:{key:{in:limits}}});
     await db.$disconnect();await (await import('@/lib/prisma')).default.$disconnect();vi.unstubAllEnvs();
   });
@@ -78,6 +78,23 @@ describe.skipIf(!url)('Reviewed folder import',()=>{
     expect((await db.knowledgeArtifact.findUniqueOrThrow({where:{id:artifactId}})).status).toBe('PENDING_REVIEW');
     expect(await db.auditLog.count({where:{resourceId:artifactId,action:'KNOWLEDGE_AUTO_APPROVED'}})).toBe(1);
     expect(await db.durableJob.count({where:{ownerId:owner,kind:'AI_EMBEDDING'}})).toBe(0);
+  });
+  it('allows an audited owner-only recheck without another upload or unlimited repeats',async()=>{
+    const {PATCH}=await import('@/app/api/admin/material-import/route');
+    const job=await db.durableJob.findFirstOrThrow({where:{ownerId:owner}});
+    await db.durableJob.update({where:{id:job.id},data:{status:'COMPLETED',result:{documentId}}});
+    const req=(credential=token)=>new NextRequest('http://localhost/api/admin/material-import',{method:'PATCH',headers:{authorization:'Bearer '+credential,origin:'http://localhost','Content-Type':'application/json'},body:JSON.stringify({jobId:job.id})});
+    expect((await PATCH(req(studentToken))).status).toBe(403);
+    expect((await PATCH(req())).status).toBe(409);
+    await db.knowledgeArtifact.update({where:{id:artifactId},data:{data:{checksComplete:true,conflicts:['Missing literal punctuation'],automaticRepairAttempts:0}}});
+    expect((await PATCH(req())).status).toBe(200);
+    expect((await db.durableJob.findUniqueOrThrow({where:{id:job.id}})).status).toBe('QUEUED');
+    expect(await db.auditLog.count({where:{resourceId:job.id,action:'MATERIAL_IMPORT_RETRY'}})).toBe(1);
+    expect((await PATCH(req())).status).toBe(409);
+    await db.durableJob.update({where:{id:job.id},data:{status:'COMPLETED'}});
+    await db.knowledgeArtifact.update({where:{id:artifactId},data:{data:{checksComplete:true,conflicts:['Still ambiguous'],automaticRepairAttempts:1}}});
+    expect((await PATCH(req())).status).toBe(409);
+    expect(storage).toHaveBeenCalledTimes(1);
   });
   it('enforces a cumulative byte allowance across requests',async()=>{
     const {rateLimit}=await import('@/lib/security');

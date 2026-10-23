@@ -42,6 +42,14 @@ sets and chapter readers rather than irrelevant numerical/formula guides. Study
 generation still requires reviewed chapter evidence and the current curriculum;
 missing mappings are recorded for review instead of inventing chapter material.
 
+Flagged pending pages receive at most one fresh transcription from the original
+image, using the previous audit as observations. A separate verifier must still
+approve the new candidate. Correction checkpoints survive quota deferrals; the
+pipeline never changes a printed answer or equation to resolve a source error.
+Remaining ambiguity stays in educator review. Administrators can recheck an
+older completed import with an unused correction pass, or retry a failed import,
+without uploading the PDF again. Both actions are owner-scoped and audited.
+
 Supporting guides, listening material, practical papers and companion syllabuses
 have their own compact subject links with original and digital source access.
 Source publication and current curriculum checks control availability. Existing
