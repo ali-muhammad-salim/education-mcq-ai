@@ -209,7 +209,7 @@ export async function ingestTrustedDocument(
     info = await render(source, pagePath, signal);
   const pipelineVersion =
     "source-trust-v3:" +
-    (syllabusVersionId || "unmapped") +
+    (input.resourceType === "syllabus" ? "source-curriculum" : syllabusVersionId || "unmapped") +
     ':'+hash(JSON.stringify({effectiveFrom:input.meta.syllabusEffectiveFrom,examYear:input.meta.examYear,paperComponent:input.meta.paperComponent,paperCode:input.meta.paperCode,classLevels:input.meta.classLevels?[...new Set(input.meta.classLevels)].sort():undefined})).slice(0,16)+
     (input.reprocess ? ":revision:" + job.id : "");
   const catalogMetadata:Record<string,Prisma.InputJsonValue> = Object.fromEntries(
