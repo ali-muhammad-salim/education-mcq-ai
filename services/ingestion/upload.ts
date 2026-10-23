@@ -6,17 +6,12 @@ import { uploadEducationalAsset } from "@/lib/storage";
 import { enqueueJob } from "@/services/jobs/queue";
 import { assertAIWorkerAvailable } from "@/services/ai/readiness";
 import { ensureUploadScope } from "@/services/materials/scope";
+import { materialResourceTypes } from '@/lib/materialTypes';
+import { createHash } from 'node:crypto';
+import prisma from '@/lib/prisma';
 export const ingestionPayloadSchema = z
   .object({
-    resourceType: z.enum([
-      "syllabus",
-      "past_paper",
-      "model_paper",
-      "textbook",
-      "answer_key",
-      "e_marking",
-      "all_defaults",
-    ]),
+    resourceType: z.enum([...materialResourceTypes,'all_defaults']),
     storageKey: z.string().optional(),
     keyStorageKey: z.string().optional(),
     parentDocumentId: z.string().max(80).optional(),
@@ -26,6 +21,12 @@ export const ingestionPayloadSchema = z
     meta: z
       .object({
         title: z.string().max(240).optional(),
+        classLevels:z.array(z.number().int().min(9).max(12)).min(1).max(4).optional(),
+        importBatchId:z.string().regex(/^[a-f0-9]{64}$/).optional(),
+        sourceSha256:z.string().regex(/^[a-f0-9]{64}$/).optional(),
+        importNote:z.string().max(2000).optional(),
+        syllabusSourceSha256:z.string().regex(/^[a-f0-9]{64}$/).optional(),
+        studyKinds:z.array(z.enum(['CHAPTER_NOTES','NUMERICAL_GUIDE','FORMULA_SHEET','CHEAT_SHEET','FLASHCARDS','PRACTICE_SET','CHAPTER_READER'])).min(1).max(7).optional(),
         syllabusEffectiveFrom:z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
         subject: z.string().max(160).default("Physics"),
         board: z.string().max(160).default("AKU-EB"),
@@ -46,10 +47,11 @@ export const ingestionPayloadSchema = z
     (v) => v.resourceType === "all_defaults" || Boolean(v.storageKey),
     "A source file is required.",
   );
-export async function handleUpload(req: NextRequest) {
+export async function handleUpload(req: NextRequest, options?:{bulk?:boolean}) {
   try {
     const user = await requireUser(req, ["ADMIN"]);
-    await rateLimit("upload:" + user.id, 20, 3600);
+    const bulk=options?.bulk===true;
+    await rateLimit((bulk?'bulk-upload:':'upload:') + user.id, bulk?200:20, 3600);
     await assertAIWorkerAvailable("INGESTION");
     const form = await req.formData(),
       file = form.get("file"),
@@ -65,14 +67,25 @@ export async function handleUpload(req: NextRequest) {
         "Choose a PDF smaller than 50 MB.",
       );
     const resourceType = z
-      .enum(["syllabus", "past_paper", "model_paper", "textbook","answer_key","e_marking"])
+      .enum(materialResourceTypes)
       .parse(form.get("resourceType") || form.get("type") || "syllabus");
     if(['answer_key','e_marking'].includes(resourceType)&&!form.get('parentDocumentId'))throw new ApiError(422,'PAPER_REFERENCE_REQUIRED','Choose the matching original paper before uploading its answer key or marking notes.');
-    const asset = await uploadEducationalAsset(
-      Buffer.from(await file.arrayBuffer()),
-      file.name,
-      file.type,
-    );
+    const bytes=Buffer.from(await file.arrayBuffer());
+    const sha256=createHash('sha256').update(bytes).digest('hex');
+    if(bulk){
+      const expected=z.string().regex(/^[a-f0-9]{64}$/).parse(form.get('expectedSha256'));
+      if(expected!==sha256)throw new ApiError(422,'SOURCE_HASH_CHANGED','This file no longer matches the reviewed import manifest.');
+    }
+    const classes=form.get('classLevels')?z.array(z.number().int().min(9).max(12)).min(1).max(4).parse(JSON.parse(String(form.get('classLevels')))):undefined;
+    const batchId=bulk?z.string().regex(/^[a-f0-9]{64}$/).parse(form.get('importBatchId')):undefined;
+    const identity={ownerId:user.id,sha256,resourceType,subject:String(form.get('subject')||'Physics'),board:String(form.get('board')||'AKU-EB'),classLevel:String(form.get('classLevel')||'Class IX'),classLevels:classes?[...new Set(classes)].sort():undefined,effectiveFrom:form.get('syllabusEffectiveFrom')||null,paperComponent:form.get('paperComponent')||null,examYear:form.get('examYear')||null,publishAfterReview:form.get('publishAfterReview')==='true',syllabusSourceSha256:form.get('syllabusSourceSha256')||null,studyKinds:form.get('studyKinds')||null};
+    const bulkJobId='bulk-ingest-'+createHash('sha256').update(JSON.stringify(identity)).digest('hex');
+    if(bulk){
+      const existing=await prisma.durableJob.findFirst({where:{id:bulkJobId,ownerId:user.id,kind:'INGESTION'},select:{id:true,status:true}});
+      if(existing)return NextResponse.json({success:true,jobId:existing.id,status:existing.status,duplicate:true,message:'This exact source and scope are already queued or processed.'},{status:200});
+      await rateLimit('bulk-upload-bytes:'+user.id,512*1024*1024,3600,file.size);
+    }
+    const asset = await uploadEducationalAsset(bytes,file.name,file.type);
     let keyStorageKey: string | undefined;
     if (keyFile instanceof File && keyFile.size) {
       if (keyFile.type !== "application/pdf" || keyFile.size > 50 * 1024 * 1024)
@@ -99,7 +112,13 @@ export async function handleUpload(req: NextRequest) {
       parentDocumentId:form.get('parentDocumentId') || undefined,
       keyStorageKey,
       meta: {
-        title: file.name.slice(0, 240),
+        title: String(form.get('title')||file.name).slice(0, 240),
+        classLevels:classes,
+        importBatchId:batchId,
+        sourceSha256:bulk?sha256:undefined,
+        importNote:bulk?form.get('importNote')||undefined:undefined,
+        syllabusSourceSha256:form.get('syllabusSourceSha256')||undefined,
+        studyKinds:form.get('studyKinds')?JSON.parse(String(form.get('studyKinds'))):undefined,
         syllabusEffectiveFrom:form.get('syllabusEffectiveFrom') || undefined,
         paperCode: form.get("paperCode") || undefined,
         subject: form.get("subject") || "Physics",
@@ -116,7 +135,8 @@ export async function handleUpload(req: NextRequest) {
       ...payload.meta,
       ...(await ensureUploadScope(payload.meta)),
     };
-    const job = await enqueueJob(user.id, "INGESTION", payload);
+    for(const grade of classes||[])await ensureUploadScope({board:payload.meta.board,subject:payload.meta.subject,classLevel:String(grade)});
+    const job = bulk?await prisma.durableJob.upsert({where:{id:bulkJobId},create:{id:bulkJobId,ownerId:user.id,kind:'INGESTION',payload},update:{}}):await enqueueJob(user.id, "INGESTION", payload);
     return NextResponse.json(
       {
         success: true,

@@ -32,7 +32,7 @@ function browserDependencies(entry:string){
  visit(path.resolve(entry),[entry]);return forbidden;
 }
 describe('Learning page browser boundaries',()=>{
- it.each(['components/PaperViewerClient.tsx','app/[board]/[class]/[subject]/mcqs/McqsClient.tsx','app/[board]/[class]/[subject]/syllabus/SyllabusClient.tsx'])('%s never bundles database code',entry=>{
+ it.each(['app/admin/material-import/page.tsx','components/PaperViewerClient.tsx','app/[board]/[class]/[subject]/mcqs/McqsClient.tsx','app/[board]/[class]/[subject]/syllabus/SyllabusClient.tsx'])('%s never bundles database code',entry=>{
   expect(browserDependencies(entry)).toEqual([]);
  });
 });

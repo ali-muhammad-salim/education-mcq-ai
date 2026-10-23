@@ -10,6 +10,7 @@ import {
 import Breadcrumbs from '@/components/Breadcrumbs';
 import AuthModal from '@/components/AuthModal';
 import PaperReferencePicker from '@/components/PaperReferencePicker';
+import { supportingMaterialLabels, type MaterialResourceType } from '@/lib/materialTypes';
 
 interface IngestProgress {
   status: 'IDLE' | 'QUEUED' | 'RUNNING' | 'COMPLETED' | 'FAILED' | 'ERROR';
@@ -39,7 +40,7 @@ export default function ResourceUploadCenterPage() {
   const [board, setBoard] = useState('AKU-EB');
   const [classLevel, setClassLevel] = useState('Class IX');
   const [subject, setSubject] = useState('Physics');
-  const [resourceType, setResourceType] = useState<'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'answer_key' | 'e_marking' | 'pacing_guide'>('past_paper');
+  const [resourceType, setResourceType] = useState<MaterialResourceType>('past_paper');
 
   // Past / Model Paper specific configurations
   const [examYear, setExamYear] = useState<string>('auto');
@@ -56,7 +57,7 @@ export default function ResourceUploadCenterPage() {
     subject?: string;
     paper?: string;
     solution?: string;
-    resourceType?: 'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'answer_key' | 'e_marking' | 'pacing_guide';
+    resourceType?: MaterialResourceType;
   } | null>(null);
 
   const [jobId, setJobId] = useState('');
@@ -98,12 +99,24 @@ export default function ResourceUploadCenterPage() {
       subject?: string;
       paper?: string;
       solution?: string;
-      resourceType?: 'syllabus' | 'model_paper' | 'past_paper' | 'textbook' | 'answer_key' | 'e_marking' | 'pacing_guide';
+      resourceType?: MaterialResourceType;
     } = {};
 
     // 1. Resource Type
     if (fn.includes('syllabus') || fn.includes('curriculum')) {
       result.resourceType = 'syllabus';
+    } else if (fn.includes('listening')) {
+      result.resourceType = 'listening_material';
+    } else if (fn.includes('practical')) {
+      result.resourceType = 'practical_paper';
+    } else if (fn.includes('pacing')) {
+      result.resourceType = 'pacing_guide';
+    } else if (fn.includes('guide-for-teachers') || fn.includes('teacher-guide')) {
+      result.resourceType = 'teacher_guide';
+    } else if (fn.includes('guide')) {
+      result.resourceType = 'resource_guide';
+    } else if (fn.includes('anthology')) {
+      result.resourceType = 'textbook';
     } else if (fn.includes('model') || fn.includes('sample')) {
       result.resourceType = 'model_paper';
     } else if (fn.includes('past') || fn.includes('annual') || /201\d|202\d/.test(fn)) {
@@ -143,15 +156,15 @@ export default function ResourceUploadCenterPage() {
     } else if (fn.includes('bio') || fn.includes('biology') || fn.includes('hayatiyat')) {
       result.subject = 'Biology';
     } else if (fn.includes('math') || fn.includes('mathematics') || fn.includes('riazi') || fn.includes('algebra')) {
-      result.subject = 'Mathematics';
+      result.subject = fn.includes('humanit') ? 'Mathematics Humanities Group' : 'Mathematics Science Group';
     } else if (fn.includes('comp') || fn.includes('computer') || fn.includes('cs') || fn.includes('it')) {
       result.subject = 'Computer Science';
     } else if (fn.includes('eng') || fn.includes('english')) {
-      result.subject = 'English';
+      result.subject = fn.includes('literature')?'Literature in English':'English Compulsory';
     } else if (fn.includes('urdu')) {
-      result.subject = 'Urdu';
+      result.subject = 'Urdu Compulsory';
     } else if (fn.includes('islam') || fn.includes('islamiat')) {
-      result.subject = 'Islamiat';
+      result.subject = 'Islamiyat';
     } else if (fn.includes('phy') || fn.includes('physics') || fn.includes('tabiyat')) {
       result.subject = 'Physics';
     }
@@ -562,10 +575,17 @@ export default function ResourceUploadCenterPage() {
                   <option value="Chemistry">Chemistry</option>
                   <option value="Biology">Biology</option>
                   <option value="Mathematics">Mathematics</option>
+                  <option value="Mathematics Science Group">Mathematics Science Group</option>
+                  <option value="Mathematics Humanities Group">Mathematics Humanities Group</option>
                   <option value="Computer Science">Computer Science</option>
-                  <option value="English">English</option>
-                  <option value="Urdu">Urdu</option>
-                  <option value="Islamiat">Islamiat</option>
+                  <option value="English Compulsory">English Compulsory</option>
+                  <option value="Literature in English">Literature in English</option>
+                  <option value="Urdu Compulsory">Urdu Compulsory</option>
+                  <option value="Food and Nutrition">Food and Nutrition</option>
+                  <option value="General Science">General Science</option>
+                  <option value="Ethics">Ethics</option>
+                  <option value="Pakistan Studies">Pakistan Studies</option>
+                  <option value="Islamiyat">Islamiyat</option>
                 </select>
               </div>
             </div>
@@ -603,6 +623,7 @@ export default function ResourceUploadCenterPage() {
                   <option value="textbook">📚 Official Textbook</option>
                   <option value="answer_key">Answer key</option>
                   <option value="e_marking">E-marking notes</option>
+                  {Object.entries(supportingMaterialLabels).map(([kind,label])=><option key={kind} value={kind}>{label}</option>)}
                   <option disabled value="pacing_guide">⏱️ Teacher Pacing Guide (processing not available yet)</option>
                 </select>
               </div>
@@ -974,6 +995,7 @@ export default function ResourceUploadCenterPage() {
         <h3>Review extracted source evidence</h3>
         <p>New extractions remain unpublished until an educator checks their source pages, figures, scientific notation and curriculum mappings.</p>
         <Link className="btn" href="/admin/knowledge">Open source review →</Link>
+        <Link className="btn" href="/admin/material-import">Import resource folder →</Link>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import prisma from '../lib/prisma';
 import { claimJob } from '../services/jobs/queue';
 import { Prisma, DurableJob } from '@prisma/client';
 import { ApiError } from '../lib/api';
-import { AIBackpressure } from '../services/ai/provider';
+import { JobDeferred } from '../services/jobs/deferred';
 import { z } from 'zod';
 import { randomUUID } from 'node:crypto';
 
@@ -47,14 +47,14 @@ async function run() {
       console.log('Job completed', job.id);
       if (process.env.WORKER_ONCE === '1') stopping = true;
     } catch (error) {
-      const deferred = error instanceof AIBackpressure;
+      const deferred = error instanceof JobDeferred;
       const retry = deferred || (!(error instanceof ApiError && error.status < 500) && job.attempts < 3);
-      await prisma.durableJob.updateMany({ where: lease, data: { status: retry ? 'QUEUED' : 'FAILED', availableAt: error instanceof AIBackpressure ? error.retryAt : new Date(Date.now() + 10000 * job.attempts), ...(deferred ? { attempts: { decrement: 1 } } : {}), lockedAt: null, leaseToken: null, error: error instanceof ApiError ? error.message : 'Processing failed. Check worker logs and configuration.' } });
+      await prisma.durableJob.updateMany({ where: lease, data: { status: retry ? 'QUEUED' : 'FAILED', availableAt: error instanceof JobDeferred ? error.retryAt : new Date(Date.now() + 10000 * job.attempts), ...(deferred ? { attempts: { decrement: 1 } } : {}), lockedAt: null, leaseToken: null, error: error instanceof ApiError ? error.message : 'Processing failed. Check worker logs and configuration.' } });
       if (!retry && job.kind === 'STUDY_GENERATION') {
         const payload = z.object({ noteId: z.string() }).safeParse(job.payload);
         if (payload.success) await prisma.studyNote.updateMany({ where: { id: payload.data.noteId, ownerId: job.ownerId, status: 'DRAFT' }, data: { status: 'FAILED', staleReason: error instanceof ApiError ? error.message : 'Generation failed. Review the source scope and retry as a new revision.' } });
       }
-      if (error instanceof AIBackpressure) console.log('AI job deferred', job.id, error.retryAt.toISOString());
+      if (error instanceof JobDeferred) console.log('Job deferred', job.id, error.code, error.retryAt.toISOString());
       else console.error('Job failed', job.id, error instanceof ApiError ? { code: error.code, status: error.status } : error instanceof Error ? error.name : 'unknown');
       if (process.env.WORKER_ONCE === '1') stopping = true;
     } finally { clearInterval(heartbeat); controller = undefined; }

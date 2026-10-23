@@ -18,11 +18,12 @@ export async function requireUser(req: NextRequest, roles?: readonly string[]) {
   if (roles && !roles.includes(user.role)) throw new ApiError(403, 'FORBIDDEN', 'You do not have permission for this action.');
   return user;
 }
-export async function rateLimit(key: string, maximum: number, seconds: number) {
+export async function rateLimit(key: string, maximum: number, seconds: number, amount=1) {
+  if(!Number.isSafeInteger(amount)||amount<1||amount>maximum)throw new ApiError(429,'RATE_LIMITED','This request exceeds the permitted allowance.');
   const now = new Date(), expires = new Date(now.getTime() + seconds * 1000), digest = createHash('sha256').update(key).digest('hex');
-  const [entry] = await prisma.$queryRaw<{ count: number }[]>`INSERT INTO "RequestLimit" ("key", "count", "expiresAt") VALUES (${digest}, 1, ${expires})
+  const [entry] = await prisma.$queryRaw<{ count: number }[]>`INSERT INTO "RequestLimit" ("key", "count", "expiresAt") VALUES (${digest}, ${amount}, ${expires})
     ON CONFLICT ("key") DO UPDATE SET
-      "count" = CASE WHEN "RequestLimit"."expiresAt" <= ${now} THEN 1 ELSE LEAST("RequestLimit"."count" + 1, ${maximum + 1}) END,
+      "count" = CASE WHEN "RequestLimit"."expiresAt" <= ${now} THEN ${amount} ELSE LEAST("RequestLimit"."count" + ${amount}, ${maximum + 1}) END,
       "expiresAt" = CASE WHEN "RequestLimit"."expiresAt" <= ${now} THEN ${expires} ELSE "RequestLimit"."expiresAt" END
     RETURNING "count"`;
   if (entry.count > maximum) throw new ApiError(429, 'RATE_LIMITED', 'Too many requests. Please try again later.');

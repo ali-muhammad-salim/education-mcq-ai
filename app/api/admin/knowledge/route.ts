@@ -61,7 +61,7 @@ export async function PATCH(req: NextRequest) {
       if (input.status === 'APPROVED' && artifact.document.resourceType === 'textbook' && artifact.document.autoStudyResources) {
         const pending = await tx.knowledgeArtifact.count({ where: { documentId: artifact.documentId, status: { not: 'APPROVED' } } });
         if (!pending) {
-          try { await scheduleStudyPack(tx, user.id, { documentId: artifact.documentId }); }
+          try { await scheduleStudyPack(tx, user.id, { documentId: artifact.documentId, kinds: (artifact.document.catalogMetadata as {studyKinds?:string[]} | null)?.studyKinds }); }
           catch (error) {
             if (!(error instanceof ApiError) || !['CHAPTER_EVIDENCE_REQUIRED', 'BOOK_REVIEW_REQUIRED', 'BOOK_CURRENT_CURRICULUM_REQUIRED', 'STUDY_PACK_TOO_LARGE', 'STUDY_BOOK_SCOPE_TOO_LARGE'].includes(error.code)) throw error;
             await tx.auditLog.create({ data: { userId: user.id, action: 'STUDY_PACK_NEEDS_MAPPING', resource: 'KnowledgeDocument', resourceId: artifact.documentId, details: { reason: error.code } } });

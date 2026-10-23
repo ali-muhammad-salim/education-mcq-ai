@@ -51,6 +51,12 @@ describe.skipIf(!url)('Knowledge source trust in PostgreSQL', () => {
     expect(await searchApprovedKnowledge({ query: 'force newtons', board: 'another-board', classLevel: 9, subject: 'Physics' })).toEqual([]);
     expect(await searchApprovedKnowledge({ query: 'force newtons', board: boardCode, classLevel: 9, subject: '%' })).toEqual([]);
   });
+  it('does not retrieve a combined-class guide as class-specific evidence', async () => {
+    const { searchApprovedKnowledge } = await import('@/services/knowledge/search');
+    await db.knowledgeDocument.update({where:{id:documents[0]},data:{catalogMetadata:{scopeSubjectIds:[subjects[0],subjects[1]]}}});
+    try {expect(await searchApprovedKnowledge({query:'force newtons',board:boardCode,classLevel:9,subject:'Physics'})).toEqual([]);}
+    finally {await db.knowledgeDocument.update({where:{id:documents[0]},data:{catalogMetadata:{}}});}
+  });
   it('uses actual pgvector search without mixing model namespaces or curriculum scopes', async () => {
     const model = 'embedding-fixture-' + suffix, vector = Array.from({ length: 768 }, (_, i) => i === 0 ? 1 : 0);
     vi.stubEnv('GEMINI_API_KEYS', 'synthetic-vector-key-' + suffix); vi.stubEnv('GEMINI_PROJECT_IDS', ''); vi.stubEnv('GEMINI_DISTINCT_PROJECTS', ''); vi.stubEnv('GEMINI_EMBEDDING_MODEL', model); vi.stubEnv('GEMINI_RPM', '5'); vi.stubEnv('GEMINI_TPM', '32000'); vi.stubEnv('GEMINI_RPD', '100');
