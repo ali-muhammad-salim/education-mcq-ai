@@ -49,6 +49,14 @@ describe.skipIf(!url)('Reviewed folder import',()=>{
     const rows=await db.subject.findMany({where:{name},include:{academicClass:true}});subjects.push(...[9,10].map(grade=>rows.find(row=>row.academicClass.level===grade)!.id));
     expect(subjects).toHaveLength(2);
   });
+  it('defers dependent papers before reading assets or calling a provider',async()=>{
+    const original=await db.durableJob.findFirstOrThrow({where:{ownerId:owner}});
+    const {ingestTrustedDocument}=await import('@/services/ingestion/trusted');
+    const {JobDeferred}=await import('@/services/jobs/deferred');
+    const job={...original,payload:{resourceType:'model_paper',storageKey:'private/resources/00000000-0000-0000-0000-000000000000-source.pdf',meta:{board:'AKU-EB',subject:name,classLevel:'Class IX',syllabusSourceSha256:'c'.repeat(64)}}};
+    await expect(ingestTrustedDocument(job,new AbortController().signal)).rejects.toBeInstanceOf(JobDeferred);
+    expect(await db.knowledgeDocument.count({where:{ownerId:owner}})).toBe(0);
+  });
   it('publishes shared guides only after every source page is approved',async()=>{
     documentId=(await db.knowledgeDocument.create({data:{ownerId:owner,subjectId:subjects[0],sha256:sha(suffix),storageKey:'private/resources/00000000-0000-0000-0000-000000000000-source.pdf',resourceType:'resource_guide',pipelineVersion:'test',totalPages:1,status:'NEEDS_REVIEW',publishAfterReview:true,catalogMetadata:{scopeSubjectIds:subjects}}})).id;
     artifactId=(await db.knowledgeArtifact.create({data:{documentId,pageNumber:1,content:'Verified source',contentHash:sha('page'),sourceImageKey:'private/resources/00000000-0000-0000-0000-000000000000-page.png',data:{}}})).id;
@@ -66,6 +74,10 @@ describe.skipIf(!url)('Reviewed folder import',()=>{
     expect(await db.knowledgeDocument.count({where:{...publicMaterialWhere,...materialScopeWhere(['unrelated-subject']),id:documentId}})).toBe(0);
     await db.knowledgeArtifact.update({where:{id:artifactId},data:{status:'PENDING_REVIEW',reviewerId:null,reviewedAt:null}});
     expect(await db.knowledgeDocument.count({where:{...publicMaterialWhere,...materialScopeWhere([subjects[1]]),id:documentId}})).toBe(0);
+    await expect(db.$transaction(async tx=>{await approveCheckedPage(tx,{id:artifactId,documentId,ownerId:owner,contentHash:sha('page'),data,index:true});throw Error('Simulated transaction failure');})).rejects.toThrow('Simulated transaction failure');
+    expect((await db.knowledgeArtifact.findUniqueOrThrow({where:{id:artifactId}})).status).toBe('PENDING_REVIEW');
+    expect(await db.auditLog.count({where:{resourceId:artifactId,action:'KNOWLEDGE_AUTO_APPROVED'}})).toBe(1);
+    expect(await db.durableJob.count({where:{ownerId:owner,kind:'AI_EMBEDDING'}})).toBe(0);
   });
   it('enforces a cumulative byte allowance across requests',async()=>{
     const {rateLimit}=await import('@/lib/security');

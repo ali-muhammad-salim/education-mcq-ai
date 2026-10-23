@@ -361,6 +361,8 @@ export async function ingestTrustedDocument(
       const scope = JSON.stringify({
         board: input.meta.board,
         class: input.meta.classLevel,
+        declaredClasses: input.meta.classLevels,
+        resourceType: input.resourceType,
         subject: input.meta.subject,
         page,
         outcomes: slos,
