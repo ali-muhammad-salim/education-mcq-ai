@@ -5,7 +5,7 @@ import prisma from '@/lib/prisma';
 import { ApiError } from '@/lib/api';
 import { readEducationalAsset } from '@/lib/storage';
 import { pageExtraction, sourceVerification, verificationResponseSchema } from '@/services/ingestion/trust';
-import { modelJson, canonicalModel } from '@/services/ai/provider';
+import { modelJson, independentVerifierModels } from '@/services/ai/provider';
 import { publicMaterialWhere } from '@/lib/materialVisibility';
 import { normalizeQuestion } from '@/services/assessment/scoring';
 
@@ -80,15 +80,17 @@ export async function compileReviewedPaper(job: DurableJob, signal: AbortSignal)
     const conflicts = questionResolutionConflicts(q, value, new Set(outcomes.map(o => o.id)), official.get(q.number)?.answer);
     if(q.originalSloCode && official.get(q.number)?.originalSloCode && q.originalSloCode!==official.get(q.number)!.originalSloCode) conflicts.push('The paper and official key print different original SLO references.');
     if (officialConflicts.has(q.number)) conflicts.push('Official answer sources disagree.');
-    const verifier = canonicalModel(process.env.GEMINI_VERIFIER_MODEL);
-    if (!verifier || verifier === candidate.model) conflicts.push('Independent answer verifier is unavailable.');
+    const verifiers = independentVerifierModels(candidate.model);
+    let verificationModel = "";
+    if (!verifiers.length) conflicts.push('Independent answer verifier is unavailable.');
     else {
-      const audit = await modelJson('Independently solve the source question and audit the candidate. faithful checks the literal source question/options and printed key; complete checks every option explanation, all scientific claims, calculations, charges/bonds and diagram interpretation; mappingsCorrect checks semantic relevance to the supplied current syllabus. Reject unsupported or merely code-matched SLO assignments and any ambiguous answer. Report exact conflicts. Context: ' + context + '\nCandidate: ' + JSON.stringify(value), verificationResponseSchema, signal, { model: verifier, image });
+      const audit = await modelJson('Independently solve the source question and audit the candidate. faithful checks the literal source question/options and printed key; complete checks every option explanation, all scientific claims, calculations, charges/bonds and diagram interpretation; mappingsCorrect checks semantic relevance to the supplied current syllabus. Reject unsupported or merely code-matched SLO assignments and any ambiguous answer. Report exact conflicts. Context: ' + context + '\nCandidate: ' + JSON.stringify(value), verificationResponseSchema, signal, { models: verifiers, image });
       const checked = sourceVerification.parse(audit.value);
+      verificationModel = audit.model;
       if (audit.model === candidate.model || !checked.faithful || !checked.complete || !checked.mappingsCorrect) conflicts.push('Independent question audit did not pass.');
       conflicts.push(...checked.conflicts);
     }
-    items[key] = { value, conflicts: [...new Set(conflicts)], model: candidate.model, verifier };
+    items[key] = { value, conflicts: [...new Set(conflicts)], model: candidate.model, verifier:verificationModel };
     await prisma.durableJob.updateMany({ where: { id: job.id, leaseToken: job.leaseToken, status: 'RUNNING' }, data: { result: { revision, items } } });
   }
   // Cached or human-edited candidates must still obey the current printed keys.

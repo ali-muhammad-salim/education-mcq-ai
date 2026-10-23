@@ -2,7 +2,7 @@ import { questionSchema } from '@/lib/validations/assessment';
 import { searchApprovedKnowledge } from '@/services/knowledge/search';
 import { gradeAnswer } from '@/services/assessment/scoring';
 import { createHash } from 'node:crypto';
-import { modelJson, AIBackpressure, canonicalModel } from './provider';
+import { modelJson, AIBackpressure, independentVerifierModels } from './provider';
 import { z } from 'zod';
 import prisma from '@/lib/prisma';
 import { ApiError } from '@/lib/api';
@@ -64,8 +64,9 @@ export async function generateQuestions(ownerId: string, raw: unknown, jobId?: s
   const verificationSchema = { type: 'ARRAY', items: { type: 'OBJECT', properties: { index: { type: 'INTEGER' }, answer: { type: 'STRING' }, answerIds: { type: 'ARRAY', items: { type: 'STRING' } }, grounded: { type: 'BOOLEAN' }, aligned: { type: 'BOOLEAN' }, reasoning: { type: 'STRING' } }, required: ['index', 'answer', 'answerIds', 'grounded', 'aligned', 'reasoning'] } };
   let verification: { index: number; answer: string; answerIds: string[]; grounded: boolean; aligned: boolean; reasoning: string }[] = [], verificationModel: string | null = null;
   try {
-    if (!process.env.GEMINI_VERIFIER_MODEL || canonicalModel(process.env.GEMINI_VERIFIER_MODEL) === generated.model) throw new Error('Independent verifier unavailable');
-    const result = await modelJson('Independently solve these questions using the evidence. Do not infer the answer from option order. Return the selected option ID (or numeric answer) in answer; for MCQ_MULTIPLE return the complete set in answerIds. For written responses return a complete independent solution and check the supplied rubric. Return exactly one result per question index, with reasoning. Mark grounded true only when every claim and cited source supports the answer; mark aligned true only when the question actually assesses its stated SLO.\nEvidence: ' + evidence + '\nQuestions: ' + JSON.stringify(questions.map((q, index) => ({ index, stemText: q.stemText, sloId: q.sloId, sourceIds: citations[index], questionType: q.questionType, rubric: q.rubric, unit: q.unit, numericalTolerance: q.numericalTolerance, options: q.options.map(o => ({ id: o.id, text: o.text })) }))), verificationSchema, signal, { model: process.env.GEMINI_VERIFIER_MODEL });
+    const verifiers=independentVerifierModels(generated.model);
+    if (!verifiers.length) throw new Error('Independent verifier unavailable');
+    const result = await modelJson('Independently solve these questions using the evidence. Do not infer the answer from option order. Return the selected option ID (or numeric answer) in answer; for MCQ_MULTIPLE return the complete set in answerIds. For written responses return a complete independent solution and check the supplied rubric. Return exactly one result per question index, with reasoning. Mark grounded true only when every claim and cited source supports the answer; mark aligned true only when the question actually assesses its stated SLO.\nEvidence: ' + evidence + '\nQuestions: ' + JSON.stringify(questions.map((q, index) => ({ index, stemText: q.stemText, sloId: q.sloId, sourceIds: citations[index], questionType: q.questionType, rubric: q.rubric, unit: q.unit, numericalTolerance: q.numericalTolerance, options: q.options.map(o => ({ id: o.id, text: o.text })) }))), verificationSchema, signal, { models: verifiers });
     if (result.model === generated.model) throw new Error('Verifier resolved to the generator model');
     verification = z.array(z.object({ index: z.number().int(), answer: z.string(), answerIds: z.array(z.string()), grounded: z.boolean(), aligned: z.boolean(), reasoning: z.string() })).parse(result.value); verificationModel = result.model;
     if (verification.length !== questions.length || new Set(verification.map(v => v.index)).size !== questions.length || verification.some(v => v.index < 0 || v.index >= questions.length)) verification = [];
