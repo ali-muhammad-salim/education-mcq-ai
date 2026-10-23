@@ -15,7 +15,7 @@ import { readEducationalAsset, uploadEducationalAsset } from "@/lib/storage";
 import {
   modelJson,
   AIBackpressure,
-  canonicalModel,
+  independentVerifierModels,
 } from "@/services/ai/provider";
 import { ingestionPayloadSchema } from "./upload";
 import {checkedCurriculumPlan, curriculumIndexPrompt, curriculumPlanResponse, curriculumPlan, type CurriculumPlan} from './curriculum-plan';
@@ -316,10 +316,10 @@ export async function ingestTrustedDocument(
           }
           const plan=batch.plan;
           if(!batch.verified){
-            const verifier=canonicalModel(process.env.GEMINI_VERIFIER_MODEL);
-            if(!verifier || !batch.extractionModel || verifier===batch.extractionModel)plan.conflicts.push('Independent index verifier is unavailable.');
+            const verifiers=independentVerifierModels(batch.extractionModel||'');
+            if(!verifiers.length || !batch.extractionModel)plan.conflicts.push('Independent index verifier is unavailable.');
             else {
-              const audit=await modelJson('Independently audit every class/chapter assignment against these original index images. faithful means every quoted evidence string and class/chapter relationship is printed, complete means all allocations in these images were captured, mappingsCorrect means every grade assignment matches that index. Missing grade headings in the body are not a reason to guess. Report conflicts. Physical PDF pages: '+JSON.stringify(pages)+'\nPlan: '+JSON.stringify(plan),verificationResponseSchema,signal,{model:verifier,images});
+              const audit=await modelJson('Independently audit every class/chapter assignment against these original index images. faithful means every quoted evidence string and class/chapter relationship is printed, complete means all allocations in these images were captured, mappingsCorrect means every grade assignment matches that index. Missing grade headings in the body are not a reason to guess. Report conflicts. Physical PDF pages: '+JSON.stringify(pages)+'\nPlan: '+JSON.stringify(plan),verificationResponseSchema,signal,{models:verifiers,images});
               const checked=sourceVerification.parse(audit.value);
               if(audit.model===batch.extractionModel||!checked.faithful||!checked.complete||!checked.mappingsCorrect)plan.conflicts.push('Independent class allocation audit did not pass.');
               plan.conflicts.push(...checked.conflicts);
@@ -512,8 +512,8 @@ export async function ingestTrustedDocument(
       }
       let verification: z.infer<typeof sourceVerification> | null = null,
         verificationModel: string | null = null;
-      const verifier = canonicalModel(process.env.GEMINI_VERIFIER_MODEL);
-      if (!verifier || verifier === extractionModel)
+      const verifiers = independentVerifierModels(extractionModel);
+      if (!verifiers.length)
         conflicts.push("An independent verifier model is not configured.");
       else {
         try {
@@ -524,7 +524,7 @@ export async function ingestTrustedDocument(
               JSON.stringify(extraction),
             verificationResponseSchema,
             signal,
-            { model: verifier, image },
+            { models: verifiers, image },
           );
           if (result.model === extractionModel)
             throw new Error("Verifier resolved to the extraction model");

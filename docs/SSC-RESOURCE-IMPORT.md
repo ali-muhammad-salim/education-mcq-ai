@@ -50,6 +50,29 @@ Remaining ambiguity stays in educator review. Administrators can recheck an
 older completed import with an unused correction pass, or retry a failed import,
 without uploading the PDF again. Both actions are owner-scoped and audited.
 
+## Model pools and quota configuration
+
+`GEMINI_EXTRACTOR_MODELS` is the ordered pool for extraction/generation,
+falling back to the older `GEMINI_MODELS` / `GEMINI_MODEL` settings when absent.
+`GEMINI_VERIFIER_MODELS` is the ordered pool for independent verification,
+falling back to the older `GEMINI_VERIFIER_MODEL` setting when absent. Use only
+models whose image input and structured-output capabilities have been checked
+for this workload. The generator is excluded from its verifier pool and the
+resolved model identity is recorded with each result.
+
+Exhausted project/model quotas advance to another configured model. If all
+eligible models are full, the job resumes at the earliest available quota window.
+Missing models may fall back; invalid schemas, incomplete outputs and educational
+disagreements do not trigger a search for a model that approves the candidate.
+Embedding namespaces and optional image generation remain separate.
+
+Set `GEMINI_MODEL_LIMITS` to a JSON object keyed by model ID, with positive integer
+`rpm`, `tpm` and `rpd` values taken from AI Studio. Unconfigured models retain the
+existing global budgets. For example, an observed free-tier Flash limit of 20 RPD
+must not be replaced with a third-party article's generic 1,500-RPD figure.
+Provider cooldowns remain scoped to the actual project/model; model-specific
+permission failures do not globally disable an otherwise usable credential.
+
 Supporting guides, listening material, practical papers and companion syllabuses
 have their own compact subject links with original and digital source access.
 Source publication and current curriculum checks control availability. Existing
