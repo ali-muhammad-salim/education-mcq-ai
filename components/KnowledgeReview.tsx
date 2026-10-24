@@ -6,9 +6,11 @@ import styles from './KnowledgeReview.module.css';
 import SourceEditionReview from './SourceEditionReview';
 type Extraction = z.infer<typeof pageExtraction>;
 type Outcome = { id: string; code: string | null; description: string };
+type BrowserDraft = {id:string;createdAt:string;details:{baseContentHash:string;note:string;extraction:Extraction}};
 type Artifact = { id: string; documentId: string; contentHash: string; pageNumber: number; sourceImageKey: string; status: string; data: { extraction: unknown; conflicts?: string[]; crops?: { region: number; storageKey: string }[]; checksComplete?: boolean; extractionModel?: string; verificationModel?: string }; document: { storageKey: string; createdAt: string; resourceType: string; status: string; subject: { name: string; academicClass: { name: string; programme: { board: { shortCode: string } } } } } };
 export default function KnowledgeReview() {
   const [structured,setStructured]=useState(''),[structuredError,setStructuredError]=useState('');
+  const [browserDraft,setBrowserDraft]=useState<BrowserDraft|null>(null);
   const [items, setItems] = useState<Artifact[]>([]), [selected, setSelected] = useState<Artifact | null>(null), [draft, setDraft] = useState<Extraction | null>(null), [note, setNote] = useState(''), [message, setMessage] = useState(''), [busy, setBusy] = useState(false), [cursor, setCursor] = useState<string | null>(null), [filter, setFilter] = useState('PENDING_REVIEW'), [outcomes, setOutcomes] = useState<Outcome[]>([]);
   async function load(after = '', status = filter) {
     setBusy(true); setMessage('');
@@ -19,6 +21,8 @@ export default function KnowledgeReview() {
   useEffect(() => {
     if (!selected) return;
     const controller = new AbortController();
+    setBrowserDraft(null);
+    void fetch('/api/admin/knowledge?artifactId='+encodeURIComponent(selected.id),{signal:controller.signal}).then(async response=>{const body=await response.json();if(!response.ok)throw Error(body.error?.message||'Unable to load the saved page draft.');setBrowserDraft(body.draft);}).catch(error=>{if(!controller.signal.aborted)setMessage(error instanceof Error?error.message:'Unable to load the saved page draft.');});
     setOutcomes([]);
     void fetch('/api/admin/knowledge?documentId=' + encodeURIComponent(selected.documentId), { signal: controller.signal }).then(async response => { const body = await response.json(); if (!response.ok) throw Error(body.error?.message || 'Unable to load learning outcomes.'); setOutcomes(body.outcomes); }).catch(error => { if (!controller.signal.aborted) setMessage(error instanceof Error ? error.message : 'Unable to load learning outcomes.'); });
     return () => controller.abort();
@@ -35,6 +39,22 @@ export default function KnowledgeReview() {
       return { ...value, text: change.text && value.text.includes(old.text) ? value.text.replace(old.text, change.text) : value.text, regions: value.regions.map((r, i) => i === index ? { ...r, ...change } : r) };
     });
   }
+  async function saveBrowserDraft(){
+    if(!selected||!draft)return;
+    setBusy(true);setMessage('');
+    try{
+      const response=await fetch('/api/admin/knowledge',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:selected.id,contentHash:selected.contentHash,note,extraction:draft})});
+      const body=await response.json();if(!response.ok)throw Error(body.error?.message||'Unable to save this page draft.');
+      setBrowserDraft(body.draft);setMessage('Page draft saved in the database. It is awaiting review and has not been published.');
+    }catch(error){setMessage(error instanceof Error?error.message:'Unable to save this page draft.');}finally{setBusy(false);}
+  }
+  function restoreBrowserDraft(){
+    if(!browserDraft||!selected)return;
+    if(browserDraft.details.baseContentHash!==selected.contentHash){setMessage('This draft belongs to an older source revision. Compare it with the current source before continuing.');return;}
+    const parsed=pageExtraction.safeParse(browserDraft.details.extraction);
+    if(!parsed.success){setMessage('The saved draft is incomplete and could not be restored.');return;}
+    setDraft(parsed.data);setStructured(JSON.stringify(parsed.data.learning,null,2));setStructuredError('');setNote(browserDraft.details.note);setMessage('Saved draft restored for review.');
+  }
   async function review(status: 'APPROVED' | 'REJECTED' | 'PENDING_REVIEW') {
     if (!selected || !draft) return;
     setBusy(true); setMessage('');
@@ -48,6 +68,7 @@ export default function KnowledgeReview() {
       <button className={styles.back} onClick={() => setSelected(null)}>← Back to reviews</button><h2>Page {selected.pageNumber} · {selected.document.subject.name}</h2>
       <p>Extractor: {selected.data.extractionModel || 'Unknown'} · Verifier: {selected.data.verificationModel || 'Unavailable'}</p>
       {selected.document.resourceType==='syllabus'&&<SourceEditionReview key={selected.documentId} documentId={selected.documentId}/>}
+      <div className={styles.actions}><button type="button" disabled={busy||Boolean(structuredError)||note.trim().length<10||selected.status!=='PENDING_REVIEW'} onClick={()=>void saveBrowserDraft()}>Save page draft</button>{browserDraft&&<button type="button" disabled={busy} onClick={restoreBrowserDraft}>Restore saved draft</button>}</div><p>A saved draft keeps this page’s progress in the database. Add the Gemini conversation link, model and any unresolved details to the review notes. Approval is a separate action.</p>
       <div className={styles.columns}><div><a href={'/api/assets/' + selected.sourceImageKey} target="_blank" rel="noreferrer">Open original page at full size ↗</a>
         <img className={styles.source} src={'/api/assets/' + selected.sourceImageKey} alt={'Original source page ' + selected.pageNumber}/>
         <div className={styles.crops}>{selected.data.crops?.map(crop => <a key={crop.region} href={'/api/assets/' + crop.storageKey} target="_blank" rel="noreferrer">Original crop · Region {crop.region + 1} ↗</a>)}</div>

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import prisma from '@/lib/prisma';
-import { requireUser } from '@/lib/security';
+import { requireUser, rateLimit } from '@/lib/security';
 import { ApiError, apiError } from '@/lib/api';
 import { pageExtraction, searchableSource } from '@/services/ingestion/trust';
 import { createHash } from 'node:crypto';
@@ -14,6 +14,12 @@ import {learningTranscriptionConflicts} from '@/services/ingestion/learning-vali
 export async function GET(req: NextRequest) {
   try {
     await requireUser(req, ['ADMIN']);
+    const artifactId = req.nextUrl.searchParams.get('artifactId');
+    if (artifactId) {
+      const id = z.string().min(1).max(80).parse(artifactId);
+      const draft = await prisma.auditLog.findFirst({where:{action:'KNOWLEDGE_BROWSER_DRAFT',resource:'KnowledgeArtifact',resourceId:id},orderBy:[{createdAt:'desc'},{id:'desc'}],select:{id:true,createdAt:true,details:true}});
+      return NextResponse.json({draft},{headers:{'Cache-Control':'no-store'}});
+    }
     const documentId = req.nextUrl.searchParams.get('documentId');
     if (documentId) {
       const document = await prisma.knowledgeDocument.findUniqueOrThrow({ where: { id: z.string().max(80).parse(documentId) }, select: { syllabusVersionId: true } });
@@ -24,6 +30,24 @@ export async function GET(req: NextRequest) {
     const artifacts = await prisma.knowledgeArtifact.findMany({ where: { status: query.status }, orderBy: { id: 'asc' }, take: 21, ...(query.cursor ? { cursor: { id: query.cursor }, skip: 1 } : {}), include: { document: { include: { subject: { include: { academicClass: { include: { programme: { include: { board: true } } } } } } } } } });
     return NextResponse.json({ artifacts: artifacts.slice(0, 20), nextCursor: artifacts.length > 20 ? artifacts[19].id : null }, { headers: { 'Cache-Control': 'no-store' } });
   } catch (error) { return apiError(error); }
+}
+/** An immutable browser-work checkpoint; it never approves or changes canonical source text. */
+export async function POST(req: NextRequest) {
+  try {
+    const user=await requireUser(req,['ADMIN']);
+    await rateLimit('browser-source-draft:'+user.id,60,3600);
+    const input=z.object({id:z.string().min(1).max(80),contentHash:z.string().regex(/^[a-f0-9]{64}$/),note:z.string().trim().min(10).max(4000),extraction:pageExtraction}).parse(await req.json());
+    const result=await prisma.$transaction(async tx=>{
+      const artifact=await tx.knowledgeArtifact.findUniqueOrThrow({where:{id:input.id},include:{document:true}});
+      if(artifact.contentHash!==input.contentHash||artifact.status!=='PENDING_REVIEW')throw new ApiError(409,'REVIEW_CHANGED','The source changed. Refresh before saving a draft.');
+      const current=z.object({extraction:pageExtraction}).passthrough().parse(artifact.data);
+      if(input.extraction.regions.length!==current.extraction.regions.length||input.extraction.regions.some((region,i)=>region.kind!==current.extraction.regions[i].kind||JSON.stringify(region.box)!==JSON.stringify(current.extraction.regions[i].box)))throw new ApiError(422,'SOURCE_GEOMETRY_CHANGED','Keep the original region order, types and crop coordinates in a page draft.');
+      const draft=await tx.auditLog.create({data:{userId:user.id,action:'KNOWLEDGE_BROWSER_DRAFT',resource:'KnowledgeArtifact',resourceId:artifact.id,details:{baseContentHash:input.contentHash,sourceSha256:artifact.document.sha256,pageNumber:artifact.pageNumber,documentId:artifact.documentId,note:input.note,extraction:input.extraction}},select:{id:true,createdAt:true,details:true}});
+      // The checkpoint retains its base hash; restoring it requires that same source revision.
+      return {draft};
+    },{isolationLevel:Prisma.TransactionIsolationLevel.Serializable});
+    return NextResponse.json(result,{headers:{'Cache-Control':'no-store'}});
+  }catch(error){return apiError(error);}
 }
 export async function PATCH(req: NextRequest) {
   try {
