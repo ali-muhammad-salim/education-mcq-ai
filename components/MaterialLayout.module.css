@@ -116,6 +116,35 @@
   height: auto;
   margin: 0.7rem 0;
 }
+.sourceTableScroll {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0.8rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  white-space: normal;
+}
+.sourceTable {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+.sourceTable th,
+.sourceTable td {
+  border: 1px solid var(--border-color);
+  padding: 0.65rem;
+  vertical-align: top;
+  text-align: start;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.sourceTable th {
+  font-weight: 700;
+  color: var(--text-color);
+}
 .page :focus-visible {
   outline: 3px solid var(--primary-color);
   outline-offset: 3px;
