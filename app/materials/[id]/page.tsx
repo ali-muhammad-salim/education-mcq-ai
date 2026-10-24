@@ -5,7 +5,8 @@ import { ApiError } from "@/lib/api";
 import { publicMaterial, materialMetadata } from "@/services/materials/catalog";
 import { studyScope } from "@/services/study/navigation";
 import DocumentViews from "@/components/DocumentViews";
-import ScientificText from "@/components/ScientificText";
+import SourceDocumentText from "@/components/SourceDocumentText";
+import {literalSourceText} from '@/lib/sourceTables';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import styles from "@/components/MaterialLayout.module.css";
 import {z} from 'zod';
@@ -72,7 +73,7 @@ export default async function Page({
           {pages.map((page) => (
             <section className={styles.source} key={page.id}>
               <h2>Page {page.pageNumber}</h2>
-              <ScientificText text={page.content} />
+              <SourceDocumentText text={literalSourceText(page.data,page.content)} />
               {(()=>{
                 const data=z.object({crops:z.array(z.object({region:z.number().int().nonnegative()})),enhancements:z.array(approvedEnhancement).default([])}).safeParse(page.data);
                 return data.success?data.data.crops.map(c=><figure key={c.region} style={{margin:'1rem 0'}}>
