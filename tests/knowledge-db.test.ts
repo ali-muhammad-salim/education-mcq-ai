@@ -84,6 +84,22 @@ describe.skipIf(!url)('Knowledge source trust in PostgreSQL', () => {
     expect((await GET(req(teacherToken), { params: Promise.resolve({ id: reviewId }) })).status).toBe(404);
     const response = await GET(req(teacherToken), { params: Promise.resolve({ id: sourceId }) }); expect(response.status).toBe(200); const body = await response.json(); expect(body.contentHash).toHaveLength(64); expect(body.sourceImageKey).toBeUndefined();
   });
+  it('checkpoints browser work without publishing or replacing source evidence',async()=>{
+    const {POST,GET}=await import('@/app/api/admin/knowledge/route');
+    const before=await db.knowledgeArtifact.findUniqueOrThrow({where:{id:reviewId}});
+    const draft={...extraction,text:'Browser transcription awaiting comparison with the original.'};
+    const request=(credential=token,contentHash=before.contentHash,value:unknown=draft)=>new NextRequest('http://localhost/api/admin/knowledge',{method:'POST',headers:{authorization:'Bearer '+credential,origin:'http://localhost','Content-Type':'application/json'},body:JSON.stringify({id:reviewId,contentHash,note:'Gemini browser draft; source checks are unresolved.',extraction:value})});
+    expect((await POST(request(teacherToken))).status).toBe(403);
+    expect((await POST(request(token,'0'.repeat(64)))).status).toBe(409);
+    expect((await POST(request(token,before.contentHash,{...draft,regions:[{kind:'TEXT',text:'extra',box:null,labels:[],relationships:[],sloIds:[],questionNumber:'',uncertainty:''}]}))).status).toBe(422);
+    const saved=await POST(request());expect(saved.status).toBe(200);
+    const after=await db.knowledgeArtifact.findUniqueOrThrow({where:{id:reviewId}});
+    expect(after.content).toBe(before.content);expect(after.contentHash).toBe(before.contentHash);expect(after.status).toBe('PENDING_REVIEW');expect(after.reviewerId).toBeNull();
+    expect(await db.durableJob.count({where:{ownerId:adminId}})).toBe(0);
+    const read=await GET(new NextRequest('http://localhost/api/admin/knowledge?artifactId='+reviewId,{headers:{authorization:'Bearer '+token}}));
+    const body=await read.json();expect(body.draft.details.extraction.text).toBe(draft.text);expect(body.draft.details.baseContentHash).toBe(before.contentHash);expect(body.draft.details.sourceSha256).toHaveLength(64);
+    expect(await db.auditLog.count({where:{resourceId:reviewId,action:'KNOWLEDGE_BROWSER_DRAFT'}})).toBe(1);
+  });
   it('rejects stale content and non-admin reviews, then records an auditable approval', async () => {
     const { PATCH } = await import('@/app/api/admin/knowledge/route');
     const artifact = await db.knowledgeArtifact.findUniqueOrThrow({ where: { id: reviewId } });
