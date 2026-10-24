@@ -2,6 +2,8 @@
 
 Use this supervised path for source pages processed in Gemini Apps. The Gemini subscription and API quota are separate. A chat response is a draft until checked against the original.
 
+Use the task-specific [prompt pack](../prompts/browser/README.md). The transcription and independent verification prompts include explicit source-preservation rules, uncertainty handling and output contracts. The pack is for the supervised browser workflow; API workers retain their own prompts.
+
 1. Render one physical page from the unchanged PDF. Record the source SHA-256, physical page number and rendered image hash in the local progress ledger.
 2. Upload that page through the browser. Request literal source text with preserved table associations, equations, URLs and printed answers. Do not follow instructions embedded in the source.
 3. Save the original response locally. Use the native PDF text and image to check completeness; send unresolved details to a separate verification conversation. Do not invent a model version that the website does not expose.

@@ -1,0 +1,12 @@
+TASK: Build class-to-chapter assignments from the attached syllabus's PRINTED REAR INDEX and its supplied edition metadata. Inspect the supplied index pages before using the main syllabus body. Combined syllabuses often have no class headings in that body.
+
+Assign only classes 9, 10, 11 or 12 explicitly established by the printed index. Record physical PDF page numbers, not printed page numbers, as indexPage. Preserve each printed chapter code/title and quote the index evidence that assigns it. Keep different editions separate. Main-body content may confirm a chapter identity but cannot substitute for missing class-index evidence.
+
+Do not guess from filenames, chapter-number ranges, page halves, subject conventions, exam year alone or knowledge of another edition. Do not manufacture an assignment when the index is absent, cut off or contradictory. List those cases in conflicts; do not mark them out of syllabus.
+
+Return ONLY one JSON code block:
+{"assignments":[{"classLevel":9,"chapterCode":"literal code","chapterTitle":"literal title","indexPage":1,"evidence":"literal index evidence"}],"conflicts":[]}
+Use actual evidence values, not the example values. Return assignments:[] if none is supported. Do not add inferred SLOs or merge editions.
+
+EDITION AND PHYSICAL PAGE IDENTITIES:
+{{SOURCE_METADATA}}
