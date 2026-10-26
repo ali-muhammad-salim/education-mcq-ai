@@ -53,6 +53,7 @@ async function render(
   page = 0,
   box?: number[],
   inventory = false,
+  includeText = false,
 ) {
   const args = [
     "-m",
@@ -63,8 +64,9 @@ async function render(
     String(page),
     ...(box ? ["--box", JSON.stringify(box)] : []),
     ...(inventory ? ['--inventory'] : []),
+    ...(includeText ? ['--text'] : []),
   ];
-  return new Promise<{ totalPages: number; sha256?: string; indexCandidates?:number[] }>(
+  return new Promise<{ totalPages: number; sha256?: string; indexCandidates?:number[]; text?:string }>(
     (resolve, reject) => {
       const child = spawn(process.env.PYTHON_EXECUTABLE || "python", args, {
         cwd: process.cwd(),
@@ -117,6 +119,7 @@ async function render(
                 totalPages: z.number().int().min(1).max(1000),
                 sha256: z.string().optional(),
                 indexCandidates:z.array(z.number().int().positive()).optional(),
+                text:z.string().optional(),
               })
               .parse(JSON.parse(outputText)),
           );
@@ -294,6 +297,28 @@ export async function ingestTrustedDocument(
     });
   let continuation = "";
   try {
+    if (input.directSourceDrafts) {
+      if (input.resourceType !== 'syllabus') throw new ApiError(422, 'SYLLABUS_REQUIRED', 'Direct source drafts are only available for syllabuses.');
+      for (let page = 1; page <= info.totalPages; page++) {
+        signal.throwIfAborted();
+        const existing = await prisma.knowledgeArtifact.findUnique({ where: { documentId_pageNumber: { documentId: document.id, pageNumber: page } }, select: { id: true, data: true, status: true } });
+        if (!existing) {
+          const pageInfo = await render(source, pagePath, signal, page, undefined, false, true);
+          const image = await fs.readFile(pagePath);
+          const extraction = pageExtraction.parse({ text: pageInfo.text || '', continuation: '', regions: [], learning: { printedExamYear: '', outcomes: [], questions: [], keyEntries: [] } });
+          const sourceImageKey = (await uploadEducationalAsset(image, `${sha256.slice(0, 16)}-page-${page}.png`, 'image/png')).storageKey;
+          const contentHash = hash(JSON.stringify({ extraction, sourceSha256: sha256, pageSha256: pageInfo.sha256 }));
+          await prisma.knowledgeArtifact.create({ data: { documentId: document.id, pageNumber: page, content: searchableSource(extraction), contentHash, sourceImageKey, data: { extraction, extractionModel: 'PDF_TEXT_LAYER', sourceSha256: sha256, pageSha256: pageInfo.sha256 || '', checksComplete: true, conflicts: ['Direct PDF text and class/SLO structure require visual review.'], reviewPolicy: 'EDUCATOR_APPROVAL_REQUIRED', enhancementPolicy: 'ORIGINAL_ONLY', verification: null } } });
+        } else if (existing.status === 'PENDING_REVIEW' && !(existing.data as Record<string, unknown>)?.checksComplete) {
+          const data = existing.data as Record<string, unknown>;
+          await prisma.knowledgeArtifact.update({ where: { id: existing.id }, data: { data: { ...data, checksComplete: true, conflicts: [...new Set([...(Array.isArray(data.conflicts) ? data.conflicts.filter((item): item is string => typeof item === 'string') : []), 'Existing AI draft requires direct visual review before approval.'])], reviewPolicy: 'EDUCATOR_APPROVAL_REQUIRED' } } });
+        }
+        await prisma.durableJob.updateMany({ where: { id: job.id, ownerId: job.ownerId, status: 'RUNNING' }, data: { result: { documentId: document.id, pagesProcessed: page, totalPages: info.totalPages, stage: 'PDF text drafts', message: `Prepared ${page} of ${info.totalPages} source pages for visual review.` } } });
+      }
+      await prisma.knowledgeDocument.update({ where: { id: document.id }, data: { status: 'NEEDS_REVIEW' } });
+      const pendingPages = await prisma.knowledgeArtifact.count({ where: { documentId: document.id, status: { not: 'APPROVED' } } });
+      return { documentId: document.id, pagesProcessed: info.totalPages, totalPages: info.totalPages, status: 'NEEDS_REVIEW', pendingPages, message: 'Original pages and PDF text are ready for direct visual review. Class and SLO mappings are not yet verified or published.' };
+    }
     let classPlan: CurriculumPlan | undefined;
     if (input.resourceType === 'syllabus') {
       const recorded = curriculumPlan.safeParse((document.catalogMetadata as Record<string,unknown> | null)?.classPlan);
