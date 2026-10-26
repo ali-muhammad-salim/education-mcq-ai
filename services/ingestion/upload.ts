@@ -18,6 +18,7 @@ export const ingestionPayloadSchema = z
     publishAfterReview: z.boolean().default(false),
     reprocess: z.boolean().default(false),
     studyResources: z.boolean().default(false),
+    directSourceDrafts: z.boolean().default(false),
     meta: z
       .object({
         title: z.string().max(240).optional(),
