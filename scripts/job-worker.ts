@@ -55,7 +55,7 @@ async function run() {
         if (payload.success) await prisma.studyNote.updateMany({ where: { id: payload.data.noteId, ownerId: job.ownerId, status: 'DRAFT' }, data: { status: 'FAILED', staleReason: error instanceof ApiError ? error.message : 'Generation failed. Review the source scope and retry as a new revision.' } });
       }
       if (error instanceof JobDeferred) console.log('Job deferred', job.id, error.code, error.retryAt.toISOString());
-      else console.error('Job failed', job.id, error instanceof ApiError ? { code: error.code, status: error.status } : error instanceof Error ? error.name : 'unknown');
+      else console.error('Job failed', job.id, error instanceof ApiError ? { code: error.code, status: error.status } : error instanceof z.ZodError ? { code: 'AI_SCHEMA_MISMATCH', issues: error.issues.slice(0, 12).map(issue => ({ path: issue.path.join('.'), code: issue.code })) } : error instanceof Error ? error.name : 'unknown');
       if (process.env.WORKER_ONCE === '1') stopping = true;
     } finally { clearInterval(heartbeat); controller = undefined; }
   }
