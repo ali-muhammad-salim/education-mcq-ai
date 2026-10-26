@@ -16,14 +16,16 @@ export async function compileReviewedSyllabus(tx: Prisma.TransactionClient, docu
   const metadata = (doc.catalogMetadata || {}) as Record<string, Prisma.JsonValue>;
   const plan = curriculumPlan.safeParse(metadata.classPlan);
   if (!plan.success || !plan.data.assignments.length || plan.data.conflicts.length) return { compiled: false, reason: 'CLASS_INDEX_REVIEW_REQUIRED' };
-  const rows = doc.artifacts.flatMap(a => pageExtraction.parse((a.data as Record<string, unknown>).extraction).learning.outcomes.map(row => ({ ...row, page: a.pageNumber })));
+  const rows = doc.artifacts.flatMap(a => pageExtraction.parse((a.data as Record<string, unknown>).extraction).learning.outcomes.map((row, ordinal) => ({ ...row, page: a.pageNumber, ordinal })));
   if (!rows.length) return { compiled: false, reason: 'STRUCTURED_OUTCOMES_REQUIRED' };
   const missing = syllabusCoverageConflicts(doc.artifacts.map(a=>({pageNumber:a.pageNumber,extraction:pageExtraction.parse((a.data as Record<string,unknown>).extraction)})), plan.data.assignments);
   if (missing.length) throw new ApiError(422,'SYLLABUS_COVERAGE_INCOMPLETE',missing.join(' '));
   if (rows.some(r => classForChapter(plan.data, r.chapterCode, r.chapterTitle) !== r.grade)) throw new ApiError(422, 'CLASS_INDEX_MISMATCH', 'Outcome classes must match the reviewed document index.');
   const duplicates = new Map<string, string>();
   for (const row of rows) {
-    for (const [key, text] of [[row.grade + ':outcome:' + row.code, JSON.stringify([row.description, row.chapterCode, row.subtopicCode, row.cognitiveLevel])], [row.grade + ':chapter:' + row.chapterCode, row.chapterTitle], [row.grade + ':chapter:' + row.chapterCode + ':subtopic:' + row.subtopicCode, row.subtopicTitle]]) {
+    // A board may print the same code twice for different outcomes. Preserve
+    // each verbatim row; chapter and subtopic headings still must be consistent.
+    for (const [key, text] of [[row.grade + ':chapter:' + row.chapterCode, row.chapterTitle], [row.grade + ':chapter:' + row.chapterCode + ':subtopic:' + row.subtopicCode, row.subtopicTitle]]) {
       const old = duplicates.get(key); if (old !== undefined && old !== text) throw new ApiError(422, 'OUTCOME_CONFLICT', 'The same chapter, subtopic or outcome code has conflicting source text.'); duplicates.set(key, text);
     }
   }
@@ -48,8 +50,10 @@ export async function compileReviewedSyllabus(tx: Prisma.TransactionClient, docu
       for (const subtopic of subtopics) {
         const subtopicId = id(topicId + ':' + subtopic.subtopicCode);
         await tx.subtopic.upsert({ where: { id: subtopicId }, create: { id: subtopicId, topicId, name: subtopic.subtopicTitle, subtopicNum: subtopic.subtopicCode }, update: {} });
-        const outcomes = [...new Map(selected.filter(r => r.chapterCode === chapter.chapterCode && r.subtopicCode === subtopic.subtopicCode).map(r => [r.code, r])).values()];
-        await tx.sLO.createMany({ skipDuplicates: true, data: outcomes.map(r => ({ id: id(versionId + ':' + r.code), subtopicId, code: r.code, description: r.description, cognitiveLevel: r.cognitiveLevel, sourcePage: r.page, fingerprint: createHash('sha256').update(r.description).digest('hex') })) });
+        const outcomes = [...new Map(selected.filter(r => r.chapterCode === chapter.chapterCode && r.subtopicCode === subtopic.subtopicCode).map(r => [JSON.stringify([r.code, r.description, r.cognitiveLevel]), r])).values()];
+        const counts = new Map<string, number>();
+        for (const row of outcomes) counts.set(row.code, (counts.get(row.code) || 0) + 1);
+        await tx.sLO.createMany({ skipDuplicates: true, data: outcomes.map(r => ({ id: id(versionId + ':' + r.code + (counts.get(r.code)! > 1 ? ':' + r.description + ':' + r.cognitiveLevel : '')), subtopicId, code: r.code, description: r.description, cognitiveLevel: r.cognitiveLevel, sourcePage: r.page, sourceOrdinal: r.ordinal, isFormative: /^FA\b/i.test(r.cognitiveLevel), fingerprint: createHash('sha256').update(r.description).digest('hex') })) });
       }
     }
     versions.push(versionId);
