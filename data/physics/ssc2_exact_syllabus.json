@@ -11,21 +11,33 @@
             "code": "11.1.1",
             "description": "define the following:\na. amplitude,\nb. frequency,\nc. oscillatory motion\nd. periodic motion,\ne. time period;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "11.1.2",
             "description": "discuss the factors on which the time period of a simple pendulum depends;",
             "cognitiveLevel": "Evaluation",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "E"
           },
           {
             "code": "11.1.3",
             "description": "solve word problems related to time period of a simple pendulum;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "11.1"
       },
       {
         "subtopicNum": "11.2",
@@ -35,21 +47,31 @@
             "code": "11.2.1",
             "description": "define mechanical waves;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "11.2.2",
             "description": "describe wave motion as illustrated by vibrations in rope, a slinky spring and by experiments with water waves;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "11.2.3",
             "description": "describe that waves transfer energy without transferring matter;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "11.2"
       },
       {
         "subtopicNum": "11.3",
@@ -59,15 +81,22 @@
             "code": "11.3.1",
             "description": "identify transverse and longitudinal waves in mechanical media;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "11.3.2",
             "description": "distinguish between mechanical and electromagnetic waves;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "11.3"
       },
       {
         "subtopicNum": "11.4",
@@ -77,27 +106,43 @@
             "code": "11.4.1",
             "description": "define the following terms:\na. speed (v),\nb. wavelength (λ),\nc. crest,\nd. trough,\ne. wavefront,\nf. compression and rarefaction;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "11.4.2",
             "description": "analyse key characteristics of waves by interpreting graphical representations of waveforms;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "11.4.3",
             "description": "derive equation v = f λ;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "11.4.4",
             "description": "solve word problems using the relation f = 1/ T and v = f λ;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "11.4"
       },
       {
         "subtopicNum": "11.5",
@@ -107,17 +152,25 @@
             "code": "11.5.1",
             "description": "define the following terms:\na. reflection,\nb. refraction,\nc. diffraction;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "11.5.2",
             "description": "describe the properties of waves such as reflection, refraction and diffraction with the help of the ripple tank effect.",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "11.5"
       }
-    ]
+    ],
+    "page": 28
   },
   {
     "unitNumber": 12,
@@ -131,33 +184,49 @@
             "code": "12.1.1",
             "description": "explain the production of sound waves;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "12.1.2",
             "description": "explain that sound waves cannot travel in a vacuum;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "12.1.3",
             "description": "describe that the speed of sound depends upon the physical characteristic of a medium;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "12.1.4",
             "description": "describe the longitudinal nature of sound waves;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "12.1.5",
             "description": "state audible frequency range;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "12.1"
       },
       {
         "subtopicNum": "12.2",
@@ -167,33 +236,50 @@
             "code": "12.2.1",
             "description": "define the terms ‘pitch’, ‘loudness’ and ‘quality of sound’;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "12.2.2",
             "description": "describe graphically the effect of changes in amplitude on loudness and the effect of changes in frequency on the pitch of sound;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "12.2.3",
             "description": "define the intensity of sound and state its SI unit;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "12.2.4",
             "description": "describe the intensity level of sound and mention its unit;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "12.2.5",
             "description": "solve word problems related to the intensity level of sound;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "12.2"
       },
       {
         "subtopicNum": "12.3",
@@ -203,21 +289,32 @@
             "code": "12.3.1",
             "description": "describe an echo as the reflection of sound waves;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "12.3.2",
             "description": "describe simple experiments to show the reflection of sound waves;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "12.3.3",
             "description": "examine a method involving a measurement of distance and time for determining the speed of sound in air;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "12.3"
       },
       {
         "subtopicNum": "12.4",
@@ -227,15 +324,22 @@
             "code": "12.4.1",
             "description": "describe infrasound with examples;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "12.4.2",
             "description": "describe ultrasound with examples;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "12.4"
       },
       {
         "subtopicNum": "12.5",
@@ -245,17 +349,26 @@
             "code": "12.5.1",
             "description": "describe the importance of acoustic protection;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "12.5.2",
             "description": "analyse the effects of noise pollution on the environment.",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "12.5"
       }
-    ]
+    ],
+    "page": 30
   },
   {
     "unitNumber": 13,
@@ -270,23 +383,34 @@
             "description": "describe with reference to the reflection of light the following\nterms:\na. normal,\nb. angle of incidence,\nc. angle of reflection;",
             "cognitiveLevel": "Understanding",
             "sourcePage": 30,
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "13.1.2",
             "description": "state laws of reflection of light;",
             "cognitiveLevel": "Remembering",
             "sourcePage": 30,
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "13.1.3",
             "description": "discuss the relationship of the position of an object with the\ncharacteristics of image formed by a plane mirror;",
             "cognitiveLevel": "Evaluation",
             "sourcePage": 30,
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "E"
           }
-        ]
+        ],
+        "subNumber": "13.1"
       },
       {
         "subtopicNum": "13.2",
@@ -297,37 +421,56 @@
             "description": "describe with reference to the refraction of light the following\nterms:\na. angle of incidence,\nb. angle of refraction,\nc. refractive index;",
             "cognitiveLevel": "Understanding",
             "sourcePage": 30,
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "13.2.2",
             "description": "state laws of refraction of light;",
             "cognitiveLevel": "Remembering",
             "sourcePage": 30,
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "13.2.3",
             "description": "solve word problems of refractive index using the given formulae:\na. sin ∠i/ sin ∠r,\nb. speed of light in vacuum/ speed of light in the given medium,\nc. real depth/ apparent depth;",
             "cognitiveLevel": "Application",
             "sourcePage": 30,
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "13.2.4",
             "description": "illustrate the passage of light ray through parallel-sided\ntransparent material (glass slab);",
             "cognitiveLevel": "Application",
             "sourcePage": 30,
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "13.2.5",
             "description": "illustrate the passage of light through a glass prism;",
             "cognitiveLevel": "Application",
             "sourcePage": 30,
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "13.2"
       },
       {
         "subtopicNum": "13.3",
@@ -338,23 +481,33 @@
             "description": "explain the dispersion of light by a prism;",
             "cognitiveLevel": "Understanding",
             "sourcePage": 30,
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "13.3.2",
             "description": "explain the scattering of light by the molecules in the air;",
             "cognitiveLevel": "Understanding",
             "sourcePage": 30,
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "13.3.3",
             "description": "state the traditional seven colours of the visible spectrum in\norder of frequency and in order of wavelength;",
             "cognitiveLevel": "Remembering",
             "sourcePage": 30,
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "13.3"
       },
       {
         "subtopicNum": "13.4",
@@ -364,33 +517,50 @@
             "code": "13.4.1",
             "description": "define total internal reflection;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "13.4.2",
             "description": "state the conditions necessary for total internal reflection;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "13.4.3",
             "description": "describe the relation between critical angle and refractive index;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "13.4.4",
             "description": "solve word problems related to the critical angle and refractive index;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "13.4.5",
             "description": "describe the use of total internal reflection in:\na. optical fibre,\nb. periscope;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "13.4"
       },
       {
         "subtopicNum": "13.5",
@@ -400,27 +570,43 @@
             "code": "13.5.1",
             "description": "illustrate the action of thin converging and thin diverging lenses on a parallel beam of light;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "13.5.2",
             "description": "draw images by placing objects at different positions in front of convex and concave lens;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "13.5.3",
             "description": "differentiate between real and virtual images;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "13.5.4",
             "description": "solve word problems related to the image location by lenses using lens formula;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "13.5"
       },
       {
         "subtopicNum": "13.6",
@@ -430,15 +616,22 @@
             "code": "13.6.1",
             "description": "define power of a lens and state its unit;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "13.6.2",
             "description": "define magnifying power of lens;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "13.6"
       },
       {
         "subtopicNum": "13.7",
@@ -448,15 +641,22 @@
             "code": "13.7.1",
             "description": "define least distance of distinct vision;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "13.7.2",
             "description": "describe the use of a single lens (magnifying glass) with its ray diagram;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "13.7"
       },
       {
         "subtopicNum": "13.8",
@@ -466,21 +666,32 @@
             "code": "13.8.1",
             "description": "define short-sightedness and long-sightedness;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "13.8.2",
             "description": "draw ray diagrams to show the formation of images in the eye of an individual with reference to:\na. normal vision,\nb. short-sightedness,\nc. long-sightedness;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "13.8.3",
             "description": "describe the correction of short-sightedness and long-sightedness using concave and convex lenses;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "13.8"
       },
       {
         "subtopicNum": "13.9",
@@ -490,11 +701,16 @@
             "code": "13.9.1",
             "description": "define the following:\na. acoustic lensing,\nb. gravitational lensing.",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "13.9"
       }
-    ]
+    ],
+    "page": 32
   },
   {
     "unitNumber": 14,
@@ -508,34 +724,50 @@
             "code": "14.1.1",
             "description": "define charge and its types;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "14.1.2",
             "description": "describe electric charge as an integral multiple of elementary charge (electron);",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "14.1.3",
             "description": "explain that charging of solids by friction involves only a transfer of negative charge (electrons);",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "14.1.4",
             "description": "describe production and detection of electric charge;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "14.1.5",
             "description": "explain discharging of an insulator by:\na. putting it above a flame,\nb. exposing it to damp conditions;",
             "cognitiveLevel": "Understanding",
             "isPractical": false,
-            "sourcePage": 33
+            "sourcePage": 33,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "14.1"
       },
       {
         "subtopicNum": "14.2",
@@ -545,21 +777,32 @@
             "code": "14.2.1",
             "description": "state that unlike charges attract and like charges repel;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "14.2.2",
             "description": "explain Coulomb’s law;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "14.2.3",
             "description": "solve word problems related to the electrostatic charges by using Coulomb’s law;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "14.2"
       },
       {
         "subtopicNum": "14.3",
@@ -569,15 +812,22 @@
             "code": "14.3.1",
             "description": "describe the process of electrostatic induction;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "14.3.2",
             "description": "explain charging of a conductor by electrostatic induction;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "14.3"
       },
       {
         "subtopicNum": "14.4",
@@ -587,21 +837,31 @@
             "code": "14.4.1",
             "description": "describe the application of electrostatics in electrostatic precipitator and photocopier;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "14.4.2",
             "description": "explain the process of lightning in atmosphere during thunderstorms;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "14.4.3",
             "description": "identify different kinds of electrical lightning includes:\na. ball lightning,\nb. elves,\nc. ghosts,\nd. jets,\ne. pixies,\nf. sprites,\ng. trolls;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "14.4"
       },
       {
         "subtopicNum": "14.5",
@@ -611,29 +871,44 @@
             "code": "14.5.1",
             "description": "define electric field and electric field intensity;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "14.5.2",
             "description": "describe that the direction of an electric field line at a point is the direction of the force exerted on a positive charge at that point;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "14.5.3",
             "description": "draw electric field lines for:\na. an isolated positive charge,\nb. an isolated negative point charge,\nc. two-point charges having opposite charge,\nd. two-point charges having identical charge;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "14.5.4",
             "description": "explain phenomenon of electrical breakdown with its practical application in:\na. corona discharge ozone generator\nb. gas discharge lamp,\nc. lightning rod,\nd. plasma display;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "14.5"
       }
-    ]
+    ],
+    "page": 35
   },
   {
     "unitNumber": 15,
@@ -647,27 +922,41 @@
             "code": "15.1.1",
             "description": "define electric current;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "15.1.2",
             "description": "differentiate between conventional and non-conventional current;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "15.1.3",
             "description": "differentiate between direct current (D.C.) and alternating current (A.C.);",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "15.1.4",
             "description": "solve word problems related to electric current using $I = \\frac{Q}{t}$;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "15.1"
       },
       {
         "subtopicNum": "15.2",
@@ -677,15 +966,22 @@
             "code": "15.2.1",
             "description": "distinguish between conductors and insulators;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "15.2.2",
             "description": "describe electrical conduction in metals in terms of the movement of free electrons;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "15.2"
       },
       {
         "subtopicNum": "15.3",
@@ -695,27 +991,40 @@
             "code": "15.3.1",
             "description": "define resistance and resistivity with its SI unit;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "15.3.2",
             "description": "describe the following factors affecting the resistance of a metallic conductor: a. length of a conductor, b. cross-sectional area of a conductor, c. nature of a conductor, d. temperature of a conductor;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "15.3.3",
             "description": "describe the phenomenon of superconductivity in solids;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "15.3.4",
             "description": "describe the action of negative temperature coefficient (NTC) in thermistors and light dependent resistors;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "15.3"
       },
       {
         "subtopicNum": "15.4",
@@ -725,33 +1034,51 @@
             "code": "15.4.1",
             "description": "define potential difference",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "15.4.2",
             "description": "solve word problems related to potential difference using $V = \\frac{\\mathrm{work}}{q}$;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "15.4.3",
             "description": "compare potential difference and electromotive force;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "15.4.4",
             "description": "state that the e.m.f. of identical power sources connected in parallel is equal to the e.m.f. of one of the sources;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "15.4.5",
             "description": "calculate the total e.m.f. where several power sources are arranged in series;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "15.4"
       },
       {
         "subtopicNum": "15.5",
@@ -761,15 +1088,23 @@
             "code": "15.5.1",
             "description": "state Ohm’s law with its limitations;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "15.5.2",
             "description": "interpret the I-V characteristics graph for a fixed resistor, a filament lamp and a thermistor;",
             "cognitiveLevel": "Evaluation",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "E"
           }
-        ]
+        ],
+        "subNumber": "15.5"
       },
       {
         "subtopicNum": "15.6",
@@ -779,27 +1114,42 @@
             "code": "15.6.1",
             "description": "define electrical power;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "15.6.2",
             "description": "explain Joule’s law in terms of energy dissipated in the resistor;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "15.6.3",
             "description": "solve word problems related to E = IVt = I2Rt = V 2 t / R ;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "15.6.4",
             "description": "calculate the total energy cost based on the cost price of kWh;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "15.6"
       },
       {
         "subtopicNum": "15.7",
@@ -809,9 +1159,13 @@
             "code": "15.7.1",
             "description": "state the use of electrical measuring devices; (galvanometer, ammeter and voltmeter)",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "15.7"
       },
       {
         "subtopicNum": "15.8",
@@ -821,41 +1175,61 @@
             "code": "15.8.1",
             "description": "describe the functions of live, neutral and earth wires in the domestic main power supply;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "15.8.2",
             "description": "state common uses of electricity; (including heating, lighting, battery charging and powering motors and electronic systems);",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "15.8.3",
             "description": "describe common electric hazards that can result from malpractice and lack of maintenance; (damaged insulation, overheating cables, damp conditions, excess current from overloading of plugs, extension leads, single and multiple sockets when using a main supply);",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "15.8.4",
             "description": "explain the importance of connecting domestic (A.C.) supplies in parallel;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "15.8.5",
             "description": "describe the usage of A.C. in daily life (switches, fuses, circuit breakers);",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "15.8.6",
             "description": "explain the safety measures in household electricity.",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "15.8"
       }
-    ]
+    ],
+    "page": 37
   },
   {
     "unitNumber": 16,
@@ -869,21 +1243,33 @@
             "code": "16.1.1",
             "description": "describe the characteristics of series and parallel combinations of resistors;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "16.1.2",
             "description": "derive the effective/ equivalent resistance of resistors connected in series and in parallel;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "16.1.3",
             "description": "calculate the effective/ equivalent resistance of resistors connected in series, parallel and both;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "16.1"
       },
       {
         "subtopicNum": "16.2",
@@ -893,23 +1279,36 @@
             "code": "16.2.1",
             "description": "define electric circuits;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "16.2.2",
             "description": "draw the circuit diagrams of the following electrical components:\na. ammeters,\nb. batteries,\nc. cells,\nd. diodes,\ne. fuses,\nf. lamps,\ng. light-dependent resistors (LDRs),\nh. light-emitting diodes (LEDs),\ni. resistors (fixed and variable),\nj. switches,\nk. thermistors (NTC only),\nl. voltmeters;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "16.2.3",
             "description": "calculate current, voltage, power and resistance in parts of a circuit or in the whole circuit that includes three resistors.",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "16.2"
       }
-    ]
+    ],
+    "page": 40
   },
   {
     "unitNumber": 17,
@@ -923,39 +1322,58 @@
             "code": "17.1.1",
             "description": "define magnetic and non-magnetic substances;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "17.1.2",
             "description": "state domain theory of magnetism;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "17.1.3",
             "description": "explain magnetisation and demagnetisation of materials in light of domain theory;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "17.1.4",
             "description": "define diamagnetic, paramagnetic and ferromagnetic solids;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "17.1.5",
             "description": "compare soft and hard ferromagnetic materials;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "17.1.6",
             "description": "describe uses of permanent magnets and electromagnets;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "17.1"
       },
       {
         "subtopicNum": "17.2",
@@ -965,39 +1383,58 @@
             "code": "17.2.1",
             "description": "define the forces acting between magnetic poles and those between magnets and magnetic materials;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "17.2.2",
             "description": "describe the direction of the magnetic field of a magnet at a point;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "17.2.3",
             "description": "describe magnetic fields and magnetic lines of forces between the two poles of a magnet;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "17.2.4",
             "description": "compare strong and weak magnetic fields;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "17.2.5",
             "description": "define magnetic flux;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "17.2.6",
             "description": "explain the formation of the Earth’s magnetic field;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "17.2"
       },
       {
         "subtopicNum": "17.3",
@@ -1007,21 +1444,31 @@
             "code": "17.3.1",
             "description": "describe the pattern and direction of the magnetic field due to currents in straight wires and in solenoids;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "17.3.2",
             "description": "describe the effect of changing the magnitude and direction of the current on the magnetic field;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "17.3.3",
             "description": "describe the magnetic effect of a current in:\na. loudspeakers,\nb. relays in switching circuits;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "17.3"
       },
       {
         "subtopicNum": "17.4",
@@ -1031,27 +1478,41 @@
             "code": "17.4.1",
             "description": "show that a magnetic force acts on a current-carrying conductor in a magnetic field;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "17.4.2",
             "description": "state Fleming’s left-hand rule;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "17.4.3",
             "description": "describe the effect on the magnetic force of reversing the direction of current and magnetic field;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "17.4.4",
             "description": "describe the magnetic field patterns between parallel current carrying conductors and relate these to the forces on the conductors;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "17.4"
       },
       {
         "subtopicNum": "17.5",
@@ -1061,23 +1522,34 @@
             "code": "17.5.1",
             "description": "describe that a current carrying coil in a magnetic field experiences a torque with the help of Fleming’s left-hand rule;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "17.5.2",
             "description": "describe the turning effect is increased by increasing the:\na. area of a coil,\nb. electric current,\nc. number of turns on the coil,\nd. strength of the magnetic field;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "17.5.3",
             "description": "describe construction and working of a D.C. motor.",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "17.5"
       }
-    ]
+    ],
+    "page": 41
   },
   {
     "unitNumber": 18,
@@ -1091,15 +1563,22 @@
             "code": "18.1.1",
             "description": "describe that a changing magnetic field can induce electromotive force (e.m.f.) in a wire or coil;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "18.1.2",
             "description": "describe that the magnitude of an induced e.m.f. is affected by the:\na. rate of change of the magnetic field or the rate of cutting of magnetic field lines,\nb. number of turns in a coil;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "18.1"
       },
       {
         "subtopicNum": "18.2",
@@ -1109,15 +1588,22 @@
             "code": "18.2.1",
             "description": "state Faraday’s law of electromagnetic induction;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "18.2.2",
             "description": "describe Lenz’s law, setup an experiment to show that an e.m.f. induces with in a coil opposes the change that produces it;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "18.2"
       },
       {
         "subtopicNum": "18.3",
@@ -1127,15 +1613,23 @@
             "code": "18.3.1",
             "description": "describe the simple construction and working of an A.C. generator;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "18.3.2",
             "description": "interpret graphs of e.m.f. against time for simple A.C. generators;",
             "cognitiveLevel": "Evaluation",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "E"
           }
-        ]
+        ],
+        "subNumber": "18.3"
       },
       {
         "subtopicNum": "18.4",
@@ -1145,21 +1639,31 @@
             "code": "18.4.1",
             "description": "define self-induction;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "18.4.2",
             "description": "define mutual induction;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "18.4.3",
             "description": "describe inductance;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "18.4"
       },
       {
         "subtopicNum": "18.5",
@@ -1169,30 +1673,46 @@
             "code": "18.5.1",
             "description": "describe the construction and the principle of operation of a simple iron-cored transformer;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "18.5.2",
             "description": "state the two types of transformers and their uses;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "18.5.3",
             "description": "discuss the application of transformer in high voltage transmission;",
             "cognitiveLevel": "Evaluation",
             "isPractical": false,
-            "sourcePage": 41
+            "sourcePage": 41,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "E"
           },
           {
             "code": "18.5.4",
             "description": "solve word problem using the transformer equation $\\frac{V_s}{V_p} = \\frac{I_p}{I_s} = \\frac{N_s}{N_p}$;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "18.5"
       }
-    ]
+    ],
+    "page": 43
   },
   {
     "unitNumber": 19,
@@ -1206,21 +1726,31 @@
             "code": "19.1.1",
             "description": "describe the production, transmission and reception of electromagnetic (EM) waves;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "19.1.2",
             "description": "describe the main regions of the electromagnetic spectrum in order of frequency and order of wavelength with their applications;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "19.1.3",
             "description": "describe the damages caused by electromagnetic radiation;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "19.1"
       },
       {
         "subtopicNum": "19.2",
@@ -1230,15 +1760,22 @@
             "code": "19.2.1",
             "description": "explain the process of thermionic emission emitted from a filament;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "19.2.2",
             "description": "describe the simple construction and use of an electron gun as a source of electron beam;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "19.2"
       },
       {
         "subtopicNum": "19.3",
@@ -1248,21 +1785,32 @@
             "code": "19.3.1",
             "description": "describe the effect of electric and magnetic field on an electron beam;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "19.3.2",
             "description": "describe the basic principle and uses of CRO and make a list of its uses;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "19.3.3",
             "description": "interpret waveforms on oscilloscopes;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "19.3"
       },
       {
         "subtopicNum": "19.4",
@@ -1272,15 +1820,22 @@
             "code": "19.4.1",
             "description": "explain the importance of electronics;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "19.4.2",
             "description": "compare analogue and digital electronics;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "19.4"
       },
       {
         "subtopicNum": "19.5",
@@ -1290,47 +1845,72 @@
             "code": "19.5.1",
             "description": "state Boolean algebra;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "19.5.2",
             "description": "convert decimal numbers into binary numbers;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "19.5.3",
             "description": "state the basic operations of digital electronics;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "19.5.4",
             "description": "identify and make the symbols for the logic gates; (NOT, OR, AND, NOR and NAND)",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "19.5.5",
             "description": "state the action of logic gates in truth table form with two inputs;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "19.5.6",
             "description": "use universal gates (NAND and NOR) to create NOT, OR and AND;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "19.5.7",
             "description": "describe the uses of logic gates.",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "19.5"
       }
-    ]
+    ],
+    "page": 45
   },
   {
     "unitNumber": 20,
@@ -1344,9 +1924,13 @@
             "code": "20.1.1",
             "description": "describe that the alpha particle scattering experiments provide evidence for:\na. a very small nucleus surrounded by mostly empty space,\nb. a nucleus containing most of the mass of the atom,\nc. a nucleus that is positively charged;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "20.1"
       },
       {
         "subtopicNum": "20.2",
@@ -1356,21 +1940,32 @@
             "code": "20.2.1",
             "description": "describe the composition of the nucleus of an atom in terms of protons and neutrons;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "20.2.2",
             "description": "explain that the number of protons in a nucleus distinguishes one element from the other;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "20.2.3",
             "description": "show various nuclides by using the symbol of proton number (Z), nucleon number (A) and the nuclide notation (X);",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "20.2"
       },
       {
         "subtopicNum": "20.3",
@@ -1380,21 +1975,31 @@
             "code": "20.3.1",
             "description": "define isotopes;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "20.3.2",
             "description": "state that an element may have more than one isotope;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "20.3.3",
             "description": "describe the uses of isotopes in:\na. diagnosis and treatment of cancer,\nb. household fire (smoke) alarms,\nc. irradiating food to kill bacteria,\nd. measuring and controlling thicknesses of materials,\ne. sterilisation of equipment;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "20.3"
       },
       {
         "subtopicNum": "20.4",
@@ -1404,39 +2009,59 @@
             "code": "20.4.1",
             "description": "define radioactivity;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "20.4.2",
             "description": "explain that some nuclei are unstable;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "20.4.3",
             "description": "describe the spontaneous and random emission of radiation from a nucleus;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "20.4.4",
             "description": "describe the properties of the three types of radiation (α, β and γ);",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "20.4.5",
             "description": "explain that an element may change into another element when radioactivity occurs;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "20.4.6",
             "description": "show changes in the composition of a nucleus by symbolic equations when alpha or beta particles are emitted from it;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           }
-        ]
+        ],
+        "subNumber": "20.4"
       },
       {
         "subtopicNum": "20.5",
@@ -1446,15 +2071,22 @@
             "code": "20.5.1",
             "description": "explain the existence of background radiation;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "20.5.2",
             "description": "state the sources that make a significant contribution to the background radiation including:\na. cosmic rays,\nb. food and drinks,\nc. radon gas (in the air),\nd. rocks and buildings;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "20.5"
       },
       {
         "subtopicNum": "20.6",
@@ -1464,27 +2096,42 @@
             "code": "20.6.1",
             "description": "explain half-life of a radioactive material;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "20.6.2",
             "description": "calculate the half-life of radioactive elements;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "20.6.3",
             "description": "draw graphs showing decay curves of these elements;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "20.6.4",
             "description": "describe the process of carbon dating to estimate the age of ancient objects;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "20.6"
       },
       {
         "subtopicNum": "20.7",
@@ -1494,21 +2141,32 @@
             "code": "20.7.1",
             "description": "describe nuclear fission and fusion reactions;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           },
           {
             "code": "20.7.2",
             "description": "calculate the energy released in the process of nuclear reaction using the equation E = mc2;",
             "cognitiveLevel": "Application",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true,
+            "cognitiveDetailed": "*"
           },
           {
             "code": "20.7.3",
             "description": "state the nature of the Sun consisting mostly of hydrogen and helium and radiates most of its energy;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "20.7"
       },
       {
         "subtopicNum": "20.8",
@@ -1518,16 +2176,24 @@
             "code": "20.8.1",
             "description": "state the effects of ionising nuclear radiations on living things, including cell death, mutations and cancer;",
             "cognitiveLevel": "Remembering",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
           },
           {
             "code": "20.8.2",
             "description": "explain that radioactive materials are moved, used and stored in a safe way, with reference to:\na. reducing exposure time,\nb. using shield to absorb radiation,\nc. increasing distance between source and living tissue;",
             "cognitiveLevel": "Understanding",
-            "isPractical": false
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
           }
-        ]
+        ],
+        "subNumber": "20.8"
       }
-    ]
+    ],
+    "page": 47
   }
 ]

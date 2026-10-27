@@ -96,7 +96,7 @@
     },
     {
       "term": "Learning Outcome 15.5.1",
-      "definition": "state Ohm\u2019s law with its limitations;",
+      "definition": "state Ohm’s law with its limitations;",
       "slo_code": "15.5.1",
       "cognitive_level": "R"
     },
@@ -114,7 +114,7 @@
     },
     {
       "term": "Learning Outcome 15.6.2",
-      "definition": "explain Joule\u2019s law in terms of energy dissipated in the resistor;",
+      "definition": "explain Joule’s law in terms of energy dissipated in the resistor;",
       "slo_code": "15.6.2",
       "cognitive_level": "U"
     },
@@ -178,10 +178,10 @@
       "question_number": "17",
       "stem_text": "The equivalent capacitance of the given combination of the capacitors will be\n(Note: $C_1 = 5\\text{ \\mu F}$, $C_2 = 5\\text{ \\mu F}$, $C_3 = 5\\text{ \\mu F}$ connected in parallel based on standard textbook diagram layouts)",
       "options": [
-        "A. 0.067 \u00b5F.",
-        "B. 0.6 \u00b5F.",
-        "C. 5 \u00b5F.",
-        "D. 15 \u00b5F."
+        "A. 0.067 µF.",
+        "B. 0.6 µF.",
+        "C. 5 µF.",
+        "D. 15 µF."
       ],
       "correct_option": "D",
       "explanation": "Looking at standard parallel combinations for identical capacitors in AKU-EB problems where three equal capacitors are in parallel: $C_{eq} = C_1 + C_2 + C_3 = 5 + 5 + 5 = 15\\text{ \\mu F}$.",
@@ -231,7 +231,30 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Differentiate between electromotive force (e.m.f.) and potential difference across a conductor.",
+      "marks": 3,
+      "slo_code": "15.4.3",
+      "answer": "e.m.f. is the total energy supplied by a source per unit coulomb of charge around the complete circuit (measured across open terminals), whereas potential difference is the electrical energy converted into other forms per unit charge between two points in the external circuit.",
+      "source": "AKU-EB Syllabus 2025 Unit 15"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Explain how the resistance of a metallic conductor rises with an increase in temperature. Give FIVE points to support your answer.",
+      "marks": 5,
+      "slo_code": "15.3.2",
+      "answer": "1. A metallic conductor contains positive metal ions and free conduction electrons. 2. Heating increases the thermal energy of the lattice ions. 3. Lattice ions vibrate with greater amplitude and frequency about their mean positions. 4. Free electrons drifting through the metal suffer more frequent collisions with vibrating ions. 5. Increased hindrance to electron drift reduces current for a given voltage, increasing resistance R.",
+      "source": "AKU-EB SSC-II Model Paper II Q.7(b)"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "An electric heater rated at 2000 W operates on a 250 V mains supply for 3 hours daily. Calculate the current drawn and the energy consumed in kWh in 30 days.",
+      "slo_code": "15.6.4",
+      "formula": "I = P / V; E(kWh) = P(kW) × t(h)",
+      "solution": "I = 2000 W / 250 V = 8.0 A. Total hours = 3 × 30 = 90 h. Energy = 2.0 kW × 90 h = 180 kWh."
+    }
+  ]
 }

@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import MathText from '@/components/MathText';
+import { smartMatch } from '@/lib/smartSearch';
 
 // Static Data Imports
 import ssc1ExactSyllabus from '../../../../data/physics/ssc1_exact_syllabus.json';
@@ -69,12 +70,12 @@ export default function SSC1PhysicsPage() {
     if (!syllabusSearch && cognitiveFilter === 'all') return true;
     
     // Check search and cognitive filter within subtopics
-    const matchesSearch = u.name.toLowerCase().includes(syllabusSearch.toLowerCase()) ||
-      u.subtopics.some((s: any) => 
-        s.name.toLowerCase().includes(syllabusSearch.toLowerCase()) ||
-        s.slos.some((slo: any) => 
-          slo.code.toLowerCase().includes(syllabusSearch.toLowerCase()) ||
-          slo.description.toLowerCase().includes(syllabusSearch.toLowerCase())
+    const matchesSearch = !syllabusSearch.trim() ||
+      smartMatch(u.name, syllabusSearch) ||
+      u.subtopics.some((s: any) =>
+        smartMatch(s.name, syllabusSearch) ||
+        s.slos.some((slo: any) =>
+          smartMatch(`${u.name} ${s.name} ${slo.code} ${slo.description}`, syllabusSearch, slo.code)
         )
       );
 
@@ -1642,7 +1643,7 @@ export default function SSC1PhysicsPage() {
                         borderRadius: '4px',
                         fontFamily: 'Inter, sans-serif'
                       }}>
-                        Q. {q.questionNumber}
+                        {String(q.questionNumber).startsWith('Q.') ? q.questionNumber : `Q. ${q.questionNumber}`}
                       </span>
                       <span style={{
                         fontSize: '0.85rem',
@@ -1675,7 +1676,36 @@ export default function SSC1PhysicsPage() {
                     whiteSpace: 'pre-line',
                     marginBottom: '1.25rem'
                   }}>
-                    {q.text}
+                    <MathText text={q.stem || q.text || ''} />
+                  </div>
+
+                  {/* SLO & Chapter Badge + Model Answer & Rubric */}
+                  <div style={{ marginBottom: '1rem', fontFamily: 'Inter, sans-serif' }}>
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
+                      {q.slo && (
+                        <span style={{ fontSize: '0.78rem', fontWeight: 700, background: '#e0f2fe', color: '#0369a1', padding: '3px 8px', borderRadius: '4px' }}>
+                          SLO {q.slo}
+                        </span>
+                      )}
+                      {q.chapter && (
+                        <span style={{ fontSize: '0.78rem', fontWeight: 600, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '4px' }}>
+                          {q.chapter}
+                        </span>
+                      )}
+                    </div>
+                    {q.modelAnswer && (
+                      <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '8px', padding: '0.9rem 1rem', fontSize: '0.88rem', color: '#166534' }}>
+                        <strong>Model Answer: </strong>
+                        <MathText text={q.modelAnswer} />
+                        {Array.isArray(q.rubric) && q.rubric.length > 0 && (
+                          <ul style={{ margin: '0.5rem 0 0 0', paddingLeft: '1.2rem' }}>
+                            {q.rubric.map((r: any, idx: number) => (
+                              <li key={idx}>{r.description} ({r.marks} mark{r.marks > 1 ? 's' : ''})</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    )}
                   </div>
 
                   {/* Embedded Page Scan for Diagram Reference */}
@@ -1786,6 +1816,12 @@ export default function SSC1PhysicsPage() {
                   <span>Paper III</span>
                 </div>
 
+                <div style={{ padding: '1rem', background: '#ffffff', borderBottom: '1px solid #e2e8f0', fontSize: '0.88rem', color: '#334155' }}>
+                  {prac.topic && <div style={{ marginBottom: '4px' }}><strong>Topic:</strong> {prac.topic}</div>}
+                  {prac.stage && <div style={{ marginBottom: '4px' }}><strong>Assessment Stage:</strong> {prac.stage} ({prac.marks} Marks)</div>}
+                  {prac.apparatus && <div style={{ marginBottom: '4px' }}><strong>Apparatus:</strong> {prac.apparatus}</div>}
+                  {prac.description && <div style={{ color: '#475569', marginTop: '6px' }}>{prac.description}</div>}
+                </div>
                 <div style={{ padding: '1rem', background: '#f8fafc', textAlign: 'center' }}>
                   <img
                     src={prac.pageScanUrl}

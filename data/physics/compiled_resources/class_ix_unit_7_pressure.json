@@ -78,7 +78,7 @@
     },
     {
       "term": "Learning Outcome 7.4.3",
-      "definition": "explain pressure beneath a liquid surface increase with depth and depends on the density of the liquid, i.e., P = \u03c1gh;",
+      "definition": "explain pressure beneath a liquid surface increase with depth and depends on the density of the liquid, i.e., P = ρgh;",
       "slo_code": "7.4.3",
       "cognitive_level": "U"
     },
@@ -153,7 +153,30 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Explain why upthrust acts in the upward direction on an object immersed in a fluid.",
+      "marks": 2,
+      "slo_code": "7.4.2",
+      "answer": "Hydrostatic pressure in a fluid increases with depth (P = ρgh). Consequently, the upward pressure on the bottom surface of an immersed object is greater than the downward pressure on its top surface, producing a net upward buoyant force (upthrust).",
+      "source": "AKU-EB SSC-I Model Paper II Q.7(b)(ii)"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "i. Explain why the walls of a dam filled with water are usually wedge-shaped. ii. If the density of water is 1,000 kg/m³, calculate the depth of water in a dam when the pressure at the bottom is 100,000 Pa (g = 9.8 m/s²).",
+      "marks": 6,
+      "slo_code": "7.4.4",
+      "answer": "i. Liquid pressure increases with depth (P = ρgh), so water exerts a much larger lateral force near the bottom of the reservoir; a wider wedge-shaped base provides the structural strength to withstand this pressure. ii. Using P = ρgh: h = 100,000 / (1000 × 9.8) = 10.2 m.",
+      "source": "AKU-EB SSC-I 2025 Annual Paper II Q.7(b)"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "A parcel box of weight 500 N rests on a table with a base contact area of 0.50 m². Calculate the pressure exerted on the table.",
+      "slo_code": "7.2.2",
+      "formula": "P = F / A",
+      "solution": "P = 500 N / 0.50 m² = 1000 Pa."
+    }
+  ]
 }

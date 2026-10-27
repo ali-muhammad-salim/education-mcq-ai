@@ -18,13 +18,13 @@
     },
     {
       "term": "Learning Outcome 18.2.1",
-      "definition": "state Faraday\u2019s law of electromagnetic induction;",
+      "definition": "state Faraday’s law of electromagnetic induction;",
       "slo_code": "18.2.1",
       "cognitive_level": "R"
     },
     {
       "term": "Learning Outcome 18.2.2",
-      "definition": "describe Lenz\u2019s law, setup an experiment to show that an e.m.f. induces with in a coil opposes the change that produces it;",
+      "definition": "describe Lenz’s law, setup an experiment to show that an e.m.f. induces with in a coil opposes the change that produces it;",
       "slo_code": "18.2.2",
       "cognitive_level": "U"
     },
@@ -141,7 +141,30 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "a. Name and define the principle on which a transformer works. b. Write ONE practical use of a transformer.",
+      "marks": 3,
+      "slo_code": "18.4.2",
+      "answer": "a. Mutual induction: The phenomenon in which a changing electric current in a primary coil induces an electromotive force (e.m.f.) in a neighbouring secondary coil. b. Stepping up voltage at power stations for low-loss grid transmission or stepping down voltage for household appliances.",
+      "source": "AKU-EB SSC-II Model Paper II Q.2(a,b)"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "State Faraday's law of electromagnetic induction and Lenz's law, and explain why electrical power is transmitted at very high voltage and low current across national grids.",
+      "marks": 5,
+      "slo_code": "18.5.4",
+      "answer": "Faraday's law: Induced e.m.f. is directly proportional to the rate of change of magnetic flux linkage. Lenz's law: Direction of induced current opposes the change producing it. Since transmission line heating loss is P_loss = I²R, stepping up voltage reduces current I for a given power P = VI, drastically reducing I²R power loss.",
+      "source": "AKU-EB Syllabus 2025 Unit 18"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "A step-down transformer has 1000 turns on its primary coil and 50 turns on its secondary coil. If the primary is connected to 240 V AC, calculate the secondary output voltage.",
+      "slo_code": "18.5.2",
+      "formula": "V_s / V_p = N_s / N_p",
+      "solution": "V_s = 240 V × (50 / 1000) = 12 V."
+    }
+  ]
 }

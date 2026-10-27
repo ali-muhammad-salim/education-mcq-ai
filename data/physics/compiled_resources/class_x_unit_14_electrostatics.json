@@ -42,13 +42,13 @@
     },
     {
       "term": "Learning Outcome 14.2.2",
-      "definition": "explain Coulomb\u2019s law;",
+      "definition": "explain Coulomb’s law;",
       "slo_code": "14.2.2",
       "cognitive_level": "U"
     },
     {
       "term": "Learning Outcome 14.2.3",
-      "definition": "solve word problems related to the electrostatic charges by using Coulomb\u2019s law;",
+      "definition": "solve word problems related to the electrostatic charges by using Coulomb’s law;",
       "slo_code": "14.2.3",
       "cognitive_level": "A"
     },
@@ -124,12 +124,12 @@
     },
     {
       "question_number": "14",
-      "stem_text": "Two capacitors of capacitance 6 \u00b5F and 3 \u00b5F are connected in a series across a cell of 18 V. The equivalent (effective) capacitance will be",
+      "stem_text": "Two capacitors of capacitance 6 µF and 3 µF are connected in a series across a cell of 18 V. The equivalent (effective) capacitance will be",
       "options": [
-        "A. 2 \u00b5F.",
-        "B. 3 \u00b5F.",
-        "C. 6 \u00b5F.",
-        "D. 9 \u00b5F."
+        "A. 2 µF.",
+        "B. 3 µF.",
+        "C. 6 µF.",
+        "D. 9 µF."
       ],
       "correct_option": "A",
       "explanation": "For two capacitors connected in series, the equivalent capacitance $C_{eq}$ is given by $\\frac{1}{C_{eq}} = \\frac{1}{C_1} + \\frac{1}{C_2} = \\frac{1}{6} + \\frac{1}{3} = \\frac{1 + 2}{6} = \\frac{3}{6} = \\frac{1}{2}$. Thus, $C_{eq} = 2\\text{ \\mu F}$.",
@@ -165,7 +165,30 @@
       "cognitive_level": "Application"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Explain how a gold-leaf electroscope is used to detect the presence and nature (sign) of an unknown electric charge.",
+      "marks": 3,
+      "slo_code": "14.1.4",
+      "answer": "Bringing a charged body near the brass disc causes the gold leaves to diverge. If the electroscope is first charged with a known sign, an increase in divergence indicates the same sign of charge, whereas a decrease indicates the opposite sign or an uncharged conductor.",
+      "source": "AKU-EB Syllabus 2025 Unit 14"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "i. Why can large electrostatic charges be dangerous? Give TWO examples from daily life. ii. Why do long vehicles carrying inflammable materials touch the ground with metallic chains?",
+      "marks": 5,
+      "slo_code": "14.4.3",
+      "answer": "i. Electrostatic discharge creates sparks that can ignite fuel vapours (e.g., aircraft refuelling sparks) or cause lightning strikes. ii. Metallic chains conduct accumulated static charge safely to the Earth (earthing), preventing sparks near inflammable vapour.",
+      "source": "AKU-EB SSC-II Model Paper II Q.7(a)"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "Calculate the electrostatic force of repulsion between two electrons separated by a distance of 1.0 m in air (k = 9 × 10⁹ N·m²/C², q_e = 1.6 × 10⁻¹⁹ C).",
+      "slo_code": "14.2.2",
+      "formula": "F = k q₁ q₂ / r²",
+      "solution": "F = (9 × 10⁹ × (1.6 × 10⁻¹⁹)²) / 1.0² = 2.304 × 10⁻²⁸ N."
+    }
+  ]
 }

@@ -66,7 +66,7 @@
     },
     {
       "term": "Learning Outcome 20.4.4",
-      "definition": "describe the properties of the three types of radiation (\u03b1, \u03b2 and \u03b3);",
+      "definition": "describe the properties of the three types of radiation (α, β and γ);",
       "slo_code": "20.4.4",
       "cognitive_level": "R"
     },
@@ -207,7 +207,30 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "A nuclear fusion reaction is much more difficult to achieve than a nuclear fission reaction. Justify this statement in THREE points.",
+      "marks": 3,
+      "slo_code": "20.7.3",
+      "answer": "1. Positively charged light nuclei experience strong electrostatic repulsion as they approach each other. 2. Overcoming this Coulomb barrier requires extremely high kinetic energy corresponding to temperatures of millions of kelvins. 3. Containing such high-temperature plasma without melting solid reactor walls is technologically challenging.",
+      "source": "AKU-EB SSC-II Model Paper II Q.5"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Compare alpha (α), beta (β), and gamma (γ) radiations in terms of their nature, charge, ionising ability, penetrating power, and deflection in electric/magnetic fields.",
+      "marks": 6,
+      "slo_code": "20.4.5",
+      "answer": "Alpha: Helium nucleus (²₄He²⁺), charge +2e, highest ionising power, lowest penetration (stopped by paper). Beta: Fast electron (⁰₋₁e), charge -e, moderate ionisation and penetration (stopped by a few mm of aluminium). Gamma: High-frequency electromagnetic photon, zero charge, lowest ionisation, highest penetration (attenuated by thick lead), undeflected by fields.",
+      "source": "AKU-EB Syllabus 2025 Unit 20"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "If a radioactive isotope has a half-life of 60 seconds and an initial mass of 80 g, calculate the quantity of the undecayed isotope remaining after 120 seconds.",
+      "slo_code": "20.6.3",
+      "formula": "N = N₀ × (1/2)^n, where n = t / T_½",
+      "solution": "Number of half-lives n = 120 s / 60 s = 2. Remaining mass N = 80 g × (1/2)² = 80 / 4 = 20 g."
+    }
+  ]
 }

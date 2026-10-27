@@ -66,13 +66,13 @@
     },
     {
       "term": "Learning Outcome 3.3.1",
-      "definition": "explain Newton\u2019s laws of motion;",
+      "definition": "explain Newton’s laws of motion;",
       "slo_code": "3.3.1",
       "cognitive_level": "U"
     },
     {
       "term": "Learning Outcome 3.3.2",
-      "definition": "state the limitations of Newton\u2019s laws of motion;",
+      "definition": "state the limitations of Newton’s laws of motion;",
       "slo_code": "3.3.2",
       "cognitive_level": "R"
     },
@@ -253,7 +253,30 @@
       "cognitive_level": "Knowledge"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Differentiate between rolling friction and sliding friction and explain why ball bearings are used in machinery.",
+      "marks": 3,
+      "slo_code": "3.5.2",
+      "answer": "Rolling friction is much smaller than sliding friction because rolling avoids interlocking of surface irregularities over a large sliding area. Ball bearings convert sliding friction into rolling friction.",
+      "source": "AKU-EB Syllabus 2025 Unit 3"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "State and explain Newton's 2nd law of motion and prove that the rate of change of momentum is equal to the applied net force.",
+      "marks": 6,
+      "slo_code": "3.4.2",
+      "answer": "By Newton's 2nd law, F = ma. For a body of mass m changing velocity from v_i to v_f in time t, a = (v_f - v_i)/t. Substituting gives F = m(v_f - v_i)/t = (mv_f - mv_i)/t = (P_f - P_i)/t = ΔP/Δt.",
+      "source": "AKU-EB SSC-I 2025 Annual Paper II Q.6(b)"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "How much centripetal force is needed to move a body of mass 10 kg in a circle of radius 20 m with a speed of 3 m/s?",
+      "slo_code": "3.6.2",
+      "formula": "F_c = mv² / r",
+      "solution": "F_c = (10 kg × (3 m/s)²) / 20 m = 90 / 20 = 4.5 N."
+    }
+  ]
 }

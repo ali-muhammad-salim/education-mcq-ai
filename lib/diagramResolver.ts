@@ -54,8 +54,11 @@ export function resolveQuestionDiagram(
   if (typeof meta?.image_url === 'string' && meta.image_url.trim()) return meta.image_url.trim();
 
   // 4. Manifest lookup for verified examination diagrams
-  const numStr = String(questionNumber || question?.questionNumber || '0').replace(/\D/g, '');
-  if (!numStr) return undefined;
+  const rawQ = String(questionNumber || question?.questionNumber || '').replace(/^Q\.?\s*/i, '').trim();
+  const normKey = rawQ.toLowerCase();
+  const compactKey = normKey.replace(/\./g, '');
+  const numStr = rawQ.replace(/\D/g, '');
+  if (!normKey && !numStr) return undefined;
 
   const pCode = (paperCode || '').toUpperCase().trim();
 
@@ -90,20 +93,25 @@ export function resolveQuestionDiagram(
     pCode.includes('PAPER-II') ||
     pCode.includes('CRQ');
 
+  const is2024 = pCode.includes('2024') || Number(question?.examYear) === 2024;
+
   // Determine paper key for manifest
   let targetPaperKey = '';
   if (verifiedManifest[pCode]) {
     targetPaperKey = pCode;
   } else if (pCode.startsWith('PHY') || (!pCode.startsWith('CHM') && !pCode.startsWith('BIO') && !pCode.startsWith('MTH') && !pCode.startsWith('CSC') && !pCode.startsWith('ENG') && !pCode.startsWith('URD'))) {
     if (isClass9) {
-      targetPaperKey = isPaper2 ? 'PHY-IX-2025-P2' : 'PHY-IX-2025-P1';
+      targetPaperKey = is2024
+        ? (isPaper2 ? 'PHY-IX-2024-P2' : 'PHY-IX-2024-P1')
+        : (isPaper2 ? 'PHY-IX-2025-P2' : 'PHY-IX-2025-P1');
     } else if (isClass10) {
       targetPaperKey = isPaper2 ? 'PHY-X-2025-P2' : 'PHY-X-2025-P1';
     }
   }
 
   if (targetPaperKey && verifiedManifest[targetPaperKey]) {
-    const entry = verifiedManifest[targetPaperKey][numStr];
+    const paperMap = verifiedManifest[targetPaperKey];
+    const entry = paperMap[rawQ] || paperMap[normKey] || paperMap[compactKey] || (numStr ? paperMap[numStr] : undefined);
     if (entry && entry.diagramUrl) {
       return entry.diagramUrl;
     }

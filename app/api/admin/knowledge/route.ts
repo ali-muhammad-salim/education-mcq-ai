@@ -26,8 +26,8 @@ export async function GET(req: NextRequest) {
       const outcomes = document.syllabusVersionId ? await prisma.sLO.findMany({ where: { subtopic: { topic: { syllabusVersionId: document.syllabusVersionId } } }, select: { id: true, code: true, description: true }, orderBy: { code: 'asc' }, take: 1001 }) : [];
       return NextResponse.json({ outcomes }, { headers: { 'Cache-Control': 'no-store' } });
     }
-    const query = z.object({ status: z.enum(['PENDING_REVIEW', 'APPROVED', 'REJECTED']).default('PENDING_REVIEW'), cursor: z.string().max(80).optional(), reviewDocumentId: z.string().max(80).optional() }).parse(Object.fromEntries(req.nextUrl.searchParams));
-    const artifacts = await prisma.knowledgeArtifact.findMany({ where: { status: query.status, ...(query.reviewDocumentId ? { documentId: query.reviewDocumentId } : {}) }, orderBy: query.reviewDocumentId ? [{ pageNumber: 'asc' }, { id: 'asc' }] : [{ id: 'asc' }], take: 21, ...(query.cursor ? { cursor: { id: query.cursor }, skip: 1 } : {}), include: { document: { include: { subject: { include: { academicClass: { include: { programme: { include: { board: true } } } } } } } } } });
+    const query = z.object({ status: z.enum(['PENDING_REVIEW', 'APPROVED', 'REJECTED']).default('PENDING_REVIEW'), cursor: z.string().max(80).optional() }).parse(Object.fromEntries(req.nextUrl.searchParams));
+    const artifacts = await prisma.knowledgeArtifact.findMany({ where: { status: query.status }, orderBy: { id: 'asc' }, take: 21, ...(query.cursor ? { cursor: { id: query.cursor }, skip: 1 } : {}), include: { document: { include: { subject: { include: { academicClass: { include: { programme: { include: { board: true } } } } } } } } } });
     return NextResponse.json({ artifacts: artifacts.slice(0, 20), nextCursor: artifacts.length > 20 ? artifacts[19].id : null }, { headers: { 'Cache-Control': 'no-store' } });
   } catch (error) { return apiError(error); }
 }

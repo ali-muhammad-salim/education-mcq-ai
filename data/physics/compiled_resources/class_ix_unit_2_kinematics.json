@@ -36,7 +36,7 @@
     },
     {
       "term": "Learning Outcome 2.3.4",
-      "definition": "describe the universal speed limit of any object in the universe that is approximately 3 \u00d7 108 m/s;",
+      "definition": "describe the universal speed limit of any object in the universe that is approximately 3 × 108 m/s;",
       "slo_code": "2.3.4",
       "cognitive_level": "R"
     },
@@ -72,7 +72,7 @@
     },
     {
       "term": "Learning Outcome 2.5.2",
-      "definition": "solve word problems related to free-falling bodies using the relation g = \u0394v/ \u0394t.",
+      "definition": "solve word problems related to free-falling bodies using the relation g = Δv/ Δt.",
       "slo_code": "2.5.2",
       "cognitive_level": "A"
     }
@@ -163,7 +163,37 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Explain how the distance travelled and acceleration of a moving body are determined from a speed–time graph.",
+      "marks": 3,
+      "slo_code": "2.4.4",
+      "answer": "Acceleration is determined from the gradient (slope = Δv/Δt) of the speed–time graph, while total distance travelled equals the total area enclosed under the speed–time graph.",
+      "source": "AKU-EB Syllabus 2025 Unit 2"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Zohan dropped a ball from a certain height and its final velocity reached 25 m/s at the ground. From the same height, if he throws the ball vertically downward with an initial velocity of 25 m/s, calculate its final velocity (g = 9.8 m/s²).",
+      "marks": 6,
+      "slo_code": "2.5.2",
+      "answer": "Stage 1 (Dropped, v_i = 0): 2gh = v_f² => h = 25² / (2 × 9.8) = 31.89 m. Stage 2 (Thrown, v_i = 25 m/s): v_f² = v_i² + 2gh = 625 + 625 = 1250 => v_f = 35.35 m/s.",
+      "source": "AKU-EB SSC-I 2025 Annual Paper II Q.6(a)"
+    },
+    {
+      "question": "A sports car starts from rest and covers 900 m to attain a speed of 80 m/s. Determine its acceleration and the time taken.",
+      "marks": 5,
+      "slo_code": "2.3.4",
+      "answer": "Using 2aS = v_f² - v_i²: a = 80² / (2 × 900) = 6400 / 1800 = 3.56 m/s². Time t = (v_f - v_i)/a = 80 / 3.56 = 22.5 s.",
+      "source": "AKU-EB SSC-I Model Paper II Q.6(a)"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "A cricket ball is hit vertically upward and reaches its maximum height in 3 s. Calculate its initial velocity (g = 9.8 m/s²).",
+      "slo_code": "2.5.2",
+      "formula": "v_f = v_i - gt",
+      "solution": "At maximum height, v_f = 0 m/s. Therefore v_i = g × t = 9.8 m/s² × 3 s = 29.4 m/s."
+    }
+  ]
 }

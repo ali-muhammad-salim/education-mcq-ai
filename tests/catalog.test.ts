@@ -7,9 +7,11 @@ describe('Content provenance and round trips', () => {
   afterEach(()=>vi.restoreAllMocks());
   it('does not replace an unknown paper or unverified annual paper with model questions', () => {
     expect(getFallbackPaper('NOT-A-PAPER')).toBeNull();
-    expect(getFallbackPaper('PHY-IX-2024-P2')).toBeNull();
+    expect(getFallbackPaper('PHY-X-2024-P2')).toBeNull();
     expect(getFallbackPaper('PHY-X-2025-P1')).toBeNull();
     expect(getAllStandardPapers().some(p => p.paperCode === 'PHY-X-2025-P1')).toBe(false);
+    expect(getFallbackPaper('PHY-IX-2024-P1')?.questions).toHaveLength(40);
+    expect(getFallbackPaper('PHY-IX-2024-P2')?.questions).toHaveLength(9);
   });
   it('preserves question units, sources and diagrams while withholding keys', () => {
     const content = normalizeQuestion({ questionType:'NUMERICAL',stemText:'Calculate the force',correctAnswerText:'10',unit:'N',pastPaperRef:'Reference',drawingSvg:'<svg xmlns="http://www.w3.org/2000/svg"><path d="M0 0L10 10"/></svg>', reviewId:'review', sloId:'slo' });

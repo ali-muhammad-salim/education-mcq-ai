@@ -1,0 +1,2104 @@
+[
+  {
+    "questionNumber": "1",
+    "pageNumber": 2,
+    "stem": "The total number of significant figures in $0.002022$ are",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "6",
+      "D": "7"
+    },
+    "correctOption": "B",
+    "explanation": "Leading zeros to the left of the first non-zero digit ($0.00$) are only placeholders and are not significant. All four digits starting from the first non-zero digit ($2, 0, 2, 2$) are significant, giving a total of 4 significant figures.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The zero trapped between non-zero digits (in 2022) is also significant."
+      },
+      {
+        "key": "C",
+        "reason": "Zeros after the decimal point but before the first non-zero digit are not significant."
+      },
+      {
+        "key": "D",
+        "reason": "Leading zeros before the first non-zero digit are placeholders, not significant figures."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "1.7.3",
+    "current_slo": "1.7.1",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "marks": 1.0,
+    "chapter": "Unit 1: Measurement",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "1.7.1",
+        "description": "describe significant figures;",
+        "topic": "Measurement"
+      }
+    ]
+  },
+  {
+    "questionNumber": "2",
+    "pageNumber": 2,
+    "stem": "The number $0.0000509$ can be represented in scientific notation as",
+    "options": {
+      "A": "$5.09 \\times 10^{5}$",
+      "B": "$5.09 \\times 10^{3}$",
+      "C": "$5.09 \\times 10^{-3}$",
+      "D": "$5.09 \\times 10^{-5}$"
+    },
+    "correctOption": "D",
+    "explanation": "Moving the decimal point 5 places to the right to place it immediately after the first non-zero digit ($5$) gives $5.09 \\times 10^{-5}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Because the original number is less than 1, moving the decimal point to the right requires a negative power of 10."
+      },
+      {
+        "key": "B",
+        "reason": "The decimal moves 5 places to the right, so the exponent is -5 rather than +3."
+      },
+      {
+        "key": "C",
+        "reason": "Moving the decimal 3 places to the right only gives 0.0509, not 5.09."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "1.5.1",
+    "current_slo": "1.3.2",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "marks": 1.0,
+    "chapter": "Unit 1: Measurement",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "1.3.2",
+        "description": "convert numerical values of measurement in scientific notation;",
+        "topic": "Measurement"
+      }
+    ]
+  },
+  {
+    "questionNumber": "3",
+    "pageNumber": 2,
+    "stem": "If the volume of the given cuboid is $0.03\\text{ m}^3$, then the value of $x$ will be",
+    "options": {
+      "A": "0.1 m.",
+      "B": "0.2 m.",
+      "C": "0.3 m.",
+      "D": "0.5 m."
+    },
+    "correctOption": "C",
+    "explanation": "The volume of a cuboid is $V = l \\times w \\times h$. Substituting $V = 0.03\\text{ m}^3$, $l = 0.5\\text{ m}$, and $w = 0.2\\text{ m}$ gives $0.03 = 0.5 \\times 0.2 \\times x = 0.1x$, so $x = 0.03 / 0.1 = 0.3\\text{ m}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.1 m\u00b2 is the base area (0.5 m \u00d7 0.2 m); divide the volume 0.03 m\u00b3 by 0.1 m\u00b2 to get x = 0.3 m."
+      },
+      {
+        "key": "B",
+        "reason": "0.2 m is the given width of the cuboid, which would yield a volume of 0.02 m\u00b3."
+      },
+      {
+        "key": "D",
+        "reason": "0.5 m is the given length of the cuboid, which would yield a volume of 0.05 m\u00b3."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P1_Q3.png",
+    "slo": "1.4.1",
+    "current_slo": "1.2.2",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "marks": 1.0,
+    "chapter": "Unit 1: Measurement",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "1.2.2",
+        "description": "differentiate between base and derived physical quantities and units;",
+        "topic": "Measurement"
+      }
+    ]
+  },
+  {
+    "questionNumber": "4",
+    "pageNumber": 2,
+    "stem": "The total number of derived quantities involved in the equation $S = v_i t + \\frac{1}{2}at^2$ is",
+    "options": {
+      "A": "one.",
+      "B": "two.",
+      "C": "three.",
+      "D": "four."
+    },
+    "correctOption": "B",
+    "explanation": "In the second equation of motion $S = v_i t + \\frac{1}{2}at^2$, distance/displacement ($S$, length) and time ($t$) are base quantities, while initial velocity ($v_i$) and acceleration ($a$) are derived quantities \u2014 making a total of two derived quantities.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Both initial velocity (v_i) and acceleration (a) are derived quantities."
+      },
+      {
+        "key": "C",
+        "reason": "Distance (length) and time are SI base quantities, leaving only v_i and a as derived quantities."
+      },
+      {
+        "key": "D",
+        "reason": "Only v_i and a are derived quantities; S and t are base quantities."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "1.3.1",
+    "current_slo": "1.1.3",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "marks": 1.0,
+    "chapter": "Unit 1: Measurement",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "1.1.3",
+        "description": "identify various physical quantities as base and derive quantities;",
+        "topic": "Measurement"
+      }
+    ]
+  },
+  {
+    "questionNumber": "5",
+    "pageNumber": 2,
+    "stem": "The given graph depicts that a person is walking along a straight road.\n\nWhich of the following options CORRECTLY describes the motion of the person from point X to Y?",
+    "options": {
+      "A": "The person is moving towards the starting point at a constant speed.",
+      "B": "The person is moving towards the starting point with a variable speed.",
+      "C": "The person is moving away from the starting point at a constant speed.",
+      "D": "The person is moving away from the starting point with a variable speed."
+    },
+    "correctOption": "A",
+    "explanation": "From point X to point Y, the distance from the starting point decreases linearly with time (a straight line of constant negative slope returning to zero distance), which shows the person is walking back towards the starting point at a constant speed.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Because segment XY is a straight line with constant slope, the speed is constant, not variable."
+      },
+      {
+        "key": "C",
+        "reason": "The vertical axis value decreases from X to Y, meaning the person is returning towards the starting point."
+      },
+      {
+        "key": "D",
+        "reason": "The straight downward slope indicates constant speed towards the starting point."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P1_Q5.png",
+    "slo": "2.8.2",
+    "current_slo": "2.4.1",
+    "unitNumber": 2,
+    "unitName": "Kinematics",
+    "marks": 1.0,
+    "chapter": "Unit 2: Kinematics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "2.4.1",
+        "description": "interpret distance-time graph and speed-time graph;",
+        "topic": "Kinematics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "6",
+    "pageNumber": 3,
+    "stem": "A force of $10\\text{ N}$ is acting on a body along x-axis. The value of its y-component will be",
+    "options": {
+      "A": "0 N.",
+      "B": "5 N.",
+      "C": "10 N.",
+      "D": "20 N."
+    },
+    "correctOption": "A",
+    "explanation": "Since the force acts entirely along the x-axis ($\\theta = 0^\\circ$), its y-component is $F_y = F\\sin 0^\\circ = 10 \\times 0 = 0\\text{ N}$.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A y-component of 5 N occurs only when the 10 N force acts at 30\u00b0 to the x-axis."
+      },
+      {
+        "key": "C",
+        "reason": "10 N is the x-component (F cos 0\u00b0), whereas the perpendicular y-component is zero."
+      },
+      {
+        "key": "D",
+        "reason": "A rectangular component of a vector cannot exceed the magnitude of the vector itself."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "2.7.2",
+    "current_slo": "1.4.4",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "marks": 1.0,
+    "chapter": "Unit 1: Measurement",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_3.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "1.4.4",
+        "description": "determine, using Pythagoras theorem and graphs, the resultant of two vectors at right angle;",
+        "topic": "Measurement"
+      }
+    ]
+  },
+  {
+    "questionNumber": "7",
+    "pageNumber": 3,
+    "stem": "A body starts from rest and accelerates to a velocity of $100\\text{ m/s}$. If it covers a distance of $50\\text{ m}$, then its acceleration will be",
+    "options": {
+      "A": "$1\\text{ m/s}^2$.",
+      "B": "$2\\text{ m/s}^2$.",
+      "C": "$100\\text{ m/s}^2$.",
+      "D": "$200\\text{ m/s}^2$."
+    },
+    "correctOption": "C",
+    "explanation": "Using the third equation of motion $2aS = v_f^2 - v_i^2$ with $v_i = 0$, $v_f = 100\\text{ m/s}$, and $S = 50\\text{ m}$ gives $2a(50) = 100^2 \\Rightarrow 100a = 10000 \\Rightarrow a = 100\\text{ m/s}^2$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Remember to square the final velocity (v_f\u00b2 = 10,000 m\u00b2/s\u00b2) in 2aS = v_f\u00b2 - v_i\u00b2."
+      },
+      {
+        "key": "B",
+        "reason": "Dividing v_f by S (100 / 50 = 2) omits squaring v_f and dividing by 2S."
+      },
+      {
+        "key": "D",
+        "reason": "Dividing v_f\u00b2 by S (10,000 / 50 = 200) forgets the factor of 2 in 2aS = v_f\u00b2."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "2.9.2",
+    "current_slo": "2.3.2",
+    "unitNumber": 2,
+    "unitName": "Kinematics",
+    "marks": 1.0,
+    "chapter": "Unit 2: Kinematics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_3.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "2.3.2",
+        "description": "calculate average speed, average velocity and acceleration;",
+        "topic": "Kinematics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "8",
+    "pageNumber": 3,
+    "stem": "The below given picture shows the velocity-time graph for the motion of a body.\n\nThe slope of the line segment WX in the above graph shows the",
+    "options": {
+      "A": "acceleration.",
+      "B": "displacement of the body.",
+      "C": "total distance covered by the body.",
+      "D": "total time taken for the motion of the body."
+    },
+    "correctOption": "A",
+    "explanation": "The slope (gradient) of a velocity-time graph is $\\frac{\\Delta v}{\\Delta t} = \\frac{v_f - v_i}{t}$, which represents the acceleration of the body.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Displacement is represented by the area under the velocity-time graph, not its slope."
+      },
+      {
+        "key": "C",
+        "reason": "Total distance is given by the area under the graph (trapezium OWXYZ), whereas the slope gives acceleration."
+      },
+      {
+        "key": "D",
+        "reason": "Total time is read along the horizontal axis (OZ), not from the slope of WX."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P1_Q8.png",
+    "slo": "2.8.2",
+    "current_slo": "2.4.2",
+    "unitNumber": 2,
+    "unitName": "Kinematics",
+    "marks": 1.0,
+    "chapter": "Unit 2: Kinematics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_3.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "2.4.2",
+        "description": "determine the slope/ gradient of distance-time and speed-time graph;",
+        "topic": "Kinematics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "9",
+    "pageNumber": 3,
+    "stem": "If a motorcyclist covers a displacement of $150\\text{ m}$ in $10\\text{ s}$, then his/ her velocity will be",
+    "options": {
+      "A": "15 m/s.",
+      "B": "140 m/s.",
+      "C": "160 m/s.",
+      "D": "1500 m/s."
+    },
+    "correctOption": "A",
+    "explanation": "Velocity is the rate of change of displacement: $v = \\frac{d}{t} = \\frac{150\\text{ m}}{10\\text{ s}} = 15\\text{ m/s}$.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Velocity is found by dividing displacement by time (150 / 10), not subtracting them."
+      },
+      {
+        "key": "C",
+        "reason": "Velocity is found by dividing displacement by time (150 / 10), not adding them."
+      },
+      {
+        "key": "D",
+        "reason": "Multiplying displacement by time (150 \u00d7 10) is incorrect; divide 150 m by 10 s."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "2.9.2",
+    "current_slo": "2.3.2",
+    "unitNumber": 2,
+    "unitName": "Kinematics",
+    "marks": 1.0,
+    "chapter": "Unit 2: Kinematics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_3.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "2.3.2",
+        "description": "calculate average speed, average velocity and acceleration;",
+        "topic": "Kinematics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "10",
+    "pageNumber": 4,
+    "stem": "Saif and Kaif are in a basketball match. During the game, Saif, holding the ball of mass $0.6\\text{ kg}$ running with a velocity of $3\\text{ m/s}$, collides with the defender, Kaif, who is at rest position, and both start moving together.\n\nThe type of collision and value of momentum of the ball will be\n(Note: Saif and Kaif both have equal weights.)\n\n| Option | Type of Collision | Momentum of the Ball |\n| :--- | :--- | :--- |\n| A | Elastic | $1.8\\text{ N}\\cdot\\text{s}$ |\n| B | Inelastic | $1.8\\text{ N}\\cdot\\text{s}$ |\n| C | Elastic | $0.2\\text{ N}\\cdot\\text{s}$ |\n| D | Inelastic | $0.2\\text{ N}\\cdot\\text{s}$ |",
+    "options": {
+      "A": "Type of Collision: Elastic | Momentum of the Ball: 1.8 N.s",
+      "B": "Type of Collision: Inelastic | Momentum of the Ball: 1.8 N.s",
+      "C": "Type of Collision: Elastic | Momentum of the Ball: 0.2 N.s",
+      "D": "Type of Collision: Inelastic | Momentum of the Ball: 0.2 N.s"
+    },
+    "correctOption": "B",
+    "explanation": "Because the two players stick/move together after the collision, kinetic energy is not conserved and the collision is inelastic. The momentum of the basketball is $p = mv = 0.6\\text{ kg} \\times 3\\text{ m/s} = 1.8\\text{ N}\\cdot\\text{s}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "When colliding bodies stick and move together after collision, the collision is inelastic rather than elastic."
+      },
+      {
+        "key": "C",
+        "reason": "Momentum is p = mv = 0.6 \u00d7 3 = 1.8 N\u00b7s, and sticking together makes the collision inelastic."
+      },
+      {
+        "key": "D",
+        "reason": "Momentum is the product m \u00d7 v = 0.6 \u00d7 3 = 1.8 N\u00b7s, not the quotient 0.6 / 3 = 0.2."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P1_Q10.png",
+    "slo": "3.2.3",
+    "current_slo": "3.4.4",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "marks": 1.0,
+    "chapter": "Unit 3: Dynamics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_4.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "3.4.4",
+        "description": "solve word problems related to momentum and impulse;",
+        "topic": "Dynamics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "11",
+    "pageNumber": 4,
+    "stem": "Which of the following options CORRECTLY depicts the effect of friction on the speed of an object while keeping the force constant?\n\n| Option | Friction | Speed |\n| :--- | :--- | :--- |\n| A | More | Less |\n| B | Unaffected | Less |\n| C | Less | More |\n| D | Less | Unaffected |",
+    "options": {
+      "A": "Friction: More | Speed: Less",
+      "B": "Friction: Unaffected | Speed: Less",
+      "C": "Friction: Less | Speed: More",
+      "D": "Friction: Less | Speed: Unaffected"
+    },
+    "correctOption": "B",
+    "explanation": "Official 2024 answer key records B (with educator review note: physically, for a constant applied propelling force, higher friction reduces net force and speed [Option A], whereas lower friction increases speed [Option C]).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Physically valid (more friction opposes motion and reduces speed), though the printed 2024 key lists B."
+      },
+      {
+        "key": "C",
+        "reason": "Physically valid (less friction yields greater net force and higher speed), though the printed 2024 key lists B."
+      },
+      {
+        "key": "D",
+        "reason": "Changing the opposing frictional force alters the net force and therefore changes the speed."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "3.4.1",
+    "current_slo": "3.5.1",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "marks": 1.0,
+    "chapter": "Unit 3: Dynamics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_4.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "3.5.1",
+        "description": "define friction;",
+        "topic": "Dynamics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "12",
+    "pageNumber": 5,
+    "stem": "Two unequal masses are suspended with an inextensible string around a pulley as shown in the given diagram.\n(Note: Here masses are '$m$' and '$M$', such that '$m$' is less than '$M$'.)\nBased on the given diagram, the relationship between the magnitudes of the acceleration $a_1$ and $a_2$ is",
+    "options": {
+      "A": "$a_1 = a_2 \\neq 0$",
+      "B": "$a_1 > a_2$",
+      "C": "$a_1 < a_2$",
+      "D": "$a_1 = a_2 = 0$"
+    },
+    "correctOption": "A",
+    "explanation": "Because the two unequal masses ($M > m$) are connected by an inextensible string over a frictionless pulley (Atwood machine), both masses move together with the exact same non-zero magnitude of acceleration: $a_1 = a_2 = \\frac{M - m}{M + m}g \\neq 0$.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "An inextensible string does not stretch, so both connected masses must have equal magnitudes of acceleration."
+      },
+      {
+        "key": "C",
+        "reason": "Even though M > m, both masses are tied to the same inextensible string and accelerate at the same rate."
+      },
+      {
+        "key": "D",
+        "reason": "Since m < M, the net unbalanced force (M - m)g is non-zero, so the acceleration is not zero."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P1_Q12.png",
+    "slo": "3.3.5",
+    "current_slo": "3.3.1",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "marks": 1.0,
+    "chapter": "Unit 3: Dynamics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_5.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "3.3.1",
+        "description": "explain Newton\u2019s laws of motion;",
+        "topic": "Dynamics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "13",
+    "pageNumber": 5,
+    "stem": "During accidents, airbags in cars protect the passengers from hitting the dashboards by increasing the",
+    "options": {
+      "A": "momentum.",
+      "B": "acceleration.",
+      "C": "time of contact.",
+      "D": "impact of collision."
+    },
+    "correctOption": "C",
+    "explanation": "From $F = \\frac{\\Delta p}{\\Delta t}$, an airbag cushions the passenger and increases the time of contact ($\\Delta t$) required to bring the passenger's momentum to zero, thereby reducing the average impact force.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The passenger's initial momentum is determined by their mass and the car's speed before impact."
+      },
+      {
+        "key": "B",
+        "reason": "Airbags reduce the rate of deceleration by increasing the stopping time."
+      },
+      {
+        "key": "D",
+        "reason": "Airbags decrease the force of impact by increasing the time of contact."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "3.2.8",
+    "current_slo": "3.4.7",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "marks": 1.0,
+    "chapter": "Unit 3: Dynamics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_5.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "3.4.7",
+        "description": "apply scientific and engineering ideas to design a device that minimises the force on an object during a collision (e.g., helmet or parachute);",
+        "topic": "Dynamics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "14",
+    "pageNumber": 5,
+    "stem": "If the mass of an object is $0.7\\text{ kg}$, then its weight will be\n(Note: Take the value of acceleration due to gravity '$g$' as $10\\text{ m/s}^2$.)",
+    "options": {
+      "A": "0.07 N.",
+      "B": "0.7 N.",
+      "C": "7.0 N.",
+      "D": "70.0 N."
+    },
+    "correctOption": "C",
+    "explanation": "Using $W = mg$, we have $W = 0.7\\text{ kg} \\times 10\\text{ m/s}^2 = 7.0\\text{ N}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.07 is obtained by dividing 0.7 by 10 instead of multiplying by g = 10 m/s\u00b2."
+      },
+      {
+        "key": "B",
+        "reason": "0.7 kg is the mass; multiply by g = 10 m/s\u00b2 to find the weight in newtons."
+      },
+      {
+        "key": "D",
+        "reason": "0.7 \u00d7 10 equals 7.0 N, not 70.0 N."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "3.3.4",
+    "current_slo": "3.1.4",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "marks": 1.0,
+    "chapter": "Unit 3: Dynamics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_5.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "3.1.4",
+        "description": "solve word problems using the relation w = mg;",
+        "topic": "Dynamics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "15",
+    "pageNumber": 5,
+    "stem": "Based on the given image, the net torque of the seesaw will be equal to",
+    "options": {
+      "A": "zero.",
+      "B": "one.",
+      "C": "two.",
+      "D": "infinite."
+    },
+    "correctOption": "A",
+    "explanation": "The seesaw in the diagram is balanced horizontally in rotational equilibrium, so the clockwise torque equals the anticlockwise torque and the net (resultant) torque acting on the seesaw is zero.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "For a horizontal seesaw balanced in rotational equilibrium, the resultant torque is zero."
+      },
+      {
+        "key": "C",
+        "reason": "Although two children apply opposing torques, their vector sum (net torque) is zero."
+      },
+      {
+        "key": "D",
+        "reason": "A balanced seesaw has zero net torque."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P1_Q15.png",
+    "slo": "4.2.2",
+    "current_slo": "4.2.1",
+    "unitNumber": 4,
+    "unitName": "Turning Effect of Forces",
+    "marks": 1.0,
+    "chapter": "Unit 4: Turning Effect of Forces",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_5.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "4.2.1",
+        "description": "state the principle of moments;",
+        "topic": "Turning Effect of Forces"
+      }
+    ]
+  },
+  {
+    "questionNumber": "16",
+    "pageNumber": 6,
+    "stem": "If a body obeys the first condition of equilibrium, then which of the following options will equate to zero?\n\n\u2022 I. Linear acceleration\n\u2022 II. Vector sum of all the forces\n\u2022 III. Vector sum of all the torques",
+    "options": {
+      "A": "II only",
+      "B": "III only",
+      "C": "I and II",
+      "D": "II and III"
+    },
+    "correctOption": "C",
+    "explanation": "According to the first condition of equilibrium, the vector sum of all external forces acting on a body is zero ($\\sum \\vec{F} = 0$, statement II). By Newton's second law ($\\sum \\vec{F} = m\\vec{a}$), zero net force also implies zero linear acceleration ($\\vec{a} = 0$, statement I). Statement III ($\\sum \\vec{\\tau} = 0$) is the second condition of equilibrium.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Because \u2211F = ma = 0, linear acceleration (I) is also zero whenever the first condition of equilibrium holds."
+      },
+      {
+        "key": "B",
+        "reason": "Statement III (vector sum of all torques equals zero) is the second condition of equilibrium."
+      },
+      {
+        "key": "D",
+        "reason": "Statement III represents the second condition of equilibrium rather than the first."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "4.5.3",
+    "current_slo": "4.4.3",
+    "unitNumber": 4,
+    "unitName": "Turning Effect of Forces",
+    "marks": 1.0,
+    "chapter": "Unit 4: Turning Effect of Forces",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "4.4.3",
+        "description": "state the conditions of equilibrium;",
+        "topic": "Turning Effect of Forces"
+      }
+    ]
+  },
+  {
+    "questionNumber": "17",
+    "pageNumber": 6,
+    "stem": "If a force of $4\\text{ N}$ is applied by a student on a door handle and the moment of force is $16\\text{ Nm}$, then the distance of the pivot from the point of applied force is",
+    "options": {
+      "A": "4 m.",
+      "B": "12 m.",
+      "C": "20 m.",
+      "D": "64 m."
+    },
+    "correctOption": "A",
+    "explanation": "From $\\tau = F \\times d$, the moment arm (perpendicular distance from the pivot) is $d = \\frac{\\tau}{F} = \\frac{16\\text{ Nm}}{4\\text{ N}} = 4\\text{ m}$.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Distance is found by dividing torque by force (16 / 4 = 4 m), not subtracting (16 - 4 = 12)."
+      },
+      {
+        "key": "C",
+        "reason": "Distance is found by dividing torque by force (16 / 4 = 4 m), not adding (16 + 4 = 20)."
+      },
+      {
+        "key": "D",
+        "reason": "Multiplying 16 \u00d7 4 = 64 is incorrect; divide the torque (16 Nm) by the force (4 N)."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "4.2.2",
+    "current_slo": "4.1.3",
+    "unitNumber": 4,
+    "unitName": "Turning Effect of Forces",
+    "marks": 1.0,
+    "chapter": "Unit 4: Turning Effect of Forces",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "4.1.3",
+        "description": "solve word problems related to the moment of force or torque = force \u00d7 perpendicular distance from the pivot to the line of action of force;",
+        "topic": "Turning Effect of Forces"
+      }
+    ]
+  },
+  {
+    "questionNumber": "18",
+    "pageNumber": 6,
+    "stem": "In the given diagram, two weights '$W_1$' and '$W_2$' are placed on a rod whereas ($W_1 > W_2$). For keeping the rod in the equilibrium position, then\n\n\u2022 I. increase '$W_2$' and decrease '$x$'\n\u2022 II. increase '$W_2$' and '$x$' remain same\n\u2022 III. increase '$x$' and '$W_2$' remain the same",
+    "options": {
+      "A": "I only.",
+      "B": "III only.",
+      "C": "I and II.",
+      "D": "II and III."
+    },
+    "correctOption": "B",
+    "explanation": "By the principle of moments, balancing the larger anticlockwise weight $W_1$ at distance $y$ requires increasing the clockwise moment $W_2 \\times x$. In the given diagram, the pivot is shifted towards $W_1$ so the moment arm $x$ of the lighter weight $W_2$ is increased while $W_2$ remains the same (statement III only).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Decreasing x would reduce the clockwise moment arm, working against the increase in W_2."
+      },
+      {
+        "key": "C",
+        "reason": "The diagram specifically illustrates balancing unequal weights (W_1 > W_2) by increasing the moment arm x of W_2."
+      },
+      {
+        "key": "D",
+        "reason": "Since the problem states W_1 > W_2 are the two given weights on the rod, equilibrium is achieved by increasing the distance x (III only)."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P1_Q18.png",
+    "slo": "4.5.5",
+    "current_slo": "4.2.2",
+    "unitNumber": 4,
+    "unitName": "Turning Effect of Forces",
+    "marks": 1.0,
+    "chapter": "Unit 4: Turning Effect of Forces",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "4.2.2",
+        "description": "solve word problems related to the principle of moments;",
+        "topic": "Turning Effect of Forces"
+      }
+    ]
+  },
+  {
+    "questionNumber": "19",
+    "pageNumber": 6,
+    "stem": "A mountaineer has taken a bag of emergency items on his back to the Mount Everest.\nOn reaching the peak of the Mount Everest, the weight of the bag will",
+    "options": {
+      "A": "increase.",
+      "B": "decrease.",
+      "C": "become zero.",
+      "D": "remain the same."
+    },
+    "correctOption": "B",
+    "explanation": "Gravitational field strength $g$ decreases with altitude above the Earth's surface ($g_h = \\frac{GM}{(R+h)^2}$). Therefore, at the peak of Mount Everest, the weight $W = mg$ of the bag decreases slightly while its mass remains constant.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Gravitational acceleration g decreases with altitude, so weight decreases rather than increases."
+      },
+      {
+        "key": "C",
+        "reason": "Gravity at the top of Mount Everest is still nearly 99.7% of sea-level gravity, not zero."
+      },
+      {
+        "key": "D",
+        "reason": "Mass remains the same, but weight (W = mg) decreases slightly at high altitude."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "5.3.1",
+    "current_slo": null,
+    "out_of_syllabus": true,
+    "unitNumber": 5,
+    "unitName": "Deformation of Solids",
+    "marks": 1.0,
+    "chapter": "Unit 5: Deformation of Solids",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": []
+  },
+  {
+    "questionNumber": "20",
+    "pageNumber": 7,
+    "stem": "If two metallic spheres have an equal mass of $10\\text{ kg}$ each and the distance between their centres is $0.5\\text{ m}$, then the gravitational force of attraction between the spheres will be\n(Note: The value of the Gravitational constant is $6.67 \\times 10^{-11}\\text{ Nm}^2/\\text{kg}^2$.)",
+    "options": {
+      "A": "$6.670 \\times 10^{-9}\\text{ N}$.",
+      "B": "$1.334 \\times 10^{-9}\\text{ N}$.",
+      "C": "$2.668 \\times 10^{-4}\\text{ N}$.",
+      "D": "$2.668 \\times 10^{-8}\\text{ N}$."
+    },
+    "correctOption": "D",
+    "explanation": "By Newton's law of universal gravitation, $F = \\frac{Gm_1m_2}{r^2} = \\frac{6.67 \\times 10^{-11} \\times 10 \\times 10}{(0.5)^2} = \\frac{6.67 \\times 10^{-9}}{0.25} = 2.668 \\times 10^{-8}\\text{ N}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "6.670 \u00d7 10\u207b\u2079 N is the numerator Gm\u2081m\u2082 before dividing by r\u00b2 = (0.5)\u00b2 = 0.25."
+      },
+      {
+        "key": "B",
+        "reason": "Divide by r\u00b2 = 0.25 rather than dividing by r = 0.5 with a single mass."
+      },
+      {
+        "key": "C",
+        "reason": "Check the power of 10: (6.67 \u00d7 10\u207b\u00b9\u00b9 \u00d7 100) / 0.25 = 2.668 \u00d7 10\u207b\u2078 N."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "5.1.5",
+    "current_slo": null,
+    "out_of_syllabus": true,
+    "unitNumber": 5,
+    "unitName": "Deformation of Solids",
+    "marks": 1.0,
+    "chapter": "Unit 5: Deformation of Solids",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_7.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": []
+  },
+  {
+    "questionNumber": "21",
+    "pageNumber": 7,
+    "stem": "The weight is a force that results from the gravitational attraction between an object and the Earth. The direction of this force will be",
+    "options": {
+      "A": "upward.",
+      "B": "forward.",
+      "C": "backward.",
+      "D": "downward."
+    },
+    "correctOption": "D",
+    "explanation": "Weight is the gravitational pull of the Earth on an object and always acts vertically downward towards the centre of the Earth.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Normal reaction or upthrust acts upward, whereas gravitational weight acts downward."
+      },
+      {
+        "key": "B",
+        "reason": "Weight acts vertically downward towards the Earth's centre."
+      },
+      {
+        "key": "C",
+        "reason": "Friction opposes forward motion, whereas weight acts vertically downward."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "5.1.4",
+    "current_slo": "3.1.3",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "marks": 1.0,
+    "chapter": "Unit 3: Dynamics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_7.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "3.1.3",
+        "description": "define gravitational field strength;",
+        "topic": "Dynamics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "22",
+    "pageNumber": 7,
+    "stem": "The given diagram shows the path followed by a comet when it reaches close to the sun. The shape of the path is",
+    "options": {
+      "A": "elliptical.",
+      "B": "spherical.",
+      "C": "parabolic.",
+      "D": "hyperbolic."
+    },
+    "correctOption": "A",
+    "explanation": "A bound comet revolving periodically around the Sun (with the Sun located at one focus of the closed oval orbit shown in the diagram) follows an elliptical path.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A planar orbit is a two-dimensional curve (an ellipse), whereas a sphere is a three-dimensional solid."
+      },
+      {
+        "key": "C",
+        "reason": "A parabolic path is an open curve that does not form the closed loop shown in the diagram."
+      },
+      {
+        "key": "D",
+        "reason": "A hyperbolic path is an open trajectory, whereas the diagram shows a closed elliptical orbit."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P1_Q22.png",
+    "slo": "5.5.4",
+    "current_slo": null,
+    "out_of_syllabus": true,
+    "unitNumber": 5,
+    "unitName": "Deformation of Solids",
+    "marks": 1.0,
+    "chapter": "Unit 5: Deformation of Solids",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_7.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": []
+  },
+  {
+    "questionNumber": "23",
+    "pageNumber": 7,
+    "stem": "If the kinetic energy of a $200\\text{ kg}$ object is $10,000\\text{ J}$, then the velocity of the object will be",
+    "options": {
+      "A": "5.0 m/s.",
+      "B": "7.07 m/s.",
+      "C": "10.0 m/s.",
+      "D": "100.0 m/s."
+    },
+    "correctOption": "C",
+    "explanation": "From $K.E. = \\frac{1}{2}mv^2$, we have $v = \\sqrt{\\frac{2 \\times K.E.}{m}} = \\sqrt{\\frac{2 \\times 10000}{200}} = \\sqrt{100} = 10.0\\text{ m/s}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "5.0 m/s would give K.E. = \u00bd(200)(25) = 2,500 J."
+      },
+      {
+        "key": "B",
+        "reason": "7.07 m/s (\u221a50) forgets the factor of 2 when rearranging K.E. = \u00bdmv\u00b2."
+      },
+      {
+        "key": "D",
+        "reason": "100 is v\u00b2; take the square root of 100 to get v = 10.0 m/s."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "6.2.3",
+    "current_slo": "6.3.3",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "marks": 1.0,
+    "chapter": "Unit 6: Work, Energy and Power",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_7.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "6.3.3",
+        "description": "solve word problems related to the kinetic and potential energy;",
+        "topic": "Work, Energy and Power"
+      }
+    ]
+  },
+  {
+    "questionNumber": "24",
+    "pageNumber": 7,
+    "stem": "A tugboat applies a force of $100\\text{ N}$ to tow a container ship from the shore to the deep sea. The rope that connects the tugboat to the ship is parallel to the surface of the water.\nIf the tugboat displaces the container ship by $500\\text{ m}$, then the amount of work done by the tugboat will be\n(Note: Suppose that the seawater current is negligible.)",
+    "options": {
+      "A": "5 J.",
+      "B": "400 J.",
+      "C": "600 J.",
+      "D": "50000 J."
+    },
+    "correctOption": "D",
+    "explanation": "Since the towing force acts parallel to the displacement, $W = F \\times d = 100\\text{ N} \\times 500\\text{ m} = 50,000\\text{ J}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Work is force multiplied by displacement (100 \u00d7 500), not displacement divided by force (500 / 100)."
+      },
+      {
+        "key": "B",
+        "reason": "Work is F \u00d7 d = 50,000 J, not d - F = 400."
+      },
+      {
+        "key": "C",
+        "reason": "Work is F \u00d7 d = 50,000 J, not d + F = 600."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "6.1.2",
+    "current_slo": "6.1.2",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "marks": 1.0,
+    "chapter": "Unit 6: Work, Energy and Power",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_7.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "6.1.2",
+        "description": "solve word problems related to workdone;",
+        "topic": "Work, Energy and Power"
+      }
+    ]
+  },
+  {
+    "questionNumber": "25",
+    "pageNumber": 8,
+    "stem": "Consider the given image.\n\nAll of the following types of renewable energy sources are shown in the given picture EXCEPT",
+    "options": {
+      "A": "solar.",
+      "B": "wind.",
+      "C": "hydel.",
+      "D": "biomass."
+    },
+    "correctOption": "C",
+    "explanation": "The illustration shows a solar panel and sun (solar energy), wind turbines (wind energy), and green trees/plants held in a hand (biomass), whereas no dam, river, or hydroelectric turbine (hydel energy) is depicted.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A solar panel and sun are clearly shown on the left side of the illustration."
+      },
+      {
+        "key": "B",
+        "reason": "Wind turbines are clearly shown in the centre and right of the illustration."
+      },
+      {
+        "key": "D",
+        "reason": "Trees and plant matter (biomass) are depicted on the right side of the illustration."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P1_Q25.png",
+    "slo": "6.4.6",
+    "current_slo": "6.4.5",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "marks": 1.0,
+    "chapter": "Unit 6: Work, Energy and Power",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_8.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "6.4.5",
+        "description": "differentiate between non-renewable and renewable energy sources with examples of each;",
+        "topic": "Work, Energy and Power"
+      }
+    ]
+  },
+  {
+    "questionNumber": "26",
+    "pageNumber": 8,
+    "stem": "An electric heater of $500\\text{ W}$ consumes $50\\text{ J}$ of energy to warm a room. The time required by the heater to warm the room will be",
+    "options": {
+      "A": "0.1 s.",
+      "B": "10 s.",
+      "C": "550 s.",
+      "D": "25000 s."
+    },
+    "correctOption": "A",
+    "explanation": "From $P = \\frac{E}{t}$, the time required is $t = \\frac{E}{P} = \\frac{50\\text{ J}}{500\\text{ W}} = 0.1\\text{ s}$.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "10 is P / E (500 / 50); time is E / P = 50 / 500 = 0.1 s."
+      },
+      {
+        "key": "C",
+        "reason": "Time is found by dividing energy by power (50 / 500), not adding them."
+      },
+      {
+        "key": "D",
+        "reason": "Multiplying 500 \u00d7 50 is incorrect; since E = P \u00d7 t, we divide E by P."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "6.6.2",
+    "current_slo": "6.6.2",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "marks": 1.0,
+    "chapter": "Unit 6: Work, Energy and Power",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_8.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "6.6.2",
+        "description": "solve word problems related to the concept of power;",
+        "topic": "Work, Energy and Power"
+      }
+    ]
+  },
+  {
+    "questionNumber": "27",
+    "pageNumber": 8,
+    "stem": "If a person exerts a force that causes a car to move forward, then this is an example of",
+    "options": {
+      "A": "power.",
+      "B": "efficiency.",
+      "C": "work done.",
+      "D": "rotatory motion."
+    },
+    "correctOption": "C",
+    "explanation": "In physics, work is done whenever a force acting on a body displaces it in the direction of the force ($W = Fd$).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Power is the rate of doing work per unit time, which requires knowing the time taken."
+      },
+      {
+        "key": "B",
+        "reason": "Efficiency is the ratio of useful energy output to total energy input."
+      },
+      {
+        "key": "D",
+        "reason": "The car as a whole moves forward in linear displacement due to the applied force, illustrating work done."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "6.1.1",
+    "current_slo": "6.1.1",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "marks": 1.0,
+    "chapter": "Unit 6: Work, Energy and Power",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_8.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "6.1.1",
+        "description": "define work and state its SI unit;",
+        "topic": "Work, Energy and Power"
+      }
+    ]
+  },
+  {
+    "questionNumber": "28",
+    "pageNumber": 8,
+    "stem": "According to the kinetic molecular theory of matter, the distance among the molecules of matter in the liquid state is",
+    "options": {
+      "A": "equal to solid state.",
+      "B": "more than solid state.",
+      "C": "equal to gaseous state.",
+      "D": "more than gaseous state."
+    },
+    "correctOption": "B",
+    "explanation": "In a liquid, molecules are less tightly packed than in a solid (though much closer than in a gas), so the intermolecular spacing in a liquid is greater than in the solid state.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Molecules in a liquid have slightly larger intermolecular distances than in a tightly packed solid lattice."
+      },
+      {
+        "key": "C",
+        "reason": "Molecules in a gas are separated by large distances, far greater than in a liquid."
+      },
+      {
+        "key": "D",
+        "reason": "Gases have the largest intermolecular distances of the three common states of matter."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "7.1.1",
+    "current_slo": "8.1.2",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "marks": 1.0,
+    "chapter": "Unit 8: Thermal Physics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_8.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "8.1.2",
+        "description": "compare the structure of solids, liquids and gases based on the kinetic theory of matter;",
+        "topic": "Thermal Physics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "29",
+    "pageNumber": 9,
+    "stem": "The given diagram shows three different blocks of insoluble material placed in three beakers that are partially filled with water.\n\nWhich of the given block(s) is/ are LESS denser than water?",
+    "options": {
+      "A": "Block (1) only",
+      "B": "Block (2) only",
+      "C": "Block (1) and Block (3)",
+      "D": "Block (2) and Block (3)"
+    },
+    "correctOption": "B",
+    "explanation": "An object floats partially above the liquid surface only when its average density is less than the density of the liquid. In the diagram, Block (2) floats at the top surface of the water, so Block (2) only has a density less than water.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Block (1) is completely submerged beneath the surface, so its density is not less than that of water."
+      },
+      {
+        "key": "C",
+        "reason": "Block (1) and Block (3) are submerged beneath the water surface."
+      },
+      {
+        "key": "D",
+        "reason": "Block (3) rests at the bottom of the beaker, meaning its density is greater than water."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P1_Q29.png",
+    "slo": "7.5.6",
+    "current_slo": "7.1.2",
+    "unitNumber": 7,
+    "unitName": "Pressure",
+    "marks": 1.0,
+    "chapter": "Unit 7: Pressure",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_9.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "7.1.2",
+        "description": "compare the densities of three states of matter (solids, liquids and gases);",
+        "topic": "Pressure"
+      }
+    ]
+  },
+  {
+    "questionNumber": "30",
+    "pageNumber": 9,
+    "stem": "When the upthrust on a moving cargo ship becomes equal to its weight, then it will",
+    "options": {
+      "A": "sink.",
+      "B": "float.",
+      "C": "drop its load.",
+      "D": "lose its balance."
+    },
+    "correctOption": "B",
+    "explanation": "By the principle of floatation, a body floats in equilibrium on a liquid whenever the upward buoyant force (upthrust) equals the downward weight of the body.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "An object sinks only when its weight is greater than the maximum upthrust."
+      },
+      {
+        "key": "C",
+        "reason": "When upthrust equals weight, the ship is safely supported by the water."
+      },
+      {
+        "key": "D",
+        "reason": "Equal weight and upthrust keep the ship vertically balanced in floatation."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "7.6.1",
+    "current_slo": "3.3.4",
+    "unitNumber": 7,
+    "unitName": "Pressure",
+    "marks": 1.0,
+    "chapter": "Unit 7: Pressure",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_9.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "3.3.4",
+        "description": "determine the resultant of two or more forces acting along the same straight line;",
+        "topic": "Dynamics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "31",
+    "pageNumber": 9,
+    "stem": "Which of the following options depicts the atmospheric pressure at sea level and on the mountain?\n\n| Option | Atmospheric Pressure at Sea Level | Atmospheric Pressure on the Mountain |\n| :--- | :--- | :--- |\n| A | Low | High |\n| B | Low | Low |\n| C | High | High |\n| D | High | Low |",
+    "options": {
+      "A": "Atmospheric Pressure at Sea Level: Low | Atmospheric Pressure on the Mountain: High",
+      "B": "Atmospheric Pressure at Sea Level: Low | Atmospheric Pressure on the Mountain: Low",
+      "C": "Atmospheric Pressure at Sea Level: High | Atmospheric Pressure on the Mountain: High",
+      "D": "Atmospheric Pressure at Sea Level: High | Atmospheric Pressure on the Mountain: Low"
+    },
+    "correctOption": "D",
+    "explanation": "Atmospheric pressure is caused by the weight of the air column above a surface. At sea level the air column is tallest and densest (High pressure), whereas on a mountain the air column above is shorter and less dense (Low pressure).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Atmospheric pressure decreases with altitude, so it is high at sea level and low on a mountain."
+      },
+      {
+        "key": "B",
+        "reason": "Sea level supports the full height of the atmosphere and therefore has high atmospheric pressure."
+      },
+      {
+        "key": "C",
+        "reason": "At high mountain altitudes, the air is thinner and atmospheric pressure is low."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "7.4.3",
+    "current_slo": "7.3.3",
+    "unitNumber": 7,
+    "unitName": "Pressure",
+    "marks": 1.0,
+    "chapter": "Unit 7: Pressure",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_9.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "7.3.3",
+        "description": "describe that atmospheric pressure decreases with the increase \nin height above the earth\u2019s surface;",
+        "topic": "Pressure"
+      }
+    ]
+  },
+  {
+    "questionNumber": "32",
+    "pageNumber": 9,
+    "stem": "The property of matter by which it restores its length, shape or volume after the removal of the deforming force is called",
+    "options": {
+      "A": "strain.",
+      "B": "stress.",
+      "C": "elasticity.",
+      "D": "elastic limit."
+    },
+    "correctOption": "C",
+    "explanation": "Elasticity is the property of a body by virtue of which it tends to regain its original length, volume, or shape when the deforming force is removed.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Strain is the fractional change in length, volume, or shape produced by a stress."
+      },
+      {
+        "key": "B",
+        "reason": "Stress is the deforming force acting per unit cross-sectional area."
+      },
+      {
+        "key": "D",
+        "reason": "The elastic limit is the maximum stress a material can withstand without permanent deformation."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "7.8.1",
+    "current_slo": "5.1.1",
+    "unitNumber": 5,
+    "unitName": "Deformation of Solids",
+    "marks": 1.0,
+    "chapter": "Unit 5: Deformation of Solids",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_9.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "5.1.1",
+        "description": "illustrate that force may produce a change in the size and shape of an object;",
+        "topic": "Deformation of Solids"
+      }
+    ]
+  },
+  {
+    "questionNumber": "33",
+    "pageNumber": 9,
+    "stem": "The CORRECT relation between Celsius and Fahrenheit is",
+    "options": {
+      "A": "$1^\\circ\\text{C} > 1^\\circ\\text{F}$.",
+      "B": "$1^\\circ\\text{C} < -32^\\circ\\text{F}$.",
+      "C": "$-32^\\circ\\text{C} > 1^\\circ\\text{F}$.",
+      "D": "$32^\\circ\\text{C} < 32^\\circ\\text{F}$."
+    },
+    "correctOption": "A",
+    "explanation": "Using $T_F = \\frac{9}{5}T_C + 32$, a temperature of $1^\\circ\\text{C}$ equals $33.8^\\circ\\text{F}$, which is much warmer than $1^\\circ\\text{F}$. Therefore, $1^\\circ\\text{C} > 1^\\circ\\text{F}$.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "1\u00b0C equals +33.8\u00b0F, which is greater than -32\u00b0F."
+      },
+      {
+        "key": "C",
+        "reason": "-32\u00b0C equals -25.6\u00b0F, which is less than 1\u00b0F."
+      },
+      {
+        "key": "D",
+        "reason": "32\u00b0F equals 0\u00b0C, so 32\u00b0C is warmer than 32\u00b0F."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "8.2.2",
+    "current_slo": "8.3.2",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "marks": 1.0,
+    "chapter": "Unit 8: Thermal Physics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_9.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "8.3.2",
+        "description": "convert temperature from one scale to another (Fahrenheit, Celsius and Kelvin scales);",
+        "topic": "Thermal Physics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "34",
+    "pageNumber": 10,
+    "stem": "The amount of heat energy required to change a substance from solid into liquid state at its melting point without any change in its temperature is known as",
+    "options": {
+      "A": "heat capacity.",
+      "B": "latent heat of fusion.",
+      "C": "specific heat capacity.",
+      "D": "latent heat of vapourisation."
+    },
+    "correctOption": "B",
+    "explanation": "Latent heat of fusion is the thermal energy required to change a solid into a liquid at its melting point without any change in temperature.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Heat capacity is the heat required to raise the temperature of a body by 1 K or 1\u00b0C."
+      },
+      {
+        "key": "C",
+        "reason": "Specific heat capacity is the heat required to raise the temperature of 1 kg of a substance by 1 K."
+      },
+      {
+        "key": "D",
+        "reason": "Latent heat of vaporisation is for changing a liquid into a gas at its boiling point."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "8.4.1",
+    "current_slo": "8.2.4",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "marks": 1.0,
+    "chapter": "Unit 8: Thermal Physics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_10.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "8.2.4",
+        "description": "describe latent heat of fusion and latent heat of vaporisation;",
+        "topic": "Thermal Physics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "35",
+    "pageNumber": 10,
+    "stem": "If the temperature of a substance is $20^\\circ\\text{C}$, then its temperature in Kelvin scale will be",
+    "options": {
+      "A": "\u2013 253 K.",
+      "B": "\u2013 6.66 K.",
+      "C": "68 K.",
+      "D": "293 K."
+    },
+    "correctOption": "D",
+    "explanation": "Converting from Celsius to Kelvin uses $T(\\text{K}) = T(^\\circ\\text{C}) + 273 = 20 + 273 = 293\\text{ K}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Add 273 to the Celsius temperature (20 + 273 = 293 K) rather than subtracting 273."
+      },
+      {
+        "key": "B",
+        "reason": "Use T(K) = T(\u00b0C) + 273, not the Fahrenheit conversion formula."
+      },
+      {
+        "key": "C",
+        "reason": "68\u00b0F is the Fahrenheit value (9/5 \u00d7 20 + 32), whereas the Kelvin value is 20 + 273 = 293 K."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "8.2.2",
+    "current_slo": "8.3.2",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "marks": 1.0,
+    "chapter": "Unit 8: Thermal Physics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_10.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "8.3.2",
+        "description": "convert temperature from one scale to another (Fahrenheit, Celsius and Kelvin scales);",
+        "topic": "Thermal Physics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "36",
+    "pageNumber": 10,
+    "stem": "A metal cap on a glass bottle can easily be opened when hot water is poured over it. This is because",
+    "options": {
+      "A": "metal and glass do not expand.",
+      "B": "metal and glass expand equally.",
+      "C": "metal expands less and glass expands more.",
+      "D": "metal expands more and glass expands less."
+    },
+    "correctOption": "D",
+    "explanation": "Metals have a higher coefficient of thermal expansion than glass. When hot water is poured over the bottle neck, the metal cap expands more than the glass, loosening its grip so it can be unscrewed easily.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Both solids expand when heated, with metal expanding significantly more than glass."
+      },
+      {
+        "key": "B",
+        "reason": "If both expanded equally, the cap would remain just as tight on the glass threads."
+      },
+      {
+        "key": "C",
+        "reason": "If glass expanded more than the metal cap, the cap would become even tighter."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "8.7.1",
+    "current_slo": "8.2.1",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "marks": 1.0,
+    "chapter": "Unit 8: Thermal Physics",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_10.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "8.2.1",
+        "description": "describe the thermal expansion of solids in terms of: a. linear expansion, b. volumetric expansion;",
+        "topic": "Thermal Physics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "37",
+    "pageNumber": 10,
+    "stem": "With reference to heat transfer in solids, the CORRECT statement is that heat",
+    "options": {
+      "A": "flows from lower to higher temperature.",
+      "B": "flows from higher to lower temperature.",
+      "C": "is independent of the size of the surface of solids.",
+      "D": "is independent of the temperature of the surroundings."
+    },
+    "correctOption": "B",
+    "explanation": "Thermal energy always flows spontaneously from a region of higher temperature to a region of lower temperature.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Heat never flows spontaneously from a colder region to a hotter region without external work."
+      },
+      {
+        "key": "C",
+        "reason": "The rate of heat flow through a solid is directly proportional to its cross-sectional area."
+      },
+      {
+        "key": "D",
+        "reason": "The rate of heat flow depends directly on the temperature difference with the surroundings."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "9.1.2",
+    "current_slo": "9.1.1",
+    "unitNumber": 9,
+    "unitName": "Transfer of Thermal Energy",
+    "marks": 1.0,
+    "chapter": "Unit 9: Transfer of Thermal Energy",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_10.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "explain thermal conduction in solids;",
+        "topic": "Transfer of Thermal Energy"
+      }
+    ]
+  },
+  {
+    "questionNumber": "38",
+    "pageNumber": 10,
+    "stem": "The CORRECT option that identifies the processes of heat transfer in which medium is required and not required is\n\n| Option | Process in which Medium is Required | Process in which Medium is NOT Required |\n| :--- | :--- | :--- |\n| A | conduction | convection |\n| B | convection | conduction |\n| C | conduction | radiation |\n| D | radiation | conduction |",
+    "options": {
+      "A": "Medium Required: conduction | Medium NOT Required: convection",
+      "B": "Medium Required: convection | Medium NOT Required: conduction",
+      "C": "Medium Required: conduction | Medium NOT Required: radiation",
+      "D": "Medium Required: radiation | Medium NOT Required: conduction"
+    },
+    "correctOption": "C",
+    "explanation": "Conduction (and convection) requires a material medium of particles to transfer thermal energy, whereas thermal radiation consists of electromagnetic (infrared) waves that can travel through a vacuum without any medium.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Convection also requires a fluid medium (liquid or gas) and cannot occur in a vacuum."
+      },
+      {
+        "key": "B",
+        "reason": "Conduction requires a material medium of vibrating particles and free electrons."
+      },
+      {
+        "key": "D",
+        "reason": "Radiation does not require a medium, whereas conduction requires a medium."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "9.4.1",
+    "current_slo": "9.3.1",
+    "unitNumber": 9,
+    "unitName": "Transfer of Thermal Energy",
+    "marks": 1.0,
+    "chapter": "Unit 9: Transfer of Thermal Energy",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_10.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "9.3.1",
+        "description": "define the process of thermal energy transfer by radiation;",
+        "topic": "Transfer of Thermal Energy"
+      }
+    ]
+  },
+  {
+    "questionNumber": "39",
+    "pageNumber": 10,
+    "stem": "An example of a good conductor of heat is a",
+    "options": {
+      "A": "glass door.",
+      "B": "frying pan.",
+      "C": "wooden door.",
+      "D": "leather jacket."
+    },
+    "correctOption": "B",
+    "explanation": "A cooking frying pan is made of metal (such as aluminium, copper, or steel), which has free electrons and is a good conductor of heat so food cooks evenly.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Glass is a poor conductor (thermal insulator) of heat."
+      },
+      {
+        "key": "C",
+        "reason": "Wood is a thermal insulator, not a good conductor of heat."
+      },
+      {
+        "key": "D",
+        "reason": "Leather traps air and acts as a thermal insulator."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "9.1.6",
+    "current_slo": "9.1.5",
+    "unitNumber": 9,
+    "unitName": "Transfer of Thermal Energy",
+    "marks": 1.0,
+    "chapter": "Unit 9: Transfer of Thermal Energy",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_10.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "9.1.5",
+        "description": "describe good and bad conductors of heat with examples;",
+        "topic": "Transfer of Thermal Energy"
+      }
+    ]
+  },
+  {
+    "questionNumber": "40",
+    "pageNumber": 11,
+    "stem": "Air ventilation in a room is an example of",
+    "options": {
+      "A": "radiation.",
+      "B": "convection.",
+      "C": "conduction.",
+      "D": "evaporation."
+    },
+    "correctOption": "B",
+    "explanation": "Warm air in a room expands, becomes less dense, and rises out through upper ventilators while cooler, denser fresh air enters from lower windows/doors \u2014 a classic example of convection currents in gases.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Radiation transfers heat via infrared waves without bulk movement of air."
+      },
+      {
+        "key": "C",
+        "reason": "Air is a poor conductor of heat; room ventilation relies on bulk air movement (convection)."
+      },
+      {
+        "key": "D",
+        "reason": "Evaporation is the surface phase change of a liquid into vapour, not air circulation."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "9.3.2",
+    "current_slo": "9.4.1",
+    "unitNumber": 9,
+    "unitName": "Transfer of Thermal Energy",
+    "marks": 1.0,
+    "chapter": "Unit 9: Transfer of Thermal Energy",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p1_page_11.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "9.4.1",
+        "description": "discuss everyday applications of conduction, convection and radiation including:\na. heating objects such as kitchen pans,\nb. heating of room by convection,\nc. measuring temperature using an infrared thermometer,\nd. using thermal insulation to maintain the temperature of a liquid and to reduce thermal energy transfer in buildings,\ne. the mechanism of a household hot-water system;",
+        "topic": "Transfer of Thermal Energy"
+      }
+    ]
+  }
+]

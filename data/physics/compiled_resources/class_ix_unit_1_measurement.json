@@ -60,7 +60,7 @@
     },
     {
       "term": "Learning Outcome 1.4.3",
-      "definition": "describe the \u2018head to tail\u2019 rule of vector addition;",
+      "definition": "describe the ‘head to tail’ rule of vector addition;",
       "slo_code": "1.4.3",
       "cognitive_level": "U"
     },
@@ -130,7 +130,7 @@
         "D. $37.0\\text{ cm}^3$."
       ],
       "correct_option": "D",
-      "explanation": "Total volume = 21 * 1.76 = 36.96 cm\u00b3. When rounded off to 3 significant figures, 36.96 becomes 37.0 cm\u00b3.",
+      "explanation": "Total volume = 21 * 1.76 = 36.96 cm³. When rounded off to 3 significant figures, 36.96 becomes 37.0 cm³.",
       "marks": 1.0,
       "cognitive_level": "Application"
     },
@@ -205,7 +205,37 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "i. How many significant figures are there in 0.0102030? ii. List the rules of significant figures applied.",
+      "marks": 2,
+      "slo_code": "1.7.1",
+      "answer": "i. 6 significant figures. ii. Leading zeros before the first non-zero digit are not significant; zeros between non-zero digits and trailing zeros in a decimal fraction are significant.",
+      "source": "AKU-EB SSC-I 2025 Annual Paper II Q.1"
+    },
+    {
+      "question": "Write the name of the physical quantity measured by Vernier callipers and micrometer screw gauge, along with their typical least counts.",
+      "marks": 2,
+      "slo_code": "1.5.2",
+      "answer": "Length / internal and external diameter (Vernier callipers least count = 0.01 cm or 0.1 mm; Micrometer screw gauge least count = 0.001 cm or 0.01 mm).",
+      "source": "AKU-EB SSC-I Model Paper II Q.1"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Differentiate between systematic errors and random errors in physical measurements, giving two causes and one method of reducing each.",
+      "marks": 4,
+      "slo_code": "1.6.1",
+      "answer": "Systematic errors occur consistently in one direction due to zero error of instruments or faulty calibration; reduced by applying zero correction. Random errors are unpredictable fluctuations due to parallax or environmental changes; reduced by taking the average of multiple repeated readings.",
+      "source": "AKU-EB Syllabus 2025 Unit 1"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "The volume of one small metallic cube is 1.76 cm³. Calculate the total volume of 21 such cubes and round the result to three significant figures.",
+      "slo_code": "1.7.2",
+      "formula": "V_total = 21 × V_1",
+      "solution": "V_total = 21 × 1.76 cm³ = 36.96 cm³. Rounded to 3 significant figures, V_total = 37.0 cm³."
+    }
+  ]
 }

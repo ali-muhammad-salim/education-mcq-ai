@@ -138,10 +138,10 @@
     },
     {
       "question_number": "11",
-      "stem_text": "If an image is formed at a distance of 32 cm from a concave mirror with focal length of 12 cm, then the object\u2019s distance is",
+      "stem_text": "If an image is formed at a distance of 32 cm from a concave mirror with focal length of 12 cm, then the object’s distance is",
       "options": [
-        "A. \u2013 0.052 cm.",
-        "B. \u2013 19.2 cm.",
+        "A. – 0.052 cm.",
+        "B. – 19.2 cm.",
         "C. 20.0 cm.",
         "D. 32.0 cm."
       ],
@@ -165,7 +165,37 @@
       "cognitive_level": "Application"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Write any THREE uses of total internal reflection in light propagation and optical instruments.",
+      "marks": 3,
+      "slo_code": "13.4.4",
+      "answer": "1. Telecommunications via optical fibres. 2. Medical endoscopy for internal imaging. 3. Totally reflecting prisms in periscopes and binoculars.",
+      "source": "AKU-EB SSC-II Model Paper II Q.1"
+    },
+    {
+      "question": "Mention any TWO benefits of transmitting information and data through an optical fibre.",
+      "marks": 2,
+      "slo_code": "13.4.5",
+      "answer": "1. Extremely high bandwidth with minimal signal attenuation over long distances. 2. Immunity to electromagnetic interference.",
+      "source": "AKU-EB SSC-II Model Paper II Q.4"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Describe short-sightedness (myopia) and long-sightedness (hypermetropia) in the human eye, stating the physical causes and the type of corrective lens required for each.",
+      "marks": 5,
+      "slo_code": "13.8.3",
+      "answer": "Short-sightedness: distant objects focus in front of the retina due to elongated eyeball or excessive lens power; corrected with a diverging (concave) lens. Long-sightedness: near objects focus behind the retina due to shortened eyeball or weak lens; corrected with a converging (convex) lens.",
+      "source": "AKU-EB Syllabus 2025 Unit 13"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "The floor of a filled water tank appears at an apparent depth of 3.0 m. If the refractive index of water is 1.33, calculate the real depth of the water.",
+      "slo_code": "13.2.4",
+      "formula": "n = Real Depth / Apparent Depth",
+      "solution": "Real Depth = n × Apparent Depth = 1.33 × 3.0 m = 3.99 m ≈ 4.0 m."
+    }
+  ]
 }

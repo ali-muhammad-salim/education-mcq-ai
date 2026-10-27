@@ -74,10 +74,10 @@
       "question_number": "23",
       "stem_text": "The direction of force on a current carrying conductor placed in a magnetic field can be determined by",
       "options": [
-        "A. Joule\u2019s law.",
-        "B. Coulomb\u2019s law.",
+        "A. Joule’s law.",
+        "B. Coulomb’s law.",
         "C. Head to tail rule.",
-        "D. Fleming\u2019s left-hand rule."
+        "D. Fleming’s left-hand rule."
       ],
       "correct_option": "D",
       "explanation": "Fleming's left-hand rule is used to determine the direction of force experienced by a current-carrying conductor placed in a magnetic field.",
@@ -99,7 +99,30 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Why are domestic electrical appliances connected in parallel rather than in series across the live and neutral mains wires?",
+      "marks": 3,
+      "slo_code": "16.1.2",
+      "answer": "1. Every appliance receives the full standard mains voltage (220–240 V). 2. Each appliance can be switched on or off independently without breaking the circuit for other appliances.",
+      "source": "AKU-EB SSC-II Model Paper I Q.18"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Derive the expressions for the equivalent resistance of three resistors R₁, R₂, and R₃ connected (a) in series and (b) in parallel.",
+      "marks": 5,
+      "slo_code": "16.1.3",
+      "answer": "(a) Series: Same current I flows through each resistor, V = V₁ + V₂ + V₃ = I(R₁ + R₂ + R₃) => R_eq = R₁ + R₂ + R₃. (b) Parallel: Same voltage V across each branch, I = I₁ + I₂ + I₃ = V(1/R₁ + 1/R₂ + 1/R₃) => 1/R_eq = 1/R₁ + 1/R₂ + 1/R₃.",
+      "source": "AKU-EB Syllabus 2025 Unit 16"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "Two resistors of 6 Ω and 12 Ω are connected in parallel across a 12 V battery. Calculate the equivalent resistance and total current from the battery.",
+      "slo_code": "16.1.3",
+      "formula": "1/R_eq = 1/R₁ + 1/R₂; I = V / R_eq",
+      "solution": "R_eq = (6 × 12) / (6 + 12) = 72 / 18 = 4.0 Ω. Total current I = 12 V / 4.0 Ω = 3.0 A."
+    }
+  ]
 }

@@ -13,10 +13,17 @@ import MathText from '@/components/MathText';
 import StructuredContent from '@/components/StructuredContent';
 import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 import past2025 from '@/data/physics/ssc1_2025_past_mcqs.json';
+import past2024 from '@/data/physics/ssc1_2024_past_mcqs.json';
 import { mcqCategories, type McqCategory } from '@/lib/mcqCategories';
-import { annualOriginalReference, annualCurrentMapping } from '@/lib/legacyPaperEvidence';
+import {
+  annualOriginalReference,
+  annualCurrentMapping,
+  annual2024OriginalReference,
+  annual2024CurrentMapping,
+} from '@/lib/legacyPaperEvidence';
 import QuestionSource from '@/components/QuestionSource';
 import TakeQuizModal from '@/components/TakeQuizModal';
+import { smartMatch } from '@/lib/smartSearch';
 
 interface Props {
   initialCategory?: McqCategory;
@@ -42,9 +49,9 @@ interface ChapterDef {
 const CLASS_IX_UNITS: ChapterDef[] = [
   {
     unitNumber: 1,
-    name: 'Measurement & Physical Quantities',
+    name: 'Measurement',
     slug: 'measurement',
-    topics: 'Base & Derived Units, Prefixes, Scientific Notation, Vernier Callipers, Screw Gauge, Significant Figures',
+    topics: 'Physical Quantities, SI Units, Prefixes, Scientific Notation, Scalars & Vectors, Vernier Callipers, Screw Gauge, Significant Figures',
     qRange: [1, 5],
     pastPaperCount: 28
   },
@@ -52,142 +59,170 @@ const CLASS_IX_UNITS: ChapterDef[] = [
     unitNumber: 2,
     name: 'Kinematics',
     slug: 'kinematics',
-    topics: 'Distance & Displacement, Speed & Velocity, Acceleration, Distance-Time Graphs, Equations of Motion, Free Fall',
-    qRange: [6, 10],
+    topics: 'Rest & Motion, Distance & Displacement, Speed & Velocity, Acceleration, Distance-Time & Speed-Time Graphs, Motion due to Gravity',
+    qRange: [6, 9],
     pastPaperCount: 32
   },
   {
     unitNumber: 3,
     name: 'Dynamics',
     slug: 'dynamics',
-    topics: 'Newton Laws of Motion, Inertia, Momentum, Friction, Rolling Friction, Circular Motion & Centripetal Force',
-    qRange: [11, 15],
+    topics: 'Mass & Weight, Contact & Non-Contact Forces, Newton Laws of Motion, Momentum & Impulse, Friction, Uniform Circular Motion',
+    qRange: [10, 14],
     pastPaperCount: 35
   },
   {
     unitNumber: 4,
     name: 'Turning Effect of Forces',
     slug: 'turning-effect-of-forces',
-    topics: 'Parallel Forces, Moment of a Force (Torque), Centre of Mass & Gravity, Couple, Equilibrium & Stability',
-    qRange: [16, 19],
+    topics: 'Parallel Forces, Moment of a Force (Torque), Principle of Moments, Centre of Gravity, Couple, Equilibrium & Stability',
+    qRange: [15, 18],
     pastPaperCount: 24
   },
   {
     unitNumber: 5,
-    name: 'Gravitation',
-    slug: 'gravitation',
-    topics: 'Law of Universal Gravitation, Mass of Earth, Variation of g with Altitude, Artificial Satellites & Orbital Speed',
-    qRange: [20, 22],
+    name: 'Deformation of Solids ( & Historical Gravitation)',
+    slug: 'deformation-of-solids',
+    topics: 'Elasticity, Hooke Law (F = kx), Spring Constant, Load-Extension Graphs & Limit of Proportionality (plus 2023 Model Gravitation items)',
+    qRange: [19, 22],
     pastPaperCount: 20
   },
   {
     unitNumber: 6,
-    name: 'Work and Energy',
-    slug: 'work-and-energy',
-    topics: 'Work, Kinetic & Potential Energy, Forms of Energy, Conservation of Energy, Efficiency, Power & Watt',
+    name: 'Work, Energy and Power',
+    slug: 'work-energy-and-power',
+    topics: 'Work (W = Fd), Kinetic & Gravitational Potential Energy, Conservation of Energy, Renewable & Non-Renewable Sources, Efficiency, Power',
     qRange: [23, 27],
     pastPaperCount: 30
   },
   {
     unitNumber: 7,
-    name: 'Properties of Matter',
-    slug: 'properties-of-matter',
-    topics: 'Kinetic Molecular Theory, Density, Atmospheric Pressure, Pascal Principle, Archimedes Principle, Elasticity & Hooke Law',
+    name: 'Pressure',
+    slug: 'pressure',
+    topics: 'Density, Pressure (P = F/A), Atmospheric Pressure & Barometer, Hydrostatic Pressure in Liquids (P = ρgh), Pascal Law & Hydraulic Lift',
     qRange: [28, 32],
     pastPaperCount: 29
   },
   {
     unitNumber: 8,
-    name: 'Thermal Properties of Matter',
-    slug: 'thermal-properties-of-matter',
-    topics: 'Temperature & Heat, Thermometers, Thermal Expansion, Specific Heat Capacity, Latent Heat, Evaporation',
+    name: 'Thermal Physics',
+    slug: 'thermal-physics',
+    topics: 'Kinetic Molecular Theory, Internal Energy, Specific Heat Capacity, Latent Heat of Fusion & Vaporisation, Evaporation, Thermometers',
     qRange: [33, 36],
     pastPaperCount: 22
   },
   {
     unitNumber: 9,
-    name: 'Transfer of Heat',
-    slug: 'transfer-of-heat',
-    topics: 'Conduction & Thermal Conductivity, Convection Currents, Thermal Radiation & Leslie Cube, Green House Effect',
+    name: 'Transfer of Thermal Energy',
+    slug: 'transfer-of-thermal-energy',
+    topics: 'Thermal Conduction, Convection Currents, Thermal Radiation, Good & Bad Emitters/Absorbers, Vacuum Flask, Greenhouse Effect',
     qRange: [37, 40],
     pastPaperCount: 20
+  },
+  {
+    unitNumber: 10,
+    name: 'Nature of Science',
+    slug: 'nature-of-science',
+    topics: 'Objectives of Physics, Sub-Fields of Physics, Hypothesis, Theory & Law, Scientific Method, Science, Technology & Engineering',
+    qRange: [41, 41],
+    pastPaperCount: 5
   }
 ];
 
 const CLASS_X_UNITS: ChapterDef[] = [
   {
-    unitNumber: 10,
-    name: 'Simple Harmonic Motion & Waves',
-    slug: 'simple-harmonic-motion',
-    topics: 'SHM of Mass-Spring & Pendulum, Damped Oscillations, Wave Motion, Longitudinal & Transverse Waves, Ripple Tank',
-    qRange: [1, 5],
-    pastPaperCount: 30
-  },
-  {
     unitNumber: 11,
-    name: 'Sound',
-    slug: 'sound',
-    topics: 'Nature of Sound, Longitudinal Waves, Pitch, Loudness & Quality, Speed of Sound, Echo & Ultrasound Applications',
-    qRange: [6, 9],
-    pastPaperCount: 25
+    name: 'Wave Motion',
+    slug: 'wave-motion',
+    topics: 'Oscillatory Motion, Simple Pendulum, Transverse & Longitudinal Waves, Wave Equation (v = fλ), Ripple Tank Reflection, Refraction & Diffraction',
+    qRange: [1, 4],
+    pastPaperCount: 30
   },
   {
     unitNumber: 12,
-    name: 'Geometrical Optics',
-    slug: 'geometrical-optics',
-    topics: 'Reflection, Spherical Mirrors, Refraction, Snell Law, Total Internal Reflection, Lenses & Vision Defects',
-    qRange: [10, 15],
-    pastPaperCount: 36
+    name: 'Sound',
+    slug: 'sound',
+    topics: 'Nature & Propagation of Sound, Loudness, Pitch, Quality & Intensity, Speed of Sound, Echo Calculations, Ultrasound & Noise Pollution',
+    qRange: [5, 8],
+    pastPaperCount: 25
   },
   {
     unitNumber: 13,
-    name: 'Electrostatics',
-    slug: 'electrostatics',
-    topics: 'Electric Charges, Coulomb Law, Electric Field Lines, Potential, Capacitors & Capacitance, Dielectrics',
-    qRange: [16, 20],
-    pastPaperCount: 32
+    name: 'Geometrical Optics',
+    slug: 'geometrical-optics',
+    topics: 'Reflection & Spherical Mirrors, Refraction & Snell Law, Dispersion, Total Internal Reflection & Optical Fibres, Thin Lenses & Eye Defects',
+    qRange: [9, 13],
+    pastPaperCount: 36
   },
   {
     unitNumber: 14,
-    name: 'Current Electricity',
-    slug: 'current-electricity',
-    topics: 'Electric Current, Potential Difference & EMF, Ohm Law, Resistance & Factors, Series/Parallel, Joule Law & Power',
-    qRange: [21, 26],
-    pastPaperCount: 38
+    name: 'Electrostatics',
+    slug: 'electrostatics',
+    topics: 'Electric Charge, Gold-Leaf Electroscope, Coulomb Law, Electrostatic Induction, Electric Field & Potential, Applications & Lightning',
+    qRange: [14, 17],
+    pastPaperCount: 32
   },
   {
     unitNumber: 15,
-    name: 'Electromagnetism',
-    slug: 'electromagnetism',
-    topics: 'Magnetic Field of Current, Force on Conductor (F=BIL), DC Motor, Electromagnetic Induction, AC Generator, Transformer',
-    qRange: [27, 31],
-    pastPaperCount: 30
+    name: 'Electric Current',
+    slug: 'electric-current',
+    topics: 'Conventional Current, Potential Difference & e.m.f., Ohm Law, Resistance & Resistivity, Electrical Power & Joule Law, AC & Safety',
+    qRange: [15, 20],
+    pastPaperCount: 38
   },
   {
     unitNumber: 16,
-    name: 'Basic Electronics',
-    slug: 'basic-electronics',
-    topics: 'Thermionic Emission, Electron Gun, Deflection of Electrons, Logic Gates (AND, OR, NOT, NAND, NOR)',
-    qRange: [32, 35],
-    pastPaperCount: 22
+    name: 'D.C. Circuits',
+    slug: 'dc-circuits',
+    topics: 'Series & Parallel Resistor Combinations, Equivalent Resistance, Circuit Diagrams, Potential Divider, Thermistor & LDR',
+    qRange: [18, 21],
+    pastPaperCount: 24
   },
   {
     unitNumber: 17,
-    name: 'Information & Communication Technology',
-    slug: 'ict',
-    topics: 'ICT Components, Transmission of Signals, Telephone, Computer, Internet, Risks of ICT',
-    qRange: [36, 37],
-    pastPaperCount: 16
+    name: 'Magnetism and Electromagnetism',
+    slug: 'magnetism-and-electromagnetism',
+    topics: 'Domain Theory, Magnetic Field Lines, Field of Straight Conductor & Solenoid, Force on Conductor, Fleming Left-Hand Rule, DC Motor',
+    qRange: [23, 26],
+    pastPaperCount: 30
   },
   {
     unitNumber: 18,
-    name: 'Atomic & Nuclear Physics',
+    name: 'Electromagnetic Induction',
+    slug: 'electromagnetic-induction',
+    topics: 'Faraday Law, Lenz Law, Fleming Right-Hand Rule, AC Generator, Mutual Induction, Step-Up/Step-Down Transformers & Grid Transmission',
+    qRange: [22, 24],
+    pastPaperCount: 22
+  },
+  {
+    unitNumber: 19,
+    name: 'Electromagnetic Waves and Electronics',
+    slug: 'electromagnetic-waves-and-electronics',
+    topics: 'Electromagnetic Spectrum, Thermionic Emission, Cathode Ray Oscilloscope (CRO), Analogue & Digital Signals, Logic Gates & Truth Tables',
+    qRange: [27, 35],
+    pastPaperCount: 22
+  },
+  {
+    unitNumber: 20,
+    name: 'Atomic and Nuclear Physics',
     slug: 'atomic-and-nuclear-physics',
-    topics: 'Atom Structure, Isotopes, Radioactivity (Alpha, Beta, Gamma), Half-Life, Nuclear Fission & Fusion, Radiation Hazards',
-    qRange: [38, 40],
+    topics: 'Rutherford Nuclear Model, Isotopes, Natural Radioactivity (Alpha, Beta, Gamma), Half-Life, Nuclear Fission & Fusion, Radiation Safety',
+    qRange: [36, 40],
     pastPaperCount: 26
   }
 ];
+
+function belongsToUnit(q: any, unit: ChapterDef, isAnnual: boolean): boolean {
+  if (isAnnual) {
+    if (Number(q.unitNumber) === unit.unitNumber) return true;
+    return String(q.slo || '').startsWith(unit.unitNumber + '.');
+  }
+  if (typeof q.unitNumber === 'number') {
+    return q.unitNumber === unit.unitNumber;
+  }
+  const qNum = Number(q.questionNumber || 0);
+  return qNum >= unit.qRange[0] && qNum <= unit.qRange[1];
+}
 
 export default function McqsClient({ board, classDef, meta, baseUrl, questions,mappedChapters=[],initialCategory,useReviewedLegacy=false,annualQuestions=past2025 }: Props) {
   const [mappedChapter,setMappedChapter]=useState<string|null>(null);
@@ -201,25 +236,66 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
   const [revealedAnswers, setRevealedAnswers] = useState<Record<number, boolean>>({});
   const [cognitiveFilter, setCognitiveFilter] = useState<'all' | 'Remembering' | 'Understanding' | 'Application' | 'diagram'>('all');
+  const [searchQuery, setSearchQuery] = useState('');
   const [quizModalOpen, setQuizModalOpen] = useState(false);
 
   const unitsList = questions.length?(classDef.roman === 'IX' ? CLASS_IX_UNITS : CLASS_X_UNITS):[];
 
-  const [practiceSource, setPracticeSource] = useState<'model' | 'annual'>('model');
+  const [practiceSource, setPracticeSource] = useState<'model' | 'annual' | 'annual2024' | 'annual_all'>('model');
   const fullPapers = [
-    ...(questions.length?[{ title: 'Physics Model Paper I', desc: 'Practice the available model-paper MCQs with answer feedback.', items: questions.length, time: 'Custom timer', badge: 'MODEL PAPER', annual: false }]:[]),
-    ...(questions.length && classDef.roman === 'IX' ? [{ title: 'Annual Examination 2025 — Paper I', desc: 'Original 2025 examination MCQs. Current syllabus mappings are reviewed separately.', items: past2025.length, time: 'Custom timer', badge: 'ANNUAL 2025', annual: true }] : []),
+    ...(questions.length?[{ title: 'Physics Model Paper I', desc: 'Practice the available model-paper MCQs with answer feedback and 2025 syllabus SLO mappings.', items: questions.length, time: 'Custom timer', badge: 'MODEL PAPER', source: 'model' as const }]:[]),
+    ...(questions.length && classDef.roman === 'IX' ? [
+      { title: 'Annual Examination 2025 — Paper I', desc: 'Original 2025 examination MCQs with official answer key and reviewed 2025 syllabus mappings.', items: past2025.length, time: 'Custom timer', badge: 'ANNUAL 2025', source: 'annual' as const },
+      { title: 'Annual Examination 2024 — Paper I', desc: 'Original 2024 examination MCQs with official answer key, cropped diagrams, and 2025 syllabus mappings.', items: past2024.length, time: 'Custom timer', badge: 'ANNUAL 2024', source: 'annual2024' as const },
+    ] : []),
   ];
 
+  const mapped2025Pool = classDef.roman === 'IX'
+    ? annualQuestions.map(q => ({
+        ...q,
+        ...annualOriginalReference(q.questionNumber),
+        ...(q.answer_review_note ? { answer_review_note: q.answer_review_note } : {}),
+        ...(useReviewedLegacy ? annualCurrentMapping(q.questionNumber, q.stem) : {}),
+        paperCode: 'PHY-IX-2025-P1',
+        examYear: 2025,
+        questionNumber: Number(q.questionNumber),
+        cognitiveLevel: ({ K: 'Remembering', U: 'Understanding', A: 'Application' } as Record<string, string>)[q.cognitiveLevel] || q.cognitiveLevel,
+      }))
+    : [];
+
+  const mapped2024Pool = classDef.roman === 'IX'
+    ? past2024.map((q: any) => ({
+        ...q,
+        ...annual2024OriginalReference(q.questionNumber),
+        ...(useReviewedLegacy ? annual2024CurrentMapping(q.questionNumber, q.stem) : {}),
+        paperCode: 'PHY-IX-2024-P1',
+        examYear: 2024,
+        questionNumber: Number(q.questionNumber),
+        cognitiveLevel: ({ K: 'Remembering', U: 'Understanding', A: 'Application' } as Record<string, string>)[q.cognitiveLevel] || q.cognitiveLevel,
+      }))
+    : [];
+
   // Filtered Questions for Practice Mode
-  const questionPool = mappedChapter?mappedChapters.find(c=>c.id===mappedChapter)?.questions||[]:practiceSource === 'annual' ? (classDef.roman === 'IX' ? annualQuestions.map(q => ({ ...q, ...annualOriginalReference(q.questionNumber), ...(q.answer_review_note?{answer_review_note:q.answer_review_note}:{}), ...(useReviewedLegacy?annualCurrentMapping(q.questionNumber,q.stem):{}), questionNumber: Number(q.questionNumber), cognitiveLevel: ({K:'Remembering', U:'Understanding', A:'Application'} as Record<string,string>)[q.cognitiveLevel] || q.cognitiveLevel })) : []) : questions;
+  const isAnnualSource = practiceSource === 'annual' || practiceSource === 'annual2024' || practiceSource === 'annual_all';
+  const questionPool = mappedChapter
+    ? mappedChapters.find(c => c.id === mappedChapter)?.questions || []
+    : practiceSource === 'annual'
+    ? mapped2025Pool
+    : practiceSource === 'annual2024'
+    ? mapped2024Pool
+    : practiceSource === 'annual_all'
+    ? [...mapped2025Pool, ...mapped2024Pool.map(q => ({ ...q, displayQuestionNumber: `2024 Q${q.questionNumber}`, questionNumber: 100 + Number(q.questionNumber), rawQuestionNumber: Number(q.questionNumber) }))]
+    : questions;
   const activeQuestions = questionPool.filter(q => {
-    // If a unit is selected, filter by question number range
     if (selectedUnit) {
-      const qNum = q.questionNumber || 0;
-      if (practiceSource === 'annual' ? !String(q.slo || '').startsWith(selectedUnit.unitNumber + '.') : qNum < selectedUnit.qRange[0] || qNum > selectedUnit.qRange[1]) {
+      if (!belongsToUnit(q, selectedUnit, isAnnualSource)) {
         return false;
       }
+    }
+    if (searchQuery.trim()) {
+      const optsText = Object.values(q.options || q.choices || {}).join(' ');
+      const combined = `${q.stem || q.questionText || ''} ${optsText} ${q.explanation || ''} ${q.unitName || q.chapter || ''} ${q.slo || ''}`;
+      if (!smartMatch(combined, searchQuery, q.slo)) return false;
     }
     if (cognitiveFilter === 'all') return true;
     if (cognitiveFilter === 'diagram') return Boolean(q.diagramBased || q.isDiagram || q.diagramUrl);
@@ -228,10 +304,10 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
   const handleStartChapterPractice = (unit: ChapterDef, isPastPaper = false) => {
     setMappedChapter(null);
-    setPracticeSource(isPastPaper ? 'annual' : 'model');
+    setPracticeSource(isPastPaper ? 'annual_all' : 'model');
     setSelectedUnit(unit);
     setPracticeTitle(isPastPaper
-      ? `Unit ${unit.unitNumber}: ${unit.name} • Past Examination Archive`
+      ? `Unit ${unit.unitNumber}: ${unit.name} • Past Examination Archive (2024 & 2025)`
       : `Unit ${unit.unitNumber}: ${unit.name} • Chapter Practice`
     );
     setSelectedAnswers({});
@@ -240,9 +316,9 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     setCurrentView('practice');
   };
 
-  const handleStartFullBookPractice = (title: string, annual = false) => {
+  const handleStartFullBookPractice = (title: string, source: 'model' | 'annual' | 'annual2024' = 'model') => {
     setMappedChapter(null);
-    setPracticeSource(annual ? 'annual' : 'model');
+    setPracticeSource(source);
     setSelectedUnit(null);
     setPracticeTitle(title);
     setSelectedAnswers({});
@@ -376,13 +452,13 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                   Chapter-Wise Curriculum Practice Bank
                 </h2>
                 <p style={{ fontSize: '0.92rem', color: '#64748b', margin: 0 }}>
-                  Practice model question groups with answer feedback. Chapter assignments are provisional and are awaiting curriculum review.
+                  Practice model question groups mapped to the 2025 AKU-EB Physics syllabus units with instant answer feedback.
                 </p>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '1.25rem' }}>
                 {unitsList.map((unit) => {
-                  const unitQCount = questions.filter(q=>Number(q.questionNumber)>=unit.qRange[0]&&Number(q.questionNumber)<=unit.qRange[1]).length;
+                  const unitQCount = questions.filter(q => belongsToUnit(q, unit, false)).length;
                   return (
                     <div
                       key={unit.unitNumber}
@@ -461,15 +537,19 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
               {mappedChapters.length>0&&<section style={{marginBottom:'2rem'}}><h2>Current syllabus chapters</h2><div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(min(100%,280px),1fr))',gap:'1rem'}}>{mappedChapters.map(chapter=><button key={chapter.id} onClick={()=>{setMappedChapter(chapter.id);setSelectedUnit(null);setPracticeTitle(chapter.name);setSelectedAnswers({});setRevealedAnswers({});setCognitiveFilter('all');setCurrentView('practice');}} style={{background:'var(--card-bg)',color:'var(--text-color)',border:'1px solid var(--border-color)',borderRadius:12,padding:'1.25rem',minHeight:72,textAlign:'left',cursor:'pointer'}}><strong>{chapter.name}</strong><span style={{display:'block',marginTop:8}}>{chapter.questions.length} past questions →</span></button>)}</div></section>}
               <div style={{ marginBottom: '1.5rem' }}>
                 <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#111827', margin: '0 0 0.35rem 0' }}>
-                  Original exam-year references
+                  Original exam-year references (2024 & 2025)
                 </h2>
                 <p style={{ fontSize: '0.92rem', color: '#64748b', margin: 0 }}>
-                  Original exam-year references are grouped below. These references come from the official 2025 answer key and are separate from current-syllabus mappings.
+                  Original exam-year references from the official 2024 and 2025 answer keys are grouped below alongside reviewed 2025 syllabus mappings.
                 </p>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '1.25rem' }}>
-                {unitsList.map((unit) => (
+                {unitsList.map((unit) => {
+                  const refCount2025 = past2025.filter(q => belongsToUnit(q, unit, true)).length;
+                  const refCount2024 = past2024.filter(q => belongsToUnit(q, unit, true)).length;
+                  const totalRefCount = refCount2025 + refCount2024;
+                  return (
                   <div
                     key={unit.unitNumber}
                     style={{
@@ -497,7 +577,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                           PAST PAPERS • UNIT {unit.unitNumber}
                         </span>
                         <span style={{ fontSize: '0.8rem', color: '#0b5e4a', fontWeight: 700 }}>
-                          {past2025.filter(q => String(annualOriginalReference(q.questionNumber).slo || '').startsWith(unit.unitNumber + '.')).length} Original references
+                          {totalRefCount} Original references
                         </span>
                       </div>
 
@@ -506,7 +586,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                       </h3>
 
                       <p style={{ fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5, margin: 0 }}>
-                        Questions from the available 2025 paper, grouped by supplied SLO mappings.
+                        Questions from the 2024 and 2025 Annual Examination papers, grouped by supplied SLO mappings.
                       </p>
                     </div>
 
@@ -535,7 +615,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                       </button>
                     </div>
                   </div>
-                ))}
+                );})}
               </div>
             </div>
           )}
@@ -596,7 +676,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
                     <div style={{ display: 'flex', gap: '0.65rem', paddingTop: '0.75rem', borderTop: '1px solid #f1f5f9' }}>
                       <button
-                        onClick={() => handleStartFullBookPractice(paper.title, paper.annual)}
+                        onClick={() => handleStartFullBookPractice(paper.title, paper.source)}
                         style={{
                           flex: 1,
                           padding: '0.65rem 1rem',
@@ -619,7 +699,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
                       <button
                         onClick={() => {
-                          handleStartFullBookPractice(paper.title, paper.annual);
+                          handleStartFullBookPractice(paper.title, paper.source);
                           setQuizModalOpen(true);
                         }}
                         style={{
@@ -856,6 +936,20 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
             </div>
 
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search questions, typos, synonyms, SLO..."
+                style={{
+                  padding: '0.48rem 0.85rem',
+                  borderRadius: '8px',
+                  border: '1px solid #dce5e1',
+                  fontSize: '0.82rem',
+                  minWidth: '230px',
+                  outline: 'none'
+                }}
+              />
               {[
                 { id: 'all', label: `All (${activeQuestions.length})` },
                 { id: 'Remembering', label: 'Remembering' },
@@ -923,6 +1017,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
             ) : (
               activeQuestions.map((q, idx) => {
                 const qNum = q.questionNumber || idx + 1;
+                const rawQNum = q.rawQuestionNumber || qNum;
                 const userChoice = selectedAnswers[qNum];
                 const isRevealed = revealedAnswers[qNum];
                 const isAnswered = !!userChoice;
@@ -944,7 +1039,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                     }}
                   >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                         <span style={{
                           background: '#0b5e4a',
                           color: '#ffffff',
@@ -953,7 +1048,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                           fontSize: '0.8rem',
                           fontWeight: 800
                         }}>
-                          Q{qNum}
+                          {q.examYear ? `${q.examYear} · Q${rawQNum}` : `Q${rawQNum}`}
                         </span>
                         <span style={{
                           background: q.cognitiveLevel === 'Remembering' ? '#fef3c7' : q.cognitiveLevel === 'Understanding' ? '#e0f2fe' : '#dcfce7',
@@ -965,9 +1060,9 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                         }}>
                           {q.cognitiveLevel}
                         </span>
-                        {q.unitName && (
+                        {(q.unitName || q.chapter) && (
                           <span style={{ background: '#f4f7f6', color: '#4b5563', padding: '3px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
-                            {q.unitName}
+                            {q.unitName || q.chapter}
                           </span>
                         )}
                       </div>
@@ -991,7 +1086,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                       </button>
                     </div>
 
-                    <QuestionSource question={q} source={mappedChapter?'mapped':practiceSource} board={board.shortCode} grade={classDef.level} subject={meta.title} />
+                    <QuestionSource question={q} source={mappedChapter?'mapped':isAnnualSource?'annual':'model'} board={board.shortCode} grade={classDef.level} subject={meta.title} />
 
                     {/* Question Stem rendered with StructuredContent (Tables + KaTeX) */}
                     <div style={{ fontSize: '1.05rem', color: 'var(--text-color, #1a2e26)', fontWeight: 600, lineHeight: 1.6, marginBottom: '1.25rem' }}>
@@ -1001,13 +1096,14 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                     {/* Diagram if available */}
                     {(() => {
                       if (q.diagramBased === false || (q as any).isDiagram === false) return null;
-                      const diagramSrc = resolveQuestionDiagram(`PHY-${classDef.roman}${practiceSource === 'annual' ? '-2025' : ''}-P1`, qNum, q);
+                      const paperCodeForDiag = q.paperCode || `PHY-${classDef.roman}${practiceSource === 'annual2024' ? '-2024' : practiceSource === 'annual' ? '-2025' : ''}-P1`;
+                      const diagramSrc = resolveQuestionDiagram(paperCodeForDiag, rawQNum, q);
                       if (!diagramSrc) return null;
                       return (
                         <div style={{ marginBottom: '1.25rem', textAlign: 'center' }}>
                           <img
                             src={diagramSrc}
-                            alt={`Diagram for Question ${qNum}`}
+                            alt={`Diagram for Question ${rawQNum}`}
                             onError={(e) => { e.currentTarget.style.display = 'none'; }}
                             style={{
                               maxWidth: '100%',
@@ -1124,7 +1220,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
         isOpen={quizModalOpen}
         onClose={() => setQuizModalOpen(false)}
         paperTitle={practiceTitle}
-        paperCode={mappedChapter?`CURRICULUM:${mappedChapter}:${({all:'ALL',Remembering:'R',Understanding:'U',Application:'A',diagram:'DIAGRAM'} as Record<string,string>)[cognitiveFilter]}`:`PHY-${classDef.roman}${practiceSource === 'annual' ? '-2025' : ''}-P1-SET-${activeQuestions.map(q => Number(q.questionNumber)).sort((a, b) => a - b).join('-')}`}
+        paperCode={mappedChapter?`CURRICULUM:${mappedChapter}:${({all:'ALL',Remembering:'R',Understanding:'U',Application:'A',diagram:'DIAGRAM'} as Record<string,string>)[cognitiveFilter]}`:`PHY-${classDef.roman}${practiceSource === 'annual2024' ? '-2024' : isAnnualSource ? '-2025' : ''}-P1-SET-${activeQuestions.map(q => Number(q.rawQuestionNumber || q.questionNumber)).sort((a, b) => a - b).join('-')}`}
         questions={activeQuestions}
       />
     </div>

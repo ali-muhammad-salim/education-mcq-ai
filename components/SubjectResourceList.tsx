@@ -11,6 +11,8 @@ import { getAllStandardPapers } from "@/lib/paperDataService";
 import prisma from "@/lib/prisma";
 import {publicMaterialWhere} from '@/lib/materialVisibility';
 import { physics2025Resources } from '@/lib/legacyPaperEvidence';
+import rg9 from '@/data/physics/ssc1_resource_guide.json';
+import rg10 from '@/data/physics/ssc2_resource_guide.json';
 
 export default async function SubjectResourceList({
   params,
@@ -91,6 +93,7 @@ export default async function SubjectResourceList({
         : []),
     ]) {
       const code = paper.paperCode || paper.id;
+      if (/CHAP1-2/i.test(code) || /Chapters\s*1\s*&\s*2/i.test(paper.title || "")) continue;
       if (seen.has(code)) continue;
       if(listed.has('/past-papers/'+encodeURIComponent(code)))continue;
       seen.add(code);
@@ -111,11 +114,19 @@ export default async function SubjectResourceList({
         label: "Practical paper",
         href: scope.baseUrl + "/model-papers/P3",
       });
-  } else if (legacy && !after)
-    items.push({
-      label: "Resources guide",
-      href: scope.baseUrl + "/books?view=guide",
-    });
+  } else if (legacy && !after) {
+    items.push(
+      {
+        label: "Resources guide",
+        href: scope.baseUrl + "/books?view=guide",
+      },
+      {
+        label: "28-week pacing guide",
+        href: scope.classDef.level === 9 ? "/resources/physics-ix-pacing-guide" : "/resources/physics-x-pacing-guide",
+      }
+    );
+  }
+  const activeGuide = scope.classDef.level === 9 ? rg9 : rg10;
   return (
     <section className={styles.page}>
       <Breadcrumbs
@@ -140,7 +151,41 @@ export default async function SubjectResourceList({
             (scope.classDef.level === 9 ? "i" : "ii") +
             "-physics-dedicated.pdf"
           }
-        />
+        >
+          <div className={styles.digital}>
+            <p><strong>Recommended Key Textbook:</strong> {activeGuide.recommendedKeyTextbook}</p>
+            <div style={{overflowX:'auto'}}>
+              <table style={{width:'100%',borderCollapse:'collapse'}}>
+                <thead>
+                  <tr>
+                    {['Unit','Topic Title','Reference Books & Chapters','Websites & Simulations'].map(h => (
+                      <th key={h} style={{textAlign:'left',padding:'.75rem',borderBottom:'1px solid var(--border-color)'}}>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {activeGuide.units.map((u) => (
+                    <tr key={u.topicNumber} style={{borderBottom:'1px solid var(--border-color)'}}>
+                      <td style={{padding:'.65rem',verticalAlign:'top'}}><strong>{u.topicNumber}</strong></td>
+                      <td style={{padding:'.65rem',verticalAlign:'top'}}><strong>{u.topicTitle}</strong></td>
+                      <td style={{padding:'.65rem',verticalAlign:'top'}}>
+                        <ul style={{margin:0,paddingLeft:'1.1rem'}}>
+                          {u.references.map((r, i) => <li key={i}>{r.book} — <em>{r.topic}</em></li>)}
+                        </ul>
+                      </td>
+                      <td style={{padding:'.65rem',verticalAlign:'top'}}>
+                        <ul style={{margin:0,paddingLeft:'1.1rem'}}>
+                          {u.websites.map((w, i) => <li key={i}><a href={w} target="_blank" rel="noreferrer">{w}</a></li>)}
+                        </ul>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p style={{marginTop:'1rem',fontSize:'.9rem'}}>{activeGuide.note}</p>
+          </div>
+        </DocumentViews>
       ) : items.length ? (
         type==='past_paper'?<>{[...new Set(items.map(i=>i.year))].sort((a,b)=>(b||0)-(a||0)).map(year=><section key={year||'other'}><h2 style={{margin:'1.5rem 0 .6rem'}}>{year||'Other resources'}</h2><MaterialList items={items.filter(i=>i.year===year)} /></section>)}</>:<MaterialList items={items} />
       ) : (

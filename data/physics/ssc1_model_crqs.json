@@ -1,39 +1,5 @@
 [
   {
-    "questionNumber": "Q.7(b)(ii)",
-    "marks": 2.0,
-    "stem": "Explain the reason, why upthrust acts in the upward direction.",
-    "rubric": [
-      {
-        "marks": 1,
-        "description": "Mentioning that pressure in a fluid increases with depth"
-      },
-      {
-        "marks": 1,
-        "description": "Explaining that upward pressure at the bottom is greater than downward pressure at the top"
-      }
-    ],
-    "modelAnswer": "Pressure in a fluid increases with depth. Therefore, the upward force exerted by the fluid on the bottom of an immersed object is greater than the downward force exerted on the top, resulting in a net upward force called upthrust.",
-    "isDiagram": false
-  },
-  {
-    "questionNumber": "Q.7(b)(i)",
-    "marks": 4.0,
-    "stem": "Describe the types of forces that act on a body in a fluid, if it is I. partially immersed. II. completely immersed.",
-    "rubric": [
-      {
-        "marks": 2,
-        "description": "Description of forces acting on a partially immersed body (Weight downwards, Upthrust upwards)"
-      },
-      {
-        "marks": 2,
-        "description": "Description of forces acting on a completely immersed body (Weight downwards, Upthrust/Buoyant force upwards, and potentially tension/normal force)"
-      }
-    ],
-    "modelAnswer": "I. Partially immersed: Weight of the body acting downward and Upthrust acting upward. II. Completely immersed: Weight acting downward, Upthrust acting upward, and Net force determining sinking or floating.",
-    "isDiagram": false
-  },
-  {
     "questionNumber": "Q.1",
     "marks": 2.0,
     "stem": "Write the name of the physical quantity which is measured by the given instruments.",
@@ -49,25 +15,32 @@
     ],
     "modelAnswer": "Depends on the provided instrument diagrams in the original paper.",
     "isDiagram": true,
-    "diagramUrl": "/extracted_diagrams/PHY-IX-2025-P2_Q1.png",
-    "diagramDescription": "Two measuring instruments labeled I (measuring cylinder) and II (beam balance)"
-  },
-  {
-    "questionNumber": "Q.5(b)",
-    "marks": 2.0,
-    "stem": "Walking barefoot on a carpet feels warmer than walking on tiles. Give a scientific reason to support this statement.",
-    "rubric": [
+    "diagramUrl": "/materials/scans/diagrams/ssc1_p2_p2_diagram.png",
+    "diagramDescription": "Two measuring instruments labeled I (measuring cylinder) and II (beam balance)",
+    "text": "Write the name of the physical quantity which is measured by the given instruments.",
+    "section": "Section B (CRQ)",
+    "pageNumber": 2,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_2.png",
+    "slo": "1.5.1",
+    "chapter": "Unit 1: Measurement",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "1.5.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
       {
-        "marks": 1,
-        "description": "Identifying carpets as poor conductors (good insulators) and tiles as good conductors"
-      },
-      {
-        "marks": 1,
-        "description": "Explaining heat transfer from feet to the surface"
+        "code": "1.5.1",
+        "description": "identify measuring instruments;",
+        "topic": "Measurement"
       }
-    ],
-    "modelAnswer": "Carpets are poor conductors of heat, so they do not conduct heat away from our feet. Tiles are better conductors of heat, conducting heat away from our feet rapidly, making them feel colder.",
-    "isDiagram": false
+    ]
   },
   {
     "questionNumber": "Q.2",
@@ -88,66 +61,31 @@
       }
     ],
     "modelAnswer": "Stable: A cone resting on its base. Unstable: A cone balancing on its apex. Neutral: A ball rolling on a flat surface.",
-    "isDiagram": false
-  },
-  {
-    "questionNumber": "Q.6(b)(ii)",
-    "marks": 3.0,
-    "stem": "Find the velocity of the car if momentum of both the vehicles is same.",
-    "rubric": [
+    "isDiagram": false,
+    "text": "There are three states of equilibrium. Write any ONE example of each state of equilibrium from daily life.",
+    "section": "Section B (CRQ)",
+    "pageNumber": 2,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_2.png",
+    "slo": "4.4.4",
+    "chapter": "Unit 4: Turning Effect of Forces",
+    "unitNumber": 4,
+    "unitName": "Turning Effect of Forces",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "4.4.4",
+    "out_of_syllabus": false,
+    "current_mapping": [
       {
-        "marks": 1,
-        "description": "Equating the momentum of car to the momentum of the bike"
-      },
-      {
-        "marks": 1,
-        "description": "Rearranging the formula to solve for car's velocity"
-      },
-      {
-        "marks": 1,
-        "description": "Correct calculation and unit for car's velocity"
+        "code": "4.4.4",
+        "description": "explain different conditions of equilibrium with examples;",
+        "topic": "Turning Effect of Forces"
       }
-    ],
-    "modelAnswer": "Momentum of car = Momentum of bike = 12639.25 kg m/s. Mass of car = 1754 kg. Velocity of car = P / m = 12639.25 / 1754 = 7.21 m/s.",
-    "isDiagram": false
-  },
-  {
-    "questionNumber": "Q.5(a)",
-    "marks": 1.0,
-    "stem": "An animal fur coat is made in such a way that the inner surface of the material is the animal’s skin and the outer surface is fur/ hair. State the reason, why the coat is warmer if it is worn inside out (i.e. the inner surface becomes the outer)?",
-    "rubric": [
-      {
-        "marks": 1,
-        "description": "Explaining trapping of air or better insulation properties"
-      }
-    ],
-    "modelAnswer": "When worn inside out, the fur traps a larger layer of dead air close to the body, which acts as a better insulator and reduces heat loss.",
-    "isDiagram": false
-  },
-  {
-    "questionNumber": "Q.7(a)",
-    "marks": 6.0,
-    "stem": "Describe renewable and non-renewable sources of energy and give any FOUR examples of each source.",
-    "rubric": [
-      {
-        "marks": 1,
-        "description": "Definition of renewable sources of energy"
-      },
-      {
-        "marks": 2,
-        "description": "Four examples of renewable sources of energy"
-      },
-      {
-        "marks": 1,
-        "description": "Definition of non-renewable sources of energy"
-      },
-      {
-        "marks": 2,
-        "description": "Four examples of non-renewable sources of energy"
-      }
-    ],
-    "modelAnswer": "Renewable energy sources are naturally replenished in a short time (e.g., Solar, Wind, Hydroelectric, Geothermal). Non-renewable sources are finite and cannot be replenished easily once consumed (e.g., Coal, Petroleum, Natural Gas, Nuclear/Uranium).",
-    "isDiagram": false
+    ]
   },
   {
     "questionNumber": "Q.3",
@@ -164,28 +102,154 @@
       }
     ],
     "modelAnswer": "F = G \\times (m_1 \\times m_2) / r^2 = (6.67 \\times 10^{-11} \\times 5.98 \\times 10^{24} \\times 7.35 \\times 10^{22}) / (3.84 \\times 10^8)^2 \\approx 1.99 \\times 10^{20} N",
-    "isDiagram": false
+    "isDiagram": false,
+    "text": "The masses of the Earth and the Moon are 5.98 \\times 10^{24} kg and 7.35 \\times 10^{22} kg respectively. The distance between the Earth and the Moon is 3.84 \\times 10^8 m. The value of gravitational constant is 6.67 \\times 10^{-11} Nm^2/kg^2. With reference to the given information, calculate the gravitational force exerted by the Earth on the Moon.",
+    "section": "Section B (CRQ)",
+    "pageNumber": 3,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_3.png",
+    "slo": "3.2.3",
+    "chapter": "Unit 3: Dynamics",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "3.2.3",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "3.2.3",
+        "description": "identify the following forces as contact and non-contact forces:\na. air resistance,\nb. drag force (push, pull),\nc. electrostatic force,\nd. force of friction,\ne. gravitational force,\nf. magnetic force,\ng. tension (elastic force),\nh. thrust (driving force);",
+        "topic": "Dynamics"
+      }
+    ]
   },
   {
-    "questionNumber": "Q.6(b)(i)",
+    "questionNumber": "Q.4",
     "marks": 3.0,
-    "stem": "Find the momentum of the sports bike at the speed of 140 km/h.",
+    "stem": "The temperature of a metal rim is increased before fixing it to a wooden cartwheel. Give a scientific reason to support this statement.",
     "rubric": [
       {
         "marks": 1,
-        "description": "Converting speed from km/h to m/s"
+        "description": "Mentioning thermal expansion of metals on heating"
       },
       {
         "marks": 1,
-        "description": "Stating the formula for momentum (P = mv)"
+        "description": "Explaining that expansion allows the rim to easily fit over the wooden wheel"
       },
       {
         "marks": 1,
-        "description": "Correct calculation and unit for momentum"
+        "description": "Stating that cooling causes contraction, gripping the wheel tightly"
       }
     ],
-    "modelAnswer": "Mass of bike (m) = 325 kg, Velocity (v) = 140 km/h = 140 \\times 1000 / 3600 = 38.89 m/s. Momentum P = m \\times v = 325 \\times 38.89 = 12639.25 kg m/s.",
-    "isDiagram": false
+    "modelAnswer": "When the metal rim is heated, it expands due to thermal expansion, making it slightly larger so it can easily slip over the wooden wheel. Upon cooling, it contracts and forms a tight fit around the wheel.",
+    "isDiagram": false,
+    "text": "The temperature of a metal rim is increased before fixing it to a wooden cartwheel. Give a scientific reason to support this statement.",
+    "section": "Section B (CRQ)",
+    "pageNumber": 3,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_3.png",
+    "slo": "8.2.9",
+    "chapter": "Unit 8: Thermal Physics",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "8.2.9",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "8.2.9",
+        "description": "explain that evaporation causes cooling;",
+        "topic": "Thermal Physics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5(a)",
+    "marks": 1.0,
+    "stem": "An animal fur coat is made in such a way that the inner surface of the material is the animal\u2019s skin and the outer surface is fur/ hair. State the reason, why the coat is warmer if it is worn inside out (i.e. the inner surface becomes the outer)?",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Explaining trapping of air or better insulation properties"
+      }
+    ],
+    "modelAnswer": "When worn inside out, the fur traps a larger layer of dead air close to the body, which acts as a better insulator and reduces heat loss.",
+    "isDiagram": false,
+    "text": "An animal fur coat is made in such a way that the inner surface of the material is the animal\u2019s skin and the outer surface is fur/ hair. State the reason, why the coat is warmer if it is worn inside out (i.e. the inner surface becomes the outer)?",
+    "section": "Section B (CRQ)",
+    "pageNumber": 4,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_4.png",
+    "slo": "9.1.3",
+    "chapter": "Unit 9: Transfer of Thermal Energy",
+    "unitNumber": 9,
+    "unitName": "Transfer of Thermal Energy",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "9.1.3",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "9.1.3",
+        "description": "describe the factors affecting the transfer of heat through solid conductors;",
+        "topic": "Transfer of Thermal Energy"
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5(b)",
+    "marks": 2.0,
+    "stem": "Walking barefoot on a carpet feels warmer than walking on tiles. Give a scientific reason to support this statement.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Identifying carpets as poor conductors (good insulators) and tiles as good conductors"
+      },
+      {
+        "marks": 1,
+        "description": "Explaining heat transfer from feet to the surface"
+      }
+    ],
+    "modelAnswer": "Carpets are poor conductors of heat, so they do not conduct heat away from our feet. Tiles are better conductors of heat, conducting heat away from our feet rapidly, making them feel colder.",
+    "isDiagram": false,
+    "text": "Walking barefoot on a carpet feels warmer than walking on tiles. Give a scientific reason to support this statement.",
+    "section": "Section B (CRQ)",
+    "pageNumber": 4,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_4.png",
+    "slo": "9.1.2",
+    "chapter": "Unit 9: Transfer of Thermal Energy",
+    "unitNumber": 9,
+    "unitName": "Transfer of Thermal Energy",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "9.1.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "9.1.2",
+        "description": "define the term \u2018thermal conductivity\u2019;",
+        "topic": "Transfer of Thermal Energy"
+      }
+    ]
   },
   {
     "questionNumber": "Q.6(a)",
@@ -214,27 +278,251 @@
       }
     ],
     "modelAnswer": "Given: v_i = 0 m/s, v_f = 80 m/s, S = 900 m. Using 2aS = v_f^2 - v_i^2 => 2a(900) = (80)^2 - 0 => 1800a = 6400 => a = 3.56 m/s^2. Using v_f = v_i + at => 80 = 0 + (3.56)t => t = 22.48 s.",
-    "isDiagram": false
+    "isDiagram": false,
+    "text": "A sports car starts from rest. It covers a distance of 900 m to attain a speed of 80 m/s. Determine the acceleration of the car and the time required to reach this speed.",
+    "section": "Section C (ERQ)",
+    "pageNumber": 5,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_5.png",
+    "slo": "2.3.4",
+    "chapter": "Unit 2: Kinematics",
+    "unitNumber": 2,
+    "unitName": "Kinematics",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "2.3.4",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "2.3.4",
+        "description": "describe the universal speed limit of any object in the universe that is approximately 3 \u00d7 108 m/s;",
+        "topic": "Kinematics"
+      }
+    ]
   },
   {
-    "questionNumber": "Q.4",
+    "questionNumber": "Q.6(b)(i)",
     "marks": 3.0,
-    "stem": "The temperature of a metal rim is increased before fixing it to a wooden cartwheel. Give a scientific reason to support this statement.",
+    "stem": "Find the momentum of the sports bike at the speed of 140 km/h.",
     "rubric": [
       {
         "marks": 1,
-        "description": "Mentioning thermal expansion of metals on heating"
+        "description": "Converting speed from km/h to m/s"
       },
       {
         "marks": 1,
-        "description": "Explaining that expansion allows the rim to easily fit over the wooden wheel"
+        "description": "Stating the formula for momentum (P = mv)"
       },
       {
         "marks": 1,
-        "description": "Stating that cooling causes contraction, gripping the wheel tightly"
+        "description": "Correct calculation and unit for momentum"
       }
     ],
-    "modelAnswer": "When the metal rim is heated, it expands due to thermal expansion, making it slightly larger so it can easily slip over the wooden wheel. Upon cooling, it contracts and forms a tight fit around the wheel.",
-    "isDiagram": false
+    "modelAnswer": "Mass of bike (m) = 325 kg, Velocity (v) = 140 km/h = 140 \\times 1000 / 3600 = 38.89 m/s. Momentum P = m \\times v = 325 \\times 38.89 = 12639.25 kg m/s.",
+    "isDiagram": false,
+    "text": "Find the momentum of the sports bike at the speed of 140 km/h.",
+    "section": "Section C (ERQ)",
+    "pageNumber": 5,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_5.png",
+    "slo": "3.4.1",
+    "chapter": "Unit 3: Dynamics",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "3.4.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "3.4.1",
+        "description": "define momentum with its units;",
+        "topic": "Dynamics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6(b)(ii)",
+    "marks": 3.0,
+    "stem": "Find the velocity of the car if momentum of both the vehicles is same.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Equating the momentum of car to the momentum of the bike"
+      },
+      {
+        "marks": 1,
+        "description": "Rearranging the formula to solve for car's velocity"
+      },
+      {
+        "marks": 1,
+        "description": "Correct calculation and unit for car's velocity"
+      }
+    ],
+    "modelAnswer": "Momentum of car = Momentum of bike = 12639.25 kg m/s. Mass of car = 1754 kg. Velocity of car = P / m = 12639.25 / 1754 = 7.21 m/s.",
+    "isDiagram": false,
+    "text": "Find the velocity of the car if momentum of both the vehicles is same.",
+    "section": "Section C (ERQ)",
+    "pageNumber": 5,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_5.png",
+    "slo": "3.4.1",
+    "chapter": "Unit 3: Dynamics",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "3.4.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "3.4.1",
+        "description": "define momentum with its units;",
+        "topic": "Dynamics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.7(a)",
+    "marks": 6.0,
+    "stem": "Describe renewable and non-renewable sources of energy and give any FOUR examples of each source.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Definition of renewable sources of energy"
+      },
+      {
+        "marks": 2,
+        "description": "Four examples of renewable sources of energy"
+      },
+      {
+        "marks": 1,
+        "description": "Definition of non-renewable sources of energy"
+      },
+      {
+        "marks": 2,
+        "description": "Four examples of non-renewable sources of energy"
+      }
+    ],
+    "modelAnswer": "Renewable energy sources are naturally replenished in a short time (e.g., Solar, Wind, Hydroelectric, Geothermal). Non-renewable sources are finite and cannot be replenished easily once consumed (e.g., Coal, Petroleum, Natural Gas, Nuclear/Uranium).",
+    "isDiagram": false,
+    "text": "Describe renewable and non-renewable sources of energy and give any FOUR examples of each source.",
+    "section": "Section C (ERQ)",
+    "pageNumber": 6,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_6.png",
+    "slo": "6.4.3",
+    "chapter": "Unit 6: Work, Energy and Power",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "6.4.3",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "6.4.3",
+        "description": "discuss that perpetual machines do not work;",
+        "topic": "Work, Energy and Power"
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.7(b)(i)",
+    "marks": 4.0,
+    "stem": "Describe the types of forces that act on a body in a fluid, if it is I. partially immersed. II. completely immersed.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Description of forces acting on a partially immersed body (Weight downwards, Upthrust upwards)"
+      },
+      {
+        "marks": 2,
+        "description": "Description of forces acting on a completely immersed body (Weight downwards, Upthrust/Buoyant force upwards, and potentially tension/normal force)"
+      }
+    ],
+    "modelAnswer": "I. Partially immersed: Weight of the body acting downward and Upthrust acting upward. II. Completely immersed: Weight acting downward, Upthrust acting upward, and Net force determining sinking or floating.",
+    "isDiagram": false,
+    "text": "Describe the types of forces that act on a body in a fluid, if it is I. partially immersed. II. completely immersed.",
+    "section": "Section C (ERQ)",
+    "pageNumber": 6,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_6.png",
+    "slo": "7.4.1",
+    "chapter": "Unit 7: Pressure",
+    "unitNumber": 7,
+    "unitName": "Pressure",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "7.4.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "7.4.1",
+        "description": "state Pascal\u2019s law;",
+        "topic": "Pressure"
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.7(b)(ii)",
+    "marks": 2.0,
+    "stem": "Explain the reason, why upthrust acts in the upward direction.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Mentioning that pressure in a fluid increases with depth"
+      },
+      {
+        "marks": 1,
+        "description": "Explaining that upward pressure at the bottom is greater than downward pressure at the top"
+      }
+    ],
+    "modelAnswer": "Pressure in a fluid increases with depth. Therefore, the upward force exerted by the fluid on the bottom of an immersed object is greater than the downward force exerted on the top, resulting in a net upward force called upthrust.",
+    "isDiagram": false,
+    "text": "Explain the reason, why upthrust acts in the upward direction.",
+    "section": "Section C (ERQ)",
+    "pageNumber": 6,
+    "pageScanUrl": "/materials/scans/ssc1_p2_page_6.png",
+    "slo": "7.4.2",
+    "chapter": "Unit 7: Pressure",
+    "unitNumber": 7,
+    "unitName": "Pressure",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_slo": "7.4.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "7.4.2",
+        "description": "discuss the use of Pascal\u2019s law (including hydraulic press and \nhydraulic brakes on vehicles);",
+        "topic": "Pressure"
+      }
+    ]
   }
 ]

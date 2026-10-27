@@ -1,0 +1,537 @@
+[
+  {
+    "questionNumber": "1",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "pageNumber": 2,
+    "stem": "An online purchasing company delivered a fragile item to its customer in a triangular box. The breadth and height of the box was $15\\text{ cm}$ and $20\\text{ cm}$ respectively.\n\nCalculate the volume of the triangular box upto two significant figures.\n\n(Note: $\\text{Volume }(V) = \\text{Breadth} \\times \\text{Height}$)",
+    "marks": 2.0,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "1.7.3",
+    "originalSloText": "Apply the rules for rounding a number to given number of significant figures to solve problems.",
+    "current_slo": "1.7.2",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "chapter": "Unit 1: Measurement",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for writing the correct calculated answer: V = 15 cm \u00d7 20 cm = 300 cm\u00b2 (or cm\u00b3)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for rounding and writing the answer to two significant figures: 3.0 \u00d7 10\u00b2 cm\u00b2."
+      }
+    ],
+    "modelAnswer": "Given Data:\nBreadth ($B$) = $15\\text{ cm}$\nHeight ($H$) = $20\\text{ cm}$\n\nFormula:\n$\\text{Volume }(V) = \\text{Breadth} \\times \\text{Height}$\n\nCalculation:\n$V = 15\\text{ cm} \\times 20\\text{ cm} = 300\\text{ cm}^2$\n\nRounding to two significant figures:\n$V = 3.0 \\times 10^2\\text{ cm}^2$ (where $3$ and $0$ are two significant figures).",
+    "overallPerformance": "Mastering significant figures is part of developing strong scientific and mathematical skills. Overall, responses varied in finding the volume and converting it to two significant figures. Strong answers accurately calculated the volume and correctly applied rounding rules, demonstrating a solid understanding of significant figures and precision.",
+    "betterResponse": "Better responses demonstrated a clear understanding of how to find the volume (V = 15 \u00d7 20 = 300 cm\u00b2) and then convert the answer into two significant figures (3.0 \u00d7 10\u00b2 cm\u00b2), showing attention to detail and precision.",
+    "weakerResponse": "Weaker responses lacked accuracy in either finding the volume (e.g., multiplying 15 \u00d7 15 = 225 and dividing by 20 to get 11.25 cm\u00b2) or converting the result into two significant figures.",
+    "betterResponseImage": "/extracted_diagrams/emarking_2024/q1_better.png",
+    "weakerResponseImage": "/extracted_diagrams/emarking_2024/q1_weaker.png",
+    "suggestions": "Subject teachers must focus carefully on the performance of their students in calculations and correctly applying the rules for significant figures to ensure accuracy in both the volume determination and the rounding process.",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p2_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "out_of_syllabus": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "1.7.2",
+        "description": "apply the rules for rounding a number to the appropriate number of significant figures.",
+        "topic": "Measurement"
+      }
+    ],
+    "text": "An online purchasing company delivered a fragile item to its customer in a triangular box. The breadth and height of the box was $15\\text{ cm}$ and $20\\text{ cm}$ respectively.\n\nCalculate the volume of the triangular box upto two significant figures.\n\n(Note: $\\text{Volume }(V) = \\text{Breadth} \\times \\text{Height}$)"
+  },
+  {
+    "questionNumber": "2",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "pageNumber": 2,
+    "stem": "A hanging picture frame is in a state of static equilibrium. The picture frame has a mass of $0.3\\text{ kg}$ and is suspended from a single point by a thin wire.\n\nIf a small object of $0.1\\text{ kg}$ is hung at any one corner from the bottom of the picture frame, then explain how the addition of the small object affects the balance of these forces and the stability of the picture frame.",
+    "marks": 3.0,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P2_Q2.png",
+    "slo": "4.5.4",
+    "originalSloText": "Explain different conditions of equilibrium with examples.",
+    "current_slo": "4.4.4",
+    "unitNumber": 4,
+    "unitName": "Turning Effect of Forces",
+    "chapter": "Unit 4: Turning Effect of Forces",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for explaining that hanging the 0.1 kg mass at one corner creates an unbalanced torque (moment) and disturbs the static equilibrium."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for stating that the centre of gravity (CoG) of the picture frame shifts towards the weighted corner."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for explaining that the frame tilts towards the weighted corner until the new centre of gravity aligns vertically below the suspension point, reducing its initial balanced stability."
+      }
+    ],
+    "modelAnswer": "1. **Disturbance of Equilibrium (Unbalanced Torque):** Initially, the picture frame is in static equilibrium because its centre of gravity lies vertically below the single suspension point. Hanging a $0.1\\text{ kg}$ object at one bottom corner introduces an additional downward weight ($W = mg = 1\\text{ N}$) at a distance from the line of action of tension, creating an unbalanced torque.\n2. **Shift in Centre of Gravity:** The combined centre of gravity of the frame-and-mass system shifts away from the geometric centre towards the corner where the $0.1\\text{ kg}$ mass is attached.\n3. **Effect on Position and Stability:** Due to the unbalanced moment and shifted centre of gravity, the picture frame tilts downwards on the weighted side until the new centre of gravity comes to rest vertically below the point of suspension.",
+    "overallPerformance": "Overall, responses varied in explaining the effects of hanging a small weight on one corner of a picture frame in static equilibrium. Some candidates effectively described how adding weight shifts the frame's centre of gravity, leading to a tilt towards the weighted corner and affecting its stability.",
+    "betterResponse": "Better responses clearly explained that adding weight to one corner shifts the frame's centre of gravity, causing an unbalanced moment so the frame tilts towards that corner and disturbs its initial static equilibrium.",
+    "weakerResponse": "Weaker responses lacked detail on how the centre of gravity shifts, or confused the hanging wire with an Atwood pulley system and calculated acceleration a = (m\u2081 - m\u2082)g/(m\u2081 + m\u2082) and tension T = 2m\u2081m\u2082g/(m\u2081 + m\u2082).",
+    "betterResponseImage": "/extracted_diagrams/emarking_2024/q2_better.png",
+    "weakerResponseImage": "/extracted_diagrams/emarking_2024/q2_weaker.png",
+    "suggestions": "Using more teaching pedagogies with daily life examples can help deepen students' understanding of how hanging weight on one corner of a picture frame affects its position, centre of gravity, and stability.",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p2_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "out_of_syllabus": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "4.4.4",
+        "description": "explain different conditions of equilibrium with examples;",
+        "topic": "Turning Effect of Forces"
+      }
+    ],
+    "text": "A hanging picture frame is in a state of static equilibrium. The picture frame has a mass of $0.3\\text{ kg}$ and is suspended from a single point by a thin wire.\n\nIf a small object of $0.1\\text{ kg}$ is hung at any one corner from the bottom of the picture frame, then explain how the addition of the small object affects the balance of these forces and the stability of the picture frame."
+  },
+  {
+    "questionNumber": "3",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "pageNumber": 3,
+    "stem": "An apple falls on Earth due to the Earth\u2019s attraction force. However, the Earth does not show movement towards the apple.\n\nDescribe the given phenomenon in TWO points.",
+    "marks": 2.0,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "cognitiveLevel": "U",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "5.1.2",
+    "originalSloText": "Explain that the gravitational forces are consistent with Newton\u2019s third law.",
+    "current_slo": "3.3.1",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "chapter": "Unit 3: Dynamics",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for stating that by Newton's third law, the apple also exerts an equal and opposite gravitational attraction force on the Earth."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for explaining that because the Earth's mass (and inertia) is enormously larger than the apple's mass (a = F/m), the Earth's acceleration towards the apple is imperceptibly small."
+      }
+    ],
+    "modelAnswer": "1. **Equal and Opposite Gravitational Forces (Newton's Third Law):** According to Newton's third law of motion (and universal gravitation), the Earth attracts the apple downwards towards its centre with a gravitational force, and the apple simultaneously attracts the Earth upwards with an equal and opposite reaction force ($F_{\\text{Earth on apple}} = F_{\\text{apple on Earth}}$).\n2. **Effect of Mass and Inertia ($a = F/m$):** Because acceleration is inversely proportional to mass ($a = F/m$), the apple's very small mass experiences a large downward acceleration ($9.8\\text{ m/s}^2$), whereas the Earth's huge mass ($6 \\times 10^{24}\\text{ kg}$) and enormous inertia result in an imperceptibly small acceleration towards the apple.",
+    "overallPerformance": "The overall response to this question varied in explaining why an apple falls toward the Earth while the Earth appears stationary. Some responses effectively addressed the concepts of gravity and the relative masses of the Earth and the apple.",
+    "betterResponse": "In better responses, candidates clearly explained gravity and Newton's third law of motion, highlighting how the Earth's enormous mass and inertia cause its movement in response to the apple's gravitational pull to be negligible.",
+    "weakerResponse": "Weaker responses failed to address how the Earth's huge mass results in negligible acceleration compared to the apple, or gave non-scientific explanations such as wind blowing the ripe apple off the tree.",
+    "betterResponseImage": "/extracted_diagrams/emarking_2024/q3_better.png",
+    "weakerResponseImage": "/extracted_diagrams/emarking_2024/q3_weaker.png",
+    "suggestions": "Classroom teaching should incorporate the concepts of inertia and gravitational force in conjunction with Newton's third law and second law (a = F/m), using everyday examples to illustrate how mass affects motion.",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p2_page_3.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "out_of_syllabus": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.1",
+        "description": "explain Newton\u2019s laws of motion;",
+        "topic": "Dynamics"
+      }
+    ],
+    "text": "An apple falls on Earth due to the Earth\u2019s attraction force. However, the Earth does not show movement towards the apple.\n\nDescribe the given phenomenon in TWO points."
+  },
+  {
+    "questionNumber": "4",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "pageNumber": 3,
+    "stem": "Describe in THREE points, how evaporation causes cooling.",
+    "marks": 3.0,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "cognitiveLevel": "U",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "8.6.3",
+    "originalSloText": "Explain how evaporation causes cooling.",
+    "current_slo": "8.2.9",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "chapter": "Unit 8: Thermal Physics",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for stating that molecules in a liquid move with different kinetic energies and the higher-kinetic-energy molecules at the surface escape into the air."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for explaining that the departure of high-energy molecules lowers the average kinetic energy of the molecules left behind in the liquid."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for explaining that during evaporation, latent heat is absorbed from the remaining liquid and surroundings, lowering the temperature and causing cooling."
+      }
+    ],
+    "modelAnswer": "1. **Escape of High-Kinetic-Energy Molecules:** In any liquid, molecules are in continuous random motion with a range of kinetic energies. During evaporation, the fastest-moving molecules near the surface possess enough kinetic energy to overcome intermolecular attractive forces and escape as vapour.\n2. **Decrease in Average Kinetic Energy:** After the most energetic molecules escape, the molecules left behind in the liquid have a lower average kinetic energy.\n3. **Drop in Temperature and Heat Absorption:** Since the temperature of a liquid is directly proportional to the average kinetic energy of its molecules (and evaporating molecules absorb latent heat of vaporisation from the liquid and its surroundings), the temperature of the remaining liquid decreases, producing a cooling effect.",
+    "overallPerformance": "Overall, responses varied in quality. Some candidates effectively explained how evaporation involves heat absorption and the escape of high-kinetic-energy molecules from the liquid, resulting in a lower average kinetic energy and temperature of the remaining liquid.",
+    "betterResponse": "In better responses, candidates clearly explained that molecules of high kinetic energy escape through the surface of the liquid, leaving behind molecules of lower average kinetic energy and absorbing heat from the surroundings to cause cooling.",
+    "weakerResponse": "In weaker responses, candidates focused only on defining evaporation or listing factors affecting evaporation, or attributed the cooling effect to loss/gain of electrons, thermal conductivity, or boiling.",
+    "betterResponseImage": "/extracted_diagrams/emarking_2024/q4_better.png",
+    "weakerResponseImage": "/extracted_diagrams/emarking_2024/q4_weaker.png",
+    "suggestions": "Teachers must emphasise the kinetic molecular explanation of evaporation, clearly linking the escape of high-energy surface molecules and latent heat absorption to the decrease in temperature.",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p2_page_3.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "out_of_syllabus": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "8.2.9",
+        "description": "explain that evaporation causes cooling;",
+        "topic": "Thermal Physics"
+      }
+    ],
+    "text": "Describe in THREE points, how evaporation causes cooling."
+  },
+  {
+    "questionNumber": "5",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "pageNumber": 3,
+    "stem": "Describe the transfer of heat through radiation in TWO points. Support your answer with an example.",
+    "marks": 3.0,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "cognitiveLevel": "U",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "9.4.1",
+    "originalSloText": "Describe radiation as the emission or transmission of energy.",
+    "current_slo": "9.3.1",
+    "unitNumber": 9,
+    "unitName": "Transfer of Thermal Energy",
+    "chapter": "Unit 9: Transfer of Thermal Energy",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for stating that thermal radiation transfers heat from one place to another by electromagnetic (infrared) waves."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for stating that thermal radiation does not require any material medium and can travel through a vacuum."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for giving a valid example (e.g., heat from the Sun reaching the Earth through space, or warmth felt from a heat lamp/fire)."
+      }
+    ],
+    "modelAnswer": "1. **Transfer via Electromagnetic Waves:** Thermal radiation is the mode of heat transfer in which thermal energy is emitted and transmitted from a hot body in the form of electromagnetic waves (primarily infrared radiation).\n2. **No Material Medium Required:** Unlike conduction and convection, radiation does not require any material medium of particles and can travel through a vacuum at the speed of light.\n3. **Example:** Heat and light energy from the Sun reach the Earth across the vacuum of space through thermal radiation (or feeling warmth when sitting in front of a fireplace or electric heater).",
+    "overallPerformance": "Overall, responses to explaining thermal radiation varied significantly. Many candidates clearly defined thermal radiation as the transfer of heat through electromagnetic waves without requiring a medium and used examples like the Sun or a heat lamp.",
+    "betterResponse": "Better responses described thermal radiation as heat transfer via electromagnetic waves without requiring any material medium, and supported the explanation with a clear example such as solar energy reaching the Earth.",
+    "weakerResponse": "Weaker responses confused radiation with conduction in metals (e.g., claiming heat transfers in iron through radiation because iron is a good conductor of heat and electricity) or described evaporation and boiling.",
+    "betterResponseImage": "/extracted_diagrams/emarking_2024/q5_better.png",
+    "weakerResponseImage": "/extracted_diagrams/emarking_2024/q5_weaker.png",
+    "suggestions": "Encourage students to distinguish radiation (electromagnetic waves requiring no medium) from conduction in metals, and connect thermal radiation to real-world examples such as solar heating and infrared thermometers.",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p2_page_3.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "out_of_syllabus": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "9.3.1",
+        "description": "define the process of thermal energy transfer by radiation;",
+        "topic": "Transfer of Thermal Energy"
+      }
+    ],
+    "text": "Describe the transfer of heat through radiation in TWO points. Support your answer with an example."
+  },
+  {
+    "questionNumber": "6.a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "pageNumber": 4,
+    "stem": "The following graph shows the path ABCDEF on which a boy walks.\n\nUsing the above graph calculate the\ni. distance between A to B, B to C, C to D, D to E and E to F. (4 Marks)\nii. total distance covered. (1 Mark)\niii. total displacement covered. (1 Mark)\n\n(Note: One small division is equal to one metre.)",
+    "marks": 6.0,
+    "questionType": "EXTENDED_RESPONSE",
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P2_Q6a.png",
+    "slo": "2.8.2",
+    "originalSloText": "Plot and interpret distance-time graph and speed-time graph.",
+    "current_slo": "2.4.1",
+    "unitNumber": 2,
+    "unitName": "Kinematics",
+    "chapter": "Unit 2: Kinematics",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for both stationary intervals: Distance covered during A to B = 0 m AND during C to D = 0 m."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for distance covered during B to C: 18 m - 2 m = 16 m."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for distance covered during D to E: 18 m - 10 m = 8 m."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for distance covered during E to F: 14 m - 10 m = 4 m."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for Total Distance covered = 0 + 16 + 0 + 8 + 4 = 28 m."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for Total Displacement covered = 0 + 16 + 0 + (-8) + 4 = 12 m (or final position 14 m minus initial position 2 m = 12 m)."
+      }
+    ],
+    "modelAnswer": "**(i) Distance covered in each segment:**\n\u2022 **From A to B:** Position remains at $2\\text{ m}$, so $d_{AB} = |2 - 2| = 0\\text{ m}$\n\u2022 **From B to C:** Position changes from $2\\text{ m}$ to $18\\text{ m}$, so $d_{BC} = |18 - 2| = 16\\text{ m}$\n\u2022 **From C to D:** Position remains at $18\\text{ m}$, so $d_{CD} = |18 - 18| = 0\\text{ m}$\n\u2022 **From D to E:** Position changes from $18\\text{ m}$ to $10\\text{ m}$, so $d_{DE} = |10 - 18| = 8\\text{ m}$\n\u2022 **From E to F:** Position changes from $10\\text{ m}$ to $14\\text{ m}$, so $d_{EF} = |14 - 10| = 4\\text{ m}$\n\n**(ii) Total distance covered:**\n$\\text{Total Distance} = d_{AB} + d_{BC} + d_{CD} + d_{DE} + d_{EF} = 0 + 16 + 0 + 8 + 4 = 28\\text{ m}$\n\n**(iii) Total displacement covered:**\n$\\text{Total Displacement} = 0 + 16 + 0 + (-8) + 4 = 12\\text{ m}$ (or $x_F - x_A = 14\\text{ m} - 2\\text{ m} = 12\\text{ m}$).",
+    "overallPerformance": "Overall, the majority of candidates accurately calculated distances from the graph and correctly determined both total distance (28 m) and total displacement (12 m).",
+    "betterResponse": "Better responses accurately read the vertical axis values for each segment (0 m, 16 m, 0 m, 8 m, 4 m), summed their magnitudes to get 28 m for total distance, and accounted for the negative direction from D to E (-8 m) to find 12 m for total displacement.",
+    "weakerResponse": "Weaker responses misread the grid divisions (e.g., writing half-values 0 m, 8 m, 0 m, 4 m, 2 m to get 14 m) or confused total distance with total displacement.",
+    "betterResponseImage": "/extracted_diagrams/emarking_2024/q6a_better.png",
+    "weakerResponseImage": "/extracted_diagrams/emarking_2024/q6a_weaker.png",
+    "suggestions": "Teachers should focus on reading graph axes and scale notes carefully ('One small division is equal to one metre') and distinguishing scalar path length (distance) from vector net position change (displacement).",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p2_page_4.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "out_of_syllabus": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "2.4.1",
+        "description": "interpret distance-time graph and speed-time graph;",
+        "topic": "Kinematics"
+      }
+    ],
+    "text": "The following graph shows the path ABCDEF on which a boy walks.\n\nUsing the above graph calculate the\ni. distance between A to B, B to C, C to D, D to E and E to F. (4 Marks)\nii. total distance covered. (1 Mark)\niii. total displacement covered. (1 Mark)\n\n(Note: One small division is equal to one metre.)"
+  },
+  {
+    "questionNumber": "6.b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "pageNumber": 4,
+    "stem": "A sports bicycle acquires a velocity of $25\\text{ m/s}$ from the state of rest when a force of $100\\text{ N}$ acts on it for $5\\text{ s}$. Find\ni. the mass of the bicycle. (4 Marks)\nii. the momentum of the bicycle after $5\\text{ s}$. (2 Marks)\n\n(Note: Extract data from the question and provide your answers in SI units.)",
+    "marks": 6.0,
+    "questionType": "EXTENDED_RESPONSE",
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "3.2.3",
+    "originalSloText": "Solve word problems related to force and momentum.",
+    "current_slo": "3.4.4",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "chapter": "Unit 3: Dynamics",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for extracting and writing the correct given data (v_i = 0 m/s, v_f = 25 m/s, F = 100 N, t = 5 s)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for finding the correct acceleration using a = (v_f - v_i)/t = (25 - 0)/5 = 5 m/s\u00b2."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for writing the correct formula for mass: m = F / a (from F = ma)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for calculating mass with correct SI unit: m = 100 / 5 = 20 kg."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for writing the correct formula for momentum: P = m \u00d7 v_f (or P = F \u00d7 t)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for calculating momentum with correct SI unit: P = 20 \u00d7 25 = 500 kg\u00b7m/s (or 500 N\u00b7s)."
+      }
+    ],
+    "modelAnswer": "**Given Data:**\nInitial velocity ($v_i$) = $0\\text{ m/s}$\nFinal velocity ($v_f$) = $25\\text{ m/s}$\nForce ($F$) = $100\\text{ N}$\nTime ($t$) = $5\\text{ s}$\n\n**(i) Mass of the bicycle ($m$):**\nFirst, find acceleration from the first equation of motion:\n$a = \\frac{v_f - v_i}{t} = \\frac{25 - 0}{5} = 5\\text{ m/s}^2$\nBy Newton's second law ($F = ma$):\n$m = \\frac{F}{a} = \\frac{100\\text{ N}}{5\\text{ m/s}^2} = 20\\text{ kg}$\n\n**(ii) Momentum of the bicycle after $5\\text{ s}$ ($P$):**\n$P = m \\times v_f = 20\\text{ kg} \\times 25\\text{ m/s} = 500\\text{ kg}\\cdot\\text{m/s}$ (or $500\\text{ N}\\cdot\\text{s}$).",
+    "overallPerformance": "Overall, responses featured accurate calculations for mass (20 kg) and momentum (500 kg\u00b7m/s) using the given force, time, and velocity.",
+    "betterResponse": "Better responses extracted all given data with SI units, calculated acceleration a = 5 m/s\u00b2, found m = F/a = 20 kg, and computed P = mv = 500 kg\u00b7m/s clearly.",
+    "weakerResponse": "Weaker responses divided force directly by velocity (M = 100 N / 25 m/s = 4 N\u00b7s/m) or wrote an invalid formula for momentum such as P = (v_i - v_f)/t.",
+    "betterResponseImage": "/extracted_diagrams/emarking_2024/q6b_better.png",
+    "weakerResponseImage": "/extracted_diagrams/emarking_2024/q6b_weaker.png",
+    "suggestions": "Teachers should emphasise extracting data with SI symbols first, finding acceleration before applying F = ma (or using F = \u0394P/t directly), and verifying SI units at each step.",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p2_page_4.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "out_of_syllabus": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "3.4.4",
+        "description": "solve word problems related to momentum and impulse;",
+        "topic": "Dynamics"
+      }
+    ],
+    "text": "A sports bicycle acquires a velocity of $25\\text{ m/s}$ from the state of rest when a force of $100\\text{ N}$ acts on it for $5\\text{ s}$. Find\ni. the mass of the bicycle. (4 Marks)\nii. the momentum of the bicycle after $5\\text{ s}$. (2 Marks)\n\n(Note: Extract data from the question and provide your answers in SI units.)"
+  },
+  {
+    "questionNumber": "7.a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "pageNumber": 6,
+    "stem": "The diagram shows a block is dropped from a point A and moves to a point B.\n\ni. Calculate the change in potential energy (P.E.) of the block at point B with respect to ground. (3 Marks)\nii. Calculate the velocity of the block when it reaches to the point B. (3 Marks)\n\n(Note: Take the value of acceleration due to gravity '$g$' as $10\\text{ m/s}^2$.)",
+    "marks": 6.0,
+    "questionType": "EXTENDED_RESPONSE",
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P2_Q7a.png",
+    "slo": "6.2.3",
+    "originalSloText": "Word problems on kinetic and potential energy.",
+    "current_slo": "6.3.3",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "chapter": "Unit 6: Work, Energy and Power",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for extracting the correct data: m = 10 kg, g = 10 m/s\u00b2, vertical drop h = 30 m - 10 m = 20 m."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for the correct potential energy formula: P.E. = mgh."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for the correct change in potential energy from A to B: \u0394P.E. = 10 \u00d7 10 \u00d7 20 = 2000 J."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for equating loss in P.E. to gain in K.E. (K.E. = P.E.) or using 2gh = v_f\u00b2 - v_i\u00b2."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for writing K.E. = \u00bdmv\u00b2 (or substituting into 2gh = v_f\u00b2)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for the correct velocity at point B: v = \u221a(2 \u00d7 10 \u00d7 20) = \u221a400 = 20 m/s."
+      }
+    ],
+    "modelAnswer": "**Given Data:**\nMass of block ($m$) = $10\\text{ kg}$\nHeight at point A ($h_A$) = $30\\text{ m}$\nHeight at point B ($h_B$) = $10\\text{ m}$\nVertical distance fallen from A to B ($h = h_A - h_B$) = $30\\text{ m} - 10\\text{ m} = 20\\text{ m}$\nAcceleration due to gravity ($g$) = $10\\text{ m/s}^2$\n\n**(i) Change in Potential Energy ($\\Delta P.E.$) of the block from A to B:**\n$\\Delta P.E. = mgh = 10\\text{ kg} \\times 10\\text{ m/s}^2 \\times (30 - 10)\\text{ m} = 10 \\times 10 \\times 20 = 2000\\text{ J}$\n*(Note: The potential energy remaining at point B with respect to the ground is $P.E._B = mgh_B = 10 \\times 10 \\times 10 = 1000\\text{ J}$, and the loss/change in P.E. from A to B is $3000\\text{ J} - 1000\\text{ J} = 2000\\text{ J}$.)*\n\n**(ii) Velocity of the block at point B ($v_f$):**\nBy conservation of energy ($\\text{Gain in } K.E. = \\text{Loss in } P.E.$) or the third equation of motion ($2gh = v_f^2 - v_i^2$ with $v_i = 0$):\n$\\frac{1}{2}mv_f^2 = 2000\\text{ J} \\implies v_f^2 = \\frac{2 \\times 2000}{10} = 400$\n$v_f = \\sqrt{400} = 20\\text{ m/s}$.",
+    "overallPerformance": "Overall, candidates who attempted this part accurately calculated both the change in potential energy (2000 J) and the velocity of the falling object at point B (20 m/s) by subtracting the heights (30 m - 10 m = 20 m) and applying energy conservation or kinematics.",
+    "betterResponse": "Better responses subtracted the heights to find h = 30 - 10 = 20 m, calculated P.E. = mgh = 10(10)(20) = 2000 J, and applied 2gh = v_f\u00b2 - v_i\u00b2 (or \u00bdmv\u00b2 = P.E.) to obtain v_f = \u221a400 = 20 m/s.",
+    "weakerResponse": "Weaker responses used the full 30 m height without subtracting 10 m, or wrote invalid formulas such as P.E. = S/g = 30/10 = 3 m/s\u00b2 and v = d \u00d7 g = 30 \u00d7 10 = 300 m/s\u00b2.",
+    "betterResponseImage": "/extracted_diagrams/emarking_2024/q7a_better.png",
+    "weakerResponseImage": "/extracted_diagrams/emarking_2024/q7a_weaker.png",
+    "suggestions": "Ensure students use the correct formulas for potential energy (P.E. = mgh) and kinetic energy (K.E. = \u00bdmv\u00b2) consistently and determine the vertical displacement between points A and B carefully from the diagram.",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p2_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "out_of_syllabus": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "6.3.3",
+        "description": "solve word problems related to the kinetic and potential energy;",
+        "topic": "Work, Energy and Power"
+      }
+    ],
+    "text": "The diagram shows a block is dropped from a point A and moves to a point B.\n\ni. Calculate the change in potential energy (P.E.) of the block at point B with respect to ground. (3 Marks)\nii. Calculate the velocity of the block when it reaches to the point B. (3 Marks)\n\n(Note: Take the value of acceleration due to gravity '$g$' as $10\\text{ m/s}^2$.)"
+  },
+  {
+    "questionNumber": "7.b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "pageNumber": 6,
+    "stem": "The given figure shows the brake system of a vehicle.\n\ni. Name the law which is used in the given brake system. (1 Mark)\nii. Calculate the pressure exerted by the liquid at G and H and the force that is applied at X. (5 Marks)",
+    "marks": 6.0,
+    "questionType": "EXTENDED_RESPONSE",
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P2_Q7b.png",
+    "slo": "7.5.3",
+    "originalSloText": "Apply and demonstrate the use of Pascal\u2019s law.",
+    "current_slo": "7.4.2",
+    "unitNumber": 7,
+    "unitName": "Pressure",
+    "chapter": "Unit 7: Pressure",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for correctly identifying Pascal's law."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for calculating pressure at G: P_G = F\u2081 / A\u2081 = 1000 N / 2 m\u00b2 = 500 N/m\u00b2 (or 500 Pa)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for stating the pressure at H: P_H = 500 N/m\u00b2 (or 500 Pa) because pressure is transmitted equally throughout an enclosed fluid."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for using the correct transmitted pressure value P = 500 N/m\u00b2."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for writing the correct formula for force: F = P \u00d7 A (or F\u2082 = P_H \u00d7 A\u2082)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for calculating the correct force at X: F = 500 \u00d7 100 = 50,000 N."
+      }
+    ],
+    "modelAnswer": "**(i) Name of the law:**\nThe law used in the hydraulic brake system of a vehicle is **Pascal's law**.\n\n**(ii) Pressure at G, Pressure at H, and Force at X:**\n\u2022 **Pressure exerted at piston G ($P_G$):**\n$P_G = \\frac{\\text{Force }(F_1)}{\\text{Area }(A_1)} = \\frac{1000\\text{ N}}{2\\text{ m}^2} = 500\\text{ N/m}^2\\text{ (or }500\\text{ Pa)}$\n\n\u2022 **Pressure exerted at piston H ($P_H$):**\nAccording to Pascal's law, pressure applied to an enclosed liquid is transmitted undiminished to every portion of the liquid. Therefore:\n$P_H = P_G = 500\\text{ N/m}^2\\text{ (or }500\\text{ Pa)}$\n\n\u2022 **Force applied at X ($F_2$):**\nSince $P_H = \\frac{F_2}{A_2}$:\n$F_2 = P_H \\times A_2 = 500\\text{ N/m}^2 \\times 100\\text{ m}^2 = 50,000\\text{ N}$.",
+    "overallPerformance": "Overall, responses varied widely. Candidates who identified Pascal's law used it effectively to calculate the pressure at G (500 N/m\u00b2), state the equal pressure at H (500 N/m\u00b2), and find the output force at X (50,000 N).",
+    "betterResponse": "Better responses named Pascal's law, computed P_G = 1000 / 2 = 500 N/m\u00b2, explained that P_H = 500 N/m\u00b2 by Pascal's law, and solved F = P \u00d7 A = 500 \u00d7 100 = 50,000 N with proper units.",
+    "weakerResponse": "Weaker responses misidentified the law as Archimedes' principle, Boyle's law, or Newton's law of gravitation, or used an inverted formula F = P / A.",
+    "betterResponseImage": "/extracted_diagrams/emarking_2024/q7b_better.png",
+    "weakerResponseImage": "/extracted_diagrams/emarking_2024/q7b_weaker.png",
+    "suggestions": "Emphasise clear definitions of fluid mechanics laws (distinguishing Pascal's law for hydraulic systems from Archimedes' principle for buoyancy) and practice rearranging P = F/A.",
+    "pageScanUrl": "/materials/scans/ssc1_2024_p2_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "out_of_syllabus": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "7.4.2",
+        "description": "discuss the use of Pascal\u2019s law (including hydraulic press and \nhydraulic brakes on vehicles);",
+        "topic": "Pressure"
+      }
+    ],
+    "text": "The given figure shows the brake system of a vehicle.\n\ni. Name the law which is used in the given brake system. (1 Mark)\nii. Calculate the pressure exerted by the liquid at G and H and the force that is applied at X. (5 Marks)"
+  }
+]

@@ -54,7 +54,7 @@
     },
     {
       "term": "Learning Outcome 11.4.1",
-      "definition": "define the following terms:\na. speed (v),\nb. wavelength (\u03bb),\nc. crest,\nd. trough,\ne. wavefront,\nf. compression and rarefaction;",
+      "definition": "define the following terms:\na. speed (v),\nb. wavelength (λ),\nc. crest,\nd. trough,\ne. wavefront,\nf. compression and rarefaction;",
       "slo_code": "11.4.1",
       "cognitive_level": "R"
     },
@@ -66,13 +66,13 @@
     },
     {
       "term": "Learning Outcome 11.4.3",
-      "definition": "derive equation v = f \u03bb;",
+      "definition": "derive equation v = f λ;",
       "slo_code": "11.4.3",
       "cognitive_level": "A"
     },
     {
       "term": "Learning Outcome 11.4.4",
-      "definition": "solve word problems using the relation f = 1/ T and v = f \u03bb;",
+      "definition": "solve word problems using the relation f = 1/ T and v = f λ;",
       "slo_code": "11.4.4",
       "cognitive_level": "A"
     },
@@ -147,7 +147,30 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Differentiate between transverse waves and longitudinal waves with two examples of each.",
+      "marks": 3,
+      "slo_code": "11.3.1",
+      "answer": "In transverse waves, particles vibrate perpendicular to wave propagation (e.g., water waves, light waves). In longitudinal waves, particles vibrate parallel to wave propagation creating compressions and rarefactions (e.g., sound waves in air, slinky compression waves).",
+      "source": "AKU-EB Syllabus 2025 Unit 11"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "A simple pendulum is attached to a 4 m long string. Find its time period on Earth (g = 9.8 m/s²) and explain how the time period changes if the elevator accelerates upward or is on the Moon.",
+      "marks": 5,
+      "slo_code": "11.1.3",
+      "answer": "On stationary Earth: T = 2π√(l/g) = 2π√(4 / 9.8) = 4.01 s. On the Moon (g_m = g/6), T increases by √6. In an upward-accelerating elevator (g_eff = g + a), T decreases.",
+      "source": "AKU-EB SSC-II Model Paper II Q.6(a)"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "A wave generator produces 25 complete waves in 5 seconds with a wavelength of 0.4 m. Calculate the frequency, time period, and wave speed.",
+      "slo_code": "11.4.4",
+      "formula": "f = N/t, T = 1/f, v = fλ",
+      "solution": "f = 25 / 5 = 5 Hz; T = 1 / 5 = 0.2 s; v = 5 Hz × 0.4 m = 2.0 m/s."
+    }
+  ]
 }

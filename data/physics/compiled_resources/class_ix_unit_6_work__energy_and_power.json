@@ -36,7 +36,7 @@
     },
     {
       "term": "Learning Outcome 6.3.2",
-      "definition": "derive the formulae of kinetic energy K.E = \u00bd mv2 and potential energy P.E = mg\u0394h;",
+      "definition": "derive the formulae of kinetic energy K.E = ½ mv2 and potential energy P.E = mgΔh;",
       "slo_code": "6.3.2",
       "cognitive_level": "A"
     },
@@ -177,7 +177,30 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Describe renewable and non-renewable sources of energy and give FOUR examples of each.",
+      "marks": 4,
+      "slo_code": "6.4.3",
+      "answer": "Renewable sources are naturally replenished on a human timescale (solar, wind, hydroelectric, geothermal). Non-renewable sources exist in finite reserves and deplete with use (coal, petroleum, natural gas, uranium nuclear fuel).",
+      "source": "AKU-EB SSC-I Model Paper II Q.7(a)"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Sara has a mass of 30 kg. While running in the playground, she accelerates from 2 m/s to 4 m/s in 5 s. Calculate the power consumed in the given situation.",
+      "marks": 6,
+      "slo_code": "6.6.3",
+      "answer": "a = (4 - 2)/5 = 0.4 m/s²; F = ma = 30 × 0.4 = 12 N; S = v_i t + ½at² = 2(5) + 0.5(0.4)(25) = 15 m; W = F × S = 12 × 15 = 180 J; P = W/t = 180 / 5 = 36 W.",
+      "source": "AKU-EB SSC-I 2025 Annual Paper II Q.7(a)"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "Calculate the kinetic energy of a 0.5 kg bullet moving with a velocity of 500 m/s.",
+      "slo_code": "6.3.3",
+      "formula": "E_k = ½mv²",
+      "solution": "E_k = 0.5 × 0.5 kg × (500 m/s)² = 0.25 × 250,000 = 62,500 J = 62.5 kJ."
+    }
+  ]
 }

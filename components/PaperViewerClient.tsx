@@ -126,45 +126,6 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
     return answer && userAnswers[question.questionNumber]===answer;
   }).length;
 
-  // Helper to render question text with structured bullet points for Roman numerals
-  const renderQuestionContent = (text: string) => {
-    if (!text) return null;
-    if (text.includes('\n') || text.includes('•')) {
-      const lines = text.split('\n');
-      return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
-          {lines.map((line, lIdx) => {
-            const trimmed = line.trim();
-            if (!trimmed) return <div key={lIdx} style={{ height: '0.35rem' }} />;
-            const isBullet = trimmed.startsWith('•') || /^(I|II|III|IV|V)\./i.test(trimmed);
-            if (isBullet) {
-              const cleanText = trimmed.replace(/^•\s*/, '');
-              return (
-                <div key={lIdx} style={{
-                  paddingLeft: '1.5rem',
-                  display: 'flex',
-                  alignItems: 'baseline',
-                  gap: '0.65rem',
-                  fontWeight: 600,
-                  color: '#1f2937'
-                }}>
-                  <span style={{ color: '#0b5e4a', fontSize: '0.9rem' }}>•</span>
-                  <span><MathText text={cleanText} /></span>
-                </div>
-              );
-            }
-            return (
-              <div key={lIdx}>
-                <MathText text={line} />
-              </div>
-            );
-          })}
-        </div>
-      );
-    }
-    return <MathText text={text} />;
-  };
-
   return (
     <div style={{ marginTop: '0.5rem' }}>
 
@@ -542,7 +503,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                 Physics {isPaper2 ? 'Paper II (Theory)' : 'Paper I (Multiple Choice Questions)'}
               </div>
               <div style={{ fontSize: '0.98rem', fontWeight: 600, color: '#374151' }}>
-                {isPaper2 ? 'Digital theory item collection • Refer to the original PDF for time and section choices' : 'Time: 50 minutes • Marks: 40'}
+                {isPaper2 ? 'Time: 1 hour 50 minutes • Marks: 25 (CRQs & ERQs with 2025 SLO Mapping)' : 'Time: 1 hour 10 minutes • Marks: 40 (MCQs with 2025 SLO Mapping)'}
               </div>
 
               {/* Instructions Box (hidden in quick study mode to minimize clutter) */}
@@ -560,15 +521,15 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                   </div>
                   {isPaper2 ? (
                     <ol style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.85rem', color: '#374151', lineHeight: 1.5 }}>
-                      <li>This question paper contains two sections: <strong>Section B (CRQs)</strong> and <strong>Section C (ERQs)</strong>.</li>
-                      <li>This digital collection is for study. Use the original PDF for required questions, section choices, time and total marks.</li>
-                      <li>Use a notebook for written practice. The model responses below are study guidance.</li>
+                      <li>This question paper contains <strong>Constructed Response Questions (CRQs, Q.1–Q.5)</strong> and <strong>Extended Response Questions (ERQs, Q.6a/b & Q.7a/b)</strong>.</li>
+                      <li>Each question displays both its <strong>Original {paper.examYear} Exam SLO</strong> and its mapped <strong>Current 2025 Syllabus SLO</strong>.</li>
+                      <li>Review the official Checking Hints, Model Solutions, and E-Marking Candidate Script examples below each question.</li>
                     </ol>
                   ) : (
                     <ol style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.85rem', color: '#374151', lineHeight: 1.5 }}>
                       <li>Read each question carefully before choosing your answer.</li>
                       <li>Use answer numbers <strong>1 to 40</strong> only. Fill <strong>ONLY ONE</strong> oval for each question.</li>
-                      <li>Double-check all calculations before marking your response.</li>
+                      <li>Each question displays both its <strong>Original {paper.examYear} Exam SLO</strong> and its mapped <strong>Current 2025 Syllabus SLO</strong>.</li>
                     </ol>
                   )}
                 </div>
@@ -587,9 +548,9 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
               fontFamily: 'system-ui, sans-serif',
               fontWeight: 600
             }}>
-              <span>Physics {isPaper2 ? 'Paper II' : 'Paper I'} &bull; {gradeLabel}</span>
+              <span>Physics {isPaper2 ? 'Paper II' : 'Paper I'} &bull; {gradeLabel} ({paper.examYear})</span>
               <span>
-                {showCorrectAnswers ? '⭐ Quick Study Mode: Questions & Answer Key Only' : `Total ${questions.length} Examination Items`}
+                {showCorrectAnswers ? '⭐ Quick Study Mode: Questions, SLO Mappings & Answer Key' : `Total ${questions.length} Examination Items • SLO Mapped`}
               </span>
             </div>
 
@@ -619,20 +580,18 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                 const sloCode = mapping.code;
                 const topicName = mapping.topic;
 
-                // Correct answer and candidate responses (pure text)
+                // Correct answer and candidate responses
                 const correctKey = paperAnswer(meta, choices) || '';
                 const correctOptionText = choices[correctKey] || '';
+                const modelAnswerText = meta.model_answer || meta.explanation || '';
                 const betterResponse = meta.better_response || meta.model_answer || (
                   isPaper2
                     ? meta.explanation || 'A reviewed model response is not available for this item.'
-                    : correctKey ? `Answer key: ${correctKey} (${correctOptionText}).` : 'A reviewed answer key is not available.'
+                    : correctKey ? (meta.explanation || `Answer key: ${correctKey} (${correctOptionText}).`) : 'A reviewed answer key is not available.'
                 );
-                const weakResponse = meta.weaker_response || meta.weak_response || (
-                  isPaper2
-                    ? 'No reviewed misconception notes are available.'
-                    : 'No reviewed misconception notes are available.'
-                );
+                const weakResponse = meta.weaker_response || meta.weak_response || '';
                 const examinerGuidance = meta.suggestions || meta.examiner_guidance;
+                const rubricList: Array<{ marks: number; description: string }> = Array.isArray(meta.rubric) ? meta.rubric : [];
 
                 // Interactive practice variables
                 const selectedOpt = userAnswers[qNum];
@@ -647,13 +606,13 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                   }}>
 
                     {/* Question Header & Marks */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.4rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.6rem' }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', flexGrow: 1 }}>
                         {(() => {
                           const cleanQ = qNum.replace(/^Q\.?\s*/i, '').replace(/\.$/, '');
                           const displayQ = /^[0-9]+$/.test(cleanQ) ? `Q.${cleanQ}.` : `Q.${cleanQ}`;
                           return (
-                            <span style={{ fontSize: '1.15rem', fontWeight: 800, color: '#111827', minWidth: '28px' }}>
+                            <span style={{ fontSize: '1.15rem', fontWeight: 800, color: '#111827', minWidth: '32px' }}>
                               {displayQ}
                             </span>
                           );
@@ -669,32 +628,98 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                       )}
                     </div>
 
-                    {/* SLO Navigation Badge vs Out of Syllabus Indicator */}
+                    {/* Prominent SLO Mapping Box (Original Exam SLO + Current 2025 Syllabus SLO) */}
                     <div style={{
                       marginLeft: '2.5rem',
-                      marginBottom: '0.85rem',
+                      marginBottom: '1rem',
+                      padding: '0.65rem 0.95rem',
+                      background: '#f8fafc',
+                      border: '1px solid #e2e8f0',
+                      borderRadius: '8px',
                       display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.6rem',
-                      flexWrap: 'wrap',
+                      flexDirection: 'column',
+                      gap: '0.4rem',
                       fontFamily: 'system-ui, -apple-system, sans-serif'
                     }}>
-                      {meta.answer_review_note && <details style={{fontSize:'.8rem',color:'var(--text-color)'}}><summary>Answer review</summary>{meta.answer_review_note}</details>}
-                      {historical && mapping.originalCode && <span style={{fontSize:'.8rem',color:'var(--text-light)'}}>Original reference ({paper.examYear}): SLO {mapping.originalCode} · {meta.original_reference_verified===true?<Link href={meta.original_reference_source || '#'}>Official key</Link>:'unverified'}</span>}
-                      {mapping.status === 'mapped' ? <Link href={mapping.href!} title={mapping.description} style={{color:'var(--primary-color)',fontSize:'.82rem',fontWeight:700}}>SLO {sloCode}{topicName ? ` • ${topicName}` : ''} ↗</Link> : <span style={{fontSize:'.8rem',color:'var(--text-light)'}}>{mapping.status === 'outside' ? 'Outside current syllabus (reviewed)' : 'Current syllabus: Mapping pending'}</span>}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+                        {mapping.originalCode && (
+                          <span style={{
+                            background: '#fef3c7',
+                            color: '#92400e',
+                            border: '1px solid #fde68a',
+                            padding: '2px 8px',
+                            borderRadius: '5px',
+                            fontSize: '0.78rem',
+                            fontWeight: 700
+                          }}>
+                            Original ({paper.examYear}) SLO: {mapping.originalCode}
+                            {meta.original_reference_verified === true && meta.original_reference_source && (
+                              <> · <Link href={meta.original_reference_source} style={{ color: '#92400e', textDecoration: 'underline' }}>{isPaper2 ? 'E-Marking Notes' : 'Official Key'}</Link></>
+                            )}
+                          </span>
+                        )}
 
-                      {q.difficulty && (
-                        <span style={{
-                          background: '#f8fafc',
-                          color: '#64748b',
-                          border: '1px solid #e2e8f0',
-                          padding: '2px 8px',
-                          borderRadius: '5px',
-                          fontSize: '0.76rem',
-                          fontWeight: 600
-                        }}>
-                          Cognitive: {q.difficulty === 'K' ? 'Knowledge' : q.difficulty === 'U' ? 'Understanding' : q.difficulty === 'A' ? 'Application' : q.difficulty}
-                        </span>
+                        {mapping.status === 'mapped' ? (
+                          <Link
+                            href={mapping.href!}
+                            title={mapping.description}
+                            style={{
+                              background: '#ecfdf5',
+                              color: '#0b5e4a',
+                              border: '1px solid #a7f3d0',
+                              padding: '2px 9px',
+                              borderRadius: '5px',
+                              fontSize: '0.8rem',
+                              fontWeight: 800,
+                              textDecoration: 'none'
+                            }}
+                          >
+                            Current 2025 Syllabus: SLO {sloCode}{topicName ? ` • ${topicName}` : ''} ↗
+                          </Link>
+                        ) : (
+                          <span style={{
+                            background: '#f1f5f9',
+                            color: '#475569',
+                            border: '1px solid #cbd5e1',
+                            padding: '2px 8px',
+                            borderRadius: '5px',
+                            fontSize: '0.78rem',
+                            fontWeight: 600
+                          }}>
+                            {mapping.status === 'outside' ? `Outside 2025 Syllabus (Historical ${paper.examYear} Topic — Reviewed)` : 'Current syllabus: Mapping pending'}
+                          </span>
+                        )}
+
+                        {(q.difficulty || meta.cognitive_level) && (
+                          <span style={{
+                            background: '#ffffff',
+                            color: '#475569',
+                            border: '1px solid #cbd5e1',
+                            padding: '2px 8px',
+                            borderRadius: '5px',
+                            fontSize: '0.76rem',
+                            fontWeight: 600
+                          }}>
+                            Cognitive Level: {(q.difficulty || meta.cognitive_level) === 'K' ? 'K (Knowledge)' : (q.difficulty || meta.cognitive_level) === 'U' ? 'U (Understanding)' : (q.difficulty || meta.cognitive_level) === 'A' ? 'A (Application)' : (q.difficulty || meta.cognitive_level)}
+                          </span>
+                        )}
+                      </div>
+
+                      {mapping.status === 'mapped' && mapping.description && (
+                        <div style={{ fontSize: '0.82rem', color: '#334155', lineHeight: 1.45 }}>
+                          <strong>2025 SLO Outcome ({sloCode}):</strong> {mapping.description}
+                        </div>
+                      )}
+                      {meta.original_slo_text && (
+                        <div style={{ fontSize: '0.79rem', color: '#64748b', lineHeight: 1.4 }}>
+                          <strong>Original {paper.examYear} SLO Text ({mapping.originalCode}):</strong> {meta.original_slo_text}
+                        </div>
+                      )}
+                      {meta.answer_review_note && (
+                        <details style={{ fontSize: '.8rem', color: 'var(--text-color)' }}>
+                          <summary style={{ cursor: 'pointer', fontWeight: 600 }}>Source Key / Educator Review Note</summary>
+                          <p style={{ margin: '0.25rem 0 0 0' }}>{meta.answer_review_note}</p>
+                        </details>
                       )}
                     </div>
 
@@ -915,7 +940,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                     )}
 
                     {/* ---------------------------------------------------- */}
-                    {/* PAPER 2: RESPONSIVE TEXT CANDIDATE RESPONSES         */}
+                    {/* PAPER 2: CHECKING HINTS, MODEL ANSWER & E-MARKING    */}
                     {/* ---------------------------------------------------- */}
                     {isPaper2 && (
                       <div style={{ marginLeft: '2.5rem', marginTop: '0.75rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
@@ -963,7 +988,29 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                           </div>
                         )}
 
-                        {/* 2. BETTER RESPONSE (Responsive Text on Ruled Notebook Lines) */}
+                        {/* 1B. Official E-Marking Checking Hints / Rubric */}
+                        {rubricList.length > 0 && (
+                          <div style={{
+                            background: '#f8fafc',
+                            border: '1.5px solid #cbd5e1',
+                            borderRadius: '10px',
+                            padding: '1rem 1.25rem',
+                            marginBottom: '1rem'
+                          }}>
+                            <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.45rem' }}>
+                              📋 Official Checking Hints (Marking Scheme Rubric • {marks} Marks)
+                            </div>
+                            <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.88rem', color: '#334155', lineHeight: 1.55 }}>
+                              {rubricList.map((r, rIdx) => (
+                                <li key={rIdx}>
+                                  <MathText text={r.description} />
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* 2. MODEL RESPONSE & BETTER CANDIDATE SCRIPT */}
                         <div style={{
                           background: '#f0fdf4',
                           border: '1.5px solid #86efac',
@@ -974,28 +1021,54 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                         }}>
                           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                             <span style={{ background: '#16a34a', color: '#fff', padding: '3px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 800 }}>
-                              ✓ MODEL RESPONSE (Study Guidance)
+                              ✓ MODEL SOLUTION & BETTER RESPONSE
                             </span>
                             <span style={{ fontSize: '0.82rem', color: '#166534', fontWeight: 700 }}>
                               Score: {marks}/{marks} Marks
                             </span>
                           </div>
 
-                          {/* Responsive Ruled Line Student Notebook Effect */}
+                          {/* Model Answer */}
                           <div style={{
                             background: 'repeating-linear-gradient(transparent, transparent 29px, #bbf7d0 30px)',
                             lineHeight: '30px',
-                            fontSize: '0.98rem',
+                            fontSize: '0.96rem',
                             color: '#14532d',
                             fontWeight: 500,
-                            padding: '4px 6px'
+                            padding: '4px 6px',
+                            whiteSpace: 'pre-line'
                           }}>
-                            <MathText text={betterResponse} />
+                            <StructuredContent text={modelAnswerText || betterResponse} />
                           </div>
+
+                          {meta.better_response && meta.better_response !== modelAnswerText && (
+                            <p style={{ margin: '0.75rem 0 0 0', fontSize: '0.86rem', color: '#166534', lineHeight: 1.5 }}>
+                              <strong>Examiner Commentary (Better Responses):</strong> {meta.better_response}
+                            </p>
+                          )}
+
+                          {meta.better_response_image && (
+                            <div style={{ marginTop: '0.85rem' }}>
+                              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#166534', marginBottom: '0.35rem' }}>
+                                Authentic E-Marking Better Candidate Script:
+                              </div>
+                              <img
+                                src={meta.better_response_image}
+                                alt={`Better candidate response for Question ${qNum}`}
+                                style={{
+                                  maxWidth: '100%',
+                                  borderRadius: '8px',
+                                  border: '1px solid #86efac',
+                                  background: '#ffffff',
+                                  padding: '4px'
+                                }}
+                              />
+                            </div>
+                          )}
                         </div>
 
-                        {/* 3. WEAKER RESPONSE (Only shown when "Show Correct Answers" is OFF) */}
-                        {!showCorrectAnswers && weakResponse && (
+                        {/* 3. WEAKER RESPONSE & CANDIDATE SCRIPT (Only shown when "Show Correct Answers" is OFF) */}
+                        {!showCorrectAnswers && (weakResponse || meta.weaker_response_image) && (
                           <div style={{
                             background: '#fffbeb',
                             border: '1.5px solid #fde68a',
@@ -1010,17 +1083,37 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                               </span>
                             </div>
 
-                            {/* Responsive Ruled Line Flawed Attempt Effect */}
-                            <div style={{
-                              background: 'repeating-linear-gradient(transparent, transparent 29px, #fed7aa 30px)',
-                              lineHeight: '30px',
-                              fontSize: '0.96rem',
-                              color: '#78350f',
-                              fontWeight: 500,
-                              padding: '4px 6px'
-                            }}>
-                              <MathText text={weakResponse} />
-                            </div>
+                            {weakResponse && (
+                              <div style={{
+                                background: 'repeating-linear-gradient(transparent, transparent 29px, #fed7aa 30px)',
+                                lineHeight: '30px',
+                                fontSize: '0.94rem',
+                                color: '#78350f',
+                                fontWeight: 500,
+                                padding: '4px 6px'
+                              }}>
+                                <MathText text={weakResponse} />
+                              </div>
+                            )}
+
+                            {meta.weaker_response_image && (
+                              <div style={{ marginTop: '0.85rem' }}>
+                                <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#92400e', marginBottom: '0.35rem' }}>
+                                  Authentic E-Marking Weaker Candidate Script:
+                                </div>
+                                <img
+                                  src={meta.weaker_response_image}
+                                  alt={`Weaker candidate response for Question ${qNum}`}
+                                  style={{
+                                    maxWidth: '100%',
+                                    borderRadius: '8px',
+                                    border: '1px solid #fcd34d',
+                                    background: '#ffffff',
+                                    padding: '4px'
+                                  }}
+                                />
+                              </div>
+                            )}
                           </div>
                         )}
 
@@ -1065,7 +1158,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
               color: '#111827',
               background: '#ffffff'
             }}>
-              <span>{isPaper2 ? 'S2501-1711120' : 'S2501-1711110'}</span>
+              <span>{paper.examYear === 2024 ? (isPaper2 ? 'S2401-1711120' : 'S2401-1711110') : (isPaper2 ? 'S2501-1711120' : 'S2501-1711110')}</span>
               <span style={{ letterSpacing: '1px' }}>END OF EXAMINATION &bull; ANSWER REVIEW</span>
               <span>Physics {isPaper2 ? 'Paper II' : 'Paper I'}</span>
             </div>

@@ -1,55 +1,5 @@
 [
   {
-    "questionNumber": "Q.6(b)",
-    "marks": 6.0,
-    "stem": "Ali produces a sound in a big empty hall. He hears a recurring sound resembling to his original sound. \ni. Name and define the phenomenon of the sound wave that Ali observed. \nii. Explain how it is produced in FOUR points.",
-    "rubric": [
-      {
-        "marks": 1.0,
-        "description": "Naming the correct phenomenon (Echo)"
-      },
-      {
-        "marks": 1.0,
-        "description": "Defining the echo phenomenon accurately"
-      },
-      {
-        "marks": 1.0,
-        "description": "First point explaining production/reflection of sound wave"
-      },
-      {
-        "marks": 1.0,
-        "description": "Second point explaining time interval or distance requirement"
-      },
-      {
-        "marks": 1.0,
-        "description": "Third point explaining return of sound wave to listener"
-      },
-      {
-        "marks": 1.0,
-        "description": "Fourth point explaining persistence of human hearing / distinction of sound"
-      }
-    ],
-    "modelAnswer": "i. Phenomenon: Echo.\nDefinition: The reflection of sound from a surface back to the listener, creating a repetition of the original sound.\nii. Explanation:\n1. When Ali produces sound, sound waves travel outwards through the air in the hall.\n2. These waves strike the hard, distant walls, floor, or ceiling of the big empty hall.\n3. Upon striking, the sound waves bounce back (reflect) towards the source.\n4. If the distance to the reflecting surface is sufficient, the reflected sound reaches Ali's ears at least 0.1 seconds after the original sound, allowing him to perceive it distinctly as an echo.",
-    "isDiagram": false
-  },
-  {
-    "questionNumber": "Q.2(a)",
-    "marks": 2.0,
-    "stem": "Name and define the principle of a transformer on which it works.",
-    "rubric": [
-      {
-        "marks": 1.0,
-        "description": "Naming the correct principle (Mutual Induction)"
-      },
-      {
-        "marks": 1.0,
-        "description": "Accurate definition of the principle"
-      }
-    ],
-    "modelAnswer": "Principle: Mutual Induction.\nDefinition: It is the phenomenon in which a changing current in one coil induces an electromotive force (emf) in a nearby second coil.",
-    "isDiagram": false
-  },
-  {
     "questionNumber": "Q.1",
     "marks": 3.0,
     "stem": "Write any THREE uses of total internal reflection in light propagation.",
@@ -68,7 +18,72 @@
       }
     ],
     "modelAnswer": "1. In optical fibres for telecommunication and endoscopy.\n2. In totally reflecting prisms used in binoculars and periscopes.\n3. In optical sensors and refractometers.",
-    "isDiagram": false
+    "isDiagram": false,
+    "text": "Write any THREE uses of total internal reflection in light propagation.",
+    "section": "Section B (CRQ)",
+    "pageNumber": 2,
+    "pageScanUrl": "/materials/scans/ssc2_p2_page_2.png",
+    "slo": "13.4.4",
+    "chapter": "Unit 13: Geometrical Optics",
+    "unitNumber": 13,
+    "unitName": "Geometrical Optics",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "current_slo": "13.4.4",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "13.4.4",
+        "description": "solve word problems related to the critical angle and refractive index;",
+        "topic": "Geometrical Optics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.2(a)",
+    "marks": 2.0,
+    "stem": "Name and define the principle of a transformer on which it works.",
+    "rubric": [
+      {
+        "marks": 1.0,
+        "description": "Naming the correct principle (Mutual Induction)"
+      },
+      {
+        "marks": 1.0,
+        "description": "Accurate definition of the principle"
+      }
+    ],
+    "modelAnswer": "Principle: Mutual Induction.\nDefinition: It is the phenomenon in which a changing current in one coil induces an electromotive force (emf) in a nearby second coil.",
+    "isDiagram": false,
+    "text": "Name and define the principle of a transformer on which it works.",
+    "section": "Section B (CRQ)",
+    "pageNumber": 2,
+    "pageScanUrl": "/materials/scans/ssc2_p2_page_2.png",
+    "slo": "18.4.2",
+    "chapter": "Unit 18: Electromagnetic Induction",
+    "unitNumber": 18,
+    "unitName": "Electromagnetic Induction",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "current_slo": "18.4.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "18.4.2",
+        "description": "define mutual induction;",
+        "topic": "Electromagnetic Induction"
+      }
+    ]
   },
   {
     "questionNumber": "Q.2(b)",
@@ -81,73 +96,158 @@
       }
     ],
     "modelAnswer": "To step up or step down alternating voltage in power transmission systems.",
-    "isDiagram": false
+    "isDiagram": false,
+    "text": "Write ONE use of a transformer.",
+    "section": "Section B (CRQ)",
+    "pageNumber": 2,
+    "pageScanUrl": "/materials/scans/ssc2_p2_page_2.png",
+    "slo": "18.5.4",
+    "chapter": "Unit 18: Electromagnetic Induction",
+    "unitNumber": 18,
+    "unitName": "Electromagnetic Induction",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "current_slo": "18.5.4",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "18.5.4",
+        "description": "solve word problem using the transformer equation $\\frac{V_s}{V_p} = \\frac{I_p}{I_s} = \\frac{N_s}{N_p}$;",
+        "topic": "Electromagnetic Induction"
+      }
+    ]
   },
   {
-    "questionNumber": "Q.7(a)",
-    "marks": 6.0,
-    "stem": "i. Why large electrostatic charges can be dangerous? Give TWO examples of it from daily life. \nii. Long vehicles carrying inflammable materials usually have a metallic chain touching the ground during motion. Explain this statement using the phenomenon of electrostatic charges and friction.",
+    "questionNumber": "Q.3",
+    "marks": 2.0,
+    "stem": "The picture that appears on the screen of a television, that uses cathode rays tube, becomes distorted when a powerful magnet is brought near the screen. Explain the given phenomena.",
     "rubric": [
       {
         "marks": 1.0,
-        "description": "Reason why large electrostatic charges are dangerous (sparking, fire, shocks)"
+        "description": "Explanation of cathode rays as moving charged particles (electrons)"
       },
       {
         "marks": 1.0,
-        "description": "First daily life example of electrostatic hazard"
-      },
-      {
-        "marks": 1.0,
-        "description": "Second daily life example of electrostatic hazard"
-      },
-      {
-        "marks": 1.0,
-        "description": "Explanation of friction causing charge accumulation on vehicles"
-      },
-      {
-        "marks": 1.0,
-        "description": "Role of the metallic chain in safe discharge (earthing)"
-      },
-      {
-        "marks": 1.0,
-        "description": "Prevention of explosion or fire hazards for inflammable materials"
+        "description": "Explanation of magnetic force (Lorentz force) deflecting the electron beam"
       }
     ],
-    "modelAnswer": "i. Large electrostatic charges can cause sudden electrical discharges (sparks) that may lead to electric shocks, damage sensitive electronic components, or cause fires and explosions in flammable environments.\nExamples: 1. Lightning strikes during thunderstorms. 2. Sparks produced while fueling aircraft or vehicles.\nii. Explanation: As long vehicles move, continuous friction between the air and the vehicle body, as well as between the tires and the road, causes static electricity to build up on the vehicle's surface. If allowed to accumulate, this static charge could discharge as a spark, which is extremely dangerous when carrying inflammable materials. To prevent this, a metallic chain touching the ground is used to safely conduct the accumulated charges directly into the Earth (earthing), neutralizing the static buildup.",
-    "isDiagram": false
+    "modelAnswer": "Cathode rays are beams of fast-moving electrons. When a powerful magnet is brought near the screen, the magnetic field exerts a magnetic force (Lorentz force) on these moving electrons, deflecting them from their original path and causing the picture on the screen to distort.",
+    "isDiagram": false,
+    "text": "The picture that appears on the screen of a television, that uses cathode rays tube, becomes distorted when a powerful magnet is brought near the screen. Explain the given phenomena.",
+    "section": "Section B (CRQ)",
+    "pageNumber": 3,
+    "pageScanUrl": "/materials/scans/ssc2_p2_page_3.png",
+    "slo": "19.2.2",
+    "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+    "unitNumber": 19,
+    "unitName": "Electromagnetic Waves and Electronics",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "current_slo": "19.2.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "19.2.2",
+        "description": "describe the simple construction and use of an electron gun as a source of electron beam;",
+        "topic": "Electromagnetic Waves and Electronics"
+      }
+    ]
   },
   {
-    "questionNumber": "Q.7(b)",
-    "marks": 6.0,
-    "stem": "Explain how the resistance of a metallic conductor rises with an increase in temperature. Given FIVE points to support your answer.",
+    "questionNumber": "Q.4",
+    "marks": 2.0,
+    "stem": "Mention any TWO benefits of transmitting information and data through an optical fibre.",
     "rubric": [
       {
         "marks": 1.0,
-        "description": "First point: Atomic structure / positive ions vibration in metals"
+        "description": "First correct benefit of optical fibre transmission"
       },
       {
         "marks": 1.0,
-        "description": "Second point: Effect of increased temperature on thermal energy and vibration amplitude"
-      },
-      {
-        "marks": 1.0,
-        "description": "Third point: Increased frequency of collision between free electrons and vibrating ions"
-      },
-      {
-        "marks": 1.0,
-        "description": "Fourth point: Obstruction to the flow of electric current / free electrons"
-      },
-      {
-        "marks": 1.0,
-        "description": "Fifth point: Consequent increase in resistance with temperature rise"
-      },
-      {
-        "marks": 1.0,
-        "description": "Clarity and scientific correctness of the overall explanation"
+        "description": "Second correct benefit of optical fibre transmission"
       }
     ],
-    "modelAnswer": "1. A metallic conductor consists of a lattice of positive ions through which free electrons move freely to conduct electricity.\n2. At higher temperatures, the thermal energy of the metal increases, causing the positive ions to vibrate more violently about their mean positions with larger amplitudes.\n3. As free electrons flow through the conductor under an electric field, they collide more frequently with these rapidly vibrating positive ions.\n4. These frequent and intense collisions impede and scatter the flow of free electrons, increasing the obstruction to current flow.\n5. Since electrical resistance is a measure of the opposition to the flow of current, this increased scattering and collision rate causes the resistance of the metallic conductor to rise as temperature increases.",
-    "isDiagram": false
+    "modelAnswer": "1. High data carrying capacity and faster transmission speed.\n2. Immune to electromagnetic interference and signal degradation over long distances.",
+    "isDiagram": false,
+    "text": "Mention any TWO benefits of transmitting information and data through an optical fibre.",
+    "section": "Section B (CRQ)",
+    "pageNumber": 3,
+    "pageScanUrl": "/materials/scans/ssc2_p2_page_3.png",
+    "slo": "13.4.5",
+    "chapter": "Unit 13: Geometrical Optics",
+    "unitNumber": 13,
+    "unitName": "Geometrical Optics",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "current_slo": "13.4.5",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "13.4.5",
+        "description": "describe the use of total internal reflection in:\na. optical fibre,\nb. periscope;",
+        "topic": "Geometrical Optics"
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5",
+    "marks": 3.0,
+    "stem": "A nuclear fusion reaction is very difficult to achieve as compared to the nuclear fission reaction. Justify the given statement in any THREE points.",
+    "rubric": [
+      {
+        "marks": 1.0,
+        "description": "First valid scientific point regarding repulsion/activation energy"
+      },
+      {
+        "marks": 1.0,
+        "description": "Second valid scientific point regarding high temperature/pressure requirement"
+      },
+      {
+        "marks": 1.0,
+        "description": "Third valid scientific point regarding containment challenges (plasma)"
+      }
+    ],
+    "modelAnswer": "1. Positively charged nuclei repel each other strongly due to electrostatic forces, requiring huge amounts of energy to bring them close enough for fusion.\n2. Extremely high temperatures (millions of degrees Celsius) are required to give nuclei enough kinetic energy to overcome this electrostatic repulsion.\n3. Containing such extremely hot plasma in a controlled environment is technologically very difficult compared to initiating a neutron-induced fission reaction.",
+    "isDiagram": false,
+    "text": "A nuclear fusion reaction is very difficult to achieve as compared to the nuclear fission reaction. Justify the given statement in any THREE points.",
+    "section": "Section B (CRQ)",
+    "pageNumber": 3,
+    "pageScanUrl": "/materials/scans/ssc2_p2_page_3.png",
+    "slo": "20.7.3",
+    "chapter": "Unit 20: Atomic and Nuclear Physics",
+    "unitNumber": 20,
+    "unitName": "Atomic and Nuclear Physics",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "current_slo": "20.7.3",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "20.7.3",
+        "description": "state the nature of the Sun consisting mostly of hydrogen and helium and radiates most of its energy;",
+        "topic": "Atomic and Nuclear Physics"
+      }
+    ]
   },
   {
     "questionNumber": "Q.6(a)",
@@ -180,61 +280,201 @@
       }
     ],
     "modelAnswer": "Given: Length L = 4 m, g = 9.8 m/s^2, a = 8 m/s^2\ni. Elevator moving upwards:\nEffective gravity g' = g + a = 9.8 + 8 = 17.8 m/s^2\nT = 2 * pi * sqrt(L / g') = 2 * 3.14 * sqrt(4 / 17.8) = 2.97 seconds.\nii. Elevator moving downwards:\nEffective gravity g' = g - a = 9.8 - 8 = 1.8 m/s^2\nT = 2 * pi * sqrt(L / g') = 2 * 3.14 * sqrt(4 / 1.8) = 9.36 seconds.",
-    "isDiagram": false
+    "isDiagram": false,
+    "text": "A simple pendulum is attached with 4 m long string. \ni. Find the time period of the simple pendulum if it is placed in an elevator moving upwards with an acceleration of 8 m/s^2. \nii. If the elevator is moving downwards with an acceleration of 8 m/s^2, then what will be its time period? \n(Note: The value of acceleration due to gravity 'g' is 9.8 m/s^2.)",
+    "section": "Section C (ERQ)",
+    "pageNumber": 4,
+    "pageScanUrl": "/materials/scans/ssc2_p2_page_4.png",
+    "slo": "11.1.3",
+    "chapter": "Unit 11: Wave Motion",
+    "unitNumber": 11,
+    "unitName": "Wave Motion",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "current_slo": "11.1.3",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "11.1.3",
+        "description": "solve word problems related to time period of a simple pendulum;",
+        "topic": "Wave Motion"
+      }
+    ]
   },
   {
-    "questionNumber": "Q.3",
-    "marks": 2.0,
-    "stem": "The picture that appears on the screen of a television, that uses cathode rays tube, becomes distorted when a powerful magnet is brought near the screen. Explain the given phenomena.",
+    "questionNumber": "Q.6(b)",
+    "marks": 6.0,
+    "stem": "Ali produces a sound in a big empty hall. He hears a recurring sound resembling to his original sound. \ni. Name and define the phenomenon of the sound wave that Ali observed. \nii. Explain how it is produced in FOUR points.",
     "rubric": [
       {
         "marks": 1.0,
-        "description": "Explanation of cathode rays as moving charged particles (electrons)"
+        "description": "Naming the correct phenomenon (Echo)"
       },
       {
         "marks": 1.0,
-        "description": "Explanation of magnetic force (Lorentz force) deflecting the electron beam"
+        "description": "Defining the echo phenomenon accurately"
+      },
+      {
+        "marks": 1.0,
+        "description": "First point explaining production/reflection of sound wave"
+      },
+      {
+        "marks": 1.0,
+        "description": "Second point explaining time interval or distance requirement"
+      },
+      {
+        "marks": 1.0,
+        "description": "Third point explaining return of sound wave to listener"
+      },
+      {
+        "marks": 1.0,
+        "description": "Fourth point explaining persistence of human hearing / distinction of sound"
       }
     ],
-    "modelAnswer": "Cathode rays are beams of fast-moving electrons. When a powerful magnet is brought near the screen, the magnetic field exerts a magnetic force (Lorentz force) on these moving electrons, deflecting them from their original path and causing the picture on the screen to distort.",
-    "isDiagram": false
+    "modelAnswer": "i. Phenomenon: Echo.\nDefinition: The reflection of sound from a surface back to the listener, creating a repetition of the original sound.\nii. Explanation:\n1. When Ali produces sound, sound waves travel outwards through the air in the hall.\n2. These waves strike the hard, distant walls, floor, or ceiling of the big empty hall.\n3. Upon striking, the sound waves bounce back (reflect) towards the source.\n4. If the distance to the reflecting surface is sufficient, the reflected sound reaches Ali's ears at least 0.1 seconds after the original sound, allowing him to perceive it distinctly as an echo.",
+    "isDiagram": false,
+    "text": "Ali produces a sound in a big empty hall. He hears a recurring sound resembling to his original sound. \ni. Name and define the phenomenon of the sound wave that Ali observed. \nii. Explain how it is produced in FOUR points.",
+    "section": "Section C (ERQ)",
+    "pageNumber": 4,
+    "pageScanUrl": "/materials/scans/ssc2_p2_page_4.png",
+    "slo": "12.3.1",
+    "chapter": "Unit 12: Sound",
+    "unitNumber": 12,
+    "unitName": "Sound",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "current_slo": "12.3.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "12.3.1",
+        "description": "describe an echo as the reflection of sound waves;",
+        "topic": "Sound"
+      }
+    ]
   },
   {
-    "questionNumber": "Q.4",
-    "marks": 2.0,
-    "stem": "Mention any TWO benefits of transmitting information and data through an optical fibre.",
+    "questionNumber": "Q.7(a)",
+    "marks": 6.0,
+    "stem": "i. Why large electrostatic charges can be dangerous? Give TWO examples of it from daily life. \nii. Long vehicles carrying inflammable materials usually have a metallic chain touching the ground during motion. Explain this statement using the phenomenon of electrostatic charges and friction.",
     "rubric": [
       {
         "marks": 1.0,
-        "description": "First correct benefit of optical fibre transmission"
+        "description": "Reason why large electrostatic charges are dangerous (sparking, fire, shocks)"
       },
       {
         "marks": 1.0,
-        "description": "Second correct benefit of optical fibre transmission"
+        "description": "First daily life example of electrostatic hazard"
+      },
+      {
+        "marks": 1.0,
+        "description": "Second daily life example of electrostatic hazard"
+      },
+      {
+        "marks": 1.0,
+        "description": "Explanation of friction causing charge accumulation on vehicles"
+      },
+      {
+        "marks": 1.0,
+        "description": "Role of the metallic chain in safe discharge (earthing)"
+      },
+      {
+        "marks": 1.0,
+        "description": "Prevention of explosion or fire hazards for inflammable materials"
       }
     ],
-    "modelAnswer": "1. High data carrying capacity and faster transmission speed.\n2. Immune to electromagnetic interference and signal degradation over long distances.",
-    "isDiagram": false
+    "modelAnswer": "i. Large electrostatic charges can cause sudden electrical discharges (sparks) that may lead to electric shocks, damage sensitive electronic components, or cause fires and explosions in flammable environments.\nExamples: 1. Lightning strikes during thunderstorms. 2. Sparks produced while fueling aircraft or vehicles.\nii. Explanation: As long vehicles move, continuous friction between the air and the vehicle body, as well as between the tires and the road, causes static electricity to build up on the vehicle's surface. If allowed to accumulate, this static charge could discharge as a spark, which is extremely dangerous when carrying inflammable materials. To prevent this, a metallic chain touching the ground is used to safely conduct the accumulated charges directly into the Earth (earthing), neutralizing the static buildup.",
+    "isDiagram": false,
+    "text": "i. Why large electrostatic charges can be dangerous? Give TWO examples of it from daily life. \nii. Long vehicles carrying inflammable materials usually have a metallic chain touching the ground during motion. Explain this statement using the phenomenon of electrostatic charges and friction.",
+    "section": "Section C (ERQ)",
+    "pageNumber": 5,
+    "pageScanUrl": "/materials/scans/ssc2_p2_page_5.png",
+    "slo": "14.4.3",
+    "chapter": "Unit 14: Electrostatics",
+    "unitNumber": 14,
+    "unitName": "Electrostatics",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "current_slo": "14.4.3",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "14.4.3",
+        "description": "identify different kinds of electrical lightning includes:\na. ball lightning,\nb. elves,\nc. ghosts,\nd. jets,\ne. pixies,\nf. sprites,\ng. trolls;",
+        "topic": "Electrostatics"
+      }
+    ]
   },
   {
-    "questionNumber": "Q.5",
-    "marks": 3.0,
-    "stem": "A nuclear fusion reaction is very difficult to achieve as compared to the nuclear fission reaction. Justify the given statement in any THREE points.",
+    "questionNumber": "Q.7(b)",
+    "marks": 6.0,
+    "stem": "Explain how the resistance of a metallic conductor rises with an increase in temperature. Given FIVE points to support your answer.",
     "rubric": [
       {
         "marks": 1.0,
-        "description": "First valid scientific point regarding repulsion/activation energy"
+        "description": "First point: Atomic structure / positive ions vibration in metals"
       },
       {
         "marks": 1.0,
-        "description": "Second valid scientific point regarding high temperature/pressure requirement"
+        "description": "Second point: Effect of increased temperature on thermal energy and vibration amplitude"
       },
       {
         "marks": 1.0,
-        "description": "Third valid scientific point regarding containment challenges (plasma)"
+        "description": "Third point: Increased frequency of collision between free electrons and vibrating ions"
+      },
+      {
+        "marks": 1.0,
+        "description": "Fourth point: Obstruction to the flow of electric current / free electrons"
+      },
+      {
+        "marks": 1.0,
+        "description": "Fifth point: Consequent increase in resistance with temperature rise"
+      },
+      {
+        "marks": 1.0,
+        "description": "Clarity and scientific correctness of the overall explanation"
       }
     ],
-    "modelAnswer": "1. Positively charged nuclei repel each other strongly due to electrostatic forces, requiring huge amounts of energy to bring them close enough for fusion.\n2. Extremely high temperatures (millions of degrees Celsius) are required to give nuclei enough kinetic energy to overcome this electrostatic repulsion.\n3. Containing such extremely hot plasma in a controlled environment is technologically very difficult compared to initiating a neutron-induced fission reaction.",
-    "isDiagram": false
+    "modelAnswer": "1. A metallic conductor consists of a lattice of positive ions through which free electrons move freely to conduct electricity.\n2. At higher temperatures, the thermal energy of the metal increases, causing the positive ions to vibrate more violently about their mean positions with larger amplitudes.\n3. As free electrons flow through the conductor under an electric field, they collide more frequently with these rapidly vibrating positive ions.\n4. These frequent and intense collisions impede and scatter the flow of free electrons, increasing the obstruction to current flow.\n5. Since electrical resistance is a measure of the opposition to the flow of current, this increased scattering and collision rate causes the resistance of the metallic conductor to rise as temperature increases.",
+    "isDiagram": false,
+    "text": "Explain how the resistance of a metallic conductor rises with an increase in temperature. Given FIVE points to support your answer.",
+    "section": "Section C (ERQ)",
+    "pageNumber": 5,
+    "pageScanUrl": "/materials/scans/ssc2_p2_page_5.png",
+    "slo": "15.3.2",
+    "chapter": "Unit 15: Electric Current",
+    "unitNumber": 15,
+    "unitName": "Electric Current",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "current_slo": "15.3.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "15.3.2",
+        "description": "describe the following factors affecting the resistance of a metallic conductor: a. length of a conductor, b. cross-sectional area of a conductor, c. nature of a conductor, d. temperature of a conductor;",
+        "topic": "Electric Current"
+      }
+    ]
   }
 ]

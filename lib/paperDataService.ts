@@ -7,7 +7,8 @@ import ssc2ModelMcqs from '@/data/physics/ssc2_model_mcqs.json';
 import ssc2ModelCrqs from '@/data/physics/ssc2_model_crqs.json';
 import ssc1Past2025Mcqs from '@/data/physics/ssc1_2025_past_mcqs.json';
 import ssc1Past2025Crqs from '@/data/physics/ssc1_2025_past_crqs.json';
-import physicsChap12Mcqs from '@/data/physics/physics_chap1_2_past_mcqs.json';
+import ssc1Past2024Mcqs from '@/data/physics/ssc1_2024_past_mcqs.json';
+import ssc1Past2024Crqs from '@/data/physics/ssc1_2024_past_crqs.json';
 
 export interface QuestionData {
   id: string;
@@ -21,13 +22,31 @@ export interface QuestionData {
     choices?: Record<string, string>;
     correct_answer?: string;
     explanation?: string;
+    option_feedback?: Array<{ key: string; reason: string }>;
     rubric?: Array<{ marks: number; description: string }>;
     model_answer?: string;
+    better_response?: string;
+    weaker_response?: string;
+    overall_performance?: string;
+    better_response_image?: string;
+    weaker_response_image?: string;
+    suggestions?: string;
     in_syllabus?: boolean;
+    out_of_syllabus?: boolean;
+    syllabus_reviewed?: boolean;
+    current_syllabus_reviewed?: boolean;
+    mapping_scope?: { board: string; grade: number; subject: string };
+    current_mapping?: Array<{ code: string; description: string; topic: string }>;
+    current_slo?: string;
     cognitive_level?: string;
     is_numerical?: boolean;
     slo?: string;
+    original_slo_text?: string;
+    original_reference_verified?: boolean;
+    original_reference_source?: string;
     diagramUrl?: string;
+    pageNumber?: number;
+    pageScanUrl?: string;
     slo_details?: {
       description?: string;
       topic_name?: string;
@@ -64,7 +83,8 @@ const JSON_BUNDLES: Record<string, any[]> = {
   'ssc2_model_crqs.json': ssc2ModelCrqs as any[],
   'ssc1_2025_past_mcqs.json': ssc1Past2025Mcqs as any[],
   'ssc1_2025_past_crqs.json': ssc1Past2025Crqs as any[],
-  'physics_chap1_2_past_mcqs.json': physicsChap12Mcqs as any[],
+  'ssc1_2024_past_mcqs.json': ssc1Past2024Mcqs as any[],
+  'ssc1_2024_past_crqs.json': ssc1Past2024Crqs as any[],
 };
 
 function loadJsonFile(filename: string): any[] {
@@ -116,24 +136,21 @@ export function findUploadedPaper(paperCode: string): any | null {
  */
 export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
   const code = (paperCodeOrId || '').replace(/\.html?$/i, '').toUpperCase().trim();
-  if (code.includes('2024') || code.startsWith('PHY-X-2025')) {
-    const uploaded = findUploadedPaper(code);
-    return uploaded ? uploadedPaper(uploaded) : null;
-  }
 
-  // 0. Class IX Physics Chapters 1 & 2 Past Papers (2014-2024 Past MCQs)
+  // 0A. 2024 Annual Past Paper 1 (Class IX) - Authentic Board MCQs
   if (
-    code === 'PHY-IX-CHAP1-2' ||
-    code === 'PHYSICS-CHAP-1-AND-2-PAST-PAPERS' ||
-    code === 'SAMPLE-QUIZ-PHY-CHAP-1-2' ||
-    code.includes('CHAP1-2') ||
-    (code.includes('CHAP') && (code.includes('1') && code.includes('2')))
+    code === 'PHY-IX-2024-P1' ||
+    (code.includes('2024') && (code.includes('IX') || code.includes('9')) && (code.includes('P1') || code.includes('PAPER-1') || code.includes('PAPER-I')))
   ) {
-    const rawMcqs = loadJsonFile('physics_chap1_2_past_mcqs.json');
+    const rawMcqs = loadJsonFile('ssc1_2024_past_mcqs.json');
     const questions: QuestionData[] = rawMcqs.map((item: any, idx: number) => {
       const qNum = (item.questionNumber || idx + 1).toString();
+      const topicName = item.unitName || item.chapter || 'SSC-I Physics (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      const effectiveSlo = item.current_slo || item.slo;
       return {
-        id: `phy-ix-chap1-2-q${qNum}`,
+        id: `phy-ix-2024-p1-q${qNum}`,
         questionNumber: qNum,
         questionText: item.stem,
         questionType: 'MULTIPLE_CHOICE',
@@ -144,32 +161,119 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
           choices: item.options || {},
           correct_answer: item.correctOption || '',
           explanation: item.explanation || '',
+          option_feedback: item.option_feedback || undefined,
           cognitive_level: item.cognitiveLevel,
           is_numerical: item.isNumerical,
-          in_syllabus: undefined,
-          diagramUrl: item.diagramUrl,
+          in_syllabus: item.out_of_syllabus ? false : true,
+          out_of_syllabus: item.out_of_syllabus || false,
+          syllabus_reviewed: true,
+          current_syllabus_reviewed: true,
+          mapping_scope: item.mapping_scope || { board: 'AKU-EB', grade: 9, subject: 'Physics' },
+          current_mapping: item.current_mapping || [],
+          current_slo: item.current_slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          pageScanUrl: item.pageScanUrl || undefined,
           slo: item.slo || undefined,
+          original_reference_verified: true,
+          original_reference_source: '/resources/physics-ix-2024-key',
           slo_details: {
-            description: item.stem,
-            topic_name: item.chapter || 'SSC-I Physics (Class IX)'
-          }
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
         },
-        topics: [{ topic: { name: item.chapter || 'SSC-I Physics', topicNumber: '1' } }],
-        slos: item.slo ? [{ slo: { code: item.slo, description: item.stem } }] : []
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: effectiveSlo ? [{ slo: { code: effectiveSlo, description: mappedSloDesc } }] : [],
       };
     });
 
     return {
-      id: 'PHY-IX-CHAP1-2',
-      title: 'Physics SSC-I Chapters 1 & 2 Past Papers (2014–2024 MCQs)',
-      paperCode: 'PHY-IX-CHAP1-2',
+      id: 'PHY-IX-2024-P1',
+      title: 'Physics SSC-I 2024 Annual Examination Paper I (MCQ)',
+      paperCode: 'PHY-IX-2024-P1',
       examYear: 2024,
-      examSession: 'Past Papers 2014–2024 Archive',
+      examSession: 'Annual Examination 2024',
       examType: 'ANNUAL',
+      fileUrl: '/materials/ssc/physics/ssc-1/physics-ix-2024-paper-i.pdf',
       academicClass: { name: 'Class IX', level: 9 },
       subject: { id: 'physics-ix', name: 'Physics', code: 'PHY' },
-      questions
+      questions,
     };
+  }
+
+  // 0B. 2024 Annual Past Paper 2 (Class IX) - Authentic Board CRQs & ERQs
+  if (
+    code === 'PHY-IX-2024-P2' ||
+    (code.includes('2024') && (code.includes('IX') || code.includes('9')) && (code.includes('P2') || code.includes('PAPER-2') || code.includes('PAPER-II')))
+  ) {
+    const rawCrqs = loadJsonFile('ssc1_2024_past_crqs.json');
+    const questions: QuestionData[] = rawCrqs.map((item: any, idx: number) => {
+      const qNum = item.questionNumber || `${idx + 1}`;
+      const isErq = item.questionType === 'EXTENDED_RESPONSE' || (item.marks || 3) >= 4;
+      const topicName = item.unitName || item.chapter || 'SSC-I Physics Theory';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.originalSloText || item.stem;
+      const effectiveSlo = item.current_slo || item.slo;
+      return {
+        id: `phy-ix-2024-p2-q${idx + 1}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: item.questionType || (isErq ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE'),
+        marks: item.marks || 3,
+        difficulty: item.cognitiveLevel || 'A',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          rubric: item.rubric || [],
+          model_answer: item.modelAnswer || '',
+          explanation: item.modelAnswer || '',
+          better_response: item.betterResponse || item.modelAnswer || '',
+          weaker_response: item.weakerResponse || '',
+          overall_performance: item.overallPerformance || '',
+          better_response_image: item.betterResponseImage || undefined,
+          weaker_response_image: item.weakerResponseImage || undefined,
+          suggestions: item.suggestions || '',
+          cognitive_level: item.cognitiveLevel || 'A',
+          in_syllabus: item.out_of_syllabus ? false : true,
+          out_of_syllabus: item.out_of_syllabus || false,
+          syllabus_reviewed: true,
+          current_syllabus_reviewed: true,
+          mapping_scope: item.mapping_scope || { board: 'AKU-EB', grade: 9, subject: 'Physics' },
+          current_mapping: item.current_mapping || [],
+          current_slo: item.current_slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          pageScanUrl: item.pageScanUrl || undefined,
+          slo: item.slo || undefined,
+          original_slo_text: item.originalSloText || undefined,
+          original_reference_verified: true,
+          original_reference_source: '/resources/physics-ix-2024-emarking',
+          slo_details: {
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: effectiveSlo ? [{ slo: { code: effectiveSlo, description: mappedSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'PHY-IX-2024-P2',
+      title: 'Physics SSC-I 2024 Annual Examination Paper II (CRQ & ERQ)',
+      paperCode: 'PHY-IX-2024-P2',
+      examYear: 2024,
+      examSession: 'Annual Examination 2024',
+      examType: 'ANNUAL',
+      fileUrl: '/materials/ssc/physics/ssc-1/physics-ix-2024-paper-ii.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { id: 'physics-ix', name: 'Physics', code: 'PHY' },
+      questions,
+    };
+  }
+
+  if (code.includes('2024') || code.startsWith('PHY-X-2025')) {
+    const uploaded = findUploadedPaper(code);
+    return uploaded ? uploadedPaper(uploaded) : null;
   }
 
   // 1. 2025 Annual Past Paper 1 (Class IX) - Authentic Board MCQs
@@ -180,6 +284,10 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
     const rawMcqs = loadJsonFile('ssc1_2025_past_mcqs.json');
     const questions: QuestionData[] = rawMcqs.map((item: any, idx: number) => {
       const qNum = (item.questionNumber || idx + 1).toString();
+      const topicName = item.unitName || item.chapter || 'SSC-I Physics (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      const effectiveSlo = item.current_slo || item.slo;
       return {
         id: `phy-ix-2025-p1-q${qNum}`,
         questionNumber: qNum,
@@ -194,16 +302,24 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
           explanation: item.explanation || '',
           cognitive_level: item.cognitiveLevel,
           is_numerical: item.isNumerical,
-          in_syllabus: undefined,
-          diagramUrl: item.diagramUrl,
-          slo: item.slo || undefined,
+          in_syllabus: item.out_of_syllabus ? false : true,
+          out_of_syllabus: item.out_of_syllabus || false,
+          syllabus_reviewed: true,
+          current_syllabus_reviewed: true,
+          mapping_scope: item.mapping_scope || { board: 'AKU-EB', grade: 9, subject: 'Physics' },
+          current_mapping: item.current_mapping || [],
+          current_slo: item.current_slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          slo: item.original_slo || item.slo || undefined,
+          original_reference_verified: true,
+          original_reference_source: '/resources/physics-ix-2025-key',
           slo_details: {
-            description: item.stem,
-            topic_name: 'SSC-I Physics (Class IX)'
+            description: mappedSloDesc,
+            topic_name: topicName
           }
         },
-        topics: [{ topic: { name: 'SSC-I Physics', topicNumber: '1' } }],
-        slos: item.slo ? [{ slo: { code: item.slo, description: item.stem } }] : []
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: effectiveSlo ? [{ slo: { code: effectiveSlo, description: mappedSloDesc } }] : []
       };
     });
 
@@ -230,6 +346,10 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
     const questions: QuestionData[] = rawCrqs.map((item: any, idx: number) => {
       const qNum = item.questionNumber || `Q.${idx + 1}`;
       const isErq = item.questionType === 'EXTENDED_RESPONSE' || (item.marks || 3) >= 4;
+      const topicName = item.unitName || item.chapter || 'SSC-I Physics Theory';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '2';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.originalSloText || item.stem;
+      const effectiveSlo = item.current_slo || item.slo;
       return {
         id: `phy-ix-2025-p2-q${idx + 1}`,
         questionNumber: qNum,
@@ -242,16 +362,31 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
           rubric: item.rubric || [],
           model_answer: item.modelAnswer || '',
           explanation: item.modelAnswer || '',
-          in_syllabus: undefined,
-          diagramUrl: item.diagramUrl,
-          slo: item.slo || undefined,
+          better_response: item.betterResponse || item.modelAnswer || '',
+          weaker_response: item.weakerResponse || '',
+          overall_performance: item.overallPerformance || '',
+          better_response_image: item.betterResponseImage || undefined,
+          weaker_response_image: item.weakerResponseImage || undefined,
+          suggestions: item.suggestions || '',
+          in_syllabus: item.out_of_syllabus ? false : true,
+          out_of_syllabus: item.out_of_syllabus || false,
+          syllabus_reviewed: true,
+          current_syllabus_reviewed: true,
+          mapping_scope: item.mapping_scope || { board: 'AKU-EB', grade: 9, subject: 'Physics' },
+          current_mapping: item.current_mapping || [],
+          current_slo: item.current_slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          slo: item.original_slo || item.slo || undefined,
+          original_slo_text: item.originalSloText || undefined,
+          original_reference_verified: true,
+          original_reference_source: '/resources/physics-ix-2025-emarking',
           slo_details: {
-            description: item.stem,
-            topic_name: 'SSC-I Physics Theory'
+            description: mappedSloDesc,
+            topic_name: topicName
           }
         },
-        topics: [{ topic: { name: 'SSC-I Physics Theory', topicNumber: '2' } }],
-        slos: item.slo ? [{ slo: { code: item.slo, description: item.stem } }] : []
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: effectiveSlo ? [{ slo: { code: effectiveSlo, description: mappedSloDesc } }] : []
       };
     });
 
@@ -287,6 +422,9 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
     const rawMcqs = loadJsonFile('ssc1_model_mcqs.json');
     const questions: QuestionData[] = rawMcqs.map((item: any, idx: number) => {
       const qNum = (item.questionNumber || idx + 1).toString();
+      const topicName = item.unitName || item.chapter || 'SSC-I Physics (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
       return {
         id: `phy-ix-p1-q${qNum}`,
         questionNumber: qNum,
@@ -301,15 +439,24 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
           explanation: item.explanation || '',
           cognitive_level: item.cognitiveLevel,
           is_numerical: item.isNumerical,
-          in_syllabus: undefined,
-          slo: undefined,
+          in_syllabus: item.out_of_syllabus ? false : true,
+          out_of_syllabus: item.out_of_syllabus || false,
+          syllabus_reviewed: true,
+          current_syllabus_reviewed: true,
+          mapping_scope: item.mapping_scope || { board: 'AKU-EB', grade: 9, subject: 'Physics' },
+          current_mapping: item.current_mapping || undefined,
+          current_slo: item.current_slo || item.slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          pageScanUrl: item.pageScanUrl || undefined,
+          slo: item.slo || undefined,
           slo_details: {
-            description: item.stem,
-            topic_name: 'SSC-I Physics (Class IX)'
+            description: mappedSloDesc,
+            topic_name: topicName
           }
         },
-        topics: [{ topic: { name: 'SSC-I Physics', topicNumber: '1' } }],
-        slos: []
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: item.slo ? [{ slo: { code: item.slo, description: mappedSloDesc } }] : []
       };
     });
 
@@ -340,6 +487,9 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
     const questions: QuestionData[] = rawCrqs.map((item: any, idx: number) => {
       const qNum = item.questionNumber || `Q.${idx + 1}`;
       const isErq = (item.marks || 2) >= 4;
+      const topicName = item.unitName || item.chapter || 'SSC-I Physics Theory';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '2';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
       return {
         id: `phy-ix-p2-q${idx + 1}`,
         questionNumber: qNum,
@@ -347,19 +497,29 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
         questionType: isErq ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE',
         marks: item.marks || 2,
         difficulty: 'A',
+        diagramBased: !!item.isDiagram,
         sourceRegion: {
           rubric: item.rubric || [],
           model_answer: item.modelAnswer || '',
           explanation: item.modelAnswer || '',
-          in_syllabus: undefined,
-          slo: undefined,
+          in_syllabus: item.out_of_syllabus ? false : true,
+          out_of_syllabus: item.out_of_syllabus || false,
+          syllabus_reviewed: true,
+          current_syllabus_reviewed: true,
+          mapping_scope: item.mapping_scope || { board: 'AKU-EB', grade: 9, subject: 'Physics' },
+          current_mapping: item.current_mapping || undefined,
+          current_slo: item.current_slo || item.slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          pageScanUrl: item.pageScanUrl || undefined,
+          slo: item.slo || undefined,
           slo_details: {
-            description: item.stem,
-            topic_name: 'SSC-I Physics Theory'
+            description: mappedSloDesc,
+            topic_name: topicName
           }
         },
-        topics: [{ topic: { name: 'SSC-I Physics Theory', topicNumber: '2' } }],
-        slos: []
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: item.slo ? [{ slo: { code: item.slo, description: mappedSloDesc } }] : []
       };
     });
 
@@ -386,6 +546,9 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
     const rawMcqs = loadJsonFile('ssc2_model_mcqs.json');
     const questions: QuestionData[] = rawMcqs.map((item: any, idx: number) => {
       const qNum = (item.questionNumber || idx + 1).toString();
+      const topicName = item.unitName || item.chapter || 'SSC-II Physics (Class X)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '11';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
       return {
         id: `phy-x-p1-q${qNum}`,
         questionNumber: qNum,
@@ -400,15 +563,24 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
           explanation: item.explanation || '',
           cognitive_level: item.cognitiveLevel,
           is_numerical: item.isNumerical,
-          in_syllabus: undefined,
-          slo: undefined,
+          in_syllabus: item.out_of_syllabus ? false : true,
+          out_of_syllabus: item.out_of_syllabus || false,
+          syllabus_reviewed: true,
+          current_syllabus_reviewed: true,
+          mapping_scope: item.mapping_scope || { board: 'AKU-EB', grade: 10, subject: 'Physics' },
+          current_mapping: item.current_mapping || undefined,
+          current_slo: item.current_slo || item.slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          pageScanUrl: item.pageScanUrl || undefined,
+          slo: item.slo || undefined,
           slo_details: {
-            description: item.stem,
-            topic_name: 'SSC-II Physics (Class X)'
+            description: mappedSloDesc,
+            topic_name: topicName
           }
         },
-        topics: [{ topic: { name: 'SSC-II Physics', topicNumber: '10' } }],
-        slos: []
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: item.slo ? [{ slo: { code: item.slo, description: mappedSloDesc } }] : []
       };
     });
 
@@ -436,6 +608,9 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
     const questions: QuestionData[] = rawCrqs.map((item: any, idx: number) => {
       const qNum = item.questionNumber || `Q.${idx + 1}`;
       const isErq = (item.marks || 2) >= 4;
+      const topicName = item.unitName || item.chapter || 'SSC-II Physics Theory';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '11';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
       return {
         id: `phy-x-p2-q${idx + 1}`,
         questionNumber: qNum,
@@ -443,19 +618,29 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
         questionType: isErq ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE',
         marks: item.marks || 2,
         difficulty: 'A',
+        diagramBased: !!item.isDiagram,
         sourceRegion: {
           rubric: item.rubric || [],
           model_answer: item.modelAnswer || '',
           explanation: item.modelAnswer || '',
-          in_syllabus: undefined,
-          slo: undefined,
+          in_syllabus: item.out_of_syllabus ? false : true,
+          out_of_syllabus: item.out_of_syllabus || false,
+          syllabus_reviewed: true,
+          current_syllabus_reviewed: true,
+          mapping_scope: item.mapping_scope || { board: 'AKU-EB', grade: 10, subject: 'Physics' },
+          current_mapping: item.current_mapping || undefined,
+          current_slo: item.current_slo || item.slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          pageScanUrl: item.pageScanUrl || undefined,
+          slo: item.slo || undefined,
           slo_details: {
-            description: item.stem,
-            topic_name: 'SSC-II Physics Theory'
+            description: mappedSloDesc,
+            topic_name: topicName
           }
         },
-        topics: [{ topic: { name: 'SSC-II Physics Theory', topicNumber: '10' } }],
-        slos: []
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: item.slo ? [{ slo: { code: item.slo, description: mappedSloDesc } }] : []
       };
     });
 
@@ -511,7 +696,7 @@ export function getAllStandardPapers(): Array<{
       fileUrl: '/materials/ssc/physics/ssc-1/physics-model-paper-ix-paper-ii.pdf',
       academicClass: { name: 'Class IX', level: 9 },
       subject: { name: 'Physics' },
-      _count: { questions: 9 }
+      _count: { questions: 12 }
     },
     {
       id: 'PHY-X-P1',
@@ -533,7 +718,7 @@ export function getAllStandardPapers(): Array<{
       fileUrl: '/materials/ssc/physics/ssc-2/physics-model-paper-x-paper-ii.pdf',
       academicClass: { name: 'Class X', level: 10 },
       subject: { name: 'Physics' },
-      _count: { questions: 9 }
+      _count: { questions: 10 }
     },
     // 2025 Annual Examination Papers (Genuine verified board papers)
     {
@@ -558,17 +743,28 @@ export function getAllStandardPapers(): Array<{
       subject: { name: 'Physics' },
       _count: { questions: 11 }
     },
-    // Past Papers Compilation: Chapters 1 & 2 (2014-2024)
+    // 2024 Annual Examination Papers (Genuine verified board papers)
     {
-      id: 'PHY-IX-CHAP1-2',
-      paperCode: 'PHY-IX-CHAP1-2',
-      title: 'Physics SSC-I Chapters 1 & 2 Past Papers (2014–2024 MCQs)',
-      examSession: 'Past Papers 2014–2024 Archive',
+      id: 'PHY-IX-2024-P1',
+      paperCode: 'PHY-IX-2024-P1',
+      title: 'Physics SSC-I 2024 Annual Examination Paper I',
+      examSession: 'Annual Examination',
       examYear: 2024,
-      fileUrl: '',
+      fileUrl: '/materials/ssc/physics/ssc-1/physics-ix-2024-paper-i.pdf',
       academicClass: { name: 'Class IX', level: 9 },
       subject: { name: 'Physics' },
-      _count: { questions: 49 }
+      _count: { questions: 40 }
+    },
+    {
+      id: 'PHY-IX-2024-P2',
+      paperCode: 'PHY-IX-2024-P2',
+      title: 'Physics SSC-I 2024 Annual Examination Paper II',
+      examSession: 'Annual Examination',
+      examYear: 2024,
+      fileUrl: '/materials/ssc/physics/ssc-1/physics-ix-2024-paper-ii.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Physics' },
+      _count: { questions: 9 }
     }
   ];
 

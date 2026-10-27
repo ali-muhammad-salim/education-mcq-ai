@@ -19,7 +19,7 @@ await requireUser(req, ['ADMIN']); const id = z.string().min(1).max(80).parse(re
 export async function PATCH(req: NextRequest) {
   try {
 const user = await requireUser(req, ['ADMIN']); const input = z.object({ documentId: z.string().max(80), metadataHash: z.string().length(64), effectiveFrom: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), plan: curriculumPlan, note: z.string().trim().min(30).max(4000) }).parse(await req.json());
-    if (Number.isNaN(Date.parse(input.effectiveFrom)) || new Date(input.effectiveFrom).toISOString().slice(0, 10) !== input.effectiveFrom) throw new ApiError(422, 'INVALID_EDITION_DATE', 'Use the printed edition or revision date.');
+    if (Number.isNaN(Date.parse(input.effectiveFrom)) || new Date(input.effectiveFrom).toISOString().slice(0, 10) !== input.effectiveFrom) throw new ApiError(422, 'INVALID_EDITION_DATE', 'Use the printed effective date.');
     const result = await prisma.$transaction(async tx => {
       await tx.$queryRaw`SELECT id FROM "KnowledgeDocument" WHERE id=${input.documentId} FOR UPDATE`;
       const doc = await tx.knowledgeDocument.findUniqueOrThrow({ where: { id: input.documentId } });

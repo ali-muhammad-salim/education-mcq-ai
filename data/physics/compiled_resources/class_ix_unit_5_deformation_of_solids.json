@@ -12,7 +12,7 @@
     },
     {
       "term": "Learning Outcome 5.1.2",
-      "definition": "state Hooke\u2019s law;",
+      "definition": "state Hooke’s law;",
       "slo_code": "5.1.2",
       "cognitive_level": "R"
     },
@@ -30,7 +30,7 @@
     },
     {
       "term": "Learning Outcome 5.1.5",
-      "definition": "describe applications of Hook\u2019s law in measuring instruments such as spring scale, galvanometer, and balance wheel of mechanical clock;",
+      "definition": "describe applications of Hook’s law in measuring instruments such as spring scale, galvanometer, and balance wheel of mechanical clock;",
       "slo_code": "5.1.5",
       "cognitive_level": "U"
     },
@@ -72,7 +72,7 @@
     },
     {
       "question_number": "19",
-      "stem_text": "Let suppose, a hole is drilled through the Earth along the diametre and a stone is dropped into it. Suppose when the stone reaches the Earth\u2019s centre keeping same size and shape, it will have constant",
+      "stem_text": "Let suppose, a hole is drilled through the Earth along the diametre and a stone is dropped into it. Suppose when the stone reaches the Earth’s centre keeping same size and shape, it will have constant",
       "options": [
         "A. mass.",
         "B. weight.",
@@ -89,7 +89,7 @@
       "stem_text": "A satellite is revolving around the Earth in a circular orbit with velocity v. If the gravitational force between the satellite and the Earth suddenly disappears, then the velocity of the satellite will be",
       "options": [
         "A. 0",
-        "B. \u00bd v",
+        "B. ½ v",
         "C. v",
         "D. 2v"
       ],
@@ -99,7 +99,30 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "State Hooke's law and define the limit of proportionality on a load–extension graph.",
+      "marks": 3,
+      "slo_code": "5.1.2",
+      "answer": "Hooke's law states that within the limit of proportionality, the extension of a spring is directly proportional to the applied stretching force (F = kx). The limit of proportionality is the point beyond which the load–extension graph ceases to be a straight line.",
+      "source": "AKU-EB Syllabus 2025 Unit 5"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Describe an experiment to determine the spring constant k of a helical spring and interpret the elastic limit on its load–extension curve.",
+      "marks": 4,
+      "slo_code": "5.1.3",
+      "answer": "Suspend a helical spring vertically next to a millimetre scale, record pointer readings for incremental slotted weights, and plot Load F against Extension x. The gradient F/x in the linear region gives the spring constant k.",
+      "source": "AKU-EB Syllabus 2025 Unit 5"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "A helical spring of unstretched length 15 cm extends to 21 cm when a load of 12 N is suspended from it. Calculate its spring constant k in N/m.",
+      "slo_code": "5.1.4",
+      "formula": "k = F / x",
+      "solution": "Extension x = 21 cm - 15 cm = 6 cm = 0.06 m. Therefore k = 12 N / 0.06 m = 200 N/m."
+    }
+  ]
 }

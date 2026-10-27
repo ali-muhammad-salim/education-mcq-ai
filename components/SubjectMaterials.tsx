@@ -40,10 +40,30 @@ export default async function SubjectMaterials({
         !(legacy && scope.classDef.level === 9) && !available("past_paper"),
     },
     {
-      label: "Books",
+      label: "Books & resource guides",
       href: scope.baseUrl + "/books",
       pending: !legacy && !available("textbook"),
     },
+    ...(legacy
+      ? [
+          {
+            label: "Teaching & learning resource guide",
+            href:
+              scope.classDef.level === 9
+                ? "/resources/physics-ix-resource-guide"
+                : "/resources/physics-x-resource-guide",
+            pending: false,
+          },
+          {
+            label: "28-week instructional pacing guide",
+            href:
+              scope.classDef.level === 9
+                ? "/resources/physics-ix-pacing-guide"
+                : "/resources/physics-x-pacing-guide",
+            pending: false,
+          },
+        ]
+      : []),
     ...(
       [
         ["CHAPTER_NOTES", "Chapter notes"],

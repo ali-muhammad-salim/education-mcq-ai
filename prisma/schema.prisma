@@ -142,7 +142,6 @@ model SLO {
   isPractical    Boolean       @default(false)
   fingerprint    String?       // normalized text hash for cross-version matching
   sourcePage     Int?          // page in syllabus PDF
-  sourceOrdinal  Int?          // order within a reviewed source page, including repeated printed codes
   isFormative    Boolean       @default(false) // FA: not assessed under exam conditions
   embedding      Unsupported("vector(768)")?
 
@@ -155,9 +154,8 @@ model SLO {
   sourceMappings SLOMapping[] @relation("SourceSLO")
   targetMappings SLOMapping[] @relation("TargetSLO")
 
-  // Printed syllabuses can reuse one code for distinct outcomes (Biology 2025: 16.2.4).
-  // Keep both verbatim and distinguish them by immutable ID/description.
-  @@index([subtopicId, code])
+  @@unique([subtopicId, code])
+  @@index([subtopicId])
 }
 
 // Structured paper pattern (sections, marks, K/U/A split, chapter weightage)

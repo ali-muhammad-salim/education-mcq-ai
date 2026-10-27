@@ -211,7 +211,37 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Write any THREE differences between evaporation and boiling.",
+      "marks": 3,
+      "slo_code": "8.2.8",
+      "answer": "1. Evaporation occurs at any temperature, whereas boiling occurs only at the fixed boiling point. 2. Evaporation takes place only at the liquid surface, whereas boiling occurs throughout the liquid volume with bubble formation. 3. Evaporation causes cooling, whereas temperature remains constant during boiling.",
+      "source": "AKU-EB SSC-I 2025 Annual Paper II Q.4"
+    },
+    {
+      "question": "The temperature of a metal rim is increased before fixing it onto a wooden cartwheel. Give a scientific reason.",
+      "marks": 2,
+      "slo_code": "8.2.9",
+      "answer": "Heating causes thermal expansion of the metal rim, increasing its diameter so it slips easily over the wooden wheel; upon cooling, it contracts tightly onto the wheel.",
+      "source": "AKU-EB SSC-I Model Paper II Q.4"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Explain the temperature–time heating curve when crushed ice at -10°C is slowly heated until it turns into steam at 100°C, identifying why the temperature remains constant during melting and boiling.",
+      "marks": 5,
+      "slo_code": "8.2.5",
+      "answer": "During melting at 0°C (latent heat of fusion) and boiling at 100°C (latent heat of vaporisation), absorbed heat energy goes into overcoming intermolecular forces rather than increasing average translational kinetic energy, so temperature stays constant.",
+      "source": "AKU-EB SSC-I Sample Practical Paper III"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "Convert a temperature of 20°C into the Kelvin (K) and Fahrenheit (°F) scales.",
+      "slo_code": "8.3.3",
+      "formula": "T(K) = T(°C) + 273; T(°F) = 1.8 T(°C) + 32",
+      "solution": "T(K) = 20 + 273 = 293 K; T(°F) = (1.8 × 20) + 32 = 68°F."
+    }
+  ]
 }

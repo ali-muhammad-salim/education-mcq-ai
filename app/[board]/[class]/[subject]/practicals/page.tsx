@@ -5,6 +5,7 @@ import { studyScope } from "@/services/study/navigation";
 import styles from "@/components/MaterialLayout.module.css";
 import { subjectMaterials } from '@/services/materials/catalog';
 import MaterialList from '@/components/MaterialList';
+import ssc1Practicals from '@/data/physics/ssc1_practicals.json';
 export const dynamic='force-dynamic';
 export default async function Page({
   params,
@@ -35,8 +36,28 @@ export default async function Page({
         ]}
       />
       <h1>Practicals</h1>
-      {documents.length ? <MaterialList items={documents.map(doc=>({label:doc.metadata.title||'Practical paper',href:'/materials/'+doc.id}))}/> : original ? (
-        <DocumentViews title="Practical paper" original={original} />
+      {documents.length ? (
+        <MaterialList items={documents.map(doc=>({label:doc.metadata.title||'Practical paper',href:'/materials/'+doc.id}))}/>
+      ) : original ? (
+        <DocumentViews title="Practical paper" original={original}>
+          <div className={styles.digital} style={{display:'flex',flexDirection:'column',gap:'1.25rem'}}>
+            <div style={{padding:'1rem',border:'1px solid var(--border-color)',borderRadius:10}}>
+              <h2 style={{marginTop:0}}>Model Examination Paper 2026 & Onwards — Physics Paper III</h2>
+              <p><strong>Time Allowed:</strong> 40 minutes · <strong>Total Marks:</strong> 10 · <strong>Objective:</strong> To draw a graph between temperature and time, when ice is converted into water and then into steam by slow heating.</p>
+            </div>
+            {ssc1Practicals.map((item) => (
+              <article key={item.pageNumber} style={{padding:'1rem',border:'1px solid var(--border-color)',borderRadius:10}}>
+                <div style={{display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:'.5rem',marginBottom:'.5rem'}}>
+                  <strong>{item.title}</strong>
+                  <span>{item.stage} · {item.marks} Marks · SLO <code>{item.slo}</code></span>
+                </div>
+                <p><strong>Topic:</strong> {item.topic}</p>
+                <p><strong>Apparatus:</strong> {item.apparatus}</p>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </DocumentViews>
       ) : (
         <p className={styles.muted}>Coming soon</p>
       )}

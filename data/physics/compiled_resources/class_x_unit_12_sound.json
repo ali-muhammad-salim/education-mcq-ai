@@ -154,18 +154,41 @@
       "question_number": "8",
       "stem_text": "Four vibrating objects X1, X2, X3 and X4 are producing sounds. The object that produces the loudest sound is",
       "options": [
-        "A. X1 (Area: 5 m\u00b2, Amplitude: 4 cm)",
-        "B. X2 (Area: 6 m\u00b2, Amplitude: 4 cm)",
-        "C. X3 (Area: 10 m\u00b2, Amplitude: 1 cm)",
-        "D. X4 (Area: 10 m\u00b2, Amplitude: 5 cm)"
+        "A. X1 (Area: 5 m², Amplitude: 4 cm)",
+        "B. X2 (Area: 6 m², Amplitude: 4 cm)",
+        "C. X3 (Area: 10 m², Amplitude: 1 cm)",
+        "D. X4 (Area: 10 m², Amplitude: 5 cm)"
       ],
       "correct_option": "D",
-      "explanation": "Loudness of sound depends on both the surface area and the amplitude of vibration (specifically proportional to the square of the amplitude and the area). Object X4 has the maximum area (10 m\u00b2) combined with the largest amplitude (5 cm), making it produce the loudest sound.",
+      "explanation": "Loudness of sound depends on both the surface area and the amplitude of vibration (specifically proportional to the square of the amplitude and the area). Object X4 has the maximum area (10 m²) combined with the largest amplitude (5 cm), making it produce the loudest sound.",
       "marks": 1.0,
       "cognitive_level": "Application"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Distinguish between loudness, pitch, and quality (timbre) of sound and state the physical wave factor on which each depends.",
+      "marks": 3,
+      "slo_code": "12.2.3",
+      "answer": "Loudness depends on amplitude and surface area of the vibrating body; pitch depends on frequency; quality (timbre) depends on the waveform (harmonics/overtones).",
+      "source": "AKU-EB Syllabus 2025 Unit 12"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Ali produces a sound in a big empty hall and hears a recurring sound resembling his original sound. i. Name and define the phenomenon. ii. Explain how it is produced in FOUR points.",
+      "marks": 6,
+      "slo_code": "12.3.1",
+      "answer": "i. Echo: The reflection of sound waves from a hard distant surface back to the listener. ii. 1. Sound waves travel outward from the source. 2. They strike a distant rigid wall (at least 17 m away in air). 3. Waves reflect back toward the listener. 4. Reflected sound arrives at least 0.1 s after the original sound (persistence of hearing).",
+      "source": "AKU-EB SSC-II Model Paper II Q.6(b)"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "A ship sends an ultrasound pulse to the seabed and receives the echo after 1.6 s. If the speed of sound in seawater is 1500 m/s, calculate the depth of the sea.",
+      "slo_code": "12.3.3",
+      "formula": "d = (v × t) / 2",
+      "solution": "d = (1500 m/s × 1.6 s) / 2 = 1200 m."
+    }
+  ]
 }

@@ -80,7 +80,7 @@
     },
     {
       "question_number": "38",
-      "stem_text": "Radiations\u2019 incident on a surface increases its temperature. Which of the following characteristics should be present in a surface that can protect itself MOST effectively against radiation?",
+      "stem_text": "Radiations’ incident on a surface increases its temperature. Which of the following characteristics should be present in a surface that can protect itself MOST effectively against radiation?",
       "options": [
         "A. Poor absorber and poor emitter",
         "B. Poor absorber and good emitter",
@@ -121,7 +121,30 @@
       "cognitive_level": "Understanding"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Differentiate between a scientific hypothesis, a theory, and a scientific law with an example from physics.",
+      "marks": 3,
+      "slo_code": "10.3.1",
+      "answer": "A hypothesis is a testable tentative explanation of an observation; a theory is a well-substantiated explanation supported by repeated experiments (e.g., Kinetic Molecular Theory); a law is a concise mathematical or verbal statement of a universal relationship (e.g., Newton's Law of Gravitation).",
+      "source": "AKU-EB Syllabus 2025 Unit 10"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Differentiate between science, technology, and engineering, and describe how physics principles enable modern medical and communication technologies.",
+      "marks": 4,
+      "slo_code": "10.4.1",
+      "answer": "Science discovers natural laws through inquiry; technology applies scientific knowledge to practical tools; engineering designs and optimises systems under real-world constraints (e.g., optical fibres using total internal reflection, MRI using electromagnetism).",
+      "source": "AKU-EB Syllabus 2025 Unit 10"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "In a controlled experiment verifying T ∝ √l for a pendulum, the length is quadrupled (4l). By what factor does the predicted time period change according to the scientific model?",
+      "slo_code": "10.3.1",
+      "formula": "T₂ / T₁ = √(l₂ / l₁)",
+      "solution": "T₂ / T₁ = √(4l / l) = 2. The time period doubles."
+    }
+  ]
 }

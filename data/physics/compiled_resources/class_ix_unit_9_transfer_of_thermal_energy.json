@@ -12,7 +12,7 @@
     },
     {
       "term": "Learning Outcome 9.1.2",
-      "definition": "define the term \u2018thermal conductivity\u2019;",
+      "definition": "define the term ‘thermal conductivity’;",
       "slo_code": "9.1.2",
       "cognitive_level": "R"
     },
@@ -96,7 +96,7 @@
     },
     {
       "term": "Learning Outcome 9.4.3",
-      "definition": "explore the impacts of heat transfer and conservation on people\u2019s bedding and clothing in various climatic regions of South Asia.",
+      "definition": "explore the impacts of heat transfer and conservation on people’s bedding and clothing in various climatic regions of South Asia.",
       "slo_code": "9.4.3",
       "cognitive_level": "A"
     }
@@ -108,7 +108,7 @@
       "options": [
         "A. it is less in quantity.",
         "B. it is in a capillary tube.",
-        "C. of the shape of the thermometer\u2019s bulb.",
+        "C. of the shape of the thermometer’s bulb.",
         "D. of the constriction in the capillary tube."
       ],
       "correct_option": "D",
@@ -164,7 +164,7 @@
       "options": [
         "A. increases.",
         "B. decreases.",
-        "C. becomes 100\u00b0C.",
+        "C. becomes 100°C.",
         "D. remains constant."
       ],
       "correct_option": "B",
@@ -187,7 +187,30 @@
       "cognitive_level": "Application"
     }
   ],
-  "crqs": [],
-  "erqs": [],
-  "numericals": []
+  "crqs": [
+    {
+      "question": "Walking barefoot on a carpet feels warmer than walking on marble tiles in winter. Give a scientific reason.",
+      "marks": 2,
+      "slo_code": "9.1.2",
+      "answer": "Tiles are much better thermal conductors than carpet fibres and rapidly conduct heat away from the bare feet, making the feet feel cold.",
+      "source": "AKU-EB SSC-I Model Paper II Q.5(b)"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "A copper rod is 20 m long with a cross-sectional area of 4 m². If its two ends are kept at 200°C and 300°C respectively, calculate the amount of heat flowing across the rod in one second (k = 386.4 J/m·K·s).",
+      "marks": 3,
+      "slo_code": "9.1.4",
+      "answer": "Using Q/t = kA(T₁ - T₂)/L: Q/t = (386.4 × 4 × (300 - 200)) / 20 = (386.4 × 400) / 20 = 7728 J/s (7728 J in 1 s).",
+      "source": "AKU-EB SSC-I 2025 Annual Paper II Q.5"
+    }
+  ],
+  "numericals": [
+    {
+      "problem": "A concrete wall of thickness 0.25 m and area 10 m² has an inside temperature of 25°C and outside temperature of 5°C. If k = 0.8 W/m·K, find the rate of heat conduction.",
+      "slo_code": "9.1.4",
+      "formula": "Q/t = kAΔT / L",
+      "solution": "Q/t = (0.8 × 10 × (25 - 5)) / 0.25 = 160 / 0.25 = 640 W."
+    }
+  ]
 }
