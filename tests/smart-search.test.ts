@@ -26,13 +26,13 @@ describe('Typo-tolerant and synonym-aware smart search', () => {
   });
 
   it('filters syllabus outcomes accurately across typos, synonyms, and exact SLO codes', () => {
-    const exact = filterSyllabus(physicsIX, '1.2.2', 'all', 'all').flatMap(u => u.subtopics.flatMap((s: any) => s.slos));
-    expect(exact.map((s: any) => s.code)).toEqual(['1.2.2']);
+    const exact = filterSyllabus(physicsIX, '1.2.2', 'all', 'all').flatMap(u => u.subtopics.flatMap((s: { slos: { code: string }[] }) => s.slos));
+    expect(exact.map((s: { code: string }) => s.code)).toEqual(['1.2.2']);
 
-    const typoKinematics = filterSyllabus(physicsIX, 'kinametics', 'all', 'all').flatMap(u => u.subtopics.flatMap((s: any) => s.slos));
+    const typoKinematics = filterSyllabus(physicsIX, 'kinametics', 'all', 'all').flatMap(u => u.subtopics.flatMap((s: { slos: unknown[] }) => s.slos));
     expect(typoKinematics.length).toBeGreaterThan(0);
 
-    const synonymVoltage = filterSyllabus(physicsX, 'voltage', 'all', 'all').flatMap(u => u.subtopics.flatMap((s: any) => s.slos));
+    const synonymVoltage = filterSyllabus(physicsX, 'voltage', 'all', 'all').flatMap(u => u.subtopics.flatMap((s: { slos: unknown[] }) => s.slos));
     expect(synonymVoltage.length).toBeGreaterThan(0);
   });
 });
