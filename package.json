@@ -24,8 +24,7 @@
     "test:http": "node scripts/test_routes.js",
     "check:readiness": "node scripts/check-readiness.cjs",
     "test:load": "node scripts/load-assessment.cjs",
-    "test:deadline": "node scripts/test-deadline-worker.cjs",
-    "db:sync-materials": "tsx scripts/sync_all_analyzed_materials_to_db.ts"
+    "test:deadline": "node scripts/test-deadline-worker.cjs"
   },
   "repository": {
     "type": "git",
