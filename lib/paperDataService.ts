@@ -9,6 +9,8 @@ import ssc1Past2025Mcqs from '@/data/physics/ssc1_2025_past_mcqs.json';
 import ssc1Past2025Crqs from '@/data/physics/ssc1_2025_past_crqs.json';
 import ssc1Past2024Mcqs from '@/data/physics/ssc1_2024_past_mcqs.json';
 import ssc1Past2024Crqs from '@/data/physics/ssc1_2024_past_crqs.json';
+import key2024 from '@/data/physics/ssc1_2024_official_key.json';
+import { annual2024AnswerReviews } from '@/lib/legacyPaperEvidence';
 
 export interface QuestionData {
   id: string;
@@ -44,6 +46,9 @@ export interface QuestionData {
     original_slo_text?: string;
     original_reference_verified?: boolean;
     original_reference_source?: string;
+    official_answer?: string;
+    answer_review_note?: string;
+    answer_origin?: string;
     diagramUrl?: string;
     pageNumber?: number;
     pageScanUrl?: string;
@@ -149,6 +154,8 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
       const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
       const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
       const effectiveSlo = item.current_slo || item.slo;
+      const reviewNote = annual2024AnswerReviews[Number(qNum)];
+      const printedAnswer = key2024.entries.find(entry => entry.questionNumber === Number(qNum))?.printedKey;
       return {
         id: `phy-ix-2024-p1-q${qNum}`,
         questionNumber: qNum,
@@ -160,7 +167,9 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
         sourceRegion: {
           choices: item.options || {},
           correct_answer: item.correctOption || '',
-          explanation: item.explanation || '',
+          explanation: [item.explanation, reviewNote ? `Source review: ${reviewNote}` : ''].filter(Boolean).join('\n\n'),
+          ...(reviewNote ? { answer_review_note: reviewNote, answer_origin: 'PROVISIONAL_SOURCE_KEY' } : {}),
+          ...(printedAnswer ? { official_answer: printedAnswer } : {}),
           option_feedback: item.option_feedback || undefined,
           cognitive_level: item.cognitiveLevel,
           is_numerical: item.isNumerical,

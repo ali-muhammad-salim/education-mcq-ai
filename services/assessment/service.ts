@@ -18,8 +18,9 @@ export type LoadedQuiz = Prisma.QuizGetPayload<{ include: typeof quizInclude }>;
 const practiceCodes: Record<string, string> = {
   'SAMPLE-QUIZ-PHY-9': 'PHY-IX-P1', 'SAMPLE-QUIZ-PHY-10': 'PHY-X-P1',
   'SAMPLE-QUIZ-KINEMATICS': 'PHY-IX-P1', 'SAMPLE-QUIZ-WAVES': 'PHY-X-P1',
+  'SAMPLE-QUIZ-PHY-CHAP-1-2': 'PHY-IX-CHAP1-2',
 };
-const allowedPractice = new Set(['PHY-IX-P1', 'PHY-IX-P2', 'PHY-X-P1', 'PHY-X-P2', 'PHY-IX-2025-P1', 'PHY-IX-2025-P2', 'PHY-IX-2024-P1', 'PHY-IX-2024-P2']);
+const allowedPractice = new Set(['PHY-IX-P1', 'PHY-IX-P2', 'PHY-X-P1', 'PHY-X-P2', 'PHY-IX-CHAP1-2', 'PHY-IX-2025-P1', 'PHY-IX-2025-P2', 'PHY-IX-2024-P1', 'PHY-IX-2024-P2']);
 
 // Source JSON can represent an absent diagram as null; assessment input uses
 // omitted optional fields. Normalize at this boundary, keeping teacher input strict.

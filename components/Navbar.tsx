@@ -8,7 +8,7 @@ import {
   Atom, FlaskConical, Dna, Calculator, Binary, BookText,
   Languages, Moon, Sun, MapPin, Menu, X, FileText, Layers, Download,
   User as UserIcon, LogOut, LayoutDashboard, Award, UploadCloud, ShieldCheck,
-  Monitor, KeyRound, Play, AlertCircle, Loader2, Search as SearchIcon
+  Monitor, KeyRound, Play, AlertCircle, Loader2
 } from 'lucide-react';
 import AuthModal from '@/components/AuthModal';
 import { useDialog } from '@/lib/use-dialog';
@@ -117,47 +117,6 @@ export default function Navbar() {
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
   const [themeMode, setThemeMode] = useState<'system' | 'light' | 'dark'>('system');
   const [isDarkEffective, setIsDarkEffective] = useState<boolean>(false);
-
-  // Universal Smart Search Modal States
-  const [searchModalOpen, setSearchModalOpen] = useState(false);
-  const [globalQuery, setGlobalQuery] = useState('');
-  const [globalType, setGlobalType] = useState<'ALL' | 'SLO' | 'QUESTION' | 'RESOURCE'>('ALL');
-  const [searchResults, setSearchResults] = useState<any[]>([]);
-  const [searchBusy, setSearchBusy] = useState(false);
-
-  useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault();
-        setSearchModalOpen(prev => !prev);
-      }
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, []);
-
-  useEffect(() => {
-    if (!searchModalOpen || globalQuery.trim().length < 2) {
-      setSearchResults([]);
-      setSearchBusy(false);
-      return;
-    }
-    const ctrl = new AbortController();
-    setSearchBusy(true);
-    const timer = setTimeout(() => {
-      fetch(`/api/search?q=${encodeURIComponent(globalQuery.trim())}&type=${globalType}`, { signal: ctrl.signal })
-        .then(r => r.json())
-        .then(d => {
-          if (Array.isArray(d.results)) setSearchResults(d.results);
-        })
-        .catch(() => {})
-        .finally(() => setSearchBusy(false));
-    }, 180);
-    return () => {
-      clearTimeout(timer);
-      ctrl.abort();
-    };
-  }, [globalQuery, globalType, searchModalOpen]);
 
   // Quiz Code Join Modal States
   const [quizCodeModalOpen, setQuizCodeModalOpen] = useState(false);
@@ -721,31 +680,6 @@ export default function Navbar() {
           })}
 
 
-          {/* Universal Smart Search Button (Ctrl+K) */}
-          <button
-            type="button"
-            onClick={() => setSearchModalOpen(true)}
-            title="Search SLOs, Questions, Past Papers & Guides (Typo & Synonym Tolerant — Ctrl+K)"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.45rem',
-              background: isDarkEffective ? '#1e293b' : '#f8fafc',
-              border: isDarkEffective ? '1px solid #334155' : '1px solid #cbd5e1',
-              color: isDarkEffective ? '#e2e8f0' : '#334155',
-              borderRadius: '8px',
-              padding: '7px 12px',
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all 0.15s ease'
-            }}
-          >
-            <SearchIcon size={15} style={{ color: '#0b5e4a' }} />
-            <span>Search</span>
-            <kbd style={{ fontSize: '0.7rem', padding: '1px 5px', borderRadius: '4px', background: isDarkEffective ? '#0f172a' : '#e2e8f0', color: isDarkEffective ? '#94a3b8' : '#475569' }}>Ctrl+K</kbd>
-          </button>
-
           {/* Enter Quiz Code Button */}
           <button
             type="button"
@@ -1074,143 +1008,6 @@ export default function Navbar() {
         </div>
 
       </div>
-
-      {/* Universal Smart Search Modal (Embeddings + Typo + Synonym Search) */}
-      {searchModalOpen && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label="Universal smart search"
-          style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: 3100,
-            background: 'rgba(15, 23, 42, 0.72)',
-            backdropFilter: 'blur(5px)',
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            padding: '4rem 1rem 1rem'
-          }}
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setSearchModalOpen(false);
-          }}
-        >
-          <div
-            style={{
-              background: isDarkEffective ? '#0f172a' : '#ffffff',
-              border: isDarkEffective ? '1px solid #334155' : '1px solid #dce5e1',
-              borderRadius: '16px',
-              maxWidth: '680px',
-              width: '100%',
-              boxShadow: '0 24px 48px rgba(0,0,0,0.35)',
-              overflow: 'hidden'
-            }}
-          >
-            <div style={{ padding: '1rem 1.25rem', borderBottom: isDarkEffective ? '1px solid #1e293b' : '1px solid #e2e8f0', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <SearchIcon size={20} style={{ color: '#0b5e4a', flexShrink: 0 }} />
-              <input
-                type="search"
-                value={globalQuery}
-                onChange={(e) => setGlobalQuery(e.target.value)}
-                placeholder="Search SLOs, questions, papers (handles typos & synonyms like 'kinametics' or 'voltage')..."
-                autoFocus
-                style={{
-                  flex: 1,
-                  border: 'none',
-                  outline: 'none',
-                  background: 'transparent',
-                  fontSize: '1rem',
-                  fontWeight: 600,
-                  color: isDarkEffective ? '#f8fafc' : '#0f172a'
-                }}
-              />
-              <button
-                type="button"
-                aria-label="Close search"
-                onClick={() => setSearchModalOpen(false)}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#64748b', padding: '4px' }}
-              >
-                <X size={18} />
-              </button>
-            </div>
-
-            <div style={{ padding: '0.6rem 1.25rem', background: isDarkEffective ? '#1e293b' : '#f8fafc', display: 'flex', gap: '0.45rem', flexWrap: 'wrap', borderBottom: isDarkEffective ? '1px solid #334155' : '1px solid #e2e8f0' }}>
-              {[
-                { id: 'ALL', label: 'All Results' },
-                { id: 'SLO', label: 'Syllabus SLOs' },
-                { id: 'QUESTION', label: 'Past & Model Questions' },
-                { id: 'RESOURCE', label: 'Papers & Guides' },
-              ].map((t) => (
-                <button
-                  key={t.id}
-                  type="button"
-                  onClick={() => setGlobalType(t.id as any)}
-                  style={{
-                    padding: '4px 10px',
-                    borderRadius: '6px',
-                    border: 'none',
-                    fontSize: '0.78rem',
-                    fontWeight: 700,
-                    cursor: 'pointer',
-                    background: globalType === t.id ? '#0b5e4a' : 'transparent',
-                    color: globalType === t.id ? '#ffffff' : isDarkEffective ? '#cbd5e1' : '#475569'
-                  }}
-                >
-                  {t.label}
-                </button>
-              ))}
-            </div>
-
-            <div style={{ maxHeight: '420px', overflowY: 'auto', padding: '0.75rem 1.25rem' }}>
-              {globalQuery.trim().length < 2 ? (
-                <p style={{ margin: '1rem 0', fontSize: '0.88rem', color: '#64748b', textAlign: 'center' }}>
-                  Type at least 2 characters to search across all 337 SLOs, past papers, MCQs, CRQs, and guides.
-                </p>
-              ) : searchBusy ? (
-                <p style={{ margin: '1rem 0', fontSize: '0.88rem', color: '#0b5e4a', textAlign: 'center', fontWeight: 600 }}>
-                  Searching embeddings & smart index…
-                </p>
-              ) : searchResults.length === 0 ? (
-                <p style={{ margin: '1rem 0', fontSize: '0.88rem', color: '#64748b', textAlign: 'center' }}>
-                  No matching items found for &ldquo;{globalQuery}&rdquo;.
-                </p>
-              ) : (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {searchResults.map((item) => (
-                    <Link
-                      key={item.id}
-                      href={item.url || '/'}
-                      onClick={() => setSearchModalOpen(false)}
-                      style={{
-                        display: 'block',
-                        padding: '0.75rem 0.9rem',
-                        borderRadius: '10px',
-                        border: isDarkEffective ? '1px solid #334155' : '1px solid #e2e8f0',
-                        background: isDarkEffective ? '#1e293b' : '#ffffff',
-                        textDecoration: 'none',
-                        color: isDarkEffective ? '#f8fafc' : '#0f172a'
-                      }}
-                    >
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
-                        <strong style={{ fontSize: '0.9rem', color: '#0b5e4a' }}>{item.title}</strong>
-                        <span style={{ fontSize: '0.72rem', fontWeight: 700, padding: '2px 7px', borderRadius: '4px', background: '#e6f0ed', color: '#0b5e4a', whiteSpace: 'nowrap' }}>
-                          {item.badge || item.type}
-                        </span>
-                      </div>
-                      {item.description && (
-                        <div style={{ fontSize: '0.82rem', color: isDarkEffective ? '#cbd5e1' : '#475569', lineHeight: 1.45 }}>
-                          {item.description}
-                        </div>
-                      )}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Authentication Modal */}
       <AuthModal

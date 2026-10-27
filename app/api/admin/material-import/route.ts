@@ -5,6 +5,7 @@ import prisma from '@/lib/prisma';
 import { ApiError,apiError } from '@/lib/api';
 import { sourceRecheck } from '@/services/ingestion/recheck';
 import { z } from 'zod';
+import { Prisma } from '@prisma/client';
 export async function POST(req:NextRequest){return handleUpload(req,{bulk:true});}
 export async function PATCH(req:NextRequest){
   try{
@@ -32,5 +33,24 @@ export async function GET(req:NextRequest){
     const user=await requireUser(req,['ADMIN']),batch=z.string().regex(/^[a-f0-9]{64}$/).parse(req.nextUrl.searchParams.get('batch'));
     const jobs=await prisma.durableJob.findMany({where:{ownerId:user.id,kind:'INGESTION',payload:{path:['meta','importBatchId'],equals:batch}},orderBy:{createdAt:'asc'},take:201,select:{id:true,status:true,result:true,error:true,payload:true}});
     return NextResponse.json({jobs:jobs.slice(0,200).map(job=>({id:job.id,status:job.status,result:job.result,error:job.error,title:(job.payload as {meta?:{title?:string}})?.meta?.title,sha256:(job.payload as {meta?:{sourceSha256?:string}})?.meta?.sourceSha256})),truncated:jobs.length>200},{headers:{'Cache-Control':'no-store'}});
+  }catch(error){return apiError(error);}
+}
+/** Switch existing syllabus uploads to original-PDF text drafts without another upload or AI call. */
+export async function PUT(req:NextRequest){
+  try {
+    const user=await requireUser(req,['ADMIN']);
+    await rateLimit('bulk-syllabus-direct:'+user.id,2,3600);
+    const {batch}=z.object({batch:z.string().regex(/^[a-f0-9]{64}$/)}).parse(await req.json());
+    const jobs=await prisma.durableJob.findMany({where:{ownerId:user.id,kind:'INGESTION',payload:{path:['meta','importBatchId'],equals:batch}},take:201});
+    if(jobs.length>200)throw new ApiError(422,'IMPORT_BATCH_TOO_LARGE','Use a smaller reviewed syllabus batch.');
+    let queued=0,skipped=0;
+    for(const job of jobs){
+      const payload=job.payload as Record<string,unknown>;
+      if(payload.resourceType!=='syllabus'||!['QUEUED','FAILED'].includes(job.status)){skipped++;continue;}
+      const changed=await prisma.durableJob.updateMany({where:{id:job.id,ownerId:user.id,status:job.status},data:{payload:{...payload,directSourceDrafts:true} as Prisma.InputJsonObject,status:'QUEUED',attempts:0,availableAt:new Date(),lockedAt:null,leaseToken:null,error:null}});
+      queued+=changed.count;
+    }
+    await prisma.auditLog.create({data:{userId:user.id,action:'SYLLABUS_DIRECT_DRAFTS_QUEUED',resource:'ImportBatch',resourceId:batch,details:{queued,skipped}}});
+    return NextResponse.json({queued,skipped,message:'Original PDF text and page images will be prepared for direct visual review. No syllabus is published by this step.'});
   }catch(error){return apiError(error);}
 }
