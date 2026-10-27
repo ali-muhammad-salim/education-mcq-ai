@@ -10,7 +10,7 @@ import { subjectMaterials } from "@/services/materials/catalog";
 import { getAllStandardPapers } from "@/lib/paperDataService";
 import prisma from "@/lib/prisma";
 import {publicMaterialWhere} from '@/lib/materialVisibility';
-import { physics2025Resources } from '@/lib/legacyPaperEvidence';
+import { physics2024Resources, physics2025Resources } from '@/lib/legacyPaperEvidence';
 import rg9 from '@/data/physics/ssc1_resource_guide.json';
 import rg10 from '@/data/physics/ssc2_resource_guide.json';
 
@@ -50,7 +50,7 @@ export default async function SubjectResourceList({
     scope.board.id === "akueb" &&
     scope.meta.slug === "physics" &&
     [9, 10].includes(scope.classDef.level);
-  if (legacy && scope.classDef.level===9 && type==='past_paper' && !after) items.push(...physics2025Resources);
+  if (legacy && scope.classDef.level===9 && type==='past_paper' && !after) items.push(...physics2025Resources, ...physics2024Resources);
   if (type !== "textbook" && !after) {
     const stored = await prisma.pastPaper.findMany({
       where: {
