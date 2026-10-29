@@ -1,5 +1,6 @@
 import './globals.css';
 import './mobile.css';
+import './design-system.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BookOpen, GraduationCap, UploadCloud, ShieldCheck, ArrowRight, Mail } from 'lucide-react';
