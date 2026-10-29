@@ -80,7 +80,7 @@
     },
     {
       "question_number": "38",
-      "stem_text": "Radiations’ incident on a surface increases its temperature. Which of the following characteristics should be present in a surface that can protect itself MOST effectively against radiation?",
+      "stem_text": "Radiations\u2019 incident on a surface increases its temperature. Which of the following characteristics should be present in a surface that can protect itself MOST effectively against radiation?",
       "options": [
         "A. Poor absorber and poor emitter",
         "B. Poor absorber and good emitter",
@@ -141,10 +141,12 @@
   ],
   "numericals": [
     {
-      "problem": "In a controlled experiment verifying T ∝ √l for a pendulum, the length is quadrupled (4l). By what factor does the predicted time period change according to the scientific model?",
+      "question_number": "Num.1",
+      "problem": "In a controlled experiment verifying T \u221d \u221al for a pendulum, the length is quadrupled (4l). By what factor does the predicted time period change according to the scientific model?",
       "slo_code": "10.3.1",
-      "formula": "T₂ / T₁ = √(l₂ / l₁)",
-      "solution": "T₂ / T₁ = √(4l / l) = 2. The time period doubles."
+      "formula": "T\u2082 / T\u2081 = \u221a(l\u2082 / l\u2081)",
+      "solution": "T\u2082 / T\u2081 = \u221a(4l / l) = 2. The time period doubles.",
+      "source": "Unit 10 Worked Numerical"
     }
   ]
 }

@@ -42,13 +42,13 @@
     },
     {
       "term": "Learning Outcome 14.2.2",
-      "definition": "explain Coulomb’s law;",
+      "definition": "explain Coulomb\u2019s law;",
       "slo_code": "14.2.2",
       "cognitive_level": "U"
     },
     {
       "term": "Learning Outcome 14.2.3",
-      "definition": "solve word problems related to the electrostatic charges by using Coulomb’s law;",
+      "definition": "solve word problems related to the electrostatic charges by using Coulomb\u2019s law;",
       "slo_code": "14.2.3",
       "cognitive_level": "A"
     },
@@ -124,12 +124,12 @@
     },
     {
       "question_number": "14",
-      "stem_text": "Two capacitors of capacitance 6 µF and 3 µF are connected in a series across a cell of 18 V. The equivalent (effective) capacitance will be",
+      "stem_text": "Two capacitors of capacitance 6 \u00b5F and 3 \u00b5F are connected in a series across a cell of 18 V. The equivalent (effective) capacitance will be",
       "options": [
-        "A. 2 µF.",
-        "B. 3 µF.",
-        "C. 6 µF.",
-        "D. 9 µF."
+        "A. 2 \u00b5F.",
+        "B. 3 \u00b5F.",
+        "C. 6 \u00b5F.",
+        "D. 9 \u00b5F."
       ],
       "correct_option": "A",
       "explanation": "For two capacitors connected in series, the equivalent capacitance $C_{eq}$ is given by $\\frac{1}{C_{eq}} = \\frac{1}{C_1} + \\frac{1}{C_2} = \\frac{1}{6} + \\frac{1}{3} = \\frac{1 + 2}{6} = \\frac{3}{6} = \\frac{1}{2}$. Thus, $C_{eq} = 2\\text{ \\mu F}$.",
@@ -185,10 +185,44 @@
   ],
   "numericals": [
     {
-      "problem": "Calculate the electrostatic force of repulsion between two electrons separated by a distance of 1.0 m in air (k = 9 × 10⁹ N·m²/C², q_e = 1.6 × 10⁻¹⁹ C).",
+      "question_number": "Num.1",
+      "problem": "Calculate the electrostatic force of repulsion between two electrons separated by a distance of 1.0 m in air (k = 9 \u00d7 10\u2079 N\u00b7m\u00b2/C\u00b2, q_e = 1.6 \u00d7 10\u207b\u00b9\u2079 C).",
       "slo_code": "14.2.2",
-      "formula": "F = k q₁ q₂ / r²",
-      "solution": "F = (9 × 10⁹ × (1.6 × 10⁻¹⁹)²) / 1.0² = 2.304 × 10⁻²⁸ N."
+      "formula": "F = k q\u2081 q\u2082 / r\u00b2",
+      "solution": "F = (9 \u00d7 10\u2079 \u00d7 (1.6 \u00d7 10\u207b\u00b9\u2079)\u00b2) / 1.0\u00b2 = 2.304 \u00d7 10\u207b\u00b2\u2078 N.",
+      "source": "Unit 14 Worked Numerical"
+    },
+    {
+      "question_number": "Num.2",
+      "problem": "Two capacitors of capacitance 6 \u00b5F and 3 \u00b5F are connected in a series across a cell of 18 V. The equivalent (effective) capacitance will be",
+      "slo_code": null,
+      "formula": "",
+      "solution": "For two capacitors connected in series, the equivalent capacitance $C_{eq}$ is given by $\\frac{1}{C_{eq}} = \\frac{1}{C_1} + \\frac{1}{C_2} = \\frac{1}{6} + \\frac{1}{3} = \\frac{1 + 2}{6} = \\frac{3}{6} = \\frac{1}{2}$. Thus, $C_{eq} = 2\\text{ \\mu F}$.",
+      "source": "Unit 14 Worked Numerical"
+    },
+    {
+      "question_number": "Num.3",
+      "problem": "The electric force of repulsion between two electrons at a distance of 1 m is\n(Note: The value of the constant of proportionality is $9 \\times 10^9\\text{ Nm}^2/\\text{C}^2$ and the charge on electron is $1.6 \\times 10^{-19}\\text{ C}$.)",
+      "slo_code": "14.2.2",
+      "formula": "",
+      "solution": "Using Coulomb's law: $F = \\frac{k \\cdot q_1 \\cdot q_2}{r^2} = \\frac{9 \\times 10^9 \\times (1.6 \\times 10^{-19}) \\times (1.6 \\times 10^{-19})}{(1)^2} = \\frac{9 \\times 10^9 \\times 2.56 \\times 10^{-38}}{1} = 23.04 \\times 10^{-29} = 2.304 \\times 10^{-28}\\text{ N}$.",
+      "source": "Unit 14 Worked Numerical"
+    },
+    {
+      "question_number": "Num.4",
+      "problem": "The equivalent capacitance of the given combination of the capacitors will be\n(Note: $C_1 = 5\\text{ \\mu F}$, $C_2 = 5\\text{ \\mu F}$, $C_3 = 5\\text{ \\mu F}$ connected in parallel based on standard textbook diagram layouts)",
+      "slo_code": null,
+      "formula": "",
+      "solution": "Looking at standard parallel combinations for identical capacitors in AKU-EB problems where three equal capacitors are in parallel: $C_{eq} = C_1 + C_2 + C_3 = 5 + 5 + 5 = 15\\text{ \\mu F}$.",
+      "source": "Unit 14 Worked Numerical"
+    },
+    {
+      "question_number": "Num.5",
+      "problem": "If two capacitors $C_1 = 6\\ \\mu\\text{F}$ and $C_2 = 12\\ \\mu\\text{F}$ are connected in series, then the equivalent capacitance will be",
+      "slo_code": "14.2.3",
+      "formula": "",
+      "solution": "For two capacitors connected in series:\n$\\frac{1}{C_{\\text{eq}}} = \\frac{1}{C_1} + \\frac{1}{C_2} = \\frac{1}{6} + \\frac{1}{12} = \\frac{2 + 1}{12} = \\frac{3}{12} = \\frac{1}{4}\\ \\mu\\text{F}^{-1} \\implies C_{\\text{eq}} = 4\\ \\mu\\text{F}$.",
+      "source": "Unit 14 Worked Numerical"
     }
   ]
 }

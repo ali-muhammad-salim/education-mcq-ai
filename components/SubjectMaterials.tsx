@@ -37,7 +37,7 @@ export default async function SubjectMaterials({
       label: "Past papers",
       href: scope.baseUrl + "/pastpapers",
       pending:
-        !(legacy && scope.classDef.level === 9) && !available("past_paper"),
+        !legacy && !available("past_paper"),
     },
     {
       label: "Books & resource guides",
@@ -64,30 +64,59 @@ export default async function SubjectMaterials({
           },
         ]
       : []),
-    ...(
-      [
-        ["CHAPTER_NOTES", "Chapter notes"],
-        ["NUMERICAL_GUIDE", "Worked numericals"],
-        ["FORMULA_SHEET", "Formula sheets"],
-        ["CHEAT_SHEET", "Revision sheets"],
-        ["FLASHCARDS", "Flashcards"],
-        ["PRACTICE_SET", "Practice questions"],
-        ["CHAPTER_READER", "Chapter reader"],
-      ] as const
-    ).map(([kind, label]) => ({
-      label,
-      href: scope.baseUrl + "/study?kind=" + kind,
-      pending: !chapters.some((c) =>
-        c.kinds.some((k) => k.kind === kind && k.count > 0),
-      ),
-    })),
-    { label: "MCQs", href: scope.baseUrl + "/mcqs", pending: !legacy&&!available("mcq") },
+    {
+      label: "MCQs (Chapter-wise, Past Papers & Full Book)",
+      href: scope.baseUrl + "/mcqs",
+      pending: !legacy && !available("mcq"),
+    },
+    ...(legacy
+      ? [
+          {
+            label: "Chapter-wise CRQs (Short Response Questions)",
+            href: scope.baseUrl + "/crqs",
+            pending: false,
+          },
+          {
+            label: "Chapter-wise ERQs (Extended Response Questions)",
+            href: scope.baseUrl + "/erqs",
+            pending: false,
+          },
+          {
+            label: "Chapter-wise Numericals & Worked Problems",
+            href: scope.baseUrl + "/numericals",
+            pending: false,
+          },
+          {
+            label: "Chapter-wise SLO Notes & Definitions",
+            href: scope.baseUrl + "/chapter-notes",
+            pending: false,
+          },
+        ]
+      : (
+          [
+            ["CHAPTER_NOTES", "Chapter notes"],
+            ["NUMERICAL_GUIDE", "Worked numericals"],
+            ["FORMULA_SHEET", "Formula sheets"],
+            ["CHEAT_SHEET", "Revision sheets"],
+            ["FLASHCARDS", "Flashcards"],
+            ["PRACTICE_SET", "Practice questions"],
+            ["CHAPTER_READER", "Chapter reader"],
+          ] as const
+        ).map(([kind, label]) => ({
+          label,
+          href: scope.baseUrl + "/study?kind=" + kind,
+          pending: !chapters.some((c) =>
+            c.kinds.some((k) => k.kind === kind && k.count > 0),
+          ),
+        }))),
     {
       label: "Practicals",
       href: scope.baseUrl + "/practicals",
-      pending: !(legacy && scope.classDef.level === 9)&&!available('practical_paper'),
+      pending: !(legacy && scope.classDef.level === 9) && !available('practical_paper'),
     },
-    ...Object.entries(supportingMaterialLabels).filter(([kind])=>kind!=='practical_paper'&&available(kind)).map(([kind,label])=>({label,href:scope.baseUrl+'/resources/'+kind})),
+    ...Object.entries(supportingMaterialLabels)
+      .filter(([kind]) => kind !== 'practical_paper' && available(kind))
+      .map(([kind, label]) => ({ label, href: scope.baseUrl + '/resources/' + kind })),
   ];
   return (
     <section className={styles.page}>

@@ -36,7 +36,7 @@
     },
     {
       "term": "Learning Outcome 2.3.4",
-      "definition": "describe the universal speed limit of any object in the universe that is approximately 3 × 108 m/s;",
+      "definition": "describe the universal speed limit of any object in the universe that is approximately 3 \u00d7 108 m/s;",
       "slo_code": "2.3.4",
       "cognitive_level": "R"
     },
@@ -72,7 +72,7 @@
     },
     {
       "term": "Learning Outcome 2.5.2",
-      "definition": "solve word problems related to free-falling bodies using the relation g = Δv/ Δt.",
+      "definition": "solve word problems related to free-falling bodies using the relation g = \u0394v/ \u0394t.",
       "slo_code": "2.5.2",
       "cognitive_level": "A"
     }
@@ -161,39 +161,208 @@
       "explanation": "Correct option according to the official board answer key.",
       "marks": 1.0,
       "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "2024-Q5",
+      "stem_text": "The given graph depicts that a person is walking along a straight road.\n\nWhich of the following options CORRECTLY describes the motion of the person from point X to Y?",
+      "options": [
+        "A. The person is moving towards the starting point at a constant speed.",
+        "B. The person is moving towards the starting point with a variable speed.",
+        "C. The person is moving away from the starting point at a constant speed.",
+        "D. The person is moving away from the starting point with a variable speed."
+      ],
+      "correct_option": "A",
+      "explanation": "From point X to point Y, the distance from the starting point decreases linearly with time (a straight line of constant negative slope returning to zero distance), which shows the person is walking back towards the starting point at a constant speed.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "2.4.1",
+      "original_slo": "2.8.2",
+      "exam_year": 2024,
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P1_Q5.png"
+    },
+    {
+      "question_number": "2024-Q7",
+      "stem_text": "A body starts from rest and accelerates to a velocity of $100\\text{ m/s}$. If it covers a distance of $50\\text{ m}$, then its acceleration will be",
+      "options": [
+        "A. $1\\text{ m/s}^2$.",
+        "B. $2\\text{ m/s}^2$.",
+        "C. $100\\text{ m/s}^2$.",
+        "D. $200\\text{ m/s}^2$."
+      ],
+      "correct_option": "C",
+      "explanation": "Using the third equation of motion $2aS = v_f^2 - v_i^2$ with $v_i = 0$, $v_f = 100\\text{ m/s}$, and $S = 50\\text{ m}$ gives $2a(50) = 100^2 \\Rightarrow 100a = 10000 \\Rightarrow a = 100\\text{ m/s}^2$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "2.3.2",
+      "original_slo": "2.9.2",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q8",
+      "stem_text": "The below given picture shows the velocity-time graph for the motion of a body.\n\nThe slope of the line segment WX in the above graph shows the",
+      "options": [
+        "A. acceleration.",
+        "B. displacement of the body.",
+        "C. total distance covered by the body.",
+        "D. total time taken for the motion of the body."
+      ],
+      "correct_option": "A",
+      "explanation": "The slope (gradient) of a velocity-time graph is $\\frac{\\Delta v}{\\Delta t} = \\frac{v_f - v_i}{t}$, which represents the acceleration of the body.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "2.4.2",
+      "original_slo": "2.8.2",
+      "exam_year": 2024,
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P1_Q8.png"
+    },
+    {
+      "question_number": "2024-Q9",
+      "stem_text": "If a motorcyclist covers a displacement of $150\\text{ m}$ in $10\\text{ s}$, then his/ her velocity will be",
+      "options": [
+        "A. 15 m/s.",
+        "B. 140 m/s.",
+        "C. 160 m/s.",
+        "D. 1500 m/s."
+      ],
+      "correct_option": "A",
+      "explanation": "Velocity is the rate of change of displacement: $v = \\frac{d}{t} = \\frac{150\\text{ m}}{10\\text{ s}} = 15\\text{ m/s}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "2.3.2",
+      "original_slo": "2.9.2",
+      "exam_year": 2024,
+      "diagram_url": null
     }
   ],
   "crqs": [
     {
-      "question": "Explain how the distance travelled and acceleration of a moving body are determined from a speed–time graph.",
+      "question": "Explain how the distance travelled and acceleration of a moving body are determined from a speed\u2013time graph.",
       "marks": 3,
       "slo_code": "2.4.4",
-      "answer": "Acceleration is determined from the gradient (slope = Δv/Δt) of the speed–time graph, while total distance travelled equals the total area enclosed under the speed–time graph.",
+      "answer": "Acceleration is determined from the gradient (slope = \u0394v/\u0394t) of the speed\u2013time graph, while total distance travelled equals the total area enclosed under the speed\u2013time graph.",
       "source": "AKU-EB Syllabus 2025 Unit 2"
     }
   ],
   "erqs": [
     {
-      "question": "Zohan dropped a ball from a certain height and its final velocity reached 25 m/s at the ground. From the same height, if he throws the ball vertically downward with an initial velocity of 25 m/s, calculate its final velocity (g = 9.8 m/s²).",
+      "question": "Zohan dropped a ball from a certain height and its final velocity reached 25 m/s at the ground. From the same height, if he throws the ball vertically downward with an initial velocity of 25 m/s, calculate its final velocity (g = 9.8 m/s\u00b2).",
       "marks": 6,
       "slo_code": "2.5.2",
-      "answer": "Stage 1 (Dropped, v_i = 0): 2gh = v_f² => h = 25² / (2 × 9.8) = 31.89 m. Stage 2 (Thrown, v_i = 25 m/s): v_f² = v_i² + 2gh = 625 + 625 = 1250 => v_f = 35.35 m/s.",
+      "answer": "Stage 1 (Dropped, v_i = 0): 2gh = v_f\u00b2 => h = 25\u00b2 / (2 \u00d7 9.8) = 31.89 m. Stage 2 (Thrown, v_i = 25 m/s): v_f\u00b2 = v_i\u00b2 + 2gh = 625 + 625 = 1250 => v_f = 35.35 m/s.",
       "source": "AKU-EB SSC-I 2025 Annual Paper II Q.6(a)"
     },
     {
       "question": "A sports car starts from rest and covers 900 m to attain a speed of 80 m/s. Determine its acceleration and the time taken.",
       "marks": 5,
       "slo_code": "2.3.4",
-      "answer": "Using 2aS = v_f² - v_i²: a = 80² / (2 × 900) = 6400 / 1800 = 3.56 m/s². Time t = (v_f - v_i)/a = 80 / 3.56 = 22.5 s.",
+      "answer": "Using 2aS = v_f\u00b2 - v_i\u00b2: a = 80\u00b2 / (2 \u00d7 900) = 6400 / 1800 = 3.56 m/s\u00b2. Time t = (v_f - v_i)/a = 80 / 3.56 = 22.5 s.",
       "source": "AKU-EB SSC-I Model Paper II Q.6(a)"
+    },
+    {
+      "question_number": "2024-Q.6.a",
+      "question": "The following graph shows the path ABCDEF on which a boy walks.\n\nUsing the above graph calculate the\ni. distance between A to B, B to C, C to D, D to E and E to F. (4 Marks)\nii. total distance covered. (1 Mark)\niii. total displacement covered. (1 Mark)\n\n(Note: One small division is equal to one metre.)",
+      "question_text": "The following graph shows the path ABCDEF on which a boy walks.\n\nUsing the above graph calculate the\ni. distance between A to B, B to C, C to D, D to E and E to F. (4 Marks)\nii. total distance covered. (1 Mark)\niii. total displacement covered. (1 Mark)\n\n(Note: One small division is equal to one metre.)",
+      "marks": 6.0,
+      "slo_code": "2.4.1",
+      "original_slo": "2.8.2",
+      "cognitive_level": "Application",
+      "rubric": [
+        {
+          "marks": 1,
+          "description": "1 mark for both stationary intervals: Distance covered during A to B = 0 m AND during C to D = 0 m."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for distance covered during B to C: 18 m - 2 m = 16 m."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for distance covered during D to E: 18 m - 10 m = 8 m."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for distance covered during E to F: 14 m - 10 m = 4 m."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for Total Distance covered = 0 + 16 + 0 + 8 + 4 = 28 m."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for Total Displacement covered = 0 + 16 + 0 + (-8) + 4 = 12 m (or final position 14 m minus initial position 2 m = 12 m)."
+        }
+      ],
+      "answer": "**(i) Distance covered in each segment:**\n\u2022 **From A to B:** Position remains at $2\\text{ m}$, so $d_{AB} = |2 - 2| = 0\\text{ m}$\n\u2022 **From B to C:** Position changes from $2\\text{ m}$ to $18\\text{ m}$, so $d_{BC} = |18 - 2| = 16\\text{ m}$\n\u2022 **From C to D:** Position remains at $18\\text{ m}$, so $d_{CD} = |18 - 18| = 0\\text{ m}$\n\u2022 **From D to E:** Position changes from $18\\text{ m}$ to $10\\text{ m}$, so $d_{DE} = |10 - 18| = 8\\text{ m}$\n\u2022 **From E to F:** Position changes from $10\\text{ m}$ to $14\\text{ m}$, so $d_{EF} = |14 - 10| = 4\\text{ m}$\n\n**(ii) Total distance covered:**\n$\\text{Total Distance} = d_{AB} + d_{BC} + d_{CD} + d_{DE} + d_{EF} = 0 + 16 + 0 + 8 + 4 = 28\\text{ m}$\n\n**(iii) Total displacement covered:**\n$\\text{Total Displacement} = 0 + 16 + 0 + (-8) + 4 = 12\\text{ m}$ (or $x_F - x_A = 14\\text{ m} - 2\\text{ m} = 12\\text{ m}$).",
+      "model_answer": "**(i) Distance covered in each segment:**\n\u2022 **From A to B:** Position remains at $2\\text{ m}$, so $d_{AB} = |2 - 2| = 0\\text{ m}$\n\u2022 **From B to C:** Position changes from $2\\text{ m}$ to $18\\text{ m}$, so $d_{BC} = |18 - 2| = 16\\text{ m}$\n\u2022 **From C to D:** Position remains at $18\\text{ m}$, so $d_{CD} = |18 - 18| = 0\\text{ m}$\n\u2022 **From D to E:** Position changes from $18\\text{ m}$ to $10\\text{ m}$, so $d_{DE} = |10 - 18| = 8\\text{ m}$\n\u2022 **From E to F:** Position changes from $10\\text{ m}$ to $14\\text{ m}$, so $d_{EF} = |14 - 10| = 4\\text{ m}$\n\n**(ii) Total distance covered:**\n$\\text{Total Distance} = d_{AB} + d_{BC} + d_{CD} + d_{DE} + d_{EF} = 0 + 16 + 0 + 8 + 4 = 28\\text{ m}$\n\n**(iii) Total displacement covered:**\n$\\text{Total Displacement} = 0 + 16 + 0 + (-8) + 4 = 12\\text{ m}$ (or $x_F - x_A = 14\\text{ m} - 2\\text{ m} = 12\\text{ m}$).",
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P2_Q6a.png",
+      "source": "AKU-EB SSC-I 2024 Annual Paper II Q.6.a"
     }
   ],
   "numericals": [
     {
-      "problem": "A cricket ball is hit vertically upward and reaches its maximum height in 3 s. Calculate its initial velocity (g = 9.8 m/s²).",
+      "question_number": "Q.6.a",
+      "problem": "The following graph shows the path ABCDEF on which a boy walks.\n\nUsing the above graph calculate the\ni. distance between A to B, B to C, C to D, D to E and E to F. (4 Marks)\nii. total distance covered. (1 Mark)\niii. total displacement covered. (1 Mark)\n\n(Note: One small division is equal to one metre.)",
+      "slo_code": "2.4.1",
+      "formula": "",
+      "solution": "**(i) Distance covered in each segment:**\n\u2022 **From A to B:** Position remains at $2\\text{ m}$, so $d_{AB} = |2 - 2| = 0\\text{ m}$\n\u2022 **From B to C:** Position changes from $2\\text{ m}$ to $18\\text{ m}$, so $d_{BC} = |18 - 2| = 16\\text{ m}$\n\u2022 **From C to D:** Position remains at $18\\text{ m}$, so $d_{CD} = |18 - 18| = 0\\text{ m}$\n\u2022 **From D to E:** Position changes from $18\\text{ m}$ to $10\\text{ m}$, so $d_{DE} = |10 - 18| = 8\\text{ m}$\n\u2022 **From E to F:** Position changes from $10\\text{ m}$ to $14\\text{ m}$, so $d_{EF} = |14 - 10| = 4\\text{ m}$\n\n**(ii) Total distance covered:**\n$\\text{Total Distance} = d_{AB} + d_{BC} + d_{CD} + d_{DE} + d_{EF} = 0 + 16 + 0 + 8 + 4 = 28\\text{ m}$\n\n**(iii) Total displacement covered:**\n$\\text{Total Displacement} = 0 + 16 + 0 + (-8) + 4 = 12\\text{ m}$ (or $x_F - x_A = 14\\text{ m} - 2\\text{ m} = 12\\text{ m}$).",
+      "source": "2024 Annual Paper II (ERQ \u2022 6 Marks)"
+    },
+    {
+      "question_number": "Q.6.a",
+      "problem": "Zohan dropped a ball from a certain height. Its final velocity becomes 25 m/s when it reaches the ground. Now from the same height, if he throws the ball vertically downward with an initial velocity of 25 m/s, then calculate its final velocity. (Note: Take the value of acceleration due to gravity as 9.8 m/s2.)",
+      "slo_code": "2.5.2",
+      "formula": "",
+      "solution": "First scenario:\nInitial velocity ($v_i$) = 0 m/s\nFinal velocity ($v_f$) = 25 m/s\nAcceleration ($g$) = 9.8 $\\text{m/s}^2$\nUsing third equation of motion:\n$v_f^2 = v_i^2 + 2gs$\n$(25)^2 = (0)^2 + 2(9.8)s$\n$625 = 19.6s$\n$s = \\frac{625}{19.6} \\approx 31.89$ m\n\nSecond scenario:\nInitial velocity ($v_i$) = 25 m/s\nDistance ($s$) = 31.89 m\nAcceleration ($g$) = 9.8 $\\text{m/s}^2$\nUsing third equation of motion:\n$v_f^2 = v_i^2 + 2gs$\n$v_f^2 = (25)^2 + 2(9.8)(31.89)$\n$v_f^2 = 625 + 625 = 1250$\n$v_f = \\sqrt{1250} \\approx 35.36$ m/s",
+      "source": "2025 Annual Paper II (ERQ \u2022 6 Marks)"
+    },
+    {
+      "question_number": "Q.6(a)",
+      "problem": "A sports car starts from rest. It covers a distance of 900 m to attain a speed of 80 m/s. Determine the acceleration of the car and the time required to reach this speed.",
+      "slo_code": "2.3.4",
+      "formula": "",
+      "solution": "Given: v_i = 0 m/s, v_f = 80 m/s, S = 900 m. Using 2aS = v_f^2 - v_i^2 => 2a(900) = (80)^2 - 0 => 1800a = 6400 => a = 3.56 m/s^2. Using v_f = v_i + at => 80 = 0 + (3.56)t => t = 22.48 s.",
+      "source": "Class IX Model Paper II (ERQ \u2022 6 Marks)"
+    },
+    {
+      "question_number": "Num.4",
+      "problem": "A cricket ball is hit vertically upward and reaches its maximum height in 3 s. Calculate its initial velocity (g = 9.8 m/s\u00b2).",
       "slo_code": "2.5.2",
       "formula": "v_f = v_i - gt",
-      "solution": "At maximum height, v_f = 0 m/s. Therefore v_i = g × t = 9.8 m/s² × 3 s = 29.4 m/s."
+      "solution": "At maximum height, v_f = 0 m/s. Therefore v_i = g \u00d7 t = 9.8 m/s\u00b2 \u00d7 3 s = 29.4 m/s.",
+      "source": "Unit 2 Worked Numerical"
+    },
+    {
+      "question_number": "Num.5",
+      "problem": "A body starts from rest and accelerates to a velocity of $100\\text{ m/s}$. If it covers a distance of $50\\text{ m}$, then its acceleration will be",
+      "slo_code": "2.3.2",
+      "formula": "",
+      "solution": "Using the third equation of motion $2aS = v_f^2 - v_i^2$ with $v_i = 0$, $v_f = 100\\text{ m/s}$, and $S = 50\\text{ m}$ gives $2a(50) = 100^2 \\Rightarrow 100a = 10000 \\Rightarrow a = 100\\text{ m/s}^2$.",
+      "source": "Unit 2 Worked Numerical"
+    },
+    {
+      "question_number": "Num.6",
+      "problem": "If a motorcyclist covers a displacement of $150\\text{ m}$ in $10\\text{ s}$, then his/ her velocity will be",
+      "slo_code": "2.3.2",
+      "formula": "",
+      "solution": "Velocity is the rate of change of displacement: $v = \\frac{d}{t} = \\frac{150\\text{ m}}{10\\text{ s}} = 15\\text{ m/s}$.",
+      "source": "Unit 2 Worked Numerical"
+    },
+    {
+      "question_number": "Num.7",
+      "problem": "A child drops a tennis ball from a height of $10\\text{ m}$. The velocity of the ball just before it strikes the ground will be\n(Note: The value of acceleration due to gravity is $9.8\\text{ m/s}^2$.)",
+      "slo_code": "2.5.2",
+      "formula": "",
+      "solution": "Using the equation of motion $v^2 = u^2 + 2as$, where $u = 0$, $a = 9.8\\text{ m/s}^2$, and $s = 10\\text{ m}$: $v^2 = 0 + 2(9.8)(10) = 196$, so $v = \\sqrt{196} = 14.0\\text{ m/s}$.",
+      "source": "Unit 2 Worked Numerical"
+    },
+    {
+      "question_number": "Num.8",
+      "problem": "The given table shows the distance covered by a car on a straight road in four different segments.\nSegment I: 0-10 m\nSegment II: 11-22 m (displacement = 11 m)\nSegment III: 23-35 m (displacement = 12 m)\nSegment IV: 36-49 m (displacement = 13 m)\nIf the car takes same interval of time to cover all four segments, then the car",
+      "slo_code": "2.3.2",
+      "formula": "",
+      "solution": "The distance covered in equal time intervals increases in each subsequent segment (10 m, 11 m, 12 m, 13 m), meaning the speed is increasing, hence the car is accelerating.",
+      "source": "Unit 2 Worked Numerical"
     }
   ]
 }

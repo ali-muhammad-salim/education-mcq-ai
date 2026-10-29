@@ -13,6 +13,7 @@ async function migrate() {
   if(names.includes('_prisma_migrations')||names.length===0)command(['node_modules/prisma/build/index.js','migrate','deploy']);
   else if(JSON.stringify(names)===JSON.stringify(['User','UserSession'])&&process.env.AUTH_ONLY_BOOTSTRAP==='confirm-reviewed-backup')command(['scripts/bootstrap-auth-schema.cjs','--apply']);
   else throw new Error('Unbaselined database requires a reviewed release procedure; startup stopped without schema changes.');
+  if(process.env.SYNC_BUNDLED_MATERIALS==='1')command(['node_modules/tsx/dist/cli.mjs','scripts/sync_all_analyzed_materials_to_db.ts']);
 }
 async function main(){
   await migrate();

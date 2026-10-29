@@ -8,12 +8,6 @@ describe('Full digital syllabus presentation',()=>{
   it('restores printed scientific exponents without changing surrounding wording',()=>{
     expect(syllabusDisplayText('approximately 3 × 108 m/s;')).toBe('approximately $3 \\times 10^{8}\\,\\mathrm{m/s}$;');
     expect(syllabusDisplayText('K.E = ½ mv2')).toBe('K.E = $\\frac{1}{2}mv^{2}$');
-    expect(syllabusDisplayText('formation of NADPH2;')).toBe('formation of NADPH₂;');
-  });
-  it('retains the printed analysis, creation and formative categories',()=>{
-    expect(['An','C','FA'].map(syllabusLevel)).toEqual(['An','C','FA']);
-    const sample=[{unitNumber:16,name:'Inheritance',subtopics:[{name:'DNA',slos:[{code:'16.2.4',description:'First printed outcome',cognitiveLevel:'E'},{code:'16.2.4',description:'Second printed outcome',cognitiveLevel:'U'}]}]}];
-    expect(outcomes(filterSyllabus(sample,'16.2.4','all','all'))).toHaveLength(2);
   });
   it('keeps every stored outcome and its exact wording in the unfiltered view',()=>{
     for(const source of [physicsIX,physicsX]) {

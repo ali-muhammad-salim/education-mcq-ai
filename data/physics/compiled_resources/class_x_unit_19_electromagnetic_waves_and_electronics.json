@@ -179,16 +179,18 @@
       "question": "Draw the circuit symbols and construct the complete truth tables for AND, OR, NOT, NAND, and NOR logic gates.",
       "marks": 5,
       "slo_code": "19.5.7",
-      "answer": "AND outputs 1 only when both inputs are 1 (X = A·B); OR outputs 1 when at least one input is 1 (X = A+B); NOT inverts the input (X = Ā); NAND is inverted AND; NOR is inverted OR.",
+      "answer": "AND outputs 1 only when both inputs are 1 (X = A\u00b7B); OR outputs 1 when at least one input is 1 (X = A+B); NOT inverts the input (X = \u0100); NAND is inverted AND; NOR is inverted OR.",
       "source": "AKU-EB Syllabus 2025 Unit 19"
     }
   ],
   "numericals": [
     {
+      "question_number": "Num.1",
       "problem": "For a two-input NAND gate with inputs A = 1 and B = 1, determine the output X, and state how a NAND gate can be wired to act as a NOT gate.",
       "slo_code": "19.5.6",
       "formula": "X = NOT(A AND B)",
-      "solution": "When A = 1 and B = 1, A AND B = 1, so NAND output X = 0. Joining both inputs together (A = B) converts a NAND gate into a NOT gate."
+      "solution": "When A = 1 and B = 1, A AND B = 1, so NAND output X = 0. Joining both inputs together (A = B) converts a NAND gate into a NOT gate.",
+      "source": "Unit 19 Worked Numerical"
     }
   ]
 }

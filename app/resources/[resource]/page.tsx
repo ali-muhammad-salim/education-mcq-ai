@@ -6,6 +6,7 @@ import key2024 from '@/data/physics/ssc1_2024_official_key.json';
 import emarking from '@/data/physics/ssc1_2025_emarking.json';
 import emarking2024 from '@/data/physics/ssc1_2024_emarking.json';
 import keyX2025 from '@/data/physics/ssc2_2025_official_key.json';
+import emarkingX2025 from '@/data/physics/ssc2_2025_emarking.json';
 import rg9 from '@/data/physics/ssc1_resource_guide.json';
 import rg10 from '@/data/physics/ssc2_resource_guide.json';
 import pacing9 from '@/data/physics/ssc1_pacing.json';
@@ -186,92 +187,245 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
     );
   }
 
-  if (resource === 'physics-x-2025-emarking') {
-    const title = 'Physics X · 2025 · E-marking notes';
-    return <section className={styles.page}>
-      <Link href="/akueb/X/physics/pastpapers">← Physics X past papers</Link>
-      <h1>{title}</h1>
-      <DocumentViews title={title} original="/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf">
-        <div className={styles.digital}>
-          <p>The original board E-marking document is available in the Original tab. A generated digital solution in the supplied material has conflicting calculations, so the digital commentary is withheld pending educator review.</p>
-          <Link href="/past-papers/PHY-X-2025-P2">Open Paper 2 questions →</Link>
-        </div>
-      </DocumentViews>
-    </section>;
-  }
-
-  if (resource === 'physics-ix-2025-emarking' || resource === 'physics-ix-2024-emarking') {
+  if (resource === 'physics-ix-2025-emarking' || resource === 'physics-ix-2024-emarking' || resource === 'physics-x-2025-emarking') {
+    const isX = resource === 'physics-x-2025-emarking';
     const is2024 = resource === 'physics-ix-2024-emarking';
-    const activeEmarking: any = is2024 ? emarking2024 : emarking;
+    const activeEmarking: any = isX ? emarkingX2025 : is2024 ? emarking2024 : emarking;
     const yearStr = is2024 ? '2024' : '2025';
-    const roman = 'IX';
-    const title = `Physics ${roman} · ${yearStr} · E-marking notes`;
+    const roman = isX ? 'X' : 'IX';
+    const title = `Physics ${roman} · ${yearStr} · E-Marking Notes (Questions & Solved Better Responses)`;
     return (
       <section className={styles.page}>
         <Link href={`/akueb/${roman}/physics/pastpapers`}>← Physics {roman} past papers</Link>
         <h1>{title}</h1>
         <DocumentViews title={title} original={activeEmarking.sourceUrl}>
-          <div className={styles.digital} style={{display:'flex',flexDirection:'column',gap:'1.25rem'}}>
-            <div style={{padding:'1rem',border:'1px solid var(--border-color)',borderRadius:10}}>
-              <h2 style={{marginTop:0}}>Introduction & General Observations</h2>
-              <p>{activeEmarking.introduction}</p>
-              <p><strong>General Observations:</strong> {activeEmarking.generalObservations}</p>
+          <div
+            style={{
+              background: '#ffffff',
+              border: '2px solid #111827',
+              borderRadius: '6px',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.06)',
+              color: '#111827',
+              overflow: 'hidden',
+            }}
+          >
+            {/* Official E-Marking Digital Cover Header */}
+            <div
+              style={{
+                padding: '2.25rem 2rem 1.5rem',
+                borderBottom: '2px solid #111827',
+                textAlign: 'center',
+                background: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif, system-ui",
+              }}
+            >
+              <div style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '1px', color: '#4b5563', marginBottom: '0.25rem' }}>
+                AGA KHAN UNIVERSITY EXAMINATION BOARD
+              </div>
+              <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#111827', marginBottom: '0.3rem' }}>
+                Notes from E-Marking Centre on SSC-{isX ? 'II' : 'I'} Physics Annual Examinations {yearStr}
+              </div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#066e4f' }}>
+                Digital Edition: Questions, Marking Schemes & Solved Better Responses (2025 Syllabus Aligned)
+              </div>
             </div>
-            {activeEmarking.questions.map((q: any) => (
-              <article key={q.questionNumber} style={{padding:'1.25rem',border:'1px solid var(--border-color)',borderRadius:10}}>
-                <div style={{display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:'.5rem',marginBottom:'.6rem'}}>
-                  <strong>{q.questionNumber} · {q.section}</strong>
-                  <span>
-                    Original {yearStr} SLO: <code>{q.originalSlo}</code>
-                    {q.currentSlo ? <> · <Link href={`/akueb/${roman}/physics/syllabus#slo-${q.currentSlo}`}>Current 2025 SLO {q.currentSlo}{q.currentTopic ? ` (${q.currentTopic})` : ''}</Link></> : ' · Historical 2022–2024 syllabus'}
-                    {' · '}{q.maxMarks} Marks · Level {q.cognitiveLevel}
-                  </span>
-                </div>
-                <div style={{marginBottom:'.65rem'}}>
-                  <strong>Question:</strong>
-                  <div style={{marginTop:'.25rem'}}><StructuredContent text={q.questionText} /></div>
-                </div>
-                {q.diagramUrl && (
-                  <div style={{textAlign:'center',margin:'.75rem 0'}}>
-                    <img src={q.diagramUrl} alt={`Diagram for ${q.questionNumber}`} style={{maxWidth:'100%',maxHeight:260,objectFit:'contain',border:'1px solid var(--border-color)',borderRadius:8,padding:6,background:'#fff'}} />
-                  </div>
-                )}
-                <p><strong>Original {yearStr} SLO Text:</strong> {q.sloText}</p>
-                {q.currentSloDescription && (
-                  <p><strong>Mapped 2025 Syllabus Outcome ({q.currentSlo}):</strong> {q.currentSloDescription}</p>
-                )}
-                <div>
-                  <strong>Checking Hints (Marking Scheme):</strong>
-                  <ul>{q.checkingHints.map((h: string, i: number) => <li key={i}>{h}</li>)}</ul>
-                </div>
-                <p><strong>Overall Performance:</strong> {q.overallPerformance}</p>
-                <p><strong>Better Responses:</strong> {q.betterResponses}</p>
-                {q.betterResponseImage && (
-                  <div style={{margin:'.65rem 0'}}>
-                    <div style={{fontSize:'.82rem',fontWeight:700,marginBottom:'.25rem'}}>Image of Better Candidate Response:</div>
-                    <img src={q.betterResponseImage} alt={`Better response for ${q.questionNumber}`} style={{maxWidth:'100%',border:'1px solid var(--border-color)',borderRadius:8,background:'#fff',padding:4}} />
-                  </div>
-                )}
-                <p><strong>Weaker Responses:</strong> {q.weakerResponses}</p>
-                {q.weakerResponseImage && (
-                  <div style={{margin:'.65rem 0'}}>
-                    <div style={{fontSize:'.82rem',fontWeight:700,marginBottom:'.25rem'}}>Image of Weaker Candidate Response:</div>
-                    <img src={q.weakerResponseImage} alt={`Weaker response for ${q.questionNumber}`} style={{maxWidth:'100%',border:'1px solid var(--border-color)',borderRadius:8,background:'#fff',padding:4}} />
-                  </div>
-                )}
-                <div>
-                  <strong>Suggestions for Improvement:</strong>
-                  <ul>{q.suggestions.map((s: string, i: number) => <li key={i}>{s}</li>)}</ul>
-                </div>
-              </article>
-            ))}
-            <div style={{padding:'1rem',border:'1px solid var(--border-color)',borderRadius:10}}>
-              <h2 style={{marginTop:0}}>Annexure A: Pedagogies Used for Teaching the SLOs</h2>
-              <ul>
-                {activeEmarking.pedagogies.map((p: any) => (
-                  <li key={p.name}><strong>{p.name}:</strong> {p.description}</li>
-                ))}
-              </ul>
+
+            <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              {activeEmarking.questions.map((q: any) => {
+                const isOut = Boolean(q.outOfSyllabus) || !q.currentSlo;
+                return (
+                  <article
+                    key={q.questionNumber}
+                    style={{
+                      padding: '1.5rem',
+                      border: '1.5px solid #cbd5e1',
+                      borderRadius: '12px',
+                      background: '#ffffff',
+                      boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
+                    }}
+                  >
+                    {/* Top Question Metadata & Current 2025 Syllabus Badge */}
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        flexWrap: 'wrap',
+                        gap: '0.6rem',
+                        paddingBottom: '0.85rem',
+                        marginBottom: '1rem',
+                        borderBottom: '1px solid #e2e8f0',
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+                        <span
+                          style={{
+                            background: '#0f172a',
+                            color: '#ffffff',
+                            padding: '4px 12px',
+                            borderRadius: '6px',
+                            fontWeight: 800,
+                            fontSize: '0.95rem',
+                          }}
+                        >
+                          {q.questionNumber}
+                        </span>
+                        <span style={{ fontWeight: 700, color: '#334155', fontSize: '0.9rem' }}>
+                          {q.section}
+                        </span>
+                      </div>
+
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                        {!isOut && q.currentSlo ? (
+                          <Link
+                            href={`/akueb/${roman}/physics/syllabus#slo-${q.currentSlo}`}
+                            style={{
+                              background: '#ecfdf5',
+                              color: '#066e4f',
+                              border: '1px solid #a7f3d0',
+                              padding: '3px 10px',
+                              borderRadius: '6px',
+                              fontSize: '0.8rem',
+                              fontWeight: 800,
+                              textDecoration: 'none',
+                            }}
+                          >
+                            2025 Syllabus: SLO {q.currentSlo}{q.currentTopic ? ` • ${q.currentTopic}` : ''} ↗
+                          </Link>
+                        ) : (
+                          <span
+                            style={{
+                              background: '#fef2f2',
+                              color: '#b91c1c',
+                              border: '1px solid #fecaca',
+                              padding: '3px 10px',
+                              borderRadius: '6px',
+                              fontSize: '0.8rem',
+                              fontWeight: 800,
+                            }}
+                          >
+                            Out of 2025 Syllabus
+                          </span>
+                        )}
+                        <span
+                          style={{
+                            background: '#f1f5f9',
+                            color: '#1e293b',
+                            border: '1px solid #cbd5e1',
+                            padding: '3px 9px',
+                            borderRadius: '6px',
+                            fontSize: '0.8rem',
+                            fontWeight: 700,
+                          }}
+                        >
+                          {q.maxMarks} Marks • Level {q.cognitiveLevel}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* 2025 Syllabus Outcome Description (or Out of Syllabus explanation) */}
+                    {!isOut && q.currentSloDescription && (
+                      <div
+                        style={{
+                          marginBottom: '1rem',
+                          padding: '0.55rem 0.9rem',
+                          background: '#f8fafc',
+                          borderLeft: '3px solid #066e4f',
+                          borderRadius: '4px',
+                          fontSize: '0.84rem',
+                          color: '#334155',
+                        }}
+                      >
+                        <strong>2025 Syllabus Outcome ({q.currentSlo}):</strong> {q.currentSloDescription}
+                      </div>
+                    )}
+
+                    {/* Question Stem */}
+                    <div style={{ marginBottom: '1rem' }}>
+                      <div style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', color: '#475569', marginBottom: '0.35rem' }}>
+                        Question Text
+                      </div>
+                      <div style={{ fontSize: '1.05rem', lineHeight: 1.65, color: '#111827', fontFamily: "'Times New Roman', Times, serif, system-ui" }}>
+                        <StructuredContent text={q.questionText} />
+                      </div>
+                    </div>
+
+                    {/* 300-DPI Cropped Question Diagram */}
+                    {q.diagramUrl && (
+                      <div style={{ textAlign: 'center', margin: '1rem 0' }}>
+                        <img
+                          src={q.diagramUrl}
+                          alt={`Diagram for ${q.questionNumber}`}
+                          style={{
+                            maxWidth: '100%',
+                            maxHeight: 300,
+                            objectFit: 'contain',
+                            border: '1.5px solid #cbd5e1',
+                            borderRadius: 8,
+                            padding: 8,
+                            background: '#ffffff',
+                          }}
+                        />
+                      </div>
+                    )}
+
+                    {/* Checking Hints (Marking Scheme) */}
+                    {Array.isArray(q.checkingHints) && q.checkingHints.length > 0 && (
+                      <div
+                        style={{
+                          background: '#f8fafc',
+                          border: '1px solid #cbd5e1',
+                          borderRadius: '8px',
+                          padding: '0.9rem 1.15rem',
+                          marginBottom: '1rem',
+                        }}
+                      >
+                        <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.4rem' }}>
+                          Checking Hints (Marking Scheme • {q.maxMarks} Marks)
+                        </div>
+                        <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.9rem', color: '#334155', lineHeight: 1.6 }}>
+                          {q.checkingHints.map((h: string, i: number) => (
+                            <li key={i}>
+                              <StructuredContent text={h} />
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Better Response (Typeset in Clean Digital Text with LaTeX Equations — No Handwriting) */}
+                    <div
+                      style={{
+                        background: '#f0fdf4',
+                        border: '1.5px solid #86efac',
+                        borderRadius: '10px',
+                        padding: '1.15rem 1.35rem',
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.6rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        <span
+                          style={{
+                            background: '#066e4f',
+                            color: '#ffffff',
+                            padding: '3px 10px',
+                            borderRadius: '5px',
+                            fontSize: '0.8rem',
+                            fontWeight: 800,
+                          }}
+                        >
+                          ✓ BETTER RESPONSE (SOLVED MODEL ANSWER)
+                        </span>
+                        <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#166534' }}>
+                          Full Marks ({q.maxMarks}/{q.maxMarks})
+                        </span>
+                      </div>
+                      <div style={{ fontSize: '0.96rem', lineHeight: 1.7, color: '#14532d' }}>
+                        <StructuredContent text={q.modelAnswer || q.betterResponses} />
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </DocumentViews>

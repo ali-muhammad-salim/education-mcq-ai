@@ -138,10 +138,10 @@
     },
     {
       "question_number": "11",
-      "stem_text": "If an image is formed at a distance of 32 cm from a concave mirror with focal length of 12 cm, then the object’s distance is",
+      "stem_text": "If an image is formed at a distance of 32 cm from a concave mirror with focal length of 12 cm, then the object\u2019s distance is",
       "options": [
-        "A. – 0.052 cm.",
-        "B. – 19.2 cm.",
+        "A. \u2013 0.052 cm.",
+        "B. \u2013 19.2 cm.",
         "C. 20.0 cm.",
         "D. 32.0 cm."
       ],
@@ -192,10 +192,36 @@
   ],
   "numericals": [
     {
+      "question_number": "Q.1",
+      "problem": "If an object is placed at a distance of $2\\text{ cm}$ from a convex mirror of focal length of $4\\text{ cm}$, then find the position of the image formed.",
+      "slo_code": "12.2.1",
+      "formula": "",
+      "solution": "**Given Data:**\n\u2022 Object distance ($p$) = $+2\\text{ cm}$\n\u2022 Focal length of convex mirror ($f$) = $-4\\text{ cm}$ (virtual focus behind the mirror; note: in the AKU-EB E-Marking exemplar, $f = 4\\text{ cm}$ is substituted into $\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{q}$)\n\n**Formula:**\n$$\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{q} \\implies \\frac{1}{q} = \\frac{1}{f} - \\frac{1}{p}$$\n\n**Calculation (AKU-EB E-Marking Exemplar Method):**\n$$\\frac{1}{q} = \\frac{1}{4} - \\frac{1}{2} = \\frac{1 - 2}{4} = -\\frac{1}{4}$$\n$$q = -4\\text{ cm}$$\n*(Note: Using strict Cartesian sign convention $f = -4\\text{ cm}$ gives $\\frac{1}{q} = -\\frac{1}{4} - \\frac{1}{2} = -\\frac{3}{4} \\implies q = -1.33\\text{ cm}$. In both conventions, the negative sign of $q$ indicates that a virtual, upright image is formed behind the convex mirror.)*",
+      "source": "2025 Annual Paper II (CRQ \u2022 3 Marks)"
+    },
+    {
+      "question_number": "Num.2",
       "problem": "The floor of a filled water tank appears at an apparent depth of 3.0 m. If the refractive index of water is 1.33, calculate the real depth of the water.",
       "slo_code": "13.2.4",
       "formula": "n = Real Depth / Apparent Depth",
-      "solution": "Real Depth = n × Apparent Depth = 1.33 × 3.0 m = 3.99 m ≈ 4.0 m."
+      "solution": "Real Depth = n \u00d7 Apparent Depth = 1.33 \u00d7 3.0 m = 3.99 m \u2248 4.0 m.",
+      "source": "Unit 13 Worked Numerical"
+    },
+    {
+      "question_number": "Num.3",
+      "problem": "If an image is formed at a distance of 32 cm from a concave mirror with focal length of 12 cm, then the object\u2019s distance is",
+      "slo_code": "13.5.3",
+      "formula": "",
+      "solution": "Using the mirror formula: $\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{q}$. For a concave mirror, focal length $f = -12$ cm, and assuming real image $q = -32$ cm. Substituting values: $\\frac{1}{-12} = \\frac{1}{p} + \\frac{1}{-32} \\implies \\frac{1}{p} = -\\frac{1}{12} + \\frac{1}{32} = \\frac{-8 + 3}{96} = \\frac{-5}{96}$. Thus, $p = -\\frac{96}{5} = -19.2$ cm.",
+      "source": "Unit 13 Worked Numerical"
+    },
+    {
+      "question_number": "Num.4",
+      "problem": "The floor of a filled water tank appears at a depth of 3 m. If the refractive index of water is 1.33, then the actual depth of the water is",
+      "slo_code": "13.2.4",
+      "formula": "",
+      "solution": "Refractive index $n = \\frac{\\text{Real depth}}{\\text{Apparent depth}}$. Therefore, $\\text{Real depth} = n \\times \\text{Apparent depth} = 1.33 \\times 3\\text{ m} = 3.99\\text{ m}$.",
+      "source": "Unit 13 Worked Numerical"
     }
   ]
 }

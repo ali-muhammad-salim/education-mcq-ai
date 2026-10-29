@@ -14,12 +14,15 @@ import StructuredContent from '@/components/StructuredContent';
 import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 import past2025 from '@/data/physics/ssc1_2025_past_mcqs.json';
 import past2024 from '@/data/physics/ssc1_2024_past_mcqs.json';
+import pastX2025 from '@/data/physics/ssc2_2025_past_mcqs.json';
 import { mcqCategories, type McqCategory } from '@/lib/mcqCategories';
 import {
   annualOriginalReference,
   annualCurrentMapping,
   annual2024OriginalReference,
   annual2024CurrentMapping,
+  annualX2025OriginalReference,
+  annualX2025CurrentMapping,
 } from '@/lib/legacyPaperEvidence';
 import QuestionSource from '@/components/QuestionSource';
 import TakeQuizModal from '@/components/TakeQuizModal';
@@ -83,7 +86,7 @@ const CLASS_IX_UNITS: ChapterDef[] = [
     unitNumber: 5,
     name: 'Deformation of Solids ( & Historical Gravitation)',
     slug: 'deformation-of-solids',
-    topics: 'Elasticity, Hooke Law (F = kx), Spring Constant, Load-Extension Graphs & Limit of Proportionality (plus 2023 Model Gravitation items)',
+    topics: 'Elasticity, Hooke Law (F = kx), Spring Constant, Load-Extension Graphs & Limit of Proportionality (plus 2023/2024 Gravitation items)',
     qRange: [19, 22],
     pastPaperCount: 20
   },
@@ -213,14 +216,11 @@ const CLASS_X_UNITS: ChapterDef[] = [
 ];
 
 function belongsToUnit(q: any, unit: ChapterDef, isAnnual: boolean): boolean {
+  if (Number(q.unitNumber) === unit.unitNumber) return true;
   if (isAnnual) {
-    if (Number(q.unitNumber) === unit.unitNumber) return true;
-    return String(q.slo || '').startsWith(unit.unitNumber + '.');
+    return String(q.current_slo || q.slo || '').startsWith(unit.unitNumber + '.');
   }
-  if (typeof q.unitNumber === 'number') {
-    return q.unitNumber === unit.unitNumber;
-  }
-  const qNum = Number(q.questionNumber || 0);
+  const qNum = Number(q.rawQuestionNumber || q.questionNumber || 0);
   return qNum >= unit.qRange[0] && qNum <= unit.qRange[1];
 }
 
@@ -241,24 +241,34 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
   const unitsList = questions.length?(classDef.roman === 'IX' ? CLASS_IX_UNITS : CLASS_X_UNITS):[];
 
-  const [practiceSource, setPracticeSource] = useState<'model' | 'annual' | 'annual2024' | 'annual_all'>('model');
-  const fullPapers = [
-    ...(questions.length?[{ title: 'Physics Model Paper I', desc: 'Practice the available model-paper MCQs with answer feedback and 2025 syllabus SLO mappings.', items: questions.length, time: 'Custom timer', badge: 'MODEL PAPER', source: 'model' as const }]:[]),
-    ...(questions.length && classDef.roman === 'IX' ? [
-      { title: 'Annual Examination 2025 — Paper I', desc: 'Original 2025 examination MCQs with official answer key and reviewed 2025 syllabus mappings.', items: past2025.length, time: 'Custom timer', badge: 'ANNUAL 2025', source: 'annual' as const },
-      { title: 'Annual Examination 2024 — Paper I', desc: 'Original 2024 examination MCQs with official answer key, cropped diagrams, and 2025 syllabus mappings.', items: past2024.length, time: 'Custom timer', badge: 'ANNUAL 2024', source: 'annual2024' as const },
-    ] : []),
-  ];
+  const [practiceSource, setPracticeSource] = useState<'model' | 'annual' | 'annual2024' | 'annual_all' | 'chapter_all'>('chapter_all');
 
-  const mapped2025Pool = classDef.roman === 'IX'
-    ? annualQuestions.map(q => ({
+  const mappedModelPool = questions.map((q: any) => ({
+    ...q,
+    paperCode: `PHY-${classDef.roman}-P1`,
+    sourceTitle: 'Model Paper 1',
+    questionNumber: Number(q.questionNumber),
+    rawQuestionNumber: Number(q.questionNumber),
+    cognitiveLevel: ({ K: 'Remembering', U: 'Understanding', A: 'Application' } as Record<string, string>)[q.cognitiveLevel] || q.cognitiveLevel,
+  }));
+
+  const active2025Raw = classDef.roman === 'IX' ? annualQuestions : (annualQuestions?.length ? annualQuestions : pastX2025);
+
+  const mapped2025Pool = (classDef.roman === 'IX' || classDef.roman === 'X')
+    ? active2025Raw.map((q: any) => ({
         ...q,
-        ...annualOriginalReference(q.questionNumber),
+        ...(classDef.roman === 'IX' ? annualOriginalReference(q.questionNumber) : annualX2025OriginalReference(q.questionNumber)),
         ...(q.answer_review_note ? { answer_review_note: q.answer_review_note } : {}),
-        ...(useReviewedLegacy ? annualCurrentMapping(q.questionNumber, q.stem) : {}),
-        paperCode: 'PHY-IX-2025-P1',
+        ...(useReviewedLegacy
+          ? (classDef.roman === 'IX'
+              ? annualCurrentMapping(q.questionNumber, q.stem)
+              : annualX2025CurrentMapping(q.questionNumber, q.stem))
+          : {}),
+        paperCode: `PHY-${classDef.roman}-2025-P1`,
+        sourceTitle: '2025 · Annual · Paper 1',
         examYear: 2025,
         questionNumber: Number(q.questionNumber),
+        rawQuestionNumber: Number(q.questionNumber),
         cognitiveLevel: ({ K: 'Remembering', U: 'Understanding', A: 'Application' } as Record<string, string>)[q.cognitiveLevel] || q.cognitiveLevel,
       }))
     : [];
@@ -269,11 +279,34 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
         ...annual2024OriginalReference(q.questionNumber),
         ...(useReviewedLegacy ? annual2024CurrentMapping(q.questionNumber, q.stem) : {}),
         paperCode: 'PHY-IX-2024-P1',
+        sourceTitle: '2024 · Annual · Paper 1',
         examYear: 2024,
         questionNumber: Number(q.questionNumber),
+        rawQuestionNumber: Number(q.questionNumber),
         cognitiveLevel: ({ K: 'Remembering', U: 'Understanding', A: 'Application' } as Record<string, string>)[q.cognitiveLevel] || q.cognitiveLevel,
       }))
     : [];
+
+  const combinedChapterPool = [
+    ...mappedModelPool,
+    ...mapped2025Pool.map(q => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
+    ...mapped2024Pool.map(q => ({ ...q, questionNumber: 200 + Number(q.rawQuestionNumber) })),
+  ];
+
+  const combinedAnnualPool = [
+    ...mapped2025Pool,
+    ...mapped2024Pool.map(q => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
+  ];
+
+  const fullPapers = [
+    ...(questions.length?[{ title: 'Physics Model Paper I', desc: 'Practice the available model-paper MCQs with answer feedback and 2025 syllabus SLO mappings.', items: questions.length, time: 'Custom timer', badge: 'MODEL PAPER', source: 'model' as const }]:[]),
+    ...(questions.length && (classDef.roman === 'IX' || classDef.roman === 'X') ? [
+      { title: 'Annual Examination 2025 — Paper I', desc: 'Original 2025 examination MCQs with official answer key, cropped diagrams, and reviewed 2025 syllabus mappings.', items: mapped2025Pool.length, time: 'Custom timer', badge: 'ANNUAL 2025', source: 'annual' as const },
+    ] : []),
+    ...(questions.length && classDef.roman === 'IX' ? [
+      { title: 'Annual Examination 2024 — Paper I', desc: 'Original 2024 examination MCQs with official answer key, cropped diagrams, and 2025 syllabus mappings.', items: past2024.length, time: 'Custom timer', badge: 'ANNUAL 2024', source: 'annual2024' as const },
+    ] : []),
+  ];
 
   // Filtered Questions for Practice Mode
   const isAnnualSource = practiceSource === 'annual' || practiceSource === 'annual2024' || practiceSource === 'annual_all';
@@ -284,18 +317,21 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     : practiceSource === 'annual2024'
     ? mapped2024Pool
     : practiceSource === 'annual_all'
-    ? [...mapped2025Pool, ...mapped2024Pool.map(q => ({ ...q, displayQuestionNumber: `2024 Q${q.questionNumber}`, questionNumber: 100 + Number(q.questionNumber), rawQuestionNumber: Number(q.questionNumber) }))]
-    : questions;
+    ? combinedAnnualPool
+    : practiceSource === 'chapter_all'
+    ? combinedChapterPool
+    : mappedModelPool;
+
   const activeQuestions = questionPool.filter(q => {
     if (selectedUnit) {
-      if (!belongsToUnit(q, selectedUnit, isAnnualSource)) {
+      if (!belongsToUnit(q, selectedUnit, isAnnualSource || Boolean(q.examYear))) {
         return false;
       }
     }
     if (searchQuery.trim()) {
       const optsText = Object.values(q.options || q.choices || {}).join(' ');
-      const combined = `${q.stem || q.questionText || ''} ${optsText} ${q.explanation || ''} ${q.unitName || q.chapter || ''} ${q.slo || ''}`;
-      if (!smartMatch(combined, searchQuery, q.slo)) return false;
+      const combined = `${q.stem || q.questionText || ''} ${optsText} ${q.explanation || ''} ${q.unitName || q.chapter || ''} ${q.current_slo || q.slo || ''}`;
+      if (!smartMatch(combined, searchQuery, q.current_slo || q.slo)) return false;
     }
     if (cognitiveFilter === 'all') return true;
     if (cognitiveFilter === 'diagram') return Boolean(q.diagramBased || q.isDiagram || q.diagramUrl);
@@ -304,11 +340,11 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
   const handleStartChapterPractice = (unit: ChapterDef, isPastPaper = false) => {
     setMappedChapter(null);
-    setPracticeSource(isPastPaper ? 'annual_all' : 'model');
+    setPracticeSource(isPastPaper ? 'annual_all' : 'chapter_all');
     setSelectedUnit(unit);
     setPracticeTitle(isPastPaper
       ? `Unit ${unit.unitNumber}: ${unit.name} • Past Examination Archive (2024 & 2025)`
-      : `Unit ${unit.unitNumber}: ${unit.name} • Chapter Practice`
+      : `Unit ${unit.unitNumber}: ${unit.name} • Chapter-Wise MCQs (Model + 2024 & 2025 Past Papers)`
     );
     setSelectedAnswers({});
     setRevealedAnswers({});
@@ -316,7 +352,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     setCurrentView('practice');
   };
 
-  const handleStartFullBookPractice = (title: string, source: 'model' | 'annual' | 'annual2024' = 'model') => {
+  const handleStartFullBookPractice = (title: string, source: 'model' | 'annual' | 'annual2024' | 'chapter_all' = 'model') => {
     setMappedChapter(null);
     setPracticeSource(source);
     setSelectedUnit(null);
@@ -330,8 +366,8 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   const handleStartCognitiveSprint = (level: 'Remembering' | 'Understanding' | 'Application') => {
     setMappedChapter(null);
     setSelectedUnit(null);
-    setPracticeSource('model');
-    setPracticeTitle(`${level} Cognitive Domain Sprint`);
+    setPracticeSource('chapter_all');
+    setPracticeTitle(`${level} Cognitive Domain Sprint (All ${classDef.name} Papers)`);
     setSelectedAnswers({});
     setRevealedAnswers({});
     setCognitiveFilter(level);
@@ -358,6 +394,23 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     const correctKey = q?.correctOption || q?.correctAnswer;
     return q && correctKey === choice;
   }).length;
+
+  // Build quiz paperCode for TakeQuizModal
+  const activeQuizCode = (() => {
+    const cogTag = ({ all: 'ALL', Remembering: 'R', Understanding: 'U', Application: 'A', diagram: 'DIAGRAM' } as Record<string, string>)[cognitiveFilter] || 'ALL';
+    if (mappedChapter) {
+      return `CURRICULUM:${mappedChapter}:${cogTag}`;
+    }
+    if (selectedUnit && (practiceSource === 'chapter_all' || practiceSource === 'annual_all')) {
+      return `PHY-${classDef.roman}-UNIT-${selectedUnit.unitNumber}-${practiceSource === 'annual_all' ? 'PAST' : 'ALL'}-${cogTag}`;
+    }
+    if (!selectedUnit && (practiceSource === 'chapter_all' || practiceSource === 'annual_all')) {
+      return `PHY-${classDef.roman}-UNIT-0-${practiceSource === 'annual_all' ? 'PAST' : 'ALL'}-${cogTag}`;
+    }
+    const basePaper = `PHY-${classDef.roman}${practiceSource === 'annual2024' ? '-2024' : practiceSource === 'annual' ? '-2025' : ''}-P1`;
+    const nums = [...new Set(activeQuestions.map(q => Number(q.rawQuestionNumber || q.questionNumber)))].sort((a, b) => a - b);
+    return `${basePaper}-SET-${nums.join('-')}`;
+  })();
 
   return (
     <div>
@@ -420,7 +473,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                 </Link>
 
                 <button
-                  onClick={() => handleStartFullBookPractice(`${classDef.name} Complete Question Bank (All 40 Items)`)}
+                  onClick={() => handleStartFullBookPractice(`${classDef.name} Complete Question Bank (All ${combinedChapterPool.length} Items)`, 'chapter_all')}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -436,15 +489,15 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                   }}
                 >
                   <Sparkles size={16} />
-                  <span>Practice All Questions ({questions.length})</span>
+                  <span>Practice All Questions ({combinedChapterPool.length})</span>
                 </button>
               </div>
             </div>
           </div>
 
-          <nav aria-label="MCQ categories" style={{display:'flex',flexWrap:'wrap',gap:'.6rem',marginBottom:'1.5rem'}}><Link href={baseUrl+'/mcqs'} style={{padding:'.7rem',color:'var(--primary-color)'}}>All categories</Link>{mcqCategories.map(item=><Link key={item.id} href={baseUrl+'/mcqs/'+item.id} aria-current={hubTab===item.key?'page':undefined} style={{padding:'.7rem 1rem',border:'1px solid var(--border-color)',borderRadius:8,color:hubTab===item.key?'#fff':'var(--text-color)',background:hubTab===item.key?'#0b5e4a':'var(--card-bg)',textDecoration:'none'}}>{item.label}</Link>)}</nav>
+          <nav aria-label="MCQ categories" style={{display:'flex',flexWrap:'wrap',gap:'.6rem',marginBottom:'1.5rem',alignItems:'center'}}><Link href={baseUrl+'/mcqs'} style={{padding:'.7rem',color:'var(--primary-color)',fontWeight:700}}>All categories</Link>{mcqCategories.map(item=><Link key={item.id} href={baseUrl+'/mcqs/'+item.id} aria-current={hubTab===item.key?'page':undefined} style={{padding:'.7rem 1rem',border:'1px solid var(--border-color)',borderRadius:8,color:hubTab===item.key?'#fff':'var(--text-color)',background:hubTab===item.key?'#0b5e4a':'var(--card-bg)',textDecoration:'none',fontWeight:600}}>{item.label}</Link>)}<span style={{margin:'0 0.25rem',color:'#cbd5e1'}}>|</span><Link href={baseUrl+'/crqs'} style={{padding:'.6rem .95rem',border:'1px solid #93c5fd',borderRadius:8,color:'#1d4ed8',background:'#eff6ff',textDecoration:'none',fontWeight:700,fontSize:'.86rem'}}>Chapter-wise CRQs</Link><Link href={baseUrl+'/erqs'} style={{padding:'.6rem .95rem',border:'1px solid #c4b5fd',borderRadius:8,color:'#6d28d9',background:'#f5f3ff',textDecoration:'none',fontWeight:700,fontSize:'.86rem'}}>Chapter-wise ERQs</Link><Link href={baseUrl+'/numericals'} style={{padding:'.6rem .95rem',border:'1px solid #fcd34d',borderRadius:8,color:'#b45309',background:'#fffbeb',textDecoration:'none',fontWeight:700,fontSize:'.86rem'}}>Chapter-wise Numericals</Link><Link href={baseUrl+'/chapter-notes'} style={{padding:'.6rem .95rem',border:'1px solid #6ee7b7',borderRadius:8,color:'#047857',background:'#ecfdf5',textDecoration:'none',fontWeight:700,fontSize:'.86rem'}}>Chapter SLO Notes</Link></nav>
 
-          {/* TAB 1: CHAPTER WISE MCQS */}
+          {/* TAB 1: CHAPTER WISE MCQS (Model + 2025 + 2024 Past Papers) */}
           {hubTab === 'chapter_wise' && (
             <div>
               <div style={{ marginBottom: '1.5rem' }}>
@@ -452,13 +505,15 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                   Chapter-Wise Curriculum Practice Bank
                 </h2>
                 <p style={{ fontSize: '0.92rem', color: '#64748b', margin: 0 }}>
-                  Practice model question groups mapped to the 2025 AKU-EB Physics syllabus units with instant answer feedback.
+                  Practice all chapter-mapped MCQs (including Model Paper I, 2025 Annual Paper I, and 2024 Annual Paper I) aligned to the 2025 AKU-EB Physics syllabus units with instant answer feedback and SLO mappings.
                 </p>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '1.25rem' }}>
                 {unitsList.map((unit) => {
-                  const unitQCount = questions.filter(q => belongsToUnit(q, unit, false)).length;
+                  const modelCount = mappedModelPool.filter(q => belongsToUnit(q, unit, false)).length;
+                  const pastCount = combinedAnnualPool.filter(q => belongsToUnit(q, unit, true)).length;
+                  const unitQCount = modelCount + pastCount;
                   return (
                     <div
                       key={unit.unitNumber}
@@ -487,8 +542,8 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                           }}>
                             UNIT {unit.unitNumber}
                           </span>
-                          <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>
-                            {unitQCount} Model Items
+                          <span style={{ fontSize: '0.8rem', color: '#0b5e4a', fontWeight: 700 }}>
+                            {unitQCount} Total Items ({modelCount} Model{pastCount ? ` • ${pastCount} Past` : ''})
                           </span>
                         </div>
 
@@ -520,7 +575,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                             gap: '0.35rem'
                           }}
                         >
-                          <span>Practice Unit {unit.unitNumber}</span>
+                          <span>Practice Unit {unit.unitNumber} ({unitQCount})</span>
                           <ArrowRight size={14} />
                         </button>
                       </div>
@@ -546,8 +601,8 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '1.25rem' }}>
                 {unitsList.map((unit) => {
-                  const refCount2025 = past2025.filter(q => belongsToUnit(q, unit, true)).length;
-                  const refCount2024 = past2024.filter(q => belongsToUnit(q, unit, true)).length;
+                  const refCount2025 = mapped2025Pool.filter(q => belongsToUnit(q, unit, true)).length;
+                  const refCount2024 = mapped2024Pool.filter(q => belongsToUnit(q, unit, true)).length;
                   const totalRefCount = refCount2025 + refCount2024;
                   return (
                   <div
@@ -610,7 +665,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                         }}
                       >
                         <Calendar size={14} />
-                        <span>Solve Past Paper MCQs</span>
+                        <span>Solve Past Paper MCQs ({totalRefCount})</span>
                         <ArrowRight size={14} />
                       </button>
                     </div>
@@ -1048,7 +1103,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                           fontSize: '0.8rem',
                           fontWeight: 800
                         }}>
-                          {q.examYear ? `${q.examYear} · Q${rawQNum}` : `Q${rawQNum}`}
+                          {q.examYear ? `${q.examYear} · Q${rawQNum}` : `Model · Q${rawQNum}`}
                         </span>
                         <span style={{
                           background: q.cognitiveLevel === 'Remembering' ? '#fef3c7' : q.cognitiveLevel === 'Understanding' ? '#e0f2fe' : '#dcfce7',
@@ -1086,7 +1141,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                       </button>
                     </div>
 
-                    <QuestionSource question={q} source={mappedChapter?'mapped':isAnnualSource?'annual':'model'} board={board.shortCode} grade={classDef.level} subject={meta.title} />
+                    <QuestionSource question={q} source={mappedChapter ? 'mapped' : (q.examYear || isAnnualSource) ? 'annual' : 'model'} board={board.shortCode} grade={classDef.level} subject={meta.title} />
 
                     {/* Question Stem rendered with StructuredContent (Tables + KaTeX) */}
                     <div style={{ fontSize: '1.05rem', color: 'var(--text-color, #1a2e26)', fontWeight: 600, lineHeight: 1.6, marginBottom: '1.25rem' }}>
@@ -1220,7 +1275,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
         isOpen={quizModalOpen}
         onClose={() => setQuizModalOpen(false)}
         paperTitle={practiceTitle}
-        paperCode={mappedChapter?`CURRICULUM:${mappedChapter}:${({all:'ALL',Remembering:'R',Understanding:'U',Application:'A',diagram:'DIAGRAM'} as Record<string,string>)[cognitiveFilter]}`:`PHY-${classDef.roman}${practiceSource === 'annual2024' ? '-2024' : isAnnualSource ? '-2025' : ''}-P1-SET-${activeQuestions.map(q => Number(q.rawQuestionNumber || q.questionNumber)).sort((a, b) => a - b).join('-')}`}
+        paperCode={activeQuizCode}
         questions={activeQuestions}
       />
     </div>

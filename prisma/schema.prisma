@@ -1095,6 +1095,7 @@ model User {
   teacherClassrooms    Classroom[]            @relation("TeacherClassrooms")
   classroomMemberships ClassroomMembership[]
   teacherQuizzes       Quiz[]                 @relation("TeacherQuizzes")
+  questionBankItems    QuestionBankItem[]
   quizAttempts         QuizAttempt[]
   gradedAnswers        AnswerGrade[]          @relation("TeacherGradedAnswers")
   auditLogs            AuditLog[]
@@ -1516,4 +1517,20 @@ model AuditLog {
 
   @@index([action])
   @@index([createdAt])
+}
+
+model QuestionBankItem {
+  id             String   @id @default(uuid())
+  creatorId      String
+  questionType   String
+  stemText       String   @db.Text
+  difficulty     String
+  marks          Float
+  cognitiveLevel String
+  content        Json
+  createdAt      DateTime @default(now())
+
+  creator        User     @relation(fields: [creatorId], references: [id], onDelete: Restrict)
+
+  @@index([creatorId, createdAt])
 }

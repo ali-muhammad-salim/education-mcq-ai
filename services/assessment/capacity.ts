@@ -28,7 +28,7 @@ export class AssessmentCapacity {
 }
 function bounded(value:string|undefined,fallback:number,min:number,max:number) {const n=Number(value);return Number.isInteger(n)&&n>=min&&n<=max?n:fallback;}
 const shared=globalThis as typeof globalThis & {assessmentCapacity?:AssessmentCapacity};
-export const assessmentCapacity = shared.assessmentCapacity ??= new AssessmentCapacity(bounded(process.env.ASSESSMENT_MAX_IN_FLIGHT,16,1,64),bounded(process.env.ASSESSMENT_MAX_WAITING,256,0,1024));
+export const assessmentCapacity = shared.assessmentCapacity ??= new AssessmentCapacity(bounded(process.env.ASSESSMENT_MAX_IN_FLIGHT,32,1,128),bounded(process.env.ASSESSMENT_MAX_WAITING,512,0,2048));
 export async function withAssessmentCapacity(priority:number,work:()=>Promise<NextResponse>) {
   try{return await assessmentCapacity.run(priority,work);}
   catch(error){const response=apiError(error);if(error instanceof ApiError && error.code==='ASSESSMENT_BUSY')response.headers.set('Retry-After','3');return response;}

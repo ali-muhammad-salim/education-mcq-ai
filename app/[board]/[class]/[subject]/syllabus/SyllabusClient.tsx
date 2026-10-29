@@ -23,7 +23,7 @@ interface Props {
 export default function SyllabusClient({ board, classDef, meta, baseUrl, units, originalUrl }: Props) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedUnit, setSelectedUnit] = useState<number | 'all'>('all');
-  const [cognitiveFilter, setCognitiveFilter] = useState<'all' | 'R' | 'U' | 'A' | 'An' | 'E' | 'C' | 'FA'>('all');
+  const [cognitiveFilter, setCognitiveFilter] = useState<'all' | 'R' | 'U' | 'A' | 'E'>('all');
   const [expandedUnits, setExpandedUnits] = useState<Record<number, boolean>>({
     1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true
   });
@@ -163,10 +163,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
             { id: 'R', label: 'Remembering (R)' },
             { id: 'U', label: 'Understanding (U)' },
             { id: 'A', label: 'Application (A)' },
-            { id: 'An', label: 'Analysis (An)' },
-            { id: 'E', label: 'Evaluation (E)' },
-            { id: 'C', label: 'Create (C)' },
-            { id: 'FA', label: 'Formative (FA)' }
+            { id: 'E', label: 'Evaluation (E)' }
           ].map(f => (
             <button
               key={f.id}
@@ -256,7 +253,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
                           </thead>
                           <tbody>
                             {subtopic.slos && subtopic.slos.map((slo: any, sloIdx: number) => (
-                              <tr id={"slo-"+slo.code+(subtopic.slos.findIndex((item:any)=>item.code===slo.code)===sloIdx?'':'-'+(slo.sourcePage||'page')+'-'+sloIdx)} key={sloIdx} style={{ borderBottom: '1px solid #f0f4f2' }}>
+                              <tr id={"slo-"+slo.code} key={sloIdx} style={{ borderBottom: '1px solid #f0f4f2' }}>
                                 <td style={{ padding: '8px 12px', fontWeight: 700, color: '#1a2e26', fontFamily: 'monospace' }}>
                                   {slo.code}
                                 </td>

@@ -41,96 +41,187 @@
     }
   },
   "PHY-X-2025-P1": {
-    "8": {
-      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q8.png",
-      "description": "Table showing vibrating objects, area of objects, and amplitude of vibration",
+    "2": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q2.png",
+      "description": "Table of four pendulums A, B, C, D with lengths (50\u201380 cm) and masses (50\u201310 gm)",
+      "page": 2,
+      "box_2d": [
+        258,
+        110,
+        395,
+        515
+      ],
+      "width": 670,
+      "height": 320
+    },
+    "6": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q6.png",
+      "description": "Four oscilloscope wave figures A, B, C, D comparing amplitude and frequency",
       "page": 3,
       "box_2d": [
-        264,
-        169,
-        399,
-        893
+        132,
+        165,
+        395,
+        695
       ],
-      "width": 1232,
-      "height": 350
+      "width": 877,
+      "height": 615
     },
-    "17": {
-      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q17.png",
-      "description": "Circuit diagram showing three capacitors connected in parallel across wires",
+    "9": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q9.png",
+      "description": "Concave mirror principal axis showing points 2F, F, and pole P",
+      "page": 3,
+      "box_2d": [
+        642,
+        165,
+        742,
+        415
+      ],
+      "width": 413,
+      "height": 234
+    },
+    "11": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q11.png",
+      "description": "Four ray diagrams A, B, C, D showing light incident on a rectangular glass slab",
       "page": 4,
       "box_2d": [
-        673,
-        116,
-        787,
-        404
+        262,
+        115,
+        512,
+        645
       ],
-      "width": 510,
-      "height": 301
+      "width": 877,
+      "height": 585
     },
-    "18": {
-      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q18.png",
-      "description": "Table showing options for electric current and potential difference for appliances connected in parallel.",
+    "13": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q13.png",
+      "description": "Incident ray in glass refracting along the glass-air boundary with angle X labeled",
       "page": 5,
       "box_2d": [
-        193,
-        163,
-        331,
-        735
+        135,
+        175,
+        322,
+        568
       ],
-      "width": 981,
-      "height": 357
+      "width": 651,
+      "height": 437
     },
-    "20": {
-      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q20.png",
-      "description": "Table showing options for the resistance of metallic conductors A and B under different conditions.",
+    "16": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q16.png",
+      "description": "Electric field lines directed from point charge P to point charge Q",
       "page": 5,
       "box_2d": [
-        542,
-        163,
-        706,
-        733
+        722,
+        165,
+        822,
+        458
       ],
-      "width": 978,
-      "height": 418
+      "width": 484,
+      "height": 233
     },
-    "21": {
-      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q21.png",
-      "description": "Electric circuit diagram showing parallel branches with resistors and points numbered 1 to 4 and a voltage source V",
+    "19": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q19.png",
+      "description": "Circuit diagram with battery and four bulbs B1, B2, B3, and B4",
       "page": 6,
       "box_2d": [
-        146,
-        114,
-        303,
-        477
+        365,
+        115,
+        530,
+        495
       ],
-      "width": 635,
-      "height": 402
+      "width": 629,
+      "height": 386
+    },
+    "23": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q23.png",
+      "description": "Current-carrying rectangular coil in a uniform magnetic field with rotation axis XY",
+      "page": 7,
+      "box_2d": [
+        168,
+        165,
+        318,
+        428
+      ],
+      "width": 435,
+      "height": 351
     },
     "24": {
       "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q24.png",
-      "description": "Table comparing speed and induced electromotive force options A, B, C, D",
-      "page": 6,
-      "box_2d": [
-        673,
-        118,
-        804,
-        712
-      ],
-      "width": 1017,
-      "height": 341
-    },
-    "27": {
-      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q27.png",
-      "description": "Logic gate symbols labeled A, B, C, and D",
+      "description": "Bar magnet (N-S) pushed into a solenoid connected to a sensitive galvanometer G",
       "page": 7,
       "box_2d": [
-        238,
-        159,
-        333,
-        865
+        452,
+        165,
+        575,
+        465
       ],
-      "width": 1202,
-      "height": 257
+      "width": 496,
+      "height": 288
+    },
+    "28": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q28.png",
+      "description": "Electron beam entering horizontal region between positively and negatively charged plates",
+      "page": 8,
+      "box_2d": [
+        255,
+        115,
+        398,
+        638
+      ],
+      "width": 865,
+      "height": 334
+    },
+    "29": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q29.png",
+      "description": "NAND logic gate symbol with inputs X, Y and output Z",
+      "page": 8,
+      "box_2d": [
+        542,
+        115,
+        595,
+        395
+      ],
+      "width": 463,
+      "height": 124
+    },
+    "31": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q31.png",
+      "description": "Two-input truth table for AND gate (Input A, Input B, Output)",
+      "page": 9,
+      "box_2d": [
+        135,
+        162,
+        268,
+        435
+      ],
+      "width": 451,
+      "height": 311
+    },
+    "32": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q32.png",
+      "description": "Information technology pentagon diagram showing Hardware, Software, People, Procedure, and X",
+      "page": 9,
+      "box_2d": [
+        392,
+        165,
+        568,
+        465
+      ],
+      "width": 496,
+      "height": 411
+    },
+    "37": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q37.png",
+      "description": "Nuclear radiations P, Q, R, S incident on Paper, Steel, and Lead absorber sheets",
+      "page": 10,
+      "box_2d": [
+        380,
+        122,
+        552,
+        398
+      ],
+      "width": 457,
+      "height": 402
     }
   },
   "PHY-IX-2025-P2": {
@@ -148,7 +239,125 @@
       "height": 507
     }
   },
-  "PHY-X-2025-P2": {},
+  "PHY-X-2025-P2": {
+    "6": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q6a.png",
+      "description": "Hand motion producing transverse rope wave (1) and longitudinal slinky wave (2)",
+      "page": 4,
+      "box_2d": [
+        222,
+        55,
+        448,
+        442
+      ],
+      "width": 638,
+      "height": 524
+    },
+    "6a": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q6a.png",
+      "description": "Hand motion producing transverse rope wave (1) and longitudinal slinky wave (2)",
+      "page": 4,
+      "box_2d": [
+        222,
+        55,
+        448,
+        442
+      ],
+      "width": 638,
+      "height": 524
+    },
+    "6.a": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q6a.png",
+      "description": "Hand motion producing transverse rope wave (1) and longitudinal slinky wave (2)",
+      "page": 4,
+      "box_2d": [
+        222,
+        55,
+        448,
+        442
+      ],
+      "width": 638,
+      "height": 524
+    },
+    "6b": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q6b.png",
+      "description": "Ultrasound echolocation by a flying bat and marine depth sounding by a ship",
+      "page": 4,
+      "box_2d": [
+        585,
+        55,
+        758,
+        508
+      ],
+      "width": 753,
+      "height": 407
+    },
+    "6.b": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q6b.png",
+      "description": "Ultrasound echolocation by a flying bat and marine depth sounding by a ship",
+      "page": 4,
+      "box_2d": [
+        585,
+        55,
+        758,
+        508
+      ],
+      "width": 753,
+      "height": 407
+    },
+    "7a": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q7a.png",
+      "description": "Electrostatic induction showing a positively charged rod polarizing a nearby sphere",
+      "page": 6,
+      "box_2d": [
+        200,
+        145,
+        288,
+        402
+      ],
+      "width": 413,
+      "height": 203
+    },
+    "7.a": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q7a.png",
+      "description": "Electrostatic induction showing a positively charged rod polarizing a nearby sphere",
+      "page": 6,
+      "box_2d": [
+        200,
+        145,
+        288,
+        402
+      ],
+      "width": 413,
+      "height": 203
+    },
+    "7b": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q7b.png",
+      "description": "Electrical circuit diagram with battery and 5 blank label boxes for rheostat, resistor, voltmeter, ammeter, and switch",
+      "page": 7,
+      "box_2d": [
+        168,
+        198,
+        392,
+        852
+      ],
+      "width": 1075,
+      "height": 524
+    },
+    "7.b": {
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q7b.png",
+      "description": "Electrical circuit diagram with battery and 5 blank label boxes for rheostat, resistor, voltmeter, ammeter, and switch",
+      "page": 7,
+      "box_2d": [
+        168,
+        198,
+        392,
+        852
+      ],
+      "width": 1075,
+      "height": 524
+    }
+  },
   "PHY-IX-2024-P1": {
     "3": {
       "diagramUrl": "/extracted_diagrams/PHY-IX-2024-P1_Q3.png",

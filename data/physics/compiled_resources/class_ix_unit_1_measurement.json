@@ -60,7 +60,7 @@
     },
     {
       "term": "Learning Outcome 1.4.3",
-      "definition": "describe the ‘head to tail’ rule of vector addition;",
+      "definition": "describe the \u2018head to tail\u2019 rule of vector addition;",
       "slo_code": "1.4.3",
       "cognitive_level": "U"
     },
@@ -130,7 +130,7 @@
         "D. $37.0\\text{ cm}^3$."
       ],
       "correct_option": "D",
-      "explanation": "Total volume = 21 * 1.76 = 36.96 cm³. When rounded off to 3 significant figures, 36.96 becomes 37.0 cm³.",
+      "explanation": "Total volume = 21 * 1.76 = 36.96 cm\u00b3. When rounded off to 3 significant figures, 36.96 becomes 37.0 cm\u00b3.",
       "marks": 1.0,
       "cognitive_level": "Application"
     },
@@ -203,6 +203,96 @@
       "explanation": "Correct option according to the official board answer key.",
       "marks": 1.0,
       "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "2024-Q1",
+      "stem_text": "The total number of significant figures in $0.002022$ are",
+      "options": [
+        "A. 3",
+        "B. 4",
+        "C. 6",
+        "D. 7"
+      ],
+      "correct_option": "B",
+      "explanation": "Leading zeros to the left of the first non-zero digit ($0.00$) are only placeholders and are not significant. All four digits starting from the first non-zero digit ($2, 0, 2, 2$) are significant, giving a total of 4 significant figures.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "1.7.1",
+      "original_slo": "1.7.3",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q2",
+      "stem_text": "The number $0.0000509$ can be represented in scientific notation as",
+      "options": [
+        "A. $5.09 \\times 10^{5}$",
+        "B. $5.09 \\times 10^{3}$",
+        "C. $5.09 \\times 10^{-3}$",
+        "D. $5.09 \\times 10^{-5}$"
+      ],
+      "correct_option": "D",
+      "explanation": "Moving the decimal point 5 places to the right to place it immediately after the first non-zero digit ($5$) gives $5.09 \\times 10^{-5}$.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "1.3.2",
+      "original_slo": "1.5.1",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q3",
+      "stem_text": "If the volume of the given cuboid is $0.03\\text{ m}^3$, then the value of $x$ will be",
+      "options": [
+        "A. 0.1 m.",
+        "B. 0.2 m.",
+        "C. 0.3 m.",
+        "D. 0.5 m."
+      ],
+      "correct_option": "C",
+      "explanation": "The volume of a cuboid is $V = l \\times w \\times h$. Substituting $V = 0.03\\text{ m}^3$, $l = 0.5\\text{ m}$, and $w = 0.2\\text{ m}$ gives $0.03 = 0.5 \\times 0.2 \\times x = 0.1x$, so $x = 0.03 / 0.1 = 0.3\\text{ m}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "1.2.2",
+      "original_slo": "1.4.1",
+      "exam_year": 2024,
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P1_Q3.png"
+    },
+    {
+      "question_number": "2024-Q4",
+      "stem_text": "The total number of derived quantities involved in the equation $S = v_i t + \\frac{1}{2}at^2$ is",
+      "options": [
+        "A. one.",
+        "B. two.",
+        "C. three.",
+        "D. four."
+      ],
+      "correct_option": "B",
+      "explanation": "In the second equation of motion $S = v_i t + \\frac{1}{2}at^2$, distance/displacement ($S$, length) and time ($t$) are base quantities, while initial velocity ($v_i$) and acceleration ($a$) are derived quantities \u2014 making a total of two derived quantities.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "1.1.3",
+      "original_slo": "1.3.1",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q6",
+      "stem_text": "A force of $10\\text{ N}$ is acting on a body along x-axis. The value of its y-component will be",
+      "options": [
+        "A. 0 N.",
+        "B. 5 N.",
+        "C. 10 N.",
+        "D. 20 N."
+      ],
+      "correct_option": "A",
+      "explanation": "Since the force acts entirely along the x-axis ($\\theta = 0^\\circ$), its y-component is $F_y = F\\sin 0^\\circ = 10 \\times 0 = 0\\text{ N}$.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "1.4.4",
+      "original_slo": "2.7.2",
+      "exam_year": 2024,
+      "diagram_url": null
     }
   ],
   "crqs": [
@@ -219,6 +309,29 @@
       "slo_code": "1.5.2",
       "answer": "Length / internal and external diameter (Vernier callipers least count = 0.01 cm or 0.1 mm; Micrometer screw gauge least count = 0.001 cm or 0.01 mm).",
       "source": "AKU-EB SSC-I Model Paper II Q.1"
+    },
+    {
+      "question_number": "2024-Q.1",
+      "question": "An online purchasing company delivered a fragile item to its customer in a triangular box. The breadth and height of the box was $15\\text{ cm}$ and $20\\text{ cm}$ respectively.\n\nCalculate the volume of the triangular box upto two significant figures.\n\n(Note: $\\text{Volume }(V) = \\text{Breadth} \\times \\text{Height}$)",
+      "question_text": "An online purchasing company delivered a fragile item to its customer in a triangular box. The breadth and height of the box was $15\\text{ cm}$ and $20\\text{ cm}$ respectively.\n\nCalculate the volume of the triangular box upto two significant figures.\n\n(Note: $\\text{Volume }(V) = \\text{Breadth} \\times \\text{Height}$)",
+      "marks": 2.0,
+      "slo_code": "1.7.2",
+      "original_slo": "1.7.3",
+      "cognitive_level": "Application",
+      "rubric": [
+        {
+          "marks": 1,
+          "description": "1 mark for writing the correct calculated answer: V = 15 cm \u00d7 20 cm = 300 cm\u00b2 (or cm\u00b3)."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for rounding and writing the answer to two significant figures: 3.0 \u00d7 10\u00b2 cm\u00b2."
+        }
+      ],
+      "answer": "Given Data:\nBreadth ($B$) = $15\\text{ cm}$\nHeight ($H$) = $20\\text{ cm}$\n\nFormula:\n$\\text{Volume }(V) = \\text{Breadth} \\times \\text{Height}$\n\nCalculation:\n$V = 15\\text{ cm} \\times 20\\text{ cm} = 300\\text{ cm}^2$\n\nRounding to two significant figures:\n$V = 3.0 \\times 10^2\\text{ cm}^2$ (where $3$ and $0$ are two significant figures).",
+      "model_answer": "Given Data:\nBreadth ($B$) = $15\\text{ cm}$\nHeight ($H$) = $20\\text{ cm}$\n\nFormula:\n$\\text{Volume }(V) = \\text{Breadth} \\times \\text{Height}$\n\nCalculation:\n$V = 15\\text{ cm} \\times 20\\text{ cm} = 300\\text{ cm}^2$\n\nRounding to two significant figures:\n$V = 3.0 \\times 10^2\\text{ cm}^2$ (where $3$ and $0$ are two significant figures).",
+      "diagram_url": null,
+      "source": "AKU-EB SSC-I 2024 Annual Paper II Q.1"
     }
   ],
   "erqs": [
@@ -232,10 +345,60 @@
   ],
   "numericals": [
     {
-      "problem": "The volume of one small metallic cube is 1.76 cm³. Calculate the total volume of 21 such cubes and round the result to three significant figures.",
+      "question_number": "Q.1",
+      "problem": "An online purchasing company delivered a fragile item to its customer in a triangular box. The breadth and height of the box was $15\\text{ cm}$ and $20\\text{ cm}$ respectively.\n\nCalculate the volume of the triangular box upto two significant figures.\n\n(Note: $\\text{Volume }(V) = \\text{Breadth} \\times \\text{Height}$)",
       "slo_code": "1.7.2",
-      "formula": "V_total = 21 × V_1",
-      "solution": "V_total = 21 × 1.76 cm³ = 36.96 cm³. Rounded to 3 significant figures, V_total = 37.0 cm³."
+      "formula": "",
+      "solution": "Given Data:\nBreadth ($B$) = $15\\text{ cm}$\nHeight ($H$) = $20\\text{ cm}$\n\nFormula:\n$\\text{Volume }(V) = \\text{Breadth} \\times \\text{Height}$\n\nCalculation:\n$V = 15\\text{ cm} \\times 20\\text{ cm} = 300\\text{ cm}^2$\n\nRounding to two significant figures:\n$V = 3.0 \\times 10^2\\text{ cm}^2$ (where $3$ and $0$ are two significant figures).",
+      "source": "2024 Annual Paper II (CRQ \u2022 2 Marks)"
+    },
+    {
+      "question_number": "Num.2",
+      "problem": "The volume of one small metallic cube is 1.76 cm\u00b3. Calculate the total volume of 21 such cubes and round the result to three significant figures.",
+      "slo_code": "1.7.2",
+      "formula": "V_total = 21 \u00d7 V_1",
+      "solution": "V_total = 21 \u00d7 1.76 cm\u00b3 = 36.96 cm\u00b3. Rounded to 3 significant figures, V_total = 37.0 cm\u00b3.",
+      "source": "Unit 1 Worked Numerical"
+    },
+    {
+      "question_number": "Num.3",
+      "problem": "If the volume of the given cuboid is $0.03\\text{ m}^3$, then the value of $x$ will be",
+      "slo_code": "1.2.2",
+      "formula": "",
+      "solution": "The volume of a cuboid is $V = l \\times w \\times h$. Substituting $V = 0.03\\text{ m}^3$, $l = 0.5\\text{ m}$, and $w = 0.2\\text{ m}$ gives $0.03 = 0.5 \\times 0.2 \\times x = 0.1x$, so $x = 0.03 / 0.1 = 0.3\\text{ m}$.",
+      "source": "Unit 1 Worked Numerical"
+    },
+    {
+      "question_number": "Num.4",
+      "problem": "A force of $10\\text{ N}$ is acting on a body along x-axis. The value of its y-component will be",
+      "slo_code": "1.4.4",
+      "formula": "",
+      "solution": "Since the force acts entirely along the x-axis ($\\theta = 0^\\circ$), its y-component is $F_y = F\\sin 0^\\circ = 10 \\times 0 = 0\\text{ N}$.",
+      "source": "Unit 1 Worked Numerical"
+    },
+    {
+      "question_number": "Num.5",
+      "problem": "If the volume of one cube is $1.76\\text{ cm}^3$, then the volume of twenty-one such cubes rounded off to three significant figures is",
+      "slo_code": "1.7.2",
+      "formula": "",
+      "solution": "Total volume = 21 * 1.76 = 36.96 cm\u00b3. When rounded off to 3 significant figures, 36.96 becomes 37.0 cm\u00b3.",
+      "source": "Unit 1 Worked Numerical"
+    },
+    {
+      "question_number": "Num.6",
+      "problem": "The number 123.4 can also be written in scientific notation as",
+      "slo_code": "1.3.2",
+      "formula": "",
+      "solution": "To express 123.4 in standard scientific notation ($a \\times 10^n$ where $1 \\le |a| < 10$), the decimal point is moved two places to the left, giving $1.234 \\times 10^2$.",
+      "source": "Unit 1 Worked Numerical"
+    },
+    {
+      "question_number": "Num.7",
+      "problem": "Two forces ($9\\text{ N}$ and $12\\text{ N}$) act at the right angle at point O, as shown in the given figure. What will be the magnitude and direction of the resultant force?",
+      "slo_code": "1.4.4",
+      "formula": "",
+      "solution": "Magnitude $R = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15\\text{ N}$. By vector addition (head-to-tail / parallelogram law), the resultant lies along OQ.",
+      "source": "Unit 1 Worked Numerical"
     }
   ]
 }

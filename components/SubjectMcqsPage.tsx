@@ -63,7 +63,7 @@ export default async function SubjectMcqsPage({ params, category }: PageProps) {
         annualQuestions={legacy ? (classDef.level===9 ? past2025.map(q=>({...q,...applyAnswerDecision({},q.questionNumber,q.stem,q.options,answerDecisions)})) : pastX2025) : []}
         mappedChapters={mappedChapters}
         initialCategory={category}
-        useReviewedLegacy={legacy && classDef.level===9 && !await publishedCurriculum(board.shortCode,classDef.level,meta.title)}
+        useReviewedLegacy={legacy && !await publishedCurriculum(board.shortCode,classDef.level,meta.title)}
       />}
     </div>
   );

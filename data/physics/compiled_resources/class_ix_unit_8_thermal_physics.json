@@ -209,6 +209,96 @@
       "explanation": "When lying on a bed of nails, the weight (force) of the performer is distributed over a large number of contact points (large area), resulting in small pressure per nail. When stepping on a single nail, the entire weight acts on a single tiny area, creating extremely high pressure.",
       "marks": 1.0,
       "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "2024-Q28",
+      "stem_text": "According to the kinetic molecular theory of matter, the distance among the molecules of matter in the liquid state is",
+      "options": [
+        "A. equal to solid state.",
+        "B. more than solid state.",
+        "C. equal to gaseous state.",
+        "D. more than gaseous state."
+      ],
+      "correct_option": "B",
+      "explanation": "In a liquid, molecules are less tightly packed than in a solid (though much closer than in a gas), so the intermolecular spacing in a liquid is greater than in the solid state.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "8.1.2",
+      "original_slo": "7.1.1",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q33",
+      "stem_text": "The CORRECT relation between Celsius and Fahrenheit is",
+      "options": [
+        "A. $1^\\circ\\text{C} > 1^\\circ\\text{F}$.",
+        "B. $1^\\circ\\text{C} < -32^\\circ\\text{F}$.",
+        "C. $-32^\\circ\\text{C} > 1^\\circ\\text{F}$.",
+        "D. $32^\\circ\\text{C} < 32^\\circ\\text{F}$."
+      ],
+      "correct_option": "A",
+      "explanation": "Using $T_F = \\frac{9}{5}T_C + 32$, a temperature of $1^\\circ\\text{C}$ equals $33.8^\\circ\\text{F}$, which is much warmer than $1^\\circ\\text{F}$. Therefore, $1^\\circ\\text{C} > 1^\\circ\\text{F}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "8.3.2",
+      "original_slo": "8.2.2",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q34",
+      "stem_text": "The amount of heat energy required to change a substance from solid into liquid state at its melting point without any change in its temperature is known as",
+      "options": [
+        "A. heat capacity.",
+        "B. latent heat of fusion.",
+        "C. specific heat capacity.",
+        "D. latent heat of vapourisation."
+      ],
+      "correct_option": "B",
+      "explanation": "Latent heat of fusion is the thermal energy required to change a solid into a liquid at its melting point without any change in temperature.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering",
+      "slo_code": "8.2.4",
+      "original_slo": "8.4.1",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q35",
+      "stem_text": "If the temperature of a substance is $20^\\circ\\text{C}$, then its temperature in Kelvin scale will be",
+      "options": [
+        "A. \u2013 253 K.",
+        "B. \u2013 6.66 K.",
+        "C. 68 K.",
+        "D. 293 K."
+      ],
+      "correct_option": "D",
+      "explanation": "Converting from Celsius to Kelvin uses $T(\\text{K}) = T(^\\circ\\text{C}) + 273 = 20 + 273 = 293\\text{ K}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "8.3.2",
+      "original_slo": "8.2.2",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q36",
+      "stem_text": "A metal cap on a glass bottle can easily be opened when hot water is poured over it. This is because",
+      "options": [
+        "A. metal and glass do not expand.",
+        "B. metal and glass expand equally.",
+        "C. metal expands less and glass expands more.",
+        "D. metal expands more and glass expands less."
+      ],
+      "correct_option": "D",
+      "explanation": "Metals have a higher coefficient of thermal expansion than glass. When hot water is poured over the bottle neck, the metal cap expands more than the glass, loosening its grip so it can be unscrewed easily.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "8.2.1",
+      "original_slo": "8.7.1",
+      "exam_year": 2024,
+      "diagram_url": null
     }
   ],
   "crqs": [
@@ -225,23 +315,68 @@
       "slo_code": "8.2.9",
       "answer": "Heating causes thermal expansion of the metal rim, increasing its diameter so it slips easily over the wooden wheel; upon cooling, it contracts tightly onto the wheel.",
       "source": "AKU-EB SSC-I Model Paper II Q.4"
+    },
+    {
+      "question_number": "2024-Q.4",
+      "question": "Describe in THREE points, how evaporation causes cooling.",
+      "question_text": "Describe in THREE points, how evaporation causes cooling.",
+      "marks": 3.0,
+      "slo_code": "8.2.9",
+      "original_slo": "8.6.3",
+      "cognitive_level": "Understanding",
+      "rubric": [
+        {
+          "marks": 1,
+          "description": "1 mark for stating that molecules in a liquid move with different kinetic energies and the higher-kinetic-energy molecules at the surface escape into the air."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for explaining that the departure of high-energy molecules lowers the average kinetic energy of the molecules left behind in the liquid."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for explaining that during evaporation, latent heat is absorbed from the remaining liquid and surroundings, lowering the temperature and causing cooling."
+        }
+      ],
+      "answer": "1. **Escape of High-Kinetic-Energy Molecules:** In any liquid, molecules are in continuous random motion with a range of kinetic energies. During evaporation, the fastest-moving molecules near the surface possess enough kinetic energy to overcome intermolecular attractive forces and escape as vapour.\n2. **Decrease in Average Kinetic Energy:** After the most energetic molecules escape, the molecules left behind in the liquid have a lower average kinetic energy.\n3. **Drop in Temperature and Heat Absorption:** Since the temperature of a liquid is directly proportional to the average kinetic energy of its molecules (and evaporating molecules absorb latent heat of vaporisation from the liquid and its surroundings), the temperature of the remaining liquid decreases, producing a cooling effect.",
+      "model_answer": "1. **Escape of High-Kinetic-Energy Molecules:** In any liquid, molecules are in continuous random motion with a range of kinetic energies. During evaporation, the fastest-moving molecules near the surface possess enough kinetic energy to overcome intermolecular attractive forces and escape as vapour.\n2. **Decrease in Average Kinetic Energy:** After the most energetic molecules escape, the molecules left behind in the liquid have a lower average kinetic energy.\n3. **Drop in Temperature and Heat Absorption:** Since the temperature of a liquid is directly proportional to the average kinetic energy of its molecules (and evaporating molecules absorb latent heat of vaporisation from the liquid and its surroundings), the temperature of the remaining liquid decreases, producing a cooling effect.",
+      "diagram_url": null,
+      "source": "AKU-EB SSC-I 2024 Annual Paper II Q.4"
     }
   ],
   "erqs": [
     {
-      "question": "Explain the temperature–time heating curve when crushed ice at -10°C is slowly heated until it turns into steam at 100°C, identifying why the temperature remains constant during melting and boiling.",
+      "question": "Explain the temperature\u2013time heating curve when crushed ice at -10\u00b0C is slowly heated until it turns into steam at 100\u00b0C, identifying why the temperature remains constant during melting and boiling.",
       "marks": 5,
       "slo_code": "8.2.5",
-      "answer": "During melting at 0°C (latent heat of fusion) and boiling at 100°C (latent heat of vaporisation), absorbed heat energy goes into overcoming intermolecular forces rather than increasing average translational kinetic energy, so temperature stays constant.",
+      "answer": "During melting at 0\u00b0C (latent heat of fusion) and boiling at 100\u00b0C (latent heat of vaporisation), absorbed heat energy goes into overcoming intermolecular forces rather than increasing average translational kinetic energy, so temperature stays constant.",
       "source": "AKU-EB SSC-I Sample Practical Paper III"
     }
   ],
   "numericals": [
     {
-      "problem": "Convert a temperature of 20°C into the Kelvin (K) and Fahrenheit (°F) scales.",
+      "question_number": "Num.1",
+      "problem": "Convert a temperature of 20\u00b0C into the Kelvin (K) and Fahrenheit (\u00b0F) scales.",
       "slo_code": "8.3.3",
-      "formula": "T(K) = T(°C) + 273; T(°F) = 1.8 T(°C) + 32",
-      "solution": "T(K) = 20 + 273 = 293 K; T(°F) = (1.8 × 20) + 32 = 68°F."
+      "formula": "T(K) = T(\u00b0C) + 273; T(\u00b0F) = 1.8 T(\u00b0C) + 32",
+      "solution": "T(K) = 20 + 273 = 293 K; T(\u00b0F) = (1.8 \u00d7 20) + 32 = 68\u00b0F.",
+      "source": "Unit 8 Worked Numerical"
+    },
+    {
+      "question_number": "Num.2",
+      "problem": "If the temperature of a substance is $20^\\circ\\text{C}$, then its temperature in Kelvin scale will be",
+      "slo_code": "8.3.2",
+      "formula": "",
+      "solution": "Converting from Celsius to Kelvin uses $T(\\text{K}) = T(^\\circ\\text{C}) + 273 = 20 + 273 = 293\\text{ K}$.",
+      "source": "Unit 8 Worked Numerical"
+    },
+    {
+      "question_number": "Num.3",
+      "problem": "If the temperature of a substance is 20\u00b0C, then its temperature in Kelvin scale will be",
+      "slo_code": "8.3.3",
+      "formula": "",
+      "solution": "$T(\\text{K}) = T(\u00b0\\text{C}) + 273 = 20 + 273 = 293\\text{ K}$.",
+      "source": "Unit 8 Worked Numerical"
     }
   ]
 }
