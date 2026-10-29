@@ -78,7 +78,7 @@
     },
     {
       "term": "Learning Outcome 7.4.3",
-      "definition": "explain pressure beneath a liquid surface increase with depth and depends on the density of the liquid, i.e., P = ρgh;",
+      "definition": "explain pressure beneath a liquid surface increase with depth and depends on the density of the liquid, i.e., P = \u03c1gh;",
       "slo_code": "7.4.3",
       "cognitive_level": "U"
     },
@@ -151,6 +151,60 @@
       "explanation": "Atmospheric pressure decreases with an increase in altitude because there is a smaller column of air above mountains compared to sea level.",
       "marks": 1.0,
       "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "2024-Q29",
+      "stem_text": "The given diagram shows three different blocks of insoluble material placed in three beakers that are partially filled with water.\n\nWhich of the given block(s) is/ are LESS denser than water?",
+      "options": [
+        "A. Block (1) only",
+        "B. Block (2) only",
+        "C. Block (1) and Block (3)",
+        "D. Block (2) and Block (3)"
+      ],
+      "correct_option": "B",
+      "explanation": "An object floats partially above the liquid surface only when its average density is less than the density of the liquid. In the diagram, Block (2) floats at the top surface of the water, so Block (2) only has a density less than water.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "7.1.2",
+      "original_slo": "7.5.6",
+      "exam_year": 2024,
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P1_Q29.png"
+    },
+    {
+      "question_number": "2024-Q30",
+      "stem_text": "When the upthrust on a moving cargo ship becomes equal to its weight, then it will",
+      "options": [
+        "A. sink.",
+        "B. float.",
+        "C. drop its load.",
+        "D. lose its balance."
+      ],
+      "correct_option": "B",
+      "explanation": "By the principle of floatation, a body floats in equilibrium on a liquid whenever the upward buoyant force (upthrust) equals the downward weight of the body.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "3.3.4",
+      "original_slo": "7.6.1",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q31",
+      "stem_text": "Which of the following options depicts the atmospheric pressure at sea level and on the mountain?\n\n| Option | Atmospheric Pressure at Sea Level | Atmospheric Pressure on the Mountain |\n| :--- | :--- | :--- |\n| A | Low | High |\n| B | Low | Low |\n| C | High | High |\n| D | High | Low |",
+      "options": [
+        "A. Atmospheric Pressure at Sea Level: Low | Atmospheric Pressure on the Mountain: High",
+        "B. Atmospheric Pressure at Sea Level: Low | Atmospheric Pressure on the Mountain: Low",
+        "C. Atmospheric Pressure at Sea Level: High | Atmospheric Pressure on the Mountain: High",
+        "D. Atmospheric Pressure at Sea Level: High | Atmospheric Pressure on the Mountain: Low"
+      ],
+      "correct_option": "D",
+      "explanation": "Atmospheric pressure is caused by the weight of the air column above a surface. At sea level the air column is tallest and densest (High pressure), whereas on a mountain the air column above is shorter and less dense (Low pressure).",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "7.3.3",
+      "original_slo": "7.4.3",
+      "exam_year": 2024,
+      "diagram_url": null
     }
   ],
   "crqs": [
@@ -158,25 +212,90 @@
       "question": "Explain why upthrust acts in the upward direction on an object immersed in a fluid.",
       "marks": 2,
       "slo_code": "7.4.2",
-      "answer": "Hydrostatic pressure in a fluid increases with depth (P = ρgh). Consequently, the upward pressure on the bottom surface of an immersed object is greater than the downward pressure on its top surface, producing a net upward buoyant force (upthrust).",
+      "answer": "Hydrostatic pressure in a fluid increases with depth (P = \u03c1gh). Consequently, the upward pressure on the bottom surface of an immersed object is greater than the downward pressure on its top surface, producing a net upward buoyant force (upthrust).",
       "source": "AKU-EB SSC-I Model Paper II Q.7(b)(ii)"
     }
   ],
   "erqs": [
     {
-      "question": "i. Explain why the walls of a dam filled with water are usually wedge-shaped. ii. If the density of water is 1,000 kg/m³, calculate the depth of water in a dam when the pressure at the bottom is 100,000 Pa (g = 9.8 m/s²).",
+      "question": "i. Explain why the walls of a dam filled with water are usually wedge-shaped. ii. If the density of water is 1,000 kg/m\u00b3, calculate the depth of water in a dam when the pressure at the bottom is 100,000 Pa (g = 9.8 m/s\u00b2).",
       "marks": 6,
       "slo_code": "7.4.4",
-      "answer": "i. Liquid pressure increases with depth (P = ρgh), so water exerts a much larger lateral force near the bottom of the reservoir; a wider wedge-shaped base provides the structural strength to withstand this pressure. ii. Using P = ρgh: h = 100,000 / (1000 × 9.8) = 10.2 m.",
+      "answer": "i. Liquid pressure increases with depth (P = \u03c1gh), so water exerts a much larger lateral force near the bottom of the reservoir; a wider wedge-shaped base provides the structural strength to withstand this pressure. ii. Using P = \u03c1gh: h = 100,000 / (1000 \u00d7 9.8) = 10.2 m.",
       "source": "AKU-EB SSC-I 2025 Annual Paper II Q.7(b)"
+    },
+    {
+      "question_number": "2024-Q.7.b",
+      "question": "The given figure shows the brake system of a vehicle.\n\ni. Name the law which is used in the given brake system. (1 Mark)\nii. Calculate the pressure exerted by the liquid at G and H and the force that is applied at X. (5 Marks)",
+      "question_text": "The given figure shows the brake system of a vehicle.\n\ni. Name the law which is used in the given brake system. (1 Mark)\nii. Calculate the pressure exerted by the liquid at G and H and the force that is applied at X. (5 Marks)",
+      "marks": 6.0,
+      "slo_code": "7.4.2",
+      "original_slo": "7.5.3",
+      "cognitive_level": "Application",
+      "rubric": [
+        {
+          "marks": 1,
+          "description": "1 mark for correctly identifying Pascal's law."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for calculating pressure at G: P_G = F\u2081 / A\u2081 = 1000 N / 2 m\u00b2 = 500 N/m\u00b2 (or 500 Pa)."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for stating the pressure at H: P_H = 500 N/m\u00b2 (or 500 Pa) because pressure is transmitted equally throughout an enclosed fluid."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for using the correct transmitted pressure value P = 500 N/m\u00b2."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for writing the correct formula for force: F = P \u00d7 A (or F\u2082 = P_H \u00d7 A\u2082)."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for calculating the correct force at X: F = 500 \u00d7 100 = 50,000 N."
+        }
+      ],
+      "answer": "**(i) Name of the law:**\nThe law used in the hydraulic brake system of a vehicle is **Pascal's law**.\n\n**(ii) Pressure at G, Pressure at H, and Force at X:**\n\u2022 **Pressure exerted at piston G ($P_G$):**\n$P_G = \\frac{\\text{Force }(F_1)}{\\text{Area }(A_1)} = \\frac{1000\\text{ N}}{2\\text{ m}^2} = 500\\text{ N/m}^2\\text{ (or }500\\text{ Pa)}$\n\n\u2022 **Pressure exerted at piston H ($P_H$):**\nAccording to Pascal's law, pressure applied to an enclosed liquid is transmitted undiminished to every portion of the liquid. Therefore:\n$P_H = P_G = 500\\text{ N/m}^2\\text{ (or }500\\text{ Pa)}$\n\n\u2022 **Force applied at X ($F_2$):**\nSince $P_H = \\frac{F_2}{A_2}$:\n$F_2 = P_H \\times A_2 = 500\\text{ N/m}^2 \\times 100\\text{ m}^2 = 50,000\\text{ N}$.",
+      "model_answer": "**(i) Name of the law:**\nThe law used in the hydraulic brake system of a vehicle is **Pascal's law**.\n\n**(ii) Pressure at G, Pressure at H, and Force at X:**\n\u2022 **Pressure exerted at piston G ($P_G$):**\n$P_G = \\frac{\\text{Force }(F_1)}{\\text{Area }(A_1)} = \\frac{1000\\text{ N}}{2\\text{ m}^2} = 500\\text{ N/m}^2\\text{ (or }500\\text{ Pa)}$\n\n\u2022 **Pressure exerted at piston H ($P_H$):**\nAccording to Pascal's law, pressure applied to an enclosed liquid is transmitted undiminished to every portion of the liquid. Therefore:\n$P_H = P_G = 500\\text{ N/m}^2\\text{ (or }500\\text{ Pa)}$\n\n\u2022 **Force applied at X ($F_2$):**\nSince $P_H = \\frac{F_2}{A_2}$:\n$F_2 = P_H \\times A_2 = 500\\text{ N/m}^2 \\times 100\\text{ m}^2 = 50,000\\text{ N}$.",
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P2_Q7b.png",
+      "source": "AKU-EB SSC-I 2024 Annual Paper II Q.7.b"
     }
   ],
   "numericals": [
     {
-      "problem": "A parcel box of weight 500 N rests on a table with a base contact area of 0.50 m². Calculate the pressure exerted on the table.",
+      "question_number": "Q.7.b",
+      "problem": "The given figure shows the brake system of a vehicle.\n\ni. Name the law which is used in the given brake system. (1 Mark)\nii. Calculate the pressure exerted by the liquid at G and H and the force that is applied at X. (5 Marks)",
+      "slo_code": "7.4.2",
+      "formula": "",
+      "solution": "**(i) Name of the law:**\nThe law used in the hydraulic brake system of a vehicle is **Pascal's law**.\n\n**(ii) Pressure at G, Pressure at H, and Force at X:**\n\u2022 **Pressure exerted at piston G ($P_G$):**\n$P_G = \\frac{\\text{Force }(F_1)}{\\text{Area }(A_1)} = \\frac{1000\\text{ N}}{2\\text{ m}^2} = 500\\text{ N/m}^2\\text{ (or }500\\text{ Pa)}$\n\n\u2022 **Pressure exerted at piston H ($P_H$):**\nAccording to Pascal's law, pressure applied to an enclosed liquid is transmitted undiminished to every portion of the liquid. Therefore:\n$P_H = P_G = 500\\text{ N/m}^2\\text{ (or }500\\text{ Pa)}$\n\n\u2022 **Force applied at X ($F_2$):**\nSince $P_H = \\frac{F_2}{A_2}$:\n$F_2 = P_H \\times A_2 = 500\\text{ N/m}^2 \\times 100\\text{ m}^2 = 50,000\\text{ N}$.",
+      "source": "2024 Annual Paper II (ERQ \u2022 6 Marks)"
+    },
+    {
+      "question_number": "Q.7.b.ii",
+      "problem": "If the density of water is 1,000 kg/m3, then calculate the depth of water in a dam when the pressure at the bottom is 1,00,000 Pa. (Note: Take the value of acceleration due to gravity as 9.8 m/s2.)",
+      "slo_code": "7.4.4",
+      "formula": "",
+      "solution": "Given data:\nDensity of water ($\\rho$) = $1000 \\text{ kg/m}^3$\nPressure ($P$) = $100,000 \\text{ Pa}$\nAcceleration due to gravity ($g$) = $9.8 \\text{ m/s}^2$\n\nFormula:\n$P = \\rho g h$\n\nCalculation:\n$100,000 = 1000 \\times 9.8 \\times h$\n$100,000 = 9800 \\times h$\n$h = \\frac{100,000}{9800}$\n$h \\approx 10.2$ m",
+      "source": "2025 Annual Paper II (ERQ \u2022 3 Marks)"
+    },
+    {
+      "question_number": "Num.3",
+      "problem": "A parcel box of weight 500 N rests on a table with a base contact area of 0.50 m\u00b2. Calculate the pressure exerted on the table.",
       "slo_code": "7.2.2",
       "formula": "P = F / A",
-      "solution": "P = 500 N / 0.50 m² = 1000 Pa."
+      "solution": "P = 500 N / 0.50 m\u00b2 = 1000 Pa.",
+      "source": "Unit 7 Worked Numerical"
+    },
+    {
+      "question_number": "Num.4",
+      "problem": "A parcel box of weight 500 N is placed on a table. If the area of the bottom of the box is measured as 0.50 m2, then the pressure exerted by the box on the table will be",
+      "slo_code": "7.2.2",
+      "formula": "",
+      "solution": "Pressure ($P$) = $\\text{Force} / \\text{Area} = 500\\text{ N} / 0.50\\text{ m}^2 = 1000\\text{ Pa}$.",
+      "source": "Unit 7 Worked Numerical"
     }
   ]
 }

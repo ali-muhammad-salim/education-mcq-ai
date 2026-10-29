@@ -33,7 +33,21 @@
         "topic": "Wave Motion"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Surface waves combine both transverse and longitudinal motion at an interface."
+      },
+      {
+        "key": "B",
+        "reason": "In a transverse wave, particles vibrate perpendicular (at 90\u00b0) to the direction of wave propagation."
+      },
+      {
+        "key": "D",
+        "reason": "Electromagnetic waves are transverse field oscillations that do not require a material medium."
+      }
+    ]
   },
   {
     "questionNumber": 2,
@@ -69,7 +83,21 @@
         "topic": "Wave Motion"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Time period and frequency are reciprocals (T = 1/f), so doubling frequency halves the time period rather than doubling it."
+      },
+      {
+        "key": "C",
+        "reason": "Since T = 1/f, changing the frequency must inversely change the time period."
+      },
+      {
+        "key": "D",
+        "reason": "When frequency is doubled (2f), the new time period is T' = 1/(2f) = T/2 (half, not a quarter)."
+      }
+    ]
   },
   {
     "questionNumber": 3,
@@ -105,7 +133,21 @@
         "topic": "Wave Motion"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Because g on the Moon is 1/6th of g on Earth and T = 2\u03c0\u221a(L/g), a smaller g produces a longer time period (> 2 s)."
+      },
+      {
+        "key": "C",
+        "reason": "Time period is inversely proportional to \u221ag, so weaker gravity on the Moon increases (slows down) the oscillation period."
+      },
+      {
+        "key": "D",
+        "reason": "The Moon still has gravity (g_Moon \u2248 1.6 m/s\u00b2), so the pendulum oscillates with a period of 2 \u00d7 \u221a6 \u2248 4.9 s (> 2 s)."
+      }
+    ]
   },
   {
     "questionNumber": 4,
@@ -141,7 +183,21 @@
         "topic": "Wave Motion"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "When a wave crosses into a denser medium, its speed (I) changes, which also changes its wavelength (II) since \u03bb = v/f."
+      },
+      {
+        "key": "B",
+        "reason": "Frequency (III) depends only on the vibrating source and remains constant when crossing between media."
+      },
+      {
+        "key": "D",
+        "reason": "Frequency (III) stays unchanged across the boundary; only wave speed (I) and wavelength (II) change."
+      }
+    ]
   },
   {
     "questionNumber": 5,
@@ -177,7 +233,21 @@
         "topic": "Sound"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Pitch is the perceptual shrillness or graveness of sound determined by frequency."
+      },
+      {
+        "key": "B",
+        "reason": "Quality (timbre) is the waveform characteristic that distinguishes two sounds of the same pitch and loudness."
+      },
+      {
+        "key": "D",
+        "reason": "Loudness is the auditory sensation proportional to log of intensity, whereas sound energy per second per unit perpendicular area (W/m\u00b2) is intensity."
+      }
+    ]
   },
   {
     "questionNumber": 6,
@@ -213,7 +283,21 @@
         "topic": "Sound"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Acoustics is the branch of physics/architectural design dealing with sound control."
+      },
+      {
+        "key": "C",
+        "reason": "Loudness depends on wave amplitude and ear sensitivity, not the reflection of sound from a surface."
+      },
+      {
+        "key": "D",
+        "reason": "Amplitude is the maximum displacement of vibrating medium particles."
+      }
+    ]
   },
   {
     "questionNumber": 7,
@@ -249,7 +333,21 @@
         "topic": "Sound"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Quality (timbre) depends on the overtones/harmonics waveform, not fundamental frequency."
+      },
+      {
+        "key": "C",
+        "reason": "Loudness depends on amplitude, area of the vibrating body, and distance from the source."
+      },
+      {
+        "key": "D",
+        "reason": "Amplitude is determined by the energy/force of vibration and controls loudness, whereas pitch depends on frequency."
+      }
+    ]
   },
   {
     "questionNumber": 8,
@@ -287,7 +385,21 @@
         "topic": "Sound"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "X1 has both a smaller surface area (5 m\u00b2) and smaller amplitude (4 cm) than X4 (10 m\u00b2, 5 cm)."
+      },
+      {
+        "key": "B",
+        "reason": "X2 has a smaller vibrating area (6 m\u00b2) and smaller amplitude (4 cm) than X4."
+      },
+      {
+        "key": "C",
+        "reason": "Although X3 has a 10 m\u00b2 area, its amplitude (1 cm) is much smaller than X4's amplitude (5 cm)."
+      }
+    ]
   },
   {
     "questionNumber": 9,
@@ -323,7 +435,21 @@
         "topic": "Geometrical Optics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Compound microscopes are widely used in biology to observe bacteria, cells, and microorganisms."
+      },
+      {
+        "key": "B",
+        "reason": "Pathology and medical labs routinely use compound microscopes to examine blood and tissue samples."
+      },
+      {
+        "key": "D",
+        "reason": "Forensic labs use compound microscopes to inspect hair, fibres, and trace evidence, whereas heavenly bodies in space are observed with a telescope."
+      }
+    ]
   },
   {
     "questionNumber": 10,
@@ -359,7 +485,21 @@
         "topic": "Geometrical Optics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "An image is formed at F only when the incoming rays are parallel (object at infinity)."
+      },
+      {
+        "key": "B",
+        "reason": "An image is formed at 2F when the object itself is placed at 2F."
+      },
+      {
+        "key": "D",
+        "reason": "An image is formed between F and 2F when the object is placed beyond 2F; placing the object between F and 2F forms a magnified real image beyond 2F."
+      }
+    ]
   },
   {
     "questionNumber": 11,
@@ -395,7 +535,21 @@
         "topic": "Geometrical Optics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "\u20130.052 cm is the reciprocal 1/p before inverting to find p: 1/p = 1/f - 1/q = 1/(-12) - 1/32 (or with virtual image q = -32 cm, 1/p = 1/12 - 1/32 => p = 19.2 cm)."
+      },
+      {
+        "key": "C",
+        "reason": "20.0 cm subtracts 32 - 12 instead of applying the spherical mirror equation 1/f = 1/p + 1/q."
+      },
+      {
+        "key": "D",
+        "reason": "32.0 cm is the given image distance q, not the object distance p."
+      }
+    ]
   },
   {
     "questionNumber": 12,
@@ -431,7 +585,21 @@
         "topic": "Geometrical Optics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.44 m divides 1.33 by 3 instead of multiplying Real Depth = n \u00d7 Apparent Depth = 1.33 \u00d7 3 m = 3.99 m."
+      },
+      {
+        "key": "B",
+        "reason": "1.67 m subtracts 3 - 1.33 instead of using n = Real Depth / Apparent Depth."
+      },
+      {
+        "key": "C",
+        "reason": "2.25 m divides 3 by 1.33, which would make real depth shallower than apparent depth."
+      }
+    ]
   },
   {
     "questionNumber": 13,
@@ -467,7 +635,21 @@
         "topic": "Geometrical Optics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A convex (diverging) mirror always diverges reflected rays, forming a virtual image behind the mirror, never a real image."
+      },
+      {
+        "key": "B",
+        "reason": "Virtual images formed by a convex mirror are always erect (upright), not inverted."
+      },
+      {
+        "key": "D",
+        "reason": "The image is formed at the focus F only when the object is at infinity; for any finite object distance, it forms between P and F and is diminished (smaller)."
+      }
+    ]
   },
   {
     "questionNumber": 14,
@@ -498,7 +680,21 @@
       "grade": 10,
       "subject": "Physics"
     },
-    "current_mapping": []
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "3 \u00b5F is the capacitance of the smaller individual capacitor; in series, C_eq is always less than the smallest capacitor."
+      },
+      {
+        "key": "C",
+        "reason": "6 \u00b5F is the larger capacitor's value."
+      },
+      {
+        "key": "D",
+        "reason": "9 \u00b5F is the parallel sum (6 + 3), whereas in series 1/C_eq = 1/6 + 1/3 = 3/6 => C_eq = 2 \u00b5F."
+      }
+    ]
   },
   {
     "questionNumber": 15,
@@ -534,7 +730,21 @@
         "topic": "Electric Current"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Turning off attached peripherals is a valid safety precaution before opening or installing computer hardware."
+      },
+      {
+        "key": "B",
+        "reason": "Wearing non-conductive rubber-soled shoes helps prevent accidental electric shock to the technician."
+      },
+      {
+        "key": "D",
+        "reason": "Disconnecting telecommunication/network lines prevents surprise voltage spikes, whereas keeping live AC power connected during installation is dangerous."
+      }
+    ]
   },
   {
     "questionNumber": 16,
@@ -570,7 +780,21 @@
         "topic": "Electrostatics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "1.29 \u00d7 10\u207b\u00b9 N omits squaring the elementary charge e = 1.6 \u00d7 10\u207b\u00b9\u2079 C in Coulomb's law."
+      },
+      {
+        "key": "B",
+        "reason": "1.44 \u00d7 10\u207b\u2079 N uses only one factor of e instead of e\u00b2 in F = k q\u2081q\u2082 / r\u00b2 = (9 \u00d7 10\u2079)(1.6 \u00d7 10\u207b\u00b9\u2079)\u00b2 / 1\u00b2 = 2.30 \u00d7 10\u207b\u00b2\u2078 N."
+      },
+      {
+        "key": "D",
+        "reason": "9 \u00d7 (1.6)\u00b2 \u00d7 10\u2079\u207b\u00b3\u2078 = 23.04 \u00d7 10\u207b\u00b2\u2079 N = 2.30 \u00d7 10\u207b\u00b2\u2078 N, not 10\u207b\u00b3\u2070 N."
+      }
+    ]
   },
   {
     "questionNumber": 17,
@@ -603,7 +827,21 @@
       "grade": 10,
       "subject": "Physics"
     },
-    "current_mapping": []
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.067 \u00b5F is the reciprocal 1/15, whereas for parallel capacitors C_eq = C\u2081 + C\u2082 + C\u2083 = 5 + 5 + 5 = 15 \u00b5F."
+      },
+      {
+        "key": "B",
+        "reason": "0.6 \u00b5F is an incorrect series-style calculation."
+      },
+      {
+        "key": "C",
+        "reason": "5 \u00b5F is the capacitance of a single branch, whereas three 5 \u00b5F capacitors in parallel add up to 15 \u00b5F."
+      }
+    ]
   },
   {
     "questionNumber": 18,
@@ -641,7 +879,21 @@
         "topic": "D.C. Circuits"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "In a parallel domestic circuit, branches draw different currents depending on each appliance's resistance (I = V/R)."
+      },
+      {
+        "key": "B",
+        "reason": "In a parallel circuit, the potential difference (voltage) across every parallel branch is identical (220 V), while current varies."
+      },
+      {
+        "key": "D",
+        "reason": "Voltage remains the same across all parallel branches; only the current varies according to each appliance's power rating."
+      }
+    ]
   },
   {
     "questionNumber": 19,
@@ -677,7 +929,21 @@
         "topic": "Electric Current"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Doubling diameter quadruples area (A' = 4A), and doubling length (L' = 2L) gives R' = \u03c1(2L)/(4A) = R/2 (half, not a quarter)."
+      },
+      {
+        "key": "C",
+        "reason": "Because cross-sectional area increases by 4\u00d7 while length increases by only 2\u00d7, net resistance decreases to half."
+      },
+      {
+        "key": "D",
+        "reason": "Resistance is inversely proportional to area (\u03c0d\u00b2/4), so doubling diameter reduces resistance rather than increasing it."
+      }
+    ]
   },
   {
     "questionNumber": 20,
@@ -715,7 +981,21 @@
         "topic": "Electric Current"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "While a longer conductor A has higher resistance (R \u221d L), by Ohm's law (I = V/R) higher resistance results in smaller current, not larger current."
+      },
+      {
+        "key": "C",
+        "reason": "Resistance is directly proportional to length (R = \u03c1L/A), so the longer wire A has greater resistance."
+      },
+      {
+        "key": "D",
+        "reason": "A longer wire has greater resistance, not smaller resistance."
+      }
+    ]
   },
   {
     "questionNumber": 21,
@@ -753,7 +1033,21 @@
         "topic": "D.C. Circuits"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Point 2 is in a lower-resistance branch than Point 1, so it receives a larger current than Point 1."
+      },
+      {
+        "key": "C",
+        "reason": "Point 3 is in the main/lower-resistance path and carries more current than the high-resistance branch at Point 1."
+      },
+      {
+        "key": "D",
+        "reason": "Point 4 is on the main series trunk carrying the total circuit current, whereas Point 1 is in the highest-resistance parallel branch."
+      }
+    ]
   },
   {
     "questionNumber": 22,
@@ -789,7 +1083,21 @@
         "topic": "Electromagnetic Induction"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "An ideal transformer conserves electrical power (P_p = P_s) and cannot create or alter total power."
+      },
+      {
+        "key": "B",
+        "reason": "By conservation of energy, a transformer cannot increase electrical energy."
+      },
+      {
+        "key": "C",
+        "reason": "The alternating magnetic flux is the internal coupling mechanism, whereas the purpose in the circuit is stepping voltage/current up or down."
+      }
+    ]
   },
   {
     "questionNumber": 23,
@@ -825,7 +1133,21 @@
         "topic": "Magnetism and Electromagnetism"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Joule's law (W = I\u00b2Rt) gives the heat energy dissipated in a resistor."
+      },
+      {
+        "key": "B",
+        "reason": "Coulomb's law gives the electrostatic force between stationary point charges."
+      },
+      {
+        "key": "C",
+        "reason": "The head-to-tail rule is a graphical method for adding vectors, whereas Fleming's left-hand rule gives the magnetic force direction on a current-carrying conductor."
+      }
+    ]
   },
   {
     "questionNumber": 24,
@@ -863,7 +1185,21 @@
         "topic": "Electromagnetic Induction"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "By Faraday's law, moving the conductor faster increases the rate of cutting magnetic field lines, which increases the induced e.m.f."
+      },
+      {
+        "key": "C",
+        "reason": "A low speed results in a smaller rate of change of magnetic flux and therefore a decreased (not increased) induced e.m.f."
+      },
+      {
+        "key": "D",
+        "reason": "High speed increases the rate of flux cutting, so the induced e.m.f. increases rather than decreases."
+      }
+    ]
   },
   {
     "questionNumber": 25,
@@ -899,7 +1235,21 @@
         "topic": "Magnetism and Electromagnetism"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Reversing current direction without changing its magnitude keeps the field strength unchanged while reversing its polarity."
+      },
+      {
+        "key": "B",
+        "reason": "Field magnitude depends on current magnitude (I) and turns (N), not current direction."
+      },
+      {
+        "key": "D",
+        "reason": "By the right-hand grip rule, reversing the current through a solenoid reverses the North and South poles of the magnetic field."
+      }
+    ]
   },
   {
     "questionNumber": 26,
@@ -935,7 +1285,21 @@
         "topic": "Magnetism and Electromagnetism"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Modern automatic electric irons use bimetallic thermostats/relays, and motors/generators rely on electromagnets, whereas a simple toaster uses only a nichrome heating element."
+      },
+      {
+        "key": "B",
+        "reason": "Electric motors rely on electromagnets/armature coils interacting with a magnetic field to produce torque."
+      },
+      {
+        "key": "D",
+        "reason": "Generators use electromagnetic induction between field magnets and rotating coils."
+      }
+    ]
   },
   {
     "questionNumber": 27,
@@ -973,7 +1337,21 @@
         "topic": "Electromagnetic Waves and Electronics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Diagram A shows a basic AND gate without an inversion bubble."
+      },
+      {
+        "key": "C",
+        "reason": "Diagram C shows an OR gate with a curved input back."
+      },
+      {
+        "key": "D",
+        "reason": "Diagram D shows a NOR gate (OR symbol with an output inversion bubble), whereas B shows a NAND gate (AND symbol with an inversion bubble)."
+      }
+    ]
   },
   {
     "questionNumber": 28,
@@ -1009,7 +1387,21 @@
         "topic": "Electromagnetic Waves and Electronics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A CRO's vertical deflection is proportional to input voltage, so it is widely used as a high-impedance AC/DC voltmeter."
+      },
+      {
+        "key": "B",
+        "reason": "A CRO displays both DC voltage levels and AC waveforms over time."
+      },
+      {
+        "key": "D",
+        "reason": "A CRO deflects an electron beam with electric fields, whereas ionizing background radiation is measured with a Geiger-M\u00fcller (GM) tube, not a CRO."
+      }
+    ]
   },
   {
     "questionNumber": 29,
@@ -1045,7 +1437,21 @@
         "topic": "Electromagnetic Waves and Electronics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The OR gate is one of the three basic/fundamental Boolean logic operations (AND, OR, NOT)."
+      },
+      {
+        "key": "B",
+        "reason": "The NOT gate (inverter) is a fundamental logic gate."
+      },
+      {
+        "key": "D",
+        "reason": "The AND gate is a fundamental logic gate, whereas NOR is a derived universal gate formed by combining OR + NOT."
+      }
+    ]
   },
   {
     "questionNumber": 30,
@@ -1081,7 +1487,21 @@
         "topic": "Electromagnetic Waves and Electronics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Protons are tightly bound inside the atomic nucleus and cannot be boiled off a heated metal filament."
+      },
+      {
+        "key": "C",
+        "reason": "Beta particles are high-speed electrons emitted from unstable radioactive nuclei, not from a heated metal filament."
+      },
+      {
+        "key": "D",
+        "reason": "Alpha particles are helium nuclei emitted during radioactive decay."
+      }
+    ]
   },
   {
     "questionNumber": 31,
@@ -1117,7 +1537,21 @@
         "topic": "Electromagnetic Waves and Electronics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Discrete binary levels (0 and 1) represent digital quantities, not analogue quantities."
+      },
+      {
+        "key": "B",
+        "reason": "Analogue quantities vary smoothly and continuously rather than randomly selecting sets."
+      },
+      {
+        "key": "D",
+        "reason": "Finite discrete steps describe digital sampling, whereas an analogue quantity varies continuously over a range."
+      }
+    ]
   },
   {
     "questionNumber": 32,
@@ -1148,7 +1582,21 @@
       "grade": 10,
       "subject": "Physics"
     },
-    "current_mapping": []
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A hard drive is a physical hardware storage device inside a computer."
+      },
+      {
+        "key": "C",
+        "reason": "Read Only Memory (ROM) is a physical non-volatile memory chip on the motherboard."
+      },
+      {
+        "key": "D",
+        "reason": "Random Access Memory (RAM) is physical volatile memory hardware, whereas the World Wide Web is an internet software/information service."
+      }
+    ]
   },
   {
     "questionNumber": 33,
@@ -1179,7 +1627,21 @@
       "grade": 10,
       "subject": "Physics"
     },
-    "current_mapping": []
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Instant global messaging and email make faster communication a major advantage of the internet."
+      },
+      {
+        "key": "C",
+        "reason": "Online encyclopedias, journals, and search engines make the internet a vast source of information."
+      },
+      {
+        "key": "D",
+        "reason": "Online banking and e-governance are advantages, whereas exposure to malware, hacking, and cyber threats means 'strong computer security' is NOT an automatic advantage."
+      }
+    ]
   },
   {
     "questionNumber": 34,
@@ -1215,7 +1677,21 @@
         "topic": "Geometrical Optics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Refraction out of the core would cause signal loss; light stays trapped inside the core by repeated total internal reflection."
+      },
+      {
+        "key": "B",
+        "reason": "Diffraction is the bending/spreading of waves around obstacles or slits."
+      },
+      {
+        "key": "C",
+        "reason": "Polarisation restricts transverse wave vibrations to a single plane and does not confine light inside a fibre core."
+      }
+    ]
   },
   {
     "questionNumber": 35,
@@ -1246,7 +1722,21 @@
       "grade": 10,
       "subject": "Physics"
     },
-    "current_mapping": []
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A 3.5-inch floppy disk stores only 1.44 MB of data."
+      },
+      {
+        "key": "C",
+        "reason": "A standard Compact Disc (CD) stores about 700 MB, which is far less than a multi-gigabyte/terabyte hard disc."
+      },
+      {
+        "key": "D",
+        "reason": "An audio cassette uses magnetic tape with very low data capacity compared to a hard disc drive."
+      }
+    ]
   },
   {
     "questionNumber": 36,
@@ -1282,7 +1772,21 @@
         "topic": "Atomic and Nuclear Physics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Negatively charged electrons move in the outer orbits, while all positive charge is concentrated in the central nucleus."
+      },
+      {
+        "key": "C",
+        "reason": "Rutherford's alpha-scattering experiment proved that the positive charge is tightly packed at the centre (nucleus)."
+      },
+      {
+        "key": "D",
+        "reason": "A uniform positive sphere was J.J. Thomson's plum-pudding model, which Rutherford disproved."
+      }
+    ]
   },
   {
     "questionNumber": 37,
@@ -1318,7 +1822,21 @@
         "topic": "Atomic and Nuclear Physics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Isotopes of an element have the same proton/charge number (Z) and differ in both mass number (A, I) and neutron number (N, III)."
+      },
+      {
+        "key": "B",
+        "reason": "Isotopes of the same element all share the exact same charge/atomic number (II), so II cannot distinguish between them."
+      },
+      {
+        "key": "D",
+        "reason": "Since charge number Z (II) is identical for all isotopes of an element, they are distinguished by their different mass numbers (I) and neutron numbers (III)."
+      }
+    ]
   },
   {
     "questionNumber": 38,
@@ -1354,7 +1872,21 @@
         "topic": "Atomic and Nuclear Physics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Alpha particles are stopped by paper and beta by thin aluminium, whereas gamma rays penetrate several centimetres of lead."
+      },
+      {
+        "key": "C",
+        "reason": "Gamma rays are uncharged high-energy photons with much greater penetrating power than both alpha and beta particles."
+      },
+      {
+        "key": "D",
+        "reason": "Gamma rays have the highest penetrating power (and lowest ionizing power) of the three nuclear radiations."
+      }
+    ]
   },
   {
     "questionNumber": 39,
@@ -1390,7 +1922,21 @@
         "topic": "Atomic and Nuclear Physics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "One-half (1/2) remains after 1 half-life (60 s); after 2 minutes (120 s = 2 half-lives), (1/2)\u00b2 = 1/4 remains."
+      },
+      {
+        "key": "B",
+        "reason": "Radioactive decay follows powers of 1/2 ((1/2)^n), so 1/4 remains after 2 half-lives, not 1/6."
+      },
+      {
+        "key": "D",
+        "reason": "One-eighth (1/8) remains after 3 half-lives (180 s), whereas 2 minutes (120 s) is 2 half-lives ((1/2)\u00b2 = 1/4)."
+      }
+    ]
   },
   {
     "questionNumber": 40,
@@ -1426,6 +1972,20 @@
         "topic": "Atomic and Nuclear Physics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Protons (II) are positively charged and experience strong Coulomb repulsion from the +92e uranium nucleus."
+      },
+      {
+        "key": "C",
+        "reason": "Uncharged neutrons (I only) penetrate the nucleus without electrostatic repulsion to induce fission."
+      },
+      {
+        "key": "D",
+        "reason": "Electrons (III) are leptons that do not trigger nuclear fission in Uranium-238; only neutrons (I) induce fission."
+      }
+    ]
   }
 ]

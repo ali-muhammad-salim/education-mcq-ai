@@ -4,7 +4,7 @@ import { ApiError } from '@/lib/api';
 import { AuthUser } from '@/lib/auth';
 import { getFallbackPaper, type QuestionData } from '@/lib/paperDataService';
 import { lockedTransaction } from '@/repositories/transaction';
-import { answerPayloadSchema, saveAnswerSchema } from '@/lib/validations/assessment';
+import { saveAnswerSchema } from '@/lib/validations/assessment';
 import { FrozenQuestion, answerFeedback, gradeAnswer, hasAnswer, normalizeQuestion, snapshotSchema, studentQuestion } from './scoring';
 import { z } from 'zod';
 import { randomInt } from 'node:crypto';
@@ -18,26 +18,45 @@ export type LoadedQuiz = Prisma.QuizGetPayload<{ include: typeof quizInclude }>;
 const practiceCodes: Record<string, string> = {
   'SAMPLE-QUIZ-PHY-9': 'PHY-IX-P1', 'SAMPLE-QUIZ-PHY-10': 'PHY-X-P1',
   'SAMPLE-QUIZ-KINEMATICS': 'PHY-IX-P1', 'SAMPLE-QUIZ-WAVES': 'PHY-X-P1',
-  'SAMPLE-QUIZ-PHY-CHAP-1-2': 'PHY-IX-CHAP1-2',
 };
-const allowedPractice = new Set(['PHY-IX-P1', 'PHY-IX-P2', 'PHY-X-P1', 'PHY-X-P2', 'PHY-IX-CHAP1-2', 'PHY-IX-2025-P1', 'PHY-IX-2025-P2', 'PHY-IX-2024-P1', 'PHY-IX-2024-P2']);
+const allowedPractice = new Set(['PHY-IX-P1', 'PHY-IX-P2', 'PHY-X-P1', 'PHY-X-P2', 'PHY-IX-2025-P1', 'PHY-IX-2025-P2', 'PHY-IX-2024-P1', 'PHY-IX-2024-P2', 'PHY-X-2025-P1', 'PHY-X-2025-P2']);
 
 // Source JSON can represent an absent diagram as null; assessment input uses
 // omitted optional fields. Normalize at this boundary, keeping teacher input strict.
 export function sourcePracticeQuestion(q: QuestionData) {
   const meta = q.sourceRegion;
+  const fbList = Array.isArray(meta.option_feedback) ? meta.option_feedback : [];
   return normalizeQuestion({
     questionType: q.questionType === 'MULTIPLE_CHOICE' ? 'MCQ_SINGLE' : 'LONG_ANSWER',
     stemText: q.questionText, marks: q.marks || 1, difficulty: q.difficulty,
     cognitiveLevel: typeof meta.cognitive_level === 'string' ? meta.cognitive_level : undefined,
     explanation: typeof meta.explanation === 'string' ? meta.explanation : undefined,
     diagramUrl: typeof meta.diagramUrl === 'string' ? meta.diagramUrl : undefined,
-    options: Object.entries(meta.choices || {}).map(([id, text]) => ({ id, text, isCorrect: id === meta.correct_answer })),
+    options: Object.entries(meta.choices || {}).map(([id, text]) => {
+      const fbItem = fbList.find(item => item.key.toUpperCase() === id.toUpperCase());
+      return { id, text, isCorrect: id === meta.correct_answer, ...(fbItem?.reason ? { feedback: fbItem.reason } : {}) };
+    }),
     rubric: meta.rubric ? JSON.stringify(meta.rubric) : undefined,
   });
 }
 
+const parsedSnapshotCache = new Map<string, FrozenQuestion[]>();
+const practiceQuizCache = new Map<string, { quiz: LoadedQuiz; expiresAt: number }>();
+function getParsedSnapshot(attemptId: string, rawSnapshot: Prisma.JsonValue | null, fallbackQuiz?: LoadedQuiz): FrozenQuestion[] {
+  const cached = parsedSnapshotCache.get(attemptId);
+  if (cached) return cached;
+  const parsed = snapshotSchema.parse(rawSnapshot ?? (fallbackQuiz ? freeze(fallbackQuiz) : []));
+  if (parsedSnapshotCache.size > 2048) parsedSnapshotCache.clear();
+  parsedSnapshotCache.set(attemptId, parsed);
+  return parsed;
+}
+
 export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
+  const cacheKey = identifier.toUpperCase();
+  if (!process.env.VITEST) {
+    const hit = practiceQuizCache.get(cacheKey);
+    if (hit && hit.expiresAt > Date.now()) return hit.quiz;
+  }
   const chapter=/^CURRICULUM:([^:]{1,100}):(ALL|R|U|A|DIAGRAM)$/i.exec(identifier);
   if(chapter){
     const {topic,questions}=await mappedChapterQuestions(chapter[1],chapter[2].toUpperCase());
@@ -51,7 +70,56 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   const quiz = await prisma.quiz.findFirst({ where: { OR: [{ id: identifier }, { code: identifier.toUpperCase() }] }, include: quizInclude });
   if (quiz) return quiz;
   const key = identifier.toUpperCase();
-  const subset = /^(PHY-(?:IX|X)(?:-2025)?-P1)-SET-([0-9-]+)$/.exec(key);
+
+  // Support multi-paper Unit / Chapter / Cognitive timed quizzes (Model + 2025 + 2024)
+  const unitMatch = /^PHY-(IX|X)-UNIT-(\d{1,2})-(ALL|PAST)-(ALL|R|U|A|DIAGRAM)$/.exec(key);
+  if (unitMatch) {
+    const [, roman, unitNumStr, mode, cogFilter] = unitMatch;
+    const unitNum = Number(unitNumStr);
+    const paperCodes = roman === 'IX'
+      ? (mode === 'PAST' ? ['PHY-IX-2025-P1', 'PHY-IX-2024-P1'] : ['PHY-IX-P1', 'PHY-IX-2025-P1', 'PHY-IX-2024-P1'])
+      : (mode === 'PAST' ? ['PHY-X-2025-P1'] : ['PHY-X-P1', 'PHY-X-2025-P1']);
+    const allQuestions = paperCodes.flatMap(code => getFallbackPaper(code)?.questions || []);
+    const filtered = allQuestions.filter(q => {
+      if (unitNum > 0) {
+        const qTopicNum = Number(q.topics?.[0]?.topic?.topicNumber || 0);
+        if (qTopicNum !== unitNum) return false;
+      }
+      if (cogFilter === 'DIAGRAM') return Boolean(q.diagramBased || q.sourceRegion?.diagramUrl);
+      if (cogFilter !== 'ALL') {
+        const qCog = (q.difficulty || q.sourceRegion?.cognitive_level || 'U').toUpperCase();
+        const normalizedCog = qCog.startsWith('R') || qCog === 'K' ? 'R' : qCog.startsWith('A') ? 'A' : 'U';
+        if (normalizedCog !== cogFilter) return false;
+      }
+      return true;
+    });
+    if (!filtered.length) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'No practice questions found for this unit filter.');
+    const questions = filtered.map((q, i) => {
+      const content = sourcePracticeQuestion(q);
+      return { orderIndex: i + 1, marks: content.marks, questionData: content };
+    });
+    const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
+    const title = unitNum > 0 ? `Physics Class ${roman} — Unit ${unitNum} Practice (${questions.length} questions)` : `Physics Class ${roman} — Complete Bank (${questions.length} questions)`;
+    return prisma.quiz.upsert({
+      where: { id: `practice-${key}` },
+      update: {},
+      include: quizInclude,
+      create: {
+        id: `practice-${key}`,
+        code: `PRACTICE-${key}`,
+        teacherId: owner.id,
+        title,
+        status: 'PUBLISHED',
+        visibility: 'PUBLIC',
+        durationMin: questions.length <= 15 ? 20 : 55,
+        totalMarks: questions.reduce((sum, q) => sum + q.marks, 0),
+        questions: { create: questions },
+        settings: { create: { maxAttempts: 100, allowRetries: true, showCorrectAnswers: true, immediateFeedback: true, tabMonitoringEnabled: false } },
+      },
+    });
+  }
+
+  const subset = /^(PHY-(?:IX|X)(?:-2025|-2024)?-P1)-SET-([0-9-]+)$/.exec(key);
   const paperCode = subset?.[1] || practiceCodes[key] || key;
   if (!allowedPractice.has(paperCode)) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Assessment not found.');
   const paper = getFallbackPaper(paperCode);
@@ -116,7 +184,7 @@ function freeze(quiz: LoadedQuiz): FrozenQuestion[] {
   return questions.map((q, i) => ({ ...q, orderIndex: i + 1 }));
 }
 
-export async function startAttempt(identifier: string, user: AuthUser, preferences: { practiceDurationMin?: number; practiceUntimed?: boolean } = {}) {
+export async function startAttempt(identifier: string, user: AuthUser, preferences: { practiceDurationMin?: number; practiceUntimed?: boolean; forceNewAttempt?: boolean } = {}) {
   const quiz = await resolveQuiz(identifier);
   await assertQuizAccess(quiz, user, true);
   return lockedTransaction(async tx => {
@@ -127,10 +195,16 @@ export async function startAttempt(identifier: string, user: AuthUser, preferenc
     await tx.$queryRaw`SELECT "id" FROM "Quiz" WHERE "id" = ${quiz.id} FOR SHARE`;
     const current = await tx.quiz.findUniqueOrThrow({ where: { id: quiz.id }, include: quizInclude });
     const active = await tx.quizAttempt.findFirst({ where: { quizId: quiz.id, studentId: user.id, status: 'IN_PROGRESS' }, orderBy: { startedAt: 'desc' }, include: { answers: true } });
-    if (active) return attemptResponse(active, current);
+    if (active) {
+      if (preferences.forceNewAttempt) {
+        await tx.quizAttempt.update({ where: { id: active.id }, data: { status: 'GRADED', submittedAt: new Date() } });
+      } else {
+        return attemptResponse(active, current);
+      }
+    }
     await assertQuizAccess(current, user, true, tx);
     if (current.status !== 'PUBLISHED') throw new ApiError(403, 'NOT_PUBLISHED', 'Assessment is not published.');
-    const count = await tx.quizAttempt.count({ where: { quizId: quiz.id, studentId: user.id } });
+    const count = await tx.quizAttempt.count({ where: { quizId: current.id, studentId: user.id } });
     if (count >= (current.settings?.allowRetries || current.id.startsWith('practice-') ? current.settings?.maxAttempts ?? 1 : 1)) throw new ApiError(403, 'ATTEMPT_LIMIT', 'Maximum number of attempts reached.');
     const practice = current.id.startsWith('practice-');
     const now = new Date(), duration = practice && preferences.practiceUntimed ? 1440 : practice && preferences.practiceDurationMin ? preferences.practiceDurationMin : current.durationMin ?? 45;
@@ -153,7 +227,7 @@ export async function recoverAttempt(identifier: string, user: AuthUser) {
 
 type AttemptWithAnswers = Prisma.QuizAttemptGetPayload<{ include: { answers: true } }>;
 function attemptResponse(attempt: AttemptWithAnswers, quiz: LoadedQuiz) {
-  const questions = snapshotSchema.parse(attempt.questionSnapshot ?? freeze(quiz));
+  const questions = getParsedSnapshot(attempt.id, attempt.questionSnapshot, quiz);
   return { tabSwitchCount: attempt.tabSwitchCount, id: attempt.id, studentId: attempt.studentId, quizId: quiz.id, quizTitle: quiz.title, startedAt: attempt.startedAt, deadline: attempt.deadline,
     remainingSeconds: Math.max(0, Math.floor((attempt.deadline.getTime() - Date.now()) / 1000)), status: attempt.status,
     settings: { tabMonitoringEnabled: quiz.settings?.tabMonitoringEnabled ?? false },
@@ -167,7 +241,7 @@ export async function saveAnswer(identifier: string, user: AuthUser, input: z.in
     const attempt = await tx.quizAttempt.findUnique({ where: { id: input.attemptId } });
     if (!attempt || attempt.studentId !== user.id || attempt.quizId !== identifier) throw new ApiError(403, 'FORBIDDEN', 'Attempt not found or unauthorized.');
     if (attempt.status !== 'IN_PROGRESS' || attempt.deadline < new Date()) throw new ApiError(409, 'ATTEMPT_CLOSED', 'The assessment has ended. Submit the saved answers.');
-    const questions = snapshotSchema.parse(attempt.questionSnapshot);
+    const questions = getParsedSnapshot(attempt.id, attempt.questionSnapshot);
     const question = questions.find(q => q.id === input.questionId);
     if (!question) throw new ApiError(400, 'INVALID_QUESTION', 'Question does not belong to this attempt.');
     const options = new Set(question.content.options.map(o => o.id));

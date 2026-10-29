@@ -12,7 +12,7 @@
     },
     {
       "term": "Learning Outcome 9.1.2",
-      "definition": "define the term ‘thermal conductivity’;",
+      "definition": "define the term \u2018thermal conductivity\u2019;",
       "slo_code": "9.1.2",
       "cognitive_level": "R"
     },
@@ -96,7 +96,7 @@
     },
     {
       "term": "Learning Outcome 9.4.3",
-      "definition": "explore the impacts of heat transfer and conservation on people’s bedding and clothing in various climatic regions of South Asia.",
+      "definition": "explore the impacts of heat transfer and conservation on people\u2019s bedding and clothing in various climatic regions of South Asia.",
       "slo_code": "9.4.3",
       "cognitive_level": "A"
     }
@@ -108,7 +108,7 @@
       "options": [
         "A. it is less in quantity.",
         "B. it is in a capillary tube.",
-        "C. of the shape of the thermometer’s bulb.",
+        "C. of the shape of the thermometer\u2019s bulb.",
         "D. of the constriction in the capillary tube."
       ],
       "correct_option": "D",
@@ -164,7 +164,7 @@
       "options": [
         "A. increases.",
         "B. decreases.",
-        "C. becomes 100°C.",
+        "C. becomes 100\u00b0C.",
         "D. remains constant."
       ],
       "correct_option": "B",
@@ -185,6 +185,78 @@
       "explanation": "Correct option according to the official board answer key.",
       "marks": 1.0,
       "cognitive_level": "Application"
+    },
+    {
+      "question_number": "2024-Q37",
+      "stem_text": "With reference to heat transfer in solids, the CORRECT statement is that heat",
+      "options": [
+        "A. flows from lower to higher temperature.",
+        "B. flows from higher to lower temperature.",
+        "C. is independent of the size of the surface of solids.",
+        "D. is independent of the temperature of the surroundings."
+      ],
+      "correct_option": "B",
+      "explanation": "Thermal energy always flows spontaneously from a region of higher temperature to a region of lower temperature.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "9.1.1",
+      "original_slo": "9.1.2",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q38",
+      "stem_text": "The CORRECT option that identifies the processes of heat transfer in which medium is required and not required is\n\n| Option | Process in which Medium is Required | Process in which Medium is NOT Required |\n| :--- | :--- | :--- |\n| A | conduction | convection |\n| B | convection | conduction |\n| C | conduction | radiation |\n| D | radiation | conduction |",
+      "options": [
+        "A. Medium Required: conduction | Medium NOT Required: convection",
+        "B. Medium Required: convection | Medium NOT Required: conduction",
+        "C. Medium Required: conduction | Medium NOT Required: radiation",
+        "D. Medium Required: radiation | Medium NOT Required: conduction"
+      ],
+      "correct_option": "C",
+      "explanation": "Conduction (and convection) requires a material medium of particles to transfer thermal energy, whereas thermal radiation consists of electromagnetic (infrared) waves that can travel through a vacuum without any medium.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "9.3.1",
+      "original_slo": "9.4.1",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q39",
+      "stem_text": "An example of a good conductor of heat is a",
+      "options": [
+        "A. glass door.",
+        "B. frying pan.",
+        "C. wooden door.",
+        "D. leather jacket."
+      ],
+      "correct_option": "B",
+      "explanation": "A cooking frying pan is made of metal (such as aluminium, copper, or steel), which has free electrons and is a good conductor of heat so food cooks evenly.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering",
+      "slo_code": "9.1.5",
+      "original_slo": "9.1.6",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q40",
+      "stem_text": "Air ventilation in a room is an example of",
+      "options": [
+        "A. radiation.",
+        "B. convection.",
+        "C. conduction.",
+        "D. evaporation."
+      ],
+      "correct_option": "B",
+      "explanation": "Warm air in a room expands, becomes less dense, and rises out through upper ventilators while cooler, denser fresh air enters from lower windows/doors \u2014 a classic example of convection currents in gases.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering",
+      "slo_code": "9.4.1",
+      "original_slo": "9.3.2",
+      "exam_year": 2024,
+      "diagram_url": null
     }
   ],
   "crqs": [
@@ -194,23 +266,60 @@
       "slo_code": "9.1.2",
       "answer": "Tiles are much better thermal conductors than carpet fibres and rapidly conduct heat away from the bare feet, making the feet feel cold.",
       "source": "AKU-EB SSC-I Model Paper II Q.5(b)"
+    },
+    {
+      "question_number": "2024-Q.5",
+      "question": "Describe the transfer of heat through radiation in TWO points. Support your answer with an example.",
+      "question_text": "Describe the transfer of heat through radiation in TWO points. Support your answer with an example.",
+      "marks": 3.0,
+      "slo_code": "9.3.1",
+      "original_slo": "9.4.1",
+      "cognitive_level": "Understanding",
+      "rubric": [
+        {
+          "marks": 1,
+          "description": "1 mark for stating that thermal radiation transfers heat from one place to another by electromagnetic (infrared) waves."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for stating that thermal radiation does not require any material medium and can travel through a vacuum."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for giving a valid example (e.g., heat from the Sun reaching the Earth through space, or warmth felt from a heat lamp/fire)."
+        }
+      ],
+      "answer": "1. **Transfer via Electromagnetic Waves:** Thermal radiation is the mode of heat transfer in which thermal energy is emitted and transmitted from a hot body in the form of electromagnetic waves (primarily infrared radiation).\n2. **No Material Medium Required:** Unlike conduction and convection, radiation does not require any material medium of particles and can travel through a vacuum at the speed of light.\n3. **Example:** Heat and light energy from the Sun reach the Earth across the vacuum of space through thermal radiation (or feeling warmth when sitting in front of a fireplace or electric heater).",
+      "model_answer": "1. **Transfer via Electromagnetic Waves:** Thermal radiation is the mode of heat transfer in which thermal energy is emitted and transmitted from a hot body in the form of electromagnetic waves (primarily infrared radiation).\n2. **No Material Medium Required:** Unlike conduction and convection, radiation does not require any material medium of particles and can travel through a vacuum at the speed of light.\n3. **Example:** Heat and light energy from the Sun reach the Earth across the vacuum of space through thermal radiation (or feeling warmth when sitting in front of a fireplace or electric heater).",
+      "diagram_url": null,
+      "source": "AKU-EB SSC-I 2024 Annual Paper II Q.5"
     }
   ],
   "erqs": [
     {
-      "question": "A copper rod is 20 m long with a cross-sectional area of 4 m². If its two ends are kept at 200°C and 300°C respectively, calculate the amount of heat flowing across the rod in one second (k = 386.4 J/m·K·s).",
+      "question": "A copper rod is 20 m long with a cross-sectional area of 4 m\u00b2. If its two ends are kept at 200\u00b0C and 300\u00b0C respectively, calculate the amount of heat flowing across the rod in one second (k = 386.4 J/m\u00b7K\u00b7s).",
       "marks": 3,
       "slo_code": "9.1.4",
-      "answer": "Using Q/t = kA(T₁ - T₂)/L: Q/t = (386.4 × 4 × (300 - 200)) / 20 = (386.4 × 400) / 20 = 7728 J/s (7728 J in 1 s).",
+      "answer": "Using Q/t = kA(T\u2081 - T\u2082)/L: Q/t = (386.4 \u00d7 4 \u00d7 (300 - 200)) / 20 = (386.4 \u00d7 400) / 20 = 7728 J/s (7728 J in 1 s).",
       "source": "AKU-EB SSC-I 2025 Annual Paper II Q.5"
     }
   ],
   "numericals": [
     {
-      "problem": "A concrete wall of thickness 0.25 m and area 10 m² has an inside temperature of 25°C and outside temperature of 5°C. If k = 0.8 W/m·K, find the rate of heat conduction.",
+      "question_number": "Q.5",
+      "problem": "A copper rod is 20 m long with the cross-sectional area of 4 m2. If its two ends are kept at temperatures 200oC and 300oC respectively, calculate the amount of heat flowing across the rod in one second. (Note: Take the co-efficient of thermal conductivity as 386.4 J/m.K.s.)",
       "slo_code": "9.1.4",
-      "formula": "Q/t = kAΔT / L",
-      "solution": "Q/t = (0.8 × 10 × (25 - 5)) / 0.25 = 160 / 0.25 = 640 W."
+      "formula": "",
+      "solution": "Given data:\nLength ($L$) = 20 m\nArea ($A$) = 4 $\\text{m}^2$\nTemperature $T_1$ = 200 $^{\\circ}\\text{C}$, $T_2$ = 300 $^{\\circ}\\text{C}$\nTemperature difference ($\\Delta T$) = $300 - 200 = 100$ K\nTime ($t$) = 1 s\nCoefficient of thermal conductivity ($k$) = 386.4 $\\text{J/m}\\cdot\\text{K}\\cdot\\text{s}$\n\nFormula:\n$\\frac{Q}{t} = \\frac{k \\cdot A \\cdot (T_2 - T_1)}{L}$\n\nCalculation:\n$\\frac{Q}{1} = \\frac{386.4 \\times 4 \\times 100}{20}$\n$\\frac{Q}{1} = \\frac{154560}{20} = 7728$ J/s\n\nAmount of heat flowing in one second ($Q$) = 7728 J",
+      "source": "2025 Annual Paper II (CRQ \u2022 3 Marks)"
+    },
+    {
+      "question_number": "Num.2",
+      "problem": "A concrete wall of thickness 0.25 m and area 10 m\u00b2 has an inside temperature of 25\u00b0C and outside temperature of 5\u00b0C. If k = 0.8 W/m\u00b7K, find the rate of heat conduction.",
+      "slo_code": "9.1.4",
+      "formula": "Q/t = kA\u0394T / L",
+      "solution": "Q/t = (0.8 \u00d7 10 \u00d7 (25 - 5)) / 0.25 = 160 / 0.25 = 640 W.",
+      "source": "Unit 9 Worked Numerical"
     }
   ]
 }

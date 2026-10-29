@@ -7,7 +7,7 @@ import { z } from 'zod';
 export async function POST(req: NextRequest, context: { params: Promise<{ id: string }> }) {
   return withAssessmentCapacity(1, async () => {
   try { const user = await requireUser(req); await rateLimit('attempt-start:' + user.id, 120, 3600); const { id } = await context.params;
-    const input = z.object({ practiceDurationMin: z.number().int().min(1).max(180).optional(), practiceUntimed: z.boolean().optional() }).parse(await req.json());
+    const input = z.object({ practiceDurationMin: z.number().int().min(1).max(180).optional(), practiceUntimed: z.boolean().optional(), forceNewAttempt: z.boolean().optional() }).parse(await req.json());
     return NextResponse.json({ success: true, attempt: await startAttempt(id, user, input) });
   } catch (error) { return apiError(error); }
   });

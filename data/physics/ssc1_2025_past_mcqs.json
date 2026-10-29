@@ -35,6 +35,20 @@
         "description": "identify various physical quantities as base and derive quantities;",
         "topic": "Measurement"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Force (N = kg\u00b7m/s\u00b2) is a derived quantity expressed in terms of mass, length, and time."
+      },
+      {
+        "key": "C",
+        "reason": "Density (kg/m\u00b3) is a derived quantity obtained by dividing mass by volume."
+      },
+      {
+        "key": "D",
+        "reason": "Velocity (m/s) is a derived quantity obtained by dividing length (displacement) by time."
+      }
     ]
   },
   {
@@ -72,6 +86,20 @@
         "code": "1.3.2",
         "description": "convert numerical values of measurement in scientific notation;",
         "topic": "Measurement"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Because 0.012345678 is less than 1, moving the decimal point 2 places to the right requires an exponent of -2, and only one non-zero digit precedes the decimal."
+      },
+      {
+        "key": "B",
+        "reason": "1.2345678 \u00d7 10\u00b2 equals 123.45678, whereas moving the decimal 2 places to the right gives 10\u207b\u00b2."
+      },
+      {
+        "key": "D",
+        "reason": "Standard scientific notation requires a mantissa between 1 and 10 (1.2345678 \u00d7 10\u207b\u00b2, not 12.345678 \u00d7 10\u207b\u00b2)."
       }
     ]
   },
@@ -111,6 +139,20 @@
         "description": "describe the working of measuring instruments;",
         "topic": "Measurement"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The narrow depth rod (strip) of Vernier callipers measures the depth of a beaker or hole."
+      },
+      {
+        "key": "B",
+        "reason": "The outer jaws of Vernier callipers measure the length of small objects."
+      },
+      {
+        "key": "D",
+        "reason": "The jaws of Vernier callipers measure internal and external diameter, whereas weight is a force measured by a spring balance."
+      }
     ]
   },
   {
@@ -148,6 +190,20 @@
         "code": "1.7.1",
         "description": "describe significant figures;",
         "topic": "Measurement"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "In multiplication, the result retains the same number of significant figures as the factor with the fewest significant figures (25.01 has 4 significant figures)."
+      },
+      {
+        "key": "B",
+        "reason": "The trapped zero in 25.01 is significant, giving 4 significant figures rather than 3."
+      },
+      {
+        "key": "D",
+        "reason": "Although 25.01\u00b2 = 625.5001 has 7 digits before rounding, significant figure rules limit the rounded result to 4 significant figures."
       }
     ]
   },
@@ -187,6 +243,20 @@
         "description": "define the following terms: a. distance, b. displacement, c. speed, d. velocity, e. acceleration;",
         "topic": "Kinematics"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "3 m is the one-way distance to the teacher's table, whereas returning to the starting desk makes the net displacement 0 m."
+      },
+      {
+        "key": "C",
+        "reason": "6 m is the total distance travelled (3 m + 3 m), whereas displacement is the shortest directed distance between initial and final positions (0 m)."
+      },
+      {
+        "key": "D",
+        "reason": "Since the student starts and ends at the exact same desk, initial and final positions coincide and displacement is 0 m."
+      }
     ]
   },
   {
@@ -224,6 +294,20 @@
         "code": "2.4.4",
         "description": "calculate the area under the speed-time graph of uniformly accelerated objects to find out the distance covered by the objects;",
         "topic": "Kinematics"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Region Y lies outside the shaded speed-time curve and does not represent distance (area under the graph)."
+      },
+      {
+        "key": "B",
+        "reason": "Region Y is above the graph line, whereas distance equals the area between the speed-time curve and the time axis (W + X + Z)."
+      },
+      {
+        "key": "D",
+        "reason": "Only the regions underneath the speed-time line down to the horizontal time axis (W + X + Z) represent distance travelled."
       }
     ]
   },
@@ -263,6 +347,20 @@
         "description": "infer the following states of a body based on the given graph: a. at rest, b. moving with constant speed, c. moving with positive acceleration, d. moving with negative acceleration;",
         "topic": "Kinematics"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Line A slopes upward from the origin, representing motion with constant positive speed."
+      },
+      {
+        "key": "C",
+        "reason": "Curve C has a changing slope, representing non-uniform (accelerated) motion."
+      },
+      {
+        "key": "D",
+        "reason": "Line D slopes downward toward the time axis, whereas horizontal line B has zero slope (distance does not change with time, so the body is at rest)."
+      }
     ]
   },
   {
@@ -300,6 +398,20 @@
         "code": "2.3.2",
         "description": "calculate average speed, average velocity and acceleration;",
         "topic": "Kinematics"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Uniform speed with zero acceleration needs only d = vt; the kinematic equations of motion apply more generally to any constant (uniform) acceleration."
+      },
+      {
+        "key": "B",
+        "reason": "If velocity is uniform, acceleration is zero; the three equations of motion govern motion under uniform acceleration."
+      },
+      {
+        "key": "C",
+        "reason": "Uniform momentum implies zero net force and zero acceleration, whereas the three equations of motion require uniform acceleration."
       }
     ]
   },
@@ -339,6 +451,20 @@
         "description": "solve word problems related to free-falling bodies using the relation g = \u0394v/ \u0394t.",
         "topic": "Kinematics"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "3.2 m/s does not use v_i = g \u00d7 t = 9.8 m/s\u00b2 \u00d7 3 s (taking 3 s to reach highest point where v_f = 0)."
+      },
+      {
+        "key": "B",
+        "reason": "6.8 m/s subtracts 9.8 - 3.0 instead of multiplying g \u00d7 t."
+      },
+      {
+        "key": "C",
+        "reason": "12.8 m/s adds 9.8 + 3.0 instead of using 0 = v_i - gt => v_i = 9.8 \u00d7 3 = 29.4 m/s."
+      }
     ]
   },
   {
@@ -376,6 +502,20 @@
         "code": "3.4.4",
         "description": "solve word problems related to momentum and impulse;",
         "topic": "Dynamics"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "10 Ns divides 100 N by 10 s instead of multiplying Impulse = \u0394p = F \u00d7 t = 100 N \u00d7 10 s = 1000 Ns."
+      },
+      {
+        "key": "B",
+        "reason": "50 Ns confuses the given velocity (50 m/s) with change in momentum (F \u00d7 t = 100 \u00d7 10 = 1000 Ns)."
+      },
+      {
+        "key": "C",
+        "reason": "100 Ns is the force magnitude alone without multiplying by the 10 s time interval."
       }
     ]
   },
@@ -415,6 +555,20 @@
         "description": "differentiate between mass and weight;",
         "topic": "Dynamics"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Mass is the quantity of matter in a body and remains constant everywhere in the universe."
+      },
+      {
+        "key": "B",
+        "reason": "Length is a geometric dimension unaffected by gravitational field strength."
+      },
+      {
+        "key": "D",
+        "reason": "Density (\u03c1 = m/V) depends on mass and volume, both of which remain unchanged on the Moon; only weight (W = mg) changes."
+      }
     ]
   },
   {
@@ -452,6 +606,20 @@
         "code": "3.3.4",
         "description": "determine the resultant of two or more forces acting along the same straight line;",
         "topic": "Dynamics"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Although the net horizontal force on the stationary rope is 0 N, the internal tension throughout the pulled rope is non-zero."
+      },
+      {
+        "key": "B",
+        "reason": "Each team of 4 members pulls with 4 \u00d7 10 N = 40 N, not 20 N."
+      },
+      {
+        "key": "C",
+        "reason": "In AKU-EB's official 2025 key, D (80 N) is the keyed response (summing the two 40 N pulls; note that ideal-string physics defines tension as 40 N)."
       }
     ]
   },
@@ -491,6 +659,20 @@
         "description": "explain that the mass of an object resists changes from its state of rest or motion (inertia);",
         "topic": "Dynamics"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A couple consists of two equal, opposite parallel forces separated by a distance, which does not cause a alighting passenger to pitch forward."
+      },
+      {
+        "key": "C",
+        "reason": "Friction stops the passenger's feet on the ground, while the upper body continues moving forward due to inertia of motion."
+      },
+      {
+        "key": "D",
+        "reason": "The primary physical property keeping the passenger's upper body moving forward at the bus's speed is inertia."
+      }
     ]
   },
   {
@@ -528,6 +710,20 @@
         "code": "3.5.2",
         "description": "differentiate between rolling friction and sliding friction;",
         "topic": "Dynamics"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Static friction acts when surfaces are at rest relative to each other before motion starts."
+      },
+      {
+        "key": "C",
+        "reason": "Sliding friction occurs when an object is dragged without wheels."
+      },
+      {
+        "key": "D",
+        "reason": "Wheels convert sliding motion into rolling motion, so the opposing resistance is specifically rolling friction."
       }
     ]
   },
@@ -567,6 +763,20 @@
         "description": "explain the turning effect of force by relating it to everyday life;",
         "topic": "Turning Effect of Forces"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A claw hammer pivots about its curved head to pull a nail using a turning moment (torque)."
+      },
+      {
+        "key": "B",
+        "reason": "The human forearm rotates about the elbow joint (pivot) under the torque of the biceps muscle."
+      },
+      {
+        "key": "D",
+        "reason": "A spanner rotates a nut about its centre using torque, whereas a spring balance stretches linearly in a straight line without rotation."
+      }
     ]
   },
   {
@@ -604,6 +814,20 @@
         "code": "4.2.2",
         "description": "solve word problems related to the principle of moments;",
         "topic": "Turning Effect of Forces"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "2 N does not balance the clockwise moment; by the principle of moments, F\u2081d\u2081 = F\u2082d\u2082."
+      },
+      {
+        "key": "B",
+        "reason": "4 N produces an insufficient counter-moment to balance the metre rod."
+      },
+      {
+        "key": "D",
+        "reason": "10 N over-balances the rod; applying F\u2081d\u2081 = F\u2082d\u2082 gives the balanced weight of 6 N."
       }
     ]
   },
@@ -643,6 +867,20 @@
         "description": "solve word problems related to the moment of force or torque = force \u00d7 perpendicular distance from the pivot to the line of action of force;",
         "topic": "Turning Effect of Forces"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Force F\u2081 acts closer to the hinges (smaller moment arm), producing less torque than F\u2084."
+      },
+      {
+        "key": "B",
+        "reason": "Force F\u2082 acts at an acute angle or smaller perpendicular distance than F\u2084."
+      },
+      {
+        "key": "C",
+        "reason": "Force F\u2083 has a smaller moment arm than F\u2084, which acts perpendicularly at the farthest edge from the hinges."
+      }
     ]
   },
   {
@@ -680,6 +918,20 @@
         "code": "4.3.1",
         "description": "define centre of gravity and centre of mass of a body;",
         "topic": "Turning Effect of Forces"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Centre of mass is the point where mass is symmetrically distributed (independent of gravity), whereas whole weight acts through the centre of gravity."
+      },
+      {
+        "key": "B",
+        "reason": "Point of contact is where two surfaces touch, not where the resultant weight acts."
+      },
+      {
+        "key": "D",
+        "reason": "Point of applied force is where an external push or pull is applied."
       }
     ]
   },
@@ -719,6 +971,20 @@
         "description": "define gravitational field strength;",
         "topic": "Dynamics"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Gravitational field lines point radially inward toward the centre of the mass, not parallel to its surface."
+      },
+      {
+        "key": "B",
+        "reason": "Gravitational field is specifically directed radially *towards* the attracting mass (attractive only), not merely perpendicular in either direction."
+      },
+      {
+        "key": "C",
+        "reason": "Gravity is always an attractive force, so gravitational field lines never point away from the mass."
+      }
     ]
   },
   {
@@ -751,7 +1017,21 @@
     },
     "current_slo": null,
     "out_of_syllabus": true,
-    "current_mapping": []
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Knowing g alone is not enough to find Earth's mass M = gR\u00b2/G; both Earth's radius R (I) and the gravitational constant G (III) are required."
+      },
+      {
+        "key": "B",
+        "reason": "The mass of the test object cancels out of g = GM/R\u00b2 and provides no information about Earth's mass."
+      },
+      {
+        "key": "D",
+        "reason": "The object's mass (II) cancels out; you need the radius of the Earth (I) and universal gravitational constant G (III)."
+      }
+    ]
   },
   {
     "questionNumber": "21",
@@ -783,7 +1063,21 @@
     },
     "current_slo": null,
     "out_of_syllabus": true,
-    "current_mapping": []
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "At altitude h = R, the distance from Earth's centre doubles (r = 2R), and since g' = g(R/r)\u00b2, weight becomes (1/2)\u00b2 = 1/4th, not 1/2."
+      },
+      {
+        "key": "B",
+        "reason": "Moving farther from Earth's centre weakens gravity, so weight decreases rather than doubling."
+      },
+      {
+        "key": "C",
+        "reason": "By the inverse-square law W \u221d 1/r\u00b2, doubling the distance from Earth's centre reduces weight to (1/2)\u00b2 = one-fourth."
+      }
+    ]
   },
   {
     "questionNumber": "22",
@@ -820,6 +1114,20 @@
         "code": "3.3.1",
         "description": "explain Newton\u2019s laws of motion;",
         "topic": "Dynamics"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "The question compares the *magnitudes* (F\u2081) and (F\u2082), which are both positive scalars and equal (F\u2081 = F\u2082) by Newton's third law."
+      },
+      {
+        "key": "C",
+        "reason": "By Newton's third law of motion, the Earth and the satellite exert equal gravitational forces on each other."
+      },
+      {
+        "key": "D",
+        "reason": "Despite the Earth's much larger mass, the gravitational pull of the Earth on the satellite equals the pull of the satellite on the Earth (F\u2081 = F\u2082)."
       }
     ]
   },
@@ -859,6 +1167,20 @@
         "description": "solve word problems related to workdone;",
         "topic": "Work, Energy and Power"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Only the vertical force (5000 N) does work over the vertical upward displacement of 0.5 m (W = 5000 \u00d7 0.5 = 2500 J); no work is done against gravity during horizontal motion at constant height."
+      },
+      {
+        "key": "C",
+        "reason": "10,000 J multiplies force by horizontal distance instead of vertical displacement in the direction of the lifting force."
+      },
+      {
+        "key": "D",
+        "reason": "25,000 J is 10\u00d7 too large; W = F \u00d7 h = 5000 N \u00d7 0.5 m = 2500 J."
+      }
     ]
   },
   {
@@ -896,6 +1218,20 @@
         "code": "6.3.3",
         "description": "solve word problems related to the kinetic and potential energy;",
         "topic": "Work, Energy and Power"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "19.2 J does not match P.E = mgh = 0.40 kg \u00d7 9.8 m/s\u00b2 \u00d7 20 m = 78.4 J."
+      },
+      {
+        "key": "B",
+        "reason": "31.4 J is an arithmetic error; multiplying 0.40 \u00d7 9.8 \u00d7 20 gives 78.4 J."
+      },
+      {
+        "key": "C",
+        "reason": "39.2 J is half the potential energy (forgetting a factor of 2 in 0.40 \u00d7 9.8 \u00d7 20 = 78.4 J)."
       }
     ]
   },
@@ -935,6 +1271,20 @@
         "description": "differentiate between non-renewable and renewable energy sources with examples of each;",
         "topic": "Work, Energy and Power"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Solar energy is continuously replenished by sunlight and is a renewable energy source."
+      },
+      {
+        "key": "B",
+        "reason": "Wind energy is naturally replenished by atmospheric heating and is renewable."
+      },
+      {
+        "key": "D",
+        "reason": "Geothermal energy from Earth's internal heat is renewable, whereas nuclear fission relies on finite uranium ore reserves (non-renewable)."
+      }
     ]
   },
   {
@@ -972,6 +1322,20 @@
         "code": "6.3.2",
         "description": "derive the formulae of kinetic energy K.E = \u00bd mv2 and potential energy P.E = mg\u0394h;",
         "topic": "Work, Energy and Power"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Kinetic energy (K.E = \u00bdmv\u00b2) depends on mass and velocity, not density."
+      },
+      {
+        "key": "C",
+        "reason": "Kinetic energy depends on instantaneous velocity (v), not rate of change of velocity (acceleration)."
+      },
+      {
+        "key": "D",
+        "reason": "Macroscopic mechanical kinetic energy of a moving body is \u00bdmv\u00b2, determined by its mass and velocity."
       }
     ]
   },
@@ -1011,6 +1375,20 @@
         "description": "solve word problems related to workdone;",
         "topic": "Work, Energy and Power"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "4 J divides 2000 by 500 instead of computing W = mgh = 2000 kg \u00d7 9.8 m/s\u00b2 \u00d7 50 m = 980,000 J."
+      },
+      {
+        "key": "B",
+        "reason": "400 J omits multiplying by g and mass properly."
+      },
+      {
+        "key": "C",
+        "reason": "98,000 J is off by a factor of 10 (2000 \u00d7 9.8 \u00d7 50 = 980,000 J)."
+      }
     ]
   },
   {
@@ -1048,6 +1426,20 @@
         "code": "7.1.3",
         "description": "solve word problems using the relation of density;",
         "topic": "Pressure"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "In liquid X\u2081, the wood block sinks deepest, meaning X\u2081 is the least dense liquid."
+      },
+      {
+        "key": "B",
+        "reason": "In X\u2082, more of the wood is submerged than in X\u2084."
+      },
+      {
+        "key": "C",
+        "reason": "By Archimedes' principle, the denser the liquid, the smaller the submerged volume needed to displace weight equal to the block\u2014so X\u2084 (where the block floats highest) is the densest liquid."
       }
     ]
   },
@@ -1087,6 +1479,20 @@
         "description": "explain that pressure varies with force and area with the help of real-life examples;",
         "topic": "Pressure"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Both stacks consist of the exact same number of identical 1 kg bricks, so their total downward weight (force) is equal."
+      },
+      {
+        "key": "B",
+        "reason": "Since both stacks have the same total mass, the downward force F = mg is identical for X and Y."
+      },
+      {
+        "key": "C",
+        "reason": "Stack Y stands on a smaller contact area on the ground than stack X, so for the same weight, Pressure P = F/A is greater for stack Y."
+      }
     ]
   },
   {
@@ -1124,6 +1530,20 @@
         "code": "7.3.3",
         "description": "describe that atmospheric pressure decreases with the increase \nin height above the earth\u2019s surface;",
         "topic": "Pressure"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Atmospheric pressure decreases as altitude increases because the overlying air column becomes shorter and less dense."
+      },
+      {
+        "key": "C",
+        "reason": "Atmospheric pressure is highest at sea level and lower on high mountains."
+      },
+      {
+        "key": "D",
+        "reason": "Atmospheric pressure systematically decreases with elevation above sea level."
       }
     ]
   },
@@ -1163,6 +1583,20 @@
         "description": "solve word problems related to the relationship between pressure, depth and liquid density;",
         "topic": "Pressure"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "1.43 \u00d7 10\u2074 Pa is 100\u00d7 too small; P = \u03c1gh = 1000 kg/m\u00b3 \u00d7 10 m/s\u00b2 \u00d7 143 m = 1,430,000 Pa = 1.43 \u00d7 10\u2076 Pa."
+      },
+      {
+        "key": "B",
+        "reason": "1.43 \u00d7 10\u2075 Pa is 10\u00d7 too small (1000 \u00d7 10 \u00d7 143 = 1.43 \u00d7 10\u2076 Pa)."
+      },
+      {
+        "key": "D",
+        "reason": "1.43 \u00d7 10\u2077 Pa is 10\u00d7 too large."
+      }
     ]
   },
   {
@@ -1200,6 +1634,20 @@
         "code": "7.4.2",
         "description": "discuss the use of Pascal\u2019s law (including hydraulic press and \nhydraulic brakes on vehicles);",
         "topic": "Pressure"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "An object sinks only when its downward weight exceeds the maximum upward upthrust of the displaced water."
+      },
+      {
+        "key": "C",
+        "reason": "As long as weight is less than or equal to upthrust, the net upward force keeps the ship floating in equilibrium."
+      },
+      {
+        "key": "D",
+        "reason": "By the principle of floatation, when weight \u2264 upthrust, the ship floats continuously on the water surface."
       }
     ]
   },
@@ -1239,6 +1687,20 @@
         "description": "convert temperature from one scale to another (Fahrenheit, Celsius and Kelvin scales);",
         "topic": "Thermal Physics"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Using T_C = (5/9)(T_F - 32) = (5/9)(101 - 32) = (5/9)(69) = 38.3\u00b0C, not 43.3\u00b0C."
+      },
+      {
+        "key": "C",
+        "reason": "57.0\u00b0C subtracts 32 without multiplying by 5/9 properly."
+      },
+      {
+        "key": "D",
+        "reason": "69.0\u00b0C is just (101 - 32) before multiplying by 5/9 to convert Fahrenheit degrees to Celsius degrees (38.3\u00b0C)."
+      }
     ]
   },
   {
@@ -1276,6 +1738,20 @@
         "code": "8.2.7",
         "description": "solve word problems involving the concept of specific heat capacity, latent heat of fusion and vaporisation;",
         "topic": "Thermal Physics"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "840 J is 1000\u00d7 too small; Q = mc\u0394T = 4 kg \u00d7 4200 J/(kg\u00b7K) \u00d7 (80 - 30) K = 4 \u00d7 4200 \u00d7 50 = 840,000 J."
+      },
+      {
+        "key": "B",
+        "reason": "8400 J is 100\u00d7 too small."
+      },
+      {
+        "key": "C",
+        "reason": "84,000 J is 10\u00d7 too small (4 \u00d7 4200 \u00d7 50 = 840,000 J)."
       }
     ]
   },
@@ -1315,6 +1791,20 @@
         "description": "solve word problems involving the concept of specific heat capacity, latent heat of fusion and vaporisation;",
         "topic": "Thermal Physics"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "33.4 J is 1000\u00d7 too small; for m = 100 g = 0.1 kg and L_f = 3.34 \u00d7 10\u2075 J/kg, Q = mL_f = 0.1 \u00d7 334,000 = 33,400 J."
+      },
+      {
+        "key": "B",
+        "reason": "334 J is 100\u00d7 too small."
+      },
+      {
+        "key": "C",
+        "reason": "3340 J is 10\u00d7 too small (100 g \u00d7 334 J/g = 33,400 J)."
+      }
     ]
   },
   {
@@ -1352,6 +1842,20 @@
         "code": "8.2.10",
         "description": "describe factors that influence the rate of surface evaporation;",
         "topic": "Thermal Physics"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Vessel A has a narrow opening/surface area, which restricts the rate of evaporation."
+      },
+      {
+        "key": "B",
+        "reason": "Vessel B has a smaller exposed liquid surface area than wide shallow dish D."
+      },
+      {
+        "key": "C",
+        "reason": "Vessel C has a smaller exposed surface area than vessel D; evaporation rate increases directly with surface area."
       }
     ]
   },
@@ -1391,6 +1895,20 @@
         "description": "explain convection in liquids and gases in terms of density changes with reference to the following real-life examples:\na. gliders,\nb. flying of birds,\nc. land breezes and sea breezes;",
         "topic": "Transfer of Thermal Energy"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Fans circulate air currents over skin, involving forced convection."
+      },
+      {
+        "key": "B",
+        "reason": "Hot air balloons rise because heated air expands, becomes less dense, and rises by convection."
+      },
+      {
+        "key": "C",
+        "reason": "Gas room heaters warm air that circulates throughout the room via convection currents, whereas a heating pad in direct contact with muscles transfers heat by conduction."
+      }
     ]
   },
   {
@@ -1428,6 +1946,20 @@
         "code": "9.4.1",
         "description": "discuss everyday applications of conduction, convection and radiation including:\na. heating objects such as kitchen pans,\nb. heating of room by convection,\nc. measuring temperature using an infrared thermometer,\nd. using thermal insulation to maintain the temperature of a liquid and to reduce thermal energy transfer in buildings,\ne. the mechanism of a household hot-water system;",
         "topic": "Transfer of Thermal Energy"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Infrared radiation (I) is an electromagnetic wave that travels easily across a vacuum (it is stopped by the silvered walls, not the vacuum)."
+      },
+      {
+        "key": "B",
+        "reason": "The vacuum eliminates both conduction (II) and convection (III) because both require a material medium of molecules."
+      },
+      {
+        "key": "C",
+        "reason": "Radiation (I) can cross a vacuum, whereas conduction (II) and convection (III) are prevented by the absence of air molecules in the vacuum."
       }
     ]
   },
@@ -1467,6 +1999,20 @@
         "description": "describe the effect of surface colour (black or white) and texture (dull or shiny) on the emission, absorption and reflection of infrared radiation;",
         "topic": "Transfer of Thermal Energy"
       }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A good absorber would rapidly absorb incoming infrared heat rather than protecting the wearer."
+      },
+      {
+        "key": "B",
+        "reason": "A good absorber heats up rapidly when exposed to infrared radiation."
+      },
+      {
+        "key": "D",
+        "reason": "Note: Official 2025 key marks C (while physically Kirchhoff's law states shiny protective surfaces are both poor absorbers and poor emitters, D)."
+      }
     ]
   },
   {
@@ -1504,6 +2050,20 @@
         "code": "9.3.2",
         "description": "describe the effect of surface colour (black or white) and texture (dull or shiny) on the emission, absorption and reflection of infrared radiation;",
         "topic": "Transfer of Thermal Energy"
+      }
+    ],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Note: Official 2025 key marks B (white), whereas physically a dull black surface (A) is the best emitter/radiator of thermal radiation."
+      },
+      {
+        "key": "C",
+        "reason": "Green surfaces have intermediate emissivity."
+      },
+      {
+        "key": "D",
+        "reason": "Polished silver is a very poor radiator (emitter) and a strong reflector of heat."
       }
     ]
   }

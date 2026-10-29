@@ -72,7 +72,7 @@
     },
     {
       "term": "Learning Outcome 17.2.6",
-      "definition": "explain the formation of the Earth’s magnetic field;",
+      "definition": "explain the formation of the Earth\u2019s magnetic field;",
       "slo_code": "17.2.6",
       "cognitive_level": "U"
     },
@@ -102,7 +102,7 @@
     },
     {
       "term": "Learning Outcome 17.4.2",
-      "definition": "state Fleming’s left-hand rule;",
+      "definition": "state Fleming\u2019s left-hand rule;",
       "slo_code": "17.4.2",
       "cognitive_level": "R"
     },
@@ -120,7 +120,7 @@
     },
     {
       "term": "Learning Outcome 17.5.1",
-      "definition": "describe that a current carrying coil in a magnetic field experiences a torque with the help of Fleming’s left-hand rule;",
+      "definition": "describe that a current carrying coil in a magnetic field experiences a torque with the help of Fleming\u2019s left-hand rule;",
       "slo_code": "17.5.1",
       "cognitive_level": "U"
     },
@@ -215,10 +215,12 @@
   ],
   "numericals": [
     {
+      "question_number": "Num.1",
       "problem": "Why does a soft-iron core placed inside a current-carrying solenoid greatly increase its magnetic field strength, yet lose magnetism immediately when the current is switched off?",
       "slo_code": "17.3.2",
-      "formula": "B_solenoid ∝ μ_r n I",
-      "solution": "Soft iron has high magnetic permeability so its magnetic domains align rapidly with the solenoid field, and low retentivity so domains randomise as soon as current stops."
+      "formula": "B_solenoid \u221d \u03bc_r n I",
+      "solution": "Soft iron has high magnetic permeability so its magnetic domains align rapidly with the solenoid field, and low retentivity so domains randomise as soon as current stops.",
+      "source": "Unit 17 Worked Numerical"
     }
   ]
 }

@@ -239,71 +239,71 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
         </div>
       )}
 
-      {/* Primary Display Mode Selector (Generated Digital Paper vs Original Board PDF) */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-        gap: '0.85rem',
-        marginBottom: '1.5rem',
-        background: '#f8fafc',
-        padding: '0.65rem 1rem',
-        borderRadius: '12px',
-        border: '1px solid #e2e8f0'
-      }}>
-        {/* Toggle between Generated Digital Paper and Original Board PDF */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%', alignItems: 'stretch', gap: '0.35rem', background: 'var(--surface-muted)', padding: '3px', borderRadius: '8px' }}>
-          <button
-            type="button"
-            onClick={() => setDisplayMode('generated')}
-            style={{
-              padding: '7px 16px',
-              borderRadius: '6px',
-              fontSize: '0.88rem',
-              flex: '1 1 130px',
-              justifyContent: 'center',
-              minHeight: '44px',
-              fontWeight: displayMode === 'generated' ? 800 : 600,
-              background: displayMode === 'generated' ? '#0b5e4a' : 'transparent',
-              color: displayMode === 'generated' ? '#ffffff' : 'var(--text-color)',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.4rem',
-              transition: 'all 0.15s ease'
-            }}
-          >
-            <Sparkles size={16} />
-            Digital Paper
-          </button>
+      {/* Primary Display Mode Selector (Exact Dark Navy + Emerald Green Pill Switcher) */}
+      <div
+        role="group"
+        aria-label="Document view"
+        style={{
+          background: '#151f32',
+          border: '1px solid #26334d',
+          borderRadius: '14px',
+          padding: '6px',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '6px',
+          marginBottom: '1.5rem',
+          boxShadow: '0 4px 16px rgba(15, 23, 42, 0.18)',
+        }}
+      >
+        <button
+          type="button"
+          aria-pressed={displayMode === 'generated'}
+          onClick={() => setDisplayMode('generated')}
+          style={{
+            padding: '11px 20px',
+            borderRadius: '10px',
+            fontSize: '0.95rem',
+            minHeight: '46px',
+            fontWeight: 800,
+            background: displayMode === 'generated' ? '#066e4f' : 'transparent',
+            color: '#ffffff',
+            border: 'none',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.5rem',
+            transition: 'all 0.15s ease',
+          }}
+        >
+          <Sparkles size={18} />
+          <span>Digital Paper</span>
+        </button>
 
-          <button
-            type="button"
-            onClick={() => setDisplayMode('original_pdf')}
-            style={{
-              padding: '7px 16px',
-              borderRadius: '6px',
-              fontSize: '0.88rem',
-              flex: '1 1 130px',
-              justifyContent: 'center',
-              minHeight: '44px',
-              fontWeight: displayMode === 'original_pdf' ? 800 : 600,
-              background: displayMode === 'original_pdf' ? '#0b5e4a' : 'transparent',
-              color: displayMode === 'original_pdf' ? '#ffffff' : 'var(--text-color)',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.4rem',
-              transition: 'all 0.15s ease'
-            }}
-          >
-            <FileText size={16} />
-            Original PDF
-          </button>
-        </div>
+        <button
+          type="button"
+          aria-pressed={displayMode === 'original_pdf'}
+          onClick={() => setDisplayMode('original_pdf')}
+          style={{
+            padding: '11px 20px',
+            borderRadius: '10px',
+            fontSize: '0.95rem',
+            minHeight: '46px',
+            fontWeight: 800,
+            background: displayMode === 'original_pdf' ? '#066e4f' : 'transparent',
+            color: '#ffffff',
+            border: 'none',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.5rem',
+            transition: 'all 0.15s ease',
+          }}
+        >
+          <FileText size={18} />
+          <span>Original PDF</span>
+        </button>
       </div>
 
       {/* ========================================================================= */}
@@ -386,68 +386,67 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
       {/* ========================================================================= */}
       {displayMode === 'generated' && (
         <>
-          {/* Control Bar with "Show correct answer only" Study Toggle & "Take A Quiz" */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '1rem',
-            background: '#ffffff',
-            border: '1.5px solid #dce5e1',
-            borderRadius: '12px',
-            padding: '1rem 1.5rem',
-            marginBottom: '2rem',
-            boxShadow: '0 2px 10px rgba(11, 94, 74, 0.04)'
-          }}>
-            {/* The Main Study Toggle: Show correct answer only & Take A Quiz */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-              <button
-                type="button"
-                onClick={() => setShowCorrectAnswers(!showCorrectAnswers)}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  padding: '9px 20px',
-                  borderRadius: '30px',
-                  fontSize: '0.9rem',
-                  fontWeight: 800,
-                  cursor: 'pointer',
-                  border: showCorrectAnswers ? '2px solid #0b5e4a' : '2px solid #cbd5e1',
-                  background: showCorrectAnswers ? '#ecfdf5' : '#f8fafc',
-                  color: showCorrectAnswers ? '#0b5e4a' : '#475569',
-                  boxShadow: showCorrectAnswers ? '0 2px 10px rgba(11, 94, 74, 0.15)' : 'none',
-                  transition: 'all 0.2s ease'
-                }}
-              >
-                <span style={{ fontSize: '1.15rem' }}>{showCorrectAnswers ? '✅' : '⚪'}</span>
-                <span>{showCorrectAnswers ? 'Hide correct answers' : 'Show correct answer only'}</span>
-              </button>
+          {/* Control Bar (For Paper I: Answer Toggle & Timed Quiz | For Paper II: Exact Ditto Question Paper Notice + Link to Solved E-Marking Notes) */}
+          {!isPaper2 ? (
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '1rem',
+              background: '#ffffff',
+              border: '1.5px solid #dce5e1',
+              borderRadius: '12px',
+              padding: '1rem 1.5rem',
+              marginBottom: '2rem',
+              boxShadow: '0 2px 10px rgba(11, 94, 74, 0.04)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                <button
+                  type="button"
+                  onClick={() => setShowCorrectAnswers(!showCorrectAnswers)}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.6rem',
+                    padding: '9px 20px',
+                    borderRadius: '30px',
+                    fontSize: '0.9rem',
+                    fontWeight: 800,
+                    cursor: 'pointer',
+                    border: showCorrectAnswers ? '2px solid #0b5e4a' : '2px solid #cbd5e1',
+                    background: showCorrectAnswers ? '#ecfdf5' : '#f8fafc',
+                    color: showCorrectAnswers ? '#0b5e4a' : '#475569',
+                    boxShadow: showCorrectAnswers ? '0 2px 10px rgba(11, 94, 74, 0.15)' : 'none',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <span style={{ fontSize: '1.15rem' }}>{showCorrectAnswers ? '✅' : '⚪'}</span>
+                  <span>{showCorrectAnswers ? 'Hide correct answers' : 'Show correct answer only'}</span>
+                </button>
 
-              <button
-                type="button"
-                onClick={() => setInteractiveMode(!interactiveMode)}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  padding: '9px 20px',
-                  borderRadius: '30px',
-                  fontSize: '0.9rem',
-                  fontWeight: 800,
-                  cursor: 'pointer',
-                  border: interactiveMode ? '2px solid #2563eb' : '2px solid #cbd5e1',
-                  background: interactiveMode ? '#eff6ff' : '#f8fafc',
-                  color: interactiveMode ? '#1d4ed8' : '#475569',
-                  boxShadow: interactiveMode ? '0 2px 10px rgba(37, 99, 235, 0.15)' : 'none',
-                  transition: 'all 0.2s ease'
-                }}
-              >
-                <span>{interactiveMode ? '📝 Practice Mode (Active)' : isPaper2 ? '✏️ Written practice' : '✏️ Practice & Select Options'}</span>
-              </button>
+                <button
+                  type="button"
+                  onClick={() => setInteractiveMode(!interactiveMode)}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.6rem',
+                    padding: '9px 20px',
+                    borderRadius: '30px',
+                    fontSize: '0.9rem',
+                    fontWeight: 800,
+                    cursor: 'pointer',
+                    border: interactiveMode ? '2px solid #2563eb' : '2px solid #cbd5e1',
+                    background: interactiveMode ? '#eff6ff' : '#f8fafc',
+                    color: interactiveMode ? '#1d4ed8' : '#475569',
+                    boxShadow: interactiveMode ? '0 2px 10px rgba(37, 99, 235, 0.15)' : 'none',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <span>{interactiveMode ? '📝 Practice Mode (Active)' : '✏️ Practice & Select Options'}</span>
+                </button>
 
-              {!isPaper2 && (
                 <button
                   type="button"
                   onClick={() => setQuizModalOpen(true)}
@@ -470,9 +469,46 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                   <Award size={18} />
                   <span>Take A Quiz</span>
                 </button>
-              )}
+              </div>
             </div>
-          </div>
+          ) : (
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '1rem',
+              background: '#f8fafc',
+              border: '1.5px solid #cbd5e1',
+              borderRadius: '12px',
+              padding: '0.85rem 1.25rem',
+              marginBottom: '1.5rem',
+            }}>
+              <span style={{ fontSize: '0.88rem', fontWeight: 700, color: '#334155' }}>
+                📄 Exact Digital Copy of Official Paper II Question Booklet (Unanswered Exam Format • 2025 Syllabus Mapped)
+              </span>
+              {!paper.paperCode?.includes('-P2') || paper.paperCode?.includes('2024') || paper.paperCode?.includes('2025') ? (
+                <Link
+                  href={`/resources/physics-${isGrade9 ? 'ix' : 'x'}-${paper.examYear}-emarking`}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.45rem',
+                    padding: '7px 16px',
+                    borderRadius: '8px',
+                    background: '#066e4f',
+                    color: '#ffffff',
+                    fontSize: '0.84rem',
+                    fontWeight: 800,
+                    textDecoration: 'none',
+                  }}
+                >
+                  <Sparkles size={15} />
+                  <span>Open Solved E-Marking Notes (Better Responses) →</span>
+                </Link>
+              ) : null}
+            </div>
+          )}
 
           {/* Authentic Examination Paper Replica */}
           <div style={{
@@ -490,46 +526,87 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
               textAlign: 'center',
               background: '#ffffff'
             }}>
-              <div style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '1px', color: '#4b5563', marginBottom: '0.25rem' }}>
+              <div style={{ fontSize: '1.05rem', fontWeight: 800, letterSpacing: '0.5px', color: '#111827', marginBottom: '0.35rem' }}>
                 AGA KHAN UNIVERSITY EXAMINATION BOARD
               </div>
-              <div style={{ fontSize: '1.35rem', fontWeight: 800, letterSpacing: '0.5px', color: '#111827', marginBottom: '0.25rem' }}>
+              <div style={{ fontSize: '1.15rem', fontWeight: 800, letterSpacing: '0.5px', color: '#111827', marginBottom: '0.35rem' }}>
                 SECONDARY SCHOOL CERTIFICATE
               </div>
-              <div style={{ fontSize: '1.15rem', fontWeight: 700, color: '#1f2937', marginBottom: '0.5rem' }}>
-                {gradeLabel} EXAMINATION {paper.examYear}
+              <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#111827', marginBottom: '0.35rem' }}>
+                {gradeLabel}
               </div>
-              <div style={{ fontSize: '1.45rem', fontWeight: 800, color: '#0b5e4a', marginBottom: '0.5rem' }}>
-                Physics {isPaper2 ? 'Paper II (Theory)' : 'Paper I (Multiple Choice Questions)'}
+              <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#111827', marginBottom: '0.4rem' }}>
+                {paper.examSession?.toUpperCase().includes('MODEL') ? 'MODEL EXAMINATIONS' : `ANNUAL EXAMINATIONS (THEORY) ${paper.examYear}`}
               </div>
-              <div style={{ fontSize: '0.98rem', fontWeight: 600, color: '#374151' }}>
-                {isPaper2 ? 'Time: 1 hour 50 minutes • Marks: 25 (CRQs & ERQs with 2025 SLO Mapping)' : 'Time: 1 hour 10 minutes • Marks: 40 (MCQs with 2025 SLO Mapping)'}
+              <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#111827', marginBottom: '0.4rem' }}>
+                Physics {isPaper2 ? 'Paper II' : 'Paper I'}
+              </div>
+              <div style={{ fontSize: '1rem', fontWeight: 800, color: '#111827' }}>
+                {isPaper2 ? 'Time: 1 hour 50 minutes     Marks: 25' : 'Time: 1 hour 10 minutes     Marks: 40'}
               </div>
 
-              {/* Instructions Box (hidden in quick study mode to minimize clutter) */}
+              {/* Authentic AKU-EB Instructions & Rubric Box */}
               {!showCorrectAnswers && (
                 <div style={{
                   marginTop: '1.5rem',
-                  border: '1.5px solid #111827',
-                  borderRadius: '4px',
-                  padding: '1rem 1.25rem',
+                  borderTop: '1.5px solid #111827',
+                  paddingTop: '1.25rem',
                   textAlign: 'left',
-                  fontFamily: 'system-ui, -apple-system, sans-serif'
+                  fontFamily: "'Times New Roman', Times, serif, system-ui"
                 }}>
-                  <div style={{ fontWeight: 800, fontSize: '0.92rem', marginBottom: '0.4rem', textAlign: 'center', letterSpacing: '0.5px' }}>
-                    INSTRUCTIONS TO CANDIDATES
+                  <div style={{ fontWeight: 800, fontSize: '0.98rem', marginBottom: '0.4rem', color: '#111827' }}>
+                    INSTRUCTIONS
+                  </div>
+                  <div style={{ fontWeight: 700, fontSize: '0.94rem', marginBottom: '0.6rem', color: '#111827' }}>
+                    Please read the following instructions carefully.
                   </div>
                   {isPaper2 ? (
-                    <ol style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.85rem', color: '#374151', lineHeight: 1.5 }}>
-                      <li>This question paper contains <strong>Constructed Response Questions (CRQs, Q.1–Q.5)</strong> and <strong>Extended Response Questions (ERQs, Q.6a/b & Q.7a/b)</strong>.</li>
-                      <li>Each question displays both its <strong>Original {paper.examYear} Exam SLO</strong> and its mapped <strong>Current 2025 Syllabus SLO</strong>.</li>
-                      <li>Review the official Checking Hints, Model Solutions, and E-Marking Candidate Script examples below each question.</li>
-                    </ol>
+                    <div style={{ fontSize: '0.94rem', color: '#111827', lineHeight: 1.6 }}>
+                      <p style={{ margin: '0 0 0.75rem 0' }}>
+                        1. &nbsp;&nbsp;Check your name and school information. Sign if it is accurate.
+                      </p>
+                      <div style={{
+                        maxWidth: '460px',
+                        margin: '0 auto 1rem auto',
+                        border: '1.5px solid #111827',
+                        padding: '0.75rem 1.25rem 2.25rem 1.25rem',
+                        textAlign: 'center',
+                        fontWeight: 800,
+                        fontSize: '0.92rem'
+                      }}>
+                        I agree that this is my name and school.<br />
+                        Candidate&apos;s Signature
+                      </div>
+                      <div style={{ fontWeight: 800, fontSize: '0.96rem', marginBottom: '0.25rem' }}>
+                        RUBRIC
+                      </div>
+                      <p style={{ margin: '0 0 0.5rem 0' }}>
+                        2. &nbsp;&nbsp;There are SEVEN questions. Answer ALL questions. Questions 6 &amp; 7 each offer TWO choices. Attempt any ONE choice from each.
+                      </p>
+                      <p style={{ margin: '0 0 0.5rem 0' }}>
+                        3. &nbsp;&nbsp;When answering the questions:<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read each question carefully.<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use a black pointer to write your answers. DO NOT write your answers in pencil.<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use a black pencil for diagrams. DO NOT use coloured pencils.<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DO NOT use staples, paper clips, glue correcting fluid, or ink erasers.<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complete your answer in the allocated space only. DO NOT write outside the answer box.
+                      </p>
+                      <p style={{ margin: '0 0 0.35rem 0' }}>
+                        4. &nbsp;&nbsp;The marks for the questions are shown in brackets ( ).
+                      </p>
+                      <p style={{ margin: 0 }}>
+                        5. &nbsp;&nbsp;You may use a simple calculator if you wish.
+                      </p>
+                    </div>
                   ) : (
-                    <ol style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.85rem', color: '#374151', lineHeight: 1.5 }}>
-                      <li>Read each question carefully before choosing your answer.</li>
-                      <li>Use answer numbers <strong>1 to 40</strong> only. Fill <strong>ONLY ONE</strong> oval for each question.</li>
-                      <li>Each question displays both its <strong>Original {paper.examYear} Exam SLO</strong> and its mapped <strong>Current 2025 Syllabus SLO</strong>.</li>
+                    <ol style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.92rem', color: '#111827', lineHeight: 1.6 }}>
+                      <li>Read each question carefully.</li>
+                      <li>Answer the questions on the separate answer sheet provided. DO NOT write your answers on the question paper.</li>
+                      <li>There are 100 answer numbers on the answer sheet. Use answer numbers 1 to 40 only.</li>
+                      <li>In each question there are four choices A, B, C, D. Choose ONE. On the answer grid black out the circle for your choice with a pencil.</li>
+                      <li>If you want to change your answer, ERASE the first answer completely with a rubber, before blacking out a new circle.</li>
+                      <li>DO NOT write anything in the answer grid. The computer only records what is in the circles.</li>
+                      <li>You may use a simple calculator if you wish.</li>
                     </ol>
                   )}
                 </div>
@@ -628,44 +705,27 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                       )}
                     </div>
 
-                    {/* Prominent SLO Mapping Box (Original Exam SLO + Current 2025 Syllabus SLO) */}
+                    {/* Current 2025 Syllabus SLO Badge (or Out of 2025 Syllabus Badge) */}
                     <div style={{
                       marginLeft: '2.5rem',
                       marginBottom: '1rem',
-                      padding: '0.65rem 0.95rem',
+                      padding: '0.6rem 0.9rem',
                       background: '#f8fafc',
                       border: '1px solid #e2e8f0',
                       borderRadius: '8px',
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '0.4rem',
+                      gap: '0.35rem',
                       fontFamily: 'system-ui, -apple-system, sans-serif'
                     }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
-                        {mapping.originalCode && (
-                          <span style={{
-                            background: '#fef3c7',
-                            color: '#92400e',
-                            border: '1px solid #fde68a',
-                            padding: '2px 8px',
-                            borderRadius: '5px',
-                            fontSize: '0.78rem',
-                            fontWeight: 700
-                          }}>
-                            Original ({paper.examYear}) SLO: {mapping.originalCode}
-                            {meta.original_reference_verified === true && meta.original_reference_source && (
-                              <> · <Link href={meta.original_reference_source} style={{ color: '#92400e', textDecoration: 'underline' }}>{isPaper2 ? 'E-Marking Notes' : 'Official Key'}</Link></>
-                            )}
-                          </span>
-                        )}
-
-                        {mapping.status === 'mapped' ? (
+                        {mapping.status === 'mapped' && !meta.out_of_syllabus ? (
                           <Link
                             href={mapping.href!}
                             title={mapping.description}
                             style={{
                               background: '#ecfdf5',
-                              color: '#0b5e4a',
+                              color: '#066e4f',
                               border: '1px solid #a7f3d0',
                               padding: '2px 9px',
                               borderRadius: '5px',
@@ -674,19 +734,19 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                               textDecoration: 'none'
                             }}
                           >
-                            Current 2025 Syllabus: SLO {sloCode}{topicName ? ` • ${topicName}` : ''} ↗
+                            2025 Syllabus: SLO {sloCode}{topicName ? ` • ${topicName}` : ''} ↗
                           </Link>
                         ) : (
                           <span style={{
-                            background: '#f1f5f9',
-                            color: '#475569',
-                            border: '1px solid #cbd5e1',
-                            padding: '2px 8px',
+                            background: '#fef2f2',
+                            color: '#b91c1c',
+                            border: '1px solid #fecaca',
+                            padding: '2px 9px',
                             borderRadius: '5px',
-                            fontSize: '0.78rem',
-                            fontWeight: 600
+                            fontSize: '0.8rem',
+                            fontWeight: 800
                           }}>
-                            {mapping.status === 'outside' ? `Outside 2025 Syllabus (Historical ${paper.examYear} Topic — Reviewed)` : 'Current syllabus: Mapping pending'}
+                            Out of 2025 Syllabus
                           </span>
                         )}
 
@@ -705,21 +765,10 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                         )}
                       </div>
 
-                      {mapping.status === 'mapped' && mapping.description && (
+                      {mapping.status === 'mapped' && !meta.out_of_syllabus && mapping.description && (
                         <div style={{ fontSize: '0.82rem', color: '#334155', lineHeight: 1.45 }}>
                           <strong>2025 SLO Outcome ({sloCode}):</strong> {mapping.description}
                         </div>
-                      )}
-                      {meta.original_slo_text && (
-                        <div style={{ fontSize: '0.79rem', color: '#64748b', lineHeight: 1.4 }}>
-                          <strong>Original {paper.examYear} SLO Text ({mapping.originalCode}):</strong> {meta.original_slo_text}
-                        </div>
-                      )}
-                      {meta.answer_review_note && (
-                        <details style={{ fontSize: '.8rem', color: 'var(--text-color)' }}>
-                          <summary style={{ cursor: 'pointer', fontWeight: 600 }}>Source Key / Educator Review Note</summary>
-                          <p style={{ margin: '0.25rem 0 0 0' }}>{meta.answer_review_note}</p>
-                        </details>
                       )}
                     </div>
 
@@ -857,9 +906,21 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                                 Check Answer
                               </button>
                             ) : (
-                              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: 700, color: isCorrect ? '#16a34a' : '#dc2626' }}>
-                                {isCorrect ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
-                                <span>{isCorrect ? 'Correct!' : `Incorrect. Answer key: Option ${correctKey}`}</span>
+                              <div style={{ width: '100%', background: isCorrect ? '#f0fdf4' : '#fff1f2', border: `1.5px solid ${isCorrect ? '#86efac' : '#fecdd3'}`, borderRadius: '10px', padding: '0.9rem 1.1rem' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.92rem', fontWeight: 800, color: isCorrect ? '#166534' : '#9f1239', marginBottom: '0.35rem' }}>
+                                  {isCorrect ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
+                                  <span>{isCorrect ? `Correct! Option ${correctKey}` : `Incorrect — Correct Option is (${correctKey})`}</span>
+                                </div>
+                                {!isCorrect && selectedOpt && (
+                                  <div style={{ fontSize: '0.86rem', color: '#9f1239', marginBottom: '0.35rem', lineHeight: 1.5 }}>
+                                    <strong>Why Option ({selectedOpt}) is incorrect: </strong>
+                                    <MathText text={(Array.isArray(meta.option_feedback) ? meta.option_feedback.find((f: any) => String(f.key).toUpperCase() === selectedOpt)?.reason : '') || `Option (${selectedOpt}) does not satisfy the physical relationship for this question.`} />
+                                  </div>
+                                )}
+                                <div style={{ fontSize: '0.88rem', color: '#1e293b', lineHeight: 1.55 }}>
+                                  <strong>Why Option ({correctKey}) is correct: </strong>
+                                  <MathText text={betterResponse} />
+                                </div>
                               </div>
                             )}
                           </div>
@@ -940,203 +1001,22 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                     )}
 
                     {/* ---------------------------------------------------- */}
-                    {/* PAPER 2: CHECKING HINTS, MODEL ANSWER & E-MARKING    */}
+                    {/* PAPER 2: EXACT DITTO DIGITAL QUESTION BOOKLET LINES  */}
+                    {/* (No answers shown in Paper II; solutions are in      */}
+                    {/*  the E-Marking Notes Digital Paper)                  */}
                     {/* ---------------------------------------------------- */}
                     {isPaper2 && (
-                      <div style={{ marginLeft: '2.5rem', marginTop: '0.75rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-
-                        {/* 1. Ruled lines for answering (Only shown when NOT in quick study mode) */}
-                        {!showCorrectAnswers && (
-                          <div style={{
-                            border: '1.5px solid #cbd5e1',
-                            borderRadius: '6px',
-                            padding: '0.75rem 1.25rem 0.5rem',
-                            background: '#fafafa',
-                            position: 'relative',
-                            marginBottom: '1rem'
-                          }}>
-                            {/* Left Hand Margin indicator */}
-                            <div style={{
-                              position: 'absolute',
-                              left: '36px',
-                              top: 0,
-                              bottom: 0,
-                              width: '1px',
-                              background: '#fca5a5'
-                            }} />
-
-                            {/* Ruled Horizontal Answer Lines */}
-                            {Array.from({ length: ruledLinesCount }).map((_, lIdx) => (
-                              <div key={lIdx} style={{
-                                height: '32px',
-                                borderBottom: '1px solid #cbd5e1',
-                                display: 'flex',
-                                alignItems: 'flex-end',
-                                color: '#94a3b8',
-                                fontSize: '0.75rem',
-                                paddingLeft: '28px'
-                              }}>
-                                <span style={{ opacity: 0.4 }}>&bull;</span>
-                              </div>
-                            ))}
-
-                            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '0.5rem' }}>
-                              <div style={{ border: '1.5px solid #111827', padding: '3px 10px', fontSize: '0.78rem', fontWeight: 800, background: '#fff' }}>
-                                Marks: &nbsp;&nbsp;&nbsp;&nbsp; / {marks}
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* 1B. Official E-Marking Checking Hints / Rubric */}
-                        {rubricList.length > 0 && (
-                          <div style={{
-                            background: '#f8fafc',
-                            border: '1.5px solid #cbd5e1',
-                            borderRadius: '10px',
-                            padding: '1rem 1.25rem',
-                            marginBottom: '1rem'
-                          }}>
-                            <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.45rem' }}>
-                              📋 Official Checking Hints (Marking Scheme Rubric • {marks} Marks)
-                            </div>
-                            <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.88rem', color: '#334155', lineHeight: 1.55 }}>
-                              {rubricList.map((r, rIdx) => (
-                                <li key={rIdx}>
-                                  <MathText text={r.description} />
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-
-                        {/* 2. MODEL RESPONSE & BETTER CANDIDATE SCRIPT */}
-                        <div style={{
-                          background: '#f0fdf4',
-                          border: '1.5px solid #86efac',
-                          borderRadius: '10px',
-                          padding: '1.25rem 1.5rem',
-                          marginBottom: showCorrectAnswers ? '0.5rem' : '1rem',
-                          boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
-                        }}>
-                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                            <span style={{ background: '#16a34a', color: '#fff', padding: '3px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 800 }}>
-                              ✓ MODEL SOLUTION & BETTER RESPONSE
-                            </span>
-                            <span style={{ fontSize: '0.82rem', color: '#166534', fontWeight: 700 }}>
-                              Score: {marks}/{marks} Marks
-                            </span>
-                          </div>
-
-                          {/* Model Answer */}
-                          <div style={{
-                            background: 'repeating-linear-gradient(transparent, transparent 29px, #bbf7d0 30px)',
-                            lineHeight: '30px',
-                            fontSize: '0.96rem',
-                            color: '#14532d',
-                            fontWeight: 500,
-                            padding: '4px 6px',
-                            whiteSpace: 'pre-line'
-                          }}>
-                            <StructuredContent text={modelAnswerText || betterResponse} />
-                          </div>
-
-                          {meta.better_response && meta.better_response !== modelAnswerText && (
-                            <p style={{ margin: '0.75rem 0 0 0', fontSize: '0.86rem', color: '#166534', lineHeight: 1.5 }}>
-                              <strong>Examiner Commentary (Better Responses):</strong> {meta.better_response}
-                            </p>
-                          )}
-
-                          {meta.better_response_image && (
-                            <div style={{ marginTop: '0.85rem' }}>
-                              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#166534', marginBottom: '0.35rem' }}>
-                                Authentic E-Marking Better Candidate Script:
-                              </div>
-                              <img
-                                src={meta.better_response_image}
-                                alt={`Better candidate response for Question ${qNum}`}
-                                style={{
-                                  maxWidth: '100%',
-                                  borderRadius: '8px',
-                                  border: '1px solid #86efac',
-                                  background: '#ffffff',
-                                  padding: '4px'
-                                }}
-                              />
-                            </div>
-                          )}
-                        </div>
-
-                        {/* 3. WEAKER RESPONSE & CANDIDATE SCRIPT (Only shown when "Show Correct Answers" is OFF) */}
-                        {!showCorrectAnswers && (weakResponse || meta.weaker_response_image) && (
-                          <div style={{
-                            background: '#fffbeb',
-                            border: '1.5px solid #fde68a',
-                            borderRadius: '10px',
-                            padding: '1.25rem 1.5rem',
-                            marginBottom: '1rem',
-                            boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
-                          }}>
-                            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.75rem' }}>
-                              <span style={{ background: '#d97706', color: '#fff', padding: '3px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 800 }}>
-                                ⚠ WEAKER RESPONSE (Common Mistakes & Lost Marks)
-                              </span>
-                            </div>
-
-                            {weakResponse && (
-                              <div style={{
-                                background: 'repeating-linear-gradient(transparent, transparent 29px, #fed7aa 30px)',
-                                lineHeight: '30px',
-                                fontSize: '0.94rem',
-                                color: '#78350f',
-                                fontWeight: 500,
-                                padding: '4px 6px'
-                              }}>
-                                <MathText text={weakResponse} />
-                              </div>
-                            )}
-
-                            {meta.weaker_response_image && (
-                              <div style={{ marginTop: '0.85rem' }}>
-                                <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#92400e', marginBottom: '0.35rem' }}>
-                                  Authentic E-Marking Weaker Candidate Script:
-                                </div>
-                                <img
-                                  src={meta.weaker_response_image}
-                                  alt={`Weaker candidate response for Question ${qNum}`}
-                                  style={{
-                                    maxWidth: '100%',
-                                    borderRadius: '8px',
-                                    border: '1px solid #fcd34d',
-                                    background: '#ffffff',
-                                    padding: '4px'
-                                  }}
-                                />
-                              </div>
-                            )}
-                          </div>
-                        )}
-
-                        {/* 4. SENIOR EXAMINER SUGGESTIONS (Only shown when "Show Correct Answers" is OFF) */}
-                        {!showCorrectAnswers && examinerGuidance && (
-                          <div style={{
-                            background: '#f8fafc',
-                            border: '1px solid #e2e8f0',
-                            borderRadius: '8px',
-                            padding: '0.85rem 1.15rem',
-                            fontSize: '0.88rem',
-                            color: '#0f766e',
-                            display: 'flex',
-                            alignItems: 'flex-start',
-                            gap: '0.5rem',
-                            marginBottom: '0.5rem'
-                          }}>
-                            <Lightbulb size={17} style={{ flexShrink: 0, marginTop: '2px' }} />
-                            <div>
-                              <strong>Senior Examiner Suggestions:</strong> {examinerGuidance}
-                            </div>
-                          </div>
-                        )}
+                      <div style={{ marginLeft: '2.5rem', marginTop: '0.75rem' }}>
+                        {Array.from({ length: ruledLinesCount }).map((_, lIdx) => (
+                          <div
+                            key={lIdx}
+                            style={{
+                              height: '32px',
+                              borderBottom: '1px solid #111827',
+                              width: '100%',
+                            }}
+                          />
+                        ))}
                       </div>
                     )}
                   </div>
@@ -1158,8 +1038,8 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
               color: '#111827',
               background: '#ffffff'
             }}>
-              <span>{paper.examYear === 2024 ? (isPaper2 ? 'S2401-1711120' : 'S2401-1711110') : (isPaper2 ? 'S2501-1711120' : 'S2501-1711110')}</span>
-              <span style={{ letterSpacing: '1px' }}>END OF EXAMINATION &bull; ANSWER REVIEW</span>
+              <span>{!isGrade9 ? (isPaper2 ? 'S2502-1721120' : 'S2502-1721110') : paper.examYear === 2024 ? (isPaper2 ? 'S2401-1711120' : 'S2401-1711110') : (isPaper2 ? 'S2501-1711120' : 'S2501-1711110')}</span>
+              <span style={{ letterSpacing: '1px' }}>END OF PAPER</span>
               <span>Physics {isPaper2 ? 'Paper II' : 'Paper I'}</span>
             </div>
           </div>

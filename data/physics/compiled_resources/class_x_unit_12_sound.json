@@ -154,13 +154,13 @@
       "question_number": "8",
       "stem_text": "Four vibrating objects X1, X2, X3 and X4 are producing sounds. The object that produces the loudest sound is",
       "options": [
-        "A. X1 (Area: 5 m², Amplitude: 4 cm)",
-        "B. X2 (Area: 6 m², Amplitude: 4 cm)",
-        "C. X3 (Area: 10 m², Amplitude: 1 cm)",
-        "D. X4 (Area: 10 m², Amplitude: 5 cm)"
+        "A. X1 (Area: 5 m\u00b2, Amplitude: 4 cm)",
+        "B. X2 (Area: 6 m\u00b2, Amplitude: 4 cm)",
+        "C. X3 (Area: 10 m\u00b2, Amplitude: 1 cm)",
+        "D. X4 (Area: 10 m\u00b2, Amplitude: 5 cm)"
       ],
       "correct_option": "D",
-      "explanation": "Loudness of sound depends on both the surface area and the amplitude of vibration (specifically proportional to the square of the amplitude and the area). Object X4 has the maximum area (10 m²) combined with the largest amplitude (5 cm), making it produce the loudest sound.",
+      "explanation": "Loudness of sound depends on both the surface area and the amplitude of vibration (specifically proportional to the square of the amplitude and the area). Object X4 has the maximum area (10 m\u00b2) combined with the largest amplitude (5 cm), making it produce the loudest sound.",
       "marks": 1.0,
       "cognitive_level": "Application"
     }
@@ -185,10 +185,20 @@
   ],
   "numericals": [
     {
+      "question_number": "Num.1",
       "problem": "A ship sends an ultrasound pulse to the seabed and receives the echo after 1.6 s. If the speed of sound in seawater is 1500 m/s, calculate the depth of the sea.",
       "slo_code": "12.3.3",
-      "formula": "d = (v × t) / 2",
-      "solution": "d = (1500 m/s × 1.6 s) / 2 = 1200 m."
+      "formula": "d = (v \u00d7 t) / 2",
+      "solution": "d = (1500 m/s \u00d7 1.6 s) / 2 = 1200 m.",
+      "source": "Unit 12 Worked Numerical"
+    },
+    {
+      "question_number": "Num.2",
+      "problem": "Four vibrating objects X1, X2, X3 and X4 are producing sounds. The object that produces the loudest sound is",
+      "slo_code": "12.2.1",
+      "formula": "",
+      "solution": "Loudness of sound depends on both the surface area and the amplitude of vibration (specifically proportional to the square of the amplitude and the area). Object X4 has the maximum area (10 m\u00b2) combined with the largest amplitude (5 cm), making it produce the loudest sound.",
+      "source": "Unit 12 Worked Numerical"
     }
   ]
 }

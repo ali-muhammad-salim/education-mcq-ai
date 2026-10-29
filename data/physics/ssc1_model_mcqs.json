@@ -33,7 +33,21 @@
         "topic": "Measurement"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "36.0 cm\u00b3 drops the 0.96 cm\u00b3 fractional part before rounding to 3 significant figures."
+      },
+      {
+        "key": "B",
+        "reason": "36.9 cm\u00b3 truncates 36.96 instead of rounding up the 9 when followed by 6."
+      },
+      {
+        "key": "C",
+        "reason": "36.96 cm\u00b3 has 4 significant figures, whereas 1.76 cm\u00b3 has 3 significant figures so the product must be rounded to 3 significant figures (37.0 cm\u00b3)."
+      }
+    ]
   },
   {
     "questionNumber": 2,
@@ -69,7 +83,21 @@
         "topic": "Measurement"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "In scientific notation, the mantissa must be \u2265 1 and < 10, so 0.1234 is not in standard form."
+      },
+      {
+        "key": "B",
+        "reason": "Moving the decimal 2 places to the left from 123.4 to 1.234 requires a positive power of 10 (+2), not -2."
+      },
+      {
+        "key": "D",
+        "reason": "In standard scientific notation only one non-zero digit precedes the decimal point (1.234 \u00d7 10\u00b2, not 12.34 \u00d7 10\u00b9)."
+      }
+    ]
   },
   {
     "questionNumber": 3,
@@ -105,7 +133,21 @@
         "topic": "Measurement"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Atto (a) represents 10\u207b\u00b9\u2078, not 10\u207b\u2079."
+      },
+      {
+        "key": "B",
+        "reason": "Pico (p) represents 10\u207b\u00b9\u00b2, not 10\u207b\u2079."
+      },
+      {
+        "key": "D",
+        "reason": "Femto (f) represents 10\u207b\u00b9\u2075, not 10\u207b\u2079."
+      }
+    ]
   },
   {
     "questionNumber": 4,
@@ -141,7 +183,21 @@
         "topic": "Measurement"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A metre rule cannot fit inside a narrow pipe or measure internal diameter accurately."
+      },
+      {
+        "key": "B",
+        "reason": "A micrometer screw gauge measures external thickness/diameter of thin wires, not internal pipe diameter."
+      },
+      {
+        "key": "D",
+        "reason": "A measuring cylinder measures liquid volume, not the internal diameter of a pipe."
+      }
+    ]
   },
   {
     "questionNumber": 5,
@@ -177,7 +233,21 @@
         "topic": "Measurement"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Time has magnitude only and no direction, so it is a scalar quantity."
+      },
+      {
+        "key": "B",
+        "reason": "Mass has magnitude only and no direction, so it is a scalar quantity."
+      },
+      {
+        "key": "C",
+        "reason": "Distance is path length without a specified direction, so it is a scalar quantity."
+      }
+    ]
   },
   {
     "questionNumber": 6,
@@ -213,7 +283,21 @@
         "topic": "Kinematics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "19.8 m/s fails to take the square root properly in v = \u221a(2gh) = \u221a(2 \u00d7 9.8 \u00d7 10) = \u221a196 = 14.0 m/s."
+      },
+      {
+        "key": "C",
+        "reason": "21.8 m/s does not satisfy v\u00b2 = 2gh for h = 10 m and g = 9.8 m/s\u00b2."
+      },
+      {
+        "key": "D",
+        "reason": "98.0 m/s is g \u00d7 h (9.8 \u00d7 10) without multiplying by 2 and taking the square root."
+      }
+    ]
   },
   {
     "questionNumber": 7,
@@ -249,7 +333,21 @@
         "topic": "Kinematics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "The distance covered in each consecutive 1-second interval is increasing (2 m, 6 m, 10 m, 14 m), so speed is increasing, not decelerating."
+      },
+      {
+        "key": "C",
+        "reason": "For uniform velocity, equal distances must be covered in equal time intervals."
+      },
+      {
+        "key": "D",
+        "reason": "The car's speed is continuously increasing at a constant rate of 4 m/s\u00b2."
+      }
+    ]
   },
   {
     "questionNumber": 8,
@@ -285,7 +383,21 @@
         "topic": "Turning Effect of Forces"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A force acting purely along the x-axis makes a 90\u00b0 angle with the y-axis, and F_y = F sin 0\u00b0 = 0 N, not 5 N."
+      },
+      {
+        "key": "C",
+        "reason": "10 N is the x-component (F_x = 10 cos 0\u00b0), whereas the perpendicular y-component is 0 N."
+      },
+      {
+        "key": "D",
+        "reason": "A component of a single vector cannot exceed the magnitude of the vector itself."
+      }
+    ]
   },
   {
     "questionNumber": 9,
@@ -323,7 +435,21 @@
         "topic": "Kinematics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A horizontal line parallel to the time axis on a speed-time graph indicates constant (uniform) speed, not decreasing speed."
+      },
+      {
+        "key": "B",
+        "reason": "An increasing speed would be represented by an upward-sloping line."
+      },
+      {
+        "key": "D",
+        "reason": "The horizontal line is at a non-zero height above the time axis, so the object moves at a constant non-zero speed."
+      }
+    ]
   },
   {
     "questionNumber": 10,
@@ -361,7 +487,21 @@
         "topic": "Dynamics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.5 m/s\u00b2 inverts the formula as m/F (18 / 36) instead of a = F / m_total = 36 / (4 + 6 + 8) = 2 m/s\u00b2."
+      },
+      {
+        "key": "C",
+        "reason": "5 m/s\u00b2 does not divide the 36 N net force by the total connected mass of 18 kg."
+      },
+      {
+        "key": "D",
+        "reason": "18 is the total mass in kg (4 + 6 + 8), not the acceleration."
+      }
+    ]
   },
   {
     "questionNumber": 11,
@@ -397,7 +537,21 @@
         "topic": "Dynamics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Because the Moon's gravitational field strength (1.6 m/s\u00b2) is weaker than Earth's (9.8 m/s\u00b2), weight W = mg decreases on the Moon."
+      },
+      {
+        "key": "B",
+        "reason": "Mass is an intrinsic property of matter that remains constant everywhere, while weight decreases on the Moon."
+      },
+      {
+        "key": "D",
+        "reason": "Mass never decreases when moving from Earth to the Moon; only weight decreases."
+      }
+    ]
   },
   {
     "questionNumber": 12,
@@ -433,7 +587,21 @@
         "topic": "Dynamics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "1.5 N omits squaring the speed in F_c = mv\u00b2/r = (10 \u00d7 3\u00b2) / 20 = 90 / 20 = 4.5 N."
+      },
+      {
+        "key": "C",
+        "reason": "13 N adds quantities instead of applying the centripetal force formula F_c = mv\u00b2/r."
+      },
+      {
+        "key": "D",
+        "reason": "33 N divides 10 \u00d7 20 by 6 instead of computing mv\u00b2/r = 90 / 20 = 4.5 N."
+      }
+    ]
   },
   {
     "questionNumber": 13,
@@ -469,7 +637,21 @@
         "topic": "Dynamics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.98 N divides mass by g instead of multiplying W = mg = 10 \u00d7 9.8 = 98 N."
+      },
+      {
+        "key": "B",
+        "reason": "19.8 N adds 10 + 9.8 instead of multiplying mass by gravitational field strength (10 \u00d7 9.8 = 98 N)."
+      },
+      {
+        "key": "D",
+        "reason": "Using standard AKU-EB g = 9.8 m/s\u00b2, W = 10 \u00d7 9.8 = 98 N."
+      }
+    ]
   },
   {
     "questionNumber": 14,
@@ -505,7 +687,21 @@
         "topic": "Dynamics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Oil acts as a lubricant that fills microscopic surface irregularities, reducing rather than increasing friction."
+      },
+      {
+        "key": "C",
+        "reason": "Lubrication significantly reduces friction between tyres and the road, though friction never becomes strictly zero."
+      },
+      {
+        "key": "D",
+        "reason": "A layer of oil reduces the interlocking of cold welds between the tyre and road surface."
+      }
+    ]
   },
   {
     "questionNumber": 15,
@@ -543,7 +739,21 @@
         "topic": "Measurement"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "By the head-to-tail / parallelogram rule, the resultant of 9 N along OP and 12 N along OR acts along the diagonal OQ, not PR."
+      },
+      {
+        "key": "C",
+        "reason": "21 N is the algebraic sum (9 + 12), whereas perpendicular forces combine by Pythagoras: \u221a(9\u00b2 + 12\u00b2) = \u221a225 = 15 N."
+      },
+      {
+        "key": "D",
+        "reason": "Both the magnitude (21 N instead of 15 N) and direction (PR instead of OQ) are incorrect."
+      }
+    ]
   },
   {
     "questionNumber": 16,
@@ -579,7 +789,21 @@
         "topic": "Turning Effect of Forces"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Raising the height raises the centre of gravity, making the vehicle more likely to topple during sharp turns."
+      },
+      {
+        "key": "B",
+        "reason": "Increasing speed increases the overturning centripetal moment rather than improving static stability."
+      },
+      {
+        "key": "C",
+        "reason": "Decreasing base width narrows the support polygon and reduces stability."
+      }
+    ]
   },
   {
     "questionNumber": 17,
@@ -615,7 +839,21 @@
         "topic": "Turning Effect of Forces"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Momentum (p = mv) is the product of mass and velocity, not a perpendicular distance."
+      },
+      {
+        "key": "B",
+        "reason": "Acceleration is the rate of change of velocity."
+      },
+      {
+        "key": "D",
+        "reason": "Displacement is the shortest directed distance between initial and final positions, whereas the perpendicular distance from the pivot to the line of action of force is the moment arm."
+      }
+    ]
   },
   {
     "questionNumber": 18,
@@ -651,7 +889,21 @@
         "topic": "Turning Effect of Forces"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "In stable equilibrium (I), the centre of gravity rises when displaced and returns to its original position."
+      },
+      {
+        "key": "C",
+        "reason": "Only neutral equilibrium (III) keeps the height of the centre of gravity unchanged in its new resting position."
+      },
+      {
+        "key": "D",
+        "reason": "In unstable equilibrium (II), the centre of gravity lowers when displaced."
+      }
+    ]
   },
   {
     "questionNumber": 19,
@@ -682,7 +934,21 @@
       "grade": 9,
       "subject": "Physics"
     },
-    "current_mapping": []
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "At the centre of the Earth, gravitational pull from all sides cancels out (g = 0), so weight W = mg becomes zero."
+      },
+      {
+        "key": "C",
+        "reason": "only mass (quantity of matter) remains constant at every point including the Earth's centre."
+      },
+      {
+        "key": "D",
+        "reason": "At the exact centre of the Earth, net gravitational force and acceleration g are zero."
+      }
+    ]
   },
   {
     "questionNumber": 20,
@@ -713,7 +979,21 @@
       "grade": 9,
       "subject": "Physics"
     },
-    "current_mapping": []
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "If gravity suddenly vanishes, the satellite no longer experiences centripetal force and flies off tangentially at its existing speed v, not 0."
+      },
+      {
+        "key": "B",
+        "reason": "By Newton's first law (inertia), with no net force acting, the speed remains unchanged at v."
+      },
+      {
+        "key": "D",
+        "reason": "Without an external tangential force, the speed cannot double to 2v."
+      }
+    ]
   },
   {
     "questionNumber": 21,
@@ -744,7 +1024,21 @@
       "grade": 9,
       "subject": "Physics"
     },
-    "current_mapping": []
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Closer to the Sun, the stronger gravitational pull requires a higher orbital speed (v = \u221a(GM/r)), so it orbits faster, not slower."
+      },
+      {
+        "key": "C",
+        "reason": "Higher tangential orbital speed balances the stronger gravitational pull in a closer orbit."
+      },
+      {
+        "key": "D",
+        "reason": "Orbital speed increases as orbital radius r decreases (v \u221d 1/\u221ar)."
+      }
+    ]
   },
   {
     "questionNumber": 22,
@@ -780,7 +1074,21 @@
         "topic": "Dynamics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Newton's law of gravitation states F = G(m\u2081m\u2082)/r\u00b2, which is proportional to the product (m\u2081 \u00d7 m\u2082), not the sum."
+      },
+      {
+        "key": "C",
+        "reason": "Gravitational force depends on the product of the two masses, not their difference."
+      },
+      {
+        "key": "D",
+        "reason": "Gravitational force is inversely proportional (not directly proportional) to the square of the distance between them."
+      }
+    ]
   },
   {
     "questionNumber": 23,
@@ -816,7 +1124,21 @@
         "topic": "Work, Energy and Power"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "3 J divides 150 by 50 instead of multiplying Work W = F \u00d7 d = 50 N \u00d7 150 m = 7500 J."
+      },
+      {
+        "key": "B",
+        "reason": "100 J subtracts 150 - 50 instead of multiplying force by displacement."
+      },
+      {
+        "key": "C",
+        "reason": "200 J adds 150 + 50 instead of multiplying force by displacement."
+      }
+    ]
   },
   {
     "questionNumber": 24,
@@ -852,7 +1174,21 @@
         "topic": "Work, Energy and Power"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Friction between the screeching tyres/brakes and the road converts kinetic energy primarily into both thermal (heat) energy and sound energy."
+      },
+      {
+        "key": "C",
+        "reason": "On a level road, gravitational potential energy does not increase when braking to a stop."
+      },
+      {
+        "key": "D",
+        "reason": "The kinetic energy is dissipated mainly as heat in the brakes/tyres along with the screeching sound."
+      }
+    ]
   },
   {
     "questionNumber": 25,
@@ -888,7 +1224,21 @@
         "topic": "Work, Energy and Power"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "18 J divides 3600 by 200 instead of using Efficiency = (Output / Input) \u00d7 100% => Input = 3600 / 0.50 = 7200 J."
+      },
+      {
+        "key": "B",
+        "reason": "72 J divides 3600 by 50 without multiplying by 100%."
+      },
+      {
+        "key": "D",
+        "reason": "10800 J adds 3600 + 7200, whereas 50% efficiency means Input is twice the useful output (2 \u00d7 3600 = 7200 J)."
+      }
+    ]
   },
   {
     "questionNumber": 26,
@@ -924,7 +1274,21 @@
         "topic": "Work, Energy and Power"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "125 J is \u00bd \u00d7 0.5 \u00d7 500 without squaring the velocity v = 500 m/s in K.E = \u00bdmv\u00b2."
+      },
+      {
+        "key": "B",
+        "reason": "250 J is 0.5 \u00d7 500 (momentum), forgetting both the \u00bd factor and squaring v (\u00bd \u00d7 0.5 \u00d7 500\u00b2 = 62,500 J)."
+      },
+      {
+        "key": "D",
+        "reason": "125,000 J is mv\u00b2 (0.5 \u00d7 250,000) without multiplying by \u00bd."
+      }
+    ]
   },
   {
     "questionNumber": 27,
@@ -960,7 +1324,21 @@
         "topic": "Work, Energy and Power"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.25 W inverts the formula as t / W (125 / 500) instead of Power P = W / t = 500 J / 125 s = 4.0 W."
+      },
+      {
+        "key": "C",
+        "reason": "375 W subtracts 500 - 125 instead of dividing work by time."
+      },
+      {
+        "key": "D",
+        "reason": "625 W adds 500 + 125 instead of dividing work by time."
+      }
+    ]
   },
   {
     "questionNumber": 28,
@@ -996,7 +1374,21 @@
         "topic": "Pressure"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Air is still present on mountains (unlike outer space), so atmospheric pressure is lower than at sea level but not zero."
+      },
+      {
+        "key": "B",
+        "reason": "Because the column of air above a mountain is shorter and less dense, atmospheric pressure is lower than at sea level."
+      },
+      {
+        "key": "D",
+        "reason": "Atmospheric pressure decreases with altitude, so it is lower (not higher) on mountains."
+      }
+    ]
   },
   {
     "questionNumber": 29,
@@ -1032,7 +1424,21 @@
         "topic": "Pressure"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Sucking on a straw expands the lungs and reduces air pressure inside the straw below outside atmospheric pressure."
+      },
+      {
+        "key": "C",
+        "reason": "A partial vacuum (reduced pressure) is created inside the straw, not a complete zero-pressure vacuum."
+      },
+      {
+        "key": "D",
+        "reason": "If pressure inside the straw remained constant and equal to atmospheric pressure, no net upward force would push the liquid up."
+      }
+    ]
   },
   {
     "questionNumber": 30,
@@ -1068,7 +1474,21 @@
         "topic": "Thermal Physics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "According to the kinetic molecular model, particles of all matter are in continuous random motion."
+      },
+      {
+        "key": "C",
+        "reason": "Molecules continuously collide and change both speed and direction, so individual molecular momentum varies."
+      },
+      {
+        "key": "D",
+        "reason": "Molecules in a substance have a wide distribution of speeds and change velocity during elastic collisions."
+      }
+    ]
   },
   {
     "questionNumber": 31,
@@ -1104,7 +1524,21 @@
         "topic": "Pressure"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "250 Pa multiplies 500 \u00d7 0.5 instead of dividing Pressure P = F / A = 500 N / 0.5 m\u00b2 = 1000 Pa."
+      },
+      {
+        "key": "B",
+        "reason": "499.5 Pa subtracts 500 - 0.5 instead of dividing force by area."
+      },
+      {
+        "key": "C",
+        "reason": "500.5 Pa adds 500 + 0.5 instead of dividing force by area."
+      }
+    ]
   },
   {
     "questionNumber": 32,
@@ -1140,7 +1574,21 @@
         "topic": "Pressure"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Hundreds of nails have a much larger total contact area than a single nail, while the performer's weight (total downward force) is the same."
+      },
+      {
+        "key": "B",
+        "reason": "Because total area is larger on a bed of nails, the pressure P = F/A is much smaller on the bed of nails than on a single nail."
+      },
+      {
+        "key": "D",
+        "reason": "Per the official key, the full downward force is concentrated onto the single nail rather than distributed across hundreds of nails."
+      }
+    ]
   },
   {
     "questionNumber": 33,
@@ -1176,7 +1624,21 @@
         "topic": "Thermal Physics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The quantity of mercury does not prevent thermal contraction back into the bulb."
+      },
+      {
+        "key": "B",
+        "reason": "Ordinary laboratory thermometers also have a capillary tube, yet mercury falls back immediately."
+      },
+      {
+        "key": "C",
+        "reason": "The cylindrical bulb shape helps heat conduction, while the narrow kink (constriction) breaks the mercury thread so it stays at the maximum reading."
+      }
+    ]
   },
   {
     "questionNumber": 34,
@@ -1212,7 +1674,21 @@
         "topic": "Thermal Physics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Fusion (melting) is the change of state from solid to liquid at the melting point."
+      },
+      {
+        "key": "B",
+        "reason": "Boiling occurs throughout the liquid at a fixed boiling point with bubble formation, whereas surface escape at any temperature is evaporation."
+      },
+      {
+        "key": "D",
+        "reason": "Condensation is the conversion of vapour back into liquid."
+      }
+    ]
   },
   {
     "questionNumber": 35,
@@ -1248,7 +1724,21 @@
         "topic": "Thermal Physics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "When compressed air rushes out of a bursting tyre, it does work against atmospheric pressure at the expense of its internal kinetic energy, so its temperature decreases."
+      },
+      {
+        "key": "C",
+        "reason": "Adiabatic expansion cools the escaping air rather than heating it to 100\u00b0C."
+      },
+      {
+        "key": "D",
+        "reason": "Rapid adiabatic expansion reduces the average kinetic energy of the air molecules, causing a drop in temperature."
+      }
+    ]
   },
   {
     "questionNumber": 36,
@@ -1284,7 +1774,21 @@
         "topic": "Thermal Physics"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "To convert Celsius to Kelvin, add 273 (T_K = 20 + 273 = 293 K) rather than subtracting 273."
+      },
+      {
+        "key": "B",
+        "reason": "Kelvin temperature is obtained by adding 273 to the Celsius reading."
+      },
+      {
+        "key": "C",
+        "reason": "68 is the Fahrenheit equivalent (9/5 \u00d7 20 + 32 = 68\u00b0F), not Kelvin (293 K)."
+      }
+    ]
   },
   {
     "questionNumber": 37,
@@ -1320,7 +1824,21 @@
         "topic": "Transfer of Thermal Energy"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Glass has no free electrons and is a poor conductor (insulator) of heat."
+      },
+      {
+        "key": "C",
+        "reason": "Wood is a thermal insulator with trapped air pockets."
+      },
+      {
+        "key": "D",
+        "reason": "Leather is a thermal insulator used to trap body heat."
+      }
+    ]
   },
   {
     "questionNumber": 38,
@@ -1356,7 +1874,21 @@
         "topic": "Transfer of Thermal Energy"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A good emitter would rapidly radiate heat energy; a shiny silvered reflector is both a poor absorber and a poor emitter of radiation."
+      },
+      {
+        "key": "C",
+        "reason": "A good absorber would absorb incident radiation and heat up rapidly."
+      },
+      {
+        "key": "D",
+        "reason": "Dull black surfaces are good absorbers and good emitters, whereas reflective protective surfaces are poor absorbers and poor emitters."
+      }
+    ]
   },
   {
     "questionNumber": 39,
@@ -1392,7 +1924,21 @@
         "topic": "Transfer of Thermal Energy"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Conduction (I) is the dominant heat transfer mechanism in solids via lattice vibrations and free electrons."
+      },
+      {
+        "key": "C",
+        "reason": "Conduction (I) is minor in fluids, and radiation (III) requires no medium; bulk fluid movement in liquids and gases is convection (II)."
+      },
+      {
+        "key": "D",
+        "reason": "Radiation (III) transfers heat via electromagnetic waves even through a vacuum, whereas fluid circulation in liquids and gases is convection (II)."
+      }
+    ]
   },
   {
     "questionNumber": 40,
@@ -1428,6 +1974,20 @@
         "topic": "Transfer of Thermal Energy"
       }
     ],
-    "syllabus_reviewed": true
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Wood does not conduct electricity and the scenario tests thermal (heat) transfer, not electrical conduction."
+      },
+      {
+        "key": "B",
+        "reason": "While wood is also an electrical insulator, its failure to become hot in hot soup specifically demonstrates that it is a heat (thermal) insulator."
+      },
+      {
+        "key": "C",
+        "reason": "A heat conductor (like a metal spoon) would rapidly conduct heat from the soup and become hot."
+      }
+    ]
   }
 ]

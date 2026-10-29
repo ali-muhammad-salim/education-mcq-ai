@@ -36,7 +36,7 @@
     },
     {
       "term": "Learning Outcome 6.3.2",
-      "definition": "derive the formulae of kinetic energy K.E = ½ mv2 and potential energy P.E = mgΔh;",
+      "definition": "derive the formulae of kinetic energy K.E = \u00bd mv2 and potential energy P.E = mg\u0394h;",
       "slo_code": "6.3.2",
       "cognitive_level": "A"
     },
@@ -175,6 +175,96 @@
       "explanation": "When a car screeches to a stop, friction between the tires and the road generates thermal energy (heat) and the screeching noise produces sound energy.",
       "marks": 1.0,
       "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "2024-Q23",
+      "stem_text": "If the kinetic energy of a $200\\text{ kg}$ object is $10,000\\text{ J}$, then the velocity of the object will be",
+      "options": [
+        "A. 5.0 m/s.",
+        "B. 7.07 m/s.",
+        "C. 10.0 m/s.",
+        "D. 100.0 m/s."
+      ],
+      "correct_option": "C",
+      "explanation": "From $K.E. = \\frac{1}{2}mv^2$, we have $v = \\sqrt{\\frac{2 \\times K.E.}{m}} = \\sqrt{\\frac{2 \\times 10000}{200}} = \\sqrt{100} = 10.0\\text{ m/s}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "6.3.3",
+      "original_slo": "6.2.3",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q24",
+      "stem_text": "A tugboat applies a force of $100\\text{ N}$ to tow a container ship from the shore to the deep sea. The rope that connects the tugboat to the ship is parallel to the surface of the water.\nIf the tugboat displaces the container ship by $500\\text{ m}$, then the amount of work done by the tugboat will be\n(Note: Suppose that the seawater current is negligible.)",
+      "options": [
+        "A. 5 J.",
+        "B. 400 J.",
+        "C. 600 J.",
+        "D. 50000 J."
+      ],
+      "correct_option": "D",
+      "explanation": "Since the towing force acts parallel to the displacement, $W = F \\times d = 100\\text{ N} \\times 500\\text{ m} = 50,000\\text{ J}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "6.1.2",
+      "original_slo": "6.1.2",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q25",
+      "stem_text": "Consider the given image.\n\nAll of the following types of renewable energy sources are shown in the given picture EXCEPT",
+      "options": [
+        "A. solar.",
+        "B. wind.",
+        "C. hydel.",
+        "D. biomass."
+      ],
+      "correct_option": "C",
+      "explanation": "The illustration shows a solar panel and sun (solar energy), wind turbines (wind energy), and green trees/plants held in a hand (biomass), whereas no dam, river, or hydroelectric turbine (hydel energy) is depicted.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "6.4.5",
+      "original_slo": "6.4.6",
+      "exam_year": 2024,
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P1_Q25.png"
+    },
+    {
+      "question_number": "2024-Q26",
+      "stem_text": "An electric heater of $500\\text{ W}$ consumes $50\\text{ J}$ of energy to warm a room. The time required by the heater to warm the room will be",
+      "options": [
+        "A. 0.1 s.",
+        "B. 10 s.",
+        "C. 550 s.",
+        "D. 25000 s."
+      ],
+      "correct_option": "A",
+      "explanation": "From $P = \\frac{E}{t}$, the time required is $t = \\frac{E}{P} = \\frac{50\\text{ J}}{500\\text{ W}} = 0.1\\text{ s}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "6.6.2",
+      "original_slo": "6.6.2",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q27",
+      "stem_text": "If a person exerts a force that causes a car to move forward, then this is an example of",
+      "options": [
+        "A. power.",
+        "B. efficiency.",
+        "C. work done.",
+        "D. rotatory motion."
+      ],
+      "correct_option": "C",
+      "explanation": "In physics, work is done whenever a force acting on a body displaces it in the direction of the force ($W = Fd$).",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "6.1.1",
+      "original_slo": "6.1.1",
+      "exam_year": 2024,
+      "diagram_url": null
     }
   ],
   "crqs": [
@@ -191,16 +281,129 @@
       "question": "Sara has a mass of 30 kg. While running in the playground, she accelerates from 2 m/s to 4 m/s in 5 s. Calculate the power consumed in the given situation.",
       "marks": 6,
       "slo_code": "6.6.3",
-      "answer": "a = (4 - 2)/5 = 0.4 m/s²; F = ma = 30 × 0.4 = 12 N; S = v_i t + ½at² = 2(5) + 0.5(0.4)(25) = 15 m; W = F × S = 12 × 15 = 180 J; P = W/t = 180 / 5 = 36 W.",
+      "answer": "a = (4 - 2)/5 = 0.4 m/s\u00b2; F = ma = 30 \u00d7 0.4 = 12 N; S = v_i t + \u00bdat\u00b2 = 2(5) + 0.5(0.4)(25) = 15 m; W = F \u00d7 S = 12 \u00d7 15 = 180 J; P = W/t = 180 / 5 = 36 W.",
       "source": "AKU-EB SSC-I 2025 Annual Paper II Q.7(a)"
+    },
+    {
+      "question_number": "2024-Q.7.a",
+      "question": "The diagram shows a block is dropped from a point A and moves to a point B.\n\ni. Calculate the change in potential energy (P.E.) of the block at point B with respect to ground. (3 Marks)\nii. Calculate the velocity of the block when it reaches to the point B. (3 Marks)\n\n(Note: Take the value of acceleration due to gravity '$g$' as $10\\text{ m/s}^2$.)",
+      "question_text": "The diagram shows a block is dropped from a point A and moves to a point B.\n\ni. Calculate the change in potential energy (P.E.) of the block at point B with respect to ground. (3 Marks)\nii. Calculate the velocity of the block when it reaches to the point B. (3 Marks)\n\n(Note: Take the value of acceleration due to gravity '$g$' as $10\\text{ m/s}^2$.)",
+      "marks": 6.0,
+      "slo_code": "6.3.3",
+      "original_slo": "6.2.3",
+      "cognitive_level": "Application",
+      "rubric": [
+        {
+          "marks": 1,
+          "description": "1 mark for extracting the correct data: m = 10 kg, g = 10 m/s\u00b2, vertical drop h = 30 m - 10 m = 20 m."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for the correct potential energy formula: P.E. = mgh."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for the correct change in potential energy from A to B: \u0394P.E. = 10 \u00d7 10 \u00d7 20 = 2000 J."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for equating loss in P.E. to gain in K.E. (K.E. = P.E.) or using 2gh = v_f\u00b2 - v_i\u00b2."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for writing K.E. = \u00bdmv\u00b2 (or substituting into 2gh = v_f\u00b2)."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for the correct velocity at point B: v = \u221a(2 \u00d7 10 \u00d7 20) = \u221a400 = 20 m/s."
+        }
+      ],
+      "answer": "**Given Data:**\nMass of block ($m$) = $10\\text{ kg}$\nHeight at point A ($h_A$) = $30\\text{ m}$\nHeight at point B ($h_B$) = $10\\text{ m}$\nVertical distance fallen from A to B ($h = h_A - h_B$) = $30\\text{ m} - 10\\text{ m} = 20\\text{ m}$\nAcceleration due to gravity ($g$) = $10\\text{ m/s}^2$\n\n**(i) Change in Potential Energy ($\\Delta P.E.$) of the block from A to B:**\n$\\Delta P.E. = mgh = 10\\text{ kg} \\times 10\\text{ m/s}^2 \\times (30 - 10)\\text{ m} = 10 \\times 10 \\times 20 = 2000\\text{ J}$\n*(Note: The potential energy remaining at point B with respect to the ground is $P.E._B = mgh_B = 10 \\times 10 \\times 10 = 1000\\text{ J}$, and the loss/change in P.E. from A to B is $3000\\text{ J} - 1000\\text{ J} = 2000\\text{ J}$.)*\n\n**(ii) Velocity of the block at point B ($v_f$):**\nBy conservation of energy ($\\text{Gain in } K.E. = \\text{Loss in } P.E.$) or the third equation of motion ($2gh = v_f^2 - v_i^2$ with $v_i = 0$):\n$\\frac{1}{2}mv_f^2 = 2000\\text{ J} \\implies v_f^2 = \\frac{2 \\times 2000}{10} = 400$\n$v_f = \\sqrt{400} = 20\\text{ m/s}$.",
+      "model_answer": "**Given Data:**\nMass of block ($m$) = $10\\text{ kg}$\nHeight at point A ($h_A$) = $30\\text{ m}$\nHeight at point B ($h_B$) = $10\\text{ m}$\nVertical distance fallen from A to B ($h = h_A - h_B$) = $30\\text{ m} - 10\\text{ m} = 20\\text{ m}$\nAcceleration due to gravity ($g$) = $10\\text{ m/s}^2$\n\n**(i) Change in Potential Energy ($\\Delta P.E.$) of the block from A to B:**\n$\\Delta P.E. = mgh = 10\\text{ kg} \\times 10\\text{ m/s}^2 \\times (30 - 10)\\text{ m} = 10 \\times 10 \\times 20 = 2000\\text{ J}$\n*(Note: The potential energy remaining at point B with respect to the ground is $P.E._B = mgh_B = 10 \\times 10 \\times 10 = 1000\\text{ J}$, and the loss/change in P.E. from A to B is $3000\\text{ J} - 1000\\text{ J} = 2000\\text{ J}$.)*\n\n**(ii) Velocity of the block at point B ($v_f$):**\nBy conservation of energy ($\\text{Gain in } K.E. = \\text{Loss in } P.E.$) or the third equation of motion ($2gh = v_f^2 - v_i^2$ with $v_i = 0$):\n$\\frac{1}{2}mv_f^2 = 2000\\text{ J} \\implies v_f^2 = \\frac{2 \\times 2000}{10} = 400$\n$v_f = \\sqrt{400} = 20\\text{ m/s}$.",
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P2_Q7a.png",
+      "source": "AKU-EB SSC-I 2024 Annual Paper II Q.7.a"
     }
   ],
   "numericals": [
     {
+      "question_number": "Q.7.a",
+      "problem": "The diagram shows a block is dropped from a point A and moves to a point B.\n\ni. Calculate the change in potential energy (P.E.) of the block at point B with respect to ground. (3 Marks)\nii. Calculate the velocity of the block when it reaches to the point B. (3 Marks)\n\n(Note: Take the value of acceleration due to gravity '$g$' as $10\\text{ m/s}^2$.)",
+      "slo_code": "6.3.3",
+      "formula": "",
+      "solution": "**Given Data:**\nMass of block ($m$) = $10\\text{ kg}$\nHeight at point A ($h_A$) = $30\\text{ m}$\nHeight at point B ($h_B$) = $10\\text{ m}$\nVertical distance fallen from A to B ($h = h_A - h_B$) = $30\\text{ m} - 10\\text{ m} = 20\\text{ m}$\nAcceleration due to gravity ($g$) = $10\\text{ m/s}^2$\n\n**(i) Change in Potential Energy ($\\Delta P.E.$) of the block from A to B:**\n$\\Delta P.E. = mgh = 10\\text{ kg} \\times 10\\text{ m/s}^2 \\times (30 - 10)\\text{ m} = 10 \\times 10 \\times 20 = 2000\\text{ J}$\n*(Note: The potential energy remaining at point B with respect to the ground is $P.E._B = mgh_B = 10 \\times 10 \\times 10 = 1000\\text{ J}$, and the loss/change in P.E. from A to B is $3000\\text{ J} - 1000\\text{ J} = 2000\\text{ J}$.)*\n\n**(ii) Velocity of the block at point B ($v_f$):**\nBy conservation of energy ($\\text{Gain in } K.E. = \\text{Loss in } P.E.$) or the third equation of motion ($2gh = v_f^2 - v_i^2$ with $v_i = 0$):\n$\\frac{1}{2}mv_f^2 = 2000\\text{ J} \\implies v_f^2 = \\frac{2 \\times 2000}{10} = 400$\n$v_f = \\sqrt{400} = 20\\text{ m/s}$.",
+      "source": "2024 Annual Paper II (ERQ \u2022 6 Marks)"
+    },
+    {
+      "question_number": "Q.7.a",
+      "problem": "Sara has mass of 30 kg. While running in the playground, she accelerates from 2 m/s to 4 m/s in 5 s. Calculate the power consumed in the given situation.",
+      "slo_code": "6.6.2",
+      "formula": "",
+      "solution": "Given data:\nMass ($m$) = 30 kg\nInitial velocity ($v_i$) = 2 m/s\nFinal velocity ($v_f$) = 4 m/s\nTime ($t$) = 5 s\n\nWork done ($W$) = Change in kinetic energy ($\\Delta KE$)\n$W = \\frac{1}{2} m v_f^2 - \\frac{1}{2} m v_i^2$\n$W = \\frac{1}{2} (30) (4)^2 - \\frac{1}{2} (30) (2)^2$\n$W = 15(16) - 15(4)$\n$W = 240 - 60 = 180$ J\n\nPower ($P$) = $\\frac{W}{t}$\n$P = \\frac{180 \\text{ J}}{5 \\text{ s}} = 36$ W",
+      "source": "2025 Annual Paper II (ERQ \u2022 6 Marks)"
+    },
+    {
+      "question_number": "Num.3",
       "problem": "Calculate the kinetic energy of a 0.5 kg bullet moving with a velocity of 500 m/s.",
       "slo_code": "6.3.3",
-      "formula": "E_k = ½mv²",
-      "solution": "E_k = 0.5 × 0.5 kg × (500 m/s)² = 0.25 × 250,000 = 62,500 J = 62.5 kJ."
+      "formula": "E_k = \u00bdmv\u00b2",
+      "solution": "E_k = 0.5 \u00d7 0.5 kg \u00d7 (500 m/s)\u00b2 = 0.25 \u00d7 250,000 = 62,500 J = 62.5 kJ.",
+      "source": "Unit 6 Worked Numerical"
+    },
+    {
+      "question_number": "Num.4",
+      "problem": "If the kinetic energy of a $200\\text{ kg}$ object is $10,000\\text{ J}$, then the velocity of the object will be",
+      "slo_code": "6.3.3",
+      "formula": "",
+      "solution": "From $K.E. = \\frac{1}{2}mv^2$, we have $v = \\sqrt{\\frac{2 \\times K.E.}{m}} = \\sqrt{\\frac{2 \\times 10000}{200}} = \\sqrt{100} = 10.0\\text{ m/s}$.",
+      "source": "Unit 6 Worked Numerical"
+    },
+    {
+      "question_number": "Num.5",
+      "problem": "A tugboat applies a force of $100\\text{ N}$ to tow a container ship from the shore to the deep sea. The rope that connects the tugboat to the ship is parallel to the surface of the water.\nIf the tugboat displaces the container ship by $500\\text{ m}$, then the amount of work done by the tugboat will be\n(Note: Suppose that the seawater current is negligible.)",
+      "slo_code": "6.1.2",
+      "formula": "",
+      "solution": "Since the towing force acts parallel to the displacement, $W = F \\times d = 100\\text{ N} \\times 500\\text{ m} = 50,000\\text{ J}$.",
+      "source": "Unit 6 Worked Numerical"
+    },
+    {
+      "question_number": "Num.6",
+      "problem": "An electric heater of $500\\text{ W}$ consumes $50\\text{ J}$ of energy to warm a room. The time required by the heater to warm the room will be",
+      "slo_code": "6.6.2",
+      "formula": "",
+      "solution": "From $P = \\frac{E}{t}$, the time required is $t = \\frac{E}{P} = \\frac{50\\text{ J}}{500\\text{ W}} = 0.1\\text{ s}$.",
+      "source": "Unit 6 Worked Numerical"
+    },
+    {
+      "question_number": "Num.7",
+      "problem": "A car travels a distance of 150 m in the direction of a constant force of 50 N. The work done on the car is",
+      "slo_code": "6.1.2",
+      "formula": "",
+      "solution": "Work done ($W$) is given by the formula $W = F \\times d$. Here, Force $F = 50\\text{ N}$ and distance $d = 150\\text{ m}$. $W = 50\\text{ N} \\times 150\\text{ m} = 7500\\text{ J}$.",
+      "source": "Unit 6 Worked Numerical"
+    },
+    {
+      "question_number": "Num.8",
+      "problem": "If a loading truck has an output of 3600 J and its efficiency is 50%, then the input provided to the truck will be",
+      "slo_code": "6.5.3",
+      "formula": "",
+      "solution": "Efficiency = $(\\text{Output Energy} / \\text{Input Energy}) \\times 100$. Rearranging for Input Energy: $\\text{Input} = (\\text{Output} / \\text{Efficiency}) \\times 100 = (3600 / 50) \\times 100 = 7200\\text{ J}$.",
+      "source": "Unit 6 Worked Numerical"
+    },
+    {
+      "question_number": "Num.9",
+      "problem": "The kinetic energy of a 0.5 kg bullet moving with velocity of 500 m/s is",
+      "slo_code": "6.3.3",
+      "formula": "",
+      "solution": "Kinetic Energy ($KE$) = $\\frac{1}{2} m v^2 = \\frac{1}{2} \\times 0.5\\text{ kg} \\times (500\\text{ m/s})^2 = 0.25 \\times 250000 = 62500\\text{ J}$.",
+      "source": "Unit 6 Worked Numerical"
+    },
+    {
+      "question_number": "Num.10",
+      "problem": "If a person releases 500 J of energy by walking along a track in 125 seconds, then the required average muscular power is",
+      "slo_code": "6.6.3",
+      "formula": "",
+      "solution": "Power ($P$) = $\\text{Energy / Time} = 500\\text{ J} / 125\\text{ s} = 4.0\\text{ W}$.",
+      "source": "Unit 6 Worked Numerical"
     }
   ]
 }

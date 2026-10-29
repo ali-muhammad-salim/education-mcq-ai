@@ -1,3 +1,4 @@
+import { encryptQuestionReveal } from '@/lib/quiz-crypto.server';
 import { z } from 'zod';
 import { questionSchema, answerPayloadSchema, QuestionContent } from '@/lib/validations/assessment';
 export const snapshotSchema = z.array(z.object({ id: z.string(), orderIndex: z.number(), marks: z.number().positive(), content: questionSchema }));
@@ -7,10 +8,27 @@ export function normalizeQuestion(value: unknown): QuestionContent {
   return { ...q, options: q.options.map((o, i) => ({ ...o, id: o.id || String.fromCharCode(65 + i) })) };
 }
 export function studentQuestion(q: FrozenQuestion) {
+  const correctIdx = q.content.options.findIndex(o => o.isCorrect);
+  const correctOpt = correctIdx >= 0 ? q.content.options[correctIdx] : undefined;
+  const correctLetter = correctIdx >= 0 ? String.fromCharCode(65 + correctIdx) : '';
+  const optionFeedback: Record<string, string> = {};
+  q.content.options.forEach((o, idx) => {
+    if (o.feedback) {
+      optionFeedback[String.fromCharCode(65 + idx)] = o.feedback;
+    }
+  });
+  const encryptedReveal = encryptQuestionReveal(q.id, {
+    correctOptionId: correctOpt?.id || '',
+    correctLetter,
+    explanation: q.content.explanation || (correctOpt ? `The correct answer is (${correctLetter}) ${correctOpt.text}.` : ''),
+    optionFeedback: Object.keys(optionFeedback).length > 0 ? optionFeedback : undefined,
+    unit: q.content.unit,
+  });
   return { id: q.id, orderIndex: q.orderIndex, marks: q.marks, questionType: q.content.questionType, stemText: q.content.stemText,
     difficulty: q.content.difficulty, cognitiveLevel: q.content.cognitiveLevel, unit: q.content.unit, isRequired: q.content.isRequired,
     options: q.content.options.map(o => ({ id: o.id, text: o.text })), diagramUrl: q.content.diagramUrl || (q.content.drawingSvg ? 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(q.content.drawingSvg) : undefined),
-    matchingLeft: q.content.matchingPairs.map(p => p.left), matchingRight: [...q.content.matchingPairs.map(p => p.right)].sort() };
+    matchingLeft: q.content.matchingPairs.map(p => p.left), matchingRight: [...q.content.matchingPairs.map(p => p.right)].sort(),
+    encryptedReveal };
 }
 export function hasAnswer(q: FrozenQuestion, input: unknown): boolean {
   const parsed = answerPayloadSchema.safeParse(input);

@@ -16,9 +16,6 @@ import {
   annual2024CurrentMapping,
   physics2025Resources,
   physics2024Resources,
-  physicsX2025Resources,
-  annualX2025OriginalReference,
-  annualX2025CurrentMapping,
 } from '@/lib/legacyPaperEvidence';
 import { publishedCurriculum } from '@/services/materials/curriculum';
 import { paperResources } from '@/services/materials/references';
@@ -58,11 +55,6 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
   }
 
   const fallback = getFallbackPaper(cleanId);
-  // The bundled 2025 SSC-II transcription has been checked against the original
-  // PDFs. Prefer it over any older, unlinked legacy database transcription.
-  if (fallback && /^PHY-X-2025-P[12]$/.test(fallback.paperCode) && paper && !paper.sourceDocumentId) {
-    paper = fallback;
-  }
   if (!paper) {
     if (fallback) {
       paper = fallback;
@@ -122,9 +114,7 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
 
   const legacyAnnual2025 = !paper.sourceDocumentId && paper.paperCode === 'PHY-IX-2025-P1';
   const legacyAnnual2024 = !paper.sourceDocumentId && paper.paperCode === 'PHY-IX-2024-P1';
-  const legacyX2025 = !paper.sourceDocumentId && paper.paperCode === 'PHY-X-2025-P1';
   const useReviewedLegacy = (legacyAnnual2025 || legacyAnnual2024) && !await publishedCurriculum('AKU-EB',9,'Physics');
-  const useReviewedX = legacyX2025 && !await publishedCurriculum('AKU-EB',10,'Physics');
   const resources = await paperResources(paper.sourceDocumentId);
   const answerDecisions = legacyAnnual2025 ? await publishedAnswerDecisions() : [];
   const displayQuestions = sortedQuestions.map(q => {
@@ -151,16 +141,6 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
           ...q.sourceRegion,
           ...annual2024OriginalReference(q.questionNumber),
           ...(useReviewedLegacy ? annual2024CurrentMapping(q.questionNumber, q.questionText) : {}),
-        },
-      });
-    }
-    if (legacyX2025) {
-      return presentPaperQuestion({
-        ...q,
-        sourceRegion: {
-          ...q.sourceRegion,
-          ...annualX2025OriginalReference(q.questionNumber),
-          ...(useReviewedX ? annualX2025CurrentMapping(q.questionNumber, q.questionText) : {}),
         },
       });
     }
@@ -205,7 +185,6 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
       {resources.length>0 && <nav className={styles.actions} aria-label="Paper resources">{resources.map(item=><Link className={styles.button} key={item.href} href={item.href}>{item.label}</Link>)}</nav>}
       {!paper.sourceDocumentId && /^PHY-IX-2025-P[12]$/.test(paper.paperCode||'') && <nav className={styles.actions} aria-label="Paper resources">{physics2025Resources.filter(item=>item.year===2025).map(item=><Link className={styles.button} key={item.href} href={item.href}>{item.label}</Link>)}<Link className={styles.button} href="/past-papers/PHY-IX-2025-P1?view=solved">Paper 1 · answers & explanations</Link><Link className={styles.button} href="/past-papers/PHY-IX-2025-P2">Paper 2 (CRQ & ERQ)</Link></nav>}
       {!paper.sourceDocumentId && /^PHY-IX-2024-P[12]$/.test(paper.paperCode||'') && <nav className={styles.actions} aria-label="Paper resources">{physics2024Resources.map(item=><Link className={styles.button} key={item.href} href={item.href}>{item.label}</Link>)}<Link className={styles.button} href="/past-papers/PHY-IX-2024-P1?view=solved">Paper 1 · answers & explanations</Link><Link className={styles.button} href="/past-papers/PHY-IX-2024-P2">Paper 2 (CRQ & ERQ)</Link></nav>}
-      {!paper.sourceDocumentId && /^PHY-X-2025-P[12]$/.test(paper.paperCode||'') && <nav className={styles.actions} aria-label="Paper resources">{physicsX2025Resources.map(item=><Link className={styles.button} key={item.href} href={item.href}>{item.label}</Link>)}<Link className={styles.button} href="/past-papers/PHY-X-2025-P1?view=solved">Paper 1 · answers & explanations</Link><Link className={styles.button} href="/past-papers/PHY-X-2025-P2">Paper 2 (CRQ & ERQ)</Link></nav>}
       <Suspense fallback={<p>Loading paper…</p>}>
         <PaperViewerClient
           paper={paper}

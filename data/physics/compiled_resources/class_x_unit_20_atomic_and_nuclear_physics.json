@@ -66,7 +66,7 @@
     },
     {
       "term": "Learning Outcome 20.4.4",
-      "definition": "describe the properties of the three types of radiation (α, β and γ);",
+      "definition": "describe the properties of the three types of radiation (\u03b1, \u03b2 and \u03b3);",
       "slo_code": "20.4.4",
       "cognitive_level": "R"
     },
@@ -218,19 +218,45 @@
   ],
   "erqs": [
     {
-      "question": "Compare alpha (α), beta (β), and gamma (γ) radiations in terms of their nature, charge, ionising ability, penetrating power, and deflection in electric/magnetic fields.",
+      "question": "Compare alpha (\u03b1), beta (\u03b2), and gamma (\u03b3) radiations in terms of their nature, charge, ionising ability, penetrating power, and deflection in electric/magnetic fields.",
       "marks": 6,
       "slo_code": "20.4.5",
-      "answer": "Alpha: Helium nucleus (²₄He²⁺), charge +2e, highest ionising power, lowest penetration (stopped by paper). Beta: Fast electron (⁰₋₁e), charge -e, moderate ionisation and penetration (stopped by a few mm of aluminium). Gamma: High-frequency electromagnetic photon, zero charge, lowest ionisation, highest penetration (attenuated by thick lead), undeflected by fields.",
+      "answer": "Alpha: Helium nucleus (\u00b2\u2084He\u00b2\u207a), charge +2e, highest ionising power, lowest penetration (stopped by paper). Beta: Fast electron (\u2070\u208b\u2081e), charge -e, moderate ionisation and penetration (stopped by a few mm of aluminium). Gamma: High-frequency electromagnetic photon, zero charge, lowest ionisation, highest penetration (attenuated by thick lead), undeflected by fields.",
       "source": "AKU-EB Syllabus 2025 Unit 20"
     }
   ],
   "numericals": [
     {
+      "question_number": "Q.5",
+      "problem": "Suppose a radioactive element has an initial number of atoms ($X$) kept in a nuclear power station.\n\nCalculate the number of radioactive atoms left after $10$ half-lives.",
+      "slo_code": "20.6.2",
+      "formula": "",
+      "solution": "**Given Data:**\n\u2022 Initial number of radioactive atoms ($N_0$) = $X$\n\u2022 Number of half-lives elapsed ($n$) = $10$\n\n**Formula:**\n$$N = N_0 \\times \\left(\\frac{1}{2}\\right)^n$$\n\n**Substitution & Calculation:**\n$$N = X \\times \\left(\\frac{1}{2}\\right)^{10} = X \\times \\frac{1}{2^{10}} = \\frac{X}{1024}$$\n\n**Answer:**\nAfter $10$ half-lives, $\\frac{X}{1024}$ (or $\\frac{1}{1024}\\text{th}$ of the original number of atoms $X$) will remain undecayed.",
+      "source": "2025 Annual Paper II (CRQ \u2022 3 Marks)"
+    },
+    {
+      "question_number": "Num.2",
       "problem": "If a radioactive isotope has a half-life of 60 seconds and an initial mass of 80 g, calculate the quantity of the undecayed isotope remaining after 120 seconds.",
       "slo_code": "20.6.3",
-      "formula": "N = N₀ × (1/2)^n, where n = t / T_½",
-      "solution": "Number of half-lives n = 120 s / 60 s = 2. Remaining mass N = 80 g × (1/2)² = 80 / 4 = 20 g."
+      "formula": "N = N\u2080 \u00d7 (1/2)^n, where n = t / T_\u00bd",
+      "solution": "Number of half-lives n = 120 s / 60 s = 2. Remaining mass N = 80 g \u00d7 (1/2)\u00b2 = 80 / 4 = 20 g.",
+      "source": "Unit 20 Worked Numerical"
+    },
+    {
+      "question_number": "Num.3",
+      "problem": "If a radioactive element has a half-life of 60 seconds, then the quantity of the isotope after 120 seconds will be",
+      "slo_code": "20.6.3",
+      "formula": "",
+      "solution": "Number of half-lives = Total time / half-life = 120 s / 60 s = 2 half-lives. Remaining quantity = $(1/2)^2 = 1/4$ (one-fourth) of the initial quantity.",
+      "source": "Unit 20 Worked Numerical"
+    },
+    {
+      "question_number": "Num.4",
+      "problem": "The number of electrons in the isotope of uranium $_{92}\\text{U}^{238}$ is",
+      "slo_code": "20.2.3",
+      "formula": "",
+      "solution": "In a neutral atom represented as $_Z\\text{X}^A$, the atomic number $Z = 92$ gives both the number of protons in the nucleus and the number of orbital **electrons** ($92$). (Note: $A = 238$ is the mass/nucleon number and $A - Z = 238 - 92 = 146$ is the number of neutrons).",
+      "source": "Unit 20 Worked Numerical"
     }
   ]
 }

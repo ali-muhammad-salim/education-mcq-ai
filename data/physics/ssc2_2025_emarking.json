@@ -1,0 +1,310 @@
+{
+  "title": "Notes from E-Marking Centre on SSC-II Physics Annual Examinations 2025",
+  "examYear": 2025,
+  "board": "AKU-EB",
+  "classLevel": "Class X (SSC-II)",
+  "subject": "Physics",
+  "sourceUrl": "/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf",
+  "introduction": "This document has been produced for the teachers and candidates of the Secondary School Certificate (SSC) Part II Physics examination. It contains comments on candidates\u2019 responses to the 2025 SSC-II Examination, indicating the quality of the responses and highlighting their relative strengths and weaknesses.",
+  "generalObservations": "Generally, candidates demonstrated a weak understanding of the concepts, including image location by a spherical mirror, electromagnetism, information and communication technology, the half-life of radioactive elements, waves, and electrostatics. However, certain areas had been performed better yet need improvement to ensure a more thorough understanding, such as logic gates and the audible frequency range.",
+  "questions": [
+    {
+      "questionNumber": "Q.1",
+      "section": "Section B: Constructed Response Questions (CRQs)",
+      "questionText": "If an object is placed at a distance of $2\\text{ cm}$ from a convex mirror of focal length of $4\\text{ cm}$, then find the position of the image formed.",
+      "originalSlo": "12.2.1",
+      "currentSlo": null,
+      "currentSloDescription": "Spherical mirrors (mirror formula 1/f = 1/p + 1/q) were assessed under the 2006/2022 syllabus; the 2025 Class X syllabus (Unit 13: Geometrical Optics, SLO 13.5.4) assesses Thin Lenses instead.",
+      "currentTopic": "Geometrical Optics",
+      "sloText": "Solve word problems related to the image location by spherical mirrors using the mirror formula.",
+      "maxMarks": 3,
+      "cognitiveLevel": "A",
+      "diagramUrl": null,
+      "checkingHints": [
+        "1 mark for the correct mirror formula: 1/f = 1/p + 1/q.",
+        "1 mark for the correct substitution with sign convention (for a convex mirror, f = -4 cm and p = +2 cm; or using standard positive focal length magnitude showing virtual image behind mirror).",
+        "1 mark for the correct calculated image position with unit (q = -4/3 cm = -1.33 cm using f = -4 cm, or q = -4 cm as shown in E-Marking exemplar, indicating a virtual image behind the convex mirror)."
+      ],
+      "modelAnswer": "**Given Data:**\n\u2022 Object distance ($p$) = $+2\\text{ cm}$\n\u2022 Focal length of convex mirror ($f$) = $-4\\text{ cm}$ (virtual focus behind the mirror; note: in the AKU-EB E-Marking exemplar, $f = 4\\text{ cm}$ is substituted into $\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{q}$)\n\n**Formula:**\n$$\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{q} \\implies \\frac{1}{q} = \\frac{1}{f} - \\frac{1}{p}$$\n\n**Calculation (AKU-EB E-Marking Exemplar Method):**\n$$\\frac{1}{q} = \\frac{1}{4} - \\frac{1}{2} = \\frac{1 - 2}{4} = -\\frac{1}{4}$$\n$$q = -4\\text{ cm}$$\n*(Note: Using strict Cartesian sign convention $f = -4\\text{ cm}$ gives $\\frac{1}{q} = -\\frac{1}{4} - \\frac{1}{2} = -\\frac{3}{4} \\implies q = -1.33\\text{ cm}$. In both conventions, the negative sign of $q$ indicates that a virtual, upright image is formed behind the convex mirror.)*",
+      "overallPerformance": "Candidates\u2019 responses demonstrated a wide range of understanding and accuracy in solving the convex mirror problem. Overall, while a few candidates grasped the concept well, many struggled with foundational optics principles or mathematical rigour.",
+      "betterResponses": "Better responses correctly applied the mirror formula (1/f = 1/p + 1/q) to solve for the image position, providing step-by-step calculations and arriving at q = -4 cm (or -1.33 cm with negative focal length), indicating a virtual image formed behind the convex mirror with proper units.",
+      "weakerResponses": "Weaker responses attempted to calculate image position using irrelevant formulas such as the simple pendulum formula, Newton's second law, wave speed v = f\u03bb (multiplying 4 \u00d7 2 = 8 cm), Snell's law, or transformer formulas, or omitted units and sign conventions.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Teachers are encouraged to use the images containing correct and incorrect solutions to conduct live problem-solving sessions. Highlight step-by-step calculations and common pitfalls (e.g., sign conventions for spherical mirrors) to reinforce conceptual clarity."
+      ],
+      "review_status": "verified",
+      "outOfSyllabus": true
+    },
+    {
+      "questionNumber": "Q.2",
+      "section": "Section B: Constructed Response Questions (CRQs)",
+      "questionText": "i. Describe a condition under which a single electron can generate a magnetic field. (2 Marks)\nii. Will it be a weak or strong magnetic field? (1 Mark)",
+      "originalSlo": "12.2.1",
+      "currentSlo": "17.3.1",
+      "currentSloDescription": "describe the pattern and direction of the magnetic field due to currents in straight wires and in solenoids;",
+      "currentTopic": "Magnetism and Electromagnetism",
+      "sloText": "Demonstrate that an electric current in a conductor produces a magnetic field around it.",
+      "maxMarks": 3,
+      "cognitiveLevel": "U",
+      "diagramUrl": null,
+      "checkingHints": [
+        "i. 2 marks (1 mark for each key point) for stating that the single electron must be in motion / moving through a conductor (creating an electric current) to generate a magnetic field around it.",
+        "ii. 1 mark for stating that the magnetic field generated by a single moving electron will be weak."
+      ],
+      "modelAnswer": "**(i) Condition for a single electron to generate a magnetic field (2 Marks):**\nA stationary electric charge produces only an electric field, whereas a **moving electric charge** constitutes an electric current and produces a magnetic field around its path. Therefore, when a single electron is **in motion** (or flowing through a conductor/circuit), it generates a magnetic field around it.\n\n**(ii) Strength of the magnetic field (1 Mark):**\nThe magnetic field generated by a single moving electron will be extremely **weak**.",
+      "overallPerformance": "Candidates demonstrated a wide range of understanding regarding magnetic fields generated by single electrons. Some responses correctly identified that a moving electron generates a weak magnetic field, providing clear conditions like 'electron moving in a conductor'.",
+      "betterResponses": "Better responses focused on the motion of the electron or the flow of current, stating clearly that 'when an electron moves/flows in a circuit or conductor, it produces current that generates a magnetic field around it', and correctly identified the resulting field as weak.",
+      "weakerResponses": "Weaker responses confused electrostatic attraction with magnetic field generation (claiming a single electron contacts a positive charge to create a 'strong magnetic field'), or invoked mutual induction or thermionic emission without mentioning electron motion.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Teachers should emphasise that (1) only moving charges create magnetic fields, (2) single electrons produce exceptionally weak fields, and (3) terms like 'mutual induction' or 'charge attraction' are irrelevant to this context."
+      ],
+      "review_status": "pending_review",
+      "originalCropUrl": "/extracted_diagrams/review_crops/phy_x_2025_em_p3_q2_slo.png",
+      "proposedOriginalSlo": "15.1.1",
+      "outOfSyllabus": false
+    },
+    {
+      "questionNumber": "Q.3",
+      "section": "Section B: Constructed Response Questions (CRQs)",
+      "questionText": "State any TWO uses of logic gates in daily life.",
+      "originalSlo": "16.8.3",
+      "currentSlo": "19.5.7",
+      "currentSloDescription": "describe the uses of logic gates.",
+      "currentTopic": "Electromagnetic Waves and Electronics",
+      "sloText": "Describe the simple uses of logic gates.",
+      "maxMarks": 2,
+      "cognitiveLevel": "K",
+      "diagramUrl": null,
+      "checkingHints": [
+        "1 mark for the first valid daily-life application of logic gates (e.g., burglar/security alarms, automatic street lights, safety thermostats).",
+        "1 mark for the second valid daily-life application of logic gates (e.g., microprocessors in computers/calculators, traffic light controllers, automatic doors)."
+      ],
+      "modelAnswer": "**Uses of Logic Gates in Daily Life (Any TWO):**\n1. **Home Security & Burglar Alarms:** Logic gates (such as AND and OR gates) are used in burglar alarms and fire/smoke alarm circuits to trigger a siren when a door sensor or motion detector is activated while the alarm switch is armed.\n2. **Computers, Calculators & Digital Appliances:** Logic gates form the fundamental building blocks of microprocessors and arithmetic logic units (ALUs) in computers, digital calculators, automatic washing machines, and traffic light controllers.",
+      "overallPerformance": "Candidates demonstrated a good understanding of logic gate applications in daily life. While many candidates grasped basic applications in computing and security alarms, others struggled with precision or merely listed gate names.",
+      "betterResponses": "Better responses provided clear, concrete examples of logic gate applications in daily life, such as their use in computers/calculators for arithmetic operations and in burglar/security alarm systems and kitchen appliances.",
+      "weakerResponses": "Weaker responses merely listed logic gate types (NOR, NAND, OR, NOT) without stating any real-world applications, or gave vague statements like 'understanding computer language'.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Teachers should emphasise that logic gates are building blocks of digital circuits and provide specific everyday examples like burglar alarms, traffic light controllers, calculators, and automatic doors, distinguishing gate names from their practical uses."
+      ],
+      "review_status": "verified",
+      "outOfSyllabus": false
+    },
+    {
+      "questionNumber": "Q.4",
+      "section": "Section B: Constructed Response Questions (CRQs)",
+      "questionText": "Describe, how are light signals transmitted through an optical fibre.",
+      "originalSlo": "17.2.1",
+      "currentSlo": "13.4.5",
+      "currentSloDescription": "describe the use of total internal reflection in:\na. optical fibre,\nb. periscope;",
+      "currentTopic": "Geometrical Optics",
+      "sloText": "Describe the transmission of: a. electric signals through wires, b. radio waves through air, c. light signals through optical fibres.",
+      "maxMarks": 2,
+      "cognitiveLevel": "U",
+      "diagramUrl": null,
+      "checkingHints": [
+        "1 mark for an incomplete description (identifying core/cladding structure or stating that light enters at an angle greater than the critical angle).",
+        "2 marks for a complete description: explaining that an optical fibre has a higher-refractive-index inner core surrounded by a lower-refractive-index cladding, and light signals striking the core-cladding boundary at an angle of incidence greater than the critical angle undergo continuous Total Internal Reflection (TIR) to travel through the fibre."
+      ],
+      "modelAnswer": "An optical fibre consists of a thin, high-refractive-index glass or plastic inner **core** surrounded by a lower-refractive-index outer **cladding**.\n\nWhen a modulated light signal enters one end of the optical fibre, it strikes the boundary between the inner core and outer cladding at an **angle of incidence greater than the critical angle** ($\\theta_i > \\theta_c$). As a result, the light ray undergoes repeated **Total Internal Reflection (TIR)** back and forth inside the core until it emerges at the receiving end with minimal energy loss.",
+      "overallPerformance": "Candidates\u2019 responses revealed a wide range of understanding regarding light signal transmission in optical fibres. Only a few answers clearly articulated the core/cladding refractive index difference and the principle of total internal reflection.",
+      "betterResponses": "Better responses identified the key components of an optical fibre (inner core and outer cladding) and explained that light signals strike the core-cladding boundary at an angle greater than the critical angle, undergoing total internal reflection along the fibre.",
+      "weakerResponses": "Weaker responses confused optical transmission with electrical current flow or radioactivity (e.g., claiming light signals are transmitted through an optical fibre by 'radioactive elements and flow of current' or 'deflecting electrons').",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Teachers are encouraged to use a laser pointer and acrylic rod to physically demonstrate total internal reflection, emphasising (1) refractive index differences between core and cladding, (2) the critical angle, and (3) avoiding conflation with electrical conduction."
+      ],
+      "review_status": "verified",
+      "outOfSyllabus": false
+    },
+    {
+      "questionNumber": "Q.5",
+      "section": "Section B: Constructed Response Questions (CRQs)",
+      "questionText": "Suppose a radioactive element has an initial number of atoms ($X$) kept in a nuclear power station.\n\nCalculate the number of radioactive atoms left after $10$ half-lives.",
+      "originalSlo": "18.5.2",
+      "currentSlo": "20.6.2",
+      "currentSloDescription": "calculate the half-life of radioactive elements;",
+      "currentTopic": "Atomic and Nuclear Physics",
+      "sloText": "Calculate the half-life of radioactive elements and draw graphs showing decay curves of these elements.",
+      "maxMarks": 3,
+      "cognitiveLevel": "A",
+      "diagramUrl": null,
+      "checkingHints": [
+        "1 mark for writing the correct half-life decay formula: N = N\u2080 \u00d7 (1/2)^n (or N = N\u2080 / 2^t).",
+        "1 mark for substituting the correct values: N\u2080 = X and n = 10 -> N = X \u00d7 (1/2)^10.",
+        "1 mark for writing the correct final answer: N = X / 1024 (or (1/1024)X atoms remaining)."
+      ],
+      "modelAnswer": "**Given Data:**\n\u2022 Initial number of radioactive atoms ($N_0$) = $X$\n\u2022 Number of half-lives elapsed ($n$) = $10$\n\n**Formula:**\n$$N = N_0 \\times \\left(\\frac{1}{2}\\right)^n$$\n\n**Substitution & Calculation:**\n$$N = X \\times \\left(\\frac{1}{2}\\right)^{10} = X \\times \\frac{1}{2^{10}} = \\frac{X}{1024}$$\n\n**Answer:**\nAfter $10$ half-lives, $\\frac{X}{1024}$ (or $\\frac{1}{1024}\\text{th}$ of the original number of atoms $X$) will remain undecayed.",
+      "overallPerformance": "A few responses correctly applied the exponential half-life decay formula (or progressive halving chain) and arrived at the accurate solution X / 1024, demonstrating clear working steps.",
+      "betterResponses": "Better responses systematically applied the formula N = N\u2080 \u00d7 (1/2)^10 = X / 1024, or showed the step-by-step halving chain (X -> X/2 -> X/4 -> X/8 -> ... -> X/1024) across 10 half-lives.",
+      "weakerResponses": "Weaker responses treated radioactive decay as linear subtraction or division (e.g., writing 10 - 1/2 = 9.5 radioactive atoms left, or 10 / 2 = 5 atoms, or N = N\u2080 \u00d7 12t).",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Teachers should emphasise the exponential nature of radioactive decay N = N\u2080(1/2)^n and use progressive halving diagrams (1 -> 2 -> 3 ... -> 10 half-lives) to contrast exponential reduction with linear subtraction."
+      ],
+      "review_status": "verified",
+      "outOfSyllabus": false
+    },
+    {
+      "questionNumber": "Q.6.a",
+      "section": "Section C: Extended Response Questions (ERQs)",
+      "questionText": "**EITHER (a):**\nTwo different waves are shown in the given diagrams.\n\nIdentify the types of waves and describe any FOUR differences between these waves.",
+      "originalSlo": "10.2.3",
+      "currentSlo": "11.3.1",
+      "currentSloDescription": "identify transverse and longitudinal waves in mechanical media;",
+      "currentTopic": "Wave Motion",
+      "sloText": "Distinguish between mechanical and electromagnetic waves.",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q6a.png",
+      "checkingHints": [
+        "1 mark for correctly identifying Wave (1) as a Transverse wave.",
+        "1 mark for correctly identifying Wave (2) as a Longitudinal wave.",
+        "1 mark for each correct point of difference between transverse and longitudinal waves (4 differences required = 4 marks)."
+      ],
+      "modelAnswer": "**Identification of Waves (2 Marks):**\n\u2022 **Diagram (1):** **Transverse Wave** (rope wave where hand motion is perpendicular to wave direction).\n\u2022 **Diagram (2):** **Longitudinal Wave** (slinky spring wave with compressions and rarefactions where hand motion is parallel to wave direction).\n\n**Four Differences Between Transverse and Longitudinal Waves (4 Marks):**\n\n| Feature | Transverse Waves (1) | Longitudinal Waves (2) |\n| :--- | :--- | :--- |\n| **1. Direction of Particle Vibration** | Particles of the medium vibrate **perpendicular** (at right angles) to the direction of wave propagation. | Particles of the medium vibrate **parallel** (back and forth along the same line) to the direction of wave propagation. |\n| **2. Waveform Pattern** | Consist of alternating **crests** (high points) and **troughs** (low points). | Consist of alternating **compressions** (high-density regions) and **rarefactions** (low-density regions). |\n| **3. Definition of Wavelength ($\\lambda$)** | Distance between two consecutive crests or two consecutive troughs. | Distance between the centres of two consecutive compressions or two consecutive rarefactions. |\n| **4. Medium & Examples** | Can travel through solids and liquid surfaces (and EM waves in vacuum); e.g., waves on a rope, water surface waves, light waves. | Can travel through solids, liquids, and gases; e.g., sound waves in air, compressional waves on a slinky spring. |",
+      "overallPerformance": "Most candidates attempted part (a) of Q.6, but overall performance needed deeper conceptual revision to avoid confusing transverse/longitudinal waves with mechanical/electromagnetic waves.",
+      "betterResponses": "Better responses correctly identified (1) as a Transverse Wave and (2) as a Longitudinal Wave, and used a structured two-column comparison table to highlight four clear differences (direction of particle vibration, crests/troughs vs. compressions/rarefactions, speed/medium, and examples).",
+      "weakerResponses": "Weaker responses confused transverse/longitudinal waves with mechanical/electromagnetic waves (writing a table comparing Mechanical wave vs. Electromagnetic wave instead of identifying the two diagrams), or listed ultrasonic waves as transverse.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Teachers are encouraged to use a slinky spring and rope in class to physically model transverse and longitudinal waves, contrasting particle vibration direction (perpendicular vs. parallel) and preventing students from mixing up wave classifications."
+      ],
+      "review_status": "verified",
+      "outOfSyllabus": false
+    },
+    {
+      "questionNumber": "Q.6.b",
+      "section": "Section C: Extended Response Questions (ERQs)",
+      "questionText": "**OR (b):**\nThe given diagrams show two different uses of sound waves by two different things.\n\nIdentify the sound wave used in the given diagrams and describe any FIVE uses of that other than shown in the above diagrams.",
+      "originalSlo": "11.4.2",
+      "currentSlo": "12.4.2",
+      "currentSloDescription": "describe ultrasound with examples;",
+      "currentTopic": "Sound",
+      "sloText": "Describe the uses of ultrasound.",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q6b.png",
+      "checkingHints": [
+        "i. 1 mark for correctly identifying the sound wave as Ultrasound (or Ultrasonic waves).",
+        "ii. 1 mark for EACH correct use of ultrasound other than bat echolocation and ship depth-sounding/fish-finding shown in the diagrams (Any 5 required = 5 marks)."
+      ],
+      "modelAnswer": "**(i) Identification of Sound Wave (1 Mark):**\nThe sound wave used in the given diagrams (bat echolocation and marine SONAR) is **Ultrasound** (ultrasonic waves with frequency above $20,000\\text{ Hz}$).\n\n**(ii) Five Uses of Ultrasound Other Than Those Shown in the Diagrams (5 Marks):**\n1. **Medical Diagnostic Imaging (Ultrasonography):** Used to scan and visualize internal organs, monitor fetal development during pregnancy (obstetric ultrasound), and examine heart valves (echocardiography) safely without ionizing radiation.\n2. **Crushing Kidney Stones (Lithotripsy):** High-intensity focused ultrasonic waves are directed at kidney stones or gallstones to shatter them into tiny sand-like fragments that pass out naturally.\n3. **Detecting Cracks and Flaws in Heavy Metal Components:** Non-destructive testing (NDT) uses ultrasonic pulses to detect hidden internal cracks, voids, or cavities in aircraft wings, railway tracks, and heavy machinery shafts.\n4. **Ultrasonic Cleaning of Delicate Instruments:** High-frequency ultrasonic vibrations in a cleaning liquid dislodge microscopic dirt and grease from jewellery, surgical instruments, watches, and electronic circuit boards.\n5. **Destroy Bacteria & Blood Clot Detection (Doppler Ultrasound):** High-intensity ultrasound can sterilize liquids by destroying bacteria, and Doppler ultrasound measures blood flow speed to locate arterial blockages or blood clots.",
+      "overallPerformance": "Fewer students selected Q.6(b), but those who opted for it demonstrated a better awareness of ultrasound technology and its medical and industrial applications.",
+      "betterResponses": "Better responses correctly identified the wave as Ultrasound and described five distinct applications (or sound wave properties in context), such as medical imaging, detecting kidney stones, finding cracks in metal structures, and ultrasonic cleaning.",
+      "weakerResponses": "Weaker responses misidentified the diagrams as 'waves in a rope or string' and wrote about transverse and longitudinal waves, compressions, and rarefactions instead of ultrasound applications.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Students should focus on distinguishing between everyday audible sound properties (loudness, pitch) and specialised high-frequency ultrasound applications in medicine and industry."
+      ],
+      "review_status": "verified",
+      "outOfSyllabus": false
+    },
+    {
+      "questionNumber": "Q.7.a",
+      "section": "Section C: Extended Response Questions (ERQs)",
+      "questionText": "**EITHER (a):**\ni. Identify the phenomenon in the given diagram. (1 Mark)\nii. Write any FIVE hazards of the phenomenon identified in part (i). (5 Marks)",
+      "originalSlo": "13.1.2",
+      "currentSlo": "14.3.1",
+      "currentSloDescription": "describe the process of electrostatic induction;",
+      "currentTopic": "Electrostatics",
+      "sloText": "Discuss the potential dangers of electrostatic charges.",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q7a.png",
+      "checkingHints": [
+        "i. 1 mark for correctly identifying the phenomenon as Electrostatic Induction (or static electricity / charge separation by induction).",
+        "ii. 1 mark for each valid hazard of electrostatic charges / electrostatic induction (Any 5 required = 5 marks)."
+      ],
+      "modelAnswer": "**(i) Identification of Phenomenon (1 Mark):**\nThe phenomenon shown in the diagram is **Electrostatic Induction** (redistribution/separation of opposite charges on an insulated conductor when a charged rod is brought near it without touching).\n\n**(ii) Five Hazards of Electrostatic Charges / Electrostatic Induction (5 Marks):**\n1. **Lightning Strikes:** During thunderstorms, friction between water droplets and air currents builds up huge electrostatic charges in clouds, inducing opposite charges on the ground and tall buildings; sudden discharge produces lightning bolts that can cause fatal electrocution, structural damage, and forest fires.\n2. **Fires & Explosions During Aircraft Refuelling:** As an aircraft flies through the air (or as fuel flows rapidly through refuelling pipes), static charge builds up by friction; an electrostatic spark near fuel vapour can ignite a catastrophic explosion unless the aircraft is earthed.\n3. **Igniting Flammable Vapours in Petrol Tankers & Fuel Stations:** Friction between moving fuel/tyres and road surfaces charges fuel tankers; if not discharged via an earthing strap, an induced spark during unloading can ignite petrol vapours.\n4. **Damage to Sensitive Microelectronics & Computer Chips:** Electrostatic discharge (ESD) from a person's body or clothing can permanently destroy delicate CMOS integrated circuits, transistors, and computer motherboards.\n5. **Explosion Hazard in Hospital Operating Theatres & Flour/Coal Mills:** Static sparks in operating theatres using volatile anaesthetic gases or in environments with combustible dust/flammable gas can trigger explosions.",
+      "overallPerformance": "Only about one-third of candidates who attempted Q.7(a) accurately identified the phenomenon as electrostatic induction and listed five genuine hazards of static electricity.",
+      "betterResponses": "Better responses accurately named 'electrostatic induction', defined how a charged rod separates unlike and like charges on a nearby conductor, and listed five concrete hazards such as sparks during petrol/gasoline pumping, friction charging of moving vehicles, and fire hazards near flammable gases.",
+      "weakerResponses": "Weaker responses mislabeled the diagram as 'nuclear fusion', 'nuclear forces', or 'mutual induction', or described positive charges attracting negative charges through an earth wire without listing five hazards.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Teachers should create side-by-side displays contrasting electrostatic induction with nuclear/magnetic concepts, and link hands-on static electricity demonstrations directly to real-world spark and fire hazards."
+      ],
+      "review_status": "verified",
+      "outOfSyllabus": false
+    },
+    {
+      "questionNumber": "Q.7.b",
+      "section": "Section C: Extended Response Questions (ERQs)",
+      "questionText": "**OR (b):**\ni. Label the electrical component in the given circuit diagram. (2 Marks)\nii. Describe any ONE use of the each of the identified electrical component in the given circuit diagram. (4 Marks)",
+      "originalSlo": "14.8.1",
+      "currentSlo": "16.2.2",
+      "currentSloDescription": "draw the circuit diagrams of the following electrical components:\na. ammeters,\nb. batteries,\nc. cells,\nd. diodes,\ne. fuses,\nf. lamps,\ng. light-dependent resistors (LDRs),\nh. light-emitting diodes (LEDs),\ni. resistors (fixed and variable),\nj. switches,\nk. thermistors (NTC only),\nl. voltmeters;",
+      "currentTopic": "D.C. Circuits",
+      "sloText": "Describe the use of electrical measuring devices (galvanometre, ammetre and voltmetre).",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q7b.png",
+      "checkingHints": [
+        "i. 2 marks (1 mark for labelling any two parts; 4 parts required for full 2 marks): Variable Resistor (Rheostat), Fixed Resistor, Voltmeter (in parallel), Ammeter (in series), and Switch / Key.",
+        "ii. 4 marks (1 mark for writing the correct use of each of the 4 identified electrical components)."
+      ],
+      "modelAnswer": "**(i) Labelling the Electrical Components in the Circuit Diagram (2 Marks):**\n\u2022 **Top-Left Component (zigzag with arrow):** **Variable Resistor (Rheostat)**\n\u2022 **Top-Middle Component (zigzag):** **Fixed Resistor**\n\u2022 **Middle Circle (connected in parallel across fixed resistor):** **Voltmeter**\n\u2022 **Right Circle (connected in series in main loop):** **Ammeter**\n\u2022 **Bottom Circle (with central dot next to battery):** **Switch / Plug Key**\n\n**(ii) Function / Use of Each Identified Electrical Component (4 Marks):**\n1. **Switch / Key:** Used to open (break) or close (complete) the electrical circuit to start or stop the flow of electric current safely.\n2. **Ammeter:** Connected in **series** in the circuit to measure the magnitude of electric current flowing through the circuit (in amperes, $\\text{A}$).\n3. **Voltmeter:** Connected in **parallel** across the fixed resistor to measure the potential difference (voltage) across the component (in volts, $\\text{V}$).\n4. **Fixed Resistor:** Provides a constant, known opposition (resistance) to the flow of current to limit current or divide voltage in the circuit.\n5. **Variable Resistor (Rheostat):** Allows the resistance in the circuit to be varied continuously so the electric current flowing through the circuit can be adjusted/controlled.",
+      "overallPerformance": "Most candidates opted for Q.7(b), but many struggled to accurately label the standard circuit symbols (confusing resistors with current, or voltmeters and ammeters with bulbs) or wrote repetitive descriptions.",
+      "betterResponses": "Better responses accurately labelled all five boxes on the circuit diagram (Variable resistor, Fixed resistor, Voltmeter, Ammeter, and Switch/Key) and clearly stated the function and connection configuration (series vs. parallel) of each component.",
+      "weakerResponses": "Weaker responses mislabelled the resistors as 'current', the voltmeter and ammeter circles as 'bulb', and the switch as 'capacitor', and wrote unrelated statements about solar panels charging batteries.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Teachers are encouraged to create matching exercises with standard circuit symbols (resistor, rheostat, voltmeter in parallel, ammeter in series, plug key) to reinforce accurate device names and functions."
+      ],
+      "review_status": "verified",
+      "outOfSyllabus": false
+    }
+  ],
+  "pedagogies": [
+    {
+      "name": "Storyboard",
+      "description": "A visual pedagogy that uses a series of illustrated panels to present a narrative, helping learners organise ideas, sequence events, and comprehend complex concepts."
+    },
+    {
+      "name": "Cause and Effect",
+      "description": "Explores relationships between actions and physical consequences so learners understand how variables and physical events are interconnected."
+    },
+    {
+      "name": "Fish and Bone",
+      "description": "Breaks down complex topics into main ideas (the fish) and supporting details (the bones) to highlight essential concepts and explanations."
+    },
+    {
+      "name": "Concept Mapping",
+      "description": "Visually represents relationships between physical quantities and laws by connecting key concepts into a structured network."
+    },
+    {
+      "name": "Audio Visual Resources",
+      "description": "Incorporates animations, simulations, and video demonstrations to make abstract physical phenomena observable and engaging."
+    },
+    {
+      "name": "Think, Pair, and Share",
+      "description": "Collaborative technique where students reason through a problem individually, compare with a partner, and share with the class."
+    },
+    {
+      "name": "Questioning Technique (Socratic Approach)",
+      "description": "Stimulates critical thinking by posing probing questions that require students to justify physical reasoning and assumptions."
+    },
+    {
+      "name": "Practical Demonstration",
+      "description": "Hands-on laboratory or classroom demonstrations that bridge theoretical equations with real-world physical measurements."
+    }
+  ],
+  "acknowledgements": [
+    "Mr Kashif Hussain, Manager, Curriculum Development Department, AKU-EB",
+    "Mr Israr ul Haq, Teacher at Habib Girls School, Karachi",
+    "Zain Muluk, Manager, Examination Development, AKU-EB",
+    "Munira Muhammad, Manager, Assessment Department, AKU-EB",
+    "Dr Naveed Yousuf, CEO, AKU-EB"
+  ]
+}

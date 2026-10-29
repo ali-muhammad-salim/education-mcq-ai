@@ -54,7 +54,7 @@
     },
     {
       "term": "Learning Outcome 11.4.1",
-      "definition": "define the following terms:\na. speed (v),\nb. wavelength (λ),\nc. crest,\nd. trough,\ne. wavefront,\nf. compression and rarefaction;",
+      "definition": "define the following terms:\na. speed (v),\nb. wavelength (\u03bb),\nc. crest,\nd. trough,\ne. wavefront,\nf. compression and rarefaction;",
       "slo_code": "11.4.1",
       "cognitive_level": "R"
     },
@@ -66,13 +66,13 @@
     },
     {
       "term": "Learning Outcome 11.4.3",
-      "definition": "derive equation v = f λ;",
+      "definition": "derive equation v = f \u03bb;",
       "slo_code": "11.4.3",
       "cognitive_level": "A"
     },
     {
       "term": "Learning Outcome 11.4.4",
-      "definition": "solve word problems using the relation f = 1/ T and v = f λ;",
+      "definition": "solve word problems using the relation f = 1/ T and v = f \u03bb;",
       "slo_code": "11.4.4",
       "cognitive_level": "A"
     },
@@ -158,19 +158,61 @@
   ],
   "erqs": [
     {
-      "question": "A simple pendulum is attached to a 4 m long string. Find its time period on Earth (g = 9.8 m/s²) and explain how the time period changes if the elevator accelerates upward or is on the Moon.",
+      "question": "A simple pendulum is attached to a 4 m long string. Find its time period on Earth (g = 9.8 m/s\u00b2) and explain how the time period changes if the elevator accelerates upward or is on the Moon.",
       "marks": 5,
       "slo_code": "11.1.3",
-      "answer": "On stationary Earth: T = 2π√(l/g) = 2π√(4 / 9.8) = 4.01 s. On the Moon (g_m = g/6), T increases by √6. In an upward-accelerating elevator (g_eff = g + a), T decreases.",
+      "answer": "On stationary Earth: T = 2\u03c0\u221a(l/g) = 2\u03c0\u221a(4 / 9.8) = 4.01 s. On the Moon (g_m = g/6), T increases by \u221a6. In an upward-accelerating elevator (g_eff = g + a), T decreases.",
       "source": "AKU-EB SSC-II Model Paper II Q.6(a)"
     }
   ],
   "numericals": [
     {
+      "question_number": "Q.6(a)",
+      "problem": "A simple pendulum is attached with 4 m long string. \ni. Find the time period of the simple pendulum if it is placed in an elevator moving upwards with an acceleration of 8 m/s^2. \nii. If the elevator is moving downwards with an acceleration of 8 m/s^2, then what will be its time period? \n(Note: The value of acceleration due to gravity 'g' is 9.8 m/s^2.)",
+      "slo_code": "11.1.3",
+      "formula": "",
+      "solution": "Given: Length L = 4 m, g = 9.8 m/s^2, a = 8 m/s^2\ni. Elevator moving upwards:\nEffective gravity g' = g + a = 9.8 + 8 = 17.8 m/s^2\nT = 2 * pi * sqrt(L / g') = 2 * 3.14 * sqrt(4 / 17.8) = 2.97 seconds.\nii. Elevator moving downwards:\nEffective gravity g' = g - a = 9.8 - 8 = 1.8 m/s^2\nT = 2 * pi * sqrt(L / g') = 2 * 3.14 * sqrt(4 / 1.8) = 9.36 seconds.",
+      "source": "Class X Model Paper II (ERQ \u2022 6 Marks)"
+    },
+    {
+      "question_number": "Num.2",
       "problem": "A wave generator produces 25 complete waves in 5 seconds with a wavelength of 0.4 m. Calculate the frequency, time period, and wave speed.",
       "slo_code": "11.4.4",
-      "formula": "f = N/t, T = 1/f, v = fλ",
-      "solution": "f = 25 / 5 = 5 Hz; T = 1 / 5 = 0.2 s; v = 5 Hz × 0.4 m = 2.0 m/s."
+      "formula": "f = N/t, T = 1/f, v = f\u03bb",
+      "solution": "f = 25 / 5 = 5 Hz; T = 1 / 5 = 0.2 s; v = 5 Hz \u00d7 0.4 m = 2.0 m/s.",
+      "source": "Unit 11 Worked Numerical"
+    },
+    {
+      "question_number": "Num.3",
+      "problem": "If the frequency of a wave is doubled, then the time period of the wave will",
+      "slo_code": "11.4.2",
+      "formula": "",
+      "solution": "The time period ($T$) and frequency ($f$) are inversely proportional to each other, given by the relation $T = \\frac{1}{f}$. If the frequency is doubled ($2f$), the time period becomes $\\frac{1}{2f}$, which is half of the original time period.",
+      "source": "Unit 11 Worked Numerical"
+    },
+    {
+      "question_number": "Num.4",
+      "problem": "If the time period of a simple pendulum is 2 s on the surface of the Earth, then the time period of the same pendulum on the surface of the Moon will be",
+      "slo_code": "11.1.3",
+      "formula": "",
+      "solution": "The time period of a simple pendulum is given by $T = 2\\pi\\sqrt{\\frac{L}{g}}$. Since the acceleration due to gravity on the Moon ($g_m$) is less than that on Earth ($g_e$) ($g_m \\approx \\frac{1}{6}g_e$), a smaller value of $g$ results in a larger time period $T$. Therefore, the time period on the Moon will be greater than 2 s.",
+      "source": "Unit 11 Worked Numerical"
+    },
+    {
+      "question_number": "Num.5",
+      "problem": "Which of the following pendulums has the maximum time period?\n\n| Pendulum | Length | Mass |\n| :---: | :---: | :---: |\n| A | $50\\text{ cm}$ | $50\\text{ gm}$ |\n| B | $60\\text{ cm}$ | $40\\text{ gm}$ |\n| C | $70\\text{ cm}$ | $30\\text{ gm}$ |\n| D | $80\\text{ cm}$ | $10\\text{ gm}$ |",
+      "slo_code": "11.1.2",
+      "formula": "",
+      "solution": "The time period of a simple pendulum is given by $T = 2\\pi\\sqrt{\\frac{L}{g}}$. It is directly proportional to the square root of its length ($\\sqrt{L}$) and is completely independent of the mass of the bob. Since Pendulum D has the greatest length ($80\\text{ cm}$), it has the maximum time period.",
+      "source": "Unit 11 Worked Numerical"
+    },
+    {
+      "question_number": "Num.6",
+      "problem": "If a periodic wave of wavelength $0.5\\text{ m}$ has a frequency of $2\\text{ Hz}$, then the speed of the wave will be",
+      "slo_code": "11.4.4",
+      "formula": "",
+      "solution": "Using the wave speed equation $v = f\\lambda$, where frequency $f = 2\\text{ Hz}$ and wavelength $\\lambda = 0.5\\text{ m}$:\n$v = 2\\text{ Hz} \\times 0.5\\text{ m} = 1.0\\text{ m/s}$.",
+      "source": "Unit 11 Worked Numerical"
     }
   ]
 }

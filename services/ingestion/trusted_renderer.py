@@ -22,7 +22,7 @@ def validate_box(box):
     return box
 
 
-def render(source, output, page_number=0, box=None, include_text=False):
+def render(source, output, page_number=0, box=None):
     with pymupdf.open(source) as doc:
         if doc.needs_pass or not 0 < len(doc) <= 1000:
             raise ValueError("Choose an unencrypted PDF with 1..1000 pages")
@@ -48,10 +48,7 @@ def render(source, output, page_number=0, box=None, include_text=False):
         target = Path(output)
         target.parent.mkdir(parents=True, exist_ok=True)
         pix.save(str(target))
-        result = {"totalPages": len(doc), "pageNumber": page_number, "width": pix.width, "height": pix.height, "sha256": hashlib.sha256(target.read_bytes()).hexdigest()}
-        if include_text:
-            result["text"] = page.get_text()
-        return result
+        return {"totalPages": len(doc), "pageNumber": page_number, "width": pix.width, "height": pix.height, "sha256": hashlib.sha256(target.read_bytes()).hexdigest()}
 
 
 def inventory(source):
@@ -82,9 +79,8 @@ def main():
     parser.add_argument("--page", type=int, default=0)
     parser.add_argument("--box")
     parser.add_argument("--inventory", action="store_true")
-    parser.add_argument("--text", action="store_true")
     args = parser.parse_args()
-    print(json.dumps(inventory(args.source) if args.inventory else render(args.source, args.output, args.page, json.loads(args.box) if args.box else None, args.text)))
+    print(json.dumps(inventory(args.source) if args.inventory else render(args.source, args.output, args.page, json.loads(args.box) if args.box else None)))
 
 
 if __name__ == "__main__":
