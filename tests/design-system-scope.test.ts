@@ -61,10 +61,13 @@ describe('design system scope gate', () => {
   });
 
   it('rise CSS modules never emit bare element selectors', () => {
+    const keyframeStep = /^(from|to|\d+(\.\d+)?%)$/;
     const offenders: string[] = [];
     for (const file of moduleFiles()) {
       for (const selector of selectorsOf(readFileSync(file, 'utf8'))) {
-        if (!selector.includes('.')) offenders.push(`${path.basename(file)}: ${selector}`);
+        if (!selector.includes('.') && !keyframeStep.test(selector)) {
+          offenders.push(`${path.basename(file)}: ${selector}`);
+        }
       }
     }
     expect(offenders).toEqual([]);
