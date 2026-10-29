@@ -1,0 +1,317 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class IX",
+  "subject": "Physics",
+  "chapter": "Unit 4: Turning Effect of Forces",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 4.1.1",
+      "definition": "define like and unlike parallel forces;",
+      "slo_code": "4.1.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 4.1.2",
+      "definition": "explain the turning effect of force by relating it to everyday life;",
+      "slo_code": "4.1.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 4.1.3",
+      "definition": "solve word problems related to the moment of force or torque = force \u00d7 perpendicular distance from the pivot to the line of action of force;",
+      "slo_code": "4.1.3",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 4.2.1",
+      "definition": "state the principle of moments;",
+      "slo_code": "4.2.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 4.2.2",
+      "definition": "solve word problems related to the principle of moments;",
+      "slo_code": "4.2.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 4.3.1",
+      "definition": "define centre of gravity and centre of mass of a body;",
+      "slo_code": "4.3.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 4.3.2",
+      "definition": "explain effects of position of the centre of gravity on the stability of simple objects;",
+      "slo_code": "4.3.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 4.4.1",
+      "definition": "define equilibrium;",
+      "slo_code": "4.4.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 4.4.2",
+      "definition": "classify the different types of equilibrium by using examples from everyday life;",
+      "slo_code": "4.4.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 4.4.3",
+      "definition": "state the conditions of equilibrium;",
+      "slo_code": "4.4.3",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 4.4.4",
+      "definition": "explain different conditions of equilibrium with examples;",
+      "slo_code": "4.4.4",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 4.4.5",
+      "definition": "describe the states of equilibrium and classify them with common examples.",
+      "slo_code": "4.4.5",
+      "cognitive_level": "U"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "13",
+      "stem_text": "If a body of mass $10\\text{ kg}$ is placed on the surface of the Earth, then the pull of the Earth on the body will be\n(Note: The value of acceleration due to gravity is $9.8\\text{ m/s}^2$.)",
+      "options": [
+        "A. $0.98\\text{ N}$.",
+        "B. $19.8\\text{ N}$.",
+        "C. $98\\text{ N}$.",
+        "D. $100\\text{ N}$."
+      ],
+      "correct_option": "C",
+      "explanation": "The pull of Earth on a body is its weight $W = mg = 10\\text{ kg} \\times 9.8\\text{ m/s}^2 = 98\\text{ N}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "13",
+      "stem_text": "A passenger getting down from a moving bus falls forward. This is due to the",
+      "options": [
+        "A. inertia.",
+        "B. couple.",
+        "C. friction.",
+        "D. moment."
+      ],
+      "correct_option": "A",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "14",
+      "stem_text": "It is difficult to drive a car on an oily road because the frictional force",
+      "options": [
+        "A. increases.",
+        "B. decreases.",
+        "C. becomes zero.",
+        "D. remains unchanged."
+      ],
+      "correct_option": "B",
+      "explanation": "Oil acts as a lubricant, smoothing out microscopic irregularities between the tires and the road, which decreases the frictional force.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "14",
+      "stem_text": "If an object moves with the help of wheels from one point to another point on a rough surface, then the type of friction between wheels and surface is",
+      "options": [
+        "A. static friction.",
+        "B. rolling friction.",
+        "C. sliding friction.",
+        "D. kinetic friction."
+      ],
+      "correct_option": "B",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "15",
+      "stem_text": "Two forces ($9\\text{ N}$ and $12\\text{ N}$) act at the right angle at point O, as shown in the given figure. What will be the magnitude and direction of the resultant force?",
+      "options": [
+        "A. $15\\text{ N}$ along OQ",
+        "B. $15\\text{ N}$ along PR",
+        "C. $21\\text{ N}$ along OQ",
+        "D. $21\\text{ N}$ along PR"
+      ],
+      "correct_option": "A",
+      "explanation": "Magnitude $R = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15\\text{ N}$. By vector addition (head-to-tail / parallelogram law), the resultant lies along OQ.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "16",
+      "stem_text": "A sports racing car is made stable by",
+      "options": [
+        "A. raising its height.",
+        "B. increasing its speed.",
+        "C. decreasing its width.",
+        "D. lowering its centre of gravity."
+      ],
+      "correct_option": "D",
+      "explanation": "Lowering the centre of gravity increases stability, preventing the car from tipping over during sharp turns.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "2024-Q15",
+      "stem_text": "Based on the given image, the net torque of the seesaw will be equal to",
+      "options": [
+        "A. zero.",
+        "B. one.",
+        "C. two.",
+        "D. infinite."
+      ],
+      "correct_option": "A",
+      "explanation": "The seesaw in the diagram is balanced horizontally in rotational equilibrium, so the clockwise torque equals the anticlockwise torque and the net (resultant) torque acting on the seesaw is zero.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "4.2.1",
+      "original_slo": "4.2.2",
+      "exam_year": 2024,
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P1_Q15.png"
+    },
+    {
+      "question_number": "2024-Q16",
+      "stem_text": "If a body obeys the first condition of equilibrium, then which of the following options will equate to zero?\n\n\u2022 I. Linear acceleration\n\u2022 II. Vector sum of all the forces\n\u2022 III. Vector sum of all the torques",
+      "options": [
+        "A. II only",
+        "B. III only",
+        "C. I and II",
+        "D. II and III"
+      ],
+      "correct_option": "C",
+      "explanation": "According to the first condition of equilibrium, the vector sum of all external forces acting on a body is zero ($\\sum \\vec{F} = 0$, statement II). By Newton's second law ($\\sum \\vec{F} = m\\vec{a}$), zero net force also implies zero linear acceleration ($\\vec{a} = 0$, statement I). Statement III ($\\sum \\vec{\\tau} = 0$) is the second condition of equilibrium.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering",
+      "slo_code": "4.4.3",
+      "original_slo": "4.5.3",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q17",
+      "stem_text": "If a force of $4\\text{ N}$ is applied by a student on a door handle and the moment of force is $16\\text{ Nm}$, then the distance of the pivot from the point of applied force is",
+      "options": [
+        "A. 4 m.",
+        "B. 12 m.",
+        "C. 20 m.",
+        "D. 64 m."
+      ],
+      "correct_option": "A",
+      "explanation": "From $\\tau = F \\times d$, the moment arm (perpendicular distance from the pivot) is $d = \\frac{\\tau}{F} = \\frac{16\\text{ Nm}}{4\\text{ N}} = 4\\text{ m}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "4.1.3",
+      "original_slo": "4.2.2",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q18",
+      "stem_text": "In the given diagram, two weights '$W_1$' and '$W_2$' are placed on a rod whereas ($W_1 > W_2$). For keeping the rod in the equilibrium position, then\n\n\u2022 I. increase '$W_2$' and decrease '$x$'\n\u2022 II. increase '$W_2$' and '$x$' remain same\n\u2022 III. increase '$x$' and '$W_2$' remain the same",
+      "options": [
+        "A. I only.",
+        "B. III only.",
+        "C. I and II.",
+        "D. II and III."
+      ],
+      "correct_option": "B",
+      "explanation": "By the principle of moments, balancing the larger anticlockwise weight $W_1$ at distance $y$ requires increasing the clockwise moment $W_2 \\times x$. In the given diagram, the pivot is shifted towards $W_1$ so the moment arm $x$ of the lighter weight $W_2$ is increased while $W_2$ remains the same (statement III only).",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "4.2.2",
+      "original_slo": "4.5.5",
+      "exam_year": 2024,
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P1_Q18.png"
+    }
+  ],
+  "crqs": [
+    {
+      "question": "Describe the THREE states of equilibrium on the basis of the centre of gravity and give one daily-life example of each.",
+      "marks": 3,
+      "slo_code": "4.4.5",
+      "answer": "1. Stable equilibrium: CoG rises on slight displacement and body returns to original position (e.g., book lying flat on a table). 2. Unstable equilibrium: CoG lowers on displacement and body topples (e.g., pencil balanced on its tip). 3. Neutral equilibrium: CoG height remains unchanged on displacement (e.g., rolling ball on a horizontal floor).",
+      "source": "AKU-EB SSC-I 2025 Annual Paper II Q.2 & Model Paper II Q.2"
+    },
+    {
+      "question_number": "2024-Q.2",
+      "question": "A hanging picture frame is in a state of static equilibrium. The picture frame has a mass of $0.3\\text{ kg}$ and is suspended from a single point by a thin wire.\n\nIf a small object of $0.1\\text{ kg}$ is hung at any one corner from the bottom of the picture frame, then explain how the addition of the small object affects the balance of these forces and the stability of the picture frame.",
+      "question_text": "A hanging picture frame is in a state of static equilibrium. The picture frame has a mass of $0.3\\text{ kg}$ and is suspended from a single point by a thin wire.\n\nIf a small object of $0.1\\text{ kg}$ is hung at any one corner from the bottom of the picture frame, then explain how the addition of the small object affects the balance of these forces and the stability of the picture frame.",
+      "marks": 3.0,
+      "slo_code": "4.4.4",
+      "original_slo": "4.5.4",
+      "cognitive_level": "Understanding",
+      "rubric": [
+        {
+          "marks": 1,
+          "description": "1 mark for explaining that hanging the 0.1 kg mass at one corner creates an unbalanced torque (moment) and disturbs the static equilibrium."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for stating that the centre of gravity (CoG) of the picture frame shifts towards the weighted corner."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for explaining that the frame tilts towards the weighted corner until the new centre of gravity aligns vertically below the suspension point, reducing its initial balanced stability."
+        }
+      ],
+      "answer": "1. **Disturbance of Equilibrium (Unbalanced Torque):** Initially, the picture frame is in static equilibrium because its centre of gravity lies vertically below the single suspension point. Hanging a $0.1\\text{ kg}$ object at one bottom corner introduces an additional downward weight ($W = mg = 1\\text{ N}$) at a distance from the line of action of tension, creating an unbalanced torque.\n2. **Shift in Centre of Gravity:** The combined centre of gravity of the frame-and-mass system shifts away from the geometric centre towards the corner where the $0.1\\text{ kg}$ mass is attached.\n3. **Effect on Position and Stability:** Due to the unbalanced moment and shifted centre of gravity, the picture frame tilts downwards on the weighted side until the new centre of gravity comes to rest vertically below the point of suspension.",
+      "model_answer": "1. **Disturbance of Equilibrium (Unbalanced Torque):** Initially, the picture frame is in static equilibrium because its centre of gravity lies vertically below the single suspension point. Hanging a $0.1\\text{ kg}$ object at one bottom corner introduces an additional downward weight ($W = mg = 1\\text{ N}$) at a distance from the line of action of tension, creating an unbalanced torque.\n2. **Shift in Centre of Gravity:** The combined centre of gravity of the frame-and-mass system shifts away from the geometric centre towards the corner where the $0.1\\text{ kg}$ mass is attached.\n3. **Effect on Position and Stability:** Due to the unbalanced moment and shifted centre of gravity, the picture frame tilts downwards on the weighted side until the new centre of gravity comes to rest vertically below the point of suspension.",
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P2_Q2.png",
+      "source": "AKU-EB SSC-I 2024 Annual Paper II Q.2"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "State the principle of moments and explain the two conditions required for a rigid body to remain in complete equilibrium.",
+      "marks": 4,
+      "slo_code": "4.4.2",
+      "answer": "Principle of moments: Sum of clockwise moments about a pivot equals sum of anticlockwise moments. Conditions of equilibrium: First condition \u03a3F = 0 (no linear acceleration); Second condition \u03a3\u03c4 = 0 (no angular acceleration).",
+      "source": "AKU-EB Syllabus 2025 Unit 4"
+    }
+  ],
+  "numericals": [
+    {
+      "question_number": "Q.2",
+      "problem": "A hanging picture frame is in a state of static equilibrium. The picture frame has a mass of $0.3\\text{ kg}$ and is suspended from a single point by a thin wire.\n\nIf a small object of $0.1\\text{ kg}$ is hung at any one corner from the bottom of the picture frame, then explain how the addition of the small object affects the balance of these forces and the stability of the picture frame.",
+      "slo_code": "4.4.4",
+      "formula": "",
+      "solution": "1. **Disturbance of Equilibrium (Unbalanced Torque):** Initially, the picture frame is in static equilibrium because its centre of gravity lies vertically below the single suspension point. Hanging a $0.1\\text{ kg}$ object at one bottom corner introduces an additional downward weight ($W = mg = 1\\text{ N}$) at a distance from the line of action of tension, creating an unbalanced torque.\n2. **Shift in Centre of Gravity:** The combined centre of gravity of the frame-and-mass system shifts away from the geometric centre towards the corner where the $0.1\\text{ kg}$ mass is attached.\n3. **Effect on Position and Stability:** Due to the unbalanced moment and shifted centre of gravity, the picture frame tilts downwards on the weighted side until the new centre of gravity comes to rest vertically below the point of suspension.",
+      "source": "2024 Annual Paper II (CRQ \u2022 3 Marks)"
+    },
+    {
+      "question_number": "Num.2",
+      "problem": "A uniform metre rule is pivoted at the 50 cm mark. A 4 N weight hangs at the 20 cm mark. Where should a 6 N weight be suspended to balance the rule horizontally?",
+      "slo_code": "4.2.2",
+      "formula": "F\u2081 \u00d7 d\u2081 = F\u2082 \u00d7 d\u2082",
+      "solution": "Anticlockwise moment = 4 N \u00d7 (50 - 20) cm = 120 N\u00b7cm. For balance, 6 N \u00d7 d\u2082 = 120 N\u00b7cm => d\u2082 = 20 cm to the right of pivot (at the 70 cm mark).",
+      "source": "Unit 4 Worked Numerical"
+    },
+    {
+      "question_number": "Num.3",
+      "problem": "If a force of $4\\text{ N}$ is applied by a student on a door handle and the moment of force is $16\\text{ Nm}$, then the distance of the pivot from the point of applied force is",
+      "slo_code": "4.1.3",
+      "formula": "",
+      "solution": "From $\\tau = F \\times d$, the moment arm (perpendicular distance from the pivot) is $d = \\frac{\\tau}{F} = \\frac{16\\text{ Nm}}{4\\text{ N}} = 4\\text{ m}$.",
+      "source": "Unit 4 Worked Numerical"
+    },
+    {
+      "question_number": "Num.4",
+      "problem": "If a force of $10\\text{ N}$ is acting on a body along the x-axis, then the value of this force acting on the y-axis will be",
+      "slo_code": "4.1.3",
+      "formula": "",
+      "solution": "A force acting purely along the x-axis has no component along the perpendicular y-axis ($F_y = F \\sin(0^{\\circ}) = 0\\text{ N}$).",
+      "source": "Unit 4 Worked Numerical"
+    }
+  ]
+}

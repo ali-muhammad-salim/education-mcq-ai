@@ -1,0 +1,382 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class IX",
+  "subject": "Physics",
+  "chapter": "Unit 8: Thermal Physics",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 8.1.1",
+      "definition": "state the basic assumptions of the kinetic theory of matter;",
+      "slo_code": "8.1.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 8.1.2",
+      "definition": "compare the structure of solids, liquids and gases based on the kinetic theory of matter;",
+      "slo_code": "8.1.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 8.1.3",
+      "definition": "describe plasma as the fourth state of matter;",
+      "slo_code": "8.1.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 8.1.4",
+      "definition": "state the relationship between the motion of particles and temperature;",
+      "slo_code": "8.1.4",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 8.1.5",
+      "definition": "discuss that an increase in the temperature of an object increases its internal energy;",
+      "slo_code": "8.1.5",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 8.2.1",
+      "definition": "describe the thermal expansion of solids in terms of: a. linear expansion, b. volumetric expansion;",
+      "slo_code": "8.2.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 8.2.10",
+      "definition": "describe factors that influence the rate of surface evaporation;",
+      "slo_code": "8.2.10",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 8.2.2",
+      "definition": "explain the thermal expansion of liquids as the: a. real expansion, b. apparent expansion;",
+      "slo_code": "8.2.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 8.2.3",
+      "definition": "define the terms 'heat capacity' and 'specific heat capacity';",
+      "slo_code": "8.2.3",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 8.2.4",
+      "definition": "describe latent heat of fusion and latent heat of vaporisation;",
+      "slo_code": "8.2.4",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 8.2.5",
+      "definition": "describe melting, solidification, boiling and condensation in terms of energy transfer without the change in temperature;",
+      "slo_code": "8.2.5",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 8.2.6",
+      "definition": "determine heat of fusion and heat of vaporisation of ice and water respectively by sketching a temperature-time graph;",
+      "slo_code": "8.2.6",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 8.2.7",
+      "definition": "solve word problems involving the concept of specific heat capacity, latent heat of fusion and vaporisation;",
+      "slo_code": "8.2.7",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 8.2.8",
+      "definition": "describe the process of evaporation and how it is different from boiling;",
+      "slo_code": "8.2.8",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 8.2.9",
+      "definition": "explain that evaporation causes cooling;",
+      "slo_code": "8.2.9",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 8.3.1",
+      "definition": "describe the Celsius, Fahrenheit, and Kelvin temperature scales and their relationships using fixed reference points;",
+      "slo_code": "8.3.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 8.3.2",
+      "definition": "convert temperature from one scale to another (Fahrenheit, Celsius and Kelvin scales);",
+      "slo_code": "8.3.2",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 8.3.3",
+      "definition": "explain that a physical property that varies with temperature can be used as a criteria to measure temperature;",
+      "slo_code": "8.3.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 8.3.4",
+      "definition": "illustrate the sensitivity, range and linearity of thermometers using diagram;",
+      "slo_code": "8.3.4",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 8.3.5",
+      "definition": "compare liquid in glass thermometer and thermo-couple on the bases of structure, sensitivity, range and linearity.",
+      "slo_code": "8.3.5",
+      "cognitive_level": "U"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "29",
+      "stem_text": "To push the liquid up in a straw, the air pressure inside the straw will",
+      "options": [
+        "A. increase.",
+        "B. decrease.",
+        "C. become zero.",
+        "D. remain constant."
+      ],
+      "correct_option": "B",
+      "explanation": "When sucking on a straw, air is removed from inside the straw, causing the air pressure inside the straw to decrease. The higher atmospheric pressure on the liquid's surface outside then pushes the liquid up into the straw.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "30",
+      "stem_text": "According to the kinetic molecular model of matter, the molecules of a substance",
+      "options": [
+        "A. are in the state of rest.",
+        "B. are in the state of motion.",
+        "C. have constant momentum.",
+        "D. have same velocity during collision."
+      ],
+      "correct_option": "B",
+      "explanation": "The kinetic molecular model states that matter is made up of particles that are constantly in random motion.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering"
+    },
+    {
+      "question_number": "30",
+      "stem_text": "As compared to sea level, the atmospheric pressure on mountains is",
+      "options": [
+        "A. equal.",
+        "B. lower.",
+        "C. higher.",
+        "D. unpredictable."
+      ],
+      "correct_option": "B",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "31",
+      "stem_text": "The height of Tarbela dam is 143 m.\n\nAssuming that the dam is filled with water and the density of water is $1000\\text{ kg/m}^3$. The value of acceleration due to gravity is $10\\text{ m/s}^2$, the pressure exerted by water at the base of the dam will be",
+      "options": [
+        "A. $1.43 \\times 10^4\\text{ Pa}$.",
+        "B. $1.43 \\times 10^5\\text{ Pa}$.",
+        "C. $1.43 \\times 10^6\\text{ Pa}$.",
+        "D. $1.43 \\times 10^7\\text{ Pa}$."
+      ],
+      "correct_option": "C",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "31",
+      "stem_text": "A parcel box of weight 500 N is placed on a table. If the area of the bottom of the box is measured as 0.50 m2, then the pressure exerted by the box on the table will be",
+      "options": [
+        "A. 250 Pa.",
+        "B. 499.5 Pa.",
+        "C. 500.5 Pa.",
+        "D. 1000 Pa."
+      ],
+      "correct_option": "D",
+      "explanation": "Pressure ($P$) = $\\text{Force} / \\text{Area} = 500\\text{ N} / 0.50\\text{ m}^2 = 1000\\text{ Pa}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "32",
+      "stem_text": "In a magic show, a performer lies down on a bed of nails without any injury. However, when the same performer steps on a single nail, it goes right through his foot. With reference to the given situation, which of the following statements is TRUE?",
+      "options": [
+        "A. The area is same in both the cases, but more force is applied on the bed of nails.",
+        "B. The force remains the same, but more pressure is applied on the bed of nails.",
+        "C. More force is exerted on a single nail than on the entire bed of nails.",
+        "D. Force increases, but less pressure is applied on the bed of nails."
+      ],
+      "correct_option": "C",
+      "explanation": "When lying on a bed of nails, the weight (force) of the performer is distributed over a large number of contact points (large area), resulting in small pressure per nail. When stepping on a single nail, the entire weight acts on a single tiny area, creating extremely high pressure.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "2024-Q28",
+      "stem_text": "According to the kinetic molecular theory of matter, the distance among the molecules of matter in the liquid state is",
+      "options": [
+        "A. equal to solid state.",
+        "B. more than solid state.",
+        "C. equal to gaseous state.",
+        "D. more than gaseous state."
+      ],
+      "correct_option": "B",
+      "explanation": "In a liquid, molecules are less tightly packed than in a solid (though much closer than in a gas), so the intermolecular spacing in a liquid is greater than in the solid state.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "8.1.2",
+      "original_slo": "7.1.1",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q33",
+      "stem_text": "The CORRECT relation between Celsius and Fahrenheit is",
+      "options": [
+        "A. $1^\\circ\\text{C} > 1^\\circ\\text{F}$.",
+        "B. $1^\\circ\\text{C} < -32^\\circ\\text{F}$.",
+        "C. $-32^\\circ\\text{C} > 1^\\circ\\text{F}$.",
+        "D. $32^\\circ\\text{C} < 32^\\circ\\text{F}$."
+      ],
+      "correct_option": "A",
+      "explanation": "Using $T_F = \\frac{9}{5}T_C + 32$, a temperature of $1^\\circ\\text{C}$ equals $33.8^\\circ\\text{F}$, which is much warmer than $1^\\circ\\text{F}$. Therefore, $1^\\circ\\text{C} > 1^\\circ\\text{F}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "8.3.2",
+      "original_slo": "8.2.2",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q34",
+      "stem_text": "The amount of heat energy required to change a substance from solid into liquid state at its melting point without any change in its temperature is known as",
+      "options": [
+        "A. heat capacity.",
+        "B. latent heat of fusion.",
+        "C. specific heat capacity.",
+        "D. latent heat of vapourisation."
+      ],
+      "correct_option": "B",
+      "explanation": "Latent heat of fusion is the thermal energy required to change a solid into a liquid at its melting point without any change in temperature.",
+      "marks": 1.0,
+      "cognitive_level": "Remembering",
+      "slo_code": "8.2.4",
+      "original_slo": "8.4.1",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q35",
+      "stem_text": "If the temperature of a substance is $20^\\circ\\text{C}$, then its temperature in Kelvin scale will be",
+      "options": [
+        "A. \u2013 253 K.",
+        "B. \u2013 6.66 K.",
+        "C. 68 K.",
+        "D. 293 K."
+      ],
+      "correct_option": "D",
+      "explanation": "Converting from Celsius to Kelvin uses $T(\\text{K}) = T(^\\circ\\text{C}) + 273 = 20 + 273 = 293\\text{ K}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "8.3.2",
+      "original_slo": "8.2.2",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q36",
+      "stem_text": "A metal cap on a glass bottle can easily be opened when hot water is poured over it. This is because",
+      "options": [
+        "A. metal and glass do not expand.",
+        "B. metal and glass expand equally.",
+        "C. metal expands less and glass expands more.",
+        "D. metal expands more and glass expands less."
+      ],
+      "correct_option": "D",
+      "explanation": "Metals have a higher coefficient of thermal expansion than glass. When hot water is poured over the bottle neck, the metal cap expands more than the glass, loosening its grip so it can be unscrewed easily.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "8.2.1",
+      "original_slo": "8.7.1",
+      "exam_year": 2024,
+      "diagram_url": null
+    }
+  ],
+  "crqs": [
+    {
+      "question": "Write any THREE differences between evaporation and boiling.",
+      "marks": 3,
+      "slo_code": "8.2.8",
+      "answer": "1. Evaporation occurs at any temperature, whereas boiling occurs only at the fixed boiling point. 2. Evaporation takes place only at the liquid surface, whereas boiling occurs throughout the liquid volume with bubble formation. 3. Evaporation causes cooling, whereas temperature remains constant during boiling.",
+      "source": "AKU-EB SSC-I 2025 Annual Paper II Q.4"
+    },
+    {
+      "question": "The temperature of a metal rim is increased before fixing it onto a wooden cartwheel. Give a scientific reason.",
+      "marks": 2,
+      "slo_code": "8.2.9",
+      "answer": "Heating causes thermal expansion of the metal rim, increasing its diameter so it slips easily over the wooden wheel; upon cooling, it contracts tightly onto the wheel.",
+      "source": "AKU-EB SSC-I Model Paper II Q.4"
+    },
+    {
+      "question_number": "2024-Q.4",
+      "question": "Describe in THREE points, how evaporation causes cooling.",
+      "question_text": "Describe in THREE points, how evaporation causes cooling.",
+      "marks": 3.0,
+      "slo_code": "8.2.9",
+      "original_slo": "8.6.3",
+      "cognitive_level": "Understanding",
+      "rubric": [
+        {
+          "marks": 1,
+          "description": "1 mark for stating that molecules in a liquid move with different kinetic energies and the higher-kinetic-energy molecules at the surface escape into the air."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for explaining that the departure of high-energy molecules lowers the average kinetic energy of the molecules left behind in the liquid."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for explaining that during evaporation, latent heat is absorbed from the remaining liquid and surroundings, lowering the temperature and causing cooling."
+        }
+      ],
+      "answer": "1. **Escape of High-Kinetic-Energy Molecules:** In any liquid, molecules are in continuous random motion with a range of kinetic energies. During evaporation, the fastest-moving molecules near the surface possess enough kinetic energy to overcome intermolecular attractive forces and escape as vapour.\n2. **Decrease in Average Kinetic Energy:** After the most energetic molecules escape, the molecules left behind in the liquid have a lower average kinetic energy.\n3. **Drop in Temperature and Heat Absorption:** Since the temperature of a liquid is directly proportional to the average kinetic energy of its molecules (and evaporating molecules absorb latent heat of vaporisation from the liquid and its surroundings), the temperature of the remaining liquid decreases, producing a cooling effect.",
+      "model_answer": "1. **Escape of High-Kinetic-Energy Molecules:** In any liquid, molecules are in continuous random motion with a range of kinetic energies. During evaporation, the fastest-moving molecules near the surface possess enough kinetic energy to overcome intermolecular attractive forces and escape as vapour.\n2. **Decrease in Average Kinetic Energy:** After the most energetic molecules escape, the molecules left behind in the liquid have a lower average kinetic energy.\n3. **Drop in Temperature and Heat Absorption:** Since the temperature of a liquid is directly proportional to the average kinetic energy of its molecules (and evaporating molecules absorb latent heat of vaporisation from the liquid and its surroundings), the temperature of the remaining liquid decreases, producing a cooling effect.",
+      "diagram_url": null,
+      "source": "AKU-EB SSC-I 2024 Annual Paper II Q.4"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "Explain the temperature\u2013time heating curve when crushed ice at -10\u00b0C is slowly heated until it turns into steam at 100\u00b0C, identifying why the temperature remains constant during melting and boiling.",
+      "marks": 5,
+      "slo_code": "8.2.5",
+      "answer": "During melting at 0\u00b0C (latent heat of fusion) and boiling at 100\u00b0C (latent heat of vaporisation), absorbed heat energy goes into overcoming intermolecular forces rather than increasing average translational kinetic energy, so temperature stays constant.",
+      "source": "AKU-EB SSC-I Sample Practical Paper III"
+    }
+  ],
+  "numericals": [
+    {
+      "question_number": "Num.1",
+      "problem": "Convert a temperature of 20\u00b0C into the Kelvin (K) and Fahrenheit (\u00b0F) scales.",
+      "slo_code": "8.3.3",
+      "formula": "T(K) = T(\u00b0C) + 273; T(\u00b0F) = 1.8 T(\u00b0C) + 32",
+      "solution": "T(K) = 20 + 273 = 293 K; T(\u00b0F) = (1.8 \u00d7 20) + 32 = 68\u00b0F.",
+      "source": "Unit 8 Worked Numerical"
+    },
+    {
+      "question_number": "Num.2",
+      "problem": "If the temperature of a substance is $20^\\circ\\text{C}$, then its temperature in Kelvin scale will be",
+      "slo_code": "8.3.2",
+      "formula": "",
+      "solution": "Converting from Celsius to Kelvin uses $T(\\text{K}) = T(^\\circ\\text{C}) + 273 = 20 + 273 = 293\\text{ K}$.",
+      "source": "Unit 8 Worked Numerical"
+    },
+    {
+      "question_number": "Num.3",
+      "problem": "If the temperature of a substance is 20\u00b0C, then its temperature in Kelvin scale will be",
+      "slo_code": "8.3.3",
+      "formula": "",
+      "solution": "$T(\\text{K}) = T(\u00b0\\text{C}) + 273 = 20 + 273 = 293\\text{ K}$.",
+      "source": "Unit 8 Worked Numerical"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "name": "mcqs-project",
+  "version": "1.0.0",
+  "description": "[![Architecture](https://img.shields.io/badge/Architecture-Hexagonal%20%2F%20Clean-blue.svg)](docs/ARCHITECTURE.md) [![Database](https://img.shields.io/badge/Database-PostgreSQL%20%2B%20pgvector-teal.svg)](docs/ARCHITECTURE.md#2-core-domain-data-model-postgresql--pgvector) [![AI Runtimes](https://img.shields.io/badge/AI%20Inference-Local%20(Ollama%20Qwen)%20%2F%20Cloud%20Agnostic-orange.svg)](docs/ARCHITECTURE.md#9-ai-provider-abstraction-layer-hexagonal-interfaces) [![Hardware](https://img.shields.io/badge/Workstation-RTX%204000%20Max--Q%20(8GB)-green.svg)](docs/ENVIRONMENT.md)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "node scripts/copy-pdf-runtime.cjs && next dev",
+    "build": "node scripts/copy-pdf-runtime.cjs && next build --webpack",
+    "start": "next start -H 0.0.0.0 -p 3000",
+    "postinstall": "prisma generate --generator client",
+    "db:push": "prisma db push",
+    "lint": "eslint app components lib repositories services tests scripts/*.ts",
+    "test": "vitest run",
+    "db:migrate": "prisma migrate deploy",
+    "typecheck": "tsc --noEmit --incremental false",
+    "worker": "tsx scripts/job-worker.ts",
+    "db:bootstrap-admin": "tsx scripts/bootstrap-admin.ts",
+    "db:archive-legacy": "tsx scripts/archive-legacy.ts",
+    "db:preflight": "tsx scripts/db-preflight.ts",
+    "db:rehearse": "node scripts/rehearse-migration.js",
+    "test:http": "node scripts/test_routes.js",
+    "check:readiness": "node scripts/check-readiness.cjs",
+    "test:load": "node scripts/load-assessment.cjs",
+    "test:deadline": "node scripts/test-deadline-worker.cjs",
+    "db:sync-materials": "tsx scripts/sync_all_analyzed_materials_to_db.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ali-muhammad-salim/education-mcq-ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ali-muhammad-salim/education-mcq-ai/issues"
+  },
+  "homepage": "https://github.com/ali-muhammad-salim/education-mcq-ai#readme",
+  "devDependencies": {
+    "@prisma/client": "^5.10.2",
+    "@types/katex": "^0.16.8",
+    "@types/node": "^26.6.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^10.13.0",
+    "prisma": "^5.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.0",
+    "vitest": "^4.1.11"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1152.0",
+    "katex": "^0.19.0",
+    "lucide-react": "^1.51.0",
+    "next": "16.4.1",
+    "pdfjs-dist": "^6.4.299",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tsx": "^4.23.15",
+    "zod": "^4.6.7"
+  }
+}

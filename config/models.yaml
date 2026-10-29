@@ -1,0 +1,160 @@
+# ============================================================================
+# Local AI Inference — Model Configuration
+#
+# Hardware context this was tuned for:
+#   GPU : Quadro RTX 4000 Max-Q  (8 GB VRAM, Compute 7.5)
+#   OS  : Windows 10
+#   RAM : system RAM used for CPU offload if needed
+#
+# VRAM budget breakdown:
+#   qwen3-4b   (Q4_K_M) ≈ 3.0 GB   ← text generation (primary fallback)
+#   qwen3-8b   (Q4_K_M) ≈ 5.0 GB   ← text generation (primary, loaded alone)
+#   qwen3-vl-2b (Q4_K_M) ≈ 2.5 GB  ← vision/OCR (loaded alone or with qwen3-4b)
+#   nomic-embed-text     ≈ 0.3 GB   ← embeddings (always resident)
+#
+# Concurrent loading policy (8 GB limit):
+#   qwen3-8b alone           → 5.0 GB   ✓ safe
+#   qwen3-vl-2b alone        → 2.5 GB   ✓ safe
+#   qwen3-vl-2b + qwen3-4b  → 5.5 GB   ✓ safe (sequential unload handled by router)
+#   qwen3-8b + qwen3-vl-2b  → 7.5 GB   ⚠ marginal — NOT loaded simultaneously
+# ============================================================================
+
+inference:
+  backend: ollama                    # ollama | llamacpp | transformers
+  base_url: "${OLLAMA_BASE_URL:-http://localhost:11434}"
+  timeout_seconds: 120
+  # Ollama keep_alive: set to 0 to immediately unload after inference,
+  # or a positive value (e.g. "5m") to keep in VRAM between calls.
+  default_keep_alive: "5m"
+  # Maximum VRAM allowed to be used before forcing model unload (MiB)
+  vram_limit_mib: 7500
+  # If free VRAM drops below this, trigger unload before loading a new model
+  vram_safety_margin_mib: 1024
+
+models:
+
+  # --------------------------------------------------------------------------
+  # OCR / Text Extraction
+  # Re-uses the text generator for confidence boosting; not a separate model.
+  # --------------------------------------------------------------------------
+  ocr:
+    role: ocr
+    # No dedicated model — PaddleOCR handles primary OCR.
+    # Vision model is called as fallback via the vision role.
+    model_name: null
+    provider: paddleocr
+    enabled: true
+    priority: 1
+
+  # --------------------------------------------------------------------------
+  # Vision / Image Understanding  (Qwen3-VL-2B-Instruct)
+  # Use cases: diagram analysis, image-based MCQs, low-confidence OCR regions,
+  # graph interpretation, formula visual context, table structure.
+  # --------------------------------------------------------------------------
+  vision:
+    role: vision
+    model_name: "qwen3-vl:2b-instruct-q4_K_M"     # Ollama model tag to pull
+    model_name_fallback: "qwen2.5-vl:3b-q4_K_M"   # fallback if primary unavailable
+    provider: ollama
+    quantization: Q4_K_M
+    context_length: 4096
+    temperature: 0.1          # low — we want factual extraction, not creativity
+    max_tokens: 1024
+    device: cuda
+    keep_alive: "0"           # unload immediately after inference (share VRAM budget)
+    enabled: true
+    priority: 2
+    # Vision model is NEVER loaded at the same time as generation model if
+    # combined VRAM would exceed vram_limit_mib.
+    exclusive_vram: true
+    # Prompt format
+    system_prompt: |
+      You are a precise educational document analysis assistant.
+      Extract only what is visibly present in the image. Do not invent content.
+      Respond in the exact JSON format requested.
+
+  # --------------------------------------------------------------------------
+  # Text Generation — Primary  (Qwen3-8B, Q4_K_M quantized)
+  # Use cases: structured question generation, answer explanation,
+  # content classification, text summarisation.
+  # Fits in 8 GB VRAM alone (~5 GB).  Cannot co-reside with vision model.
+  # --------------------------------------------------------------------------
+  generation:
+    role: generation
+    model_name: "qwen3:8b-q4_K_M"
+    model_name_fallback: "qwen3:4b-q4_K_M"        # ≈3 GB — fits with vision model
+    provider: ollama
+    quantization: Q4_K_M
+    context_length: 8192
+    temperature: 0.7
+    max_tokens: 2048
+    device: cuda
+    keep_alive: "5m"
+    enabled: true
+    priority: 3
+    exclusive_vram: true      # see vision note above
+    system_prompt: |
+      You are an expert educational content assistant.
+      Follow instructions precisely. Return valid JSON when requested.
+      Base all responses strictly on the provided context.
+
+  # --------------------------------------------------------------------------
+  # Text Generation — Fallback  (Qwen3-4B, Q4_K_M)
+  # Automatically used when:
+  #   - qwen3:8b is unavailable in Ollama
+  #   - vision model must be resident simultaneously
+  #   - user sets INFER_GENERATION_MODEL=qwen3:4b-q4_K_M
+  # --------------------------------------------------------------------------
+  generation_fallback:
+    role: generation_fallback
+    model_name: "qwen3:4b-q4_K_M"
+    provider: ollama
+    quantization: Q4_K_M
+    context_length: 8192
+    temperature: 0.7
+    max_tokens: 2048
+    device: cuda
+    keep_alive: "5m"
+    enabled: true
+    priority: 4
+    exclusive_vram: false     # can co-reside with vision model (3 GB + 2.5 GB = 5.5 GB)
+    system_prompt: |
+      You are an expert educational content assistant.
+      Follow instructions precisely. Return valid JSON when requested.
+
+  # --------------------------------------------------------------------------
+  # Embeddings  (nomic-embed-text)
+  # Small and resident — does not compete significantly for VRAM.
+  # Used for: semantic search, question deduplication, topic clustering.
+  # --------------------------------------------------------------------------
+  embeddings:
+    role: embeddings
+    model_name: "nomic-embed-text"
+    model_name_fallback: "mxbai-embed-large"
+    provider: ollama
+    quantization: F16
+    context_length: 8192
+    temperature: 0.0          # not applicable but kept for interface consistency
+    max_tokens: 0
+    device: cuda
+    keep_alive: "10m"         # kept resident — small footprint (~300 MB)
+    enabled: true
+    priority: 1
+    exclusive_vram: false
+
+# ============================================================================
+# Environment variable overrides
+# Any model_name can be overridden via env vars at runtime:
+#
+#   INFER_VISION_MODEL=qwen3-vl:7b-q4_K_M
+#   INFER_GENERATION_MODEL=qwen3:4b-q4_K_M
+#   INFER_EMBEDDINGS_MODEL=mxbai-embed-large
+#   OLLAMA_BASE_URL=http://gpu-server:11434
+#   INFER_VRAM_LIMIT_MIB=6144
+# ============================================================================
+env_overrides:
+  vision_model:     "${INFER_VISION_MODEL}"
+  generation_model: "${INFER_GENERATION_MODEL}"
+  fallback_model:   "${INFER_FALLBACK_MODEL}"
+  embeddings_model: "${INFER_EMBEDDINGS_MODEL}"
+  vram_limit_mib:   "${INFER_VRAM_LIMIT_MIB}"

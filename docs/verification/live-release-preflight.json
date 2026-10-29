@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-20T05:48:33.575Z",
+  "host": {
+    "vcpus": 4,
+    "memoryGiB": 8,
+    "databaseSharesHost": true
+  },
+  "liveSchema": {
+    "tables": [
+      "User",
+      "UserSession"
+    ],
+    "users": 12,
+    "postgres": "18.6",
+    "vectorAvailable": false
+  },
+  "backup": {
+    "format": "PostgreSQL custom",
+    "validatedArchive": true,
+    "restoredOnSameHost": true,
+    "restoredUsers": 12,
+    "privatePath": "/var/lib/postgresql/18/docker/release-backups/pre-hardening-20261020T054602Z.dump",
+    "rehearsalDatabase": "mcqs_release_test_20261020T054706Z"
+  },
+  "deployment": {
+    "autoDeployBranch": "main",
+    "applicationReplicas": 1,
+    "applicationVolumes": 0,
+    "workers": 0
+  },
+  "sourceSchemaChanged": false
+}

@@ -1,0 +1,526 @@
+{
+  "board": "Aga Khan University Examination Board",
+  "class_level": "Class IX",
+  "subject": "Physics",
+  "chapter": "Unit 3: Dynamics",
+  "definitions_and_laws": [
+    {
+      "term": "Learning Outcome 3.1.1",
+      "definition": "differentiate between mass and weight;",
+      "slo_code": "3.1.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 3.1.2",
+      "definition": "explain that the mass of an object resists changes from its state of rest or motion (inertia);",
+      "slo_code": "3.1.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 3.1.3",
+      "definition": "define gravitational field strength;",
+      "slo_code": "3.1.3",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 3.1.4",
+      "definition": "solve word problems using the relation w = mg;",
+      "slo_code": "3.1.4",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 3.2.1",
+      "definition": "describe the concept of force with its SI unit;",
+      "slo_code": "3.2.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 3.2.2",
+      "definition": "define contact and non-contact forces;",
+      "slo_code": "3.2.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 3.2.3",
+      "definition": "identify the following forces as contact and non-contact forces:\na. air resistance,\nb. drag force (push, pull),\nc. electrostatic force,\nd. force of friction,\ne. gravitational force,\nf. magnetic force,\ng. tension (elastic force),\nh. thrust (driving force);",
+      "slo_code": "3.2.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 3.2.4",
+      "definition": "state four fundamental forces of nature in terms of their relative strength;",
+      "slo_code": "3.2.4",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 3.2.5",
+      "definition": "mention the role of Pakistani scientists in proving the weak forces and the electromagnetic force are unified;",
+      "slo_code": "3.2.5",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 3.2.6",
+      "definition": "represent the forces acting on a body using a free-body diagram;",
+      "slo_code": "3.2.6",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 3.3.1",
+      "definition": "explain Newton\u2019s laws of motion;",
+      "slo_code": "3.3.1",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 3.3.2",
+      "definition": "state the limitations of Newton\u2019s laws of motion;",
+      "slo_code": "3.3.2",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 3.3.3",
+      "definition": "identify the effect of force on velocity of a body acting in the:\na. same direction,\nb. opposite direction,\nc. perpendicular direction;",
+      "slo_code": "3.3.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 3.3.4",
+      "definition": "determine the resultant of two or more forces acting along the same straight line;",
+      "slo_code": "3.3.4",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 3.3.5",
+      "definition": "identify those objects falling in the presence of a resistive force may reach a terminal (constant) velocity;",
+      "slo_code": "3.3.5",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 3.4.1",
+      "definition": "define momentum with its units;",
+      "slo_code": "3.4.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 3.4.2",
+      "definition": "explain the relationship between force and momentum;",
+      "slo_code": "3.4.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 3.4.3",
+      "definition": "describe impulse with examples;",
+      "slo_code": "3.4.3",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 3.4.4",
+      "definition": "solve word problems related to momentum and impulse;",
+      "slo_code": "3.4.4",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 3.4.5",
+      "definition": "state the law of conservation of momentum;",
+      "slo_code": "3.4.5",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 3.4.6",
+      "definition": "solve word problems using the law of conservation of momentum in one dimension;",
+      "slo_code": "3.4.6",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 3.4.7",
+      "definition": "apply scientific and engineering ideas to design a device that minimises the force on an object during a collision (e.g., helmet or parachute);",
+      "slo_code": "3.4.7",
+      "cognitive_level": "A"
+    },
+    {
+      "term": "Learning Outcome 3.5.1",
+      "definition": "define friction;",
+      "slo_code": "3.5.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 3.5.2",
+      "definition": "differentiate between rolling friction and sliding friction;",
+      "slo_code": "3.5.2",
+      "cognitive_level": "U"
+    },
+    {
+      "term": "Learning Outcome 3.5.3",
+      "definition": "list various methods to reduce friction;",
+      "slo_code": "3.5.3",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 3.6.1",
+      "definition": "define centripetal force;",
+      "slo_code": "3.6.1",
+      "cognitive_level": "R"
+    },
+    {
+      "term": "Learning Outcome 3.6.2",
+      "definition": "exemplify the sources of centripetal force during circular motion in terms of:\na. tension,\nb. frictional force,\nc. gravitational force.",
+      "slo_code": "3.6.2",
+      "cognitive_level": "U"
+    }
+  ],
+  "past_paper_mcqs": [
+    {
+      "question_number": "9",
+      "stem_text": "Consider the given speed-time graph. The speed of an object from point X to Y is",
+      "options": [
+        "A. decreasing.",
+        "B. increasing.",
+        "C. uniform.",
+        "D. zero."
+      ],
+      "correct_option": "C",
+      "explanation": "In a standard speed-time graph where the curve/line from X to Y is horizontal (parallel to the time axis), the speed remains constant (uniform).",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "9",
+      "stem_text": "A cricket ball is hit in such a way that it travels vertically upward.\\n\\nWhat will be its initial velocity, if it attains the maximum height in 3s?\\n\\n(Note: Take the value of acceleration due to gravity as 9.8 m/s^2.)",
+      "options": [
+        "A. 3.2 m/s.",
+        "B. 6.8 m/s.",
+        "C. 12.8 m/s.",
+        "D. 29.4 m/s."
+      ],
+      "correct_option": "D",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "10",
+      "stem_text": "A force of 100 N acts on an object for 10 s. If the velocity of the object is 50 m/s, then the amount of momentum in the object will be",
+      "options": [
+        "A. 10 Ns.",
+        "B. 50 Ns.",
+        "C. 100 Ns.",
+        "D. 1000 Ns."
+      ],
+      "correct_option": "D",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "10",
+      "stem_text": "A $36\\text{ N}$ force pulls a system of three masses ($4\\text{ kg}$, $6\\text{ kg}$, $8\\text{ kg}$) on a horizontal frictionless surface as shown in the given figure. The acceleration of this system of masses is",
+      "options": [
+        "A. $0.5\\text{ m/s}^2$.",
+        "B. $2\\text{ m/s}^2$.",
+        "C. $5\\text{ m/s}^2$.",
+        "D. $18\\text{ m/s}^2$."
+      ],
+      "correct_option": "B",
+      "explanation": "Total mass $m_{total} = 4\\text{ kg} + 6\\text{ kg} + 8\\text{ kg} = 18\\text{ kg}$. Acceleration $a = \\frac{F}{m_{total}} = \\frac{36\\text{ N}}{18\\text{ kg}} = 2\\text{ m/s}^2$.",
+      "marks": 1.0,
+      "cognitive_level": "Application"
+    },
+    {
+      "question_number": "11",
+      "stem_text": "An astronaut is sitting in a rocket on Earth which is ready to launch to the Moon. When the astronaut will reach the Moon, his/ her weight and mass would",
+      "options": [
+        "A. Weight: Increase | Mass: remain the same",
+        "B. Weight: remain the same | Mass: increase",
+        "C. Weight: Decrease | Mass: remain the same",
+        "D. Weight: remain the same | Mass: decrease"
+      ],
+      "correct_option": "C",
+      "explanation": "The gravity on the Moon is about 1/6th of Earth's gravity, so the astronaut's weight decreases, while mass (the amount of matter) remains constant.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding"
+    },
+    {
+      "question_number": "11",
+      "stem_text": "If a body is taken to the surface of the moon, then which of the following physical quantities of the body will change?",
+      "options": [
+        "A. Mass",
+        "B. Length",
+        "C. Weight",
+        "D. Density"
+      ],
+      "correct_option": "C",
+      "explanation": "Correct option according to the official board answer key.",
+      "marks": 1.0,
+      "cognitive_level": "Knowledge"
+    },
+    {
+      "question_number": "2024-Q10",
+      "stem_text": "Saif and Kaif are in a basketball match. During the game, Saif, holding the ball of mass $0.6\\text{ kg}$ running with a velocity of $3\\text{ m/s}$, collides with the defender, Kaif, who is at rest position, and both start moving together.\n\nThe type of collision and value of momentum of the ball will be\n(Note: Saif and Kaif both have equal weights.)\n\n| Option | Type of Collision | Momentum of the Ball |\n| :--- | :--- | :--- |\n| A | Elastic | $1.8\\text{ N}\\cdot\\text{s}$ |\n| B | Inelastic | $1.8\\text{ N}\\cdot\\text{s}$ |\n| C | Elastic | $0.2\\text{ N}\\cdot\\text{s}$ |\n| D | Inelastic | $0.2\\text{ N}\\cdot\\text{s}$ |",
+      "options": [
+        "A. Type of Collision: Elastic | Momentum of the Ball: 1.8 N.s",
+        "B. Type of Collision: Inelastic | Momentum of the Ball: 1.8 N.s",
+        "C. Type of Collision: Elastic | Momentum of the Ball: 0.2 N.s",
+        "D. Type of Collision: Inelastic | Momentum of the Ball: 0.2 N.s"
+      ],
+      "correct_option": "B",
+      "explanation": "Because the two players stick/move together after the collision, kinetic energy is not conserved and the collision is inelastic. The momentum of the basketball is $p = mv = 0.6\\text{ kg} \\times 3\\text{ m/s} = 1.8\\text{ N}\\cdot\\text{s}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "3.4.4",
+      "original_slo": "3.2.3",
+      "exam_year": 2024,
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P1_Q10.png"
+    },
+    {
+      "question_number": "2024-Q11",
+      "stem_text": "Which of the following options CORRECTLY depicts the effect of friction on the speed of an object while keeping the force constant?\n\n| Option | Friction | Speed |\n| :--- | :--- | :--- |\n| A | More | Less |\n| B | Unaffected | Less |\n| C | Less | More |\n| D | Less | Unaffected |",
+      "options": [
+        "A. Friction: More | Speed: Less",
+        "B. Friction: Unaffected | Speed: Less",
+        "C. Friction: Less | Speed: More",
+        "D. Friction: Less | Speed: Unaffected"
+      ],
+      "correct_option": "B",
+      "explanation": "Official 2024 answer key records B (with educator review note: physically, for a constant applied propelling force, higher friction reduces net force and speed [Option A], whereas lower friction increases speed [Option C]).",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "3.5.1",
+      "original_slo": "3.4.1",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q12",
+      "stem_text": "Two unequal masses are suspended with an inextensible string around a pulley as shown in the given diagram.\n(Note: Here masses are '$m$' and '$M$', such that '$m$' is less than '$M$'.)\nBased on the given diagram, the relationship between the magnitudes of the acceleration $a_1$ and $a_2$ is",
+      "options": [
+        "A. $a_1 = a_2 \\neq 0$",
+        "B. $a_1 > a_2$",
+        "C. $a_1 < a_2$",
+        "D. $a_1 = a_2 = 0$"
+      ],
+      "correct_option": "A",
+      "explanation": "Because the two unequal masses ($M > m$) are connected by an inextensible string over a frictionless pulley (Atwood machine), both masses move together with the exact same non-zero magnitude of acceleration: $a_1 = a_2 = \\frac{M - m}{M + m}g \\neq 0$.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "3.3.1",
+      "original_slo": "3.3.5",
+      "exam_year": 2024,
+      "diagram_url": "/extracted_diagrams/PHY-IX-2024-P1_Q12.png"
+    },
+    {
+      "question_number": "2024-Q13",
+      "stem_text": "During accidents, airbags in cars protect the passengers from hitting the dashboards by increasing the",
+      "options": [
+        "A. momentum.",
+        "B. acceleration.",
+        "C. time of contact.",
+        "D. impact of collision."
+      ],
+      "correct_option": "C",
+      "explanation": "From $F = \\frac{\\Delta p}{\\Delta t}$, an airbag cushions the passenger and increases the time of contact ($\\Delta t$) required to bring the passenger's momentum to zero, thereby reducing the average impact force.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "3.4.7",
+      "original_slo": "3.2.8",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q14",
+      "stem_text": "If the mass of an object is $0.7\\text{ kg}$, then its weight will be\n(Note: Take the value of acceleration due to gravity '$g$' as $10\\text{ m/s}^2$.)",
+      "options": [
+        "A. 0.07 N.",
+        "B. 0.7 N.",
+        "C. 7.0 N.",
+        "D. 70.0 N."
+      ],
+      "correct_option": "C",
+      "explanation": "Using $W = mg$, we have $W = 0.7\\text{ kg} \\times 10\\text{ m/s}^2 = 7.0\\text{ N}$.",
+      "marks": 1.0,
+      "cognitive_level": "Application",
+      "slo_code": "3.1.4",
+      "original_slo": "3.3.4",
+      "exam_year": 2024,
+      "diagram_url": null
+    },
+    {
+      "question_number": "2024-Q21",
+      "stem_text": "The weight is a force that results from the gravitational attraction between an object and the Earth. The direction of this force will be",
+      "options": [
+        "A. upward.",
+        "B. forward.",
+        "C. backward.",
+        "D. downward."
+      ],
+      "correct_option": "D",
+      "explanation": "Weight is the gravitational pull of the Earth on an object and always acts vertically downward towards the centre of the Earth.",
+      "marks": 1.0,
+      "cognitive_level": "Understanding",
+      "slo_code": "3.1.3",
+      "original_slo": "5.1.4",
+      "exam_year": 2024,
+      "diagram_url": null
+    }
+  ],
+  "crqs": [
+    {
+      "question": "Differentiate between rolling friction and sliding friction and explain why ball bearings are used in machinery.",
+      "marks": 3,
+      "slo_code": "3.5.2",
+      "answer": "Rolling friction is much smaller than sliding friction because rolling avoids interlocking of surface irregularities over a large sliding area. Ball bearings convert sliding friction into rolling friction.",
+      "source": "AKU-EB Syllabus 2025 Unit 3"
+    },
+    {
+      "question_number": "2024-Q.3",
+      "question": "An apple falls on Earth due to the Earth\u2019s attraction force. However, the Earth does not show movement towards the apple.\n\nDescribe the given phenomenon in TWO points.",
+      "question_text": "An apple falls on Earth due to the Earth\u2019s attraction force. However, the Earth does not show movement towards the apple.\n\nDescribe the given phenomenon in TWO points.",
+      "marks": 2.0,
+      "slo_code": "3.3.1",
+      "original_slo": "5.1.2",
+      "cognitive_level": "Understanding",
+      "rubric": [
+        {
+          "marks": 1,
+          "description": "1 mark for stating that by Newton's third law, the apple also exerts an equal and opposite gravitational attraction force on the Earth."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for explaining that because the Earth's mass (and inertia) is enormously larger than the apple's mass (a = F/m), the Earth's acceleration towards the apple is imperceptibly small."
+        }
+      ],
+      "answer": "1. **Equal and Opposite Gravitational Forces (Newton's Third Law):** According to Newton's third law of motion (and universal gravitation), the Earth attracts the apple downwards towards its centre with a gravitational force, and the apple simultaneously attracts the Earth upwards with an equal and opposite reaction force ($F_{\\text{Earth on apple}} = F_{\\text{apple on Earth}}$).\n2. **Effect of Mass and Inertia ($a = F/m$):** Because acceleration is inversely proportional to mass ($a = F/m$), the apple's very small mass experiences a large downward acceleration ($9.8\\text{ m/s}^2$), whereas the Earth's huge mass ($6 \\times 10^{24}\\text{ kg}$) and enormous inertia result in an imperceptibly small acceleration towards the apple.",
+      "model_answer": "1. **Equal and Opposite Gravitational Forces (Newton's Third Law):** According to Newton's third law of motion (and universal gravitation), the Earth attracts the apple downwards towards its centre with a gravitational force, and the apple simultaneously attracts the Earth upwards with an equal and opposite reaction force ($F_{\\text{Earth on apple}} = F_{\\text{apple on Earth}}$).\n2. **Effect of Mass and Inertia ($a = F/m$):** Because acceleration is inversely proportional to mass ($a = F/m$), the apple's very small mass experiences a large downward acceleration ($9.8\\text{ m/s}^2$), whereas the Earth's huge mass ($6 \\times 10^{24}\\text{ kg}$) and enormous inertia result in an imperceptibly small acceleration towards the apple.",
+      "diagram_url": null,
+      "source": "AKU-EB SSC-I 2024 Annual Paper II Q.3"
+    }
+  ],
+  "erqs": [
+    {
+      "question": "State and explain Newton's 2nd law of motion and prove that the rate of change of momentum is equal to the applied net force.",
+      "marks": 6,
+      "slo_code": "3.4.2",
+      "answer": "By Newton's 2nd law, F = ma. For a body of mass m changing velocity from v_i to v_f in time t, a = (v_f - v_i)/t. Substituting gives F = m(v_f - v_i)/t = (mv_f - mv_i)/t = (P_f - P_i)/t = \u0394P/\u0394t.",
+      "source": "AKU-EB SSC-I 2025 Annual Paper II Q.6(b)"
+    },
+    {
+      "question_number": "2024-Q.6.b",
+      "question": "A sports bicycle acquires a velocity of $25\\text{ m/s}$ from the state of rest when a force of $100\\text{ N}$ acts on it for $5\\text{ s}$. Find\ni. the mass of the bicycle. (4 Marks)\nii. the momentum of the bicycle after $5\\text{ s}$. (2 Marks)\n\n(Note: Extract data from the question and provide your answers in SI units.)",
+      "question_text": "A sports bicycle acquires a velocity of $25\\text{ m/s}$ from the state of rest when a force of $100\\text{ N}$ acts on it for $5\\text{ s}$. Find\ni. the mass of the bicycle. (4 Marks)\nii. the momentum of the bicycle after $5\\text{ s}$. (2 Marks)\n\n(Note: Extract data from the question and provide your answers in SI units.)",
+      "marks": 6.0,
+      "slo_code": "3.4.4",
+      "original_slo": "3.2.3",
+      "cognitive_level": "Application",
+      "rubric": [
+        {
+          "marks": 1,
+          "description": "1 mark for extracting and writing the correct given data (v_i = 0 m/s, v_f = 25 m/s, F = 100 N, t = 5 s)."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for finding the correct acceleration using a = (v_f - v_i)/t = (25 - 0)/5 = 5 m/s\u00b2."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for writing the correct formula for mass: m = F / a (from F = ma)."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for calculating mass with correct SI unit: m = 100 / 5 = 20 kg."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for writing the correct formula for momentum: P = m \u00d7 v_f (or P = F \u00d7 t)."
+        },
+        {
+          "marks": 1,
+          "description": "1 mark for calculating momentum with correct SI unit: P = 20 \u00d7 25 = 500 kg\u00b7m/s (or 500 N\u00b7s)."
+        }
+      ],
+      "answer": "**Given Data:**\nInitial velocity ($v_i$) = $0\\text{ m/s}$\nFinal velocity ($v_f$) = $25\\text{ m/s}$\nForce ($F$) = $100\\text{ N}$\nTime ($t$) = $5\\text{ s}$\n\n**(i) Mass of the bicycle ($m$):**\nFirst, find acceleration from the first equation of motion:\n$a = \\frac{v_f - v_i}{t} = \\frac{25 - 0}{5} = 5\\text{ m/s}^2$\nBy Newton's second law ($F = ma$):\n$m = \\frac{F}{a} = \\frac{100\\text{ N}}{5\\text{ m/s}^2} = 20\\text{ kg}$\n\n**(ii) Momentum of the bicycle after $5\\text{ s}$ ($P$):**\n$P = m \\times v_f = 20\\text{ kg} \\times 25\\text{ m/s} = 500\\text{ kg}\\cdot\\text{m/s}$ (or $500\\text{ N}\\cdot\\text{s}$).",
+      "model_answer": "**Given Data:**\nInitial velocity ($v_i$) = $0\\text{ m/s}$\nFinal velocity ($v_f$) = $25\\text{ m/s}$\nForce ($F$) = $100\\text{ N}$\nTime ($t$) = $5\\text{ s}$\n\n**(i) Mass of the bicycle ($m$):**\nFirst, find acceleration from the first equation of motion:\n$a = \\frac{v_f - v_i}{t} = \\frac{25 - 0}{5} = 5\\text{ m/s}^2$\nBy Newton's second law ($F = ma$):\n$m = \\frac{F}{a} = \\frac{100\\text{ N}}{5\\text{ m/s}^2} = 20\\text{ kg}$\n\n**(ii) Momentum of the bicycle after $5\\text{ s}$ ($P$):**\n$P = m \\times v_f = 20\\text{ kg} \\times 25\\text{ m/s} = 500\\text{ kg}\\cdot\\text{m/s}$ (or $500\\text{ N}\\cdot\\text{s}$).",
+      "diagram_url": null,
+      "source": "AKU-EB SSC-I 2024 Annual Paper II Q.6.b"
+    }
+  ],
+  "numericals": [
+    {
+      "question_number": "Q.6.b",
+      "problem": "A sports bicycle acquires a velocity of $25\\text{ m/s}$ from the state of rest when a force of $100\\text{ N}$ acts on it for $5\\text{ s}$. Find\ni. the mass of the bicycle. (4 Marks)\nii. the momentum of the bicycle after $5\\text{ s}$. (2 Marks)\n\n(Note: Extract data from the question and provide your answers in SI units.)",
+      "slo_code": "3.4.4",
+      "formula": "",
+      "solution": "**Given Data:**\nInitial velocity ($v_i$) = $0\\text{ m/s}$\nFinal velocity ($v_f$) = $25\\text{ m/s}$\nForce ($F$) = $100\\text{ N}$\nTime ($t$) = $5\\text{ s}$\n\n**(i) Mass of the bicycle ($m$):**\nFirst, find acceleration from the first equation of motion:\n$a = \\frac{v_f - v_i}{t} = \\frac{25 - 0}{5} = 5\\text{ m/s}^2$\nBy Newton's second law ($F = ma$):\n$m = \\frac{F}{a} = \\frac{100\\text{ N}}{5\\text{ m/s}^2} = 20\\text{ kg}$\n\n**(ii) Momentum of the bicycle after $5\\text{ s}$ ($P$):**\n$P = m \\times v_f = 20\\text{ kg} \\times 25\\text{ m/s} = 500\\text{ kg}\\cdot\\text{m/s}$ (or $500\\text{ N}\\cdot\\text{s}$).",
+      "source": "2024 Annual Paper II (ERQ \u2022 6 Marks)"
+    },
+    {
+      "question_number": "Q.6.b",
+      "problem": "State and explain Newton\u2019s 2nd law of motion and prove that the rate of change of momentum is equal to force.",
+      "slo_code": "3.4.2",
+      "formula": "",
+      "solution": "Statement: When a net force acts on a body, it produces acceleration in the direction of the force. The acceleration is directly proportional to the net force and inversely proportional to the mass of the body.\n\nExplanation and Proof:\nLet a body of mass '$m$' move with initial velocity '$v_i$'. Let a force '$F$' act on it for time '$t$' so that its velocity becomes '$v_f$' .\nInitial momentum ($P_i$) = $mv_i$\nFinal momentum ($P_f$) = $mv_f$\nChange in momentum = $P_f - P_i = mv_f - mv_i = m(v_f - v_i)$\nRate of change of momentum = $\\frac{m(v_f - v_i)}{t}$\nSince acceleration $a = \\frac{v_f - v_i}{t}$,\nRate of change of momentum = $ma$\nAccording to Newton's second law, $F = ma$.\nTherefore, $F = \\text{Rate of change of momentum}$.",
+      "source": "2025 Annual Paper II (ERQ \u2022 6 Marks)"
+    },
+    {
+      "question_number": "Q.3",
+      "problem": "The masses of the Earth and the Moon are 5.98 \\times 10^{24} kg and 7.35 \\times 10^{22} kg respectively. The distance between the Earth and the Moon is 3.84 \\times 10^8 m. The value of gravitational constant is 6.67 \\times 10^{-11} Nm^2/kg^2. With reference to the given information, calculate the gravitational force exerted by the Earth on the Moon.",
+      "slo_code": "3.2.3",
+      "formula": "",
+      "solution": "F = G \\times (m_1 \\times m_2) / r^2 = (6.67 \\times 10^{-11} \\times 5.98 \\times 10^{24} \\times 7.35 \\times 10^{22}) / (3.84 \\times 10^8)^2 \\approx 1.99 \\times 10^{20} N",
+      "source": "Class IX Model Paper II (CRQ \u2022 2 Marks)"
+    },
+    {
+      "question_number": "Q.6(b)(i)",
+      "problem": "Find the momentum of the sports bike at the speed of 140 km/h.",
+      "slo_code": "3.4.1",
+      "formula": "",
+      "solution": "Mass of bike (m) = 325 kg, Velocity (v) = 140 km/h = 140 \\times 1000 / 3600 = 38.89 m/s. Momentum P = m \\times v = 325 \\times 38.89 = 12639.25 kg m/s.",
+      "source": "Class IX Model Paper II (CRQ \u2022 3 Marks)"
+    },
+    {
+      "question_number": "Num.5",
+      "problem": "How much centripetal force is needed to move a body of mass 10 kg in a circle of radius 20 m with a speed of 3 m/s?",
+      "slo_code": "3.6.2",
+      "formula": "F_c = mv\u00b2 / r",
+      "solution": "F_c = (10 kg \u00d7 (3 m/s)\u00b2) / 20 m = 90 / 20 = 4.5 N.",
+      "source": "Unit 3 Worked Numerical"
+    },
+    {
+      "question_number": "Num.6",
+      "problem": "Saif and Kaif are in a basketball match. During the game, Saif, holding the ball of mass $0.6\\text{ kg}$ running with a velocity of $3\\text{ m/s}$, collides with the defender, Kaif, who is at rest position, and both start moving together.\n\nThe type of collision and value of momentum of the ball will be\n(Note: Saif and Kaif both have equal weights.)\n\n| Option | Type of Collision | Momentum of the Ball |\n| :--- | :--- | :--- |\n| A | Elastic | $1.8\\text{ N}\\cdot\\text{s}$ |\n| B | Inelastic | $1.8\\text{ N}\\cdot\\text{s}$ |\n| C | Elastic | $0.2\\text{ N}\\cdot\\text{s}$ |\n| D | Inelastic | $0.2\\text{ N}\\cdot\\text{s}$ |",
+      "slo_code": "3.4.4",
+      "formula": "",
+      "solution": "Because the two players stick/move together after the collision, kinetic energy is not conserved and the collision is inelastic. The momentum of the basketball is $p = mv = 0.6\\text{ kg} \\times 3\\text{ m/s} = 1.8\\text{ N}\\cdot\\text{s}$.",
+      "source": "Unit 3 Worked Numerical"
+    },
+    {
+      "question_number": "Num.7",
+      "problem": "If the mass of an object is $0.7\\text{ kg}$, then its weight will be\n(Note: Take the value of acceleration due to gravity '$g$' as $10\\text{ m/s}^2$.)",
+      "slo_code": "3.1.4",
+      "formula": "",
+      "solution": "Using $W = mg$, we have $W = 0.7\\text{ kg} \\times 10\\text{ m/s}^2 = 7.0\\text{ N}$.",
+      "source": "Unit 3 Worked Numerical"
+    },
+    {
+      "question_number": "Num.8",
+      "problem": "A $36\\text{ N}$ force pulls a system of three masses ($4\\text{ kg}$, $6\\text{ kg}$, $8\\text{ kg}$) on a horizontal frictionless surface as shown in the given figure. The acceleration of this system of masses is",
+      "slo_code": "3.3.3",
+      "formula": "",
+      "solution": "Total mass $m_{total} = 4\\text{ kg} + 6\\text{ kg} + 8\\text{ kg} = 18\\text{ kg}$. Acceleration $a = \\frac{F}{m_{total}} = \\frac{36\\text{ N}}{18\\text{ kg}} = 2\\text{ m/s}^2$.",
+      "source": "Unit 3 Worked Numerical"
+    },
+    {
+      "question_number": "Num.9",
+      "problem": "How much centripetal force is needed to move a body of mass $10\\text{ kg}$ in a circle of radius $20\\text{ m}$ with a speed of $3\\text{ m/s}$?",
+      "slo_code": "3.6.2",
+      "formula": "",
+      "solution": "Centripetal force $F_c = \\frac{m v^2}{r} = \\frac{10 \\times (3)^2}{20} = \\frac{10 \\times 9}{20} = 4.5\\text{ N}$.",
+      "source": "Unit 3 Worked Numerical"
+    },
+    {
+      "question_number": "Num.10",
+      "problem": "If a body of mass $10\\text{ kg}$ is placed on the surface of the Earth, then the pull of the Earth on the body will be\n(Note: The value of acceleration due to gravity is $9.8\\text{ m/s}^2$.)",
+      "slo_code": "3.1.4",
+      "formula": "",
+      "solution": "The pull of Earth on a body is its weight $W = mg = 10\\text{ kg} \\times 9.8\\text{ m/s}^2 = 98\\text{ N}$.",
+      "source": "Unit 3 Worked Numerical"
+    }
+  ]
+}

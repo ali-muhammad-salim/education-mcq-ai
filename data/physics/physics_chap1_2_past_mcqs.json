@@ -1,0 +1,978 @@
+[
+  {
+    "questionNumber": "1",
+    "examYear": 2024,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The total number of significant figures in 0.002022 are",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "6",
+      "D": "7"
+    },
+    "correctOption": "B",
+    "explanation": "In 0.002022, leading zeros (0.00) are place-holders and not significant. All non-zero digits and zeros between non-zero digits (2, 0, 2, 2) are significant. Hence, there are exactly 4 significant figures.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.3.1"
+  },
+  {
+    "questionNumber": "2",
+    "examYear": 2024,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The number 0.0000509 can be represented in scientific notation as",
+    "options": {
+      "A": "5.09 \\times 10^5",
+      "B": "5.09 \\times 10^3",
+      "C": "5.09 \\times 10^{-3}",
+      "D": "5.09 \\times 10^{-5}"
+    },
+    "correctOption": "D",
+    "explanation": "In standard scientific notation, moving the decimal point 5 places to the right gives 5.09 with a negative power of ten: 5.09 \\times 10^{-5}.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.3.2"
+  },
+  {
+    "questionNumber": "3",
+    "examYear": 2024,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "If the volume of the given cuboid is 0.03 m³, then the value of x will be (2015)",
+    "options": {
+      "A": "0.1 m.",
+      "B": "0.2 m.",
+      "C": "0.3 m.",
+      "D": "0.5 m."
+    },
+    "correctOption": "C",
+    "explanation": "Volume = length × width × height = 0.5 m × 0.2 m × x = 0.10x. Given Volume = 0.03 m³, we have 0.10x = 0.03 ⇒ x = 0.03 / 0.10 = 0.3 m.",
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/chap1_2/cuboid.svg",
+    "marks": 1.0,
+    "slo": "1.5.1"
+  },
+  {
+    "questionNumber": "4",
+    "examYear": 2024,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "The given graph depicts that a person is walking along a straight road. Which of the following options CORRECTLY describes the motion of the person from point X to Y?",
+    "options": {
+      "A": "The person is moving towards the starting point at a constant speed.",
+      "B": "The person is moving towards the starting point with a variable speed.",
+      "C": "The person is moving away from the starting point at a constant speed.",
+      "D": "The person is moving away from the starting point with a variable speed."
+    },
+    "correctOption": "A",
+    "explanation": "From point X to Y on the distance-time graph, the graph is a straight sloping line returning to distance = 0 (the starting point). A straight line indicates a constant gradient (constant speed) directed back to the origin.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/chap1_2/distance_time_graph_xy.svg",
+    "marks": 1.0,
+    "slo": "2.4.1"
+  },
+  {
+    "questionNumber": "5",
+    "examYear": 2024,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "A force of 10 N is acting on a body along x-axis. The value of its y-component will be",
+    "options": {
+      "A": "0 N.",
+      "B": "5 N.",
+      "C": "10 N.",
+      "D": "20 N."
+    },
+    "correctOption": "A",
+    "explanation": "When a vector lies purely along the x-axis, its angle with the x-axis is 0°. The vertical component is Fy = F sin(0°) = 10 N × 0 = 0 N.",
+    "cognitiveLevel": "K",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.3.2"
+  },
+  {
+    "questionNumber": "6",
+    "examYear": 2024,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "A body starts from rest and accelerates to a velocity of 100 m/s. If it covers a distance of 50 m, then its acceleration will be",
+    "options": {
+      "A": "1 m/s².",
+      "B": "2 m/s².",
+      "C": "100 m/s².",
+      "D": "200 m/s²."
+    },
+    "correctOption": "C",
+    "explanation": "Using the 3rd equation of motion: 2as = vf² - vi². Here vi = 0 m/s, vf = 100 m/s, and s = 50 m. Therefore: 2 × a × 50 = (100)² - 0 ⇒ 100a = 10,000 ⇒ a = 100 m/s².",
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.5.3"
+  },
+  {
+    "questionNumber": "7",
+    "examYear": 2024,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "The below given picture shows the velocity-time graph for the motion of a body. The slope of the line segment WX in the above graph shows the (2015)",
+    "options": {
+      "A": "acceleration.",
+      "B": "displacement of the body.",
+      "C": "total distance covered by the body.",
+      "D": "total time taken for the motion of the body."
+    },
+    "correctOption": "A",
+    "explanation": "The slope (gradient) of a velocity-time graph represents the rate of change of velocity, which is acceleration (a = Δv/Δt). The area under the graph represents displacement.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/chap1_2/velocity_time_graph_wx.svg",
+    "marks": 1.0,
+    "slo": "2.4.2"
+  },
+  {
+    "questionNumber": "8",
+    "examYear": 2024,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "If a motorcyclist covers a displacement of 150 m in 10 s, then his/ her velocity will be",
+    "options": {
+      "A": "15 m/s.",
+      "B": "140 m/s.",
+      "C": "160 m/s.",
+      "D": "1500 m/s"
+    },
+    "correctOption": "A",
+    "explanation": "Velocity is the displacement covered per unit time: v = s / t = 150 m / 10 s = 15 m/s.",
+    "cognitiveLevel": "K",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.2.3"
+  },
+  {
+    "questionNumber": "9",
+    "examYear": 2023,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The number 123.4 can be written in scientific notation as",
+    "options": {
+      "A": "1.234 \\times 10^{-2}",
+      "B": "12.34 \\times 10^1",
+      "C": "1.234 \\times 10^2",
+      "D": "0.1234 \\times 10^3"
+    },
+    "correctOption": "C",
+    "explanation": "In standard scientific notation, one non-zero digit precedes the decimal point. Shifting the decimal point two places to the left gives 1.234 \\times 10^2.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.3.2"
+  },
+  {
+    "questionNumber": "10",
+    "examYear": 2023,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "Candela is the S.I. unit of",
+    "options": {
+      "A": "luminous intensity.",
+      "B": "amount of a substance.",
+      "C": "temperature of an object.",
+      "D": "electric current in a circuit."
+    },
+    "correctOption": "A",
+    "explanation": "In the International System of Units (SI), candela (cd) is the base unit of luminous intensity. (Amount of substance is mole, temperature is kelvin, electric current is ampere).",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.2.1"
+  },
+  {
+    "questionNumber": "11",
+    "examYear": 2023,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The sum of 8.2 \\times 10^4 and 4 \\times 10^6 in scientific notation is",
+    "options": {
+      "A": "4.08 \\times 10^6",
+      "B": "4.08 \\times 10^{10}",
+      "C": "12.2 \\times 10^6",
+      "D": "12.2 \\times 10^{10}"
+    },
+    "correctOption": "A",
+    "explanation": "Express both numbers with the same power of 10: 8.2 \\times 10^4 = 0.082 \\times 10^6. Adding them gives: (0.082 + 4.0) \\times 10^6 = 4.082 \\times 10^6 ≈ 4.08 \\times 10^6.",
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.3.2"
+  },
+  {
+    "questionNumber": "12",
+    "examYear": 2023,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "A 4 kg school bag is being carried by a student. The mass of the bag in grams (g) is equal to",
+    "options": {
+      "A": "4 \\times 10^{-3} g.",
+      "B": "4 \\times 10^{-2} g.",
+      "C": "4 \\times 10^2 g.",
+      "D": "4 \\times 10^3 g."
+    },
+    "correctOption": "D",
+    "explanation": "1 kg = 1000 g = 10³ g. Therefore, 4 kg = 4 × 10³ g.",
+    "cognitiveLevel": "K",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.2.3"
+  },
+  {
+    "questionNumber": "13",
+    "examYear": 2023,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The S.I. unit that represents a vector quantity is",
+    "options": {
+      "A": "A",
+      "B": "K",
+      "C": "m³",
+      "D": "m/s²"
+    },
+    "correctOption": "D",
+    "explanation": "A (ampere) = electric current (scalar), K (kelvin) = temperature (scalar), m³ = volume (scalar), and m/s² = acceleration, which is a vector quantity having both magnitude and direction.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.1.2"
+  },
+  {
+    "questionNumber": "14",
+    "examYear": 2023,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "If two forces of 3 N and 4 N are perpendicular to each other, then the magnitude of their resultant force will be",
+    "options": {
+      "A": "7 N.",
+      "B": "5 N.",
+      "C": "7 N.",
+      "D": "25 N."
+    },
+    "correctOption": "B",
+    "explanation": "For two perpendicular vectors at 90°, the resultant magnitude is R = √(F₁² + F₂²) = √(3² + 4²) = √(9 + 16) = √25 = 5 N.",
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.3.1"
+  },
+  {
+    "questionNumber": "15",
+    "examYear": 2023,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "In a mountainous region where land sliding is common, a piece of rock suddenly falls from a certain height and strikes the ground in 3 s. The distance that this piece of rock covers to reach the ground is (Note: The value of acceleration due to gravity is 9.8 m/s².)",
+    "options": {
+      "A": "14.7 m.",
+      "B": "44.1 m.",
+      "C": "88.2 m.",
+      "D": "176.4 m."
+    },
+    "correctOption": "B",
+    "explanation": "Since the rock falls freely from rest, initial velocity vi = 0 m/s, time t = 3 s, and g = 9.8 m/s². Using h = vit + ½gt²: h = 0 + ½(9.8)(3)² = 4.9 × 9 = 44.1 m.",
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.6.2"
+  },
+  {
+    "questionNumber": "16",
+    "examYear": 2023,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "The given table shows the distance covered by a car in four different segments.\nSegment I: 0-10 m\nSegment II: 11-22 m\nSegment III: 23-35 m\nSegment IV: 36-49 m\nIf the car takes same interval of time to cover all four segments, then the car",
+    "options": {
+      "A": "is accelerating.",
+      "B": "is decelerating.",
+      "C": "has uniform velocity.",
+      "D": "comes to rest after each segment."
+    },
+    "correctOption": "A",
+    "explanation": "Distance covered in each equal time interval:\nSegment I = 10 m\nSegment II = 11 m\nSegment III = 12 m\nSegment IV = 13 m\nSince the distance covered in successive equal time intervals is increasing, speed is increasing over time, which means the car is accelerating.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.2.4"
+  },
+  {
+    "questionNumber": "17",
+    "examYear": 2023,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "The physical quantity that is measured in metre per second (m/s) is",
+    "options": {
+      "A": "time.",
+      "B": "velocity.",
+      "C": "distance.",
+      "D": "acceleration"
+    },
+    "correctOption": "B",
+    "explanation": "Metre per second (m/s) is the SI derived unit of speed and velocity. (Time is s, distance is m, and acceleration is m/s²).",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.2.1"
+  },
+  {
+    "questionNumber": "18",
+    "examYear": 2022,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The scientific notation of 0.00002019 is",
+    "options": {
+      "A": "2.019 \\times 10^{-5}",
+      "B": "2.019 \\times 10^{-4}",
+      "C": "2.019 \\times 10^4",
+      "D": "2.019 \\times 10^5"
+    },
+    "correctOption": "A",
+    "explanation": "Moving the decimal point 5 places to the right yields 2.019 \\times 10^{-5}.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.3.2"
+  },
+  {
+    "questionNumber": "19",
+    "examYear": 2022,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The total number of significant figures in 2030 is",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "6"
+    },
+    "correctOption": "B",
+    "explanation": "In 2030, without a trailing decimal point, the trailing zero is not significant; only digits 2, 0, and 3 are significant, yielding 3 significant figures.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.3.1"
+  },
+  {
+    "questionNumber": "20",
+    "examYear": 2022,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The instrument used to measure the length of a solid cylinder is called a",
+    "options": {
+      "A": "screw gauge.",
+      "B": "physical balance.",
+      "C": "Vernier callipers.",
+      "D": "measuring cylinder."
+    },
+    "correctOption": "C",
+    "explanation": "Vernier callipers are used to accurately measure dimensions of solid cylinders such as length and external diameter up to 0.1 mm precision.",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.5.2"
+  },
+  {
+    "questionNumber": "21",
+    "examYear": 2022,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "Which of the following physical quantities is obtained by the formula change in velocity/time interval?",
+    "options": {
+      "A": "Speed",
+      "B": "Distance",
+      "C": "Acceleration",
+      "D": "Displacement"
+    },
+    "correctOption": "C",
+    "explanation": "Acceleration is defined as the time rate of change of velocity: a = Δv / Δt.",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.2.4"
+  },
+  {
+    "questionNumber": "22",
+    "examYear": 2022,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "If a tractor starts from rest in a field, reaching its maximum velocity of 5 m/s in 10 s, then the acceleration of the tractor will be",
+    "options": {
+      "A": "0.5 m/s².",
+      "B": "2 m/s².",
+      "C": "5 m/s².",
+      "D": "15 m/s²."
+    },
+    "correctOption": "A",
+    "explanation": "Given vi = 0 m/s, vf = 5 m/s, and t = 10 s. Acceleration a = (vf - vi) / t = (5 - 0) / 10 = 0.5 m/s².",
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.5.1"
+  },
+  {
+    "questionNumber": "23",
+    "examYear": 2022,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "A distance-time graph of a moving object is given below. With reference to the given graph, the distance covered during 10 to 12 hrs is",
+    "options": {
+      "A": "0 km.",
+      "B": "4 km.",
+      "C": "5 km.",
+      "D": "10 km."
+    },
+    "correctOption": "A",
+    "explanation": "From t = 10 hrs to t = 12 hrs, the graph is horizontal at distance = 10 km, meaning the object is stationary and the distance covered is 10 km - 10 km = 0 km.",
+    "cognitiveLevel": "U",
+    "isNumerical": true,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/chap1_2/distance_time_graph_10_12.svg",
+    "marks": 1.0,
+    "slo": "2.4.1"
+  },
+  {
+    "questionNumber": "24",
+    "examYear": 2022,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "The value of acceleration due to gravity ‘g’ is considered to be constant (9.8 m/s²) for",
+    "options": {
+      "A": "the Mars orbiting the Sun.",
+      "B": "a rocket launched in the air.",
+      "C": "an object in free fall motion.",
+      "D": "a car moving on a straight road"
+    },
+    "correctOption": "C",
+    "explanation": "Near Earth's surface, freely falling bodies in the absence of air resistance experience a constant acceleration due to gravity g = 9.8 m/s² towards Earth's centre.",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.6.1"
+  },
+  {
+    "questionNumber": "25",
+    "examYear": 2021,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "If 1.76 cm³ is the volume of one cube, then the volume of twenty-one such cubes rounded off to three significant figures is",
+    "options": {
+      "A": "36.0 cm³.",
+      "B": "36.9 cm³.",
+      "C": "36.96 cm³.",
+      "D": "37.0 cm³."
+    },
+    "correctOption": "D",
+    "explanation": "Total volume = 21 × 1.76 cm³ = 36.96 cm³. Rounding to 3 significant figures: the 4th digit is 6 (≥ 5), which rounds 9 up to 10, giving 37.0 cm³.",
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.3.1"
+  },
+  {
+    "questionNumber": "26",
+    "examYear": 2021,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The number 123.4 can also be written in scientific notation as",
+    "options": {
+      "A": "0.1234 \\times 10^3",
+      "B": "1.234 \\times 10^{-2}",
+      "C": "1.234 \\times 10^2",
+      "D": "12.34 \\times 10^1"
+    },
+    "correctOption": "C",
+    "explanation": "Standard scientific notation requires exactly one non-zero digit before the decimal point: 1.234 \\times 10^2.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.3.2"
+  },
+  {
+    "questionNumber": "27",
+    "examYear": 2021,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The prefix used for the multiple value of 10⁻⁹ is",
+    "options": {
+      "A": "atto.",
+      "B": "pico.",
+      "C": "nano.",
+      "D": "femto."
+    },
+    "correctOption": "C",
+    "explanation": "10⁻⁹ is represented by the SI prefix 'nano' (n). (atto is 10⁻¹⁸, femto is 10⁻¹⁵, pico is 10⁻¹²).",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.2.3"
+  },
+  {
+    "questionNumber": "28",
+    "examYear": 2021,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "All of the following are the scalar quantities EXCEPT",
+    "options": {
+      "A": "time.",
+      "B": "mass.",
+      "C": "distance.",
+      "D": "velocity."
+    },
+    "correctOption": "D",
+    "explanation": "Time, mass, and distance are scalar quantities described completely by magnitude alone. Velocity has both magnitude and direction, making it a vector quantity.",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.1.1"
+  },
+  {
+    "questionNumber": "29",
+    "examYear": 2021,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "The moving blades of an electric fan exemplifies",
+    "options": {
+      "A": "circular motion.",
+      "B": "rotatory motion.",
+      "C": "vibratory motion.",
+      "D": "translatory motion."
+    },
+    "correctOption": "B",
+    "explanation": "Rotatory motion is the spinning motion of a rigid body about a fixed axis passing through it. The blades of an electric fan rotate about its central axis.",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.1.3"
+  },
+  {
+    "questionNumber": "30",
+    "examYear": 2021,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "The given table shows the distance covered by a car in four different segments.\nSegment I: 0-10 m\nSegment II: 11-22 m\nSegment III: 23-35 m\nSegment IV: 36-49 m\nIf the car takes same interval of time to cover all four segments, then the car",
+    "options": {
+      "A": "is accelerating.",
+      "B": "is decelerating.",
+      "C": "has uniform velocity.",
+      "D": "comes to rest after each segment."
+    },
+    "correctOption": "A",
+    "explanation": "The distance increments are 10 m, 11 m, 12 m, 13 m in equal time intervals. Since distance covered per unit time is increasing, velocity is increasing, which means the car is accelerating.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.2.4"
+  },
+  {
+    "questionNumber": "31",
+    "examYear": 2021,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "A force of 10 N is acting on a body along x-axis. The value of its y-component will be",
+    "options": {
+      "A": "0 N.",
+      "B": "5 N.",
+      "C": "10 N.",
+      "D": "20 N."
+    },
+    "correctOption": "A",
+    "explanation": "Because the vector lies entirely along the horizontal x-axis, its perpendicular component along the vertical y-axis is Fy = F sin(0°) = 0 N.",
+    "cognitiveLevel": "K",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.3.2"
+  },
+  {
+    "questionNumber": "32",
+    "examYear": 2021,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "If two forces of 3 N and 4 N are acting at a point, perpendicular to each other, then their resultant force will be",
+    "options": {
+      "A": "5 N.",
+      "B": "7 N.",
+      "C": "25 N.",
+      "D": "7 N."
+    },
+    "correctOption": "A",
+    "explanation": "By vector addition: R = √(3² + 4²) = √(9 + 16) = √25 = 5 N.",
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.3.1"
+  },
+  {
+    "questionNumber": "33",
+    "examYear": 2019,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "Consider the given speed-time graph. The speed of an object from point X to Y is",
+    "options": {
+      "A": "decreasing.",
+      "B": "increasing.",
+      "C": "uniform.",
+      "D": "zero"
+    },
+    "correctOption": "C",
+    "explanation": "On a speed-time graph, a horizontal straight line parallel to the time axis indicates constant speed over time (uniform speed).",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/chap1_2/speed_time_graph_xy.svg",
+    "marks": 1.0,
+    "slo": "2.4.2"
+  },
+  {
+    "questionNumber": "34",
+    "examYear": 2019,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "An athlete runs around a circular track of radius 50 m and finishes at the same point where he began his journey. His total displacement in metre(s) is evaluated to be",
+    "options": {
+      "A": "0",
+      "B": "2 \\pi r^2",
+      "C": "2\\pi",
+      "D": "100\\pi"
+    },
+    "correctOption": "A",
+    "explanation": "Displacement is the vector connecting the starting position to the final position. Since the athlete returns to the exact starting point, displacement = 0 m.",
+    "cognitiveLevel": "K",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.1.2"
+  },
+  {
+    "questionNumber": "35",
+    "examYear": 2019,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "A boy starts his travelling from a point P and ends at point S. The magnitude of displacement from point P to S is",
+    "options": {
+      "A": "3 m.",
+      "B": "5 m.",
+      "C": "8 m.",
+      "D": "13 m."
+    },
+    "correctOption": "A",
+    "explanation": "The boy travels P(0,0) → Q(5,0) → R(5,3) → S(0,3). The net displacement from P(0,0) to S(0,3) is the straight-line distance along the y-axis, which is 3 m.",
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/chap1_2/displacement_path_ps.svg",
+    "marks": 1.0,
+    "slo": "2.1.2"
+  },
+  {
+    "questionNumber": "36",
+    "examYear": 2018,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "In 0.020180, the total numbers of significant figures are",
+    "options": {
+      "A": "four.",
+      "B": "five.",
+      "C": "six.",
+      "D": "seven."
+    },
+    "correctOption": "B",
+    "explanation": "In 0.020180, the leading zeros (0.0) are not significant. Digits 2, 0, 1, 8 and the final trailing zero 0 are all significant, giving a total of 5 significant figures.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.3.1"
+  },
+  {
+    "questionNumber": "37",
+    "examYear": 2018,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "The type of motion that takes place in a simple pendulum is",
+    "options": {
+      "A": "linear.",
+      "B": "circular.",
+      "C": "random.",
+      "D": "vibratory."
+    },
+    "correctOption": "D",
+    "explanation": "The back-and-forth oscillation of the bob of a simple pendulum about its central equilibrium position is classic vibratory (oscillatory) motion.",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.1.3"
+  },
+  {
+    "questionNumber": "38",
+    "examYear": 2018,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "Which of the following is a vector quantity?",
+    "options": {
+      "A": "Time",
+      "B": "Mass",
+      "C": "Distance",
+      "D": "Velocity"
+    },
+    "correctOption": "D",
+    "explanation": "Velocity is a vector quantity possessing both magnitude and spatial direction. Time, mass, and distance are scalar quantities.",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.1.1"
+  },
+  {
+    "questionNumber": "39",
+    "examYear": 2018,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "Using head to tail rule of vector addition, which vector diagram, represents the resultant of vectors A and B as vector C?",
+    "options": {
+      "A": "Diagram A (Tail of B at head of A, C from tail of A to head of B)",
+      "B": "Diagram B (C points left from head of B to tail of A)",
+      "C": "Diagram C (Both vectors meet heads at apex)",
+      "D": "Diagram D (Vector A reversed away from vertex)"
+    },
+    "correctOption": "A",
+    "explanation": "According to the head-to-tail rule, vector B starts at the head of vector A, and the resultant vector C connects the tail of the first vector A directly to the head of the last vector B.",
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/chap1_2/vector_head_to_tail.svg",
+    "marks": 1.0,
+    "slo": "2.3.1"
+  },
+  {
+    "questionNumber": "40",
+    "examYear": 2017,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The density of pure water is 1000 kg/m³. This value in scientific notation can be written as",
+    "options": {
+      "A": "1.0 \\times 10^{-3} kg/m³",
+      "B": "10.0 \\times 10^{-3} kg/m³",
+      "C": "1.0 \\times 10^3 kg/m³",
+      "D": "10.0 \\times 10^3 kg/m³"
+    },
+    "correctOption": "C",
+    "explanation": "1000 kg/m³ = 1.0 × 10³ kg/m³ in standard scientific notation with one non-zero digit before the decimal point.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.3.2"
+  },
+  {
+    "questionNumber": "41",
+    "examYear": 2017,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "Which of the following statements is CORRECT about force and velocity?",
+    "options": {
+      "A": "Both are scalar quantities.",
+      "B": "Both are vector quantities.",
+      "C": "Force is a vector quantity and velocity is a scalar quantity.",
+      "D": "Force is a scalar quantity and velocity is a vector quantity."
+    },
+    "correctOption": "B",
+    "explanation": "Force has both magnitude and direction (vector). Velocity has both magnitude and direction (vector). Thus, both are vector quantities.",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.1.1"
+  },
+  {
+    "questionNumber": "42",
+    "examYear": 2017,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "Which of the following measuring instruments is used to find the diameter of a metallic wire?",
+    "options": {
+      "A": "Meter Rule",
+      "B": "Physical Balance",
+      "C": "Micrometer Screw Gauge",
+      "D": "Measuring Cylinder"
+    },
+    "correctOption": "C",
+    "explanation": "A micrometer screw gauge has a least count of 0.01 mm, making it the standard instrument to accurately measure the tiny diameter of a metallic wire.",
+    "cognitiveLevel": "K",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/chap1_2/micrometer_instruments.svg",
+    "marks": 1.0,
+    "slo": "1.5.3"
+  },
+  {
+    "questionNumber": "43",
+    "examYear": 2017,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "The gradient of a line on the distance-time graph represents",
+    "options": {
+      "A": "time.",
+      "B": "speed.",
+      "C": "acceleration.",
+      "D": "displacement."
+    },
+    "correctOption": "B",
+    "explanation": "The gradient (slope) of a distance-time graph is Δd / Δt, which represents speed.",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.4.1"
+  },
+  {
+    "questionNumber": "44",
+    "examYear": 2016,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "In a classroom, a student gets up from his desk and walks 5 metre ahead to his friend’s desk, collects a book and walks 5 metre back to his own desk. The total displacement of the student will be",
+    "options": {
+      "A": "0 metre.",
+      "B": "5 metre.",
+      "C": "10 metre.",
+      "D": "20 metre"
+    },
+    "correctOption": "A",
+    "explanation": "Displacement is the vector connecting the starting point to the final point. Because the student returns to his own desk, his final position is identical to his initial position, so net displacement is 0 metre.",
+    "cognitiveLevel": "K",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.1.2"
+  },
+  {
+    "questionNumber": "45",
+    "examYear": 2015,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "In the given diagram showing part of a Vernier calliper the Vernier scale reading is",
+    "options": {
+      "A": "0.06 mm",
+      "B": "0.6 mm",
+      "C": "6 mm",
+      "D": "60 mm"
+    },
+    "correctOption": "B",
+    "explanation": "The least count of the Vernier calliper is 0.1 mm. The 6th division of the Vernier scale coincides with a main scale line. Vernier scale reading = 6 × 0.1 mm = 0.6 mm.",
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/chap1_2/vernier_calliper.svg",
+    "marks": 1.0,
+    "slo": "1.5.2"
+  },
+  {
+    "questionNumber": "46",
+    "examYear": 2014,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "All of the following describe the role of physics in technology EXCEPT",
+    "options": {
+      "A": "the use of vaccine.",
+      "B": "the use of internet.",
+      "C": "the use of electronics.",
+      "D": "the use of measuring instruments."
+    },
+    "correctOption": "A",
+    "explanation": "Internet, electronics, and measuring instruments are technological applications of physics. Vaccines are medical biological interventions developed through immunology and microbiology.",
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.1.1"
+  },
+  {
+    "questionNumber": "47",
+    "examYear": 2014,
+    "chapter": "Chapter 2: Kinematics",
+    "stem": "If a car travels at an average speed of 80 m/s in a race and covers a distance of 640,000 m, then the time taken by the car will be",
+    "options": {
+      "A": "800 s",
+      "B": "8,000 s",
+      "C": "6,400,000 s",
+      "D": "51,200,000 s"
+    },
+    "correctOption": "B",
+    "explanation": "Time = Distance / Speed = 640,000 m / 80 m/s = 8,000 s.",
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "2.2.2"
+  },
+  {
+    "questionNumber": "48",
+    "examYear": 2014,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "The mass of the empty sugar container in the given figure is",
+    "options": {
+      "A": "8.9 g",
+      "B": "10 g",
+      "C": "100 g",
+      "D": "800 g"
+    },
+    "correctOption": "A",
+    "explanation": "Total reading on the electronic balance = 1008.9 g. The sugar inside has mass 1 kg = 1000 g. Therefore, empty container mass = 1008.9 g - 1000 g = 8.9 g.",
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/chap1_2/sugar_scale.svg",
+    "marks": 1.0,
+    "slo": "1.5.1"
+  },
+  {
+    "questionNumber": "49",
+    "examYear": 2014,
+    "chapter": "Chapter 1: Physical Quantities & Measurement",
+    "stem": "Which of the following is the CORRECT number of significant figures and the standard form of a radius 0.0340 cm?",
+    "options": {
+      "A": "Significant Figures: 3 | Standard Form: 3.4 \\times 10^{-3} cm",
+      "B": "Significant Figures: 3 | Standard Form: 3.40 \\times 10^{-2} cm",
+      "C": "Significant Figures: 4 | Standard Form: 3.4 \\times 10^{-3} cm",
+      "D": "Significant Figures: 4 | Standard Form: 3.40 \\times 10^{-2} cm"
+    },
+    "correctOption": "B",
+    "explanation": "In 0.0340 cm, leading zeros are not significant, but the trailing zero is significant, giving 3 significant figures. In standard scientific form, moving the decimal 2 places to the right gives 3.40 \\times 10^{-2} cm.",
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "marks": 1.0,
+    "slo": "1.3.1"
+  }
+]

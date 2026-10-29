@@ -1,0 +1,1993 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "If the volume of one cube is $1.76\\text{ cm}^3$, then the volume of twenty-one such cubes rounded off to three significant figures is",
+    "options": {
+      "A": "$36.0\\text{ cm}^3$.",
+      "B": "$36.9\\text{ cm}^3$.",
+      "C": "$36.96\\text{ cm}^3$.",
+      "D": "$37.0\\text{ cm}^3$."
+    },
+    "correctOption": "D",
+    "explanation": "Total volume = 21 * 1.76 = 36.96 cm\u00b3. When rounded off to 3 significant figures, 36.96 becomes 37.0 cm\u00b3.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 2,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_2.png",
+    "slo": "1.7.2",
+    "chapter": "Unit 1: Measurement",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "1.7.2",
+        "description": "apply the rules for rounding a number to the appropriate number of significant figures.",
+        "topic": "Measurement"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "36.0 cm\u00b3 drops the 0.96 cm\u00b3 fractional part before rounding to 3 significant figures."
+      },
+      {
+        "key": "B",
+        "reason": "36.9 cm\u00b3 truncates 36.96 instead of rounding up the 9 when followed by 6."
+      },
+      {
+        "key": "C",
+        "reason": "36.96 cm\u00b3 has 4 significant figures, whereas 1.76 cm\u00b3 has 3 significant figures so the product must be rounded to 3 significant figures (37.0 cm\u00b3)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "stem": "The number 123.4 can also be written in scientific notation as",
+    "options": {
+      "A": "$0.1234 \\times 10^3$",
+      "B": "$1.234 \\times 10^{-2}$",
+      "C": "$1.234 \\times 10^2$",
+      "D": "$12.34 \\times 10^1$"
+    },
+    "correctOption": "C",
+    "explanation": "To express 123.4 in standard scientific notation ($a \\times 10^n$ where $1 \\le |a| < 10$), the decimal point is moved two places to the left, giving $1.234 \\times 10^2$.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 2,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_2.png",
+    "slo": "1.3.2",
+    "chapter": "Unit 1: Measurement",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "1.3.2",
+        "description": "convert numerical values of measurement in scientific notation;",
+        "topic": "Measurement"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "In scientific notation, the mantissa must be \u2265 1 and < 10, so 0.1234 is not in standard form."
+      },
+      {
+        "key": "B",
+        "reason": "Moving the decimal 2 places to the left from 123.4 to 1.234 requires a positive power of 10 (+2), not -2."
+      },
+      {
+        "key": "D",
+        "reason": "In standard scientific notation only one non-zero digit precedes the decimal point (1.234 \u00d7 10\u00b2, not 12.34 \u00d7 10\u00b9)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "stem": "The prefix used for the multiple value of $10^{-9}$ is",
+    "options": {
+      "A": "atto.",
+      "B": "pico.",
+      "C": "nano.",
+      "D": "femto."
+    },
+    "correctOption": "C",
+    "explanation": "The SI prefix for $10^{-9}$ is nano.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 2,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_2.png",
+    "slo": "1.3.1",
+    "chapter": "Unit 1: Measurement",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "1.3.1",
+        "description": "convert prefixes and their symbols to indicate multiples and sub-multiples for base and derived units;",
+        "topic": "Measurement"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Atto (a) represents 10\u207b\u00b9\u2078, not 10\u207b\u2079."
+      },
+      {
+        "key": "B",
+        "reason": "Pico (p) represents 10\u207b\u00b9\u00b2, not 10\u207b\u2079."
+      },
+      {
+        "key": "D",
+        "reason": "Femto (f) represents 10\u207b\u00b9\u2075, not 10\u207b\u2079."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "stem": "Which of the following instruments is used to measure the internal diametre of a pipe?",
+    "options": {
+      "A": "Metre rule",
+      "B": "Screw gauge",
+      "C": "Vernier callipers",
+      "D": "Measuring cylinder"
+    },
+    "correctOption": "C",
+    "explanation": "Vernier callipers have internal jaws specifically designed to measure the internal diameter of pipes or cylinders.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 2,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_2.png",
+    "slo": "1.5.3",
+    "chapter": "Unit 1: Measurement",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.3",
+        "description": "describe the working of measuring instruments;",
+        "topic": "Measurement"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A metre rule cannot fit inside a narrow pipe or measure internal diameter accurately."
+      },
+      {
+        "key": "B",
+        "reason": "A micrometer screw gauge measures external thickness/diameter of thin wires, not internal pipe diameter."
+      },
+      {
+        "key": "D",
+        "reason": "A measuring cylinder measures liquid volume, not the internal diameter of a pipe."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "stem": "All of the following are the scalar quantities EXCEPT",
+    "options": {
+      "A": "time.",
+      "B": "mass.",
+      "C": "distance.",
+      "D": "velocity."
+    },
+    "correctOption": "D",
+    "explanation": "Velocity is a vector quantity because it has both magnitude and direction, whereas time, mass, and distance are scalar quantities.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 2,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_2.png",
+    "slo": "1.4.2",
+    "chapter": "Unit 1: Measurement",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "1.4.2",
+        "description": "list out various physical quantities as scalar or vector;",
+        "topic": "Measurement"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Time has magnitude only and no direction, so it is a scalar quantity."
+      },
+      {
+        "key": "B",
+        "reason": "Mass has magnitude only and no direction, so it is a scalar quantity."
+      },
+      {
+        "key": "C",
+        "reason": "Distance is path length without a specified direction, so it is a scalar quantity."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "stem": "A child drops a tennis ball from a height of $10\\text{ m}$. The velocity of the ball just before it strikes the ground will be\n(Note: The value of acceleration due to gravity is $9.8\\text{ m/s}^2$.)",
+    "options": {
+      "A": "$14.0\\text{ m/s}$.",
+      "B": "$19.8\\text{ m/s}$.",
+      "C": "$21.8\\text{ m/s}$.",
+      "D": "$98.0\\text{ m/s}$."
+    },
+    "correctOption": "A",
+    "explanation": "Using the equation of motion $v^2 = u^2 + 2as$, where $u = 0$, $a = 9.8\\text{ m/s}^2$, and $s = 10\\text{ m}$: $v^2 = 0 + 2(9.8)(10) = 196$, so $v = \\sqrt{196} = 14.0\\text{ m/s}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 2,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_2.png",
+    "slo": "2.5.2",
+    "chapter": "Unit 2: Kinematics",
+    "unitNumber": 2,
+    "unitName": "Kinematics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "2.5.2",
+        "description": "solve word problems related to free-falling bodies using the relation g = \u0394v/ \u0394t.",
+        "topic": "Kinematics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "19.8 m/s fails to take the square root properly in v = \u221a(2gh) = \u221a(2 \u00d7 9.8 \u00d7 10) = \u221a196 = 14.0 m/s."
+      },
+      {
+        "key": "C",
+        "reason": "21.8 m/s does not satisfy v\u00b2 = 2gh for h = 10 m and g = 9.8 m/s\u00b2."
+      },
+      {
+        "key": "D",
+        "reason": "98.0 m/s is g \u00d7 h (9.8 \u00d7 10) without multiplying by 2 and taking the square root."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "stem": "The given table shows the distance covered by a car on a straight road in four different segments.\nSegment I: 0-10 m\nSegment II: 11-22 m (displacement = 11 m)\nSegment III: 23-35 m (displacement = 12 m)\nSegment IV: 36-49 m (displacement = 13 m)\nIf the car takes same interval of time to cover all four segments, then the car",
+    "options": {
+      "A": "is accelerating.",
+      "B": "is decelerating.",
+      "C": "has uniform velocity.",
+      "D": "comes to rest after each segment."
+    },
+    "correctOption": "A",
+    "explanation": "The distance covered in equal time intervals increases in each subsequent segment (10 m, 11 m, 12 m, 13 m), meaning the speed is increasing, hence the car is accelerating.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 3,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_3.png",
+    "slo": "2.3.2",
+    "chapter": "Unit 2: Kinematics",
+    "unitNumber": 2,
+    "unitName": "Kinematics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "2.3.2",
+        "description": "calculate average speed, average velocity and acceleration;",
+        "topic": "Kinematics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "The distance covered in each consecutive 1-second interval is increasing (2 m, 6 m, 10 m, 14 m), so speed is increasing, not decelerating."
+      },
+      {
+        "key": "C",
+        "reason": "For uniform velocity, equal distances must be covered in equal time intervals."
+      },
+      {
+        "key": "D",
+        "reason": "The car's speed is continuously increasing at a constant rate of 4 m/s\u00b2."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "stem": "If a force of $10\\text{ N}$ is acting on a body along the x-axis, then the value of this force acting on the y-axis will be",
+    "options": {
+      "A": "$0\\text{ N}$.",
+      "B": "$5\\text{ N}$.",
+      "C": "$10\\text{ N}$.",
+      "D": "$20\\text{ N}$."
+    },
+    "correctOption": "A",
+    "explanation": "A force acting purely along the x-axis has no component along the perpendicular y-axis ($F_y = F \\sin(0^{\\circ}) = 0\\text{ N}$).",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 3,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_3.png",
+    "slo": "4.1.3",
+    "chapter": "Unit 4: Turning Effect of Forces",
+    "unitNumber": 4,
+    "unitName": "Turning Effect of Forces",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "4.1.3",
+        "description": "solve word problems related to the moment of force or torque = force \u00d7 perpendicular distance from the pivot to the line of action of force;",
+        "topic": "Turning Effect of Forces"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A force acting purely along the x-axis makes a 90\u00b0 angle with the y-axis, and F_y = F sin 0\u00b0 = 0 N, not 5 N."
+      },
+      {
+        "key": "C",
+        "reason": "10 N is the x-component (F_x = 10 cos 0\u00b0), whereas the perpendicular y-component is 0 N."
+      },
+      {
+        "key": "D",
+        "reason": "A component of a single vector cannot exceed the magnitude of the vector itself."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "stem": "Consider the given speed-time graph. The speed of an object from point X to Y is",
+    "options": {
+      "A": "decreasing.",
+      "B": "increasing.",
+      "C": "uniform.",
+      "D": "zero."
+    },
+    "correctOption": "C",
+    "explanation": "In a standard speed-time graph where the curve/line from X to Y is horizontal (parallel to the time axis), the speed remains constant (uniform).",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": true,
+    "isNumerical": false,
+    "marks": 1.0,
+    "diagramUrl": "/materials/scans/diagrams/ssc1_p1_p3_diagram.png",
+    "diagramDescription": "Speed-time graph showing speed increasing, remaining uniform, and decreasing",
+    "pageNumber": 3,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_3.png",
+    "slo": "2.4.3",
+    "chapter": "Unit 2: Kinematics",
+    "unitNumber": 2,
+    "unitName": "Kinematics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "2.4.3",
+        "description": "infer the following states of a body based on the given graph: a. at rest, b. moving with constant speed, c. moving with positive acceleration, d. moving with negative acceleration;",
+        "topic": "Kinematics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A horizontal line parallel to the time axis on a speed-time graph indicates constant (uniform) speed, not decreasing speed."
+      },
+      {
+        "key": "B",
+        "reason": "An increasing speed would be represented by an upward-sloping line."
+      },
+      {
+        "key": "D",
+        "reason": "The horizontal line is at a non-zero height above the time axis, so the object moves at a constant non-zero speed."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "stem": "A $36\\text{ N}$ force pulls a system of three masses ($4\\text{ kg}$, $6\\text{ kg}$, $8\\text{ kg}$) on a horizontal frictionless surface as shown in the given figure. The acceleration of this system of masses is",
+    "options": {
+      "A": "$0.5\\text{ m/s}^2$.",
+      "B": "$2\\text{ m/s}^2$.",
+      "C": "$5\\text{ m/s}^2$.",
+      "D": "$18\\text{ m/s}^2$."
+    },
+    "correctOption": "B",
+    "explanation": "Total mass $m_{total} = 4\\text{ kg} + 6\\text{ kg} + 8\\text{ kg} = 18\\text{ kg}$. Acceleration $a = \\frac{F}{m_{total}} = \\frac{36\\text{ N}}{18\\text{ kg}} = 2\\text{ m/s}^2$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "isNumerical": true,
+    "marks": 1.0,
+    "diagramUrl": "/materials/scans/diagrams/ssc1_p1_p4_diagram.png",
+    "diagramDescription": "A diagram showing three connected masses of 8 kg, 6 kg, and 4 kg on a horizontal surface being pulled by a 36 N force.",
+    "pageNumber": 4,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_4.png",
+    "slo": "3.3.3",
+    "chapter": "Unit 3: Dynamics",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.3",
+        "description": "identify the effect of force on velocity of a body acting in the:\na. same direction,\nb. opposite direction,\nc. perpendicular direction;",
+        "topic": "Dynamics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.5 m/s\u00b2 inverts the formula as m/F (18 / 36) instead of a = F / m_total = 36 / (4 + 6 + 8) = 2 m/s\u00b2."
+      },
+      {
+        "key": "C",
+        "reason": "5 m/s\u00b2 does not divide the 36 N net force by the total connected mass of 18 kg."
+      },
+      {
+        "key": "D",
+        "reason": "18 is the total mass in kg (4 + 6 + 8), not the acceleration."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "stem": "An astronaut is sitting in a rocket on Earth which is ready to launch to the Moon. When the astronaut will reach the Moon, his/ her weight and mass would",
+    "options": {
+      "A": "Weight: Increase | Mass: remain the same",
+      "B": "Weight: remain the same | Mass: increase",
+      "C": "Weight: Decrease | Mass: remain the same",
+      "D": "Weight: remain the same | Mass: decrease"
+    },
+    "correctOption": "C",
+    "explanation": "The gravity on the Moon is about 1/6th of Earth's gravity, so the astronaut's weight decreases, while mass (the amount of matter) remains constant.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 4,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_4.png",
+    "slo": "3.1.1",
+    "chapter": "Unit 3: Dynamics",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "3.1.1",
+        "description": "differentiate between mass and weight;",
+        "topic": "Dynamics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Because the Moon's gravitational field strength (1.6 m/s\u00b2) is weaker than Earth's (9.8 m/s\u00b2), weight W = mg decreases on the Moon."
+      },
+      {
+        "key": "B",
+        "reason": "Mass is an intrinsic property of matter that remains constant everywhere, while weight decreases on the Moon."
+      },
+      {
+        "key": "D",
+        "reason": "Mass never decreases when moving from Earth to the Moon; only weight decreases."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "stem": "How much centripetal force is needed to move a body of mass $10\\text{ kg}$ in a circle of radius $20\\text{ m}$ with a speed of $3\\text{ m/s}$?",
+    "options": {
+      "A": "$1.5\\text{ N}$.",
+      "B": "$4.5\\text{ N}$.",
+      "C": "$13\\text{ N}$.",
+      "D": "$33\\text{ N}$."
+    },
+    "correctOption": "B",
+    "explanation": "Centripetal force $F_c = \\frac{m v^2}{r} = \\frac{10 \\times (3)^2}{20} = \\frac{10 \\times 9}{20} = 4.5\\text{ N}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 4,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_4.png",
+    "slo": "3.6.2",
+    "chapter": "Unit 3: Dynamics",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "3.6.2",
+        "description": "exemplify the sources of centripetal force during circular motion in terms of:\na. tension,\nb. frictional force,\nc. gravitational force.",
+        "topic": "Dynamics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "1.5 N omits squaring the speed in F_c = mv\u00b2/r = (10 \u00d7 3\u00b2) / 20 = 90 / 20 = 4.5 N."
+      },
+      {
+        "key": "C",
+        "reason": "13 N adds quantities instead of applying the centripetal force formula F_c = mv\u00b2/r."
+      },
+      {
+        "key": "D",
+        "reason": "33 N divides 10 \u00d7 20 by 6 instead of computing mv\u00b2/r = 90 / 20 = 4.5 N."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "stem": "If a body of mass $10\\text{ kg}$ is placed on the surface of the Earth, then the pull of the Earth on the body will be\n(Note: The value of acceleration due to gravity is $9.8\\text{ m/s}^2$.)",
+    "options": {
+      "A": "$0.98\\text{ N}$.",
+      "B": "$19.8\\text{ N}$.",
+      "C": "$98\\text{ N}$.",
+      "D": "$100\\text{ N}$."
+    },
+    "correctOption": "C",
+    "explanation": "The pull of Earth on a body is its weight $W = mg = 10\\text{ kg} \\times 9.8\\text{ m/s}^2 = 98\\text{ N}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 4,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_4.png",
+    "slo": "3.1.4",
+    "chapter": "Unit 3: Dynamics",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "3.1.4",
+        "description": "solve word problems using the relation w = mg;",
+        "topic": "Dynamics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.98 N divides mass by g instead of multiplying W = mg = 10 \u00d7 9.8 = 98 N."
+      },
+      {
+        "key": "B",
+        "reason": "19.8 N adds 10 + 9.8 instead of multiplying mass by gravitational field strength (10 \u00d7 9.8 = 98 N)."
+      },
+      {
+        "key": "D",
+        "reason": "Using standard AKU-EB g = 9.8 m/s\u00b2, W = 10 \u00d7 9.8 = 98 N."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "stem": "It is difficult to drive a car on an oily road because the frictional force",
+    "options": {
+      "A": "increases.",
+      "B": "decreases.",
+      "C": "becomes zero.",
+      "D": "remains unchanged."
+    },
+    "correctOption": "B",
+    "explanation": "Oil acts as a lubricant, smoothing out microscopic irregularities between the tires and the road, which decreases the frictional force.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 4,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_4.png",
+    "slo": "3.5.1",
+    "chapter": "Unit 3: Dynamics",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "3.5.1",
+        "description": "define friction;",
+        "topic": "Dynamics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Oil acts as a lubricant that fills microscopic surface irregularities, reducing rather than increasing friction."
+      },
+      {
+        "key": "C",
+        "reason": "Lubrication significantly reduces friction between tyres and the road, though friction never becomes strictly zero."
+      },
+      {
+        "key": "D",
+        "reason": "A layer of oil reduces the interlocking of cold welds between the tyre and road surface."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "stem": "Two forces ($9\\text{ N}$ and $12\\text{ N}$) act at the right angle at point O, as shown in the given figure. What will be the magnitude and direction of the resultant force?",
+    "options": {
+      "A": "$15\\text{ N}$ along OQ",
+      "B": "$15\\text{ N}$ along PR",
+      "C": "$21\\text{ N}$ along OQ",
+      "D": "$21\\text{ N}$ along PR"
+    },
+    "correctOption": "A",
+    "explanation": "Magnitude $R = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15\\text{ N}$. By vector addition (head-to-tail / parallelogram law), the resultant lies along OQ.",
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "isNumerical": true,
+    "marks": 1.0,
+    "diagramUrl": "/materials/scans/diagrams/ssc1_p1_p5_diagram.png",
+    "diagramDescription": "Right-angled forces diagram with vector components OR, OP, RQ and associated table of options",
+    "pageNumber": 5,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_5.png",
+    "slo": "1.4.4",
+    "chapter": "Unit 1: Measurement",
+    "unitNumber": 1,
+    "unitName": "Measurement",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "1.4.4",
+        "description": "determine, using Pythagoras theorem and graphs, the resultant of two vectors at right angle;",
+        "topic": "Measurement"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "By the head-to-tail / parallelogram rule, the resultant of 9 N along OP and 12 N along OR acts along the diagonal OQ, not PR."
+      },
+      {
+        "key": "C",
+        "reason": "21 N is the algebraic sum (9 + 12), whereas perpendicular forces combine by Pythagoras: \u221a(9\u00b2 + 12\u00b2) = \u221a225 = 15 N."
+      },
+      {
+        "key": "D",
+        "reason": "Both the magnitude (21 N instead of 15 N) and direction (PR instead of OQ) are incorrect."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "stem": "A sports racing car is made stable by",
+    "options": {
+      "A": "raising its height.",
+      "B": "increasing its speed.",
+      "C": "decreasing its width.",
+      "D": "lowering its centre of gravity."
+    },
+    "correctOption": "D",
+    "explanation": "Lowering the centre of gravity increases stability, preventing the car from tipping over during sharp turns.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 5,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_5.png",
+    "slo": "4.4.5",
+    "chapter": "Unit 4: Turning Effect of Forces",
+    "unitNumber": 4,
+    "unitName": "Turning Effect of Forces",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "4.4.5",
+        "description": "describe the states of equilibrium and classify them with common examples.",
+        "topic": "Turning Effect of Forces"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Raising the height raises the centre of gravity, making the vehicle more likely to topple during sharp turns."
+      },
+      {
+        "key": "B",
+        "reason": "Increasing speed increases the overturning centripetal moment rather than improving static stability."
+      },
+      {
+        "key": "C",
+        "reason": "Decreasing base width narrows the support polygon and reduces stability."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "stem": "The perpendicular distance between axis of rotation and the line of action of force is called",
+    "options": {
+      "A": "momentum.",
+      "B": "acceleration.",
+      "C": "moment arm.",
+      "D": "displacement."
+    },
+    "correctOption": "C",
+    "explanation": "Moment arm (or lever arm) is defined as the perpendicular distance from the axis of rotation to the line of action of the force.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 5,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_5.png",
+    "slo": "4.1.3",
+    "chapter": "Unit 4: Turning Effect of Forces",
+    "unitNumber": 4,
+    "unitName": "Turning Effect of Forces",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "4.1.3",
+        "description": "solve word problems related to the moment of force or torque = force \u00d7 perpendicular distance from the pivot to the line of action of force;",
+        "topic": "Turning Effect of Forces"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Momentum (p = mv) is the product of mass and velocity, not a perpendicular distance."
+      },
+      {
+        "key": "B",
+        "reason": "Acceleration is the rate of change of velocity."
+      },
+      {
+        "key": "D",
+        "reason": "Displacement is the shortest directed distance between initial and final positions, whereas the perpendicular distance from the pivot to the line of action of force is the moment arm."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "stem": "After disturbance, if a body comes to rest and its centre of gravity remains unchanged, then this state of the body is/ are identified as\nI. stable equilibrium\nII. unstable equilibrium\nIII. neutral equilibrium",
+    "options": {
+      "A": "I only.",
+      "B": "III only.",
+      "C": "I and III.",
+      "D": "II and III."
+    },
+    "correctOption": "B",
+    "explanation": "In neutral equilibrium, when a body is displaced, its centre of gravity remains at the same height (unchanged).",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 5,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_5.png",
+    "slo": "4.4.4",
+    "chapter": "Unit 4: Turning Effect of Forces",
+    "unitNumber": 4,
+    "unitName": "Turning Effect of Forces",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "4.4.4",
+        "description": "explain different conditions of equilibrium with examples;",
+        "topic": "Turning Effect of Forces"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "In stable equilibrium (I), the centre of gravity rises when displaced and returns to its original position."
+      },
+      {
+        "key": "C",
+        "reason": "Only neutral equilibrium (III) keeps the height of the centre of gravity unchanged in its new resting position."
+      },
+      {
+        "key": "D",
+        "reason": "In unstable equilibrium (II), the centre of gravity lowers when displaced."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "stem": "Let suppose, a hole is drilled through the Earth along the diametre and a stone is dropped into it. Suppose when the stone reaches the Earth\u2019s centre keeping same size and shape, it will have constant",
+    "options": {
+      "A": "mass.",
+      "B": "weight.",
+      "C": "momentum.",
+      "D": "acceleration."
+    },
+    "correctOption": "A",
+    "explanation": "Mass is an intrinsic property of matter and remains constant everywhere, including at the center of the Earth.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 5,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_5.png",
+    "slo": null,
+    "chapter": "Historical 2023 Syllabus: Gravitation",
+    "unitNumber": 5,
+    "unitName": "Gravitation (2023 Model Syllabus)",
+    "syllabus_reviewed": true,
+    "out_of_syllabus": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "At the centre of the Earth, gravitational pull from all sides cancels out (g = 0), so weight W = mg becomes zero."
+      },
+      {
+        "key": "C",
+        "reason": "only mass (quantity of matter) remains constant at every point including the Earth's centre."
+      },
+      {
+        "key": "D",
+        "reason": "At the exact centre of the Earth, net gravitational force and acceleration g are zero."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "stem": "A satellite is revolving around the Earth in a circular orbit with velocity v. If the gravitational force between the satellite and the Earth suddenly disappears, then the velocity of the satellite will be",
+    "options": {
+      "A": "0",
+      "B": "\u00bd v",
+      "C": "v",
+      "D": "2v"
+    },
+    "correctOption": "C",
+    "explanation": "According to Newton's first law of motion (inertia), an object in motion will continue to move at a constant velocity in a straight line unless acted upon by an external net force. If the gravitational force disappears, there is no longer a centripetal force to keep it in a circular orbit, so it will continue to move tangentially with the same velocity v.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 6,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_6.png",
+    "slo": null,
+    "chapter": "Historical 2023 Syllabus: Gravitation",
+    "unitNumber": 5,
+    "unitName": "Gravitation (2023 Model Syllabus)",
+    "syllabus_reviewed": true,
+    "out_of_syllabus": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "If gravity suddenly vanishes, the satellite no longer experiences centripetal force and flies off tangentially at its existing speed v, not 0."
+      },
+      {
+        "key": "B",
+        "reason": "By Newton's first law (inertia), with no net force acting, the speed remains unchanged at v."
+      },
+      {
+        "key": "D",
+        "reason": "Without an external tangential force, the speed cannot double to 2v."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "stem": "If a planet comes closer to the Sun, then the planet will",
+    "options": {
+      "A": "orbit faster.",
+      "B": "orbit slower.",
+      "C": "fall into the Sun.",
+      "D": "keep moving with the same speed."
+    },
+    "correctOption": "A",
+    "explanation": "According to Kepler's Second Law of Planetary Motion (Law of Areas) and conservation of angular momentum, as a planet gets closer to the Sun (perihelion), its orbital speed increases.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 6,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_6.png",
+    "slo": null,
+    "chapter": "Historical 2023 Syllabus: Gravitation",
+    "unitNumber": 5,
+    "unitName": "Gravitation (2023 Model Syllabus)",
+    "syllabus_reviewed": true,
+    "out_of_syllabus": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [],
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Closer to the Sun, the stronger gravitational pull requires a higher orbital speed (v = \u221a(GM/r)), so it orbits faster, not slower."
+      },
+      {
+        "key": "C",
+        "reason": "Higher tangential orbital speed balances the stronger gravitational pull in a closer orbit."
+      },
+      {
+        "key": "D",
+        "reason": "Orbital speed increases as orbital radius r decreases (v \u221d 1/\u221ar)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "stem": "The gravitational force between two objects is directly proportional to the",
+    "options": {
+      "A": "sum of their masses.",
+      "B": "product of their masses.",
+      "C": "difference between their masses.",
+      "D": "square of the distance between them."
+    },
+    "correctOption": "B",
+    "explanation": "According to Newton's Law of Gravitation, the gravitational force $F$ between two point masses $m_1$ and $m_2$ separated by a distance $r$ is given by $F = G \\frac{m_1 m_2}{r^2}$. Thus, the force is directly proportional to the product of their masses.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 6,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_6.png",
+    "slo": "3.2.3",
+    "chapter": "Unit 3: Dynamics",
+    "unitNumber": 3,
+    "unitName": "Dynamics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.3",
+        "description": "identify the following forces as contact and non-contact forces:\na. air resistance,\nb. drag force (push, pull),\nc. electrostatic force,\nd. force of friction,\ne. gravitational force,\nf. magnetic force,\ng. tension (elastic force),\nh. thrust (driving force);",
+        "topic": "Dynamics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Newton's law of gravitation states F = G(m\u2081m\u2082)/r\u00b2, which is proportional to the product (m\u2081 \u00d7 m\u2082), not the sum."
+      },
+      {
+        "key": "C",
+        "reason": "Gravitational force depends on the product of the two masses, not their difference."
+      },
+      {
+        "key": "D",
+        "reason": "Gravitational force is inversely proportional (not directly proportional) to the square of the distance between them."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "stem": "A car travels a distance of 150 m in the direction of a constant force of 50 N. The work done on the car is",
+    "options": {
+      "A": "3 J.",
+      "B": "100 J.",
+      "C": "200 J.",
+      "D": "7500 J."
+    },
+    "correctOption": "D",
+    "explanation": "Work done ($W$) is given by the formula $W = F \\times d$. Here, Force $F = 50\\text{ N}$ and distance $d = 150\\text{ m}$. $W = 50\\text{ N} \\times 150\\text{ m} = 7500\\text{ J}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 6,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_6.png",
+    "slo": "6.1.2",
+    "chapter": "Unit 6: Work, Energy and Power",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "6.1.2",
+        "description": "solve word problems related to workdone;",
+        "topic": "Work, Energy and Power"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "3 J divides 150 by 50 instead of multiplying Work W = F \u00d7 d = 50 N \u00d7 150 m = 7500 J."
+      },
+      {
+        "key": "B",
+        "reason": "100 J subtracts 150 - 50 instead of multiplying force by displacement."
+      },
+      {
+        "key": "C",
+        "reason": "200 J adds 150 + 50 instead of multiplying force by displacement."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "stem": "A car has stopped after screeching to avoid a crash with a van. With reference to the given situation, the kinetic energy of the car will then be converted into",
+    "options": {
+      "A": "sound energy only.",
+      "B": "heat and sound energy.",
+      "C": "heat and potential energy.",
+      "D": "potential and sound energy."
+    },
+    "correctOption": "B",
+    "explanation": "When a car screeches to a stop, friction between the tires and the road generates thermal energy (heat) and the screeching noise produces sound energy.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 6,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_6.png",
+    "slo": "6.4.1",
+    "chapter": "Unit 6: Work, Energy and Power",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "6.4.1",
+        "description": "state law of conservation of energy;",
+        "topic": "Work, Energy and Power"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Friction between the screeching tyres/brakes and the road converts kinetic energy primarily into both thermal (heat) energy and sound energy."
+      },
+      {
+        "key": "C",
+        "reason": "On a level road, gravitational potential energy does not increase when braking to a stop."
+      },
+      {
+        "key": "D",
+        "reason": "The kinetic energy is dissipated mainly as heat in the brakes/tyres along with the screeching sound."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "stem": "If a loading truck has an output of 3600 J and its efficiency is 50%, then the input provided to the truck will be",
+    "options": {
+      "A": "18 J.",
+      "B": "72 J.",
+      "C": "7200 J.",
+      "D": "10800 J."
+    },
+    "correctOption": "C",
+    "explanation": "Efficiency = $(\\text{Output Energy} / \\text{Input Energy}) \\times 100$. Rearranging for Input Energy: $\\text{Input} = (\\text{Output} / \\text{Efficiency}) \\times 100 = (3600 / 50) \\times 100 = 7200\\text{ J}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 6,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_6.png",
+    "slo": "6.5.3",
+    "chapter": "Unit 6: Work, Energy and Power",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "6.5.3",
+        "description": "explain that a system cannot have an efficiency of 100%;",
+        "topic": "Work, Energy and Power"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "18 J divides 3600 by 200 instead of using Efficiency = (Output / Input) \u00d7 100% => Input = 3600 / 0.50 = 7200 J."
+      },
+      {
+        "key": "B",
+        "reason": "72 J divides 3600 by 50 without multiplying by 100%."
+      },
+      {
+        "key": "D",
+        "reason": "10800 J adds 3600 + 7200, whereas 50% efficiency means Input is twice the useful output (2 \u00d7 3600 = 7200 J)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 26,
+    "stem": "The kinetic energy of a 0.5 kg bullet moving with velocity of 500 m/s is",
+    "options": {
+      "A": "125 J.",
+      "B": "250 J.",
+      "C": "62500 J.",
+      "D": "125000 J."
+    },
+    "correctOption": "C",
+    "explanation": "Kinetic Energy ($KE$) = $\\frac{1}{2} m v^2 = \\frac{1}{2} \\times 0.5\\text{ kg} \\times (500\\text{ m/s})^2 = 0.25 \\times 250000 = 62500\\text{ J}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 7,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_7.png",
+    "slo": "6.3.3",
+    "chapter": "Unit 6: Work, Energy and Power",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "6.3.3",
+        "description": "solve word problems related to the kinetic and potential energy;",
+        "topic": "Work, Energy and Power"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "125 J is \u00bd \u00d7 0.5 \u00d7 500 without squaring the velocity v = 500 m/s in K.E = \u00bdmv\u00b2."
+      },
+      {
+        "key": "B",
+        "reason": "250 J is 0.5 \u00d7 500 (momentum), forgetting both the \u00bd factor and squaring v (\u00bd \u00d7 0.5 \u00d7 500\u00b2 = 62,500 J)."
+      },
+      {
+        "key": "D",
+        "reason": "125,000 J is mv\u00b2 (0.5 \u00d7 250,000) without multiplying by \u00bd."
+      }
+    ]
+  },
+  {
+    "questionNumber": 27,
+    "stem": "If a person releases 500 J of energy by walking along a track in 125 seconds, then the required average muscular power is",
+    "options": {
+      "A": "0.25 W.",
+      "B": "4.0 W.",
+      "C": "375 W.",
+      "D": "625 W."
+    },
+    "correctOption": "B",
+    "explanation": "Power ($P$) = $\\text{Energy / Time} = 500\\text{ J} / 125\\text{ s} = 4.0\\text{ W}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 7,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_7.png",
+    "slo": "6.6.3",
+    "chapter": "Unit 6: Work, Energy and Power",
+    "unitNumber": 6,
+    "unitName": "Work, Energy and Power",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "6.6.3",
+        "description": "explore different innovative energy transfer devices used in transportation and communication.",
+        "topic": "Work, Energy and Power"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.25 W inverts the formula as t / W (125 / 500) instead of Power P = W / t = 500 J / 125 s = 4.0 W."
+      },
+      {
+        "key": "C",
+        "reason": "375 W subtracts 500 - 125 instead of dividing work by time."
+      },
+      {
+        "key": "D",
+        "reason": "625 W adds 500 + 125 instead of dividing work by time."
+      }
+    ]
+  },
+  {
+    "questionNumber": 28,
+    "stem": "Compared to the sea level, the atmospheric pressure on mountains is",
+    "options": {
+      "A": "zero.",
+      "B": "equal.",
+      "C": "lower.",
+      "D": "higher."
+    },
+    "correctOption": "C",
+    "explanation": "Atmospheric pressure decreases with an increase in altitude because there is a smaller column of air above mountains compared to sea level.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 7,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_7.png",
+    "slo": "7.3.2",
+    "chapter": "Unit 7: Pressure",
+    "unitNumber": 7,
+    "unitName": "Pressure",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "7.3.2",
+        "description": "describe the use of the height of a liquid column to measure the atmospheric pressure (barometer);",
+        "topic": "Pressure"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Air is still present on mountains (unlike outer space), so atmospheric pressure is lower than at sea level but not zero."
+      },
+      {
+        "key": "B",
+        "reason": "Because the column of air above a mountain is shorter and less dense, atmospheric pressure is lower than at sea level."
+      },
+      {
+        "key": "D",
+        "reason": "Atmospheric pressure decreases with altitude, so it is lower (not higher) on mountains."
+      }
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "stem": "To push the liquid up in a straw, the air pressure inside the straw will",
+    "options": {
+      "A": "increase.",
+      "B": "decrease.",
+      "C": "become zero.",
+      "D": "remain constant."
+    },
+    "correctOption": "B",
+    "explanation": "When sucking on a straw, air is removed from inside the straw, causing the air pressure inside the straw to decrease. The higher atmospheric pressure on the liquid's surface outside then pushes the liquid up into the straw.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 7,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_7.png",
+    "slo": "7.3.1",
+    "chapter": "Unit 7: Pressure",
+    "unitNumber": 7,
+    "unitName": "Pressure",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "7.3.1",
+        "description": "explain atmospheric pressure;",
+        "topic": "Pressure"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Sucking on a straw expands the lungs and reduces air pressure inside the straw below outside atmospheric pressure."
+      },
+      {
+        "key": "C",
+        "reason": "A partial vacuum (reduced pressure) is created inside the straw, not a complete zero-pressure vacuum."
+      },
+      {
+        "key": "D",
+        "reason": "If pressure inside the straw remained constant and equal to atmospheric pressure, no net upward force would push the liquid up."
+      }
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "stem": "According to the kinetic molecular model of matter, the molecules of a substance",
+    "options": {
+      "A": "are in the state of rest.",
+      "B": "are in the state of motion.",
+      "C": "have constant momentum.",
+      "D": "have same velocity during collision."
+    },
+    "correctOption": "B",
+    "explanation": "The kinetic molecular model states that matter is made up of particles that are constantly in random motion.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 7,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_7.png",
+    "slo": "8.1.1",
+    "chapter": "Unit 8: Thermal Physics",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "8.1.1",
+        "description": "state the basic assumptions of the kinetic theory of matter;",
+        "topic": "Thermal Physics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "According to the kinetic molecular model, particles of all matter are in continuous random motion."
+      },
+      {
+        "key": "C",
+        "reason": "Molecules continuously collide and change both speed and direction, so individual molecular momentum varies."
+      },
+      {
+        "key": "D",
+        "reason": "Molecules in a substance have a wide distribution of speeds and change velocity during elastic collisions."
+      }
+    ]
+  },
+  {
+    "questionNumber": 31,
+    "stem": "A parcel box of weight 500 N is placed on a table. If the area of the bottom of the box is measured as 0.50 m2, then the pressure exerted by the box on the table will be",
+    "options": {
+      "A": "250 Pa.",
+      "B": "499.5 Pa.",
+      "C": "500.5 Pa.",
+      "D": "1000 Pa."
+    },
+    "correctOption": "D",
+    "explanation": "Pressure ($P$) = $\\text{Force} / \\text{Area} = 500\\text{ N} / 0.50\\text{ m}^2 = 1000\\text{ Pa}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 7,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_7.png",
+    "slo": "7.2.2",
+    "chapter": "Unit 7: Pressure",
+    "unitNumber": 7,
+    "unitName": "Pressure",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "7.2.2",
+        "description": "explain that pressure varies with force and area with the help of real-life examples;",
+        "topic": "Pressure"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "250 Pa multiplies 500 \u00d7 0.5 instead of dividing Pressure P = F / A = 500 N / 0.5 m\u00b2 = 1000 Pa."
+      },
+      {
+        "key": "B",
+        "reason": "499.5 Pa subtracts 500 - 0.5 instead of dividing force by area."
+      },
+      {
+        "key": "C",
+        "reason": "500.5 Pa adds 500 + 0.5 instead of dividing force by area."
+      }
+    ]
+  },
+  {
+    "questionNumber": 32,
+    "stem": "In a magic show, a performer lies down on a bed of nails without any injury. However, when the same performer steps on a single nail, it goes right through his foot. With reference to the given situation, which of the following statements is TRUE?",
+    "options": {
+      "A": "The area is same in both the cases, but more force is applied on the bed of nails.",
+      "B": "The force remains the same, but more pressure is applied on the bed of nails.",
+      "C": "More force is exerted on a single nail than on the entire bed of nails.",
+      "D": "Force increases, but less pressure is applied on the bed of nails."
+    },
+    "correctOption": "C",
+    "explanation": "When lying on a bed of nails, the weight (force) of the performer is distributed over a large number of contact points (large area), resulting in small pressure per nail. When stepping on a single nail, the entire weight acts on a single tiny area, creating extremely high pressure.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 8,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_8.png",
+    "slo": "7.2.1",
+    "chapter": "Unit 7: Pressure",
+    "unitNumber": 7,
+    "unitName": "Pressure",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "7.2.1",
+        "description": "define the term \u2018pressure\u2019;",
+        "topic": "Pressure"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Hundreds of nails have a much larger total contact area than a single nail, while the performer's weight (total downward force) is the same."
+      },
+      {
+        "key": "B",
+        "reason": "Because total area is larger on a bed of nails, the pressure P = F/A is much smaller on the bed of nails than on a single nail."
+      },
+      {
+        "key": "D",
+        "reason": "Per the official key, the full downward force is concentrated onto the single nail rather than distributed across hundreds of nails."
+      }
+    ]
+  },
+  {
+    "questionNumber": 33,
+    "stem": "In a clinical thermometer, mercury does NOT fall back to the bulb because",
+    "options": {
+      "A": "it is less in quantity.",
+      "B": "it is in a capillary tube.",
+      "C": "of the shape of the thermometer\u2019s bulb.",
+      "D": "of the constriction in the capillary tube."
+    },
+    "correctOption": "D",
+    "explanation": "A clinical thermometer has a narrow constriction just above the bulb. When the temperature rises, mercury expands and pushes past the constriction. When removed from the body, the column breaks at the constriction, preventing the mercury from flowing back, allowing accurate reading of the maximum temperature.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 8,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_8.png",
+    "slo": "8.3.4",
+    "chapter": "Unit 8: Thermal Physics",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "8.3.4",
+        "description": "illustrate the sensitivity, range and linearity of thermometers using diagram;",
+        "topic": "Thermal Physics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The quantity of mercury does not prevent thermal contraction back into the bulb."
+      },
+      {
+        "key": "B",
+        "reason": "Ordinary laboratory thermometers also have a capillary tube, yet mercury falls back immediately."
+      },
+      {
+        "key": "C",
+        "reason": "The cylindrical bulb shape helps heat conduction, while the narrow kink (constriction) breaks the mercury thread so it stays at the maximum reading."
+      }
+    ]
+  },
+  {
+    "questionNumber": 34,
+    "stem": "The escape of high kinetic energy molecules in the form of vapours from the surface of a liquid without heating is known as",
+    "options": {
+      "A": "fusion.",
+      "B": "boiling.",
+      "C": "evaporation.",
+      "D": "condensation."
+    },
+    "correctOption": "C",
+    "explanation": "Evaporation is the surface phenomenon where molecules with higher kinetic energy escape from the surface of a liquid at any temperature without requiring the liquid to boil.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 8,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_8.png",
+    "slo": "8.2.7",
+    "chapter": "Unit 8: Thermal Physics",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "8.2.7",
+        "description": "solve word problems involving the concept of specific heat capacity, latent heat of fusion and vaporisation;",
+        "topic": "Thermal Physics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Fusion (melting) is the change of state from solid to liquid at the melting point."
+      },
+      {
+        "key": "B",
+        "reason": "Boiling occurs throughout the liquid at a fixed boiling point with bubble formation, whereas surface escape at any temperature is evaporation."
+      },
+      {
+        "key": "D",
+        "reason": "Condensation is the conversion of vapour back into liquid."
+      }
+    ]
+  },
+  {
+    "questionNumber": 35,
+    "stem": "If an inflated tyre of a car bursts, then the temperature of air that will escape from the tyre",
+    "options": {
+      "A": "increases.",
+      "B": "decreases.",
+      "C": "becomes 100\u00b0C.",
+      "D": "remains constant."
+    },
+    "correctOption": "B",
+    "explanation": "When a tyre bursts, the escaping air undergoes rapid adiabatic expansion. According to thermodynamics, rapid expansion causes work to be done by the gas at the expense of its internal energy, resulting in a drop in temperature.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 8,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_8.png",
+    "slo": "8.1.3",
+    "chapter": "Unit 8: Thermal Physics",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "8.1.3",
+        "description": "describe plasma as the fourth state of matter;",
+        "topic": "Thermal Physics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "When compressed air rushes out of a bursting tyre, it does work against atmospheric pressure at the expense of its internal kinetic energy, so its temperature decreases."
+      },
+      {
+        "key": "C",
+        "reason": "Adiabatic expansion cools the escaping air rather than heating it to 100\u00b0C."
+      },
+      {
+        "key": "D",
+        "reason": "Rapid adiabatic expansion reduces the average kinetic energy of the air molecules, causing a drop in temperature."
+      }
+    ]
+  },
+  {
+    "questionNumber": 36,
+    "stem": "If the temperature of a substance is 20\u00b0C, then its temperature in Kelvin scale will be",
+    "options": {
+      "A": "\u2013 253 K.",
+      "B": "\u2013 6.66 K.",
+      "C": "68 K.",
+      "D": "293 K."
+    },
+    "correctOption": "D",
+    "explanation": "$T(\\text{K}) = T(\u00b0\\text{C}) + 273 = 20 + 273 = 293\\text{ K}$.",
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "isNumerical": true,
+    "marks": 1.0,
+    "pageNumber": 8,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_8.png",
+    "slo": "8.3.3",
+    "chapter": "Unit 8: Thermal Physics",
+    "unitNumber": 8,
+    "unitName": "Thermal Physics",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "8.3.3",
+        "description": "explain that a physical property that varies with temperature can be used as a criteria to measure temperature;",
+        "topic": "Thermal Physics"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "To convert Celsius to Kelvin, add 273 (T_K = 20 + 273 = 293 K) rather than subtracting 273."
+      },
+      {
+        "key": "B",
+        "reason": "Kelvin temperature is obtained by adding 273 to the Celsius reading."
+      },
+      {
+        "key": "C",
+        "reason": "68 is the Fahrenheit equivalent (9/5 \u00d7 20 + 32 = 68\u00b0F), not Kelvin (293 K)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 37,
+    "stem": "An example of a good conductor of heat is a",
+    "options": {
+      "A": "glass door.",
+      "B": "frying pan.",
+      "C": "wooden door.",
+      "D": "leather jacket."
+    },
+    "correctOption": "B",
+    "explanation": "Metals, such as those used to make a frying pan, are good conductors of heat, whereas glass, wood, and leather are poor conductors (insulators).",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 8,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_8.png",
+    "slo": "9.1.2",
+    "chapter": "Unit 9: Transfer of Thermal Energy",
+    "unitNumber": 9,
+    "unitName": "Transfer of Thermal Energy",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.2",
+        "description": "define the term \u2018thermal conductivity\u2019;",
+        "topic": "Transfer of Thermal Energy"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Glass has no free electrons and is a poor conductor (insulator) of heat."
+      },
+      {
+        "key": "C",
+        "reason": "Wood is a thermal insulator with trapped air pockets."
+      },
+      {
+        "key": "D",
+        "reason": "Leather is a thermal insulator used to trap body heat."
+      }
+    ]
+  },
+  {
+    "questionNumber": 38,
+    "stem": "Radiations\u2019 incident on a surface increases its temperature. Which of the following characteristics should be present in a surface that can protect itself MOST effectively against radiation?",
+    "options": {
+      "A": "Poor absorber and poor emitter",
+      "B": "Poor absorber and good emitter",
+      "C": "Good absorber and poor emitter",
+      "D": "Good absorber and good emitter"
+    },
+    "correctOption": "A",
+    "explanation": "To protect against radiation (such as shiny silver surfaces that reflect heat), a surface should be a poor absorber so it absorbs minimal thermal radiation, and consequently a poor emitter.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 9,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_9.png",
+    "slo": "9.3.3",
+    "chapter": "Unit 9: Transfer of Thermal Energy",
+    "unitNumber": 9,
+    "unitName": "Transfer of Thermal Energy",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "9.3.3",
+        "description": "describe that the rate of emission of radiation depends on the surface temperature and surface area of an object;",
+        "topic": "Transfer of Thermal Energy"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A good emitter would rapidly radiate heat energy; a shiny silvered reflector is both a poor absorber and a poor emitter of radiation."
+      },
+      {
+        "key": "C",
+        "reason": "A good absorber would absorb incident radiation and heat up rapidly."
+      },
+      {
+        "key": "D",
+        "reason": "Dull black surfaces are good absorbers and good emitters, whereas reflective protective surfaces are poor absorbers and poor emitters."
+      }
+    ]
+  },
+  {
+    "questionNumber": 39,
+    "stem": "The process of transfer of heat in liquids and gases is/ are called\nI. conduction\nII. convection\nIII. radiation",
+    "options": {
+      "A": "I only.",
+      "B": "II only.",
+      "C": "I and III.",
+      "D": "II and III."
+    },
+    "correctOption": "B",
+    "explanation": "Heat transfer in fluids (liquids and gases) primarily takes place through convection, due to the actual movement of fluid particles.",
+    "cognitiveLevel": "Remembering",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 9,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_9.png",
+    "slo": "9.2.1",
+    "chapter": "Unit 9: Transfer of Thermal Energy",
+    "unitNumber": 9,
+    "unitName": "Transfer of Thermal Energy",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "9.2.1",
+        "description": "explain convection in liquids and gases in terms of density changes with reference to the following real-life examples:\na. gliders,\nb. flying of birds,\nc. land breezes and sea breezes;",
+        "topic": "Transfer of Thermal Energy"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Conduction (I) is the dominant heat transfer mechanism in solids via lattice vibrations and free electrons."
+      },
+      {
+        "key": "C",
+        "reason": "Conduction (I) is minor in fluids, and radiation (III) requires no medium; bulk fluid movement in liquids and gases is convection (II)."
+      },
+      {
+        "key": "D",
+        "reason": "Radiation (III) transfers heat via electromagnetic waves even through a vacuum, whereas fluid circulation in liquids and gases is convection (II)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 40,
+    "stem": "When a wooden spoon is dipped in a bowl of soup, it does not become hot. In the given situation, the wooden spoon acts as a/ an",
+    "options": {
+      "A": "electrical conductor.",
+      "B": "electrical insulator.",
+      "C": "heat conductor.",
+      "D": "heat insulator."
+    },
+    "correctOption": "D",
+    "explanation": "Wood is a poor conductor of heat (thermal insulator), so it prevents heat from transferring through it from the soup, acting as a heat insulator.",
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "isNumerical": false,
+    "marks": 1.0,
+    "pageNumber": 9,
+    "pageScanUrl": "/materials/scans/ssc1_p1_page_9.png",
+    "slo": "9.1.3",
+    "chapter": "Unit 9: Transfer of Thermal Energy",
+    "unitNumber": 9,
+    "unitName": "Transfer of Thermal Energy",
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Physics"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.3",
+        "description": "describe the factors affecting the transfer of heat through solid conductors;",
+        "topic": "Transfer of Thermal Energy"
+      }
+    ],
+    "syllabus_reviewed": true,
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Wood does not conduct electricity and the scenario tests thermal (heat) transfer, not electrical conduction."
+      },
+      {
+        "key": "B",
+        "reason": "While wood is also an electrical insulator, its failure to become hot in hot soup specifically demonstrates that it is a heat (thermal) insulator."
+      },
+      {
+        "key": "C",
+        "reason": "A heat conductor (like a metal spoon) would rapidly conduct heat from the soup and become hot."
+      }
+    ]
+  }
+]

@@ -1,0 +1,63 @@
+id: AKU-EB
+short_code: AKU-EB
+name: Aga Khan University Examination Board
+description: Aga Khan University Examination Board (AKU-EB)
+country: Pakistan
+status: ACTIVE
+
+class_levels:
+  - "9"
+  - "10"
+  - "11"
+  - "12"
+
+subjects_by_class:
+  "9":
+    - Biology
+    - Computer Science
+    - Commerce
+    - Physics
+    - Chemistry
+    - Mathematics
+    - Business Studies
+  "10":
+    - Biology
+    - Computer Science
+    - Commerce
+    - Physics
+    - Chemistry
+    - Mathematics
+    - Business Studies
+  "11":
+    - Biology
+    - Computer Science
+    - Commerce
+    - Physics
+    - Chemistry
+    - Mathematics
+    - Business Studies
+  "12":
+    - Biology
+    - Computer Science
+    - Commerce
+    - Physics
+    - Chemistry
+    - Mathematics
+    - Business Studies
+
+terminology:
+  chapter: Unit
+  topic: Student Learning Outcome (SLO)
+  past_paper: Past Paper
+
+exam_style:
+  mcq_paper: true
+  subjective_paper: true
+  practical_component: true
+  negative_marking: false
+  allowed_question_types:
+    - MCQ_SINGLE
+    - APPLICATION_BASED
+    - CONCEPTUAL
+    - CRQ
+    - ERQ

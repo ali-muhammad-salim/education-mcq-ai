@@ -1,0 +1,12 @@
+TASK: Review the supplied question, original figure and official answer using the supplied educational evidence. Preserve the official answer as the current displayed answer. Produce a comparison for the owner; you cannot approve a replacement.
+
+Check the full question wording, units, assumptions, option labels and relevant figure before calculating. Distinguish a transcription mismatch from a possible error in the official source. Explain a proposed answer with concise, checkable calculations or source evidence. For an incorrect-option explanation, identify the actual misconception without asserting an unsupported learner intention. If the figure, question or evidence is incomplete, return insufficient_evidence instead of guessing.
+
+Do not silently rewrite the official key, select an answer because another model agrees, invent a board correction, or mark your proposal as approved. State necessary assumptions and unresolved alternatives.
+
+Return ONLY one JSON code block:
+{"questionId":"supplied id","officialAnswer":"literal supplied answer","finding":"insufficient_evidence","proposedAnswer":null,"reason":"concise checkable explanation","evidence":[],"assumptions":[],"uncertainties":[],"replacementApproved":false}
+Choose finding from agrees, possible_source_error, transcription_mismatch, insufficient_evidence. proposedAnswer may be populated only when supported; replacementApproved must remain false.
+
+INPUT:
+{{QUESTION_FIGURE_KEY_AND_EVIDENCE}}

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 260" width="100%" height="100%" style="background:#ffffff; font-family: Inter, system-ui, -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow-path" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1f2937"/>
+    </marker>
+    <marker id="arrow-disp" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <text x="225" y="25" text-anchor="middle" font-size="15" font-weight="600" fill="#111827">Path Traveled by the Boy</text>
+
+  <!-- Points:
+       P: (100, 180)
+       Q: (320, 180) -> 5 m
+       R: (320, 70)  -> 3 m
+       S: (100, 70)  -> 5 m
+  -->
+  
+  <!-- Path P -> Q -->
+  <line x1="100" y1="180" x2="310" y2="180" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrow-path)"/>
+  <!-- Path Q -> R -->
+  <line x1="320" y1="180" x2="320" y2="80" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrow-path)"/>
+  <!-- Path R -> S -->
+  <line x1="320" y1="70" x2="110" y2="70" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrow-path)"/>
+
+  <!-- Points dots -->
+  <circle cx="100" cy="180" r="5" fill="#111827"/>
+  <circle cx="320" cy="180" r="4" fill="#111827"/>
+  <circle cx="320" cy="70" r="4" fill="#111827"/>
+  <circle cx="100" cy="70" r="5" fill="#111827"/>
+
+  <!-- Labels for Points -->
+  <text x="80" y="186" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">P</text>
+  <text x="338" y="186" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">Q</text>
+  <text x="338" y="75" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">R</text>
+  <text x="80" y="75" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">S</text>
+
+  <!-- Dimension Labels -->
+  <text x="210" y="202" text-anchor="middle" font-size="14" font-weight="600" fill="#374151">5 m</text>
+  <text x="350" y="130" text-anchor="start" font-size="14" font-weight="600" fill="#374151">3 m</text>
+  <text x="210" y="55" text-anchor="middle" font-size="14" font-weight="600" fill="#374151">5 m</text>
+
+  <!-- Displacement dashed vector from P to S -->
+  <line x1="100" y1="180" x2="100" y2="80" stroke="#2563eb" stroke-width="2.5" stroke-dasharray="5,5" marker-end="url(#arrow-disp)"/>
+  <text x="50" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">Displacement = 3 m</text>
+</svg>

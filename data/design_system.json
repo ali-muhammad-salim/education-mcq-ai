@@ -1,0 +1,27 @@
+{
+    "typography": {
+        "body": {
+            "fontFamily": "Times New Roman",
+            "fontSize": "12.0px"
+        },
+        "headers": {
+            "H1": {
+                "size": "25.0px",
+                "sample": "AKU-EB"
+            },
+            "H2": {
+                "size": "13.6px",
+                "sample": "\uf020"
+            }
+        }
+    },
+    "colors": {
+        "primary_text": "#000000",
+        "accents": [
+            "#a0a0a4"
+        ]
+    },
+    "layout": {
+        "bullet_characters": []
+    }
+}

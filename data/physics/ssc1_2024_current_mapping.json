@@ -1,0 +1,279 @@
+{
+  "reviewMethod": "Semantic comparison of 2024 Annual Paper I question stems with the 2025 AKU-EB Class IX Physics syllabus outcomes.",
+  "sourceUrl": "/materials/ssc/physics/ssc-1/physics-ssc-full-syllabus-2025.pdf",
+  "entries": [
+    {
+      "questionNumber": 1,
+      "stem": "The total number of significant figures in $0.002022$ are",
+      "code": "1.7.1",
+      "description": "describe significant figures;",
+      "topic": "Measurement"
+    },
+    {
+      "questionNumber": 2,
+      "stem": "The number $0.0000509$ can be represented in scientific notation as",
+      "code": "1.3.2",
+      "description": "convert numerical values of measurement in scientific notation;",
+      "topic": "Measurement"
+    },
+    {
+      "questionNumber": 3,
+      "stem": "If the volume of the given cuboid is $0.03\\text{ m}^3$, then the value of $x$ will be",
+      "code": "1.2.2",
+      "description": "differentiate between base and derived physical quantities and units;",
+      "topic": "Measurement"
+    },
+    {
+      "questionNumber": 4,
+      "stem": "The total number of derived quantities involved in the equation $S = v_i t + \\frac{1}{2}at^2$ is",
+      "code": "1.1.3",
+      "description": "identify various physical quantities as base and derive quantities;",
+      "topic": "Measurement"
+    },
+    {
+      "questionNumber": 5,
+      "stem": "The given graph depicts that a person is walking along a straight road.\n\nWhich of the following options CORRECTLY describes the motion of the person from point X to Y?",
+      "code": "2.4.1",
+      "description": "interpret distance-time graph and speed-time graph;",
+      "topic": "Kinematics"
+    },
+    {
+      "questionNumber": 6,
+      "stem": "A force of $10\\text{ N}$ is acting on a body along x-axis. The value of its y-component will be",
+      "code": "1.4.4",
+      "description": "determine, using Pythagoras theorem and graphs, the resultant of two vectors at right angle;",
+      "topic": "Measurement"
+    },
+    {
+      "questionNumber": 7,
+      "stem": "A body starts from rest and accelerates to a velocity of $100\\text{ m/s}$. If it covers a distance of $50\\text{ m}$, then its acceleration will be",
+      "code": "2.3.2",
+      "description": "calculate average speed, average velocity and acceleration;",
+      "topic": "Kinematics"
+    },
+    {
+      "questionNumber": 8,
+      "stem": "The below given picture shows the velocity-time graph for the motion of a body.\n\nThe slope of the line segment WX in the above graph shows the",
+      "code": "2.4.2",
+      "description": "determine the slope/ gradient of distance-time and speed-time graph;",
+      "topic": "Kinematics"
+    },
+    {
+      "questionNumber": 9,
+      "stem": "If a motorcyclist covers a displacement of $150\\text{ m}$ in $10\\text{ s}$, then his/ her velocity will be",
+      "code": "2.3.2",
+      "description": "calculate average speed, average velocity and acceleration;",
+      "topic": "Kinematics"
+    },
+    {
+      "questionNumber": 10,
+      "stem": "Saif and Kaif are in a basketball match. During the game, Saif, holding the ball of mass $0.6\\text{ kg}$ running with a velocity of $3\\text{ m/s}$, collides with the defender, Kaif, who is at rest position, and both start moving together.\n\nThe type of collision and value of momentum of the ball will be\n(Note: Saif and Kaif both have equal weights.)\n\n| Option | Type of Collision | Momentum of the Ball |\n| :--- | :--- | :--- |\n| A | Elastic | $1.8\\text{ N}\\cdot\\text{s}$ |\n| B | Inelastic | $1.8\\text{ N}\\cdot\\text{s}$ |\n| C | Elastic | $0.2\\text{ N}\\cdot\\text{s}$ |\n| D | Inelastic | $0.2\\text{ N}\\cdot\\text{s}$ |",
+      "code": "3.4.4",
+      "description": "solve word problems related to momentum and impulse;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 11,
+      "stem": "Which of the following options CORRECTLY depicts the effect of friction on the speed of an object while keeping the force constant?\n\n| Option | Friction | Speed |\n| :--- | :--- | :--- |\n| A | More | Less |\n| B | Unaffected | Less |\n| C | Less | More |\n| D | Less | Unaffected |",
+      "code": "3.5.1",
+      "description": "define friction;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 12,
+      "stem": "Two unequal masses are suspended with an inextensible string around a pulley as shown in the given diagram.\n(Note: Here masses are '$m$' and '$M$', such that '$m$' is less than '$M$'.)\nBased on the given diagram, the relationship between the magnitudes of the acceleration $a_1$ and $a_2$ is",
+      "code": "3.3.1",
+      "description": "explain Newton\u2019s laws of motion;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 13,
+      "stem": "During accidents, airbags in cars protect the passengers from hitting the dashboards by increasing the",
+      "code": "3.4.7",
+      "description": "apply scientific and engineering ideas to design a device that minimises the force on an object during a collision (e.g., helmet or parachute);",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 14,
+      "stem": "If the mass of an object is $0.7\\text{ kg}$, then its weight will be\n(Note: Take the value of acceleration due to gravity '$g$' as $10\\text{ m/s}^2$.)",
+      "code": "3.1.4",
+      "description": "solve word problems using the relation w = mg;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 15,
+      "stem": "Based on the given image, the net torque of the seesaw will be equal to",
+      "code": "4.2.1",
+      "description": "state the principle of moments;",
+      "topic": "Turning Effect of Forces"
+    },
+    {
+      "questionNumber": 16,
+      "stem": "If a body obeys the first condition of equilibrium, then which of the following options will equate to zero?\n\n\u2022 I. Linear acceleration\n\u2022 II. Vector sum of all the forces\n\u2022 III. Vector sum of all the torques",
+      "code": "4.4.3",
+      "description": "state the conditions of equilibrium;",
+      "topic": "Turning Effect of Forces"
+    },
+    {
+      "questionNumber": 17,
+      "stem": "If a force of $4\\text{ N}$ is applied by a student on a door handle and the moment of force is $16\\text{ Nm}$, then the distance of the pivot from the point of applied force is",
+      "code": "4.1.3",
+      "description": "solve word problems related to the moment of force or torque = force \u00d7 perpendicular distance from the pivot to the line of action of force;",
+      "topic": "Turning Effect of Forces"
+    },
+    {
+      "questionNumber": 18,
+      "stem": "In the given diagram, two weights '$W_1$' and '$W_2$' are placed on a rod whereas ($W_1 > W_2$). For keeping the rod in the equilibrium position, then\n\n\u2022 I. increase '$W_2$' and decrease '$x$'\n\u2022 II. increase '$W_2$' and '$x$' remain same\n\u2022 III. increase '$x$' and '$W_2$' remain the same",
+      "code": "4.2.2",
+      "description": "solve word problems related to the principle of moments;",
+      "topic": "Turning Effect of Forces"
+    },
+    {
+      "questionNumber": 21,
+      "stem": "The weight is a force that results from the gravitational attraction between an object and the Earth. The direction of this force will be",
+      "code": "3.1.3",
+      "description": "define gravitational field strength;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 23,
+      "stem": "If the kinetic energy of a $200\\text{ kg}$ object is $10,000\\text{ J}$, then the velocity of the object will be",
+      "code": "6.3.3",
+      "description": "solve word problems related to the kinetic and potential energy;",
+      "topic": "Work, Energy and Power"
+    },
+    {
+      "questionNumber": 24,
+      "stem": "A tugboat applies a force of $100\\text{ N}$ to tow a container ship from the shore to the deep sea. The rope that connects the tugboat to the ship is parallel to the surface of the water.\nIf the tugboat displaces the container ship by $500\\text{ m}$, then the amount of work done by the tugboat will be\n(Note: Suppose that the seawater current is negligible.)",
+      "code": "6.1.2",
+      "description": "solve word problems related to workdone;",
+      "topic": "Work, Energy and Power"
+    },
+    {
+      "questionNumber": 25,
+      "stem": "Consider the given image.\n\nAll of the following types of renewable energy sources are shown in the given picture EXCEPT",
+      "code": "6.4.5",
+      "description": "differentiate between non-renewable and renewable energy sources with examples of each;",
+      "topic": "Work, Energy and Power"
+    },
+    {
+      "questionNumber": 26,
+      "stem": "An electric heater of $500\\text{ W}$ consumes $50\\text{ J}$ of energy to warm a room. The time required by the heater to warm the room will be",
+      "code": "6.6.2",
+      "description": "solve word problems related to the concept of power;",
+      "topic": "Work, Energy and Power"
+    },
+    {
+      "questionNumber": 27,
+      "stem": "If a person exerts a force that causes a car to move forward, then this is an example of",
+      "code": "6.1.1",
+      "description": "define work and state its SI unit;",
+      "topic": "Work, Energy and Power"
+    },
+    {
+      "questionNumber": 28,
+      "stem": "According to the kinetic molecular theory of matter, the distance among the molecules of matter in the liquid state is",
+      "code": "8.1.2",
+      "description": "compare the structure of solids, liquids and gases based on the kinetic theory of matter;",
+      "topic": "Thermal Physics"
+    },
+    {
+      "questionNumber": 29,
+      "stem": "The given diagram shows three different blocks of insoluble material placed in three beakers that are partially filled with water.\n\nWhich of the given block(s) is/ are LESS denser than water?",
+      "code": "7.1.2",
+      "description": "compare the densities of three states of matter (solids, liquids and gases);",
+      "topic": "Pressure"
+    },
+    {
+      "questionNumber": 30,
+      "stem": "When the upthrust on a moving cargo ship becomes equal to its weight, then it will",
+      "code": "3.3.4",
+      "description": "determine the resultant of two or more forces acting along the same straight line;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 31,
+      "stem": "Which of the following options depicts the atmospheric pressure at sea level and on the mountain?\n\n| Option | Atmospheric Pressure at Sea Level | Atmospheric Pressure on the Mountain |\n| :--- | :--- | :--- |\n| A | Low | High |\n| B | Low | Low |\n| C | High | High |\n| D | High | Low |",
+      "code": "7.3.3",
+      "description": "describe that atmospheric pressure decreases with the increase \nin height above the earth\u2019s surface;",
+      "topic": "Pressure"
+    },
+    {
+      "questionNumber": 32,
+      "stem": "The property of matter by which it restores its length, shape or volume after the removal of the deforming force is called",
+      "code": "5.1.1",
+      "description": "illustrate that force may produce a change in the size and shape of an object;",
+      "topic": "Deformation of Solids"
+    },
+    {
+      "questionNumber": 33,
+      "stem": "The CORRECT relation between Celsius and Fahrenheit is",
+      "code": "8.3.2",
+      "description": "convert temperature from one scale to another (Fahrenheit, Celsius and Kelvin scales);",
+      "topic": "Thermal Physics"
+    },
+    {
+      "questionNumber": 34,
+      "stem": "The amount of heat energy required to change a substance from solid into liquid state at its melting point without any change in its temperature is known as",
+      "code": "8.2.4",
+      "description": "describe latent heat of fusion and latent heat of vaporisation;",
+      "topic": "Thermal Physics"
+    },
+    {
+      "questionNumber": 35,
+      "stem": "If the temperature of a substance is $20^\\circ\\text{C}$, then its temperature in Kelvin scale will be",
+      "code": "8.3.2",
+      "description": "convert temperature from one scale to another (Fahrenheit, Celsius and Kelvin scales);",
+      "topic": "Thermal Physics"
+    },
+    {
+      "questionNumber": 36,
+      "stem": "A metal cap on a glass bottle can easily be opened when hot water is poured over it. This is because",
+      "code": "8.2.1",
+      "description": "describe the thermal expansion of solids in terms of: a. linear expansion, b. volumetric expansion;",
+      "topic": "Thermal Physics"
+    },
+    {
+      "questionNumber": 37,
+      "stem": "With reference to heat transfer in solids, the CORRECT statement is that heat",
+      "code": "9.1.1",
+      "description": "explain thermal conduction in solids;",
+      "topic": "Transfer of Thermal Energy"
+    },
+    {
+      "questionNumber": 38,
+      "stem": "The CORRECT option that identifies the processes of heat transfer in which medium is required and not required is\n\n| Option | Process in which Medium is Required | Process in which Medium is NOT Required |\n| :--- | :--- | :--- |\n| A | conduction | convection |\n| B | convection | conduction |\n| C | conduction | radiation |\n| D | radiation | conduction |",
+      "code": "9.3.1",
+      "description": "define the process of thermal energy transfer by radiation;",
+      "topic": "Transfer of Thermal Energy"
+    },
+    {
+      "questionNumber": 39,
+      "stem": "An example of a good conductor of heat is a",
+      "code": "9.1.5",
+      "description": "describe good and bad conductors of heat with examples;",
+      "topic": "Transfer of Thermal Energy"
+    },
+    {
+      "questionNumber": 40,
+      "stem": "Air ventilation in a room is an example of",
+      "code": "9.4.1",
+      "description": "discuss everyday applications of conduction, convection and radiation including:\na. heating objects such as kitchen pans,\nb. heating of room by convection,\nc. measuring temperature using an infrared thermometer,\nd. using thermal insulation to maintain the temperature of a liquid and to reduce thermal energy transfer in buildings,\ne. the mechanism of a household hot-water system;",
+      "topic": "Transfer of Thermal Energy"
+    }
+  ],
+  "pending": [
+    {
+      "questionNumber": 19,
+      "reason": "Assessed under the 2022\u20132024 Unit 5 (Gravitation) syllabus; Universal Gravitation, variation of g with altitude, and orbital paths are not in the 2025 Class IX syllabus (which replaced Unit 5 with Deformation of Solids)."
+    },
+    {
+      "questionNumber": 20,
+      "reason": "Assessed under the 2022\u20132024 Unit 5 (Gravitation) syllabus; Universal Gravitation, variation of g with altitude, and orbital paths are not in the 2025 Class IX syllabus (which replaced Unit 5 with Deformation of Solids)."
+    },
+    {
+      "questionNumber": 22,
+      "reason": "Assessed under the 2022\u20132024 Unit 5 (Gravitation) syllabus; Universal Gravitation, variation of g with altitude, and orbital paths are not in the 2025 Class IX syllabus (which replaced Unit 5 with Deformation of Solids)."
+    }
+  ]
+}

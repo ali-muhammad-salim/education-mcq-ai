@@ -1,0 +1,273 @@
+{
+  "reviewMethod": "Semantic comparison of question stems with the supplied current syllabus outcomes; original exam-year codes are not used to establish equivalence.",
+  "sourceUrl": "/materials/ssc/physics/ssc-1/physics-ssc-full-syllabus-2025.pdf",
+  "entries": [
+    {
+      "questionNumber": 1,
+      "stem": "Which of the following is a base physical quantity?",
+      "code": "1.1.3",
+      "description": "identify various physical quantities as base and derive quantities;",
+      "topic": "Measurement"
+    },
+    {
+      "questionNumber": 2,
+      "stem": "The number 0.012345678 can be represented in scientific notation as",
+      "code": "1.3.2",
+      "description": "convert numerical values of measurement in scientific notation;",
+      "topic": "Measurement"
+    },
+    {
+      "questionNumber": 3,
+      "stem": "All of the following quantities can be measured by using Vernier callipers EXCEPT",
+      "code": "1.5.3",
+      "description": "describe the working of measuring instruments;",
+      "topic": "Measurement"
+    },
+    {
+      "questionNumber": 4,
+      "stem": "The number of significant figures in (25.01)^2 is",
+      "code": "1.7.1",
+      "description": "describe significant figures;",
+      "topic": "Measurement"
+    },
+    {
+      "questionNumber": 5,
+      "stem": "In a classroom, a student got up from his/ her desk and walked 3 m ahead towards his/ her friend's desk. He/ she collected a book and walked 3 m back to his/ her own desk.\\n\\nThe total displacement of the student would be",
+      "code": "2.3.1",
+      "description": "define the following terms: a. distance, b. displacement, c. speed, d. velocity, e. acceleration;",
+      "topic": "Kinematics"
+    },
+    {
+      "questionNumber": 6,
+      "stem": "In the given speed-time graph, the sum of areas representing the total distance covered by a body is",
+      "code": "2.4.4",
+      "description": "calculate the area under the speed-time graph of uniformly accelerated objects to find out the distance covered by the objects;",
+      "topic": "Kinematics"
+    },
+    {
+      "questionNumber": 7,
+      "stem": "In the given distance-time graph, the line that represents a body in rest position is",
+      "code": "2.4.3",
+      "description": "infer the following states of a body based on the given graph: a. at rest, b. moving with constant speed, c. moving with positive acceleration, d. moving with negative acceleration;",
+      "topic": "Kinematics"
+    },
+    {
+      "questionNumber": 9,
+      "stem": "A cricket ball is hit in such a way that it travels vertically upward.\\n\\nWhat will be its initial velocity, if it attains the maximum height in 3s?\\n\\n(Note: Take the value of acceleration due to gravity as 9.8 m/s^2.)",
+      "code": "2.5.2",
+      "description": "solve word problems related to free-falling bodies using the relation g = Δv/ Δt.",
+      "topic": "Kinematics"
+    },
+    {
+      "questionNumber": 10,
+      "stem": "A force of 100 N acts on an object for 10 s. If the velocity of the object is 50 m/s, then the amount of momentum in the object will be",
+      "code": "3.4.4",
+      "description": "solve word problems related to momentum and impulse;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 11,
+      "stem": "If a body is taken to the surface of the moon, then which of the following physical quantities of the body will change?",
+      "code": "3.1.1",
+      "description": "differentiate between mass and weight;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 12,
+      "stem": "In a tug of war, an inextensible rope is pulled by two teams in opposite direction over a central line. Each team has four players and each player is applying 10 N force on the rope.\\n\\nDuring the game, if the rope is balanced over the central line, then the tension in the rope will be",
+      "code": "3.3.4",
+      "description": "determine the resultant of two or more forces acting along the same straight line;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 13,
+      "stem": "A passenger getting down from a moving bus falls forward. This is due to the",
+      "code": "3.1.2",
+      "description": "explain that the mass of an object resists changes from its state of rest or motion (inertia);",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 14,
+      "stem": "If an object moves with the help of wheels from one point to another point on a rough surface, then the type of friction between wheels and surface is",
+      "code": "3.5.2",
+      "description": "differentiate between rolling friction and sliding friction;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 15,
+      "stem": "All of the following are the examples of turning effect of force EXCEPT",
+      "code": "4.1.2",
+      "description": "explain the turning effect of force by relating it to everyday life;",
+      "topic": "Turning Effect of Forces"
+    },
+    {
+      "questionNumber": 16,
+      "stem": "In the given figure, a uniform metre rod is balanced at its centre by a fulcrum. The distances $d_1$, $d_2$ and $d_3$ are equal to $10\\text{ cm}$, $2\\text{ cm}$ and $5\\text{ cm}$ respectively. If $F_1$ and $F_2$ are equal to $2\\text{ N}$ and $5\\text{ N}$ respectively, then the magnitude of $F_3$ will be",
+      "code": "4.2.2",
+      "description": "solve word problems related to the principle of moments;",
+      "topic": "Turning Effect of Forces"
+    },
+    {
+      "questionNumber": 17,
+      "stem": "Four different forces ($F_1, F_2, F_3$ and $F_4$) of the same magnitude are acting on the given metre scale. Which force produces the maximum torque?",
+      "code": "4.1.3",
+      "description": "solve word problems related to the moment of force or torque = force × perpendicular distance from the pivot to the line of action of force;",
+      "topic": "Turning Effect of Forces"
+    },
+    {
+      "questionNumber": 18,
+      "stem": "A point where the whole weight of a body acts vertically downward is called the",
+      "code": "4.3.1",
+      "description": "define centre of gravity and centre of mass of a body;",
+      "topic": "Turning Effect of Forces"
+    },
+    {
+      "questionNumber": 19,
+      "stem": "Which of the following correctly describes the direction of the gravitational field at a point?",
+      "code": "3.1.3",
+      "description": "define gravitational field strength;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 22,
+      "stem": "An artificial satellite is revolving around the Earth in a specific orbit. (F₁) is the magnitude of the force exerted by the Earth on a satellite and (F₂) is the magnitude of the force exerted by the satellite on the Earth.\n\nWhich of the following statements is TRUE for the given condition?",
+      "code": "3.3.1",
+      "description": "explain Newton’s laws of motion;",
+      "topic": "Dynamics"
+    },
+    {
+      "questionNumber": 23,
+      "stem": "A traffic police car lifter lifts a car that was parked in a no parking area. The lifter lifts the car upto 0.5 m in the upward direction and the applied force is 5000 N. The work done on the car will be",
+      "code": "6.1.2",
+      "description": "solve word problems related to workdone;",
+      "topic": "Work, Energy and Power"
+    },
+    {
+      "questionNumber": 24,
+      "stem": "During a football match, a strong wind shakes and loose a football of mass 0.40 kg that was stuck in a tree at a height of 20 m. Ignoring air resistance, the potential energy of the football when it was stuck in the tree was\n\n(Note: Take the value of acceleration due to gravity as 9.8 m/s².)",
+      "code": "6.3.3",
+      "description": "solve word problems related to the kinetic and potential energy;",
+      "topic": "Work, Energy and Power"
+    },
+    {
+      "questionNumber": 25,
+      "stem": "All of the following are the examples of renewable energy sources EXCEPT",
+      "code": "6.4.5",
+      "description": "differentiate between non-renewable and renewable energy sources with examples of each;",
+      "topic": "Work, Energy and Power"
+    },
+    {
+      "questionNumber": 26,
+      "stem": "The kinetic energy of an object depends on",
+      "code": "6.3.2",
+      "description": "derive the formulae of kinetic energy K.E = ½ mv2 and potential energy P.E = mgΔh;",
+      "topic": "Work, Energy and Power"
+    },
+    {
+      "questionNumber": 27,
+      "stem": "If the mass of an elevator is $2000\\text{ kg}$, then the work done to raise the elevator to a height of $50\\text{ m}$ in $20\\text{ seconds}$ will be\n(Note: Take the value of acceleration due to gravity 'g' as $9.8\\text{ m/s}^2$.)",
+      "code": "6.1.2",
+      "description": "solve word problems related to workdone;",
+      "topic": "Work, Energy and Power"
+    },
+    {
+      "questionNumber": 29,
+      "stem": "Consider the given figure in which bricks of 1 kg are stacked in different positions.\nComparing stack X with the stack Y, the CORRECT statement is that",
+      "code": "7.2.2",
+      "description": "explain that pressure varies with force and area with the help of real-life examples;",
+      "topic": "Pressure"
+    },
+    {
+      "questionNumber": 30,
+      "stem": "As compared to sea level, the atmospheric pressure on mountains is",
+      "code": "7.3.3",
+      "description": "describe that atmospheric pressure decreases with the increase \nin height above the earth’s surface;",
+      "topic": "Pressure"
+    },
+    {
+      "questionNumber": 31,
+      "stem": "The height of Tarbela dam is 143 m.\n\nAssuming that the dam is filled with water and the density of water is $1000\\text{ kg/m}^3$. The value of acceleration due to gravity is $10\\text{ m/s}^2$, the pressure exerted by water at the base of the dam will be",
+      "code": "7.4.4",
+      "description": "solve word problems related to the relationship between pressure, depth and liquid density;",
+      "topic": "Pressure"
+    },
+    {
+      "questionNumber": 33,
+      "stem": "The body temperature of a patient is recorded as $101^{\\circ}\\text{F}$. This temperature is equal to",
+      "code": "8.3.2",
+      "description": "convert temperature from one scale to another (Fahrenheit, Celsius and Kelvin scales);",
+      "topic": "Thermal Physics"
+    },
+    {
+      "questionNumber": 34,
+      "stem": "If $4\\text{ kg}$ of water cools from $80^{\\circ}\\text{C}$ to $30^{\\circ}\\text{C}$, it loses energy\n\n(Note: Take the specific heat of water as $4.2\\text{ J/g}^{\\circ}\\text{C}$.)",
+      "code": "8.2.7",
+      "description": "solve word problems involving the concept of specific heat capacity, latent heat of fusion and vaporisation;",
+      "topic": "Thermal Physics"
+    },
+    {
+      "questionNumber": 35,
+      "stem": "The amount of heat required to convert $100\\text{ g}$ of ice at $0^{\\circ}\\text{C}$ to water at $0^{\\circ}\\text{C}$ is\n\n(Note: Take the latent heat of fusion of ice as $334\\text{ J/g}$.)",
+      "code": "8.2.7",
+      "description": "solve word problems involving the concept of specific heat capacity, latent heat of fusion and vaporisation;",
+      "topic": "Thermal Physics"
+    },
+    {
+      "questionNumber": 36,
+      "stem": "The vessel that will cause a liquid to evaporate most quickly when containing equal amounts of the same liquid is",
+      "code": "8.2.10",
+      "description": "describe factors that influence the rate of surface evaporation;",
+      "topic": "Thermal Physics"
+    },
+    {
+      "questionNumber": 37,
+      "stem": "All of the following show transfer of heat by convection EXCEPT the use of",
+      "code": "9.2.1",
+      "description": "explain convection in liquids and gases in terms of density changes with reference to the following real-life examples:\na. gliders,\nb. flying of birds,\nc. land breezes and sea breezes;",
+      "topic": "Transfer of Thermal Energy"
+    },
+    {
+      "questionNumber": 38,
+      "stem": "The vacuum in the thermos bottle prevents heat transfer by\n\n• I. radiation\n• II. conduction\n• III. convection",
+      "code": "9.4.1",
+      "description": "discuss everyday applications of conduction, convection and radiation including:\na. heating objects such as kitchen pans,\nb. heating of room by convection,\nc. measuring temperature using an infrared thermometer,\nd. using thermal insulation to maintain the temperature of a liquid and to reduce thermal energy transfer in buildings,\ne. the mechanism of a household hot-water system;",
+      "topic": "Transfer of Thermal Energy"
+    },
+    {
+      "questionNumber": 39,
+      "stem": "The characteristic that should be present in a surface to protect it from infrared radiation is",
+      "code": "9.3.2",
+      "description": "describe the effect of surface colour (black or white) and texture (dull or shiny) on the emission, absorption and reflection of infrared radiation;",
+      "topic": "Transfer of Thermal Energy"
+    },
+    {
+      "questionNumber": 40,
+      "stem": "The surface that is the good radiator of heat is",
+      "code": "9.3.2",
+      "description": "describe the effect of surface colour (black or white) and texture (dull or shiny) on the emission, absorption and reflection of infrared radiation;",
+      "topic": "Transfer of Thermal Energy"
+    }
+  ],
+  "pending": [
+    {
+      "questionNumber": 8,
+      "reason": "Equations of motion: confirm the required depth against the current edition; uniform-acceleration terminology alone is insufficient."
+    },
+    {
+      "questionNumber": 20,
+      "reason": "Determining Earth mass with the universal gravitational constant needs an explicit current outcome."
+    },
+    {
+      "questionNumber": 21,
+      "reason": "Inverse-square variation with altitude needs an explicit current outcome."
+    },
+    {
+      "questionNumber": 28,
+      "reason": "Floating-body density interpretation needs review against the current density outcomes."
+    },
+    {
+      "questionNumber": 32,
+      "reason": "Upthrust and floating conditions require curriculum review."
+    }
+  ]
+}

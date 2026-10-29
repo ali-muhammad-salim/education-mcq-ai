@@ -1,0 +1,9 @@
+# Unified account access and dark contrast
+
+The navigation has one authentication/account control. Signed-out visitors open Sign in / Sign up; signed-in users open Account, which contains Profile & security, their dashboard, quiz portal and sign-out. The administrator dashboard link resolves to /admin/users.
+
+Submitting sign-up with an existing normalized email shows an account-exists notice in the sign-in modal, preserves the email, clears the password and focuses the sign-in password field. The registration API returns ACCOUNT_EXISTS even when two simultaneous sign-ups race; the existing account and password are preserved and no extra session is issued for the rejected request.
+
+Dark-mode compatibility rules now match complete foreground declarations in both server HTML (compact hex) and hydrated styles (RGB), without accidentally matching background-color as a text color. Resource pages use semantic theme tokens directly. Additional corrections cover tinted buttons, filters, badges, inactive boards/subjects, syllabus tables, quiz setup guidance, student/teacher counters, input boundaries and the supplied logo's light backing. Availability and permissions remain unchanged.
+
+Validation: 52 tests, lint, typecheck, production build, and queued HTTP integration checks. Browser testing covered the duplicate-email transition and subsequent sign-in, signed-in account menus, client-side navigation and loaded student, teacher and admin screens. The rendered dark audit checked 4,653 text items in 30 page states with no solid-background failures at 4.5:1 for normal text and 3:1 for large text. Gradient banners were reviewed separately; this is not a claim of complete WCAG certification. See verification/account-contrast-audit.json and scripts/browser-contrast-audit.js for the method and results. Screenshots use synthetic local accounts only.

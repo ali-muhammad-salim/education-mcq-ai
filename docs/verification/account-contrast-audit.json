@@ -1,0 +1,220 @@
+{
+  "method": "Rendered DOM colors composited over solid backgrounds; 4.5:1 normal text, 3:1 large text. Gradient text receives separate visual review.",
+  "accountFlow": "Duplicate sign-up displayed ACCOUNT_EXISTS notice, switched to sign-in, preserved email, cleared password and focused password input. Subsequent sign-in succeeded.",
+  "results": [
+    {
+      "checked": 178,
+      "failures": [],
+      "gradients": 5,
+      "theme": "dark",
+      "url": "/"
+    },
+    {
+      "checked": 68,
+      "failures": [],
+      "gradients": 11,
+      "theme": "dark",
+      "url": "/akueb"
+    },
+    {
+      "checked": 58,
+      "failures": [],
+      "gradients": 11,
+      "theme": "dark",
+      "url": "/akueb/IX"
+    },
+    {
+      "checked": 47,
+      "failures": [],
+      "gradients": 11,
+      "theme": "dark",
+      "url": "/akueb/X"
+    },
+    {
+      "checked": 64,
+      "failures": [],
+      "gradients": 0,
+      "theme": "dark",
+      "url": "/akueb/IX/physics"
+    },
+    {
+      "checked": 272,
+      "failures": [],
+      "gradients": 9,
+      "theme": "dark",
+      "url": "/resources"
+    },
+    {
+      "checked": 56,
+      "failures": [],
+      "gradients": 0,
+      "theme": "dark",
+      "url": "/account"
+    },
+    {
+      "checked": 70,
+      "failures": [],
+      "gradients": 0,
+      "theme": "dark",
+      "url": "/akueb/IX/physics/model-papers"
+    },
+    {
+      "checked": 113,
+      "failures": [],
+      "gradients": 0,
+      "theme": "dark",
+      "url": "/akueb/IX/physics/pastpapers"
+    },
+    {
+      "checked": 692,
+      "failures": [],
+      "gradients": 7,
+      "theme": "dark",
+      "url": "/akueb/IX/physics/syllabus"
+    },
+    {
+      "checked": 94,
+      "failures": [],
+      "gradients": 7,
+      "theme": "dark",
+      "url": "/akueb/IX/physics/mcqs"
+    },
+    {
+      "checked": 63,
+      "failures": [],
+      "gradients": 7,
+      "theme": "dark",
+      "url": "/akueb/IX/physics/books"
+    },
+    {
+      "checked": 56,
+      "failures": [],
+      "gradients": 7,
+      "theme": "dark",
+      "url": "/akueb/IX/physics/practicals"
+    },
+    {
+      "checked": 636,
+      "failures": [],
+      "gradients": 15,
+      "theme": "dark",
+      "url": "/classes/ssc-i/physics"
+    },
+    {
+      "checked": 682,
+      "failures": [],
+      "gradients": 15,
+      "theme": "dark",
+      "url": "/classes/ssc-ii/physics"
+    },
+    {
+      "checked": 103,
+      "failures": [],
+      "gradients": 0,
+      "theme": "dark",
+      "url": "/syllabus"
+    },
+    {
+      "checked": 97,
+      "failures": [],
+      "gradients": 5,
+      "theme": "dark",
+      "url": "/privacy"
+    },
+    {
+      "checked": 76,
+      "failures": [],
+      "gradients": 5,
+      "theme": "dark",
+      "url": "/terms"
+    },
+    {
+      "checked": 58,
+      "failures": [],
+      "gradients": 0,
+      "theme": "dark",
+      "url": "/quizzes/PHY-IX-P1/take"
+    },
+    {
+      "checked": 124,
+      "failures": [],
+      "gradients": 8,
+      "theme": "dark",
+      "url": "/quizzes"
+    },
+    {
+      "checked": 101,
+      "failures": [],
+      "gradients": 1,
+      "theme": "dark",
+      "url": "/dashboard/teacher"
+    },
+    {
+      "checked": 84,
+      "failures": [],
+      "gradients": 7,
+      "theme": "dark",
+      "url": "/dashboard/teacher"
+    },
+    {
+      "checked": 84,
+      "failures": [],
+      "gradients": 7,
+      "theme": "dark",
+      "url": "/dashboard/teacher"
+    },
+    {
+      "checked": 92,
+      "failures": [],
+      "gradients": 6,
+      "theme": "dark",
+      "url": "/admin/users"
+    },
+    {
+      "checked": 86,
+      "failures": [],
+      "gradients": 8,
+      "theme": "dark",
+      "url": "/admin/users"
+    },
+    {
+      "checked": 86,
+      "failures": [],
+      "gradients": 8,
+      "theme": "dark",
+      "url": "/admin/users"
+    },
+    {
+      "checked": 64,
+      "failures": [],
+      "gradients": 0,
+      "theme": "dark",
+      "url": "/akueb/IX/physics",
+      "navigation": "client-side link"
+    },
+    {
+      "checked": 192,
+      "failures": [],
+      "gradients": 5,
+      "theme": "dark",
+      "url": "/",
+      "state": "duplicate-email sign-in notice"
+    },
+    {
+      "checked": 182,
+      "failures": [],
+      "gradients": 1,
+      "theme": "dark",
+      "url": "/dashboard/student",
+      "state": "available assessments"
+    },
+    {
+      "checked": 75,
+      "failures": [],
+      "gradients": 1,
+      "theme": "dark",
+      "url": "/dashboard/student",
+      "state": "completed results"
+    }
+  ]
+}

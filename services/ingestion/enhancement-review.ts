@@ -1,0 +1,3 @@
+import { z } from 'zod';
+export const enhancementCandidate = z.object({ region: z.number().int().nonnegative(), storageKey: z.string(), sourceHash: z.string(), candidateHash: z.string().length(64), model: z.string(), verifier: z.string(), audit: z.object({ faithful: z.boolean(), complete: z.boolean(), mappingsCorrect: z.boolean(), conflicts: z.array(z.string()) }), status: z.enum(['PENDING_REVIEW', 'APPROVED', 'REJECTED']), reviewerId: z.string().optional(), reviewedAt: z.string().optional(), note: z.string().optional() });
+export const approvedEnhancement = z.object({ region: z.number().int().nonnegative(), storageKey: z.string(), sourceHash: z.string(), approval: z.literal('APPROVED'), reviewerId: z.string(), candidateHash: z.string().length(64) });

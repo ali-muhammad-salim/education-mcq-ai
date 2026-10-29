@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 180" width="100%" height="100%" style="background:#ffffff; font-family: Inter, system-ui, -apple-system, sans-serif;">
+  <text x="270" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Vernier Calliper Scale Reading</text>
+
+  <!-- Main Scale (Upper Bar) -->
+  <g transform="translate(40, 35)">
+    <!-- Scale Background -->
+    <rect x="0" y="0" width="460" height="40" fill="#f3f4f6" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Main scale marks (mm): each mm is 6px. 0 mm at x=20, 10mm at x=80, 20mm at x=140, 30mm at x=200, 40mm at x=260, 50mm at x=320, 60mm at x=380, 70mm at x=440 -->
+    <!-- Major numbers -->
+    <text x="20" y="15" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2937">0</text>
+    <text x="80" y="15" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2937">10</text>
+    <text x="140" y="15" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2937">20</text>
+    <text x="200" y="15" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2937">30</text>
+    <text x="260" y="15" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2937">40</text>
+    <text x="320" y="15" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2937">50</text>
+    <text x="380" y="15" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2937">60</text>
+    <text x="440" y="15" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2937">70</text>
+
+    <!-- Main scale ticks -->
+    <!-- 0 to 70 mm: 6px per mm -->
+    <path d="
+      M 20 40 L 20 20  M 26 40 L 26 28  M 32 40 L 32 28  M 38 40 L 38 28  M 44 40 L 44 28  M 50 40 L 50 24  M 56 40 L 56 28  M 62 40 L 62 28  M 68 40 L 68 28  M 74 40 L 74 28
+      M 80 40 L 80 20  M 86 40 L 86 28  M 92 40 L 92 28  M 98 40 L 98 28  M 104 40 L 104 28 M 110 40 L 110 24 M 116 40 L 116 28 M 122 40 L 122 28 M 128 40 L 128 28 M 134 40 L 134 28
+      M 140 40 L 140 20 M 146 40 L 146 28 M 152 40 L 152 28 M 158 40 L 158 28 M 164 40 L 164 28 M 170 40 L 170 24 M 176 40 L 176 28 M 182 40 L 182 28 M 188 40 L 188 28 M 194 40 L 194 28
+      M 200 40 L 200 20 M 206 40 L 206 28 M 212 40 L 212 28 M 218 40 L 218 28 M 224 40 L 224 28 M 230 40 L 230 24 M 236 40 L 236 28 M 242 40 L 242 28 M 248 40 L 248 28 M 254 40 L 254 28
+      M 260 40 L 260 20 M 266 40 L 266 28 M 272 40 L 272 28 M 278 40 L 278 28 M 284 40 L 284 28 M 290 40 L 290 24 M 296 40 L 296 28 M 302 40 L 302 28 M 308 40 L 308 28 M 314 40 L 314 28
+      M 320 40 L 320 20 M 326 40 L 326 28 M 332 40 L 332 28 M 338 40 L 338 28 M 344 40 L 344 28 M 350 40 L 350 24 M 356 40 L 356 28 M 362 40 L 362 28 M 368 40 L 368 28 M 374 40 L 374 28
+      M 380 40 L 380 20 M 386 40 L 386 28 M 392 40 L 392 28 M 398 40 L 398 28 M 404 40 L 404 28 M 410 40 L 410 24 M 416 40 L 416 28 M 422 40 L 422 28 M 428 40 L 428 28 M 434 40 L 434 28
+      M 440 40 L 440 20" stroke="#1f2937" stroke-width="1.2"/>
+  </g>
+
+  <!-- Vernier Scale (Lower Slider) -->
+  <!-- Position vernier 0 at 22.4mm => x = 40 + 20 + 22.4*6 = 194.4 px. Vernier step = 0.9 * 6 = 5.4 px.
+       Division 6 is at 194.4 + 6*5.4 = 194.4 + 32.4 = 226.8 px.
+       Main scale 28mm is at 40 + 20 + 28*6 = 228 px => perfectly aligns!
+  -->
+  <g transform="translate(160, 75)">
+    <polygon points="0,0 260,0 260,45 0,45" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+
+    <!-- Vernier divisions: 0 to 10 (step = 5.4px) -->
+    <!-- 0: x=34.4, 1: 39.8, 2: 45.2, 3: 50.6, 4: 56.0, 5: 61.4, 6: 66.8, 7: 72.2, 8: 77.6, 9: 83.0, 10: 88.4 -->
+    <!-- Let's normalize with offset = 34 -->
+    <g transform="translate(34, 0)">
+      <!-- Ticks -->
+      <line x1="0" y1="0" x2="0" y2="18" stroke="#1f2937" stroke-width="1.2"/>
+      <text x="0" y="32" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">0</text>
+
+      <line x1="10" y1="0" x2="10" y2="12" stroke="#1f2937" stroke-width="1.2"/>
+      <text x="10" y="32" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">1</text>
+
+      <line x1="20" y1="0" x2="20" y2="12" stroke="#1f2937" stroke-width="1.2"/>
+      <text x="20" y="32" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">2</text>
+
+      <line x1="30" y1="0" x2="30" y2="12" stroke="#1f2937" stroke-width="1.2"/>
+      <text x="30" y="32" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">3</text>
+
+      <line x1="40" y1="0" x2="40" y2="12" stroke="#1f2937" stroke-width="1.2"/>
+      <text x="40" y="32" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">4</text>
+
+      <line x1="50" y1="0" x2="50" y2="15" stroke="#1f2937" stroke-width="1.2"/>
+      <text x="50" y="32" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">5</text>
+
+      <!-- 6th division HIGHLIGHTED (Coinciding!) -->
+      <line x1="60" y1="0" x2="60" y2="20" stroke="#dc2626" stroke-width="2.5"/>
+      <text x="60" y="34" text-anchor="middle" font-size="12" font-weight="800" fill="#dc2626">6</text>
+
+      <line x1="70" y1="0" x2="70" y2="12" stroke="#1f2937" stroke-width="1.2"/>
+      <text x="70" y="32" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">7</text>
+
+      <line x1="80" y1="0" x2="80" y2="12" stroke="#1f2937" stroke-width="1.2"/>
+      <text x="80" y="32" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">8</text>
+
+      <line x1="90" y1="0" x2="90" y2="12" stroke="#1f2937" stroke-width="1.2"/>
+      <text x="90" y="32" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">9</text>
+
+      <line x1="100" y1="0" x2="100" y2="18" stroke="#1f2937" stroke-width="1.2"/>
+      <text x="100" y="32" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">10</text>
+    </g>
+  </g>
+
+  <!-- Explanation note -->
+  <text x="270" y="160" text-anchor="middle" font-size="12" font-weight="600" fill="#2563eb">6th vernier division aligns with main scale → Reading = 6 × 0.1 mm = 0.6 mm</text>
+</svg>

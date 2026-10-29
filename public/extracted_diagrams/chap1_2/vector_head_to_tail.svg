@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%" style="background:#ffffff; font-family: Inter, system-ui, -apple-system, sans-serif;">
+  <defs>
+    <marker id="v-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#111827"/>
+    </marker>
+    <marker id="v-arr-res" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="300" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">Head-to-Tail Rule Vector Diagrams (A, B, C)</text>
+
+  <!-- Option A -->
+  <g transform="translate(60, 50)">
+    <rect x="-10" y="0" width="220" height="150" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <text x="15" y="25" font-size="16" font-weight="800" fill="#15803d">A. (Correct)</text>
+    <!-- Triangle: V1(40,110), V2(100,45), V3(160,110) -->
+    <!-- Vector A: (40,110) -> (100,45) -->
+    <line x1="40" y1="110" x2="95" y2="51" stroke="#111827" stroke-width="2.5" marker-end="url(#v-arr)"/>
+    <text x="60" y="70" font-size="14" font-weight="700" fill="#111827">A</text>
+    <!-- Vector B: (100,45) -> (160,110) -->
+    <line x1="100" y1="45" x2="155" y2="104" stroke="#111827" stroke-width="2.5" marker-end="url(#v-arr)"/>
+    <text x="135" y="70" font-size="14" font-weight="700" fill="#111827">B</text>
+    <!-- Vector C: (40,110) -> (160,110) -->
+    <line x1="40" y1="110" x2="150" y2="110" stroke="#2563eb" stroke-width="3" marker-end="url(#v-arr-res)"/>
+    <text x="95" y="132" font-size="14" font-weight="700" fill="#2563eb">C</text>
+  </g>
+
+  <!-- Option B -->
+  <g transform="translate(320, 50)">
+    <rect x="-10" y="0" width="220" height="150" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+    <text x="15" y="25" font-size="16" font-weight="700" fill="#4b5563">B.</text>
+    <line x1="40" y1="110" x2="95" y2="51" stroke="#111827" stroke-width="2.5" marker-end="url(#v-arr)"/>
+    <text x="60" y="70" font-size="14" font-weight="700" fill="#111827">A</text>
+    <line x1="100" y1="45" x2="155" y2="104" stroke="#111827" stroke-width="2.5" marker-end="url(#v-arr)"/>
+    <text x="135" y="70" font-size="14" font-weight="700" fill="#111827">B</text>
+    <!-- Vector C pointing Left -->
+    <line x1="160" y1="110" x2="50" y2="110" stroke="#111827" stroke-width="2.5" marker-end="url(#v-arr)"/>
+    <text x="95" y="132" font-size="14" font-weight="700" fill="#111827">C</text>
+  </g>
+
+  <!-- Option C -->
+  <g transform="translate(60, 215)">
+    <rect x="-10" y="0" width="220" height="150" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+    <text x="15" y="25" font-size="16" font-weight="700" fill="#4b5563">C.</text>
+    <line x1="40" y1="110" x2="95" y2="51" stroke="#111827" stroke-width="2.5" marker-end="url(#v-arr)"/>
+    <text x="60" y="70" font-size="14" font-weight="700" fill="#111827">A</text>
+    <!-- Vector B pointing UP towards peak -->
+    <line x1="160" y1="110" x2="105" y2="51" stroke="#111827" stroke-width="2.5" marker-end="url(#v-arr)"/>
+    <text x="135" y="70" font-size="14" font-weight="700" fill="#111827">B</text>
+    <line x1="40" y1="110" x2="150" y2="110" stroke="#111827" stroke-width="2.5" marker-end="url(#v-arr)"/>
+    <text x="95" y="132" font-size="14" font-weight="700" fill="#111827">C</text>
+  </g>
+
+  <!-- Option D -->
+  <g transform="translate(320, 215)">
+    <rect x="-10" y="0" width="220" height="150" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+    <text x="15" y="25" font-size="16" font-weight="700" fill="#4b5563">D.</text>
+    <!-- Vector A pointing down -->
+    <line x1="100" y1="45" x2="45" y2="104" stroke="#111827" stroke-width="2.5" marker-end="url(#v-arr)"/>
+    <text x="60" y="70" font-size="14" font-weight="700" fill="#111827">A</text>
+    <line x1="100" y1="45" x2="155" y2="104" stroke="#111827" stroke-width="2.5" marker-end="url(#v-arr)"/>
+    <text x="135" y="70" font-size="14" font-weight="700" fill="#111827">B</text>
+    <line x1="40" y1="110" x2="150" y2="110" stroke="#111827" stroke-width="2.5" marker-end="url(#v-arr)"/>
+    <text x="95" y="132" font-size="14" font-weight="700" fill="#111827">C</text>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+TASK: Suggest mappings for the supplied source questions to the supplied VERIFIED current-edition syllabus only. Preserve the original paper's printed year and SLO reference separately. These are mapping candidates for review, not permission to publish.
+
+Use only the supplied question text/figures, class allocation, syllabus edition and allowed SLO identifiers. Compare the knowledge/skill actually assessed with the SLO wording, including prerequisites and scope. A matching chapter number or keyword alone is insufficient evidence. Do not import codes from memory or another edition. Historical original references must not be overwritten by current mappings.
+
+For an ambiguous, unreadable or unsupported match, return status:"PENDING" with no currentSloIds and explain the missing evidence. Use status:"CANDIDATE" only with a specific question-to-SLO rationale. Do not label a question out of syllabus merely because retrieval found no match; that requires a complete verified syllabus review.
+
+Return ONLY one JSON code block:
+{"mappings":[{"questionId":"supplied id","originalReference":"literal printed reference or empty string","currentEditionId":"supplied edition id","status":"PENDING","currentSloIds":[],"evidence":"specific match or missing evidence"}],"conflicts":[]}
+
+INPUT:
+{{VERIFIED_SYLLABUS_AND_QUESTIONS}}

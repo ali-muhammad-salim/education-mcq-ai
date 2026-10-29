@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-21",
+  "release": "53728598ad1ee92ad229e3ac1c3458c1bb8e2a6a",
+  "pullRequest": "https://github.com/ali-muhammad-salim/education-mcq-ai/pull/7",
+  "backup": {
+    "path": "/var/lib/postgresql/18/docker/release-backups/pre-ai-trust-20261021.dump",
+    "sha256": "c69bc18b73b332751c80359f776eaaabe06db30b6fc6a3435f367383223c24a0",
+    "archiveListLines": 460,
+    "restoredDatabase": "mcqs_ai_release_test_20261021",
+    "restoredAssessmentAttempts": 5,
+    "offsite": false
+  },
+  "production": {
+    "publicHealthStatus": 200,
+    "additiveMigrationsApplied": 5,
+    "assessmentAttemptsPreserved": 5,
+    "webModelsVerifiedAfterReload": true,
+    "separateRecentWorkerHeartbeats": true,
+    "aiWorkerCredentialCount": 5,
+    "aiWorkerMemoryBytes": 1073741824,
+    "aiWorkerCpuLimit": 1,
+    "aiWorkerDatabasePoolLimit": 3,
+    "privateWorker": true,
+    "sharedPersistentVolumes": ["rise-learner-assets", "rise-learner-jobs"]
+  },
+  "isolatedLiveImageRehearsal": {
+    "restoredBackupMigrationsPassed": true,
+    "testDatabase": "mcqs_ai_release_test_20261021",
+    "documentId": "ddababf5-9ebe-4fa1-9a3f-7cdc1fe11cd0",
+    "artifactId": "34ddf752-7ba8-4d79-8afd-13c1d80f920f",
+    "pagesProcessed": 1,
+    "documentStatus": "NEEDS_REVIEW",
+    "artifactStatus": "PENDING_REVIEW",
+    "studentPublication": false
+  },
+  "limits": ["No academic recertification of existing resources", "No load-capacity guarantee", "Synthetic fixture is not representative of every scientific page"]
+}

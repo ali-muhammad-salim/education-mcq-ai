@@ -1,0 +1,553 @@
+{
+  "date": "2026-10-20",
+  "method": "Read-only rendered DOM checks at verified browser viewport widths. Internally scrollable and clipped descendants are excluded from page-overflow findings; screenshots and interactive flows supplement the checks.",
+  "layoutChecks": [
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/akueb",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/akueb/IX",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/akueb/X",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/akueb/IX/physics",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/akueb/IX/physics/model-papers",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/akueb/IX/physics/syllabus",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/akueb/IX/physics/mcqs",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/akueb/IX/physics/books",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/akueb/IX/physics/practicals",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/model-papers",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/syllabus",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/classes/ssc-i",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/classes/ssc-ii",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/classes/ssc-i/physics",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/classes/ssc-ii/physics",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/subjects/class-9/physics",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/subjects/class-10/physics",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/privacy",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/terms",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/quizzes",
+      "width": 360
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/account",
+      "width": 360
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/akueb",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/akueb/IX",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/akueb/X",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/akueb/IX/physics",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/akueb/IX/physics/model-papers",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/akueb/IX/physics/syllabus",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/akueb/IX/physics/mcqs",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/akueb/IX/physics/books",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/akueb/IX/physics/practicals",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/model-papers",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/syllabus",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/classes/ssc-i",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/classes/ssc-ii",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/classes/ssc-i/physics",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/classes/ssc-ii/physics",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/subjects/class-9/physics",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/subjects/class-10/physics",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/privacy",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/terms",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/account",
+      "width": 320
+    },
+    {
+      "client": 415,
+      "overflow": [],
+      "scroll": 415,
+      "url": "/",
+      "width": 430
+    },
+    {
+      "client": 415,
+      "overflow": [],
+      "scroll": 415,
+      "url": "/akueb/IX/physics",
+      "width": 430
+    },
+    {
+      "client": 415,
+      "overflow": [],
+      "scroll": 415,
+      "url": "/akueb/IX/physics/mcqs",
+      "width": 430
+    },
+    {
+      "client": 415,
+      "overflow": [],
+      "scroll": 415,
+      "url": "/resources",
+      "width": 430
+    },
+    {
+      "client": 415,
+      "overflow": [],
+      "scroll": 415,
+      "url": "/classes/ssc-ii/physics",
+      "width": 430
+    },
+    {
+      "client": 415,
+      "overflow": [],
+      "scroll": 415,
+      "url": "/subjects/class-9/physics",
+      "width": 430
+    },
+    {
+      "client": 415,
+      "overflow": [],
+      "scroll": 415,
+      "url": "/quizzes",
+      "width": 430
+    },
+    {
+      "client": 415,
+      "overflow": [],
+      "scroll": 415,
+      "url": "/account",
+      "width": 430
+    },
+    {
+      "client": 753,
+      "overflow": [],
+      "scroll": 753,
+      "url": "/",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "overflow": [],
+      "scroll": 753,
+      "url": "/akueb/IX/physics",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "overflow": [],
+      "scroll": 753,
+      "url": "/resources",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "overflow": [],
+      "scroll": 753,
+      "url": "/classes/ssc-ii/physics",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "overflow": [],
+      "scroll": 753,
+      "url": "/quizzes",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "overflow": [],
+      "scroll": 753,
+      "url": "/account",
+      "width": 768
+    },
+    {
+      "client": 753,
+      "overflow": [],
+      "scroll": 753,
+      "url": "/teacher/quizzes/builder",
+      "width": 768
+    },
+    {
+      "client": 1265,
+      "overflow": [],
+      "scroll": 1265,
+      "url": "/akueb/IX/physics",
+      "width": 1280
+    },
+    {
+      "client": 1265,
+      "overflow": [],
+      "scroll": 1265,
+      "url": "/resources",
+      "width": 1280
+    },
+    {
+      "client": 1265,
+      "overflow": [],
+      "scroll": 1265,
+      "url": "/quizzes",
+      "width": 1280
+    },
+    {
+      "client": 1265,
+      "overflow": [],
+      "scroll": 1265,
+      "url": "/account",
+      "width": 1280
+    },
+    {
+      "client": 375,
+      "overflow": [],
+      "scroll": 375,
+      "url": "/admin/users",
+      "width": 390,
+      "state": "admin-directory"
+    },
+    {
+      "client": 375,
+      "overflow": [],
+      "scroll": 375,
+      "url": "/admin/users",
+      "width": 390,
+      "state": "admin-student-profile"
+    },
+    {
+      "client": 375,
+      "overflow": [],
+      "scroll": 375,
+      "url": "/admin/users",
+      "width": 390,
+      "state": "admin-answer-review"
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/resources",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "overflow": [],
+      "scroll": 305,
+      "url": "/quizzes",
+      "width": 320
+    },
+    {
+      "client": 345,
+      "overflow": [],
+      "scroll": 345,
+      "url": "/resources",
+      "width": 360
+    }
+  ],
+  "contrastChecks": [
+    {
+      "checked": 169,
+      "failures": [],
+      "gradients": 5,
+      "theme": "light",
+      "url": "/"
+    },
+    {
+      "checked": 55,
+      "failures": [],
+      "gradients": 0,
+      "theme": "light",
+      "url": "/akueb/IX/physics"
+    },
+    {
+      "checked": 263,
+      "failures": [],
+      "gradients": 9,
+      "theme": "light",
+      "url": "/resources"
+    },
+    {
+      "checked": 46,
+      "failures": [],
+      "gradients": 0,
+      "theme": "light",
+      "url": "/account"
+    },
+    {
+      "checked": 169,
+      "failures": [],
+      "gradients": 5,
+      "theme": "dark",
+      "url": "/"
+    },
+    {
+      "checked": 55,
+      "failures": [],
+      "gradients": 0,
+      "theme": "dark",
+      "url": "/akueb/IX/physics"
+    },
+    {
+      "checked": 263,
+      "failures": [],
+      "gradients": 9,
+      "theme": "dark",
+      "url": "/resources"
+    },
+    {
+      "checked": 46,
+      "failures": [],
+      "gradients": 0,
+      "theme": "dark",
+      "url": "/account"
+    }
+  ],
+  "interactiveChecks": [
+    "Phone menu expand, class selection, same-route close and account actions",
+    "Local sign-in/out and dialog background scroll lock",
+    "Practice quiz answers, next question and submission: score 2/2",
+    "Teacher sharing settings and learner progress",
+    "Admin learner profile and answer review",
+    "Builder question addition and settings",
+    "Upload form rendered without submitting a document"
+  ],
+  "limitations": "Browser emulation, not physical-device testing. Contrast sampling excludes gradients; not a full accessibility certification."
+}
