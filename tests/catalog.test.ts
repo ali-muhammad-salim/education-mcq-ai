@@ -8,8 +8,8 @@ describe('Content provenance and round trips', () => {
   it('does not replace an unknown paper or unverified annual paper with model questions', () => {
     expect(getFallbackPaper('NOT-A-PAPER')).toBeNull();
     expect(getFallbackPaper('PHY-X-2024-P2')).toBeNull();
-    expect(getFallbackPaper('PHY-X-2025-P1')).toBeNull();
-    expect(getAllStandardPapers().some(p => p.paperCode === 'PHY-X-2025-P1')).toBe(false);
+    expect(getFallbackPaper('PHY-X-2025-P1')?.questions).toHaveLength(40);
+    expect(getAllStandardPapers().some(p => p.paperCode === 'PHY-X-2025-P1')).toBe(true);
     expect(getFallbackPaper('PHY-IX-2024-P1')?.questions).toHaveLength(40);
     expect(getFallbackPaper('PHY-IX-2024-P2')?.questions).toHaveLength(9);
   });
@@ -25,7 +25,7 @@ describe('Content provenance and round trips', () => {
   });
   it('accepts a genuine uploaded annual PDF without substituting model questions or hiding its year', () => {
     const original=fs.readFileSync;
-    const record={id:'PHY-X-2025-P1',paperCode:'PHY-X-2025-P1',title:'Uploaded annual paper',examYear:2025,examSession:'Annual Examination',fileUrl:'/uploads/original-annual.pdf',academicClass:{name:'Class X',level:10},subject:{name:'Physics'},_count:{questions:40}};
+    const record={id:'PHY-X-2023-P1',paperCode:'PHY-X-2023-P1',title:'Uploaded annual paper',examYear:2023,examSession:'Annual Examination',fileUrl:'/uploads/original-annual.pdf',academicClass:{name:'Class X',level:10},subject:{name:'Physics'},_count:{questions:40}};
     vi.spyOn(fs,'readFileSync').mockImplementation((...args: Parameters<typeof fs.readFileSync>) => String(args[0]).endsWith('uploaded_past_papers.json') ? JSON.stringify([record]) : original(...args));
     const paper=getFallbackPaper(record.paperCode);
     expect(paper?.fileUrl).toBe(record.fileUrl); expect(paper?.questions).toEqual([]);

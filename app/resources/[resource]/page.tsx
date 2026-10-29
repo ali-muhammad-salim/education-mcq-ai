@@ -5,12 +5,13 @@ import key from '@/data/physics/ssc1_2025_official_key.json';
 import key2024 from '@/data/physics/ssc1_2024_official_key.json';
 import emarking from '@/data/physics/ssc1_2025_emarking.json';
 import emarking2024 from '@/data/physics/ssc1_2024_emarking.json';
+import keyX2025 from '@/data/physics/ssc2_2025_official_key.json';
 import rg9 from '@/data/physics/ssc1_resource_guide.json';
 import rg10 from '@/data/physics/ssc2_resource_guide.json';
 import pacing9 from '@/data/physics/ssc1_pacing.json';
 import pacing10 from '@/data/physics/ssc2_pacing.json';
 import styles from '@/components/MaterialLayout.module.css';
-import { annualAnswerReviews, annual2024AnswerReviews } from '@/lib/legacyPaperEvidence';
+import { annualAnswerReviews, annual2024AnswerReviews, annualX2025AnswerReviews } from '@/lib/legacyPaperEvidence';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import StructuredContent from '@/components/StructuredContent';
 export const dynamic='force-dynamic';
@@ -20,6 +21,8 @@ const SUPPORTED_RESOURCES = [
   'physics-ix-2024-key',
   'physics-ix-2025-emarking',
   'physics-ix-2024-emarking',
+  'physics-x-2025-key',
+  'physics-x-2025-emarking',
   'physics-ix-resource-guide',
   'physics-x-resource-guide',
   'physics-ix-pacing-guide',
@@ -133,14 +136,79 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
     );
   }
 
+  if (resource === 'physics-x-2025-key') {
+    const title = 'Physics X · 2025 · Official answer key';
+    return (
+      <section className={styles.page}>
+        <Link href="/akueb/X/physics/pastpapers">← Physics X past papers</Link>
+        <h1>{title}</h1>
+        <DocumentViews title={title} original={keyX2025.sourceUrl}>
+          <div className={styles.digital}>
+            <div style={{overflowX:'auto'}}>
+              <table style={{width:'100%',borderCollapse:'collapse'}}>
+                <caption>Official 2025 SSC-II exam-year references · current 2025 syllabus mappings are shown on each question</caption>
+                <thead>
+                  <tr>
+                    {['Question','Original SLO','Answer','Level'].map(x=>(
+                      <th key={x} style={{textAlign:'left',padding:'.75rem',borderBottom:'1px solid var(--border-color)'}}>{x}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {keyX2025.entries.map(row=>(
+                    <tr key={row.questionNumber}>
+                      <td style={{padding:'.65rem'}}>
+                        <Link href={'/past-papers/PHY-X-2025-P1?view=solved#question-'+row.questionNumber}>{row.questionNumber}</Link>
+                      </td>
+                      <td>{row.slo}</td>
+                      <td>
+                        <strong>{row.answer}</strong>
+                        {annualX2025AnswerReviews[row.questionNumber] && (
+                          <details><summary>Educator review note</summary>{annualX2025AnswerReviews[row.questionNumber]}</details>
+                        )}
+                      </td>
+                      <td>{row.cognitiveLevel}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p>K: Knowledge · U: Understanding · A: Application and beyond</p>
+            <Link href="/past-papers/PHY-X-2025-P1?view=solved">2025 Class X Paper 1 · answers & explanations →</Link>
+          </div>
+        </DocumentViews>
+        <nav className={styles.actions}>
+          <Link className={styles.button} href="/past-papers/PHY-X-2025-P1">2025 Paper 1</Link>
+          <Link className={styles.button} href="/past-papers/PHY-X-2025-P2">2025 Paper 2</Link>
+          <Link className={styles.button} href="/resources/physics-x-2025-emarking">2025 E-marking notes</Link>
+        </nav>
+      </section>
+    );
+  }
+
+  if (resource === 'physics-x-2025-emarking') {
+    const title = 'Physics X · 2025 · E-marking notes';
+    return <section className={styles.page}>
+      <Link href="/akueb/X/physics/pastpapers">← Physics X past papers</Link>
+      <h1>{title}</h1>
+      <DocumentViews title={title} original="/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf">
+        <div className={styles.digital}>
+          <p>The original board E-marking document is available in the Original tab. A generated digital solution in the supplied material has conflicting calculations, so the digital commentary is withheld pending educator review.</p>
+          <Link href="/past-papers/PHY-X-2025-P2">Open Paper 2 questions →</Link>
+        </div>
+      </DocumentViews>
+    </section>;
+  }
+
   if (resource === 'physics-ix-2025-emarking' || resource === 'physics-ix-2024-emarking') {
     const is2024 = resource === 'physics-ix-2024-emarking';
     const activeEmarking: any = is2024 ? emarking2024 : emarking;
     const yearStr = is2024 ? '2024' : '2025';
-    const title = `Physics IX · ${yearStr} · E-marking notes`;
+    const roman = 'IX';
+    const title = `Physics ${roman} · ${yearStr} · E-marking notes`;
     return (
       <section className={styles.page}>
-        <Link href="/akueb/IX/physics/pastpapers">← Physics past papers</Link>
+        <Link href={`/akueb/${roman}/physics/pastpapers`}>← Physics {roman} past papers</Link>
         <h1>{title}</h1>
         <DocumentViews title={title} original={activeEmarking.sourceUrl}>
           <div className={styles.digital} style={{display:'flex',flexDirection:'column',gap:'1.25rem'}}>
@@ -155,7 +223,7 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
                   <strong>{q.questionNumber} · {q.section}</strong>
                   <span>
                     Original {yearStr} SLO: <code>{q.originalSlo}</code>
-                    {q.currentSlo ? <> · <Link href={`/akueb/IX/physics/syllabus#slo-${q.currentSlo}`}>Current 2025 SLO {q.currentSlo}{q.currentTopic ? ` (${q.currentTopic})` : ''}</Link></> : ' · Historical 2022–2024 syllabus'}
+                    {q.currentSlo ? <> · <Link href={`/akueb/${roman}/physics/syllabus#slo-${q.currentSlo}`}>Current 2025 SLO {q.currentSlo}{q.currentTopic ? ` (${q.currentTopic})` : ''}</Link></> : ' · Historical 2022–2024 syllabus'}
                     {' · '}{q.maxMarks} Marks · Level {q.cognitiveLevel}
                   </span>
                 </div>
@@ -208,9 +276,9 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
           </div>
         </DocumentViews>
         <nav className={styles.actions}>
-          <Link className={styles.button} href={`/past-papers/PHY-IX-${yearStr}-P1`}>{yearStr} Paper 1</Link>
-          <Link className={styles.button} href={`/past-papers/PHY-IX-${yearStr}-P2`}>{yearStr} Paper 2</Link>
-          <Link className={styles.button} href={`/resources/physics-ix-${yearStr}-key`}>{yearStr} Official answer key</Link>
+          <Link className={styles.button} href={`/past-papers/PHY-${roman}-${yearStr}-P1`}>{yearStr} Paper 1</Link>
+          <Link className={styles.button} href={`/past-papers/PHY-${roman}-${yearStr}-P2`}>{yearStr} Paper 2</Link>
+          <Link className={styles.button} href={`/resources/physics-${roman.toLowerCase()}-${yearStr}-key`}>{yearStr} Official answer key</Link>
         </nav>
       </section>
     );

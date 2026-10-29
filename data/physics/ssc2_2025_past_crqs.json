@@ -1,0 +1,743 @@
+[
+  {
+    "questionNumber": "1",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "pageNumber": 2,
+    "stem": "If an object is placed at a distance of $2\\text{ cm}$ from a convex mirror of focal length of $4\\text{ cm}$, then find the position of the image formed.",
+    "marks": 3,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "12.2.1",
+    "originalSloText": "Solve word problems related to the image location by spherical mirrors using the mirror formula.",
+    "unitNumber": 13,
+    "unitName": "Geometrical Optics",
+    "chapter": "Unit 13: Geometrical Optics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p2_page_2.png",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "text": "If an object is placed at a distance of $2\\text{ cm}$ from a convex mirror of focal length of $4\\text{ cm}$, then find the position of the image formed.",
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-ii.pdf",
+      "emarking_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf",
+      "page": 2,
+      "question_region": {
+        "page": 2,
+        "box_2d": [
+          110,
+          58,
+          178,
+          900
+        ]
+      },
+      "answer_region": {
+        "page": 2,
+        "box_2d": [
+          185,
+          58,
+          375,
+          900
+        ]
+      },
+      "diagram_region": null,
+      "slo_region": {
+        "page": 2,
+        "box_2d": [
+          162,
+          60,
+          212,
+          955
+        ],
+        "printed_slo_code": "12.2.1",
+        "printed_slo_text": "Solve word problems related to the image location by spherical mirrors using the mirror formula."
+      },
+      "verbatim_stem": "If an object is placed at a distance of $2\\text{ cm}$ from a convex mirror of focal length of $4\\text{ cm}$, then find the position of the image formed.",
+      "verbatim_checking_hints": [
+        "1 mark for the correct mirror formula: 1/f = 1/p + 1/q.",
+        "1 mark for the correct substitution with sign convention (for a convex mirror, f = -4 cm and p = +2 cm; or using standard positive focal length magnitude showing virtual image behind mirror).",
+        "1 mark for the correct calculated image position with unit (q = -4/3 cm = -1.33 cm using f = -4 cm, or q = -4 cm as shown in E-Marking exemplar, indicating a virtual image behind the convex mirror)."
+      ]
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "model_answer": "**Given Data:**\n• Object distance ($p$) = $+2\\text{ cm}$\n• Focal length of convex mirror ($f$) = $-4\\text{ cm}$ (virtual focus behind the mirror; note: in the AKU-EB E-Marking exemplar, $f = 4\\text{ cm}$ is substituted into $\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{q}$)\n\n**Formula:**\n$$\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{q} \\implies \\frac{1}{q} = \\frac{1}{f} - \\frac{1}{p}$$\n\n**Calculation (AKU-EB E-Marking Exemplar Method):**\n$$\\frac{1}{q} = \\frac{1}{4} - \\frac{1}{2} = \\frac{1 - 2}{4} = -\\frac{1}{4}$$\n$$q = -4\\text{ cm}$$\n*(Note: Using strict Cartesian sign convention $f = -4\\text{ cm}$ gives $\\frac{1}{q} = -\\frac{1}{4} - \\frac{1}{2} = -\\frac{3}{4} \\implies q = -1.33\\text{ cm}$. In both conventions, the negative sign of $q$ indicates that a virtual, upright image is formed behind the convex mirror.)*",
+      "current_2025_slo": "13.5.4",
+      "current_2025_mapping": [
+        {
+          "code": "13.5.4",
+          "description": "solve word problems related to the image location by lenses using lens formula;",
+          "topic": "Geometrical Optics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "2",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "pageNumber": 2,
+    "stem": "i. Describe a condition under which a single electron can generate a magnetic field. (2 Marks)\nii. Will it be a weak or strong magnetic field? (1 Mark)",
+    "marks": 3,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "cognitiveLevel": "U",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "12.2.1",
+    "originalSloText": "Demonstrate that an electric current in a conductor produces a magnetic field around it.",
+    "unitNumber": 17,
+    "unitName": "Magnetism and Electromagnetism",
+    "chapter": "Unit 17: Magnetism and Electromagnetism",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p2_page_2.png",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "text": "i. Describe a condition under which a single electron can generate a magnetic field. (2 Marks)\nii. Will it be a weak or strong magnetic field? (1 Mark)",
+    "review_status": "pending_review",
+    "uncertainty_notes": [
+      {
+        "field": "slo",
+        "status": "pending_review",
+        "transcribed_value": "12.2.1",
+        "source_document": "/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf",
+        "source_page": 3,
+        "source_box_2d": [
+          755,
+          60,
+          788,
+          955
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_x_2025_em_p3_q2_slo.png",
+        "proposed_interpretation": "15.1.1 (2006/2022 Electromagnetism syllabus) / 17.3.1 (2025 Magnetism and Electromagnetism syllabus)",
+        "reason": "E-Marking Notes Page 3 prints 'SLO No. 12.2.1' (repeated from Q.1) alongside 'SLO Text: Demonstrate that an electric current in a conductor produces a magnetic field around it.'"
+      }
+    ],
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-ii.pdf",
+      "emarking_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf",
+      "page": 2,
+      "question_region": {
+        "page": 2,
+        "box_2d": [
+          390,
+          58,
+          610,
+          900
+        ]
+      },
+      "answer_region": {
+        "page": 2,
+        "box_2d": [
+          455,
+          58,
+          675,
+          900
+        ]
+      },
+      "diagram_region": null,
+      "slo_region": {
+        "page": 3,
+        "box_2d": [
+          755,
+          60,
+          788,
+          955
+        ],
+        "printed_slo_code": "12.2.1",
+        "printed_slo_text": "Demonstrate that an electric current in a conductor produces a magnetic field around it."
+      },
+      "verbatim_stem": "i. Describe a condition under which a single electron can generate a magnetic field. (2 Marks)\nii. Will it be a weak or strong magnetic field? (1 Mark)",
+      "verbatim_checking_hints": [
+        "i. 2 marks (1 mark for each key point) for stating that the single electron must be in motion / moving through a conductor (creating an electric current) to generate a magnetic field around it.",
+        "ii. 1 mark for stating that the magnetic field generated by a single moving electron will be weak."
+      ]
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "model_answer": "**(i) Condition for a single electron to generate a magnetic field (2 Marks):**\nA stationary electric charge produces only an electric field, whereas a **moving electric charge** constitutes an electric current and produces a magnetic field around its path. Therefore, when a single electron is **in motion** (or flowing through a conductor/circuit), it generates a magnetic field around it.\n\n**(ii) Strength of the magnetic field (1 Mark):**\nThe magnetic field generated by a single moving electron will be extremely **weak**.",
+      "current_2025_slo": "17.3.1",
+      "current_2025_mapping": [
+        {
+          "code": "17.3.1",
+          "description": "describe the pattern and direction of the magnetic field due to currents in straight wires and in solenoids;",
+          "topic": "Magnetism and Electromagnetism"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "3",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "pageNumber": 2,
+    "stem": "State any TWO uses of logic gates in daily life.",
+    "marks": 2,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "cognitiveLevel": "K",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "16.8.3",
+    "originalSloText": "Describe the simple uses of logic gates.",
+    "unitNumber": 19,
+    "unitName": "Electromagnetic Waves and Electronics",
+    "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p2_page_2.png",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "text": "State any TWO uses of logic gates in daily life.",
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-ii.pdf",
+      "emarking_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf",
+      "page": 2,
+      "question_region": {
+        "page": 2,
+        "box_2d": [
+          695,
+          58,
+          745,
+          900
+        ]
+      },
+      "answer_region": {
+        "page": 2,
+        "box_2d": [
+          755,
+          58,
+          905,
+          900
+        ]
+      },
+      "diagram_region": null,
+      "slo_region": {
+        "page": 5,
+        "box_2d": [
+          602,
+          60,
+          635,
+          955
+        ],
+        "printed_slo_code": "16.8.3",
+        "printed_slo_text": "Describe the simple uses of logic gates."
+      },
+      "verbatim_stem": "State any TWO uses of logic gates in daily life.",
+      "verbatim_checking_hints": [
+        "1 mark for the first valid daily-life application of logic gates (e.g., burglar/security alarms, automatic street lights, safety thermostats).",
+        "1 mark for the second valid daily-life application of logic gates (e.g., microprocessors in computers/calculators, traffic light controllers, automatic doors)."
+      ]
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "model_answer": "**Uses of Logic Gates in Daily Life (Any TWO):**\n1. **Home Security & Burglar Alarms:** Logic gates (such as AND and OR gates) are used in burglar alarms and fire/smoke alarm circuits to trigger a siren when a door sensor or motion detector is activated while the alarm switch is armed.\n2. **Computers, Calculators & Digital Appliances:** Logic gates form the fundamental building blocks of microprocessors and arithmetic logic units (ALUs) in computers, digital calculators, automatic washing machines, and traffic light controllers.",
+      "current_2025_slo": "19.5.7",
+      "current_2025_mapping": [
+        {
+          "code": "19.5.7",
+          "description": "describe the uses of logic gates.",
+          "topic": "Electromagnetic Waves and Electronics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "4",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "pageNumber": 3,
+    "stem": "Describe, how are light signals transmitted through an optical fibre.",
+    "marks": 2,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "cognitiveLevel": "U",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "17.2.1",
+    "originalSloText": "Describe the transmission of: a. electric signals through wires, b. radio waves through air, c. light signals through optical fibres.",
+    "unitNumber": 13,
+    "unitName": "Geometrical Optics",
+    "chapter": "Unit 13: Geometrical Optics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p2_page_3.png",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "text": "Describe, how are light signals transmitted through an optical fibre.",
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-ii.pdf",
+      "emarking_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf",
+      "page": 3,
+      "question_region": {
+        "page": 3,
+        "box_2d": [
+          110,
+          105,
+          160,
+          945
+        ]
+      },
+      "answer_region": {
+        "page": 3,
+        "box_2d": [
+          170,
+          105,
+          290,
+          945
+        ]
+      },
+      "diagram_region": null,
+      "slo_region": {
+        "page": 7,
+        "box_2d": [
+          92,
+          60,
+          142,
+          955
+        ],
+        "printed_slo_code": "17.2.1",
+        "printed_slo_text": "Describe the transmission of: a. electric signals through wires, b. radio waves through air, c. light signals through optical fibres."
+      },
+      "verbatim_stem": "Describe, how are light signals transmitted through an optical fibre.",
+      "verbatim_checking_hints": [
+        "1 mark for an incomplete description (identifying core/cladding structure or stating that light enters at an angle greater than the critical angle).",
+        "2 marks for a complete description: explaining that an optical fibre has a higher-refractive-index inner core surrounded by a lower-refractive-index cladding, and light signals striking the core-cladding boundary at an angle of incidence greater than the critical angle undergo continuous Total Internal Reflection (TIR) to travel through the fibre."
+      ]
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "model_answer": "An optical fibre consists of a thin, high-refractive-index glass or plastic inner **core** surrounded by a lower-refractive-index outer **cladding**.\n\nWhen a modulated light signal enters one end of the optical fibre, it strikes the boundary between the inner core and outer cladding at an **angle of incidence greater than the critical angle** ($\\theta_i > \\theta_c$). As a result, the light ray undergoes repeated **Total Internal Reflection (TIR)** back and forth inside the core until it emerges at the receiving end with minimal energy loss.",
+      "current_2025_slo": "13.4.5",
+      "current_2025_mapping": [
+        {
+          "code": "13.4.5",
+          "description": "describe the use of total internal reflection in:\na. optical fibre,\nb. periscope;",
+          "topic": "Geometrical Optics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "5",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "pageNumber": 3,
+    "stem": "Suppose a radioactive element has an initial number of atoms ($X$) kept in a nuclear power station.\n\nCalculate the number of radioactive atoms left after $10$ half-lives.",
+    "marks": 3,
+    "questionType": "CONSTRUCTED_RESPONSE",
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "18.5.2",
+    "originalSloText": "Calculate the half-life of radioactive elements and draw graphs showing decay curves of these elements.",
+    "unitNumber": 20,
+    "unitName": "Atomic and Nuclear Physics",
+    "chapter": "Unit 20: Atomic and Nuclear Physics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p2_page_3.png",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "text": "Suppose a radioactive element has an initial number of atoms ($X$) kept in a nuclear power station.\n\nCalculate the number of radioactive atoms left after $10$ half-lives.",
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-ii.pdf",
+      "emarking_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf",
+      "page": 3,
+      "question_region": {
+        "page": 3,
+        "box_2d": [
+          308,
+          105,
+          390,
+          945
+        ]
+      },
+      "answer_region": {
+        "page": 3,
+        "box_2d": [
+          400,
+          105,
+          585,
+          945
+        ]
+      },
+      "diagram_region": null,
+      "slo_region": {
+        "page": 8,
+        "box_2d": [
+          652,
+          60,
+          702,
+          955
+        ],
+        "printed_slo_code": "18.5.2",
+        "printed_slo_text": "Calculate the half-life of radioactive elements and draw graphs showing decay curves of these elements."
+      },
+      "verbatim_stem": "Suppose a radioactive element has an initial number of atoms ($X$) kept in a nuclear power station.\n\nCalculate the number of radioactive atoms left after $10$ half-lives.",
+      "verbatim_checking_hints": [
+        "1 mark for writing the correct half-life decay formula: N = N₀ × (1/2)^n (or N = N₀ / 2^t).",
+        "1 mark for substituting the correct values: N₀ = X and n = 10 -> N = X × (1/2)^10.",
+        "1 mark for writing the correct final answer: N = X / 1024 (or (1/1024)X atoms remaining)."
+      ]
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "model_answer": "**Given Data:**\n• Initial number of radioactive atoms ($N_0$) = $X$\n• Number of half-lives elapsed ($n$) = $10$\n\n**Formula:**\n$$N = N_0 \\times \\left(\\frac{1}{2}\\right)^n$$\n\n**Substitution & Calculation:**\n$$N = X \\times \\left(\\frac{1}{2}\\right)^{10} = X \\times \\frac{1}{2^{10}} = \\frac{X}{1024}$$\n\n**Answer:**\nAfter $10$ half-lives, $\\frac{X}{1024}$ (or $\\frac{1}{1024}\\text{th}$ of the original number of atoms $X$) will remain undecayed.",
+      "current_2025_slo": "20.6.2",
+      "current_2025_mapping": [
+        {
+          "code": "20.6.2",
+          "description": "calculate the half-life of radioactive elements;",
+          "topic": "Atomic and Nuclear Physics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "6.a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "pageNumber": 4,
+    "stem": "**EITHER (a):**\nTwo different waves are shown in the given diagrams.\n\nIdentify the types of waves and describe any FOUR differences between these waves.",
+    "marks": 6,
+    "questionType": "EXTENDED_RESPONSE",
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q6a.png",
+    "slo": "10.2.3",
+    "originalSloText": "Distinguish between mechanical and electromagnetic waves.",
+    "unitNumber": 11,
+    "unitName": "Wave Motion",
+    "chapter": "Unit 11: Wave Motion",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p2_page_4.png",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "text": "**EITHER (a):**\nTwo different waves are shown in the given diagrams.\n\nIdentify the types of waves and describe any FOUR differences between these waves.",
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-ii.pdf",
+      "emarking_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf",
+      "page": 4,
+      "question_region": {
+        "page": 4,
+        "box_2d": [
+          110,
+          58,
+          480,
+          900
+        ]
+      },
+      "answer_region": {
+        "page": 4,
+        "box_2d": [
+          815,
+          58,
+          930,
+          900
+        ]
+      },
+      "diagram_region": {
+        "page": 4,
+        "box_2d": [
+          222,
+          55,
+          448,
+          442
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P2_Q6a.png"
+      },
+      "slo_region": {
+        "page": 11,
+        "box_2d": [
+          375,
+          60,
+          412,
+          955
+        ],
+        "printed_slo_code": "10.2.3",
+        "printed_slo_text": "Distinguish between mechanical and electromagnetic waves."
+      },
+      "verbatim_stem": "**EITHER (a):**\nTwo different waves are shown in the given diagrams.\n\nIdentify the types of waves and describe any FOUR differences between these waves.",
+      "verbatim_checking_hints": [
+        "1 mark for correctly identifying Wave (1) as a Transverse wave.",
+        "1 mark for correctly identifying Wave (2) as a Longitudinal wave.",
+        "1 mark for each correct point of difference between transverse and longitudinal waves (4 differences required = 4 marks)."
+      ]
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "model_answer": "**Identification of Waves (2 Marks):**\n• **Diagram (1):** **Transverse Wave** (rope wave where hand motion is perpendicular to wave direction).\n• **Diagram (2):** **Longitudinal Wave** (slinky spring wave with compressions and rarefactions where hand motion is parallel to wave direction).\n\n**Four Differences Between Transverse and Longitudinal Waves (4 Marks):**\n\n| Feature | Transverse Waves (1) | Longitudinal Waves (2) |\n| :--- | :--- | :--- |\n| **1. Direction of Particle Vibration** | Particles of the medium vibrate **perpendicular** (at right angles) to the direction of wave propagation. | Particles of the medium vibrate **parallel** (back and forth along the same line) to the direction of wave propagation. |\n| **2. Waveform Pattern** | Consist of alternating **crests** (high points) and **troughs** (low points). | Consist of alternating **compressions** (high-density regions) and **rarefactions** (low-density regions). |\n| **3. Definition of Wavelength ($\\lambda$)** | Distance between two consecutive crests or two consecutive troughs. | Distance between the centres of two consecutive compressions or two consecutive rarefactions. |\n| **4. Medium & Examples** | Can travel through solids and liquid surfaces (and EM waves in vacuum); e.g., waves on a rope, water surface waves, light waves. | Can travel through solids, liquids, and gases; e.g., sound waves in air, compressional waves on a slinky spring. |",
+      "current_2025_slo": "11.3.1",
+      "current_2025_mapping": [
+        {
+          "code": "11.3.1",
+          "description": "identify transverse and longitudinal waves in mechanical media;",
+          "topic": "Wave Motion"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "6.b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "pageNumber": 4,
+    "stem": "**OR (b):**\nThe given diagrams show two different uses of sound waves by two different things.\n\nIdentify the sound wave used in the given diagrams and describe any FIVE uses of that other than shown in the above diagrams.",
+    "marks": 6,
+    "questionType": "EXTENDED_RESPONSE",
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q6b.png",
+    "slo": "11.4.2",
+    "originalSloText": "Describe the uses of ultrasound.",
+    "unitNumber": 12,
+    "unitName": "Sound",
+    "chapter": "Unit 12: Sound",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p2_page_4.png",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "text": "**OR (b):**\nThe given diagrams show two different uses of sound waves by two different things.\n\nIdentify the sound wave used in the given diagrams and describe any FIVE uses of that other than shown in the above diagrams.",
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-ii.pdf",
+      "emarking_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf",
+      "page": 4,
+      "question_region": {
+        "page": 4,
+        "box_2d": [
+          525,
+          58,
+          810,
+          900
+        ]
+      },
+      "answer_region": {
+        "page": 4,
+        "box_2d": [
+          815,
+          58,
+          930,
+          900
+        ]
+      },
+      "diagram_region": {
+        "page": 4,
+        "box_2d": [
+          585,
+          55,
+          758,
+          508
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P2_Q6b.png"
+      },
+      "slo_region": {
+        "page": 13,
+        "box_2d": [
+          752,
+          60,
+          788,
+          955
+        ],
+        "printed_slo_code": "11.4.2",
+        "printed_slo_text": "Describe the uses of ultrasound."
+      },
+      "verbatim_stem": "**OR (b):**\nThe given diagrams show two different uses of sound waves by two different things.\n\nIdentify the sound wave used in the given diagrams and describe any FIVE uses of that other than shown in the above diagrams.",
+      "verbatim_checking_hints": [
+        "i. 1 mark for correctly identifying the sound wave as Ultrasound (or Ultrasonic waves).",
+        "ii. 1 mark for EACH correct use of ultrasound other than bat echolocation and ship depth-sounding/fish-finding shown in the diagrams (Any 5 required = 5 marks)."
+      ]
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "model_answer": "**(i) Identification of Sound Wave (1 Mark):**\nThe sound wave used in the given diagrams (bat echolocation and marine SONAR) is **Ultrasound** (ultrasonic waves with frequency above $20,000\\text{ Hz}$).\n\n**(ii) Five Uses of Ultrasound Other Than Those Shown in the Diagrams (5 Marks):**\n1. **Medical Diagnostic Imaging (Ultrasonography):** Used to scan and visualize internal organs, monitor fetal development during pregnancy (obstetric ultrasound), and examine heart valves (echocardiography) safely without ionizing radiation.\n2. **Crushing Kidney Stones (Lithotripsy):** High-intensity focused ultrasonic waves are directed at kidney stones or gallstones to shatter them into tiny sand-like fragments that pass out naturally.\n3. **Detecting Cracks and Flaws in Heavy Metal Components:** Non-destructive testing (NDT) uses ultrasonic pulses to detect hidden internal cracks, voids, or cavities in aircraft wings, railway tracks, and heavy machinery shafts.\n4. **Ultrasonic Cleaning of Delicate Instruments:** High-frequency ultrasonic vibrations in a cleaning liquid dislodge microscopic dirt and grease from jewellery, surgical instruments, watches, and electronic circuit boards.\n5. **Destroy Bacteria & Blood Clot Detection (Doppler Ultrasound):** High-intensity ultrasound can sterilize liquids by destroying bacteria, and Doppler ultrasound measures blood flow speed to locate arterial blockages or blood clots.",
+      "current_2025_slo": "12.4.2",
+      "current_2025_mapping": [
+        {
+          "code": "12.4.2",
+          "description": "describe ultrasound with examples;",
+          "topic": "Sound"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "7.a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "pageNumber": 6,
+    "stem": "**EITHER (a):**\ni. Identify the phenomenon in the given diagram. (1 Mark)\nii. Write any FIVE hazards of the phenomenon identified in part (i). (5 Marks)",
+    "marks": 6,
+    "questionType": "EXTENDED_RESPONSE",
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q7a.png",
+    "slo": "13.1.2",
+    "originalSloText": "Discuss the potential dangers of electrostatic charges.",
+    "unitNumber": 14,
+    "unitName": "Electrostatics",
+    "chapter": "Unit 14: Electrostatics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p2_page_6.png",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "text": "**EITHER (a):**\ni. Identify the phenomenon in the given diagram. (1 Mark)\nii. Write any FIVE hazards of the phenomenon identified in part (i). (5 Marks)",
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-ii.pdf",
+      "emarking_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf",
+      "page": 6,
+      "question_region": {
+        "page": 6,
+        "box_2d": [
+          110,
+          58,
+          315,
+          900
+        ]
+      },
+      "answer_region": {
+        "page": 6,
+        "box_2d": [
+          330,
+          58,
+          900,
+          900
+        ]
+      },
+      "diagram_region": {
+        "page": 6,
+        "box_2d": [
+          200,
+          145,
+          288,
+          402
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P2_Q7a.png"
+      },
+      "slo_region": {
+        "page": 15,
+        "box_2d": [
+          650,
+          60,
+          685,
+          955
+        ],
+        "printed_slo_code": "13.1.2",
+        "printed_slo_text": "Discuss the potential dangers of electrostatic charges."
+      },
+      "verbatim_stem": "**EITHER (a):**\ni. Identify the phenomenon in the given diagram. (1 Mark)\nii. Write any FIVE hazards of the phenomenon identified in part (i). (5 Marks)",
+      "verbatim_checking_hints": [
+        "i. 1 mark for correctly identifying the phenomenon as Electrostatic Induction (or static electricity / charge separation by induction).",
+        "ii. 1 mark for each valid hazard of electrostatic charges / electrostatic induction (Any 5 required = 5 marks)."
+      ]
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "model_answer": "**(i) Identification of Phenomenon (1 Mark):**\nThe phenomenon shown in the diagram is **Electrostatic Induction** (redistribution/separation of opposite charges on an insulated conductor when a charged rod is brought near it without touching).\n\n**(ii) Five Hazards of Electrostatic Charges / Electrostatic Induction (5 Marks):**\n1. **Lightning Strikes:** During thunderstorms, friction between water droplets and air currents builds up huge electrostatic charges in clouds, inducing opposite charges on the ground and tall buildings; sudden discharge produces lightning bolts that can cause fatal electrocution, structural damage, and forest fires.\n2. **Fires & Explosions During Aircraft Refuelling:** As an aircraft flies through the air (or as fuel flows rapidly through refuelling pipes), static charge builds up by friction; an electrostatic spark near fuel vapour can ignite a catastrophic explosion unless the aircraft is earthed.\n3. **Igniting Flammable Vapours in Petrol Tankers & Fuel Stations:** Friction between moving fuel/tyres and road surfaces charges fuel tankers; if not discharged via an earthing strap, an induced spark during unloading can ignite petrol vapours.\n4. **Damage to Sensitive Microelectronics & Computer Chips:** Electrostatic discharge (ESD) from a person's body or clothing can permanently destroy delicate CMOS integrated circuits, transistors, and computer motherboards.\n5. **Explosion Hazard in Hospital Operating Theatres & Flour/Coal Mills:** Static sparks in operating theatres using volatile anaesthetic gases or in environments with combustible dust/flammable gas can trigger explosions.",
+      "current_2025_slo": "14.3.1",
+      "current_2025_mapping": [
+        {
+          "code": "14.3.1",
+          "description": "describe the process of electrostatic induction;",
+          "topic": "Electrostatics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "7.b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "pageNumber": 7,
+    "stem": "**OR (b):**\ni. Label the electrical component in the given circuit diagram. (2 Marks)\nii. Describe any ONE use of the each of the identified electrical component in the given circuit diagram. (4 Marks)",
+    "marks": 6,
+    "questionType": "EXTENDED_RESPONSE",
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P2_Q7b.png",
+    "slo": "14.8.1",
+    "originalSloText": "Describe the use of electrical measuring devices (galvanometre, ammetre and voltmetre).",
+    "unitNumber": 16,
+    "unitName": "D.C. Circuits",
+    "chapter": "Unit 16: D.C. Circuits",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p2_page_7.png",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "text": "**OR (b):**\ni. Label the electrical component in the given circuit diagram. (2 Marks)\nii. Describe any ONE use of the each of the identified electrical component in the given circuit diagram. (4 Marks)",
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-ii.pdf",
+      "emarking_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-emarking.pdf",
+      "page": 7,
+      "question_region": {
+        "page": 7,
+        "box_2d": [
+          110,
+          105,
+          438,
+          945
+        ]
+      },
+      "answer_region": {
+        "page": 7,
+        "box_2d": [
+          455,
+          105,
+          925,
+          945
+        ]
+      },
+      "diagram_region": {
+        "page": 7,
+        "box_2d": [
+          168,
+          198,
+          392,
+          852
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P2_Q7b.png"
+      },
+      "slo_region": {
+        "page": 18,
+        "box_2d": [
+          585,
+          60,
+          625,
+          955
+        ],
+        "printed_slo_code": "14.8.1",
+        "printed_slo_text": "Describe the use of electrical measuring devices (galvanometre, ammetre and voltmetre)."
+      },
+      "verbatim_stem": "**OR (b):**\ni. Label the electrical component in the given circuit diagram. (2 Marks)\nii. Describe any ONE use of the each of the identified electrical component in the given circuit diagram. (4 Marks)",
+      "verbatim_checking_hints": [
+        "i. 2 marks (1 mark for labelling any two parts; 4 parts required for full 2 marks): Variable Resistor (Rheostat), Fixed Resistor, Voltmeter (in parallel), Ammeter (in series), and Switch / Key.",
+        "ii. 4 marks (1 mark for writing the correct use of each of the 4 identified electrical components)."
+      ]
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "model_answer": "**(i) Labelling the Electrical Components in the Circuit Diagram (2 Marks):**\n• **Top-Left Component (zigzag with arrow):** **Variable Resistor (Rheostat)**\n• **Top-Middle Component (zigzag):** **Fixed Resistor**\n• **Middle Circle (connected in parallel across fixed resistor):** **Voltmeter**\n• **Right Circle (connected in series in main loop):** **Ammeter**\n• **Bottom Circle (with central dot next to battery):** **Switch / Plug Key**\n\n**(ii) Function / Use of Each Identified Electrical Component (4 Marks):**\n1. **Switch / Key:** Used to open (break) or close (complete) the electrical circuit to start or stop the flow of electric current safely.\n2. **Ammeter:** Connected in **series** in the circuit to measure the magnitude of electric current flowing through the circuit (in amperes, $\\text{A}$).\n3. **Voltmeter:** Connected in **parallel** across the fixed resistor to measure the potential difference (voltage) across the component (in volts, $\\text{V}$).\n4. **Fixed Resistor:** Provides a constant, known opposition (resistance) to the flow of current to limit current or divide voltage in the circuit.\n5. **Variable Resistor (Rheostat):** Allows the resistance in the circuit to be varied continuously so the electric current flowing through the circuit can be adjusted/controlled.",
+      "current_2025_slo": "16.2.2",
+      "current_2025_mapping": [
+        {
+          "code": "16.2.2",
+          "description": "draw the circuit diagrams of the following electrical components:\na. ammeters,\nb. batteries,\nc. cells,\nd. diodes,\ne. fuses,\nf. lamps,\ng. light-dependent resistors (LDRs),\nh. light-emitting diodes (LEDs),\ni. resistors (fixed and variable),\nj. switches,\nk. thermistors (NTC only),\nl. voltmeters;",
+          "topic": "D.C. Circuits"
+        }
+      ]
+    }
+  }
+]

@@ -9,8 +9,11 @@ import ssc1Past2025Mcqs from '@/data/physics/ssc1_2025_past_mcqs.json';
 import ssc1Past2025Crqs from '@/data/physics/ssc1_2025_past_crqs.json';
 import ssc1Past2024Mcqs from '@/data/physics/ssc1_2024_past_mcqs.json';
 import ssc1Past2024Crqs from '@/data/physics/ssc1_2024_past_crqs.json';
+import ssc2Past2025Mcqs from '@/data/physics/ssc2_2025_past_mcqs.json';
+import ssc2Past2025Crqs from '@/data/physics/ssc2_2025_past_crqs.json';
 import key2024 from '@/data/physics/ssc1_2024_official_key.json';
-import { annual2024AnswerReviews } from '@/lib/legacyPaperEvidence';
+import keyX2025 from '@/data/physics/ssc2_2025_official_key.json';
+import { annual2024AnswerReviews, annualX2025AnswerReviews } from '@/lib/legacyPaperEvidence';
 
 export interface QuestionData {
   id: string;
@@ -90,6 +93,8 @@ const JSON_BUNDLES: Record<string, any[]> = {
   'ssc1_2025_past_crqs.json': ssc1Past2025Crqs as any[],
   'ssc1_2024_past_mcqs.json': ssc1Past2024Mcqs as any[],
   'ssc1_2024_past_crqs.json': ssc1Past2024Crqs as any[],
+  'ssc2_2025_past_mcqs.json': ssc2Past2025Mcqs as any[],
+  'ssc2_2025_past_crqs.json': ssc2Past2025Crqs as any[],
 };
 
 function loadJsonFile(filename: string): any[] {
@@ -280,7 +285,129 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
     };
   }
 
-  if (code.includes('2024') || code.startsWith('PHY-X-2025')) {
+  // 0C. 2025 Annual Past Paper 1 (Class X) - Authentic Board MCQs
+  if (code === 'PHY-X-2025-P1') {
+    const rawMcqs = loadJsonFile('ssc2_2025_past_mcqs.json');
+    const questions: QuestionData[] = rawMcqs.map((item: any, idx: number) => {
+      const qNum = (item.questionNumber || idx + 1).toString();
+      const topicName = item.unitName || item.chapter || 'SSC-II Physics (Class X)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '11';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      const effectiveSlo = item.current_slo || item.slo;
+      const reviewNote = annualX2025AnswerReviews[Number(qNum)];
+      const printedAnswer = keyX2025.entries.find(entry => entry.questionNumber === Number(qNum))?.printedKey;
+      return {
+        id: `phy-x-2025-p1-q${qNum}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: 'MULTIPLE_CHOICE',
+        marks: item.marks || 1,
+        difficulty: item.cognitiveLevel ? item.cognitiveLevel.charAt(0) : 'U',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          choices: item.options || {},
+          correct_answer: item.correctOption || '',
+          explanation: reviewNote ? `Official key: ${printedAnswer}. ${reviewNote}` : item.explanation,
+          ...(reviewNote ? { answer_review_note: reviewNote, answer_origin: 'PROVISIONAL_SOURCE_KEY' } : {}),
+          ...(printedAnswer ? { official_answer: printedAnswer } : {}),
+          option_feedback: reviewNote ? undefined : item.option_feedback || undefined,
+          cognitive_level: item.cognitiveLevel,
+          is_numerical: item.isNumerical,
+          in_syllabus: item.out_of_syllabus ? false : true,
+          out_of_syllabus: item.out_of_syllabus || false,
+          syllabus_reviewed: true,
+          current_syllabus_reviewed: item.current_syllabus_reviewed === true,
+          mapping_scope: item.mapping_scope || { board: 'AKU-EB', grade: 10, subject: 'Physics' },
+          current_mapping: item.current_mapping || [],
+          current_slo: item.current_slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          pageScanUrl: item.pageScanUrl || undefined,
+          slo: item.slo || undefined,
+          original_reference_verified: true,
+          original_reference_source: '/resources/physics-x-2025-key',
+          slo_details: {
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: effectiveSlo ? [{ slo: { code: effectiveSlo, description: mappedSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'PHY-X-2025-P1',
+      title: 'Physics SSC-II 2025 Annual Examination Paper I (MCQ)',
+      paperCode: 'PHY-X-2025-P1',
+      examYear: 2025,
+      examSession: 'Annual Examination 2025',
+      examType: 'ANNUAL',
+      fileUrl: '/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf',
+      academicClass: { name: 'Class X', level: 10 },
+      subject: { id: 'physics-x', name: 'Physics', code: 'PHY' },
+      questions,
+    };
+  }
+
+  // 0D. 2025 Annual Past Paper 2 (Class X) - Authentic Board CRQs & ERQs
+  if (code === 'PHY-X-2025-P2') {
+    const rawCrqs = loadJsonFile('ssc2_2025_past_crqs.json');
+    const questions: QuestionData[] = rawCrqs.map((item: any, idx: number) => {
+      const qNum = item.questionNumber || `${idx + 1}`;
+      const isErq = item.questionType === 'EXTENDED_RESPONSE' || (item.marks || 3) >= 4;
+      const topicName = item.unitName || item.chapter || 'SSC-II Physics Theory';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '11';
+      // The supplied Paper II bundle mixes source transcription with generated
+      // solutions and several semantically incorrect current-SLO matches.
+      const originalSloDesc = item.originalSloText || item.stem;
+      return {
+        id: `phy-x-2025-p2-q${idx + 1}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: item.questionType || (isErq ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE'),
+        marks: item.marks || 3,
+        difficulty: item.cognitiveLevel || 'A',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          answer_review_note: 'The supplied generated solution and current-syllabus mapping are pending source review. Consult the original paper and E-marking PDF.',
+          cognitive_level: item.cognitiveLevel || 'A',
+          syllabus_reviewed: false,
+          current_syllabus_reviewed: false,
+          mapping_scope: item.mapping_scope || { board: 'AKU-EB', grade: 10, subject: 'Physics' },
+          current_mapping: [],
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          pageScanUrl: item.pageScanUrl || undefined,
+          slo: item.slo || undefined,
+          original_slo_text: item.originalSloText || undefined,
+          original_reference_verified: false,
+          original_reference_source: '/resources/physics-x-2025-emarking',
+          slo_details: {
+            description: originalSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: item.slo ? [{ slo: { code: item.slo, description: originalSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'PHY-X-2025-P2',
+      title: 'Physics SSC-II 2025 Annual Examination Paper II (CRQ & ERQ)',
+      paperCode: 'PHY-X-2025-P2',
+      examYear: 2025,
+      examSession: 'Annual Examination 2025',
+      examType: 'ANNUAL',
+      fileUrl: '/materials/ssc/physics/ssc-2/physics-x-2025-paper-ii.pdf',
+      academicClass: { name: 'Class X', level: 10 },
+      subject: { id: 'physics-x', name: 'Physics', code: 'PHY' },
+      questions,
+    };
+  }
+
+  if (code.includes('2024')) {
     const uploaded = findUploadedPaper(code);
     return uploaded ? uploadedPaper(uploaded) : null;
   }
@@ -772,6 +899,28 @@ export function getAllStandardPapers(): Array<{
       examYear: 2024,
       fileUrl: '/materials/ssc/physics/ssc-1/physics-ix-2024-paper-ii.pdf',
       academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Physics' },
+      _count: { questions: 9 }
+    },
+    {
+      id: 'PHY-X-2025-P1',
+      paperCode: 'PHY-X-2025-P1',
+      title: 'Physics SSC-II 2025 Annual Examination Paper I',
+      examSession: 'Annual Examination',
+      examYear: 2025,
+      fileUrl: '/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf',
+      academicClass: { name: 'Class X', level: 10 },
+      subject: { name: 'Physics' },
+      _count: { questions: 40 }
+    },
+    {
+      id: 'PHY-X-2025-P2',
+      paperCode: 'PHY-X-2025-P2',
+      title: 'Physics SSC-II 2025 Annual Examination Paper II',
+      examSession: 'Annual Examination',
+      examYear: 2025,
+      fileUrl: '/materials/ssc/physics/ssc-2/physics-x-2025-paper-ii.pdf',
+      academicClass: { name: 'Class X', level: 10 },
       subject: { name: 'Physics' },
       _count: { questions: 9 }
     }

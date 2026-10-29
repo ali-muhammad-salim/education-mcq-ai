@@ -3,7 +3,10 @@ import reviewed from '@/data/physics/ssc1_2025_current_mapping.json';
 import key2024 from '@/data/physics/ssc1_2024_official_key.json';
 import reviewed2024 from '@/data/physics/ssc1_2024_current_mapping.json';
 import paper2024 from '@/data/physics/ssc1_2024_past_mcqs.json';
+import keyX2025 from '@/data/physics/ssc2_2025_official_key.json';
+import paperX2025 from '@/data/physics/ssc2_2025_past_mcqs.json';
 import current from '@/data/physics/ssc1_exact_syllabus.json';
+import currentX from '@/data/physics/ssc2_exact_syllabus.json';
 
 export const physics2025Resources = [
   { label: 'Paper 1 · official answer key', href: '/resources/physics-ix-2025-key', year: 2025 },
@@ -14,6 +17,15 @@ export const physics2024Resources = [
   { label: 'Paper 1 · official answer key', href: '/resources/physics-ix-2024-key', year: 2024 },
   { label: 'E-marking notes', href: '/resources/physics-ix-2024-emarking', year: 2024 },
 ];
+
+export const physicsX2025Resources = [
+  { label: 'Paper 1 · official answer key', href: '/resources/physics-x-2025-key', year: 2025 },
+  { label: 'E-marking notes', href: '/resources/physics-x-2025-emarking', year: 2025 },
+];
+
+export const annualX2025AnswerReviews: Record<number, string> = {
+  3: 'The printed key says B (amplitude only). For a general oscillator, energy can also depend on frequency. An educator must review the interpretation before this explanation is treated as verified.',
+};
 
 export const annualAnswerReviews: Record<number, string> = {
   12: 'Official key: D (80 N). The ideal-rope tension interpretation (40 N) needs educator review before approving a teaching explanation.',
@@ -75,6 +87,25 @@ export function annual2024OriginalReference(number: string | number): {
     : {};
 }
 
+export function annualX2025OriginalReference(number: string | number): {
+  slo?: string;
+  original_reference_verified?: boolean;
+  original_reference_source?: string;
+  cognitive_level?: string;
+  answer_review_note?: string;
+} {
+  const entry = keyX2025.entries.find(row => row.questionNumber === Number(number));
+  return entry ? {
+    slo: entry.slo,
+    original_reference_verified: true,
+    original_reference_source: '/resources/physics-x-2025-key',
+    cognitive_level: entry.cognitiveLevel,
+    ...(annualX2025AnswerReviews[entry.questionNumber]
+      ? { answer_review_note: annualX2025AnswerReviews[entry.questionNumber] }
+      : {}),
+  } : {};
+}
+
 /** Apply a source-reviewed legacy mapping only while the exact stem and outcome
  * still match the reviewed content. A newer compiled syllabus must bypass this. */
 export function annualCurrentMapping(number: string | number, stem: string) {
@@ -119,5 +150,22 @@ export function annual2024CurrentMapping(number: string | number, stem: string) 
     mapping_scope: { board: 'AKU-EB', grade: 9, subject: 'Physics' },
     current_mapping: [{ code: row.code, description: row.description, topic: row.topic }],
     mapping_reason: reviewed2024.reviewMethod,
+  };
+}
+
+export function annualX2025CurrentMapping(number: string | number, stem: string) {
+  const row = paperX2025.find(item => Number(item.questionNumber) === Number(number));
+  const normalize = (value: string) => value.replace(/\s+/g, ' ').trim();
+  if (!row || row.current_syllabus_reviewed !== true || normalize(row.stem) !== normalize(stem)) return {};
+  const mapped = row.current_mapping?.[0];
+  if (!mapped) return {};
+  const outcome = currentX
+    .flatMap(unit => unit.subtopics.flatMap(topic => topic.slos))
+    .find(item => item.code === mapped.code);
+  if (!outcome || outcome.description !== mapped.description) return {};
+  return {
+    current_syllabus_reviewed: true,
+    mapping_scope: { board: 'AKU-EB', grade: 10, subject: 'Physics' },
+    current_mapping: [{ code: mapped.code, description: mapped.description, topic: mapped.topic }],
   };
 }

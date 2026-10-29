@@ -12,6 +12,7 @@ import MaterialList from '@/components/MaterialList';
 import { mcqCategories, type McqCategory } from '@/lib/mcqCategories';
 import { publishedCurriculum } from '@/services/materials/curriculum';
 import past2025 from '@/data/physics/ssc1_2025_past_mcqs.json';
+import pastX2025 from '@/data/physics/ssc2_2025_past_mcqs.json';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import { applyAnswerDecision } from '@/lib/legacyAnswerReview';
 
@@ -59,7 +60,7 @@ export default async function SubjectMcqsPage({ params, category }: PageProps) {
         meta={meta}
         baseUrl={baseUrl}
         questions={mcqsData}
-        annualQuestions={legacy && classDef.level===9 ? past2025.map(q=>({...q,...applyAnswerDecision({},q.questionNumber,q.stem,q.options,answerDecisions)})) : []}
+        annualQuestions={legacy ? (classDef.level===9 ? past2025.map(q=>({...q,...applyAnswerDecision({},q.questionNumber,q.stem,q.options,answerDecisions)})) : pastX2025) : []}
         mappedChapters={mappedChapters}
         initialCategory={category}
         useReviewedLegacy={legacy && classDef.level===9 && !await publishedCurriculum(board.shortCode,classDef.level,meta.title)}

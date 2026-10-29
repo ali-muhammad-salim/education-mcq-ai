@@ -1,0 +1,5144 @@
+[
+  {
+    "questionNumber": "1",
+    "pageNumber": 2,
+    "stem": "If the acceleration of a vibrating body is directed towards its mean position and directly proportional to the displacement, then the body is executing",
+    "options": {
+      "A": "random motion.",
+      "B": "translatory motion.",
+      "C": "circulatory motion.",
+      "D": "simple harmonic motion."
+    },
+    "correctOption": "D",
+    "explanation": "By definition, Simple Harmonic Motion (SHM) occurs when the restoring force and resulting acceleration ($a \\propto -x$) of a vibrating body are always directed towards the mean (equilibrium) position and are directly proportional to the displacement from the mean position.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Random motion has no fixed equilibrium point or proportional restoring acceleration."
+      },
+      {
+        "key": "B",
+        "reason": "Translatory motion is motion along a line or curve without requiring oscillation about a mean position."
+      },
+      {
+        "key": "C",
+        "reason": "Circulatory motion is motion along a circular path at constant radius rather than oscillatory restoring motion."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "10.1.1",
+    "current_slo": "11.1.1",
+    "unitNumber": 11,
+    "unitName": "Wave Motion",
+    "marks": 1,
+    "chapter": "Unit 11: Wave Motion",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "10.1.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "11.1.1",
+        "description": "define the following:\na. amplitude,\nb. frequency,\nc. oscillatory motion\nd. periodic motion,\ne. time period;",
+        "topic": "Wave Motion"
+      }
+    ],
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 2,
+      "question_region": {
+        "page": 2,
+        "box_2d": [
+          105,
+          70,
+          178,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 2,
+        "box_2d": [
+          178,
+          70,
+          251,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "1",
+        "printedSlo": "10.1.1",
+        "printedAnswerKey": "D",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          115,
+          300,
+          133,
+          700
+        ]
+      },
+      "verbatim_stem": "If the acceleration of a vibrating body is directed towards its mean position and directly proportional to the displacement, then the body is executing",
+      "verbatim_options": {
+        "A": "random motion.",
+        "B": "translatory motion.",
+        "C": "circulatory motion.",
+        "D": "simple harmonic motion."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "By definition, Simple Harmonic Motion (SHM) occurs when the restoring force and resulting acceleration ($a \\propto -x$) of a vibrating body are always directed towards the mean (equilibrium) position and are directly proportional to the displacement from the mean position.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Random motion has no fixed equilibrium point or proportional restoring acceleration."
+        },
+        {
+          "key": "B",
+          "reason": "Translatory motion is motion along a line or curve without requiring oscillation about a mean position."
+        },
+        {
+          "key": "C",
+          "reason": "Circulatory motion is motion along a circular path at constant radius rather than oscillatory restoring motion."
+        }
+      ],
+      "current_2025_slo": "11.1.1",
+      "current_2025_mapping": [
+        {
+          "code": "11.1.1",
+          "description": "define the following:\na. amplitude,\nb. frequency,\nc. oscillatory motion\nd. periodic motion,\ne. time period;",
+          "topic": "Wave Motion"
+        }
+      ]
+    },
+    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+  },
+  {
+    "questionNumber": "2",
+    "pageNumber": 2,
+    "stem": "Which of the following pendulums has the maximum time period?\n\n| Pendulum | Length | Mass |\n| :---: | :---: | :---: |\n| A | $50\\text{ cm}$ | $50\\text{ gm}$ |\n| B | $60\\text{ cm}$ | $40\\text{ gm}$ |\n| C | $70\\text{ cm}$ | $30\\text{ gm}$ |\n| D | $80\\text{ cm}$ | $10\\text{ gm}$ |",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    },
+    "correctOption": "D",
+    "explanation": "The time period of a simple pendulum is given by $T = 2\\pi\\sqrt{\\frac{L}{g}}$. It is directly proportional to the square root of its length ($\\sqrt{L}$) and is completely independent of the mass of the bob. Since Pendulum D has the greatest length ($80\\text{ cm}$), it has the maximum time period.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Pendulum A has the shortest length (50 cm) and therefore the minimum time period; mass (50 gm) does not affect T."
+      },
+      {
+        "key": "B",
+        "reason": "60 cm is shorter than 80 cm, so its time period is smaller than D."
+      },
+      {
+        "key": "C",
+        "reason": "70 cm is shorter than 80 cm, so its time period is smaller than D."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q2.png",
+    "slo": "10.1.5",
+    "current_slo": "11.1.2",
+    "unitNumber": 11,
+    "unitName": "Wave Motion",
+    "marks": 1,
+    "chapter": "Unit 11: Wave Motion",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "10.1.5",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "11.1.2",
+        "description": "discuss the factors on which the time period of a simple pendulum depends;",
+        "topic": "Wave Motion"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 2,
+      "question_region": {
+        "page": 2,
+        "box_2d": [
+          261,
+          70,
+          334,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 2,
+        "box_2d": [
+          334,
+          70,
+          407,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 2,
+        "box_2d": [
+          258,
+          110,
+          395,
+          515
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q2.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "2",
+        "printedSlo": "10.1.5",
+        "printedAnswerKey": "D",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          133,
+          300,
+          150,
+          700
+        ]
+      },
+      "verbatim_stem": "Which of the following pendulums has the maximum time period?\n\n| Pendulum | Length | Mass |\n| :---: | :---: | :---: |\n| A | $50\\text{ cm}$ | $50\\text{ gm}$ |\n| B | $60\\text{ cm}$ | $40\\text{ gm}$ |\n| C | $70\\text{ cm}$ | $30\\text{ gm}$ |\n| D | $80\\text{ cm}$ | $10\\text{ gm}$ |",
+      "verbatim_options": {
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "D": "D"
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "The time period of a simple pendulum is given by $T = 2\\pi\\sqrt{\\frac{L}{g}}$. It is directly proportional to the square root of its length ($\\sqrt{L}$) and is completely independent of the mass of the bob. Since Pendulum D has the greatest length ($80\\text{ cm}$), it has the maximum time period.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Pendulum A has the shortest length (50 cm) and therefore the minimum time period; mass (50 gm) does not affect T."
+        },
+        {
+          "key": "B",
+          "reason": "60 cm is shorter than 80 cm, so its time period is smaller than D."
+        },
+        {
+          "key": "C",
+          "reason": "70 cm is shorter than 80 cm, so its time period is smaller than D."
+        }
+      ],
+      "current_2025_slo": "11.1.2",
+      "current_2025_mapping": [
+        {
+          "code": "11.1.2",
+          "description": "discuss the factors on which the time period of a simple pendulum depends;",
+          "topic": "Wave Motion"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "3",
+    "pageNumber": 2,
+    "stem": "The total energy of a particle executing simple harmonic motion depends upon\n\nI. velocity\nII. amplitude\nIII. frequency",
+    "options": {
+      "A": "I only.",
+      "B": "II only.",
+      "C": "I and III.",
+      "D": "II and III."
+    },
+    "correctOption": "B",
+    "explanation": "For a given simple harmonic oscillator (such as a mass-spring system of spring constant $k$), the total mechanical energy is conserved and equals the maximum potential energy at the extreme position: $E_{\\text{total}} = \\frac{1}{2}kA^2$, which depends on the amplitude (II). (Note: In AKU-EB's official 2025 key, B is the keyed response).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Instantaneous velocity changes throughout the oscillation while total mechanical energy remains constant."
+      },
+      {
+        "key": "C",
+        "reason": "Total energy is independent of instantaneous velocity."
+      },
+      {
+        "key": "D",
+        "reason": "Per the AKU-EBSSC-II curriculum and official key, total energy of a given SHM system is keyed to amplitude (II only)."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "10.2.2",
+    "current_slo": "11.1.1",
+    "unitNumber": 11,
+    "unitName": "Wave Motion",
+    "marks": 1,
+    "chapter": "Unit 11: Wave Motion",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "10.2.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "11.1.1",
+        "description": "define the following:\na. amplitude,\nb. frequency,\nc. oscillatory motion\nd. periodic motion,\ne. time period;",
+        "topic": "Wave Motion"
+      }
+    ],
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 2,
+      "question_region": {
+        "page": 2,
+        "box_2d": [
+          417,
+          70,
+          490,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 2,
+        "box_2d": [
+          490,
+          70,
+          563,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "3",
+        "printedSlo": "10.2.2",
+        "printedAnswerKey": "B",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          150,
+          300,
+          168,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_x_2025_key_row_3.png"
+      },
+      "verbatim_stem": "The total energy of a particle executing simple harmonic motion depends upon\n\nI. velocity\nII. amplitude\nIII. frequency",
+      "verbatim_options": {
+        "A": "I only.",
+        "B": "II only.",
+        "C": "I and III.",
+        "D": "II and III."
+      }
+    },
+    "proposed_interpretation": {
+      "questionNumber": 3,
+      "officialKey": "B",
+      "proposedKey": "D",
+      "reason": "Official key prints B (II only — amplitude). In general SHM E = 2π²mf²A², total energy depends on both amplitude (II) and frequency (III)."
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "For a given simple harmonic oscillator (such as a mass-spring system of spring constant $k$), the total mechanical energy is conserved and equals the maximum potential energy at the extreme position: $E_{\\text{total}} = \\frac{1}{2}kA^2$, which depends on the amplitude (II). (Note: In AKU-EB's official 2025 key, B is the keyed response).",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Instantaneous velocity changes throughout the oscillation while total mechanical energy remains constant."
+        },
+        {
+          "key": "C",
+          "reason": "Total energy is independent of instantaneous velocity."
+        },
+        {
+          "key": "D",
+          "reason": "Per the AKU-EBSSC-II curriculum and official key, total energy of a given SHM system is keyed to amplitude (II only)."
+        }
+      ],
+      "current_2025_slo": "11.1.1",
+      "current_2025_mapping": [
+        {
+          "code": "11.1.1",
+          "description": "define the following:\na. amplitude,\nb. frequency,\nc. oscillatory motion\nd. periodic motion,\ne. time period;",
+          "topic": "Wave Motion"
+        }
+      ]
+    },
+    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+  },
+  {
+    "questionNumber": "4",
+    "pageNumber": 2,
+    "stem": "If a periodic wave of wavelength $0.5\\text{ m}$ has a frequency of $2\\text{ Hz}$, then the speed of the wave will be",
+    "options": {
+      "A": "$4.0\\text{ m/s}$.",
+      "B": "$2.5\\text{ m/s}$.",
+      "C": "$1.5\\text{ m/s}$.",
+      "D": "$1.0\\text{ m/s}$."
+    },
+    "correctOption": "D",
+    "explanation": "Using the wave speed equation $v = f\\lambda$, where frequency $f = 2\\text{ Hz}$ and wavelength $\\lambda = 0.5\\text{ m}$:\n$v = 2\\text{ Hz} \\times 0.5\\text{ m} = 1.0\\text{ m/s}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Dividing 2 by 0.5 gives 4.0, whereas wave speed is the product v = f × λ."
+      },
+      {
+        "key": "B",
+        "reason": "Adding 2 + 0.5 gives 2.5, instead of multiplying frequency by wavelength."
+      },
+      {
+        "key": "C",
+        "reason": "Subtracting 2 - 0.5 gives 1.5, instead of multiplying frequency by wavelength."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "10.4.3",
+    "current_slo": "11.4.4",
+    "unitNumber": 11,
+    "unitName": "Wave Motion",
+    "marks": 1,
+    "chapter": "Unit 11: Wave Motion",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "10.4.3",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "11.4.4",
+        "description": "solve word problems using the relation f = 1/ T and v = f λ;",
+        "topic": "Wave Motion"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 2,
+      "question_region": {
+        "page": 2,
+        "box_2d": [
+          573,
+          70,
+          646,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 2,
+        "box_2d": [
+          646,
+          70,
+          719,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "4",
+        "printedSlo": "10.4.3",
+        "printedAnswerKey": "D",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          168,
+          300,
+          186,
+          700
+        ]
+      },
+      "verbatim_stem": "If a periodic wave of wavelength $0.5\\text{ m}$ has a frequency of $2\\text{ Hz}$, then the speed of the wave will be",
+      "verbatim_options": {
+        "A": "$4.0\\text{ m/s}$.",
+        "B": "$2.5\\text{ m/s}$.",
+        "C": "$1.5\\text{ m/s}$.",
+        "D": "$1.0\\text{ m/s}$."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Using the wave speed equation $v = f\\lambda$, where frequency $f = 2\\text{ Hz}$ and wavelength $\\lambda = 0.5\\text{ m}$:\n$v = 2\\text{ Hz} \\times 0.5\\text{ m} = 1.0\\text{ m/s}$.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Dividing 2 by 0.5 gives 4.0, whereas wave speed is the product v = f × λ."
+        },
+        {
+          "key": "B",
+          "reason": "Adding 2 + 0.5 gives 2.5, instead of multiplying frequency by wavelength."
+        },
+        {
+          "key": "C",
+          "reason": "Subtracting 2 - 0.5 gives 1.5, instead of multiplying frequency by wavelength."
+        }
+      ],
+      "current_2025_slo": "11.4.4",
+      "current_2025_mapping": [
+        {
+          "code": "11.4.4",
+          "description": "solve word problems using the relation f = 1/ T and v = f λ;",
+          "topic": "Wave Motion"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "5",
+    "pageNumber": 2,
+    "stem": "Wars on Earth are very noisy affairs but a war in space will be very quiet because",
+    "options": {
+      "A": "space is very far from the Earth.",
+      "B": "sound waves cannot travel through a vacuum.",
+      "C": "sound waves are blocked by the planets in space.",
+      "D": "sound waves lose energy as they reach the Earth."
+    },
+    "correctOption": "B",
+    "explanation": "Sound waves are mechanical longitudinal waves that require a material medium (solid, liquid, or gas) to propagate via particle compressions and rarefactions. Since outer space is a vacuum with no material particles, sound waves cannot travel through it.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Even for an observer right next to an explosion in outer space, no sound travels through the vacuum."
+      },
+      {
+        "key": "C",
+        "reason": "Absence of a material medium, not planetary blocking, prevents sound propagation in space."
+      },
+      {
+        "key": "D",
+        "reason": "Sound cannot even begin to propagate in empty space because there is no medium."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "11.1.1",
+    "current_slo": "12.1.2",
+    "unitNumber": 12,
+    "unitName": "Sound",
+    "marks": 1,
+    "chapter": "Unit 12: Sound",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_2.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "11.1.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "12.1.2",
+        "description": "explain that sound waves cannot travel in a vacuum;",
+        "topic": "Sound"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 2,
+      "question_region": {
+        "page": 2,
+        "box_2d": [
+          729,
+          70,
+          802,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 2,
+        "box_2d": [
+          802,
+          70,
+          875,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "5",
+        "printedSlo": "11.1.1",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          186,
+          300,
+          203,
+          700
+        ]
+      },
+      "verbatim_stem": "Wars on Earth are very noisy affairs but a war in space will be very quiet because",
+      "verbatim_options": {
+        "A": "space is very far from the Earth.",
+        "B": "sound waves cannot travel through a vacuum.",
+        "C": "sound waves are blocked by the planets in space.",
+        "D": "sound waves lose energy as they reach the Earth."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Sound waves are mechanical longitudinal waves that require a material medium (solid, liquid, or gas) to propagate via particle compressions and rarefactions. Since outer space is a vacuum with no material particles, sound waves cannot travel through it.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Even for an observer right next to an explosion in outer space, no sound travels through the vacuum."
+        },
+        {
+          "key": "C",
+          "reason": "Absence of a material medium, not planetary blocking, prevents sound propagation in space."
+        },
+        {
+          "key": "D",
+          "reason": "Sound cannot even begin to propagate in empty space because there is no medium."
+        }
+      ],
+      "current_2025_slo": "12.1.2",
+      "current_2025_mapping": [
+        {
+          "code": "12.1.2",
+          "description": "explain that sound waves cannot travel in a vacuum;",
+          "topic": "Sound"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "6",
+    "pageNumber": 3,
+    "stem": "Which of the following figures represents the loudest sound with the highest frequency?",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    },
+    "correctOption": "D",
+    "explanation": "Loudness increases with the amplitude (vertical height of crests/troughs), and pitch/frequency increases with the number of wave cycles per unit time. Figure D has both the largest vertical amplitude and the highest number of closely packed wave cycles.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Figure A has both small amplitude (quiet) and low frequency (few cycles)."
+      },
+      {
+        "key": "B",
+        "reason": "Figure B has a large amplitude (loud) but low frequency (few cycles)."
+      },
+      {
+        "key": "C",
+        "reason": "Figure C has a high frequency (many cycles) but very small amplitude (quiet)."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q6.png",
+    "slo": "11.2.2",
+    "current_slo": "12.2.2",
+    "unitNumber": 12,
+    "unitName": "Sound",
+    "marks": 1,
+    "chapter": "Unit 12: Sound",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_3.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "11.2.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "12.2.2",
+        "description": "describe graphically the effect of changes in amplitude on loudness and the effect of changes in frequency on the pitch of sound;",
+        "topic": "Sound"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 3,
+      "question_region": {
+        "page": 3,
+        "box_2d": [
+          105,
+          70,
+          198,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 3,
+        "box_2d": [
+          198,
+          70,
+          290,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 3,
+        "box_2d": [
+          132,
+          165,
+          395,
+          695
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q6.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "6",
+        "printedSlo": "11.2.2",
+        "printedAnswerKey": "D",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          203,
+          300,
+          221,
+          700
+        ]
+      },
+      "verbatim_stem": "Which of the following figures represents the loudest sound with the highest frequency?",
+      "verbatim_options": {
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "D": "D"
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Loudness increases with the amplitude (vertical height of crests/troughs), and pitch/frequency increases with the number of wave cycles per unit time. Figure D has both the largest vertical amplitude and the highest number of closely packed wave cycles.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Figure A has both small amplitude (quiet) and low frequency (few cycles)."
+        },
+        {
+          "key": "B",
+          "reason": "Figure B has a large amplitude (loud) but low frequency (few cycles)."
+        },
+        {
+          "key": "C",
+          "reason": "Figure C has a high frequency (many cycles) but very small amplitude (quiet)."
+        }
+      ],
+      "current_2025_slo": "12.2.2",
+      "current_2025_mapping": [
+        {
+          "code": "12.2.2",
+          "description": "describe graphically the effect of changes in amplitude on loudness and the effect of changes in frequency on the pitch of sound;",
+          "topic": "Sound"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "7",
+    "pageNumber": 3,
+    "stem": "Graveness or shrillness of a sound depends on its",
+    "options": {
+      "A": "velocity.",
+      "B": "frequency.",
+      "C": "amplitude.",
+      "D": "wavelength."
+    },
+    "correctOption": "B",
+    "explanation": "Pitch is the characteristic of sound by which we distinguish between a shrill (high-pitched) and a grave (low-pitched) sound, and pitch depends directly on the frequency of the sound wave.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Wave velocity depends on the properties of the medium, not the shrillness of the sound."
+      },
+      {
+        "key": "C",
+        "reason": "Amplitude determines the loudness of sound, not its pitch (graveness or shrillness)."
+      },
+      {
+        "key": "D",
+        "reason": "Pitch is directly determined by the frequency of the vibrating source."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "11.2.2",
+    "current_slo": "12.2.1",
+    "unitNumber": 12,
+    "unitName": "Sound",
+    "marks": 1,
+    "chapter": "Unit 12: Sound",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_3.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "11.2.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "12.2.1",
+        "description": "define the terms ‘pitch’, ‘loudness’ and ‘quality of sound’;",
+        "topic": "Sound"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 3,
+      "question_region": {
+        "page": 3,
+        "box_2d": [
+          300,
+          70,
+          392,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 3,
+        "box_2d": [
+          392,
+          70,
+          485,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "7",
+        "printedSlo": "11.2.2",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          221,
+          300,
+          238,
+          700
+        ]
+      },
+      "verbatim_stem": "Graveness or shrillness of a sound depends on its",
+      "verbatim_options": {
+        "A": "velocity.",
+        "B": "frequency.",
+        "C": "amplitude.",
+        "D": "wavelength."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Pitch is the characteristic of sound by which we distinguish between a shrill (high-pitched) and a grave (low-pitched) sound, and pitch depends directly on the frequency of the sound wave.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Wave velocity depends on the properties of the medium, not the shrillness of the sound."
+        },
+        {
+          "key": "C",
+          "reason": "Amplitude determines the loudness of sound, not its pitch (graveness or shrillness)."
+        },
+        {
+          "key": "D",
+          "reason": "Pitch is directly determined by the frequency of the vibrating source."
+        }
+      ],
+      "current_2025_slo": "12.2.1",
+      "current_2025_mapping": [
+        {
+          "code": "12.2.1",
+          "description": "define the terms ‘pitch’, ‘loudness’ and ‘quality of sound’;",
+          "topic": "Sound"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "8",
+    "pageNumber": 3,
+    "stem": "All of the following are the MAJOR sources of noise pollution EXCEPT",
+    "options": {
+      "A": "transportation.",
+      "B": "construction sites.",
+      "C": "musical instruments.",
+      "D": "machines used in industries."
+    },
+    "correctOption": "C",
+    "explanation": "Musical instruments produce regular, periodic, and pleasant sound waves (musical sound), whereas transportation (aircraft, road traffic), construction sites, and industrial machinery produce irregular, jarring, and unpleasant sound waves that are the major sources of noise pollution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Vehicular and aircraft traffic are major contributors to urban noise pollution."
+      },
+      {
+        "key": "B",
+        "reason": "Heavy equipment at construction sites is a major source of noise pollution."
+      },
+      {
+        "key": "D",
+        "reason": "Industrial machinery is a primary source of occupational and environmental noise pollution."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "11.3.1",
+    "current_slo": "12.5.2",
+    "unitNumber": 12,
+    "unitName": "Sound",
+    "marks": 1,
+    "chapter": "Unit 12: Sound",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_3.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "11.3.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "12.5.2",
+        "description": "analyse the effects of noise pollution on the environment.",
+        "topic": "Sound"
+      }
+    ],
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 3,
+      "question_region": {
+        "page": 3,
+        "box_2d": [
+          495,
+          70,
+          588,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 3,
+        "box_2d": [
+          588,
+          70,
+          680,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "8",
+        "printedSlo": "11.3.1",
+        "printedAnswerKey": "C",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          238,
+          300,
+          256,
+          700
+        ]
+      },
+      "verbatim_stem": "All of the following are the MAJOR sources of noise pollution EXCEPT",
+      "verbatim_options": {
+        "A": "transportation.",
+        "B": "construction sites.",
+        "C": "musical instruments.",
+        "D": "machines used in industries."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Musical instruments produce regular, periodic, and pleasant sound waves (musical sound), whereas transportation (aircraft, road traffic), construction sites, and industrial machinery produce irregular, jarring, and unpleasant sound waves that are the major sources of noise pollution.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Vehicular and aircraft traffic are major contributors to urban noise pollution."
+        },
+        {
+          "key": "B",
+          "reason": "Heavy equipment at construction sites is a major source of noise pollution."
+        },
+        {
+          "key": "D",
+          "reason": "Industrial machinery is a primary source of occupational and environmental noise pollution."
+        }
+      ],
+      "current_2025_slo": "12.5.2",
+      "current_2025_mapping": [
+        {
+          "code": "12.5.2",
+          "description": "analyse the effects of noise pollution on the environment.",
+          "topic": "Sound"
+        }
+      ]
+    },
+    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+  },
+  {
+    "questionNumber": "9",
+    "pageNumber": 3,
+    "stem": "Consider the given ray diagram.\n\nWhere should an object be placed to get a magnified and erect image?",
+    "options": {
+      "A": "At point F",
+      "B": "Beyond 2F",
+      "C": "Between F and P",
+      "D": "Between F and 2F"
+    },
+    "correctOption": "C",
+    "explanation": "When an object is placed between the principal focus ($F$) and the pole ($P$) of a concave mirror, the reflected rays diverge and appear to come from a point behind the mirror, forming a virtual, erect (upright), and magnified image.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Placing the object at F forms a real, inverted image at infinity."
+      },
+      {
+        "key": "B",
+        "reason": "Placing the object beyond 2F forms a real, inverted, and diminished image between F and 2F."
+      },
+      {
+        "key": "D",
+        "reason": "Placing the object between F and 2F forms a real, inverted, and magnified image beyond 2F."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q9.png",
+    "slo": "12.2.1",
+    "current_slo": "13.5.2",
+    "unitNumber": 13,
+    "unitName": "Geometrical Optics",
+    "marks": 1,
+    "chapter": "Unit 13: Geometrical Optics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_3.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "12.2.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "13.5.2",
+        "description": "draw images by placing objects at different positions in front of convex and concave lens;",
+        "topic": "Geometrical Optics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 3,
+      "question_region": {
+        "page": 3,
+        "box_2d": [
+          690,
+          70,
+          782,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 3,
+        "box_2d": [
+          782,
+          70,
+          875,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 3,
+        "box_2d": [
+          642,
+          165,
+          742,
+          415
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q9.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "9",
+        "printedSlo": "12.2.1",
+        "printedAnswerKey": "C",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          256,
+          300,
+          274,
+          700
+        ]
+      },
+      "verbatim_stem": "Consider the given ray diagram.\n\nWhere should an object be placed to get a magnified and erect image?",
+      "verbatim_options": {
+        "A": "At point F",
+        "B": "Beyond 2F",
+        "C": "Between F and P",
+        "D": "Between F and 2F"
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "When an object is placed between the principal focus ($F$) and the pole ($P$) of a concave mirror, the reflected rays diverge and appear to come from a point behind the mirror, forming a virtual, erect (upright), and magnified image.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Placing the object at F forms a real, inverted image at infinity."
+        },
+        {
+          "key": "B",
+          "reason": "Placing the object beyond 2F forms a real, inverted, and diminished image between F and 2F."
+        },
+        {
+          "key": "D",
+          "reason": "Placing the object between F and 2F forms a real, inverted, and magnified image beyond 2F."
+        }
+      ],
+      "current_2025_slo": "13.5.2",
+      "current_2025_mapping": [
+        {
+          "code": "13.5.2",
+          "description": "draw images by placing objects at different positions in front of convex and concave lens;",
+          "topic": "Geometrical Optics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "10",
+    "pageNumber": 4,
+    "stem": "Short sightedness can be removed by the use of",
+    "options": {
+      "A": "convex lens.",
+      "B": "concave lens.",
+      "C": "double-convex lens.",
+      "D": "concavo-convex lens."
+    },
+    "correctOption": "B",
+    "explanation": "In short-sightedness (myopia), light rays from distant objects converge in front of the retina because the eyeball is too long or the eye lens has excessive converging power. A diverging **concave lens** of suitable focal length diverges the incoming rays slightly so they focus sharply on the retina.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A convex (converging) lens is used to correct long-sightedness (hypermetropia), not short-sightedness."
+      },
+      {
+        "key": "C",
+        "reason": "A double-convex lens converges light further and would worsen myopia."
+      },
+      {
+        "key": "D",
+        "reason": "A concave (diverging) lens is specifically required to diverge rays from distant objects onto the retina."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "12.9.2",
+    "current_slo": "13.8.3",
+    "unitNumber": 13,
+    "unitName": "Geometrical Optics",
+    "marks": 1,
+    "chapter": "Unit 13: Geometrical Optics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_4.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "12.9.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "13.8.3",
+        "description": "describe the correction of short-sightedness and long-sightedness using concave and convex lenses;",
+        "topic": "Geometrical Optics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 4,
+      "question_region": {
+        "page": 4,
+        "box_2d": [
+          105,
+          70,
+          230,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 4,
+        "box_2d": [
+          230,
+          70,
+          355,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "10",
+        "printedSlo": "12.9.2",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          274,
+          300,
+          291,
+          700
+        ]
+      },
+      "verbatim_stem": "Short sightedness can be removed by the use of",
+      "verbatim_options": {
+        "A": "convex lens.",
+        "B": "concave lens.",
+        "C": "double-convex lens.",
+        "D": "concavo-convex lens."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "In short-sightedness (myopia), light rays from distant objects converge in front of the retina because the eyeball is too long or the eye lens has excessive converging power. A diverging **concave lens** of suitable focal length diverges the incoming rays slightly so they focus sharply on the retina.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "A convex (converging) lens is used to correct long-sightedness (hypermetropia), not short-sightedness."
+        },
+        {
+          "key": "C",
+          "reason": "A double-convex lens converges light further and would worsen myopia."
+        },
+        {
+          "key": "D",
+          "reason": "A concave (diverging) lens is specifically required to diverge rays from distant objects onto the retina."
+        }
+      ],
+      "current_2025_slo": "13.8.3",
+      "current_2025_mapping": [
+        {
+          "code": "13.8.3",
+          "description": "describe the correction of short-sightedness and long-sightedness using concave and convex lenses;",
+          "topic": "Geometrical Optics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "11",
+    "pageNumber": 4,
+    "stem": "Which of the following diagrams represents the correct phenomenon of the refraction of light, if each block shows a glass slab?",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    },
+    "correctOption": "C",
+    "explanation": "When a light ray travels obliquely from a rarer medium (air) into a denser medium (glass slab), it bends towards the normal; when it exits the parallel-sided glass slab back into air, it bends away from the normal, emerging parallel to the incident ray (as shown in C).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Diagram A shows reflection back along the normal rather than transmission through the slab."
+      },
+      {
+        "key": "B",
+        "reason": "Diagram B shows the ray passing straight through without bending at the air-glass interfaces despite oblique incidence."
+      },
+      {
+        "key": "D",
+        "reason": "Diagram D shows the ray bending away from the normal upon entering the denser glass medium."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q11.png",
+    "slo": "12.3.3",
+    "current_slo": "13.2.4",
+    "unitNumber": 13,
+    "unitName": "Geometrical Optics",
+    "marks": 1,
+    "chapter": "Unit 13: Geometrical Optics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_4.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "12.3.3",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "13.2.4",
+        "description": "illustrate the passage of light ray through parallel-sided\ntransparent material (glass slab);",
+        "topic": "Geometrical Optics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 4,
+      "question_region": {
+        "page": 4,
+        "box_2d": [
+          365,
+          70,
+          490,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 4,
+        "box_2d": [
+          490,
+          70,
+          615,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 4,
+        "box_2d": [
+          262,
+          115,
+          512,
+          645
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q11.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "11",
+        "printedSlo": "12.3.3",
+        "printedAnswerKey": "C",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          291,
+          300,
+          309,
+          700
+        ]
+      },
+      "verbatim_stem": "Which of the following diagrams represents the correct phenomenon of the refraction of light, if each block shows a glass slab?",
+      "verbatim_options": {
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "D": "D"
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "When a light ray travels obliquely from a rarer medium (air) into a denser medium (glass slab), it bends towards the normal; when it exits the parallel-sided glass slab back into air, it bends away from the normal, emerging parallel to the incident ray (as shown in C).",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Diagram A shows reflection back along the normal rather than transmission through the slab."
+        },
+        {
+          "key": "B",
+          "reason": "Diagram B shows the ray passing straight through without bending at the air-glass interfaces despite oblique incidence."
+        },
+        {
+          "key": "D",
+          "reason": "Diagram D shows the ray bending away from the normal upon entering the denser glass medium."
+        }
+      ],
+      "current_2025_slo": "13.2.4",
+      "current_2025_mapping": [
+        {
+          "code": "13.2.4",
+          "description": "illustrate the passage of light ray through parallel-sided\ntransparent material (glass slab);",
+          "topic": "Geometrical Optics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "12",
+    "pageNumber": 4,
+    "stem": "When a white coloured light passes through a prism it bends into seven different colours.\n\nThis bending of colours increases as the",
+    "options": {
+      "A": "frequency decreases.",
+      "B": "wavelength decreases.",
+      "C": "frequency remains the same.",
+      "D": "wavelength remains the same."
+    },
+    "correctOption": "B",
+    "explanation": "In dispersion through a glass prism, refractive index increases as wavelength decreases. Consequently, shorter wavelengths (such as blue and violet light) slow down more in glass and bend (deviate) through a larger angle than longer wavelengths (such as red light).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Lower frequency corresponds to longer wavelength (red light), which bends the least."
+      },
+      {
+        "key": "C",
+        "reason": "Different colours have different frequencies and wavelengths."
+      },
+      {
+        "key": "D",
+        "reason": "Each spectral colour has a distinct wavelength, and deviation increases as wavelength decreases."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "12.3.5",
+    "current_slo": "13.3.1",
+    "unitNumber": 13,
+    "unitName": "Geometrical Optics",
+    "marks": 1,
+    "chapter": "Unit 13: Geometrical Optics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_4.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "12.3.5",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "13.3.1",
+        "description": "explain the dispersion of light by a prism;",
+        "topic": "Geometrical Optics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 4,
+      "question_region": {
+        "page": 4,
+        "box_2d": [
+          625,
+          70,
+          750,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 4,
+        "box_2d": [
+          750,
+          70,
+          875,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "12",
+        "printedSlo": "12.3.5",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          309,
+          300,
+          326,
+          700
+        ]
+      },
+      "verbatim_stem": "When a white coloured light passes through a prism it bends into seven different colours.\n\nThis bending of colours increases as the",
+      "verbatim_options": {
+        "A": "frequency decreases.",
+        "B": "wavelength decreases.",
+        "C": "frequency remains the same.",
+        "D": "wavelength remains the same."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "In dispersion through a glass prism, refractive index increases as wavelength decreases. Consequently, shorter wavelengths (such as blue and violet light) slow down more in glass and bend (deviate) through a larger angle than longer wavelengths (such as red light).",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Lower frequency corresponds to longer wavelength (red light), which bends the least."
+        },
+        {
+          "key": "C",
+          "reason": "Different colours have different frequencies and wavelengths."
+        },
+        {
+          "key": "D",
+          "reason": "Each spectral colour has a distinct wavelength, and deviation increases as wavelength decreases."
+        }
+      ],
+      "current_2025_slo": "13.3.1",
+      "current_2025_mapping": [
+        {
+          "code": "13.3.1",
+          "description": "explain the dispersion of light by a prism;",
+          "topic": "Geometrical Optics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "13",
+    "pageNumber": 5,
+    "stem": "Consider the given diagram.\n\nThe label **X** is a/ an",
+    "options": {
+      "A": "right angle.",
+      "B": "critical angle.",
+      "C": "angle of deviation.",
+      "D": "angle of reflection."
+    },
+    "correctOption": "B",
+    "explanation": "In the diagram, the light ray travels from a denser medium (Glass) to a rarer medium (Air) and the refracted ray grazes along the boundary at an angle of refraction of $90^\\circ$. The angle of incidence **X** in the denser medium for which the angle of refraction in the rarer medium is $90^\\circ$ is defined as the **critical angle** ($\\theta_c$).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The angle of refraction in air is 90°, whereas X is the acute angle of incidence in glass."
+      },
+      {
+        "key": "C",
+        "reason": "Angle of deviation is the angle between the original incident direction and the refracted ray."
+      },
+      {
+        "key": "D",
+        "reason": "The ray shown is refracted along the interface at 90°, not reflected back into the glass."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q13.png",
+    "slo": "12.4.5",
+    "current_slo": "13.4.3",
+    "unitNumber": 13,
+    "unitName": "Geometrical Optics",
+    "marks": 1,
+    "chapter": "Unit 13: Geometrical Optics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_5.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "12.4.5",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "13.4.3",
+        "description": "describe the relation between critical angle and refractive index;",
+        "topic": "Geometrical Optics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 5,
+      "question_region": {
+        "page": 5,
+        "box_2d": [
+          105,
+          70,
+          198,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 5,
+        "box_2d": [
+          198,
+          70,
+          290,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 5,
+        "box_2d": [
+          135,
+          175,
+          322,
+          568
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q13.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "13",
+        "printedSlo": "12.4.5",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          326,
+          300,
+          344,
+          700
+        ]
+      },
+      "verbatim_stem": "Consider the given diagram.\n\nThe label **X** is a/ an",
+      "verbatim_options": {
+        "A": "right angle.",
+        "B": "critical angle.",
+        "C": "angle of deviation.",
+        "D": "angle of reflection."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "In the diagram, the light ray travels from a denser medium (Glass) to a rarer medium (Air) and the refracted ray grazes along the boundary at an angle of refraction of $90^\\circ$. The angle of incidence **X** in the denser medium for which the angle of refraction in the rarer medium is $90^\\circ$ is defined as the **critical angle** ($\\theta_c$).",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "The angle of refraction in air is 90°, whereas X is the acute angle of incidence in glass."
+        },
+        {
+          "key": "C",
+          "reason": "Angle of deviation is the angle between the original incident direction and the refracted ray."
+        },
+        {
+          "key": "D",
+          "reason": "The ray shown is refracted along the interface at 90°, not reflected back into the glass."
+        }
+      ],
+      "current_2025_slo": "13.4.3",
+      "current_2025_mapping": [
+        {
+          "code": "13.4.3",
+          "description": "describe the relation between critical angle and refractive index;",
+          "topic": "Geometrical Optics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "14",
+    "pageNumber": 5,
+    "stem": "A force of attraction is directly proportional to the product of charges and inversely proportional to the square of separation between them is called",
+    "options": {
+      "A": "Coulomb’s law.",
+      "B": "Newton’s law.",
+      "C": "Gauss’s law.",
+      "D": "Ohm’s law."
+    },
+    "correctOption": "A",
+    "explanation": "Coulomb's law states that the magnitude of the electrostatic force of attraction or repulsion between two point charges is directly proportional to the product of the magnitudes of the charges and inversely proportional to the square of the distance between them ($F = k\\frac{q_1 q_2}{r^2}$).",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Newton's law of gravitation applies to masses rather than electric charges."
+      },
+      {
+        "key": "C",
+        "reason": "Gauss's law relates electric flux through a closed surface to the enclosed charge."
+      },
+      {
+        "key": "D",
+        "reason": "Ohm's law relates current, voltage, and resistance in a conductor (V = IR)."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "13.4.1",
+    "current_slo": "14.2.2",
+    "unitNumber": 14,
+    "unitName": "Electrostatics",
+    "marks": 1,
+    "chapter": "Unit 14: Electrostatics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_5.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "13.4.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "14.2.2",
+        "description": "explain Coulomb’s law;",
+        "topic": "Electrostatics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 5,
+      "question_region": {
+        "page": 5,
+        "box_2d": [
+          300,
+          70,
+          392,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 5,
+        "box_2d": [
+          392,
+          70,
+          485,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "14",
+        "printedSlo": "13.4.1",
+        "printedAnswerKey": "A",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          344,
+          300,
+          362,
+          700
+        ]
+      },
+      "verbatim_stem": "A force of attraction is directly proportional to the product of charges and inversely proportional to the square of separation between them is called",
+      "verbatim_options": {
+        "A": "Coulomb’s law.",
+        "B": "Newton’s law.",
+        "C": "Gauss’s law.",
+        "D": "Ohm’s law."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Coulomb's law states that the magnitude of the electrostatic force of attraction or repulsion between two point charges is directly proportional to the product of the magnitudes of the charges and inversely proportional to the square of the distance between them ($F = k\\frac{q_1 q_2}{r^2}$).",
+      "option_feedback": [
+        {
+          "key": "B",
+          "reason": "Newton's law of gravitation applies to masses rather than electric charges."
+        },
+        {
+          "key": "C",
+          "reason": "Gauss's law relates electric flux through a closed surface to the enclosed charge."
+        },
+        {
+          "key": "D",
+          "reason": "Ohm's law relates current, voltage, and resistance in a conductor (V = IR)."
+        }
+      ],
+      "current_2025_slo": "14.2.2",
+      "current_2025_mapping": [
+        {
+          "code": "14.2.2",
+          "description": "explain Coulomb’s law;",
+          "topic": "Electrostatics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "15",
+    "pageNumber": 5,
+    "stem": "The electric field intensity of a point charge is",
+    "options": {
+      "A": "directly proportional to the distance from the charge.",
+      "B": "inversely proportional to the distance from the charge.",
+      "C": "directly proportional to the square of the distance from the charge.",
+      "D": "inversely proportional to the square of the distance from the charge."
+    },
+    "correctOption": "D",
+    "explanation": "The electric field intensity $E$ at a distance $r$ from a point charge $q$ is given by $E = \\frac{F}{q_0} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{r^2}$, so $E \\propto \\frac{1}{r^2}$ (inversely proportional to the square of the distance from the charge).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Electric field intensity weakens with distance rather than increasing."
+      },
+      {
+        "key": "B",
+        "reason": "Electric potential V is inversely proportional to r, whereas electric field intensity E is inversely proportional to r²."
+      },
+      {
+        "key": "C",
+        "reason": "Electric field intensity decreases with the square of distance (1/r²), not increases."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "13.5.1",
+    "current_slo": "14.5.1",
+    "unitNumber": 14,
+    "unitName": "Electrostatics",
+    "marks": 1,
+    "chapter": "Unit 14: Electrostatics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_5.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "13.5.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "14.5.1",
+        "description": "define electric field and electric field intensity;",
+        "topic": "Electrostatics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 5,
+      "question_region": {
+        "page": 5,
+        "box_2d": [
+          495,
+          70,
+          588,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 5,
+        "box_2d": [
+          588,
+          70,
+          680,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "15",
+        "printedSlo": "13.5.1",
+        "printedAnswerKey": "D",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          362,
+          300,
+          379,
+          700
+        ]
+      },
+      "verbatim_stem": "The electric field intensity of a point charge is",
+      "verbatim_options": {
+        "A": "directly proportional to the distance from the charge.",
+        "B": "inversely proportional to the distance from the charge.",
+        "C": "directly proportional to the square of the distance from the charge.",
+        "D": "inversely proportional to the square of the distance from the charge."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "The electric field intensity $E$ at a distance $r$ from a point charge $q$ is given by $E = \\frac{F}{q_0} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{r^2}$, so $E \\propto \\frac{1}{r^2}$ (inversely proportional to the square of the distance from the charge).",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Electric field intensity weakens with distance rather than increasing."
+        },
+        {
+          "key": "B",
+          "reason": "Electric potential V is inversely proportional to r, whereas electric field intensity E is inversely proportional to r²."
+        },
+        {
+          "key": "C",
+          "reason": "Electric field intensity decreases with the square of distance (1/r²), not increases."
+        }
+      ],
+      "current_2025_slo": "14.5.1",
+      "current_2025_mapping": [
+        {
+          "code": "14.5.1",
+          "description": "define electric field and electric field intensity;",
+          "topic": "Electrostatics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "16",
+    "pageNumber": 5,
+    "stem": "Consider, two charges are placed near to each other.\n\nThe option which is CORRECT for the given charges is that",
+    "options": {
+      "A": "both are positively charged.",
+      "B": "both are negatively charged.",
+      "C": "P is positively and Q is negatively charged.",
+      "D": "P is negatively and Q is positively charged."
+    },
+    "correctOption": "C",
+    "explanation": "Electric field lines originate (point radially outward) from a positive charge and terminate (point radially inward) on a negative charge. In the diagram, arrows point away from charge P towards charge Q, showing that P is positively charged and Q is negatively charged.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "If both were positive, field lines would point away from both charges and repel in the middle."
+      },
+      {
+        "key": "B",
+        "reason": "If both were negative, field lines would point inward toward both charges."
+      },
+      {
+        "key": "D",
+        "reason": "The arrows point away from P and into Q, so P is positive and Q is negative."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q16.png",
+    "slo": "13.5.2",
+    "current_slo": "14.5.3",
+    "unitNumber": 14,
+    "unitName": "Electrostatics",
+    "marks": 1,
+    "chapter": "Unit 14: Electrostatics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_5.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "13.5.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "14.5.3",
+        "description": "draw electric field lines for:\na. an isolated positive charge,\nb. an isolated negative point charge,\nc. two-point charges having opposite charge,\nd. two-point charges having identical charge;",
+        "topic": "Electrostatics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 5,
+      "question_region": {
+        "page": 5,
+        "box_2d": [
+          690,
+          70,
+          782,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 5,
+        "box_2d": [
+          782,
+          70,
+          875,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 5,
+        "box_2d": [
+          722,
+          165,
+          822,
+          458
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q16.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "16",
+        "printedSlo": "13.5.2",
+        "printedAnswerKey": "C",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          379,
+          300,
+          397,
+          700
+        ]
+      },
+      "verbatim_stem": "Consider, two charges are placed near to each other.\n\nThe option which is CORRECT for the given charges is that",
+      "verbatim_options": {
+        "A": "both are positively charged.",
+        "B": "both are negatively charged.",
+        "C": "P is positively and Q is negatively charged.",
+        "D": "P is negatively and Q is positively charged."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Electric field lines originate (point radially outward) from a positive charge and terminate (point radially inward) on a negative charge. In the diagram, arrows point away from charge P towards charge Q, showing that P is positively charged and Q is negatively charged.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "If both were positive, field lines would point away from both charges and repel in the middle."
+        },
+        {
+          "key": "B",
+          "reason": "If both were negative, field lines would point inward toward both charges."
+        },
+        {
+          "key": "D",
+          "reason": "The arrows point away from P and into Q, so P is positive and Q is negative."
+        }
+      ],
+      "current_2025_slo": "14.5.3",
+      "current_2025_mapping": [
+        {
+          "code": "14.5.3",
+          "description": "draw electric field lines for:\na. an isolated positive charge,\nb. an isolated negative point charge,\nc. two-point charges having opposite charge,\nd. two-point charges having identical charge;",
+          "topic": "Electrostatics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "17",
+    "pageNumber": 6,
+    "stem": "If two capacitors $C_1 = 6\\ \\mu\\text{F}$ and $C_2 = 12\\ \\mu\\text{F}$ are connected in series, then the equivalent capacitance will be",
+    "options": {
+      "A": "$2\\ \\mu\\text{F}$.",
+      "B": "$4\\ \\mu\\text{F}$.",
+      "C": "$6\\ \\mu\\text{F}$.",
+      "D": "$18\\ \\mu\\text{F}$."
+    },
+    "correctOption": "B",
+    "explanation": "For two capacitors connected in series:\n$\\frac{1}{C_{\\text{eq}}} = \\frac{1}{C_1} + \\frac{1}{C_2} = \\frac{1}{6} + \\frac{1}{12} = \\frac{2 + 1}{12} = \\frac{3}{12} = \\frac{1}{4}\\ \\mu\\text{F}^{-1} \\implies C_{\\text{eq}} = 4\\ \\mu\\text{F}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Dividing 12 by 6 gives 2, which is not the series capacitance formula."
+      },
+      {
+        "key": "C",
+        "reason": "In series combination, the equivalent capacitance is always smaller than the smallest individual capacitor (6 µF)."
+      },
+      {
+        "key": "D",
+        "reason": "18 µF is the equivalent capacitance when 6 µF and 12 µF are connected in parallel (C₁ + C₂)."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "13.8.4",
+    "current_slo": "14.2.3",
+    "unitNumber": 14,
+    "unitName": "Electrostatics",
+    "marks": 1,
+    "chapter": "Unit 14: Electrostatics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "13.8.4",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "14.2.3",
+        "description": "solve word problems related to the electrostatic charges by using Coulomb’s law;",
+        "topic": "Electrostatics"
+      }
+    ],
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 6,
+      "question_region": {
+        "page": 6,
+        "box_2d": [
+          105,
+          70,
+          165,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 6,
+        "box_2d": [
+          165,
+          70,
+          225,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "17",
+        "printedSlo": "13.8.4",
+        "printedAnswerKey": "B",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          397,
+          300,
+          415,
+          700
+        ]
+      },
+      "verbatim_stem": "If two capacitors $C_1 = 6\\ \\mu\\text{F}$ and $C_2 = 12\\ \\mu\\text{F}$ are connected in series, then the equivalent capacitance will be",
+      "verbatim_options": {
+        "A": "$2\\ \\mu\\text{F}$.",
+        "B": "$4\\ \\mu\\text{F}$.",
+        "C": "$6\\ \\mu\\text{F}$.",
+        "D": "$18\\ \\mu\\text{F}$."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "For two capacitors connected in series:\n$\\frac{1}{C_{\\text{eq}}} = \\frac{1}{C_1} + \\frac{1}{C_2} = \\frac{1}{6} + \\frac{1}{12} = \\frac{2 + 1}{12} = \\frac{3}{12} = \\frac{1}{4}\\ \\mu\\text{F}^{-1} \\implies C_{\\text{eq}} = 4\\ \\mu\\text{F}$.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Dividing 12 by 6 gives 2, which is not the series capacitance formula."
+        },
+        {
+          "key": "C",
+          "reason": "In series combination, the equivalent capacitance is always smaller than the smallest individual capacitor (6 µF)."
+        },
+        {
+          "key": "D",
+          "reason": "18 µF is the equivalent capacitance when 6 µF and 12 µF are connected in parallel (C₁ + C₂)."
+        }
+      ],
+      "current_2025_slo": "14.2.3",
+      "current_2025_mapping": [
+        {
+          "code": "14.2.3",
+          "description": "solve word problems related to the electrostatic charges by using Coulomb’s law;",
+          "topic": "Electrostatics"
+        }
+      ]
+    },
+    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+  },
+  {
+    "questionNumber": "18",
+    "pageNumber": 6,
+    "stem": "The resistance of a conductor does NOT depend on its",
+    "options": {
+      "A": "mass.",
+      "B": "length.",
+      "C": "resistivity.",
+      "D": "cross-sectional area."
+    },
+    "correctOption": "A",
+    "explanation": "The electrical resistance of a uniform metallic conductor is given by $R = \\rho\\frac{L}{A}$, which depends on its length ($L$), cross-sectional area ($A$), resistivity/nature of the material ($\\rho$), and temperature, but not directly on its mass.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Resistance is directly proportional to the length of the conductor (R ∝ L)."
+      },
+      {
+        "key": "C",
+        "reason": "Resistance is directly proportional to the resistivity of the material (R ∝ ρ)."
+      },
+      {
+        "key": "D",
+        "reason": "Resistance is inversely proportional to the cross-sectional area of the conductor (R ∝ 1/A)."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "14.3.3",
+    "current_slo": "15.3.2",
+    "unitNumber": 15,
+    "unitName": "Electric Current",
+    "marks": 1,
+    "chapter": "Unit 15: Electric Current",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "14.3.3",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "15.3.2",
+        "description": "describe the following factors affecting the resistance of a metallic conductor: a. length of a conductor, b. cross-sectional area of a conductor, c. nature of a conductor, d. temperature of a conductor;",
+        "topic": "Electric Current"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 6,
+      "question_region": {
+        "page": 6,
+        "box_2d": [
+          235,
+          70,
+          295,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 6,
+        "box_2d": [
+          295,
+          70,
+          355,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "18",
+        "printedSlo": "14.3.3",
+        "printedAnswerKey": "A",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          415,
+          300,
+          432,
+          700
+        ]
+      },
+      "verbatim_stem": "The resistance of a conductor does NOT depend on its",
+      "verbatim_options": {
+        "A": "mass.",
+        "B": "length.",
+        "C": "resistivity.",
+        "D": "cross-sectional area."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "The electrical resistance of a uniform metallic conductor is given by $R = \\rho\\frac{L}{A}$, which depends on its length ($L$), cross-sectional area ($A$), resistivity/nature of the material ($\\rho$), and temperature, but not directly on its mass.",
+      "option_feedback": [
+        {
+          "key": "B",
+          "reason": "Resistance is directly proportional to the length of the conductor (R ∝ L)."
+        },
+        {
+          "key": "C",
+          "reason": "Resistance is directly proportional to the resistivity of the material (R ∝ ρ)."
+        },
+        {
+          "key": "D",
+          "reason": "Resistance is inversely proportional to the cross-sectional area of the conductor (R ∝ 1/A)."
+        }
+      ],
+      "current_2025_slo": "15.3.2",
+      "current_2025_mapping": [
+        {
+          "code": "15.3.2",
+          "description": "describe the following factors affecting the resistance of a metallic conductor: a. length of a conductor, b. cross-sectional area of a conductor, c. nature of a conductor, d. temperature of a conductor;",
+          "topic": "Electric Current"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "19",
+    "pageNumber": 6,
+    "stem": "In the given diagram, all of the following bulbs will NOT glow if we remove bulb",
+    "options": {
+      "A": "$\\text{B}_1$",
+      "B": "$\\text{B}_2$",
+      "C": "$\\text{B}_3$",
+      "D": "$\\text{B}_4$"
+    },
+    "correctOption": "D",
+    "explanation": "Bulb $\\text{B}_4$ is connected in the main series return path directly to the negative terminal of the battery. Removing $\\text{B}_4$ creates an open circuit in the main trunk line, stopping current flow to all other branches so none of the bulbs will glow.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Removing B₁ only opens the outer left branch (B₁ and B₂), while B₃ and B₄ continue to glow."
+      },
+      {
+        "key": "B",
+        "reason": "Removing B₂ only opens the outer left branch (B₁ and B₂), while B₃ and B₄ continue to glow."
+      },
+      {
+        "key": "C",
+        "reason": "Removing B₃ only opens the middle parallel branch, while current still flows through B₂, B₁, and B₄."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q19.png",
+    "slo": "14.4.4",
+    "current_slo": "16.2.3",
+    "unitNumber": 16,
+    "unitName": "D.C. Circuits",
+    "marks": 1,
+    "chapter": "Unit 16: D.C. Circuits",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "14.4.4",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "16.2.3",
+        "description": "calculate current, voltage, power and resistance in parts of a circuit or in the whole circuit that includes three resistors.",
+        "topic": "D.C. Circuits"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 6,
+      "question_region": {
+        "page": 6,
+        "box_2d": [
+          365,
+          70,
+          425,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 6,
+        "box_2d": [
+          425,
+          70,
+          485,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 6,
+        "box_2d": [
+          365,
+          115,
+          530,
+          495
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q19.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "19",
+        "printedSlo": "14.4.4",
+        "printedAnswerKey": "D",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          432,
+          300,
+          450,
+          700
+        ]
+      },
+      "verbatim_stem": "In the given diagram, all of the following bulbs will NOT glow if we remove bulb",
+      "verbatim_options": {
+        "A": "$\\text{B}_1$",
+        "B": "$\\text{B}_2$",
+        "C": "$\\text{B}_3$",
+        "D": "$\\text{B}_4$"
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Bulb $\\text{B}_4$ is connected in the main series return path directly to the negative terminal of the battery. Removing $\\text{B}_4$ creates an open circuit in the main trunk line, stopping current flow to all other branches so none of the bulbs will glow.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Removing B₁ only opens the outer left branch (B₁ and B₂), while B₃ and B₄ continue to glow."
+        },
+        {
+          "key": "B",
+          "reason": "Removing B₂ only opens the outer left branch (B₁ and B₂), while B₃ and B₄ continue to glow."
+        },
+        {
+          "key": "C",
+          "reason": "Removing B₃ only opens the middle parallel branch, while current still flows through B₂, B₁, and B₄."
+        }
+      ],
+      "current_2025_slo": "16.2.3",
+      "current_2025_mapping": [
+        {
+          "code": "16.2.3",
+          "description": "calculate current, voltage, power and resistance in parts of a circuit or in the whole circuit that includes three resistors.",
+          "topic": "D.C. Circuits"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "20",
+    "pageNumber": 6,
+    "stem": "If a $100\\text{ Watt}$ bulb glows for $200\\text{ hours}$, then the energy consumed by it will be",
+    "options": {
+      "A": "$2\\text{ kWh}$.",
+      "B": "$20\\text{ kWh}$.",
+      "C": "$100\\text{ kWh}$.",
+      "D": "$300\\text{ kWh}$."
+    },
+    "correctOption": "B",
+    "explanation": "Electrical energy in kilowatt-hours ($\\text{kWh}$) is calculated by:\n$E = \\frac{\\text{Power (in Watts)} \\times \\text{Time (in hours)}}{1000} = \\frac{100\\text{ W} \\times 200\\text{ h}}{1000} = \\frac{20,000}{1000} = 20\\text{ kWh}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "20,000 Wh divided by 1000 is 20 kWh, not 2 kWh."
+      },
+      {
+        "key": "C",
+        "reason": "100 W is the power rating in watts, not the energy consumed in kWh."
+      },
+      {
+        "key": "D",
+        "reason": "Adding 100 + 200 gives 300, whereas energy is Power × Time / 1000."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "14.6.4",
+    "current_slo": "15.6.4",
+    "unitNumber": 15,
+    "unitName": "Electric Current",
+    "marks": 1,
+    "chapter": "Unit 15: Electric Current",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "14.6.4",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "15.6.4",
+        "description": "calculate the total energy cost based on the cost price of kWh;",
+        "topic": "Electric Current"
+      }
+    ],
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 6,
+      "question_region": {
+        "page": 6,
+        "box_2d": [
+          495,
+          70,
+          555,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 6,
+        "box_2d": [
+          555,
+          70,
+          615,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "20",
+        "printedSlo": "14.6.4",
+        "printedAnswerKey": "B",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          450,
+          300,
+          467,
+          700
+        ]
+      },
+      "verbatim_stem": "If a $100\\text{ Watt}$ bulb glows for $200\\text{ hours}$, then the energy consumed by it will be",
+      "verbatim_options": {
+        "A": "$2\\text{ kWh}$.",
+        "B": "$20\\text{ kWh}$.",
+        "C": "$100\\text{ kWh}$.",
+        "D": "$300\\text{ kWh}$."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Electrical energy in kilowatt-hours ($\\text{kWh}$) is calculated by:\n$E = \\frac{\\text{Power (in Watts)} \\times \\text{Time (in hours)}}{1000} = \\frac{100\\text{ W} \\times 200\\text{ h}}{1000} = \\frac{20,000}{1000} = 20\\text{ kWh}$.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "20,000 Wh divided by 1000 is 20 kWh, not 2 kWh."
+        },
+        {
+          "key": "C",
+          "reason": "100 W is the power rating in watts, not the energy consumed in kWh."
+        },
+        {
+          "key": "D",
+          "reason": "Adding 100 + 200 gives 300, whereas energy is Power × Time / 1000."
+        }
+      ],
+      "current_2025_slo": "15.6.4",
+      "current_2025_mapping": [
+        {
+          "code": "15.6.4",
+          "description": "calculate the total energy cost based on the cost price of kWh;",
+          "topic": "Electric Current"
+        }
+      ]
+    },
+    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+  },
+  {
+    "questionNumber": "21",
+    "pageNumber": 6,
+    "stem": "The earth wire in electrical appliance is connected to a",
+    "options": {
+      "A": "fuse.",
+      "B": "metal case.",
+      "C": "switch button.",
+      "D": "plastic handle."
+    },
+    "correctOption": "B",
+    "explanation": "For electrical safety, the earth wire is connected directly to the outer **metal case** (chassis) of an appliance. If a faulty live wire touches the metal casing, the earth wire provides a low-resistance path for current to flow safely to the ground and blows the fuse, preventing electric shock.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The fuse is connected in series with the live wire, not the earth wire."
+      },
+      {
+        "key": "C",
+        "reason": "Switches are connected along the live wire to isolate the appliance safely."
+      },
+      {
+        "key": "D",
+        "reason": "Plastic is an electrical insulator and does not conduct fault currents."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "14.10.2",
+    "current_slo": "15.8.1",
+    "unitNumber": 15,
+    "unitName": "Electric Current",
+    "marks": 1,
+    "chapter": "Unit 15: Electric Current",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "14.10.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "15.8.1",
+        "description": "describe the functions of live, neutral and earth wires in the domestic main power supply;",
+        "topic": "Electric Current"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 6,
+      "question_region": {
+        "page": 6,
+        "box_2d": [
+          625,
+          70,
+          685,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 6,
+        "box_2d": [
+          685,
+          70,
+          745,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "21",
+        "printedSlo": "14.10.2",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          467,
+          300,
+          485,
+          700
+        ]
+      },
+      "verbatim_stem": "The earth wire in electrical appliance is connected to a",
+      "verbatim_options": {
+        "A": "fuse.",
+        "B": "metal case.",
+        "C": "switch button.",
+        "D": "plastic handle."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "For electrical safety, the earth wire is connected directly to the outer **metal case** (chassis) of an appliance. If a faulty live wire touches the metal casing, the earth wire provides a low-resistance path for current to flow safely to the ground and blows the fuse, preventing electric shock.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "The fuse is connected in series with the live wire, not the earth wire."
+        },
+        {
+          "key": "C",
+          "reason": "Switches are connected along the live wire to isolate the appliance safely."
+        },
+        {
+          "key": "D",
+          "reason": "Plastic is an electrical insulator and does not conduct fault currents."
+        }
+      ],
+      "current_2025_slo": "15.8.1",
+      "current_2025_mapping": [
+        {
+          "code": "15.8.1",
+          "description": "describe the functions of live, neutral and earth wires in the domestic main power supply;",
+          "topic": "Electric Current"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "22",
+    "pageNumber": 6,
+    "stem": "The factor which is independent of the electromotive force (e.m.f.) induced in the secondary coil of a transformer is the",
+    "options": {
+      "A": "resistance of the primary coil.",
+      "B": "voltage applied to the primary coil.",
+      "C": "number of turns of the primary coil.",
+      "D": "number of turns of the secondary coil."
+    },
+    "correctOption": "A",
+    "explanation": "By the ideal transformer equation $\\frac{V_s}{V_p} = \\frac{N_s}{N_p} \\implies V_s = V_p \\frac{N_s}{N_p}$, the induced e.m.f. in the secondary coil depends on the primary voltage ($V_p$), primary turns ($N_p$), and secondary turns ($N_s$), and is independent of the resistance of the primary coil.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Secondary e.m.f. is directly proportional to the alternating voltage applied to the primary coil."
+      },
+      {
+        "key": "C",
+        "reason": "Secondary e.m.f. is inversely proportional to the number of turns in the primary coil."
+      },
+      {
+        "key": "D",
+        "reason": "Secondary e.m.f. is directly proportional to the number of turns in the secondary coil."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "15.8.1",
+    "current_slo": "18.5.4",
+    "unitNumber": 18,
+    "unitName": "Electromagnetic Induction",
+    "marks": 1,
+    "chapter": "Unit 18: Electromagnetic Induction",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "15.8.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "18.5.4",
+        "description": "solve word problem using the transformer equation $\\frac{V_s}{V_p} = \\frac{I_p}{I_s} = \\frac{N_s}{N_p}$;",
+        "topic": "Electromagnetic Induction"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 6,
+      "question_region": {
+        "page": 6,
+        "box_2d": [
+          755,
+          70,
+          815,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 6,
+        "box_2d": [
+          815,
+          70,
+          875,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "22",
+        "printedSlo": "15.8.1",
+        "printedAnswerKey": "A",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          485,
+          300,
+          503,
+          700
+        ]
+      },
+      "verbatim_stem": "The factor which is independent of the electromotive force (e.m.f.) induced in the secondary coil of a transformer is the",
+      "verbatim_options": {
+        "A": "resistance of the primary coil.",
+        "B": "voltage applied to the primary coil.",
+        "C": "number of turns of the primary coil.",
+        "D": "number of turns of the secondary coil."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "By the ideal transformer equation $\\frac{V_s}{V_p} = \\frac{N_s}{N_p} \\implies V_s = V_p \\frac{N_s}{N_p}$, the induced e.m.f. in the secondary coil depends on the primary voltage ($V_p$), primary turns ($N_p$), and secondary turns ($N_s$), and is independent of the resistance of the primary coil.",
+      "option_feedback": [
+        {
+          "key": "B",
+          "reason": "Secondary e.m.f. is directly proportional to the alternating voltage applied to the primary coil."
+        },
+        {
+          "key": "C",
+          "reason": "Secondary e.m.f. is inversely proportional to the number of turns in the primary coil."
+        },
+        {
+          "key": "D",
+          "reason": "Secondary e.m.f. is directly proportional to the number of turns in the secondary coil."
+        }
+      ],
+      "current_2025_slo": "18.5.4",
+      "current_2025_mapping": [
+        {
+          "code": "18.5.4",
+          "description": "solve word problem using the transformer equation $\\frac{V_s}{V_p} = \\frac{I_p}{I_s} = \\frac{N_s}{N_p}$;",
+          "topic": "Electromagnetic Induction"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "23",
+    "pageNumber": 7,
+    "stem": "A current carrying coil is placed in a magnetic field as shown in the given figure.\n\nIn which direction will the coil move?",
+    "options": {
+      "A": "From X to Y",
+      "B": "Turns about the axis XY",
+      "C": "Along the magnetic field",
+      "D": "Across the magnetic field"
+    },
+    "correctOption": "B",
+    "explanation": "By Fleming's left-hand rule, the two vertical sides of the rectangular current-carrying coil carry currents in opposite directions perpendicular to the magnetic field, experiencing equal and opposite magnetic forces (one into the page, one out of the page). These two forces form a couple (torque) that rotates/turns the coil about the central axis XY.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The net translational force along XY is zero; the opposite forces on the two vertical arms produce rotation."
+      },
+      {
+        "key": "C",
+        "reason": "Magnetic force acts perpendicular to both the magnetic field and current, creating torque about XY."
+      },
+      {
+        "key": "D",
+        "reason": "Because the two vertical sides carry opposite currents, their forces are in opposite directions, causing rotation about XY rather(than linear translation)."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q23.png",
+    "slo": "15.2.1",
+    "current_slo": "17.5.1",
+    "unitNumber": 17,
+    "unitName": "Magnetism and Electromagnetism",
+    "marks": 1,
+    "chapter": "Unit 17: Magnetism and Electromagnetism",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_7.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "15.2.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "17.5.1",
+        "description": "describe that a current carrying coil in a magnetic field experiences a torque with the help of Fleming’s left-hand rule;",
+        "topic": "Magnetism and Electromagnetism"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 7,
+      "question_region": {
+        "page": 7,
+        "box_2d": [
+          105,
+          70,
+          198,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 7,
+        "box_2d": [
+          198,
+          70,
+          290,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 7,
+        "box_2d": [
+          168,
+          165,
+          318,
+          428
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q23.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "23",
+        "printedSlo": "15.2.1",
+        "printedAnswerKey": "B",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          503,
+          300,
+          520,
+          700
+        ]
+      },
+      "verbatim_stem": "A current carrying coil is placed in a magnetic field as shown in the given figure.\n\nIn which direction will the coil move?",
+      "verbatim_options": {
+        "A": "From X to Y",
+        "B": "Turns about the axis XY",
+        "C": "Along the magnetic field",
+        "D": "Across the magnetic field"
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "By Fleming's left-hand rule, the two vertical sides of the rectangular current-carrying coil carry currents in opposite directions perpendicular to the magnetic field, experiencing equal and opposite magnetic forces (one into the page, one out of the page). These two forces form a couple (torque) that rotates/turns the coil about the central axis XY.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "The net translational force along XY is zero; the opposite forces on the two vertical arms produce rotation."
+        },
+        {
+          "key": "C",
+          "reason": "Magnetic force acts perpendicular to both the magnetic field and current, creating torque about XY."
+        },
+        {
+          "key": "D",
+          "reason": "Because the two vertical sides carry opposite currents, their forces are in opposite directions, causing rotation about XY rather(than linear translation)."
+        }
+      ],
+      "current_2025_slo": "17.5.1",
+      "current_2025_mapping": [
+        {
+          "code": "17.5.1",
+          "description": "describe that a current carrying coil in a magnetic field experiences a torque with the help of Fleming’s left-hand rule;",
+          "topic": "Magnetism and Electromagnetism"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "24",
+    "pageNumber": 7,
+    "stem": "In the given diagram, a bar magnet is pushed into a coil of a wire. The coil is connected to a sensitive metre that can detect a small amount of current.\n\nWhat will happen if the bar magnet is passed through a coil?",
+    "options": {
+      "A": "Current is detected, but not until the magnet enters the coil.",
+      "B": "Current is detected if the magnet is placed in the coil and held still.",
+      "C": "No current is detected because the circuit does not have a battery in it.",
+      "D": "Current is detected provided the magnet is moving back and forth in the coil."
+    },
+    "correctOption": "D",
+    "explanation": "According to Faraday's law of electromagnetic induction, an e.m.f. (and induced current in a closed circuit) is produced only while there is a **changing magnetic flux** linking the coil—that is, provided there is relative motion between the magnet and the coil.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Magnetic flux begins changing as soon as the moving magnet approaches the coil."
+      },
+      {
+        "key": "B",
+        "reason": "When the magnet is held stationary inside the coil, the magnetic flux is constant and induced current is zero."
+      },
+      {
+        "key": "C",
+        "reason": "A changing magnetic field induces an e.m.f. without requiring a battery."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q24.png",
+    "slo": "15.5.1",
+    "current_slo": "18.1.1",
+    "unitNumber": 18,
+    "unitName": "Electromagnetic Induction",
+    "marks": 1,
+    "chapter": "Unit 18: Electromagnetic Induction",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_7.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "15.5.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "18.1.1",
+        "description": "describe that a changing magnetic field can induce electromotive force (e.m.f.) in a wire or coil;",
+        "topic": "Electromagnetic Induction"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 7,
+      "question_region": {
+        "page": 7,
+        "box_2d": [
+          300,
+          70,
+          392,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 7,
+        "box_2d": [
+          392,
+          70,
+          485,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 7,
+        "box_2d": [
+          452,
+          165,
+          575,
+          465
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q24.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "24",
+        "printedSlo": "15.5.1",
+        "printedAnswerKey": "D",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          520,
+          300,
+          538,
+          700
+        ]
+      },
+      "verbatim_stem": "In the given diagram, a bar magnet is pushed into a coil of a wire. The coil is connected to a sensitive metre that can detect a small amount of current.\n\nWhat will happen if the bar magnet is passed through a coil?",
+      "verbatim_options": {
+        "A": "Current is detected, but not until the magnet enters the coil.",
+        "B": "Current is detected if the magnet is placed in the coil and held still.",
+        "C": "No current is detected because the circuit does not have a battery in it.",
+        "D": "Current is detected provided the magnet is moving back and forth in the coil."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "According to Faraday's law of electromagnetic induction, an e.m.f. (and induced current in a closed circuit) is produced only while there is a **changing magnetic flux** linking the coil—that is, provided there is relative motion between the magnet and the coil.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Magnetic flux begins changing as soon as the moving magnet approaches the coil."
+        },
+        {
+          "key": "B",
+          "reason": "When the magnet is held stationary inside the coil, the magnetic flux is constant and induced current is zero."
+        },
+        {
+          "key": "C",
+          "reason": "A changing magnetic field induces an e.m.f. without requiring a battery."
+        }
+      ],
+      "current_2025_slo": "18.1.1",
+      "current_2025_mapping": [
+        {
+          "code": "18.1.1",
+          "description": "describe that a changing magnetic field can induce electromotive force (e.m.f.) in a wire or coil;",
+          "topic": "Electromagnetic Induction"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "25",
+    "pageNumber": 7,
+    "stem": "The working principle of an AC generator is an example of",
+    "options": {
+      "A": "inductor.",
+      "B": "impedance.",
+      "C": "mutual induction.",
+      "D": "electromagnetic induction."
+    },
+    "correctOption": "D",
+    "explanation": "An AC generator converts mechanical energy into electrical energy based on the principle of **electromagnetic induction**: rotating an armature coil inside a magnetic field continuously changes the magnetic flux passing through the coil, inducing an alternating e.m.f.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "An inductor is a passive circuit element, not the working principle of an AC generator."
+      },
+      {
+        "key": "B",
+        "reason": "Impedance is the effective opposition to AC in a circuit."
+      },
+      {
+        "key": "C",
+        "reason": "Mutual induction is the working principle of a transformer (two stationary coils), whereas an AC generator uses electromagnetic induction via a rotating coil."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "15.6.1",
+    "current_slo": "18.3.1",
+    "unitNumber": 18,
+    "unitName": "Electromagnetic Induction",
+    "marks": 1,
+    "chapter": "Unit 18: Electromagnetic Induction",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_7.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "15.6.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "18.3.1",
+        "description": "describe the simple construction and working of an A.C. generator;",
+        "topic": "Electromagnetic Induction"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 7,
+      "question_region": {
+        "page": 7,
+        "box_2d": [
+          495,
+          70,
+          588,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 7,
+        "box_2d": [
+          588,
+          70,
+          680,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "25",
+        "printedSlo": "15.6.1",
+        "printedAnswerKey": "D",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          538,
+          300,
+          556,
+          700
+        ]
+      },
+      "verbatim_stem": "The working principle of an AC generator is an example of",
+      "verbatim_options": {
+        "A": "inductor.",
+        "B": "impedance.",
+        "C": "mutual induction.",
+        "D": "electromagnetic induction."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "An AC generator converts mechanical energy into electrical energy based on the principle of **electromagnetic induction**: rotating an armature coil inside a magnetic field continuously changes the magnetic flux passing through the coil, inducing an alternating e.m.f.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "An inductor is a passive circuit element, not the working principle of an AC generator."
+        },
+        {
+          "key": "B",
+          "reason": "Impedance is the effective opposition to AC in a circuit."
+        },
+        {
+          "key": "C",
+          "reason": "Mutual induction is the working principle of a transformer (two stationary coils), whereas an AC generator uses electromagnetic induction via a rotating coil."
+        }
+      ],
+      "current_2025_slo": "18.3.1",
+      "current_2025_mapping": [
+        {
+          "code": "18.3.1",
+          "description": "describe the simple construction and working of an A.C. generator;",
+          "topic": "Electromagnetic Induction"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "26",
+    "pageNumber": 7,
+    "stem": "A transformer will work as a step-up transformer if the number of turns in the primary coil is",
+    "options": {
+      "A": "less than in the secondary coil and connected to the DC supply.",
+      "B": "less than in the secondary coil and connected to the AC supply.",
+      "C": "more than in the secondary coil and connected to the AC supply.",
+      "D": "more than in the secondary coil and connected to the DC supply."
+    },
+    "correctOption": "B",
+    "explanation": "A transformer operates on mutual induction, which requires a continuously changing magnetic flux produced by an **AC supply**. For a step-up transformer ($V_s > V_p$), the number of turns in the primary coil must be **less than** the number of turns in the secondary coil ($N_p < N_s$).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A transformer cannot operate on a steady DC supply because a constant current produces no changing magnetic flux."
+      },
+      {
+        "key": "C",
+        "reason": "Having more turns in the primary coil than the secondary coil (N_p > N_s) makes it a step-down transformer."
+      },
+      {
+        "key": "D",
+        "reason": "Both the turn ratio (N_p > N_s) and the DC supply are incorrect for a step-up transformer."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "15.8.1",
+    "current_slo": "18.5.2",
+    "unitNumber": 18,
+    "unitName": "Electromagnetic Induction",
+    "marks": 1,
+    "chapter": "Unit 18: Electromagnetic Induction",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_7.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "15.8.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "18.5.2",
+        "description": "state the two types of transformers and their uses;",
+        "topic": "Electromagnetic Induction"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 7,
+      "question_region": {
+        "page": 7,
+        "box_2d": [
+          690,
+          70,
+          782,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 7,
+        "box_2d": [
+          782,
+          70,
+          875,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "26",
+        "printedSlo": "15.8.1",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          556,
+          300,
+          573,
+          700
+        ]
+      },
+      "verbatim_stem": "A transformer will work as a step-up transformer if the number of turns in the primary coil is",
+      "verbatim_options": {
+        "A": "less than in the secondary coil and connected to the DC supply.",
+        "B": "less than in the secondary coil and connected to the AC supply.",
+        "C": "more than in the secondary coil and connected to the AC supply.",
+        "D": "more than in the secondary coil and connected to the DC supply."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "A transformer operates on mutual induction, which requires a continuously changing magnetic flux produced by an **AC supply**. For a step-up transformer ($V_s > V_p$), the number of turns in the primary coil must be **less than** the number of turns in the secondary coil ($N_p < N_s$).",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "A transformer cannot operate on a steady DC supply because a constant current produces no changing magnetic flux."
+        },
+        {
+          "key": "C",
+          "reason": "Having more turns in the primary coil than the secondary coil (N_p > N_s) makes it a step-down transformer."
+        },
+        {
+          "key": "D",
+          "reason": "Both the turn ratio (N_p > N_s) and the DC supply are incorrect for a step-up transformer."
+        }
+      ],
+      "current_2025_slo": "18.5.2",
+      "current_2025_mapping": [
+        {
+          "code": "18.5.2",
+          "description": "state the two types of transformers and their uses;",
+          "topic": "Electromagnetic Induction"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "27",
+    "pageNumber": 8,
+    "stem": "The material that is commonly used for thermionic emission in a vacuum tube is",
+    "options": {
+      "A": "silver.",
+      "B": "copper.",
+      "C": "tungsten.",
+      "D": "aluminium."
+    },
+    "correctOption": "C",
+    "explanation": "**Tungsten** is used as the filament material for thermionic emission in vacuum tubes and electron guns because it has an extremely high melting point ($3422\\ ^\\circ\\text{C}$) and a suitable work function, allowing it to be heated white-hot without melting.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Silver melts at a much lower temperature (~962 °C) before strong thermionic emission occurs."
+      },
+      {
+        "key": "B",
+        "reason": "Copper melts at ~1085 °C and would vaporize at filament temperatures."
+      },
+      {
+        "key": "D",
+        "reason": "Aluminium has a low melting point (~660 °C) unsuitable for heated filaments."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "16.1.1",
+    "current_slo": "19.2.1",
+    "unitNumber": 19,
+    "unitName": "Electromagnetic Waves and Electronics",
+    "marks": 1,
+    "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_8.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "16.1.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "19.2.1",
+        "description": "explain the process of thermionic emission emitted from a filament;",
+        "topic": "Electromagnetic Waves and Electronics"
+      }
+    ],
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 8,
+      "question_region": {
+        "page": 8,
+        "box_2d": [
+          105,
+          70,
+          198,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 8,
+        "box_2d": [
+          198,
+          70,
+          290,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "27",
+        "printedSlo": "16.1.1",
+        "printedAnswerKey": "C",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          573,
+          300,
+          591,
+          700
+        ]
+      },
+      "verbatim_stem": "The material that is commonly used for thermionic emission in a vacuum tube is",
+      "verbatim_options": {
+        "A": "silver.",
+        "B": "copper.",
+        "C": "tungsten.",
+        "D": "aluminium."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "**Tungsten** is used as the filament material for thermionic emission in vacuum tubes and electron guns because it has an extremely high melting point ($3422\\ ^\\circ\\text{C}$) and a suitable work function, allowing it to be heated white-hot without melting.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Silver melts at a much lower temperature (~962 °C) before strong thermionic emission occurs."
+        },
+        {
+          "key": "B",
+          "reason": "Copper melts at ~1085 °C and would vaporize at filament temperatures."
+        },
+        {
+          "key": "D",
+          "reason": "Aluminium has a low melting point (~660 °C) unsuitable for heated filaments."
+        }
+      ],
+      "current_2025_slo": "19.2.1",
+      "current_2025_mapping": [
+        {
+          "code": "19.2.1",
+          "description": "explain the process of thermionic emission emitted from a filament;",
+          "topic": "Electromagnetic Waves and Electronics"
+        }
+      ]
+    },
+    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+  },
+  {
+    "questionNumber": "28",
+    "pageNumber": 8,
+    "stem": "The given diagram shows a beam of electrons entering into a region between two charged plates.\n\nIn which of the following directions will the electrons beam deflect?",
+    "options": {
+      "A": "Upward",
+      "B": "Downward",
+      "C": "Into the page",
+      "D": "Out of the page"
+    },
+    "correctOption": "A",
+    "explanation": "The upper plate is positively charged ($+$) and the lower plate is negatively charged ($-$), with electric field lines pointing downward. Since electrons carry a negative charge ($-e$), they experience an electrostatic force opposite to the electric field lines—attracted **upward** toward the positively charged upper plate.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A positively charged beam would deflect downward along the field lines; negatively charged electrons deflect upward."
+      },
+      {
+        "key": "C",
+        "reason": "Deflection into or out of the page occurs in a transverse magnetic field, not a vertical electric field."
+      },
+      {
+        "key": "D",
+        "reason": "The electrostatic force lies in the plane of the page, directed upward toward the positive plate."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q28.png",
+    "slo": "16.4.1",
+    "current_slo": "19.3.1",
+    "unitNumber": 19,
+    "unitName": "Electromagnetic Waves and Electronics",
+    "marks": 1,
+    "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_8.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "16.4.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "19.3.1",
+        "description": "describe the effect of electric and magnetic field on an electron beam;",
+        "topic": "Electromagnetic Waves and Electronics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 8,
+      "question_region": {
+        "page": 8,
+        "box_2d": [
+          300,
+          70,
+          392,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 8,
+        "box_2d": [
+          392,
+          70,
+          485,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 8,
+        "box_2d": [
+          255,
+          115,
+          398,
+          638
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q28.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "28",
+        "printedSlo": "16.4.1",
+        "printedAnswerKey": "A",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          591,
+          300,
+          608,
+          700
+        ]
+      },
+      "verbatim_stem": "The given diagram shows a beam of electrons entering into a region between two charged plates.\n\nIn which of the following directions will the electrons beam deflect?",
+      "verbatim_options": {
+        "A": "Upward",
+        "B": "Downward",
+        "C": "Into the page",
+        "D": "Out of the page"
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "The upper plate is positively charged ($+$) and the lower plate is negatively charged ($-$), with electric field lines pointing downward. Since electrons carry a negative charge ($-e$), they experience an electrostatic force opposite to the electric field lines—attracted **upward** toward the positively charged upper plate.",
+      "option_feedback": [
+        {
+          "key": "B",
+          "reason": "A positively charged beam would deflect downward along the field lines; negatively charged electrons deflect upward."
+        },
+        {
+          "key": "C",
+          "reason": "Deflection into or out of the page occurs in a transverse magnetic field, not a vertical electric field."
+        },
+        {
+          "key": "D",
+          "reason": "The electrostatic force lies in the plane of the page, directed upward toward the positive plate."
+        }
+      ],
+      "current_2025_slo": "19.3.1",
+      "current_2025_mapping": [
+        {
+          "code": "19.3.1",
+          "description": "describe the effect of electric and magnetic field on an electron beam;",
+          "topic": "Electromagnetic Waves and Electronics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "29",
+    "pageNumber": 8,
+    "stem": "The name of the logic gate shown in the given diagram is",
+    "options": {
+      "A": "OR",
+      "B": "NOT",
+      "C": "NOR",
+      "D": "NAND"
+    },
+    "correctOption": "D",
+    "explanation": "The symbol shows a flat-backed, round-nosed **AND** gate followed by a small inversion circle (bubble) at the output $Z$, which represents a **NAND** (NOT-AND) gate ($Z = \\overline{X \\cdot Y}$).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "An OR gate has a curved input back and a pointed output nose with no inversion bubble."
+      },
+      {
+        "key": "B",
+        "reason": "A NOT gate is a single-input triangle with an inversion bubble."
+      },
+      {
+        "key": "C",
+        "reason": "A NOR gate has a curved input back (OR symbol) with an inversion bubble."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q29.png",
+    "slo": "16.8.1",
+    "current_slo": "19.5.4",
+    "unitNumber": 19,
+    "unitName": "Electromagnetic Waves and Electronics",
+    "marks": 1,
+    "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_8.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "16.8.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "19.5.4",
+        "description": "identify and make the symbols for the logic gates; (NOT, OR, AND, NOR and NAND)",
+        "topic": "Electromagnetic Waves and Electronics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 8,
+      "question_region": {
+        "page": 8,
+        "box_2d": [
+          495,
+          70,
+          588,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 8,
+        "box_2d": [
+          588,
+          70,
+          680,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 8,
+        "box_2d": [
+          542,
+          115,
+          595,
+          395
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q29.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "29",
+        "printedSlo": "16.8.1",
+        "printedAnswerKey": "D",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          608,
+          300,
+          626,
+          700
+        ]
+      },
+      "verbatim_stem": "The name of the logic gate shown in the given diagram is",
+      "verbatim_options": {
+        "A": "OR",
+        "B": "NOT",
+        "C": "NOR",
+        "D": "NAND"
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "The symbol shows a flat-backed, round-nosed **AND** gate followed by a small inversion circle (bubble) at the output $Z$, which represents a **NAND** (NOT-AND) gate ($Z = \\overline{X \\cdot Y}$).",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "An OR gate has a curved input back and a pointed output nose with no inversion bubble."
+        },
+        {
+          "key": "B",
+          "reason": "A NOT gate is a single-input triangle with an inversion bubble."
+        },
+        {
+          "key": "C",
+          "reason": "A NOR gate has a curved input back (OR symbol) with an inversion bubble."
+        }
+      ],
+      "current_2025_slo": "19.5.4",
+      "current_2025_mapping": [
+        {
+          "code": "19.5.4",
+          "description": "identify and make the symbols for the logic gates; (NOT, OR, AND, NOR and NAND)",
+          "topic": "Electromagnetic Waves and Electronics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "30",
+    "pageNumber": 8,
+    "stem": "When two inputs, P and Q, of a NAND Gate has an output ‘0’, then",
+    "options": {
+      "A": "P will only be 0.",
+      "B": "Q will only be 0.",
+      "C": "both P and Q will be 0.",
+      "D": "both P and Q will be 1."
+    },
+    "correctOption": "D",
+    "explanation": "A NAND gate outputs the inverted product $Y = \\overline{P \\cdot Q}$. Its output is $0$ if and only if the AND product $P \\cdot Q = 1$, which occurs only when **both P and Q are 1**.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "If P = 0, then P·Q = 0 and the NAND output is 1."
+      },
+      {
+        "key": "B",
+        "reason": "If Q = 0, then P·Q = 0 and the NAND output is 1."
+      },
+      {
+        "key": "C",
+        "reason": "If both P = 0 and Q = 0, the NAND output is 1."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "16.8.1",
+    "current_slo": "19.5.5",
+    "unitNumber": 19,
+    "unitName": "Electromagnetic Waves and Electronics",
+    "marks": 1,
+    "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_8.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "16.8.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "19.5.5",
+        "description": "state the action of logic gates in truth table form with two inputs;",
+        "topic": "Electromagnetic Waves and Electronics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 8,
+      "question_region": {
+        "page": 8,
+        "box_2d": [
+          690,
+          70,
+          782,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 8,
+        "box_2d": [
+          782,
+          70,
+          875,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "30",
+        "printedSlo": "16.8.1",
+        "printedAnswerKey": "D",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          626,
+          300,
+          644,
+          700
+        ]
+      },
+      "verbatim_stem": "When two inputs, P and Q, of a NAND Gate has an output ‘0’, then",
+      "verbatim_options": {
+        "A": "P will only be 0.",
+        "B": "Q will only be 0.",
+        "C": "both P and Q will be 0.",
+        "D": "both P and Q will be 1."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "A NAND gate outputs the inverted product $Y = \\overline{P \\cdot Q}$. Its output is $0$ if and only if the AND product $P \\cdot Q = 1$, which occurs only when **both P and Q are 1**.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "If P = 0, then P·Q = 0 and the NAND output is 1."
+        },
+        {
+          "key": "B",
+          "reason": "If Q = 0, then P·Q = 0 and the NAND output is 1."
+        },
+        {
+          "key": "C",
+          "reason": "If both P = 0 and Q = 0, the NAND output is 1."
+        }
+      ],
+      "current_2025_slo": "19.5.5",
+      "current_2025_mapping": [
+        {
+          "code": "19.5.5",
+          "description": "state the action of logic gates in truth table form with two inputs;",
+          "topic": "Electromagnetic Waves and Electronics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "31",
+    "pageNumber": 9,
+    "stem": "The given truth table is TRUE for\n\n| Input A | Input B | Output |\n| :---: | :---: | :---: |\n| 0 | 0 | 0 |\n| 0 | 1 | 0 |\n| 1 | 0 | 0 |\n| 1 | 1 | 1 |",
+    "options": {
+      "A": "OR gate.",
+      "B": "AND gate.",
+      "C": "NOT gate.",
+      "D": "XOR gate."
+    },
+    "correctOption": "B",
+    "explanation": "The output is $1$ (HIGH) only when both Input A and Input B are $1$, and $0$ (LOW) for all other input combinations ($Y = A \\cdot B$). This is the truth table of a two-input **AND gate**.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "An OR gate outputs 1 whenever at least one input is 1 (0,1,1,1)."
+      },
+      {
+        "key": "C",
+        "reason": "A NOT gate has only a single input and inverts it."
+      },
+      {
+        "key": "D",
+        "reason": "An XOR gate outputs 1 when the two inputs are different (0,1,1,0)."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q31.png",
+    "slo": "16.8.2",
+    "current_slo": "19.5.5",
+    "unitNumber": 19,
+    "unitName": "Electromagnetic Waves and Electronics",
+    "marks": 1,
+    "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_9.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "16.8.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "19.5.5",
+        "description": "state the action of logic gates in truth table form with two inputs;",
+        "topic": "Electromagnetic Waves and Electronics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 9,
+      "question_region": {
+        "page": 9,
+        "box_2d": [
+          105,
+          70,
+          198,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 9,
+        "box_2d": [
+          198,
+          70,
+          290,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 9,
+        "box_2d": [
+          135,
+          162,
+          268,
+          435
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q31.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "31",
+        "printedSlo": "16.8.2",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          644,
+          300,
+          661,
+          700
+        ]
+      },
+      "verbatim_stem": "The given truth table is TRUE for\n\n| Input A | Input B | Output |\n| :---: | :---: | :---: |\n| 0 | 0 | 0 |\n| 0 | 1 | 0 |\n| 1 | 0 | 0 |\n| 1 | 1 | 1 |",
+      "verbatim_options": {
+        "A": "OR gate.",
+        "B": "AND gate.",
+        "C": "NOT gate.",
+        "D": "XOR gate."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "The output is $1$ (HIGH) only when both Input A and Input B are $1$, and $0$ (LOW) for all other input combinations ($Y = A \\cdot B$). This is the truth table of a two-input **AND gate**.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "An OR gate outputs 1 whenever at least one input is 1 (0,1,1,1)."
+        },
+        {
+          "key": "C",
+          "reason": "A NOT gate has only a single input and inverts it."
+        },
+        {
+          "key": "D",
+          "reason": "An XOR gate outputs 1 when the two inputs are different (0,1,1,0)."
+        }
+      ],
+      "current_2025_slo": "19.5.5",
+      "current_2025_mapping": [
+        {
+          "code": "19.5.5",
+          "description": "state the action of logic gates in truth table form with two inputs;",
+          "topic": "Electromagnetic Waves and Electronics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "32",
+    "pageNumber": 9,
+    "stem": "In the given diagram, the missing component **X** of information technology is",
+    "options": {
+      "A": "data.",
+      "B": "storage.",
+      "C": "processing.",
+      "D": "controlling."
+    },
+    "correctOption": "A",
+    "explanation": "A complete computer-based Information Technology (IT) system consists of five core interrelated components: **Hardware**, **Software**, **Data** (X), **Procedures**, and **People**.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Storage is a function/hardware subsystem rather than one of the five main CBIS components."
+      },
+      {
+        "key": "C",
+        "reason": "Processing is an operation performed on data."
+      },
+      {
+        "key": "D",
+        "reason": "Controlling is a CPU control unit function rather than the fifth component X."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q32.png",
+    "slo": "17.1.1",
+    "current_slo": "19.4.2",
+    "unitNumber": 19,
+    "unitName": "Electromagnetic Waves and Electronics",
+    "marks": 1,
+    "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_9.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "17.1.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "19.4.2",
+        "description": "compare analogue and digital electronics;",
+        "topic": "Electromagnetic Waves and Electronics"
+      }
+    ],
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 9,
+      "question_region": {
+        "page": 9,
+        "box_2d": [
+          300,
+          70,
+          392,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 9,
+        "box_2d": [
+          392,
+          70,
+          485,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 9,
+        "box_2d": [
+          392,
+          165,
+          568,
+          465
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q32.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "32",
+        "printedSlo": "17.1.1",
+        "printedAnswerKey": "A",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          661,
+          300,
+          679,
+          700
+        ]
+      },
+      "verbatim_stem": "In the given diagram, the missing component **X** of information technology is",
+      "verbatim_options": {
+        "A": "data.",
+        "B": "storage.",
+        "C": "processing.",
+        "D": "controlling."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "A complete computer-based Information Technology (IT) system consists of five core interrelated components: **Hardware**, **Software**, **Data** (X), **Procedures**, and **People**.",
+      "option_feedback": [
+        {
+          "key": "B",
+          "reason": "Storage is a function/hardware subsystem rather than one of the five main CBIS components."
+        },
+        {
+          "key": "C",
+          "reason": "Processing is an operation performed on data."
+        },
+        {
+          "key": "D",
+          "reason": "Controlling is a CPU control unit function rather than the fifth component X."
+        }
+      ],
+      "current_2025_slo": "19.4.2",
+      "current_2025_mapping": [
+        {
+          "code": "19.4.2",
+          "description": "compare analogue and digital electronics;",
+          "topic": "Electromagnetic Waves and Electronics"
+        }
+      ]
+    },
+    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+  },
+  {
+    "questionNumber": "33",
+    "pageNumber": 9,
+    "stem": "In radio, television and mobile phone, information is sent through space in the form of",
+    "options": {
+      "A": "sound waves.",
+      "B": "analog signals.",
+      "C": "electrical signals.",
+      "D": "electromagnetic waves."
+    },
+    "correctOption": "D",
+    "explanation": "Radio, television, and mobile phones transmit wireless communication signals through air and space using **electromagnetic waves** (specifically radio waves and microwaves), which travel at the speed of light ($3 \\times 10^8\\text{ m/s}$).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Sound waves attenuate rapidly and cannot travel long distances or through space."
+      },
+      {
+        "key": "B",
+        "reason": "Modern mobile phones use digital modulation carried on electromagnetic waves."
+      },
+      {
+        "key": "C",
+        "reason": "Electrical signals travel inside metallic wires, whereas wireless transmission through space uses electromagnetic waves."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "17.2.1",
+    "current_slo": "19.1.1",
+    "unitNumber": 19,
+    "unitName": "Electromagnetic Waves and Electronics",
+    "marks": 1,
+    "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_9.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "17.2.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "19.1.1",
+        "description": "describe the production, transmission and reception of electromagnetic (EM) waves;",
+        "topic": "Electromagnetic Waves and Electronics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 9,
+      "question_region": {
+        "page": 9,
+        "box_2d": [
+          495,
+          70,
+          588,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 9,
+        "box_2d": [
+          588,
+          70,
+          680,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "33",
+        "printedSlo": "17.2.1",
+        "printedAnswerKey": "D",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          679,
+          300,
+          697,
+          700
+        ]
+      },
+      "verbatim_stem": "In radio, television and mobile phone, information is sent through space in the form of",
+      "verbatim_options": {
+        "A": "sound waves.",
+        "B": "analog signals.",
+        "C": "electrical signals.",
+        "D": "electromagnetic waves."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Radio, television, and mobile phones transmit wireless communication signals through air and space using **electromagnetic waves** (specifically radio waves and microwaves), which travel at the speed of light ($3 \\times 10^8\\text{ m/s}$).",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Sound waves attenuate rapidly and cannot travel long distances or through space."
+        },
+        {
+          "key": "B",
+          "reason": "Modern mobile phones use digital modulation carried on electromagnetic waves."
+        },
+        {
+          "key": "C",
+          "reason": "Electrical signals travel inside metallic wires, whereas wireless transmission through space uses electromagnetic waves."
+        }
+      ],
+      "current_2025_slo": "19.1.1",
+      "current_2025_mapping": [
+        {
+          "code": "19.1.1",
+          "description": "describe the production, transmission and reception of electromagnetic (EM) waves;",
+          "topic": "Electromagnetic Waves and Electronics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "34",
+    "pageNumber": 9,
+    "stem": "The MOST powerful communicating tool in today’s world is",
+    "options": {
+      "A": "radio.",
+      "B": "internet.",
+      "C": "television.",
+      "D": "telephone."
+    },
+    "correctOption": "B",
+    "explanation": "The **Internet** is a global network of interconnected computer networks that enables instant two-way multimedia communication, email, web access, and data sharing across the world, making it the most powerful modern communication tool.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Radio is a one-way audio broadcast medium."
+      },
+      {
+        "key": "C",
+        "reason": "Television is primarily a one-way audio-visual broadcast medium."
+      },
+      {
+        "key": "D",
+        "reason": "Traditional telephone is limited compared to the global multimedia reach of the internet."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "17.3.2",
+    "current_slo": "19.1.1",
+    "unitNumber": 19,
+    "unitName": "Electromagnetic Waves and Electronics",
+    "marks": 1,
+    "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_9.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "17.3.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "19.1.1",
+        "description": "describe the production, transmission and reception of electromagnetic (EM) waves;",
+        "topic": "Electromagnetic Waves and Electronics"
+      }
+    ],
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 9,
+      "question_region": {
+        "page": 9,
+        "box_2d": [
+          690,
+          70,
+          782,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 9,
+        "box_2d": [
+          782,
+          70,
+          875,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "34",
+        "printedSlo": "17.3.2",
+        "printedAnswerKey": "B",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          697,
+          300,
+          714,
+          700
+        ]
+      },
+      "verbatim_stem": "The MOST powerful communicating tool in today’s world is",
+      "verbatim_options": {
+        "A": "radio.",
+        "B": "internet.",
+        "C": "television.",
+        "D": "telephone."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "The **Internet** is a global network of interconnected computer networks that enables instant two-way multimedia communication, email, web access, and data sharing across the world, making it the most powerful modern communication tool.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Radio is a one-way audio broadcast medium."
+        },
+        {
+          "key": "C",
+          "reason": "Television is primarily a one-way audio-visual broadcast medium."
+        },
+        {
+          "key": "D",
+          "reason": "Traditional telephone is limited compared to the global multimedia reach of the internet."
+        }
+      ],
+      "current_2025_slo": "19.1.1",
+      "current_2025_mapping": [
+        {
+          "code": "19.1.1",
+          "description": "describe the production, transmission and reception of electromagnetic (EM) waves;",
+          "topic": "Electromagnetic Waves and Electronics"
+        }
+      ]
+    },
+    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+  },
+  {
+    "questionNumber": "35",
+    "pageNumber": 10,
+    "stem": "Compact disc (CD) is an information storage device. The stored data in it can be read with the help of",
+    "options": {
+      "A": "X-rays.",
+      "B": "laser beam.",
+      "C": "microscope.",
+      "D": "digital camera."
+    },
+    "correctOption": "B",
+    "explanation": "A Compact Disc (CD) is an optical storage medium in which digital data is stored as microscopic pits and lands on a reflective surface and is read by shining a focused **laser beam** onto the track and detecting changes in reflected light.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "X-rays pass through thin plastic and are not used in optical disc drives."
+      },
+      {
+        "key": "C",
+        "reason": "A microscope is an optical viewing instrument, not the reading mechanism in a CD player."
+      },
+      {
+        "key": "D",
+        "reason": "A digital camera captures images using a CCD/CMOS sensor rather than reading CD pits."
+      }
+    ],
+    "cognitiveLevel": "K",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "17.4.1",
+    "current_slo": "19.4.2",
+    "unitNumber": 19,
+    "unitName": "Electromagnetic Waves and Electronics",
+    "marks": 1,
+    "chapter": "Unit 19: Electromagnetic Waves and Electronics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_10.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "17.4.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "19.4.2",
+        "description": "compare analogue and digital electronics;",
+        "topic": "Electromagnetic Waves and Electronics"
+      }
+    ],
+    "review_status": "pending_review",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 10,
+      "question_region": {
+        "page": 10,
+        "box_2d": [
+          105,
+          70,
+          178,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 10,
+        "box_2d": [
+          178,
+          70,
+          251,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "35",
+        "printedSlo": "17.4.1",
+        "printedAnswerKey": "B",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          714,
+          300,
+          732,
+          700
+        ]
+      },
+      "verbatim_stem": "Compact disc (CD) is an information storage device. The stored data in it can be read with the help of",
+      "verbatim_options": {
+        "A": "X-rays.",
+        "B": "laser beam.",
+        "C": "microscope.",
+        "D": "digital camera."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "A Compact Disc (CD) is an optical storage medium in which digital data is stored as microscopic pits and lands on a reflective surface and is read by shining a focused **laser beam** onto the track and detecting changes in reflected light.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "X-rays pass through thin plastic and are not used in optical disc drives."
+        },
+        {
+          "key": "C",
+          "reason": "A microscope is an optical viewing instrument, not the reading mechanism in a CD player."
+        },
+        {
+          "key": "D",
+          "reason": "A digital camera captures images using a CCD/CMOS sensor rather than reading CD pits."
+        }
+      ],
+      "current_2025_slo": "19.4.2",
+      "current_2025_mapping": [
+        {
+          "code": "19.4.2",
+          "description": "compare analogue and digital electronics;",
+          "topic": "Electromagnetic Waves and Electronics"
+        }
+      ]
+    },
+    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+  },
+  {
+    "questionNumber": "36",
+    "pageNumber": 10,
+    "stem": "The number of electrons in the isotope of uranium $_{92}\\text{U}^{238}$ is",
+    "options": {
+      "A": "54",
+      "B": "92",
+      "C": "146",
+      "D": "238"
+    },
+    "correctOption": "B",
+    "explanation": "In a neutral atom represented as $_Z\\text{X}^A$, the atomic number $Z = 92$ gives both the number of protons in the nucleus and the number of orbital **electrons** ($92$). (Note: $A = 238$ is the mass/nucleon number and $A - Z = 238 - 92 = 146$ is the number of neutrons).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "54 is unrelated; the atomic number Z = 92 equals the number of electrons in a neutral atom."
+      },
+      {
+        "key": "C",
+        "reason": "146 is the number of neutrons (N = A - Z = 238 - 92), not electrons."
+      },
+      {
+        "key": "D",
+        "reason": "238 is the nucleon (mass) number A (protons + neutrons)."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "isNumerical": true,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "18.1.2",
+    "current_slo": "20.2.3",
+    "unitNumber": 20,
+    "unitName": "Atomic and Nuclear Physics",
+    "marks": 1,
+    "chapter": "Unit 20: Atomic and Nuclear Physics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_10.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "18.1.2",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "20.2.3",
+        "description": "show various nuclides by using the symbol of proton number (Z), nucleon number (A) and the nuclide notation (X);",
+        "topic": "Atomic and Nuclear Physics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 10,
+      "question_region": {
+        "page": 10,
+        "box_2d": [
+          261,
+          70,
+          334,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 10,
+        "box_2d": [
+          334,
+          70,
+          407,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "36",
+        "printedSlo": "18.1.2",
+        "printedAnswerKey": "B",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          732,
+          300,
+          750,
+          700
+        ]
+      },
+      "verbatim_stem": "The number of electrons in the isotope of uranium $_{92}\\text{U}^{238}$ is",
+      "verbatim_options": {
+        "A": "54",
+        "B": "92",
+        "C": "146",
+        "D": "238"
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "In a neutral atom represented as $_Z\\text{X}^A$, the atomic number $Z = 92$ gives both the number of protons in the nucleus and the number of orbital **electrons** ($92$). (Note: $A = 238$ is the mass/nucleon number and $A - Z = 238 - 92 = 146$ is the number of neutrons).",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "54 is unrelated; the atomic number Z = 92 equals the number of electrons in a neutral atom."
+        },
+        {
+          "key": "C",
+          "reason": "146 is the number of neutrons (N = A - Z = 238 - 92), not electrons."
+        },
+        {
+          "key": "D",
+          "reason": "238 is the nucleon (mass) number A (protons + neutrons)."
+        }
+      ],
+      "current_2025_slo": "20.2.3",
+      "current_2025_mapping": [
+        {
+          "code": "20.2.3",
+          "description": "show various nuclides by using the symbol of proton number (Z), nucleon number (A) and the nuclide notation (X);",
+          "topic": "Atomic and Nuclear Physics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "37",
+    "pageNumber": 10,
+    "stem": "In the given diagram, sheets of different materials are placed in front of nuclear radiation P, Q, R and S.\n\nThe gamma ray is represented by",
+    "options": {
+      "A": "P",
+      "B": "Q",
+      "C": "R",
+      "D": "S"
+    },
+    "correctOption": "C",
+    "explanation": "Gamma ($\\gamma$) rays are high-energy electromagnetic radiations with the highest penetrating power: they easily pass through paper and thin steel/aluminium sheets and are only stopped/attenuated by a thick block of **lead**, as shown by ray **R**.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Ray P is stopped by a sheet of paper, which represents alpha (α) particles."
+      },
+      {
+        "key": "B",
+        "reason": "Ray Q passes through paper but is stopped by steel, which represents beta (β) particles."
+      },
+      {
+        "key": "D",
+        "reason": "Ray S is stopped by paper and does not penetrate steel."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": true,
+    "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q37.png",
+    "slo": "18.2.3",
+    "current_slo": "20.4.4",
+    "unitNumber": 20,
+    "unitName": "Atomic and Nuclear Physics",
+    "marks": 1,
+    "chapter": "Unit 20: Atomic and Nuclear Physics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_10.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "18.2.3",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "20.4.4",
+        "description": "describe the properties of the three types of radiation (α, β and γ);",
+        "topic": "Atomic and Nuclear Physics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 10,
+      "question_region": {
+        "page": 10,
+        "box_2d": [
+          417,
+          70,
+          490,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 10,
+        "box_2d": [
+          490,
+          70,
+          563,
+          920
+        ]
+      },
+      "diagram_region": {
+        "page": 10,
+        "box_2d": [
+          380,
+          122,
+          552,
+          398
+        ],
+        "crop_url": "/extracted_diagrams/PHY-X-2025-P1_Q37.png"
+      },
+      "key_and_slo_region": {
+        "printedQid": "37",
+        "printedSlo": "18.2.3",
+        "printedAnswerKey": "C",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          750,
+          300,
+          767,
+          700
+        ]
+      },
+      "verbatim_stem": "In the given diagram, sheets of different materials are placed in front of nuclear radiation P, Q, R and S.\n\nThe gamma ray is represented by",
+      "verbatim_options": {
+        "A": "P",
+        "B": "Q",
+        "C": "R",
+        "D": "S"
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Gamma ($\\gamma$) rays are high-energy electromagnetic radiations with the highest penetrating power: they easily pass through paper and thin steel/aluminium sheets and are only stopped/attenuated by a thick block of **lead**, as shown by ray **R**.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Ray P is stopped by a sheet of paper, which represents alpha (α) particles."
+        },
+        {
+          "key": "B",
+          "reason": "Ray Q passes through paper but is stopped by steel, which represents beta (β) particles."
+        },
+        {
+          "key": "D",
+          "reason": "Ray S is stopped by paper and does not penetrate steel."
+        }
+      ],
+      "current_2025_slo": "20.4.4",
+      "current_2025_mapping": [
+        {
+          "code": "20.4.4",
+          "description": "describe the properties of the three types of radiation (α, β and γ);",
+          "topic": "Atomic and Nuclear Physics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "38",
+    "pageNumber": 10,
+    "stem": "Which one of the following DOES NOT occur in natural radioactivity?",
+    "options": {
+      "A": "Changing in mass.",
+      "B": "Releasing of radiation.",
+      "C": "Rearrangement of electrons.",
+      "D": "Formation of new elements."
+    },
+    "correctOption": "C",
+    "explanation": "Natural radioactivity is a spontaneous **nuclear** phenomenon originating inside unstable atomic nuclei (involving emission of $\\alpha, \\beta, \\gamma$ radiation, nuclear transmutation into new elements, and mass-energy change), whereas **rearrangement of orbital electrons** is a chemical process, not a nuclear radioactive process.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Alpha decay changes the mass number by 4, and nuclear mass defect converts to energy."
+      },
+      {
+        "key": "B",
+        "reason": "Unstable nuclei emit alpha, beta, or gamma radiation during natural radioactivity."
+      },
+      {
+        "key": "D",
+        "reason": "Alpha and beta decay change the proton number Z, transmuting the parent nucleus into a new element."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "18.2.4",
+    "current_slo": "20.4.3",
+    "unitNumber": 20,
+    "unitName": "Atomic and Nuclear Physics",
+    "marks": 1,
+    "chapter": "Unit 20: Atomic and Nuclear Physics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_10.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "18.2.4",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "20.4.3",
+        "description": "describe the spontaneous and random emission of radiation from a nucleus;",
+        "topic": "Atomic and Nuclear Physics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 10,
+      "question_region": {
+        "page": 10,
+        "box_2d": [
+          573,
+          70,
+          646,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 10,
+        "box_2d": [
+          646,
+          70,
+          719,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "38",
+        "printedSlo": "18.2.4",
+        "printedAnswerKey": "C",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          767,
+          300,
+          785,
+          700
+        ]
+      },
+      "verbatim_stem": "Which one of the following DOES NOT occur in natural radioactivity?",
+      "verbatim_options": {
+        "A": "Changing in mass.",
+        "B": "Releasing of radiation.",
+        "C": "Rearrangement of electrons.",
+        "D": "Formation of new elements."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "Natural radioactivity is a spontaneous **nuclear** phenomenon originating inside unstable atomic nuclei (involving emission of $\\alpha, \\beta, \\gamma$ radiation, nuclear transmutation into new elements, and mass-energy change), whereas **rearrangement of orbital electrons** is a chemical process, not a nuclear radioactive process.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Alpha decay changes the mass number by 4, and nuclear mass defect converts to energy."
+        },
+        {
+          "key": "B",
+          "reason": "Unstable nuclei emit alpha, beta, or gamma radiation during natural radioactivity."
+        },
+        {
+          "key": "D",
+          "reason": "Alpha and beta decay change the proton number Z, transmuting the parent nucleus into a new element."
+        }
+      ],
+      "current_2025_slo": "20.4.3",
+      "current_2025_mapping": [
+        {
+          "code": "20.4.3",
+          "description": "describe the spontaneous and random emission of radiation from a nucleus;",
+          "topic": "Atomic and Nuclear Physics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "39",
+    "pageNumber": 10,
+    "stem": "Consider the following nuclear reaction.\n\n$$_Z\\text{X}^A \\longrightarrow {}_{Z+1}\\text{X}^A + {}_{-1}\\text{Y}^0$$\n\nSymbol **Y** represents",
+    "options": {
+      "A": "alpha particle.",
+      "B": "beta particle.",
+      "C": "gamma ray.",
+      "D": "X-ray."
+    },
+    "correctOption": "B",
+    "explanation": "In the nuclear reaction, the mass number $A$ remains unchanged while the atomic number $Z$ increases by $1$ ($Z \\to Z+1$), accompanied by the emission of ${}_{-1}\\text{Y}^0$ (charge $-1$, mass number $0$), which is a fast-moving nuclear electron or **beta ($\\beta$) particle** (${}_{-1}e^0$).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "An alpha particle is a helium nucleus (₂He⁴), which reduces A by 4 and Z by 2."
+      },
+      {
+        "key": "C",
+        "reason": "A gamma ray (₀γ⁰) has zero charge and zero mass number."
+      },
+      {
+        "key": "D",
+        "reason": "X-rays are electromagnetic photons from electronic transitions, not nuclear beta particles."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "18.3.1",
+    "current_slo": "20.4.6",
+    "unitNumber": 20,
+    "unitName": "Atomic and Nuclear Physics",
+    "marks": 1,
+    "chapter": "Unit 20: Atomic and Nuclear Physics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_10.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "18.3.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "20.4.6",
+        "description": "show changes in the composition of a nucleus by symbolic equations when alpha or beta particles are emitted from it;",
+        "topic": "Atomic and Nuclear Physics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 10,
+      "question_region": {
+        "page": 10,
+        "box_2d": [
+          729,
+          70,
+          802,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 10,
+        "box_2d": [
+          802,
+          70,
+          875,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "39",
+        "printedSlo": "18.3.1",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          785,
+          300,
+          802,
+          700
+        ]
+      },
+      "verbatim_stem": "Consider the following nuclear reaction.\n\n$$_Z\\text{X}^A \\longrightarrow {}_{Z+1}\\text{X}^A + {}_{-1}\\text{Y}^0$$\n\nSymbol **Y** represents",
+      "verbatim_options": {
+        "A": "alpha particle.",
+        "B": "beta particle.",
+        "C": "gamma ray.",
+        "D": "X-ray."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "In the nuclear reaction, the mass number $A$ remains unchanged while the atomic number $Z$ increases by $1$ ($Z \\to Z+1$), accompanied by the emission of ${}_{-1}\\text{Y}^0$ (charge $-1$, mass number $0$), which is a fast-moving nuclear electron or **beta ($\\beta$) particle** (${}_{-1}e^0$).",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "An alpha particle is a helium nucleus (₂He⁴), which reduces A by 4 and Z by 2."
+        },
+        {
+          "key": "C",
+          "reason": "A gamma ray (₀γ⁰) has zero charge and zero mass number."
+        },
+        {
+          "key": "D",
+          "reason": "X-rays are electromagnetic photons from electronic transitions, not nuclear beta particles."
+        }
+      ],
+      "current_2025_slo": "20.4.6",
+      "current_2025_mapping": [
+        {
+          "code": "20.4.6",
+          "description": "show changes in the composition of a nucleus by symbolic equations when alpha or beta particles are emitted from it;",
+          "topic": "Atomic and Nuclear Physics"
+        }
+      ]
+    }
+  },
+  {
+    "questionNumber": "40",
+    "pageNumber": 11,
+    "stem": "The atomic bomb is an example of",
+    "options": {
+      "A": "controlled nuclear fusion.",
+      "B": "controlled nuclear fission.",
+      "C": "uncontrolled nuclear fusion.",
+      "D": "uncontrolled nuclear fission."
+    },
+    "correctOption": "D",
+    "explanation": "An **atomic bomb** releases a massive amount of nuclear energy in a fraction of a second through a rapid, self-sustaining, **uncontrolled nuclear fission** chain reaction of fissile heavy nuclei such as $_{92}\\text{U}^{235}$ or $_{94}\\text{Pu}^{239}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Controlled nuclear fusion is experimental plasma confinement, not an atomic fission bomb."
+      },
+      {
+        "key": "B",
+        "reason": "Controlled nuclear fission takes place inside a nuclear power reactor using control rods."
+      },
+      {
+        "key": "C",
+        "reason": "Uncontrolled nuclear fusion occurs in a thermonuclear (hydrogen) bomb and in stars."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "isNumerical": false,
+    "isDiagram": false,
+    "diagramUrl": null,
+    "slo": "18.7.1",
+    "current_slo": "20.7.1",
+    "unitNumber": 20,
+    "unitName": "Atomic and Nuclear Physics",
+    "marks": 1,
+    "chapter": "Unit 20: Atomic and Nuclear Physics",
+    "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_11.png",
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Physics"
+    },
+    "original_slo": "18.7.1",
+    "out_of_syllabus": false,
+    "current_mapping": [
+      {
+        "code": "20.7.1",
+        "description": "describe nuclear fission and fusion reactions;",
+        "topic": "Atomic and Nuclear Physics"
+      }
+    ],
+    "review_status": "verified",
+    "source_transcription": {
+      "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
+      "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
+      "page": 11,
+      "question_region": {
+        "page": 11,
+        "box_2d": [
+          105,
+          70,
+          490,
+          920
+        ]
+      },
+      "options_region": {
+        "page": 11,
+        "box_2d": [
+          490,
+          70,
+          875,
+          920
+        ]
+      },
+      "diagram_region": null,
+      "key_and_slo_region": {
+        "printedQid": "40",
+        "printedSlo": "18.7.1",
+        "printedAnswerKey": "D",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          802,
+          300,
+          820,
+          700
+        ]
+      },
+      "verbatim_stem": "The atomic bomb is an example of",
+      "verbatim_options": {
+        "A": "controlled nuclear fusion.",
+        "B": "controlled nuclear fission.",
+        "C": "uncontrolled nuclear fusion.",
+        "D": "uncontrolled nuclear fission."
+      }
+    },
+    "digital_content": {
+      "generated_separately": true,
+      "explanation": "An **atomic bomb** releases a massive amount of nuclear energy in a fraction of a second through a rapid, self-sustaining, **uncontrolled nuclear fission** chain reaction of fissile heavy nuclei such as $_{92}\\text{U}^{235}$ or $_{94}\\text{Pu}^{239}$.",
+      "option_feedback": [
+        {
+          "key": "A",
+          "reason": "Controlled nuclear fusion is experimental plasma confinement, not an atomic fission bomb."
+        },
+        {
+          "key": "B",
+          "reason": "Controlled nuclear fission takes place inside a nuclear power reactor using control rods."
+        },
+        {
+          "key": "C",
+          "reason": "Uncontrolled nuclear fusion occurs in a thermonuclear (hydrogen) bomb and in stars."
+        }
+      ],
+      "current_2025_slo": "20.7.1",
+      "current_2025_mapping": [
+        {
+          "code": "20.7.1",
+          "description": "describe nuclear fission and fusion reactions;",
+          "topic": "Atomic and Nuclear Physics"
+        }
+      ]
+    }
+  }
+]
