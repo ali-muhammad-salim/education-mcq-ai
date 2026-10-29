@@ -513,9 +513,9 @@ function GoogleFormsQuizBuilderContent() {
   };
 
   return (
-    <div className="gf-page">
+    <div className="rise-ui gf-page">
 
-      {/* 1. GOOGLE FORMS TOP BAR */}
+      {/* Setter's toolbar */}
       <header className="gf-navbar">
         {/* Left: Brand Icon & Title Input */}
         <div className="gf-nav-left">
@@ -545,23 +545,23 @@ function GoogleFormsQuizBuilderContent() {
                 fontWeight: 700,
                 padding: '2px 8px',
                 borderRadius: '12px',
-                background: status === 'PUBLISHED' ? '#e6f4ea' : '#fef7e0',
-                color: status === 'PUBLISHED' ? '#137333' : '#b06000'
+                background: status === 'PUBLISHED' ? 'var(--r-right-wash)' : 'var(--r-flag-wash)',
+                color: status === 'PUBLISHED' ? 'var(--r-right)' : 'var(--r-flag)'
               }}>
                 {status}
               </span>
             </div>
 
             <div className="gf-save-badge">
-              {saveStatus === 'saved' && <><Check size={14} color="#137333" /> All changes saved in cloud</>}
+              {saveStatus === 'saved' && <><Check size={14} color="var(--r-right)" /> All changes saved in cloud</>}
               {saveStatus === 'saving' && <>Saving changes...</>}
               {saveStatus === 'unsaved' && <>Unsaved changes</>}
-              {saveStatus === 'error' && <><AlertCircle size={14} color="#d93025" /> Save failed</>}
+              {saveStatus === 'error' && <><AlertCircle size={14} color="var(--r-wrong)" /> Save failed</>}
             </div>
           </div>
         </div>
 
-        {/* Center Tabs (Google Forms Signature Navigation) */}
+        {/* Tabs */}
         <div className="gf-nav-tabs">
           <button
             type="button"
@@ -589,7 +589,7 @@ function GoogleFormsQuizBuilderContent() {
             style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
             title="Import questions from official AKU-EB Question Bank"
           >
-            <Database size={16} color="#673ab7" />
+            <Database size={16} color="var(--r-emerald)" />
             <span>Question Bank</span>
           </button>
 
@@ -641,8 +641,7 @@ function GoogleFormsQuizBuilderContent() {
                 setIsShareModalOpen(true);
               }
             }}
-            className="gf-publish-btn"
-            style={{ background: '#2563eb' }}
+            className="gf-draft-btn"
             title="Share unique quiz code and direct join link"
           >
             <Share2 size={16} />
@@ -652,13 +651,13 @@ function GoogleFormsQuizBuilderContent() {
 
       </header>
 
-      {/* 2. GOOGLE FORMS MAIN WORKSPACE CANVAS */}
+      {/* Desk */}
       <div className="gf-main-container">
 
         {/* Floating Toast Notification */}
         {toastMessage && (
           <div className="gf-toast">
-            <CheckCircle2 size={16} color="#81c995" />
+            <CheckCircle2 size={16} color="var(--r-right)" />
             <span>{toastMessage}</span>
           </div>
         )}
@@ -666,8 +665,8 @@ function GoogleFormsQuizBuilderContent() {
         {/* TAB 1: QUESTIONS EDITOR */}
         {activeTab === 'questions' && (
           <>
-            {/* GOOGLE FORMS TITLE CARD (With signature thick purple stripe) */}
-            <div className="gf-title-card">
+            {/* Paper header, banded like a printed board paper */}
+            <div className="gf-title-sheet">
               <input
                 type="text"
                 value={title}
@@ -704,7 +703,7 @@ function GoogleFormsQuizBuilderContent() {
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: 'var(--builder-accent, #673ab7)',
+                    color: 'var(--r-emerald)',
                     fontSize: '13px',
                     fontWeight: 600,
                     cursor: 'pointer',
@@ -719,6 +718,39 @@ function GoogleFormsQuizBuilderContent() {
               </div>
             </div>
 
+            {questions.length === 0 && (
+              <div className="gf-blank-sheet">
+                <span className="gf-blank-rule">No items set</span>
+                <h2 className="gf-blank-title">An empty paper, waiting to be set</h2>
+                <p className="gf-blank-note">
+                  Write the first question yourself, or pull items in from the board question bank,
+                  a generated draft, or an existing JSON export.
+                </p>
+                <div className="gf-blank-ways">
+                  <button type="button" className="gf-way gf-way-lead" onClick={() => addQuestion('MCQ_SINGLE')}>
+                    <Plus size={18} />
+                    <span className="gf-way-name">Write a question</span>
+                    <span className="gf-way-note">Start with a single-answer MCQ</span>
+                  </button>
+                  <button type="button" className="gf-way" onClick={() => setIsBankModalOpen(true)}>
+                    <Database size={18} />
+                    <span className="gf-way-name">Question bank</span>
+                    <span className="gf-way-note">Pick vetted AKU-EB items</span>
+                  </button>
+                  <button type="button" className="gf-way" onClick={() => setIsAiModalOpen(true)}>
+                    <Sparkles size={18} />
+                    <span className="gf-way-name">Generate a draft</span>
+                    <span className="gf-way-note">Review every item before publishing</span>
+                  </button>
+                  <button type="button" className="gf-way" onClick={() => setIsImportModalOpen(true)}>
+                    <Upload size={18} />
+                    <span className="gf-way-name">Import JSON</span>
+                    <span className="gf-way-note">Bring in a prepared paper</span>
+                  </button>
+                </div>
+              </div>
+            )}
+
             {/* QUESTIONS LIST */}
             {questions.map((q, qIdx) => {
               const isActive = activeQuestionIndex === qIdx;
@@ -729,7 +761,7 @@ function GoogleFormsQuizBuilderContent() {
                 <div
                   key={q.id}
                   onClick={() => setActiveQuestionIndex(qIdx)}
-                  className={`gf-question-card ${isActive ? 'active' : ''}`}
+                  className={`gf-item-sheet ${isActive ? 'active' : ''}`}
                 >
                   {/* Top Drag Handle (6 dots) */}
                   <div className="gf-drag-handle" title="Drag to reorder">
@@ -738,12 +770,12 @@ function GoogleFormsQuizBuilderContent() {
 
                   {/* Question Stem & Question Type Dropdown Row */}
                   <label style={{display:'grid',gap:6,padding:'0 20px 12px',fontSize:13}}>Topic / chapter (optional)
-                    <input aria-label={`Topic for question ${qIdx + 1}`} maxLength={160} placeholder="E.g. Kinematics — used in learning progress" value={q.topicName||''} onChange={e=>updateQuestion(qIdx,{topicName:e.target.value})} style={{padding:'10px 12px',border:'1px solid var(--border-color, #dadce0)',borderRadius:8,background:'var(--card-bg, white)',color:'var(--text-color, #263e35)'}}/>
+                    <input aria-label={`Topic for question ${qIdx + 1}`} maxLength={160} placeholder="E.g. Kinematics — used in learning progress" value={q.topicName||''} onChange={e=>updateQuestion(qIdx,{topicName:e.target.value})} style={{padding:'10px 12px',border:'1px solid var(--r-rule)',borderRadius:8,background:'var(--r-paper)',color:'var(--r-ink)'}}/>
                   </label>
                   <div className="gf-q-header-row">
                     <div className="gf-stem-wrapper">
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <span style={{ fontSize: '12px', fontWeight: 700, color: '#5f6368', textTransform: 'uppercase' }}>
+                        <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--r-ink-muted)', textTransform: 'uppercase' }}>
                           Question {qIdx + 1}
                         </span>
 
@@ -753,9 +785,9 @@ function GoogleFormsQuizBuilderContent() {
                             type="button"
                             onClick={() => openRichEditor(qIdx, 'stemText')}
                             style={{
-                              background: '#ede7f6',
-                              border: '1px solid #d1c4e9',
-                              color: '#512da8',
+                              background: 'var(--r-emerald-wash)',
+                              border: '1px solid var(--r-emerald)',
+                              color: 'var(--r-emerald)',
                               borderRadius: '4px',
                               padding: '2px 8px',
                               fontSize: '12px',
@@ -806,7 +838,7 @@ function GoogleFormsQuizBuilderContent() {
                       {/* Live LaTeX preview */}
                       {q.stemText && (q.stemText.includes('$') || q.stemText.includes('\\')) && (
                         <div className="gf-katex-preview-box">
-                          <span style={{ fontSize: '10px', fontWeight: 700, color: 'var(--builder-accent, #673ab7)', textTransform: 'uppercase', display: 'block', marginBottom: '2px' }}>
+                          <span style={{ fontSize: '10px', fontWeight: 700, color: 'var(--r-emerald)', textTransform: 'uppercase', display: 'block', marginBottom: '2px' }}>
                             Live Math Preview:
                           </span>
                           <MathText text={q.stemText} />
@@ -818,8 +850,8 @@ function GoogleFormsQuizBuilderContent() {
                       {q.drawingSvg && (
                         <div style={{
                           padding: '12px',
-                          background: '#f8f9fa',
-                          border: '1px solid #dadce0',
+                          background: 'var(--r-surface)',
+                          border: '1px solid var(--r-rule)',
                           borderRadius: '8px',
                           display: 'flex',
                           alignItems: 'center',
@@ -828,19 +860,19 @@ function GoogleFormsQuizBuilderContent() {
                         }}>
                           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                             <div
-                              style={{ width: '80px', height: '60px', background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', overflow: 'hidden', padding: '4px' }}
+                              style={{ width: '80px', height: '60px', background: 'var(--r-paper)', border: '1px solid var(--r-rule)', borderRadius: '4px', overflow: 'hidden', padding: '4px' }}
                               children={<img alt="Question diagram" src={'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(q.drawingSvg)} style={{ maxWidth: '100%' }} />}
                             />
                             <div>
-                              <strong style={{ fontSize: '13px', color: '#202124', display: 'block' }}>Visual Diagram Attached</strong>
-                              <span style={{ fontSize: '11px', color: '#5f6368' }}>Rendered to student during examination</span>
+                              <strong style={{ fontSize: '13px', color: 'var(--r-ink)', display: 'block' }}>Visual Diagram Attached</strong>
+                              <span style={{ fontSize: '11px', color: 'var(--r-ink-muted)' }}>Rendered to student during examination</span>
                             </div>
                           </div>
                           {isActive && (
                             <button
                               type="button"
                               onClick={() => updateQuestion(qIdx, { drawingSvg: undefined })}
-                              style={{ color: '#d93025', background: 'none', border: 'none', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}
+                              style={{ color: 'var(--r-wrong)', background: 'none', border: 'none', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}
                             >
                               Remove
                             </button>
@@ -849,7 +881,7 @@ function GoogleFormsQuizBuilderContent() {
                       )}
                     </div>
 
-                    {/* Question Type Dropdown (Google Forms Style) */}
+                    {/* Question type */}
                     <div className="gf-type-dropdown-container">
                       <select
                         value={q.questionType}
@@ -862,7 +894,7 @@ function GoogleFormsQuizBuilderContent() {
                           </option>
                         ))}
                       </select>
-                      <ChevronDown size={16} color="#5f6368" style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
+                      <ChevronDown size={16} color="var(--r-ink-muted)" style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
                     </div>
                   </div>
 
@@ -936,10 +968,10 @@ function GoogleFormsQuizBuilderContent() {
                           );
                         })}
 
-                        {/* Add Option Link (Google Forms signature design) */}
+                        {/* Add option */}
                         {isActive && (
                           <div className="gf-add-option-line">
-                            <div style={{ width: '20px', height: '20px', borderRadius: '50%', border: '2px dashed #bdc1c6', flexShrink: 0 }} />
+                            <div style={{ width: '20px', height: '20px', borderRadius: '50%', border: '2px dashed var(--r-rule-strong)', flexShrink: 0 }} />
                             <button
                               type="button"
                               onClick={() => addOption(qIdx)}
@@ -965,9 +997,9 @@ function GoogleFormsQuizBuilderContent() {
                               style={{
                                 padding: '10px 20px',
                                 borderRadius: '8px',
-                                border: isCorrect ? '2px solid #137333' : '1px solid #dadce0',
-                                background: isCorrect ? '#e6f4ea' : '#ffffff',
-                                color: isCorrect ? '#137333' : '#3c4043',
+                                border: isCorrect ? '2px solid var(--r-right)' : '1px solid var(--r-rule)',
+                                background: isCorrect ? 'var(--r-right-wash)' : 'var(--r-paper)',
+                                color: isCorrect ? 'var(--r-right)' : 'var(--r-ink)',
                                 fontWeight: 700,
                                 fontSize: '14px',
                                 cursor: 'pointer',
@@ -988,37 +1020,37 @@ function GoogleFormsQuizBuilderContent() {
 
                     {/* NUMERICAL */}
                     {q.questionType === 'NUMERICAL' && (
-                      <div style={{ padding: '14px', background: '#f8f9fa', borderRadius: '8px', border: '1px solid #dadce0', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                      <div style={{ padding: '14px', background: 'var(--r-surface)', borderRadius: '8px', border: '1px solid var(--r-rule)', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                         <div>
-                          <label style={{ fontSize: '12px', color: '#5f6368', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Target Numeric Value</label>
+                          <label style={{ fontSize: '12px', color: 'var(--r-ink-muted)', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Target Numeric Value</label>
                           <input
                             type="number"
                             step="any"
                             value={q.correctAnswerText || ''}
                             onChange={(e) => updateQuestion(qIdx, { correctAnswerText: e.target.value })}
                             placeholder="E.g. 9.8 or 80"
-                            style={{ background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '8px 12px', fontSize: '14px', outline: 'none' }}
+                            style={{ background: 'var(--r-paper)', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '8px 12px', fontSize: '14px', outline: 'none' }}
                           />
                         </div>
                         <div>
-                          <label style={{ fontSize: '12px', color: '#5f6368', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Tolerance Margin (±)</label>
+                          <label style={{ fontSize: '12px', color: 'var(--r-ink-muted)', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Tolerance Margin (±)</label>
                           <input
                             type="number"
                             step="any"
                             value={q.numericalTolerance ?? 0.05}
                             onChange={(e) => updateQuestion(qIdx, { numericalTolerance: parseFloat(e.target.value) || 0 })}
                             placeholder="E.g. 0.05"
-                            style={{ background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '8px 12px', fontSize: '14px', outline: 'none' }}
+                            style={{ background: 'var(--r-paper)', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '8px 12px', fontSize: '14px', outline: 'none' }}
                           />
                         </div>
                         <div>
-                          <label style={{ fontSize: '12px', color: '#5f6368', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Unit (Optional)</label>
+                          <label style={{ fontSize: '12px', color: 'var(--r-ink-muted)', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Unit (Optional)</label>
                           <input
                             type="text"
                             value={q.unit || ''}
                             onChange={(e) => updateQuestion(qIdx, { unit: e.target.value })}
                             placeholder="E.g. m/s² or N"
-                            style={{ background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '8px 12px', fontSize: '14px', outline: 'none' }}
+                            style={{ background: 'var(--r-paper)', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '8px 12px', fontSize: '14px', outline: 'none' }}
                           />
                         </div>
                       </div>
@@ -1032,9 +1064,9 @@ function GoogleFormsQuizBuilderContent() {
                           value={q.correctAnswerText || ''}
                           onChange={(e) => updateQuestion(qIdx, { correctAnswerText: e.target.value })}
                           placeholder="Short-answer text..."
-                          style={{ width: '100%', border: 'none', borderBottom: '1px solid #70757a', padding: '8px 2px', fontSize: '14px', outline: 'none' }}
+                          style={{ width: '100%', border: 'none', borderBottom: '1px solid var(--r-rule-strong)', padding: '8px 2px', fontSize: '14px', outline: 'none' }}
                         />
-                        <span style={{ fontSize: '12px', color: '#5f6368', marginTop: '4px', display: 'block' }}>
+                        <span style={{ fontSize: '12px', color: 'var(--r-ink-muted)', marginTop: '4px', display: 'block' }}>
                           Evaluated with case-insensitive normalized grading
                         </span>
                       </div>
@@ -1042,8 +1074,8 @@ function GoogleFormsQuizBuilderContent() {
 
                     {/* MATCHING PAIRS */}
                     {q.questionType === 'MATCHING' && (
-                      <div style={{ padding: '14px', background: '#f8f9fa', borderRadius: '8px', border: '1px solid #dadce0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <span style={{ fontSize: '12px', fontWeight: 700, color: '#5f6368' }}>Match Column A with Column B:</span>
+                      <div style={{ padding: '14px', background: 'var(--r-surface)', borderRadius: '8px', border: '1px solid var(--r-rule)', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--r-ink-muted)' }}>Match Column A with Column B:</span>
                         {(q.matchingPairs || []).map((pair, pIdx) => (
                           <div key={pair.id || pIdx} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                             <input
@@ -1055,9 +1087,9 @@ function GoogleFormsQuizBuilderContent() {
                                 updateQuestion(qIdx, { matchingPairs: next });
                               }}
                               placeholder={`Column A #${pIdx + 1}`}
-                              style={{ flex: 1, background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '6px 10px', fontSize: '13px' }}
+                              style={{ flex: 1, background: 'var(--r-paper)', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '6px 10px', fontSize: '13px' }}
                             />
-                            <span style={{ color: '#5f6368', fontWeight: 700 }}>⇄</span>
+                            <span style={{ color: 'var(--r-ink-muted)', fontWeight: 700 }}>⇄</span>
                             <input
                               type="text"
                               value={pair.right}
@@ -1067,7 +1099,7 @@ function GoogleFormsQuizBuilderContent() {
                                 updateQuestion(qIdx, { matchingPairs: next });
                               }}
                               placeholder={`Column B Match #${pIdx + 1}`}
-                              style={{ flex: 1, background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '6px 10px', fontSize: '13px' }}
+                              style={{ flex: 1, background: 'var(--r-paper)', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '6px 10px', fontSize: '13px' }}
                             />
                             <button
                               type="button"
@@ -1097,13 +1129,13 @@ function GoogleFormsQuizBuilderContent() {
                           value={q.rubric || ''}
                           onChange={(e) => updateQuestion(qIdx, { rubric: e.target.value })}
                           placeholder="Long-answer text / Marking scheme criteria for AI & manual evaluation..."
-                          style={{ width: '100%', background: '#f8f9fa', border: '1px solid #dadce0', borderRadius: '6px', padding: '10px 12px', fontSize: '13px', outline: 'none' }}
+                          style={{ width: '100%', background: 'var(--r-surface)', border: '1px solid var(--r-rule)', borderRadius: '6px', padding: '10px 12px', fontSize: '13px', outline: 'none' }}
                         />
                       </div>
                     )}
                   </div>
 
-                  {/* GOOGLE FORMS ANSWER KEY & FEEDBACK DRAWER */}
+                  {/* Marking scheme */}
                   {isActive && (
                     <div className="gf-answer-key-footer">
                       <button
@@ -1121,7 +1153,7 @@ function GoogleFormsQuizBuilderContent() {
                       {isAnswerKeyOpen && (
                         <div className="gf-answer-key-box">
                           <div className="gf-ak-header">
-                            <span style={{ fontSize: '13px', fontWeight: 700, color: '#137333' }}>
+                            <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--r-right)' }}>
                               Points & Pedagogical Explanation
                             </span>
                             <div className="gf-points-input-group">
@@ -1147,7 +1179,7 @@ function GoogleFormsQuizBuilderContent() {
                           />
 
                           {q.explanation && (q.explanation.includes('$') || q.explanation.includes('\\')) && (
-                            <div style={{ padding: '8px', background: '#fff', borderRadius: '4px', border: '1px solid #ceead6', fontSize: '12px' }}>
+                            <div style={{ padding: '8px', background: 'var(--r-paper)', borderRadius: '4px', border: '1px solid var(--r-right)', fontSize: '12px' }}>
                               <MathText text={q.explanation} />
                             </div>
                           )}
@@ -1156,14 +1188,14 @@ function GoogleFormsQuizBuilderContent() {
                     </div>
                   )}
 
-                  {/* CARD BOTTOM ACTION BAR (Google Forms Footer) */}
+                  {/* Item footer */}
                   {isActive && (
-                    <div className="gf-card-bottom-bar">
+                    <div className="gf-item-footer">
                       {/* Difficulty Tag */}
                       <select
                         value={q.difficulty}
                         onChange={(e) => updateQuestion(qIdx, { difficulty: e.target.value as any })}
-                        style={{ background: '#f8f9fa', border: '1px solid #dadce0', borderRadius: '4px', padding: '4px 8px', fontSize: '12px', color: '#5f6368', outline: 'none' }}
+                        style={{ background: 'var(--r-surface)', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '4px 8px', fontSize: '12px', color: 'var(--r-ink-muted)', outline: 'none' }}
                       >
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
@@ -1233,19 +1265,19 @@ function GoogleFormsQuizBuilderContent() {
           </>
         )}
 
-        {/* TAB 2: SETTINGS (Google Forms Settings View) */}
+        {/* Tab 2: settings */}
         {activeTab === 'settings' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {/* Setting Card 1: Exam Timers & Board */}
-            <div className="gf-question-card" style={{ cursor: 'default' }}>
+            <div className="gf-item-sheet" style={{ cursor: 'default' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                <Clock size={20} color="#673ab7" />
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#202124' }}>Exam Schedule & Academic Board</h3>
+                <Clock size={20} color="var(--r-emerald)" />
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--r-ink)' }}>Exam Schedule & Academic Board</h3>
               </div>
 
               <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                 <div>
-                  <label style={{ fontSize: '13px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Board</label>
+                  <label style={{ fontSize: '13px', fontWeight: 600, color: 'var(--r-ink-muted)', display: 'block', marginBottom: '4px' }}>Board</label>
                   <select
                     value={boardId}
                     onChange={(e) => { setBoardId(e.target.value); markUnsaved(); }}
@@ -1258,7 +1290,7 @@ function GoogleFormsQuizBuilderContent() {
                 </div>
 
                 <div>
-                  <label style={{ fontSize: '13px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Grade / Class</label>
+                  <label style={{ fontSize: '13px', fontWeight: 600, color: 'var(--r-ink-muted)', display: 'block', marginBottom: '4px' }}>Grade / Class</label>
                   <select
                     value={classLevel}
                     onChange={(e) => { setClassLevel(Number(e.target.value)); markUnsaved(); }}
@@ -1274,7 +1306,7 @@ function GoogleFormsQuizBuilderContent() {
 
               <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '12px' }}>
                 <div>
-                  <label style={{ fontSize: '13px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Subject</label>
+                  <label style={{ fontSize: '13px', fontWeight: 600, color: 'var(--r-ink-muted)', display: 'block', marginBottom: '4px' }}>Subject</label>
                   <select
                     value={subject}
                     onChange={(e) => { setSubject(e.target.value); markUnsaved(); }}
@@ -1289,35 +1321,92 @@ function GoogleFormsQuizBuilderContent() {
                 </div>
 
                 <div>
-                  <label style={{ fontSize: '13px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Time Allowed (Minutes)</label>
+                  <label style={{ fontSize: '13px', fontWeight: 600, color: 'var(--r-ink-muted)', display: 'block', marginBottom: '4px' }}>Time Allowed (Minutes)</label>
                   <input
                     type="number"
                     min={1}
                     max={600}
                     value={durationMin}
                     onChange={(e) => { setDurationMin(Number(e.target.value)); markUnsaved(); }}
-                    style={{ width: '100%', background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '10px 14px', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', background: 'var(--r-paper)', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '10px 14px', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
               </div>
             </div>
 
-            <div className="gf-question-card"><h3>Availability & attempts</h3><label>Opens <input type="datetime-local" value={scheduleStart ? new Date(new Date(scheduleStart).getTime() - new Date(scheduleStart).getTimezoneOffset()*60000).toISOString().slice(0,16) : ''} onChange={e => { setScheduleStart(e.target.value ? new Date(e.target.value).toISOString() : ''); markUnsaved(); }} /></label><label> Closes <input type="datetime-local" value={scheduleEnd ? new Date(new Date(scheduleEnd).getTime() - new Date(scheduleEnd).getTimezoneOffset()*60000).toISOString().slice(0,16) : ''} onChange={e => { setScheduleEnd(e.target.value ? new Date(e.target.value).toISOString() : ''); markUnsaved(); }} /></label><p><label><input type="checkbox" checked={settings.allowRetries} onChange={e => { setSettings(p => ({ ...p, allowRetries: e.target.checked })); markUnsaved(); }} /> Allow retries</label> <label>Maximum attempts <input type="number" min={1} max={100} value={settings.maxAttempts} onChange={e => { setSettings(p => ({ ...p, maxAttempts: Number(e.target.value) })); markUnsaved(); }} /></label></p><p>Required items should be answered before submission; unanswered items receive zero. Written responses require teacher marking.</p></div>
-            {/* Setting Card 2: Security & Anti-Cheating Sentinel */}
-            <div className="gf-question-card" style={{ cursor: 'default' }}>
+            <div className="gf-item-sheet" style={{ cursor: 'default' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                <ShieldAlert size={20} color="#673ab7" />
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#202124' }}>Anti-Cheating & Integrity Sentinel</h3>
+                <CheckSquare size={20} color="var(--r-emerald)" />
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--r-ink)' }}>Availability & attempts</h3>
               </div>
 
-              <div style={{ padding: '12px', background: '#e8f0fe', borderRadius: '6px', fontSize: '13px', color: '#1a73e8', lineHeight: 1.5 }}>
+              <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <label className="gf-field">
+                  <span className="gf-field-label">Opens</span>
+                  <input
+                    type="datetime-local"
+                    className="gf-field-input"
+                    value={scheduleStart ? new Date(new Date(scheduleStart).getTime() - new Date(scheduleStart).getTimezoneOffset() * 60000).toISOString().slice(0, 16) : ''}
+                    onChange={e => { setScheduleStart(e.target.value ? new Date(e.target.value).toISOString() : ''); markUnsaved(); }}
+                  />
+                </label>
+                <label className="gf-field">
+                  <span className="gf-field-label">Closes</span>
+                  <input
+                    type="datetime-local"
+                    className="gf-field-input"
+                    value={scheduleEnd ? new Date(new Date(scheduleEnd).getTime() - new Date(scheduleEnd).getTimezoneOffset() * 60000).toISOString().slice(0, 16) : ''}
+                    onChange={e => { setScheduleEnd(e.target.value ? new Date(e.target.value).toISOString() : ''); markUnsaved(); }}
+                  />
+                </label>
+              </div>
+
+              <div className="gf-field-row">
+                <label className="gf-field-toggle">
+                  <span className="gf-field-label">Allow retries</span>
+                  <div className="gf-switch">
+                    <input
+                      type="checkbox"
+                      checked={settings.allowRetries}
+                      onChange={e => { setSettings(p => ({ ...p, allowRetries: e.target.checked })); markUnsaved(); }}
+                    />
+                    <span className="gf-slider" />
+                  </div>
+                </label>
+                <label className="gf-field gf-field-tight">
+                  <span className="gf-field-label">Maximum attempts</span>
+                  <input
+                    type="number"
+                    min={1}
+                    max={100}
+                    className="gf-field-input"
+                    disabled={!settings.allowRetries}
+                    value={settings.maxAttempts}
+                    onChange={e => { setSettings(p => ({ ...p, maxAttempts: Number(e.target.value) })); markUnsaved(); }}
+                  />
+                </label>
+              </div>
+
+              <p style={{ fontSize: '13px', color: 'var(--r-ink-muted)', lineHeight: 1.5 }}>
+                Required items should be answered before submission; unanswered items receive zero.
+                Written responses require teacher marking.
+              </p>
+            </div>
+            {/* Setting Card 2: Security & Anti-Cheating Sentinel */}
+            <div className="gf-item-sheet" style={{ cursor: 'default' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                <ShieldAlert size={20} color="var(--r-emerald)" />
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--r-ink)' }}>Anti-Cheating & Integrity Sentinel</h3>
+              </div>
+
+              <div style={{ padding: '12px', background: 'var(--r-subject-wash)', borderRadius: '6px', fontSize: '13px', color: 'var(--r-subject)', lineHeight: 1.5 }}>
                 Tracks browser tab visibility changes, window blurs, and student navigation events in real-time with server-authoritative timestamps.
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #dadce0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid var(--r-rule)' }}>
                 <div>
-                  <strong style={{ fontSize: '14px', color: '#202124', display: 'block' }}>Enable Tab-Switch Monitoring</strong>
-                  <span style={{ fontSize: '12px', color: '#5f6368' }}>Warn student and record violations to teacher audit log</span>
+                  <strong style={{ fontSize: '14px', color: 'var(--r-ink)', display: 'block' }}>Enable Tab-Switch Monitoring</strong>
+                  <span style={{ fontSize: '12px', color: 'var(--r-ink-muted)' }}>Warn student and record violations to teacher audit log</span>
                 </div>
                 <div className="gf-switch">
                   <input
@@ -1334,7 +1423,7 @@ function GoogleFormsQuizBuilderContent() {
 
               {settings.tabMonitoringEnabled && (
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 0' }}>
-                  <span style={{ fontSize: '13px', color: '#5f6368' }}>Warning Alert Threshold:</span>
+                  <span style={{ fontSize: '13px', color: 'var(--r-ink-muted)' }}>Warning Alert Threshold:</span>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <span>&gt;</span>
                     <input
@@ -1346,7 +1435,7 @@ function GoogleFormsQuizBuilderContent() {
                         setSettings(prev => ({ ...prev, tabWarningThreshold: Number(e.target.value) || 2 }));
                         markUnsaved();
                       }}
-                      style={{ width: '60px', padding: '4px', textAlign: 'center', border: '1px solid #dadce0', borderRadius: '4px', fontWeight: 700 }}
+                      style={{ width: '60px', padding: '4px', textAlign: 'center', border: '1px solid var(--r-rule)', borderRadius: '4px', fontWeight: 700 }}
                     />
                     <span>switches</span>
                   </div>
@@ -1355,17 +1444,17 @@ function GoogleFormsQuizBuilderContent() {
             </div>
 
             {/* Setting Card 3: Feedback & Score Release */}
-            <div className="gf-question-card" style={{ cursor: 'default' }}>
+            <div className="gf-item-sheet" style={{ cursor: 'default' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                <CheckCircle2 size={20} color="#673ab7" />
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#202124' }}>Release Scores & Feedback</h3>
+                <CheckCircle2 size={20} color="var(--r-emerald)" />
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--r-ink)' }}>Release Scores & Feedback</h3>
               </div>
 
               <label style={{display:'block',padding:'0.75rem 0'}}>Result release policy <select className="gf-type-select" value={settings.resultVisibility} onChange={e=>{const policy=e.target.value as QuizSettings['resultVisibility'];setSettings(p=>({...p,resultVisibility:policy,immediateFeedback:policy==='IMMEDIATE'}));markUnsaved();}}><option value="IMMEDIATE">After submission</option><option value="MANUAL_RELEASE">Hold until teacher release</option><option value="SCHEDULED">At a scheduled time</option></select></label>{settings.resultVisibility==='SCHEDULED'&&<label>Release at <input type="datetime-local" required value={settings.resultReleaseDate?new Date(new Date(settings.resultReleaseDate).getTime()-new Date(settings.resultReleaseDate).getTimezoneOffset()*60000).toISOString().slice(0,16):''} onChange={e=>{setSettings(p=>({...p,resultReleaseDate:e.target.value?new Date(e.target.value).toISOString():null}));markUnsaved();}}/></label>}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #dadce0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid var(--r-rule)' }}>
                 <div>
-                  <strong style={{ fontSize: '14px', color: '#202124', display: 'block' }}>Immediately after each submission</strong>
-                  <span style={{ fontSize: '12px', color: '#5f6368' }}>Release objective score right away</span>
+                  <strong style={{ fontSize: '14px', color: 'var(--r-ink)', display: 'block' }}>Immediately after each submission</strong>
+                  <span style={{ fontSize: '12px', color: 'var(--r-ink-muted)' }}>Release objective score right away</span>
                 </div>
                 <div className="gf-switch">
                   <input
@@ -1382,8 +1471,8 @@ function GoogleFormsQuizBuilderContent() {
 
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 0' }}>
                 <div>
-                  <strong style={{ fontSize: '14px', color: '#202124', display: 'block' }}>Show Correct Answers in Review</strong>
-                  <span style={{ fontSize: '12px', color: '#5f6368' }}>Show the answer key and teacher-provided explanations after results are released</span>
+                  <strong style={{ fontSize: '14px', color: 'var(--r-ink)', display: 'block' }}>Show Correct Answers in Review</strong>
+                  <span style={{ fontSize: '12px', color: 'var(--r-ink-muted)' }}>Show the answer key and teacher-provided explanations after results are released</span>
                 </div>
                 <div className="gf-switch">
                   <input
@@ -1403,12 +1492,27 @@ function GoogleFormsQuizBuilderContent() {
       </div>
 
       <div style={{ maxWidth: 770, margin: '1rem auto' }}>{questions.some(q => q.reviewId) && <button className="gf-draft-btn" onClick={() => void syncReviews()}>Sync approved question revisions</button>}</div>
-      {draftAvailable && <div role="status" style={{ maxWidth: 770, margin: '1rem auto', padding: '1rem', background: '#fef3c7', borderRadius: 10 }}><p>A local unsaved draft is available in this browser tab.</p><button onClick={restoreDraft}>Restore local draft</button><button onClick={() => { sessionStorage.removeItem(draftKey.current); setDraftAvailable(false); }}>Discard local draft</button></div>}
-      {/* 3. ICONIC GOOGLE FORMS FLOATING TOOL DOCK */}
+      {draftAvailable && (
+        <div role="status" className="gf-draft-notice">
+          <span className="gf-blank-rule">Unsaved draft</span>
+          <p>This browser tab is holding changes that were never saved to the server.</p>
+          <div className="gf-draft-notice-actions">
+            <button type="button" className="gf-publish-btn" onClick={restoreDraft}>Restore local draft</button>
+            <button
+              type="button"
+              className="gf-draft-btn"
+              onClick={() => { sessionStorage.removeItem(draftKey.current); setDraftAvailable(false); }}
+            >
+              Discard
+            </button>
+          </div>
+        </div>
+      )}
+      {/* Instrument tray */}
       <div className="gf-floating-toolbar">
         <button
           type="button"
-          onClick={() => addQuestion('MCQ_SINGLE', activeQuestionIndex)}
+          onClick={() => addQuestion('MCQ_SINGLE', questions.length ? activeQuestionIndex : undefined)}
           className="gf-dock-btn"
           title="Add question (+)"
         >
@@ -1421,7 +1525,7 @@ function GoogleFormsQuizBuilderContent() {
           className="gf-dock-btn"
           title="Import from AKU-EB Question Bank"
         >
-          <Database size={20} color="#673ab7" />
+          <Database size={20} color="var(--r-emerald)" />
         </button>
 
         <button
@@ -1430,7 +1534,7 @@ function GoogleFormsQuizBuilderContent() {
           className="gf-dock-btn"
           title="Generate with Gemini AI"
         >
-          <Sparkles size={20} color="#b06000" />
+          <Sparkles size={20} color="var(--r-flag)" />
         </button>
 
         <button
@@ -1648,10 +1752,10 @@ function QuestionBankModal({
       <div className="gf-modal-content">
         <div className="gf-modal-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <Database size={22} color="#673ab7" />
+            <Database size={22} color="var(--r-emerald)" />
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#202124' }}>AKU-EB Question Bank</h3>
-              <span style={{ fontSize: '12px', color: '#5f6368' }}>Class {selectedClass === 'ALL' ? '9 & 10' : selectedClass} • {subject} • Solved Model Papers & Units</span>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--r-ink)' }}>AKU-EB Question Bank</h3>
+              <span style={{ fontSize: '12px', color: 'var(--r-ink-muted)' }}>Class {selectedClass === 'ALL' ? '9 & 10' : selectedClass} • {subject} • Solved Model Papers & Units</span>
             </div>
           </div>
           <button aria-label="Close dialog" onClick={onClose} className="gf-icon-btn">
@@ -1660,18 +1764,18 @@ function QuestionBankModal({
         </div>
 
         {/* Filters */}
-        <div style={{ padding: '12px 24px', background: '#f8f9fa', borderBottom: '1px solid #dadce0', display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+        <div style={{ padding: '12px 24px', background: 'var(--r-surface)', borderBottom: '1px solid var(--r-rule)', display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search questions by topic, formula, or keyword..."
-            style={{ flex: 1, minWidth: '200px', background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '6px 12px', fontSize: '13px', outline: 'none' }}
+            style={{ flex: 1, minWidth: '200px', background: 'var(--r-paper)', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '6px 12px', fontSize: '13px', outline: 'none' }}
           />
           <select
             value={selectedClass}
             onChange={(e) => setSelectedClass(e.target.value)}
-            style={{ background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '6px 12px', fontSize: '13px', outline: 'none', fontWeight: 600 }}
+            style={{ background: 'var(--r-paper)', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '6px 12px', fontSize: '13px', outline: 'none', fontWeight: 600 }}
           >
             <option value="9">Class 9 (SSC-I)</option>
             <option value="10">Class 10 (SSC-II)</option>
@@ -1680,7 +1784,7 @@ function QuestionBankModal({
           <select
             value={difficultyFilter}
             onChange={(e) => setDifficultyFilter(e.target.value)}
-            style={{ background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', padding: '6px 12px', fontSize: '13px', outline: 'none' }}
+            style={{ background: 'var(--r-paper)', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '6px 12px', fontSize: '13px', outline: 'none' }}
           >
             <option value="ALL">All Difficulties</option>
             <option value="Easy">Easy</option>
@@ -1689,7 +1793,7 @@ function QuestionBankModal({
           </select>
           <button
             onClick={handleSelectAll}
-            style={{ background: 'none', border: 'none', color: 'var(--builder-accent, #673ab7)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}
+            style={{ background: 'none', border: 'none', color: 'var(--r-emerald)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}
           >
             {selectedIds.size === filtered.length && filtered.length > 0 ? 'Deselect All' : 'Select All'}
           </button>
@@ -1699,9 +1803,9 @@ function QuestionBankModal({
         {/* List */}
         <div className="gf-modal-body">{bankError && <p role="alert">{bankError}</p>}
           {loading ? (
-            <div style={{ textAlign: 'center', padding: '40px', color: '#5f6368', fontSize: '13px' }}>Loading questions from bank...</div>
+            <div style={{ textAlign: 'center', padding: '40px', color: 'var(--r-ink-muted)', fontSize: '13px' }}>Loading questions from bank...</div>
           ) : filtered.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '40px', color: '#5f6368', fontSize: '13px' }}>No questions found.</div>
+            <div style={{ textAlign: 'center', padding: '40px', color: 'var(--r-ink-muted)', fontSize: '13px' }}>No questions found.</div>
           ) : (
             filtered.map((item) => {
               const isSelected = selectedIds.has(item.id);
@@ -1712,8 +1816,8 @@ function QuestionBankModal({
                   style={{
                     padding: '14px',
                     borderRadius: '8px',
-                    border: isSelected ? '2px solid #673ab7' : '1px solid #dadce0',
-                    background: isSelected ? '#f3e8fd' : '#ffffff',
+                    border: isSelected ? '2px solid var(--r-emerald)' : '1px solid var(--r-rule)',
+                    background: isSelected ? 'var(--r-emerald-wash)' : 'var(--r-paper)',
                     cursor: 'pointer',
                     transition: 'all 0.2s'
                   }}
@@ -1723,10 +1827,10 @@ function QuestionBankModal({
                       type="checkbox"
                       checked={isSelected}
                       onChange={() => {}}
-                      style={{ marginTop: '3px', cursor: 'pointer', accentColor: '#673ab7' }}
+                      style={{ marginTop: '3px', cursor: 'pointer', accentColor: 'var(--r-emerald)' }}
                     />
                     <div style={{ flex: 1 }}>
-                      <p style={{ fontSize: '14px', fontWeight: 500, color: '#202124' }}>
+                      <p style={{ fontSize: '14px', fontWeight: 500, color: 'var(--r-ink)' }}>
                         <MathText text={item.stemText} />
                       </p>
 
@@ -1739,8 +1843,8 @@ function QuestionBankModal({
                                 fontSize: '12px',
                                 padding: '4px 8px',
                                 borderRadius: '4px',
-                                background: opt.isCorrect ? '#e6f4ea' : '#f1f3f4',
-                                color: opt.isCorrect ? '#137333' : '#3c4043',
+                                background: opt.isCorrect ? 'var(--r-right-wash)' : 'var(--r-surface)',
+                                color: opt.isCorrect ? 'var(--r-right)' : 'var(--r-ink)',
                                 fontWeight: opt.isCorrect ? 700 : 400
                               }}
                             >
@@ -1750,10 +1854,10 @@ function QuestionBankModal({
                         </div>
                       )}
 
-                      <div style={{ display: 'flex', gap: '8px', marginTop: '6px', fontSize: '11px', color: '#5f6368' }}>
+                      <div style={{ display: 'flex', gap: '8px', marginTop: '6px', fontSize: '11px', color: 'var(--r-ink-muted)' }}>
                         <span>{item.difficulty}</span>
                         <span>•</span>
-                        {item.sourcePaper && <span style={{ color: '#1a73e8', fontWeight: 600 }}>{item.sourcePaper}</span>}
+                        {item.sourcePaper && <span style={{ color: 'var(--r-subject)', fontWeight: 600 }}>{item.sourcePaper}</span>}
                         <span>•</span>
                         <span>{item.marks || 1} mark</span>
                       </div>
@@ -1767,8 +1871,8 @@ function QuestionBankModal({
 
         {/* Footer */}
         <div className="gf-modal-footer">{bankHasMore && <button type="button" disabled={loading} onClick={() => void fetchBank(bankPage + 1)}>Load more questions</button>}
-          <span style={{ fontSize: '13px', color: '#5f6368', marginRight: 'auto' }}>
-            Selected: <strong style={{ color: 'var(--builder-accent, #673ab7)' }}>{selectedIds.size}</strong> questions
+          <span style={{ fontSize: '13px', color: 'var(--r-ink-muted)', marginRight: 'auto' }}>
+            Selected: <strong style={{ color: 'var(--r-emerald)' }}>{selectedIds.size}</strong> questions
           </span>
           <button onClick={onClose} className="gf-draft-btn">Cancel</button>
           <button
@@ -1890,10 +1994,10 @@ function AiGeneratorModal({
       <div className="gf-modal-content">
         <div className="gf-modal-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <Sparkles size={22} color="#b06000" />
+            <Sparkles size={22} color="var(--r-flag)" />
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#202124' }}>Generate Questions with Gemini AI</h3>
-              <span style={{ fontSize: '12px', color: '#5f6368' }}>AKU-EB Syllabus Aligned</span>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--r-ink)' }}>Generate Questions with Gemini AI</h3>
+              <span style={{ fontSize: '12px', color: 'var(--r-ink-muted)' }}>AKU-EB Syllabus Aligned</span>
             </div>
           </div>
           <button aria-label="Close dialog" onClick={onClose} className="gf-icon-btn"><X size={20} /></button>
@@ -1904,16 +2008,16 @@ function AiGeneratorModal({
             <>
               <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '12px' }}>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Topic / Chapter</label>
+                  <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--r-ink-muted)', display: 'block', marginBottom: '4px' }}>Topic / Chapter</label>
                   <input
                     type="text"
                     value={topic}
                     onChange={(e) => setTopic(e.target.value)}
-                    style={{ width: '100%', border: '1px solid #dadce0', borderRadius: '4px', padding: '8px 12px', fontSize: '13px' }}
+                    style={{ width: '100%', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '8px 12px', fontSize: '13px' }}
                   />
                 </div>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Question Count</label>
+                  <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--r-ink-muted)', display: 'block', marginBottom: '4px' }}>Question Count</label>
                   <input
                     type="number"
                     min={1}
@@ -1926,53 +2030,53 @@ function AiGeneratorModal({
                       setMediumCount(Math.floor(c * 0.4));
                       setHardCount(c - Math.ceil(c * 0.4) - Math.floor(c * 0.4));
                     }}
-                    style={{ width: '100%', border: '1px solid #dadce0', borderRadius: '4px', padding: '8px 12px', fontSize: '13px' }}
+                    style={{ width: '100%', border: '1px solid var(--r-rule)', borderRadius: '4px', padding: '8px 12px', fontSize: '13px' }}
                   />
                 </div>
               </div>
 
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 600, color: '#5f6368', display: 'block', marginBottom: '4px' }}>Difficulty Breakdown</label>
+                <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--r-ink-muted)', display: 'block', marginBottom: '4px' }}>Difficulty Breakdown</label>
                 <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
-                  <div style={{ padding: '8px', background: '#f8f9fa', borderRadius: '4px', border: '1px solid #dadce0' }}>
-                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#137333', display: 'block', marginBottom: '2px' }}>Easy</span>
+                  <div style={{ padding: '8px', background: 'var(--r-surface)', borderRadius: '4px', border: '1px solid var(--r-rule)' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--r-right)', display: 'block', marginBottom: '2px' }}>Easy</span>
                     <input
                       type="number"
                       min={0}
                       value={easyCount}
                       onChange={(e) => setEasyCount(Number(e.target.value))}
-                      style={{ width: '100%', border: '1px solid #dadce0', padding: '4px', borderRadius: '4px' }}
+                      style={{ width: '100%', border: '1px solid var(--r-rule)', padding: '4px', borderRadius: '4px' }}
                     />
                   </div>
-                  <div style={{ padding: '8px', background: '#f8f9fa', borderRadius: '4px', border: '1px solid #dadce0' }}>
-                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#b06000', display: 'block', marginBottom: '2px' }}>Medium</span>
+                  <div style={{ padding: '8px', background: 'var(--r-surface)', borderRadius: '4px', border: '1px solid var(--r-rule)' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--r-flag)', display: 'block', marginBottom: '2px' }}>Medium</span>
                     <input
                       type="number"
                       min={0}
                       value={mediumCount}
                       onChange={(e) => setMediumCount(Number(e.target.value))}
-                      style={{ width: '100%', border: '1px solid #dadce0', padding: '4px', borderRadius: '4px' }}
+                      style={{ width: '100%', border: '1px solid var(--r-rule)', padding: '4px', borderRadius: '4px' }}
                     />
                   </div>
-                  <div style={{ padding: '8px', background: '#f8f9fa', borderRadius: '4px', border: '1px solid #dadce0' }}>
-                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#d93025', display: 'block', marginBottom: '2px' }}>Hard</span>
+                  <div style={{ padding: '8px', background: 'var(--r-surface)', borderRadius: '4px', border: '1px solid var(--r-rule)' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--r-wrong)', display: 'block', marginBottom: '2px' }}>Hard</span>
                     <input
                       type="number"
                       min={0}
                       value={hardCount}
                       onChange={(e) => setHardCount(Number(e.target.value))}
-                      style={{ width: '100%', border: '1px solid #dadce0', padding: '4px', borderRadius: '4px' }}
+                      style={{ width: '100%', border: '1px solid var(--r-rule)', padding: '4px', borderRadius: '4px' }}
                     />
                   </div>
                 </div>
               </div>
 
-              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#3c4043', cursor: 'pointer' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--r-ink)', cursor: 'pointer' }}>
                 <input
                   type="checkbox"
                   checked={includeEquations}
                   onChange={(e) => setIncludeEquations(e.target.checked)}
-                  style={{ accentColor: '#673ab7' }}
+                  style={{ accentColor: 'var(--r-emerald)' }}
                 />
                 <span>Include LaTeX mathematical formulas & chemical equilibrium arrows</span>
               </label>
@@ -1989,9 +2093,9 @@ function AiGeneratorModal({
             </>
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#5f6368' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--r-ink-muted)' }}>
                 <span>Select questions to insert:</span>
-                <button onClick={() => setGeneratedList([])} style={{ color: 'var(--builder-accent, #673ab7)', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600 }}>Generate Again</button>
+                <button onClick={() => setGeneratedList([])} style={{ color: 'var(--r-emerald)', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600 }}>Generate Again</button>
               </div>
 
               {generatedList.map((item, idx) => (
@@ -2006,8 +2110,8 @@ function AiGeneratorModal({
                   style={{
                     padding: '12px',
                     borderRadius: '8px',
-                    border: selectedIds.has(idx) ? '2px solid #673ab7' : '1px solid #dadce0',
-                    background: selectedIds.has(idx) ? '#f3e8fd' : '#fff',
+                    border: selectedIds.has(idx) ? '2px solid var(--r-emerald)' : '1px solid var(--r-rule)',
+                    background: selectedIds.has(idx) ? 'var(--r-emerald-wash)' : 'var(--r-paper)',
                     cursor: 'pointer'
                   }}
                 >
@@ -2016,7 +2120,7 @@ function AiGeneratorModal({
                   </p>
                   <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px', marginTop: '6px' }}>
                     {(item.options || []).map((opt: any, oIdx: number) => (
-                      <div key={oIdx} style={{ fontSize: '11px', color: opt.isCorrect ? '#137333' : '#5f6368', fontWeight: opt.isCorrect ? 700 : 400 }}>
+                      <div key={oIdx} style={{ fontSize: '11px', color: opt.isCorrect ? 'var(--r-right)' : 'var(--r-ink-muted)', fontWeight: opt.isCorrect ? 700 : 400 }}>
                         {String.fromCharCode(65 + oIdx)}. <MathText text={opt.text} />
                       </div>
                     ))}
@@ -2096,7 +2200,7 @@ function ImportQuestionsModal({
       <div className="gf-modal-content">
         <div className="gf-modal-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <Upload size={20} color="#673ab7" />
+            <Upload size={20} color="var(--r-emerald)" />
             <h3 style={{ fontSize: '16px', fontWeight: 600 }}>Import Questions JSON</h3>
           </div>
           <button aria-label="Close dialog" onClick={onClose} className="gf-icon-btn"><X size={20} /></button>
@@ -2106,7 +2210,7 @@ function ImportQuestionsModal({
             value={jsonText}
             onChange={(e) => setJsonText(e.target.value)}
             rows={10}
-            style={{ width: '100%', fontFamily: 'monospace', fontSize: '12px', padding: '12px', border: '1px solid #dadce0', borderRadius: '4px' }}
+            style={{ width: '100%', fontFamily: 'monospace', fontSize: '12px', padding: '12px', border: '1px solid var(--r-rule)', borderRadius: '4px' }}
           />
         </div>
         <div className="gf-modal-footer">
@@ -2146,42 +2250,42 @@ function StudentPreviewModal({
   return (
     <div {...dialogProps} className="gf-modal-backdrop">
       <div className="gf-modal-content" style={{ maxWidth: '780px', maxHeight: '90vh' }}>
-        <div className="gf-modal-header" style={{ background: '#f8f9fa' }}>
+        <div className="gf-modal-header" style={{ background: 'var(--r-surface)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ background: '#ede7f6', color: '#512da8', fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '12px' }}>
+            <span style={{ background: 'var(--r-emerald-wash)', color: 'var(--r-emerald)', fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '12px' }}>
               Student Experience Simulation
             </span>
-            <span style={{ fontSize: '12px', color: '#5f6368' }}>Correct answers are hidden</span>
+            <span style={{ fontSize: '12px', color: 'var(--r-ink-muted)' }}>Correct answers are hidden</span>
           </div>
           <button onClick={onClose} className="gf-draft-btn">Exit Preview</button>
         </div>
 
-        <div className="gf-modal-body" style={{ background: '#f0ebf8', padding: '20px' }}>
+        <div className="gf-modal-body" style={{ background: 'var(--r-surface-sunk)', padding: '20px' }}>
           {/* Header Card */}
-          <div className="gf-title-card" style={{ marginBottom: '14px' }}>
-            <h2 style={{ fontSize: '26px', fontWeight: 500, color: '#202124' }}>{title}</h2>
-            {description && <p style={{ fontSize: '14px', color: '#5f6368', marginTop: '6px' }}>{description}</p>}
-            <div style={{ fontSize: '12px', color: '#5f6368', marginTop: '10px', paddingTop: '10px', borderTop: '1px solid #f1f3f4' }}>
+          <div className="gf-title-sheet" style={{ marginBottom: '14px' }}>
+            <h2 style={{ fontSize: '26px', fontWeight: 500, color: 'var(--r-ink)' }}>{title}</h2>
+            {description && <p style={{ fontSize: '14px', color: 'var(--r-ink-muted)', marginTop: '6px' }}>{description}</p>}
+            <div style={{ fontSize: '12px', color: 'var(--r-ink-muted)', marginTop: '10px', paddingTop: '10px', borderTop: '1px solid var(--r-rule)' }}>
               {boardId} • Class {classLevel} • {subject} • Time Allowed: {durationMin} minutes
             </div>
           </div>
 
           {/* Question Cards */}
           {questions.map((q, idx) => (
-            <div key={q.id} className="gf-question-card" style={{ cursor: 'default', marginBottom: '14px' }}>
+            <div key={q.id} className="gf-item-sheet" style={{ cursor: 'default', marginBottom: '14px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: '#5f6368', textTransform: 'uppercase' }}>
+                <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--r-ink-muted)', textTransform: 'uppercase' }}>
                   Question {idx + 1} ({q.marks} {q.marks === 1 ? 'point' : 'points'})
                 </span>
               </div>
 
-              <div style={{ fontSize: '15px', fontWeight: 500, color: '#202124', lineHeight: 1.5 }}>
+              <div style={{ fontSize: '15px', fontWeight: 500, color: 'var(--r-ink)', lineHeight: 1.5 }}>
                 <MathText text={q.stemText} />
               </div>
 
               {q.drawingSvg && (
                 <div
-                  style={{ padding: '8px', background: '#fff', border: '1px solid #dadce0', borderRadius: '4px', maxWidth: '300px' }}
+                  style={{ padding: '8px', background: 'var(--r-paper)', border: '1px solid var(--r-rule)', borderRadius: '4px', maxWidth: '300px' }}
                   dangerouslySetInnerHTML={{ __html: q.drawingSvg }}
                 />
               )}
@@ -2199,8 +2303,8 @@ function StudentPreviewModal({
                         style={{
                           padding: '12px 16px',
                           borderRadius: '8px',
-                          border: isChosen ? '2px solid #673ab7' : '1px solid #dadce0',
-                          background: isChosen ? '#f3e8fd' : '#ffffff',
+                          border: isChosen ? '2px solid var(--r-emerald)' : '1px solid var(--r-rule)',
+                          background: isChosen ? 'var(--r-emerald-wash)' : 'var(--r-paper)',
                           display: 'flex',
                           alignItems: 'center',
                           gap: '12px',
@@ -2212,14 +2316,14 @@ function StudentPreviewModal({
                           width: '18px',
                           height: '18px',
                           borderRadius: '50%',
-                          border: isChosen ? '2px solid #673ab7' : '2px solid #5f6368',
+                          border: isChosen ? '2px solid var(--r-emerald)' : '2px solid var(--r-rule-strong)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center'
                         }}>
-                          {isChosen && <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#673ab7' }} />}
+                          {isChosen && <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--r-emerald)' }} />}
                         </div>
-                        <span style={{ fontSize: '14px', color: '#202124' }}>
+                        <span style={{ fontSize: '14px', color: 'var(--r-ink)' }}>
                           <strong>{String.fromCharCode(65 + oIdx)}.</strong> <MathText text={opt.text} />
                         </span>
                       </button>
@@ -2241,8 +2345,8 @@ function StudentPreviewModal({
                           flex: 1,
                           padding: '12px',
                           borderRadius: '8px',
-                          border: isChosen ? '2px solid #673ab7' : '1px solid #dadce0',
-                          background: isChosen ? '#f3e8fd' : '#ffffff',
+                          border: isChosen ? '2px solid var(--r-emerald)' : '1px solid var(--r-rule)',
+                          background: isChosen ? 'var(--r-emerald-wash)' : 'var(--r-paper)',
                           fontWeight: 700,
                           cursor: 'pointer'
                         }}
@@ -2259,7 +2363,7 @@ function StudentPreviewModal({
                   <input
                     type="number"
                     placeholder="Your answer"
-                    style={{ border: 'none', borderBottom: '1px solid #70757a', padding: '8px 4px', fontSize: '14px', width: '200px', outline: 'none' }}
+                    style={{ border: 'none', borderBottom: '1px solid var(--r-rule-strong)', padding: '8px 4px', fontSize: '14px', width: '200px', outline: 'none' }}
                   />
                   {q.unit && <span style={{ fontSize: '14px', fontWeight: 600 }}>{q.unit}</span>}
                 </div>
@@ -2270,7 +2374,7 @@ function StudentPreviewModal({
                   <input
                     type="text"
                     placeholder="Your answer"
-                    style={{ width: '100%', maxWidth: '400px', border: 'none', borderBottom: '1px solid #70757a', padding: '8px 4px', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', maxWidth: '400px', border: 'none', borderBottom: '1px solid var(--r-rule-strong)', padding: '8px 4px', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
               )}
@@ -2318,12 +2422,12 @@ function ShareQuizModal({
       <div className="gf-modal-content" style={{ maxWidth: '760px', padding: '28px', borderRadius: '16px', maxHeight:'90dvh', overflowY:'auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: '#e0f2fe', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0284c7' }}>
+            <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'var(--r-subject-wash)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--r-subject)' }}>
               <Share2 size={24} />
             </div>
             <div>
-              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 800, color: '#0f172a' }}>Share Assessment</h3>
-              <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748b' }}>{title} · Code, link and student settings</p>
+              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 800, color: 'var(--r-ink)' }}>Share Assessment</h3>
+              <p style={{ margin: '2px 0 0', fontSize: '12px', color: 'var(--r-ink-muted)' }}>{title} · Code, link and student settings</p>
             </div>
           </div>
           <button aria-label="Close dialog" onClick={onClose} className="gf-icon-btn">
@@ -2332,16 +2436,16 @@ function ShareQuizModal({
         </div>
 
         <div style={{ marginBottom: '18px' }}>
-          <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#475569', marginBottom: '6px' }}>
+          <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--r-ink-muted)', marginBottom: '6px' }}>
             Unique Student Quiz Code
           </label>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <div style={{ flex: 1, minWidth:0, overflowWrap:'anywhere', background: '#f8fafc', border: '2px solid #cbd5e1', borderRadius: '8px', padding: '12px 16px', fontSize: '18px', fontWeight: 800, letterSpacing: '2px', color: '#0b5e4a' }}>
+            <div style={{ flex: 1, minWidth:0, overflowWrap:'anywhere', background: 'var(--r-surface)', border: '2px solid var(--r-rule-strong)', borderRadius: '8px', padding: '12px 16px', fontSize: '18px', fontWeight: 800, letterSpacing: '2px', color: 'var(--r-emerald)' }}>
               {code}
             </div>
             <button
               onClick={copyCode}
-              style={{ padding: '12px 18px', background: copiedCode ? '#059669' : '#0b5e4a', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 700, fontSize: '13px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
+              style={{ padding: '12px 18px', background: copiedCode ? 'var(--r-emerald)' : 'var(--r-emerald-press)', color: '#ffffff', border: 'none', borderRadius: '8px', fontWeight: 700, fontSize: '13px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
             >
               {copiedCode ? <Check size={16} /> : <Copy size={16} />}
               <span>{copiedCode ? 'Copied' : 'Copy Code'}</span>
@@ -2350,7 +2454,7 @@ function ShareQuizModal({
         </div>
 
         <div style={{ marginBottom: '20px' }}>
-          <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#475569', marginBottom: '6px' }}>
+          <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--r-ink-muted)', marginBottom: '6px' }}>
             Direct Shareable URL
           </label>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
@@ -2358,11 +2462,11 @@ function ShareQuizModal({
               type="text"
               readOnly
               value={shareUrl}
-              style={{ flex: 1, minWidth:0, overflowWrap:'anywhere', background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '10px 14px', fontSize: '12px', color: '#334155', outline: 'none' }}
+              style={{ flex: 1, minWidth:0, overflowWrap:'anywhere', background: 'var(--r-surface)', border: '1px solid var(--r-rule)', borderRadius: '8px', padding: '10px 14px', fontSize: '12px', color: 'var(--r-ink)', outline: 'none' }}
             />
             <button
               onClick={copyUrl}
-              style={{ padding: '10px 16px', background: copiedUrl ? '#059669' : '#2563eb', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 700, fontSize: '12px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
+              style={{ padding: '10px 16px', background: copiedUrl ? 'var(--r-emerald)' : 'var(--r-subject)', color: '#ffffff', border: 'none', borderRadius: '8px', fontWeight: 700, fontSize: '12px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
             >
               {copiedUrl ? <Check size={14} /> : <Copy size={14} />}
               <span>{copiedUrl ? 'Copied' : 'Copy Link'}</span>
@@ -2370,7 +2474,7 @@ function ShareQuizModal({
           </div>
         </div>
 
-        <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '10px', padding: '14px', fontSize: '12px', color: '#166534', lineHeight: 1.5, marginBottom: '22px' }}>
+        <div style={{ background: 'var(--r-right-wash)', border: '1px solid var(--r-right)', borderRadius: '10px', padding: '14px', fontSize: '12px', color: 'var(--r-right)', lineHeight: 1.5, marginBottom: '22px' }}>
           💡 <strong>Student Instructions:</strong> Students can open <strong>riselearner.com</strong>, sign in, and click <strong>"Enter Quiz Code"</strong> in the top menu bar to start. Students need an account. Private quizzes also require classroom enrollment. Results and recorded events appear in your Teacher Dashboard.
         </div>
 
