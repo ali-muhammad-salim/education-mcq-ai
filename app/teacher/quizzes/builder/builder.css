@@ -1,913 +1,1236 @@
-/* Google Forms Authentic Design System */
+/* Quiz builder — the paper-setting desk.
+   The student side renders a paper being *filled*; this is the same paper being
+   *set*. Items are sheets on a desk, the active one carries the setter's margin
+   rule, and the answer key is the marking scheme in the grader's green.
+
+   Tokens come from app/design-system.css via the .rise-ui class on .gf-page, so
+   dark mode is handled by the tokens and needs no overrides here. No class name
+   may contain "card": globals.css force-paints those on html.dark. */
 
 .gf-page {
-  background-color: #f0ebf8;
-  color: #202124;
-  font-family: 'Inter', Roboto, Arial, sans-serif;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--r-font-body);
+  color: var(--r-ink);
+  background: var(--r-surface-sunk);
 }
 
-/* 1. Google Forms Top Navigation Bar */
+/* ── Desk chrome ──────────────────────────────────────────────────────────── */
+
 .gf-navbar {
-  background: #ffffff;
-  border-bottom: 1px solid #dadce0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1);
-  padding: 8px 24px;
   display: flex;
+  flex-wrap: wrap;
+  gap: var(--r-3);
   align-items: center;
   justify-content: space-between;
+  padding: var(--r-2) var(--r-5);
+  background: var(--r-paper);
+  border-bottom: 1px solid var(--r-rule);
+}
+
+.gf-nav-left,
+.gf-nav-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--r-2);
+  align-items: center;
+  min-width: 0;
 }
 
 .gf-nav-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  gap: var(--r-3);
 }
 
 .gf-back-btn {
-  background: transparent;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  color: #5f6368;
-  transition: background 0.2s;
+  width: 38px;
+  height: 38px;
+  color: var(--r-ink-muted);
   text-decoration: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--r-radius-full);
+  cursor: pointer;
+  transition: color var(--r-fast) var(--r-ease), border-color var(--r-fast) var(--r-ease);
 }
 
 .gf-back-btn:hover {
-  background: #f1f3f4;
-  color: #202124;
+  color: var(--r-ink);
+  border-color: var(--r-rule-strong);
 }
 
+/* The setter's seal. Square, not a rounded app icon. */
 .gf-form-icon {
-  width: 36px;
-  height: 36px;
-  background: #673ab7;
-  color: #ffffff;
-  border-radius: 8px;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  box-shadow: 0 1px 3px rgba(103, 58, 183, 0.3);
+  width: 34px;
+  height: 34px;
+  font-size: 16px;
+  color: #ffffff;
+  background: var(--r-emerald);
+  border-radius: var(--r-radius-sm);
 }
 
 .gf-title-header-input {
-  font-size: 18px;
-  font-weight: 500;
-  color: #202124;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  padding: 4px 8px;
-  outline: none;
-  max-width: 380px;
+  max-width: min(380px, 50vw);
+  padding: 5px 8px;
+  font-family: var(--r-font-display);
+  font-size: var(--r-text-lg);
+  font-weight: 700;
+  color: var(--r-ink);
   background: transparent;
-  transition: all 0.2s;
+  border: 1px solid transparent;
+  border-radius: var(--r-radius-sm);
+  outline: none;
+  transition: background var(--r-fast) var(--r-ease), border-color var(--r-fast) var(--r-ease);
 }
 
 .gf-title-header-input:hover {
-  background: #f1f3f4;
+  border-color: var(--r-rule);
 }
 
 .gf-title-header-input:focus {
-  background: #ffffff;
-  border-color: #673ab7;
+  background: var(--r-surface);
+  border-color: var(--r-emerald);
 }
 
 .gf-save-badge {
-  font-size: 12px;
-  color: #5f6368;
   display: flex;
+  gap: var(--r-1);
   align-items: center;
-  gap: 4px;
-  margin-left: 8px;
+  margin-left: var(--r-2);
+  font-family: var(--r-font-mono);
+  font-size: var(--r-text-xs);
+  letter-spacing: 0.06em;
+  color: var(--r-ink-faint);
+  text-transform: uppercase;
 }
 
-/* Center Tabs (Questions, Responses, Settings) */
 .gf-nav-tabs {
   display: flex;
+  gap: var(--r-5);
   align-items: center;
-  gap: 24px;
 }
 
 .gf-tab-btn {
+  display: flex;
+  gap: var(--r-2);
+  align-items: center;
+  min-height: 44px;
+  padding: var(--r-3) 2px;
+  font-size: var(--r-text-sm);
+  font-weight: 600;
+  color: var(--r-ink-muted);
   background: none;
   border: none;
-  border-bottom: 3px solid transparent;
-  padding: 14px 8px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #5f6368;
+  border-bottom: 2px solid transparent;
   cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  transition: color var(--r-fast) var(--r-ease), border-color var(--r-fast) var(--r-ease);
 }
 
 .gf-tab-btn:hover {
-  color: #202124;
+  color: var(--r-ink);
 }
 
 .gf-tab-btn.active {
-  color: #673ab7;
-  border-bottom-color: #673ab7;
-}
-
-/* Right Header Actions */
-.gf-nav-right {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  color: var(--r-emerald);
+  border-bottom-color: var(--r-emerald);
 }
 
 .gf-icon-btn {
-  background: transparent;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: var(--r-ink-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--r-radius-full);
   cursor: pointer;
-  color: #5f6368;
-  transition: background 0.2s;
+  transition: color var(--r-fast) var(--r-ease), border-color var(--r-fast) var(--r-ease);
 }
 
 .gf-icon-btn:hover {
-  background: #f1f3f4;
-  color: #202124;
+  color: var(--r-ink);
+  border-color: var(--r-rule-strong);
 }
 
 .gf-publish-btn {
-  background: #673ab7;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 24px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
   display: flex;
+  gap: var(--r-2);
   align-items: center;
-  gap: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  min-height: 40px;
+  padding: 0 var(--r-5);
+  font-size: var(--r-text-sm);
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--r-emerald);
+  border: 1px solid var(--r-emerald);
+  border-radius: var(--r-radius);
+  cursor: pointer;
+  transition: background var(--r-fast) var(--r-ease), border-color var(--r-fast) var(--r-ease);
 }
 
 .gf-publish-btn:hover {
-  background: #5e35b1;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  background: var(--r-emerald-press);
+  border-color: var(--r-emerald-press);
+}
+
+.gf-publish-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .gf-draft-btn {
-  background: #ffffff;
-  color: #5f6368;
-  border: 1px solid #dadce0;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--r-2);
+  min-height: 40px;
+  padding: 0 var(--r-4);
+  font-size: var(--r-text-sm);
+  font-weight: 600;
+  color: var(--r-ink);
+  background: var(--r-paper);
+  border: 1px solid var(--r-rule-strong);
+  border-radius: var(--r-radius);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: border-color var(--r-fast) var(--r-ease), background var(--r-fast) var(--r-ease);
 }
 
 .gf-draft-btn:hover {
-  background: #f8f9fa;
-  color: #202124;
-  border-color: #70757a;
+  background: var(--r-surface);
+  border-color: var(--r-emerald);
 }
 
-/* 2. Main Workspace Layout */
+.gf-draft-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── Workspace ────────────────────────────────────────────────────────────── */
+
 .gf-main-container {
-  max-width: 770px;
-  width: 100%;
-  margin: 16px auto 80px auto;
-  padding: 0 16px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  position: relative;
+  gap: var(--r-4);
+  width: 100%;
+  max-width: 770px;
+  margin: var(--r-5) auto var(--r-8);
+  padding: 0 var(--r-4);
 }
 
-/* 3. Header Form Card */
-.gf-title-card {
-  background: #ffffff;
-  border-radius: 8px;
-  border: 1px solid #dadce0;
-  border-top: 10px solid #673ab7;
-  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.12), 0 1px 2px rgba(60, 64, 67, 0.24);
-  padding: 24px 28px 20px 28px;
+/* The masthead sheet. A single emerald rule across the top, the way a printed
+   paper carries its board band. */
+.gf-title-sheet {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--r-3);
+  padding: var(--r-5) var(--r-6);
+  background: var(--r-paper);
+  border: 1px solid var(--r-rule);
+  border-top: 4px solid var(--r-emerald);
+  border-radius: var(--r-radius);
 }
 
 .gf-main-title-input {
-  font-size: 28px;
-  font-weight: 500;
-  color: #202124;
+  width: 100%;
+  padding-bottom: var(--r-1);
+  font-family: var(--r-font-display);
+  font-size: var(--r-text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--r-ink);
+  background: transparent;
   border: none;
   border-bottom: 1px solid transparent;
   outline: none;
-  width: 100%;
-  padding-bottom: 4px;
-  font-family: 'Outfit', 'Google Sans', Roboto, sans-serif;
-  transition: border-color 0.2s;
+  transition: border-color var(--r-fast) var(--r-ease);
 }
 
 .gf-main-title-input:hover {
-  border-bottom-color: #dadce0;
+  border-bottom-color: var(--r-rule);
 }
 
 .gf-main-title-input:focus {
-  border-bottom-color: #673ab7;
-  border-bottom-width: 2px;
+  border-bottom-color: var(--r-emerald);
 }
 
 .gf-desc-input {
-  font-size: 14px;
-  color: #5f6368;
+  width: 100%;
+  font-size: var(--r-text-sm);
+  line-height: 1.6;
+  color: var(--r-ink-muted);
+  background: transparent;
   border: none;
   border-bottom: 1px solid transparent;
   outline: none;
-  width: 100%;
   resize: none;
-  line-height: 1.5;
-  transition: border-color 0.2s;
+  transition: border-color var(--r-fast) var(--r-ease);
 }
 
 .gf-desc-input:hover {
-  border-bottom-color: #dadce0;
+  border-bottom-color: var(--r-rule);
 }
 
 .gf-desc-input:focus {
-  border-bottom-color: #673ab7;
-  border-bottom-width: 2px;
+  border-bottom-color: var(--r-emerald);
 }
 
 .gf-meta-bar {
   display: flex;
+  flex-wrap: wrap;
+  gap: var(--r-3);
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #f1f3f4;
-  flex-wrap: wrap;
+  padding-top: var(--r-3);
+  border-top: 1px solid var(--r-rule);
 }
 
 .gf-chips-group {
   display: flex;
-  align-items: center;
-  gap: 8px;
   flex-wrap: wrap;
+  gap: var(--r-2);
+  align-items: center;
 }
 
+/* Chips carry paper facts, so they are set in mono like the rest of the
+   structural metadata rather than as coloured pills. */
 .gf-chip {
-  background: #ede7f6;
-  color: #512da8;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 16px;
   display: flex;
+  flex-shrink: 0;
+  gap: var(--r-1);
   align-items: center;
-  gap: 6px;
+  padding: 3px var(--r-2);
+  font-family: var(--r-font-mono);
+  font-size: var(--r-text-xs);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: var(--r-ink-muted);
+  background: var(--r-surface);
+  border: 1px solid var(--r-rule);
+  border-radius: var(--r-radius-sm);
 }
 
 .gf-chip-amber {
-  background: #fef7e0;
-  color: #b06000;
+  color: var(--r-flag);
+  background: var(--r-flag-wash);
+  border-color: var(--r-flag);
 }
 
 .gf-chip-green {
-  background: #e6f4ea;
-  color: #137333;
+  color: var(--r-right);
+  background: var(--r-right-wash);
+  border-color: var(--r-right);
 }
 
-/* 4. Question Cards */
-.gf-question-card {
-  background: #ffffff;
-  border-radius: 8px;
-  border: 1px solid #dadce0;
-  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.12);
-  padding: 22px 24px;
+/* ── Item sheets ──────────────────────────────────────────────────────────── */
+
+/* An unset paper is a blank sheet with the four ways in named outright, rather
+   than a void with the real actions hidden in the unlabelled instrument tray. */
+.gf-blank-sheet {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  position: relative;
-  transition: box-shadow 0.2s, border-color 0.2s;
+  gap: var(--r-3);
+  max-width: 100%;
+  padding: var(--r-7) var(--r-6);
+  background: var(--r-paper);
+  border: 1px dashed var(--r-rule-strong);
+  border-radius: var(--r-radius);
+}
+
+.gf-blank-rule {
+  font-family: var(--r-font-mono);
+  font-size: var(--r-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--r-ink-faint);
+}
+
+.gf-blank-title {
+  font-family: var(--r-font-display);
+  font-size: var(--r-text-2xl);
+  font-weight: 700;
+  color: var(--r-ink);
+}
+
+.gf-blank-note {
+  max-width: 54ch;
+  font-size: var(--r-text-sm);
+  line-height: 1.6;
+  color: var(--r-ink-muted);
+}
+
+.gf-blank-ways {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--r-3);
+  margin-top: var(--r-2);
+}
+
+.gf-way {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 0 var(--r-3);
+  min-height: 64px;
+  padding: var(--r-3) var(--r-4);
+  text-align: left;
+  background: var(--r-surface);
+  border: 1px solid var(--r-rule);
+  border-radius: var(--r-radius);
+  color: var(--r-ink-muted);
   cursor: pointer;
+  transition: border-color var(--r-fast) var(--r-ease), background var(--r-fast) var(--r-ease);
 }
 
-.gf-question-card:hover {
-  box-shadow: 0 2px 6px rgba(60, 64, 67, 0.15);
+.gf-way > svg {
+  grid-row: span 2;
+  color: var(--r-ink-muted);
 }
 
-.gf-question-card.active {
-  border-left: 6px solid #4285f4;
-  box-shadow: 0 2px 8px rgba(66, 133, 244, 0.18), 0 1px 3px rgba(0,0,0,0.12);
+.gf-way:hover {
+  background: var(--r-paper);
+  border-color: var(--r-emerald);
+}
+
+.gf-way:hover > svg,
+.gf-way-lead > svg {
+  color: var(--r-emerald);
+}
+
+.gf-way-lead {
+  background: var(--r-emerald-wash);
+  border-color: var(--r-emerald);
+}
+
+.gf-way-name {
+  font-size: var(--r-text-sm);
+  font-weight: 600;
+  color: var(--r-ink);
+}
+
+.gf-way-note {
+  font-size: var(--r-text-xs);
+  color: var(--r-ink-muted);
+}
+
+.gf-field {
+  display: grid;
+  gap: var(--r-1);
+}
+
+.gf-field-tight {
+  max-width: 180px;
+}
+
+.gf-field-label {
+  font-size: var(--r-text-sm);
+  font-weight: 600;
+  color: var(--r-ink-muted);
+}
+
+.gf-field-input {
+  min-height: 44px;
+  padding: 0 var(--r-3);
+  color: var(--r-ink);
+  background: var(--r-paper);
+  border: 1px solid var(--r-rule);
+  border-radius: var(--r-radius-sm);
+  outline: none;
+  transition: border-color var(--r-fast) var(--r-ease);
+}
+
+.gf-field-input:hover:not(:disabled) {
+  border-color: var(--r-rule-strong);
+}
+
+.gf-field-input:focus {
+  border-color: var(--r-emerald);
+}
+
+.gf-field-input:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.gf-field-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--r-3);
+  min-height: 44px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.gf-field-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--r-5);
+}
+
+.gf-draft-notice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--r-2);
+  max-width: 770px;
+  margin: var(--r-4) auto;
+  padding: var(--r-4) var(--r-5);
+  background: var(--r-flag-wash);
+  border: 1px solid var(--r-flag);
+  border-left: 3px solid var(--r-flag);
+  border-radius: var(--r-radius);
+}
+
+.gf-draft-notice p {
+  font-size: var(--r-text-sm);
+  color: var(--r-ink);
+}
+
+.gf-draft-notice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--r-2);
+  margin-top: var(--r-1);
+}
+
+.gf-item-sheet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--r-4);
+  max-width: 100%;
+  padding: var(--r-5);
+  background: var(--r-paper);
+  border: 1px solid var(--r-rule);
+  border-left: 3px solid var(--r-rule);
+  border-radius: var(--r-radius);
+  cursor: pointer;
+  transition: border-color var(--r-fast) var(--r-ease);
+}
+
+.gf-item-sheet:hover {
+  border-color: var(--r-rule-strong);
+}
+
+/* The margin rule marks the item you are setting — the same left-edge grammar
+   the student side uses to mark a graded answer. */
+.gf-item-sheet.active {
+  border-color: var(--r-rule);
+  border-left-color: var(--r-emerald);
   cursor: default;
 }
 
-/* Drag Handle */
 .gf-drag-handle {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 12px;
-  margin-top: -12px;
-  color: #dadce0;
+  margin-top: calc(var(--r-2) * -1);
+  color: var(--r-rule-strong);
   cursor: grab;
-  transition: color 0.2s;
+  transition: color var(--r-fast) var(--r-ease);
 }
 
 .gf-drag-handle:hover {
-  color: #5f6368;
+  color: var(--r-ink-muted);
 }
 
-/* Question Top Row: Stem Input + Type Selector */
+.gf-drag-handle:active {
+  cursor: grabbing;
+  color: var(--r-emerald);
+}
+
 .gf-q-header-row {
   display: flex;
+  flex-wrap: wrap;
+  gap: var(--r-4);
   align-items: flex-start;
-  gap: 16px;
+}
+
+.gf-q-header-row > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .gf-stem-wrapper {
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--r-2);
 }
 
 .gf-stem-input {
   width: 100%;
-  background: #f8f9fa;
-  border: none;
-  border-bottom: 1px solid #70757a;
-  border-radius: 4px 4px 0 0;
-  padding: 12px 14px;
-  font-size: 15px;
+  padding: var(--r-3);
+  font-size: var(--r-text-base);
   font-weight: 500;
-  color: #202124;
+  line-height: 1.55;
+  color: var(--r-ink);
+  background: var(--r-surface);
+  border: 1px solid var(--r-rule);
+  border-radius: var(--r-radius-sm);
   outline: none;
-  line-height: 1.5;
   resize: none;
-  transition: all 0.2s;
+  transition: border-color var(--r-fast) var(--r-ease), background var(--r-fast) var(--r-ease);
 }
 
 .gf-stem-input:focus {
-  background: #ede7f6;
-  border-bottom: 2px solid #673ab7;
+  background: var(--r-paper);
+  border-color: var(--r-emerald);
 }
 
 .gf-type-dropdown-container {
-  width: 230px;
-  flex-shrink: 0;
   position: relative;
+  flex-shrink: 0;
+  width: 230px;
 }
 
 .gf-type-select {
   width: 100%;
-  background: #ffffff;
-  border: 1px solid #dadce0;
-  border-radius: 4px;
-  padding: 10px 14px;
-  font-size: 14px;
+  padding: var(--r-3) var(--r-5) var(--r-3) var(--r-3);
+  font-size: var(--r-text-sm);
   font-weight: 500;
-  color: #3c4043;
+  color: var(--r-ink);
+  background: var(--r-paper);
+  border: 1px solid var(--r-rule-strong);
+  border-radius: var(--r-radius-sm);
   outline: none;
   cursor: pointer;
   appearance: none;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  transition: border-color 0.2s;
+  transition: border-color var(--r-fast) var(--r-ease);
 }
 
-.gf-type-select:hover {
-  background: #f8f9fa;
-}
-
+.gf-type-select:hover,
 .gf-type-select:focus {
-  border-color: #673ab7;
+  border-color: var(--r-emerald);
 }
 
-/* Quick Math Ribbon under Stem */
+/* ── Notation tray ───────────────────────────────────────────────────────── */
+
 .gf-math-ribbon {
   display: flex;
-  align-items: center;
-  gap: 6px;
   flex-wrap: wrap;
-  padding: 6px 10px;
-  background: #f8f9fa;
-  border-radius: 6px;
-  border: 1px solid #e8eaed;
+  gap: var(--r-2);
+  align-items: center;
+  padding: var(--r-2) var(--r-3);
+  background: var(--r-surface);
+  border: 1px solid var(--r-rule);
+  border-radius: var(--r-radius-sm);
 }
 
 .gf-math-ribbon-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: #5f6368;
+  margin-right: var(--r-1);
+  font-family: var(--r-font-mono);
+  font-size: var(--r-text-xs);
+  letter-spacing: 0.08em;
+  color: var(--r-ink-faint);
   text-transform: uppercase;
-  margin-right: 4px;
 }
 
 .gf-math-btn {
-  background: #ffffff;
-  border: 1px solid #dadce0;
-  border-radius: 4px;
-  padding: 2px 8px;
-  font-size: 12px;
-  font-family: monospace;
-  color: #3c4043;
+  padding: 3px var(--r-2);
+  font-family: var(--r-font-mono);
+  font-size: var(--r-text-xs);
+  color: var(--r-ink-muted);
+  background: var(--r-paper);
+  border: 1px solid var(--r-rule);
+  border-radius: var(--r-radius-sm);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: color var(--r-fast) var(--r-ease), border-color var(--r-fast) var(--r-ease);
 }
 
 .gf-math-btn:hover {
-  background: #ede7f6;
-  border-color: #673ab7;
-  color: #512da8;
+  color: var(--r-emerald);
+  border-color: var(--r-emerald);
 }
 
 .gf-katex-preview-box {
-  background: #f8f9fa;
-  border-left: 3px solid #673ab7;
-  padding: 8px 12px;
-  border-radius: 0 6px 6px 0;
-  font-size: 13px;
-  color: #202124;
+  padding: var(--r-2) var(--r-3);
+  font-size: var(--r-text-sm);
+  color: var(--r-ink);
+  background: var(--r-surface);
+  border-left: 3px solid var(--r-insight);
+  border-radius: 0 var(--r-radius-sm) var(--r-radius-sm) 0;
 }
 
-/* 5. Options Area */
+/* ── Options ──────────────────────────────────────────────────────────────── */
+
 .gf-options-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--r-2);
 }
 
 .gf-option-row {
   display: flex;
+  gap: var(--r-3);
   align-items: center;
-  gap: 12px;
-  padding: 4px 0;
+  padding: 2px 0;
 }
 
+/* The answer bubble, same instrument as the student sheet. */
 .gf-radio-indicator {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #5f6368;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  color: transparent;
   background: transparent;
-  transition: all 0.2s;
+  border: 2px solid var(--r-rule-strong);
+  border-radius: var(--r-radius-full);
+  cursor: pointer;
+  transition: border-color var(--r-fast) var(--r-ease), background var(--r-fast) var(--r-ease);
+}
+
+.gf-radio-indicator:hover {
+  border-color: var(--r-ink-muted);
 }
 
 .gf-radio-indicator.checked {
-  border-color: #137333;
-  background: #137333;
   color: #ffffff;
+  background: var(--r-right);
+  border-color: var(--r-right);
 }
 
 .gf-letter-badge {
-  font-size: 12px;
-  font-weight: 700;
-  width: 22px;
-  height: 22px;
-  background: #f1f3f4;
-  color: #3c4043;
-  border-radius: 4px;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  font-family: var(--r-font-mono);
+  font-size: var(--r-text-xs);
+  font-weight: 600;
+  color: var(--r-ink-muted);
+  background: var(--r-surface);
+  border: 1px solid var(--r-rule);
+  border-radius: var(--r-radius-sm);
 }
 
 .gf-letter-badge.correct {
-  background: #e6f4ea;
-  color: #137333;
+  color: var(--r-right);
+  background: var(--r-right-wash);
+  border-color: var(--r-right);
 }
 
 .gf-option-input {
   flex: 1;
+  min-width: 0;
+  padding: var(--r-2) 2px;
+  font-size: var(--r-text-sm);
+  color: var(--r-ink);
   background: transparent;
   border: none;
   border-bottom: 1px solid transparent;
-  padding: 6px 2px;
-  font-size: 14px;
-  color: #202124;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color var(--r-fast) var(--r-ease);
 }
 
 .gf-option-input:hover {
-  border-bottom-color: #dadce0;
+  border-bottom-color: var(--r-rule);
 }
 
 .gf-option-input:focus {
-  border-bottom-color: #673ab7;
-  border-bottom-width: 2px;
+  border-bottom-color: var(--r-emerald);
 }
 
 .gf-option-actions {
   display: flex;
+  gap: 2px;
   align-items: center;
-  gap: 4px;
 }
 
 .gf-opt-action-btn {
-  background: transparent;
-  border: none;
-  color: #70757a;
-  padding: 6px;
-  border-radius: 50%;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, color 0.2s;
+  padding: var(--r-2);
+  color: var(--r-ink-faint);
+  background: transparent;
+  border: none;
+  border-radius: var(--r-radius-full);
+  cursor: pointer;
+  transition: color var(--r-fast) var(--r-ease);
 }
 
 .gf-opt-action-btn:hover {
-  background: #f1f3f4;
-  color: #202124;
+  color: var(--r-ink);
 }
 
 .gf-opt-action-btn.delete:hover {
-  color: #d93025;
+  color: var(--r-wrong);
 }
 
 .gf-add-option-line {
   display: flex;
+  gap: var(--r-3);
   align-items: center;
-  gap: 12px;
-  padding: 6px 0;
-  color: #5f6368;
-  font-size: 14px;
+  padding: var(--r-1) 0;
+  font-size: var(--r-text-sm);
+  color: var(--r-ink-muted);
 }
 
 .gf-add-option-link {
-  color: #5f6368;
+  padding: var(--r-1) 0;
+  font-size: var(--r-text-sm);
+  font-weight: 600;
+  color: var(--r-emerald);
   background: none;
   border: none;
-  font-size: 14px;
   cursor: pointer;
-  padding: 4px 0;
-  transition: color 0.2s;
+  transition: color var(--r-fast) var(--r-ease);
 }
 
 .gf-add-option-link:hover {
-  color: #673ab7;
+  color: var(--r-emerald-press);
   text-decoration: underline;
 }
 
-/* 6. Google Forms Answer Key Drawer */
+/* ── Marking scheme ──────────────────────────────────────────────────────── */
+
 .gf-answer-key-footer {
-  border-top: 1px solid #dadce0;
-  padding-top: 14px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--r-3);
+  padding-top: var(--r-3);
+  border-top: 1px solid var(--r-rule);
 }
 
 .gf-answer-key-trigger {
-  color: #1a73e8;
+  display: flex;
+  gap: var(--r-2);
+  align-items: center;
+  width: fit-content;
+  min-height: 32px;
+  padding: 0;
+  font-family: var(--r-font-mono);
+  font-size: var(--r-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--r-emerald);
+  text-transform: uppercase;
   background: none;
   border: none;
-  font-size: 13px;
-  font-weight: 600;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 0;
-  width: fit-content;
 }
 
 .gf-answer-key-trigger:hover {
-  color: #174ea6;
+  color: var(--r-emerald-press);
 }
 
 .gf-answer-key-box {
-  background: #f0f8f4;
-  border: 1px solid #ceead6;
-  border-radius: 8px;
-  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--r-3);
+  padding: var(--r-4);
+  background: var(--r-right-wash);
+  border: 1px solid var(--r-right);
+  border-radius: var(--r-radius-sm);
 }
 
 .gf-ak-header {
   display: flex;
+  flex-wrap: wrap;
+  gap: var(--r-3);
   align-items: center;
   justify-content: space-between;
 }
 
 .gf-points-input-group {
   display: flex;
+  gap: var(--r-2);
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #137333;
+  font-family: var(--r-font-mono);
+  font-size: var(--r-text-xs);
+  letter-spacing: 0.04em;
+  color: var(--r-right);
+  text-transform: uppercase;
 }
 
 .gf-points-input {
-  width: 60px;
+  width: 62px;
+  padding: var(--r-1) var(--r-2);
+  font-family: var(--r-font-mono);
+  font-size: var(--r-text-sm);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--r-right);
   text-align: center;
-  padding: 4px 8px;
-  border: 1px solid #a8dab5;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 14px;
-  color: #137333;
-  background: #ffffff;
+  background: var(--r-paper);
+  border: 1px solid var(--r-right);
+  border-radius: var(--r-radius-sm);
   outline: none;
 }
 
 .gf-explanation-textarea {
   width: 100%;
-  background: #ffffff;
-  border: 1px solid #dadce0;
-  border-radius: 6px;
-  padding: 10px 12px;
-  font-size: 13px;
-  color: #202124;
+  padding: var(--r-3);
+  font-size: var(--r-text-sm);
+  line-height: 1.6;
+  color: var(--r-ink);
+  background: var(--r-paper);
+  border: 1px solid var(--r-rule);
+  border-radius: var(--r-radius-sm);
   outline: none;
   resize: vertical;
-  line-height: 1.5;
+  transition: border-color var(--r-fast) var(--r-ease);
 }
 
 .gf-explanation-textarea:focus {
-  border-color: #137333;
+  border-color: var(--r-right);
 }
 
-/* 7. Card Bottom Control Bar */
-.gf-card-bottom-bar {
-  border-top: 1px solid #dadce0;
-  padding-top: 12px;
+/* ── Item footer ─────────────────────────────────────────────────────────── */
+
+.gf-item-footer {
   display: flex;
+  flex-wrap: wrap;
+  gap: var(--r-3);
   align-items: center;
   justify-content: flex-end;
-  gap: 16px;
+  padding-top: var(--r-3);
+  border-top: 1px solid var(--r-rule);
 }
 
 .gf-footer-icon-btn {
-  background: transparent;
-  border: none;
-  color: #5f6368;
-  padding: 8px;
-  border-radius: 50%;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  padding: var(--r-2);
+  color: var(--r-ink-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--r-radius-full);
+  cursor: pointer;
+  transition: color var(--r-fast) var(--r-ease);
 }
 
 .gf-footer-icon-btn:hover {
-  background: #f1f3f4;
-  color: #202124;
+  color: var(--r-ink);
 }
 
 .gf-footer-icon-btn.delete:hover {
-  color: #d93025;
+  color: var(--r-wrong);
 }
 
 .gf-footer-divider {
-  height: 24px;
-  border-right: 1px solid #dadce0;
+  height: 22px;
+  border-right: 1px solid var(--r-rule);
 }
 
 .gf-required-toggle {
   display: flex;
+  gap: var(--r-2);
   align-items: center;
-  gap: 8px;
+  font-family: var(--r-font-mono);
+  font-size: var(--r-text-xs);
+  letter-spacing: 0.06em;
+  color: var(--r-ink-muted);
+  text-transform: uppercase;
   cursor: pointer;
-  font-size: 13px;
-  color: #5f6368;
-  font-weight: 500;
   user-select: none;
 }
 
-/* Google-Style Switch Toggle */
 .gf-switch {
   position: relative;
   display: inline-block;
+  flex-shrink: 0;
   width: 36px;
   height: 20px;
 }
 
 .gf-switch input {
-  opacity: 0;
   width: 0;
   height: 0;
+  opacity: 0;
 }
 
 .gf-slider {
   position: absolute;
+  inset: 0;
+  background: var(--r-rule-strong);
+  border-radius: var(--r-radius-full);
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #bdc1c6;
-  transition: 0.2s;
-  border-radius: 20px;
+  transition: background var(--r-fast) var(--r-ease);
 }
 
-.gf-slider:before {
+.gf-slider::before {
   position: absolute;
-  content: "";
-  height: 14px;
-  width: 14px;
-  left: 3px;
   bottom: 3px;
-  background-color: white;
-  transition: 0.2s;
-  border-radius: 50%;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  content: '';
+  background: var(--r-paper);
+  border-radius: var(--r-radius-full);
+  transition: transform var(--r-fast) var(--r-ease);
 }
 
 .gf-switch input:checked + .gf-slider {
-  background-color: #673ab7;
+  background: var(--r-emerald);
 }
 
-.gf-switch input:checked + .gf-slider:before {
+.gf-switch input:checked + .gf-slider::before {
   transform: translateX(16px);
 }
 
-/* 8. Google Forms Floating Dock (Right Toolbar) */
-.gf-floating-toolbar {
-  position: fixed;
-  right: calc(50% - 385px - 64px);
-  top: 180px;
-  background: #ffffff;
-  border: 1px solid #dadce0;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(60,64,67,0.15), 0 1px 3px rgba(60,64,67,0.3);
-  display: flex;
-  flex-direction: column;
-  padding: 4px;
-  gap: 4px;
-  z-index: 90;
+.gf-switch input:focus-visible + .gf-slider {
+  outline: 2px solid var(--r-emerald);
+  outline-offset: 3px;
 }
 
-@media (max-width: 960px) {
-  .gf-floating-toolbar {
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+/* ── Instrument tray ─────────────────────────────────────────────────────── */
+
+/* Centred rather than pinned near the top: the builder navbar is sticky with a
+   higher z-index, so any fixed top offset eventually slides under it. */
+.gf-floating-toolbar {
+  position: fixed;
+  top: 50%;
+  right: calc(50% - 385px - 64px);
+  transform: translateY(-50%);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--r-1);
+  background: var(--r-paper);
+  border: 1px solid var(--r-rule);
+  border-radius: var(--r-radius);
+  box-shadow: var(--r-shadow);
 }
 
 .gf-dock-btn {
-  background: transparent;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  color: #5f6368;
+  width: 40px;
+  height: 40px;
+  color: var(--r-ink-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--r-radius-sm);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color var(--r-fast) var(--r-ease), background var(--r-fast) var(--r-ease);
 }
 
 .gf-dock-btn:hover {
-  background: #f1f3f4;
-  color: #673ab7;
+  color: var(--r-emerald);
+  background: var(--r-emerald-wash);
 }
 
 .gf-dock-divider {
   height: 1px;
-  background: #e8eaed;
-  margin: 2px 4px;
+  margin: 2px var(--r-1);
+  background: var(--r-rule);
 }
 
-/* 9. Modal Dialogs */
+/* ── Dialogs ─────────────────────────────────────────────────────────────── */
+
 .gf-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: var(--r-4);
+  background: rgba(23, 28, 25, 0.72);
+  backdrop-filter: blur(6px);
 }
 
 .gf-modal-content {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 680px;
-  max-height: 85vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 680px;
+  max-height: 85dvh;
   overflow: hidden;
-  border: 1px solid #dadce0;
+  background: var(--r-paper);
+  border-radius: var(--r-radius-lg);
+  box-shadow: var(--r-shadow-lg);
 }
 
 .gf-modal-header {
-  padding: 18px 24px;
-  border-bottom: 1px solid #dadce0;
   display: flex;
+  flex-wrap: wrap;
+  gap: var(--r-3);
   align-items: center;
   justify-content: space-between;
+  padding: var(--r-4) var(--r-5);
+  border-bottom: 2px solid var(--r-ink);
 }
 
 .gf-modal-body {
-  padding: 20px 24px;
-  overflow-y: auto;
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--r-4);
+  padding: var(--r-5);
+  overflow-y: auto;
 }
 
 .gf-modal-footer {
-  padding: 14px 24px;
-  border-top: 1px solid #dadce0;
   display: flex;
+  flex-wrap: wrap;
+  gap: var(--r-3);
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
-  background: #f8f9fa;
+  padding: var(--r-3) var(--r-5);
+  background: var(--r-surface);
+  border-top: 1px solid var(--r-rule);
 }
 
-/* Toast message */
 .gf-toast {
   position: fixed;
-  bottom: 24px;
-  left: 24px;
-  background: #323232;
-  color: #ffffff;
-  padding: 12px 20px;
-  border-radius: 4px;
-  font-size: 14px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  bottom: var(--r-5);
+  left: var(--r-5);
   z-index: 1100;
-  animation: gf-slide-up 0.2s ease-out;
+  display: flex;
+  gap: var(--r-2);
+  align-items: center;
+  padding: var(--r-3) var(--r-4);
+  font-size: var(--r-text-sm);
+  color: var(--r-paper);
+  background: var(--r-ink);
+  border-radius: var(--r-radius-sm);
+  box-shadow: var(--r-shadow);
+  animation: gf-slide-up var(--r-base) var(--r-ease);
 }
 
 @keyframes gf-slide-up {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Match the site's theme while retaining the familiar builder layout. */
-html.dark .gf-page{background:var(--bg-color);color:var(--text-color)}
-html.dark :is(.gf-navbar,.gf-floating-toolbar,.gf-modal-footer,.gf-math-ribbon,.gf-katex-preview-box,.gf-answer-key-box){background:var(--card-bg);color:var(--text-color);border-color:var(--border-color)}
-html.dark :is(.gf-tab-btn,.gf-back-btn,.gf-icon-btn,.gf-save-badge,.gf-dock-btn,.gf-footer-icon-btn,.gf-required-toggle,.gf-math-ribbon-label){color:var(--text-light)}
-html.dark :is(.gf-tab-btn.active,.gf-answer-key-trigger,.gf-add-option-link){color:#c4b5fd;border-color:#a78bfa}
-html.dark :is(.gf-draft-btn,.gf-math-btn,.gf-letter-badge){background:#1e293b;color:#e2e8f0;border-color:#475569}
-html.dark .gf-letter-badge.correct{background:#064e3b;color:#a7f3d0}
-html.dark .gf-chip{background:#35264d;color:#e9d5ff}
-html.dark .gf-chip-amber{background:#422f17;color:#fde68a}
-html.dark .gf-chip-green{background:#123d30;color:#a7f3d0}
-html.dark :is(.gf-back-btn,.gf-icon-btn,.gf-dock-btn,.gf-footer-icon-btn):hover{background:#1e293b;color:#f8fafc}
-.gf-navbar{flex-wrap:wrap;gap:12px}.gf-nav-left,.gf-nav-right{min-width:0;flex-wrap:wrap}.gf-title-header-input{max-width:min(380px,50vw)}
-@media(max-width:800px){.gf-navbar{position:relative;padding:12px}.gf-nav-left{flex:1 1 100%}.gf-nav-tabs{gap:12px}.gf-nav-right{gap:8px}.gf-nav-right button{padding:8px 12px}.gf-floating-toolbar{position:sticky;bottom:12px;left:auto;right:auto;top:auto;transform:none;flex-direction:row;flex-wrap:wrap;width:max-content;max-width:95%;margin:0 auto 1rem}.gf-title-card,.gf-question-card{padding:18px}.gf-q-header-row{flex-wrap:wrap}.gf-main-title-input{font-size:22px}}
+/* ── Narrow screens ─────────────────────────────────────────────────────── */
 
-html.dark .gf-page{--builder-accent:#c4b5fd}
-@media(max-width:700px){
-  .gf-nav-left{flex-wrap:nowrap!important;gap:8px}
-  .gf-nav-left .gf-form-icon{display:none}
-  .gf-nav-left>div:last-child{flex:1;min-width:0}
-  .gf-title-header-input{width:100%;min-width:0}
-  .gf-nav-right{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-  .gf-nav-right button{justify-content:center;min-width:0;max-width:100%;white-space:normal}
-  .gf-nav-right button[title="Settings & Anti-Cheating"]{display:none}
-  .gf-nav-right button:last-child{grid-column:span 2}
-  .gf-dock-btn,.gf-footer-icon-btn,.gf-opt-action-btn,.gf-icon-btn{min-width:44px;min-height:44px}
-  .gf-main-container{padding-left:8px;padding-right:8px}
-  .gf-q-header-row>*{min-width:0;max-width:100%}
+@media (max-width: 960px) {
+  .gf-floating-toolbar {
+    right: var(--r-3);
+  }
 }
-@media(max-width:700px){
-  .gf-nav-right button{padding:8px 4px!important;font-size:12px;gap:4px!important}
-  .gf-nav-left>div:last-child>div>span{flex-shrink:0;white-space:nowrap}
-  .gf-floating-toolbar{gap:2px;max-width:100%;padding:4px}
-  .gf-dock-btn{margin:0;width:44px;flex-shrink:0}
+
+@media (max-width: 800px) {
+  .gf-navbar {
+    position: relative;
+    padding: var(--r-3);
+  }
+  .gf-nav-left {
+    flex: 1 1 100%;
+  }
+  .gf-nav-tabs {
+    gap: var(--r-3);
+  }
+  .gf-floating-toolbar {
+    position: sticky;
+    top: auto;
+    right: auto;
+    bottom: var(--r-3);
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: max-content;
+    max-width: 95%;
+    margin: 0 auto var(--r-4);
+    transform: none;
+  }
+  .gf-title-sheet,
+  .gf-item-sheet {
+    padding: var(--r-4);
+  }
+  .gf-main-title-input {
+    font-size: var(--r-text-xl);
+  }
+  .gf-type-dropdown-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .gf-blank-ways {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .gf-blank-sheet {
+    padding: var(--r-5) var(--r-4);
+  }
+  .gf-nav-left {
+    flex-wrap: nowrap;
+    gap: var(--r-2);
+  }
+  .gf-nav-left .gf-form-icon {
+    display: none;
+  }
+  .gf-nav-left > div:last-child {
+    flex: 1;
+    min-width: 0;
+  }
+  .gf-title-header-input {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+  .gf-nav-right {
+    flex: 1 1 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--r-2);
+  }
+  .gf-nav-right button {
+    justify-content: center;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0 var(--r-2);
+    font-size: var(--r-text-xs);
+    white-space: normal;
+  }
+  .gf-nav-right .gf-icon-btn {
+    min-width: 44px;
+    width: 44px;
+  }
+  .gf-nav-right button:last-child {
+    grid-column: span 2;
+  }
+  .gf-dock-btn,
+  .gf-footer-icon-btn,
+  .gf-opt-action-btn,
+  .gf-icon-btn,
+  .gf-back-btn,
+  .gf-draft-btn,
+  .gf-publish-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .gf-main-container {
+    padding: 0 var(--r-2);
+  }
+  .gf-item-footer,
+  .gf-modal-header,
+  .gf-modal-footer {
+    flex-wrap: wrap;
+    gap: var(--r-2);
+  }
 }
