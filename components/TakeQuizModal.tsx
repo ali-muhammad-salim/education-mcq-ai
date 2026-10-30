@@ -28,6 +28,7 @@ import {
   type OfflineDiagramProgress,
 } from '@/lib/exam-cache';
 import {
+  MIN_PERCENTILE_ATTEMPTS,
   getBaselineQuestionTelemetry,
   computeCompositeIndex,
   classifySpeedAccuracyQuadrant,
@@ -158,7 +159,7 @@ export default function TakeQuizModal({
   const [selectedHistoryAttempt, setSelectedHistoryAttempt] = useState<AttemptHistoryEntry | null>(null);
 
   // Community Telemetry, Percentile & Live Leaderboard State
-  const [paperAnalytics, setPaperAnalytics] = useState<PaperAnalyticsPayload | null>(null);
+  const [paperAnalytics] = useState<PaperAnalyticsPayload | null>(null);
   const [leaderboardTab, setLeaderboardTab] = useState<'first' | 'best'>('first');
   const [activeResultTab, setActiveResultTab] = useState<'review' | 'leaderboard' | 'chapters'>('review');
 
@@ -203,15 +204,7 @@ export default function TakeQuizModal({
       if (active) setAttemptHistory(list);
     });
 
-    // 2. Fetch community per-question timings & leaderboard
-    void fetch('/api/quizzes/' + encodeURIComponent(paperCode) + '/analytics')
-      .then(r => r.json())
-      .then(data => {
-        if (active && data?.analytics) setPaperAnalytics(data.analytics);
-      })
-      .catch(() => undefined);
-
-    // 3. Check if an unfinished in-progress attempt exists in IndexedDB or server
+    // 2. Check if an unfinished in-progress attempt exists in IndexedDB or server
     void (async () => {
       const owner = typeof window !== 'undefined' ? sessionStorage.getItem('exam-user') || '' : '';
       if (owner) {
@@ -629,6 +622,14 @@ export default function TakeQuizModal({
     setShowFinishConfirmModal(false);
     setSubmitting(true);
 
+    // Teacher-created quizzes require authoritative grading and release settings.
+    if (questions.length === 0 && !isRetrySubsetMode && engine.exam) {
+      const { quizId, id: attemptId } = engine.exam;
+      await engine.submit(automatic || engine.remaining <= 0);
+      window.location.assign(`/quizzes/${encodeURIComponent(quizId)}/results?attemptId=${encodeURIComponent(attemptId)}`);
+      return;
+    }
+
     // 1. Decrypt all questions locally in <1ms so we can show both Attempted Score and Total Score in 0ms!
     const totalQuestions = activeQuestions.length || 40;
     let attemptedCount = 0;
@@ -762,23 +763,9 @@ export default function TakeQuizModal({
       peerAvgTimePerQuestionSec
     );
 
-    // Estimate initial percentile before server response
-    const estPercentile = Math.max(
-      5,
-      Math.min(99.8, Number((overallPercentage * 0.85 + (attemptedAccuracyPct * 0.14)).toFixed(1)))
-    );
-    const estSpeedPercentile = Math.max(
-      8,
-      Math.min(
-        99.5,
-        Number(
-          (
-            (1 - Math.min(1.6, avgTimePerAttemptedSec / Math.max(15, peerAvgTimePerQuestionSec * 1.6))) *
-            98
-          ).toFixed(1)
-        )
-      )
-    );
+    // Peer percentiles require graded attempts from the server.
+    const estPercentile = 0;
+    const estSpeedPercentile = 0;
 
     const chapterStats = Array.from(topicMap.values()).map(cs => ({
       ...cs,
@@ -860,7 +847,7 @@ export default function TakeQuizModal({
         unattemptedCount > 0
           ? `Quiz finished after ${attemptedCount} of ${totalQuestions} questions. You scored ${correctCount}/${attemptedCount} (${attemptedAccuracyPct}% accuracy) on the questions you attempted!`
           : overallPercentage >= 80
-            ? 'Outstanding performance! Your accuracy and speed place you in the top tier.'
+            ? 'Outstanding performance! Review your answers and keep practicing.'
             : 'Assessment completed. Review your per-question time and explanations below.',
     });
     setReviewFilter(unattemptedCount > 0 && attemptedCount > 0 ? 'attempted' : 'all');
@@ -873,50 +860,27 @@ export default function TakeQuizModal({
     const updatedHistory = await saveAttemptHistory(paperCode, attemptEntry);
     setAttemptHistory(updatedHistory);
 
-    // Post per-question timing & score to Analytics/Leaderboard endpoint in background
-    void fetch('/api/quizzes/' + encodeURIComponent(paperCode) + '/analytics', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        studentId: student?.id || engine.exam?.studentId || 'local-candidate',
-        studentName: student?.name || 'You (Candidate)',
-        attemptNumber,
-        score: totalScore,
-        totalMarks,
-        attemptedCount,
-        totalTimeSec,
-        questionTimings: reviewedQuestions
-          .filter(rq => rq.isAttempted)
-          .map(rq => ({
-            questionNumber: rq.originalQuestionNumber || rq.displayNumber,
-            timeSpentSec: rq.timeSpentSec,
-            selectedOption: rq.selectedOption,
-            isCorrect: rq.isCorrect,
-          })),
-      }),
-    })
-      .then(r => r.json())
-      .then(data => {
-        if (data?.success && data.analytics) {
-          setPaperAnalytics(data.analytics);
-          setCompletionData((prev: any) =>
-            prev
-              ? {
-                  ...prev,
-                  percentile: data.percentile ?? prev.percentile,
-                  speedPercentile: data.speedPercentile ?? prev.speedPercentile,
-                  userRank: data.userRank,
-                  quadrantLabel: data.quadrantLabel ?? prev.quadrantLabel,
-                }
-              : prev
-          );
-        }
-      })
-      .catch(() => undefined);
-
-    // Sync final submission to backend assessment engine in background
-    if (!isRetrySubsetMode) {
-      void engine.submit(automatic || engine.remaining <= 0);
+    // Only the server-graded attempt can supply a peer percentile.
+    if (!isRetrySubsetMode && engine.exam) {
+      const { quizId, id: attemptId } = engine.exam;
+      await engine.submit(automatic || engine.remaining <= 0);
+      for (let poll = 0; poll < 5; poll++) {
+        try {
+          const response = await fetch(`/api/quizzes/${encodeURIComponent(quizId)}/analytics?attemptId=${encodeURIComponent(attemptId)}`);
+          if (response.status === 202) {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            continue;
+          }
+          if (!response.ok) break;
+          const data = await response.json();
+          if (data.success) {
+            setCompletionData((prev: any) => prev ? { ...prev, percentile: data.percentile, verifiedSampleSize: data.sampleSize } : prev);
+            const history = await saveAttemptHistory(paperCode, { ...attemptEntry, percentile: data.percentile ?? 0, verifiedSampleSize: data.sampleSize });
+            setAttemptHistory(history);
+          }
+          break;
+        } catch { break; }
+      }
     }
   };
 
@@ -1391,7 +1355,7 @@ export default function TakeQuizModal({
                                 : `${att.score}/${att.totalMarks} (${att.overallPercentage}%)`}
                             </span>
                             <span className={styles.meta} style={{ display: 'block' }}>
-                              {formatDurationShort(att.totalTimeSec)} · {att.percentile}th %ile
+                              {formatDurationShort(att.totalTimeSec)}{(att.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS ? ` · ${att.percentile}th %ile` : ''}
                             </span>
                           </span>
                         </button>
@@ -1429,6 +1393,7 @@ export default function TakeQuizModal({
                               peerAvgTimePerQuestionSec: selectedHistoryAttempt.peerAvgTimePerQuestionSec,
                               compositeIndex: selectedHistoryAttempt.compositeIndex,
                               percentile: selectedHistoryAttempt.percentile,
+                              verifiedSampleSize: selectedHistoryAttempt.verifiedSampleSize,
                               speedPercentile: selectedHistoryAttempt.speedPercentile,
                               quadrantLabel: selectedHistoryAttempt.quadrantLabel,
                               attemptNumber: selectedHistoryAttempt.attemptNumber,
@@ -1467,15 +1432,15 @@ export default function TakeQuizModal({
                         <div className={styles.stat}>
                           <span className={styles.label}>Avg time / Q</span>
                           <div className={styles.statValue}>
-                            {selectedHistoryAttempt.avgTimePerAttemptedSec}s <span className={styles.meta}>(peer {selectedHistoryAttempt.peerAvgTimePerQuestionSec}s)</span>
+                            {selectedHistoryAttempt.avgTimePerAttemptedSec}s{selectedHistoryAttempt.peerAvgTimePerQuestionSec > 0 && <span className={styles.meta}> (peer {selectedHistoryAttempt.peerAvgTimePerQuestionSec}s)</span>}
                           </div>
                         </div>
-                        <div className={styles.stat}>
+                        {(selectedHistoryAttempt.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS && <div className={styles.stat}>
                           <span className={styles.label}>Percentile</span>
                           <div className={`${styles.statValue} ${styles.statValueRight}`}>
                             {selectedHistoryAttempt.percentile}th
                           </div>
-                        </div>
+                        </div>}
                       </div>
                     </div>
                   )}
@@ -1514,7 +1479,7 @@ export default function TakeQuizModal({
                       <span>Timed examination</span>
                     </span>
                     <p className={styles.modeNote}>
-                      Official countdown, and your score counts on the leaderboard.
+                      Official exam countdown timer.
                     </p>
                   </button>
 
@@ -1572,9 +1537,8 @@ export default function TakeQuizModal({
                   )}
                 </div>
                 <p className={styles.noticeBody}>
-                  Questions and diagrams are cached in your browser, so losing connection will not
-                  end your attempt. Tap an option to see the answer, the explanation and how your
-                  peers answered. Press <kbd>A</kbd>–<kbd>D</kbd> to answer, <kbd>←</kbd> and{' '}
+                  Your answers are saved on this device while they sync. Explanations appear when
+                  the quiz settings allow them. Press <kbd>A</kbd>–<kbd>D</kbd> to answer, <kbd>←</kbd> and{' '}
                   <kbd>→</kbd> to move, <kbd>F</kbd> to flag.
                 </p>
               </div>
@@ -1681,7 +1645,7 @@ export default function TakeQuizModal({
                   </span>
                   <h2 className={styles.barTitle}>
                     <span>Question {currentQ.displayNumber}</span>
-                    {currentQTelemetry && (
+                    {currentQTelemetry && currentQTelemetry.peerAvgTimeSec > 0 && (
                       <span
                         className={`${styles.timePill}${currentQTimeSec > currentQTelemetry.peerAvgTimeSec * 1.25 ? ` ${styles.timePillSlow}` : ''}`}
                       >
@@ -1895,8 +1859,8 @@ export default function TakeQuizModal({
                         ? Boolean(optionId && engine.exam?.answers[currentQ.id]?.payload.selectedOptionIds?.includes(optionId))
                         : currentSelected === key;
                     const isRightAnswer = currentQ.correctOption === key;
-                    const peerPct = currentQTelemetry?.optionDistribution?.[key] ?? 25;
-                    const isPeerTrap = isAnswered && !isRightAnswer && peerPct >= 18;
+                    const peerPct = currentQTelemetry?.optionDistribution?.[key] ?? 0;
+                    const isPeerTrap = Boolean(paperAnalytics?.questionStats) && isAnswered && !isRightAnswer && peerPct >= 18;
 
                     let tone = '';
                     if (isAnswered) {
@@ -1920,7 +1884,7 @@ export default function TakeQuizModal({
                         </span>
 
                         {/* Peer Popularity Percentage Pill on Reveal */}
-                        {isAnswered && (
+                        {isAnswered && Boolean(paperAnalytics?.questionStats) && (
                           <span
                             className={`${styles.peer}${isRightAnswer ? ` ${styles.peerRight}` : isPeerTrap ? ` ${styles.peerTrap}` : ''}`}
                           >
@@ -1949,7 +1913,7 @@ export default function TakeQuizModal({
                       </span>
 
                       {/* Per-Question Time vs Peer Average Pill */}
-                      {currentQTelemetry && (
+                      {currentQTelemetry && currentQTelemetry.peerAvgTimeSec > 0 && (
                         <span className={styles.timePill}>
                           {currentQTimeSec}s · peer {currentQTelemetry.peerAvgTimeSec}s{' '}
                           {currentQTimeSec <= currentQTelemetry.peerAvgTimeSec
@@ -2096,20 +2060,15 @@ export default function TakeQuizModal({
                     </p>
                   </div>
 
-                  {/* Plate 3: Score + Speed Percentile & Pace Coaching Quadrant */}
-                  <div className={`${styles.plate} ${styles.plateRank}`}>
-                    <span className={styles.label}>Score + speed percentile</span>
+                  {(completionData.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS && completionData.percentile !== null && <div className={`${styles.plate} ${styles.plateRank}`}>
+                    <span className={styles.label}>Score percentile</span>
                     <div className={styles.plateValue}>
-                      {completionData.percentile ?? 92.4}
-                      <span className={styles.plateUnit}>
-                        th %ile{completionData.userRank ? ` · rank #${completionData.userRank}` : ''}
-                      </span>
+                      {completionData.percentile}<span className={styles.plateUnit}>th %ile</span>
                     </div>
                     <p className={styles.plateNote}>
-                      {completionData.quadrantLabel || 'Fast and accurate'} · {completionData.avgTimePerAttemptedSec || 25}s per
-                      question vs peers at {completionData.peerAvgTimePerQuestionSec || 38}s
+                      Based on {completionData.verifiedSampleSize} graded first attempts
                     </p>
-                  </div>
+                  </div>}
                 </div>
 
                 <p className={styles.verdict}>{completionData.dynamicMessage}</p>
@@ -2145,6 +2104,7 @@ export default function TakeQuizModal({
                               avgTimePerAttemptedSec: att.avgTimePerAttemptedSec,
                               peerAvgTimePerQuestionSec: att.peerAvgTimePerQuestionSec,
                               percentile: att.percentile,
+                              verifiedSampleSize: att.verifiedSampleSize,
                               speedPercentile: att.speedPercentile,
                               quadrantLabel: att.quadrantLabel,
                               attemptNumber: att.attemptNumber,
@@ -2160,7 +2120,7 @@ export default function TakeQuizModal({
                           <span className={styles.attemptNum}>#{att.attemptNumber}</span>
                           <span className={styles.attemptScore}>
                             {att.correctCount}/{att.attemptedCount} attempted ({att.attemptedAccuracyPct}%) · {att.score}/
-                            {att.totalMarks} total · {att.percentile}%ile
+                            {att.totalMarks} total{(att.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS ? ` · ${att.percentile}%ile` : ''}
                           </span>
                         </button>
                       );
@@ -2180,7 +2140,7 @@ export default function TakeQuizModal({
                   >
                     Question review ({(completionData.reviewedQuestions || activeQuestions).length})
                   </button>
-                  <button
+                  {Boolean(paperAnalytics?.firstAttemptLeaderboard?.length || paperAnalytics?.bestScoreLeaderboard?.length) && <button
                     type="button"
                     onClick={() => setActiveResultTab('leaderboard')}
                     aria-pressed={activeResultTab === 'leaderboard'}
@@ -2188,7 +2148,7 @@ export default function TakeQuizModal({
                   >
                     <Trophy size={15} aria-hidden="true" />
                     <span>Leaderboard</span>
-                  </button>
+                  </button>}
                   <button
                     type="button"
                     onClick={() => setActiveResultTab('chapters')}
@@ -2216,7 +2176,7 @@ export default function TakeQuizModal({
               </div>
 
               {/* TAB 2: LIVE PAPER LEADERBOARD (1st Attempt Official vs All-Time Best) */}
-              {activeResultTab === 'leaderboard' && (
+              {activeResultTab === 'leaderboard' && Boolean(paperAnalytics?.firstAttemptLeaderboard?.length || paperAnalytics?.bestScoreLeaderboard?.length) && (
                 <div className={styles.board}>
                   <div className={styles.boardHead}>
                     <div>
@@ -2268,7 +2228,7 @@ export default function TakeQuizModal({
                         ).length === 0 && (
                           <tr>
                             <td colSpan={7} className={styles.tableEmpty}>
-                              No submitted attempts yet — finish this paper to appear on the leaderboard.
+                              No verified leaderboard data is available.
                             </td>
                           </tr>
                         )}
@@ -2397,7 +2357,7 @@ export default function TakeQuizModal({
 
                               {/* Per-Question Time vs Community Average Badge */}
                               <span className={styles.entryTime}>
-                                You {item.timeSpentSec ?? 0}s · peers {item.peerAvgTimeSec ?? 38}s
+                                You {item.timeSpentSec ?? 0}s{item.peerAvgTimeSec > 0 && ` · peers ${item.peerAvgTimeSec}s`}
                               </span>
                             </div>
 

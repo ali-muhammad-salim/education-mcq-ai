@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BookOpen, GraduationCap, UploadCloud, ShieldCheck, ArrowRight, Mail } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import NavProgress from '@/components/rise/NavProgress';
 
 export const metadata: Metadata = {
   title: 'Rise Learner | AKU-EB Learning Portal | Past Papers, Syllabus & E-Books',
@@ -41,6 +42,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <div className="app-layout">
+          <NavProgress />
           
           {/* Global Multi-Board & Subject Navigation */}
           <a href="#main-content" className="skip-link">Skip to content</a>

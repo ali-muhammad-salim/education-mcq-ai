@@ -1,25 +1,151 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { 
-  Award, BookOpen, Clock, CheckCircle2, AlertCircle, ArrowRight, 
-  RotateCcw, Sparkles, Plus, Users, ShieldAlert, FileText, ChevronRight, LogIn,
-  GraduationCap, TrendingUp, CheckSquare, Compass, LogOut
+import {
+  AlertCircle, ArrowRight, Award, BarChart3, BookOpen, ChevronRight, Clock, Flame,
+  GraduationCap, Layers, ListChecks, LogIn, LogOut, ShieldAlert, Sparkles, Target,
+  TrendingUp, Users,
 } from 'lucide-react';
 import { clearExamCache } from '@/lib/exam-cache';
 import AuthModal from '@/components/AuthModal';
+import styles from './dashboard.module.css';
+
+type Tab = 'available' | 'results' | 'progress';
+
+type AvailableQuiz = {
+  id: string;
+  code: string | null;
+  title: string;
+  totalMarks: number;
+  durationMin: number;
+  questionCount: number;
+  teacherName: string;
+};
+
+type CompletedAttempt = {
+  attemptId: string;
+  quizId: string;
+  title: string;
+  released: boolean;
+  status: string;
+  score: number | null;
+  maxMarks: number;
+  percentage: number | null;
+  submittedAt: string | null;
+  tabSwitchCount: number;
+};
+
+type TopicRow = {
+  topic: string;
+  earned: number;
+  possible: number;
+  questions: number;
+  missed: number;
+  percent: number;
+};
+
+type TrendPoint = { at: string | null; percent: number; title: string };
+
+type ArchiveSubject = {
+  name: string;
+  slug: string;
+  description: string;
+  papersCount: number;
+  sloCount: number;
+};
+
+type Dashboard = {
+  isGuest?: boolean;
+  page?: number;
+  hasMore?: boolean;
+  student?: { id: string; name: string; email: string; role: string };
+  metrics?: {
+    totalAttempts: number;
+    inProgressCount: number;
+    avgPercentage: number;
+    totalQuizzesAvailable: number;
+    streakDays: number;
+  };
+  classrooms?: { id: string; name: string }[];
+  completedAttempts?: CompletedAttempt[];
+  inProgressAttempts?: { attemptId: string; quizId: string; title: string; deadline: string; remainingSec: number }[];
+  availableQuizzes?: AvailableQuiz[];
+  topics?: TopicRow[];
+  unmappedTopics?: number;
+  trend?: TrendPoint[];
+  archives?: { boardId: string; classRoman: string; subjects: ArchiveSubject[] };
+};
+
+function formatDate(value: string | null) {
+  if (!value) return '—';
+  const date = new Date(value);
+  return Number.isNaN(date.getTime())
+    ? '—'
+    : date.toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function formatMarks(value: number) {
+  return Math.round(value * 10) / 10;
+}
+
+function Sparkline({ points }: { points: TrendPoint[] }) {
+  const width = 320;
+  const height = 104;
+  const pad = 12;
+  const x = (index: number) => (points.length === 1 ? width / 2 : pad + (index * (width - pad * 2)) / (points.length - 1));
+  const y = (percent: number) => height - pad - (Math.max(0, Math.min(100, percent)) / 100) * (height - pad * 2);
+  const line = points.map((point, index) => `${x(index)},${y(point.percent)}`).join(' ');
+  const area = `${pad},${height - pad} ${line} ${width - pad},${height - pad}`;
+  return (
+    <svg
+      className={styles.trendSvg}
+      viewBox={`0 0 ${width} ${height}`}
+      role="img"
+      aria-label={`Score trend, oldest to latest: ${points.map((point) => `${point.percent} percent`).join(', ')}`}
+    >
+      <line
+        x1={pad}
+        y1={y(50)}
+        x2={width - pad}
+        y2={y(50)}
+        stroke="var(--r-rule-strong)"
+        strokeDasharray="4 4"
+        strokeWidth="1"
+      />
+      <polygon points={area} fill="var(--r-emerald-wash)" />
+      <polyline
+        points={line}
+        fill="none"
+        stroke="var(--r-emerald)"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      {points.map((point, index) => (
+        <circle
+          key={`${point.at ?? 'point'}-${index}`}
+          cx={x(index)}
+          cy={y(point.percent)}
+          r="3.5"
+          fill="var(--r-surface)"
+          stroke="var(--r-emerald)"
+          strokeWidth="2"
+        />
+      ))}
+    </svg>
+  );
+}
 
 export default function StudentDashboardPage() {
   const [page, setPage] = useState(1);
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<Dashboard | null>(null);
   const [loadError, setLoadError] = useState('');
   const [loading, setLoading] = useState(true);
   const [isTeacherBlocked, setIsTeacherBlocked] = useState(false);
-  const [activeTab, setActiveTab] = useState<'available' | 'history' | 'subjects'>('available');
+  const [activeTab, setActiveTab] = useState<Tab>('available');
   const [authModalOpen, setAuthModalOpen] = useState(false);
 
-  // Join Classroom Modal
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
   const [joinCode, setJoinCode] = useState('');
   const [joinMessage, setJoinMessage] = useState<string | null>(null);
@@ -31,27 +157,32 @@ export default function StudentDashboardPage() {
 
   async function fetchDashboard() {
     try {
-      setLoading(true); setLoadError('');
+      setLoading(true);
+      setLoadError('');
       const res = await fetch('/api/dashboard/student?page=' + page);
       const json = await res.json();
       if (!res.ok) {
-        if (res.status === 401) { setData({ isGuest: true }); return; }
-        if (res.status === 403) { setIsTeacherBlocked(true); setTimeout(() => window.location.replace('/dashboard/teacher'), 1200); return; }
+        if (res.status === 401) {
+          setData({ isGuest: true });
+          return;
+        }
+        if (res.status === 403) {
+          setIsTeacherBlocked(true);
+          setTimeout(() => window.location.replace('/dashboard/teacher'), 1200);
+          return;
+        }
         throw new Error(typeof json.error === 'string' ? json.error : json.error?.message || 'Unable to load dashboard.');
       }
-      
-      // If user is a TEACHER or ADMIN, student dashboard is unavailable!
+
+      // Students are the only role this endpoint serves; a teacher or admin is
+      // sent on to the portal that actually holds their work.
       if (!json.success && json.redirect) {
         setIsTeacherBlocked(true);
-        setTimeout(() => {
-          window.location.replace(json.redirect);
-        }, 1200);
+        setTimeout(() => window.location.replace(json.redirect), 1200);
         return;
       }
 
-      if (json.success) {
-        setData(json);
-      }
+      if (json.success) setData(json);
     } catch (err) {
       setLoadError(err instanceof Error ? err.message : 'Unable to load dashboard.');
       console.error('Failed to load student dashboard:', err);
@@ -60,7 +191,7 @@ export default function StudentDashboardPage() {
     }
   }
 
-  const handleLogout = async () => {
+  async function handleLogout() {
     try {
       await clearExamCache().catch(() => undefined);
       await fetch('/api/auth/logout', { method: 'POST' });
@@ -68,14 +199,14 @@ export default function StudentDashboardPage() {
     } catch {
       window.location.reload();
     }
-  };
+  }
 
-  const handleJoinClassroom = async (e: React.FormEvent) => {
-    e.preventDefault();
+  async function handleJoinClassroom(event: React.FormEvent) {
+    event.preventDefault();
     if (!joinCode.trim()) return;
 
     if (data?.isGuest) {
-      setJoinMessage('Please sign in or register as a student to enroll in teacher classrooms.');
+      setJoinMessage('Sign in or register as a student to enroll in teacher classrooms.');
       setTimeout(() => {
         setIsJoinModalOpen(false);
         setAuthModalOpen(true);
@@ -89,7 +220,7 @@ export default function StudentDashboardPage() {
       const res = await fetch('/api/classrooms/join', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ code: joinCode })
+        body: JSON.stringify({ code: joinCode }),
       });
       const json = await res.json();
       if (json.success) {
@@ -108,851 +239,391 @@ export default function StudentDashboardPage() {
     } finally {
       setIsJoining(false);
     }
-  };
+  }
 
-  if (loadError && !loading) return <main className="dashboard-error" style={{ padding: '3rem', textAlign: 'center' }}><h2>Unable to load your dashboard</h2><p role="alert">{loadError}</p><button className="btn" onClick={fetchDashboard}>Retry</button></main>;
-
-  // 1. TEACHER BLOCKED GUARD SCREEN
-  if (isTeacherBlocked) {
+  if (loadError && !loading) {
     return (
-      <div style={{
-        minHeight: '100vh',
-        backgroundColor: 'var(--bg-color, #f4f7f6)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '2rem',
-        fontFamily: "'Inter', sans-serif"
-      }}>
-        <div style={{
-          maxWidth: '520px',
-          width: '100%',
-          backgroundColor: 'var(--card-bg, #ffffff)',
-          border: '1.5px solid rgba(245, 158, 11, 0.4)',
-          borderRadius: '24px',
-          padding: '2.5rem',
-          textAlign: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '1.25rem',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
-        }}>
-          <div style={{
-            width: '68px',
-            height: '68px',
-            borderRadius: '20px',
-            backgroundColor: '#fef3c7',
-            color: '#d97706',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-            <ShieldAlert size={36} />
-          </div>
-          <h2 style={{ fontSize: '1.35rem', fontWeight: 900, color: 'var(--text-color, #2c3e38)', margin: 0 }}>
-            Teacher Account Detected
-          </h2>
-          <p style={{ fontSize: '0.9rem', color: 'var(--text-light, #5a7a6f)', margin: 0, lineHeight: 1.6 }}>
-            The <strong>Student Learning Portal</strong> is reserved for students. As a verified teacher, your assessment builder, student gradebook, and classroom rosters are located in the <strong>Teacher Assessment Portal</strong>.
-          </p>
-          <div style={{
-            fontSize: '0.8rem',
-            color: '#b45309',
-            backgroundColor: '#fffbeb',
-            padding: '0.6rem 1rem',
-            borderRadius: '10px',
-            fontWeight: 600,
-            width: '100%'
-          }}>
-            Redirecting to Teacher Dashboard automatically...
-          </div>
-          <Link
-            href="/dashboard/teacher"
-            style={{
-              width: '100%',
-              padding: '0.85rem',
-              borderRadius: '12px',
-              fontSize: '0.88rem',
-              fontWeight: 800,
-              backgroundColor: '#0b5e4a',
-              color: '#ffffff',
-              textDecoration: 'none',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '0.5rem',
-              boxShadow: '0 4px 10px rgba(11, 94, 74, 0.25)'
-            }}
-          >
-            <span>Go to Teacher Dashboard Now</span>
-            <ArrowRight size={16} />
-          </Link>
+      <div className="rise-ui">
+        <div className={styles.stateWrap}>
+          <AlertCircle size={32} color="var(--r-wrong)" aria-hidden />
+          <h1>We could not open your desk</h1>
+          <p role="alert" className={styles.stateText}>{loadError}</p>
+          <button type="button" className={styles.pagerButton} onClick={fetchDashboard}>
+            Try again
+          </button>
         </div>
       </div>
     );
   }
 
-  // 2. LOADING STATE
-  if (loading) {
+  if (isTeacherBlocked) {
     return (
-      <div style={{
-        minHeight: '100vh',
-        backgroundColor: 'var(--bg-color, #f4f7f6)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '1rem',
-        color: 'var(--text-light, #5a7a6f)',
-        fontFamily: "'Inter', sans-serif"
-      }}>
-        <div style={{
-          width: '44px',
-          height: '44px',
-          borderRadius: '50%',
-          border: '4px solid rgba(11, 94, 74, 0.15)',
-          borderTopColor: '#0b5e4a',
-          animation: 'spin 0.8s linear infinite'
-        }} />
-        <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Loading Student Examination Dashboard...</span>
-        <style>{`
-          @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-          }
-        `}</style>
+      <div className="rise-ui">
+        <div className={styles.guard}>
+          <div className={styles.guardPanel}>
+            <div className={styles.guardIcon}>
+              <ShieldAlert size={26} aria-hidden />
+            </div>
+            <h1 className={styles.guardTitle}>Teacher account detected</h1>
+            <p className={styles.guardNote}>
+              The student portal is reserved for students. Your assessment builder, gradebook and
+              classroom rosters live in the teacher portal.
+            </p>
+            <div className={styles.guardNotice}>Redirecting to the teacher desk…</div>
+            <Link href="/dashboard/teacher" className={styles.guardAction}>
+              <GraduationCap size={16} aria-hidden />
+              Open teacher dashboard
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }
 
-  const metrics = data?.metrics || {
+  if (loading) {
+    return (
+      <div className="rise-ui">
+        <div className={styles.stateWrap}>
+          <div className={styles.spinner} aria-hidden />
+          <p className={styles.stateText}>Loading your examination desk…</p>
+        </div>
+      </div>
+    );
+  }
+
+  const metrics = data?.metrics ?? {
     totalAttempts: 0,
     inProgressCount: 0,
     avgPercentage: 0,
-    totalQuizzesAvailable: 0
+    totalQuizzesAvailable: 0,
+    streakDays: 0,
   };
+  const inProgress = data?.inProgressAttempts ?? [];
+  const available = data?.availableQuizzes ?? [];
+  const completed = data?.completedAttempts ?? [];
+  const classrooms = data?.classrooms ?? [];
+  const topics = data?.topics ?? [];
+  const trend = data?.trend ?? [];
+  const archives = data?.archives;
+  const isGuest = Boolean(data?.isGuest);
+  const firstName = data?.student?.name?.trim().split(/\s+/)[0];
+  const streak = metrics.streakDays;
 
-  const inProgressList = data?.inProgressAttempts || [];
+  const tabs: { id: Tab; label: string; icon: React.ReactNode; count?: number }[] = [
+    { id: 'available', label: 'Available', icon: <BookOpen size={15} aria-hidden />, count: available.length },
+    { id: 'results', label: 'Results', icon: <ListChecks size={15} aria-hidden />, count: completed.length },
+    { id: 'progress', label: 'Progress', icon: <Target size={15} aria-hidden />, count: topics.length },
+  ];
 
   return (
-    <div className="assessment-dashboard" style={{
-      minHeight: '100vh',
-      backgroundColor: 'var(--bg-color, #f4f7f6)',
-      color: 'var(--text-color, #2c3e38)',
-      fontFamily: "'Inter', sans-serif",
-      paddingBottom: '5rem',
-      transition: 'background-color 0.2s ease, color 0.2s ease'
-    }}>
-      
-      {/* Top Navigation & Profile Bar */}
-      <header className="assessment-header" style={{ flexWrap: 'wrap',
-        position: 'sticky',
-        top: 0,
-        zIndex: 40,
-        backgroundColor: 'var(--card-bg, #ffffff)',
-        borderBottom: '1px solid var(--border-color, #dce5e1)',
-        padding: '0.85rem 1.5rem',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.03)'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-          <div style={{
-            width: '40px',
-            height: '40px',
-            borderRadius: '12px',
-            background: 'linear-gradient(135deg, #0b5e4a 0%, #10b981 100%)',
-            color: '#ffffff',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 800,
-            fontSize: '1rem',
-            boxShadow: '0 4px 6px rgba(11, 94, 74, 0.2)'
-          }}>
-            {data?.student?.name ? data.student.name.charAt(0).toUpperCase() : 'S'}
+    <div className="rise-ui">
+      <div className={styles.shell}>
+        <header className={styles.topbar}>
+          <div className={styles.identity}>
+            <div className={styles.avatar} aria-hidden>
+              {data?.student?.name?.charAt(0).toUpperCase() || 'R'}
+            </div>
+            <div className={styles.identityText}>
+              <span className={styles.portalLabel}>Student portal</span>
+              <span className={styles.studentName}>{data?.student?.name || 'Student learning desk'}</span>
+            </div>
           </div>
-          <div>
-            <h1 style={{
-              fontSize: '1rem',
-              fontWeight: 800,
-              color: 'var(--text-color, #2c3e38)',
-              margin: 0,
-              lineHeight: 1.2
-            }}>
-              {data?.student?.name || 'Student Learning Portal'}
-            </h1>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)' }}>
-              AKU-EB Academic Assessment Track • Class IX–XII
-            </span>
-          </div>
-        </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
-          <button
-            onClick={() => setIsJoinModalOpen(true)}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.4rem',
-              padding: '0.55rem 0.95rem',
-              borderRadius: '10px',
-              fontSize: '0.8rem',
-              fontWeight: 700,
-              backgroundColor: '#e6f0ed',
-              color: '#0b5e4a',
-              border: '1px solid rgba(11, 94, 74, 0.2)',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease'
-            }}
-          >
-            <Users size={15} color="#0b5e4a" />
-            <span>Join Class by Code</span>
-          </button>
-
-          <Link
-            href="/quizzes"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.4rem',
-              padding: '0.55rem 1.1rem',
-              borderRadius: '10px',
-              fontSize: '0.8rem',
-              fontWeight: 700,
-              backgroundColor: '#0b5e4a',
-              color: '#ffffff',
-              border: 'none',
-              textDecoration: 'none',
-              boxShadow: '0 2px 6px rgba(11, 94, 74, 0.25)',
-              transition: 'background-color 0.2s ease'
-            }}
-          >
-            <BookOpen size={15} />
-            <span>Browse All Quizzes</span>
-          </Link>
-
-          {!data?.isGuest && (
-            <button
-              onClick={handleLogout}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.35rem',
-                padding: '0.55rem 0.85rem',
-                borderRadius: '10px',
-                fontSize: '0.78rem',
-                fontWeight: 600,
-                backgroundColor: 'rgba(239, 68, 68, 0.08)',
-                color: '#dc2626',
-                border: '1px solid rgba(239, 68, 68, 0.25)',
-                cursor: 'pointer'
-              }}
-              title="Sign out of student account"
-            >
-              <LogOut size={14} />
-              <span>Sign Out</span>
+          <div className={styles.topActions}>
+            <button type="button" className={styles.ghostAction} onClick={() => setIsJoinModalOpen(true)}>
+              <Users size={15} aria-hidden />
+              Join class
             </button>
-          )}
-        </div>
-      </header>
-      {!data?.isGuest && <nav aria-label="Dashboard pages" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', padding: '1rem' }}><button disabled={page === 1} onClick={() => setPage(p => p - 1)}>Previous page</button><span>Page {page}</span><button disabled={!data?.hasMore} onClick={() => setPage(p => p + 1)}>Next page</button></nav>}
+            <Link href="/quizzes" className={styles.primaryAction}>
+              <BookOpen size={15} aria-hidden />
+              Browse quizzes
+            </Link>
+            {!isGuest && (
+              <button
+                type="button"
+                className={styles.iconAction}
+                onClick={handleLogout}
+                title="Sign out of student account"
+                aria-label="Sign out of student account"
+              >
+                <LogOut size={16} aria-hidden />
+              </button>
+            )}
+          </div>
+        </header>
 
-      {/* Main Container */}
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '2rem 1.5rem 0 1.5rem',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '2rem'
-      }}>
-        
-        {/* Guest Learner Welcome Banner */}
-        {data?.isGuest && (
-          <div style={{
-            padding: '1.25rem 1.5rem',
-            borderRadius: '16px',
-            background: 'linear-gradient(135deg, rgba(11, 94, 74, 0.08) 0%, rgba(201, 160, 80, 0.08) 100%)',
-            border: '1px solid rgba(11, 94, 74, 0.2)',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '1rem',
-            boxShadow: 'var(--shadow-sm)'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-              <div style={{
-                width: '42px',
-                height: '42px',
-                borderRadius: '12px',
-                backgroundColor: '#e6f0ed',
-                color: '#0b5e4a',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0
-              }}>
-                <Sparkles size={20} />
+        {isGuest && (
+          <div className={styles.guestBanner}>
+            <div className={styles.guestText}>
+              <div className={styles.guestIcon}>
+                <Sparkles size={20} aria-hidden />
               </div>
               <div>
-                <h3 style={{ fontSize: '0.95rem', fontWeight: 800, margin: '0 0 0.2rem 0', color: 'var(--text-color, #2c3e38)' }}>
-                  Previewing in Guest Candidate Mode
-                </h3>
-                <p style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)', margin: 0 }}>
-                  Browse benchmark assessments below. Sign in to begin an attempt, save results and join teacher classrooms.
+                <span className={styles.guestTitle}>Previewing in guest mode</span>
+                <p className={styles.guestNote}>
+                  Sign in to sit a timed attempt, keep your results, and join a teacher classroom.
                 </p>
               </div>
             </div>
-            <button
-              onClick={() => setAuthModalOpen(true)}
-              style={{
-                padding: '0.6rem 1.2rem',
-                borderRadius: '10px',
-                fontSize: '0.82rem',
-                fontWeight: 700,
-                backgroundColor: '#0b5e4a',
-                color: '#ffffff',
-                border: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                cursor: 'pointer',
-                boxShadow: '0 4px 6px rgba(11, 94, 74, 0.2)'
-              }}
-            >
-              <LogIn size={15} />
-              <span>Sign In / Register</span>
+            <button type="button" className={styles.primaryAction} onClick={() => setAuthModalOpen(true)}>
+              <LogIn size={15} aria-hidden />
+              Sign in or register
             </button>
           </div>
         )}
 
-        {/* Active Timed Exam Banner (If session in progress) */}
-        {data?.classrooms?.length > 0 && <section style={{ background: 'var(--card-bg)', padding: '1rem', borderRadius: 12 }}><h3>Your classrooms</h3><ul>{data.classrooms.map((c: {id: string; name: string}) => <li key={c.id}>{c.name}</li>)}</ul><p>Assigned assessments appear in the Available tab.</p></section>}
-        {inProgressList.length > 0 && (
-          <div style={{
-            padding: '1.25rem 1.5rem',
-            borderRadius: '16px',
-            background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(201, 160, 80, 0.08) 100%)',
-            border: '1.5px solid rgba(245, 158, 11, 0.4)',
-            boxShadow: '0 6px 15px -3px rgba(245, 158, 11, 0.15)',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '1rem'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <div style={{
-                width: '46px',
-                height: '46px',
-                borderRadius: '14px',
-                backgroundColor: 'rgba(245, 158, 11, 0.2)',
-                color: '#d97706',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0
-              }}>
-                <Clock size={24} />
+        <section className={styles.desk}>
+          <div>
+            <p className={styles.eyebrow}>
+              <span className={styles.eyebrowMark} aria-hidden />
+              AKU-EB · Class IX–XII
+            </p>
+            <h1 className={styles.heading}>
+              {isGuest ? (
+                <>The student <span className={styles.headingMark}>desk</span>.</>
+              ) : (
+                <>Good to see you, <span className={styles.headingMark}>{firstName || 'candidate'}</span>.</>
+              )}
+            </h1>
+            <p className={styles.lede}>
+              Resume a timed assessment, read a marked script, or find the topic where the marks
+              are leaking.
+            </p>
+          </div>
+
+          <dl className={styles.ledger}>
+            <div className={styles.ledgerCell}>
+              <dt className={styles.ledgerLabel}>Assessments open</dt>
+              <dd className={styles.ledgerValue}>{isGuest ? '—' : metrics.totalQuizzesAvailable}</dd>
+            </div>
+            <div className={styles.ledgerCell}>
+              <dt className={styles.ledgerLabel}>Completed</dt>
+              <dd className={styles.ledgerValue}>{isGuest ? '—' : metrics.totalAttempts}</dd>
+            </div>
+            <div className={styles.ledgerCell}>
+              <dt className={styles.ledgerLabel}>Average</dt>
+              <dd className={`${styles.ledgerValue} ${styles.ledgerValueAccent}`}>
+                {isGuest ? '—' : `${metrics.avgPercentage}%`}
+              </dd>
+            </div>
+            <div className={styles.ledgerCell}>
+              <dt className={styles.ledgerLabel}>Day streak</dt>
+              <dd className={styles.ledgerValue}>{isGuest ? '—' : streak}</dd>
+            </div>
+          </dl>
+        </section>
+
+        {inProgress.length > 0 && (
+          <div className={styles.resume}>
+            <div className={styles.resumeText}>
+              <div className={styles.resumeIcon}>
+                <Clock size={20} aria-hidden />
               </div>
               <div>
-                <span style={{
-                  fontSize: '0.7rem',
-                  fontWeight: 800,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
-                  color: '#b45309',
-                  display: 'block'
-                }}>
-                  Active In-Progress Assessment
-                </span>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, margin: '0.2rem 0', color: 'var(--text-color, #2c3e38)' }}>
-                  {inProgressList[0].title}
-                </h3>
-                <span style={{ fontSize: '0.8rem', color: 'var(--text-light, #5a7a6f)' }}>
-                  Timer is ticking on the authoritative server clock!
-                </span>
+                <span className={styles.resumeKicker}>Attempt in progress</span>
+                <span className={styles.resumeTitle}>{inProgress[0].title}</span>
+                <p className={styles.resumeNote}>
+                  {inProgress[0].remainingSec > 0
+                    ? `About ${Math.max(1, Math.round(inProgress[0].remainingSec / 60))} minutes left on the server clock.`
+                    : 'The deadline has passed — submit as soon as you can.'}
+                </p>
               </div>
             </div>
-
-            <Link
-              href={`/quizzes/${inProgressList[0].quizId}/take`}
-              style={{
-                padding: '0.75rem 1.25rem',
-                borderRadius: '10px',
-                fontWeight: 800,
-                fontSize: '0.85rem',
-                backgroundColor: '#f59e0b',
-                color: '#0f172a',
-                border: 'none',
-                textDecoration: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                boxShadow: '0 4px 10px rgba(245, 158, 11, 0.3)'
-              }}
-            >
-              <span>Resume Assessment Now</span>
-              <ArrowRight size={16} />
+            <Link href={`/quizzes/${inProgress[0].quizId}/take`} className={styles.resumeAction}>
+              Resume attempt
+              <ArrowRight size={16} aria-hidden />
             </Link>
           </div>
         )}
 
-        {/* KPI Metrics Grid */}
-        <div className="dashboard-metrics" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
-          gap: '1rem'
-        }}>
-          <div style={{
-            padding: '1.25rem 1.5rem',
-            borderRadius: '16px',
-            backgroundColor: 'var(--card-bg, #ffffff)',
-            border: '1px solid var(--border-color, #dce5e1)',
-            boxShadow: 'var(--shadow-sm)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.25rem'
-          }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
-              Available Tests
-            </span>
-            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: 'var(--text-color, #2c3e38)' }}>
-              {metrics.totalQuizzesAvailable}
-            </strong>
-            <span style={{ fontSize: '0.75rem', color: '#0b5e4a', fontWeight: 600 }}>
-              Curriculum tests ready
-            </span>
-          </div>
-
-          <div style={{
-            padding: '1.25rem 1.5rem',
-            borderRadius: '16px',
-            backgroundColor: 'var(--card-bg, #ffffff)',
-            border: '1px solid var(--border-color, #dce5e1)',
-            boxShadow: 'var(--shadow-sm)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.25rem'
-          }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
-              Completed
-            </span>
-            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#0b5e4a' }}>
-              {metrics.totalAttempts}
-            </strong>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', fontWeight: 600 }}>
-              Submitted attempts
-            </span>
-          </div>
-
-          <div style={{
-            padding: '1.25rem 1.5rem',
-            borderRadius: '16px',
-            backgroundColor: 'var(--card-bg, #ffffff)',
-            border: '1px solid var(--border-color, #dce5e1)',
-            boxShadow: 'var(--shadow-sm)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.25rem'
-          }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
-              Average Score
-            </span>
-            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#c9a050' }}>
-              {metrics.avgPercentage}%
-            </strong>
-            <span style={{ fontSize: '0.75rem', color: '#b45309', fontWeight: 600 }}>
-              Recent released results
-            </span>
-          </div>
-
-          <div style={{
-            padding: '1.25rem 1.5rem',
-            borderRadius: '16px',
-            backgroundColor: 'var(--card-bg, #ffffff)',
-            border: '1px solid var(--border-color, #dce5e1)',
-            boxShadow: 'var(--shadow-sm)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.25rem'
-          }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
-              In-Progress
-            </span>
-            <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#d97706' }}>
-              {metrics.inProgressCount}
-            </strong>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-light, #5a7a6f)', fontWeight: 600 }}>
-              Active timer sessions
-            </span>
-          </div>
-        </div>
-
-        {/* Navigation Tabs */}
-        <div className="dashboard-tabs" style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          borderBottom: '2px solid var(--border-color, #dce5e1)',
-          paddingBottom: '0.5rem',
-          overflowX: 'auto'
-        }}>
-          <button
-            onClick={() => setActiveTab('available')}
-            style={{
-              padding: '0.65rem 1.25rem',
-              borderRadius: '12px',
-              fontSize: '0.85rem',
-              fontWeight: 700,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              backgroundColor: activeTab === 'available' ? '#0b5e4a' : 'transparent',
-              color: activeTab === 'available' ? '#ffffff' : 'var(--text-light, #5a7a6f)',
-              boxShadow: activeTab === 'available' ? '0 4px 6px rgba(11, 94, 74, 0.2)' : 'none'
-            }}
-          >
-            <BookOpen size={15} />
-            <span>Available Assessments</span>
-            <span style={{
-              padding: '0.15rem 0.5rem',
-              borderRadius: '9999px',
-              fontSize: '0.72rem',
-              backgroundColor: activeTab === 'available' ? '#084737' : 'var(--surface-muted)',
-              color: activeTab === 'available' ? '#ffffff' : 'var(--text-color, #2c3e38)'
-            }}>
-              {(data?.availableQuizzes || []).length}
-            </span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('history')}
-            style={{
-              padding: '0.65rem 1.25rem',
-              borderRadius: '12px',
-              fontSize: '0.85rem',
-              fontWeight: 700,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              backgroundColor: activeTab === 'history' ? '#0b5e4a' : 'transparent',
-              color: activeTab === 'history' ? '#ffffff' : 'var(--text-light, #5a7a6f)',
-              boxShadow: activeTab === 'history' ? '0 4px 6px rgba(11, 94, 74, 0.2)' : 'none'
-            }}
-          >
-            <Award size={15} />
-            <span>Completed Results & Explanations</span>
-            <span style={{
-              padding: '0.15rem 0.5rem',
-              borderRadius: '9999px',
-              fontSize: '0.72rem',
-              backgroundColor: activeTab === 'history' ? '#084737' : 'var(--surface-muted)',
-              color: activeTab === 'history' ? '#ffffff' : 'var(--text-color, #2c3e38)'
-            }}>
-              {(data?.completedAttempts || []).length}
-            </span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('subjects')}
-            style={{
-              padding: '0.65rem 1.25rem',
-              borderRadius: '12px',
-              fontSize: '0.85rem',
-              fontWeight: 700,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              backgroundColor: activeTab === 'subjects' ? '#0b5e4a' : 'transparent',
-              color: activeTab === 'subjects' ? '#ffffff' : 'var(--text-light, #5a7a6f)',
-              boxShadow: activeTab === 'subjects' ? '0 4px 6px rgba(11, 94, 74, 0.2)' : 'none'
-            }}
-          >
-            <Compass size={15} />
-            <span>Subject Resource Archives</span>
-          </button>
-        </div>
-
-        {/* TAB 1: AVAILABLE ASSESSMENTS */}
-        {activeTab === 'available' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <h3 style={{
-                fontSize: '0.8rem',
-                fontWeight: 800,
-                color: 'var(--text-light, #5a7a6f)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
-                margin: 0
-              }}>
-                Practice Tests & Model Assessments
-              </h3>
-              <Link
-                href="/quizzes"
-                style={{
-                  fontSize: '0.82rem',
-                  fontWeight: 700,
-                  color: '#0b5e4a',
-                  textDecoration: 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.25rem'
-                }}
-              >
-                <span>View Full Catalog</span>
-                <ChevronRight size={15} />
-              </Link>
-            </div>
-
-            {(data?.availableQuizzes || []).length === 0 ? (
-              <div style={{
-                padding: '3.5rem 1.5rem',
-                textAlign: 'center',
-                fontSize: '0.88rem',
-                color: 'var(--text-light, #5a7a6f)',
-                backgroundColor: 'var(--card-bg, #ffffff)',
-                borderRadius: '16px',
-                border: '1px solid var(--border-color, #dce5e1)'
-              }}>
-                {data?.isGuest ? 'Sign in to load your assessments, or browse the public catalog.' : 'No assessments are available on this page. Explore the catalog or ask your teacher for a classroom code.'}
-              </div>
-            ) : (
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 330px), 1fr))',
-                gap: '1.25rem'
-              }}>
-                {data.availableQuizzes.map((q: any) => (
-                  <div
-                    key={q.id}
-                    style={{
-                      padding: '1.5rem',
-                      borderRadius: '16px',
-                      backgroundColor: 'var(--card-bg, #ffffff)',
-                      border: '1px solid var(--border-color, #dce5e1)',
-                      boxShadow: 'var(--shadow-sm)',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between',
-                      gap: '1.25rem'
-                    }}
-                  >
-                    <div>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <span style={{
-                          fontSize: '0.68rem',
-                          fontWeight: 800,
-                          padding: '0.2rem 0.65rem',
-                          borderRadius: '9999px',
-                          backgroundColor: '#e6f0ed',
-                          color: '#0b5e4a',
-                          border: '1px solid rgba(11, 94, 74, 0.2)',
-                          textTransform: 'uppercase'
-                        }}>
-                          {q.boardId || 'AKU-EB'}
-                        </span>
-                        <span style={{
-                          fontSize: '0.78rem',
-                          color: 'var(--text-light, #5a7a6f)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.35rem',
-                          fontFamily: 'monospace',
-                          fontWeight: 700
-                        }}>
-                          <Clock size={14} color="#d97706" />
-                          <span>{q.durationMin} mins</span>
-                        </span>
-                      </div>
-
-                      <h4 style={{
-                        fontSize: '1.05rem',
-                        fontWeight: 800,
-                        color: 'var(--text-color, #2c3e38)',
-                        marginTop: '0.85rem',
-                        marginBottom: '0.4rem',
-                        lineHeight: 1.35
-                      }}>
-                        {q.title}
-                      </h4>
-
-                      {q.description && (
-                        <p style={{
-                          fontSize: '0.82rem',
-                          color: 'var(--text-light, #5a7a6f)',
-                          lineHeight: 1.5,
-                          margin: '0 0 1rem 0',
-                          display: '-webkit-box',
-                          WebkitLineClamp: 2,
-                          WebkitBoxOrient: 'vertical',
-                          overflow: 'hidden'
-                        }}>
-                          {q.description}
-                        </p>
-                      )}
-
-                      <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        fontSize: '0.78rem',
-                        color: 'var(--text-light, #5a7a6f)',
-                        paddingTop: '0.75rem',
-                        borderTop: '1px solid var(--border-color, #dce5e1)'
-                      }}>
-                        <span style={{ fontWeight: 700, color: '#0b5e4a' }}>{q.questionCount} Questions</span>
-                        <span>•</span>
-                        <span style={{ fontWeight: 700 }}>{q.totalMarks} Marks</span>
-                        <span>•</span>
-                        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                          By {q.teacherName || 'RiseLearner'}
-                        </span>
-                      </div>
-                    </div>
-
-                    <Link
-                      href={`/quizzes/${q.id}/take`}
-                      style={{
-                        width: '100%',
-                        padding: '0.8rem 1rem',
-                        borderRadius: '12px',
-                        fontWeight: 700,
-                        fontSize: '0.85rem',
-                        backgroundColor: '#0b5e4a',
-                        color: '#ffffff',
-                        border: 'none',
-                        textDecoration: 'none',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '0.5rem',
-                        boxShadow: '0 4px 8px rgba(11, 94, 74, 0.25)',
-                        transition: 'background-color 0.2s ease'
-                      }}
-                      onMouseOver={(e) => {
-                        e.currentTarget.style.backgroundColor = '#084737';
-                      }}
-                      onMouseOut={(e) => {
-                        e.currentTarget.style.backgroundColor = '#0b5e4a';
-                      }}
-                    >
-                      <span>Start Timed Assessment</span>
-                      <ArrowRight size={15} />
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            )}
+        {classrooms.length > 0 && (
+          <div className={styles.classrooms}>
+            <span className={styles.classroomLabel}>Your classrooms</span>
+            {classrooms.map((classroom) => (
+              <span key={classroom.id} className={styles.classroomChip}>
+                <Users size={13} aria-hidden />
+                {classroom.name}
+              </span>
+            ))}
           </div>
         )}
 
-        {/* TAB 2: COMPLETED RESULTS & REVIEWS */}
-        {activeTab === 'history' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <h3 style={{
-              fontSize: '0.8rem',
-              fontWeight: 800,
-              color: 'var(--text-light, #5a7a6f)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-              margin: 0
-            }}>
-              Assessment History & Submission Receipts
-            </h3>
+        <div className={styles.tabs} role="tablist" aria-label="Student dashboard views">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              role="tab"
+              id={`tab-${tab.id}`}
+              aria-selected={activeTab === tab.id}
+              aria-controls={`panel-${tab.id}`}
+              className={`${styles.tab} ${activeTab === tab.id ? styles.tabActive : ''}`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.icon}
+              {tab.label}
+              {tab.count !== undefined && <span className={styles.tabCount}>{tab.count}</span>}
+            </button>
+          ))}
+        </div>
 
-            {(data?.completedAttempts || []).length === 0 ? (
-              <div style={{
-                padding: '3.5rem 1.5rem',
-                textAlign: 'center',
-                fontSize: '0.88rem',
-                color: 'var(--text-light, #5a7a6f)',
-                backgroundColor: 'var(--card-bg, #ffffff)',
-                borderRadius: '16px',
-                border: '1px solid var(--border-color, #dce5e1)'
-              }}>
-                You have not completed any assessments yet. Take an assessment from the Available tab to see your performance breakdown!
+        {activeTab === 'available' && (
+          <section
+            className={styles.panel}
+            role="tabpanel"
+            id="panel-available"
+            aria-labelledby="tab-available"
+          >
+            <div className={styles.panelHead}>
+              <div>
+                <h2 className={styles.panelTitle}>Practice tests &amp; model assessments</h2>
+                <p className={styles.panelNote}>Timed attempts run on the server clock; answers save as you go.</p>
+              </div>
+              <Link href="/quizzes" className={styles.panelLink}>
+                Full catalog
+                <ChevronRight size={15} aria-hidden />
+              </Link>
+            </div>
+
+            {available.length === 0 ? (
+              <div className={styles.emptyState}>
+                <div className={styles.emptyIcon}>
+                  <BookOpen size={20} aria-hidden />
+                </div>
+                <h3 className={styles.emptyTitle}>
+                  {isGuest ? 'Sign in to load your assessments' : 'Nothing open on this page'}
+                </h3>
+                <p className={styles.emptyNote}>
+                  {isGuest
+                    ? 'Your assigned tests and shared quiz codes appear here once you sign in.'
+                    : 'Check the public catalog, or ask your teacher for a classroom code.'}
+                </p>
+                <div className={styles.emptyActions}>
+                  {isGuest && (
+                    <button type="button" className={styles.primaryAction} onClick={() => setAuthModalOpen(true)}>
+                      <LogIn size={15} aria-hidden />
+                      Sign in
+                    </button>
+                  )}
+                  <Link href="/quizzes" className={styles.ghostAction}>
+                    Browse the catalog
+                    <ArrowRight size={15} aria-hidden />
+                  </Link>
+                </div>
               </div>
             ) : (
-              <div style={{
-                backgroundColor: 'var(--card-bg, #ffffff)',
-                borderRadius: '16px',
-                border: '1px solid var(--border-color, #dce5e1)',
-                overflow: 'hidden',
-                boxShadow: 'var(--shadow-sm)'
-              }}>
-                <table className="mobile-data-table" tabIndex={0} aria-label="Assessment results; scroll horizontally for all columns" style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse', fontSize: '0.82rem' }}>
-                  <thead style={{
-                    backgroundColor: 'rgba(244, 247, 246, 0.8)',
-                    color: 'var(--text-light, #5a7a6f)',
-                    textTransform: 'uppercase',
-                    fontSize: '0.72rem',
-                    letterSpacing: '0.05em'
-                  }}>
+              <div className={styles.quizzes}>
+                {available.map((quiz) => (
+                  <article key={quiz.id} className={styles.quizTile}>
+                    <div className={styles.quizTop}>
+                      <span className={styles.quizTag}>
+                        <Clock size={12} aria-hidden />
+                        {quiz.durationMin} min · timed
+                      </span>
+                      <span className={styles.quizMarks}>{quiz.totalMarks} marks</span>
+                    </div>
+                    <h3 className={styles.quizTitle}>{quiz.title}</h3>
+                    <div className={styles.quizFoot}>
+                      <strong>{quiz.questionCount} questions</strong>
+                      <span aria-hidden>·</span>
+                      <span>{quiz.teacherName || 'Rise Learner'}</span>
+                    </div>
+                    <Link href={`/quizzes/${quiz.id}/take`} className={styles.quizAction}>
+                      <span>Start timed assessment</span>
+                      <ArrowRight size={15} className={styles.quizArrow} aria-hidden />
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            )}
+          </section>
+        )}
+
+        {activeTab === 'results' && (
+          <section
+            className={styles.panel}
+            role="tabpanel"
+            id="panel-results"
+            aria-labelledby="tab-results"
+          >
+            <div className={styles.panelHead}>
+              <div>
+                <h2 className={styles.panelTitle}>Results &amp; marked scripts</h2>
+                <p className={styles.panelNote}>
+                  Scores appear once the teacher releases them. A held result is marked but not yet shared.
+                </p>
+              </div>
+            </div>
+
+            {completed.length === 0 ? (
+              <div className={styles.emptyState}>
+                <div className={styles.emptyIcon}>
+                  <Award size={20} aria-hidden />
+                </div>
+                <h3 className={styles.emptyTitle}>No marked scripts yet</h3>
+                <p className={styles.emptyNote}>
+                  Sit an assessment from the Available tab and your first result will land here.
+                </p>
+                <div className={styles.emptyActions}>
+                  <button type="button" className={styles.ghostAction} onClick={() => setActiveTab('available')}>
+                    See available assessments
+                    <ArrowRight size={15} aria-hidden />
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className={styles.tableWrap}>
+                <table
+                  className={`mobile-data-table ${styles.resultsTable}`}
+                  tabIndex={0}
+                  aria-label="Assessment results; scroll horizontally for all columns"
+                >
+                  <thead>
                     <tr>
-                      <th style={{ padding: '0.9rem 1rem' }}>Assessment Title</th>
-                      <th style={{ padding: '0.9rem 1rem' }}>Score</th>
-                      <th style={{ padding: '0.9rem 1rem' }}>Percentage</th>
-                      <th style={{ padding: '0.9rem 1rem' }}>Date</th>
-                      <th style={{ padding: '0.9rem 1rem', textAlign: 'right' }}>Review Action</th>
+                      <th scope="col"><span>Assessment</span></th>
+                      <th scope="col"><span>Score</span></th>
+                      <th scope="col"><span>Result</span></th>
+                      <th scope="col"><span>Submitted</span></th>
+                      <th scope="col"><span>Review</span></th>
                     </tr>
                   </thead>
                   <tbody>
-                    {data.completedAttempts.map((att: any) => (
-                      <tr key={att.attemptId} style={{ borderTop: '1px solid var(--border-color, #dce5e1)' }}>
-                        <td style={{ padding: '0.9rem 1rem', fontWeight: 700, color: 'var(--text-color, #2c3e38)' }}>
-                          {att.title}
+                    {completed.map((attempt) => (
+                      <tr key={attempt.attemptId}>
+                        <td>
+                          <span className={styles.resultTitle}>{attempt.title}</span>
                         </td>
-                        <td style={{ padding: '0.9rem 1rem' }}>
-                          <span style={{ fontWeight: 800, color: 'var(--text-color, #2c3e38)' }}>{att.released ? att.score : 'Held'}</span> / {att.maxMarks}
-                        </td>
-                        <td style={{ padding: '0.9rem 1rem' }}>
-                          <span style={{
-                            fontSize: '0.75rem',
-                            fontWeight: 800,
-                            padding: '0.2rem 0.6rem',
-                            borderRadius: '9999px',
-                            backgroundColor: att.percentage >= 50 ? '#e6f0ed' : '#fee2e2',
-                            color: att.percentage >= 50 ? '#0b5e4a' : '#b91c1c'
-                          }}>
-                            {att.percentage == null ? (att.released ? 'Awaiting grading' : 'Awaiting release') : att.percentage + '%'}
+                        <td>
+                          <span className={styles.scoreCell}>
+                            {attempt.released ? attempt.score ?? '—' : 'Held'}
+                            <span className={styles.scoreMax}> / {attempt.maxMarks}</span>
                           </span>
                         </td>
-                        <td style={{ padding: '0.9rem 1rem', color: 'var(--text-light, #5a7a6f)', fontSize: '0.78rem' }}>
-                          {att.submittedAt ? new Date(att.submittedAt).toLocaleDateString() : 'Recently'}
+                        <td>
+                          {attempt.percentage === null ? (
+                            <span className={`${styles.resultChip} ${styles.resultHeld}`}>
+                              {attempt.released ? 'Grading' : 'Awaiting release'}
+                            </span>
+                          ) : (
+                            <span
+                              className={`${styles.resultChip} ${
+                                attempt.percentage >= 50 ? styles.resultRight : styles.resultWrong
+                              }`}
+                            >
+                              {attempt.percentage}%
+                            </span>
+                          )}
                         </td>
-                        <td style={{ padding: '0.9rem 1rem', textAlign: 'right' }}>
+                        <td>
+                          <span className={styles.dateCell}>{formatDate(attempt.submittedAt)}</span>
+                        </td>
+                        <td className={styles.reviewCell}>
                           <Link
-                            href={`/quizzes/${att.quizId}/results?attemptId=${att.attemptId}`}
-                            style={{
-                              padding: '0.45rem 0.85rem',
-                              borderRadius: '8px',
-                              fontSize: '0.78rem',
-                              fontWeight: 700,
-                              backgroundColor: '#e6f0ed',
-                              color: '#0b5e4a',
-                              textDecoration: 'none',
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '0.35rem'
-                            }}
+                            href={`/quizzes/${attempt.quizId}/results?attemptId=${attempt.attemptId}`}
+                            className={styles.reviewLink}
                           >
-                            <span>View Submission</span>
-                            <ArrowRight size={13} />
+                            Review
+                            <ArrowRight size={13} aria-hidden />
                           </Link>
                         </td>
                       </tr>
@@ -961,194 +632,228 @@ export default function StudentDashboardPage() {
                 </table>
               </div>
             )}
-          </div>
+          </section>
         )}
 
-        {/* TAB 3: SUBJECT RESOURCE HUBS */}
-        {activeTab === 'subjects' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <h3 style={{
-              fontSize: '0.8rem',
-              fontWeight: 800,
-              color: 'var(--text-light, #5a7a6f)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-              margin: 0
-            }}>
-              Official AKU-EB Verified Subject Archives
-            </h3>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))',
-              gap: '1.25rem'
-            }}>
-              {[
-                { name: 'Physics', classRoman: 'IX', slug: 'physics', desc: 'Model Papers 2025, Chapter MCQs & Syllabi', count: 12 },
-                { name: 'Chemistry', classRoman: 'IX', slug: 'chemistry', desc: 'Syllabus SLOs, Notes & Key Papers', count: 9 },
-                { name: 'Biology', classRoman: 'IX', slug: 'biology', desc: 'Past Papers, Diagrams & Chapter MCQs', count: 8 },
-                { name: 'Mathematics', classRoman: 'IX', slug: 'mathematics', desc: 'Formulas, SLOs & Examination Specs', count: 10 },
-                { name: 'Computer Science', classRoman: 'IX', slug: 'computer-science', desc: 'Flowcharts, Algorithms & Model Tests', count: 7 }
-              ].map(sub => (
-                <Link
-                  key={sub.slug}
-                  href={`/akueb/${sub.classRoman}/${sub.slug}`}
-                  style={{
-                    padding: '1.25rem 1.5rem',
-                    borderRadius: '16px',
-                    backgroundColor: 'var(--card-bg, #ffffff)',
-                    border: '1px solid var(--border-color, #dce5e1)',
-                    boxShadow: 'var(--shadow-sm)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    textDecoration: 'none',
-                    color: 'inherit'
-                  }}
-                >
-                  <div>
-                    <h4 style={{ fontSize: '1.05rem', fontWeight: 800, margin: '0 0 0.35rem 0', color: 'var(--text-color, #2c3e38)' }}>
-                      {sub.name}
-                    </h4>
-                    <p style={{ fontSize: '0.8rem', color: 'var(--text-light, #5a7a6f)', margin: 0 }}>
-                      {sub.desc}
+        {activeTab === 'progress' && (
+          <section
+            className={styles.panel}
+            role="tabpanel"
+            id="panel-progress"
+            aria-labelledby="tab-progress"
+          >
+            {topics.length === 0 && trend.length === 0 ? (
+              <div className={styles.emptyState}>
+                <div className={styles.emptyIcon}>
+                  <Target size={20} aria-hidden />
+                </div>
+                <h3 className={styles.emptyTitle}>No marked work to analyse yet</h3>
+                <p className={styles.emptyNote}>
+                  Once a graded result is released, this tab maps the topics that are holding your
+                  marks back and the score trend across your scripts.
+                </p>
+              </div>
+            ) : (
+              <>
+                <div className={styles.progressGrid}>
+                  <section className={styles.mastery} aria-labelledby="mastery-title">
+                    <h2 id="mastery-title" className={styles.blockTitle}>
+                      <BarChart3 size={18} aria-hidden />
+                      Where the marks are
+                    </h2>
+                    <p className={styles.blockNote}>
+                      Weakest topics first, across your recent graded scripts. This is a map of what
+                      to revise next, not a measure of ability.
                     </p>
-                    <span style={{ fontSize: '0.72rem', color: '#0b5e4a', marginTop: '0.5rem', display: 'block', fontWeight: 700 }}>
-                      Class {sub.classRoman} Archive • {sub.count} Resources
-                    </span>
-                  </div>
-                  <ChevronRight size={18} color="#0b5e4a" />
-                </Link>
-              ))}
-            </div>
-          </div>
+                    <ul className={styles.masteryList}>
+                      {topics.slice(0, 8).map((topic) => {
+                        const tone =
+                          topic.percent >= 75
+                            ? styles.fillRight
+                            : topic.percent >= 50
+                              ? styles.fill
+                              : topic.percent >= 30
+                                ? styles.fillFlag
+                                : styles.fillWrong;
+                        return (
+                          <li key={topic.topic} className={styles.masteryRow}>
+                            <div className={styles.masteryHead}>
+                              <span className={styles.masteryName} title={topic.topic}>
+                                {topic.topic}
+                              </span>
+                              <span className={styles.masteryNums}>
+                                {topic.percent}% · {formatMarks(topic.earned)}/{formatMarks(topic.possible)}
+                              </span>
+                            </div>
+                            <div
+                              className={styles.track}
+                              role="progressbar"
+                              aria-label={topic.topic}
+                              aria-valuemin={0}
+                              aria-valuemax={100}
+                              aria-valuenow={topic.percent}
+                            >
+                              <div
+                                className={`${styles.fill} ${tone}`}
+                                style={{ width: `${Math.max(2, topic.percent)}%` }}
+                              />
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                    {(data?.unmappedTopics ?? 0) > 0 && (
+                      <p className={styles.masteryFoot}>
+                        {data?.unmappedTopics} graded question
+                        {data?.unmappedTopics === 1 ? '' : 's'} carried no topic tag, so
+                        {data?.unmappedTopics === 1 ? ' it is' : ' they are'} not counted above.
+                      </p>
+                    )}
+                  </section>
+
+                  <section className={styles.trend} aria-labelledby="trend-title">
+                    <h2 id="trend-title" className={styles.blockTitle}>
+                      <TrendingUp size={18} aria-hidden />
+                      Score trend
+                    </h2>
+                    <p className={styles.blockNote}>Released results, oldest to latest.</p>
+                    {trend.length === 0 ? (
+                      <p className={styles.blockNote}>No released scores to chart yet.</p>
+                    ) : (
+                      <Sparkline points={trend} />
+                    )}
+                    {trend.length > 0 && (
+                      <ul className={styles.trendList}>
+                        {trend
+                          .slice(-3)
+                          .reverse()
+                          .map((point, index) => (
+                            <li key={`${point.at ?? 'trend'}-${index}`} className={styles.trendRow}>
+                              <span className={styles.trendLabel} title={point.title}>
+                                {point.title}
+                              </span>
+                              <span className={styles.trendValue}>{point.percent}%</span>
+                            </li>
+                          ))}
+                      </ul>
+                    )}
+                    <p className={styles.streak}>
+                      <Flame size={15} aria-hidden />
+                      {streak === 0
+                        ? 'No submission streak — one attempt today starts it.'
+                        : `${streak} day${streak === 1 ? '' : 's'} of submitting in a row.`}
+                    </p>
+                  </section>
+                </div>
+
+                {archives && archives.subjects.length > 0 && (
+                  <section aria-labelledby="archive-title">
+                    <div className={styles.panelHead}>
+                      <div>
+                        <h2 id="archive-title" className={styles.blockTitle}>
+                          <Layers size={18} aria-hidden />
+                          Class {archives.classRoman} archive
+                        </h2>
+                        <p className={styles.panelNote}>
+                          Past papers, notes and syllabus outcomes for your class.
+                        </p>
+                      </div>
+                      <Link href={`/${archives.boardId}/${archives.classRoman}`} className={styles.panelLink}>
+                        All subjects
+                        <ChevronRight size={15} aria-hidden />
+                      </Link>
+                    </div>
+                    <div className={styles.archiveGrid}>
+                      {archives.subjects.slice(0, 8).map((subject) => (
+                        <Link
+                          key={subject.slug}
+                          href={`/${archives.boardId}/${archives.classRoman}/${subject.slug}`}
+                          className={styles.archiveTile}
+                        >
+                          <span>
+                            <span className={styles.archiveName}>{subject.name}</span>
+                            <span className={styles.archiveDesc}>{subject.description}</span>
+                            <span className={styles.archiveMeta}>
+                              {subject.papersCount} paper{subject.papersCount === 1 ? '' : 's'} ·{' '}
+                              {subject.sloCount ?? 0} outcomes
+                            </span>
+                          </span>
+                          <ChevronRight size={16} className={styles.archiveChevron} aria-hidden />
+                        </Link>
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </>
+            )}
+          </section>
+        )}
+
+        {!isGuest && (page > 1 || data?.hasMore) && (
+          <nav className={styles.pager} aria-label="Dashboard pages">
+            <button
+              type="button"
+              className={styles.pagerButton}
+              disabled={page === 1}
+              onClick={() => setPage((current) => current - 1)}
+            >
+              Previous
+            </button>
+            <span>Page {page}</span>
+            <button
+              type="button"
+              className={styles.pagerButton}
+              disabled={!data?.hasMore}
+              onClick={() => setPage((current) => current + 1)}
+            >
+              Next
+            </button>
+          </nav>
         )}
       </div>
 
-      {/* JOIN CLASSROOM MODAL */}
       {isJoinModalOpen && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: 50,
-          backgroundColor: 'rgba(15, 23, 42, 0.75)',
-          backdropFilter: 'blur(6px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '1rem'
-        }}>
-          <form
-            onSubmit={handleJoinClassroom}
-            style={{
-              backgroundColor: 'var(--card-bg, #ffffff)',
-              border: '1px solid var(--border-color, #dce5e1)',
-              borderRadius: '20px',
-              maxWidth: '400px',
-              width: '100%',
-              padding: '1.75rem',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.35)'
-            }}
-          >
-            <h3 style={{
-              fontSize: '1.1rem',
-              fontWeight: 800,
-              color: 'var(--text-color, #2c3e38)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              margin: 0
-            }}>
-              <Users size={20} color="#0b5e4a" />
-              <span>Join Teacher's Classroom</span>
-            </h3>
-
-            <p style={{ fontSize: '0.82rem', color: 'var(--text-light, #5a7a6f)', margin: 0, lineHeight: 1.5 }}>
-              Ask your teacher for the 6–8 character classroom code to access private assigned assessments.
+        <div className={styles.scrim}>
+          <form className={styles.modal} onSubmit={handleJoinClassroom} aria-labelledby="join-title">
+            <h2 id="join-title" className={styles.modalTitle}>
+              <Users size={20} color="var(--r-emerald)" aria-hidden />
+              Join a classroom
+            </h2>
+            <p className={styles.modalNote}>
+              Ask your teacher for the 6–8 character class code to unlock assigned assessments.
             </p>
-
             <input
               type="text"
               required
               maxLength={8}
               value={joinCode}
-              onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
+              onChange={(event) => setJoinCode(event.target.value.toUpperCase())}
               placeholder="E.g. A3B9X1"
-              style={{
-                width: '100%',
-                backgroundColor: 'rgba(244, 247, 246, 0.8)',
-                border: '1.5px solid var(--border-color, #dce5e1)',
-                borderRadius: '12px',
-                padding: '0.85rem',
-                textAlign: 'center',
-                fontSize: '1.3rem',
-                fontFamily: 'monospace',
-                letterSpacing: '0.15em',
-                fontWeight: 800,
-                color: '#0b5e4a',
-                outline: 'none',
-                boxSizing: 'border-box'
-              }}
+              aria-label="Classroom code"
+              className={styles.codeInput}
             />
-
             {joinMessage && (
-              <div style={{
-                padding: '0.75rem',
-                borderRadius: '8px',
-                fontSize: '0.82rem',
-                fontWeight: 600,
-                backgroundColor: joinMessage.startsWith('Success') ? '#e6f0ed' : '#fee2e2',
-                color: joinMessage.startsWith('Success') ? '#0b5e4a' : '#b91c1c'
-              }}>
+              <div
+                className={`${styles.modalMessage} ${
+                  joinMessage.startsWith('Success') ? styles.modalMessageOk : ''
+                }`}
+                role="status"
+              >
                 {joinMessage}
               </div>
             )}
-
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', paddingTop: '0.5rem' }}>
-              <button
-                type="button"
-                onClick={() => setIsJoinModalOpen(false)}
-                style={{
-                  padding: '0.6rem 1rem',
-                  fontSize: '0.82rem',
-                  fontWeight: 600,
-                  color: 'var(--text-light, #5a7a6f)',
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer'
-                }}
-              >
+            <div className={styles.modalActions}>
+              <button type="button" className={styles.modalCancel} onClick={() => setIsJoinModalOpen(false)}>
                 Cancel
               </button>
-              <button
-                type="submit"
-                disabled={isJoining || !joinCode}
-                style={{
-                  padding: '0.6rem 1.25rem',
-                  fontSize: '0.82rem',
-                  fontWeight: 700,
-                  backgroundColor: '#0b5e4a',
-                  color: '#ffffff',
-                  border: 'none',
-                  borderRadius: '10px',
-                  cursor: isJoining ? 'not-allowed' : 'pointer',
-                  opacity: isJoining || !joinCode ? 0.6 : 1,
-                  boxShadow: '0 2px 6px rgba(11, 94, 74, 0.25)'
-                }}
-              >
-                {isJoining ? 'Joining...' : 'Join Classroom'}
+              <button type="submit" className={styles.modalSubmit} disabled={isJoining || !joinCode}>
+                {isJoining ? 'Joining…' : 'Join classroom'}
               </button>
             </div>
           </form>
         </div>
       )}
 
-      {/* Auth Modal for guest users */}
       <AuthModal
         isOpen={authModalOpen}
         initialRole="STUDENT"

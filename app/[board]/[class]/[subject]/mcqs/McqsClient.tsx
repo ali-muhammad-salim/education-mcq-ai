@@ -1051,6 +1051,30 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
             </div>
           </div>
 
+          {/* Exam-paper masthead */}
+          <div style={{
+            background: 'var(--card-bg, #ffffff)',
+            border: '1.5px solid var(--text-color, #111827)',
+            borderRadius: '4px',
+            padding: '1rem 1.5rem',
+            marginBottom: '1.5rem',
+            textAlign: 'center',
+            fontFamily: "'Times New Roman', Times, serif"
+          }}>
+            <div style={{ fontSize: '0.95rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--text-color, #111827)' }}>
+              {board.fullName}
+            </div>
+            <div style={{ fontSize: '0.8rem', color: 'var(--text-light, #374151)', marginTop: '2px' }}>
+              SECONDARY SCHOOL CERTIFICATE · {classDef.name}
+            </div>
+            <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-color, #111827)', marginTop: '6px' }}>
+              {meta.title} · Paper I (Multiple Choice Questions)
+            </div>
+            <div style={{ fontSize: '0.78rem', color: 'var(--text-light, #4b5563)', marginTop: '2px' }}>
+              {practiceTitle}
+            </div>
+          </div>
+
           {/* Questions List with KaTeX math rendering */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {activeQuestions.length === 0 ? (
@@ -1086,65 +1110,96 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                   <div
                     key={qNum}
                     style={{
-                      background: '#ffffff',
-                      border: isAnswered ? (isCorrect ? '2px solid #86efac' : '2px solid #fca5a5') : '1.5px solid #dce5e1',
-                      borderRadius: '16px',
-                      padding: '1.75rem',
-                      boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
+                      background: 'var(--card-bg, #ffffff)',
+                      border: isAnswered ? (isCorrect ? '2px solid #86efac' : '2px solid #fca5a5') : '1.5px solid var(--border-color, #cfd6d2)',
+                      borderRadius: '4px',
+                      padding: '1.5rem 1.75rem',
+                      boxShadow: '0 1px 5px rgba(0,0,0,0.05)',
+                      fontFamily: "'Times New Roman', Times, serif"
                     }}
                   >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    {/* Exam-paper header: question number box, source paper, marks */}
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      gap: '0.75rem',
+                      flexWrap: 'wrap',
+                      borderBottom: '1.5px solid var(--text-color, #111827)',
+                      paddingBottom: '0.7rem',
+                      marginBottom: '1rem'
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
                         <span style={{
-                          background: '#0b5e4a',
-                          color: '#ffffff',
-                          padding: '4px 10px',
-                          borderRadius: '6px',
-                          fontSize: '0.8rem',
-                          fontWeight: 800
+                          border: '1.5px solid var(--text-color, #111827)',
+                          borderRadius: '3px',
+                          minWidth: '48px',
+                          textAlign: 'center',
+                          padding: '1px 8px',
+                          fontSize: '1.05rem',
+                          fontWeight: 700,
+                          color: 'var(--text-color, #111827)',
+                          background: 'var(--card-bg, #ffffff)'
                         }}>
-                          {q.examYear ? `${q.examYear} · Q${rawQNum}` : `Model · Q${rawQNum}`}
+                          Q.{rawQNum}
                         </span>
                         <span style={{
+                          fontFamily: "'Inter', sans-serif",
+                          fontSize: '0.8rem',
+                          fontWeight: 800,
+                          color: 'var(--primary-color, #0b5e4a)',
+                          letterSpacing: '0.02em',
+                          textTransform: 'uppercase'
+                        }}>
+                          {q.examYear ? `${q.examYear} Annual Examination · ${meta.title} Paper I` : `Model Paper · ${meta.title} Paper I`}
+                        </span>
+                        <span style={{
+                          fontFamily: "'Inter', sans-serif",
                           background: q.cognitiveLevel === 'Remembering' ? '#fef3c7' : q.cognitiveLevel === 'Understanding' ? '#e0f2fe' : '#dcfce7',
                           color: q.cognitiveLevel === 'Remembering' ? '#92400e' : q.cognitiveLevel === 'Understanding' ? '#0369a1' : '#15803d',
-                          padding: '3px 8px',
+                          padding: '2px 8px',
                           borderRadius: '4px',
-                          fontSize: '0.75rem',
+                          fontSize: '0.72rem',
                           fontWeight: 700
                         }}>
                           {q.cognitiveLevel}
                         </span>
                         {(q.unitName || q.chapter) && (
-                          <span style={{ background: '#f4f7f6', color: '#4b5563', padding: '3px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
+                          <span style={{ fontFamily: "'Inter', sans-serif", background: '#f4f7f6', color: '#4b5563', padding: '2px 8px', borderRadius: '4px', fontSize: '0.72rem', fontWeight: 600 }}>
                             {q.unitName || q.chapter}
                           </span>
                         )}
                       </div>
 
-                      <button
-                        onClick={() => toggleReveal(qNum)}
-                        style={{
-                          background: 'none',
-                          border: 'none',
-                          color: '#0b5e4a',
-                          fontWeight: 700,
-                          fontSize: '0.85rem',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '4px'
-                        }}
-                      >
-                        <Eye size={15} />
-                        <span>{isRevealed ? 'Hide Answer' : 'Show Answer'}</span>
-                      </button>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <span style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-color, #111827)' }}>
+                          [{q.marks ?? 1}]
+                        </span>
+                        <button
+                          onClick={() => toggleReveal(qNum)}
+                          style={{
+                            background: 'none',
+                            border: 'none',
+                            color: '#0b5e4a',
+                            fontFamily: "'Inter', sans-serif",
+                            fontWeight: 700,
+                            fontSize: '0.82rem',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '4px'
+                          }}
+                        >
+                          <Eye size={15} />
+                          <span>{isRevealed ? 'Hide Answer' : 'Show Answer'}</span>
+                        </button>
+                      </div>
                     </div>
 
                     <QuestionSource question={q} source={mappedChapter ? 'mapped' : (q.examYear || isAnnualSource) ? 'annual' : 'model'} board={board.shortCode} grade={classDef.level} subject={meta.title} />
 
                     {/* Question Stem rendered with StructuredContent (Tables + KaTeX) */}
-                    <div style={{ fontSize: '1.05rem', color: 'var(--text-color, #1a2e26)', fontWeight: 600, lineHeight: 1.6, marginBottom: '1.25rem' }}>
+                    <div style={{ fontSize: '1.1rem', color: 'var(--text-color, #1f2937)', fontWeight: 400, lineHeight: 1.7, marginBottom: '1.25rem' }}>
                       <StructuredContent text={q.stem || q.questionText || ''} />
                     </div>
 
@@ -1184,9 +1239,9 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                         const isSelected = userChoice === optKey;
                         const isAnswerKey = correctKey === optKey;
 
-                        let optBg = '#f8faf9';
-                        let optBorder = '1.5px solid #eef2f0';
-                        let optColor = '#1a2e26';
+                        let optBg = 'var(--card-bg, #ffffff)';
+                        let optBorder = '1.5px solid #cfd6d2';
+                        let optColor = 'var(--text-color, #1f2937)';
 
                         if (isRevealed || isAnswered) {
                           if (isAnswerKey) {
@@ -1209,8 +1264,8 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                             key={optKey}
                             onClick={() => handleSelect(qNum, optKey)}
                             style={{
-                              padding: '0.85rem 1rem',
-                              borderRadius: '10px',
+                              padding: '0.7rem 1rem',
+                              borderRadius: '4px',
                               background: optBg,
                               border: optBorder,
                               color: optColor,
@@ -1223,21 +1278,23 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                             }}
                           >
                             <span style={{
-                              width: '24px',
-                              height: '24px',
-                              borderRadius: '50%',
-                              background: isSelected || (isRevealed && isAnswerKey) ? optColor : '#dce5e1',
+                              width: '26px',
+                              height: '26px',
+                              borderRadius: '3px',
+                              border: '1.5px solid',
+                              borderColor: isSelected || (isRevealed && isAnswerKey) ? optColor : '#9aa4a0',
+                              background: isSelected || (isRevealed && isAnswerKey) ? optColor : 'transparent',
                               color: isSelected || (isRevealed && isAnswerKey) ? '#ffffff' : '#4b5563',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
-                              fontSize: '0.78rem',
-                              fontWeight: 800,
+                              fontSize: '0.85rem',
+                              fontWeight: 700,
                               flexShrink: 0
                             }}>
                               {optKey}
                             </span>
-                            <span style={{ fontSize: '0.92rem', fontWeight: 600, lineHeight: 1.4, flexGrow: 1 }}>
+                            <span style={{ fontSize: '1rem', fontWeight: 400, lineHeight: 1.5, flexGrow: 1 }}>
                               <MathText text={String(optText)} />
                             </span>
                           </button>

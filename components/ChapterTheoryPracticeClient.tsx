@@ -4,26 +4,16 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  Calculator,
-  CheckCircle2,
-  Eye,
-  EyeOff,
-  FileText,
-  Layers,
-  Lightbulb,
   Sparkles,
 } from 'lucide-react';
 import type { BoardInfo, ClassDefinition } from '@/lib/boardCatalog';
 import type { SubjectMeta } from '@/lib/subjectMetadata';
 import MathText from '@/components/MathText';
-import StructuredContent from '@/components/StructuredContent';
 import { smartMatch } from '@/lib/smartSearch';
 
 export type TheorySectionMode = 'crqs' | 'erqs' | 'numericals' | 'notes';
 
-interface ChapterUnitData {
+export interface ChapterUnitData {
   unitNumber: number;
   name: string;
   subtopics: string[];
@@ -164,9 +154,6 @@ export default function ChapterTheoryPracticeClient({
 }: Props) {
   const [selectedUnitNum, setSelectedUnitNum] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [showAllSolutions, setShowAllSolutions] = useState(true);
-  const [revealedIds, setRevealedIds] = useState<Record<string, boolean>>({});
-  const [draftResponses, setDraftResponses] = useState<Record<string, string>>({});
 
   const sectionInfo = SECTION_META[mode];
 
@@ -182,10 +169,6 @@ export default function ChapterTheoryPracticeClient({
   const activeUnits = selectedUnitNum
     ? units.filter(u => u.unitNumber === selectedUnitNum)
     : units;
-
-  const toggleReveal = (id: string) => {
-    setRevealedIds(prev => ({ ...prev, [id]: !prev[id] }));
-  };
 
   const navLinks = [
     { href: `${baseUrl}/mcqs/chapter-wise`, label: 'Chapter-wise MCQs', active: false },
@@ -303,76 +286,55 @@ export default function ChapterTheoryPracticeClient({
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
           <div>
             <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#111827', margin: 0 }}>
-              Select a Chapter (or Browse All Below)
+              {mode === 'notes' ? 'Select a Chapter (or Browse All Below)' : 'Select a Chapter to Open Its Question Paper'}
             </h2>
             <p style={{ fontSize: '0.86rem', color: '#64748b', margin: '0.2rem 0 0 0' }}>
-              Click any unit card to filter to that specific chapter, or use the search bar to find any concept, formula, or SLO code.
+              {mode === 'notes'
+                ? 'Click any unit card to filter to that specific chapter, or use the search bar to find any concept, formula, or SLO code.'
+                : 'Each chapter opens on its own exam-formatted page with every question, official rubric, and E-Marking script for that unit.'}
             </p>
           </div>
 
-          <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', alignItems: 'center' }}>
-            <input
-              type="search"
-              value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
-              placeholder="Search questions, formulas, typos, synonyms, SLO..."
-              style={{
-                padding: '0.55rem 0.95rem',
-                borderRadius: '8px',
-                border: '1.5px solid #cbd5e1',
-                fontSize: '0.85rem',
-                minWidth: '260px',
-                outline: 'none',
-              }}
-            />
-            {mode !== 'notes' && (
-              <button
-                type="button"
-                onClick={() => setShowAllSolutions(!showAllSolutions)}
+          {mode === 'notes' && (
+            <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', alignItems: 'center' }}>
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+                placeholder="Search questions, formulas, typos, synonyms, SLO..."
                 style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.4rem',
-                  padding: '0.55rem 1rem',
+                  padding: '0.55rem 0.95rem',
                   borderRadius: '8px',
-                  border: '1.5px solid #0b5e4a',
-                  background: showAllSolutions ? '#ecfdf5' : '#ffffff',
-                  color: '#0b5e4a',
-                  fontWeight: 700,
-                  fontSize: '0.84rem',
-                  cursor: 'pointer',
+                  border: '1.5px solid #cbd5e1',
+                  fontSize: '0.85rem',
+                  minWidth: '260px',
+                  outline: 'none',
                 }}
-              >
-                {showAllSolutions ? <EyeOff size={15} /> : <Eye size={15} />}
-                <span>{showAllSolutions ? 'Hide All Solutions (Self-Test)' : 'Show All Solutions & Rubrics'}</span>
-              </button>
-            )}
-          </div>
+              />
+            </div>
+          )}
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '0.85rem' }}>
           {units.map(u => {
             const count = getUnitItems(u).length;
             const isSelected = selectedUnitNum === u.unitNumber;
-            return (
-              <button
-                key={u.unitNumber}
-                type="button"
-                onClick={() => setSelectedUnitNum(isSelected ? null : u.unitNumber)}
-                style={{
-                  textAlign: 'left',
-                  padding: '1rem 1.15rem',
-                  borderRadius: '12px',
-                  border: isSelected ? '2px solid #0b5e4a' : '1.5px solid #e2e8f0',
-                  background: isSelected ? '#ecfdf5' : '#ffffff',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  gap: '0.5rem',
-                  boxShadow: '0 2px 6px rgba(0,0,0,0.02)',
-                }}
-              >
+            const directoryStyle: React.CSSProperties = {
+              textAlign: 'left',
+              padding: '1rem 1.15rem',
+              borderRadius: '12px',
+              border: isSelected ? '2px solid #0b5e4a' : '1.5px solid #e2e8f0',
+              background: isSelected ? '#ecfdf5' : '#ffffff',
+              cursor: 'pointer',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              gap: '0.5rem',
+              boxShadow: '0 2px 6px rgba(0,0,0,0.02)',
+              textDecoration: 'none',
+            };
+            const unitCardBody = (
+              <>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
                   <span style={{ background: '#0b5e4a', color: '#ffffff', fontSize: '0.72rem', fontWeight: 800, padding: '2px 8px', borderRadius: '5px' }}>
                     UNIT {u.unitNumber}
@@ -385,7 +347,21 @@ export default function ChapterTheoryPracticeClient({
                 <div style={{ fontSize: '0.76rem', color: '#64748b', lineHeight: 1.4 }}>
                   {u.subtopics.slice(0, 3).join(' • ')}
                 </div>
+              </>
+            );
+            return mode === 'notes' ? (
+              <button
+                key={u.unitNumber}
+                type="button"
+                onClick={() => setSelectedUnitNum(isSelected ? null : u.unitNumber)}
+                style={directoryStyle}
+              >
+                {unitCardBody}
               </button>
+            ) : (
+              <Link key={u.unitNumber} href={`${baseUrl}/${mode}/${u.unitNumber}`} style={directoryStyle}>
+                {unitCardBody}
+              </Link>
             );
           })}
         </div>
@@ -393,9 +369,8 @@ export default function ChapterTheoryPracticeClient({
 
       {/* Chapter-by-Chapter Questions / Numericals / Notes Listing */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-        {activeUnits.map(unit => {
-          if (mode === 'notes') {
-            const filteredDefs = unit.definitions.filter(d =>
+        {mode === 'notes' && activeUnits.map(unit => {
+          const filteredDefs = unit.definitions.filter(d =>
               !searchQuery.trim()
                 ? true
                 : smartMatch(`${unit.name} ${d.slo_code || ''} ${d.term} ${d.definition}`, searchQuery, d.slo_code)
@@ -469,393 +444,6 @@ export default function ChapterTheoryPracticeClient({
                 </div>
               </section>
             );
-          }
-
-          if (mode === 'numericals') {
-            const filteredNums = unit.numericals.filter(n =>
-              !searchQuery.trim()
-                ? true
-                : smartMatch(
-                    `${unit.name} ${n.problem} ${n.solution} ${n.formula || ''} ${n.currentSlo || ''} ${n.originalSlo || ''}`,
-                    searchQuery,
-                    n.currentSlo || n.originalSlo
-                  )
-            );
-            if (!filteredNums.length) return null;
-            return (
-              <section
-                key={unit.unitNumber}
-                style={{
-                  background: '#ffffff',
-                  border: '1.5px solid #dce5e1',
-                  borderRadius: '16px',
-                  padding: '1.75rem',
-                  boxShadow: '0 4px 14px rgba(0,0,0,0.03)',
-                }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.25rem', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.85rem' }}>
-                  <div>
-                    <span style={{ background: '#e6f0ed', color: '#0b5e4a', fontWeight: 800, fontSize: '0.78rem', padding: '3px 9px', borderRadius: '6px' }}>
-                      UNIT {unit.unitNumber} • {filteredNums.length} NUMERICAL PROBLEMS
-                    </span>
-                    <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#111827', margin: '0.4rem 0 0 0' }}>
-                      Unit {unit.unitNumber}: {unit.name} — Worked Numericals
-                    </h3>
-                  </div>
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.35rem' }}>
-                  {filteredNums.map(item => {
-                    const isOpen = showAllSolutions || revealedIds[item.id];
-                    return (
-                      <article
-                        key={item.id}
-                        style={{
-                          border: '1.5px solid #e2e8f0',
-                          borderRadius: '12px',
-                          padding: '1.35rem',
-                          background: '#ffffff',
-                        }}
-                      >
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                            <span style={{ background: '#0b5e4a', color: '#ffffff', padding: '3px 9px', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 800 }}>
-                              {item.questionNumber}
-                            </span>
-                            <Link
-                              href={item.sourceHref}
-                              style={{ background: '#f1f5f9', color: '#0f172a', padding: '3px 9px', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700, textDecoration: 'none' }}
-                            >
-                              {item.sourceTitle} ↗
-                            </Link>
-
-                            {item.currentSlo && (
-                              <Link
-                                href={`${baseUrl}/syllabus#slo-${item.currentSlo}`}
-                                title={item.currentSloDescription}
-                                style={{ background: '#ecfdf5', color: '#0b5e4a', border: '1px solid #a7f3d0', padding: '3px 9px', borderRadius: '5px', fontSize: '0.78rem', fontWeight: 800, textDecoration: 'none' }}
-                              >
-                                2025 SLO {item.currentSlo} ↗
-                              </Link>
-                            )}
-                          </div>
-                          <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#334155', background: '#f8fafc', padding: '3px 8px', borderRadius: '5px', border: '1px solid #e2e8f0' }}>
-                            {item.marks} {item.marks === 1 ? 'Mark' : 'Marks'}
-                          </span>
-                        </div>
-
-                        {item.currentSloDescription && (
-                          <div style={{ fontSize: '0.8rem', color: '#475569', marginBottom: '0.65rem', background: '#f8fafc', padding: '0.45rem 0.75rem', borderRadius: '6px' }}>
-                            <strong>2025 Syllabus Outcome ({item.currentSlo}):</strong> {item.currentSloDescription}
-                          </div>
-                        )}
-
-                        <div style={{ fontSize: '1.03rem', fontWeight: 600, color: '#111827', lineHeight: 1.6, marginBottom: '0.9rem' }}>
-                          <StructuredContent text={item.problem} />
-                        </div>
-
-                        {item.diagramUrl && (
-                          <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-                            <img
-                              src={item.diagramUrl}
-                              alt={`Diagram for ${item.questionNumber}`}
-                              style={{ maxWidth: '100%', maxHeight: '260px', objectFit: 'contain', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '6px', background: '#ffffff' }}
-                            />
-                          </div>
-                        )}
-
-                        {item.formula && (
-                          <div style={{ marginBottom: '0.75rem', fontSize: '0.88rem', color: '#0369a1', background: '#f0f9ff', padding: '0.5rem 0.85rem', borderRadius: '6px', border: '1px solid #bae6fd' }}>
-                            <strong>Key Formula: </strong>
-                            <MathText text={item.formula} />
-                          </div>
-                        )}
-
-                        <button
-                          type="button"
-                          onClick={() => toggleReveal(item.id)}
-                          style={{
-                            background: '#f1f5f9',
-                            color: '#0b5e4a',
-                            border: '1px solid #cbd5e1',
-                            padding: '6px 14px',
-                            borderRadius: '6px',
-                            fontSize: '0.82rem',
-                            fontWeight: 700,
-                            cursor: 'pointer',
-                            marginBottom: isOpen ? '0.85rem' : 0,
-                          }}
-                        >
-                          {isOpen ? 'Hide Worked Solution' : 'Show Worked Solution & Marking Steps'}
-                        </button>
-
-                        {isOpen && (
-                          <div style={{ background: '#f0fdf4', border: '1.5px solid #86efac', borderRadius: '10px', padding: '1.15rem' }}>
-                            {item.rubric && item.rubric.length > 0 && (
-                              <div style={{ marginBottom: '0.85rem', paddingBottom: '0.75rem', borderBottom: '1px solid #bbf7d0' }}>
-                                <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#166534', marginBottom: '0.35rem' }}>
-                                  📋 Official Checking Hints (Marking Scheme):
-                                </div>
-                                <ul style={{ margin: 0, paddingLeft: '1.2rem', fontSize: '0.86rem', color: '#14532d', lineHeight: 1.5 }}>
-                                  {item.rubric.map((r, rIdx) => (
-                                    <li key={rIdx}>
-                                      <MathText text={r.description} />
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                            <div style={{ fontSize: '0.94rem', color: '#14532d', lineHeight: 1.65, whiteSpace: 'pre-line' }}>
-                              <StructuredContent text={item.solution} />
-                            </div>
-                            {item.betterResponseImage && (
-                              <div style={{ marginTop: '0.85rem' }}>
-                                <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#166534', marginBottom: '0.3rem' }}>
-                                  Authentic E-Marking Better Candidate Calculation Script:
-                                </div>
-                                <img
-                                  src={item.betterResponseImage}
-                                  alt={`Better candidate calculation for ${item.questionNumber}`}
-                                  style={{ maxWidth: '100%', borderRadius: '8px', border: '1px solid #86efac', background: '#ffffff', padding: '4px' }}
-                                />
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </article>
-                    );
-                  })}
-                </div>
-              </section>
-            );
-          }
-
-          // CRQs or ERQs mode
-          const rawList = mode === 'crqs' ? unit.crqs : unit.erqs;
-          const filteredList = rawList.filter(item =>
-            !searchQuery.trim()
-              ? true
-              : smartMatch(
-                  `${unit.name} ${item.questionText} ${item.modelAnswer} ${item.currentSlo || ''} ${item.originalSlo || ''} ${item.sourceTitle}`,
-                  searchQuery,
-                  item.currentSlo || item.originalSlo
-                )
-          );
-          if (!filteredList.length) return null;
-
-          return (
-            <section
-              key={unit.unitNumber}
-              style={{
-                background: '#ffffff',
-                border: '1.5px solid #dce5e1',
-                borderRadius: '16px',
-                padding: '1.75rem',
-                boxShadow: '0 4px 14px rgba(0,0,0,0.03)',
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.25rem', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.85rem' }}>
-                <div>
-                  <span style={{ background: '#e6f0ed', color: '#0b5e4a', fontWeight: 800, fontSize: '0.78rem', padding: '3px 9px', borderRadius: '6px' }}>
-                    UNIT {unit.unitNumber} • {filteredList.length} {mode === 'crqs' ? 'SHORT QUESTIONS (CRQS)' : 'EXTENDED QUESTIONS (ERQS)'}
-                  </span>
-                  <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#111827', margin: '0.4rem 0 0 0' }}>
-                    Unit {unit.unitNumber}: {unit.name}
-                  </h3>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                {filteredList.map(item => {
-                  const isOpen = showAllSolutions || revealedIds[item.id];
-                  return (
-                    <article
-                      key={item.id}
-                      style={{
-                        border: '1.5px solid #e2e8f0',
-                        borderRadius: '12px',
-                        padding: '1.5rem',
-                        background: '#ffffff',
-                      }}
-                    >
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                          <span style={{ background: '#0b5e4a', color: '#ffffff', padding: '3px 9px', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 800 }}>
-                            {item.questionNumber}
-                          </span>
-                          <Link
-                            href={item.sourceHref}
-                            style={{ background: '#f1f5f9', color: '#0f172a', padding: '3px 9px', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700, textDecoration: 'none' }}
-                          >
-                            {item.sourceTitle} ↗
-                          </Link>
-
-                          {item.currentSlo ? (
-                            <Link
-                              href={`${baseUrl}/syllabus#slo-${item.currentSlo}`}
-                              title={item.currentSloDescription}
-                              style={{ background: '#ecfdf5', color: '#0b5e4a', border: '1px solid #a7f3d0', padding: '3px 9px', borderRadius: '5px', fontSize: '0.78rem', fontWeight: 800, textDecoration: 'none' }}
-                            >
-                              Current 2025 SLO {item.currentSlo} ↗
-                            </Link>
-                          ) : item.outOfSyllabus ? (
-                            <span style={{ background: '#f1f5f9', color: '#475569', padding: '3px 8px', borderRadius: '5px', fontSize: '0.76rem', fontWeight: 600 }}>
-                              Out of 2025 Syllabus
-                            </span>
-                          ) : null}
-                        </div>
-
-                        <span style={{ fontSize: '0.82rem', fontWeight: 800, color: '#111827', background: '#f3f4f6', padding: '3px 9px', borderRadius: '5px' }}>
-                          Total {item.marks} Marks • Level {item.cognitiveLevel || 'U'}
-                        </span>
-                      </div>
-
-                      {(item.currentSloDescription || item.originalSloText) && (
-                        <div style={{ fontSize: '0.8rem', color: '#475569', marginBottom: '0.75rem', background: '#f8fafc', padding: '0.5rem 0.8rem', borderRadius: '6px', border: '1px solid #e2e8f0' }}>
-                          {item.currentSloDescription && (
-                            <div>
-                              <strong>2025 Syllabus Outcome ({item.currentSlo}):</strong> {item.currentSloDescription}
-                            </div>
-                          )}
-
-                        </div>
-                      )}
-
-                      <div style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', lineHeight: 1.6, marginBottom: '1rem' }}>
-                        <StructuredContent text={item.questionText} />
-                      </div>
-
-                      {item.diagramUrl && (
-                        <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-                          <img
-                            src={item.diagramUrl}
-                            alt={`Diagram for ${item.questionNumber}`}
-                            style={{ maxWidth: '100%', maxHeight: '280px', objectFit: 'contain', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '6px', background: '#ffffff' }}
-                          />
-                        </div>
-                      )}
-
-                      {/* Optional student self-practice scratchpad */}
-                      <div style={{ marginBottom: '0.85rem' }}>
-                        <textarea
-                          rows={mode === 'erqs' ? 4 : 2}
-                          value={draftResponses[item.id] || ''}
-                          onChange={e => setDraftResponses(prev => ({ ...prev, [item.id]: e.target.value }))}
-                          placeholder="Write your practice answer here before comparing with the official Checking Hints and Model Response..."
-                          style={{
-                            width: '100%',
-                            padding: '0.65rem 0.85rem',
-                            borderRadius: '8px',
-                            border: '1px solid #cbd5e1',
-                            fontSize: '0.88rem',
-                            fontFamily: 'inherit',
-                            background: '#fafafa',
-                          }}
-                        />
-                      </div>
-
-                      <button
-                        type="button"
-                        onClick={() => toggleReveal(item.id)}
-                        style={{
-                          background: '#f1f5f9',
-                          color: '#0b5e4a',
-                          border: '1px solid #cbd5e1',
-                          padding: '6px 14px',
-                          borderRadius: '6px',
-                          fontSize: '0.82rem',
-                          fontWeight: 700,
-                          cursor: 'pointer',
-                          marginBottom: isOpen ? '0.85rem' : 0,
-                        }}
-                      >
-                        {isOpen ? 'Hide Solution & E-Marking Notes' : 'Show Solution, Rubric & E-Marking Notes'}
-                      </button>
-
-                      {isOpen && (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                          {item.rubric && item.rubric.length > 0 && (
-                            <div style={{ background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '0.9rem 1.15rem' }}>
-                              <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.35rem' }}>
-                                📋 Official Checking Hints (Marking Rubric • {item.marks} Marks)
-                              </div>
-                              <ul style={{ margin: 0, paddingLeft: '1.2rem', fontSize: '0.86rem', color: '#334155', lineHeight: 1.5 }}>
-                                {item.rubric.map((r, rIdx) => (
-                                  <li key={rIdx}>
-                                    <MathText text={r.description} />
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-
-                          <div style={{ background: '#f0fdf4', border: '1.5px solid #86efac', borderRadius: '10px', padding: '1.15rem' }}>
-                            <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#166534', marginBottom: '0.45rem' }}>
-                              ✓ MODEL SOLUTION (Full Marks Guidance)
-                            </div>
-                            <div style={{ fontSize: '0.94rem', color: '#14532d', lineHeight: 1.65, whiteSpace: 'pre-line' }}>
-                              <StructuredContent text={item.modelAnswer} />
-                            </div>
-                            {item.betterResponse && item.betterResponse !== item.modelAnswer && (
-                              <p style={{ margin: '0.7rem 0 0 0', fontSize: '0.85rem', color: '#166534', lineHeight: 1.5 }}>
-                                <strong>Examiner Commentary (Better Responses):</strong> {item.betterResponse}
-                              </p>
-                            )}
-                            {item.betterResponseImage && (
-                              <div style={{ marginTop: '0.75rem' }}>
-                                <div style={{ fontSize: '0.76rem', fontWeight: 700, color: '#166534', marginBottom: '0.25rem' }}>
-                                  Authentic E-Marking Better Candidate Script:
-                                </div>
-                                <img
-                                  src={item.betterResponseImage}
-                                  alt={`Better candidate script for ${item.questionNumber}`}
-                                  style={{ maxWidth: '100%', borderRadius: '8px', border: '1px solid #86efac', background: '#ffffff', padding: '4px' }}
-                                />
-                              </div>
-                            )}
-                          </div>
-
-                          {(item.weakerResponse || item.weakerResponseImage) && (
-                            <div style={{ background: '#fffbeb', border: '1.5px solid #fde68a', borderRadius: '10px', padding: '1.15rem' }}>
-                              <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#92400e', marginBottom: '0.4rem' }}>
-                                ⚠ WEAKER RESPONSE (Common Misconceptions & Lost Marks)
-                              </div>
-                              {item.weakerResponse && (
-                                <div style={{ fontSize: '0.88rem', color: '#78350f', lineHeight: 1.55 }}>
-                                  <MathText text={item.weakerResponse} />
-                                </div>
-                              )}
-                              {item.weakerResponseImage && (
-                                <div style={{ marginTop: '0.75rem' }}>
-                                  <div style={{ fontSize: '0.76rem', fontWeight: 700, color: '#92400e', marginBottom: '0.25rem' }}>
-                                    Authentic E-Marking Weaker Candidate Script:
-                                  </div>
-                                  <img
-                                    src={item.weakerResponseImage}
-                                    alt={`Weaker candidate script for ${item.questionNumber}`}
-                                    style={{ maxWidth: '100%', borderRadius: '8px', border: '1px solid #fcd34d', background: '#ffffff', padding: '4px' }}
-                                  />
-                                </div>
-                              )}
-                            </div>
-                          )}
-
-                          {item.suggestions && (
-                            <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '0.75rem 1rem', fontSize: '0.85rem', color: '#0f766e', display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                              <Lightbulb size={16} style={{ flexShrink: 0, marginTop: '2px' }} />
-                              <div>
-                                <strong>Examiner Suggestion for Improvement:</strong> {item.suggestions}
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      )}
-                    </article>
-                  );
-                })}
-              </div>
-            </section>
-          );
         })}
       </div>
     </div>

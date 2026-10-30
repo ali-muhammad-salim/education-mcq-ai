@@ -196,6 +196,21 @@ html.dark .rise-ui table tr:nth-child(even) td {
   border-color: var(--r-rule) !important;
 }
 
+/* globals.css paints every dark-mode field slate (#1e293b) with !important.
+   Reclaim rise-ui forms so inputs sit on the green-tinted surface scale. */
+html.dark .rise-ui input,
+html.dark .rise-ui select,
+html.dark .rise-ui textarea {
+  background: var(--r-surface-sunk) !important;
+  color: var(--r-ink) !important;
+  border-color: var(--r-rule-strong) !important;
+}
+
+html.dark .rise-ui input::placeholder,
+html.dark .rise-ui textarea::placeholder {
+  color: var(--r-ink-faint) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .rise-ui *,
   .rise-ui *::before,

@@ -13,6 +13,11 @@ export interface AuthUser {
 const sessionCache = new Map<string, { user: AuthUser; cachedUntil: number }>();
 const SESSION_CACHE_TTL_MS = 15_000;
 
+export function invalidateSession(tokenHash: string) { sessionCache.delete(tokenHash); }
+export function invalidateUserSessions(userId: string) {
+  for (const [hash, entry] of sessionCache) if (entry.user.id === userId) sessionCache.delete(hash);
+}
+
 export function generateToken(): string { return crypto.randomBytes(32).toString('hex'); }
 export function sessionTokenHash(token: string): string { return crypto.createHash('sha256').update(token).digest('hex'); }
 export async function getSessionUser(req: NextRequest, _legacyRole?: 'STUDENT' | 'TEACHER') {
