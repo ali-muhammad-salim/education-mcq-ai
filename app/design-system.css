@@ -1,0 +1,222 @@
+/*
+ * Rise Learner design system — "Marked Script".
+ *
+ * HARD SCOPE RULE: every selector in this file must be nested under `.rise-ui`
+ * (or `[data-rise]`). The Digital Paper view (components/PaperViewerClient.tsx,
+ * components/OriginalDocument.tsx, app/past-papers/[id]/page.tsx) is protected
+ * and must never be reached by these rules. tests/design-system-scope.test.ts
+ * enforces this.
+ *
+ * Class names must not contain the substring "card": globals.css line ~85 has
+ * `html.dark [class*="card"] { background: #111827 !important }`.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+.rise-ui {
+  /* Surfaces — warm paper, not clinical white */
+  --r-paper: #fbfaf7;
+  --r-surface: #ffffff;
+  --r-surface-sunk: #f3f1ea;
+  --r-rule: #e3e0d6;
+  --r-rule-strong: #c9c5b6;
+
+  /* Ink */
+  --r-ink: #171c19;
+  --r-ink-muted: #596660;
+  --r-ink-faint: #8a958f;
+
+  /* Primary — academic emerald, unchanged from the legacy palette so existing
+     inline hex and the dark-mode substring rules keep behaving. */
+  --r-emerald: #0b5e4a;
+  --r-emerald-press: #084737;
+  --r-emerald-wash: #e4efea;
+  --r-teal: #0f7f78;
+  --r-mint: #7fd1b0;
+
+  /* Semantic accents — each one means exactly one thing */
+  --r-subject: #2563eb; /* subject / board identity */
+  --r-insight: #7c3aed; /* AI explanation */
+  --r-wrong: #d94a4a; /* incorrect answer, trap option */
+  --r-flag: #c87a17; /* flagged for review */
+  --r-right: #0b7a52; /* correct answer, progress */
+
+  --r-subject-wash: #e7eefd;
+  --r-insight-wash: #f0e9fd;
+  --r-wrong-wash: #fcebeb;
+  --r-flag-wash: #fdf2e0;
+  --r-right-wash: #e3f3ec;
+
+  /* Type */
+  --r-font-display: 'Bricolage Grotesque', 'Outfit', sans-serif;
+  --r-font-body: 'Inter', sans-serif;
+  --r-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --r-text-xs: 0.75rem;
+  --r-text-sm: 0.8125rem;
+  --r-text-base: 0.9375rem;
+  --r-text-lg: 1.0625rem;
+  --r-text-xl: 1.375rem;
+  --r-text-2xl: 1.875rem;
+  --r-text-3xl: 2.5rem;
+  --r-text-4xl: 3.5rem;
+  --r-text-5xl: 4.75rem;
+
+  /* Space — 4px base */
+  --r-1: 0.25rem;
+  --r-2: 0.5rem;
+  --r-3: 0.75rem;
+  --r-4: 1rem;
+  --r-5: 1.5rem;
+  --r-6: 2rem;
+  --r-7: 3rem;
+  --r-8: 4rem;
+  --r-9: 6rem;
+
+  /* Radii — one tight scale; the OMR bubbles are the only circles */
+  --r-radius-sm: 6px;
+  --r-radius: 10px;
+  --r-radius-lg: 16px;
+  --r-radius-full: 999px;
+
+  /* One shadow scale, low and warm */
+  --r-shadow-sm: 0 1px 2px rgba(23, 28, 25, 0.06);
+  --r-shadow: 0 2px 8px rgba(23, 28, 25, 0.07);
+  --r-shadow-lg: 0 12px 32px rgba(23, 28, 25, 0.1);
+
+  /* Motion */
+  --r-fast: 120ms;
+  --r-base: 220ms;
+  --r-slow: 380ms;
+  --r-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  font-family: var(--r-font-body);
+  color: var(--r-ink);
+}
+
+html.dark .rise-ui,
+:root.dark .rise-ui {
+  --r-paper: #0f1512;
+  --r-surface: #16201b;
+  --r-surface-sunk: #111a16;
+  --r-rule: #26332c;
+  --r-rule-strong: #38473f;
+
+  --r-ink: #eef3ef;
+  --r-ink-muted: #a0b0a7;
+  --r-ink-faint: #74837b;
+
+  --r-emerald: #2bb688;
+  --r-emerald-press: #22a179;
+  --r-emerald-wash: #16302a;
+  --r-teal: #35b0a6;
+  --r-mint: #6ec9a8;
+
+  --r-subject: #6d9dff;
+  --r-insight: #a885f7;
+  --r-wrong: #f07676;
+  --r-flag: #e0a24a;
+  --r-right: #3cc08c;
+
+  --r-subject-wash: #16233d;
+  --r-insight-wash: #241a3b;
+  --r-wrong-wash: #331a1a;
+  --r-flag-wash: #30250f;
+  --r-right-wash: #102b20;
+
+  --r-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --r-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  --r-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* Reclaim headings from globals.css, which sets `h1..h6 { color: #f8fafc
+   !important }` on html.dark. Scoped specificity + !important is the only way
+   back without touching the global rule the protected view relies on. */
+.rise-ui h1,
+.rise-ui h2,
+.rise-ui h3,
+.rise-ui h4,
+.rise-ui h5,
+.rise-ui h6 {
+  font-family: var(--r-font-display);
+  color: var(--r-ink) !important;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+/* These element defaults are wrapped in :where() so their specificity stays at
+   0,0,1 — high enough to beat the globals.css element rules that load earlier,
+   low enough that any component class always wins. */
+:where(.rise-ui) p {
+  color: var(--r-ink-muted);
+  line-height: 1.6;
+  max-width: 68ch;
+}
+
+:where(.rise-ui) li {
+  color: var(--r-ink-muted);
+  line-height: 1.6;
+}
+
+:where(.rise-ui) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rise-ui :focus-visible {
+  outline: 2px solid var(--r-emerald);
+  outline-offset: 3px;
+  border-radius: var(--r-radius-sm);
+}
+
+.rise-ui button,
+.rise-ui input,
+.rise-ui select,
+.rise-ui textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.rise-ui [data-r-num] {
+  font-family: var(--r-font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* globals.css force-paints every table cell navy on html.dark (its `table th`
+   / `table td` rules are !important and the protected paper tables depend on
+   them). Opt the rise-ui zone back out. */
+html.dark .rise-ui table,
+html.dark .rise-ui table th,
+html.dark .rise-ui table td,
+html.dark .rise-ui table tr:nth-child(even) td {
+  background: transparent !important;
+  color: inherit !important;
+  border-color: var(--r-rule) !important;
+}
+
+/* globals.css paints every dark-mode field slate (#1e293b) with !important.
+   Reclaim rise-ui forms so inputs sit on the green-tinted surface scale. */
+html.dark .rise-ui input,
+html.dark .rise-ui select,
+html.dark .rise-ui textarea {
+  background: var(--r-surface-sunk) !important;
+  color: var(--r-ink) !important;
+  border-color: var(--r-rule-strong) !important;
+}
+
+html.dark .rise-ui input::placeholder,
+html.dark .rise-ui textarea::placeholder {
+  color: var(--r-ink-faint) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-ui *,
+  .rise-ui *::before,
+  .rise-ui *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}

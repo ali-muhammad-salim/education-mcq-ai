@@ -3,9 +3,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   Sparkles, CheckCircle2, XCircle, AlertTriangle, Clock,
-  ArrowRight, ArrowLeft, ShieldCheck, Award, RotateCcw,
+  ArrowRight, ArrowLeft, ShieldCheck, RotateCcw,
   Eye, Check, X, Maximize, Minimize, Info, ShieldAlert,
-  Bookmark, Trophy, BarChart3, Zap, WifiOff, RefreshCw, Play
+  Bookmark, Trophy, BarChart3, Zap, WifiOff, RefreshCw
 } from 'lucide-react';
 import MathText from '@/components/MathText';
 import AuthModal from '@/components/AuthModal';
@@ -13,6 +13,7 @@ import { useDialog } from '@/lib/use-dialog';
 import { useSecureExam } from '@/lib/use-secure-exam';
 import { z } from 'zod';
 import StructuredContent from '@/components/StructuredContent';
+import styles from '@/components/rise/quiz.module.css';
 import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 import { decryptQuestionReveal } from '@/lib/quiz-crypto';
 import {
@@ -621,8 +622,7 @@ export default function TakeQuizModal({
     setShowFinishConfirmModal(false);
     setSubmitting(true);
 
-    // Teacher-created quizzes have no public answer key. Use the authoritative
-    // result endpoint, which applies the teacher's score and answer-release rules.
+    // Teacher-created quizzes require authoritative grading and release settings.
     if (questions.length === 0 && !isRetrySubsetMode && engine.exam) {
       const { quizId, id: attemptId } = engine.exam;
       await engine.submit(automatic || engine.remaining <= 0);
@@ -763,7 +763,7 @@ export default function TakeQuizModal({
       peerAvgTimePerQuestionSec
     );
 
-    // A percentile needs actual peer attempts; a score cannot establish one.
+    // Peer percentiles require graded attempts from the server.
     const estPercentile = 0;
     const estSpeedPercentile = 0;
 
@@ -860,7 +860,7 @@ export default function TakeQuizModal({
     const updatedHistory = await saveAttemptHistory(paperCode, attemptEntry);
     setAttemptHistory(updatedHistory);
 
-    // Only the graded server attempt can supply a peer percentile. Never post a client score.
+    // Only the server-graded attempt can supply a peer percentile.
     if (!isRetrySubsetMode && engine.exam) {
       const { quizId, id: attemptId } = engine.exam;
       await engine.submit(automatic || engine.remaining <= 0);
@@ -949,6 +949,8 @@ export default function TakeQuizModal({
   }, [activeQuestions, userSelections]);
 
   if (!isOpen) return null;
+
+  const isFullScreenPhase = phase === 'active' || phase === 'completed';
 
   return (
     <>
@@ -1112,131 +1114,53 @@ export default function TakeQuizModal({
       {/* ========================================================================= */}
       {showFinishConfirmModal && phase === 'active' && (
         <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            background: 'rgba(15, 23, 42, 0.72)',
-            backdropFilter: 'blur(6px)',
-            zIndex: 9999999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '1rem'
-          }}
+          className={`rise-ui ${styles.promptOverlay}`}
           onClick={() => setShowFinishConfirmModal(false)}
         >
-          <div
-            style={{
-              background: '#ffffff',
-              borderRadius: '18px',
-              padding: '1.85rem',
-              maxWidth: '480px',
-              width: '100%',
-              boxShadow: '0 24px 48px rgba(0,0,0,0.3)',
-              border: '1.5px solid #e2e8f0'
-            }}
-            onClick={e => e.stopPropagation()}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
-              <div style={{
-                width: '46px',
-                height: '46px',
-                borderRadius: '12px',
-                background: '#fffbeb',
-                border: '1.5px solid #fde68a',
-                color: '#d97706',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0
-              }}>
-                <AlertTriangle size={24} />
-              </div>
-              <div>
-                <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#b45309', textTransform: 'uppercase' }}>
-                  Navigation Locked During Exam
-                </div>
-                <h3 style={{ fontSize: '1.22rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
-                  Finish the Quiz First?
-                </h3>
-              </div>
+          <div className={styles.promptBox} onClick={e => e.stopPropagation()}>
+            <div className={styles.promptHead}>
+              <span className={styles.stamp}>Navigation locked during exam</span>
+              <h3 className={styles.promptTitle}>Finish and submit?</h3>
             </div>
 
-            <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: 1.55, margin: '0 0 1.1rem 0' }}>
-              You cannot go back while the examination is active. Are you sure you want to finish and submit the quiz now?
+            <p className={styles.promptBody}>
+              You cannot go back while the examination is active.
               {liveAttemptedStats.unattempted > 0
                 ? ' Your score will be calculated for both the questions you attempted and the full paper.'
                 : ' You have answered all questions in this assessment.'}
             </p>
 
             {/* Live Progress Summary inside Confirmation Modal */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '0.6rem',
-              marginBottom: '1.35rem',
-              background: '#f8fafc',
-              padding: '0.85rem',
-              borderRadius: '12px',
-              border: '1px solid #e2e8f0',
-              textAlign: 'center'
-            }}>
-              <div>
-                <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 600 }}>Attempted</div>
-                <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0b5e4a' }}>
+            <div className={styles.promptStats}>
+              <div className={styles.stat}>
+                <span className={styles.label}>Attempted</span>
+                <div className={styles.statValue}>
                   {liveAttemptedStats.attempted} / {activeQuestions.length}
                 </div>
               </div>
-              <div>
-                <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 600 }}>Unattempted</div>
-                <div style={{ fontSize: '1.15rem', fontWeight: 800, color: liveAttemptedStats.unattempted > 0 ? '#d97706' : '#059669' }}>
-                  {liveAttemptedStats.unattempted}
-                </div>
+              <div className={styles.stat}>
+                <span className={styles.label}>Unattempted</span>
+                <div className={styles.statValue}>{liveAttemptedStats.unattempted}</div>
               </div>
-              <div>
-                <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 600 }}>Current Score</div>
-                <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a' }}>
+              <div className={styles.stat}>
+                <span className={styles.label}>Current score</span>
+                <div className={styles.statValue}>
                   {liveAttemptedStats.correct}/{liveAttemptedStats.attempted || 0} ({liveAttemptedStats.accuracy}%)
                 </div>
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <button
-                type="button"
-                onClick={() => setShowFinishConfirmModal(false)}
-                style={{
-                  flex: 1,
-                  background: '#f1f5f9',
-                  color: '#334155',
-                  border: '1px solid #cbd5e1',
-                  padding: '12px',
-                  borderRadius: '10px',
-                  fontWeight: 700,
-                  fontSize: '0.88rem',
-                  cursor: 'pointer'
-                }}
-              >
-                Continue Quiz
+            <div className={styles.promptActions}>
+              <button type="button" onClick={() => setShowFinishConfirmModal(false)} className={styles.quiet}>
+                Keep going
               </button>
               <button
                 type="button"
                 onClick={() => void handleConfirmFinishQuiz(false)}
                 disabled={submitting}
-                style={{
-                  flex: 1.25,
-                  background: '#0b5e4a',
-                  color: '#ffffff',
-                  border: 'none',
-                  padding: '12px',
-                  borderRadius: '10px',
-                  fontWeight: 800,
-                  fontSize: '0.9rem',
-                  cursor: 'pointer',
-                  boxShadow: '0 4px 12px rgba(11, 94, 74, 0.25)'
-                }}
+                className={styles.primary}
               >
-                {submitting ? 'Submitting...' : 'Yes, Finish & View Score'}
+                {submitting ? 'Submitting…' : 'Finish and view score'}
               </button>
             </div>
           </div>
@@ -1248,114 +1172,41 @@ export default function TakeQuizModal({
       {/* ========================================================================= */}
       {showResumePromptModal && savedResumeInfo && (
         <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            background: 'rgba(15, 23, 42, 0.72)',
-            backdropFilter: 'blur(6px)',
-            zIndex: 9999999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '1rem'
-          }}
+          className={`rise-ui ${styles.promptOverlay}`}
           onClick={() => setShowResumePromptModal(false)}
         >
-          <div
-            style={{
-              background: '#ffffff',
-              borderRadius: '18px',
-              padding: '1.85rem',
-              maxWidth: '500px',
-              width: '100%',
-              boxShadow: '0 24px 48px rgba(0,0,0,0.3)',
-              border: '1.5px solid #e2e8f0'
-            }}
-            onClick={e => e.stopPropagation()}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
-              <div style={{
-                width: '46px',
-                height: '46px',
-                borderRadius: '12px',
-                background: '#ecfdf5',
-                border: '1.5px solid #a7f3d0',
-                color: '#0b5e4a',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <Play size={22} />
-              </div>
-              <div>
-                <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0b5e4a', textTransform: 'uppercase' }}>
-                  Saved Progress Found
-                </div>
-                <h3 style={{ fontSize: '1.22rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
-                  Continue or Start from Beginning?
-                </h3>
-              </div>
+          <div className={styles.promptBox} onClick={e => e.stopPropagation()}>
+            <div className={styles.promptHead}>
+              <span className={styles.stamp}>Saved progress found</span>
+              <h3 className={styles.promptTitle}>Continue or start over?</h3>
             </div>
 
-            <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: 1.55, margin: '0 0 1.25rem 0' }}>
+            <p className={styles.promptBody}>
               You have an unfinished attempt for <strong>{paperTitle}</strong> with{' '}
-              <strong>{savedResumeInfo.answeredCount} of {savedResumeInfo.totalCount} questions</strong> answered. How would you like to proceed?
+              <strong>{savedResumeInfo.answeredCount} of {savedResumeInfo.totalCount} questions</strong> answered.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div className={styles.choiceStack}>
               <button
                 type="button"
                 onClick={() => launchQuizSession(false)}
-                style={{
-                  background: '#0b5e4a',
-                  color: '#ffffff',
-                  border: 'none',
-                  padding: '14px 16px',
-                  borderRadius: '12px',
-                  fontWeight: 800,
-                  fontSize: '0.95rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  textAlign: 'left',
-                  boxShadow: '0 4px 14px rgba(11, 94, 74, 0.22)'
-                }}
+                className={`${styles.choice} ${styles.choiceGo}`}
               >
                 <div>
-                  <div>Continue Where You Left Off (Question {savedResumeInfo.lastQuestionNum})</div>
-                  <div style={{ fontSize: '0.78rem', fontWeight: 500, opacity: 0.9, marginTop: '2px' }}>
-                    Restores your {savedResumeInfo.answeredCount} locked answers & remaining timer ({savedResumeInfo.remainingMinutes}m left)
-                  </div>
+                  <div className={styles.choiceMain}>Continue from question {savedResumeInfo.lastQuestionNum}</div>
+                  <p className={styles.choiceNote}>
+                    Restores {savedResumeInfo.answeredCount} locked answers and {savedResumeInfo.remainingMinutes}m on the clock
+                  </p>
                 </div>
-                <ArrowRight size={18} />
+                <ArrowRight size={18} aria-hidden="true" />
               </button>
 
-              <button
-                type="button"
-                onClick={() => launchQuizSession(true)}
-                style={{
-                  background: '#ffffff',
-                  color: '#0f172a',
-                  border: '1.5px solid #cbd5e1',
-                  padding: '13px 16px',
-                  borderRadius: '12px',
-                  fontWeight: 700,
-                  fontSize: '0.92rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  textAlign: 'left'
-                }}
-              >
+              <button type="button" onClick={() => launchQuizSession(true)} className={styles.choice}>
                 <div>
-                  <div>Start Fresh from Beginning (Question 1)</div>
-                  <div style={{ fontSize: '0.78rem', fontWeight: 500, color: '#64748b', marginTop: '2px' }}>
-                    Resets previous selections and begins a brand-new timed attempt
-                  </div>
+                  <div className={styles.choiceMain}>Start fresh from question 1</div>
+                  <p className={styles.choiceNote}>Clears previous selections and begins a new timed attempt</p>
                 </div>
-                <RotateCcw size={17} color="#475569" />
+                <RotateCcw size={17} aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -1365,59 +1216,15 @@ export default function TakeQuizModal({
       <div
         {...dialogProps}
         id="quiz-modal-container"
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(15, 23, 42, 0.88)',
-          backdropFilter: 'blur(8px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 99999,
-          padding: phase === 'active' || phase === 'completed' ? 0 : '1rem',
-          fontFamily: "'Inter', sans-serif",
-          userSelect: 'auto',
-          WebkitUserSelect: 'auto',
-          overflow: 'hidden'
-        }}
+        className={`rise-ui ${styles.overlay}${isFullScreenPhase ? ` ${styles.overlayFull}` : ''}`}
       >
         <div
           id="quiz-modal-card"
-          style={{
-            background: 'var(--card-bg, #ffffff)',
-            color: 'var(--text-color, #1e293b)',
-            borderRadius: phase === 'active' || phase === 'completed' ? '0px' : '20px',
-            maxWidth: phase === 'active' || phase === 'completed' ? '100vw' : '680px',
-            width: phase === 'active' || phase === 'completed' ? '100vw' : '100%',
-            height: phase === 'active' || phase === 'completed' ? '100dvh' : 'auto',
-            maxHeight: phase === 'active' || phase === 'completed' ? '100dvh' : '94dvh',
-            overflowY: phase === 'active' ? 'hidden' : 'auto',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.45)',
-            position: 'relative',
-            display: 'flex',
-            flexDirection: 'column'
-          }}
+          className={`${styles.shell}${isFullScreenPhase ? ` ${styles.shellFull}` : ''}${phase === 'active' ? ` ${styles.shellActive}` : ''}`}
         >
           {/* Top Status & Offline Diagram Cache Readiness Strip during Active Quiz */}
           {phase === 'active' && (
-            <div
-              role="status"
-              style={{
-                padding: '6px 20px',
-                background: '#f8fafc',
-                borderBottom: '1px solid #e2e8f0',
-                color: '#334155',
-                fontSize: '0.8rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '0.5rem'
-              }}
-            >
+            <div role="status" className={styles.syncStrip}>
               <div>
                 {engine.error ||
                   engine.notice ||
@@ -1429,30 +1236,22 @@ export default function TakeQuizModal({
                         ? 'All answers saved locally & encrypted'
                         : 'Loading saved assessment…')}
                 {engine.error && (
-                  <button onClick={engine.reload} style={{ marginLeft: 12, fontWeight: 700, color: '#0b5e4a', cursor: 'pointer', border: 'none', background: 'transparent' }}>
+                  <button onClick={engine.reload} className={styles.textButton} style={{ marginLeft: 12 }}>
                     Retry
                   </button>
                 )}
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <div className={styles.syncRight}>
                 {diagramCacheProgress.totalDiagrams > 0 && (
-                  <span style={{
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    color: diagramCacheProgress.ready ? '#059669' : '#d97706',
-                    background: diagramCacheProgress.ready ? '#ecfdf5' : '#fffbeb',
-                    border: `1px solid ${diagramCacheProgress.ready ? '#a7f3d0' : '#fde68a'}`,
-                    padding: '2px 8px',
-                    borderRadius: '999px'
-                  }}>
+                  <span className={`${styles.badge}${diagramCacheProgress.ready ? ` ${styles.badgeReady}` : ''}`}>
                     {diagramCacheProgress.ready
-                      ? `✅ Offline Ready (${diagramCacheProgress.totalDiagrams}/${diagramCacheProgress.totalDiagrams} Diagrams Cached)`
-                      : `⏳ Caching diagrams for offline use (${diagramCacheProgress.cachedCount}/${diagramCacheProgress.totalDiagrams})…`}
+                      ? `Offline ready — ${diagramCacheProgress.totalDiagrams} diagrams cached`
+                      : `Caching diagrams ${diagramCacheProgress.cachedCount}/${diagramCacheProgress.totalDiagrams}`}
                   </span>
                 )}
-                <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>
-                  Attempted Score: <strong style={{ color: '#0b5e4a' }}>{liveAttemptedStats.correct}/{liveAttemptedStats.attempted}</strong> ({liveAttemptedStats.accuracy}%)
+                <span className={styles.liveScore}>
+                  Attempted <strong>{liveAttemptedStats.correct}/{liveAttemptedStats.attempted}</strong> ({liveAttemptedStats.accuracy}%)
                 </span>
               </div>
             </div>
@@ -1463,22 +1262,7 @@ export default function TakeQuizModal({
             <button
               aria-label="Close assessment"
               onClick={onClose}
-              style={{
-                position: 'absolute',
-                top: '16px',
-                right: '16px',
-                background: '#f1f5f9',
-                border: 'none',
-                borderRadius: '50%',
-                width: '32px',
-                height: '32px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                color: '#64748b',
-                zIndex: 10
-              }}
+              className={styles.close}
             >
               <X size={18} />
             </button>
@@ -1498,75 +1282,35 @@ export default function TakeQuizModal({
           {/* PHASE 2: QUIZ SETUP, RESUME BANNER, & SINGLE-ROW ATTEMPT HISTORY          */}
           {/* ========================================================================= */}
           {phase === 'setup' && (
-            <div className="exam-phase-panel" style={{ padding: '2.25rem 2rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.15rem' }}>
-                <div style={{ background: '#0b5e4a', color: '#ffffff', borderRadius: '10px', padding: '8px', display: 'flex' }}>
-                  <Award size={24} />
-                </div>
-                <div>
-                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0b5e4a', background: '#e8f5f1', padding: '2px 8px', borderRadius: '4px' }}>
-                    {paperCode}
-                  </span>
-                  <h2 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#0f172a', margin: '0.2rem 0 0 0' }}>
-                    {paperTitle} — Quiz Setup
-                  </h2>
-                </div>
+            <div className={`exam-phase-panel ${styles.setup}`}>
+              <div className={styles.setupHead}>
+                <span className={styles.stamp}>{paperCode} · Quiz setup</span>
+                <h2 className={styles.setupTitle}>{paperTitle}</h2>
               </div>
 
               {/* Unfinished Attempt Quick-Resume Banner */}
               {savedResumeInfo && savedResumeInfo.answeredCount > 0 && (
-                <div style={{
-                  background: '#ecfdf5',
-                  border: '1.5px solid #6ee7b7',
-                  borderRadius: '12px',
-                  padding: '1rem 1.15rem',
-                  marginBottom: '1.25rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  flexWrap: 'wrap',
-                  gap: '0.75rem'
-                }}>
+                <div className={styles.resume}>
                   <div>
-                    <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#047857', textTransform: 'uppercase' }}>
-                      Unfinished Attempt Saved on Device
-                    </div>
-                    <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#064e3b', marginTop: '2px' }}>
-                      Question {savedResumeInfo.lastQuestionNum} of {savedResumeInfo.totalCount} • {savedResumeInfo.answeredCount} Answered • {savedResumeInfo.remainingMinutes}m left
-                    </div>
+                    <span className={styles.label}>Unfinished attempt saved on this device</span>
+                    <p className={styles.resumeLine}>
+                      Question {savedResumeInfo.lastQuestionNum} of {savedResumeInfo.totalCount} · {savedResumeInfo.answeredCount} answered · {savedResumeInfo.remainingMinutes}m left
+                    </p>
                   </div>
-                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <div className={styles.resumeActions}>
                     <button
                       type="button"
                       onClick={() => launchQuizSession(false)}
-                      style={{
-                        background: '#0b5e4a',
-                        color: '#ffffff',
-                        border: 'none',
-                        padding: '8px 14px',
-                        borderRadius: '8px',
-                        fontWeight: 700,
-                        fontSize: '0.82rem',
-                        cursor: 'pointer'
-                      }}
+                      className={`${styles.primary} ${styles.small}`}
                     >
-                      Continue Where Left Off
+                      Continue where I left off
                     </button>
                     <button
                       type="button"
                       onClick={() => launchQuizSession(true)}
-                      style={{
-                        background: '#ffffff',
-                        color: '#0f172a',
-                        border: '1px solid #cbd5e1',
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        fontWeight: 600,
-                        fontSize: '0.82rem',
-                        cursor: 'pointer'
-                      }}
+                      className={`${styles.quiet} ${styles.small}`}
                     >
-                      Start Fresh
+                      Start fresh
                     </button>
                   </div>
                 </div>
@@ -1574,72 +1318,46 @@ export default function TakeQuizModal({
 
               {/* SINGLE-ROW GROUPED ATTEMPT HISTORY (Click any attempt pill to view its full details) */}
               {attemptHistory.length > 0 && (
-                <div style={{
-                  background: '#f8fafc',
-                  border: '1.5px solid #e2e8f0',
-                  borderRadius: '12px',
-                  padding: '0.95rem 1.15rem',
-                  marginBottom: '1.25rem'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.55rem', flexWrap: 'wrap', gap: '0.4rem' }}>
-                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#0f172a', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                      <Trophy size={15} color="#0b5e4a" />
-                      <span>Your Attempts on {paperCode} ({attemptHistory.length} in 1 Row — Click Any to Inspect)</span>
+                <div className={`${styles.panel} ${styles.block}`}>
+                  <div className={styles.panelHead}>
+                    <div className={styles.panelTitle}>
+                      <Trophy aria-hidden="true" size={15} />
+                      <span>Your {attemptHistory.length} attempts on {paperCode} — tap one to inspect</span>
                     </div>
                     {selectedHistoryAttempt && (
                       <button
                         type="button"
                         onClick={() => setSelectedHistoryAttempt(null)}
-                        style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', background: 'none', border: 'none', cursor: 'pointer' }}
+                        className={styles.textButton}
                       >
-                        Hide Details ✕
+                        Hide details
                       </button>
                     )}
                   </div>
 
                   {/* Single Horizontal Row of Attempt Pills */}
-                  <div className="no-scrollbar" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', overflowX: 'auto', paddingBottom: '4px' }}>
+                  <div className={`no-scrollbar ${styles.attemptRow}`}>
                     {attemptHistory.map(att => {
                       const isSelected = selectedHistoryAttempt?.attemptId === att.attemptId;
                       return (
                         <button
                           key={att.attemptId}
                           type="button"
+                          aria-pressed={isSelected}
                           onClick={() => setSelectedHistoryAttempt(isSelected ? null : att)}
-                          style={{
-                            flexShrink: 0,
-                            padding: '7px 12px',
-                            borderRadius: '9px',
-                            border: isSelected ? '2px solid #0b5e4a' : '1px solid #cbd5e1',
-                            background: isSelected ? '#ecfdf5' : '#ffffff',
-                            color: '#0f172a',
-                            cursor: 'pointer',
-                            textAlign: 'left',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.5rem'
-                          }}
+                          className={`${styles.attempt}${isSelected ? ` ${styles.attemptOn}` : ''}`}
                         >
-                          <span style={{
-                            background: '#0b5e4a',
-                            color: '#ffffff',
-                            fontWeight: 800,
-                            fontSize: '0.72rem',
-                            padding: '2px 6px',
-                            borderRadius: '5px'
-                          }}>
-                            #{att.attemptNumber}
-                          </span>
-                          <div>
-                            <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0f172a' }}>
+                          <span className={styles.attemptNum}>#{att.attemptNumber}</span>
+                          <span>
+                            <span className={styles.attemptScore}>
                               {att.isPartial
-                                ? `${att.correctCount}/${att.attemptedCount} Attempted (${att.attemptedAccuracyPct}%) • ${att.score}/${att.totalMarks} Total`
+                                ? `${att.correctCount}/${att.attemptedCount} attempted (${att.attemptedAccuracyPct}%) · ${att.score}/${att.totalMarks} total`
                                 : `${att.score}/${att.totalMarks} (${att.overallPercentage}%)`}
-                            </div>
-                            <div style={{ fontSize: '0.7rem', color: '#64748b', fontWeight: 500 }}>
-                              ⏱ {formatDurationShort(att.totalTimeSec)}{(att.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS ? ` • ${att.percentile}th %ile` : ''}
-                            </div>
-                          </div>
+                            </span>
+                            <span className={styles.meta} style={{ display: 'block' }}>
+                              {formatDurationShort(att.totalTimeSec)}{(att.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS ? ` · ${att.percentile}th %ile` : ''}
+                            </span>
+                          </span>
                         </button>
                       );
                     })}
@@ -1647,17 +1365,13 @@ export default function TakeQuizModal({
 
                   {/* Expandable Attempt Details Drawer when a user clicks an attempt pill */}
                   {selectedHistoryAttempt && (
-                    <div style={{
-                      marginTop: '0.85rem',
-                      paddingTop: '0.85rem',
-                      borderTop: '1px solid #e2e8f0'
-                    }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.65rem' }}>
+                    <div className={styles.detail}>
+                      <div className={styles.detailHead}>
                         <div>
-                          <span style={{ fontWeight: 800, color: '#0b5e4a', fontSize: '0.88rem' }}>
-                            Attempt #{selectedHistoryAttempt.attemptNumber} Breakdown
+                          <span className={styles.stamp}>
+                            Attempt #{selectedHistoryAttempt.attemptNumber} breakdown
                           </span>
-                          <span style={{ fontSize: '0.78rem', color: '#64748b', marginLeft: '8px' }}>
+                          <span className={styles.meta} style={{ marginLeft: 8 }}>
                             {new Date(selectedHistoryAttempt.submittedAt).toLocaleString()}
                           </span>
                         </div>
@@ -1679,6 +1393,7 @@ export default function TakeQuizModal({
                               peerAvgTimePerQuestionSec: selectedHistoryAttempt.peerAvgTimePerQuestionSec,
                               compositeIndex: selectedHistoryAttempt.compositeIndex,
                               percentile: selectedHistoryAttempt.percentile,
+                              verifiedSampleSize: selectedHistoryAttempt.verifiedSampleSize,
                               speedPercentile: selectedHistoryAttempt.speedPercentile,
                               quadrantLabel: selectedHistoryAttempt.quadrantLabel,
                               attemptNumber: selectedHistoryAttempt.attemptNumber,
@@ -1695,44 +1410,35 @@ export default function TakeQuizModal({
                             });
                             setPhase('completed');
                           }}
-                          style={{
-                            background: '#0b5e4a',
-                            color: '#ffffff',
-                            border: 'none',
-                            borderRadius: '6px',
-                            padding: '5px 10px',
-                            fontSize: '0.76rem',
-                            fontWeight: 700,
-                            cursor: 'pointer'
-                          }}
+                          className={`${styles.primary} ${styles.small}`}
                         >
-                          Open Full Question Review →
+                          Open full question review
                         </button>
                       </div>
 
-                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem', textAlign: 'center' }}>
-                        <div style={{ background: '#ffffff', padding: '8px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                          <div style={{ fontSize: '0.7rem', color: '#64748b' }}>Attempted Score</div>
-                          <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#0b5e4a' }}>
+                      <div className={styles.statGrid}>
+                        <div className={styles.stat}>
+                          <span className={styles.label}>Attempted score</span>
+                          <div className={`${styles.statValue} ${styles.statValueRight}`}>
                             {selectedHistoryAttempt.correctCount}/{selectedHistoryAttempt.attemptedCount} ({selectedHistoryAttempt.attemptedAccuracyPct}%)
                           </div>
                         </div>
-                        <div style={{ background: '#ffffff', padding: '8px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                          <div style={{ fontSize: '0.7rem', color: '#64748b' }}>Total Paper Score</div>
-                          <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#0f172a' }}>
+                        <div className={styles.stat}>
+                          <span className={styles.label}>Total paper score</span>
+                          <div className={styles.statValue}>
                             {selectedHistoryAttempt.score}/{selectedHistoryAttempt.totalMarks} ({selectedHistoryAttempt.overallPercentage}%)
                           </div>
                         </div>
-                        <div style={{ background: '#ffffff', padding: '8px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                          <div style={{ fontSize: '0.7rem', color: '#64748b' }}>Avg Time / Q</div>
-                          <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#0f172a' }}>
-                            {selectedHistoryAttempt.avgTimePerAttemptedSec}s{selectedHistoryAttempt.peerAvgTimePerQuestionSec > 0 ? ` (Peer ${selectedHistoryAttempt.peerAvgTimePerQuestionSec}s)` : ''}
+                        <div className={styles.stat}>
+                          <span className={styles.label}>Avg time / Q</span>
+                          <div className={styles.statValue}>
+                            {selectedHistoryAttempt.avgTimePerAttemptedSec}s{selectedHistoryAttempt.peerAvgTimePerQuestionSec > 0 && <span className={styles.meta}> (peer {selectedHistoryAttempt.peerAvgTimePerQuestionSec}s)</span>}
                           </div>
                         </div>
-                        {(selectedHistoryAttempt.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS && <div style={{ background: '#ffffff', padding: '8px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                          <div style={{ fontSize: '0.7rem', color: '#64748b' }}>Percentile</div>
-                          <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#059669' }}>
-                            {selectedHistoryAttempt.percentile}th %ile
+                        {(selectedHistoryAttempt.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS && <div className={styles.stat}>
+                          <span className={styles.label}>Percentile</span>
+                          <div className={`${styles.statValue} ${styles.statValueRight}`}>
+                            {selectedHistoryAttempt.percentile}th
                           </div>
                         </div>}
                       </div>
@@ -1742,120 +1448,72 @@ export default function TakeQuizModal({
               )}
 
               {/* Student Identified Badge */}
-              <div style={{
-                background: '#f8fafc',
-                border: '1px solid #e2e8f0',
-                borderRadius: '10px',
-                padding: '0.85rem 1.15rem',
-                marginBottom: '1.25rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}>
+              <div className={styles.candidate}>
                 <div>
-                  <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Candidate Logged In:</div>
-                  <div style={{ fontSize: '0.98rem', fontWeight: 700, color: '#0f172a' }}>
+                  <span className={styles.label}>Candidate</span>
+                  <p className={styles.candidateName}>
                     {student?.name || 'Sign in to save your attempt'}
-                  </div>
+                  </p>
                 </div>
                 <button
                   onClick={() => setPhase('auth')}
-                  style={{
-                    background: '#f1f5f9',
-                    border: '1px solid #cbd5e1',
-                    borderRadius: '6px',
-                    padding: '4px 10px',
-                    fontSize: '0.78rem',
-                    fontWeight: 600,
-                    color: '#475569',
-                    cursor: 'pointer'
-                  }}
+                  className={`${styles.quiet} ${styles.small}`}
                 >
-                  Change Candidate
+                  Change candidate
                 </button>
               </div>
 
               {/* Timer Preference Option */}
-              <div style={{ marginBottom: '1.25rem' }}>
-                <label style={{ fontSize: '0.92rem', fontWeight: 700, color: '#0f172a', display: 'block', marginBottom: '0.6rem' }}>
-                  1. Examination Timer & Mode
-                </label>
+              <div className={styles.block}>
+                <span className={styles.label}>Timer &amp; mode</span>
 
-                <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
+                <div className={`mobile-stack-grid ${styles.modeGrid}`}>
                   <button
                     type="button"
+                    aria-pressed={isTimed}
                     onClick={() => setIsTimed(true)}
-                    style={{
-                      padding: '12px',
-                      borderRadius: '10px',
-                      border: isTimed ? '2px solid #0b5e4a' : '1px solid #cbd5e1',
-                      background: isTimed ? '#ecfdf5' : '#ffffff',
-                      color: isTimed ? '#0b5e4a' : '#475569',
-                      fontWeight: 700,
-                      fontSize: '0.88rem',
-                      cursor: 'pointer',
-                      textAlign: 'left'
-                    }}
+                    className={`${styles.mode}${isTimed ? ` ${styles.modeOn}` : ''}`}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '2px' }}>
-                      <Clock size={16} />
-                      <span>Timed Examination</span>
-                    </div>
-                    <div style={{ fontSize: '0.76rem', color: '#64748b', fontWeight: 500 }}>
-                      Official exam countdown timer
-                    </div>
+                    <span className={styles.modeName}>
+                      <Clock aria-hidden="true" size={16} />
+                      <span>Timed examination</span>
+                    </span>
+                    <p className={styles.modeNote}>
+                      Official exam countdown timer.
+                    </p>
                   </button>
 
                   <button
                     type="button"
+                    aria-pressed={!isTimed}
                     disabled={!preview?.practice}
                     onClick={() => setIsTimed(false)}
-                    style={{
-                      padding: '12px',
-                      borderRadius: '10px',
-                      border: !isTimed ? '2px solid #0b5e4a' : '1px solid #cbd5e1',
-                      background: !isTimed ? '#ecfdf5' : '#ffffff',
-                      color: !isTimed ? '#0b5e4a' : '#475569',
-                      fontWeight: 700,
-                      fontSize: '0.88rem',
-                      cursor: 'pointer',
-                      textAlign: 'left'
-                    }}
+                    className={`${styles.mode}${!isTimed ? ` ${styles.modeOn}` : ''}`}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '2px' }}>
-                      <Sparkles size={16} />
-                      <span>Extended Practice (24 hours)</span>
-                    </div>
-                    <div style={{ fontSize: '0.76rem', color: '#64748b', fontWeight: 500 }}>
-                      Study questions at your own pace
-                    </div>
+                    <span className={styles.modeName}>
+                      <Sparkles aria-hidden="true" size={16} />
+                      <span>Extended practice</span>
+                    </span>
+                    <p className={styles.modeNote}>
+                      24 hours to work through the questions at your own pace.
+                    </p>
                   </button>
                 </div>
 
                 {isTimed && (
-                  <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '0.85rem 1rem' }}>
-                    <div style={{ fontSize: '0.82rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>
-                      Select Exam Duration:
-                    </div>
-                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  <div className={styles.panel}>
+                    <span className={styles.label}>Exam duration</span>
+                    <div className={styles.chipRow}>
                       {[15, 30, 50].map(mins => (
                         <button
                           key={mins}
                           type="button"
+                          aria-pressed={selectedDurationMin === mins}
                           disabled={!preview?.practice}
                           onClick={() => setSelectedDurationMin(mins)}
-                          style={{
-                            padding: '6px 14px',
-                            borderRadius: '6px',
-                            border: selectedDurationMin === mins ? '2px solid #0b5e4a' : '1px solid #cbd5e1',
-                            background: selectedDurationMin === mins ? '#0b5e4a' : '#ffffff',
-                            color: selectedDurationMin === mins ? '#ffffff' : '#334155',
-                            fontWeight: 700,
-                            fontSize: '0.84rem',
-                            cursor: 'pointer'
-                          }}
+                          className={`${styles.chip}${selectedDurationMin === mins ? ` ${styles.chipOn}` : ''}`}
                         >
-                          {mins} Minutes {mins === 50 ? '(Official)' : ''}
+                          {mins} min{mins === 50 ? ' · official' : ''}
                         </button>
                       ))}
                     </div>
@@ -1864,97 +1522,51 @@ export default function TakeQuizModal({
               </div>
 
               {/* Offline Cache & Feature Readiness Notice */}
-              <div style={{
-                background: '#fefce8',
-                border: '1px solid #fef08a',
-                borderRadius: '10px',
-                padding: '0.9rem 1rem',
-                marginBottom: '1.5rem'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', color: '#854d0e', fontWeight: 700, fontSize: '0.86rem', marginBottom: '0.35rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                    <ShieldCheck size={17} />
-                    <span>Quiz practice and answer review</span>
-                  </div>
+              <div className={styles.notice}>
+                <div className={styles.noticeHead}>
+                  <span className={styles.noticeHeadMain}>
+                    <ShieldCheck aria-hidden="true" size={17} />
+                    <span>Works offline, encrypted on your device</span>
+                  </span>
                   {diagramCacheProgress.totalDiagrams > 0 && (
-                    <span style={{ fontSize: '0.75rem', background: '#fef08a', padding: '2px 8px', borderRadius: '999px' }}>
+                    <span className={`${styles.badge}${diagramCacheProgress.ready ? ` ${styles.badgeReady}` : ''}`}>
                       {diagramCacheProgress.ready
-                        ? `✓ All ${diagramCacheProgress.totalDiagrams} Diagrams Pre-Cached`
-                        : `Pre-caching diagrams (${diagramCacheProgress.cachedCount}/${diagramCacheProgress.totalDiagrams})`}
+                        ? `${diagramCacheProgress.totalDiagrams} diagrams cached`
+                        : `Caching ${diagramCacheProgress.cachedCount}/${diagramCacheProgress.totalDiagrams}`}
                     </span>
                   )}
                 </div>
-                <div style={{ fontSize: '0.8rem', color: '#713f12', lineHeight: 1.55 }}>
-                  • <strong>Saved progress:</strong> Your answers are kept locally while they sync with the assessment service.<br />
-                  • <strong>Answer review:</strong> Explanations appear only when the quiz settings allow them.<br />
-                  • <strong>Keyboard Shortcuts:</strong> Press <kbd>A</kbd>–<kbd>D</kbd> to answer, <kbd>←</kbd>/<kbd>→</kbd> to navigate, and <kbd>F</kbd> to bookmark.
-                </div>
+                <p className={styles.noticeBody}>
+                  Your answers are saved on this device while they sync. Explanations appear when
+                  the quiz settings allow them. Press <kbd>A</kbd>–<kbd>D</kbd> to answer, <kbd>←</kbd> and{' '}
+                  <kbd>→</kbd> to move, <kbd>F</kbd> to flag.
+                </p>
               </div>
 
               {startQuizError && (
-                <div style={{
-                  background: '#fef2f2',
-                  border: '1.5px solid #fecaca',
-                  borderRadius: '10px',
-                  padding: '12px 16px',
-                  marginBottom: '1.25rem',
-                  color: '#991b1b',
-                  fontSize: '0.88rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.6rem'
-                }}>
-                  <AlertTriangle size={18} color="#dc2626" />
+                <div role="alert" className={styles.alert}>
+                  <AlertTriangle aria-hidden="true" size={18} />
                   <span>{startQuizError}</span>
                 </div>
               )}
 
               {/* Launch Button */}
-              <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <button
-                  type="button"
-                  onClick={onClose}
-                  style={{
-                    flex: 1,
-                    background: '#f1f5f9',
-                    color: '#475569',
-                    border: '1px solid #cbd5e1',
-                    padding: '14px',
-                    borderRadius: '10px',
-                    fontWeight: 600,
-                    fontSize: '0.9rem',
-                    cursor: 'pointer'
-                  }}
-                >
+              <div className={styles.launch}>
+                <button type="button" onClick={onClose} className={styles.quiet}>
                   Cancel
                 </button>
                 <button
                   type="button"
                   onClick={handleStartQuizClick}
                   disabled={loadingQuizQuestions}
-                  style={{
-                    flex: 2,
-                    background: loadingQuizQuestions ? '#94a3b8' : '#0b5e4a',
-                    color: '#ffffff',
-                    border: 'none',
-                    padding: '14px',
-                    borderRadius: '10px',
-                    fontWeight: 800,
-                    fontSize: '1rem',
-                    cursor: loadingQuizQuestions ? 'not-allowed' : 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                    boxShadow: '0 4px 12px rgba(11, 94, 74, 0.2)'
-                  }}
+                  className={styles.primary}
                 >
                   <span>
                     {loadingQuizQuestions
-                      ? 'Loading Questions...'
-                      : `Start Quiz (${preview?.count || questions?.length || activeQuestions?.length || 40} Items)`}
+                      ? 'Loading questions…'
+                      : `Start quiz — ${preview?.count || questions?.length || activeQuestions?.length || 40} questions`}
                   </span>
-                  <ArrowRight size={18} />
+                  <ArrowRight aria-hidden="true" size={18} />
                 </button>
               </div>
             </div>
@@ -1962,33 +1574,14 @@ export default function TakeQuizModal({
 
           {/* Fallback if Phase is Active but No Question Loaded */}
           {phase === 'active' && !currentQ && (
-            <div style={{
-              padding: '3.5rem 2rem',
-              textAlign: 'center',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: '#ffffff',
-              borderRadius: '16px'
-            }}>
-              <div style={{
-                width: '60px',
-                height: '60px',
-                borderRadius: '50%',
-                background: '#fef3c7',
-                color: '#d97706',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '1.25rem'
-              }}>
-                <AlertTriangle size={32} />
+            <div className={styles.state}>
+              <div className={styles.stateIcon}>
+                <AlertTriangle aria-hidden="true" size={28} />
               </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.5rem 0' }}>
+              <h3 className={styles.stateTitle}>
                 {engine.error ? 'Unable to start assessment' : engine.exam ? 'No questions in this assessment' : 'Loading assessment…'}
               </h3>
-              <p style={{ color: '#64748b', fontSize: '0.92rem', maxWidth: '420px', lineHeight: 1.5, margin: '0 0 1.5rem 0' }}>
+              <p className={styles.stateBody}>
                 {engine.error || (engine.exam ? 'This assessment has no questions. Please return to the paper.' : 'Loading your saved questions. This may take a few seconds.')}
               </p>
               <button
@@ -1998,18 +1591,9 @@ export default function TakeQuizModal({
                   setLoadingQuizQuestions(false);
                   if (!engine.error) onClose();
                 }}
-                style={{
-                  background: '#0b5e4a',
-                  color: '#ffffff',
-                  border: 'none',
-                  padding: '10px 24px',
-                  borderRadius: '8px',
-                  fontWeight: 700,
-                  fontSize: '0.9rem',
-                  cursor: 'pointer'
-                }}
+                className={styles.primary}
               >
-                {engine.error ? 'Return to setup' : 'Close Examination'}
+                {engine.error ? 'Return to setup' : 'Close examination'}
               </button>
             </div>
           )}
@@ -2020,69 +1604,33 @@ export default function TakeQuizModal({
           {phase === 'active' && currentQ && (
             <div
               id="aku-active-quiz-content"
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                flex: 1,
-                minHeight: 0,
-                maxHeight: '100%',
-                overflow: 'hidden',
-                position: 'relative',
-                filter: isWindowMasked ? 'blur(35px)' : 'none',
-                transition: 'filter 0.15s ease',
-                WebkitTouchCallout: 'none',
-                userSelect: 'auto',
-                touchAction: 'pan-y'
-              }}
+              className={`${styles.active}${isWindowMasked ? ` ${styles.activeMasked}` : ''}`}
             >
-              {/* Smooth Spring Progress Bar at Very Top */}
-              <div style={{ height: '4px', width: '100%', background: '#e2e8f0', flexShrink: 0 }}>
+              {/* Progress — fills as the script is answered */}
+              <div className={styles.progress}>
                 <div
+                  className={styles.progressFill}
                   style={{
-                    height: '100%',
                     width: `${Math.min(100, Math.round((liveAttemptedStats.attempted / Math.max(1, activeQuestions.length)) * 100))}%`,
-                    background: 'linear-gradient(90deg, #0b5e4a, #10b981)',
-                    transition: 'width 300ms cubic-bezier(0.22, 1, 0.36, 1)'
                   }}
                 />
               </div>
 
               {cheatWarningVisible && (
-                <div style={{
-                  background: '#fffbeb',
-                  borderBottom: '1px solid #fde68a',
-                  color: '#92400e',
-                  padding: '9px 16px',
-                  fontSize: '0.84rem',
-                  fontWeight: 600,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  zIndex: 20,
-                  flexShrink: 0
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <Info size={17} color="#d97706" />
+                <div className={styles.warn}>
+                  <span className={styles.warnMain}>
+                    <Info aria-hidden="true" size={17} />
                     <span>
-                      Notice: Window departure #{tabSwitchCount} noted ({lastSwitchDuration}s away). Please remain on the examination window.
+                      Window departure #{tabSwitchCount} noted ({lastSwitchDuration}s away). Please stay on the examination window.
                     </span>
-                  </div>
+                  </span>
                   <button
                     onClick={e => {
                       e.stopPropagation();
                       e.preventDefault();
                       setCheatWarningVisible(false);
                     }}
-                    style={{
-                      background: 'rgba(217, 119, 6, 0.12)',
-                      border: '1px solid rgba(217, 119, 6, 0.25)',
-                      color: '#92400e',
-                      padding: '3px 10px',
-                      borderRadius: '6px',
-                      cursor: 'pointer',
-                      fontSize: '0.78rem',
-                      fontWeight: 700
-                    }}
+                    className={styles.textButton}
                   >
                     Dismiss
                   </button>
@@ -2090,105 +1638,54 @@ export default function TakeQuizModal({
               )}
 
               {/* Quiz Header Bar */}
-              <div
-                className="exam-header"
-                style={{
-                  padding: '0.85rem 1.5rem',
-                  borderBottom: '1px solid #e2e8f0',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  background: '#f8fafc',
-                  flexWrap: 'wrap',
-                  gap: '0.75rem',
-                  zIndex: 2,
-                  flexShrink: 0
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexWrap: 'wrap' }}>
-                  <div>
-                    <div style={{ fontSize: '0.74rem', fontWeight: 800, color: '#0b5e4a', textTransform: 'uppercase' }}>
-                      {paperCode} {isRetrySubsetMode ? '• Smart Retry Mode' : ''} • Item {currentIndex + 1} of {activeQuestions.length}
-                    </div>
-                    <div style={{ fontSize: '1rem', fontWeight: 800, color: '#0f172a', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <span>Question {currentQ.displayNumber}</span>
-                      {currentQTelemetry && currentQTelemetry.peerAvgTimeSec > 0 && (
-                        <span style={{
-                          fontSize: '0.76rem',
-                          fontWeight: 700,
-                          padding: '2px 8px',
-                          borderRadius: '999px',
-                          background: currentQTimeSec > currentQTelemetry.peerAvgTimeSec * 1.25 ? '#fef2f2' : '#f1f5f9',
-                          color: currentQTimeSec > currentQTelemetry.peerAvgTimeSec * 1.25 ? '#dc2626' : '#475569',
-                          border: '1px solid #cbd5e1'
-                        }}>
-                          ⏱ {currentQTimeSec}s (Peer Avg: {currentQTelemetry.peerAvgTimeSec}s)
-                        </span>
-                      )}
-                    </div>
-                  </div>
+              <div className={`exam-header ${styles.bar}`}>
+                <div>
+                  <span className={styles.stamp}>
+                    {paperCode}{isRetrySubsetMode ? ' · smart retry' : ''} · item {currentIndex + 1} of {activeQuestions.length}
+                  </span>
+                  <h2 className={styles.barTitle}>
+                    <span>Question {currentQ.displayNumber}</span>
+                    {currentQTelemetry && currentQTelemetry.peerAvgTimeSec > 0 && (
+                      <span
+                        className={`${styles.timePill}${currentQTimeSec > currentQTelemetry.peerAvgTimeSec * 1.25 ? ` ${styles.timePillSlow}` : ''}`}
+                      >
+                        {currentQTimeSec}s · peer {currentQTelemetry.peerAvgTimeSec}s
+                      </span>
+                    )}
+                  </h2>
                 </div>
 
                 {/* Status Indicators: Bookmark, Timer, Fullscreen, Warnings, Grid & Finish */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', minWidth: 0, maxWidth: '100%', alignItems: 'center', gap: '0.55rem' }}>
+                <div className={styles.barTools}>
                   {/* Bookmark / Flag Question Button */}
                   <button
                     type="button"
                     onClick={() => toggleBookmark(currentQ.displayNumber)}
-                    title="Flag / Bookmark Question for Review (Shortcut: F)"
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.35rem',
-                      background: bookmarkedQuestions.includes(currentQ.displayNumber) ? '#fffbeb' : '#ffffff',
-                      border: bookmarkedQuestions.includes(currentQ.displayNumber) ? '1.5px solid #f59e0b' : '1px solid #cbd5e1',
-                      color: bookmarkedQuestions.includes(currentQ.displayNumber) ? '#b45309' : '#475569',
-                      padding: '5px 10px',
-                      borderRadius: '8px',
-                      fontWeight: 700,
-                      fontSize: '0.78rem',
-                      cursor: 'pointer'
-                    }}
+                    aria-pressed={bookmarkedQuestions.includes(currentQ.displayNumber)}
+                    title="Flag this question for review (shortcut: F)"
+                    className={`${styles.tool}${bookmarkedQuestions.includes(currentQ.displayNumber) ? ` ${styles.toolFlag}` : ''}`}
                   >
-                    <Bookmark size={14} fill={bookmarkedQuestions.includes(currentQ.displayNumber) ? '#f59e0b' : 'none'} />
+                    <Bookmark size={14} fill={bookmarkedQuestions.includes(currentQ.displayNumber) ? 'currentColor' : 'none'} />
                     <span>{bookmarkedQuestions.includes(currentQ.displayNumber) ? 'Flagged' : 'Flag'}</span>
                   </button>
 
                   <button
                     type="button"
                     onClick={toggleFullscreen}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.35rem',
-                      background: isFullscreen ? '#ecfdf5' : '#ffffff',
-                      border: isFullscreen ? '1.5px solid #10b981' : '1px solid #cbd5e1',
-                      color: isFullscreen ? '#065f46' : '#475569',
-                      padding: '5px 10px',
-                      borderRadius: '8px',
-                      fontWeight: 700,
-                      fontSize: '0.78rem',
-                      cursor: 'pointer'
-                    }}
+                    aria-pressed={isFullscreen}
+                    className={`${styles.tool}${isFullscreen ? ` ${styles.toolOn}` : ''}`}
                   >
                     {isFullscreen ? <Minimize size={14} /> : <Maximize size={14} />}
-                    <span>{isFullscreen ? 'Exit Full' : 'Fullscreen'}</span>
+                    <span>{isFullscreen ? 'Exit full screen' : 'Full screen'}</span>
                   </button>
 
                   {isTimed && (
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.35rem',
-                      background: timeLeftSeconds < 300 ? '#fef2f2' : '#ffffff',
-                      border: timeLeftSeconds < 300 ? '1.5px solid #ef4444' : '1px solid #cbd5e1',
-                      color: timeLeftSeconds < 300 ? '#b91c1c' : '#0f172a',
-                      padding: '5px 12px',
-                      borderRadius: '8px',
-                      fontWeight: 800,
-                      fontSize: '0.9rem'
-                    }}>
-                      <Clock size={15} />
+                    <div
+                      role="timer"
+                      aria-label="Time remaining"
+                      className={`${styles.clock}${timeLeftSeconds < 300 ? ` ${styles.clockLow}` : ''}`}
+                    >
+                      <Clock aria-hidden="true" size={15} />
                       <span>{formatTime(timeLeftSeconds)}</span>
                     </div>
                   )}
@@ -2199,84 +1696,50 @@ export default function TakeQuizModal({
                       e.stopPropagation();
                       setShowSwitchAuditModal(true);
                     }}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.35rem',
-                      fontSize: '0.76rem',
-                      fontWeight: 700,
-                      color: tabSwitchCount > 0 || screenshotAttemptCount > 0 ? '#b91c1c' : '#059669',
-                      background: tabSwitchCount > 0 || screenshotAttemptCount > 0 ? '#fef2f2' : '#ecfdf5',
-                      padding: '5px 10px',
-                      borderRadius: '8px',
-                      border: tabSwitchCount > 0 || screenshotAttemptCount > 0 ? '1px solid #fecaca' : '1px solid #a7f3d0',
-                      cursor: 'pointer'
-                    }}
+                    className={`${styles.tool}${tabSwitchCount > 0 || screenshotAttemptCount > 0 ? ` ${styles.toolAlert}` : ''}`}
                   >
-                    <Eye size={14} />
-                    <span>👁️ {tabSwitchCount} Events</span>
+                    <Eye aria-hidden="true" size={14} />
+                    <span>{tabSwitchCount} events</span>
                   </button>
 
                   <button
                     type="button"
                     onClick={() => setShowQuestionGrid(!showQuestionGrid)}
-                    style={{
-                      background: '#ffffff',
-                      border: '1px solid #cbd5e1',
-                      borderRadius: '8px',
-                      padding: '5px 10px',
-                      fontSize: '0.8rem',
-                      fontWeight: 700,
-                      cursor: 'pointer'
-                    }}
+                    aria-expanded={showQuestionGrid}
+                    className={styles.tool}
                   >
-                    Palette ({Object.keys(userSelections).length}/{activeQuestions.length})
+                    Sheet {Object.keys(userSelections).length}/{activeQuestions.length}
                   </button>
 
                   <button
                     type="button"
                     onClick={() => setShowFinishConfirmModal(true)}
                     disabled={submitting}
-                    style={{
-                      background: '#0b5e4a',
-                      color: '#ffffff',
-                      border: 'none',
-                      borderRadius: '8px',
-                      padding: '6px 14px',
-                      fontSize: '0.84rem',
-                      fontWeight: 700,
-                      cursor: 'pointer'
-                    }}
+                    className={`${styles.primary} ${styles.small}`}
                   >
-                    {submitting ? 'Submitting...' : 'Finish Quiz'}
+                    {submitting ? 'Submitting…' : 'Finish'}
                   </button>
                 </div>
               </div>
 
               {/* Quick Question Jump Drawer (Color-Coded: Correct=Green, Wrong=Red, Flagged=Amber, Unvisited=Gray) */}
               {showQuestionGrid && (
-                <div
-                  className="no-scrollbar exam-question-grid"
-                  style={{
-                    padding: '0.85rem 1.25rem',
-                    background: '#ffffff',
-                    borderBottom: '1px solid #e2e8f0',
-                    maxHeight: '185px',
-                    overflowY: 'auto',
-                    flexShrink: 0
-                  }}
-                >
-                  <div style={{ display: 'flex', gap: '1rem', fontSize: '0.72rem', fontWeight: 700, color: '#64748b', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
-                    <span>🟢 Correct</span>
-                    <span>🔴 Incorrect</span>
-                    <span>🟡 Flagged ({bookmarkedQuestions.length})</span>
-                    <span>⚪ Unattempted ({liveAttemptedStats.unattempted})</span>
+                <div className={`no-scrollbar exam-question-grid ${styles.palette}`}>
+                  <div className={styles.paletteKey}>
+                    <span className={styles.paletteKeyItem}>
+                      <span aria-hidden="true" className={`${styles.keyDot} ${styles.keyDotRight}`} /> Correct
+                    </span>
+                    <span className={styles.paletteKeyItem}>
+                      <span aria-hidden="true" className={`${styles.keyDot} ${styles.keyDotWrong}`} /> Incorrect
+                    </span>
+                    <span className={styles.paletteKeyItem}>
+                      <span aria-hidden="true" className={`${styles.keyDot} ${styles.keyDotFlag}`} /> Flagged ({bookmarkedQuestions.length})
+                    </span>
+                    <span className={styles.paletteKeyItem}>
+                      <span aria-hidden="true" className={styles.keyDot} /> Unanswered ({liveAttemptedStats.unattempted})
+                    </span>
                   </div>
-                  <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(40px, 1fr))',
-                    gap: '6px'
-                  }}>
+                  <div className={styles.paletteGrid}>
                     {activeQuestions.map((q, idx) => {
                       const sel = userSelections[q.displayNumber.toString()];
                       const answered = Boolean(sel);
@@ -2284,41 +1747,24 @@ export default function TakeQuizModal({
                       const isFlagged = bookmarkedQuestions.includes(q.displayNumber);
                       const isCurrent = idx === currentIndex;
 
-                      let bg = '#f8fafc';
-                      let col = '#334155';
-                      let brd = isCurrent ? '2px solid #0f172a' : '1px solid #cbd5e1';
-                      if (isFlagged && !answered) {
-                        bg = '#fef3c7';
-                        col = '#92400e';
-                        brd = '1.5px solid #f59e0b';
-                      } else if (answered) {
-                        bg = isRight ? '#059669' : '#dc2626';
-                        col = '#ffffff';
-                      }
+                      let tone = '';
+                      if (isFlagged && !answered) tone = ` ${styles.slotFlag}`;
+                      else if (answered) tone = isRight ? ` ${styles.slotRight}` : ` ${styles.slotWrong}`;
 
                       return (
                         <button
                           key={q.id}
+                          type="button"
+                          aria-label={`Question ${q.displayNumber}`}
+                          aria-current={isCurrent ? 'true' : undefined}
                           onClick={() => {
                             setCurrentIndex(idx);
                             setShowQuestionGrid(false);
                           }}
-                          style={{
-                            padding: '7px 0',
-                            borderRadius: '6px',
-                            border: brd,
-                            background: bg,
-                            color: col,
-                            fontWeight: 700,
-                            fontSize: '0.78rem',
-                            cursor: 'pointer',
-                            position: 'relative'
-                          }}
+                          className={`${styles.slot}${tone}${isCurrent ? ` ${styles.slotCurrent}` : ''}`}
                         >
                           {q.displayNumber}
-                          {isFlagged && (
-                            <span style={{ position: 'absolute', top: '1px', right: '3px', fontSize: '0.55rem' }}>★</span>
-                          )}
+                          {isFlagged && <span aria-hidden="true" className={styles.slotStar}>★</span>}
                         </button>
                       );
                     })}
@@ -2330,27 +1776,12 @@ export default function TakeQuizModal({
               <div
                 key={currentQ.displayNumber}
                 id="aku-question-scroll-body"
-                className="aku-single-scroll aku-question-animate"
-                style={{
-                  padding: '1.75rem',
-                  overflowY: 'auto',
-                  flex: 1,
-                  minHeight: 0,
-                  WebkitOverflowScrolling: 'touch',
-                  overscrollBehavior: 'contain'
-                }}
+                className={`aku-single-scroll aku-question-animate ${styles.body}`}
               >
+               <div className={styles.bodyInner}>
                 {/* Question Stem Text */}
-                <div style={{
-                  fontSize: '1.15rem',
-                  fontWeight: 600,
-                  color: 'var(--text-color, #111827)',
-                  lineHeight: 1.6,
-                  marginBottom: '1.25rem'
-                }}>
-                  <span style={{ fontWeight: 800, color: '#0b5e4a', marginRight: '6px' }}>
-                    Q{currentQ.displayNumber}.
-                  </span>
+                <div className={styles.stem}>
+                  <span className={styles.stemNum}>Q{currentQ.displayNumber}.</span>
                   <StructuredContent text={currentQ.questionText} />
                 </div>
 
@@ -2369,22 +1800,14 @@ export default function TakeQuizModal({
 
                   if (hasFailed) {
                     return (
-                      <div style={{
-                        background: '#fffbeb',
-                        border: '1.5px dashed #f59e0b',
-                        borderRadius: '12px',
-                        padding: '1.25rem',
-                        textAlign: 'center',
-                        marginBottom: '1.25rem'
-                      }}>
-                        <WifiOff size={26} color="#d97706" style={{ margin: '0 auto 0.4rem auto' }} />
-                        <div style={{ fontWeight: 800, color: '#92400e', fontSize: '0.92rem', marginBottom: '0.25rem' }}>
-                          Diagram Waiting for Network Connection
-                        </div>
-                        <div style={{ fontSize: '0.82rem', color: '#78350f', marginBottom: '0.75rem' }}>
-                          You went offline before this diagram finished caching. You can flag this question and continue — it will load automatically as soon as your connection returns.
-                        </div>
-                        <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem' }}>
+                      <div className={styles.figureFail}>
+                        <WifiOff aria-hidden="true" size={26} style={{ margin: '0 auto' }} />
+                        <p className={styles.figureFailTitle}>Diagram waiting for a connection</p>
+                        <p className={styles.figureFailBody}>
+                          You went offline before this diagram finished caching. Flag the question and
+                          carry on — it loads automatically once you are back online.
+                        </p>
+                        <div className={styles.figureFailActions}>
                           <button
                             type="button"
                             onClick={() => {
@@ -2393,37 +1816,16 @@ export default function TakeQuizModal({
                                 setDiagramRetryTick(t => t + 1);
                               });
                             }}
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '0.35rem',
-                              background: '#0b5e4a',
-                              color: '#ffffff',
-                              border: 'none',
-                              borderRadius: '8px',
-                              padding: '6px 12px',
-                              fontSize: '0.8rem',
-                              fontWeight: 700,
-                              cursor: 'pointer'
-                            }}
+                            className={`${styles.primary} ${styles.small}`}
                           >
-                            <RefreshCw size={14} /> Retry Loading Diagram
+                            <RefreshCw aria-hidden="true" size={14} /> Retry
                           </button>
                           <button
                             type="button"
                             onClick={() => toggleBookmark(currentQ.displayNumber)}
-                            style={{
-                              background: '#ffffff',
-                              color: '#92400e',
-                              border: '1px solid #f59e0b',
-                              borderRadius: '8px',
-                              padding: '6px 12px',
-                              fontSize: '0.8rem',
-                              fontWeight: 700,
-                              cursor: 'pointer'
-                            }}
+                            className={`${styles.quiet} ${styles.small}`}
                           >
-                            Flag Question for Later
+                            Flag for later
                           </button>
                         </div>
                       </div>
@@ -2431,7 +1833,7 @@ export default function TakeQuizModal({
                   }
 
                   return (
-                    <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
+                    <div className={styles.figure}>
                       <img
                         key={`${cachedSrc}-${diagramRetryTick}`}
                         src={cachedSrc}
@@ -2441,23 +1843,14 @@ export default function TakeQuizModal({
                         onError={() => {
                           setDiagramLoadFailed(prev => ({ ...prev, [failKey]: true }));
                         }}
-                        style={{
-                          maxWidth: '100%',
-                          maxHeight: '280px',
-                          objectFit: 'contain',
-                          border: '1.5px solid var(--border-color, #cbd5e1)',
-                          borderRadius: '8px',
-                          padding: '6px',
-                          background: '#ffffff',
-                          boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
-                        }}
+                        className={styles.figureImg}
                       />
                     </div>
                   );
                 })()}
 
                 {/* Randomized Multiple Choice Options (A, B, C, D) + Peer Option Popularity % */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                <div className={styles.options}>
                   {Object.entries(currentQ.options).map(([key, optText]) => {
                     const serverQuestion = engine.exam?.questions[currentIndex];
                     const optionId = serverQuestion?.options[key.charCodeAt(0) - 65]?.id;
@@ -2467,25 +1860,14 @@ export default function TakeQuizModal({
                         : currentSelected === key;
                     const isRightAnswer = currentQ.correctOption === key;
                     const peerPct = currentQTelemetry?.optionDistribution?.[key] ?? 0;
-                    const isPeerTrap = Boolean(paperAnalytics) && isAnswered && !isRightAnswer && peerPct >= 18;
+                    const isPeerTrap = Boolean(paperAnalytics?.questionStats) && isAnswered && !isRightAnswer && peerPct >= 18;
 
-                    let borderStyle = '1.5px solid #e2e8f0';
-                    let bgStyle = '#ffffff';
-                    let textColor = '#1e293b';
-
+                    let tone = '';
                     if (isAnswered) {
-                      if (isRightAnswer) {
-                        borderStyle = '2px solid #059669';
-                        bgStyle = '#ecfdf5';
-                        textColor = '#065f46';
-                      } else if (isChosen && !isRightAnswer) {
-                        borderStyle = '2px solid #ef4444';
-                        bgStyle = '#fef2f2';
-                        textColor = '#991b1b';
-                      }
+                      if (isRightAnswer) tone = ` ${styles.optionRight}`;
+                      else if (isChosen) tone = ` ${styles.optionWrong}`;
                     } else if (isChosen) {
-                      borderStyle = '2px solid #0b5e4a';
-                      bgStyle = '#e8f5f1';
+                      tone = ` ${styles.optionChosen}`;
                     }
 
                     return (
@@ -2494,57 +1876,24 @@ export default function TakeQuizModal({
                         type="button"
                         onClick={() => handleSelectAnswer(currentQ.displayNumber, key)}
                         disabled={isAnswered}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.85rem',
-                          padding: '1rem 1.25rem',
-                          borderRadius: '10px',
-                          border: borderStyle,
-                          background: bgStyle,
-                          color: textColor,
-                          textAlign: 'left',
-                          cursor: isAnswered ? 'default' : 'pointer',
-                          transition: 'all 0.15s ease',
-                          position: 'relative',
-                          overflow: 'hidden'
-                        }}
+                        className={`${styles.option}${tone}`}
                       >
-                        <span style={{
-                          width: '32px',
-                          height: '32px',
-                          borderRadius: '50%',
-                          border: '1.5px solid currentColor',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontWeight: 800,
-                          fontSize: '0.9rem',
-                          flexShrink: 0
-                        }}>
-                          {key}
-                        </span>
-                        <span style={{ fontSize: '0.98rem', flex: 1 }}>
+                        <span aria-hidden="true" className={styles.bubble}>{key}</span>
+                        <span className={styles.optionText}>
                           <MathText text={String(optText)} />
                         </span>
 
                         {/* Peer Popularity Percentage Pill on Reveal */}
                         {isAnswered && Boolean(paperAnalytics?.questionStats) && (
-                          <span style={{
-                            fontSize: '0.74rem',
-                            fontWeight: 700,
-                            padding: '2px 8px',
-                            borderRadius: '999px',
-                            background: isRightAnswer ? '#d1fae5' : isPeerTrap ? '#fef3c7' : '#f1f5f9',
-                            color: isRightAnswer ? '#065f46' : isPeerTrap ? '#92400e' : '#64748b',
-                            flexShrink: 0
-                          }}>
-                            {peerPct}% peers {isPeerTrap ? '⚠️ Trap' : ''}
+                          <span
+                            className={`${styles.peer}${isRightAnswer ? ` ${styles.peerRight}` : isPeerTrap ? ` ${styles.peerTrap}` : ''}`}
+                          >
+                            {peerPct}% peers{isPeerTrap ? ' · trap' : ''}
                           </span>
                         )}
 
-                        {isAnswered && isRightAnswer && <CheckCircle2 size={20} color="#059669" />}
-                        {isAnswered && isChosen && !isRightAnswer && <XCircle size={20} color="#ef4444" />}
+                        {isAnswered && isRightAnswer && <CheckCircle2 aria-hidden="true" size={20} />}
+                        {isAnswered && isChosen && !isRightAnswer && <XCircle aria-hidden="true" size={20} />}
                       </button>
                     );
                   })}
@@ -2552,65 +1901,36 @@ export default function TakeQuizModal({
 
                 {/* Instant Answer Feedback, Per-Question Time vs Peer Avg, & "Why Incorrect" Explanation */}
                 {isAnswered && (
-                  <div style={{
-                    background: isCurrentCorrect ? '#f0fdf4' : '#fff1f2',
-                    border: `1.5px solid ${isCurrentCorrect ? '#86efac' : '#fecdd3'}`,
-                    borderRadius: '12px',
-                    padding: '1.25rem',
-                    marginBottom: '1.5rem',
-                    animation: 'akuSlideFadeIn 0.18s ease'
-                  }}>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      flexWrap: 'wrap',
-                      gap: '0.5rem',
-                      marginBottom: '0.55rem'
-                    }}>
-                      <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        fontWeight: 800,
-                        fontSize: '1rem',
-                        color: isCurrentCorrect ? '#166534' : '#9f1239'
-                      }}>
-                        {isCurrentCorrect ? <CheckCircle2 size={20} /> : <XCircle size={20} />}
+                  <div className={`${styles.mark}${isCurrentCorrect ? '' : ` ${styles.markWrong}`}`}>
+                    <div className={styles.markHead}>
+                      <span className={styles.markVerdict}>
+                        {isCurrentCorrect ? <CheckCircle2 aria-hidden="true" size={20} /> : <XCircle aria-hidden="true" size={20} />}
                         <span>
                           {isCurrentCorrect
-                            ? 'Correct Answer! Well Done.'
-                            : `Incorrect — Correct Option is (${currentQ.correctOption})`}
+                            ? 'Correct'
+                            : `Incorrect — the answer is ${currentQ.correctOption}`}
                         </span>
-                      </div>
+                      </span>
 
                       {/* Per-Question Time vs Peer Average Pill */}
                       {currentQTelemetry && currentQTelemetry.peerAvgTimeSec > 0 && (
-                        <span style={{
-                          fontSize: '0.78rem',
-                          fontWeight: 700,
-                          padding: '3px 10px',
-                          borderRadius: '999px',
-                          background: '#ffffff',
-                          border: '1px solid #cbd5e1',
-                          color: '#0f172a'
-                        }}>
-                          ⏱ Your Time: <strong>{currentQTimeSec}s</strong> • Peer Avg: <strong>{currentQTelemetry.peerAvgTimeSec}s</strong>{' '}
+                        <span className={styles.timePill}>
+                          {currentQTimeSec}s · peer {currentQTelemetry.peerAvgTimeSec}s{' '}
                           {currentQTimeSec <= currentQTelemetry.peerAvgTimeSec
-                            ? `(${currentQTelemetry.peerAvgTimeSec - currentQTimeSec}s Faster ⚡)`
-                            : `(+${currentQTimeSec - currentQTelemetry.peerAvgTimeSec}s Slower)`}
+                            ? `(${currentQTelemetry.peerAvgTimeSec - currentQTimeSec}s faster)`
+                            : `(${currentQTimeSec - currentQTelemetry.peerAvgTimeSec}s slower)`}
                         </span>
                       )}
                     </div>
 
-                    <div style={{ color: '#1e293b', fontSize: '0.92rem', lineHeight: 1.6 }}>
-                      <div style={{ marginBottom: '0.4rem' }}>
-                        <strong>Why this answer is correct:</strong> <MathText text={currentQ.explanation} />
+                    <div className={styles.markBody}>
+                      <div>
+                        <strong>Why this is correct:</strong> <MathText text={currentQ.explanation} />
                       </div>
 
                       {!isCurrentCorrect && currentSelected && (
-                        <div style={{ color: '#9f1239', marginTop: '0.5rem', fontSize: '0.88rem' }}>
-                          <strong>Why your choice ({currentSelected}) was incorrect:</strong>{' '}
+                        <div className={styles.markWhy}>
+                          <strong>Why {currentSelected} was wrong:</strong>{' '}
                           <MathText
                             text={
                               currentQ.optionFeedback?.[currentSelected] ||
@@ -2622,21 +1942,11 @@ export default function TakeQuizModal({
                     </div>
                   </div>
                 )}
+               </div>
               </div>
 
               {/* Bottom Stepper Controls (Previous / Next / Finish Confirmation Trigger) */}
-              <div
-                className="exam-stepper"
-                style={{
-                  padding: '1rem 1.5rem',
-                  borderTop: '1px solid #e2e8f0',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  background: '#ffffff',
-                  flexShrink: 0
-                }}
-              >
+              <div className={`exam-stepper ${styles.stepper}`}>
                 <button
                   type="button"
                   onClick={() => {
@@ -2645,21 +1955,9 @@ export default function TakeQuizModal({
                     engine.updateMeta({ currentIndex: nextIdx, questionTimes, bookmarkedQuestions });
                   }}
                   disabled={currentIndex === 0}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    padding: '8px 16px',
-                    borderRadius: '8px',
-                    border: '1px solid #cbd5e1',
-                    background: currentIndex === 0 ? '#f8fafc' : '#ffffff',
-                    color: currentIndex === 0 ? '#94a3b8' : '#334155',
-                    fontWeight: 600,
-                    fontSize: '0.88rem',
-                    cursor: currentIndex === 0 ? 'not-allowed' : 'pointer'
-                  }}
+                  className={styles.quiet}
                 >
-                  <ArrowLeft size={16} />
+                  <ArrowLeft aria-hidden="true" size={16} />
                   <span>Previous</span>
                 </button>
 
@@ -2671,44 +1969,20 @@ export default function TakeQuizModal({
                       setCurrentIndex(nextIdx);
                       engine.updateMeta({ currentIndex: nextIdx, questionTimes, bookmarkedQuestions });
                     }}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.4rem',
-                      padding: '8px 18px',
-                      borderRadius: '8px',
-                      background: '#0b5e4a',
-                      color: '#ffffff',
-                      border: 'none',
-                      fontWeight: 700,
-                      fontSize: '0.88rem',
-                      cursor: 'pointer'
-                    }}
+                    className={styles.primary}
                   >
-                    <span>Next Question</span>
-                    <ArrowRight size={16} />
+                    <span>Next question</span>
+                    <ArrowRight aria-hidden="true" size={16} />
                   </button>
                 ) : (
                   <button
                     type="button"
                     onClick={() => setShowFinishConfirmModal(true)}
                     disabled={submitting}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.4rem',
-                      padding: '8px 20px',
-                      borderRadius: '8px',
-                      background: '#0b5e4a',
-                      color: '#ffffff',
-                      border: 'none',
-                      fontWeight: 800,
-                      fontSize: '0.92rem',
-                      cursor: 'pointer'
-                    }}
+                    className={styles.primary}
                   >
-                    <span>Submit & Review Score</span>
-                    <Check size={16} />
+                    <span>Submit &amp; review score</span>
+                    <Check aria-hidden="true" size={16} />
                   </button>
                 )}
               </div>
@@ -2717,56 +1991,26 @@ export default function TakeQuizModal({
 
           {/* TAB-SWITCH DETAILS MODAL */}
           {showSwitchAuditModal && (
-            <div style={{
-              position: 'fixed',
-              inset: 0,
-              background: 'rgba(15, 23, 42, 0.6)',
-              backdropFilter: 'blur(4px)',
-              zIndex: 999999,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '1rem'
-            }}>
-              <div style={{
-                background: '#ffffff',
-                borderRadius: '16px',
-                padding: '1.75rem',
-                maxWidth: '540px',
-                width: '100%',
-                maxHeight: '80vh',
-                overflowY: 'auto',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.25)'
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <ShieldCheck size={22} color="#0b5e4a" />
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
-                      Tab-Switch & Away Time Audit
-                    </h3>
-                  </div>
+            <div className={styles.sheetOverlay}>
+              <div className={styles.sheet}>
+                <div className={styles.sheetHead}>
+                  <h3 className={styles.sheetTitle}>
+                    <ShieldCheck aria-hidden="true" size={20} />
+                    Tab-switch &amp; away-time audit
+                  </h3>
                   <button
+                    aria-label="Close audit"
                     onClick={() => setShowSwitchAuditModal(false)}
-                    style={{ background: '#f1f5f9', border: 'none', borderRadius: '50%', width: '30px', height: '30px', cursor: 'pointer' }}
+                    className={styles.sheetClose}
                   >
                     <X size={16} />
                   </button>
                 </div>
                 <button
                   onClick={() => setShowSwitchAuditModal(false)}
-                  style={{
-                    width: '100%',
-                    background: '#0b5e4a',
-                    color: '#ffffff',
-                    border: 'none',
-                    padding: '10px',
-                    borderRadius: '8px',
-                    fontWeight: 700,
-                    marginTop: '1rem',
-                    cursor: 'pointer'
-                  }}
+                  className={`${styles.primary} ${styles.sheetFull}`}
                 >
-                  Return to Active Exam
+                  Return to exam
                 </button>
               </div>
             </div>
@@ -2777,110 +2021,74 @@ export default function TakeQuizModal({
           {/* SINGLE-ROW ATTEMPT HISTORY, LEADERBOARD, & PER-QUESTION TIME REVIEW)      */}
           {/* ========================================================================= */}
           {phase === 'completed' && completionData && (
-            <div className="exam-phase-panel" style={{ padding: '2rem', maxWidth: '1040px', margin: '0 auto', width: '100%' }}>
+            <div className={`exam-phase-panel ${styles.results}`}>
               {/* Top Score & Percentile Banner */}
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0b5e4a', background: '#e8f5f1', padding: '4px 12px', borderRadius: '999px' }}>
-                  {paperCode} • ATTEMPT #{completionData.attemptNumber || attemptHistory.length || 1} REPORT
+              <div className={styles.reportHead}>
+                <span className={styles.stamp}>
+                  {paperCode} · Attempt {completionData.attemptNumber || attemptHistory.length || 1} report
                 </span>
+                <h2 className={styles.reportTitle}>{paperTitle}</h2>
 
                 {/* Dual Score Cards: Score on Attempted Questions vs Total Paper Score */}
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                  gap: '1rem',
-                  marginTop: '1.1rem',
-                  marginBottom: '1rem'
-                }}>
-                  {/* Card 1: Attempted Questions Score */}
-                  <div style={{
-                    background: '#ecfdf5',
-                    border: '2px solid #10b981',
-                    borderRadius: '16px',
-                    padding: '1.25rem',
-                    textAlign: 'left'
-                  }}>
-                    <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#047857', textTransform: 'uppercase' }}>
-                      Score on Attempted Questions
-                    </div>
-                    <div style={{ fontSize: '2rem', fontWeight: 900, color: '#064e3b', margin: '0.2rem 0' }}>
-                      {completionData.correctCount ?? completionData.score} / {completionData.attemptedCount ?? completionData.totalMarks}{' '}
-                      <span style={{ fontSize: '1.15rem', color: '#059669' }}>
-                        ({completionData.attemptedAccuracyPct ?? completionData.percentage}% Accuracy)
+                <div className={styles.scoreGrid}>
+                  {/* Plate 1: Attempted Questions Score */}
+                  <div className={`${styles.plate} ${(completionData.attemptedAccuracyPct ?? completionData.percentage ?? 0) >= 50 ? styles.plateRight : styles.plateWrong}`}>
+                    <span className={styles.label}>Score on attempted</span>
+                    <div className={styles.plateValue}>
+                      {completionData.correctCount ?? completionData.score}/{completionData.attemptedCount ?? completionData.totalMarks}{' '}
+                      <span className={styles.plateUnit}>
+                        {completionData.attemptedAccuracyPct ?? completionData.percentage}% accuracy
                       </span>
                     </div>
-                    <div style={{ fontSize: '0.82rem', color: '#065f46', fontWeight: 600 }}>
-                      ✓ {completionData.correctCount ?? completionData.score} Correct • ✗ {completionData.incorrectCount ?? 0} Incorrect
-                    </div>
+                    <p className={styles.plateNote}>
+                      {completionData.correctCount ?? completionData.score} correct ·{' '}
+                      {completionData.incorrectCount ?? 0} incorrect
+                    </p>
                   </div>
 
-                  {/* Card 2: Full Paper Total Score */}
-                  <div style={{
-                    background: '#f8fafc',
-                    border: '1.5px solid #cbd5e1',
-                    borderRadius: '16px',
-                    padding: '1.25rem',
-                    textAlign: 'left'
-                  }}>
-                    <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#475569', textTransform: 'uppercase' }}>
-                      Total Paper Score (All {completionData.totalMarks} Marks)
+                  {/* Plate 2: Full Paper Total Score */}
+                  <div className={styles.plate}>
+                    <span className={styles.label}>Total paper · {completionData.totalMarks} marks</span>
+                    <div className={styles.plateValue}>
+                      {completionData.score}/{completionData.totalMarks}{' '}
+                      <span className={styles.plateUnit}>{completionData.percentage}% total</span>
                     </div>
-                    <div style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', margin: '0.2rem 0' }}>
-                      {completionData.score} / {completionData.totalMarks}{' '}
-                      <span style={{ fontSize: '1.15rem', color: '#475569' }}>
-                        ({completionData.percentage}% Total)
-                      </span>
-                    </div>
-                    <div style={{ fontSize: '0.82rem', color: '#64748b', fontWeight: 600 }}>
+                    <p className={styles.plateNote}>
                       {completionData.unattemptedCount > 0
-                        ? `${completionData.unattemptedCount} Unattempted Questions Remaining`
-                        : 'All 100% of Paper Questions Attempted'}
-                    </div>
+                        ? `${completionData.unattemptedCount} questions left unattempted`
+                        : 'Every question on the paper was attempted'}
+                    </p>
                   </div>
 
-                  {(completionData.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS && completionData.percentile !== null && <div style={{
-                    background: '#eff6ff',
-                    border: '1.5px solid #93c5fd',
-                    borderRadius: '16px',
-                    padding: '1.25rem',
-                    textAlign: 'left'
-                  }}>
-                    <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#1d4ed8', textTransform: 'uppercase' }}>
-                      Score percentile
+                  {(completionData.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS && completionData.percentile !== null && <div className={`${styles.plate} ${styles.plateRank}`}>
+                    <span className={styles.label}>Score percentile</span>
+                    <div className={styles.plateValue}>
+                      {completionData.percentile}<span className={styles.plateUnit}>th %ile</span>
                     </div>
-                    <div style={{ fontSize: '2rem', fontWeight: 900, color: '#1e3a8a', margin: '0.2rem 0' }}>
-                      {completionData.percentile}th %ile
-                    </div>
-                    <div style={{ fontSize: '0.8rem', color: '#1e40af', fontWeight: 700 }}>
+                    <p className={styles.plateNote}>
                       Based on {completionData.verifiedSampleSize} graded first attempts
-                    </div>
+                    </p>
                   </div>}
                 </div>
 
-                <p style={{ fontSize: '0.95rem', fontWeight: 600, color: '#0f172a', margin: '0.5rem auto 0 auto' }}>
-                  {completionData.dynamicMessage}
-                </p>
+                <p className={styles.verdict}>{completionData.dynamicMessage}</p>
               </div>
 
               {/* SINGLE-ROW GROUPED ATTEMPT HISTORY ON RESULTS SCREEN (Click any pill to switch attempt report) */}
               {attemptHistory.length > 0 && (
-                <div style={{
-                  background: '#f8fafc',
-                  border: '1.5px solid #e2e8f0',
-                  borderRadius: '14px',
-                  padding: '0.9rem 1.15rem',
-                  marginBottom: '1.5rem'
-                }}>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#334155', marginBottom: '0.5rem' }}>
-                    All Attempts for {paperCode} (Click Any Attempt in This Row to View Its Full Details):
+                <div className={styles.panel} style={{ marginBottom: '1.5rem' }}>
+                  <div className={styles.panelHead}>
+                    <span className={styles.panelTitle}>All attempts for {paperCode}</span>
+                    <span className={styles.meta}>Select one to view its report</span>
                   </div>
-                  <div className="no-scrollbar" style={{ display: 'flex', gap: '0.55rem', overflowX: 'auto', paddingBottom: '4px' }}>
+                  <div className={`no-scrollbar ${styles.attemptRow}`}>
                     {attemptHistory.map(att => {
                       const isActiveAtt = completionData.attemptNumber === att.attemptNumber;
                       return (
                         <button
                           key={att.attemptId}
                           type="button"
+                          aria-pressed={isActiveAtt}
                           onClick={() => {
                             setCompletionData((prev: any) => ({
                               ...prev,
@@ -2896,6 +2104,7 @@ export default function TakeQuizModal({
                               avgTimePerAttemptedSec: att.avgTimePerAttemptedSec,
                               peerAvgTimePerQuestionSec: att.peerAvgTimePerQuestionSec,
                               percentile: att.percentile,
+                              verifiedSampleSize: att.verifiedSampleSize,
                               speedPercentile: att.speedPercentile,
                               quadrantLabel: att.quadrantLabel,
                               attemptNumber: att.attemptNumber,
@@ -2906,31 +2115,12 @@ export default function TakeQuizModal({
                               dynamicMessage: `Viewing Attempt #${att.attemptNumber} (${att.correctCount}/${att.attemptedCount} Attempted • ${att.score}/${att.totalMarks} Total).`,
                             }));
                           }}
-                          style={{
-                            flexShrink: 0,
-                            padding: '7px 12px',
-                            borderRadius: '9px',
-                            border: isActiveAtt ? '2px solid #0b5e4a' : '1px solid #cbd5e1',
-                            background: isActiveAtt ? '#ecfdf5' : '#ffffff',
-                            cursor: 'pointer',
-                            textAlign: 'left',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.5rem'
-                          }}
+                          className={`${styles.attempt}${isActiveAtt ? ` ${styles.attemptOn}` : ''}`}
                         >
-                          <span style={{
-                            background: isActiveAtt ? '#0b5e4a' : '#475569',
-                            color: '#ffffff',
-                            fontWeight: 800,
-                            fontSize: '0.72rem',
-                            padding: '2px 6px',
-                            borderRadius: '5px'
-                          }}>
-                            Attempt #{att.attemptNumber}
-                          </span>
-                          <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#0f172a' }}>
-                            {att.correctCount}/{att.attemptedCount} Attempted ({att.attemptedAccuracyPct}%) • {att.score}/{att.totalMarks} Total{(att.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS ? ` • ${att.percentile}%ile` : ''}
+                          <span className={styles.attemptNum}>#{att.attemptNumber}</span>
+                          <span className={styles.attemptScore}>
+                            {att.correctCount}/{att.attemptedCount} attempted ({att.attemptedAccuracyPct}%) · {att.score}/
+                            {att.totalMarks} total{(att.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS ? ` · ${att.percentile}%ile` : ''}
                           </span>
                         </button>
                       );
@@ -2940,72 +2130,33 @@ export default function TakeQuizModal({
               )}
 
               {/* Navigation Tabs: Question Review | Live Paper Leaderboard | Chapter Speed & Accuracy */}
-              <div style={{
-                display: 'flex',
-                gap: '0.6rem',
-                borderBottom: '1.5px solid #e2e8f0',
-                paddingBottom: '0.75rem',
-                marginBottom: '1.5rem',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-              }}>
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <div className={styles.tabs}>
+                <div className={styles.tabRow}>
                   <button
                     type="button"
                     onClick={() => setActiveResultTab('review')}
-                    style={{
-                      padding: '8px 16px',
-                      borderRadius: '9px',
-                      border: 'none',
-                      background: activeResultTab === 'review' ? '#0b5e4a' : '#f1f5f9',
-                      color: activeResultTab === 'review' ? '#ffffff' : '#334155',
-                      fontWeight: 800,
-                      fontSize: '0.85rem',
-                      cursor: 'pointer'
-                    }}
+                    aria-pressed={activeResultTab === 'review'}
+                    className={`${styles.tab}${activeResultTab === 'review' ? ` ${styles.tabOn}` : ''}`}
                   >
-                    Question & Time Review ({(completionData.reviewedQuestions || activeQuestions).length})
+                    Question review ({(completionData.reviewedQuestions || activeQuestions).length})
                   </button>
                   {Boolean(paperAnalytics?.firstAttemptLeaderboard?.length || paperAnalytics?.bestScoreLeaderboard?.length) && <button
                     type="button"
                     onClick={() => setActiveResultTab('leaderboard')}
-                    style={{
-                      padding: '8px 16px',
-                      borderRadius: '9px',
-                      border: 'none',
-                      background: activeResultTab === 'leaderboard' ? '#0b5e4a' : '#f1f5f9',
-                      color: activeResultTab === 'leaderboard' ? '#ffffff' : '#334155',
-                      fontWeight: 800,
-                      fontSize: '0.85rem',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.4rem'
-                    }}
+                    aria-pressed={activeResultTab === 'leaderboard'}
+                    className={`${styles.tab}${activeResultTab === 'leaderboard' ? ` ${styles.tabOn}` : ''}`}
                   >
-                    <Trophy size={15} />
-                    <span>Paper Leaderboard & Percentile</span>
+                    <Trophy size={15} aria-hidden="true" />
+                    <span>Leaderboard</span>
                   </button>}
                   <button
                     type="button"
                     onClick={() => setActiveResultTab('chapters')}
-                    style={{
-                      padding: '8px 16px',
-                      borderRadius: '9px',
-                      border: 'none',
-                      background: activeResultTab === 'chapters' ? '#0b5e4a' : '#f1f5f9',
-                      color: activeResultTab === 'chapters' ? '#ffffff' : '#334155',
-                      fontWeight: 800,
-                      fontSize: '0.85rem',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.4rem'
-                    }}
+                    aria-pressed={activeResultTab === 'chapters'}
+                    className={`${styles.tab}${activeResultTab === 'chapters' ? ` ${styles.tabOn}` : ''}`}
                   >
-                    <BarChart3 size={15} />
-                    <span>Chapter Speed & Accuracy</span>
+                    <BarChart3 size={15} aria-hidden="true" />
+                    <span>Chapter breakdown</span>
                   </button>
                 </div>
 
@@ -3014,23 +2165,11 @@ export default function TakeQuizModal({
                   <button
                     type="button"
                     onClick={() => handleStartRetryIncorrectAndUnattempted(completionData.reviewedQuestions)}
-                    style={{
-                      background: '#fffbeb',
-                      color: '#b45309',
-                      border: '1.5px solid #f59e0b',
-                      padding: '8px 14px',
-                      borderRadius: '9px',
-                      fontWeight: 800,
-                      fontSize: '0.82rem',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.4rem'
-                    }}
+                    className={styles.retry}
                   >
-                    <Zap size={15} />
+                    <Zap size={15} aria-hidden="true" />
                     <span>
-                      Retry Only Incorrect & Unattempted ({(completionData.incorrectCount || 0) + (completionData.unattemptedCount || 0)} Qs)
+                      Retry the {(completionData.incorrectCount || 0) + (completionData.unattemptedCount || 0)} you missed
                     </span>
                   </button>
                 )}
@@ -3038,103 +2177,83 @@ export default function TakeQuizModal({
 
               {/* TAB 2: LIVE PAPER LEADERBOARD (1st Attempt Official vs All-Time Best) */}
               {activeResultTab === 'leaderboard' && Boolean(paperAnalytics?.firstAttemptLeaderboard?.length || paperAnalytics?.bestScoreLeaderboard?.length) && (
-                <div style={{
-                  background: '#ffffff',
-                  border: '1.5px solid #e2e8f0',
-                  borderRadius: '14px',
-                  padding: '1.5rem',
-                  marginBottom: '2rem'
-                }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1rem' }}>
+                <div className={styles.board}>
+                  <div className={styles.boardHead}>
                     <div>
-                      <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
-                        {paperCode} Competitive Leaderboard (Score + Speed Composite Rank)
-                      </h3>
-                      <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '2px' }}>
-                        {paperAnalytics?.totalParticipants ? `Ranked by total marks, then completion time (${paperAnalytics.totalParticipants} candidates)` : 'No verified leaderboard data is available yet.'}
-                      </div>
+                      <h3 className={styles.boardTitle}>{paperCode} leaderboard</h3>
+                      <p className={styles.boardNote}>
+                        Ranked by total marks, with faster completion time breaking ties ·{' '}
+                        {paperAnalytics?.totalParticipants ?? 0}{' '}
+                        {paperAnalytics?.totalParticipants === 1 ? 'candidate' : 'candidates'}
+                      </p>
                     </div>
 
-                    <div style={{ display: 'flex', gap: '0.4rem' }}>
+                    <div className={styles.tabRow}>
                       <button
                         type="button"
                         onClick={() => setLeaderboardTab('first')}
-                        style={{
-                          padding: '6px 12px',
-                          borderRadius: '8px',
-                          border: 'none',
-                          background: leaderboardTab === 'first' ? '#0b5e4a' : '#f1f5f9',
-                          color: leaderboardTab === 'first' ? '#ffffff' : '#475569',
-                          fontWeight: 700,
-                          fontSize: '0.8rem',
-                          cursor: 'pointer'
-                        }}
+                        aria-pressed={leaderboardTab === 'first'}
+                        className={`${styles.filter}${leaderboardTab === 'first' ? ` ${styles.filterOn}` : ''}`}
                       >
-                        🥇 Official 1st-Attempt Rank
+                        First attempt
                       </button>
                       <button
                         type="button"
                         onClick={() => setLeaderboardTab('best')}
-                        style={{
-                          padding: '6px 12px',
-                          borderRadius: '8px',
-                          border: 'none',
-                          background: leaderboardTab === 'best' ? '#0b5e4a' : '#f1f5f9',
-                          color: leaderboardTab === 'best' ? '#ffffff' : '#475569',
-                          fontWeight: 700,
-                          fontSize: '0.8rem',
-                          cursor: 'pointer'
-                        }}
+                        aria-pressed={leaderboardTab === 'best'}
+                        className={`${styles.filter}${leaderboardTab === 'best' ? ` ${styles.filterOn}` : ''}`}
                       >
-                        🏆 All-Time Best Score
+                        All-time best
                       </button>
                     </div>
                   </div>
 
-                  <div style={{ overflowX: 'auto' }}>
-                    <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.86rem' }}>
+                  <div className={styles.scroller}>
+                    <table className={styles.table}>
                       <thead>
-                        <tr style={{ background: '#f8fafc', borderBottom: '1.5px solid #e2e8f0', textAlign: 'left', color: '#475569' }}>
-                          <th style={{ padding: '10px 12px' }}>Rank</th>
-                          <th style={{ padding: '10px 12px' }}>Candidate</th>
-                          <th style={{ padding: '10px 12px' }}>Total Score</th>
-                          <th style={{ padding: '10px 12px' }}>Attempted Acc.</th>
-                          <th style={{ padding: '10px 12px' }}>Time Spent</th>
-                          <th style={{ padding: '10px 12px' }}>Avg / Q</th>
-                          <th style={{ padding: '10px 12px' }}>Percentile</th>
+                        <tr>
+                          <th>Rank</th>
+                          <th>Candidate</th>
+                          <th>Total score</th>
+                          <th>Attempted acc.</th>
+                          <th>Time spent</th>
+                          <th>Avg / Q</th>
+                          <th>Percentile</th>
                         </tr>
                       </thead>
                       <tbody>
                         {(leaderboardTab === 'first'
                           ? paperAnalytics?.firstAttemptLeaderboard || []
                           : paperAnalytics?.bestScoreLeaderboard || []
+                        ).length === 0 && (
+                          <tr>
+                            <td colSpan={7} className={styles.tableEmpty}>
+                              No verified leaderboard data is available.
+                            </td>
+                          </tr>
+                        )}
+                        {(leaderboardTab === 'first'
+                          ? paperAnalytics?.firstAttemptLeaderboard || []
+                          : paperAnalytics?.bestScoreLeaderboard || []
                         ).map((row: LeaderboardEntry) => {
                           const isMe = Boolean(row.isCurrentUser);
                           return (
-                            <tr
-                              key={`${row.rank}-${row.studentId}`}
-                              style={{
-                                borderBottom: '1px solid #e2e8f0',
-                                background: isMe ? '#ecfdf5' : '#ffffff',
-                                fontWeight: isMe ? 800 : 500
-                              }}
-                            >
-                              <td style={{ padding: '10px 12px', fontWeight: 800, color: row.rank <= 3 ? '#b45309' : '#0f172a' }}>
-                                {row.rank === 1 ? '🥇 #1' : row.rank === 2 ? '🥈 #2' : row.rank === 3 ? '🥉 #3' : `#${row.rank}`}
+                            <tr key={`${row.rank}-${row.studentId}`} className={isMe ? styles.rowMe : undefined}>
+                              <td className={`${styles.rankCell}${row.rank <= 3 ? ` ${styles.rankTop}` : ''}`}>
+                                #{row.rank}
                               </td>
-                              <td style={{ padding: '10px 12px', color: '#0f172a' }}>
-                                {row.studentName} {isMe && <span style={{ background: '#0b5e4a', color: '#fff', fontSize: '0.68rem', padding: '2px 6px', borderRadius: '4px', marginLeft: '6px' }}>YOU</span>}
-                                <span style={{ color: '#64748b', fontSize: '0.76rem', marginLeft: '6px' }}>• {row.cityOrCampus}</span>
+                              <td>
+                                {row.studentName}
+                                {isMe && <span className={styles.youTag}>You</span>}
+                                {row.cityOrCampus && <span className={styles.entryTopic}> · {row.cityOrCampus}</span>}
                               </td>
-                              <td style={{ padding: '10px 12px', fontWeight: 800, color: '#0b5e4a' }}>
+                              <td>
                                 {row.score}/{row.totalMarks} ({row.percentage}%)
                               </td>
-                              <td style={{ padding: '10px 12px' }}>{row.attemptedAccuracyPct}%</td>
-                              <td style={{ padding: '10px 12px' }}>{formatDurationShort(row.totalTimeSec)}</td>
-                              <td style={{ padding: '10px 12px' }}>{row.avgTimePerQuestionSec}s</td>
-                              <td style={{ padding: '10px 12px', fontWeight: 800, color: '#1d4ed8' }}>
-                                {row.percentile}th %ile
-                              </td>
+                              <td>{row.attemptedAccuracyPct}%</td>
+                              <td>{formatDurationShort(row.totalTimeSec)}</td>
+                              <td>{row.avgTimePerQuestionSec}s</td>
+                              <td>{row.percentile}th %ile</td>
                             </tr>
                           );
                         })}
@@ -3146,47 +2265,24 @@ export default function TakeQuizModal({
 
               {/* TAB 3: CHAPTER-WISE SPEED & ACCURACY ANALYTICS */}
               {activeResultTab === 'chapters' && (
-                <div style={{
-                  background: '#ffffff',
-                  border: '1.5px solid #e2e8f0',
-                  borderRadius: '14px',
-                  padding: '1.5rem',
-                  marginBottom: '2rem'
-                }}>
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a', margin: '0 0 1rem 0' }}>
-                    Chapter-Wise Speed & Accuracy Breakdown
-                  </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <div className={styles.board}>
+                  <div className={styles.boardHead}>
+                    <h3 className={styles.boardTitle}>Chapter speed and accuracy</h3>
+                  </div>
+                  <div className={styles.stack}>
                     {(completionData.chapterStats || []).map((cs: any, idx: number) => (
-                      <div
-                        key={idx}
-                        style={{
-                          background: '#f8fafc',
-                          border: '1px solid #e2e8f0',
-                          borderRadius: '10px',
-                          padding: '1rem',
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          flexWrap: 'wrap',
-                          gap: '0.75rem'
-                        }}
-                      >
+                      <div key={idx} className={styles.chapterRow}>
                         <div>
-                          <div style={{ fontWeight: 800, color: '#0f172a', fontSize: '0.95rem' }}>{cs.topicName}</div>
-                          <div style={{ fontSize: '0.82rem', color: '#475569', marginTop: '2px' }}>
-                            Score: <strong>{cs.correctQuestions}/{cs.totalQuestions}</strong> ({cs.accuracyPercentage}% Total • {cs.attemptedAccuracyPercentage}% on Attempted) • Avg Speed: <strong>{cs.avgTimeSec}s/Q</strong>
-                          </div>
+                          <div className={styles.chapterName}>{cs.topicName}</div>
+                          <p className={styles.chapterStat}>
+                            {cs.correctQuestions}/{cs.totalQuestions} correct · {cs.accuracyPercentage}% total ·{' '}
+                            {cs.attemptedAccuracyPercentage}% on attempted · {cs.avgTimeSec}s per question
+                          </p>
                         </div>
-                        <span style={{
-                          background: cs.accuracyPercentage >= 75 ? '#dcfce7' : '#fef3c7',
-                          color: cs.accuracyPercentage >= 75 ? '#166534' : '#b45309',
-                          padding: '4px 10px',
-                          borderRadius: '6px',
-                          fontSize: '0.78rem',
-                          fontWeight: 700
-                        }}>
-                          {cs.accuracyPercentage >= 75 ? '✓ Strong Mastery' : 'Needs Practice'}
+                        <span
+                          className={`${styles.verdictTag}${cs.accuracyPercentage >= 75 ? ` ${styles.verdictTagStrong}` : ''}`}
+                        >
+                          {cs.accuracyPercentage >= 75 ? 'Strong' : 'Needs practice'}
                         </span>
                       </div>
                     ))}
@@ -3197,12 +2293,10 @@ export default function TakeQuizModal({
               {/* TAB 1: COMPREHENSIVE QUESTION-BY-QUESTION & TIME REVIEW */}
               {activeResultTab === 'review' && (
                 <div style={{ marginBottom: '2rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', margin: 0 }}>
-                      Question-by-Question Score, Time & Explanation Breakdown
-                    </h3>
+                  <div className={styles.reviewHead}>
+                    <h3 className={styles.reviewTitle}>Question by question</h3>
 
-                    <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                    <div className={styles.filterRow}>
                       {[
                         { key: 'all', label: `All (${(completionData.reviewedQuestions || activeQuestions).length})` },
                         { key: 'attempted', label: `Attempted (${completionData.attemptedCount ?? 0})` },
@@ -3213,16 +2307,8 @@ export default function TakeQuizModal({
                           key={tab.key}
                           type="button"
                           onClick={() => setReviewFilter(tab.key as any)}
-                          style={{
-                            padding: '5px 12px',
-                            borderRadius: '6px',
-                            fontSize: '0.78rem',
-                            fontWeight: reviewFilter === tab.key ? 800 : 600,
-                            background: reviewFilter === tab.key ? '#0b5e4a' : '#f1f5f9',
-                            color: reviewFilter === tab.key ? '#ffffff' : '#475569',
-                            border: 'none',
-                            cursor: 'pointer'
-                          }}
+                          aria-pressed={reviewFilter === tab.key}
+                          className={`${styles.filter}${reviewFilter === tab.key ? ` ${styles.filterOn}` : ''}`}
                         >
                           {tab.label}
                         </button>
@@ -3230,7 +2316,7 @@ export default function TakeQuizModal({
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <div className={styles.stack}>
                     {(completionData.reviewedQuestions || activeQuestions)
                       .filter((item: any) => {
                         if (reviewFilter === 'attempted') return item.isAttempted !== false;
@@ -3246,97 +2332,59 @@ export default function TakeQuizModal({
                         return (
                           <div
                             key={i}
-                            style={{
-                              background: '#ffffff',
-                              border: `1.5px solid ${isRight ? '#86efac' : isAtt ? '#fca5a5' : '#cbd5e1'}`,
-                              borderRadius: '12px',
-                              padding: '1.25rem',
-                              boxShadow: '0 2px 6px rgba(0,0,0,0.03)'
-                            }}
+                            className={`${styles.entry}${isRight ? ` ${styles.entryRight}` : isAtt ? ` ${styles.entryWrong}` : ''}`}
                           >
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.6rem' }}>
-                              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                                <span style={{ fontWeight: 800, color: '#0f172a' }}>Question {qNum}</span>
-                                <span style={{
-                                  fontSize: '0.75rem',
-                                  fontWeight: 700,
-                                  padding: '2px 8px',
-                                  borderRadius: '4px',
-                                  background: isRight ? '#ecfdf5' : isAtt ? '#fef2f2' : '#f1f5f9',
-                                  color: isRight ? '#059669' : isAtt ? '#dc2626' : '#475569'
-                                }}>
-                                  {isRight ? '✓ Correct' : isAtt ? '✗ Incorrect' : '⚪ Unattempted'}
+                            <div className={styles.entryHead}>
+                              <div className={styles.entryIdent}>
+                                <span className={styles.entryNum}>Question {qNum}</span>
+                                <span
+                                  className={`${styles.tag}${isRight ? ` ${styles.tagRight}` : isAtt ? ` ${styles.tagWrong}` : ''}`}
+                                >
+                                  {isRight ? 'Correct' : isAtt ? 'Incorrect' : 'Unattempted'}
                                 </span>
                                 {item.timeTag === 'RUSHED_ERROR' && (
-                                  <span style={{ fontSize: '0.73rem', fontWeight: 800, background: '#fef3c7', color: '#b45309', padding: '2px 8px', borderRadius: '4px' }}>
-                                    ⚡ Rushed Mistake ({item.timeSpentSec}s)
+                                  <span className={`${styles.tag} ${styles.tagFlag}`}>
+                                    Rushed · {item.timeSpentSec}s
                                   </span>
                                 )}
                                 {item.timeTag === 'CONCEPT_GAP' && (
-                                  <span style={{ fontSize: '0.73rem', fontWeight: 800, background: '#fee2e2', color: '#991b1b', padding: '2px 8px', borderRadius: '4px' }}>
-                                    🧠 Concept Bottleneck ({item.timeSpentSec}s)
+                                  <span className={`${styles.tag} ${styles.tagWrong}`}>
+                                    Concept gap · {item.timeSpentSec}s
                                   </span>
                                 )}
-                                {item.topicName && (
-                                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>• {item.topicName}</span>
-                                )}
+                                {item.topicName && <span className={styles.entryTopic}>{item.topicName}</span>}
                               </div>
 
                               {/* Per-Question Time vs Community Average Badge */}
-                              <span style={{
-                                fontSize: '0.76rem',
-                                fontWeight: 700,
-                                background: '#f8fafc',
-                                border: '1px solid #cbd5e1',
-                                padding: '2px 9px',
-                                borderRadius: '999px',
-                                color: '#334155'
-                              }}>
-                                ⏱ You: <strong>{item.timeSpentSec ?? 0}s</strong>{item.peerAvgTimeSec > 0 && <> • Peer Avg: <strong>{item.peerAvgTimeSec}s</strong></>}
+                              <span className={styles.entryTime}>
+                                You {item.timeSpentSec ?? 0}s{item.peerAvgTimeSec > 0 && ` · peers ${item.peerAvgTimeSec}s`}
                               </span>
                             </div>
 
-                            <div style={{ fontSize: '0.98rem', color: '#1e293b', marginBottom: '0.75rem', lineHeight: 1.5 }}>
+                            <div className={styles.entryStem}>
                               <MathText text={item.questionText} />
                             </div>
 
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                              <div style={{
-                                background: isRight ? '#ecfdf5' : isAtt ? '#fef2f2' : '#f8fafc',
-                                padding: '8px 12px',
-                                borderRadius: '8px',
-                                fontSize: '0.85rem'
-                              }}>
-                                <strong>Your Answer:</strong> <MathText text={item.selectedText || item.selectedOption || 'Not answered'} />
+                            <div className={styles.answerPair}>
+                              <div
+                                className={`${styles.answer}${isRight ? ` ${styles.answerRight}` : isAtt ? ` ${styles.answerWrong}` : ''}`}
+                              >
+                                <span className={styles.label}>Your answer</span>
+                                <MathText text={item.selectedText || item.selectedOption || 'Not answered'} />
                               </div>
-                              <div style={{
-                                background: '#ecfdf5',
-                                padding: '8px 12px',
-                                borderRadius: '8px',
-                                fontSize: '0.85rem',
-                                color: '#065f46'
-                              }}>
-                                <strong>Correct Answer:</strong> <MathText text={item.correctOption} />
+                              <div className={`${styles.answer} ${styles.answerRight}`}>
+                                <span className={styles.label}>Correct answer</span>
+                                <MathText text={item.correctOption} />
                               </div>
                             </div>
 
-                            <div style={{
-                              background: '#f8fafc',
-                              border: '1px solid #e2e8f0',
-                              borderRadius: '8px',
-                              padding: '0.85rem',
-                              fontSize: '0.86rem',
-                              color: '#334155',
-                              lineHeight: 1.5
-                            }}>
-                              <div style={{ fontWeight: 700, color: '#0b5e4a', marginBottom: '3px' }}>
-                                💡 Explanation & Why It Is Correct:
-                              </div>
+                            <div className={styles.why}>
+                              <div className={styles.whyHead}>Why this is the answer</div>
                               <MathText text={item.explanation} />
 
                               {!isRight && item.whyIncorrect && (
-                                <div style={{ marginTop: '0.5rem', color: '#991b1b', fontWeight: 600 }}>
-                                  ⚠️ Why your choice was incorrect: <MathText text={item.whyIncorrect} />
+                                <div className={styles.whyWrong}>
+                                  Where your choice went wrong: <MathText text={item.whyIncorrect} />
                                 </div>
                               )}
                             </div>
@@ -3348,7 +2396,7 @@ export default function TakeQuizModal({
               )}
 
               {/* Bottom Actions */}
-              <div style={{ display: 'flex', gap: '0.85rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div className={styles.resultActions}>
                 <button
                   type="button"
                   onClick={() => {
@@ -3358,39 +2406,14 @@ export default function TakeQuizModal({
                     setBookmarkedQuestions([]);
                     setTabSwitchLogs([]);
                   }}
-                  style={{
-                    background: '#0b5e4a',
-                    color: '#ffffff',
-                    border: 'none',
-                    padding: '12px 24px',
-                    borderRadius: '10px',
-                    fontWeight: 700,
-                    fontSize: '0.92rem',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem'
-                  }}
+                  className={styles.primary}
                 >
-                  <RotateCcw size={16} />
-                  <span>Start Another Attempt</span>
+                  <RotateCcw size={16} aria-hidden="true" />
+                  <span>Start another attempt</span>
                 </button>
 
-                <button
-                  type="button"
-                  onClick={onClose}
-                  style={{
-                    background: '#f1f5f9',
-                    color: '#475569',
-                    border: '1px solid #cbd5e1',
-                    padding: '12px 24px',
-                    borderRadius: '10px',
-                    fontWeight: 600,
-                    fontSize: '0.92rem',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Close & Return to Paper
+                <button type="button" onClick={onClose} className={styles.quiet}>
+                  Close and return to the paper
                 </button>
               </div>
             </div>

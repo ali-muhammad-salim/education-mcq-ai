@@ -4,11 +4,11 @@ import { AuthUser } from '@/lib/auth';
 import { InsightAttempt } from './insights';
 // Project metadata inside PostgreSQL so profile analytics never download large
 // diagrams, stems and marking guides from thirty complete exam snapshots.
-export async function insightSample(actor:AuthUser,studentId:string):Promise<InsightAttempt[]>{
+function insightRows(studentId:string,teacherId?:string):Promise<InsightAttempt[]>{
  return prisma.$queryRaw<InsightAttempt[]>`WITH recent AS (
   SELECT a."id", a."questionSnapshot" FROM "QuizAttempt" a JOIN "Quiz" exam ON exam."id"=a."quizId"
   WHERE a."studentId"=${studentId} AND a."status"='GRADED'
-    ${actor.role==='ADMIN'?Prisma.empty:Prisma.sql`AND exam."teacherId"=${actor.id}`}
+    ${teacherId?Prisma.sql`AND exam."teacherId"=${teacherId}`:Prisma.empty}
   ORDER BY a."submittedAt" DESC, a."id" DESC LIMIT 30
  ) SELECT r."id", jsonb_agg(jsonb_build_object('id',item->>'id','orderIndex',item->'orderIndex','marks',item->'marks',
    'content',jsonb_strip_nulls(jsonb_build_object('stemText','Recorded item','questionType','SHORT_ANSWER','topicName',item->'content'->'topicName','sloCode',item->'content'->'sloCode')))) AS "questionSnapshot",
@@ -16,6 +16,14 @@ export async function insightSample(actor:AuthUser,studentId:string):Promise<Ins
  FROM recent r CROSS JOIN LATERAL jsonb_array_elements(CASE WHEN jsonb_typeof(r."questionSnapshot")='array' THEN r."questionSnapshot" ELSE '[]'::jsonb END) item
  JOIN "QuizAnswer" answer ON answer."attemptId"=r."id" AND answer."questionId"=item->>'id'
  GROUP BY r."id"`;
+}
+export async function insightSample(actor:AuthUser,studentId:string){
+ return insightRows(studentId,actor.role==='ADMIN'?undefined:actor.id);
+}
+// A student reviewing their own graded work is not scoped to one teacher: every
+// attempt they sat is theirs to learn from.
+export async function selfInsightSample(studentId:string){
+ return insightRows(studentId);
 }
 export async function revisionSample(actor:AuthUser,studentId:string,topic?:string):Promise<InsightAttempt[]>{
  const rows=await prisma.$queryRaw<{id:string;question:Prisma.JsonValue;questionId:string;score:number}[]>`WITH recent AS (

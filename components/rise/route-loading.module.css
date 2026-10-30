@@ -1,0 +1,59 @@
+/* Route-level loading fallback shown while server segments stream.
+   Tokens come from app/design-system.css via the .rise-ui wrapper.
+   No class name may contain "card". */
+
+.routeLoading {
+  min-height: 42vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--r-4);
+  padding: var(--r-6) var(--r-4);
+}
+
+.eyebrow {
+  font-family: var(--r-font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--r-ink-faint);
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2.5px solid var(--r-rule-strong);
+  border-top-color: var(--r-emerald);
+  animation: rlSpin 0.8s linear infinite;
+}
+
+@keyframes rlSpin {
+  to { transform: rotate(360deg); }
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--r-2);
+  width: min(420px, 100%);
+}
+
+.line {
+  height: 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--r-rule-strong) 55%, transparent);
+}
+
+.lineWide {
+  width: 100%;
+}
+
+.lineMid {
+  width: 78%;
+}
+
+.lineShort {
+  width: 46%;
+}
