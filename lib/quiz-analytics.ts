@@ -25,6 +25,17 @@ export interface PaperAnalyticsPayload {
   bestScoreLeaderboard?: LeaderboardEntry[];
 }
 
+export const MIN_PERCENTILE_ATTEMPTS = 30;
+
+/** Midrank handles equal scores without pretending one student beat another. */
+export function scorePercentile(score: number, scores: { score: number; count: number }[]): number | null {
+  const total = scores.reduce((sum, row) => sum + row.count, 0);
+  if (total < MIN_PERCENTILE_ATTEMPTS) return null;
+  const below = scores.filter(row => row.score < score).reduce((sum, row) => sum + row.count, 0);
+  const tied = scores.find(row => row.score === score)?.count ?? 0;
+  return Math.round(((below + tied / 2) / total) * 100);
+}
+
 export function getBaselineQuestionTelemetry(
   _paperCode: string,
   _questionNumber: string | number,
