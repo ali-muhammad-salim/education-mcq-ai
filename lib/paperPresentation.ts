@@ -43,6 +43,7 @@ export function paperAnswer(
   meta: Record<string, any>,
   choices: Record<string, string>,
 ) {
+  if (typeof meta.official_answer === 'string' && !/^[A-D]$/i.test(meta.official_answer.trim())) return undefined;
   const candidate =
     meta.correct_answer || meta.solved_correct_option || meta.correctOption;
   const key =

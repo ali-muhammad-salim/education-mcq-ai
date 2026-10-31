@@ -1,0 +1,231 @@
+{
+  "title": "Notes from E-Marking Centre \u2014 SSC-I Computer Science Annual Examinations 2023",
+  "examYear": 2023,
+  "board": "AKU-EB",
+  "classLevel": "Class IX (SSC-I)",
+  "subject": "Computer Science",
+  "sourceUrl": "/materials/ssc/computer-science/ssc-1/computer-science-ix-2023-emarking.pdf",
+  "introduction": "This document has been prepared for the teachers and candidates of Secondary School Certificate (SSC) Part I (Class IX) Computer Science. It contains comments on candidates' responses to the 2023 SSC-I Examination indicating the quality of the responses and highlighting their relative strengths and weaknesses, along with complete 2025 Syllabus SLO mappings and solved model answers.",
+  "generalObservations": [
+    "Most candidates achieved success in constructing good responses specifically in Network Topologies (Q.3), Types of Operating System / User Interfaces (Q.1), and Lists in HTML (Q.4 Definition List).",
+    "Teachers are advised to concentrate on Secondary Storage Devices (Q.5a HDD vs SSD construction and performance) and Analog vs Digital Signals (Q.2 waveform vs computer misconceptions) to foster a solid understanding."
+  ],
+  "questions": [
+    {
+      "questionNumber": "Q.1",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Computer operating systems have evolved since the first computers used the Command Line Interface (CLI). Nowadays, many computers use Graphical User Interface (GUI).\nGive TWO advantages and TWO disadvantages of using GUI. (4 Marks)",
+      "originalSlo": "2.1.3",
+      "currentSlo": "1.5.2",
+      "currentSloDescription": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Differentiate among the following three types of user interfaces provided by OS: a. Command Line Interface (CLI), e.g. DOS and UNIX b. Menu Driven Interface (MDI), e.g. Novel c. Graphical User Interface (GUI), e.g. Macintosh, Linux;",
+      "maxMarks": 4,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for each correct advantage of GUI (Any TWO required).",
+        "1 mark for each correct disadvantage of GUI (Any TWO required)."
+      ],
+      "overallPerformance": "The majority of candidates demonstrated a satisfactory grasp of the core concepts differentiating GUIs and CLIs. They successfully identified the two main types of user interfaces and outlined their basic distinctions, such as GUIs employing graphical elements like windows, menus, and icons, while CLIs utilise text commands. Overall, the cohort's performance was very good.",
+      "betterResponses": "Better responses displayed a good understanding of the advantages of GUI over CLI, highlighting user-friendliness, visual icons allowing easy access to files without memorising complex commands, and accurately stating GUI's disadvantages such as requiring higher system specifications (RAM/CPU) and being slower compared to CLI.",
+      "weakerResponses": "Some candidates merely expanded GUI as an acronym ('Graphical User Interface') or wrote vague statements like 'GUI is used in our computers and CLI is in operating system' without providing specific advantages or disadvantages such as resource usage or execution speed.",
+      "betterResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q1_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q1_weaker.png",
+      "suggestions": [
+        "Show a practical demonstration to the candidates such as showing them the Windows, Android, Linux, Unix, and Mac operating systems and differentiate amongst them in terms of interface."
+      ],
+      "modelAnswer": "**Two Advantages of Graphical User Interface (GUI) (2 Marks):**\n1. **User-Friendly & Easy to Learn:** Users interact visually via icons, windows, menus, and a mouse pointer (`WIMP`) without having to memorise complex text commands or exact syntax.\n2. **Intuitive Multitasking & Visual Feedback:** Multiple applications can be viewed side-by-side in separate windows with drag-and-drop file operations and immediate visual alerts.\n\n**Two Disadvantages of Graphical User Interface (GUI) (2 Marks):**\n1. **Higher System Resource Consumption:** Rendering graphics, windows, and icons requires significantly more RAM, disk space, and CPU/GPU processing power than a CLI.\n2. **Slower Execution for Repetitive/Scripting Tasks:** Navigating nested menus with a mouse is slower than executing a direct CLI command or automated shell script."
+    },
+    {
+      "questionNumber": "Q.2",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Give any TWO differences between analog and digital signals. (2 Marks)",
+      "originalSlo": "4.1.3",
+      "currentSlo": "1.7.1",
+      "currentSloDescription": "explain the components of data communication (sender, receiver, message, transmission medium, and protocol) and modes of data transmission;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Differentiate between analog and digital signals;",
+      "maxMarks": 2,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for each correct difference (TWO required).",
+        "No mark for any incomplete difference (point written in only one column).",
+        "Note: marks to be awarded for accuracy whether mentioned in digital or analog."
+      ],
+      "overallPerformance": "The candidates' responses to the question on analog and digital signals displayed a mixed level of understanding. While some candidates demonstrated a solid grasp of the key concepts, others appeared to confuse these concepts with analog and digital computers.",
+      "betterResponses": "Better responses correctly identified two key characteristics of analog signals (continuous wave nature, periodic voltage/current fluctuations representing any value in a range) contrasted against digital signals (discrete binary forms of 0s and 1s, higher transmission speed).",
+      "weakerResponses": "Weaker responses confused analog and digital signals with analog and digital computers, or falsely claimed that analog signals only travel through wired (guided) media and digital signals only through wireless (unguided) media.",
+      "betterResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q2_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q2_weaker.png",
+      "suggestions": [
+        "Use real-life examples to explain the concept for better understanding of the candidates, such as the transmission of sound from microphone to speakers."
+      ],
+      "modelAnswer": "| Aspect | Analog Signals | Digital Signals |\n| :--- | :--- | :--- |\n| **1. Nature of Waveform** | Continuous electromagnetic wave that varies smoothly over time and can take any infinite value within a range (sine wave). | Discrete, non-continuous square pulses representing binary values (`0`s and `1`s / low and high voltage levels). |\n| **2. Noise Immunity & Speed** | More susceptible to noise and attenuation during transmission; lower transmission speed in modern computing. | Highly resistant to noise/degradation (easily regenerated) and offers faster digital data processing and transmission. |"
+    },
+    {
+      "questionNumber": "Q.3",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "a. Draw the diagram of star topology. (1 Mark)\nb. Give any ONE advantage of using this topology. (1 Mark)",
+      "originalSlo": "5.2.3",
+      "currentSlo": "1.9.4",
+      "currentSloDescription": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Explain the following network topologies with the help of diagrams, i.e. bus topology, ring topology, star topology and mesh topology;",
+      "maxMarks": 2,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for the correct diagram of star topology.",
+        "1 mark for the advantage (Any ONE required)."
+      ],
+      "overallPerformance": "Most of the cohort's responses in this question showed commendable performance, showcasing a good grasp of the layout of star topology along with its advantages. However, a few candidates still seemed uncertain in their understanding of star topology, mixing the concept with mesh topology.",
+      "betterResponses": "Better responses drew a clear diagram where each computer node connected directly to a central hub or switch, and stated a clear advantage such as fault-tolerance ('if a single wire is damaged in this topology, then the rest of the topology will not be affected by that').",
+      "weakerResponses": "Weaker responses mixed up star topology with mesh topology by drawing crossed lines between computers without a central hub/switch, or wrote vague/incorrect advantages like 'it is very cheap'.",
+      "betterResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q3_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q3_weaker.png",
+      "suggestions": [
+        "Encourage students to see the applications of these topologies around themselves and practice simulations on network simulation software like Cisco Packet Tracer."
+      ],
+      "modelAnswer": "**a. Diagram of Star Topology (1 Mark):**\n```text\n      [Computer 1]         [Computer 2]\n            \\                 /\n             \\               /\n              [Central Switch/Hub]\n             /               \\\n            /                 \\\n      [Computer 3]         [Computer 4]\n```\n*(Multiple computer nodes each connected via an individual point-to-point cable directly to a central Switch or Hub.)*\n\n**b. ONE Advantage of Star Topology (1 Mark):**\n- **Fault Isolation / Reliability:** If a single node or its cable fails/breaks, the rest of the network continues operating normally without disruption.\n- *(Alternative valid point)* **Easy Troubleshooting & Scalability:** Faulty cables are easy to identify at the central switch, and new nodes can be added without shutting down the network."
+    },
+    {
+      "questionNumber": "Q.4",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Consider the given image of a web page (`Fruits` \u2014 displaying heading `Fruits` followed by a definition list: `Peach`: `Fruit with one seed`, `Papaya`: `Fruit with many seeds`).\nWrite the HTML code to display the web page shown in the given image. (5 Marks)",
+      "originalSlo": "6.4.1",
+      "currentSlo": "3.4.1",
+      "currentSloDescription": "create ordered (<ol>), unordered (<ul>), and definition (<dl>, <dt>, <dd>) lists and tables in HTML;",
+      "currentTopic": "Programming Fundamentals",
+      "outOfSyllabus": false,
+      "sloText": "Write HTML code to create: a. ordered list b. unordered list c. definition list;",
+      "maxMarks": 5,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark for `<html>` and `</html>` tags.",
+        "1 mark for `<body>` and `</body>` tags.",
+        "1 mark for `<dl>` and `</dl>` tag in the correct place.",
+        "1 mark for `<dt>` and `</dt>` tag in the correct place.",
+        "1 mark for `<dd>` and `</dd>` tag in the correct place."
+      ],
+      "overallPerformance": "The cohort's overall performance in this question was very good, indicating a good understanding of HTML tags. However, a few candidates' responses fell short of expectations, displaying inappropriate use of random tags or no understanding of using definition list tags (`<dl>`, `<dt>`, `<dd>`).",
+      "betterResponses": "Better responses demonstrated a strong understanding of HTML definition lists, placing `<html>...</html>`, `<head><title>Fruits</title></head>`, `<body>...</body>`, `<h1>Fruits</h1>`, and properly indented `<dl>`, `<dt>` (Peach, Papaya), and `<dd>` (Fruit with one seed, Fruit with many seeds) tags in the exact order they appear.",
+      "weakerResponses": "Weaker responses missed the `<dl>`, `<dt>`, and `<dd>` tags required for a definition list and instead tried to use `<p>` and `<br>` tags or invented non-existent tags like `<doc>`.",
+      "betterResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q4_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q4_weaker.png",
+      "suggestions": [
+        "Familiarise candidates by making them practice more HTML tags in the lab, such as developing web pages that contain ordered, unordered, and definition list tags."
+      ],
+      "modelAnswer": "```html\n<html>\n<head>\n    <title>Fruits</title>\n</head>\n<body>\n    <h1>Fruits</h1>\n    <dl>\n        <dt>Peach</dt>\n        <dd>Fruit with one seed</dd>\n        <dt>Papaya</dt>\n        <dd>Fruit with many seeds</dd>\n    </dl>\n</body>\n</html>\n```"
+    },
+    {
+      "questionNumber": "Q.5a",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "a. Describe the term hard disk drive (HDD). (2 Marks)\nb. Give any FOUR reasons why hard disk drives (HDD) are being replaced by solid-state drives (SSD). (4 Marks)",
+      "originalSlo": "1.3.5",
+      "currentSlo": "1.4.1",
+      "currentSloDescription": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Compare primary and secondary storage devices on the basis of location with respect to CPU, cost, storage capacity, average access time, direct/indirect data processing, and means of storing information;",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for each highlighted statement for HDD (TWO required = 2 Marks).",
+        "1 mark for each correct reason why HDDs are being replaced by SSDs (FOUR required = 4 Marks)."
+      ],
+      "overallPerformance": "As this was a choice question, fewer candidates opted to attempt this part. While some candidates showed clear and accurate concepts of magnetic platters and SSD advantages, others based their answers on vague general impressions rather than technical storage characteristics.",
+      "betterResponses": "The better responses effectively described the concept of a hard disk drive (HDD) as magnetic disks with platters divided into tracks and sectors, and provided four reasons why SSDs are preferred: no moving parts, lighter weight, reduced heat production, space efficiency, and faster performance.",
+      "weakerResponses": "Weaker responses lacked clarity in providing the definition and construction of an HDD and wrote misconceptions such as 'HDD is a hard copy and SSD is a soft copy'.",
+      "betterResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q5a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q5a_weaker.png",
+      "suggestions": [
+        "Focus on the functions and internal construction of HDDs and SSDs using audio-visual resources and show candidates physical HDD and SSD units in class."
+      ],
+      "modelAnswer": "### Part a: Hard Disk Drive (HDD) vs Solid-State Drive (SSD) (6 Marks)\n**i. Description of Hard Disk Drive (HDD) (2 Marks):**\n- A **Hard Disk Drive (HDD)** is a non-volatile **magnetic secondary storage device** used for storing the operating system, software applications, and user files permanently.\n- It consists of one or more circular **magnetic platters** (divided into concentric **tracks and sectors**) that spin rapidly while mechanical **read/write heads** read and write data magnetically.\n\n**ii. FOUR Reasons Why HDDs Are Being Replaced by SSDs (4 Marks):**\n1. **Significantly Faster Read/Write & Boot Speed:** SSDs use semiconductor NAND flash memory with near-instantaneous random access, booting OS and loading apps several times faster than mechanical HDDs.\n2. **No Moving Parts & Higher Durability:** Unlike HDDs (which have spinning platters and fragile read/write heads), SSDs have **no mechanical moving parts**, making them shock-resistant and durable against drops.\n3. **Silent Operation & Less Heat Generation:** Because SSDs have no spinning motor or moving actuator arm, they operate completely silently and emit far less heat.\n4. **Lighter Weight, Compact Size & Lower Power Consumption:** SSDs (especially M.2 NVMe drives) are much smaller, lighter, and consume less battery power, making them ideal for modern laptops."
+    },
+    {
+      "questionNumber": "Q.5b",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "a. Name the basic operations of a computer. (2 Marks)\nb. Describe each basic operation of a computer. (4 Marks)",
+      "originalSlo": "1.4.2",
+      "currentSlo": "1.1.3",
+      "currentSloDescription": "describe the basic operations of the data processing cycle (input, processing, storage, and output);",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Describe the basic operations of the data processing cycle using block diagram: a. input operation b. processing operation c. storage operation d. output operation;",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for naming TWO operations (FOUR operations required = 2 Marks; no marks if only one operation is named; 1 mark if three names are written).",
+        "1 mark for each description (FOUR required = 4 Marks)."
+      ],
+      "overallPerformance": "This part of Q.5 received a high attempt rate from candidates. While overall performance was above average, some candidates confused the basic operations of a computer (Input, Process, Storage, Output) with the operations of an operating system (booting, file management, user management).",
+      "betterResponses": "Better responses effectively identified and described the four key stages of the data processing cycle\u2014Input operation, Processing operation, Storage operation, and Output operation\u2014with clear definitions.",
+      "weakerResponses": "Weaker responses confused computer operations with operating system functions, writing about booting, process management, file management, and user management instead of Input, Processing, Storage, and Output.",
+      "betterResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q5b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q5b_weaker.png",
+      "suggestions": [
+        "Use real-life analogies such as preparing a recipe (ingredients = Input, cooking = Processing, plating = Output, storing in fridge = Storage) to reinforce the four basic operations of the data processing cycle."
+      ],
+      "modelAnswer": "### Part b: Basic Operations of a Computer (Data Processing Cycle) (6 Marks)\n**i. Names of the Four Basic Operations of a Computer (2 Marks):**\n1. **Input Operation**\n2. **Processing Operation**\n3. **Storage Operation**\n4. **Output Operation**\n\n**ii. Description of Each Basic Operation (4 Marks):**\n1. **Input Operation (1 Mark):** The process of accepting raw data and instructions from the user or environment via input devices (such as a keyboard, mouse, or scanner) and transferring them into main memory.\n2. **Processing Operation (1 Mark):** Performed by the Central Processing Unit (**CPU** \u2014 ALU and Control Unit), which fetches instructions and data from memory, decodes them, and executes arithmetic or logical operations to transform raw data into meaningful information.\n3. **Storage Operation (1 Mark):** The process of holding data, instructions, and processed results either temporarily in **primary memory (RAM)** during execution or permanently on **secondary storage (HDD/SSD)** for future retrieval.\n4. **Output Operation (1 Mark):** The process of presenting the processed result (information) to the user in human-readable form via output devices such as a monitor (softcopy), printer (hardcopy), or speakers."
+    },
+    {
+      "questionNumber": "Q.6a",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "a. Write TWO differences between guided (wired) and unguided (wireless) media. (2 Marks)\nb. Describe any TWO examples of guided media. (4 Marks)",
+      "originalSlo": "4.2.1",
+      "currentSlo": "1.9.3",
+      "currentSloDescription": "explain guided (twisted pair, coaxial, fiber optic) and unguided (radio waves, microwaves, infrared, satellite) transmission media;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Compare guided (wired) and unguided (wireless) media with examples, i.e. twisted pair cable, coaxial cable, optic fibre cable, radio waves, microwave, infra-red, Bluetooth and satellite;",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for each complete difference between guided and unguided media (Any TWO required = 2 Marks; no marks if the difference is incomplete).",
+        "1 mark for each statement in each guided media description (Any TWO statements required for each of the TWO examples = 4 Marks)."
+      ],
+      "overallPerformance": "Almost half of the cohort attempted this part. Overall performance was commendable, with most candidates effectively differentiating between guided and unguided media and describing examples like twisted pair and fibre-optic cables.",
+      "betterResponses": "Better responses accurately stated that guided media require physical cable pathways to transmit signals whereas unguided media travel through open space as waves, and gave detailed descriptions of twisted pair cables and fibre-optic cables.",
+      "weakerResponses": "Weaker responses contained inaccuracies regarding examples of guided media\u2014some candidates falsely wrote 'CPU buses' and 'cache cable' as guided communication media or merely stated 'guided media is difficult to use and unguided media is easy to use'.",
+      "betterResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q6a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q6a_weaker.png",
+      "suggestions": [
+        "Show tangible examples of guided and unguided media around the school\u2014such as Ethernet twisted-pair cables connected to desktop PCs (guided) and Wi-Fi access points (unguided)."
+      ],
+      "modelAnswer": "### Part a: Guided vs Unguided Media (6 Marks)\n**i. TWO Differences Between Guided (Wired) and Unguided (Wireless) Media (2 Marks):**\n\n| Aspect | Guided (Wired) Media | Unguided (Wireless) Media |\n| :"
+    },
+    {
+      "questionNumber": "Q.6b",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "Explain Local Area Network (LAN) and Wide Area Network (WAN) with the help of TWO characteristics and a diagram of each. (6 Marks)",
+      "originalSlo": "5.2.1",
+      "currentSlo": "1.9.2",
+      "currentSloDescription": "differentiate among types of networks: PAN, LAN, MAN, WAN, VPN, and Bluetooth networks;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Differentiate among the following types of networks: a. Local Area Network (LAN) b. Metropolitan Area Network (MAN) c. Wide Area Network (WAN) d. Personal Area Network (PAN) e. Bluetooth network f. internet;",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for the diagram of LAN.",
+        "1 mark for the diagram of WAN.",
+        "1 mark for the description of LAN.",
+        "1 mark for the description of WAN.",
+        "1 mark for any TWO characteristics of LAN.",
+        "1 mark for any TWO characteristics of WAN."
+      ],
+      "overallPerformance": "Almost half of the cohort attempted this part and overall response was above average. Most candidates provided appropriate descriptions of LAN and WAN along with their distinguishing characteristics and diagrams, though a few struggled to draw clear diagrams.",
+      "betterResponses": "Better responses included accurate diagrams depicting LAN (computers connected within a building/local switch) and WAN (multiple LANs interconnected across cities/countries) and mentioned key characteristics such as geographical area and transmission speed.",
+      "weakerResponses": "Weaker responses omitted key characteristics like geographical area and speed and drew unlabelled scribbles instead of clear network topology/architecture diagrams for LAN and WAN.",
+      "betterResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q6b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2023-EMARKING/q6b_weaker.png",
+      "suggestions": [
+        "Show real-life examples of LAN (the school computer lab network) and WAN (the Internet connecting cities and countries) alongside clear architectural diagrams."
+      ],
+      "modelAnswer": "| :"
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "pageNumber": 2,
+    "unitNumber": 2,
+    "unitName": "Computational Thinking and Algorithms",
+    "chapter": "Computational Thinking and Algorithms",
+    "slo": "2.3.3",
+    "current_slo": "2.3.3",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-P2/q1.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "2.3.3",
+        "description": "solve the trace table for a given flowchart.",
+        "topic": "Computational Thinking and Algorithms"
+      }
+    ],
+    "stem": "Consider the given flowchart.\n\nComplete the trace table showing the values of X at each step.\n\n| Iterations | Value of X |\n| :--- | :--- |\n| 1 | |\n| 2 | |\n| 3 | |",
+    "modelAnswer": "**Trace Table Solution:**\n- Initial state before loop: `Set X = 1`\n- **Iteration 1:** Condition `IF X > 5` (`1 > 5` is NO) $\\rightarrow$ `X = X + 2 = 1 + 2 = 3` (or if tracking X entering each check: Iteration 1 = `3`, Iteration 2 = `5`, Iteration 3 = `7`, after which `7 > 5` is YES and the flowchart stops).\n\n| Iterations | Value of X (after `X = X + 2`) |\n| :--- | :--- |\n| 1 | 3 |\n| 2 | 5 |\n| 3 | 7 |",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correctly determines the value of X for Iteration 1 (X = 3, or initial X = 1)."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly determines the value of X for Iteration 2 (X = 5, or 3)."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly determines the value of X for Iteration 3 (X = 7, or 5) where X > 5 terminates the loop."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.2",
+    "pageNumber": 2,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.11.3",
+    "current_slo": "3.11.3",
+    "cognitiveLevel": "A",
+    "marks": 2,
+    "isDiagram": false,
+    "diagramBased": false,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.11.3",
+        "description": "use the increment (++) and decrement (--) operators in a JavaScript code.",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "To write an HTML file that initialises a variable score with the value 3 using JavaScript. Where increment (++) operator is used to increase its value by 1 and then display the updated score on the web page.\n\nWrite the missing code in the given box to achieve the mentioned task.\n\n```html\n<html>\n<head>\n    <title>Score Increment</title>\n</head>\n<body>\n    <script>\n        [ Write missing JavaScript code here ]\n    </script>\n</body>\n</html>\n```",
+    "modelAnswer": "```javascript\nvar score = 3;\nscore++;\ndocument.write(score);\n```",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Declares and initialises `var score = 3;` and applies the increment operator `score++;`."
+      },
+      {
+        "marks": 1,
+        "description": "Displays the updated score on the webpage using `document.write(score);`."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.3",
+    "pageNumber": 3,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.4.1",
+    "current_slo": "3.4.1",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-P2/q3.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.4.1",
+        "description": "write HTML code to create: a. ordered list, b. unordered list, c. definition list;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "Consider the given image of a web page.\n\nWrite the HTML code to display the same web page as in the given image.",
+    "modelAnswer": "```html\n<html>\n<head>\n    <title>About Pakistan</title>\n</head>\n<body>\n    <h1>Cities of Pakistan</h1>\n    <ol>\n        <li>Karachi</li>\n        <li>Lahore</li>\n        <li>Quetta</li>\n        <li>Gilgit</li>\n        <li>Peshawar</li>\n    </ol>\n</body>\n</html>\n```",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Writes the HTML document structure with `<title>About Pakistan</title>` and heading `<h1>Cities of Pakistan</h1>`."
+      },
+      {
+        "marks": 1,
+        "description": "Uses the ordered list `<ol>...</ol>` container tag."
+      },
+      {
+        "marks": 1,
+        "description": "Encloses all five city items (`Karachi`, `Lahore`, `Quetta`, `Gilgit`, `Peshawar`) inside `<li>...</li>` tags."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.4",
+    "pageNumber": 4,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.10.5",
+    "current_slo": "3.10.5",
+    "cognitiveLevel": "A",
+    "marks": 2,
+    "isDiagram": false,
+    "diagramBased": false,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.10.5",
+        "description": "apply output functions: innerHTML, document.write( ) and window.alert( ) to display the output;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "Write an HTML file that includes a JavaScript block. In the script, declare a variable **name** with the text **\"Adnan\"** and display it on the web page using `document.write( )`.",
+    "modelAnswer": "```html\n<html>\n<body>\n    <script>\n        var name = \"Adnan\";\n        document.write(name);\n    </script>\n</body>\n</html>\n```",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Creates valid HTML `<script>...</script>` block and declares `var name = \"Adnan\";`."
+      },
+      {
+        "marks": 1,
+        "description": "Outputs the variable on the webpage using `document.write(name);`."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5",
+    "pageNumber": 4,
+    "unitNumber": 7,
+    "unitName": "Entrepreneurship in the Digital Age",
+    "chapter": "Entrepreneurship in the Digital Age",
+    "slo": "7.2.4",
+    "current_slo": "7.2.4",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "isDiagram": false,
+    "diagramBased": false,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "7.2.4",
+        "description": "apply business models using the Business Model Canvas (BMC);",
+        "topic": "Entrepreneurship in the Digital Age"
+      }
+    ],
+    "stem": "A company is developing a food delivery app that promises fast delivery of freshly prepared meals to busy urban professionals.\n\nConsidering the given situation, what are the THREE steps that a company should focus on to ensure the success of its digital venture.",
+    "modelAnswer": "**Three Essential Steps for the Food Delivery Digital Venture:**\n1. **Market Research & Target Customer Analysis:** Identify the specific dietary preferences, peak ordering hours, and office locations of busy urban professionals.\n2. **Value Proposition & App Usability (UI/UX):** Build an intuitive mobile interface with real-time GPS order tracking, one-tap digital payments, and guaranteed delivery time windows.\n3. **Key Partnerships & Logistics Optimization:** Partner with reliable local kitchens/restaurants and use route-optimised delivery riders to ensure meals arrive fresh and on time.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Identifies customer/market analysis for urban professionals (1 Mark)."
+      },
+      {
+        "marks": 1,
+        "description": "Identifies app user experience, real-time tracking, or digital payment convenience (1 Mark)."
+      },
+      {
+        "marks": 1,
+        "description": "Identifies delivery logistics, restaurant partnerships, or digital marketing strategy (1 Mark)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6",
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.2.4",
+    "current_slo": "1.2.4",
+    "cognitiveLevel": "A",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.4",
+        "description": "illustrate the Von Neumann Architecture using a block diagram;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "4.3.3",
+        "description": "explain the application of big data in the following business domains: a. healthcare, b. internet of things (IoT), c. manufacturing, d. government.",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "stem": "**EITHER**\n**a.**\ni. Draw the block diagram of a computer system. (2 Marks)\nii. Describe the function of any FOUR components of block diagram drawn in part i. (4 Marks)\n\n**OR**\n**b.** Exemplify the purpose of big data in each of the following fields. (6 Marks)\n\u2022 Healthcare\n\u2022 Internet of Things (IoT)\n\u2022 Manufacturing",
+    "modelAnswer": "**Option a (Von Neumann / Computer System Block Diagram):**\n- **i. Block Diagram (2 Marks):** `Input Unit` $\\rightarrow$ `Central Processing Unit (Control Unit + Arithmetic Logic Unit)` $\\leftrightarrow$ `Memory Unit (Primary & Secondary Storage)` $\\rightarrow$ `Output Unit`.\n- **ii. Functions of Four Components (4 Marks):**\n  1. **Input Unit:** Accepts raw data and instructions from the user via devices like keyboard, mouse, or sensors and converts them into binary form.\n  2. **Control Unit (CU):** Directs and coordinates all operations inside the computer by fetching, decoding, and managing instruction execution signals.\n  3. **Arithmetic Logic Unit (ALU):** Performs all arithmetic calculations ($+, -, \\times, \\div$) and logical comparisons ($<, >, =$).\n  4. **Memory Unit / Output Unit:** Memory stores data and instructions temporarily (RAM) or permanently (SSD/HDD), while the Output Unit converts processed binary results into human-readable form on screens or printers.\n\n**Option b (Purpose of Big Data in Three Fields \u2014 6 Marks):**\n1. **Healthcare (2 Marks):** Analyses electronic health records (EHRs), wearable patient monitors, and genomic datasets to predict disease outbreaks, personalise treatment plans, and detect early clinical warning signs.\n2. **Internet of Things (IoT) (2 Marks):** Processes continuous real-time sensor streams from smart homes, connected vehicles, and smart city grids to automate energy conservation and traffic control.\n3. **Manufacturing (2 Marks):** Uses industrial sensor telemetry for predictive maintenance of factory machinery, automated defect detection on assembly lines, and supply-chain inventory optimisation.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a(i): Draws a labelled block diagram showing Input, CPU (CU & ALU), Memory, and Output units (2 Marks); OR Part b: Healthcare big data application with example (2 Marks)."
+      },
+      {
+        "marks": 2,
+        "description": "Part a(ii): Accurately describes the function of first two components (2 Marks); OR Part b: IoT big data application with example (2 Marks)."
+      },
+      {
+        "marks": 2,
+        "description": "Part a(ii): Accurately describes the function of remaining two components (2 Marks); OR Part b: Manufacturing big data application with example (2 Marks)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.7",
+    "pageNumber": 7,
+    "unitNumber": 5,
+    "unitName": "Applications of Computer Science",
+    "chapter": "Applications of Computer Science",
+    "slo": "5.1.2",
+    "current_slo": "5.1.2",
+    "cognitiveLevel": "E",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "5.1.2",
+        "description": "discuss the application of AI in the following fields: a. healthcare, b. robotics, c. education, d. transportation, e. entertainment, f. natural language process (NLP);",
+        "topic": "Applications of Computer Science"
+      },
+      {
+        "code": "6.2.3",
+        "description": "suggest preventive measures to protect/ safeguard computer systems against malware transmission methods as mentioned in SLO # 6.2.1.",
+        "topic": "Impact of Computing"
+      }
+    ],
+    "stem": "**EITHER**\n**a.** A car manufacturing company aims to reduce production time and enhance safety in its factories. They plan to introduce AI-powered robots that can perform tasks such as assembling parts, detecting product defects, and managing inventory.\nBased on the given scenario,\ni. suggest any TWO improvements that Artificial Intelligence (AI), along with robotics, can bring in car manufacturing company. (2 Marks)\nii. write any TWO possible challenges that the company may face. (2 Marks)\niii. should the company completely depend on AI-powered robots? Support your answer with a reason. (2 Marks)\n\n**OR**\n**b.**\ni. Suggest any ONE way for each of the following sources through which computer systems can be protected from malware. (4 Marks)\n\u2022 Infected flash drives or CDs\n\u2022 Pirated software\n\u2022 Internet\n\u2022 Email attachments\nii. Which one of the given sources is more likely to spread malware? Give a reason to support your answer. (2 Marks)",
+    "modelAnswer": "**Option a (AI & Robotics in Car Manufacturing \u2014 6 Marks):**\n- **i. Two Improvements (2 Marks):**\n  1. **Higher Precision & Faster Assembly:** AI-guided robotic arms operate 24/7 with millimetre accuracy and computer-vision quality inspection, significantly reducing assembly time and defect rates.\n  2. **Enhanced Worker Safety:** Robots handle hazardous welding, heavy lifting, and toxic paint spraying, reducing workplace injuries.\n- **ii. Two Possible Challenges (2 Marks):**\n  1. **High Initial Capital & Maintenance Cost:** Purchasing, programming, and maintaining industrial AI robotics requires substantial financial investment.\n  2. **Workforce Displacement & Retraining:** Factory staff may face job displacement and require technical upskilling to operate automated systems.\n- **iii. Complete Dependence Evaluation (2 Marks):** **No**, the company should not completely depend on AI-powered robots because human supervision is essential for handling unexpected system failures, creative problem-solving, ethical decisions, and cybersecurity incidents.\n\n**Option b (Malware Protection & Threat Evaluation \u2014 6 Marks):**\n- **i. Preventive Measures for Each Source (4 Marks):**\n  1. **Infected flash drives or CDs:** Scan all removable USB drives with updated antivirus software and disable AutoRun before opening files.\n  2. **Pirated software:** Only install licensed or verified open-source software from official vendor repositories.\n  3. **Internet:** Enable a network firewall, use HTTPS websites, and keep browser security patches and anti-malware real-time protection active.\n  4. **Email attachments:** Never open unexpected executable (`.exe`, `.scr`) or macro attachments from unknown senders; scan attachments first.\n- **ii. Most Likely Source to Spread Malware (2 Marks):** **The Internet (or Email attachments)** is most likely to spread malware because billions of users are continuously connected online, allowing malicious links, drive-by downloads, and phishing attachments to reach thousands of computers simultaneously without physical contact.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a(i): Two valid improvements of AI/robotics in manufacturing (2 Marks); OR Part b(i): Preventive measures for flash drives and pirated software (2 Marks)."
+      },
+      {
+        "marks": 2,
+        "description": "Part a(ii): Two valid challenges of adopting AI/robotics (2 Marks); OR Part b(i): Preventive measures for Internet and Email attachments (2 Marks)."
+      },
+      {
+        "marks": 2,
+        "description": "Part a(iii): Clear evaluation with reasoned justification on human oversight (2 Marks); OR Part b(ii): Identifies most likely malware vector with logical reason (2 Marks)."
+      }
+    ]
+  }
+]

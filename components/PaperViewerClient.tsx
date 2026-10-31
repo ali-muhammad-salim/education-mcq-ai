@@ -485,11 +485,11 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
               marginBottom: '1.5rem',
             }}>
               <span style={{ fontSize: '0.88rem', fontWeight: 700, color: '#334155' }}>
-                📄 Exact Digital Copy of Official Paper II Question Booklet (Unanswered Exam Format • 2025 Syllabus Mapped)
+                📄 {paper.paperCode?.startsWith('CS-') ? 'Digital study version of Paper II — compare with the original document' : 'Exact Digital Copy of Official Paper II Question Booklet (Unanswered Exam Format • 2025 Syllabus Mapped)'}
               </span>
               {!paper.paperCode?.includes('-P2') || paper.paperCode?.includes('2024') || paper.paperCode?.includes('2025') ? (
                 <Link
-                  href={`/resources/physics-${isGrade9 ? 'ix' : 'x'}-${paper.examYear}-emarking`}
+                  href={`/resources/${paper.paperCode?.startsWith('CS-') ? 'computer-science' : 'physics'}-${isGrade9 ? 'ix' : 'x'}-${paper.examYear}-emarking`}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -539,7 +539,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                 {paper.examSession?.toUpperCase().includes('MODEL') ? 'MODEL EXAMINATIONS' : `ANNUAL EXAMINATIONS (THEORY) ${paper.examYear}`}
               </div>
               <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#111827', marginBottom: '0.4rem' }}>
-                Physics {isPaper2 ? 'Paper II' : 'Paper I'}
+                {paper.subject?.name || 'Physics'} {isPaper2 ? 'Paper II' : 'Paper I'}
               </div>
               <div style={{ fontSize: '1rem', fontWeight: 800, color: '#111827' }}>
                 {isPaper2 ? 'Time: 1 hour 50 minutes     Marks: 25' : 'Time: 1 hour 10 minutes     Marks: 40'}
@@ -625,7 +625,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
               fontFamily: 'system-ui, sans-serif',
               fontWeight: 600
             }}>
-              <span>Physics {isPaper2 ? 'Paper II' : 'Paper I'} &bull; {gradeLabel} ({paper.examYear})</span>
+              <span>{paper.subject?.name || 'Physics'} {isPaper2 ? 'Paper II' : 'Paper I'} &bull; {gradeLabel} ({paper.examYear})</span>
               <span>
                 {showCorrectAnswers ? '⭐ Quick Study Mode: Questions, SLO Mappings & Answer Key' : `Total ${questions.length} Examination Items • SLO Mapped`}
               </span>
@@ -843,7 +843,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                             {['A', 'B', 'C', 'D'].map(optKey => {
                               const optText = choices[optKey] || '';
                               if (!optText) return null;
-                              const isThisCorrect = optKey === correctKey;
+                              const isThisCorrect = meta.official_answer === 'D,A' ? ['D', 'A'].includes(optKey) : optKey === correctKey;
 
                               return (
                                 <div key={optKey} style={{
@@ -914,7 +914,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                                 {!isCorrect && selectedOpt && (
                                   <div style={{ fontSize: '0.86rem', color: '#9f1239', marginBottom: '0.35rem', lineHeight: 1.5 }}>
                                     <strong>Why Option ({selectedOpt}) is incorrect: </strong>
-                                    <MathText text={(Array.isArray(meta.option_feedback) ? meta.option_feedback.find((f: any) => String(f.key).toUpperCase() === selectedOpt)?.reason : '') || `Option (${selectedOpt}) does not satisfy the physical relationship for this question.`} />
+                                    <MathText text={(Array.isArray(meta.option_feedback) ? meta.option_feedback.find((f: any) => String(f.key).toUpperCase() === selectedOpt)?.reason : '') || `Option (${selectedOpt}) does not match the reviewed answer for this question.`} />
                                   </div>
                                 )}
                                 <div style={{ fontSize: '0.88rem', color: '#1e293b', lineHeight: 1.55 }}>
@@ -944,11 +944,12 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                           }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
                               <span style={{ fontSize: '0.82rem', fontWeight: 800, color: '#166534', background: '#dcfce7', padding: '2px 8px', borderRadius: '4px' }}>
-                                ✓ Answer key: Option {correctKey}
+                                Answer sheet: {meta.official_answer || (correctKey ? `Option ${correctKey}` : 'Review pending')}
                               </span>
                             </div>
                             <div style={{ fontSize: '0.92rem', lineHeight: 1.6, color: '#1e3a8a' }}>
                               <MathText text={betterResponse} />
+                              {meta.answer_review_note && <p>{meta.answer_review_note}</p>}
                             </div>
                           </div>
                         ) : (
@@ -1038,9 +1039,9 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
               color: '#111827',
               background: '#ffffff'
             }}>
-              <span>{!isGrade9 ? (isPaper2 ? 'S2502-1721120' : 'S2502-1721110') : paper.examYear === 2024 ? (isPaper2 ? 'S2401-1711120' : 'S2401-1711110') : (isPaper2 ? 'S2501-1711120' : 'S2501-1711110')}</span>
+              <span>{paper.paperCode?.startsWith('CS-') ? paper.paperCode : !isGrade9 ? (isPaper2 ? 'S2502-1721120' : 'S2502-1721110') : paper.examYear === 2024 ? (isPaper2 ? 'S2401-1711120' : 'S2401-1711110') : (isPaper2 ? 'S2501-1711120' : 'S2501-1711110')}</span>
               <span style={{ letterSpacing: '1px' }}>END OF PAPER</span>
-              <span>Physics {isPaper2 ? 'Paper II' : 'Paper I'}</span>
+              <span>{paper.subject?.name || 'Physics'} {isPaper2 ? 'Paper II' : 'Paper I'}</span>
             </div>
           </div>
         </>

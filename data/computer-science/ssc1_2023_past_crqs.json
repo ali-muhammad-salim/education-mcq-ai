@@ -1,0 +1,294 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "2.1.3",
+    "original_slo": "2.1.3",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "U",
+    "marks": 4,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Computer operating systems have evolved since the first computers used the Command Line Interface (CLI). Nowadays, many computers use Graphical User Interface (GUI).\nGive TWO advantages and TWO disadvantages of using GUI. (4 Marks)",
+    "modelAnswer": "**Two Advantages of Graphical User Interface (GUI) (2 Marks):**\n1. **User-Friendly & Easy to Learn:** Users interact visually via icons, windows, menus, and a mouse pointer (`WIMP`) without having to memorise complex text commands or exact syntax.\n2. **Intuitive Multitasking & Visual Feedback:** Multiple applications can be viewed side-by-side in separate windows with drag-and-drop file operations and immediate visual alerts.\n\n**Two Disadvantages of Graphical User Interface (GUI) (2 Marks):**\n1. **Higher System Resource Consumption:** Rendering graphics, windows, and icons requires significantly more RAM, disk space, and CPU/GPU processing power than a CLI.\n2. **Slower Execution for Repetitive/Scripting Tasks:** Navigating nested menus with a mouse is slower than executing a direct CLI command or automated shell script.",
+    "betterResponse": "Better responses displayed a good understanding of the advantages of GUI over CLI, highlighting user-friendliness, visual icons allowing easy access to files without memorising complex commands, and accurately stating GUI's disadvantages such as requiring higher system specifications (RAM/CPU) and being slower compared to CLI.",
+    "weakerResponse": "Some candidates merely expanded GUI as an acronym ('Graphical User Interface') or wrote vague statements like 'GUI is used in our computers and CLI is in operating system' without providing specific advantages or disadvantages such as resource usage or execution speed.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "1 mark for each correct advantage of GUI (Any TWO required: e.g., easy to use/no need to memorise commands, visual icons/windows for easy file access)."
+      },
+      {
+        "marks": 2,
+        "description": "1 mark for each correct disadvantage of GUI (Any TWO required: e.g., requires more RAM/system resources, slower execution than CLI)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.2",
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.1.3",
+    "original_slo": "4.1.3",
+    "current_slo": "1.7.1",
+    "cognitiveLevel": "U",
+    "marks": 2,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.7.1",
+        "description": "explain the components of data communication (sender, receiver, message, transmission medium, and protocol) and modes of data transmission;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Give any TWO differences between analog and digital signals. (2 Marks)",
+    "modelAnswer": "| Aspect | Analog Signals | Digital Signals |\n| :--- | :--- | :--- |\n| **1. Nature of Waveform** | Continuous electromagnetic wave that varies smoothly over time and can take any infinite value within a range (sine wave). | Discrete, non-continuous square pulses representing binary values (`0`s and `1`s / low and high voltage levels). |\n| **2. Noise Immunity & Speed** | More susceptible to noise and attenuation during transmission; lower transmission speed in modern computing. | Highly resistant to noise/degradation (easily regenerated) and offers faster digital data processing and transmission. |",
+    "betterResponse": "Better responses correctly identified two key characteristics of analog signals (continuous wave nature, periodic voltage/current fluctuations representing any value in a range) contrasted against digital signals (discrete binary forms of 0s and 1s, higher transmission speed).",
+    "weakerResponse": "Weaker responses confused analog and digital signals with analog and digital computers, or falsely claimed that analog signals only travel through wired (guided) media and digital signals only through wireless (unguided) media.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for the first complete paired difference (e.g., continuous sine wave vs discrete binary 0s and 1s pulses)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for the second complete paired difference (e.g., representation of infinite continuous values vs discrete levels, or noise susceptibility/speed comparison)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.3",
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.3",
+    "original_slo": "5.2.3",
+    "current_slo": "1.9.4",
+    "cognitiveLevel": "U",
+    "marks": 2,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.4",
+        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "a. Draw the diagram of star topology. (1 Mark)\nb. Give any ONE advantage of using this topology. (1 Mark)",
+    "modelAnswer": "**a. Diagram of Star Topology (1 Mark):**\n```text\n      [Computer 1]         [Computer 2]\n            \\                 /\n             \\               /\n              [Central Switch/Hub]\n             /               \\\n            /                 \\\n      [Computer 3]         [Computer 4]\n```\n*(Multiple computer nodes each connected via an individual point-to-point cable directly to a central Switch or Hub.)*\n\n**b. ONE Advantage of Star Topology (1 Mark):**\n- **Fault Isolation / Reliability:** If a single node or its cable fails/breaks, the rest of the network continues operating normally without disruption.\n- *(Alternative valid point)* **Easy Troubleshooting & Scalability:** Faulty cables are easy to identify at the central switch, and new nodes can be added without shutting down the network.",
+    "betterResponse": "Better responses drew a clear diagram where each computer node connected directly to a central hub or switch, and stated a clear advantage such as fault-tolerance ('if a single wire is damaged in this topology, then the rest of the topology will not be affected by that').",
+    "weakerResponse": "Weaker responses mixed up star topology with mesh topology by drawing crossed lines between computers without a central hub/switch, or wrote vague/incorrect advantages like 'it is very cheap'.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for a correct diagram of Star Topology showing multiple computer nodes connected to a central Hub/Switch."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for any ONE valid advantage (e.g., failure of one node/cable does not affect the rest of the network, easy to troubleshoot, easy to add/remove nodes)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.4",
+    "pageNumber": 4,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.4.1",
+    "original_slo": "6.4.1",
+    "current_slo": "3.4.1",
+    "cognitiveLevel": "A",
+    "marks": 5,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2023-P2/q4.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.4.1",
+        "description": "create ordered (<ol>), unordered (<ul>), and definition (<dl>, <dt>, <dd>) lists and tables in HTML;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Consider the given image of a web page (`Fruits` \u2014 displaying heading `Fruits` followed by a definition list: `Peach`: `Fruit with one seed`, `Papaya`: `Fruit with many seeds`).\nWrite the HTML code to display the web page shown in the given image. (5 Marks)",
+    "modelAnswer": "```html\n<html>\n<head>\n    <title>Fruits</title>\n</head>\n<body>\n    <h1>Fruits</h1>\n    <dl>\n        <dt>Peach</dt>\n        <dd>Fruit with one seed</dd>\n        <dt>Papaya</dt>\n        <dd>Fruit with many seeds</dd>\n    </dl>\n</body>\n</html>\n```",
+    "betterResponse": "Better responses demonstrated a strong understanding of HTML definition lists, placing `<html>...</html>`, `<head><title>Fruits</title></head>`, `<body>...</body>`, `<h1>Fruits</h1>`, and properly indented `<dl>`, `<dt>` (Peach, Papaya), and `<dd>` (Fruit with one seed, Fruit with many seeds) tags in the exact order they appear.",
+    "weakerResponse": "Weaker responses missed the `<dl>`, `<dt>`, and `<dd>` tags required for a definition list and instead tried to use `<p>` and `<br>` tags or invented non-existent tags like `<doc>`.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for `<html>` and `</html>` tags."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for `<body>` and `</body>` tags (with `<head><title>Fruits</title></head>` and `<h1>Fruits</h1>`)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for `<dl>` and `</dl>` tags in the correct place."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for `<dt>` and `</dt>` tags (`<dt>Peach</dt>`, `<dt>Papaya</dt>`) in the correct place."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for `<dd>` and `</dd>` tags (`<dd>Fruit with one seed</dd>`, `<dd>Fruit with many seeds</dd>`) in the correct place."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5",
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.5 / 1.4.2",
+    "original_slo": "1.3.5",
+    "current_slo": "1.4.1",
+    "cognitiveLevel": "U",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.4.1",
+        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.1.3",
+        "description": "describe the basic operations of the data processing cycle (input, processing, storage, and output);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**EITHER**\n**a.**\n**i.** Describe the term hard disk drive (HDD). (2 Marks)\n**ii.** Give any FOUR reasons why hard disk drives (HDD) are being replaced by solid-state drives (SSD). (4 Marks)\n\n**OR**\n**b.**\n**i.** Name the basic operations of a computer. (2 Marks)\n**ii.** Describe each basic operation of a computer. (4 Marks)",
+    "modelAnswer": "### Part a: Hard Disk Drive (HDD) vs Solid-State Drive (SSD) (6 Marks)\n**i. Description of Hard Disk Drive (HDD) (2 Marks):**\n- A **Hard Disk Drive (HDD)** is a non-volatile **magnetic secondary storage device** used for storing the operating system, software applications, and user files permanently.\n- It consists of one or more circular **magnetic platters** (divided into concentric **tracks and sectors**) that spin rapidly while mechanical **read/write heads** read and write data magnetically.\n\n**ii. FOUR Reasons Why HDDs Are Being Replaced by SSDs (4 Marks):**\n1. **Significantly Faster Read/Write & Boot Speed:** SSDs use semiconductor NAND flash memory with near-instantaneous random access, booting OS and loading apps several times faster than mechanical HDDs.\n2. **No Moving Parts & Higher Durability:** Unlike HDDs (which have spinning platters and fragile read/write heads), SSDs have **no mechanical moving parts**, making them shock-resistant and durable against drops.\n3. **Silent Operation & Less Heat Generation:** Because SSDs have no spinning motor or moving actuator arm, they operate completely silently and emit far less heat.\n4. **Lighter Weight, Compact Size & Lower Power Consumption:** SSDs (especially M.2 NVMe drives) are much smaller, lighter, and consume less battery power, making them ideal for modern laptops.\n\n---\n### Part b: Basic Operations of a Computer (Data Processing Cycle) (6 Marks)\n**i. Names of the Four Basic Operations of a Computer (2 Marks):**\n1. **Input Operation**\n2. **Processing Operation**\n3. **Storage Operation**\n4. **Output Operation**\n\n**ii. Description of Each Basic Operation (4 Marks):**\n1. **Input Operation (1 Mark):** The process of accepting raw data and instructions from the user or environment via input devices (such as a keyboard, mouse, or scanner) and transferring them into main memory.\n2. **Processing Operation (1 Mark):** Performed by the Central Processing Unit (**CPU** \u2014 ALU and Control Unit), which fetches instructions and data from memory, decodes them, and executes arithmetic or logical operations to transform raw data into meaningful information.\n3. **Storage Operation (1 Mark):** The process of holding data, instructions, and processed results either temporarily in **primary memory (RAM)** during execution or permanently on **secondary storage (HDD/SSD)** for future retrieval.\n4. **Output Operation (1 Mark):** The process of presenting the processed result (information) to the user in human-readable form via output devices such as a monitor (softcopy), printer (hardcopy), or speakers.",
+    "betterResponse": "In 5a, better responses accurately described HDDs as magnetic disks with platters divided into tracks and sectors, and provided four clear reasons why SSDs are preferred (no moving parts/durability, compact size, lighter weight, reduced heat, and faster speed). In 5b, better responses named all four basic operations of the data processing cycle (Input, Processing, Storage, Output) and clearly explained each step.",
+    "weakerResponse": "In 5a, weaker responses lacked clarity on HDD magnetic construction and wrote vague points like 'HDD is a hard copy and SSD is a soft copy'. In 5b, weaker responses confused the basic operations of a computer (Input, Process, Storage, Output) with functions of an operating system (booting, file management, user management).",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a(i): 1 mark for each highlighted statement describing HDD (non-volatile magnetic storage device; rotating platters divided into tracks and sectors) [2 Marks]. OR Part b(i): 1 mark for naming TWO basic operations (FOUR required: Input, Processing, Storage, Output = 2 Marks)."
+      },
+      {
+        "marks": 4,
+        "description": "Part a(ii): 1 mark each for any FOUR reasons why HDDs are replaced by SSDs (faster access speed, no moving parts/more durable, lighter/compact, lower power/heat, silent) [4 Marks]. OR Part b(ii): 1 mark each for describing each of the FOUR basic operations (Input, Processing, Storage, Output) [4 Marks]."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6",
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.2.1 / 5.2.1",
+    "original_slo": "4.2.1",
+    "current_slo": "1.9.3",
+    "cognitiveLevel": "U",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.3",
+        "description": "explain guided (twisted pair, coaxial, fiber optic) and unguided (radio waves, microwaves, infrared, satellite) transmission media;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.9.2",
+        "description": "differentiate among types of networks: PAN, LAN, MAN, WAN, VPN, and Bluetooth networks;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**EITHER**\n**a.**\n**i.** Write TWO differences between guided (wired) and unguided (wireless) media. (2 Marks)\n**ii.** Describe any TWO examples of guided media. (4 Marks)\n\n**OR**\n**b.** Explain Local Area Network (LAN) and Wide Area Network (WAN) with the help of TWO characteristics and a diagram of each. (6 Marks)",
+    "modelAnswer": "### Part a: Guided vs Unguided Media (6 Marks)\n**i. TWO Differences Between Guided (Wired) and Unguided (Wireless) Media (2 Marks):**\n\n| Aspect | Guided (Wired) Media | Unguided (Wireless) Media |\n| :--- | :--- | :--- |\n| **1. Signal Pathway** | Data signals travel through a physical solid conductor or glass fibre cable (bounded pathway). | Data signals propagate through open space/air in the form of electromagnetic waves (unbounded). |\n| **2. Directionality & Security** | Provides a direct point-to-point physical link with higher security and lower interference. | Broadcasts signals omnidirectionally or line-of-sight through the air, making it easier for mobile devices to connect but more open to interception. |\n\n**ii. TWO Examples of Guided Media (4 Marks \u2014 2 Marks Each):**\n1. **Twisted Pair Cable (2 Marks):** Consists of pairs of insulated copper wires twisted together in a spiral to cancel out electromagnetic interference (EMI) and crosstalk. Widely used in Ethernet LANs (UTP/STP) with RJ-45 connectors.\n2. **Fibre-Optic Cable (2 Marks):** Consists of ultra-thin strands of glass or plastic core surrounded by cladding that transmit data as **pulses of light** using total internal reflection. It provides the highest bandwidth (Gbps/Tbps) and complete immunity to EMI.\n*(Alternative valid example: **Coaxial Cable** \u2014 central copper core surrounded by insulating sheath and braided metal shield, used for cable TV and broadband.)*\n\n---\n### Part b: Local Area Network (LAN) and Wide Area Network (WAN) (6 Marks)\n**1. Local Area Network (LAN) (3 Marks):**\n- **Description (1 Mark):** A computer network that interconnects computers and peripherals within a limited geographical area such as a single room, office floor, school lab, or building.\n- **Two Characteristics (1 Mark):**\n  1. Offers very **high data transfer speeds** (typically 100 Mbps to 10 Gbps) with low latency.\n  2. Privately owned, inexpensive to install, and easy to manage/secure.\n- **Diagram of LAN (1 Mark):**\n```text\n   [PC 1] ----\\\n   [PC 2] ----- [Central LAN Switch] ---- [Shared Office Printer]\n   [PC 3] ----/\n```\n\n**2. Wide Area Network (WAN) (3 Marks):**\n- **Description (1 Mark):** A large-scale telecommunication network that spans a vast geographical area across cities, countries, or continents (the largest example being the **Internet**) by interconnecting multiple LANs and MANs.\n- **Two Characteristics (1 Mark):**\n  1. Covers **long-distance national/global geographic areas** using routers, leased fibre lines, microwave links, and satellites.\n  2. Higher setup/maintenance cost and higher propagation delay compared to a single-building LAN.\n- **Diagram of WAN (1 Mark):**\n```text\n   [Karachi Office LAN] <---> [Router] === ( Satellite / Fibre WAN Cloud ) === [Router] <---> [Lahore Office LAN]\n```",
+    "betterResponse": "In 6a, better responses clearly contrasted guided media (signals travel through physical cables) vs unguided media (signals travel through open space as waves) and described two concrete guided media examples (Twisted Pair Cable and Fibre-Optic Cable) with structure and working. In 6b, better responses described both LAN and WAN, gave two characteristics of each (geographic area and speed), and drew clear diagrams of LAN and WAN.",
+    "weakerResponse": "In 6a, weaker responses falsely listed 'CPU buses' and 'cache memory' as guided communication media or only wrote 'guided is difficult to use and unguided is easy'. In 6b, weaker responses failed to mention geographical area and speed or drew identical unlabelled star scribbles for both LAN and WAN.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a(i): 1 mark for each complete difference between guided and unguided media (TWO required = 2 Marks). OR Part b: 1 mark for LAN description + 1 mark for WAN description (2 Marks)."
+      },
+      {
+        "marks": 4,
+        "description": "Part a(ii): 2 marks for describing the first guided medium example (e.g., Twisted Pair Cable) + 2 marks for describing the second guided medium example (e.g., Fibre-Optic or Coaxial Cable) [4 Marks]. OR Part b: 1 mark for TWO characteristics of LAN + 1 mark for TWO characteristics of WAN + 1 mark for LAN diagram + 1 mark for WAN diagram [4 Marks]."
+      }
+    ]
+  }
+]

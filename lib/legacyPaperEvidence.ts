@@ -169,3 +169,28 @@ export function annualX2025CurrentMapping(number: string | number, stem: string)
     current_mapping: [{ code: mapped.code, description: mapped.description, topic: mapped.topic }],
   };
 }
+
+export const cs2025Resources = [
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-ix-2025-key', year: 2025 },
+  { label: 'E-marking notes', href: '/resources/computer-science-ix-2025-emarking', year: 2025 },
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-ix-2024-key', year: 2024 },
+  { label: 'Paper II study notes · AI draft', href: '/resources/computer-science-ix-2024-emarking', year: 2024 },
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-ix-2023-key', year: 2023 },
+  { label: 'E-marking notes', href: '/resources/computer-science-ix-2023-emarking', year: 2023 },
+  { label: 'Paper 1 (Theory + ATP) · official answer key', href: '/resources/computer-science-ix-2022-key', year: 2022 },
+];
+
+export const csAnnual2025AnswerReviews: Record<number, string> = {};
+
+export const csAnnual2024AnswerReviews: Record<number, string> = {
+  9: 'Official 2024 AKU-EB Answer Key credits both D and A ("D,A"): Statement D ("Level 3 cache memory is smallest in storage capacity than other two levels") is FALSE because L3 cache is the largest in capacity, while Statement A ("Level 2 cache memory is located on the microprocessor") was historically considered false in older textbooks where L2 resided on the motherboard.',
+  39: 'Printed key PDF shows "•" (bullet glyph) due to font encoding; verified HTML anchor syntax answer is A (<a href="https://www.piac.com.pk">Visit PIA Website</a>).',
+};
+
+export const csAnnual2023AnswerReviews: Record<number, string> = {
+  11: 'The board key prints * for this item. It must not be scored as a single-answer question until an educator reviews it.',
+};
+
+export const csAnnual2022AnswerReviews: Record<number, string> = {
+  5: 'Official 2022 AKU-EB Answer Key is D ("Level 3 cache memory is smaller in storage capacity than other two levels" is FALSE because L3 cache is the largest in capacity). Option A reflects legacy textbook phrasing where L2 cache was originally placed on the motherboard.',
+};

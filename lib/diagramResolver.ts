@@ -99,7 +99,22 @@ export function resolveQuestionDiagram(
   let targetPaperKey = '';
   if (verifiedManifest[pCode]) {
     targetPaperKey = pCode;
-  } else if (pCode.startsWith('PHY') || (!pCode.startsWith('CHM') && !pCode.startsWith('BIO') && !pCode.startsWith('MTH') && !pCode.startsWith('CSC') && !pCode.startsWith('ENG') && !pCode.startsWith('URD'))) {
+  } else if (pCode.startsWith('CS') || pCode.includes('COMPUTER')) {
+    const isCs2022 = (pCode.includes('2022') || Number(question?.examYear) === 2022) && !pCode.includes('MODEL');
+    if (isCs2022) {
+      targetPaperKey = 'CS-IX-2022-P1';
+    }
+    const isCs2023 = (pCode.includes('2023') || Number(question?.examYear) === 2023) && !pCode.includes('MODEL');
+    const isCs2024 = (pCode.includes('2024') || is2024) && !pCode.includes('MODEL');
+    const isCs2025 = pCode.includes('2025') && !pCode.includes('MODEL');
+    if (!targetPaperKey) targetPaperKey = isCs2023
+      ? (isPaper2 ? 'CS-IX-2023-P2' : 'CS-IX-2023-P1')
+      : isCs2024
+      ? (isPaper2 ? 'CS-IX-2024-P2' : 'CS-IX-2024-P1')
+      : isCs2025
+      ? (isPaper2 ? 'CS-IX-2025-P2' : 'CS-IX-2025-P1')
+      : (isPaper2 ? 'CS-IX-P2' : 'CS-IX-P1');
+  } else if (pCode.startsWith('PHY') || (!pCode.startsWith('CHM') && !pCode.startsWith('BIO') && !pCode.startsWith('MTH') && !pCode.startsWith('CSC') && !pCode.startsWith('CS') && !pCode.startsWith('ENG') && !pCode.startsWith('URD'))) {
     if (isClass9) {
       targetPaperKey = is2024
         ? (isPaper2 ? 'PHY-IX-2024-P2' : 'PHY-IX-2024-P1')
