@@ -14,6 +14,9 @@ import StructuredContent from '@/components/StructuredContent';
 import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 import past2025 from '@/data/physics/ssc1_2025_past_mcqs.json';
 import past2024 from '@/data/physics/ssc1_2024_past_mcqs.json';
+import csPast2024 from '@/data/computer-science/ssc1_2024_past_mcqs.json';
+import csPast2023 from '@/data/computer-science/ssc1_2023_past_mcqs.json';
+import csPast2022 from '@/data/computer-science/ssc1_2022_past_mcqs.json';
 import pastX2025 from '@/data/physics/ssc2_2025_past_mcqs.json';
 import { mcqCategories, type McqCategory } from '@/lib/mcqCategories';
 import {
@@ -22,6 +25,9 @@ import {
   annual2024OriginalReference,
   annual2024CurrentMapping,
   annualX2025OriginalReference,
+  csAnnual2024AnswerReviews,
+  csAnnual2023AnswerReviews,
+  csAnnual2022AnswerReviews,
   annualX2025CurrentMapping,
 } from '@/lib/legacyPaperEvidence';
 import QuestionSource from '@/components/QuestionSource';
@@ -215,6 +221,16 @@ const CLASS_X_UNITS: ChapterDef[] = [
   }
 ];
 
+const CS_CLASS_IX_UNITS: ChapterDef[] = [
+  { unitNumber: 1, name: 'The Computer System', slug: 'the-computer-system', topics: 'Natural & Artificial Systems, Von Neumann Architecture, System Bus, Memory, Software, Programming Languages, Data Communication, Networks, Topologies, Packet Switching, Protocols, OSI Model', qRange: [1, 6], pastPaperCount: 65 },
+  { unitNumber: 2, name: 'Computational Thinking and Algorithms', slug: 'computational-thinking-and-algorithms', topics: 'Problem Solving Steps, Defining & Analysing Problems, Candid Solutions, Algorithms, Flowcharts & Trace Tables', qRange: [8, 13], pastPaperCount: 12 },
+  { unitNumber: 3, name: 'Programming Fundamentals (JavaScript, HTML & CSS)', slug: 'programming-fundamentals', topics: 'WWW, HTML Structure, Text Formatting, Lists, Images, Hyperlinks, Forms, Tables, Inline/Internal CSS, JavaScript Variables, prompt(), Operators', qRange: [14, 22], pastPaperCount: 25 },
+  { unitNumber: 4, name: 'Data and Analysis', slug: 'data-and-analysis', topics: 'Scope of Data Science, Data Analysis, Qualitative vs Quantitative Data, 3 Vs of Big Data, Data Visualisation, Big Data in Healthcare, IoT, Manufacturing & Government', qRange: [23, 29], pastPaperCount: 7 },
+  { unitNumber: 5, name: 'Applications of Computer Science', slug: 'applications-of-computer-science', topics: 'Artificial Intelligence (AI) in Healthcare, Robotics, Education & Transportation, Machine Learning (Supervised, Unsupervised, Reinforcement), Cloud Computing', qRange: [30, 34], pastPaperCount: 5 },
+  { unitNumber: 6, name: 'Impact of Computing', slug: 'impact-of-computing', topics: 'Positive & Negative Impacts of Computing, Computer Security & Malware Vectors, Cyber Security Threats (Brute Force, DoS/DDoS, Phishing) & Two-Step Verification', qRange: [35, 37], pastPaperCount: 3 },
+  { unitNumber: 7, name: 'Entrepreneurship in the Digital Age', slug: 'entrepreneurship-in-the-digital-age', topics: 'Role of Entrepreneurs, Market Trends, Idea Generation (SCAMPER), Business Model Canvas (BMC) for Digital Ventures', qRange: [38, 40], pastPaperCount: 3 },
+];
+
 function belongsToUnit(q: any, unit: ChapterDef, isAnnual: boolean): boolean {
   if (Number(q.unitNumber) === unit.unitNumber) return true;
   if (isAnnual) {
@@ -239,13 +255,15 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   const [searchQuery, setSearchQuery] = useState('');
   const [quizModalOpen, setQuizModalOpen] = useState(false);
 
-  const unitsList = questions.length?(classDef.roman === 'IX' ? CLASS_IX_UNITS : CLASS_X_UNITS):[];
+  const isCs = meta.slug === 'computer-science';
+  const subjPrefix = isCs ? 'CS' : 'PHY';
+  const unitsList = questions.length ? (isCs ? CS_CLASS_IX_UNITS : (classDef.roman === 'IX' ? CLASS_IX_UNITS : CLASS_X_UNITS)) : [];
 
-  const [practiceSource, setPracticeSource] = useState<'model' | 'annual' | 'annual2024' | 'annual_all' | 'chapter_all'>('chapter_all');
+  const [practiceSource, setPracticeSource] = useState<'model' | 'annual' | 'annual2024' | 'annual2023' | 'annual2022' | 'annual_all' | 'chapter_all'>('chapter_all');
 
   const mappedModelPool = questions.map((q: any) => ({
     ...q,
-    paperCode: `PHY-${classDef.roman}-P1`,
+    paperCode: `${subjPrefix}-${classDef.roman}-P1`,
     sourceTitle: 'Model Paper 1',
     questionNumber: Number(q.questionNumber),
     rawQuestionNumber: Number(q.questionNumber),
@@ -254,17 +272,17 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
   const active2025Raw = classDef.roman === 'IX' ? annualQuestions : (annualQuestions?.length ? annualQuestions : pastX2025);
 
-  const mapped2025Pool = (classDef.roman === 'IX' || classDef.roman === 'X')
+  const mapped2025Pool = (classDef.roman === 'IX' || classDef.roman === 'X') && active2025Raw.length > 0
     ? active2025Raw.map((q: any) => ({
         ...q,
-        ...(classDef.roman === 'IX' ? annualOriginalReference(q.questionNumber) : annualX2025OriginalReference(q.questionNumber)),
+        ...(!isCs ? (classDef.roman === 'IX' ? annualOriginalReference(q.questionNumber) : annualX2025OriginalReference(q.questionNumber)) : {}),
         ...(q.answer_review_note ? { answer_review_note: q.answer_review_note } : {}),
-        ...(useReviewedLegacy
+        ...(!isCs && useReviewedLegacy
           ? (classDef.roman === 'IX'
               ? annualCurrentMapping(q.questionNumber, q.stem)
               : annualX2025CurrentMapping(q.questionNumber, q.stem))
           : {}),
-        paperCode: `PHY-${classDef.roman}-2025-P1`,
+        paperCode: `${subjPrefix}-${classDef.roman}-2025-P1`,
         sourceTitle: '2025 · Annual · Paper 1',
         examYear: 2025,
         questionNumber: Number(q.questionNumber),
@@ -273,14 +291,48 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       }))
     : [];
 
+  const active2024Raw = isCs ? csPast2024.filter(q => Number(q.questionNumber) !== 9) : past2024;
   const mapped2024Pool = classDef.roman === 'IX'
-    ? past2024.map((q: any) => ({
+    ? active2024Raw.map((q: any) => ({
         ...q,
-        ...annual2024OriginalReference(q.questionNumber),
-        ...(useReviewedLegacy ? annual2024CurrentMapping(q.questionNumber, q.stem) : {}),
-        paperCode: 'PHY-IX-2024-P1',
+        ...(!isCs ? annual2024OriginalReference(q.questionNumber) : {}),
+        ...(isCs && csAnnual2024AnswerReviews[Number(q.questionNumber)]
+          ? { answer_review_note: csAnnual2024AnswerReviews[Number(q.questionNumber)] }
+          : {}),
+        ...(!isCs && useReviewedLegacy ? annual2024CurrentMapping(q.questionNumber, q.stem) : {}),
+        paperCode: `${subjPrefix}-IX-2024-P1`,
         sourceTitle: '2024 · Annual · Paper 1',
         examYear: 2024,
+        questionNumber: Number(q.questionNumber),
+        rawQuestionNumber: Number(q.questionNumber),
+        cognitiveLevel: ({ K: 'Remembering', U: 'Understanding', A: 'Application' } as Record<string, string>)[q.cognitiveLevel] || q.cognitiveLevel,
+      }))
+    : [];
+
+  const mapped2023Pool = isCs && classDef.roman === 'IX'
+    ? csPast2023.filter(q => Number(q.questionNumber) !== 11).map((q: any) => ({
+        ...q,
+        ...(csAnnual2023AnswerReviews[Number(q.questionNumber)]
+          ? { answer_review_note: csAnnual2023AnswerReviews[Number(q.questionNumber)] }
+          : {}),
+        paperCode: 'CS-IX-2023-P1',
+        sourceTitle: '2023 · Annual · Paper 1',
+        examYear: 2023,
+        questionNumber: Number(q.questionNumber),
+        rawQuestionNumber: Number(q.questionNumber),
+        cognitiveLevel: ({ K: 'Remembering', U: 'Understanding', A: 'Application' } as Record<string, string>)[q.cognitiveLevel] || q.cognitiveLevel,
+      }))
+    : [];
+
+  const mapped2022Pool = isCs && classDef.roman === 'IX'
+    ? csPast2022.map((q: any) => ({
+        ...q,
+        ...(csAnnual2022AnswerReviews[Number(q.questionNumber)]
+          ? { answer_review_note: csAnnual2022AnswerReviews[Number(q.questionNumber)] }
+          : {}),
+        paperCode: 'CS-IX-2022-P1',
+        sourceTitle: '2022 · Annual · Paper 1 (Theory + ATP)',
+        examYear: 2022,
         questionNumber: Number(q.questionNumber),
         rawQuestionNumber: Number(q.questionNumber),
         cognitiveLevel: ({ K: 'Remembering', U: 'Understanding', A: 'Application' } as Record<string, string>)[q.cognitiveLevel] || q.cognitiveLevel,
@@ -290,32 +342,46 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   const combinedChapterPool = [
     ...mappedModelPool,
     ...mapped2025Pool.map(q => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
-    ...mapped2024Pool.map(q => ({ ...q, questionNumber: 200 + Number(q.rawQuestionNumber) })),
+    ...mapped2024Pool.filter(q => !(isCs && Number(q.rawQuestionNumber) === 9)).map(q => ({ ...q, questionNumber: 200 + Number(q.rawQuestionNumber) })),
+    ...mapped2023Pool.filter(q => Number(q.rawQuestionNumber) !== 11).map(q => ({ ...q, questionNumber: 300 + Number(q.rawQuestionNumber) })),
+    ...mapped2022Pool.map(q => ({ ...q, questionNumber: 400 + Number(q.rawQuestionNumber) })),
   ];
 
   const combinedAnnualPool = [
     ...mapped2025Pool,
     ...mapped2024Pool.map(q => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
+    ...mapped2023Pool.map(q => ({ ...q, questionNumber: 200 + Number(q.rawQuestionNumber) })),
+    ...mapped2022Pool.map(q => ({ ...q, questionNumber: 300 + Number(q.rawQuestionNumber) })),
   ];
 
   const fullPapers = [
-    ...(questions.length?[{ title: 'Physics Model Paper I', desc: 'Practice the available model-paper MCQs with answer feedback and 2025 syllabus SLO mappings.', items: questions.length, time: 'Custom timer', badge: 'MODEL PAPER', source: 'model' as const }]:[]),
-    ...(questions.length && (classDef.roman === 'IX' || classDef.roman === 'X') ? [
+    ...(questions.length?[{ title: `${meta.title} Model Paper I`, desc: 'Practice the available model-paper MCQs with answer feedback and 2025 syllabus SLO mappings.', items: questions.length, time: 'Custom timer', badge: 'MODEL PAPER', source: 'model' as const }]:[]),
+    ...(questions.length && mapped2025Pool.length > 0 && (classDef.roman === 'IX' || classDef.roman === 'X') ? [
       { title: 'Annual Examination 2025 — Paper I', desc: 'Original 2025 examination MCQs with official answer key, cropped diagrams, and reviewed 2025 syllabus mappings.', items: mapped2025Pool.length, time: 'Custom timer', badge: 'ANNUAL 2025', source: 'annual' as const },
     ] : []),
-    ...(questions.length && classDef.roman === 'IX' ? [
-      { title: 'Annual Examination 2024 — Paper I', desc: 'Original 2024 examination MCQs with official answer key, cropped diagrams, and 2025 syllabus mappings.', items: past2024.length, time: 'Custom timer', badge: 'ANNUAL 2024', source: 'annual2024' as const },
+    ...(questions.length && mapped2024Pool.length > 0 && classDef.roman === 'IX' ? [
+      { title: 'Annual Examination 2024 — Paper I', desc: 'Original 2024 examination MCQs with official answer key, cropped diagrams, and 2025 syllabus mappings.', items: mapped2024Pool.length, time: 'Custom timer', badge: 'ANNUAL 2024', source: 'annual2024' as const },
+    ] : []),
+    ...(questions.length && mapped2023Pool.length > 0 && classDef.roman === 'IX' ? [
+      { title: 'Annual Examination 2023 — Paper I', desc: 'Original 2023 examination MCQs with official answer key, cropped diagrams, and 2025 syllabus mappings.', items: mapped2023Pool.length, time: 'Custom timer', badge: 'ANNUAL 2023', source: 'annual2023' as const },
+    ] : []),
+    ...(questions.length && mapped2022Pool.length > 0 && classDef.roman === 'IX' ? [
+      { title: 'Annual Examination 2022 — Paper I (Theory + ATP)', desc: 'Original 2022 examination 50 MCQs (40 Theory + 10 Alternate to Practical) with official verification report key, cropped diagrams, and 2025 syllabus mappings.', items: mapped2022Pool.length, time: 'Custom timer', badge: 'ANNUAL 2022', source: 'annual2022' as const },
     ] : []),
   ];
 
   // Filtered Questions for Practice Mode
-  const isAnnualSource = practiceSource === 'annual' || practiceSource === 'annual2024' || practiceSource === 'annual_all';
+  const isAnnualSource = practiceSource === 'annual' || practiceSource === 'annual2024' || practiceSource === 'annual2023' || practiceSource === 'annual2022' || practiceSource === 'annual_all';
   const questionPool = mappedChapter
     ? mappedChapters.find(c => c.id === mappedChapter)?.questions || []
     : practiceSource === 'annual'
     ? mapped2025Pool
     : practiceSource === 'annual2024'
-    ? mapped2024Pool
+    ? mapped2024Pool.filter(q => !(isCs && Number(q.rawQuestionNumber) === 9))
+    : practiceSource === 'annual2023'
+    ? mapped2023Pool.filter(q => Number(q.rawQuestionNumber) !== 11)
+    : practiceSource === 'annual2022'
+    ? mapped2022Pool
     : practiceSource === 'annual_all'
     ? combinedAnnualPool
     : practiceSource === 'chapter_all'
@@ -352,7 +418,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     setCurrentView('practice');
   };
 
-  const handleStartFullBookPractice = (title: string, source: 'model' | 'annual' | 'annual2024' | 'chapter_all' = 'model') => {
+  const handleStartFullBookPractice = (title: string, source: 'model' | 'annual' | 'annual2024' | 'annual2023' | 'annual2022' | 'chapter_all' = 'model') => {
     setMappedChapter(null);
     setPracticeSource(source);
     setSelectedUnit(null);
@@ -402,12 +468,12 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       return `CURRICULUM:${mappedChapter}:${cogTag}`;
     }
     if (selectedUnit && (practiceSource === 'chapter_all' || practiceSource === 'annual_all')) {
-      return `PHY-${classDef.roman}-UNIT-${selectedUnit.unitNumber}-${practiceSource === 'annual_all' ? 'PAST' : 'ALL'}-${cogTag}`;
+      return `${subjPrefix}-${classDef.roman}-UNIT-${selectedUnit.unitNumber}-${practiceSource === 'annual_all' ? 'PAST' : 'ALL'}-${cogTag}`;
     }
     if (!selectedUnit && (practiceSource === 'chapter_all' || practiceSource === 'annual_all')) {
-      return `PHY-${classDef.roman}-UNIT-0-${practiceSource === 'annual_all' ? 'PAST' : 'ALL'}-${cogTag}`;
+      return `${subjPrefix}-${classDef.roman}-UNIT-0-${practiceSource === 'annual_all' ? 'PAST' : 'ALL'}-${cogTag}`;
     }
-    const basePaper = `PHY-${classDef.roman}${practiceSource === 'annual2024' ? '-2024' : practiceSource === 'annual' ? '-2025' : ''}-P1`;
+    const basePaper = `${subjPrefix}-${classDef.roman}${!isCs && practiceSource === 'annual2024' ? '-2024' : practiceSource === 'annual' ? '-2025' : ''}-P1`;
     const nums = [...new Set(activeQuestions.map(q => Number(q.rawQuestionNumber || q.questionNumber)))].sort((a, b) => a - b);
     return `${basePaper}-SET-${nums.join('-')}`;
   })();

@@ -39,6 +39,8 @@ export default async function SubjectMaterials({
     scope.board.id === "akueb" &&
     scope.meta.slug === "physics" &&
     [9, 10].includes(scope.classDef.level);
+  const isCsIX = scope.board.id === "akueb" && scope.meta.slug === "computer-science" && scope.classDef.level === 9;
+  const isCsX = scope.board.id === "akueb" && scope.meta.slug === "computer-science" && scope.classDef.level === 10;
   const available = (kind: string) => documents.has(kind);
   const items: {
     label: string;
@@ -49,20 +51,20 @@ export default async function SubjectMaterials({
     {
       label: "Syllabus",
       href: scope.baseUrl + "/syllabus",
-      pending: !legacy && !available("syllabus"),
+      pending: !legacy && !isCsIX && !isCsX && !available("syllabus"),
       group: "papers",
     },
     {
       label: "Model papers",
       href: scope.baseUrl + "/model-papers",
-      pending: !legacy && !available("model_paper"),
+      pending: !legacy && !isCsIX && !available("model_paper"),
       group: "papers",
     },
     {
       label: "Past papers",
       href: scope.baseUrl + "/pastpapers",
       pending:
-        !legacy && !available("past_paper"),
+        !legacy && !isCsIX && !available("past_paper"),
       group: "papers",
     },
     {
@@ -96,7 +98,7 @@ export default async function SubjectMaterials({
     {
       label: "MCQs (Chapter-wise, Past Papers & Full Book)",
       href: scope.baseUrl + "/mcqs",
-      pending: !legacy && !available("mcq"),
+      pending: !legacy && !isCsIX && !available("mcq"),
       group: "practice",
     },
     ...(legacy

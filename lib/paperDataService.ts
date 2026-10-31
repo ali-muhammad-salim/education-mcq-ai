@@ -11,6 +11,15 @@ import ssc1Past2024Mcqs from '@/data/physics/ssc1_2024_past_mcqs.json';
 import ssc1Past2024Crqs from '@/data/physics/ssc1_2024_past_crqs.json';
 import ssc2Past2025Mcqs from '@/data/physics/ssc2_2025_past_mcqs.json';
 import ssc2Past2025Crqs from '@/data/physics/ssc2_2025_past_crqs.json';
+import cs1ModelMcqs from '@/data/computer-science/ssc1_model_mcqs.json';
+import cs1ModelCrqs from '@/data/computer-science/ssc1_model_crqs.json';
+import cs1Past2025Mcqs from '@/data/computer-science/ssc1_2025_past_mcqs.json';
+import cs1Past2025Crqs from '@/data/computer-science/ssc1_2025_past_crqs.json';
+import cs1Past2024Mcqs from '@/data/computer-science/ssc1_2024_past_mcqs.json';
+import cs1Past2024Crqs from '@/data/computer-science/ssc1_2024_past_crqs.json';
+import cs1Past2023Mcqs from '@/data/computer-science/ssc1_2023_past_mcqs.json';
+import cs1Past2023Crqs from '@/data/computer-science/ssc1_2023_past_crqs.json';
+import cs1Past2022Mcqs from '@/data/computer-science/ssc1_2022_past_mcqs.json';
 import key2024 from '@/data/physics/ssc1_2024_official_key.json';
 import keyX2025 from '@/data/physics/ssc2_2025_official_key.json';
 import { annual2024AnswerReviews, annualX2025AnswerReviews } from '@/lib/legacyPaperEvidence';
@@ -95,6 +104,15 @@ const JSON_BUNDLES: Record<string, any[]> = {
   'ssc1_2024_past_crqs.json': ssc1Past2024Crqs as any[],
   'ssc2_2025_past_mcqs.json': ssc2Past2025Mcqs as any[],
   'ssc2_2025_past_crqs.json': ssc2Past2025Crqs as any[],
+  'cs1_model_mcqs.json': cs1ModelMcqs as any[],
+  'cs1_model_crqs.json': cs1ModelCrqs as any[],
+  'cs1_2025_past_mcqs.json': cs1Past2025Mcqs as any[],
+  'cs1_2025_past_crqs.json': cs1Past2025Crqs as any[],
+  'cs1_2024_past_mcqs.json': cs1Past2024Mcqs as any[],
+  'cs1_2024_past_crqs.json': cs1Past2024Crqs as any[],
+  'cs1_2023_past_mcqs.json': cs1Past2023Mcqs as any[],
+  'cs1_2023_past_crqs.json': cs1Past2023Crqs as any[],
+  'cs1_2022_past_mcqs.json': cs1Past2022Mcqs as any[],
 };
 
 function loadJsonFile(filename: string): any[] {
@@ -146,6 +164,571 @@ export function findUploadedPaper(paperCode: string): any | null {
  */
 export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
   const code = (paperCodeOrId || '').replace(/\.html?$/i, '').toUpperCase().trim();
+
+  // Computer Science SSC-I 2022 Annual Examination Paper I (50 MCQs: 40 Theory + 10 ATP)
+  if (
+    code === 'CS-IX-2022-P1' ||
+    code === 'CSC-IX-2022-P1' ||
+    (code.startsWith('CS') && code.includes('2022') && (code.includes('P1') || code.includes('PAPER-1') || code.includes('PAPER-I')))
+  ) {
+    const rawMcqs = loadJsonFile('cs1_2022_past_mcqs.json');
+    const questions: QuestionData[] = rawMcqs.map((item: any, idx: number) => {
+      const qNum = (item.questionNumber || idx + 1).toString();
+      const topicName = item.unitName || item.chapter || 'Computer Science (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      const effectiveSlo = item.current_slo || undefined;
+      return {
+        id: `cs-ix-2022-p1-q${qNum}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: 'MULTIPLE_CHOICE',
+        marks: item.marks || 1,
+        difficulty: item.cognitiveLevel ? item.cognitiveLevel.charAt(0) : 'U',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          choices: item.options || {},
+          correct_answer: item.correctOption || '',
+          explanation: item.explanation || '',
+          option_feedback: item.option_feedback || undefined,
+          cognitive_level: item.cognitiveLevel,
+          in_syllabus: item.current_syllabus_reviewed === true && item.in_syllabus === true,
+          out_of_syllabus: item.current_syllabus_reviewed === true && item.out_of_syllabus === true,
+          syllabus_reviewed: item.syllabus_reviewed === true,
+          current_syllabus_reviewed: item.syllabus_reviewed === true,
+          mapping_scope: { board: 'AKU-EB', grade: 9, subject: 'Computer Science' },
+          current_mapping: item.current_mapping || [],
+          current_slo: effectiveSlo,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          slo: item.slo || undefined,
+          original_reference_verified: true,
+          original_reference_source: '/resources/computer-science-ix-2022-key',
+          slo_details: {
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: effectiveSlo ? [{ slo: { code: effectiveSlo, description: mappedSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'CS-IX-2022-P1',
+      title: 'Computer Science SSC-I 2022 Annual Examination Paper I (40 Theory + 10 ATP MCQs)',
+      paperCode: 'CS-IX-2022-P1',
+      examYear: 2022,
+      examSession: 'Annual Examination 2022',
+      examType: 'ANNUAL',
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2022-paper-i.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { id: 'computer-science-ix', name: 'Computer Science', code: 'CS' },
+      questions,
+    };
+  }
+
+  // Computer Science SSC-I 2023 Annual Examination Paper I (MCQ)
+  if (
+    code === 'CS-IX-2023-P1' ||
+    code === 'CSC-IX-2023-P1' ||
+    (code.startsWith('CS') && code.includes('2023') && (code.includes('P1') || code.includes('PAPER-1') || code.includes('PAPER-I')))
+  ) {
+    const rawMcqs = loadJsonFile('cs1_2023_past_mcqs.json');
+    const questions: QuestionData[] = rawMcqs.map((item: any, idx: number) => {
+      const qNum = (item.questionNumber || idx + 1).toString();
+      const topicName = item.unitName || item.chapter || 'Computer Science (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      const effectiveSlo = item.current_slo || undefined;
+      return {
+        id: `cs-ix-2023-p1-q${qNum}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: 'MULTIPLE_CHOICE',
+        marks: item.marks || 1,
+        difficulty: item.cognitiveLevel ? item.cognitiveLevel.charAt(0) : 'U',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          choices: item.options || {},
+          correct_answer: item.correctOption || '',
+          explanation: item.explanation || '',
+          option_feedback: item.option_feedback || undefined,
+          cognitive_level: item.cognitiveLevel,
+          in_syllabus: item.current_syllabus_reviewed === true && item.in_syllabus === true,
+          out_of_syllabus: item.current_syllabus_reviewed === true && item.out_of_syllabus === true,
+          syllabus_reviewed: item.syllabus_reviewed === true,
+          current_syllabus_reviewed: item.syllabus_reviewed === true,
+          mapping_scope: { board: 'AKU-EB', grade: 9, subject: 'Computer Science' },
+          current_mapping: item.current_mapping || [],
+          current_slo: effectiveSlo,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          slo: item.slo || undefined,
+          original_reference_verified: true,
+          official_answer: Number(qNum) === 11 ? '*' : item.correctOption,
+          answer_review_note: item.answer_review_note || undefined,
+          original_reference_source: '/resources/computer-science-ix-2023-key',
+          slo_details: {
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: effectiveSlo ? [{ slo: { code: effectiveSlo, description: mappedSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'CS-IX-2023-P1',
+      title: 'Computer Science SSC-I 2023 Annual Examination Paper I (MCQ)',
+      paperCode: 'CS-IX-2023-P1',
+      examYear: 2023,
+      examSession: 'Annual Examination 2023',
+      examType: 'ANNUAL',
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2023-paper-i.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { id: 'computer-science-ix', name: 'Computer Science', code: 'CS' },
+      questions,
+    };
+  }
+
+  // Computer Science SSC-I 2023 Annual Examination Paper II (CRQ & ERQ)
+  if (
+    code === 'CS-IX-2023-P2' ||
+    code === 'CSC-IX-2023-P2' ||
+    (code.startsWith('CS') && code.includes('2023') && (code.includes('P2') || code.includes('PAPER-2') || code.includes('PAPER-II')))
+  ) {
+    const rawCrqs = loadJsonFile('cs1_2023_past_crqs.json');
+    const questions: QuestionData[] = rawCrqs.map((item: any, idx: number) => {
+      const qNum = item.questionNumber || `Q.${idx + 1}`;
+      const isErq = (item.marks || 2) >= 6;
+      const topicName = item.unitName || item.chapter || 'Computer Science (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      return {
+        id: `cs-ix-2023-p2-q${idx + 1}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: isErq ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE',
+        marks: item.marks || 2,
+        difficulty: item.cognitiveLevel || 'U',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          rubric: item.rubric || [],
+          model_answer: item.modelAnswer || '',
+          explanation: item.modelAnswer || '',
+          better_response: item.betterResponse || undefined,
+          weaker_response: item.weakerResponse || undefined,
+          in_syllabus: item.current_syllabus_reviewed === true && item.in_syllabus === true,
+          out_of_syllabus: item.current_syllabus_reviewed === true && item.out_of_syllabus === true,
+          syllabus_reviewed: item.syllabus_reviewed === true,
+          current_syllabus_reviewed: item.syllabus_reviewed === true,
+          mapping_scope: { board: 'AKU-EB', grade: 9, subject: 'Computer Science' },
+          current_mapping: item.current_mapping || [],
+          current_slo: item.current_slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          slo: item.slo || undefined,
+          original_reference_verified: true,
+          original_reference_source: '/resources/computer-science-ix-2023-emarking',
+          slo_details: {
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: item.current_slo ? [{ slo: { code: item.current_slo, description: mappedSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'CS-IX-2023-P2',
+      title: 'Computer Science SSC-I 2023 Annual Examination Paper II (CRQ & ERQ)',
+      paperCode: 'CS-IX-2023-P2',
+      examYear: 2023,
+      examSession: 'Annual Examination 2023',
+      examType: 'ANNUAL',
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2023-paper-ii.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { id: 'computer-science-ix', name: 'Computer Science', code: 'CS' },
+      questions,
+    };
+  }
+
+  // Computer Science SSC-I 2024 Annual Examination Paper I (MCQ)
+  if (
+    code === 'CS-IX-2024-P1' ||
+    code === 'CSC-IX-2024-P1' ||
+    (code.startsWith('CS') && code.includes('2024') && (code.includes('P1') || code.includes('PAPER-1') || code.includes('PAPER-I')))
+  ) {
+    const rawMcqs = loadJsonFile('cs1_2024_past_mcqs.json');
+    const questions: QuestionData[] = rawMcqs.map((item: any, idx: number) => {
+      const qNum = (item.questionNumber || idx + 1).toString();
+      const topicName = item.unitName || item.chapter || 'Computer Science (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      const effectiveSlo = item.current_slo || undefined;
+      return {
+        id: `cs-ix-2024-p1-q${qNum}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: 'MULTIPLE_CHOICE',
+        marks: item.marks || 1,
+        difficulty: item.cognitiveLevel ? item.cognitiveLevel.charAt(0) : 'U',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          choices: item.options || {},
+          correct_answer: item.correctOption || '',
+          explanation: item.explanation || '',
+          option_feedback: item.option_feedback || undefined,
+          cognitive_level: item.cognitiveLevel,
+          in_syllabus: item.current_syllabus_reviewed === true && item.in_syllabus === true,
+          out_of_syllabus: item.current_syllabus_reviewed === true && item.out_of_syllabus === true,
+          syllabus_reviewed: item.syllabus_reviewed === true,
+          current_syllabus_reviewed: item.syllabus_reviewed === true,
+          mapping_scope: { board: 'AKU-EB', grade: 9, subject: 'Computer Science' },
+          current_mapping: item.current_mapping || [],
+          current_slo: effectiveSlo,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          slo: item.slo || undefined,
+          original_reference_verified: true,
+          official_answer: Number(qNum) === 9 ? 'D,A' : item.correctOption,
+          answer_review_note: item.answer_review_note || undefined,
+          original_reference_source: '/resources/computer-science-ix-2024-key',
+          slo_details: {
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: effectiveSlo ? [{ slo: { code: effectiveSlo, description: mappedSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'CS-IX-2024-P1',
+      title: 'Computer Science SSC-I 2024 Annual Examination Paper I (MCQ)',
+      paperCode: 'CS-IX-2024-P1',
+      examYear: 2024,
+      examSession: 'Annual Examination 2024',
+      examType: 'ANNUAL',
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2024-paper-i.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { id: 'computer-science-ix', name: 'Computer Science', code: 'CS' },
+      questions,
+    };
+  }
+
+  // Computer Science SSC-I 2024 Annual Examination Paper II (CRQ & ERQ)
+  if (
+    code === 'CS-IX-2024-P2' ||
+    code === 'CSC-IX-2024-P2' ||
+    (code.startsWith('CS') && code.includes('2024') && (code.includes('P2') || code.includes('PAPER-2') || code.includes('PAPER-II')))
+  ) {
+    const rawCrqs = loadJsonFile('cs1_2024_past_crqs.json');
+    const questions: QuestionData[] = rawCrqs.map((item: any, idx: number) => {
+      const qNum = item.questionNumber || `Q.${idx + 1}`;
+      const isErq = (item.marks || 2) >= 6;
+      const topicName = item.unitName || item.chapter || 'Computer Science (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      return {
+        id: `cs-ix-2024-p2-q${idx + 1}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: isErq ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE',
+        marks: item.marks || 2,
+        difficulty: item.cognitiveLevel || 'U',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          rubric: item.rubric || [],
+          model_answer: item.modelAnswer || '',
+          explanation: item.modelAnswer || '',
+          better_response: item.betterResponse || undefined,
+          weaker_response: item.weakerResponse || undefined,
+          in_syllabus: item.current_syllabus_reviewed === true && item.in_syllabus === true,
+          out_of_syllabus: item.current_syllabus_reviewed === true && item.out_of_syllabus === true,
+          syllabus_reviewed: item.syllabus_reviewed === true,
+          current_syllabus_reviewed: item.syllabus_reviewed === true,
+          mapping_scope: { board: 'AKU-EB', grade: 9, subject: 'Computer Science' },
+          current_mapping: item.current_mapping || [],
+          current_slo: item.current_slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          slo: item.slo || undefined,
+          original_reference_verified: false,
+          original_reference_source: '/resources/computer-science-ix-2024-emarking',
+          slo_details: {
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: item.current_slo ? [{ slo: { code: item.current_slo, description: mappedSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'CS-IX-2024-P2',
+      title: 'Computer Science SSC-I 2024 Annual Examination Paper II (CRQ & ERQ)',
+      paperCode: 'CS-IX-2024-P2',
+      examYear: 2024,
+      examSession: 'Annual Examination 2024',
+      examType: 'ANNUAL',
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2024-paper-ii.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { id: 'computer-science-ix', name: 'Computer Science', code: 'CS' },
+      questions,
+    };
+  }
+
+  // Computer Science SSC-I 2025 Annual Examination Paper I (MCQ)
+  if (
+    code === 'CS-IX-2025-P1' ||
+    code === 'CSC-IX-2025-P1' ||
+    (code.startsWith('CS') && code.includes('2025') && (code.includes('P1') || code.includes('PAPER-1') || code.includes('PAPER-I')))
+  ) {
+    const rawMcqs = loadJsonFile('cs1_2025_past_mcqs.json');
+    const questions: QuestionData[] = rawMcqs.map((item: any, idx: number) => {
+      const qNum = (item.questionNumber || idx + 1).toString();
+      const topicName = item.unitName || item.chapter || 'Computer Science (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      const effectiveSlo = item.current_slo || undefined;
+      return {
+        id: `cs-ix-2025-p1-q${qNum}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: 'MULTIPLE_CHOICE',
+        marks: item.marks || 1,
+        difficulty: item.cognitiveLevel ? item.cognitiveLevel.charAt(0) : 'U',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          choices: item.options || {},
+          correct_answer: item.correctOption || '',
+          explanation: item.explanation || '',
+          option_feedback: item.option_feedback || undefined,
+          cognitive_level: item.cognitiveLevel,
+          in_syllabus: item.current_syllabus_reviewed === true && item.in_syllabus === true,
+          out_of_syllabus: item.current_syllabus_reviewed === true && item.out_of_syllabus === true,
+          syllabus_reviewed: item.syllabus_reviewed === true,
+          current_syllabus_reviewed: item.syllabus_reviewed === true,
+          mapping_scope: { board: 'AKU-EB', grade: 9, subject: 'Computer Science' },
+          current_mapping: item.current_mapping || [],
+          current_slo: effectiveSlo,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          slo: item.slo || undefined,
+          original_reference_verified: true,
+          original_reference_source: '/resources/computer-science-ix-2025-key',
+          slo_details: {
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: effectiveSlo ? [{ slo: { code: effectiveSlo, description: mappedSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'CS-IX-2025-P1',
+      title: 'Computer Science SSC-I 2025 Annual Examination Paper I (MCQ)',
+      paperCode: 'CS-IX-2025-P1',
+      examYear: 2025,
+      examSession: 'Annual Examination 2025',
+      examType: 'ANNUAL',
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2025-paper-i.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { id: 'computer-science-ix', name: 'Computer Science', code: 'CS' },
+      questions,
+    };
+  }
+
+  // Computer Science SSC-I 2025 Annual Examination Paper II (CRQ & ERQ)
+  if (
+    code === 'CS-IX-2025-P2' ||
+    code === 'CSC-IX-2025-P2' ||
+    (code.startsWith('CS') && code.includes('2025') && (code.includes('P2') || code.includes('PAPER-2') || code.includes('PAPER-II')))
+  ) {
+    const rawCrqs = loadJsonFile('cs1_2025_past_crqs.json');
+    const questions: QuestionData[] = rawCrqs.map((item: any, idx: number) => {
+      const qNum = item.questionNumber || `Q.${idx + 1}`;
+      const isErq = (item.marks || 2) >= 6;
+      const topicName = item.unitName || item.chapter || 'Computer Science (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      return {
+        id: `cs-ix-2025-p2-q${idx + 1}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: isErq ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE',
+        marks: item.marks || 2,
+        difficulty: item.cognitiveLevel || 'U',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          rubric: item.rubric || [],
+          model_answer: item.modelAnswer || '',
+          explanation: item.modelAnswer || '',
+          better_response: item.betterResponse || undefined,
+          weaker_response: item.weakerResponse || undefined,
+          in_syllabus: item.current_syllabus_reviewed === true && item.in_syllabus === true,
+          out_of_syllabus: item.current_syllabus_reviewed === true && item.out_of_syllabus === true,
+          syllabus_reviewed: item.syllabus_reviewed === true,
+          current_syllabus_reviewed: item.syllabus_reviewed === true,
+          mapping_scope: { board: 'AKU-EB', grade: 9, subject: 'Computer Science' },
+          current_mapping: item.current_mapping || [],
+          current_slo: item.current_slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          slo: item.slo || undefined,
+          original_reference_verified: true,
+          original_reference_source: '/resources/computer-science-ix-2025-emarking',
+          slo_details: {
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: item.current_slo ? [{ slo: { code: item.current_slo, description: mappedSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'CS-IX-2025-P2',
+      title: 'Computer Science SSC-I 2025 Annual Examination Paper II (CRQ & ERQ)',
+      paperCode: 'CS-IX-2025-P2',
+      examYear: 2025,
+      examSession: 'Annual Examination 2025',
+      examType: 'ANNUAL',
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2025-paper-ii.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { id: 'computer-science-ix', name: 'Computer Science', code: 'CS' },
+      questions,
+    };
+  }
+
+  // Computer Science Class IX Model Paper I (MCQ) - 2026 & Onwards
+  if (
+    code === 'CS-IX-P1' ||
+    code === 'CSC-IX-P1' ||
+    code.includes('COMPUTER-SCIENCE-MODEL-PAPER-IX-PAPER-I')
+  ) {
+    const rawMcqs = loadJsonFile('cs1_model_mcqs.json');
+    const questions: QuestionData[] = rawMcqs.map((item: any, idx: number) => {
+      const qNum = (item.questionNumber || idx + 1).toString();
+      const topicName = item.unitName || item.chapter || 'Computer Science (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      const effectiveSlo = item.current_slo || item.slo;
+      return {
+        id: `cs-ix-p1-q${qNum}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: 'MULTIPLE_CHOICE',
+        marks: item.marks || 1,
+        difficulty: item.cognitiveLevel || 'U',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          choices: item.options || {},
+          correct_answer: item.correctOption || '',
+          explanation: item.explanation || '',
+          option_feedback: item.option_feedback || undefined,
+          cognitive_level: item.cognitiveLevel,
+          in_syllabus: true,
+          out_of_syllabus: false,
+          syllabus_reviewed: item.syllabus_reviewed === true,
+          current_syllabus_reviewed: item.syllabus_reviewed === true,
+          mapping_scope: { board: 'AKU-EB', grade: 9, subject: 'Computer Science' },
+          current_mapping: item.current_mapping || [],
+          current_slo: effectiveSlo,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          slo: effectiveSlo,
+          slo_details: {
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: effectiveSlo ? [{ slo: { code: effectiveSlo, description: mappedSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'CS-IX-P1',
+      title: 'Computer Science Class IX Model Paper I (MCQ)',
+      paperCode: 'CS-IX-P1',
+      examYear: 2026,
+      examSession: 'Model Examination 2026',
+      examType: 'MODEL_EXAM',
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-model-paper-ix-paper-i.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { id: 'computer-science-ix', name: 'Computer Science', code: 'CS' },
+      questions,
+    };
+  }
+
+  // Computer Science Class IX Model Paper II (CRQ & ERQ) - 2026 & Onwards
+  if (
+    code === 'CS-IX-P2' ||
+    code === 'CSC-IX-P2' ||
+    code.includes('COMPUTER-SCIENCE-MODEL-PAPER-IX-PAPER-II')
+  ) {
+    const rawCrqs = loadJsonFile('cs1_model_crqs.json');
+    const questions: QuestionData[] = rawCrqs.map((item: any, idx: number) => {
+      const qNum = item.questionNumber || `Q.${idx + 1}`;
+      const isErq = (item.marks || 2) >= 4;
+      const topicName = item.unitName || item.chapter || 'Computer Science (Class IX)';
+      const topicNum = item.unitNumber ? String(item.unitNumber) : '1';
+      const mappedSloDesc = item.current_mapping?.[0]?.description || item.stem;
+      return {
+        id: `cs-ix-p2-q${idx + 1}`,
+        questionNumber: qNum,
+        questionText: item.stem,
+        questionType: isErq ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE',
+        marks: item.marks || 2,
+        difficulty: item.cognitiveLevel || 'A',
+        diagramBased: !!item.isDiagram,
+        sourceRegion: {
+          rubric: item.rubric || [],
+          model_answer: item.modelAnswer || '',
+          explanation: item.modelAnswer || '',
+          in_syllabus: true,
+          out_of_syllabus: false,
+          syllabus_reviewed: item.syllabus_reviewed === true,
+          current_syllabus_reviewed: item.syllabus_reviewed === true,
+          mapping_scope: { board: 'AKU-EB', grade: 9, subject: 'Computer Science' },
+          current_mapping: item.current_mapping || undefined,
+          current_slo: item.current_slo || item.slo || undefined,
+          diagramUrl: item.diagramUrl || undefined,
+          pageNumber: item.pageNumber || undefined,
+          slo: item.slo || undefined,
+          slo_details: {
+            description: mappedSloDesc,
+            topic_name: topicName,
+          },
+        },
+        topics: [{ topic: { name: topicName, topicNumber: topicNum } }],
+        slos: item.slo ? [{ slo: { code: item.slo, description: mappedSloDesc } }] : [],
+      };
+    });
+
+    return {
+      id: 'CS-IX-P2',
+      title: 'Computer Science Class IX Model Paper II (CRQ & ERQ)',
+      paperCode: 'CS-IX-P2',
+      examYear: 2026,
+      examSession: 'Model Examination 2026',
+      examType: 'MODEL_EXAM',
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-model-paper-ix-paper-ii.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { id: 'computer-science-ix', name: 'Computer Science', code: 'CS' },
+      questions,
+    };
+  }
 
   // 0A. 2024 Annual Past Paper 1 (Class IX) - Authentic Board MCQs
   if (
@@ -923,6 +1506,105 @@ export function getAllStandardPapers(): Array<{
       academicClass: { name: 'Class X', level: 10 },
       subject: { name: 'Physics' },
       _count: { questions: 9 }
+    },
+    {
+      id: 'CS-IX-P1',
+      paperCode: 'CS-IX-P1',
+      title: 'Computer Science Class IX Model Paper I (MCQ)',
+      examSession: 'Model Examination',
+      examYear: 2026,
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-model-paper-ix-paper-i.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Computer Science' },
+      _count: { questions: 40 }
+    },
+    {
+      id: 'CS-IX-P2',
+      paperCode: 'CS-IX-P2',
+      title: 'Computer Science Class IX Model Paper II (CRQ & ERQ)',
+      examSession: 'Model Examination',
+      examYear: 2026,
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-model-paper-ix-paper-ii.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Computer Science' },
+      _count: { questions: 7 }
+    },
+    {
+      id: 'CS-IX-2025-P1',
+      paperCode: 'CS-IX-2025-P1',
+      title: 'Computer Science SSC-I 2025 Annual Examination Paper I',
+      examSession: 'Annual Examination',
+      examYear: 2025,
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2025-paper-i.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Computer Science' },
+      _count: { questions: 40 }
+    },
+    {
+      id: 'CS-IX-2025-P2',
+      paperCode: 'CS-IX-2025-P2',
+      title: 'Computer Science SSC-I 2025 Annual Examination Paper II',
+      examSession: 'Annual Examination',
+      examYear: 2025,
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2025-paper-ii.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Computer Science' },
+      _count: { questions: 6 }
+    },
+    {
+      id: 'CS-IX-2024-P1',
+      paperCode: 'CS-IX-2024-P1',
+      title: 'Computer Science SSC-I 2024 Annual Examination Paper I',
+      examSession: 'Annual Examination',
+      examYear: 2024,
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2024-paper-i.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Computer Science' },
+      _count: { questions: 40 }
+    },
+    {
+      id: 'CS-IX-2024-P2',
+      paperCode: 'CS-IX-2024-P2',
+      title: 'Computer Science SSC-I 2024 Annual Examination Paper II',
+      examSession: 'Annual Examination',
+      examYear: 2024,
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2024-paper-ii.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Computer Science' },
+      _count: { questions: 6 }
+    },
+    {
+      id: 'CS-IX-2023-P1',
+      paperCode: 'CS-IX-2023-P1',
+      title: 'Computer Science SSC-I 2023 Annual Examination Paper I',
+      examSession: 'Annual Examination',
+      examYear: 2023,
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2023-paper-i.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Computer Science' },
+      _count: { questions: 40 }
+    },
+    {
+      id: 'CS-IX-2023-P2',
+      paperCode: 'CS-IX-2023-P2',
+      title: 'Computer Science SSC-I 2023 Annual Examination Paper II',
+      examSession: 'Annual Examination',
+      examYear: 2023,
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2023-paper-ii.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Computer Science' },
+      _count: { questions: 6 }
+    },
+    {
+      id: 'CS-IX-2022-P1',
+      paperCode: 'CS-IX-2022-P1',
+      title: 'Computer Science SSC-I 2022 Annual Examination Paper I (Theory + ATP)',
+      examSession: 'Annual Examination',
+      examYear: 2022,
+      fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2022-paper-i.pdf',
+      academicClass: { name: 'Class IX', level: 9 },
+      subject: { name: 'Computer Science' },
+      _count: { questions: 50 }
     }
   ];
 

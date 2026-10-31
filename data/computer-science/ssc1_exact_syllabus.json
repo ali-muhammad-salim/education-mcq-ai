@@ -1,0 +1,1352 @@
+[
+  {
+    "unitNumber": 1,
+    "name": "The Computer System",
+    "page": 10,
+    "examSpec": {
+      "mcqs": 7,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 4: 6 Marks (Choose ONE from TWO)",
+      "groupTotalMarks": 20
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "1.1",
+        "subNumber": "1.1",
+        "name": "1.1 Understanding of Natural and Artificial Systems",
+        "slos": [
+          {
+            "code": "1.1.1",
+            "description": "differentiate between natural and artificial systems with real-world examples;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 10,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.2",
+        "subNumber": "1.2",
+        "name": "1.2 Computational Architecture",
+        "slos": [
+          {
+            "code": "1.2.1",
+            "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 10,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "1.2.2",
+            "description": "identify the use of types of sensors, i.e., temperature, moisture, light, infra-red, pressure, sound/ acoustic, gas and pH;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 10,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "1.2.3",
+            "description": "describe primary and secondary storage devices based on location, cost, capacity, access time, data processing method, and storage technology such as semiconductor (SSD), magnetic (HDD), and optical;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 10,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "1.2.4",
+            "description": "illustrate the Von Neumann Architecture using a block diagram;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 10,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "1.2.5",
+            "description": "illustrate the system bus and its types, including data bus, address bus and control bus, along with their roles in computer architecture using a diagram;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 10,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.3",
+        "subNumber": "1.3",
+        "name": "1.3 Memory Measurement Units",
+        "slos": [
+          {
+            "code": "1.3.1",
+            "description": "distinguish among the memory measuring units such as bits, bytes, kilobytes, megabytes, and gigabytes in computer memory;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.3.2",
+            "description": "compare the types of primary memory, i.e., Random Access Memory (RAM) and Read Only Memory (ROM);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.4",
+        "subNumber": "1.4",
+        "name": "1.4 Software and Hardware Engineering",
+        "slos": [
+          {
+            "code": "1.4.1",
+            "description": "differentiate between software engineering and hardware engineering, based on their roles, significance, and applications in computer science;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.5",
+        "subNumber": "1.5",
+        "name": "1.5 Computer Software",
+        "slos": [
+          {
+            "code": "1.5.1",
+            "description": "compare system software and application software, highlighting their roles in a computer system;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "1.5.2",
+            "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "1.5.3",
+            "description": "describe the purpose of the following application software: a. word processor, b. spreadsheet, c. database management, d. presentation/ desktop publication, e. communication, f. entertainment;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "1.5.4",
+            "description": "distinguish between open-source, shareware, and freeware software based on their licensing, accessibility, cost, and usage limitations;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.6",
+        "subNumber": "1.6",
+        "name": "1.6 Programming Languages",
+        "slos": [
+          {
+            "code": "1.6.1",
+            "description": "describe characteristics, significance, and generation of programming languages;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.6.2",
+            "description": "classify programming languages into low-level (machine and assembly) and high-level (procedural and object-oriented) languages;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.6.3",
+            "description": "describe the following types of language translators: a. compilers, b. interpreter, c. assembler;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.7",
+        "subNumber": "1.7",
+        "name": "1.7 Data Communication",
+        "slos": [
+          {
+            "code": "1.7.1",
+            "description": "describe data communication and its components, i.e., sender, message, medium, protocol and receiver;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.7.2",
+            "description": "describe the modes of network communication, i.e., simplex, half duplex and full duplex;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.7.3",
+            "description": "differentiate between the synchronous and asynchronous data transmission methods;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.8",
+        "subNumber": "1.8",
+        "name": "1.8 Communication Devices",
+        "slos": [
+          {
+            "code": "1.8.1",
+            "description": "explain the following communication devices: a. hub, b. modem, c. switch, d. router, e. gateway;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.8.2",
+            "description": "explain structure and functionality of network architecture and its types, including client-server, peer-to-peer, and point-to-point;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.9",
+        "subNumber": "1.9",
+        "name": "1.9 Computer Networks",
+        "slos": [
+          {
+            "code": "1.9.1",
+            "description": "explain computer networks and their uses in different fields;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 13,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.9.2",
+            "description": "explain different types of computer networks, i.e., Local Area Network (LAN), Wide Area Network (WAN), and Metropolitan Area Network (MAN), highlighting their characteristics and applications;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 13,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.9.3",
+            "description": "explain guided media and unguided media;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 13,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.9.4",
+            "description": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 13,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.10",
+        "subNumber": "1.10",
+        "name": "1.10 Packet Switching and Circuit Switching",
+        "slos": [
+          {
+            "code": "1.10.1",
+            "description": "explain packet switching and circuit switching;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 13,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.11",
+        "subNumber": "1.11",
+        "name": "1.11 Data Communication Standards",
+        "slos": [
+          {
+            "code": "1.11.1",
+            "description": "explain the following data communication protocols highlighting their functions and significance: a. Transmission Control Protocol/ Internet Protocol (TCP/IP), b. Hypertext Transfer Protocol (HTTP), c. File Transfer Protocol (FTP);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 13,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.12",
+        "subNumber": "1.12",
+        "name": "1.12 OSI Model",
+        "slos": [
+          {
+            "code": "1.12.1",
+            "description": "explain the purpose and functions of OSI model and its following seven layers: a. layer 7 Application layer, b. layer 6 Presentation layer, c. layer 5 Session layer, d. layer 4 Transport layer, e. layer 3 Network layer, f. layer 2 Data Link layer, g. layer 1 Physical layer;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 14,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.13",
+        "subNumber": "1.13",
+        "name": "1.13 The Internet",
+        "slos": [
+          {
+            "code": "1.13.1",
+            "description": "trace the evolution of the internet;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 14,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.13.2",
+            "description": "discuss the advantages and disadvantages of the internet, considering its impact on communication, education and society.",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 14,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 2,
+    "name": "Computational Thinking and Algorithms",
+    "page": 15,
+    "examSpec": {
+      "mcqs": 6,
+      "crqs": 1,
+      "crqMarks": 3,
+      "erqs": 0,
+      "totalMarks": 9
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "2.1",
+        "subNumber": "2.1",
+        "name": "2.1 Understanding the Problem",
+        "slos": [
+          {
+            "code": "2.1.1",
+            "description": "define the concept of a problem in computing;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 15,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "2.1.2",
+            "description": "describe the types of problems, including decision, searching, and counting;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 15,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "2.1.3",
+            "description": "describe the following steps of the problem-solving process: a. define the problem, b. analyse the problem, c. plan the solution of the problem, d. find candid solutions to the problem, e. select the best solution;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 15,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "2.2",
+        "subNumber": "2.2",
+        "name": "2.2 Algorithm",
+        "slos": [
+          {
+            "code": "2.2.1",
+            "description": "explain the algorithm and its essential components including inputs, processing, decision, and outputs, highlighting their roles in problem-solving;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 15,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "2.2.2",
+            "description": "write algorithms to address the following types of problems: a. performing arithmetic, b. calculating the volume of geometrical shapes, c. converting from one unit to another unit of physical quantities, d. applying the selection process, e. finding the maximum and minimum from input values, f. real-life problems;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 15,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "2.3",
+        "subNumber": "2.3",
+        "name": "2.3 Flowchart",
+        "slos": [
+          {
+            "code": "2.3.1",
+            "description": "explain a flowchart and its importance in solving a computing problem;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 16,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "2.3.2",
+            "description": "draw flowcharts using the following symbols, for the problems mentioned in SLO # 2.2.2: a. input, b. process, c. decision making, d. outputs, e. terminator/ terminal point, f. connectors;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 16,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "2.3.3",
+            "description": "solve the trace table for a given flowchart.",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 16,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 3,
+    "name": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "page": 17,
+    "examSpec": {
+      "mcqs": 9,
+      "crqs": 3,
+      "crqMarks": 7,
+      "erqs": 0,
+      "totalMarks": 16
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "3.1",
+        "subNumber": "3.1",
+        "name": "3.1 Introduction to the World Wide Web (WWW)",
+        "slos": [
+          {
+            "code": "3.1.1",
+            "description": "define the following terms: a. World Wide Web (WWW), b. web page, c. website, d. web application, e. search engine, f. web server, g. web browser;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 17,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "3.1.2",
+            "description": "differentiate between the following terms: a. static and dynamic websites, b. front-end development and back-end development;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 17,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.2",
+        "subNumber": "3.2",
+        "name": "3.2 Introduction to Hypertext Markup Language (HTML)",
+        "slos": [
+          {
+            "code": "3.2.1",
+            "description": "define Hypertext Markup Language (HTML);",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 17,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "3.2.2",
+            "description": "write HTML code to: a. create and save an HTML file, b. display a webpage;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 17,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.3",
+        "subNumber": "3.3",
+        "name": "3.3 Designing Webpage I: Text Formatting",
+        "slos": [
+          {
+            "code": "3.3.1",
+            "description": "write HTML code to: a. specify a page title, b. create a paragraph, c. insert line breaks, d. insert spaces, e. add headings/ sub-headings;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 17,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "3.3.2",
+            "description": "apply appropriate text formatting tags, i.e., bold, underline, italic, strikethrough, superscript, subscript, centre, font size, font colour and font face;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 17,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.4",
+        "subNumber": "3.4",
+        "name": "3.4 Designing Webpage II: Creating Lists",
+        "slos": [
+          {
+            "code": "3.4.1",
+            "description": "write HTML code to create: a. ordered list, b. unordered list, c. definition list;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 18,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.5",
+        "subNumber": "3.5",
+        "name": "3.5 Designing Webpage III: Images and Backgrounds",
+        "slos": [
+          {
+            "code": "3.5.1",
+            "description": "write HTML code to: a. insert an image, b. apply a border to an image, c. select width of an image, d. select height of an image, e. select an alternate text for an image;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 18,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "3.5.2",
+            "description": "write HTML code to: a. apply background colour to a web page, b. apply foreground colour to a web page, c. assign a background image to the web page;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 18,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.6",
+        "subNumber": "3.6",
+        "name": "3.6 Designing Webpage IV: Hyperlinks",
+        "slos": [
+          {
+            "code": "3.6.1",
+            "description": "write HTML code to: a. create a hyperlink to a web page; b. create an 'anchor' in the context of hyperlinks; c. create an anchor to hyperlink within a web page; d. create a graphical hyperlink;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 18,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.7",
+        "subNumber": "3.7",
+        "name": "3.7 Designing Webpage V: Forms",
+        "slos": [
+          {
+            "code": "3.7.1",
+            "description": "write HTML code to: a. create form, b. insert label, c. insert textbox, d. insert password, e. insert radio button, f. insert checkbox, g. insert button;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.8",
+        "subNumber": "3.8",
+        "name": "3.8 Designing Webpage VI: Creating Tables",
+        "slos": [
+          {
+            "code": "3.8.1",
+            "description": "write HTML code to create a table in the webpage with the following table attributes: a. table border, b. border colour, c. background colour, d. table width, e. table height, f. table row <tr>, g. standard data cell <td>, h. header cell <th>;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.9",
+        "subNumber": "3.9",
+        "name": "3.9 Cascading Style Sheet (CSS)",
+        "slos": [
+          {
+            "code": "3.9.1",
+            "description": "describe the cascading style sheet (CSS) and its syntax;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "3.9.2",
+            "description": "apply code using inline/ internal CSS: a. background (color and image), b. font (colour, style and size), c. tables (border, size, alignment);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.10",
+        "subNumber": "3.10",
+        "name": "3.10 Programming Basics (JavaScript)",
+        "slos": [
+          {
+            "code": "3.10.1",
+            "description": "describe the importance of JavaScript;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "3.10.2",
+            "description": "explain comments in JavaScript;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "3.10.3",
+            "description": "explain the following data types offered by JavaScript: a. String, b. Number, c. BigInt, d. Boolean, e. Undefined, f. Null;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "3.10.4",
+            "description": "write a JavaScript program to declare and initialise variables by following the rules for specifying valid variable names;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 20,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "3.10.5",
+            "description": "apply output functions: innerHTML, document.write( ) and window.alert( ) to display the output;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 20,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "3.10.6",
+            "description": "write a JavaScript code that uses input functions prompt( );",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 20,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "3.10.7",
+            "description": "write a JavaScript code to use constants;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "3.10.8",
+            "description": "write a JavaScript code to perform implicit and explicit typecasting;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.11",
+        "subNumber": "3.11",
+        "name": "3.11 Operators in JavaScript",
+        "slos": [
+          {
+            "code": "3.11.1",
+            "description": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 20,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "3.11.2",
+            "description": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 20,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "3.11.3",
+            "description": "use the increment (++) and decrement (--) operators in a JavaScript code.",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 20,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 4,
+    "name": "Data and Analysis",
+    "page": 21,
+    "examSpec": {
+      "mcqs": 7,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 1: 6 Marks (Choose ONE from TWO)",
+      "groupTotalMarks": 20
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "4.1",
+        "subNumber": "4.1",
+        "name": "4.1 Scope of Data Science",
+        "slos": [
+          {
+            "code": "4.1.1",
+            "description": "explain the following key concepts of data science: a. data science, b. data and dataset, c. data analysis, d. statistics and probability, e. mathematics, f. machine learning, g. deep learning, h. data mining, i. data visualisation, j. big data, k. predictive model, l. natural language processing (NLP), m. image processing;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 21,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.1.2",
+            "description": "explain the scope and application of data science;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 21,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "4.2",
+        "subNumber": "4.2",
+        "name": "4.2 Data Types, Data Collection, and Data Storage",
+        "slos": [
+          {
+            "code": "4.2.1",
+            "description": "explain the concept of data and its types (qualitative and quantitative) emphasising their characteristics and importance;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.2.2",
+            "description": "evaluate the process of data collection using websites, sensors, and surveys, highlighting its significance and ethical considerations through real-world examples;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "4.3",
+        "subNumber": "4.3",
+        "name": "4.3 Big Data and Applications of Big Data in Real World Business",
+        "slos": [
+          {
+            "code": "4.3.1",
+            "description": "describe the following concepts of big data within the context of technology and society: a. big data, b. 3 Vs big data, c. big data analytics, d. data visualisation and interpretation;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.3.2",
+            "description": "describe big data challenges in business;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.3.3",
+            "description": "explain the application of big data in the following business domains: a. healthcare, b. internet of things (IoT), c. manufacturing, d. government.",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 5,
+    "name": "Applications of Computer Science",
+    "page": 23,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 6: 6 Marks (Choose ONE from TWO)",
+      "groupTotalMarks": 14
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "5.1",
+        "subNumber": "5.1",
+        "name": "5.1 Applications of Artificial Intelligence",
+        "slos": [
+          {
+            "code": "5.1.1",
+            "description": "describe the significance and relevance of Artificial Intelligence in modern technology;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.1.2",
+            "description": "discuss the application of AI in the following fields: a. healthcare, b. robotics, c. education, d. transportation, e. entertainment, f. natural language process (NLP);",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "5.2",
+        "subNumber": "5.2",
+        "name": "5.2 Applications of Machine Learning",
+        "slos": [
+          {
+            "code": "5.2.1",
+            "description": "describe the fundamental concept of Machine Learning (ML), emphasising their importance in various fields;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.2.2",
+            "description": "describe the following types of machine learning (ML): a. supervised learning, b. unsupervised learning, c. reinforcement learning;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.2.3",
+            "description": "explain the applications of Machine Learning (ML) in the following fields: a. healthcare, b. finance, c. marketing, d. education;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "5.3",
+        "subNumber": "5.3",
+        "name": "5.3 Application of Cloud Computing",
+        "slos": [
+          {
+            "code": "5.3.1",
+            "description": "describe 'cloud computing' and its models: a. public cloud, b. private cloud, c. community cloud;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 24,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.3.2",
+            "description": "explain the following applications of cloud computing: a. software development, b. data analytics, c. IoT (Internet of Things).",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 24,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 6,
+    "name": "Impact of Computing",
+    "page": 25,
+    "examSpec": {
+      "mcqs": 3,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 5: 6 Marks (Choose ONE from TWO)",
+      "groupTotalMarks": 14
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "6.1",
+        "subNumber": "6.1",
+        "name": "6.1 Impact of Computing",
+        "slos": [
+          {
+            "code": "6.1.1",
+            "description": "illustrate the role of computing in the following fields by demonstrating real-world applications and examples: a. healthcare, b. education, c. business, d. entertainment;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 25,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "6.1.2",
+            "description": "discuss the positive and negative impacts of computing on daily life and society with examples;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 25,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.2",
+        "subNumber": "6.2",
+        "name": "6.2 Computer Security",
+        "slos": [
+          {
+            "code": "6.2.1",
+            "description": "describe the following ways through which malware can spread: a. infected flash drives/ CD's, b. pirated software, c. local area network, d. internet, e. e-mail attachments;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 25,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "6.2.2",
+            "description": "illustrate the symptoms of a malware attack on a computer system by providing real-world examples;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 25,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "6.2.3",
+            "description": "suggest preventive measures to protect/ safeguard computer systems against malware transmission methods as mentioned in SLO # 6.2.1.",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 25,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.3",
+        "subNumber": "6.3",
+        "name": "6.3 Cyber Security",
+        "slos": [
+          {
+            "code": "6.3.1",
+            "description": "explain the following cyber security threats: a. brute force attacks, b. denial of services (DoS), c. distributed denial of service (DDoS) attacks, d. trojan horse, e. spyware, f. adware, g. phishing, h. pharming, i. social engineering;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "6.3.2",
+            "description": "explain the following methods to protect data from security threats: a. access levels, b. anti-malware, c. authentication (passwords and usernames, biometrics, two step verification).",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 7,
+    "name": "Entrepreneurship in the Digital Age",
+    "page": 27,
+    "examSpec": {
+      "mcqs": 3,
+      "crqs": 1,
+      "crqMarks": 3,
+      "erqs": 0,
+      "totalMarks": 6
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "7.1",
+        "subNumber": "7.1",
+        "name": "7.1 Exploring Entrepreneurship in the Digital Age",
+        "slos": [
+          {
+            "code": "7.1.1",
+            "description": "explain entrepreneurship and its importance in the economy;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "7.1.2",
+            "description": "explore famous entrepreneurs and their success stories;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "7.2",
+        "subNumber": "7.2",
+        "name": "7.2 The Digital Landscape",
+        "slos": [
+          {
+            "code": "7.2.1",
+            "description": "explain market trends, consumer needs, and emerging industries of entrepreneurship;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "7.2.2",
+            "description": "apply various idea generation techniques to identify business opportunities in the digital space;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "7.2.3",
+            "description": "analyse the components of a Business Model Canvas (BMC) for a digital venture, explaining their roles and interrelationships in a business model.",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "7.2.4",
+            "description": "apply business models using the Business Model Canvas (BMC);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  }
+]

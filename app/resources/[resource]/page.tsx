@@ -7,12 +7,19 @@ import emarking from '@/data/physics/ssc1_2025_emarking.json';
 import emarking2024 from '@/data/physics/ssc1_2024_emarking.json';
 import keyX2025 from '@/data/physics/ssc2_2025_official_key.json';
 import emarkingX2025 from '@/data/physics/ssc2_2025_emarking.json';
+import csKey2025 from '@/data/computer-science/ssc1_2025_official_key.json';
+import csEmarking2025 from '@/data/computer-science/ssc1_2025_emarking.json';
+import csKey2024 from '@/data/computer-science/ssc1_2024_official_key.json';
+import csEmarking2024 from '@/data/computer-science/ssc1_2024_emarking.json';
+import csKey2023 from '@/data/computer-science/ssc1_2023_official_key.json';
+import csEmarking2023 from '@/data/computer-science/ssc1_2023_emarking.json';
+import csKey2022 from '@/data/computer-science/ssc1_2022_official_key.json';
 import rg9 from '@/data/physics/ssc1_resource_guide.json';
 import rg10 from '@/data/physics/ssc2_resource_guide.json';
 import pacing9 from '@/data/physics/ssc1_pacing.json';
 import pacing10 from '@/data/physics/ssc2_pacing.json';
 import styles from '@/components/MaterialLayout.module.css';
-import { annualAnswerReviews, annual2024AnswerReviews, annualX2025AnswerReviews } from '@/lib/legacyPaperEvidence';
+import { annualAnswerReviews, annual2024AnswerReviews, annualX2025AnswerReviews, csAnnual2025AnswerReviews, csAnnual2024AnswerReviews, csAnnual2023AnswerReviews, csAnnual2022AnswerReviews } from '@/lib/legacyPaperEvidence';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import StructuredContent from '@/components/StructuredContent';
 export const dynamic='force-dynamic';
@@ -28,6 +35,13 @@ const SUPPORTED_RESOURCES = [
   'physics-x-resource-guide',
   'physics-ix-pacing-guide',
   'physics-x-pacing-guide',
+  'computer-science-ix-2025-key',
+  'computer-science-ix-2025-emarking',
+  'computer-science-ix-2024-key',
+  'computer-science-ix-2024-emarking',
+  'computer-science-ix-2023-key',
+  'computer-science-ix-2023-emarking',
+  'computer-science-ix-2022-key',
 ] as const;
 
 export default async function Page({params}:{params:Promise<{resource:string}>}) {
@@ -187,18 +201,80 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
     );
   }
 
-  if (resource === 'physics-ix-2025-emarking' || resource === 'physics-ix-2024-emarking' || resource === 'physics-x-2025-emarking') {
-    const isX = resource === 'physics-x-2025-emarking';
-    const is2024 = resource === 'physics-ix-2024-emarking';
-    const activeEmarking: any = isX ? emarkingX2025 : is2024 ? emarking2024 : emarking;
-    const yearStr = is2024 ? '2024' : '2025';
-    const roman = isX ? 'X' : 'IX';
-    const title = `Physics ${roman} · ${yearStr} · E-Marking Notes (Questions & Solved Better Responses)`;
+  if (resource === 'computer-science-ix-2025-key' || resource === 'computer-science-ix-2024-key' || resource === 'computer-science-ix-2023-key' || resource === 'computer-science-ix-2022-key') {
+    const isCs2022Key = resource === 'computer-science-ix-2022-key';
+    const isCs2023Key = resource === 'computer-science-ix-2023-key';
+    const isCs2024Key = resource === 'computer-science-ix-2024-key';
+    const activeCsKey = isCs2022Key ? csKey2022 : isCs2023Key ? csKey2023 : isCs2024Key ? csKey2024 : csKey2025;
+    const activeCsReviews = isCs2022Key ? csAnnual2022AnswerReviews : isCs2023Key ? csAnnual2023AnswerReviews : isCs2024Key ? csAnnual2024AnswerReviews : csAnnual2025AnswerReviews;
+    const csYear = isCs2022Key ? '2022' : isCs2023Key ? '2023' : isCs2024Key ? '2024' : '2025';
+    const title = `Computer Science IX · ${csYear} · Official answer key`;
     return (
       <section className={styles.page}>
-        <Link href={`/akueb/${roman}/physics/pastpapers`}>← Physics {roman} past papers</Link>
+        <Link href="/akueb/IX/computer-science/pastpapers">← Computer Science IX past papers</Link>
         <h1>{title}</h1>
-        <DocumentViews title={title} original={activeEmarking.sourceUrl}>
+        <DocumentViews title={title} original={activeCsKey.sourceUrl}>
+          <div className={styles.digital}>
+            <div style={{overflowX:'auto'}}>
+              <table style={{width:'100%',borderCollapse:'collapse'}}>
+                <caption>Official {csYear} SSC-I exam-year references · current 2025 syllabus mappings are shown on each question</caption>
+                <thead>
+                  <tr>
+                    {['Question','Original SLO','Answer','Level'].map(x=>(
+                      <th key={x} style={{textAlign:'left',padding:'.75rem',borderBottom:'1px solid var(--border-color)'}}>{x}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {activeCsKey.entries.map(row=>(
+                    <tr key={row.questionNumber}>
+                      <td style={{padding:'.65rem'}}>
+                        <Link href={`/past-papers/CS-IX-${csYear}-P1?view=solved#question-${row.questionNumber}`}>{row.questionNumber}</Link>
+                      </td>
+                      <td>{row.slo}</td>
+                      <td>
+                        <strong>{row.answer}</strong>
+                        {activeCsReviews[row.questionNumber] && (
+                          <details><summary>Educator review note</summary>{activeCsReviews[row.questionNumber]}</details>
+                        )}
+                      </td>
+                      <td>{row.cognitiveLevel}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p>K: Knowledge · U: Understanding · A: Application and beyond</p>
+            <Link href={`/past-papers/CS-IX-${csYear}-P1?view=solved`}>{csYear} Computer Science Paper 1 · answers & explanations →</Link>
+          </div>
+        </DocumentViews>
+        <nav className={styles.actions}>
+          <Link className={styles.button} href={`/past-papers/CS-IX-${csYear}-P1`}>{csYear} Paper 1</Link>
+          {!isCs2022Key && <Link className={styles.button} href={`/past-papers/CS-IX-${csYear}-P2`}>{csYear} Paper 2</Link>}
+          {!isCs2022Key && <Link className={styles.button} href={`/resources/computer-science-ix-${csYear}-emarking`}>{csYear} E-marking notes</Link>}
+        </nav>
+      </section>
+    );
+  }
+
+  if (resource === 'physics-ix-2025-emarking' || resource === 'physics-ix-2024-emarking' || resource === 'physics-x-2025-emarking' || resource === 'computer-science-ix-2025-emarking' || resource === 'computer-science-ix-2024-emarking' || resource === 'computer-science-ix-2023-emarking') {
+    const isCs = resource.startsWith('computer-science-');
+    const isX = resource === 'physics-x-2025-emarking';
+    const is2023 = resource === 'computer-science-ix-2023-emarking';
+    const is2024 = resource === 'physics-ix-2024-emarking' || resource === 'computer-science-ix-2024-emarking';
+    const activeEmarking: any = isCs ? (is2023 ? csEmarking2023 : is2024 ? csEmarking2024 : csEmarking2025) : isX ? emarkingX2025 : is2024 ? emarking2024 : emarking;
+    const yearStr = is2023 ? '2023' : is2024 ? '2024' : '2025';
+    const roman = isX ? 'X' : 'IX';
+    const subjTitle = isCs ? 'Computer Science' : 'Physics';
+    const subjSlug = isCs ? 'computer-science' : 'physics';
+    const pPrefix = isCs ? 'CS' : 'PHY';
+    const generatedCs2024 = isCs && is2024;
+    const title = generatedCs2024 ? 'Computer Science IX · 2024 · AI-assisted Paper II study notes (unverified)' : `${subjTitle} ${roman} · ${yearStr} · E-Marking Notes (Questions & Solved Better Responses)`;
+    return (
+      <section className={styles.page}>
+        <Link href={`/akueb/${roman}/${subjSlug}/pastpapers`}>← {subjTitle} {roman} past papers</Link>
+        <h1>{title}</h1>
+        <DocumentViews title={title} original={generatedCs2024 ? undefined : activeEmarking.sourceUrl}>
           <div
             style={{
               background: '#ffffff',
@@ -223,10 +299,10 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
                 AGA KHAN UNIVERSITY EXAMINATION BOARD
               </div>
               <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#111827', marginBottom: '0.3rem' }}>
-                Notes from E-Marking Centre on SSC-{isX ? 'II' : 'I'} Physics Annual Examinations {yearStr}
+                {generatedCs2024 ? 'Paper II study notes' : <>Notes from E-Marking Centre on SSC-{isX ? 'II' : 'I'} {subjTitle} Annual Examinations {yearStr}</>}
               </div>
               <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#066e4f' }}>
-                Digital Edition: Questions, Marking Schemes & Solved Better Responses (2025 Syllabus Aligned)
+                {generatedCs2024 ? 'AI-assisted study edition — verify every response against the original paper' : 'Digital Edition: Questions, Marking Schemes & Solved Better Responses (2025 Syllabus Aligned)'}
               </div>
             </div>
 
@@ -278,7 +354,7 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                         {!isOut && q.currentSlo ? (
                           <Link
-                            href={`/akueb/${roman}/physics/syllabus#slo-${q.currentSlo}`}
+                            href={`/akueb/${roman}/${subjSlug}/syllabus#slo-${q.currentSlo}`}
                             style={{
                               background: '#ecfdf5',
                               color: '#066e4f',
@@ -429,10 +505,11 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
             </div>
           </div>
         </DocumentViews>
+        {generatedCs2024 && <p><Link href={activeEmarking.sourceUrl}>Open the AI-assisted study PDF</Link> · <Link href='/past-papers/CS-IX-2024-P2?view=original'>Original Paper II</Link></p>}
         <nav className={styles.actions}>
-          <Link className={styles.button} href={`/past-papers/PHY-${roman}-${yearStr}-P1`}>{yearStr} Paper 1</Link>
-          <Link className={styles.button} href={`/past-papers/PHY-${roman}-${yearStr}-P2`}>{yearStr} Paper 2</Link>
-          <Link className={styles.button} href={`/resources/physics-${roman.toLowerCase()}-${yearStr}-key`}>{yearStr} Official answer key</Link>
+          <Link className={styles.button} href={`/past-papers/${pPrefix}-${roman}-${yearStr}-P1`}>{yearStr} Paper 1</Link>
+          <Link className={styles.button} href={`/past-papers/${pPrefix}-${roman}-${yearStr}-P2`}>{yearStr} Paper 2</Link>
+          <Link className={styles.button} href={`/resources/${subjSlug}-${roman.toLowerCase()}-${yearStr}-key`}>{yearStr} Official answer key</Link>
         </nav>
       </section>
     );

@@ -1,0 +1,302 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "2.1.2",
+    "original_slo": "2.1.2",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "U",
+    "marks": 4,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Describe the purpose of file management system in an operating system. (4 Marks)",
+    "modelAnswer": "The **File Management System** in an operating system organises, stores, retrieves, and protects files and folders on secondary storage devices (such as HDDs, SSDs, and USB drives). Its core responsibilities include:\n1. **File & Directory Organisation:** Creating, naming, renaming, moving, copying, and deleting files and hierarchical folders/directories so data is logically structured.\n2. **Storage Space Allocation:** Tracking free and allocated disk blocks/sectors and mapping logical file names to physical storage addresses.\n3. **Access Control & Security:** Enforcing read, write, and execute permissions (via Access Control Lists) so unauthorised users cannot modify or view restricted files.\n4. **Backup, Recovery & Metadata Tracking:** Maintaining file metadata (file size, type/extension, creation/modification timestamps) and supporting file recovery and integrity checks.",
+    "betterResponse": "In better responses, candidates clearly explained four distinct responsibilities of the OS file management system: hierarchical organisation of files and folders, operations such as creating/renaming/deleting files, mapping files to physical secondary storage locations, and managing access permissions and metadata.",
+    "weakerResponse": "In weaker responses, candidates confused OS file management with general office clerk filing or only wrote one repetitive point such as 'it saves and opens files in MS Word' without explaining directory structure, storage tracking, or access control.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for explaining hierarchical organisation of files and directories/folders (create, rename, move, delete)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for explaining disk space allocation and mapping logical files to physical storage blocks."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for explaining file access control, permissions (read/write/execute), and protection."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for explaining metadata tracking (size, type, date modified) or backup/retrieval efficiency."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.2",
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.3.1",
+    "original_slo": "4.3.1",
+    "current_slo": "1.8.1",
+    "cognitiveLevel": "U",
+    "marks": 2,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.8.1",
+        "description": "describe the functions of network communication devices (Modem, NIC, Switch, Router, Gateway, Access Point);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Describe the role of network communication devices in enabling efficient communication and collaboration in a modern workplace. (2 Marks)",
+    "modelAnswer": "Network communication devices (such as **NICs, Switches, Routers, Modems, and Wireless Access Points**) play two essential roles in a modern workplace:\n1. **High-Speed Interconnectivity & Data Routing:** Devices like switches and routers direct data packets accurately between workplace computers and external networks/the Internet, enabling real-time email, instant messaging, and video conferencing without collisions or delays.\n2. **Centralised Resource & File Sharing:** They allow multiple employees to simultaneously share central file servers, cloud workspaces, printers, and scanners, supporting seamless team collaboration across departments.",
+    "betterResponse": "In better responses, candidates named core communication hardware (switches, routers, modems, NICs) and explained how they route data packets between devices/networks and enable real-time resource sharing and team collaboration.",
+    "weakerResponse": "In weaker responses, candidates wrote about smartphones, WhatsApp, or social media apps instead of explaining the role of network communication hardware devices.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for explaining how network devices (switches/routers/modems/NICs) connect nodes and route data accurately across local and external networks."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for explaining how they enable real-time workplace collaboration (shared servers/printers, video conferencing, and instant file exchange)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.3",
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.3",
+    "original_slo": "5.2.3",
+    "current_slo": "1.9.4",
+    "cognitiveLevel": "A",
+    "marks": 2,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.4",
+        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "i. Draw the diagram of bus topology. (1 Mark)\nii. Give ONE advantage of using bus topology. (1 Mark)",
+    "modelAnswer": "**i. Diagram of Bus Topology (1 Mark):**\n```text\n   [Node 1]         [Node 2]         [Node 3]\n      |                |                |\n[Terminator]====================================[Terminator]\n      |        Shared Backbone Cable    |\n   [Node 4]                          [Node 5]\n```\n*(A single central backbone cable with terminators at both ends and multiple computer nodes connected via drop lines/taps.)*\n\n**ii. ONE Advantage of Bus Topology (1 Mark):**\n- **Cost-Effective & Less Cabling:** It requires the least amount of cable compared to star or mesh topologies because all nodes share a single common backbone cable.\n- *(Alternative valid point)* **Easy to Install & Extend:** New nodes can be easily connected to the shared backbone without disrupting existing workstations.",
+    "betterResponse": "In better responses, candidates drew a clear central backbone line with drop lines to multiple computer nodes and terminators at both ends, and stated a clear advantage such as low cabling cost or ease of installation for small networks.",
+    "weakerResponse": "In weaker responses, candidates drew a ring or star diagram instead of a single linear bus backbone, or stated an incorrect advantage such as 'if the main cable breaks, the network still works'.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for drawing a clear Bus Topology diagram showing a single shared backbone cable with multiple connected nodes (and terminators)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for any ONE valid advantage (e.g., requires less cable/inexpensive, easy to install, or failure of one node does not affect the rest of the network)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.4",
+    "pageNumber": 3,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.4.1",
+    "original_slo": "6.4.1",
+    "current_slo": "3.4.1",
+    "cognitiveLevel": "A",
+    "marks": 5,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2024-P2/q4.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.4.1",
+        "description": "create ordered (<ol>), unordered (<ul>), and definition (<dl>) lists and tables (<table>, <tr>, <th>, <td>) in HTML;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Consider the given image of a webpage (`ordered list.html` displaying the heading `List of dairy products` followed by a numbered list `1. Milk`, `2. Yogurt`, `3. Butter`).\nWrite the HTML code to display the web page shown in the given image. (5 Marks)",
+    "modelAnswer": "```html\n<!DOCTYPE html>\n<html>\n<head>\n    <title>ordered list.html</title>\n</head>\n<body>\n    <h1>List of dairy products</h1>\n    <ol>\n        <li>Milk</li>\n        <li>Yogurt</li>\n        <li>Butter</li>\n    </ol>\n</body>\n</html>\n```",
+    "betterResponse": "In better responses, candidates wrote complete HTML structure (`<html>`, `<head>`, `<title>ordered list.html</title>`, `<body>`), used an appropriate heading tag (`<h1>` or `<h2>`) for 'List of dairy products', and properly nested the three `<li>` items (`Milk`, `Yogurt`, `Butter`) inside an `<ol>...</ol>` ordered list container.",
+    "weakerResponse": "In weaker responses, candidates used `<ul>` (unordered bullet list) instead of `<ol>`, omitted the `<li>` tags inside `<ol>`, or forgot to include the `<title>ordered list.html</title>` shown in the browser tab of the figure.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "1 mark for basic HTML document structure (`<html>...</html>` and `<body>...</body>`)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for `<head><title>ordered list.html</title></head>` matching the browser tab title."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for heading tag `<h1>List of dairy products</h1>` (or `<h2>`/`<h3>`)."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for opening and closing ordered list tags `<ol>...</ol>`."
+      },
+      {
+        "marks": 1,
+        "description": "1 mark for listing all three items using `<li>Milk</li>`, `<li>Yogurt</li>`, and `<li>Butter</li>`."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5",
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.9 / 2.1.4",
+    "original_slo": "1.3.9",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "describe input and output devices and their uses in daily life;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.5.4",
+        "description": "differentiate among open-source, shareware, freeware, and proprietary software;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**EITHER**\n**a.** You have recently been hired as a consultant by an advertising agency to recommend the best type of monitors for their new office. They are considering LED monitors and want to understand the advantages and disadvantages before making a decision.\nExplain THREE advantages and THREE disadvantages of using LED monitors to the agency. (6 Marks)\n\n**OR**\n**b.** You work for a non-profit organisation that is looking to switch from proprietary software to a more cost-effective solution.\nExplain THREE advantages and THREE disadvantages of using open source software for the organisation's various operations. (6 Marks)",
+    "modelAnswer": "### Part a: LED Monitors for the Advertising Agency (6 Marks)\n**Three Advantages of LED Monitors (3 Marks):**\n1. **Superior Colour Accuracy & High Contrast:** LED monitors offer vibrant colours, deep blacks, and high dynamic contrast ratios, which are essential for graphic designers and video editors in an advertising agency.\n2. **Energy Efficiency & Low Heat Emission:** LEDs consume significantly less electrical power than CRT or older CCFL-backlit LCD monitors and generate minimal heat during long office hours.\n3. **Slim, Lightweight Form Factor & Long Lifespan:** LED panels are ultra-thin and lightweight (freeing up desk space or allowing multi-monitor wall mounts) and have a long operational lifespan with lower flicker.\n\n**Three Disadvantages of LED Monitors (3 Marks):**\n1. **Higher Initial Purchase Cost:** High-grade colour-accurate LED monitors have a higher upfront capital cost compared to standard LCD displays.\n2. **Viewing Angle Colour/Contrast Shift (in non-IPS panels):** Some LED panels exhibit brightness or colour shifting when viewed from sharp side angles during team client reviews.\n3. **Blue Light Emission & Eye Strain:** Prolonged high-brightness LED exposure emits blue light that can cause digital eye strain or disrupted sleep if blue-light filters are not configured.\n\n---\n### Part b: Open-Source Software for the Non-Profit Organisation (6 Marks)\n**Three Advantages of Open-Source Software (3 Marks):**\n1. **Zero Licensing Cost:** Open-source software (such as Linux, LibreOffice, and GIMP) is free to download, deploy, and update across unlimited computers, directly reducing the non-profit's software budget.\n2. **Customisability & Source Code Transparency:** Because the source code is publicly accessible, the organisation's developers can inspect, audit, and customise features to fit specific non-profit workflows.\n3. **No Vendor Lock-In & Strong Community Support:** The organisation is not tied to recurring subscription fees from a single vendor and benefits from rapid global community bug fixes and security patches.\n\n**Three Disadvantages of Open-Source Software (3 Marks):**\n1. **Steeper Learning Curve & Training Costs:** Staff accustomed to commercial proprietary suites (like MS Office or Windows) may require retraining to adapt to open-source interfaces.\n2. **Lack of Dedicated Official Vendor Support:** Unlike commercial software with guaranteed 24/7 SLA helpdesks, support often relies on community forums unless paid third-party support is contracted.\n3. **Compatibility & Driver Issues:** Certain proprietary file formats, specialised peripheral hardware drivers, or legacy donor databases may not work seamlessly with open-source alternatives.",
+    "betterResponse": "In better responses to 5a, candidates related LED monitor strengths (colour accuracy, energy efficiency, slim design, long lifespan) and limitations (higher upfront price, blue-light eye strain, viewing-angle shifts) to office work. In 5b, strong candidates explained zero licence cost, source-code customisation, and community security vs training needs, lack of dedicated vendor SLA support, and file/hardware compatibility issues.",
+    "weakerResponse": "In weaker responses to 5a, candidates confused LED monitors with CRT monitors or only wrote one-word points like 'cheap' and 'expensive'. In 5b, weaker candidates confused open-source software with pirated/cracked software or claimed that open-source software cannot work without the internet.",
+    "rubric": [
+      {
+        "marks": 3,
+        "description": "Part a: 1 mark each for THREE explained advantages of LED monitors (energy efficiency, high contrast/colour quality, slim/lightweight design, long lifespan). OR Part b: 1 mark each for THREE explained advantages of Open-Source Software (free/no licensing fee, modifiable source code, no vendor lock-in/community support)."
+      },
+      {
+        "marks": 3,
+        "description": "Part a: 1 mark each for THREE explained disadvantages of LED monitors (higher initial cost, blue-light emission/eye strain, viewing-angle shift/delicate panel). OR Part b: 1 mark each for THREE explained disadvantages of Open-Source Software (lack of dedicated vendor support, steeper user learning curve, compatibility/driver issues)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6",
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.2.1 / 5.2.1",
+    "original_slo": "4.2.1",
+    "current_slo": "1.9.3",
+    "cognitiveLevel": "U",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.3",
+        "description": "explain guided (twisted pair, coaxial, fiber optic) and unguided (radio waves, microwaves, infrared, satellite) transmission media;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.9.2",
+        "description": "differentiate among types of networks: PAN, LAN, MAN, WAN, VPN, and Bluetooth networks;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**EITHER**\n**a.** A company is considering installing a new network infrastructure in its office. They are exploring different types of guided media and have asked you to explain the advantages and disadvantages of using twisted pair cable.\n**i.** What is twisted pair cable and how does it work? (2 Marks)\n**ii.** Give TWO advantages and TWO disadvantages of using twisted pair cable for network infrastructure. (4 Marks)\n\n**OR**\n**b.**\n**i.** Describe Metropolitan Area Network (MAN). (2 Marks)\n**ii.** Give TWO advantages and TWO disadvantages of MAN. (4 Marks)",
+    "modelAnswer": "### Part a: Twisted Pair Cable (6 Marks)\n**i. Definition and Working of Twisted Pair Cable (2 Marks):**\n- **Definition (1 Mark):** A twisted pair cable is a guided (wired) copper transmission medium consisting of pairs of insulated copper wires twisted together in a helical spiral (available as Unshielded Twisted Pair \u2014 UTP, or Shielded Twisted Pair \u2014 STP).\n- **How It Works (1 Mark):** Data is transmitted as electrical signals through the copper conductors; twisting the wire pairs cancels out electromagnetic interference (EMI) and reduces crosstalk from adjacent pairs and external electrical sources.\n\n**ii. TWO Advantages and TWO Disadvantages of Twisted Pair Cable (4 Marks):**\n- **Advantages (2 Marks):**\n  1. **Low Cost & Wide Availability:** It is the least expensive guided medium and is universally supported by standard RJ-45 Ethernet NICs and switches.\n  2. **Easy Installation & Flexibility:** The cables are thin, flexible, and easy to terminate and pull through office walls and conduits.\n- **Disadvantages (2 Marks):**\n  1. **Short Distance Limitation (High Attenuation):** Signal attenuation restricts standard Ethernet twisted pair segments to a maximum distance of about **100 metres** without a repeater/switch.\n  2. **Susceptibility to EMI/Eavesdropping & Lower Bandwidth than Fibre:** Compared to fibre-optic cable, copper twisted pair offers lower bandwidth and (especially UTP) remains more vulnerable to strong electromagnetic interference.\n\n---\n### Part b: Metropolitan Area Network (MAN) (6 Marks)\n**i. Description of Metropolitan Area Network (MAN) (2 Marks):**\n- A **Metropolitan Area Network (MAN)** is a high-speed computer network that spans an entire **city, town, or large metropolitan campus** (typically covering 5 km to 50 km), interconnecting multiple Local Area Networks (LANs) such as city bank branches, university campuses, or cable TV/ municipal fibre networks.\n\n**ii. TWO Advantages and TWO Disadvantages of MAN (4 Marks):**\n- **Advantages (2 Marks):**\n  1. **Efficient City-Wide Connectivity & Resource Sharing:** Connects multiple branch offices or campuses across a city at high speeds (often using fibre-optic backbones) to share centralised databases and internet gateways.\n  2. **Wider Coverage than LAN with Higher Speed than WAN:** Bridges the gap between LAN and WAN, offering fast data transfer across a metropolitan region.\n- **Disadvantages (2 Marks):**\n  1. **High Setup & Maintenance Cost:** Laying city-wide fibre or leasing metropolitan communication lines requires substantial capital investment and technical administration.\n  2. **Complex Security & Management:** Because a MAN spans multiple sites across public metropolitan infrastructure, securing it against unauthorised access/hackers is more complex than managing a single-building LAN.",
+    "betterResponse": "In better responses to 6a, candidates accurately defined twisted pair cable (insulated copper wire pairs twisted together), explained that the twists cancel EMI/crosstalk, and gave two clear pros (low cost, easy installation) and two cons (100m attenuation limit, lower bandwidth/higher EMI susceptibility than fibre). In 6b, candidates clearly defined MAN as a city-wide network interconnecting LANs and listed two pros and two cons.",
+    "weakerResponse": "In weaker responses to 6a, candidates stated that twisted pair cable transmits light pulses (confusing it with fibre-optic cable) or only named UTP and STP without explaining how twisting reduces crosstalk. In 6b, weaker candidates confused MAN with WAN (saying it covers the whole world) or PAN.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a(i): 1 mark for defining twisted pair cable (pairs of insulated copper wires twisted together) + 1 mark for explaining how it works (transmits electrical signals while twisting cancels EMI/crosstalk). OR Part b(i): 2 marks for describing MAN as a city/metropolitan-scale network (5\u201350 km) interconnecting multiple LANs (with example such as cable TV network or city bank branches)."
+      },
+      {
+        "marks": 4,
+        "description": "Part a(ii): 1 mark each for TWO advantages (inexpensive, easy to install/flexible) + 1 mark each for TWO disadvantages (high attenuation beyond 100m, lower bandwidth/more EMI than fibre). OR Part b(ii): 1 mark each for TWO advantages of MAN (city-wide high-speed LAN interconnection, centralised city resource sharing) + 1 mark each for TWO disadvantages (high installation/leased-line cost, complex security and maintenance)."
+      }
+    ]
+  }
+]

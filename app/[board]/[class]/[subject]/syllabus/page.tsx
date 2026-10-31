@@ -7,6 +7,8 @@ import { subjectMaterials } from "@/services/materials/catalog";
 import styles from "@/components/MaterialLayout.module.css";
 import physicsIX from "@/data/physics/ssc1_exact_syllabus.json";
 import physicsX from "@/data/physics/ssc2_exact_syllabus.json";
+import csIX from "@/data/computer-science/ssc1_exact_syllabus.json";
+import csX from "@/data/computer-science/ssc2_exact_syllabus.json";
 import SyllabusClient from "./SyllabusClient";
 import {publishedCurriculum} from '@/services/materials/curriculum';
 export const dynamic = "force-dynamic";
@@ -25,10 +27,25 @@ export default async function Page({
     raw.subject,
     "syllabus",
   );
-  const legacy =
+  const isPhysics =
     scope.board.id === "akueb" &&
     scope.meta.slug === "physics" &&
     [9, 10].includes(scope.classDef.level);
+  const isComputerScience =
+    scope.board.id === "akueb" &&
+    scope.meta.slug === "computer-science" &&
+    [9, 10].includes(scope.classDef.level);
+  const legacy = isPhysics || isComputerScience;
+
+  const defaultOriginalPdf = isComputerScience
+    ? `/materials/ssc/computer-science/ssc-${scope.classDef.level === 9 ? '1' : '2'}/computer-science-ssc-full-syllabus-2025.pdf`
+    : `/materials/ssc/physics/ssc-${scope.classDef.level === 9 ? '1' : '2'}/physics-ssc-full-syllabus-2025.pdf`;
+
+  const defaultUnits = isComputerScience
+    ? (scope.classDef.level === 9 ? csIX : csX)
+    : (scope.classDef.level === 9 ? physicsIX : physicsX);
+
+
   return (
     <section className={styles.page} style={{maxWidth:1280}}>
       <Breadcrumbs
@@ -53,11 +70,11 @@ export default async function Page({
       {legacy || compiled ? (
         <DocumentViews
           title={scope.meta.title+" syllabus"}
-          original={compiled?.original || `/materials/ssc/physics/ssc-${scope.classDef.level===9?'1':'2'}/physics-ssc-full-syllabus-2025.pdf`}
+          original={compiled?.original || defaultOriginalPdf}
         >
           <SyllabusClient board={scope.board} classDef={scope.classDef} meta={scope.meta} baseUrl={scope.baseUrl}
-            originalUrl={compiled?.original || `/materials/ssc/physics/ssc-${scope.classDef.level===9?'1':'2'}/physics-ssc-full-syllabus-2025.pdf`}
-            units={compiled?.units || (scope.classDef.level === 9 ? physicsIX : physicsX)}
+            originalUrl={compiled?.original || defaultOriginalPdf}
+            units={compiled?.units || defaultUnits}
           />
         </DocumentViews>
       ) : (

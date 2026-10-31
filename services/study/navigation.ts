@@ -12,15 +12,25 @@ import { studyKinds } from "./contracts";
 import physicsIX from "@/data/physics/ssc1_exact_syllabus.json";
 import physicsX from "@/data/physics/ssc2_exact_syllabus.json";
 
+import csIX from "@/data/computer-science/ssc1_exact_syllabus.json";
+import csX from "@/data/computer-science/ssc2_exact_syllabus.json";
+
 function syllabusChapters(scope: NonNullable<ReturnType<typeof studyScope>>) {
   if (
     scope.board.id !== "akueb" ||
     normalizeBoardId(scope.board.shortCode) !== scope.board.id ||
-    scope.meta.slug !== "physics" ||
+    !["physics", "computer-science"].includes(scope.meta.slug) ||
     ![9, 10].includes(scope.classDef.level)
   )
     return [];
-  const units = scope.classDef.level === 9 ? physicsIX : physicsX;
+  const units =
+    scope.meta.slug === "computer-science"
+      ? scope.classDef.level === 9
+        ? csIX
+        : csX
+      : scope.classDef.level === 9
+        ? physicsIX
+        : physicsX;
   return units.map((unit) => ({
     id: "syllabus-" + unit.unitNumber,
     name: unit.name,

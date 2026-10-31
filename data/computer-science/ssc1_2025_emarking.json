@@ -1,0 +1,223 @@
+{
+  "title": "Notes from E-Marking Centre on SSC-I Computer Science Annual Examinations 2025",
+  "examYear": 2025,
+  "board": "AKU-EB",
+  "classLevel": "Class IX (SSC-I)",
+  "subject": "Computer Science",
+  "sourceUrl": "/materials/ssc/computer-science/ssc-1/computer-science-ix-2025-emarking.pdf",
+  "introduction": "This document has been produced for the teachers and candidates of the Secondary School Certificate (SSC) Part I Computer Science. It contains comments on candidates' responses to the 2025 SSC-I Examination, indicating the quality of the responses and highlighting their relative strengths and weaknesses.",
+  "generalObservations": "Most candidates succeeded in constructing better responses, particularly on the topics of Wide Area Network (WAN), analog signals, and guided and unguided media. However, teachers should focus on the following areas and provide more drills and practice: (1) Differentiate between command line interface (CLI) and graphical user interface (GUI); (2) Network topologies; (3) Development of an HTML-based webpage; (4) Comparison of primary and secondary memory based on location and functions; and (5) Differentiate between impact and non-impact printers, including laser printers and their properties.",
+  "questions": [
+    {
+      "questionNumber": "Q.1",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Differentiate command line interface (CLI) and graphical user interface (GUI) on the basis of the given aspects.\n\n| Aspect | CLI | GUI |\n| :--- | :--- | :--- |\n| Style of Interaction | | |\n| Use of Resource | | |\n| Feedback on Error | | |\n| Accessibility | | |",
+      "originalSlo": "2.1.3",
+      "currentSlo": "1.5.2",
+      "currentSloDescription": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Differentiate among the following three types of user interfaces provided by the OS: a. Command Line Interface (CLI), e.g., DOS and UNIX, b. Menu Driven Interface (MDI), e.g., Novel, c. Graphical User Interface (GUI), e.g., Macintosh, Linux, and Windows;",
+      "maxMarks": 4,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for each correct difference across the 4 specified aspects: Style of Interaction, Use of Resource, Feedback on Error, and Accessibility (FOUR required)."
+      ],
+      "overallPerformance": "Overall performance in this question was very weak, as candidates struggled to write relevant points for each aspect. A major misconception among candidates was understanding the specific aspects mentioned in the table.",
+      "betterResponses": "In better responses, candidates showed a clear understanding of the concept and wrote accurate points for each aspect: CLI by typing commands vs GUI by clicking on the interface; fewer vs more hardware/memory resources; error feedback through command text vs visual pop-ups; and CLI being less accessible for novices while GUI is more accessible.",
+      "weakerResponses": "In weaker responses, candidates mixed up CLI and GUI in the style of interaction, gave vague terms in the use of resources (e.g., 'they use RAM and ROM'), and wrote unclear points on feedback and accessibility without highlighting key differences.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Explain CLI vs GUI comparison aspects clearly during lessons and use comparison charts, Venn diagrams, and quick CLI vs GUI identification tasks to reinforce clarity."
+      ],
+      "modelAnswer": "| Aspect | Command Line Interface (CLI) | Graphical User Interface (GUI) |\n| :--- | :--- | :--- |\n| **Style of Interaction** | User interacts by typing text-based commands via the keyboard at a command prompt. | User interacts visually by clicking icons, menus, windows, and buttons using a mouse or touchscreen. |\n| **Use of Resource** | Consumes very little system memory (RAM) and CPU processing power; requires only a keyboard and basic display. | Consumes significantly more system memory (RAM), GPU/CPU resources, and uses pointing devices (mouse/touchscreen). |\n| **Feedback on Error** | Displays text-based syntax or command error messages directly in the terminal lines. | Displays visual pop-up dialog boxes, alert icons, or sound prompts when an error occurs. |\n| **Accessibility** | Less accessible for beginners because users must memorise exact command syntax and parameters. | Highly accessible and user-friendly for beginners because visual icons and menus are intuitive. |"
+    },
+    {
+      "questionNumber": "Q.2",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Write any TWO features of analog signals.",
+      "originalSlo": "4.1.3",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": null,
+      "outOfSyllabus": true,
+      "sloText": "Differentiate between analog and digital signals;",
+      "maxMarks": 2,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for writing each correct feature of analog signals (any TWO required)."
+      ],
+      "overallPerformance": "The overall performance in this question was better. Candidates showed a good understanding of the concept and identified the most relevant points close to the expected answer.",
+      "betterResponses": "In better responses, candidates used the correct keywords for analog signals, including continuous wave form, used to measure physical quantities (temperature, time, heat, sound), and a sine-wave diagram.",
+      "weakerResponses": "In weaker responses, candidates confused points of digital signals with analog signals or wrote vague cost comparisons such as 'analog signals are cheaper than digital signals'.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Design hands-on sorting activities and digital wave simulations where students visualise continuous sine-wave analog signals versus discrete binary digital signals."
+      ],
+      "modelAnswer": "**Features of Analog Signals (Any TWO \u2014 2 Marks):**\n1. **Continuous Wave Form:** An analog signal is a continuous wave (sine wave) that changes smoothly over time and can take an infinite number of values within a given range.\n2. **Represents Physical Quantities:** It directly represents natural physical quantities such as sound waves, temperature, light intensity, and atmospheric pressure, characterised by continuous amplitude and frequency."
+    },
+    {
+      "questionNumber": "Q.3",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Compare Wide Area Network (WAN) with Local Area Network (LAN) by giving any TWO disadvantages of WAN.",
+      "originalSlo": "5.2.1",
+      "currentSlo": "1.9.2",
+      "currentSloDescription": "explain different types of computer networks, i.e., Local Area Network (LAN), Wide Area Network (WAN), and Metropolitan Area Network (MAN), highlighting their characteristics and applications;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Differentiate among the following types of networks: a. LAN, b. MAN, c. WAN, d. PAN, e. Bluetooth network, f. internet;",
+      "maxMarks": 2,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for comparing WAN with LAN through each disadvantage (Any TWO required)."
+      ],
+      "overallPerformance": "Many candidates demonstrated a clear understanding of the question, giving accurate and appropriate points in their answers that reflected clarity of concepts.",
+      "betterResponses": "In better responses, candidates clearly stated precise disadvantages of WAN compared to LAN: WAN is expensive to set up and maintain, has higher latency, lower bandwidth, and depends on external ISP/telecom service providers.",
+      "weakerResponses": "In weaker responses, candidates mixed up advantages of WAN (covering a large geographical area) with disadvantages, or wrote vague statements like 'WAN signals are disturbed by other radio waves'.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Use card-sorting activities where students separate the advantages and disadvantages of WAN vs LAN and analyse real-world WAN scenarios."
+      ],
+      "modelAnswer": "**Disadvantages of WAN Compared to LAN (Any TWO \u2014 2 Marks):**\n1. **Higher Setup & Maintenance Cost:** A WAN is significantly more expensive to set up and maintain than a LAN because it spans cities/countries and requires leased telecommunication lines, routers, or satellite links.\n2. **Higher Latency & Lower Data Transfer Speed:** Due to vast geographical distances and multiple intermediate hops, WANs experience higher propagation delay (latency), lower effective bandwidth, and greater security/administration complexity than a local LAN."
+    },
+    {
+      "questionNumber": "Q.4",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Consider the given image of a web page.\n\nWrite the HTML code to display the web page shown in the given image.",
+      "diagramUrl": "/paper-crops/CS-IX-2025-P2/q4.png",
+      "originalSlo": "6.4.1",
+      "currentSlo": "3.4.1",
+      "currentSloDescription": "write HTML code to create: a. ordered list, b. unordered list, c. definition list;",
+      "currentTopic": "Programming Fundamentals (JavaScript, HTML & CSS)",
+      "outOfSyllabus": false,
+      "sloText": "Write HTML code to create: a. ordered list, b. unordered list, c. definition list;",
+      "maxMarks": 5,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark for <html> and </html> tags",
+        "1 mark for <body> and </body> tags",
+        "1 mark for <dl> and </dl> tag in the correct place",
+        "1 mark for <dt> and </dt> tag in the correct place",
+        "1 mark for <dd> and </dd> tag in the correct place"
+      ],
+      "overallPerformance": "Overall performance in this question was below expectations, with only some candidates showing a clear understanding of definition lists (<dl>, <dt>, <dd>) in HTML. Many failed to differentiate between a paragraph and a definition list.",
+      "betterResponses": "In better responses, candidates used the basic tags `<html>`, `<head>`, and `<body>` correctly and applied the definition list tags (`<dl>`, `<dt>`, and `<dd>`) along with `<h1>Vegetables</h1>` to reproduce the indented definition list layout.",
+      "weakerResponses": "In weaker responses, candidates failed to recognise the definition list layout and used `<p>` and `<br>` tags instead of `<dl>`, `<dt>`, and `<dd>`.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Conduct practical lab activities where students create webpages using ordered (<ol>), unordered (<ul>), and definition (<dl>, <dt>, <dd>) lists, and debug missing tags."
+      ],
+      "modelAnswer": "```html\n<html>\n<head>\n    <title>Vegetables.html</title>\n</head>\n<body>\n    <h1>Vegetables</h1>\n    <dl>\n        <dt>Lettuce, Cucumbers</dt>\n        <dd>Green Vegetables</dd>\n        <dt>Potato, Onion</dt>\n        <dd>Vegetables that are grown under the soil</dd>\n    </dl>\n</body>\n</html>\n```"
+    },
+    {
+      "questionNumber": "Q.5a",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. Compare primary and secondary storage devices based on their location with respect to the Central Processing Unit (CPU). (2 Marks)\nii. Discuss the function of primary and secondary storage devices for data processing in real-time scenarios. (4 Marks)",
+      "originalSlo": "1.3.5",
+      "currentSlo": "1.2.3",
+      "currentSloDescription": "describe primary and secondary storage devices based on location, cost, capacity, access time, data processing method, and storage technology such as semiconductor (SSD), magnetic (HDD), and optical;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Compare primary and secondary storage devices on the basis of location with respect to CPU, cost, storage capacity, average access time, direct/indirect data processing, and means of storing information;",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for writing each location comparison (TWO required).",
+        "1 mark for each highlighted point on real-time processing vs permanent storage function (FOUR required)."
+      ],
+      "overallPerformance": "This question was comparatively less opted than part b. Overall, candidates struggled to give detailed responses, with some confusing the location and permanence of primary vs secondary storage.",
+      "betterResponses": "In better responses, answers were well-articulated and addressed the location of primary memory (near/directly connected to CPU) and secondary memory (farther/external) and their real-time vs permanent storage roles.",
+      "weakerResponses": "In weaker responses, candidates confused SSD/HDD as primary storage or stated that primary memory stores data permanently while secondary memory is directly used by the CPU for processing.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Reinforce the difference between primary and secondary memory through architecture diagrams showing their location relative to the CPU and bus hierarchy."
+      ],
+      "modelAnswer": "**i. Location with Respect to CPU (2 Marks):**\n\u2022 **Primary Storage (RAM/ROM):** Located directly on the motherboard close to the CPU and accessed directly via the system bus.\n\u2022 **Secondary Storage (SSD/HDD/USB):** Located farther from the CPU via I/O controllers or external ports and accessed indirectly by loading data into RAM first.\n\n**ii. Function in Real-Time Data Processing (4 Marks):**\n\u2022 **Primary Storage:** Stores currently active instructions and live incoming data streams for immediate, high-speed CPU retrieval and real-time manipulation.\n\u2022 **Secondary Storage:** Provides non-volatile, long-term archival storage for saving processed files, applications, and datasets permanently after processing."
+    },
+    {
+      "questionNumber": "Q.5b",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. Explain the differences between impact and non-impact printers with TWO examples. (3 Marks)\nii. Give ONE advantage of using laser printers in a modern office environment, focusing on speed, print quality, and operational costs each. (3 Marks)",
+      "originalSlo": "1.3.9",
+      "currentSlo": "1.2.1",
+      "currentSloDescription": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Compare the types of output devices, i.e. speaker, LCD, LED display, printers and their types, plotter, actuators, cutters.",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for comparing the difference between impact and non-impact printers (ONE required).",
+        "1 mark for writing each example (TWO required).",
+        "1 mark for writing each laser printer advantage on speed, print quality, and operational cost (THREE required)."
+      ],
+      "overallPerformance": "Overall response to this question was below average. Candidates struggled to connect everyday familiarity with laser printers to structured points on speed, quality, and operational cost.",
+      "betterResponses": "In better responses, candidates clearly explained the electromechanical ribbon-striking mechanism of impact printers (Dot Matrix) versus non-contact laser/inkjet printing, and gave specific advantages of laser printers in speed, print quality, and low per-page cost.",
+      "weakerResponses": "In weaker responses, candidates erroneously claimed impact printers are 'easy to use, portable, and more advanced' and described laser printers in vague terms without addressing speed, quality, or operational cost.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Use comparative charts and real-world office case studies to contrast impact vs non-impact printers and evaluate speed, DPI resolution, and toner cost per page."
+      ],
+      "modelAnswer": "**i. Impact vs. Non-Impact Printers & Examples (3 Marks):**\n\u2022 **Difference:** Impact printers physically strike an inked ribbon against paper using pins/hammers (noisy and slower), whereas non-impact printers form characters without physical contact using laser toner or ink spray (quiet and fast).\n\u2022 **Examples:** Impact = Dot-Matrix Printer, Daisy-Wheel Printer; Non-Impact = Laser Printer, Inkjet Printer.\n\n**ii. Advantages of Laser Printers in a Modern Office (3 Marks):**\n\u2022 **Speed:** Prints entire pages rapidly (20\u201360+ pages per minute) for high-volume office tasks.\n\u2022 **Print Quality:** Produces crisp, high-resolution (600\u20132400 DPI) smudge-free text and graphics.\n\u2022 **Operational Costs:** Offers a low cost per page in bulk office printing because a single toner cartridge yields thousands of pages."
+    },
+    {
+      "questionNumber": "Q.6a",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. Write TWO differences between guided (wired) and unguided (wireless) media. (2 Marks)\nii. Describe any TWO examples of guided media. (4 Marks)",
+      "originalSlo": "4.2.1",
+      "currentSlo": "1.9.3",
+      "currentSloDescription": "explain guided media and unguided media;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Compare guided (wired) and unguided (wireless) media with examples, i.e., twisted pair cable, coaxial cable, optic fibre cable, radio waves, microwave, infra-red, Bluetooth, and satellite.",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for each complete difference (Any TWO required).",
+        "1 mark for each statement in each guided media description (Any TWO statements required for each of TWO examples = 4 Marks)."
+      ],
+      "overallPerformance": "Majority of students opted for this question and performed comparatively well on the comparison, though some struggled to name and describe valid guided media cables.",
+      "betterResponses": "In better responses, candidates contrasted physical wire signal propagation with wireless air propagation and accurately described twisted-pair, coaxial, and fibre-optic cables.",
+      "weakerResponses": "In weaker responses, candidates wrote vague comparisons and incorrectly listed end-user devices like 'cameras, printers, and TV' as examples of guided transmission media.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Bring physical samples of twisted-pair (UTP/STP), coaxial, and fibre-optic cables to class so students can visually distinguish guided media from wireless devices."
+      ],
+      "modelAnswer": "**i. Two Differences between Guided and Unguided Media (2 Marks):**\n1. **Signal Path:** Guided media transmits signals through a solid physical cable/conductor, whereas unguided media transmits electromagnetic waves through air/free space.\n2. **Topology & Security:** Guided media provides a directed point-to-point connection with higher security against eavesdropping, whereas unguided media broadcasts signals over an area and is more prone to interference.\n\n**ii. Two Examples of Guided Media (4 Marks):**\n1. **Twisted-Pair Cable (2 Marks):** Consists of pairs of insulated copper wires twisted together to cancel electromagnetic interference; available as Unshielded (UTP) and Shielded (STP) for Ethernet LANs.\n2. **Fibre-Optic Cable (2 Marks):** Uses a glass/plastic core surrounded by cladding to transmit data as light pulses via total internal reflection at gigabit speeds."
+    },
+    {
+      "questionNumber": "Q.6b",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. Define network topology. (1 Mark)\nii. Give any FOUR benefits of using ring topology as compared to other topologies (bus, star, mesh). (4 Marks)\niii. Draw the diagram of ring topology. (1 Mark)",
+      "originalSlo": "5.2.2 and 5.2.3",
+      "currentSlo": "1.9.4",
+      "currentSloDescription": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Define a network topology. Explain the following network topologies with the help of diagrams, i.e., bus topology, ring topology, star topology, and mesh topology.",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for defining network topology.",
+        "1 mark for writing each benefit of ring topology (FOUR required).",
+        "1 mark for drawing an accurate closed-loop diagram of ring topology."
+      ],
+      "overallPerformance": "Overall performance in this question was not satisfactory. Most candidates struggled to define network topology precisely, and many confused the ring topology diagram with bus or star topologies.",
+      "betterResponses": "In better responses, candidates defined network topology as the physical or logical arrangement of devices in a network, listed four clear advantages of ring topology (no central hub required, lower cable cost than mesh, organised token flow without collisions, equal access), and drew nodes connected in a closed loop.",
+      "weakerResponses": "In weaker responses, candidates falsely claimed ring topology uses a central server or drew star/bus layouts instead of a closed ring.",
+      "betterResponseImage": null,
+      "weakerResponseImage": null,
+      "suggestions": [
+        "Use side-by-side diagram drills comparing Bus, Star, Ring, Tree, and Mesh topologies so students do not confuse ring topology with central-hub star networks."
+      ],
+      "modelAnswer": "**i. Definition (1 Mark):** Network topology is the physical or logical layout/arrangement of interconnected nodes and cables in a computer network.\n\n**ii. Four Benefits of Ring Topology (4 Marks):**\n1. Requires no central hub, switch, or server to manage connectivity (cheaper than star topology).\n2. Uses significantly less cabling than mesh topology since each node only connects to two neighbours.\n3. Unidirectional token-passing data flow prevents packet collisions common in bus topology.\n4. Every node gets equal access to transmit data without bandwidth monopolisation.\n\n**iii. Ring Topology Diagram (1 Mark):**\n\u2022 Closed circular cable loop connecting `Node 1` $\\rightarrow$ `Node 2` $\\rightarrow$ `Node 3` $\\rightarrow$ `Node 4` $\\rightarrow$ `Node 1`."
+    }
+  ]
+}

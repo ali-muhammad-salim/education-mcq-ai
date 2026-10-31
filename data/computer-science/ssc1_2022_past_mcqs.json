@@ -1,0 +1,2802 @@
+[
+  {
+    "questionNumber": 1,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.5.1",
+    "original_slo": "1.5.1",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A software that loads programs into the memory and then executes them is called",
+    "options": {
+      "A": "device driver.",
+      "B": "utility software.",
+      "C": "flight simulator.",
+      "D": "operating system."
+    },
+    "correctOption": "D",
+    "explanation": "The operating system (OS) is the master system software responsible for loading application programs from secondary storage into main memory (RAM) and scheduling their execution on the CPU.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A device driver enables the operating system to communicate with a specific hardware peripheral."
+      },
+      {
+        "key": "B",
+        "reason": "Utility software performs system maintenance tasks such as antivirus scanning, backup, or disk defragmentation."
+      },
+      {
+        "key": "C",
+        "reason": "A flight simulator is a specialised application software used for pilot training."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.5.1",
+    "original_slo": "1.5.1",
+    "current_slo": "1.5.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.1",
+        "description": "differentiate between system software and application software with examples;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "An example of application software is",
+    "options": {
+      "A": "device driver.",
+      "B": "utility software.",
+      "C": "flight simulator.",
+      "D": "operating system."
+    },
+    "correctOption": "C",
+    "explanation": "A flight simulator is end-user application software designed to simulate aircraft flight for training or entertainment, whereas device drivers, utilities, and operating systems are system software.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A device driver is system software that controls hardware peripherals."
+      },
+      {
+        "key": "B",
+        "reason": "Utility software is system software used for system maintenance and security."
+      },
+      {
+        "key": "D",
+        "reason": "An operating system is core system software that manages computer hardware and resources."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.10",
+    "original_slo": "1.3.10",
+    "current_slo": "1.3.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.3.2",
+        "description": "differentiate among types of ports (serial, parallel, USB, HDMI) and expansion slots;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "In contrast to serial ports, parallel ports transmit",
+    "options": {
+      "A": "data at low speed.",
+      "B": "single stream of data at a time.",
+      "C": "multiple streams of data at a time.",
+      "D": "data between processor and memory."
+    },
+    "correctOption": "C",
+    "explanation": "Parallel ports transmit multiple bits (streams) of data simultaneously across multiple parallel wire lines (typically 8 bits at a time), whereas serial ports send data 1 bit at a time over a single line.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Parallel ports transfer multiple bits per clock cycle, achieving higher short-distance throughput than legacy serial ports."
+      },
+      {
+        "key": "B",
+        "reason": "Transmitting a single stream of data bit-by-bit is the defining characteristic of a serial port."
+      },
+      {
+        "key": "D",
+        "reason": "Internal system buses—not external parallel peripheral ports—transfer data between the processor and main memory."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.8",
+    "original_slo": "1.3.8",
+    "current_slo": "1.4.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.4.1",
+        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Which of the following statement is FALSE about the hard disk drive?",
+    "options": {
+      "A": "It is a secondary storage device.",
+      "B": "It uses optical disks to store data.",
+      "C": "It is a non-volatile storage device.",
+      "D": "It uses random access method to access the data."
+    },
+    "correctOption": "B",
+    "explanation": "Statement B is FALSE because a Hard Disk Drive (HDD) stores data magnetically on spinning metal platters, whereas CDs, DVDs, and Blu-ray drives use laser-read optical discs.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "An HDD is a primary example of a secondary (auxiliary) storage device; this statement is true."
+      },
+      {
+        "key": "C",
+        "reason": "An HDD retains data permanently without power (non-volatile); this statement is true."
+      },
+      {
+        "key": "D",
+        "reason": "An HDD uses direct (random) access via moving read/write heads; this statement is true."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.7",
+    "original_slo": "1.3.7",
+    "current_slo": "1.4.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.4.1",
+        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Which of the following statements is FALSE about the cache memory levels?",
+    "options": {
+      "A": "Level 2 cache memory is located on the motherboard.",
+      "B": "Level 1 cache memory is located on the microprocessor.",
+      "C": "Level 3 cache memory is slower than level 1 cache memory.",
+      "D": "Level 3 cache memory is smaller in storage capacity than other two levels."
+    },
+    "correctOption": "D",
+    "explanation": "Statement D is FALSE because Level 3 (L3) cache has the largest storage capacity among L1, L2, and L3 caches (several megabytes), while L1 cache is the smallest in capacity and fastest in speed.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "In the legacy textbook hierarchy, L2 cache was described as positioned between the CPU core and motherboard/separate die."
+      },
+      {
+        "key": "B",
+        "reason": "Level 1 (L1) cache is built directly inside the microprocessor; this statement is true."
+      },
+      {
+        "key": "C",
+        "reason": "Level 3 (L3) cache is slower than Level 1 (L1) cache; this statement is true."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.6",
+    "original_slo": "1.3.6",
+    "current_slo": "1.4.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.4.1",
+        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Which of the following statements is FALSE about ROM?",
+    "options": {
+      "A": "It is a non-volatile memory.",
+      "B": "It allows to perform read operation.",
+      "C": "It stores the program to start-up a computer.",
+      "D": "It allows to perform write operation several times."
+    },
+    "correctOption": "D",
+    "explanation": "Statement D is FALSE because standard Read-Only Memory (ROM) is permanently programmed during manufacturing and does not allow normal repeated write operations like RAM.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "ROM is non-volatile memory that retains firmware when power is off; this statement is true."
+      },
+      {
+        "key": "B",
+        "reason": "The CPU reads instructions from ROM during boot; this statement is true."
+      },
+      {
+        "key": "C",
+        "reason": "ROM stores the BIOS/bootstrap program needed to start up the computer; this statement is true."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.9",
+    "original_slo": "1.3.9",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "describe input and output devices and their uses in daily life;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "The TWO most common output devices in an ATM machine are",
+    "options": {
+      "A": "printer and keypad.",
+      "B": "printer and speaker.",
+      "C": "keypad and speaker.",
+      "D": "monitor and scanner."
+    },
+    "correctOption": "B",
+    "explanation": "Among the given pairs, both the receipt printer (which prints transaction slips) and the speaker (which provides audio prompts/beeps) are output devices, whereas a keypad and scanner are input devices.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A keypad is an input device used by the customer to enter their PIN and withdrawal amount."
+      },
+      {
+        "key": "C",
+        "reason": "A keypad is an input device, not an output device."
+      },
+      {
+        "key": "D",
+        "reason": "A scanner is an input device, not an output device."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.3",
+    "original_slo": "1.3.3",
+    "current_slo": "1.3.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.3.1",
+        "description": "describe the components of Central Processing Unit (CPU) (Arithmetic Logic Unit (ALU), Control Unit (CU), Registers, Cache, and Internal Buses) and the role of each component in fetch-decode-execute cycle;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A CPU contains all of the following components EXCEPT",
+    "options": {
+      "A": "registers.",
+      "B": "input unit.",
+      "C": "control unit.",
+      "D": "arithmetic logic unit."
+    },
+    "correctOption": "B",
+    "explanation": "The CPU houses registers, the Control Unit (CU), and the Arithmetic Logic Unit (ALU); the input unit consists of external peripheral devices (keyboard, mouse, scanner) outside the CPU.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Registers are high-speed temporary storage locations inside the CPU."
+      },
+      {
+        "key": "C",
+        "reason": "The Control Unit (CU) is an internal component of the CPU."
+      },
+      {
+        "key": "D",
+        "reason": "The Arithmetic Logic Unit (ALU) is an internal component of the CPU."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.2",
+    "original_slo": "1.3.2",
+    "current_slo": "1.2.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.2",
+        "description": "describe types of sensors and their applications;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A device is used to check whether meat is cooked from inside or not. The MOST appropriate sensor used in this device could be a",
+    "options": {
+      "A": "gas sensor.",
+      "B": "pressure sensor.",
+      "C": "moisture sensor.",
+      "D": "temperature sensor."
+    },
+    "correctOption": "D",
+    "explanation": "A digital meat thermometer probe uses a temperature sensor (thermistor/thermocouple) to measure the internal thermal temperature of meat to verify it has reached a safe cooking temperature.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A gas sensor detects airborne chemical vapours or gas leaks rather than internal food temperature."
+      },
+      {
+        "key": "B",
+        "reason": "A pressure sensor measures mechanical force per unit area."
+      },
+      {
+        "key": "C",
+        "reason": "A moisture sensor measures water/humidity levels rather than cooking heat."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.1",
+    "original_slo": "1.3.1",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "describe input and output devices and their uses in daily life;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Some devices are essential to perform specific tasks on a computer.\nTwo essential devices to make a video call are",
+    "options": {
+      "A": "webcam and printer.",
+      "B": "monitor and scanner.",
+      "C": "headphone and scanner.",
+      "D": "webcam and headphones."
+    },
+    "correctOption": "D",
+    "explanation": "Making a live video call requires a webcam to capture video and headphones/headset (with mic) to hear and speak with the other participant.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A printer produces paper output and is not used in live video calling."
+      },
+      {
+        "key": "B",
+        "reason": "A scanner digitises paper documents and cannot capture live video or audio."
+      },
+      {
+        "key": "C",
+        "reason": "A scanner cannot capture live video for a video call."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.1",
+    "original_slo": "1.3.1",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "describe input and output devices and their uses in daily life;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Sara has distributed brochures of her home-based business.\nThree of the essential devices that should be used in developing softcopy and obtaining hardcopy of these brochures are",
+    "options": {
+      "A": "mouse, keyboard and printer.",
+      "B": "mouse, speaker and monitor.",
+      "C": "webcam, monitor and mouse.",
+      "D": "printer, keyboard and headphones."
+    },
+    "correctOption": "A",
+    "explanation": "Designing and typing the brochure softcopy requires a mouse and keyboard, and producing the physical paper brochures (hardcopy) to distribute requires a printer.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Speakers and monitors only provide audio/visual softcopy output and cannot print physical hardcopy brochures."
+      },
+      {
+        "key": "C",
+        "reason": "Without a printer, no physical hardcopy brochures can be produced."
+      },
+      {
+        "key": "D",
+        "reason": "Headphones are audio output devices that play no role in designing or printing brochures."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.1",
+    "original_slo": "1.3.1",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "describe input and output devices and their uses in daily life;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A device which is used to capture the product information is",
+    "options": {
+      "A": "monitor.",
+      "B": "light pen.",
+      "C": "barcode reader.",
+      "D": "magnetic ink character reader."
+    },
+    "correctOption": "C",
+    "explanation": "A barcode reader (scanner) optically reads the Universal Product Code (UPC) stripes printed on retail packages to capture product price and inventory details.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A monitor is a visual display output device."
+      },
+      {
+        "key": "B",
+        "reason": "A light pen is a screen-pointing input device."
+      },
+      {
+        "key": "D",
+        "reason": "A Magnetic Ink Character Reader (MICR) reads magnetic routing numbers on bank cheques."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.1",
+    "original_slo": "1.3.1",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "describe input and output devices and their uses in daily life;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "The CORRECT pair of a device and its characteristic is\n| Option | Device | Characteristic |\n| :--- | :--- | :--- |\n| A | Digital Camera | Adjusting Resolution |\n| B | Joystick | Pointing Device in Laptop |\n| C | Barcode Reader | Checking Originality of Cheques |\n| D | Magnetic Ink Character Reader | Capturing Product Information |",
+    "options": {
+      "A": "Digital Camera — Adjusting Resolution",
+      "B": "Joystick — Pointing Device in Laptop",
+      "C": "Barcode Reader — Checking Originality of Cheques",
+      "D": "Magnetic Ink Character Reader — Capturing Product Information"
+    },
+    "correctOption": "A",
+    "explanation": "A digital camera captures digital photographs and video whose image quality can be configured by adjusting the pixel resolution (megapixels).",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A touchpad (trackpad) is the built-in pointing device in a laptop, whereas a joystick is a gaming peripheral."
+      },
+      {
+        "key": "C",
+        "reason": "Checking the originality of bank cheques is performed by a Magnetic Ink Character Reader (MICR), not a barcode reader."
+      },
+      {
+        "key": "D",
+        "reason": "Capturing retail product information is performed by a barcode reader, not an MICR."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.4",
+    "original_slo": "1.3.4",
+    "current_slo": "1.3.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.3.1",
+        "description": "describe the components of Central Processing Unit (CPU) (Arithmetic Logic Unit (ALU), Control Unit (CU), Registers, Cache, and Internal Buses) and the role of each component in fetch-decode-execute cycle;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A signal that causes data transfer from main memory to a CPU register is sent from",
+    "options": {
+      "A": "input unit.",
+      "B": "output unit.",
+      "C": "control unit.",
+      "D": "arithmetic logic unit."
+    },
+    "correctOption": "C",
+    "explanation": "The Control Unit (CU) inside the CPU issues timing and control signals to coordinate the transfer of instructions and data from main memory (RAM) into CPU registers.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The input unit accepts external user data rather than issuing internal CPU bus control signals."
+      },
+      {
+        "key": "B",
+        "reason": "The output unit receives processed information from memory to present to the user."
+      },
+      {
+        "key": "D",
+        "reason": "The Arithmetic Logic Unit (ALU) performs arithmetic and bitwise logical operations on register data."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.1",
+    "original_slo": "1.3.1",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "describe input and output devices and their uses in daily life;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Fatima has a handwritten document. She wants to convert the document into editable form in the computer system.\nAn input device that she should use for this purpose is a/ an",
+    "options": {
+      "A": "barcode reader.",
+      "B": "optical mark reader.",
+      "C": "magnetic ink character reader.",
+      "D": "optical character reader."
+    },
+    "correctOption": "D",
+    "explanation": "An Optical Character Reader (OCR) scans printed or handwritten text and converts the recognised character shapes into editable digital text in a word processor.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A barcode reader scans parallel vertical product bars rather than handwritten text."
+      },
+      {
+        "key": "B",
+        "reason": "An Optical Mark Reader (OMR) detects shaded pencil bubbles on MCQ sheets."
+      },
+      {
+        "key": "C",
+        "reason": "A Magnetic Ink Character Reader (MICR) reads magnetic ink characters on bank cheques."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.2",
+    "original_slo": "1.3.2",
+    "current_slo": "1.2.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.2",
+        "description": "describe types of sensors and their applications;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A system needs to automatically unlock the main door in a house during the day and lock it at night. The MOST suitable sensor to be used in this system is",
+    "options": {
+      "A": "light sensor.",
+      "B": "pressure sensor.",
+      "C": "moisture sensor.",
+      "D": "temperature sensor."
+    },
+    "correctOption": "A",
+    "explanation": "A light sensor detects ambient daylight versus nighttime darkness, allowing the controller to unlock the door during the day and lock it at night.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A pressure sensor responds to physical weight or force rather than daylight."
+      },
+      {
+        "key": "C",
+        "reason": "A moisture sensor measures humidity or water levels."
+      },
+      {
+        "key": "D",
+        "reason": "A temperature sensor measures ambient heat rather than day/night light levels."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.3",
+    "original_slo": "5.2.3",
+    "current_slo": "1.9.4",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.4",
+        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Which of the following statements is TRUE about star topology?",
+    "options": {
+      "A": "Detection of fault is difficult",
+      "B": "Easiest network topology to set up",
+      "C": "Lowest cost topology to implement due to short cable length",
+      "D": "Failure of one computer does not stop the functioning of the entire network"
+    },
+    "correctOption": "D",
+    "explanation": "In a star topology, each computer has its own dedicated cable to the central switch/hub, so the failure of any single computer or its cable does not disrupt the rest of the network.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Fault detection in star topology is very easy because each link is isolated at the central switch/hub."
+      },
+      {
+        "key": "B",
+        "reason": "Bus topology is simpler to wire initially than running individual cables from every node to a central switch."
+      },
+      {
+        "key": "C",
+        "reason": "Star topology requires more cable than bus topology and requires purchasing a central hub or switch."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.1.5",
+    "original_slo": "5.1.5",
+    "current_slo": "1.9.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.1",
+        "description": "explain the uses of computer networks, transmission modes (simplex, half-duplex, full-duplex), and network architectures (client/server, peer-to-peer, point-to-point);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Which of the following is FALSE about peer-to-peer networks?",
+    "options": {
+      "A": "It provides centralised security.",
+      "B": "It can be expanded up to thousands of computers.",
+      "C": "It is generally used for long distance communication.",
+      "D": "These networks are considered as wide area networks."
+    },
+    "correctOption": "A",
+    "explanation": "In a peer-to-peer (P2P) network, there is no dedicated central server; each computer manages its own local resources, so it does NOT provide centralised security (making Statement A false).",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Distributed P2P overlay networks can span many nodes, whereas lack of centralised security is the core textbook contrast with client/server."
+      },
+      {
+        "key": "C",
+        "reason": "P2P file-sharing protocols can operate across connections."
+      },
+      {
+        "key": "D",
+        "reason": "Centralised security requires a dedicated central server (Client/Server architecture), so claiming P2P provides centralised security is definitely false."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.3.1",
+    "original_slo": "5.3.1",
+    "current_slo": "1.8.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.8.1",
+        "description": "describe the functions of network communication devices and telephone/broadband technologies (Dial-up, ISDN, DSL, CDMA);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A type of communication technology that provides the LOWEST internet connection speed is a/ an",
+    "options": {
+      "A": "dial-up line.",
+      "B": "digital subscriber line.",
+      "C": "code division multiple access.",
+      "D": "integrated services digital network."
+    },
+    "correctOption": "A",
+    "explanation": "A dial-up line operates over analog voice telephone wires at a maximum speed of 56 kbps, which is the slowest among all listed communication technologies.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Digital Subscriber Line (DSL) provides multi-megabit broadband speeds."
+      },
+      {
+        "key": "C",
+        "reason": "Code Division Multiple Access (CDMA) provides high-speed cellular broadband."
+      },
+      {
+        "key": "D",
+        "reason": "Integrated Services Digital Network (ISDN) provides 64 kbps to 128 kbps digital transmission, faster than dial-up."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.3",
+    "original_slo": "5.2.3",
+    "current_slo": "1.9.4",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q20.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.4",
+        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Consider the given image.\nThe type of topology shown in this image is",
+    "options": {
+      "A": "bus.",
+      "B": "star.",
+      "C": "ring.",
+      "D": "mesh."
+    },
+    "correctOption": "D",
+    "explanation": "The diagram shows six computers where every computer has a direct point-to-point line connecting it to every other computer in the network, which is a full mesh topology.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Bus topology connects all nodes along a single linear backbone cable."
+      },
+      {
+        "key": "B",
+        "reason": "Star topology connects all nodes to a central hub or switch."
+      },
+      {
+        "key": "C",
+        "reason": "Ring topology connects each node only to its two immediate neighbours in a closed loop."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.3",
+    "original_slo": "5.2.3",
+    "current_slo": "1.9.4",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.4",
+        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "In contrast to bus topology, the mesh topology",
+    "options": {
+      "A": "is difficult to implement.",
+      "B": "provides ease in adding new computers.",
+      "C": "uses less cable to connect computers together.",
+      "D": "halts the entire network if any of the computers stops working."
+    },
+    "correctOption": "A",
+    "explanation": "Because mesh topology requires connecting every node directly to every other node with n(n - 1)/2 dedicated cables and multiple I/O ports, it is complex and difficult to install and configure compared to a simple single-cable bus.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Adding a new computer to a full mesh is difficult because a new cable must be run to every existing node."
+      },
+      {
+        "key": "C",
+        "reason": "Mesh topology uses the maximum amount of cable, whereas bus topology uses the least."
+      },
+      {
+        "key": "D",
+        "reason": "Mesh topology is the most fault-tolerant; failure of one computer or link never halts the network."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.3",
+    "original_slo": "5.2.3",
+    "current_slo": "1.9.4",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.4",
+        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A topology which is MOST expensive among other topologies is",
+    "options": {
+      "A": "bus.",
+      "B": "star.",
+      "C": "ring.",
+      "D": "mesh."
+    },
+    "correctOption": "D",
+    "explanation": "Mesh topology is the most expensive network topology because every node requires dedicated cabling and I/O ports to link with every other node in the network.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Bus topology is the least expensive topology because it uses a single shared backbone cable."
+      },
+      {
+        "key": "B",
+        "reason": "Star topology requires only one cable per computer to a central switch."
+      },
+      {
+        "key": "C",
+        "reason": "Ring topology requires only one link between each adjacent pair of nodes."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.3",
+    "original_slo": "5.2.3",
+    "current_slo": "1.9.4",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.4",
+        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "In contrast to star topology, the ring topology",
+    "options": {
+      "A": "makes it difficult to detect faults.",
+      "B": "requires more cables for its implementation.",
+      "C": "makes it easy to connect new devices to the network.",
+      "D": "ensures that failure of one computer does not stop the functioning of the entire network."
+    },
+    "correctOption": "A",
+    "explanation": "In a unidirectional ring topology, data passes sequentially through every node in the loop, so a single break or malfunctioning NIC can disrupt the entire ring and make isolating the exact fault harder than in a central-switch star topology.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Ring topology generally uses less cabling than running home-run cables from every node to a central hub."
+      },
+      {
+        "key": "C",
+        "reason": "Adding a new device to a ring requires breaking the loop and temporarily disrupting network traffic."
+      },
+      {
+        "key": "D",
+        "reason": "In a standard ring topology, the failure of a single computer or link breaks the loop and stops the entire network."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.3",
+    "original_slo": "5.2.3",
+    "current_slo": "1.9.4",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.4",
+        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "The purpose of using terminators in the bus topology is to",
+    "options": {
+      "A": "increase the data rate of the medium.",
+      "B": "stop signals reaching to unauthorised users.",
+      "C": "stop signals from bouncing back to the medium.",
+      "D": "decrease the chances of signals from getting corrupt."
+    },
+    "correctOption": "C",
+    "explanation": "Terminators placed at both ends of a bus backbone absorb electrical signals when they reach the end of the wire, preventing signal reflection (bouncing back) and interference along the shared cable.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Terminators are passive resistors that absorb signal energy; they do not increase data rate."
+      },
+      {
+        "key": "B",
+        "reason": "Terminators prevent electrical signal reflection rather than providing user security or encryption."
+      },
+      {
+        "key": "D",
+        "reason": "Their specific physical role is absorbing signals at the cable ends so they do not bounce back onto the bus."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.1",
+    "original_slo": "5.2.1",
+    "current_slo": "1.9.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.2",
+        "description": "differentiate among types of networks: PAN, LAN, MAN, WAN, VPN, and Bluetooth networks;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A type of network that has the LOWEST data rate when data is transmitted on longer distances is",
+    "options": {
+      "A": "LAN.",
+      "B": "MAN.",
+      "C": "PAN.",
+      "D": "WAN."
+    },
+    "correctOption": "D",
+    "explanation": "A Wide Area Network (WAN) spans countries and continents over long-distance leased lines, undersea cables, and satellites, resulting in higher propagation delay and lower effective data rates compared to local networks.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A LAN operates over short distances within a building at very high speeds (100 Mbps to 10 Gbps)."
+      },
+      {
+        "key": "B",
+        "reason": "A MAN operates across a city at high metropolitan fibre speeds."
+      },
+      {
+        "key": "C",
+        "reason": "A PAN operates only across a few metres and is not used for long-distance transmission."
+      }
+    ]
+  },
+  {
+    "questionNumber": 26,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.1",
+    "original_slo": "5.2.1",
+    "current_slo": "1.9.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.2",
+        "description": "differentiate among types of networks: PAN, LAN, MAN, WAN, VPN, and Bluetooth networks;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "The two types of networks in which the transmission medium is owned by the user are\nI. PAN\nII. WAN\nIII. LAN\nIV. MAN",
+    "options": {
+      "A": "I and III.",
+      "B": "I and IV.",
+      "C": "II and IV.",
+      "D": "II and III."
+    },
+    "correctOption": "A",
+    "explanation": "Both a Personal Area Network (PAN, I) and a Local Area Network (LAN, III) use private cables or short-range wireless links owned and controlled entirely by the individual user or organisation.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A MAN (IV) typically uses public infrastructure or leased metropolitan telecom lines."
+      },
+      {
+        "key": "C",
+        "reason": "Both WAN (II) and MAN (IV) rely on public telecom carriers and leased infrastructure."
+      },
+      {
+        "key": "D",
+        "reason": "A WAN (II) spans countries/continents using public telecom and satellite providers."
+      }
+    ]
+  },
+  {
+    "questionNumber": 27,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.1.5",
+    "original_slo": "5.1.5",
+    "current_slo": "1.9.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.1",
+        "description": "explain the uses of computer networks, transmission modes (simplex, half-duplex, full-duplex), and network architectures (client/server, peer-to-peer, point-to-point);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "In contrast to client-server network, a peer-to-peer network\nI. focuses on sharing the information\nII. uses centralised server to store data\nIII. is less stable if number of computers increases\nIV. allows each node to request and respond for the services",
+    "options": {
+      "A": "I and II.",
+      "B": "I and III.",
+      "C": "II and IV.",
+      "D": "III and IV."
+    },
+    "correctOption": "D",
+    "explanation": "Unlike a client-server network, a peer-to-peer (P2P) network becomes less stable and harder to manage when the number of computers increases beyond ~10 nodes (III) and allows every node to act as both client and server—requesting and responding to services (IV).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Statement II is false for P2P because P2P does not use a centralised server."
+      },
+      {
+        "key": "B",
+        "reason": "Both client-server and P2P share information (I), whereas III and IV specifically distinguish P2P from client-server."
+      },
+      {
+        "key": "C",
+        "reason": "Statement II belongs to client-server networks, not peer-to-peer networks."
+      }
+    ]
+  },
+  {
+    "questionNumber": 28,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.3.2",
+    "original_slo": "5.3.2",
+    "current_slo": "1.8.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.8.1",
+        "description": "describe the functions of network communication devices and telephone/broadband technologies (Dial-up, ISDN, DSL, CDMA);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A type of communication via telephone network that gives a speed of around 256 Kbps is a/ an",
+    "options": {
+      "A": "dial-up line.",
+      "B": "digital subscriber line.",
+      "C": "code division multiple access.",
+      "D": "integrated services digital network."
+    },
+    "correctOption": "B",
+    "explanation": "Standard entry-level Digital Subscriber Line (DSL) broadband over telephone wires starts around 256 kbps and scales up into several megabits per second (whereas dial-up is capped at 56 kbps and ISDN at 64–128 kbps).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A dial-up line has a maximum speed of 56 kbps."
+      },
+      {
+        "key": "C",
+        "reason": "CDMA is a wireless cellular technology rather than a wired telephone-line subscriber service."
+      },
+      {
+        "key": "D",
+        "reason": "Standard ISDN provides 64 kbps (single channel) to 128 kbps (dual channel)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "pageNumber": 6,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.7.1",
+    "original_slo": "6.7.1",
+    "current_slo": "3.4.1",
+    "cognitiveLevel": "K",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.4.1",
+        "description": "create ordered (<ol>), unordered (<ul>), and definition (<dl>, <dt>, <dd>) lists and tables (<table>, <tr>, <th>, <td>) in HTML;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Two of the tags that are related to tables in HTML are",
+    "options": {
+      "A": "<tr></tr> and <th></th>",
+      "B": "<br></br> and <dt></dt>",
+      "C": "<tr></tr> and <br></br>",
+      "D": "<th></th> and <dt></dt>"
+    },
+    "correctOption": "A",
+    "explanation": "In HTML tables, <tr>...</tr> defines a table row and <th>...</th> defines a table header cell.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "<br> is a line-break tag and <dt> defines a term in a definition list."
+      },
+      {
+        "key": "C",
+        "reason": "<br> is a line-break tag unrelated to HTML tables."
+      },
+      {
+        "key": "D",
+        "reason": "<dt> belongs to a definition list (<dl>), not an HTML table."
+      }
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "pageNumber": 7,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.5.3",
+    "original_slo": "6.5.3",
+    "current_slo": "3.5.1",
+    "cognitiveLevel": "K",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.5.1",
+        "description": "create hyperlinks using anchor tags (<a> with href attribute) and embed images (<img> with src, alt, width, height) in HTML;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "The attribute that specifies the path to an image in a web page is",
+    "options": {
+      "A": "img",
+      "B": "src",
+      "C": "alt",
+      "D": "tr"
+    },
+    "correctOption": "B",
+    "explanation": "Inside the HTML <img> tag, the src (source) attribute specifies the file path or URL of the image to be displayed (e.g., <img src=\"flower.jpg\">).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "<img> is the HTML element tag name itself, not the attribute specifying the path."
+      },
+      {
+        "key": "C",
+        "reason": "The alt attribute provides alternative text displayed if the image fails to load."
+      },
+      {
+        "key": "D",
+        "reason": "<tr> is the table row element tag."
+      }
+    ]
+  },
+  {
+    "questionNumber": 31,
+    "pageNumber": 7,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.5.1",
+    "original_slo": "6.5.1",
+    "current_slo": "3.5.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.5.1",
+        "description": "create hyperlinks using anchor tags (<a> with href attribute) and embed images (<img> with src, alt, width, height) in HTML;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "An image with the following specifications is to be inserted in a web page.\n• The name of the image is flower.jpg\n• The alternative text for image is \"Flower Picture\"\n• The width and height of the image are to be 100 pixels\n• A solid black border having thickness of 3 pixels surrounds the picture\nThe HTML code to insert these specifications in a web page is",
+    "options": {
+      "A": "<img src=\"flower\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
+      "B": "<alt=\"Flower Picture\" img src=\"flower.jpg\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
+      "C": "<img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
+      "D": "<style=\"border:3px solid black\" img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\">"
+    },
+    "correctOption": "C",
+    "explanation": "Option C opens with the <img> tag name and correctly sets src=\"flower.jpg\" (including the .jpg file extension), alt=\"Flower Picture\", width=\"100\", height=\"100\", and style=\"border:3px solid black\".",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Omits the required '.jpg' file extension from src=\"flower\"."
+      },
+      {
+        "key": "B",
+        "reason": "Starts the tag with an attribute (<alt=...) instead of the element name <img>."
+      },
+      {
+        "key": "D",
+        "reason": "Starts the tag with <style=... instead of the element name <img>."
+      }
+    ]
+  },
+  {
+    "questionNumber": 32,
+    "pageNumber": 7,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.3.2",
+    "original_slo": "6.3.2",
+    "current_slo": "3.3.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q32.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.1",
+        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Consider the given image of a web page showing a sentence. The font style of sentence is Courier New.\nThe HTML code to show this sentence is",
+    "options": {
+      "A": "<p This is <b><I>Important</I></b> paragraph</p> style=\"font-family:'Courier New' \">",
+      "B": "<p style=\"font-family:'Courier New' \">This is <b><I>Important</I></b> paragraph.</p>",
+      "C": "<p style=\"font-family:'Courier New' \">This is <b><I>Important<\\b><\\I> paragraph.<\\p>",
+      "D": "<p style:\"font-family='Courier New' \">This is <b><I>Important</I></b> paragraph.</p>"
+    },
+    "correctOption": "B",
+    "explanation": "Option B places the inline CSS style=\"font-family:'Courier New'\" inside the opening <p> tag and properly nests and closes <b><I>Important</I></b> with forward slashes.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Places the visible text inside the opening <p> tag and puts the style attribute after </p>."
+      },
+      {
+        "key": "C",
+        "reason": "Uses invalid backslashes (<\\b>, <\\I>, <\\p>) instead of forward slashes in closing tags."
+      },
+      {
+        "key": "D",
+        "reason": "Uses a colon after style (style:...) and an equals sign after font-family."
+      }
+    ]
+  },
+  {
+    "questionNumber": 33,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.3.1",
+    "original_slo": "6.3.1",
+    "current_slo": "3.2.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q33.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.1",
+        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Given is the image of a webpage showing a sentence (`I   Love   Pakistan.`).\nThe HTML code for displaying the sentence is",
+    "options": {
+      "A": "I<p><p><p>Love<p><p><p>Pakistan.",
+      "B": "I<br><br><br>Love<br><br><br>Pakistan.",
+      "C": "I&href;&href;&href;Love&href;&href;&href;Pakistan.",
+      "D": "I&nbsp;&nbsp;&nbsp;Love&nbsp;&nbsp;&nbsp;Pakistan."
+    },
+    "correctOption": "D",
+    "explanation": "Browsers collapse multiple ordinary spaces into a single space; to insert three consecutive horizontal spaces between words on the same line, the non-breaking space entity &nbsp; is repeated: I&nbsp;&nbsp;&nbsp;Love&nbsp;&nbsp;&nbsp;Pakistan.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The <p> tag starts new paragraphs on separate vertical lines rather than adding horizontal spaces."
+      },
+      {
+        "key": "B",
+        "reason": "The <br> tag inserts vertical line breaks rather than horizontal spaces on the same line."
+      },
+      {
+        "key": "C",
+        "reason": "&href; is not a valid HTML character entity."
+      }
+    ]
+  },
+  {
+    "questionNumber": 34,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.2.2",
+    "original_slo": "6.2.2",
+    "current_slo": "3.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.1",
+        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Which of the following statements is FALSE about HTML?",
+    "options": {
+      "A": "It is a markup language.",
+      "B": "It is used for creating software.",
+      "C": "Its code is usually written in notepad.",
+      "D": "It does not need a compiler for execution."
+    },
+    "correctOption": "B",
+    "explanation": "Statement B is FALSE because HTML (HyperText Markup Language) is a markup language used to structure and display web pages in a browser, not a general-purpose programming language for building standalone software applications.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "HTML stands for HyperText Markup Language; this statement is true."
+      },
+      {
+        "key": "C",
+        "reason": "HTML source code can be written in any plain text editor such as Notepad; this statement is true."
+      },
+      {
+        "key": "D",
+        "reason": "HTML is interpreted directly by a web browser without needing a compiler; this statement is true."
+      }
+    ]
+  },
+  {
+    "questionNumber": 35,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.1.1",
+    "original_slo": "6.1.1",
+    "current_slo": "3.1.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.1.1",
+        "description": "define World Wide Web (WWW), Uniform Resource Locator (URL), search engines, web servers, and types of websites;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Web crawler and database are two basic components of a",
+    "options": {
+      "A": "web server.",
+      "B": "web browser.",
+      "C": "search engine.",
+      "D": "uniform resource locater."
+    },
+    "correctOption": "C",
+    "explanation": "A search engine (such as Google or Bing) consists of three core components: a web crawler (spider) that visits and indexes web pages, a database that stores the index, and a search interface.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A web server hosts website files and responds to HTTP requests."
+      },
+      {
+        "key": "B",
+        "reason": "A web browser is client software (like Chrome or Firefox) that renders web pages on a user's device."
+      },
+      {
+        "key": "D",
+        "reason": "A Uniform Resource Locator (URL) is the web address of a resource on the Internet."
+      }
+    ]
+  },
+  {
+    "questionNumber": 36,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.3.1",
+    "original_slo": "6.3.1",
+    "current_slo": "3.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.1",
+        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Which of the following HTML tags does not need a closing tag?",
+    "options": {
+      "A": "<title>",
+      "B": "<head>",
+      "C": "<br>",
+      "D": "<p>"
+    },
+    "correctOption": "C",
+    "explanation": "The <br> tag is an empty (singular/void) HTML tag that inserts a line break and does not require a closing tag.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "<title> is a paired container tag that requires </title>."
+      },
+      {
+        "key": "B",
+        "reason": "<head> is a paired container tag that requires </head>."
+      },
+      {
+        "key": "D",
+        "reason": "<p> is a paired container tag that uses </p>."
+      }
+    ]
+  },
+  {
+    "questionNumber": 37,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.5.3",
+    "original_slo": "6.5.3",
+    "current_slo": "3.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.1",
+        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "An image can be set as background of a web page by using the",
+    "options": {
+      "A": "background attribute in the body tag.",
+      "B": "body attribute in the background tag.",
+      "C": "href attribute in the background tag.",
+      "D": "body attribute in the href tag."
+    },
+    "correctOption": "A",
+    "explanation": "To set an image as the background of a webpage in HTML, the background attribute is placed inside the opening <body> tag (<body background=\"bg.jpg\">).",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "There is no <background> tag in HTML."
+      },
+      {
+        "key": "C",
+        "reason": "There is no <background> tag in HTML, and href is used for links."
+      },
+      {
+        "key": "D",
+        "reason": "There is no <href> tag in HTML."
+      }
+    ]
+  },
+  {
+    "questionNumber": 38,
+    "pageNumber": 9,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.4.1",
+    "original_slo": "6.4.1",
+    "current_slo": "3.4.1",
+    "cognitiveLevel": "K",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.4.1",
+        "description": "create ordered (<ol>), unordered (<ul>), and definition (<dl>, <dt>, <dd>) lists and tables (<table>, <tr>, <th>, <td>) in HTML;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "The types of tags that are essential to create a definition list are",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "correctOption": "B",
+    "explanation": "Creating a definition list in HTML requires 3 distinct tag types: <dl> (definition list container), <dt> (definition term), and <dd> (definition description).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Ordered (<ol>, <li>) and unordered (<ul>, <li>) lists use 2 tag types, whereas a definition list requires 3 (<dl>, <dt>, <dd>)."
+      },
+      {
+        "key": "C",
+        "reason": "Only 3 tag types (<dl>, <dt>, <dd>) are used to build a definition list."
+      },
+      {
+        "key": "D",
+        "reason": "Only 3 tag types (<dl>, <dt>, <dd>) are required."
+      }
+    ]
+  },
+  {
+    "questionNumber": 39,
+    "pageNumber": 9,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.5.3",
+    "original_slo": "6.5.3",
+    "current_slo": "3.3.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q39.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.1",
+        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Consider the given text (`How are you?`).\nThe HTML code to show this text in white color over the magenta background is",
+    "options": {
+      "A": "<style:\"background-color magenta;\">\n<p style:\"color white\">How are you?</p>",
+      "B": "<style=\"background color<magenta>;\">\n<p style=\"color<white>\">How are you?</p>",
+      "C": "<style=\"background color=magenta;\">\n<p style=\"color=white\">How are you?</p>",
+      "D": "<style=\"background-color:magenta;\">\n<p style=\"color:white\">How are you?</p>"
+    },
+    "correctOption": "D",
+    "explanation": "Option D uses valid CSS property-value syntax with a hyphen in 'background-color:magenta;' and colons separating property names and values ('color:white').",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Uses colons after style (style:...) and omits colons between CSS properties and values."
+      },
+      {
+        "key": "B",
+        "reason": "Uses angle brackets (<magenta>, <white>) instead of colons in CSS declarations."
+      },
+      {
+        "key": "C",
+        "reason": "Uses equals signs (color=white) and omits the hyphen in background-color."
+      }
+    ]
+  },
+  {
+    "questionNumber": 40,
+    "pageNumber": 9,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.5.3",
+    "original_slo": "6.5.3",
+    "current_slo": "3.3.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q40.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.1",
+        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "The bold code line in the given HTML code is INCORRECT.\n`<body style =\"background-color:Burly Wood;\"/body>`\nThe CORRECT code line to show Burly Wood color in the background of a web page is",
+    "options": {
+      "A": "<body style=\"background-color:BurlyWood;\">",
+      "B": "<body style=\"background-color=Burly Wood;\">",
+      "C": "<body style=\"background-color<BurlyWood;>\">",
+      "D": "<body style=\"background-color=BurlyWood;\"/body>"
+    },
+    "correctOption": "A",
+    "explanation": "In HTML/CSS, standard named colours like BurlyWood are written without spaces after a colon (background-color:BurlyWood;) inside a properly closed opening <body ...> tag.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Uses an equals sign instead of a colon after background-color and leaves a space in Burly Wood."
+      },
+      {
+        "key": "C",
+        "reason": "Uses angle brackets (<BurlyWood;>) instead of a colon."
+      },
+      {
+        "key": "D",
+        "reason": "Uses an equals sign and includes an invalid trailing '/body>' inside the opening tag."
+      }
+    ]
+  },
+  {
+    "questionNumber": 41,
+    "pageNumber": 10,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.6.1",
+    "original_slo": "6.6.1",
+    "current_slo": "3.5.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.5.1",
+        "description": "create hyperlinks using anchor tags (<a> with href attribute) and embed images (<img> with src, alt, width, height) in HTML;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "[ATP] Which of the following are used as a hyperlink to link a web page to another web page or another section of the same page when user clicks on it?",
+    "options": {
+      "A": "Text and Video",
+      "B": "Text and Image",
+      "C": "Video and Document",
+      "D": "Image and Document"
+    },
+    "correctOption": "B",
+    "explanation": "In HTML, both text and images (<img> nested inside <a>...</a>) are commonly used as clickable hyperlinks to navigate to another webpage or anchor section.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Standard HTML hyperlinks wrap text or images rather than video streams."
+      },
+      {
+        "key": "C",
+        "reason": "Video and document files may be link targets, not the standard clickable hyperlink elements."
+      },
+      {
+        "key": "D",
+        "reason": "Both text and images—not whole documents—serve as clickable hyperlink elements on a page."
+      }
+    ]
+  },
+  {
+    "questionNumber": 42,
+    "pageNumber": 10,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.5.3",
+    "original_slo": "6.5.3",
+    "current_slo": "3.2.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.1",
+        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "[ATP] Which of the following HTML codes should be used to display white text on a background having black color?",
+    "options": {
+      "A": "<body bgcolor=black text=white>",
+      "B": "<body bgcolor=black fgcolor=white>",
+      "C": "<body backgroundcolor=black text=white>",
+      "D": "<body bgcolor=black foregroundcolor=white>"
+    },
+    "correctOption": "A",
+    "explanation": "Using HTML <body> attributes, bgcolor=black sets the page background colour to black and text=white sets the body text colour to white.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Uses the non-existent HTML attribute 'fgcolor' instead of 'text'."
+      },
+      {
+        "key": "C",
+        "reason": "Uses the non-existent HTML attribute 'backgroundcolor' instead of 'bgcolor'."
+      },
+      {
+        "key": "D",
+        "reason": "Uses the non-existent HTML attribute 'foregroundcolor' instead of 'text'."
+      }
+    ]
+  },
+  {
+    "questionNumber": 43,
+    "pageNumber": 10,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.3.2",
+    "original_slo": "6.3.2",
+    "current_slo": "3.3.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q43.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.1",
+        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "[ATP] Consider the given incomplete code (`th { ... }`). This code is supposed to right align the heading of a table.\nWhich of the following HTML statement lines should go in the empty box to complete the code?",
+    "options": {
+      "A": "text align: right;",
+      "B": "text-align: right;",
+      "C": "right: text-align;",
+      "D": "right text align;"
+    },
+    "correctOption": "B",
+    "explanation": "In CSS, horizontal text alignment inside an element (such as a table header <th>) is specified using the hyphenated property 'text-align: right;'.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Omits the required hyphen in the CSS property name 'text-align'."
+      },
+      {
+        "key": "C",
+        "reason": "Reverses the property name and value."
+      },
+      {
+        "key": "D",
+        "reason": "Omits both the hyphen and the colon separating property and value."
+      }
+    ]
+  },
+  {
+    "questionNumber": 44,
+    "pageNumber": 11,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.5.1",
+    "original_slo": "6.5.1",
+    "current_slo": "3.3.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q44.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.1",
+        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "[ATP] Consider the given image.\nThe HTML code to add a red colored, 7 pixels-thick border around the image is",
+    "options": {
+      "A": "<style>img{border:7px solid red;}</style>",
+      "B": "</style>img{border:7px solid red;}<style>",
+      "C": "<style><img>{border:7px solid red;}</style>",
+      "D": "</style><img>{border:7px solid red;}<style>"
+    },
+    "correctOption": "A",
+    "explanation": "An internal CSS stylesheet uses <style>...</style> tags and targets the img element selector without angle brackets: <style>img{border:7px solid red;}</style>.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Places the closing </style> tag at the beginning and the opening <style> tag at the end."
+      },
+      {
+        "key": "C",
+        "reason": "Wraps the CSS selector in angle brackets (<img>), which is invalid CSS syntax."
+      },
+      {
+        "key": "D",
+        "reason": "Uses both inverted </style>...<style> tags and invalid <img> angle brackets."
+      }
+    ]
+  },
+  {
+    "questionNumber": 45,
+    "pageNumber": 11,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.6.1",
+    "original_slo": "6.6.1",
+    "current_slo": "3.5.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q45.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.5.1",
+        "description": "create hyperlinks using anchor tags (<a> with href attribute) and embed images (<img> with src, alt, width, height) in HTML;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "[ATP] Consider the given image showing a hyperlink added to a webpage (`Click Here for ZOOM`).\nWhen someone clicks on Click Here for Zoom, then the Zoom website with the following address will be opened: https://zoom.us/\nThe CORRECT HTML code for this purpose is",
+    "options": {
+      "A": "<a href=\"https://zoom.us/\">Click Here for ZOOM</a>",
+      "B": "<a>href=\"https://zoom.us/\">Click Here for ZOOM</a>",
+      "C": "<a Click Here for ZOOM>href=\"https://zoom.us/\"</a>",
+      "D": "<a>Click Here for ZOOM>href=\"https://zoom.us/\"</a>"
+    },
+    "correctOption": "A",
+    "explanation": "An HTML hyperlink places the href=\"https://zoom.us/\" attribute inside the opening <a> tag and places the visible link text 'Click Here for ZOOM' between <a> and </a>.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Closes the opening <a> tag before the href attribute."
+      },
+      {
+        "key": "C",
+        "reason": "Places the visible text inside the opening <a> tag and the href attribute as body text."
+      },
+      {
+        "key": "D",
+        "reason": "Places both the visible text and href attribute outside the opening <a> tag."
+      }
+    ]
+  },
+  {
+    "questionNumber": 46,
+    "pageNumber": 12,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.3.2",
+    "original_slo": "6.3.2",
+    "current_slo": "3.3.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q46.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.1",
+        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.46.\nThe following changes need to be made in the heading:\nFont style: Calibri | Font color: Blue | Font size: 35 pixels\nThe replaced HTML code will be",
+    "options": {
+      "A": "<p style=\"font-family:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>",
+      "B": "<p style=\"font:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>",
+      "C": "<p style=\"font-family:Calibri; color:Blue; font-size:35px;\">Content Management System</p>",
+      "D": "<p style=\"font:Calibri; color:Blue; font-size:35px;\">Content Management System</p>"
+    },
+    "correctOption": "C",
+    "explanation": "In inline CSS, the font typeface is set with font-family:Calibri, the text colour is set with color:Blue, and the font size is set with font-size:35px.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Uses the invalid CSS property 'font-color:Blue' instead of 'color:Blue'."
+      },
+      {
+        "key": "B",
+        "reason": "Uses both invalid 'font:Calibri' and 'font-color:Blue'."
+      },
+      {
+        "key": "D",
+        "reason": "Uses 'font:Calibri' instead of 'font-family:Calibri'."
+      }
+    ]
+  },
+  {
+    "questionNumber": 47,
+    "pageNumber": 12,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.3.2",
+    "original_slo": "6.3.2",
+    "current_slo": "3.2.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q46.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.1",
+        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.47.\nThe HTML code to display the text below the heading (`A content management system (CMS) is a` **software application** `that enables` <u>users</u> `to create, edit, collaborate on, publish and store digital` ~~data~~ `content.`) is",
+    "options": {
+      "A": "<p>A content management system (CMS) is a </b>software application</b> that enables </u>users</u> to create, edit, collaborate on, publish and store digital </strike>data</strike> content.</p>",
+      "B": "<p>A content management system (CMS) is a <b>software application</b> that enables <u>users</u> to create, edit, collaborate on, publish and store digital <strike>data</strike> content.</p>",
+      "C": "<p>A content management system (CMS) is a <u>software application</u> that enables <b>users</b> to create, edit, collaborate on, publish and store digital <strike>data</strike> content.</p>",
+      "D": "<p>A content management system (CMS) is a <u>software application</b> that enables <b>users</u> to create, edit, collaborate on, publish and store digital </strike>data<strike> content.</p>"
+    },
+    "correctOption": "B",
+    "explanation": "In the screenshot, 'software application' is bold (<b>...</b>), 'users' is underlined (<u>...</u>), and 'data' has a strikethrough line (<strike>...</strike>), all enclosed in <p>...</p>.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Uses closing tags (</b>, </u>, </strike>) in place of opening tags."
+      },
+      {
+        "key": "C",
+        "reason": "Swaps bold (<b>) and underline (<u>) on 'software application' and 'users'."
+      },
+      {
+        "key": "D",
+        "reason": "Mismatches opening and closing tags (<u>...</b>) and reverses </strike>data<strike>."
+      }
+    ]
+  },
+  {
+    "questionNumber": 48,
+    "pageNumber": 12,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.3.2",
+    "original_slo": "6.3.2",
+    "current_slo": "3.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q46.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.1",
+        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.48.\nThe HTML code to display the heading shown in this image is",
+    "options": {
+      "A": "<h1>Content Management System</h1>",
+      "B": "<h6>Content Management System</h6>",
+      "C": "<b>Content Management System</b>",
+      "D": "<title>Content Management System</title>"
+    },
+    "correctOption": "A",
+    "explanation": "The main top-level largest heading on an HTML page ('Content Management System') is created using the <h1>...</h1> heading element.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "<h6> produces the smallest level-6 subheading rather than a large main page heading."
+      },
+      {
+        "key": "C",
+        "reason": "<b> only bolds inline text at normal paragraph size without creating a block-level main heading."
+      },
+      {
+        "key": "D",
+        "reason": "<title> sets the text on the browser tab ('CMS'), not the heading inside the webpage body."
+      }
+    ]
+  },
+  {
+    "questionNumber": 49,
+    "pageNumber": 13,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.3.1",
+    "original_slo": "6.3.1",
+    "current_slo": "3.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2022-P1/q46.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.1",
+        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.49.\nThe HTML code to show the text on the image of tab (`CMS`) is",
+    "options": {
+      "A": "<h4>CMS</h4>",
+      "B": "<title>CMS</title>",
+      "C": "<html>CMS</html>",
+      "D": "<head>CMS</head>"
+    },
+    "correctOption": "B",
+    "explanation": "The <title>CMS</title> element inside the <head> section specifies the document title that is displayed on the web browser's title bar or tab.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "<h4> displays a level-4 heading inside the webpage body rather than on the browser tab."
+      },
+      {
+        "key": "C",
+        "reason": "<html> is the root container element of the entire document."
+      },
+      {
+        "key": "D",
+        "reason": "<head> is the metadata container element that holds <title>, not the tab title tag itself."
+      }
+    ]
+  },
+  {
+    "questionNumber": 50,
+    "pageNumber": 13,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.4.1",
+    "original_slo": "6.4.1",
+    "current_slo": "3.4.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2022-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.4.1",
+        "description": "create ordered (<ol>), unordered (<ul>), and definition (<dl>, <dt>, <dd>) lists and tables (<table>, <tr>, <th>, <td>) in HTML;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "[ATP] Consider the given image showing the text displayed on a web page:\n**List of Science Subjects**\n• Physics\n• Chemistry\n• Biology\nThe HTML code that would display the list shown in the web page is",
+    "options": {
+      "A": "<li> <ul>Physics</ul> <ul>Chemistry</ul> <ul>Biology</ul> </li>",
+      "B": "<li> <ol>Physics</ol> <ol>Chemistry</ol> <ol>Biology</ol> </li>",
+      "C": "<ul> <li>Physics</li> <li>Chemistry</li> <li>Biology</li> </ul>",
+      "D": "<ol> <li>Physics</li> <li>Chemistry</li> <li>Biology</li> </ol>"
+    },
+    "correctOption": "C",
+    "explanation": "A bulleted (unordered) list in HTML is created by wrapping the individual list items (<li>Physics</li>, <li>Chemistry</li>, <li>Biology</li>) inside an outer <ul>...</ul> container.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrectly places <ul> tags inside a single <li> element."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrectly places <ol> tags inside an <li> element."
+      },
+      {
+        "key": "D",
+        "reason": "<ol> creates a numbered ordered list (1, 2, 3) rather than a bulleted unordered list (•)."
+      }
+    ]
+  }
+]

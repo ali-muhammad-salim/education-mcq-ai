@@ -1,0 +1,2194 @@
+[
+  {
+    "questionNumber": 1,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.1.1",
+    "original_slo": "1.1.1",
+    "current_slo": "1.6.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.6.1",
+        "description": "describe characteristics, significance, and generation of programming languages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Which of the following generation of computers uses modern programming languages like Python and Java?",
+    "options": {
+      "A": "First generation",
+      "B": "Second generation",
+      "C": "Third generation",
+      "D": "Fourth generation"
+    },
+    "correctOption": "D",
+    "explanation": "Fourth-generation computers (1971–present) use VLSI microprocessors and modern high-level / object-oriented and scripting programming languages such as Python, Java, C++, and SQL.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "First-generation computers used vacuum tubes and were programmed in binary machine language (1GL)."
+      },
+      {
+        "key": "B",
+        "reason": "Second-generation computers used transistors and assembly/early procedural languages like FORTRAN and COBOL."
+      },
+      {
+        "key": "C",
+        "reason": "Third-generation computers used integrated circuits (ICs) and structured procedural languages like C, Pascal, and BASIC."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.5",
+    "original_slo": "1.3.5",
+    "current_slo": "1.4.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.4.1",
+        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Examples of volatile memory are",
+    "options": {
+      "A": "CD and RAM.",
+      "B": "RAM and cache.",
+      "C": "hard disk and CD.",
+      "D": "hard disk and cache."
+    },
+    "correctOption": "B",
+    "explanation": "Both Random Access Memory (RAM) and CPU Cache memory are semiconductor volatile memories that lose all stored data immediately when electrical power is switched off.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A Compact Disc (CD) is a non-volatile optical secondary storage medium."
+      },
+      {
+        "key": "C",
+        "reason": "Both a hard disk drive (magnetic) and a CD (optical) are non-volatile secondary storage devices."
+      },
+      {
+        "key": "D",
+        "reason": "A hard disk drive is a non-volatile magnetic storage device that retains data without power."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.1",
+    "original_slo": "1.3.1",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "K",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "describe input and output devices and their uses in daily life;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Which of the following is NOT a pointing device?",
+    "options": {
+      "A": "Mouse",
+      "B": "Light pen",
+      "C": "Joy stick",
+      "D": "Barcode reader"
+    },
+    "correctOption": "D",
+    "explanation": "A barcode reader is an optical scanning input device that reads printed vertical bars (Universal Product Codes) using a laser beam, rather than controlling a screen cursor/pointer.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A mouse is the most common pointing device used to move the on-screen cursor."
+      },
+      {
+        "key": "B",
+        "reason": "A light pen is a light-sensitive pointing device used to select items or draw directly on a screen."
+      },
+      {
+        "key": "C",
+        "reason": "A joystick is a lever-based pointing device used to control cursor/object movement in games and simulations."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.1.3",
+    "original_slo": "1.1.3",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "Consider the following properties.\n• Introduced in 1960s\n• Executes billions of instructions per second\n• Used in the organisations that has hundreds of users\nThe type of digital computer that has the given properties is",
+    "options": {
+      "A": "minicomputer.",
+      "B": "supercomputer.",
+      "C": "microcomputer.",
+      "D": "mainframe computer."
+    },
+    "correctOption": "A",
+    "explanation": "Minicomputers (mid-range servers) were introduced in the mid-1960s (such as the DEC PDP series) to serve medium-sized organisations with dozens to hundreds of concurrent terminal users.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Supercomputers are built for scientific/weather simulations executing trillions of FLOPS rather than mid-sized organisational multi-user administration."
+      },
+      {
+        "key": "C",
+        "reason": "Microcomputers (personal computers) were introduced in the 1970s for single individual users."
+      },
+      {
+        "key": "D",
+        "reason": "Mainframe computers were introduced in the 1950s (e.g., UNIVAC/IBM 700 series) to serve thousands of enterprise users."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.7",
+    "original_slo": "1.3.7",
+    "current_slo": "1.4.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.4.1",
+        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Consider the following properties.\n• Faster than other levels of cache memory.\n• Present inside the microprocessor.\nWhich of the following level(s) of cache memory BEST describe(s) the given properties?\nI. Level 1\nII. Level 2\nIII. Level 3",
+    "options": {
+      "A": "I only",
+      "B": "III only",
+      "C": "I and II",
+      "D": "II and III"
+    },
+    "correctOption": "A",
+    "explanation": "Level 1 (L1) cache (I only) is built directly into the microprocessor core and operates at the CPU's clock speed, making it the fastest of all cache memory levels.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Level 3 (L3) cache is the largest and slowest of the three cache levels."
+      },
+      {
+        "key": "C",
+        "reason": "Level 2 (L2) cache is slower than Level 1 (L1) cache, so only I satisfies 'faster than other levels of cache memory'."
+      },
+      {
+        "key": "D",
+        "reason": "Both Level 2 and Level 3 cache are slower than Level 1 cache."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.5.2",
+    "original_slo": "1.5.2",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "McAfee, Norton, Avira are softwares used to detect and remove errors.\nThe given softwares are examples of",
+    "options": {
+      "A": "device drivers.",
+      "B": "utility programs.",
+      "C": "operating system.",
+      "D": "language processors."
+    },
+    "correctOption": "B",
+    "explanation": "Antivirus suites such as McAfee, Norton, and Avira are system utility programs designed to protect, maintain, and scan a computer system for malicious software and errors.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Device drivers are system programs that allow the OS to communicate with specific hardware peripherals."
+      },
+      {
+        "key": "C",
+        "reason": "An operating system (like Windows or Linux) manages overall computer hardware and software resources."
+      },
+      {
+        "key": "D",
+        "reason": "Language processors (compilers, interpreters, assemblers) translate programming source code into machine code."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.1",
+    "original_slo": "1.3.1",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "describe input and output devices and their uses in daily life;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Fatima has started an online business and she wants to start a social media marketing campaign for her business.\nTHREE of the essential devices that she should use for this purpose are",
+    "options": {
+      "A": "mouse, keyboard and printer.",
+      "B": "speakers, camera and printer.",
+      "C": "mouse, keyboard and camera.",
+      "D": "mouse, keyboard and speakers."
+    },
+    "correctOption": "C",
+    "explanation": "Running an online social media marketing campaign requires capturing product photos/promotional videos (camera) and designing, typing, and uploading posts online (mouse and keyboard).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A printer outputs physical paper hardcopies, which are not needed for an online social media campaign."
+      },
+      {
+        "key": "B",
+        "reason": "A printer is for physical paper output, and without a keyboard/mouse she cannot compose or manage online posts."
+      },
+      {
+        "key": "D",
+        "reason": "Without a camera, she cannot capture original product photos or marketing videos for social media."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.1",
+    "original_slo": "1.3.1",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "describe input and output devices and their uses in daily life;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Two essential devices to record a video lecture are",
+    "options": {
+      "A": "monitor and microphone.",
+      "B": "camera and microphone.",
+      "C": "monitor and speaker.",
+      "D": "camera and monitor."
+    },
+    "correctOption": "B",
+    "explanation": "Recording a video lecture requires capturing both moving visuals (via a video camera/webcam) and the instructor's spoken voice (via a microphone).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A monitor is an output display device and cannot capture video images of the lecturer."
+      },
+      {
+        "key": "C",
+        "reason": "Both a monitor and a speaker are output devices and cannot record video or audio input."
+      },
+      {
+        "key": "D",
+        "reason": "Without a microphone, no spoken audio explanation can be recorded for the lecture."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.1",
+    "original_slo": "1.3.1",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "describe input and output devices and their uses in daily life;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Areej has the syllabi in hardcopy which she has to send to her friend via email. To do this, Areej needs to convert the hardcopy of the syllabi into softcopy.\nThe device Areej will use for this purpose will be",
+    "options": {
+      "A": "plotter.",
+      "B": "scanner.",
+      "C": "optical mark reader.",
+      "D": "magnetic ink character reader."
+    },
+    "correctOption": "B",
+    "explanation": "An optical flatbed scanner captures a printed paper document (hardcopy) and converts it into a digital image or PDF file (softcopy) that can be attached to an email.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A plotter is a large-format output device used to print vector architectural drawings and banners."
+      },
+      {
+        "key": "C",
+        "reason": "An Optical Mark Reader (OMR) only detects shaded pencil bubbles on multiple-choice answer sheets."
+      },
+      {
+        "key": "D",
+        "reason": "A Magnetic Ink Character Reader (MICR) reads magnetic ink routing numbers at the bottom of bank cheques."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.3.2",
+    "original_slo": "1.3.2",
+    "current_slo": "1.2.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.2",
+        "description": "describe types of sensors and their applications;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "The sensor that is MOST LIKELY to be used in nuclear plants is",
+    "options": {
+      "A": "pH sensor.",
+      "B": "gas sensor.",
+      "C": "moisture sensor.",
+      "D": "infra-red sensor."
+    },
+    "correctOption": "B",
+    "explanation": "Nuclear power plants use specialised gas and radiation sensors to detect hazardous radioactive or combustible gas leaks inside containment and cooling systems.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A pH sensor measures acidity or alkalinity in chemical solutions and water treatment."
+      },
+      {
+        "key": "C",
+        "reason": "A moisture sensor measures soil or atmospheric humidity in agriculture and weather stations."
+      },
+      {
+        "key": "D",
+        "reason": "An infrared sensor is typically used in remote controls, motion detectors, and proximity sensing."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.2.2",
+    "original_slo": "1.2.2",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "Consider the given responsibilities.\nI. Write programs to solve problems\nII. Analyse the data processing requirements\nIII. Investigate the problem and plan the solution\nThe given responsibility(ies) is/ are of a system analyst EXCEPT",
+    "options": {
+      "A": "I only.",
+      "B": "III only.",
+      "C": "I and II.",
+      "D": "II and III."
+    },
+    "correctOption": "",
+    "explanation": "The official answer key prints * for this question. No single answer is scored.",
+    "option_feedback": [],
+    "answer_review_note": "The board key prints *; this question needs educator review before automatic grading."
+  },
+  {
+    "questionNumber": 12,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "2.1.2",
+    "original_slo": "2.1.2",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "All of the following operations are included in file management EXCEPT",
+    "options": {
+      "A": "creating files.",
+      "B": "opening files.",
+      "C": "searching files.",
+      "D": "translating files."
+    },
+    "correctOption": "D",
+    "explanation": "Translating source code files into machine code is performed by language processors (compilers, interpreters, and assemblers), not by the OS file management system.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Creating new files and directories is a standard OS file management operation."
+      },
+      {
+        "key": "B",
+        "reason": "Opening and reading stored files is a standard OS file management operation."
+      },
+      {
+        "key": "C",
+        "reason": "Searching and locating files across directories is a core OS file management feature."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "2.1.2",
+    "original_slo": "2.1.2",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "In terms of user management, which of the following is TRUE about an operating system (OS)?",
+    "options": {
+      "A": "It allows a user to install programs.",
+      "B": "It allows a user to create new users.",
+      "C": "It allows a user to run pre-installed programs.",
+      "D": "It allows a user to login without username and password."
+    },
+    "correctOption": "B",
+    "explanation": "The user management subsystem of an operating system enables an administrator to create and manage new user accounts, assign passwords, and configure access privileges.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Installing programs falls under application/software management rather than user account management."
+      },
+      {
+        "key": "C",
+        "reason": "Running programs falls under process execution/management rather than user management."
+      },
+      {
+        "key": "D",
+        "reason": "User management enforces security by requiring valid username and password authentication at login."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "2.2.1",
+    "original_slo": "2.2.1",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "K",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "How many classification(s) of operating system are there?",
+    "options": {
+      "A": "One",
+      "B": "Two",
+      "C": "Three",
+      "D": "Four"
+    },
+    "correctOption": "B",
+    "explanation": "Based on the number of concurrent users supported, operating systems are classified into two main categories: Single-user operating systems and Multi-user operating systems (or by tasking/processing mode).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Operating systems cannot be grouped into just a single undivided classification."
+      },
+      {
+        "key": "C",
+        "reason": "Types of user interfaces (CLI, MDI, GUI) are three, whereas user-based OS classification is two (Single-user and Multi-user)."
+      },
+      {
+        "key": "D",
+        "reason": "There are two primary user-based classifications of operating systems in the syllabus."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "2.1.3",
+    "original_slo": "2.1.3",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "All of the following are graphical user interface (GUI) EXCEPT",
+    "options": {
+      "A": "Unix.",
+      "B": "Linux.",
+      "C": "Windows.",
+      "D": "Macintosh."
+    },
+    "correctOption": "A",
+    "explanation": "In the AKU-EB curriculum (SLO 2.1.3), traditional UNIX (alongside MS-DOS) is classified as the canonical example of a Command Line Interface (CLI) operating system, whereas Linux, Windows, and Macintosh provide Graphical User Interfaces (GUI).",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Modern Linux distributions (such as Ubuntu and Fedora) are listed in the syllabus as GUI operating systems."
+      },
+      {
+        "key": "C",
+        "reason": "Microsoft Windows is the most widely used Graphical User Interface (GUI) operating system."
+      },
+      {
+        "key": "D",
+        "reason": "Apple Macintosh (macOS) pioneered and uses a Graphical User Interface (GUI)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "2.2.2",
+    "original_slo": "2.2.2",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A type of an operating system that is used in oil refinery for indicating that temperature is getting too high is",
+    "options": {
+      "A": "real time system.",
+      "B": "multi-user system.",
+      "C": "time sharing system.",
+      "D": "batch processing system."
+    },
+    "correctOption": "A",
+    "explanation": "An oil refinery temperature monitoring and safety alarm system requires immediate, deterministic response within strict time deadlines, which is provided by a Real-Time Operating System (RTOS).",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "A multi-user system focuses on allowing multiple users to share a central computer rather than guaranteed millisecond hazard response."
+      },
+      {
+        "key": "C",
+        "reason": "A time-sharing system slices CPU time among interactive users and can experience scheduling delays."
+      },
+      {
+        "key": "D",
+        "reason": "A batch processing system queues jobs for later offline execution and cannot respond instantly to live emergencies."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "3.1.1",
+    "original_slo": "3.1.1",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "Which of the following are the features of a word processor?\nI. Spell check of words\nII. Inserting pictures and tables\nIII. Changing the page orientation\nIV. Data filtering and visualisation",
+    "options": {
+      "A": "I and IV",
+      "B": "II and IV",
+      "C": "I, II and III",
+      "D": "II, III and IV"
+    },
+    "correctOption": "C",
+    "explanation": "A word processor (such as MS Word) provides spell checking (I), inserting pictures and tables (II), and changing page orientation between Portrait and Landscape (III), whereas data filtering and chart visualisation (IV) are primary features of spreadsheet/data analysis software (such as MS Excel).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Statement IV (data filtering and visualisation) is a spreadsheet feature, not a core word processor feature."
+      },
+      {
+        "key": "B",
+        "reason": "Includes IV (spreadsheet data filtering) and omits I and III."
+      },
+      {
+        "key": "D",
+        "reason": "Includes IV (spreadsheet data filtering) and omits I (spell check)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "3.1.3",
+    "original_slo": "3.1.3",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "The shortcut key used to move the cursor at the top of the document is",
+    "options": {
+      "A": "Home.",
+      "B": "Page up.",
+      "C": "Ctrl+Home.",
+      "D": "Ctrl+Page up."
+    },
+    "correctOption": "C",
+    "explanation": "In Microsoft Word, pressing Ctrl + Home moves the insertion point (cursor) directly to the very beginning (top) of the entire document.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Pressing Home alone moves the cursor only to the beginning of the current line."
+      },
+      {
+        "key": "B",
+        "reason": "Pressing Page Up scrolls the view up by one screenful rather than jumping to the top of the document."
+      },
+      {
+        "key": "D",
+        "reason": "Pressing Ctrl + Page Up moves the cursor to the top of the previous page."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "3.1.7",
+    "original_slo": "3.1.7",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "The MOST suitable page orientation for making a certificate is",
+    "options": {
+      "A": "legal.",
+      "B": "letter.",
+      "C": "portrait.",
+      "D": "landscape."
+    },
+    "correctOption": "D",
+    "explanation": "Certificates are traditionally printed wider than they are tall, which uses the Landscape (horizontal) page orientation.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Legal is a paper size (8.5 × 14 inches), not a page orientation."
+      },
+      {
+        "key": "B",
+        "reason": "Letter is a paper size (8.5 × 11 inches), not a page orientation."
+      },
+      {
+        "key": "C",
+        "reason": "Portrait is a vertical orientation (taller than wide) used for letters and reports rather than wide certificates."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "3.1.3",
+    "original_slo": "3.1.3",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "Which of the following tabs contain the options for setting the line spacing of a document?",
+    "options": {
+      "A": "Home",
+      "B": "Insert",
+      "C": "Design",
+      "D": "Layout"
+    },
+    "correctOption": "D",
+    "explanation": "In Microsoft Word, paragraph spacing (Before/After) and line spacing options are available in the Paragraph group on the Layout (Page Layout) tab (as well as the Home tab; the 2023 AKU-EB official key credits D: Layout).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "While line spacing also appears on the Home tab ribbon, the official AKU-EB 2023 key under SLO 3.1.3/3.1.7 (Page Layout) specifies D (Layout)."
+      },
+      {
+        "key": "B",
+        "reason": "The Insert tab is used to add tables, pictures, headers, and footers."
+      },
+      {
+        "key": "C",
+        "reason": "The Design tab is used for document themes, watermarks, and page borders."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.4.2",
+    "original_slo": "4.4.2",
+    "current_slo": "1.7.3",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.7.3",
+        "description": "describe transmission impairments (attenuation, distortion, and noise/crosstalk) and communication performance metrics (bandwidth, data rate, baud rate, and SNR);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "If the bit rate of the signal is 2000 bps and each signal unit carries 2 bits, then the baud rate of the signal will be",
+    "options": {
+      "A": "1000",
+      "B": "2000",
+      "C": "4000",
+      "D": "8000"
+    },
+    "correctOption": "A",
+    "explanation": "Baud Rate = Bit Rate / Bits per signal unit = 2000 bps / 2 bits per baud = 1000 baud.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "2000 is the bit rate (bps), which equals the baud rate only when 1 signal unit carries 1 bit."
+      },
+      {
+        "key": "C",
+        "reason": "4000 incorrectly multiplies 2000 × 2 instead of dividing bit rate by bits per symbol."
+      },
+      {
+        "key": "D",
+        "reason": "8000 is 4 times the bit rate and mathematically incorrect."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.4.3",
+    "original_slo": "4.4.3",
+    "current_slo": "1.4.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.4.1",
+        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "1 MiB (Mebibyte) is equal to",
+    "options": {
+      "A": "1000 bytes.",
+      "B": "1024 bytes.",
+      "C": "1000000 bytes.",
+      "D": "1048576 bytes."
+    },
+    "correctOption": "D",
+    "explanation": "1 Mebibyte (1 MiB) = 2^20 bytes = 1024 KiB = 1024 × 1024 bytes = 1,048,576 bytes.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "1000 bytes equals 1 kilobyte (1 kB) in decimal SI units."
+      },
+      {
+        "key": "B",
+        "reason": "1024 bytes equals 1 Kibibyte (1 KiB = 2^10 bytes), not 1 MiB."
+      },
+      {
+        "key": "C",
+        "reason": "1,000,000 bytes equals 1 decimal Megabyte (10^6 bytes), whereas 1 binary Mebibyte is 1024 × 1024 = 1,048,576 bytes."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.1.4",
+    "original_slo": "4.1.4",
+    "current_slo": "1.7.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.7.1",
+        "description": "explain the components of data communication (sender, receiver, message, transmission medium, and protocol) and modes of data transmission;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "If two devices are connected but they are not able to communicate with each other, then the missing component of communication system is the",
+    "options": {
+      "A": "sender.",
+      "B": "receiver.",
+      "C": "protocol.",
+      "D": "transmission medium."
+    },
+    "correctOption": "C",
+    "explanation": "Even when two devices (sender and receiver) are physically connected over a transmission medium, they cannot understand or exchange data with each other without a common communication protocol (set of rules).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Both connected devices are already present to act as sender and receiver."
+      },
+      {
+        "key": "B",
+        "reason": "The receiving device is already connected."
+      },
+      {
+        "key": "D",
+        "reason": "Because the two devices are already connected, the transmission medium is present."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.2.1",
+    "original_slo": "4.2.1",
+    "current_slo": "1.9.3",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.3",
+        "description": "explain guided (twisted pair, coaxial, fiber optic) and unguided (radio waves, microwaves, infrared, satellite) transmission media;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "An artificial satellite is precisely positioned in the space with an orbit speed that",
+    "options": {
+      "A": "is more than the rotational speed of the Earth.",
+      "B": "is more than the rotational speed of the Moon.",
+      "C": "matches with the rotational speed of the Earth.",
+      "D": "matches with the rotational speed of the Moon."
+    },
+    "correctOption": "C",
+    "explanation": "A geostationary communication satellite orbits above the equator at an angular speed that exactly matches the rotational speed of the Earth (24-hour period), so it appears stationary relative to ground antennas.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "If its orbital angular speed exceeded Earth's rotation, the satellite would drift ahead of fixed ground dishes."
+      },
+      {
+        "key": "B",
+        "reason": "Communication satellites are synchronised with the Earth's rotation, not the Moon's."
+      },
+      {
+        "key": "D",
+        "reason": "Matching the Moon's ~27.3-day period would not keep the satellite fixed over a point on Earth."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.2.2",
+    "original_slo": "4.2.2",
+    "current_slo": "1.7.3",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.7.3",
+        "description": "describe transmission impairments (attenuation, distortion, and noise/crosstalk) and communication performance metrics (bandwidth, data rate, baud rate, and SNR);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "If the strength of a signal falls off when the distance increases, then the type of transmission impairment will be",
+    "options": {
+      "A": "cross talk.",
+      "B": "distortion.",
+      "C": "attenuation.",
+      "D": "amplification."
+    },
+    "correctOption": "C",
+    "explanation": "Attenuation is the gradual loss or weakening of signal strength (amplitude) as it travels over increasing distances through a transmission medium due to resistance and dispersion.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Crosstalk is electromagnetic interference coupling from one adjacent wire into another."
+      },
+      {
+        "key": "B",
+        "reason": "Distortion is the alteration of a composite signal's waveform shape when different frequencies travel at different speeds."
+      },
+      {
+        "key": "D",
+        "reason": "Amplification is the boosting of signal strength using an amplifier or repeater, not an impairment."
+      }
+    ]
+  },
+  {
+    "questionNumber": 26,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.3.1",
+    "original_slo": "4.3.1",
+    "current_slo": "1.8.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.8.1",
+        "description": "describe the functions of network communication devices (Modem, NIC, Switch, Router, Gateway, Access Point);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Which of the following communication devices is the BEST alternative of a hub?",
+    "options": {
+      "A": "Router",
+      "B": "Switch",
+      "C": "Dial-up Modem",
+      "D": "Network Interface Card"
+    },
+    "correctOption": "B",
+    "explanation": "A network switch is an intelligent multi-port LAN device that replaces a passive hub by inspecting MAC addresses and forwarding frames only to the intended destination port instead of broadcasting to all ports.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A router connects different IP networks (e.g., LAN to WAN) rather than serving as a direct multi-port LAN hub replacement."
+      },
+      {
+        "key": "C",
+        "reason": "A dial-up modem converts digital data to analog audio over telephone lines."
+      },
+      {
+        "key": "D",
+        "reason": "A Network Interface Card (NIC) is an adapter inside a single computer rather than a central multi-port LAN concentrator."
+      }
+    ]
+  },
+  {
+    "questionNumber": 27,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.1.6",
+    "original_slo": "4.1.6",
+    "current_slo": "1.7.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.7.2",
+        "description": "differentiate between asynchronous and synchronous data transmission modes;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "The type of transmission in which start/ stop bits are used is",
+    "options": {
+      "A": "satellite transmission.",
+      "B": "microwave transmission.",
+      "C": "synchronous transmission.",
+      "D": "asynchronous transmission."
+    },
+    "correctOption": "D",
+    "explanation": "Asynchronous transmission sends data character by character (byte by byte) framed by a leading Start bit ('0') and a trailing Stop bit ('1') to synchronise the receiver for each byte.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Satellite transmission refers to an unguided wireless medium, not character-framing synchronisation."
+      },
+      {
+        "key": "B",
+        "reason": "Microwave transmission refers to an unguided line-of-sight wireless medium."
+      },
+      {
+        "key": "C",
+        "reason": "Synchronous transmission sends continuous blocks/frames of data synchronised by a shared clock timing signal without per-byte start/stop bits."
+      }
+    ]
+  },
+  {
+    "questionNumber": 28,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.1.4",
+    "original_slo": "5.1.4",
+    "current_slo": "1.9.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.1",
+        "description": "explain the uses of computer networks, transmission modes (simplex, half-duplex, full-duplex), and network architectures (client/server, peer-to-peer, point-to-point);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Radio broadcasting and transmission of data from a computer to a printer are examples of",
+    "options": {
+      "A": "simplex transmission.",
+      "B": "full-duplex transmission.",
+      "C": "half-duplex and simplex transmission respectively.",
+      "D": "half-duplex and full-duplex transmission respectively."
+    },
+    "correctOption": "A",
+    "explanation": "Both radio broadcasting (station to listener) and standard computer-to-printer data transmission are unidirectional (one-way only) communication channels, which are examples of simplex transmission.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Full-duplex transmission sends data simultaneously in both directions (like a telephone call)."
+      },
+      {
+        "key": "C",
+        "reason": "Radio broadcasting is one-way simplex, not two-way half-duplex."
+      },
+      {
+        "key": "D",
+        "reason": "Neither radio broadcasting nor computer-to-printer data flow is half-duplex or full-duplex."
+      }
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.1.5",
+    "original_slo": "5.1.5",
+    "current_slo": "1.9.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.1",
+        "description": "explain the uses of computer networks, transmission modes (simplex, half-duplex, full-duplex), and network architectures (client/server, peer-to-peer, point-to-point);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Which of the following statements is FALSE about client/ server networks?",
+    "options": {
+      "A": "It does not provide centralised security.",
+      "B": "It can be expanded up to thousands of computers.",
+      "C": "It is generally used for long distance communication.",
+      "D": "These networks are considered as wide area networks."
+    },
+    "correctOption": "A",
+    "explanation": "Statement A is FALSE because a primary advantage of a client/server network is that dedicated central servers enforce strong centralised security, user authentication, and access control.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Client/server networks are highly scalable and can expand to support thousands of clients."
+      },
+      {
+        "key": "C",
+        "reason": "Client/server architectures (such as web and email servers) are widely used across long-distance networks."
+      },
+      {
+        "key": "D",
+        "reason": "Large-scale client/server networks spanning cities and countries operate as WANs."
+      }
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "pageNumber": 7,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.1.2",
+    "original_slo": "5.1.2",
+    "current_slo": "1.9.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.1",
+        "description": "explain the uses of computer networks, transmission modes (simplex, half-duplex, full-duplex), and network architectures (client/server, peer-to-peer, point-to-point);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A student wrote the following four statements about computer networks in an exam.\nI. It allows internet sharing.\nII. It allows software sharing.\nIII. It allows file management.\nIV. It allows memory management.\nWhich of these statements are TRUE?",
+    "options": {
+      "A": "I and II",
+      "B": "I and III",
+      "C": "II and IV",
+      "D": "III and IV"
+    },
+    "correctOption": "A",
+    "explanation": "Computer networks allow multiple connected users to share a single internet connection (I) and share networked software applications/licences from a server (II), whereas file management (III) and memory management (IV) are functions of an Operating System.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Statement III (file management) is an operating system function rather than a computer network function."
+      },
+      {
+        "key": "C",
+        "reason": "Statement IV (memory management) is an operating system kernel function."
+      },
+      {
+        "key": "D",
+        "reason": "Both III and IV are operating system functions rather than computer network uses."
+      }
+    ]
+  },
+  {
+    "questionNumber": 31,
+    "pageNumber": 7,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.1",
+    "original_slo": "5.2.1",
+    "current_slo": "1.9.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.2",
+        "description": "differentiate among types of networks: PAN, LAN, MAN, WAN, VPN, and Bluetooth networks;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "If a telephone company is providing high speed Digital Subscriber Line (DSL) to the customers in a city, then the type of network it must be using is",
+    "options": {
+      "A": "local area network (LAN).",
+      "B": "wide area network (WAN).",
+      "C": "personal area network (PAN).",
+      "D": "metropolitan area network (MAN)."
+    },
+    "correctOption": "D",
+    "explanation": "A network operated by a telephone or cable company covering an entire city to provide DSL broadband to urban subscribers is a Metropolitan Area Network (MAN).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A LAN is restricted to a single room, office floor, or building."
+      },
+      {
+        "key": "B",
+        "reason": "A WAN spans multiple countries or continents rather than a single city."
+      },
+      {
+        "key": "C",
+        "reason": "A PAN covers only a few metres around a single person's devices."
+      }
+    ]
+  },
+  {
+    "questionNumber": 32,
+    "pageNumber": 7,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.3",
+    "original_slo": "5.2.3",
+    "current_slo": "1.9.4",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.4",
+        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Consider the given properties.\n• Every node is connected with other nodes.\n• It is the most reliable network topology.\n• It is the most expensive topology.\nBased on the given properties, the network topology is identified as",
+    "options": {
+      "A": "bus topology.",
+      "B": "star topology.",
+      "C": "ring topology.",
+      "D": "mesh topology."
+    },
+    "correctOption": "D",
+    "explanation": "In a full mesh topology, every node has a dedicated point-to-point cable link to every other node, making it the most fault-tolerant (reliable) and also the most expensive topology due to n(n - 1)/2 cables.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Bus topology uses a single shared backbone cable and is the least expensive, least fault-tolerant topology."
+      },
+      {
+        "key": "B",
+        "reason": "Star topology connects nodes only to a central switch/hub, and fails if the central device fails."
+      },
+      {
+        "key": "C",
+        "reason": "Ring topology connects each node only to its two immediate neighbours in a loop."
+      }
+    ]
+  },
+  {
+    "questionNumber": 33,
+    "pageNumber": 7,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.3.1",
+    "original_slo": "5.3.1",
+    "current_slo": "1.8.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.8.1",
+        "description": "describe the functions of network communication devices (Modem, NIC, Switch, Router, Gateway, Access Point);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "ISDN provides a maximum speed of 128 kbps which is\n| Option | More than | Less than |\n| :--- | :--- | :--- |\n| A | DSL | Dial-up |\n| B | DSL | CDMA |\n| C | CDMA | Dial-up |\n| D | Dial-up | CDMA |",
+    "options": {
+      "A": "More than: DSL | Less than: Dial-up",
+      "B": "More than: DSL | Less than: CDMA",
+      "C": "More than: CDMA | Less than: Dial-up",
+      "D": "More than: Dial-up | Less than: CDMA"
+    },
+    "correctOption": "D",
+    "explanation": "ISDN's speed of 128 kbps is faster (more) than Dial-up (maximum 56 kbps) and slower (less) than CDMA/DSL broadband (several Mbps).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "ISDN (128 kbps) is slower than DSL (several Mbps) and faster than Dial-up (56 kbps), not the reverse."
+      },
+      {
+        "key": "B",
+        "reason": "ISDN (128 kbps) is slower than DSL broadband."
+      },
+      {
+        "key": "C",
+        "reason": "ISDN (128 kbps) is slower than CDMA cellular broadband and faster than Dial-up."
+      }
+    ]
+  },
+  {
+    "questionNumber": 34,
+    "pageNumber": 8,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.3.1",
+    "original_slo": "5.3.1",
+    "current_slo": "1.8.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.8.1",
+        "description": "describe the functions of network communication devices (Modem, NIC, Switch, Router, Gateway, Access Point);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Consider the given characteristics of a telephone network.\n• It is a wireless cellular communication technology.\n• Transmission speed is up-to several Mbps.\n• It provides improved voice quality.\nBased on the given characteristics, the technology is identified as",
+    "options": {
+      "A": "dial-up.",
+      "B": "digital subscriber line (DSL).",
+      "C": "code-division multiple access (CDMA).",
+      "D": "integrated service digital network (ISDN)."
+    },
+    "correctOption": "C",
+    "explanation": "Code-Division Multiple Access (CDMA) is a wireless cellular communication technology that transmits voice and data up to several Mbps with high voice clarity.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Dial-up is a wired analog telephone line technology limited to 56 kbps."
+      },
+      {
+        "key": "B",
+        "reason": "DSL is a wired broadband technology running over copper telephone lines."
+      },
+      {
+        "key": "D",
+        "reason": "ISDN is a wired digital telephone line technology operating at 64–128 kbps."
+      }
+    ]
+  },
+  {
+    "questionNumber": 35,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.1.1",
+    "original_slo": "6.1.1",
+    "current_slo": "3.1.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.1.1",
+        "description": "define World Wide Web (WWW), Uniform Resource Locator (URL), top-level domains, and types of websites;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "In a Uniform Resource Locator (URL), .co and .gov are examples of",
+    "options": {
+      "A": "file path.",
+      "B": "domain name.",
+      "C": "resource name.",
+      "D": "top level domain."
+    },
+    "correctOption": "D",
+    "explanation": "Suffixes at the end of a domain name in a URL such as .com, .co, .org, .edu, and .gov are Top-Level Domains (TLDs) that identify the category or country of the website.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The file path specifies the folder and file location on the server after the slash (e.g., /index.html)."
+      },
+      {
+        "key": "B",
+        "reason": "The full domain name includes the second-level name plus the TLD (e.g., google.com)."
+      },
+      {
+        "key": "C",
+        "reason": "The resource name is the specific page or file being requested from the server."
+      }
+    ]
+  },
+  {
+    "questionNumber": 36,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.1.2",
+    "original_slo": "6.1.2",
+    "current_slo": "3.1.1",
+    "cognitiveLevel": "K",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.1.1",
+        "description": "define World Wide Web (WWW), Uniform Resource Locator (URL), top-level domains, and types of websites;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "The type of website that provides the information about current events and opinions is",
+    "options": {
+      "A": "web portal.",
+      "B": "news website.",
+      "C": "educational website.",
+      "D": "informational website."
+    },
+    "correctOption": "B",
+    "explanation": "A news website (such as Dawn, BBC News, or Geo News) is specifically dedicated to publishing current events, breaking news stories, journalism, and editorial opinions.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A web portal aggregates diverse services (email, search, weather, forums) as a single gateway page."
+      },
+      {
+        "key": "C",
+        "reason": "An educational website provides structured courses, tutorials, and academic learning materials."
+      },
+      {
+        "key": "D",
+        "reason": "An informational website (like an encyclopedia or census reference site) provides general factual reference data rather than daily current events and opinions."
+      }
+    ]
+  },
+  {
+    "questionNumber": 37,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.3.2",
+    "original_slo": "6.3.2",
+    "current_slo": "3.2.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.1",
+        "description": "use basic HTML tags (html, head, title, body, p, br, hr, sup, sub, headings) and character entities (&nbsp;) to structure a webpage;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "The HTML code to show X₂ + Y² on a webpage is",
+    "options": {
+      "A": "X<sup>2</sup> + Y<sub>2</sub>",
+      "B": "X<sub>2</sub> + Y<sup>2</sup>",
+      "C": "<sub>X</sub>2 + <sup>Y</sup>2",
+      "D": "<sup>X</sup>2 + <sub>Y</sub>2"
+    },
+    "correctOption": "B",
+    "explanation": "In HTML, <sub>2</sub> renders the '2' as a subscript below the baseline (X₂) and <sup>2</sup> renders the '2' as a superscript above the baseline (Y²), giving X<sub>2</sub> + Y<sup>2</sup>.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Uses <sup>2</sup> on X and <sub>2</sub> on Y, which renders X² + Y₂ instead of X₂ + Y²."
+      },
+      {
+        "key": "C",
+        "reason": "Wraps the letters X and Y inside the subscript/superscript tags instead of the number 2."
+      },
+      {
+        "key": "D",
+        "reason": "Wraps the letters X and Y inside the superscript/subscript tags instead of the number 2."
+      }
+    ]
+  },
+  {
+    "questionNumber": 38,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.6.1",
+    "original_slo": "6.6.1",
+    "current_slo": "3.5.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.5.1",
+        "description": "create hyperlinks using anchor tags (<a> with href attribute) and embed images (<img>) in HTML;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Following line is written in a webpage.\nVisit BBC News Urdu for latest news in Urdu.\nWhen someone clicks hyperlink BBC News Urdu, then https://www.bbc.com/urdu is opened. The HTML code for this line is",
+    "options": {
+      "A": "<p>Visit<\"BBC News Urdu\">a href=https://www.bbc.com/urdu</a>for latest news in Urdu.</p>",
+      "B": "<p>Visit <\"https://www.bbc.com/urdu\"> a href=BBC News Urdu</a> for latest news in Urdu.</p>",
+      "C": "<p>Visit <a href = \"BBC News Urdu\"> https://www.bbc.com/urdu </a> for latest news in Urdu.</p>",
+      "D": "<p>Visit <a href = \"https://www.bbc.com/urdu\">BBC News Urdu</a> for latest news in Urdu.</p>"
+    },
+    "correctOption": "D",
+    "explanation": "In HTML, the anchor tag <a href=\"https://www.bbc.com/urdu\">BBC News Urdu</a> sets the destination URL in the href attribute and places the clickable text 'BBC News Urdu' between the opening <a> and closing </a> tags.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Places the link text inside angle brackets before a malformed 'a href=' string."
+      },
+      {
+        "key": "B",
+        "reason": "Places the URL inside angle brackets and sets the link text as the href value."
+      },
+      {
+        "key": "C",
+        "reason": "Swaps the href URL and the visible clickable text, which would display the raw URL and try to navigate to 'BBC News Urdu'."
+      }
+    ]
+  },
+  {
+    "questionNumber": 39,
+    "pageNumber": 9,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.5.3",
+    "original_slo": "6.5.3",
+    "current_slo": "3.3.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2023-P1/q39.png",
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.1",
+        "description": "apply inline CSS styling (font-family, color, background-color, font-size, text-align) to HTML elements;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Consider the given text.\n[ Click here to open google ]\nThe HTML code to show this text in white color over black background is",
+    "options": {
+      "A": "<style:\"background-color black;\"><p style:\"color white\">Click here to open google</p>",
+      "B": "<style=\"background color<black>;\"><p style=\"color<white>\"> Click here to open google </p>",
+      "C": "<style=\"background color=black;\"><p style=\"color=white\"> Click here to open google </p>",
+      "D": "<body style=\"background-color:black;\"><p style=\"color:white;\">Click here to open google</p>"
+    },
+    "correctOption": "D",
+    "explanation": "Valid inline CSS uses the style=\"property:value;\" syntax inside HTML element tags: <body style=\"background-color:black;\"> sets the page background to black and <p style=\"color:white;\"> sets the paragraph text colour to white.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Uses a colon after style (style:...) and omits colons between CSS properties and values."
+      },
+      {
+        "key": "B",
+        "reason": "Uses angle brackets (<black>, <white>) instead of colons in CSS property declarations and omits the <body> tag."
+      },
+      {
+        "key": "C",
+        "reason": "Uses equals signs (color=white) instead of colons inside the CSS style string and omits the <body> tag."
+      }
+    ]
+  },
+  {
+    "questionNumber": 40,
+    "pageNumber": 9,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals",
+    "chapter": "Programming Fundamentals",
+    "slo": "6.3.1",
+    "original_slo": "6.3.1",
+    "current_slo": "3.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": false,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2023-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.1",
+        "description": "use basic HTML tags (html, head, title, body, p, br, hr, sup, sub, headings) and character entities (&nbsp;) to structure a webpage;",
+        "topic": "Programming Fundamentals"
+      }
+    ],
+    "stem": "Which of the following is/ are the character entity(ies) in HTML?\nI. p\nII. br\nIII. &nbsp",
+    "options": {
+      "A": "I only",
+      "B": "III only",
+      "C": "I and II",
+      "D": "II and III"
+    },
+    "correctOption": "B",
+    "explanation": "In HTML, character entities begin with an ampersand (&), such as &nbsp; (III only, non-breaking space), whereas p (I) and br (II) are HTML element tags (<p> and <br>).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "'p' is the paragraph element tag (<p>), not an HTML character entity."
+      },
+      {
+        "key": "C",
+        "reason": "Both 'p' and 'br' are HTML element tags (<p> and <br>), not character entities."
+      },
+      {
+        "key": "D",
+        "reason": "'br' is the line-break HTML tag (<br>), so only III (&nbsp) is a character entity."
+      }
+    ]
+  }
+]

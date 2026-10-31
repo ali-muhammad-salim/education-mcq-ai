@@ -10,6 +10,11 @@ import ssc2ModelMcqs from '@/data/physics/ssc2_model_mcqs.json';
 import ssc1Past2025Mcqs from '@/data/physics/ssc1_2025_past_mcqs.json';
 import ssc1Past2024Mcqs from '@/data/physics/ssc1_2024_past_mcqs.json';
 import ssc2Past2025Mcqs from '@/data/physics/ssc2_2025_past_mcqs.json';
+import cs1ModelMcqs from '@/data/computer-science/ssc1_model_mcqs.json';
+import cs1Past2025Mcqs from '@/data/computer-science/ssc1_2025_past_mcqs.json';
+import cs1Past2024Mcqs from '@/data/computer-science/ssc1_2024_past_mcqs.json';
+import cs1Past2023Mcqs from '@/data/computer-science/ssc1_2023_past_mcqs.json';
+import cs1Past2022Mcqs from '@/data/computer-science/ssc1_2022_past_mcqs.json';
 
 export async function GET(req: NextRequest) {
   try {
@@ -119,7 +124,7 @@ export async function GET(req: NextRequest) {
     }
 
     // If DB returned 0 questions or failed, load from SSC-I & SSC-II bundles
-    if (page === 1 && formatted.length === 0 && (!subject || subject === 'ALL' || subject.toLowerCase() === 'physics') && (!searchParams.get('boardId') || ['ALL', 'AKU-EB'].includes(searchParams.get('boardId')!))) {
+    if (page === 1 && formatted.length === 0 && (!subject || subject === 'ALL' || ['physics', 'computer science', 'computer-science'].includes(subject.toLowerCase())) && (!searchParams.get('boardId') || ['ALL', 'AKU-EB'].includes(searchParams.get('boardId')!))) {
       const isClass10 = ['10', 'X'].includes(classParam);
       const isClass9 = ['9', 'IX'].includes(classParam);
 
@@ -128,6 +133,14 @@ export async function GET(req: NextRequest) {
         combinedRaw = [
           ...(ssc2ModelMcqs as any[]).map(q => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Model Paper I', year: 2025 })),
           ...(ssc2Past2025Mcqs as any[]).map(q => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Annual 2025 Paper I', year: 2025 })),
+        ];
+      } else if (isClass9 && subject.toLowerCase().includes('computer')) {
+        combinedRaw = [
+          ...(cs1ModelMcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'CS-IX-P1', year: 2026 })),
+          ...(cs1Past2025Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'CS-IX-2025-P1', year: 2025 })),
+          ...(cs1Past2024Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'CS-IX-2024-P1', year: 2024 })),
+          ...(cs1Past2023Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'CS-IX-2023-P1', year: 2023 })),
+          ...(cs1Past2022Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'CS-IX-2022-P1', year: 2022 })),
         ];
       } else if (isClass9) {
         combinedRaw = [
@@ -145,7 +158,7 @@ export async function GET(req: NextRequest) {
         ];
       }
 
-      formatted = combinedRaw.map(({ raw: q, cls, source, year }, idx) => {
+      formatted = combinedRaw.filter(({ raw, source }) => !(source === 'CS-IX-2023-P1' && Number(raw.questionNumber) === 11) && !(source === 'CS-IX-2024-P1' && Number(raw.questionNumber) === 9)).map(({ raw: q, cls, source, year }, idx) => {
         const rawOpts = q.options || {};
         const correctKey = (q.correctOption || '').toUpperCase().trim();
         const opts = Object.entries(rawOpts).map(([key, val]) => ({
