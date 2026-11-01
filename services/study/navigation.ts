@@ -1,5 +1,5 @@
 import { Prisma } from "@prisma/client";
-import {publishedStudyWhere} from './visibility';
+import { publishedStudyWhere } from './visibility';
 import prisma from "@/lib/prisma";
 import {
   CLASS_DEFINITIONS,
@@ -11,7 +11,6 @@ import { getSubjectMeta } from "@/lib/subjectMetadata";
 import { studyKinds } from "./contracts";
 import physicsIX from "@/data/physics/ssc1_exact_syllabus.json";
 import physicsX from "@/data/physics/ssc2_exact_syllabus.json";
-
 import csIX from "@/data/computer-science/ssc1_exact_syllabus.json";
 import csX from "@/data/computer-science/ssc2_exact_syllabus.json";
 
@@ -42,7 +41,7 @@ function syllabusChapters(scope: NonNullable<ReturnType<typeof studyScope>>) {
 
 // Shared with the public list: navigation must never advertise withdrawn evidence,
 // incomplete editions, or resources belonging to an outdated curriculum.
-export {publishedStudyWhere} from './visibility';
+export { publishedStudyWhere } from './visibility';
 export function studyScope(
   rawBoard: string,
   rawClass: string,

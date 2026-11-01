@@ -142,7 +142,7 @@ model SLO {
   isPractical    Boolean       @default(false)
   fingerprint    String?       // normalized text hash for cross-version matching
   sourcePage     Int?          // page in syllabus PDF
-  sourceOrdinal  Int?          // order within a reviewed source page, including repeated printed codes
+  sourceOrdinal  Int?
   isFormative    Boolean       @default(false) // FA: not assessed under exam conditions
   embedding      Unsupported("vector(768)")?
 
@@ -155,9 +155,8 @@ model SLO {
   sourceMappings SLOMapping[] @relation("SourceSLO")
   targetMappings SLOMapping[] @relation("TargetSLO")
 
-  // Printed syllabuses can reuse one code for distinct outcomes (Biology 2025: 16.2.4).
-  // Keep both verbatim and distinguish them by immutable ID/description.
   @@index([subtopicId, code])
+  @@index([subtopicId])
 }
 
 // Structured paper pattern (sections, marks, K/U/A split, chapter weightage)
@@ -1095,10 +1094,10 @@ model User {
   teacherClassrooms    Classroom[]            @relation("TeacherClassrooms")
   classroomMemberships ClassroomMembership[]
   teacherQuizzes       Quiz[]                 @relation("TeacherQuizzes")
-  questionBankItems    QuestionBankItem[]
   quizAttempts         QuizAttempt[]
   gradedAnswers        AnswerGrade[]          @relation("TeacherGradedAnswers")
   auditLogs            AuditLog[]
+  questionBankItems    QuestionBankItem[]
 
   @@index([email])
   @@index([role])
@@ -1520,7 +1519,7 @@ model AuditLog {
 }
 
 model QuestionBankItem {
-  id             String   @id @default(uuid())
+  id             String   @id @default(cuid())
   creatorId      String
   questionType   String
   stemText       String   @db.Text
@@ -1530,7 +1529,7 @@ model QuestionBankItem {
   content        Json
   createdAt      DateTime @default(now())
 
-  creator        User     @relation(fields: [creatorId], references: [id], onDelete: Restrict)
+  creator User @relation(fields: [creatorId], references: [id])
 
   @@index([creatorId, createdAt])
 }

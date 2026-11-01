@@ -1,0 +1,48 @@
+[
+  {
+    "pageNumber": 2,
+    "stage": "STAGE I",
+    "title": "Task 1 \u2014 Construct & Save an HTML Webpage in Notepad",
+    "marks": 2,
+    "slo": "3.2.2, 3.3.1",
+    "topic": "Topic 3: Programming Fundamentals (Hypertext Markup Language - HTML)",
+    "apparatus": "Computer, Printer, Notepad, and Web Browser (MS Word for code printout submission)",
+    "diagramUrl": "/paper-crops/CS-IX-P3/task1.png",
+    "description": "Write an HTML code in Notepad for the given webpage ('Impact of Computers on Society') and save it as an .html file. Note: The title of this webpage should be the candidate's name and ID.",
+    "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Candidate Name - Candidate ID</title>\n</head>\n<body>\n    <h3>Impact of Computers on Society</h3>\n    <p>The use of computers in a society has become widespread. You find them at schools, in shops, in banks, at airport, in hospitals, police departments and many other areas. They play a very important role in the society because of many advantageous functions they perform. Computers have made a very strong effect on every aspect of our life.</p>\n    <p>The important thing to remember is that a computer is a machine which takes in data, performs the operations as instructed and gives results.</p>\n</body>\n</html>"
+  },
+  {
+    "pageNumber": 2,
+    "stage": "STAGE II",
+    "title": "Task 2 & Task 3 \u2014 HTML Font Formatting & Webpage Background/Text Colours",
+    "marks": 2,
+    "slo": "3.3.2, 3.5.2",
+    "topic": "Topic 3: Programming Fundamentals (HTML Text Formatting & Backgrounds)",
+    "apparatus": "Computer, Notepad, and Web Browser",
+    "description": "Task 2 (1 Mark): Set the font size '4', font colour 'Red' and font type 'Arial' for the heading line 'Impact of Computers on Society'.\nTask 3 (1 Mark): Select black as the background colour and white as the colour of text of this webpage.",
+    "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Candidate Name - Candidate ID</title>\n</head>\n<body bgcolor=\"black\" text=\"white\">\n    <p><font size=\"4\" color=\"Red\" face=\"Arial\">Impact of Computers on Society</font></p>\n    <p>The use of computers in a society has become widespread. You find them at schools, in shops, in banks, at airport, in hospitals, police departments and many other areas. They play a very important role in the society because of many advantageous functions they perform. Computers have made a very strong effect on every aspect of our life.</p>\n    <p>The important thing to remember is that a computer is a machine which takes in data, performs the operations as instructed and gives results.</p>\n</body>\n</html>"
+  },
+  {
+    "pageNumber": 3,
+    "stage": "STAGE III",
+    "title": "Task 4, Task 5 & Task 6 \u2014 JavaScript prompt(), Arithmetic Sum, document.write() & alert()",
+    "marks": 4,
+    "slo": "3.10.5, 3.10.6, 3.11.1",
+    "topic": "Topic 3: Programming Fundamentals (JavaScript I/O & Arithmetic Operators)",
+    "apparatus": "Computer, Notepad, and Web Browser",
+    "diagramUrl": "/paper-crops/CS-IX-P3/task4.png",
+    "secondaryDiagramUrl": "/paper-crops/CS-IX-P3/task6.png",
+    "description": "Perform the following tasks on a new saved HTML file using JavaScript:\n\u2022 Task 4 (1 Mark): Ask the user to take two numbers from the user using prompt().\n\u2022 Task 5 (1 Mark): Calculate their sum using the arithmetic operator.\n\u2022 Task 6 (2 Marks): Display the result using document.write() on the browser ('Practical Model Paper - Sum of Two Numbers' / 'Sum: 40') and show the message 'Sum Calculated Successfully' in an alert() box.",
+    "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Sum of Two Numbers</title>\n</head>\n<body>\n    <h2>Practical Model Paper - Sum of Two Numbers</h2>\n    <script>\n        var num1 = Number(prompt(\"Enter first number:\"));\n        var num2 = Number(prompt(\"Enter second number:\"));\n        var sum = num1 + num2;\n        document.write(\"Sum: \" + sum);\n        alert(\"Sum Calculated Successfully\");\n    </script>\n</body>\n</html>"
+  },
+  {
+    "pageNumber": 3,
+    "stage": "SCHOOL RECORD",
+    "title": "Practical Journal / Portfolio Verification",
+    "marks": 2,
+    "slo": "Practical Portfolio",
+    "topic": "Endorsed Practical Lab Journal (Grades IX Practical Activities 1\u201310)",
+    "apparatus": "Endorsed Practical Journal / Portfolio",
+    "description": "Practical journal/portfolio developed by the student and endorsed by a teacher or principal, submitted at the time of the Paper III Practical Examination (2 Marks)."
+  }
+]

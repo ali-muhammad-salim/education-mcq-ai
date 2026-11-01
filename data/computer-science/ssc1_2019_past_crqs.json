@@ -1,0 +1,325 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.6.3 / 1.6.2",
+    "original_slo": "1.6.3 / 1.6.2",
+    "current_slo": "1.6.3",
+    "cognitiveLevel": "U",
+    "marks": 5,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.6.3",
+        "description": "describe the following types of language translators: a. compilers, b. interpreter, c. assembler;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.6.2",
+        "description": "classify programming languages into low-level (machine and assembly) and high-level (procedural and object-oriented) languages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**a.** The given table shows the characteristics of TWO translators, i.e. compiler and interpreter.\nCategorise each of these characteristics as that of a compiler or an interpreter. (2 Marks)\n\n| Characteristic of Translator | Compiler / Interpreter |\n| :--- | :--- |\n| It produces an executable file of machine code. | |\n| It is used at testing/ development stage of a program. | |\n| It converts source code into machine code line by line. | |\n| It produces file that does not need any type of translator to run it. | |\n\n**b.** Define the following THREE types of programming languages: **Machine Language**, **Assembly Language**, and **High-Level Language**. (3 Marks)",
+    "modelAnswer": "### Part a: Compiler vs Interpreter Categorisation (2 Marks \u2014 0.5 Mark Each)\n\n| Characteristic of Translator | Compiler / Interpreter |\n| :--- | :--- |\n| It produces an executable file of machine code. | **Compiler** |\n| It is used at testing/ development stage of a program. | **Interpreter** |\n| It converts source code into machine code line by line. | **Interpreter** |\n| It produces file that does not need any type of translator to run it. | **Compiler** |\n\n---\n### Part b: Definitions of Programming Languages (3 Marks \u2014 1 Mark Each)\n\n| Machine Language | Assembly Language | High-Level Language |\n| :--- | :--- | :--- |\n| A first-generation (1GL) low-level language written directly in binary digits (`0`s and `1`s). It is machine-dependent and directly understood by the CPU without any translator. | A second-generation (2GL) low-level language that uses short English-like symbolic codes called **mnemonics** (e.g., `ADD`, `MOV`, `SUB`) instead of raw binary. It is machine-dependent and requires an **assembler** to translate it into machine code. | A machine-independent language (e.g., C++, Java, Python) that uses English-like statements and mathematical notation, making it easy for humans to read, write, and debug. It requires a **compiler** or **interpreter** to translate into machine code. |",
+    "betterResponse": "Better responses showed a solid understanding of both compiler and interpreter in Part (a) (`Compiler, Interpreter, Interpreter, Compiler`) and accurately defined Machine Language (binary 0s and 1s, no translator needed), Assembly Language (symbolic mnemonics translated by an assembler), and High-Level Language (English-like machine-independent statements).",
+    "weakerResponse": "In Part (a), weaker responses reversed the characteristics of compiler and interpreter. In Part (b), candidates managed to define machine or high-level language but failed to mention mnemonics/assembler for assembly language.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a: 0.5 mark for each correct categorisation (1: Compiler, 2: Interpreter, 3: Interpreter, 4: Compiler = 2 Marks)."
+      },
+      {
+        "marks": 3,
+        "description": "Part b: 1 mark each for defining Machine Language (binary 0s/1s, directly executed), Assembly Language (mnemonics, uses assembler), and High-Level Language (English-like statements, machine-independent)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.2",
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.1.2 / 3.1.1",
+    "original_slo": "4.1.2 / 3.1.1",
+    "current_slo": "1.3.1",
+    "cognitiveLevel": "A",
+    "marks": 5,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2019-P2/q2b.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.3.1",
+        "description": "distinguish among the memory measuring units such as bits, bytes, kilobytes, megabytes, and gigabytes in computer memory;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.2.1",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**a.** There is a set of video files in which the size of each file is 64 megabytes (MBs). How many of these video files can be stored in a flash drive with the storage capacity of 1 gigabyte (GB)? Show your working. (2 Marks)\n\n**b.** Identify and describe the purpose of TWO input and any ONE output components that are present in the mobile phone shown in the given picture. (3 Marks)",
+    "modelAnswer": "### Part a: Number of 64 MB Video Files in a 1 GB Flash Drive (2 Marks)\n1. Convert flash drive capacity from Gigabytes (GB) to Megabytes (MB):\n   $$1\\text{ GB} = 1024\\text{ MB}$$\n2. Divide total storage capacity by the size of each video file:\n   $$\\text{Number of files} = \\frac{1024\\text{ MB}}{64\\text{ MB}} = 16\\text{ files}$$\n- Therefore, **16 video files** of 64 MB each can be stored in a 1 GB flash drive.\n\n---\n### Part b: Input and Output Components of the Mobile Phone (3 Marks)\n- **Two Input Components (2 Marks \u2014 1 Mark Each):**\n  1. **Keypad / Buttons:** Used by the user to dial phone numbers, type text messages (SMS), and navigate through menus.\n  2. **Microphone (Mic):** Captures the user's spoken voice (sound waves) and converts it into electrical/digital audio signals during a phone call.\n- **One Output Component (1 Mark):**\n  1. **Display Screen / Monitor (LCD):** Visually displays the time, date, menus, contacts, and text messages to the user.\n  2. *(Alternative valid output)* **Speaker / Earpiece:** Converts incoming electrical audio signals into audible sound so the user can hear the caller's voice or ringtones.",
+    "betterResponse": "In Part (a), better responses converted 1 GB = 1024 MB and divided 1024 / 64 = 16 files. In Part (b), candidates correctly identified and described the keypad and microphone as input components and the display screen or speaker as output components.",
+    "weakerResponse": "In Part (a), weaker responses multiplied 64 \u00d7 1024 = 65536 without converting units properly. In Part (b), candidates only listed component names without describing their purpose, or named a camera/sensor that is not visible on the pictured keypad phone.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a: 1 mark for converting 1 GB = 1024 MB + 1 mark for dividing 1024 / 64 = 16 video files."
+      },
+      {
+        "marks": 3,
+        "description": "Part b: 1 mark each for identifying and describing TWO input components (Keypad and Microphone) + 1 mark for identifying and describing ONE output component (Display Screen or Speaker)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.3",
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.1.2",
+    "original_slo": "5.1.2",
+    "current_slo": null,
+    "cognitiveLevel": "A",
+    "marks": 4,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "A computer controlled car is programmed in such a way that it moves in different directions on receiving specific binary codes (numbers).\nThe binary codes with corresponding directions are given below.\n\n| Binary Code | Direction |\n| :--- | :--- |\n| `1010` | Forward |\n| `0101` | Backward |\n| `1101` | Left |\n| `1011` | Right |\n\nIn order to move the car, the operator uses the given hexadecimal digits: **`5 B A D`**\nDetermine the direction in which the car will move for each hexadecimal digit. *(Note: Show your working.)* (4 Marks)",
+    "modelAnswer": "### Step 1: Convert Each Hexadecimal Digit to 4-Bit Binary (Working)\n- **Hexadecimal `5`** $= 5_{10} = (0101)_2 \\rightarrow$ matches **`Backward`**\n- **Hexadecimal `B`** $= 11_{10} = 8 + 2 + 1 = (1011)_2 \\rightarrow$ matches **`Right`**\n- **Hexadecimal `A`** $= 10_{10} = 8 + 2 = (1010)_2 \\rightarrow$ matches **`Forward`**\n- **Hexadecimal `D`** $= 13_{10} = 8 + 4 + 1 = (1101)_2 \\rightarrow$ matches **`Left`**\n\n### Step 2: Completed Direction Table\n\n| Hexadecimal Digit | 4-Bit Binary Equivalent | Direction |\n| :--- | :--- | :--- |\n| **`5`** | `0101` | **Backward** |\n| **`B`** | `1011` | **Right** |\n| **`A`** | `1010` | **Forward** |\n| **`D`** | `1101` | **Left** |",
+    "betterResponse": "Better responses converted each hexadecimal digit (`5 = 5 = 0101`, `B = 11 = 1011`, `A = 10 = 1010`, `D = 13 = 1101`) into 4-bit binary by repeated division by 2 and mapped each binary code to its corresponding direction (`Backward, Right, Forward, Left`).",
+    "weakerResponse": "Weaker responses converted `5` correctly (`0101 = Backward`) but confused the decimal equivalents of alphabetical hexadecimal digits `A`, `B`, and `D`, or wrote directions without showing binary conversion working.",
+    "rubric": [
+      {
+        "marks": 4,
+        "description": "1 mark for each correct hexadecimal-to-binary conversion and corresponding direction: 5 -> 0101 (Backward), B -> 1011 (Right), A -> 1010 (Forward), D -> 1101 (Left)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.4",
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "7.1.4 / 8.1.4 / 9.1.4",
+    "original_slo": "7.1.4 / 8.1.4 / 9.1.4",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 6,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2019-P2/q4a.png",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "**a.** During installation of Windows operating system, Sheeraz opened the following screen.\n**i.** Name the screen shown in the given image. (1 Mark)\n**ii.** Give the reason for which he must open the screen shown in part (i). (1 Mark)\n\n**b.** List the names of any FOUR options that are available in the Insert menu of MS Word. (2 Marks)\n\n**c.** Shumaila is preparing an MS PowerPoint presentation and she has inserted animation on the text of one of the slides. She wants the animation to appear 2 seconds after the click of the mouse and to stay on screen for 3 seconds. Complete the given picture (`Start:`, `Duration:`, `Delay:`) with the THREE timing options of animation that would fulfil this requirement. (2 Marks)",
+    "modelAnswer": "### Part a: BIOS Setup Utility Screen (2 Marks)\n- **i. Name of the Screen (1 Mark):** **BIOS Setup Screen** (or *CMOS Setup Utility / Boot Setup / System Setup Screen*).\n- **ii. Reason for Opening During Windows Installation (1 Mark):** To change the **boot device priority / boot sequence** (e.g., setting the CD/DVD-ROM drive or bootable USB flash drive as the first boot device so the Windows installer starts).\n\n---\n### Part b: FOUR Options in the Insert Menu/Tab of MS Word (2 Marks \u2014 0.5 Mark Each)\n1. **Table**\n2. **Picture / Clip Art / Shapes / SmartArt / Chart**\n3. **Header & Footer / Page Number**\n4. **Hyperlink / Bookmark / Text Box / WordArt / Equation / Symbol / Page Break / Blank Page / Cover Page**\n\n---\n### Part c: MS PowerPoint Animation Timing Settings (2 Marks)\n\n| Timing Field | Required Setting |\n| :--- | :--- |\n| **Start:** | **`On Click`** *(or `Mouse Click` / `After Mouse Click`)* |\n| **Duration:** | **`3`** *(or `03.00` / `3 seconds`)* |\n| **Delay:** | **`2`** *(or `02.00` / `2 seconds`)* |",
+    "betterResponse": "In 4a, better responses identified the screen as the BIOS / Boot Setup screen and explained that it is opened during Windows installation to set the booting device sequence/priority. In 4b, candidates listed four valid MS Word Insert menu items (e.g., Clip Art, Header/Footer, Table, Chart). In 4c, candidates filled in `Start: On Click / Mouse Click`, `Duration: 3`, and `Delay: 2`.",
+    "weakerResponse": "In 4a, weaker responses called it 'DOS screen' or 'Control Panel' and said it is opened to change the time and date. In 4b, candidates listed Home tab formatting tools (`Font Size`, `Bold`, `Find and Replace`). In 4c, candidates wrote a number (`2 sec`) in the `Start:` dropdown instead of `On Click`.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a: 1 mark for naming BIOS / Setup / Boot Menu screen + 1 mark for stating the reason (to change boot device priority/sequence for Windows installation)."
+      },
+      {
+        "marks": 2,
+        "description": "Part b: 0.5 mark each for any FOUR valid options in the Insert menu of MS Word (Table, Picture, Clip Art, Shapes, Chart, Header, Footer, Page Number, Hyperlink, Text Box, WordArt, Symbol, etc.)."
+      },
+      {
+        "marks": 2,
+        "description": "Part c: 1 mark for Start: On Click (or Mouse Click) + 0.5 mark for Duration: 3 sec + 0.5 mark for Delay: 2 sec."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5",
+    "pageNumber": 7,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "7.1.1 / 7.2.2",
+    "original_slo": "7.1.1 / 7.2.2",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "U",
+    "marks": 5,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**a.** Describe the purpose of each of the following:\n**i.** Utility Software (1 Mark)\n**ii.** User Interface (1 Mark)\n\n**b.** In disk operating system (DOS), users have to perform each task by using commands.\nWrite appropriate DOS commands to perform the given tasks.\n**i.** Change present working directory from `C:\\DOS` to `C:\\GAMES\\PACEM` (1 Mark)\n**ii.** Display the DOS version number on the screen of the monitor. (1 Mark)\n**iii.** Delete a file named `CAT.TMP` from the `TEST` directory on drive `C`. (1 Mark)",
+    "modelAnswer": "### Part a: Purpose of Utility Software and User Interface (2 Marks)\n- **i. Utility Software (1 Mark):** System software designed to **analyse, configure, optimise, maintain, and protect** a computer system and its operating system (for example, antivirus scanners, disk defragmenters, backup utilities, and file compression tools).\n- **ii. User Interface (1 Mark):** The visual or text-based bridge/medium through which a **user interacts and communicates with the computer system** and operating system (e.g., Command Line Interface [CLI] or Graphical User Interface [GUI]).\n\n---\n### Part b: MS-DOS Commands (3 Marks \u2014 1 Mark Each)\n- **i. Change working directory from `C:\\DOS` to `C:\\GAMES\\PACEM`:**\n```text\nCD C:\\GAMES\\PACEM\n```\n- **ii. Display the DOS version number on the screen:**\n```text\nVER\n```\n- **iii. Delete file `CAT.TMP` from the `TEST` directory on drive `C`:**\n```text\nDEL C:\\TEST\\CAT.TMP\n```",
+    "betterResponse": "In 5a, better responses explained that utility software analyses, configures, optimises, and protects the computer system (e.g., Antivirus), while a user interface provides the mode of interaction between the user and the computer. In 5b, candidates wrote the exact DOS commands: `CD C:\\GAMES\\PACEM`, `VER`, and `DEL C:\\TEST\\CAT.TMP`.",
+    "weakerResponse": "In 5a, weaker responses only gave examples without explaining the purpose or confused utility software with compilers. In 5b, candidates used forward slashes (`/`) instead of backslashes (`\\`) or combined incompatible commands like `C:\\del\\MD Test/Sd CAT.TMP`.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a: 1 mark for describing the purpose of Utility Software (analyses, configures, optimises, maintains, or protects the computer) + 1 mark for describing the purpose of User Interface (enables interaction/communication between user and computer)."
+      },
+      {
+        "marks": 3,
+        "description": "Part b: 1 mark for `CD C:\\GAMES\\PACEM` + 1 mark for `VER` + 1 mark for `DEL C:\\TEST\\CAT.TMP`."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6",
+    "pageNumber": 8,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.6.2 / 1.2.4 / 1.2.5",
+    "original_slo": "1.6.2 / 1.2.4",
+    "current_slo": "1.2.4",
+    "cognitiveLevel": "U",
+    "marks": 7,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2019-P2/q6b.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.4",
+        "description": "illustrate the Von Neumann Architecture using a block diagram;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.2.5",
+        "description": "illustrate the system bus and its types, including data bus, address bus and control bus, along with their roles in computer architecture using a diagram;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.6.2",
+        "description": "classify programming languages into low-level (machine and assembly) and high-level (procedural and object-oriented) languages;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**EITHER**\n**a.**\n**i.** Following are the codes to perform the addition of numbers:\nI. `ADD 105, 100`\nII. `105 + 100`\nIII. `0001 0001 0000 0101`\nIdentify whether each of the given code lines is a machine code, an assembly language code or a high level language code. (2 Marks)\n**ii.** Which of the codes, I, II and III, given in part (i) does not require any kind of translator? (1 Mark)\n**iii.** Differentiate between the first generation computers and fourth generation computers on the basis of the given factors: **Programming Language Used**, **Cost**, **Technology Used**, and **Speed**. (4 Marks)\n\n**OR**\n**b.**\n**i.** Complete the given diagram of the computer architecture by writing the names of components in boxes **A**, **B** and **C**. (3 Marks)\n**ii.** Describe the function of each component named in part (i). (3 Marks)\n**iii.** Write any ONE difference between **data bus** and **address bus**. (1 Mark)",
+    "modelAnswer": "### Part a: Programming Languages & Generations of Computers (7 Marks)\n**i. Identification of Code Lines (2 Marks):**\n- **I (`ADD 105, 100`):** **Assembly Language Code** *(uses the mnemonic `ADD`)*\n- **II (`105 + 100`):** **High-Level Language Code** *(standard mathematical expression)*\n- **III (`0001 0001 0000 0101`):** **Machine Code / Machine Language** *(binary `0`s and `1`s)*\n\n**ii. Code That Does Not Require Any Translator (1 Mark):**\n- **Code III (`0001 0001 0000 0101` \u2014 Machine Code)** does not require any translator because it is already in binary form directly executed by the CPU.\n\n**iii. First Generation vs Fourth Generation Computers (4 Marks):**\n\n| Factor | First Generation Computers | Fourth Generation Computers |\n| :--- | :--- | :--- |\n| **Programming Language Used** | Machine language (low-level binary `0`s and `1`s). | High-level and fourth-generation languages (e.g., C, C++, Python, SQL). |\n| **Cost** | Extremely expensive to build and maintain per unit of computation (though low purchase price for modern microcomputers relative to room-sized mainframes). | Much lower cost per instruction / affordable personal microcomputers (or high manufacturing sophistication). |\n| **Technology Used** | **Vacuum Tubes** (thermionic valves). | **VLSI Microprocessors** (Very Large Scale Integration silicon chips). |\n| **Speed** | Very slow (measured in milliseconds, $\\approx 10^{-3}\\text{ s}$). | Extremely fast (measured in picoseconds / billions of instructions per second). |\n\n---\n### Part b: Von Neumann Computer Architecture & System Buses (7 Marks)\n**i. Names of Components A, B, and C in the Diagram (3 Marks \u2014 1 Mark Each):**\n- **Box A:** **Arithmetic Logic Unit (ALU)** *(inside CPU)*\n- **Box B:** **Control Unit (CU)** *(inside CPU)*\n- **Box C:** **Memory Unit (MU) / Primary Memory (RAM)** *(connected bidirectionally to CPU)*\n*(Note: Boxes A and B inside the CPU may be written in either order: ALU and CU.)*\n\n**ii. Function of Each Component (3 Marks \u2014 1 Mark Each):**\n- **A \u2014 Arithmetic Logic Unit (ALU):** Performs all mathematical calculations (addition, subtraction, multiplication, division) and logical comparisons (`<`, `>`, `=`, `AND`, `OR`, `NOT`).\n- **B \u2014 Control Unit (CU):** Directs and coordinates the operations of the entire computer system by fetching and decoding instructions and sending timing/control signals to other units.\n- **C \u2014 Memory Unit (Primary Memory / RAM):** Temporarily stores active program instructions, input data, and intermediate/final results currently being processed by the CPU.\n\n**iii. ONE Difference Between Data Bus and Address Bus (1 Mark):**\n\n| Data Bus | Address Bus |\n| :--- | :--- |\n| A **bidirectional** bus that carries actual **data and instructions** between the CPU, main memory, and I/O devices. | A **unidirectional** bus that carries **physical memory addresses** from the CPU to main memory (or I/O) to specify where data is to be read or written. |",
+    "betterResponse": "In 6a, better responses identified I as Assembly language, II as High-level language, and III as Machine code (which needs no translator), and contrasted 1st vs 4th generation computers across language, cost, vacuum tubes vs microprocessors, and speed. In 6b, candidates labelled A = Arithmetic Logic Unit (ALU), B = Control Unit (CU), and C = Memory Unit (MU), described the function of each, and distinguished the Data Bus (carries data bidirectionally) from the Address Bus (carries memory addresses from CPU).",
+    "weakerResponse": "In 6a, weaker responses confused Assembly language with High-level language and claimed High-level language requires no translator. In 6b, weaker responses mistakenly wrote 'Address bus, Data bus, Control bus' inside boxes A, B, and C instead of ALU, Control Unit, and Memory Unit.",
+    "rubric": [
+      {
+        "marks": 3,
+        "description": "Part a(i-ii): 2 marks for identifying I (Assembly), II (High-Level), III (Machine Code) + 1 mark for naming Code III (Machine Code) as needing no translator. OR Part b(i): 1 mark each for labelling A = Arithmetic Logic Unit (ALU), B = Control Unit (CU), and C = Memory Unit / Primary Memory (3 Marks)."
+      },
+      {
+        "marks": 4,
+        "description": "Part a(iii): 1 mark each for differentiating 1st vs 4th generation computers on Programming Language Used, Cost, Technology Used (Vacuum tubes vs Microprocessors), and Speed (4 Marks). OR Part b(ii-iii): 1 mark each for describing the functions of ALU, CU, and Memory Unit (3 Marks) + 1 mark for ONE valid difference between Data Bus and Address Bus."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.7",
+    "pageNumber": 10,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "7.1.2 / 7.2.2",
+    "original_slo": "7.1.2 / 7.2.2",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "U",
+    "marks": 8,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**EITHER**\n**a.**\n**i.** Describe any FOUR advantages of using Windows operating system as compared to DOS. (4 Marks)\n**ii.** Describe any FOUR disadvantages of using Windows operating system as compared to DOS. (4 Marks)\n\n**OR**\n**b.**\n**i.** In the given table, name the DOS command which fulfils each purpose. Identify each command as external or internal. (4 Marks)\n\n| Purpose of Command | DOS Command | Type of Command |\n| :--- | :--- | :--- |\n| This command copies the contents of one floppy from the source drive to a formatted or un-formatted floppy disk in the destination drive. | | |\n| This command is used to check a disk and display a status report with properties of disk like serial number, volume label, memory and other properties along with errors on the disk if any. | | |\n| This command is used to remove a directory along with its contents. | | |\n\n**ii.** In the given table, write the purpose of each given DOS command. Identify each command as external or internal. (4 Marks)\n\n| DOS Command | Purpose of Command | Type of Command |\n| :--- | :--- | :--- |\n| `MD` | | |\n| `VER` | | |\n| `CLS` | | |",
+    "modelAnswer": "### Part a: Windows OS (GUI) vs MS-DOS (CLI) (8 Marks)\n**i. FOUR Advantages of Windows Operating System over DOS (4 Marks \u2014 1 Mark Each):**\n1. **Intuitive Graphical User Interface (GUI):** Windows uses visual icons, menus, windows, and a mouse pointer (`WIMP`), so users do not need to memorise complex text commands as in DOS.\n2. **Multitasking & Multi-User Support:** Windows can run multiple applications simultaneously in separate windows, whereas DOS is a single-user, single-tasking system.\n3. **Plug and Play (PnP) Hardware Support:** Windows automatically detects and configures newly connected hardware peripherals, whereas DOS requires manual driver configuration.\n4. **Rich Multimedia & Networking Support:** Windows natively supports high-resolution graphics, audio/video playback, drag-and-drop file sharing, and modern networking.\n\n**ii. FOUR Disadvantages of Windows Operating System over DOS (4 Marks \u2014 1 Mark Each):**\n1. **Higher Hardware & Memory Requirements:** Windows requires gigabytes of RAM, fast multi-core processors, and tens of gigabytes of disk space, whereas DOS runs in a few megabytes.\n2. **Higher Licensing Cost:** Commercial Windows licences are more expensive than lightweight command-line systems.\n3. **Greater Vulnerability to Malware/Viruses:** Due to its widespread use and background network services, Windows is targeted far more frequently by viruses and malware.\n4. **Longer Installation & Boot Time / Slower Scripting:** Installing and booting full graphical Windows takes longer than booting a minimal DOS prompt.\n\n---\n### Part b: MS-DOS Internal and External Commands (8 Marks)\n**i. Identifying DOS Commands from Purpose (4 Marks):**\n\n| Purpose of Command | DOS Command | Type of Command |\n| :--- | :--- | :--- |\n| Copies the contents of one floppy from the source drive to a formatted or un-formatted floppy disk in the destination drive. | **`DISKCOPY`** | **External** |\n| Checks a disk and displays a status report with properties (serial number, volume label, memory, and disk errors). | **`CHKDSK`** | **External** |\n| Removes a directory along with all its files and subdirectories. | **`DELTREE`** | **External** |\n\n**ii. Purpose and Type of Given DOS Commands (4 Marks):**\n\n| DOS Command | Purpose of Command | Type of Command |\n| :--- | :--- | :--- |\n| **`MD`** | **Make Directory:** Creates a new subdirectory/folder in the specified path. | **Internal** |\n| **`VER`** | **Version:** Displays the current MS-DOS operating system version number on the screen. | **Internal** |\n| **`CLS`** | **Clear Screen:** Clears all previous commands and output from the terminal screen. | **Internal** |",
+    "betterResponse": "In 7a, better responses clearly described four advantages of Windows over DOS (multitasking, GUI ease of use without memorising commands, mouse click access, Plug and Play) and four disadvantages (requires more disk/RAM space, more expensive, higher virus susceptibility, lengthy installation). In 7b, candidates accurately identified `DISKCOPY`, `CHKDSK`, and `DELTREE` as External commands in Table (i), and wrote the exact purposes of `MD` (make new directory), `VER` (display DOS version), and `CLS` (clear screen) as Internal commands in Table (ii).",
+    "weakerResponse": "In 7a, weaker responses wrote misconceptions like 'Windows is application software while DOS is not software' or 'Windows does not allow creating shortcuts'. In 7b, weaker responses wrote `COPY`, `SYS`, or `DEL` instead of `DISKCOPY`, `CHKDSK`, and `DELTREE`, and misclassified internal/external types.",
+    "rubric": [
+      {
+        "marks": 4,
+        "description": "Part a(i): 1 mark each for any FOUR valid advantages of Windows over DOS (4 Marks). OR Part b(i): 1 mark each for naming `DISKCOPY`, `CHKDSK`, and `DELTREE` (3 Marks) + 1 mark for identifying all three as External commands (4 Marks)."
+      },
+      {
+        "marks": 4,
+        "description": "Part a(ii): 1 mark each for any FOUR valid disadvantages of Windows over DOS (4 Marks). OR Part b(ii): 1 mark each for writing the purpose of `MD` (make directory), `VER` (display version), and `CLS` (clear screen) (3 Marks) + 1 mark for identifying all three as Internal commands (4 Marks)."
+      }
+    ]
+  }
+]

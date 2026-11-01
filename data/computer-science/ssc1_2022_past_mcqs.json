@@ -69,10 +69,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -83,7 +83,7 @@
     "current_mapping": [
       {
         "code": "1.5.1",
-        "description": "differentiate between system software and application software with examples;",
+        "description": "compare system software and application software, highlighting their roles in a computer system;",
         "topic": "The Computer System"
       }
     ],
@@ -119,16 +119,16 @@
     "chapter": "The Computer System",
     "slo": "1.3.10",
     "original_slo": "1.3.10",
-    "current_slo": "1.3.2",
+    "current_slo": null,
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -136,13 +136,7 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.3.2",
-        "description": "differentiate among types of ports (serial, parallel, USB, HDMI) and expansion slots;",
-        "topic": "The Computer System"
-      }
-    ],
+    "current_mapping": [],
     "stem": "In contrast to serial ports, parallel ports transmit",
     "options": {
       "A": "data at low speed.",
@@ -163,7 +157,7 @@
       },
       {
         "key": "D",
-        "reason": "Internal system buses—not external parallel peripheral ports—transfer data between the processor and main memory."
+        "reason": "Internal system buses\u2014not external parallel peripheral ports\u2014transfer data between the processor and main memory."
       }
     ]
   },
@@ -175,16 +169,16 @@
     "chapter": "The Computer System",
     "slo": "1.3.8",
     "original_slo": "1.3.8",
-    "current_slo": "1.4.1",
+    "current_slo": "1.2.3",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -194,8 +188,8 @@
     },
     "current_mapping": [
       {
-        "code": "1.4.1",
-        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
+        "code": "1.2.3",
+        "description": "describe primary and secondary storage devices based on location, cost, capacity, access time, data processing method, and storage technology such as semiconductor (SSD), magnetic (HDD), and optical;",
         "topic": "The Computer System"
       }
     ],
@@ -231,16 +225,16 @@
     "chapter": "The Computer System",
     "slo": "1.3.7",
     "original_slo": "1.3.7",
-    "current_slo": "1.4.1",
+    "current_slo": null,
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -248,13 +242,7 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.4.1",
-        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
-        "topic": "The Computer System"
-      }
-    ],
+    "current_mapping": [],
     "stem": "Which of the following statements is FALSE about the cache memory levels?",
     "options": {
       "A": "Level 2 cache memory is located on the motherboard.",
@@ -287,16 +275,16 @@
     "chapter": "The Computer System",
     "slo": "1.3.6",
     "original_slo": "1.3.6",
-    "current_slo": "1.4.1",
+    "current_slo": "1.3.2",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -306,8 +294,8 @@
     },
     "current_mapping": [
       {
-        "code": "1.4.1",
-        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
+        "code": "1.3.2",
+        "description": "compare the types of primary memory, i.e., Random Access Memory (RAM) and Read Only Memory (ROM);",
         "topic": "The Computer System"
       }
     ],
@@ -349,10 +337,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -363,7 +351,7 @@
     "current_mapping": [
       {
         "code": "1.2.1",
-        "description": "describe input and output devices and their uses in daily life;",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
         "topic": "The Computer System"
       }
     ],
@@ -399,16 +387,16 @@
     "chapter": "The Computer System",
     "slo": "1.3.3",
     "original_slo": "1.3.3",
-    "current_slo": "1.3.1",
+    "current_slo": "1.2.4",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -418,8 +406,8 @@
     },
     "current_mapping": [
       {
-        "code": "1.3.1",
-        "description": "describe the components of Central Processing Unit (CPU) (Arithmetic Logic Unit (ALU), Control Unit (CU), Registers, Cache, and Internal Buses) and the role of each component in fetch-decode-execute cycle;",
+        "code": "1.2.4",
+        "description": "illustrate the Von Neumann Architecture using a block diagram;",
         "topic": "The Computer System"
       }
     ],
@@ -461,10 +449,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -475,7 +463,7 @@
     "current_mapping": [
       {
         "code": "1.2.2",
-        "description": "describe types of sensors and their applications;",
+        "description": "identify the use of types of sensors, i.e., temperature, moisture, light, infra-red, pressure, sound/ acoustic, gas and pH;",
         "topic": "The Computer System"
       }
     ],
@@ -517,10 +505,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -531,7 +519,7 @@
     "current_mapping": [
       {
         "code": "1.2.1",
-        "description": "describe input and output devices and their uses in daily life;",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
         "topic": "The Computer System"
       }
     ],
@@ -573,10 +561,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -587,7 +575,7 @@
     "current_mapping": [
       {
         "code": "1.2.1",
-        "description": "describe input and output devices and their uses in daily life;",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
         "topic": "The Computer System"
       }
     ],
@@ -629,10 +617,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -643,7 +631,7 @@
     "current_mapping": [
       {
         "code": "1.2.1",
-        "description": "describe input and output devices and their uses in daily life;",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
         "topic": "The Computer System"
       }
     ],
@@ -685,10 +673,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -699,16 +687,16 @@
     "current_mapping": [
       {
         "code": "1.2.1",
-        "description": "describe input and output devices and their uses in daily life;",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
         "topic": "The Computer System"
       }
     ],
     "stem": "The CORRECT pair of a device and its characteristic is\n| Option | Device | Characteristic |\n| :--- | :--- | :--- |\n| A | Digital Camera | Adjusting Resolution |\n| B | Joystick | Pointing Device in Laptop |\n| C | Barcode Reader | Checking Originality of Cheques |\n| D | Magnetic Ink Character Reader | Capturing Product Information |",
     "options": {
-      "A": "Digital Camera — Adjusting Resolution",
-      "B": "Joystick — Pointing Device in Laptop",
-      "C": "Barcode Reader — Checking Originality of Cheques",
-      "D": "Magnetic Ink Character Reader — Capturing Product Information"
+      "A": "Digital Camera \u2014 Adjusting Resolution",
+      "B": "Joystick \u2014 Pointing Device in Laptop",
+      "C": "Barcode Reader \u2014 Checking Originality of Cheques",
+      "D": "Magnetic Ink Character Reader \u2014 Capturing Product Information"
     },
     "correctOption": "A",
     "explanation": "A digital camera captures digital photographs and video whose image quality can be configured by adjusting the pixel resolution (megapixels).",
@@ -735,16 +723,16 @@
     "chapter": "The Computer System",
     "slo": "1.3.4",
     "original_slo": "1.3.4",
-    "current_slo": "1.3.1",
+    "current_slo": "1.2.5",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -754,8 +742,8 @@
     },
     "current_mapping": [
       {
-        "code": "1.3.1",
-        "description": "describe the components of Central Processing Unit (CPU) (Arithmetic Logic Unit (ALU), Control Unit (CU), Registers, Cache, and Internal Buses) and the role of each component in fetch-decode-execute cycle;",
+        "code": "1.2.5",
+        "description": "illustrate the system bus and its types, including data bus, address bus and control bus, along with their roles in computer architecture using a diagram;",
         "topic": "The Computer System"
       }
     ],
@@ -797,10 +785,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -811,7 +799,7 @@
     "current_mapping": [
       {
         "code": "1.2.1",
-        "description": "describe input and output devices and their uses in daily life;",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
         "topic": "The Computer System"
       }
     ],
@@ -853,10 +841,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -867,7 +855,7 @@
     "current_mapping": [
       {
         "code": "1.2.2",
-        "description": "describe types of sensors and their applications;",
+        "description": "identify the use of types of sensors, i.e., temperature, moisture, light, infra-red, pressure, sound/ acoustic, gas and pH;",
         "topic": "The Computer System"
       }
     ],
@@ -909,10 +897,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -923,7 +911,7 @@
     "current_mapping": [
       {
         "code": "1.9.4",
-        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "description": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
         "topic": "The Computer System"
       }
     ],
@@ -959,16 +947,16 @@
     "chapter": "The Computer System",
     "slo": "5.1.5",
     "original_slo": "5.1.5",
-    "current_slo": "1.9.1",
+    "current_slo": "1.8.2",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -978,8 +966,8 @@
     },
     "current_mapping": [
       {
-        "code": "1.9.1",
-        "description": "explain the uses of computer networks, transmission modes (simplex, half-duplex, full-duplex), and network architectures (client/server, peer-to-peer, point-to-point);",
+        "code": "1.8.2",
+        "description": "explain structure and functionality of network architecture and its types, including client-server, peer-to-peer, and point-to-point;",
         "topic": "The Computer System"
       }
     ],
@@ -1015,16 +1003,16 @@
     "chapter": "The Computer System",
     "slo": "5.3.1",
     "original_slo": "5.3.1",
-    "current_slo": "1.8.1",
+    "current_slo": null,
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1032,13 +1020,7 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.8.1",
-        "description": "describe the functions of network communication devices and telephone/broadband technologies (Dial-up, ISDN, DSL, CDMA);",
-        "topic": "The Computer System"
-      }
-    ],
+    "current_mapping": [],
     "stem": "A type of communication technology that provides the LOWEST internet connection speed is a/ an",
     "options": {
       "A": "dial-up line.",
@@ -1077,10 +1059,10 @@
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q20.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1091,7 +1073,7 @@
     "current_mapping": [
       {
         "code": "1.9.4",
-        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "description": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
         "topic": "The Computer System"
       }
     ],
@@ -1133,10 +1115,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1147,7 +1129,7 @@
     "current_mapping": [
       {
         "code": "1.9.4",
-        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "description": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
         "topic": "The Computer System"
       }
     ],
@@ -1189,10 +1171,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1203,7 +1185,7 @@
     "current_mapping": [
       {
         "code": "1.9.4",
-        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "description": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
         "topic": "The Computer System"
       }
     ],
@@ -1245,10 +1227,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1259,7 +1241,7 @@
     "current_mapping": [
       {
         "code": "1.9.4",
-        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "description": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
         "topic": "The Computer System"
       }
     ],
@@ -1301,10 +1283,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1315,7 +1297,7 @@
     "current_mapping": [
       {
         "code": "1.9.4",
-        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "description": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
         "topic": "The Computer System"
       }
     ],
@@ -1357,10 +1339,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1371,7 +1353,7 @@
     "current_mapping": [
       {
         "code": "1.9.2",
-        "description": "differentiate among types of networks: PAN, LAN, MAN, WAN, VPN, and Bluetooth networks;",
+        "description": "explain different types of computer networks, i.e., Local Area Network (LAN), Wide Area Network (WAN), and Metropolitan Area Network (MAN), highlighting their characteristics and applications;",
         "topic": "The Computer System"
       }
     ],
@@ -1407,16 +1389,16 @@
     "chapter": "The Computer System",
     "slo": "5.2.1",
     "original_slo": "5.2.1",
-    "current_slo": "1.9.2",
+    "current_slo": null,
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1424,13 +1406,7 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.9.2",
-        "description": "differentiate among types of networks: PAN, LAN, MAN, WAN, VPN, and Bluetooth networks;",
-        "topic": "The Computer System"
-      }
-    ],
+    "current_mapping": [],
     "stem": "The two types of networks in which the transmission medium is owned by the user are\nI. PAN\nII. WAN\nIII. LAN\nIV. MAN",
     "options": {
       "A": "I and III.",
@@ -1463,16 +1439,16 @@
     "chapter": "The Computer System",
     "slo": "5.1.5",
     "original_slo": "5.1.5",
-    "current_slo": "1.9.1",
+    "current_slo": "1.8.2",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1482,8 +1458,8 @@
     },
     "current_mapping": [
       {
-        "code": "1.9.1",
-        "description": "explain the uses of computer networks, transmission modes (simplex, half-duplex, full-duplex), and network architectures (client/server, peer-to-peer, point-to-point);",
+        "code": "1.8.2",
+        "description": "explain structure and functionality of network architecture and its types, including client-server, peer-to-peer, and point-to-point;",
         "topic": "The Computer System"
       }
     ],
@@ -1495,7 +1471,7 @@
       "D": "III and IV."
     },
     "correctOption": "D",
-    "explanation": "Unlike a client-server network, a peer-to-peer (P2P) network becomes less stable and harder to manage when the number of computers increases beyond ~10 nodes (III) and allows every node to act as both client and server—requesting and responding to services (IV).",
+    "explanation": "Unlike a client-server network, a peer-to-peer (P2P) network becomes less stable and harder to manage when the number of computers increases beyond ~10 nodes (III) and allows every node to act as both client and server\u2014requesting and responding to services (IV).",
     "option_feedback": [
       {
         "key": "A",
@@ -1519,16 +1495,16 @@
     "chapter": "The Computer System",
     "slo": "5.3.2",
     "original_slo": "5.3.2",
-    "current_slo": "1.8.1",
+    "current_slo": null,
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1536,13 +1512,7 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.8.1",
-        "description": "describe the functions of network communication devices and telephone/broadband technologies (Dial-up, ISDN, DSL, CDMA);",
-        "topic": "The Computer System"
-      }
-    ],
+    "current_mapping": [],
     "stem": "A type of communication via telephone network that gives a speed of around 256 Kbps is a/ an",
     "options": {
       "A": "dial-up line.",
@@ -1551,7 +1521,7 @@
       "D": "integrated services digital network."
     },
     "correctOption": "B",
-    "explanation": "Standard entry-level Digital Subscriber Line (DSL) broadband over telephone wires starts around 256 kbps and scales up into several megabits per second (whereas dial-up is capped at 56 kbps and ISDN at 64–128 kbps).",
+    "explanation": "Standard entry-level Digital Subscriber Line (DSL) broadband over telephone wires starts around 256 kbps and scales up into several megabits per second (whereas dial-up is capped at 56 kbps and ISDN at 64\u2013128 kbps).",
     "option_feedback": [
       {
         "key": "A",
@@ -1571,20 +1541,20 @@
     "questionNumber": 29,
     "pageNumber": 6,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.7.1",
     "original_slo": "6.7.1",
-    "current_slo": "3.4.1",
+    "current_slo": "3.8.1",
     "cognitiveLevel": "K",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1594,9 +1564,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.4.1",
-        "description": "create ordered (<ol>), unordered (<ul>), and definition (<dl>, <dt>, <dd>) lists and tables (<table>, <tr>, <th>, <td>) in HTML;",
-        "topic": "Programming Fundamentals"
+        "code": "3.8.1",
+        "description": "write HTML code to create a table in the webpage with the following table attributes: a. table border, b. border colour, c. background colour, d. table width, e. table height, f. table row <tr>, g. standard data cell <td>, h. header cell <th>;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Two of the tags that are related to tables in HTML are",
@@ -1627,8 +1597,8 @@
     "questionNumber": 30,
     "pageNumber": 7,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.5.3",
     "original_slo": "6.5.3",
     "current_slo": "3.5.1",
@@ -1637,10 +1607,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1651,8 +1621,8 @@
     "current_mapping": [
       {
         "code": "3.5.1",
-        "description": "create hyperlinks using anchor tags (<a> with href attribute) and embed images (<img> with src, alt, width, height) in HTML;",
-        "topic": "Programming Fundamentals"
+        "description": "write HTML code to: a. insert an image, b. apply a border to an image, c. select width of an image, d. select height of an image, e. select an alternate text for an image;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "The attribute that specifies the path to an image in a web page is",
@@ -1683,8 +1653,8 @@
     "questionNumber": 31,
     "pageNumber": 7,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.5.1",
     "original_slo": "6.5.1",
     "current_slo": "3.5.1",
@@ -1693,10 +1663,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1707,11 +1677,11 @@
     "current_mapping": [
       {
         "code": "3.5.1",
-        "description": "create hyperlinks using anchor tags (<a> with href attribute) and embed images (<img> with src, alt, width, height) in HTML;",
-        "topic": "Programming Fundamentals"
+        "description": "write HTML code to: a. insert an image, b. apply a border to an image, c. select width of an image, d. select height of an image, e. select an alternate text for an image;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
-    "stem": "An image with the following specifications is to be inserted in a web page.\n• The name of the image is flower.jpg\n• The alternative text for image is \"Flower Picture\"\n• The width and height of the image are to be 100 pixels\n• A solid black border having thickness of 3 pixels surrounds the picture\nThe HTML code to insert these specifications in a web page is",
+    "stem": "An image with the following specifications is to be inserted in a web page.\n\u2022 The name of the image is flower.jpg\n\u2022 The alternative text for image is \"Flower Picture\"\n\u2022 The width and height of the image are to be 100 pixels\n\u2022 A solid black border having thickness of 3 pixels surrounds the picture\nThe HTML code to insert these specifications in a web page is",
     "options": {
       "A": "<img src=\"flower\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
       "B": "<alt=\"Flower Picture\" img src=\"flower.jpg\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
@@ -1739,20 +1709,20 @@
     "questionNumber": 32,
     "pageNumber": 7,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.3.2",
     "original_slo": "6.3.2",
-    "current_slo": "3.3.1",
+    "current_slo": "3.9.2",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q32.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1762,9 +1732,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.3.1",
-        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
-        "topic": "Programming Fundamentals"
+        "code": "3.9.2",
+        "description": "apply code using inline/ internal CSS: a. background (color and image), b. font (colour, style and size), c. tables (border, size, alignment);",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Consider the given image of a web page showing a sentence. The font style of sentence is Courier New.\nThe HTML code to show this sentence is",
@@ -1795,20 +1765,20 @@
     "questionNumber": 33,
     "pageNumber": 8,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.3.1",
     "original_slo": "6.3.1",
-    "current_slo": "3.2.1",
+    "current_slo": "3.3.1",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q33.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1818,9 +1788,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.2.1",
-        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
-        "topic": "Programming Fundamentals"
+        "code": "3.3.1",
+        "description": "write HTML code to: a. specify a page title, b. create a paragraph, c. insert line breaks, d. insert spaces, e. add headings/ sub-headings;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Given is the image of a webpage showing a sentence (`I   Love   Pakistan.`).\nThe HTML code for displaying the sentence is",
@@ -1851,8 +1821,8 @@
     "questionNumber": 34,
     "pageNumber": 8,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.2.2",
     "original_slo": "6.2.2",
     "current_slo": "3.2.1",
@@ -1861,10 +1831,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1875,8 +1845,8 @@
     "current_mapping": [
       {
         "code": "3.2.1",
-        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
-        "topic": "Programming Fundamentals"
+        "description": "define Hypertext Markup Language (HTML);",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Which of the following statements is FALSE about HTML?",
@@ -1907,8 +1877,8 @@
     "questionNumber": 35,
     "pageNumber": 8,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.1.1",
     "original_slo": "6.1.1",
     "current_slo": "3.1.1",
@@ -1917,10 +1887,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1931,8 +1901,8 @@
     "current_mapping": [
       {
         "code": "3.1.1",
-        "description": "define World Wide Web (WWW), Uniform Resource Locator (URL), search engines, web servers, and types of websites;",
-        "topic": "Programming Fundamentals"
+        "description": "define the following terms: a. World Wide Web (WWW), b. web page, c. website, d. web application, e. search engine, f. web server, g. web browser;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Web crawler and database are two basic components of a",
@@ -1963,20 +1933,20 @@
     "questionNumber": 36,
     "pageNumber": 8,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.3.1",
     "original_slo": "6.3.1",
-    "current_slo": "3.2.1",
+    "current_slo": "3.3.1",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -1986,9 +1956,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.2.1",
-        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
-        "topic": "Programming Fundamentals"
+        "code": "3.3.1",
+        "description": "write HTML code to: a. specify a page title, b. create a paragraph, c. insert line breaks, d. insert spaces, e. add headings/ sub-headings;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Which of the following HTML tags does not need a closing tag?",
@@ -2019,20 +1989,20 @@
     "questionNumber": 37,
     "pageNumber": 8,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.5.3",
     "original_slo": "6.5.3",
-    "current_slo": "3.2.1",
+    "current_slo": "3.5.2",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2042,9 +2012,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.2.1",
-        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
-        "topic": "Programming Fundamentals"
+        "code": "3.5.2",
+        "description": "write HTML code to: a. apply background colour to a web page, b. apply foreground colour to a web page, c. assign a background image to the web page;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "An image can be set as background of a web page by using the",
@@ -2075,8 +2045,8 @@
     "questionNumber": 38,
     "pageNumber": 9,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.4.1",
     "original_slo": "6.4.1",
     "current_slo": "3.4.1",
@@ -2085,10 +2055,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2099,8 +2069,8 @@
     "current_mapping": [
       {
         "code": "3.4.1",
-        "description": "create ordered (<ol>), unordered (<ul>), and definition (<dl>, <dt>, <dd>) lists and tables (<table>, <tr>, <th>, <td>) in HTML;",
-        "topic": "Programming Fundamentals"
+        "description": "write HTML code to create: a. ordered list, b. unordered list, c. definition list;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "The types of tags that are essential to create a definition list are",
@@ -2131,20 +2101,20 @@
     "questionNumber": 39,
     "pageNumber": 9,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.5.3",
     "original_slo": "6.5.3",
-    "current_slo": "3.3.1",
+    "current_slo": "3.9.2",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q39.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2154,9 +2124,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.3.1",
-        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
-        "topic": "Programming Fundamentals"
+        "code": "3.9.2",
+        "description": "apply code using inline/ internal CSS: a. background (color and image), b. font (colour, style and size), c. tables (border, size, alignment);",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Consider the given text (`How are you?`).\nThe HTML code to show this text in white color over the magenta background is",
@@ -2187,20 +2157,20 @@
     "questionNumber": 40,
     "pageNumber": 9,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.5.3",
     "original_slo": "6.5.3",
-    "current_slo": "3.3.1",
+    "current_slo": "3.9.2",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q40.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2210,9 +2180,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.3.1",
-        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
-        "topic": "Programming Fundamentals"
+        "code": "3.9.2",
+        "description": "apply code using inline/ internal CSS: a. background (color and image), b. font (colour, style and size), c. tables (border, size, alignment);",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "The bold code line in the given HTML code is INCORRECT.\n`<body style =\"background-color:Burly Wood;\"/body>`\nThe CORRECT code line to show Burly Wood color in the background of a web page is",
@@ -2243,20 +2213,20 @@
     "questionNumber": 41,
     "pageNumber": 10,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.6.1",
     "original_slo": "6.6.1",
-    "current_slo": "3.5.1",
+    "current_slo": "3.6.1",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2266,9 +2236,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.5.1",
-        "description": "create hyperlinks using anchor tags (<a> with href attribute) and embed images (<img> with src, alt, width, height) in HTML;",
-        "topic": "Programming Fundamentals"
+        "code": "3.6.1",
+        "description": "write HTML code to: a. create a hyperlink to a web page; b. create an 'anchor' in the context of hyperlinks; c. create an anchor to hyperlink within a web page; d. create a graphical hyperlink;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "[ATP] Which of the following are used as a hyperlink to link a web page to another web page or another section of the same page when user clicks on it?",
@@ -2291,7 +2261,7 @@
       },
       {
         "key": "D",
-        "reason": "Both text and images—not whole documents—serve as clickable hyperlink elements on a page."
+        "reason": "Both text and images\u2014not whole documents\u2014serve as clickable hyperlink elements on a page."
       }
     ]
   },
@@ -2299,20 +2269,20 @@
     "questionNumber": 42,
     "pageNumber": 10,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.5.3",
     "original_slo": "6.5.3",
-    "current_slo": "3.2.1",
+    "current_slo": "3.5.2",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2322,9 +2292,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.2.1",
-        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
-        "topic": "Programming Fundamentals"
+        "code": "3.5.2",
+        "description": "write HTML code to: a. apply background colour to a web page, b. apply foreground colour to a web page, c. assign a background image to the web page;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "[ATP] Which of the following HTML codes should be used to display white text on a background having black color?",
@@ -2355,20 +2325,20 @@
     "questionNumber": 43,
     "pageNumber": 10,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.3.2",
     "original_slo": "6.3.2",
-    "current_slo": "3.3.1",
+    "current_slo": "3.9.2",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q43.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2378,9 +2348,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.3.1",
-        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
-        "topic": "Programming Fundamentals"
+        "code": "3.9.2",
+        "description": "apply code using inline/ internal CSS: a. background (color and image), b. font (colour, style and size), c. tables (border, size, alignment);",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "[ATP] Consider the given incomplete code (`th { ... }`). This code is supposed to right align the heading of a table.\nWhich of the following HTML statement lines should go in the empty box to complete the code?",
@@ -2411,20 +2381,20 @@
     "questionNumber": 44,
     "pageNumber": 11,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.5.1",
     "original_slo": "6.5.1",
-    "current_slo": "3.3.1",
+    "current_slo": "3.9.2",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q44.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2434,9 +2404,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.3.1",
-        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
-        "topic": "Programming Fundamentals"
+        "code": "3.9.2",
+        "description": "apply code using inline/ internal CSS: a. background (color and image), b. font (colour, style and size), c. tables (border, size, alignment);",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "[ATP] Consider the given image.\nThe HTML code to add a red colored, 7 pixels-thick border around the image is",
@@ -2467,20 +2437,20 @@
     "questionNumber": 45,
     "pageNumber": 11,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.6.1",
     "original_slo": "6.6.1",
-    "current_slo": "3.5.1",
+    "current_slo": "3.6.1",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q45.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2490,9 +2460,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.5.1",
-        "description": "create hyperlinks using anchor tags (<a> with href attribute) and embed images (<img> with src, alt, width, height) in HTML;",
-        "topic": "Programming Fundamentals"
+        "code": "3.6.1",
+        "description": "write HTML code to: a. create a hyperlink to a web page; b. create an 'anchor' in the context of hyperlinks; c. create an anchor to hyperlink within a web page; d. create a graphical hyperlink;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "[ATP] Consider the given image showing a hyperlink added to a webpage (`Click Here for ZOOM`).\nWhen someone clicks on Click Here for Zoom, then the Zoom website with the following address will be opened: https://zoom.us/\nThe CORRECT HTML code for this purpose is",
@@ -2523,20 +2493,20 @@
     "questionNumber": 46,
     "pageNumber": 12,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.3.2",
     "original_slo": "6.3.2",
-    "current_slo": "3.3.1",
+    "current_slo": "3.9.2",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q46.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2546,12 +2516,12 @@
     },
     "current_mapping": [
       {
-        "code": "3.3.1",
-        "description": "apply inline and internal CSS styling (font-family, color, background-color, font-size, text-align, border) to HTML elements;",
-        "topic": "Programming Fundamentals"
+        "code": "3.9.2",
+        "description": "apply code using inline/ internal CSS: a. background (color and image), b. font (colour, style and size), c. tables (border, size, alignment);",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
-    "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.46.\nThe following changes need to be made in the heading:\nFont style: Calibri | Font color: Blue | Font size: 35 pixels\nThe replaced HTML code will be",
+    "stem": "[ATP] Use the given image (`CMS \u2014 Content Management System`) to answer Q.46.\nThe following changes need to be made in the heading:\nFont style: Calibri | Font color: Blue | Font size: 35 pixels\nThe replaced HTML code will be",
     "options": {
       "A": "<p style=\"font-family:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>",
       "B": "<p style=\"font:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>",
@@ -2579,20 +2549,20 @@
     "questionNumber": 47,
     "pageNumber": 12,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.3.2",
     "original_slo": "6.3.2",
-    "current_slo": "3.2.1",
+    "current_slo": "3.3.2",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q46.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2602,12 +2572,12 @@
     },
     "current_mapping": [
       {
-        "code": "3.2.1",
-        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
-        "topic": "Programming Fundamentals"
+        "code": "3.3.2",
+        "description": "apply appropriate text formatting tags, i.e., bold, underline, italic, strikethrough, superscript, subscript, centre, font size, font colour and font face;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
-    "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.47.\nThe HTML code to display the text below the heading (`A content management system (CMS) is a` **software application** `that enables` <u>users</u> `to create, edit, collaborate on, publish and store digital` ~~data~~ `content.`) is",
+    "stem": "[ATP] Use the given image (`CMS \u2014 Content Management System`) to answer Q.47.\nThe HTML code to display the text below the heading (`A content management system (CMS) is a` **software application** `that enables` <u>users</u> `to create, edit, collaborate on, publish and store digital` ~~data~~ `content.`) is",
     "options": {
       "A": "<p>A content management system (CMS) is a </b>software application</b> that enables </u>users</u> to create, edit, collaborate on, publish and store digital </strike>data</strike> content.</p>",
       "B": "<p>A content management system (CMS) is a <b>software application</b> that enables <u>users</u> to create, edit, collaborate on, publish and store digital <strike>data</strike> content.</p>",
@@ -2635,20 +2605,20 @@
     "questionNumber": 48,
     "pageNumber": 12,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.3.2",
     "original_slo": "6.3.2",
-    "current_slo": "3.2.1",
+    "current_slo": "3.3.1",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q46.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2658,12 +2628,12 @@
     },
     "current_mapping": [
       {
-        "code": "3.2.1",
-        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
-        "topic": "Programming Fundamentals"
+        "code": "3.3.1",
+        "description": "write HTML code to: a. specify a page title, b. create a paragraph, c. insert line breaks, d. insert spaces, e. add headings/ sub-headings;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
-    "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.48.\nThe HTML code to display the heading shown in this image is",
+    "stem": "[ATP] Use the given image (`CMS \u2014 Content Management System`) to answer Q.48.\nThe HTML code to display the heading shown in this image is",
     "options": {
       "A": "<h1>Content Management System</h1>",
       "B": "<h6>Content Management System</h6>",
@@ -2691,20 +2661,20 @@
     "questionNumber": 49,
     "pageNumber": 13,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.3.1",
     "original_slo": "6.3.1",
-    "current_slo": "3.2.1",
+    "current_slo": "3.3.1",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2022-P1/q46.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2714,12 +2684,12 @@
     },
     "current_mapping": [
       {
-        "code": "3.2.1",
-        "description": "use basic HTML tags (html, head, title, body, p, br, hr, b, i, u, strike, headings) and character entities (&nbsp;) to structure a webpage;",
-        "topic": "Programming Fundamentals"
+        "code": "3.3.1",
+        "description": "write HTML code to: a. specify a page title, b. create a paragraph, c. insert line breaks, d. insert spaces, e. add headings/ sub-headings;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
-    "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.49.\nThe HTML code to show the text on the image of tab (`CMS`) is",
+    "stem": "[ATP] Use the given image (`CMS \u2014 Content Management System`) to answer Q.49.\nThe HTML code to show the text on the image of tab (`CMS`) is",
     "options": {
       "A": "<h4>CMS</h4>",
       "B": "<title>CMS</title>",
@@ -2747,8 +2717,8 @@
     "questionNumber": 50,
     "pageNumber": 13,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.4.1",
     "original_slo": "6.4.1",
     "current_slo": "3.4.1",
@@ -2757,10 +2727,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2022-key",
     "mapping_scope": {
@@ -2771,11 +2741,11 @@
     "current_mapping": [
       {
         "code": "3.4.1",
-        "description": "create ordered (<ol>), unordered (<ul>), and definition (<dl>, <dt>, <dd>) lists and tables (<table>, <tr>, <th>, <td>) in HTML;",
-        "topic": "Programming Fundamentals"
+        "description": "write HTML code to create: a. ordered list, b. unordered list, c. definition list;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
-    "stem": "[ATP] Consider the given image showing the text displayed on a web page:\n**List of Science Subjects**\n• Physics\n• Chemistry\n• Biology\nThe HTML code that would display the list shown in the web page is",
+    "stem": "[ATP] Consider the given image showing the text displayed on a web page:\n**List of Science Subjects**\n\u2022 Physics\n\u2022 Chemistry\n\u2022 Biology\nThe HTML code that would display the list shown in the web page is",
     "options": {
       "A": "<li> <ul>Physics</ul> <ul>Chemistry</ul> <ul>Biology</ul> </li>",
       "B": "<li> <ol>Physics</ol> <ol>Chemistry</ol> <ol>Biology</ol> </li>",
@@ -2795,7 +2765,7 @@
       },
       {
         "key": "D",
-        "reason": "<ol> creates a numbered ordered list (1, 2, 3) rather than a bulleted unordered list (•)."
+        "reason": "<ol> creates a numbered ordered list (1, 2, 3) rather than a bulleted unordered list (\u2022)."
       }
     ]
   }

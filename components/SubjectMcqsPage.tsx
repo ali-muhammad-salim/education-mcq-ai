@@ -8,7 +8,9 @@ import McqsClient from '@/app/[board]/[class]/[subject]/mcqs/McqsClient';
 import ssc1Mcqs from '@/data/physics/ssc1_model_mcqs.json';
 import ssc2Mcqs from '@/data/physics/ssc2_model_mcqs.json';
 import cs1Mcqs from '@/data/computer-science/ssc1_model_mcqs.json';
+import cs2Mcqs from '@/data/computer-science/ssc2_model_mcqs.json';
 import csPast2025 from '@/data/computer-science/ssc1_2025_past_mcqs.json';
+import csXPast2025 from '@/data/computer-science/ssc2_2025_past_mcqs.json';
 import { mappedChapterGroups } from '@/services/materials/practice';
 import MaterialList from '@/components/MaterialList';
 import { mcqCategories, type McqCategory } from '@/lib/mcqCategories';
@@ -38,12 +40,12 @@ export default async function SubjectMcqsPage({ params, category }: PageProps) {
   const meta = getSubjectMeta(rawSubject);
   const mappedChapters = category ? await mappedChapterGroups(board.shortCode, classDef.level, meta.title) : [];
   const isPhysics = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'physics';
-  const isCs = board.id === 'akueb' && classRoman === 'IX' && meta.slug === 'computer-science';
+  const isCs = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'computer-science';
   const legacy = isPhysics || isCs;
   if (category && !legacy && !mappedChapters.length) return <ContentUnavailable title={classDef.name + ' ' + meta.title + ' resources'} />;
   const baseUrl = `/${board.id}/${classRoman}/${meta.slug}`;
 
-  const mcqsData = isCs ? cs1Mcqs : isPhysics ? (classRoman === 'IX' ? ssc1Mcqs : ssc2Mcqs) : [];
+  const mcqsData = isCs ? (classRoman === 'IX' ? cs1Mcqs : cs2Mcqs) : isPhysics ? (classRoman === 'IX' ? ssc1Mcqs : ssc2Mcqs) : [];
   const answerDecisions = category && isPhysics && classDef.level === 9 ? await publishedAnswerDecisions() : [];
 
   return (
@@ -72,7 +74,9 @@ export default async function SubjectMcqsPage({ params, category }: PageProps) {
           questions={mcqsData}
           annualQuestions={
             isCs
-              ? csPast2025
+              ? classDef.level === 9
+                ? csPast2025
+                : csXPast2025
               : isPhysics
                 ? classDef.level === 9
                   ? past2025.map(q => ({ ...q, ...applyAnswerDecision({}, q.questionNumber, q.stem, q.options, answerDecisions) }))

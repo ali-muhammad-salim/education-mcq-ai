@@ -52,14 +52,14 @@
     "chapter": "The Computer System",
     "slo": "4.1.3",
     "original_slo": "4.1.3",
-    "current_slo": "1.7.1",
+    "current_slo": null,
     "cognitiveLevel": "U",
     "marks": 2,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": true,
-    "out_of_syllabus": false,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
     "current_syllabus_reviewed": true,
     "mapping_scope": {
@@ -67,13 +67,7 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.7.1",
-        "description": "explain the components of data communication (sender, receiver, message, transmission medium, and protocol) and modes of data transmission;",
-        "topic": "The Computer System"
-      }
-    ],
+    "current_mapping": [],
     "stem": "Give any TWO differences between analog and digital signals. (2 Marks)",
     "modelAnswer": "| Aspect | Analog Signals | Digital Signals |\n| :--- | :--- | :--- |\n| **1. Nature of Waveform** | Continuous electromagnetic wave that varies smoothly over time and can take any infinite value within a range (sine wave). | Discrete, non-continuous square pulses representing binary values (`0`s and `1`s / low and high voltage levels). |\n| **2. Noise Immunity & Speed** | More susceptible to noise and attenuation during transmission; lower transmission speed in modern computing. | Highly resistant to noise/degradation (easily regenerated) and offers faster digital data processing and transmission. |",
     "betterResponse": "Better responses correctly identified two key characteristics of analog signals (continuous wave nature, periodic voltage/current fluctuations representing any value in a range) contrasted against digital signals (discrete binary forms of 0s and 1s, higher transmission speed).",
@@ -115,7 +109,7 @@
     "current_mapping": [
       {
         "code": "1.9.4",
-        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "description": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
         "topic": "The Computer System"
       }
     ],
@@ -138,8 +132,8 @@
     "questionNumber": "Q.4",
     "pageNumber": 4,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.4.1",
     "original_slo": "6.4.1",
     "current_slo": "3.4.1",
@@ -160,8 +154,8 @@
     "current_mapping": [
       {
         "code": "3.4.1",
-        "description": "create ordered (<ol>), unordered (<ul>), and definition (<dl>, <dt>, <dd>) lists and tables in HTML;",
-        "topic": "Programming Fundamentals"
+        "description": "write HTML code to create: a. ordered list, b. unordered list, c. definition list;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Consider the given image of a web page (`Fruits` \u2014 displaying heading `Fruits` followed by a definition list: `Peach`: `Fruit with one seed`, `Papaya`: `Fruit with many seeds`).\nWrite the HTML code to display the web page shown in the given image. (5 Marks)",
@@ -199,7 +193,7 @@
     "chapter": "The Computer System",
     "slo": "1.3.5 / 1.4.2",
     "original_slo": "1.3.5",
-    "current_slo": "1.4.1",
+    "current_slo": "1.2.3",
     "cognitiveLevel": "U",
     "marks": 6,
     "isDiagram": false,
@@ -216,13 +210,8 @@
     },
     "current_mapping": [
       {
-        "code": "1.4.1",
-        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
-        "topic": "The Computer System"
-      },
-      {
-        "code": "1.1.3",
-        "description": "describe the basic operations of the data processing cycle (input, processing, storage, and output);",
+        "code": "1.2.3",
+        "description": "describe primary and secondary storage devices based on location, cost, capacity, access time, data processing method, and storage technology such as semiconductor (SSD), magnetic (HDD), and optical;",
         "topic": "The Computer System"
       }
     ],
@@ -267,12 +256,7 @@
     "current_mapping": [
       {
         "code": "1.9.3",
-        "description": "explain guided (twisted pair, coaxial, fiber optic) and unguided (radio waves, microwaves, infrared, satellite) transmission media;",
-        "topic": "The Computer System"
-      },
-      {
-        "code": "1.9.2",
-        "description": "differentiate among types of networks: PAN, LAN, MAN, WAN, VPN, and Bluetooth networks;",
+        "description": "explain guided media and unguided media;",
         "topic": "The Computer System"
       }
     ],

@@ -10,7 +10,7 @@ import { subjectMaterials } from "@/services/materials/catalog";
 import { getAllStandardPapers } from "@/lib/paperDataService";
 import prisma from "@/lib/prisma";
 import {publicMaterialWhere} from '@/lib/materialVisibility';
-import { physics2025Resources, physicsX2025Resources, cs2025Resources } from '@/lib/legacyPaperEvidence';
+import { physics2025Resources, physicsX2025Resources, cs2025Resources, csX2025Resources } from '@/lib/legacyPaperEvidence';
 import rg9 from '@/data/physics/ssc1_resource_guide.json';
 import rg10 from '@/data/physics/ssc2_resource_guide.json';
 
@@ -54,10 +54,10 @@ export default async function SubjectResourceList({
     legacy ||
     (scope.board.id === "akueb" &&
       scope.meta.slug === "computer-science" &&
-      scope.classDef.level === 9);
+      [9, 10].includes(scope.classDef.level));
   if (legacy && type==='past_paper' && !after) items.push(...(scope.classDef.level===9 ? physics2025Resources : physicsX2025Resources));
-  if (scope.board.id === 'akueb' && scope.meta.slug === 'computer-science' && scope.classDef.level === 9 && type === 'past_paper' && !after) {
-    items.push(...cs2025Resources);
+  if (scope.board.id === 'akueb' && scope.meta.slug === 'computer-science' && [9, 10].includes(scope.classDef.level) && type === 'past_paper' && !after) {
+    items.push(...(scope.classDef.level === 9 ? cs2025Resources : csX2025Resources));
   }
   if (type !== "textbook" && !after) {
     const stored = await prisma.pastPaper.findMany({
@@ -116,7 +116,7 @@ export default async function SubjectResourceList({
     if (
       type === "model_paper" &&
       hasStandardPapers &&
-      scope.classDef.level === 9 &&
+      (scope.classDef.level === 9 || scope.meta.slug === "computer-science") &&
       !after
     )
       items.push({

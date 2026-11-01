@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "@/components/rise/discovery.module.css";
+import styles from "@/components/MaterialLayout.module.css";
 import { notFound } from "next/navigation";
-import Trail from "@/components/rise/Trail";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import {
   getClassSubjects,
   normalizeBoardId,
@@ -31,21 +31,21 @@ export default async function ClassPage({ params }: PageProps) {
   const { board, classDef, subjects } = data;
 
   return (
-    <div className="rise-ui">
-      <div className={styles.shell}>
-        <Trail
-          items={[
-            { label: board.shortCode, href: `/${board.id}` },
-            { label: classDef.name },
-          ]}
-        />
+    <div className={styles.page}>
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: board.name, href: `/${board.id}` },
+          { label: `${classDef.name} (${classDef.stageLabel})`, active: true },
+        ]}
+      />
 
-        <ClassSubjectsClient
-          board={board}
-          classDef={classDef}
-          initialSubjects={subjects}
-        />
-      </div>
+      <ClassSubjectsClient
+        board={board}
+        classDef={classDef}
+        initialSubjects={subjects}
+      />
     </div>
   );
 }

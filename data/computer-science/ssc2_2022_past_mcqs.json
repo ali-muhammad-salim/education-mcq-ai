@@ -1,0 +1,1982 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "If a flowchart continues on the next page, then the symbol used to join the flowchart is",
+    "options": {
+      "A": "Terminal.",
+      "B": "Flow Lines.",
+      "C": "On-Page connector.",
+      "D": "Off-Page connector."
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "7.3.3",
+    "current_slo": "9.1.2",
+    "sloText": "draw flowcharts related to SLO # 9.1.1.",
+    "cognitiveLevel": "Remembering",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.2",
+        "description": "draw flowcharts related to SLO # 9.1.1.",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "An **Off-Page connector** (`D`, pentagon symbol) is used to connect a flowchart when it continues from one page to the next, whereas a circular On-Page connector joins parts on the same page.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 2,
+    "stem": "The figure that shows the iteration control structure of flowchart is",
+    "options": {
+      "A": "Diagram A (Sequential Process 1 -> Process 2)",
+      "B": "Diagram B (Loop returning from Process back above Condition)",
+      "C": "Diagram C (Selection branching to Process 1 or Process 2)",
+      "D": "Diagram D (Vertical sequential Process 1 -> Process 2 -> Process 3)"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "7.3.4",
+    "current_slo": "9.1.2",
+    "sloText": "draw flowcharts related to SLO # 9.1.1.",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.2",
+        "description": "draw flowcharts related to SLO # 9.1.1.",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": true,
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/CS-X-2022-P1/q2.png",
+    "explanation": "**Diagram B** shows an **iteration (loop) control structure**, where the flowline from `Process` loops back up to re-evaluate `Condition` until `Condition` becomes `No`.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 3,
+    "stem": "Consider the given flowchart symbol.\n\nThe flowchart symbol is used to represent the",
+    "options": {
+      "A": "decision in a flowchart.",
+      "B": "processing in a flowchart.",
+      "C": "input and the output in a flowchart.",
+      "D": "starting and the ending in a flowchart."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "7.3.3",
+    "current_slo": "9.1.2",
+    "sloText": "draw flowcharts related to SLO # 9.1.1.",
+    "cognitiveLevel": "Remembering",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.2",
+        "description": "draw flowcharts related to SLO # 9.1.1.",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": true,
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/CS-X-2022-P1/q3.png",
+    "explanation": "A **diamond** symbol represents a **decision** (conditional branching point) in a flowchart (`A`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 4,
+    "stem": "Consider the given statement.\n\n`PRINT A, B`\n\nThe flowchart symbol that must have this statement is",
+    "options": {
+      "A": "output.",
+      "B": "process.",
+      "C": "decision.",
+      "D": "terminator."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "7.3.3",
+    "current_slo": "9.1.2",
+    "sloText": "draw flowcharts related to SLO # 9.1.1.",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.2",
+        "description": "draw flowcharts related to SLO # 9.1.1.",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "`PRINT A, B` displays values to the user, so it must be placed inside a parallelogram **output** symbol (`A`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 5,
+    "stem": "Read the following actions:\n\n- Find out what the problem asks to do.\n- Carefully read the problem to understand it.\n- What information can be obtained from the problem?\n- Find out requirements for the solution of the problem.\n\nThe step of problem solving process in which these actions are performed is",
+    "options": {
+      "A": "defining the problem.",
+      "B": "analysing the problem.",
+      "C": "generating solutions of the problem.",
+      "D": "selecting the best solution of the problem."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "7.1.1",
+    "current_slo": null,
+    "sloText": "Problem Solving Steps (Moved to Class IX Unit 2 SLO 2.1.3 in 2025 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 9,
+    "unitName": "Problem Solving Steps (Moved to Class IX Unit 2 SLO 2.1.3 in 2025 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Carefully reading the problem statement to understand what it asks and identifying its basic requirements is the initial step of **defining the problem** (`A`). *(Note: Moved to Class IX Unit 2 SLO `2.1.3` in the 2025 syllabus.)*",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 6,
+    "stem": "In problem solving, the factors on which the selection of final solution should be based are\n\nI. cost\nII. speed\nIII. repetition\nIV. complexity",
+    "options": {
+      "A": "II and III.",
+      "B": "I, II and III.",
+      "C": "I, II and IV.",
+      "D": "II, III and IV."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "7.1.1",
+    "current_slo": null,
+    "sloText": "Problem Solving Steps (Moved to Class IX Unit 2 SLO 2.1.3 in 2025 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 9,
+    "unitName": "Problem Solving Steps (Moved to Class IX Unit 2 SLO 2.1.3 in 2025 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Selecting the optimal solution from candid solutions is based on **cost** (I), **speed** (II), and **complexity** (IV) (`C`). *(Note: Moved to Class IX Unit 2 SLO `2.1.3` in the 2025 syllabus.)*",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 7,
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: A=10\nStep 3: B=6\nStep 4: C=A%B\nStep 5: X=C*B\nStep 6: B=B+2\nStep 7: IF B<10 THEN GOTO Step 4\nStep 8: Output X\nStep 9: Stop\n```\n\nThe output of this algorithm is",
+    "options": {
+      "A": "10",
+      "B": "12",
+      "C": "16",
+      "D": "24"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "7.2.3",
+    "current_slo": "9.1.1",
+    "sloText": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing each iteration:\n- **Initial**: `A = 10, B = 6`\n- **Iteration 1**: `C = 10 % 6 = 4`, `X = 4 * 6 = 24`, `B = 6 + 2 = 8`. Since `B = 8 < 10`, `GOTO Step 4`.\n- **Iteration 2**: `C = 10 % 8 = 2`, `X = 2 * 8 = 16`, `B = 8 + 2 = 10`. Since `10 < 10` is false, proceed to Step 8 and output **`X = 16`** (`C`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 8,
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: Let the number X be 5 and Y be 3\nStep 3: Initialize P=1 and Q=0\nStep 4: P=P*X\nStep 5: Q=Q+1\nStep 6: If Q<=Y Then GOTO Step 4 otherwise GOTO Step 7\nStep 7: Output P\nStep 8: Stop\n```\n\nThe output of this algorithm is",
+    "options": {
+      "A": "5",
+      "B": "25",
+      "C": "125",
+      "D": "625"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "7.2.3",
+    "current_slo": "9.1.1",
+    "sloText": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing with `X = 5, Y = 3, P = 1, Q = 0`:\n- **Iteration 1**: `P = 5, Q = 1` (`1 <= 3` is true $\\rightarrow$ `GOTO Step 4`)\n- **Iteration 2**: `P = 25, Q = 2` (`2 <= 3` is true $\\rightarrow$ `GOTO Step 4`)\n- **Iteration 3**: `P = 125, Q = 3` (`3 <= 3` is true $\\rightarrow$ `GOTO Step 4`)\n- **Iteration 4**: `P = 625, Q = 4` (`4 <= 3` is false $\\rightarrow$ `GOTO Step 7`)\nOutputs **`P = 625`** (`D`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 9,
+    "stem": "The rules of a programming language to write a program are referred as",
+    "options": {
+      "A": "syntax.",
+      "B": "semantic.",
+      "C": "debugging.",
+      "D": "compilation."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "8.1.2",
+    "current_slo": "10.1.1",
+    "sloText": "differentiate between program syntax and program semantics;",
+    "cognitiveLevel": "Remembering",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.1.1",
+        "description": "differentiate between program syntax and program semantics;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**Syntax** (`A`) refers to the set of grammatical rules that define how valid statements and expressions are written in a programming language.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 10,
+    "stem": "The C compiler translates a",
+    "options": {
+      "A": "machine code into object program.",
+      "B": "source program into object program.",
+      "C": "machine code into C language program.",
+      "D": "C language program into source program."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "8.1.5",
+    "current_slo": "10.1.3",
+    "sloText": "differentiate among an assembler, compiler and an interpreter;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.1.3",
+        "description": "differentiate among an assembler, compiler and an interpreter;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "A **compiler** translates a high-level **source program into an object program** (machine code, Option `B`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 11,
+    "stem": "Which of the following statements is FALSE about assembly language?",
+    "options": {
+      "A": "It consists of mnemonics.",
+      "B": "It is translated into machine language by using interpreter.",
+      "C": "It requires less execution time and less storage than high level language.",
+      "D": "It is a program that must be converted into machine language before execution."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "8.1.3",
+    "current_slo": "10.1.3",
+    "sloText": "differentiate among an assembler, compiler and an interpreter;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.1.3",
+        "description": "differentiate among an assembler, compiler and an interpreter;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Assembly language is translated into machine language by an **assembler** (not an interpreter), making Statement **`B`** FALSE.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 12,
+    "stem": "In contrast to compiler, an interpreter",
+    "options": {
+      "A": "requires more memory to operate.",
+      "B": "translates an entire program at a time.",
+      "C": "generates an intermediate object code.",
+      "D": "displays error in each line one by one."
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "8.1.5",
+    "current_slo": "10.1.3",
+    "sloText": "differentiate among an assembler, compiler and an interpreter;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.1.3",
+        "description": "differentiate among an assembler, compiler and an interpreter;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "An **interpreter** translates and executes source code statement-by-statement, so it **displays errors in each line one by one** (`D`) without generating an intermediate object file.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 13,
+    "stem": "The declaration of a variable consists of",
+    "options": {
+      "A": "variable's value followed by variable's name.",
+      "B": "variable's data type followed by variable's name.",
+      "C": "variable's name followed by variable's data type.",
+      "D": "variable's value followed by variable's data type."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "8.4.2",
+    "current_slo": null,
+    "sloText": "Legacy C Variable Declaration (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Legacy C Variable Declaration (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In C, declaring a variable specifies the **variable's data type followed by the variable's name** (e.g., `int count;`, Option `B`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 14,
+    "stem": "The memory space occupied by float data type is",
+    "options": {
+      "A": "1 byte.",
+      "B": "2 bytes.",
+      "C": "4 bytes.",
+      "D": "8 bytes."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "8.4.3",
+    "current_slo": null,
+    "sloText": "Legacy C Data Types (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Remembering",
+    "unitNumber": 10,
+    "unitName": "Legacy C Data Types (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In standard C, a single-precision `float` variable occupies **4 bytes** (32 bits) of memory (`C`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 15,
+    "stem": "Consider the given C program.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int a=10, b;\n  float c=75.99;\n  b=a+c;\n  printf(\"Answer is: %d\", b);\n  return 0;\n}\n```\n\nThe output of this program is",
+    "options": {
+      "A": "85",
+      "B": "85.99",
+      "C": "86",
+      "D": "Error"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "8.4.5",
+    "current_slo": null,
+    "sloText": "Type Conversion & C Format Specifiers (Moved to Class IX Unit 3 SLO 3.10.8)",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Type Conversion & C Format Specifiers (Moved to Class IX Unit 3 SLO 3.10.8)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In `b = a + c;`, `10 + 75.99 = 85.99`. Because `b` is declared as an integer (`int b`), assigning `85.99` to `b` truncates the decimal fraction `.99`, storing **`85`** (`A`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 16,
+    "stem": "In a C program, which of the following comes before the `main()` function?",
+    "options": {
+      "A": "Local variable",
+      "B": "Global variable",
+      "C": "scanf() function",
+      "D": "printf() function"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "8.3.2",
+    "current_slo": null,
+    "sloText": "Legacy C Program Structure & Scope (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Legacy C Program Structure & Scope (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**Global variables** (`B`) are declared outside and before the `main()` function so they can be accessed across all functions in the program.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 17,
+    "stem": "Consider the given arithmetic expression having variables A, B, C, D, E and F.\n\n$$ABC \\div DEF$$\n\nHow many types of arithmetic operators will be used if the given expression is converted into C statement?",
+    "options": {
+      "A": "One",
+      "B": "Two",
+      "C": "Five",
+      "D": "Six"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "9.2.2",
+    "current_slo": "10.3.1",
+    "sloText": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.1",
+        "description": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Converting $ABC \\div DEF$ into a valid C/JavaScript expression (`A * B * C / (D * E * F)`) uses **Two** types of arithmetic operators: multiplication (`*`) and division (`/`) (`B`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 18,
+    "stem": "Consider the given C statement.\n\n```c\nW=X%Y;\n```\n\nTo store value `3` in variable `W`, the values of `X` and `Y` should be",
+    "options": {
+      "A": "X=3, Y=9",
+      "B": "X=9, Y=3",
+      "C": "X=18, Y=5",
+      "D": "X=5, Y=18"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "9.2.1",
+    "current_slo": "10.3.1",
+    "sloText": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.1",
+        "description": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Wait: for `X = 18, Y = 5` (`C`), $18 \\div 5 = 3$ with a remainder of $18 - 15 = \\mathbf{3}$, so `18 % 5 = 3` (`C`)! *(Note: `3 % 9` is also 3, whereas `18 % 5 = 3` is non-trivial modulus division where $X > Y$.)*",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 19,
+    "stem": "Consider the given statement.\n\n```c\nZ=X&&Y;\n```\n\nThe statement `Z=X&&Y;` is replaced with `Z=!(X||Y);`\n\nNow, to store value `1` in variable `Z`, the values stored in variable `X` and variable `Y` are\n\n| Option | Value Stored in Variable `X` | Value Stored in Variable `Y` |\n| :---: | :---: | :---: |\n| A | 0 | 0 |\n| B | 1 | 0 |\n| C | 0 | 1 |\n| D | 1 | 1 |",
+    "options": {
+      "A": "X = 0, Y = 0",
+      "B": "X = 1, Y = 0",
+      "C": "X = 0, Y = 1",
+      "D": "X = 1, Y = 1"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "9.2.7",
+    "current_slo": "10.3.5",
+    "sloText": "use the following logical operators in a JavaScript code: a. AND (&&), b. OR (||), c. NOT (!);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.5",
+        "description": "use the following logical operators in a JavaScript code: a. AND (&&), b. OR (||), c. NOT (!);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In `Z = !(X || Y);` (NOR logic), `Z` is `1` only when `X || Y` is `0`, which requires both **`X = 0` and `Y = 0`** (`A`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 20,
+    "stem": "Use the given program to answer Q.20 and Q.21.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int a=5, b=10, c=15;\n  a=b*c;\n  ++a;\n  b=a;\n  --b;\n  c=b+c-5;\n  printf(\"a=%d, b=%d, c=%d\", a, b, c);\n  return 0;\n}\n```\n\nThe number of binary operators used in this program is",
+    "options": {
+      "A": "two.",
+      "B": "three.",
+      "C": "five.",
+      "D": "six."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "9.2.9",
+    "current_slo": "10.3.1",
+    "sloText": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.1",
+        "description": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Excluding assignment (`=`) and the unary increment/decrement operators (`++a`, `--b`), the program uses **three** binary arithmetic operators: `*` (in `b*c`), `+` (in `b+c`), and `-` (in `-5`) (`B`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 21,
+    "stem": "Use the given program to answer Q.20 and Q.21.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int a=5, b=10, c=15;\n  a=b*c;\n  ++a;\n  b=a;\n  --b;\n  c=b+c-5;\n  printf(\"a=%d, b=%d, c=%d\", a, b, c);\n  return 0;\n}\n```\n\nThe output of this program is",
+    "options": {
+      "A": "`a=151, b=151, c=160`",
+      "B": "`a=151, b=150, c=160`",
+      "C": "`a=150, b=151, c=165`",
+      "D": "`a=151, b=151, c=165`"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "9.2.5",
+    "current_slo": "10.3.3",
+    "sloText": "use the increment (++) and decrement (--) operators in a JavaScript code;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.3",
+        "description": "use the increment (++) and decrement (--) operators in a JavaScript code;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing step by step:\n1. `a = 10 * 15 = 150`\n2. `++a` $\\rightarrow$ `a = 151`\n3. `b = a = 151`, then `--b` $\\rightarrow$ `b = 150`\n4. `c = 150 + 15 - 5 = 160`\nOutput: **`a=151, b=150, c=160`** (`B`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 22,
+    "stem": "Use the given program to answer Q.22 and Q.23.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int j=25, k=50, m;\n  m=(j>k) ?j:k;\n  printf(\"%d\", m);\n  return 0;\n}\n```\n\nIn this program, the statement `m=(j>k) ?j:k;` is similar to",
+    "options": {
+      "A": "if-else statement.",
+      "B": "for loop statement.",
+      "C": "while loop statement.",
+      "D": "output function statement."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "9.2.10",
+    "current_slo": "10.3.7",
+    "sloText": "use the conditional (ternary) operator in a JavaScript code;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.7",
+        "description": "use the conditional (ternary) operator in a JavaScript code;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The conditional (ternary) operator `(condition) ? expr1 : expr2` is a shorthand equivalent of an **`if-else` statement** (`A`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 23,
+    "stem": "Use the given program to answer Q.22 and Q.23.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int j=25, k=50, m;\n  m=(j>k) ?j:k;\n  printf(\"%d\", m);\n  return 0;\n}\n```\n\nThe output of this program is",
+    "options": {
+      "A": "0",
+      "B": "25",
+      "C": "50",
+      "D": "Error"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "9.2.10",
+    "current_slo": "10.3.7",
+    "sloText": "use the conditional (ternary) operator in a JavaScript code;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.7",
+        "description": "use the conditional (ternary) operator in a JavaScript code;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Since `j > k` (`25 > 50`) is **false**, the ternary operator evaluates the second expression after the colon (`k = 50`), assigning `m = 50` and printing **`50`** (`C`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 24,
+    "stem": "Consider the given statement.\n\n```c\nint y=2+3*6/2;\n```\n\nThe value stored in the variable `y` is",
+    "options": {
+      "A": "8",
+      "B": "10",
+      "C": "11",
+      "D": "15"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "9.2.11",
+    "current_slo": "10.3.8",
+    "sloText": "simplify an expression by using the order of precedence of operators;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.8",
+        "description": "simplify an expression by using the order of precedence of operators;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Following operator precedence (`*` and `/` before `+`): `3 * 6 = 18`, `18 / 2 = 9`, and `y = 2 + 9 = 11` (`C`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 25,
+    "stem": "Consider the given program.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int c, a=5, b= -10, x=4, y=2;\n  c=a++ - --b*y/x;\n  printf(\"c=%d\", c);\n  return 0;\n}\n```\n\nThe output of this program is",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "10",
+      "D": "15"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "9.2.1",
+    "current_slo": "10.3.8",
+    "sloText": "simplify an expression by using the order of precedence of operators;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.8",
+        "description": "simplify an expression by using the order of precedence of operators;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Evaluating `c = a++ - --b * y / x;`:\n1. `a++` uses the current value `5` (before incrementing `a` to `6`).\n2. `--b` pre-decrements `b` from `-10` to `-11`.\n3. `--b * y / x` = `(-11 * 2) / 4` = `-22 / 4` = `-5` (integer division).\n4. `c = 5 - (-5) = 10` (`C`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 26,
+    "stem": "Consider the following output.\n\n`Value of Y=25`\n\nWhich of the following C codes will show this output?",
+    "options": {
+      "A": "`int Y=25; puts(\"Value of Y=\", \"25\")`",
+      "B": "`int Y=25; puts(\"Value of Y=25\", Y);`",
+      "C": "`int Y=25; printf(\"Value of Y=%d\", \"Y\");`",
+      "D": "`int Y=25; printf(\"Value of Y=%d\", Y);`"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "9.1.1",
+    "current_slo": null,
+    "sloText": "Legacy C Formatted Output (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Legacy C Formatted Output (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In C, `printf(\"Value of Y=%d\", Y);` (`D`) substitutes the integer value of variable `Y` (`25`) in place of the `%d` format specifier, printing `Value of Y=25`.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 27,
+    "stem": "Braces are required in `if-else` statement when",
+    "options": {
+      "A": "a single statement is executed.",
+      "B": "a block of statement is executed.",
+      "C": "there is a comment after the condition.",
+      "D": "there is no statement after the execution."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "10.1.5",
+    "current_slo": "10.4.2",
+    "sloText": "explain the structure of if, if-else, nested if-else, or if-else-if and switch statement;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.4.2",
+        "description": "explain the structure of if, if-else, nested if-else, or if-else-if and switch statement;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Curly braces `{ }` are mandatory in an `if-else` statement whenever **a block of multiple statements is executed** (`B`) inside a branch.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 28,
+    "stem": "In switch-case structure, the data type of expression should be\n\nI. `int`\nII. `char`\nIII. `float`",
+    "options": {
+      "A": "I only.",
+      "B": "II only.",
+      "C": "either I or II.",
+      "D": "either II or III."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "10.1.9",
+    "current_slo": null,
+    "sloText": "Legacy C Switch Expression Data Type (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Legacy C Switch Expression Data Type (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In C, the controlling expression of a `switch` statement must be an integer or character type (**either `int` [I] or `char` [II]**, Option `C`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 29,
+    "stem": "In C language, if the case against the evaluated result of switch statement is not present, then the statement executed will be",
+    "options": {
+      "A": "else statement.",
+      "B": "else-if statement.",
+      "C": "default statement.",
+      "D": "otherwise statement."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "10.1.9",
+    "current_slo": "10.4.2",
+    "sloText": "explain the structure of if, if-else, nested if-else, or if-else-if and switch statement;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.4.2",
+        "description": "explain the structure of if, if-else, nested if-else, or if-else-if and switch statement;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In a `switch` statement, when no `case` constant matches the controlling expression, execution falls through to the **`default` statement** (`C`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 30,
+    "stem": "Consider the given C statement.\n\n```c\nif(((X%4==0)&&(X%100!=0))||(X%400==0))\n```\n\nThis statement will be evaluated as TRUE when the value of `X` is",
+    "options": {
+      "A": "1000",
+      "B": "1250",
+      "C": "1500",
+      "D": "2000"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "10.1.8",
+    "current_slo": "10.3.5",
+    "sloText": "use the following logical operators in a JavaScript code: a. AND (&&), b. OR (||), c. NOT (!);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.5",
+        "description": "use the following logical operators in a JavaScript code: a. AND (&&), b. OR (||), c. NOT (!);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "This is the Gregorian leap-year condition: century years (`1000, 1500, 2000`) fail `X % 100 != 0`, so they must satisfy `X % 400 == 0`. Only **`X = 2000`** (`2000 % 400 == 0`, Option `D`) evaluates to `TRUE`.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 31,
+    "stem": "A `for` loop code is written to perform 4 repetitions.\n\nWhich of the following expressions of this `for` loop will increase the value of counter variable?",
+    "options": {
+      "A": "`int j+=4;`",
+      "B": "`j++;`",
+      "C": "`j<=4;`",
+      "D": "`j--;`"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "11.1.2",
+    "current_slo": "10.5.2",
+    "sloText": "explain the structure of for, while, and do while loop in JavaScript;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.2",
+        "description": "explain the structure of for, while, and do while loop in JavaScript;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The increment expression **`j++;`** (`B`) increases the loop counter variable `j` by `1` after each iteration.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 32,
+    "stem": "Use the given program to answer Q.32 and Q.33.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int x=15;\n  do\n  {\n    printf(\"%d\", x);\n    x++;\n  }\n  while(x<=10);\n  return 0;\n}\n```\n\nThe output of this program is",
+    "options": {
+      "A": "0",
+      "B": "10",
+      "C": "15",
+      "D": "25"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "11.1.5",
+    "current_slo": "10.5.4",
+    "sloText": "write the output of a given program having a loop and selection structures;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.4",
+        "description": "write the output of a given program having a loop and selection structures;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Because a `do-while` loop executes its body once before checking the condition `x <= 10`, it prints the initial value **`15`** (`C`), increments `x` to `16`, and then terminates because `16 <= 10` is false.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 33,
+    "stem": "Use the given program to answer Q.32 and Q.33.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int x=15;\n  do\n  {\n    printf(\"%d\", x);\n    x++;\n  }\n  while(x<=10);\n  return 0;\n}\n```\n\nThe program needs to print integer values from 1 to 10.\n\nThe option that shows the CORRECT replacement of programming statement to give this output is\n\n| Option | Original Statement | Replacement of Original Statement |\n| :---: | :--- | :--- |\n| A | `x++;` | `x--;` |\n| B | `while(x<=10);` | `while(x==10);` |\n| C | `int x=15;` | `int x=1;` |\n| D | `printf(\"%d \", x);` | `printf(\"%d \", x++);` |",
+    "options": {
+      "A": "Replace `x++;` with `x--;`",
+      "B": "Replace `while(x<=10);` with `while(x==10);`",
+      "C": "Replace `int x=15;` with `int x=1;`",
+      "D": "Replace `printf(\"%d \", x);` with `printf(\"%d \", x++);`"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "11.1.7",
+    "current_slo": "10.5.3",
+    "sloText": "write JavaScript code to implement the following loops: a. for loop, b. while loop, c. do while loop, d. nested loop;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.3",
+        "description": "write JavaScript code to implement the following loops: a. for loop, b. while loop, c. do while loop, d. nested loop;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Replacing the initialisation `int x = 15;` with **`int x = 1;`** (`C`) causes the `do-while (x <= 10)` loop to print `1` through `10` as `x++` increments `x` on each pass.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 34,
+    "stem": "The loop that is also known as counter loop is",
+    "options": {
+      "A": "for loop.",
+      "B": "while loop.",
+      "C": "do-while loop.",
+      "D": "repeat-until loop."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "11.1.1",
+    "current_slo": "10.5.1",
+    "sloText": "describe loop and its different types;",
+    "cognitiveLevel": "Remembering",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.1",
+        "description": "describe loop and its different types;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The **`for` loop** (`A`) is known as a **counter-controlled loop** because its header explicitly combines counter initialisation, condition testing, and counter increment/decrement.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 35,
+    "stem": "Which of the following statements will skip the rest of the loop statement(s) and start the next iteration?",
+    "options": {
+      "A": "`break`",
+      "B": "`continue`",
+      "C": "`switch`",
+      "D": "`do-while`"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "11.1.9",
+    "current_slo": "10.5.5",
+    "sloText": "use break and continue statements in a JavaScript code;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.5",
+        "description": "use break and continue statements in a JavaScript code;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The **`continue`** statement (`B`) skips the remaining statements in the current loop iteration and jumps directly to the next iteration.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 36,
+    "stem": "If the condition is FALSE at the first iteration in `do-while` loop structure, then it will",
+    "options": {
+      "A": "give logical error.",
+      "B": "execute the statement once.",
+      "C": "execute the statement twice.",
+      "D": "fail to execute the statement."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "11.1.6",
+    "current_slo": "10.5.2",
+    "sloText": "explain the structure of for, while, and do while loop in JavaScript;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.2",
+        "description": "explain the structure of for, while, and do while loop in JavaScript;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "A `do-while` loop evaluates its condition at the bottom of the loop body, so it always **executes the statement once** (`B`) even if the condition is false on the first check.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 37,
+    "stem": "Consider the following code.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int i=1;\n  while (i<=5)\n  {\n    printf(\"%d \", i*=4);\n    i=i+2;\n  }\n  return 0;\n}\n```\n\nThe given code will display the output",
+    "options": {
+      "A": "`4`",
+      "B": "`1 4`",
+      "C": "`1 3 5`",
+      "D": "`4 12 20`"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "11.1.8",
+    "current_slo": "10.5.4",
+    "sloText": "write the output of a given program having a loop and selection structures;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.4",
+        "description": "write the output of a given program having a loop and selection structures;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "On the first pass (`i = 1 <= 5`), `i *= 4` sets `i = 4` and prints **`4`**, then `i = i + 2` sets `i = 6`, terminating the loop (`A`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 38,
+    "stem": "Use the given program to answer Q.38, Q.39 and Q.40.\n\n```c\n#include<stdio.h>\nint main()\n{\n  int i=5, j=10;\n  do\n  {\n    printf(\"Computer Science \\n\");\n  }\n  while (i++ < j--);\n  return 0;\n}\n```\n\nHow many times the output `Computer Science` will be shown?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "11.1.7",
+    "current_slo": "10.5.4",
+    "sloText": "write the output of a given program having a loop and selection structures;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.4",
+        "description": "write the output of a given program having a loop and selection structures;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing `do { ... } while (i++ < j--);` starting from `i = 5, j = 10`:\n1. **Pass 1**: prints (1st); checks `5 < 10` (True) $\\rightarrow$ `i = 6, j = 9`\n2. **Pass 2**: prints (2nd); checks `6 < 9` (True) $\\rightarrow$ `i = 7, j = 8`\n3. **Pass 3**: prints (3rd); checks `7 < 8` (True) $\\rightarrow$ `i = 8, j = 7`\n4. **Pass 4**: prints (**4th**); checks `8 < 7` (False) $\\rightarrow$ exits (`C`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 39,
+    "stem": "Use the given program to answer Q.38, Q.39 and Q.40.\n\n```c\n#include<stdio.h>\nint main()\n{\n  int i=5, j=10;\n  do\n  {\n    printf(\"Computer Science \\n\");\n  }\n  while (i++ < j--);\n  return 0;\n}\n```\n\nIf `printf(\"Computer Science \\n\");` is replaced by `printf(\"%d \\n\",j);` then the output will be",
+    "options": {
+      "A": "`10, 9, 8, 7` (printed on separate lines)",
+      "B": "`9, 8, 7, 6` (printed on separate lines)",
+      "C": "`9, 8, 7` (printed on separate lines)",
+      "D": "`10, 9, 8` (printed on separate lines)"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "11.1.7",
+    "current_slo": "10.5.4",
+    "sloText": "write the output of a given program having a loop and selection structures;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.4",
+        "description": "write the output of a given program having a loop and selection structures;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Across the 4 executions of the `do` block, `j` has the values **`10, 9, 8, 7`** (`A`) before being post-decremented in `while (i++ < j--)` at the end of each pass.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 40,
+    "stem": "Use the given program to answer Q.38, Q.39 and Q.40.\n\n```c\n#include<stdio.h>\nint main()\n{\n  int i=5, j=10;\n  do\n  {\n    printf(\"Computer Science \\n\");\n  }\n  while (i++ < j--);\n  return 0;\n}\n```\n\nIf we write the same code using `while` loop, then the difference in number of iterations will",
+    "options": {
+      "A": "not be significant.",
+      "B": "be one less than do-while.",
+      "C": "be two less than do-while.",
+      "D": "be one more than do-while."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "11.1.1",
+    "current_slo": "10.5.2",
+    "sloText": "explain the structure of for, while, and do while loop in JavaScript;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.2",
+        "description": "explain the structure of for, while, and do while loop in JavaScript;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In a pre-test `while (i++ < j--)` loop, the condition is tested before each pass: it succeeds 3 times (`5<10`, `6<9`, `7<8`) and fails on the 4th check (`8<7`), executing the body **3 times** \u2014 which is **one less than `do-while`** (`B`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 41,
+    "stem": "**[Alternate to Practical \u2014 ATP]** In C language, the purpose of `scanf()` function is to",
+    "options": {
+      "A": "take input from the user.",
+      "B": "display output to the user.",
+      "C": "scan each loop in a program.",
+      "D": "scan each error in a program."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "9.1.3",
+    "current_slo": null,
+    "sloText": "Legacy C Input/Output Functions (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Legacy C Input/Output Functions (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In C, `scanf()` is the formatted input function used to **take input from the user** via the standard input stream (`A`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 42,
+    "stem": "**[Alternate to Practical \u2014 ATP]** Consider the following mathematical formula.\n\n$$A = \\pi r^2$$\n\nThe C equivalent expression for this formula is",
+    "options": {
+      "A": "`A = \u03c0 * r^2`",
+      "B": "`A = \u03c0 * r * r`",
+      "C": "`A = 3.141 * r^2`",
+      "D": "`A = 3.141 * r * r`"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "9.2.3",
+    "current_slo": "10.3.1",
+    "sloText": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.1",
+        "description": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Replacing $\\pi$ with `3.141` and writing $r^2$ using the multiplication operator `*` (`r * r`) gives **`A = 3.141 * r * r`** (`D`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 43,
+    "stem": "**[Alternate to Practical \u2014 ATP]** Use the given program to answer Q.43, Q.44 and Q.45.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int a=9.3;\n  float b=10.5;\n  float c=a+b;\n  printf(\"c=%.2f\", c);\n  return 0;\n}\n```\n\nThe number of format specifiers in this program is",
+    "options": {
+      "A": "one.",
+      "B": "two.",
+      "C": "three.",
+      "D": "four."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "9.1.2",
+    "current_slo": null,
+    "sloText": "Legacy C Format Specifiers (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Legacy C Format Specifiers (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The program contains **one** format specifier (`%.2f` inside `printf(\"c=%.2f\", c);`, Option `A`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 44,
+    "stem": "**[Alternate to Practical \u2014 ATP]** Use the given program to answer Q.43, Q.44 and Q.45.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int a=9.3;\n  float b=10.5;\n  float c=a+b;\n  printf(\"c=%.2f\", c);\n  return 0;\n}\n```\n\nThe output of this program is",
+    "options": {
+      "A": "19.00",
+      "B": "19.50",
+      "C": "19.80",
+      "D": "20.00"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "9.1.2",
+    "current_slo": null,
+    "sloText": "Type Conversion & C Format Specifiers (Moved to Class IX Unit 3 SLO 3.10.8)",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Type Conversion & C Format Specifiers (Moved to Class IX Unit 3 SLO 3.10.8)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Because `a` is declared as `int a = 9.3;`, its fractional part `.3` is truncated upon initialisation, storing `a = 9`. Then `c = 9 + 10.5 = 19.5`, which prints with two decimal places (`%.2f`) as **`19.50`** (`B`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 45,
+    "stem": "**[Alternate to Practical \u2014 ATP]** Use the given program to answer Q.43, Q.44 and Q.45.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int a=9.3;\n  float b=10.5;\n  float c=a+b;\n  printf(\"c=%.2f\", c);\n  return 0;\n}\n```\n\nIf the data type of variable `c` is changed into an integer, then the output of this program would be",
+    "options": {
+      "A": "19",
+      "B": "19.5",
+      "C": "19.8",
+      "D": "20"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "9.1.2",
+    "current_slo": null,
+    "sloText": "Type Conversion & C Data Types (Moved to Class IX Unit 3 SLO 3.10.8)",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Type Conversion & C Data Types (Moved to Class IX Unit 3 SLO 3.10.8)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "If `c` is declared as an `int` (and printed as an integer), `9 + 10.5 = 19.5` is truncated to the integer **`19`** (`A`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 46,
+    "stem": "**[Alternate to Practical \u2014 ATP]** Consider the given program.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int J=10; J+=5;\n  printf(\"%d\",J);\n  return 0;\n}\n```\n\nThe output of this program is",
+    "options": {
+      "A": "0",
+      "B": "5",
+      "C": "10",
+      "D": "15"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "9.2.4",
+    "current_slo": "10.3.2",
+    "sloText": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.2",
+        "description": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The compound addition assignment `J += 5;` adds `5` to `J = 10`, producing **`15`** (`D`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 47,
+    "stem": "**[Alternate to Practical \u2014 ATP]** Use the given information to answer Q.47 and Q.48.\n\nA program is written to display whether the triangle is equilateral, isosceles or scalene on the basis of the length of sides of a triangle given as input.\n*(Note: A triangle with unequal sides is called scalene triangle, a triangle with two equal sides is called isosceles triangle and a triangle with all equal sides is called equilateral triangle.)*\n\nThe condition that will give an output as isosceles triangle is",
+    "options": {
+      "A": "`if(side1=side2&&side1=side3&&side2=side3)`",
+      "B": "`if(side1=side2||side1=side3||side2=side3)`",
+      "C": "`if(side1==side2||side1==side3||side2==side3)`",
+      "D": "`if(side1==side2&&side1==side3&&side2==side3)`"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "10.1.8",
+    "current_slo": "10.4.3",
+    "sloText": "write JavaScript code to implement the following statements: a. if statement, b. if-else statement, c. if-else or if-else-if, d. switch statement;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.4.3",
+        "description": "write JavaScript code to implement the following statements: a. if statement, b. if-else statement, c. if-else or if-else-if, d. switch statement;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Checking whether any two sides are equal requires the relational equality operator (`==`) combined with the logical OR operator (`||`), giving **`if(side1==side2||side1==side3||side2==side3)`** (`C`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 48,
+    "stem": "**[Alternate to Practical \u2014 ATP]** Use the given information to answer Q.47 and Q.48.\n\nA program is written to display whether the triangle is equilateral, isosceles or scalene on the basis of the length of sides of a triangle given as input.\n\nThe structure that will facilitate in getting the desired output is",
+    "options": {
+      "A": "if structure.",
+      "B": "if-else structure.",
+      "C": "if-else-if structure.",
+      "D": "switch-case structure."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "10.1.8",
+    "current_slo": "10.4.2",
+    "sloText": "explain the structure of if, if-else, nested if-else, or if-else-if and switch statement;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.4.2",
+        "description": "explain the structure of if, if-else, nested if-else, or if-else-if and switch statement;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Classifying a triangle into one of three mutually exclusive categories (equilateral, isosceles, or scalene) using relational comparisons requires an **`if-else-if` structure** (`C`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 49,
+    "stem": "**[Alternate to Practical \u2014 ATP]** Consider the given program.\n\n```c\n#include<stdio.h>\nint main()\n{\n  int Z;\n  printf(\"Enter a number: \\t\");\n  scanf(\"%d\", &Z);\n  if (Z>10)\n    printf(\"Hello World\");\n  return 0;\n}\n```\n\nThe input that will give `Hello World` as an output is",
+    "options": {
+      "A": "-12",
+      "B": "-10",
+      "C": "10",
+      "D": "12"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "10.1.4",
+    "current_slo": "10.4.3",
+    "sloText": "write JavaScript code to implement the following statements: a. if statement, b. if-else statement, c. if-else or if-else-if, d. switch statement;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.4.3",
+        "description": "write JavaScript code to implement the following statements: a. if statement, b. if-else statement, c. if-else or if-else-if, d. switch statement;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The condition `Z > 10` is strictly greater than `10`, which is true only for **`Z = 12`** (`D`).",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  },
+  {
+    "questionNumber": 50,
+    "stem": "**[Alternate to Practical \u2014 ATP]** Consider the given program.\n\n```c\n#include <stdio.h>\nint main()\n{\n  int n=10, i;\n  for (i=1; i<=n; ++i)\n  {\n    printf(\"Vision\\n\");\n  }\n  return 0;\n}\n```\n\nThe loop will repeat the code infinitely when the loop statement is",
+    "options": {
+      "A": "`for(i=1; i>=n; --i)`",
+      "B": "`for(i= 0; i<=n; --i)`",
+      "C": "`for(i=1; i>= n; ++i)`",
+      "D": "`for(i=10; i<=n; ++i)`"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "11.1.3",
+    "current_slo": "10.5.3",
+    "sloText": "write JavaScript code to implement the following loops: a. for loop, b. while loop, c. do while loop, d. nested loop;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.3",
+        "description": "write JavaScript code to implement the following loops: a. for loop, b. while loop, c. do while loop, d. nested loop;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In **`for(i= 0; i<=n; --i)`** (`B`), `i` starts at `0` (which is `<= 10`) and decrements (`0, -1, -2, -3, ...`), so `i <= 10` remains true on every pass (until integer underflow), repeating the loop indefinitely.",
+    "examYear": 2022,
+    "paperCode": "CS-X-2022-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2022-key"
+  }
+]

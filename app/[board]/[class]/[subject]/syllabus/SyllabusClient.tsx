@@ -3,11 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
-  BookOpen, Search, Download, ChevronDown, ChevronUp,
-  ArrowLeft, ArrowRight, Filter, Sparkles, CheckCircle2
+  Search, Download, ChevronDown, ChevronUp,
+  ArrowLeft
 } from 'lucide-react';
 import type { BoardInfo, ClassDefinition } from '@/lib/boardCatalog';
-import {filterSyllabus,syllabusLevel,syllabusDisplayText} from '@/lib/syllabusPresentation';
+import { filterSyllabus, syllabusLevel, syllabusDisplayText } from '@/lib/syllabusPresentation';
 import MathText from '@/components/MathText';
 import { SubjectMeta } from '@/lib/subjectMetadata';
 
@@ -23,26 +23,46 @@ interface Props {
 export default function SyllabusClient({ board, classDef, meta, baseUrl, units, originalUrl }: Props) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedUnit, setSelectedUnit] = useState<number | 'all'>('all');
-  const [cognitiveFilter, setCognitiveFilter] = useState<'all' | 'R' | 'U' | 'A' | 'E'>('all');
+  const [cognitiveFilter, setCognitiveFilter] = useState<'all' | 'R' | 'U' | 'A' | 'An' | 'E' | 'FA'>('all');
   const [expandedUnits, setExpandedUnits] = useState<Record<number, boolean>>({
-    1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true
+    1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true,
+    8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true
   });
 
   useEffect(() => {
-    const followHash = () => {const code=decodeURIComponent(window.location.hash.replace('#slo-','')); if(!code)return;
-      const unit=units.find(u=>u.subtopics.some((t:any)=>t.slos.some((o:any)=>o.code===code)));
-      if(unit){setExpandedUnits(old=>({...old,[unit.unitNumber]:true}));setSelectedUnit('all');setSearchQuery('');setCognitiveFilter('all');requestAnimationFrame(()=>document.getElementById('slo-'+code)?.scrollIntoView({block:'center'}));}
-    };followHash();window.addEventListener('hashchange',followHash);return()=>window.removeEventListener('hashchange',followHash);
-  },[units]);
+    const followHash = () => {
+      const code = decodeURIComponent(window.location.hash.replace('#slo-', ''));
+      if (!code) return;
+      const unit = units.find(u => u.subtopics.some((t: any) => t.slos.some((o: any) => o.code === code)));
+      if (unit) {
+        setExpandedUnits(old => ({ ...old, [unit.unitNumber]: true }));
+        setSelectedUnit('all');
+        setSearchQuery('');
+        setCognitiveFilter('all');
+        requestAnimationFrame(() => document.getElementById('slo-' + code)?.scrollIntoView({ block: 'center' }));
+      }
+    };
+    followHash();
+    window.addEventListener('hashchange', followHash);
+    return () => window.removeEventListener('hashchange', followHash);
+  }, [units]);
+
   const toggleUnit = (uNum: number) => {
     setExpandedUnits(prev => ({ ...prev, [uNum]: !prev[uNum] }));
   };
 
-  const filteredUnits=filterSyllabus(units,searchQuery,cognitiveFilter,selectedUnit);
+  const filteredUnits = filterSyllabus(units, searchQuery, cognitiveFilter, selectedUnit);
 
-  const pdfUrl = originalUrl || (classDef.roman === 'IX'
-    ? '/materials/ssc/physics/ssc-1/physics-ssc-i-syllabus-grade-9-dedicated.pdf'
-    : '/materials/ssc/physics/ssc-2/physics-ssc-ii-syllabus-grade-10-dedicated.pdf');
+  const isCS = meta.slug === 'computer-science';
+  const pdfUrl = isCS
+    ? (classDef.roman === 'IX'
+      ? '/materials/ssc/computer-science/ssc-1/computer-science-ssc-i-syllabus-grade-9-dedicated.pdf'
+      : '/materials/ssc/computer-science/ssc-2/computer-science-ssc-ii-syllabus-grade-10-dedicated.pdf')
+    : (originalUrl || (classDef.roman === 'IX'
+      ? '/materials/ssc/physics/ssc-1/physics-ssc-i-syllabus-grade-9-dedicated.pdf'
+      : '/materials/ssc/physics/ssc-2/physics-ssc-ii-syllabus-grade-10-dedicated.pdf'));
+
+  const hasExamSpecs = units.some(u => u.examSpec);
 
   return (
     <div>
@@ -66,7 +86,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
               {classDef.name} ({classDef.stageLabel})
             </span>
             <span style={{ background: 'rgba(255, 255, 255, 0.2)', padding: '4px 10px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 600 }}>
-              CURRICULUM SPECIFICATION
+              CURRICULUM SPECIFICATION (2025 EDITION)
             </span>
           </div>
 
@@ -122,6 +142,52 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
         </div>
       </div>
 
+      {/* Exam Specification Summary Bar (when available) */}
+      {hasExamSpecs && (
+        <div style={{
+          background: '#ffffff',
+          border: '1.5px solid #dce5e1',
+          borderRadius: '14px',
+          padding: '1.25rem 1.5rem',
+          marginBottom: '1.5rem',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.85rem' }}>
+            <div>
+              <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0b5e4a', margin: 0 }}>
+                Scheme of Assessment — {classDef.name} Exam Specification (75 Total Marks)
+              </h2>
+              <div style={{ fontSize: '0.82rem', color: '#4b5563', marginTop: '2px' }}>
+                Theory Paper I: <strong>40 MCQs (40 Marks)</strong> • Theory Paper II: <strong>CRQs (13 Marks) + ERQs (12 Marks) = 25 Marks</strong> • Practical Paper III: <strong>10 Marks</strong> • Cognitive Weightage: Remember 0–10%, Understand 30–50%, Apply &amp; Beyond 40–60%
+              </div>
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.6rem' }}>
+            {units.map((u: any) => (
+              <div
+                key={u.unitNumber}
+                style={{
+                  background: '#f8faf9',
+                  border: '1px solid #dce5e1',
+                  borderRadius: '10px',
+                  padding: '0.65rem 0.85rem'
+                }}
+              >
+                <div style={{ fontSize: '0.74rem', fontWeight: 800, color: '#0b5e4a' }}>
+                  Topic {u.unitNumber}: {u.name}
+                </div>
+                <div style={{ fontSize: '0.78rem', color: '#374151', marginTop: '3px', fontWeight: 600 }}>
+                  MCQs: <strong>{u.examSpec?.mcqs ?? '-'}</strong>
+                  {u.examSpec?.crqs ? ` • CRQs: ${u.examSpec.crqs} (${u.examSpec.crqMarks}m)` : ''}
+                  {u.examSpec?.erqGroup ? ` • ERQ: ${u.examSpec.erqGroup}` : ''}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Search & Cognitive Filter Controls */}
       <div style={{
         background: '#ffffff',
@@ -163,7 +229,9 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
             { id: 'R', label: 'Remembering (R)' },
             { id: 'U', label: 'Understanding (U)' },
             { id: 'A', label: 'Application (A)' },
-            { id: 'E', label: 'Evaluation (E)' }
+            { id: 'An', label: 'Analysing (An)' },
+            { id: 'E', label: 'Evaluation (E)' },
+            { id: 'FA', label: 'Formative (FA)' }
           ].map(f => (
             <button
               key={f.id}
@@ -202,7 +270,8 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
             >
               {/* Unit Header */}
               <button
-                aria-expanded={isExpanded} onClick={() => toggleUnit(unit.unitNumber)}
+                aria-expanded={isExpanded}
+                onClick={() => toggleUnit(unit.unitNumber)}
                 style={{
                   width: '100%',
                   padding: '1.25rem 1.5rem',
@@ -215,7 +284,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
                   textAlign: 'left'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
                   <span style={{
                     background: '#0b5e4a',
                     color: '#ffffff',
@@ -229,6 +298,19 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
                   <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#1a2e26', margin: 0 }}>
                     {unit.name}
                   </h3>
+                  {unit.examSpec?.mcqs !== undefined && (
+                    <span style={{
+                      background: '#e0f2fe',
+                      color: '#0369a1',
+                      padding: '3px 8px',
+                      borderRadius: '6px',
+                      fontSize: '0.74rem',
+                      fontWeight: 700
+                    }}>
+                      {unit.examSpec.mcqs} MCQs
+                      {unit.examSpec.crqs ? ` • ${unit.examSpec.crqs} CRQ (${unit.examSpec.crqMarks}m)` : ''}
+                    </span>
+                  )}
                 </div>
                 {isExpanded ? <ChevronUp size={20} color="#0b5e4a" /> : <ChevronDown size={20} color="#0b5e4a" />}
               </button>
@@ -243,7 +325,12 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
                       </h4>
 
                       <div style={{ overflowX: 'auto' }}>
-                        <table className="mobile-data-table" tabIndex={0} aria-label="Learning outcomes; scroll horizontally for all columns" style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
+                        <table
+                          className="mobile-data-table"
+                          tabIndex={0}
+                          aria-label="Learning outcomes; scroll horizontally for all columns"
+                          style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}
+                        >
                           <thead>
                             <tr style={{ background: '#f0f5f2', borderBottom: '2px solid #dce5e1', textAlign: 'left' }}>
                               <th style={{ padding: '8px 12px', width: '120px', color: '#0b5e4a', fontWeight: 800 }}>SLO Code</th>
@@ -252,28 +339,52 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
                             </tr>
                           </thead>
                           <tbody>
-                            {subtopic.slos && subtopic.slos.map((slo: any, sloIdx: number) => (
-                              <tr id={"slo-"+slo.code} key={sloIdx} style={{ borderBottom: '1px solid #f0f4f2' }}>
-                                <td style={{ padding: '8px 12px', fontWeight: 700, color: '#1a2e26', fontFamily: 'monospace' }}>
-                                  {slo.code}
-                                </td>
-                                <td style={{ padding: '8px 12px', color: '#4b5563', lineHeight: 1.5 }}>
-                                  <MathText text={syllabusDisplayText(slo.description)} />
-                                </td>
-                                <td style={{ padding: '8px 12px', textAlign: 'center' }}>
-                                  <span style={{
-                                    background: syllabusLevel(slo.cognitiveLevel) === 'R' ? '#fef3c7' : syllabusLevel(slo.cognitiveLevel) === 'U' ? '#e0f2fe' : '#dcfce7',
-                                    color: syllabusLevel(slo.cognitiveLevel) === 'R' ? '#92400e' : syllabusLevel(slo.cognitiveLevel) === 'U' ? '#0369a1' : '#15803d',
-                                    padding: '2px 8px',
-                                    borderRadius: '4px',
-                                    fontSize: '0.75rem',
-                                    fontWeight: 800
-                                  }}>
-                                    {syllabusLevel(slo.cognitiveLevel) || slo.cognitiveLevel}
-                                  </span>
-                                </td>
-                              </tr>
-                            ))}
+                            {subtopic.slos && subtopic.slos.map((slo: any, sloIdx: number) => {
+                              const lv = syllabusLevel(slo.cognitiveLevel) || slo.cognitiveShort || slo.cognitiveLevel;
+                              return (
+                                <tr id={"slo-" + slo.code} key={sloIdx} style={{ borderBottom: '1px solid #f0f4f2' }}>
+                                  <td style={{ padding: '8px 12px', fontWeight: 700, color: '#1a2e26', fontFamily: 'monospace' }}>
+                                    {slo.code}
+                                  </td>
+                                  <td style={{ padding: '8px 12px', color: '#4b5563', lineHeight: 1.5 }}>
+                                    <MathText text={syllabusDisplayText(slo.description)} />
+                                    {slo.isPractical && (
+                                      <span style={{
+                                        marginLeft: '8px',
+                                        background: '#ede9fe',
+                                        color: '#5b21b6',
+                                        padding: '1px 6px',
+                                        borderRadius: '4px',
+                                        fontSize: '0.7rem',
+                                        fontWeight: 700
+                                      }}>
+                                        Practical Lab
+                                      </span>
+                                    )}
+                                  </td>
+                                  <td style={{ padding: '8px 12px', textAlign: 'center' }}>
+                                    <span style={{
+                                      background:
+                                        lv === 'R' ? '#fef3c7' :
+                                        lv === 'U' ? '#e0f2fe' :
+                                        lv === 'FA' ? '#f3e8ff' :
+                                        lv === 'E' || lv === 'An' ? '#fce7f3' : '#dcfce7',
+                                      color:
+                                        lv === 'R' ? '#92400e' :
+                                        lv === 'U' ? '#0369a1' :
+                                        lv === 'FA' ? '#6b21a8' :
+                                        lv === 'E' || lv === 'An' ? '#9d174d' : '#15803d',
+                                      padding: '2px 8px',
+                                      borderRadius: '4px',
+                                      fontSize: '0.75rem',
+                                      fontWeight: 800
+                                    }}>
+                                      {lv}
+                                    </span>
+                                  </td>
+                                </tr>
+                              );
+                            })}
                           </tbody>
                         </table>
                       </div>

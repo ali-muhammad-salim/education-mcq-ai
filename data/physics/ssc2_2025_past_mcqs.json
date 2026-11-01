@@ -33,11 +33,11 @@
     "current_slo": "11.1.1",
     "unitNumber": 11,
     "unitName": "Wave Motion",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 11: Wave Motion",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_2.png",
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "mapping_scope": {
       "board": "AKU-EB",
       "grade": 10,
@@ -52,7 +52,7 @@
         "topic": "Wave Motion"
       }
     ],
-    "review_status": "pending_review",
+    "review_status": "verified",
     "source_transcription": {
       "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
       "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
@@ -122,8 +122,7 @@
           "topic": "Wave Motion"
         }
       ]
-    },
-    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+    }
   },
   {
     "questionNumber": "2",
@@ -159,7 +158,7 @@
     "current_slo": "11.1.2",
     "unitNumber": 11,
     "unitName": "Wave Motion",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 11: Wave Motion",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_2.png",
     "syllabus_reviewed": true,
@@ -293,11 +292,11 @@
     "current_slo": "11.1.1",
     "unitNumber": 11,
     "unitName": "Wave Motion",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 11: Wave Motion",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_2.png",
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "mapping_scope": {
       "board": "AKU-EB",
       "grade": 10,
@@ -312,7 +311,7 @@
         "topic": "Wave Motion"
       }
     ],
-    "review_status": "pending_review",
+    "review_status": "verified",
     "source_transcription": {
       "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
       "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
@@ -362,7 +361,7 @@
       "questionNumber": 3,
       "officialKey": "B",
       "proposedKey": "D",
-      "reason": "Official key prints B (II only — amplitude). In general SHM E = 2π²mf²A², total energy depends on both amplitude (II) and frequency (III)."
+      "reason": "Official key prints B (II only \u2014 amplitude). In general SHM E = 2\u03c0\u00b2mf\u00b2A\u00b2, total energy depends on both amplitude (II) and frequency (III)."
     },
     "digital_content": {
       "generated_separately": true,
@@ -389,8 +388,7 @@
           "topic": "Wave Motion"
         }
       ]
-    },
-    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+    }
   },
   {
     "questionNumber": "4",
@@ -407,7 +405,7 @@
     "option_feedback": [
       {
         "key": "A",
-        "reason": "Dividing 2 by 0.5 gives 4.0, whereas wave speed is the product v = f × λ."
+        "reason": "Dividing 2 by 0.5 gives 4.0, whereas wave speed is the product v = f \u00d7 \u03bb."
       },
       {
         "key": "B",
@@ -426,7 +424,7 @@
     "current_slo": "11.4.4",
     "unitNumber": 11,
     "unitName": "Wave Motion",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 11: Wave Motion",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_2.png",
     "syllabus_reviewed": true,
@@ -441,7 +439,7 @@
     "current_mapping": [
       {
         "code": "11.4.4",
-        "description": "solve word problems using the relation f = 1/ T and v = f λ;",
+        "description": "solve word problems using the relation f = 1/ T and v = f \u03bb;",
         "topic": "Wave Motion"
       }
     ],
@@ -496,7 +494,7 @@
       "option_feedback": [
         {
           "key": "A",
-          "reason": "Dividing 2 by 0.5 gives 4.0, whereas wave speed is the product v = f × λ."
+          "reason": "Dividing 2 by 0.5 gives 4.0, whereas wave speed is the product v = f \u00d7 \u03bb."
         },
         {
           "key": "B",
@@ -511,7 +509,7 @@
       "current_2025_mapping": [
         {
           "code": "11.4.4",
-          "description": "solve word problems using the relation f = 1/ T and v = f λ;",
+          "description": "solve word problems using the relation f = 1/ T and v = f \u03bb;",
           "topic": "Wave Motion"
         }
       ]
@@ -551,7 +549,7 @@
     "current_slo": "12.1.2",
     "unitNumber": 12,
     "unitName": "Sound",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 12: Sound",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_2.png",
     "syllabus_reviewed": true,
@@ -676,7 +674,7 @@
     "current_slo": "12.2.2",
     "unitNumber": 12,
     "unitName": "Sound",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 12: Sound",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_3.png",
     "syllabus_reviewed": true,
@@ -810,7 +808,7 @@
     "current_slo": "12.2.1",
     "unitNumber": 12,
     "unitName": "Sound",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 12: Sound",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_3.png",
     "syllabus_reviewed": true,
@@ -825,7 +823,7 @@
     "current_mapping": [
       {
         "code": "12.2.1",
-        "description": "define the terms ‘pitch’, ‘loudness’ and ‘quality of sound’;",
+        "description": "define the terms \u2018pitch\u2019, \u2018loudness\u2019 and \u2018quality of sound\u2019;",
         "topic": "Sound"
       }
     ],
@@ -895,7 +893,7 @@
       "current_2025_mapping": [
         {
           "code": "12.2.1",
-          "description": "define the terms ‘pitch’, ‘loudness’ and ‘quality of sound’;",
+          "description": "define the terms \u2018pitch\u2019, \u2018loudness\u2019 and \u2018quality of sound\u2019;",
           "topic": "Sound"
         }
       ]
@@ -935,11 +933,11 @@
     "current_slo": "12.5.2",
     "unitNumber": 12,
     "unitName": "Sound",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 12: Sound",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_3.png",
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "mapping_scope": {
       "board": "AKU-EB",
       "grade": 10,
@@ -954,7 +952,7 @@
         "topic": "Sound"
       }
     ],
-    "review_status": "pending_review",
+    "review_status": "verified",
     "source_transcription": {
       "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
       "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
@@ -1024,8 +1022,7 @@
           "topic": "Sound"
         }
       ]
-    },
-    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+    }
   },
   {
     "questionNumber": "9",
@@ -1058,10 +1055,10 @@
     "isDiagram": true,
     "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q9.png",
     "slo": "12.2.1",
-    "current_slo": "13.5.2",
+    "current_slo": null,
     "unitNumber": 13,
     "unitName": "Geometrical Optics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 13: Geometrical Optics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_3.png",
     "syllabus_reviewed": true,
@@ -1072,14 +1069,8 @@
       "subject": "Physics"
     },
     "original_slo": "12.2.1",
-    "out_of_syllabus": false,
-    "current_mapping": [
-      {
-        "code": "13.5.2",
-        "description": "draw images by placing objects at different positions in front of convex and concave lens;",
-        "topic": "Geometrical Optics"
-      }
-    ],
+    "out_of_syllabus": true,
+    "current_mapping": [],
     "review_status": "verified",
     "source_transcription": {
       "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
@@ -1159,7 +1150,8 @@
           "topic": "Geometrical Optics"
         }
       ]
-    }
+    },
+    "out_of_syllabus_reason": "Spherical mirrors (concave/convex mirror image formation) were in the 2006/2022 syllabus; the 2025 Class X syllabus (Unit 13) covers plane mirrors and thin lenses."
   },
   {
     "questionNumber": "10",
@@ -1195,7 +1187,7 @@
     "current_slo": "13.8.3",
     "unitNumber": 13,
     "unitName": "Geometrical Optics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 13: Geometrical Optics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_4.png",
     "syllabus_reviewed": true,
@@ -1320,7 +1312,7 @@
     "current_slo": "13.2.4",
     "unitNumber": 13,
     "unitName": "Geometrical Optics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 13: Geometrical Optics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_4.png",
     "syllabus_reviewed": true,
@@ -1454,7 +1446,7 @@
     "current_slo": "13.3.1",
     "unitNumber": 13,
     "unitName": "Geometrical Optics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 13: Geometrical Optics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_4.png",
     "syllabus_reviewed": true,
@@ -1560,7 +1552,7 @@
     "option_feedback": [
       {
         "key": "A",
-        "reason": "The angle of refraction in air is 90°, whereas X is the acute angle of incidence in glass."
+        "reason": "The angle of refraction in air is 90\u00b0, whereas X is the acute angle of incidence in glass."
       },
       {
         "key": "C",
@@ -1568,7 +1560,7 @@
       },
       {
         "key": "D",
-        "reason": "The ray shown is refracted along the interface at 90°, not reflected back into the glass."
+        "reason": "The ray shown is refracted along the interface at 90\u00b0, not reflected back into the glass."
       }
     ],
     "cognitiveLevel": "U",
@@ -1579,7 +1571,7 @@
     "current_slo": "13.4.3",
     "unitNumber": 13,
     "unitName": "Geometrical Optics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 13: Geometrical Optics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_5.png",
     "syllabus_reviewed": true,
@@ -1658,7 +1650,7 @@
       "option_feedback": [
         {
           "key": "A",
-          "reason": "The angle of refraction in air is 90°, whereas X is the acute angle of incidence in glass."
+          "reason": "The angle of refraction in air is 90\u00b0, whereas X is the acute angle of incidence in glass."
         },
         {
           "key": "C",
@@ -1666,7 +1658,7 @@
         },
         {
           "key": "D",
-          "reason": "The ray shown is refracted along the interface at 90°, not reflected back into the glass."
+          "reason": "The ray shown is refracted along the interface at 90\u00b0, not reflected back into the glass."
         }
       ],
       "current_2025_slo": "13.4.3",
@@ -1684,10 +1676,10 @@
     "pageNumber": 5,
     "stem": "A force of attraction is directly proportional to the product of charges and inversely proportional to the square of separation between them is called",
     "options": {
-      "A": "Coulomb’s law.",
-      "B": "Newton’s law.",
-      "C": "Gauss’s law.",
-      "D": "Ohm’s law."
+      "A": "Coulomb\u2019s law.",
+      "B": "Newton\u2019s law.",
+      "C": "Gauss\u2019s law.",
+      "D": "Ohm\u2019s law."
     },
     "correctOption": "A",
     "explanation": "Coulomb's law states that the magnitude of the electrostatic force of attraction or repulsion between two point charges is directly proportional to the product of the magnitudes of the charges and inversely proportional to the square of the distance between them ($F = k\\frac{q_1 q_2}{r^2}$).",
@@ -1713,7 +1705,7 @@
     "current_slo": "14.2.2",
     "unitNumber": 14,
     "unitName": "Electrostatics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 14: Electrostatics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_5.png",
     "syllabus_reviewed": true,
@@ -1728,7 +1720,7 @@
     "current_mapping": [
       {
         "code": "14.2.2",
-        "description": "explain Coulomb’s law;",
+        "description": "explain Coulomb\u2019s law;",
         "topic": "Electrostatics"
       }
     ],
@@ -1771,10 +1763,10 @@
       },
       "verbatim_stem": "A force of attraction is directly proportional to the product of charges and inversely proportional to the square of separation between them is called",
       "verbatim_options": {
-        "A": "Coulomb’s law.",
-        "B": "Newton’s law.",
-        "C": "Gauss’s law.",
-        "D": "Ohm’s law."
+        "A": "Coulomb\u2019s law.",
+        "B": "Newton\u2019s law.",
+        "C": "Gauss\u2019s law.",
+        "D": "Ohm\u2019s law."
       }
     },
     "digital_content": {
@@ -1798,7 +1790,7 @@
       "current_2025_mapping": [
         {
           "code": "14.2.2",
-          "description": "explain Coulomb’s law;",
+          "description": "explain Coulomb\u2019s law;",
           "topic": "Electrostatics"
         }
       ]
@@ -1823,11 +1815,11 @@
       },
       {
         "key": "B",
-        "reason": "Electric potential V is inversely proportional to r, whereas electric field intensity E is inversely proportional to r²."
+        "reason": "Electric potential V is inversely proportional to r, whereas electric field intensity E is inversely proportional to r\u00b2."
       },
       {
         "key": "C",
-        "reason": "Electric field intensity decreases with the square of distance (1/r²), not increases."
+        "reason": "Electric field intensity decreases with the square of distance (1/r\u00b2), not increases."
       }
     ],
     "cognitiveLevel": "K",
@@ -1838,7 +1830,7 @@
     "current_slo": "14.5.1",
     "unitNumber": 14,
     "unitName": "Electrostatics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 14: Electrostatics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_5.png",
     "syllabus_reviewed": true,
@@ -1912,11 +1904,11 @@
         },
         {
           "key": "B",
-          "reason": "Electric potential V is inversely proportional to r, whereas electric field intensity E is inversely proportional to r²."
+          "reason": "Electric potential V is inversely proportional to r, whereas electric field intensity E is inversely proportional to r\u00b2."
         },
         {
           "key": "C",
-          "reason": "Electric field intensity decreases with the square of distance (1/r²), not increases."
+          "reason": "Electric field intensity decreases with the square of distance (1/r\u00b2), not increases."
         }
       ],
       "current_2025_slo": "14.5.1",
@@ -1963,7 +1955,7 @@
     "current_slo": "14.5.3",
     "unitNumber": 14,
     "unitName": "Electrostatics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 14: Electrostatics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_5.png",
     "syllabus_reviewed": true,
@@ -2082,11 +2074,11 @@
       },
       {
         "key": "C",
-        "reason": "In series combination, the equivalent capacitance is always smaller than the smallest individual capacitor (6 µF)."
+        "reason": "In series combination, the equivalent capacitance is always smaller than the smallest individual capacitor (6 \u00b5F)."
       },
       {
         "key": "D",
-        "reason": "18 µF is the equivalent capacitance when 6 µF and 12 µF are connected in parallel (C₁ + C₂)."
+        "reason": "18 \u00b5F is the equivalent capacitance when 6 \u00b5F and 12 \u00b5F are connected in parallel (C\u2081 + C\u2082)."
       }
     ],
     "cognitiveLevel": "A",
@@ -2094,29 +2086,23 @@
     "isDiagram": false,
     "diagramUrl": null,
     "slo": "13.8.4",
-    "current_slo": "14.2.3",
+    "current_slo": null,
     "unitNumber": 14,
     "unitName": "Electrostatics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 14: Electrostatics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "mapping_scope": {
       "board": "AKU-EB",
       "grade": 10,
       "subject": "Physics"
     },
     "original_slo": "13.8.4",
-    "out_of_syllabus": false,
-    "current_mapping": [
-      {
-        "code": "14.2.3",
-        "description": "solve word problems related to the electrostatic charges by using Coulomb’s law;",
-        "topic": "Electrostatics"
-      }
-    ],
-    "review_status": "pending_review",
+    "out_of_syllabus": true,
+    "current_mapping": [],
+    "review_status": "verified",
     "source_transcription": {
       "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
       "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
@@ -2171,23 +2157,23 @@
         },
         {
           "key": "C",
-          "reason": "In series combination, the equivalent capacitance is always smaller than the smallest individual capacitor (6 µF)."
+          "reason": "In series combination, the equivalent capacitance is always smaller than the smallest individual capacitor (6 \u00b5F)."
         },
         {
           "key": "D",
-          "reason": "18 µF is the equivalent capacitance when 6 µF and 12 µF are connected in parallel (C₁ + C₂)."
+          "reason": "18 \u00b5F is the equivalent capacitance when 6 \u00b5F and 12 \u00b5F are connected in parallel (C\u2081 + C\u2082)."
         }
       ],
       "current_2025_slo": "14.2.3",
       "current_2025_mapping": [
         {
           "code": "14.2.3",
-          "description": "solve word problems related to the electrostatic charges by using Coulomb’s law;",
+          "description": "solve word problems related to the electrostatic charges by using Coulomb\u2019s law;",
           "topic": "Electrostatics"
         }
       ]
     },
-    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+    "out_of_syllabus_reason": "Series and parallel combinations of capacitors were in the 2006/2022 syllabus; capacitors are not in the 2025 Class X Electrostatics syllabus."
   },
   {
     "questionNumber": "18",
@@ -2204,15 +2190,15 @@
     "option_feedback": [
       {
         "key": "B",
-        "reason": "Resistance is directly proportional to the length of the conductor (R ∝ L)."
+        "reason": "Resistance is directly proportional to the length of the conductor (R \u221d L)."
       },
       {
         "key": "C",
-        "reason": "Resistance is directly proportional to the resistivity of the material (R ∝ ρ)."
+        "reason": "Resistance is directly proportional to the resistivity of the material (R \u221d \u03c1)."
       },
       {
         "key": "D",
-        "reason": "Resistance is inversely proportional to the cross-sectional area of the conductor (R ∝ 1/A)."
+        "reason": "Resistance is inversely proportional to the cross-sectional area of the conductor (R \u221d 1/A)."
       }
     ],
     "cognitiveLevel": "U",
@@ -2223,7 +2209,7 @@
     "current_slo": "15.3.2",
     "unitNumber": 15,
     "unitName": "Electric Current",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 15: Electric Current",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
     "syllabus_reviewed": true,
@@ -2293,15 +2279,15 @@
       "option_feedback": [
         {
           "key": "B",
-          "reason": "Resistance is directly proportional to the length of the conductor (R ∝ L)."
+          "reason": "Resistance is directly proportional to the length of the conductor (R \u221d L)."
         },
         {
           "key": "C",
-          "reason": "Resistance is directly proportional to the resistivity of the material (R ∝ ρ)."
+          "reason": "Resistance is directly proportional to the resistivity of the material (R \u221d \u03c1)."
         },
         {
           "key": "D",
-          "reason": "Resistance is inversely proportional to the cross-sectional area of the conductor (R ∝ 1/A)."
+          "reason": "Resistance is inversely proportional to the cross-sectional area of the conductor (R \u221d 1/A)."
         }
       ],
       "current_2025_slo": "15.3.2",
@@ -2329,15 +2315,15 @@
     "option_feedback": [
       {
         "key": "A",
-        "reason": "Removing B₁ only opens the outer left branch (B₁ and B₂), while B₃ and B₄ continue to glow."
+        "reason": "Removing B\u2081 only opens the outer left branch (B\u2081 and B\u2082), while B\u2083 and B\u2084 continue to glow."
       },
       {
         "key": "B",
-        "reason": "Removing B₂ only opens the outer left branch (B₁ and B₂), while B₃ and B₄ continue to glow."
+        "reason": "Removing B\u2082 only opens the outer left branch (B\u2081 and B\u2082), while B\u2083 and B\u2084 continue to glow."
       },
       {
         "key": "C",
-        "reason": "Removing B₃ only opens the middle parallel branch, while current still flows through B₂, B₁, and B₄."
+        "reason": "Removing B\u2083 only opens the middle parallel branch, while current still flows through B\u2082, B\u2081, and B\u2084."
       }
     ],
     "cognitiveLevel": "A",
@@ -2348,7 +2334,7 @@
     "current_slo": "16.2.3",
     "unitNumber": 16,
     "unitName": "D.C. Circuits",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 16: D.C. Circuits",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
     "syllabus_reviewed": true,
@@ -2427,15 +2413,15 @@
       "option_feedback": [
         {
           "key": "A",
-          "reason": "Removing B₁ only opens the outer left branch (B₁ and B₂), while B₃ and B₄ continue to glow."
+          "reason": "Removing B\u2081 only opens the outer left branch (B\u2081 and B\u2082), while B\u2083 and B\u2084 continue to glow."
         },
         {
           "key": "B",
-          "reason": "Removing B₂ only opens the outer left branch (B₁ and B₂), while B₃ and B₄ continue to glow."
+          "reason": "Removing B\u2082 only opens the outer left branch (B\u2081 and B\u2082), while B\u2083 and B\u2084 continue to glow."
         },
         {
           "key": "C",
-          "reason": "Removing B₃ only opens the middle parallel branch, while current still flows through B₂, B₁, and B₄."
+          "reason": "Removing B\u2083 only opens the middle parallel branch, while current still flows through B\u2082, B\u2081, and B\u2084."
         }
       ],
       "current_2025_slo": "16.2.3",
@@ -2471,7 +2457,7 @@
       },
       {
         "key": "D",
-        "reason": "Adding 100 + 200 gives 300, whereas energy is Power × Time / 1000."
+        "reason": "Adding 100 + 200 gives 300, whereas energy is Power \u00d7 Time / 1000."
       }
     ],
     "cognitiveLevel": "A",
@@ -2482,11 +2468,11 @@
     "current_slo": "15.6.4",
     "unitNumber": 15,
     "unitName": "Electric Current",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 15: Electric Current",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "mapping_scope": {
       "board": "AKU-EB",
       "grade": 10,
@@ -2501,7 +2487,7 @@
         "topic": "Electric Current"
       }
     ],
-    "review_status": "pending_review",
+    "review_status": "verified",
     "source_transcription": {
       "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
       "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
@@ -2560,7 +2546,7 @@
         },
         {
           "key": "D",
-          "reason": "Adding 100 + 200 gives 300, whereas energy is Power × Time / 1000."
+          "reason": "Adding 100 + 200 gives 300, whereas energy is Power \u00d7 Time / 1000."
         }
       ],
       "current_2025_slo": "15.6.4",
@@ -2571,8 +2557,7 @@
           "topic": "Electric Current"
         }
       ]
-    },
-    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+    }
   },
   {
     "questionNumber": "21",
@@ -2608,7 +2593,7 @@
     "current_slo": "15.8.1",
     "unitNumber": 15,
     "unitName": "Electric Current",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 15: Electric Current",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
     "syllabus_reviewed": true,
@@ -2733,7 +2718,7 @@
     "current_slo": "18.5.4",
     "unitNumber": 18,
     "unitName": "Electromagnetic Induction",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 18: Electromagnetic Induction",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_6.png",
     "syllabus_reviewed": true,
@@ -2858,7 +2843,7 @@
     "current_slo": "17.5.1",
     "unitNumber": 17,
     "unitName": "Magnetism and Electromagnetism",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 17: Magnetism and Electromagnetism",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_7.png",
     "syllabus_reviewed": true,
@@ -2873,7 +2858,7 @@
     "current_mapping": [
       {
         "code": "17.5.1",
-        "description": "describe that a current carrying coil in a magnetic field experiences a torque with the help of Fleming’s left-hand rule;",
+        "description": "describe that a current carrying coil in a magnetic field experiences a torque with the help of Fleming\u2019s left-hand rule;",
         "topic": "Magnetism and Electromagnetism"
       }
     ],
@@ -2952,7 +2937,7 @@
       "current_2025_mapping": [
         {
           "code": "17.5.1",
-          "description": "describe that a current carrying coil in a magnetic field experiences a torque with the help of Fleming’s left-hand rule;",
+          "description": "describe that a current carrying coil in a magnetic field experiences a torque with the help of Fleming\u2019s left-hand rule;",
           "topic": "Magnetism and Electromagnetism"
         }
       ]
@@ -2969,7 +2954,7 @@
       "D": "Current is detected provided the magnet is moving back and forth in the coil."
     },
     "correctOption": "D",
-    "explanation": "According to Faraday's law of electromagnetic induction, an e.m.f. (and induced current in a closed circuit) is produced only while there is a **changing magnetic flux** linking the coil—that is, provided there is relative motion between the magnet and the coil.",
+    "explanation": "According to Faraday's law of electromagnetic induction, an e.m.f. (and induced current in a closed circuit) is produced only while there is a **changing magnetic flux** linking the coil\u2014that is, provided there is relative motion between the magnet and the coil.",
     "option_feedback": [
       {
         "key": "A",
@@ -2992,7 +2977,7 @@
     "current_slo": "18.1.1",
     "unitNumber": 18,
     "unitName": "Electromagnetic Induction",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 18: Electromagnetic Induction",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_7.png",
     "syllabus_reviewed": true,
@@ -3067,7 +3052,7 @@
     },
     "digital_content": {
       "generated_separately": true,
-      "explanation": "According to Faraday's law of electromagnetic induction, an e.m.f. (and induced current in a closed circuit) is produced only while there is a **changing magnetic flux** linking the coil—that is, provided there is relative motion between the magnet and the coil.",
+      "explanation": "According to Faraday's law of electromagnetic induction, an e.m.f. (and induced current in a closed circuit) is produced only while there is a **changing magnetic flux** linking the coil\u2014that is, provided there is relative motion between the magnet and the coil.",
       "option_feedback": [
         {
           "key": "A",
@@ -3126,7 +3111,7 @@
     "current_slo": "18.3.1",
     "unitNumber": 18,
     "unitName": "Electromagnetic Induction",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 18: Electromagnetic Induction",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_7.png",
     "syllabus_reviewed": true,
@@ -3251,7 +3236,7 @@
     "current_slo": "18.5.2",
     "unitNumber": 18,
     "unitName": "Electromagnetic Induction",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 18: Electromagnetic Induction",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_7.png",
     "syllabus_reviewed": true,
@@ -3357,15 +3342,15 @@
     "option_feedback": [
       {
         "key": "A",
-        "reason": "Silver melts at a much lower temperature (~962 °C) before strong thermionic emission occurs."
+        "reason": "Silver melts at a much lower temperature (~962 \u00b0C) before strong thermionic emission occurs."
       },
       {
         "key": "B",
-        "reason": "Copper melts at ~1085 °C and would vaporize at filament temperatures."
+        "reason": "Copper melts at ~1085 \u00b0C and would vaporize at filament temperatures."
       },
       {
         "key": "D",
-        "reason": "Aluminium has a low melting point (~660 °C) unsuitable for heated filaments."
+        "reason": "Aluminium has a low melting point (~660 \u00b0C) unsuitable for heated filaments."
       }
     ],
     "cognitiveLevel": "K",
@@ -3376,11 +3361,11 @@
     "current_slo": "19.2.1",
     "unitNumber": 19,
     "unitName": "Electromagnetic Waves and Electronics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 19: Electromagnetic Waves and Electronics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_8.png",
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "mapping_scope": {
       "board": "AKU-EB",
       "grade": 10,
@@ -3395,7 +3380,7 @@
         "topic": "Electromagnetic Waves and Electronics"
       }
     ],
-    "review_status": "pending_review",
+    "review_status": "verified",
     "source_transcription": {
       "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
       "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
@@ -3446,15 +3431,15 @@
       "option_feedback": [
         {
           "key": "A",
-          "reason": "Silver melts at a much lower temperature (~962 °C) before strong thermionic emission occurs."
+          "reason": "Silver melts at a much lower temperature (~962 \u00b0C) before strong thermionic emission occurs."
         },
         {
           "key": "B",
-          "reason": "Copper melts at ~1085 °C and would vaporize at filament temperatures."
+          "reason": "Copper melts at ~1085 \u00b0C and would vaporize at filament temperatures."
         },
         {
           "key": "D",
-          "reason": "Aluminium has a low melting point (~660 °C) unsuitable for heated filaments."
+          "reason": "Aluminium has a low melting point (~660 \u00b0C) unsuitable for heated filaments."
         }
       ],
       "current_2025_slo": "19.2.1",
@@ -3465,8 +3450,7 @@
           "topic": "Electromagnetic Waves and Electronics"
         }
       ]
-    },
-    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+    }
   },
   {
     "questionNumber": "28",
@@ -3479,7 +3463,7 @@
       "D": "Out of the page"
     },
     "correctOption": "A",
-    "explanation": "The upper plate is positively charged ($+$) and the lower plate is negatively charged ($-$), with electric field lines pointing downward. Since electrons carry a negative charge ($-e$), they experience an electrostatic force opposite to the electric field lines—attracted **upward** toward the positively charged upper plate.",
+    "explanation": "The upper plate is positively charged ($+$) and the lower plate is negatively charged ($-$), with electric field lines pointing downward. Since electrons carry a negative charge ($-e$), they experience an electrostatic force opposite to the electric field lines\u2014attracted **upward** toward the positively charged upper plate.",
     "option_feedback": [
       {
         "key": "B",
@@ -3502,7 +3486,7 @@
     "current_slo": "19.3.1",
     "unitNumber": 19,
     "unitName": "Electromagnetic Waves and Electronics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 19: Electromagnetic Waves and Electronics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_8.png",
     "syllabus_reviewed": true,
@@ -3577,7 +3561,7 @@
     },
     "digital_content": {
       "generated_separately": true,
-      "explanation": "The upper plate is positively charged ($+$) and the lower plate is negatively charged ($-$), with electric field lines pointing downward. Since electrons carry a negative charge ($-e$), they experience an electrostatic force opposite to the electric field lines—attracted **upward** toward the positively charged upper plate.",
+      "explanation": "The upper plate is positively charged ($+$) and the lower plate is negatively charged ($-$), with electric field lines pointing downward. Since electrons carry a negative charge ($-e$), they experience an electrostatic force opposite to the electric field lines\u2014attracted **upward** toward the positively charged upper plate.",
       "option_feedback": [
         {
           "key": "B",
@@ -3636,7 +3620,7 @@
     "current_slo": "19.5.4",
     "unitNumber": 19,
     "unitName": "Electromagnetic Waves and Electronics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 19: Electromagnetic Waves and Electronics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_8.png",
     "syllabus_reviewed": true,
@@ -3739,7 +3723,7 @@
   {
     "questionNumber": "30",
     "pageNumber": 8,
-    "stem": "When two inputs, P and Q, of a NAND Gate has an output ‘0’, then",
+    "stem": "When two inputs, P and Q, of a NAND Gate has an output \u20180\u2019, then",
     "options": {
       "A": "P will only be 0.",
       "B": "Q will only be 0.",
@@ -3751,11 +3735,11 @@
     "option_feedback": [
       {
         "key": "A",
-        "reason": "If P = 0, then P·Q = 0 and the NAND output is 1."
+        "reason": "If P = 0, then P\u00b7Q = 0 and the NAND output is 1."
       },
       {
         "key": "B",
-        "reason": "If Q = 0, then P·Q = 0 and the NAND output is 1."
+        "reason": "If Q = 0, then P\u00b7Q = 0 and the NAND output is 1."
       },
       {
         "key": "C",
@@ -3770,7 +3754,7 @@
     "current_slo": "19.5.5",
     "unitNumber": 19,
     "unitName": "Electromagnetic Waves and Electronics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 19: Electromagnetic Waves and Electronics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_8.png",
     "syllabus_reviewed": true,
@@ -3826,7 +3810,7 @@
           700
         ]
       },
-      "verbatim_stem": "When two inputs, P and Q, of a NAND Gate has an output ‘0’, then",
+      "verbatim_stem": "When two inputs, P and Q, of a NAND Gate has an output \u20180\u2019, then",
       "verbatim_options": {
         "A": "P will only be 0.",
         "B": "Q will only be 0.",
@@ -3840,11 +3824,11 @@
       "option_feedback": [
         {
           "key": "A",
-          "reason": "If P = 0, then P·Q = 0 and the NAND output is 1."
+          "reason": "If P = 0, then P\u00b7Q = 0 and the NAND output is 1."
         },
         {
           "key": "B",
-          "reason": "If Q = 0, then P·Q = 0 and the NAND output is 1."
+          "reason": "If Q = 0, then P\u00b7Q = 0 and the NAND output is 1."
         },
         {
           "key": "C",
@@ -3895,7 +3879,7 @@
     "current_slo": "19.5.5",
     "unitNumber": 19,
     "unitName": "Electromagnetic Waves and Electronics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 19: Electromagnetic Waves and Electronics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_9.png",
     "syllabus_reviewed": true,
@@ -4026,29 +4010,23 @@
     "isDiagram": true,
     "diagramUrl": "/extracted_diagrams/PHY-X-2025-P1_Q32.png",
     "slo": "17.1.1",
-    "current_slo": "19.4.2",
+    "current_slo": null,
     "unitNumber": 19,
     "unitName": "Electromagnetic Waves and Electronics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 19: Electromagnetic Waves and Electronics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_9.png",
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "mapping_scope": {
       "board": "AKU-EB",
       "grade": 10,
       "subject": "Physics"
     },
     "original_slo": "17.1.1",
-    "out_of_syllabus": false,
-    "current_mapping": [
-      {
-        "code": "19.4.2",
-        "description": "compare analogue and digital electronics;",
-        "topic": "Electromagnetic Waves and Electronics"
-      }
-    ],
-    "review_status": "pending_review",
+    "out_of_syllabus": true,
+    "current_mapping": [],
+    "review_status": "verified",
     "source_transcription": {
       "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
       "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
@@ -4128,7 +4106,7 @@
         }
       ]
     },
-    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+    "out_of_syllabus_reason": "Components of a Computer-Based Information System (CBIS) were in the 2006/2022 Unit 17 (ICT) syllabus, which is not in the 2025 Class X Physics syllabus."
   },
   {
     "questionNumber": "33",
@@ -4164,7 +4142,7 @@
     "current_slo": "19.1.1",
     "unitNumber": 19,
     "unitName": "Electromagnetic Waves and Electronics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 19: Electromagnetic Waves and Electronics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_9.png",
     "syllabus_reviewed": true,
@@ -4258,7 +4236,7 @@
   {
     "questionNumber": "34",
     "pageNumber": 9,
-    "stem": "The MOST powerful communicating tool in today’s world is",
+    "stem": "The MOST powerful communicating tool in today\u2019s world is",
     "options": {
       "A": "radio.",
       "B": "internet.",
@@ -4286,29 +4264,23 @@
     "isDiagram": false,
     "diagramUrl": null,
     "slo": "17.3.2",
-    "current_slo": "19.1.1",
+    "current_slo": null,
     "unitNumber": 19,
     "unitName": "Electromagnetic Waves and Electronics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 19: Electromagnetic Waves and Electronics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_9.png",
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "mapping_scope": {
       "board": "AKU-EB",
       "grade": 10,
       "subject": "Physics"
     },
     "original_slo": "17.3.2",
-    "out_of_syllabus": false,
-    "current_mapping": [
-      {
-        "code": "19.1.1",
-        "description": "describe the production, transmission and reception of electromagnetic (EM) waves;",
-        "topic": "Electromagnetic Waves and Electronics"
-      }
-    ],
-    "review_status": "pending_review",
+    "out_of_syllabus": true,
+    "current_mapping": [],
+    "review_status": "verified",
     "source_transcription": {
       "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
       "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
@@ -4345,7 +4317,7 @@
           700
         ]
       },
-      "verbatim_stem": "The MOST powerful communicating tool in today’s world is",
+      "verbatim_stem": "The MOST powerful communicating tool in today\u2019s world is",
       "verbatim_options": {
         "A": "radio.",
         "B": "internet.",
@@ -4379,7 +4351,7 @@
         }
       ]
     },
-    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+    "out_of_syllabus_reason": "Internet and ICT services were in the 2006/2022 Unit 17 (ICT) syllabus, which is not in the 2025 Class X Physics syllabus."
   },
   {
     "questionNumber": "35",
@@ -4412,29 +4384,23 @@
     "isDiagram": false,
     "diagramUrl": null,
     "slo": "17.4.1",
-    "current_slo": "19.4.2",
+    "current_slo": null,
     "unitNumber": 19,
     "unitName": "Electromagnetic Waves and Electronics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 19: Electromagnetic Waves and Electronics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_10.png",
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "mapping_scope": {
       "board": "AKU-EB",
       "grade": 10,
       "subject": "Physics"
     },
     "original_slo": "17.4.1",
-    "out_of_syllabus": false,
-    "current_mapping": [
-      {
-        "code": "19.4.2",
-        "description": "compare analogue and digital electronics;",
-        "topic": "Electromagnetic Waves and Electronics"
-      }
-    ],
-    "review_status": "pending_review",
+    "out_of_syllabus": true,
+    "current_mapping": [],
+    "review_status": "verified",
     "source_transcription": {
       "source_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf",
       "key_pdf": "/materials/ssc/physics/ssc-2/physics-x-2025-key.pdf",
@@ -4505,7 +4471,7 @@
         }
       ]
     },
-    "mapping_review_note": "Suggested current SLO is not a direct semantic match; educator review required."
+    "out_of_syllabus_reason": "Compact Disc (CD) optical storage devices were in the 2006/2022 Unit 17 (ICT) syllabus, which is not in the 2025 Class X Physics syllabus."
   },
   {
     "questionNumber": "36",
@@ -4541,7 +4507,7 @@
     "current_slo": "20.2.3",
     "unitNumber": 20,
     "unitName": "Atomic and Nuclear Physics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 20: Atomic and Nuclear Physics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_10.png",
     "syllabus_reviewed": true,
@@ -4647,11 +4613,11 @@
     "option_feedback": [
       {
         "key": "A",
-        "reason": "Ray P is stopped by a sheet of paper, which represents alpha (α) particles."
+        "reason": "Ray P is stopped by a sheet of paper, which represents alpha (\u03b1) particles."
       },
       {
         "key": "B",
-        "reason": "Ray Q passes through paper but is stopped by steel, which represents beta (β) particles."
+        "reason": "Ray Q passes through paper but is stopped by steel, which represents beta (\u03b2) particles."
       },
       {
         "key": "D",
@@ -4666,7 +4632,7 @@
     "current_slo": "20.4.4",
     "unitNumber": 20,
     "unitName": "Atomic and Nuclear Physics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 20: Atomic and Nuclear Physics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_10.png",
     "syllabus_reviewed": true,
@@ -4681,7 +4647,7 @@
     "current_mapping": [
       {
         "code": "20.4.4",
-        "description": "describe the properties of the three types of radiation (α, β and γ);",
+        "description": "describe the properties of the three types of radiation (\u03b1, \u03b2 and \u03b3);",
         "topic": "Atomic and Nuclear Physics"
       }
     ],
@@ -4745,11 +4711,11 @@
       "option_feedback": [
         {
           "key": "A",
-          "reason": "Ray P is stopped by a sheet of paper, which represents alpha (α) particles."
+          "reason": "Ray P is stopped by a sheet of paper, which represents alpha (\u03b1) particles."
         },
         {
           "key": "B",
-          "reason": "Ray Q passes through paper but is stopped by steel, which represents beta (β) particles."
+          "reason": "Ray Q passes through paper but is stopped by steel, which represents beta (\u03b2) particles."
         },
         {
           "key": "D",
@@ -4760,7 +4726,7 @@
       "current_2025_mapping": [
         {
           "code": "20.4.4",
-          "description": "describe the properties of the three types of radiation (α, β and γ);",
+          "description": "describe the properties of the three types of radiation (\u03b1, \u03b2 and \u03b3);",
           "topic": "Atomic and Nuclear Physics"
         }
       ]
@@ -4800,7 +4766,7 @@
     "current_slo": "20.4.3",
     "unitNumber": 20,
     "unitName": "Atomic and Nuclear Physics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 20: Atomic and Nuclear Physics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_10.png",
     "syllabus_reviewed": true,
@@ -4906,11 +4872,11 @@
     "option_feedback": [
       {
         "key": "A",
-        "reason": "An alpha particle is a helium nucleus (₂He⁴), which reduces A by 4 and Z by 2."
+        "reason": "An alpha particle is a helium nucleus (\u2082He\u2074), which reduces A by 4 and Z by 2."
       },
       {
         "key": "C",
-        "reason": "A gamma ray (₀γ⁰) has zero charge and zero mass number."
+        "reason": "A gamma ray (\u2080\u03b3\u2070) has zero charge and zero mass number."
       },
       {
         "key": "D",
@@ -4925,7 +4891,7 @@
     "current_slo": "20.4.6",
     "unitNumber": 20,
     "unitName": "Atomic and Nuclear Physics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 20: Atomic and Nuclear Physics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_10.png",
     "syllabus_reviewed": true,
@@ -4995,11 +4961,11 @@
       "option_feedback": [
         {
           "key": "A",
-          "reason": "An alpha particle is a helium nucleus (₂He⁴), which reduces A by 4 and Z by 2."
+          "reason": "An alpha particle is a helium nucleus (\u2082He\u2074), which reduces A by 4 and Z by 2."
         },
         {
           "key": "C",
-          "reason": "A gamma ray (₀γ⁰) has zero charge and zero mass number."
+          "reason": "A gamma ray (\u2080\u03b3\u2070) has zero charge and zero mass number."
         },
         {
           "key": "D",
@@ -5050,7 +5016,7 @@
     "current_slo": "20.7.1",
     "unitNumber": 20,
     "unitName": "Atomic and Nuclear Physics",
-    "marks": 1,
+    "marks": 1.0,
     "chapter": "Unit 20: Atomic and Nuclear Physics",
     "pageScanUrl": "/materials/scans/ssc2_2025_p1_page_11.png",
     "syllabus_reviewed": true,

@@ -10,7 +10,7 @@ import physicsX from "@/data/physics/ssc2_exact_syllabus.json";
 import csIX from "@/data/computer-science/ssc1_exact_syllabus.json";
 import csX from "@/data/computer-science/ssc2_exact_syllabus.json";
 import SyllabusClient from "./SyllabusClient";
-import {publishedCurriculum} from '@/services/materials/curriculum';
+import { publishedCurriculum } from '@/services/materials/curriculum';
 export const dynamic = "force-dynamic";
 export default async function Page({
   params,
@@ -20,7 +20,7 @@ export default async function Page({
   const raw = await params,
     scope = studyScope(raw.board, raw.class, raw.subject);
   if (!scope) notFound();
-  const compiled=await publishedCurriculum(scope.board.shortCode,scope.classDef.level,scope.meta.title);
+  const compiled = await publishedCurriculum(scope.board.shortCode, scope.classDef.level, scope.meta.title);
   const docs = await subjectMaterials(
     raw.board,
     raw.class,
@@ -45,9 +45,8 @@ export default async function Page({
     ? (scope.classDef.level === 9 ? csIX : csX)
     : (scope.classDef.level === 9 ? physicsIX : physicsX);
 
-
   return (
-    <section className={styles.page} style={{maxWidth:1280}}>
+    <section className={styles.page} style={{ maxWidth: 1280 }}>
       <Breadcrumbs
         items={[
           { label: scope.board.name, href: "/" + scope.board.id },
@@ -69,10 +68,14 @@ export default async function Page({
       )}{" "}
       {legacy || compiled ? (
         <DocumentViews
-          title={scope.meta.title+" syllabus"}
+          title={scope.meta.title + " syllabus"}
           original={compiled?.original || defaultOriginalPdf}
         >
-          <SyllabusClient board={scope.board} classDef={scope.classDef} meta={scope.meta} baseUrl={scope.baseUrl}
+          <SyllabusClient
+            board={scope.board}
+            classDef={scope.classDef}
+            meta={scope.meta}
+            baseUrl={scope.baseUrl}
             originalUrl={compiled?.original || defaultOriginalPdf}
             units={compiled?.units || defaultUnits}
           />

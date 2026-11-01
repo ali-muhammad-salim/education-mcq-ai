@@ -1,0 +1,1312 @@
+[
+  {
+    "questionNumber": 1,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.1.2",
+    "original_slo": "1.1.2",
+    "current_slo": null,
+    "cognitiveLevel": "K",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "Fourth generation of computers started with the invention of",
+    "options": {
+      "A": "vacuum tubes.",
+      "B": "microprocessor.",
+      "C": "integrated circuits.",
+      "D": "artificial intelligence."
+    },
+    "correctOption": "B",
+    "explanation": "Fourth-generation computers (1971\u2013present) began with the invention of the VLSI microprocessor (such as the Intel 4004), which integrated the entire CPU onto a single silicon chip.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Vacuum tubes were used in first-generation computers (1940\u20131956)."
+      },
+      {
+        "key": "C",
+        "reason": "Integrated circuits (ICs) marked the beginning of third-generation computers (1964\u20131971)."
+      },
+      {
+        "key": "D",
+        "reason": "Artificial intelligence is associated with fifth-generation computing."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.1.1",
+    "original_slo": "1.1.1",
+    "current_slo": "1.2.4",
+    "cognitiveLevel": "K",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.4",
+        "description": "illustrate the Von Neumann Architecture using a block diagram;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "The concept of stored-program was given by",
+    "options": {
+      "A": "Blaise Pascal.",
+      "B": "Herman Hollerith.",
+      "C": "John Von Neumann.",
+      "D": "Gottfried Wilhelm Leibniz."
+    },
+    "correctOption": "C",
+    "explanation": "In 1945, mathematician John Von Neumann proposed the stored-program computer architecture, in which both program instructions and data are stored together in the computer's main memory.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Blaise Pascal invented the mechanical Pascaline adding machine in 1642."
+      },
+      {
+        "key": "B",
+        "reason": "Herman Hollerith developed the electromechanical punched-card tabulating machine for the 1890 US Census."
+      },
+      {
+        "key": "D",
+        "reason": "Gottfried Wilhelm Leibniz invented the Stepped Reckoner mechanical calculator and formalised binary arithmetic."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.1.2",
+    "original_slo": "1.1.2",
+    "current_slo": null,
+    "cognitiveLevel": "K",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2019-P1/q3.png",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "The picture that represents a microprocessor is",
+    "options": {
+      "A": "A (Vacuum Tube)",
+      "B": "B (Dual In-line Package IC)",
+      "C": "C (Transistor)",
+      "D": "D (Microprocessor Chip)"
+    },
+    "correctOption": "D",
+    "explanation": "Picture D shows a square multi-pin ceramic/silicon microprocessor chip package (4th generation), whereas A is a 1st-generation vacuum tube, B is a 3rd-generation small-scale IC, and C is a 2nd-generation transistor.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Picture A shows a glass vacuum tube (thermionic valve) used in first-generation computers."
+      },
+      {
+        "key": "B",
+        "reason": "Picture B shows a dual in-line package (DIP) integrated circuit chip from the third generation."
+      },
+      {
+        "key": "C",
+        "reason": "Picture C shows a three-lead discrete transistor from the second generation."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.1.2",
+    "original_slo": "1.1.2",
+    "current_slo": null,
+    "cognitiveLevel": "K",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "The generation of computers that used semiconductor memories for the first time is",
+    "options": {
+      "A": "second generation.",
+      "B": "third generation.",
+      "C": "fourth generation.",
+      "D": "fifth generation."
+    },
+    "correctOption": "B",
+    "explanation": "Semiconductor IC memory chips were first introduced during the late third generation of computers (early 1970s, e.g., Intel 1103 DRAM) to replace magnetic core memory.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Second-generation computers relied on magnetic core memory and magnetic drums."
+      },
+      {
+        "key": "C",
+        "reason": "Fourth-generation computers expanded VLSI semiconductor RAM/ROM capacity, which had first debuted in the third generation."
+      },
+      {
+        "key": "D",
+        "reason": "Fifth-generation computers came decades after semiconductor memory was introduced."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "2.1.4",
+    "original_slo": "2.1.4",
+    "current_slo": "1.2.5",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.5",
+        "description": "illustrate the system bus and its types, including data bus, address bus and control bus, along with their roles in computer architecture using a diagram;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Which of the following provides connectivity between central processing unit (CPU) and memory ONLY?",
+    "options": {
+      "A": "Serial Port",
+      "B": "Control Bus",
+      "C": "Parallel Port",
+      "D": "Address Bus"
+    },
+    "correctOption": "D",
+    "explanation": "In standard computer architecture, the unidirectional Address Bus connects the CPU to main memory (RAM) to specify the exact physical memory address to read from or write to.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A serial port connects external peripheral devices (such as modems or mice) rather than internal CPU-to-RAM addressing."
+      },
+      {
+        "key": "B",
+        "reason": "The Control Bus carries control and timing signals across the CPU, memory, and all I/O controllers."
+      },
+      {
+        "key": "C",
+        "reason": "A parallel port connects external peripherals (such as printers) to the system."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "3.1.1",
+    "original_slo": "3.1.1",
+    "current_slo": "1.2.3",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.3",
+        "description": "describe primary and secondary storage devices based on location, cost, capacity, access time, data processing method, and storage technology such as semiconductor (SSD), magnetic (HDD), and optical;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "As compared to primary memories, secondary memories are",
+    "options": {
+      "A": "cheap.",
+      "B": "fast.",
+      "C": "present on the motherboard.",
+      "D": "less in storage capacity."
+    },
+    "correctOption": "A",
+    "explanation": "Secondary storage devices (such as HDDs, SSDs, and optical discs) have a much lower cost per gigabyte (are cheaper) and offer much larger storage capacity than primary memory (RAM).",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Secondary memories are slower in access time than primary memory (RAM/cache)."
+      },
+      {
+        "key": "C",
+        "reason": "Primary memory (RAM/ROM) is mounted directly on the motherboard memory slots, whereas secondary drives connect via storage interfaces."
+      },
+      {
+        "key": "D",
+        "reason": "Secondary memories have far greater storage capacity (hundreds of GBs to TBs) than primary memory."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.2.2",
+    "original_slo": "4.2.2",
+    "current_slo": "1.2.3",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2019-P1/q7.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.3",
+        "description": "describe primary and secondary storage devices based on location, cost, capacity, access time, data processing method, and storage technology such as semiconductor (SSD), magnetic (HDD), and optical;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "The data storage part of a hard disk consists of metallic circular platters.\nConsider the given image of a hard disk platter.\nThe shaded portion, X, of the hard disk platter is known as a",
+    "options": {
+      "A": "track.",
+      "B": "sector.",
+      "C": "read/ write head.",
+      "D": "hard disk controller."
+    },
+    "correctOption": "B",
+    "explanation": "A magnetic hard disk platter is divided into concentric circles called tracks and wedge-shaped pie subdivisions called sectors; the shaded arc/wedge segment X within a track is a sector (specifically a track sector).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A track is an entire full 360-degree concentric ring around the platter, not a single wedge segment."
+      },
+      {
+        "key": "C",
+        "reason": "The read/write head is the mechanical electromagnetic arm that hovers above the spinning platter."
+      },
+      {
+        "key": "D",
+        "reason": "The hard disk controller is the electronic circuit board that directs drive motor and head movement."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "3.2.2",
+    "original_slo": "3.2.2",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "\u2022 High cost per print\n\u2022 Ideal for printing photos\n\u2022 Less number of prints per minute\nThe printer that has all the given features is a/ an",
+    "options": {
+      "A": "laser printer.",
+      "B": "daisy-wheel printer.",
+      "C": "dot-matrix printer.",
+      "D": "inkjet printer."
+    },
+    "correctOption": "D",
+    "explanation": "An inkjet printer sprays microscopic droplets of liquid colour ink onto paper; it excels at high-resolution colour photo printing, prints fewer pages per minute than a laser printer, and has a high cost per page due to expensive ink cartridges.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A laser printer uses toner powder to print at high speed with a very low cost per page."
+      },
+      {
+        "key": "B",
+        "reason": "A daisy-wheel printer is an obsolete impact printer that can only print fixed-font characters and cannot print photos."
+      },
+      {
+        "key": "C",
+        "reason": "A dot-matrix printer is an impact ribbon printer with low resolution and very low cost per page."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.2.1",
+    "original_slo": "4.2.1",
+    "current_slo": "1.2.3",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.3",
+        "description": "describe primary and secondary storage devices based on location, cost, capacity, access time, data processing method, and storage technology such as semiconductor (SSD), magnetic (HDD), and optical;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Ali has some PowerPoint slides that he wants to store electronically.\nHe should store the slides in",
+    "options": {
+      "A": "USB.",
+      "B": "hard disk.",
+      "C": "CD-ROM.",
+      "D": "floppy disk drive."
+    },
+    "correctOption": "B",
+    "explanation": "Among the listed options, the hard disk is the actual secondary storage medium/device inside the computer (whereas 'USB' is a port/bus interface standard rather than 'USB flash drive', 'CD-ROM' is read-only factory-pressed media, and 'floppy disk drive' is the drive mechanism for obsolete 1.44 MB floppies).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "USB (Universal Serial Bus) is a port/interface standard, not a storage medium itself."
+      },
+      {
+        "key": "C",
+        "reason": "A standard CD-ROM (Compact Disc Read-Only Memory) cannot be written to by the user."
+      },
+      {
+        "key": "D",
+        "reason": "A floppy disk drive is the drive mechanism, and a floppy disk has only 1.44 MB capacity."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.1.2",
+    "original_slo": "4.1.2",
+    "current_slo": "1.3.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.3.1",
+        "description": "distinguish among the memory measuring units such as bits, bytes, kilobytes, megabytes, and gigabytes in computer memory;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "The number of bytes in 1.75 kilobytes is",
+    "options": {
+      "A": "1792",
+      "B": "1750",
+      "C": "17920",
+      "D": "17500"
+    },
+    "correctOption": "A",
+    "explanation": "In binary computer memory units, $1\\text{ kilobyte (KB)} = 1024\\text{ bytes}$, so $1.75 \\times 1024 = 1792\\text{ bytes}$.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "1750 uses $1000\\text{ bytes}$ instead of the binary memory factor $1024\\text{ bytes}$ ($1.75 \\times 1024 = 1792$)."
+      },
+      {
+        "key": "C",
+        "reason": "17920 is 10 times too large ($17.5\\text{ KB}$)."
+      },
+      {
+        "key": "D",
+        "reason": "17500 is 10 times the decimal approximation."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.1.1",
+    "original_slo": "5.1.1",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "The unique number of digits in the given decimal number is\n`1234567891011`",
+    "options": {
+      "A": "8",
+      "B": "9",
+      "C": "10",
+      "D": "11"
+    },
+    "correctOption": "C",
+    "explanation": "The decimal (base-10) number system uses 10 unique digits (`0, 1, 2, 3, 4, 5, 6, 7, 8, 9`), and the string `1234567891011` contains all 10 distinct decimal digits (`0` through `9`).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "There are 10 distinct digits (`0` through `9`) present in the number, not 8."
+      },
+      {
+        "key": "B",
+        "reason": "Omits counting `0`, which appears in `10` inside `1234567891011`."
+      },
+      {
+        "key": "D",
+        "reason": "There are only 10 unique digits in base-10 (`0`\u2013`9`); `10` and `11` are two-digit combinations of `0` and `1`."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.1.2",
+    "original_slo": "5.1.2",
+    "current_slo": null,
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "The decimal number that is equal to $(224)_8$ is",
+    "options": {
+      "A": "2072",
+      "B": "1184",
+      "C": "274",
+      "D": "148"
+    },
+    "correctOption": "D",
+    "explanation": "Converting octal $(224)_8$ to decimal: $(2 \\times 8^2) + (2 \\times 8^1) + (4 \\times 8^0) = (2 \\times 64) + (2 \\times 8) + (4 \\times 1) = 128 + 16 + 4 = 148_{10}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrectly multiplies by powers of 16 or higher."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrectly uses $8^3 = 512$ instead of $8^2 = 64$."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrectly computes positional weights."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "pageNumber": 4,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.1.2",
+    "original_slo": "5.1.2",
+    "current_slo": null,
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "The number of bits required to represent the given hexadecimal number is\n$(ABCDEF0123456789)_{16}$",
+    "options": {
+      "A": "16",
+      "B": "32",
+      "C": "64",
+      "D": "128"
+    },
+    "correctOption": "C",
+    "explanation": "The hexadecimal number `ABCDEF0123456789` consists of 16 hexadecimal digits, and each hexadecimal digit is represented by exactly 4 binary bits ($2^4 = 16$), requiring $16 \\times 4 = 64\\text{ bits}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "16 is the count of hexadecimal digits, not the number of binary bits ($16 \\times 4 = 64$)."
+      },
+      {
+        "key": "B",
+        "reason": "32 bits can only represent 8 hexadecimal digits ($8 \\times 4 = 32$)."
+      },
+      {
+        "key": "D",
+        "reason": "128 bits would represent 32 hexadecimal digits."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.2.2",
+    "original_slo": "5.2.2",
+    "current_slo": null,
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "The product of $(101)_2$ and $(10)_2$ is",
+    "options": {
+      "A": "(1010)\u2082",
+      "B": "(0101)\u2082",
+      "C": "(0111)\u2082",
+      "D": "(1110)\u2082"
+    },
+    "correctOption": "A",
+    "explanation": "In binary multiplication, $(101)_2 \\times (10)_2 = 5_{10} \\times 2_{10} = 10_{10} = (1010)_2$ (multiplying any binary number by $(10)_2$ shifts it left by one bit position, appending a `0`).",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "$(0101)_2 = 5_{10}$, which is the product of $(101)_2 \\times (1)_2$."
+      },
+      {
+        "key": "C",
+        "reason": "$(0111)_2 = 7_{10}$, which is the sum $(101)_2 + (10)_2$, not the product."
+      },
+      {
+        "key": "D",
+        "reason": "$(1110)_2 = 14_{10}$, which is incorrect."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.1.3",
+    "original_slo": "4.1.3",
+    "current_slo": "1.3.2",
+    "cognitiveLevel": "K",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.3.2",
+        "description": "compare the types of primary memory, i.e., Random Access Memory (RAM) and Read Only Memory (ROM);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "When a computer is turned on, Windows is loaded from hard disk into",
+    "options": {
+      "A": "ROM.",
+      "B": "RAM.",
+      "C": "compact disc.",
+      "D": "digital versatile disc."
+    },
+    "correctOption": "B",
+    "explanation": "During the booting process, the bootstrap loader in ROM reads the operating system kernel (Windows) from the hard disk and loads it into Random Access Memory (RAM) for active execution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "ROM is read-only firmware memory that stores the BIOS and cannot have Windows loaded into it."
+      },
+      {
+        "key": "C",
+        "reason": "A Compact Disc (CD) is an external optical secondary storage medium."
+      },
+      {
+        "key": "D",
+        "reason": "A Digital Versatile Disc (DVD) is an optical secondary storage medium."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "7.1.3",
+    "original_slo": "7.1.3",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "All of the following are TRUE about a taskbar EXCEPT that a taskbar can be",
+    "options": {
+      "A": "made to disappear.",
+      "B": "locked and unlocked.",
+      "C": "placed at any of the four sides of a monitor's screen.",
+      "D": "made to reappear by using the keyboard shortcut Ctrl + Alt."
+    },
+    "correctOption": "D",
+    "explanation": "In Microsoft Windows, the taskbar can be auto-hidden (made to disappear), locked/unlocked, and docked to any of the four screen edges, but `Ctrl + Alt` is NOT a shortcut to make the taskbar reappear (pressing the `Windows` key or `Ctrl + Esc` opens the Start menu/taskbar).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Enabling 'Auto-hide the taskbar' makes the taskbar disappear when not in use; this is true."
+      },
+      {
+        "key": "B",
+        "reason": "Right-clicking the taskbar allows toggling 'Lock the taskbar'; this is true."
+      },
+      {
+        "key": "C",
+        "reason": "An unlocked taskbar can be dragged to the bottom, top, left, or right edge of the screen; this is true."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "pageNumber": 5,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "8.1.4",
+    "original_slo": "8.1.4",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2019-P1/q17.png",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "Farhan wants to add page number in an MS Word file as shown in the image (`1 | Page`).\nThe CORRECT sequence of steps he should follow to insert this page number is",
+    "options": {
+      "A": "\u2022 Click on Insert menu.\n\u2022 Click on Page Number icon.\n\u2022 Click on Bottom of Page and select Accent Bar 1.",
+      "B": "\u2022 Click on Insert menu.\n\u2022 Click on Page Number icon.\n\u2022 Click on Bottom of Page and select Plain Number 1.",
+      "C": "\u2022 Click on Page Layout menu.\n\u2022 Click on Page Number icon.\n\u2022 Click on Bottom of Page and select Accent Bar 1.",
+      "D": "\u2022 Click on Page Layout menu.\n\u2022 Click on Page Number icon.\n\u2022 Click on Bottom of Page and select Plain Number 1."
+    },
+    "correctOption": "A",
+    "explanation": "In MS Word, the Page Number command is under the Insert menu/tab, and the style `1 | Page` (with a vertical bar and the word 'Page') is the built-in `Accent Bar 1` template under Bottom of Page.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "`Plain Number 1` inserts only the bare digit `1` without `| Page`."
+      },
+      {
+        "key": "C",
+        "reason": "Page Number is located under the Insert menu/tab, not the Page Layout menu."
+      },
+      {
+        "key": "D",
+        "reason": "Uses both the wrong menu (`Page Layout`) and the wrong template (`Plain Number 1`)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "8.1.3",
+    "original_slo": "8.1.3",
+    "current_slo": null,
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "Daniyal is working on an MS Word file but the mouse connected to his computer system is not working.\nThe keyboard shortcut that he should use to change text 'computer science' to 'Computer Science' is",
+    "options": {
+      "A": "Alt + F3",
+      "B": "Ctrl + F3",
+      "C": "Shift + F3",
+      "D": "Enter + F3"
+    },
+    "correctOption": "C",
+    "explanation": "In Microsoft Word, pressing `Shift + F3` cycles the selected text through Change Case options: lowercase (`computer science`), Title Case (`Computer Science`), and UPPERCASE (`COMPUTER SCIENCE`).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "`Alt + F3` creates a new AutoText / Building Block entry from the selection."
+      },
+      {
+        "key": "B",
+        "reason": "`Ctrl + F3` cuts the selected text to the Spike multi-clipboard."
+      },
+      {
+        "key": "D",
+        "reason": "`Enter + F3` is not a valid keyboard shortcut in MS Word."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "9.1.2",
+    "original_slo": "9.1.2",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "Sana has the following files in her flash drive:\nI. `Morning.mp3`\nII. `Night.wav`\nIII. `Fresh.jpg`\nIV. `New.png`\nV. `Old.gif`\nThe image files that she can add from her flash drive to PowerPoint presentation are",
+    "options": {
+      "A": "III, IV and V.",
+      "B": "I, II and III.",
+      "C": "I, IV and V.",
+      "D": "II, III and IV."
+    },
+    "correctOption": "A",
+    "explanation": "Files with `.jpg` (JPEG), `.png` (Portable Network Graphics), and `.gif` (Graphics Interchange Format) extensions (III, IV, and V) are raster image files, whereas `.mp3` (I) and `.wav` (II) are audio sound files.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Includes `.mp3` and `.wav`, which are audio files rather than image files."
+      },
+      {
+        "key": "C",
+        "reason": "Includes `Morning.mp3`, which is an audio file."
+      },
+      {
+        "key": "D",
+        "reason": "Includes `Night.wav`, which is an uncompressed audio file."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "8.1.1",
+    "original_slo": "8.1.1",
+    "current_slo": null,
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "Aryan is working on MS Word file and he wants to know the total number of pages in the file. The bar that will help him for this purpose is",
+    "options": {
+      "A": "status bar.",
+      "B": "menu bar.",
+      "C": "tool bar.",
+      "D": "title bar."
+    },
+    "correctOption": "A",
+    "explanation": "The Status Bar along the bottom edge of the MS Word window displays the current page number, total page count (`Page 1 of N`), word count, proofing status, and zoom slider.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "The Menu Bar / Ribbon tabs list command categories (File, Home, Insert, Layout)."
+      },
+      {
+        "key": "C",
+        "reason": "The Toolbar provides quick-access icon buttons for formatting and saving."
+      },
+      {
+        "key": "D",
+        "reason": "The Title Bar at the very top displays the document filename and application name."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "7.2.1",
+    "original_slo": "7.2.1",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "All of the following are features of DOS EXCEPT that it",
+    "options": {
+      "A": "provides user interface.",
+      "B": "executes user programs.",
+      "C": "provides plug and play facility.",
+      "D": "performs memory management."
+    },
+    "correctOption": "C",
+    "explanation": "MS-DOS is a legacy single-user command-line operating system that does NOT support automatic Plug and Play (`PnP`) hardware detection and configuration (a feature introduced with Windows 95).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "DOS provides a Command Line Interface (CLI) to the user."
+      },
+      {
+        "key": "B",
+        "reason": "DOS loads and executes `.COM`, `.EXE`, and `.BAT` programs."
+      },
+      {
+        "key": "D",
+        "reason": "DOS manages base/conventional memory for running programs."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "7.2.2",
+    "original_slo": "7.2.2",
+    "current_slo": null,
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "As compared to DOS internal commands, DOS external commands are",
+    "options": {
+      "A": "stored in COMMAND.COM file.",
+      "B": "loaded into memory during booting process.",
+      "C": "executed by the help of COM, EXE and BAT files.",
+      "D": "commonly used commands listed in directory listing."
+    },
+    "correctOption": "C",
+    "explanation": "DOS external commands (such as `FORMAT`, `DISKCOPY`, `CHKDSK`, and `DELTREE`) reside on disk as separate `.COM`, `.EXE`, or `.BAT` executable files, whereas internal commands (`DIR`, `CLS`, `VER`, `MD`, `DEL`) are built into `COMMAND.COM` and loaded into RAM at boot.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Internal commands\u2014not external commands\u2014are built inside `COMMAND.COM`."
+      },
+      {
+        "key": "B",
+        "reason": "Internal commands are loaded into RAM during booting, whereas external commands are fetched from disk when invoked."
+      },
+      {
+        "key": "D",
+        "reason": "`DIR` lists files in a directory rather than listing internal commands."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "pageNumber": 7,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "7.1.2",
+    "original_slo": "7.1.2",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "The CORRECT set of characteristics of command line interface (CLI) is",
+    "options": {
+      "A": "\u2022 It requires less memory.\n\u2022 It performs single task for single user.\n\u2022 User needs a keyboard to use this interface.",
+      "B": "\u2022 It is easy to learn.\n\u2022 It shows menus and icons.\n\u2022 It performs single task for single user.",
+      "C": "\u2022 It shows menus and icons.\n\u2022 It performs multiple tasks for single user.\n\u2022 It can switch back and forth between different applications.",
+      "D": "\u2022 It is user friendly.\n\u2022 It performs multiple tasks for single user.\n\u2022 User mostly needs a mouse to use this interface."
+    },
+    "correctOption": "A",
+    "explanation": "A traditional Command Line Interface (CLI) such as MS-DOS requires very little RAM, operates via text commands typed on a keyboard, and (in DOS) executes one task at a time for a single user.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "CLI is not easy for beginners to learn and does not display graphical menus and icons."
+      },
+      {
+        "key": "C",
+        "reason": "Graphical windows, icons, and multi-window task switching are features of a GUI."
+      },
+      {
+        "key": "D",
+        "reason": "Using a mouse and being visually user-friendly are characteristics of a GUI, not a CLI."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "pageNumber": 7,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "7.2.2",
+    "original_slo": "7.2.2",
+    "current_slo": null,
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "Kazim is using disk operating system (DOS). He wants to delete all the files in the current directory.\nThe DOS command he should use for this purpose is",
+    "options": {
+      "A": "DEL",
+      "B": "DEL*.*",
+      "C": "DELTREE",
+      "D": "DELFILES*.*"
+    },
+    "correctOption": "B",
+    "explanation": "In MS-DOS, the wildcard pattern `*.*` matches every filename and every extension in the current directory, so `DEL *.*` (or `DEL*.*`) deletes all files in the current working directory.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "`DEL` alone without a filename or wildcard parameter returns a 'Required parameter missing' error."
+      },
+      {
+        "key": "C",
+        "reason": "`DELTREE` deletes an entire directory tree including subdirectories rather than just the files inside the current directory."
+      },
+      {
+        "key": "D",
+        "reason": "`DELFILES` is not a valid MS-DOS command."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "pageNumber": 7,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "7.1.1",
+    "original_slo": "7.1.1",
+    "current_slo": "1.5.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-ix-2019-key",
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.1",
+        "description": "compare system software and application software, highlighting their roles in a computer system;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "An example of application software is",
+    "options": {
+      "A": "MS Word.",
+      "B": "anti-virus.",
+      "C": "screen saver.",
+      "D": "MS Windows."
+    },
+    "correctOption": "A",
+    "explanation": "Microsoft Word is end-user application software (a word processor used to create, edit, and format documents), whereas antivirus utilities, screen savers, and MS Windows are system software.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "An antivirus program is a system utility program."
+      },
+      {
+        "key": "C",
+        "reason": "A screen saver is a system utility program."
+      },
+      {
+        "key": "D",
+        "reason": "MS Windows is an operating system (system software)."
+      }
+    ]
+  }
+]
