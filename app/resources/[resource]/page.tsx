@@ -14,12 +14,29 @@ import csEmarking2024 from '@/data/computer-science/ssc1_2024_emarking.json';
 import csKey2023 from '@/data/computer-science/ssc1_2023_official_key.json';
 import csEmarking2023 from '@/data/computer-science/ssc1_2023_emarking.json';
 import csKey2022 from '@/data/computer-science/ssc1_2022_official_key.json';
+import csKey2019 from '@/data/computer-science/ssc1_2019_official_key.json';
+import csEmarking2019 from '@/data/computer-science/ssc1_2019_emarking.json';
+import csEmarking2018 from '@/data/computer-science/ssc1_2018_emarking.json';
+import csKey2017 from '@/data/computer-science/ssc1_2017_official_key.json';
+import csEmarking2017 from '@/data/computer-science/ssc1_2017_emarking.json';
+import csXKey2025 from '@/data/computer-science/ssc2_2025_official_key.json';
+import csXEmarking2025 from '@/data/computer-science/ssc2_2025_emarking.json';
+import csXKey2024 from '@/data/computer-science/ssc2_2024_official_key.json';
+import csXEmarking2024 from '@/data/computer-science/ssc2_2024_emarking.json';
+import csXKey2023 from '@/data/computer-science/ssc2_2023_official_key.json';
+import csXEmarking2023 from '@/data/computer-science/ssc2_2023_emarking.json';
+import csXKey2022 from '@/data/computer-science/ssc2_2022_official_key.json';
+import csXKey2019 from '@/data/computer-science/ssc2_2019_official_key.json';
+import csXEmarking2019 from '@/data/computer-science/ssc2_2019_emarking.json';
+import csXEmarking2018 from '@/data/computer-science/ssc2_2018_emarking.json';
+import csXKey2017 from '@/data/computer-science/ssc2_2017_official_key.json';
+import csXEmarking2017 from '@/data/computer-science/ssc2_2017_emarking.json';
 import rg9 from '@/data/physics/ssc1_resource_guide.json';
 import rg10 from '@/data/physics/ssc2_resource_guide.json';
 import pacing9 from '@/data/physics/ssc1_pacing.json';
 import pacing10 from '@/data/physics/ssc2_pacing.json';
 import styles from '@/components/MaterialLayout.module.css';
-import { annualAnswerReviews, annual2024AnswerReviews, annualX2025AnswerReviews, csAnnual2025AnswerReviews, csAnnual2024AnswerReviews, csAnnual2023AnswerReviews, csAnnual2022AnswerReviews } from '@/lib/legacyPaperEvidence';
+import { annualAnswerReviews, annual2024AnswerReviews, annualX2025AnswerReviews, csAnnual2025AnswerReviews, csAnnual2024AnswerReviews, csAnnual2023AnswerReviews, csAnnual2022AnswerReviews, csAnnualX2024AnswerReviews, csAnnualX2023AnswerReviews, csAnnualX2019AnswerReviews } from '@/lib/legacyPaperEvidence';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import StructuredContent from '@/components/StructuredContent';
 export const dynamic='force-dynamic';
@@ -42,6 +59,23 @@ const SUPPORTED_RESOURCES = [
   'computer-science-ix-2023-key',
   'computer-science-ix-2023-emarking',
   'computer-science-ix-2022-key',
+  'computer-science-ix-2019-key',
+  'computer-science-ix-2019-emarking',
+  'computer-science-ix-2018-emarking',
+  'computer-science-ix-2017-key',
+  'computer-science-ix-2017-emarking',
+  'computer-science-x-2025-key',
+  'computer-science-x-2025-emarking',
+  'computer-science-x-2024-key',
+  'computer-science-x-2024-emarking',
+  'computer-science-x-2023-key',
+  'computer-science-x-2023-emarking',
+  'computer-science-x-2022-key',
+  'computer-science-x-2019-key',
+  'computer-science-x-2019-emarking',
+  'computer-science-x-2018-emarking',
+  'computer-science-x-2017-key',
+  'computer-science-x-2017-emarking',
 ] as const;
 
 export default async function Page({params}:{params:Promise<{resource:string}>}) {
@@ -68,7 +102,7 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
                   </tr>
                 </thead>
                 <tbody>
-                  {key.entries.map(row=>(
+                  {key.entries.map((row: { questionNumber: number; slo: string; answer: string; cognitiveLevel: string }) => (
                     <tr key={row.questionNumber}>
                       <td style={{padding:'.65rem'}}>
                         <Link href={'/past-papers/PHY-IX-2025-P1?view=solved#question-'+row.questionNumber}>{row.questionNumber}</Link>
@@ -120,7 +154,7 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
                   </tr>
                 </thead>
                 <tbody>
-                  {key2024.entries.map(row=>(
+                  {key2024.entries.map((row: { questionNumber: number; slo: string; answer: string; cognitiveLevel: string }) => (
                     <tr key={row.questionNumber}>
                       <td style={{padding:'.65rem'}}>
                         <Link href={'/past-papers/PHY-IX-2024-P1?view=solved#question-'+row.questionNumber}>{row.questionNumber}</Link>
@@ -170,7 +204,7 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
                   </tr>
                 </thead>
                 <tbody>
-                  {keyX2025.entries.map(row=>(
+                  {keyX2025.entries.map((row: { questionNumber: number; slo: string; answer: string; cognitiveLevel: string }) => (
                     <tr key={row.questionNumber}>
                       <td style={{padding:'.65rem'}}>
                         <Link href={'/past-papers/PHY-X-2025-P1?view=solved#question-'+row.questionNumber}>{row.questionNumber}</Link>
@@ -201,23 +235,34 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
     );
   }
 
-  if (resource === 'computer-science-ix-2025-key' || resource === 'computer-science-ix-2024-key' || resource === 'computer-science-ix-2023-key' || resource === 'computer-science-ix-2022-key') {
-    const isCs2022Key = resource === 'computer-science-ix-2022-key';
+  if (resource === 'computer-science-ix-2025-key' || resource === 'computer-science-ix-2024-key' || resource === 'computer-science-ix-2023-key' || resource === 'computer-science-ix-2022-key' || resource === 'computer-science-ix-2019-key' || resource === 'computer-science-ix-2017-key' || resource === 'computer-science-x-2025-key' || resource === 'computer-science-x-2024-key' || resource === 'computer-science-x-2023-key' || resource === 'computer-science-x-2022-key' || resource === 'computer-science-x-2019-key' || resource === 'computer-science-x-2017-key') {
+    const isCsX2025Key = resource === 'computer-science-x-2025-key';
+    const isCsX2024Key = resource === 'computer-science-x-2024-key';
+    const isCsX2023Key = resource === 'computer-science-x-2023-key';
+    const isCsX2022Key = resource === 'computer-science-x-2022-key';
+    const isCsX2019Key = resource === 'computer-science-x-2019-key';
+    const isCsX2017Key = resource === 'computer-science-x-2017-key';
+    const isCsXKey = isCsX2025Key || isCsX2024Key || isCsX2023Key || isCsX2022Key || isCsX2019Key || isCsX2017Key;
+    const isCs2017Key = resource === 'computer-science-ix-2017-key' || resource === 'computer-science-x-2017-key';
+    const isCs2019Key = resource === 'computer-science-ix-2019-key' || resource === 'computer-science-x-2019-key';
+    const isCs2022Key = resource === 'computer-science-ix-2022-key' || resource === 'computer-science-x-2022-key';
     const isCs2023Key = resource === 'computer-science-ix-2023-key';
     const isCs2024Key = resource === 'computer-science-ix-2024-key';
-    const activeCsKey = isCs2022Key ? csKey2022 : isCs2023Key ? csKey2023 : isCs2024Key ? csKey2024 : csKey2025;
-    const activeCsReviews = isCs2022Key ? csAnnual2022AnswerReviews : isCs2023Key ? csAnnual2023AnswerReviews : isCs2024Key ? csAnnual2024AnswerReviews : csAnnual2025AnswerReviews;
-    const csYear = isCs2022Key ? '2022' : isCs2023Key ? '2023' : isCs2024Key ? '2024' : '2025';
-    const title = `Computer Science IX · ${csYear} · Official answer key`;
+    const activeCsKey = isCsX2017Key ? csXKey2017 : isCsX2019Key ? csXKey2019 : isCsX2022Key ? csXKey2022 : isCsX2023Key ? csXKey2023 : isCsX2024Key ? csXKey2024 : isCsX2025Key ? csXKey2025 : isCs2017Key ? csKey2017 : isCs2019Key ? csKey2019 : isCs2022Key ? csKey2022 : isCs2023Key ? csKey2023 : isCs2024Key ? csKey2024 : csKey2025;
+    const activeCsReviews = isCsX2019Key ? csAnnualX2019AnswerReviews : isCsX2023Key ? csAnnualX2023AnswerReviews : isCsX2024Key ? csAnnualX2024AnswerReviews : (isCsX2022Key || isCsX2025Key || isCs2017Key || isCs2019Key) ? ({} as Record<number, string>) : isCs2022Key ? csAnnual2022AnswerReviews : isCs2023Key ? csAnnual2023AnswerReviews : isCs2024Key ? csAnnual2024AnswerReviews : csAnnual2025AnswerReviews;
+    const csYear = isCs2017Key ? '2017' : isCs2019Key ? '2019' : isCs2022Key ? '2022' : (isCs2023Key || isCsX2023Key) ? '2023' : (isCs2024Key || isCsX2024Key) ? '2024' : '2025';
+    const csRoman = isCsXKey ? 'X' : 'IX';
+    const csLower = isCsXKey ? 'x' : 'ix';
+    const title = `Computer Science ${csRoman} · ${csYear} · Official answer key`;
     return (
       <section className={styles.page}>
-        <Link href="/akueb/IX/computer-science/pastpapers">← Computer Science IX past papers</Link>
+        <Link href={`/akueb/${csRoman}/computer-science/pastpapers`}>← Computer Science {csRoman} past papers</Link>
         <h1>{title}</h1>
         <DocumentViews title={title} original={activeCsKey.sourceUrl}>
           <div className={styles.digital}>
             <div style={{overflowX:'auto'}}>
               <table style={{width:'100%',borderCollapse:'collapse'}}>
-                <caption>Official {csYear} SSC-I exam-year references · current 2025 syllabus mappings are shown on each question</caption>
+                <caption>Official {csYear} SSC-{isCsXKey ? 'II' : 'I'} exam-year references · current 2025 syllabus mappings are shown on each question</caption>
                 <thead>
                   <tr>
                     {['Question','Original SLO','Answer','Level'].map(x=>(
@@ -226,10 +271,10 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
                   </tr>
                 </thead>
                 <tbody>
-                  {activeCsKey.entries.map(row=>(
+                  {activeCsKey.entries.map((row: { questionNumber: number; slo: string; answer: string; cognitiveLevel: string }) => (
                     <tr key={row.questionNumber}>
                       <td style={{padding:'.65rem'}}>
-                        <Link href={`/past-papers/CS-IX-${csYear}-P1?view=solved#question-${row.questionNumber}`}>{row.questionNumber}</Link>
+                        <Link href={`/past-papers/CS-${csRoman}-${csYear}-P1?view=solved#question-${row.questionNumber}`}>{row.questionNumber}</Link>
                       </td>
                       <td>{row.slo}</td>
                       <td>
@@ -245,36 +290,38 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
               </table>
             </div>
             <p>K: Knowledge · U: Understanding · A: Application and beyond</p>
-            <Link href={`/past-papers/CS-IX-${csYear}-P1?view=solved`}>{csYear} Computer Science Paper 1 · answers & explanations →</Link>
+            <Link href={`/past-papers/CS-${csRoman}-${csYear}-P1?view=solved`}>{csYear} Computer Science Paper 1 · answers & explanations →</Link>
           </div>
         </DocumentViews>
         <nav className={styles.actions}>
-          <Link className={styles.button} href={`/past-papers/CS-IX-${csYear}-P1`}>{csYear} Paper 1</Link>
-          {!isCs2022Key && <Link className={styles.button} href={`/past-papers/CS-IX-${csYear}-P2`}>{csYear} Paper 2</Link>}
-          {!isCs2022Key && <Link className={styles.button} href={`/resources/computer-science-ix-${csYear}-emarking`}>{csYear} E-marking notes</Link>}
+          <Link className={styles.button} href={`/past-papers/CS-${csRoman}-${csYear}-P1`}>{csYear} Paper 1</Link>
+          {!isCs2022Key && <Link className={styles.button} href={`/past-papers/CS-${csRoman}-${csYear}-P2`}>{csYear} Paper 2</Link>}
+          {!isCs2022Key && <Link className={styles.button} href={`/resources/computer-science-${csLower}-${csYear}-emarking`}>{csYear} E-marking notes</Link>}
         </nav>
       </section>
     );
   }
 
-  if (resource === 'physics-ix-2025-emarking' || resource === 'physics-ix-2024-emarking' || resource === 'physics-x-2025-emarking' || resource === 'computer-science-ix-2025-emarking' || resource === 'computer-science-ix-2024-emarking' || resource === 'computer-science-ix-2023-emarking') {
+  if (resource === 'physics-ix-2025-emarking' || resource === 'physics-ix-2024-emarking' || resource === 'physics-x-2025-emarking' || resource === 'computer-science-ix-2025-emarking' || resource === 'computer-science-ix-2024-emarking' || resource === 'computer-science-ix-2023-emarking' || resource === 'computer-science-ix-2019-emarking' || resource === 'computer-science-ix-2018-emarking' || resource === 'computer-science-ix-2017-emarking' || resource === 'computer-science-x-2025-emarking' || resource === 'computer-science-x-2024-emarking' || resource === 'computer-science-x-2023-emarking' || resource === 'computer-science-x-2019-emarking' || resource === 'computer-science-x-2018-emarking' || resource === 'computer-science-x-2017-emarking') {
     const isCs = resource.startsWith('computer-science-');
-    const isX = resource === 'physics-x-2025-emarking';
-    const is2023 = resource === 'computer-science-ix-2023-emarking';
-    const is2024 = resource === 'physics-ix-2024-emarking' || resource === 'computer-science-ix-2024-emarking';
-    const activeEmarking: any = isCs ? (is2023 ? csEmarking2023 : is2024 ? csEmarking2024 : csEmarking2025) : isX ? emarkingX2025 : is2024 ? emarking2024 : emarking;
-    const yearStr = is2023 ? '2023' : is2024 ? '2024' : '2025';
+    const isX = resource === 'physics-x-2025-emarking' || resource === 'computer-science-x-2025-emarking' || resource === 'computer-science-x-2024-emarking' || resource === 'computer-science-x-2023-emarking' || resource === 'computer-science-x-2019-emarking' || resource === 'computer-science-x-2018-emarking' || resource === 'computer-science-x-2017-emarking';
+    const is2017 = resource === 'computer-science-ix-2017-emarking' || resource === 'computer-science-x-2017-emarking';
+    const is2018 = resource === 'computer-science-ix-2018-emarking' || resource === 'computer-science-x-2018-emarking';
+    const is2019 = resource === 'computer-science-ix-2019-emarking' || resource === 'computer-science-x-2019-emarking';
+    const is2023 = resource === 'computer-science-ix-2023-emarking' || resource === 'computer-science-x-2023-emarking';
+    const is2024 = resource === 'physics-ix-2024-emarking' || resource === 'computer-science-ix-2024-emarking' || resource === 'computer-science-x-2024-emarking';
+    const activeEmarking: any = isCs ? (isX ? (is2017 ? csXEmarking2017 : is2018 ? csXEmarking2018 : is2019 ? csXEmarking2019 : is2023 ? csXEmarking2023 : is2024 ? csXEmarking2024 : csXEmarking2025) : is2017 ? csEmarking2017 : is2018 ? csEmarking2018 : is2019 ? csEmarking2019 : is2023 ? csEmarking2023 : is2024 ? csEmarking2024 : csEmarking2025) : isX ? emarkingX2025 : is2024 ? emarking2024 : emarking;
+    const yearStr = is2017 ? '2017' : is2018 ? '2018' : is2019 ? '2019' : is2023 ? '2023' : is2024 ? '2024' : '2025';
     const roman = isX ? 'X' : 'IX';
     const subjTitle = isCs ? 'Computer Science' : 'Physics';
     const subjSlug = isCs ? 'computer-science' : 'physics';
     const pPrefix = isCs ? 'CS' : 'PHY';
-    const generatedCs2024 = isCs && is2024;
-    const title = generatedCs2024 ? 'Computer Science IX · 2024 · AI-assisted Paper II study notes (unverified)' : `${subjTitle} ${roman} · ${yearStr} · E-Marking Notes (Questions & Solved Better Responses)`;
+    const title = `${subjTitle} ${roman} · ${yearStr} · E-Marking Notes (Questions & Solved Better Responses)`;
     return (
       <section className={styles.page}>
         <Link href={`/akueb/${roman}/${subjSlug}/pastpapers`}>← {subjTitle} {roman} past papers</Link>
         <h1>{title}</h1>
-        <DocumentViews title={title} original={generatedCs2024 ? undefined : activeEmarking.sourceUrl}>
+        <DocumentViews title={title} original={activeEmarking.sourceUrl}>
           <div
             style={{
               background: '#ffffff',
@@ -299,10 +346,10 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
                 AGA KHAN UNIVERSITY EXAMINATION BOARD
               </div>
               <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#111827', marginBottom: '0.3rem' }}>
-                {generatedCs2024 ? 'Paper II study notes' : <>Notes from E-Marking Centre on SSC-{isX ? 'II' : 'I'} {subjTitle} Annual Examinations {yearStr}</>}
+                Notes from E-Marking Centre on SSC-{isX ? 'II' : 'I'} {subjTitle} Annual Examinations {yearStr}
               </div>
               <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#066e4f' }}>
-                {generatedCs2024 ? 'AI-assisted study edition — verify every response against the original paper' : 'Digital Edition: Questions, Marking Schemes & Solved Better Responses (2025 Syllabus Aligned)'}
+                Digital Edition: Questions, Marking Schemes & Solved Better Responses (2025 Syllabus Aligned)
               </div>
             </div>
 
@@ -505,11 +552,10 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
             </div>
           </div>
         </DocumentViews>
-        {generatedCs2024 && <p><Link href={activeEmarking.sourceUrl}>Open the AI-assisted study PDF</Link> · <Link href='/past-papers/CS-IX-2024-P2?view=original'>Original Paper II</Link></p>}
         <nav className={styles.actions}>
-          <Link className={styles.button} href={`/past-papers/${pPrefix}-${roman}-${yearStr}-P1`}>{yearStr} Paper 1</Link>
+          {!is2018 && <Link className={styles.button} href={`/past-papers/${pPrefix}-${roman}-${yearStr}-P1`}>{yearStr} Paper 1</Link>}
           <Link className={styles.button} href={`/past-papers/${pPrefix}-${roman}-${yearStr}-P2`}>{yearStr} Paper 2</Link>
-          <Link className={styles.button} href={`/resources/${subjSlug}-${roman.toLowerCase()}-${yearStr}-key`}>{yearStr} Official answer key</Link>
+          {!is2018 && <Link className={styles.button} href={`/resources/${subjSlug}-${roman.toLowerCase()}-${yearStr}-key`}>{yearStr} Official answer key</Link>}
         </nav>
       </section>
     );

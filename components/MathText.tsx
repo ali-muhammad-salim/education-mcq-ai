@@ -22,22 +22,21 @@ function cleanAndNormalizeMath(text: string): string {
 
   // Fix any $_{ without preceding anchor in existing math
   str = str.replace(/\$([^\$]*?)\$/g, (m, content) => {
-    let fixedContent = content.replace(/^(\s*)_\{/g, '$1{}_{');
+    const fixedContent = content.replace(/^(\s*)_\{/g, '$1{}_{');
     return '$' + fixedContent + '$';
   });
 
   // Split by existing $...$ and $$...$$
   const parts = str.split(/(\$\$[\s\S]*?\$\$|\$[^\$]+?\$)/g);
   for (let i = 0; i < parts.length; i++) {
-    // If odd index, it is already delimited math
     if (i % 2 === 1) continue;
     let seg = parts[i];
     if (!seg) continue;
 
     // 1. Isotopic notation: _{92}^{238}\text{U} or ^{238}_{92}\text{U}
     seg = seg.replace(/(?:_\{([0-9]+)\}\^\{([0-9]+)\}|\^\{([0-9]+)\}_\{([0-9]+)\})(\\text\{[A-Za-z]+\}|[A-Za-z]+)/g, (m, b1, t1, t2, b2, el) => {
-      let sub = b1 || b2;
-      let sup = t1 || t2;
+      const sub = b1 || b2;
+      const sup = t1 || t2;
       return '${}_{' + sub + '}^{' + sup + '}' + el + '$';
     });
 
@@ -50,10 +49,18 @@ function cleanAndNormalizeMath(text: string): string {
     // 4. Unwrapped scientific notation: 1.23 \times 10^3 or 10^{-9}
     seg = seg.replace(/([0-9.]+\s*\\times\s*10\^\{?-?[0-9]+\}?|10\^\{?-?[0-9]+\}?)/g, '$$$1$$');
 
-    // 5. If whole segment is a formula with no spaces (e.g. an option)
-    if (!seg.includes(' ') && (seg.includes('\\') || seg.includes('^') || seg.includes('_'))) {
+    // 5. If whole segment is a formula with no spaces (and not an HTML tag/path or markdown)
+    if (
+      !seg.includes(' ') &&
+      !seg.includes('<') &&
+      !seg.includes('>') &&
+      !seg.includes('`') &&
+      !seg.includes('*') &&
+      !seg.includes('/') &&
+      (seg.includes('\\') || seg.includes('^') || seg.includes('_'))
+    ) {
       if (!seg.startsWith('$')) {
-        let trimmed = seg.replace(/^(\s*)_\{/g, '$1{}_{');
+        const trimmed = seg.replace(/^(\s*)_\{/g, '$1{}_{');
         seg = '$' + trimmed + '$';
       }
     }
@@ -61,6 +68,61 @@ function cleanAndNormalizeMath(text: string): string {
     parts[i] = seg;
   }
   return parts.join('');
+}
+
+// Render inline Markdown: `code`, ***bold-italic***, **bold**, *italic*, ~~strike~~
+function renderInlineMarkdown(segment: string, keyPrefix: string): React.ReactNode[] {
+  if (!segment) return [];
+  const tokenRegex = /(`[^`]+`|\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|~~[^~]+~~|\*(?!\s)[^*\n]+?(?<!\s)\*)/g;
+  const nodes: React.ReactNode[] = [];
+  let lastIdx = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = tokenRegex.exec(segment)) !== null) {
+    if (match.index > lastIdx) {
+      nodes.push(segment.slice(lastIdx, match.index));
+    }
+    const token = match[0];
+    const k = `${keyPrefix}-${match.index}`;
+    if (token.startsWith('`') && token.endsWith('`')) {
+      nodes.push(
+        <code
+          key={k}
+          style={{
+            background: 'rgba(15, 23, 42, 0.07)',
+            border: '1px solid rgba(15, 23, 42, 0.12)',
+            padding: '1px 5px',
+            borderRadius: '4px',
+            fontFamily: "'JetBrains Mono', 'Fira Code', Consolas, monospace",
+            fontSize: '0.88em',
+            color: '#0f172a',
+          }}
+        >
+          {token.slice(1, -1)}
+        </code>
+      );
+    } else if (token.startsWith('***') && token.endsWith('***')) {
+      nodes.push(
+        <strong key={k}>
+          <em>{token.slice(3, -3)}</em>
+        </strong>
+      );
+    } else if (token.startsWith('**') && token.endsWith('**')) {
+      nodes.push(<strong key={k}>{token.slice(2, -2)}</strong>);
+    } else if (token.startsWith('~~') && token.endsWith('~~')) {
+      nodes.push(<del key={k}>{token.slice(2, -2)}</del>);
+    } else if (token.startsWith('*') && token.endsWith('*')) {
+      nodes.push(<em key={k}>{token.slice(1, -1)}</em>);
+    } else {
+      nodes.push(token);
+    }
+    lastIdx = tokenRegex.lastIndex;
+  }
+
+  if (lastIdx < segment.length) {
+    nodes.push(segment.slice(lastIdx));
+  }
+  return nodes;
 }
 
 export default function MathText({ text, className, style }: MathTextProps) {
@@ -72,17 +134,17 @@ export default function MathText({ text, className, style }: MathTextProps) {
   const parts: React.ReactNode[] = [];
   const regex = /(\$\$[\s\S]*?\$\$|\$[^\$\n]+?\$)/g;
   let lastIndex = 0;
-  let match;
+  let match: RegExpExecArray | null;
 
   while ((match = regex.exec(processableText)) !== null) {
-    // Add text preceding the match
     if (match.index > lastIndex) {
-      parts.push(processableText.substring(lastIndex, match.index));
+      const plainSeg = processableText.substring(lastIndex, match.index);
+      parts.push(...renderInlineMarkdown(plainSeg, `md-${lastIndex}`));
     }
 
     const matchedStr = match[0];
     const isDisplayMode = matchedStr.startsWith('$$');
-    let mathContent = isDisplayMode
+    const mathContent = isDisplayMode
       ? matchedStr.slice(2, -2).trim()
       : matchedStr.slice(1, -1).trim();
 
@@ -90,7 +152,7 @@ export default function MathText({ text, className, style }: MathTextProps) {
       const html = katex.renderToString(mathContent, {
         displayMode: isDisplayMode,
         throwOnError: false,
-        strict: false
+        strict: false,
       });
       parts.push(
         <span
@@ -99,16 +161,16 @@ export default function MathText({ text, className, style }: MathTextProps) {
           style={{ margin: isDisplayMode ? '0.5rem 0' : '0 2px' }}
         />
       );
-    } catch (e) {
+    } catch {
       parts.push(matchedStr);
     }
 
     lastIndex = regex.lastIndex;
   }
 
-  // Add remaining text
   if (lastIndex < processableText.length) {
-    parts.push(processableText.substring(lastIndex));
+    const tailSeg = processableText.substring(lastIndex);
+    parts.push(...renderInlineMarkdown(tailSeg, `md-tail-${lastIndex}`));
   }
 
   return (

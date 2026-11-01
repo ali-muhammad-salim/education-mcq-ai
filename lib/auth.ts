@@ -1,22 +1,15 @@
 import prisma from '@/lib/prisma';
 import { NextRequest } from 'next/server';
 import crypto from 'node:crypto';
-import type { AccountStatus } from '@prisma/client';
 export { hashPassword, verifyPassword } from '@/lib/passwords';
 export interface AuthUser {
   id: string; email: string; name: string;
   role: 'STUDENT' | 'TEACHER' | 'ADMIN';
-  status?: AccountStatus;
   avatarUrl?: string | null;
 }
 
 const sessionCache = new Map<string, { user: AuthUser; cachedUntil: number }>();
 const SESSION_CACHE_TTL_MS = 15_000;
-
-export function invalidateSession(tokenHash: string) { sessionCache.delete(tokenHash); }
-export function invalidateUserSessions(userId: string) {
-  for (const [hash, entry] of sessionCache) if (entry.user.id === userId) sessionCache.delete(hash);
-}
 
 export function generateToken(): string { return crypto.randomBytes(32).toString('hex'); }
 export function sessionTokenHash(token: string): string { return crypto.createHash('sha256').update(token).digest('hex'); }

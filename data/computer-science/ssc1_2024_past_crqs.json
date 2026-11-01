@@ -78,7 +78,7 @@
     "current_mapping": [
       {
         "code": "1.8.1",
-        "description": "describe the functions of network communication devices (Modem, NIC, Switch, Router, Gateway, Access Point);",
+        "description": "explain the following communication devices: a. hub, b. modem, c. switch, d. router, e. gateway;",
         "topic": "The Computer System"
       }
     ],
@@ -123,7 +123,7 @@
     "current_mapping": [
       {
         "code": "1.9.4",
-        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "description": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
         "topic": "The Computer System"
       }
     ],
@@ -146,8 +146,8 @@
     "questionNumber": "Q.4",
     "pageNumber": 3,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.4.1",
     "original_slo": "6.4.1",
     "current_slo": "3.4.1",
@@ -168,8 +168,8 @@
     "current_mapping": [
       {
         "code": "3.4.1",
-        "description": "create ordered (<ol>), unordered (<ul>), and definition (<dl>) lists and tables (<table>, <tr>, <th>, <td>) in HTML;",
-        "topic": "Programming Fundamentals"
+        "description": "write HTML code to create: a. ordered list, b. unordered list, c. definition list;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Consider the given image of a webpage (`ordered list.html` displaying the heading `List of dairy products` followed by a numbered list `1. Milk`, `2. Yogurt`, `3. Butter`).\nWrite the HTML code to display the web page shown in the given image. (5 Marks)",
@@ -225,12 +225,7 @@
     "current_mapping": [
       {
         "code": "1.2.1",
-        "description": "describe input and output devices and their uses in daily life;",
-        "topic": "The Computer System"
-      },
-      {
-        "code": "1.5.4",
-        "description": "differentiate among open-source, shareware, freeware, and proprietary software;",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
         "topic": "The Computer System"
       }
     ],
@@ -275,12 +270,7 @@
     "current_mapping": [
       {
         "code": "1.9.3",
-        "description": "explain guided (twisted pair, coaxial, fiber optic) and unguided (radio waves, microwaves, infrared, satellite) transmission media;",
-        "topic": "The Computer System"
-      },
-      {
-        "code": "1.9.2",
-        "description": "differentiate among types of networks: PAN, LAN, MAN, WAN, VPN, and Bluetooth networks;",
+        "description": "explain guided media and unguided media;",
         "topic": "The Computer System"
       }
     ],

@@ -1,0 +1,1562 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "The MAIN reason for using the hexadecimal number system in computing is to",
+    "options": {
+      "A": "calculate faster by replacing binary inside processors.",
+      "B": "control memory directly by removing byte-order issues.",
+      "C": "get better accuracy by fixing rounding in decimal operations.",
+      "D": "make reading of binary bits simpler by grouping in sets of four."
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "8.1.2",
+    "current_slo": "8.1.2",
+    "sloText": "describe the uses of number systems and their significance in computing;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 8,
+    "unitName": "Number Systems and Encoding Schemes",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "8.1.2",
+        "description": "describe the uses of number systems and their significance in computing;",
+        "topic": "Number Systems and Encoding Schemes"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Each hexadecimal digit (`0\u20139, A\u2013F`) compactly represents a group of **four binary bits (1 nibble)**, making long binary memory addresses and colour codes much easier for humans to read and write (`D`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 2,
+    "stem": "American Standard Code for Information Interchange (ASCII) is a coding scheme used in computers to",
+    "options": {
+      "A": "reduce the size of multimedia files during processing.",
+      "B": "represent letters, numbers, and symbols in digital form.",
+      "C": "store characters from international languages within one system.",
+      "D": "protect sensitive information through a secure encryption method."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "8.3.1",
+    "current_slo": "8.3.1",
+    "sloText": "explain the following types of coding schemes to represent data: a. ASCII, b. Unicode;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 8,
+    "unitName": "Number Systems and Encoding Schemes",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "8.3.1",
+        "description": "explain the following types of coding schemes to represent data: a. ASCII, b. Unicode;",
+        "topic": "Number Systems and Encoding Schemes"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**ASCII** assigns a unique 7-bit/8-bit numeric binary code to English **letters, digits, punctuation marks, and control symbols** so they can be stored and processed in digital form (`B`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 3,
+    "stem": "The equivalent decimal (denary) number of the binary number $101101_2$ is",
+    "options": {
+      "A": "$18_{10}$",
+      "B": "$44_{10}$",
+      "C": "$45_{10}$",
+      "D": "$63_{10}$"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "8.1.3",
+    "current_slo": "8.1.3",
+    "sloText": "convert numbers between binary, decimal (denary), and hexadecimal systems accurately using conversion methods;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 8,
+    "unitName": "Number Systems and Encoding Schemes",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "8.1.3",
+        "description": "convert numbers between binary, decimal (denary), and hexadecimal systems accurately using conversion methods;",
+        "topic": "Number Systems and Encoding Schemes"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Expanding positional weights of $101101_2$:\n$$1\\times 2^5 + 0\\times 2^4 + 1\\times 2^3 + 1\\times 2^2 + 0\\times 2^1 + 1\\times 2^0 = 32 + 0 + 8 + 4 + 0 + 1 = \\mathbf{45_{10}}$$ (`C`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 4,
+    "stem": "The 2's complement of the binary number $01101000_2$ is",
+    "options": {
+      "A": "$10010111_2$",
+      "B": "$10011000_2$",
+      "C": "$10010110_2$",
+      "D": "$01101001_2$"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "8.2.2",
+    "current_slo": "8.2.2",
+    "sloText": "determine 1's and 2's complement of binary numbers;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 8,
+    "unitName": "Number Systems and Encoding Schemes",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "8.2.2",
+        "description": "determine 1's and 2's complement of binary numbers;",
+        "topic": "Number Systems and Encoding Schemes"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "1. Invert all bits to find the 1's complement: $01101000_2 \\rightarrow 10010111_2$.\n2. Add $1$ to the least significant bit: $10010111_2 + 1_2 = \\mathbf{10011000_2}$ (`B`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 5,
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: A = 18\nStep 3: B = 4\nStep 4: A = A / B\nStep 5: If A > 3 then\n          B = B * 2\n        Else\n          B = B - 1\n        EndIf\nStep 6: A = A + B\nStep 7: Output A\nStep 8: Stop\n```\n\nThe output of the given algorithm is",
+    "options": {
+      "A": "7",
+      "B": "8",
+      "C": "10",
+      "D": "12"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "9.1.1",
+    "current_slo": "9.1.1",
+    "sloText": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing the algorithm using integer division:\n1. `A = 18, B = 4`\n2. `A = 18 / 4 = 4`\n3. Since `A > 3` (`4 > 3`) is **true**, `B = 4 * 2 = 8`\n4. `A = 4 + 8 = 12` (`D`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 6,
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: N = 12\nStep 3: If N % 4 == 0 then\n          N = N - 1\n        Else if N % 3 == 0 then\n          N = N + 2\n        Else if N < 10 then\n          N = N * 2\n        Else\n          N = N + 1\n        EndIf\nStep 4: Output N\nStep 5: Stop\n```\n\nThe output of the given algorithm is",
+    "options": {
+      "A": "11",
+      "B": "13",
+      "C": "14",
+      "D": "24"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "9.1.1",
+    "current_slo": "9.1.1",
+    "sloText": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Since `N = 12`, the first condition `N % 4 == 0` (`12 % 4 == 0`) evaluates to **true**. It executes `N = 12 - 1 = 11` and skips all remaining `Else if` / `Else` branches, outputting **`11`** (`A`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 7,
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: S = 0\nStep 3: For i = 1 to 4 do\n          If i % 2 == 1 then\n            S = S + i\n          Else\n            S = S - 1\n          End If\n        End For\nStep 4: Output S\nStep 5: Stop\n```\n\nThe output of the given algorithm is",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "9.1.1",
+    "current_slo": "9.1.1",
+    "sloText": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing each iteration for `i = 1 to 4`:\n- `i = 1` (`1 % 2 == 1` is True): `S = 0 + 1 = 1`\n- `i = 2` (`2 % 2 == 1` is False): `S = 1 - 1 = 0`\n- `i = 3` (`3 % 2 == 1` is True): `S = 0 + 3 = 3`\n- `i = 4` (`4 % 2 == 1` is False): `S = 3 - 1 = 2`\nOutputs **`S = 2`** (`C`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 8,
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: A = 2\nStep 3: B = 5\nStep 4: Do\n          A = A * B\n          If A > 20 then\n            B = B - 2\n          Else\n            B = B + 1\n          EndIf\n        While (A < B * B)\nStep 5: Output A - B\nStep 6: Stop\n```\n\nThe output of the given algorithm is",
+    "options": {
+      "A": "24",
+      "B": "34",
+      "C": "56",
+      "D": "60"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "9.1.1",
+    "current_slo": "9.1.1",
+    "sloText": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing the `Do-While` loop:\n- **Pass 1**: `A = 2 * 5 = 10`. Since `10 > 20` is false, `B = 5 + 1 = 6`. Condition `10 < 6 * 6` (`10 < 36`) is **true**.\n- **Pass 2**: `A = 10 * 6 = 60`. Since `60 > 20` is true, `B = 6 - 2 = 4`. Condition `60 < 4 * 4` (`60 < 16`) is **false**.\n- **Step 5**: Outputs `A - B = 60 - 4 = 56` (`C`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 9,
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: List = [4, 7, 2, 9, 5]\nStep 3: Target = 9\nStep 4: Found = -1\nStep 5: For i = 0 to 4 do\n          If List[i] == Target then\n            Found = i\n            Break\n          EndIf\n        EndFor\nStep 6: Output Found\nStep 7: Stop\n```\n\nThe output of the given algorithm is",
+    "options": {
+      "A": "-1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "9.1.1",
+    "current_slo": "9.1.1",
+    "sloText": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Using 0-based indexing on `List = [4, 7, 2, 9, 5]`: `List[0] = 4`, `List[1] = 7`, `List[2] = 2`, and `List[3] = 9 == Target`. The loop sets `Found = 3`, breaks, and outputs **`3`** (`C`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 10,
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: List = [3, 6, 9, 12, 15, 18]\nStep 3: Target = 15\nStep 4: Low = 1\nStep 5: High = 6\nStep 6: Found = -1\nStep 7: For k = 0 to 3 do\n          Mid = (Low + High) / 2\n          If List[Mid] == Target then\n            Found = Mid\n            Break\n          Else if List[Mid] < Target then\n            Low = Mid + 1\n          Else\n            High = Mid - 1\n          EndIf\n        EndFor\nStep 8: Output Found\nStep 9: Stop\n```\n\nThe output of the given algorithm is",
+    "options": {
+      "A": "-1",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "9.1.1",
+    "current_slo": "9.1.1",
+    "sloText": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "This binary search algorithm uses 1-based positions (`Low = 1, High = 6`):\n- **k = 0**: `Mid = (1 + 6) / 2 = 3` (`List[3] = 9 < 15`), so `Low = 3 + 1 = 4`.\n- **k = 1**: `Mid = (4 + 6) / 2 = 5` (`List[5] = 15 == Target`), so `Found = 5` and `Break` executes.\nOutputs **`5`** (`D`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 11,
+    "stem": "Consider the algorithm in which a list is sorted using bubble sort.\n\n```text\nStep 1: Start\nStep 2: List = [5, 1, 4, 2]\nStep 3: For i = 0 to 3 do\n          If List[i] > List[i + 1] then\n            Swap List[i] and List[i + 1]\n          EndIf\n        EndFor\nStep 4: Output List\nStep 5: Stop\n```\n\nThe output of the given list after the first bubble-pass is",
+    "options": {
+      "A": "`[1, 4, 2, 5]`",
+      "B": "`[1, 5, 4, 2]`",
+      "C": "`[5, 4, 2, 1]`",
+      "D": "`[1, 2, 4, 5]`"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "9.1.1",
+    "current_slo": "9.1.1",
+    "sloText": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "During the first pass of bubble sort on `[5, 1, 4, 2]`:\n- Compare `5 > 1` $\\rightarrow$ swap to `[1, 5, 4, 2]`\n- Compare `5 > 4` $\\rightarrow$ swap to `[1, 4, 5, 2]`\n- Compare `5 > 2` $\\rightarrow$ swap to **`[1, 4, 2, 5]`** (`A`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 12,
+    "stem": "The statement that is CORRECT about an `if` condition is that",
+    "options": {
+      "A": "its block runs only when the condition is true.",
+      "B": "it always checks two conditions.",
+      "C": "the else part is compulsory.",
+      "D": "it is same as nested if."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "10.4.2",
+    "current_slo": "10.4.2",
+    "sloText": "explain the structure of if, if-else, nested if-else, or if-else-if and switch statement;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.4.2",
+        "description": "explain the structure of if, if-else, nested if-else, or if-else-if and switch statement;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In an `if` selection statement, **its block of code executes only when the condition evaluates to `true`** (`A`), and the `else` clause is optional.",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 13,
+    "stem": "Consider the following code.\n\n```html\n<button id=\"btn\">Run</button>\n<script>\nconst msg = \"Task completed!\";\ndocument.getElementById(\"btn\").onclick = () => window.alert(msg);\n</script>\n```\n\nWhat happens when the given code executes?",
+    "options": {
+      "A": "It will print the text in the console.",
+      "B": "It will display a pop-up message.",
+      "C": "It will show the text on the page.",
+      "D": "It will insert the text in a div."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "10.2.1",
+    "current_slo": "10.2.1",
+    "sloText": "apply the following functions to display the output: a. innerHTML, b. document.write( ), c. window.alert( );",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.2.1",
+        "description": "apply the following functions to display the output: a. innerHTML, b. document.write( ), c. window.alert( );",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "`window.alert(msg)` displays a modal browser **pop-up alert dialog box** containing `\"Task completed!\"` when the button is clicked (`B`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 14,
+    "stem": "Consider the following code.\n\n```html\n<script>\n  const u = \"Hello\";\n  const v = 42;\n  const w = 9007199254740993;\n  const x = true;\n  let y;\n  const z = null;\n  console.log({ u, v, w, x, y, z });\n</script>\n```\n\nThe option that CORRECTLY maps the variables to their data types in order (`u, v, w, x, y, z`) is",
+    "options": {
+      "A": "u -> String, v -> Number, w -> BigInt, x -> Boolean, y -> Undefined, z -> Null",
+      "B": "u -> String, v -> BigInt, w -> Number, x -> Boolean, y -> Null, z -> Undefined",
+      "C": "u -> Number, v -> String, w -> BigInt, x -> Boolean, y -> Undefined, z -> Null",
+      "D": "u -> String, v -> Number, w -> Number, x -> Boolean, y -> Undefined, z -> String"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "10.2.2",
+    "current_slo": "10.2.2",
+    "sloText": "write a JavaScript code containing the following data types: a. String, b. Number, c. BigInt, d. Boolean, e. Undefined, f. Null;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.2.2",
+        "description": "write a JavaScript code containing the following data types: a. String, b. Number, c. BigInt, d. Boolean, e. Undefined, f. Null;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Matching each value to the six JavaScript data types in SLO `10.2.2`:\n- `u = \"Hello\"` $\\rightarrow$ **String**\n- `v = 42` $\\rightarrow$ **Number**\n- `w = 9007199254740993` (exceeds $2^{53}-1$) $\\rightarrow$ **BigInt**\n- `x = true` $\\rightarrow$ **Boolean**\n- `let y;` (uninitialised variable) $\\rightarrow$ **Undefined**\n- `z = null` $\\rightarrow$ **Null** (`A`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 15,
+    "stem": "Consider the given code snippet.\n\n```html\n<script>\n  let total = 10;\n  const add = 5;\n  total += add;\n  total += 2;\n  document.write(total);\n</script>\n```\n\nThe output of the given code snippet is",
+    "options": {
+      "A": "10",
+      "B": "12",
+      "C": "15",
+      "D": "17"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "10.3.2",
+    "current_slo": "10.3.2",
+    "sloText": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.2",
+        "description": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "`total` starts at `10`, `total += 5` makes it `15`, and `total += 2` makes it **`17`** (`D`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 16,
+    "stem": "Consider the given code snippet.\n\n```html\n<script>\n  let score = 50;\n  score -= 10;\n  score += 5;\n  score /= 5;\n  score *= 4;\n  document.write(score);\n</script>\n```\n\nThe output of the given code snippet is",
+    "options": {
+      "A": "36",
+      "B": "40",
+      "C": "45",
+      "D": "50"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "10.3.2",
+    "current_slo": "10.3.2",
+    "sloText": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.2",
+        "description": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing the compound assignment operations on `score`:\n1. `50 - 10 = 40`\n2. `40 + 5 = 45`\n3. `45 / 5 = 9`\n4. `9 * 4 = 36` (`A`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 17,
+    "stem": "Consider the given code snippet.\n\n```html\n<script>\n  const a = 7, b = 10;\n  const r1 = a <= b;\n  const r2 = a >= b;\n  document.write(r1 + \" \" + r2);\n</script>\n```\n\nThe output of the given code snippet is",
+    "options": {
+      "A": "`true true.`",
+      "B": "`true false.`",
+      "C": "`false true.`",
+      "D": "`false false.`"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "10.3.4",
+    "current_slo": "10.3.4",
+    "sloText": "use the following relational operators in a JavaScript code: a. less than (<), b. greater than (>), c. less than or equal to (<=), d. greater than or equal to (>=), e. equal to (==), f. strict equal to (equal value and equal type) (===), g. not equal to (!=), h. strict not equal to (not equal value and not equal type) (!==);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.4",
+        "description": "use the following relational operators in a JavaScript code: a. less than (<), b. greater than (>), c. less than or equal to (<=), d. greater than or equal to (>=), e. equal to (==), f. strict equal to (equal value and equal type) (===), g. not equal to (!=), h. strict not equal to (not equal value and not equal type) (!==);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "For `a = 7` and `b = 10`, `r1 = (7 <= 10)` evaluates to `true` and `r2 = (7 >= 10)` evaluates to `false`, printing **`true false`** (`B`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 18,
+    "stem": "Consider the given code snippet.\n\n```html\n<script>\nconst loggedIn = false, hasToken = true;\nconst canAccess = loggedIn || hasToken;\ndocument.write(canAccess);\n</script>\n```\n\nThe output of the given code snippet is",
+    "options": {
+      "A": "`null.`",
+      "B": "`true.`",
+      "C": "`false.`",
+      "D": "`undefined.`"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "10.3.5",
+    "current_slo": "10.3.5",
+    "sloText": "use the following logical operators in a JavaScript code: a. AND (&&), b. OR (||), c. NOT (!);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.5",
+        "description": "use the following logical operators in a JavaScript code: a. AND (&&), b. OR (||), c. NOT (!);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The logical OR operator (`||`) returns `true` if at least one operand is `true`. Since `hasToken` is `true`, `false || true` evaluates to **`true`** (`B`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 19,
+    "stem": "Consider the given code snippet.\n\n```html\n<script>\n  const values = [2, 4, 1, 6, 3];\n  let printed = 0;\n  for (let i = 0; i < values.length; i++)\n  {\n    if (values[i] >= 4)\n    {\n      if (printed > 0) document.write(\" \");\n      document.write(values[i] * 2);\n      printed++;\n    }\n  }\n</script>\n```\n\nThe output of the given code snippet is",
+    "options": {
+      "A": "`4 6`",
+      "B": "`8 12`",
+      "C": "`2 4 6`",
+      "D": "`8 12 6`"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "10.6.3",
+    "current_slo": "10.6.3",
+    "sloText": "apply the process of traversing using all types of loops for input, output, and manipulation of elements;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.6.3",
+        "description": "apply the process of traversing using all types of loops for input, output, and manipulation of elements;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The loop checks each element of `[2, 4, 1, 6, 3]` for `values[i] >= 4`:\n- Only `4` (`i = 1`) and `6` (`i = 3`) satisfy `>= 4`.\n- Each is multiplied by `2` (`4 * 2 = 8` and `6 * 2 = 12`) and separated by a space, outputting **`8 12`** (`B`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 20,
+    "stem": "A global messaging platform integrates Artificial Intelligence (AI) into its services. Users from different countries communicate seamlessly as the system instantly displays messages into their native languages, while also filtering unwanted content.\n\nBased on the given scenario, the AI enriching communication by",
+    "options": {
+      "A": "facilitating national collaboration.",
+      "B": "supporting secure message delivery.",
+      "C": "enhancing real-time message conversion.",
+      "D": "improving one's personal grooming skills."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "11.2.3",
+    "current_slo": "11.2.3",
+    "sloText": "apply Natural Language Processing (NLP) concepts in real-world applications like speech recognition, translation, and text analysis;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 11,
+    "unitName": "Data and Analysis",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "11.2.3",
+        "description": "apply Natural Language Processing (NLP) concepts in real-world applications like speech recognition, translation, and text analysis;",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Using Natural Language Processing (NLP) machine translation to instantly translate messages across languages enriches communication by **enhancing real-time message conversion** (`C`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 21,
+    "stem": "A retail company applies data mining to its customer purchase records. The system uncovers that customers who buy baby products often purchase household cleaning supplies within the same week.\n\nWith reference to the given scenario, the data mining technique applied to uncover purchasing relationships through",
+    "options": {
+      "A": "identifying sequential selling behaviour across product categories.",
+      "B": "developing predictive analytics for future shopping trends.",
+      "C": "enhancing clustering models for customer segmentation.",
+      "D": "discovering association rules in transactional datasets."
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "11.2.2",
+    "current_slo": "11.2.2",
+    "sloText": "use data mining techniques to extract patterns and insights from given datasets for real-world applications;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 11,
+    "unitName": "Data and Analysis",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "11.2.2",
+        "description": "use data mining techniques to extract patterns and insights from given datasets for real-world applications;",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Uncovering co-occurring item relationships (market-basket analysis) in retail transactions is achieved by **discovering association rules in transactional datasets** (`D`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 22,
+    "stem": "A national retailer collects billions of transaction records each day. An analyst proactively identifies purchasing trends across different regions and makes necessary adjustments to inventory.\n\nBased on the given scenario, the importance of big data on managing large datasets is to",
+    "options": {
+      "A": "enhance storage capacity.",
+      "B": "uncover meaningful patterns.",
+      "C": "support collaboration among teams.",
+      "D": "improve visualisation of information."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "11.3.1",
+    "current_slo": "11.3.1",
+    "sloText": "explain the big data concept and its significance in managing and reviewing large datasets;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 11,
+    "unitName": "Data and Analysis",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "11.3.1",
+        "description": "explain the big data concept and its significance in managing and reviewing large datasets;",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The primary significance of big data analytics on massive transaction datasets is to **uncover meaningful patterns** and trends that guide inventory and business decisions (`B`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 23,
+    "stem": "A bank includes a machine learning model in its transaction monitoring system. The model identifies unusual spending patterns, such as sudden high amount purchases at unfamiliar locations, and sends alerts to the concerned person for further investigation.\n\nThe machine learning skill displayed in the given scenario is",
+    "options": {
+      "A": "automation in financial services.",
+      "B": "unsupervised learning through clustering.",
+      "C": "AI enabled systems learning from large data.",
+      "D": "fraud detection through inconsistency identification."
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "11.2.1",
+    "current_slo": "11.2.1",
+    "sloText": "explain the following machine-learning skills: a. AI-enabled systems learning from large data, b. supervised and unsupervised learning, c. automation and scalability, d. fraud detection;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 11,
+    "unitName": "Data and Analysis",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "11.2.1",
+        "description": "explain the following machine-learning skills: a. AI-enabled systems learning from large data, b. supervised and unsupervised learning, c. automation and scalability, d. fraud detection;",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Flagging anomalous high-value transactions at unfamiliar locations is an application of machine-learning **fraud detection through inconsistency identification** (`D`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 24,
+    "stem": "During group work, learners use a shared online document while respecting each other's contributions, avoiding inappropriate comments, and ensuring everyone has access to it.\n\nBased on the given scenario, the learners show the act of responsible digital citizenship by",
+    "options": {
+      "A": "promoting respectful collaboration in digital places.",
+      "B": "enhancing productivity through real time editing features.",
+      "C": "increasing communication with digital collaboration tools.",
+      "D": "supporting self-improvement with interactive online applications."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "12.1.2",
+    "current_slo": "12.1.2",
+    "sloText": "explain the essentials of good digital citizenship (safe and responsible use of technology);",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 12,
+    "unitName": "Security, Privacy and Data Integrity",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "12.1.2",
+        "description": "explain the essentials of good digital citizenship (safe and responsible use of technology);",
+        "topic": "Security, Privacy and Data Integrity"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Respecting peers' work, avoiding hurtful remarks, and maintaining inclusive access exemplifies **promoting respectful collaboration in digital places** (`A`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 25,
+    "stem": "In a school, a student downloaded copyrighted software from a free file-sharing website and shared it with friends. The school later warns the student about consequences.\n\nWith reference to the given situation, it can be inferred that the student has an ethical issue of",
+    "options": {
+      "A": "violating intellectual property laws by illegally copying or using software.",
+      "B": "prioritising technical efficiency by paying attention to legal requirements.",
+      "C": "ignoring the value of using a combination of different learning tools.",
+      "D": "continuing to use outdated approaches for sharing software."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "12.1.3",
+    "current_slo": "12.1.3",
+    "sloText": "explain key concepts of copyright, plagiarism, and piracy;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 12,
+    "unitName": "Security, Privacy and Data Integrity",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "12.1.3",
+        "description": "explain key concepts of copyright, plagiarism, and piracy;",
+        "topic": "Security, Privacy and Data Integrity"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Downloading and distributing copyrighted software without authorisation constitutes **software piracy**, which is **violating intellectual property laws by illegally copying or using software** (`A`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 26,
+    "stem": "A university student spends more than 15 hours every day on his/ her laptop for classes and entertainment, and has begun dealing with frequent headaches and trouble sleeping.\n\nBased on the given situation, the university student is suffering from a health risk that is",
+    "options": {
+      "A": "lower social activity.",
+      "B": "loss of discomfort.",
+      "C": "occasional stress.",
+      "D": "physical harm."
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "12.1.6",
+    "current_slo": "12.1.6",
+    "sloText": "examine the health concerns associated with the excessive use of ICT devices and their impact on well-being;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 12,
+    "unitName": "Security, Privacy and Data Integrity",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "12.1.6",
+        "description": "examine the health concerns associated with the excessive use of ICT devices and their impact on well-being;",
+        "topic": "Security, Privacy and Data Integrity"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Chronic eye strain, frequent headaches, and sleep disruption caused by excessive screen exposure (15+ hours daily) represent **physical harm** to well-being (`D`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 27,
+    "stem": "The statement that represents cyberbullying in an online space by",
+    "options": {
+      "A": "using digital platforms to intimidate others intentionally.",
+      "B": "arguing different viewpoints in an online conversation strongly.",
+      "C": "sharing someone's original work online without their permission.",
+      "D": "restricting access to certain online sites due to technical limitations."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "12.2.1",
+    "current_slo": "12.2.1",
+    "sloText": "describe cyberbullying;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 12,
+    "unitName": "Security, Privacy and Data Integrity",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "12.2.1",
+        "description": "describe cyberbullying;",
+        "topic": "Security, Privacy and Data Integrity"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**Cyberbullying** is defined as **using digital platforms to harass, threaten, or intimidate others intentionally** (`A`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 28,
+    "stem": "In digital technology, the access divide refers to",
+    "options": {
+      "A": "variation in income levels affecting the affordability of ICT tools.",
+      "B": "difference in cultural approaches toward technology use.",
+      "C": "unequal availability of devices and internet connectivity.",
+      "D": "unequal distribution of digital skills among people."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "12.3.1",
+    "current_slo": "12.3.1",
+    "sloText": "describe the digital divide and its following types: a. access divide, b. skill divide, c. income divide, d. geographical divide, e. cultural divide;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 12,
+    "unitName": "Security, Privacy and Data Integrity",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "12.3.1",
+        "description": "describe the digital divide and its following types: a. access divide, b. skill divide, c. income divide, d. geographical divide, e. cultural divide;",
+        "topic": "Security, Privacy and Data Integrity"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The **access divide** specifically refers to the **unequal availability of digital devices and reliable internet connectivity** across populations (`C`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 29,
+    "stem": "In a rural district, schools struggle because many households lack reliable internet and students cannot join online classes. Teachers report that even when devices are donated, poor connectivity prevents meaningful participation.\n\nThe EFFECTIVE strategy that can be applied by the government to reduce the digital divide in the given situation is by",
+    "options": {
+      "A": "offering workshops that prepare users, yet failing to improve internet access.",
+      "B": "organising awareness campaigns about the importance of online learning.",
+      "C": "expanding broadband infrastructure with affordable internet packages.",
+      "D": "encouraging students to share devices among peers during lessons."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "12.3.4",
+    "current_slo": "12.3.4",
+    "sloText": "recommend strategies to reduce the digital divide and improve digital accessibility.",
+    "cognitiveLevel": "Application",
+    "unitNumber": 12,
+    "unitName": "Security, Privacy and Data Integrity",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "12.3.4",
+        "description": "recommend strategies to reduce the digital divide and improve digital accessibility.",
+        "topic": "Security, Privacy and Data Integrity"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Because the bottleneck in the rural district is poor internet connectivity even when devices are present, the most effective government intervention is **expanding broadband infrastructure with affordable internet packages** (`C`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 30,
+    "stem": "Digital literacy is referred as the",
+    "options": {
+      "A": "infrastructure that enables internet connectivity.",
+      "B": "combination of computer and network system.",
+      "C": "ability to use and evaluate digital information.",
+      "D": "financial capacity to afford digital tools."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "13.1.1",
+    "current_slo": "13.1.1",
+    "sloText": "differentiate between digital literacy and digital technology;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.1.1",
+        "description": "differentiate between digital literacy and digital technology;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**Digital literacy** is the **ability to find, evaluate, use, and create digital information** safely and effectively using digital technologies (`C`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 31,
+    "stem": "A multinational team needs to coordinate daily tasks, share files instantly, and avoid miscommunication while working remotely.\n\nThe effective digital tool to improve communication in the given situation is the use of",
+    "options": {
+      "A": "documentation tool with antivirus software for protection against malware.",
+      "B": "tracking tool to track tasks with printed reports shared on daily basis.",
+      "C": "email chains for all updates including reports, regardless of urgency.",
+      "D": "video conferencing platforms with integrated chat and file sharing."
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "13.1.2",
+    "current_slo": "13.1.2",
+    "sloText": "apply digital technology tools to improve communication, security, and problem-solving in daily life;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.1.2",
+        "description": "apply digital technology tools to improve communication, security, and problem-solving in daily life;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**Video conferencing platforms with integrated chat and file sharing** (such as Microsoft Teams, Zoom, or Google Meet) enable real-time synchronous communication and instant file exchange for remote teams (`D`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 32,
+    "stem": "A frequent online shopper worries about identity theft and unauthorised access to accounts.\n\nBased on the given situation, the effective digital technology to enhance security is by",
+    "options": {
+      "A": "associating email alerts with accounts in case of compromising.",
+      "B": "enabling two-factor authentication for all accounts.",
+      "C": "keeping separate account for online purchasing.",
+      "D": "relying solely on browser autofill for logins."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "13.1.2",
+    "current_slo": "13.1.2",
+    "sloText": "apply digital technology tools to improve communication, security, and problem-solving in daily life;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.1.2",
+        "description": "apply digital technology tools to improve communication, security, and problem-solving in daily life;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**Enabling two-factor authentication (2FA) for all accounts** (`B`) adds a second verification layer beyond passwords to prevent unauthorised account access.",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 33,
+    "stem": "A university student struggles to cope multiple assignments, deadlines, and group projects.\n\nThe digital technology to solve the given problem effectively by using",
+    "options": {
+      "A": "memory recalling apps to alert about assignments and project frequently.",
+      "B": "social apps for discussion of assignments and projects to keep updated.",
+      "C": "task management apps with reminder and collaboration features.",
+      "D": "notes app to write all task and keep it as a personal diary."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "13.1.2",
+    "current_slo": "13.1.2",
+    "sloText": "apply digital technology tools to improve communication, security, and problem-solving in daily life;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.1.2",
+        "description": "apply digital technology tools to improve communication, security, and problem-solving in daily life;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**Task management apps with reminder and collaboration features** (such as Trello, Asana, or Notion) help students organise deadlines, track deliverables, and coordinate group projects (`C`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 34,
+    "stem": "A marketing team struggles with version control when multiple members edit campaign documents simultaneously.\n\nThe technology that would effectively optimise productivity in the given scenario is by",
+    "options": {
+      "A": "emailing updated files back and forth among team for secure communication.",
+      "B": "using cloud-based collaboration platforms with live editing rights.",
+      "C": "saving files on individual desktops with synchronisation.",
+      "D": "recording and sharing drafts for review and corrections."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "13.1.3",
+    "current_slo": "13.1.3",
+    "sloText": "evaluate the effectiveness of digital technologies in different real-life scenarios to optimise productivity and connectivity;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.1.3",
+        "description": "evaluate the effectiveness of digital technologies in different real-life scenarios to optimise productivity and connectivity;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**Using cloud-based collaboration platforms with live editing rights** (such as Google Docs or Microsoft 365) eliminates conflicting file copies and provides real-time co-authoring and version history (`B`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 35,
+    "stem": "A professional salesperson regularly uses public Wi-Fi at airports and cafes to check email and access online banking. He/ she is concerned that hackers will intercept his/ her sensitive data.\n\nBased on the given context, the efficient way to protect information is to",
+    "options": {
+      "A": "activate security features such as biometrics login.",
+      "B": "install a password manager to generate strong credentials.",
+      "C": "use a secure mobile payment app with built-in encryption.",
+      "D": "use a Virtual Private Network (VPN) to encrypt all networks."
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "13.1.2",
+    "current_slo": "13.1.2",
+    "sloText": "apply digital technology tools to improve communication, security, and problem-solving in daily life;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.1.2",
+        "description": "apply digital technology tools to improve communication, security, and problem-solving in daily life;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "When connecting over untrusted public Wi-Fi networks, **using a Virtual Private Network (VPN) to encrypt all network traffic** (`D`) prevents packet sniffing and man-in-the-middle interception.",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 36,
+    "stem": "A university launches a mobile app to improve connectivity with students by giving real time updates on class schedules, buses, and important notices. The observed data shows that the students mostly use this app only for the bus tracking feature.\n\nBased on the given situation, it can be concluded that the mobile app is",
+    "options": {
+      "A": "more effective due to limited use of all the features.",
+      "B": "completely effective since one feature is used often.",
+      "C": "ineffective because students are not using some of its features.",
+      "D": "partially effective because it works for transport features only."
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "13.1.3",
+    "current_slo": "13.1.3",
+    "sloText": "evaluate the effectiveness of digital technologies in different real-life scenarios to optimise productivity and connectivity;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.1.3",
+        "description": "evaluate the effectiveness of digital technologies in different real-life scenarios to optimise productivity and connectivity;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Because the app successfully serves students for real-time bus tracking while its schedule and notice features remain underutilised, it is **partially effective because it works for transport features only** (`D`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 37,
+    "stem": "A business plan that integrates insights generated through design thinking shows that the",
+    "options": {
+      "A": "assumptions can lead to decisions.",
+      "B": "user ideas are aligned with the strategy.",
+      "C": "financial data is obtained with research.",
+      "D": "innovation is separated from the planning."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "14.1.1",
+    "current_slo": "14.1.1",
+    "sloText": "explain the concepts of design thinking and business planning, emphasising their role in problem-solving and entrepreneurship;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 14,
+    "unitName": "Entrepreneurship in the Digital Age",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "14.1.1",
+        "description": "explain the concepts of design thinking and business planning, emphasising their role in problem-solving and entrepreneurship;",
+        "topic": "Entrepreneurship in the Digital Age"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Design thinking is a human-centred approach; integrating its insights into a business plan ensures that **user needs and ideas are aligned with the business strategy** (`B`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 38,
+    "stem": "Financial knowledge, communication, and good decision making skills enable an entrepreneur to",
+    "options": {
+      "A": "focus only on product ideas.",
+      "B": "manage daily operations smoothly.",
+      "C": "avoid learning from customers' feedback.",
+      "D": "dependent only on research for business growth."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "14.1.2",
+    "current_slo": "14.1.2",
+    "sloText": "explain entrepreneurial skills and ideas for a small business;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 14,
+    "unitName": "Entrepreneurship in the Digital Age",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "14.1.2",
+        "description": "explain entrepreneurial skills and ideas for a small business;",
+        "topic": "Entrepreneurship in the Digital Age"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Core entrepreneurial skills\u2014financial literacy, effective communication, and sound decision-making\u2014enable a founder to **manage daily business operations smoothly** (`B`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 39,
+    "stem": "While creating a business plan, an entrepreneur outlines products or services that help him to",
+    "options": {
+      "A": "focus on product pricing only.",
+      "B": "skip the features of the product.",
+      "C": "define clearly what value is being offered.",
+      "D": "avoid providing services to the customers."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "14.1.3",
+    "current_slo": "14.1.3",
+    "sloText": "explain the following components of devising a business plan: a. executive summary, b. startup, c. analyse the market, d. enlist products/ services, e. target market, f. promotional strategy, g. budget;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 14,
+    "unitName": "Entrepreneurship in the Digital Age",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "14.1.3",
+        "description": "explain the following components of devising a business plan: a. executive summary, b. startup, c. analyse the market, d. enlist products/ services, e. target market, f. promotional strategy, g. budget;",
+        "topic": "Entrepreneurship in the Digital Age"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The products and services section of a business plan allows the entrepreneur to **define clearly what value is being offered** to solve customer problems (`C`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  },
+  {
+    "questionNumber": 40,
+    "stem": "A small craft brand runs social media pages but gets very low engagement.\n\nBased on the given information, the strategy that can improve audience engagement by",
+    "options": {
+      "A": "creating interactive reels.",
+      "B": "uploading content inconsistently.",
+      "C": "running paid ads without analysing metrics.",
+      "D": "posting product photos without offering any context."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "14.1.4",
+    "current_slo": "14.1.4",
+    "sloText": "suggest digital marketing strategies to promote products, services, or ideas effectively;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 14,
+    "unitName": "Entrepreneurship in the Digital Age",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "14.1.4",
+        "description": "suggest digital marketing strategies to promote products, services, or ideas effectively;",
+        "topic": "Entrepreneurship in the Digital Age"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**Creating interactive reels** (short-form engaging video content showcasing behind-the-scenes crafts, polls, and tutorials) is an effective digital marketing strategy to boost audience engagement (`A`).",
+    "examYear": 2027,
+    "paperCode": "CS-X-P1"
+  }
+]

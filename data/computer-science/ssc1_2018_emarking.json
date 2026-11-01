@@ -1,0 +1,378 @@
+{
+  "title": "Notes from E-Marking Centre on SSC-I Computer Science Examination May 2018",
+  "examYear": 2018,
+  "board": "AKU-EB",
+  "classLevel": "Class IX (SSC-I)",
+  "subject": "Computer Science",
+  "sourceUrl": "/materials/ssc/computer-science/ssc-1/computer-science-ix-2018-emarking.pdf",
+  "introduction": "This document has been produced for the teachers and candidates of Secondary School Certificate (SSC-I) Computer Science. It contains comments on candidates' responses to the 2018 SSC-I Examination, indicating the quality of the responses and highlighting their relative strengths and weaknesses, along with complete 2025 Syllabus SLO mappings and solved model answers.",
+  "generalObservations": [
+    "In general, questions related to types of computers (Q.6a), CPU components & system buses (Q.6b), input devices / mouse events (Q.2b), types of application software (Q.7a), MS PowerPoint chart datasheets (Q.4c), and MS Word change case (Q.4b) were well attempted.",
+    "Questions based on the historical evolution of computers (Q.1), memory unit conversions (Q.2a), Windows Start menu keyboard shortcuts (Q.4a), octal-to-decimal fractional conversions (Q.3a), user interface definitions (Q.5a), and Disk Operating System (DOS) commands (Q.5b) required further practice."
+  ],
+  "questions": [
+    {
+      "questionNumber": "Q.1",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Names of some computing devices that were invented during the evolution of computer are given below:\n\u2022 `ENIAC` \u2022 `UNIVAC` \u2022 `Mark-1` \u2022 `Abacus` \u2022 `Difference engine` \u2022 `Punch card tabulator` \u2022 `Analytical engine` \u2022 `Pascal's Pascaline calculator`\n\nChoose appropriate name from the list inside the box and write it with corresponding statement about a computing device. *(Note: Only one name can be used for one statement.)* (5 Marks)\n**i.** `_________________________` was steam powered, fully automatic and could print the results as well.\n**ii.** `_________________________` works on decimal arithmetic rather than binary arithmetic.\n**iii.** `_________________________` was a general purpose, fully program-controlled and automatic mechanical digital computer.\n**iv.** `_________________________` had a system of gears. One-tooth gear of this machine engages tooth with a ten-tooth gear once every time it revolves.\n**v.** `_________________________` processes data in numerical form using digital circuits.",
+      "originalSlo": "1.1.1",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy Evolution of Computers)",
+      "outOfSyllabus": true,
+      "sloText": "Describe the brief history and evolution of computing devices (Abacus, Pascaline, Difference Engine, Analytical Engine, Tabulating Machine, Mark-I, ENIAC, UNIVAC);",
+      "maxMarks": 5,
+      "cognitiveLevel": "K",
+      "checkingHints": [
+        "1 mark for each correct computing device matched to its statement: i. Difference engine, ii. ENIAC, iii. Analytical engine, iv. Pascal's Pascaline calculator, v. Mark-1 (5 \u00d7 1 = 5 Marks)."
+      ],
+      "overallPerformance": "Most of the responses for this question performed below average.",
+      "betterResponses": "Better responses showed good understanding of the evolution of computers and wrote the correct terms (Difference engine, ENIAC, Analytical engine, Pascal's Pascaline calculator, Mark-1) to complete all five statements.",
+      "weakerResponses": "Weaker responses identified Difference engine and/or Pascal's Pascaline calculator, but randomly guessed Abacus or Punch card tabulator for the remaining statements.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q1_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q1_weaker.png",
+      "suggestions": [
+        "Create a chronological timeline chart comparing the key mechanism and inventor of each historical computing device."
+      ],
+      "modelAnswer": "**i.** **`Difference engine`** was steam powered, fully automatic and could print the results as well. *(Invented by Charles Babbage in 1822)*\n**ii.** **`ENIAC`** works on decimal arithmetic rather than binary arithmetic. *(Electronic Numerical Integrator and Computer)*\n**iii.** **`Analytical engine`** (or **`Mark-1`**) was a general purpose, fully program-controlled and automatic mechanical/electromechanical digital computer.\n**iv.** **`Pascal's Pascaline calculator`** had a system of gears. One-tooth gear of this machine engages tooth with a ten-tooth gear once every time it revolves. *(Invented by Blaise Pascal in 1642)*\n**v.** **`Mark-1`** (or **`UNIVAC`** / **`ENIAC`**) processes data in numerical form using digital circuits."
+    },
+    {
+      "questionNumber": "Q.2a",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "How many image files, of size 512 kilobytes each, can be stored on 1500 megabytes of a DVD? Show your working. (2 Marks)",
+      "originalSlo": "4.1.2",
+      "currentSlo": "1.3.1",
+      "currentSloDescription": "distinguish among the memory measuring units such as bits, bytes, kilobytes, megabytes, and gigabytes in computer memory;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Distinguish among the memory measuring units such as bits, bytes, kilobytes, megabytes, and gigabytes in computer memory;",
+      "maxMarks": 2,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark for converting 1500 MB into KB (1500 \u00d7 1024 = 1,536,000 KB) or finding 2 files per MB.",
+        "1 mark for dividing 1,536,000 / 512 = 3000 files."
+      ],
+      "overallPerformance": "Memory unit conversion questions showed mixed performance where candidates divided without converting MB to KB.",
+      "betterResponses": "Better responses performed the conversion between kilobytes and megabytes (1500 \u00d7 1024 = 1,536,000 KB) and divided by 512 KB to get 3000 files.",
+      "weakerResponses": "Weaker responses divided 1500 by 512 directly without making the memory units the same (getting 2.9296875 files).",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q2a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q2a_weaker.png",
+      "suggestions": [
+        "Reinforce converting both quantities to the same memory unit (KB) before dividing."
+      ],
+      "modelAnswer": "### Part a: Number of 512 KB Image Files on a 1500 MB DVD (2 Marks)\n1. Convert DVD storage capacity from Megabytes (MB) to Kilobytes (KB):\n   $$1\\text{ MB} = 1024\\text{ KB}$$\n   $$1500\\text{ MB} = 1500 \\times 1024\\text{ KB} = 1,536,000\\text{ KB}$$\n2. Divide total capacity in KB by the size of each image file ($512\\text{ KB}$):\n   $$\\text{Number of files} = \\frac{1,536,000\\text{ KB}}{512\\text{ KB}} = 3000\\text{ image files}$$\n   *(Alternative method: $1\\text{ MB} = 1024\\text{ KB}$ holds $\\frac{1024}{512} = 2\\text{ files per MB}$, so $1500\\text{ MB} \\times 2 = 3000\\text{ files}$.)*"
+    },
+    {
+      "questionNumber": "Q.2b",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "THREE types of events are performed by a mouse. Describe the purpose of these events: **Left Click**, **Right Click**, and **Drag**. (3 Marks)",
+      "originalSlo": "3.1.2",
+      "currentSlo": "1.2.1",
+      "currentSloDescription": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Define various input and output devices, including keyboards, touchscreen, pointing devices (mouse events), scanners, and display screens;",
+      "maxMarks": 3,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark each for describing the purpose of Left Click (select/open), Right Click (open pop-up context/properties menu), and Drag (move/reposition or group-select items while holding left button)."
+      ],
+      "overallPerformance": "Well attempted by most candidates.",
+      "betterResponses": "Better responses distinguished clearly between Left Click (select/open icon, folder, or file), Right Click (view pop-up menu/properties), and Drag (hold left button to move/drop or select items).",
+      "weakerResponses": "Weaker responses swapped the descriptions of Left Click and Right Click or described scrolling instead of dragging.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q2b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q2b_weaker.png",
+      "suggestions": [
+        "Demonstrate Left Click, Double Click, Right Click, and Drag-and-Drop on the desktop during lab sessions."
+      ],
+      "modelAnswer": "### Part b: Purpose of Mouse Events (3 Marks \u2014 1 Mark Each)\n\n| Left Click | Right Click | Drag |\n| :"
+    },
+    {
+      "questionNumber": "Q.3a",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Convert the given octal number into decimal number. Show your working. (2 Marks)\n$$(65.4)_8$$",
+      "originalSlo": "5.1.2",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy Number Systems)",
+      "outOfSyllabus": true,
+      "sloText": "Convert octal numbers (with fractional parts) into decimal numbers;",
+      "maxMarks": 2,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark for positional expansion $(6 \\times 8^1) + (5 \\times 8^0) + (4 \\times 8^{-1})$.",
+        "1 mark for final decimal value $48 + 5 + 0.5 = 53.5$."
+      ],
+      "overallPerformance": "Octal-to-decimal conversion with a radix point was generally not well attempted.",
+      "betterResponses": "Better responses used $8^1$ and $8^0$ on the left of the point and $8^{-1}$ on the right of the point to obtain $48 + 5 + 0.5 = 53.5$.",
+      "weakerResponses": "Weaker responses failed to convert the fractional digit $.4$ using $8^{-1}$ and wrote $(53.4)_{10}$.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q3a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q3a_weaker.png",
+      "suggestions": [
+        "Practise negative positional powers ($8^{-1}, 2^{-1}$) for fractional base conversions."
+      ],
+      "modelAnswer": "### Part a: Octal $(65.4)_8$ to Decimal Conversion (2 Marks)\nMultiply each octal digit by its positional power of $8$ ($8^1, 8^0$ to the left of the radix point and $8^{-1}$ to the right):\n$$(65.4)_8 = (6 \\times 8^1) + (5 \\times 8^0) + (4 \\times 8^{-1})$$\n$$(65.4)_8 = (6 \\times 8) + (5 \\times 1) + \\left(4 \\times \\frac{1}{8}\\right)$$\n$$(65.4)_8 = 48 + 5 + 0.5 = (53.5)_{10}$$"
+    },
+    {
+      "questionNumber": "Q.3b",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Show that binary addition of two numbers, $(01000111)_2$ and $(01110100)_2$, gives a result which is equal to $187$ in decimal number system. (3 Marks)",
+      "originalSlo": "5.2.2",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy Binary Arithmetic)",
+      "outOfSyllabus": true,
+      "sloText": "Perform binary addition and verify the result in the decimal number system;",
+      "maxMarks": 3,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1.5 marks for correct binary addition yielding $(10111011)_2$.",
+        "1.5 marks for converting $(10111011)_2$ into decimal ($128 + 32 + 16 + 8 + 2 + 1 = 187_{10}$) to prove equality."
+      ],
+      "overallPerformance": "Most candidates added the binary numbers correctly, though many forgot to show the decimal verification step.",
+      "betterResponses": "Better responses performed the binary addition to get $(10111011)_2$ and then converted $(10111011)_2$ to decimal ($128 + 0 + 32 + 16 + 8 + 0 + 2 + 1 = 187_{10}$).",
+      "weakerResponses": "Weaker responses stopped after getting $(10111011)_2$ without proving that it equals $(187)_{10}$.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q3b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q3b_weaker.png",
+      "suggestions": [
+        "Remind students to complete both parts of a 'Show that...' proof: the binary addition AND the binary-to-decimal verification."
+      ],
+      "modelAnswer": "### Part b: Binary Addition & Decimal Verification (3 Marks)\n**Step 1: Binary Addition of $(01000111)_2$ and $(01110100)_2$:**\n```text\n  Carry:    1 1 1\n          0 1 0 0 0 1 1 1   (71 in decimal)\n        + 0 1 1 1 0 1 0 0   (116 in decimal)"
+    },
+    {
+      "questionNumber": "Q.4a",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Asher wants to launch the start menu on his computer system which has Windows operating system installed but the mouse connected to his computer system is not working.\nMention any TWO ways in which Asher could launch the start menu without using the mouse. (2 Marks)",
+      "originalSlo": "7.1.3",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy Windows Desktop & Start Menu)",
+      "outOfSyllabus": true,
+      "sloText": "Use keyboard shortcuts to access the Windows Start Menu and desktop elements;",
+      "maxMarks": 2,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark each for any TWO valid ways to open the Start Menu without a mouse (pressing the Windows key, pressing Ctrl + Esc, using laptop touchpad/trackball)."
+      ],
+      "overallPerformance": "Generally not well attempted by candidates who did not know the `Ctrl + Esc` shortcut.",
+      "betterResponses": "Better responses mentioned pressing the Windows key on the keyboard and pressing `Ctrl + Esc` (or using a trackball/touchpad).",
+      "weakerResponses": "Weaker responses wrote 'press the Start button on keyboard' or 'press Ctrl + S'.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q4a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q4a_weaker.png",
+      "suggestions": [
+        "Have students practise essential Windows keyboard accessibility shortcuts (`Win`, `Ctrl + Esc`, `Alt + Tab`)."
+      ],
+      "modelAnswer": "### Part a: Launching Windows Start Menu Without a Mouse (2 Marks \u2014 1 Mark Each)\n1. Press the **`Windows` logo key** (`Win`) on the keyboard.\n2. Press the **`Ctrl + Esc`** keyboard shortcut.\n*(Alternative valid answers: Use a laptop touchpad/trackball, touchscreen, or Windows Speech Recognition.)*"
+    },
+    {
+      "questionNumber": "Q.4b",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Given is a list of change case options available in MS Word:\n\u2022 `Sentence case` \u2022 `Lowercase` \u2022 `Uppercase` \u2022 `Capitalize each word` \u2022 `Toggle case`\nSelect appropriate change case option for each word from the given list and write it in the third column of the table. (2 Marks)\n\n| Before Applying Change Case | After Applying Change Case | Change Case Option Used |\n| :--- | :--- | :--- |\n| `CompuTer` | `cOMPUtER` | |\n| `FLOPPY` | `Floppy` | |",
+      "originalSlo": "8.1.3",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy MS Word Change Case)",
+      "outOfSyllabus": true,
+      "sloText": "Apply Change Case options (Sentence case, lowercase, UPPERCASE, Capitalize Each Word, tOGGLE cASE) in MS Word;",
+      "maxMarks": 2,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark for `Toggle case` (`CompuTer` -> `cOMPUtER`).",
+        "1 mark for `Sentence case` or `Capitalize each word` (`FLOPPY` -> `Floppy`)."
+      ],
+      "overallPerformance": "Well attempted by most candidates.",
+      "betterResponses": "Better responses selected `Toggle case` for `CompuTer -> cOMPUtER` and `Sentence case` (or `Capitalize each word`) for `FLOPPY -> Floppy`.",
+      "weakerResponses": "Weaker responses confused `Capitalize each word` with `Toggle case`.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q4b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q4b_weaker.png",
+      "suggestions": [
+        "Practise all five Change Case options in MS Word on sample mixed-case strings."
+      ],
+      "modelAnswer": "### Part b: MS Word Change Case Options (2 Marks \u2014 1 Mark Each)\n\n| Before Applying Change Case | After Applying Change Case | Change Case Option Used |\n| :"
+    },
+    {
+      "questionNumber": "Q.4c",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "To insert any chart in MS PowerPoint, we enter data in the MS Excel file that should be depicted in the chart.\nComplete the given MS Excel table by filling the shaded cells with reference to the given chart. (2 Marks)",
+      "originalSlo": "9.1.3",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy MS PowerPoint Charts)",
+      "outOfSyllabus": true,
+      "diagramUrl": "/paper-crops/CS-IX-2018-P2/q4c.png",
+      "sloText": "Insert and format charts in MS PowerPoint using datasheet tables;",
+      "maxMarks": 2,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark for writing `Male` and `Female` in the correct order in the top shaded column headers.",
+        "1 mark for writing `Class 9`, `Class 10`, `Class 11`, and `Class 12` in the left shaded row headers."
+      ],
+      "overallPerformance": "Well attempted by candidates who read the stacked bar heights carefully.",
+      "betterResponses": "Better responses wrote `Male` (19, 15, 17, 14) and `Female` (9, 5, 7, 4) in the top headers and `Class 9`, `Class 10`, `Class 11`, `Class 12` in the left column.",
+      "weakerResponses": "Weaker responses swapped `Male` and `Female` or wrote the sum of male and female (`19+9=28`) in the left column instead of the class names.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q4c_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q4c_weaker.png",
+      "suggestions": [
+        "Show students how stacked bar series map to columns and category axis labels map to rows in an Excel datasheet."
+      ],
+      "modelAnswer": "| :"
+    },
+    {
+      "questionNumber": "Q.5a",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Define the following types of user interface:\ni. Command Line Interface (CLI) (1 Mark)\nii. Graphical User Interface (GUI) (1 Mark)",
+      "originalSlo": "7.1.2",
+      "currentSlo": "1.5.2",
+      "currentSloDescription": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Explain the following types of system software: a. operating system (CLI and GUI user interfaces);",
+      "maxMarks": 2,
+      "cognitiveLevel": "K",
+      "checkingHints": [
+        "1 mark for defining CLI (user types text commands via keyboard).",
+        "1 mark for defining GUI (user interacts visually via icons, menus, windows, and mouse pointer)."
+      ],
+      "overallPerformance": "Many candidates wrote comparison features (easy/hard, memory usage) instead of defining what CLI and GUI are.",
+      "betterResponses": "Better responses wrote concise definitions of CLI (typing text commands to perform operations) and GUI (visual interface containing icons, menus, windows, and pointers).",
+      "weakerResponses": "Weaker responses wrote features like 'GUI is easy to use and occupies more memory' instead of defining the interfaces.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q5a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q5a_weaker.png",
+      "suggestions": [
+        "Teach students to start definitions of CLI and GUI by stating how the user interacts with the system (typing text commands vs clicking visual WIMP elements)."
+      ],
+      "modelAnswer": "### Part a: Definitions of CLI and GUI (2 Marks)\n- **i. Command Line Interface (CLI) (1 Mark):** A text-based user interface in which the user interacts with the operating system by typing explicit **text commands** using a keyboard at a command prompt (e.g., MS-DOS, UNIX shell).\n- **ii. Graphical User Interface (GUI) (1 Mark):** A visual user interface in which the user interacts with the computer using graphical elements such as **windows, icons, menus, and a pointing device/mouse (`WIMP`)** (e.g., Microsoft Windows, macOS, Ubuntu Linux)."
+    },
+    {
+      "questionNumber": "Q.5b",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Define 'internal' and 'external' commands in DOS and give an example of any ONE of these. (2 Marks)",
+      "originalSlo": "7.2.2",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy MS-DOS Commands)",
+      "outOfSyllabus": true,
+      "sloText": "Define internal and external commands in MS-DOS with examples;",
+      "maxMarks": 2,
+      "cognitiveLevel": "K",
+      "checkingHints": [
+        "1.5 marks for defining Internal commands (reside in `COMMAND.COM` / RAM) and External commands (reside as separate `.COM`, `.EXE`, `.BAT` files on disk).",
+        "0.5 mark for any ONE valid command example (e.g., `CLS`, `DIR`, `CHKDSK`)."
+      ],
+      "overallPerformance": "More candidates succeeded on this knowledge-level DOS question than on application-level command syntax questions.",
+      "betterResponses": "Better responses defined internal DOS commands as residing in `COMMAND.COM` (e.g., `CLS`) and external DOS commands as requiring separate `.BAT`, `.COM`, or `.EXE` files on disk (e.g., `CHKDSK`).",
+      "weakerResponses": "Weaker responses wrote tautologies like 'internal commands are used internally and external commands are used externally'.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q5b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q5b_weaker.png",
+      "suggestions": [
+        "Emphasise the storage location difference: `COMMAND.COM` in RAM (Internal) vs separate executable files on disk (External)."
+      ],
+      "modelAnswer": "### Part b: Internal and External Commands in MS-DOS (2 Marks)\n- **Internal Commands:** Commands that are built directly into the **`COMMAND.COM`** command interpreter and loaded into **main memory (RAM)** automatically when the computer boots. They execute immediately without needing a separate disk file.\n  - *Examples:* `DIR`, `CLS`, `VER`, `MD`, `CD`, `COPY`, `DEL`, `TIME`, `DATE`.\n- **External Commands:** Commands that are NOT built into `COMMAND.COM` in RAM; instead, they reside on secondary storage (hard disk/floppy) as separate executable files (**`.COM`, `.EXE`, or `.BAT`**) and must be loaded from disk when executed.\n  - *Examples:* `FORMAT`, `DISKCOPY`, `CHKDSK`, `DELTREE`, `XCOPY`, `EDIT`."
+    },
+    {
+      "questionNumber": "Q.6a",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. Differentiate among **supercomputers**, **minicomputers** and **microcomputers** on the basis of their **size**, **computation speed**, **cost** and **use**. (5 Marks)\nii. Write any THREE advantages of using **integrated circuits (ICs)** over **transistors** in third generation of computers. (3 Marks)",
+      "originalSlo": "1.1.3 / 1.1.2",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy Computer Classifications & 3rd Generation ICs)",
+      "outOfSyllabus": true,
+      "sloText": "Differentiate among supercomputers, mainframe, minicomputers, and microcomputers, and compare hardware technologies across computer generations;",
+      "maxMarks": 8,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "Part i: 5 marks for comparing Supercomputers, Minicomputers, and Microcomputers across Size, Speed, Cost, and Use.",
+        "Part ii: 1 mark each for any THREE advantages of ICs over transistors (smaller size, less power, less heat, higher speed = 3 Marks)."
+      ],
+      "overallPerformance": "Candidates attempted both parts of Q.6 almost equally, with slightly better performance in Part (a).",
+      "betterResponses": "Better responses compared Supercomputers (largest, fastest, most expensive, weather/scientific research), Minicomputers (medium size/speed/cost, network servers), and Microcomputers (smallest, slowest, least expensive, home/office general use), and listed three advantages of ICs over transistors.",
+      "weakerResponses": "Weaker responses swapped Minicomputer and Microcomputer characteristics or claimed 'ICs can store more data than transistors'.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q6a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q6a_weaker.png",
+      "suggestions": [
+        "Use comparative ranking tables (Super > Mainframe > Mini > Micro) across size, speed, cost, and application."
+      ],
+      "modelAnswer": "### Part a: Classification of Computers & Integrated Circuits vs Transistors (8 Marks)\n**i. Comparison of Supercomputers, Minicomputers, and Microcomputers (5 Marks):**\n\n| Factor | Supercomputers | Minicomputers | Microcomputers |\n| :"
+    },
+    {
+      "questionNumber": "Q.6b",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. The given image shows the system bus in a typical computer. Identify **address bus**, **control bus** and **data bus** (`A`, `B`, `C`) on the basis of connections shown among CPU, Memory and Input and Output units of a computer system. (3 Marks)\nii. Describe the following types of translators: **Compiler**, **Interpreter**, and **Assembler**. (3 Marks)\niii. Describe the role of **RAM** and **ROM** in computer. (2 Marks)",
+      "originalSlo": "2.1.4 / 1.6.3 / 3.1.2",
+      "currentSlo": "1.2.5",
+      "currentSloDescription": "illustrate the system bus and its types, including data bus, address bus and control bus, along with their roles in computer architecture using a diagram;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "diagramUrl": "/paper-crops/CS-IX-2018-P2/q6b.png",
+      "sloText": "Illustrate the system bus (data bus, address bus, control bus), describe language translators (compiler, interpreter, assembler), and compare RAM and ROM;",
+      "maxMarks": 8,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "Part i: 1 mark each for `A = Data Bus`, `B = Address Bus`, and `C = Control Bus` (3 Marks).",
+        "Part ii: 1 mark each for describing Compiler (translates whole high-level program), Interpreter (translates high-level program line by line), and Assembler (translates assembly language to machine code) (3 Marks).",
+        "Part iii: 1 mark each for describing the role of RAM (volatile temporary working memory) and ROM (non-volatile permanent BIOS boot memory) (2 Marks)."
+      ],
+      "overallPerformance": "Good performance among candidates who understood arrow directions on system buses and translator roles.",
+      "betterResponses": "Better responses identified `A = Data Bus`, `B = Address Bus`, and `C = Control Bus`, accurately described Compiler, Interpreter, and Assembler, and contrasted RAM (volatile active memory) with ROM (non-volatile BIOS startup memory).",
+      "weakerResponses": "Weaker responses swapped Compiler and Interpreter descriptions or reversed RAM and ROM volatility (calling RAM non-volatile and ROM volatile).",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q6b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q6b_weaker.png",
+      "suggestions": [
+        "Point out the unidirectional vs bidirectional arrow heads on the System Bus diagram to distinguish Address Bus from Data and Control Buses."
+      ],
+      "modelAnswer": "| :"
+    },
+    {
+      "questionNumber": "Q.7a",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. Identify any TWO application software that can help a teacher to improve his/ her routine tasks such as preparation of lecture, report cards, attendance registers and time table. (1 Mark)\nii. Describe THREE uses of each software identified in part (i). (6 Marks)",
+      "originalSlo": "7.1.1",
+      "currentSlo": "1.5.3",
+      "currentSloDescription": "describe the purpose of the following application software: a. word processor, b. spreadsheet, c. database management, d. presentation/ desktop publication, e. communication, f. entertainment;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Describe the purpose of application software: word processor, spreadsheet, database management, presentation/desktop publication;",
+      "maxMarks": 7,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "Part i: 0.5 mark each for identifying TWO relevant application software (e.g., MS Excel, MS PowerPoint, MS Word = 1 Mark).",
+        "Part ii: 1 mark each for THREE teacher-specific uses of the first software (3 Marks) + 1 mark each for THREE teacher-specific uses of the second software (3 Marks)."
+      ],
+      "overallPerformance": "More than 70% of candidates attempted Part (a) and performed very well.",
+      "betterResponses": "Better responses identified MS Excel and MS PowerPoint and wrote three teacher-focused uses for each (attendance registers, timetable creation, formula-based grading/report cards in Excel; multimedia lecture slides, visual diagrams/charts, and time-saving presentation in PowerPoint).",
+      "weakerResponses": "Weaker responses wrote broad categories ('education software, productivity software') or described uses from a student's perspective rather than a teacher's.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q7a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q7a_weaker.png",
+      "suggestions": [
+        "Practise scenario-based application software questions where students must tailor uses to a specific profession (teacher, accountant, doctor)."
+      ],
+      "modelAnswer": "### Part a: Application Software for a Teacher's Routine Tasks (7 Marks)\n**i. TWO Application Software for a Teacher (1 Mark \u2014 0.5 Mark Each):**\n1. **Spreadsheet Software** *(e.g., Microsoft Excel / Google Sheets)*\n2. **Presentation Software** *(e.g., Microsoft PowerPoint)* or **Word Processing Software** *(e.g., Microsoft Word)*\n\n**ii. THREE Uses of Each Identified Software for a Teacher (6 Marks \u2014 3 Marks Each):**\n- **Uses of MS Excel (Spreadsheet Software) (3 Marks):**\n  1. **Automated Report Cards & Grading:** Using built-in formulas (`SUM`, `AVERAGE`, `IF`, `MIN`, `MAX`) to automatically calculate student totals, percentages, and letter grades without manual calculation errors.\n  2. **Attendance Registers:** Maintaining daily/monthly student attendance sheets and automatically computing attendance percentages.\n  3. **Class Timetables & Performance Charts:** Organising structured rows and columns for class schedules and generating bar/pie charts to visualise class exam performance.\n- **Uses of MS PowerPoint (Presentation Software) (3 Marks):**\n  1. **Interactive Multimedia Lectures:** Designing engaging slide decks with diagrams, images, audio/video clips, and animations to explain complex concepts visually.\n  2. **Reusable Lesson Plans & Revision Summaries:** Saving structured topic slides that can be updated and reused across academic terms or shared with students.\n  3. **Visualising Data & Charts in Class:** Embedding charts, tables, and SmartArt flowcharts to present topic breakdowns clearly on a projector."
+    },
+    {
+      "questionNumber": "Q.7b",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "Utility software is a type of system software used to support the computer infrastructure, distinguishing it from application software which is aimed at directly performing tasks that benefit ordinary users.\nExplain the functionality of any FOUR utility software using appropriate examples. (7 Marks)",
+      "originalSlo": "1.5.2",
+      "currentSlo": "1.5.2",
+      "currentSloDescription": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+      "maxMarks": 7,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for naming four valid utility software examples + 1.5 marks each for explaining the functionality of FOUR utility programs (Antivirus, File Compression, Backup, Screen Saver / Disk Cleanup / Defragmenter = 7 Marks)."
+      ],
+      "overallPerformance": "Less than 30% of candidates attempted Part (b), and several confused utility programs with application software.",
+      "betterResponses": "Better responses named four concrete utility programs (e.g., BackupMyPC, WinZip, McAfee Antivirus, Screen Saver) and clearly explained how each maintains, compresses, backs up, or protects the computer.",
+      "weakerResponses": "Weaker responses listed compilers, DOS, Windows, MS Word, or Photoshop as utility software.",
+      "betterResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q7b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2018-EMARKING/q7b_weaker.png",
+      "suggestions": [
+        "Contrast System Software (OS, Device Drivers, Utilities, Language Translators) with Application Software using concrete examples."
+      ],
+      "modelAnswer": "### Part b: Functionality of FOUR Utility Software with Examples (7 Marks)\n1. **Antivirus Software (e.g., McAfee, Norton, Avira, Windows Defender):** Scans hard drives, USB flash drives, and incoming downloads in real time to detect, quarantine, and remove malicious software (viruses, worms, trojans, spyware).\n2. **File Compression Utility (e.g., WinZip, WinRAR, 7-Zip):** Compresses large files and folders into smaller archive packages (`.zip`, `.rar`) so they occupy less disk space and can be emailed or transferred faster.\n3. **Backup & Recovery Utility (e.g., Windows Backup, BackupMyPC, Acronis):** Creates duplicate copies of important files, databases, and system images on external drives or cloud storage so data can be restored after accidental deletion or hardware failure.\n4. **Disk Defragmenter / Disk Cleanup Utility (e.g., Windows Defragmenter, CCleaner):** Reorganises fragmented file clusters contiguously on a magnetic hard disk (and removes temporary junk files) to improve file access speed and free up storage space."
+    }
+  ]
+}

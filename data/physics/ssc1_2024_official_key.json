@@ -8,280 +8,1186 @@
       "slo": "1.7.3",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        128,
+        300,
+        146,
+        700
+      ],
+      "review_status": "pending_review",
+      "source_transcription": {
+        "printedQid": "I",
+        "printedSlo": "1.7.3",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          128,
+          300,
+          146,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_ix_2024_key_row_1.png"
+      },
+      "proposed_interpretation": {
+        "questionNumber": 1,
+        "answer": "B",
+        "reason": "Printed QID column shows 'I' (Roman/letter I) for row 1."
+      }
     },
     {
       "questionNumber": 2,
       "slo": "1.5.1",
       "answer": "D",
-      "printedKey": "0 (letter unclear)",
-      "cognitiveLevel": "U"
+      "printedKey": "0 (OCR for D)",
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        146,
+        300,
+        163,
+        700
+      ],
+      "review_status": "pending_review",
+      "source_transcription": {
+        "printedQid": "2",
+        "printedSlo": "1.5.1",
+        "printedAnswerKey": "0",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          146,
+          300,
+          163,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_ix_2024_key_row_2.png"
+      },
+      "proposed_interpretation": {
+        "questionNumber": 2,
+        "answer": "D",
+        "reason": "Printed Answer Key column shows digit '0' instead of option letter 'D'."
+      }
     },
     {
       "questionNumber": 3,
       "slo": "1.4.1",
       "answer": "C",
       "printedKey": "C",
-      "cognitiveLevel": "A"
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        163,
+        300,
+        181,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "3",
+        "printedSlo": "1.4.1",
+        "printedAnswerKey": "C",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          163,
+          300,
+          181,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 4,
       "slo": "1.3.1",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        181,
+        300,
+        198,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "4",
+        "printedSlo": "1.3.1",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          181,
+          300,
+          198,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 5,
       "slo": "2.8.2",
       "answer": "A",
       "printedKey": "A",
-      "cognitiveLevel": "A"
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        198,
+        300,
+        216,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "5",
+        "printedSlo": "2.8.2",
+        "printedAnswerKey": "A",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          198,
+          300,
+          216,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 6,
       "slo": "2.7.2",
       "answer": "A",
       "printedKey": "A",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        216,
+        300,
+        234,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "6",
+        "printedSlo": "2.7.2",
+        "printedAnswerKey": "A",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          216,
+          300,
+          234,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 7,
       "slo": "2.9.2",
       "answer": "C",
       "printedKey": "C",
-      "cognitiveLevel": "A"
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        234,
+        300,
+        251,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "7",
+        "printedSlo": "2.9.2",
+        "printedAnswerKey": "C",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          234,
+          300,
+          251,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 8,
       "slo": "2.8.2",
       "answer": "A",
       "printedKey": "A",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        251,
+        300,
+        269,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "8",
+        "printedSlo": "2.8.2",
+        "printedAnswerKey": "A",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          251,
+          300,
+          269,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 9,
       "slo": "2.9.2",
       "answer": "A",
       "printedKey": "A",
-      "cognitiveLevel": "A"
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        269,
+        300,
+        287,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "9",
+        "printedSlo": "2.9.2",
+        "printedAnswerKey": "A",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          269,
+          300,
+          287,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 10,
       "slo": "3.2.3",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "A"
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        287,
+        300,
+        304,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "10",
+        "printedSlo": "3.2.3",
+        "printedAnswerKey": "B",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          287,
+          300,
+          304,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 11,
       "slo": "3.4.1",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        304,
+        300,
+        322,
+        700
+      ],
+      "review_status": "pending_review",
+      "source_transcription": {
+        "printedQid": "11",
+        "printedSlo": "3.4.1",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          304,
+          300,
+          322,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_ix_2024_key_row_11.png"
+      },
+      "proposed_interpretation": {
+        "questionNumber": 11,
+        "answer": "A",
+        "reason": "Printed Answer Key is 'B' (Unaffected / Less); physically, increasing friction reduces speed (A) while decreasing friction increases speed (C)."
+      }
     },
     {
       "questionNumber": 12,
       "slo": "3.3.5",
       "answer": "A",
       "printedKey": "A",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        322,
+        300,
+        339,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "12",
+        "printedSlo": "3.3.5",
+        "printedAnswerKey": "A",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          322,
+          300,
+          339,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 13,
       "slo": "3.2.8",
       "answer": "C",
       "printedKey": "C",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        339,
+        300,
+        357,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "13",
+        "printedSlo": "3.2.8",
+        "printedAnswerKey": "C",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          339,
+          300,
+          357,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 14,
       "slo": "3.3.4",
       "answer": "C",
       "printedKey": "C",
-      "cognitiveLevel": "A"
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        357,
+        300,
+        375,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "14",
+        "printedSlo": "3.3.4",
+        "printedAnswerKey": "C",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          357,
+          300,
+          375,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 15,
       "slo": "4.2.2",
       "answer": "A",
       "printedKey": "A",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        375,
+        300,
+        392,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "15",
+        "printedSlo": "4.2.2",
+        "printedAnswerKey": "A",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          375,
+          300,
+          392,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 16,
       "slo": "4.5.3",
       "answer": "C",
       "printedKey": "C",
-      "cognitiveLevel": "K"
+      "cognitiveLevel": "K",
+      "page": 1,
+      "box_2d": [
+        392,
+        300,
+        410,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "16",
+        "printedSlo": "4.5.3",
+        "printedAnswerKey": "C",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          392,
+          300,
+          410,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 17,
       "slo": "4.2.2",
       "answer": "A",
       "printedKey": "A",
-      "cognitiveLevel": "A"
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        410,
+        300,
+        428,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "17",
+        "printedSlo": "4.2.2",
+        "printedAnswerKey": "A",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          410,
+          300,
+          428,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 18,
       "slo": "4.5.5",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "A"
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        428,
+        300,
+        445,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "18",
+        "printedSlo": "4.5.5",
+        "printedAnswerKey": "B",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          428,
+          300,
+          445,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 19,
       "slo": "5.3.1",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        445,
+        300,
+        463,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "19",
+        "printedSlo": "5.3.1",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          445,
+          300,
+          463,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 20,
       "slo": "5.1.5",
       "answer": "D",
-      "printedKey": "0 (letter unclear)",
-      "cognitiveLevel": "U"
+      "printedKey": "0 (OCR for D)",
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        463,
+        300,
+        480,
+        700
+      ],
+      "review_status": "pending_review",
+      "source_transcription": {
+        "printedQid": "20",
+        "printedSlo": "5.1.5",
+        "printedAnswerKey": "0",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          463,
+          300,
+          480,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_ix_2024_key_row_20.png"
+      },
+      "proposed_interpretation": {
+        "questionNumber": 20,
+        "answer": "D",
+        "reason": "Printed Answer Key column shows digit '0' instead of option letter 'D'."
+      }
     },
     {
       "questionNumber": 21,
       "slo": "5.1.4",
       "answer": "D",
-      "printedKey": "0 (letter unclear)",
-      "cognitiveLevel": "U"
+      "printedKey": "0 (OCR for D)",
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        480,
+        300,
+        498,
+        700
+      ],
+      "review_status": "pending_review",
+      "source_transcription": {
+        "printedQid": "21",
+        "printedSlo": "5.1.4",
+        "printedAnswerKey": "0",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          480,
+          300,
+          498,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_ix_2024_key_row_21.png"
+      },
+      "proposed_interpretation": {
+        "questionNumber": 21,
+        "answer": "D",
+        "reason": "Printed Answer Key column shows digit '0' instead of option letter 'D'."
+      }
     },
     {
       "questionNumber": 22,
       "slo": "5.5.4",
       "answer": "A",
       "printedKey": "A",
-      "cognitiveLevel": "K"
+      "cognitiveLevel": "K",
+      "page": 1,
+      "box_2d": [
+        498,
+        300,
+        516,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "22",
+        "printedSlo": "5.5.4",
+        "printedAnswerKey": "A",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          498,
+          300,
+          516,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 23,
       "slo": "6.2.3",
       "answer": "C",
       "printedKey": "C",
-      "cognitiveLevel": "A"
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        516,
+        300,
+        533,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "23",
+        "printedSlo": "6.2.3",
+        "printedAnswerKey": "C",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          516,
+          300,
+          533,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 24,
       "slo": "6.1.2",
       "answer": "D",
-      "printedKey": "0 (letter unclear)",
-      "cognitiveLevel": "A"
+      "printedKey": "0 (OCR for D)",
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        533,
+        300,
+        551,
+        700
+      ],
+      "review_status": "pending_review",
+      "source_transcription": {
+        "printedQid": "24",
+        "printedSlo": "6.1.2",
+        "printedAnswerKey": "0",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          533,
+          300,
+          551,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_ix_2024_key_row_24.png"
+      },
+      "proposed_interpretation": {
+        "questionNumber": 24,
+        "answer": "D",
+        "reason": "Printed Answer Key column shows digit '0' instead of option letter 'D'."
+      }
     },
     {
       "questionNumber": 25,
       "slo": "6.4.6",
       "answer": "C",
-      "printedKey": "\u2022 (letter unreadable)",
-      "cognitiveLevel": "U"
+      "printedKey": "\u2022 (missing glyph; verified C)",
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        551,
+        300,
+        569,
+        700
+      ],
+      "review_status": "pending_review",
+      "source_transcription": {
+        "printedQid": "25",
+        "printedSlo": "6.4.6",
+        "printedAnswerKey": "\u2022",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          551,
+          300,
+          569,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_ix_2024_key_row_25.png"
+      },
+      "proposed_interpretation": {
+        "questionNumber": 25,
+        "answer": "C",
+        "reason": "Printed Answer Key column shows a bullet glyph '\u2022' instead of an option letter; diagram shows solar, wind, and biomass, so absent source is C (hydel)."
+      }
     },
     {
       "questionNumber": 26,
       "slo": "6.6.2",
       "answer": "A",
       "printedKey": "A",
-      "cognitiveLevel": "A"
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        569,
+        300,
+        586,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "26",
+        "printedSlo": "6.6.2",
+        "printedAnswerKey": "A",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          569,
+          300,
+          586,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 27,
       "slo": "6.1.1",
       "answer": "C",
       "printedKey": "C",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        586,
+        300,
+        604,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "27",
+        "printedSlo": "6.1.1",
+        "printedAnswerKey": "C",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          586,
+          300,
+          604,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 28,
       "slo": "7.1.1",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        604,
+        300,
+        621,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "28",
+        "printedSlo": "7.1.1",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          604,
+          300,
+          621,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 29,
       "slo": "7.5.6",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        621,
+        300,
+        639,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "29",
+        "printedSlo": "7.5.6",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          621,
+          300,
+          639,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 30,
       "slo": "7.6.1",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        639,
+        300,
+        657,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "30",
+        "printedSlo": "7.6.1",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          639,
+          300,
+          657,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 31,
       "slo": "7.4.3",
       "answer": "D",
-      "printedKey": "0 (letter unclear)",
-      "cognitiveLevel": "U"
+      "printedKey": "0 (OCR for D)",
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        657,
+        300,
+        674,
+        700
+      ],
+      "review_status": "pending_review",
+      "source_transcription": {
+        "printedQid": "31",
+        "printedSlo": "7.4.3",
+        "printedAnswerKey": "0",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          657,
+          300,
+          674,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_ix_2024_key_row_31.png"
+      },
+      "proposed_interpretation": {
+        "questionNumber": 31,
+        "answer": "D",
+        "reason": "Printed Answer Key column shows digit '0' instead of option letter 'D'."
+      }
     },
     {
       "questionNumber": 32,
       "slo": "7.8.1",
       "answer": "C",
       "printedKey": "C",
-      "cognitiveLevel": "K"
+      "cognitiveLevel": "K",
+      "page": 1,
+      "box_2d": [
+        674,
+        300,
+        692,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "32",
+        "printedSlo": "7.8.1",
+        "printedAnswerKey": "C",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          674,
+          300,
+          692,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 33,
       "slo": "8.2.2",
       "answer": "A",
       "printedKey": "A",
-      "cognitiveLevel": "A"
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        692,
+        300,
+        710,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "33",
+        "printedSlo": "8.2.2",
+        "printedAnswerKey": "A",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          692,
+          300,
+          710,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 34,
       "slo": "8.4.1",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "K"
+      "cognitiveLevel": "K",
+      "page": 1,
+      "box_2d": [
+        710,
+        300,
+        727,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "34",
+        "printedSlo": "8.4.1",
+        "printedAnswerKey": "B",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          710,
+          300,
+          727,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 35,
       "slo": "8.2.2",
       "answer": "D",
-      "printedKey": "0 (letter unclear)",
-      "cognitiveLevel": "A"
+      "printedKey": "0 (OCR for D)",
+      "cognitiveLevel": "A",
+      "page": 1,
+      "box_2d": [
+        727,
+        300,
+        745,
+        700
+      ],
+      "review_status": "pending_review",
+      "source_transcription": {
+        "printedQid": "35",
+        "printedSlo": "8.2.2",
+        "printedAnswerKey": "0",
+        "printedLevel": "A",
+        "page": 1,
+        "box_2d": [
+          727,
+          300,
+          745,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_ix_2024_key_row_35.png"
+      },
+      "proposed_interpretation": {
+        "questionNumber": 35,
+        "answer": "D",
+        "reason": "Printed Answer Key column shows digit '0' instead of option letter 'D'."
+      }
     },
     {
       "questionNumber": 36,
       "slo": "8.7.1",
       "answer": "D",
-      "printedKey": "0 (letter unclear)",
-      "cognitiveLevel": "U"
+      "printedKey": "0 (OCR for D)",
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        745,
+        300,
+        762,
+        700
+      ],
+      "review_status": "pending_review",
+      "source_transcription": {
+        "printedQid": "36",
+        "printedSlo": "8.7.1",
+        "printedAnswerKey": "0",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          745,
+          300,
+          762,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_ix_2024_key_row_36.png"
+      },
+      "proposed_interpretation": {
+        "questionNumber": 36,
+        "answer": "D",
+        "reason": "Printed Answer Key column shows digit '0' instead of option letter 'D'."
+      }
     },
     {
       "questionNumber": 37,
       "slo": "9.1.2",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        762,
+        300,
+        780,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "37",
+        "printedSlo": "9.1.2",
+        "printedAnswerKey": "B",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          762,
+          300,
+          780,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 38,
       "slo": "9.4.1",
       "answer": "C",
       "printedKey": "C",
-      "cognitiveLevel": "U"
+      "cognitiveLevel": "U",
+      "page": 1,
+      "box_2d": [
+        780,
+        300,
+        798,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "38",
+        "printedSlo": "9.4.1",
+        "printedAnswerKey": "C",
+        "printedLevel": "U",
+        "page": 1,
+        "box_2d": [
+          780,
+          300,
+          798,
+          700
+        ]
+      }
     },
     {
       "questionNumber": 39,
       "slo": "9.1.6",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "K"
+      "cognitiveLevel": "K",
+      "page": 1,
+      "box_2d": [
+        798,
+        300,
+        815,
+        700
+      ],
+      "review_status": "pending_review",
+      "source_transcription": {
+        "printedQid": "30",
+        "printedSlo": "9.1.6",
+        "printedAnswerKey": "B",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          798,
+          300,
+          815,
+          700
+        ],
+        "original_crop_url": "/extracted_diagrams/review_crops/phy_ix_2024_key_row_39.png"
+      },
+      "proposed_interpretation": {
+        "questionNumber": 39,
+        "answer": "B",
+        "reason": "Printed QID column between 38 and 40 shows '30' instead of '39'."
+      }
     },
     {
       "questionNumber": 40,
       "slo": "9.3.2",
       "answer": "B",
       "printedKey": "B",
-      "cognitiveLevel": "K"
+      "cognitiveLevel": "K",
+      "page": 1,
+      "box_2d": [
+        815,
+        300,
+        833,
+        700
+      ],
+      "review_status": "verified",
+      "source_transcription": {
+        "printedQid": "40",
+        "printedSlo": "9.3.2",
+        "printedAnswerKey": "B",
+        "printedLevel": "K",
+        "page": 1,
+        "box_2d": [
+          815,
+          300,
+          833,
+          700
+        ]
+      }
     }
   ]
 }

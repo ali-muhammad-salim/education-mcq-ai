@@ -100,7 +100,43 @@ export function resolveQuestionDiagram(
   if (verifiedManifest[pCode]) {
     targetPaperKey = pCode;
   } else if (pCode.startsWith('CS') || pCode.includes('COMPUTER')) {
-    const isCs2022 = (pCode.includes('2022') || Number(question?.examYear) === 2022) && !pCode.includes('MODEL');
+    if (isClass10) {
+      const isCsX2017 = (pCode.includes('2017') || Number(question?.examYear) === 2017) && !pCode.includes('MODEL');
+      const isCsX2018 = (pCode.includes('2018') || Number(question?.examYear) === 2018) && !pCode.includes('MODEL');
+      const isCsX2019 = (pCode.includes('2019') || Number(question?.examYear) === 2019) && !pCode.includes('MODEL');
+      const isCsX2022 = (pCode.includes('2022') || Number(question?.examYear) === 2022) && !pCode.includes('MODEL');
+      const isCsX2023 = (pCode.includes('2023') || Number(question?.examYear) === 2023) && !pCode.includes('MODEL');
+      const isCsX2024 = (pCode.includes('2024') || is2024) && !pCode.includes('MODEL');
+      const isCsX2025 = pCode.includes('2025') && !pCode.includes('MODEL');
+      targetPaperKey = isCsX2017
+        ? (isPaper2 ? 'CS-X-2017-P2' : 'CS-X-2017-P1')
+        : isCsX2018
+        ? 'CS-X-2018-P2'
+        : isCsX2019
+        ? (isPaper2 ? 'CS-X-2019-P2' : 'CS-X-2019-P1')
+        : isCsX2022
+        ? 'CS-X-2022-P1'
+        : isCsX2023
+        ? (isPaper2 ? 'CS-X-2023-P2' : 'CS-X-2023-P1')
+        : isCsX2024
+        ? (isPaper2 ? 'CS-X-2024-P2' : 'CS-X-2024-P1')
+        : isCsX2025
+        ? (isPaper2 ? 'CS-X-2025-P2' : 'CS-X-2025-P1')
+        : (isPaper2 ? 'CS-X-P2' : 'CS-X-P1');
+    }
+    const isCs2017 = !isClass10 && (pCode.includes('2017') || Number(question?.examYear) === 2017) && !pCode.includes('MODEL');
+    if (isCs2017) {
+      targetPaperKey = isPaper2 ? 'CS-IX-2017-P2' : 'CS-IX-2017-P1';
+    }
+    const isCs2018 = !isClass10 && (pCode.includes('2018') || Number(question?.examYear) === 2018) && !pCode.includes('MODEL');
+    if (isCs2018) {
+      targetPaperKey = 'CS-IX-2018-P2';
+    }
+    const isCs2019 = !isClass10 && (pCode.includes('2019') || Number(question?.examYear) === 2019) && !pCode.includes('MODEL');
+    if (isCs2019) {
+      targetPaperKey = isPaper2 ? 'CS-IX-2019-P2' : 'CS-IX-2019-P1';
+    }
+    const isCs2022 = !isClass10 && (pCode.includes('2022') || Number(question?.examYear) === 2022) && !pCode.includes('MODEL');
     if (isCs2022) {
       targetPaperKey = 'CS-IX-2022-P1';
     }

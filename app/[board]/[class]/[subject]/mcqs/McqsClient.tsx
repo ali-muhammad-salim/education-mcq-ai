@@ -17,6 +17,13 @@ import past2024 from '@/data/physics/ssc1_2024_past_mcqs.json';
 import csPast2024 from '@/data/computer-science/ssc1_2024_past_mcqs.json';
 import csPast2023 from '@/data/computer-science/ssc1_2023_past_mcqs.json';
 import csPast2022 from '@/data/computer-science/ssc1_2022_past_mcqs.json';
+import csPast2019 from '@/data/computer-science/ssc1_2019_past_mcqs.json';
+import csPast2017 from '@/data/computer-science/ssc1_2017_past_mcqs.json';
+import csXPast2024 from '@/data/computer-science/ssc2_2024_past_mcqs.json';
+import csXPast2023 from '@/data/computer-science/ssc2_2023_past_mcqs.json';
+import csXPast2022 from '@/data/computer-science/ssc2_2022_past_mcqs.json';
+import csXPast2019 from '@/data/computer-science/ssc2_2019_past_mcqs.json';
+import csXPast2017 from '@/data/computer-science/ssc2_2017_past_mcqs.json';
 import pastX2025 from '@/data/physics/ssc2_2025_past_mcqs.json';
 import { mcqCategories, type McqCategory } from '@/lib/mcqCategories';
 import {
@@ -28,6 +35,9 @@ import {
   csAnnual2024AnswerReviews,
   csAnnual2023AnswerReviews,
   csAnnual2022AnswerReviews,
+  csAnnualX2024AnswerReviews,
+  csAnnualX2023AnswerReviews,
+  csAnnualX2019AnswerReviews,
   annualX2025CurrentMapping,
 } from '@/lib/legacyPaperEvidence';
 import QuestionSource from '@/components/QuestionSource';
@@ -231,6 +241,16 @@ const CS_CLASS_IX_UNITS: ChapterDef[] = [
   { unitNumber: 7, name: 'Entrepreneurship in the Digital Age', slug: 'entrepreneurship-in-the-digital-age', topics: 'Role of Entrepreneurs, Market Trends, Idea Generation (SCAMPER), Business Model Canvas (BMC) for Digital Ventures', qRange: [38, 40], pastPaperCount: 3 },
 ];
 
+const CS_CLASS_X_UNITS: ChapterDef[] = [
+  { unitNumber: 8, name: 'Number Systems and Encoding Schemes', slug: 'number-systems-and-encoding-schemes', topics: 'Decimal, Binary & Hexadecimal Conversions, Binary Arithmetic, 1s & 2s Complement, ASCII & Unicode, OS Functions & UI, Interrupts, Buffers & IDE (plus Legacy Logic Gates)', qRange: [32, 34], pastPaperCount: 3 },
+  { unitNumber: 9, name: 'Computational Thinking and Algorithm', slug: 'computational-thinking-and-algorithm', topics: 'Conditional, Iterative, Searching (Linear/Binary) & Sorting (Selection/Bubble) Algorithms and Flowcharts', qRange: [1, 6], pastPaperCount: 6 },
+  { unitNumber: 10, name: 'Programming in JavaScript', slug: 'programming-in-javascript', topics: 'Syntax vs Semantics, Low-Level & High-Level Languages, Operators, Precedence, if-else & switch Statements, for, while & do-while Loops, 1D Arrays', qRange: [7, 31], pastPaperCount: 25 },
+  { unitNumber: 11, name: 'Data and Analysis', slug: 'data-and-analysis-x', topics: 'Artificial Intelligence (AI) Trends, Machine Learning (Supervised/Unsupervised, Fraud Detection), Data Mining, NLP, Big Data Analytics', qRange: [41, 41], pastPaperCount: 0 },
+  { unitNumber: 12, name: 'Security, Privacy and Data Integrity', slug: 'security-privacy-and-data-integrity', topics: 'Information Literacy, Digital Citizenship, Copyright, Plagiarism & Piracy, Cyberbullying, Digital Divide (plus Legacy Security Items)', qRange: [39, 39], pastPaperCount: 1 },
+  { unitNumber: 13, name: 'Digital Literacy', slug: 'digital-literacy', topics: 'Digital Literacy vs Digital Technology, Digital Artefacts, MS Excel Formulas & Data Validation, Canva, Scratch, MS PowerPoint & MS Word', qRange: [35, 40], pastPaperCount: 5 },
+  { unitNumber: 14, name: 'Entrepreneurship in the Digital Age', slug: 'entrepreneurship-in-the-digital-age-x', topics: 'Design Thinking, Business Planning Components, Digital Marketing Strategies, Research Surveys & Questionnaires', qRange: [42, 42], pastPaperCount: 0 },
+];
+
 function belongsToUnit(q: any, unit: ChapterDef, isAnnual: boolean): boolean {
   if (Number(q.unitNumber) === unit.unitNumber) return true;
   if (isAnnual) {
@@ -257,9 +277,9 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
   const isCs = meta.slug === 'computer-science';
   const subjPrefix = isCs ? 'CS' : 'PHY';
-  const unitsList = questions.length ? (isCs ? CS_CLASS_IX_UNITS : (classDef.roman === 'IX' ? CLASS_IX_UNITS : CLASS_X_UNITS)) : [];
+  const unitsList = questions.length ? (isCs ? (classDef.roman === 'IX' ? CS_CLASS_IX_UNITS : CS_CLASS_X_UNITS) : (classDef.roman === 'IX' ? CLASS_IX_UNITS : CLASS_X_UNITS)) : [];
 
-  const [practiceSource, setPracticeSource] = useState<'model' | 'annual' | 'annual2024' | 'annual2023' | 'annual2022' | 'annual_all' | 'chapter_all'>('chapter_all');
+  const [practiceSource, setPracticeSource] = useState<'model' | 'annual' | 'annual2024' | 'annual2023' | 'annual2022' | 'annual2019' | 'annual2017' | 'annual_all' | 'chapter_all'>('chapter_all');
 
   const mappedModelPool = questions.map((q: any) => ({
     ...q,
@@ -291,16 +311,21 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       }))
     : [];
 
-  const active2024Raw = isCs ? csPast2024.filter(q => Number(q.questionNumber) !== 9) : past2024;
-  const mapped2024Pool = classDef.roman === 'IX'
+  const active2024Raw = isCs
+    ? (classDef.roman === 'IX' ? csPast2024 : csXPast2024)
+    : (classDef.roman === 'IX' ? past2024 : []);
+  const mapped2024Pool = active2024Raw.length > 0
     ? active2024Raw.map((q: any) => ({
         ...q,
-        ...(!isCs ? annual2024OriginalReference(q.questionNumber) : {}),
-        ...(isCs && csAnnual2024AnswerReviews[Number(q.questionNumber)]
+        ...(!isCs && classDef.roman === 'IX' ? annual2024OriginalReference(q.questionNumber) : {}),
+        ...(isCs && classDef.roman === 'IX' && csAnnual2024AnswerReviews[Number(q.questionNumber)]
           ? { answer_review_note: csAnnual2024AnswerReviews[Number(q.questionNumber)] }
           : {}),
-        ...(!isCs && useReviewedLegacy ? annual2024CurrentMapping(q.questionNumber, q.stem) : {}),
-        paperCode: `${subjPrefix}-IX-2024-P1`,
+        ...(isCs && classDef.roman === 'X' && csAnnualX2024AnswerReviews[Number(q.questionNumber)]
+          ? { answer_review_note: csAnnualX2024AnswerReviews[Number(q.questionNumber)] }
+          : {}),
+        ...(!isCs && classDef.roman === 'IX' && useReviewedLegacy ? annual2024CurrentMapping(q.questionNumber, q.stem) : {}),
+        paperCode: `${subjPrefix}-${classDef.roman}-2024-P1`,
         sourceTitle: '2024 · Annual · Paper 1',
         examYear: 2024,
         questionNumber: Number(q.questionNumber),
@@ -309,13 +334,17 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       }))
     : [];
 
-  const mapped2023Pool = isCs && classDef.roman === 'IX'
-    ? csPast2023.filter(q => Number(q.questionNumber) !== 11).map((q: any) => ({
+  const active2023Raw = isCs ? (classDef.roman === 'IX' ? csPast2023 : csXPast2023) : [];
+  const mapped2023Pool = isCs && active2023Raw.length > 0
+    ? active2023Raw.map((q: any) => ({
         ...q,
-        ...(csAnnual2023AnswerReviews[Number(q.questionNumber)]
+        ...(classDef.roman === 'IX' && csAnnual2023AnswerReviews[Number(q.questionNumber)]
           ? { answer_review_note: csAnnual2023AnswerReviews[Number(q.questionNumber)] }
           : {}),
-        paperCode: 'CS-IX-2023-P1',
+        ...(classDef.roman === 'X' && csAnnualX2023AnswerReviews[Number(q.questionNumber)]
+          ? { answer_review_note: csAnnualX2023AnswerReviews[Number(q.questionNumber)] }
+          : {}),
+        paperCode: `CS-${classDef.roman}-2023-P1`,
         sourceTitle: '2023 · Annual · Paper 1',
         examYear: 2023,
         questionNumber: Number(q.questionNumber),
@@ -324,13 +353,14 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       }))
     : [];
 
-  const mapped2022Pool = isCs && classDef.roman === 'IX'
-    ? csPast2022.map((q: any) => ({
+  const active2022Raw = isCs ? (classDef.roman === 'IX' ? csPast2022 : csXPast2022) : [];
+  const mapped2022Pool = isCs && active2022Raw.length > 0
+    ? active2022Raw.map((q: any) => ({
         ...q,
-        ...(csAnnual2022AnswerReviews[Number(q.questionNumber)]
+        ...(classDef.roman === 'IX' && csAnnual2022AnswerReviews[Number(q.questionNumber)]
           ? { answer_review_note: csAnnual2022AnswerReviews[Number(q.questionNumber)] }
           : {}),
-        paperCode: 'CS-IX-2022-P1',
+        paperCode: `CS-${classDef.roman}-2022-P1`,
         sourceTitle: '2022 · Annual · Paper 1 (Theory + ATP)',
         examYear: 2022,
         questionNumber: Number(q.questionNumber),
@@ -339,63 +369,107 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       }))
     : [];
 
-  const combinedChapterPool = [
-    ...mappedModelPool,
-    ...mapped2025Pool.map(q => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
-    ...mapped2024Pool.filter(q => !(isCs && Number(q.rawQuestionNumber) === 9)).map(q => ({ ...q, questionNumber: 200 + Number(q.rawQuestionNumber) })),
-    ...mapped2023Pool.filter(q => Number(q.rawQuestionNumber) !== 11).map(q => ({ ...q, questionNumber: 300 + Number(q.rawQuestionNumber) })),
-    ...mapped2022Pool.map(q => ({ ...q, questionNumber: 400 + Number(q.rawQuestionNumber) })),
+  const active2019Raw = isCs ? (classDef.roman === 'IX' ? csPast2019 : csXPast2019) : [];
+  const mapped2019Pool = isCs && active2019Raw.length > 0
+    ? active2019Raw.map((q: any) => ({
+        ...q,
+        ...(classDef.roman === 'X' && csAnnualX2019AnswerReviews[Number(q.questionNumber)]
+          ? { answer_review_note: csAnnualX2019AnswerReviews[Number(q.questionNumber)] }
+          : {}),
+        paperCode: `CS-${classDef.roman}-2019-P1`,
+        sourceTitle: '2019 · Annual · Paper 1',
+        examYear: 2019,
+        questionNumber: Number(q.questionNumber),
+        rawQuestionNumber: Number(q.questionNumber),
+        cognitiveLevel: ({ K: 'Remembering', U: 'Understanding', A: 'Application' } as Record<string, string>)[q.cognitiveLevel] || q.cognitiveLevel,
+      }))
+    : [];
+
+  const active2017Raw = isCs ? (classDef.roman === 'IX' ? csPast2017 : csXPast2017) : [];
+  const mapped2017Pool = isCs && active2017Raw.length > 0
+    ? active2017Raw.map((q: any) => ({
+        ...q,
+        paperCode: `CS-${classDef.roman}-2017-P1`,
+        sourceTitle: '2017 · Annual · Paper 1',
+        examYear: 2017,
+        questionNumber: Number(q.questionNumber),
+        rawQuestionNumber: Number(q.questionNumber),
+        cognitiveLevel: ({ K: 'Remembering', U: 'Understanding', A: 'Application' } as Record<string, string>)[q.cognitiveLevel] || q.cognitiveLevel,
+      }))
+    : [];
+
+  const hasDistinctModelPaper = true;
+  const combinedChapterPool: any[] = [
+    ...(hasDistinctModelPaper ? mappedModelPool : []),
+    ...mapped2025Pool.map((q: any) => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
+    ...mapped2024Pool.map((q: any) => ({ ...q, questionNumber: 200 + Number(q.rawQuestionNumber) })),
+    ...mapped2023Pool.map((q: any) => ({ ...q, questionNumber: 300 + Number(q.rawQuestionNumber) })),
+    ...mapped2022Pool.map((q: any) => ({ ...q, questionNumber: 400 + Number(q.rawQuestionNumber) })),
+    ...mapped2019Pool.map((q: any) => ({ ...q, questionNumber: 500 + Number(q.rawQuestionNumber) })),
+    ...mapped2017Pool.map((q: any) => ({ ...q, questionNumber: 600 + Number(q.rawQuestionNumber) })),
   ];
 
-  const combinedAnnualPool = [
+  const combinedAnnualPool: any[] = [
     ...mapped2025Pool,
-    ...mapped2024Pool.map(q => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
-    ...mapped2023Pool.map(q => ({ ...q, questionNumber: 200 + Number(q.rawQuestionNumber) })),
-    ...mapped2022Pool.map(q => ({ ...q, questionNumber: 300 + Number(q.rawQuestionNumber) })),
+    ...mapped2024Pool.map((q: any) => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
+    ...mapped2023Pool.map((q: any) => ({ ...q, questionNumber: 200 + Number(q.rawQuestionNumber) })),
+    ...mapped2022Pool.map((q: any) => ({ ...q, questionNumber: 300 + Number(q.rawQuestionNumber) })),
+    ...mapped2019Pool.map((q: any) => ({ ...q, questionNumber: 400 + Number(q.rawQuestionNumber) })),
+    ...mapped2017Pool.map((q: any) => ({ ...q, questionNumber: 500 + Number(q.rawQuestionNumber) })),
   ];
 
   const fullPapers = [
-    ...(questions.length?[{ title: `${meta.title} Model Paper I`, desc: 'Practice the available model-paper MCQs with answer feedback and 2025 syllabus SLO mappings.', items: questions.length, time: 'Custom timer', badge: 'MODEL PAPER', source: 'model' as const }]:[]),
+    ...(questions.length && hasDistinctModelPaper ? [{ title: `${meta.title} Model Paper I`, desc: 'Practice the available model-paper MCQs with answer feedback and 2025 syllabus SLO mappings.', items: questions.length, time: 'Custom timer', badge: 'MODEL PAPER', source: 'model' as const }] : []),
     ...(questions.length && mapped2025Pool.length > 0 && (classDef.roman === 'IX' || classDef.roman === 'X') ? [
       { title: 'Annual Examination 2025 — Paper I', desc: 'Original 2025 examination MCQs with official answer key, cropped diagrams, and reviewed 2025 syllabus mappings.', items: mapped2025Pool.length, time: 'Custom timer', badge: 'ANNUAL 2025', source: 'annual' as const },
     ] : []),
-    ...(questions.length && mapped2024Pool.length > 0 && classDef.roman === 'IX' ? [
+    ...(questions.length && mapped2024Pool.length > 0 && (classDef.roman === 'IX' || classDef.roman === 'X') ? [
       { title: 'Annual Examination 2024 — Paper I', desc: 'Original 2024 examination MCQs with official answer key, cropped diagrams, and 2025 syllabus mappings.', items: mapped2024Pool.length, time: 'Custom timer', badge: 'ANNUAL 2024', source: 'annual2024' as const },
     ] : []),
-    ...(questions.length && mapped2023Pool.length > 0 && classDef.roman === 'IX' ? [
+    ...(questions.length && mapped2023Pool.length > 0 && (classDef.roman === 'IX' || classDef.roman === 'X') ? [
       { title: 'Annual Examination 2023 — Paper I', desc: 'Original 2023 examination MCQs with official answer key, cropped diagrams, and 2025 syllabus mappings.', items: mapped2023Pool.length, time: 'Custom timer', badge: 'ANNUAL 2023', source: 'annual2023' as const },
     ] : []),
-    ...(questions.length && mapped2022Pool.length > 0 && classDef.roman === 'IX' ? [
+    ...(questions.length && mapped2022Pool.length > 0 && (classDef.roman === 'IX' || classDef.roman === 'X') ? [
       { title: 'Annual Examination 2022 — Paper I (Theory + ATP)', desc: 'Original 2022 examination 50 MCQs (40 Theory + 10 Alternate to Practical) with official verification report key, cropped diagrams, and 2025 syllabus mappings.', items: mapped2022Pool.length, time: 'Custom timer', badge: 'ANNUAL 2022', source: 'annual2022' as const },
+    ] : []),
+    ...(questions.length && mapped2019Pool.length > 0 && (classDef.roman === 'IX' || classDef.roman === 'X') ? [
+      { title: 'Annual Examination 2019 — Paper I', desc: 'Original April/May 2019 examination 25 MCQs with official answer key, cropped diagrams, and 2025 syllabus mappings.', items: mapped2019Pool.length, time: 'Custom timer', badge: 'ANNUAL 2019', source: 'annual2019' as const },
+    ] : []),
+    ...(questions.length && mapped2017Pool.length > 0 && (classDef.roman === 'IX' || classDef.roman === 'X') ? [
+      { title: 'Annual Examination 2017 — Paper I', desc: 'Original April/May 2017 examination 25 MCQs with official answer key, cropped diagrams, and 2025 syllabus mappings.', items: mapped2017Pool.length, time: 'Custom timer', badge: 'ANNUAL 2017', source: 'annual2017' as const },
     ] : []),
   ];
 
   // Filtered Questions for Practice Mode
-  const isAnnualSource = practiceSource === 'annual' || practiceSource === 'annual2024' || practiceSource === 'annual2023' || practiceSource === 'annual2022' || practiceSource === 'annual_all';
+  const isAnnualSource = practiceSource === 'annual' || practiceSource === 'annual2024' || practiceSource === 'annual2023' || practiceSource === 'annual2022' || practiceSource === 'annual2019' || practiceSource === 'annual2017' || practiceSource === 'annual_all';
   const questionPool = mappedChapter
     ? mappedChapters.find(c => c.id === mappedChapter)?.questions || []
     : practiceSource === 'annual'
     ? mapped2025Pool
     : practiceSource === 'annual2024'
-    ? mapped2024Pool.filter(q => !(isCs && Number(q.rawQuestionNumber) === 9))
+    ? mapped2024Pool
     : practiceSource === 'annual2023'
-    ? mapped2023Pool.filter(q => Number(q.rawQuestionNumber) !== 11)
+    ? mapped2023Pool
     : practiceSource === 'annual2022'
     ? mapped2022Pool
+    : practiceSource === 'annual2019'
+    ? mapped2019Pool
+    : practiceSource === 'annual2017'
+    ? mapped2017Pool
     : practiceSource === 'annual_all'
     ? combinedAnnualPool
     : practiceSource === 'chapter_all'
     ? combinedChapterPool
     : mappedModelPool;
 
-  const activeQuestions = questionPool.filter(q => {
+  const activeQuestions: any[] = questionPool.filter((q: any) => {
     if (selectedUnit) {
       if (!belongsToUnit(q, selectedUnit, isAnnualSource || Boolean(q.examYear))) {
         return false;
       }
     }
     if (searchQuery.trim()) {
-      const optsText = Object.values(q.options || q.choices || {}).join(' ');
+      const optsText = Object.values((q.options || q.choices || {}) as Record<string, unknown>).map(String).join(' ');
       const combined = `${q.stem || q.questionText || ''} ${optsText} ${q.explanation || ''} ${q.unitName || q.chapter || ''} ${q.current_slo || q.slo || ''}`;
       if (!smartMatch(combined, searchQuery, q.current_slo || q.slo)) return false;
     }
@@ -418,7 +492,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     setCurrentView('practice');
   };
 
-  const handleStartFullBookPractice = (title: string, source: 'model' | 'annual' | 'annual2024' | 'annual2023' | 'annual2022' | 'chapter_all' = 'model') => {
+  const handleStartFullBookPractice = (title: string, source: 'model' | 'annual' | 'annual2024' | 'annual2023' | 'annual2022' | 'annual2019' | 'annual2017' | 'annual_all' | 'chapter_all' = 'model') => {
     setMappedChapter(null);
     setPracticeSource(source);
     setSelectedUnit(null);
@@ -456,7 +530,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   // Score stats
   const answeredCount = Object.keys(selectedAnswers).length;
   const correctCount = Object.entries(selectedAnswers).filter(([qNum, choice]) => {
-    const q = questionPool.find(item => Number(item.questionNumber) === Number(qNum));
+    const q = questionPool.find((item: any) => Number(item.questionNumber) === Number(qNum));
     const correctKey = q?.correctOption || q?.correctAnswer;
     return q && correctKey === choice;
   }).length;
@@ -473,8 +547,16 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     if (!selectedUnit && (practiceSource === 'chapter_all' || practiceSource === 'annual_all')) {
       return `${subjPrefix}-${classDef.roman}-UNIT-0-${practiceSource === 'annual_all' ? 'PAST' : 'ALL'}-${cogTag}`;
     }
-    const basePaper = `${subjPrefix}-${classDef.roman}${!isCs && practiceSource === 'annual2024' ? '-2024' : practiceSource === 'annual' ? '-2025' : ''}-P1`;
-    const nums = [...new Set(activeQuestions.map(q => Number(q.rawQuestionNumber || q.questionNumber)))].sort((a, b) => a - b);
+    const yearSuffix =
+      practiceSource === 'annual' ? '-2025'
+      : practiceSource === 'annual2024' ? '-2024'
+      : practiceSource === 'annual2023' ? '-2023'
+      : practiceSource === 'annual2022' ? '-2022'
+      : practiceSource === 'annual2019' ? '-2019'
+      : practiceSource === 'annual2017' ? '-2017'
+      : '';
+    const basePaper = `${subjPrefix}-${classDef.roman}${yearSuffix}-P1`;
+    const nums = [...new Set(activeQuestions.map((q: any) => Number(q.rawQuestionNumber || q.questionNumber)))].sort((a: number, b: number) => a - b);
     return `${basePaper}-SET-${nums.join('-')}`;
   })();
 
@@ -577,8 +659,8 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '1.25rem' }}>
                 {unitsList.map((unit) => {
-                  const modelCount = mappedModelPool.filter(q => belongsToUnit(q, unit, false)).length;
-                  const pastCount = combinedAnnualPool.filter(q => belongsToUnit(q, unit, true)).length;
+                  const modelCount = mappedModelPool.filter((q: any) => belongsToUnit(q, unit, false)).length;
+                  const pastCount = combinedAnnualPool.filter((q: any) => belongsToUnit(q, unit, true)).length;
                   const unitQCount = modelCount + pastCount;
                   return (
                     <div
@@ -667,8 +749,8 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '1.25rem' }}>
                 {unitsList.map((unit) => {
-                  const refCount2025 = mapped2025Pool.filter(q => belongsToUnit(q, unit, true)).length;
-                  const refCount2024 = mapped2024Pool.filter(q => belongsToUnit(q, unit, true)).length;
+                  const refCount2025 = mapped2025Pool.filter((q: any) => belongsToUnit(q, unit, true)).length;
+                  const refCount2024 = mapped2024Pool.filter((q: any) => belongsToUnit(q, unit, true)).length;
                   const totalRefCount = refCount2025 + refCount2024;
                   return (
                   <div
@@ -1117,30 +1199,6 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
             </div>
           </div>
 
-          {/* Exam-paper masthead */}
-          <div style={{
-            background: 'var(--card-bg, #ffffff)',
-            border: '1.5px solid var(--text-color, #111827)',
-            borderRadius: '4px',
-            padding: '1rem 1.5rem',
-            marginBottom: '1.5rem',
-            textAlign: 'center',
-            fontFamily: "'Times New Roman', Times, serif"
-          }}>
-            <div style={{ fontSize: '0.95rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--text-color, #111827)' }}>
-              {board.fullName}
-            </div>
-            <div style={{ fontSize: '0.8rem', color: 'var(--text-light, #374151)', marginTop: '2px' }}>
-              SECONDARY SCHOOL CERTIFICATE · {classDef.name}
-            </div>
-            <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-color, #111827)', marginTop: '6px' }}>
-              {meta.title} · Paper I (Multiple Choice Questions)
-            </div>
-            <div style={{ fontSize: '0.78rem', color: 'var(--text-light, #4b5563)', marginTop: '2px' }}>
-              {practiceTitle}
-            </div>
-          </div>
-
           {/* Questions List with KaTeX math rendering */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {activeQuestions.length === 0 ? (
@@ -1160,7 +1218,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                 </button>
               </div>
             ) : (
-              activeQuestions.map((q, idx) => {
+              activeQuestions.map((q: any, idx: number) => {
                 const qNum = q.questionNumber || idx + 1;
                 const rawQNum = q.rawQuestionNumber || qNum;
                 const userChoice = selectedAnswers[qNum];
@@ -1176,96 +1234,65 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                   <div
                     key={qNum}
                     style={{
-                      background: 'var(--card-bg, #ffffff)',
-                      border: isAnswered ? (isCorrect ? '2px solid #86efac' : '2px solid #fca5a5') : '1.5px solid var(--border-color, #cfd6d2)',
-                      borderRadius: '4px',
-                      padding: '1.5rem 1.75rem',
-                      boxShadow: '0 1px 5px rgba(0,0,0,0.05)',
-                      fontFamily: "'Times New Roman', Times, serif"
+                      background: '#ffffff',
+                      border: isAnswered ? (isCorrect ? '2px solid #86efac' : '2px solid #fca5a5') : '1.5px solid #dce5e1',
+                      borderRadius: '16px',
+                      padding: '1.75rem',
+                      boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
                     }}
                   >
-                    {/* Exam-paper header: question number box, source paper, marks */}
-                    <div style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      gap: '0.75rem',
-                      flexWrap: 'wrap',
-                      borderBottom: '1.5px solid var(--text-color, #111827)',
-                      paddingBottom: '0.7rem',
-                      marginBottom: '1rem'
-                    }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                         <span style={{
-                          border: '1.5px solid var(--text-color, #111827)',
-                          borderRadius: '3px',
-                          minWidth: '48px',
-                          textAlign: 'center',
-                          padding: '1px 8px',
-                          fontSize: '1.05rem',
-                          fontWeight: 700,
-                          color: 'var(--text-color, #111827)',
-                          background: 'var(--card-bg, #ffffff)'
-                        }}>
-                          Q.{rawQNum}
-                        </span>
-                        <span style={{
-                          fontFamily: "'Inter', sans-serif",
+                          background: '#0b5e4a',
+                          color: '#ffffff',
+                          padding: '4px 10px',
+                          borderRadius: '6px',
                           fontSize: '0.8rem',
-                          fontWeight: 800,
-                          color: 'var(--primary-color, #0b5e4a)',
-                          letterSpacing: '0.02em',
-                          textTransform: 'uppercase'
+                          fontWeight: 800
                         }}>
-                          {q.examYear ? `${q.examYear} Annual Examination · ${meta.title} Paper I` : `Model Paper · ${meta.title} Paper I`}
+                          {q.examYear ? `${q.examYear} · Q${rawQNum}` : `Model · Q${rawQNum}`}
                         </span>
                         <span style={{
-                          fontFamily: "'Inter', sans-serif",
                           background: q.cognitiveLevel === 'Remembering' ? '#fef3c7' : q.cognitiveLevel === 'Understanding' ? '#e0f2fe' : '#dcfce7',
                           color: q.cognitiveLevel === 'Remembering' ? '#92400e' : q.cognitiveLevel === 'Understanding' ? '#0369a1' : '#15803d',
-                          padding: '2px 8px',
+                          padding: '3px 8px',
                           borderRadius: '4px',
-                          fontSize: '0.72rem',
+                          fontSize: '0.75rem',
                           fontWeight: 700
                         }}>
                           {q.cognitiveLevel}
                         </span>
                         {(q.unitName || q.chapter) && (
-                          <span style={{ fontFamily: "'Inter', sans-serif", background: '#f4f7f6', color: '#4b5563', padding: '2px 8px', borderRadius: '4px', fontSize: '0.72rem', fontWeight: 600 }}>
+                          <span style={{ background: '#f4f7f6', color: '#4b5563', padding: '3px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
                             {q.unitName || q.chapter}
                           </span>
                         )}
                       </div>
 
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        <span style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-color, #111827)' }}>
-                          [{q.marks ?? 1}]
-                        </span>
-                        <button
-                          onClick={() => toggleReveal(qNum)}
-                          style={{
-                            background: 'none',
-                            border: 'none',
-                            color: '#0b5e4a',
-                            fontFamily: "'Inter', sans-serif",
-                            fontWeight: 700,
-                            fontSize: '0.82rem',
-                            cursor: 'pointer',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '4px'
-                          }}
-                        >
-                          <Eye size={15} />
-                          <span>{isRevealed ? 'Hide Answer' : 'Show Answer'}</span>
-                        </button>
-                      </div>
+                      <button
+                        onClick={() => toggleReveal(qNum)}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          color: '#0b5e4a',
+                          fontWeight: 700,
+                          fontSize: '0.85rem',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '4px'
+                        }}
+                      >
+                        <Eye size={15} />
+                        <span>{isRevealed ? 'Hide Answer' : 'Show Answer'}</span>
+                      </button>
                     </div>
 
                     <QuestionSource question={q} source={mappedChapter ? 'mapped' : (q.examYear || isAnnualSource) ? 'annual' : 'model'} board={board.shortCode} grade={classDef.level} subject={meta.title} />
 
                     {/* Question Stem rendered with StructuredContent (Tables + KaTeX) */}
-                    <div style={{ fontSize: '1.1rem', color: 'var(--text-color, #1f2937)', fontWeight: 400, lineHeight: 1.7, marginBottom: '1.25rem' }}>
+                    <div style={{ fontSize: '1.05rem', color: 'var(--text-color, #1a2e26)', fontWeight: 600, lineHeight: 1.6, marginBottom: '1.25rem' }}>
                       <StructuredContent text={q.stem || q.questionText || ''} />
                     </div>
 
@@ -1305,9 +1332,9 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                         const isSelected = userChoice === optKey;
                         const isAnswerKey = correctKey === optKey;
 
-                        let optBg = 'var(--card-bg, #ffffff)';
-                        let optBorder = '1.5px solid #cfd6d2';
-                        let optColor = 'var(--text-color, #1f2937)';
+                        let optBg = '#f8faf9';
+                        let optBorder = '1.5px solid #eef2f0';
+                        let optColor = '#1a2e26';
 
                         if (isRevealed || isAnswered) {
                           if (isAnswerKey) {
@@ -1330,8 +1357,8 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                             key={optKey}
                             onClick={() => handleSelect(qNum, optKey)}
                             style={{
-                              padding: '0.7rem 1rem',
-                              borderRadius: '4px',
+                              padding: '0.85rem 1rem',
+                              borderRadius: '10px',
                               background: optBg,
                               border: optBorder,
                               color: optColor,
@@ -1344,23 +1371,21 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                             }}
                           >
                             <span style={{
-                              width: '26px',
-                              height: '26px',
-                              borderRadius: '3px',
-                              border: '1.5px solid',
-                              borderColor: isSelected || (isRevealed && isAnswerKey) ? optColor : '#9aa4a0',
-                              background: isSelected || (isRevealed && isAnswerKey) ? optColor : 'transparent',
+                              width: '24px',
+                              height: '24px',
+                              borderRadius: '50%',
+                              background: isSelected || (isRevealed && isAnswerKey) ? optColor : '#dce5e1',
                               color: isSelected || (isRevealed && isAnswerKey) ? '#ffffff' : '#4b5563',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
-                              fontSize: '0.85rem',
-                              fontWeight: 700,
+                              fontSize: '0.78rem',
+                              fontWeight: 800,
                               flexShrink: 0
                             }}>
                               {optKey}
                             </span>
-                            <span style={{ fontSize: '1rem', fontWeight: 400, lineHeight: 1.5, flexGrow: 1 }}>
+                            <span style={{ fontSize: '0.92rem', fontWeight: 600, lineHeight: 1.4, flexGrow: 1 }}>
                               <MathText text={String(optText)} />
                             </span>
                           </button>

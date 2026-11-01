@@ -1,0 +1,1562 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "Consider the given flowchart symbol.\n\nThe given symbol is used to represent the",
+    "options": {
+      "A": "decision in a flowchart.",
+      "B": "processing in a flowchart.",
+      "C": "input and output in a flowchart.",
+      "D": "starting and ending point in a flowchart."
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "7.3.3",
+    "current_slo": "9.1.2",
+    "sloText": "draw flowcharts related to SLO # 9.1.1.",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.2",
+        "description": "draw flowcharts related to SLO # 9.1.1.",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": true,
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/CS-X-2025-P1/q1.png",
+    "explanation": "An oval (rounded rectangle / capsule) is the **terminator symbol** in a flowchart, used to represent the starting (`Start`) and ending (`Stop`) points of a flowchart.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 2,
+    "stem": "A statement calculates average of five integers.\n\nA flowchart symbol that must have this statement is",
+    "options": {
+      "A": "input.",
+      "B": "output.",
+      "C": "process.",
+      "D": "decision."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "7.3.3",
+    "current_slo": "9.1.2",
+    "sloText": "draw flowcharts related to SLO # 9.1.1.",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.2",
+        "description": "draw flowcharts related to SLO # 9.1.1.",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Calculating the average of five integers (`avg = (a+b+c+d+e)/5`) is an arithmetic computation, which is placed inside a rectangular **process** symbol in a flowchart.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 3,
+    "stem": "A stage of problem solving in which a person investigates the problem and gathers as much information as possible is referred as",
+    "options": {
+      "A": "defining the problem.",
+      "B": "analysing the problem.",
+      "C": "planning the solution of the problem.",
+      "D": "finding the candid solutions of the problem."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "7.1.1",
+    "current_slo": null,
+    "sloText": "Problem Solving & Algorithm Design (Moved to Class IX Unit 2 SLO 2.1.3 in 2025 Syllabus)",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Problem Solving & Algorithm Design (Moved to Class IX Unit 2 SLO 2.1.3 in 2025 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In **analysing the problem**, the problem-solver investigates the defined problem and gathers all necessary information, inputs, outputs, and constraints before planning a solution. *(Note: In the 2025 AKU-EB syllabus, problem-solving stages were moved from Class X `7.1.1` to Class IX Unit 2 SLO `2.1.3`.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 4,
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: A=4\nStep 3: B=6\nStep 4: C=A%B\nStep 5: A=C+B\nStep 6: B=B-2\nStep 7: IF B>=1 THEN GOTO Step 4\nStep 8: Output A\nStep 9: Stop\n```\n\nThe output of this algorithm is",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "7.2.3",
+    "current_slo": "9.1.1",
+    "sloText": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing each iteration:\n- **Initial**: `A = 4, B = 6`\n- **Iteration 1**: `C = 4 % 6 = 4`, `A = 4 + 6 = 10`, `B = 6 - 2 = 4`. Since `B = 4 >= 1`, `GOTO Step 4`.\n- **Iteration 2**: `C = 10 % 4 = 2`, `A = 2 + 4 = 6`, `B = 4 - 2 = 2`. Since `B = 2 >= 1`, `GOTO Step 4`.\n- **Iteration 3**: `C = 6 % 2 = 0`, `A = 0 + 2 = 2`, `B = 2 - 2 = 0`. Since `B = 0 < 1`, proceed to Step 8 and output **`A = 2`**.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 5,
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: Let the number J be 6 and K be 3\nStep 3: Initialize L=2 and M=1\nStep 4: L=L*J+K\nStep 5: M=M+4\nStep 6: If M <= K Then GOTO Step 4 otherwise GOTO Step 7\nStep 7: Output L\nStep 8: Stop\n```\n\nThe output of this algorithm is",
+    "options": {
+      "A": "1",
+      "B": "5",
+      "C": "15",
+      "D": "93"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "7.2.3",
+    "current_slo": "9.1.1",
+    "sloText": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 9,
+    "unitName": "Computational Thinking and Algorithm",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+        "topic": "Computational Thinking and Algorithm"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing the algorithm:\n- **Step 2 & 3**: `J = 6, K = 3, L = 2, M = 1`\n- **Step 4**: `L = 2 * 6 + 3 = 15`\n- **Step 5**: `M = 1 + 4 = 5`\n- **Step 6**: Since `M <= K` (`5 <= 3`) is **false**, `GOTO Step 7` and output **`L = 15`**.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 6,
+    "stem": "Maha works as a customer representative and has received multiple complaints about delays in product deliveries. After investigating, she realised that the warehouse management system is outdated and leading to inefficiencies in order processing and fulfilment.\n\nWhat should be the Maha's very next action after knowing about the situation?",
+    "options": {
+      "A": "Defining the problem",
+      "B": "Analysing the problem",
+      "C": "Planning the solutions of the problem",
+      "D": "Selecting the best solution of the problem"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "7.1.1",
+    "current_slo": null,
+    "sloText": "Problem Solving & Algorithm Design (Moved to Class IX Unit 2 SLO 2.1.3 in 2025 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 9,
+    "unitName": "Problem Solving & Algorithm Design (Moved to Class IX Unit 2 SLO 2.1.3 in 2025 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Maha has already defined the problem (delivery delays) and analysed/investigated the root cause (outdated warehouse management system). The immediate next stage in the problem-solving process is **planning the solution of the problem** (`C`). *(Note: In the 2025 AKU-EB syllabus, problem-solving steps moved to Class IX Unit 2 SLO `2.1.3`.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 7,
+    "stem": "If the main function returns integer value but it does not have any arguments, then it is written as",
+    "options": {
+      "A": "`int main(int)`",
+      "B": "`int main(void)`",
+      "C": "`void main(int)`",
+      "D": "`void main(void)`"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "8.3.2",
+    "current_slo": null,
+    "sloText": "Legacy C Language Structure (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Legacy C Language Structure (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In C programming, the return data type precedes the function name (`int main`), and `void` inside the parentheses (`(void)`) indicates that the function takes no parameters, giving **`int main(void)`**. *(Note: Legacy C-specific function signature; the 2025 syllabus uses JavaScript.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 8,
+    "stem": "C++, C# and Java are the examples of",
+    "options": {
+      "A": "object oriented language.",
+      "B": "procedural language.",
+      "C": "assembly language.",
+      "D": "machine language."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "8.1.3",
+    "current_slo": "10.1.2",
+    "sloText": "describe the following programming languages: a. low-level languages (I. machine language, II. assembly language), b. high-level languages (I. procedural language, II. structured language, III. object-oriented language);",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.1.2",
+        "description": "describe the following programming languages: a. low-level languages (I. machine language, II. assembly language), b. high-level languages (I. procedural language, II. structured language, III. object-oriented language);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**C++, C#, and Java** are high-level **object-oriented programming (OOP) languages** that organise software around classes and objects.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 9,
+    "stem": "Consider the given characteristics.\n\nI. It is a portable language.\nII. It is executed by microprocessor.\nIII. It supports execution of multiple tasks simultaneously.\nIV. It is the only language that is understood by computer.\n\nThe characteristics that represent high level language is",
+    "options": {
+      "A": "I and II.",
+      "B": "I and III.",
+      "C": "II and IV.",
+      "D": "III and IV."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "8.1.4",
+    "current_slo": "10.1.2",
+    "sloText": "describe the following programming languages: a. low-level languages (I. machine language, II. assembly language), b. high-level languages (I. procedural language, II. structured language, III. object-oriented language);",
+    "cognitiveLevel": "Remembering",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.1.2",
+        "description": "describe the following programming languages: a. low-level languages (I. machine language, II. assembly language), b. high-level languages (I. procedural language, II. structured language, III. object-oriented language);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**High-level languages** are hardware-independent (**portable**, Statement I) and support advanced constructs such as **executing multiple tasks simultaneously** (Statement III). Statements II and IV describe low-level **machine language**, which is the only language directly understood and executed by the microprocessor without translation.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 10,
+    "stem": "Consider the following characteristics.\n\nI. It clarifies any part of the program.\nII. It is ignored by the compiler.\nIII. It makes the code complex.\n\nWhich of the following characteristic(s) is/ are TRUE about the comments in a C program?",
+    "options": {
+      "A": "I only",
+      "B": "III only",
+      "C": "I and II",
+      "D": "II and III"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "8.3.3",
+    "current_slo": null,
+    "sloText": "Comments in Programming (Moved to Class IX Unit 3 SLO 3.10.2 in 2025 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Comments in Programming (Moved to Class IX Unit 3 SLO 3.10.2 in 2025 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Comments (`//` or `/* ... */`) document and **clarify parts of a program** for human readers (I) and are completely **ignored by the compiler/interpreter** during execution (II). *(Note: In the 2025 AKU-EB syllabus, program comments moved to Class IX Unit 3 SLO `3.10.2`.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 11,
+    "stem": "The number of bytes in floating point data type is",
+    "options": {
+      "A": "1 byte.",
+      "B": "2 bytes.",
+      "C": "4 bytes.",
+      "D": "10 bytes."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "8.4.3",
+    "current_slo": null,
+    "sloText": "Legacy C Data Types (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Legacy C Data Types (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In standard C, a single-precision `float` data type occupies **4 bytes** (32 bits) of memory. *(Note: C-specific data type byte size from the 2022 syllabus.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 12,
+    "stem": "The appropriate declaration of variable pi in the formula $X = \\text{pi} \\times r^2$ will be",
+    "options": {
+      "A": "`int pi=3.141;`",
+      "B": "`float pi=3.141;`",
+      "C": "`short int \u03c0 =3.141;`",
+      "D": "`long float \u03c0 =3.141;`"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "8.4.4",
+    "current_slo": null,
+    "sloText": "Legacy C Variable Declaration (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Legacy C Variable Declaration (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Since `3.141` is a real number with a fractional part and C identifiers must use valid ASCII letters (`pi`), **`float pi=3.141;`** (`B`) is the valid C variable declaration. *(Note: Legacy C syntax from the 2022 syllabus.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 13,
+    "stem": "According to the rules for specifying variable names, the INVALID variable name(s) is/ are\n\nI. `_Var`\nII. `1Var`\nIII. `Var_1`",
+    "options": {
+      "A": "I only.",
+      "B": "II only.",
+      "C": "I and III.",
+      "D": "II and III."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "8.4.2",
+    "current_slo": null,
+    "sloText": "Variable Naming Rules (Moved to Class IX Unit 3 SLO 3.10.4 in 2025 Syllabus)",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Variable Naming Rules (Moved to Class IX Unit 3 SLO 3.10.4 in 2025 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "A variable identifier can start with a letter or an underscore (`_Var`, `Var_1`), but it **cannot begin with a digit** (`1Var`). Therefore, **II only** (`B`) is invalid. *(Note: In the 2025 syllabus, variable naming rules moved to Class IX Unit 3 SLO `3.10.4`.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 14,
+    "stem": "Which of the following uses ampersand (`&`) before the variable name while taking input from the user?",
+    "options": {
+      "A": "`scanf`",
+      "B": "`getch`",
+      "C": "`getche`",
+      "D": "`getchar`"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "9.1.3",
+    "current_slo": null,
+    "sloText": "Legacy C Input/Output Functions (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Legacy C Input/Output Functions (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In C, the **`scanf`** function requires the address-of operator (`&`) before scalar variable names (e.g., `scanf(\"%d\", &num);`) so it can store the inputted value at that memory address. *(Note: Legacy C I/O function from the 2022 syllabus.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 15,
+    "stem": "Consider the given statement.\n\n```c\nint y = 2 + 3 * 6 / 2;\n```\n\nTo display the value of variable `y`, the format specifier that should be used in `printf( )` function is",
+    "options": {
+      "A": "`%d`",
+      "B": "`%c`",
+      "C": "`&d`",
+      "D": "`&c`"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "9.1.2",
+    "current_slo": null,
+    "sloText": "Legacy C Format Specifiers (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Legacy C Format Specifiers (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Because `y` is declared as an integer (`int`), the **`%d`** (or `%i`) format specifier is used in `printf()` to display its decimal integer value. *(Note: Legacy C format specifier from the 2022 syllabus.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 16,
+    "stem": "Consider the given C code.\n\n```c\nint y = 10 % 3 + 7 / 2 + 4 * 3 - 5;\n```\n\nThe value stored in variable `y` is",
+    "options": {
+      "A": "10",
+      "B": "11",
+      "C": "19",
+      "D": "20"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "9.1.2",
+    "current_slo": "10.3.8",
+    "sloText": "simplify an expression by using the order of precedence of operators;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.8",
+        "description": "simplify an expression by using the order of precedence of operators;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Evaluating according to operator precedence (`%`, `/`, `*` left-to-right before `+`, `-`):\n1. `10 % 3 = 1`\n2. `7 / 2 = 3` (integer division)\n3. `4 * 3 = 12`\n4. `y = 1 + 3 + 12 - 5 = 11`.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 17,
+    "stem": "Consider the given C language statement.\n\n```text\nL = (9\u00d75) - (12\u00f73) \u00d7 8^3;\n```\n\nWith reference to C language, how many operators are INCORRECT in this statement?",
+    "options": {
+      "A": "One",
+      "B": "Two",
+      "C": "Three",
+      "D": "Four"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "9.2.3",
+    "current_slo": "10.3.1",
+    "sloText": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.1",
+        "description": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In C/JavaScript arithmetic expressions, multiplication must use `*`, division must use `/`, and `^` is bitwise XOR rather than exponentiation. The statement uses **four** invalid arithmetic operator symbols: the first `\u00d7`, `\u00f7`, the second `\u00d7`, and `^`.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 18,
+    "stem": "Consider the given statement.\n\n```c\nK *= J;\n```\n\nThis statement can be rewritten as",
+    "options": {
+      "A": "`K * J = K;`",
+      "B": "`K = J * J;`",
+      "C": "`K * K = J;`",
+      "D": "`K = K * J;`"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "9.2.4",
+    "current_slo": "10.3.2",
+    "sloText": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.2",
+        "description": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The compound multiplication assignment operator `K *= J;` multiplies the current value of `K` by `J` and assigns the result back to `K`, which is equivalent to **`K = K * J;`**.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 19,
+    "stem": "Consider the given program.\n\n```c\n#include<stdio.h>\nint main( )\n{\n  int k=15;\n  k++;\n  k--;\n  printf(\"%d\", ++k);\n  return 0;\n}\n```\n\nThe output of the given program is",
+    "options": {
+      "A": "14",
+      "B": "16",
+      "C": "18",
+      "D": "20"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "9.2.5",
+    "current_slo": "10.3.3",
+    "sloText": "use the increment (++) and decrement (--) operators in a JavaScript code;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.3",
+        "description": "use the increment (++) and decrement (--) operators in a JavaScript code;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing the value of `k`:\n1. `int k = 15;`\n2. `k++;` increments `k` to `16`.\n3. `k--;` decrements `k` back to `15`.\n4. `++k` pre-increments `k` to **`16`** before printing.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 20,
+    "stem": "Consider the given program.\n\n```c\n#include<stdio.h>\nint main( )\n{\n  int y = 26;\n  y += 4;\n  y /= 2;\n  printf(\"%d\", y *= 4);\n  return 0;\n}\n```\n\nThe output of the given program is",
+    "options": {
+      "A": "0",
+      "B": "60",
+      "C": "120",
+      "D": "180"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "9.2.4",
+    "current_slo": "10.3.2",
+    "sloText": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.2",
+        "description": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing the compound assignment statements:\n1. `y = 26`\n2. `y += 4` $\\rightarrow$ `y = 26 + 4 = 30`\n3. `y /= 2` $\\rightarrow$ `y = 30 / 2 = 15`\n4. `y *= 4` $\\rightarrow$ `y = 15 * 4 = 60`.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 21,
+    "stem": "Consider the given mathematical expression.\n\n$$X^3Y^2 \\neq (10 - 6 \\times 8)$$\n\nAfter converting it into C equivalent expression, the number of relational operator(s) will be",
+    "options": {
+      "A": "zero.",
+      "B": "one.",
+      "C": "two.",
+      "D": "three."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "9.2.6",
+    "current_slo": "10.3.4",
+    "sloText": "use the following relational operators in a JavaScript code: a. less than (<), b. greater than (>), c. less than or equal to (<=), d. greater than or equal to (>=), e. equal to (==), f. strict equal to (equal value and equal type) (===), g. not equal to (!=), h. strict not equal to (not equal value and not equal type) (!==);",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.3.4",
+        "description": "use the following relational operators in a JavaScript code: a. less than (<), b. greater than (>), c. less than or equal to (<=), d. greater than or equal to (>=), e. equal to (==), f. strict equal to (equal value and equal type) (===), g. not equal to (!=), h. strict not equal to (not equal value and not equal type) (!==);",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In C and JavaScript, the expression is written as `(X*X*X*Y*Y != (10 - 6*8))`. All `*` and `-` symbols are arithmetic operators, while `!=` (not equal to) is the **one** relational operator.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 22,
+    "stem": "Braces are NOT required in **if-else** statement if",
+    "options": {
+      "A": "a block of statement is executed.",
+      "B": "a single statement is executed.",
+      "C": "there is no statement after the condition.",
+      "D": "there is a comment after the condition."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "10.1.5",
+    "current_slo": "10.4.2",
+    "sloText": "explain the structure of if, if-else, nested if-else, or if-else-if and switch statement;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.4.2",
+        "description": "explain the structure of if, if-else, nested if-else, or if-else-if and switch statement;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In an `if-else` control structure, curly braces `{ }` are optional when **only a single statement is executed** inside the `if` or `else` branch; multiple statements (a block) require braces.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 23,
+    "stem": "In switch-case structure, the data type of expression should be",
+    "options": {
+      "A": "`char`",
+      "B": "`float`",
+      "C": "`string`",
+      "D": "`double`"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "10.1.9",
+    "current_slo": null,
+    "sloText": "Legacy C Switch Expression Data Type (Retired 2022 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Legacy C Switch Expression Data Type (Retired 2022 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In C programming, the controlling expression of a `switch` statement must evaluate to an integral type (`int` or **`char`**), and cannot be `float`, `double`, or `string`. *(Note: This is a C-specific restriction from the 2022 syllabus; in the 2025 JavaScript syllabus, `switch` expressions also accept strings and numbers.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 24,
+    "stem": "Consider the given program.\n\n```c\n#include<stdio.h>\nint main( )\n{\n  int a;\n  printf(\"Enter a number: \\t\");\n  scanf(\"%d\",&a);\n  if (a*3 < 9)\n    printf(\"Hello World\");\n  return 0;\n}\n```\n\nThe input that will give output \"Hello World\" will be",
+    "options": {
+      "A": "0",
+      "B": "3",
+      "C": "6",
+      "D": "9"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "10.1.4",
+    "current_slo": "10.4.3",
+    "sloText": "write JavaScript code to implement the following statements: a. if statement, b. if-else statement, c. if-else or if-else-if, d. switch statement;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.4.3",
+        "description": "write JavaScript code to implement the following statements: a. if statement, b. if-else statement, c. if-else or if-else-if, d. switch statement;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The condition `a * 3 < 9` simplifies to `a < 3`. Among the choices `{0, 3, 6, 9}`, only **`a = 0`** (`0 * 3 = 0 < 9`) makes the condition true and prints `\"Hello World\"`.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 25,
+    "stem": "How many types of loops are there in a C programming language?",
+    "options": {
+      "A": "5",
+      "B": "4",
+      "C": "3",
+      "D": "2"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "11.1.1",
+    "current_slo": "10.5.1",
+    "sloText": "describe loop and its different types;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.1",
+        "description": "describe loop and its different types;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "There are **3** primary loop structures in C and JavaScript: the `for` loop, the `while` loop, and the `do-while` loop.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 26,
+    "stem": "Use the given program to answer Q. 26 and Q. 27.\n\n```c\n#include<stdio.h>\nint main( )\n{\n  int i = 15, j = 8;\n  do\n  {\n    printf(\"Data Science \\n\");\n  }\n  while (i-- > j++);\n  return 0;\n}\n```\n\nIf `printf (\"Data Science \\n\");` is replaced by `printf (\"\\n%d\",j);` then the output will be",
+    "options": {
+      "A": "8, 9, 10, 11, 12 (printed on separate lines)",
+      "B": "12, 11, 10, 9, 8 (printed on separate lines)",
+      "C": "9, 10, 11, 12 (printed on separate lines)",
+      "D": "12, 11, 10, 9 (printed on separate lines)"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "11.1.7",
+    "current_slo": "10.5.4",
+    "sloText": "write the output of a given program having a loop and selection structures;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.4",
+        "description": "write the output of a given program having a loop and selection structures;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing each iteration of the `do-while` loop:\n- **Iteration 1**: Prints `j = 8`; then checks `15 > 8` (true), updating `i = 14, j = 9`.\n- **Iteration 2**: Prints `j = 9`; then checks `14 > 9` (true), updating `i = 13, j = 10`.\n- **Iteration 3**: Prints `j = 10`; then checks `13 > 10` (true), updating `i = 12, j = 11`.\n- **Iteration 4**: Prints `j = 11`; then checks `12 > 11` (true), updating `i = 11, j = 12`.\n- **Iteration 5**: Prints `j = 12`; then checks `11 > 12` (false), terminating the loop.\nThus the output is **`8, 9, 10, 11, 12`** (`A`).",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 27,
+    "stem": "Use the given program to answer Q. 26 and Q. 27.\n\n```c\n#include<stdio.h>\nint main( )\n{\n  int i = 15, j = 8;\n  do\n  {\n    printf(\"Data Science \\n\");\n  }\n  while (i-- > j++);\n  return 0;\n}\n```\n\nIf we write the same code using `while` loop, then the difference in number of iteration will",
+    "options": {
+      "A": "be one more than do-while.",
+      "B": "be one less than do-while.",
+      "C": "be two less than do-while.",
+      "D": "not be changed."
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "11.1.1",
+    "current_slo": "10.5.2",
+    "sloText": "explain the structure of for, while, and do while loop in JavaScript;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.2",
+        "description": "explain the structure of for, while, and do while loop in JavaScript;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In the `do-while` loop, the body executes **5 times** (for `(i,j) = (15,8), (14,9), (13,10), (12,11), (11,12)` before `11 > 12` fails at the end of the 5th iteration). In a pre-test `while (i-- > j++)` loop, the condition is checked before each iteration: it succeeds 4 times (`15>8`, `14>9`, `13>10`, `12>11`) and fails on the 5th check (`11>12`), executing the loop body **4 times** \u2014 which is **one less than `do-while`** (`B`).",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 28,
+    "stem": "In `do-while` loop structure, if the condition is FALSE at the first iteration, then it will",
+    "options": {
+      "A": "give syntax error.",
+      "B": "will not show the output.",
+      "C": "execute the statement once.",
+      "D": "execute the statement twice."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "11.1.6",
+    "current_slo": "10.5.2",
+    "sloText": "explain the structure of for, while, and do while loop in JavaScript;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.2",
+        "description": "explain the structure of for, while, and do while loop in JavaScript;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Because a `do-while` loop is a **post-test loop** that checks its condition at the end of the loop body, it always **executes its body at least once** even when the condition is initially `FALSE`.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 29,
+    "stem": "Consider the following code.\n\n```c\n#include<stdio.h>\nint main( )\n{\n  int p=3;\n  do\n  {\n    printf(\"%d \", p*=5);\n    p=p+7;\n  }\n  while (p<=20);\n  return 0;\n}\n```\n\nThe given code will display the output",
+    "options": {
+      "A": "3",
+      "B": "5",
+      "C": "15",
+      "D": "20"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "11.1.8",
+    "current_slo": "10.5.4",
+    "sloText": "write the output of a given program having a loop and selection structures;",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.4",
+        "description": "write the output of a given program having a loop and selection structures;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing the `do-while` loop:\n1. Initially `p = 3`.\n2. `printf(\"%d \", p *= 5);` updates `p = 3 * 5 = 15` and prints **`15`**.\n3. `p = p + 7;` updates `p = 15 + 7 = 22`.\n4. The condition `while (p <= 20)` (`22 <= 20`) is false, so the loop terminates.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 30,
+    "stem": "Consider the given C program.\n\n```c\n#include <stdio.h>\nint main( )\n{\n  int a=10, b=7;\n  while(a>--b)\n  {\n    printf(\"\\nKarachi\");\n    a=a-2;\n  }\n  return 0;\n}\n```\n\nThe number of times Karachi will be printed upon execution of this program is",
+    "options": {
+      "A": "zero.",
+      "B": "two.",
+      "C": "four.",
+      "D": "seven."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "11.1.5",
+    "current_slo": "10.5.4",
+    "sloText": "write the output of a given program having a loop and selection structures;",
+    "cognitiveLevel": "Remembering",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.4",
+        "description": "write the output of a given program having a loop and selection structures;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Tracing `while (a > --b)` starting from `a = 10, b = 7`:\n- **Check 1**: `--b = 6`; `10 > 6` is true $\\rightarrow$ prints `Karachi` (1st time), `a = 8`.\n- **Check 2**: `--b = 5`; `8 > 5` is true $\\rightarrow$ prints `Karachi` (2nd time), `a = 6`.\n- **Check 3**: `--b = 4`; `6 > 4` is true $\\rightarrow$ prints `Karachi` (3rd time), `a = 4`.\n- **Check 4**: `--b = 3`; `4 > 3` is true $\\rightarrow$ prints `Karachi` (4th time), `a = 2`.\n- **Check 5**: `--b = 2`; `2 > 2` is false $\\rightarrow$ loop ends after printing **four** times (`C`).",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 31,
+    "stem": "Consider the given C program.\n\n```c\n#include <stdio.h>\nint main( )\n{\n  int i;\n  for (i=0;i<10;i++)\n  {\n    printf(\"%d \",i);\n    i++;\n  }\n  return 0;\n}\n```\n\nThe output of the given program is",
+    "options": {
+      "A": "`0 2 4 6 8`",
+      "B": "`0 2 4 6 8 9`",
+      "C": "`0 1 2 3 4 5 6 7 8`",
+      "D": "`0 1 2 3 4 5 6 7 8 9`"
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "11.1.8",
+    "current_slo": "10.5.4",
+    "sloText": "write the output of a given program having a loop and selection structures;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Programming in JavaScript",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "10.5.4",
+        "description": "write the output of a given program having a loop and selection structures;",
+        "topic": "Programming in JavaScript"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "Because `i` is incremented both inside the loop body (`i++;`) and in the `for` header (`i++`), `i` increases by `2` on each cycle (`0, 2, 4, 6, 8`), printing **`0 2 4 6 8`** (`A`).",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 32,
+    "stem": "Which of the following logic gates takes the least number of inputs?",
+    "options": {
+      "A": "OR Gate",
+      "B": "NOT Gate",
+      "C": "AND Gate",
+      "D": "XNOR Gate"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "12.2.4",
+    "current_slo": null,
+    "sloText": "Logic Gates (Retired 2022 Syllabus Unit 12)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 8,
+    "unitName": "Logic Gates (Retired 2022 Syllabus Unit 12)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "A **NOT gate** (inverter) takes only a **single input** (1 input), whereas OR, AND, and XNOR gates require at least two inputs. *(Note: Logic Gates were retired from the 2025 AKU-EB Computer Science syllabus.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 33,
+    "stem": "A logic gate produces 0 in output when both the inputs are same.\n\nBased on the given description, the logic gate is",
+    "options": {
+      "A": "AND",
+      "B": "OR",
+      "C": "XOR",
+      "D": "NOR"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "12.2.4",
+    "current_slo": null,
+    "sloText": "Logic Gates (Retired 2022 Syllabus Unit 12)",
+    "cognitiveLevel": "Application",
+    "unitNumber": 8,
+    "unitName": "Logic Gates (Retired 2022 Syllabus Unit 12)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "An **Exclusive-OR (XOR)** gate outputs `0` when both inputs are identical (`0,0 -> 0` and `1,1 -> 0`) and outputs `1` when the inputs differ (`0,1 -> 1` and `1,0 -> 1`). *(Note: Logic Gates were retired from the 2025 AKU-EB Computer Science syllabus.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 34,
+    "stem": "Consider the given truth table.\n\n| Input X | Input Y | Output Z |\n| :---: | :---: | :---: |\n| 0 | 0 | 1 |\n| 0 | 1 | 0 |\n| 1 | 0 | 0 |\n| 1 | 1 | 0 |\n\nThe logic gate to which this truth table belongs to is",
+    "options": {
+      "A": "OR",
+      "B": "NOR",
+      "C": "XOR",
+      "D": "XNOR"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "12.2.5",
+    "current_slo": null,
+    "sloText": "Logic Gates & Truth Tables (Retired 2022 Syllabus Unit 12)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 8,
+    "unitName": "Logic Gates & Truth Tables (Retired 2022 Syllabus Unit 12)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The output $Z = \\overline{X + Y}$ is `1` only when both inputs are `0` and `0` for all other combinations, which is the truth table of a **NOR gate** (`B`). *(Note: Logic Gates were retired from the 2025 AKU-EB Computer Science syllabus.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 35,
+    "stem": "Consider the given image of MS Excel.\n\nThe MS Excel formula to find the brand with the lowest number of laptops sold in the month of March is",
+    "options": {
+      "A": "`= BOTTOM(Y2:Y5)`",
+      "B": "`= MIN(Z2:Z5)`",
+      "C": "`= LOW(X2:X5)`",
+      "D": "`= MINIMUM(Z2:Z5)`"
+    },
+    "correctAnswer": "B",
+    "correctOption": "B",
+    "slo": "13.1.3",
+    "current_slo": "13.2.2",
+    "sloText": "use the following digital tools in real-world tasks by applying digital literacy and creativity: a. Canva for graphic designing, b. Scratch for coding, c. Microsoft PowerPoint for creating presentations, d. Microsoft Excel for entering data or calculations, e. Microsoft Word for formatting text or using templates;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.2.2",
+        "description": "use the following digital tools in real-world tasks by applying digital literacy and creativity: a. Canva for graphic designing, b. Scratch for coding, c. Microsoft PowerPoint for creating presentations, d. Microsoft Excel for entering data or calculations, e. Microsoft Word for formatting text or using templates;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": true,
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/CS-X-2025-P1/q35.png",
+    "explanation": "In the given MS Excel sheet, the sales for the month of **March (`Mar`)** are stored in column `Z` across rows `2` to `5` (`Z2:Z5`), and the built-in Excel function for finding the smallest value in a range is **`= MIN(Z2:Z5)`**.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 36,
+    "stem": "In MS Excel, which tab contains the options to protect a worksheet?",
+    "options": {
+      "A": "View",
+      "B": "Insert",
+      "C": "Home",
+      "D": "Review"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "13.1.5",
+    "current_slo": "13.2.2",
+    "sloText": "use the following digital tools in real-world tasks by applying digital literacy and creativity: a. Canva for graphic designing, b. Scratch for coding, c. Microsoft PowerPoint for creating presentations, d. Microsoft Excel for entering data or calculations, e. Microsoft Word for formatting text or using templates;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.2.2",
+        "description": "use the following digital tools in real-world tasks by applying digital literacy and creativity: a. Canva for graphic designing, b. Scratch for coding, c. Microsoft PowerPoint for creating presentations, d. Microsoft Excel for entering data or calculations, e. Microsoft Word for formatting text or using templates;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "In Microsoft Excel, the **Review** tab on the Ribbon contains the **Protect Sheet** and **Protect Workbook** commands.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 37,
+    "stem": "Use the given excel sheet to answer this question.\n\nWhich of the following is the CORRECT formula that should be used to calculate the average test score for Frank?",
+    "options": {
+      "A": "`= AVG (B + C + D + E)`",
+      "B": "`= AVG (B7, C7, D7, E7)`",
+      "C": "`= SUM (B7:E7) / 4`",
+      "D": "`= SUM (B7 - E7) / 4`"
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "13.1.3",
+    "current_slo": "13.2.2",
+    "sloText": "use the following digital tools in real-world tasks by applying digital literacy and creativity: a. Canva for graphic designing, b. Scratch for coding, c. Microsoft PowerPoint for creating presentations, d. Microsoft Excel for entering data or calculations, e. Microsoft Word for formatting text or using templates;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.2.2",
+        "description": "use the following digital tools in real-world tasks by applying digital literacy and creativity: a. Canva for graphic designing, b. Scratch for coding, c. Microsoft PowerPoint for creating presentations, d. Microsoft Excel for entering data or calculations, e. Microsoft Word for formatting text or using templates;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": true,
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/CS-X-2025-P1/q37.png",
+    "explanation": "Frank's row is row `7`, with four completed test scores in cells `B7` through `E7`. Because Excel's built-in average function is `AVERAGE()` (not `AVG()`), the valid formula among the options is **`= SUM (B7:E7) / 4`** (`C`).",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 38,
+    "stem": "Manal is creating a spreadsheet to collect data from multiple users and she wants to ensure that the entered data meets certain criteria to maintain data integrity.\n\nA tool in spreadsheet applications that allows Manal to restrict the type of data that can be entered into specific cells is",
+    "options": {
+      "A": "data validation.",
+      "B": "unlocking cells.",
+      "C": "conditional formatting.",
+      "D": "protecting a worksheet."
+    },
+    "correctAnswer": "A",
+    "correctOption": "A",
+    "slo": "13.1.5",
+    "current_slo": "13.2.2",
+    "sloText": "use the following digital tools in real-world tasks by applying digital literacy and creativity: a. Canva for graphic designing, b. Scratch for coding, c. Microsoft PowerPoint for creating presentations, d. Microsoft Excel for entering data or calculations, e. Microsoft Word for formatting text or using templates;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.2.2",
+        "description": "use the following digital tools in real-world tasks by applying digital literacy and creativity: a. Canva for graphic designing, b. Scratch for coding, c. Microsoft PowerPoint for creating presentations, d. Microsoft Excel for entering data or calculations, e. Microsoft Word for formatting text or using templates;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "**Data validation** in Microsoft Excel restricts the type or range of values that users can enter into a cell (such as whole numbers, dates, or dropdown lists) to preserve data integrity.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 39,
+    "stem": "Which of the following authentication methodologies is depicted in the given picture?",
+    "options": {
+      "A": "Personal Identification Number",
+      "B": "Username and Password",
+      "C": "Access Card",
+      "D": "Biometrics"
+    },
+    "correctAnswer": "D",
+    "correctOption": "D",
+    "slo": "14.3.3",
+    "current_slo": null,
+    "sloText": "Authentication Methodologies (Moved to Class IX Unit 6 SLO 6.3.2 in 2025 Syllabus)",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 12,
+    "unitName": "Authentication Methodologies (Moved to Class IX Unit 6 SLO 6.3.2 in 2025 Syllabus)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "diagramBased": true,
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/CS-X-2025-P1/q39.png",
+    "explanation": "The image shows a user scanning their fingerprint on a fingerprint terminal, which is a **Biometrics** authentication methodology based on unique physiological traits. *(Note: In the 2025 AKU-EB syllabus, biometric authentication moved to Class IX Unit 6 SLO `6.3.2`.)*",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  },
+  {
+    "questionNumber": 40,
+    "stem": "The PRIMARY importance of computer security for organisations is to",
+    "options": {
+      "A": "facilitate seamless communication and collaboration.",
+      "B": "ensure compliance with industry regulations.",
+      "C": "protect sensitive data and information.",
+      "D": "enhance employee productivity."
+    },
+    "correctAnswer": "C",
+    "correctOption": "C",
+    "slo": "14.1.1",
+    "current_slo": "13.1.2",
+    "sloText": "apply digital technology tools to improve communication, security, and problem-solving in daily life;",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 13,
+    "unitName": "Digital Literacy",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "13.1.2",
+        "description": "apply digital technology tools to improve communication, security, and problem-solving in daily life;",
+        "topic": "Digital Literacy"
+      }
+    ],
+    "diagramBased": false,
+    "isDiagram": false,
+    "explanation": "The primary purpose of computer security in an organisation is to **protect sensitive data and information** (`C`) from unauthorised access, theft, corruption, or disclosure.",
+    "examYear": 2025,
+    "paperCode": "CS-X-2025-P1",
+    "original_reference_verified": true,
+    "original_reference_source": "/resources/computer-science-x-2025-key"
+  }
+]

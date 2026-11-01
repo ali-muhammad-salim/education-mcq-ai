@@ -3,6 +3,8 @@ import { PrismaClient } from '@prisma/client';
 import { getAllStandardPapers, getFallbackPaper } from '../lib/paperDataService';
 import syl9 from '../data/physics/ssc1_exact_syllabus.json';
 import syl10 from '../data/physics/ssc2_exact_syllabus.json';
+import csSyl9 from '../data/computer-science/ssc1_exact_syllabus.json';
+import csSyl10 from '../data/computer-science/ssc2_exact_syllabus.json';
 
 const prisma = new PrismaClient();
 
@@ -11,17 +13,19 @@ async function syncSyllabusForClass(
   classId: string,
   level: 9 | 10,
   units: any[],
-  fileUrl: string
+  fileUrl: string,
+  subjectName = 'Physics',
+  subjectCodePrefix = 'PHY'
 ) {
   let subject = await prisma.subject.findFirst({
-    where: { classId, name: { equals: 'Physics', mode: 'insensitive' } },
+    where: { classId, name: { equals: subjectName, mode: 'insensitive' } },
   });
   if (!subject) {
     subject = await prisma.subject.create({
       data: {
         classId,
-        name: 'Physics',
-        code: level === 9 ? 'PHY-IX' : 'PHY-X',
+        name: subjectName,
+        code: level === 9 ? `${subjectCodePrefix}-IX` : `${subjectCodePrefix}-X`,
       },
     });
   }
@@ -190,6 +194,24 @@ export async function syncAllAnalyzedMaterials() {
     syl10 as any[],
     '/materials/ssc/physics/ssc-2/physics-ssc-full-syllabus-2025.pdf'
   );
+  await syncSyllabusForClass(
+    board.id,
+    classMap.get(9)!,
+    9,
+    csSyl9 as any[],
+    '/materials/ssc/computer-science/ssc-1/computer-science-ssc-full-syllabus-2025.pdf',
+    'Computer Science',
+    'CS'
+  );
+  await syncSyllabusForClass(
+    board.id,
+    classMap.get(10)!,
+    10,
+    csSyl10 as any[],
+    '/materials/ssc/computer-science/ssc-2/computer-science-ssc-full-syllabus-2025.pdf',
+    'Computer Science',
+    'CS'
+  );
 
   // Remove legacy 2024 Chapter 1-2 past-paper compilation (PHY-IX-CHAP1-2) if present in DB
   const obsoletePapers = await prisma.pastPaper.findMany({
@@ -218,12 +240,32 @@ export async function syncAllAnalyzedMaterials() {
   }
 
   // Sync all standard Model Papers & Past Papers (including 2024 & 2025 Annual Papers I & II) and their questions
+  const csIxMeta = await syncSyllabusForClass(
+    board.id,
+    classMap.get(9)!,
+    9,
+    csSyl9 as any[],
+    '/materials/ssc/computer-science/ssc-1/computer-science-ssc-full-syllabus-2025.pdf',
+    'Computer Science',
+    'CS'
+  );
+  const csXMeta = await syncSyllabusForClass(
+    board.id,
+    classMap.get(10)!,
+    10,
+    csSyl10 as any[],
+    '/materials/ssc/computer-science/ssc-2/computer-science-ssc-full-syllabus-2025.pdf',
+    'Computer Science',
+    'CS'
+  );
+
   const papers = getAllStandardPapers();
   for (const summary of papers) {
     const full = getFallbackPaper(summary.paperCode);
     if (!full) continue;
     const level = full.academicClass.level === 10 ? 10 : 9;
-    const meta = level === 10 ? xMeta : ixMeta;
+    const isCsPaper = (full.subject?.name || '').toLowerCase() === 'computer science' || full.paperCode.startsWith('CS-');
+    const meta = isCsPaper ? (level === 10 ? csXMeta : csIxMeta) : (level === 10 ? xMeta : ixMeta);
     const classId = classMap.get(level)!;
 
     let paper = await prisma.pastPaper.findFirst({

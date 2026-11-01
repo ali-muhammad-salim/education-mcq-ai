@@ -1,0 +1,378 @@
+{
+  "title": "Notes from E-Marking Centre on SSC-I Computer Science Examination May 2017",
+  "examYear": 2017,
+  "board": "AKU-EB",
+  "classLevel": "Class IX (SSC-I)",
+  "subject": "Computer Science",
+  "sourceUrl": "/materials/ssc/computer-science/ssc-1/computer-science-ix-2017-emarking.pdf",
+  "introduction": "This document has been produced for the teachers and candidates of Secondary School Certificate (SSC-I) Computer Science. It contains comments on candidates' responses to the 2017 SSC-I Examination, indicating the quality of the responses and highlighting their relative strengths and weaknesses, along with complete 2025 Syllabus SLO mappings and solved model answers.",
+  "generalObservations": [
+    "In general, questions related to input devices (Q.2a), CPU components & generations (Q.6a, Q.6b), binary number conversions & addition (Q.3a, Q.3b), word processor & application suites (Q.4b, Q.7a), and Windows operating system (Q.4a, Q.7b) were well attempted.",
+    "Questions based on memory unit conversion (Q.2b), presentation software table rows vs columns (Q.4c), utility software (Q.5a), Disk Operating System (DOS) commands (Q.5b), and USB vs parallel computer ports (Q.6a-ii) required more targeted practice."
+  ],
+  "questions": [
+    {
+      "questionNumber": "Q.1",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Consider the types of computers and programming language translators given in the box below:\n\u2022 `Analog Computer` \u2022 `Digital Computer` \u2022 `Hybrid Computer` \u2022 `Assembler` \u2022 `Compiler` \u2022 `Interpreter`\n\nComplete each statement using an appropriate term from the box. Each term should be used only ONCE. (5 Marks)\n**i.** `_________________________` performs arithmetic and logic operations with discrete values.\n**ii.** `_________________________` translates the source code into the object code (machine code).\n**iii.** `_________________________` uses flow of electricity or mechanical motion to model problems and generate answers quickly.\n**iv.** `_________________________` checks each line of a program for possible errors and then executes that line.\n**v.** `_________________________` is the combination of analog and digital computers.",
+      "originalSlo": "1.1.2 / 1.6.3",
+      "currentSlo": "1.6.3",
+      "currentSloDescription": "describe the following types of language translators: a. compilers, b. interpreter, c. assembler;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Describe types of computers (Analog, Digital, Hybrid) and language translators (Assembler, Compiler, Interpreter);",
+      "maxMarks": 5,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for each correct term: i. Digital Computer, ii. Compiler (or Assembler), iii. Analog Computer, iv. Interpreter, v. Hybrid Computer (5 \u00d7 1 = 5 Marks)."
+      ],
+      "overallPerformance": "Most candidates performed well on computer types, though some confused Compiler and Assembler.",
+      "betterResponses": "Better responses showed good understanding of types of computers and programming language translators and matched all five statements accurately.",
+      "weakerResponses": "Weaker responses wrote Assembler in place of Compiler and swapped Analog and Digital computers.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q1_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q1_weaker.png",
+      "suggestions": [
+        "Reinforce the distinction between Compiler (translates high-level source code to object code) and Interpreter (checks and executes line by line)."
+      ],
+      "modelAnswer": "**i.** **`Digital Computer`** performs arithmetic and logic operations with discrete values.\n**ii.** **`Compiler`** *(or **`Assembler`**)* translates the source code into the object code (machine code).\n**iii.** **`Analog Computer`** uses flow of electricity or mechanical motion to model problems and generate answers quickly.\n**iv.** **`Interpreter`** checks each line of a program for possible errors and then executes that line.\n**v.** **`Hybrid Computer`** is the combination of analog and digital computers."
+    },
+    {
+      "questionNumber": "Q.2a",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Describe an appropriate purpose of each of the following input devices:\n\u2022 **Voice Synthesiser**\n\u2022 **Mouse**\n\u2022 **Keyboard** (3 Marks)",
+      "originalSlo": "3.1.1",
+      "currentSlo": "1.2.1",
+      "currentSloDescription": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Define various input and output devices, including keyboards, touchscreen, pointing devices, audio devices, and display screens;",
+      "maxMarks": 3,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark each for describing the purpose of Voice Synthesiser (takes voice/audio input and converts into digital data), Mouse (pointing device to select/click/drag items), and Keyboard (enters text/numbers/commands)."
+      ],
+      "overallPerformance": "Candidates answered Mouse and Keyboard well, while many struggled to articulate how a Voice Synthesiser captures audio input as digital data.",
+      "betterResponses": "Better responses wrote to-the-point purposes: Voice Synthesiser takes voice as input and transfers it into the computer as digital data, Mouse selects/drags icons and commands, and Keyboard enters textual data.",
+      "weakerResponses": "Weaker responses wrote vague statements like 'Mouse opens and closes software and is cheap in price'.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q2a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q2a_weaker.png",
+      "suggestions": [
+        "Explain audio input/output devices (Microphone, Voice Recognition/Synthesiser, Speakers) clearly with signal conversion steps."
+      ],
+      "modelAnswer": "### Part a: Purpose of Input Devices (3 Marks \u2014 1 Mark Each)\n1. **Voice Synthesiser / Voice Recognition Input (1 Mark):** Captures spoken human voice (audio signals) and converts it into electrical/digital data that the computer can process or use to execute voice commands.\n2. **Mouse (1 Mark):** A handheld **pointing device** used to move the cursor/pointer on the screen, select icons, open files/folders, and drag-and-drop objects in a Graphical User Interface.\n3. **Keyboard (1 Mark):** The primary text input device containing alphanumeric, punctuation, and function keys used to **enter textual, numeric, and symbolic data** and commands into the computer."
+    },
+    {
+      "questionNumber": "Q.2b",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "There are some video files and the size of each file is 64 megabyte (MB). How many of these video files can be stored in 1 gigabyte (GB) storage capacity of a flash drive? Show your working. (2 Marks)",
+      "originalSlo": "4.1.2",
+      "currentSlo": "1.3.1",
+      "currentSloDescription": "distinguish among the memory measuring units such as bits, bytes, kilobytes, megabytes, and gigabytes in computer memory;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Distinguish among the memory measuring units such as bits, bytes, kilobytes, megabytes, and gigabytes in computer memory;",
+      "maxMarks": 2,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark for converting 1 GB = 1024 MB.",
+        "1 mark for dividing 1024 / 64 = 16 video files."
+      ],
+      "overallPerformance": "Memory unit conversion required more practice as several candidates used 1 GB = 1000 MB instead of 1024 MB.",
+      "betterResponses": "Better responses converted 1 GB into 1024 MB as a first step and then divided 1024 by 64 to get 16 video files.",
+      "weakerResponses": "Weaker responses used 1 GB = 1000 MB instead of 1024 MB (getting 15 files with 40 MB remaining).",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q2b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q2b_weaker.png",
+      "suggestions": [
+        "Emphasise binary memory conversion factors ($2^{10} = 1024$) across KB, MB, GB, and TB."
+      ],
+      "modelAnswer": "### Part b: Number of 64 MB Video Files in a 1 GB Flash Drive (2 Marks)\n1. Convert flash drive capacity from Gigabytes (GB) to Megabytes (MB):\n   $$1\\text{ GB} = 1024\\text{ MB}$$\n2. Divide total storage capacity by the size of each video file ($64\\text{ MB}$):\n   $$\\text{Number of files} = \\frac{1024\\text{ MB}}{64\\text{ MB}} = 16\\text{ video files}$$"
+    },
+    {
+      "questionNumber": "Q.3a",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Convert the given byte into equivalent hexadecimal number. Show your working. (2 Marks)\n$$(10111100)_2$$",
+      "originalSlo": "5.1.2",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy Number Systems)",
+      "outOfSyllabus": true,
+      "sloText": "Convert binary numbers into hexadecimal numbers and vice versa;",
+      "maxMarks": 2,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark for splitting into 4-bit groups (`1011 = 11 = B`, `1100 = 12 = C`).",
+        "1 mark for writing `(BC)\u2081\u2086`."
+      ],
+      "overallPerformance": "Well attempted by candidates who grouped the byte into two 4-bit nibbles.",
+      "betterResponses": "Better responses made two groups of 4 bits (`1011 = 11 = B` and `1100 = 12 = C`) and wrote `(BC)\u2081\u2086`.",
+      "weakerResponses": "Weaker responses converted the binary number to decimal (`188`) and wrote `(188)\u2081\u2086` without converting from decimal to hexadecimal.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q3a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q3a_weaker.png",
+      "suggestions": [
+        "Teach the direct 4-bit nibble grouping method for fast, error-free binary-to-hexadecimal conversion."
+      ],
+      "modelAnswer": "### Part a: Binary $(10111100)_2$ to Hexadecimal Conversion (2 Marks)\n1. Split the 8-bit byte into two 4-bit nibbles from right to left:\n   $$\\underbrace{1011}_{\\text{Left nibble}} \\quad \\underbrace{1100}_{\\text{Right nibble}}$$\n2. Convert each 4-bit group to its decimal and hexadecimal equivalent:\n   - $1011_2 = (1 \\times 8) + (0 \\times 4) + (1 \\times 2) + (1 \\times 1) = 11_{10} = \\mathbf{B_{16}}$\n   - $1100_2 = (1 \\times 8) + (1 \\times 4) + (0 \\times 2) + (0 \\times 1) = 12_{10} = \\mathbf{C_{16}}$\n3. Combine the hexadecimal digits:\n   $$(10111100)_2 = (\\mathbf{BC})_{16}$$"
+    },
+    {
+      "questionNumber": "Q.3b",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Show that addition of two binary numbers, $10010011$ and $01101100$, gives a result which is equal to $255$ in decimal number system. (2 Marks)",
+      "originalSlo": "5.2.2",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy Binary Arithmetic)",
+      "outOfSyllabus": true,
+      "sloText": "Perform binary addition and verify the sum in decimal;",
+      "maxMarks": 2,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark for binary addition yielding `(11111111)\u2082`.",
+        "1 mark for converting `(11111111)\u2082` to `255\u2081\u2080` (or converting 255 to `11111111\u2082`)."
+      ],
+      "overallPerformance": "Well attempted by the majority of the cohort.",
+      "betterResponses": "Better responses added the binary numbers to get `(11111111)\u2082` and verified that $128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255$.",
+      "weakerResponses": "Weaker responses misread 255 as 225 or made addition errors.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q3b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q3b_weaker.png",
+      "suggestions": [
+        "Practise 8-bit binary addition and powers-of-two verification."
+      ],
+      "modelAnswer": "### Part b: Binary Addition & Decimal Verification (2 Marks)\n**Step 1: Add the two binary numbers:**\n```text\n    1 0 0 1 0 0 1 1   (147 in decimal)\n  + 0 1 1 0 1 1 0 0   (108 in decimal)"
+    },
+    {
+      "questionNumber": "Q.4a",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Recycle Bin and Internet Explorer are two icons on the Windows desktop.\nDescribe ONE major purpose of each of them. (2 Marks)",
+      "originalSlo": "7.1.3",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy Windows Desktop Icons)",
+      "outOfSyllabus": true,
+      "sloText": "Describe the purpose of standard Windows desktop icons (Recycle Bin, My Computer, My Documents, Internet Explorer);",
+      "maxMarks": 2,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for Recycle Bin (stores deleted files so they can be restored or permanently deleted).",
+        "1 mark for Internet Explorer (web browser used to browse/search information on the internet)."
+      ],
+      "overallPerformance": "Well attempted by most candidates.",
+      "betterResponses": "Better responses stated that Recycle Bin stores deleted files so they can be restored and Internet Explorer is used for browsing the internet.",
+      "weakerResponses": "Weaker responses claimed that Recycle Bin 'recycles things to make the computer faster'.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q4a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q4a_weaker.png",
+      "suggestions": [
+        "Demonstrate restoring a deleted file from the Recycle Bin in class."
+      ],
+      "modelAnswer": "### Part a: Purpose of Recycle Bin and Internet Explorer (2 Marks)\n- **Recycle Bin (1 Mark):** Temporarily stores files and folders that have been deleted by the user, allowing accidentally deleted items to be **restored** to their original location or permanently erased.\n- **Internet Explorer (1 Mark):** A **web browser** application used to access, view, and navigate websites and search for information on the World Wide Web / Internet."
+    },
+    {
+      "questionNumber": "Q.4b",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Nimra has prepared lecture notes using MS Word and she wants to exit from the MS Word file.\nWrite any TWO appropriate ways that can help Nimra to exit out from the MS Word file. (2 Marks)",
+      "originalSlo": "8.1.2",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy MS Word Operations)",
+      "outOfSyllabus": true,
+      "sloText": "Open, save, and close/exit documents in MS Word;",
+      "maxMarks": 2,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark each for any TWO valid methods (`Alt + F4`, clicking the top-right `[X]` Close button, or clicking File / Office button -> Exit)."
+      ],
+      "overallPerformance": "Good performance among candidates familiar with Windows applications.",
+      "betterResponses": "Better responses wrote pressing `Alt + F4` and clicking the `[X]` close button at the top-right corner of the screen.",
+      "weakerResponses": "Weaker responses wrote `File -> New` or `Ctrl + N`.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q4b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q4b_weaker.png",
+      "suggestions": [
+        "Practise standard window management shortcuts (`Alt + F4`, `Ctrl + W`, `Ctrl + O`, `Ctrl + S`)."
+      ],
+      "modelAnswer": "### Part b: TWO Ways to Exit an MS Word File (2 Marks \u2014 1 Mark Each)\n1. Press the **`Alt + F4`** (or `Ctrl + W`) keyboard shortcut.\n2. Click the **Close (`X`) button** in the top-right corner of the MS Word window (or click **File / Office Button \u2192 Exit / Close**)."
+    },
+    {
+      "questionNumber": "Q.4c",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "**i.** Omar wants to open an MS PowerPoint file. Write the keyboard shortcut that he can use to open the MS PowerPoint file. (1 Mark)\n**ii.**\n\n| Student ID | Student Name | Class | Fee Paid |\n| :--- | :--- | :--- | :--- |\n| H110 | Adeel Ahmed | XI | Yes |\n| H111 | Saima Jamil | XI | Yes |\n| H112 | Faheem Arshad | XI | No |\n| H113 | Sidra Zafar | XII | No |\n\nTo insert the above given table in MS PowerPoint, write the minimum number of rows and columns in the given `Insert Table` dialog image (`Number of columns:`, `Number of rows:`). (1 Mark)",
+      "originalSlo": "9.1.2",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy MS PowerPoint Tables)",
+      "outOfSyllabus": true,
+      "diagramUrl": "/paper-crops/CS-IX-2017-P2/q4c.png",
+      "sloText": "Open presentations and insert tables with specified rows and columns in MS PowerPoint;",
+      "maxMarks": 2,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "Part i: 1 mark for `Ctrl + O`.",
+        "Part ii: 1 mark for `Number of columns: 4` and `Number of rows: 5`."
+      ],
+      "overallPerformance": "Many candidates swapped rows and columns or forgot to count the header row.",
+      "betterResponses": "Better responses wrote `Ctrl + O` for (i) and `04` columns and `05` rows for (ii).",
+      "weakerResponses": "Weaker responses wrote `F7 or F10` for (i) and `5` columns and `4` rows for (ii).",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q4c_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q4c_weaker.png",
+      "suggestions": [
+        "Remind students to count the table header row when determining total rows (1 header row + 4 data rows = 5 rows; 4 vertical fields = 4 columns)."
+      ],
+      "modelAnswer": "### Part c: MS PowerPoint Open Shortcut & Insert Table Dimensions (2 Marks)\n- **i. Keyboard Shortcut to Open an MS PowerPoint File (1 Mark):** **`Ctrl + O`**\n- **ii. Minimum Number of Columns and Rows in `Insert Table` Dialog (1 Mark):**\n  - **Number of columns:** **`4`** *(Student ID, Student Name, Class, Fee Paid)*\n  - **Number of rows:** **`5`** *(1 header row + 4 student data rows)*"
+    },
+    {
+      "questionNumber": "Q.5a",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Describe the purpose of each of the following:\ni. Utility Software (1 Mark)\nii. User Interface (1 Mark)",
+      "originalSlo": "7.1.1",
+      "currentSlo": "1.5.2",
+      "currentSloDescription": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+      "maxMarks": 2,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for Utility Software purpose (configures, optimises, and analyses the computer system).",
+        "1 mark for User Interface purpose (allows interaction/commands between user and machine)."
+      ],
+      "overallPerformance": "Moderately well attempted.",
+      "betterResponses": "Better responses explained that utility software configures, optimises, and analyses the computer system (e.g., Antivirus, WinRAR) and user interface allows the user to send commands to the computer.",
+      "weakerResponses": "Weaker responses only listed examples without stating the purpose.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q5a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q5a_weaker.png",
+      "suggestions": [
+        "Emphasise clear functional definitions of system software categories before listing examples."
+      ],
+      "modelAnswer": "### Part a: Purpose of Utility Software and User Interface (2 Marks)\n- **i. Utility Software (1 Mark):** System software used to **configure, analyse, optimise, maintain, and protect** the computer system (such as antivirus software, backup utilities, file archivers like WinRAR/WinZip, and disk defragmenters).\n- **ii. User Interface (1 Mark):** The communication bridge between the **user and the computer hardware/operating system** that allows users to issue commands and interact with programs (e.g., CLI or GUI)."
+    },
+    {
+      "questionNumber": "Q.5b",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "In disk operating system (DOS), users have to perform each task by using commands.\nWrite appropriate DOS commands to solve the given problems.\ni. Change present working directory from `C:\\DOS` to `C:\\GAMES\\PACEM` (1 Mark)\nii. Display the MS DOS version number on the screen of the monitor. (1 Mark)\niii. Delete a file named `CAT.TMP` from the `TEST` directory on drive `C`. (1 Mark)",
+      "originalSlo": "7.2.2",
+      "currentSlo": null,
+      "currentSloDescription": null,
+      "currentTopic": "Out of 2025 Syllabus (Legacy MS-DOS Commands)",
+      "outOfSyllabus": true,
+      "sloText": "Apply MS-DOS commands (CD, VER, DEL) with directory paths;",
+      "maxMarks": 3,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "1 mark for `CD C:\\GAMES\\PACEM`.",
+        "1 mark for `VER`.",
+        "1 mark for `DEL C:\\TEST\\CAT.TMP`."
+      ],
+      "overallPerformance": "There were very few better responses for this DOS command syntax question.",
+      "betterResponses": "Better responses wrote the exact commands including paths: `CD C:\\GAMES\\PACEM`, `VER`, and `DEL C:\\TEST\\CAT.TMP`.",
+      "weakerResponses": "Weaker responses wrote `DIR` instead of `CD` and `DIS/MSDOS version` instead of `VER`.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q5b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q5b_weaker.png",
+      "suggestions": [
+        "Practise command-line directory navigation and file deletion with full paths."
+      ],
+      "modelAnswer": "### Part b: MS-DOS Commands (3 Marks \u2014 1 Mark Each)\n- **i. Change working directory from `C:\\DOS` to `C:\\GAMES\\PACEM`:**\n```text\nCD C:\\GAMES\\PACEM\n```\n- **ii. Display the MS-DOS version number on the screen:**\n```text\nVER\n```\n- **iii. Delete file `CAT.TMP` from the `TEST` directory on drive `C`:**\n```text\nDEL C:\\TEST\\CAT.TMP\n```"
+    },
+    {
+      "questionNumber": "Q.6a",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. Describe the purpose of **central processing unit (CPU)**, **control unit (CU)**, **memory unit (MU)** and **arithmetic logic unit (ALU)** in a computer system? (4 Marks)\nii. Write any THREE advantages of using **universal serial bus (USB) port** over **parallel port**? (3 Marks)",
+      "originalSlo": "2.1.1 / 2.1.5",
+      "currentSlo": "1.2.4",
+      "currentSloDescription": "illustrate the Von Neumann Architecture using a block diagram;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Illustrate the Von Neumann Architecture (CPU, CU, ALU, Memory Unit) and compare computer ports;",
+      "maxMarks": 7,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "Part i: 1 mark each for describing CPU, Control Unit (CU), Memory Unit (MU), and Arithmetic Logic Unit (ALU) (4 Marks).",
+        "Part ii: 1 mark each for THREE advantages of USB port over parallel port (faster transfer, smaller/compact, plug-and-play, supplies power = 3 Marks)."
+      ],
+      "overallPerformance": "Candidates performed well on part (i), but many confused a USB port with a USB flash drive in part (ii).",
+      "betterResponses": "Better responses described CPU, CU, ALU, and MU accurately and stated that USB ports transfer data faster than parallel ports, have no pin-breakage issues, and supply power to connected devices.",
+      "weakerResponses": "Weaker responses confused a USB port with a USB flash drive, writing 'to store data in a USB and carry it anywhere'.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q6a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q6a_weaker.png",
+      "suggestions": [
+        "Clarify the difference between a **USB Port** (motherboard interface socket) and a **USB Flash Drive** (secondary storage device that plugs into a USB port)."
+      ],
+      "modelAnswer": "### Part a: CPU/Memory Units & USB vs Parallel Ports (7 Marks)\n**i. Purpose of CPU, Control Unit (CU), Memory Unit (MU), and Arithmetic Logic Unit (ALU) (4 Marks \u2014 1 Mark Each):**\n- **Central Processing Unit (CPU):** The primary processing unit ('brain' of the computer) mounted on the motherboard that fetches, decodes, and executes program instructions and coordinates all connected subsystems.\n- **Control Unit (CU):** Directs and coordinates the operations of the entire processor and computer system by interpreting instructions and issuing timing and control signals.\n- **Memory Unit (MU):** Stores data, active program instructions, and intermediate/final processing results (comprising volatile RAM and non-volatile ROM).\n- **Arithmetic Logic Unit (ALU):** Performs all mathematical operations (`+`, `-`, `\u00d7`, `\u00f7`) and logical comparisons (`<`, `>`, `=`, `AND`, `OR`, `NOT`).\n\n**ii. THREE Advantages of Universal Serial Bus (USB) Port over Parallel Port (3 Marks \u2014 1 Mark Each):**\n1. **Much Higher Data Transfer Speed:** USB interfaces (USB 2.0/3.0+) transfer data at hundreds of Mbps to multiple Gbps, far faster than legacy parallel printer ports.\n2. **Compact Size, Plug-and-Play & Hot-Swappable:** USB connectors are compact and support automatic Plug-and-Play detection without restarting the computer.\n3. **Universal Device Support & Power Delivery:** A single USB standard connects diverse peripherals (keyboards, mice, printers, cameras, smartphones, flash drives) and supplies electrical power/charging over the same cable."
+    },
+    {
+      "questionNumber": "Q.6b",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. There are FIVE generations of computers till date. Name the major technologies used in **third**, **fourth** and **fifth** generation of computers? (3 Marks)\nii. Write any THREE advantages of using **transistors** instead of **vacuum tubes** in second generation of computers as major technology. (3 Marks)\niii. State the **John von Neumann theory** which became the basis of modern computer systems? (1 Mark)",
+      "originalSlo": "1.1.2 / 1.1.1",
+      "currentSlo": "1.2.4",
+      "currentSloDescription": "illustrate the Von Neumann Architecture using a block diagram;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Illustrate the Von Neumann stored-program architecture and compare technologies across computer generations;",
+      "maxMarks": 7,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "Part i: 1 mark each for 3rd generation = Integrated Circuits (IC), 4th generation = Microprocessor, 5th generation = Artificial Intelligence (AI) (3 Marks).",
+        "Part ii: 1 mark each for THREE advantages of transistors over vacuum tubes (smaller size, faster, less heat/power, do not burn out easily = 3 Marks).",
+        "Part iii: 1 mark for stating John von Neumann's stored-program theory (programs and data are stored together in main memory)."
+      ],
+      "overallPerformance": "Most of the candidates opted for Part (b) of Q.6 and performed well.",
+      "betterResponses": "Better responses named IC, Microprocessor, and AI for 3rd, 4th, and 5th generations, gave three clear advantages of transistors over vacuum tubes, and stated that John von Neumann proposed placing programs and data together in memory.",
+      "weakerResponses": "Weaker responses confused generation technologies with storage media (writing 'hard disk, floppy disk, CD/DVD') and wrote that Von Neumann invented algorithms or ALU.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q6b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q6b_weaker.png",
+      "suggestions": [
+        "Reinforce the core statement of the Von Neumann Stored-Program Architecture."
+      ],
+      "modelAnswer": "### Part b: Computer Generations, Transistors vs Vacuum Tubes, & Von Neumann Theory (7 Marks)\n**i. Major Technologies Used in 3rd, 4th, and 5th Generation Computers (3 Marks \u2014 1 Mark Each):**\n- **Third Generation:** **Integrated Circuits (ICs)** *(SSI / MSI silicon chips)*\n- **Fourth Generation:** **VLSI Microprocessors** *(Very Large Scale Integration)*\n- **Fifth Generation:** **ULSI (Ultra Large Scale Integration) & Artificial Intelligence (AI)** / Parallel Processing\n\n**ii. THREE Advantages of Transistors over Vacuum Tubes (3 Marks \u2014 1 Mark Each):**\n1. **Much Smaller Size:** One tiny solid-state transistor replaced bulky glass vacuum tubes, drastically reducing computer size.\n2. **Faster Operating Speed & Higher Reliability:** Transistors switch states much faster (microseconds) and do not have fragile filaments that burn out frequently.\n3. **Lower Power Consumption & Less Heat:** Transistors consume far less electricity and generate much less heat than glowing vacuum tubes.\n\n**iii. John von Neumann Stored-Program Theory (1 Mark):**\n- John von Neumann proposed the **Stored-Program Concept**, which states that **both program instructions and the data they operate on should be stored together in the same read/write main memory (RAM)** in binary form so the CPU can fetch and execute instructions sequentially."
+    },
+    {
+      "questionNumber": "Q.7a",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "A family purchases three new PCs and installs an integrated software package which includes the features of **word processing**, **spread sheet**, **presentation** and **database**. Explain in detail how this integrated software package would help this family in performing different tasks. (8 Marks)",
+      "originalSlo": "7.1.1",
+      "currentSlo": "1.5.3",
+      "currentSloDescription": "describe the purpose of the following application software: a. word processor, b. spreadsheet, c. database management, d. presentation/ desktop publication, e. communication, f. entertainment;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Describe the purpose of the following application software: a. word processor, b. spreadsheet, c. database management, d. presentation/desktop publication;",
+      "maxMarks": 8,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "2 marks each for explaining how Word Processing, Spreadsheet, Presentation, and Database software help the family perform specific tasks (4 \u00d7 2 = 8 Marks)."
+      ],
+      "overallPerformance": "Candidates attempted both parts of Q.7 almost equally, with stronger performance in Part (a).",
+      "betterResponses": "Better responses explained how all four applications help the family: Word processor for children's homework/assignments, Presentation software for school/job slides, Spreadsheet for monthly household expenses/rent/charts, and Database for storing and backing up family business records.",
+      "weakerResponses": "Weaker responses wrote repetitive generalities ('integrated software stores huge data') without explaining the specific tasks handled by each of the four applications.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q7a_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q7a_weaker.png",
+      "suggestions": [
+        "Use real-world household and business scenarios to illustrate Word Processor, Spreadsheet, Presentation, and Database applications."
+      ],
+      "modelAnswer": "### Part a: How an Integrated Office Suite Helps a Family (8 Marks \u2014 2 Marks per Software)\n1. **Word Processing Software (e.g., MS Word) (2 Marks):**\n   - Helps family members type, edit, spell-check, and format school assignments, essays, resumes/CVs, formal letters, and household checklists.\n2. **Spreadsheet Software (e.g., MS Excel) (2 Marks):**\n   - Helps parents track monthly household budgets, utility bills, income vs expenses, savings, and family business calculations using automated formulas (`SUM`, `AVERAGE`) and expense charts.\n3. **Presentation Software (e.g., MS PowerPoint) (2 Marks):**\n   - Helps children and working parents create visual multimedia slide presentations with images, charts, and animations for school projects, university seminars, or office meetings.\n4. **Database Management Software (e.g., MS Access) (2 Marks):**\n   - Helps the family or a home-based family business store, organise, search, and back up structured records such as customer contacts, inventory logs, medical records, or address books."
+    },
+    {
+      "questionNumber": "Q.7b",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. 'Disc operating system (DOS) is almost replaced by the Windows.' Justify this replacement by providing any FIVE valid reasons. (5 Marks)\nii. **System software** and **application software** are TWO major types of software in computer system. Describe each type of software and give an example of system software. (3 Marks)",
+      "originalSlo": "7.1.2 / 7.1.1",
+      "currentSlo": "1.5.1",
+      "currentSloDescription": "compare system software and application software, highlighting their roles in a computer system;",
+      "currentTopic": "The Computer System",
+      "outOfSyllabus": false,
+      "sloText": "Compare system software and application software highlighting their roles, and compare GUI (Windows) with CLI (DOS);",
+      "maxMarks": 8,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "Part i: 1 mark each for any FIVE valid reasons why Windows replaced DOS (5 Marks).",
+        "Part ii: 1 mark for describing System Software + 1 mark for describing Application Software + 1 mark for a valid example of System Software (e.g., MS Windows, DOS, Linux) (3 Marks)."
+      ],
+      "overallPerformance": "Good performance on Windows vs DOS reasons, though several weaker candidates gave an example of application software instead of system software.",
+      "betterResponses": "Better responses gave five valid reasons for Windows replacing DOS (multitasking, colourful GUI, icons on screen, time-sharing, easy mouse operation) and defined System Software (with example MS Windows/DOS) and Application Software (with example MS Word/PowerPoint).",
+      "weakerResponses": "Weaker responses wrote 'MS Word' as an example of system software.",
+      "betterResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q7b_better.png",
+      "weakerResponseImage": "/paper-crops/CS-IX-2017-EMARKING/q7b_weaker.png",
+      "suggestions": [
+        "Ensure students can clearly classify Operating Systems (Windows, Linux, macOS, DOS) under System Software and Office suites (Word, Excel, PowerPoint) under Application Software."
+      ],
+      "modelAnswer": "### Part b: Why Windows Replaced DOS (5M) & System vs Application Software (3M) (8 Marks)\n**i. FIVE Reasons Why Windows Replaced MS-DOS (5 Marks \u2014 1 Mark Each):**\n1. **Intuitive Graphical User Interface (GUI):** Windows uses visual icons, menus, and windows (`WIMP`) instead of requiring users to memorise complex text commands on a black screen.\n2. **True Multitasking:** Windows allows users to run multiple programs simultaneously in separate windows, whereas DOS runs only one program at a time.\n3. **Mouse & Touchscreen Navigation:** Windows supports easy point-and-click mouse interaction, whereas DOS relies entirely on keyboard typing.\n4. **Automatic Plug and Play (PnP) Hardware Support:** Windows automatically detects and installs drivers for new peripherals, unlike manual configuration in DOS.\n5. **Rich Multimedia & Networking Capabilities:** Windows supports modern audio, high-definition video, colour graphics, printers, and internet/LAN networking out of the box.\n\n**ii. System Software vs Application Software (3 Marks):**\n- **System Software (1 Mark):** Software designed to control, manage, and coordinate computer hardware resources and provide a platform for running application software.\n- **Application Software (1 Mark):** Software designed to help end-users perform specific productive, educational, or entertainment tasks (e.g., MS Word, MS Excel, web browsers).\n- **Example of System Software (1 Mark):** **Operating System** *(e.g., Microsoft Windows, Linux, macOS, MS-DOS)*, **Device Drivers**, or **Utility Programs** *(Antivirus)*."
+    }
+  ]
+}

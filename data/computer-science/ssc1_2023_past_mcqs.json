@@ -39,7 +39,7 @@
       "D": "Fourth generation"
     },
     "correctOption": "D",
-    "explanation": "Fourth-generation computers (1971–present) use VLSI microprocessors and modern high-level / object-oriented and scripting programming languages such as Python, Java, C++, and SQL.",
+    "explanation": "Fourth-generation computers (1971\u2013present) use VLSI microprocessors and modern high-level / object-oriented and scripting programming languages such as Python, Java, C++, and SQL.",
     "option_feedback": [
       {
         "key": "A",
@@ -63,16 +63,16 @@
     "chapter": "The Computer System",
     "slo": "1.3.5",
     "original_slo": "1.3.5",
-    "current_slo": "1.4.1",
+    "current_slo": "1.2.3",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -82,8 +82,8 @@
     },
     "current_mapping": [
       {
-        "code": "1.4.1",
-        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
+        "code": "1.2.3",
+        "description": "describe primary and secondary storage devices based on location, cost, capacity, access time, data processing method, and storage technology such as semiconductor (SSD), magnetic (HDD), and optical;",
         "topic": "The Computer System"
       }
     ],
@@ -125,10 +125,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -139,7 +139,7 @@
     "current_mapping": [
       {
         "code": "1.2.1",
-        "description": "describe input and output devices and their uses in daily life;",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
         "topic": "The Computer System"
       }
     ],
@@ -182,9 +182,9 @@
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -193,7 +193,7 @@
       "subject": "Computer Science"
     },
     "current_mapping": [],
-    "stem": "Consider the following properties.\n• Introduced in 1960s\n• Executes billions of instructions per second\n• Used in the organisations that has hundreds of users\nThe type of digital computer that has the given properties is",
+    "stem": "Consider the following properties.\n\u2022 Introduced in 1960s\n\u2022 Executes billions of instructions per second\n\u2022 Used in the organisations that has hundreds of users\nThe type of digital computer that has the given properties is",
     "options": {
       "A": "minicomputer.",
       "B": "supercomputer.",
@@ -225,16 +225,16 @@
     "chapter": "The Computer System",
     "slo": "1.3.7",
     "original_slo": "1.3.7",
-    "current_slo": "1.4.1",
+    "current_slo": null,
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -242,14 +242,8 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.4.1",
-        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
-        "topic": "The Computer System"
-      }
-    ],
-    "stem": "Consider the following properties.\n• Faster than other levels of cache memory.\n• Present inside the microprocessor.\nWhich of the following level(s) of cache memory BEST describe(s) the given properties?\nI. Level 1\nII. Level 2\nIII. Level 3",
+    "current_mapping": [],
+    "stem": "Consider the following properties.\n\u2022 Faster than other levels of cache memory.\n\u2022 Present inside the microprocessor.\nWhich of the following level(s) of cache memory BEST describe(s) the given properties?\nI. Level 1\nII. Level 2\nIII. Level 3",
     "options": {
       "A": "I only",
       "B": "III only",
@@ -343,10 +337,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -357,7 +351,7 @@
     "current_mapping": [
       {
         "code": "1.2.1",
-        "description": "describe input and output devices and their uses in daily life;",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
         "topic": "The Computer System"
       }
     ],
@@ -399,10 +393,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -413,7 +407,7 @@
     "current_mapping": [
       {
         "code": "1.2.1",
-        "description": "describe input and output devices and their uses in daily life;",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
         "topic": "The Computer System"
       }
     ],
@@ -455,10 +449,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -469,7 +463,7 @@
     "current_mapping": [
       {
         "code": "1.2.1",
-        "description": "describe input and output devices and their uses in daily life;",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
         "topic": "The Computer System"
       }
     ],
@@ -511,10 +505,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -525,7 +519,7 @@
     "current_mapping": [
       {
         "code": "1.2.2",
-        "description": "describe types of sensors and their applications;",
+        "description": "identify the use of types of sensors, i.e., temperature, moisture, light, infra-red, pressure, sound/ acoustic, gas and pH;",
         "topic": "The Computer System"
       }
     ],
@@ -568,9 +562,9 @@
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -586,10 +580,22 @@
       "C": "I and II.",
       "D": "II and III."
     },
-    "correctOption": "",
-    "explanation": "The official answer key prints * for this question. No single answer is scored.",
-    "option_feedback": [],
-    "answer_review_note": "The board key prints *; this question needs educator review before automatic grading."
+    "correctOption": "A",
+    "explanation": "A System Analyst investigates system problems, analyses data processing requirements, and designs/plans the system solution (II and III), whereas writing actual program code (I only) is the responsibility of a Computer Programmer / Software Developer. (Note: Marked '*' in the official 2023 AKU-EB key.)",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Investigating the problem and planning the solution (III) is a primary responsibility of a system analyst."
+      },
+      {
+        "key": "C",
+        "reason": "Analysing data processing requirements (II) is a core duty of a system analyst."
+      },
+      {
+        "key": "D",
+        "reason": "Both II and III are core responsibilities of a system analyst, whereas the question asks for EXCEPT."
+      }
+    ]
   },
   {
     "questionNumber": 12,
@@ -879,16 +885,16 @@
     "chapter": "The Computer System",
     "slo": "3.1.1",
     "original_slo": "3.1.1",
-    "current_slo": null,
+    "current_slo": "1.5.3",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -896,7 +902,13 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [],
+    "current_mapping": [
+      {
+        "code": "1.5.3",
+        "description": "describe the purpose of the following application software: a. word processor, b. spreadsheet, c. database management, d. presentation/ desktop publication, e. communication, f. entertainment;",
+        "topic": "The Computer System"
+      }
+    ],
     "stem": "Which of the following are the features of a word processor?\nI. Spell check of words\nII. Inserting pictures and tables\nIII. Changing the page orientation\nIV. Data filtering and visualisation",
     "options": {
       "A": "I and IV",
@@ -936,9 +948,9 @@
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -986,9 +998,9 @@
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1009,11 +1021,11 @@
     "option_feedback": [
       {
         "key": "A",
-        "reason": "Legal is a paper size (8.5 × 14 inches), not a page orientation."
+        "reason": "Legal is a paper size (8.5 \u00d7 14 inches), not a page orientation."
       },
       {
         "key": "B",
-        "reason": "Letter is a paper size (8.5 × 11 inches), not a page orientation."
+        "reason": "Letter is a paper size (8.5 \u00d7 11 inches), not a page orientation."
       },
       {
         "key": "C",
@@ -1036,9 +1048,9 @@
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1079,16 +1091,16 @@
     "chapter": "The Computer System",
     "slo": "4.4.2",
     "original_slo": "4.4.2",
-    "current_slo": "1.7.3",
+    "current_slo": null,
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1096,13 +1108,7 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.7.3",
-        "description": "describe transmission impairments (attenuation, distortion, and noise/crosstalk) and communication performance metrics (bandwidth, data rate, baud rate, and SNR);",
-        "topic": "The Computer System"
-      }
-    ],
+    "current_mapping": [],
     "stem": "If the bit rate of the signal is 2000 bps and each signal unit carries 2 bits, then the baud rate of the signal will be",
     "options": {
       "A": "1000",
@@ -1119,7 +1125,7 @@
       },
       {
         "key": "C",
-        "reason": "4000 incorrectly multiplies 2000 × 2 instead of dividing bit rate by bits per symbol."
+        "reason": "4000 incorrectly multiplies 2000 \u00d7 2 instead of dividing bit rate by bits per symbol."
       },
       {
         "key": "D",
@@ -1135,16 +1141,16 @@
     "chapter": "The Computer System",
     "slo": "4.4.3",
     "original_slo": "4.4.3",
-    "current_slo": "1.4.1",
+    "current_slo": null,
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1152,13 +1158,7 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.4.1",
-        "description": "differentiate between primary (RAM, ROM, Cache) and secondary memory/storage devices;",
-        "topic": "The Computer System"
-      }
-    ],
+    "current_mapping": [],
     "stem": "1 MiB (Mebibyte) is equal to",
     "options": {
       "A": "1000 bytes.",
@@ -1167,7 +1167,7 @@
       "D": "1048576 bytes."
     },
     "correctOption": "D",
-    "explanation": "1 Mebibyte (1 MiB) = 2^20 bytes = 1024 KiB = 1024 × 1024 bytes = 1,048,576 bytes.",
+    "explanation": "1 Mebibyte (1 MiB) = 2^20 bytes = 1024 KiB = 1024 \u00d7 1024 bytes = 1,048,576 bytes.",
     "option_feedback": [
       {
         "key": "A",
@@ -1179,7 +1179,7 @@
       },
       {
         "key": "C",
-        "reason": "1,000,000 bytes equals 1 decimal Megabyte (10^6 bytes), whereas 1 binary Mebibyte is 1024 × 1024 = 1,048,576 bytes."
+        "reason": "1,000,000 bytes equals 1 decimal Megabyte (10^6 bytes), whereas 1 binary Mebibyte is 1024 \u00d7 1024 = 1,048,576 bytes."
       }
     ]
   },
@@ -1197,10 +1197,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1211,7 +1211,7 @@
     "current_mapping": [
       {
         "code": "1.7.1",
-        "description": "explain the components of data communication (sender, receiver, message, transmission medium, and protocol) and modes of data transmission;",
+        "description": "describe data communication and its components, i.e., sender, message, medium, protocol and receiver;",
         "topic": "The Computer System"
       }
     ],
@@ -1253,10 +1253,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1267,7 +1267,7 @@
     "current_mapping": [
       {
         "code": "1.9.3",
-        "description": "explain guided (twisted pair, coaxial, fiber optic) and unguided (radio waves, microwaves, infrared, satellite) transmission media;",
+        "description": "explain guided media and unguided media;",
         "topic": "The Computer System"
       }
     ],
@@ -1303,16 +1303,16 @@
     "chapter": "The Computer System",
     "slo": "4.2.2",
     "original_slo": "4.2.2",
-    "current_slo": "1.7.3",
+    "current_slo": null,
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1320,13 +1320,7 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.7.3",
-        "description": "describe transmission impairments (attenuation, distortion, and noise/crosstalk) and communication performance metrics (bandwidth, data rate, baud rate, and SNR);",
-        "topic": "The Computer System"
-      }
-    ],
+    "current_mapping": [],
     "stem": "If the strength of a signal falls off when the distance increases, then the type of transmission impairment will be",
     "options": {
       "A": "cross talk.",
@@ -1365,10 +1359,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1379,7 +1373,7 @@
     "current_mapping": [
       {
         "code": "1.8.1",
-        "description": "describe the functions of network communication devices (Modem, NIC, Switch, Router, Gateway, Access Point);",
+        "description": "explain the following communication devices: a. hub, b. modem, c. switch, d. router, e. gateway;",
         "topic": "The Computer System"
       }
     ],
@@ -1415,16 +1409,16 @@
     "chapter": "The Computer System",
     "slo": "4.1.6",
     "original_slo": "4.1.6",
-    "current_slo": "1.7.2",
+    "current_slo": "1.7.3",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1434,8 +1428,8 @@
     },
     "current_mapping": [
       {
-        "code": "1.7.2",
-        "description": "differentiate between asynchronous and synchronous data transmission modes;",
+        "code": "1.7.3",
+        "description": "differentiate between the synchronous and asynchronous data transmission methods;",
         "topic": "The Computer System"
       }
     ],
@@ -1471,16 +1465,16 @@
     "chapter": "The Computer System",
     "slo": "5.1.4",
     "original_slo": "5.1.4",
-    "current_slo": "1.9.1",
+    "current_slo": "1.7.2",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1490,8 +1484,8 @@
     },
     "current_mapping": [
       {
-        "code": "1.9.1",
-        "description": "explain the uses of computer networks, transmission modes (simplex, half-duplex, full-duplex), and network architectures (client/server, peer-to-peer, point-to-point);",
+        "code": "1.7.2",
+        "description": "describe the modes of network communication, i.e., simplex, half duplex and full duplex;",
         "topic": "The Computer System"
       }
     ],
@@ -1527,16 +1521,16 @@
     "chapter": "The Computer System",
     "slo": "5.1.5",
     "original_slo": "5.1.5",
-    "current_slo": "1.9.1",
+    "current_slo": "1.8.2",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1546,8 +1540,8 @@
     },
     "current_mapping": [
       {
-        "code": "1.9.1",
-        "description": "explain the uses of computer networks, transmission modes (simplex, half-duplex, full-duplex), and network architectures (client/server, peer-to-peer, point-to-point);",
+        "code": "1.8.2",
+        "description": "explain structure and functionality of network architecture and its types, including client-server, peer-to-peer, and point-to-point;",
         "topic": "The Computer System"
       }
     ],
@@ -1589,10 +1583,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1603,7 +1597,7 @@
     "current_mapping": [
       {
         "code": "1.9.1",
-        "description": "explain the uses of computer networks, transmission modes (simplex, half-duplex, full-duplex), and network architectures (client/server, peer-to-peer, point-to-point);",
+        "description": "explain computer networks and their uses in different fields;",
         "topic": "The Computer System"
       }
     ],
@@ -1645,10 +1639,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1659,7 +1653,7 @@
     "current_mapping": [
       {
         "code": "1.9.2",
-        "description": "differentiate among types of networks: PAN, LAN, MAN, WAN, VPN, and Bluetooth networks;",
+        "description": "explain different types of computer networks, i.e., Local Area Network (LAN), Wide Area Network (WAN), and Metropolitan Area Network (MAN), highlighting their characteristics and applications;",
         "topic": "The Computer System"
       }
     ],
@@ -1701,10 +1695,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1715,11 +1709,11 @@
     "current_mapping": [
       {
         "code": "1.9.4",
-        "description": "describe network topologies (bus, star, ring, mesh, tree, and hybrid) along with their advantages and disadvantages;",
+        "description": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
         "topic": "The Computer System"
       }
     ],
-    "stem": "Consider the given properties.\n• Every node is connected with other nodes.\n• It is the most reliable network topology.\n• It is the most expensive topology.\nBased on the given properties, the network topology is identified as",
+    "stem": "Consider the given properties.\n\u2022 Every node is connected with other nodes.\n\u2022 It is the most reliable network topology.\n\u2022 It is the most expensive topology.\nBased on the given properties, the network topology is identified as",
     "options": {
       "A": "bus topology.",
       "B": "star topology.",
@@ -1751,16 +1745,16 @@
     "chapter": "The Computer System",
     "slo": "5.3.1",
     "original_slo": "5.3.1",
-    "current_slo": "1.8.1",
+    "current_slo": null,
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1768,13 +1762,7 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.8.1",
-        "description": "describe the functions of network communication devices (Modem, NIC, Switch, Router, Gateway, Access Point);",
-        "topic": "The Computer System"
-      }
-    ],
+    "current_mapping": [],
     "stem": "ISDN provides a maximum speed of 128 kbps which is\n| Option | More than | Less than |\n| :--- | :--- | :--- |\n| A | DSL | Dial-up |\n| B | DSL | CDMA |\n| C | CDMA | Dial-up |\n| D | Dial-up | CDMA |",
     "options": {
       "A": "More than: DSL | Less than: Dial-up",
@@ -1807,16 +1795,16 @@
     "chapter": "The Computer System",
     "slo": "5.3.1",
     "original_slo": "5.3.1",
-    "current_slo": "1.8.1",
+    "current_slo": null,
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
     "in_syllabus": false,
-    "out_of_syllabus": false,
+    "out_of_syllabus": true,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1824,14 +1812,8 @@
       "grade": 9,
       "subject": "Computer Science"
     },
-    "current_mapping": [
-      {
-        "code": "1.8.1",
-        "description": "describe the functions of network communication devices (Modem, NIC, Switch, Router, Gateway, Access Point);",
-        "topic": "The Computer System"
-      }
-    ],
-    "stem": "Consider the given characteristics of a telephone network.\n• It is a wireless cellular communication technology.\n• Transmission speed is up-to several Mbps.\n• It provides improved voice quality.\nBased on the given characteristics, the technology is identified as",
+    "current_mapping": [],
+    "stem": "Consider the given characteristics of a telephone network.\n\u2022 It is a wireless cellular communication technology.\n\u2022 Transmission speed is up-to several Mbps.\n\u2022 It provides improved voice quality.\nBased on the given characteristics, the technology is identified as",
     "options": {
       "A": "dial-up.",
       "B": "digital subscriber line (DSL).",
@@ -1851,7 +1833,7 @@
       },
       {
         "key": "D",
-        "reason": "ISDN is a wired digital telephone line technology operating at 64–128 kbps."
+        "reason": "ISDN is a wired digital telephone line technology operating at 64\u2013128 kbps."
       }
     ]
   },
@@ -1859,8 +1841,8 @@
     "questionNumber": 35,
     "pageNumber": 8,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.1.1",
     "original_slo": "6.1.1",
     "current_slo": "3.1.1",
@@ -1869,10 +1851,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1883,8 +1865,8 @@
     "current_mapping": [
       {
         "code": "3.1.1",
-        "description": "define World Wide Web (WWW), Uniform Resource Locator (URL), top-level domains, and types of websites;",
-        "topic": "Programming Fundamentals"
+        "description": "define the following terms: a. World Wide Web (WWW), b. web page, c. website, d. web application, e. search engine, f. web server, g. web browser;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "In a Uniform Resource Locator (URL), .co and .gov are examples of",
@@ -1915,8 +1897,8 @@
     "questionNumber": 36,
     "pageNumber": 8,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.1.2",
     "original_slo": "6.1.2",
     "current_slo": "3.1.1",
@@ -1925,10 +1907,10 @@
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1939,8 +1921,8 @@
     "current_mapping": [
       {
         "code": "3.1.1",
-        "description": "define World Wide Web (WWW), Uniform Resource Locator (URL), top-level domains, and types of websites;",
-        "topic": "Programming Fundamentals"
+        "description": "define the following terms: a. World Wide Web (WWW), b. web page, c. website, d. web application, e. search engine, f. web server, g. web browser;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "The type of website that provides the information about current events and opinions is",
@@ -1971,20 +1953,20 @@
     "questionNumber": 37,
     "pageNumber": 8,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.3.2",
     "original_slo": "6.3.2",
-    "current_slo": "3.2.1",
+    "current_slo": "3.3.2",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -1994,12 +1976,12 @@
     },
     "current_mapping": [
       {
-        "code": "3.2.1",
-        "description": "use basic HTML tags (html, head, title, body, p, br, hr, sup, sub, headings) and character entities (&nbsp;) to structure a webpage;",
-        "topic": "Programming Fundamentals"
+        "code": "3.3.2",
+        "description": "apply appropriate text formatting tags, i.e., bold, underline, italic, strikethrough, superscript, subscript, centre, font size, font colour and font face;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
-    "stem": "The HTML code to show X₂ + Y² on a webpage is",
+    "stem": "The HTML code to show X\u2082 + Y\u00b2 on a webpage is",
     "options": {
       "A": "X<sup>2</sup> + Y<sub>2</sub>",
       "B": "X<sub>2</sub> + Y<sup>2</sup>",
@@ -2007,11 +1989,11 @@
       "D": "<sup>X</sup>2 + <sub>Y</sub>2"
     },
     "correctOption": "B",
-    "explanation": "In HTML, <sub>2</sub> renders the '2' as a subscript below the baseline (X₂) and <sup>2</sup> renders the '2' as a superscript above the baseline (Y²), giving X<sub>2</sub> + Y<sup>2</sup>.",
+    "explanation": "In HTML, <sub>2</sub> renders the '2' as a subscript below the baseline (X\u2082) and <sup>2</sup> renders the '2' as a superscript above the baseline (Y\u00b2), giving X<sub>2</sub> + Y<sup>2</sup>.",
     "option_feedback": [
       {
         "key": "A",
-        "reason": "Uses <sup>2</sup> on X and <sub>2</sub> on Y, which renders X² + Y₂ instead of X₂ + Y²."
+        "reason": "Uses <sup>2</sup> on X and <sub>2</sub> on Y, which renders X\u00b2 + Y\u2082 instead of X\u2082 + Y\u00b2."
       },
       {
         "key": "C",
@@ -2027,20 +2009,20 @@
     "questionNumber": 38,
     "pageNumber": 8,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.6.1",
     "original_slo": "6.6.1",
-    "current_slo": "3.5.1",
+    "current_slo": "3.6.1",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -2050,9 +2032,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.5.1",
-        "description": "create hyperlinks using anchor tags (<a> with href attribute) and embed images (<img>) in HTML;",
-        "topic": "Programming Fundamentals"
+        "code": "3.6.1",
+        "description": "write HTML code to: a. create a hyperlink to a web page; b. create an 'anchor' in the context of hyperlinks; c. create an anchor to hyperlink within a web page; d. create a graphical hyperlink;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Following line is written in a webpage.\nVisit BBC News Urdu for latest news in Urdu.\nWhen someone clicks hyperlink BBC News Urdu, then https://www.bbc.com/urdu is opened. The HTML code for this line is",
@@ -2083,20 +2065,20 @@
     "questionNumber": 39,
     "pageNumber": 9,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.5.3",
     "original_slo": "6.5.3",
-    "current_slo": "3.3.1",
+    "current_slo": "3.9.2",
     "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
     "diagramUrl": "/paper-crops/CS-IX-2023-P1/q39.png",
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -2106,9 +2088,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.3.1",
-        "description": "apply inline CSS styling (font-family, color, background-color, font-size, text-align) to HTML elements;",
-        "topic": "Programming Fundamentals"
+        "code": "3.9.2",
+        "description": "apply code using inline/ internal CSS: a. background (color and image), b. font (colour, style and size), c. tables (border, size, alignment);",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Consider the given text.\n[ Click here to open google ]\nThe HTML code to show this text in white color over black background is",
@@ -2139,20 +2121,20 @@
     "questionNumber": 40,
     "pageNumber": 9,
     "unitNumber": 3,
-    "unitName": "Programming Fundamentals",
-    "chapter": "Programming Fundamentals",
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
     "slo": "6.3.1",
     "original_slo": "6.3.1",
-    "current_slo": "3.2.1",
+    "current_slo": "3.3.1",
     "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
     "diagramUrl": null,
-    "in_syllabus": false,
+    "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
-    "current_syllabus_reviewed": false,
+    "current_syllabus_reviewed": true,
     "original_reference_verified": true,
     "original_reference_source": "/resources/computer-science-ix-2023-key",
     "mapping_scope": {
@@ -2162,9 +2144,9 @@
     },
     "current_mapping": [
       {
-        "code": "3.2.1",
-        "description": "use basic HTML tags (html, head, title, body, p, br, hr, sup, sub, headings) and character entities (&nbsp;) to structure a webpage;",
-        "topic": "Programming Fundamentals"
+        "code": "3.3.1",
+        "description": "write HTML code to: a. specify a page title, b. create a paragraph, c. insert line breaks, d. insert spaces, e. add headings/ sub-headings;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
     "stem": "Which of the following is/ are the character entity(ies) in HTML?\nI. p\nII. br\nIII. &nbsp",

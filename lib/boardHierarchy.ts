@@ -187,7 +187,7 @@ export async function getClassSubjects(
       (sub.papersCount || 0) > 0 ||
       (boardInfo.id === "akueb" &&
         ["IX", "X"].includes(classRoman) &&
-        sub.slug === "physics"),
+        ["physics", "computer-science"].includes(sub.slug)),
   }));
   // Sort so Physics and Science subjects appear top
   subjects.sort((a, b) => {

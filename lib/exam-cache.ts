@@ -83,7 +83,6 @@ export interface AttemptHistoryEntry {
   peerAvgTimePerQuestionSec: number;
   compositeIndex: number;
   percentile: number;
-  verifiedSampleSize?: number;
   speedPercentile: number;
   quadrantLabel: string;
   tabSwitchCount: number;

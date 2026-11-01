@@ -11,6 +11,7 @@ COPY repositories ./repositories
 COPY services ./services
 COPY scripts/job-worker.ts ./scripts/job-worker.ts
 COPY data/physics ./data/physics
+COPY data/computer-science ./data/computer-science
 COPY tsconfig.json ./tsconfig.json
 ENV NODE_ENV=production
 ENV WORKER_KINDS=EXAM_FINALIZE,EXAM_GRADE

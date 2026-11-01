@@ -19,8 +19,21 @@ const practiceCodes: Record<string, string> = {
   'SAMPLE-QUIZ-PHY-9': 'PHY-IX-P1', 'SAMPLE-QUIZ-PHY-10': 'PHY-X-P1',
   'SAMPLE-QUIZ-KINEMATICS': 'PHY-IX-P1', 'SAMPLE-QUIZ-WAVES': 'PHY-X-P1',
 };
-const autoGradable = (q: QuestionData) => q.id !== 'cs-ix-2023-p1-q11' && q.id !== 'cs-ix-2024-p1-q9';
-const allowedPractice = new Set(['PHY-IX-P1', 'PHY-IX-P2', 'PHY-X-P1', 'PHY-X-P2', 'PHY-IX-2025-P1', 'PHY-IX-2025-P2', 'PHY-IX-2024-P1', 'PHY-IX-2024-P2', 'PHY-X-2025-P1', 'PHY-X-2025-P2', 'CS-IX-P1', 'CS-IX-P2', 'CS-IX-2025-P1', 'CS-IX-2025-P2', 'CS-IX-2024-P1', 'CS-IX-2024-P2', 'CS-IX-2023-P1', 'CS-IX-2023-P2', 'CS-IX-2022-P1']);
+const allowedPractice = new Set(['PHY-IX-P1', 'PHY-IX-P2', 'PHY-X-P1', 'PHY-X-P2', 'PHY-IX-2025-P1', 'PHY-IX-2025-P2', 'PHY-IX-2024-P1', 'PHY-IX-2024-P2', 'PHY-X-2025-P1', 'PHY-X-2025-P2', 'CS-IX-P1', 'CS-IX-P2', 'CS-X-P1', 'CS-X-P2', 'CS-IX-2025-P1', 'CS-IX-2025-P2', 'CS-IX-2024-P1', 'CS-IX-2024-P2', 'CS-IX-2023-P1', 'CS-IX-2023-P2', 'CS-IX-2022-P1', 'CS-IX-2019-P1', 'CS-IX-2019-P2', 'CS-IX-2018-P2', 'CS-IX-2017-P1', 'CS-IX-2017-P2', 'CS-X-2025-P1', 'CS-X-2025-P2', 'CS-X-2024-P1', 'CS-X-2024-P2', 'CS-X-2023-P1', 'CS-X-2023-P2', 'CS-X-2022-P1', 'CS-X-2019-P1', 'CS-X-2019-P2', 'CS-X-2018-P2', 'CS-X-2017-P1', 'CS-X-2017-P2']);
+
+// These printed keys contain an asterisk or credit multiple options. Keep the
+// source questions visible in the paper, but do not grade them as MCQ_SINGLE.
+const ungradableOfficialKeyQuestions: Record<string, number[]> = {
+  'CS-IX-2023-P1': [11],
+  'CS-IX-2024-P1': [9],
+  'CS-X-2019-P1': [21],
+  'CS-X-2023-P1': [37],
+  'CS-X-2024-P1': [8],
+};
+export function gradablePracticeQuestions(paperCode: string, questions: QuestionData[]) {
+  const excluded = ungradableOfficialKeyQuestions[paperCode];
+  return excluded ? questions.filter(q => !excluded.includes(Number(q.questionNumber))) : questions;
+}
 
 // Source JSON can represent an absent diagram as null; assessment input uses
 // omitted optional fields. Normalize at this boundary, keeping teacher input strict.
@@ -78,11 +91,13 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
     const [, subjPrefix, roman, unitNumStr, mode, cogFilter] = unitMatch;
     const unitNum = Number(unitNumStr);
     const paperCodes = subjPrefix === 'CS'
-      ? (mode === 'PAST' ? ['CS-IX-2025-P1', 'CS-IX-2024-P1', 'CS-IX-2023-P1', 'CS-IX-2022-P1'] : ['CS-IX-P1', 'CS-IX-2025-P1', 'CS-IX-2024-P1', 'CS-IX-2023-P1', 'CS-IX-2022-P1'])
+      ? roman === 'IX'
+        ? (mode === 'PAST' ? ['CS-IX-2025-P1', 'CS-IX-2024-P1', 'CS-IX-2023-P1', 'CS-IX-2022-P1', 'CS-IX-2019-P1', 'CS-IX-2017-P1'] : ['CS-IX-P1', 'CS-IX-2025-P1', 'CS-IX-2024-P1', 'CS-IX-2023-P1', 'CS-IX-2022-P1', 'CS-IX-2019-P1', 'CS-IX-2017-P1'])
+        : (mode === 'PAST' ? ['CS-X-2025-P1', 'CS-X-2024-P1', 'CS-X-2023-P1', 'CS-X-2022-P1', 'CS-X-2019-P1', 'CS-X-2017-P1'] : ['CS-X-P1', 'CS-X-2025-P1', 'CS-X-2024-P1', 'CS-X-2023-P1', 'CS-X-2022-P1', 'CS-X-2019-P1', 'CS-X-2017-P1'])
       : roman === 'IX'
         ? (mode === 'PAST' ? ['PHY-IX-2025-P1', 'PHY-IX-2024-P1'] : ['PHY-IX-P1', 'PHY-IX-2025-P1', 'PHY-IX-2024-P1'])
         : (mode === 'PAST' ? ['PHY-X-2025-P1'] : ['PHY-X-P1', 'PHY-X-2025-P1']);
-    const allQuestions = paperCodes.flatMap(code => getFallbackPaper(code)?.questions || []).filter(autoGradable);
+    const allQuestions = paperCodes.flatMap(code => gradablePracticeQuestions(code, getFallbackPaper(code)?.questions || []));
     const filtered = allQuestions.filter(q => {
       if (unitNum > 0) {
         const qTopicNum = Number(q.topics?.[0]?.topic?.topicNumber || 0);
@@ -123,15 +138,15 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
     });
   }
 
-  const subset = /^((?:PHY|CS)-(?:IX|X)(?:-2025|-2024)?-P1)-SET-([0-9-]+)$/.exec(key);
+  const subset = /^((?:PHY|CS)-(?:IX|X)(?:-2025|-2024|-2023|-2022|-2019|-2017)?-P1)-SET-([0-9-]+)$/.exec(key);
   const paperCode = subset?.[1] || practiceCodes[key] || key;
   if (!allowedPractice.has(paperCode)) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Assessment not found.');
   const paper = getFallbackPaper(paperCode);
   if (!paper) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Practice paper not found.');
-  let source = paper.questions.filter(autoGradable);
+  let source = gradablePracticeQuestions(paperCode, paper.questions);
   if (subset) {
     const numbers = new Set(subset[2].split('-').map(Number));
-    if (numbers.size > 40 || [...numbers].some(n => !Number.isInteger(n) || n < 1 || n > 40)) throw new ApiError(400, 'INVALID_PRACTICE', 'Invalid practice selection.');
+    if (numbers.size > 50 || [...numbers].some(n => !Number.isInteger(n) || n < 1 || n > 50)) throw new ApiError(400, 'INVALID_PRACTICE', 'Invalid practice selection.');
     source = source.filter(q => numbers.has(Number(q.questionNumber)));
     if (source.length !== numbers.size) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Some selected practice questions are unavailable.');
   }

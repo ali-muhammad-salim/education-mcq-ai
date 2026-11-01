@@ -1,4 +1,4 @@
-import { encryptQuestionReveal } from '@/lib/quiz-crypto.server';
+import { encryptQuestionReveal } from '@/lib/quiz-crypto';
 import { z } from 'zod';
 import { questionSchema, answerPayloadSchema, QuestionContent } from '@/lib/validations/assessment';
 export const snapshotSchema = z.array(z.object({ id: z.string(), orderIndex: z.number(), marks: z.number().positive(), content: questionSchema }));

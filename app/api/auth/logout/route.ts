@@ -1,4 +1,4 @@
-import { invalidateSession, sessionTokenHash } from '@/lib/auth';
+import { sessionTokenHash } from '@/lib/auth';
 import { assertOrigin } from '@/lib/security';
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
@@ -8,9 +8,7 @@ export async function POST(req: NextRequest) {
     assertOrigin(req);
     const token = req.cookies.get('mcqs_session')?.value;
     if (token) {
-      const hash = sessionTokenHash(token);
-      await prisma.userSession.deleteMany({ where: { token: hash } });
-      invalidateSession(hash);
+      await prisma.userSession.deleteMany({ where: { token: sessionTokenHash(token) } });
     }
 
     const response = NextResponse.json({ success: true });

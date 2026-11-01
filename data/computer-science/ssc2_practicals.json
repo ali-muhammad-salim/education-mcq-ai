@@ -1,0 +1,49 @@
+[
+  {
+    "pageNumber": 2,
+    "stage": "STAGE I",
+    "title": "Task 1 & Task 2 \u2014 HTML Webpage Title & JavaScript Heading via document.write()",
+    "marks": 2,
+    "slo": "10.2.1",
+    "topic": "Unit 10: Programming in JavaScript (Input and Output Functions)",
+    "apparatus": "Computer, Printer, Notepad, Web Browser, and MS Word (for code printout submission)",
+    "diagramUrl": "/paper-crops/CS-X-P3/task2.png",
+    "description": "\u2022 Task 1 (1 Mark): Write the HTML code to display 'Candidate Name and Candidate ID' in the title of the webpage.\n\u2022 Task 2 (1 Mark): Write the JavaScript code to display the heading 'Sum of Natural Numbers' using document.write().",
+    "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Candidate Name - Candidate ID</title>\n</head>\n<body>\n    <script>\n        document.write(\"<h2>Sum of Natural Numbers</h2>\");\n    </script>\n</body>\n</html>"
+  },
+  {
+    "pageNumber": 2,
+    "stage": "STAGE II",
+    "title": "Task 3 & Task 4 \u2014 JavaScript prompt() Input & for Loop Sum of Natural Numbers",
+    "marks": 3,
+    "slo": "10.2.3, 10.5.3",
+    "topic": "Unit 10: Programming in JavaScript (prompt() Input & for Loop Structure)",
+    "apparatus": "Computer, Notepad, and Web Browser",
+    "diagramUrl": "/paper-crops/CS-X-P3/task3.png",
+    "description": "\u2022 Task 3 (1 Mark): Write JavaScript code to accept a natural number from the user using the prompt() function and store it in a variable.\n\u2022 Task 4 (2 Marks): Write the JavaScript code to use a for loop to calculate the sum of all natural numbers till the entered number.",
+    "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Candidate Name - Candidate ID</title>\n</head>\n<body>\n    <script>\n        document.write(\"<h2>Sum of Natural Numbers</h2>\");\n        let n = Number(prompt(\"Enter a natural number:\"));\n        let sum = 0;\n        for (let i = 1; i <= n; i++) {\n            sum = sum + i;\n        }\n    </script>\n</body>\n</html>"
+  },
+  {
+    "pageNumber": 3,
+    "stage": "STAGE III",
+    "title": "Task 5, Task 6 & Task 7 \u2014 Display Output via document.write(), alert() Confirmation & Printout",
+    "marks": 3,
+    "slo": "10.2.1, 10.5.3",
+    "topic": "Unit 10: Programming in JavaScript (document.write() & window.alert() Output)",
+    "apparatus": "Computer, Printer, Notepad, Web Browser, and MS Word",
+    "diagramUrl": "/paper-crops/CS-X-P3/task5.png",
+    "secondaryDiagramUrl": "/paper-crops/CS-X-P3/task6.png",
+    "description": "\u2022 Task 5 (1 Mark): Display the entered number and the calculated sum using document.write() ('Entered Number: 5' / 'Sum of Natural Numbers: 15').\n\u2022 Task 6 (1 Mark): Show the message 'Program Executed Successfully' in an alert() box.\n\u2022 Task 7 (1 Mark): Print the source program and the output with your candidate ID and centre ID.",
+    "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Candidate Name - Candidate ID</title>\n</head>\n<body>\n    <script>\n        document.write(\"<h2>Sum of Natural Numbers</h2>\");\n        let n = Number(prompt(\"Enter a natural number:\"));\n        let sum = 0;\n        for (let i = 1; i <= n; i++) {\n            sum += i;\n        }\n        document.write(\"Entered Number: \" + n + \"<br>\");\n        document.write(\"Sum of Natural Numbers: \" + sum);\n        alert(\"Program Executed Successfully.\");\n    </script>\n</body>\n</html>"
+  },
+  {
+    "pageNumber": 3,
+    "stage": "SCHOOL RECORD",
+    "title": "Class X Practical Journal / Portfolio Verification",
+    "marks": 2,
+    "slo": "Practical Portfolio",
+    "topic": "Endorsed Practical Lab Journal (Class X JavaScript & Digital Literacy Practical Activities)",
+    "apparatus": "Endorsed Practical Journal / Portfolio",
+    "description": "Practical journal/portfolio developed by the student across the academic session and endorsed by the subject teacher or principal, submitted during the Paper III Practical Examination (2 Marks)."
+  }
+]

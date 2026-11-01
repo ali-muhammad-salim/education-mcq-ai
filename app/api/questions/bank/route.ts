@@ -15,6 +15,15 @@ import cs1Past2025Mcqs from '@/data/computer-science/ssc1_2025_past_mcqs.json';
 import cs1Past2024Mcqs from '@/data/computer-science/ssc1_2024_past_mcqs.json';
 import cs1Past2023Mcqs from '@/data/computer-science/ssc1_2023_past_mcqs.json';
 import cs1Past2022Mcqs from '@/data/computer-science/ssc1_2022_past_mcqs.json';
+import cs1Past2019Mcqs from '@/data/computer-science/ssc1_2019_past_mcqs.json';
+import cs1Past2017Mcqs from '@/data/computer-science/ssc1_2017_past_mcqs.json';
+import cs2ModelMcqs from '@/data/computer-science/ssc2_model_mcqs.json';
+import cs2Past2025Mcqs from '@/data/computer-science/ssc2_2025_past_mcqs.json';
+import cs2Past2024Mcqs from '@/data/computer-science/ssc2_2024_past_mcqs.json';
+import cs2Past2023Mcqs from '@/data/computer-science/ssc2_2023_past_mcqs.json';
+import cs2Past2022Mcqs from '@/data/computer-science/ssc2_2022_past_mcqs.json';
+import cs2Past2019Mcqs from '@/data/computer-science/ssc2_2019_past_mcqs.json';
+import cs2Past2017Mcqs from '@/data/computer-science/ssc2_2017_past_mcqs.json';
 
 export async function GET(req: NextRequest) {
   try {
@@ -129,36 +138,48 @@ export async function GET(req: NextRequest) {
       const isClass9 = ['9', 'IX'].includes(classParam);
 
       let combinedRaw: { raw: any; cls: number; source: string; year: number }[] = [];
-      if (isClass10) {
+      if (isClass10 && subject.toLowerCase().includes('computer')) {
         combinedRaw = [
-          ...(ssc2ModelMcqs as any[]).map(q => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Model Paper I', year: 2025 })),
-          ...(ssc2Past2025Mcqs as any[]).map(q => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Annual 2025 Paper I', year: 2025 })),
+          ...(cs2ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-P1', year: 2027 })),
+          ...(cs2Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2025-P1', year: 2025 })),
+          ...(cs2Past2024Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2024-P1', year: 2024 })),
+          ...(cs2Past2023Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2023-P1', year: 2023 })),
+          ...(cs2Past2022Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2022-P1', year: 2022 })),
+          ...(cs2Past2019Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2019-P1', year: 2019 })),
+          ...(cs2Past2017Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2017-P1', year: 2017 })),
+        ];
+      } else if (isClass10) {
+        combinedRaw = [
+          ...(ssc2ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Model Paper I', year: 2025 })),
+          ...(ssc2Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Annual 2025 Paper I', year: 2025 })),
         ];
       } else if (isClass9 && subject.toLowerCase().includes('computer')) {
         combinedRaw = [
-          ...(cs1ModelMcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'CS-IX-P1', year: 2026 })),
-          ...(cs1Past2025Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'CS-IX-2025-P1', year: 2025 })),
-          ...(cs1Past2024Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'CS-IX-2024-P1', year: 2024 })),
-          ...(cs1Past2023Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'CS-IX-2023-P1', year: 2023 })),
-          ...(cs1Past2022Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'CS-IX-2022-P1', year: 2022 })),
+          ...(cs1ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-P1', year: 2026 })),
+          ...(cs1Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2025-P1', year: 2025 })),
+          ...(cs1Past2024Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2024-P1', year: 2024 })),
+          ...(cs1Past2023Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2023-P1', year: 2023 })),
+          ...(cs1Past2022Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2022-P1', year: 2022 })),
+          ...(cs1Past2019Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2019-P1', year: 2019 })),
+          ...(cs1Past2017Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2017-P1', year: 2017 })),
         ];
       } else if (isClass9) {
         combinedRaw = [
-          ...(ssc1ModelMcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Model Paper I', year: 2025 })),
-          ...(ssc1Past2025Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2025 Paper I', year: 2025 })),
-          ...(ssc1Past2024Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2024 Paper I', year: 2024 })),
+          ...(ssc1ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Model Paper I', year: 2025 })),
+          ...(ssc1Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2025 Paper I', year: 2025 })),
+          ...(ssc1Past2024Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2024 Paper I', year: 2024 })),
         ];
       } else {
         combinedRaw = [
-          ...(ssc1ModelMcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Model Paper I', year: 2025 })),
-          ...(ssc1Past2025Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2025 Paper I', year: 2025 })),
-          ...(ssc1Past2024Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2024 Paper I', year: 2024 })),
-          ...(ssc2ModelMcqs as any[]).map(q => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Model Paper I', year: 2025 })),
-          ...(ssc2Past2025Mcqs as any[]).map(q => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Annual 2025 Paper I', year: 2025 })),
+          ...(ssc1ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Model Paper I', year: 2025 })),
+          ...(ssc1Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2025 Paper I', year: 2025 })),
+          ...(ssc1Past2024Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2024 Paper I', year: 2024 })),
+          ...(ssc2ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Model Paper I', year: 2025 })),
+          ...(ssc2Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Annual 2025 Paper I', year: 2025 })),
         ];
       }
 
-      formatted = combinedRaw.filter(({ raw, source }) => !(source === 'CS-IX-2023-P1' && Number(raw.questionNumber) === 11) && !(source === 'CS-IX-2024-P1' && Number(raw.questionNumber) === 9)).map(({ raw: q, cls, source, year }, idx) => {
+      formatted = combinedRaw.map(({ raw: q, cls, source, year }, idx) => {
         const rawOpts = q.options || {};
         const correctKey = (q.correctOption || '').toUpperCase().trim();
         const opts = Object.entries(rawOpts).map(([key, val]) => ({
