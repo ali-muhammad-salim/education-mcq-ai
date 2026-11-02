@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import type { BoardInfo, ClassDefinition } from '@/lib/boardCatalog';
 import { filterSyllabus, syllabusLevel, syllabusDisplayText } from '@/lib/syllabusPresentation';
-import MathText from '@/components/MathText';
+import StructuredContent from '@/components/StructuredContent';
 import { SubjectMeta } from '@/lib/subjectMetadata';
 
 interface Props {
@@ -347,7 +347,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
                                     {slo.code}
                                   </td>
                                   <td style={{ padding: '8px 12px', color: '#4b5563', lineHeight: 1.5 }}>
-                                    <MathText text={syllabusDisplayText(slo.description)} />
+                                    <StructuredContent text={syllabusDisplayText(slo.description)} />
                                     {slo.isPractical && (
                                       <span style={{
                                         marginLeft: '8px',

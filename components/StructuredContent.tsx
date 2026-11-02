@@ -2,6 +2,7 @@
 
 import React from 'react';
 import MathText from '@/components/MathText';
+import { restoreInlineLetteredLists } from '@/lib/inlineEducationalLists';
 
 interface StructuredContentProps {
   text: string;
@@ -11,6 +12,7 @@ interface StructuredContentProps {
 
 function renderTextSegment(segment: string, segKey: string): React.ReactNode {
   if (!segment || !segment.trim()) return null;
+  segment = restoreInlineLetteredLists(segment);
 
   // 1. Check for Segmented Table lines (e.g., "Segment I: 0-10 m\nSegment II: 11-22 m")
   if (segment.includes('Segment I:') || segment.includes('Segment 1:') || (segment.includes('Column A') && segment.includes('Column B'))) {
@@ -255,6 +257,16 @@ function renderNonCodeLines(lines: string[], keyPrefix: string): React.ReactNode
               <span style={{ flex: 1 }}>
                 <MathText text={numMatch[2]} />
               </span>
+            </div>
+          );
+        }
+
+        const letterMatch = trimmed.match(/^([a-z]\.)(?:\s+)([\s\S]*)$/i);
+        if (letterMatch) {
+          return (
+            <div key={lIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', paddingLeft: '0.4rem' }}>
+              <span style={{ fontWeight: 700, color: 'var(--primary-color, #0b5e4a)', minWidth: '1.35rem' }}>{letterMatch[1]}</span>
+              <span style={{ flex: 1 }}><MathText text={letterMatch[2]} /></span>
             </div>
           );
         }
