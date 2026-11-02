@@ -1,6 +1,7 @@
 import prisma from '@/lib/prisma';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import StructuredContent from '@/components/StructuredContent';
 
 export const dynamic = 'force-dynamic';
 
@@ -128,9 +129,9 @@ export default async function SubjectSyllabusPage({ params }: { params: Promise<
                               {slo.code || 'SLO'}
                             </span>
                             <div style={{ flexGrow: 1 }}>
-                              <span style={{ color: '#1f2937', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                                {slo.description}
-                              </span>
+                              <div style={{ color: 'var(--text-color)', lineHeight: '1.6', fontSize: '0.95rem' }}>
+                                <StructuredContent text={slo.description} />
+                              </div>
                             </div>
                           </li>
                         );
