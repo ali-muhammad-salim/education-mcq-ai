@@ -10,6 +10,7 @@ import type { BoardInfo, ClassDefinition } from '@/lib/boardCatalog';
 import { filterSyllabus, syllabusLevel, syllabusDisplayText } from '@/lib/syllabusPresentation';
 import StructuredContent from '@/components/StructuredContent';
 import { SubjectMeta } from '@/lib/subjectMetadata';
+import styles from './SyllabusClient.module.css';
 
 interface Props {
   board: BoardInfo;
@@ -31,6 +32,16 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
 
   useEffect(() => {
     const followHash = () => {
+      const unitMatch = window.location.hash.match(/^#unit-(\d+)$/);
+      if (unitMatch) {
+        const unitNumber = Number(unitMatch[1]);
+        setExpandedUnits(old => ({ ...old, [unitNumber]: true }));
+        setSelectedUnit('all');
+        setSearchQuery('');
+        setCognitiveFilter('all');
+        requestAnimationFrame(() => document.getElementById(`unit-${unitNumber}`)?.scrollIntoView({ block: 'start' }));
+        return;
+      }
       const code = decodeURIComponent(window.location.hash.replace('#slo-', ''));
       if (!code) return;
       const unit = units.find(u => u.subtopics.some((t: any) => t.slos.some((o: any) => o.code === code)));
@@ -51,6 +62,15 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
     setExpandedUnits(prev => ({ ...prev, [uNum]: !prev[uNum] }));
   };
 
+  const jumpToUnit = (unitNumber: number) => {
+    setSelectedUnit('all');
+    setSearchQuery('');
+    setCognitiveFilter('all');
+    setExpandedUnits(old => ({ ...old, [unitNumber]: true }));
+    window.history.replaceState(null, '', `#unit-${unitNumber}`);
+    requestAnimationFrame(() => document.getElementById(`unit-${unitNumber}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  };
+
   const filteredUnits = filterSyllabus(units, searchQuery, cognitiveFilter, selectedUnit);
 
   const isCS = meta.slug === 'computer-science';
@@ -63,6 +83,15 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
       : '/materials/ssc/physics/ssc-2/physics-ssc-ii-syllabus-grade-10-dedicated.pdf'));
 
   const hasExamSpecs = units.some(u => u.examSpec);
+  const cognitiveOptions = [
+    { id: 'all', label: 'All Cognitive Levels' },
+    { id: 'R', label: 'Remembering (R)' },
+    { id: 'U', label: 'Understanding (U)' },
+    { id: 'A', label: 'Application (A)' },
+    { id: 'An', label: 'Analysing (An)' },
+    { id: 'E', label: 'Evaluation (E)' },
+    { id: 'FA', label: 'Formative Assessment (FA)' }
+  ];
 
   return (
     <div>
@@ -70,12 +99,12 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
       <div style={{
         background: 'linear-gradient(135deg, #07382c 0%, #0b5e4a 60%, #157a62 100%)',
         borderRadius: '20px',
-        padding: '2.5rem 2rem',
+        padding: 'clamp(1.1rem, 3vw, 2.5rem)',
         color: '#ffffff',
         boxShadow: '0 12px 30px rgba(11, 94, 74, 0.18)',
         position: 'relative',
         overflow: 'hidden',
-        marginBottom: '2rem'
+        marginBottom: '1rem'
       }}>
         <div style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '0.8rem' }}>
@@ -95,7 +124,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
           </h1>
 
           <p style={{ fontSize: '1.05rem', color: '#e6f0ed', margin: '0 0 1.5rem 0', maxWidth: '820px', lineHeight: 1.6 }}>
-            Class learning outcomes with search and cognitive-level filters. Open Original PDF for the complete source, including its introduction, practical activities and examination specifications.
+            Search learning outcomes or filter by cognitive level. Open Original PDF for the complete source.
           </p>
 
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -142,50 +171,43 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
         </div>
       </div>
 
+      <div className={styles.levelGuide} aria-label="Cognitive level abbreviations">
+        <strong>Cognitive levels</strong>
+        <span><b>R</b> Remembering</span><span><b>U</b> Understanding</span>
+        <span><b>A</b> Application</span><span><b>An</b> Analysing</span>
+        <span><b>E</b> Evaluation</span><span><b>FA</b> Formative Assessment</span>
+      </div>
+
       {/* Exam Specification Summary Bar (when available) */}
       {hasExamSpecs && (
-        <div style={{
-          background: '#ffffff',
-          border: '1.5px solid #dce5e1',
-          borderRadius: '14px',
-          padding: '1.25rem 1.5rem',
-          marginBottom: '1.5rem',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.85rem' }}>
-            <div>
-              <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0b5e4a', margin: 0 }}>
-                Scheme of Assessment — {classDef.name} Exam Specification (75 Total Marks)
-              </h2>
-              <div style={{ fontSize: '0.82rem', color: '#4b5563', marginTop: '2px' }}>
-                Theory Paper I: <strong>40 MCQs (40 Marks)</strong> • Theory Paper II: <strong>CRQs (13 Marks) + ERQs (12 Marks) = 25 Marks</strong> • Practical Paper III: <strong>10 Marks</strong> • Cognitive Weightage: Remember 0–10%, Understand 30–50%, Apply &amp; Beyond 40–60%
-              </div>
+        <details className={styles.scheme}>
+          <summary>Scheme of Assessment — {classDef.name} (75 marks)</summary>
+          <div className={styles.schemeContent}>
+            <div className={styles.schemeFacts}>
+              <span>Theory I <strong>40 MCQs · 40 marks</strong></span>
+              <span>Theory II <strong>CRQs 13 + ERQs 12 · 25 marks</strong></span>
+              <span>Practical III <strong>10 marks</strong></span>
+              <span>Cognitive weightage <strong>Remember 0–10% · Understand 30–50% · Apply &amp; beyond 40–60%</strong></span>
+            </div>
+            <p className={styles.jumpHint}>Tap a topic to jump to its syllabus outcomes.</p>
+            <div className={styles.topicGrid}>
+            {units.map((u: any) => (
+              <button
+                type="button"
+                key={u.unitNumber}
+                className={styles.topicCard}
+                onClick={() => jumpToUnit(u.unitNumber)}
+                aria-label={`Go to Topic ${u.unitNumber}: ${u.name}`}
+              >
+                <strong>Topic {u.unitNumber}: {u.name}</strong>
+                <span>MCQs: {u.examSpec?.mcqs ?? '—'}</span>
+                {u.examSpec?.crqs ? <span>CRQs: {u.examSpec.crqs} ({u.examSpec.crqMarks} marks)</span> : null}
+                {u.examSpec?.erqGroup ? <span>ERQ: {u.examSpec.erqGroup}</span> : null}
+              </button>
+            ))}
             </div>
           </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.6rem' }}>
-            {units.map((u: any) => (
-              <div
-                key={u.unitNumber}
-                style={{
-                  background: '#f8faf9',
-                  border: '1px solid #dce5e1',
-                  borderRadius: '10px',
-                  padding: '0.65rem 0.85rem'
-                }}
-              >
-                <div style={{ fontSize: '0.74rem', fontWeight: 800, color: '#0b5e4a' }}>
-                  Topic {u.unitNumber}: {u.name}
-                </div>
-                <div style={{ fontSize: '0.78rem', color: '#374151', marginTop: '3px', fontWeight: 600 }}>
-                  MCQs: <strong>{u.examSpec?.mcqs ?? '-'}</strong>
-                  {u.examSpec?.crqs ? ` • CRQs: ${u.examSpec.crqs} (${u.examSpec.crqMarks}m)` : ''}
-                  {u.examSpec?.erqGroup ? ` • ERQ: ${u.examSpec.erqGroup}` : ''}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        </details>
       )}
 
       {/* Search & Cognitive Filter Controls */}
@@ -223,16 +245,14 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
         </div>
 
         {/* Cognitive Filter */}
-        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-          {[
-            { id: 'all', label: 'All Cognitive Levels' },
-            { id: 'R', label: 'Remembering (R)' },
-            { id: 'U', label: 'Understanding (U)' },
-            { id: 'A', label: 'Application (A)' },
-            { id: 'An', label: 'Analysing (An)' },
-            { id: 'E', label: 'Evaluation (E)' },
-            { id: 'FA', label: 'Formative (FA)' }
-          ].map(f => (
+        <label className={styles.mobileFilter}>
+          Cognitive level
+          <select value={cognitiveFilter} onChange={e => setCognitiveFilter(e.target.value as typeof cognitiveFilter)}>
+            {cognitiveOptions.map(f => <option key={f.id} value={f.id}>{f.label}</option>)}
+          </select>
+        </label>
+        <div className={styles.filterButtons}>
+          {cognitiveOptions.map(f => (
             <button
               key={f.id}
               onClick={() => setCognitiveFilter(f.id as any)}
@@ -260,6 +280,8 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
           return (
             <div
               key={unit.unitNumber}
+              id={`unit-${unit.unitNumber}`}
+              className={styles.unit}
               style={{
                 background: '#ffffff',
                 border: '1.5px solid #dce5e1',
@@ -324,11 +346,11 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
                         {subtopic.name}
                       </h4>
 
-                      <div style={{ overflowX: 'auto' }}>
+                      <div className={styles.tableWrap}>
                         <table
-                          className="mobile-data-table"
+                          className={styles.sloTable}
                           tabIndex={0}
-                          aria-label="Learning outcomes; scroll horizontally for all columns"
+                          aria-label="Learning outcomes"
                           style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}
                         >
                           <thead>
@@ -343,10 +365,10 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
                               const lv = syllabusLevel(slo.cognitiveLevel) || slo.cognitiveShort || slo.cognitiveLevel;
                               return (
                                 <tr id={"slo-" + slo.code} key={sloIdx} style={{ borderBottom: '1px solid #f0f4f2' }}>
-                                  <td style={{ padding: '8px 12px', fontWeight: 700, color: '#1a2e26', fontFamily: 'monospace' }}>
+                                  <td style={{ padding: '8px 12px', fontWeight: 700, color: 'var(--text-color)', fontFamily: 'monospace' }}>
                                     {slo.code}
                                   </td>
-                                  <td style={{ padding: '8px 12px', color: '#4b5563', lineHeight: 1.5 }}>
+                                  <td style={{ padding: '8px 12px', color: 'var(--text-color)', lineHeight: 1.5 }}>
                                     <StructuredContent text={syllabusDisplayText(slo.description)} />
                                     {slo.isPractical && (
                                       <span style={{
