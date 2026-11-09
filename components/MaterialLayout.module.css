@@ -81,6 +81,11 @@
   background: var(--primary-color);
   color: var(--card-bg);
 }
+.button[aria-current="page"] {
+  border-color: var(--primary-color);
+  background: var(--surface-muted);
+  font-weight: 700;
+}
 .page input {
   font: inherit;
   padding: 0.65rem 0.8rem;

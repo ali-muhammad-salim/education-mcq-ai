@@ -1,0 +1,1820 @@
+[
+  {
+    "unitNumber": 1,
+    "name": "Fundamentals of Chemistry",
+    "page": 10,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 1,
+      "crqMarks": 3,
+      "totalMarks": 8
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "1.1",
+        "subNumber": "1.1",
+        "name": "1.1 Chemistry and its Branches",
+        "slos": [
+          {
+            "code": "1.1.1",
+            "description": "define ‘chemistry’ and its various branches:\na. analytical chemistry,\nb. astrochemistry,\nc. biochemistry,\nd. environmental chemistry,\ne. geochemistry,\nf. industrial chemistry,\ng. inorganic chemistry,\nh. nuclear chemistry,\ni. organic chemistry,\nj. physical chemistry,\nk. polymer chemistry;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 10,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "1.1.2",
+            "description": "explain the significance of the branches of chemistry mentioned in SLO 1.1.1;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 10,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.2",
+        "subNumber": "1.2",
+        "name": "1.2 History of Chemistry",
+        "slos": [
+          {
+            "code": "1.2.1",
+            "description": "describe the contribution of Jabir Ibn Hayyan and Al-Razi in chemistry during the Islamic Golden Age (8th to 14th centuries);",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "1.2.2",
+            "description": "define the term ‘scientific paradigm’;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "1.2.3",
+            "description": "explain the following examples of ‘scientific paradigm’ in chemistry:\na. Phlogiston theory,\nb. Plum pudding model;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "1.3",
+        "subNumber": "1.3",
+        "name": "1.3 Basic Definitions, Comparisons, Valencies, and Chemical Formulae",
+        "slos": [
+          {
+            "code": "1.3.1",
+            "description": "define the following terms:\na. atoms,\nb. elements,\nc. compounds,\nd. mixtures,\ne. molecules;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "1.3.2",
+            "description": "differentiate between:\na. atoms and molecules,\nb. atoms and ions,\nc. molecules and molecular ions,\nd. ions and free radicals;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.3.3",
+            "description": "differentiate among elements, compounds and mixtures;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.3.4",
+            "description": "classify the chemical species into elements, mixtures, compounds, ions, molecular ions and free radicals;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "1.3.5",
+            "description": "define the term ‘valency’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "1.3.6",
+            "description": "determine valencies of common elements and ions (radicals) independently or in compounds;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "1.3.7",
+            "description": "determine the formula of a compound based on the valencies of elements and ions (radicals).",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 11,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 2,
+    "name": "Stoichiometry",
+    "page": 12,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 5: 6 Marks (Choose any ONE from TWO)",
+      "groupTotalMarks": 16
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "2.1",
+        "subNumber": "2.1",
+        "name": "2.1 Avogadro’s Number and Mole",
+        "slos": [
+          {
+            "code": "2.1.1",
+            "description": "define the following terms:\na. gram atomic mass,\nb. gram molecular mass,\nc. gram formula mass,\nd. formula unit,\ne. mole,\nf. Avogadro’s number;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "2.1.2",
+            "description": "relate gram atomic mass, gram molecular mass and gram formula mass to mole and Avogadro’s number;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "2.1.3",
+            "description": "calculate the following quantities of chemical species:\na. number of moles,\nb. number of particles (atoms, molecules and ions),\nc. molar mass (atomic/ molecular/ formula),\nd. mass;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "2.2",
+        "subNumber": "2.2",
+        "name": "2.2 Formulae and Percentage Composition",
+        "slos": [
+          {
+            "code": "2.2.1",
+            "description": "differentiate between empirical formula and molecular formula;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "2.2.2",
+            "description": "calculate the percentage composition by mass of an element in a compound;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "2.2.3",
+            "description": "calculate the empirical formula using percentages or masses of elements;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "2.2.4",
+            "description": "calculate the molecular formula using molecular mass and empirical formula;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "2.3",
+        "subNumber": "2.3",
+        "name": "2.3 Chemical Reactions and Calculations",
+        "slos": [
+          {
+            "code": "2.3.1",
+            "description": "describe the following terms:\na. chemical reaction,\nb. chemical equation;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 12,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "2.3.2",
+            "description": "illustrate the following types of chemical reactions:\na. displacement (single/ double),\nb. decomposition,\nc. addition/ synthesis/ combination,\nd. combustion (complete/ incomplete),\ne. neutralisation,\nf. hydrolysis;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 13,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "2.3.3",
+            "description": "evaluate the effectiveness of chemical reactions based on the following characteristics:\na. change of state,\nb. change in colour,\nc. evolution of gas,\nd. change in temperature,\ne. formation of a precipitate,\nf. occurrence of sound;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 13,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "2.3.4",
+            "description": "construct chemical equations and ionic equations to show reactants forming products, including state symbols;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 13,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "2.3.5",
+            "description": "balance chemical equations by inspection or trial and error method;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 13,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "2.3.6",
+            "description": "solve problems based on stoichiometric relationships of substances in terms of:\na. mass,\nb. number of moles,\nc. number of molecules,\nd. mole ratio,\ne. volume of gases at Room Temperature and Pressure (RTP) (24 L or dm³ and 24000 mL or cm³).",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 13,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 3,
+    "name": "Atomic Structure",
+    "page": 14,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 1,
+      "crqMarks": 3,
+      "totalMarks": 8
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "3.1",
+        "subNumber": "3.1",
+        "name": "3.1 Features of an Atom",
+        "slos": [
+          {
+            "code": "3.1.1",
+            "description": "describe the structure of an atom with reference to the location, relative electric charges and relative masses of proton, electron and neutron;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 14,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "3.1.2",
+            "description": "define the following terms:\na. atomic (proton) number,\nb. mass (nucleon) number,\nc. atomic mass,\nd. atomic mass unit;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 14,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "3.1.3",
+            "description": "calculate the atomic number, mass number, number of electrons and neutrons of atoms and ions;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 14,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "3.1.4",
+            "description": "draw the atomic structure of the first twenty elements of the periodic table and their ions (cations and anions) using their mass number and atomic number;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 14,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.2",
+        "subNumber": "3.2",
+        "name": "3.2 Isotopes",
+        "slos": [
+          {
+            "code": "3.2.1",
+            "description": "define the following terms:\na. isotopes,\nb. average atomic mass,\nc. relative atomic mass based on C-12 scale,\nd. radioactive isotopes,\ne. radioactivity;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 14,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "3.2.2",
+            "description": "determine the number of protons, neutrons and electrons in different isotopes of H, C, O, Cl and U;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 14,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "3.2.3",
+            "description": "calculate the relative atomic masses of chlorine and boron by using the mass number and natural abundance of their isotopes;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 14,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "3.2.4",
+            "description": "explain the role of isotopes in carbon dating (carbon), power generation (uranium) and medical imaging (iodine, sodium, technetium, thallium, arsenic, cobalt and xenon);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 14,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.3",
+        "subNumber": "3.3",
+        "name": "3.3 Models to Understand the Structure of an Atom",
+        "slos": [
+          {
+            "code": "3.3.1",
+            "description": "explain Rutherford’s experiment leading to the discovery of the atomic nucleus;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 15,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "3.3.2",
+            "description": "explain the defects of Rutherford’s atomic model;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 15,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "3.3.3",
+            "description": "describe the main points (postulates) of Bohr’s atomic model;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 15,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.4",
+        "subNumber": "3.4",
+        "name": "3.4 Shells and Sub-shells",
+        "slos": [
+          {
+            "code": "3.4.1",
+            "description": "differentiate between shells and sub-shells of an atom;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 15,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "3.5",
+        "subNumber": "3.5",
+        "name": "3.5 Electronic Configuration",
+        "slos": [
+          {
+            "code": "3.5.1",
+            "description": "deduce the electronic arrangement (in shells) and electronic configuration (of sub-shells) of the first twenty elements and their ions using their atomic number and charges (if any).",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 15,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 4,
+    "name": "Periodic Table and Periodicity",
+    "page": 16,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 1,
+      "crqMarks": 4,
+      "totalMarks": 9
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "4.1",
+        "subNumber": "4.1",
+        "name": "4.1 Periodic Table",
+        "slos": [
+          {
+            "code": "4.1.1",
+            "description": "state the modern periodic law;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 16,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "4.1.2",
+            "description": "differentiate between a period and a group in the periodic table;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 16,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.1.3",
+            "description": "determine the group, period and block of an element using its electronic configuration (first twenty elements);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 16,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "4.1.4",
+            "description": "describe the demarcation of the periodic table into s, p, d, and f-blocks;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 16,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.1.5",
+            "description": "determine the location of families on the periodic table based on their characteristics and electronic configuration (representative elements);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 16,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "4.2",
+        "subNumber": "4.2",
+        "name": "4.2 Periodic Properties",
+        "slos": [
+          {
+            "code": "4.2.1",
+            "description": "define the following terms:\na. shielding effect,\nb. electronegativity,\nc. atomic radii,\nd. electron affinity,\ne. ionisation energy (1st and 2nd);",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 16,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "4.2.2",
+            "description": "explain the periodic trend of the following within a group and a period of the periodic table:\na. shielding effect,\nb. electronegativity,\nc. atomic radii,\nd. electron affinity,\ne. ionisation energy (1st and 2nd);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 16,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.2.3",
+            "description": "compare the chemical reactivity and physical properties (metallic character, physical states, conductivity, density, melting and boiling points) of elements in the same family of elements (representative elements);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 16,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "4.3",
+        "subNumber": "4.3",
+        "name": "4.3 Properties of Elements in a Group",
+        "slos": [
+          {
+            "code": "4.3.1",
+            "description": "determine elements as an alkali metal, an alkaline earth metal, a halogen and a noble gas based on their electronic configuration;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 17,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "4.3.2",
+            "description": "compare the general properties of metals and non-metals in terms of:\na. physical states,\nb. density,\nc. malleability,\nd. ductility,\ne. melting and boiling points,\nf. conductivity,\ng. sonority,\nh. appearance/ lustre,\ni. hardness/ brittleness,\nj. nature of oxides (basic, acidic and amphoteric);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 17,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.3.3",
+            "description": "explain the following properties of Group I and II elements;\na. occurrence in combined state in nature,\nb. softness of metals,\nc. reaction with water,\nd. reaction with hydrogen,\ne. reaction with oxygen,\nf. reaction with dilute acids;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 17,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.3.4",
+            "description": "explain the following properties of Group VII elements:\na. existence as diatomic molecules,\nb. appearance (colour and state),\nc. displacement reactions with other halogens,\nd. reaction with metals;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 17,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.3.5",
+            "description": "explain the following properties of Group VIII elements:\na. existence as monoatomic gases or free state in nature,\nb. chemical inertness,\nc. importance of noble gas electronic configuration in the formation of ions;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 18,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.3.6",
+            "description": "explain the following properties of transition metals:\na. relative hardness,\nb. density,\nc. melting and boiling points,\nd. variable oxidation states,\ne. formation of coloured compounds;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 18,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "4.3.7",
+            "description": "explain the inertness of noble metals;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 18,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "4.3.8",
+            "description": "discuss the commercial importance of silver, gold and platinum.",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 18,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 5,
+    "name": "Structure of Molecules",
+    "page": 19,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 2: 6 Marks (Choose any ONE from TWO)",
+      "groupTotalMarks": 16
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "5.1",
+        "subNumber": "5.1",
+        "name": "5.1 Formation of Chemical Bond",
+        "slos": [
+          {
+            "code": "5.1.1",
+            "description": "explain duplet and octet rules that help atoms achieve stable electron configurations by forming bonds;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.1.2",
+            "description": "define a chemical bond and its following types:\na. ionic bond,\nb. covalent bond,\nc. coordinate covalent bond,\nd. metallic bond;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "5.1.3",
+            "description": "exemplify the formation of:\na. cations from an atom of a metallic element,\nb. anions from an atom of a non-metallic element;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.1.4",
+            "description": "explain the nature of bonding based on the electronegativity difference of bonded atoms using Linus Pauling scale;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "5.2",
+        "subNumber": "5.2",
+        "name": "5.2 Ionic Bond",
+        "slos": [
+          {
+            "code": "5.2.1",
+            "description": "explain the formation of an ionic bond;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.2.2",
+            "description": "explain the general characteristics of ionic compounds;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.2.3",
+            "description": "identify a compound as having ionic bond;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.2.4",
+            "description": "draw electron dot and cross structure of a binary ionic compound, for example, NaCl, MgO, K₂O and CaCl₂;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "5.3",
+        "subNumber": "5.3",
+        "name": "5.3 Covalent Bond",
+        "slos": [
+          {
+            "code": "5.3.1",
+            "description": "explain the formation of a covalent bond between two non-metallic elements;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.3.2",
+            "description": "exemplify single, double and triple covalent bonds;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.3.3",
+            "description": "explain the general characteristics of covalent compounds;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.3.4",
+            "description": "draw electron dot and cross structures for simple covalent molecules including H₂, Cl₂, O₂, N₂, H₂O, CH₄, NH₃, HCl, CO₂, HCN, C₂H₆, C₂H₄, and C₂H₂;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "5.3.5",
+            "description": "explain polar and non-polar covalent compounds;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 19,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.3.6",
+            "description": "differentiate between ionic and covalent compounds based on characteristics and examples;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "5.4",
+        "subNumber": "5.4",
+        "name": "5.4 Coordinate Covalent Bond",
+        "slos": [
+          {
+            "code": "5.4.1",
+            "description": "explain the formation of coordinate covalent bond;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.4.2",
+            "description": "draw electron dot and cross structure of coordinate covalent compounds, for example, ammonium ion, oxonium (hydronium) ion, aluminium tetrachloride anion, adduct (addition product) of ammonia and boron trifluoride;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "5.4.3",
+            "description": "compare the formation and characteristics of coordinate covalent compounds with covalent compounds;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "5.5",
+        "subNumber": "5.5",
+        "name": "5.5 Metallic Bond",
+        "slos": [
+          {
+            "code": "5.5.1",
+            "description": "explain the formation of metallic bonding (electron-sea model);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "5.5.2",
+            "description": "explain the contribution of structure of metals and the mobility of their electrons to the following properties:\na. malleability,\nb. ductility,\nc. melting and boiling points,\nd. lustre,\ne. tensile strength,\nf. electrical and thermal conductivity;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "5.6",
+        "subNumber": "5.6",
+        "name": "5.6 Intermolecular Forces",
+        "slos": [
+          {
+            "code": "5.6.1",
+            "description": "illustrate weak intermolecular forces, including Van der Waals forces (London dispersion forces and dipole-dipole interactions) and hydrogen bonding, and their effects on the melting and boiling points of compounds.",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 20,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 6,
+    "name": "States of Matter",
+    "page": 21,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 1,
+      "crqMarks": 3,
+      "totalMarks": 8
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "6.1",
+        "subNumber": "6.1",
+        "name": "6.1 Kinetic Molecular Theory and Phase Changes",
+        "slos": [
+          {
+            "code": "6.1.1",
+            "description": "compare the physical states of matter based on the intermolecular forces present between their molecules;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 21,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "6.1.2",
+            "description": "explain phase changes (melting, freezing, vaporisation, condensation, sublimation and deposition) due to changes in temperature and pressure affecting the arrangement and motion of particles within a substance;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 21,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "6.1.3",
+            "description": "explain melting and boiling point of substances used as a criterion to check their purity;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 21,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "6.1.4",
+            "description": "interpret heating and cooling curves in terms of kinetic theory;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 21,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.2",
+        "subNumber": "6.2",
+        "name": "6.2 Gaseous State",
+        "slos": [
+          {
+            "code": "6.2.1",
+            "description": "explain the following properties of gases in terms of kinetic theory:\na. diffusion,\nb. effusion,\nc. density,\nd. compressibility;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 21,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "6.2.2",
+            "description": "relate qualitatively the effect of the following factors to the rate of diffusion:\na. molecular mass,\nb. temperature;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 21,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.3",
+        "subNumber": "6.3",
+        "name": "6.3 Laws Related to Gases",
+        "slos": [
+          {
+            "code": "6.3.1",
+            "description": "relate the changes in pressure and volume of a gas using Boyle’s law;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 21,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "6.3.2",
+            "description": "relate the changes in temperature and volume of a gas using Charles’s law;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 21,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "6.3.3",
+            "description": "relate the changes in number of molecules and volume of a gas using Avogadro’s law;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 21,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.4",
+        "subNumber": "6.4",
+        "name": "6.4 Liquid State",
+        "slos": [
+          {
+            "code": "6.4.1",
+            "description": "explain the following properties of liquids and the factors that affect them:\na. vapour pressure,\nb. boiling point,\nc. freezing point,\nd. density,\ne. compressibility;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "6.4.2",
+            "description": "differentiate between evaporation and boiling;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "6.4.3",
+            "description": "discuss the effects of temperature on vapour pressure and the effects of external pressure on the boiling point of liquids;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "6.4.4",
+            "description": "explain the significance of diffusion rates in the context of medicine;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.5",
+        "subNumber": "6.5",
+        "name": "6.5 Solid State",
+        "slos": [
+          {
+            "code": "6.5.1",
+            "description": "explain the following physical properties of solids:\na. melting point,\nb. density,\nc. compressibility;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "6.5.2",
+            "description": "explain the following applications of sublimation such as:\na. solid air fresheners,\nb. dry ice (solid carbon dioxide),\nc. mothballs (naphthalene),\nd. 3D printing;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "6.6",
+        "subNumber": "6.6",
+        "name": "6.6 Types of Solid",
+        "slos": [
+          {
+            "code": "6.6.1",
+            "description": "define the term ‘allotropes’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "6.6.2",
+            "description": "explain allotropic forms of carbon (diamond, graphite, buckyballs and coal) and sulphur (rhombic, monoclinic and plastic).",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 22,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 7,
+    "name": "Solutions",
+    "page": 23,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 8: 6 Marks (Choose any ONE from TWO)",
+      "groupTotalMarks": 16
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "7.1",
+        "subNumber": "7.1",
+        "name": "7.1 Introduction to Solutions",
+        "slos": [
+          {
+            "code": "7.1.1",
+            "description": "exemplify the following terms:\na. solvent,\nb. solute,\nc. solution,\nd. aqueous/ non-aqueous solution,\ne. residue,\nf. filtrate;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "7.2",
+        "subNumber": "7.2",
+        "name": "7.2 Types of Solution According to Phases",
+        "slos": [
+          {
+            "code": "7.2.1",
+            "description": "classify different types of solutions according to the following phases:\na. gas into gas,\nb. gas into liquid,\nc. gas into solid,\nd. liquid into gas,\ne. liquid into liquid,\nf. liquid into solid,\ng. solid into gas,\nh. solid into liquid,\ni. solid into solid;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "7.3",
+        "subNumber": "7.3",
+        "name": "7.3 Types of Solution According to Concentration",
+        "slos": [
+          {
+            "code": "7.3.1",
+            "description": "differentiate among saturated, unsaturated and supersaturated solutions;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "7.3.2",
+            "description": "differentiate between dilute and concentrated solutions;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "7.4",
+        "subNumber": "7.4",
+        "name": "7.4 Comparison of Solution, Suspension and Colloid",
+        "slos": [
+          {
+            "code": "7.4.1",
+            "description": "compare the characteristics of solutions, suspensions and colloids with examples;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "7.5",
+        "subNumber": "7.5",
+        "name": "7.5 Concentration Units and Dilution of Solutions",
+        "slos": [
+          {
+            "code": "7.5.1",
+            "description": "define the term ‘molarity’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "7.5.2",
+            "description": "solve problems based on molarity of a solution;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 23,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "7.5.3",
+            "description": "define the term ‘percentage’ as a unit of concentration;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 24,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "7.5.4",
+            "description": "calculate the percentage composition of different solutions (% m/m, % m/v, % v/m, % v/v);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 24,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "7.5.5",
+            "description": "solve problems based on dilution of solutions from concentrated solutions of known molarity;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 24,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "7.6",
+        "subNumber": "7.6",
+        "name": "7.6 Factors Affecting Solubility",
+        "slos": [
+          {
+            "code": "7.6.1",
+            "description": "define the term ‘solubility’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 24,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "7.6.2",
+            "description": "explain the factors that affect solubility, i.e., temperature, pressure and nature of solute and solvent;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 24,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "7.6.3",
+            "description": "predict the solubility of one substance into another using the rule of ‘like dissolves like’;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 24,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "7.6.4",
+            "description": "interpret the effect of temperature on the solubility of different salts (for example, KNO₃, K_Cl, Li₂SO₄, Ce₂(SO₄)₃ and NaCl) in water by referring to absorption, release, or no change in heat, based on the solubility versus temperature graphs;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 24,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "7.7",
+        "subNumber": "7.7",
+        "name": "7.7 Methods for Separating Mixtures and Purification Techniques",
+        "slos": [
+          {
+            "code": "7.7.1",
+            "description": "explain the following methods of separation and purification:\na. evaporation,\nb. decantation,\nc. filtration,\nd. crystallisation,\ne. distillation,\nf. fractional distillation;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 24,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "7.7.2",
+            "description": "define the following terms:\na. chromatography,\nb. stationary phase,\nc. mobile phase,\nd. chromatogram,\ne. locating agent,\nf. retention factor (R_f);",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 24,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "7.7.3",
+            "description": "apply the paper chromatography technique for separating mixtures and isolating compounds;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 25,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "7.7.4",
+            "description": "interpret chromatograms using the R_f equation and spotting (locating) agents to recognise components in a mixture;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 25,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "7.7.5",
+            "description": "predict techniques for separating and purifying everyday mixtures.",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 25,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 8,
+    "name": "Electrochemistry",
+    "page": 26,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 7: 6 Marks (Choose any ONE from TWO)",
+      "groupTotalMarks": 16
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "8.1",
+        "subNumber": "8.1",
+        "name": "8.1 Oxidation and Reduction (Redox) Reactions",
+        "slos": [
+          {
+            "code": "8.1.1",
+            "description": "differentiate between oxidation and reduction in terms of loss or gain of oxygen, hydrogen or electrons;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.2",
+        "subNumber": "8.2",
+        "name": "8.2 Oxidation States and Rules for Assigning Oxidation States",
+        "slos": [
+          {
+            "code": "8.2.1",
+            "description": "define oxidation state;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "8.2.2",
+            "description": "explain the common rules used for assigning oxidation numbers to free elements, ions, molecules and atoms;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "8.2.3",
+            "description": "calculate the oxidation number of an atom in a compound and polyatomic ion;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.3",
+        "subNumber": "8.3",
+        "name": "8.3 Oxidising and Reducing Agents",
+        "slos": [
+          {
+            "code": "8.3.1",
+            "description": "describe oxidising and reducing agents in a redox reaction;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "8.3.2",
+            "description": "deduce oxidising and reducing agents in a redox reaction;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.4",
+        "subNumber": "8.4",
+        "name": "8.4 Electrochemical Cells",
+        "slos": [
+          {
+            "code": "8.4.1",
+            "description": "define the following terms:\na. electrolyte,\nb. weak electrolyte,\nc. non-electrolyte,\nd. electrolysis;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "8.4.2",
+            "description": "describe an electrochemical cell and its two types;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "8.4.3",
+            "description": "distinguish between Galvanic (voltaic) cell and electrolytic cell based on their parts, working and examples;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "8.4.4",
+            "description": "deduce the direction of movement of cations and anions towards respective electrodes in an electrolytic cell;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "8.4.5",
+            "description": "infer the electrical conductivity of solutions based on the dissociation of substances into ions;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "8.4.6",
+            "description": "identify the reactivity of elements using the reactivity series;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "8.4.7",
+            "description": "illustrate metal displacement reactions in an aqueous medium;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "8.4.8",
+            "description": "determine the half-cell in which oxidation occurs and the half-cell in which reduction occurs in a voltaic cell;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "8.4.9",
+            "description": "deduce the direction of the flow of electrons in a voltaic cell;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "8.4.10",
+            "description": "explain the production of electrical energy in a dry cell;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.5",
+        "subNumber": "8.5",
+        "name": "8.5 Electrochemical Industries",
+        "slos": [
+          {
+            "code": "8.5.1",
+            "description": "explain the manufacturing of sodium metal from fused NaCl in Down cell;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "8.5.2",
+            "description": "explain the manufacturing of sodium hydroxide from aqueous solution of NaCl in Nelson cell;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.6",
+        "subNumber": "8.6",
+        "name": "8.6 Corrosion and its Prevention",
+        "slos": [
+          {
+            "code": "8.6.1",
+            "description": "define the term ‘corrosion’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "8.6.2",
+            "description": "describe the rusting of iron as an example of corrosion;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "8.6.3",
+            "description": "explain the following methods used to prevent corrosion:\na. barrier coatings (using paint and galvanising),\nb. electroplating (using tin and chromium),\nc. sacrificial protection (using magnesium blocks).",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  }
+]

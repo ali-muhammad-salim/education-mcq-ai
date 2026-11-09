@@ -1,0 +1,183 @@
+{
+  "PHY-XI-2023-P1": {
+    "4": {
+      "stem": "The second equation of motion of a uniformly accelerated ball is $S=v_it+\\frac12 at^2$. The dimension of each term is",
+      "choices": {
+        "A": "$[L^{-1}]$",
+        "B": "$[T^{-1}]$",
+        "C": "$[L]$",
+        "D": "$[T]$"
+      }
+    },
+    "5": {
+      "stem": "The figure satisfies one condition of equilibrium. Which option gives the correct name and statement of that condition?",
+      "choices": {
+        "A": "First condition, net torque is zero",
+        "B": "Second condition, net force is zero",
+        "C": "First condition, net momentum is zero",
+        "D": "Second condition, net torque is zero"
+      },
+      "figure": [
+        49,
+        53,
+        306,
+        166
+      ]
+    },
+    "6": {
+      "stem": "The cross product $\\hat{\\imath}\\times\\hat{\\imath}=\\hat{\\jmath}\\times\\hat{\\jmath}=\\hat{k}\\times\\hat{k}$ is equal to",
+      "choices": {
+        "A": "$-1$",
+        "B": "$0$",
+        "C": "$1$",
+        "D": "$\\sqrt{1}$"
+      }
+    },
+    "7": {
+      "stem": "If the scalar product of two unit vectors is one, what is their relative direction?",
+      "choices": {
+        "A": "Parallel",
+        "B": "In any direction",
+        "C": "Antiparallel",
+        "D": "Perpendicular"
+      }
+    },
+    "8": {
+      "stem": "If the direction of an applied force is reversed, how do the magnitude and direction of its torque change?",
+      "choices": {
+        "A": "Same magnitude, same direction",
+        "B": "Same magnitude, reversed direction",
+        "C": "Greater magnitude, same direction",
+        "D": "Smaller magnitude, reversed direction"
+      }
+    },
+    "9": {
+      "stem": "If the components $A_x$ and $A_y$ of vector $\\vec A$ are negative and positive respectively, in which quadrant is $\\vec A$?",
+      "choices": {
+        "A": "I quadrant",
+        "B": "II quadrant",
+        "C": "III quadrant",
+        "D": "IV quadrant"
+      }
+    },
+    "14": {
+      "stem": "Two balls are released simultaneously from point A with zero vertical velocity, as shown. Why do they reach the ground at the same time?",
+      "figure": [
+        48,
+        75,
+        321,
+        358
+      ]
+    },
+    "19": {
+      "stem": "Which option correctly pairs an example of kinetic energy with an example of potential energy?",
+      "choices": {
+        "A": "Kinetic: weight at a height. Potential: moving car.",
+        "B": "Kinetic: fired bullet. Potential: water stored by a dam.",
+        "C": "Kinetic: yo-yo before release. Potential: a person walking or running.",
+        "D": "Kinetic: book before it falls. Potential: falling meteors."
+      }
+    },
+    "20": {
+      "stem": "The figures show a constant force acting as an object moves from X to Y. In which case is the work done positive?",
+      "choices": {
+        "A": "I only",
+        "B": "II only",
+        "C": "III only",
+        "D": "I and II"
+      },
+      "figure": [
+        47,
+        59,
+        845,
+        254
+      ]
+    },
+    "31": {
+      "choices": {
+        "A": "$\\frac{T}{3}$",
+        "B": "$T$",
+        "C": "$3T$",
+        "D": "$\\sqrt3T$"
+      }
+    },
+    "32": {
+      "stem": "If $x$ is the displacement of the bob from equilibrium, $\\frac12kx^2$ is equal to its:\nI. total energy\nII. kinetic energy\nIII. potential energy"
+    },
+    "41": {
+      "choices": {
+        "A": "$Y=(m+1)\\frac{\\lambda L}{d}$",
+        "B": "$Y=(m-1)\\frac{\\lambda L}{d}$",
+        "C": "$Y=(m+\\frac12)\\frac{\\lambda L}{d}$",
+        "D": "$Y=(m-\\frac12)\\frac{\\lambda d}{L}$"
+      }
+    },
+    "48": {
+      "stem": "Internal energy is a state function. What does its change depend on and what is it independent of?",
+      "choices": {
+        "A": "Initial and final states; path",
+        "B": "Initial and final states; work done",
+        "C": "Initial and final pressure; path",
+        "D": "Initial and final pressure; work done"
+      }
+    },
+    "49": {
+      "stem": "In a closed thermodynamic system, how can mass and energy pass across the boundary?",
+      "choices": {
+        "A": "Both can transfer",
+        "B": "Neither can transfer",
+        "C": "Mass can transfer, energy cannot",
+        "D": "Mass cannot transfer, energy can"
+      }
+    },
+    "15": {
+      "stem": "Suppose that the mass and radius of the Moon change to $7.35\\times10^{22}\\,\\mathrm{kg}$ and $1.7\\times10^6\\,\\mathrm m$, respectively. What is its escape speed? Use $G=6.63\\times10^{-11}\\,\\mathrm{N\\,m^2\\,kg^{-2}}$."
+    },
+    "21": {
+      "stem": "Pakistan has launched a Remote Sensing Satellite System (RSSS) for oceanography and meteorology. At an altitude of $7\\times10^5\\,\\mathrm m$, what is the satellite’s orbital speed? Use $G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2\\,kg^{-2}}$, Earth’s mass $5.9\\times10^{24}\\,\\mathrm{kg}$, and Earth’s radius $6.3\\times10^6\\,\\mathrm m$."
+    },
+    "23": {
+      "stem": "An object has a moment of inertia of $1\\,\\mathrm{kg\\,m^2}$ and rotates with a constant angular velocity of $2\\,\\mathrm{rad/s}$. What is its rotational kinetic energy?"
+    }
+  },
+  "PHY-XI-2023-P2": {
+    "1": {
+      "figure": [
+        47,
+        263,
+        765,
+        547
+      ],
+      "stem": "Categorise the three dartboards on the given basis.\nI. Poor accuracy and good precision (1 Mark)\nII. Good accuracy and good precision (1 Mark)\nIII. Good accuracy and poor precision (1 Mark)\nGive the appropriate number, I, II or III, for each dartboard from left to right."
+    },
+    "2": {
+      "figure": [
+        7,
+        98,
+        316,
+        345
+      ],
+      "stem": "The diagram shows the resultant vector $\\vec R$ of two vectors $\\vec A$ and $\\vec B$.\nWrite the formula for each of the following.\na. Magnitude of the vector $\\vec A$ (1 Mark)\nb. Direction of the resultant vector $\\vec R$ (1 Mark)"
+    },
+    "4": {
+      "figure": [
+        240,
+        92,
+        454,
+        325
+      ]
+    },
+    "5": {
+      "figure": [
+        174,
+        88,
+        480,
+        265
+      ],
+      "stem": "The figure shows liquid flowing out from the bottom of a storage tank with a constant velocity.\nFind an equation for the hydrostatic pressure at the bottom of the tank."
+    },
+    "3": {
+      "stem": "A missile is fired at 450 m/s at an angle of 45° to the horizontal. Take g as 10 m/s².\nCalculate:\na. the range of the projectile. (2 Marks)\nb. the time for which the missile will remain in the air. (1 Mark)"
+    }
+  }
+}

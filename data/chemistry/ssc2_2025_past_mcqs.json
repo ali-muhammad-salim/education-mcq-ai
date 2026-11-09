@@ -1,0 +1,1522 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "An addition of a catalyst in a chemical reaction helps to increase the",
+    "options": {
+      "A": "yield of a chemical reaction.",
+      "B": "speed of a chemical reaction.",
+      "C": "activation energy of a chemical reaction.",
+      "D": "product formation in the presence of impurities."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "9.3.7",
+    "sloText": "Determine the effect of a catalyst on a reversible reaction at equilibrium.",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "A catalyst provides an alternative reaction pathway with a lower activation energy, thereby increasing the speed (rate) of both the forward and reverse reactions equally without altering the equilibrium position or the overall yield.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. A catalyst does not shift the equilibrium position or increase the equilibrium yield."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. A catalyst lowers activation energy and increases the speed (rate) of the chemical reaction so equilibrium is reached faster."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. A catalyst decreases, rather than increases, the activation energy."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Impurities often poison catalysts and do not enhance product yield."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "stem": "Nitrogen dioxide (NO2), a reddish-brown gas, is a major pollutant released from car exhausts which causes acid rain. When two molecules of NO2 join together, they form one molecule of the colourless dinitrogen tetraoxide gas. The equilibrium constant Kc expression for this reversible reaction is\nKc = [N2O4] / [NO2]^2\nWhat will be the unit of equilibrium constant for this reaction?",
+    "options": {
+      "A": "mol / dm3",
+      "B": "dm3 / mol",
+      "C": "mol^-2 / dm6",
+      "D": "dm^-3 / mol"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "9.3.2",
+    "sloText": "Deduce the units of equilibrium constant Kc for reversible reactions.",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Substituting molar concentration units [mol/dm3] into the Kc expression:\nKc = [mol / dm3] / [mol / dm3]^2 = 1 / (mol / dm3) = dm3 / mol (or dm3 mol^-1).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. mol/dm3 is the unit for the reverse dissociation reaction [NO2]^2 / [N2O4]."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. [mol/dm3] / [mol/dm3]^2 simplifies to dm3/mol."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Results from squaring rather than cancelling concentration terms."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Incorrect exponent on dm."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "stem": "The energy profile diagram that represents the burning of wood in air is",
+    "options": {
+      "A": "Diagram A (Exothermic profile: Products lower in potential energy than Reactants with upward activation energy barrier)",
+      "B": "Diagram B (Endothermic profile: Products higher in potential energy than Reactants)",
+      "C": "Diagram C (Thermoneutral profile: Reactants and Products at equal potential energy)",
+      "D": "Diagram D (Inverted downward energy dip followed by higher Products)"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "9.2.3",
+    "sloText": "Interpret energy profile diagrams for exothermic and endothermic reactions.",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2025-P1/q3.png",
+    "explanation": "The burning (combustion) of wood in air releases heat energy to the surroundings, meaning it is an exothermic reaction (\u0394H < 0). In an exothermic energy profile diagram (Diagram A), the potential energy of the products is lower than the potential energy of the reactants, with an initial activation energy hump.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Combustion of wood is exothermic, so products lie at a lower potential energy level than reactants."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Diagram B shows products at a higher potential energy than reactants, representing an endothermic reaction."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Diagram C shows no net enthalpy change (\u0394H = 0)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Activation energy is always a positive barrier above reactants, never a downward trough."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "stem": "Which of the following two concentrations when changed will cause the equilibrium to shift to the left?\nBiCl3(aq) + H2O(l) \u21cc BiOCl(aq) + 2HCl(aq)",
+    "options": {
+      "A": "Decrease [H2O], increase [BiOCl]",
+      "B": "Increase [H2O], increase [HCl]",
+      "C": "Decrease [BiCl3], decrease [BiOCl]",
+      "D": "Increase [BiCl3], decrease [HCl]"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "9.3.4",
+    "sloText": "Predict the effect of changing concentration on the position of equilibrium using Le Chatelier's principle.",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "By Le Chatelier's principle, the equilibrium shifts to the left (reverse direction, towards reactants) when a reactant concentration is decreased (decreasing [H2O] or [BiCl3]) or when a product concentration is increased (increasing [BiOCl] or [HCl]). In Option A, both decreasing [H2O] and increasing [BiOCl] drive the reaction to the left.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Removing reactant H2O and adding product BiOCl both shift the equilibrium towards the left (reactants)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Increasing [H2O] shifts equilibrium to the right, opposing the effect of increasing [HCl]."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Decreasing product [BiOCl] shifts equilibrium to the right."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Both increasing [BiCl3] and decreasing [HCl] shift equilibrium to the right."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "stem": "What is the effect of a rise in temperature on an exothermic reversible reaction at equilibrium?",
+    "options": {
+      "A": "It will equalise the amount of reactant and product.",
+      "B": "It will shift the equilibrium in the reverse direction.",
+      "C": "It will shift the equilibrium in the forward direction.",
+      "D": "It will stop the reaction from proceeding in both directions."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "9.2.2",
+    "sloText": "Predict the effect of temperature changes on exothermic and endothermic equilibrium systems.",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In an exothermic reaction (Reactants \u21cc Products + Heat), heat is a product of the forward reaction. Increasing temperature adds heat to the system; by Le Chatelier's principle, the equilibrium shifts in the endothermic reverse direction (towards reactants) to absorb the added heat.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Equilibrium concentrations depend on Kc and stoichiometry, not equal amounts."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Raising temperature favours the endothermic reverse direction in an exothermic reaction."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Raising temperature shifts an endothermic reaction forward, not an exothermic one."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Dynamic equilibrium continues at a faster rate in both directions."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "stem": "The substance that acts as a Bronsted-Lowry acid when it reacts with water is",
+    "options": {
+      "A": "CH4",
+      "B": "NH3",
+      "C": "H2S",
+      "D": "CO3^2-"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "10.1.3",
+    "sloText": "Define and identify acids and bases according to the Bronsted-Lowry concept.",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "According to the Bronsted-Lowry theory, an acid is a proton (H+) donor. When hydrogen sulphide (H2S) dissolves in water, it donates a proton to water to form hydronium and hydrosulphide ions: H2S(aq) + H2O(l) \u21cc H3O+(aq) + HS-(aq). NH3 and CO3^2- act as Bronsted-Lowry bases (proton acceptors), while CH4 is neutral.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Methane (CH4) has non-polar C\u2013H bonds and does not donate protons in water."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Ammonia (NH3) accepts a proton from water to form NH4+, acting as a Bronsted-Lowry base."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. H2S donates H+ to water (H2S + H2O \u21cc H3O+ + HS-), acting as a Bronsted-Lowry acid."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Carbonate ion (CO3^2-) accepts H+ from water to form HCO3-, acting as a Bronsted-Lowry base."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "stem": "The figure below shows the colours of two indicators: methyl orange and litmus solution at different pH values.\nMethyl orange and litmus solution both produce the same result of red colour when introduced in a solution of",
+    "options": {
+      "A": "sugar and water.",
+      "B": "sodium and water.",
+      "C": "sulphur dioxide and water.",
+      "D": "sodium chloride and water."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "10.5.2",
+    "sloText": "Interpret pH ranges and colour changes of acid-base indicators (litmus, methyl orange, phenolphthalein).",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2025-P1/q7.png",
+    "explanation": "From the pH chart, both methyl orange and litmus are red at strongly acidic pH values (pH < 4). Sulphur dioxide (SO2) is a non-metallic acidic oxide that dissolves in water to form sulphurous acid (SO2 + H2O \u21cc H2SO3), creating an acidic solution where both indicators turn red. Sugar and NaCl in water are neutral (pH 7), while sodium in water forms strongly alkaline NaOH (pH > 12).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Sugar in water is neutral (pH = 7), where methyl orange is yellow."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Sodium reacts with water to form NaOH (strong alkali, pH > 12), turning methyl orange yellow and litmus blue."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. SO2 + H2O -> H2SO3 (acidic solution, pH < 4), in which both methyl orange and litmus turn red."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Aqueous NaCl is a neutral salt solution (pH = 7)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "stem": "2HNO3(aq) + Na2CO3(aq) -> ?\nThe products of the given reaction are",
+    "options": {
+      "A": "2NaNO3(aq) + H2O(l) + CO(g)",
+      "B": "2NaNO2(aq) + H2O(l) + CO2(g)",
+      "C": "2NaNO3(aq) + H2O(l) + CO2(g)",
+      "D": "2NO2(g) + Na2O2(aq) + H2CO3(aq)"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "10.6.2",
+    "sloText": "Write balanced chemical equations for the reactions of acids with metal carbonates and bicarbonates.",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Acids react with metal carbonates to produce a salt, water, and carbon dioxide gas. Nitric acid (HNO3) reacts with sodium carbonate (Na2CO3) to yield sodium nitrate (2NaNO3), water (H2O), and carbon dioxide gas (CO2).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Carbon dioxide (CO2), not carbon monoxide (CO), is evolved when acids react with carbonates."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Nitric acid (HNO3) forms nitrate salts (NaNO3), not nitrite salts (NaNO2)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. 2HNO3(aq) + Na2CO3(aq) -> 2NaNO3(aq) + H2O(l) + CO2(g)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Does not form sodium peroxide or nitrogen dioxide."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "stem": "In an incomplete neutralisation reaction of Zn(OH)2 by HCl, which type of salt will be obtained?",
+    "options": {
+      "A": "Basic salt",
+      "B": "Mixed salt",
+      "C": "Acidic salt",
+      "D": "Neutral salt"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "10.7.4",
+    "sloText": "Classify salts into normal (neutral), acidic, basic, double, mixed, and complex salts.",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Basic salts are formed by the incomplete (partial) neutralisation of a polyhydroxy base (like Zn(OH)2 or Pb(OH)2) by an acid:\nZn(OH)2 + HCl -> Zn(OH)Cl + H2O.\nBecause the resulting salt Zn(OH)Cl still retains a replaceable hydroxyl (-OH) group, it is a basic salt.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Partial neutralisation of the diacidic base Zn(OH)2 by HCl yields basic zinc chloride, Zn(OH)Cl."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Mixed salts contain more than one acidic or basic radical (e.g. bleaching powder Ca(OCl)Cl)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Acidic salts are formed by partial neutralisation of a polyprotic acid by a base."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Complete neutralisation forms the normal/neutral salt ZnCl2."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "stem": "The benefit of using milk of magnesia, Mg(OH)2, for humans is that it",
+    "options": {
+      "A": "cures jaundice.",
+      "B": "treats tooth decay.",
+      "C": "reduces stomach acidity.",
+      "D": "relieves the pain of insect bites."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "10.4.1",
+    "sloText": "State the uses of common bases in daily life and medicine.",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Milk of magnesia is an aqueous suspension of magnesium hydroxide, Mg(OH)2, a mild base widely used as an antacid to neutralise excess hydrochloric acid (HCl) in the stomach and relieve indigestion/hyperacidity.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Milk of magnesia is an antacid, not a hepatic treatment for jaundice."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Toothpastes use mild abrasives and fluoride, while milk of magnesia is taken orally for gastric acidity."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Mg(OH)2 neutralises excess stomach HCl (Mg(OH)2 + 2HCl -> MgCl2 + 2H2O), reducing stomach acidity."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Calamine lotion or baking soda paste is applied topically to acidic insect stings."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "stem": "The name of the given compound as recommended by the International Union of Pure and Applied Chemistry (IUPAC) is\n(Structure shows H3C - C(CH3)2 - CH = CH2)",
+    "options": {
+      "A": "2,2-dimethyl-3-butene.",
+      "B": "3,3-dimethyl-1-butene.",
+      "C": "1,1,1-trimethyl-2-propene.",
+      "D": "3,3,3-trimethyl-1-propene."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "12.1.2",
+    "sloText": "Apply IUPAC nomenclature rules to name branched-chain alkanes, alkenes, and alkynes.",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2025-P1/q11.png",
+    "explanation": "According to IUPAC rules for alkenes:\n1. Select the longest continuous carbon chain containing the C=C double bond: 4 carbons (butene).\n2. Number the chain from the end nearer the double bond so the double-bonded carbons receive the lowest possible locants: C1=C2\u2013C3\u2013C4 (1-butene).\n3. Two methyl (-CH3) substituents are attached at C3. Therefore, the IUPAC name is 3,3-dimethyl-1-butene.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Numbered the chain from the wrong end; the C=C double bond takes priority over alkyl substituents for lowest locant."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Numbering from the double-bond end gives C1=C2 and places the two methyl groups at C3: 3,3-dimethyl-1-butene."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Failed to include the longest 4-carbon chain as the parent chain."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Longest chain has 4 carbons (butene), not 3 carbons (propene)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "stem": "The angle P in the given structure is\n(Diagram shows planar ethene H2C=CH2 with H-C=C bond angle P)",
+    "options": {
+      "A": "60\u00b0",
+      "B": "95\u00b0",
+      "C": "120\u00b0",
+      "D": "165\u00b0"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "12.6.1",
+    "sloText": "Describe the structure, sp2 hybridisation, and bond angles of ethene.",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2025-P1/q12.png",
+    "explanation": "In ethene (C2H4), each carbon atom is sp2 hybridised and bonded to three atoms in a trigonal planar geometry. Consequently, the H\u2013C=C bond angle (angle P) and H\u2013C\u2013H bond angle are approximately 120\u00b0.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 60\u00b0 is found in strained three-membered rings (cyclopropane)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Does not correspond to trigonal planar sp2 geometry."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Trigonal planar geometry around sp2-hybridised carbon atoms in ethene produces bond angles of 120\u00b0."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Linear sp-hybridised alkynes have 180\u00b0 bond angles."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "stem": "The structural formula of isopentane is",
+    "options": {
+      "A": "Structure A (2,2-dimethylpropane / neopentane, C5H12)",
+      "B": "Structure B (2,2-dimethylbutane / neohexane, C6H14)",
+      "C": "Structure C (2-methylbutane / isopentane, C5H12)",
+      "D": "Structure D (3-methylpentane, C6H14)"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "12.3.1",
+    "sloText": "Draw structural formulas of chain isomers of alkanes (butane and pentane).",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2025-P1/q13.png",
+    "explanation": "Isopentane (IUPAC name: 2-methylbutane) has the molecular formula C5H12, consisting of a 4-carbon continuous chain with one methyl (-CH3) branch on the second carbon: CH3\u2013CH(CH3)\u2013CH2\u2013CH3. This corresponds to Structure C. Structure A is neopentane (2,2-dimethylpropane, C5H12), while Structures B and D contain 6 carbons (C6H14).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Structure A has a central carbon bonded to four methyl groups (neopentane / 2,2-dimethylpropane)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Structure B has 6 carbon atoms (2,2-dimethylbutane)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Structure C shows a 4-carbon chain with one methyl branch at C2 (2-methylbutane, commonly called isopentane)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Structure D has 6 carbon atoms in total."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "stem": "Which of the following processes is used for the conversion of vegetable oil into banaspati ghee?",
+    "options": {
+      "A": "Halogenation",
+      "B": "Hydrogenation",
+      "C": "Dehalogenation",
+      "D": "Dehydrogenation"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "12.5.4",
+    "sloText": "Describe the catalytic hydrogenation of alkenes and vegetable oils to manufacture banaspati ghee.",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Vegetable oils are unsaturated triglycerides containing carbon-carbon double bonds (C=C). Passing hydrogen gas (H2) through heated vegetable oil in the presence of a finely divided Nickel (Ni) catalyst adds hydrogen across the double bonds (catalytic hydrogenation), converting liquid unsaturated oil into semi-solid saturated fat (banaspati ghee).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Halogenation adds halogens (Cl2 or Br2) across double bonds."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Catalytic hydrogenation saturates C=C double bonds in vegetable oil using H2 and a Ni catalyst to produce banaspati ghee."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Dehalogenation removes halogen atoms to form alkenes/alkynes."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Dehydrogenation removes hydrogen to introduce unsaturation."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "stem": "A gaseous mixture of hydrocarbons that mainly consists of methane and is used for cooking at home is known as",
+    "options": {
+      "A": "natural gas.",
+      "B": "artificial gas.",
+      "C": "liquefied gas.",
+      "D": "compressed gas."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "12.5.3",
+    "sloText": "State the composition and uses of natural gas (methane).",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Natural gas (Sui gas) is a naturally occurring fossil fuel gas mixture consisting of approximately 85% methane (CH4), along with smaller amounts of ethane, propane, and butane, widely piped into homes for domestic cooking and heating.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Natural gas consists of ~85% methane and is the primary domestic cooking fuel."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Coal gas or water gas are synthetic gases."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Liquefied petroleum gas (LPG) consists mainly of propane and butane, not methane."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Compressed natural gas (CNG) refers to the high-pressure storage state used in vehicles."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "stem": "Organic compounds have X bonding; therefore, they exhibit Y electrical conductivity both in fused state and in solution form.\nWhich of the following CORRECTLY identifies X and Y?",
+    "options": {
+      "A": "X: Ionic | Y: Poor",
+      "B": "X: Metallic | Y: Good",
+      "C": "X: Covalent | Y: Poor",
+      "D": "X: Ionic | Y: Good"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "11.1.1",
+    "sloText": "Describe the general characteristics of organic compounds (covalent nature, non-electrolytic behaviour).",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Organic compounds are composed of carbon atoms bonded to hydrogen and other non-metals via covalent bonds (X = Covalent). Because they consist of neutral molecules rather than free ions, they are non-electrolytes and exhibit poor (or no) electrical conductivity (Y = Poor) in both molten and solution states.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Organic compounds have covalent bonding, not ionic bonding."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Organic compounds do not have metallic bonding or good conductivity."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Organic compounds possess covalent bonding (X) and are poor electrical conductors (Y)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. This describes inorganic ionic salts, not organic compounds."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "stem": "A petrol tanker has the following hazard warning symbol on it.\n(Diagram shows a red diamond hazard sign with a black flame symbol)\nThe symbol indicates that the tanker contains a compound that is",
+    "options": {
+      "A": "corrosive.",
+      "B": "explosive.",
+      "C": "flammable.",
+      "D": "radioactive."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "11.1.1",
+    "sloText": "Recognise hazard symbols and flammability of organic compounds such as petrol.",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2025-P1/q17.png",
+    "explanation": "The GHS hazard pictogram showing a flame over a horizontal line inside a red diamond indicates a highly flammable substance. Petrol (gasoline) is a volatile mixture of hydrocarbons that ignites readily.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Corrosive substances are represented by test tubes pouring liquid onto a hand and metal bar."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Explosive substances are represented by a shattering bomb symbol."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The flame pictogram warns that the substance (petrol) is highly flammable."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Radioactive materials are represented by a three-bladed trefoil symbol."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "stem": "The following tests are carried out on an aqueous solution of compound X. The given observation table depicts the tests and their results.\n- Dip blue and red litmus paper -> Blue litmus paper turns red while red litmus paper remains unchanged.\n- Add bromine water -> The white precipitate is formed.\n- Add a neutral solution of ferric chloride slowly and dropwise -> The violet-purple colouration is observed.\nThe observation table indicates that the compound X is a/ an",
+    "options": {
+      "A": "ketone.",
+      "B": "phenol.",
+      "C": "aldehyde.",
+      "D": "carboxylic acid."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "11.5.4",
+    "sloText": "Identify functional groups using characteristic chemical tests (litmus, bromine water, ferric chloride).",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Phenol (C6H5OH) is weakly acidic (turns blue litmus red), reacts rapidly with aqueous bromine water to decolourise it and form a white precipitate of 2,4,6-tribromophenol, and forms a characteristic violet-purple complex when treated with neutral ferric chloride (FeCl3) solution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Ketones are neutral and do not react with bromine water or neutral FeCl3."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Weak acidity, white precipitate with bromine water (2,4,6-tribromophenol), and violet-purple colouration with neutral FeCl3 are the classic confirmatory tests for phenol."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Aldehydes are neutral to litmus and give silver mirror (Tollens') or brick-red precipitate (Fehling's), not violet colouration with FeCl3."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Carboxylic acids turn blue litmus red but do not form a white precipitate with bromine water or violet complex with FeCl3."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "stem": "The number of carbon atoms an alkane must possess to exhibit three possible chain isomers is",
+    "options": {
+      "A": "two.",
+      "B": "three.",
+      "C": "four.",
+      "D": "five."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "11.4.4",
+    "sloText": "Define structural isomerism and draw chain isomers of alkanes up to pentane.",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Ethane (C2) and propane (C3) have no isomers (1 structure each). Butane (C4H10) has 2 chain isomers (n-butane and isobutane). Pentane (C5H12, five carbon atoms) exhibits exactly 3 chain isomers: n-pentane, isopentane (2-methylbutane), and neopentane (2,2-dimethylpropane).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Ethane (2 carbons) exists as only 1 structure."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Propane (3 carbons) exists as only 1 structure."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Butane (4 carbons) exhibits only 2 chain isomers."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Pentane (5 carbons, C5H12) has 3 chain isomers: n-pentane, isopentane, and neopentane."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "stem": "The carboxyl functional group is present in\n(Diagrams: A = H3C-CH2-CO-CH3; B = H3C-CH2-CH2-OH; C = H3C-CH2-O-CH3; D = H3C-CH2-COOH)",
+    "options": {
+      "A": "Structure A (2-butanone, ketone group -CO-)",
+      "B": "Structure B (1-propanol, alcoholic hydroxyl group -OH)",
+      "C": "Structure C (ethyl methyl ether, ether linkage -O-)",
+      "D": "Structure D (propanoic acid, carboxyl group -COOH)"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "11.5.3",
+    "sloText": "Identify organic functional groups (alcohol, ether, aldehyde, ketone, carboxyl, ester) from structural formulas.",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2025-P1/q20.png",
+    "explanation": "The carboxyl functional group (-COOH or -C(=O)OH) consists of a carbonyl group (C=O) directly attached to a hydroxyl group (-OH). Structure D (H3C\u2013CH2\u2013C(=O)\u2013OH, propanoic acid) contains the carboxyl group.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Structure A contains a ketone carbonyl group (-CO-) flanked by two carbon atoms."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Structure B contains an alcoholic hydroxyl group (-OH)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Structure C contains an ether functional group (R\u2013O\u2013R')."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Structure D (propanoic acid) contains the carboxyl group (-C(=O)OH)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "stem": "Consider the given characteristics of a carbohydrate.\n\u2022 A white, crystalline solid\n\u2022 Composed of two monomers\n\u2022 Commonly known as table sugar\nBased on these characteristics, the carbohydrate is identified as",
+    "options": {
+      "A": "sucrose.",
+      "B": "glucose.",
+      "C": "maltose.",
+      "D": "fructose."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "13.1.2",
+    "sloText": "Classify carbohydrates into monosaccharides, disaccharides (sucrose, maltose, lactose), and polysaccharides.",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Sucrose (C12H22O11) is a white crystalline disaccharide composed of two monosaccharide units (one glucose and one fructose monomer) and is universally known as common table sugar.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Sucrose is a disaccharide (glucose + fructose) commonly used as table sugar."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Glucose is a single monomer (monosaccharide)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Maltose is a disaccharide (two glucose units) known as malt sugar, not table sugar."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Fructose is a monosaccharide known as fruit sugar."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "stem": "Which of the following statements is FALSE about deoxyribonucleic acid (DNA)?",
+    "options": {
+      "A": "Damage to DNA causes typhoid.",
+      "B": "It is a long double-stranded molecule.",
+      "C": "Synthesis of RNA is controlled by DNA.",
+      "D": "It stores all genetic information of the cell."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "13.5.2",
+    "sloText": "Describe the structure and biological functions of nucleic acids (DNA and RNA).",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Typhoid is an infectious waterborne bacterial disease caused by Salmonella typhi, not by genetic DNA damage (DNA damage/mutation causes genetic disorders or cancer). Statements B, C, and D are all true properties of DNA.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct (False statement). Typhoid is caused by bacterial infection (Salmonella typhi), not by damage to DNA."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. This statement is true: DNA consists of a double-stranded alpha-helix."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. This statement is true: DNA directs the synthesis (transcription) of RNA."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. This statement is true: DNA is the hereditary material storing all genetic instructions."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "stem": "The linear sequencing of amino acids in a polypeptide chain results in the",
+    "options": {
+      "A": "denaturation of protein.",
+      "B": "loss of biological activity of a protein.",
+      "C": "formation of primary structure of a protein.",
+      "D": "formation of secondary structure of a protein."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "13.2.3",
+    "sloText": "Describe the structure and peptide linkage of proteins.",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "The specific linear sequence in which amino acids are linked together by peptide bonds in a polypeptide chain defines the primary structure of a protein.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Denaturation is the disruption of secondary and tertiary structures by heat or pH."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Proper linear sequencing establishes, rather than destroys, biological function."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The linear sequence of amino acids in a polypeptide chain constitutes the primary structure of a protein."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Secondary structure refers to local coiling/folding (alpha-helix and beta-pleated sheets) stabilized by hydrogen bonding."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "stem": "Protease enzymes are added to detergents which are BEST suited to remove the stains of",
+    "options": {
+      "A": "milk and egg.",
+      "B": "oil and grease.",
+      "C": "fruits and vegetables.",
+      "D": "ketchup and ice cream."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "13.3.2",
+    "sloText": "Describe commercial uses of enzymes (proteases, amylases, lipases) in biological detergents and industries.",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Proteases are protein-digesting enzymes that catalyse the hydrolysis of insoluble protein stains (such as milk, egg, blood, and gravy) into soluble shorter peptides and amino acids that wash away easily.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Milk and egg stains are rich in proteins, which are broken down specifically by protease enzymes."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Oil and grease (lipid) stains are removed by lipase enzymes."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Fruit and vegetable starch stains are targeted by amylase/cellulase enzymes."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Ketchup and ice cream contain mixed sugars and fats rather than pure protein stains."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "stem": "An example of an essential micro-mineral for humans is",
+    "options": {
+      "A": "calcium.",
+      "B": "fluoride.",
+      "C": "phosphorus.",
+      "D": "magnesium."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "13.7.1",
+    "sloText": "Classify minerals into macro-minerals and micro-minerals (trace elements) and state their biological roles.",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Micro-minerals (trace minerals) are required by the human body in quantities less than 100 mg per day (such as iron, zinc, iodine, fluoride, and copper). Calcium, phosphorus, and magnesium are macro-minerals required in larger amounts (> 100 mg/day).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Calcium is a major macro-mineral needed in large quantities for bones and teeth."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Fluoride is an essential micro-mineral (trace element) that strengthens dental enamel and prevents tooth decay."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Phosphorus is a macro-mineral."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Magnesium is a macro-mineral."
+      }
+    ]
+  },
+  {
+    "questionNumber": 26,
+    "stem": "Sabeen has a viral disease acquired by drinking contaminated water. Her symptoms include fatigue, depression, dark yellow urine and yellowness of skin and eyes.\nBased on the given symptoms, Sabeen is suffering from",
+    "options": {
+      "A": "cholera.",
+      "B": "typhoid.",
+      "C": "hepatitis.",
+      "D": "diarrhoea."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "15.5.1",
+    "sloText": "Describe waterborne diseases (cholera, dysentery, typhoid, hepatitis, jaundice) and their symptoms.",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Hepatitis (specifically Hepatitis A and E transmitted via contaminated water) is an acute viral inflammation of the liver characterized by jaundice (yellowness of skin and eyes due to excess bilirubin), dark yellow urine, severe fatigue, and loss of appetite.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Cholera is a bacterial disease (Vibrio cholerae) causing severe watery diarrhoea."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Typhoid is a bacterial disease (Salmonella typhi) causing high fever and intestinal ulcers."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Hepatitis is a viral liver infection causing jaundice (yellow skin/eyes), dark urine, and fatigue."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Diarrhoea is an intestinal condition characterized by loose watery stools, not liver jaundice."
+      }
+    ]
+  },
+  {
+    "questionNumber": 27,
+    "stem": "Zafar wants to prepare permanent hard water in the laboratory.\nWhich salt should he add to water to cause permanent hardness?",
+    "options": {
+      "A": "Calcium sulphate",
+      "B": "Calcium carbonate",
+      "C": "Calcium hydroxide",
+      "D": "Calcium bicarbonate"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "15.3.1",
+    "sloText": "Differentiate between temporary and permanent hardness of water based on dissolved calcium and magnesium salts.",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Permanent hardness of water is caused by dissolved chlorides and sulphates of calcium and magnesium (such as CaSO4, MgSO4, CaCl2, MgCl2). Calcium bicarbonate causes temporary hardness, while calcium carbonate is insoluble in pure water.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Dissolved calcium sulphate (CaSO4) causes permanent hardness in water that cannot be removed by boiling."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Calcium carbonate (CaCO3) is insoluble in water and precipitates out."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Calcium hydroxide (slaked lime) is a base used in Clark's method to remove temporary hardness."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Calcium bicarbonate, Ca(HCO3)2, causes temporary hardness."
+      }
+    ]
+  },
+  {
+    "questionNumber": 28,
+    "stem": "The property of water that allows it to form spherical-shaped drops is",
+    "options": {
+      "A": "adhesion.",
+      "B": "cohesion.",
+      "C": "expansion.",
+      "D": "contraction."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "15.1.1",
+    "sloText": "Describe the physical properties of water including surface tension, cohesion, and adhesion.",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Cohesion is the strong intermolecular attractive force (extensive hydrogen bonding) between identical water molecules. Cohesive forces pull surface water molecules inward, creating high surface tension that minimizes surface area and pulls water droplets into spherical shapes.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Adhesion is the attraction between water molecules and a different surface (such as glass walls)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Cohesion (intermolecular attraction between water molecules via hydrogen bonding) creates surface tension and spherical drops."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Anomalous thermal expansion occurs when water freezes into ice."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Contraction refers to volume decrease with temperature changes."
+      }
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "stem": "Which of the following differences is TRUE about soft and hard water?\n(Table columns: Hard Water | Soft Water)",
+    "options": {
+      "A": "Hard Water: It makes good lather with soap. | Soft Water: It makes poor lather with soap.",
+      "B": "Hard Water: It is rich in sodium ions. | Soft Water: It is rich in calcium ions.",
+      "C": "Hard Water: It uses less soap for laundry. | Soft Water: It uses more soap for laundry.",
+      "D": "Hard Water: It leaves a messy scum. | Soft Water: It leaves no scum."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "15.3.1",
+    "sloText": "Distinguish between soft water and hard water and explain the formation of soap scum.",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Hard water contains dissolved Ca2+ and Mg2+ ions that react with sodium stearate (soap) to form an insoluble curdy precipitate of calcium/magnesium stearate known as soap scum, wasting soap and preventing lather. Soft water lacks Ca2+/Mg2+ ions, lathers easily, and leaves no scum.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Reverses the lathering behaviour of hard and soft water."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Hard water is rich in Ca2+ and Mg2+ ions, while softened water contains Na+ ions."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Hard water consumes much more soap because soap is wasted precipitating Ca2+/Mg2+ ions."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Ca2+ and Mg2+ ions in hard water react with soap to form an insoluble messy scum, whereas soft water forms no scum."
+      }
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "stem": "In Clark's method, hardness is removed from water by converting bicarbonates into carbonates with the addition of",
+    "options": {
+      "A": "quicklime.",
+      "B": "slaked lime.",
+      "C": "caustic soda.",
+      "D": "washing soda."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "15.3.2",
+    "sloText": "Describe methods for removing temporary and permanent hardness of water (boiling, Clark's method, washing soda, ion-exchange).",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In Clark's method for removing temporary hardness, a calculated amount of slaked lime (calcium hydroxide, Ca(OH)2) is added to water. It reacts with soluble calcium and magnesium bicarbonates to precipitate insoluble carbonates:\nCa(HCO3)2(aq) + Ca(OH)2(aq) -> 2CaCO3(s) + 2H2O(l).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Quicklime is CaO; slaked lime Ca(OH)2 (lime water) is the reagent directly used in Clark's method."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Slaked lime, Ca(OH)2, precipitates soluble bicarbonates as insoluble carbonates in Clark's method."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Caustic soda is NaOH."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Washing soda (Na2CO3) is used to remove permanent hardness."
+      }
+    ]
+  },
+  {
+    "questionNumber": 31,
+    "stem": "Under normal conditions, the concentration of ozone remains constant in the stratosphere by the\nI. formation of molecular oxygen\nII. combination of oxygen molecules with free oxygen atoms\nIII. decomposition of ozone by free oxygen atoms",
+    "options": {
+      "A": "I only.",
+      "B": "II only.",
+      "C": "I and III.",
+      "D": "II and III."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "14.5.1",
+    "sloText": "Explain how ozone concentration remains constant in the stratosphere through natural formation and decomposition reactions.",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In the unpolluted stratosphere, ozone concentration remains in a steady-state dynamic balance between two opposing reactions involving free oxygen atoms (O\u2022):\n- Formation (II): Combination of molecular oxygen with atomic oxygen: O2 + O\u2022 -> O3\n- Decomposition (III): Reaction of ozone with atomic oxygen: O3 + O\u2022 -> 2O2\nThus, processes II and III maintain constant stratospheric ozone levels.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Formation of O2 alone would deplete ozone unless balanced by ozone formation."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Combination alone would continuously increase ozone unless balanced by decomposition."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Omits the formation of ozone from O2 and O\u2022."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Steady-state ozone concentration is maintained by the balance between ozone formation (O2 + O\u2022 -> O3, II) and ozone decomposition (O3 + O\u2022 -> 2O2, III)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 32,
+    "stem": "The INCORRECT pairing of an air pollutant with its effect is\n(Table columns: Air Pollutant | Effect)",
+    "options": {
+      "A": "carbon monoxide | intensifies emphysema",
+      "B": "sulphur dioxide | causes bronchitis",
+      "C": "nitrogen dioxide | intensifies asthma",
+      "D": "ozone | causes congestion"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "14.3.2",
+    "sloText": "Describe the sources and harmful effects of major air pollutants (CO, SO2, NOx, O3).",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Carbon monoxide (CO) is a systemic asphyxiant that binds irreversibly to haemoglobin to form carboxyhaemoglobin, depriving tissues of oxygen and causing headaches, dizziness, and death\u2014whereas emphysema and bronchitis are caused by respiratory irritants like SO2 and NO2. Therefore, pairing A is incorrect.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct (Incorrect pairing). Carbon monoxide binds with haemoglobin to block oxygen transport rather than causing alveolar emphysema (which is caused by SO2/particulates)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. SO2 is a severe respiratory irritant that causes bronchitis and emphysema."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. NO2 inflames the lining of the lungs and intensifies asthma and respiratory infections."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Ground-level (tropospheric) ozone is a photochemical smog irritant that causes chest pain, coughing, and throat/lung congestion."
+      }
+    ]
+  },
+  {
+    "questionNumber": 33,
+    "stem": "The envelope of gases surrounding the Earth and other planets is known as",
+    "options": {
+      "A": "biosphere.",
+      "B": "lithosphere.",
+      "C": "atmosphere.",
+      "D": "hydrosphere."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Knowledge",
+    "slo": "14.1.2",
+    "sloText": "Define atmosphere and identify the four natural spheres of the Earth.",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "The atmosphere is the protective blanket or envelope of gases retained by gravity around the Earth and other planetary bodies.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The biosphere is the region of Earth inhabited by living organisms."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The lithosphere is the rigid outer rocky crust and upper mantle of the Earth."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The gaseous envelope surrounding the Earth is called the atmosphere."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The hydrosphere comprises all liquid and frozen surface/underground water on Earth."
+      }
+    ]
+  },
+  {
+    "questionNumber": 34,
+    "stem": "Incomplete combustion of fossil fuel MAJORLY produces",
+    "options": {
+      "A": "carbon dioxide + water",
+      "B": "carbon monoxide + water",
+      "C": "carbon dioxide + carbon + water",
+      "D": "bicarbonate + carbon monoxide + water"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "14.3.2",
+    "sloText": "Compare complete and incomplete combustion of fossil fuels.",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "When fossil fuels (hydrocarbons) burn in a limited or insufficient supply of oxygen (incomplete combustion), carbon is oxidised only partially to poisonous carbon monoxide (CO) along with water vapour (e.g. 2CH4 + 3O2 -> 2CO + 4H2O). Complete combustion in excess oxygen produces carbon dioxide (CO2) and water.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Carbon dioxide + water are the products of complete combustion in excess oxygen."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Incomplete combustion in limited oxygen majorly produces carbon monoxide (CO) and water."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Carbon dioxide is the primary product of complete combustion."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Bicarbonates are never formed in gaseous hydrocarbon combustion."
+      }
+    ]
+  },
+  {
+    "questionNumber": 35,
+    "stem": "The gas that is NOT responsible for global warming is",
+    "options": {
+      "A": "CH4",
+      "B": "CO2",
+      "C": "CCl4",
+      "D": "C2H2"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "14.6.2",
+    "sloText": "Identify greenhouse gases responsible for global warming.",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Carbon dioxide (CO2), methane (CH4), and halocarbons like carbon tetrachloride (CCl4) and CFCs are recognized atmospheric greenhouse gases that trap infrared thermal radiation and cause global warming. Ethyne/acetylene (C2H2) is a short-lived industrial fuel gas, not an atmospheric greenhouse gas.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Methane (CH4) is a potent greenhouse gas contributing to global warming."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Carbon dioxide (CO2) is the primary anthropogenic greenhouse gas causing global warming."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Carbon tetrachloride (CCl4) is a halocarbon greenhouse gas and ozone-depleting substance."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Acetylene/ethyne (C2H2) is not a greenhouse gas responsible for global warming."
+      }
+    ]
+  },
+  {
+    "questionNumber": 36,
+    "stem": "All of the following metals can be extracted from its ore and purified using electrolysis EXCEPT",
+    "options": {
+      "A": "iron.",
+      "B": "gold.",
+      "C": "copper.",
+      "D": "aluminium."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "16.2.1",
+    "sloText": "Relate methods of metal extraction and refining to the reactivity of metals.",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Iron (Fe) is extracted from haematite ore (Fe2O3) by chemical reduction with carbon monoxide/coke in a Blast Furnace and refined in a Basic Oxygen / Bessemer converter rather than by electrolysis. (Note: In the official 2025 key, Q36 was marked '*' because while aluminium is extracted electrolytically and copper/gold are refined electrolytically, copper and gold are not extracted from their ores via electrolysis; A is the intended primary key).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Iron is extracted by thermal reduction with coke in a blast furnace, not by electrolysis (Note: Official key also awarded grace mark '*' due to wording 'extracted AND purified')."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Gold is refined to high purity by Wohlwill electrolytic refining."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Blister copper is purified to 99.99% purity by electrolytic refining."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Aluminium is extracted and purified electrolytically (Hall-Heroult and Hoopes processes)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 37,
+    "stem": "What happens to the largest hydrocarbon molecules during fractional distillation of crude oil (petroleum) in a fractionating column?",
+    "options": {
+      "A": "They condense at the top of the column.",
+      "B": "They remain solid at the top of the column.",
+      "C": "They condense at the bottom of the column.",
+      "D": "They remain solid at the bottom of the column."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "16.6.4",
+    "sloText": "Explain the fractional distillation of petroleum in a fractionating tower based on boiling point and chain length.",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In a fractional distillation column, temperature is highest at the bottom (~400\u00b0C) and decreases towards the top. The largest hydrocarbon molecules (highest carbon chain length and highest molecular mass) experience the strongest intermolecular London dispersion forces, giving them the highest boiling points; consequently, they condense at the hot bottom of the fractionating column (as fuel oil and residual bitumen/asphalt).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Only small, volatile hydrocarbons with low boiling points reach the cool top of the column."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Solids never rise to the top of a vapor fractionating column."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Large hydrocarbon molecules have very high boiling points and condense at the high-temperature bottom section of the column."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. At 400\u00b0C at the base of the column, heavy fractions condense as viscous liquids/residue rather than crystalline solids."
+      }
+    ]
+  },
+  {
+    "questionNumber": 38,
+    "stem": "During the extraction of copper, one of the reactions that takes place in Bessemer converter is given below.\ncuprous oxide + cuprous sulphide -> copper + X\nThe gas X produced in the given reaction is",
+    "options": {
+      "A": "oxygen.",
+      "B": "hydrogen.",
+      "C": "sulphur dioxide.",
+      "D": "hydrogen sulphide."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "16.2.3",
+    "sloText": "Describe the Bessemerisation process in the extraction of copper.",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In the Bessemer converter, cuprous oxide (Cu2O) reacts with remaining cuprous sulphide (Cu2S) via auto-reduction to form molten blister copper and sulphur dioxide gas (SO2):\n2Cu2O(s) + Cu2S(s) -> 6Cu(l) + SO2(g).\nAs SO2 gas escapes from the solidifying copper, it creates blisters on the surface.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Oxygen is blown into the converter as a reactant, not produced in auto-reduction."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. No hydrogen is present in Cu2O or Cu2S."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. 2Cu2O + Cu2S -> 6Cu + SO2(g); sulphur dioxide gas is evolved."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Hydrogen sulphide is not formed as there is no hydrogen in the reactants."
+      }
+    ]
+  },
+  {
+    "questionNumber": 39,
+    "stem": "The Solvay process is used in the manufacturing of",
+    "options": {
+      "A": "sodium nitrate.",
+      "B": "sodium chloride.",
+      "C": "sodium carbonate.",
+      "D": "sodium hydroxide."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Knowledge",
+    "slo": "16.4.1",
+    "sloText": "Describe the manufacture of sodium carbonate (soda ash) by the Solvay process.",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "The Solvay (ammonia-soda) process is the principal industrial method for manufacturing anhydrous sodium carbonate (soda ash, Na2CO3) and sodium bicarbonate (NaHCO3) using brine (NaCl), limestone (CaCO3), and ammonia (NH3).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Sodium nitrate is not produced by the Solvay process."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Sodium chloride (brine) is the raw material used in the Solvay process."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The Solvay process is used to manufacture sodium carbonate (Na2CO3)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Sodium hydroxide is manufactured by electrolysis of brine in Nelson's or Castner-Kellner cells."
+      }
+    ]
+  },
+  {
+    "questionNumber": 40,
+    "stem": "On the industrial scale, ammonia is synthesised by",
+    "options": {
+      "A": "Haber process.",
+      "B": "Solvay process.",
+      "C": "Contact process.",
+      "D": "Ostwald process."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "16.5.1",
+    "sloText": "Describe the synthesis of ammonia by the Haber-Bosch process.",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "On an industrial scale, ammonia (NH3) is synthesised directly from nitrogen gas (N2) and hydrogen gas (H2) at 400\u2013450\u00b0C and 200 atm pressure over an iron catalyst via the Haber process:\nN2(g) + 3H2(g) \u21cc 2NH3(g).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Ammonia is manufactured industrially from N2 and H2 by the Haber process."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The Solvay process manufactures sodium carbonate (Na2CO3)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The Contact process manufactures sulphuric acid (H2SO4)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The Ostwald process manufactures nitric acid (HNO3)."
+      }
+    ]
+  }
+]

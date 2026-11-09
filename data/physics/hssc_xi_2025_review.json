@@ -1,0 +1,73 @@
+{
+  "mcqMappings": "- 1.1.3 1.4.1 1.3.1 2.1.2 2.3.3 4.4.3 2.2.1 - 3.1.2 3.1.2 4.1.1 4.1.1 4.1.2 3.3.1 3.4.1 - 15.1.1 3.5.1 - 4.3.5 4.3.1 4.3.1 4.3.5 11.3.1 6.3.3 6.4.2 6.5.2 6.5.2 6.5.2 7.2.5 7.4.2 7.4.3 7.4.1 - 8.2.1 8.3.4 8.4.1 8.5.2 8.5.5 9.2.3 9.2.2 9.5.3 9.2.2 10.4.3 10.5.1 10.5.2 10.5.2 10.9.3 10.11.4",
+  "held": {},
+  "corrected": {
+    "35": "C"
+  },
+  "mcqNotes": {
+    "1": "The keyed radio telescope answer refers to detecting the cosmic microwave background.",
+    "25": "The printed question says orbital velocity of the Earth. The data and the keyed answer refer to the satellite’s speed around Earth.",
+    "27": "The pressure comparison assumes equal height and steady ideal flow.",
+    "37": "Slightly different frequencies produce beats. Equal amplitudes give stronger modulation but are not required.",
+    "24": "The digital stem specifies sustained artificial gravity in orbit without continuous thrust. The original A can produce apparent weight during engine thrust, while D creates it continuously in a rotating habitat.",
+    "43": "The source says “incident rays.” The digital stem specifies the total path difference between the reflected rays. One leg contributes d sin θ, and both legs together contribute 2d sin θ.",
+    "4": "In scientific measurement, accuracy is quantified by fractional uncertainty or percentage uncertainty: the smaller the fractional uncertainty, the more accurate the measurement.",
+    "16": "The gravitational field is conservative, meaning the work done by or against gravity between two points depends only on their initial and final positions and is independent of the path followed.",
+    "35": "For sound, $v=\\sqrt{B/\\rho}$. Gases have a far smaller bulk modulus (elasticity) than liquids, and that reduction outweighs their lower density. The printed option C said “high elasticity” and the board keyed A (“low density”); lower density alone would raise the speed, so the correct reason is low elasticity and C is scored.",
+    "17": "Escape velocity is given by $v_{\\text{esc}} = \\sqrt{2gR}$, which depends directly on the acceleration due to gravity $g$ and the radius of the planet $R$.",
+    "28": "According to Stokes' law ($F_d = 6\\pi\\eta r v$), drag force is directly proportional to the viscosity of the fluid. Glycerol has significantly higher viscosity than water, olive oil, and castor oil, exerting the strongest drag force.",
+    "35": "According to the Laplace formula $v = \\sqrt{\\frac{\\gamma P}{\\rho}}$, the lower density of gases would suggest higher speed if elasticity were comparable, but the volumetric bulk modulus (elasticity) of liquids is thousands of times greater than that of gases. The board keyed A reflecting density contrast.",
+    "41": "For interference of light, the waves must be coherent and travel in the same general direction so they can overlap. Traveling in opposite directions produces standing waves rather than an interference fringe pattern on a screen.",
+    "47": "For an isothermal process of an ideal gas, temperature is constant so $\\Delta U = 0$. By the First Law of Thermodynamics, $q = \\Delta U + W = +W$ (heat added equals work done by the gas)."
+  },
+  "written": {
+    "1": {
+      "mapping": "1.2.3",
+      "solution": "The left side has dimensions $MLT^{-2}$. Since $[G]=M^{-1}L^3T^{-2}$, the right side has dimensions $(M^{-1}L^3T^{-2})(M^2)/L^2=MLT^{-2}$."
+    },
+    "2": {
+      "mapping": "2.2.2",
+      "solution": "Yes. Vector addition is commutative and associative. Changing the head-to-tail order changes the intermediate path while preserving the resultant from start to finish."
+    },
+    "3": {
+      "mapping": "4.1.3",
+      "solution": "The initial vertical speed is $100\\sin30^\\circ=50\\,\\mathrm{m/s}$. At the peak the vertical speed is zero, so $h=50^2/(2\\times10)=125\\,\\mathrm m$."
+    },
+    "4": {
+      "mapping": "4.3.4",
+      "solution": "The satellite and astronaut are both in continuous free fall with the same orbital acceleration. The astronaut therefore has no supporting normal force and experiences zero apparent weight."
+    },
+    "5": {
+      "mapping": "6.4.1",
+      "solution": "For the horizontal pipe, $P_1+\\tfrac12\\rho v_1^2=P_2+\\tfrac12\\rho v_2^2$. Thus $P_2=120000+\\tfrac12(1050)(3^2-7^2)=99000\\,\\mathrm{Pa}$."
+    },
+    "6": {
+      "mapping": "7.2.3",
+      "solution": "The restoring force is $F=-kx$, so $a=-kx/m=-\\omega^2x$. Acceleration changes with displacement and always points toward equilibrium."
+    },
+    "7": {
+      "mapping": "8.4.3+8.1.4",
+      "solution": "Four loops span four half wavelengths, so $\\lambda=2(2.0)/4=1.0\\,\\mathrm m$. The wave speed is $v=f\\lambda=120\\,\\mathrm{m/s}$. For fixed string length, more loops mean a shorter wavelength. If tension stays fixed, speed stays fixed and the required frequency rises. If the same fork drives the string, frequency stays fixed and forming more loops requires reducing the wave speed by reducing tension."
+    },
+    "8": {
+      "mapping": "9.2.5",
+      "solution": "The fringe spacing is $y=\\lambda L/d$. At fixed wavelength and screen distance, increasing slit separation decreases the fringe spacing in inverse proportion."
+    },
+    "9a": {
+      "mapping": "3.3.1",
+      "solution": "Average power is $mgh/t$. With $t=900\\,\\mathrm s$ and $g=9.8\\,\\mathrm{m/s^2}$, $P=(60)(9.8)(440)/900\\approx287.5\\,\\mathrm W$. Using $g=10\\,\\mathrm{m/s^2}$ gives about $293.3\\,\\mathrm W$."
+    },
+    "9b": {
+      "mapping": "-",
+      "solution": "Since $v_e=\\sqrt{2GM/R}$, the ratio to Earth’s escape speed is $\\sqrt{100/10}=\\sqrt{10}$. Saturn’s escape speed is therefore approximately $11.2\\sqrt{10}=35.4\\,\\mathrm{km/s}$."
+    },
+    "10a": {
+      "mapping": "10.6.2+10.6.3",
+      "solution": "For one mole of an ideal gas, $dU=C_VdT$. At constant pressure, $C_PdT=dU+P\\,dV$ and $P\\,dV=R\\,dT$. Hence $C_P-C_V=R>0$. Heating at constant pressure also supplies expansion work."
+    },
+    "10b": {
+      "mapping": "10.9.4",
+      "solution": "Even at copper’s melting temperature, the ideal Carnot limit is $1-(27+273.15)/(1083+273.15)\\approx0.779$, or $77.9\\%$. A real copper engine must stay below the melting temperature, so the claimed $88\\%$ is impossible at the given exhaust temperature."
+    }
+  }
+}

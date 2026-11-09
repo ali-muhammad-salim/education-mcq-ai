@@ -5,9 +5,33 @@ import { annualOriginalReference, annualCurrentMapping } from '@/lib/legacyPaper
 import { pageExtraction } from '@/services/ingestion/trust';
 import { syllabusCoverageConflicts } from '@/services/ingestion/learning-validation';
 import { questionSyllabus } from '@/lib/questionSyllabus';
+import { getAllStandardPapers, getFallbackPaper } from '@/lib/paperDataService';
+import chemistryIX from '@/data/chemistry/ssc1_exact_syllabus.json';
+import chemistryX from '@/data/chemistry/ssc2_exact_syllabus.json';
 import { mcqCategories } from '@/lib/mcqCategories';
 
 describe('Source completeness and historical references',()=>{
+  it('never publishes nonexistent Chemistry outcomes and retains the previous claims for provenance',()=>{
+    const codes = new Map([[9,new Set(chemistryIX.flatMap(u=>u.subtopics.flatMap(s=>s.slos.map(o=>o.code))))],[10,new Set(chemistryX.flatMap(u=>u.subtopics.flatMap(s=>s.slos.map(o=>o.code))))]]);
+    for (const summary of getAllStandardPapers().filter(p=>p.paperCode.startsWith('CHM-'))) {
+      const paper=getFallbackPaper(summary.paperCode)!;
+      for (const q of paper.questions) {
+        const meta=q.sourceRegion;
+        if(meta.current_slo) expect(codes.get(meta.mapping_scope!.grade)?.has(meta.current_slo)).toBe(true);
+        if(meta.mapping_status === 'PENDING_REVIEW') {
+          expect(meta.current_syllabus_reviewed).toBe(false);
+          expect(meta.current_mapping).toEqual([]);
+          expect(meta.mapping_status).toBe('PENDING_REVIEW');
+          expect(q.questionText).toBeTruthy();
+        }
+      }
+    }
+    const q=getFallbackPaper('CHM-IX-2017-P1')!.questions.find(q=>q.questionNumber==='3')!;
+    expect(q.sourceRegion.proposed_current_slo).toBe('1.2.8');
+    expect(q.sourceRegion.choices).toBeDefined();
+    expect(q.sourceRegion.correct_answer).toBeTruthy();
+  });
+
   it('restores the source optics page including nested lists and cognitive evidence',()=>{
     const rows=x.flatMap(u=>u.subtopics.flatMap(s=>s.slos));
     for(const code of ['13.1.1','13.1.2','13.1.3','13.2.1','13.2.2','13.2.3','13.2.4','13.2.5','13.3.1','13.3.2','13.3.3']) expect(rows.find(row=>row.code===code)).toBeDefined();

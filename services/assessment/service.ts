@@ -2,14 +2,15 @@ import { Prisma, QuizSetting } from '@prisma/client';
 import prisma from '@/lib/prisma';
 import { ApiError } from '@/lib/api';
 import { AuthUser } from '@/lib/auth';
-import { getFallbackPaper, type QuestionData } from '@/lib/paperDataService';
+import { getAllStandardPapers, getFallbackPaper, type QuestionData } from '@/lib/paperDataService';
 import { lockedTransaction } from '@/repositories/transaction';
 import { saveAnswerSchema } from '@/lib/validations/assessment';
 import { FrozenQuestion, answerFeedback, gradeAnswer, hasAnswer, normalizeQuestion, snapshotSchema, studentQuestion } from './scoring';
 import { z } from 'zod';
-import { randomInt } from 'node:crypto';
+import { randomInt, createHash } from 'node:crypto';
+import { paperAnswer, paperChoices } from '@/lib/paperPresentation';
 import {publicMaterialWhere} from '@/lib/materialVisibility';
-import {mappedChapterQuestions,sourceChoiceContent} from '@/services/materials/practice';
+import {mappedChapterQuestions,sourceChoiceContent,chapterPaperWhere,chapterPaperIsPublished} from '@/services/materials/practice';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import { applyAnswerDecision, legacyAnswerCases } from '@/lib/legacyAnswerReview';
 
@@ -19,12 +20,28 @@ const practiceCodes: Record<string, string> = {
   'SAMPLE-QUIZ-PHY-9': 'PHY-IX-P1', 'SAMPLE-QUIZ-PHY-10': 'PHY-X-P1',
   'SAMPLE-QUIZ-KINEMATICS': 'PHY-IX-P1', 'SAMPLE-QUIZ-WAVES': 'PHY-X-P1',
 };
-const allowedPractice = new Set(['PHY-IX-P1', 'PHY-IX-P2', 'PHY-X-P1', 'PHY-X-P2', 'PHY-IX-2025-P1', 'PHY-IX-2025-P2', 'PHY-IX-2024-P1', 'PHY-IX-2024-P2', 'PHY-X-2025-P1', 'PHY-X-2025-P2']);
+const allowedPractice = new Set(['PHY-IX-P1', 'PHY-IX-P2', 'PHY-X-P1', 'PHY-X-P2', 'PHY-IX-2025-P1', 'PHY-IX-2025-P2', 'PHY-IX-2024-P1', 'PHY-IX-2024-P2', 'PHY-X-2025-P1', 'PHY-X-2025-P2', 'CS-IX-P1', 'CS-IX-P2', 'CS-X-P1', 'CS-X-P2', 'CS-IX-2025-P1', 'CS-IX-2025-P2', 'CS-IX-2024-P1', 'CS-IX-2024-P2', 'CS-IX-2023-P1', 'CS-IX-2023-P2', 'CS-IX-2022-P1', 'CS-IX-2019-P1', 'CS-IX-2019-P2', 'CS-IX-2018-P2', 'CS-IX-2017-P1', 'CS-IX-2017-P2', 'CS-X-2025-P1', 'CS-X-2025-P2', 'CS-X-2024-P1', 'CS-X-2024-P2', 'CS-X-2023-P1', 'CS-X-2023-P2', 'CS-X-2022-P1', 'CS-X-2019-P1', 'CS-X-2019-P2', 'CS-X-2018-P2', 'CS-X-2017-P1', 'CS-X-2017-P2']);
+
+// These printed keys contain an asterisk or credit multiple options. Keep the
+// source questions visible in the paper, but do not grade them as MCQ_SINGLE.
+const ungradableOfficialKeyQuestions: Record<string, number[]> = {
+  'CS-IX-2023-P1': [11],
+  'CS-IX-2024-P1': [9],
+  'CS-X-2019-P1': [21],
+  'CS-X-2023-P1': [37],
+  'CS-X-2024-P1': [8],
+};
+export function gradablePracticeQuestions(paperCode: string, questions: QuestionData[]) {
+  const excluded = ungradableOfficialKeyQuestions[paperCode];
+  return questions.filter(q => (!excluded || !excluded.includes(Number(q.questionNumber))) &&
+    (q.questionType !== 'MULTIPLE_CHOICE' || !!paperAnswer(q.sourceRegion, paperChoices(q.sourceRegion.choices))));
+}
 
 // Source JSON can represent an absent diagram as null; assessment input uses
 // omitted optional fields. Normalize at this boundary, keeping teacher input strict.
 export function sourcePracticeQuestion(q: QuestionData) {
   const meta = q.sourceRegion;
+  const choices = paperChoices(meta.choices), correct = paperAnswer(meta, choices);
   const fbList = Array.isArray(meta.option_feedback) ? meta.option_feedback : [];
   return normalizeQuestion({
     questionType: q.questionType === 'MULTIPLE_CHOICE' ? 'MCQ_SINGLE' : 'LONG_ANSWER',
@@ -32,9 +49,9 @@ export function sourcePracticeQuestion(q: QuestionData) {
     cognitiveLevel: typeof meta.cognitive_level === 'string' ? meta.cognitive_level : undefined,
     explanation: typeof meta.explanation === 'string' ? meta.explanation : undefined,
     diagramUrl: typeof meta.diagramUrl === 'string' ? meta.diagramUrl : undefined,
-    options: Object.entries(meta.choices || {}).map(([id, text]) => {
+    options: Object.entries(choices).map(([id, text]) => {
       const fbItem = fbList.find(item => item.key.toUpperCase() === id.toUpperCase());
-      return { id, text, isCorrect: id === meta.correct_answer, ...(fbItem?.reason ? { feedback: fbItem.reason } : {}) };
+      return { id, text, isCorrect: id === correct, ...(fbItem?.reason ? { feedback: fbItem.reason } : {}) };
     }),
     rubric: meta.rubric ? JSON.stringify(meta.rubric) : undefined,
   });
@@ -61,10 +78,10 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   if(chapter){
     const {topic,questions}=await mappedChapterQuestions(chapter[1],chapter[2].toUpperCase());
     if(!questions.length)throw new ApiError(404,'CHAPTER_QUESTIONS_UNAVAILABLE','No reviewed questions are available for this chapter filter.');
-    const hash=(await import('node:crypto')).createHash('sha256').update(questions.map(q=>q.id).join(':')).digest('hex').slice(0,24);
+    const content=questions.map(sourceChoiceContent);
+    const hash=(await import('node:crypto')).createHash('sha256').update(JSON.stringify(content)).digest('hex').slice(0,24);
     const id='practice-chapter-'+hash;
     const owner=await prisma.user.upsert({where:{email:'practice-content@system.invalid'},update:{},create:{email:'practice-content@system.invalid',name:'Practice Library',role:'TEACHER',status:'SUSPENDED'}});
-    const content=questions.map(sourceChoiceContent);
     return prisma.quiz.upsert({where:{id},update:{},include:quizInclude,create:{id,code:id,teacherId:owner.id,subjectId:topic.syllabusVersion.subjectId,classId:topic.syllabusVersion.subject.classId,title:topic.name+' — mapped past questions',status:'PUBLISHED',visibility:'PUBLIC',durationMin:50,totalMarks:content.reduce((s,q)=>s+q.marks,0),questions:{create:content.map((q,i)=>({orderIndex:i+1,marks:q.marks,questionData:q}))},settings:{create:{maxAttempts:100,allowRetries:true,showCorrectAnswers:true,immediateFeedback:true,tabMonitoringEnabled:false}}}});
   }
   const quiz = await prisma.quiz.findFirst({ where: { OR: [{ id: identifier }, { code: identifier.toUpperCase() }] }, include: quizInclude });
@@ -72,14 +89,20 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   const key = identifier.toUpperCase();
 
   // Support multi-paper Unit / Chapter / Cognitive timed quizzes (Model + 2025 + 2024)
-  const unitMatch = /^PHY-(IX|X)-UNIT-(\d{1,2})-(ALL|PAST)-(ALL|R|U|A|DIAGRAM)$/.exec(key);
+  const unitMatch = /^(PHY|CS|CHM)-(IX|X)-UNIT-(\d{1,2})-(ALL|PAST)-(ALL|R|U|A|DIAGRAM)$/.exec(key);
   if (unitMatch) {
-    const [, roman, unitNumStr, mode, cogFilter] = unitMatch;
+    const [, subjPrefix, roman, unitNumStr, mode, cogFilter] = unitMatch;
     const unitNum = Number(unitNumStr);
-    const paperCodes = roman === 'IX'
-      ? (mode === 'PAST' ? ['PHY-IX-2025-P1', 'PHY-IX-2024-P1'] : ['PHY-IX-P1', 'PHY-IX-2025-P1', 'PHY-IX-2024-P1'])
-      : (mode === 'PAST' ? ['PHY-X-2025-P1'] : ['PHY-X-P1', 'PHY-X-2025-P1']);
-    const allQuestions = paperCodes.flatMap(code => getFallbackPaper(code)?.questions || []);
+    const paperCodes = subjPrefix === 'CHM'
+      ? getAllStandardPapers().filter(p => /^CHM-(IX|X)(-20\d{2})?-P1$/.test(p.paperCode)).map(p => p.paperCode)
+      : subjPrefix === 'CS'
+      ? roman === 'IX'
+        ? (mode === 'PAST' ? ['CS-IX-2025-P1', 'CS-IX-2024-P1', 'CS-IX-2023-P1', 'CS-IX-2022-P1', 'CS-IX-2019-P1', 'CS-IX-2017-P1'] : ['CS-IX-P1', 'CS-IX-2025-P1', 'CS-IX-2024-P1', 'CS-IX-2023-P1', 'CS-IX-2022-P1', 'CS-IX-2019-P1', 'CS-IX-2017-P1'])
+        : (mode === 'PAST' ? ['CS-X-2025-P1', 'CS-X-2024-P1', 'CS-X-2023-P1', 'CS-X-2022-P1', 'CS-X-2019-P1', 'CS-X-2017-P1'] : ['CS-X-P1', 'CS-X-2025-P1', 'CS-X-2024-P1', 'CS-X-2023-P1', 'CS-X-2022-P1', 'CS-X-2019-P1', 'CS-X-2017-P1'])
+      : roman === 'IX'
+        ? (mode === 'PAST' ? ['PHY-IX-2025-P1', 'PHY-IX-2024-P1'] : ['PHY-IX-P1', 'PHY-IX-2025-P1', 'PHY-IX-2024-P1'])
+        : (mode === 'PAST' ? ['PHY-X-2025-P1'] : ['PHY-X-P1', 'PHY-X-2025-P1']);
+    const allQuestions = paperCodes.flatMap(code => gradablePracticeQuestions(code, getFallbackPaper(code)?.questions || [])).filter(q => subjPrefix !== 'CHM' || (q.sourceRegion.mapping_review_source_sha256 && q.sourceRegion.current_slo && q.sourceRegion.mapping_scope?.grade === (roman === 'IX' ? 9 : 10)));
     const filtered = allQuestions.filter(q => {
       if (unitNum > 0) {
         const qTopicNum = Number(q.topics?.[0]?.topic?.topicNumber || 0);
@@ -99,7 +122,8 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
       return { orderIndex: i + 1, marks: content.marks, questionData: content };
     });
     const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
-    const title = unitNum > 0 ? `Physics Class ${roman} — Unit ${unitNum} Practice (${questions.length} questions)` : `Physics Class ${roman} — Complete Bank (${questions.length} questions)`;
+    const subjTitle = subjPrefix === 'CS' ? 'Computer Science' : subjPrefix === 'CHM' ? 'Chemistry' : 'Physics';
+    const title = unitNum > 0 ? `${subjTitle} Class ${roman} — Unit ${unitNum} Practice (${questions.length} questions)` : `${subjTitle} Class ${roman} — Complete Bank (${questions.length} questions)`;
     return prisma.quiz.upsert({
       where: { id: `practice-${key}` },
       update: {},
@@ -119,15 +143,17 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
     });
   }
 
-  const subset = /^(PHY-(?:IX|X)(?:-2025|-2024)?-P1)-SET-([0-9-]+)$/.exec(key);
+  const subset = /^((?:PHY|CS|CHM|MTH)-(?:IX|X|XI|XII)(?:-20\d{2})?-P1)-SET-([0-9-]+)$/.exec(key);
   const paperCode = subset?.[1] || practiceCodes[key] || key;
-  if (!allowedPractice.has(paperCode)) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Assessment not found.');
   const paper = getFallbackPaper(paperCode);
+  const registeredMcqs = paper && paper.questions.length > 0 && paper.questions.every(q => q.questionType === 'MULTIPLE_CHOICE') && getAllStandardPapers().some(p => p.paperCode === paperCode && /-P1$/.test(p.paperCode));
+  if (!allowedPractice.has(paperCode) && !registeredMcqs) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Assessment not found.');
   if (!paper) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Practice paper not found.');
-  let source = paper.questions;
+  let source = gradablePracticeQuestions(paperCode, paper.questions);
   if (subset) {
     const numbers = new Set(subset[2].split('-').map(Number));
-    if (numbers.size > 40 || [...numbers].some(n => !Number.isInteger(n) || n < 1 || n > 40)) throw new ApiError(400, 'INVALID_PRACTICE', 'Invalid practice selection.');
+    const questionLimit = Math.max(50, paper.questions.length);
+    if (numbers.size > questionLimit || [...numbers].some(n => !Number.isInteger(n) || n < 1 || n > questionLimit)) throw new ApiError(400, 'INVALID_PRACTICE', 'Invalid practice selection.');
     source = source.filter(q => numbers.has(Number(q.questionNumber)));
     if (source.length !== numbers.size) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Some selected practice questions are unavailable.');
   }
@@ -138,16 +164,20 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   });
   // A suspended, passwordless content owner can never authenticate.
   const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
-  return prisma.quiz.upsert({ where: { id: `practice-${key}` }, update: {}, include: quizInclude,
-    create: { id: `practice-${key}`, code: `PRACTICE-${key}`, teacherId: owner.id, title: subset ? paper.title + ' — Selected practice (' + questions.length + ' questions)' : paper.title, status: 'PUBLISHED', visibility: 'PUBLIC', durationMin: questions.length <= 15 ? 20 : 55,
+  const isHsscPhysics = /^PHY-XII?(?:-(?:201[7-9]|202[1-5]))?-P1$/.test(paperCode);
+  const academic = paperCode.startsWith('MTH-') || isHsscPhysics ? await prisma.pastPaper.findFirst({ where: { paperCode }, select: { classId: true, subjectId: true } }) : null;
+  // Corrected Maths content starts a fresh quiz; previous attempts retain their frozen questions.
+  const revision = paperCode.startsWith('MTH-') || isHsscPhysics ? '-' + createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16) : '';
+  return prisma.quiz.upsert({ where: { id: `practice-${key}${revision}` }, update: academic || {}, include: quizInclude,
+    create: { id: `practice-${key}${revision}`, code: `PRACTICE-${key}${revision}`, teacherId: owner.id, ...(academic || {}), title: subset ? paper.title + ' — Selected practice (' + questions.length + ' questions)' : paper.title, status: 'PUBLISHED', visibility: 'PUBLIC', durationMin: subset || !isHsscPhysics ? questions.length <= 15 ? 20 : 55 : paper.durationMinutes ?? 90,
       totalMarks: questions.reduce((sum, q) => sum + q.marks, 0), questions: { create: questions }, settings: { create: { maxAttempts: 100, allowRetries: true, showCorrectAnswers: true, immediateFeedback: true, tabMonitoringEnabled: false } } } });
 }
 
 export async function assertQuizAccess(quiz: LoadedQuiz, user: AuthUser | null, taking = false, db: Prisma.TransactionClient = prisma) {
   if(quiz.id.startsWith('practice-chapter-')){
     const ids=quiz.questions.map(q=>(q.questionData as Record<string,Prisma.JsonValue>).sourceQuestionId).filter((id):id is string=>typeof id==='string');
-    const sources=await db.pastPaperQuestion.findMany({where:{id:{in:ids},verified:true,syllabusVersion:{isLatest:true,OR:[{sourceDocumentId:null},{sourceDocument:publicMaterialWhere}]},pastPaper:{sourceDocument:publicMaterialWhere}},select:{pastPaperId:true,pastPaper:{select:{sourceDocument:{select:{catalogMetadata:true,totalPages:true,_count:{select:{artifacts:true}}}}}}}});
-    if(ids.length!==quiz.questions.length||sources.length!==ids.length||sources.some(q=>{const d=q.pastPaper.sourceDocument;return !d||d.totalPages!==d._count.artifacts||(d.catalogMetadata as Record<string,unknown>|null)?.compiledPaperId!==q.pastPaperId;}))throw new ApiError(404,'CHAPTER_SOURCE_CHANGED','The chapter source or syllabus changed. Start a fresh chapter practice.');
+    const sources=await db.pastPaperQuestion.findMany({where:{id:{in:ids},verified:true,syllabusVersion:{isLatest:true,OR:[{sourceDocumentId:null},{sourceDocument:publicMaterialWhere}]},pastPaper:chapterPaperWhere},select:{pastPaperId:true,pastPaper:{select:{id:true,sourceDocumentId:true,sourceHash:true,verificationStatus:true,sourceDocument:{select:{catalogMetadata:true,totalPages:true,_count:{select:{artifacts:true}}}}}}}});
+    if(ids.length!==quiz.questions.length||sources.length!==ids.length||sources.some(q=>{const d=q.pastPaper.sourceDocument;return !chapterPaperIsPublished(q.pastPaper)||(d&&d.totalPages!==d._count.artifacts);}))throw new ApiError(404,'CHAPTER_SOURCE_CHANGED','The chapter source or syllabus changed. Start a fresh chapter practice.');
   }
   if(quiz.sourceDocumentId){
     const source=await db.knowledgeDocument.findFirst({where:{...publicMaterialWhere,id:quiz.sourceDocumentId},select:{catalogMetadata:true,totalPages:true,_count:{select:{artifacts:true}}}});

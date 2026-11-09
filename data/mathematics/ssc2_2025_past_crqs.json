@@ -1,0 +1,516 @@
+[
+  {
+    "id": "mth-x-2025-p2-q1",
+    "questionNumber": "1",
+    "questionText": "The given table shows 18 people’s favourite colour.\ni. Complete the given table. (1 Mark)\nColour | Number of People (f) | Angles\nRed | 3 | [angle]\nBlue | 4 | [angle]\nGreen | 6 | [angle]\nYellow | 5 | [angle]\nTotal | 18 | 360°\n\nii. Display the information (completed in part i) as a pie chart. (2 Marks)",
+    "marks": 3,
+    "section": "CRQ",
+    "originalSlo": "14.2.1",
+    "pageNumber": 3,
+    "modelAnswer": "i. Calculating sector angles using $\\text{Angle} = \\frac{f}{18} \\times 360^\\circ = f \\times 20^\\circ$:\n- Red: $\\frac{3}{18} \\times 360^\\circ = 60^\\circ$\n- Blue: $\\frac{4}{18} \\times 360^\\circ = 80^\\circ$\n- Green: $\\frac{6}{18} \\times 360^\\circ = 120^\\circ$\n- Yellow: $\\frac{5}{18} \\times 360^\\circ = 100^\\circ$\nTotal: $60^\\circ + 80^\\circ + 120^\\circ + 100^\\circ = 360^\\circ$.\n\nii. Draw a circle of convenient radius, mark the centre, and use a protractor to construct sectors of $60^\\circ, 80^\\circ, 120^\\circ, 100^\\circ$, labelling each sector with its respective colour.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "U",
+    "choiceInstruction": "Compulsory.",
+    "choiceGroup": null,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "officialMarkingNotes": "Question No. 1\nQuestion Text\n               The given table shows 18 people’s favourite colour.\n\n                             i.    Complete the given table.\n\n                        Colour         Number of People (f)          Angles\n                       Red                    3\n                          Blue                    4\n                         Green                   6\n                        Yellow                   5\n                             Total                   18\n\n\n                          ii. Display the information (completed in part i ) as a pie chart.\n\nSLO No.        14.1.4\nSLO Text     Draw (and interpret) a pie-chart;\nMax Marks    3\nCognitive     A*\nLevel\nChecking      1 mark for finding correct angles\nHints          1 mark for constructing any two correct segment’s angles (2 required)\nOverall         Candidates generally performed well  in  this question, with the majority finding  it\nPerformance    straightforward and completing it successfully. However, a few candidates struggled with\n                 the concept of a pie chart and were unable to calculate the required angles or construct the\n                  chart accurately. This indicates the need for further reinforcement of data representation\n                     skills, particularly in understanding and applying the steps involved in drawing pie charts.\nDescription of  In better response, candidates exhibit correct understanding of the sector angle by dividing\nBetter           individual value with the total and multiplying with the whole sum of sector (that is 360)\nResponses                                                      3               and clear concept of calculating sector of pie chart e.g.,    360  60 , construction of pie\n                                                                18\n                  charts with correct angle formation showed good concept of drawing of pie chart\nImage of\nBetter\nResponse\n\n\n\n\n\nDescription of   In weaker responses, candidates struggled with the concept of sector angles, with some\nWeaker         incorrectly multiplying by 180 instead of 360. This revealed a conceptual misunderstanding\nResponses       in calculating sector angles for pie charts. The construction of the pie charts further\n                 highlighted these issues, as candidates often drew inaccurate sector angles for instance, a\n               30° sector appeared larger than a 40° sector resulting in misleading graphical representation.\n                 Additionally, some candidates divided the number of people by the total but failed to\n                 multiply by 360, indicating a flawed understanding of how to construct pie charts\n                  accurately.\n\nImage of\nWeaker\nResponse\nSuggestions for improvement (Highlight all that apply)\n\n Maximising SLO              Preferred Pedagogy**     Assessment Strategies\n Achievement               Used for this SLO\n     Identify the expectation of     Story Board              Past paper questions\n    command words (use          Cause and Effect          Discussion on E-Marking Notes\n    Command Word Guide)       Fish and Bone            AKU-EB Digital Learning Solution\n    Ensure the content is          Concept Mapping          powered by Knowledge Platform\n     taught at the relevant          Audio Visual            https://akueb.knowledgeplatform.com/login\n     cognitive level                 Resources\n     Identify necessary content      Think, Pair and Share\n     required (skills +              Knowledge Platform\n     concepts)                                  Videos\n    Review past paper                                 Questioning\n     questions on the concept                                  Technique (Socratic\n     Utilise the resource guide        approach)\n      for additional materials         Practical\n                                   Demonstration\n\n                            ** For description of each\n                               Pedagogy, refer to\n                            Annexure A\n Any Additional Suggestion:\n*K = Knowledge U = Understanding A = Application and other higher-order cognitive skills",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "22.2.1",
+    "current_mapping": [
+      {
+        "code": "22.2.1",
+        "topic": "Basic Statistics",
+        "description": "construct a cumulative frequency table;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Constructing frequency tables and graphical representations (pie chart) maps to Grade 10 Unit 22 (Basic Statistics).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 22,
+    "sloText": "construct a cumulative frequency table;",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q1_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q1_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q2a",
+    "questionNumber": "2a",
+    "questionText": "Find the square root of the given expression.\n$4\\frac{x^2}{y^2} + 20\\frac{x}{y} + 13 - 30\\frac{y}{x} + 9\\frac{y^2}{x^2}$",
+    "marks": 4,
+    "section": "CRQ",
+    "originalSlo": "15.3.1",
+    "pageNumber": 4,
+    "modelAnswer": "Let $u = \\frac{x}{y}$. The expression is $4u^2 + 20u + 13 - 30u^{-1} + 9u^{-2}$.\nUsing division method:\n1. First term of root is $\\sqrt{4u^2} = 2u = 2\\frac{x}{y}$. Subtract $4u^2$, remainder is $20u + 13$.\n2. Double root: $4u$. Divide $20u$ by $4u \\implies 5$. Divisor is $4u + 5$. Multiply by 5: $20u + 25$. Subtract, remainder is $-12 - 30u^{-1} + 9u^{-2}$.\n3. New divisor: $4u + 10 - 3u^{-1} = 4\\frac{x}{y} + 10 - 3\\frac{y}{x}$. Multiply by $-3u^{-1} = -3\\frac{y}{x}$: $-12 - 30u^{-1} + 9u^{-2}$.\n4. Remainder is 0.\nHence, the square root is $\\pm\\left(2\\frac{x}{y} + 5 - 3\\frac{y}{x}\\right)$.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Attempt either part a or part b of Q.2.",
+    "choiceGroup": "2",
+    "diagramUrl": null,
+    "isDiagram": false,
+    "officialMarkingNotes": "Question No. 2a\n Candidates were given the choice to attempt any ONE out of the two questions: 2a and 2b. Majority of the\n candidates attempted 2b.\n Question Text   Find the square root of the given expression.\n                         x 2     x         y    y 2\n                     4    20   13  30   9\n                         y 2     y         x    x 2\n SLO No.        15.3.1\n SLO Text       Calculate square root of algebraic expressions by division;\n Max Marks    4\n Cognitive    A\n Level\n Checking      1 mark of filling correctly for each step of division ( 4 required )\n Hints\n Overall     A small number of candidates attempted the question, and among those, the proportion of\n Performance    correct responses was very low. Most candidates found the question challenging and were\n                 unable to solve the question correctly, indicating a lack of understanding of the underlying\n                 concept of square root.\n Description of   In better responses, candidates followed the correct procedure for finding the square root,\n Better          demonstrating accuracy at each step with no sign errors e.g., from multiplying 2x/y with\n Responses       2x/y to cancelling out -12 - 30y/x + 9y2/x2. They carried out the step-by-step evaluation\n                  systematically and continued the process until reaching a remainder of zero. The final\n                answer was correctly expressed with the plus-minus (±) sign, reflecting a sound conceptual\n                 understanding of the square root and its complete representation.\n Image  of\n Better\n Response\n\n\n\n\n\n Description of  In weaker responses, candidates began with incorrect initial steps multiplying 4x2/y2 with\n Weaker           x2, indicating a lack of understanding of the procedure for finding the square root of an\n Responses       algebraic expression. The subsequent steps, following the first, also reflected incorrect\n                 manipulation of algebraic terms. Many candidates demonstrated a flawed understanding of\n                 square root properties some attempted to cancel the square root directly with the square of\n                   the expression without proper justification.\n Image  of\n Weaker\n Response\n\n\n\n\n\nSuggestions for improvement (Highlight all that apply)\n\n Maximising         SLO  Preferred Pedagogy Used  Assessment Strategies\n Achievement                   for this SLO\n     Identify the expectation of     Story Board              Past paper questions\n    command   words   (use     Cause and Effect          Discussion on E-Marking Notes\n    Command Word Guide)        Fish and Bone            AKU-EB  Digital  Learning  Solution\n    Ensure the content is taught     Concept Mapping         powered by Knowledge Platform\n      at  the  relevant  cognitive     Audio         Visual   https://akueb.knowledgeplatform.com/login\n      level                          Resources\n    Identify necessary content     Think, Pair and Share\n     required (skills + concepts)     Knowledge  Platform\n   Review     past     paper      videos\n     questions on the concept       Questioning\n    Utilise the resource guide      Technique   (Socratic\n     for additional materials          approach)\n                                  Practical\n                                  Demonstration\nAny Additional Suggestion:\nIt is recommended that teachers reinforce the step-by-step procedure for finding the square root of algebraic\nexpressions through guided practice. Emphasis should be placed on understanding the logic behind each step\nrather than simply memorising procedures. E.g., show a wrong simplification (e.g., √(a+b) = √a + √b ) and\ndiscuss why  it doesn’t work.. Students should be given opportunities to explore square root properties\nconceptually, with a focus on when and how expressions can be simplified correctly. Diagnostic assessments\nand error analysis activities can also be valuable in helping students identify and correct misconceptions\nrelated to algebraic manipulation and square root operations.",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "6.3.1",
+    "current_mapping": [
+      {
+        "code": "6.3.1",
+        "topic": "Algebraic Manipulation",
+        "description": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Finding the square root of algebraic expressions by division is in Grade 9 Unit 6 (SLO 6.3.1).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q2a_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q2a_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q2b",
+    "questionNumber": "2b",
+    "questionText": "Resolve the fraction $\\frac{2}{x^2 - 9}$ into partial fractions and find the value of $A$ and $B$.",
+    "marks": 4,
+    "section": "CRQ",
+    "originalSlo": "16.1.1",
+    "pageNumber": 4,
+    "modelAnswer": "Denominator factors as $x^2 - 9 = (x - 3)(x + 3)$.\nSet up: $\\frac{2}{(x - 3)(x + 3)} = \\frac{A}{x - 3} + \\frac{B}{x + 3}$.\nMultiply by $(x - 3)(x + 3)$: $2 = A(x + 3) + B(x - 3)$.\n- Setting $x = 3$: $2 = A(6) \\implies A = \\frac{2}{6} = \\frac{1}{3}$.\n- Setting $x = -3$: $2 = B(-6) \\implies B = -\\frac{2}{6} = -\\frac{1}{3}$.\nHence, $A = \\frac{1}{3}$, $B = -\\frac{1}{3}$, and the partial fractions are $\\frac{1}{3(x - 3)} - \\frac{1}{3(x + 3)}$.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Attempt either part a or part b of Q.2.",
+    "choiceGroup": "2",
+    "diagramUrl": null,
+    "isDiagram": false,
+    "officialMarkingNotes": "Question No. 2b\nQuestion Text                      2\n                Resolve the fraction          into partial fractions and find the value of A and B.\n                                                ( x 2  9 )\nSLO No.        16.2.1\nSLO Text       Convert an algebraic fraction into partial fractions when its denominator consists of\n                     a. non-repeated linear factors\n                    b. repeated linear factors.\nMax Marks    4\nCognitive    A\nLevel\nChecking                          2       A     B\n              1 mark for writing                 Hints                                             ( x  3)( x  3)   ( x  3)   ( x  3)\n              1 mark for finding 2  A( x  3)  B ( x  3)\n                                           1\n              1 mark for finding the value of A \n                                           3\n                                             1\n              1 mark for finding the value of B  \n                                             3\nOverall        Most candidates attempted this question, and the majority performed well. Their responses\nPerformance    reflected a solid conceptual understanding of partial fractions and the correct evaluation of\n                 expressions in terms of values. However, the most common errors observed were basic\n                mathematical mistakes, such as inaccuracies in the addition, subtraction, or division of\n                   integers. These minor errors, though not conceptual, affected the final accuracy of the\n                 answers.\nDescription of   In better responses, candidates correctly formulated the partial fraction and applied the\nBetter           appropriate identity for a2−b2, successfully splitting the expression. They then represented\nResponses       the fraction in terms of constants A and B, took the correct LCM of the linear factors\n               2  A( x  3)  B ( x  3) , and proceeded to find the values of A and B through accurate\n                 manipulation. Their work was free from sign errors and demonstrated a clear understanding\n                  of the partial fraction method and its underlying algebraic principles.\n  Image  of\n  Better\n  Response\n\n\n\n\n\n  Description of  In weaker responses, candidates attempted to solve the question using partial fractions but\n  Weaker        demonstrated  several conceptual and procedural  errors.  Firstly,  the expression was\n  Responses       incorrectly decomposed, and the identity (x2−9)=(x−3)2 was misapplied mistaking the\n                    difference of squares (x2−9) for a repeated factor instead of correctly identifying  it as\n                   (x−3)(x+3). This led to an incorrect setup of the partial fractions.\n  Image  of\n  Weaker\n  Response\n\n\n\n\n\nSuggestions for improvement (Highlight all that apply)\nMaximising        SLO  Preferred Pedagogy Used  Assessment Strategies\nAchievement                  for this SLO\n    Identify the expectation of    Story Board                 Past paper questions\n   command  words   (use    Cause and Effect             Discussion on E-Marking Notes\n   Command Word Guide)      Fish and Bone               AKU-EB  Digital  Learning  Solution\n   Ensure  the  content   is    Concept Mapping            powered by Knowledge Platform\n     taught   at  the  relevant    Audio Visual Resources     https://akueb.knowledgeplatform.com/login\n     cognitive level              Think, Pair and Share\n    Identify necessary content                               Knowledge     Platform\n     required      (skills    +                                  videos\n     concepts)                               Questioning   Technique\n   Review    past    paper                                     (Socratic approach)\n     questions on the concept                                Practical Demonstration\n    Utilise the resource guide\n     for additional materials\nAny Additional Suggestion:",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "6.4.2",
+    "current_mapping": [
+      {
+        "code": "6.4.2",
+        "topic": "Algebraic Manipulation",
+        "description": "convert an algebraic fraction into partial fractions when its denominator consists of:\na. non-repeated linear factors,\nb. repeated linear factors;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Partial fraction resolution of rational expressions with distinct linear factors is in Grade 9 Unit 6 (SLO 6.4.2).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "convert an algebraic fraction into partial fractions when its denominator consists of:\na. non-repeated linear factors,\nb. repeated linear factors;",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q2b_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q2b_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q3a",
+    "questionNumber": "3a",
+    "questionText": "The sum of the ages of a father and his son is 45. If the father is 15 years older than the son, determine their ages using linear equations.",
+    "marks": 3,
+    "section": "CRQ",
+    "originalSlo": "17.1.1",
+    "pageNumber": 5,
+    "modelAnswer": "Let the son’s age be $s$ and the father’s age be $f$.\nFrom the problem statement:\n1. $f + s = 45$\n2. $f = s + 15$\nSubstitute (2) into (1): $(s + 15) + s = 45 \\implies 2s + 15 = 45 \\implies 2s = 30 \\implies s = 15$.\nThen $f = 15 + 15 = 30$.\nThe father is 30 years old and the son is 15 years old.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Attempt either part a or part b of Q.3.",
+    "choiceGroup": "3",
+    "diagramUrl": null,
+    "isDiagram": false,
+    "officialMarkingNotes": "Question No. 3a\n Candidates were given the choice to attempt any ONE out of the two questions: 3a and 3b. Less number of\n candidates attempted 3a.\n Question Text  The sum of the ages of a father and his son is 45. If the father is 15 years older than the son,\n                 determine their ages using linear equations.\n SLO No.        17.1.4\n SLO Text      Solve word problems based on linear equations (and verify its solutions);\n Max Marks    3\n Cognitive    A\n Level\n Checking      1 mark for writing S + F = 45\n Hints          1 mark for writing F = S +15\n                1 mark for calculating F = 30 and S=15\n Overall         Candidates who attempted this question, some were able to comprehend and solve  it\n Performance    successfully, demonstrating a clear understanding of the underlying concept. However,\n                most of the candidates struggled significantly, revealing conceptual gaps and a lack of\n                    familiarity with the linear equations. Further, this also reflects weak decision making in\n                 terms of selection of question to attempt. Please reiterate to the candidates to study both the\n                  choice options before deciding which they want to attempt.\n Description of  Better responses demonstrated a clear and accurate understanding of forming and solving\n Better            linear equations from a word problem. They correctly assigned a variable to represent the\n Responses       son's age (x) and formulated the father's age as x+15, based on the given condition. They\n                   successfully translated the verbal information into a mathematical equation: x+(x+15)=45\n                and proceeded to simplify and solve the equation step by step: 2x+15=45, 2x = 30, x=15.\n Image  of\n Better\n Response\n\n\n\n\n\n Description of  In weaker responses, candidates attempted to solve the problem but demonstrated a lack of\n Weaker         conceptual understanding in forming a meaningful linear equation from the given word\n Responses      problem. The expressions such as \"15x + 45 = 0\" and \"15x + 30 = 0\" are incorrect and do\n                  not reflect the actual relationship described in the problem. Candidates appeared to have\n                used  arbitrary  coefficients  (e.g., 15x), which  are not supported by any contextual\n                  information provided in the original scenario.\n Image  of\n Weaker\n Response\n\n\n\n\n\nSuggestions for improvement (Highlight all that apply)\n\n Maximising        SLO  Pedagogy Used  for  that  Assessment Strategies\n Achievement           SLO\n    Identify  the expectation     Story Board               Past paper questions\n     of command words (use     Cause and Effect           Discussion on E-Marking Notes\n   Command Word Guide)      Fish and Bone             AKU-EB  Digital  Learning  Solution\n   Ensure  the  content   is     Concept Mapping           powered by Knowledge Platform\n     taught  at  the  relevant     Audio Visual Resources   https://akueb.knowledgeplatform.com/login\n     cognitive level              Think, Pair and Share\n    Identify       necessary                               Knowledge   Platform\n     content required (skills +                                  videos\n     concepts)                               Questioning Technique\n   Review    past    paper                                     (Socratic approach)\n     questions on the concept                                Practical\n    Utilise the resource guide                                 Demonstration\n     for additional materials\n\n\nAny Additional Suggestion:\nTo improve performance in problems involving age-based equations, it is essential that students are first\ntaught to clearly define variables and understand how to translate real-life relationships into algebraic\nexpressions. Teachers should emphasise the importance of identifying what each variable represents and\nensuring that every step in the solution is logically and contextually accurate.",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "7.1.2",
+    "current_mapping": [
+      {
+        "code": "7.1.2",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve linear equation with real coefficients;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Solving linear equations in one/two variables representing real-life word problems is in Grade 9 Unit 7 (SLO 7.1.2).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve linear equation with real coefficients;",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q3a_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q3a_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q3b",
+    "questionNumber": "3b",
+    "questionText": "Solve the inequality $2(2x + 5) \\ge 18$ and show the solution on the given number line.",
+    "marks": 3,
+    "section": "CRQ",
+    "originalSlo": "17.4.2",
+    "pageNumber": 5,
+    "modelAnswer": "Solve the inequality:\n$4x + 10 \\ge 18 \\implies 4x \\ge 8 \\implies x \\ge 2$.\n\nRepresentation on number line:\nPlot a solid filled circle at $x = 2$ and draw a heavy ray (arrow) pointing to the right towards positive infinity.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Attempt either part a or part b of Q.3.",
+    "choiceGroup": "3",
+    "diagramUrl": "/paper-crops/MTH-X-2025-P2/q3b.png",
+    "isDiagram": true,
+    "officialMarkingNotes": "Question No. 3b\nQuestion Text  Solve the inequality 2( 2 x  5)  18 and show the solution on the given number line.\n\n\n                         – 4    – 3    – 2    – 1    0     1     2     3     4\nSLO No.        17.4.4\nSLO Text        Illustrate the solution of the above cases on the number line.\nMax Marks    3\nCognitive    A\nLevel\nChecking      1 mark for writing 2 x  5  9\nHints          1 mark for writing x  2\n              1 mark for correct representation of x  2 on the number line.\nOverall        Most candidates attempted this question, and less than half of the candidates solved it\nPerformance    correctly using a number line, indicating a clear understanding of the concept of inequality.\n          A common mistake observed was in the representation on the number line several\n                 candidates failed to highlight or mark the value '2'. This suggests that while the conceptual\n                 understanding was strong, attention to detail in the final representation needs improvement.\nDescription of  In better responses, candidates demonstrated a correct and complete application of\nBetter            inequalities. All steps  ( 2 x  5  9 , 2 x  4 and  x  2 ) were followed accurately, with\nResponses       appropriate use of inequality properties throughout the solution. The number line was\n               drawn correctly, and the shaded region clearly reflected the range of values satisfying the\n                   inequality. This showed that the candidates had a solid understanding of the concept and\n              was able to represent it both algebraically and graphically.\n  Image  of\n  Better\n  Response\n\n\n\n\n\n  Description of  In weaker responses, candidates failed to apply the correct concept of inequality. A common\n  Weaker          error observed was in the expansion of the bracket. Candidates were expected to multiply\n  Responses       the entire expression, such that 2(2x+5) becomes 4x+10. However, many only multiplied\n                    the first term, resulting in 4x+5, which indicates a misunderstanding of the distributive\n                    property, in some cases, the candidates mistakenly replaced the inequality sign with an\n                   equals  sign. Additionally, the number  line representation was  incorrect, with some\n                   candidates either misplacing the boundary values or shading the wrong region. These errors\n                   suggest a lack of conceptual understanding as well as procedural fluency in solving and\n                    representing inequalities.\n  Image  of\n  Weaker\n  Response\n\n\n\n\n\nSuggestions for improvement (Highlight all that apply)\n\n  Maximising        SLO  Preferred Pedagogy Used  Assessment Strategies\n  Achievement                  for this SLO\n      Identify the expectation of     Story Board               Past paper questions\n     command  words   (use     Cause and Effect           Discussion on E-Marking Notes\n     Command Word Guide)       Fish and Bone             AKU-EB  Digital  Learning  Solution\n                                  Concept Mapping          powered by Knowledge Platform\n                                                               https://akueb.knowledgeplatform.com/login\n   Ensure  the  content   is     Audio          Visual\n     taught   at  the  relevant      Resources\n     cognitive level               Think, Pair and Share\n    Identify necessary content     Knowledge   Platform\n     required      (skills    +      videos\n     concepts)                   Questioning Technique\n   Review    past    paper       (Socratic approach)\n     questions on the concept    Practical Demonstration\n    Utilise the resource guide\n     for additional materials\nAny Additional Suggestion:\nIt is recommended that teachers reinforce the distributive property through repeated and varied practice. To\nreinforce the distributive property through repeated and varied practice, use resources like interactive online\ngames on sites like mathgames.com. Emphasis should be placed on the importance of multiplying each term\ninside the bracket, not just the first. Incorporating short, focused exercises that isolate bracket expansion\nbefore integrating  it into inequality problems can build procedural accuracy. Regular feedback on such\ncommon mistakes will also help students correct misunderstandings early and apply the concept correctly in\nmore complex algebraic contexts.",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "7.3.1",
+    "current_mapping": [
+      {
+        "code": "7.3.1",
+        "topic": "Linear Equations and Inequalities",
+        "description": "define inequalities:\na. less than (<),\nb. greater than (>),\nc. less than or equal (≤),\nd. greater than or equal (≥);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Solving linear inequalities and graphing their solutions on the real number line is in Grade 9 Unit 7 (SLO 7.3.1).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "define inequalities:\na. less than (<),\nb. greater than (>),\nc. less than or equal (≤),\nd. greater than or equal (≥);",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q3b_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q3b_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q4",
+    "questionNumber": "4",
+    "questionText": "The simultaneous linear equations are: $x + y = 3$ and $2x + 3y = 8$.\ni. Line $2x + 3y = 8$ is shown in the given graph. On the same graph, draw another line $x + y = 3$ by taking any two points. (2 Marks)\nii. From the graph, find and write the solution set. (1 Mark)",
+    "marks": 3,
+    "section": "CRQ",
+    "originalSlo": "18.3.2",
+    "pageNumber": 6,
+    "modelAnswer": "i. For the line $x + y = 3$, find two points:\n- When $x = 0$, $y = 3 \\implies (0, 3)$\n- When $y = 0$, $x = 3 \\implies (3, 0)$\n- (Alternatively: $(1, 2), (-1, 4)$)\nPlot these points on the coordinate grid and draw the straight line through them with a ruler.\n\nii. The two lines intersect at point $(1, 2)$.\nThe solution set is $\\{(1, 2)\\}$.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Compulsory.",
+    "choiceGroup": null,
+    "diagramUrl": "/paper-crops/MTH-X-2025-P2/q4.png",
+    "isDiagram": true,
+    "officialMarkingNotes": "Question No. 4\nQuestion Text  The simultaneous linear equations are: x y  3 and 2 x y3   8 .\n                           i. Line 2 x y3   8 is shown in the given graph.\n             On the same graph, draw another line x y  3 by taking any two points.\n                          ii. From the graph, find and write the solution set.\n\n\n\n\n\nSLO No.        18.3.1\nSLO Text      Solve the simultaneous linear equations in two variables using:\n                   b. graphical method.\nMax Marks    3\nCognitive    A\nLevel\nChecking        a.     1 mark for plotting each point correctly (2 marks )\nHints            b.    1 mark for the solution set\nOverall         Overall,  the  responses  were  not  satisfactory,  with  few  candidates  successfully\nPerformance   demonstrating a correct understanding of coordinate points, plotting, and identifying the\n                 solution set of two lines. However, most candidates struggled with plotting and drawing\n                 the lines correctly, which affected their ability to determine the required solution set. These\n                   difficulties suggest a need for more practice in graph construction and interpretation.\nDescription of  In better responses, candidates accurately plotted the two points e.g., (2,1) and (-1,4) and\nBetter         drew the correct lines through them. They also correctly identified and marked the point of\nResponses       intersection {(1,2)} as the solution set, demonstrating a clear understanding of the concept.\n               These responses reflected a solid grasp of plotting linear equations and interpreting their\n                 graphical solutions.\nImage  of\nBetter\nResponse\n\n\n\n\n\nDescription of   In weaker responses, candidates failed to plot the correct values on the graph, which\nWeaker         resulted in the formation of incorrect lines. As a consequence, the solution set identified\nResponses      did not match the required result. Points (4, 2) and (1,3) gave wrong point of intersection.\n               These errors indicate a lack of understanding of coordinate plotting and the relationship\n               between graphical representation and algebraic solutions.\n  Image  of\n  Weaker\n  Response\n\n\n\n\n\nSuggestions for improvement (Highlight all that apply)\n  Maximising       SLO  Preferred Pedagogy Used  Assessment Strategies\n  Achievement                 for this SLO\n      Identify the expectation     Story Board                Past paper questions\n       of command words (use     Cause and Effect            Discussion on E-Marking Notes\n     Command Word Guide)      Fish and Bone              AKU-EB  Digital  Learning  Solution\n     Ensure  the  content  is     Concept Mapping           powered by Knowledge Platform\n       taught  at  the  relevant     Audio Visual Resources    https://akueb.knowledgeplatform.com/login\n       cognitive level              Think, Pair and Share\n      Identify       necessary                                 Knowledge    Platform\n       content required (skills +                                    videos\n       concepts)                                 Questioning  Technique\n     Review    past    paper                                       (Socratic approach)\n       questions on the concept      Practical Demonstration\n      Utilise   the   resource                       =\n      guide   for   additional\n       materials\n\n\n  Any Additional Suggestion:",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "9.4.1",
+    "current_mapping": [
+      {
+        "code": "9.4.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Graphing straight lines and finding the intersection point as solution of simultaneous linear equations is in Grade 9 Unit 9 (SLO 9.4.1).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q4_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q4_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q5",
+    "questionNumber": "5",
+    "questionText": "Find the roots of the equation $2x^2 + 5x + 2 = 0$ by using quadratic formula.",
+    "marks": 3,
+    "section": "CRQ",
+    "originalSlo": "19.2.1",
+    "pageNumber": 7,
+    "modelAnswer": "Compare with standard form $ax^2 + bx + c = 0$: $a = 2, b = 5, c = 2$.\nQuadratic formula: $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$\n$x = \\frac{-5 \\pm \\sqrt{5^2 - 4(2)(2)}}{2(2)} = \\frac{-5 \\pm \\sqrt{25 - 16}}{4} = \\frac{-5 \\pm \\sqrt{9}}{4} = \\frac{-5 \\pm 3}{4}$.\nEither $x = \\frac{-5 + 3}{4} = \\frac{-2}{4} = -\\frac{1}{2}$, or $x = \\frac{-5 - 3}{4} = \\frac{-8}{4} = -2$.\nSolution set is $\\left\\{-\\frac{1}{2}, -2\\right\\}$.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Compulsory.",
+    "choiceGroup": null,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "officialMarkingNotes": "Question No. 5\nQuestion Text  Find the roots of the equation 2 x 2 x5  2  0 by using quadratic formula.\nSLO No.        19.3.4\nSLO Text       solve the quadratic equations involving real and complex roots by using quadratic formula;\nMax Marks    3\nCognitive    A\nLevel\nChecking      1 mark for identification of a  ,2 b  5 and c  2\nHints                               5  9\n              1 mark for writing x \n                                    4\n                                        1\n              1 mark for writing the solution set {     ,  2}\n                                           2\nOverall          Overall, candidates found the question straightforward, and the application of the quadratic\nPerformance   formula was generally carried out successfully. Only a few candidates struggled with\n                  calculations in the subsequent steps, which affected their ability to reach the correct\n                  solution set. Additionally, some candidates attempted to use alternative methods to solve\n                 the equation, rather than applying the quadratic formula as specifically required by the\n                  question. This suggests the need for closer attention to instructions and improved accuracy\n                  in computation.\nDescription of  In better responses, candidates correctly identified the values of the coefficients of x2, x,\nBetter                                                                                         2                                                                    b   b  4 ac\nResponses      and the constant term. They accurately applied the quadratic formula x \n                                                                              2 a\n               and substituted the values appropriately. The steps were carried out systematically, leading\n                                      1\n                  to two  correct  solutions  [ x       or  x  2 ]  for  the  equation. These  responses\n                                         2\n                demonstrated both procedural fluency and a solid understanding of the quadratic formula\n               and its application.\nImage  of\nBetter\nResponse\n\n\n\n\n\nDescription of  In weaker responses, candidates attempted to use the middle term breaking method [\nWeaker        2 x 2 x5  2  0 ] to solve the equation, despite the question specifically requiring the use\nResponses\n                                       b   b 2  4 ac\n                    of the quadratic formula [ x                        ]. This indicated a lack of attention to\n                                               2 a\n                      instructions. Furthermore, candidates who attempted to apply the quadratic formula often\n                    struggled with the subsequent steps, such as substituting values correctly or simplifying\n                     accurately. These responses reflected both procedural confusion and gaps in understanding\n                    the required method.\n  Image  of\n  Weaker\n  Response\n\n\n\n\n\nSuggestions for improvement (Highlight all that apply)\n\n  Maximising        SLO  Pedagogy Used  for that  Assessment Strategies\n  Achievement            SLO\n      Identify the expectation of     Story Board              Past paper questions\n     command   words   (use     Cause and Effect          Discussion on E-Marking Notes\n     Command Word Guide)       Fish and Bone            AKU-EB  Digital  Learning  Solution\n     Ensure  the  content   is     Concept Mapping          powered by Knowledge Platform\n       taught   at  the  relevant     Audio          Visual   https://akueb.knowledgeplatform.com/login\n       cognitive level                Resources\n      Identify necessary content     Think, Pair and Share\n       required      (skills    +     Knowledge   Platform\n       concepts)                                     videos\n     Review     past    paper                                  Questioning Technique\n       questions on the concept                                         (Socratic approach)\n      Utilise the resource guide                                   Practical\n       for additional materials                                    Demonstration\n Any Additional Suggestion:",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "15.2.1",
+    "current_mapping": [
+      {
+        "code": "15.2.1",
+        "topic": "Quadratic Equations",
+        "description": "solve a quadratic equation in one variable by:\na. factorisation method,\nb. completing square method,\nc. using quadratic formula;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Solving quadratic equations by quadratic formula is in Grade 10 Unit 15 (SLO 15.2.1).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 15,
+    "sloText": "solve a quadratic equation in one variable by:\na. factorisation method,\nb. completing square method,\nc. using quadratic formula;",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q5_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q5_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q6",
+    "questionNumber": "6",
+    "questionText": "Three points have coordinates $A(-b, -b), B(b, b)$ and $C(-\\sqrt{3}b, \\sqrt{3}b)$. Show that $ABC$ is an equilateral triangle.",
+    "marks": 3,
+    "section": "CRQ",
+    "originalSlo": "20.1.3",
+    "pageNumber": 7,
+    "modelAnswer": "Distance formula: $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.\n1. $AB = \\sqrt{(b - (-b))^2 + (b - (-b))^2} = \\sqrt{(2b)^2 + (2b)^2} = \\sqrt{4b^2 + 4b^2} = \\sqrt{8b^2} = 2\\sqrt{2}|b|$.\n2. $BC = \\sqrt{(-\\sqrt{3}b - b)^2 + (\\sqrt{3}b - b)^2} = \\sqrt{(\\sqrt{3}+1)^2 b^2 + (\\sqrt{3}-1)^2 b^2} = \\sqrt{(3+2\\sqrt{3}+1+3-2\\sqrt{3}+1)b^2} = \\sqrt{8b^2} = 2\\sqrt{2}|b|$.\n3. $AC = \\sqrt{(-\\sqrt{3}b - (-b))^2 + (\\sqrt{3}b - (-b))^2} = \\sqrt{(1-\\sqrt{3})^2 b^2 + (1+\\sqrt{3})^2 b^2} = \\sqrt{8b^2} = 2\\sqrt{2}|b|$.\nSince $AB = BC = AC = 2\\sqrt{2}|b|$, all three sides are equal in length. Hence, $\\triangle ABC$ is an equilateral triangle.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Compulsory.",
+    "choiceGroup": null,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "officialMarkingNotes": "Question No. 6\n Question Text   Three points have coordinates A ( b,  b ) , B (b, b ) and C (  3b, 3b) .\n              Show that ABC is an equilateral triangle.\n SLO No.        20.2.3\n\n SLO Text      Use distance formula to show that three non-collinear points may form a/ an:\n                      a. equilateral triangle\n Max Marks    3\n Cognitive    A\n Level\n Checking      1 mark for finding AB\n Hints          1 mark for finding BC\n               1 mark for finding AC\nOverall        Only a few candidates were able to successfully prove that the given triangle was equilateral.\nPerformance   While most candidates applied the correct distance formula to one side, many struggled to\n                  calculate the distances of the remaining sides particularly due to the presence of square roots\n                 or variables in the given coordinates. The responses indicated that candidates found  it\n                 challenging to evaluate the expressions accurately, and the overall task appeared difficult for\n                 the majority.\nDescription of  In better responses, candidates demonstrated a correct and complete application of the\nBetter                                                      2                 distance formula d     x 2  x1    y 2  y1 2  for  all three sides of the triangle. TheyResponses\n                 exhibited sound conceptual understanding by  accurately expanding  the formula and\n                 simplifying the radicals correctly. As a result, they successfully proved that all three sides\n               were equal AC  AB  BC  2 2b , thereby establishing that the triangle was equilateral, as\n                  required.\nImage  of\nBetter\nResponse\n\n\n\n\n\nDescription of  In weaker responses, candidates struggled to understand the required concept. Several\nWeaker                                                  x1  x 2  y1  y 2                  applied the midpoint formula M.P              ,           instead of the distance formulaResponses                                                             2      2   \n               d     x 2  x1  2   y 2  y1 2 , which was necessary to prove the triangle was equilateral. As\n                a result, they failed to demonstrate the equality of all three sides. These responses reflected a\n                 lack of clarity regarding the objective of the question and an inability to grasp the underlying\n                geometric principle being assessed.\nImage  of\nWeaker\nResponse\n\n\n\n\n\n       Suggestions for improvement (Highlight all that apply)\n\n Maximising SLO Achievement   Preferred    Pedagogy  Assessment Strategies\n                             Used for this SLO\n     Identify the  expectation  of     Story Board            Past paper questions\n    command    words    (use     Cause and Effect        Discussion on E-Marking Notes\n    Command Word Guide)         Fish and Bone          AKU-EB  Digital  Learning  Solution\n    Ensure the content is taught     Concept Mapping        powered by Knowledge Platform\n       at the relevant cognitive level     Audio       Visual   https://akueb.knowledgeplatform.com/login\n     Identify  necessary  content      Resources\n      required (skills + concepts)       Think,   Pair   and\n    Review past paper questions      Share\n     on the concept                  Knowledge\n     Utilise the resource guide for      Platform videos\n      additional materials             Questioning\n                                     Technique (Socratic\n                                      approach)\n                                     Practical\n                                     Demonstration\n Any Additional Suggestion:\n  It is recommended that teachers reinforce the distinction between various coordinate geometry formulae\n particularly the distance, midpoint, and slope formulas by providing contextual examples that clarify when\n and why each is used. Encouraging students to read the question carefully and identify the goal such as proving\n a triangle is equilateral will help them select and apply the correct method.",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "9.1.1",
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "describe coordinate geometry;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Applying distance formula in coordinate geometry to verify properties of geometrical figures is in Grade 9 Unit 9 (SLO 9.1.1).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "describe coordinate geometry;",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q6_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q6_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q7a",
+    "questionNumber": "7a",
+    "questionText": "Prove that $\\frac{(1 + \\sin \\theta)(1 - \\sin \\theta)}{\\cos^4 \\theta} = 1 + \\tan^2 \\theta$.",
+    "marks": 4,
+    "section": "CRQ",
+    "originalSlo": "21.4.1",
+    "pageNumber": 8,
+    "modelAnswer": "$\\text{LHS} = \\frac{(1 + \\sin \\theta)(1 - \\sin \\theta)}{\\cos^4 \\theta}$.\nUsing difference of squares $(1 + \\sin \\theta)(1 - \\sin \\theta) = 1 - \\sin^2 \\theta$.\nBy the fundamental identity $1 - \\sin^2 \\theta = \\cos^2 \\theta$:\n$\\text{LHS} = \\frac{\\cos^2 \\theta}{\\cos^4 \\theta} = \\frac{1}{\\cos^2 \\theta} = \\sec^2 \\theta$.\nUsing identity $\\sec^2 \\theta = 1 + \\tan^2 \\theta$:\n$\\text{LHS} = 1 + \\tan^2 \\theta = \\text{RHS}$. Q.E.D.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Attempt either part a or part b of Q.7.",
+    "choiceGroup": "7",
+    "diagramUrl": null,
+    "isDiagram": false,
+    "officialMarkingNotes": "Question No. 7a\n Candidates were given the choice to attempt any ONE out of the two questions: 7a and 7b. Majority of the\n candidates attempted 7a.\n Question Text                 1  sin 1  sin            2                Prove that                1  tan .\n                                 cos 4 \n SLO No.        21.4.2\n SLO Text      prove different trigonometric relations using the above trigonometric identities;\n Max Marks    4\nCognitive    A\nLevel\nChecking                   1 sin 2 \n              1 mark for writing         4Hints                                   cos \n                                 cos 2\n              1 mark for writing      4                                 cos \n              1 mark for writing sec 2 \n              1 mark for writing 1 tan 2 \nOverall          Overall, the responses indicated that candidates exhibited a good understanding of the\nPerformance    question by applying identities and presenting their proofs in an appropriate manner.\n               However, the most common mistake observed was the incorrect application of identities\n               and a lack of consistency in following through the process, which led many candidates\n                   astray.\nDescription of  In better responses, candidates successfully applied the correct identity of a2−b2 in the form\nBetter                                                                                               1  sin 1  sin \n                 of trigonometric expressions and wrote the expression from                        toResponses                                                                                                                  4                                                                                  cos \n             1 sin 2                                                                                        2          2\n                                4       . They also used the appropriate trigonometric identities ( 1 tan = sec ) and                  cos \n                 accurately proved the result, demonstrating that LHS equaled RHS.\nImage  of\nBetter\nResponse\n\n\n\n\n\nDescription of  In weaker responses, candidates attempted the question but failed to apply the correct\nWeaker                                             1 sin 2     cos 2 \n                 trigonometric  identity. At  the  place  of  writing          4    or        4    ,  they  wroteResponses                                                                   cos       cos \n                 cos 2  cos 2 \n                                    4           . As a result, they were unable to prove the required identity involving                    cos \n             1 tan 2 .\n  Image  of\n  Weaker\n  Response\n\n\n\n\n\nSuggestions for improvement (Highlight all that apply)\n  Maximising SLO Achievement   Preferred    Pedagogy  Assessment Strategies\n                             Used for this SLO\n      Identify the  expectation  of     Story Board            Past paper questions\n     command    words    (use     Cause and Effect        Discussion on E-Marking Notes\n     Command Word Guide)         Fish and Bone          AKU-EB  Digital  Learning  Solution\n     Ensure the content is taught     Concept Mapping        powered by Knowledge Platform\n        at the relevant cognitive level     Audio       Visual   https://akueb.knowledgeplatform.com/login\n      Identify  necessary  content      Resources\n       required (skills + concepts)       Think,   Pair   and\n     Review past paper questions      Share\n      on the concept                  Knowledge\n      Utilise the resource guide for      Platform videos\n       additional materials             Questioning\n                                      Technique (Socratic\n                                       approach)\n                                      Practical\n                                      Demonstration\n Any Additional Suggestion:",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "14.4.2",
+    "current_mapping": [
+      {
+        "code": "14.4.2",
+        "topic": "Introduction to Trigonometry",
+        "description": "prove different trigonometric relations using the trigonometric identities mentioned in SLO 14.4.1;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Proving trigonometric identities using fundamental relations is in Grade 9 Unit 14 (SLO 14.4.2).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "prove different trigonometric relations using the trigonometric identities mentioned in SLO 14.4.1;",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q7a_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q7a_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q7b",
+    "questionNumber": "7b",
+    "questionText": "Show, by working, that the given lengths $2ab, a^2 - b^2$ and $a^2 + b^2$ are the sides of a right angled triangle.\n(Note: $a$ and $b$ are positive integers.)",
+    "marks": 4,
+    "section": "CRQ",
+    "originalSlo": "22.1.1",
+    "pageNumber": 8,
+    "modelAnswer": "For positive integers $a$ and $b$, the longest side is $a^2 + b^2$.\nCompute the sum of squares of the other two sides:\n$(2ab)^2 + (a^2 - b^2)^2 = 4a^2 b^2 + (a^4 - 2a^2 b^2 + b^4) = a^4 + 2a^2 b^2 + b^4 = (a^2 + b^2)^2$.\nThe sum of the squares of the two shorter sides equals the square of the longest side.\nBy the converse of Pythagoras theorem, the given lengths form the sides of a right angled triangle.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Attempt either part a or part b of Q.7.",
+    "choiceGroup": "7",
+    "diagramUrl": null,
+    "isDiagram": false,
+    "officialMarkingNotes": "Question No. 7b\n  Question Text  Show, by working, that the given lengths 2 ab , a 2  b 2 and a 2  b 2 are the sides of a right\n                  angled triangle.\n                  (Note: a and b are positive integers.)\n  SLO No.        22.1.1 a\n  SLO Text      Apply the following theorems to solve related problems: a. in a right-angled triangle, the\n                   square of the length to hypotenuse is equal to the sum of the squares of the lengths of the\n                    other two sides (Pythagoras’ theorem)\n  Max Marks    4\n  Cognitive    A\n  Level\n  Checking                                        2     2  2       2     2 2           2                1 mark for writing  a  b    a  b    2ab \n  Hints\n                                                            2     2 2           2                1 mark for expanding a  b    2ab   correctly\n                1 mark for the simplification to get a 4  2 a 2b 2  b 4\n                1 mark for the required proof\n  Overall       The overall performance on this question was average. Most candidates attempted part (a),\n  Performance    as it was a choice-based question. Some applied the correct concept and demonstrated a\n                 sound understanding of the Pythagoras Theorem, while a few failed to apply the concept\n                     correctly and were therefore unable to prove the required result.\n  Description of  In better responses, candidates demonstrated a clear conceptual understanding by applying\n  Better           the Pythagoras Theorem H 2  P 2  B 2  to prove the required side. Furthermore, they\n  Responses                                                                      2                2                     correctly evaluated relevant identities a  b  and a  b   and applied the properties of\n                   exponents, simplifying the expressions accurately to arrive at the correct result.\n  Image  of\n  Better\n  Response\n\n\n\n\n\n  Description of  In weaker responses, candidates used correct application of the Pythagoras theorem but put\n  Weaker         the   hypotenuse,   base  and   perpendicular   at  wrong   sides   of   equals   to\n  Responses         2 ab 2  a 2  b 2 2  a 2  b 2 2 .   The    steps    involved   wrong    identities   {\n                                                                         2  2 ab  b 2 } and an unnecessary use of the                         a  b 2  a                                      2  2 ab  b 2 and  a  b 2  a\n                   square root, which were not required in this question. As a result, the final answer did not\n                  match, and the LHS was not equal to the RHS.\n  Image  of\n  Weaker\n  Response\n\n\n\n\n\nSuggestions for improvement (Highlight all that apply)\n\n  Maximising SLO Achievement   Preferred    Pedagogy  Assessment Strategies\n                             Used for this SLO\n    Identify  the  expectation  of     Story Board            Past paper questions\n   command    words    (use     Cause and Effect        Discussion on E-Marking Notes\n   Command Word Guide)         Fish and Bone          AKU-EB  Digital  Learning  Solution\n   Ensure the content is taught     Concept Mapping        powered by Knowledge Platform\n     at the relevant cognitive level     Audio       Visual   https://akueb.knowledgeplatform.com/login\n    Identify  necessary  content      Resources\n     required (skills + concepts)       Think,   Pair   and\n   Review past paper questions      Share\n    on the concept                  Knowledge\n    Utilise the resource guide for      Platform videos\n     additional materials             Questioning\n                                    Technique (Socratic\n                                     approach)\n                                    Practical\n                                    Demonstration\nAny Additional Suggestion:\n Clearly mention the incorrect value used in applying the Pythagoras theorem to help identify the specific\nmistake.\n Point out the incorrect identity used in the simplification steps, such as confusing algebraic identities.\n Add contrast with the better response, where correct identities and logical reasoning were used to arrive at\nthe correct proof.",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Verifying right-angled triangles using the converse of Pythagoras theorem is in Grade 9 Unit 14 (SLO 14.3.1).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q7b_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q7b_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q8a",
+    "questionNumber": "8a",
+    "questionText": "Consider the given circle with centre $O$.\n$\\overline{AB} = 10\\text{ cm}$ is the diametre of the circle and $\\overline{OH} = \\overline{OG}$.\ni. Is $\\overline{CD} \\cong \\overline{EF}$? (1 Mark)\nii. Find $\\overline{OE}$ and justify your answer. (2 Marks)\niii. Write the relation between $\\overline{CG}$ and $\\overline{CD}$. (1 Mark)",
+    "marks": 4,
+    "section": "CRQ",
+    "originalSlo": "23.1.1",
+    "pageNumber": 9,
+    "modelAnswer": "i. Yes, $CD \\cong EF$. Justification: Chords equidistant from the centre of a circle are congruent ($OH = OG \\implies CD \\cong EF$).\n\nii. $OE = 5\\text{ cm}$. Justification: $OE$ is a radius of the circle, and radius is half of diameter $AB$: $OE = \\frac{AB}{2} = \\frac{10}{2} = 5\\text{ cm}$.\n\niii. $CG = \\frac{1}{2} CD$ (or $CD = 2CG$). Justification: The perpendicular drawn from the centre of a circle to a chord bisects the chord.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Attempt either part a or part b of Q.8.",
+    "choiceGroup": "8",
+    "diagramUrl": "/paper-crops/MTH-X-2025-P2/q8a.png",
+    "isDiagram": true,
+    "officialMarkingNotes": "Question No. 8a\nCandidates were given the choice to attempt any ONE out of the two questions: 8a and 8b. majority attempted\n8a rather than 8b.\nQuestion Text  Consider the given circle with centre O.\n\n                                B\n\n                            H                        E               F\n                                              NOT TO SCALE\n\n\n                                ● O\n\n\n\n                      C            D                           G\n\n                           A\n            AB  10 cm is the diameter of the circle and OH  OG .\n                            i.     Is CD  EF ?\n                           ii.   Find OE and justify your answer.\n                           iii.   Write the relation between CG andCD .\nSLO No.        23.1.1\nSLO Text      apply     the     following     theorems      to     solve      related     problems:\n                   b. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre\n                      is perpendicular to the chord.\nMax Marks    4\nCognitive    U\nLevel\nChecking            i.    1mark for correct decision\nHints                           ii.    1mark for writing ED =10 cm and 1 mark for finding OE  5 cm\n                                                     1\n                           iii.   1 mark for writing CD  2CG OR CG  CD\n                                                      2\nOverall       The overall performance on this question was above average, mainly candidates struggled\nPerformance    to provide the correct reason or statement as required by the question. The most common\n                mistake observed was a misconception regarding the difference between a diametre and a\n                 chord.\nDescription of  In better responses, candidates correctly applied the concept of congruent chords. In Part\nBetter               (ii), candidates demonstrated an understanding of the relationship between the diametre and\nResponses       radius, and found the correct value ( OE  5 cm ) with a valid justification (ED is the\n                 diametre). In Part (iii), the relevant theorem was correctly applied using the concept of a\n                chord and its perpendicular, and the candidate provided an accurate mathematical statement\n                  for the relationship between CG and CD.\nImage  of\nBetter\nResponse\n\n\n\n\n\nDescription of   In weaker responses, candidates struggled with the basic concept of equal chords and failed\nWeaker          to identify the diametre and calculate the incorrect value of the radius. It was also observed\nResponses        that the candidates had difficulty in providing valid reasons and comprehending the\n                 required relationships, some of them mentioned the angle (e.g., 140 degrees) as well. As a\n                    result, the correct relation between CG and CD was not stated (CG = CD).\n  Image  of\n  Weaker\n  Response\n\n\n\n\n\nSuggestions for improvement (Highlight all that apply)\n\n  Maximising SLO Achievement   Preferred    Pedagogy  Assessment Strategies\n                             Used for this SLO\n      Identify the  expectation  of     Story Board            Past paper questions\n     command    words    (use     Cause and Effect        Discussion on E-Marking Notes\n     Command Word Guide)         Fish and Bone          AKU-EB  Digital  Learning  Solution\n     Ensure the content is taught     Concept Mapping        powered by Knowledge Platform\n        at the relevant cognitive level     Audio       Visual   https://akueb.knowledgeplatform.com/login\n      Identify  necessary  content      Resources\n       required (skills + concepts)       Think,   Pair   and\n     Review past paper questions      Share\n      on the concept                  Knowledge\n      Utilise the resource guide for      Platform videos\n       additional materials             Questioning\n                                      Technique (Socratic\n                                       approach)\n                                      Practical\n                                      Demonstration\n  Any Additional Suggestion:\n  To improve, candidates should be guided to revisit the fundamental properties of circles, particularly the\n  relationship between equal chords and their distances from the center. Teachers may emphasise the use of\n   clear, step-by-step reasoning, encouraging students to first identify key elements such as diametre, radius, and\n  central angles before attempting the solution. Practice with structured diagrams and guided examples can help\n  students connect theorems to problem situations and avoid unrelated references (e.g., incorrect angles).\n  Regular short exercises focusing on stating correct mathematical relationships, such as CG = CD, will\n  strengthen conceptual understanding and precision in reasoning.",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "20.1.1",
+    "current_mapping": [
+      {
+        "code": "20.1.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. one and only one circle can pass through three non-collinear points,\nb. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre is perpendicular to the chord and vice versa,\nc. if two chords of a circle are congruent then they will be equidistant from the centre and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Properties of chords, perpendiculars from centre, and radius calculations are in Grade 10 Unit 20 (SLO 20.1.1).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. one and only one circle can pass through three non-collinear points,\nb. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre is perpendicular to the chord and vice versa,\nc. if two chords of a circle are congruent then they will be equidistant from the centre and vice versa;",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q8a_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q8a_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q8b",
+    "questionNumber": "8b",
+    "questionText": "Complete the following sentences.\ni. The measure of a central angle of a minor arc of a circle is double that of the angle subtended by the corresponding _______________.\nii. The inscribed angle in a semi-circle is a _______________.\niii. The angle in a segment is less than a semi-circle and greater than the ____________.\niv. The opposite angles of any quadrilateral inscribed in a circle are _______________.",
+    "marks": 4,
+    "section": "CRQ",
+    "originalSlo": "26.1.1",
+    "pageNumber": 10,
+    "modelAnswer": "i. **major arc** (or arc / corresponding inscribed angle).\nii. **right angle** (or $90^\\circ$).\niii. **right angle** (or angle in a semi-circle; an angle in a segment less than a semi-circle is obtuse).\niv. **supplementary** (or sum to $180^\\circ$).",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Attempt either part a or part b of Q.8.",
+    "choiceGroup": "8",
+    "diagramUrl": null,
+    "isDiagram": false,
+    "officialMarkingNotes": "Question No. 8b\nQuestion Text  Complete the following sentences.\n                          i.   The measure of a central angle of a minor arc of a circle is double that of the angle\n                    subtended by the corresponding _______________.\n                          ii.  The inscribed angle in a semi-circle is a _______________.\n                          iii.  The angle in a segment is less than a semi-circle and greater than the ____________.\n                    iv.  The opposite angles of any quadrilateral inscribed in a circle are _______________.\nSLO No.        26.1.1\nSLO Text      apply     the     following     theorems      to     solve      related     problems:\n                    a.   the   measure   of   a   central   angle   of   a   minor   arc   of   a    circle,\n                     is      double       that      of      the      angle      subtended     by      the\n                corresponding major arc.\nMax Marks    4\nCognitive    U\nLevel\nChecking      1 mark for each correct completion of the given sentences\nHints\nOverall         Overall, the candidates’ responses demonstrated a sound understanding of the theorem\nPerformance    stating that the measure of a central angle of a minor arc of a circle is double that of the\n                angle subtended by the corresponding major arc. Most candidates were able to comprehend\n                 the required meaning and expressed the statement using clear and accurate mathematical\n                terminology.\nDescription of  In  better responses, candidates demonstrated sound knowledge of the theorem and\nBetter         completed the sentences with valid answers, indicating a clear understanding of the concepts\nResponses      of major arcs, semicircles, angle in a segment and the properties of opposite angles.\nImage  of\nBetter\nResponse\n\n\n\n\n\nDescription of  In weaker responses, candidates were unable to identify the appropriate term to justify the\nWeaker        given statement. The use of the word \"major arc\" would have been more accurate than\nResponses      simply referring to it as an \"arc\". Additionally, the explanation of angle properties was not\n                supported by the relevant theorem, reflecting a lack of conceptual understanding of the\n                 statement. The opposite angles of any quadrilateral inscribed in a circle are supplementary.\n              However, some candidates incorrectly wrote  \"parallel\" instead, indicating a lack of\n                 understanding. This response suggests confusion between angle relationships and the\n                  direction of lines.\n  Image  of\n  Weaker\n  Response\n\n\n\n\n\nSuggestions for improvement (Highlight all that apply)\n\n  Maximising SLO Achievement   Preferred    Pedagogy  Assessment Strategies\n                             Used for this SLO\n      Identify the  expectation  of     Story Board            Past paper questions\n     command    words    (use     Cause and Effect        Discussion on E-Marking Notes\n     Command Word Guide)         Fish and Bone          AKU-EB  Digital  Learning  Solution\n     Ensure the content is taught     Concept Mapping        powered by Knowledge Platform\n        at the relevant cognitive level     Audio       Visual   https://akueb.knowledgeplatform.com/login\n      Identify  necessary  content      Resources\n       required (skills + concepts)       Think,   Pair   and\n     Review past paper questions      Share\n      on the concept                  Knowledge\n      Utilise the resource guide for      Platform videos\n       additional materials             Questioning\n                                      Technique (Socratic\n                                       approach)\n                                      Practical\n                                      Demonstration\n  Any Additional Suggestion:",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": "20.4.1",
+    "current_mapping": [
+      {
+        "code": "20.4.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. the measure of a central angle of a minor arc of a circle, is double that of the angle subtended by the corresponding major arc,\nb. any two angles in the same segment of a circle are equal,\nc. the inscribed angle in a semi-circle is a right angle,\nd. the angle in a segment greater than a semi-circle is less than a right angle,\ne. the angle in a segment less than a semi-circle is greater than right angle,\nf. the opposite angles of any quadrilateral inscribed in a circle are supplementary."
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Circle angle theorems (central/inscribed angle, angles in segments, cyclic quadrilaterals) are in Grade 10 Unit 20 (SLO 20.4.1).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. the measure of a central angle of a minor arc of a circle, is double that of the angle subtended by the corresponding major arc,\nb. any two angles in the same segment of a circle are equal,\nc. the inscribed angle in a semi-circle is a right angle,\nd. the angle in a segment greater than a semi-circle is less than a right angle,\ne. the angle in a segment less than a semi-circle is greater than right angle,\nf. the opposite angles of any quadrilateral inscribed in a circle are supplementary.",
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q8b_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q8b_weaker.png"
+  },
+  {
+    "id": "mth-x-2025-p2-q9",
+    "questionNumber": "9",
+    "questionText": "Draw an inscribed regular hexagon in the given circle.",
+    "marks": 3,
+    "section": "CRQ",
+    "originalSlo": "27.1.1",
+    "pageNumber": 10,
+    "modelAnswer": "Compass and ruler construction steps:\n1. With compass point at centre $P$, set compass width equal to the circle’s radius $r$.\n2. Choose any point $A$ on the circumference as the starting vertex.\n3. Keeping the compass set to radius $r$, place the needle at $A$ and strike an arc to intersect the circumference at $B$.\n4. Place the needle successively at $B, C, D, E$ to mark vertices $C, D, E, F$ along the circumference (each chord equals radius $r$).\n5. Using a straightedge/ruler, join the consecutive points: $AB, BC, CD, DE, EF, FA$ to form the regular hexagon inscribed in the circle.",
+    "modelAnswerOrigin": "Supplementary complete worked model solution independently verified by Codex",
+    "cognitiveLevel": "A",
+    "choiceInstruction": "Compulsory.",
+    "choiceGroup": null,
+    "diagramUrl": "/paper-crops/MTH-X-2025-P2/q9.png",
+    "isDiagram": true,
+    "officialMarkingNotes": "Question No. 9\nQuestion Text   Draw an inscribed regular hexagon in the given circle.\n\n\n\n\n\n                                     P\n\n\n\n\n\nSLO No.        27.2.9\nSLO Text     Draw an inscribed regular hexagon in a given circle;\nMax Marks    3\nCognitive    A\nLevel\nChecking      1 mark for drawing a diametre.\nHints         1 mark for drawing an arc (2 required).\nOverall       Most candidates were familiar with the required steps and successfully constructed the\nPerformance    inscribed hexagon by accurately following the construction method. However, a few\n                 struggled with the concept and mistakenly drew the hexagon outside the circle. Please do\n                   reiterate in the class the use of a darker pencil while drawing these figures as this helps in\n                 the clarity of the image.\nDescription of  In better responses, candidates demonstrated a good understanding of constructing a regular\nBetter           inscribed hexagon. They correctly drew the diametre, marked equal arcs, and accurately\nResponses      joined the points to form a proper inscribed hexagon.\n  Image      of\n  Better\n  Response\n\n\n\n\n\n  Description of  In weaker responses, candidates struggled to construct the inscribed hexagon correctly. The\n  Weaker         arcs marked were not appropriate for this construction, and the diametre was missing in\n  Responses     most cases. Overall, candidates failed to produce the required construction accurately.\n\n  Image      of\n  Weaker\n  Response\n\n\n\n\n\nSuggestions for improvement (Highlight all that apply)\n\n  Maximising SLO Achievement   Preferred    Pedagogy  Assessment Strategies\n                             Used for this SLO\n      Identify the  expectation  of     Story Board            Past paper questions\n     command    words    (use     Cause and Effect        Discussion on E-Marking Notes\n     Command Word Guide)         Fish and Bone          AKU-EB  Digital  Learning  Solution\n     Ensure the content is taught     Concept Mapping        powered by Knowledge Platform\n        at the relevant cognitive level     Audio       Visual   https://akueb.knowledgeplatform.com/login\n      Identify  necessary  content      Resources\n       required (skills + concepts)       Think,   Pair   and\n     Review past paper questions      Share\n      on the concept                  Knowledge\n      Utilise the resource guide for      Platform videos\n       additional materials             Questioning\n                                      Technique (Socratic\n                                       approach)\n                                    Practical\n                                    Demonstration\n\n\nAny Additional Suggestion:\nTo strengthen performance, candidates should be encouraged to revise the step-by-step procedure for\nconstructing an inscribed hexagon, beginning with drawing the circle and its diameter as the foundation.\nPractice activities should emphasise accurate use of the compass for marking arcs and equal divisions of the\ncircle. Teachers may also provide guided exercises with partially drawn diagrams to help students visualise\nand complete the construction correctly.",
+    "sourceSha256": "2c26876e774541ff6c847fc4f39375b30bd7ecb94e63e2c6eea395f3f13d9e9c",
+    "current_slo": null,
+    "current_mapping": [],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "OUT_OF_CURRENT_SYLLABUS",
+    "mappingReason": "Inscribing a regular hexagon in a circle was assessed under old SLO 27.1.1, but has no direct outcome in the revised 2025–2027 curriculum (outside current syllabus scope).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "unitNumber": null,
+    "sloText": null,
+    "betterResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q9_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2025-EMARKING/q9_weaker.png"
+  }
+]

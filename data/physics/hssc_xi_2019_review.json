@@ -1,0 +1,91 @@
+{
+  "mcqMappings": "1.1.3 1.2.3 2.2.2 2.1.2 2.2.1 2.4.1+2.4.3 - 3.1.2 4.1.1 4.1.2 4.1.1 11.5.2 3.3.1 4.3.1 4.5.4 6.3.3 6.4.2 6.5.2 7.2.2 7.4.3 7.4.1 8.1.4 - 8.1.4 8.4.1 8.5.1 8.3.1 9.6.2 9.6.7 10.5.2 10.8.1 10.9.2 10.9.3 10.3.4 10.4.3",
+  "held": {},
+  "corrected": {
+    "24": "A",
+    "32": "B"
+  },
+  "mcqNotes": {
+    "19": "The digital question states the uniform-speed assumption required for the projection to be simple harmonic.",
+    "24": "The printed choice A read 'I only (velocity)', but temperature changes the speed of sound, and because the source frequency stays fixed the wavelength also changes, $\\lambda=v/f$. Choice A has been corrected to 'I and III' (velocity and wavelength). The key letter A is unchanged.",
+    "30": "The digital question specifies an ideal gas, for which internal energy depends only on temperature.",
+    "32": "The printed answer key marks this item with an asterisk. The project-solved answer is B because the working substance returns to the same temperature after a complete cycle."
+  },
+  "written": {
+    "1": {
+      "mapping": "1.2.3+16.1.3",
+      "level": "U",
+      "solution": "Both $v^2$ and $c^2$ have dimensions $L^2T^{-2}$, so $v^2/c^2$ and the denominator are dimensionless. As $v\\to c$ from below, $\\sqrt{1-v^2/c^2}\\to0^+$, so the quantity $m$ in the given relativistic-mass convention diverges for $m_0>0$. The object's rest mass stays fixed."
+    },
+    "2": {
+      "mapping": "-",
+      "level": "U",
+      "solution": "The readings are 10 N in situation 1 and 5 N in situation 2. A spring balance measures the tension through it. The wall supplies the opposing 10 N force in the first situation. In the second, each end is pulled with 5 N, giving 5 N of tension. In both cases the opposing external forces cancel, satisfying the first condition of equilibrium, $\\sum\\vec F=0$."
+    },
+    "3": {
+      "mapping": "3.2.3",
+      "level": "U",
+      "solution": "For a body of fixed mass, $\\vec p=m\\vec v$. Differentiation gives $d\\vec p/dt=m\\,d\\vec v/dt=m\\vec a$. By Newton’s second law, $m\\vec a=\\sum\\vec F$, so $\\sum\\vec F=d\\vec p/dt$."
+    },
+    "4": {
+      "mapping": "3.4.1",
+      "level": "U",
+      "solution": "Near Earth’s surface, gravity is downward and approximately uniform, so $dW_g=-mg\\,dy$. The integral from A to B is $W_g=-mg(y_B-y_A)$ for any path. In a sketch, place B a height $h$ above A. Draw a vertical route and a sloping route joining A to B, with downward arrows for gravity. Both have the same upward height change and give $W_g=-mgh$."
+    },
+    "5": {
+      "mapping": "4.3.1+4.3.2",
+      "level": "U",
+      "solution": "a. Centripetal force is the inward component of the net force on a body following a circular path. For speed $v$ and radius $r$, $F_c=mv^2/r=mr\\omega^2$.\nb. It changes the direction of the tangential velocity toward the centre. With no inward force the body would continue along a tangent."
+    },
+    "6": {
+      "mapping": "6.3.1+3.2.2",
+      "level": "U",
+      "solution": "1. Conservation of mass in steady nozzle flow gives $\\dot m=\\rho Av$.\n2. At fixed mass flow and density, smaller area implies higher speed. Rocket exhaust is compressible, so density and the flow conditions must also be considered.\n3. The expelled gas carries backward momentum. The rocket gains forward momentum, with an exhaust-momentum contribution to thrust of approximately $\\dot m v_e$."
+    },
+    "7": {
+      "mapping": "7.4.3",
+      "level": "A",
+      "solution": "Convert $50\\,\\mathrm{cm}$ to $0.50\\,\\mathrm m$. Using $T=2\\pi\\sqrt{L/g}$ gives $T\\approx1.42\\,\\mathrm s$, so $f=1/T\\approx0.705\\,\\mathrm{Hz}$."
+    },
+    "8": {
+      "mapping": "8.4.3",
+      "level": "A",
+      "solution": "The 50 cm between the two end nodes contains three loops. Each loop is half a wavelength, so $50\\,\\mathrm{cm}=3\\lambda/2$. Thus $\\lambda=100/3\\,\\mathrm{cm}\\approx33.3\\,\\mathrm{cm}$."
+    },
+    "9": {
+      "mapping": "8.5.3",
+      "level": "A",
+      "solution": "For approaching A, $f_A=650(340)/(340-20)=690.625\\,\\mathrm{Hz}\\approx691\\,\\mathrm{Hz}$. For receding B, $f_B=650(340)/(340+20)\\approx613.89\\,\\mathrm{Hz}\\approx614\\,\\mathrm{Hz}$."
+    },
+    "10": {
+      "mapping": "9.6.3+9.6.7",
+      "level": "U",
+      "solution": "Light reflected from a horizontal surface is often strongly horizontally polarised. Polarising sunglasses have a substantially vertical transmission axis and suppress that horizontal component. Ordinary tinted lenses reduce brightness more generally, so the polarising filter more selectively reduces reflected glare."
+    },
+    "11": {
+      "mapping": "10.5.2",
+      "level": "U",
+      "solution": "a. It is adiabatic compression because no heat crosses the system boundary.\nb. Take $W_{\\mathrm{by}}$ as work done by the gas. The first law is $\\Delta U=Q-W_{\\mathrm{by}}$. Here $Q=0$ and $W_{\\mathrm{by}}<0$, so $\\Delta U=-W_{\\mathrm{by}}>0$.\nc. Internal energy increases, and an ideal gas warms because its internal energy depends on temperature."
+    },
+    "12a": {
+      "mapping": "11.5.2",
+      "level": "A",
+      "solution": "Set $\\tfrac12mv_e^2-GMm/R=0$ for just reaching infinity. This gives $v_e=\\sqrt{2GM/R}$. Substitution gives $1.118\\times10^4\\,\\mathrm{m/s}$ for Earth and $2.402\\times10^3\\,\\mathrm{m/s}$ for the Moon, or approximately $11.2\\,\\mathrm{km/s}$ and $2.40\\,\\mathrm{km/s}$."
+    },
+    "12b": {
+      "mapping": "3.3.1",
+      "level": "A",
+      "solution": "The useful work is $mgh=(200)(9.8)(125)=245000\\,\\mathrm J$. Using $1\\,\\mathrm{hp}\\approx746\\,\\mathrm W$, the motor power is $18(746)=13428\\,\\mathrm W$. If all of that power goes into lifting the water, $t=W/P\\approx18.2\\,\\mathrm s$."
+    },
+    "13a": {
+      "mapping": "10.9.4",
+      "level": "A",
+      "solution": "The reservoirs are at $T_H=293.15\\,\\mathrm K$ and $T_C=277.15\\,\\mathrm K$. The ideal Carnot efficiency is $1-T_C/T_H=16/293.15\\approx0.0546$, or $5.46\\%$. The reservoir temperatures determine this upper limit, while actual efficiency depends on the engine."
+    },
+    "13b": {
+      "mapping": "10.5.3",
+      "level": "A",
+      "solution": "Taking the stated volume change as an increase, work done by the gas is $W_{\\mathrm{by}}=P\\Delta V=(150)(0.10)=15\\,\\mathrm J$. The first law gives $\\Delta U=Q-W_{\\mathrm{by}}=100-15=85\\,\\mathrm J$. If the volume instead decreased by that amount, the work by the gas would be $-15\\,\\mathrm J$ and $\\Delta U=115\\,\\mathrm J$."
+    }
+  }
+}

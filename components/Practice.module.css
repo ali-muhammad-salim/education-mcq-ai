@@ -1,0 +1,360 @@
+/* Practice-mode options, answer feedback and the floating practice HUD. */
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 0.65rem;
+}
+
+.option {
+  text-align: left;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #1e293b;
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.option:hover {
+  border-color: #0b5e4a;
+  box-shadow: 0 0 0 2px rgba(11, 94, 74, 0.08);
+}
+
+.option:focus-visible {
+  outline: 3px solid var(--primary-color, #0b5e4a);
+  outline-offset: 2px;
+}
+
+.key {
+  color: #111827;
+  min-width: 18px;
+}
+
+.text {
+  flex-grow: 1;
+}
+
+.mark {
+  margin-left: auto;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.selected {
+  border: 2px solid #0b5e4a;
+  background: #e6f0ed;
+}
+
+.selected .key {
+  color: #0b5e4a;
+}
+
+.answered {
+  cursor: default;
+}
+
+.answered:hover {
+  box-shadow: none;
+}
+
+/* .option prefix out-specifies the global `button:disabled` colour rule. */
+.option.correct,
+.option.correct:disabled {
+  background: #ecfdf5 !important;
+  border: 2px solid #16a34a !important;
+  color: #14532d !important;
+}
+
+.option.correct .key {
+  color: #166534;
+}
+
+.option.wrong,
+.option.wrong:disabled {
+  background: #fef2f2 !important;
+  border: 2px solid #dc2626 !important;
+  color: #991b1b !important;
+}
+
+.option.wrong .key {
+  color: #b91c1c;
+}
+
+.feedback {
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  border: 1.5px solid;
+}
+
+.feedbackCorrect {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.feedbackWrong {
+  background: #fff1f2;
+  border-color: #fecdd3;
+}
+
+.feedbackTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.feedbackCorrect .feedbackTitle {
+  color: #166534;
+}
+
+.feedbackWrong .feedbackTitle {
+  color: #9f1239;
+}
+
+.reason {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  margin-bottom: 0.35rem;
+}
+
+.feedbackWrong .reason {
+  color: #9f1239;
+}
+
+.explanation {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #1e293b;
+}
+
+/* ── Floating HUD ──────────────────────────────────────────────────────── */
+
+.hud {
+  position: fixed;
+  z-index: 850;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  width: max-content;
+  min-width: 440px;
+  max-width: calc(100vw - 160px);
+  padding: 9px 18px 8px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.94);
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  box-shadow: 0 14px 34px rgba(2, 6, 23, 0.35);
+  backdrop-filter: blur(10px);
+  color: #e2e8f0;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.stat svg {
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+.value {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #f8fafc;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.total {
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(148, 163, 184, 0.28);
+}
+
+.bar {
+  position: relative;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.25);
+  overflow: hidden;
+  display: flex;
+}
+
+.fill,
+.correctFill {
+  display: block;
+  height: 100%;
+  transition: width 0.25s ease;
+}
+
+.fill {
+  background: rgba(52, 211, 153, 0.45);
+}
+
+.correctFill {
+  background: #34d399;
+  border-radius: 0 999px 999px 0;
+}
+
+:global(html.dark) .option {
+  background: #111827;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(html.dark) .option:hover {
+  border-color: #34d399;
+  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.16);
+}
+
+:global(html.dark) .key {
+  color: #f1f5f9;
+}
+
+:global(html.dark) .selected {
+  background: rgba(16, 185, 129, 0.14);
+  border-color: #34d399;
+}
+
+:global(html.dark) .selected .key {
+  color: #6ee7b7;
+}
+
+:global(html.dark) .option.correct:disabled {
+  background: rgba(16, 185, 129, 0.16) !important;
+  border-color: #34d399 !important;
+  color: #d1fae5 !important;
+}
+
+:global(html.dark) .option.correct .key {
+  color: #6ee7b7;
+}
+
+:global(html.dark) .option.wrong:disabled {
+  background: rgba(248, 113, 113, 0.16) !important;
+  border-color: #f87171 !important;
+  color: #fecdd3 !important;
+}
+
+:global(html.dark) .option.wrong .key {
+  color: #fca5a5;
+}
+
+:global(html.dark) .feedbackCorrect {
+  background: #143429;
+  border-color: #345849;
+}
+
+:global(html.dark) .feedbackWrong {
+  background: #3b2029;
+  border-color: #72404b;
+}
+
+:global(html.dark) .feedbackCorrect .feedbackTitle {
+  color: #86efac;
+}
+
+:global(html.dark) .feedbackWrong .feedbackTitle {
+  color: #fca5a5;
+}
+
+:global(html.dark) .feedbackWrong .reason {
+  color: #fecdd3;
+}
+
+:global(html.dark) .explanation {
+  color: #e2e8f0;
+}
+
+@media (max-width: 640px) {
+  .options {
+    gap: 0.45rem;
+  }
+
+  .hud {
+    left: 8px;
+    right: 8px;
+    top: 66px;
+    bottom: auto;
+    transform: none;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    padding: 8px 12px 7px;
+  }
+
+  .stats {
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  /* Accuracy is the first stat to go when the bar runs out of room. */
+  .stats > .stat:nth-child(7),
+  .stats > .divider:nth-child(6) {
+    display: none;
+  }
+
+  .label {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .option {
+    padding: 9px 10px;
+  }
+
+  .feedback {
+    padding: 0.75rem;
+  }
+
+  /* Keep answered / remaining only; the bar still shows correct progress. */
+  .stats > .stat:nth-child(5),
+  .stats > .divider:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 370px) {
+  .hud {
+    top: 63px;
+  }
+}
+
+@media print {
+  .hud {
+    display: none;
+  }
+}

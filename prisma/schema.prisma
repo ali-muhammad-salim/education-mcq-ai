@@ -142,6 +142,7 @@ model SLO {
   isPractical    Boolean       @default(false)
   fingerprint    String?       // normalized text hash for cross-version matching
   sourcePage     Int?          // page in syllabus PDF
+  sourceOrdinal  Int?
   isFormative    Boolean       @default(false) // FA: not assessed under exam conditions
   embedding      Unsupported("vector(768)")?
 
@@ -154,7 +155,7 @@ model SLO {
   sourceMappings SLOMapping[] @relation("SourceSLO")
   targetMappings SLOMapping[] @relation("TargetSLO")
 
-  @@unique([subtopicId, code])
+  @@index([subtopicId, code])
   @@index([subtopicId])
 }
 
@@ -470,6 +471,8 @@ model PastPaperQuestion {
   
   questionText           String   @db.Text
   normalizedQuestionText String   @db.Text
+  embedding              Unsupported("vector(768)")?
+  embeddingModel         String?
   questionType           String
   marks                  Float?
   pageNumber             Int?
@@ -1096,6 +1099,7 @@ model User {
   quizAttempts         QuizAttempt[]
   gradedAnswers        AnswerGrade[]          @relation("TeacherGradedAnswers")
   auditLogs            AuditLog[]
+  questionBankItems    QuestionBankItem[]
 
   @@index([email])
   @@index([role])
@@ -1514,4 +1518,20 @@ model AuditLog {
 
   @@index([action])
   @@index([createdAt])
+}
+
+model QuestionBankItem {
+  id             String   @id @default(cuid())
+  creatorId      String
+  questionType   String
+  stemText       String   @db.Text
+  difficulty     String
+  marks          Float
+  cognitiveLevel String
+  content        Json
+  createdAt      DateTime @default(now())
+
+  creator User @relation(fields: [creatorId], references: [id])
+
+  @@index([creatorId, createdAt])
 }

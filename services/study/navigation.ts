@@ -12,15 +12,39 @@ import { studyKinds } from "./contracts";
 import physicsIX from "@/data/physics/ssc1_exact_syllabus.json";
 import physicsX from "@/data/physics/ssc2_exact_syllabus.json";
 
+import csIX from "@/data/computer-science/ssc1_exact_syllabus.json";
+import csX from "@/data/computer-science/ssc2_exact_syllabus.json";
+import chemIX from "@/data/chemistry/ssc1_exact_syllabus.json";
+import chemX from "@/data/chemistry/ssc2_exact_syllabus.json";
+import mathIX from "@/data/mathematics/ssc1_exact_syllabus.json";
+import mathX from "@/data/mathematics/ssc2_exact_syllabus.json";
+import { hsscPhysicsSyllabus } from "@/lib/hsscPhysicsSyllabus";
+
 function syllabusChapters(scope: NonNullable<ReturnType<typeof studyScope>>) {
+  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   if (
     scope.board.id !== "akueb" ||
     normalizeBoardId(scope.board.shortCode) !== scope.board.id ||
-    scope.meta.slug !== "physics" ||
-    ![9, 10].includes(scope.classDef.level)
+    !["physics", "computer-science", "chemistry", "mathematics"].includes(scope.meta.slug) ||
+    (![9, 10].includes(scope.classDef.level) && !hssc)
   )
     return [];
-  const units = scope.classDef.level === 9 ? physicsIX : physicsX;
+  const units =
+    hssc?.units ?? (scope.meta.slug === "computer-science"
+      ? scope.classDef.level === 9
+        ? csIX
+        : csX
+      : scope.meta.slug === "chemistry"
+        ? scope.classDef.level === 9
+          ? chemIX
+          : chemX
+        : scope.meta.slug === "mathematics"
+          ? scope.classDef.level === 9
+            ? mathIX
+            : mathX
+          : scope.classDef.level === 9
+            ? physicsIX
+            : physicsX);
   return units.map((unit) => ({
     id: "syllabus-" + unit.unitNumber,
     name: unit.name,
@@ -55,6 +79,7 @@ export function studyScope(
 export async function studyChapters(
   scope: NonNullable<ReturnType<typeof studyScope>>,
 ) {
+  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   // Resolve within the selected board AND class. The same subject name is not
   // sufficient to identify a curriculum.
   const subjects = await prisma.subject.findMany({
@@ -69,13 +94,16 @@ export async function studyChapters(
       },
     },
     select: { id: true, name: true },
+  }).catch(error => {
+    if (hssc && error.name === "PrismaClientInitializationError") return [];
+    throw error;
   });
   const ids = subjects
     .filter((s) => getSubjectMeta(s.name).slug === scope.meta.slug)
     .map((s) => s.id);
   if (!ids.length) return syllabusChapters(scope);
   const chapters = await prisma.topic.findMany({
-    where: { syllabusVersion: { subjectId: { in: ids }, isLatest: true } },
+    where: { syllabusVersion: { subjectId: { in: ids }, isLatest: true, ...(hssc ? { fileUrl: hssc.original } : {}) } },
     select: {
       id: true,
       name: true,

@@ -1,0 +1,652 @@
+{
+  "year": 2017,
+  "subject": "Mathematics",
+  "grade": 9,
+  "sources": {
+    "p1": {
+      "filename": "mathematics-ix-2017-paper-i.pdf",
+      "url": "/materials/ssc/mathematics/ssc-1/mathematics-ix-2017-paper-i.pdf",
+      "sha256": "e6c5ead8cb91c966fd3fc90e8619132a324e245cac5531898fccf7c9e3a5832b",
+      "pages": 12
+    },
+    "p2": {
+      "filename": "mathematics-ix-2017-paper-ii.pdf",
+      "url": "/materials/ssc/mathematics/ssc-1/mathematics-ix-2017-paper-ii.pdf",
+      "sha256": "370cc1686c5646a66ef833b668d488d268b415eeb1bbd03bc2319ddb50e5df08",
+      "pages": 20
+    },
+    "key": {
+      "filename": "mathematics-ix-2017-keys.pdf",
+      "url": "/materials/ssc/mathematics/ssc-1/mathematics-ix-2017-keys.pdf",
+      "sha256": "70e03def5f70ee061306fbcdd3b980a3d967a9a21999b5d853fe3fa170b99453",
+      "pages": 1
+    },
+    "em": {
+      "filename": "mathematics-ix-2017-emarking.pdf",
+      "url": "/materials/ssc/mathematics/ssc-1/mathematics-ix-2017-emarking.pdf",
+      "sha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "pages": 32
+    }
+  },
+  "crops": [
+    {
+      "paper": "p1",
+      "question": "25",
+      "page": 7,
+      "box": [
+        280,
+        70,
+        560,
+        235
+      ],
+      "sourceSha256": "e6c5ead8cb91c966fd3fc90e8619132a324e245cac5531898fccf7c9e3a5832b",
+      "url": "/paper-crops/MTH-IX-2017-P1/q25.png"
+    },
+    {
+      "paper": "p1",
+      "question": "26",
+      "page": 7,
+      "box": [
+        240,
+        280,
+        555,
+        395
+      ],
+      "sourceSha256": "e6c5ead8cb91c966fd3fc90e8619132a324e245cac5531898fccf7c9e3a5832b",
+      "url": "/paper-crops/MTH-IX-2017-P1/q26.png"
+    },
+    {
+      "paper": "p1",
+      "question": "27",
+      "page": 7,
+      "box": [
+        240,
+        410,
+        555,
+        510
+      ],
+      "sourceSha256": "e6c5ead8cb91c966fd3fc90e8619132a324e245cac5531898fccf7c9e3a5832b",
+      "url": "/paper-crops/MTH-IX-2017-P1/q27.png"
+    },
+    {
+      "paper": "p1",
+      "question": "28",
+      "page": 7,
+      "box": [
+        360,
+        530,
+        555,
+        645
+      ],
+      "sourceSha256": "e6c5ead8cb91c966fd3fc90e8619132a324e245cac5531898fccf7c9e3a5832b",
+      "url": "/paper-crops/MTH-IX-2017-P1/q28.png"
+    },
+    {
+      "paper": "p1",
+      "question": "29",
+      "page": 7,
+      "box": [
+        345,
+        655,
+        555,
+        770
+      ],
+      "sourceSha256": "e6c5ead8cb91c966fd3fc90e8619132a324e245cac5531898fccf7c9e3a5832b",
+      "url": "/paper-crops/MTH-IX-2017-P1/q29.png"
+    },
+    {
+      "paper": "p1",
+      "question": "30",
+      "page": 8,
+      "box": [
+        245,
+        110,
+        510,
+        260
+      ],
+      "sourceSha256": "e6c5ead8cb91c966fd3fc90e8619132a324e245cac5531898fccf7c9e3a5832b",
+      "url": "/paper-crops/MTH-IX-2017-P1/q30.png"
+    },
+    {
+      "paper": "p2",
+      "question": "2a",
+      "page": 3,
+      "box": [
+        60,
+        110,
+        540,
+        680
+      ],
+      "sourceSha256": "370cc1686c5646a66ef833b668d488d268b415eeb1bbd03bc2319ddb50e5df08",
+      "url": "/paper-crops/MTH-IX-2017-P2/q2a.png"
+    },
+    {
+      "paper": "p2",
+      "question": "8",
+      "page": 10,
+      "box": [
+        60,
+        110,
+        540,
+        220
+      ],
+      "sourceSha256": "370cc1686c5646a66ef833b668d488d268b415eeb1bbd03bc2319ddb50e5df08",
+      "url": "/paper-crops/MTH-IX-2017-P2/q8.png"
+    },
+    {
+      "paper": "p2",
+      "question": "9",
+      "page": 11,
+      "box": [
+        90,
+        130,
+        560,
+        245
+      ],
+      "sourceSha256": "370cc1686c5646a66ef833b668d488d268b415eeb1bbd03bc2319ddb50e5df08",
+      "url": "/paper-crops/MTH-IX-2017-P2/q9.png"
+    },
+    {
+      "paper": "p2",
+      "question": "10a",
+      "page": 12,
+      "box": [
+        260,
+        150,
+        500,
+        360
+      ],
+      "sourceSha256": "370cc1686c5646a66ef833b668d488d268b415eeb1bbd03bc2319ddb50e5df08",
+      "url": "/paper-crops/MTH-IX-2017-P2/q10a.png"
+    },
+    {
+      "paper": "p2",
+      "question": "10b",
+      "page": 13,
+      "box": [
+        220,
+        160,
+        500,
+        310
+      ],
+      "sourceSha256": "370cc1686c5646a66ef833b668d488d268b415eeb1bbd03bc2319ddb50e5df08",
+      "url": "/paper-crops/MTH-IX-2017-P2/q10b.png"
+    },
+    {
+      "paper": "em",
+      "question": "1a",
+      "kind": "better",
+      "page": 2,
+      "box": [
+        70,
+        355,
+        500,
+        615
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q1a_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "1a",
+      "kind": "weaker",
+      "page": 3,
+      "box": [
+        70,
+        150,
+        445,
+        410
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q1a_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "1b",
+      "kind": "better",
+      "page": 4,
+      "box": [
+        70,
+        270,
+        335,
+        515
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q1b_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "1b",
+      "kind": "weaker",
+      "page": 5,
+      "box": [
+        70,
+        190,
+        260,
+        400
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q1b_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "2a",
+      "kind": "better",
+      "page": 7,
+      "box": [
+        70,
+        160,
+        295,
+        630
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q2a_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "2a",
+      "kind": "weaker",
+      "page": 8,
+      "box": [
+        70,
+        185,
+        290,
+        655
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q2a_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "2b",
+      "kind": "better",
+      "page": 9,
+      "box": [
+        70,
+        460,
+        380,
+        770
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q2b_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "2b",
+      "kind": "weaker",
+      "page": 10,
+      "box": [
+        70,
+        170,
+        395,
+        530
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q2b_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "3",
+      "kind": "better",
+      "page": 11,
+      "box": [
+        70,
+        360,
+        195,
+        635
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q3_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "3",
+      "kind": "weaker",
+      "page": 12,
+      "box": [
+        70,
+        150,
+        255,
+        420
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q3_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "4a",
+      "kind": "better",
+      "page": 13,
+      "box": [
+        70,
+        275,
+        430,
+        510
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q4a_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "4a",
+      "kind": "weaker",
+      "page": 14,
+      "box": [
+        70,
+        155,
+        375,
+        375
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q4a_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "4b",
+      "kind": "better",
+      "page": 14,
+      "box": [
+        70,
+        520,
+        335,
+        685
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q4b_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "4b",
+      "kind": "weaker",
+      "page": 15,
+      "box": [
+        70,
+        185,
+        480,
+        295
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q4b_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "5a",
+      "kind": "better",
+      "page": 15,
+      "box": [
+        70,
+        545,
+        400,
+        765
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q5a_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "5a",
+      "kind": "weaker",
+      "page": 16,
+      "box": [
+        70,
+        165,
+        505,
+        440
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q5a_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "5b",
+      "kind": "better",
+      "page": 17,
+      "box": [
+        70,
+        230,
+        445,
+        495
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q5b_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "5b",
+      "kind": "weaker",
+      "page": 17,
+      "box": [
+        70,
+        590,
+        385,
+        735
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q5b_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "6a",
+      "kind": "better",
+      "page": 18,
+      "box": [
+        70,
+        320,
+        475,
+        595
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q6a_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "6a",
+      "kind": "weaker",
+      "page": 19,
+      "box": [
+        70,
+        195,
+        390,
+        455
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q6a_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "6b",
+      "kind": "better",
+      "page": 20,
+      "box": [
+        70,
+        205,
+        465,
+        435
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q6b_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "6b",
+      "kind": "weaker",
+      "page": 21,
+      "box": [
+        70,
+        195,
+        455,
+        450
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q6b_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "7",
+      "kind": "better",
+      "page": 22,
+      "box": [
+        70,
+        305,
+        495,
+        605
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q7_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "7",
+      "kind": "weaker",
+      "page": 23,
+      "box": [
+        70,
+        210,
+        510,
+        550
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q7_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "8",
+      "kind": "better",
+      "page": 25,
+      "box": [
+        70,
+        70,
+        500,
+        540
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q8_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "8",
+      "kind": "weaker",
+      "page": 26,
+      "box": [
+        70,
+        190,
+        500,
+        665
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q8_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "9",
+      "kind": "better",
+      "page": 27,
+      "box": [
+        70,
+        480,
+        475,
+        765
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q9_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "9",
+      "kind": "weaker",
+      "page": 28,
+      "box": [
+        70,
+        150,
+        505,
+        460
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q9_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "10a",
+      "kind": "better",
+      "page": 29,
+      "box": [
+        70,
+        240,
+        495,
+        345
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q10a_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "10a",
+      "kind": "weaker",
+      "page": 29,
+      "box": [
+        70,
+        520,
+        515,
+        630
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q10a_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "10b",
+      "kind": "better",
+      "page": 30,
+      "box": [
+        70,
+        495,
+        500,
+        755
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q10b_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "10b",
+      "kind": "weaker",
+      "page": 31,
+      "box": [
+        70,
+        185,
+        485,
+        465
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q10b_weaker.png"
+    },
+    {
+      "paper": "em",
+      "question": "11",
+      "kind": "better",
+      "page": 32,
+      "box": [
+        70,
+        95,
+        475,
+        330
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q11_better.png"
+    },
+    {
+      "paper": "em",
+      "question": "11",
+      "kind": "weaker",
+      "page": 32,
+      "box": [
+        70,
+        455,
+        475,
+        710
+      ],
+      "sourceSha256": "4e75a9868eaac01240ba380cc20fd24b3387f13634ccc51210b5fa58cc15ed37",
+      "url": "/paper-crops/MTH-IX-2017-EMARKING/q11_weaker.png"
+    }
+  ]
+}

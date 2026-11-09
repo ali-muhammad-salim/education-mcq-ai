@@ -1,0 +1,952 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "What is the valency of iron (Fe) in Fe(NO3)3?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "1.2.4",
+    "sloText": "Deduce the valency and oxidation state of elements in chemical compounds and radicals.",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "The nitrate polyatomic ion (NO3-) carries a -1 charge (valency 1). Since three nitrate ions combine with one iron ion to form a neutral formula unit Fe(NO3)3, iron must have a charge of +3 (Fe3+, iron(III)), meaning its valency is 3.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Zero valency belongs to uncombined free elements or noble gases."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. 1 is the valency of each nitrate (NO3-) radical."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Iron exhibits a valency of 2 in ferrous nitrate, Fe(NO3)2, not Fe(NO3)3."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Three monovalent nitrate groups (3 \u00d7 -1 = -3) balance one trivalent Fe3+ cation (valency 3)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "stem": "w NH3(g) + x O2(g) -> y NO(g) + 6 H2O(g)\nThe values of w, x and y in the given chemical equation are\n(Table columns: w | x | y)",
+    "options": {
+      "A": "w = 2, x = 5, y = 2",
+      "B": "w = 2, x = 3, y = 2",
+      "C": "w = 4, x = 5, y = 4",
+      "D": "w = 4, x = 3, y = 4"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "1.5.2",
+    "sloText": "Balance chemical equations by inspection method.",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "On the product side, 6 H2O contains 6 \u00d7 2 = 12 hydrogen atoms. To balance H on the reactant side, w NH3 must contain 12 H atoms, so 3w = 12 => w = 4. With 4 NH3, there are 4 nitrogen atoms, requiring y = 4 NO on the product side. Total oxygen atoms on the product side = 4 (from 4 NO) + 6 (from 6 H2O) = 10 O atoms, which requires x = 5 O2 molecules on the reactant side (5 \u00d7 2 = 10). Thus w = 4, x = 5, y = 4.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. w = 2 gives only 6 H atoms on the left, failing to balance 6 H2O (12 H atoms)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Fails to balance hydrogen, nitrogen, and oxygen atoms."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. 4 NH3 + 5 O2 -> 4 NO + 6 H2O balances 4 N, 12 H, and 10 O atoms on both sides."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. x = 3 gives only 6 oxygen atoms on the left instead of the required 10."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "stem": "A compound X has an empirical formula C4H9 and its molecular mass is 114 g/mol.\nWhich of the following represents the molecular formula of compound X?\n(Note: 12_6 C and 1_1 H)",
+    "options": {
+      "A": "C6H11",
+      "B": "C7H12",
+      "C": "C8H18",
+      "D": "C12H27"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "2.3.1",
+    "sloText": "Determine the molecular formula of a compound from its empirical formula and molar mass.",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Empirical formula mass of C4H9 = (4 \u00d7 12) + (9 \u00d7 1) = 48 + 9 = 57 g/mol.\nRatio n = Molecular mass / Empirical formula mass = 114 / 57 = 2.\nMolecular formula = n \u00d7 (Empirical formula) = 2 \u00d7 (C4H9) = C8H18 (octane).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Added 2 to each subscript instead of multiplying by n = 2."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Does not preserve the 4:9 carbon-to-hydrogen atomic ratio."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Empirical mass = 57 g/mol; n = 114 / 57 = 2; Molecular formula = (C4H9)2 = C8H18."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. C12H27 corresponds to n = 3 (molar mass = 171 g/mol)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "stem": "Which of the following options shows the sub-atomic particles of a species having a +1 charge on it?\n(Table columns: Number of Electrons | Number of Protons | Number of Neutrons)",
+    "options": {
+      "A": "Electrons: 18 | Protons: 20 | Neutrons: 20",
+      "B": "Electrons: 18 | Protons: 19 | Neutrons: 20",
+      "C": "Electrons: 10 | Protons: 9 | Neutrons: 10",
+      "D": "Electrons: 10 | Protons: 8 | Neutrons: 8"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "3.1.3",
+    "sloText": "Determine the number of protons, neutrons, and electrons in atoms and ions.",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Net ionic charge = (Number of protons) - (Number of electrons). For a species to have a +1 charge, it must have exactly 1 more proton than electrons. In option B, 19 protons - 18 electrons = +1 (representing the potassium ion, 39_19 K+). Option A has a +2 charge (Ca2+), Option C has a -1 charge (F-), and Option D has a -2 charge (O2-).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 20 protons and 18 electrons yield a +2 charge (Ca2+)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. 19 protons (+19) and 18 electrons (-18) result in a net charge of +1 (K+)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 9 protons and 10 electrons yield a net charge of -1 (F-)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 8 protons and 10 electrons yield a net charge of -2 (O2-)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "stem": "Rutherford's atomic model explains all of the following statements EXCEPT that the",
+    "options": {
+      "A": "volume occupied by the nucleus is very small.",
+      "B": "positively charged particles exist inside the nucleus.",
+      "C": "entire mass of the atom is concentrated in the nucleus.",
+      "D": "energy emitted by the electrons forms a line spectrum."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.1.3",
+    "sloText": "Describe Rutherford's atomic model and identify its limitations.",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Rutherford's gold-foil alpha-scattering experiment established that an atom has a tiny, dense, positively charged central nucleus containing almost the entire atomic mass. However, Rutherford's planetary model failed to explain why revolving electrons do not radiate energy continuously to produce a continuous spectrum; the discrete line spectrum of hydrogen was explained later by Niels Bohr's quantised atomic model (1913).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Rutherford concluded the nuclear volume is minuscule compared to total atomic volume because most alpha particles passed straight through."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Deflection of positively charged alpha particles proved positive charge resides in the central nucleus."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Rebounding of alpha particles showed almost all mass is concentrated in the dense nucleus."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Formation of a line spectrum is a key postulate of Bohr's model and was a fundamental defect of Rutherford's model."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "stem": "Goiter, a disease affecting thyroid glands, can be diagnosed by the use of",
+    "options": {
+      "A": "cobalt-60.",
+      "B": "iodine-131.",
+      "C": "strontium-90.",
+      "D": "uranium-235."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "3.3.3",
+    "sloText": "State the uses of radioactive isotopes in medicine, industry, and archaeology.",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "The thyroid gland selectively absorbs iodine to synthesize thyroid hormones. Radioactive iodine-131 (I-131) is used as a medical tracer to diagnose and treat thyroid disorders such as goiter and hyperthyroidism.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Cobalt-60 emits gamma rays used for cancer radiotherapy to destroy malignant tumors."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Iodine-131 is selectively taken up by the thyroid gland and used to diagnose goiter."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Strontium-90 is a beta emitter used in industrial thickness gauges and bone therapy."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Uranium-235 is a fissile isotope used as nuclear fuel in power reactors."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "stem": "In a molecule of ethyne (C2H2), how many electron pairs are involved in the bonding between carbon-carbon atoms?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "5.2.1",
+    "sloText": "Describe single, double, and triple covalent bonds with examples.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In ethyne (acetylene, H-C\u2261C-H), the two carbon atoms share 6 electrons\u2014that is, 3 pairs of electrons\u2014between them to form a carbon-carbon triple covalent bond (C\u2261C).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 2 electron pairs form a double bond, as found in ethene (C2H4)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Ethyne features a C\u2261C triple covalent bond formed by sharing 3 pairs (6 electrons) between the carbon atoms."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Carbon has 4 valence electrons and cannot share 4 pairs with another carbon atom."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 5 pairs (10 electrons) is the total number of bonding electrons in the entire C2H2 molecule (including the two C-H single bonds)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "stem": "Read the given characteristics.\n\u2022 Usually dissolve in water\n\u2022 Carry partial charges on atoms\n\u2022 Uneven distribution of electrons\nBased on the given characteristics, an example of polar covalent molecule is",
+    "options": {
+      "A": "O2",
+      "B": "Cl2",
+      "C": "H2S",
+      "D": "NaCl"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.2.3",
+    "sloText": "Differentiate between polar and non-polar covalent bonds and molecules.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Polar covalent molecules arise when two non-metal atoms of differing electronegativities share electrons unequally, creating partial charges (\u03b4+ and \u03b4-) and a net dipole moment. H2S is a bent polar covalent molecule where sulfur (EN = 2.58) pulls electron density away from hydrogen (EN = 2.20). O2 and Cl2 are homonuclear non-polar covalent molecules, while NaCl is an ionic compound.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. O2 is a homonuclear diatomic molecule with zero electronegativity difference (non-polar covalent)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Cl2 consists of two identical chlorine atoms sharing electrons equally (non-polar covalent)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. H2S is a bent polar covalent molecule with unequal electron sharing and partial charges (\u03b4+ on H, \u03b4- on S)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. NaCl is an ionic compound formed by complete electron transfer, not a covalent molecule."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "stem": "In the given dot and cross structure of magnesium chloride, magnesium ion is bonded to two chloride ions by",
+    "options": {
+      "A": "ionic bonds.",
+      "B": "metallic bonds.",
+      "C": "covalent bonds.",
+      "D": "coordinate covalent bonds."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.1.2",
+    "sloText": "Describe the formation of ionic bonds between metallic and non-metallic elements.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-2018-P1/q9.png",
+    "explanation": "The diagram shows a central magnesium cation [Mg]2+ (configuration 2,8) flanked by two chloride anions [Cl]- (configuration 2,8,8), formed by the complete transfer of two valence electrons from magnesium to two chlorine atoms. The electrostatic force of attraction holding these oppositely charged ions together is an ionic bond.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Electrostatic attraction between the positively charged Mg2+ cation and negatively charged Cl- anions constitutes ionic bonding."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Metallic bonding occurs between positive metal ions and a sea of delocalised electrons."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Covalent bonding involves mutual sharing of electron pairs, whereas here electrons are completely transferred."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Coordinate covalent bonding involves one atom donating a shared lone pair."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "stem": "Which of the following statements is FALSE regarding ionisation energy of elements?",
+    "options": {
+      "A": "The first ionisation energy of lithium is less than that of beryllium.",
+      "B": "The second ionisation energy of magnesium is less than that of sodium.",
+      "C": "It is the amount of energy required to remove an electron from a gaseous atom or ion.",
+      "D": "It is the tendency of an atom or molecule to attract electrons of other atom or molecule to itself."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.2.2",
+    "sloText": "Define and explain periodic trends in ionisation energy, electron affinity, and electronegativity.",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Statement D defines electronegativity (the ability of an atom in a molecule to attract shared electrons towards itself), NOT ionisation energy. Statements A, B, and C are all true properties of ionisation energy (first IE increases across Period 2 from Li to Be; second IE of Mg removes a 3s1 valence electron whereas second IE of Na removes a core 2p6 electron from a stable neon-like shell).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. This statement is true; beryllium (Z=4) has higher nuclear charge and smaller radius than lithium (Z=3), giving it a higher first IE."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. This statement is true; removing a second electron from Na+ requires breaking a stable 2p6 noble gas core, whereas Mg+ loses its second 3s valence electron easily."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. This is the exact definition of ionisation energy."
+      },
+      {
+        "key": "D",
+        "reason": "Correct (False statement). Attracting shared electrons towards itself defines electronegativity, not ionisation energy."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "stem": "Which of the following statements is CORRECT about groups in the periodic table?",
+    "options": {
+      "A": "Both metals and non-metals are present in all groups.",
+      "B": "Reactivity in non-metals increases when moving up a group.",
+      "C": "Ionisation energy of elements increases when moving down a group.",
+      "D": "The total number of electrons for each element in a group is the same."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.2.1",
+    "sloText": "Describe periodic trends and reactivity patterns in groups of the periodic table.",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Non-metals react by gaining or sharing electrons. Moving up a group (e.g., Group 17 halogens from I to F), atomic radius and electron shielding decrease, so effective nuclear attraction for incoming electrons increases. Therefore, non-metallic reactivity increases going up a group.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Groups 1 and 2 contain metals (except H), while Groups 17 and 18 contain non-metals."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Non-metal reactivity increases moving up a group due to smaller atomic size and stronger nuclear pull on incoming electrons."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Ionisation energy decreases moving down a group due to increased atomic radius and shielding."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Elements in a group have the same number of valence electrons, not the same total number of electrons."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "stem": "In which period of the periodic table, an element with atomic number 14 is placed?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "4.1.2",
+    "sloText": "Determine the period and group of an element from its electronic configuration.",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "An element with atomic number Z = 14 (Silicon) has the electronic configuration 1s2 2s2 2p6 3s2 3p2 (shell distribution: K = 2, L = 8, M = 4). Since electrons occupy 3 principal energy shells (highest principal quantum number n = 3), it belongs to Period 3.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Period 1 contains only H (Z=1) and He (Z=2)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Period 2 contains elements from Z = 3 (Li) to Z = 10 (Ne)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Z = 14 (2, 8, 4) has 3 occupied electron shells, placing it in Period 3."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Period 4 starts at Z = 19 (Potassium); 4 is the number of valence electrons (Group IVA)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "stem": "At constant temperature and pressure, which of the following gas molecules will diffuse the fastest through air?\n(Note: Atomic mass of O = 16 amu, Cl = 35.5 amu, N = 14 amu, C = 12 amu and H = 1 amu)",
+    "options": {
+      "A": "O2(g)",
+      "B": "Cl2(g)",
+      "C": "NO2(g)",
+      "D": "CH4(g)"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.2.2",
+    "sloText": "Relate the rate of diffusion of gases to their molecular masses.",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "By Graham's law of diffusion, lighter gas molecules diffuse faster than heavier gas molecules at a given temperature and pressure. Comparing molar masses:\n- O2 = 2 \u00d7 16 = 32 g/mol\n- Cl2 = 2 \u00d7 35.5 = 71 g/mol\n- NO2 = 14 + 2(16) = 46 g/mol\n- CH4 = 12 + 4(1) = 16 g/mol\nSince methane (CH4) has the lowest molecular mass (16 g/mol), it diffuses the fastest.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. O2 has a molar mass of 32 g/mol, which is twice as heavy as CH4."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Cl2 has the highest molar mass (71 g/mol) and diffuses the slowest."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. NO2 has a molar mass of 46 g/mol, diffusing slower than O2 and CH4."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. CH4 has the lowest molecular mass (16 amu) and therefore the highest rate of diffusion."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "stem": "At constant temperature, if the volume of a gas in a container is reduced to half, then the pressure on the gas will",
+    "options": {
+      "A": "be doubled.",
+      "B": "reduce to half.",
+      "C": "remain the same.",
+      "D": "reduce to a quarter."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.2.3",
+    "sloText": "State and apply Boyle's law relating pressure and volume of a gas at constant temperature.",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "According to Boyle's Law, the pressure of a fixed mass of gas is inversely proportional to its volume at constant temperature (P1V1 = P2V2). If V2 = V1 / 2, then P2 = P1 \u00d7 V1 / (V1 / 2) = 2 P1. Thus, halving the volume doubles the pressure.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. By Boyle's Law (P \u221d 1/V), reducing volume to half doubles the frequency of wall collisions and doubles the pressure."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Pressure would halve if the volume were doubled."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Pressure cannot remain constant when volume changes at constant temperature."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Pressure increases rather than decreases when gas is compressed."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "stem": "Which of the following substances does NOT have a fixed volume and can be compressed?",
+    "options": {
+      "A": "Sugar",
+      "B": "Honey",
+      "C": "Kerosene oil",
+      "D": "Water vapour"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.1.1",
+    "sloText": "Compare the physical properties of solids, liquids, and gases (shape, volume, compressibility).",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Gases have neither a fixed shape nor a fixed volume and are highly compressible due to large empty intermolecular spaces between their particles. Water vapour is in the gaseous state, whereas sugar is a solid and honey and kerosene oil are liquids.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Sugar is a crystalline solid with both fixed shape and fixed volume."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Honey is a viscous liquid with a fixed volume."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Kerosene oil is a liquid with a fixed volume and negligible compressibility."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Water vapour is a gas; it expands to fill any container (no fixed volume) and is easily compressed."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "stem": "What is the molarity of a solution containing 32 g of potassium sulphate (K2SO4) in 350 cm3 of solution?\n(Note: Molar mass of K2SO4 = 174 g mol^-1)",
+    "options": {
+      "A": "0.06 M",
+      "B": "0.09 M",
+      "C": "0.52 M",
+      "D": "64.37 M"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "7.2.3",
+    "sloText": "Calculate the molarity of a solution given mass of solute and volume of solution.",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Molarity (M) = (Mass of solute in g / Molar mass of solute) \u00d7 (1000 / Volume of solution in cm3)\nMoles of K2SO4 = 32 g / 174 g/mol = 0.1839 mol.\nVolume in dm3 = 350 / 1000 = 0.350 dm3.\nMolarity = 0.1839 mol / 0.350 dm3 = 0.525 M \u2248 0.52 M.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Results from multiplying moles by volume (0.1839 \u00d7 0.350 = 0.064) instead of dividing."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Results from dividing 32 by 350 without accounting for molar mass."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. M = (32 / 174) / (350 / 1000) = 0.1839 / 0.350 = 0.525 M (0.52 M)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Forgot to convert 350 cm3 to dm3 and inverted the molar calculation."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "stem": "The given diagram shows an area covered in fog.\nFog is a solution of",
+    "options": {
+      "A": "gas in liquid.",
+      "B": "liquid in gas.",
+      "C": "solid in liquid.",
+      "D": "liquid in liquid."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.1.2",
+    "sloText": "Give examples of the nine types of solutions based on physical states of solute and solvent.",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-2018-P1/q17.png",
+    "explanation": "Fog, clouds, and mist consist of tiny liquid water droplets (solute / dispersed phase) suspended in atmospheric air (gas solvent / dispersion medium). Thus, fog is a liquid-in-gas solution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Gas in liquid is exemplified by carbonated water (soft drinks)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Fog consists of fine liquid water droplets dispersed throughout air (liquid solute in gas solvent)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Solid in liquid is exemplified by salt or sugar dissolved in water."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Liquid in liquid is exemplified by alcohol in water."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "stem": "Which of the following differences between solution and suspension is INCORRECT?\n(Table columns: Solution | Suspension)",
+    "options": {
+      "A": "Solution: It passes through the filter paper. | Suspension: It leaves residue on filtration.",
+      "B": "Solution: It forms homogeneous mixture. | Suspension: It forms heterogeneous mixture.",
+      "C": "Solution: It does not show Tyndall effect. | Suspension: It may show Tyndall effect.",
+      "D": "Solution: It appears translucent. | Suspension: It appears transparent."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.4.1",
+    "sloText": "Compare the characteristics of solutions, colloids, and suspensions.",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "True solutions are completely clear and transparent (light passes straight through without scattering), whereas suspensions are cloudy, opaque, or translucent due to large undissolved particles. Option D reverses this property, making it the incorrect statement.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. This comparison is true: solute particles in a solution (< 1 nm) pass through filter paper, whereas suspension particles (> 1000 nm) are retained as residue."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. This comparison is true: solutions are homogeneous while suspensions are heterogeneous."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. This comparison is true: true solutions never scatter light (no Tyndall effect)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct (Incorrect statement). True solutions are transparent, whereas suspensions are cloudy/opaque, not transparent."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "stem": "Which of the following CORRECTLY matches the redox reaction with its observation?\n(Table columns: Redox Reaction | Observation)",
+    "options": {
+      "A": "2HI(g) + Cl2(g) -> I2(g) + 2HCl(g) | Hydrogen iodide is reduced to iodine.",
+      "B": "Mg(s) + 2HCl(aq) -> MgCl2(aq) + H2(g) | Magnesium is reduced to magnesium chloride.",
+      "C": "CuSO4(aq) + Mg(s) -> MgSO4(aq) + Cu(s) | Copper sulphate is reduced to copper.",
+      "D": "H2S(g) + Cl2(g) -> S(s) + 2HCl(g) | Hydrogen sulphide is reduced to sulphur."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "8.1.2",
+    "sloText": "Identify oxidation and reduction processes in chemical reactions in terms of electron transfer and oxidation number.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In reaction C: CuSO4(aq) + Mg(s) -> MgSO4(aq) + Cu(s), copper ions (Cu2+ in CuSO4, oxidation state +2) gain 2 electrons to form metallic copper (Cu, oxidation state 0) and lose sulphate oxygen. Therefore, copper(II) sulphate is reduced to metallic copper. In A, HI is oxidised to I2; in B, Mg is oxidised to MgCl2; in D, H2S is oxidised to S.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. In 2HI -> I2, iodine goes from -1 to 0 (loss of hydrogen / loss of electrons), so HI is oxidised, not reduced."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Magnesium goes from oxidation state 0 to +2 in MgCl2, which is oxidation."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Cu2+ in CuSO4 gains electrons to form Cu0 (oxidation state decreases from +2 to 0), so copper sulphate is reduced to copper."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. H2S loses hydrogen (S goes from -2 to 0), meaning H2S is oxidised to sulphur."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "stem": "The gas(es) produced during the electrolysis of fused sodium chloride in Down's cell is/ are\nI. Cl2(g)\nII. O2(g)\nIII. H2(g)",
+    "options": {
+      "A": "I only",
+      "B": "III only",
+      "C": "I and II",
+      "D": "I and III"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "8.3.2",
+    "sloText": "Describe the manufacture of sodium metal from fused NaCl in Down's cell.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In Down's cell, molten (fused) anhydrous sodium chloride (NaCl) is electrolysed without water. At the graphite anode, chloride ions are oxidised to chlorine gas (2Cl- -> Cl2(g) + 2e-), while at the iron cathode, sodium ions are reduced to molten sodium metal (Na+ + e- -> Na(l)). Because no water is present, neither O2 nor H2 gas is produced.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Fused NaCl contains only Na+ and Cl- ions; only Cl2(g) is evolved at the anode while liquid Na collects at the cathode."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. H2(g) is produced only during electrolysis of aqueous brine (Nelson's cell), not fused NaCl."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. No oxygen is present in fused anhydrous NaCl."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. H2(g) is not formed because water is absent in Down's cell."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "stem": "Which of the following is an example of electrolyte?",
+    "options": {
+      "A": "Benzene",
+      "B": "Sulphuric acid",
+      "C": "Distilled water",
+      "D": "Carbon tetrachloride"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "8.2.2",
+    "sloText": "Classify substances into strong electrolytes, weak electrolytes, and non-electrolytes.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "An electrolyte is a substance that ionises completely or partially in aqueous solution or molten state to conduct electricity. Sulphuric acid (H2SO4) is a strong electrolyte that dissociates completely into H+ and SO4^2- ions in water. Benzene, carbon tetrachloride, and pure distilled water are non-electrolytes.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Benzene (C6H6) is a non-polar organic liquid that does not ionise (non-electrolyte)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Sulphuric acid (H2SO4) ionises completely in aqueous solution to produce mobile ions, acting as a strong electrolyte."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Pure distilled water has negligible ionisation and acts as a non-electrolyte."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Carbon tetrachloride (CCl4) is a non-polar covalent liquid and a non-electrolyte."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "stem": "Metals are good conductors of electricity due to the presence of",
+    "options": {
+      "A": "freely moving electrons.",
+      "B": "number of positive charges on the ions.",
+      "C": "atoms in the form of rows one above the other.",
+      "D": "electrostatic forces of attraction between oppositely charged ions."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.3.2",
+    "sloText": "Explain metallic bonding and relate it to the physical properties of metals (electrical and thermal conductivity).",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In metallic lattices, valence electrons are delocalised and free to move throughout the entire crystal structure (forming a 'sea of mobile electrons'). When a potential difference is applied, these mobile electrons flow readily toward the positive terminal, making metals excellent electrical conductors.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Delocalised, freely moving valence electrons carry electric charge through a metal."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Positively charged metal cations are fixed in lattice positions and cannot flow in solid metals."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Layered rows of atoms explain malleability and ductility, not electrical conductivity."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Oppositely charged ions exist in ionic compounds, not pure metals."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "stem": "Barium belongs to group IIA while chlorine belongs to group VIIA of the modern periodic table.\nIf barium reacts with chlorine, then their product is",
+    "options": {
+      "A": "BaCl",
+      "B": "BaCl2",
+      "C": "Ba2Cl",
+      "D": "Ba2Cl2"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.1.2",
+    "sloText": "Predict the chemical formula of ionic compounds formed between main-group elements.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Barium (Group IIA) loses 2 valence electrons to form a divalent cation Ba2+, while chlorine (Group VIIA) gains 1 electron to form a monovalent chloride anion Cl-. To achieve electrical neutrality, one Ba2+ ion combines with two Cl- ions, forming barium chloride with the formula BaCl2.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. BaCl would have an unbalanced +1 net charge."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Criss-crossing valencies of Ba2+ (2) and Cl- (1) yields BaCl2."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Reverses the valencies of barium and chlorine."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Ionic formulas must be expressed in the simplest whole-number ratio."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "stem": "Compared to a sodium metal, an iron metal",
+    "options": {
+      "A": "is soft in appearance.",
+      "B": "has low melting point.",
+      "C": "is an alkaline earth metal.",
+      "D": "has stronger metallic bond."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.4.1",
+    "sloText": "Compare the physical properties (hardness, melting point, metallic bond strength) of alkali metals with transition metals.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Iron is a d-block transition metal with a smaller atomic radius and multiple valence electrons (3d and 4s) participating in the delocalised electron sea, resulting in a very strong metallic bond, high hardness, and a high melting point (1538\u00b0C). Sodium is an alkali metal (Group IA) with a large atomic radius and only one 3s valence electron per atom, resulting in a weak metallic bond, softness, and a low melting point (98\u00b0C).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Sodium is soft enough to be cut with a knife, whereas iron is a hard, tough metal."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Sodium has a low melting point (98\u00b0C), whereas iron has a very high melting point (1538\u00b0C)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Iron is a transition metal, not a Group IIA alkaline earth metal."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Iron contributes more delocalised electrons and has smaller cations than sodium, producing a much stronger metallic bond."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "stem": "Sodium metal is always found in nature in the form of oxides or halides because sodium",
+    "options": {
+      "A": "is highly electropositive.",
+      "B": "is highly electronegative.",
+      "C": "has high electron affinity.",
+      "D": "has high ionisation energy."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "8.4.1",
+    "sloText": "Explain the electropositive character and high chemical reactivity of alkali metals.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Sodium (Group IA) has a very low ionisation energy and readily loses its single 3s valence electron to form Na+ cations, making it a highly electropositive and reactive metal. Because of this high reactivity, it never occurs free in nature and is always found in combined state as halides (such as rock salt, NaCl) or oxy-salts.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Sodium is strongly electropositive (readily loses its valence electron) and reacts vigorously with oxygen, moisture, and halogens."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Non-metals like fluorine and oxygen are highly electronegative; sodium has very low electronegativity."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Halogens have high electron affinity; alkali metals have low electron affinity."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Alkali metals have the lowest first ionisation energies in their respective periods."
+      }
+    ]
+  }
+]

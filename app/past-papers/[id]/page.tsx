@@ -7,20 +7,23 @@ import prisma from "@/lib/prisma";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PaperViewerClient from "./PaperViewerClient";
+import PaperResourceNav from "@/components/PaperResourceNav";
 import { getFallbackPaper } from "@/lib/paperDataService";
+import { mathematicsPaperManifests } from '@/lib/mathematicsPapers';
 import {publicMaterialWhere} from '@/lib/materialVisibility';
 import {
   annualOriginalReference,
   annualCurrentMapping,
   annual2024OriginalReference,
   annual2024CurrentMapping,
-  physics2025Resources,
-  physics2024Resources,
+  physicsIx2024PaperTabs,
+  physicsIx2025PaperTabs,
 } from '@/lib/legacyPaperEvidence';
 import { publishedCurriculum } from '@/services/materials/curriculum';
 import { paperResources } from '@/services/materials/references';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import { applyAnswerDecision } from '@/lib/legacyAnswerReview';
+import { hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
 
 export const dynamic = "force-dynamic";
 
@@ -67,6 +70,10 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     }
   } else if (fallback && fallback.questions?.length) {
     // Enrich DB questions with any newly reviewed SLO mappings & E-Marking metadata from the canonical bundle
+    paper.totalMarks = fallback.totalMarks;
+    paper.durationMinutes = fallback.durationMinutes;
+    paper.rubricInstruction = fallback.rubricInstruction;
+    paper.markScalingNote = fallback.markScalingNote;
     const fbMap = new Map(fallback.questions.map(fq => [String(fq.questionNumber), fq]));
     paper.questions = paper.questions.map((dbQ: any) => {
       const fbQ = fbMap.get(String(dbQ.questionNumber));
@@ -159,6 +166,8 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
   );
   paper.boardCode =
     paper.academicClass?.programme?.board?.shortCode || "AKU-EB";
+  const mathematicsManifest = /^MTH-IX-20\d{2}-P[12]$/.test(paper.paperCode || '') ? mathematicsPaperManifests[paper.examYear] : undefined;
+  const hsscModel = /^PHY-XII?-P[12]$/.test(paper.paperCode || '');
   return (
     <section className={styles.page}>
       <Breadcrumbs
@@ -175,22 +184,31 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
           },
           { label: subjectName, href: scope?.baseUrl || "/" },
           {
-            label: "Past papers",
-            href: scope ? scope.baseUrl + "/pastpapers" : "/past-papers",
+            label: hsscModel ? "Model papers" : "Past papers",
+            href: scope ? scope.baseUrl + (hsscModel ? "/model-papers" : "/pastpapers") : "/past-papers",
           },
           { label: paper.paperCode || paper.title, active: true },
         ]}
       />
       <h1 title={paper.title}>{paperLabel(paper.paperCode, paper.title)}</h1>
       {resources.length>0 && <nav className={styles.actions} aria-label="Paper resources">{resources.map(item=><Link className={styles.button} key={item.href} href={item.href}>{item.label}</Link>)}</nav>}
-      {!paper.sourceDocumentId && /^PHY-IX-2025-P[12]$/.test(paper.paperCode||'') && <nav className={styles.actions} aria-label="Paper resources">{physics2025Resources.filter(item=>item.year===2025).map(item=><Link className={styles.button} key={item.href} href={item.href}>{item.label}</Link>)}<Link className={styles.button} href="/past-papers/PHY-IX-2025-P1?view=solved">Paper 1 · answers & explanations</Link><Link className={styles.button} href="/past-papers/PHY-IX-2025-P2">Paper 2 (CRQ & ERQ)</Link></nav>}
-      {!paper.sourceDocumentId && /^PHY-IX-2024-P[12]$/.test(paper.paperCode||'') && <nav className={styles.actions} aria-label="Paper resources">{physics2024Resources.map(item=><Link className={styles.button} key={item.href} href={item.href}>{item.label}</Link>)}<Link className={styles.button} href="/past-papers/PHY-IX-2024-P1?view=solved">Paper 1 · answers & explanations</Link><Link className={styles.button} href="/past-papers/PHY-IX-2024-P2">Paper 2 (CRQ & ERQ)</Link></nav>}
+      {mathematicsManifest && <PaperResourceNav tabs={[
+        { label: 'Digital Paper I', href: `/past-papers/MTH-IX-${paper.examYear}-P1` },
+        ...(mathematicsManifest.sources.p2 ? [{ label: 'Digital Paper II and worked solutions', href: `/past-papers/MTH-IX-${paper.examYear}-P2` }] : []),
+        { label: 'Original Paper I', href: mathematicsManifest.sources.p1.url },
+        ...(mathematicsManifest.sources.p2 ? [{ label: 'Original Paper II', href: mathematicsManifest.sources.p2.url }] : []),
+        { label: 'Official MCQ key', href: mathematicsManifest.sources.key.url },
+        ...(mathematicsManifest.sources.em ? [{ label: 'E-marking notes', href: `/resources/mathematics-ix-${paper.examYear}-emarking` }] : []),
+      ]} />}
+      {!paper.sourceDocumentId && /^PHY-IX-2025-P[12]$/.test(paper.paperCode||'') && <PaperResourceNav tabs={physicsIx2025PaperTabs} />}
+      {!paper.sourceDocumentId && /^PHY-IX-2024-P[12]$/.test(paper.paperCode||'') && <PaperResourceNav tabs={physicsIx2024PaperTabs} />}
+      {/^PHY-XI-(?:201[7-9]|202[1-5])-P[12]$/.test(paper.paperCode || '') && <PaperResourceNav tabs={hsscXiAnnualResources.filter(item => item.year === paper.examYear)} />}
       <Suspense fallback={<p>Loading paper…</p>}>
         <PaperViewerClient
           paper={paper}
           questions={displayQuestions}
           hideHeader
-          historical
+          historical={!hsscModel}
         />
       </Suspense>
     </section>

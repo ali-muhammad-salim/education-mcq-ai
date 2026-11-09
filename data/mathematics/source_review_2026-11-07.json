@@ -1,0 +1,1136 @@
+{
+  "reviewDate": "2026-11-07",
+  "scope": "Original PDFs and printed keys retained; ambiguous items excluded from grading.",
+  "sourceCorrections": [
+    {
+      "paper": "MTH-X-2017-P1",
+      "question": "3",
+      "before": {
+        "options": {
+          "A": "$x - \\frac{2}{a}$",
+          "B": "$x - \\frac{1}{a}$",
+          "C": "$x - \\frac{1}{a^2}$",
+          "D": "$x - \\sqrt{\\frac{2x}{a} + \\frac{1}{a^2}}$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$x - \\frac{2}{a}$",
+          "B": "$x - \\frac{1}{a}$",
+          "C": "$x - \\frac{1}{a^2}$",
+          "D": "$x-\\sqrt{\\frac{2x}{a}+\\frac{1}{a}}$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2017-P1",
+      "question": "6",
+      "before": {
+        "stem": "The solution set of $\\frac{x + 2}{2} = 0$ is equal to",
+        "explanation": "$\\frac{x + 2}{2} = 0 \\implies x + 2 = 0 \\implies x = -2$. Solution set is $\\{-2\\}$."
+      },
+      "after": {
+        "stem": "The solution set of $\\frac{\\sqrt{x+2}}{2}=0$ is equal to",
+        "explanation": "$\\frac{\\sqrt{x+2}}{2}=0$ gives $x=-2$. Substitution verifies the root, so the solution set is $\\{-2\\}$, option C."
+      }
+    },
+    {
+      "paper": "MTH-X-2017-P1",
+      "question": "24",
+      "before": {
+        "options": {
+          "A": "$a^2$",
+          "B": "$2a$",
+          "C": "$\\sqrt{2}a$",
+          "D": "$\\sqrt{2a^2}$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$a^2$",
+          "B": "$2a$",
+          "C": "$\\sqrt{2}a$",
+          "D": "$\\sqrt{2}a^2$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P1",
+      "question": "2",
+      "before": {
+        "options": {
+          "A": "$\\pm (x + 2)(x - 1)$",
+          "B": "$\\pm (x + 2)(x - 2)$",
+          "C": "$\\pm (x + 1)(x - 2)$",
+          "D": "$\\pm (x^2 + 2x - 1)$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$\\pm (x + 2)(x - 1)$",
+          "B": "$\\pm (x + 2)(x - 2)$",
+          "C": "$\\pm (x + 1)(x - 2)$",
+          "D": "$\\pm(x+2)(x-\\sqrt{2x}+1)$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P1",
+      "question": "4",
+      "before": {
+        "options": {
+          "A": "$\\frac{(x - b)^4}{(x - a)(x - b)^2}$",
+          "B": "$\\frac{(x - b)^3}{(x - a)(x - b)^2}$",
+          "C": "$\\frac{(x - a)^3}{(x - a)(x - b)^2}$",
+          "D": "$\\frac{(x - a)^2}{(x - a)(x - b)^2}$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$\\frac{(x-b)^4}{(x-a)^2(x-b)}$",
+          "B": "$\\frac{(x-b)^3}{(x-a)^2(x-b)}$",
+          "C": "$\\frac{(x-a)^3}{(x-a)^2(x-b)}$",
+          "D": "$\\frac{(x-a)^2}{(x-a)^2(x-b)}$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P1",
+      "question": "5",
+      "before": {
+        "options": {
+          "A": "$\\frac{1}{2}x - 3 = \\frac{12}{3}$",
+          "B": "$\\frac{1}{2}x + 3 = \\frac{12}{3}$",
+          "C": "$\\frac{2}{x} - 3 = \\frac{12}{3}$",
+          "D": "$\\frac{2}{x} + 3 = \\frac{12}{3}$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$\\frac{1}{x^2}-3=\\frac{12}{3}$",
+          "B": "$\\frac{1}{x^2}+3=\\frac{12}{3}$",
+          "C": "$\\frac{x}{2}-3=\\frac{12}{3}$",
+          "D": "$\\frac{x}{2}+3=\\frac{12}{3}$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P1",
+      "question": "5",
+      "before": {
+        "explanation": "Half of $x$ is $\\frac{1}{2}x$, increased by 3 is $\\frac{1}{2}x + 3$, which equals $\\frac{12}{3}$ (or written in the printed paper as $\\frac{x}{2} + 3 = \\frac{12}{3}$ / option B/D). Option D in the printed exam represents $\\frac{x}{2} + 3 = \\frac{12}{3}$."
+      },
+      "after": {
+        "explanation": "Half of $x$ is $\\frac{x}{2}$. Increasing it by 3 gives $\\frac{x}{2}+3=\\frac{12}{3}$, option D."
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P1",
+      "question": "9",
+      "before": {
+        "options": {
+          "A": "$-a$",
+          "B": "$-\\frac{b}{a}$",
+          "C": "$-b$",
+          "D": "$-a^2 b$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$-a$",
+          "B": "$-\\frac{b}{a}$",
+          "C": "$-b$",
+          "D": "$-\\frac{a^2}{b}$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P1",
+      "question": "12",
+      "before": {
+        "options": {
+          "A": "$\\{\\frac{b}{a}\\}$",
+          "B": "$\\{\\pm \\frac{b}{a}\\}$",
+          "C": "$\\{-\\frac{b^2}{a^2}\\}$",
+          "D": "$\\{\\pm \\frac{b^2}{a^2}\\}$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$\\{\\frac{b}{a}\\}$",
+          "B": "$\\{\\pm \\frac{b}{a}\\}$",
+          "C": "$\\left\\{\\sqrt{b^2-a^2}\\right\\}$",
+          "D": "$\\left\\{\\pm\\sqrt{b^2-a^2}\\right\\}$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P1",
+      "question": "13",
+      "before": {
+        "options": {
+          "A": "$ax + by + c = 0$",
+          "B": "$ax + b = cx^2$",
+          "C": "$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2ab}$",
+          "D": "$c = (ax + b)^2$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$ax + by + c = 0$",
+          "B": "$ax + b = cx^2$",
+          "C": "$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2ab}$",
+          "D": "$c=\\sqrt{(ax+b)^2}$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P1",
+      "question": "15",
+      "before": {
+        "options": {
+          "A": "5 units",
+          "B": "7 units",
+          "C": "41 units",
+          "D": "61 units"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "5 units",
+          "B": "7 units",
+          "C": "$\\sqrt{41}$ units",
+          "D": "$\\sqrt{61}$ units"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P1",
+      "question": "21",
+      "before": {
+        "options": {
+          "A": "$\\frac{1}{2\\sqrt{2}}$",
+          "B": "$\\frac{1}{\\sqrt{2}}$",
+          "C": "1",
+          "D": "2"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$\\frac{1}{2}$",
+          "B": "$\\frac{1}{\\sqrt{2}}$",
+          "C": "1",
+          "D": "2"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P1",
+      "question": "24",
+      "before": {
+        "options": {
+          "A": "2 cm",
+          "B": "$2\\sqrt{3}$ cm",
+          "C": "$\\sqrt{3}$ cm",
+          "D": "4 cm"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "2 cm",
+          "B": "$2\\sqrt{3}$ cm",
+          "C": "3 cm",
+          "D": "4 cm"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2021-P1",
+      "question": "22",
+      "before": {
+        "options": {
+          "A": "0",
+          "B": "2sqrt(k) / 2",
+          "C": "sqrt(k) / 2",
+          "D": "sqrt(k)"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "0",
+          "B": "$\\frac{\\sqrt{2k}}{2}$",
+          "C": "sqrt(k) / 2",
+          "D": "sqrt(k)"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "1",
+      "before": {
+        "stem": "What are the two frequencies of the carrots with lengths less than or equal to 10 cm and greater than 20 cm?"
+      },
+      "after": {
+        "stem": "The length $L$ cm of 16 carrots was measured and recorded in the following grouped frequency table.\n\n| Length, $L$ cm | Frequency |\n| --- | --- |\n| $0<L\\le10$ | $2$ |\n| $10<L\\le20$ | $5$ |\n| $20<L\\le30$ | $6$ |\n| $30<L\\le40$ | $3$ |\n\nWhat are the two frequencies of the carrots with lengths less than or equal to 10 cm and more than 20 cm?"
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "1",
+      "before": {
+        "options": {
+          "A": "2 and 9",
+          "B": "2 and 6",
+          "C": "9 and 2",
+          "D": "7 and 6"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "2 and 9",
+          "B": "2 and 6",
+          "C": "3 and 2",
+          "D": "2 and 3"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "2",
+      "before": {
+        "options": {
+          "A": "22",
+          "B": "14",
+          "C": "8",
+          "D": "6"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "12",
+          "B": "10",
+          "C": "8",
+          "D": "5"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "3",
+      "before": {
+        "stem": "If the mean of 7 numbers is 25 and each number is multiplied by 2, then the new mean will be"
+      },
+      "after": {
+        "stem": "If the arithmetic mean of a group of numbers is 25 and each number of the group is multiplied by 2, then the new arithmetic mean is"
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "4",
+      "before": {
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4",
+          "D": "5"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4",
+          "D": "8"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "5",
+      "before": {
+        "options": {
+          "A": "7.5",
+          "B": "8.5",
+          "C": "9",
+          "D": "10"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "8",
+          "B": "8.5",
+          "C": "9",
+          "D": "9.5"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "6",
+      "before": {
+        "options": {
+          "A": "23",
+          "B": "35",
+          "C": "40",
+          "D": "45"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "9",
+          "B": "35",
+          "C": "40",
+          "D": "45"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "7",
+      "before": {
+        "options": {
+          "A": "$2a^5 b^5$",
+          "B": "$2a b^4$",
+          "C": "$2a b^3$",
+          "D": "$2a^2 b^3$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$2ab$",
+          "B": "$\\frac{2a}{b}$",
+          "C": "$2ab^3$",
+          "D": "$\\frac{ab^3}{2}$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "8",
+      "before": {
+        "options": {
+          "A": "$\\frac{x^2 - 1}{2}$",
+          "B": "$\\frac{(x - 1)^2}{2}$",
+          "C": "$2(x^2 - 1)$",
+          "D": "$2(x + 1)^2$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$\\frac{x^2-1}{2}$",
+          "B": "$x-1$",
+          "C": "$x^2-1$",
+          "D": "$2(x-1)^2$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "9",
+      "before": {
+        "options": {
+          "A": "$\\frac{A}{x - 2} + \\frac{B}{(x - 2)^2}$",
+          "B": "$\\frac{A}{x - 2} + \\frac{B}{x - 2}$",
+          "C": "$\\frac{A}{(x - 2)^2} + \\frac{B}{(x - 2)^2}$",
+          "D": "$\\frac{Ax + B}{(x - 2)^2}$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$\\frac{A}{x-2}+\\frac{B}{(x-2)^2}$",
+          "B": "$\\frac{A}{x-4}+\\frac{B}{(x-4)^2}$",
+          "C": "$\\frac{A}{x-2}+\\frac{B}{x+2}$",
+          "D": "$\\frac{A}{x-4}+\\frac{B}{x+4}$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "10",
+      "before": {
+        "options": {
+          "A": "$7x + 2y$",
+          "B": "$2x - 7y$",
+          "C": "$2x + 7y$",
+          "D": "$7x - 2y$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$(49x)^2-(4y)^2$",
+          "B": "$(49x-4y)$",
+          "C": "$(7x-2y)^2$",
+          "D": "$(7x-2y)$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "11",
+      "before": {
+        "options": {
+          "A": "$a(x + 1)$",
+          "B": "$a(x - 1)$",
+          "C": "$x + 1$",
+          "D": "$x - 1$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$a(x + 1)$",
+          "B": "$a(x - 1)$",
+          "C": "$ax^2-a$",
+          "D": "$ax^2+1$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "12",
+      "before": {
+        "options": {
+          "A": "$(ax + b)(ax - b)$",
+          "B": "$(ax + b)^2$",
+          "C": "$(ax - b)^2 (ax + b)$",
+          "D": "$(ax + b)^2 (ax - b)$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$ax+b$",
+          "B": "$(ax + b)^2$",
+          "C": "$(ax - b)^2 (ax + b)$",
+          "D": "$(ax + b)^2 (ax - b)$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "13",
+      "before": {
+        "options": {
+          "A": "$1 - x$",
+          "B": "$x - 1$",
+          "C": "$x + 1$",
+          "D": "$\\frac{x - 1}{x^2}$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$1$",
+          "B": "$x-1$",
+          "C": "$\\frac{x-1}{x^2}$",
+          "D": "$\\frac{1-x}{x^2}$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "14",
+      "before": {
+        "stem": "Which of the following equations has no solutions?\nA. $5x - 2 = 3x + 1$\nB. $2x + 7 = 2x + 7$\nC. $4x - 6 = 2x - 3$\nD. $3x - 5 = 4x + 2$"
+      },
+      "after": {
+        "stem": "Which of the following equations has no solutions?"
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "19",
+      "before": {
+        "options": {
+          "A": "$|8x| < 8$",
+          "B": "$|8x| > 8$",
+          "C": "$|x + 1| > 1$",
+          "D": "$|x + 1| < 1$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$|8x| < 8$",
+          "B": "$|8x| > 8$",
+          "C": "$|x|+1>1$",
+          "D": "$|x|+1<1$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "27",
+      "before": {
+        "options": {
+          "A": "$(-1, 3)$",
+          "B": "$(3, -1)$",
+          "C": "$(4, -2)$",
+          "D": "$(2, -4)$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$(-1, 3)$",
+          "B": "$(3, -1)$",
+          "C": "$(4, -2)$",
+          "D": "$(-2,4)$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "31",
+      "before": {
+        "options": {
+          "A": "$\\frac{1}{2}$",
+          "B": "$\\frac{\\sqrt{3}}{3}$",
+          "C": "$\\frac{\\sqrt{3}}{2}$",
+          "D": "$\\frac{2}{\\sqrt{3}}$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$\\frac{1}{2}$",
+          "B": "$\\frac{\\sqrt{3}}{3}$",
+          "C": "$\\frac{\\sqrt{3}}{2}$",
+          "D": "$\\frac{3}{2}$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "44",
+      "before": {
+        "options": {
+          "A": "$MN = 2 KL$",
+          "B": "$KL = \\frac{1}{2} MN$",
+          "C": "$KL - MN = 0$",
+          "D": "$KL + MN = 0$"
+        }
+      },
+      "after": {
+        "options": {
+          "A": "$2MN=KL$",
+          "B": "$KL = \\frac{1}{2} MN$",
+          "C": "$KL - MN = 0$",
+          "D": "$KL + MN = 0$"
+        }
+      }
+    },
+    {
+      "paper": "MTH-X-2019-P1",
+      "question": "8",
+      "before": {
+        "correctOption": "C",
+        "solved_correct_option": "C",
+        "answerStatus": "VERIFIED",
+        "answer_origin": "OFFICIAL_KEY_VERIFIED",
+        "answer_review_note": "Official key verified by independent mathematical solution.",
+        "explanation": "By definition of negative real numbers, $x < 0$."
+      },
+      "after": {
+        "correctOption": "",
+        "solved_correct_option": "",
+        "answerStatus": "KEY_CONFLICT",
+        "answer_origin": "SOURCE_AMBIGUITY",
+        "answer_review_note": "Source ambiguity: Both B and C are true for every $x<0$: $-x\\ge0$ and $x<0$. Retained for source reference; excluded from automatic single-answer grading.",
+        "explanation": "Both B and C are true for every $x<0$: $-x\\ge0$ and $x<0$."
+      }
+    },
+    {
+      "paper": "MTH-X-2019-P1",
+      "question": "19",
+      "before": {
+        "correctOption": "B",
+        "solved_correct_option": "B",
+        "answerStatus": "VERIFIED",
+        "answer_origin": "OFFICIAL_KEY_VERIFIED",
+        "answer_review_note": "Official key verified by independent mathematical solution.",
+        "explanation": "Arc length $l = 3\\pi r$. Using $l = r\\theta$, we have $3\\pi r = r(\\alpha + 2) \\implies 3\\pi = \\alpha + 2 \\implies \\alpha = 3\\pi - 2$."
+      },
+      "after": {
+        "correctOption": "",
+        "solved_correct_option": "",
+        "answerStatus": "KEY_CONFLICT",
+        "answer_origin": "SOURCE_AMBIGUITY",
+        "answer_review_note": "Source ambiguity: The arc-length relation gives $\\alpha=\\frac{3\\pi}{r}-2$. The radius $r$ is not specified. Printed B assumes $r=1$, which is not stated. Retained for source reference; excluded from automatic single-answer grading.",
+        "explanation": "The arc-length relation gives $\\alpha=\\frac{3\\pi}{r}-2$. The radius $r$ is not specified. Printed B assumes $r=1$, which is not stated."
+      }
+    },
+    {
+      "paper": "MTH-X-2021-P1",
+      "question": "15",
+      "before": {
+        "correctOption": "D",
+        "solved_correct_option": "D",
+        "answerStatus": "VERIFIED",
+        "answer_origin": "Independently solved and verified against source text",
+        "answer_review_note": "",
+        "explanation": "$3x^2 - 6x = 3x(x - 2)$. For $3x$ to divide $2kx^2$, the numerical factor 3 must divide $2k$, meaning $k$ must be a multiple of 3. Testing choices gives $k = 3$."
+      },
+      "after": {
+        "correctOption": "",
+        "solved_correct_option": "",
+        "answerStatus": "KEY_CONFLICT",
+        "answer_origin": "SOURCE_AMBIGUITY",
+        "answer_review_note": "Source ambiguity: Both C ($k=6$) and D ($k=3$) give HCF $3x$: $\\gcd(12x^2,3x(x-2))=3x$ and $\\gcd(6x^2,3x(x-2))=3x$. Retained for source reference; excluded from automatic single-answer grading.",
+        "explanation": "Both C ($k=6$) and D ($k=3$) give HCF $3x$: $\\gcd(12x^2,3x(x-2))=3x$ and $\\gcd(6x^2,3x(x-2))=3x$."
+      }
+    },
+    {
+      "paper": "MTH-X-2021-P1",
+      "question": "23",
+      "before": {
+        "correctOption": "A",
+        "solved_correct_option": "A",
+        "answerStatus": "VERIFIED",
+        "answer_origin": "Independently solved and verified against source text",
+        "answer_review_note": "",
+        "explanation": "$|8x| < 8 \\implies 8|x| < 8 \\implies |x| < 1 \\implies -1 < x < 1$. In traditional curriculum notation, this open interval corresponds to $|8x| < 8$."
+      },
+      "after": {
+        "correctOption": "",
+        "solved_correct_option": "",
+        "answerStatus": "KEY_CONFLICT",
+        "answer_origin": "SOURCE_AMBIGUITY",
+        "answer_review_note": "Source ambiguity: The printed solution set $x<1$ or $x>-1$ is all real numbers. Option A, $|8x|<8$, gives only $-1<x<1$. No printed option represents the stated set. Retained for source reference; excluded from automatic single-answer grading.",
+        "explanation": "The printed solution set $x<1$ or $x>-1$ is all real numbers. Option A, $|8x|<8$, gives only $-1<x<1$. No printed option represents the stated set."
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "4",
+      "before": {
+        "correctOption": "C",
+        "solved_correct_option": "C",
+        "answerStatus": "VERIFIED",
+        "answer_origin": "Independently solved and verified against source text",
+        "answer_review_note": "",
+        "explanation": "If $x = 4$, the dataset is $\\{4, 9, 10, 11, 12\\}$. The range is $\\text{Max} - \\text{Min} = 12 - 4 = 8$."
+      },
+      "after": {
+        "correctOption": "",
+        "solved_correct_option": "",
+        "answerStatus": "KEY_CONFLICT",
+        "answer_origin": "SOURCE_AMBIGUITY",
+        "answer_review_note": "Source ambiguity: Both B ($x=3$) and C ($x=4$) give range 8: $\\{3,9,10,11,9\\}$ has range $11-3=8$ and $\\{4,9,10,11,12\\}$ has range $12-4=8$. The source does not require the listed values to be sorted. Retained for source reference; excluded from automatic single-answer grading.",
+        "explanation": "Both B ($x=3$) and C ($x=4$) give range 8: $\\{3,9,10,11,9\\}$ has range $11-3=8$ and $\\{4,9,10,11,12\\}$ has range $12-4=8$. The source does not require the listed values to be sorted."
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "8",
+      "before": {
+        "correctOption": "A",
+        "solved_correct_option": "A",
+        "answerStatus": "VERIFIED",
+        "answer_origin": "Independently solved and verified against source text",
+        "answer_review_note": "",
+        "explanation": "Using $P(x) \\times Q(x) = \\text{HCF} \\times \\text{LCM}$, with $P(x) = 2(x+1)^2$: $Q(x) = \\frac{(x^2 - 1)(x+1)^2}{2(x+1)^2} = \\frac{x^2 - 1}{2}$."
+      },
+      "after": {
+        "correctOption": "",
+        "solved_correct_option": "",
+        "answerStatus": "KEY_CONFLICT",
+        "answer_origin": "SOURCE_AMBIGUITY",
+        "answer_review_note": "Source ambiguity: The stated HCF $x^2-1$ cannot divide the polynomial $2(x+1)^2$ or the stated LCM $(x+1)^2$. Formal use of HCF times LCM produces printed A, but no pair of polynomials has these properties. Retained for source reference; excluded from automatic single-answer grading.",
+        "explanation": "The stated HCF $x^2-1$ cannot divide the polynomial $2(x+1)^2$ or the stated LCM $(x+1)^2$. Formal use of HCF times LCM produces printed A, but no pair of polynomials has these properties."
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "14",
+      "before": {
+        "correctOption": "B",
+        "solved_correct_option": "B",
+        "answerStatus": "VERIFIED",
+        "answer_origin": "Independently solved and verified against source text",
+        "answer_review_note": "Source ambiguity: The official key selects B. Mathematically, $2x + 7 = 2x + 7$ is an identity with infinitely many solutions, whereas equations with no solution take the form $ax + b = ax + c$ with $b \ne c$.",
+        "explanation": "Official board key is B. Mathematical note: $2x + 7 = 2x + 7$ is an identity satisfied by all real numbers (infinitely many solutions), while A, C, and D each have a unique solution ($x = 1.5, x = 1.5, x = -7$). If B had different constants (e.g. $2x+7=2x+5$), it would have no solution. Retained B as keyed with complete ambiguity documentation."
+      },
+      "after": {
+        "correctOption": "",
+        "solved_correct_option": "",
+        "answerStatus": "KEY_CONFLICT",
+        "answer_origin": "SOURCE_AMBIGUITY",
+        "answer_review_note": "Source ambiguity: All four printed equations have solutions. B, $2x+7=2x+7$, is an identity with infinitely many solutions. A and C have $x=\\frac32$ and D has $x=-7$. No option has no solution. Retained for source reference; excluded from automatic single-answer grading.",
+        "explanation": "All four printed equations have solutions. B, $2x+7=2x+7$, is an identity with infinitely many solutions. A and C have $x=\\frac32$ and D has $x=-7$. No option has no solution."
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "19",
+      "before": {
+        "correctOption": "A",
+        "solved_correct_option": "A",
+        "answerStatus": "VERIFIED",
+        "answer_origin": "Independently solved and verified against source text",
+        "answer_review_note": "",
+        "explanation": "$|8x| < 8 \\iff -8 < 8x < 8 \\iff -1 < x < 1$ (which satisfies $x > -1$ and $x < 1$). Option A is the intended choice."
+      },
+      "after": {
+        "correctOption": "",
+        "solved_correct_option": "",
+        "answerStatus": "KEY_CONFLICT",
+        "answer_origin": "SOURCE_AMBIGUITY",
+        "answer_review_note": "Source ambiguity: The printed solution set $x<1$ or $x>-1$ is all real numbers. Option A gives only $-1<x<1$. No printed option represents all real numbers. Retained for source reference; excluded from automatic single-answer grading.",
+        "explanation": "The printed solution set $x<1$ or $x>-1$ is all real numbers. Option A gives only $-1<x<1$. No printed option represents all real numbers."
+      }
+    },
+    {
+      "paper": "MTH-X-2025-P1",
+      "question": "2",
+      "after": {
+        "explanation": "From the original ogive, the cumulative frequency at age 20 is 22 and at age 30 is 30. The frequency for ages between 20 and 30 is $30-22=8$, option C."
+      },
+      "reason": "Restored cumulative-frequency readings from the printed ogive; answer remains C."
+    }
+  ],
+  "pageCorrections": [
+    {
+      "file": "ssc1_2019_past_mcqs.json",
+      "question": "6",
+      "before": 3,
+      "after": 2
+    },
+    {
+      "file": "ssc2_2017_past_mcqs.json",
+      "question": "5",
+      "before": 2,
+      "after": 3
+    },
+    {
+      "file": "ssc2_2017_past_mcqs.json",
+      "question": "13",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "file": "ssc2_2017_past_mcqs.json",
+      "question": "14",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "file": "ssc2_2017_past_mcqs.json",
+      "question": "17",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2017_past_mcqs.json",
+      "question": "18",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2017_past_mcqs.json",
+      "question": "19",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2017_past_mcqs.json",
+      "question": "20",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2017_past_mcqs.json",
+      "question": "25",
+      "before": 6,
+      "after": 8
+    },
+    {
+      "file": "ssc2_2017_past_mcqs.json",
+      "question": "26",
+      "before": 7,
+      "after": 8
+    },
+    {
+      "file": "ssc2_2017_past_mcqs.json",
+      "question": "27",
+      "before": 7,
+      "after": 8
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "5",
+      "before": 2,
+      "after": 3
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "12",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "13",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "14",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "18",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "19",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "20",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "21",
+      "before": 6,
+      "after": 7
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "22",
+      "before": 6,
+      "after": 7
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "23",
+      "before": 6,
+      "after": 7
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "25",
+      "before": 6,
+      "after": 7
+    },
+    {
+      "file": "ssc2_2018_past_mcqs.json",
+      "question": "27",
+      "before": 7,
+      "after": 8
+    },
+    {
+      "file": "ssc2_2019_past_mcqs.json",
+      "question": "12",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "file": "ssc2_2019_past_mcqs.json",
+      "question": "13",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "file": "ssc2_2019_past_mcqs.json",
+      "question": "14",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "file": "ssc2_2019_past_mcqs.json",
+      "question": "15",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "file": "ssc2_2019_past_mcqs.json",
+      "question": "16",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2019_past_mcqs.json",
+      "question": "17",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2019_past_mcqs.json",
+      "question": "18",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2019_past_mcqs.json",
+      "question": "19",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2019_past_mcqs.json",
+      "question": "20",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "file": "ssc2_2019_past_mcqs.json",
+      "question": "22",
+      "before": 6,
+      "after": 7
+    },
+    {
+      "file": "ssc2_2019_past_mcqs.json",
+      "question": "24",
+      "before": 6,
+      "after": 7
+    },
+    {
+      "file": "ssc2_2023_past_mcqs.json",
+      "question": "14",
+      "before": 7,
+      "after": 6
+    }
+  ],
+  "ambiguousQuestions": [
+    {
+      "year": 2019,
+      "question": 8,
+      "reason": "Both B and C are true for every $x<0$: $-x\\ge0$ and $x<0$."
+    },
+    {
+      "year": 2019,
+      "question": 19,
+      "reason": "The arc-length relation gives $\\alpha=\\frac{3\\pi}{r}-2$. The radius $r$ is not specified. Printed B assumes $r=1$, which is not stated."
+    },
+    {
+      "year": 2021,
+      "question": 15,
+      "reason": "Both C ($k=6$) and D ($k=3$) give HCF $3x$: $\\gcd(12x^2,3x(x-2))=3x$ and $\\gcd(6x^2,3x(x-2))=3x$."
+    },
+    {
+      "year": 2021,
+      "question": 23,
+      "reason": "The printed solution set $x<1$ or $x>-1$ is all real numbers. Option A, $|8x|<8$, gives only $-1<x<1$. No printed option represents the stated set."
+    },
+    {
+      "year": 2025,
+      "question": 4,
+      "reason": "Both B ($x=3$) and C ($x=4$) give range 8: $\\{3,9,10,11,9\\}$ has range $11-3=8$ and $\\{4,9,10,11,12\\}$ has range $12-4=8$. The source does not require the listed values to be sorted."
+    },
+    {
+      "year": 2025,
+      "question": 8,
+      "reason": "The stated HCF $x^2-1$ cannot divide the polynomial $2(x+1)^2$ or the stated LCM $(x+1)^2$. Formal use of HCF times LCM produces printed A, but no pair of polynomials has these properties."
+    },
+    {
+      "year": 2025,
+      "question": 14,
+      "reason": "All four printed equations have solutions. B, $2x+7=2x+7$, is an identity with infinitely many solutions. A and C have $x=\\frac32$ and D has $x=-7$. No option has no solution."
+    },
+    {
+      "year": 2025,
+      "question": 19,
+      "reason": "The printed solution set $x<1$ or $x>-1$ is all real numbers. Option A gives only $-1<x<1$. No printed option represents all real numbers."
+    }
+  ],
+  "theoryCorrections": [
+    {
+      "paper": "MTH-X-2017-P2",
+      "question": "10",
+      "before": {
+        "modelAnswer": "**Step 1: Equal chords subtend equal angles at the centre:**\nFrom the given figure, chords $AB$ and $CD$ have equal markings ($mAB = mCD$).\nEqual chords of a circle subtend equal angles at the centre, so:\n$$m\\angle AOB = m\\angle COD$$\n\n**Step 2: Angle sum on a straight line:**\nLine $AC$ is a diameter (or straight line through centre $O$).\nThe sum of angles on a straight line is $180^\\circ$:\n$$m\\angle AOB + m\\angle COD + 35^\\circ = 180^\\circ$$\n$$m\\angle AOB + m\\angle AOB + 35^\\circ = 180^\\circ$$\n$$2m\\angle AOB = 180^\\circ - 35^\\circ = 145^\\circ$$\n$$m\\angle AOB = \\frac{145^\\circ}{2} = 72.5^\\circ$$"
+      },
+      "after": {
+        "modelAnswer": "Equal chords $AB=CD$ subtend equal central angles, so let $\\angle AOB=\\angle COD=t$. Since $AD$ is a diameter and $\\angle BOC=35^\\circ$, $t+35^\\circ+t=180^\\circ$. Hence $2t=145^\\circ$ and $\\angle AOB=72.5^\\circ$."
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P2",
+      "question": "6b",
+      "before": {
+        "modelAnswer": "**Step 1: Find radius and touch point:**\nPoint $A(3, 6)$ lies on circle I and $B(3, 8)$ is its centre.\nRadius of circle I is $r = \\sqrt{(3-3)^2 + (8-6)^2} = \\sqrt{0 + 4} = 2$.\nSince both circles have the same radius, radius of circle II is also $r = 2$.\n\n**Step 2: Find centre $C$:**\nThe line of centres passes vertically through $x = 3$.\nThe circles touch each other externally at point $D$. Point $D$ lies at distance $r = 2$ from $B(3, 8)$ away from $A(3, 6)$, so $D = (3, 8 + 2) = (3, 10)$.\nCentre $C$ lies another radius $r = 2$ along the same vertical line:\n$$C = (3, 10 + 2) = (3, 12) \\quad \\text{or if } B \\text{ is midpoint between } A \\text{ and } C, \\dots$$\nLooking at the diagram: $A(3, 6)$ is on the bottom of circle I, $B(3, 8)$ is centre of circle I. The touch point between circles is $(3, 10)$. Since circle II has centre $C$, $C$ is located at $(3, 10)$ if $A$ was the touch point or $(3, 12)$ if circles touch externally above $B$.\nIn the E-marking rubric: $B(3, 8)$ is midpoint between $A(3, 6)$ and touch point, so touch point is $(3, 10)$, and centre $C = (3, 10)$ or $(3, 12)$."
+      },
+      "after": {
+        "modelAnswer": "The diagram shows $A$, $B$ and $C$ collinear, with $AB=BC$ because these are radii of congruent circles. Thus $B$ is the midpoint of $AC$. If $C=(u,v)$, then $\\left(\\frac{3+u}{2},\\frac{6+v}{2}\\right)=(3,8)$. Therefore $u=3$, $v=10$, and the centre of circle II is $C=(3,10)$. The circles overlap; they are not externally tangent."
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P2",
+      "question": "8a",
+      "before": {
+        "modelAnswer": "In the given diagram, $\\Delta ABC$ is a right-angled triangle at $A$ (or $B$).\nGiven hypotenuse $BC = 8$ cm, side $AC = 4\\sqrt{3}$ cm, and $BD = 3$ cm.\n\n**Step 1: Find length of $AB$ in right $\\Delta ABC$:**\nBy Pythagorean theorem:\n$$AB^2 + AC^2 = BC^2 \\implies AB^2 + (4\\sqrt{3})^2 = 8^2$$\n$$AB^2 + 48 = 64 \\implies AB^2 = 16 \\implies AB = 4 \\text{ cm}$$\n\n**Step 2: Find length of $AD$ in right $\\Delta ABD$:**\nIn right $\\Delta ABD$, legs are $AB = 4$ cm and $BD = 3$ cm.\n$$AD = \\sqrt{AB^2 + BD^2} = \\sqrt{4^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5 \\text{ cm}$$"
+      },
+      "after": {
+        "modelAnswer": "In right triangle $ABC$, $AC=8$ cm is the hypotenuse and $BC=4\\sqrt3$ cm. Thus $AB^2=AC^2-BC^2=64-48=16$, so $AB=4$ cm. In right triangle $ABD$, $BD=3$ cm. Hence $AD=\\sqrt{AB^2+BD^2}=\\sqrt{16+9}=5$ cm."
+      }
+    },
+    {
+      "paper": "MTH-X-2018-P2",
+      "question": "10",
+      "before": {
+        "modelAnswer": "Given: Circle with centre $O$, equal chords $AB = CD$, and central angle $\\angle COD = 120^\\circ$.\n\n**a. $\\angle AOB$:**\nEqual chords of a circle subtend equal angles at the centre.\nSince $AB = CD$, $\\angle AOB = \\angle COD = 120^\\circ$.\n\n**b. $\\angle AOC$:**\nPoints $A, B, D, C$ divide the full $360^\\circ$ around centre $O$. By symmetry, $\\angle AOC = \\angle BOD = \\frac{360^\\circ - (120^\\circ + 120^\\circ)}{2} = \\frac{120^\\circ}{2} = 60^\\circ$.\n\n**c. $\\angle OCD$:**\nIn $\\Delta OCD$, $OC = OD$ (radii of the same circle), making $\\Delta OCD$ an isosceles triangle.\n$$\\angle OCD = \\angle ODC = \\frac{180^\\circ - \\angle COD}{2} = \\frac{180^\\circ - 120^\\circ}{2} = \\frac{60^\\circ}{2} = 30^\\circ$$\n\n**d. $\\angle OBA$:**\nSimilarly, in $\\Delta OAB$, $OA = OB$ (radii of the circle).\n$$\\angle OBA = \\angle OAB = \\frac{180^\\circ - \\angle AOB}{2} = \\frac{180^\\circ - 120^\\circ}{2} = 30^\\circ$$"
+      },
+      "after": {
+        "modelAnswer": "Equal chords give $\\angle AOB=\\angle COD=120^\\circ$. Since $AD$ is a diameter, $\\angle AOC=180^\\circ-120^\\circ=60^\\circ$. In isosceles triangle $OCD$, $OC=OD$, so $\\angle OCD=\\frac{180^\\circ-120^\\circ}{2}=30^\\circ$. Similarly, $OA=OB$ gives $\\angle OBA=30^\\circ$."
+      }
+    },
+    {
+      "paper": "MTH-X-2019-P2",
+      "question": "1b",
+      "before": {
+        "questionText": "Complete the solution of the square root of an algebraic expression by filling the space provided. Hence, verify your answer.\n\n$$\\begin{array}{r|l} & 6x^2 - 8x + 1 \\\\ \\hline 6x^2 & 36x^4 - 96x^3 + 76x^2 - 16x + 1 \\\\ +6x^2 & -36x^4 \\\\ \\hline 12x^2 - 8x & -96x^3 + 76x^2 \\\\ -8x & \\mp 96x^3 \\pm 64x^2 \\\\ \\hline 12x^2 - 16x + 1 & 12x^2 - 16x + 1 \\\\ +1 & -12x^2 + 16x - 1 \\\\ \\hline & 0 \\end{array}$$"
+      },
+      "after": {
+        "questionText": "Complete the solution of the square root of an algebraic expression by filling the space provided. Hence, verify your answer."
+      }
+    },
+    {
+      "paper": "MTH-X-2023-P2",
+      "question": "1",
+      "before": {
+        "modelAnswer": "**1. Completing the Table:**\n\n- $15 - 19$: Midpoint $x = \\frac{15 + 19}{2} = 17$; $fx = 12 \\times 17 = 204$\n- $20 - 24$: Midpoint $x = \\frac{20 + 24}{2} = 22$; $fx = 26 \\times 22 = 572$\n- $25 - 29$: Midpoint $x = \\frac{25 + 29}{2} = 27$; $fx = 30 \\times 27 = 810$\n- $30 - 34$: Midpoint $x = \\frac{30 + 34}{2} = 32$; $fx = 18 \\times 32 = 576$\n- $35 - 39$: Midpoint $x = \\frac{35 + 39}{2} = 37$; $fx = 16 \\times 37 = 592$\n- $40 - 44$: Midpoint $x = \\frac{40 + 44}{2} = 42$; $fx = 14 \\times 42 = 588$\n- $45 - 49$: Midpoint $x = \\frac{45 + 49}{2} = 47$; $fx = 10 \\times 47 = 470$\n\n$$\\sum fx = 204 + 572 + 810 + 576 + 592 + 588 + 470 = 3812 \\text{ (or } 4028 \\text{ depending on arithmetic)}$$\nSum check: $204 + 572 = 776$; $+ 810 = 1586$; $+ 576 = 2162$; $+ 592 = 2754$; $+ 588 = 3342$; $+ 470 = 3812$.\n\n**2. Calculation of Arithmetic Mean:**\n$$\\bar{x} = \\frac{\\sum fx}{\\sum f} = \\frac{3812}{126} \\approx 30.25\\text{ years}$$"
+      },
+      "after": {
+        "modelAnswer": "**1. Completing the Table:**\n\n- $15 - 19$: Midpoint $x = \\frac{15 + 19}{2} = 17$; $fx = 12 \\times 17 = 204$\n- $20 - 24$: Midpoint $x = \\frac{20 + 24}{2} = 22$; $fx = 26 \\times 22 = 572$\n- $25 - 29$: Midpoint $x = \\frac{25 + 29}{2} = 27$; $fx = 30 \\times 27 = 810$\n- $30 - 34$: Midpoint $x = \\frac{30 + 34}{2} = 32$; $fx = 18 \\times 32 = 576$\n- $35 - 39$: Midpoint $x = \\frac{35 + 39}{2} = 37$; $fx = 16 \\times 37 = 592$\n- $40 - 44$: Midpoint $x = \\frac{40 + 44}{2} = 42$; $fx = 14 \\times 42 = 588$\n- $45 - 49$: Midpoint $x = \\frac{45 + 49}{2} = 47$; $fx = 10 \\times 47 = 470$\n\n$$\\sum fx = 204 + 572 + 810 + 576 + 592 + 588 + 470 = 3812$$\nSum check: $204 + 572 = 776$; $+ 810 = 1586$; $+ 576 = 2162$; $+ 592 = 2754$; $+ 588 = 3342$; $+ 470 = 3812$.\n\n**2. Calculation of Arithmetic Mean:**\n$$\\bar{x} = \\frac{\\sum fx}{\\sum f} = \\frac{3812}{126} \\approx 30.25\\text{ years}$$"
+      }
+    },
+    {
+      "paper": "MTH-X-2024-P2",
+      "question": "8a",
+      "before": {
+        "modelAnswer": "**i. Length of $DC$ and justification:**\n\n- Perpendicular from the centre $O$ to chord $AB$ bisects the chord at $E$, so $AE = BE = 5\\text{ cm}$, giving $AB = 5 + 5 = 10\\text{ cm}$.\n- Equal distances from centre ($OE = OD = 4\\text{ cm}$) implies that chord $CD$ is congruent to chord $AB$ ($CD = AB = 10\\text{ cm}$).\n- Perpendicular $OD \\perp CD$ bisects chord $CD$, so $DC = \\frac{1}{2} CD = 5\\text{ cm}$ (or full chord $CD = 10\\text{ cm}$).\n- **Justification:** \"Chords equidistant from the centre of a circle are equal in length, and the perpendicular from the centre to a chord bisects the chord.\"\n\n**ii. Length of $AB$ and justification:**\n\n- $AB = 2 \\times BE = 2 \\times 5 = 10\\text{ cm}$.\n- **Justification:** \"A straight line drawn from the centre of a circle perpendicular to a chord bisects the chord ($AE = EB = 5\\text{ cm}$). Hence $AB = 2 \\times 5 = 10\\text{ cm}$.\""
+      },
+      "after": {
+        "modelAnswer": "i. Since $OE\\perp AB$ and $OD\\perp AC$ with $OE=OD$, chords $AB$ and $AC$ are equidistant from the centre and therefore equal. The perpendiculars bisect these chords, so their half-lengths are equal: $DC=BE=5$ cm.\nii. The perpendicular $OE$ bisects chord $AB$, giving $AE=BE=5$ cm. Thus $AB=AE+BE=10$ cm."
+      }
+    }
+  ],
+  "cropCorrections": [
+    {
+      "paper": "MTH-X-2017-P2",
+      "question": "10",
+      "page": 11,
+      "box": [
+        205,
+        145,
+        535,
+        280
+      ]
+    },
+    {
+      "paper": "MTH-X-2018-P2",
+      "question": "8a",
+      "page": 9,
+      "box": [
+        155,
+        150,
+        550,
+        300
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1562 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "In the progression of any reversible chemical reaction, the point at which no net change occurs in the total concentration of reactants and products is known as",
+    "questionText": "In the progression of any reversible chemical reaction, the point at which no net change occurs in the total concentration of reactants and products is known as",
+    "options": {
+      "A": "chemical kinetics.",
+      "B": "chemical equation.",
+      "C": "chemical energetics.",
+      "D": "chemical equilibrium."
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "9.1.1",
+    "current_slo": "9.1.1",
+    "cognitiveLevel": "Knowledge",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "explanation": "Chemical equilibrium is the state in a reversible reaction where the forward and reverse reaction rates are equal, resulting in no net change in the concentrations of reactants and products.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Chemical equilibrium is the state in a reversible reaction where the forward and reverse reaction rates are equal, resulting in no net change in the concentrations of reactants and products."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Chemical equilibrium is the state in a reversible reaction where the forward and reverse reaction rates are equal, resulting in no net change in the concentrations of reactants and products."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Chemical equilibrium is the state in a reversible reaction where the forward and reverse reaction rates are equal, resulting in no net change in the concentrations of reactants and products."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: Chemical equilibrium is the state in a reversible reaction where the forward and reverse reaction rates are equal, resulting in no net change in the concentrations of reactants and products."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 2,
+    "stem": "Which of the following exemplifies an exothermic process?",
+    "questionText": "Which of the following exemplifies an exothermic process?",
+    "options": {
+      "A": "Cracking of oil fractions",
+      "B": "Melting of bituminous coal",
+      "C": "Burning of petrol in a car engine",
+      "D": "Fractional distillation of petroleum"
+    },
+    "correctOption": "C",
+    "correctAnswer": "C",
+    "slo": "9.2.2",
+    "current_slo": "9.2.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "explanation": "Combustion (burning) of petrol in a car engine releases heat energy to the surroundings ($\\Delta H < 0$), making it an exothermic chemical process. Cracking, melting, and fractional distillation require heat input (endothermic).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Combustion (burning) of petrol in a car engine releases heat energy to the surroundings ($\\Delta H < 0$), making it an exothermic chemical process. Cracking, melting, and fractional distillation require heat input (endothermic)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Combustion (burning) of petrol in a car engine releases heat energy to the surroundings ($\\Delta H < 0$), making it an exothermic chemical process. Cracking, melting, and fractional distillation require heat input (endothermic)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct: Combustion (burning) of petrol in a car engine releases heat energy to the surroundings ($\\Delta H < 0$), making it an exothermic chemical process. Cracking, melting, and fractional distillation require heat input (endothermic)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Combustion (burning) of petrol in a car engine releases heat energy to the surroundings ($\\Delta H < 0$), making it an exothermic chemical process. Cracking, melting, and fractional distillation require heat input (endothermic)."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 3,
+    "stem": "Given is the heterogeneous equilibrium reaction.\n\n$$2\\text{ICl}_{(s)} \\rightleftharpoons \\text{I}_{2(g)} + \\text{Cl}_{2(g)}$$\n\nIf all the reactants and products are used in molar concentrations, then what will be the unit for equilibrium constant?",
+    "questionText": "Given is the heterogeneous equilibrium reaction.\n\n$$2\\text{ICl}_{(s)} \\rightleftharpoons \\text{I}_{2(g)} + \\text{Cl}_{2(g)}$$\n\nIf all the reactants and products are used in molar concentrations, then what will be the unit for equilibrium constant?",
+    "options": {
+      "A": "$\\text{mol}\\cdot\\text{dm}^{-3}$",
+      "B": "$\\text{mol}^{2}\\cdot\\text{dm}^{-6}$",
+      "C": "$\\text{mol}^{-2}\\cdot\\text{dm}^{6}$",
+      "D": "No unit"
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "9.3.2",
+    "current_slo": "9.3.2",
+    "cognitiveLevel": "Application",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "explanation": "According to the 2023 AKU-EB official answer key, treating the stoichiometric coefficients in $K_c = \\frac{[\\text{I}_2][\\text{Cl}_2]}{[\\text{ICl}]^2}$ as two moles on both sides gives equal powers of concentration in numerator and denominator, yielding no unit (D). (Note: In strict heterogeneous equilibrium where pure solid $\\text{ICl}_{(s)}$ has unit activity, $K_c = [\\text{I}_{2(g)}][\\text{Cl}_{2(g)}]$ has units of $\\text{mol}^{2}\\cdot\\text{dm}^{-6}$.)",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. According to the 2023 AKU-EB official answer key, treating the stoichiometric coefficients in $K_c = \\frac{[\\text{I}_2][\\text{Cl}_2]}{[\\text{ICl}]^2}$ as two moles on both sides gives equal powers of concentration in numerator and denominator, yielding no unit (D). (Note: In strict heterogeneous equilibrium where pure solid $\\text{ICl}_{(s)}$ has unit activity, $K_c = [\\text{I}_{2(g)}][\\text{Cl}_{2(g)}]$ has units of $\\text{mol}^{2}\\cdot\\text{dm}^{-6}$.)"
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. According to the 2023 AKU-EB official answer key, treating the stoichiometric coefficients in $K_c = \\frac{[\\text{I}_2][\\text{Cl}_2]}{[\\text{ICl}]^2}$ as two moles on both sides gives equal powers of concentration in numerator and denominator, yielding no unit (D). (Note: In strict heterogeneous equilibrium where pure solid $\\text{ICl}_{(s)}$ has unit activity, $K_c = [\\text{I}_{2(g)}][\\text{Cl}_{2(g)}]$ has units of $\\text{mol}^{2}\\cdot\\text{dm}^{-6}$.)"
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. According to the 2023 AKU-EB official answer key, treating the stoichiometric coefficients in $K_c = \\frac{[\\text{I}_2][\\text{Cl}_2]}{[\\text{ICl}]^2}$ as two moles on both sides gives equal powers of concentration in numerator and denominator, yielding no unit (D). (Note: In strict heterogeneous equilibrium where pure solid $\\text{ICl}_{(s)}$ has unit activity, $K_c = [\\text{I}_{2(g)}][\\text{Cl}_{2(g)}]$ has units of $\\text{mol}^{2}\\cdot\\text{dm}^{-6}$.)"
+      },
+      {
+        "key": "D",
+        "reason": "Correct: According to the 2023 AKU-EB official answer key, treating the stoichiometric coefficients in $K_c = \\frac{[\\text{I}_2][\\text{Cl}_2]}{[\\text{ICl}]^2}$ as two moles on both sides gives equal powers of concentration in numerator and denominator, yielding no unit (D). (Note: In strict heterogeneous equilibrium where pure solid $\\text{ICl}_{(s)}$ has unit activity, $K_c = [\\text{I}_{2(g)}][\\text{Cl}_{2(g)}]$ has units of $\\text{mol}^{2}\\cdot\\text{dm}^{-6}$.)"
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 4,
+    "stem": "The addition of a catalyst to a reversible reaction at equilibrium will alter the reaction's",
+    "questionText": "The addition of a catalyst to a reversible reaction at equilibrium will alter the reaction's",
+    "options": {
+      "A": "position.",
+      "B": "heat energy.",
+      "C": "activation energy.",
+      "D": "equilibrium constant."
+    },
+    "correctOption": "C",
+    "correctAnswer": "C",
+    "slo": "9.3.7",
+    "current_slo": "9.3.7",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "explanation": "A catalyst lowers the activation energy ($E_a$) of both the forward and reverse reactions equally, allowing equilibrium to be reached faster without altering the equilibrium position, enthalpy change, or $K_c$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is C. A catalyst lowers the activation energy ($E_a$) of both the forward and reverse reactions equally, allowing equilibrium to be reached faster without altering the equilibrium position, enthalpy change, or $K_c$."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is C. A catalyst lowers the activation energy ($E_a$) of both the forward and reverse reactions equally, allowing equilibrium to be reached faster without altering the equilibrium position, enthalpy change, or $K_c$."
+      },
+      {
+        "key": "C",
+        "reason": "Correct: A catalyst lowers the activation energy ($E_a$) of both the forward and reverse reactions equally, allowing equilibrium to be reached faster without altering the equilibrium position, enthalpy change, or $K_c$."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is C. A catalyst lowers the activation energy ($E_a$) of both the forward and reverse reactions equally, allowing equilibrium to be reached faster without altering the equilibrium position, enthalpy change, or $K_c$."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 5,
+    "stem": "According to the given chemical equation, the formation of nitrogen dioxide gas can be increased when\n\n$$\\text{N}_2\\text{O}_{4(g)} \\rightleftharpoons 2\\text{NO}_{2(g)} \\qquad \\Delta H > 0$$",
+    "questionText": "According to the given chemical equation, the formation of nitrogen dioxide gas can be increased when\n\n$$\\text{N}_2\\text{O}_{4(g)} \\rightleftharpoons 2\\text{NO}_{2(g)} \\qquad \\Delta H > 0$$",
+    "options": {
+      "A": "Temperature: high | Pressure: low",
+      "B": "Temperature: low | Pressure: high",
+      "C": "Temperature: high | Pressure: high",
+      "D": "Temperature: low | Pressure: low"
+    },
+    "correctOption": "A",
+    "correctAnswer": "A",
+    "slo": "9.3.7",
+    "current_slo": "9.3.7",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "explanation": "Since the forward reaction is endothermic ($\\Delta H > 0$) and increases the number of gas moles from 1 mole ($\\text{N}_2\\text{O}_4$) to 2 moles ($2\\text{NO}_2$), high temperature and low pressure shift the equilibrium to the right by Le Chatelier's principle.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct: Since the forward reaction is endothermic ($\\Delta H > 0$) and increases the number of gas moles from 1 mole ($\\text{N}_2\\text{O}_4$) to 2 moles ($2\\text{NO}_2$), high temperature and low pressure shift the equilibrium to the right by Le Chatelier's principle."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is A. Since the forward reaction is endothermic ($\\Delta H > 0$) and increases the number of gas moles from 1 mole ($\\text{N}_2\\text{O}_4$) to 2 moles ($2\\text{NO}_2$), high temperature and low pressure shift the equilibrium to the right by Le Chatelier's principle."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is A. Since the forward reaction is endothermic ($\\Delta H > 0$) and increases the number of gas moles from 1 mole ($\\text{N}_2\\text{O}_4$) to 2 moles ($2\\text{NO}_2$), high temperature and low pressure shift the equilibrium to the right by Le Chatelier's principle."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is A. Since the forward reaction is endothermic ($\\Delta H > 0$) and increases the number of gas moles from 1 mole ($\\text{N}_2\\text{O}_4$) to 2 moles ($2\\text{NO}_2$), high temperature and low pressure shift the equilibrium to the right by Le Chatelier's principle."
+      }
+    ],
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2023-P1/q5.png"
+  },
+  {
+    "questionNumber": 6,
+    "stem": "In a science laboratory, Asghar takes aqueous ammonia in two different test tubes.\nIn test tube I, he dips a moist red litmus paper while in test tube II, he adds aqueous sulphuric acid.\n\nWhich of the following options identifies the CORRECT result in each test tube?",
+    "questionText": "In a science laboratory, Asghar takes aqueous ammonia in two different test tubes.\nIn test tube I, he dips a moist red litmus paper while in test tube II, he adds aqueous sulphuric acid.\n\nWhich of the following options identifies the CORRECT result in each test tube?",
+    "options": {
+      "A": "Test Tube I: No change | Test Tube II: (NH4)2SO4 + H2O",
+      "B": "Test Tube I: No change | Test Tube II: (NH4)2SO4",
+      "C": "Test Tube I: Litmus paper turns blue | Test Tube II: (NH4)2SO4",
+      "D": "Test Tube I: Litmus paper turns blue | Test Tube II: (NH4)2SO4 + H2O"
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "10.2.2",
+    "current_slo": "10.2.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "explanation": "Aqueous ammonia ($\\text{NH}_4\\text{OH}$) is basic, so it turns moist red litmus paper blue in Test Tube I. In Test Tube II, aqueous ammonia reacts with sulphuric acid in a neutralisation reaction: $2\\text{NH}_4\\text{OH}_{(aq)} + \\text{H}_2\\text{SO}_{4(aq)} \\rightarrow (\\text{NH}_4)_2\\text{SO}_{4(aq)} + 2\\text{H}_2\\text{O}_{(l)}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Aqueous ammonia ($\\text{NH}_4\\text{OH}$) is basic, so it turns moist red litmus paper blue in Test Tube I. In Test Tube II, aqueous ammonia reacts with sulphuric acid in a neutralisation reaction: $2\\text{NH}_4\\text{OH}_{(aq)} + \\text{H}_2\\text{SO}_{4(aq)} \\rightarrow (\\text{NH}_4)_2\\text{SO}_{4(aq)} + 2\\text{H}_2\\text{O}_{(l)}$."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Aqueous ammonia ($\\text{NH}_4\\text{OH}$) is basic, so it turns moist red litmus paper blue in Test Tube I. In Test Tube II, aqueous ammonia reacts with sulphuric acid in a neutralisation reaction: $2\\text{NH}_4\\text{OH}_{(aq)} + \\text{H}_2\\text{SO}_{4(aq)} \\rightarrow (\\text{NH}_4)_2\\text{SO}_{4(aq)} + 2\\text{H}_2\\text{O}_{(l)}$."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Aqueous ammonia ($\\text{NH}_4\\text{OH}$) is basic, so it turns moist red litmus paper blue in Test Tube I. In Test Tube II, aqueous ammonia reacts with sulphuric acid in a neutralisation reaction: $2\\text{NH}_4\\text{OH}_{(aq)} + \\text{H}_2\\text{SO}_{4(aq)} \\rightarrow (\\text{NH}_4)_2\\text{SO}_{4(aq)} + 2\\text{H}_2\\text{O}_{(l)}$."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: Aqueous ammonia ($\\text{NH}_4\\text{OH}$) is basic, so it turns moist red litmus paper blue in Test Tube I. In Test Tube II, aqueous ammonia reacts with sulphuric acid in a neutralisation reaction: $2\\text{NH}_4\\text{OH}_{(aq)} + \\text{H}_2\\text{SO}_{4(aq)} \\rightarrow (\\text{NH}_4)_2\\text{SO}_{4(aq)} + 2\\text{H}_2\\text{O}_{(l)}$."
+      }
+    ],
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2023-P1/q6.png"
+  },
+  {
+    "questionNumber": 7,
+    "stem": "The given table shows the pH value of different body fluids.\n\nWhich of these is the MOST acidic?",
+    "questionText": "The given table shows the pH value of different body fluids.\n\nWhich of these is the MOST acidic?",
+    "options": {
+      "A": "Nasal mucus (pH 5.5 – 6.5)",
+      "B": "Pancreatic juice (pH 7.5 – 8.0)",
+      "C": "Urine (pH 5.0 – 6.0)",
+      "D": "Tears (pH 6.5 – 7.6)"
+    },
+    "correctOption": "C",
+    "correctAnswer": "C",
+    "slo": "10.5.2",
+    "current_slo": "10.5.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "explanation": "A lower pH value corresponds to higher acidity. Urine has the lowest pH range (5.0 – 6.0) among the listed body fluids, making it the most acidic.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is C. A lower pH value corresponds to higher acidity. Urine has the lowest pH range (5.0 – 6.0) among the listed body fluids, making it the most acidic."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is C. A lower pH value corresponds to higher acidity. Urine has the lowest pH range (5.0 – 6.0) among the listed body fluids, making it the most acidic."
+      },
+      {
+        "key": "C",
+        "reason": "Correct: A lower pH value corresponds to higher acidity. Urine has the lowest pH range (5.0 – 6.0) among the listed body fluids, making it the most acidic."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is C. A lower pH value corresponds to higher acidity. Urine has the lowest pH range (5.0 – 6.0) among the listed body fluids, making it the most acidic."
+      }
+    ],
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2023-P1/q7.png"
+  },
+  {
+    "questionNumber": 8,
+    "stem": "Which of the following salts exemplifies an acidic salt?",
+    "questionText": "Which of the following salts exemplifies an acidic salt?",
+    "options": {
+      "A": "$\\text{NaCl}$",
+      "B": "$\\text{NH}_4\\text{Cl}$",
+      "C": "$\\text{BaCl}_2$",
+      "D": "$\\text{CaCl}_2$"
+    },
+    "correctOption": "B",
+    "correctAnswer": "B",
+    "slo": "10.7.4",
+    "current_slo": "10.7.4",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "explanation": "Ammonium chloride ($\\text{NH}_4\\text{Cl}$) is formed from a strong acid ($\\text{HCl}$) and a weak base ($\\text{NH}_4\\text{OH}$), so its aqueous solution is acidic due to cationic hydrolysis.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Ammonium chloride ($\\text{NH}_4\\text{Cl}$) is formed from a strong acid ($\\text{HCl}$) and a weak base ($\\text{NH}_4\\text{OH}$), so its aqueous solution is acidic due to cationic hydrolysis."
+      },
+      {
+        "key": "B",
+        "reason": "Correct: Ammonium chloride ($\\text{NH}_4\\text{Cl}$) is formed from a strong acid ($\\text{HCl}$) and a weak base ($\\text{NH}_4\\text{OH}$), so its aqueous solution is acidic due to cationic hydrolysis."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Ammonium chloride ($\\text{NH}_4\\text{Cl}$) is formed from a strong acid ($\\text{HCl}$) and a weak base ($\\text{NH}_4\\text{OH}$), so its aqueous solution is acidic due to cationic hydrolysis."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Ammonium chloride ($\\text{NH}_4\\text{Cl}$) is formed from a strong acid ($\\text{HCl}$) and a weak base ($\\text{NH}_4\\text{OH}$), so its aqueous solution is acidic due to cationic hydrolysis."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 9,
+    "stem": "The pH of a $0.5\\text{ M}$ solution of $\\text{Ba(OH)}_2$ is",
+    "questionText": "The pH of a $0.5\\text{ M}$ solution of $\\text{Ba(OH)}_2$ is",
+    "options": {
+      "A": "0.3",
+      "B": "1.0",
+      "C": "13.6",
+      "D": "14.0"
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "10.5.4",
+    "current_slo": "10.5.4",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "explanation": "$\\text{Ba(OH)}_2$ is a diacidic strong base that dissociates completely to give $[\\text{OH}^-] = 2 \\times 0.5\\text{ M} = 1.0\\text{ M}$. Therefore, $\\text{pOH} = -\\log(1.0) = 0$, and $\\text{pH} = 14 - 0 = 14.0$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. $\\text{Ba(OH)}_2$ is a diacidic strong base that dissociates completely to give $[\\text{OH}^-] = 2 \\times 0.5\\text{ M} = 1.0\\text{ M}$. Therefore, $\\text{pOH} = -\\log(1.0) = 0$, and $\\text{pH} = 14 - 0 = 14.0$."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. $\\text{Ba(OH)}_2$ is a diacidic strong base that dissociates completely to give $[\\text{OH}^-] = 2 \\times 0.5\\text{ M} = 1.0\\text{ M}$. Therefore, $\\text{pOH} = -\\log(1.0) = 0$, and $\\text{pH} = 14 - 0 = 14.0$."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. $\\text{Ba(OH)}_2$ is a diacidic strong base that dissociates completely to give $[\\text{OH}^-] = 2 \\times 0.5\\text{ M} = 1.0\\text{ M}$. Therefore, $\\text{pOH} = -\\log(1.0) = 0$, and $\\text{pH} = 14 - 0 = 14.0$."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: $\\text{Ba(OH)}_2$ is a diacidic strong base that dissociates completely to give $[\\text{OH}^-] = 2 \\times 0.5\\text{ M} = 1.0\\text{ M}$. Therefore, $\\text{pOH} = -\\log(1.0) = 0$, and $\\text{pH} = 14 - 0 = 14.0$."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 10,
+    "stem": "The by-products of the given reaction will be\n\n$$\\text{H}_2\\text{SO}_{4(aq)} + \\text{Na}_2\\text{CO}_{3(aq)} \\rightarrow \\text{Na}_2\\text{SO}_{4(aq)} + \\text{?}$$",
+    "questionText": "The by-products of the given reaction will be\n\n$$\\text{H}_2\\text{SO}_{4(aq)} + \\text{Na}_2\\text{CO}_{3(aq)} \\rightarrow \\text{Na}_2\\text{SO}_{4(aq)} + \\text{?}$$",
+    "options": {
+      "A": "$\\text{H}_{2(g)} + \\text{CO}_{(g)}$",
+      "B": "$\\text{H}_{2(g)} + \\text{CO}_{2(g)}$",
+      "C": "$\\text{H}_2\\text{O}_{(l)} + \\text{CO}_{(g)}$",
+      "D": "$\\text{H}_2\\text{O}_{(l)} + \\text{CO}_{2(g)}$"
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "10.6.2",
+    "current_slo": "10.6.2",
+    "cognitiveLevel": "Application",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "explanation": "When an acid reacts with a metal carbonate, it produces a salt, liquid water ($\\text{H}_2\\text{O}_{(l)}$), and carbon dioxide gas ($\\text{CO}_{2(g)}$).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. When an acid reacts with a metal carbonate, it produces a salt, liquid water ($\\text{H}_2\\text{O}_{(l)}$), and carbon dioxide gas ($\\text{CO}_{2(g)}$)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. When an acid reacts with a metal carbonate, it produces a salt, liquid water ($\\text{H}_2\\text{O}_{(l)}$), and carbon dioxide gas ($\\text{CO}_{2(g)}$)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. When an acid reacts with a metal carbonate, it produces a salt, liquid water ($\\text{H}_2\\text{O}_{(l)}$), and carbon dioxide gas ($\\text{CO}_{2(g)}$)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: When an acid reacts with a metal carbonate, it produces a salt, liquid water ($\\text{H}_2\\text{O}_{(l)}$), and carbon dioxide gas ($\\text{CO}_{2(g)}$)."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 11,
+    "stem": "Ethylene is used as a feedstock in the making of",
+    "questionText": "Ethylene is used as a feedstock in the making of",
+    "options": {
+      "A": "rubber toys.",
+      "B": "glass bottles.",
+      "C": "ceramic tiles.",
+      "D": "plastic boxes."
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "12.4.1",
+    "current_slo": "12.4.1",
+    "cognitiveLevel": "Knowledge",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "explanation": "Ethylene (ethene) is polymerised to produce polyethylene (polythene), which is widely used as a feedstock for manufacturing plastic containers and plastic boxes.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Ethylene (ethene) is polymerised to produce polyethylene (polythene), which is widely used as a feedstock for manufacturing plastic containers and plastic boxes."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Ethylene (ethene) is polymerised to produce polyethylene (polythene), which is widely used as a feedstock for manufacturing plastic containers and plastic boxes."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Ethylene (ethene) is polymerised to produce polyethylene (polythene), which is widely used as a feedstock for manufacturing plastic containers and plastic boxes."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: Ethylene (ethene) is polymerised to produce polyethylene (polythene), which is widely used as a feedstock for manufacturing plastic containers and plastic boxes."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 12,
+    "stem": "Using the rules of International Union of Pure and Applied Chemistry (IUPAC) nomenclature, the FIRST step to name an alkane is to",
+    "questionText": "Using the rules of International Union of Pure and Applied Chemistry (IUPAC) nomenclature, the FIRST step to name an alkane is to",
+    "options": {
+      "A": "find and name the longest continuous carbon chain.",
+      "B": "identify and name groups attached to the carbon chain.",
+      "C": "number the chain consecutively, starting at the end nearest a substituent group.",
+      "D": "designate the location of each substituent group by an appropriate number and name."
+    },
+    "correctOption": "A",
+    "correctAnswer": "A",
+    "slo": "12.1.2",
+    "current_slo": "12.1.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "explanation": "According to IUPAC nomenclature rules for alkanes, the very first step is to locate and name the longest continuous carbon chain (parent chain).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct: According to IUPAC nomenclature rules for alkanes, the very first step is to locate and name the longest continuous carbon chain (parent chain)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is A. According to IUPAC nomenclature rules for alkanes, the very first step is to locate and name the longest continuous carbon chain (parent chain)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is A. According to IUPAC nomenclature rules for alkanes, the very first step is to locate and name the longest continuous carbon chain (parent chain)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is A. According to IUPAC nomenclature rules for alkanes, the very first step is to locate and name the longest continuous carbon chain (parent chain)."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 13,
+    "stem": "Alkanes are saturated hydrocarbons because they",
+    "questionText": "Alkanes are saturated hydrocarbons because they",
+    "options": {
+      "A": "give addition reactions.",
+      "B": "tend to form oily products.",
+      "C": "are straight chain hydrocarbons.",
+      "D": "contain single carbon-carbon bond."
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "12.2.2",
+    "current_slo": "12.2.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "explanation": "Alkanes are called saturated hydrocarbons because all carbon-carbon bonds are single covalent bonds ($\\text{C}-\\text{C}$) and every carbon atom is bonded to the maximum possible number of hydrogen atoms.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Alkanes are called saturated hydrocarbons because all carbon-carbon bonds are single covalent bonds ($\\text{C}-\\text{C}$) and every carbon atom is bonded to the maximum possible number of hydrogen atoms."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Alkanes are called saturated hydrocarbons because all carbon-carbon bonds are single covalent bonds ($\\text{C}-\\text{C}$) and every carbon atom is bonded to the maximum possible number of hydrogen atoms."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Alkanes are called saturated hydrocarbons because all carbon-carbon bonds are single covalent bonds ($\\text{C}-\\text{C}$) and every carbon atom is bonded to the maximum possible number of hydrogen atoms."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: Alkanes are called saturated hydrocarbons because all carbon-carbon bonds are single covalent bonds ($\\text{C}-\\text{C}$) and every carbon atom is bonded to the maximum possible number of hydrogen atoms."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 14,
+    "stem": "Consider the following terminal alkyne.\n\n$$\\text{R}-\\text{C}\\equiv\\text{C}-\\text{H}$$\n\nIf the given alkyne undergoes oxidation in the presence of strong alkaline $\\text{KMnO}_4$, then the end products of this reaction will be",
+    "questionText": "Consider the following terminal alkyne.\n\n$$\\text{R}-\\text{C}\\equiv\\text{C}-\\text{H}$$\n\nIf the given alkyne undergoes oxidation in the presence of strong alkaline $\\text{KMnO}_4$, then the end products of this reaction will be",
+    "options": {
+      "A": "2 R-COOH",
+      "B": "R-COOH + CO2",
+      "C": "R-COOK + MnO2 + MnO4^2-",
+      "D": "R-CH(OH)-CH(OH) + MnO2 + MnO4^2-"
+    },
+    "correctOption": "B",
+    "correctAnswer": "B",
+    "slo": "12.8.2",
+    "current_slo": "12.8.2",
+    "cognitiveLevel": "Application",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "explanation": "Oxidative cleavage of a terminal alkyne ($\\text{R}-\\text{C}\\equiv\\text{C}-\\text{H}$) with strong alkaline $\\text{KMnO}_4$ cleaves the triple bond to yield a carboxylic acid ($\\text{R}-\\text{COOH}$) from the internal carbon and carbon dioxide ($\\text{CO}_2$, via formic/oxalic oxidation) from the terminal $\\equiv\\text{CH}$ carbon.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Oxidative cleavage of a terminal alkyne ($\\text{R}-\\text{C}\\equiv\\text{C}-\\text{H}$) with strong alkaline $\\text{KMnO}_4$ cleaves the triple bond to yield a carboxylic acid ($\\text{R}-\\text{COOH}$) from the internal carbon and carbon dioxide ($\\text{CO}_2$, via formic/oxalic oxidation) from the terminal $\\equiv\\text{CH}$ carbon."
+      },
+      {
+        "key": "B",
+        "reason": "Correct: Oxidative cleavage of a terminal alkyne ($\\text{R}-\\text{C}\\equiv\\text{C}-\\text{H}$) with strong alkaline $\\text{KMnO}_4$ cleaves the triple bond to yield a carboxylic acid ($\\text{R}-\\text{COOH}$) from the internal carbon and carbon dioxide ($\\text{CO}_2$, via formic/oxalic oxidation) from the terminal $\\equiv\\text{CH}$ carbon."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Oxidative cleavage of a terminal alkyne ($\\text{R}-\\text{C}\\equiv\\text{C}-\\text{H}$) with strong alkaline $\\text{KMnO}_4$ cleaves the triple bond to yield a carboxylic acid ($\\text{R}-\\text{COOH}$) from the internal carbon and carbon dioxide ($\\text{CO}_2$, via formic/oxalic oxidation) from the terminal $\\equiv\\text{CH}$ carbon."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Oxidative cleavage of a terminal alkyne ($\\text{R}-\\text{C}\\equiv\\text{C}-\\text{H}$) with strong alkaline $\\text{KMnO}_4$ cleaves the triple bond to yield a carboxylic acid ($\\text{R}-\\text{COOH}$) from the internal carbon and carbon dioxide ($\\text{CO}_2$, via formic/oxalic oxidation) from the terminal $\\equiv\\text{CH}$ carbon."
+      }
+    ],
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2023-P1/q14.png"
+  },
+  {
+    "questionNumber": 15,
+    "stem": "Which of the following reactants on heating with zinc dust produces ethyne?",
+    "questionText": "Which of the following reactants on heating with zinc dust produces ethyne?",
+    "options": {
+      "A": "1,2-dichloroethane (Structure A)",
+      "B": "1,1-dichloroethane (Structure B)",
+      "C": "1,1,2,2-tetrachloroethane (Structure C)",
+      "D": "Chloroethane (Structure D)"
+    },
+    "correctOption": "C",
+    "correctAnswer": "C",
+    "slo": "12.7.3",
+    "current_slo": "12.7.3",
+    "cognitiveLevel": "Application",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "explanation": "Dehalogenation of a tetrahalide (1,1,2,2-tetrachloroethane, Structure C) by heating with zinc dust removes four chlorine atoms as $2\\text{ZnCl}_2$ to form ethyne ($\\text{HC}\\equiv\\text{CH}$).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Dehalogenation of a tetrahalide (1,1,2,2-tetrachloroethane, Structure C) by heating with zinc dust removes four chlorine atoms as $2\\text{ZnCl}_2$ to form ethyne ($\\text{HC}\\equiv\\text{CH}$)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Dehalogenation of a tetrahalide (1,1,2,2-tetrachloroethane, Structure C) by heating with zinc dust removes four chlorine atoms as $2\\text{ZnCl}_2$ to form ethyne ($\\text{HC}\\equiv\\text{CH}$)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct: Dehalogenation of a tetrahalide (1,1,2,2-tetrachloroethane, Structure C) by heating with zinc dust removes four chlorine atoms as $2\\text{ZnCl}_2$ to form ethyne ($\\text{HC}\\equiv\\text{CH}$)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Dehalogenation of a tetrahalide (1,1,2,2-tetrachloroethane, Structure C) by heating with zinc dust removes four chlorine atoms as $2\\text{ZnCl}_2$ to form ethyne ($\\text{HC}\\equiv\\text{CH}$)."
+      }
+    ],
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2023-P1/q15.png"
+  },
+  {
+    "questionNumber": 16,
+    "stem": "The variety of organic compounds is MAINLY due to\n\nI. catenation\nII. isomerism\nIII. polymerisation",
+    "questionText": "The variety of organic compounds is MAINLY due to\n\nI. catenation\nII. isomerism\nIII. polymerisation",
+    "options": {
+      "A": "I only.",
+      "B": "I and II.",
+      "C": "III only.",
+      "D": "II and III."
+    },
+    "correctOption": "B",
+    "correctAnswer": "B",
+    "slo": "11.1.2",
+    "current_slo": "11.1.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "explanation": "The vast diversity and multitude of organic compounds are primarily due to carbon's ability to self-link into long chains and rings (catenation, I) and the existence of compounds with the same molecular formula but different structures (isomerism, II).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is B. The vast diversity and multitude of organic compounds are primarily due to carbon's ability to self-link into long chains and rings (catenation, I) and the existence of compounds with the same molecular formula but different structures (isomerism, II)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct: The vast diversity and multitude of organic compounds are primarily due to carbon's ability to self-link into long chains and rings (catenation, I) and the existence of compounds with the same molecular formula but different structures (isomerism, II)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is B. The vast diversity and multitude of organic compounds are primarily due to carbon's ability to self-link into long chains and rings (catenation, I) and the existence of compounds with the same molecular formula but different structures (isomerism, II)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is B. The vast diversity and multitude of organic compounds are primarily due to carbon's ability to self-link into long chains and rings (catenation, I) and the existence of compounds with the same molecular formula but different structures (isomerism, II)."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 17,
+    "stem": "Which of the following is NOT an organic compound?",
+    "questionText": "Which of the following is NOT an organic compound?",
+    "options": {
+      "A": "Urea",
+      "B": "Diamond",
+      "C": "Table sugar",
+      "D": "Deoxyribonucleic acid"
+    },
+    "correctOption": "B",
+    "correctAnswer": "B",
+    "slo": "11.1.3",
+    "current_slo": "11.1.3",
+    "cognitiveLevel": "Knowledge",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "explanation": "Diamond is a pure crystalline allotrope of elemental carbon, not an organic compound, whereas urea, table sugar (sucrose), and DNA are covalent carbon-containing organic compounds.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Diamond is a pure crystalline allotrope of elemental carbon, not an organic compound, whereas urea, table sugar (sucrose), and DNA are covalent carbon-containing organic compounds."
+      },
+      {
+        "key": "B",
+        "reason": "Correct: Diamond is a pure crystalline allotrope of elemental carbon, not an organic compound, whereas urea, table sugar (sucrose), and DNA are covalent carbon-containing organic compounds."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Diamond is a pure crystalline allotrope of elemental carbon, not an organic compound, whereas urea, table sugar (sucrose), and DNA are covalent carbon-containing organic compounds."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Diamond is a pure crystalline allotrope of elemental carbon, not an organic compound, whereas urea, table sugar (sucrose), and DNA are covalent carbon-containing organic compounds."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 18,
+    "stem": "Consider the given structures of alkane.\n\nThe structure(s) that can form more than two alkyl radicals is/ are",
+    "questionText": "Consider the given structures of alkane.\n\nThe structure(s) that can form more than two alkyl radicals is/ are",
+    "options": {
+      "A": "I only.",
+      "B": "I and II.",
+      "C": "III only.",
+      "D": "II and III."
+    },
+    "correctOption": "C",
+    "correctAnswer": "C",
+    "slo": "11.3.2",
+    "current_slo": "11.3.2",
+    "cognitiveLevel": "Application",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "explanation": "Structure I (propane, $\\text{C}_3\\text{H}_8$) and Structure II ($n$-butane, $\\text{C}_4\\text{H}_{10}$) each have only 2 sets of non-equivalent hydrogens and form 2 alkyl radicals ($n$-propyl/isopropyl and $n$-butyl/$sec$-butyl). Structure III ($n$-pentane, $\\text{C}_5\\text{H}_{12}$) has 3 distinct carbon positions (C-1, C-2, C-3) and forms 3 different pentyl radicals.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Structure I (propane, $\\text{C}_3\\text{H}_8$) and Structure II ($n$-butane, $\\text{C}_4\\text{H}_{10}$) each have only 2 sets of non-equivalent hydrogens and form 2 alkyl radicals ($n$-propyl/isopropyl and $n$-butyl/$sec$-butyl). Structure III ($n$-pentane, $\\text{C}_5\\text{H}_{12}$) has 3 distinct carbon positions (C-1, C-2, C-3) and forms 3 different pentyl radicals."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Structure I (propane, $\\text{C}_3\\text{H}_8$) and Structure II ($n$-butane, $\\text{C}_4\\text{H}_{10}$) each have only 2 sets of non-equivalent hydrogens and form 2 alkyl radicals ($n$-propyl/isopropyl and $n$-butyl/$sec$-butyl). Structure III ($n$-pentane, $\\text{C}_5\\text{H}_{12}$) has 3 distinct carbon positions (C-1, C-2, C-3) and forms 3 different pentyl radicals."
+      },
+      {
+        "key": "C",
+        "reason": "Correct: Structure I (propane, $\\text{C}_3\\text{H}_8$) and Structure II ($n$-butane, $\\text{C}_4\\text{H}_{10}$) each have only 2 sets of non-equivalent hydrogens and form 2 alkyl radicals ($n$-propyl/isopropyl and $n$-butyl/$sec$-butyl). Structure III ($n$-pentane, $\\text{C}_5\\text{H}_{12}$) has 3 distinct carbon positions (C-1, C-2, C-3) and forms 3 different pentyl radicals."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Structure I (propane, $\\text{C}_3\\text{H}_8$) and Structure II ($n$-butane, $\\text{C}_4\\text{H}_{10}$) each have only 2 sets of non-equivalent hydrogens and form 2 alkyl radicals ($n$-propyl/isopropyl and $n$-butyl/$sec$-butyl). Structure III ($n$-pentane, $\\text{C}_5\\text{H}_{12}$) has 3 distinct carbon positions (C-1, C-2, C-3) and forms 3 different pentyl radicals."
+      }
+    ],
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2023-P1/q18.png"
+  },
+  {
+    "questionNumber": 19,
+    "stem": "Consider the given structure of a compound that gives banana its characteristic smell.\n\nBased on its functional group, the compound belongs to a class that is",
+    "questionText": "Consider the given structure of a compound that gives banana its characteristic smell.\n\nBased on its functional group, the compound belongs to a class that is",
+    "options": {
+      "A": "ester.",
+      "B": "ketone.",
+      "C": "aldehyde.",
+      "D": "carboxylic acid."
+    },
+    "correctOption": "A",
+    "correctAnswer": "A",
+    "slo": "11.5.2 11.5.3",
+    "current_slo": "11.5.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "explanation": "The structure shown (isoamyl acetate) contains the ester functional group ($-\\text{O}-\\text{C}(=\\text{O})-$ or $-\\text{COO}-$), which gives fruits like bananas their pleasant aroma.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct: The structure shown (isoamyl acetate) contains the ester functional group ($-\\text{O}-\\text{C}(=\\text{O})-$ or $-\\text{COO}-$), which gives fruits like bananas their pleasant aroma."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is A. The structure shown (isoamyl acetate) contains the ester functional group ($-\\text{O}-\\text{C}(=\\text{O})-$ or $-\\text{COO}-$), which gives fruits like bananas their pleasant aroma."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is A. The structure shown (isoamyl acetate) contains the ester functional group ($-\\text{O}-\\text{C}(=\\text{O})-$ or $-\\text{COO}-$), which gives fruits like bananas their pleasant aroma."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is A. The structure shown (isoamyl acetate) contains the ester functional group ($-\\text{O}-\\text{C}(=\\text{O})-$ or $-\\text{COO}-$), which gives fruits like bananas their pleasant aroma."
+      }
+    ],
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2023-P1/q19.png"
+  },
+  {
+    "questionNumber": 20,
+    "stem": "The molecular formula of pent-1-ene is",
+    "questionText": "The molecular formula of pent-1-ene is",
+    "options": {
+      "A": "$\\text{C}_5\\text{H}_{12}$",
+      "B": "$\\text{C}_5\\text{H}_{10}$",
+      "C": "$\\text{C}_5\\text{H}_8$",
+      "D": "$\\text{C}_5\\text{H}_6$"
+    },
+    "correctOption": "B",
+    "correctAnswer": "B",
+    "slo": "11.2.2",
+    "current_slo": "11.2.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "explanation": "Pent-1-ene is a 5-carbon alkene following the general formula $\\text{C}_n\\text{H}_{2n}$ ($n = 5$), giving $\\text{C}_5\\text{H}_{10}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Pent-1-ene is a 5-carbon alkene following the general formula $\\text{C}_n\\text{H}_{2n}$ ($n = 5$), giving $\\text{C}_5\\text{H}_{10}$."
+      },
+      {
+        "key": "B",
+        "reason": "Correct: Pent-1-ene is a 5-carbon alkene following the general formula $\\text{C}_n\\text{H}_{2n}$ ($n = 5$), giving $\\text{C}_5\\text{H}_{10}$."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Pent-1-ene is a 5-carbon alkene following the general formula $\\text{C}_n\\text{H}_{2n}$ ($n = 5$), giving $\\text{C}_5\\text{H}_{10}$."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Pent-1-ene is a 5-carbon alkene following the general formula $\\text{C}_n\\text{H}_{2n}$ ($n = 5$), giving $\\text{C}_5\\text{H}_{10}$."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 21,
+    "stem": "Given are some essential minerals.\n\nI. Iron\nII. Zinc\nIII. Sulphur\nIV. Phosphorus\n\nThe minerals that are required in larger amounts by a human body are",
+    "questionText": "Given are some essential minerals.\n\nI. Iron\nII. Zinc\nIII. Sulphur\nIV. Phosphorus\n\nThe minerals that are required in larger amounts by a human body are",
+    "options": {
+      "A": "I and II.",
+      "B": "I and IV.",
+      "C": "II and III.",
+      "D": "III and IV."
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "13.7.1",
+    "current_slo": "13.7.1",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 13,
+    "unitName": "Biochemistry",
+    "explanation": "Sulphur (III) and phosphorus (IV) are macrominerals (major minerals) required by the human body in quantities greater than $100\\text{ mg/day}$, whereas iron (I) and zinc (II) are trace minerals (microminerals).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Sulphur (III) and phosphorus (IV) are macrominerals (major minerals) required by the human body in quantities greater than $100\\text{ mg/day}$, whereas iron (I) and zinc (II) are trace minerals (microminerals)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Sulphur (III) and phosphorus (IV) are macrominerals (major minerals) required by the human body in quantities greater than $100\\text{ mg/day}$, whereas iron (I) and zinc (II) are trace minerals (microminerals)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Sulphur (III) and phosphorus (IV) are macrominerals (major minerals) required by the human body in quantities greater than $100\\text{ mg/day}$, whereas iron (I) and zinc (II) are trace minerals (microminerals)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: Sulphur (III) and phosphorus (IV) are macrominerals (major minerals) required by the human body in quantities greater than $100\\text{ mg/day}$, whereas iron (I) and zinc (II) are trace minerals (microminerals)."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 22,
+    "stem": "Upon hydrolysis, a disaccharide molecule breaks into two units of glucose.\n\nThis disaccharide is identified as",
+    "questionText": "Upon hydrolysis, a disaccharide molecule breaks into two units of glucose.\n\nThis disaccharide is identified as",
+    "options": {
+      "A": "lactose.",
+      "B": "sucrose.",
+      "C": "maltose.",
+      "D": "fructose."
+    },
+    "correctOption": "C",
+    "correctAnswer": "C",
+    "slo": "13.1.2",
+    "current_slo": "13.1.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 13,
+    "unitName": "Biochemistry",
+    "explanation": "Maltose is a disaccharide composed of two $\\alpha$-D-glucose units linked together; upon hydrolysis, one molecule of maltose yields two molecules of glucose.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Maltose is a disaccharide composed of two $\\alpha$-D-glucose units linked together; upon hydrolysis, one molecule of maltose yields two molecules of glucose."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Maltose is a disaccharide composed of two $\\alpha$-D-glucose units linked together; upon hydrolysis, one molecule of maltose yields two molecules of glucose."
+      },
+      {
+        "key": "C",
+        "reason": "Correct: Maltose is a disaccharide composed of two $\\alpha$-D-glucose units linked together; upon hydrolysis, one molecule of maltose yields two molecules of glucose."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Maltose is a disaccharide composed of two $\\alpha$-D-glucose units linked together; upon hydrolysis, one molecule of maltose yields two molecules of glucose."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 23,
+    "stem": "The structure of nucleoside in the ribonucleic acid (RNA) has a",
+    "questionText": "The structure of nucleoside in the ribonucleic acid (RNA) has a",
+    "options": {
+      "A": "phosphate group.",
+      "B": "thymine molecule.",
+      "C": "hexose sugar moiety.",
+      "D": "uracil nitrogenous base."
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "13.5.3",
+    "current_slo": "13.5.3",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 13,
+    "unitName": "Biochemistry",
+    "explanation": "An RNA nucleoside consists of a pentose sugar (D-ribose) attached to an RNA nitrogenous base (adenine, guanine, cytosine, or uracil) without a phosphate group. Uracil is unique to RNA (replacing thymine found in DNA).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. An RNA nucleoside consists of a pentose sugar (D-ribose) attached to an RNA nitrogenous base (adenine, guanine, cytosine, or uracil) without a phosphate group. Uracil is unique to RNA (replacing thymine found in DNA)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. An RNA nucleoside consists of a pentose sugar (D-ribose) attached to an RNA nitrogenous base (adenine, guanine, cytosine, or uracil) without a phosphate group. Uracil is unique to RNA (replacing thymine found in DNA)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. An RNA nucleoside consists of a pentose sugar (D-ribose) attached to an RNA nitrogenous base (adenine, guanine, cytosine, or uracil) without a phosphate group. Uracil is unique to RNA (replacing thymine found in DNA)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: An RNA nucleoside consists of a pentose sugar (D-ribose) attached to an RNA nitrogenous base (adenine, guanine, cytosine, or uracil) without a phosphate group. Uracil is unique to RNA (replacing thymine found in DNA)."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 24,
+    "stem": "The vitamin that is easily absorbed by the body in the presence of fats is",
+    "questionText": "The vitamin that is easily absorbed by the body in the presence of fats is",
+    "options": {
+      "A": "vitamin A.",
+      "B": "vitamin B3.",
+      "C": "vitamin B12.",
+      "D": "vitamin C."
+    },
+    "correctOption": "A",
+    "correctAnswer": "A",
+    "slo": "13.6.2",
+    "current_slo": "13.6.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 13,
+    "unitName": "Biochemistry",
+    "explanation": "Vitamins A, D, E, and K are fat-soluble vitamins that dissolve in lipids and are readily absorbed alongside dietary fats, whereas B-complex vitamins and vitamin C are water-soluble.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct: Vitamins A, D, E, and K are fat-soluble vitamins that dissolve in lipids and are readily absorbed alongside dietary fats, whereas B-complex vitamins and vitamin C are water-soluble."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is A. Vitamins A, D, E, and K are fat-soluble vitamins that dissolve in lipids and are readily absorbed alongside dietary fats, whereas B-complex vitamins and vitamin C are water-soluble."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is A. Vitamins A, D, E, and K are fat-soluble vitamins that dissolve in lipids and are readily absorbed alongside dietary fats, whereas B-complex vitamins and vitamin C are water-soluble."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is A. Vitamins A, D, E, and K are fat-soluble vitamins that dissolve in lipids and are readily absorbed alongside dietary fats, whereas B-complex vitamins and vitamin C are water-soluble."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 25,
+    "stem": "Oils can be converted into fats by the process of",
+    "questionText": "Oils can be converted into fats by the process of",
+    "options": {
+      "A": "oxidation.",
+      "B": "hydration.",
+      "C": "halogenation.",
+      "D": "hydrogenation."
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "13.4.3",
+    "current_slo": "13.4.3",
+    "cognitiveLevel": "Knowledge",
+    "unitNumber": 13,
+    "unitName": "Biochemistry",
+    "explanation": "Catalytic hydrogenation adds hydrogen ($\\text{H}_2$) across the carbon-carbon double bonds of unsaturated vegetable oils in the presence of a nickel catalyst to convert them into saturated solid fats (banaspati ghee).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Catalytic hydrogenation adds hydrogen ($\\text{H}_2$) across the carbon-carbon double bonds of unsaturated vegetable oils in the presence of a nickel catalyst to convert them into saturated solid fats (banaspati ghee)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Catalytic hydrogenation adds hydrogen ($\\text{H}_2$) across the carbon-carbon double bonds of unsaturated vegetable oils in the presence of a nickel catalyst to convert them into saturated solid fats (banaspati ghee)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Catalytic hydrogenation adds hydrogen ($\\text{H}_2$) across the carbon-carbon double bonds of unsaturated vegetable oils in the presence of a nickel catalyst to convert them into saturated solid fats (banaspati ghee)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: Catalytic hydrogenation adds hydrogen ($\\text{H}_2$) across the carbon-carbon double bonds of unsaturated vegetable oils in the presence of a nickel catalyst to convert them into saturated solid fats (banaspati ghee)."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 26,
+    "stem": "The MOST effective method to remove permanent hardness from water is",
+    "questionText": "The MOST effective method to remove permanent hardness from water is",
+    "options": {
+      "A": "boiling.",
+      "B": "distillation.",
+      "C": "Clark's method.",
+      "D": "ion exchange resin method."
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "15.3.2",
+    "current_slo": "15.3.2",
+    "cognitiveLevel": "Knowledge",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "explanation": "Passing permanently hard water through a sodium zeolite (ion-exchange resin) column exchanges $\\text{Ca}^{2+}$ and $\\text{Mg}^{2+}$ ions for $\\text{Na}^+$ ions, effectively removing permanent hardness on a large scale.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Passing permanently hard water through a sodium zeolite (ion-exchange resin) column exchanges $\\text{Ca}^{2+}$ and $\\text{Mg}^{2+}$ ions for $\\text{Na}^+$ ions, effectively removing permanent hardness on a large scale."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Passing permanently hard water through a sodium zeolite (ion-exchange resin) column exchanges $\\text{Ca}^{2+}$ and $\\text{Mg}^{2+}$ ions for $\\text{Na}^+$ ions, effectively removing permanent hardness on a large scale."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Passing permanently hard water through a sodium zeolite (ion-exchange resin) column exchanges $\\text{Ca}^{2+}$ and $\\text{Mg}^{2+}$ ions for $\\text{Na}^+$ ions, effectively removing permanent hardness on a large scale."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: Passing permanently hard water through a sodium zeolite (ion-exchange resin) column exchanges $\\text{Ca}^{2+}$ and $\\text{Mg}^{2+}$ ions for $\\text{Na}^+$ ions, effectively removing permanent hardness on a large scale."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 27,
+    "stem": "How many hydrogen bonds are present in a molecule of water?",
+    "questionText": "How many hydrogen bonds are present in a molecule of water?",
+    "options": {
+      "A": "One",
+      "B": "Two",
+      "C": "Three",
+      "D": "Four"
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "15.1.1",
+    "current_slo": "15.1.1",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "explanation": "Each water ($\\text{H}_2\\text{O}$) molecule can form up to four hydrogen bonds in a tetrahedral arrangement (two via its two partially positive hydrogen atoms and two via the two lone pairs on its oxygen atom).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Each water ($\\text{H}_2\\text{O}$) molecule can form up to four hydrogen bonds in a tetrahedral arrangement (two via its two partially positive hydrogen atoms and two via the two lone pairs on its oxygen atom)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Each water ($\\text{H}_2\\text{O}$) molecule can form up to four hydrogen bonds in a tetrahedral arrangement (two via its two partially positive hydrogen atoms and two via the two lone pairs on its oxygen atom)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Each water ($\\text{H}_2\\text{O}$) molecule can form up to four hydrogen bonds in a tetrahedral arrangement (two via its two partially positive hydrogen atoms and two via the two lone pairs on its oxygen atom)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: Each water ($\\text{H}_2\\text{O}$) molecule can form up to four hydrogen bonds in a tetrahedral arrangement (two via its two partially positive hydrogen atoms and two via the two lone pairs on its oxygen atom)."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 28,
+    "stem": "Which of the following water borne diseases damages bones and teeth?",
+    "questionText": "Which of the following water borne diseases damages bones and teeth?",
+    "options": {
+      "A": "Cholera",
+      "B": "Typhoid",
+      "C": "Fluorosis",
+      "D": "Hepatitis"
+    },
+    "correctOption": "C",
+    "correctAnswer": "C",
+    "slo": "15.5.1",
+    "current_slo": "15.5.1",
+    "cognitiveLevel": "Knowledge",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "explanation": "Fluorosis is caused by excess fluoride ions in drinking water and leads to mottling/decay of teeth (dental fluorosis) and weakening/deformity of bones (skeletal fluorosis).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Fluorosis is caused by excess fluoride ions in drinking water and leads to mottling/decay of teeth (dental fluorosis) and weakening/deformity of bones (skeletal fluorosis)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Fluorosis is caused by excess fluoride ions in drinking water and leads to mottling/decay of teeth (dental fluorosis) and weakening/deformity of bones (skeletal fluorosis)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct: Fluorosis is caused by excess fluoride ions in drinking water and leads to mottling/decay of teeth (dental fluorosis) and weakening/deformity of bones (skeletal fluorosis)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is C. Fluorosis is caused by excess fluoride ions in drinking water and leads to mottling/decay of teeth (dental fluorosis) and weakening/deformity of bones (skeletal fluorosis)."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 29,
+    "stem": "Calcium ions present in a sample of permanent hard water can be removed by reacting the sample with",
+    "questionText": "Calcium ions present in a sample of permanent hard water can be removed by reacting the sample with",
+    "options": {
+      "A": "calcium zeolite.",
+      "B": "sodium carbonate.",
+      "C": "calcium carbonate.",
+      "D": "magnesium zeolite."
+    },
+    "correctOption": "B",
+    "correctAnswer": "B",
+    "slo": "15.3.2",
+    "current_slo": "15.3.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "explanation": "Adding washing soda (sodium carbonate, $\\text{Na}_2\\text{CO}_3$) precipitates soluble $\\text{Ca}^{2+}$ ions as insoluble calcium carbonate ($\\text{CaCO}_3$): $\\text{CaSO}_4 + \\text{Na}_2\\text{CO}_3 \\rightarrow \\text{CaCO}_{3(s)} + \\text{Na}_2\\text{SO}_4$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Adding washing soda (sodium carbonate, $\\text{Na}_2\\text{CO}_3$) precipitates soluble $\\text{Ca}^{2+}$ ions as insoluble calcium carbonate ($\\text{CaCO}_3$): $\\text{CaSO}_4 + \\text{Na}_2\\text{CO}_3 \\rightarrow \\text{CaCO}_{3(s)} + \\text{Na}_2\\text{SO}_4$."
+      },
+      {
+        "key": "B",
+        "reason": "Correct: Adding washing soda (sodium carbonate, $\\text{Na}_2\\text{CO}_3$) precipitates soluble $\\text{Ca}^{2+}$ ions as insoluble calcium carbonate ($\\text{CaCO}_3$): $\\text{CaSO}_4 + \\text{Na}_2\\text{CO}_3 \\rightarrow \\text{CaCO}_{3(s)} + \\text{Na}_2\\text{SO}_4$."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Adding washing soda (sodium carbonate, $\\text{Na}_2\\text{CO}_3$) precipitates soluble $\\text{Ca}^{2+}$ ions as insoluble calcium carbonate ($\\text{CaCO}_3$): $\\text{CaSO}_4 + \\text{Na}_2\\text{CO}_3 \\rightarrow \\text{CaCO}_{3(s)} + \\text{Na}_2\\text{SO}_4$."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Adding washing soda (sodium carbonate, $\\text{Na}_2\\text{CO}_3$) precipitates soluble $\\text{Ca}^{2+}$ ions as insoluble calcium carbonate ($\\text{CaCO}_3$): $\\text{CaSO}_4 + \\text{Na}_2\\text{CO}_3 \\rightarrow \\text{CaCO}_{3(s)} + \\text{Na}_2\\text{SO}_4$."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 30,
+    "stem": "A raw water treatment process is unable to remove",
+    "questionText": "A raw water treatment process is unable to remove",
+    "options": {
+      "A": "microorganisms.",
+      "B": "foul smelling gases.",
+      "C": "low density particles.",
+      "D": "calcium and magnesium ions."
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "15.4.3",
+    "current_slo": "15.4.3",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "explanation": "Standard municipal raw water treatment (coagulation, sedimentation, filtration, aeration, and chlorination) removes suspended particles, foul gases, and pathogens, but does not remove dissolved $\\text{Ca}^{2+}$ and $\\text{Mg}^{2+}$ ions responsible for water hardness.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Standard municipal raw water treatment (coagulation, sedimentation, filtration, aeration, and chlorination) removes suspended particles, foul gases, and pathogens, but does not remove dissolved $\\text{Ca}^{2+}$ and $\\text{Mg}^{2+}$ ions responsible for water hardness."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Standard municipal raw water treatment (coagulation, sedimentation, filtration, aeration, and chlorination) removes suspended particles, foul gases, and pathogens, but does not remove dissolved $\\text{Ca}^{2+}$ and $\\text{Mg}^{2+}$ ions responsible for water hardness."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Standard municipal raw water treatment (coagulation, sedimentation, filtration, aeration, and chlorination) removes suspended particles, foul gases, and pathogens, but does not remove dissolved $\\text{Ca}^{2+}$ and $\\text{Mg}^{2+}$ ions responsible for water hardness."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: Standard municipal raw water treatment (coagulation, sedimentation, filtration, aeration, and chlorination) removes suspended particles, foul gases, and pathogens, but does not remove dissolved $\\text{Ca}^{2+}$ and $\\text{Mg}^{2+}$ ions responsible for water hardness."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 31,
+    "stem": "The incomplete combustion of petrol in car engines produces",
+    "questionText": "The incomplete combustion of petrol in car engines produces",
+    "options": {
+      "A": "carbon dioxide.",
+      "B": "nitrogen dioxide.",
+      "C": "carbon monoxide.",
+      "D": "nitrogen monoxide."
+    },
+    "correctOption": "C",
+    "correctAnswer": "C",
+    "slo": "14.3.2",
+    "current_slo": "14.3.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "explanation": "When hydrocarbon fuels burn in a limited supply of oxygen inside an internal combustion engine, incomplete combustion produces toxic carbon monoxide ($\\text{CO}$) gas.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is C. When hydrocarbon fuels burn in a limited supply of oxygen inside an internal combustion engine, incomplete combustion produces toxic carbon monoxide ($\\text{CO}$) gas."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is C. When hydrocarbon fuels burn in a limited supply of oxygen inside an internal combustion engine, incomplete combustion produces toxic carbon monoxide ($\\text{CO}$) gas."
+      },
+      {
+        "key": "C",
+        "reason": "Correct: When hydrocarbon fuels burn in a limited supply of oxygen inside an internal combustion engine, incomplete combustion produces toxic carbon monoxide ($\\text{CO}$) gas."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is C. When hydrocarbon fuels burn in a limited supply of oxygen inside an internal combustion engine, incomplete combustion produces toxic carbon monoxide ($\\text{CO}$) gas."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 32,
+    "stem": "The emission of greenhouse gases is increased by",
+    "questionText": "The emission of greenhouse gases is increased by",
+    "options": {
+      "A": "acid rain.",
+      "B": "deforestation.",
+      "C": "eutrophication.",
+      "D": "global warming."
+    },
+    "correctOption": "B",
+    "correctAnswer": "B",
+    "slo": "14.6.2 14.6.1",
+    "current_slo": "14.6.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "explanation": "Deforestation reduces the number of trees that absorb atmospheric $\\text{CO}_2$ via photosynthesis and releases stored carbon when forests are cleared or burned, increasing greenhouse gas concentrations.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Deforestation reduces the number of trees that absorb atmospheric $\\text{CO}_2$ via photosynthesis and releases stored carbon when forests are cleared or burned, increasing greenhouse gas concentrations."
+      },
+      {
+        "key": "B",
+        "reason": "Correct: Deforestation reduces the number of trees that absorb atmospheric $\\text{CO}_2$ via photosynthesis and releases stored carbon when forests are cleared or burned, increasing greenhouse gas concentrations."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Deforestation reduces the number of trees that absorb atmospheric $\\text{CO}_2$ via photosynthesis and releases stored carbon when forests are cleared or burned, increasing greenhouse gas concentrations."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is B. Deforestation reduces the number of trees that absorb atmospheric $\\text{CO}_2$ via photosynthesis and releases stored carbon when forests are cleared or burned, increasing greenhouse gas concentrations."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 33,
+    "stem": "Based on the critical pH level of water, the organism that can survive in acid rain is",
+    "questionText": "Based on the critical pH level of water, the organism that can survive in acid rain is",
+    "options": {
+      "A": "Clams (Critical pH 6)",
+      "B": "Crayfish (Critical pH 5.5)",
+      "C": "Trout (Critical pH 5)",
+      "D": "Frog (Critical pH 4)"
+    },
+    "correctOption": "D",
+    "correctAnswer": "D",
+    "slo": "14.4.1",
+    "current_slo": "14.4.1",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "explanation": "Acid rain has a pH below 5.6 (typically around 4.0–5.0). Since frogs can tolerate water down to a critical pH of 4, they are able to survive in acid-rain-affected water where clams, crayfish, and trout perish.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Acid rain has a pH below 5.6 (typically around 4.0–5.0). Since frogs can tolerate water down to a critical pH of 4, they are able to survive in acid-rain-affected water where clams, crayfish, and trout perish."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Acid rain has a pH below 5.6 (typically around 4.0–5.0). Since frogs can tolerate water down to a critical pH of 4, they are able to survive in acid-rain-affected water where clams, crayfish, and trout perish."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is D. Acid rain has a pH below 5.6 (typically around 4.0–5.0). Since frogs can tolerate water down to a critical pH of 4, they are able to survive in acid-rain-affected water where clams, crayfish, and trout perish."
+      },
+      {
+        "key": "D",
+        "reason": "Correct: Acid rain has a pH below 5.6 (typically around 4.0–5.0). Since frogs can tolerate water down to a critical pH of 4, they are able to survive in acid-rain-affected water where clams, crayfish, and trout perish."
+      }
+    ],
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2023-P1/q33.png"
+  },
+  {
+    "questionNumber": 34,
+    "stem": "Consider the following features of a layer in Earth's atmosphere.\n\n• Coldest temperature reaches up to $-90^\\circ\\text{C}$\n• Air crafts cannot reach to its height\n• Glowing meteoroids are formed here\n• Satellite is unable to measure its traits\n\nBased on the given features, the layer of atmosphere identified is",
+    "questionText": "Consider the following features of a layer in Earth's atmosphere.\n\n• Coldest temperature reaches up to $-90^\\circ\\text{C}$\n• Air crafts cannot reach to its height\n• Glowing meteoroids are formed here\n• Satellite is unable to measure its traits\n\nBased on the given features, the layer of atmosphere identified is",
+    "options": {
+      "A": "exosphere.",
+      "B": "ionosphere.",
+      "C": "mesosphere.",
+      "D": "thermosphere."
+    },
+    "correctOption": "C",
+    "correctAnswer": "C",
+    "slo": "14.2.2",
+    "current_slo": "14.2.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "explanation": "The mesosphere ($50\\text{–}85\\text{ km}$ altitude) is the coldest atmospheric layer (reaching about $-90^\\circ\\text{C}$), lies above aircraft ceilings and below orbital satellite altitudes, and is where meteors burn up upon entry.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is C. The mesosphere ($50\\text{–}85\\text{ km}$ altitude) is the coldest atmospheric layer (reaching about $-90^\\circ\\text{C}$), lies above aircraft ceilings and below orbital satellite altitudes, and is where meteors burn up upon entry."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is C. The mesosphere ($50\\text{–}85\\text{ km}$ altitude) is the coldest atmospheric layer (reaching about $-90^\\circ\\text{C}$), lies above aircraft ceilings and below orbital satellite altitudes, and is where meteors burn up upon entry."
+      },
+      {
+        "key": "C",
+        "reason": "Correct: The mesosphere ($50\\text{–}85\\text{ km}$ altitude) is the coldest atmospheric layer (reaching about $-90^\\circ\\text{C}$), lies above aircraft ceilings and below orbital satellite altitudes, and is where meteors burn up upon entry."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is C. The mesosphere ($50\\text{–}85\\text{ km}$ altitude) is the coldest atmospheric layer (reaching about $-90^\\circ\\text{C}$), lies above aircraft ceilings and below orbital satellite altitudes, and is where meteors burn up upon entry."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 35,
+    "stem": "Which of the following environmental spheres is considered to be the sum of all the ecosystems?",
+    "questionText": "Which of the following environmental spheres is considered to be the sum of all the ecosystems?",
+    "options": {
+      "A": "Biosphere",
+      "B": "Lithosphere",
+      "C": "Atmosphere",
+      "D": "Hydrosphere"
+    },
+    "correctOption": "A",
+    "correctAnswer": "A",
+    "slo": "14.1.2",
+    "current_slo": "14.1.2",
+    "cognitiveLevel": "Knowledge",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "explanation": "The biosphere encompasses all living organisms and the regions of the lithosphere, hydrosphere, and atmosphere they inhabit, representing the global sum of all ecosystems.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct: The biosphere encompasses all living organisms and the regions of the lithosphere, hydrosphere, and atmosphere they inhabit, representing the global sum of all ecosystems."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is A. The biosphere encompasses all living organisms and the regions of the lithosphere, hydrosphere, and atmosphere they inhabit, representing the global sum of all ecosystems."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is A. The biosphere encompasses all living organisms and the regions of the lithosphere, hydrosphere, and atmosphere they inhabit, representing the global sum of all ecosystems."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is A. The biosphere encompasses all living organisms and the regions of the lithosphere, hydrosphere, and atmosphere they inhabit, representing the global sum of all ecosystems."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 36,
+    "stem": "During the extraction of copper, one of the reactions that takes place in Bessemer converter is given below.\n\n$$\\text{cuprous oxide} + \\text{cuprous sulphide} \\rightarrow \\text{copper} + \\mathbf{X}$$\n\nThe gas $\\mathbf{X}$ produced in the given reaction is",
+    "questionText": "During the extraction of copper, one of the reactions that takes place in Bessemer converter is given below.\n\n$$\\text{cuprous oxide} + \\text{cuprous sulphide} \\rightarrow \\text{copper} + \\mathbf{X}$$\n\nThe gas $\\mathbf{X}$ produced in the given reaction is",
+    "options": {
+      "A": "oxygen.",
+      "B": "hydrogen.",
+      "C": "sulphur dioxide.",
+      "D": "hydrogen sulphide."
+    },
+    "correctOption": "C",
+    "correctAnswer": "C",
+    "slo": "16.2.3",
+    "current_slo": "16.2.3",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "explanation": "In the auto-reduction step inside the Bessemer converter, cuprous oxide reacts with cuprous sulphide to form blister copper and sulphur dioxide gas: $2\\text{Cu}_2\\text{O} + \\text{Cu}_2\\text{S} \\rightarrow 6\\text{Cu} + \\text{SO}_{2(g)}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is C. In the auto-reduction step inside the Bessemer converter, cuprous oxide reacts with cuprous sulphide to form blister copper and sulphur dioxide gas: $2\\text{Cu}_2\\text{O} + \\text{Cu}_2\\text{S} \\rightarrow 6\\text{Cu} + \\text{SO}_{2(g)}$."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is C. In the auto-reduction step inside the Bessemer converter, cuprous oxide reacts with cuprous sulphide to form blister copper and sulphur dioxide gas: $2\\text{Cu}_2\\text{O} + \\text{Cu}_2\\text{S} \\rightarrow 6\\text{Cu} + \\text{SO}_{2(g)}$."
+      },
+      {
+        "key": "C",
+        "reason": "Correct: In the auto-reduction step inside the Bessemer converter, cuprous oxide reacts with cuprous sulphide to form blister copper and sulphur dioxide gas: $2\\text{Cu}_2\\text{O} + \\text{Cu}_2\\text{S} \\rightarrow 6\\text{Cu} + \\text{SO}_{2(g)}$."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is C. In the auto-reduction step inside the Bessemer converter, cuprous oxide reacts with cuprous sulphide to form blister copper and sulphur dioxide gas: $2\\text{Cu}_2\\text{O} + \\text{Cu}_2\\text{S} \\rightarrow 6\\text{Cu} + \\text{SO}_{2(g)}$."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 37,
+    "stem": "During the manufacturing of nitric acid by Ostwald process, the oxidation of nitric oxide results in the formation of",
+    "questionText": "During the manufacturing of nitric acid by Ostwald process, the oxidation of nitric oxide results in the formation of",
+    "options": {
+      "A": "$\\text{NO}$",
+      "B": "$\\text{NO}_2$",
+      "C": "$\\text{N}_2\\text{O}$",
+      "D": "$\\text{N}_2\\text{O}_3$"
+    },
+    "correctOption": "B",
+    "correctAnswer": "B",
+    "slo": "16.3.2",
+    "current_slo": "16.3.2",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "explanation": "In the second step of the Ostwald process, nitric oxide ($\\text{NO}$) is oxidised by oxygen to form nitrogen dioxide ($\\text{NO}_2$): $2\\text{NO}_{(g)} + \\text{O}_{2(g)} \\rightarrow 2\\text{NO}_{2(g)}$.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is B. In the second step of the Ostwald process, nitric oxide ($\\text{NO}$) is oxidised by oxygen to form nitrogen dioxide ($\\text{NO}_2$): $2\\text{NO}_{(g)} + \\text{O}_{2(g)} \\rightarrow 2\\text{NO}_{2(g)}$."
+      },
+      {
+        "key": "B",
+        "reason": "Correct: In the second step of the Ostwald process, nitric oxide ($\\text{NO}$) is oxidised by oxygen to form nitrogen dioxide ($\\text{NO}_2$): $2\\text{NO}_{(g)} + \\text{O}_{2(g)} \\rightarrow 2\\text{NO}_{2(g)}$."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is B. In the second step of the Ostwald process, nitric oxide ($\\text{NO}$) is oxidised by oxygen to form nitrogen dioxide ($\\text{NO}_2$): $2\\text{NO}_{(g)} + \\text{O}_{2(g)} \\rightarrow 2\\text{NO}_{2(g)}$."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is B. In the second step of the Ostwald process, nitric oxide ($\\text{NO}$) is oxidised by oxygen to form nitrogen dioxide ($\\text{NO}_2$): $2\\text{NO}_{(g)} + \\text{O}_{2(g)} \\rightarrow 2\\text{NO}_{2(g)}$."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 38,
+    "stem": "The chemicals that provide nourishment to plants for a healthy growth are known as",
+    "questionText": "The chemicals that provide nourishment to plants for a healthy growth are known as",
+    "options": {
+      "A": "fertilisers.",
+      "B": "herbicides.",
+      "C": "neutralisers.",
+      "D": "insecticides."
+    },
+    "correctOption": "A",
+    "correctAnswer": "A",
+    "slo": "16.5.4",
+    "current_slo": "16.5.4",
+    "cognitiveLevel": "Knowledge",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "explanation": "Fertilisers are natural or synthetic chemical substances added to soil to supply essential plant nutrients (such as nitrogen, phosphorus, and potassium) for healthy plant growth.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct: Fertilisers are natural or synthetic chemical substances added to soil to supply essential plant nutrients (such as nitrogen, phosphorus, and potassium) for healthy plant growth."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is A. Fertilisers are natural or synthetic chemical substances added to soil to supply essential plant nutrients (such as nitrogen, phosphorus, and potassium) for healthy plant growth."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is A. Fertilisers are natural or synthetic chemical substances added to soil to supply essential plant nutrients (such as nitrogen, phosphorus, and potassium) for healthy plant growth."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is A. Fertilisers are natural or synthetic chemical substances added to soil to supply essential plant nutrients (such as nitrogen, phosphorus, and potassium) for healthy plant growth."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 39,
+    "stem": "In Solvay's process, ammonium bicarbonate reacts with sodium chloride to form",
+    "questionText": "In Solvay's process, ammonium bicarbonate reacts with sodium chloride to form",
+    "options": {
+      "A": "sodium bicarbonate, ammonia and chlorine.",
+      "B": "sodium bicarbonate and ammonium chloride.",
+      "C": "sodium carbonate, ammonia and hydrogen chloride.",
+      "D": "sodium carbonate, carbon dioxide and ammonium chloride."
+    },
+    "correctOption": "B",
+    "correctAnswer": "B",
+    "slo": "16.4.1",
+    "current_slo": "16.4.1",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "explanation": "In the carbonation tower of Solvay's process, ammonium bicarbonate reacts with cold concentrated brine ($\\text{NaCl}$) via double displacement to precipitate sodium bicarbonate ($\\text{NaHCO}_3$) and leave ammonium chloride ($\\text{NH}_4\\text{Cl}$) in solution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The verified AKU-EB answer is B. In the carbonation tower of Solvay's process, ammonium bicarbonate reacts with cold concentrated brine ($\\text{NaCl}$) via double displacement to precipitate sodium bicarbonate ($\\text{NaHCO}_3$) and leave ammonium chloride ($\\text{NH}_4\\text{Cl}$) in solution."
+      },
+      {
+        "key": "B",
+        "reason": "Correct: In the carbonation tower of Solvay's process, ammonium bicarbonate reacts with cold concentrated brine ($\\text{NaCl}$) via double displacement to precipitate sodium bicarbonate ($\\text{NaHCO}_3$) and leave ammonium chloride ($\\text{NH}_4\\text{Cl}$) in solution."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is B. In the carbonation tower of Solvay's process, ammonium bicarbonate reacts with cold concentrated brine ($\\text{NaCl}$) via double displacement to precipitate sodium bicarbonate ($\\text{NaHCO}_3$) and leave ammonium chloride ($\\text{NH}_4\\text{Cl}$) in solution."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is B. In the carbonation tower of Solvay's process, ammonium bicarbonate reacts with cold concentrated brine ($\\text{NaCl}$) via double displacement to precipitate sodium bicarbonate ($\\text{NaHCO}_3$) and leave ammonium chloride ($\\text{NH}_4\\text{Cl}$) in solution."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  },
+  {
+    "questionNumber": 40,
+    "stem": "During the extraction of iron in a blast furnace, the haematite ore is",
+    "questionText": "During the extraction of iron in a blast furnace, the haematite ore is",
+    "options": {
+      "A": "reduced.",
+      "B": "oxidised.",
+      "C": "hydrated.",
+      "D": "neutralised."
+    },
+    "correctOption": "A",
+    "correctAnswer": "A",
+    "slo": "16.2.1",
+    "current_slo": "16.2.1",
+    "cognitiveLevel": "Understanding",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "explanation": "In the blast furnace, iron(III) oxide in haematite ($\\text{Fe}_2\\text{O}_3$) loses oxygen upon reacting with carbon monoxide ($\\text{Fe}_2\\text{O}_3 + 3\\text{CO} \\rightarrow 2\\text{Fe} + 3\\text{CO}_2$), so it is reduced to metallic iron.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct: In the blast furnace, iron(III) oxide in haematite ($\\text{Fe}_2\\text{O}_3$) loses oxygen upon reacting with carbon monoxide ($\\text{Fe}_2\\text{O}_3 + 3\\text{CO} \\rightarrow 2\\text{Fe} + 3\\text{CO}_2$), so it is reduced to metallic iron."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The verified AKU-EB answer is A. In the blast furnace, iron(III) oxide in haematite ($\\text{Fe}_2\\text{O}_3$) loses oxygen upon reacting with carbon monoxide ($\\text{Fe}_2\\text{O}_3 + 3\\text{CO} \\rightarrow 2\\text{Fe} + 3\\text{CO}_2$), so it is reduced to metallic iron."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The verified AKU-EB answer is A. In the blast furnace, iron(III) oxide in haematite ($\\text{Fe}_2\\text{O}_3$) loses oxygen upon reacting with carbon monoxide ($\\text{Fe}_2\\text{O}_3 + 3\\text{CO} \\rightarrow 2\\text{Fe} + 3\\text{CO}_2$), so it is reduced to metallic iron."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The verified AKU-EB answer is A. In the blast furnace, iron(III) oxide in haematite ($\\text{Fe}_2\\text{O}_3$) loses oxygen upon reacting with carbon monoxide ($\\text{Fe}_2\\text{O}_3 + 3\\text{CO} \\rightarrow 2\\text{Fe} + 3\\text{CO}_2$), so it is reduced to metallic iron."
+      }
+    ],
+    "diagramBased": false,
+    "diagramUrl": null
+  }
+]

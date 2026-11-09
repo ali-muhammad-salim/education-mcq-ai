@@ -1,0 +1,849 @@
+[
+  {
+    "id": "mth-x-2018-p2-q1a",
+    "questionNumber": "1a",
+    "questionText": "Simplify completely $\\left(\\frac{1}{x-1} + \\frac{2}{x+1} - \\frac{3}{x}\\right) \\div \\frac{3-x}{x(x+1)}$.",
+    "marks": 5,
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 2,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.1.",
+    "choiceGroup": "Q1",
+    "modelAnswer": "**Step 1: Simplify the expression inside brackets:**\n$$\\text{LCM of } (x-1), (x+1), x \\text{ is } x(x-1)(x+1)$$\n$$\\frac{1}{x-1} + \\frac{2}{x+1} - \\frac{3}{x} = \\frac{x(x+1) + 2x(x-1) - 3(x-1)(x+1)}{x(x-1)(x+1)}$$\n$$= \\frac{(x^2 + x) + (2x^2 - 2x) - 3(x^2 - 1)}{x(x-1)(x+1)}$$\n$$= \\frac{3x^2 - x - 3x^2 + 3}{x(x-1)(x+1)} = \\frac{3 - x}{x(x-1)(x+1)}$$\n\n**Step 2: Perform the division:**\n$$\\frac{3-x}{x(x-1)(x+1)} \\div \\frac{3-x}{x(x+1)} = \\frac{3-x}{x(x-1)(x+1)} \\times \\frac{x(x+1)}{3-x}$$\n$$= \\frac{1}{x-1}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 1a.",
+    "originalSlo": "6.2.2",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "6.2.2",
+    "current_mapping": [
+      {
+        "code": "6.2.2",
+        "topic": "Algebraic Manipulation",
+        "description": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Operations on rational algebraic expressions: finding common denominator, expanding polynomials, and simplifying division of rational fractions.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q1a_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q1a_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q1a_weaker_2.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q1b",
+    "questionNumber": "1b",
+    "questionText": "If $x^4 + 2x^3 - 3x^2 - bx + 4$ is a perfect square, then find the value of $b$.",
+    "marks": 5,
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 2,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.1.",
+    "choiceGroup": "Q1",
+    "modelAnswer": "**Method: Division Method for Square Root:**\n1. First term of square root is $\\sqrt{x^4} = x^2$. Subtracting gives $2x^3 - 3x^2 - bx + 4$.\n2. Double the divisor: $2x^2$. Divide $2x^3$ by $2x^2$ to get $+x$. New divisor: $2x^2 + x$.\n   Multiply: $(2x^2 + x)(x) = 2x^3 + x^2$. Subtracting gives $-4x^2 - bx + 4$.\n3. Double the quotient terms: $2x^2 + 2x$. Divide $-4x^2$ by $2x^2$ to get $-2$. New divisor: $2x^2 + 2x - 2$.\n   Multiply: $(2x^2 + 2x - 2)(-2) = -4x^2 - 4x + 4$.\n   Subtracting: $(-4x^2 - bx + 4) - (-4x^2 - 4x + 4) = (4 - b)x$.\n\nFor the expression to be a perfect square, the remainder must be identically zero:\n$$(4 - b)x = 0 \\implies 4 - b = 0 \\implies b = 4$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 1b.",
+    "originalSlo": "6.3.1",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "6.3.1",
+    "current_mapping": [
+      {
+        "code": "6.3.1",
+        "topic": "Algebraic Manipulation",
+        "description": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Finding the condition/value of unknown constant for a polynomial of degree 4 to be a perfect square using algebraic division method.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q1b_better_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q1b_better_2.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q1b_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q1b_weaker_2.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q2a",
+    "questionNumber": "2a",
+    "questionText": "Convert $\\frac{x^2+1}{x^2+2x+1}$ into proper fraction.",
+    "marks": 2,
+    "cognitiveLevel": "Understanding",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 3,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "Since the degree of the numerator (2) equals the degree of the denominator (2), this is an improper fraction.\nPerforming polynomial long division:\n$$\\frac{x^2 + 1}{x^2 + 2x + 1} = \\frac{(x^2 + 2x + 1) - 2x}{x^2 + 2x + 1} = 1 - \\frac{2x}{x^2 + 2x + 1}$$\nHere, $1$ is the quotient and $-\\frac{2x}{x^2 + 2x + 1}$ is the proper rational fraction.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 2a.",
+    "originalSlo": "6.4.1",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "6.4.1",
+    "current_mapping": [
+      {
+        "code": "6.4.1",
+        "topic": "Algebraic Manipulation",
+        "description": "distinguish between proper and improper rational fractions;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Distinguishing and converting improper rational fractions into quotient and proper rational fractions.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "distinguish between proper and improper rational fractions;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q2a_better_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q2a_better_2.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q2a_weaker_1.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q2b",
+    "questionNumber": "2b",
+    "questionText": "Write correct form required to resolve $\\frac{x^2+1}{x^2+2x+1}$ into its partial fractions.",
+    "marks": 1,
+    "cognitiveLevel": "Knowledge",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 3,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "The denominator factors as $(x + 1)^2$.\nFrom part (a), the proper fraction form is $1 - \\frac{2x}{(x + 1)^2}$.\nResolving the linear repeated factor into partial fractions:\n$$\\frac{x^2+1}{(x+1)^2} = 1 + \\frac{A}{x+1} + \\frac{B}{(x+1)^2} \\quad \\text{or} \\quad 1 - \\left(\\frac{A}{x+1} + \\frac{B}{(x+1)^2}\\right)$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 2b.",
+    "originalSlo": "6.4.2",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "6.4.2",
+    "current_mapping": [
+      {
+        "code": "6.4.2",
+        "topic": "Algebraic Manipulation",
+        "description": "convert an algebraic fraction into partial fractions when its denominator consists of:\na. non-repeated linear factors,\nb. repeated linear factors;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Writing the standard partial fraction decomposition template for a rational fraction with repeated linear factors in the denominator.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "convert an algebraic fraction into partial fractions when its denominator consists of:\na. non-repeated linear factors,\nb. repeated linear factors;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q2b_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q2b_weaker_1.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q3a",
+    "questionNumber": "3a",
+    "questionText": "Find the solution set of the linear equation $\\left(2\\frac{1}{5}x - \\frac{7}{15}x + \\frac{x}{3}\\right) \\div \\left(-18\\frac{3}{5}\\right) = \\frac{2}{9}$.",
+    "marks": 5,
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 4,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.3.",
+    "choiceGroup": "Q3",
+    "modelAnswer": "**Step 1: Simplify the mixed numbers and expression inside brackets:**\n$$2\\frac{1}{5}x = \\frac{11}{5}x, \\quad -18\\frac{3}{5} = -\\frac{93}{5}$$\nFinding LCM of denominators 5, 15, 3 inside bracket: $\\text{LCM} = 15$.\n$$\\frac{11}{5}x - \\frac{7}{15}x + \\frac{1}{3}x = \\frac{3(11)x - 7x + 5x}{15} = \\frac{33x - 7x + 5x}{15} = \\frac{31x}{15}$$\n\n**Step 2: Solve the equation:**\n$$\\frac{31x}{15} \\div \\left(-\\frac{93}{5}\\right) = \\frac{2}{9}$$\n$$\\frac{31x}{15} \\times \\left(-\\frac{5}{93}\\right) = \\frac{2}{9}$$\nNote that $\\frac{31}{93} = \\frac{1}{3}$ and $\\frac{5}{15} = \\frac{1}{3}$.\n$$-\\frac{x}{3 \\times 3} = \\frac{2}{9} \\implies -\\frac{x}{9} = \\frac{2}{9} \\implies -x = 2 \\implies x = -2$$\n\n**Solution set:** $\\{-2\\}$.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 3a.",
+    "originalSlo": "7.1.2",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "7.1.2",
+    "current_mapping": [
+      {
+        "code": "7.1.2",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve linear equation with real coefficients;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Solving linear equation with fractional coefficients involving mixed numbers and arithmetic operations.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve linear equation with real coefficients;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q3a_better_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q3a_better_2.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q3a_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q3a_weaker_2.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q3b_i",
+    "questionNumber": "3b_i",
+    "questionText": "Find the value of $x$ for the equation $\\frac{5\\sqrt{x}}{2} - \\frac{7\\sqrt{x}}{3} = \\frac{7}{3}$. (Note: Verification is not required)",
+    "marks": 3,
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 4,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.3.",
+    "choiceGroup": "Q3",
+    "modelAnswer": "**Step 1: Combine like terms on LHS:**\nLCM of denominators 2 and 3 is 6.\n$$\\frac{3(5\\sqrt{x}) - 2(7\\sqrt{x})}{6} = \\frac{7}{3}$$\n$$\\frac{15\\sqrt{x} - 14\\sqrt{x}}{6} = \\frac{7}{3} \\implies \\frac{\\sqrt{x}}{6} = \\frac{7}{3}$$\n\n**Step 2: Solve for $x$:**\n$$\\sqrt{x} = \\frac{7}{3} \\times 6 = 14$$\nSquaring both sides:\n$$x = 14^2 = 196$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 3b_i.",
+    "originalSlo": "7.1.4",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "7.1.4",
+    "current_mapping": [
+      {
+        "code": "7.1.4",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve radical equations reducible to linear form;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Solving radical equation reducible to linear form with fractional coefficients.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve radical equations reducible to linear form;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q3b_i_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q3b_i_weaker_1.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q3b_ii",
+    "questionNumber": "3b_ii",
+    "questionText": "Find the solution set of $3 - x \\le 0$ in tabular form, where $x \\in W$.",
+    "marks": 2,
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 4,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.3.",
+    "choiceGroup": "Q3",
+    "modelAnswer": "$$3 - x \\le 0 \\implies 3 \\le x \\implies x \\ge 3$$\nSince $x \\in W = \\{0, 1, 2, 3, \\dots\\}$, the solution in tabular/roster form is:\n$$\\{3, 4, 5, 6, \\dots\\}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 3b_ii.",
+    "originalSlo": "7.3.2",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "7.3.2",
+    "current_mapping": [
+      {
+        "code": "7.3.2",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve linear inequalities with real coefficients in one variable and represent the solution on the number line;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Solving linear inequality in one variable and expressing solution set in tabular roster form over whole numbers.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve linear inequalities with real coefficients in one variable and represent the solution on the number line;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q3b_ii_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q3b_ii_weaker_1.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q4",
+    "questionNumber": "4",
+    "questionText": "Complete the following table for the equation $3x - 5y = 15$ and draw its graph on the given graph.\n\n$$\\begin{array}{|c|c|c|c|} \\hline x & 0 & & \\\\ \\hline y & & 0 & 3 \\\\ \\hline \\end{array}$$",
+    "marks": 4,
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2018-P2/q4.png",
+    "pageNumber": 5,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "**Step 1: Complete the table:**\n- For $x = 0$: $3(0) - 5y = 15 \\implies -5y = 15 \\implies y = -3$. Point: $(0, -3)$.\n- For $y = 0$: $3x - 5(0) = 15 \\implies 3x = 15 \\implies x = 5$. Point: $(5, 0)$.\n- For $y = 3$: $3x - 5(3) = 15 \\implies 3x - 15 = 15 \\implies 3x = 30 \\implies x = 10$. Point: $(10, 3)$.\n\nCompleted table:\n$$\\begin{array}{|c|c|c|c|} \\hline x & 0 & 5 & 10 \\\\ \\hline y & -3 & 0 & 3 \\\\ \\hline \\end{array}$$\n\n**Step 2: Plot the points:**\nPlot $(0, -3)$, $(5, 0)$, and $(10, 3)$ on the Cartesian plane and draw the straight line through them with arrows at both ends.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 4.",
+    "originalSlo": "9.4.1",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "9.4.1",
+    "current_mapping": [
+      {
+        "code": "9.4.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Table completion and graph plotting for a linear equation in two variables on Cartesian axes.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q4_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q4_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q4_weaker_2.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q5",
+    "questionNumber": "5",
+    "questionText": "Use quadratic formula to find the values of $x$ for $16x^2 + 28x = 4$.",
+    "marks": 4,
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 6,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "**Step 1: Write in standard form:**\n$$16x^2 + 28x - 4 = 0$$\nDividing by 4:\n$$4x^2 + 7x - 1 = 0$$\nHere, $a = 4$, $b = 7$, $c = -1$. (Or using $a=16, b=28, c=-4$).\n\n**Step 2: Apply Quadratic Formula:**\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} = \\frac{-7 \\pm \\sqrt{7^2 - 4(4)(-1)}}{2(4)}$$\n$$x = \\frac{-7 \\pm \\sqrt{49 + 16}}{8} = \\frac{-7 \\pm \\sqrt{65}}{8}$$\n\n**Solution set:** $\\left\\{\\frac{-7 + \\sqrt{65}}{8}, \\frac{-7 - \\sqrt{65}}{8}\\right\\}$.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 5.",
+    "originalSlo": "15.2.1",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "15.2.1",
+    "current_mapping": [
+      {
+        "code": "15.2.1",
+        "topic": "Quadratic Equations",
+        "description": "solve a quadratic equation in one variable by:\na. factorisation method,\nb. completing square method,\nc. using quadratic formula;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Solving quadratic equation using quadratic formula and simplifying surd solution.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 15,
+    "sloText": "solve a quadratic equation in one variable by:\na. factorisation method,\nb. completing square method,\nc. using quadratic formula;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q5_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q5_weaker_1.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q6a",
+    "questionNumber": "6a",
+    "questionText": "Prove that the points $A(0, 0)$, $B(3, 4)$ and $C(6, 8)$ are collinear points.",
+    "marks": 3,
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 7,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.6.",
+    "choiceGroup": "Q6",
+    "modelAnswer": "**Method 1: Distance Formula:**\n$$AB = \\sqrt{(3-0)^2 + (4-0)^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$$\n$$BC = \\sqrt{(6-3)^2 + (8-4)^2} = \\sqrt{3^2 + 4^2} = \\sqrt{25} = 5$$\n$$AC = \\sqrt{(6-0)^2 + (8-0)^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$$\nSince $AB + BC = 5 + 5 = 10 = AC$, point $B$ lies on the line segment $AC$. Therefore, points $A, B, C$ are collinear.\n\n**Method 2: Slope comparison:**\n$$\\text{Slope of } AB = \\frac{4-0}{3-0} = \\frac{4}{3}, \\quad \\text{Slope of } BC = \\frac{8-4}{6-3} = \\frac{4}{3}$$\nSince slope of $AB$ = slope of $BC$ and they share a common point $B$, points $A, B, C$ are collinear.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 6a.",
+    "originalSlo": "9.1.3",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "9.1.3",
+    "current_mapping": [
+      {
+        "code": "9.1.3",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "determine the distance between two given points;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Proving collinearity of three given points in the Cartesian plane using distance formula or slopes.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "determine the distance between two given points;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q6a_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q6a_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q6a_weaker_2.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q6b",
+    "questionNumber": "6b",
+    "questionText": "In the given diagram, two circles I and II have same radii. $B$ is the centre of circle I and $C$ is the centre of circle II. If the coordinates of $A$ are $(3, 6)$ and $B$ are $(3, 8)$, then find coordinates of the centre of circle II.",
+    "marks": 3,
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2018-P2/q6b.png",
+    "pageNumber": 7,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.6.",
+    "choiceGroup": "Q6",
+    "modelAnswer": "**Step 1: Identify geometric relationship from diagram:**\nPoint $B(3, 8)$ is the midpoint between $A(3, 6)$ and the centre $C(x, y)$ of circle II.\n\n**Step 2: Apply midpoint formula to find coordinates of $C$:**\n$$\\left(\\frac{x_A + x_C}{2}, \\frac{y_A + y_C}{2}\\right) = (3, 8)$$\n$$\\frac{3 + x_C}{2} = 3 \\implies 3 + x_C = 6 \\implies x_C = 3$$\n$$\\frac{6 + y_C}{2} = 8 \\implies 6 + y_C = 16 \\implies y_C = 10$$\n\n**Answer:** Centre of circle II is $C=(3,10)$.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 6b.",
+    "originalSlo": "9.2.1",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "9.2.1",
+    "current_mapping": [
+      {
+        "code": "9.2.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "calculate the midpoint of a line segment;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Applying coordinate geometry and midpoint/distance concepts to concentric or touching circles.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "calculate the midpoint of a line segment;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q6b_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q6b_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q6b_weaker_2.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q7a",
+    "questionNumber": "7a",
+    "questionText": "Prove that $\\frac{(1 + \\sin\\theta)(1 - \\sin\\theta)}{\\cos^4 \\theta} = 1 + \\tan^2 \\theta$.",
+    "marks": 4,
+    "cognitiveLevel": "Application",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 8,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.7.",
+    "choiceGroup": "Q7",
+    "modelAnswer": "**Proof:**\n$$\\text{LHS} = \\frac{(1 + \\sin\\theta)(1 - \\sin\\theta)}{\\cos^4 \\theta}$$\nUsing identity $(a+b)(a-b) = a^2 - b^2$:\n$$= \\frac{1 - \\sin^2 \\theta}{\\cos^4 \\theta}$$\nUsing Pythagorean identity $1 - \\sin^2 \\theta = \\cos^2 \\theta$:\n$$= \\frac{\\cos^2 \\theta}{\\cos^4 \\theta} = \\frac{1}{\\cos^2 \\theta}$$\nSince $\\frac{1}{\\cos\\theta} = \\sec\\theta$ and $\\sec^2 \\theta = 1 + \\tan^2 \\theta$:\n$$= \\sec^2 \\theta = 1 + \\tan^2 \\theta = \\text{RHS}$$\nHence proved.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 7a.",
+    "originalSlo": "14.4.2",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "14.4.2",
+    "current_mapping": [
+      {
+        "code": "14.4.2",
+        "topic": "Introduction to Trigonometry",
+        "description": "prove different trigonometric relations using the trigonometric identities mentioned in SLO 14.4.1;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Proving trigonometric identity using difference of squares, fundamental Pythagorean identities, and reciprocal relations.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "prove different trigonometric relations using the trigonometric identities mentioned in SLO 14.4.1;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q7a_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q7a_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q7a_weaker_2.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q7b",
+    "questionNumber": "7b",
+    "questionText": "In the given diagram, find the length of $CD$.",
+    "marks": 4,
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2018-P2/q7b.png",
+    "pageNumber": 8,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.7.",
+    "choiceGroup": "Q7",
+    "modelAnswer": "In the given figure, $\\Delta ABD$ is a right-angled triangle at $B$, with perpendicular $AB = 5$ cm, $\\angle ACB = 60^\\circ$, and $\\angle ADB = 30^\\circ$.\n\n**Step 1: In right $\\Delta ABC$:**\n$$\\tan 60^\\circ = \\frac{AB}{BC} \\implies \\sqrt{3} = \\frac{5}{BC} \\implies BC = \\frac{5}{\\sqrt{3}} \\approx 2.89 \\text{ cm}$$\n\n**Step 2: In right $\\Delta ABD$:**\n$$\\tan 30^\\circ = \\frac{AB}{BD} \\implies \\frac{1}{\\sqrt{3}} = \\frac{5}{BD} \\implies BD = 5\\sqrt{3} \\approx 8.66 \\text{ cm}$$\n\n**Step 3: Calculate $CD$:**\n$$CD = BD - BC = 5\\sqrt{3} - \\frac{5}{\\sqrt{3}} = \\frac{15 - 5}{\\sqrt{3}} = \\frac{10}{\\sqrt{3}} \\approx 5.77 \\text{ cm}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 7b.",
+    "originalSlo": "14.5.2",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "14.5.2",
+    "current_mapping": [
+      {
+        "code": "14.5.2",
+        "topic": "Introduction to Trigonometry",
+        "description": "solve word problems involving angle of elevation and depression in a right-angled triangle."
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Solving multi-step geometric problem using trigonometric tangent ratios for $30^\\circ$ and $60^\\circ$ in right triangles.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "solve word problems involving angle of elevation and depression in a right-angled triangle.",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q7b_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q7b_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q7b_weaker_2.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q8a",
+    "questionNumber": "8a",
+    "questionText": "In the given diagram, find the length of $AD$.",
+    "marks": 4,
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2018-P2/q8a.png",
+    "pageNumber": 9,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.8.",
+    "choiceGroup": "Q8",
+    "modelAnswer": "In the given diagram, $\\Delta ABC$ is a right-angled triangle at $A$ (or $B$).\nGiven hypotenuse $BC = 8$ cm, side $AC = 4\\sqrt{3}$ cm, and $BD = 3$ cm.\n\n**Step 1: Find length of $AB$ in right $\\Delta ABC$:**\nBy Pythagorean theorem:\n$$AB^2 + AC^2 = BC^2 \\implies AB^2 + (4\\sqrt{3})^2 = 8^2$$\n$$AB^2 + 48 = 64 \\implies AB^2 = 16 \\implies AB = 4 \\text{ cm}$$\n\n**Step 2: Find length of $AD$ in right $\\Delta ABD$:**\nIn right $\\Delta ABD$, legs are $AB = 4$ cm and $BD = 3$ cm.\n$$AD = \\sqrt{AB^2 + BD^2} = \\sqrt{4^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5 \\text{ cm}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 8a.",
+    "originalSlo": "14.3.1",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Applying Pythagorean theorem sequentially in two adjacent right-angled triangles.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q8a_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q8a_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q8a_weaker_2.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q8b",
+    "questionNumber": "8b",
+    "questionText": "In the given diagram, $ABE$ and $CDE$ are two right angled triangles. Calculate the length of $CE$.",
+    "marks": 4,
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2018-P2/q8b.png",
+    "pageNumber": 10,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.8.",
+    "choiceGroup": "Q8",
+    "modelAnswer": "**Step 1: Find $BE$ in right $\\Delta ABE$:**\nHypotenuse $AE = 10$ cm, side $AB = 8$ cm.\nBy Pythagorean theorem:\n$$BE = \\sqrt{AE^2 - AB^2} = \\sqrt{10^2 - 8^2} = \\sqrt{100 - 64} = \\sqrt{36} = 6 \\text{ cm}$$\n\n**Step 2: Find $ED$:**\nThe total length of base $BD = 9$ cm.\n$$ED = BD - BE = 9 - 6 = 3 \\text{ cm}$$\n\n**Step 3: Find $CE$ in right $\\Delta CDE$:**\nGiven $CD = 3$ cm and $ED = 3$ cm.\n$$CE = \\sqrt{CD^2 + ED^2} = \\sqrt{3^2 + 3^2} = \\sqrt{9 + 9} = \\sqrt{18} = 3\\sqrt{2} \\approx 4.24 \\text{ cm}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 8b.",
+    "originalSlo": "14.3.1",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Applying Pythagorean theorem in connected right-angled triangles to compute segment lengths.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q8b_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q8b_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q8b_weaker_2.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q9",
+    "questionNumber": "9",
+    "questionText": "The given figure shows a circle having centre $O$. If $AC = BC$, then find $\\angle AOC$ and $\\angle AOB$. Also justify your answers.",
+    "marks": 4,
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2018-P2/q9.png",
+    "pageNumber": 11,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "**Justification & Calculation:**\n1. Since $AC = BC$, point $C$ is the midpoint of chord $AB$.\n   A line drawn from the centre of a circle to bisect a chord is perpendicular to the chord.\n   Therefore, $OC \\perp AB$, so $\\angle OCA = 90^\\circ$.\n\n2. In right-angled triangle $\\Delta OCA$:\n   The sum of angles in a triangle is $180^\\circ$.\n   Given $\\angle OAC = 60^\\circ$ and $\\angle OCA = 90^\\circ$:\n   $$\\angle AOC = 180^\\circ - (90^\\circ + 60^\\circ) = 30^\\circ$$\n\n3. By symmetry (or congruent triangles $\\Delta OCA \\cong \\Delta OCB$):\n   $$\\angle BOC = \\angle AOC = 30^\\circ$$\n   $$\\angle AOB = \\angle AOC + \\angle BOC = 30^\\circ + 30^\\circ = 60^\\circ$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 9.",
+    "originalSlo": "20.1.1",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "20.1.1",
+    "current_mapping": [
+      {
+        "code": "20.1.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. one and only one circle can pass through three non-collinear points,\nb. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre is perpendicular to the chord and vice versa,\nc. if two chords of a circle are congruent then they will be equidistant from the centre and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Applying circle theorem that a line drawn from centre to midpoint of a chord is perpendicular to it, and using angle properties of triangles.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. one and only one circle can pass through three non-collinear points,\nb. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre is perpendicular to the chord and vice versa,\nc. if two chords of a circle are congruent then they will be equidistant from the centre and vice versa;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q9_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q9_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q9_weaker_2.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q10",
+    "questionNumber": "10",
+    "questionText": "The given figure shows a circle having centre $O$. If $AB = CD$, then find\na. $\\angle AOB$ (1 Mark)\nb. $\\angle AOC$ (1 Mark)\nc. $\\angle OCD$ (1 Mark)\nd. $\\angle OBA$ (1 Mark)",
+    "marks": 4,
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2018-P2/q10.png",
+    "pageNumber": 12,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "Given: Circle with centre $O$, equal chords $AB = CD$, and central angle $\\angle COD = 120^\\circ$.\n\n**a. $\\angle AOB$:**\nEqual chords of a circle subtend equal angles at the centre.\nSince $AB = CD$, $\\angle AOB = \\angle COD = 120^\\circ$.\n\n**b. $\\angle AOC$:**\nPoints $A, B, D, C$ divide the full $360^\\circ$ around centre $O$. By symmetry, $\\angle AOC = \\angle BOD = \\frac{360^\\circ - (120^\\circ + 120^\\circ)}{2} = \\frac{120^\\circ}{2} = 60^\\circ$.\n\n**c. $\\angle OCD$:**\nIn $\\Delta OCD$, $OC = OD$ (radii of the same circle), making $\\Delta OCD$ an isosceles triangle.\n$$\\angle OCD = \\angle ODC = \\frac{180^\\circ - \\angle COD}{2} = \\frac{180^\\circ - 120^\\circ}{2} = \\frac{60^\\circ}{2} = 30^\\circ$$\n\n**d. $\\angle OBA$:**\nSimilarly, in $\\Delta OAB$, $OA = OB$ (radii of the circle).\n$$\\angle OBA = \\angle OAB = \\frac{180^\\circ - \\angle AOB}{2} = \\frac{180^\\circ - 120^\\circ}{2} = 30^\\circ$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 10.",
+    "originalSlo": "20.3.1",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "20.3.1",
+    "current_mapping": [
+      {
+        "code": "20.3.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Applying circle theorem that equal chords subtend equal angles at the centre, and finding base angles of isosceles triangles formed by radii.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q10_better_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q10_better_2.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q10_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q10_weaker_2.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q10_weaker_3.png"
+      ]
+    }
+  },
+  {
+    "id": "mth-x-2018-p2-q11",
+    "questionNumber": "11",
+    "questionText": "Draw a circle passing through the given three points in the given space. All necessary steps should be demonstrated.",
+    "marks": 5,
+    "cognitiveLevel": "Application",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2018-P2/q11.png",
+    "pageNumber": 13,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "**Steps of Construction:**\n1. Let the given three non-collinear points be labeled $P, Q,$ and $R$.\n2. Join $P$ to $Q$ and $Q$ to $R$ to form line segments $PQ$ and $QR$.\n3. Draw the perpendicular bisector of segment $PQ$ using compasses.\n4. Draw the perpendicular bisector of segment $QR$ using compasses.\n5. Mark the point of intersection of the two perpendicular bisectors as $O$. Point $O$ is the circumcentre.\n6. With centre $O$ and radius equal to $OP$ (which equals $OQ$ and $OR$), draw a circle.\n7. The circle passes through all three points $P, Q,$ and $R$.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2018 for Question 11.",
+    "originalSlo": "21.2.2",
+    "section": "CRQ",
+    "sourceSha256": "354ae18e2f5c55eb675bde1f0e30c813cd7c177e0437452c59f03732c351486e",
+    "current_slo": "21.2.2",
+    "current_mapping": [
+      {
+        "code": "21.2.2",
+        "topic": "Practical Geometry",
+        "description": "draw a circle passing through three given non-collinear points;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Geometric construction of circumscribing a circle through three given non-collinear points using perpendicular bisectors.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 21,
+    "sloText": "draw a circle passing through three given non-collinear points;",
+    "emarkingAnalysis": {
+      "betterResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q11_better_1.png"
+      ],
+      "weakerResponses": [
+        "/paper-crops/MTH-X-2018-EMARKING/q11_weaker_1.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q11_weaker_2.png",
+        "/paper-crops/MTH-X-2018-EMARKING/q11_weaker_3.png"
+      ]
+    }
+  }
+]

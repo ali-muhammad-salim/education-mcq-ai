@@ -13,6 +13,17 @@ describe('Literal source display',()=>{
       {kind:'text',text:'Header'},{kind:'table',headers:['Topic','URL'],rows:[['13. A | B','https://example.test/KDYs<br>Second line']]},{kind:'text',text:'Footer'},
     ]);
   });
+  it('renders continuation tables without inventing a printed header',()=>{
+    const html=renderToStaticMarkup(createElement(SourceDocumentText,{text:'|  |  |  |\n| --- | --- | --- |\n|  |  | https://example.test/page |'}));
+    expect(html).toContain('<table');expect(html).not.toContain('<thead>');expect(html).toContain('<td>');
+  });
+  it('makes printed and cross-page source links usable while preserving visible labels',()=>{
+    const html=renderToStaticMarkup(createElement(SourceDocumentText,{text:'Printed https://example.test/paper. Continued [v=FtaQSdrl7YA](https://www.youtube.com/watch?v=FtaQSdrl7YA)'}));
+    expect(html).toContain('href="https://example.test/paper"');
+    expect(html).toContain('href="https://www.youtube.com/watch?v=FtaQSdrl7YA"');
+    expect(html).toContain('>v=FtaQSdrl7YA</a>');
+    expect(html).toContain('</a>.');
+  });
   it('does not silently drop malformed tables or interpret fenced source code',()=>{
     for(const text of ['| A | B |\n| --- | --- |\n| wrong columns |','```\n| A | B |\n| --- | --- |\n| 1 | 2 |\n```','H₂ + O₂ → H₂O\nLiteral <script>alert(1)</script>'])expect(sourceBlocks(text)).toEqual([{kind:'text',text}]);
   });

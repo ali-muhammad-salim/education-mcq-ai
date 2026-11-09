@@ -1,0 +1,71 @@
+{
+  "title": "Secondary School Certificate Class X Model Examination Paper 2027 and Onwards \u2014 Chemistry Paper III (Practical)",
+  "paperCode": "CHM-X-P3",
+  "examYear": 2027,
+  "durationMinutes": 40,
+  "totalMarks": 10,
+  "fileUrl": "/materials/ssc/chemistry/ssc-2/chemistry-practical-model-paper-x.pdf",
+  "objective": "To demonstrate the methods of removing calcium ions from the given hard water samples A and B.",
+  "stages": [
+    {
+      "stage": "STAGE I",
+      "marks": 1,
+      "tasks": [
+        {
+          "taskNumber": "Task 1",
+          "marks": 1,
+          "prompt": "Set the apparatus and perform the experiment. Do not write the method. (Examiner\u2019s observation)",
+          "solution": "Student correctly takes hard water sample A in test tube 1, adds lime water Ca(OH)2 dropwise until precipitation occurs, filters off precipitate; takes sample B in test tube 2, adds Na2CO3 solution, observes precipitation, and filters."
+        }
+      ]
+    },
+    {
+      "stage": "STAGE II",
+      "marks": 2,
+      "tasks": [
+        {
+          "taskNumber": "Task 2",
+          "marks": 1,
+          "prompt": "Which substances are responsible for the permanent hardness of water?",
+          "solution": "Dissolved chlorides and sulphates of calcium and magnesium, such as CaCl2, CaSO4, MgCl2, and MgSO4."
+        },
+        {
+          "taskNumber": "Task 3",
+          "marks": 1,
+          "prompt": "Why is it essential to remove hardness from water?",
+          "solution": "Hard water wastes excessive soap by forming insoluble curd/scum, causes scale and boiler incrustation in industrial steam boilers (reducing heat transfer efficiency and causing boiler explosions), and clogs hot water pipes."
+        }
+      ]
+    },
+    {
+      "stage": "STAGE III",
+      "marks": 5,
+      "tasks": [
+        {
+          "taskNumber": "Task 4",
+          "marks": 4,
+          "prompt": "Write what happens when you perform the tests given in the table below. Draw an inference from your observations.\n\n1. Sample of hard water A + lime water [Ca(OH)2]\n2. Sample of hard water B + sodium carbonate solution",
+          "solution": "| Obs. # | Test | Observation | Type of Hardness Removed |\n| :---: | :--- | :--- | :--- |\n| 1 | Sample of hard water A + lime water [Ca(OH)2] | A milky white precipitate forms | Temporary hardness |\n| 2 | Sample of hard water B + sodium carbonate solution | A white precipitate forms | Permanent hardness |"
+        },
+        {
+          "taskNumber": "Task 5",
+          "marks": 1,
+          "prompt": "Write a balanced chemical equation for the reaction between sample of hard water A and lime water.",
+          "solution": "Ca(HCO3)2(aq) + Ca(OH)2(aq) -> 2CaCO3(s)\u2193 + 2H2O(l)"
+        }
+      ]
+    },
+    {
+      "stage": "School Record",
+      "marks": 2,
+      "tasks": [
+        {
+          "taskNumber": "Practical Notebook / Performance Record",
+          "marks": 2,
+          "prompt": "Evaluation of student practical laboratory notebook and continuous assessment record.",
+          "solution": "2 Marks awarded for complete, verified, and signed practical journal records."
+        }
+      ]
+    }
+  ]
+}

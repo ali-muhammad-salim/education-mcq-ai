@@ -12,6 +12,7 @@ export default async function Page({
       params={await params}
       type="textbook"
       guide={(await searchParams).view === "guide"}
+      pacing={(await searchParams).view === "pacing"}
       after={(await searchParams).after}
     />
   );

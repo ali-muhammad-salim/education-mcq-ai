@@ -1,0 +1,1712 @@
+[
+  {
+    "id": "mth-x-2019-p1-q1",
+    "questionNumber": 1,
+    "stem": "The value of $b$, when $\\sqrt{ax^2 + bx + 64} = \\pm 4(x + 2)$, will be",
+    "options": [
+      {
+        "id": "A",
+        "text": "64"
+      },
+      {
+        "id": "B",
+        "text": "32"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "2"
+      }
+    ],
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Squaring both sides: $ax^2 + bx + 64 = 16(x + 2)^2 = 16(x^2 + 4x + 4) = 16x^2 + 64x + 64$. Equating coefficients of $x$ gives $b = 64$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 2,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "6.3.1",
+    "current_mapping": [
+      {
+        "code": "6.3.1",
+        "topic": "Algebraic Manipulation",
+        "description": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Squaring both sides: $ax^2 + bx + 64 = 16(x + 2)^2 = 16(x^2 + 4x + 4) = 16x^2 + 64x + 64$. Equating coefficients of $x$ gives $b = 64$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;"
+  },
+  {
+    "id": "mth-x-2019-p1-q2",
+    "questionNumber": 2,
+    "stem": "$45x^2$ is the least common multiple (LCM) of",
+    "options": [
+      {
+        "id": "A",
+        "text": "$3x^2$ and $15x$"
+      },
+      {
+        "id": "B",
+        "text": "$3x$ and $15x$"
+      },
+      {
+        "id": "C",
+        "text": "$5x^2$ and $9x$"
+      },
+      {
+        "id": "D",
+        "text": "$5x$ and $9x$"
+      }
+    ],
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "For $5x^2$ and $9x$, the LCM of numerical coefficients 5 and 9 is 45, and the LCM of $x^2$ and $x$ is $x^2$. Thus $\\text{LCM}(5x^2, 9x) = 45x^2$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 2,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "6.1.1",
+    "current_mapping": [
+      {
+        "code": "6.1.1",
+        "topic": "Algebraic Manipulation",
+        "description": "determine the highest common factor (H.C.F.) and the least common multiple (L.C.M.) of algebraic expressions using factorisation;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "For $5x^2$ and $9x$, the LCM of numerical coefficients 5 and 9 is 45, and the LCM of $x^2$ and $x$ is $x^2$. Thus $\\text{LCM}(5x^2, 9x) = 45x^2$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "determine the highest common factor (H.C.F.) and the least common multiple (L.C.M.) of algebraic expressions using factorisation;"
+  },
+  {
+    "id": "mth-x-2019-p1-q3",
+    "questionNumber": 3,
+    "stem": "$(\\sqrt{x} - 4) \\div (x - 4^2) \\times (\\sqrt{x} + 4)$ is equal to",
+    "options": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{1}{4}$"
+      },
+      {
+        "id": "C",
+        "text": "$\\sqrt{x} + 4$"
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{\\sqrt{x} + 4}{\\sqrt{x} - 4}$"
+      }
+    ],
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "$(\\sqrt{x} - 4)(\\sqrt{x} + 4) = (\\sqrt{x})^2 - 4^2 = x - 16 = x - 4^2$. Dividing by $(x - 4^2)$ yields $\\frac{x - 4^2}{x - 4^2} = 1$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 2,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "6.2.2",
+    "current_mapping": [
+      {
+        "code": "6.2.2",
+        "topic": "Algebraic Manipulation",
+        "description": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$(\\sqrt{x} - 4)(\\sqrt{x} + 4) = (\\sqrt{x})^2 - 4^2 = x - 16 = x - 4^2$. Dividing by $(x - 4^2)$ yields $\\frac{x - 4^2}{x - 4^2} = 1$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;"
+  },
+  {
+    "id": "mth-x-2019-p1-q4",
+    "questionNumber": 4,
+    "stem": "Which of the following forms is suitable for the partial fraction of $\\frac{5x + 3}{(x - 2)(x + 3)}$?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\frac{A}{x - 2} + \\frac{B}{x + 3}$"
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{A + B}{(x - 2)(x + 3)}$"
+      },
+      {
+        "id": "C",
+        "text": "$\\frac{A}{x - 2} + \\frac{Bx + C}{x + 3}$"
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{Ax + B}{x - 2} + \\frac{C}{x + 3}$"
+      }
+    ],
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "For non-repeated distinct linear factors $(x - 2)$ and $(x + 3)$ in the denominator, the partial fraction decomposition is $\\frac{A}{x - 2} + \\frac{B}{x + 3}$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 2,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "6.4.2",
+    "current_mapping": [
+      {
+        "code": "6.4.2",
+        "topic": "Algebraic Manipulation",
+        "description": "convert an algebraic fraction into partial fractions when its denominator consists of:\na. non-repeated linear factors,\nb. repeated linear factors;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "For non-repeated distinct linear factors $(x - 2)$ and $(x + 3)$ in the denominator, the partial fraction decomposition is $\\frac{A}{x - 2} + \\frac{B}{x + 3}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "convert an algebraic fraction into partial fractions when its denominator consists of:\na. non-repeated linear factors,\nb. repeated linear factors;"
+  },
+  {
+    "id": "mth-x-2019-p1-q5",
+    "questionNumber": 5,
+    "stem": "The solution set of $\\frac{x - 1}{2} = 0$ is",
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\{-1\\}$"
+      },
+      {
+        "id": "B",
+        "text": "$\\{-3\\}$"
+      },
+      {
+        "id": "C",
+        "text": "$\\{3\\}$"
+      },
+      {
+        "id": "D",
+        "text": "$\\{1\\}$"
+      }
+    ],
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Multiplying both sides by 2 gives $x - 1 = 0 \\implies x = 1$. The solution set is $\\{1\\}$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 2,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "7.1.2",
+    "current_mapping": [
+      {
+        "code": "7.1.2",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve linear equation with real coefficients;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Multiplying both sides by 2 gives $x - 1 = 0 \\implies x = 1$. The solution set is $\\{1\\}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve linear equation with real coefficients;"
+  },
+  {
+    "id": "mth-x-2019-p1-q6",
+    "questionNumber": 6,
+    "stem": "Given that $|-x| = -1$, the solution set which must satisfy the equation is",
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\{-1\\}$"
+      },
+      {
+        "id": "B",
+        "text": "$\\{ \\}$"
+      },
+      {
+        "id": "C",
+        "text": "$\\{1\\}$"
+      },
+      {
+        "id": "D",
+        "text": "$\\{\\phi\\}$"
+      }
+    ],
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "The absolute value of any real quantity satisfies $|-x| \\ge 0$. Since the right hand side is $-1 < 0$, no real number satisfies the equation. The solution set is the empty set $\\{ \\}$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 3,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "7.2.2",
+    "current_mapping": [
+      {
+        "code": "7.2.2",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve equations involving absolute valued functions in one variable;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The absolute value of any real quantity satisfies $|-x| \\ge 0$. Since the right hand side is $-1 < 0$, no real number satisfies the equation. The solution set is the empty set $\\{ \\}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve equations involving absolute valued functions in one variable;"
+  },
+  {
+    "id": "mth-x-2019-p1-q7",
+    "questionNumber": 7,
+    "stem": "The inequality which BEST describes $m(x - 1) > m$, where $m$ is a natural number, will be",
+    "options": [
+      {
+        "id": "A",
+        "text": "$x < 1$"
+      },
+      {
+        "id": "B",
+        "text": "$x < 2$"
+      },
+      {
+        "id": "C",
+        "text": "$x > 1$"
+      },
+      {
+        "id": "D",
+        "text": "$x > 2$"
+      }
+    ],
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Since $m \\in \\mathbb{N}$, $m > 0$. Dividing both sides by $m$ preserves inequality order: $x - 1 > 1 \\implies x > 2$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 3,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "7.3.2",
+    "current_mapping": [
+      {
+        "code": "7.3.2",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve linear inequalities with real coefficients in one variable and represent the solution on the number line;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Since $m \\in \\mathbb{N}$, $m > 0$. Dividing both sides by $m$ preserves inequality order: $x - 1 > 1 \\implies x > 2$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve linear inequalities with real coefficients in one variable and represent the solution on the number line;"
+  },
+  {
+    "id": "mth-x-2019-p1-q8",
+    "questionNumber": 8,
+    "stem": "If $x$ is a negative number, then the mathematical statement which must be TRUE is",
+    "options": [
+      {
+        "id": "A",
+        "text": "$-x \\le 0$"
+      },
+      {
+        "id": "B",
+        "text": "$-x \\ge 0$"
+      },
+      {
+        "id": "C",
+        "text": "$x < 0$"
+      },
+      {
+        "id": "D",
+        "text": "$x > 0$"
+      }
+    ],
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "KEY_CONFLICT",
+    "answer_origin": "SOLVED_GROUND_TRUTH_OVERRIDES_KEY",
+    "answer_review_note": "Source ambiguity: Both Option B ($-x \\ge 0$) and Option C ($x < 0$) are mathematically true for negative $x$.",
+    "explanation": "By definition of negative real numbers, $x < 0$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 3,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "7.3.1",
+    "current_mapping": [
+      {
+        "code": "7.3.1",
+        "topic": "Linear Equations and Inequalities",
+        "description": "define inequalities:\na. less than (<),\nb. greater than (>),\nc. less than or equal (≤),\nd. greater than or equal (≥);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "By definition of negative real numbers, $x < 0$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "define inequalities:\na. less than (<),\nb. greater than (>),\nc. less than or equal (≤),\nd. greater than or equal (≥);"
+  },
+  {
+    "id": "mth-x-2019-p1-q9",
+    "questionNumber": 9,
+    "stem": "The linear equation which satisfies the given pairs of values as shown in the given table will be\n\n$$\\begin{array}{|c|c|c|} \\hline X & 2 & -1 \\\\ \\hline Y & -1 & 2 \\\\ \\hline \\end{array}$$",
+    "options": [
+      {
+        "id": "A",
+        "text": "$Y = 1 - X$"
+      },
+      {
+        "id": "B",
+        "text": "$Y = X - 1$"
+      },
+      {
+        "id": "C",
+        "text": "$Y - 1 = X$"
+      },
+      {
+        "id": "D",
+        "text": "$Y = -1 - X$"
+      }
+    ],
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Notice that for $(2, -1)$, $2 + (-1) = 1$, and for $(-1, 2)$, $-1 + 2 = 1$. The equation $X + Y = 1 \\implies Y = 1 - X$ is satisfied by both points.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 3,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "9.4.1",
+    "current_mapping": [
+      {
+        "code": "9.4.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Notice that for $(2, -1)$, $2 + (-1) = 1$, and for $(-1, 2)$, $-1 + 2 = 1$. The equation $X + Y = 1 \\implies Y = 1 - X$ is satisfied by both points.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;"
+  },
+  {
+    "id": "mth-x-2019-p1-q10",
+    "questionNumber": 10,
+    "stem": "The correct graphical representation of $ay + a = 0$ is",
+    "options": [
+      {
+        "id": "A",
+        "text": "A"
+      },
+      {
+        "id": "B",
+        "text": "B"
+      },
+      {
+        "id": "C",
+        "text": "C"
+      },
+      {
+        "id": "D",
+        "text": "D"
+      }
+    ],
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "$ay + a = 0 \\implies a(y + 1) = 0 \\implies y = -1$ (for $a \\ne 0$). This is a horizontal line passing through $y = -1$, which is represented in graph A.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P1/q10.png",
+    "pageNumber": 4,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "9.4.1",
+    "current_mapping": [
+      {
+        "code": "9.4.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$ay + a = 0 \\implies a(y + 1) = 0 \\implies y = -1$ (for $a \\ne 0$). This is a horizontal line passing through $y = -1$, which is represented in graph A.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;"
+  },
+  {
+    "id": "mth-x-2019-p1-q11",
+    "questionNumber": 11,
+    "stem": "The given graph represents straight line(s)\n\n$$\\begin{array}{ll} \\text{I.} & 2y = -(2x + 2c) \\\\ \\text{II.} & y = -x - c \\\\ \\text{III.} & 2y = x - c \\end{array}$$",
+    "options": [
+      {
+        "id": "A",
+        "text": "I and III."
+      },
+      {
+        "id": "B",
+        "text": "I and II."
+      },
+      {
+        "id": "C",
+        "text": "III only."
+      },
+      {
+        "id": "D",
+        "text": "II only."
+      }
+    ],
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "The graph has intercepts $(-c, 0)$ and $(0, -c)$. Slope $m = \\frac{-c - 0}{0 - (-c)} = -1$. The equation is $y = -x - c$. Statement I ($2y = -2x - 2c$) and statement II are both equivalent to this line.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P1/q11.png",
+    "pageNumber": 4,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "9.4.1",
+    "current_mapping": [
+      {
+        "code": "9.4.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The graph has intercepts $(-c, 0)$ and $(0, -c)$. Slope $m = \\frac{-c - 0}{0 - (-c)} = -1$. The equation is $y = -x - c$. Statement I ($2y = -2x - 2c$) and statement II are both equivalent to this line.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;"
+  },
+  {
+    "id": "mth-x-2019-p1-q12",
+    "questionNumber": 12,
+    "stem": "The standard form of the quadratic equation $\\frac{3}{2} + x^2 = 2x$ is",
+    "options": [
+      {
+        "id": "A",
+        "text": "$x^2 + 4x + 3 = 0$"
+      },
+      {
+        "id": "B",
+        "text": "$x^2 - 2x + 3 = 0$"
+      },
+      {
+        "id": "C",
+        "text": "$2x^2 + 4x + 3 = 0$"
+      },
+      {
+        "id": "D",
+        "text": "$2x^2 - 4x + 3 = 0$"
+      }
+    ],
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Multiplying by 2 gives $3 + 2x^2 = 4x \\implies 2x^2 - 4x + 3 = 0$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "U",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 4,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "15.1.2",
+    "current_mapping": [
+      {
+        "code": "15.1.2",
+        "topic": "Quadratic Equations",
+        "description": "convert a given quadratic equation in standard form;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Multiplying by 2 gives $3 + 2x^2 = 4x \\implies 2x^2 - 4x + 3 = 0$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 15,
+    "sloText": "convert a given quadratic equation in standard form;"
+  },
+  {
+    "id": "mth-x-2019-p1-q13",
+    "questionNumber": 13,
+    "stem": "When four times of a number $x$ is squared, then the result will be half of one less than that number. The given statement can be written mathematically as",
+    "options": [
+      {
+        "id": "A",
+        "text": "$16x^2 = \\frac{1}{2}(x - 1)$"
+      },
+      {
+        "id": "B",
+        "text": "$4x^2 = \\frac{1}{2}(x - 1)$"
+      },
+      {
+        "id": "C",
+        "text": "$16x^2 = \\frac{1}{2}x - 1$"
+      },
+      {
+        "id": "D",
+        "text": "$4x^2 = \\frac{1}{2}x - 1$"
+      }
+    ],
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Four times $x$ is $4x$; its square is $(4x)^2 = 16x^2$. One less than the number is $x - 1$; half of this is $\\frac{1}{2}(x - 1)$. Thus $16x^2 = \\frac{1}{2}(x - 1)$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "U",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 4,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "15.6.1",
+    "current_mapping": [
+      {
+        "code": "15.6.1",
+        "topic": "Quadratic Equations",
+        "description": "solve word problems related to quadratic equations."
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Four times $x$ is $4x$; its square is $(4x)^2 = 16x^2$. One less than the number is $x - 1$; half of this is $\\frac{1}{2}(x - 1)$. Thus $16x^2 = \\frac{1}{2}(x - 1)$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 15,
+    "sloText": "solve word problems related to quadratic equations."
+  },
+  {
+    "id": "mth-x-2019-p1-q14",
+    "questionNumber": 14,
+    "stem": "Which of the following equation(s) is same as $2x^2 - 1 = 0$? (Note: $x \\ne 0$)\n\n$$\\begin{array}{ll} \\text{I.} & 3 - \\left(\\frac{1}{x^2} + 1\\right) = 0 \\\\ \\text{II.} & 2(x^2 - 1) = 0 \\\\ \\text{III.} & \\frac{1}{x} - 2x = 0 \\end{array}$$",
+    "options": [
+      {
+        "id": "A",
+        "text": "II only"
+      },
+      {
+        "id": "B",
+        "text": "III only"
+      },
+      {
+        "id": "C",
+        "text": "I and II"
+      },
+      {
+        "id": "D",
+        "text": "I and III"
+      }
+    ],
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Equation I: $3 - 1 - 1/x^2 = 0 \\implies 2 - 1/x^2 = 0 \\implies 2x^2 - 1 = 0$. Equation III: $1/x - 2x = 0 \\implies (1 - 2x^2)/x = 0 \\implies 2x^2 - 1 = 0$. Thus I and III are equivalent.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "U",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 4,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "15.3.1",
+    "current_mapping": [
+      {
+        "code": "15.3.1",
+        "topic": "Quadratic Equations",
+        "description": "solve equations reducible to quadratic equation in one variable of the following forms:\na. px^(2n) + qx^n + r = 0, p ≠ 0,\nb. (x + p)(x + q)(x + r)(x + s) = k, where p + q = r + s,\nc. radical equations (e.g., l(ax^2 + bx) + m√(ax^2 + bx + c) = 0);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Equation I: $3 - 1 - 1/x^2 = 0 \\implies 2 - 1/x^2 = 0 \\implies 2x^2 - 1 = 0$. Equation III: $1/x - 2x = 0 \\implies (1 - 2x^2)/x = 0 \\implies 2x^2 - 1 = 0$. Thus I and III are equivalent.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 15,
+    "sloText": "solve equations reducible to quadratic equation in one variable of the following forms:\na. px^(2n) + qx^n + r = 0, p ≠ 0,\nb. (x + p)(x + q)(x + r)(x + s) = k, where p + q = r + s,\nc. radical equations (e.g., l(ax^2 + bx) + m√(ax^2 + bx + c) = 0);"
+  },
+  {
+    "id": "mth-x-2019-p1-q15",
+    "questionNumber": 15,
+    "stem": "The valid condition for the distance between two points $(a, b)$ and $(c, d)$ will be",
+    "options": [
+      {
+        "id": "A",
+        "text": "$(a - c)^2 + (b - d)^2 \\ge 0$"
+      },
+      {
+        "id": "B",
+        "text": "$(b - a)^2 + (d - c)^2 \\ge 0$"
+      },
+      {
+        "id": "C",
+        "text": "$(a - c)^2 + (b - d)^2 < 0$"
+      },
+      {
+        "id": "D",
+        "text": "$(b - a)^2 + (d - c)^2 < 0$"
+      }
+    ],
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "The square of distance between $(a, b)$ and $(c, d)$ is $(a - c)^2 + (b - d)^2$. Since real squares are non-negative, $(a - c)^2 + (b - d)^2 \\ge 0$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 4,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "9.1.3",
+    "current_mapping": [
+      {
+        "code": "9.1.3",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "determine the distance between two given points;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The square of distance between $(a, b)$ and $(c, d)$ is $(a - c)^2 + (b - d)^2$. Since real squares are non-negative, $(a - c)^2 + (b - d)^2 \\ge 0$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "determine the distance between two given points;"
+  },
+  {
+    "id": "mth-x-2019-p1-q16",
+    "questionNumber": 16,
+    "stem": "Which of the following points is collinear with the points $(x, y)$ and $(x - 1, y)$?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$(x + 1, y + 1)$"
+      },
+      {
+        "id": "B",
+        "text": "$(x - 1, y - 1)$"
+      },
+      {
+        "id": "C",
+        "text": "$(x + 1, y)$"
+      },
+      {
+        "id": "D",
+        "text": "$(x, y + 1)$"
+      }
+    ],
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "The points $(x, y)$ and $(x - 1, y)$ lie on the horizontal line $Y = y$. Any other point on this line must have the same y-coordinate $y$, such as $(x + 1, y)$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "9.1.1",
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "describe coordinate geometry;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The points $(x, y)$ and $(x - 1, y)$ lie on the horizontal line $Y = y$. Any other point on this line must have the same y-coordinate $y$, such as $(x + 1, y)$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "describe coordinate geometry;"
+  },
+  {
+    "id": "mth-x-2019-p1-q17",
+    "questionNumber": 17,
+    "stem": "If $(1, -a)$ is the midpoint of $(0, -5)$ and $(2, -5)$, then the value of $(1 - a)$ will be",
+    "options": [
+      {
+        "id": "A",
+        "text": "-4"
+      },
+      {
+        "id": "B",
+        "text": "-1"
+      },
+      {
+        "id": "C",
+        "text": "1"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Midpoint y-coordinate is $\\frac{-5 + (-5)}{2} = -5$. Equating to $-a$ gives $-a = -5 \\implies a = 5$. Then $1 - a = 1 - 5 = -4$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "9.2.1",
+    "current_mapping": [
+      {
+        "code": "9.2.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "calculate the midpoint of a line segment;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Midpoint y-coordinate is $\\frac{-5 + (-5)}{2} = -5$. Equating to $-a$ gives $-a = -5 \\implies a = 5$. Then $1 - a = 1 - 5 = -4$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "calculate the midpoint of a line segment;"
+  },
+  {
+    "id": "mth-x-2019-p1-q18",
+    "questionNumber": 18,
+    "stem": "$1\\frac{1}{4}$ rotation in anticlockwise direction is equal to",
+    "options": [
+      {
+        "id": "A",
+        "text": "90°"
+      },
+      {
+        "id": "B",
+        "text": "270°"
+      },
+      {
+        "id": "C",
+        "text": "288°"
+      },
+      {
+        "id": "D",
+        "text": "450°"
+      }
+    ],
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "One complete rotation is $360^\\circ$. $1\\frac{1}{4} = \\frac{5}{4}$ rotations $= \\frac{5}{4} \\times 360^\\circ = 450^\\circ$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "14.1.1",
+    "current_mapping": [
+      {
+        "code": "14.1.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "describe the sexagesimal system (degree, minute and second);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "One complete rotation is $360^\\circ$. $1\\frac{1}{4} = \\frac{5}{4}$ rotations $= \\frac{5}{4} \\times 360^\\circ = 450^\\circ$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "describe the sexagesimal system (degree, minute and second);"
+  },
+  {
+    "id": "mth-x-2019-p1-q19",
+    "questionNumber": 19,
+    "stem": "If the central angle measured in radians is $\\alpha + 2$ and the length of circular arc is $3\\pi$ of radius $r$, then the value of $\\alpha$ is equal to",
+    "options": [
+      {
+        "id": "A",
+        "text": "$3\\pi + 2$"
+      },
+      {
+        "id": "B",
+        "text": "$3\\pi - 2$"
+      },
+      {
+        "id": "C",
+        "text": "$3\\pi / 2$"
+      },
+      {
+        "id": "D",
+        "text": "$3\\pi$"
+      }
+    ],
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "KEY_CONFLICT",
+    "answer_origin": "SOLVED_GROUND_TRUTH_OVERRIDES_KEY",
+    "answer_review_note": "Source ambiguity: Phrasing \"length of circular arc is 3pi of radius r\" admits multiple interpretations.",
+    "explanation": "Arc length $l = 3\\pi r$. Using $l = r\\theta$, we have $3\\pi r = r(\\alpha + 2) \\implies 3\\pi = \\alpha + 2 \\implies \\alpha = 3\\pi - 2$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "14.1.3",
+    "current_mapping": [
+      {
+        "code": "14.1.3",
+        "topic": "Introduction to Trigonometry",
+        "description": "define radian;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Arc length $l = 3\\pi r$. Using $l = r\\theta$, we have $3\\pi r = r(\\alpha + 2) \\implies 3\\pi = \\alpha + 2 \\implies \\alpha = 3\\pi - 2$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "define radian;"
+  },
+  {
+    "id": "mth-x-2019-p1-q20",
+    "questionNumber": 20,
+    "stem": "If the sum of all quadrantal angles is $x$, then $x$ must be equal to",
+    "options": [
+      {
+        "id": "A",
+        "text": "180°"
+      },
+      {
+        "id": "B",
+        "text": "225°"
+      },
+      {
+        "id": "C",
+        "text": "360°"
+      },
+      {
+        "id": "D",
+        "text": "900°"
+      }
+    ],
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "The four standard quadrantal angles within a full cycle are $90^\\circ, 180^\\circ, 270^\\circ, 360^\\circ$. Their sum is $90^\\circ + 180^\\circ + 270^\\circ + 360^\\circ = 900^\\circ$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "14.2.1",
+    "current_mapping": [
+      {
+        "code": "14.2.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "identify quadrants and quadrantal angles (0, ±90°, ±180°, ±270°, ±360°);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The four standard quadrantal angles within a full cycle are $90^\\circ, 180^\\circ, 270^\\circ, 360^\\circ$. Their sum is $90^\\circ + 180^\\circ + 270^\\circ + 360^\\circ = 900^\\circ$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "identify quadrants and quadrantal angles (0, ±90°, ±180°, ±270°, ±360°);"
+  },
+  {
+    "id": "mth-x-2019-p1-q21",
+    "questionNumber": 21,
+    "stem": "For $A = 45^\\circ$, the value of $(\\sin A + \\cos A)^2$ is equal to",
+    "options": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "$\\frac{1}{2}$"
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{1}{4}$"
+      }
+    ],
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "$(\\sin 45^\\circ + \\cos 45^\\circ)^2 = \\left(\\frac{1}{\\sqrt{2}} + \\frac{1}{\\sqrt{2}}\\right)^2 = \\left(\\frac{2}{\\sqrt{2}}\\right)^2 = (\\sqrt{2})^2 = 2$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 6,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "14.2.3",
+    "current_mapping": [
+      {
+        "code": "14.2.3",
+        "topic": "Introduction to Trigonometry",
+        "description": "calculate the values of trigonometric ratios and their reciprocals for 30°, 45° and 60°;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$(\\sin 45^\\circ + \\cos 45^\\circ)^2 = \\left(\\frac{1}{\\sqrt{2}} + \\frac{1}{\\sqrt{2}}\\right)^2 = \\left(\\frac{2}{\\sqrt{2}}\\right)^2 = (\\sqrt{2})^2 = 2$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "calculate the values of trigonometric ratios and their reciprocals for 30°, 45° and 60°;"
+  },
+  {
+    "id": "mth-x-2019-p1-q22",
+    "questionNumber": 22,
+    "stem": "Which of the following lengths do NOT form a right angled triangle?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$3\\sqrt{2}, 4\\sqrt{2}\\text{ and } 5\\sqrt{2}$"
+      },
+      {
+        "id": "B",
+        "text": "6, 8 and 10"
+      },
+      {
+        "id": "C",
+        "text": "5, 5 and 10"
+      },
+      {
+        "id": "D",
+        "text": "3, 4 and 5"
+      }
+    ],
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "For $5, 5, 10$: $5^2 + 5^2 = 25 + 25 = 50 \\ne 10^2 = 100$. Furthermore, $5 + 5 = 10$, violating the strict triangle inequality. Thus they cannot form a right angled triangle.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 6,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "For $5, 5, 10$: $5^2 + 5^2 = 25 + 25 = 50 \\ne 10^2 = 100$. Furthermore, $5 + 5 = 10$, violating the strict triangle inequality. Thus they cannot form a right angled triangle.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+  },
+  {
+    "id": "mth-x-2019-p1-q23",
+    "questionNumber": 23,
+    "stem": "In the given diagram, if the diameter of the circle is $AB$, then radius of the circle, in terms of $a$ and $b$, will be",
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\frac{a^2 - b^2}{2}$"
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{a^2 + b^2}{2}$"
+      },
+      {
+        "id": "C",
+        "text": "$\\frac{\\sqrt{a^2 + b^2}}{2}$"
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{\\sqrt{a^2 - b^2}}{2}$"
+      }
+    ],
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "An angle inscribed in a semicircle is a right angle ($90^\\circ$). By Pythagoras theorem, diameter $AB = \\sqrt{a^2 + b^2}$. The radius is half the diameter, so $r = \\frac{\\sqrt{a^2 + b^2}}{2}$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P1/q23.png",
+    "pageNumber": 7,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "20.4.1",
+    "current_mapping": [
+      {
+        "code": "20.4.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. the measure of a central angle of a minor arc of a circle, is double that of the angle subtended by the corresponding major arc,\nb. any two angles in the same segment of a circle are equal,\nc. the inscribed angle in a semi-circle is a right angle,\nd. the angle in a segment greater than a semi-circle is less than a right angle,\ne. the angle in a segment less than a semi-circle is greater than right angle,\nf. the opposite angles of any quadrilateral inscribed in a circle are supplementary."
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "An angle inscribed in a semicircle is a right angle ($90^\\circ$). By Pythagoras theorem, diameter $AB = \\sqrt{a^2 + b^2}$. The radius is half the diameter, so $r = \\frac{\\sqrt{a^2 + b^2}}{2}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. the measure of a central angle of a minor arc of a circle, is double that of the angle subtended by the corresponding major arc,\nb. any two angles in the same segment of a circle are equal,\nc. the inscribed angle in a semi-circle is a right angle,\nd. the angle in a segment greater than a semi-circle is less than a right angle,\ne. the angle in a segment less than a semi-circle is greater than right angle,\nf. the opposite angles of any quadrilateral inscribed in a circle are supplementary."
+  },
+  {
+    "id": "mth-x-2019-p1-q24",
+    "questionNumber": 24,
+    "stem": "If the length of the sides of a right angled triangle are $k, l$ and $m$ such that $l < k < m$, then according to Pythagoras’ theorem",
+    "options": [
+      {
+        "id": "A",
+        "text": "$m^2 = k^2 - l^2$"
+      },
+      {
+        "id": "B",
+        "text": "$l^2 = (k + m)^2$"
+      },
+      {
+        "id": "C",
+        "text": "$m^2 = (k + l)^2$"
+      },
+      {
+        "id": "D",
+        "text": "$l^2 = m^2 - k^2$"
+      }
+    ],
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Since $m$ is the longest side ($l < k < m$), $m$ is the hypotenuse. Thus $k^2 + l^2 = m^2 \\implies l^2 = m^2 - k^2$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 6,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Since $m$ is the longest side ($l < k < m$), $m$ is the hypotenuse. Thus $k^2 + l^2 = m^2 \\implies l^2 = m^2 - k^2$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+  },
+  {
+    "id": "mth-x-2019-p1-q25",
+    "questionNumber": 25,
+    "stem": "Use the given information to answer Q.25, Q.26 and Q.27.\n\nThe given diagram shows a circle with centre $O$. Two tangents are drawn each from points $P$ and $Q$ to the circle at points $S$ and $R$ respectively that form a quadrilateral $PSQR$.\n\nIf $\\angle SQR = 72^\\circ$, then the value of $x$ is equal to",
+    "options": [
+      {
+        "id": "A",
+        "text": "18°"
+      },
+      {
+        "id": "B",
+        "text": "36°"
+      },
+      {
+        "id": "C",
+        "text": "54°"
+      },
+      {
+        "id": "D",
+        "text": "81°"
+      }
+    ],
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "In quadrilateral $OSQR$, tangent angles at $S$ and $R$ are $90^\\circ$, so $\\angle SOR = 180^\\circ - 72^\\circ = 108^\\circ$. The segment $OQ$ bisects $\\angle SOR$, so $x = \\frac{108^\\circ}{2} = 54^\\circ$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P1/q25-27.png",
+    "pageNumber": 8,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "20.2.1",
+    "current_mapping": [
+      {
+        "code": "20.2.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if a line is drawn perpendicular to a radial segment of a circle at its outer end point, it is tangent to the circle at that point and vice versa,\nb. the two tangents drawn to a circle from a point outside it is equal in length,\nc. if two circles touch externally or internally the distance between their centres is respectively equal to the sum or difference of their radii;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "In quadrilateral $OSQR$, tangent angles at $S$ and $R$ are $90^\\circ$, so $\\angle SOR = 180^\\circ - 72^\\circ = 108^\\circ$. The segment $OQ$ bisects $\\angle SOR$, so $x = \\frac{108^\\circ}{2} = 54^\\circ$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if a line is drawn perpendicular to a radial segment of a circle at its outer end point, it is tangent to the circle at that point and vice versa,\nb. the two tangents drawn to a circle from a point outside it is equal in length,\nc. if two circles touch externally or internally the distance between their centres is respectively equal to the sum or difference of their radii;"
+  },
+  {
+    "id": "mth-x-2019-p1-q26",
+    "questionNumber": 26,
+    "stem": "The angle $SOP$, in terms of $y$, will be",
+    "options": [
+      {
+        "id": "A",
+        "text": "$90^\\circ - y^\\circ$"
+      },
+      {
+        "id": "B",
+        "text": "$90^\\circ - \\frac{y^\\circ}{2}$"
+      },
+      {
+        "id": "C",
+        "text": "$90^\\circ - 2y^\\circ$"
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{1}{2}(90^\\circ - y^\\circ)$"
+      }
+    ],
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "In right triangle $OSP$ ($\\angle OSP = 90^\\circ$), segment $OP$ bisects $\\angle SPR = y^\\circ$, so $\\angle SPO = \\frac{y^\\circ}{2}$. Thus $\\angle SOP = 90^\\circ - \\frac{y^\\circ}{2}$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P1/q25-27.png",
+    "pageNumber": 8,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "20.2.1",
+    "current_mapping": [
+      {
+        "code": "20.2.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if a line is drawn perpendicular to a radial segment of a circle at its outer end point, it is tangent to the circle at that point and vice versa,\nb. the two tangents drawn to a circle from a point outside it is equal in length,\nc. if two circles touch externally or internally the distance between their centres is respectively equal to the sum or difference of their radii;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "In right triangle $OSP$ ($\\angle OSP = 90^\\circ$), segment $OP$ bisects $\\angle SPR = y^\\circ$, so $\\angle SPO = \\frac{y^\\circ}{2}$. Thus $\\angle SOP = 90^\\circ - \\frac{y^\\circ}{2}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if a line is drawn perpendicular to a radial segment of a circle at its outer end point, it is tangent to the circle at that point and vice versa,\nb. the two tangents drawn to a circle from a point outside it is equal in length,\nc. if two circles touch externally or internally the distance between their centres is respectively equal to the sum or difference of their radii;"
+  },
+  {
+    "id": "mth-x-2019-p1-q27",
+    "questionNumber": 27,
+    "stem": "The total length of the sides of quadrilateral $PSQR$",
+    "options": [
+      {
+        "id": "A",
+        "text": "is $2m + 2n$"
+      },
+      {
+        "id": "B",
+        "text": "is $2m + n$"
+      },
+      {
+        "id": "C",
+        "text": "is $2mn$"
+      },
+      {
+        "id": "D",
+        "text": "cannot be determined."
+      }
+    ],
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Tangents drawn from an external point to a circle are equal in length: $PS = PR = n$ and $QS = QR = m$. The perimeter of quadrilateral $PSQR$ is $PS + SQ + QR + RP = n + m + m + n = 2m + 2n$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P1/q25-27.png",
+    "pageNumber": 8,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "20.2.1",
+    "current_mapping": [
+      {
+        "code": "20.2.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if a line is drawn perpendicular to a radial segment of a circle at its outer end point, it is tangent to the circle at that point and vice versa,\nb. the two tangents drawn to a circle from a point outside it is equal in length,\nc. if two circles touch externally or internally the distance between their centres is respectively equal to the sum or difference of their radii;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Tangents drawn from an external point to a circle are equal in length: $PS = PR = n$ and $QS = QR = m$. The perimeter of quadrilateral $PSQR$ is $PS + SQ + QR + RP = n + m + m + n = 2m + 2n$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if a line is drawn perpendicular to a radial segment of a circle at its outer end point, it is tangent to the circle at that point and vice versa,\nb. the two tangents drawn to a circle from a point outside it is equal in length,\nc. if two circles touch externally or internally the distance between their centres is respectively equal to the sum or difference of their radii;"
+  },
+  {
+    "id": "mth-x-2019-p1-q28",
+    "questionNumber": 28,
+    "stem": "Use the given information to answer Q.28, Q.29 and Q.30.\n\nIn the given circle, two arcs $KL$ and $MN$ are congruent.\n\nGiven that the half of chord $MN$ is $m$, the length of chord $KL$ will then be",
+    "options": [
+      {
+        "id": "A",
+        "text": "m"
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{m}{2}$"
+      },
+      {
+        "id": "C",
+        "text": "2m"
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{1}{2} + m$"
+      }
+    ],
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Congruent arcs subtend equal chords, so $\\text{chord } KL = \\text{chord } MN$. Since half of chord $MN$ is $m$, $\\text{chord } MN = 2m$, which implies $\\text{chord } KL = 2m$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P1/q28-30.png",
+    "pageNumber": 9,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "20.3.1",
+    "current_mapping": [
+      {
+        "code": "20.3.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Congruent arcs subtend equal chords, so $\\text{chord } KL = \\text{chord } MN$. Since half of chord $MN$ is $m$, $\\text{chord } MN = 2m$, which implies $\\text{chord } KL = 2m$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+  },
+  {
+    "id": "mth-x-2019-p1-q29",
+    "questionNumber": 29,
+    "stem": "The angle $MON$ will be",
+    "options": [
+      {
+        "id": "A",
+        "text": "220°"
+      },
+      {
+        "id": "B",
+        "text": "140°"
+      },
+      {
+        "id": "C",
+        "text": "110°"
+      },
+      {
+        "id": "D",
+        "text": "70°"
+      }
+    ],
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Congruent arcs $KL$ and $MN$ subtend equal central angles: $\\angle KOL = \\angle MON$. The sum of angles at $O$ is $360^\\circ$: $\\angle KOL + \\angle LON + \\angle MON + \\angle MOK = 360^\\circ \\implies 2\\angle MON + 104^\\circ + 116^\\circ = 360^\\circ \\implies 2\\angle MON = 140^\\circ \\implies \\angle MON = 70^\\circ$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P1/q28-30.png",
+    "pageNumber": 9,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "20.3.1",
+    "current_mapping": [
+      {
+        "code": "20.3.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Congruent arcs $KL$ and $MN$ subtend equal central angles: $\\angle KOL = \\angle MON$. The sum of angles at $O$ is $360^\\circ$: $\\angle KOL + \\angle LON + \\angle MON + \\angle MOK = 360^\\circ \\implies 2\\angle MON + 104^\\circ + 116^\\circ = 360^\\circ \\implies 2\\angle MON = 140^\\circ \\implies \\angle MON = 70^\\circ$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+  },
+  {
+    "id": "mth-x-2019-p1-q30",
+    "questionNumber": 30,
+    "stem": "The CORRECT relationship between the lengths of chords $KL$ and $MN$ will be",
+    "options": [
+      {
+        "id": "A",
+        "text": "$2MN = KL$"
+      },
+      {
+        "id": "B",
+        "text": "$KL = \\frac{1}{2}MN$"
+      },
+      {
+        "id": "C",
+        "text": "$KL - MN = 0$"
+      },
+      {
+        "id": "D",
+        "text": "$KL + MN = 0$"
+      }
+    ],
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_origin": "OFFICIAL_KEY_VERIFIED",
+    "answer_review_note": "Official key verified by independent mathematical solution.",
+    "explanation": "Since arcs $KL$ and $MN$ are congruent, their corresponding chords are equal in length: $KL = MN \\implies KL - MN = 0$.",
+    "originalSlo": null,
+    "marks": 1,
+    "cognitiveLevel": "U",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P1/q28-30.png",
+    "pageNumber": 9,
+    "sourceSha256": "725fdc2df9f409190a35a14aa11b106371d0a852abf77edf827a1d99be870055",
+    "current_slo": "20.3.1",
+    "current_mapping": [
+      {
+        "code": "20.3.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Since arcs $KL$ and $MN$ are congruent, their corresponding chords are equal in length: $KL = MN \\implies KL - MN = 0$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+  }
+]

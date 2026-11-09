@@ -1,10 +1,16 @@
 "use client";
 import katex from "katex";
 import { Fragment } from "react";
+import MathText from "./MathText";
+import { formatEducationalMath, formatExplicitMath } from "@/lib/syllabusMath";
+import { educationalLines } from "@/lib/inlineEducationalLists";
 
-/** Render only explicit math delimiters. Never rewrite source numbers, symbols or punctuation. */
+/** Shared mathematical display; source numbers, symbols and stored text stay intact. */
 export default function ScientificText({ text }: { text: string }) {
-  const pieces = text.split(
+  if (text.includes("`")) return <MathText text={text} />;
+  const lines = educationalLines(text);
+  if (lines.filter(line => line.marker).length > 1 || lines.some(line => line.kind === "bullet")) return <MathText text={text} />;
+  const pieces = formatEducationalMath(text).split(
     /(\$\$[\s\S]*?\$\$|\$[^$\n]+\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g,
   );
   return (
@@ -26,7 +32,7 @@ export default function ScientificText({ text }: { text: string }) {
                 verticalAlign: "middle",
               }}
               dangerouslySetInnerHTML={{
-                __html: katex.renderToString(piece.slice(size, -size), {
+                __html: katex.renderToString(formatExplicitMath(piece.slice(size, -size)), {
                   displayMode: display,
                   throwOnError: true,
                   trust: false,

@@ -1,0 +1,32 @@
+{
+  "PHY-XI-P1": {
+    "slos": "1.2.2 1.4.2 2.3.3 2.4.3 3.2.2 3.2.3 3.1.2 3.2.5 3.4.1 3.5.2 4.1.2 4.1.3 4.3.2 4.5.4 4.3.1 4.1.1 4.2.1 5.4.3 6.4.3 6.2.1 6.3.2 6.4.2 7.4.2 7.2.2 7.7.1 7.6.1 7.8.2 7.5.3 7.3.3 8.4.2 8.1.4 8.3.4 8.4.3 8.5.2 9.6.2 8.3.1 9.6.5 9.6.7 9.6.7 9.2.2 9.1.3 9.2.5 9.3.1 10.9.3 10.9.2 10.2.1 10.5.2 10.8.1 10.4.3 10.7.1",
+    "key": "BCDDDBBAAA ADCCCDAADD ABBDBCCCBC AAAADDACDB BCDCCCDDAA",
+    "notes": {
+      "4": "Since $\\vec{X} \\times \\vec{Y} = |X||Y|\\sin\\theta\\,\\hat{n}$, with $\\sin(270^\\circ) = -1$, the cross product yields a negative vector opposite to the standard right-hand normal.",
+      "8": "In a one-dimensional elastic collision where $m_1 \\ll m_2$ and $v_2 = 0$, $v_2' = \\frac{2m_1}{m_1+m_2}v_1 \\approx 0$. The heavier target ball practically remains at rest.",
+      "19": "Aerofoils, atomizers and Venturi meters use the Bernoulli effect. The standard operating principle of a vacuum cleaner is the pressure difference produced by its motor-driven fan.",
+      "42": "In Young's double-slit experiment, the condition for dark fringes (destructive interference) with path difference $(m + \\frac{1}{2})\\lambda$ gives position $Y = (m + \\frac{1}{2})\\frac{\\lambda L}{d}$.",
+      "45": "The standard Carnot cycle sequence is isothermal expansion, adiabatic expansion, isothermal compression, and adiabatic compression. The printed option C read “isobaric compression” for the third step; it has been corrected to “isothermal compression”, which is the step the keyed option C describes.",
+      "50": "Boiling of raw eggs causes irreversible denaturation and coagulation of proteins, making it a classic irreversible process."
+    }
+  },
+  "PHY-XII-P1": {
+    "slos": "11.2.2 11.3.3 12.1.2 12.2.4 12.2.6 12.3.4 12.4.1 12.6.2 12.6.3 12.8.2 13.1.3 13.2.1 13.2.5 13.6.2+13.2.4 13.3.5 13.4.2 13.5.2 13.7.1 14.1.3 14.1.7 14.2.1 14.4.1 15.1.3 15.3.1 15.4.5 15.5.4 15.6.2 15.6.4 15.7.3 16.1.2 16.1.3 19.6.1 16.2.1 16.2.3 16.3.3 16.5.6 17.2.4 17.4.5 17.4.8 18.3.2 18.2.1 19.1.1 19.1.5 19.5.2 19.1.6 19.2.2 19.4.3 19.6.2 20.1.3 20.2.2",
+    "key": "A---AD BACA -ABAACBADB -ADABACACD DCACCBCDDC DADBDDADDA",
+    "notes": {
+      "2": "The diagram does not establish the period of satellite P. A return to the same location after 24 hours requires an additional assumption.",
+      "3": "The total charge is approximately −1.28 × 10⁻¹⁸ C. The printed options use joules and omit the negative sign.",
+      "4": "Coulomb’s law concerns stationary charges. The named objects alone do not establish whether those conditions hold.",
+      "11": "I/e gives approximately 7.49 × 10¹⁸ electrons per second. The listed 5 × 10²² is the number density per cubic metre, a different quantity.",
+      "21": "This figure-dependent item is held for direction review.",
+      "23": "On entry the ring repels the approaching magnet. On exit it attracts the receding magnet. Both magnetic forces oppose the downward motion."
+    }
+  },
+  "PHY-XI-P2": {
+    "slos": "1.2.3 2.2.1+2.2.3 3.2.5 4.1.2 5.4.1+5.4.4 6.3.1+6.2.1 7.4.3 8.5.3 9.2.2+9.2.3 10.9.4 3.5.1+4.1.3 8.4.3+9.2.5+9.2.6"
+  },
+  "PHY-XII-P2": {
+    "slos": "11.1.2 12.7.1+12.8.3 13.7.1+13.7.2 14.1.2+14.1.7 15.2.2+15.2.1 16.5.2+16.5.3 17.2.4 18.1.1 19.6.3 12.5.1+12.5.2+13.5.5 15.4.2+15.4.5+16.4.1"
+  }
+}

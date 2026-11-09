@@ -9,7 +9,7 @@ import {
   HelpCircle, Calculator, CheckCircle2,
   FileText, ShieldAlert, Clock, CheckSquare, Radio, GripVertical,
   X, SlidersHorizontal, Layers, Award, Lightbulb, ChevronDown,
-  Share2, KeyRound
+  Share2, KeyRound, Shuffle, MinusCircle
 } from 'lucide-react';
 
 import { useDialog } from '@/lib/use-dialog';
@@ -70,6 +70,8 @@ export interface QuizSettings {
   aiGradingMode: 'OFF' | 'LENIENT' | 'MEDIUM' | 'STRICT' | 'CUSTOM';
   tabMonitoringEnabled: boolean;
   tabWarningThreshold: number;
+  negativeMarking: boolean;
+  negativeMarkValue: number;
 }
 
 const QUESTION_TYPES = [
@@ -128,7 +130,9 @@ function GoogleFormsQuizBuilderContent() {
     manualGradingRequired: false,
     aiGradingMode: 'OFF',
     tabMonitoringEnabled: true,
-    tabWarningThreshold: 2
+    tabWarningThreshold: 2,
+    negativeMarking: false,
+    negativeMarkValue: 0
   });
 
   // Questions State
@@ -1390,6 +1394,88 @@ function GoogleFormsQuizBuilderContent() {
               <p style={{ fontSize: '13px', color: 'var(--r-ink-muted)', lineHeight: 1.5 }}>
                 Required items should be answered before submission; unanswered items receive zero.
                 Written responses require teacher marking.
+              </p>
+            </div>
+
+            <div className="gf-item-sheet" style={{ cursor: 'default' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                <Shuffle size={20} color="var(--r-emerald)" />
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--r-ink)' }}>Question delivery</h3>
+              </div>
+
+              <p style={{ fontSize: '13px', color: 'var(--r-ink-muted)', lineHeight: 1.5, marginBottom: '4px' }}>
+                Shuffling changes what each student sees first without altering the paper or the answer key.
+              </p>
+
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', padding: '12px 0', borderBottom: '1px solid var(--r-rule)' }}>
+                <div>
+                  <strong style={{ fontSize: '14px', color: 'var(--r-ink)', display: 'block' }}>Shuffle question order</strong>
+                  <span style={{ fontSize: '12px', color: 'var(--r-ink-muted)' }}>Each attempt receives the items in a different order</span>
+                </div>
+                <div className="gf-switch">
+                  <input
+                    type="checkbox"
+                    checked={settings.randomizeQuestions}
+                    onChange={e => { setSettings(p => ({ ...p, randomizeQuestions: e.target.checked })); markUnsaved(); }}
+                  />
+                  <span className="gf-slider" />
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', padding: '12px 0' }}>
+                <div>
+                  <strong style={{ fontSize: '14px', color: 'var(--r-ink)', display: 'block' }}>Shuffle answer choices</strong>
+                  <span style={{ fontSize: '12px', color: 'var(--r-ink-muted)' }}>Multiple-choice options appear in a different order</span>
+                </div>
+                <div className="gf-switch">
+                  <input
+                    type="checkbox"
+                    checked={settings.randomizeOptions}
+                    onChange={e => { setSettings(p => ({ ...p, randomizeOptions: e.target.checked })); markUnsaved(); }}
+                  />
+                  <span className="gf-slider" />
+                </div>
+              </div>
+            </div>
+
+            <div className="gf-item-sheet" style={{ cursor: 'default' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                <MinusCircle size={20} color="var(--r-emerald)" />
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--r-ink)' }}>Marking policy</h3>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', padding: '12px 0', borderBottom: settings.negativeMarking ? '1px solid var(--r-rule)' : 'none' }}>
+                <div>
+                  <strong style={{ fontSize: '14px', color: 'var(--r-ink)', display: 'block' }}>Deduct marks for wrong answers</strong>
+                  <span style={{ fontSize: '12px', color: 'var(--r-ink-muted)' }}>Only attempted questions that are answered incorrectly lose marks</span>
+                </div>
+                <div className="gf-switch">
+                  <input
+                    type="checkbox"
+                    checked={settings.negativeMarking}
+                    onChange={e => { setSettings(p => ({ ...p, negativeMarking: e.target.checked })); markUnsaved(); }}
+                  />
+                  <span className="gf-slider" />
+                </div>
+              </div>
+
+              {settings.negativeMarking && (
+                <div className="gf-field gf-field-tight" style={{ paddingTop: '12px' }}>
+                  <span className="gf-field-label">Marks deducted per wrong answer</span>
+                  <input
+                    type="number"
+                    min={0}
+                    max={100}
+                    step={0.25}
+                    className="gf-field-input"
+                    value={settings.negativeMarkValue}
+                    onChange={e => { setSettings(p => ({ ...p, negativeMarkValue: Math.max(0, Number(e.target.value) || 0) })); markUnsaved(); }}
+                  />
+                </div>
+              )}
+
+              <p style={{ fontSize: '13px', color: 'var(--r-ink-muted)', lineHeight: 1.5 }}>
+                Unanswered questions always score zero. Written responses stay in the teacher marking queue.
               </p>
             </div>
             {/* Setting Card 2: Security & Anti-Cheating Sentinel */}

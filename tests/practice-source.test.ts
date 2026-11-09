@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { getFallbackPaper } from '@/lib/paperDataService';
-import { sourcePracticeQuestion } from '@/services/assessment/service';
+import { gradablePracticeQuestions, sourcePracticeQuestion } from '@/services/assessment/service';
 
 describe('Practice source normalization', () => {
   it('loads every 2025 MCQ despite nullable diagram fields in the source', () => {
@@ -17,6 +17,18 @@ describe('Practice source normalization', () => {
       const questions=getFallbackPaper(code)!.questions.map(sourcePracticeQuestion);
       expect(questions).toHaveLength(40);
       expect(questions.every(q=>q.options.some(o=>o.isCorrect))).toBe(true);
+    }
+  });
+  it('keeps disputed official-key entries on the paper but out of single-answer grading', () => {
+    for (const [code, number] of [
+      ['CS-IX-2023-P1', 11], ['CS-IX-2024-P1', 9],
+      ['CS-X-2019-P1', 21], ['CS-X-2023-P1', 37], ['CS-X-2024-P1', 8],
+    ] as const) {
+      const paper = getFallbackPaper(code)!;
+      expect(paper.questions.some(q => Number(q.questionNumber) === number)).toBe(true);
+      const scored = gradablePracticeQuestions(code, paper.questions);
+      expect(scored).toHaveLength(paper.questions.length - 1);
+      expect(scored.some(q => Number(q.questionNumber) === number)).toBe(false);
     }
   });
 });

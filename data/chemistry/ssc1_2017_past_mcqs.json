@@ -1,0 +1,952 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "The branch of chemistry which deals with the study of chemical and biochemical phenomena occurring in nature is called",
+    "options": {
+      "A": "nuclear chemistry.",
+      "B": "physical chemistry.",
+      "C": "analytical chemistry.",
+      "D": "environmental chemistry."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "1.1.1",
+    "sloText": "Define chemistry and identify its major branches (physical, organic, inorganic, analytical, biochemistry, industrial, nuclear and environmental chemistry).",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Environmental chemistry studies the sources, reactions, transport, effects, and fates of chemical species and biochemical phenomena occurring in natural environments (air, water, and soil ecosystems).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Nuclear chemistry deals with radioactivity, nuclear processes, and nuclear properties."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Physical chemistry deals with the relationship between physical properties and chemical composition."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Analytical chemistry deals with the qualitative and quantitative analysis of chemical components."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Environmental chemistry investigates chemical and biochemical phenomena occurring in nature and their impact on the environment."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "stem": "A sample of hydrocarbon undergoes complete combustion to produce carbon dioxide (CO2) and water (H2O).\n(Note: Atomic mass of C = 12 amu, O = 16 amu and H = 1 amu)\nIf 8.80 g of carbon dioxide is obtained, then what will be the mass of carbon present in it?",
+    "options": {
+      "A": "2.4 g",
+      "B": "3.8 g",
+      "C": "12.0 g",
+      "D": "32.3 g"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "2.2.1",
+    "sloText": "Perform stoichiometric mass and mole calculations using chemical formulas.",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Molar mass of CO2 = 12 + 2(16) = 44 g/mol. Every 44 g of CO2 contains 12 g of carbon.\nMass of carbon in 8.80 g of CO2 = (12 / 44) \u00d7 8.80 g = 12 \u00d7 0.20 = 2.40 g (2.4 g).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Moles of CO2 = 8.80 / 44 = 0.20 mol; Mass of C = 0.20 mol \u00d7 12 g/mol = 2.4 g."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Arithmetic error in mass fraction calculation."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 12.0 g is the mass of carbon in 1 full mole (44 g) of CO2, not 8.80 g."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Inverted the mass ratio: (44 / 12) \u00d7 8.80 = 32.27 g."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "stem": "A student has to identify the element, mixture and compound in the given substances.\ni. Mercury | ii. Glucose | iii. Ammonia | iv. Brass\nWhich of the following arrangements is CORRECT for the given substances?",
+    "options": {
+      "A": "i: Element | ii: Compound | iii: Mixture | iv: Element",
+      "B": "i: Element | ii: Compound | iii: Compound | iv: Mixture",
+      "C": "i: Compound | ii: Element | iii: Mixture | iv: Compound",
+      "D": "i: Compound | ii: Mixture | iii: Mixture | iv: Element"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.2.8",
+    "sloText": "Classify common substances into elements, compounds, and mixtures.",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Mercury (Hg) is a pure metallic element; Glucose (C6H12O6) is a pure covalent compound; Ammonia (NH3) is a pure covalent compound; Brass is a solid homogeneous mixture (alloy) of copper and zinc.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Ammonia is a pure compound (NH3), not a mixture, and brass is an alloy mixture, not an element."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Mercury = Element, Glucose = Compound, Ammonia = Compound, Brass = Mixture (alloy of Cu and Zn)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Misclassifies all four substances."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Mercury is an element and glucose/ammonia are pure compounds."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "stem": "Tritium is an isotope of hydrogen.\nWhich figure shows the atomic structure of tritium?\n(Diagrams A, B, C, D show 1 electron on shell and nucleus with P=1, n=0; P=1, n=1; P=1, n=2; P=1, n=3)",
+    "options": {
+      "A": "Diagram A (P = 1, n = 0, 1 electron)",
+      "B": "Diagram B (P = 1, n = 1, 1 electron)",
+      "C": "Diagram C (P = 1, n = 2, 1 electron)",
+      "D": "Diagram D (P = 1, n = 3, 1 electron)"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "3.3.1",
+    "sloText": "Describe the isotopes of hydrogen (protium, deuterium, tritium) in terms of subatomic particles.",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-2017-P1/q4.png",
+    "explanation": "Tritium (3_1 H) is the heaviest natural isotope of hydrogen with atomic number Z = 1 (1 proton, 1 electron) and mass number A = 3. Therefore, its nucleus contains n = A - Z = 3 - 1 = 2 neutrons (P = 1, n = 2), shown in Figure C. Figure A is protium (1_1 H, n = 0) and Figure B is deuterium (2_1 H, n = 1).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. P = 1, n = 0 represents Protium (1_1 H)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. P = 1, n = 1 represents Deuterium (2_1 H)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Tritium (3_1 H) has 1 proton, 2 neutrons (P = 1, n = 2), and 1 electron."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Hydrogen isotopes do not have 3 neutrons in standard natural form."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "stem": "How many neutrons are present in an atom with atomic number 9 and mass number 19?",
+    "options": {
+      "A": "9",
+      "B": "10",
+      "C": "19",
+      "D": "28"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "3.1.3",
+    "sloText": "Calculate the number of protons, neutrons, and electrons in an atom given atomic number and mass number.",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Number of neutrons (n) = Mass number (A) - Atomic number (Z) = 19 - 9 = 10 neutrons (Fluorine-19).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 9 is the number of protons and electrons (atomic number Z)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Neutrons = A - Z = 19 - 9 = 10."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 19 is the total nucleon (mass) number."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Added mass number and atomic number (19 + 9 = 28) instead of subtracting."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "stem": "Which of the following represents the electronic configuration of potassium (39_19 K)?",
+    "options": {
+      "A": "1s2, 2s2, 2p6, 3s2, 3p5",
+      "B": "1s2, 2s2, 2p6, 3s2, 3p6",
+      "C": "1s2, 2s2, 2p6, 3s2, 3p6, 4s1",
+      "D": "1s2, 2s2, 2p6, 3s2, 3p6, 4s2"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.2.1",
+    "sloText": "Write the electronic configuration of the first twenty elements in terms of s and p subshells.",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Potassium (Z = 19) has 19 electrons. Following the Aufbau principle, electrons fill subshells in order of increasing energy: 1s2 (2), 2s2 2p6 (8), 3s2 3p6 (8), and the 19th electron enters the 4s1 orbital (total = 2 + 8 + 8 + 1 = 19 electrons).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Contains 17 electrons (Chlorine, Z = 17)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Contains 18 electrons (Argon, Z = 18, or K+ ion)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. 1s2, 2s2, 2p6, 3s2, 3p6, 4s1 accounts for all 19 electrons of neutral potassium."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Contains 20 electrons (Calcium, Z = 20)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "stem": "The tendency of an atom to have eight electrons in its valence shell, either by gaining, losing or sharing electrons to attain an electronic configuration of the nearest noble gas, is called",
+    "options": {
+      "A": "octet rule.",
+      "B": "duplet rule.",
+      "C": "periodic law.",
+      "D": "aufbau principle."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "5.1.1",
+    "sloText": "State the octet and duplet rules and explain how atoms achieve electronic stability.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "The octet rule states that atoms tend to gain, lose, or share valence electrons during chemical bond formation so that their outermost shell acquires a stable configuration of eight electrons (ns2 np6) like a noble gas.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Attaining 8 electrons in the valence shell is defined as the octet rule."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The duplet rule refers to attaining 2 electrons in the first (K) shell like helium."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The periodic law states that physical and chemical properties of elements are periodic functions of their atomic numbers."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The Aufbau principle states that electrons fill atomic orbitals of lowest available energy levels first."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "stem": "Which of the following statements is FALSE about polar covalent compounds?",
+    "options": {
+      "A": "They dissolve completely in water.",
+      "B": "They show electronegativity difference as zero.",
+      "C": "They carry partial positive and negative charges.",
+      "D": "They have unequal sharing of electrons between bonded atoms."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.2.3",
+    "sloText": "Describe the characteristics of polar and non-polar covalent compounds.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Polar covalent bonds form between two non-metal atoms having a non-zero difference in electronegativity (typically 0.4 < \u0394EN < 1.7), resulting in unequal electron sharing and partial charges (\u03b4+ and \u03b4-). A zero electronegativity difference occurs only in non-polar homonuclear covalent bonds (like H2, Cl2, O2).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. This is true: polar covalent compounds generally dissolve in polar water ('like dissolves like')."
+      },
+      {
+        "key": "B",
+        "reason": "Correct (False statement). Zero electronegativity difference characterizes pure non-polar covalent bonds, never polar covalent compounds."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. This is true: unequal sharing creates partial positive (\u03b4+) and partial negative (\u03b4-) poles."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. This is true: the more electronegative atom pulls the shared electron pair closer to itself."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "stem": "Which of the following bonds is present between copper atoms that allows copper to conduct electricity?",
+    "options": {
+      "A": "Ionic bond",
+      "B": "Metallic bond",
+      "C": "Covalent bond",
+      "D": "Co-ordinate covalent bond"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.3.2",
+    "sloText": "Describe metallic bonding and explain electrical conductivity in metals.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Copper atoms are held together in a metallic crystal lattice by metallic bonds, consisting of positively charged copper cations immersed in a sea of delocalised, mobile valence electrons. These free electrons move under an applied voltage, allowing copper to conduct electricity.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Ionic bonding occurs between metal cations and non-metal anions."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Metallic bonding provides a sea of delocalised electrons between copper atoms that conducts electric current."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Covalent bonding occurs between non-metal atoms by localized electron pair sharing."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Coordinate covalent bonding involves lone pair donation between a donor and acceptor."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "stem": "Neon and argon are classified as noble gases because they have",
+    "options": {
+      "A": "coloured vapours.",
+      "B": "same atomic number.",
+      "C": "non-metallic character.",
+      "D": "full outer electron shell."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.2.1",
+    "sloText": "Explain the electronic stability and chemical inertness of Group VIIIA (noble gases).",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Neon (2, 8) and argon (2, 8, 8) belong to Group VIIIA (Group 18) and possess completely filled valence electron shells (stable octets, ns2 np6). Because their outer shells are full, they have virtually zero tendency to gain, lose, or share electrons, making them chemically unreactive (noble).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Noble gases are completely colourless, odourless gases."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Neon has atomic number 10 while argon has atomic number 18."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Many reactive elements (like oxygen, chlorine, and nitrogen) also have non-metallic character without being noble gases."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Their completely filled valence electron shells (octets) make them energetically stable and chemically inert."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "stem": "Which periodic trend is observed in moving down group VIIA of the periodic table?",
+    "options": {
+      "A": "Decreasing reactivity",
+      "B": "Decreasing boiling point",
+      "C": "Increasing electronegativity",
+      "D": "Increasing ionisation energy"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "4.2.1",
+    "sloText": "Describe the physical and chemical trends down Group VIIA (halogens).",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Moving down Group VIIA (halogens: F, Cl, Br, I), atomic size and shielding effect increase, which weakens the nuclear attraction for incoming electrons. Because halogens react by gaining an electron, their oxidising power and chemical reactivity decrease down the group.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Chemical reactivity of halogens decreases from fluorine down to iodine as nuclear pull on incoming electrons weakens."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Boiling point increases down Group VIIA (gas -> liquid -> solid) due to stronger London dispersion forces."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Electronegativity decreases down Group VIIA."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Ionisation energy decreases down any group as atomic radius increases."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "stem": "In the periodic table, the group number of an element shows its",
+    "options": {
+      "A": "valency.",
+      "B": "atomic number.",
+      "C": "number of shells.",
+      "D": "number of valence electrons."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "4.1.2",
+    "sloText": "Relate the group number and period number of an element to its electronic structure.",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "For representative (main-group) elements in the periodic table, the group number (IA to VIIIA) directly indicates the number of electrons present in the outermost (valence) shell.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. For Groups VA to VIIIA, valency is (8 - group number), not equal to the group number."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Atomic number is the total number of protons in the nucleus."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The number of occupied electron shells is indicated by the period number."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. The group number corresponds directly to the number of valence electrons."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "stem": "When few drops of ink are added in water, they slowly start to disperse. This spreading of molecules can be enhanced by increasing temperature.\nWhat will be the impact on the molecules when the temperature is increased?",
+    "options": {
+      "A": "Velocity of the molecules will increase.",
+      "B": "Pressure on the molecules will decrease.",
+      "C": "Intermolecular forces of attraction will increase.",
+      "D": "Volume occupied by the molecules will decrease."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.1.2",
+    "sloText": "Explain the effect of temperature on average kinetic energy, molecular velocity, and diffusion rate.",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "According to Kinetic Molecular Theory, average kinetic energy of molecules is directly proportional to absolute temperature (KE \u221d T). Increasing temperature increases the kinetic energy and average velocity of both water and ink molecules, accelerating diffusion.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Higher temperature increases molecular kinetic energy and velocity, causing faster collisions and diffusion."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Increasing temperature increases vapour pressure and collision pressure."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Higher thermal motion overcomes and weakens intermolecular forces of attraction."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Liquids expand slightly when heated, increasing the volume occupied."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "stem": "Plastics are amorphous solids because they",
+    "options": {
+      "A": "have a sharp melting point.",
+      "B": "can be broken along definite planes.",
+      "C": "maintain a 3-dimensional geometrical shape.",
+      "D": "possess an irregular arrangement of particles."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.4.1",
+    "sloText": "Differentiate between amorphous and crystalline solids with examples.",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Amorphous solids (such as plastics, glass, and rubber) lack long-range periodic order and possess a random, irregular arrangement of particles. Consequently, they soften over a wide temperature range rather than having a sharp melting point.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Sharp melting points are a defining property of crystalline solids."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Cleavage along definite planes is a property of crystalline solids."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Definite 3D geometrical shape belongs to crystalline solids."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Amorphous solids are defined by their disordered, irregular internal arrangement of particles."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "stem": "The gas law which shows the relationship between volume and pressure at constant temperature was presented by",
+    "options": {
+      "A": "Robert Boyle.",
+      "B": "Henry Moseley.",
+      "C": "Jacques Charles.",
+      "D": "Thomas Graham."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "6.2.3",
+    "sloText": "State Boyle's law and Charles's law.",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In 1662, Robert Boyle formulated Boyle's Law, which states that the volume of a given mass of gas is inversely proportional to the applied pressure at constant temperature (V \u221d 1/P).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Robert Boyle established the inverse relationship between gas volume and pressure at constant temperature."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Henry Moseley discovered the atomic number law for the modern periodic table."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Jacques Charles presented the volume-temperature relationship at constant pressure."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Thomas Graham formulated the law of diffusion and effusion of gases."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "stem": "Which of the following is NOT an example of aqueous solution?",
+    "options": {
+      "A": "Black tea",
+      "B": "Sea water",
+      "C": "Orange juice",
+      "D": "Whipped cream"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "7.1.1",
+    "sloText": "Define aqueous solutions and identify examples of different solution types.",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "An aqueous solution is a solution in which liquid water acts as the solvent. Black tea, sea water, and orange juice all have water as the primary solvent. Whipped cream is a gas-in-liquid colloidal foam (air whipped into liquid butterfat/cream) rather than an aqueous solution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Black tea is an aqueous solution of tea extracts dissolved in water."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Sea water is an aqueous solution of mineral salts (mainly NaCl) dissolved in water."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Orange juice is an aqueous solution of citric acid, sugars, and vitamins in water."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Whipped cream is a gas-in-liquid colloidal foam (air dispersed in cream), not an aqueous solution."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "stem": "If 16 cm3 of acetone is dissolved in water to prepare 200 cm3 of aqueous solution, the volume/volume (v/v) percentage of this solution will be",
+    "options": {
+      "A": "0.07%",
+      "B": "0.08%",
+      "C": "7.41%",
+      "D": "8.00%"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "7.2.1",
+    "sloText": "Calculate concentration of solutions in percentage composition (% m/m, % m/v, % v/m, % v/v).",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Percentage volume/volume (% v/v) = (Volume of solute in cm3 / Total volume of solution in cm3) \u00d7 100\n% v/v = (16 cm3 / 200 cm3) \u00d7 100 = 0.08 \u00d7 100 = 8.00%.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Divided 16 by 216 without multiplying by 100."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Divided 16 by 200 (0.08) but forgot to multiply by 100 to convert to percentage."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 7.41% comes from dividing 16 by (200 + 16 = 216), whereas 200 cm3 is already the final total volume of the prepared solution."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. % (v/v) = (16 / 200) \u00d7 100 = 8.00%."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "stem": "The molarity of the given sodium hydroxide solution will be\n(Diagram shows a 500 cm3 volumetric flask containing 15.8 g NaOH)\n(Note: Atomic mass of Na = 23 amu, O = 16 amu, H = 1 amu)",
+    "options": {
+      "A": "0.03 M",
+      "B": "0.19 M",
+      "C": "0.79 M",
+      "D": "1.26 M"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "7.2.3",
+    "sloText": "Calculate the molarity of a solution from mass of solute and volume of solution.",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-2017-P1/q18.png",
+    "explanation": "Molar mass of NaOH = 23 + 16 + 1 = 40 g/mol.\nMoles of NaOH = 15.8 g / 40 g/mol = 0.395 mol.\nVolume of solution = 500 cm3 = 0.500 dm3.\nMolarity (M) = 0.395 mol / 0.500 dm3 = 0.79 M.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Divided 15.8 by 500 without converting cm3 to dm3 or dividing by molar mass."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Multiplied 0.395 by 0.5 instead of dividing."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. M = (15.8 / 40) \u00d7 (1000 / 500) = 0.395 \u00d7 2 = 0.79 M."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Inverted the mole calculation: (40 / 15.8) / 2 = 1.26 M."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "stem": "Glucose is a non-electrolyte because it",
+    "options": {
+      "A": "is a polar molecule.",
+      "B": "is a covalent compound.",
+      "C": "breaks up into ions in water.",
+      "D": "dissolves completely in water."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.2.2",
+    "sloText": "Explain why covalent compounds like glucose and urea act as non-electrolytes in aqueous solution.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Glucose (C6H12O6) is a molecular covalent compound. Although it dissolves readily in water via hydrogen bonding, its covalent bonds do not dissociate to form free mobile ions in solution, making it a non-electrolyte.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Many polar molecules (like HCl) ionise in water and act as strong electrolytes."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Because glucose is a covalent compound that remains as intact neutral molecules in water without ionising, it cannot conduct electricity."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Glucose does NOT break up into ions in water."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Strong electrolytes like NaCl also dissolve completely in water."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "stem": "All of the following can prevent corrosion of metals EXCEPT",
+    "options": {
+      "A": "applying lubricants on the metals.",
+      "B": "alloying the metals with other metals.",
+      "C": "dipping the metals in aqueous salt solution.",
+      "D": "covering the metals with more reactive metals."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.3.2",
+    "sloText": "Describe methods for preventing corrosion of metals and factors that accelerate rusting.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Dipping a metal in an aqueous salt solution provides both water and dissolved electrolyte ions, which dramatically accelerates electrochemical corrosion (rusting) rather than preventing it. Applying grease/lubricants, alloying (e.g. stainless steel), and sacrificial coating/galvanizing (covering with a more reactive metal like zinc) all protect metals from corrosion.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Lubricants/grease create a hydrophobic barrier that blocks moisture and oxygen."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Alloying (such as mixing iron with chromium and nickel) prevents corrosion."
+      },
+      {
+        "key": "C",
+        "reason": "Correct (Exception). Aqueous salt solutions act as electrolytes that rapidly accelerate metal corrosion."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Coating with a more reactive metal (galvanizing/sacrificial protection) prevents the underlying metal from corroding."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "stem": "A voltaic (galvanic) cell is an electrochemical cell which",
+    "options": {
+      "A": "converts electrical energy into chemical energy.",
+      "B": "generates electricity through spontaneous redox reaction.",
+      "C": "comprises of two electrodes made up of the same inert metal.",
+      "D": "consists of a positively charged anode and a negatively charged cathode."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.2.1",
+    "sloText": "Distinguish between electrolytic cells and galvanic (voltaic) cells.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "A voltaic (galvanic) cell is an electrochemical cell that uses a spontaneous oxidation-reduction reaction to convert chemical energy into electrical energy.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Electrolytic cells convert electrical energy into chemical energy."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Voltaic cells produce electric current via spontaneous chemical redox reactions."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. A voltaic cell requires two electrodes of different metals (different reduction potentials) to generate a voltage."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. In a galvanic cell, the anode is negative and the cathode is positive."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "stem": "The shape of non-metals cannot be changed by hammering because they are",
+    "options": {
+      "A": "brittle.",
+      "B": "ductile.",
+      "C": "malleable.",
+      "D": "electronegative."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.1.3",
+    "sloText": "Compare the physical properties of metals and non-metals (malleability, ductility, brittleness).",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Solid non-metals are brittle (non-malleable and non-ductile); when struck with a hammer, their directional covalent bonds fracture and the solid shatters into pieces rather than deforming into sheets.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Non-metals are brittle and shatter when hammered."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Ductility is the ability of metals to be drawn into wires."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Malleability is the ability of metals to be hammered into thin sheets."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Electronegativity is a chemical bonding property, not a mechanical property."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "stem": "Alkali metals are highly reactive because they have",
+    "options": {
+      "A": "high ionisation energy values.",
+      "B": "low melting and boiling points.",
+      "C": "one electron in their valence shell.",
+      "D": "two electrons in their valence shell."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.4.1",
+    "sloText": "Explain the high chemical reactivity of Group IA alkali metals based on their electronic configuration.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Alkali metals (Group IA) possess a single electron in their outermost s-subshell (ns1). Because this single valence electron is far from the nucleus and strongly shielded by inner noble-gas shells, it is lost with very little energy (low ionisation energy) to achieve a stable noble-gas octet, making alkali metals extremely reactive.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Alkali metals have the lowest ionisation energy values in the periodic table."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Low melting/boiling points are physical properties resulting from weak metallic bonding, not the root cause of chemical reactivity."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Having a single loosely held valence electron (ns1) allows them to readily lose it to form stable +1 cations."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Alkaline earth metals (Group IIA) have two valence electrons."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "stem": "Which statement is FALSE about sodium metal?",
+    "options": {
+      "A": "It is silvery white and soft in appearance.",
+      "B": "It reacts with oxygen to form an acidic oxide.",
+      "C": "It forms salt with halogen having NaX formula.",
+      "D": "It liberates hydrogen gas on reaction with water."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.4.1",
+    "sloText": "Describe the physical and chemical properties of alkali metals (sodium).",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Metals react with oxygen to form basic oxides, whereas non-metals form acidic oxides. Sodium reacts with oxygen to form strongly basic oxides (sodium oxide Na2O / sodium peroxide Na2O2) which dissolve in water to form a strong base (NaOH). Therefore, statement B is false.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. This is true: freshly cut sodium is silvery-white and soft enough to cut with a knife."
+      },
+      {
+        "key": "B",
+        "reason": "Correct (False statement). Sodium is a strongly electropositive alkali metal and forms a strongly basic oxide, not an acidic oxide."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. This is true: 2Na + X2 -> 2NaX (e.g. NaCl, NaBr)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. This is true: 2Na + 2H2O -> 2NaOH + H2(g)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "stem": "Which of the following is TRUE when ionisation energies of sodium (Na) metal are compared with magnesium (Mg) metal?\n(Table columns: 1st Ionisation Energy | 2nd Ionisation Energy)",
+    "options": {
+      "A": "1st IE: Na < Mg | 2nd IE: Na > Mg",
+      "B": "1st IE: Na > Mg | 2nd IE: Na = Mg",
+      "C": "1st IE: Na = Mg | 2nd IE: Na > Mg",
+      "D": "1st IE: Na > Mg | 2nd IE: Na < Mg"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.2.2",
+    "sloText": "Compare first and second ionisation energies of Period 3 metals (Na and Mg).",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "1st Ionisation Energy (Na < Mg): Moving across Period 3 from Na (Z=11: [Ne] 3s1) to Mg (Z=12: [Ne] 3s2), nuclear charge increases and atomic radius decreases, so removing the first electron from Mg requires more energy (738 kJ/mol) than from Na (496 kJ/mol).\n2nd Ionisation Energy (Na > Mg): After losing one electron, Na+ has a stable closed-shell Neon configuration (1s2 2s2 2p6), so removing a second electron from a core 2p orbital requires an enormous amount of energy (4562 kJ/mol), whereas Mg+ ([Ne] 3s1) easily loses its second 3s valence electron (1451 kJ/mol) to achieve the stable Neon octet.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. 1st IE of Na (496 kJ/mol) < Mg (738 kJ/mol), while 2nd IE of Na (4562 kJ/mol, breaking 2p6 core) > Mg (1451 kJ/mol, removing 3s1 valence electron)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Reverses the first ionisation energy trend across a period."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Different elements in a period never have identical first ionisation energies."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Reverses both the first and second ionisation energy comparisons."
+      }
+    ]
+  }
+]

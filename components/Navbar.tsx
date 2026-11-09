@@ -31,6 +31,57 @@ const BOARDS = [
   { id: 'bise-lahore', name: 'Punjab Board (BISE)', fullName: 'Board of Intermediate & Secondary Education Lahore', active: false, tag: 'Coming Soon' },
 ];
 
+type SearchResultRow = {
+  id: string;
+  type?: string;
+  title?: string;
+  description?: string;
+  url?: string;
+  badge?: string;
+};
+
+const SEARCH_GROUPS: { id: string; label: string; match: (item: SearchResultRow) => boolean }[] = [
+  {
+    id: 'mcqs',
+    label: 'MCQ Quizzes',
+    match: (item) =>
+      item.type !== 'QUESTION' &&
+      (item.url?.includes('/mcqs') === true ||
+        item.url?.startsWith('/quizzes/') === true ||
+        (item.badge || '').toLowerCase().includes('mcq') ||
+        (item.badge || '').toLowerCase().includes('quiz')),
+  },
+  {
+    id: 'syllabus',
+    label: 'Syllabus & SLOs',
+    match: (item) => item.type === 'SLO' || item.url?.includes('/syllabus') === true,
+  },
+  {
+    id: 'papers',
+    label: 'Past Papers & Solved Questions',
+    match: (item) => item.type === 'QUESTION' || item.url?.startsWith('/past-papers/') === true,
+  },
+  {
+    id: 'resources',
+    label: 'Guides & Study Resources',
+    match: () => true,
+  },
+];
+
+function groupSearchResults(results: SearchResultRow[]) {
+  const taken = new Set<string>();
+  const groups: { id: string; label: string; items: SearchResultRow[] }[] = [];
+  for (const group of SEARCH_GROUPS) {
+    const items = results.filter((item) => {
+      if (taken.has(item.id) || !group.match(item)) return false;
+      taken.add(item.id);
+      return true;
+    });
+    if (items.length) groups.push({ id: group.id, label: group.label, items });
+  }
+  return groups;
+}
+
 const CLASS_SUBJECTS: Record<string, { label: string; subLabel: string; roman: string; isReady: boolean; subjects: SubjectItem[] }> = {
   'class-9': {
     label: 'Class 9',
@@ -42,7 +93,7 @@ const CLASS_SUBJECTS: Record<string, { label: string; subLabel: string; roman: s
       { name: 'Chemistry', slug: 'chemistry', icon: '🧪', badge: 'Coming Soon', isReady: false },
       { name: 'Biology', slug: 'biology', icon: '🧬', badge: 'Coming Soon', isReady: false },
       { name: 'Mathematics', slug: 'mathematics', icon: '📐', badge: 'Coming Soon', isReady: false },
-      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Coming Soon', isReady: false },
+      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Solved Papers & SLOs', highlight: true, isReady: true },
       { name: 'English Compulsory', slug: 'english', icon: '📖', badge: 'Coming Soon', isReady: false },
       { name: 'Urdu Compulsory', slug: 'urdu', icon: '✍️', badge: 'Coming Soon', isReady: false },
       { name: 'Islamiyat / Ethics', slug: 'islamiyat', icon: '🕌', badge: 'Coming Soon', isReady: false },
@@ -59,7 +110,7 @@ const CLASS_SUBJECTS: Record<string, { label: string; subLabel: string; roman: s
       { name: 'Chemistry', slug: 'chemistry', icon: '🧪', badge: 'Coming Soon', isReady: false },
       { name: 'Biology', slug: 'biology', icon: '🧬', badge: 'Coming Soon', isReady: false },
       { name: 'Mathematics', slug: 'mathematics', icon: '📐', badge: 'Coming Soon', isReady: false },
-      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Coming Soon', isReady: false },
+      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Solved Papers & SLOs', highlight: true, isReady: true },
       { name: 'English Compulsory', slug: 'english', icon: '📖', badge: 'Coming Soon', isReady: false },
       { name: 'Urdu Compulsory', slug: 'urdu', icon: '✍️', badge: 'Coming Soon', isReady: false },
       { name: 'Islamiyat / Ethics', slug: 'islamiyat', icon: '🕌', badge: 'Coming Soon', isReady: false },
@@ -76,7 +127,7 @@ const CLASS_SUBJECTS: Record<string, { label: string; subLabel: string; roman: s
       { name: 'Chemistry', slug: 'chemistry', icon: '🧪', badge: 'Coming Soon', isReady: false },
       { name: 'Biology', slug: 'biology', icon: '🧬', badge: 'Coming Soon', isReady: false },
       { name: 'Mathematics', slug: 'mathematics', icon: '📐', badge: 'Coming Soon', isReady: false },
-      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Coming Soon', isReady: false },
+      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Solved Papers & SLOs', highlight: true, isReady: true },
       { name: 'English', slug: 'english', icon: '📖', badge: 'Coming Soon', isReady: false },
       { name: 'Urdu', slug: 'urdu', icon: '✍️', badge: 'Coming Soon', isReady: false },
       { name: 'Islamic Education', slug: 'islamic-education', icon: '🕌', badge: 'Coming Soon', isReady: false },
@@ -92,7 +143,7 @@ const CLASS_SUBJECTS: Record<string, { label: string; subLabel: string; roman: s
       { name: 'Chemistry', slug: 'chemistry', icon: '🧪', badge: 'Coming Soon', isReady: false },
       { name: 'Biology', slug: 'biology', icon: '🧬', badge: 'Coming Soon', isReady: false },
       { name: 'Mathematics', slug: 'mathematics', icon: '📐', badge: 'Coming Soon', isReady: false },
-      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Coming Soon', isReady: false },
+      { name: 'Computer Science', slug: 'computer-science', icon: '💻', badge: 'Solved Papers & SLOs', highlight: true, isReady: true },
       { name: 'English', slug: 'english', icon: '📖', badge: 'Coming Soon', isReady: false },
       { name: 'Urdu', slug: 'urdu', icon: '✍️', badge: 'Coming Soon', isReady: false },
       { name: 'Pakistan Studies', slug: 'pakistan-studies', icon: '🇵🇰', badge: 'Coming Soon', isReady: false },
@@ -124,6 +175,11 @@ export default function Navbar() {
   const [globalType, setGlobalType] = useState<'ALL' | 'SLO' | 'QUESTION' | 'RESOURCE'>('ALL');
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const [searchBusy, setSearchBusy] = useState(false);
+  const [expandedSearchGroups, setExpandedSearchGroups] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    setExpandedSearchGroups({});
+  }, [globalQuery, globalType]);
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -165,7 +221,6 @@ export default function Navbar() {
   const [codeLoading, setCodeLoading] = useState(false);
   const [codeError, setCodeError] = useState<string | null>(null);
   const [activeQuizData, setActiveQuizData] = useState<any | null>(null);
-  const [pendingQuizCode, setPendingQuizCode] = useState<string | null>(null);
 
   // URL Query Param Detection (?code=...)
   useEffect(() => {
@@ -183,14 +238,6 @@ export default function Navbar() {
     const code = (codeToJoin || inputCode).trim().toUpperCase();
     if (!code) {
       setCodeError('Please enter a valid Quiz Code.');
-      return;
-    }
-
-    // Require student signup/login before taking quiz
-    if (!authUser) {
-      setPendingQuizCode(code);
-      setQuizCodeModalOpen(false);
-      setAuthModalOpen(true);
       return;
     }
 
@@ -292,6 +339,32 @@ export default function Navbar() {
       })
       .catch(() => {});
   }, []);
+
+  // Drop guest work whose retention window has elapsed, signed in or not.
+  useEffect(() => {
+    void import('@/lib/exam-cache')
+      .then(module => module.pruneExpiredLocalData())
+      .catch(() => undefined);
+  }, []);
+
+  // Replay any attempts taken while signed out as soon as an account is available.
+  useEffect(() => {
+    if (!authUser) return;
+    const run = () => {
+      void import('@/lib/guest-attempts')
+        .then(module => module.syncGuestAttempts())
+        .catch(() => undefined);
+    };
+    run();
+    window.addEventListener('focus', run);
+    window.addEventListener('online', run);
+    window.addEventListener('rise:guest-attempt-finished', run);
+    return () => {
+      window.removeEventListener('focus', run);
+      window.removeEventListener('online', run);
+      window.removeEventListener('rise:guest-attempt-finished', run);
+    };
+  }, [authUser]);
 
   const handleLogout = async () => {
     const response = await fetch('/api/auth/logout', { method: 'POST' });
@@ -1162,10 +1235,10 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div style={{ maxHeight: '420px', overflowY: 'auto', padding: '0.75rem 1.25rem' }}>
+            <div style={{ maxHeight: 'min(62vh, 540px)', overflowY: 'auto', padding: '0.75rem 1.25rem' }}>
               {globalQuery.trim().length < 2 ? (
                 <p style={{ margin: '1rem 0', fontSize: '0.88rem', color: '#64748b', textAlign: 'center' }}>
-                  Type at least 2 characters to search across all 337 SLOs, past papers, MCQs, CRQs, and guides.
+                  Type at least 2 characters to search across all SLOs, MCQ quizzes, past papers, and guides.
                 </p>
               ) : searchBusy ? (
                 <p style={{ margin: '1rem 0', fontSize: '0.88rem', color: '#0b5e4a', textAlign: 'center', fontWeight: 600 }}>
@@ -1176,35 +1249,68 @@ export default function Navbar() {
                   No matching items found for &ldquo;{globalQuery}&rdquo;.
                 </p>
               ) : (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {searchResults.map((item) => (
-                    <Link
-                      key={item.id}
-                      href={item.url || '/'}
-                      onClick={() => setSearchModalOpen(false)}
-                      style={{
-                        display: 'block',
-                        padding: '0.75rem 0.9rem',
-                        borderRadius: '10px',
-                        border: isDarkEffective ? '1px solid #334155' : '1px solid #e2e8f0',
-                        background: isDarkEffective ? '#1e293b' : '#ffffff',
-                        textDecoration: 'none',
-                        color: isDarkEffective ? '#f8fafc' : '#0f172a'
-                      }}
-                    >
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
-                        <strong style={{ fontSize: '0.9rem', color: '#0b5e4a' }}>{item.title}</strong>
-                        <span style={{ fontSize: '0.72rem', fontWeight: 700, padding: '2px 7px', borderRadius: '4px', background: '#e6f0ed', color: '#0b5e4a', whiteSpace: 'nowrap' }}>
-                          {item.badge || item.type}
-                        </span>
-                      </div>
-                      {item.description && (
-                        <div style={{ fontSize: '0.82rem', color: isDarkEffective ? '#cbd5e1' : '#475569', lineHeight: 1.45 }}>
-                          {item.description}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {groupSearchResults(searchResults).map((group) => {
+                    const expanded = Boolean(expandedSearchGroups[group.id]);
+                    const visible = expanded ? group.items : group.items.slice(0, 2);
+                    return (
+                      <div key={group.id} style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', padding: '0 0.1rem' }}>
+                          <span style={{ fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', color: isDarkEffective ? '#94a3b8' : '#64748b' }}>
+                            {group.label} · {group.items.length}
+                          </span>
+                          {group.items.length > 2 && (
+                            <button
+                              type="button"
+                              aria-expanded={expanded}
+                              onClick={() => setExpandedSearchGroups((prev) => ({ ...prev, [group.id]: !expanded }))}
+                              style={{
+                                background: 'none',
+                                border: 'none',
+                                padding: '2px 4px',
+                                cursor: 'pointer',
+                                fontSize: '0.76rem',
+                                fontWeight: 700,
+                                color: '#0b5e4a',
+                                textDecoration: 'underline',
+                                textUnderlineOffset: '2px',
+                              }}
+                            >
+                              {expanded ? 'Show less' : `View more (${group.items.length - 2})`}
+                            </button>
+                          )}
                         </div>
-                      )}
-                    </Link>
-                  ))}
+                        {visible.map((item) => (
+                          <Link
+                            key={item.id}
+                            href={item.url || '/'}
+                            onClick={() => setSearchModalOpen(false)}
+                            style={{
+                              display: 'block',
+                              padding: '0.75rem 0.9rem',
+                              borderRadius: '10px',
+                              border: isDarkEffective ? '1px solid #334155' : '1px solid #e2e8f0',
+                              background: isDarkEffective ? '#1e293b' : '#ffffff',
+                              textDecoration: 'none',
+                              color: isDarkEffective ? '#f8fafc' : '#0f172a'
+                            }}
+                          >
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                              <strong style={{ fontSize: '0.9rem', color: '#0b5e4a' }}>{item.title}</strong>
+                              <span style={{ fontSize: '0.72rem', fontWeight: 700, padding: '2px 7px', borderRadius: '4px', background: '#e6f0ed', color: '#0b5e4a', whiteSpace: 'nowrap' }}>
+                                {item.badge || item.type}
+                              </span>
+                            </div>
+                            {item.description && (
+                              <div style={{ fontSize: '0.82rem', color: isDarkEffective ? '#cbd5e1' : '#475569', lineHeight: 1.45 }}>
+                                {item.description}
+                              </div>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -1215,17 +1321,11 @@ export default function Navbar() {
       {/* Authentication Modal */}
       <AuthModal
         isOpen={authModalOpen}
-        onClose={() => {
-          setAuthModalOpen(false);
-          setPendingQuizCode(null);
-        }}
+        onClose={() => setAuthModalOpen(false)}
         onSuccess={(user) => {
           setAuthUser(user);
-          if (!pendingQuizCode && window.location.pathname.startsWith('/dashboard')) { window.location.href = user.role === 'STUDENT' ? '/dashboard/student' : '/dashboard/teacher'; return; }
-          if (pendingQuizCode) {
-            const code = pendingQuizCode;
-            setPendingQuizCode(null);
-            handleJoinQuiz(code);
+          if (window.location.pathname.startsWith('/dashboard')) {
+            window.location.href = user.role === 'STUDENT' ? '/dashboard/student' : '/dashboard/teacher';
           }
         }}
       />
@@ -1306,7 +1406,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* If user is not authenticated, alert them that signup/signin is required */}
+            {/* Guests can take the quiz; signing in links the result to their account */}
             {!authUser && (
               <div
                 style={{
@@ -1322,7 +1422,8 @@ export default function Navbar() {
               >
                 <AlertCircle size={18} style={{ color: '#ca8a04', flexShrink: 0, marginTop: '2px' }} />
                 <div style={{ fontSize: '0.82rem', color: isDarkEffective ? '#fef08a' : '#854d0e', lineHeight: 1.45 }}>
-                  <strong>Account Required:</strong> You must sign in or register before starting the quiz so your marks and anti-cheating logs are sent to your teacher.
+                  <strong>No account needed:</strong> you can start right away. Your progress and result stay on this
+                  device for 48 hours and upload automatically if you sign in — including teacher-assigned quizzes.
                 </div>
               </div>
             )}
@@ -1423,10 +1524,6 @@ export default function Navbar() {
                   <>
                     <Loader2 size={16} className="animate-spin" />
                     <span>Loading Assessment...</span>
-                  </>
-                ) : !authUser ? (
-                  <>
-                    <span>Sign In to Continue</span>
                   </>
                 ) : (
                   <>

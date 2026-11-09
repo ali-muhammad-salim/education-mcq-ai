@@ -1,8 +1,15 @@
 import { indexSyllabusSLOs, embedKnowledge } from '../services/knowledge/search';
 import { PrismaClient } from '@prisma/client';
 import { getAllStandardPapers, getFallbackPaper } from '../lib/paperDataService';
+import { reviewedMathematicsPapers } from '../lib/mathematicsPapers';
 import syl9 from '../data/physics/ssc1_exact_syllabus.json';
 import syl10 from '../data/physics/ssc2_exact_syllabus.json';
+import csSyl9 from '../data/computer-science/ssc1_exact_syllabus.json';
+import csSyl10 from '../data/computer-science/ssc2_exact_syllabus.json';
+import chemSyl9 from '../data/chemistry/ssc1_exact_syllabus.json';
+import chemSyl10 from '../data/chemistry/ssc2_exact_syllabus.json';
+import mthSyl9 from '../data/mathematics/ssc1_exact_syllabus.json';
+import mthSyl10 from '../data/mathematics/ssc2_exact_syllabus.json';
 
 const prisma = new PrismaClient();
 
@@ -11,17 +18,19 @@ async function syncSyllabusForClass(
   classId: string,
   level: 9 | 10,
   units: any[],
-  fileUrl: string
+  fileUrl: string,
+  subjectName = 'Physics',
+  subjectCodePrefix = 'PHY'
 ) {
   let subject = await prisma.subject.findFirst({
-    where: { classId, name: { equals: 'Physics', mode: 'insensitive' } },
+    where: { classId, name: { equals: subjectName, mode: 'insensitive' } },
   });
   if (!subject) {
     subject = await prisma.subject.create({
       data: {
         classId,
-        name: 'Physics',
-        code: level === 9 ? 'PHY-IX' : 'PHY-X',
+        name: subjectName,
+        code: level === 9 ? `${subjectCodePrefix}-IX` : `${subjectCodePrefix}-X`,
       },
     });
   }
@@ -217,13 +226,85 @@ export async function syncAllAnalyzedMaterials() {
     await prisma.pastPaper.delete({ where: { id: obs.id } });
   }
 
+  const csIxMeta = await syncSyllabusForClass(
+    board.id,
+    classMap.get(9)!,
+    9,
+    csSyl9 as any[],
+    '/materials/ssc/computer-science/ssc-1/computer-science-ssc-full-syllabus-2025.pdf',
+    'Computer Science',
+    'CS'
+  );
+  const csXMeta = await syncSyllabusForClass(
+    board.id,
+    classMap.get(10)!,
+    10,
+    csSyl10 as any[],
+    '/materials/ssc/computer-science/ssc-2/computer-science-ssc-full-syllabus-2025.pdf',
+    'Computer Science',
+    'CS'
+  );
+
+  const chemIxMeta = await syncSyllabusForClass(
+    board.id,
+    classMap.get(9)!,
+    9,
+    chemSyl9 as any[],
+    '/materials/ssc/chemistry/ssc-1/chemistry-ssc-full-syllabus-2025.pdf',
+    'Chemistry',
+    'CHM'
+  );
+  const chemXMeta = await syncSyllabusForClass(
+    board.id,
+    classMap.get(10)!,
+    10,
+    chemSyl10 as any[],
+    '/materials/ssc/chemistry/ssc-2/chemistry-ssc-full-syllabus-2025.pdf',
+    'Chemistry',
+    'CHM'
+  );
+
+  const mthIxMeta = await syncSyllabusForClass(
+    board.id,
+    classMap.get(9)!,
+    9,
+    mthSyl9 as any[],
+    '/materials/ssc/mathematics/ssc-1/mathematics-science-group-ssc-syllabus-2025.pdf',
+    'Mathematics',
+    'MTH'
+  );
+  const mthXMeta = await syncSyllabusForClass(
+    board.id,
+    classMap.get(10)!,
+    10,
+    mthSyl10 as any[],
+    '/materials/ssc/mathematics/ssc-2/mathematics-science-group-ssc-syllabus-2025.pdf',
+    'Mathematics',
+    'MTH'
+  );
+
   // Sync all standard Model Papers & Past Papers (including 2024 & 2025 Annual Papers I & II) and their questions
-  const papers = getAllStandardPapers();
+  const papers = [
+    ...getAllStandardPapers(),
+    ...['CHM-X-2023-P1', 'CHM-X-2023-P2', 'CHM-X-2024-P1', 'CHM-X-2024-P2'].map((code) => ({ id: code, paperCode: code }) as any),
+  ];
   for (const summary of papers) {
+    // These papers map some old IX topics to current X. The targeted importer
+    // validates both syllabuses and writes the correct cross-grade relations.
+    if (reviewedMathematicsPapers.some(paper => paper.paperCode === summary.paperCode)) continue;
     const full = getFallbackPaper(summary.paperCode);
     if (!full) continue;
     const level = full.academicClass.level === 10 ? 10 : 9;
-    const meta = level === 10 ? xMeta : ixMeta;
+    const isCsPaper = (full.subject?.name || '').toLowerCase() === 'computer science' || full.paperCode.startsWith('CS-');
+    const isChemPaper = (full.subject?.name || '').toLowerCase() === 'chemistry' || full.paperCode.startsWith('CHM-');
+    const isMthPaper = (full.subject?.name || '').toLowerCase() === 'mathematics' || full.paperCode.startsWith('MTH-');
+    const meta = isMthPaper
+      ? (level === 10 ? mthXMeta : mthIxMeta)
+      : isChemPaper
+        ? (level === 10 ? chemXMeta : chemIxMeta)
+        : isCsPaper
+          ? (level === 10 ? csXMeta : csIxMeta)
+          : (level === 10 ? xMeta : ixMeta);
     const classId = classMap.get(level)!;
 
     let paper = await prisma.pastPaper.findFirst({
@@ -266,10 +347,13 @@ export async function syncAllAnalyzedMaterials() {
 
     for (const q of full.questions) {
       const qNum = String(q.questionNumber);
-      const sloCode = q.sourceRegion?.current_slo || q.slos?.[0]?.slo?.code || q.sourceRegion?.slo;
+      // The reviewed Chemistry importer owns cross-grade and multi-outcome links.
+      if (q.sourceRegion?.mapping_review_source_sha256) continue;
+      const pendingMapping = q.sourceRegion?.mapping_status === 'PENDING_REVIEW';
+      const sloCode = pendingMapping ? undefined : q.sourceRegion?.current_slo || q.slos?.[0]?.slo?.code || q.sourceRegion?.slo;
       const sloEntry = sloCode ? meta.sloByCode.get(sloCode) : undefined;
       const tNum = q.topics?.[0]?.topic?.topicNumber;
-      const topicId = sloEntry?.topicId || (tNum ? meta.topicByNum.get(String(tNum)) : undefined) || null;
+      const topicId = pendingMapping ? null : sloEntry?.topicId || (tNum ? meta.topicByNum.get(String(tNum)) : undefined) || null;
       const subtopicId = sloEntry?.subtopicId || null;
       const sloId = sloEntry?.id || null;
 
@@ -284,7 +368,7 @@ export async function syncAllAnalyzedMaterials() {
         marks: q.marks,
         pageNumber: q.sourceRegion?.pageNumber || null,
         sourceRegion: q.sourceRegion as any,
-        syllabusVersionId: meta.version.id,
+        syllabusVersionId: pendingMapping ? null : meta.version.id,
         topicId,
         subtopicId,
         sloId,
@@ -430,10 +514,108 @@ export async function syncAllAnalyzedMaterials() {
       publicationYear: 2025,
       sourceFile: '/materials/ssc/physics/ssc-2/physics-x-2025-paper-i.pdf',
     },
+    {
+      title: 'Chemistry SSC-I Syllabus 2025 (Grade IX Dedicated)',
+      className: 'Class IX',
+      subject: 'Chemistry',
+      publisher: 'Aga Khan University Examination Board',
+      publicationYear: 2025,
+      sourceFile: '/materials/ssc/chemistry/ssc-1/chemistry-ssc-i-syllabus-grade-9-dedicated.pdf',
+    },
+    {
+      title: 'Chemistry SSC-II Syllabus 2025 (Grade X Dedicated)',
+      className: 'Class X',
+      subject: 'Chemistry',
+      publisher: 'Aga Khan University Examination Board',
+      publicationYear: 2025,
+      sourceFile: '/materials/ssc/chemistry/ssc-2/chemistry-ssc-ii-syllabus-grade-10-dedicated.pdf',
+    },
+    {
+      title: 'Chemistry Grade IX Pacing Guide for Teachers (2025)',
+      className: 'Class IX',
+      subject: 'Chemistry',
+      publisher: 'AKU-EB Teacher Developer Team',
+      publicationYear: 2025,
+      sourceFile: '/materials/ssc/chemistry/ssc-1/pacing-guide-2025-for-ssc-i-chemistry.pdf',
+    },
+    {
+      title: 'Chemistry Grade X Pacing Guide for Teachers (2025)',
+      className: 'Class X',
+      subject: 'Chemistry',
+      publisher: 'AKU-EB Teacher Developer Team',
+      publicationYear: 2025,
+      sourceFile: '/materials/ssc/chemistry/ssc-2/pacing-guide-for-ssc-ii-chemistry.pdf',
+    },
+    {
+      title: 'Resource Guide SSC Chemistry 2025 (Grade IX Dedicated)',
+      className: 'Class IX',
+      subject: 'Chemistry',
+      publisher: 'Aga Khan University Examination Board',
+      publicationYear: 2025,
+      sourceFile: '/materials/ssc/chemistry/ssc-1/resource-guide-2025-ssc-chemistry.pdf',
+    },
+    {
+      title: 'Resource Guide SSC Chemistry 2025 (Grade X Dedicated)',
+      className: 'Class X',
+      subject: 'Chemistry',
+      publisher: 'Aga Khan University Examination Board',
+      publicationYear: 2025,
+      sourceFile: '/materials/ssc/chemistry/ssc-2/resource-guide-2025-ssc-chemistry.pdf',
+    },
+    {
+      title: 'Notes from E-Marking Centre on SSC-I Chemistry Annual Examinations 2025',
+      className: 'Class IX',
+      subject: 'Chemistry',
+      publisher: 'Aga Khan University Examination Board',
+      publicationYear: 2025,
+      sourceFile: '/materials/ssc/chemistry/ssc-1/chemistry-ix-2025-emarking.pdf',
+    },
+    {
+      title: 'Notes from E-Marking Centre on SSC-II Chemistry Annual Examinations 2025',
+      className: 'Class X',
+      subject: 'Chemistry',
+      publisher: 'Aga Khan University Examination Board',
+      publicationYear: 2025,
+      sourceFile: '/materials/ssc/chemistry/ssc-2/chemistry-x-2025-emarking.pdf',
+    },
+    {
+      title: 'Chemistry SSC-I Sample Practical Paper III (Model Examination 2026)',
+      className: 'Class IX',
+      subject: 'Chemistry',
+      publisher: 'Aga Khan University Examination Board',
+      publicationYear: 2026,
+      sourceFile: '/materials/ssc/chemistry/ssc-1/chemistry-practical-model-paper-ix.pdf',
+    },
+    {
+      title: 'Chemistry SSC-II Sample Practical Paper III (Model Examination 2027)',
+      className: 'Class X',
+      subject: 'Chemistry',
+      publisher: 'Aga Khan University Examination Board',
+      publicationYear: 2027,
+      sourceFile: '/materials/ssc/chemistry/ssc-2/chemistry-practical-model-paper-x.pdf',
+    },
+    {
+      title: 'Chemistry SSC-I 2025 Annual Examination Papers I & II and Official Answer Key',
+      className: 'Class IX',
+      subject: 'Chemistry',
+      publisher: 'Aga Khan University Examination Board',
+      publicationYear: 2025,
+      sourceFile: '/materials/ssc/chemistry/ssc-1/chemistry-ix-2025-paper-i.pdf',
+    },
+    {
+      title: 'Chemistry SSC-II 2025 Annual Examination Papers I & II and Official Answer Key',
+      className: 'Class X',
+      subject: 'Chemistry',
+      publisher: 'Aga Khan University Examination Board',
+      publicationYear: 2025,
+      sourceFile: '/materials/ssc/chemistry/ssc-2/chemistry-x-2025-paper-i.pdf',
+    },
   ];
 
   let book2024Id: string | null = null;
   let bookX2025Id: string | null = null;
+  let bookChemIX2025Id: string | null = null;
+  let bookChemX2025Id: string | null = null;
   for (const b of books) {
     let existingBook = await prisma.book.findFirst({ where: { title: b.title } });
     if (!existingBook) {
@@ -448,14 +630,26 @@ export async function syncAllAnalyzedMaterials() {
     if (b.title.includes('SSC-I 2024 Annual Examination Papers I & II')) {
       book2024Id = existingBook.id;
     }
-    if (b.title.includes('SSC-II 2025 Annual Examination Papers I & II')) {
+    if (b.title.includes('SSC-II 2025 Annual Examination Papers I & II') && b.subject === 'Physics') {
       bookX2025Id = existingBook.id;
+    }
+    if (b.title.includes('Chemistry SSC-I 2025 Annual Examination Papers I & II')) {
+      bookChemIX2025Id = existingBook.id;
+    }
+    if (b.title.includes('Chemistry SSC-II 2025 Annual Examination Papers I & II')) {
+      bookChemX2025Id = existingBook.id;
     }
   }
 
-  // Sync all 2024 SSC-I & 2025 SSC-II Paper I & Paper II questions into BookContent so they receive 768-dim pgvector embeddings
-  for (const pCode of ['PHY-IX-2024-P1', 'PHY-IX-2024-P2', 'PHY-X-2025-P1', 'PHY-X-2025-P2']) {
-    const targetBookId = pCode.startsWith('PHY-X') ? bookX2025Id : book2024Id;
+  // Sync 2024 SSC-I & 2025 SSC-I/II Physics and Chemistry Paper I & Paper II questions into BookContent so they receive 768-dim pgvector embeddings
+  for (const pCode of ['PHY-IX-2024-P1', 'PHY-IX-2024-P2', 'PHY-X-2025-P1', 'PHY-X-2025-P2', 'CHM-IX-2025-P1', 'CHM-IX-2025-P2', 'CHM-X-2025-P1', 'CHM-X-2025-P2']) {
+    const targetBookId = pCode.startsWith('PHY-X')
+      ? bookX2025Id
+      : pCode.startsWith('PHY-IX')
+        ? book2024Id
+        : pCode.startsWith('CHM-X')
+          ? bookChemX2025Id
+          : bookChemIX2025Id;
     const pData = getFallbackPaper(pCode);
     if (targetBookId && pData) {
       for (const q of pData.questions) {

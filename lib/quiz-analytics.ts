@@ -36,6 +36,17 @@ export interface PaperAnalyticsPayload {
 
 const OPTION_KEYS = ['A', 'B', 'C', 'D'] as const;
 
+export const MIN_PERCENTILE_ATTEMPTS = 30;
+
+/** Midrank handles equal scores without pretending one student beat another. */
+export function scorePercentile(score: number, scores: { score: number; count: number }[]): number | null {
+  const total = scores.reduce((sum, row) => sum + row.count, 0);
+  if (total < MIN_PERCENTILE_ATTEMPTS) return null;
+  const below = scores.filter(row => row.score < score).reduce((sum, row) => sum + row.count, 0);
+  const tied = scores.find(row => row.score === score)?.count ?? 0;
+  return Math.round(((below + tied / 2) / total) * 100);
+}
+
 function fnv1a(input: string): number {
   let hash = 0x811c9dc5;
   for (let i = 0; i < input.length; i += 1) {

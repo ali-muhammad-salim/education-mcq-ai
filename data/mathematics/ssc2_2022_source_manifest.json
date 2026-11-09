@@ -1,0 +1,545 @@
+{
+  "sources": {
+    "p1": {
+      "filename": "mathematics-x-2022-paper-i.pdf",
+      "url": "/materials/ssc/mathematics/ssc-2/mathematics-x-2022-paper-i.pdf",
+      "pages": 20,
+      "bytes": 648805,
+      "sha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2"
+    },
+    "key": {
+      "filename": "mathematics-x-2022-keys.pdf",
+      "url": "/materials/ssc/mathematics/ssc-2/mathematics-x-2022-keys.pdf",
+      "pages": 3,
+      "bytes": 142343,
+      "sha256": "56b914ceadb3402e7a9d8f3b39f359f7a84de1d0259cb54a6087a772e0a52d18"
+    }
+  },
+  "officialKeyRows": [
+    {
+      "question": 1,
+      "oldSlo": "14.1.1",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "question": 2,
+      "oldSlo": "14.1.2",
+      "answer": "D",
+      "level": "U"
+    },
+    {
+      "question": 3,
+      "oldSlo": "14.1.2",
+      "answer": "B",
+      "level": "A"
+    },
+    {
+      "question": 4,
+      "oldSlo": "14.3.1",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "question": 5,
+      "oldSlo": "14.4.1",
+      "answer": "B",
+      "level": "A"
+    },
+    {
+      "question": 6,
+      "oldSlo": "14.3.5",
+      "answer": "A",
+      "level": "A"
+    },
+    {
+      "question": 7,
+      "oldSlo": "14.2.2",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "question": 8,
+      "oldSlo": "14.4.1",
+      "answer": "B",
+      "level": "U"
+    },
+    {
+      "question": 9,
+      "oldSlo": "15.1.1",
+      "answer": "D",
+      "level": "U"
+    },
+    {
+      "question": 10,
+      "oldSlo": "15.1.1",
+      "answer": "A",
+      "level": "A"
+    },
+    {
+      "question": 11,
+      "oldSlo": "15.1.1",
+      "answer": "A",
+      "level": "A"
+    },
+    {
+      "question": 12,
+      "oldSlo": "15.2.1",
+      "answer": "B",
+      "level": "A"
+    },
+    {
+      "question": 13,
+      "oldSlo": "15.2.1",
+      "answer": "B",
+      "level": "A"
+    },
+    {
+      "question": 14,
+      "oldSlo": "15.1.3",
+      "answer": "A",
+      "level": "A"
+    },
+    {
+      "question": 15,
+      "oldSlo": "15.3.1",
+      "answer": "A",
+      "level": "A"
+    },
+    {
+      "question": 16,
+      "oldSlo": "15.3.1",
+      "answer": "B",
+      "level": "A"
+    },
+    {
+      "question": 17,
+      "oldSlo": "15.2.1",
+      "answer": "D",
+      "level": "A"
+    },
+    {
+      "question": 18,
+      "oldSlo": "17.2.2",
+      "answer": "B",
+      "level": "U"
+    },
+    {
+      "question": 19,
+      "oldSlo": "17.1.2",
+      "answer": "B",
+      "level": "A"
+    },
+    {
+      "question": 20,
+      "oldSlo": "17.1.3",
+      "answer": "B",
+      "level": "A"
+    },
+    {
+      "question": 21,
+      "oldSlo": "17.1.3",
+      "answer": "D",
+      "level": "A"
+    },
+    {
+      "question": 22,
+      "oldSlo": "17.2.2",
+      "answer": "A",
+      "level": "U"
+    },
+    {
+      "question": 23,
+      "oldSlo": "17.4.1",
+      "answer": "D",
+      "level": "A"
+    },
+    {
+      "question": 24,
+      "oldSlo": "17.1.4",
+      "answer": "B",
+      "level": "A"
+    },
+    {
+      "question": 25,
+      "oldSlo": "18.1.3",
+      "answer": "A",
+      "level": "K"
+    },
+    {
+      "question": 26,
+      "oldSlo": "18.1.5",
+      "answer": "A",
+      "level": "A"
+    },
+    {
+      "question": 27,
+      "oldSlo": "18.1.6",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "question": 28,
+      "oldSlo": "18.1.5",
+      "answer": "A",
+      "level": "K"
+    },
+    {
+      "question": 29,
+      "oldSlo": "18.1.7",
+      "answer": "B",
+      "level": "U"
+    },
+    {
+      "question": 30,
+      "oldSlo": "21.2.4",
+      "answer": "A",
+      "level": "U"
+    },
+    {
+      "question": 31,
+      "oldSlo": "21.3.2",
+      "answer": "D",
+      "level": "U"
+    },
+    {
+      "question": 32,
+      "oldSlo": "21.4.2",
+      "answer": "C",
+      "level": "A"
+    },
+    {
+      "question": 33,
+      "oldSlo": "22.1.1",
+      "answer": "B",
+      "level": "A"
+    },
+    {
+      "question": 34,
+      "oldSlo": "22.1.1",
+      "answer": "C",
+      "level": "A"
+    },
+    {
+      "question": 35,
+      "oldSlo": "21.2.2",
+      "answer": "C",
+      "level": "K"
+    },
+    {
+      "question": 36,
+      "oldSlo": "21.2.6",
+      "answer": "C",
+      "level": "A"
+    },
+    {
+      "question": 37,
+      "oldSlo": "21.5.1",
+      "answer": "D",
+      "level": "K"
+    },
+    {
+      "question": 38,
+      "oldSlo": "21.2.2",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "question": 39,
+      "oldSlo": "21.2.4",
+      "answer": "B",
+      "level": "A"
+    },
+    {
+      "question": 40,
+      "oldSlo": "21.4.2",
+      "answer": "A",
+      "level": "U"
+    },
+    {
+      "question": 41,
+      "oldSlo": "21.4.2",
+      "answer": "D",
+      "level": "A"
+    },
+    {
+      "question": 42,
+      "oldSlo": "25.1.1",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "question": 43,
+      "oldSlo": "26.1.1",
+      "answer": "A",
+      "level": "U"
+    },
+    {
+      "question": 44,
+      "oldSlo": "24.1.1",
+      "answer": "A",
+      "level": "U"
+    },
+    {
+      "question": 45,
+      "oldSlo": "24.1.1",
+      "answer": "C",
+      "level": "A"
+    },
+    {
+      "question": 46,
+      "oldSlo": "24.1.1",
+      "answer": "B",
+      "level": "A"
+    },
+    {
+      "question": 47,
+      "oldSlo": "25.1.1",
+      "answer": "B",
+      "level": "U"
+    },
+    {
+      "question": 48,
+      "oldSlo": "26.1.1",
+      "answer": "A",
+      "level": "A"
+    },
+    {
+      "question": 49,
+      "oldSlo": "26.1.1",
+      "answer": "C",
+      "level": "A"
+    },
+    {
+      "question": 50,
+      "oldSlo": "26.1.1",
+      "answer": "D",
+      "level": "U"
+    }
+  ],
+  "crops": [
+    {
+      "paper": "p1",
+      "question": 2,
+      "page": 2,
+      "box": [
+        40,
+        430,
+        520,
+        760
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q2.png"
+    },
+    {
+      "paper": "p1",
+      "question": 3,
+      "page": 2,
+      "box": [
+        40,
+        430,
+        520,
+        760
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q3.png"
+    },
+    {
+      "paper": "p1",
+      "question": 7,
+      "page": 4,
+      "box": [
+        50,
+        130,
+        360,
+        345
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q7.png"
+    },
+    {
+      "paper": "p1",
+      "question": 27,
+      "page": 8,
+      "box": [
+        250,
+        300,
+        470,
+        460
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q27.png"
+    },
+    {
+      "paper": "p1",
+      "question": 29,
+      "page": 9,
+      "box": [
+        95,
+        125,
+        305,
+        290
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q29.png"
+    },
+    {
+      "paper": "p1",
+      "question": 33,
+      "page": 10,
+      "box": [
+        250,
+        110,
+        500,
+        240
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q33.png"
+    },
+    {
+      "paper": "p1",
+      "question": 37,
+      "page": 10,
+      "box": [
+        60,
+        680,
+        240,
+        790
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q37.png"
+    },
+    {
+      "paper": "p1",
+      "question": 42,
+      "page": 11,
+      "box": [
+        380,
+        580,
+        550,
+        750
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q42.png"
+    },
+    {
+      "paper": "p1",
+      "question": 43,
+      "page": 12,
+      "box": [
+        300,
+        120,
+        530,
+        280
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q43.png"
+    },
+    {
+      "paper": "p1",
+      "question": 44,
+      "page": 12,
+      "box": [
+        120,
+        340,
+        520,
+        480
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q44.png"
+    },
+    {
+      "paper": "p1",
+      "question": 45,
+      "page": 12,
+      "box": [
+        130,
+        620,
+        530,
+        730
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q45.png"
+    },
+    {
+      "paper": "p1",
+      "question": 46,
+      "page": 13,
+      "box": [
+        240,
+        110,
+        550,
+        280
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q46.png"
+    },
+    {
+      "paper": "p1",
+      "question": 47,
+      "page": 13,
+      "box": [
+        250,
+        360,
+        550,
+        540
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q47.png"
+    },
+    {
+      "paper": "p1",
+      "question": 48,
+      "page": 14,
+      "box": [
+        100,
+        150,
+        520,
+        330
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q48.png"
+    },
+    {
+      "paper": "p1",
+      "question": 49,
+      "page": 14,
+      "box": [
+        100,
+        150,
+        520,
+        330
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q49.png"
+    },
+    {
+      "paper": "p1",
+      "question": 50,
+      "page": 14,
+      "box": [
+        240,
+        540,
+        520,
+        730
+      ],
+      "sourceSha256": "2a59909c4e494166dddc7e00e5a599ccf350c537bbdb2bdf7e12a66f6b94fce2",
+      "url": "/paper-crops/MTH-X-2022-P1/q50.png"
+    }
+  ],
+  "syllabusSource": {
+    "url": "/materials/ssc/mathematics/ssc-2/mathematics-science-group-ssc-syllabus-2025.pdf",
+    "latestRevision": "July 2026",
+    "firstExamYear": 2027,
+    "sha256": "a64cbc39ebe8c1ea04fa9bbc0e88d3eb7e302cdae669216473658557a35dc3a2"
+  },
+  "examStructure": {
+    "format": "MODIFIED_ALL_MCQ_ASSESSMENT",
+    "totalQuestions": 50,
+    "totalMarks": 50,
+    "theoryEquatedMarks": 75,
+    "durationMinutes": 100,
+    "hasPaperII": false,
+    "note": "In the 2022 annual examinations, AKU-EB administered an all-MCQ examination of 50 questions equating to 75 marks."
+  }
+}

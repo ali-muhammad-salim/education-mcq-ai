@@ -16,6 +16,7 @@ import StructuredContent from '@/components/StructuredContent';
 import styles from '@/components/rise/quiz.module.css';
 import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 import { decryptQuestionReveal } from '@/lib/quiz-crypto';
+import { paperAnswer, paperChoices, paperMetadata } from '@/lib/paperPresentation';
 import {
   readExam,
   readAttemptHistory,
@@ -23,11 +24,13 @@ import {
   preloadAllPaperDiagramsOffline,
   getCachedDiagramSrc,
   cacheSingleDiagramOffline,
+  GUEST_RETENTION_MS,
   type AttemptHistoryEntry,
   type AttemptQuestionReview,
   type OfflineDiagramProgress,
 } from '@/lib/exam-cache';
 import {
+  MIN_PERCENTILE_ATTEMPTS,
   getBaselineQuestionTelemetry,
   computeCompositeIndex,
   classifySpeedAccuracyQuadrant,
@@ -96,6 +99,7 @@ export default function TakeQuizModal({
   paperCode,
   questions
 }: TakeQuizModalProps) {
+  const officialDuration = /^PHY-XI-201[78]-P1$/i.test(paperCode) ? 40 : /^PHY-XI-202[12]-P1$/i.test(paperCode) ? 130 : 50;
   // Navigation / Phase State: 'auth' -> 'setup' -> 'active' -> 'completed'
   const [phase, setPhase] = useState<'auth' | 'setup' | 'active' | 'completed'>('setup');
   const [showFinishConfirmModal, setShowFinishConfirmModal] = useState<boolean>(false);
@@ -119,7 +123,7 @@ export default function TakeQuizModal({
 
   // Setup / Timer Options & Resume vs Start Fresh State
   const [isTimed, setIsTimed] = useState<boolean>(true);
-  const [selectedDurationMin, setSelectedDurationMin] = useState<number>(50);
+  const [selectedDurationMin, setSelectedDurationMin] = useState<number>(officialDuration);
   const [forceNewAttempt, setForceNewAttempt] = useState<boolean>(false);
   const [savedResumeInfo, setSavedResumeInfo] = useState<{
     attemptId: string;
@@ -138,6 +142,7 @@ export default function TakeQuizModal({
   const [userSelections, setUserSelections] = useState<Record<string, string>>({}); // { [displayNum]: optionKey }
   const [timeLeftSeconds, setTimeLeftSeconds] = useState<number>(50 * 60);
   const [showQuestionGrid, setShowQuestionGrid] = useState<boolean>(false);
+  const paletteRef = useRef<HTMLDivElement | null>(null);
   const [quizStartTime, setQuizStartTime] = useState<number>(Date.now());
 
   // Per-Question Active Time Tracking & Bookmarks
@@ -173,6 +178,7 @@ export default function TakeQuizModal({
   const [isFocusLost, setIsFocusLost] = useState<boolean>(false);
   const [screenshotAttemptCount, setScreenshotAttemptCount] = useState<number>(0);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
+  const [canFullscreen, setCanFullscreen] = useState<boolean>(false);
 
   // Completion State
   const [submitting, setSubmitting] = useState<boolean>(false);
@@ -185,13 +191,38 @@ export default function TakeQuizModal({
     practiceDurationMin: selectedDurationMin,
     practiceUntimed: !isTimed,
     forceNewAttempt,
+    guestQuestions: questions,
+    guestTitle: initialPaperTitle,
   });
   const [preview, setPreview] = useState<{ title: string; count: number; practice: boolean } | null>(null);
   const paperTitle = engine.exam?.quizTitle || preview?.title || initialPaperTitle;
+  // Chapter and past-paper launches use locally built quiz codes the server has no
+  // record of, so the preview never resolves; their preloaded questions are still
+  // fully practice-capable and must keep the mode and duration controls usable.
+  const canConfigure = preview ? preview.practice : questions.length > 0;
 
   useEffect(() => {
     if (phase === 'setup') setLoadingQuizQuestions(false);
   }, [phase]);
+
+  // Keep the open answer sheet centred on the question being answered, which
+  // matters when the attempt order is randomised.
+  useEffect(() => {
+    if (!showQuestionGrid) return;
+    const recenter = () => {
+      const wrap = paletteRef.current;
+      const current = wrap?.querySelector<HTMLElement>('[aria-current="true"]');
+      if (!wrap || !current) return;
+      const wrapRect = wrap.getBoundingClientRect();
+      const slotRect = current.getBoundingClientRect();
+      if (slotRect.top < wrapRect.top || slotRect.bottom > wrapRect.bottom) {
+        wrap.scrollTop += slotRect.top - wrapRect.top - (wrap.clientHeight - slotRect.height) / 2;
+      }
+    };
+    recenter();
+    window.addEventListener('resize', recenter);
+    return () => window.removeEventListener('resize', recenter);
+  }, [showQuestionGrid, currentIndex]);
 
   // Load Attempt History, Saved In-Progress Attempt, and Community Analytics on Modal Open
   useEffect(() => {
@@ -211,50 +242,58 @@ export default function TakeQuizModal({
       })
       .catch(() => undefined);
 
-    // 3. Check if an unfinished in-progress attempt exists in IndexedDB or server
-    void (async () => {
-      const owner = typeof window !== 'undefined' ? sessionStorage.getItem('exam-user') || '' : '';
-      if (owner) {
-        const cached = await readExam(`exam:${owner}:${paperCode}`).catch(() => undefined);
-        if (cached && cached.questions?.length) {
-          const answeredCount = Object.keys(cached.answers || {}).length;
-          if (answeredCount > 0 && answeredCount < cached.questions.length) {
-            const remMin = Math.max(1, Math.ceil((Date.parse(cached.deadline) - Date.now()) / 60000));
-            if (active) {
-              setSavedResumeInfo({
-                attemptId: cached.id,
-                answeredCount,
-                totalCount: cached.questions.length,
-                lastQuestionNum: (cached.currentIndex ?? answeredCount) + 1,
-                remainingMinutes: remMin,
-              });
-            }
-            return;
-          }
-        }
-      }
-      // Also check server recovery endpoint
-      try {
-        const res = await fetch('/api/quizzes/' + encodeURIComponent(paperCode) + '/attempt');
-        if (res.ok) {
-          const rec = await res.json();
-          if (rec?.hasActiveAttempt && rec.attempt?.questions?.length) {
-            const ansCount = Object.keys(rec.attempt.answers || {}).length;
-            if (ansCount > 0 && ansCount < rec.attempt.questions.length && active) {
-              setSavedResumeInfo({
-                attemptId: rec.attempt.id,
-                answeredCount: ansCount,
-                totalCount: rec.attempt.questions.length,
-                lastQuestionNum: Math.min(rec.attempt.questions.length, ansCount + 1),
-                remainingMinutes: Math.max(1, Math.ceil((rec.attempt.remainingSeconds || 1800) / 60)),
-              });
+    // 3. Check if an unfinished in-progress attempt exists in IndexedDB or server.
+    //    Only meaningful on the setup screen; a scan during the active phase would
+    //    leave a stale banner behind after the attempt is submitted.
+    setSavedResumeInfo(null);
+    if (phase === 'setup') {
+      void (async () => {
+        const owner = typeof window !== 'undefined' ? sessionStorage.getItem('exam-user') || '' : '';
+        const localKeys = owner
+          ? [`exam:${owner}:${paperCode}`, `exam:guest:${paperCode}`]
+          : [`exam:guest:${paperCode}`];
+        for (const key of localKeys) {
+          const cached = await readExam(key).catch(() => undefined);
+          if (cached && !cached.submitted && cached.questions?.length) {
+            const answeredCount = Object.keys(cached.answers || {}).length;
+            if (answeredCount > 0 && answeredCount < cached.questions.length) {
+              const remMin = Math.max(1, Math.ceil((Date.parse(cached.deadline) - Date.now()) / 60000));
+              if (active) {
+                setSavedResumeInfo({
+                  attemptId: cached.id,
+                  answeredCount,
+                  totalCount: cached.questions.length,
+                  lastQuestionNum: (cached.currentIndex ?? answeredCount) + 1,
+                  remainingMinutes: remMin,
+                });
+              }
+              return;
             }
           }
         }
-      } catch {
-        // Ignore if offline or unauthenticated
-      }
-    })();
+        // Also check server recovery endpoint
+        try {
+          const res = await fetch('/api/quizzes/' + encodeURIComponent(paperCode) + '/attempt');
+          if (res.ok) {
+            const rec = await res.json();
+            if (rec?.hasActiveAttempt && rec.attempt?.questions?.length) {
+              const ansCount = Object.keys(rec.attempt.answers || {}).length;
+              if (ansCount > 0 && ansCount < rec.attempt.questions.length && active) {
+                setSavedResumeInfo({
+                  attemptId: rec.attempt.id,
+                  answeredCount: ansCount,
+                  totalCount: rec.attempt.questions.length,
+                  lastQuestionNum: Math.min(rec.attempt.questions.length, ansCount + 1),
+                  remainingMinutes: Math.max(1, Math.ceil((rec.attempt.remainingSeconds || 1800) / 60)),
+                });
+              }
+            }
+          }
+        } catch {
+          // Ignore if offline or unauthenticated
+        }
+      })();
+    }
 
     return () => {
       active = false;
@@ -270,11 +309,32 @@ export default function TakeQuizModal({
       window.history.pushState({ akuQuizActiveGuard: true }, '');
       setShowFinishConfirmModal(true);
     };
+    // Reload/close needs the browser's own confirmation; scripts cannot cancel it silently.
+    const onBeforeUnload = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnValue = '';
+      return '';
+    };
+    const root = document.documentElement;
+    const previousOverscroll = root.style.overscrollBehaviorY;
+    root.style.overscrollBehaviorY = 'contain';
     window.addEventListener('popstate', onPopState);
+    window.addEventListener('beforeunload', onBeforeUnload);
     return () => {
       window.removeEventListener('popstate', onPopState);
+      window.removeEventListener('beforeunload', onBeforeUnload);
+      root.style.overscrollBehaviorY = previousOverscroll;
     };
   }, [isOpen, phase]);
+
+  // Track fullscreen support so phones without the API (iOS Safari) do not get a dead button.
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    setCanFullscreen(typeof document.documentElement.requestFullscreen === 'function');
+    const onChange = () => setIsFullscreen(Boolean(document.fullscreenElement));
+    document.addEventListener('fullscreenchange', onChange);
+    return () => document.removeEventListener('fullscreenchange', onChange);
+  }, []);
 
   // 2-Stage Full-Paper Offline Diagram Preloader (Caches Q1-Q3 immediately, then drains Q4-Q40 in background)
   useEffect(() => {
@@ -335,9 +395,14 @@ export default function TakeQuizModal({
     const onKeyDown = (e: KeyboardEvent) => {
       const tag = (e.target as HTMLElement)?.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      const keyUpper = e.key.toUpperCase();
+      if (e.key === 'F5' || ((e.ctrlKey || e.metaKey) && keyUpper === 'R')) {
+        e.preventDefault();
+        setShowFinishConfirmModal(true);
+        return;
+      }
       const q = activeQuestions[currentIndex];
       if (!q) return;
-      const keyUpper = e.key.toUpperCase();
       if (['A', 'B', 'C', 'D'].includes(keyUpper) && !e.ctrlKey && !e.metaKey && !e.altKey) {
         if (!userSelections[String(q.displayNumber)] && q.options[keyUpper]) {
           e.preventDefault();
@@ -426,24 +491,28 @@ export default function TakeQuizModal({
       const norm = (s: string) => (s || '').replace(/\s+/g, ' ').trim();
       const propMatch = (questions || []).find(pq => norm(pq.questionText || (pq as any).stem) === norm(stemText || ''));
       if (propMatch) {
-        const sr = typeof propMatch.sourceRegion === 'object' && propMatch.sourceRegion ? propMatch.sourceRegion : (propMatch as any);
-        const rawCorrectKey = sr.correct_answer || sr.correctOption || '';
-        const rawChoices = sr.choices || sr.options || {};
-        const correctText = rawChoices[rawCorrectKey] || '';
-        let matchedLetter = rawCorrectKey;
-        if (currentOptions && correctText) {
-          const found = Object.entries(currentOptions).find(([, t]) => norm(String(t)) === norm(String(correctText)));
-          if (found) matchedLetter = found[0];
-        }
+        const sr = paperMetadata(propMatch.sourceRegion ?? propMatch);
+        const rawChoices = paperChoices(sr.choices || sr.options);
+        const rawCorrectKey = paperAnswer(sr, rawChoices);
+        if (!rawCorrectKey) return null;
+        const optionLetter = (key: string) => {
+          if (!currentOptions || !rawChoices[key] || norm(currentOptions[key]) === norm(rawChoices[key])) return key;
+          const matches = Object.entries(currentOptions).filter(([, text]) => norm(text) === norm(rawChoices[key]));
+          return matches.length === 1 ? matches[0][0] : undefined;
+        };
+        const matchedLetter = optionLetter(rawCorrectKey);
+        if (!matchedLetter) return null;
         const fbMap: Record<string, string> = {};
         if (Array.isArray(sr.option_feedback)) {
           for (const item of sr.option_feedback) {
-            if (item?.key && item?.reason) fbMap[String(item.key).toUpperCase()] = String(item.reason);
+            if (!item?.key || !item?.reason) continue;
+            const letter = optionLetter(String(item.key).toUpperCase());
+            if (letter) fbMap[letter] = String(item.reason);
           }
         }
         return {
-          correctOption: matchedLetter || 'A',
-          explanation: sr.explanation || (correctText ? `The correct answer is (${matchedLetter}) ${correctText}.` : 'Verified against the official answer key.'),
+          correctOption: matchedLetter,
+          explanation: sr.explanation || `The correct answer is (${matchedLetter}) ${rawChoices[rawCorrectKey]}.`,
           optionFeedback: Object.keys(fbMap).length > 0 ? fbMap : undefined,
           topicName: propMatch.topics?.[0]?.topic?.name || '',
         };
@@ -530,7 +599,8 @@ export default function TakeQuizModal({
     }
     setQuizStartTime(Date.now());
     setLoadingQuizQuestions(true);
-    setPhase(student ? 'active' : 'auth');
+    // Signed-out learners start a local attempt; it is replayed into the database after sign-in.
+    setPhase('active');
   };
 
   // Smart Practice Mode: Retry ONLY Incorrect & Unattempted Questions
@@ -662,7 +732,7 @@ export default function TakeQuizModal({
       const correctKey = revealed?.correctOption || 'A';
       const expl = revealed?.explanation || 'Verified against the official AKU-EB answer key.';
       const optFb = revealed?.optionFeedback;
-      const unitTitle = revealed?.topicName || q.topicName || 'General Physics';
+      const unitTitle = revealed?.topicName || q.topicName || 'General';
       const isRight = isAttempted && chosenKey === correctKey;
       const marks = q.marks || 1;
       const scoreAwarded = isRight ? marks : 0;
@@ -796,6 +866,7 @@ export default function TakeQuizModal({
 
     const attemptNumber = attemptHistory.length + 1;
     const nowIso = new Date().toISOString();
+    const guestAttempt = Boolean(engine.exam?.guest);
     const attemptEntry: AttemptHistoryEntry = {
       attemptId: engine.exam?.id || `local-${Date.now()}`,
       attemptNumber,
@@ -824,6 +895,8 @@ export default function TakeQuizModal({
       isPartial: unattemptedCount > 0,
       isRetryIncorrectMode: isRetrySubsetMode,
       questions: reviewedQuestions,
+      guest: guestAttempt || undefined,
+      expiresAt: guestAttempt ? new Date(Date.now() + GUEST_RETENTION_MS).toISOString() : undefined,
     };
 
     // Update UI in 0ms!
@@ -873,50 +946,80 @@ export default function TakeQuizModal({
     const updatedHistory = await saveAttemptHistory(paperCode, attemptEntry);
     setAttemptHistory(updatedHistory);
 
-    // Post per-question timing & score to Analytics/Leaderboard endpoint in background
-    void fetch('/api/quizzes/' + encodeURIComponent(paperCode) + '/analytics', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        studentId: student?.id || engine.exam?.studentId || 'local-candidate',
-        studentName: student?.name || 'You (Candidate)',
-        attemptNumber,
-        score: totalScore,
-        totalMarks,
-        attemptedCount,
-        totalTimeSec,
-        questionTimings: reviewedQuestions
-          .filter(rq => rq.isAttempted)
-          .map(rq => ({
-            questionNumber: rq.originalQuestionNumber || rq.displayNumber,
-            timeSpentSec: rq.timeSpentSec,
-            selectedOption: rq.selectedOption,
-            isCorrect: rq.isCorrect,
-          })),
-      }),
-    })
-      .then(r => r.json())
-      .then(data => {
-        if (data?.success && data.analytics) {
-          setPaperAnalytics(data.analytics);
-          setCompletionData((prev: any) =>
-            prev
-              ? {
-                  ...prev,
-                  percentile: data.percentile ?? prev.percentile,
-                  speedPercentile: data.speedPercentile ?? prev.speedPercentile,
-                  userRank: data.userRank,
-                  quadrantLabel: data.quadrantLabel ?? prev.quadrantLabel,
-                }
-              : prev
-          );
-        }
+    // Post per-question timing & score to Analytics/Leaderboard endpoint in background.
+    // Guest attempts stay on this device until they are replayed after sign-in.
+    if (!guestAttempt)
+      void fetch('/api/quizzes/' + encodeURIComponent(paperCode) + '/analytics', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          studentId: student?.id || engine.exam?.studentId || 'local-candidate',
+          studentName: student?.name || 'You (Candidate)',
+          attemptNumber,
+          score: totalScore,
+          totalMarks,
+          attemptedCount,
+          totalTimeSec,
+          questionTimings: reviewedQuestions
+            .filter(rq => rq.isAttempted)
+            .map(rq => ({
+              questionNumber: rq.originalQuestionNumber || rq.displayNumber,
+              timeSpentSec: rq.timeSpentSec,
+              selectedOption: rq.selectedOption,
+              isCorrect: rq.isCorrect,
+            })),
+        }),
       })
-      .catch(() => undefined);
+        .then(r => r.json())
+        .then(data => {
+          if (data?.success && data.analytics) {
+            setPaperAnalytics(data.analytics);
+            setCompletionData((prev: any) =>
+              prev
+                ? {
+                    ...prev,
+                    percentile: data.percentile ?? prev.percentile,
+                    speedPercentile: data.speedPercentile ?? prev.speedPercentile,
+                    userRank: data.userRank,
+                    quadrantLabel: data.quadrantLabel ?? prev.quadrantLabel,
+                  }
+                : prev
+            );
+          }
+        })
+        .catch(() => undefined);
 
-    // Sync final submission to backend assessment engine in background
-    if (!isRetrySubsetMode) {
-      void engine.submit(automatic || engine.remaining <= 0);
+    // Sync the final submission, then read the percentile the server computes from graded first attempts.
+    // A client-posted score must never decide a percentile.
+    if (!isRetrySubsetMode && engine.exam) {
+      if (guestAttempt) {
+        // Marks the local attempt finished and asks any signed-in tab to replay it.
+        void engine.submit(automatic || engine.remaining <= 0);
+        return;
+      }
+      const { quizId, id: attemptId } = engine.exam;
+      void (async () => {
+        try {
+          await engine.submit(automatic || engine.remaining <= 0);
+          for (let poll = 0; poll < 5; poll++) {
+            const response = await fetch(`/api/quizzes/${encodeURIComponent(quizId)}/analytics?attemptId=${encodeURIComponent(attemptId)}`);
+            if (response.status === 202) {
+              await new Promise(resolve => setTimeout(resolve, 2000));
+              continue;
+            }
+            if (!response.ok) break;
+            const data = await response.json();
+            if (data.success) {
+              setCompletionData((prev: any) => prev ? { ...prev, percentile: data.percentile, verifiedSampleSize: data.sampleSize } : prev);
+              const history = await saveAttemptHistory(paperCode, { ...attemptEntry, percentile: data.percentile ?? 0, verifiedSampleSize: data.sampleSize });
+              setAttemptHistory(history);
+            }
+            break;
+          }
+        } catch {
+          // Submission failures surface through the engine's own state.
+        }
+      })();
     }
   };
 
@@ -1261,16 +1364,18 @@ export default function TakeQuizModal({
           {/* Top Status & Offline Diagram Cache Readiness Strip during Active Quiz */}
           {phase === 'active' && (
             <div role="status" className={styles.syncStrip}>
-              <div>
+              <div className={styles.syncStatus}>
                 {engine.error ||
                   engine.notice ||
                   (engine.saving
                     ? 'Saving answers…'
                     : engine.pending
                       ? engine.pending + ' answers pending synchronization'
-                      : engine.exam || isRetrySubsetMode
-                        ? 'All answers saved locally & encrypted'
-                        : 'Loading saved assessment…')}
+                      : engine.guest
+                        ? 'Guest attempt · saved on this device'
+                        : engine.exam || isRetrySubsetMode
+                          ? 'All answers saved locally & encrypted'
+                          : 'Loading saved assessment…')}
                 {engine.error && (
                   <button onClick={engine.reload} className={styles.textButton} style={{ marginLeft: 12 }}>
                     Retry
@@ -1287,7 +1392,8 @@ export default function TakeQuizModal({
                   </span>
                 )}
                 <span className={styles.liveScore}>
-                  Attempted <strong>{liveAttemptedStats.correct}/{liveAttemptedStats.attempted}</strong> ({liveAttemptedStats.accuracy}%)
+                  <span className={styles.liveScoreLabel}>Attempted </span>
+                  <strong>{liveAttemptedStats.correct}/{liveAttemptedStats.attempted}</strong> ({liveAttemptedStats.accuracy}%)
                 </span>
               </div>
             </div>
@@ -1318,7 +1424,7 @@ export default function TakeQuizModal({
           {/* PHASE 2: QUIZ SETUP, RESUME BANNER, & SINGLE-ROW ATTEMPT HISTORY          */}
           {/* ========================================================================= */}
           {phase === 'setup' && (
-            <div className={`exam-phase-panel ${styles.setup}`}>
+            <div className={`exam-phase-panel ${styles.setup}`} data-quiz-setup>
               <div className={styles.setupHead}>
                 <span className={styles.stamp}>{paperCode} · Quiz setup</span>
                 <h2 className={styles.setupTitle}>{paperTitle}</h2>
@@ -1391,7 +1497,7 @@ export default function TakeQuizModal({
                                 : `${att.score}/${att.totalMarks} (${att.overallPercentage}%)`}
                             </span>
                             <span className={styles.meta} style={{ display: 'block' }}>
-                              {formatDurationShort(att.totalTimeSec)} · {att.percentile}th %ile
+                              {formatDurationShort(att.totalTimeSec)}{(att.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS ? ` · ${att.percentile}th %ile` : ''}
                             </span>
                           </span>
                         </button>
@@ -1470,12 +1576,14 @@ export default function TakeQuizModal({
                             {selectedHistoryAttempt.avgTimePerAttemptedSec}s <span className={styles.meta}>(peer {selectedHistoryAttempt.peerAvgTimePerQuestionSec}s)</span>
                           </div>
                         </div>
-                        <div className={styles.stat}>
-                          <span className={styles.label}>Percentile</span>
-                          <div className={`${styles.statValue} ${styles.statValueRight}`}>
-                            {selectedHistoryAttempt.percentile}th
+                        {(selectedHistoryAttempt.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS && (
+                          <div className={styles.stat}>
+                            <span className={styles.label}>Percentile</span>
+                            <div className={`${styles.statValue} ${styles.statValueRight}`}>
+                              {selectedHistoryAttempt.percentile}th
+                            </div>
                           </div>
-                        </div>
+                        )}
                       </div>
                     </div>
                   )}
@@ -1487,14 +1595,19 @@ export default function TakeQuizModal({
                 <div>
                   <span className={styles.label}>Candidate</span>
                   <p className={styles.candidateName}>
-                    {student?.name || 'Sign in to save your attempt'}
+                    {student?.name || 'Guest learner — no sign-in needed'}
                   </p>
+                  {!student && (
+                    <p className={styles.meta}>
+                      Progress and results stay on this device for 48 hours and upload automatically when you sign in.
+                    </p>
+                  )}
                 </div>
                 <button
                   onClick={() => setPhase('auth')}
                   className={`${styles.quiet} ${styles.small}`}
                 >
-                  Change candidate
+                  {student ? 'Change candidate' : 'Sign in (optional)'}
                 </button>
               </div>
 
@@ -1521,7 +1634,7 @@ export default function TakeQuizModal({
                   <button
                     type="button"
                     aria-pressed={!isTimed}
-                    disabled={!preview?.practice}
+                    disabled={!canConfigure}
                     onClick={() => setIsTimed(false)}
                     className={`${styles.mode}${!isTimed ? ` ${styles.modeOn}` : ''}`}
                   >
@@ -1539,16 +1652,16 @@ export default function TakeQuizModal({
                   <div className={styles.panel}>
                     <span className={styles.label}>Exam duration</span>
                     <div className={styles.chipRow}>
-                      {[15, 30, 50].map(mins => (
+                      {[15, 30, officialDuration].map(mins => (
                         <button
                           key={mins}
                           type="button"
                           aria-pressed={selectedDurationMin === mins}
-                          disabled={!preview?.practice}
+                          disabled={!canConfigure}
                           onClick={() => setSelectedDurationMin(mins)}
                           className={`${styles.chip}${selectedDurationMin === mins ? ` ${styles.chipOn}` : ''}`}
                         >
-                          {mins} min{mins === 50 ? ' · official' : ''}
+                          {mins} min{mins === officialDuration ? ' · official' : ''}
                         </button>
                       ))}
                     </div>
@@ -1598,9 +1711,16 @@ export default function TakeQuizModal({
                   className={styles.primary}
                 >
                   <span>
-                    {loadingQuizQuestions
-                      ? 'Loading questions…'
-                      : `Start quiz — ${preview?.count || questions?.length || activeQuestions?.length || 40} questions`}
+                    {loadingQuizQuestions ? (
+                      'Loading questions…'
+                    ) : (
+                      <>
+                        Start quiz
+                        <span className={styles.launchCount}>
+                          {` — ${preview?.count || questions?.length || activeQuestions?.length || 40} questions`}
+                        </span>
+                      </>
+                    )}
                   </span>
                   <ArrowRight aria-hidden="true" size={18} />
                 </button>
@@ -1693,59 +1813,67 @@ export default function TakeQuizModal({
 
                 {/* Status Indicators: Bookmark, Timer, Fullscreen, Warnings, Grid & Finish */}
                 <div className={styles.barTools}>
-                  {/* Bookmark / Flag Question Button */}
-                  <button
-                    type="button"
-                    onClick={() => toggleBookmark(currentQ.displayNumber)}
-                    aria-pressed={bookmarkedQuestions.includes(currentQ.displayNumber)}
-                    title="Flag this question for review (shortcut: F)"
-                    className={`${styles.tool}${bookmarkedQuestions.includes(currentQ.displayNumber) ? ` ${styles.toolFlag}` : ''}`}
-                  >
-                    <Bookmark size={14} fill={bookmarkedQuestions.includes(currentQ.displayNumber) ? 'currentColor' : 'none'} />
-                    <span>{bookmarkedQuestions.includes(currentQ.displayNumber) ? 'Flagged' : 'Flag'}</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={toggleFullscreen}
-                    aria-pressed={isFullscreen}
-                    className={`${styles.tool}${isFullscreen ? ` ${styles.toolOn}` : ''}`}
-                  >
-                    {isFullscreen ? <Minimize size={14} /> : <Maximize size={14} />}
-                    <span>{isFullscreen ? 'Exit full screen' : 'Full screen'}</span>
-                  </button>
-
-                  {isTimed && (
-                    <div
-                      role="timer"
-                      aria-label="Time remaining"
-                      className={`${styles.clock}${timeLeftSeconds < 300 ? ` ${styles.clockLow}` : ''}`}
+                  <div className={styles.toolScroller}>
+                    {/* Bookmark / Flag Question Button */}
+                    <button
+                      type="button"
+                      onClick={() => toggleBookmark(currentQ.displayNumber)}
+                      aria-pressed={bookmarkedQuestions.includes(currentQ.displayNumber)}
+                      aria-label={bookmarkedQuestions.includes(currentQ.displayNumber) ? 'Remove question flag' : 'Flag this question'}
+                      title="Flag this question for review (shortcut: F)"
+                      className={`${styles.tool}${bookmarkedQuestions.includes(currentQ.displayNumber) ? ` ${styles.toolFlag}` : ''}`}
                     >
-                      <Clock aria-hidden="true" size={15} />
-                      <span>{formatTime(timeLeftSeconds)}</span>
-                    </div>
-                  )}
+                      <Bookmark size={14} fill={bookmarkedQuestions.includes(currentQ.displayNumber) ? 'currentColor' : 'none'} />
+                      <span className={styles.toolLabel}>{bookmarkedQuestions.includes(currentQ.displayNumber) ? 'Flagged' : 'Flag'}</span>
+                    </button>
 
-                  <button
-                    type="button"
-                    onClick={e => {
-                      e.stopPropagation();
-                      setShowSwitchAuditModal(true);
-                    }}
-                    className={`${styles.tool}${tabSwitchCount > 0 || screenshotAttemptCount > 0 ? ` ${styles.toolAlert}` : ''}`}
-                  >
-                    <Eye aria-hidden="true" size={14} />
-                    <span>{tabSwitchCount} events</span>
-                  </button>
+                    {canFullscreen && (
+                      <button
+                        type="button"
+                        onClick={toggleFullscreen}
+                        aria-pressed={isFullscreen}
+                        aria-label={isFullscreen ? 'Exit full screen' : 'Enter full screen'}
+                        className={`${styles.tool} ${styles.fullscreenTool}${isFullscreen ? ` ${styles.toolOn}` : ''}`}
+                      >
+                        {isFullscreen ? <Minimize size={14} /> : <Maximize size={14} />}
+                        <span className={styles.toolLabel}>{isFullscreen ? 'Exit full screen' : 'Full screen'}</span>
+                      </button>
+                    )}
 
-                  <button
-                    type="button"
-                    onClick={() => setShowQuestionGrid(!showQuestionGrid)}
-                    aria-expanded={showQuestionGrid}
-                    className={styles.tool}
-                  >
-                    Sheet {Object.keys(userSelections).length}/{activeQuestions.length}
-                  </button>
+                    {isTimed && (
+                      <div
+                        role="timer"
+                        aria-label="Time remaining"
+                        className={`${styles.clock}${timeLeftSeconds < 300 ? ` ${styles.clockLow}` : ''}`}
+                      >
+                        <Clock aria-hidden="true" size={15} />
+                        <span>{formatTime(timeLeftSeconds)}</span>
+                      </div>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={e => {
+                        e.stopPropagation();
+                        setShowSwitchAuditModal(true);
+                      }}
+                      aria-label={`${tabSwitchCount} window departure events`}
+                      className={`${styles.tool}${tabSwitchCount > 0 || screenshotAttemptCount > 0 ? ` ${styles.toolAlert}` : ''}`}
+                    >
+                      <Eye aria-hidden="true" size={14} />
+                      <span><span className={styles.toolCount}>{tabSwitchCount}</span><span className={styles.toolLabel}> events</span></span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setShowQuestionGrid(!showQuestionGrid)}
+                      aria-expanded={showQuestionGrid}
+                      aria-label={`Question sheet, ${Object.keys(userSelections).length} of ${activeQuestions.length} answered`}
+                      className={styles.tool}
+                    >
+                      <span className={styles.toolLabel}>Sheet </span>{Object.keys(userSelections).length}/{activeQuestions.length}
+                    </button>
+                  </div>
 
                   <button
                     type="button"
@@ -1760,7 +1888,7 @@ export default function TakeQuizModal({
 
               {/* Quick Question Jump Drawer (Color-Coded: Correct=Green, Wrong=Red, Flagged=Amber, Unvisited=Gray) */}
               {showQuestionGrid && (
-                <div className={`no-scrollbar exam-question-grid ${styles.palette}`}>
+                <div ref={paletteRef} className={`no-scrollbar exam-question-grid ${styles.palette}`}>
                   <div className={styles.paletteKey}>
                     <span className={styles.paletteKeyItem}>
                       <span aria-hidden="true" className={`${styles.keyDot} ${styles.keyDotRight}`} /> Correct
@@ -1776,34 +1904,38 @@ export default function TakeQuizModal({
                     </span>
                   </div>
                   <div className={styles.paletteGrid}>
-                    {activeQuestions.map((q, idx) => {
-                      const sel = userSelections[q.displayNumber.toString()];
-                      const answered = Boolean(sel);
-                      const isRight = answered && q.correctOption && sel === q.correctOption;
-                      const isFlagged = bookmarkedQuestions.includes(q.displayNumber);
-                      const isCurrent = idx === currentIndex;
+                    {[...activeQuestions]
+                      .sort((a, b) => a.displayNumber - b.displayNumber)
+                      .map(q => {
+                        const idx = activeQuestions.findIndex(item => item.id === q.id);
+                        const sel = userSelections[q.displayNumber.toString()];
+                        const answered = Boolean(sel);
+                        const isRight = answered && q.correctOption && sel === q.correctOption;
+                        const isFlagged = bookmarkedQuestions.includes(q.displayNumber);
+                        const isCurrent = idx === currentIndex;
 
-                      let tone = '';
-                      if (isFlagged && !answered) tone = ` ${styles.slotFlag}`;
-                      else if (answered) tone = isRight ? ` ${styles.slotRight}` : ` ${styles.slotWrong}`;
+                        let tone = '';
+                        if (isFlagged && !answered) tone = ` ${styles.slotFlag}`;
+                        else if (answered) tone = isRight ? ` ${styles.slotRight}` : ` ${styles.slotWrong}`;
 
-                      return (
-                        <button
-                          key={q.id}
-                          type="button"
-                          aria-label={`Question ${q.displayNumber}`}
-                          aria-current={isCurrent ? 'true' : undefined}
-                          onClick={() => {
-                            setCurrentIndex(idx);
-                            setShowQuestionGrid(false);
-                          }}
-                          className={`${styles.slot}${tone}${isCurrent ? ` ${styles.slotCurrent}` : ''}`}
-                        >
-                          {q.displayNumber}
-                          {isFlagged && <span aria-hidden="true" className={styles.slotStar}>★</span>}
-                        </button>
-                      );
-                    })}
+                        return (
+                          <button
+                            key={q.id}
+                            type="button"
+                            aria-label={`Question ${q.displayNumber} of ${activeQuestions.length}`}
+                            aria-current={isCurrent ? 'true' : undefined}
+                            onClick={() => {
+                              if (idx < 0) return;
+                              setCurrentIndex(idx);
+                              setShowQuestionGrid(false);
+                            }}
+                            className={`${styles.slot}${tone}${isCurrent ? ` ${styles.slotCurrent}` : ''}`}
+                          >
+                            {q.displayNumber}
+                            {isFlagged && <span aria-hidden="true" className={styles.slotStar}>★</span>}
+                          </button>
+                        );
+                      })}
                   </div>
                 </div>
               )}
@@ -1924,7 +2056,7 @@ export default function TakeQuizModal({
                           <span
                             className={`${styles.peer}${isRightAnswer ? ` ${styles.peerRight}` : isPeerTrap ? ` ${styles.peerTrap}` : ''}`}
                           >
-                            {peerPct}% peers{isPeerTrap ? ' · trap' : ''}
+                            {peerPct}%<span className={styles.peerLabel}> peers{isPeerTrap ? ' · trap' : ''}</span>
                           </span>
                         )}
 
@@ -1941,11 +2073,7 @@ export default function TakeQuizModal({
                     <div className={styles.markHead}>
                       <span className={styles.markVerdict}>
                         {isCurrentCorrect ? <CheckCircle2 aria-hidden="true" size={20} /> : <XCircle aria-hidden="true" size={20} />}
-                        <span>
-                          {isCurrentCorrect
-                            ? 'Correct'
-                            : `Incorrect — the answer is ${currentQ.correctOption}`}
-                        </span>
+                        <span>{isCurrentCorrect ? 'Correct' : 'Incorrect'}</span>
                       </span>
 
                       {/* Per-Question Time vs Peer Average Pill */}
@@ -1960,6 +2088,7 @@ export default function TakeQuizModal({
                     </div>
 
                     <div className={styles.markBody}>
+                      <div><strong>Correct option ({currentQ.correctOption})</strong> <MathText text={currentQ.options[currentQ.correctOption] || ''} /></div>
                       <div>
                         <strong>Why this is correct:</strong> <MathText text={currentQ.explanation} />
                       </div>
@@ -1970,7 +2099,7 @@ export default function TakeQuizModal({
                           <MathText
                             text={
                               currentQ.optionFeedback?.[currentSelected] ||
-                              `Option (${currentSelected}) does not match the required physical principle or mathematical relationship derived above.`
+                              'A reason for this choice is pending review.'
                             }
                           />
                         </div>
@@ -2017,7 +2146,7 @@ export default function TakeQuizModal({
                     disabled={submitting}
                     className={styles.primary}
                   >
-                    <span>Submit &amp; review score</span>
+                    <span>Review score</span>
                     <Check aria-hidden="true" size={16} />
                   </button>
                 )}
@@ -2097,22 +2226,29 @@ export default function TakeQuizModal({
                   </div>
 
                   {/* Plate 3: Score + Speed Percentile & Pace Coaching Quadrant */}
-                  <div className={`${styles.plate} ${styles.plateRank}`}>
-                    <span className={styles.label}>Score + speed percentile</span>
-                    <div className={styles.plateValue}>
-                      {completionData.percentile ?? 92.4}
-                      <span className={styles.plateUnit}>
-                        th %ile{completionData.userRank ? ` · rank #${completionData.userRank}` : ''}
-                      </span>
+                  {(completionData.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS && completionData.percentile !== null && (
+                    <div className={`${styles.plate} ${styles.plateRank}`}>
+                      <span className={styles.label}>Score + speed percentile</span>
+                      <div className={styles.plateValue}>
+                        {completionData.percentile}
+                        <span className={styles.plateUnit}>
+                          th %ile{completionData.userRank ? ` · rank #${completionData.userRank}` : ''}
+                        </span>
+                      </div>
+                      <p className={styles.plateNote}>
+                        {completionData.quadrantLabel || 'Fast and accurate'} · {completionData.avgTimePerAttemptedSec || 25}s per
+                        question vs peers at {completionData.peerAvgTimePerQuestionSec || 38}s
+                      </p>
                     </div>
-                    <p className={styles.plateNote}>
-                      {completionData.quadrantLabel || 'Fast and accurate'} · {completionData.avgTimePerAttemptedSec || 25}s per
-                      question vs peers at {completionData.peerAvgTimePerQuestionSec || 38}s
-                    </p>
-                  </div>
+                  )}
                 </div>
 
                 <p className={styles.verdict}>{completionData.dynamicMessage}</p>
+                {engine.guest && (
+                  <p className={styles.meta}>
+                    Guest result — kept on this device for 48 hours. Sign in and it uploads to your account automatically.
+                  </p>
+                )}
               </div>
 
               {/* SINGLE-ROW GROUPED ATTEMPT HISTORY ON RESULTS SCREEN (Click any pill to switch attempt report) */}
@@ -2160,7 +2296,7 @@ export default function TakeQuizModal({
                           <span className={styles.attemptNum}>#{att.attemptNumber}</span>
                           <span className={styles.attemptScore}>
                             {att.correctCount}/{att.attemptedCount} attempted ({att.attemptedAccuracyPct}%) · {att.score}/
-                            {att.totalMarks} total · {att.percentile}%ile
+                            {att.totalMarks} total{(att.verifiedSampleSize ?? 0) >= MIN_PERCENTILE_ATTEMPTS ? ` · ${att.percentile}th %ile` : ''}
                           </span>
                         </button>
                       );

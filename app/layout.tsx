@@ -5,6 +5,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BookOpen, GraduationCap, UploadCloud, ShieldCheck, ArrowRight, Mail } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import NavProgress from '@/components/rise/NavProgress';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export const metadata: Metadata = {
   title: 'Rise Learner | AKU-EB Learning Portal | Past Papers, Syllabus & E-Books',
@@ -41,6 +43,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <div className="app-layout">
+          <NavProgress />
           
           {/* Global Multi-Board & Subject Navigation */}
           <a href="#main-content" className="skip-link">Skip to content</a>
@@ -54,6 +57,7 @@ export default function RootLayout({
           <footer style={{borderTop:'1px solid var(--border-color)',padding:'1.2rem 1rem',color:'var(--text-light)',fontSize:'.85rem'}}><div style={{maxWidth:'960px',margin:'auto',display:'flex',flexWrap:'wrap',gap:'1rem'}}><span>© {new Date().getFullYear()} Rise Learner</span><Link href="/">Boards</Link><Link href="/resources">Downloads</Link><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><a href="mailto:support@riselearner.com">Support</a></div></footer>
 
         </div>
+        <ScrollToTop />
       </body>
     </html>
   );

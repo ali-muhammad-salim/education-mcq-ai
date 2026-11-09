@@ -1,0 +1,6 @@
+The root is an orchestration surface rather than application code. It composes four runtime targets around a single `pgvector/pg16` service defined in `docker-compose.yml`:
+- Web server: Next.js 16 (`next.config.ts`, `tsconfig.json`) driven by `package.json` scripts (`dev`, `build`, `start`).
+- Node-side job runner: `scripts/job-worker.ts` launched via `npm run worker` (tsx).
+- Separate container images for specialized services: `Dockerfile.worker`, `Dockerfile.ai-worker`, `Dockerfile.assessment-worker`.
+- Python tooling: `requirements.txt` + `pytest.ini` for standalone Python utilities/tests.
+Prisma is the data boundary — `postinstall` runs `prisma generate --generator client` and migrations are applied through `db:migrate` / `db:push`. The README declares the project as a board-neutral educational AI content engine using hexagonal/clean architecture with Ollama (Qwen) inference and a five-stage validation pipeline; the actual source tree under `app/`, `components/`, `lib/`, etc. implements this design but lives outside this leaf's scope.

@@ -3,6 +3,7 @@ import { Prisma } from "@prisma/client";
 import { publishedStudyWhere } from "@/services/study/visibility";
 import { publicMaterialWhere } from "@/lib/materialVisibility";
 import { getSubjectMeta } from "@/lib/subjectMetadata";
+import { hsscPhysicsSyllabus } from "@/lib/hsscPhysicsSyllabus";
 
 import {SUPPORTED_BOARDS, CLASS_DEFINITIONS, normalizeBoardId, normalizeClassRoman} from './boardCatalog';
 export {SUPPORTED_BOARDS, CLASS_DEFINITIONS, normalizeBoardId, normalizeClassRoman} from './boardCatalog';
@@ -59,8 +60,10 @@ export async function getClassSubjects(
   const boardInfo = SUPPORTED_BOARDS.find((b) => b.id === normBoard);
   if (!boardInfo) return null;
   const classDef = CLASS_DEFINITIONS[classRoman];
+  const hssc = hsscPhysicsSyllabus(boardInfo.id, classDef.level, "physics");
 
   let subjects: any[] = [];
+  let useDatabase = true;
   try {
     const dbClass = await prisma.academicClass.findFirst({
       where: {
@@ -107,6 +110,7 @@ export async function getClassSubjects(
     }
   } catch (err) {
     console.error("Error fetching subjects from DB:", err);
+    useDatabase = false;
   }
 
   // Fallback defaults if DB is temporarily empty
@@ -153,8 +157,12 @@ export async function getClassSubjects(
     }
   }
   subjects = Array.from(bySlug.values());
+  if (hssc && !bySlug.has("physics")) {
+    const meta = getSubjectMeta("Physics");
+    subjects.push({ ...meta, id: meta.slug, name: meta.title, code: null, papersCount: 0 });
+  }
 
-  const reviewed = await prisma.knowledgeDocument.findMany({
+  const reviewed = useDatabase ? await prisma.knowledgeDocument.findMany({
     where: {
       ...publicMaterialWhere,
       subject: {
@@ -173,7 +181,7 @@ export async function getClassSubjects(
       totalPages: true,
       _count: { select: { artifacts: true } },
     },
-  });
+  }) : [];
   const publishedSubjects = new Set(
     reviewed
       .filter((d) => d.totalPages > 0 && d.totalPages === d._count.artifacts)
@@ -181,11 +189,11 @@ export async function getClassSubjects(
   );
 
   const subjectIds = subjects.map((s) => s.id);
-  if(subjectIds.length){
+  if(useDatabase && subjectIds.length){
     const editions=await prisma.syllabusVersion.findMany({where:{subjectId:{in:subjectIds},isLatest:true,sourceDocument:publicMaterialWhere},select:{subjectId:true,sourceDocument:{select:{totalPages:true,_count:{select:{artifacts:true}}}}}});
     for(const edition of editions)if(edition.sourceDocument&&edition.sourceDocument.totalPages>0&&edition.sourceDocument.totalPages===edition.sourceDocument._count.artifacts)publishedSubjects.add(edition.subjectId);
   }
-  const noteSubjects = subjectIds.length
+  const noteSubjects = useDatabase && subjectIds.length
     ? await prisma.$queryRaw<{ subjectId: string }[]>(
         Prisma.sql`SELECT DISTINCT v."subjectId" FROM "StudyNote" n JOIN "KnowledgeDocument" d ON d.id=n."sourceDocumentId" JOIN "Topic" t ON t.id=n."topicId" JOIN "SyllabusVersion" v ON v.id=n."syllabusVersionId" AND v.id=t."syllabusVersionId" AND v.id=d."syllabusVersionId" WHERE v."subjectId" IN (${Prisma.join(subjectIds)}) AND ${publishedStudyWhere}`,
       )
@@ -193,12 +201,17 @@ export async function getClassSubjects(
   for (const row of noteSubjects) publishedSubjects.add(row.subjectId);
   subjects = subjects.map((sub) => ({
     ...sub,
+    ...(hssc && sub.slug === "physics" ? {
+      chapterCount: hssc.units.length,
+      sloCount: hssc.units.reduce((count, unit) => count + unit.subtopics.reduce((sum, topic) => sum + topic.slos.length, 0), 0),
+    } : {}),
     available:
+      (Boolean(hssc) && sub.slug === "physics") ||
       publishedSubjects.has(sub.id) ||
       (sub.papersCount || 0) > 0 ||
       (boardInfo.id === "akueb" &&
         ["IX", "X"].includes(classRoman) &&
-        sub.slug === "physics"),
+        ["physics", "computer-science", "chemistry", "mathematics"].includes(sub.slug)),
   }));
   // Sort so Physics and Science subjects appear top
   subjects.sort((a, b) => {

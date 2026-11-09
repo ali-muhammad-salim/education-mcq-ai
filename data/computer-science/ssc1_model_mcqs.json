@@ -1,0 +1,2122 @@
+[
+  {
+    "questionNumber": 1,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.12.1",
+    "current_slo": "1.12.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.12.1",
+        "description": "explain the purpose and functions of OSI model and its following seven layers: a. layer 7 Application layer, b. layer 6 Presentation layer, c. layer 5 Session layer, d. layer 4 Transport layer, e. layer 3 Network layer, f. layer 2 Data Link layer, g. layer 1 Physical layer;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "The purpose of the OSI model in computer networking is to",
+    "options": {
+      "A": "install antivirus software.",
+      "B": "speed up internet connection.",
+      "C": "connect the devices using cable physically.",
+      "D": "standardise the way of computers communication."
+    },
+    "correctOption": "D",
+    "explanation": "The Open Systems Interconnection (OSI) 7-layer reference model standardises network communication functions so heterogeneous hardware and software vendors can interoperate seamlessly.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Antivirus installation is a system security utility task, not the purpose of the OSI networking model."
+      },
+      {
+        "key": "B",
+        "reason": "Connection speed depends on bandwidth and transmission media, whereas the OSI model defines communication standards across 7 layers."
+      },
+      {
+        "key": "C",
+        "reason": "Physical cabling is only one aspect of Layer 1 (Physical Layer); the overall OSI model standardises end-to-end computer communication."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.10.1",
+    "current_slo": "1.10.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.10.1",
+        "description": "explain packet switching and circuit switching;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "In packet switching, data packets move by",
+    "options": {
+      "A": "staying at one path for speedy transmission.",
+      "B": "following the same path to the destination.",
+      "C": "taking different paths to reassemble later.",
+      "D": "waiting in a queue for other packets."
+    },
+    "correctOption": "C",
+    "explanation": "In packet switching, a message is broken into independent packets that can route dynamically across different network paths and are reassembled in the proper order at the destination.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Dedicated single-path transmission describes circuit switching, not packet switching."
+      },
+      {
+        "key": "B",
+        "reason": "Packets in a packet-switched network are routed independently and do not have to follow the same fixed path."
+      },
+      {
+        "key": "D",
+        "reason": "Packets are transmitted independently across available routes rather than waiting for all other packets in a single static queue."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.1.1",
+    "current_slo": "1.1.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.1.1",
+        "description": "differentiate between natural and artificial systems with real-world examples;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A forest ecosystem is considered as a/ an",
+    "options": {
+      "A": "human-made system to control climate change.",
+      "B": "agricultural process that are managed by machines.",
+      "C": "synthetic structure with no fundamental interactions.",
+      "D": "natural system where living and non-living things interact."
+    },
+    "correctOption": "D",
+    "explanation": "A forest ecosystem exists naturally without human manufacturing and consists of biotic (living organisms) and abiotic (non-living environment) components interacting continuously.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "A forest ecosystem is a natural biological system, not an artificial human-made engineering system."
+      },
+      {
+        "key": "B",
+        "reason": "Machine-managed agriculture is an artificial/engineered farming system rather than a natural forest ecosystem."
+      },
+      {
+        "key": "C",
+        "reason": "Forests are natural organic ecosystems with complex ecological interactions, not synthetic structures."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.2.4",
+    "current_slo": "1.2.4",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.4",
+        "description": "illustrate the Von Neumann Architecture using a block diagram;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "A program running multiple calculations needs faster data access.\n\nBased on Von Neumann\u2019s Architecture, the unit that should be upgraded first is a/ an",
+    "options": {
+      "A": "input.",
+      "B": "output.",
+      "C": "control.",
+      "D": "memory."
+    },
+    "correctOption": "D",
+    "explanation": "In Von Neumann Architecture, instructions and data are fetched continuously from the Memory Unit into the CPU; upgrading primary memory (RAM/cache) directly speeds up data access during intensive calculations.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The Input unit only captures external user/sensor data and does not speed up internal CPU data access during calculations."
+      },
+      {
+        "key": "B",
+        "reason": "The Output unit only displays final processed results after calculations are finished."
+      },
+      {
+        "key": "C",
+        "reason": "The Control Unit directs instruction flow inside the CPU, whereas data access speed is bottlenecked by the Memory unit."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.7.1",
+    "current_slo": "1.7.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.7.1",
+        "description": "describe data communication and its components, i.e., sender, message, medium, protocol and receiver;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "If two devices are connected but they are not able to communicate with each other, then the missing component of communication system is the",
+    "options": {
+      "A": "sender.",
+      "B": "receiver.",
+      "C": "protocol.",
+      "D": "transmission medium."
+    },
+    "correctOption": "C",
+    "explanation": "Even when two devices (sender and receiver) are physically connected via a transmission medium, they cannot understand or exchange data without a common set of rules called a communication protocol.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Both devices are already present and connected, so the sender device is not missing."
+      },
+      {
+        "key": "B",
+        "reason": "The receiving device is already connected; communication fails because there is no agreed protocol."
+      },
+      {
+        "key": "D",
+        "reason": "Since the two devices are already connected, the transmission medium is present."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.9.4",
+    "current_slo": "1.9.4",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.9.4",
+        "description": "explain the following network topologies emphasising their structure, functionality, advantages, and disadvantages: a. bus topology, b. ring topology, c. tree topology, d. star topology, e. mesh topology;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "Consider the given properties.\n\u2022 Every node is connected with other nodes.\n\u2022 It is the most reliable network topology.\n\u2022 It is the most expensive topology.\n\nBased on the given properties, the network topology is identified as",
+    "options": {
+      "A": "bus topology.",
+      "B": "star topology.",
+      "C": "ring topology.",
+      "D": "mesh topology."
+    },
+    "correctOption": "D",
+    "explanation": "In a Mesh topology, every node has a dedicated point-to-point link to every other node ($n(n-1)/2$ cables), providing the highest fault tolerance and reliability but also the highest cabling cost.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Bus topology uses a single shared backbone cable; it is the cheapest topology and fails completely if the backbone breaks."
+      },
+      {
+        "key": "B",
+        "reason": "Star topology connects nodes to a central hub/switch rather than connecting every node directly to all other nodes."
+      },
+      {
+        "key": "C",
+        "reason": "Ring topology connects each node to only two neighbours in a loop, not to every other node."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "pageNumber": 3,
+    "unitNumber": 6,
+    "unitName": "Impact of Computing",
+    "chapter": "Impact of Computing",
+    "slo": "6.1.2",
+    "current_slo": "6.1.2",
+    "cognitiveLevel": "E",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "6.1.2",
+        "description": "discuss the positive and negative impacts of computing on daily life and society with examples;",
+        "topic": "Impact of Computing"
+      }
+    ],
+    "stem": "Arham, a ninth-grade student, uses social media to share helpful posts. However, he also uses the same platform to bully his classmates.\n\nBased on this situation, what does this example show about the impact of social media on society?",
+    "options": {
+      "A": "Social media is dangerous and should be completely banned.",
+      "B": "Online efforts to help others are less useful than traditional methods.",
+      "C": "The power of social media rests in the way people use it, for better or worse.",
+      "D": "The harmful effects of social media are more common than the positive ones."
+    },
+    "correctOption": "C",
+    "explanation": "Because Arham uses the exact same platform both to share helpful educational posts and to cyberbully peers, the scenario demonstrates that technology is a dual-use tool whose societal impact depends on responsible human behaviour.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The scenario shows both positive and negative uses, not that the platform has zero value or must be banned."
+      },
+      {
+        "key": "B",
+        "reason": "Nothing in the scenario compares online helpful posts unfavorably against traditional offline methods."
+      },
+      {
+        "key": "D",
+        "reason": "The scenario gives one positive and one negative action by the same user rather than proving harmful effects are statistically more common."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "pageNumber": 3,
+    "unitNumber": 2,
+    "unitName": "Computational Thinking and Algorithms",
+    "chapter": "Computational Thinking and Algorithms",
+    "slo": "2.1.3",
+    "current_slo": "2.1.3",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "2.1.3",
+        "description": "describe the following steps of the problem-solving process: a. define the problem, b. analyse the problem, c. plan the solution of the problem, d. find candid solutions to the problem, e. select the best solution;",
+        "topic": "Computational Thinking and Algorithms"
+      }
+    ],
+    "stem": "Read the following actions:\n\u2022 Find out what the problem asks to do.\n\u2022 Carefully read the problem to understand it.\n\u2022 What information can be obtained from the problem?\n\u2022 Find out requirements for the solution of the problem.\n\nThe step of problem solving process in which these actions are performed is",
+    "options": {
+      "A": "defining the problem.",
+      "B": "analysing the problem.",
+      "C": "generating solutions of the problem.",
+      "D": "selecting the best solution of the problem."
+    },
+    "correctOption": "B",
+    "explanation": "During 'analysing the problem', a problem-solver carefully studies the problem statement, extracts known information/inputs, and determines the exact requirements and constraints for the solution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Defining the problem only states what the problem is initially, whereas extracting information and solution requirements belongs to problem analysis."
+      },
+      {
+        "key": "C",
+        "reason": "Generating candid solutions happens after the problem requirements and inputs have been analysed."
+      },
+      {
+        "key": "D",
+        "reason": "Selecting the best solution is the final step after multiple candidate solutions have already been formulated."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "pageNumber": 3,
+    "unitNumber": 2,
+    "unitName": "Computational Thinking and Algorithms",
+    "chapter": "Computational Thinking and Algorithms",
+    "slo": "2.1.3",
+    "current_slo": "2.1.3",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "2.1.3",
+        "description": "describe the following steps of the problem-solving process: a. define the problem, b. analyse the problem, c. plan the solution of the problem, d. find candid solutions to the problem, e. select the best solution;",
+        "topic": "Computational Thinking and Algorithms"
+      }
+    ],
+    "stem": "Salar is assigned to solve a problem. He has come up with multiple solutions that produce correct results.\n\nThe step of problem solving in which Salar\u2019s action is performed is identified as",
+    "options": {
+      "A": "defining the problem.",
+      "B": "analysing the problem.",
+      "C": "finding candid solutions for the problem.",
+      "D": "selecting the best solution for the problem."
+    },
+    "correctOption": "C",
+    "explanation": "Brainstorming and formulating multiple workable ('candid') solutions that all produce valid results corresponds directly to the step 'find candid solutions to the problem' (SLO 2.1.3d).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Defining the problem simply identifies the goal and scope before any solutions are created."
+      },
+      {
+        "key": "B",
+        "reason": "Analysing the problem identifies inputs, outputs, and constraints rather than producing multiple complete solutions."
+      },
+      {
+        "key": "D",
+        "reason": "Selecting the best solution narrows multiple candid solutions down to a single optimal choice based on efficiency."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "pageNumber": 3,
+    "unitNumber": 2,
+    "unitName": "Computational Thinking and Algorithms",
+    "chapter": "Computational Thinking and Algorithms",
+    "slo": "2.3.2",
+    "current_slo": "2.3.2",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "2.3.2",
+        "description": "draw flowcharts using the following symbols, for the problems mentioned in SLO # 2.2.2: a. input, b. process, c. decision making, d. outputs, e. terminator/ terminal point, f. connectors;",
+        "topic": "Computational Thinking and Algorithms"
+      }
+    ],
+    "stem": "A statement calculates an average of five integers.\n\nA flowchart symbol that must have the statement is a/ an",
+    "options": {
+      "A": "input symbol.",
+      "B": "output symbol.",
+      "C": "process symbol.",
+      "D": "decision symbol."
+    },
+    "correctOption": "C",
+    "explanation": "Calculating the average of five integers is an arithmetic computation/assignment operation, which is always placed inside a rectangular 'process symbol' in a flowchart.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The parallelogram input symbol is only used for reading data (e.g., READ A, B), not performing arithmetic calculations."
+      },
+      {
+        "key": "B",
+        "reason": "The parallelogram output symbol is only used for displaying results (e.g., PRINT Avg), not calculating them."
+      },
+      {
+        "key": "D",
+        "reason": "The diamond decision symbol is used for conditional branching (True/False comparisons), not arithmetic averaging."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "pageNumber": 4,
+    "unitNumber": 2,
+    "unitName": "Computational Thinking and Algorithms",
+    "chapter": "Computational Thinking and Algorithms",
+    "slo": "2.2.2",
+    "current_slo": "2.2.2",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "2.2.2",
+        "description": "write algorithms to address the following types of problems: a. performing arithmetic, b. calculating the volume of geometrical shapes, c. converting from one unit to another unit of physical quantities, d. applying the selection process, e. finding the maximum and minimum from input values, f. real-life problems;",
+        "topic": "Computational Thinking and Algorithms"
+      }
+    ],
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: A = 5\nStep 3: B = 4\nStep 4: C = A % B\nStep 5: X = C + B\nStep 6: B = B - 3\nStep 7: IF B >= 1 THEN GOTO Step 4\nStep 8: Output X\nStep 9: Stop\n```\n\nThe output of the given algorithm is",
+    "options": {
+      "A": "1",
+      "B": "4",
+      "C": "5",
+      "D": "9"
+    },
+    "correctOption": "A",
+    "explanation": "In the 1st pass: A=5, B=4 -> C = 5 % 4 = 1 -> X = 1 + 4 = 5 -> B = 4 - 3 = 1. Since B >= 1 (1 >= 1 is True), it jumps to Step 4 for a 2nd pass: C = 5 % 1 = 0 -> X = 0 + 1 = 1 -> B = 1 - 3 = -2. Now B >= 1 is False, so Step 8 outputs X = 1.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "4 is the initial value of B, not the final value of X after the second iteration."
+      },
+      {
+        "key": "C",
+        "reason": "5 is the value of X after only the first iteration, but since B becomes 1 (and B >= 1 is True), the loop executes a second time where X becomes 0 + 1 = 1."
+      },
+      {
+        "key": "D",
+        "reason": "9 would result from adding A + B initially, ignoring the modulo operator (%) and the loop."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "pageNumber": 4,
+    "unitNumber": 2,
+    "unitName": "Computational Thinking and Algorithms",
+    "chapter": "Computational Thinking and Algorithms",
+    "slo": "2.3.3",
+    "current_slo": "2.3.3",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-P1/q12.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "2.3.3",
+        "description": "solve the trace table for a given flowchart.",
+        "topic": "Computational Thinking and Algorithms"
+      }
+    ],
+    "stem": "Study the given flowchart.\n\nIf the input value is 3, then the output value of the flowchart will be",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "6"
+    },
+    "correctOption": "C",
+    "explanation": "When A = 3, initially B = 1 and C = 1. In the loop, since B remains 1, C = C * B keeps C unchanged, while the 'No' branch increments C = C + 1 (from 1 to 2, then from 2 to 3). When C reaches 3, the condition A = C (3 = 3) becomes Yes, so it prints C = 3.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "1 is the initial value of C, which fails the condition A = C (3 = 1 is No) and continues looping."
+      },
+      {
+        "key": "B",
+        "reason": "When C becomes 2, A = C (3 = 2) is still No, so C is incremented again to 3."
+      },
+      {
+        "key": "D",
+        "reason": "Because B is never incremented (B stays 1 while C is incremented by 1), the flowchart outputs 3 rather than 3! = 6."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "pageNumber": 5,
+    "unitNumber": 2,
+    "unitName": "Computational Thinking and Algorithms",
+    "chapter": "Computational Thinking and Algorithms",
+    "slo": "2.3.3",
+    "current_slo": "2.3.3",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-P1/q13.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "2.3.3",
+        "description": "solve the trace table for a given flowchart.",
+        "topic": "Computational Thinking and Algorithms"
+      }
+    ],
+    "stem": "Consider the given flowchart.\n\nThe missing values in the trace table (X, Y, Z) are",
+    "options": {
+      "A": "20, 3, 5",
+      "B": "20, 8, 5",
+      "C": "40, 3, 5",
+      "D": "40, 8, 5"
+    },
+    "correctOption": "A",
+    "explanation": "Initially X = 5, Y = 3, Z = 2. Evaluating the parenthesised expression first: (Z = Z + Y) sets Z = 2 + 3 = 5. Then X = X + Y * Z = 5 + 3 * 5 = 5 + 15 = 20, while Y remains 3. Thus (X, Y, Z) = (20, 3, 5).",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Y is never reassigned in the expression, so Y remains 3 rather than becoming 8."
+      },
+      {
+        "key": "C",
+        "reason": "Multiplication (*) has higher precedence than addition (+), so 5 + (3 * 5) = 20, not (5 + 3) * 5 = 40."
+      },
+      {
+        "key": "D",
+        "reason": "Both X = 40 (wrong operator precedence) and Y = 8 (Y was never modified) are incorrect."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "pageNumber": 5,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.2.2",
+    "current_slo": "3.2.2",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.2.2",
+        "description": "write HTML code to: a. create and save an HTML file, b. display a webpage;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "Read the given FOUR statements related to HTML.\nI. HTML tags are case sensitive\nII. Each HTML tag is surrounded by < >\nIII. The first tag in any HTML code is <head>\nIV. The last tag in any HTML code is </html>\n\nWhich of the TWO statements are INCORRECT?",
+    "options": {
+      "A": "I and II",
+      "B": "I and III",
+      "C": "II and IV",
+      "D": "III and IV"
+    },
+    "correctOption": "B",
+    "explanation": "Statement I is incorrect because HTML tags are NOT case sensitive (<P> and <p> work identically), and Statement III is incorrect because the root opening tag of an HTML document is <html>, not <head>.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Statement II is correct because all HTML tags are enclosed in angle brackets < >."
+      },
+      {
+        "key": "C",
+        "reason": "Both Statement II (< > brackets) and Statement IV (closing </html> tag at the end) are correct HTML rules."
+      },
+      {
+        "key": "D",
+        "reason": "Statement IV is correct because </html> closes the root HTML document at the very end."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "pageNumber": 6,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.8.1",
+    "current_slo": "3.8.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-P1/q15.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.8.1",
+        "description": "write HTML code to create a table in the webpage with the following table attributes: a. table border, b. border colour, c. background colour, d. table width, e. table height, f. table row <tr>, g. standard data cell <td>, h. header cell <th>;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "Consider the given image of a web page.\n\nThe HTML code that should replace the box to complete the given code in order to display this web page is\n\n```html\n<html>\n<body>\n<h2>Personal Information Table</h2>\n<table style=\"width:50%\">\n  [ ? ]\n</table>\n</body>\n</html>\n```",
+    "options": {
+      "A": "<th> <h3>Name</h3> <h3>Address</h3> <h3>Contact Number</h3> </th>",
+      "B": "<tr> <th>Name</th> <th>Address</th> <th>Contact Number</th> </tr>",
+      "C": "<th> <tr>Name</tr> <tr>Address</tr> <tr>Contact Number</tr> </th>",
+      "D": "<tr> <col>Name</col> <col>Address</col> <col>Contact Number</col> </tr>"
+    },
+    "correctOption": "B",
+    "explanation": "In HTML tables, a horizontal table row is defined first using <tr>...</tr>, and each bold column header cell inside that row is defined using <th>...</th>.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Wrapping multiple <h3> headings inside a single <th> stacks them vertically in one cell instead of creating three separate table header columns in a row."
+      },
+      {
+        "key": "C",
+        "reason": "Nesting <tr> tags inside <th> is invalid HTML syntax; <th> cells must be placed inside a <tr> row."
+      },
+      {
+        "key": "D",
+        "reason": "The <col> tag is a void column-formatting tag and cannot wrap header text like <th> does."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "pageNumber": 7,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.5.1",
+    "current_slo": "3.5.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.5.1",
+        "description": "write HTML code to: a. insert an image, b. apply a border to an image, c. select width of an image, d. select height of an image, e. select an alternate text for an image;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "An image with the following specifications is to be inserted in a web page.\n\u2022 The name of the image is flower.jpg\n\u2022 The alternative text for image is \"Flower Picture\"\n\u2022 The width and height of the image are to be 100 pixels\n\u2022 A solid black border having thickness of 3 pixels surrounds the picture\n\nThe HTML code to insert these specifications in a web page is",
+    "options": {
+      "A": "<img src=\"flower\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
+      "B": "<alt=\"Flower Picture\" img src=\"flower.jpg\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
+      "C": "<img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
+      "D": "<style=\"border:3px solid black\" img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\">"
+    },
+    "correctOption": "C",
+    "explanation": "An HTML image element must begin with the tag name `<img` followed by the full filename including extension (`src=\"flower.jpg\"`), `alt=\"Flower Picture\"`, `width=\"100\"`, `height=\"100\"`, and `style=\"border:3px solid black\"`.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Option A omits the required '.jpg' file extension in src=\"flower\", so the browser cannot locate flower.jpg."
+      },
+      {
+        "key": "B",
+        "reason": "An HTML tag must start with the element name `<img`, not an attribute like `<alt=...`."
+      },
+      {
+        "key": "D",
+        "reason": "Starting the tag with `<style=...` before `img` is invalid HTML syntax."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "pageNumber": 7,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.3.2",
+    "current_slo": "3.3.2",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.2",
+        "description": "apply appropriate text formatting tags, i.e., bold, underline, italic, strikethrough, superscript, subscript, centre, font size, font colour and font face;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "The HTML code to show X\u2082 + Y\u00b2 on a webpage is",
+    "options": {
+      "A": "X<sup>2</sup> + Y<sub>2</sub>",
+      "B": "X<sub>2</sub> + Y<sup>2</sup>",
+      "C": "<sub>X</sub>2 + <sup>Y</sup>2",
+      "D": "<sup>X</sup>2 + <sub>Y</sub>2"
+    },
+    "correctOption": "B",
+    "explanation": "In X\u2082 + Y\u00b2, the '2' after X is a subscript (`<sub>2</sub>`) and the '2' after Y is a superscript (`<sup>2</sup>`), giving `X<sub>2</sub> + Y<sup>2</sup>`.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Option A swaps superscript and subscript, rendering X\u00b2 + Y\u2082 instead of X\u2082 + Y\u00b2."
+      },
+      {
+        "key": "C",
+        "reason": "Option C places the variables X and Y inside the subscript/superscript tags instead of the number 2."
+      },
+      {
+        "key": "D",
+        "reason": "Option D both places the variables X and Y inside the tags and swaps superscript/subscript."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "pageNumber": 7,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.6.1",
+    "current_slo": "3.6.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.6.1",
+        "description": "write HTML code to: a. create a hyperlink to a web page; b. create an 'anchor' in the context of hyperlinks; c. create an anchor to hyperlink within a web page; d. create a graphical hyperlink;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "Following line is written in a webpage.\n\nVisit BBC News Urdu for latest news in Urdu.\n\nWhen someone clicks hyperlink BBC News Urdu, then https://www.bbc.com/urdu is opened. The HTML code for this line is",
+    "options": {
+      "A": "<p>Visit<\"BBC News Urdu\">a href=https://www.bbc.com/urdu</a>for latest news in Urdu.</p>",
+      "B": "<p>Visit <\"https://www.bbc.com/urdu\"> a href=BBC News Urdu</a> for latest news in Urdu.</p>",
+      "C": "<p>Visit <a href = \"BBC News Urdu\"> https://www.bbc.com/urdu </a> for latest news in Urdu.</p>",
+      "D": "<p>Visit <a href = \"https://www.bbc.com/urdu\">BBC News Urdu</a> for latest news in Urdu.</p>"
+    },
+    "correctOption": "D",
+    "explanation": "In HTML, an anchor hyperlink uses `<a href=\"URL\">Clickable Text</a>`. Placing `\"https://www.bbc.com/urdu\"` in `href` and `BBC News Urdu` between `<a>` and `</a>` makes 'BBC News Urdu' the clickable link.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Option A puts the link text inside angle brackets before `a href`, which is invalid HTML syntax."
+      },
+      {
+        "key": "B",
+        "reason": "Option B reverses the tag structure and puts the text inside `href` instead of the destination URL."
+      },
+      {
+        "key": "C",
+        "reason": "Option C puts the text 'BBC News Urdu' inside `href` and displays the raw URL as the visible link text."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.9.2",
+    "current_slo": "3.9.2",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.9.2",
+        "description": "apply code using inline/ internal CSS: a. background (color and image), b. font (colour, style and size), c. tables (border, size, alignment);",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "A text with the following specifications is to be displayed on a web page.\n\u2022 italic style\n\u2022 green color\n\u2022 font size of 20px\n\nThe HTML code to insert these specifications in a web page through inline CSS is",
+    "options": {
+      "A": "<p style=\"italic; green; size: 20;\">Welcome!</p>",
+      "B": "<p style=\"font: green 20px italic;\">Welcome!</p>",
+      "C": "<p style=\"font-color: green; style: italic; size: 20px;\">Welcome!</p>",
+      "D": "<p style=\"font-style: italic; color: green; font-size: 20px;\">Welcome!</p>"
+    },
+    "correctOption": "D",
+    "explanation": "Standard CSS property names for inline styling are `font-style: italic;`, `color: green;`, and `font-size: 20px;` inside the `style` attribute.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "CSS declarations require `property: value;` pairs (such as `font-style: italic; color: green;`), not bare values."
+      },
+      {
+        "key": "B",
+        "reason": "The CSS `font` shorthand cannot set text colour (`color` is a separate property) and requires a `font-family`."
+      },
+      {
+        "key": "C",
+        "reason": "There is no `font-color`, `style`, or `size` property in CSS; the valid properties are `color`, `font-style`, and `font-size`."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.10.6",
+    "current_slo": "3.10.6",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.10.6",
+        "description": "write a JavaScript code that uses input functions prompt( );",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "The JavaScript code that uses the prompt( ) function to ask for the user\u2019s name and store it in a variable is",
+    "options": {
+      "A": "var name = prompt(\"What is your name?\");",
+      "B": "prompt(\"What is your name?\", name);",
+      "C": "name = prompt(\"Enter your name:\");",
+      "D": "var name = prompt;"
+    },
+    "correctOption": "A",
+    "explanation": "In JavaScript, `var name = prompt(\"What is your name?\");` properly declares the variable using `var` and assigns the user's input returned by `prompt()` to `name`.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Option B calls `prompt()` without assigning its return value to a variable."
+      },
+      {
+        "key": "C",
+        "reason": "Option C omits the variable declaration keyword (`var`, `let`, or `const`) required when declaring a new variable."
+      },
+      {
+        "key": "D",
+        "reason": "Option D omits the parentheses `()` and prompt message string, assigning the function reference itself rather than calling it."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "pageNumber": 8,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.10.4",
+    "current_slo": "3.10.4",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.10.4",
+        "description": "write a JavaScript program to declare and initialise variables by following the rules for specifying valid variable names;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "Which of the following is a valid variable name in JavaScript?",
+    "options": {
+      "A": "1stName",
+      "B": "$salary",
+      "C": "@city",
+      "D": "const"
+    },
+    "correctOption": "B",
+    "explanation": "In JavaScript, valid identifiers must begin with a letter, an underscore (`_`), or a dollar sign (`$`); therefore, `$salary` is a valid variable name.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "`1stName` is invalid because JavaScript variable names cannot start with a numeric digit."
+      },
+      {
+        "key": "C",
+        "reason": "`@city` is invalid because the `@` symbol is not permitted in JavaScript identifiers."
+      },
+      {
+        "key": "D",
+        "reason": "`const` is a reserved JavaScript keyword used to declare constants and cannot be used as a variable name."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "pageNumber": 9,
+    "unitNumber": 3,
+    "unitName": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "chapter": "Programming Fundamentals (JavaScript, HTML & CSS)",
+    "slo": "3.3.2",
+    "current_slo": "3.3.2",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-P1/q22.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.2",
+        "description": "apply appropriate text formatting tags, i.e., bold, underline, italic, strikethrough, superscript, subscript, centre, font size, font colour and font face;",
+        "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
+      }
+    ],
+    "stem": "Consider the given image of a web page showing a sentence. The font style of the sentence is Courier New.\n\nThe HTML code to show this sentence is",
+    "options": {
+      "A": "<p This is an <b><I>Important</I></b> paragraph</p> style=\"font-family:'Courier New' \">",
+      "B": "<p style=\"font-family:'Courier New' \">This is an <b><I>Important</I></b> paragraph.</p>",
+      "C": "<p style=\"font-family:'Courier New' \">This is an <b><I>Important<\\b><\\I> paragraph.<\\p>",
+      "D": "<p style:\"font-family='Courier New' \">This is an <b><I>Important</I></b> paragraph.</p>"
+    },
+    "correctOption": "B",
+    "explanation": "Option B places `style=\"font-family:'Courier New' \"` inside the opening `<p>` tag and properly nests and closes `<b><I>Important</I></b>` using forward slashes `/`.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Option A places the `style` attribute outside the closing `</p>` tag and omits the `>` on the opening `<p>` tag."
+      },
+      {
+        "key": "C",
+        "reason": "Option C uses backslashes (`<\\b>`, `<\\I>`, `<\\p>`) instead of valid HTML closing tag forward slashes (`</b>`, `</I>`, `</p>`)."
+      },
+      {
+        "key": "D",
+        "reason": "Option D uses a colon (`style:`) instead of an equals sign (`style=`) for the HTML attribute."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "pageNumber": 9,
+    "unitNumber": 4,
+    "unitName": "Data and Analysis",
+    "chapter": "Data and Analysis",
+    "slo": "4.1.1",
+    "current_slo": "4.1.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "4.1.1",
+        "description": "explain the following key concepts of data science: a. data science, b. data and dataset, c. data analysis, d. statistics and probability, e. mathematics, f. machine learning, g. deep learning, h. data mining, i. data visualisation, j. big data, k. predictive model, l. natural language processing (NLP), m. image processing;",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "stem": "In computer science, data science contributes to",
+    "options": {
+      "A": "data storage.",
+      "B": "data analysis.",
+      "C": "software deployment.",
+      "D": "network configuration."
+    },
+    "correctOption": "B",
+    "explanation": "Data science combines statistics, mathematics, and computing to perform data analysis and uncover actionable patterns from structured and unstructured datasets.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Hardware storage management is handled by database/storage administration rather than being the core contribution of data science."
+      },
+      {
+        "key": "C",
+        "reason": "Software deployment is a DevOps/software engineering responsibility, not the focus of data science."
+      },
+      {
+        "key": "D",
+        "reason": "Network configuration belongs to computer networking and system administration."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "pageNumber": 9,
+    "unitNumber": 4,
+    "unitName": "Data and Analysis",
+    "chapter": "Data and Analysis",
+    "slo": "4.1.1",
+    "current_slo": "4.1.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "4.1.1",
+        "description": "explain the following key concepts of data science: a. data science, b. data and dataset, c. data analysis, d. statistics and probability, e. mathematics, f. machine learning, g. deep learning, h. data mining, i. data visualisation, j. big data, k. predictive model, l. natural language processing (NLP), m. image processing;",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "stem": "The MAIN goal of data analysis is to",
+    "options": {
+      "A": "extract meaningful insights.",
+      "B": "create user interfaces.",
+      "C": "export CSV files.",
+      "D": "sort large files."
+    },
+    "correctOption": "A",
+    "explanation": "The primary objective of data analysis is to inspect, clean, and model data in order to extract meaningful insights that support informed decision-making.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Creating user interfaces is part of front-end UI/UX design, not data analysis."
+      },
+      {
+        "key": "C",
+        "reason": "Exporting CSV files is just a file-transfer step, not the analytical goal."
+      },
+      {
+        "key": "D",
+        "reason": "Sorting files is a basic data-organisation operation, whereas data analysis aims to discover meaningful insights."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "pageNumber": 10,
+    "unitNumber": 4,
+    "unitName": "Data and Analysis",
+    "chapter": "Data and Analysis",
+    "slo": "4.1.2",
+    "current_slo": "4.1.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "4.1.2",
+        "description": "explain the scope and application of data science;",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "stem": "A public health agency tracks real-time clinical reports, regional infection spikes, population density, and vaccination coverage to deploy emergency health reserves before an outbreak worsens. The response model improves year after year with updated data.\n\nThe conclusion that accurately reflects the strategic role of data science in this case is that it",
+    "options": {
+      "A": "forecasts resource shortages to drive policy decisions.",
+      "B": "monitors daily staff attendance in regional hospitals.",
+      "C": "automates vaccine procurement documentation.",
+      "D": "evaluates insurance claim discrepancies."
+    },
+    "correctOption": "A",
+    "explanation": "By analysing infection spikes, population density, and vaccination coverage ahead of time, predictive data science models forecast medical resource needs and guide proactive public health policy decisions.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Routine staff attendance tracking is basic HR record-keeping, not predictive epidemiological modelling."
+      },
+      {
+        "key": "C",
+        "reason": "Document automation is administrative clerical software, whereas the scenario describes predictive outbreak response."
+      },
+      {
+        "key": "D",
+        "reason": "The scenario focuses on deploying emergency health reserves before outbreaks worsen, not auditing insurance claims."
+      }
+    ]
+  },
+  {
+    "questionNumber": 26,
+    "pageNumber": 10,
+    "unitNumber": 4,
+    "unitName": "Data and Analysis",
+    "chapter": "Data and Analysis",
+    "slo": "4.2.1",
+    "current_slo": "4.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "4.2.1",
+        "description": "explain the concept of data and its types (qualitative and quantitative) emphasising their characteristics and importance;",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "stem": "An educational institution tracks students exam scores, attendance rates and feedback on course content and students' experiences. The scores and attendance are numerical, whereas feedback includes open-ended responses about course strengths and weaknesses.\n\nConsidering the given situation, data can be classified as\n\n| Option | Quantitative | Qualitative |\n| :--- | :--- | :--- |\n| A | exam scores | feedback responses |\n| B | attendance rates | exam scores |\n| C | feedback responses | students experiences |\n| D | students experiences | attendance rates |",
+    "options": {
+      "A": "Quantitative: exam scores | Qualitative: feedback responses",
+      "B": "Quantitative: attendance rates | Qualitative: exam scores",
+      "C": "Quantitative: feedback responses | Qualitative: students experiences",
+      "D": "Quantitative: students experiences | Qualitative: attendance rates"
+    },
+    "correctOption": "A",
+    "explanation": "Quantitative data consists of numerical measurements (such as exam scores and attendance rates), whereas qualitative data consists of descriptive, non-numerical text (such as open-ended feedback responses and student experiences).",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Exam scores are numerical measurements and therefore belong under Quantitative data, not Qualitative data."
+      },
+      {
+        "key": "C",
+        "reason": "Open-ended feedback responses are descriptive text (Qualitative), not numerical (Quantitative)."
+      },
+      {
+        "key": "D",
+        "reason": "Students' experiences are descriptive (Qualitative) and attendance rates are numerical (Quantitative), so Option D reverses both categories."
+      }
+    ]
+  },
+  {
+    "questionNumber": 27,
+    "pageNumber": 10,
+    "unitNumber": 4,
+    "unitName": "Data and Analysis",
+    "chapter": "Data and Analysis",
+    "slo": "4.3.1",
+    "current_slo": "4.3.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "4.3.1",
+        "description": "describe the following concepts of big data within the context of technology and society: a. big data, b. 3 Vs big data, c. big data analytics, d. data visualisation and interpretation;",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "stem": "The vast amount of data generated and stored across various systems refers to one of the characteristics of big data that is",
+    "options": {
+      "A": "variety.",
+      "B": "volume.",
+      "C": "validity.",
+      "D": "velocity."
+    },
+    "correctOption": "B",
+    "explanation": "Among the 3 Vs of Big Data (Volume, Velocity, Variety), 'Volume' refers to the massive quantity/amount of data generated and stored across systems.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Variety refers to the different formats and types of data (structured, semi-structured, unstructured), not the sheer amount."
+      },
+      {
+        "key": "C",
+        "reason": "Validity refers to data accuracy and correctness for a given use, not the vast quantity of stored data."
+      },
+      {
+        "key": "D",
+        "reason": "Velocity refers to the speed at which new data is generated and processed in real time."
+      }
+    ]
+  },
+  {
+    "questionNumber": 28,
+    "pageNumber": 10,
+    "unitNumber": 4,
+    "unitName": "Data and Analysis",
+    "chapter": "Data and Analysis",
+    "slo": "4.3.1",
+    "current_slo": "4.3.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "4.3.1",
+        "description": "describe the following concepts of big data within the context of technology and society: a. big data, b. 3 Vs big data, c. big data analytics, d. data visualisation and interpretation;",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "stem": "Data visualisation contributes to big data interpretation by all of the following ways EXCEPT",
+    "options": {
+      "A": "transforming raw data into interactive formats for decision-making.",
+      "B": "organising data in a structured format for database integration.",
+      "C": "relying on statistical analysis to provide direct solutions.",
+      "D": "storing data in graphical representations for future use."
+    },
+    "correctOption": "B",
+    "explanation": "Data visualisation focuses on presenting data visually (charts, dashboards, graphs) for human interpretation; organising data into structured schemas for database integration is a database/ETL engineering task, not data visualisation.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Transforming raw data into interactive visual dashboards for decision-making is a core function of data visualisation."
+      },
+      {
+        "key": "C",
+        "reason": "Visual analytics combines statistical summaries with visual plots to highlight patterns and solutions."
+      },
+      {
+        "key": "D",
+        "reason": "Saving graphical charts and visual reports for future reference is a standard feature of data visualisation tools."
+      }
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "pageNumber": 10,
+    "unitNumber": 4,
+    "unitName": "Data and Analysis",
+    "chapter": "Data and Analysis",
+    "slo": "4.3.3",
+    "current_slo": "4.3.3",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "4.3.3",
+        "description": "explain the application of big data in the following business domains: a. healthcare, b. internet of things (IoT), c. manufacturing, d. government.",
+        "topic": "Data and Analysis"
+      }
+    ],
+    "stem": "In the government sector, big data is MOSTLY used to",
+    "options": {
+      "A": "track tax data.",
+      "B": "enhance surveillance systems.",
+      "C": "support informed policy decisions.",
+      "D": "monitor individual citizen activities."
+    },
+    "correctOption": "C",
+    "explanation": "Governments primarily use big data analytics across census, healthcare, economy, and infrastructure datasets to formulate evidence-based, informed public policy decisions.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Tax tracking is only one narrow administrative function, whereas big data broadly supports public policy formulation across all sectors."
+      },
+      {
+        "key": "B",
+        "reason": "Surveillance is a specific security use case, not the primary civic purpose of government big data analytics."
+      },
+      {
+        "key": "D",
+        "reason": "Monitoring individual citizens raises privacy concerns and is not the primary developmental goal of big data in governance."
+      }
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "pageNumber": 11,
+    "unitNumber": 5,
+    "unitName": "Applications of Computer Science",
+    "chapter": "Applications of Computer Science",
+    "slo": "5.1.2",
+    "current_slo": "5.1.2",
+    "cognitiveLevel": "E",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "5.1.2",
+        "description": "discuss the application of AI in the following fields: a. healthcare, b. robotics, c. education, d. transportation, e. entertainment, f. natural language process (NLP);",
+        "topic": "Applications of Computer Science"
+      }
+    ],
+    "stem": "Modern transportation systems benefit from Artificial Intelligence (AI) by",
+    "options": {
+      "A": "providing fixed schedules without live data.",
+      "B": "delaying route updates until human approval.",
+      "C": "suggesting routes based only on past routines.",
+      "D": "optimising routes through traffic pattern analysis."
+    },
+    "correctOption": "D",
+    "explanation": "AI in transportation analyses real-time and historical traffic patterns, weather, and road conditions to dynamically optimise vehicle routing and reduce congestion.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Fixed schedules without live data do not use AI's real-time adaptive capabilities."
+      },
+      {
+        "key": "B",
+        "reason": "AI navigation systems update routes automatically in real time rather than delaying for manual human approval."
+      },
+      {
+        "key": "C",
+        "reason": "Relying only on static past routines ignores live traffic bottlenecks that AI pattern analysis resolves."
+      }
+    ]
+  },
+  {
+    "questionNumber": 31,
+    "pageNumber": 11,
+    "unitNumber": 5,
+    "unitName": "Applications of Computer Science",
+    "chapter": "Applications of Computer Science",
+    "slo": "5.1.2",
+    "current_slo": "5.1.2",
+    "cognitiveLevel": "E",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "5.1.2",
+        "description": "discuss the application of AI in the following fields: a. healthcare, b. robotics, c. education, d. transportation, e. entertainment, f. natural language process (NLP);",
+        "topic": "Applications of Computer Science"
+      }
+    ],
+    "stem": "A warehouse uses intelligent robots equipped with sensors and AI algorithms to navigate paths, avoid collisions and adapt routes during inventory transportation.\n\nThe robotics application of AI supports logistics by",
+    "options": {
+      "A": "optimising movement through real-time path correction.",
+      "B": "repeating fixed routines regardless of surroundings.",
+      "C": "tracking items solely through barcode timestamps.",
+      "D": "triggering alarms based on default motion paths."
+    },
+    "correctOption": "A",
+    "explanation": "By combining sensor data with AI navigation algorithms, warehouse robots detect obstacles and dynamically adjust their paths in real time to optimise inventory movement.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Unintelligent mechanical automation repeats fixed routines blindly, whereas AI-equipped robots adapt to their surroundings."
+      },
+      {
+        "key": "C",
+        "reason": "Passive barcode timestamp logging does not involve autonomous obstacle avoidance or route adaptation."
+      },
+      {
+        "key": "D",
+        "reason": "AI logistics robots actively reroute around obstacles rather than merely sounding alarms on fixed paths."
+      }
+    ]
+  },
+  {
+    "questionNumber": 32,
+    "pageNumber": 11,
+    "unitNumber": 5,
+    "unitName": "Applications of Computer Science",
+    "chapter": "Applications of Computer Science",
+    "slo": "5.2.1",
+    "current_slo": "5.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "5.2.1",
+        "description": "describe the fundamental concept of Machine Learning (ML), emphasising their importance in various fields;",
+        "topic": "Applications of Computer Science"
+      }
+    ],
+    "stem": "The role of Machine Learning (ML) in modern systems is demonstrated by",
+    "options": {
+      "A": "enabling systems to adapt and improve through experience-based learning.",
+      "B": "recognizing hidden patterns in large datasets to support decision-making.",
+      "C": "enhancing predictive accuracy through continuous data analysis.",
+      "D": "automating complex tasks by learning from previous outcomes."
+    },
+    "correctOption": "A",
+    "explanation": "By definition (SLO 5.2.1), the fundamental concept of Machine Learning (ML) is enabling computer systems to automatically learn, adapt, and improve from experience without being explicitly reprogrammed.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Recognizing hidden patterns in large datasets describes data mining specifically rather than the core definition of ML adaptation."
+      },
+      {
+        "key": "C",
+        "reason": "Enhancing predictive accuracy through data analysis describes predictive analytics, which is one outcome of ML."
+      },
+      {
+        "key": "D",
+        "reason": "Task automation is an application benefit, whereas enabling systems to adapt and improve through experience is the foundational role of ML."
+      }
+    ]
+  },
+  {
+    "questionNumber": 33,
+    "pageNumber": 11,
+    "unitNumber": 5,
+    "unitName": "Applications of Computer Science",
+    "chapter": "Applications of Computer Science",
+    "slo": "5.2.2",
+    "current_slo": "5.2.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "5.2.2",
+        "description": "describe the following types of machine learning (ML): a. supervised learning, b. unsupervised learning, c. reinforcement learning;",
+        "topic": "Applications of Computer Science"
+      }
+    ],
+    "stem": "A robot learns to navigate by receiving rewards or penalties using",
+    "options": {
+      "A": "reinforcement learning based on environmental interaction.",
+      "B": "unsupervised learning driven by hidden data patterns.",
+      "C": "supervised learning based on static labeled training.",
+      "D": "machine learning with curated instructions."
+    },
+    "correctOption": "A",
+    "explanation": "Reinforcement learning is the type of Machine Learning in which an agent (such as a robot) interacts with an environment and learns optimal actions through trial-and-error rewards and penalties.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Unsupervised learning clusters unlabelled data by hidden similarity patterns without using reward/penalty signals."
+      },
+      {
+        "key": "C",
+        "reason": "Supervised learning trains models on pre-labelled input-output pairs rather than environmental rewards and penalties."
+      },
+      {
+        "key": "D",
+        "reason": "Curated step-by-step instructions describe traditional rule-based programming, not reward-based learning."
+      }
+    ]
+  },
+  {
+    "questionNumber": 34,
+    "pageNumber": 11,
+    "unitNumber": 5,
+    "unitName": "Applications of Computer Science",
+    "chapter": "Applications of Computer Science",
+    "slo": "5.3.2",
+    "current_slo": "5.3.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "5.3.2",
+        "description": "explain the following applications of cloud computing: a. software development, b. data analytics, c. IoT (Internet of Things).",
+        "topic": "Applications of Computer Science"
+      }
+    ],
+    "stem": "Cloud platforms support software development by",
+    "options": {
+      "A": "restricting access to pre-installed coding templates.",
+      "B": "enabling scalable collaboration across remote teams.",
+      "C": "removing the need for any development tools entirely.",
+      "D": "executing local programs through static environments."
+    },
+    "correctOption": "B",
+    "explanation": "Cloud computing provides on-demand, scalable development environments, shared code repositories, and CI/CD pipelines that allow remote software teams to collaborate seamlessly.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Cloud platforms expand access to shared templates, libraries, and services rather than restricting them."
+      },
+      {
+        "key": "C",
+        "reason": "Software development still requires coding, testing, and debugging tools, which cloud platforms host online."
+      },
+      {
+        "key": "D",
+        "reason": "Executing purely local programs on static machines is traditional on-premise computing, not cloud computing."
+      }
+    ]
+  },
+  {
+    "questionNumber": 35,
+    "pageNumber": 11,
+    "unitNumber": 6,
+    "unitName": "Impact of Computing",
+    "chapter": "Impact of Computing",
+    "slo": "6.1.1",
+    "current_slo": "6.1.1",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "6.1.1",
+        "description": "illustrate the role of computing in the following fields by demonstrating real-world applications and examples: a. healthcare, b. education, c. business, d. entertainment;",
+        "topic": "Impact of Computing"
+      }
+    ],
+    "stem": "An educational platform integrates voice recognition to help learners with reading disabilities improve pronunciation.\n\nThe given scenario illustrates computing used for developing",
+    "options": {
+      "A": "psychomotor skills.",
+      "B": "language skills.",
+      "C": "listening skills.",
+      "D": "visual skills."
+    },
+    "correctOption": "B",
+    "explanation": "Helping learners read aloud and improve spoken pronunciation directly develops their verbal and reading 'language skills'.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Psychomotor skills involve physical hand-eye coordination and motor movement, not word pronunciation."
+      },
+      {
+        "key": "C",
+        "reason": "Voice recognition evaluates the learner's spoken pronunciation (speaking/reading), not passive listening."
+      },
+      {
+        "key": "D",
+        "reason": "Visual skills involve interpreting images or spatial graphics rather than vocal pronunciation."
+      }
+    ]
+  },
+  {
+    "questionNumber": 36,
+    "pageNumber": 12,
+    "unitNumber": 6,
+    "unitName": "Impact of Computing",
+    "chapter": "Impact of Computing",
+    "slo": "6.3.1",
+    "current_slo": "6.3.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "6.3.1",
+        "description": "explain the following cyber security threats: a. brute force attacks, b. denial of services (DoS), c. distributed denial of service (DDoS) attacks, d. trojan horse, e. spyware, f. adware, g. phishing, h. pharming, i. social engineering;",
+        "topic": "Impact of Computing"
+      }
+    ],
+    "stem": "Brute force attacks take place by",
+    "options": {
+      "A": "trying many password combinations until access is gained.",
+      "B": "sending malware through flash drives into secure systems.",
+      "C": "pretending to be a trusted user through deceptive emails.",
+      "D": "influencing users to download false applications."
+    },
+    "correctOption": "A",
+    "explanation": "A brute force attack uses automated scripts to systematically test thousands or millions of possible password/key combinations until the correct credential is found.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Spreading malware via infected USB flash drives is physical media malware transmission, not a brute force attack."
+      },
+      {
+        "key": "C",
+        "reason": "Pretending to be a trusted entity via deceptive emails is phishing."
+      },
+      {
+        "key": "D",
+        "reason": "Tricking users into installing fake software is a Trojan horse / social engineering attack."
+      }
+    ]
+  },
+  {
+    "questionNumber": 37,
+    "pageNumber": 12,
+    "unitNumber": 6,
+    "unitName": "Impact of Computing",
+    "chapter": "Impact of Computing",
+    "slo": "6.3.2",
+    "current_slo": "6.3.2",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "6.3.2",
+        "description": "explain the following methods to protect data from security threats: a. access levels, b. anti-malware, c. authentication (passwords and usernames, biometrics, two step verification).",
+        "topic": "Impact of Computing"
+      }
+    ],
+    "stem": "Two-step verification improves security by",
+    "options": {
+      "A": "encrypting all personal information at once.",
+      "B": "creating backup files during login procedures.",
+      "C": "using a single password for more than one platform.",
+      "D": "applying more than one method other than a password."
+    },
+    "correctOption": "D",
+    "explanation": "Two-step verification (2FA) strengthens authentication by requiring a second verification factor (such as an OTP code or biometric check) in addition to the user's password.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "File encryption protects stored data confidentiality, whereas two-step verification is an authentication control during login."
+      },
+      {
+        "key": "B",
+        "reason": "Creating data backups protects against data loss, not unauthorized account login."
+      },
+      {
+        "key": "C",
+        "reason": "Reusing a single password across multiple platforms weakens security and is the opposite of strong authentication."
+      }
+    ]
+  },
+  {
+    "questionNumber": 38,
+    "pageNumber": 12,
+    "unitNumber": 7,
+    "unitName": "Entrepreneurship in the Digital Age",
+    "chapter": "Entrepreneurship in the Digital Age",
+    "slo": "7.1.1",
+    "current_slo": "7.1.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "7.1.1",
+        "description": "explain entrepreneurship and its importance in the economy;",
+        "topic": "Entrepreneurship in the Digital Age"
+      }
+    ],
+    "stem": "An essential role of entrepreneurs in the economy involves",
+    "options": {
+      "A": "promoting all existing business models.",
+      "B": "avoiding financial risks at every opportunity.",
+      "C": "identifying gaps to offer innovative solutions.",
+      "D": "delaying product launches to avoid competition."
+    },
+    "correctOption": "C",
+    "explanation": "Entrepreneurs drive economic growth by spotting unmet consumer needs or market gaps and creating innovative products, services, or digital ventures to solve them.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Entrepreneurs disrupt outdated models with better innovations rather than merely promoting all existing business models."
+      },
+      {
+        "key": "B",
+        "reason": "Entrepreneurship inherently involves taking calculated financial and operational risks rather than avoiding all risk."
+      },
+      {
+        "key": "D",
+        "reason": "Entrepreneurs compete actively by bringing timely solutions to market rather than delaying launches out of fear of competition."
+      }
+    ]
+  },
+  {
+    "questionNumber": 39,
+    "pageNumber": 12,
+    "unitNumber": 7,
+    "unitName": "Entrepreneurship in the Digital Age",
+    "chapter": "Entrepreneurship in the Digital Age",
+    "slo": "7.2.1",
+    "current_slo": "7.2.1",
+    "cognitiveLevel": "U",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "7.2.1",
+        "description": "explain market trends, consumer needs, and emerging industries of entrepreneurship;",
+        "topic": "Entrepreneurship in the Digital Age"
+      }
+    ],
+    "stem": "Market trends in entrepreneurship typically refer to the",
+    "options": {
+      "A": "modification of products over time.",
+      "B": "consumers\u2019 preferences for a specific brand.",
+      "C": "government\u2019s regulation to prevent market shifts.",
+      "D": "traditional practices that do not change over time."
+    },
+    "correctOption": "A",
+    "explanation": "Market trends reflect the directional shift and evolution/modification of products, technologies, and industry offerings over time in response to changing market demands.",
+    "option_feedback": [
+      {
+        "key": "B",
+        "reason": "Preference for a single specific brand is brand loyalty, whereas a market trend spans an entire industry over time."
+      },
+      {
+        "key": "C",
+        "reason": "Government regulations are legal policies, not market trends."
+      },
+      {
+        "key": "D",
+        "reason": "Static traditional practices that never change are the opposite of dynamic market trends."
+      }
+    ]
+  },
+  {
+    "questionNumber": 40,
+    "pageNumber": 12,
+    "unitNumber": 7,
+    "unitName": "Entrepreneurship in the Digital Age",
+    "chapter": "Entrepreneurship in the Digital Age",
+    "slo": "7.2.2",
+    "current_slo": "7.2.2",
+    "cognitiveLevel": "A",
+    "marks": 1,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "7.2.2",
+        "description": "apply various idea generation techniques to identify business opportunities in the digital space;",
+        "topic": "Entrepreneurship in the Digital Age"
+      }
+    ],
+    "stem": "A tech startup explores building AI chatbots for e-commerce platforms. They list common chatbot limitations and explore possibilities to replace, combine, adapt and modify functionalities to deliver better performance.\n\nBased on the given scenario, the technique for generating innovative chatbot ideas is",
+    "options": {
+      "A": "SWOT to assess internal financial risks.",
+      "B": "reverse engineering to reduce bot speed.",
+      "C": "SCAMPER to evolve chatbot functionalities.",
+      "D": "trend analysis to copy what\u2019s already successful."
+    },
+    "correctOption": "C",
+    "explanation": "SCAMPER (Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse) is the structured ideation technique that systematically replaces, combines, adapts, and modifies existing product features to generate innovative improvements.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "SWOT analysis evaluates Strengths, Weaknesses, Opportunities, and Threats rather than replacing, combining, and adapting product features."
+      },
+      {
+        "key": "B",
+        "reason": "Reverse engineering deconstructs an existing product to understand its design, not to reduce speed."
+      },
+      {
+        "key": "D",
+        "reason": "Trend analysis studies market direction rather than applying the SCAMPER feature-modification prompts."
+      }
+    ]
+  }
+]

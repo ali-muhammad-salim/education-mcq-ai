@@ -1,0 +1,1766 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "If hydrogen is replaced with deuterium in each of the given compounds, then the formula of which of these is written INCORRECTLY?",
+    "options": {
+      "A": "DF",
+      "B": "ND3",
+      "C": "MgOD",
+      "D": "C2D5OD"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "1.2.11",
+    "sloText": "Write chemical formulas of isotopic compounds incorporating deuterium;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Magnesium is a divalent alkaline earth metal (Mg2+) and the deuteroxide ion is monovalent (OD-). Therefore, magnesium deuteroxide requires two deuteroxide ions: Mg(OD)2. Writing it as MgOD is chemically incorrect.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "DF is deuterium fluoride (analog of HF), written correctly."
+      },
+      {
+        "key": "B",
+        "reason": "ND3 is deuterated ammonia (analog of NH3), written correctly."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Magnesium has a valency of +2, so the correct formula is Mg(OD)2, not MgOD."
+      },
+      {
+        "key": "D",
+        "reason": "C2D5OD is deuterated ethanol (analog of C2H5OH), written correctly."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "stem": "How many atoms of chlorine are there in 250 g of chlorine gas? (Note: 35.5_17 Cl)",
+    "options": {
+      "A": "2.12 \u00d7 10^24",
+      "B": "4.24 \u00d7 10^24",
+      "C": "4.43 \u00d7 10^24",
+      "D": "8.85 \u00d7 10^24"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "1.3.3",
+    "sloText": "Calculate number of atoms in a given mass of diatomic gas;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Chlorine gas exists as diatomic Cl2 (molar mass = 2 * 35.5 = 71 g/mol). Moles of Cl2 = 250 g / 71 g/mol = 3.521 mol. Number of Cl2 molecules = 3.521 * 6.022 * 10^23 = 2.12 * 10^24. Since each Cl2 molecule contains 2 chlorine atoms, total chlorine atoms = 2 * (2.12 * 10^24) = 4.24 * 10^24 atoms.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "2.12 * 10^24 is the number of Cl2 molecules, not individual chlorine atoms."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Total atoms = 2 * (250 / 71) * 6.02 * 10^23 = 4.24 * 10^24 atoms."
+      },
+      {
+        "key": "C",
+        "reason": "Calculated by assuming monoatomic Cl gas (250 / 35.5 * 6.02 * 10^23)."
+      },
+      {
+        "key": "D",
+        "reason": "Arithmetic calculation error."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "stem": "Which of the following chemical equations is balanced?",
+    "options": {
+      "A": "CH4(g) + O2(g) -> CO2(g) + H2O(g)",
+      "B": "NaCl(aq) + BeF2(aq) -> NaF(aq) + BeCl2(s)",
+      "C": "AgNO3(aq) + LiOH(aq) -> AgOH(s) + LiNO3(aq)",
+      "D": "Al2(SO4)3(aq) + CaCl2(aq) -> AlCl3(aq) + CaSO4(s)"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "1.5.5",
+    "sloText": "Identify balanced chemical equations representing double displacement reactions;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "In AgNO3 + LiOH -> AgOH + LiNO3, all elements are balanced with 1 Ag, 1 Li, 1 N, 4 O, and 1 H on both sides.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Oxygen and hydrogen are unbalanced (4 H on left, 2 H on right)."
+      },
+      {
+        "key": "B",
+        "reason": "Sodium and chlorine are unbalanced (2 F and 2 Cl on right)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. All atoms balance in 1:1:1:1 stoichiometry."
+      },
+      {
+        "key": "D",
+        "reason": "Aluminium, calcium, and sulfate are unbalanced."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "stem": "Which of the following diagrams represents a pure compound?",
+    "options": {
+      "A": "Diagram A",
+      "B": "Diagram B",
+      "C": "Diagram C",
+      "D": "Diagram D"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.2.8",
+    "sloText": "Identify pure compounds versus mixtures from particulate diagrams;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "diagramUrl": "/paper-crops/CHM-IX-2021-P1/q4.png",
+    "diagramBased": true,
+    "explanation": "In Diagram C, every single particle is identical, consisting of triatomic molecules made of two different types of bonded atoms (a single pure compound). In contrast, A and D are mixtures, and B consists of diatomic element molecules.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Diagram A shows a mixture of two different monoatomic elements."
+      },
+      {
+        "key": "B",
+        "reason": "Diagram B shows a pure diatomic element, not a compound."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Diagram C consists exclusively of identical molecules composed of two different elements in fixed ratio."
+      },
+      {
+        "key": "D",
+        "reason": "Diagram D shows a mixture of compounds and free elemental atoms."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "stem": "AlCl3(aq) + NaOH(aq) -> Al(OH)3(s) + NaCl(aq). To balance the given equation, the coefficient \u20183\u2019 should be placed before",
+    "options": {
+      "A": "AlCl3(aq) and NaCl(aq)",
+      "B": "NaOH(aq) and NaCl(aq)",
+      "C": "AlCl3(aq) and Al(OH)3(s)",
+      "D": "NaOH(aq) and Al(OH)3(s)"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "1.5.5",
+    "sloText": "Balance precipitation reactions using stoichiometric coefficients;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "AlCl3 has 3 chloride ions requiring 3 NaCl on the right, which in turn requires 3 NaOH on the left to provide 3 hydroxide ions for Al(OH)3: AlCl3 + 3NaOH -> Al(OH)3 + 3NaCl. Coefficient 3 goes before NaOH and NaCl.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "AlCl3 already has 1 aluminium atom balancing Al(OH)3."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. 3 NaOH and 3 NaCl balance both the OH- and Cl- ions."
+      },
+      {
+        "key": "C",
+        "reason": "Placing 3 before AlCl3 creates an imbalance of aluminium."
+      },
+      {
+        "key": "D",
+        "reason": "Placing 3 before Al(OH)3 creates an imbalance of aluminium."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "stem": "A compound X has an empirical formula C4H9 and its molecular mass is 114 g/mol. Which of the following represents the molecular formula of compound X? (Note: 12_6 C and 1_1 H)",
+    "options": {
+      "A": "C6H11",
+      "B": "C7H12",
+      "C": "C8H18",
+      "D": "C12H27"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "1.3.3",
+    "sloText": "Deduce molecular formula from empirical formula and molar mass;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Empirical formula mass of C4H9 = (4 * 12) + (9 * 1) = 48 + 9 = 57 g/mol. Scaling factor n = 114 / 57 = 2. Molecular formula = (C4H9)2 = C8H18 (Octane).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "C6H11 does not have the empirical ratio 4:9."
+      },
+      {
+        "key": "B",
+        "reason": "C7H12 does not have the empirical ratio 4:9."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. 114 / 57 = 2, yielding (C4H9)2 = C8H18."
+      },
+      {
+        "key": "D",
+        "reason": "C12H27 corresponds to n = 3 (molar mass 171 g/mol)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "stem": "Molecular formula of hexane is C7H16 and that of calcium carbonate is CaCO3. One mole of these substances contains the same (Note: 12_6 C, 1_1 H, 40_20 Ca and 16_8 O)",
+    "options": {
+      "A": "type of atoms.",
+      "B": "type of bonding.",
+      "C": "number of atoms.",
+      "D": "number of grams."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.3.2",
+    "sloText": "Compare molar masses of organic hydrocarbons and inorganic carbonate salts;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Molar mass of C7H16 = (7 * 12) + (16 * 1) = 84 + 16 = 100 g/mol. Molar mass of CaCO3 = 40 + 12 + (3 * 16) = 40 + 12 + 48 = 100 g/mol. Thus, one mole of each substance contains exactly the same number of grams (100.0 g).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Hexane contains C and H; calcium carbonate contains Ca, C, and O."
+      },
+      {
+        "key": "B",
+        "reason": "Hexane is covalent; calcium carbonate is ionic/covalent."
+      },
+      {
+        "key": "C",
+        "reason": "1 mole of C7H16 has 23 moles of atoms; 1 mole of CaCO3 has 5 moles of atoms."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Both have an identical molar mass of 100 g/mol, so 1 mole of each weighs exactly 100 grams."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "stem": "The species that does NOT carry an electrical charge is a/ an",
+    "options": {
+      "A": "anion.",
+      "B": "cation.",
+      "C": "proton.",
+      "D": "neutron."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "2.1.1",
+    "sloText": "Identify the electrical charges of subatomic particles and ions;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Neutrons are electrically neutral subatomic particles located in the atomic nucleus with zero net electrical charge.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Anions carry negative electrical charges."
+      },
+      {
+        "key": "B",
+        "reason": "Cations carry positive electrical charges."
+      },
+      {
+        "key": "C",
+        "reason": "Protons carry positive electrical charges (+1)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Neutrons carry no electrical charge (charge = 0)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "stem": "Which of the following statements is TRUE for 40_18 Ar?",
+    "options": {
+      "A": "It contains an equal number of protons and neutrons.",
+      "B": "It contains more number of neutrons than electrons.",
+      "C": "It contains more number of electrons than protons.",
+      "D": "It contains more number of protons than neutrons."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "2.1.2",
+    "sloText": "Determine subatomic particle distribution in noble gas isotopes;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "For 40_18 Ar: Protons = 18, Electrons = 18, Neutrons = 40 - 18 = 22. It contains 22 neutrons and 18 electrons; hence, neutrons > electrons.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Protons (18) and neutrons (22) are not equal."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. It contains 22 neutrons, which is greater than its 18 electrons."
+      },
+      {
+        "key": "C",
+        "reason": "In a neutral atom, electrons equal protons."
+      },
+      {
+        "key": "D",
+        "reason": "Protons (18) are fewer than neutrons (22)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "stem": "In Rutherford\u2019s experiment which led to the discovery of atomic nucleus, the alpha particles were bombarded on a very thin sheet of gold foil. These alpha particles are positively charged and each particle consists of",
+    "options": {
+      "A": "one proton and one neutron.",
+      "B": "one proton and two neutrons.",
+      "C": "two protons and one neutron.",
+      "D": "two protons and two neutrons."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "2.3.1",
+    "sloText": "Describe the physical nature of alpha particles in Rutherford's scattering experiment;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Alpha particles are helium-4 nuclei (He2+), each containing exactly two protons and two neutrons bound together with a +2 charge.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "This is a deuteron (2_1 H nucleus)."
+      },
+      {
+        "key": "B",
+        "reason": "This is a triton (3_1 H nucleus)."
+      },
+      {
+        "key": "C",
+        "reason": "This is helium-3 nucleus."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. An alpha particle is a helium nucleus consisting of 2 protons and 2 neutrons."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "stem": "A metal compound has the formula XCl2 and a relative formula mass of 95.211. The relative atomic mass of X is (Note: 35.5_17 Cl)",
+    "options": {
+      "A": "24.211",
+      "B": "59.711",
+      "C": "61.211",
+      "D": "78.211"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "2.1.2",
+    "sloText": "Calculate relative atomic mass of a metal from formula mass of its chloride;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Formula mass of XCl2 = atomic mass of X + 2(35.5) = atomic mass of X + 71.0. Relative atomic mass of X = 95.211 - 71.0 = 24.211 (Magnesium).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. 95.211 - (2 * 35.5) = 24.211."
+      },
+      {
+        "key": "B",
+        "reason": "Subtracts only one chlorine atom."
+      },
+      {
+        "key": "C",
+        "reason": "Calculation error."
+      },
+      {
+        "key": "D",
+        "reason": "Calculation error."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "stem": "Which of the following statements is TRUE about Bohr\u2019s atomic model?",
+    "options": {
+      "A": "It shows that an atom produces continuous spectrum.",
+      "B": "It proves that the energy of each orbit in an atom is quantised.",
+      "C": "It proves that the plum-pudding model of an atom was correct.",
+      "D": "It shows that electrons emit radiations when revolving around the nucleus."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "2.3.3",
+    "sloText": "Describe the postulates of Bohr's atomic theory including energy quantization;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Bohr postulated that electrons revolve only in discrete, non-radiating orbits with fixed, quantised energy levels and angular momentum (mvr = nh/2\u03c0).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Bohr's model explains line spectra, not continuous spectra."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Bohr proved that orbits have quantised, fixed energy levels."
+      },
+      {
+        "key": "C",
+        "reason": "Bohr built upon Rutherford's nuclear model, rejecting plum-pudding."
+      },
+      {
+        "key": "D",
+        "reason": "Electrons do not emit radiation while in stationary orbits."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "stem": "An atom of hydrogen contains one proton and zero neutrons. Suppose a neutron is added to the nucleus of hydrogen atom. This addition of one neutron will cause",
+    "options": {
+      "A": "an increase in the positive charge on the nucleus.",
+      "B": "the hydrogen atom to convert into one of its isotopes.",
+      "C": "an increase in the atomic number of the hydrogen atom.",
+      "D": "the hydrogen atom to convert into a new atom of a different element."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "2.2.1",
+    "sloText": "Explain isotope formation through change in neutron number;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Adding a neutral neutron increases mass number from 1 to 2 without altering the atomic number (Z = 1), transforming protium into deuterium (an isotope of hydrogen).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Neutrons have zero electrical charge; nuclear charge remains +1."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Same atomic number but different mass forms an isotope (deuterium)."
+      },
+      {
+        "key": "C",
+        "reason": "Atomic number depends on protons, which remains 1."
+      },
+      {
+        "key": "D",
+        "reason": "Element identity is determined by proton number and does not change."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "stem": "In contrast to group II elements, group I elements are less",
+    "options": {
+      "A": "hard.",
+      "B": "reactive.",
+      "C": "electropositive.",
+      "D": "metallic in character."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.1.6",
+    "sloText": "Compare physical properties of alkali metals (Group I) and alkaline earth metals (Group II);",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Alkali metals (Group I) have only one valence electron per atom participating in metallic bonding, resulting in weaker metallic bonds and softer metals (can be cut with a butter knife) than divalent Group II metals.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Group I alkali metals are softer (less hard) than Group II metals."
+      },
+      {
+        "key": "B",
+        "reason": "Group I metals are more reactive than Group II metals."
+      },
+      {
+        "key": "C",
+        "reason": "Group I metals are more electropositive."
+      },
+      {
+        "key": "D",
+        "reason": "Group I metals exhibit stronger metallic character."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "stem": "Which periodic trend is observed in moving down group 17 of the modern periodic table?",
+    "options": {
+      "A": "Decreasing reactivity",
+      "B": "Decreasing boiling point",
+      "C": "Increasing electronegativity",
+      "D": "Increasing ionisation energy"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "3.2.3",
+    "sloText": "Describe group trends in halogen reactivity down Group 17;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Halogens react by gaining an electron. Down Group 17, atomic radius increases and shielding increases, reducing nuclear attraction for incoming electrons, causing chemical reactivity to decrease from fluorine to iodine.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Reactivity decreases down the halogens (F2 > Cl2 > Br2 > I2)."
+      },
+      {
+        "key": "B",
+        "reason": "Boiling points increase down the group due to stronger dispersion forces."
+      },
+      {
+        "key": "C",
+        "reason": "Electronegativity decreases down the group."
+      },
+      {
+        "key": "D",
+        "reason": "Ionisation energy decreases down the group."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "stem": "An element has atomic number 14. In which period of the periodic table will it be placed?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "3.1.3",
+    "sloText": "Determine period placement from electron shell distribution;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Silicon (Z = 14) has the electronic configuration 2, 8, 4 (occupying 3 shells: K, L, M). The number of occupied shells corresponds to Period 3.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Period 1 elements have 1 shell."
+      },
+      {
+        "key": "B",
+        "reason": "Period 2 elements have 2 shells."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Electronic configuration 2, 8, 4 occupies 3 shells, placing it in Period 3."
+      },
+      {
+        "key": "D",
+        "reason": "Period 4 elements have 4 shells."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "stem": "The horizontal rows in the modern periodic table are known as",
+    "options": {
+      "A": "shells.",
+      "B": "blocks.",
+      "C": "groups.",
+      "D": "periods."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "3.1.2",
+    "sloText": "Identify the structure of the periodic table into periods and groups;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "The horizontal rows in the periodic table are called periods (numbered 1 to 7), while vertical columns are called groups.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Shells are principal energy levels of electrons."
+      },
+      {
+        "key": "B",
+        "reason": "Blocks are s, p, d, f subshell regions."
+      },
+      {
+        "key": "C",
+        "reason": "Groups are vertical columns."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Horizontal rows are called periods."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "stem": "According to the modern periodic law, the elements in the periodic table are arranged as per their",
+    "options": {
+      "A": "proton number.",
+      "B": "neutron number.",
+      "C": "nucleon number.",
+      "D": "valence shell electrons."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "3.1.1",
+    "sloText": "State Moseley's modern periodic law based on atomic (proton) number;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Moseley's Modern Periodic Law states that the physical and chemical properties of elements are periodic functions of their atomic numbers (proton numbers).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Modern periodic table is arranged in order of increasing proton number (atomic number)."
+      },
+      {
+        "key": "B",
+        "reason": "Neutron number does not determine chemical periodicity."
+      },
+      {
+        "key": "C",
+        "reason": "Nucleon number (atomic mass) was Mendeleev's classical arrangement."
+      },
+      {
+        "key": "D",
+        "reason": "Valence electrons determine group, but overall arrangement follows proton number."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "stem": "The following table shows the difference between all the elements of X and Y families: Property: Reactivity: X (Unreactive), Y (Reactive); Occurrence: X (Monoatomic), Y (Diatomic). With reference to the given table, X and Y families can be identified as",
+    "options": {
+      "A": "X: noble gases | Y: oxygen group",
+      "B": "X: alkali metals | Y: halogens",
+      "C": "X: noble gases | Y: halogens",
+      "D": "X: alkali metals | Y: oxygen group"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.2.1",
+    "sloText": "Identify chemical families by reactivity and standard molecular occurrence;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Noble gases (Group 18) are unreactive and exist as monoatomic gases. Halogens (Group 17) are highly reactive non-metals that all exist as diatomic molecules (F2, Cl2, Br2, I2).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Oxygen group contains ozone (O3) and solid octatomic sulfur (S8)."
+      },
+      {
+        "key": "B",
+        "reason": "Alkali metals are solid reactive metals, not monoatomic gases."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Noble gases are unreactive and monoatomic; all halogens are reactive and diatomic."
+      },
+      {
+        "key": "D",
+        "reason": "Alkali metals do not match Property X."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "stem": "The ion of an element, Z^\u22123 has atomic mass 31 and atomic number 15. How many valence electrons are present in element Z?",
+    "options": {
+      "A": "5",
+      "B": "8",
+      "C": "12",
+      "D": "15"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "4.1.1",
+    "sloText": "Determine valence electrons of neutral parent atoms from ion data;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Atomic number 15 corresponds to neutral Phosphorus (Z = 15). Its electron configuration is 2, 8, 5. The number of valence electrons in the neutral element Z is 5 (which gains 3 electrons to form Z^3- with 8 valence electrons).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Neutral element Z (Z=15) has 5 valence electrons in its M shell."
+      },
+      {
+        "key": "B",
+        "reason": "8 is the number of valence electrons in the -3 ion, not neutral element Z."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect calculation."
+      },
+      {
+        "key": "D",
+        "reason": "15 is total electrons in neutral Z, not valence electrons."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "stem": "The dot and cross structure for the molecule of hydrogen sulphide is (Note: 1_1 H and 32_16 S)",
+    "options": {
+      "A": "Structure A",
+      "B": "Structure B",
+      "C": "Structure C",
+      "D": "Structure D"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "4.3.3",
+    "sloText": "Draw dot-and-cross structures for simple covalent molecules (H2S);",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "diagramUrl": "/paper-crops/CHM-IX-2021-P1/q21.png",
+    "diagramBased": true,
+    "explanation": "Sulfur has 6 valence electrons and forms 2 single covalent bonds with two hydrogen atoms, retaining 2 non-bonding lone pairs (4 non-bonding electrons). Structure D correctly shows 2 shared pairs and 2 lone pairs on sulfur.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect stoichiometry."
+      },
+      {
+        "key": "B",
+        "reason": "Missing sulfur's lone pairs."
+      },
+      {
+        "key": "C",
+        "reason": "Shows 3 hydrogen atoms (H3S)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Two H-S single bonds and two unshared lone pairs on sulfur."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "stem": "Which of the following properties is TRUE for ionic compounds?",
+    "options": {
+      "A": "They are malleable and ductile.",
+      "B": "They have low melting and boiling points.",
+      "C": "They are brittle and dissolve easily in non-polar solvents.",
+      "D": "They dissolve in polar solvents and conduct electricity in molten form."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.2.4",
+    "sloText": "Describe general physical properties of ionic compounds;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Ionic compounds are composed of oppositely charged ions that dissolve in polar solvents like water and conduct electricity when molten or dissolved due to mobile ions.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Ionic compounds are hard and brittle, not malleable."
+      },
+      {
+        "key": "B",
+        "reason": "They have very high melting and boiling points due to strong electrostatic lattice forces."
+      },
+      {
+        "key": "C",
+        "reason": "They are insoluble in non-polar organic solvents."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. They dissolve in polar solvents and conduct electric current in molten and aqueous states."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "stem": "Compared to ionic and covalent bonds, intermolecular forces of attractions are",
+    "options": {
+      "A": "weaker than both types of bonding.",
+      "B": "stronger than both types of bonding.",
+      "C": "stronger than ionic bonds but weaker than covalent bonds.",
+      "D": "stronger than covalent bonds but weaker than ionic bonds."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.6.1",
+    "sloText": "Compare the relative strengths of intramolecular chemical bonds and intermolecular forces;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Intermolecular forces (dipole-dipole, hydrogen bonding, dispersion forces) operate between separate molecules and are orders of magnitude weaker than true chemical bonds (ionic and covalent bonds).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Intermolecular forces are substantially weaker than both ionic and covalent intramolecular bonds."
+      },
+      {
+        "key": "B",
+        "reason": "Chemical bonds are far stronger than intermolecular forces."
+      },
+      {
+        "key": "C",
+        "reason": "Intermolecular forces are weaker than both."
+      },
+      {
+        "key": "D",
+        "reason": "Intermolecular forces are weaker than both."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "stem": "Atoms P and Q, belonging to the 2nd period of the modern periodic table, have 1 and 6 electrons in their valence shells respectively. The compound which P and Q are likely to form is",
+    "options": {
+      "A": "PQ",
+      "B": "PQ2",
+      "C": "P2Q",
+      "D": "P3Q"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.2.3",
+    "sloText": "Predict formulas of binary compounds from valence electrons;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Atom P (1 valence electron, Lithium) forms P+ cation. Atom Q (6 valence electrons, Oxygen) requires 2 electrons to form Q2- anion. Combining gives the formula P2Q (Li2O).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "PQ would require equal valencies."
+      },
+      {
+        "key": "B",
+        "reason": "PQ2 would correspond to divalent P and monovalent Q."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Two P+ ions balance one Q2- ion, forming P2Q."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect valency ratio."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "stem": "11_5 B and 27_13 Al are in the same group of the modern periodic table. Hence, they both have the same number of",
+    "options": {
+      "A": "protons.",
+      "B": "neutrons.",
+      "C": "inner electrons.",
+      "D": "valence electrons."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.1.1",
+    "sloText": "Explain that elements in the same periodic group have identical valence electron numbers;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Elements belonging to the same group in the periodic table share identical numbers of valence electrons. Both Boron (2, 3) and Aluminium (2, 8, 3) belong to Group 13 (IIIA) with 3 valence electrons.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Boron has 5 protons; Aluminium has 13."
+      },
+      {
+        "key": "B",
+        "reason": "Boron has 6 neutrons; Aluminium has 14."
+      },
+      {
+        "key": "C",
+        "reason": "Boron has 2 inner electrons; Aluminium has 10."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Group members have the same number of valence electrons (3)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 26,
+    "stem": "On chemical combination, which of these elements can form triple covalent bonds?",
+    "options": {
+      "A": "Two atoms of oxygen",
+      "B": "Two atoms of nitrogen",
+      "C": "Two atoms of sulphur and one atom of carbon",
+      "D": "Two atoms of oxygen and one atom of carbon"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.3.2",
+    "sloText": "Identify single, double and triple covalent bonds in diatomic and polyatomic molecules;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Each nitrogen atom has 5 valence electrons and requires 3 electrons for octet completion. Two nitrogen atoms share three pairs of electrons to form a triple covalent bond (N\u2261N).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Oxygen atoms share two electron pairs to form a double bond (O=O)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Nitrogen forms a triple covalent bond (N\u2261N)."
+      },
+      {
+        "key": "C",
+        "reason": "CS2 has two double bonds (S=C=S)."
+      },
+      {
+        "key": "D",
+        "reason": "CO2 has two double bonds (O=C=O)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 27,
+    "stem": "The given diagram shows a chromatogram of several inks. Based on the given chromatogram, it can be inferred that",
+    "options": {
+      "A": "red and blue inks are present in brown ink.",
+      "B": "yellow and blue inks are present in black ink.",
+      "C": "black is a mixture of blue, red and green inks.",
+      "D": "brown is a mixture of red, green and black inks."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "6.6.5",
+    "sloText": "Interpret paper chromatograms to identify dye components in ink mixtures;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "diagramUrl": "/paper-crops/CHM-IX-2021-P1/q27.png",
+    "diagramBased": true,
+    "explanation": "Comparing the vertical migration distance of spots on the chromatogram, the spots resolved from black ink align with the reference spots of yellow and blue inks.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Brown ink spots do not align with blue ink."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Black ink exhibits spots aligning with yellow and blue reference spots."
+      },
+      {
+        "key": "C",
+        "reason": "Green spot does not align with black ink spots."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect interpretation."
+      }
+    ]
+  },
+  {
+    "questionNumber": 28,
+    "stem": "Which of the following is NOT an example of aqueous solution?",
+    "options": {
+      "A": "Black tea",
+      "B": "Sea water",
+      "C": "Orange juice",
+      "D": "Whipped cream"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "6.1.1",
+    "sloText": "Classify true aqueous solutions versus colloidal foams and emulsions;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Whipped cream is a colloidal foam consisting of gas bubbles dispersed in fat-rich liquid cream, not an aqueous solution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Black tea is an aqueous solution of tea extractives in water."
+      },
+      {
+        "key": "B",
+        "reason": "Sea water is an aqueous solution of dissolved mineral salts."
+      },
+      {
+        "key": "C",
+        "reason": "Orange juice is an aqueous mixture containing dissolved sugars and acids."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Whipped cream is a colloid (foam), not an aqueous solution."
+      }
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "stem": "What is the molarity of a solution containing 32 g of potassium sulphate (K2SO4) in 350 cm3 of solution? (Note: Molar mass of K2SO4 = 174 g mol\u20131)",
+    "options": {
+      "A": "0.06 M",
+      "B": "0.09 M",
+      "C": "0.52 M",
+      "D": "64.37 M"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "6.4.2",
+    "sloText": "Calculate molarity from solute mass and solution volume in cubic centimeters;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Moles of K2SO4 = 32 g / 174 g/mol = 0.1839 mol. Volume = 350 cm3 = 0.350 dm3. Molarity = 0.1839 mol / 0.350 dm3 \u2248 0.525 M (0.52 M).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Calculation error."
+      },
+      {
+        "key": "B",
+        "reason": "Calculation error."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. M = (32 / 174) / 0.350 = 0.525 M \u2248 0.52 M."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrectly divides volume by mass."
+      }
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "stem": "Sodium chloride crystals can be separated from sand using four different processes that are mentioned in the given table. The option that shows the CORRECT order of these processes is",
+    "options": {
+      "A": "filter -> evaporate -> dissolve -> crystallise",
+      "B": "dissolve -> filter -> evaporate -> crystallise",
+      "C": "dissolve -> evaporate -> crystallise -> filter",
+      "D": "filter -> dissolve -> crystallise -> evaporate"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.6.3",
+    "sloText": "Outline the procedural sequence for separating soluble salts from insoluble grit;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "To separate salt from sand: 1. Dissolve the mixture in water (NaCl dissolves, sand remains insoluble); 2. Filter the mixture (sand is trapped on filter paper); 3. Evaporate the filtrate to crystallization point; 4. Crystallise and dry pure NaCl crystals.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Filtering before dissolving leaves both dry salt and sand on the paper."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Dissolution -> Filtration -> Evaporation to saturation -> Crystallisation."
+      },
+      {
+        "key": "C",
+        "reason": "Filtering must occur before evaporation to remove sand."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect sequence."
+      }
+    ]
+  },
+  {
+    "questionNumber": 31,
+    "stem": "If 16 g of sodium chloride is dissolved in water to prepare 200 cm3 of saline solution, the mass/volume (m/v) percentage of sodium chloride solution will be",
+    "options": {
+      "A": "0.07",
+      "B": "0.08",
+      "C": "7.41",
+      "D": "8.00"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "6.4.4",
+    "sloText": "Calculate percentage mass-volume (% m/v) concentration of solutions;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "% (m/v) = (mass of solute in g / volume of solution in cm3) * 100 = (16 g / 200 cm3) * 100 = 8.00%.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect calculation."
+      },
+      {
+        "key": "B",
+        "reason": "0.08 is the decimal fraction, not percentage."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect calculation."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. (16 / 200) * 100 = 8.00%."
+      }
+    ]
+  },
+  {
+    "questionNumber": 32,
+    "stem": "The given table shows the classification of substances based on their solubility in water. Soluble: K2SO4; Insoluble: Mg(OH)2, CCl4. The option that shows the CORRECT classification of these substances is",
+    "options": {
+      "A": "I and II.",
+      "B": "I and III.",
+      "C": "II and IV.",
+      "D": "III and IV."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.5.4",
+    "sloText": "Classify ionic and covalent compounds as water soluble or insoluble based on polarity;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Potassium sulphate (K2SO4) is a soluble ionic salt in water. Magnesium hydroxide is an insoluble base (Ksp ~ 10^-11), and carbon tetrachloride (CCl4) is an insoluble non-polar organic liquid. Hence, II and IV are correctly classified.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Benzene is non-polar and insoluble in water."
+      },
+      {
+        "key": "B",
+        "reason": "Benzene is insoluble in water."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. K2SO4 is water-soluble, while Mg(OH)2 and CCl4 are insoluble."
+      },
+      {
+        "key": "D",
+        "reason": "Benzene is insoluble in water."
+      }
+    ]
+  },
+  {
+    "questionNumber": 33,
+    "stem": "A fizzy (carbonated) drink is which type of solution?",
+    "options": {
+      "A": "Solute: Liquid | Solvent: Liquid",
+      "B": "Solute: Gas | Solvent: Liquid",
+      "C": "Solute: Gas | Solvent: Gas",
+      "D": "Solute: Liquid | Solvent: Gas"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.2.1",
+    "sloText": "Identify gas-in-liquid solutions with commercial examples;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "In carbonated beverages, carbon dioxide gas (solute) is dissolved under high pressure in liquid water (solvent), forming a gas-in-liquid solution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Liquid in liquid is ethanol in water."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Carbon dioxide gas solute dissolved in liquid water solvent."
+      },
+      {
+        "key": "C",
+        "reason": "Gas in gas is air."
+      },
+      {
+        "key": "D",
+        "reason": "Liquid in gas is mist or fog."
+      }
+    ]
+  },
+  {
+    "questionNumber": 34,
+    "stem": "Galvanising is one of the methods to prevent iron from rusting. This method involves coating of iron with a protective layer of",
+    "options": {
+      "A": "tin.",
+      "B": "zinc.",
+      "C": "aluminium.",
+      "D": "magnesium."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "7.6.3",
+    "sloText": "Describe zinc coating (galvanizing) for sacrificial protection of iron;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "Galvanising is the process of applying a protective sacrificial zinc coating to steel or iron to prevent rusting.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Tin coating is called tin plating."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Galvanising specifically involves coating iron with zinc."
+      },
+      {
+        "key": "C",
+        "reason": "Aluminium coating is aluminising."
+      },
+      {
+        "key": "D",
+        "reason": "Magnesium is used as sacrificial anode blocks."
+      }
+    ]
+  },
+  {
+    "questionNumber": 35,
+    "stem": "When molten sodium chloride is electrolysed, the chemical equation that shows the change taking place at the cathode is",
+    "options": {
+      "A": "Na(s) \u2212 2e\u2212 \u27f6 Na2+(l)",
+      "B": "Na2+(l) \u2212 2e\u2212 \u27f6 Na(s)",
+      "C": "Na(s) + e\u2212 \u27f6 Na+(l)",
+      "D": "Na+(l) + e\u2212 \u27f6 Na(s)"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.5.2",
+    "sloText": "Write cathode half-reactions for electrolysis of molten binary salts in Down's cell;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "At the cathode (negative electrode) during Down's cell electrolysis of molten NaCl, sodium cations (Na+) gain an electron and are reduced to molten/solid sodium metal: Na+(l) + e- -> Na(s).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Sodium does not form +2 ions."
+      },
+      {
+        "key": "B",
+        "reason": "Sodium does not form +2 ions."
+      },
+      {
+        "key": "C",
+        "reason": "Neutral sodium does not gain electrons at the cathode."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Reduction of sodium cations: Na+(l) + e- -> Na(s)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 36,
+    "stem": "An electrolytic cell does NOT show the use of",
+    "options": {
+      "A": "inert metals as electrodes.",
+      "B": "a battery to supply energy.",
+      "C": "salt bridge to control the migration of ions.",
+      "D": "single electrolyte for the conduction of ions."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.4.13",
+    "sloText": "Distinguish structural components of electrolytic cells from voltaic cells;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "An electrolytic cell consists of a single container with a common electrolyte solution or molten salt; it does NOT use a salt bridge. Salt bridges are used exclusively in two-container galvanic (voltaic) cells.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Inert electrodes (Pt, graphite) are commonly used in electrolytic cells."
+      },
+      {
+        "key": "B",
+        "reason": "A DC battery/power supply is required to drive non-spontaneous electrolysis."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Electrolytic cells operate in a single container without a salt bridge."
+      },
+      {
+        "key": "D",
+        "reason": "A single shared electrolyte is a standard feature of electrolytic cells."
+      }
+    ]
+  },
+  {
+    "questionNumber": 37,
+    "stem": "When a piece of metal M is placed in an aqueous solution of metal X ions in a test tube, it is observed that the amount of solid metal (M) decreases while the solid metal (X) deposits at the bottom of the test tube over time. The option that shows the CORRECT representation of metal M and X is",
+    "options": {
+      "A": "M: iron | X: aluminium",
+      "B": "M: iron | X: sodium",
+      "C": "M: zinc | X: copper",
+      "D": "M: zinc | X: magnesium"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.4.8",
+    "sloText": "Predict displacement outcomes using the electrochemical reactivity series of metals;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "A metal can only displace another metal from its salt solution if it is higher (more reactive/more electropositive) in the electrochemical reactivity series. Zinc is more reactive than copper (Zn > Cu), so solid zinc dissolves into Zn2+ while solid copper deposits: Zn(s) + Cu2+(aq) -> Zn2+(aq) + Cu(s).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Iron is less reactive than aluminium and cannot displace Al3+."
+      },
+      {
+        "key": "B",
+        "reason": "Iron is far less reactive than sodium and cannot displace Na+."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Zinc is more reactive than copper and displaces Cu2+ ions to deposit metallic copper."
+      },
+      {
+        "key": "D",
+        "reason": "Zinc is less reactive than magnesium and cannot displace Mg2+."
+      }
+    ]
+  },
+  {
+    "questionNumber": 38,
+    "stem": "When an aqueous solution of sodium chloride is electrolysed, the substance that is produced at the cathode is",
+    "options": {
+      "A": "oxygen gas.",
+      "B": "chlorine gas.",
+      "C": "hydrogen gas.",
+      "D": "sodium metal."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.5.2",
+    "sloText": "Identify cathode products in aqueous brine electrolysis;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "In aqueous NaCl solution, water dissociates into H+ and OH-. Because hydrogen has a higher reduction potential than sodium (Na+), H+ ions are preferentially discharged at the cathode to produce hydrogen gas: 2H+(aq) + 2e- -> H2(g).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Oxygen would only be produced at the anode in very dilute solutions."
+      },
+      {
+        "key": "B",
+        "reason": "Chlorine gas is produced at the anode."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Hydrogen gas is evolved at the cathode."
+      },
+      {
+        "key": "D",
+        "reason": "Sodium metal is not discharged in aqueous solution due to water's higher reduction potential."
+      }
+    ]
+  },
+  {
+    "questionNumber": 39,
+    "stem": "To prevent underground iron pipes from rapid corrosion, blocks of metal X are buried close to the pipes and connected by wires. This is called sacrificial protection. The metal X is",
+    "options": {
+      "A": "tin.",
+      "B": "lead.",
+      "C": "copper.",
+      "D": "magnesium."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.6.3",
+    "sloText": "Describe sacrificial protection of underground pipelines using more electropositive metals;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "In sacrificial cathodic protection, a more reactive, more electropositive metal than iron (such as magnesium or zinc) is connected to the iron pipe. The magnesium acts as a sacrificial anode, oxidizing preferentially and sacrificing itself to protect the iron cathode from rusting.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Tin is less reactive than iron and would accelerate rusting if scratched."
+      },
+      {
+        "key": "B",
+        "reason": "Lead is less reactive than iron."
+      },
+      {
+        "key": "C",
+        "reason": "Copper is less reactive and causes accelerated galvanic corrosion of iron."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Magnesium is more electropositive than iron and corrodes sacrificially to protect the iron pipe."
+      }
+    ]
+  },
+  {
+    "questionNumber": 40,
+    "stem": "Which of the following is an example of electrolyte?",
+    "options": {
+      "A": "Benzene",
+      "B": "Sulphuric acid",
+      "C": "Distilled water",
+      "D": "Carbon tetrachloride"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "7.4.6",
+    "sloText": "Identify strong electrolytes among common laboratory acids and non-electrolytes;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "Sulphuric acid (H2SO4) in aqueous solution ionises completely into hydrogen ions (H+) and sulphate ions (SO4^2-), acting as a strong electrolyte that conducts electric current efficiently.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Benzene is a non-polar covalent liquid that does not ionise (non-electrolyte)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Sulphuric acid ionises in water to conduct electric current."
+      },
+      {
+        "key": "C",
+        "reason": "Pure distilled water has negligible ionisation (poor conductor)."
+      },
+      {
+        "key": "D",
+        "reason": "Carbon tetrachloride is a non-polar covalent non-electrolyte."
+      }
+    ]
+  },
+  {
+    "questionNumber": 41,
+    "stem": "[ATP] A student separated a mixture of ammonium chloride and iron filings using a magnet. This is because iron is",
+    "options": {
+      "A": "highly electronegative.",
+      "B": "highly electropositive.",
+      "C": "a metallic solid.",
+      "D": "an ionic solid."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.2.8",
+    "sloText": "Relate magnetic separation of iron to its metallic ferromagnetic nature;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Iron is a ferromagnetic metallic solid attracted strongly to magnetic fields, allowing physical separation from non-magnetic ammonium chloride salt.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Iron is a metal with low electronegativity."
+      },
+      {
+        "key": "B",
+        "reason": "Electropositivity does not cause magnetic attraction."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Iron is a metallic solid with ferromagnetic properties."
+      },
+      {
+        "key": "D",
+        "reason": "Iron is not an ionic solid."
+      }
+    ]
+  },
+  {
+    "questionNumber": 42,
+    "stem": "[ATP] A suspension is filtered using the following setup. In the given setup, X that remains on the filter paper is identified as the",
+    "options": {
+      "A": "filtrate.",
+      "B": "residue.",
+      "C": "crystals.",
+      "D": "precipitates."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.2.8",
+    "sloText": "Identify filtrate and residue in gravity filtration setups;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "diagramUrl": "/paper-crops/CHM-IX-2021-P1/q42.png",
+    "diagramBased": true,
+    "explanation": "In laboratory filtration, the insoluble solid material that is retained on the filter paper inside the funnel is designated as the residue, while the clear liquid passing into the beaker is the filtrate.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Filtrate is the liquid that passes through the filter paper."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Solid remaining on the filter paper is called the residue."
+      },
+      {
+        "key": "C",
+        "reason": "Crystals are geometric solids formed upon cooling a saturated solution."
+      },
+      {
+        "key": "D",
+        "reason": "Precipitate refers to newly formed insoluble solid before filtration."
+      }
+    ]
+  },
+  {
+    "questionNumber": 43,
+    "stem": "[ATP] If, in a mixture of sand and alum, we replace alum with sugar, then which of the following is the MOST appropriate sequence of steps to obtain pure sample of sugar? I. Dissolution, II. Filtration, III. Evaporation until dry, IV. Crystallisation",
+    "options": {
+      "A": "I and III",
+      "B": "I and IV",
+      "C": "I, II and III",
+      "D": "I, II and IV"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "1.2.8",
+    "sloText": "Select the correct sequence of laboratory processes to isolate pure soluble compounds;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "To obtain pure sugar: 1. Dissolve the mixture in water (sugar dissolves, sand remains insoluble); 2. Filter to remove insoluble sand; 3. Crystallise the sugar by gentle heating and cooling. Evaporating to complete dryness (III) would char and decompose the organic sugar.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Omits filtration to remove sand, and heating to dryness chars sugar."
+      },
+      {
+        "key": "B",
+        "reason": "Omits filtration, leaving sand in the product."
+      },
+      {
+        "key": "C",
+        "reason": "Evaporating sugar solution to complete dryness chars the sugar into carbon."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Dissolution (I) -> Filtration (II) -> Crystallisation (IV)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 44,
+    "stem": "[ATP] For an experiment, Sarah used a bottle of sodium carbonate solution which had the label \u2018primary standard\u2019. This label indicates that the sodium carbonate solution",
+    "options": {
+      "A": "is hygroscopic in nature.",
+      "B": "requires standardisation before its use.",
+      "C": "is prepared from a secondary standard reagent.",
+      "D": "has a strength which remains constant with time."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.4.6",
+    "sloText": "Define characteristics of primary standard solutions in volumetric analysis;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "A primary standard solution is prepared by dissolving an accurately weighed, highly pure, stable chemical substance into a known volume; its concentration (strength) is known precisely and remains constant over extended periods without degrading.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Primary standards must be non-hygroscopic to prevent moisture absorption."
+      },
+      {
+        "key": "B",
+        "reason": "Secondary standards require standardisation; primary standards do not."
+      },
+      {
+        "key": "C",
+        "reason": "Primary standards are prepared directly from pure primary standard reagents."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Primary standard solutions maintain known, constant concentration over time."
+      }
+    ]
+  },
+  {
+    "questionNumber": 45,
+    "stem": "[ATP] As shown in the figure, evaporating the solution in the china dish until it is dry is an incorrect method because",
+    "options": {
+      "A": "blue crystals of copper sulphate are formed in uneven shapes and sizes.",
+      "B": "blue crystals of copper sulphate decompose into dull white-grey powder.",
+      "C": "solubility of copper sulphate in water increases with the rise in temperature.",
+      "D": "solubility of copper sulphate in water decreases with the decrease in temperature."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "6.6.3",
+    "sloText": "Explain the effect of overheating hydrated copper sulphate solution to dryness;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "diagramUrl": "/paper-crops/CHM-IX-2021-P1/q45.png",
+    "diagramBased": true,
+    "explanation": "Heating copper sulphate solution to complete dryness removes the five water molecules of crystallization (CuSO4\u00b75H2O -> CuSO4 + 5H2O), destroying the crystalline structure and converting the bright blue crystals into an amorphous, dull white-grey anhydrous powder.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Crystals are destroyed completely upon drying, not just uneven."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Overheating dehydrates and decomposes blue vitriol into white-grey anhydrous CuSO4 powder."
+      },
+      {
+        "key": "C",
+        "reason": "This is a true physical fact but does not explain why heating to dryness is flawed."
+      },
+      {
+        "key": "D",
+        "reason": "Does not explain thermal dehydration."
+      }
+    ]
+  },
+  {
+    "questionNumber": 46,
+    "stem": "[ATP] Once the crystals start forming, heating is stopped, and the solution is left undisturbed to be cooled slowly (refer the figure for correct method). This slow crystallisation is essential as it facilitates in yielding",
+    "options": {
+      "A": "deep violet crystals.",
+      "B": "larger, highly pure crystals.",
+      "C": "smaller, needle like crystals.",
+      "D": "florescent greyish blue crystals."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "6.6.3",
+    "sloText": "Explain the role of slow cooling in producing large, pure crystals;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "diagramUrl": "/paper-crops/CHM-IX-2021-P1/q45.png",
+    "diagramBased": true,
+    "explanation": "Slow cooling of a saturated solution allows solute molecules sufficient time to arrange themselves into a well-defined crystal lattice, producing larger, perfectly formed, and chemically purer crystals while excluding impurities.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Copper sulphate crystals remain characteristic bright blue, not violet."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Slow, undisturbed cooling promotes the growth of large, well-ordered, pure crystals."
+      },
+      {
+        "key": "C",
+        "reason": "Rapid cooling or disturbance yields small, imperfect crystals."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect colour description."
+      }
+    ]
+  },
+  {
+    "questionNumber": 47,
+    "stem": "[ATP] Copper sulphate is highly soluble in water at a high temperature, whereas its solubility in water decreases appreciably at low temperatures. This difference in solubility is utilised in the laboratory to get the crystals of copper sulphate from its solution. Based on this information, crystallisation can be inferred as a process of",
+    "options": {
+      "A": "purifying substances.",
+      "B": "increasing solubility.",
+      "C": "decreasing solubility.",
+      "D": "identifying substances."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "6.6.3",
+    "sloText": "Infer purification as the primary objective of salt crystallization;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Crystallisation is fundamentally a separation and purification technique where pure solid crystals precipitate out of solution while soluble impurities remain dissolved in the mother liquor.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Crystallisation is used primarily to purify soluble chemical compounds."
+      },
+      {
+        "key": "B",
+        "reason": "Crystallisation does not change intrinsic solubility."
+      },
+      {
+        "key": "C",
+        "reason": "Crystallisation utilizes solubility differences rather than changing them."
+      },
+      {
+        "key": "D",
+        "reason": "Crystallisation is a separation/purification technique, not identification."
+      }
+    ]
+  },
+  {
+    "questionNumber": 48,
+    "stem": "[ATP] A student is expected to prepare 0.5 M solution of sodium carbonate in a 100 mL flask. The mass of sodium carbonate that he/ she would require to prepare the desired solution is (Note: 23_11 Na, 12_6 C and 16_8 O)",
+    "options": {
+      "A": "0.53 g.",
+      "B": "2.55 g.",
+      "C": "5.3 g.",
+      "D": "50 g."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "6.4.6",
+    "sloText": "Calculate mass of sodium carbonate required for preparation of standard molar solutions;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Molar mass of Na2CO3 = (2 * 23) + 12 + (3 * 16) = 106 g/mol. Volume = 100 mL = 0.100 dm3. Moles = Molarity * Volume = 0.5 mol/dm3 * 0.100 dm3 = 0.05 mol. Mass = 0.05 mol * 106 g/mol = 5.3 g.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.53 g is off by a factor of 10."
+      },
+      {
+        "key": "B",
+        "reason": "Calculation error."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Mass = 0.5 * 106 * 0.1 = 5.3 g."
+      },
+      {
+        "key": "D",
+        "reason": "50 g would produce a near-saturated solution."
+      }
+    ]
+  },
+  {
+    "questionNumber": 49,
+    "stem": "[ATP] The MAIN purpose of the method shown in the given picture (electroplating copper onto an iron key) is to",
+    "options": {
+      "A": "purify the key.",
+      "B": "make the key tensile.",
+      "C": "save the key from corrosion.",
+      "D": "increase the thickness of the key."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.4.8",
+    "sloText": "Identify the primary protective purpose of electroplating metallic articles;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "diagramUrl": "/paper-crops/CHM-IX-2021-P1/q49.png",
+    "diagramBased": true,
+    "explanation": "The primary industrial and practical purpose of electroplating a base metal article (such as an iron key) with copper or nickel is to protect the underlying metal from environmental oxidation and corrosion (rusting).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Electrorefining purifies impure metal anodes; the key is being coated."
+      },
+      {
+        "key": "B",
+        "reason": "Tensile strength is an alloy bulk property, not altered by surface plating."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Plating provides an adherent barrier that prevents corrosion of the underlying iron."
+      },
+      {
+        "key": "D",
+        "reason": "Thickness increase is minor and secondary to corrosion protection."
+      }
+    ]
+  },
+  {
+    "questionNumber": 50,
+    "stem": "[ATP] During the process of electroplating, electrodes made of metals are used because they primarily support the flow of",
+    "options": {
+      "A": "ions.",
+      "B": "volts.",
+      "C": "atoms.",
+      "D": "electrons."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.4.8",
+    "sloText": "Explain electronic conduction in solid metallic electrodes;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "In metallic solid conductors and electrodes, electrical current is carried by the directed drift of free mobile delocalised electrons, whereas in the electrolyte solution it is carried by ions.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Ions carry current in the liquid electrolyte, not within solid metal electrodes."
+      },
+      {
+        "key": "B",
+        "reason": "Volts are units of potential difference, not physical charge carriers."
+      },
+      {
+        "key": "C",
+        "reason": "Metal atoms occupy fixed lattice sites and do not flow."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Metallic electrodes conduct electricity through the migration of free delocalised electrons."
+      }
+    ]
+  }
+]

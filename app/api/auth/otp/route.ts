@@ -8,6 +8,7 @@ import { assertOrigin, rateLimit } from '@/lib/security';
 import { apiError, ApiError } from '@/lib/api';
 import { serializable } from '@/repositories/transaction';
 import { isEmailConfigured, sendTransactionalEmail } from '@/lib/email';
+import { sessionMeta } from '@/lib/session-meta';
 export async function POST(req: NextRequest) {
   try {
     assertOrigin(req);
@@ -22,6 +23,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: true, message: 'Sign-in code sent.' });
     }
     if (!input.otp) throw new ApiError(400, 'CODE_REQUIRED', 'Enter the sign-in code.');
+    const meta = sessionMeta(req);
     const verified = await serializable(async tx => {
       const challenge = await tx.authChallenge.findUnique({ where: { identifier: input.identifier } });
       if (!challenge || challenge.expiresAt < new Date() || challenge.attempts >= 5) return null;
@@ -31,7 +33,7 @@ export async function POST(req: NextRequest) {
       const user = await tx.user.upsert({ where: { email: input.identifier }, create: { email: input.identifier, name: challenge.name, emailVerified: true }, update: { emailVerified: true } });
       if (user.status !== 'ACTIVE') return null;
       const token = generateToken(), expiresAt = new Date(Date.now() + 7 * 86400000);
-      await tx.userSession.create({ data: { userId: user.id, token: sessionTokenHash(token), expiresAt } });
+      await tx.userSession.create({ data: { userId: user.id, token: sessionTokenHash(token), expiresAt, ...meta } });
       return { user, token, expiresAt };
     });
     if (!verified) throw new ApiError(401, 'INVALID_CODE', 'Code is invalid or expired.');

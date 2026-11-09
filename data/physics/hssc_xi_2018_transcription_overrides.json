@@ -1,0 +1,232 @@
+{
+  "PHY-XI-2018-P1": {
+    "2": {
+      "stem": "Which option gives the correct dimensions of velocity, force and momentum, in that order?",
+      "choices": {
+        "A": "$LT^{-1},\\ MLT^{-2},\\ MLT^{-1}$",
+        "B": "$MLT^{-2},\\ LT^{-1},\\ LT^2$",
+        "C": "$LT^{-1},\\ LT^{-1},\\ MLT^{-2}$",
+        "D": "$MLT^{-2},\\ MLT^2,\\ LT$"
+      }
+    },
+    "3": {
+      "stem": "The components of vector $\\vec R$ are $R_x$ and $R_y$. If $R_x>0$ and $R_y<0$, which region of the diagram contains $\\vec R$?",
+      "choices": {
+        "A": "Region A",
+        "B": "Region B",
+        "C": "Region C",
+        "D": "Region D"
+      },
+      "figure": [
+        60,
+        65,
+        308,
+        288
+      ]
+    },
+    "4": {
+      "choices": {
+        "A": "2 N and 8 N",
+        "B": "4 N and 7 N",
+        "C": "5 N and 5 N",
+        "D": "6 N and 8 N"
+      }
+    },
+    "5": {
+      "stem": "What is the cross product $\\hat{\\jmath}\\times\\hat{\\imath}$ of the two perpendicular unit vectors?",
+      "choices": {
+        "A": "$0$",
+        "B": "$1$",
+        "C": "$-\\hat{k}$",
+        "D": "$\\hat{k}$"
+      }
+    },
+    "6": {
+      "stem": "The diagram shows the projectile motion of a ball. At which labelled point is the magnitude of the vertical velocity component greatest?",
+      "choices": {
+        "A": "Point A",
+        "B": "Point B",
+        "C": "Point C",
+        "D": "Point D"
+      },
+      "figure": [
+        57,
+        91,
+        405,
+        308
+      ]
+    },
+    "8": {
+      "choices": {
+        "A": "I only",
+        "B": "II only",
+        "C": "III only",
+        "D": "I and II"
+      },
+      "figure": [
+        55,
+        58,
+        854,
+        218
+      ]
+    },
+    "9": {
+      "choices": {
+        "A": "Earth does zero work on the satellite.",
+        "B": "Earth does positive work on the satellite.",
+        "C": "Earth does negative work on the satellite.",
+        "D": "The concept of work does not apply here."
+      },
+      "figure": [
+        53,
+        71,
+        562,
+        259
+      ]
+    },
+    "10": {
+      "choices": {
+        "A": "$\\frac12mgh$",
+        "B": "$mgh$",
+        "C": "$2mv^2$",
+        "D": "$mv^2$"
+      },
+      "figure": [
+        58,
+        64,
+        579,
+        306
+      ]
+    },
+    "11": {
+      "stem": "An object is in free fall. Which choice correctly pairs the work $W$ done by gravity with the change in gravitational potential energy $U$?",
+      "choices": {
+        "A": "W positive, U decreases",
+        "B": "W negative, U decreases",
+        "C": "W negative, U increases",
+        "D": "W positive, U increases"
+      },
+      "figure": [
+        145,
+        52,
+        294,
+        293
+      ]
+    },
+    "13": {
+      "choices": {
+        "A": "Angular velocity",
+        "B": "Tangential velocity",
+        "C": "Linear displacement",
+        "D": "Radial displacement"
+      },
+      "figure": [
+        100,
+        69,
+        281,
+        259
+      ]
+    },
+    "16": {
+      "choices": {
+        "A": "I only",
+        "B": "II only",
+        "C": "III only",
+        "D": "I and III"
+      },
+      "figure": [
+        56,
+        56,
+        575,
+        191
+      ]
+    },
+    "17": {
+      "choices": {
+        "A": "I only",
+        "B": "II only",
+        "C": "I and III",
+        "D": "II and III"
+      },
+      "figure": [
+        53,
+        52,
+        244,
+        245
+      ]
+    },
+    "20": {
+      "stem": "Which of these is specifically designed to damp oscillations?"
+    }
+  },
+  "PHY-XI-2018-P2": {
+    "1": {
+      "stem": "Work and torque both have dimensions $ML^2T^{-2}$. Explain why their SI units are conventionally written differently."
+    },
+    "2": {
+      "stem": "Show that $2as=v_f^2-v_i^2$ is dimensionally correct."
+    },
+    "5": {
+      "stem": "List any THREE sources of non-conventional energy."
+    },
+    "6": {
+      "figure": [
+        57,
+        76,
+        373,
+        307
+      ]
+    },
+    "7": {
+      "stem": "a. Use the pipe diagram to write an appropriate equation for the fluid flow. (1 Mark)\nb. State THREE conditions used to describe the ideal fluid flow. (3 Marks)",
+      "figure": [
+        61,
+        120,
+        592,
+        315
+      ]
+    },
+    "8": {
+      "stem": "A simple pendulum consists of a point mass suspended by a weightless, inextensible string from a fixed support. State TWO factors on which its period depends.",
+      "figure": [
+        12,
+        116,
+        416,
+        389
+      ]
+    },
+    "11": {
+      "stem": "a. Identify the phenomenon of light shown in the diagram. (1 Mark)\nb. Define it. (1 Mark)\nc. State any TWO conditions required to observe it. (2 Marks)",
+      "figure": [
+        55,
+        82,
+        391,
+        343
+      ]
+    },
+    "13": {
+      "stem": "EITHER\na. Derive the mathematical relationship between force, velocity and power for a moving object.\nOR\nb. A constant net force $F_{\\mathrm{net}}$ acts on an aeroplane of mass $m$. Over a displacement $\\Delta x$, its velocity increases from $v_i$ to $v_f$. Deduce the work–energy equation for this situation.",
+      "figure": [
+        54,
+        243,
+        640,
+        394
+      ]
+    },
+    "15": {
+      "stem": "EITHER\na. The first figure shows a cube of side $L$ containing $N$ gas molecules. The pressure on a wall normal to the x-direction is $P_x=(Nm/V)\\langle v_x^2\\rangle$, where $m$ is the mass of one molecule and $V$ is the volume. Deduce an equation for the pressure of the gas in terms of the mean-square speed. (5 Marks)\nOR\nb. i. Interpret the second figure using the first law of thermodynamics. Give an equation to support your interpretation. (3 Marks)\n   ii. Deduce the first-law equation for an isothermal process. (2 Marks)",
+      "figure": [
+        64,
+        124,
+        420,
+        462
+      ],
+      "secondFigure": [
+        105,
+        828,
+        557,
+        995
+      ]
+    }
+  }
+}

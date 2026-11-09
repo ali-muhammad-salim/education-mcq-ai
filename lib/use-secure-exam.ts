@@ -3,7 +3,13 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { z } from 'zod';
 import { answerPayloadSchema } from '@/lib/validations/assessment';
-import { cacheExam, readExam, removeExam, CachedExam, AnswerPayload } from '@/lib/exam-cache';
+import { cacheExam, readExam, removeExam, CachedExam, AnswerPayload, GUEST_RETENTION_MS } from '@/lib/exam-cache';
+import {
+  createGuestExam,
+  guestExamCacheKey,
+  guestQuestionsFrom,
+  type GuestQuestionSource,
+} from '@/lib/guest-attempts';
 
 const attemptSchema = z.object({
   id: z.string(),
@@ -71,12 +77,16 @@ export function useSecureExam({
   practiceDurationMin,
   practiceUntimed,
   forceNewAttempt,
+  guestQuestions,
+  guestTitle,
 }: {
   isOpen: boolean;
   paperCode: string;
   practiceDurationMin?: number;
   practiceUntimed?: boolean;
   forceNewAttempt?: boolean;
+  guestQuestions?: GuestQuestionSource[];
+  guestTitle?: string;
 }) {
   const router = useRouter();
   const [exam, setExam] = useState<CachedExam | null>(null);
@@ -95,14 +105,22 @@ export function useSecureExam({
   const cacheKey = useRef('');
   const lastSubmitAttempt = useRef(0);
   const key = paperCode;
+  const guestSource = useRef<{ questions?: GuestQuestionSource[]; title?: string }>({
+    questions: guestQuestions,
+    title: guestTitle,
+  });
+  guestSource.current = { questions: guestQuestions, title: guestTitle };
 
   const persist = useCallback(
     (value: CachedExam) => {
-      current.current = value;
-      setExam(value);
+      const next = value.guest
+        ? { ...value, expiresAt: new Date(Date.now() + GUEST_RETENTION_MS).toISOString() }
+        : value;
+      current.current = next;
+      setExam(next);
       writes.current = writes.current
         .catch(() => undefined)
-        .then(() => cacheExam(cacheKey.current || 'exam:' + value.studentId + ':' + key, value));
+        .then(() => cacheExam(cacheKey.current || 'exam:' + next.studentId + ':' + key, next));
       void writes.current.catch(() =>
         setError('Local storage is unavailable. Keep this page open until answers are saved online.')
       );
@@ -124,6 +142,18 @@ export function useSecureExam({
     const work = async () => {
       const active = current.current;
       if (!active) return;
+      if (active.guest) {
+        // Guest answers never leave this device until the learner signs in.
+        if (Object.values(active.answers).some(answer => answer.dirty)) {
+          persist({
+            ...active,
+            answers: Object.fromEntries(
+              Object.entries(active.answers).map(([id, answer]) => [id, { ...answer, dirty: false }])
+            ),
+          });
+        }
+        return;
+      }
       setSaving(true);
       try {
         for (const question of active.questions) {
@@ -169,12 +199,33 @@ export function useSecureExam({
     setError('');
     setSubmitted(null);
     finishing.current = false;
+    const startGuestExam = async () => {
+      const source = guestSource.current.questions;
+      if (!source || source.length === 0) return false;
+      const guestKey = guestExamCacheKey(paperCode);
+      cacheKey.current = guestKey;
+      if (forceNewAttempt) await removeExam(guestKey).catch(() => undefined);
+      const previous = forceNewAttempt ? undefined : await readExam(guestKey).catch(() => undefined);
+      const local = createGuestExam({
+        paperCode,
+        paperTitle: guestSource.current.title || paperCode,
+        questions: guestQuestionsFrom(paperCode, source),
+        practiceDurationMin,
+        practiceUntimed,
+        previous,
+      });
+      if (cancelled) return true;
+      setTabSwitchCount(0);
+      persist(local);
+      return true;
+    };
     void (async () => {
       let owner = sessionStorage.getItem('exam-user') || '';
       try {
         const response = await fetch('/api/auth/me', { signal: AbortSignal.timeout(10000) });
         const identity = await response.json();
         if (!identity.user) {
+          if (await startGuestExam()) return;
           setAuth(true);
           setError('Please sign in to resume this assessment.');
           return;
@@ -182,6 +233,7 @@ export function useSecureExam({
         owner = identity.user.id;
         sessionStorage.setItem('exam-user', owner);
       } catch {
+        if (await startGuestExam()) return;
         if (!owner) {
           setError('Reconnect and sign in to recover your assessment.');
           return;
@@ -241,7 +293,7 @@ export function useSecureExam({
     return () => {
       cancelled = true;
     };
-  }, [isOpen, paperCode, key, reload, persist, router, practiceDurationMin, practiceUntimed, forceNewAttempt]);
+  }, [isOpen, paperCode, key, reload, persist, router, practiceDurationMin, practiceUntimed, forceNewAttempt, guestQuestions?.length, guestTitle]);
 
   const submit = useCallback(
     async (expired = false) => {
@@ -249,6 +301,12 @@ export function useSecureExam({
       lastSubmitAttempt.current = Date.now();
       finishing.current = true;
       const active = current.current;
+      if (active.guest) {
+        persist({ ...active, submitted: true, submittedAt: new Date().toISOString() });
+        setSubmitted({ quizId: active.quizId, attemptId: active.id });
+        if (typeof window !== 'undefined') window.dispatchEvent(new Event('rise:guest-attempt-finished'));
+        return;
+      }
       try {
         if (!expired && navigator.onLine) {
           for (let pass = 0; pass < 10 && Object.values(current.current.answers).some(a => a.dirty); pass++)
@@ -376,6 +434,7 @@ export function useSecureExam({
     auth,
     pending,
     submitted,
+    guest: Boolean(exam?.guest),
     answer,
     updateMeta,
     submit,

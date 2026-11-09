@@ -1,0 +1,1627 @@
+[
+  {
+    "unitNumber": 15,
+    "name": "Quadratic Equations",
+    "page": 26,
+    "examSpec": {
+      "mcqs": 7,
+      "crqs": 1,
+      "crqMarks": 3,
+      "totalMarks": 10
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "15.1",
+        "subNumber": "15.1",
+        "name": "15.1 Quadratic Equations (in one variable)",
+        "slos": [
+          {
+            "code": "15.1.1",
+            "description": "distinguish between quadratic equations and other equations;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "15.1.2",
+            "description": "convert a given quadratic equation in standard form;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "15.2",
+        "subNumber": "15.2",
+        "name": "15.2 Solution of Quadratic Equations",
+        "slos": [
+          {
+            "code": "15.2.1",
+            "description": "solve a quadratic equation in one variable by:\na. factorisation method,\nb. completing square method,\nc. using quadratic formula;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "15.2.2",
+            "description": "solve problems involving 'changing the subject' of given equations or formulae;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "15.3",
+        "subNumber": "15.3",
+        "name": "15.3 Solution of Equation Reducible to Quadratic Equation in one Variable",
+        "slos": [
+          {
+            "code": "15.3.1",
+            "description": "solve equations reducible to quadratic equation in one variable of the following forms:\na. px^(2n) + qx^n + r = 0, p ≠ 0,\nb. (x + p)(x + q)(x + r)(x + s) = k, where p + q = r + s,\nc. radical equations (e.g., l(ax^2 + bx) + m√(ax^2 + bx + c) = 0);",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "15.3.2",
+            "description": "solve equations reducible to quadratic equation in one variable of the following forms:\na. exponential equations (e.g., p^(2x) - q·p^(x+2) + k = 0),\nb. reciprocal equations (e.g., px^4 + qx^3 + rx^2 + sx + t = 0, 1/(x + p) + (x + p) = r),\nc. radical equations (e.g., √(x + p) + √(x + q) = √(x + r));\n(check extraneous roots if any by substitution)\n(where p, q, r and s are real numbers);",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 26,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "15.4",
+        "subNumber": "15.4",
+        "name": "15.4 Nature of the Roots of a Quadratic Equation",
+        "slos": [
+          {
+            "code": "15.4.1",
+            "description": "define discriminant (b^2 - 4ac) of the quadratic equation ax^2 + bx + c = 0; a ≠ 0;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "15.4.2",
+            "description": "determine the nature of roots of a given quadratic equation by using discriminant;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "15.5",
+        "subNumber": "15.5",
+        "name": "15.5 Simultaneous Equations",
+        "slos": [
+          {
+            "code": "15.5.1",
+            "description": "solve system of two simultaneous equations in two variables when:\na. one equation is linear and the other is quadratic (i.e., a_1 x + b_1 y = c_1, a_2 x^2 + b_2 y^2 = c_2),\nb. both the equations are quadratic (i.e., a_1 x^2 + b_1 y^2 = c_1, a_2 x^2 + b_2 y^2 = c_2);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "15.6",
+        "subNumber": "15.6",
+        "name": "15.6 Applications of Quadratic Equations",
+        "slos": [
+          {
+            "code": "15.6.1",
+            "description": "solve word problems related to quadratic equations.",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 27,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 16,
+    "name": "Plotting and Interpreting the Graphs",
+    "page": 28,
+    "examSpec": {
+      "mcqs": 2,
+      "crqs": 1,
+      "crqMarks": 4,
+      "totalMarks": 6
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "16.1",
+        "subNumber": "16.1",
+        "name": "16.1 Plotting and Interpreting the Graphs",
+        "slos": [
+          {
+            "code": "16.1.1",
+            "description": "describe graphs of the Linear and Nonlinear functions such as Quadratic, Cubic, Reciprocal, and Exponential;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "16.1.2",
+            "description": "interpret graphs of the Linear and Nonlinear functions such as Quadratic, Cubic, Reciprocal, and Exponential;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "16.1.3",
+            "description": "solve a system of equations (one linear and one quadratic equation) graphically;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "16.1.4",
+            "description": "interpret exponential growth/ decay of a practical phenomenon through its graph;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "16.2",
+        "subNumber": "16.2",
+        "name": "16.2 Graphs Sketching",
+        "slos": [
+          {
+            "code": "16.2.1",
+            "description": "sketch graphs of the Linear functions and Nonlinear functions such as Quadratic, Cubic, Reciprocal, and Exponential;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "16.2.2",
+            "description": "sketch graph of the function where n is a positive integer, negative integer, rational number for y = x^n;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "16.3",
+        "subNumber": "16.3",
+        "name": "16.3 Application of Graphs",
+        "slos": [
+          {
+            "code": "16.3.1",
+            "description": "apply concepts of sketching and interpreting graph to solve real life problems (such as in tax payment, income and salary problems and cost and profit analysis).",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 17,
+    "name": "Complex Numbers",
+    "page": 29,
+    "examSpec": {
+      "mcqs": 7,
+      "crqs": 1,
+      "crqMarks": 3,
+      "totalMarks": 10
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "17.1",
+        "subNumber": "17.1",
+        "name": "17.1 Introduction to Complex Numbers",
+        "slos": [
+          {
+            "code": "17.1.1",
+            "description": "describe complex number z represented by an expression of the form z = a + ib, where a and b are real numbers and i = √(-1);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "17.1.2",
+            "description": "identify a as real part and b as imaginary part of z = a + ib;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "17.1.3",
+            "description": "state z̄ = a - ib, the complex conjugate of z = a + ib;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "17.1.4",
+            "description": "describe the condition for equality of complex numbers;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "17.1.5",
+            "description": "apply the condition for equality of complex numbers;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "17.1.6",
+            "description": "solve problems based on the conjugate of a complex number; where i^n, n = 2;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "17.1.7",
+            "description": "calculate |z| = √(a^2 + b^2), the absolute value or modulus of a complex number z = a + ib;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "17.2",
+        "subNumber": "17.2",
+        "name": "17.2 Basic Operations on Complex Numbers",
+        "slos": [
+          {
+            "code": "17.2.1",
+            "description": "apply basic operations (i.e. addition, subtraction, multiplication, and division) on complex numbers;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "17.3",
+        "subNumber": "17.3",
+        "name": "17.3 Properties of Complex Numbers",
+        "slos": [
+          {
+            "code": "17.3.1",
+            "description": "describe the properties of complex numbers (commutative, associative and distributive with respect to addition and multiplication);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "17.3.2",
+            "description": "describe the following properties of complex numbers:\na. |z| = |-z| = |z̄| = |-z̄|,\nb. z̿ = z, z z̄ = |z|^2, conjugate(z_1 ± z_2) = z̄_1 ± z̄_2,\nc. conjugate(z_1 z_2) = z̄_1 z̄_2, conjugate(z_1 / z_2) = z̄_1 / z̄_2, z_2 ≠ 0;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "17.3.3",
+            "description": "determine the additive inverse and multiplicative inverse of a complex number;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "17.3.4",
+            "description": "solve problems based on the properties of complex numbers mentioned in SLO 17.3.2;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "17.3.5",
+            "description": "determine the real and imaginary parts of the following types of complex numbers:\na. (x + iy)^n,\nb. ((x_1 + iy_1) / (x_2 + iy_2))^n; x_2 + iy_2 ≠ 0,\nwhere n = ±1 and n = ±2;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "17.4",
+        "subNumber": "17.4",
+        "name": "17.4 Application of Complex Numbers",
+        "slos": [
+          {
+            "code": "17.4.1",
+            "description": "apply mathematical models and equations to predict outcomes, evaluate hypotheses, and analyse complex systems in various scientific contexts.",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 18,
+    "name": "Matrices and Determinants",
+    "page": 31,
+    "examSpec": {
+      "mcqs": 7,
+      "crqs": 1,
+      "crqMarks": 4,
+      "crqChoice": "Choose any ONE from TWO",
+      "totalMarks": 11
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "18.1",
+        "subNumber": "18.1",
+        "name": "18.1 Introduction to Matrices",
+        "slos": [
+          {
+            "code": "18.1.1",
+            "description": "define matrix;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "18.1.2",
+            "description": "describe:\na. order of a matrix,\nb. equality of matrices;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "18.2",
+        "subNumber": "18.2",
+        "name": "18.2 Types of Matrices (up to order 3)",
+        "slos": [
+          {
+            "code": "18.2.1",
+            "description": "describe row matrix, column matrix, rectangular matrix, square matrix, zero/ null matrix, diagonal matrix, scalar matrix, unit matrix and symmetric matrix;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "18.2.2",
+            "description": "explain the transpose of a matrix;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "18.3",
+        "subNumber": "18.3",
+        "name": "18.3 Addition and Subtraction of Matrices (up to order 3)",
+        "slos": [
+          {
+            "code": "18.3.1",
+            "description": "explain that the given matrices are conformable for addition/ subtraction;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "18.3.2",
+            "description": "determine the sum and difference of two matrices;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "18.3.3",
+            "description": "explain commutative and associative laws under addition;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "18.3.4",
+            "description": "define the additive identity of a matrix;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "18.3.5",
+            "description": "determine the additive identity of a matrix;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "18.3.6",
+            "description": "define the additive inverse of a matrix;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "18.3.7",
+            "description": "determine the additive inverse of a matrix;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "18.4",
+        "subNumber": "18.4",
+        "name": "18.4 Multiplication of Matrices (up to order 2)",
+        "slos": [
+          {
+            "code": "18.4.1",
+            "description": "determine the multiplication of a matrix by a real number;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "18.4.2",
+            "description": "explain that the given matrices are conformable for multiplication;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "18.4.3",
+            "description": "determine the multiplication of two (or three) matrices;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "18.4.4",
+            "description": "describe associative law under multiplication;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "18.4.5",
+            "description": "describe distributive laws of multiplication over addition and subtraction;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "18.4.6",
+            "description": "explain that the commutative law under multiplication does not hold in general (i.e. AB ≠ BA);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "18.4.7",
+            "description": "verify the result (AB)^t = B^t A^t with the help of examples;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "18.5",
+        "subNumber": "18.5",
+        "name": "18.5 Multiplicative Inverse of a Matrix (up to order 2)",
+        "slos": [
+          {
+            "code": "18.5.1",
+            "description": "describe the determinant of a square matrix;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "18.5.2",
+            "description": "calculate the determinant of a matrix;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "18.5.3",
+            "description": "define singular and non-singular matrix;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "18.5.4",
+            "description": "solve problems related to singular and non-singular matrix;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "18.5.5",
+            "description": "determine the adjoint of a matrix and related problems;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "18.5.6",
+            "description": "define the multiplicative identity of a matrix;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "18.5.7",
+            "description": "determine the multiplicative inverse of a non-singular matrix A;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "18.5.8",
+            "description": "verify that A A^(-1) = I = A^(-1) A, where I is the multiplicative identity matrix;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "18.5.9",
+            "description": "verify the result (AB)^(-1) = B^(-1) A^(-1) with the help of examples;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "18.6",
+        "subNumber": "18.6",
+        "name": "18.6 Solution of Matrix Equations and Simultaneous Linear Equations",
+        "slos": [
+          {
+            "code": "18.6.1",
+            "description": "solve matrix equations (e.g. Find A, if A + [[2, 1], [0, 3]] [[1], [0]] = 5 [[3], [2]]);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "18.6.2",
+            "description": "solve a system of two simultaneous linear equations in two unknowns using:\na. matrix inverse method,\nb. Cramer's rule;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "18.7",
+        "subNumber": "18.7",
+        "name": "18.7 Application of Matrices",
+        "slos": [
+          {
+            "code": "18.7.1",
+            "description": "convert a real life word problem in the form of a matrix equation;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "18.7.2",
+            "description": "analyse the key role played by mathematics in the development of new scientific theories and technologies.",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 19,
+    "name": "Application of Trigonometry",
+    "page": 33,
+    "examSpec": {
+      "mcqs": 7,
+      "crqs": 1,
+      "crqMarks": 3,
+      "crqChoice": "Choose any ONE from TWO",
+      "totalMarks": 10
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "19.1",
+        "subNumber": "19.1",
+        "name": "19.1 Laws of Sine and Cosine",
+        "slos": [
+          {
+            "code": "19.1.1",
+            "description": "define law of Sine and Cosine;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "19.2",
+        "subNumber": "19.2",
+        "name": "19.2 Area of Triangles",
+        "slos": [
+          {
+            "code": "19.2.1",
+            "description": "explain the formulae for the area of a triangle when length of:\na. two sides and their included angle are given,\nb. one side and two angles are given,\nc. three sides are given (Heron's form);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "19.2.2",
+            "description": "apply the above formulae to determine the area of a triangle;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "19.2.3",
+            "description": "solve trigonometric problems in two dimensions;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "19.3",
+        "subNumber": "19.3",
+        "name": "19.3 Bearing",
+        "slos": [
+          {
+            "code": "19.3.1",
+            "description": "describe bearing;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "19.3.2",
+            "description": "solve problems involving bearing;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "19.4",
+        "subNumber": "19.4",
+        "name": "19.4 Application of Trigonometry",
+        "slos": [
+          {
+            "code": "19.4.1",
+            "description": "apply concepts of trigonometry to real life world problems.",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 20,
+    "name": "Circles",
+    "page": 34,
+    "examSpec": {
+      "mcqs": 3,
+      "crqs": 1,
+      "crqMarks": 3,
+      "totalMarks": 6
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "20.1",
+        "subNumber": "20.1",
+        "name": "20.1 Chords of a Circle",
+        "slos": [
+          {
+            "code": "20.1.1",
+            "description": "apply the following theorems to solve related problems:\na. one and only one circle can pass through three non-collinear points,\nb. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre is perpendicular to the chord and vice versa,\nc. if two chords of a circle are congruent then they will be equidistant from the centre and vice versa;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "20.2",
+        "subNumber": "20.2",
+        "name": "20.2 Tangent to a Circle",
+        "slos": [
+          {
+            "code": "20.2.1",
+            "description": "apply the following theorems to solve related problems:\na. if a line is drawn perpendicular to a radial segment of a circle at its outer end point, it is tangent to the circle at that point and vice versa,\nb. the two tangents drawn to a circle from a point outside it is equal in length,\nc. if two circles touch externally or internally the distance between their centres is respectively equal to the sum or difference of their radii;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "20.3",
+        "subNumber": "20.3",
+        "name": "20.3 Chords and Arcs",
+        "slos": [
+          {
+            "code": "20.3.1",
+            "description": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "20.4",
+        "subNumber": "20.4",
+        "name": "20.4 Angle in a Segment of a Circle",
+        "slos": [
+          {
+            "code": "20.4.1",
+            "description": "apply the following theorems to solve related problems:\na. the measure of a central angle of a minor arc of a circle, is double that of the angle subtended by the corresponding major arc,\nb. any two angles in the same segment of a circle are equal,\nc. the inscribed angle in a semi-circle is a right angle,\nd. the angle in a segment greater than a semi-circle is less than a right angle,\ne. the angle in a segment less than a semi-circle is greater than right angle,\nf. the opposite angles of any quadrilateral inscribed in a circle are supplementary.",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 21,
+    "name": "Practical Geometry",
+    "page": 36,
+    "examSpec": {
+      "mcqs": 1,
+      "crqs": 1,
+      "crqMarks": 3,
+      "totalMarks": 4
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "21.1",
+        "subNumber": "21.1",
+        "name": "21.1 Construction of triangle",
+        "slos": [
+          {
+            "code": "21.1.1",
+            "description": "construct a triangle when:\na. two sides and one of the angles is given,\nb. one side and two of the angles are given;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "21.1.2",
+            "description": "construct the following using compass for a given triangle:\na. angle bisectors,\nb. perpendicular bisectors,\nc. medians,\nd. altitudes;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "21.1.3",
+            "description": "verify, for a given triangle, the concurrency of:\na. angle bisectors,\nb. altitudes,\nc. perpendicular bisectors,\nd. medians;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "21.2",
+        "subNumber": "21.2",
+        "name": "21.2 Construction of Circle",
+        "slos": [
+          {
+            "code": "21.2.1",
+            "description": "find the centre of a given circle;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "21.2.2",
+            "description": "draw a circle passing through three given non-collinear points;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "21.2.3",
+            "description": "complete the circle when a part of its circumference is given:\na. by finding its centre,\nb. without finding its centre;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "21.3",
+        "subNumber": "21.3",
+        "name": "21.3 Tangents to the Circle",
+        "slos": [
+          {
+            "code": "21.3.1",
+            "description": "draw a tangent to a given arc, without using the centre, through a given point P when P is:\na. the middle point of the arc,\nb. at the end of the arc,\nc. outside the arc;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "21.3.2",
+            "description": "draw a tangent to a given circle from a point P when P lies:\na. on the circumference of the circle,\nb. outside the circle;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "21.3.3",
+            "description": "draw two tangents to a circle meeting each other at a given angle.",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 22,
+    "name": "Basic Statistics",
+    "page": 37,
+    "examSpec": {
+      "mcqs": 6,
+      "crqs": 1,
+      "crqMarks": 4,
+      "crqChoice": "Choose Any ONE from TWO",
+      "totalMarks": 10
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "22.1",
+        "subNumber": "22.1",
+        "name": "22.1 Frequency Distribution and Graphs",
+        "slos": [
+          {
+            "code": "22.1.1",
+            "description": "construct a grouped frequency table (using direct and tally marks method);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.1.2",
+            "description": "draw histograms with equal and unequal class intervals;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.1.3",
+            "description": "draw a frequency curve and a frequency polygon;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.1.4",
+            "description": "interpret the histogram frequency curve and frequency polygon;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "22.2",
+        "subNumber": "22.2",
+        "name": "22.2 Cumulative Frequency Distribution",
+        "slos": [
+          {
+            "code": "22.2.1",
+            "description": "construct a cumulative frequency table;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.2.2",
+            "description": "draw a cumulative frequency curve and cumulative frequency polygon;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.2.3",
+            "description": "draw box and whisker plot;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.2.4",
+            "description": "interpret the cumulative frequency curve, cumulative frequency polygon, box and whisker plot;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "22.3",
+        "subNumber": "22.3",
+        "name": "22.3 Measures of Central Tendency",
+        "slos": [
+          {
+            "code": "22.3.1",
+            "description": "calculate the arithmetic mean by direct method (only), weighted mean, median and mode for ungrouped data;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.3.2",
+            "description": "calculate the arithmetic mean by direct method (only), median and mode for grouped data;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.3.3",
+            "description": "solve real life situations involving mean, weighted mean, median, and mode for given data;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.3.4",
+            "description": "find the approximate value of median and mode graphically;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.3.5",
+            "description": "define quantiles (quartiles, deciles and percentiles);",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "22.3.6",
+            "description": "calculate quartiles, deciles and percentiles for ungrouped and grouped data;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.3.7",
+            "description": "interpret the median, quartiles, deciles, percentiles, and inter quartile range from cumulative frequency curve;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "22.4",
+        "subNumber": "22.4",
+        "name": "22.4 Measures of Dispersion",
+        "slos": [
+          {
+            "code": "22.4.1",
+            "description": "calculate the range, variance and standard deviation for grouped and ungrouped data;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.4.2",
+            "description": "calculate the coefficient of variation for grouped and ungrouped data;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "22.4.3",
+            "description": "solve problems related to variance, standard deviation and coefficient of variation;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "22.5",
+        "subNumber": "22.5",
+        "name": "22.5 Correlation",
+        "slos": [
+          {
+            "code": "22.5.1",
+            "description": "draw scatter diagrams and a line of best fit;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "22.5.2",
+            "description": "interpret the correlation between the variables from scatter diagram.",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 23,
+    "name": "Probability",
+    "page": 39,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 1,
+      "crqMarks": 3,
+      "totalMarks": 8
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "23.1",
+        "subNumber": "23.1",
+        "name": "23.1 Probability",
+        "slos": [
+          {
+            "code": "23.1.1",
+            "description": "define the following terms:\na. statistical experiment,\nb. sample space and event,\nc. mutually exclusive and mutually inclusive events,\nd. equally likely events,\ne. dependent and independent events,\nf. simple and compound events;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "23.1.2",
+            "description": "apply the given formula to find the probability of an event E, i.e., P(E) = n(E) / n(S), 0 ≤ P(E) ≤ 1;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "23.1.3",
+            "description": "solve word problems involving probability;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "23.2",
+        "subNumber": "23.2",
+        "name": "23.2 Probability of Combined Event",
+        "slos": [
+          {
+            "code": "23.2.1",
+            "description": "describe combine events, tree diagram and venn diagrams;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "23.2.2",
+            "description": "calculate the probability of combined events using tree diagrams and Venn diagrams;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "23.2.3",
+            "description": "explain the given laws of probability:\na. law of compliment,\nb. law of addition,\nc. law of multiplication;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "23.2.4",
+            "description": "solve problems related to laws of probability mentioned in SLO 23.2.3;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "23.3",
+        "subNumber": "23.3",
+        "name": "23.3 Relative and expected frequencies",
+        "slos": [
+          {
+            "code": "23.3.1",
+            "description": "define relative frequency and expected frequency;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "23.3.2",
+            "description": "calculate relative frequency and expected frequency as an estimate of probability;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "23.3.3",
+            "description": "solve real life problems involving relative and expected frequencies.",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "mcqMappings": "1.3.2 1.4.1 1.1.3 1.2.3 - 2.4.3 2.3.3 2.4.2 2.2.1 3.2.5 3.2.2 3.1.2 4.1.1 4.1.1 - 3.3.1 3.3.1 3.4.1 3.5.1 3.3.1 11.3.1 4.3.4 - 11.3.3 4.3.2 6.3.1 6.3.3 6.5.2 6.5.2 6.4.2 7.4.2 7.5.3 7.2.2 7.8.2 8.5.2 8.3.2 - 8.4.2 8.2.1 8.1.4 9.2.5 9.6.7 9.3.1 9.2.2 10.5.2 - 10.6.1 10.4.2 - 10.9.4",
+  "held": {},
+  "mcqNotes": {
+    "30": "The pressure comparison assumes steady ideal flow at the same height.",
+    "43": "The keyed wavelength measurement is the standard use of the instrument. Other optical quantities can be inferred with additional information.",
+    "11": "The board gives C. The bullet passes through the sandbag and therefore continues moving. The resisting force reduces the bullet’s forward momentum, so the reviewed answer is B.",
+    "21": "Using the given constants and altitude, the circular orbital speed is approximately 7.50 × 10³ m/s. Option D is the closest listed value.",
+    "10": "In an elastic collision where a lighter ball collides with a much heavier ball at rest ($m_1 \\ll m_2$), $v_2' = \\frac{2m_1}{m_1+m_2}v_1 \\approx 0$. The heavier ball remains practically at rest.",
+    "12": "The slope of a velocity-time graph gives acceleration. An increasing positive slope represents positive acceleration.",
+    "42": "Polaroid sunglasses use polarising filters to cut reflected glare and can incorporate UV-blocking coatings, but locating atoms on a heated filament is an unrelated microscopic/spectroscopic application."
+  },
+  "written": {
+    "1": {
+      "mapping": "1.3.1",
+      "solution": "From left to right, III, I, II. The first board is spread around the centre, the second is tightly clustered off centre, and the third is tightly clustered near the centre."
+    },
+    "2": {
+      "mapping": "2.2.2+2.2.3",
+      "solution": "$A=\\sqrt{A_x^2+A_y^2}$. For $\\vec R=\\vec A+\\vec B$, use $\\tan\\theta=(A_y+B_y)/(A_x+B_x)$ and choose the quadrant using the signs of the components."
+    },
+    "3": {
+      "mapping": "4.1.3",
+      "solution": "For equal launch and landing heights, $R=450^2\\sin90^\\circ/10=20250\\,\\mathrm m$. The flight time is $2(450)\\sin45^\\circ/10\\approx63.6\\,\\mathrm s$."
+    },
+    "4": {
+      "mapping": "4.3.2",
+      "solution": "At the top of the circle, gravity points towards the centre. The limiting condition for contact is $v^2/r=g$. At speeds above $\\sqrt{gr}$, gravity and the inward normal force together provide the required centripetal force."
+    },
+    "5": {
+      "mapping": "6.4.1",
+      "solution": "Apply Bernoulli’s equation between upper point 1 and lower point 2: $P_1+\\frac12\\rho v_1^2+\\rho gh_1=P_2+\\frac12\\rho v_2^2+\\rho gh_2$. In the hydrostatic or equal-speed case, the velocity terms cancel, giving $P_2-P_1=\\rho g(h_1-h_2)$. At a depth $h$ below a surface exposed to air, the gauge pressure is $\\rho gh$. The pressure at a free jet discharging into air is atmospheric."
+    },
+    "6": {
+      "mapping": "7.4.3",
+      "solution": "$f=\\frac1{2\\pi}\\sqrt{g/L}=\\frac1{2\\pi}\\sqrt{10/1.00}\\approx0.503\\,\\mathrm{Hz}$."
+    },
+    "7": {
+      "mapping": "-",
+      "solution": "For an ideal gas, $v=\\sqrt{\\gamma P/\\rho}=\\sqrt{\\gamma RT/M}$. With the same composition, the sound speed varies as $\\sqrt T$, with temperature in kelvins."
+    },
+    "8": {
+      "mapping": "9.2.6",
+      "solution": "$\\lambda=yd/L=(0.50\\,\\mathrm{cm})(0.050\\,\\mathrm{cm})/(100\\,\\mathrm{cm})=2.5\\times10^{-4}\\,\\mathrm{cm}$. That is $2.5\\,\\mu\\mathrm m$, in the infrared, using the printed values."
+    },
+    "9a": {
+      "mapping": "3.3.1",
+      "solution": "Consider the boat as the system and measure displacement relative to the bank. Work by a constant force is $W=\\vec F\\cdot\\Delta\\vec r=F\\Delta r\\cos\\theta$. Once the boat stays at rest, $\\Delta\\vec r=0$, so there is no work on its centre of mass. Equivalently, the net translational work is $W_{\\rm net}=\\Delta K=0$. If the paddles continue moving relative to the water, the rower still transfers energy to the water. The rower’s effort therefore does not imply displacement of the boat."
+    },
+    "9b": {
+      "mapping": "11.2.2",
+      "solution": "For the same takeoff speed, $h=v_y^2/(2g)$ is greater on the Moon. For running, Earth’s greater gravity gives a larger normal force and can provide more traction under comparable conditions. Actual running speed also depends on gait, traction, and equipment."
+    },
+    "10a": {
+      "mapping": "10.3.1",
+      "solution": "1. During driving, cyclic deformation of a tyre dissipates energy as heat.\n2. The air inside the tyre warms as heat transfers from the tyre.\n3. A higher absolute temperature means a larger average translational kinetic energy of the air molecules.\n4. Faster molecules transfer more momentum to the tyre wall in collisions.\n5. For approximately fixed tyre volume and amount of air, the ideal-gas law gives $P_{\\mathrm{abs}}/T=\\mathrm{constant}$.\n6. Therefore, raising $T$ raises the pressure above its cold value.\n7. In the exam’s model, a lower initial pressure would give a lower hot pressure at the same final temperature. That comparison describes the gas-law relationship."
+    },
+    "10b": {
+      "mapping": "10.6.3",
+      "solution": "1. The work done by a gas on a moving boundary is $W=\\int P\\,dV$.\n2. Heating at constant pressure is an isobaric process.\n3. An ideal gas at fixed pressure expands when heated, so $\\Delta V>0$.\n4. It therefore does positive work $W=P\\Delta V=nR\\Delta T$.\n5. Heating at constant volume is an isochoric process.\n6. Since $\\Delta V=0$ in that case, the work is zero.\n7. For the same temperature rise, the internal-energy increase is the same. By $Q=\\Delta U+W$, the constant-pressure case requires extra heat to supply the expansion work."
+    }
+  },
+  "corrected": {
+    "11": "B"
+  }
+}

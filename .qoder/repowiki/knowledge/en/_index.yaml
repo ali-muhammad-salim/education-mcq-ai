@@ -1,0 +1,32 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: en
+commit: 4cfe3a20e6751323f16bbc2417263d234c9356dc
+branch: master
+exported_at: "2026-10-30T06:04:43Z"
+modules:
+    root:
+        dir_name: Root Project Manifest & Multi-Service Orchestration
+        title: Root Project Manifest & Multi-Service Orchestration
+        scope:
+            - README.md
+            - VERSION 2.0.MD
+            - AGENTS.md
+            - CLAUDE.md
+            - package.json
+            - tsconfig.json
+            - next.config.ts
+            - docker-compose.yml
+            - Dockerfile
+            - Dockerfile.ai-worker
+            - Dockerfile.worker
+            - Dockerfile.assessment-worker
+            - .gitignore
+            - .dockerignore
+            - requirements.txt
+            - pytest.ini
+            - vitest.config.ts
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []

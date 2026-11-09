@@ -1,0 +1,66 @@
+schema_version: 1
+module_path: root
+title: Root Project Manifest & Multi-Service Orchestration
+scope:
+    - README.md
+    - VERSION 2.0.MD
+    - AGENTS.md
+    - CLAUDE.md
+    - package.json
+    - tsconfig.json
+    - next.config.ts
+    - docker-compose.yml
+    - Dockerfile
+    - Dockerfile.ai-worker
+    - Dockerfile.worker
+    - Dockerfile.assessment-worker
+    - .gitignore
+    - .dockerignore
+    - requirements.txt
+    - pytest.ini
+    - vitest.config.ts
+source_files: []
+depends_on: []
+related_to: []
+kk_module_id: 610ec20e-9dab-4e5b-a2c7-b97f0cb2dc93
+kk_cards:
+    architecture_design:
+        id: 138cc1c5-5e90-431d-bdc0-bbfea1493c85
+        title: Root Project Manifest & Multi-Service Orchestration
+    coding_conventions:
+        id: 7095e124-21f2-402a-80bc-2cde40829c64
+        title: Root Project Manifest & Multi-Service Orchestration
+    overview:
+        id: 26e8e7bf-520f-447b-880a-e7ff759f60c4
+        title: Root Project Manifest & Multi-Service Orchestration
+    tech_stack:
+        id: 87ba15d3-cac9-4cb3-a4e2-f0f6cf7e262b
+        title: Root Project Manifest & Multi-Service Orchestration
+    unique_setup_and_commands:
+        id: 48fb70c1-32b7-4dc2-ad85-07cafb8277d6
+        title: Root Project Manifest & Multi-Service Orchestration
+    build_system:
+        id: 2b547404-e9ef-4b0c-820c-a75447104a8f
+        title: Multi-Service Build & Deployment (Next.js + Prisma + Docker Compose + GitHub Actions)
+    configuration_system:
+        id: 405347bf-dda1-458a-9617-84869087f392
+        title: Environment-Driven Configuration System Across Next.js, Prisma, and Python Services
+    dependency_management:
+        id: efb98159-00af-442f-9dd0-b9a71f85288a
+        title: Multi-Project Dependency Management (npm + pip, no lockfiles committed)
+    error_handling:
+        id: 24a4b1fa-2dfc-4357-a5f9-4e4f6fe876e8
+        title: Error Handling Across Next.js API Routes, FastAPI Services, and Worker Pipelines
+    frontend_style:
+        id: 559cba9f-e52b-435b-ae8e-ab77729043d2
+        title: Rise Learner CSS Design System with Scoped `.rise-ui` Tokens
+    logging_system:
+        id: 6283852d-1f8d-4221-8b3a-58751ca70b3f
+        title: Python stdlib logging + Node console.log (no centralized logger framework)
+kk_repo_cards:
+    - build_system
+    - configuration_system
+    - dependency_management
+    - error_handling
+    - frontend_style
+    - logging_system

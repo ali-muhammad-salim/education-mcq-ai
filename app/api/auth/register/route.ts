@@ -6,6 +6,7 @@ import prisma from '@/lib/prisma';
 import { hashPassword, generateToken } from '@/lib/auth';
 import { assertOrigin, rateLimit } from '@/lib/security';
 import { apiError, ApiError } from '@/lib/api';
+import { sessionMeta } from '@/lib/session-meta';
 export async function POST(req: NextRequest) {
   try {
     assertOrigin(req);
@@ -15,7 +16,7 @@ export async function POST(req: NextRequest) {
     // Educator privileges are granted by an administrator, never self-selected.
     const user = await prisma.user.create({ data: { email: input.email, name: input.name, passwordHash: await hashPassword(input.password), role: 'STUDENT', emailVerified: false } });
     const token = generateToken(), expiresAt = new Date(Date.now() + 7 * 86400000);
-    await prisma.userSession.create({ data: { userId: user.id, token: sessionTokenHash(token), expiresAt } });
+    await prisma.userSession.create({ data: { userId: user.id, token: sessionTokenHash(token), expiresAt, ...sessionMeta(req) } });
     const response = NextResponse.json({ success: true, user: { id: user.id, email: user.email, name: user.name, role: user.role } });
     response.cookies.set('mcqs_session', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax', path: '/', expires: expiresAt });
     return response;

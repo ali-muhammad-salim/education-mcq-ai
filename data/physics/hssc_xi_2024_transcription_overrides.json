@@ -1,0 +1,183 @@
+{
+  "PHY-XI-2024-P1": {
+    "1": {
+      "choices": {
+        "A": "$MLT^{-2}$ and $LT^{-2}$",
+        "B": "$ML^2T$ and $LT^{-2}$",
+        "C": "$MLT^{-2}$ and $LT^2$",
+        "D": "$MLT^{-2}$ and $LT$"
+      }
+    },
+    "6": {
+      "choices": {
+        "A": "$\\vec A\\cdot\\vec B=\\vec B\\cdot\\vec A$",
+        "B": "$\\vec A\\times\\vec B=\\vec B\\times\\vec A$",
+        "C": "$\\vec A\\cdot\\vec B=-\\vec B\\cdot\\vec A$",
+        "D": "$\\vec A\\times\\vec B=-\\vec B\\times\\vec A$"
+      }
+    },
+    "11": {
+      "stem": "A projectile is fired at $10\\,\\mathrm{m/s}$ at an angle of $30^\\circ$. What maximum height does it attain? Take $g=9.8\\,\\mathrm{m/s^2}$."
+    },
+    "12": {
+      "stem": "What does the slope of the given velocity–time graph represent?",
+      "figure": [
+        510,
+        41,
+        721,
+        199
+      ]
+    },
+    "13": {
+      "stem": "In the given projectile diagram, at which point is the magnitude of the vertical component of velocity greatest?",
+      "choices": {
+        "A": "Point A",
+        "B": "Point B",
+        "C": "Point C",
+        "D": "Point D"
+      },
+      "figure": [
+        49,
+        63,
+        407,
+        278
+      ]
+    },
+    "17": {
+      "stem": "The diagram depicts a boy lifting a box. Which pair gives the type of work done and the associated angle?",
+      "choices": {
+        "A": "Negative, 0°",
+        "B": "Positive, 0°",
+        "C": "Negative, 180°",
+        "D": "Positive, 180°"
+      },
+      "figure": [
+        684,
+        91,
+        852,
+        288
+      ]
+    },
+    "18": {
+      "choices": {
+        "A": "Varies with path",
+        "B": "Greater along the longer path",
+        "C": "The same and equal to its kinetic energy",
+        "D": "The same and equal to its potential energy"
+      },
+      "figure": [
+        47,
+        48,
+        499,
+        218
+      ]
+    },
+    "19": {
+      "choices": {
+        "A": "$\\frac12mgh$",
+        "B": "$mv^2$",
+        "C": "$mgh$",
+        "D": "$2mv^2$"
+      },
+      "figure": [
+        51,
+        76,
+        437,
+        263
+      ]
+    },
+    "21": {
+      "choices": {
+        "A": "$\\frac g4$",
+        "B": "$\\frac g2$",
+        "C": "$g$",
+        "D": "$2g$"
+      }
+    },
+    "33": {
+      "stem": "Which graph shows how kinetic energy varies with displacement in simple harmonic motion?",
+      "choices": {
+        "A": "Graph A",
+        "B": "Graph B",
+        "C": "Graph C",
+        "D": "Graph D"
+      },
+      "right": 580,
+      "figure": [
+        42,
+        72,
+        946,
+        284
+      ]
+    },
+    "34": {
+      "figure": [
+        52,
+        41,
+        278,
+        189
+      ]
+    },
+    "35": {
+      "stem": "For the three standing wave patterns shown, compare the frequencies.",
+      "figure": [
+        53,
+        49,
+        295,
+        227
+      ]
+    },
+    "38": {
+      "figure": [
+        51,
+        60,
+        418,
+        325
+      ],
+      "choices": {
+        "A": "$\\frac f2$",
+        "B": "$f$",
+        "C": "$2f$",
+        "D": "$4f$"
+      }
+    },
+    "41": {
+      "stem": "In Young’s double slit experiment, the slit separation is doubled and the distance from the slits to the screen is halved. If the original fringe spacing is x, what is the new spacing?",
+      "choices": {
+        "A": "$4x$",
+        "B": "$2x$",
+        "C": "$\\frac x2$",
+        "D": "$\\frac x4$"
+      }
+    },
+    "46": {
+      "bottom": 799
+    },
+    "22": {
+      "stem": "A satellite orbits Earth at an altitude of 240 km. What is its orbital speed? Take Earth’s mass as $6.0\\times10^{24}\\,\\mathrm{kg}$, its radius as 6400 km, and $G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2\\,kg^{-2}}$."
+    }
+  },
+  "PHY-XI-2024-P2": {
+    "6": {
+      "figure": [
+        7,
+        106,
+        160,
+        280
+      ],
+      "stem": "Rameen observes a simple pendulum oscillating between P and Q, over the mean position O as shown in the diagram.\nShe claims that in one complete vibration, the distance covered by the bob is $2x$ units.\nDo you agree with Rameen’s claim? Justify your stance with a reason."
+    },
+    "2": {
+      "stem": "Write any TWO physical quantities that exemplify each of the following.\n\n| S. No. | Scalar Product | S. No. | Vector Product |\n| --- | --- | --- | --- |\n| 1 |  | 1 |  |\n| 2 |  | 2 |  |"
+    },
+    "3": {
+      "stem": "During a practice session of long jump, a coach trains an athlete to take off the jump at an angle of 45°.\nDerive a mathematical expression for the maximum range of the athlete."
+    },
+    "4": {
+      "stem": "A solid disc with a moment of inertia of 0.125 kg·m² is rotating about its central axis with an angular velocity of 10 rad/s.\nCalculate the rotational kinetic energy of the disc."
+    },
+    "8": {
+      "stem": "The wavelength of light in air is $4.0\\times10^{-4}\\,\\mathrm m$. It is incident perpendicularly on a double slit and passes through the slits. The slit separation is $2.0\\times10^{-2}\\,\\mathrm m$, and bright and dark fringes are observed on a screen 2 m away from the slits.\nCalculate the distance between the two adjacent bright fringes on the screen."
+    }
+  }
+}

@@ -68,10 +68,10 @@ export const SUBJECT_METADATA: Record<string, SubjectMeta> = {
     slug: 'computer-science',
     code: 'CS',
     icon: '💻',
-    description: 'Computer systems, computational thinking, algorithms, flowcharts, programming fundamentals, and cybersecurity ethics.',
-    chapterCount: 5,
-    sloCount: 90,
-    categories: ['Official Syllabus', 'Model Papers', 'Coding Notes', 'Chapter Quizzes']
+    description: 'AKU-EB 2025 SSC Computer Science curriculum covering Computer Systems, Networks & OSI Model, Algorithms & Flowcharts, HTML/CSS/JavaScript Programming, Data Science, AI & Machine Learning, Cloud Computing, Cybersecurity, Digital Literacy, and Digital Entrepreneurship.',
+    chapterCount: 7,
+    sloCount: 168,
+    categories: ['Official Syllabus', 'Practical Activities', 'Model Papers', 'Coding Notes', 'Chapter Quizzes']
   },
   'english-compulsory': {
     title: 'English Compulsory',

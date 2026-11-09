@@ -5,6 +5,7 @@ import StudyLibrary from "./StudyLibrary";
 import { studyChapters, studyScope } from "@/services/study/navigation";
 import { studyKinds, studyLabels } from "@/services/study/contracts";
 import styles from "./Study.module.css";
+import { hsscPhysicsSyllabus } from "@/lib/hsscPhysicsSyllabus";
 
 const descriptions: Record<string, string> = {
   CHAPTER_NOTES: "Understand the key ideas, one section at a time.",
@@ -25,6 +26,7 @@ export default async function ChapterStudy({
 }) {
   const scope = studyScope(params.board, params.class, params.subject);
   if (!scope) notFound();
+  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const chapters = await studyChapters(scope);
   const chapter = params.topicId
     ? chapters.find((c) => c.id === params.topicId)
@@ -78,7 +80,7 @@ export default async function ChapterStudy({
                   <Link
                     className={styles.chapterLink}
                     href={
-                      scope.baseUrl +
+                      hssc && !selected ? scope.baseUrl + "/syllabus#unit-" + c.topicNumber : scope.baseUrl +
                       "/study/" +
                       encodeURIComponent(c.id) +
                       (selected ? "?kind=" + selected : "")
@@ -90,7 +92,7 @@ export default async function ChapterStudy({
                         {c.name}
                       </strong>
                       <small className={styles.muted}>
-                        {c.kinds.some((k) => k.count) ? "" : "Coming soon"}
+                        {hssc && !selected ? "View learning outcomes" : c.kinds.some((k) => k.count) ? "" : "Coming soon"}
                       </small>
                     </span>
                     <span aria-hidden="true">→</span>

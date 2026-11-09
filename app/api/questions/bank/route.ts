@@ -3,12 +3,40 @@ import prisma from '@/lib/prisma';
 import { requireUser } from '@/lib/security';
 import { z } from 'zod';
 import { apiError } from '@/lib/api';
+import { paperAnswer, paperChoices } from '@/lib/paperPresentation';
+import { questionSchema } from '@/lib/validations/assessment';
 import { smartMatch, smartScore } from '@/lib/smartSearch';
 import ssc1ModelMcqs from '@/data/physics/ssc1_model_mcqs.json';
 import ssc2ModelMcqs from '@/data/physics/ssc2_model_mcqs.json';
 import ssc1Past2025Mcqs from '@/data/physics/ssc1_2025_past_mcqs.json';
 import ssc1Past2024Mcqs from '@/data/physics/ssc1_2024_past_mcqs.json';
 import ssc2Past2025Mcqs from '@/data/physics/ssc2_2025_past_mcqs.json';
+import cs1ModelMcqs from '@/data/computer-science/ssc1_model_mcqs.json';
+import cs1Past2025Mcqs from '@/data/computer-science/ssc1_2025_past_mcqs.json';
+import cs1Past2024Mcqs from '@/data/computer-science/ssc1_2024_past_mcqs.json';
+import cs1Past2023Mcqs from '@/data/computer-science/ssc1_2023_past_mcqs.json';
+import cs1Past2022Mcqs from '@/data/computer-science/ssc1_2022_past_mcqs.json';
+import cs1Past2019Mcqs from '@/data/computer-science/ssc1_2019_past_mcqs.json';
+import cs1Past2017Mcqs from '@/data/computer-science/ssc1_2017_past_mcqs.json';
+import cs2ModelMcqs from '@/data/computer-science/ssc2_model_mcqs.json';
+import cs2Past2025Mcqs from '@/data/computer-science/ssc2_2025_past_mcqs.json';
+import cs2Past2024Mcqs from '@/data/computer-science/ssc2_2024_past_mcqs.json';
+import cs2Past2023Mcqs from '@/data/computer-science/ssc2_2023_past_mcqs.json';
+import cs2Past2022Mcqs from '@/data/computer-science/ssc2_2022_past_mcqs.json';
+import cs2Past2019Mcqs from '@/data/computer-science/ssc2_2019_past_mcqs.json';
+import cs2Past2017Mcqs from '@/data/computer-science/ssc2_2017_past_mcqs.json';
+import chem1ModelMcqs from '@/data/chemistry/ssc1_model_mcqs.json';
+import chem1Past2025Mcqs from '@/data/chemistry/ssc1_2025_past_mcqs.json';
+import chem1Past2024Mcqs from '@/data/chemistry/ssc1_2024_past_mcqs.json';
+import chem1Past2023Mcqs from '@/data/chemistry/ssc1_2023_past_mcqs.json';
+import chem1Past2022Mcqs from '@/data/chemistry/ssc1_2022_past_mcqs.json';
+import chem1Past2021Mcqs from '@/data/chemistry/ssc1_2021_past_mcqs.json';
+import chem1Past2019Mcqs from '@/data/chemistry/ssc1_2019_past_mcqs.json';
+import chem1Past2018Mcqs from '@/data/chemistry/ssc1_2018_past_mcqs.json';
+import chem1Past2017Mcqs from '@/data/chemistry/ssc1_2017_past_mcqs.json';
+import chem2ModelMcqs from '@/data/chemistry/ssc2_model_mcqs.json';
+import chem2Past2025Mcqs from '@/data/chemistry/ssc2_2025_past_mcqs.json';
+import mth1ModelMcqs from '@/data/mathematics/ssc1_model_mcqs.json';
 
 export async function GET(req: NextRequest) {
   try {
@@ -57,7 +85,7 @@ export async function GET(req: NextRequest) {
       });
 
       if (pastQuestions && pastQuestions.length > 0) {
-        let mapped = pastQuestions.map(q => {
+        let mapped = pastQuestions.filter(q => q.questionType !== 'MULTIPLE_CHOICE' || !!paperAnswer((q.sourceRegion as Record<string, unknown>) || {}, paperChoices((q.sourceRegion as Record<string, unknown>)?.choices))).map(q => {
           const cog = q.cognitiveLevels?.[0]?.cognitiveLevel?.level || q.difficulty || 'Understanding';
           const sr = (q.sourceRegion as any) || {};
 
@@ -118,29 +146,70 @@ export async function GET(req: NextRequest) {
     }
 
     // If DB returned 0 questions or failed, load from SSC-I & SSC-II bundles
-    if (page === 1 && formatted.length === 0 && (!subject || subject === 'ALL' || subject.toLowerCase() === 'physics') && (!searchParams.get('boardId') || ['ALL', 'AKU-EB'].includes(searchParams.get('boardId')!))) {
+    if (page === 1 && formatted.length === 0 && (!subject || subject === 'ALL' || ['physics', 'computer science', 'computer-science', 'chemistry', 'mathematics'].includes(subject.toLowerCase())) && (!searchParams.get('boardId') || ['ALL', 'AKU-EB'].includes(searchParams.get('boardId')!))) {
       const isClass10 = ['10', 'X'].includes(classParam);
       const isClass9 = ['9', 'IX'].includes(classParam);
 
       let combinedRaw: { raw: any; cls: number; source: string; year: number }[] = [];
-      if (isClass10) {
+      if (isClass10 && subject.toLowerCase().includes('chemistry')) {
         combinedRaw = [
-          ...(ssc2ModelMcqs as any[]).map(q => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Model Paper I', year: 2025 })),
-          ...(ssc2Past2025Mcqs as any[]).map(q => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Annual 2025 Paper I', year: 2025 })),
+          ...(chem2ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CHM-X-P1', year: 2027 })),
+          ...(chem2Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CHM-X-2025-P1', year: 2025 })),
+        ];
+      } else if (isClass10 && subject.toLowerCase().includes('computer')) {
+        combinedRaw = [
+          ...(cs2ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-P1', year: 2027 })),
+          ...(cs2Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2025-P1', year: 2025 })),
+          ...(cs2Past2024Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2024-P1', year: 2024 })),
+          ...(cs2Past2023Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2023-P1', year: 2023 })),
+          ...(cs2Past2022Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2022-P1', year: 2022 })),
+          ...(cs2Past2019Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2019-P1', year: 2019 })),
+          ...(cs2Past2017Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'CS-X-2017-P1', year: 2017 })),
+        ];
+      } else if (isClass10) {
+        combinedRaw = [
+          ...(ssc2ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Model Paper I', year: 2025 })),
+          ...(ssc2Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Annual 2025 Paper I', year: 2025 })),
+        ];
+      } else if (isClass9 && subject.toLowerCase().includes('chemistry')) {
+        combinedRaw = [
+          ...(chem1ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CHM-IX-P1', year: 2026 })),
+          ...(chem1Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CHM-IX-2025-P1', year: 2025 })),
+          ...(chem1Past2024Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CHM-IX-2024-P1', year: 2024 })),
+          ...(chem1Past2023Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CHM-IX-2023-P1', year: 2023 })),
+          ...(chem1Past2022Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CHM-IX-2022-P1', year: 2022 })),
+          ...(chem1Past2021Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CHM-IX-2021-P1', year: 2021 })),
+          ...(chem1Past2019Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CHM-IX-2019-P1', year: 2019 })),
+          ...(chem1Past2018Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CHM-IX-2018-P1', year: 2018 })),
+          ...(chem1Past2017Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CHM-IX-2017-P1', year: 2017 })),
+        ];
+      } else if (isClass9 && subject.toLowerCase().includes('mathematics')) {
+        combinedRaw = [
+          ...(mth1ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'MTH-IX-P1', year: 2027 })),
+        ];
+      } else if (isClass9 && subject.toLowerCase().includes('computer')) {
+        combinedRaw = [
+          ...(cs1ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-P1', year: 2026 })),
+          ...(cs1Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2025-P1', year: 2025 })),
+          ...(cs1Past2024Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2024-P1', year: 2024 })),
+          ...(cs1Past2023Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2023-P1', year: 2023 })),
+          ...(cs1Past2022Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2022-P1', year: 2022 })),
+          ...(cs1Past2019Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2019-P1', year: 2019 })),
+          ...(cs1Past2017Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2017-P1', year: 2017 })),
         ];
       } else if (isClass9) {
         combinedRaw = [
-          ...(ssc1ModelMcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Model Paper I', year: 2025 })),
-          ...(ssc1Past2025Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2025 Paper I', year: 2025 })),
-          ...(ssc1Past2024Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2024 Paper I', year: 2024 })),
+          ...(ssc1ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Model Paper I', year: 2025 })),
+          ...(ssc1Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2025 Paper I', year: 2025 })),
+          ...(ssc1Past2024Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2024 Paper I', year: 2024 })),
         ];
       } else {
         combinedRaw = [
-          ...(ssc1ModelMcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Model Paper I', year: 2025 })),
-          ...(ssc1Past2025Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2025 Paper I', year: 2025 })),
-          ...(ssc1Past2024Mcqs as any[]).map(q => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2024 Paper I', year: 2024 })),
-          ...(ssc2ModelMcqs as any[]).map(q => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Model Paper I', year: 2025 })),
-          ...(ssc2Past2025Mcqs as any[]).map(q => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Annual 2025 Paper I', year: 2025 })),
+          ...(ssc1ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Model Paper I', year: 2025 })),
+          ...(ssc1Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2025 Paper I', year: 2025 })),
+          ...(ssc1Past2024Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'AKU-EB Class 9 Annual 2024 Paper I', year: 2024 })),
+          ...(ssc2ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Model Paper I', year: 2025 })),
+          ...(ssc2Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 10, source: 'AKU-EB Class 10 Annual 2025 Paper I', year: 2025 })),
         ];
       }
 
@@ -204,6 +273,30 @@ export async function GET(req: NextRequest) {
       page,
       hasMore
     });
+  } catch (err) {
+    return apiError(err);
+  }
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    const user = await requireUser(req, ['TEACHER', 'ADMIN']);
+    const body = await req.json();
+    const parsed = questionSchema.parse(body);
+
+    const record = await prisma.questionBankItem.create({
+      data: {
+        creatorId: user.id,
+        questionType: parsed.questionType,
+        stemText: parsed.stemText,
+        difficulty: parsed.difficulty || 'Medium',
+        marks: parsed.marks,
+        cognitiveLevel: parsed.cognitiveLevel || 'Understanding',
+        content: parsed as any
+      }
+    });
+
+    return NextResponse.json({ question: record }, { status: 201 });
   } catch (err) {
     return apiError(err);
   }

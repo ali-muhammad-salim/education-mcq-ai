@@ -1,0 +1,26 @@
+{
+  "mcqMappings": "1.2.2 1.4.2 1.3.2 1.4.1 2.3.3 2.4.3 2.4.2 2.2.1 2.4.2 2.1.2 2.2.2 - 3.1.2 3.2.5 4.1.2 4.1.3 4.1.1 3.1.2 6.5.2 6.4.3 6.2.1 6.3.2 6.4.2 6.4.3 7.4.3 7.6.1 7.4.2 7.8.2 7.5.3 7.6.1 - 8.4.2 8.1.4 8.3.4 - 8.3.4 8.5.2 - 8.5.5 10.3.4 10.9.3 10.11.1 10.2.1 10.4.3 10.5.2 10.4.3 10.9.3 10.11.2 10.4.3 10.7.1 1.1.2 1.1.2 1.1.2 5.5.1 2.2.2 3.1.2 3.1.2 7.4.3 7.4.3 10.6.1 8.4.3 8.4.3 10.5.1 10.6.1 8.4.3",
+  "held": {},
+  "corrected": {
+    "41": "C",
+    "61": "B"
+  },
+  "mcqNotes": {
+    "56": "1. At 20 Hz, the time between successive dots is $T=\\frac{1}{f}=\\frac{1}{20}\\,\\mathrm{s}=0.05\\,\\mathrm{s}$.\n2. From P to T there are four intervals: P–Q, Q–R, R–S and S–T.\n3. The elapsed time is $4\\times0.05\\,\\mathrm{s}=0.20\\,\\mathrm{s}$. The 20 mm distance is unnecessary because the timer frequency gives the time per interval.\nThe quiz awards credit for the official choice B (0.25 s). Counting the five dots as five intervals gives that value. The calculated result of 0.20 s is missing from the choices.",
+    "27": "The period is amplitude-independent in the small-angle approximation.",
+    "41": "The printed key gives A. The Carnot result depends only on the reservoir temperatures. C gives the general condition, equal temperatures for any working substance.",
+    "48": "The statement refers to a negative change in entropy of the water as it freezes, not negative absolute entropy.",
+    "61": "The printed key gives A. For open length L, f = v/(2L). Half submerged, the air column is closed at one end and has length L/2, giving v/[4(L/2)] = f. The reviewed answer is B.",
+    "4": "Option C ($1.00 \\times 10^2$) correctly represents the numerical value 100 in standard scientific notation.",
+    "6": "Since $\\vec{X} \\times \\vec{Y} = |X||Y|\\sin\\theta\\,\\hat{n}$, with $\\sin(270^\\circ) = -1$, the cross product yields a negative vector opposite to the reference normal.",
+    "13": "The slope of a velocity-time graph represents acceleration ($a = \\frac{dv}{dt}$). An increasing positive slope represents positive acceleration.",
+    "14": "In an elastic collision in one dimension where $m_1 \\ll m_2$ and $v_2 = 0$, $v_2' = \\frac{2m_1}{m_1+m_2}v_1 \\approx 0$. The much heavier target ball practically remains at rest.",
+    "16": "For equal launch speeds, horizontal range $R \\propto \\sin(2\\theta)$. Since $\\sin(130^\\circ) \\approx 0.766$ is smaller than $\\sin(70^\\circ) \\approx 0.940$ and $\\sin(90^\\circ) = 1$, Missile IV launched at $65^\\circ$ covers the shortest distance.",
+    "30": "A child maintaining oscillation on a swing requires periodic pumping/pushing, exemplifying driven or forced oscillation rather than unforced free oscillation.",
+    "39": "Sonar (Sound Navigation and Ranging) utilizes underwater acoustic wave travel time and Doppler frequency shifts for ocean depth and velocity measurements.",
+    "42": "In textbook thermodynamics, entropy is defined as a measure of the molecular disorder or the unavailability of a system's thermal energy for mechanical work.",
+    "50": "Boiling of raw eggs causes irreversible denaturation and cross-linking of proteins, making it an irreversible process.",
+    "60": "A large temperature rise in the electrical calorimeter experiment causes significant non-linear heat loss to the surroundings, distorting the linear $T$–$t$ graph."
+  },
+  "written": {}
+}

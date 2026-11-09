@@ -21,6 +21,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<any>(null);
+  const [percentileData, setPercentileData] = useState<{ percentile: number | null; sampleSize: number } | null>(null);
   const [expandedExplanation, setExpandedExplanation] = useState<Record<string, boolean>>({});
   useEffect(() => {
     if(result?.status !== 'SUBMITTED' || !attemptId) return;
@@ -75,6 +76,18 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
 
     fetchResult();
   }, [quizId, attemptId]);
+
+  useEffect(() => {
+    if (result?.status !== 'GRADED' || result.educatorView || !result.attemptId) return;
+    let active = true;
+    void fetch(`/api/quizzes/${encodeURIComponent(quizId)}/analytics?attemptId=${encodeURIComponent(result.attemptId)}`)
+      .then(response => response.ok ? response.json() : null)
+      .then(data => {
+        if (active && data?.success) setPercentileData({ percentile: data.percentile, sampleSize: data.sampleSize });
+      })
+      .catch(() => {});
+    return () => { active = false; };
+  }, [quizId, result?.attemptId, result?.status, result?.educatorView]);
 
   const toggleExpand = (qId: string) => {
     setExpandedExplanation(prev => ({ ...prev, [qId]: !prev[qId] }));
@@ -343,6 +356,11 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
                   <span>•</span>
                   <span>Status: <strong style={{ color: result.status === 'GRADING_PENDING' ? '#d97706' : '#0b5e4a' }}>{result.status.replace('_', ' ')}</strong></span>
                 </div>
+                {!provisional && !result.educatorView && percentileData && percentileData.percentile !== null && (
+                  <p style={{ margin: '0.4rem 0 0', fontSize: '0.8rem', color: 'var(--text-light, #5a7a6f)' }}>
+                    Score percentile: {percentileData.percentile}th among {percentileData.sampleSize} graded first attempts.
+                  </p>
+                )}
               </div>
             </div>
 

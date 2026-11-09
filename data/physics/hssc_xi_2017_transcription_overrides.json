@@ -1,0 +1,156 @@
+{
+  "PHY-XI-2017-P1": {
+    "3": {
+      "choices": {
+        "A": "$\\sqrt{32}\\,\\mathrm N$",
+        "B": "7 N",
+        "C": "$\\sqrt{61}\\,\\mathrm N$",
+        "D": "$\\sqrt{11}\\,\\mathrm N$"
+      },
+      "figure": [
+        566,
+        53,
+        810,
+        249
+      ]
+    },
+    "10": {
+      "stem": "Which statement about mechanical work is true?",
+      "choices": {
+        "A": "It is a transfer of energy.",
+        "B": "It is a vector quantity.",
+        "C": "Its SI unit is the watt.",
+        "D": "It is given by force multiplied by time."
+      }
+    },
+    "12": {
+      "stem": "The clutch plates of a sports car have angular speed $12.50\\times10^{-5}\\,\\mathrm{rad/s}$ and moment of inertia $80.04\\times10^{15}\\,\\mathrm{kg\\,m^2}$. What is their rotational kinetic energy?"
+    },
+    "13": {
+      "stem": "What is the relationship between the linear speed v and angular speed ω of an object at radius r?",
+      "choices": {
+        "A": "$v=\\theta/t$",
+        "B": "$v=r\\theta$",
+        "C": "$v=\\omega/t$",
+        "D": "$v=r\\omega$"
+      }
+    },
+    "14": {
+      "stem": "A satellite orbits Earth at an altitude of 6614 km. What is its orbital speed? Use Earth’s mass $6.0\\times10^{24}\\,\\mathrm{kg}$, radius 6400 km, and $G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2\\,kg^{-2}}$."
+    },
+    "15": {
+      "stem": "In which section of the pipe does the water flow with the greatest speed and lowest pressure?",
+      "choices": {
+        "A": "Section A",
+        "B": "Section B",
+        "C": "Section C",
+        "D": "Section D"
+      },
+      "figure": [
+        45,
+        62,
+        762,
+        214
+      ]
+    },
+    "16": {
+      "stem": "Which sequence lists the substances in increasing order of viscosity, using the usual classroom comparison?",
+      "choices": {
+        "A": "Water → paint → honey → toothpaste",
+        "B": "Water → honey → toothpaste → paint",
+        "C": "Honey → toothpaste → paint → water",
+        "D": "Toothpaste → paint → water → honey"
+      }
+    },
+    "17": {
+      "stem": "At which position is the elastic potential energy of the mass–spring system zero, taking the unstrained spring as the reference?",
+      "figure": [
+        66,
+        55,
+        358,
+        281
+      ]
+    },
+    "20": {
+      "stem": "The first graph shows the amplitude response of a driven pendulum in air. Which graph shows its response in a vacuum, where air damping is removed?",
+      "choices": {
+        "A": "Graph A",
+        "B": "Graph B",
+        "C": "Graph C",
+        "D": "Graph D"
+      },
+      "diagram": "/paper-crops/PHY-XI-2017-P1/diagram-20.png"
+    },
+    "23": {
+      "stem": "A diffraction grating has slit separation $5\\times10^{-4}\\,\\mathrm m$. Light of wavelength $5\\times10^{-7}\\,\\mathrm m$ is incident normally. What is the angle of the third-order bright fringe?"
+    },
+    "26": {
+      "stem": "Which relationship expresses Boyle’s law for a fixed amount of gas at constant temperature?"
+    },
+    "27": {
+      "stem": "A gas expands against a positive external pressure. What is the sign of the work done by the gas?"
+    }
+  },
+  "PHY-XI-2017-P2": {
+    "1": {
+      "stem": "Write any TWO differences between accuracy and precision.\n\n| S. No. | Accuracy | Precision |\n| --- | --- | --- |\n| 1 |  |  |\n| 2 |  |  |"
+    },
+    "5": {
+      "stem": "Consider head-on elastic collisions of smooth, non-rotating balls in an isolated system. Describe the final velocities and directions in each case.\ni. Ball A moves to the right and strikes an identical, stationary ball B. (2 Marks)\nii. Heavy ball D moves to the left and strikes a lighter stationary ball C. (2 Marks)"
+    },
+    "7": {
+      "stem": "The figures show a spinning skater pulling his arms toward his body.\ni. State the law of conservation of angular momentum and give its mathematical expression. (2 Marks)\nii. Describe TWO changes when the skater pulls his arms in, using this law. (2 Marks)",
+      "figure": [
+        239,
+        98,
+        669,
+        323
+      ]
+    },
+    "8": {
+      "stem": "A spherical ball of mass $m$ and radius $r$ falls through honey. At terminal velocity its net force is zero. Use Stokes’s law to derive an expression for the terminal speed.",
+      "figure": [
+        386,
+        120,
+        502,
+        412
+      ]
+    },
+    "9": {
+      "stem": "i. Write any TWO differences between free and forced oscillations. (2 Marks)\n\n| S. No. | Free oscillation | Forced oscillation |\n| --- | --- | --- |\n| 1 |  |  |\n| 2 |  |  |\n\nii. Give ONE example of forced oscillation. (1 Mark)"
+    },
+    "11": {
+      "stem": "Two fire engines A and B move at the same speed and emit siren sounds of the same frequency, as shown. A is approaching the stationary listener and B is moving away.\ni. Which engine is heard at the lower frequency? (1 Mark)\nii. Write expressions for the apparent frequencies heard from A and B. (2 Marks)",
+      "figure": [
+        51,
+        111,
+        838,
+        314
+      ]
+    },
+    "12": {
+      "stem": "i. Use Huygens’s principle to complete the figure by drawing how light spreads through slits $S$, $S_1$ and $S_2$. (3 Marks)\nii. Name the experiment used to produce and observe the interference of light shown in the figure. (1 Mark)",
+      "figure": [
+        54,
+        124,
+        858,
+        422
+      ]
+    },
+    "14": {
+      "stem": "EITHER\na. i. The printed question asks why it is better to launch a spacecraft into orbit from a location away from the equator. Justify your answer with a mathematical relation.\n   ii. Calculate Earth’s escape speed using $M=6.0\\times10^{24}\\,\\mathrm{kg}$, $R=6.4\\times10^6\\,\\mathrm m$, $g=9.8\\,\\mathrm{m/s^2}$ and $G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2\\,kg^{-2}}$.\nOR\nb. A 1200 kg car starts with speed 27.5 m/s. Its engine applies a uniform force of 3500 N. Find the power at the end of 8 s."
+    },
+    "15": {
+      "stem": "EITHER\na. A moving source emits sound at 800 Hz and approaches a stationary observer at 120 m/s. Find the observed frequency and wavelength. The speed of sound in air is 340 m/s.\nOR\nb. The printed question states that a pod of dolphins produces sound travelling at 2050 m/s in cold water, initially at 100 kHz. It then states that the pod produces sound at 150 kHz and asks for the pod’s speed and the wavelength. The paper also gives 340 m/s as the speed of sound in air."
+    },
+    "16": {
+      "stem": "EITHER\na. The figure shows a gas expanding after heat is supplied. Derive an expression for the work done by the gas in terms of pressure and volume.\nOR\nb. Outline any FIVE environmental crises in terms of entropy.",
+      "figure": [
+        224,
+        147,
+        674,
+        385
+      ]
+    }
+  }
+}

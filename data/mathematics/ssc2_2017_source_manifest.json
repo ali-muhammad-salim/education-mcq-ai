@@ -1,0 +1,56 @@
+{
+  "year": 2017,
+  "grade": 10,
+  "subject": "Mathematics",
+  "examSession": "April/May 2017",
+  "sources": {
+    "p1": {
+      "filename": "mathematics-x-2017-paper-i.pdf",
+      "url": "/materials/ssc/mathematics/ssc-2/mathematics-x-2017-paper-i.pdf",
+      "bytes": 569535,
+      "sha256": "337880912d72824e7b92a07424cc8829ae92f3475b762754836e2dd41bc6bcba",
+      "pages": 12
+    },
+    "p2": {
+      "filename": "mathematics-x-2017-paper-ii.pdf",
+      "url": "/materials/ssc/mathematics/ssc-2/mathematics-x-2017-paper-ii.pdf",
+      "bytes": 505744,
+      "sha256": "fb0319bea4abea51f7c37887f86e9e4627307bec0c7d93dba2c88d708d1ccc46",
+      "pages": 16
+    },
+    "key": {
+      "filename": "mathematics-x-2017-keys.pdf",
+      "url": "/materials/ssc/mathematics/ssc-2/mathematics-x-2017-keys.pdf",
+      "bytes": 54608,
+      "sha256": "e0eb04f0d5fed5556b15f721b5a475bcc47494a478508f7f5c13ef7fb39157fc",
+      "pages": 1
+    },
+    "em": {
+      "filename": "mathematics-x-2017-emarking.pdf",
+      "url": "/materials/ssc/mathematics/ssc-2/mathematics-x-2017-emarking.pdf",
+      "bytes": 1481450,
+      "sha256": "ffb76d7ea8e1a4f42802ee470355f4f20ccf6395f86f11889decda2f9a39c422",
+      "pages": 40
+    }
+  },
+  "papers": {
+    "MTH-X-2017-P1": {
+      "paperCode": "MTH-X-2017-P1",
+      "title": "Mathematics Paper I (MCQs)",
+      "durationMinutes": 40,
+      "totalMarks": 30,
+      "totalQuestions": 30,
+      "questionsFile": "ssc2_2017_past_mcqs.json"
+    },
+    "MTH-X-2017-P2": {
+      "paperCode": "MTH-X-2017-P2",
+      "title": "Mathematics Paper II (CRQs & ERQs)",
+      "durationMinutes": 140,
+      "totalMarks": 45,
+      "totalQuestions": 16,
+      "questionsFile": "ssc2_2017_past_crqs.json"
+    }
+  },
+  "cropsExtracted": 19,
+  "emarkingResponsesExtracted": 57
+}

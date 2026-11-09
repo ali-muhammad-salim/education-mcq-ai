@@ -1,0 +1,1410 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "The investigation of chemical changes in diseases, drug action and nutrition is carried out by a/ an",
+    "options": {
+      "A": "biochemist.",
+      "B": "physical chemist.",
+      "C": "industrial chemist.",
+      "D": "inorganic chemist."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.1.2",
+    "sloText": "Define biochemistry and its scope in medicine, nutrition and molecular biology;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Biochemistry studies the chemical substances and vital chemical processes occurring in living organisms, including disease mechanisms, pharmaceuticals (drug action), and metabolism/nutrition.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Biochemists study biochemical pathways, pathology, pharmaceuticals, and nutrition in living organisms."
+      },
+      {
+        "key": "B",
+        "reason": "Physical chemistry deals with energy, thermodynamics, and physical properties."
+      },
+      {
+        "key": "C",
+        "reason": "Industrial chemistry deals with large-scale manufacturing of commercial chemicals."
+      },
+      {
+        "key": "D",
+        "reason": "Inorganic chemistry focuses on non-carbon and mineral compounds."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "stem": "In Ca3(PO4)2 , the valencies of calcium and phosphate ions respectively are",
+    "options": {
+      "A": "3 and 2",
+      "B": "3 and 4",
+      "C": "2 and 3",
+      "D": "2 and 4"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "1.2.11",
+    "sloText": "Deduce valencies of cations and polyatomic anions from chemical formulas;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "In calcium phosphate, Ca3(PO4)2, cross-over of valencies indicates that calcium has a valency of 2 (Ca2+) and phosphate has a valency of 3 (PO4^3-).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Reverses the subscripts; 3 belongs to calcium subscript because phosphate's valency is 3."
+      },
+      {
+        "key": "B",
+        "reason": "Phosphate does not have a valency of 4."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Calcium forms Ca2+ (valency 2) and phosphate forms PO4^3- (valency 3)."
+      },
+      {
+        "key": "D",
+        "reason": "Phosphate's valency is 3, not 4."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "stem": "The mass of 2.5 moles of H2O is (Note: 16_8 O and 1_1 H)",
+    "options": {
+      "A": "45.0 g.",
+      "B": "42.5 g.",
+      "C": "20.5 g.",
+      "D": "18.0 g."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "1.3.2",
+    "sloText": "Calculate mass from number of moles and molar mass;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Molar mass of H2O = (2 * 1) + 16 = 18 g/mol. Mass = moles * molar mass = 2.5 mol * 18 g/mol = 45.0 g.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. 2.5 mol * 18 g/mol = 45.0 g."
+      },
+      {
+        "key": "B",
+        "reason": "Arithmetic miscalculation."
+      },
+      {
+        "key": "C",
+        "reason": "Corresponds to 2.5 + 18 rather than multiplying."
+      },
+      {
+        "key": "D",
+        "reason": "18.0 g is the mass of 1 mole of water."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "stem": "The number of molecules in 2.1 moles of carbon dioxide is (Note: 16_8 O and 12_6 C)",
+    "options": {
+      "A": "2.87 \u00d7 10^22",
+      "B": "2.87 \u00d7 10^23",
+      "C": "1.26 \u00d7 10^24",
+      "D": "1.26 \u00d7 10^25"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "1.3.3",
+    "sloText": "Calculate number of particles using Avogadro's constant;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Number of molecules = moles * Avogadro's number = 2.1 * 6.022 * 10^23 \u2248 1.26 * 10^24 molecules.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Exponent 10^22 is two orders of magnitude too small."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect exponent; 2.1 moles contains more than 1 mole (6.02 * 10^23)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. 2.1 * 6.02 * 10^23 = 1.26 * 10^24."
+      },
+      {
+        "key": "D",
+        "reason": "Exponent 10^25 is an order of magnitude too high."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "stem": "A phenomenon that ALWAYS occurs in a chemical reaction is that it",
+    "options": {
+      "A": "liberates a gas.",
+      "B": "produces precipitates.",
+      "C": "forms a new substance.",
+      "D": "shows a change in colour."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.5.3",
+    "sloText": "Distinguish chemical changes from physical changes by the formation of new substances;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "The defining characteristic of all chemical reactions is chemical change involving bond rearrangement to produce one or more chemically new substances with different properties.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Gas liberation occurs only in certain reactions (e.g. acid-carbonate)."
+      },
+      {
+        "key": "B",
+        "reason": "Precipitation occurs only in precipitation/insoluble-salt reactions."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Every chemical reaction fundamentally produces new chemical substances."
+      },
+      {
+        "key": "D",
+        "reason": "Many reactions occur with no visible change in colour (e.g. neutralization of clear acid with clear alkali)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "stem": "Nichrome is prepared by combining",
+    "options": {
+      "A": "nickel and copper.",
+      "B": "iron and chromium.",
+      "C": "iron, nickel and copper.",
+      "D": "iron, nickel and chromium."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "6.2.3",
+    "sloText": "Identify the composition of common industrial alloys including nichrome, brass and bronze;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Nichrome is a non-magnetic resistance heating alloy primarily composed of nickel and chromium, often with an iron fraction (Ni-Cr-Fe).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Nickel and copper form cupronickel or Monel."
+      },
+      {
+        "key": "B",
+        "reason": "Lacks the principal constituent, nickel."
+      },
+      {
+        "key": "C",
+        "reason": "Copper is not a principal component of nichrome."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Nichrome is an alloy of nickel, chromium, and iron."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "stem": "Which of the following is a diluted solution? (Note: Molar mass of HNO3 = 63 g/mol, NaOH = 40 g/mol, H2SO4 = 98 g/mol, Ca(OH)2 = 74 g/mol)",
+    "options": {
+      "A": "0.2 M HNO3",
+      "B": "0.2 M NaOH",
+      "C": "0.2 M H2SO4",
+      "D": "0.2 M Ca(OH)2"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "6.3.2",
+    "sloText": "Compare concentration and mass-volume relationships in standard solutions;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "diagramUrl": "/paper-crops/CHM-IX-2023-P1/q7.png",
+    "diagramBased": true,
+    "explanation": "For a given molarity (0.2 M), the solute with the lowest molar mass (NaOH = 40 g/mol) contains the least mass of solute per dm3 (0.2 * 40 = 8 g/dm3), representing the lowest mass concentration (most diluted by mass).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.2 M HNO3 contains 0.2 * 63 = 12.6 g/dm3."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. 0.2 M NaOH contains only 8.0 g of solute per dm3."
+      },
+      {
+        "key": "C",
+        "reason": "0.2 M H2SO4 contains 0.2 * 98 = 19.6 g/dm3."
+      },
+      {
+        "key": "D",
+        "reason": "0.2 M Ca(OH)2 contains 0.2 * 74 = 14.8 g/dm3."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "stem": "The concentration of a solution containing 53 g of Na2CO3 in 1 dm3 is (Note: Na=23, O=16, C=12)",
+    "options": {
+      "A": "0.5 M.",
+      "B": "0.96 M.",
+      "C": "1.03 M.",
+      "D": "2 M."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "6.4.3",
+    "sloText": "Calculate molarity from mass of solute and volume of solution;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Molar mass of Na2CO3 = (2 * 23) + 12 + (3 * 16) = 106 g/mol. Molarity = mass / (molar mass * volume in dm3) = 53 g / (106 g/mol * 1 dm3) = 0.5 M.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. 53 / 106 = 0.5 mol/dm3 = 0.5 M."
+      },
+      {
+        "key": "B",
+        "reason": "Calculation error."
+      },
+      {
+        "key": "C",
+        "reason": "Calculation error."
+      },
+      {
+        "key": "D",
+        "reason": "2 M corresponds to 212 g of Na2CO3."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "stem": "The technique that CANNOT separate the components of a homogeneous mixture is",
+    "options": {
+      "A": "filtration.",
+      "B": "distillation.",
+      "C": "crystallisation.",
+      "D": "chromatography."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.6.2",
+    "sloText": "Differentiate separation methods for homogeneous and heterogeneous mixtures;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "In a homogeneous mixture (true solution), dissolved solute particles are on the molecular/ionic scale (< 1 nm) and pass through filter paper pores without retention. Filtration only separates insoluble solids from liquids.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Filtration cannot separate dissolved solutes from homogeneous solutions."
+      },
+      {
+        "key": "B",
+        "reason": "Distillation separates homogeneous liquid mixtures by differences in boiling points."
+      },
+      {
+        "key": "C",
+        "reason": "Crystallisation separates dissolved solids from homogeneous solutions."
+      },
+      {
+        "key": "D",
+        "reason": "Chromatography separates dissolved components based on partition between mobile and stationary phases."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "stem": "A true solution is a homogeneous mixture of two or more substances. Based on this information, which of the following is an example of a true solution?",
+    "options": {
+      "A": "Fog",
+      "B": "Blood",
+      "C": "Sugar syrup",
+      "D": "Whipped cream"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.7.1",
+    "sloText": "Distinguish between true solutions, colloids and suspensions with everyday examples;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Sugar syrup is a true solution containing sugar completely dissolved in water as individual molecules. Fog (liquid in gas aerosol), blood (suspension/colloid), and whipped cream (gas in liquid foam) are all colloidal systems.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Fog is a liquid-in-gas colloidal aerosol."
+      },
+      {
+        "key": "B",
+        "reason": "Blood is a complex suspension and colloid of cellular components and proteins."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Sugar syrup is a homogeneous true solution."
+      },
+      {
+        "key": "D",
+        "reason": "Whipped cream is a gas-in-liquid colloidal foam."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "stem": "The loss or gain of a particle that does NOT affect the mass of an atom is a/ an",
+    "options": {
+      "A": "proton.",
+      "B": "neutron.",
+      "C": "electron.",
+      "D": "alpha particle."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Knowledge",
+    "slo": "2.1.1",
+    "sloText": "Identify the relative masses and charges of subatomic particles;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Electrons have a negligible relative mass of approximately 1/1836 amu. Therefore, gaining or losing electrons during ionization does not measurably alter the atomic mass.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Protons have a mass of ~1 amu; loss or gain changes mass and atomic identity."
+      },
+      {
+        "key": "B",
+        "reason": "Neutrons have a mass of ~1 amu; changing neutron count forms an isotope of different mass."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Electrons have negligible mass (~1/1836 amu); their loss or gain forms ions without altering mass number."
+      },
+      {
+        "key": "D",
+        "reason": "Alpha particles have a mass of 4 amu."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "stem": "An ion Y+ has 39 nucleons and 18 electrons. The number of protons and neutrons that the nucleus of this ion contains is",
+    "options": {
+      "A": "20 protons, 19 neutrons",
+      "B": "19 protons, 20 neutrons",
+      "C": "21 protons, 18 neutrons",
+      "D": "18 protons, 21 neutrons"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "2.1.2",
+    "sloText": "Determine protons, neutrons and electrons in monoatomic ions from nucleon number and charge;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "A unipositive cation (Y+) has lost 1 electron. Neutral atom electrons = protons = 18 + 1 = 19 protons (Potassium, K). Number of neutrons = Nucleon number - Protons = 39 - 19 = 20 neutrons.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Inverts the values for protons and neutrons."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Protons = 18 + 1 = 19; Neutrons = 39 - 19 = 20."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect proton count."
+      },
+      {
+        "key": "D",
+        "reason": "18 is the number of electrons in the ion, not protons."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "stem": "How many nucleons are present in an isotope of carbon (13_6 C)?",
+    "options": {
+      "A": "13",
+      "B": "12",
+      "C": "7",
+      "D": "6"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "2.2.1",
+    "sloText": "Define nucleons and relate nucleon number to mass number in isotopic notation;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Nucleons are protons and neutrons residing in the nucleus, represented collectively by the mass number (A). For 13_6 C, the mass number is 13.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. The superscript 13 is the nucleon (mass) number."
+      },
+      {
+        "key": "B",
+        "reason": "12 is the mass number of carbon-12."
+      },
+      {
+        "key": "C",
+        "reason": "7 is the number of neutrons (13 - 6 = 7)."
+      },
+      {
+        "key": "D",
+        "reason": "6 is the atomic number (number of protons)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "stem": "The limitation of Rutherford atomic model is that the",
+    "options": {
+      "A": "mass and charge of an atom is concentrated in the nucleus.",
+      "B": "positively charged nucleus resides in the centre of the atom.",
+      "C": "electrons revolve around the nucleus at a high speed in fixed orbits.",
+      "D": "revolving electrons continuously loose energy and fall on the nucleus."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "2.3.2",
+    "sloText": "Identify the limitations of Rutherford's atomic model based on classical electromagnetic theory;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "According to classical electrodynamics, accelerating charged electrons should continuously radiate energy and spiral into the nucleus within 10^-8 seconds, making atoms unstable.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "This is a correct verified discovery of Rutherford, not a defect."
+      },
+      {
+        "key": "B",
+        "reason": "This is a correct feature of the nuclear model."
+      },
+      {
+        "key": "C",
+        "reason": "Fixed non-radiating energy orbits was Bohr's postulate to overcome the defect."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Classical physics predicted revolving electrons would radiate energy and collapse into the nucleus."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "stem": "The electronic configuration of aluminium ion in aluminium oxide, Al2O3, is (Note: 27_13 Al)",
+    "options": {
+      "A": "1s2 2s2 2p6",
+      "B": "1s2 2s2 2p6 3s1",
+      "C": "1s2 2s2 2p6 3s2 3p1",
+      "D": "1s2 2s2 2p6 3s2 3p2"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "2.5.1",
+    "sloText": "Write electronic configurations of atoms and cations in s, p subshell notation;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "In Al2O3, aluminium exists as Al3+. Neutral Al (Z=13) has configuration 1s2 2s2 2p6 3s2 3p1. Losing 3 valence electrons leaves 10 electrons: 1s2 2s2 2p6.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Al3+ has lost 3 electrons, leaving the stable neon configuration 1s2 2s2 2p6."
+      },
+      {
+        "key": "B",
+        "reason": "Corresponds to Al2+."
+      },
+      {
+        "key": "C",
+        "reason": "This is the configuration of neutral aluminium atom (Al)."
+      },
+      {
+        "key": "D",
+        "reason": "Corresponds to Silicon (Z=14)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "stem": "The STRONGEST oxidising ability among halogens is possessed by",
+    "options": {
+      "A": "fluorine.",
+      "B": "chlorine.",
+      "C": "bromine.",
+      "D": "iodine."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "3.1.6",
+    "sloText": "Describe trends in oxidising power and electronegativity of halogens;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Fluorine has the highest standard reduction potential (+2.87 V), the smallest atomic radius, and the highest electronegativity (4.0), making it the most powerful oxidising agent among all halogens.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Fluorine has the greatest affinity for electrons and is the strongest oxidiser."
+      },
+      {
+        "key": "B",
+        "reason": "Chlorine is a strong oxidiser, but weaker than fluorine."
+      },
+      {
+        "key": "C",
+        "reason": "Bromine is weaker than chlorine."
+      },
+      {
+        "key": "D",
+        "reason": "Iodine is the least powerful oxidiser among common halogens."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "stem": "The general electronic configuration of ns2 np3 indicates that the element belongs to",
+    "options": {
+      "A": "period 3.",
+      "B": "period 5.",
+      "C": "group VA.",
+      "D": "group IIIA."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "3.1.3",
+    "sloText": "Relate valence shell electronic configuration to group number in the periodic table;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Total valence electrons in the outermost shell = 2 (from ns) + 3 (from np) = 5 electrons, which designates the element as a member of Group VA (Group 15 / Nitrogen family).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Period number is determined by the principal quantum number 'n', which is a variable."
+      },
+      {
+        "key": "B",
+        "reason": "5 is the valence electron count, not the period number."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. 2 + 3 = 5 valence electrons corresponds to Group VA (Group 15)."
+      },
+      {
+        "key": "D",
+        "reason": "Group IIIA has configuration ns2 np1."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "stem": "Consider the given characteristics of a group of elements: Soft, Low melting point, Highly electropositive. Based on these characteristics, the group of elements is identified as",
+    "options": {
+      "A": "halogens.",
+      "B": "alkali metals.",
+      "C": "carbon family.",
+      "D": "oxygen family."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.1.5",
+    "sloText": "Describe characteristic physical and chemical properties of alkali metals (Group IA);",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Alkali metals (Group IA: Li, Na, K) have single valence electrons, weak metallic bonding, large atomic radii, and low density, making them soft (cut with a knife), low-melting, and exceptionally electropositive.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Halogens are non-metals with high electronegativities."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Alkali metals are soft, low melting, and the most electropositive elements."
+      },
+      {
+        "key": "C",
+        "reason": "Carbon family elements (e.g. Diamond) exhibit high hardness and high melting points."
+      },
+      {
+        "key": "D",
+        "reason": "Oxygen family elements are electronegative non-metals."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "stem": "The number of shells in the atomic structure of an element represents",
+    "options": {
+      "A": "its ionisation potential.",
+      "B": "the group it belongs to.",
+      "C": "the period it belongs to.",
+      "D": "its electrical conductivity."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.1.2",
+    "sloText": "Explain the significance of period number in terms of principal energy levels (shells);",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "In the modern periodic table, the period number (horizontal row) corresponds directly to the principal quantum number of the outermost valence shell (number of occupied electron shells).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Ionisation potential depends on effective nuclear charge and radius."
+      },
+      {
+        "key": "B",
+        "reason": "Group number corresponds to valence electrons."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The number of electron shells corresponds to the period number."
+      },
+      {
+        "key": "D",
+        "reason": "Electrical conductivity depends on metallic character and free electrons."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "stem": "The term, \u2018electronegativity\u2019 is described as the ability of an atom to",
+    "options": {
+      "A": "act as an oxidising agent.",
+      "B": "accept an electron from another atom.",
+      "C": "attract shared paired of electrons to itself.",
+      "D": "absorb maximum energy to lose an electron."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.2.3",
+    "sloText": "Define electronegativity and describe its periodic trends;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Electronegativity is defined as the relative tendency or ability of an atom in a covalent bond to attract the shared pair of electrons towards itself.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Oxidising ability relates to reduction potential."
+      },
+      {
+        "key": "B",
+        "reason": "Electron affinity is the energy released when an isolated gaseous atom accepts an electron."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Electronegativity is the power of an atom in a molecule to attract shared bonding electrons."
+      },
+      {
+        "key": "D",
+        "reason": "Energy required to lose an electron is ionisation energy."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "stem": "Water vapours have a lower density than ice because in water vapours the particles have",
+    "options": {
+      "A": "orderly arrangement.",
+      "B": "vibrational movement.",
+      "C": "very low kinetic energy.",
+      "D": "very weak attractive forces."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.1.1",
+    "sloText": "Compare densities of states of matter in terms of intermolecular forces and particle spacing;",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "explanation": "In water vapour (gas), intermolecular hydrogen bonds are completely overcome, resulting in very weak attractive forces, huge intermolecular spacing, and consequently an extremely low density compared to solid ice.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Orderly arrangement is a property of crystalline ice, not vapour."
+      },
+      {
+        "key": "B",
+        "reason": "Vibrational movement only is characteristic of solids."
+      },
+      {
+        "key": "C",
+        "reason": "Water vapour has very high kinetic energy."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Very weak intermolecular forces allow gaseous water molecules to spread out, resulting in low density."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "stem": "In a closed system, a change in kinetic energy of particles causes the substance to change its",
+    "options": {
+      "A": "state.",
+      "B": "mass.",
+      "C": "volume.",
+      "D": "boiling point."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.1.1",
+    "sloText": "Explain phase changes in terms of temperature and kinetic energy variations;",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "explanation": "Altering average kinetic energy (by adding or removing thermal energy) changes the balance between thermal motion and intermolecular forces, leading to phase changes (changes of state like melting, boiling, condensation, or freezing).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Kinetic energy changes overcome or allow intermolecular bonds, driving state transitions."
+      },
+      {
+        "key": "B",
+        "reason": "Mass is conserved in a closed system."
+      },
+      {
+        "key": "C",
+        "reason": "While volume changes, the fundamental transition caused by latent energy changes is a change of state."
+      },
+      {
+        "key": "D",
+        "reason": "Boiling point is an intrinsic property at a given pressure."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "stem": "During extremely cold weather when the temperature is \u221220\u00b0C, a room\u2019s temperature is maintained at +20\u00b0C with 60% internal humidity. Under the given conditions, the formation of water drops and ice on the interior of window of the room is the result of",
+    "options": {
+      "A": "sublimation.",
+      "B": "evaporation.",
+      "C": "precipitation.",
+      "D": "condensation."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.2.1",
+    "sloText": "Explain condensation and deposition in terms of temperature gradients and humidity;",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "explanation": "Warm, humid indoor air (+20\u00b0C) contacts the cold windowpane (-20\u00b0C outdoors), dropping below its dew point. Water vapour loses kinetic energy and condenses into liquid droplets (and freezes to frost/ice).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Sublimation is a direct transition from solid to gas."
+      },
+      {
+        "key": "B",
+        "reason": "Evaporation is liquid turning into vapour."
+      },
+      {
+        "key": "C",
+        "reason": "Precipitation in meteorology refers to rain or snow falling from clouds."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Water vapour cools on the cold glass surface and undergoes condensation."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "stem": "The term, \u2018allotrope\u2019 describes the difference in elements based on their",
+    "options": {
+      "A": "structural forms.",
+      "B": "number of H+ ions.",
+      "C": "number of neutrons.",
+      "D": "phases (solid, liquid or gas)."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.6.2",
+    "sloText": "Define allotropy and describe structural differences in carbon allotropes (diamond, graphite);",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "explanation": "Allotropy is the property of certain chemical elements to exist in two or more different physical structural forms in the same physical state (e.g. Diamond and Graphite for carbon).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Allotropes differ in the spatial arrangement of atoms (structural forms)."
+      },
+      {
+        "key": "B",
+        "reason": "H+ ions define acids, not allotropes."
+      },
+      {
+        "key": "C",
+        "reason": "Differences in neutron count define isotopes."
+      },
+      {
+        "key": "D",
+        "reason": "Allotropes exist in the same physical phase (e.g. solid diamond and solid graphite)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "stem": "In industries, graphite is used as a/ an",
+    "options": {
+      "A": "electrode.",
+      "B": "ornament.",
+      "C": "electrolyte.",
+      "D": "cutting tool."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "5.6.2",
+    "sloText": "Describe everyday and industrial uses of graphite and diamond;",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "explanation": "Each carbon in graphite is bonded to three others in planar hexagonal sheets with delocalised pi electrons that are free to move. This imparts excellent electrical conductivity and thermal resistance, making graphite ideal for electrolysis electrodes.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Graphite is an electrical conductor and widely used as inert electrodes in electrolytic cells and dry batteries."
+      },
+      {
+        "key": "B",
+        "reason": "Diamond is used in jewelry/ornaments, not soft black graphite."
+      },
+      {
+        "key": "C",
+        "reason": "Electrolytes are ionic liquids or solutions; graphite is a solid electrode."
+      },
+      {
+        "key": "D",
+        "reason": "Diamond is used in industrial cutting tools due to exceptional hardness."
+      }
+    ]
+  },
+  {
+    "questionNumber": 26,
+    "stem": "The compound that possesses ionic bond between its atoms is",
+    "options": {
+      "A": "CS2",
+      "B": "CCl4",
+      "C": "HCN",
+      "D": "MgF2"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.2.2",
+    "sloText": "Predict bond types (ionic vs covalent) between metal and non-metal elements;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Magnesium (Mg, electropositive alkaline earth metal) transfers electrons to Fluorine (F, highly electronegative halogen) to form Mg2+ and F- ions, producing an ionic compound (MgF2). CS2, CCl4, and HCN consist purely of non-metals forming covalent bonds.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "CS2 is a covalent molecule formed between non-metals."
+      },
+      {
+        "key": "B",
+        "reason": "CCl4 has four covalent C-Cl bonds."
+      },
+      {
+        "key": "C",
+        "reason": "HCN contains covalent C-H and C\u2261N bonds."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Magnesium metal and fluorine non-metal form the ionic compound MgF2."
+      }
+    ]
+  },
+  {
+    "questionNumber": 27,
+    "stem": "Chlorine belongs to group VIIA and beryllium belongs to group IIA of the modern periodic table. In a reaction between chlorine and beryllium, each atom of chlorine",
+    "options": {
+      "A": "gives an electron to an atom of beryllium.",
+      "B": "shares an electron with an atom of beryllium.",
+      "C": "accepts an electron from an atom of beryllium.",
+      "D": "shares an electron pair with an atom of beryllium."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.2.1",
+    "sloText": "Explain electron transfer in ionic bond formation between Group II and Group VII elements;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Beryllium (Group IIA) has 2 valence electrons and loses 1 electron to each of two chlorine atoms. Each chlorine atom (Group VIIA) has 7 valence electrons and accepts 1 electron to complete its stable octet of 8.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Chlorine is electronegative and accepts electrons; beryllium loses them."
+      },
+      {
+        "key": "B",
+        "reason": "Beryllium chloride formation predominantly involves electron transfer in basic ionic formalism."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Each chlorine atom accepts 1 electron from the divalent beryllium atom."
+      },
+      {
+        "key": "D",
+        "reason": "Chlorine accepts a single electron to form Cl-."
+      }
+    ]
+  },
+  {
+    "questionNumber": 28,
+    "stem": "Hydrogen can form an ionic compound with",
+    "options": {
+      "A": "carbon.",
+      "B": "sodium.",
+      "C": "fluorine.",
+      "D": "nitrogen."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.2.2",
+    "sloText": "Identify ionic hydrides formed by alkali metals and contrast with covalent hydrides;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "When reacting with highly electropositive alkali metals like sodium, hydrogen acts as an oxidising agent, gaining an electron to form the hydride ion (H-), resulting in the ionic salt sodium hydride (Na+ H-). With C, F, and N, hydrogen forms covalent bonds.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Forms covalent hydrocarbons (e.g. CH4)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Sodium metal transfers an electron to hydrogen forming ionic sodium hydride (NaH)."
+      },
+      {
+        "key": "C",
+        "reason": "Forms polar covalent hydrogen fluoride (HF)."
+      },
+      {
+        "key": "D",
+        "reason": "Forms covalent ammonia (NH3)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "stem": "HCl is a polar covalent compound showing all of the following properties EXCEPT that it",
+    "options": {
+      "A": "is soluble in water.",
+      "B": "ionises completely in aqueous medium.",
+      "C": "has partial positive and negative charges.",
+      "D": "shows electronegativity difference as zero."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.3.5",
+    "sloText": "Describe polar covalent compounds and relate polarity to electronegativity differences;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Hydrogen chloride is polar precisely because there is a significant electronegativity difference between chlorine (3.16) and hydrogen (2.20), creating a dipole. Claiming electronegativity difference is zero is FALSE.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "HCl is extremely soluble in water due to polar dipole-dipole interactions."
+      },
+      {
+        "key": "B",
+        "reason": "HCl is a strong acid that ionizes completely into H+ and Cl- in water."
+      },
+      {
+        "key": "C",
+        "reason": "HCl has partial positive charge on H and partial negative on Cl."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Polar covalent molecules have non-zero electronegativity differences; zero difference characterizes pure non-polar bonds."
+      }
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "stem": "In the given structure, the four species X are connected to carbon by Y bonds. The species X and Y bonds are identified as",
+    "options": {
+      "A": "Species X: atoms | Y Bonds: weak",
+      "B": "Species X: atoms | Y Bonds: strong",
+      "C": "Species X: ions | Y Bonds: weak",
+      "D": "Species X: ions | Y Bonds: strong"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.3.4",
+    "sloText": "Describe single covalent bonds in tetrahedral carbon molecules as strong intramolecular forces;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "diagramUrl": "/paper-crops/CHM-IX-2023-P1/q30.png",
+    "diagramBased": true,
+    "explanation": "In a methane-like tetrahedral molecule (CX4), the central carbon atom is bonded to four terminal atoms (X) through four strong localized covalent bonds (Y), having high bond dissociation energies.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Covalent intramolecular bonds are strong, not weak."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. X are bonded atoms, and the covalent linkages Y are strong intramolecular bonds."
+      },
+      {
+        "key": "C",
+        "reason": "Species X in covalent molecules are neutral atoms, not ions."
+      },
+      {
+        "key": "D",
+        "reason": "Molecules do not consist of ionic species."
+      }
+    ]
+  },
+  {
+    "questionNumber": 31,
+    "stem": "The oxidation state of chromium in CrO3 is",
+    "options": {
+      "A": "\u22126",
+      "B": "\u22123",
+      "C": "+3",
+      "D": "+6"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "7.2.3",
+    "sloText": "Calculate oxidation numbers of transition metals in neutral compounds;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "In chromium trioxide (CrO3), oxygen has an oxidation state of -2. For a neutral compound: x + 3(-2) = 0 => x - 6 = 0 => x = +6.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The total negative charge of three oxygens is -6, so chromium must balance with +6."
+      },
+      {
+        "key": "B",
+        "reason": "Calculation error."
+      },
+      {
+        "key": "C",
+        "reason": "Calculation error."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Chromium is in its maximum +6 oxidation state."
+      }
+    ]
+  },
+  {
+    "questionNumber": 32,
+    "stem": "Samra uses the following setup to test the conductivity of an electrolyte. The illustration shows high conductivity of the electrolyte. This indicates that the substance she must have used is",
+    "options": {
+      "A": "petrol.",
+      "B": "glucose.",
+      "C": "lithium fluoride.",
+      "D": "carbon tetrachloride."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "7.4.6",
+    "sloText": "Differentiate between strong, weak and non-electrolytes using conductivity apparatus;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "diagramUrl": "/paper-crops/CHM-IX-2023-P1/q32.png",
+    "diagramBased": true,
+    "explanation": "Lithium fluoride (LiF) is an ionic salt that dissolves and dissociates completely into mobile Li+ and F- ions in aqueous solution, acting as a strong electrolyte that allows high electric current to illuminate the lamp brightly. Petrol, glucose, and CCl4 are non-electrolytes.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Petrol is a non-polar covalent hydrocarbon that does not conduct electricity."
+      },
+      {
+        "key": "B",
+        "reason": "Glucose dissolves as neutral molecules without ions (non-electrolyte)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Lithium fluoride dissociates into mobile ions, providing high conductivity."
+      },
+      {
+        "key": "D",
+        "reason": "Carbon tetrachloride is a non-polar covalent non-electrolyte."
+      }
+    ]
+  },
+  {
+    "questionNumber": 33,
+    "stem": "Metal electrodes are good conductors of electricity because they",
+    "options": {
+      "A": "contain partial charges.",
+      "B": "are highly electronegative.",
+      "C": "are connected to the battery.",
+      "D": "contain delocalised electrons."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.4.8",
+    "sloText": "Explain electronic conduction in metal electrodes via mobile delocalised electrons;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "In metallic bonding, valence electrons are delocalised and free to move throughout the metallic crystal lattice. These mobile electrons drift when subjected to an electric field, carrying electrical current.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Partial charges occur in polar covalent molecules."
+      },
+      {
+        "key": "B",
+        "reason": "Metals have low electronegativities and high electropositivity."
+      },
+      {
+        "key": "C",
+        "reason": "Being connected to a battery supplies a potential gradient, but intrinsic conductivity requires mobile charge carriers."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Free delocalised electrons are the mobile charge carriers in metallic conductors."
+      }
+    ]
+  },
+  {
+    "questionNumber": 34,
+    "stem": "A voltaic (galvanic) cell is an electrochemical cell which",
+    "options": {
+      "A": "converts electrical energy into chemical energy.",
+      "B": "generates electricity through spontaneous redox reaction.",
+      "C": "comprises of two electrodes made up of the same inert metal.",
+      "D": "consists of a positively charged anode and a negatively charged cathode."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.4.13",
+    "sloText": "Differentiate between voltaic and electrolytic cells;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "A voltaic cell uses a spontaneous redox reaction to generate an electric current (converts chemical energy into electrical energy).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Converting electrical to chemical energy defines an electrolytic cell."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Voltaic cells harness spontaneous electron transfer to generate electricity."
+      },
+      {
+        "key": "C",
+        "reason": "Electrodes must have different reduction potentials to produce a voltage."
+      },
+      {
+        "key": "D",
+        "reason": "In a voltaic cell, the anode is negative and cathode is positive."
+      }
+    ]
+  },
+  {
+    "questionNumber": 35,
+    "stem": "The following diagram shows an electrolytic cell used for electroplating iron with chromium. The chemical reaction that takes place at cathode is",
+    "options": {
+      "A": "Cr(s) -> Cr2+(aq) + 2e-",
+      "B": "Cr2+(aq) + 2e- -> Cr(s)",
+      "C": "Cr(s) -> Cr3+(aq) + 3e-",
+      "D": "Cr3+(aq) + 3e- -> Cr(s)"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "7.4.5",
+    "sloText": "Write cathode and anode half-reactions for electroplating of chromium from chromium(III) electrolyte;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "diagramUrl": "/paper-crops/CHM-IX-2023-P1/q35.png",
+    "diagramBased": true,
+    "explanation": "In chromium plating using acidified chromium sulphate [Cr2(SO4)3], the chromium ion is in the +3 oxidation state (Cr3+). At the cathode (negative electrode), Cr3+ ions gain 3 electrons to deposit as solid chromium: Cr3+(aq) + 3e- -> Cr(s).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "This is an oxidation reaction, which occurs at the anode."
+      },
+      {
+        "key": "B",
+        "reason": "Chromium sulphate contains Cr3+, not Cr2+."
+      },
+      {
+        "key": "C",
+        "reason": "This is the oxidation half-reaction at the chromium anode."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Reduction of Cr3+ ions to solid chromium takes place at the cathode."
+      }
+    ]
+  },
+  {
+    "questionNumber": 36,
+    "stem": "For an experiment, Asad used a metal oxide, which can act as either an acid or a base to produce salt and water. The metal oxide used by him is",
+    "options": {
+      "A": "SiO2",
+      "B": "CaO",
+      "C": "Li2O",
+      "D": "Al2O3"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.1.1",
+    "sloText": "Classify metal and non-metal oxides as basic, acidic or amphoteric;",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "explanation": "Aluminium oxide (Al2O3) is an amphoteric oxide that reacts with acids (forming aluminium salts) and with strong bases (forming aluminates) to yield salt and water.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "SiO2 is an acidic non-metal oxide."
+      },
+      {
+        "key": "B",
+        "reason": "CaO is a basic metal oxide."
+      },
+      {
+        "key": "C",
+        "reason": "Li2O is a basic metal oxide."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Al2O3 is amphoteric and reacts with both acids and bases."
+      }
+    ]
+  },
+  {
+    "questionNumber": 37,
+    "stem": "Amongst the given group I elements, the first ionisation energy would be the HIGHEST for",
+    "options": {
+      "A": "lithium.",
+      "B": "sodium.",
+      "C": "rubidium.",
+      "D": "potassium."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.2.3",
+    "sloText": "Describe trends in ionisation energy down Group I (alkali metals);",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "explanation": "Down Group I (Li -> Na -> K -> Rb), atomic radius increases and shielding effect increases, making the valence electron easier to remove. Therefore, Lithium (at the top) has the smallest radius and highest first ionisation energy.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Lithium has the smallest atomic size and highest first ionisation energy in Group I."
+      },
+      {
+        "key": "B",
+        "reason": "Sodium has a larger radius than lithium and lower IE."
+      },
+      {
+        "key": "C",
+        "reason": "Rubidium has a much larger radius and very low IE."
+      },
+      {
+        "key": "D",
+        "reason": "Potassium has a lower IE than sodium and lithium."
+      }
+    ]
+  },
+  {
+    "questionNumber": 38,
+    "stem": "In contrast to sodium, iron is a hard metal because it",
+    "options": {
+      "A": "requires greater energy to break.",
+      "B": "has weaker metallic bonding.",
+      "C": "belongs to group IIA.",
+      "D": "is highly reactive."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.2.6",
+    "sloText": "Compare physical properties (hardness, density, metallic bonding) of transition metals with s-block metals;",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "explanation": "Iron is a transition metal whose metallic bonding involves both 4s and unpaired 3d electrons, resulting in a much stronger metallic lattice that requires significantly greater energy to deform or break compared to soft alkali sodium.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Iron has strong metallic bonding involving d-electrons, requiring greater energy to break."
+      },
+      {
+        "key": "B",
+        "reason": "Iron has much stronger metallic bonding, not weaker."
+      },
+      {
+        "key": "C",
+        "reason": "Iron is a d-block transition metal, not group IIA."
+      },
+      {
+        "key": "D",
+        "reason": "Sodium is much more reactive than iron."
+      }
+    ]
+  },
+  {
+    "questionNumber": 39,
+    "stem": "Consider the given characteristics: Solid, Brittle, Non-lustrous. The element described by these characteristics is",
+    "options": {
+      "A": "carbon.",
+      "B": "copper.",
+      "C": "oxygen.",
+      "D": "aluminium."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.1.1",
+    "sloText": "Identify characteristic physical properties of non-metals versus metals;",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "explanation": "Non-metals in the solid state are characteristically brittle, non-malleable, and lack metallic luster. Solid carbon (such as coal or graphite) matches all three criteria.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Solid non-metallic carbon is brittle and non-lustrous."
+      },
+      {
+        "key": "B",
+        "reason": "Copper is a lustrous, malleable, ductile metal."
+      },
+      {
+        "key": "C",
+        "reason": "Oxygen is a colourless gas at room temperature, not a solid."
+      },
+      {
+        "key": "D",
+        "reason": "Aluminium is a malleable, lustrous metal."
+      }
+    ]
+  },
+  {
+    "questionNumber": 40,
+    "stem": "The elements of group IIA are known as",
+    "options": {
+      "A": "noble metals.",
+      "B": "alkali metals.",
+      "C": "transition metals.",
+      "D": "alkaline earth metals."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "8.2.1",
+    "sloText": "Identify common family names of periodic groups (alkali metals, alkaline earth metals, halogens, noble gases);",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "explanation": "Group IIA elements (Be, Mg, Ca, Sr, Ba, Ra) are universally designated as alkaline earth metals because their oxides form basic (alkaline) solutions in water and are historically found in the earth's crust.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Noble metals refer to unreactive metals like gold and platinum."
+      },
+      {
+        "key": "B",
+        "reason": "Alkali metals are Group IA elements."
+      },
+      {
+        "key": "C",
+        "reason": "Transition metals are d-block elements (Groups 3 to 12)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Group IIA elements are named alkaline earth metals."
+      }
+    ]
+  }
+]

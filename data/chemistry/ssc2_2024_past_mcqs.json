@@ -1,0 +1,1522 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "Iron is used as a catalyst in the manufacturing of ammonia by Haber process to",
+    "options": {
+      "A": "prevent the decomposition of ammonia.",
+      "B": "speed up the rate of formation of ammonia.",
+      "C": "remove impurities from the reaction mixture.",
+      "D": "reduce the temperature of the reaction mixture."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "9.3.7",
+    "sloText": "Determine the effect of a catalyst on a reversible reaction at equilibrium (Haber process).",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In the Haber process (N2 + 3H2 \u21cc 2NH3), finely divided iron (Fe) acts as a heterogeneous catalyst that lowers the activation energy barrier of breaking the strong N\u2261N triple bond, thereby speeding up the rate of formation of ammonia so equilibrium is attained rapidly at moderate temperatures (400\u2013450\u00b0C).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. A catalyst speeds up both forward and reverse reactions equally and cannot prevent reverse decomposition."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Iron catalyst lowers activation energy and speeds up the rate of ammonia synthesis."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Impurities poison the iron catalyst rather than being removed by it."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. A catalyst does not cool down an exothermic reaction mixture."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "stem": "The energy profile diagram that represents the given reaction is\nCaCO3(s) --(Heat)--> CaO(s) + CO2(g)",
+    "options": {
+      "A": "Diagram A (Products at top left descending to Reactant at bottom right)",
+      "B": "Diagram B (Exothermic profile: Reactant higher in energy than Products)",
+      "C": "Diagram C (Endothermic profile: Reactant lower in energy than Products with activation energy hump)",
+      "D": "Diagram D (Products on left ascending to Reactant on right)"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "9.2.3",
+    "sloText": "Interpret energy profile diagrams for endothermic and exothermic reactions.",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2024-P1/q2.png",
+    "explanation": "Thermal decomposition of calcium carbonate (CaCO3) requires continuous absorption of heat energy (\u0394H = +178.3 kJ/mol), making it an endothermic reaction. In an endothermic energy profile (Diagram C), the reactant starts at a lower energy level on the left, climbs over the activation energy barrier, and ends at a higher energy level for the products on the right.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Places products before reactants on the time axis."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Diagram B shows products lower in energy than reactants (exothermic reaction)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Diagram C correctly places reactants on the left at lower energy and products on the right at higher energy (endothermic reaction)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Reverses the positions of reactants and products along the time axis."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "stem": "While making an aqueous solution of an acid, it is advised not to add water into the acid.\nThis is because adding water to acid produces",
+    "options": {
+      "A": "toxic gases.",
+      "B": "precipitates.",
+      "C": "high heat energy.",
+      "D": "concentrated solution."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "9.2.2",
+    "sloText": "Explain exothermic hydration and safety precautions when diluting concentrated acids.",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "The hydration (dilution) of a concentrated strong acid (such as H2SO4) with water is a violently exothermic process that releases high heat energy. If water is poured into concentrated acid, the small volume of water boils instantaneously at the surface and splatters corrosive acid outward.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Dilution is a physical/ionisation hydration process that does not generate new toxic gases."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Acids are completely miscible with water and do not form precipitates."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Hydration of concentrated acid is highly exothermic, releasing intense heat energy that can cause boiling and splashing."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Adding water dilutes the acid rather than concentrating it."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "stem": "Consider the given ionisation reaction.\nFe(OH)3(aq) \u21cc Fe^(3+)(aq) + 3OH^-(aq)\nThe equilibrium expression for the given ionisation reaction is",
+    "options": {
+      "A": "Kc = [Fe(OH)3] / ([Fe^+3][3OH^-])",
+      "B": "Kc = ([Fe^+3][3OH^-]) / [Fe(OH)3]",
+      "C": "Kc = [Fe(OH)3] / ([Fe^+3][OH^-]^3)",
+      "D": "Kc = ([Fe^+3][OH^-]^3) / [Fe(OH)3]"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "9.3.2",
+    "sloText": "Write the equilibrium constant expression (Kc) for a given reversible chemical reaction.",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2024-P1/q4.png",
+    "explanation": "By the Law of Mass Action, the equilibrium constant Kc is the ratio of the molar concentrations of products in the numerator to reactants in the denominator, each raised to the power of its stoichiometric coefficient in the balanced equation:\nKc = [Fe^(3+)][OH^-]^3 / [Fe(OH)3].",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Inverted numerator/denominator and placed coefficient 3 inside the bracket instead of as an exponent."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Placed stoichiometric coefficient 3 as a multiplier [3OH-] rather than an exponent [OH-]^3."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Inverted the expression by placing reactants in the numerator and products in the denominator."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Products [Fe^+3][OH^-]^3 in the numerator and reactant [Fe(OH)3] in the denominator."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "stem": "An endothermic reaction will occur when",
+    "options": {
+      "A": "ethanol is burnt in air.",
+      "B": "carbon is oxidised to carbon dioxide.",
+      "C": "water is added to anhydrous copper(II) sulphate.",
+      "D": "carbon dioxide and water react to form glucose and oxygen."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "9.2.2",
+    "sloText": "Classify common chemical and biological processes as endothermic or exothermic.",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Photosynthesis (6CO2 + 6H2O --(sunlight/chlorophyll)--> C6H12O6 + 6O2) absorbs solar energy to convert carbon dioxide and water into glucose and oxygen, making it an endothermic reaction (\u0394H > 0). Burning ethanol, oxidising carbon, and hydrating white anhydrous CuSO4 to blue CuSO4\u00b75H2O all release heat (exothermic).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Combustion of ethanol in air releases large amounts of heat (exothermic)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Combustion/oxidation of carbon to CO2 is strongly exothermic."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Hydration of white anhydrous CuSO4 to blue pentahydrate releases heat (exothermic)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Photosynthesis requires continuous absorption of light/heat energy to synthesise glucose from CO2 and H2O (endothermic)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "stem": "The by-product(s) of the given reaction is/ are\nNa2O(aq) + 2HCl(aq) -> ?",
+    "options": {
+      "A": "H2(g)",
+      "B": "H2O(l)",
+      "C": "H2O(l) + O2(g)",
+      "D": "H2O(l) + Cl2(g)"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "10.2.2",
+    "sloText": "Describe the reaction of acids with metallic oxides to form salt and water.",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Sodium oxide (Na2O) is a basic metallic oxide that reacts with hydrochloric acid (HCl) in an acid-base neutralisation reaction to form sodium chloride salt (main product) and liquid water (by-product):\nNa2O(aq) + 2HCl(aq) -> 2NaCl(aq) + H2O(l).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Hydrogen gas (H2) is evolved when reactive metals (like Na) react with acid, not metallic oxides."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Metal oxide + Acid -> Salt (2NaCl) + Water (H2O); water is the sole by-product."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Oxygen gas is not evolved during normal oxide neutralisation."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Chlorine gas is produced only with strong oxidising oxides like MnO2, not Na2O."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "stem": "Water is an example of Lewis base because it tends to",
+    "options": {
+      "A": "accept a proton.",
+      "B": "donate a proton.",
+      "C": "accept an electron pair.",
+      "D": "donate an electron pair."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "10.1.6",
+    "sloText": "Define and identify Lewis acids and Lewis bases based on electron pair sharing.",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "According to G.N. Lewis's acid-base theory (1923), a Lewis base is any species that has a lone pair of electrons and tends to donate an electron pair to form a coordinate covalent bond. The oxygen atom in water (H2O) possesses two non-bonding lone pairs and donates one lone pair to electron-deficient species (like H+), acting as a Lewis base.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Accepting a proton defines a Bronsted-Lowry base, not a Lewis base."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Donating a proton defines a Bronsted-Lowry acid."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Accepting an electron pair defines a Lewis acid."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. By definition, a Lewis base is an electron-pair donor."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "stem": "Consider the given characteristics.\nI. Deprotonates other compounds\nII. Donates proton to other compounds\nIII. Deprotonates water if used in aqueous medium\nThe characteristic(s) exhibited by a strong base is/ are",
+    "options": {
+      "A": "II only.",
+      "B": "III only.",
+      "C": "I and II.",
+      "D": "I and III."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "10.3.2",
+    "sloText": "Explain the behaviour of strong and weak bases in terms of proton acceptance (deprotonation).",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "A strong base has a strong affinity for protons (H+ ions). Therefore, it readily removes a proton from (deprotonates) other acidic compounds (I) and deprotonates water molecules when dissolved in an aqueous medium to generate hydroxide ions (OH-) (III). Donating protons (II) is the property of an acid.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Statement II describes an acid (proton donor)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Statement I is also true for a strong base."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Includes acid property II."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. A strong base acts as a powerful proton acceptor that deprotonates both other compounds (I) and water in aqueous solution (III)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "stem": "The pH value that is CORRECTLY matched to the substances in the given table is\n(Table columns: pH Value | Substance)",
+    "options": {
+      "A": "5.0 | blood",
+      "B": "9.0 | distilled water",
+      "C": "2.0 | gastric juice",
+      "D": "10.0 | saliva"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Knowledge",
+    "slo": "10.5.2",
+    "sloText": "Identify the pH values of common biological fluids and household substances.",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Human gastric juice secreted in the stomach contains hydrochloric acid (HCl) and has a strongly acidic pH of approximately 1.5 to 2.0. Human blood has pH ~7.35\u20137.45, pure distilled water has pH 7.0, and human saliva has pH ~6.5\u20137.5.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Human blood is slightly alkaline with a tightly regulated pH of ~7.4, not 5.0."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Pure distilled water is neutral with a pH of 7.0, not 9.0."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Gastric juice contains HCl and has a strongly acidic pH of around 2.0."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Saliva has a nearly neutral pH of 6.5\u20137.5, not 10.0."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "stem": "Consider a conical flask containing 25 cm3 of NaOH solution with phenolphthalein as an indicator.\n(Diagram shows a burette containing 0.45 M HNO3 above a conical flask containing 25 cm3 of 1.50 M NaOH)\nHow much volume of HNO3 will be required to neutralise the solution in conical flask?",
+    "options": {
+      "A": "0.027 cm3",
+      "B": "7.50 cm3",
+      "C": "37.95 cm3",
+      "D": "83.33 cm3"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "10.6.1",
+    "sloText": "Perform acid-base titration calculations using molarity and stoichiometry.",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2024-P1/q10.png",
+    "explanation": "Reaction: HNO3(aq) + NaOH(aq) -> NaNO3(aq) + H2O(l) (1:1 mole ratio, n_a = 1, n_b = 1).\nUsing the titration equation M_a \u00d7 V_a = M_b \u00d7 V_b:\n(0.45 M) \u00d7 V_a = (1.50 M) \u00d7 (25 cm3)\nV_a = (1.50 \u00d7 25) / 0.45 = 37.5 / 0.45 = 83.33 cm3.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Divided 0.45 by (1.50 \u00d7 25)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Inverted the molarities: (0.45 \u00d7 25) / 1.50 = 7.50 cm3."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Added 37.5 and 0.45 instead of dividing."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. V(HNO3) = (1.50 M \u00d7 25 cm3) / 0.45 M = 83.33 cm3."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "stem": "Carbon dioxide and water are the products of a combustion reaction in which 1 volume of gas X reacts with exactly 3 volumes of oxygen gas at standard temperature and pressure.\nThe gas X can be identified as",
+    "options": {
+      "A": "ethane.",
+      "B": "ethene.",
+      "C": "ethyne.",
+      "D": "methane."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "12.7.2",
+    "sloText": "Write balanced equations for the complete combustion of alkanes, alkenes, and alkynes.",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Comparing balanced complete combustion equations for 1 mole (1 volume) of each hydrocarbon gas:\n- Methane: CH4 + 2O2 -> CO2 + 2H2O (1 : 2 O2 ratio)\n- Ethene: C2H4 + 3O2 -> 2CO2 + 2H2O (1 : 3 O2 ratio)\n- Ethane: C2H6 + 3.5O2 -> 2CO2 + 3H2O (1 : 3.5 O2 ratio)\n- Ethyne: C2H2 + 2.5O2 -> 2CO2 + H2O (1 : 2.5 O2 ratio)\nTherefore, gas X is ethene (C2H4).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 1 volume of ethane (C2H6) requires 3.5 volumes of O2."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. C2H4(g) + 3O2(g) -> 2CO2(g) + 2H2O(g); 1 volume of ethene reacts with exactly 3 volumes of oxygen."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 1 volume of ethyne (C2H2) requires 2.5 volumes of O2."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 1 volume of methane (CH4) requires 2 volumes of O2."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "stem": "The structural formula of 3-pentene-1-yne is\n(Diagrams: A = H2C=CH-CH=CH-CH3; B = H2C=CH-C\u2261C-CH3; C = HC\u2261C-C\u2261C-CH3; D = HC\u2261C-CH=CH-CH3)",
+    "options": {
+      "A": "Structure A: H2C = CH \u2013 CH = CH \u2013 CH3",
+      "B": "Structure B: H2C = CH \u2013 C \u2261 C \u2013 CH3",
+      "C": "Structure C: HC \u2261 C \u2013 C \u2261 C \u2013 CH3",
+      "D": "Structure D: HC \u2261 C \u2013 CH = CH \u2013 CH3"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "12.3.1",
+    "sloText": "Write structural formulas of unsaturated hydrocarbons from their IUPAC names.",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2024-P1/q12.png",
+    "explanation": "In 3-pentene-1-yne, the parent chain has 5 carbon atoms (pent-). There is a carbon-carbon triple bond (-yne) starting at carbon-1 (C1\u2261C2) and a carbon-carbon double bond (-ene) starting at carbon-3 (C3=C4\u2013C5): HC\u2261C\u2013CH=CH\u2013CH3, which is Structure D.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Structure A contains two double bonds (1,3-pentadiene) and no triple bond."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Structure B has the double bond at C1 and the triple bond at C3 (1-penten-3-yne)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Structure C contains two triple bonds (1,3-pentadiyne) and no double bond."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Numbering from the left gives C1\u2261C2 (1-yne) and C3=C4 (3-pentene): HC\u2261C\u2013CH=CH\u2013CH3."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "stem": "When a purple solution of the oxidising agent KMnO4 is added to compound Y, compound Y is oxidised to a diol and KMnO4 is converted to brown MnO2.\nBased on this reaction, the compound Y must be",
+    "options": {
+      "A": "C6H14",
+      "B": "C8H16",
+      "C": "C9H20",
+      "D": "C12H26"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "12.2.2",
+    "sloText": "Describe Baeyer's test (reaction with cold alkaline KMnO4) to identify unsaturated alkenes.",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Oxidation by cold dilute alkaline KMnO4 (Baeyer's reagent) to form a vicinal diol (glycol) while decolourising purple KMnO4 to a brown precipitate of MnO2 is the characteristic test for an unsaturated alkene (general formula CnH2n). Among the choices, only C8H16 (octene) fits the alkene formula CnH2n (8 \u00d7 2 = 16). C6H14, C9H20, and C12H26 are all saturated alkanes (CnH2n+2) that do not react with KMnO4.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. C6H14 is a saturated alkane (CnH2n+2) and does not react with KMnO4."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. C8H16 follows the alkene general formula CnH2n and undergoes hydroxylation with KMnO4 to form a diol."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. C9H20 is a saturated alkane (nonane)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. C12H26 is a saturated alkane (dodecane)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "stem": "Consider the given structure.\n(Structure shows H2C = CH \u2013 CH2 \u2013 CH(H)(CH3), a continuous 5-carbon chain with a double bond at C1)\nThe name given by the International Union of Pure and Applied Chemistry (IUPAC) for this structure is",
+    "options": {
+      "A": "1-methyl-3-butene.",
+      "B": "4-methyl-1-butene.",
+      "C": "Pent-1-ene.",
+      "D": "Pent-4-ene."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "12.1.2",
+    "sloText": "Apply IUPAC nomenclature rules to name alkenes, identifying the longest continuous carbon chain.",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2024-P1/q14.png",
+    "explanation": "Although the terminal \u2013CH3 group is drawn pointing downward at the right end of the chain, it is attached to the end carbon (C4), extending the longest continuous carbon chain to 5 carbons: H2C=CH\u2013CH2\u2013CH2\u2013CH3. Numbering from the end nearer the double bond gives C1=C2, so the correct IUPAC name is Pent-1-ene (1-pentene).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Failed to include the terminal methyl group in the longest continuous carbon chain and numbered from the wrong end."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. A methyl group on the terminal carbon (C4 of a 4-carbon chain) simply extends the main chain to 5 carbons."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The longest continuous carbon chain containing the double bond has 5 carbons with the double bond at C1: Pent-1-ene."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Numbered the 5-carbon chain from the wrong end; the double bond must receive the lowest locant (1, not 4)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "stem": "Consider the following fossil fuels.\nI. Petroleum\nII. Coal\nIII. Natural gas\nAmong these fossil fuels, COMMONLY used feedstock in chemical industries is/ are",
+    "options": {
+      "A": "I only.",
+      "B": "II only.",
+      "C": "I and III.",
+      "D": "II and III."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "12.4.1",
+    "sloText": "Explain the use of hydrocarbons (petroleum and natural gas) as fuels and as chemical feedstocks in industry.",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Petroleum (crude oil, I) and natural gas (methane/ethane, III) are the primary hydrocarbon feedstocks used across the petrochemical and chemical industries to manufacture plastics, synthetic fibres, rubbers, fertilizers (urea/ammonia), solvents, and detergents.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Natural gas (III) is also a major industrial feedstock (e.g., for hydrogen, methanol, and urea production)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Coal is primarily used for power generation and metallurgical coke rather than modern petrochemical feedstock."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Both petroleum (I) and natural gas (III) are the principal hydrocarbon feedstocks in chemical industries."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Omits petroleum (I), which is the largest source of petrochemical monomers."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "stem": "The molecular formula of an alkene having eight carbon atoms is",
+    "options": {
+      "A": "C8H14",
+      "B": "C8H16",
+      "C": "C8H17",
+      "D": "C8H18"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "11.2.2",
+    "sloText": "Apply the general formulas of alkanes (CnH2n+2), alkenes (CnH2n), and alkynes (CnH2n-2).",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Alkenes have the general molecular formula CnH2n. For n = 8 carbon atoms, the number of hydrogen atoms is 2(8) = 16, giving the molecular formula C8H16 (octene).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. C8H14 follows CnH2n-2, which is an alkyne (octyne)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Using CnH2n for n = 8 gives C8H16."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. C8H17 follows CnH2n+1, which is an octyl radical."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. C8H18 follows CnH2n+2, which is an alkane (octane)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "stem": "Given are two structures.\nStructure I: 2,2-dimethylpropane (neopentane, C5H12)\nStructure II: 2-methylbutane (isopentane, C5H12)\nThe CORRECT description about the given structures is that they have the same",
+    "options": {
+      "A": "physical properties but different chemical properties.",
+      "B": "atomic arrangement but different physical properties.",
+      "C": "chemical properties but different molecular formulae.",
+      "D": "molecular formulae but different atomic arrangement."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "11.4.3",
+    "sloText": "Define isomerism and compare structural isomers in terms of molecular formula and atomic arrangement.",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2024-P1/q17.png",
+    "explanation": "Structure I (2,2-dimethylpropane) and Structure II (2-methylbutane) are structural chain isomers of pentane. By definition, structural isomers possess the exact same molecular formula (both are C5H12) but different connectivity / arrangement of atoms in their carbon chains.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Branching changes physical properties (like boiling point), while chemical properties remain similar because both are alkanes."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. They have different atomic arrangements (structural formulas)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Both structures have the exact same molecular formula, C5H12."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Both are structural isomers sharing the molecular formula C5H12 but differing in their atomic arrangement."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "stem": "Which of the following has the ketone functional group?",
+    "options": {
+      "A": "CH3COCH2CH3",
+      "B": "CH3CH2OCH2CH3",
+      "C": "CH3CH(OH)CH2CH3",
+      "D": "CH3CH2COOCH2CH3"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "11.5.3",
+    "sloText": "Identify organic compounds containing ketone, ether, alcohol, and ester functional groups.",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "A ketone has the general formula R\u2013CO\u2013R', where a carbonyl group (\u2013C(=O)\u2013) is bonded to two carbon groups. CH3COCH2CH3 (2-butanone / ethyl methyl ketone) contains the ketone functional group. Option B is an ether (R\u2013O\u2013R'), Option C is a secondary alcohol (R\u2013CH(OH)\u2013R'), and Option D is an ester (R\u2013COO\u2013R').",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. CH3COCH2CH3 (butanone) contains a carbonyl group (\u2013CO\u2013) bonded to two alkyl carbons, which is a ketone."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. CH3CH2OCH2CH3 (diethyl ether) contains an ether linkage (\u2013O\u2013)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. CH3CH(OH)CH2CH3 (2-butanol) contains an alcoholic hydroxyl group (\u2013OH)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. CH3CH2COOCH2CH3 (ethyl propanoate) contains an ester group (\u2013COO\u2013)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "stem": "The encircled alkyl radical in the given structure is\n(Diagram shows 2-chloropropane, H3C\u2013CH(CH3)\u2013Cl, with the H3C\u2013CH(CH3)\u2013 group encircled)",
+    "options": {
+      "A": "ethyl.",
+      "B": "butyl.",
+      "C": "methyl.",
+      "D": "isopropyl."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "11.3.2",
+    "sloText": "Identify and name alkyl radicals (methyl, ethyl, n-propyl, isopropyl, butyl).",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2024-P1/q19.png",
+    "explanation": "When one hydrogen atom is removed from the middle (secondary) carbon of propane (CH3\u2013CH2\u2013CH3), the resulting 3-carbon branched alkyl radical (CH3)2CH\u2013 is called the isopropyl (sec-propyl) radical.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. An ethyl radical has 2 carbons (CH3CH2\u2013)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. A butyl radical has 4 carbons (C4H9\u2013)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. A methyl radical has 1 carbon (CH3\u2013)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. The 3-carbon radical attached via its central secondary CH carbon is the isopropyl radical."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "stem": "The number of possible alkyl radicals of the given alkane are\n(Diagram shows isopentane / 2-methylbutane: H3C\u2013CH(CH3)\u2013CH2\u2013CH3)",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "11.3.2",
+    "sloText": "Determine the number of distinct alkyl radicals formed by removing a hydrogen atom from different non-equivalent carbons of an alkane.",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2024-P1/q20.png",
+    "explanation": "The number of possible monoprotic alkyl radicals derived from an alkane equals the number of chemically non-equivalent sets of hydrogen-bearing carbon atoms. In 2-methylbutane, (CH3)2CH\u2013CH2\u2013CH3:\n1. The two methyl groups attached to C2 are equivalent -> removing H gives 1st radical (isopentyl / 3-methylbutyl isn't this one; removing from C1 gives 2-methylbutyl).\n2. Removing H from the tertiary C2 (\u2013CH\u2013) gives 2nd radical (tert-pentyl).\n3. Removing H from the secondary C3 (\u2013CH2\u2013) gives 3rd radical (1,2-dimethylpropyl).\n4. Removing H from the terminal C4 (\u2013CH3) gives 4th radical (isopentyl / 3-methylbutyl).\nThus, there are 4 non-equivalent carbon positions and 4 possible alkyl radicals.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Propane and n-butane yield 2 alkyl radicals each, whereas 2-methylbutane is less symmetrical."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. n-Pentane yields 3 alkyl radicals, whereas 2-methylbutane has 4 distinct carbon environments."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. 2-methylbutane has 4 chemically distinct sets of hydrogens, yielding 4 different alkyl radicals."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The two methyl groups attached to the CH carbon are chemically identical and produce the same radical."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "stem": "Monosaccharides differ from disaccharides on the basis of their",
+    "options": {
+      "A": "colour.",
+      "B": "hydrolysis.",
+      "C": "physical state.",
+      "D": "solubility in water."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "13.1.2",
+    "sloText": "Compare monosaccharides, oligosaccharides (disaccharides), and polysaccharides on the basis of hydrolysis and physical properties.",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Both monosaccharides and disaccharides are white crystalline solids that are sweet and readily soluble in water. However, they differ fundamentally in hydrolysis: monosaccharides are the simplest sugars and cannot be hydrolysed further into simpler sugars, whereas disaccharides undergo acid or enzymatic hydrolysis to yield two monosaccharide molecules.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Both monosaccharides and disaccharides are white solids."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Monosaccharides cannot be hydrolysed, whereas disaccharides hydrolyse to give two monosaccharide units."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Both exist as crystalline solids at room temperature."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Both are highly soluble in water."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "stem": "5% dextrose solution, given intravenously to a patient, provides all of the following EXCEPT that it",
+    "options": {
+      "A": "replaces lost fluid.",
+      "B": "strengthens bones.",
+      "C": "increases blood sugar.",
+      "D": "fulfils nutritional needs."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "13.1.4",
+    "sloText": "Explain the medical and biological uses of dextrose (glucose) drips.",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "A 5% dextrose (D-glucose) intravenous drip consists of glucose dissolved in sterile water. It replenishes lost body fluid (water), raises blood sugar in hypoglycaemic patients, and provides immediate caloric energy/nutrition. Strengthening bones requires calcium, phosphorus, and vitamin D\u2014not dextrose.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The aqueous medium of the IV drip directly replaces lost body fluids."
+      },
+      {
+        "key": "B",
+        "reason": "Correct (Exception). Dextrose is a simple carbohydrate and does not mineralise or strengthen bones."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Dextrose is pure glucose and directly elevates blood sugar levels."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Dextrose provides 3.4 kcal/g of immediate metabolic energy."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "stem": "A macronutrient X is required for the following functions in the human body.\n\u2022 Growth and development\n\u2022 Formation of new cells and tissues\n\u2022 Transport of oxygen through the blood\nBased on the given functions, X is identified as",
+    "options": {
+      "A": "fats.",
+      "B": "proteins.",
+      "C": "vitamins.",
+      "D": "carbohydrates."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "13.8.2",
+    "sloText": "Describe the biological functions of proteins in the human body.",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Proteins are the structural and functional building blocks of the body required for physical growth, repair and formation of new cells and tissues, and synthesis of haemoglobin (a conjugated globular protein that transports oxygen through the blood).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Fats serve primarily as long-term energy storage and thermal insulation."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Proteins build new cells/tissues and form haemoglobin for oxygen transport in blood."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Vitamins are micronutrients (not macronutrients) that act as coenzymes."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Carbohydrates serve primarily as an immediate source of cellular energy."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "stem": "A vitamin that is synthesised in the human skin by exposure to sunlight is",
+    "options": {
+      "A": "vitamin A.",
+      "B": "vitamin D.",
+      "C": "vitamin E.",
+      "D": "vitamin K."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "13.6.1",
+    "sloText": "Identify sources, functions, and deficiency diseases of fat-soluble and water-soluble vitamins.",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Vitamin D (calciferol / cholecalciferol, the 'sunshine vitamin') is synthesised endogenously in the human skin when 7-dehydrocholesterol is exposed to ultraviolet-B (UV-B) rays from sunlight.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Vitamin A (retinol) is obtained from dietary beta-carotene (carrots, liver, fish oil)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Vitamin D is synthesised in human skin upon exposure to sunlight."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Vitamin E (tocopherol) is obtained from vegetable oils, nuts, and seeds."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Vitamin K is obtained from green leafy vegetables and synthesised by intestinal bacteria."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "stem": "The structure that represents a peptide linkage in a dipeptide molecule is\n(Diagrams: A shows -C(=O)-N(=O)-; B shows -C(=O)-NH-; C shows -O-C(=O)-NH-; D shows -C-O-N-)",
+    "options": {
+      "A": "Structure A: \u2013C(=O)\u2013N(=O)\u2013",
+      "B": "Structure B: \u2013C(=O)\u2013NH\u2013",
+      "C": "Structure C: \u2013O\u2013C(=O)\u2013NH\u2013",
+      "D": "Structure D: \u2013C\u2013O\u2013N\u2013"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "13.2.2",
+    "sloText": "Identify and draw the peptide linkage (-CO-NH-) formed between amino acids.",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-2024-P1/q25.png",
+    "explanation": "A peptide linkage (amide bond) is formed by the condensation reaction between the carboxyl group (\u2013COOH) of one amino acid and the amino group (\u2013NH2) of another amino acid with the elimination of a water molecule, resulting in the \u2013C(=O)\u2013NH\u2013 linkage shown in Structure B.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Nitrogen in a peptide bond is bonded to a hydrogen atom (\u2013NH\u2013), not double-bonded to oxygen."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Structure B shows the amide/peptide linkage \u2013C(=O)\u2013NH\u2013."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Structure C shows a carbamate/urethane linkage (\u2013O\u2013CO\u2013NH\u2013)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Carbon and nitrogen are directly bonded in a peptide linkage, not separated by oxygen."
+      }
+    ]
+  },
+  {
+    "questionNumber": 26,
+    "stem": "The process that returns water into the atmosphere is",
+    "options": {
+      "A": "distillation.",
+      "B": "precipitation.",
+      "C": "transpiration.",
+      "D": "condensation."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "15.1.2",
+    "sloText": "Describe the hydrological (water) cycle and processes that return water to the atmosphere.",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In the natural hydrological cycle, water is returned from the Earth's surface back into the atmosphere as water vapour primarily through evaporation (from water bodies) and transpiration (evaporation of water from plant leaves through stomata).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Distillation is a laboratory/industrial separation method."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Precipitation (rain, snow, hail) brings water from the atmosphere down to the Earth."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Transpiration releases water vapour from plants back into the atmosphere."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Condensation converts atmospheric water vapour into liquid cloud droplets."
+      }
+    ]
+  },
+  {
+    "questionNumber": 27,
+    "stem": "When clean air is bubbled through pure water, its pH",
+    "options": {
+      "A": "remains the same.",
+      "B": "rises from 7.0 to 8.4.",
+      "C": "rises from 7.0 to 10.4.",
+      "D": "lowers from 7.0 to 5.6."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "15.1.1",
+    "sloText": "Explain why natural rainwater and air-saturated water have a slightly acidic pH of ~5.6.",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Clean unpolluted air contains approximately 0.03\u20130.04% carbon dioxide (CO2), which is an acidic non-metal oxide. When clean air is bubbled through pure neutral water (pH 7.0), CO2 dissolves and reacts reversibly with water to form weak carbonic acid (CO2 + H2O \u21cc H2CO3), lowering the pH of the water from 7.0 to about 5.6.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Atmospheric CO2 dissolves in pure water to form carbonic acid, lowering the pH."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Dissolved CO2 is acidic, so pH decreases below 7.0 rather than rising."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Clean air does not contain alkaline gases to raise pH to 10.4."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Carbon dioxide in clean air forms weak carbonic acid (H2CO3) in water, lowering the pH from 7.0 to 5.6."
+      }
+    ]
+  },
+  {
+    "questionNumber": 28,
+    "stem": "Heavy metals, toxic sludge and different solvents are dumped into ocean every year.\nThe MAIN reason of these aquatic contamination is",
+    "options": {
+      "A": "eutrophication.",
+      "B": "industrialisation.",
+      "C": "human settlements.",
+      "D": "agricultural expansion."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "15.4.1",
+    "sloText": "Identify the sources and effects of industrial effluents, agricultural runoff, and domestic sewage on water bodies.",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Heavy metals (such as mercury, lead, cadmium, and chromium), toxic chemical sludge, and organic solvents are characteristic industrial effluents discharged by manufacturing plants, tanneries, electroplating units, and chemical industries (industrialisation).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Eutrophication is an effect (algal bloom and oxygen depletion) caused by nutrient (nitrate/phosphate) enrichment, not the source of heavy metals and solvents."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Industrialisation generates industrial effluents containing heavy metals, toxic sludge, and organic solvents."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Domestic sewage from human settlements consists mainly of biodegradable organic waste and detergents."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Agricultural runoff contains chemical fertilizers (nitrates/phosphates) and pesticides."
+      }
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "stem": "In water, the presence of compound that decreases the cleansing action of soap is",
+    "options": {
+      "A": "deuterium oxide.",
+      "B": "sodium sulphate.",
+      "C": "calcium chloride.",
+      "D": "potassium carbonate."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "15.1.3",
+    "sloText": "Identify compounds causing water hardness and explain how they reduce the cleansing action of soap.",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Dissolved calcium and magnesium salts\u2014such as calcium chloride (CaCl2), calcium sulphate (CaSO4), and magnesium sulphate (MgSO4)\u2014cause hardness in water. The Ca2+ ions react with soap (sodium stearate) to precipitate insoluble calcium stearate (scum), preventing lather formation and decreasing the cleansing action of soap.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Deuterium oxide (D2O) is heavy water, not a hardness-causing salt."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Sodium salts (Na2SO4) contain Na+ ions, which do not precipitate soap."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Calcium chloride (CaCl2) releases Ca2+ ions that cause permanent water hardness and precipitate soap as scum."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Potassium salts (K2CO3) form soluble potassium soaps and do not cause hardness."
+      }
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "stem": "Bacterial contamination, in long-term water supply, can cause the epidemic of",
+    "options": {
+      "A": "typhoid.",
+      "B": "malaria.",
+      "C": "dengue.",
+      "D": "polio."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "15.5.1",
+    "sloText": "Classify waterborne diseases by causative agent (bacterial, viral, protozoal, parasitic).",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Typhoid fever is a severe waterborne bacterial disease caused by the bacterium Salmonella typhi ingested through faecal-contaminated drinking water. Malaria (protozoan Plasmodium) and dengue (flavivirus) are mosquito-borne diseases, while polio is caused by the poliovirus (viral, not bacterial).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Typhoid is caused by the bacterium Salmonella typhi spread through contaminated water supplies."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Malaria is a mosquito-borne protozoal disease caused by Plasmodium."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Dengue is a mosquito-borne viral disease transmitted by Aedes aegypti."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Polio is caused by a virus (poliovirus), not bacteria."
+      }
+    ]
+  },
+  {
+    "questionNumber": 31,
+    "stem": "The set of conditions that causes global warming and increased amount of ultraviolet radiations to reach the Earth surface is\n(Table columns: Concentration of Ozone in Stratosphere | Concentration of Carbon dioxide in Troposphere)",
+    "options": {
+      "A": "Ozone in Stratosphere: decreased | CO2 in Troposphere: decreased",
+      "B": "Ozone in Stratosphere: decreased | CO2 in Troposphere: increased",
+      "C": "Ozone in Stratosphere: increased | CO2 in Troposphere: decreased",
+      "D": "Ozone in Stratosphere: increased | CO2 in Troposphere: increased"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "14.5.2",
+    "sloText": "Relate stratospheric ozone depletion to UV penetration and tropospheric CO2 increase to global warming.",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Stratospheric ozone (O3) absorbs harmful solar ultraviolet (UV) radiation, so a decreased concentration of ozone in the stratosphere allows more UV radiation to reach the Earth's surface. Meanwhile, carbon dioxide (CO2) in the troposphere traps outgoing infrared heat (greenhouse effect), so an increased concentration of CO2 in the troposphere causes global warming.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Decreased tropospheric CO2 would cool the Earth rather than cause global warming."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Decreased stratospheric O3 lets in more UV radiation, and increased tropospheric CO2 traps heat to cause global warming."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Reverses both atmospheric conditions."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Increased stratospheric ozone blocks UV radiation rather than increasing it."
+      }
+    ]
+  },
+  {
+    "questionNumber": 32,
+    "stem": "The BEST way to control air pollution is to decrease the use of",
+    "options": {
+      "A": "fossil fuels.",
+      "B": "catalytic converters.",
+      "C": "electric-powered cars.",
+      "D": "flue gas desulphurisation."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "14.3.4",
+    "sloText": "Recommend strategies to control air pollution and reduce emissions of air pollutants.",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Combustion of fossil fuels (coal, petroleum, natural gas) in vehicles, power plants, and industries is the primary source of air pollutants (CO, CO2, SO2, NOx, particulates). Therefore, decreasing the use of fossil fuels is the best way to control air pollution. In contrast, catalytic converters, electric cars, and flue gas desulphurisation are pollution-control technologies whose use should be increased, not decreased.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Decreasing the burning of fossil fuels directly eliminates the main source of atmospheric pollutants."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Catalytic converters reduce vehicle exhaust emissions and should be used more, not less."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Electric-powered cars produce zero tailpipe emissions and help reduce urban air pollution."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Flue gas desulphurisation removes SO2 from power plant exhaust and should be increased."
+      }
+    ]
+  },
+  {
+    "questionNumber": 33,
+    "stem": "The term, 'greenhouse effect' is defined as the ability of",
+    "options": {
+      "A": "atmosphere to retain water vapours.",
+      "B": "clouds to scatter electromagnetic rays.",
+      "C": "bacteria to oxidise ammonia aerobically.",
+      "D": "certain gases to trap heat within the atmosphere."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "14.6.1",
+    "sloText": "Define the greenhouse effect and explain how greenhouse gases warm the Earth's atmosphere.",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "The greenhouse effect is the natural and anthropogenic process by which certain atmospheric trace gases (such as CO2, CH4, H2O vapour, N2O, and CFCs) absorb and trap outgoing infrared thermal radiation emitted from the Earth's surface, keeping the atmosphere warm.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Retaining water vapour in air is humidity."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Scattering of solar rays by clouds is atmospheric albedo/reflection."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Aerobic oxidation of ammonia by bacteria is nitrification in the nitrogen cycle."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. The greenhouse effect is defined as the ability of greenhouse gases to absorb and trap infrared heat within the atmosphere."
+      }
+    ]
+  },
+  {
+    "questionNumber": 34,
+    "stem": "The pH of acid rain lies between",
+    "options": {
+      "A": "6.5 \u2013 7.0",
+      "B": "6.0 \u2013 6.5",
+      "C": "5.5 \u2013 6.0",
+      "D": "4.0 \u2013 5.5"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "14.4.1",
+    "sloText": "Define acid rain, state its pH range, and explain its formation from SO2 and NOx.",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Normal unpolluted rainwater has a pH of about 5.6 to 6.0 due to dissolved CO2 (carbonic acid). Rainwater is classified as acid rain when dissolved oxides of sulphur (SO2, SO3) and nitrogen (NO2) form strong sulphuric and nitric acids, lowering the pH below 5.6\u2014typically lying between 4.0 and 5.5.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. pH 6.5\u20137.0 is nearly neutral pure water."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. pH 6.0\u20136.5 is normal unpolluted water."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. pH 5.6\u20136.0 is the pH of normal unpolluted rain containing only carbonic acid."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Acid rain has a pH below 5.6, typically ranging between 4.0 and 5.5."
+      }
+    ]
+  },
+  {
+    "questionNumber": 35,
+    "stem": "The layers of Earth in which temperature decreases with the increase in altitude are\nI. troposphere\nII. stratosphere\nIII. mesosphere\nIV. thermosphere",
+    "options": {
+      "A": "I and II.",
+      "B": "I and III.",
+      "C": "II and IV.",
+      "D": "III and IV."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "14.2.2",
+    "sloText": "Describe the temperature profile across the four layers of the atmosphere (troposphere, stratosphere, mesosphere, thermosphere).",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Across the four atmospheric layers:\n- I. Troposphere (0\u201312 km): Temperature decreases with altitude (from ~17\u00b0C to -55\u00b0C).\n- II. Stratosphere (12\u201350 km): Temperature increases with altitude (from -55\u00b0C to -2\u00b0C) due to UV absorption by the ozone layer.\n- III. Mesosphere (50\u201385 km): Temperature decreases with altitude (from -2\u00b0C to -93\u00b0C).\n- IV. Thermosphere (>85 km): Temperature increases sharply with altitude due to absorption of high-energy solar radiation.\nThus, temperature decreases with altitude in I (troposphere) and III (mesosphere).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Temperature increases with altitude in the stratosphere (II)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Temperature decreases with increasing altitude in both the troposphere (I) and the mesosphere (III)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. II and IV are the two layers where temperature increases with altitude."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Temperature increases with altitude in the thermosphere (IV)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 36,
+    "stem": "The fractional distillation of crude oil does NOT yield",
+    "options": {
+      "A": "wax.",
+      "B": "grease.",
+      "C": "charcoal.",
+      "D": "kerosene."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "16.6.4",
+    "sloText": "List the fractions obtained from the fractional distillation of crude oil (petroleum) and their uses.",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Kerosene, lubricating grease, and paraffin wax are all hydrocarbon fractions obtained from the fractional distillation of crude oil (petroleum). Charcoal is an amorphous form of carbon obtained by the destructive distillation (pyrolysis) of wood or animal bones in the absence of air\u2014never from crude oil.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Paraffin wax is obtained from the heavy residual fraction of petroleum."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Lubricating oil and grease are obtained from the high-boiling fractions of petroleum."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Charcoal is produced by destructive distillation of wood, not fractional distillation of crude oil."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Kerosene is a primary middle distillate fraction (C10\u2013C12) of crude oil."
+      }
+    ]
+  },
+  {
+    "questionNumber": 37,
+    "stem": "Brine, limestone and ammonia gas are used in the making of",
+    "options": {
+      "A": "urea.",
+      "B": "steel.",
+      "C": "brass.",
+      "D": "soda ash."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "16.4.1",
+    "sloText": "Identify the raw materials and steps used in the Solvay process for manufacturing soda ash (Na2CO3).",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Concentrated aqueous sodium chloride (brine, NaCl), limestone (calcium carbonate, CaCO3), and ammonia gas (NH3) are the three raw materials used in the Solvay process to manufacture soda ash (anhydrous sodium carbonate, Na2CO3).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Urea is manufactured from ammonia (NH3) and carbon dioxide (CO2) without brine or limestone."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Steel is an alloy of iron and carbon."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Brass is an alloy of copper and zinc."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Brine, limestone, and ammonia are the raw materials of the Solvay process for making soda ash (Na2CO3)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 38,
+    "stem": "During the extraction of iron in a blast furnace, iron oxide converts into iron by the action of",
+    "options": {
+      "A": "carbon.",
+      "B": "oxygen.",
+      "C": "carbon monoxide.",
+      "D": "calcium carbonate."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "16.2.1",
+    "sloText": "Describe the chemical reactions occurring in the extraction of iron in a blast furnace.",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In the reduction zone of a blast furnace, haematite ore (iron(III) oxide, Fe2O3) is reduced to molten metallic iron primarily by ascending carbon monoxide gas (CO) acting as the main reducing agent:\nFe2O3(s) + 3CO(g) -> 2Fe(l) + 3CO2(g).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Coke (carbon) burns with oxygen and CO2 to generate CO gas, which is the main gas-solid reducing agent."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Oxygen is an oxidising agent, whereas extracting iron from iron oxide requires reduction."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Carbon monoxide (CO) is the principal reducing agent that reduces Fe2O3 to Fe in the blast furnace."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Calcium carbonate (limestone) decomposes to CaO, which acts as a flux to remove silica impurities as slag."
+      }
+    ]
+  },
+  {
+    "questionNumber": 39,
+    "stem": "The conversion of SO2 into SO3 in contact process is carried out in the presence of",
+    "options": {
+      "A": "iron.",
+      "B": "nickel.",
+      "C": "platinum.",
+      "D": "vanadium pentoxide."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "16.3.1",
+    "sloText": "Describe the Contact process for the industrial manufacture of sulphuric acid.",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In the Contact process for manufacturing sulphuric acid, the reversible catalytic oxidation of sulphur dioxide to sulphur trioxide (2SO2(g) + O2(g) \u21cc 2SO3(g)) is carried out at 450\u00b0C and 1\u20132 atm in the presence of vanadium pentoxide (V2O5) as the catalyst (which replaced platinum in modern plants because platinum is expensive and easily poisoned by arsenic impurities).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Finely divided iron is the catalyst in the Haber process for ammonia synthesis."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Nickel is the catalyst used for the hydrogenation of vegetable oils and alkenes."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. While used historically, platinum was replaced by V2O5 due to poisoning and high cost."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Vanadium(V) oxide (vanadium pentoxide, V2O5) is the standard industrial catalyst in the Contact process."
+      }
+    ]
+  },
+  {
+    "questionNumber": 40,
+    "stem": "A forensic department is hiring candidates to investigate the evidences collected at a crime scene that occurred in an oil industry.\nTo apply for the job, candidates should have the qualification of",
+    "options": {
+      "A": "organic chemistry.",
+      "B": "analytical chemistry.",
+      "C": "industrial chemistry.",
+      "D": "environmental chemistry."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "16.1.1",
+    "sloText": "Relate branches of chemistry (analytical chemistry) to forensic, industrial, and quality-control careers.",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Forensic investigation of crime scene evidence requires the separation, qualitative identification, and quantitative determination of unknown trace chemical samples using instrumental and chemical analysis\u2014which is the domain of analytical chemistry.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Organic chemistry studies synthesis and reactions of carbon compounds rather than forensic evidence analysis."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Analytical chemistry specialises in qualitative and quantitative chemical analysis, which is the foundation of forensic science."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Industrial chemistry focuses on large-scale commercial manufacturing processes."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Environmental chemistry focuses on ecological pollutants rather than crime scene forensics."
+      }
+    ]
+  }
+]

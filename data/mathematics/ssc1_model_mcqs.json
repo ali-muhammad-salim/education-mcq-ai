@@ -1,0 +1,2342 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "Given that A = {1, 2} and B = {1, {2, 3}}, then A ∩ B will be",
+    "options": {
+      "A": "{1}.",
+      "B": "{1, 2}.",
+      "C": "{1, {2}}.",
+      "D": "{{1, 2}}."
+    },
+    "correctOption": "A",
+    "explanation": "Set A contains the elements 1 and 2, whereas set B contains the element 1 and the nested subset {2, 3} as a single element. Since the number 2 is not an individual element of B, the only element common to both A and B is 1. Therefore, A ∩ B = {1}.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. 1 is the only element that belongs to both set A and set B."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. While 2 ∈ A, 2 ∉ B because {2, 3} is a single set element in B, not the individual number 2."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Neither {2} nor {2, 3} is an element of set A."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The intersection of two sets is the set of their common elements, {1}, not a nested set containing A."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "3.2.2",
+    "sloText": "solve problems using the following operations on sets:\na. union,\nb. intersection,\nc. difference,\nd. symmetric difference,\ne. complement;",
+    "current_slo": "3.2.2",
+    "current_mapping": [
+      {
+        "code": "3.2.2",
+        "description": "solve problems using the following operations on sets:\na. union,\nb. intersection,\nc. difference,\nd. symmetric difference,\ne. complement;",
+        "topic": "Sets Theory"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 3,
+    "unitName": "Sets Theory",
+    "chapter": "Sets Theory",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 3,
+    "marks": 1
+  },
+  {
+    "questionNumber": 2,
+    "stem": "There are 10 balls in a bag. The balls are numbered as 1 to 10. Amaan wants to separate the balls in three sets of even (E), odd (O) and prime (P) numbers as shown in the given Venn diagram.\n\nThe shaded region, represented by X, will contain the balls numbered as",
+    "options": {
+      "A": "{2, 4, 6, 8, 10}.",
+      "B": "{1, 3, 5, 7, 9}.",
+      "C": "{1, 3, 5, 7}.",
+      "D": "{1, 9}."
+    },
+    "correctOption": "D",
+    "explanation": "From 1 to 10, the set of odd numbers is O = {1, 3, 5, 7, 9} and the set of prime numbers is P = {2, 3, 5, 7}. The shaded region X lies inside O but outside P, representing O − P (odd numbers that are not prime). Removing {3, 5, 7} from O leaves {1, 9}.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. {2, 4, 6, 8, 10} is the set of even numbers E, whereas X lies inside the odd set O."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. {1, 3, 5, 7, 9} is the entire set O, including the unshaded intersection O ∩ P = {3, 5, 7}."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 3, 5, and 7 are prime odd numbers in the unshaded region O ∩ P, and 9 is omitted."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. 1 and 9 are the only odd numbers between 1 and 10 that are not prime (O − P)."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "3.4.2",
+    "sloText": "apply properties/ laws of union and intersection to solve, problems using Venn diagram of:\na. two distinct and overlapping sets,\nb. three overlapping sets;",
+    "current_slo": "3.4.2",
+    "current_mapping": [
+      {
+        "code": "3.4.2",
+        "description": "apply properties/ laws of union and intersection to solve, problems using Venn diagram of:\na. two distinct and overlapping sets,\nb. three overlapping sets;",
+        "topic": "Sets Theory"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 3,
+    "unitName": "Sets Theory",
+    "chapter": "Sets Theory",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/MTH-IX-P1/q2.png",
+    "pageNumber": 3,
+    "marks": 1
+  },
+  {
+    "questionNumber": 3,
+    "stem": "The domain of the binary relation, between set P and set Q, in the given diagram is",
+    "options": {
+      "A": "{a, b, c, d}.",
+      "B": "{a, b, d}.",
+      "C": "{a, b, c}.",
+      "D": "{c, d}."
+    },
+    "correctOption": "A",
+    "explanation": "In the arrow diagram from set P to set Q, every element in P (a → 3, b → 6, c → 9, d → 9) has an outgoing arrow pairing it with an element in Q. The domain of the binary relation is the set of all first elements of the ordered pairs, which is {a, b, c, d}.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. All four elements a, b, c, and d in set P are mapped to elements in Q."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Element c also maps to 9 and is part of the domain."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Element d also maps to 9 and is part of the domain."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Elements a and b also map to 3 and 6 respectively, so they belong to the domain."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "3.7.2",
+    "sloText": "find the domain and range of a binary relation.",
+    "current_slo": "3.7.2",
+    "current_mapping": [
+      {
+        "code": "3.7.2",
+        "description": "find the domain and range of a binary relation.",
+        "topic": "Sets Theory"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 3,
+    "unitName": "Sets Theory",
+    "chapter": "Sets Theory",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/MTH-IX-P1/q3.png",
+    "pageNumber": 3,
+    "marks": 1
+  },
+  {
+    "questionNumber": 4,
+    "stem": "If A = {1, 2, 3, 4} and B = {10, 20}, then which of the following is an into function from A to B?",
+    "options": {
+      "A": "{(1, 10), (2, 20)}",
+      "B": "{(1, 10), (2, 10), (3, 10)}",
+      "C": "{(1, 10), (2, 10), (3, 10), (4, 10)}",
+      "D": "{(1, 10), (2, 10), (3, 20), (4, 20)}"
+    },
+    "correctOption": "C",
+    "explanation": "A function f: A → B is an into function if its domain is all of A = {1, 2, 3, 4} and its range is a proper subset of B (Range ⊂ B, i.e., at least one element of B has no pre-image). In option C, the domain is {1, 2, 3, 4} = A and the range is {10} ⊂ {10, 20} = B.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The domain is {1, 2} ≠ A, so it is not a function from A to B."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The domain is {1, 2, 3} ≠ A because element 4 has no image."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Every element of A has a unique image, and the range {10} is a proper subset of B = {10, 20}."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The range is {10, 20} = B, which makes it an onto (surjective) function rather than strictly into."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "4.1.3",
+    "sloText": "identify:\na. into function,\nb. into and one-one function (injective function),\nc. onto function (surjective function),\nd. one-one and onto function (bijective function);",
+    "current_slo": "4.1.3",
+    "current_mapping": [
+      {
+        "code": "4.1.3",
+        "description": "identify:\na. into function,\nb. into and one-one function (injective function),\nc. onto function (surjective function),\nd. one-one and onto function (bijective function);",
+        "topic": "Functions and Graphs"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 4,
+    "unitName": "Functions and Graphs",
+    "chapter": "Functions and Graphs",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 4,
+    "marks": 1
+  },
+  {
+    "questionNumber": 5,
+    "stem": "If A = {a, e, i} and B = {1, 2, 3, 4}, then one of the functions from A to B is",
+    "options": {
+      "A": "{(a, 1), (e, 2)}.",
+      "B": "{(a, 1), (e, 1), (i, 1)}.",
+      "C": "{(a, 1), (e, 2), (i, 3), (a, 4)}.",
+      "D": "{(a, 1), (a, 2), (a, 3), (a, 4)}."
+    },
+    "correctOption": "B",
+    "explanation": "A relation from A to B is a function if its domain equals the entire set A = {a, e, i} and no element of A is paired with more than one element of B. Only {(a, 1), (e, 1), (i, 1)} maps every element of A to a single well-defined element in B.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The element i ∈ A is missing from the domain."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The domain is {a, e, i} = A and each element in A has a unique image in B."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The element a ∈ A has two different images (1 and 4), violating the definition of a function."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Element a is mapped to four values while e and i are not mapped at all."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "4.1.3",
+    "sloText": "identify:\na. into function,\nb. into and one-one function (injective function),\nc. onto function (surjective function),\nd. one-one and onto function (bijective function);",
+    "current_slo": "4.1.3",
+    "current_mapping": [
+      {
+        "code": "4.1.3",
+        "description": "identify:\na. into function,\nb. into and one-one function (injective function),\nc. onto function (surjective function),\nd. one-one and onto function (bijective function);",
+        "topic": "Functions and Graphs"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 4,
+    "unitName": "Functions and Graphs",
+    "chapter": "Functions and Graphs",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 4,
+    "marks": 1
+  },
+  {
+    "questionNumber": 6,
+    "stem": "The correct graphical representation of ay + a = 0 is",
+    "options": {
+      "A": "Graph A",
+      "B": "Graph B",
+      "C": "Graph C",
+      "D": "Graph D"
+    },
+    "correctOption": "A",
+    "explanation": "Assuming a ≠ 0, the equation ay + a = 0 simplifies to ay = −a, which gives y = −1. The graph of the constant function y = −1 is a horizontal straight line parallel to the x-axis passing through (0, −1), shown in Graph A.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Solving ay + a = 0 gives y = −1, which is the horizontal line through −1 on the y-axis."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Graph B shows the horizontal line y = −a instead of y = −1."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Graph C shows the horizontal line y = a."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Graph D shows the horizontal line y = 1 (which corresponds to ay − a = 0)."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "4.4.1",
+    "sloText": "plot graphs of a constant function, identity function, linear function and absolute valued functions;",
+    "current_slo": "4.4.1",
+    "current_mapping": [
+      {
+        "code": "4.4.1",
+        "description": "plot graphs of a constant function, identity function, linear function and absolute valued functions;",
+        "topic": "Functions and Graphs"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 4,
+    "unitName": "Functions and Graphs",
+    "chapter": "Functions and Graphs",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/MTH-IX-P1/q6.png",
+    "pageNumber": 4,
+    "marks": 1
+  },
+  {
+    "questionNumber": 7,
+    "stem": "$\\dfrac{a^4-4a^2}{a^2-2a}$ is equal to",
+    "options": {
+      "A": "$a^2+2a$.",
+      "B": "$a^2-2a$.",
+      "C": "$a^2+4a$.",
+      "D": "$a^2-4a$."
+    },
+    "correctOption": "A",
+    "explanation": "$\\dfrac{a^4-4a^2}{a^2-2a}=\\dfrac{a^2(a-2)(a+2)}{a(a-2)}=a(a+2)=a^2+2a$, for $a\\ne0,2$. The correct answer is A.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Factoring and cancelling a(a − 2) yields a(a + 2) = a^2 + 2a."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Cancelling (a − 2) from (a − 2)(a + 2) leaves (a + 2), not (a − 2)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 4 is the square of 2, so a^2 − 4 factors as (a − 2)(a + 2), not (a − 4)(a + 4)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Both the sign and the constant factor are wrong after factoring a^2 − 4."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "5.2.1",
+    "sloText": "factorise the expression of the following types:\na. ka + kb + kc,\nb. ac + ad + bc + bd,\nc. a^2 ± 2ab + b^2,\nd. a^2 - b^2,\ne. a^2 ± 2ab + b^2 - c^2,\nf. a^4 ± a^2b^2 + b^4 or a^4 + b^4,\ng. ax^2 + bx + c,\nh. (a^3 ± 3a^2b + 3ab^2 ± b^3),\ni. a^3 ± b^3;",
+    "current_slo": "5.2.1",
+    "current_mapping": [
+      {
+        "code": "5.2.1",
+        "description": "factorise the expression of the following types:\na. ka + kb + kc,\nb. ac + ad + bc + bd,\nc. a^2 ± 2ab + b^2,\nd. a^2 - b^2,\ne. a^2 ± 2ab + b^2 - c^2,\nf. a^4 ± a^2b^2 + b^4 or a^4 + b^4,\ng. ax^2 + bx + c,\nh. (a^3 ± 3a^2b + 3ab^2 ± b^3),\ni. a^3 ± b^3;",
+        "topic": "Factorisation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 5,
+    "unitName": "Factorisation",
+    "chapter": "Factorisation",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "marks": 1
+  },
+  {
+    "questionNumber": 8,
+    "stem": "(a + 2b + c)^2 is equal to",
+    "options": {
+      "A": "a^2 + 2b^2 + c^2 + 2ab + 2bc + 2ca.",
+      "B": "a^2 + 4b^2 + c^2 + 4ab + 2bc + 2ca.",
+      "C": "a^2 + 4b^2 + c^2 + 4ab + 4bc + 2ca.",
+      "D": "a^2 + 2b^2 + c^2 + 2ab + 4bc + 2ca."
+    },
+    "correctOption": "C",
+    "explanation": "Using the algebraic identity (x + y + z)^2 = x^2 + y^2 + z^2 + 2xy + 2yz + 2zx with x = a, y = 2b, and z = c gives a^2 + (2b)^2 + c^2 + 2(a)(2b) + 2(2b)(c) + 2(c)(a) = a^2 + 4b^2 + c^2 + 4ab + 4bc + 2ca.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. (2b)^2 = 4b^2, 2(a)(2b) = 4ab, and 2(2b)(c) = 4bc."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The cross term 2(2b)(c) equals 4bc, not 2bc."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Expanding (a + 2b + c)^2 gives a^2 + 4b^2 + c^2 + 4ab + 4bc + 2ca."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. (2b)^2 = 4b^2 and 2(a)(2b) = 4ab."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "5.1.1",
+    "sloText": "apply the following algebraic identities to solve problems:\na. (a + b)^2 + (a - b)^2 = 2(a^2 + b^2),\nb. (a + b)^2 - (a - b)^2 = 4ab,\nc. (a + b)(a - b) = a^2 - b^2,\nd. (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca,\ne. (a + b)^3 = a^3 + 3ab(a + b) + b^3,\nf. (a - b)^3 = a^3 - 3ab(a - b) - b^3,\ng. a^3 + b^3 = (a + b)(a^2 - ab + b^2),\nh. a^3 - b^3 = (a - b)(a^2 + ab + b^2);",
+    "current_slo": "5.1.1",
+    "current_mapping": [
+      {
+        "code": "5.1.1",
+        "description": "apply the following algebraic identities to solve problems:\na. (a + b)^2 + (a - b)^2 = 2(a^2 + b^2),\nb. (a + b)^2 - (a - b)^2 = 4ab,\nc. (a + b)(a - b) = a^2 - b^2,\nd. (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca,\ne. (a + b)^3 = a^3 + 3ab(a + b) + b^3,\nf. (a - b)^3 = a^3 - 3ab(a - b) - b^3,\ng. a^3 + b^3 = (a + b)(a^2 - ab + b^2),\nh. a^3 - b^3 = (a - b)(a^2 + ab + b^2);",
+        "topic": "Factorisation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 5,
+    "unitName": "Factorisation",
+    "chapter": "Factorisation",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "marks": 1
+  },
+  {
+    "questionNumber": 9,
+    "stem": "$u^3-27v^3$ can also be expressed as",
+    "options": {
+      "A": "$(u+3v)(u^2-uv+v^2)$.",
+      "B": "$(u-3v)(u^2+uv+v^2)$.",
+      "C": "$(u+3v)(u^2-3uv+9v^2)$.",
+      "D": "$(u-3v)(u^2+3uv+9v^2)$."
+    },
+    "correctOption": "D",
+    "explanation": "By the difference-of-cubes identity, $u^3-27v^3=u^3-(3v)^3=(u-3v)(u^2+3uv+9v^2)$. The correct answer is D.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. This uses the wrong sign in the first factor and omits the coefficients 3 and 9 in the second factor."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. In the second factor, ab = u(3v) = 3uv and b^2 = (3v)^2 = 9v^2."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. This is the factorisation of u^3 + 27v^3 (sum of cubes), not u^3 − 27v^3."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. By a^3 − b^3 = (a − b)(a^2 + ab + b^2), u^3 − (3v)^3 = (u − 3v)(u^2 + 3uv + 9v^2)."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "5.1.1",
+    "sloText": "apply the following algebraic identities to solve problems:\na. (a + b)^2 + (a - b)^2 = 2(a^2 + b^2),\nb. (a + b)^2 - (a - b)^2 = 4ab,\nc. (a + b)(a - b) = a^2 - b^2,\nd. (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca,\ne. (a + b)^3 = a^3 + 3ab(a + b) + b^3,\nf. (a - b)^3 = a^3 - 3ab(a - b) - b^3,\ng. a^3 + b^3 = (a + b)(a^2 - ab + b^2),\nh. a^3 - b^3 = (a - b)(a^2 + ab + b^2);",
+    "current_slo": "5.1.1",
+    "current_mapping": [
+      {
+        "code": "5.1.1",
+        "description": "apply the following algebraic identities to solve problems:\na. (a + b)^2 + (a - b)^2 = 2(a^2 + b^2),\nb. (a + b)^2 - (a - b)^2 = 4ab,\nc. (a + b)(a - b) = a^2 - b^2,\nd. (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca,\ne. (a + b)^3 = a^3 + 3ab(a + b) + b^3,\nf. (a - b)^3 = a^3 - 3ab(a - b) - b^3,\ng. a^3 + b^3 = (a + b)(a^2 - ab + b^2),\nh. a^3 - b^3 = (a - b)(a^2 + ab + b^2);",
+        "topic": "Factorisation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 5,
+    "unitName": "Factorisation",
+    "chapter": "Factorisation",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "marks": 1
+  },
+  {
+    "questionNumber": 10,
+    "stem": "On factorisation of 25x^2 + 5ax + 10x + 2a, we get",
+    "options": {
+      "A": "(5x + a)(5x + 2).",
+      "B": "(5a + x)(5a + 2).",
+      "C": "(5x^2 + a)(5x + 2).",
+      "D": "(5ax + ax)(5ax + 2)."
+    },
+    "correctOption": "A",
+    "explanation": "Grouping terms gives (25x^2 + 5ax) + (10x + 2a) = 5x(5x + a) + 2(5x + a) = (5x + a)(5x + 2).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Factoring by grouping yields 5x(5x + a) + 2(5x + a) = (5x + a)(5x + 2)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Expanding (5a + x)(5a + 2) gives 25a^2 + 10a + 5ax + 2x, which does not match."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Expanding (5x^2 + a)(5x + 2) gives a cubic term 25x^3."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Expanding this product does not reproduce 25x^2 + 5ax + 10x + 2a."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "5.2.1",
+    "sloText": "factorise the expression of the following types:\na. ka + kb + kc,\nb. ac + ad + bc + bd,\nc. a^2 ± 2ab + b^2,\nd. a^2 - b^2,\ne. a^2 ± 2ab + b^2 - c^2,\nf. a^4 ± a^2b^2 + b^4 or a^4 + b^4,\ng. ax^2 + bx + c,\nh. (a^3 ± 3a^2b + 3ab^2 ± b^3),\ni. a^3 ± b^3;",
+    "current_slo": "5.2.1",
+    "current_mapping": [
+      {
+        "code": "5.2.1",
+        "description": "factorise the expression of the following types:\na. ka + kb + kc,\nb. ac + ad + bc + bd,\nc. a^2 ± 2ab + b^2,\nd. a^2 - b^2,\ne. a^2 ± 2ab + b^2 - c^2,\nf. a^4 ± a^2b^2 + b^4 or a^4 + b^4,\ng. ax^2 + bx + c,\nh. (a^3 ± 3a^2b + 3ab^2 ± b^3),\ni. a^3 ± b^3;",
+        "topic": "Factorisation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 5,
+    "unitName": "Factorisation",
+    "chapter": "Factorisation",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "marks": 1
+  },
+  {
+    "questionNumber": 11,
+    "stem": "8p^3 + 12p^2q + 6pq^2 + q^3 can also be expressed as",
+    "options": {
+      "A": "(2p)^3 + q^3",
+      "B": "(2p + q)^3",
+      "C": "(p + 2q)^3",
+      "D": "p^3 + 2q^3"
+    },
+    "correctOption": "B",
+    "explanation": "Rewriting the expression as (2p)^3 + 3(2p)^2(q) + 3(2p)(q)^2 + q^3 matches the perfect cube identity a^3 + 3a^2b + 3ab^2 + b^3 = (a + b)^3 with a = 2p and b = q, giving (2p + q)^3.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. (2p)^3 + q^3 = 8p^3 + q^3, which omits the middle terms 12p^2q + 6pq^2."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Expanding (2p + q)^3 gives 8p^3 + 12p^2q + 6pq^2 + q^3."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Expanding (p + 2q)^3 gives p^3 + 6p^2q + 12pq^2 + 8q^3."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. p^3 + 2q^3 does not equal 8p^3 + 12p^2q + 6pq^2 + q^3."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "5.2.1",
+    "sloText": "factorise the expression of the following types:\na. ka + kb + kc,\nb. ac + ad + bc + bd,\nc. a^2 ± 2ab + b^2,\nd. a^2 - b^2,\ne. a^2 ± 2ab + b^2 - c^2,\nf. a^4 ± a^2b^2 + b^4 or a^4 + b^4,\ng. ax^2 + bx + c,\nh. (a^3 ± 3a^2b + 3ab^2 ± b^3),\ni. a^3 ± b^3;",
+    "current_slo": "5.2.1",
+    "current_mapping": [
+      {
+        "code": "5.2.1",
+        "description": "factorise the expression of the following types:\na. ka + kb + kc,\nb. ac + ad + bc + bd,\nc. a^2 ± 2ab + b^2,\nd. a^2 - b^2,\ne. a^2 ± 2ab + b^2 - c^2,\nf. a^4 ± a^2b^2 + b^4 or a^4 + b^4,\ng. ax^2 + bx + c,\nh. (a^3 ± 3a^2b + 3ab^2 ± b^3),\ni. a^3 ± b^3;",
+        "topic": "Factorisation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 5,
+    "unitName": "Factorisation",
+    "chapter": "Factorisation",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "marks": 1
+  },
+  {
+    "questionNumber": 12,
+    "stem": "When x^2 + kx − 1 is divided by x − 1, the remainder is 2. The value of k is",
+    "options": {
+      "A": "2",
+      "B": "1",
+      "C": "0",
+      "D": "−2"
+    },
+    "correctOption": "A",
+    "explanation": "By the Remainder Theorem, when P(x) = x^2 + kx − 1 is divided by x − 1, the remainder is P(1). Setting P(1) = 2 gives (1)^2 + k(1) − 1 = 2, which simplifies to k = 2.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Substituting x = 1 gives 1 + k − 1 = 2, so k = 2."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. If k = 1, the remainder P(1) = 1 + 1 − 1 = 1 ≠ 2."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. If k = 0, the remainder P(1) = 1 + 0 − 1 = 0 ≠ 2."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. If k = −2, the remainder P(1) = 1 − 2 − 1 = −2 ≠ 2."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "5.3.2",
+    "sloText": "solve the expression to find the remainder using remainder theorem;\n(Note: when a polynomial of degree up to 4 is divided by polynomial of degree up to 2)",
+    "current_slo": "5.3.2",
+    "current_mapping": [
+      {
+        "code": "5.3.2",
+        "description": "solve the expression to find the remainder using remainder theorem;\n(Note: when a polynomial of degree up to 4 is divided by polynomial of degree up to 2)",
+        "topic": "Factorisation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 5,
+    "unitName": "Factorisation",
+    "chapter": "Factorisation",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "marks": 1
+  },
+  {
+    "questionNumber": 13,
+    "stem": "(t + 2)^3 can also be expressed as",
+    "options": {
+      "A": "t^3 + 6t^2 + 12t + 8",
+      "B": "t^3 − 6t^2 + 12t − 8",
+      "C": "t^3 + 3t^2 + 3t + 8",
+      "D": "t^3 − 3t^2 + 3t − 8"
+    },
+    "correctOption": "A",
+    "explanation": "Using the cube of a binomial identity (a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 with a = t and b = 2 gives t^3 + 3(t^2)(2) + 3(t)(2^2) + 2^3 = t^3 + 6t^2 + 12t + 8.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Expanding (t + 2)^3 gives t^3 + 6t^2 + 12t + 8."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. This is the expansion of (t − 2)^3."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The factors 2 and 2^2 = 4 were not multiplied into the middle coefficients 3t^2 and 3t."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Both the signs and the middle coefficients are incorrect."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "5.1.1",
+    "sloText": "apply the following algebraic identities to solve problems:\na. (a + b)^2 + (a - b)^2 = 2(a^2 + b^2),\nb. (a + b)^2 - (a - b)^2 = 4ab,\nc. (a + b)(a - b) = a^2 - b^2,\nd. (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca,\ne. (a + b)^3 = a^3 + 3ab(a + b) + b^3,\nf. (a - b)^3 = a^3 - 3ab(a - b) - b^3,\ng. a^3 + b^3 = (a + b)(a^2 - ab + b^2),\nh. a^3 - b^3 = (a - b)(a^2 + ab + b^2);",
+    "current_slo": "5.1.1",
+    "current_mapping": [
+      {
+        "code": "5.1.1",
+        "description": "apply the following algebraic identities to solve problems:\na. (a + b)^2 + (a - b)^2 = 2(a^2 + b^2),\nb. (a + b)^2 - (a - b)^2 = 4ab,\nc. (a + b)(a - b) = a^2 - b^2,\nd. (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca,\ne. (a + b)^3 = a^3 + 3ab(a + b) + b^3,\nf. (a - b)^3 = a^3 - 3ab(a - b) - b^3,\ng. a^3 + b^3 = (a + b)(a^2 - ab + b^2),\nh. a^3 - b^3 = (a - b)(a^2 + ab + b^2);",
+        "topic": "Factorisation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 5,
+    "unitName": "Factorisation",
+    "chapter": "Factorisation",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 6,
+    "marks": 1
+  },
+  {
+    "questionNumber": 14,
+    "stem": "On simplification of $\\left(1-\\dfrac{1}{x}\\right)\\div\\dfrac{1}{x}$, we get",
+    "options": {
+      "A": "$1$",
+      "B": "$x-1$",
+      "C": "$\\dfrac{x-1}{x^2}$",
+      "D": "$\\dfrac{1-x}{x^2}$"
+    },
+    "correctOption": "B",
+    "explanation": "$\\left(1-\\dfrac{1}{x}\\right)\\div\\dfrac{1}{x}=\\dfrac{x-1}{x}\\times x=x-1$, for $x\\ne0$. The correct answer is B.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. (x − 1)/x divided by 1/x equals x − 1, not 1."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. ((x − 1)/x) ÷ (1/x) = ((x − 1)/x) × x = x − 1."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. This results from multiplying by 1/x instead of dividing by 1/x."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Both the numerator sign and the multiplication instead of division are wrong."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "6.2.2",
+    "sloText": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;",
+    "current_slo": "6.2.2",
+    "current_mapping": [
+      {
+        "code": "6.2.2",
+        "description": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;",
+        "topic": "Algebraic Manipulation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 6,
+    "unitName": "Algebraic Manipulation",
+    "chapter": "Algebraic Manipulation",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 6,
+    "marks": 1
+  },
+  {
+    "questionNumber": 15,
+    "stem": "45x^2 is the least common multiple (LCM) of",
+    "options": {
+      "A": "3x^2 and 15x.",
+      "B": "3x and 15x.",
+      "C": "5x^2 and 9x.",
+      "D": "5x and 9x."
+    },
+    "correctOption": "C",
+    "explanation": "For 5x^2 and 9x, the LCM of the numerical coefficients 5 and 9 is 45, and the highest power of x is x^2, giving LCM(5x^2, 9x) = 45x^2.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Since 3 is a factor of 15, LCM(3x^2, 15x) = 15x^2, not 45x^2."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. LCM(3x, 15x) = 15x."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. LCM(5, 9) = 45 and LCM(x^2, x) = x^2, so LCM(5x^2, 9x) = 45x^2."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. LCM(5x, 9x) = 45x, which has degree 1 instead of 2."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "6.1.1",
+    "sloText": "determine the highest common factor (H.C.F.) and the least common multiple (L.C.M.) of algebraic expressions using factorisation;",
+    "current_slo": "6.1.1",
+    "current_mapping": [
+      {
+        "code": "6.1.1",
+        "description": "determine the highest common factor (H.C.F.) and the least common multiple (L.C.M.) of algebraic expressions using factorisation;",
+        "topic": "Algebraic Manipulation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 6,
+    "unitName": "Algebraic Manipulation",
+    "chapter": "Algebraic Manipulation",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 6,
+    "marks": 1
+  },
+  {
+    "questionNumber": 16,
+    "stem": "(b + c)/2 − (b + c)/3 is equal to",
+    "options": {
+      "A": "−(b + c)/6",
+      "B": "−(b + 5c)/6",
+      "C": "(b + c)/6",
+      "D": "(b + 5c)/6"
+    },
+    "correctOption": "C",
+    "explanation": "Using the common denominator 6, (b + c)/2 − (b + c)/3 = [3(b + c) − 2(b + c)] / 6 = (b + c)/6.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Since 1/2 > 1/3, 3(b + c) − 2(b + c) is +(b + c), not −(b + c)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Combining like terms in 3b + 3c − 2b − 2c gives b + c, not −(b + 5c)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. (1/2 − 1/3)(b + c) = (b + c)/6."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 3c − 2c = c, not 5c."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "6.2.2",
+    "sloText": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;",
+    "current_slo": "6.2.2",
+    "current_mapping": [
+      {
+        "code": "6.2.2",
+        "description": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;",
+        "topic": "Algebraic Manipulation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 6,
+    "unitName": "Algebraic Manipulation",
+    "chapter": "Algebraic Manipulation",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 6,
+    "marks": 1
+  },
+  {
+    "questionNumber": 17,
+    "stem": "$\\sqrt{a^2+\\dfrac{1}{a^2}-2}$ is equal to",
+    "options": {
+      "A": "$\\left(a+\\dfrac{1}{a}\\right)$.",
+      "B": "$\\left(a-\\dfrac{1}{a}\\right)$.",
+      "C": "$\\left(a^2+\\dfrac{1}{a^2}\\right)$.",
+      "D": "$\\left(a^2-\\dfrac{1}{a^2}\\right)$."
+    },
+    "correctOption": "B",
+    "explanation": "$a^2+\\dfrac{1}{a^2}-2=\\left(a-\\dfrac{1}{a}\\right)^2$. The intended answer is B, $a-\\dfrac{1}{a}$. Strictly, the principal square root is $\\left|a-\\dfrac{1}{a}\\right|$; B assumes $a-\\dfrac{1}{a}\\ge0$. The source question does not state this restriction.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. (a + 1/a)^2 = a^2 + 1/a^2 + 2, which has +2 instead of −2."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. √((a − 1/a)^2) = (a − 1/a)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The exponents inside the square root are halved when taking the square root of the binomial square."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Expanding (a^2 − 1/a^2)^2 gives a^4 + 1/a^4 − 2."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "6.3.1",
+    "sloText": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;",
+    "current_slo": "6.3.1",
+    "current_mapping": [
+      {
+        "code": "6.3.1",
+        "description": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;",
+        "topic": "Algebraic Manipulation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 6,
+    "unitName": "Algebraic Manipulation",
+    "chapter": "Algebraic Manipulation",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 7,
+    "marks": 1
+  },
+  {
+    "questionNumber": 18,
+    "stem": "The solution set of $\\dfrac{x-1}{2}=0$ is",
+    "options": {
+      "A": "$\\{-1\\}$.",
+      "B": "$\\{-3\\}$.",
+      "C": "$\\{3\\}$.",
+      "D": "$\\{1\\}$."
+    },
+    "correctOption": "D",
+    "explanation": "$\\dfrac{x-1}{2}=0$ implies $x-1=0$, so $x=1$. The solution set is $\\{1\\}$ and the correct answer is D.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Substituting x = −1 gives (−1 − 1)/2 = −1 ≠ 0."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Substituting x = −3 gives (−3 − 1)/2 = −2 ≠ 0."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Substituting x = 3 gives (3 − 1)/2 = 1 ≠ 0."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Setting the numerator x − 1 = 0 gives x = 1, so the solution set is {1}."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "7.1.2",
+    "sloText": "solve linear equation with real coefficients;",
+    "current_slo": "7.1.2",
+    "current_mapping": [
+      {
+        "code": "7.1.2",
+        "description": "solve linear equation with real coefficients;",
+        "topic": "Linear Equations and Inequalities"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 7,
+    "unitName": "Linear Equations and Inequalities",
+    "chapter": "Linear Equations and Inequalities",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 7,
+    "marks": 1
+  },
+  {
+    "questionNumber": 19,
+    "stem": "Given that |−x| = −1, the solution set which must satisfy the equation is",
+    "options": {
+      "A": "{−1}.",
+      "B": "{ }.",
+      "C": "{1}.",
+      "D": "{φ}."
+    },
+    "correctOption": "B",
+    "explanation": "The absolute value of any real number is always non-negative (|−x| ≥ 0 for all x ∈ R). Therefore, |−x| = −1 has no real solution, and its solution set is the empty set { }.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. For x = −1, |−(−1)| = |1| = 1 ≠ −1."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. An absolute value cannot equal a negative number, so the solution set is the empty set { }."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. For x = 1, |−1| = 1 ≠ −1."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. {φ} denotes a non-empty set containing the symbol φ; the empty set is written as { } or φ."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "7.2.2",
+    "sloText": "solve equations involving absolute valued functions in one variable;",
+    "current_slo": "7.2.2",
+    "current_mapping": [
+      {
+        "code": "7.2.2",
+        "description": "solve equations involving absolute valued functions in one variable;",
+        "topic": "Linear Equations and Inequalities"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 7,
+    "unitName": "Linear Equations and Inequalities",
+    "chapter": "Linear Equations and Inequalities",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 7,
+    "marks": 1
+  },
+  {
+    "questionNumber": 20,
+    "stem": "The inequality which describes m(x − 1) > m, where m is a natural number, will be",
+    "options": {
+      "A": "x < 1",
+      "B": "x < 2",
+      "C": "x > 1",
+      "D": "x > 2"
+    },
+    "correctOption": "D",
+    "explanation": "Since m is a natural number, m > 0. Dividing both sides of m(x − 1) > m by the positive number m preserves the inequality direction: x − 1 > 1, which simplifies to x > 2.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Dividing by m > 0 does not reverse the inequality sign, and adding 1 to 1 gives 2."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Since m > 0, the inequality sign '>' remains unchanged."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Dividing m by m on the right-hand side gives 1 (not 0), so x − 1 > 1 ⇒ x > 2."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Dividing by m > 0 gives x − 1 > 1, so x > 2."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "7.3.2",
+    "sloText": "solve linear inequalities with real coefficients in one variable and represent the solution on the number line;",
+    "current_slo": "7.3.2",
+    "current_mapping": [
+      {
+        "code": "7.3.2",
+        "description": "solve linear inequalities with real coefficients in one variable and represent the solution on the number line;",
+        "topic": "Linear Equations and Inequalities"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 7,
+    "unitName": "Linear Equations and Inequalities",
+    "chapter": "Linear Equations and Inequalities",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 7,
+    "marks": 1
+  },
+  {
+    "questionNumber": 21,
+    "stem": "If x is a negative number, then the mathematical statement which must be TRUE is",
+    "options": {
+      "A": "−x ≤ 0",
+      "B": "−x ≥ 0",
+      "C": "x < 0",
+      "D": "x > 0"
+    },
+    "correctOption": "C",
+    "explanation": "By definition of inequalities, a negative number is any real number strictly less than zero, which is represented by the strict inequality x < 0.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. If x is negative, −x is strictly positive (−x > 0), so −x ≤ 0 is false."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Because x is strictly negative (x ≠ 0), −x is strictly greater than 0 (−x > 0), whereas x < 0 directly states that x is negative."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. By definition, x is a negative number if and only if x < 0."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. x > 0 states that x is a positive number."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "7.3.1",
+    "sloText": "define inequalities:\na. less than (<),\nb. greater than (>),\nc. less than or equal (≤),\nd. greater than or equal (≥);",
+    "current_slo": "7.3.1",
+    "current_mapping": [
+      {
+        "code": "7.3.1",
+        "description": "define inequalities:\na. less than (<),\nb. greater than (>),\nc. less than or equal (≤),\nd. greater than or equal (≥);",
+        "topic": "Linear Equations and Inequalities"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 7,
+    "unitName": "Linear Equations and Inequalities",
+    "chapter": "Linear Equations and Inequalities",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 7,
+    "marks": 1
+  },
+  {
+    "questionNumber": 22,
+    "stem": "The given figure shows the solution region of inequalities.\n\nTwo of the inequalities satisfying the solution region are",
+    "options": {
+      "A": "x ≤ 4 and y ≤ 3",
+      "B": "x ≤ 3 and y ≤ 4",
+      "C": "x ≥ 4 and y ≥ 3",
+      "D": "x ≥ 3 and y ≥ 4"
+    },
+    "correctOption": "B",
+    "explanation": "The shaded rectangle in the first quadrant lies to the left of the vertical boundary line x = 3 (so x ≤ 3) and below the horizontal boundary line y = 4 passing through the corner point (3, 4) (so y ≤ 4), along with x ≥ 0 and y ≥ 0.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The vertical boundary passes through x = 3 and the horizontal boundary passes through y = 4, as shown by the vertex (3, 4)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The shaded region lies to the left of x = 3 and below y = 4, satisfying x ≤ 3 and y ≤ 4."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Both the coordinates (4 and 3) are swapped and the inequality directions are reversed."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The region is bounded below x = 3 and y = 4 (in [0, 3] × [0, 4]), not above them."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "7.3.6",
+    "sloText": "interpret the regions in the plane that are bounded by two linear inequalities involving two variables.",
+    "current_slo": "7.3.6",
+    "current_mapping": [
+      {
+        "code": "7.3.6",
+        "description": "interpret the regions in the plane that are bounded by two linear inequalities involving two variables.",
+        "topic": "Linear Equations and Inequalities"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 7,
+    "unitName": "Linear Equations and Inequalities",
+    "chapter": "Linear Equations and Inequalities",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/MTH-IX-P1/q22.png",
+    "pageNumber": 8,
+    "marks": 1
+  },
+  {
+    "questionNumber": 23,
+    "stem": "The solution set of $\\sqrt{x-\\dfrac{1}{4}}=\\dfrac{1}{2}$ will be",
+    "options": {
+      "A": "$\\left\\{\\dfrac{1}{4}\\right\\}$.",
+      "B": "$\\left\\{\\dfrac{1}{2}\\right\\}$.",
+      "C": "$\\left\\{0,\\dfrac{1}{4}\\right\\}$.",
+      "D": "$\\left\\{0,\\dfrac{1}{2}\\right\\}$."
+    },
+    "correctOption": "B",
+    "explanation": "Squaring $\\sqrt{x-\\dfrac{1}{4}}=\\dfrac{1}{2}$ gives $x-\\dfrac{1}{4}=\\dfrac{1}{4}$, hence $x=\\dfrac{1}{2}$. Substitution verifies the root. The solution set is $\\left\\{\\dfrac{1}{2}\\right\\}$, option B.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. If x = 1/4, then √(1/4 − 1/4) = 0 ≠ 1/2."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Squaring both sides gives x − 1/4 = 1/4, so x = 1/2."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Neither 0 nor 1/4 satisfies the equation."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. For x = 0, √(−1/4) is not a real number."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "7.1.4",
+    "sloText": "solve radical equations reducible to linear form;",
+    "current_slo": "7.1.4",
+    "current_mapping": [
+      {
+        "code": "7.1.4",
+        "description": "solve radical equations reducible to linear form;",
+        "topic": "Linear Equations and Inequalities"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 7,
+    "unitName": "Linear Equations and Inequalities",
+    "chapter": "Linear Equations and Inequalities",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 8,
+    "marks": 1
+  },
+  {
+    "questionNumber": 24,
+    "stem": "The solution set of 5 − x < 0, where x ∈ R, will be",
+    "options": {
+      "A": "{x | x ∈ R, x < 5}.",
+      "B": "{x | x ∈ R, x > 5}.",
+      "C": "{x | x ∈ R, x > −5}.",
+      "D": "{x | x ∈ R, x < −5}."
+    },
+    "correctOption": "B",
+    "explanation": "Subtracting 5 from both sides of 5 − x < 0 gives −x < −5. Multiplying both sides by −1 reverses the inequality sign, yielding x > 5. Thus the solution set is {x | x ∈ R, x > 5}.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Multiplying −x < −5 by −1 must reverse the inequality sign from '<' to '>'."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. 5 − x < 0 ⇒ x > 5, giving {x | x ∈ R, x > 5}."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The boundary value is +5, not −5."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Both the sign of 5 and the direction of the inequality are wrong."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "7.3.2",
+    "sloText": "solve linear inequalities with real coefficients in one variable and represent the solution on the number line;",
+    "current_slo": "7.3.2",
+    "current_mapping": [
+      {
+        "code": "7.3.2",
+        "description": "solve linear inequalities with real coefficients in one variable and represent the solution on the number line;",
+        "topic": "Linear Equations and Inequalities"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 7,
+    "unitName": "Linear Equations and Inequalities",
+    "chapter": "Linear Equations and Inequalities",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 8,
+    "marks": 1
+  },
+  {
+    "questionNumber": 25,
+    "stem": "The FALSE statement about the rectangular coordinate system in the plane is that the",
+    "options": {
+      "A": "x-axis and y-axis are parallel to each other.",
+      "B": "x and y components can be positive and equal.",
+      "C": "ordered pair of real numbers can represent every point in the plane.",
+      "D": "coordinate system is also known as the Cartesian Coordinate System."
+    },
+    "correctOption": "A",
+    "explanation": "In a rectangular (Cartesian) coordinate system, the horizontal x-axis and vertical y-axis intersect at right angles (they are mutually perpendicular), so stating that they are parallel to each other is false.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct (this is the false statement). The x-axis and y-axis are mutually perpendicular, not parallel."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. This statement is true; any point on the line y = x in the first quadrant has positive and equal x and y coordinates."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. This statement is true; every point in the plane corresponds uniquely to an ordered pair (x, y) of real numbers."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. This statement is true; the rectangular coordinate system is also called the Cartesian coordinate system."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "8.1.1",
+    "sloText": "describe rectangular coordinate system in plane;",
+    "current_slo": "8.1.1",
+    "current_mapping": [
+      {
+        "code": "8.1.1",
+        "description": "describe rectangular coordinate system in plane;",
+        "topic": "Vectors"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 8,
+    "unitName": "Vectors",
+    "chapter": "Vectors",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 9,
+    "marks": 1
+  },
+  {
+    "questionNumber": 26,
+    "stem": "If $\\overrightarrow{MP}=-\\left(-3\\hat{\\imath}\\right)$ and $\\overrightarrow{MO}=3\\hat{\\jmath}+3\\hat{\\imath}$, then the position vector of $P$ will be",
+    "options": {
+      "A": "$3\\hat{\\jmath}$.",
+      "B": "$-3\\hat{\\jmath}$.",
+      "C": "$6\\hat{\\imath}+3\\hat{\\jmath}$.",
+      "D": "$6\\hat{\\imath}-3\\hat{\\jmath}$."
+    },
+    "correctOption": "B",
+    "explanation": "$\\overrightarrow{MP}=3\\hat{\\imath}$ and $\\overrightarrow{OM}=-\\overrightarrow{MO}=-3\\hat{\\imath}-3\\hat{\\jmath}$. Hence $\\overrightarrow{OP}=\\overrightarrow{OM}+\\overrightarrow{MP}=-3\\hat{\\jmath}$. The correct answer is B.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 3ĵ has the opposite sign because OM⃗ = −MO⃗ = −3î − 3ĵ."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. OP⃗ = OM⃗ + MP⃗ = −MO⃗ + MP⃗ = (−3î − 3ĵ) + 3î = −3ĵ."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. This adds MO⃗ + MP⃗ without reversing MO⃗ to OM⃗."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The î-components (−3î and +3î) cancel to 0î, not 6î."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "8.2.4",
+    "sloText": "represent a vector in a Cartesian plane by describing the fundamental unit vectors i and j;",
+    "current_slo": "8.2.4",
+    "current_mapping": [
+      {
+        "code": "8.2.4",
+        "description": "represent a vector in a Cartesian plane by describing the fundamental unit vectors i and j;",
+        "topic": "Vectors"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 8,
+    "unitName": "Vectors",
+    "chapter": "Vectors",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 9,
+    "marks": 1
+  },
+  {
+    "questionNumber": 27,
+    "stem": "The magnitude of the position vector of the point $A\\,(2,4,3)$ is",
+    "options": {
+      "A": "$9$ units.",
+      "B": "$24$ units.",
+      "C": "$\\sqrt{17}$ units.",
+      "D": "$\\sqrt{29}$ units."
+    },
+    "correctOption": "D",
+    "explanation": "The magnitude is $\\sqrt{2^2+4^2+3^2}=\\sqrt{29}$ units. The correct answer is D.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 2 + 4 + 3 = 9 is the sum of coordinates, not the vector magnitude."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. 2 × 4 × 3 = 24 is the product of coordinates."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. √17 omits squaring one of the components accurately (4 + 16 + 9 = 29)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. |OA⃗| = √(2^2 + 4^2 + 3^2) = √(4 + 16 + 9) = √29 units."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "8.1.3",
+    "sloText": "determine magnitude of a vector;",
+    "current_slo": "8.1.3",
+    "current_mapping": [
+      {
+        "code": "8.1.3",
+        "description": "determine magnitude of a vector;",
+        "topic": "Vectors"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 8,
+    "unitName": "Vectors",
+    "chapter": "Vectors",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 9,
+    "marks": 1
+  },
+  {
+    "questionNumber": 28,
+    "stem": "The valid condition for the distance between two points $(a,b)$ and $(c,d)$ will be",
+    "options": {
+      "A": "$(a-c)^2+(b-d)^2>0$",
+      "B": "$(b-a)^2+(d-c)^2>0$",
+      "C": "$(a-c)^2+(b-d)^2<0$",
+      "D": "$(b-a)^2+(d-c)^2<0$"
+    },
+    "correctOption": "A",
+    "explanation": "The distance is $\\sqrt{(a-c)^2+(b-d)^2}$. For distinct points, $(a-c)^2+(b-d)^2>0$, so the correct answer is A.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. The radicand of the distance formula subtracts corresponding x-coordinates (a − c) and y-coordinates (b − d), and a sum of squares for distinct points is > 0."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. (b − a) and (d − c) subtract the x and y coordinates of the same point rather than corresponding coordinates of the two points."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. A sum of squares of real numbers cannot be negative."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Both the coordinate pairing and the inequality sign (< 0) are invalid."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "9.1.2",
+    "sloText": "explain distance formula by locating the position of two points in coordinate plane;",
+    "current_slo": "9.1.2",
+    "current_mapping": [
+      {
+        "code": "9.1.2",
+        "description": "explain distance formula by locating the position of two points in coordinate plane;",
+        "topic": "Introduction to Coordinate Geometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 9,
+    "unitName": "Introduction to Coordinate Geometry",
+    "chapter": "Introduction to Coordinate Geometry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 9,
+    "marks": 1
+  },
+  {
+    "questionNumber": 29,
+    "stem": "The midpoint of the line segment joining the two points (2, −2) and (−2, −2) is (m, n). The value of n^2 is equal to",
+    "options": {
+      "A": "−2",
+      "B": "−4",
+      "C": "4",
+      "D": "0"
+    },
+    "correctOption": "C",
+    "explanation": "By the midpoint formula, (m, n) = ((2 + (−2))/2, (−2 + (−2))/2) = (0, −2). Therefore, n = −2, and n^2 = (−2)^2 = 4.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. −2 is the value of n, whereas the question asks for n^2."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The square of a real number (−2)^2 is +4, not −4."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Since n = (−2 + (−2))/2 = −2, we have n^2 = (−2)^2 = 4."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 0 is the value of m (and m^2), not n^2."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "9.2.1",
+    "sloText": "calculate the midpoint of a line segment;",
+    "current_slo": "9.2.1",
+    "current_mapping": [
+      {
+        "code": "9.2.1",
+        "description": "calculate the midpoint of a line segment;",
+        "topic": "Introduction to Coordinate Geometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 9,
+    "unitName": "Introduction to Coordinate Geometry",
+    "chapter": "Introduction to Coordinate Geometry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 9,
+    "marks": 1
+  },
+  {
+    "questionNumber": 30,
+    "stem": "Consider the given figure.\n\nIf the gradient of the line $l_2$ is $-\\dfrac{1}{\\sqrt{5}}$, then the gradient of the lines $l_1$ and $l_3$ will be",
+    "options": {
+      "A": "$-\\dfrac{1}{\\sqrt{5}}$ and $-\\sqrt{5}$ respectively.",
+      "B": "$-\\dfrac{1}{\\sqrt{5}}$ and $\\sqrt{5}$ respectively.",
+      "C": "$\\dfrac{1}{\\sqrt{5}}$ and $-\\sqrt{5}$ respectively.",
+      "D": "$\\dfrac{1}{\\sqrt{5}}$ and $\\sqrt{5}$ respectively."
+    },
+    "correctOption": "B",
+    "explanation": "The right-angle markings show $l_1\\parallel l_2$ and $l_3\\perp l_2$. Therefore $m_1=m_2=-\\dfrac{1}{\\sqrt{5}}$ and $m_3=-\\dfrac{1}{m_2}=\\sqrt{5}$. The correct answer is B.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Since l_3 is perpendicular to l_2, the product of their gradients must be −1, so the gradient of l_3 is +√5, not −√5."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Line l_1 is parallel to l_2 (gradient −1/√5) and line l_3 is perpendicular to l_2 (gradient √5)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Parallel lines have identical gradients (−1/√5), not opposite signs."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. The gradient of l_1 equals the gradient of l_2, which is −1/√5."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "9.3.3",
+    "sloText": "determine the gradient of:\na. parallel lines,\nb. perpendicular lines;",
+    "current_slo": "9.3.3",
+    "current_mapping": [
+      {
+        "code": "9.3.3",
+        "description": "determine the gradient of:\na. parallel lines,\nb. perpendicular lines;",
+        "topic": "Introduction to Coordinate Geometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 9,
+    "unitName": "Introduction to Coordinate Geometry",
+    "chapter": "Introduction to Coordinate Geometry",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/MTH-IX-P1/q30.png",
+    "pageNumber": 10,
+    "marks": 1
+  },
+  {
+    "questionNumber": 31,
+    "stem": "The straight line that has a slope 2 and y-intercept 8 is",
+    "options": {
+      "A": "2x − y − 8 = 0",
+      "B": "2x + y + 8 = 0",
+      "C": "−2x − y + 8 = 0",
+      "D": "−2x + y − 8 = 0"
+    },
+    "correctOption": "D",
+    "explanation": "Substituting slope m = 2 and y-intercept c = 8 into the slope-intercept form y = mx + c gives y = 2x + 8. Rearranging all terms to one side yields −2x + y − 8 = 0.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 2x − y − 8 = 0 rearranges to y = 2x − 8, which has a y-intercept of −8."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. 2x + y + 8 = 0 rearranges to y = −2x − 8, which has slope −2 and y-intercept −8."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. −2x − y + 8 = 0 rearranges to y = −2x + 8, which has slope −2."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. −2x + y − 8 = 0 rearranges to y = 2x + 8, which has slope 2 and y-intercept 8."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "9.4.2",
+    "sloText": "convert the general form of the equation of a straight line into the form mentioned in SLO # 9.4.1;",
+    "current_slo": "9.4.2",
+    "current_mapping": [
+      {
+        "code": "9.4.2",
+        "description": "convert the general form of the equation of a straight line into the form mentioned in SLO # 9.4.1;",
+        "topic": "Introduction to Coordinate Geometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 9,
+    "unitName": "Introduction to Coordinate Geometry",
+    "chapter": "Introduction to Coordinate Geometry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 10,
+    "marks": 1
+  },
+  {
+    "questionNumber": 32,
+    "stem": "The slope-intercept form of the line 3x − 3y + 6 = 0 will be",
+    "options": {
+      "A": "y = x + 2",
+      "B": "y = x − 6",
+      "C": "y = 3x + 6",
+      "D": "y = −3x − 2"
+    },
+    "correctOption": "A",
+    "explanation": "Isolating y in 3x − 3y + 6 = 0 gives 3y = 3x + 6. Dividing every term by 3 yields the slope-intercept form y = x + 2.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. 3y = 3x + 6 divided by 3 gives y = x + 2."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Both the sign and division of the constant term 6 by 3 were done incorrectly."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Dividing 3y by 3 requires dividing 3x and 6 by 3 as well."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Moving 3y to the other side gives +3y = 3x + 6, so the slope is +1, not −3."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "9.4.2",
+    "sloText": "convert the general form of the equation of a straight line into the form mentioned in SLO # 9.4.1;",
+    "current_slo": "9.4.2",
+    "current_mapping": [
+      {
+        "code": "9.4.2",
+        "description": "convert the general form of the equation of a straight line into the form mentioned in SLO # 9.4.1;",
+        "topic": "Introduction to Coordinate Geometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 9,
+    "unitName": "Introduction to Coordinate Geometry",
+    "chapter": "Introduction to Coordinate Geometry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 10,
+    "marks": 1
+  },
+  {
+    "questionNumber": 33,
+    "stem": "Consider the two intersecting lines, y = 2x − 5 and y = −2x + 11.\n\nThe locus of points that are equidistant from the given intersected lines are the straight lines",
+    "options": {
+      "A": "x = 0 and y = 0",
+      "B": "x = 4 and y = 3",
+      "C": "x = 2 and y = −2",
+      "D": "x = 3 and y = −4"
+    },
+    "correctOption": "B",
+    "explanation": "The locus of points equidistant from two intersecting lines consists of their two angle bisectors, which pass through the point of intersection. Solving 2x − 5 = −2x + 11 gives 4x = 16 ⇒ x = 4, and y = 2(4) − 5 = 3. Because the two lines have opposite slopes (+2 and −2), their angle bisectors are the vertical and horizontal lines through (4, 3), namely x = 4 and y = 3.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The given lines intersect at (4, 3), not at the origin (0, 0)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The lines intersect at (4, 3) with symmetric slopes ±2, so the angle bisectors are x = 4 and y = 3."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 2 and −2 are the gradients of the two given lines, not the equations of the angle bisectors."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Neither x = 3 nor y = −4 passes through the intersection point (4, 3)."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "10.2.1",
+    "sloText": "solve problems using the method of intersecting loci for sets of points in two dimensions which are mentioned in SLO 10.1.3.",
+    "current_slo": "10.2.1",
+    "current_mapping": [
+      {
+        "code": "10.2.1",
+        "description": "solve problems using the method of intersecting loci for sets of points in two dimensions which are mentioned in SLO 10.1.3.",
+        "topic": "Loci"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 10,
+    "unitName": "Loci",
+    "chapter": "Loci",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 10,
+    "marks": 1
+  },
+  {
+    "questionNumber": 34,
+    "stem": "Two points, S and T, are 10 cm apart on a straight line.\n\nThe locus of a point Q that is equidistant from S to T is a",
+    "options": {
+      "A": "parallel line to ST.",
+      "B": "point that lies on ST.",
+      "C": "circle with a dimeter ST.",
+      "D": "perpendicular bisector of ST."
+    },
+    "correctOption": "D",
+    "explanation": "In two dimensions, the locus of all points equidistant from two fixed points S and T is the perpendicular bisector of the line segment ST.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. A line parallel to ST is the locus of points at a fixed distance from the line ST, not equidistant from the endpoints S and T."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The midpoint of ST is only one point on ST; the complete locus in a plane is the entire perpendicular bisector line."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Points on a circle with diameter ST are at a constant distance from the midpoint of ST, not equidistant from S and T."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Every point on the perpendicular bisector of ST is equidistant from S and T."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "10.1.3",
+    "sloText": "explain the locus of points under the given conditions:\na. at a given distance from a given point,\nb. at a given distance from a given straight line,\nc. equidistant from two given points,\nd. equidistant from two given intersecting straight lines;",
+    "current_slo": "10.1.3",
+    "current_mapping": [
+      {
+        "code": "10.1.3",
+        "description": "explain the locus of points under the given conditions:\na. at a given distance from a given point,\nb. at a given distance from a given straight line,\nc. equidistant from two given points,\nd. equidistant from two given intersecting straight lines;",
+        "topic": "Loci"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 10,
+    "unitName": "Loci",
+    "chapter": "Loci",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 11,
+    "marks": 1
+  },
+  {
+    "questionNumber": 35,
+    "stem": "An angle bisector is a locus of a point that is equidistant from two lines.\n\nWhich of the following options is/ are correct for the given statement?\n\nI. Parallel lines\nII. Perpendicular lines\nIII. Intersecting lines",
+    "options": {
+      "A": "I only",
+      "B": "II only",
+      "C": "I and III",
+      "D": "II and III"
+    },
+    "correctOption": "D",
+    "explanation": "An angle is formed whenever two lines intersect (including the special case where the two lines are perpendicular and intersect at 90°). Thus, the locus of a point equidistant from two intersecting (or perpendicular) lines is the pair of angle bisectors of the angles between them.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Parallel lines never intersect to form an angle; the locus of points equidistant from two parallel lines is a third parallel line midway between them."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. While perpendicular lines do have angle bisectors, any pair of intersecting lines (III) also has angle bisectors."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Statement I (parallel lines) does not form an angle bisector."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Both intersecting lines (III) and their special case, perpendicular lines (II), have angle bisectors as the locus of equidistant points."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "10.1.3",
+    "sloText": "explain the locus of points under the given conditions:\na. at a given distance from a given point,\nb. at a given distance from a given straight line,\nc. equidistant from two given points,\nd. equidistant from two given intersecting straight lines;",
+    "current_slo": "10.1.3",
+    "current_mapping": [
+      {
+        "code": "10.1.3",
+        "description": "explain the locus of points under the given conditions:\na. at a given distance from a given point,\nb. at a given distance from a given straight line,\nc. equidistant from two given points,\nd. equidistant from two given intersecting straight lines;",
+        "topic": "Loci"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 10,
+    "unitName": "Loci",
+    "chapter": "Loci",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 11,
+    "marks": 1
+  },
+  {
+    "questionNumber": 36,
+    "stem": "Two similar rectangles have sides in the ratio 2:3.\n\nIf the area of the larger rectangle is 27 cm^2, then the area of the smaller rectangle will be",
+    "options": {
+      "A": "9 cm^2",
+      "B": "12 cm^2",
+      "C": "13.5 cm^2",
+      "D": "18 cm^2"
+    },
+    "correctOption": "B",
+    "explanation": "For similar figures, the ratio of their areas is equal to the square of the ratio of their corresponding sides: (Area_small / Area_large) = (2/3)^2 = 4/9. Given Area_large = 27 cm^2, Area_small = (4/9) × 27 = 12 cm^2.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 9 cm^2 comes from dividing 27 by 3 instead of multiplying by (2/3)^2 = 4/9."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Area_small = (2/3)^2 × 27 = (4/9) × 27 = 12 cm^2."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 13.5 cm^2 is half of 27 cm^2."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 18 cm^2 uses the linear side ratio (2/3) × 27 instead of the squared area ratio (2/3)^2 × 27."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "12.1.2",
+    "sloText": "solve problems by applying the relationship between area and volume of similar figures as mentioned in SLO 12.1.1;",
+    "current_slo": "12.1.2",
+    "current_mapping": [
+      {
+        "code": "12.1.2",
+        "description": "solve problems by applying the relationship between area and volume of similar figures as mentioned in SLO 12.1.1;",
+        "topic": "Similar Figures"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 12,
+    "unitName": "Similar Figures",
+    "chapter": "Similar Figures",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 11,
+    "marks": 1
+  },
+  {
+    "questionNumber": 37,
+    "stem": "If two triangles are similar, then their",
+    "options": {
+      "A": "corresponding angles are equal.",
+      "B": "corresponding sides are equal.",
+      "C": "perimeters are equal.",
+      "D": "areas are equal."
+    },
+    "correctOption": "A",
+    "explanation": "By definition, two triangles are similar if and only if their corresponding angles are equal and the lengths of their corresponding sides are proportional.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Similar triangles always have equal corresponding angles."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Corresponding sides of similar triangles are in equal proportion (ratio), not necessarily equal in length (which holds only for congruent triangles)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Perimeters of similar triangles are in the same ratio as their corresponding sides, not necessarily equal."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Areas of similar triangles are in the ratio of the squares of their corresponding sides."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "12.1.1",
+    "sloText": "describe the conditions for following polygons and solids to be similar:\na. triangle,\nb. square and rectangle,\nc. cube and cuboid,\nd. semi-circle and circle;",
+    "current_slo": "12.1.1",
+    "current_mapping": [
+      {
+        "code": "12.1.1",
+        "description": "describe the conditions for following polygons and solids to be similar:\na. triangle,\nb. square and rectangle,\nc. cube and cuboid,\nd. semi-circle and circle;",
+        "topic": "Similar Figures"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 12,
+    "unitName": "Similar Figures",
+    "chapter": "Similar Figures",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 11,
+    "marks": 1
+  },
+  {
+    "questionNumber": 38,
+    "stem": "Sameer has given two triangular buildings to analyse their sizes and angles.\n\nBased on his analysis the triangles",
+    "options": {
+      "A": "are equal in sides and equal in angles.",
+      "B": "have equal ratios of sides and are equal in angles.",
+      "C": "are equal in sides and have equal ratios of angles.",
+      "D": "have equal ratios of sides and equal ratios of angles."
+    },
+    "correctOption": "B",
+    "explanation": "Comparing the corresponding side lengths of the two triangles gives 4 / 1.5 = 8 / 3 = 12 / 4.5 = 8/3. Since the ratios of all three pairs of corresponding sides are equal, the triangles are similar, meaning they have equal ratios of sides and equal corresponding angles.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The side lengths (4, 8, 12 vs. 1.5, 3, 4.5) are not equal."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The corresponding sides have a constant ratio of 8:3, so the triangles are similar: they have equal ratios of sides and are equal in corresponding angles."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The side lengths are proportional, not equal."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. In similar triangles, corresponding angles are equal to one another (which makes their ratio 1:1, i.e., equal in angles)."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "12.1.3",
+    "sloText": "analyse whether the two figures are similar as mentioned in SLO 12.1.1.",
+    "current_slo": "12.1.3",
+    "current_mapping": [
+      {
+        "code": "12.1.3",
+        "description": "analyse whether the two figures are similar as mentioned in SLO 12.1.1.",
+        "topic": "Similar Figures"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 12,
+    "unitName": "Similar Figures",
+    "chapter": "Similar Figures",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/MTH-IX-P1/q38.png",
+    "pageNumber": 11,
+    "marks": 1
+  },
+  {
+    "questionNumber": 39,
+    "stem": "In the given diagram, D and E are the midpoints of the sides AC and BC respectively.\n\nIf AB = 4x, DE = 16 cm and EC = 40 cm, then the value of x is equal to",
+    "options": {
+      "A": "8 cm.",
+      "B": "12 cm.",
+      "C": "16 cm.",
+      "D": "32 cm."
+    },
+    "correctOption": "A",
+    "explanation": "By the triangle midpoint theorem, the line segment joining the midpoints D and E of two sides of triangle ABC is equal to one-half the length of the third side AB: DE = (1/2) AB. Substituting DE = 16 and AB = 4x gives 16 = (1/2)(4x) = 2x, so x = 8 cm.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Since DE = (1/2) AB, 16 = 2x, which gives x = 8 cm."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. If x = 12 cm, AB = 48 cm and DE = 24 cm ≠ 16 cm."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 16 cm is the length of DE, not the value of x."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 32 cm is the total length of side AB = 2 × DE = 4x; dividing by 4 gives x = 8 cm."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "13.1.1",
+    "sloText": "apply the following properties to solve related problems:\na. if two opposite sides of a quadrilateral are congruent and parallel, it is a parallelogram,\nb. in a parallelogram:\n   i. the opposite sides are congruent,\n   ii. the opposite angles are congruent,\n   iii. the diagonals bisect each other;\nc. the line segment, joining the midpoints of two sides of a triangle, is parallel to the third side and is equal to one half of its length;",
+    "current_slo": "13.1.1",
+    "current_mapping": [
+      {
+        "code": "13.1.1",
+        "description": "apply the following properties to solve related problems:\na. if two opposite sides of a quadrilateral are congruent and parallel, it is a parallelogram,\nb. in a parallelogram:\n   i. the opposite sides are congruent,\n   ii. the opposite angles are congruent,\n   iii. the diagonals bisect each other;\nc. the line segment, joining the midpoints of two sides of a triangle, is parallel to the third side and is equal to one half of its length;",
+        "topic": "Geometrical Properties of Regular Polygons"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 13,
+    "unitName": "Geometrical Properties of Regular Polygons",
+    "chapter": "Geometrical Properties of Regular Polygons",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/MTH-IX-P1/q39.png",
+    "pageNumber": 12,
+    "marks": 1
+  },
+  {
+    "questionNumber": 40,
+    "stem": "Aliya is designing a square-shaped garden with diagonal pathways measuring 8 m in length. She wants to install a fence around the garden’s perimeter to protect the plants.\n\nHow much fencing material will she need to go all the way around the garden?",
+    "options": {
+      "A": "4√2 m",
+      "B": "16√2 m",
+      "C": "32 m",
+      "D": "48 m"
+    },
+    "correctOption": "B",
+    "explanation": "In a square of side length s, the diagonal has length d = s√2. Given d = 8 m, the side length is s = 8 / √2 = 4√2 m. The perimeter of the square is 4s = 4(4√2) = 16√2 m.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 4√2 m is the length of a single side of the square garden, not its 4-sided perimeter."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Each side is 8/√2 = 4√2 m, so the total perimeter is 4 × 4√2 = 16√2 m."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 32 m assumes the side length is 8 m rather than the diagonal being 8 m."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 48 m is 6 × 8 m and does not correspond to the perimeter of the square."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "13.2.1",
+    "sloText": "solve real world problems that involve the properties mentioned in SLO 13.1.1 of the following polygons:\na. triangle,\nb. rectangle,\nc. square.",
+    "current_slo": "13.2.1",
+    "current_mapping": [
+      {
+        "code": "13.2.1",
+        "description": "solve real world problems that involve the properties mentioned in SLO 13.1.1 of the following polygons:\na. triangle,\nb. rectangle,\nc. square.",
+        "topic": "Geometrical Properties of Regular Polygons"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 13,
+    "unitName": "Geometrical Properties of Regular Polygons",
+    "chapter": "Geometrical Properties of Regular Polygons",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 12,
+    "marks": 1
+  },
+  {
+    "questionNumber": 41,
+    "stem": "Sana is designing a kite for an art competition. The frame of the kite must be a parallelogram, with two bamboo sticks PR and QS acting as its diagonals as mentioned in a given diagram.\n\nThe sticks are bisecting at point O, and the kite’s paper is stretched tightly over the frame.\n\nThe length of OR = 8 inches, QO = 9 inches, PS = (PR − 3) inches and RS = (QS − 4) inches.\n\nIf she wants to decorate the edges PQRS of the kite with a ribbon, then the total length of the ribbon will be",
+    "options": {
+      "A": "20",
+      "B": "27",
+      "C": "34",
+      "D": "54"
+    },
+    "correctOption": "D",
+    "explanation": "Because the diagonals of parallelogram PQRS bisect each other at O, PR = 2 × OR = 2(8) = 16 inches and QS = 2 × QO = 2(9) = 18 inches. Thus, PS = PR − 3 = 16 − 3 = 13 inches and RS = QS − 4 = 18 − 4 = 14 inches. Since opposite sides of a parallelogram are equal (QR = PS = 13 and PQ = RS = 14), the total perimeter is 2(13 + 14) = 54 inches.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Using OR = 8 and QO = 9 without doubling to get the full diagonals PR = 16 and QS = 18 gives 5 + 5 = 10 or 20."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. 27 inches is the sum of two adjacent sides (PS + RS = 13 + 14 = 27), which is only half the perimeter."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 34 inches is the sum of the two diagonals (PR + QS = 16 + 18 = 34), not the perimeter of the four outer edges."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. PR = 16 ⇒ PS = 13, and QS = 18 ⇒ RS = 14, giving perimeter 2(13 + 14) = 54 inches."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "13.2.1",
+    "sloText": "solve real world problems that involve the properties mentioned in SLO 13.1.1 of the following polygons:\na. triangle,\nb. rectangle,\nc. square.",
+    "current_slo": "13.2.1",
+    "current_mapping": [
+      {
+        "code": "13.2.1",
+        "description": "solve real world problems that involve the properties mentioned in SLO 13.1.1 of the following polygons:\na. triangle,\nb. rectangle,\nc. square.",
+        "topic": "Geometrical Properties of Regular Polygons"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 13,
+    "unitName": "Geometrical Properties of Regular Polygons",
+    "chapter": "Geometrical Properties of Regular Polygons",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/MTH-IX-P1/q41.png",
+    "pageNumber": 12,
+    "marks": 1
+  },
+  {
+    "questionNumber": 42,
+    "stem": "$1\\dfrac{1}{4}$ rotation in anticlockwise direction is equal to",
+    "options": {
+      "A": "$90^\\circ$",
+      "B": "$270^\\circ$",
+      "C": "$288^\\circ$",
+      "D": "$450^\\circ$"
+    },
+    "correctOption": "D",
+    "explanation": "One complete anticlockwise rotation is $360^\\circ$. Therefore $1\\dfrac{1}{4}\\times360^\\circ=\\dfrac{5}{4}\\times360^\\circ=450^\\circ$. The correct answer is D.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 90° is 1/4 of a rotation, omitting the 1 full rotation (360°)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. 270° corresponds to 3/4 of a rotation (or 360° − 90°)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 288° corresponds to 4/5 of a rotation (360° ÷ 1.25)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. (5/4) × 360° = 450°."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "14.1.1",
+    "sloText": "describe the sexagesimal system (degree, minute and second);",
+    "current_slo": "14.1.1",
+    "current_mapping": [
+      {
+        "code": "14.1.1",
+        "description": "describe the sexagesimal system (degree, minute and second);",
+        "topic": "Introduction to Trigonometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 14,
+    "unitName": "Introduction to Trigonometry",
+    "chapter": "Introduction to Trigonometry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 13,
+    "marks": 1
+  },
+  {
+    "questionNumber": 43,
+    "stem": "In the given triangle XYZ, side XY is equal to",
+    "options": {
+      "A": "2 cm.",
+      "B": "2√3 cm.",
+      "C": "3 cm.",
+      "D": "4 cm."
+    },
+    "correctOption": "B",
+    "explanation": "In right-angled triangle XYZ (with ∠Y = 180° − 60° − 30° = 90°), side XY can be found using Pythagoras' theorem: XY = √(XZ^2 − YZ^2) = √(4^2 − 2^2) = √(16 − 4) = √12 = 2√3 cm (or using trigonometry: XY = 4 cos 30° = 4(√3/2) = 2√3 cm).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 2 cm is the length of side YZ opposite to 30°."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. XY = √(4^2 − 2^2) = √12 = 2√3 cm."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Subtracting lengths directly (4 − 2 = 2) or miscalculating √12 ≠ 3 is invalid."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 4 cm is the hypotenuse XZ."
+      }
+    ],
+    "cognitiveLevel": "A",
+    "slo": "14.3.1",
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);",
+        "topic": "Introduction to Trigonometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 14,
+    "unitName": "Introduction to Trigonometry",
+    "chapter": "Introduction to Trigonometry",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/MTH-IX-P1/q43.png",
+    "pageNumber": 13,
+    "marks": 1
+  },
+  {
+    "questionNumber": 44,
+    "stem": "If the length of the sides of a right angled triangle are k, l and m such that l < k < m, then according to Pythagoras’ theorem,",
+    "options": {
+      "A": "m^2 = k^2 − l^2",
+      "B": "l^2 = (k + m)^2",
+      "C": "m^2 = (k + l)^2",
+      "D": "l^2 = m^2 − k^2"
+    },
+    "correctOption": "D",
+    "explanation": "Since l < k < m, the longest side m is the hypotenuse of the right-angled triangle. By Pythagoras' theorem, m^2 = k^2 + l^2, which rearranges to l^2 = m^2 − k^2.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. The square of the hypotenuse m^2 is the sum k^2 + l^2, not the difference k^2 − l^2."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. l is the shortest side, not the hypotenuse, and the squares of sides are added, not the sides themselves."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. (k + l)^2 = k^2 + 2kl + l^2 ≠ k^2 + l^2."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Since m is the longest side (hypotenuse), m^2 = k^2 + l^2 ⇒ l^2 = m^2 − k^2."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "14.3.1",
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);",
+        "topic": "Introduction to Trigonometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 14,
+    "unitName": "Introduction to Trigonometry",
+    "chapter": "Introduction to Trigonometry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 13,
+    "marks": 1
+  },
+  {
+    "questionNumber": 45,
+    "stem": "$\\dfrac{\\sin^2\\theta}{1-\\sin^2\\theta}$ is equal to",
+    "options": {
+      "A": "$-\\tan^2\\theta$.",
+      "B": "$\\cot^2\\theta$.",
+      "C": "$-\\cot^2\\theta$.",
+      "D": "$\\tan^2\\theta$."
+    },
+    "correctOption": "D",
+    "explanation": "Since $1-\\sin^2\\theta=\\cos^2\\theta$, $\\dfrac{\\sin^2\\theta}{1-\\sin^2\\theta}=\\dfrac{\\sin^2\\theta}{\\cos^2\\theta}=\\tan^2\\theta$. The correct answer is D.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 1 − sin^2(θ) equals +cos^2(θ), not −cos^2(θ)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. cot^2(θ) equals cos^2(θ) / sin^2(θ), the reciprocal of the given expression."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Both the reciprocal ratio and negative sign are wrong."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. sin^2(θ) / (1 − sin^2(θ)) = sin^2(θ) / cos^2(θ) = tan^2(θ)."
+      }
+    ],
+    "cognitiveLevel": "U",
+    "slo": "14.4.1",
+    "sloText": "explain the fundamental trigonometric identities i.e., sin^2(θ) + cos^2(θ) = 1, 1 + tan^2(θ) = sec^2(θ), 1 + cot^2(θ) = cosec^2(θ);",
+    "current_slo": "14.4.1",
+    "current_mapping": [
+      {
+        "code": "14.4.1",
+        "description": "explain the fundamental trigonometric identities i.e., sin^2(θ) + cos^2(θ) = 1, 1 + tan^2(θ) = sec^2(θ), 1 + cot^2(θ) = cosec^2(θ);",
+        "topic": "Introduction to Trigonometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 14,
+    "unitName": "Introduction to Trigonometry",
+    "chapter": "Introduction to Trigonometry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "pageNumber": 13,
+    "marks": 1
+  }
+]

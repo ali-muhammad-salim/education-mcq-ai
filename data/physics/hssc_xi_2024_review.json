@@ -1,0 +1,73 @@
+{
+  "mcqMappings": "1.2.2 1.4.1 1.3.2 1.4.1 2.3.3 2.4.3 2.4.2 2.4.2 - 3.2.5 4.1.3 3.1.2 4.1.1 3.2.3 3.3.1 3.3.1 3.3.1 3.4.1 3.5.1 3.3.1 4.3.4 11.3.1 4.2.2 4.3.2 11.3.1 6.4.3 6.5.2 6.5.2 6.3.3 6.3.2 7.4.3 7.4.2 7.5.3 7.6.1 8.4.2 8.5.2 8.3.4 8.4.3 - 8.2.1 9.2.6 9.2.2 9.1.3 9.2.2 10.11.4 10.5.3 10.9.3 10.9.4 10.1.2 10.3.4",
+  "held": {},
+  "mcqNotes": {
+    "4": "The board gives B. The unrounded sum is 124260. The first term is precise to the nearest thousand, so round to 124000, or 1.24 × 10⁵, which has three significant figures. The reviewed answer is A.",
+    "10": "The keyed zero speed assumes the usual head-on, one-dimensional collision of equal masses.",
+    "33": "C has the correct qualitative shape and endpoints. In the ideal oscillator the exact graph is the downward parabola K = ½k(A² − x²).",
+    "35": "The comparison assumes the same string, length and wave speed in all three patterns.",
+    "18": "D is the intended answer for work against gravity with X as the zero of potential energy and no change in kinetic energy. The work done by gravity itself is −mgh.",
+    "2": "A metre rule has a precision of 0.1 cm (1 mm). When measured with Vernier callipers having a least count of 0.01 cm, the reading is recorded to two decimal places as $3.40\\text{ cm}$.",
+    "14": "Wearing a safety helmet increases the time of impact during a collision, thereby reducing the peak average force on the rider's head ($F_{\\text{avg}} = \\frac{\\Delta p}{\\Delta t}$). The impulse equals the fixed momentum change, so it is the force that decreases. The printed options A and B said “impulse”; they have been corrected to read “acting force”.",
+    "15": "Work done by the force of friction is negative because friction opposes the relative displacement. The printed option II said “against the force of friction”, which describes the positive work of the applied force; it has been corrected to “by the force of friction”.",
+    "17": "When lifting a box vertically upward at constant speed, gravity acts downward opposite to the upward displacement (angle $180^\\circ$), so the work done by the gravitational force is negative ($W = Fs\\cos 180^\\circ = -mgh$). The printed stem did not say whose work is meant; it has been clarified to the gravitational force.",
+    "21": "In an orbiting satellite in circular free fall, apparent weightlessness occurs when the satellite's orbital centripetal acceleration equals the local gravitational acceleration ($a_c = g$). The printed stem said “rotational acceleration ‘α’”; it has been corrected to centripetal acceleration.",
+    "25": "If an artificial satellite in circular orbit reduces its orbital speed, its gravitational attraction exceeds the required centripetal force at that radius, causing its trajectory to spiral inward and fall toward the Earth.",
+    "28": "Under Stokes' law for viscous fluid resistance ($F_d = 6\\pi\\eta r v$), drag force is directly proportional to velocity ($F_d \\propto v$). Doubling the velocity doubles the drag force to $2F$.",
+    "30": "The equation of continuity ($A_1 v_1 = A_2 v_2$) states that for fluid flow, narrowing the nozzle cross-sectional area increases the exhaust velocity.",
+    "48": "The thermal efficiency of a Carnot heat engine operating between 646 K and 546 K is $\\eta = 1 - \\frac{T_C}{T_H} = 1 - \\frac{546}{646} \\approx 15.48\\%$, matching the keyed value of $15.3\\%$."
+  },
+  "written": {
+    "1": {
+      "mapping": "1.4.1",
+      "solution": "The board example uses the least count as the absolute uncertainty. On that convention the percentage uncertainty is $100(0.50/55)\\approx0.91\\%$. If a half-division convention is specified, the result is about $0.45\\%$."
+    },
+    "2": {
+      "mapping": "2.3.2+2.4.2",
+      "solution": "Dot products: work $\\vec F\\cdot\\vec s$ and instantaneous power $\\vec F\\cdot\\vec v$. Cross products: torque $\\vec r\\times\\vec F$ and angular momentum $\\vec r\\times\\vec p$."
+    },
+    "3": {
+      "mapping": "4.1.2",
+      "solution": "For level takeoff and landing, $T=2u\\sin\\theta/g$ and $R=u\\cos\\theta\\,T=u^2\\sin(2\\theta)/g$. The sine is greatest when $2\\theta=90^\\circ$, so $R_{\\max}=u^2/g$."
+    },
+    "4": {
+      "mapping": "-",
+      "solution": "$K_{\\mathrm{rot}}=\\tfrac12 I\\omega^2=\\tfrac12(0.125)(10^2)=6.25\\,\\mathrm J$."
+    },
+    "5": {
+      "mapping": "6.2.2",
+      "solution": "Turbulence is favoured by high flow speed, a large characteristic flow dimension such as pipe diameter, and low viscosity relative to fluid density. These factors raise the Reynolds number."
+    },
+    "6": {
+      "mapping": "7.4.1",
+      "solution": "A full oscillation travels $P\\to O\\to Q\\to O\\to P$. Each segment has length $x$, so the total is $4x$."
+    },
+    "7": {
+      "mapping": "8.4.2",
+      "solution": "Sound reflects at the ends of the air column and the reflected and incident waves superpose. At a resonance frequency they form a standing pattern with displacement antinodes at open ends and nodes at closed ends."
+    },
+    "8": {
+      "mapping": "9.2.6",
+      "solution": "$y=\\lambda L/d=(4.0\\times10^{-4})(2)/(2.0\\times10^{-2})=4.0\\times10^{-2}\\,\\mathrm m$, or $4.0\\,\\mathrm{cm}$. The calculation uses the printed wavelength."
+    },
+    "9a": {
+      "mapping": "11.5.1+11.5.2",
+      "solution": "Gravity has inward magnitude $GMm/r^2$. To move the body from rest at radius $R$ to infinity with zero final speed, the minimum external work is $W=\\int_R^\\infty GMm/r^2\\,dr=GMm/R$. This is the rise from $U(R)=-GMm/R$ to $U(\\infty)=0$."
+    },
+    "9b": {
+      "mapping": "3.5.1",
+      "solution": "Along the direction of motion on a level surface, $F_{\\mathrm{applied}}-f_k=ma$. Since $a=v\\,dv/dx$, integrating along the displacement gives $\\int F_{\\mathrm{applied}}\\,dx-\\int f_k\\,dx=\\int_{v_i}^{v_f}mv\\,dv=\\frac12mv_f^2-\\frac12mv_i^2$. For constant friction, the second integral is $f_kd$, so $W_{\\mathrm{applied}}-f_kd=\\Delta K$."
+    },
+    "10a": {
+      "mapping": "10.5.3",
+      "solution": "With work by the oven taken as positive, $\\Delta U_1=50-25=25\\,\\mathrm J$ and $\\Delta U_2=-20-(-10)=-10\\,\\mathrm J$. The total change is $+15\\,\\mathrm J$."
+    },
+    "10b": {
+      "mapping": "10.9.4",
+      "solution": "Assuming a fixed hot reservoir, $T_H=283.15/0.70\\approx404.5\\,\\mathrm K$. At 50% efficiency the cold reservoir is $0.50T_H\\approx202.25\\,\\mathrm K$, a decrease of about $80.9\\,\\mathrm K$."
+    }
+  },
+  "corrected": {
+    "4": "A"
+  }
+}

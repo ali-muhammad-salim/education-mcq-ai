@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const download = searchParams.get('download'); // 'json', 'csv'
-    const classLevel = searchParams.get('class'); // '9', '10', 'all'
+    const classLevel = searchParams.get('class');
 
     // Fetch all physics syllabus versions with topics, subtopics, and SLOs
     const subjects = await prisma.subject.findMany({
@@ -44,8 +44,7 @@ export async function GET(request: Request) {
     // Filter by class if specified
     const filteredSubjects = subjects.filter(s => {
       if (!classLevel || classLevel === 'all') return true;
-      if (classLevel === '9') return s.academicClass.level === 9;
-      if (classLevel === '10') return s.academicClass.level === 10;
+      if (['9', '10', '11', '12'].includes(classLevel)) return s.academicClass.level === Number(classLevel);
       return true;
     });
 

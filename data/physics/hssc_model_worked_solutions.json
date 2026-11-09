@@ -1,0 +1,29 @@
+{
+  "PHY-XI-P2": [
+    "$[aS]=(LT^{-2})L=L^2T^{-2}$. Both $v_f^2$ and $v_i^2$ have dimensions $L^2T^{-2}$, so both sides of the equation agree.",
+    "i. $A=\\sqrt{A_x^2+A_y^2}$.\nii. $\\tan\\theta=\\frac{A_y+B_y}{A_x+B_x}$. Choose the quadrant from the signs of the two components.",
+    "i. Equal masses in a head-on elastic collision exchange velocities. A stops and B moves forward with A’s initial velocity.\nii. Both balls move forward. For initial speed $u$ of D, their speeds are $\\frac{m_D-m_C}{m_D+m_C}u$ for D and $\\frac{2m_D}{m_D+m_C}u$ for C.",
+    "Resolve the initial velocity vertically as $u\\sin\\theta$. For return to the launch height, $0=(u\\sin\\theta)t-\\frac12gt^2$. The nonzero root gives $T=\\frac{2u\\sin\\theta}{g}$.",
+    "i. Tensile stress is $F/A$ and tensile strain is $\\Delta L/L$.\nii. For the same stress in the elastic range, rubber has greater strain because it has a much smaller Young modulus.",
+    "i. The pressure, speed and height labels are related by Bernoulli’s equation: $P_1+\\frac12\\rho v_1^2+\\rho gh_1=P_2+\\frac12\\rho v_2^2+\\rho gh_2$. The areas and speeds also satisfy $A_1v_1=A_2v_2$ for steady incompressible flow.\nii. One condition is that the fluid is incompressible. Steady flow and negligible viscosity are the other ideal-flow assumptions for this application.",
+    "$f=\\frac{1}{2\\pi}\\sqrt{\\frac{g}{L}}=\\frac{1}{2\\pi}\\sqrt{\\frac{9.8}{0.50}}\\approx0.705\\,\\mathrm{Hz}$.",
+    "Approaching A: $f_A=650\\frac{340}{340-20}=690.625\\,\\mathrm{Hz}$. Receding B: $f_B=650\\frac{340}{340+20}\\approx613.89\\,\\mathrm{Hz}$.",
+    "i. Interference.\nii. For a stable pattern, use sources of the same frequency with a constant phase difference.",
+    "The temperatures are $T_H=293.15\\,\\mathrm K$ and $T_C=277.15\\,\\mathrm K$. A reversible engine has $\\eta_{\\max}=1-T_C/T_H\\approx0.0546$, or $5.46\\%$. These temperatures give the theoretical upper limit. The actual efficiency requires additional information.",
+    "Either a. $v_f^2-v_i^2=2a\\Delta x$. Multiplying by $m/2$ gives $W_{\\mathrm{net}}=F_{\\mathrm{net}}\\Delta x=\\frac12mv_f^2-\\frac12mv_i^2$.\nOr b. $R=\\frac{450^2\\sin90^\\circ}{10}=20250\\,\\mathrm m$. The flight time is $T=\\frac{2(450)\\sin45^\\circ}{10}\\approx63.64\\,\\mathrm s$.",
+    "Either a. For a string fixed at both ends, the fourth harmonic has four half-wavelengths, so $\\lambda=2L/4=1.2\\,\\mathrm m$ and $f=v/\\lambda=80\\,\\mathrm{Hz}$. The five nodes are at $x=0,0.60,1.20,1.80,2.40\\,\\mathrm m$. The four antinodes are at $x=0.30,0.90,1.50,2.10\\,\\mathrm m$.\nOne instant of the wave pattern: N ∩ N ∪ N ∩ N ∪ N. Each arch has an antinode at its centre.\nOr b. The path difference is $r_1-r_2$, and $\\sin\\theta=(r_1-r_2)/a$. For reinforcement, $a\\sin\\theta=m\\lambda$. The central maximum is $0^\\circ$ and the first nonzero angle is about $0.0477^\\circ$ on either side. The second positive order is about $0.0955^\\circ$."
+  ],
+  "PHY-XII-P2": [
+    "i. $m=\\sqrt{Fr^2/G}=\\sqrt{(0.39)(2.10)^2/(6.673\\times10^{-11})}\\approx1.61\\times10^5\\,\\mathrm{kg}$.\nii. Doubling the separation reduces the force to one quarter.",
+    "The battery holds $V$ constant. Increasing the separation lowers $C=\\varepsilon_0A/d$, so the stored energy $U=\\frac12CV^2$ decreases. Charge flows back to the battery.",
+    "i. Wheatstone bridge.\nii. A and C must be at the same potential.\niii. With the labels in the figure, $R_1/R_2=R_4/R_x$.",
+    "For the winding shown, the current down the near side of each turn gives a field to the right along the solenoid axis. In a side view mark the top of each turn with a dot and the bottom with a cross. Apply the right-hand grip rule to each turn, with the fingers following conventional current and the thumb pointing to the right.",
+    "i. A seismometer.\nii. It can also record vibrations from controlled explosions, for example in geological exploration.",
+    "i. The de Broglie wavelength decreases since $\\lambda=h/p$.\nii. A macroscopic object has much larger momentum, giving a wavelength too small for observable diffraction under ordinary conditions.",
+    "i. For titanium-46, $Z=22$ and $N=24$, so $\\Delta m=22m_p+24m_n-m_{\\mathrm{nucleus}}$.\nii. $E_b=\\Delta mc^2$.",
+    "i. The strong nuclear interaction is short-range and falls off sharply beyond nuclear distances.\nii. Gravity is long-range and the attraction from large amounts of matter adds together, so it dominates astronomical motion.",
+    "i. For sufficiently nearby galaxies in the Hubble flow, $v=H_0d$.\nii. The systematic increase of recession speed with distance indicates expansion. Running that expansion backward implies a denser earlier universe.",
+    "Either a. Gauss’s law relates total electric flux through a closed surface to enclosed charge. A pillbox of face area $A$ through the sheet gives $2EA=\\sigma A/\\varepsilon_0$, so $E=\\sigma/(2\\varepsilon_0)$.\nOr b. Let $V$ be the top junction voltage relative to the bottom node. Kirchhoff’s current law gives $(6-V)/6+(4-V)/9=V/3$, so $V=2.364\\,\\mathrm V$. The currents are $0.606\\,\\mathrm A$ through $R_1$ toward the junction, $0.788\\,\\mathrm A$ down $R_2$, and $0.182\\,\\mathrm A$ through $R_3$ toward the junction.",
+    "Either a. Positive and negative half-cycles cancel in the average. The RMS value gives the same mean heating in a resistor as the equivalent DC value. For a sinusoid, $I_{\\mathrm{rms}}=I_0/\\sqrt{2}$ and $V_{\\mathrm{rms}}=V_0/\\sqrt{2}$.\nOr b. A photon transfers energy and momentum to an electron, leaving a scattered photon of lower energy at a nonzero angle. The shift is $\\Delta\\lambda=\\frac{h}{m_ec}(1-\\cos\\theta)$. It is zero forward, increases with scattering angle and is greatest for backscatter."
+  ]
+}

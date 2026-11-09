@@ -1,4 +1,5 @@
 'use client';
+import MathText from './MathText';
 import { useEffect, useState } from 'react';
 import { pageExtraction } from '@/services/ingestion/trust';
 import type { z } from 'zod';
@@ -93,7 +94,7 @@ function RegionEditor({ index, region, outcomes, onChange }: { index: number; re
     <label>Figure labels (one per line)<textarea value={region.labels.join('\n')} onChange={e => onChange({ labels: e.target.value.split('\n') })}/></label>
     <label>Connections, arrows and bonds (one per line)<textarea value={region.relationships.join('\n')} onChange={e => onChange({ relationships: e.target.value.split('\n') })}/></label>
     <label>Find learning outcomes<input type="search" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search by code or description"/></label>
-    <fieldset><legend>Curriculum mapping</legend>{matching.map(outcome => <label className={styles.mapping} key={outcome.id}><input type="checkbox" checked={region.sloIds.includes(outcome.id)} onChange={e => onChange({ sloIds: e.target.checked ? [...new Set([...region.sloIds, outcome.id])].slice(0, 10) : region.sloIds.filter(id => id !== outcome.id) })}/><span>{outcome.code ? outcome.code + ' · ' : ''}{outcome.description}</span></label>)}{!matching.length && <p>No matching outcomes. Leave unmapped if the evidence is insufficient.</p>}</fieldset>
+    <fieldset><legend>Curriculum mapping</legend>{matching.map(outcome => <label className={styles.mapping} key={outcome.id}><input type="checkbox" checked={region.sloIds.includes(outcome.id)} onChange={e => onChange({ sloIds: e.target.checked ? [...new Set([...region.sloIds, outcome.id])].slice(0, 10) : region.sloIds.filter(id => id !== outcome.id) })}/><span>{outcome.code ? outcome.code + ' · ' : ''}<MathText text={outcome.description}/></span></label>)}{!matching.length && <p>No matching outcomes. Leave unmapped if the evidence is insufficient.</p>}</fieldset>
     <label>Remaining uncertainty<textarea value={region.uncertainty} onChange={e => onChange({ uncertainty: e.target.value })}/></label>
   </>}</details>;
 }

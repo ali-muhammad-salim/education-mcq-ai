@@ -1,0 +1,190 @@
+{
+  "subject": "Mathematics",
+  "level": "SSC-I",
+  "grade": 9,
+  "examYear": 2021,
+  "examSession": "April-May",
+  "examType": "ANNUAL",
+  "sources": {
+    "p1": {
+      "filename": "mathematics-ix-2021-paper-i.pdf",
+      "url": "/materials/ssc/mathematics/ssc-1/mathematics-ix-2021-paper-i.pdf",
+      "sha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "pages": 20
+    },
+    "key": {
+      "filename": "mathematics-ix-2021-keys.pdf",
+      "url": "/materials/ssc/mathematics/ssc-1/mathematics-ix-2021-keys.pdf",
+      "sha256": "683e204df8da58e551092e09cf5e54ff74e1e8206f8e764da8c949a74fe3c07a",
+      "pages": 2
+    }
+  },
+  "crops": [
+    {
+      "paper": "p1",
+      "question": "4",
+      "page": 2,
+      "box": [
+        340,
+        505,
+        510,
+        625
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q4.png"
+    },
+    {
+      "paper": "p1",
+      "question": "5",
+      "page": 2,
+      "box": [
+        340,
+        505,
+        510,
+        625
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q5.png"
+    },
+    {
+      "paper": "p1",
+      "question": "40",
+      "page": 11,
+      "box": [
+        85,
+        135,
+        540,
+        325
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q40.png"
+    },
+    {
+      "paper": "p1",
+      "question": "41",
+      "page": 11,
+      "box": [
+        85,
+        135,
+        540,
+        325
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q41.png"
+    },
+    {
+      "paper": "p1",
+      "question": "42",
+      "page": 12,
+      "box": [
+        115,
+        135,
+        530,
+        290
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q42.png"
+    },
+    {
+      "paper": "p1",
+      "question": "43",
+      "page": 12,
+      "box": [
+        115,
+        135,
+        530,
+        290
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q43.png"
+    },
+    {
+      "paper": "p1",
+      "question": "44",
+      "page": 12,
+      "box": [
+        110,
+        505,
+        530,
+        645
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q44.png"
+    },
+    {
+      "paper": "p1",
+      "question": "45",
+      "page": 13,
+      "box": [
+        220,
+        110,
+        555,
+        240
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q45.png"
+    },
+    {
+      "paper": "p1",
+      "question": "46",
+      "page": 13,
+      "box": [
+        90,
+        415,
+        555,
+        570
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q46.png"
+    },
+    {
+      "paper": "p1",
+      "question": "47",
+      "page": 14,
+      "box": [
+        80,
+        110,
+        535,
+        295
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q47.png"
+    },
+    {
+      "paper": "p1",
+      "question": "48",
+      "page": 14,
+      "box": [
+        180,
+        465,
+        535,
+        625
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q48.png"
+    },
+    {
+      "paper": "p1",
+      "question": "49",
+      "page": 15,
+      "box": [
+        240,
+        115,
+        550,
+        290
+      ],
+      "sourceSha256": "5b787ee8b330bbf9fa500e41dc520811789c93c6e0966115fe08691f73295930",
+      "url": "/paper-crops/MTH-IX-2021-P1/q49.png"
+    }
+  ],
+  "mcqCount": 50,
+  "summary": {
+    "p1": {
+      "questions": 50,
+      "verifiedAnswers": 50,
+      "inScopeCount": 38,
+      "movedCount": 10,
+      "noDirectOutcomeCount": 2
+    }
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "PHY-XI-P1": {
+    "1": {
+      "choices": {
+        "A": "$[ML^2T^{-1}]$",
+        "B": "$[MLT^{-1}]$",
+        "C": "$[MLT^{-2}]$",
+        "D": "$[ML^{-1}T]$"
+      }
+    },
+    "16": {
+      "stem": "The given diagram shows the projectile motion of a ball. The magnitude of the vertical component of velocity will be maximum at point",
+      "choices": {
+        "A": "Point A",
+        "B": "Point B",
+        "C": "Point C",
+        "D": "Point D"
+      },
+      "figure": [
+        58,
+        95,
+        418,
+        326
+      ]
+    },
+    "23": {
+      "choices": {
+        "A": "$\\frac{T}{3}$",
+        "B": "$T$",
+        "C": "$3T$",
+        "D": "$\\sqrt{3}T$"
+      }
+    },
+    "33": {
+      "choices": {
+        "A": "214.4 Hz",
+        "B": "285.8 Hz",
+        "C": "428.8 Hz",
+        "D": "857.5 Hz"
+      },
+      "figure": [
+        45,
+        67,
+        620,
+        183
+      ]
+    },
+    "34": {
+      "stem": "When a listener moves away from a stationary source of sound, what is the apparent change in pitch and frequency?",
+      "choices": {
+        "A": "Low pitch, low frequency",
+        "B": "High pitch, low frequency",
+        "C": "Low pitch, high frequency",
+        "D": "High pitch, high frequency"
+      }
+    },
+    "42": {
+      "choices": {
+        "A": "$Y=(m+1)\\frac{\\lambda L}{d}$",
+        "B": "$Y=(m-1)\\frac{\\lambda L}{d}$",
+        "C": "$Y=(m+\\frac12)\\frac{\\lambda L}{d}$",
+        "D": "$Y=(m-\\frac12)\\frac{\\lambda L}{d}$"
+      }
+    },
+    "11": {
+      "figure": [
+        49,
+        45,
+        665,
+        217
+      ]
+    },
+    "18": {
+      "stem": "A copper wire of length 3 m and an area of $2\\,\\mathrm{m}^2$ is stretched by a force of 500 N. If Young’s modulus of the copper wire is $1.1\\times10^{11}\\,\\mathrm{Pa}$, what is its elongation?",
+      "choices": {
+        "A": "$6.8\\times10^{-9}\\,\\mathrm m$",
+        "B": "$3.3\\times10^8\\,\\mathrm m$",
+        "C": "$2.2\\times10^{14}\\,\\mathrm m$",
+        "D": "$1.4\\times10^{-14}\\,\\mathrm m$"
+      }
+    }
+  },
+  "PHY-XII-P1": {
+    "1": {
+      "choices": {
+        "A": "$\\frac18$ times",
+        "B": "$\\frac14$ times",
+        "C": "8 times",
+        "D": "4 times"
+      }
+    },
+    "2": {
+      "choices": {
+        "A": "I only",
+        "B": "II only",
+        "C": "I and III",
+        "D": "II and III"
+      },
+      "figure": [
+        49,
+        64,
+        531,
+        414
+      ]
+    },
+    "7": {
+      "choices": {
+        "A": "$EA$",
+        "B": "$-EA$",
+        "C": "Zero",
+        "D": "$EA\\sin\\theta$"
+      },
+      "figure": [
+        49,
+        46,
+        386,
+        345
+      ]
+    },
+    "15": {
+      "choices": {
+        "A": "$\\frac{\\varepsilon-V_t}{I}$",
+        "B": "$\\frac{\\varepsilon+V_t}{I}$",
+        "C": "$\\frac{V_t-\\varepsilon}{I}$",
+        "D": "$\\frac{V_t}{I}$"
+      },
+      "figure": [
+        98,
+        77,
+        412,
+        258
+      ]
+    },
+    "16": {
+      "choices": {
+        "A": "$\\frac{I^2}{R}$",
+        "B": "$I^2R^2$",
+        "C": "$\\frac{V^2}{R}$",
+        "D": "$IR^2$"
+      }
+    },
+    "20": {
+      "choices": {
+        "A": "$\\frac{\\mu_0NI}{2\\pi r},0,0$",
+        "B": "$0,\\frac{\\mu_0NI}{2\\pi r},0$",
+        "C": "$0,0,\\frac{\\mu_0NI}{2\\pi r}$",
+        "D": "$\\frac{\\mu_0NI}{2\\pi r},\\frac{\\mu_0NI}{2\\pi r},0$"
+      },
+      "figure": [
+        55,
+        42,
+        383,
+        361
+      ]
+    },
+    "21": {
+      "figure": [
+        48,
+        42,
+        465,
+        407
+      ]
+    },
+    "23": {
+      "stem": "The given diagram shows a bar magnet falling through a metal ring. What forces act on the magnet while entering and leaving the ring?",
+      "choices": {
+        "A": "Entering attractive, leaving attractive",
+        "B": "Entering repulsive, leaving repulsive",
+        "C": "Entering attractive, leaving repulsive",
+        "D": "Entering repulsive, leaving attractive"
+      },
+      "figure": [
+        49,
+        41,
+        252,
+        321
+      ]
+    },
+    "26": {
+      "choices": {
+        "A": "Voltage leads by $90^\\circ$",
+        "B": "Current lags by $120^\\circ$",
+        "C": "Voltage leads by $180^\\circ$",
+        "D": "Current lags by $270^\\circ$"
+      },
+      "figure": [
+        50,
+        42,
+        378,
+        275
+      ]
+    },
+    "29": {
+      "stem": "The given diagram shows a part of a bridge rectifier circuit. Identify the input and output terminals.",
+      "choices": {
+        "A": "Input I and II; output III and IV",
+        "B": "Input II and IV; output I and III",
+        "C": "Input I and III; output II and IV",
+        "D": "Input III and IV; output I and II"
+      },
+      "figure": [
+        55,
+        49,
+        356,
+        324
+      ]
+    },
+    "39": {
+      "choices": {
+        "A": "$\\frac{X_0}{2}$",
+        "B": "$\\frac{X_0}{4}$",
+        "C": "$\\frac{X_0}{8}$",
+        "D": "$\\frac{X_0}{16}$"
+      }
+    },
+    "5": {
+      "figure": [
+        48,
+        67,
+        370,
+        329
+      ]
+    },
+    "6": {
+      "choices": {
+        "A": "$\\frac{kq}{r}$",
+        "B": "$\\frac{2kq}{r^2}$",
+        "C": "$\\frac{kq_1q_2}{r^2}$",
+        "D": "$0$"
+      }
+    }
+  },
+  "PHY-XI-P2": {
+    "1": {
+      "stem": "Show that $2aS=v_f^2-v_i^2$ is dimensionally correct."
+    },
+    "2": {
+      "figure": [
+        8,
+        98,
+        278,
+        320
+      ]
+    },
+    "6": {
+      "figure": [
+        54,
+        90,
+        539,
+        267
+      ]
+    },
+    "9": {
+      "figure": [
+        61,
+        90,
+        412,
+        360
+      ],
+      "stem": "i. Identify the phenomenon of light shown in the diagram. (1 Mark)\nii. Identify any TWO conditions required for the occurrence of this phenomenon. (2 Marks)"
+    },
+    "11": {
+      "figure": [
+        56,
+        165,
+        646,
+        315
+      ],
+      "stem": "EITHER\na. A constant force $F_{\\mathrm{net}}$ acts on an airplane of mass $m$. The airplane covers a distance $\\Delta x$ while its velocity increases from $v_i$ to $v_f$.\nDeduce an equation of the work–energy principle for this situation. (5 Marks)\nOR\nb. A missile is fired with a velocity of 450 m/s at an angle of 45° to the horizontal. Calculate\n   i. the range of the projectile. (2 Marks)\n   ii. the time for which the missile will remain in the air. (3 Marks)\nTake $g$ as 10 m/s²."
+    },
+    "12": {
+      "figure": [
+        53,
+        288,
+        462,
+        574
+      ],
+      "stem": "EITHER\na. A 2.4 m string vibrates in its fourth harmonic with a wave speed of 96 m/s.\nCalculate wavelength, frequency, nodes and antinodes, and draw the wave pattern.\nOR\nb. Two narrow, horizontal, parallel slits separated by a distance $a$ are illuminated by a beam of light of wavelength 500 nm, as shown in the diagram.\n   i. Complete the following using symbols from the diagram. (2 Marks)\n      I. Difference in path lengths of the two beams (in terms of $r$) = ______\n      II. $\\sin\\theta$ = ______\n   ii. If $a=0.60\\,\\mathrm{mm}$, find the two smallest values of $\\theta$ where reinforcement occurs. (3 Marks)"
+    },
+    "3": {
+      "stem": "Consider two smooth, non-rotating balls colliding elastically in an isolated system. What will be the effect on the velocities and directions of the balls if\ni. ball A moving to the right with velocity $v_1$ collides head-on with the identical, stationary ball B of equal mass? (1 Mark)\nii. heavy ball D (mass $m_1$) moving to the left with velocity $v_1$ collides head-on with the lighter ball C (mass $m_2$) at rest? (1 Mark)"
+    }
+  },
+  "PHY-XII-P2": {
+    "3": {
+      "figure": [
+        9,
+        89,
+        374,
+        442
+      ],
+      "stem": "The diagram shows an electrical circuit.\ni. Identify the circuit. (1 Mark)\nii. To obtain a null reading in the galvanometer connected between A and C, which two points must be at the same potential? (1 Mark)\niii. Write the mathematical relation among the four resistances under the null condition. (1 Mark)"
+    },
+    "4": {
+      "figure": [
+        16,
+        97,
+        422,
+        261
+      ],
+      "stem": "The diagram shows a component of an electrical device.\ni. Draw a diagram to show the direction of the current using dot (•) and cross (×) notation and the direction of the magnetic field around each turn. (2 Marks)\nii. Name the appropriate rule and identify the direction of the magnetic field inside the solenoid. (2 Marks)"
+    },
+    "10": {
+      "figure": [
+        52,
+        311,
+        515,
+        516
+      ],
+      "stem": "EITHER\na. i. Describe the significance of Gauss’s law. (1 Mark)\n   ii. Use Gauss’s law to derive the electric field intensity in terms of the surface charge density for an infinite plane sheet of uniform charge. (4 Marks)\nOR\nb. The circuit has three resistors of 6 Ω, 3 Ω and 9 Ω respectively, and two sources of 6 V and 4 V respectively.\nCalculate the current through each resistor using Kirchhoff’s law. (5 Marks)"
+    },
+    "1": {
+      "stem": "Two identical objects are placed in vacuum with their centres 2.10 m apart. The gravitational force of attraction between them is 0.39 N. Use $G=6.673\\times10^{-11}\\,\\mathrm{N\\,m^2\\,kg^{-2}}$.\ni. Calculate the mass of each object. (2 Marks)\nii. Without further calculation, how will the force change if the distance between the objects is doubled? (1 Mark)"
+    },
+    "7": {
+      "stem": "For the titanium-46 nucleus (22 protons):\ni. Write the mathematical expression for the mass defect, showing the number of protons and neutrons. (2 Marks)\nii. Convert the mass defect expression into the binding energy equation. (1 Mark)"
+    }
+  }
+}

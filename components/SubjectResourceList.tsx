@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {paperLabel} from "@/lib/paperPresentation";
+import {paperLabel, safeDocumentUrl} from "@/lib/paperPresentation";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "./Breadcrumbs";
 import MaterialList, { type MaterialItem } from "./MaterialList";
@@ -10,35 +10,47 @@ import { subjectMaterials } from "@/services/materials/catalog";
 import { getAllStandardPapers } from "@/lib/paperDataService";
 import prisma from "@/lib/prisma";
 import {publicMaterialWhere} from '@/lib/materialVisibility';
-import { physics2025Resources, physicsX2025Resources } from '@/lib/legacyPaperEvidence';
+import { physics2025Resources, physicsX2025Resources, cs2025Resources, csX2025Resources, chem2025Resources, chemXResources } from '@/lib/legacyPaperEvidence';
+import chemRg9 from '@/data/chemistry/ssc1_resource_guide.json';
+import chemRg10 from '@/data/chemistry/ssc2_resource_guide.json';
 import rg9 from '@/data/physics/ssc1_resource_guide.json';
 import rg10 from '@/data/physics/ssc2_resource_guide.json';
+import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
+import { hsscPhysicsSyllabus } from '@/lib/hsscPhysicsSyllabus';
+import { hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
 
 export default async function SubjectResourceList({
   params,
   type,
   guide = false,
+  pacing = false,
   after = "",
 }: {
   params: { board: string; class: string; subject: string };
   type: "model_paper" | "past_paper" | "textbook";
   guide?: boolean;
+  pacing?: boolean;
   after?: string;
 }) {
   const scope = studyScope(params.board, params.class, params.subject);
   if (!scope) notFound();
+  const hssc = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const titles = {
     model_paper: "Model papers",
     past_paper: "Past papers",
     textbook: "Books",
   };
+  const mathematics = scope.board.id === 'akueb' && scope.meta.slug === 'mathematics';
   const documents = await subjectMaterials(
     params.board,
     params.class,
     params.subject,
     type==='past_paper'?['past_paper','answer_key','e_marking']:type,
     after,
-  );
+  ).catch(error => {
+    if (hssc && error.name === "PrismaClientInitializationError") return [];
+    throw error;
+  });
   const items: MaterialItem[] = documents
     .slice(0, 100)
     .map((doc) => ({
@@ -50,7 +62,19 @@ export default async function SubjectResourceList({
     scope.board.id === "akueb" &&
     scope.meta.slug === "physics" &&
     [9, 10].includes(scope.classDef.level);
+  const hasStandardPapers =
+    legacy || Boolean(hssc) ||
+    (scope.board.id === "akueb" &&
+      ["computer-science", "chemistry"].includes(scope.meta.slug) &&
+      [9, 10].includes(scope.classDef.level));
   if (legacy && type==='past_paper' && !after) items.push(...(scope.classDef.level===9 ? physics2025Resources : physicsX2025Resources));
+  if (hssc?.grade === 11 && type === "past_paper" && !after) items.push(...hsscXiAnnualResources);
+  if (scope.board.id === 'akueb' && scope.meta.slug === 'computer-science' && [9, 10].includes(scope.classDef.level) && type === 'past_paper' && !after) {
+    items.push(...(scope.classDef.level === 9 ? cs2025Resources : csX2025Resources));
+  }
+  if (scope.board.id === 'akueb' && scope.meta.slug === 'chemistry' && [9, 10].includes(scope.classDef.level) && type === 'past_paper' && !after) {
+    items.push(...(scope.classDef.level === 9 ? chem2025Resources : chemXResources));
+  }
   if (type !== "textbook" && !after) {
     const stored = await prisma.pastPaper.findMany({
       where: {
@@ -77,15 +101,19 @@ export default async function SubjectResourceList({
       },
       orderBy: { examYear: "desc" },
       take: 100,
+    }).catch(error => {
+      if (hssc && error.name === "PrismaClientInitializationError") return [];
+      throw error;
     });
     const seen = new Set<string>();
     const listed=new Set(items.map(i=>i.href));
     for (const paper of [
       ...stored.filter(p=>!p.sourceDocument||(p.sourceDocument.catalogMetadata as Record<string,unknown>|null)?.compiledPaperId===p.id),
-      ...(legacy
+      ...(hasStandardPapers
         ? getAllStandardPapers().filter(
             (p) =>
               p.academicClass?.level === scope.classDef.level &&
+              (p.subject?.name || "").toLowerCase() === scope.meta.title.toLowerCase() &&
               (type === "model_paper"
                 ? /MODEL/i.test(p.examSession || "")
                 : !/MODEL/i.test(p.examSession || "")),
@@ -106,15 +134,21 @@ export default async function SubjectResourceList({
     }
     if (
       type === "model_paper" &&
-      legacy &&
-      scope.classDef.level === 9 &&
+      hasStandardPapers &&
+      (hssc || scope.classDef.level === 9 || ["computer-science", "chemistry"].includes(scope.meta.slug)) &&
       !after
     )
       items.push({
         label: "Practical paper",
-        href: scope.baseUrl + "/model-papers/P3",
+        href: scope.baseUrl + "/practicals",
       });
-  } else if (legacy && !after) {
+  } else if (hssc && type === "textbook" && !after) {
+    items.push(
+      { label: "Teaching & learning resource guide", href: hssc.base + "/books?view=guide" },
+      { label: "28-week pacing guide", href: hssc.base + "/books?view=pacing" },
+    );
+  } else if ((legacy || (scope.board.id === "akueb" && scope.meta.slug === "chemistry")) && !after) {
+    const isChem = scope.meta.slug === "chemistry";
     items.push(
       {
         label: "Resources guide",
@@ -122,11 +156,39 @@ export default async function SubjectResourceList({
       },
       {
         label: "28-week pacing guide",
-        href: scope.classDef.level === 9 ? "/resources/physics-ix-pacing-guide" : "/resources/physics-x-pacing-guide",
+        href: isChem
+          ? (scope.classDef.level === 9 ? "/resources/chemistry-ix-pacing-guide" : "/resources/chemistry-x-pacing-guide")
+          : (scope.classDef.level === 9 ? "/resources/physics-ix-pacing-guide" : "/resources/physics-x-pacing-guide"),
       }
     );
   }
-  const activeGuide = scope.classDef.level === 9 ? rg9 : rg10;
+  if (mathematics && type === 'past_paper' && !after) {
+    const references = await prisma.book.findMany({
+      where: { subject: { equals: 'Mathematics', mode: 'insensitive' }, className: scope.classDef.name, boardAssociation: 'AKU-EB' },
+      select: { sourceFile: true, publicationYear: true, metadata: true },
+    });
+    for (const reference of references) {
+      const kind = (reference.metadata as Record<string, unknown> | null)?.resourceType;
+      const href = safeDocumentUrl(reference.sourceFile);
+      if (!href || !reference.publicationYear || !['answer_key', 'e_marking'].includes(String(kind))) continue;
+      const markingPage = /^\/materials\/ssc\/mathematics\/ssc-[12]\/(mathematics-(?:ix|x)-(?:201[789]|202[345])-emarking)\.pdf$/.exec(href)?.[1];
+      items.push({ label: kind === 'answer_key' ? 'Paper 1 keys' : 'Paper 2 E-marking', href: markingPage ? '/resources/' + markingPage : href, year: reference.publicationYear });
+    }
+  }
+  const archiveLabels = ['Paper 1', 'Paper 1 keys', 'Paper 2', 'Paper 2 E-marking'];
+  const displayItems = mathematics && type === 'past_paper'
+    ? [...new Map(items.map(item => {
+      const label = /e[- ]?marking/i.test(item.label) ? 'Paper 2 E-marking'
+        : /\bkeys?\b/i.test(item.label) ? 'Paper 1 keys'
+        : /\bpaper\s*(2|II)\b/i.test(item.label) ? 'Paper 2'
+        : /\bpaper\s*(1|I)\b/i.test(item.label) ? 'Paper 1' : item.label;
+      return [`${item.year}:${label}`, { ...item, label }] as const;
+    })).values()].sort((a, b) => archiveLabels.indexOf(a.label) - archiveLabels.indexOf(b.label))
+    : items;
+  const activeGuide =
+    scope.meta.slug === "chemistry"
+      ? (scope.classDef.level === 9 ? chemRg9 : chemRg10)
+      : (scope.classDef.level === 9 ? rg9 : rg10);
   return (
     <section className={styles.page}>
       <Breadcrumbs
@@ -141,15 +203,36 @@ export default async function SubjectResourceList({
         ]}
       />
       <h1>{titles[type]}</h1>
-      {guide && legacy ? (
+      {hssc && type === "textbook" && (guide || pacing) ? (
+        <DocumentViews title={pacing ? "28-week pacing guide" : "Teaching & learning resource guide"} original={pacing ? hssc.pacing : hssc.guide} continuousPdf>
+          <div className={styles.digital}>
+            <h2>{pacing ? "28-week instructional pacing guide" : "Teaching & learning resource guide"}</h2>
+            <p><strong>Recommended textbook:</strong> Model Textbook of Physics {hssc.grade}, National Book Foundation, Islamabad.</p>
+            {pacing && <p>Five theory periods per week. Each period is 40 minutes.</p>}
+            <ol start={hssc.grade === 11 ? 1 : 11}>
+              {hsscPhysicsSyllabus(scope.board.id, hssc.grade, scope.meta.slug)!.units.map((unit, index) => (
+                <li key={unit.unitNumber}>
+                  <a href={(pacing ? hssc.pacing : hssc.guide) + "#page=" + (pacing ? 2 + 2 * index : hssc.guidePages[index])} target="_blank" rel="noreferrer">{unit.name}</a>
+                  {pacing && ` · ${hssc.periods[index]} periods`}
+                </li>
+              ))}
+            </ol>
+            <p><a href={(pacing ? hssc.pacing : hssc.guide) + "#page=" + (pacing ? 1 : hssc.guidePage)} target="_blank" rel="noreferrer">Open the official Class {hssc.roman} guide</a></p>
+          </div>
+        </DocumentViews>
+      ) : guide && (legacy || scope.meta.slug === "chemistry") ? (
         <DocumentViews
           title="Resources guide"
           original={
-            "/materials/ssc/physics/ssc-" +
-            (scope.classDef.level === 9 ? "1" : "2") +
-            "/resources-guide-2025-ssc-" +
-            (scope.classDef.level === 9 ? "i" : "ii") +
-            "-physics-dedicated.pdf"
+            scope.meta.slug === "chemistry"
+              ? "/materials/ssc/chemistry/ssc-" +
+                (scope.classDef.level === 9 ? "1" : "2") +
+                "/resource-guide-2025-ssc-chemistry.pdf"
+              : "/materials/ssc/physics/ssc-" +
+                (scope.classDef.level === 9 ? "1" : "2") +
+                "/resources-guide-2025-ssc-" +
+                (scope.classDef.level === 9 ? "i" : "ii") +
+                "-physics-dedicated.pdf"
           }
         >
           <div className={styles.digital}>
@@ -186,8 +269,8 @@ export default async function SubjectResourceList({
             <p style={{marginTop:'1rem',fontSize:'.9rem'}}>{activeGuide.note}</p>
           </div>
         </DocumentViews>
-      ) : items.length ? (
-        type==='past_paper'?<>{[...new Set(items.map(i=>i.year))].sort((a,b)=>(b||0)-(a||0)).map(year=><section key={year||'other'}><h2 style={{margin:'1.5rem 0 .6rem'}}>{year||'Other resources'}</h2><MaterialList items={items.filter(i=>i.year===year)} /></section>)}</>:<MaterialList items={items} />
+      ) : displayItems.length ? (
+        type==='past_paper'?<>{[...new Set(displayItems.map(i=>i.year))].sort((a,b)=>(b||0)-(a||0)).map(year=><section key={year||'other'}><h2 style={{margin:'1.5rem 0 .6rem'}}>{year||'Other resources'}</h2><MaterialList items={displayItems.filter(i=>i.year===year)} /></section>)}</>:<MaterialList items={displayItems} />
       ) : (
         <p className={styles.muted}>Coming soon</p>
       )}

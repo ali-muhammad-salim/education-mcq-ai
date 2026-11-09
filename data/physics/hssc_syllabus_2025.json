@@ -1,0 +1,3364 @@
+{
+  "11": {
+    "units": [
+      {
+        "unitNumber": 1,
+        "name": "Physical Quantities and Measurement",
+        "subtopics": [
+          {
+            "subtopicNumber": "1.1",
+            "name": "1.1 Physical Quantities",
+            "slos": [
+              {
+                "code": "1.1.1",
+                "description": "discuss that all physical quantities consist of a numerical magnitude and a unit;",
+                "cognitiveLevel": "E",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.1.2",
+                "description": "determine appropriate values of physical quantities;",
+                "cognitiveLevel": "A",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.1.3",
+                "description": "identify the SI base quantities and their units;",
+                "cognitiveLevel": "U",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.1.4",
+                "description": "discuss derived units as products or quotients of the SI base units;",
+                "cognitiveLevel": "E",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.1.5",
+                "description": "use SI base units to check the homogeneity of physical equations;",
+                "cognitiveLevel": "A",
+                "sourcePage": 10
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "1.2",
+            "name": "1.2 Dimensions",
+            "slos": [
+              {
+                "code": "1.2.1",
+                "description": "describe the concept of dimensions;",
+                "cognitiveLevel": "U",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.2.2",
+                "description": "discuss various physical quantities in terms of their dimensions;",
+                "cognitiveLevel": "E",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.2.3",
+                "description": "show the homogeneity of physical equations by using dimensions;",
+                "cognitiveLevel": "A",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.2.4",
+                "description": "derive the formula for physical quantities by using dimensions;",
+                "cognitiveLevel": "A",
+                "sourcePage": 10
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "1.3",
+            "name": "1.3 Precision and Accuracy",
+            "slos": [
+              {
+                "code": "1.3.1",
+                "description": "differentiate between precision and accuracy;",
+                "cognitiveLevel": "U",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.3.2",
+                "description": "analyse the accuracy and precision of data collected using different measuring instruments;",
+                "cognitiveLevel": "An",
+                "sourcePage": 10
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "1.4",
+            "name": "1.4 Significant Figures and Uncertainty",
+            "slos": [
+              {
+                "code": "1.4.1",
+                "description": "solve word problems related to uncertainty in derived quantity with correct number of significant figures;",
+                "cognitiveLevel": "A",
+                "sourcePage": 11
+              },
+              {
+                "code": "1.4.2",
+                "description": "justify that all measurements contain uncertainty.",
+                "cognitiveLevel": "E",
+                "sourcePage": 11
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 2,
+        "name": "Scalars and Vectors",
+        "subtopics": [
+          {
+            "subtopicNumber": "2.1",
+            "name": "2.1 Introduction to Vectors",
+            "slos": [
+              {
+                "code": "2.1.1",
+                "description": "differentiate between scalar and vector quantities;",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              },
+              {
+                "code": "2.1.2",
+                "description": "define resultant, negative, unit, null, position, and equal vectors;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 12
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "2.2",
+            "name": "2.2 Addition of Vectors by Rectangular Component Method",
+            "slos": [
+              {
+                "code": "2.2.1",
+                "description": "analyse a vector into its rectangular components;",
+                "cognitiveLevel": "An",
+                "sourcePage": 12
+              },
+              {
+                "code": "2.2.2",
+                "description": "explain the sum of vectors using perpendicular components;",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              },
+              {
+                "code": "2.2.3",
+                "description": "calculate the resultant of two vectors by rectangular component method;",
+                "cognitiveLevel": "A",
+                "sourcePage": 12
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "2.3",
+            "name": "2.3 Scalar Product of Two Vectors",
+            "slos": [
+              {
+                "code": "2.3.1",
+                "description": "define scalar product of two vectors;",
+                "cognitiveLevel": "R",
+                "sourcePage": 12
+              },
+              {
+                "code": "2.3.2",
+                "description": "exemplify scalar product of two vectors in terms of angle between them;",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              },
+              {
+                "code": "2.3.3",
+                "description": "describe properties of scalar product of two vectors;",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "2.4",
+            "name": "2.4 Vector Product of Two Vectors",
+            "slos": [
+              {
+                "code": "2.4.1",
+                "description": "define vector product of two vectors;",
+                "cognitiveLevel": "R",
+                "sourcePage": 12
+              },
+              {
+                "code": "2.4.2",
+                "description": "exemplify vector product of two vectors in terms of angle between them;",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              },
+              {
+                "code": "2.4.3",
+                "description": "describe properties of vector product of two vectors.",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 3,
+        "name": "Motion in One Dimension",
+        "subtopics": [
+          {
+            "subtopicNumber": "3.1",
+            "name": "3.1 Equations of Motion",
+            "slos": [
+              {
+                "code": "3.1.1",
+                "description": "derive equations of motion for a body moving with a uniform acceleration in a straight line;",
+                "cognitiveLevel": "A",
+                "sourcePage": 13
+              },
+              {
+                "code": "3.1.2",
+                "description": "solve word problems related to uniformly accelerated motion including free fall using appropriate equations;",
+                "cognitiveLevel": "A",
+                "sourcePage": 13
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.2",
+            "name": "3.2 Law of Conservation of Momentum",
+            "slos": [
+              {
+                "code": "3.2.1",
+                "description": "describe law of conservation of linear momentum;",
+                "cognitiveLevel": "U",
+                "sourcePage": 13
+              },
+              {
+                "code": "3.2.2",
+                "description": "exemplify the law of conservation of momentum in:\na. karate chops to break a pile of bricks,\nb. car crashes,\nc. ball and bat,\nd. motion under thrust of a rocket in a straight line;",
+                "cognitiveLevel": "U",
+                "sourcePage": 13
+              },
+              {
+                "code": "3.2.3",
+                "description": "derive the relation between force and the rate of change of momentum;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 13
+              },
+              {
+                "code": "3.2.4",
+                "description": "define elastic and inelastic collision;",
+                "cognitiveLevel": "R",
+                "sourcePage": 13
+              },
+              {
+                "code": "3.2.5",
+                "description": "apply law of conservation of momentum to study the special cases of elastic collision between two bodies in one dimension;",
+                "cognitiveLevel": "A",
+                "sourcePage": 13
+              },
+              {
+                "code": "3.2.6",
+                "description": "apply law of conservation of momentum in one dimension in solving word problems;",
+                "cognitiveLevel": "A",
+                "sourcePage": 13
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.3",
+            "name": "3.3 Work",
+            "slos": [
+              {
+                "code": "3.3.1",
+                "description": "describe work as the dot product of force and displacement;",
+                "cognitiveLevel": "U",
+                "sourcePage": 13
+              },
+              {
+                "code": "3.3.2",
+                "description": "deduce the work done from the force displacement graphs;",
+                "cognitiveLevel": "E",
+                "sourcePage": 13
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.4",
+            "name": "3.4 Conservative and Non- Conservative Fields",
+            "slos": [
+              {
+                "code": "3.4.1",
+                "description": "differentiate between conservative and non-conservative field;",
+                "cognitiveLevel": "U",
+                "sourcePage": 13
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.5",
+            "name": "3.5 Work-Energy Theorem",
+            "slos": [
+              {
+                "code": "3.5.1",
+                "description": "deduce the work-energy theorem in non-resistive and resistive medium;",
+                "cognitiveLevel": "E",
+                "sourcePage": 13
+              },
+              {
+                "code": "3.5.2",
+                "description": "solve word problems related to the work-energy theorem.",
+                "cognitiveLevel": "A",
+                "sourcePage": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 4,
+        "name": "Motion in Two Dimensions",
+        "subtopics": [
+          {
+            "subtopicNumber": "4.1",
+            "name": "4.1 Projectile",
+            "slos": [
+              {
+                "code": "4.1.1",
+                "description": "explain projectile motion;",
+                "cognitiveLevel": "U",
+                "sourcePage": 14
+              },
+              {
+                "code": "4.1.2",
+                "description": "derive the relation for:\na. time of flight,\nb. maximum height,\nc. horizontal range of a projectile,\nd. maximum horizontal range of a projectile;",
+                "cognitiveLevel": "A",
+                "sourcePage": 14
+              },
+              {
+                "code": "4.1.3",
+                "description": "solve word problems related to the given relations (a, b, c and d);",
+                "cognitiveLevel": "A",
+                "sourcePage": 14
+              },
+              {
+                "code": "4.1.4",
+                "description": "predict qualitatively the effect of air resistance on the motion of a projectile;",
+                "cognitiveLevel": "E",
+                "sourcePage": 14
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "4.2",
+            "name": "4.2 Angular Motion",
+            "slos": [
+              {
+                "code": "4.2.1",
+                "description": "describe angular displacement, angular velocity and angular acceleration;",
+                "cognitiveLevel": "U",
+                "sourcePage": 14
+              },
+              {
+                "code": "4.2.2",
+                "description": "derive the relationship between linear and angular displacement, velocity and acceleration;",
+                "cognitiveLevel": "A",
+                "sourcePage": 14
+              },
+              {
+                "code": "4.2.3",
+                "description": "solve word problems related to the rotational motion;",
+                "cognitiveLevel": "A",
+                "sourcePage": 14
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "4.3",
+            "name": "4.3 Centripetal Force and Centripetal Acceleration",
+            "slos": [
+              {
+                "code": "4.3.1",
+                "description": "define centripetal force and centripetal acceleration;",
+                "cognitiveLevel": "R",
+                "sourcePage": 14
+              },
+              {
+                "code": "4.3.2",
+                "description": "derive centripetal acceleration when speed is uniform;",
+                "cognitiveLevel": "A",
+                "sourcePage": 14
+              },
+              {
+                "code": "4.3.3",
+                "description": "justify that a centrifuge is used to separate materials using centripetal force;",
+                "cognitiveLevel": "E",
+                "sourcePage": 14
+              },
+              {
+                "code": "4.3.4",
+                "description": "explain that the objects in orbiting satellites appear to be weightless;",
+                "cognitiveLevel": "U",
+                "sourcePage": 14
+              },
+              {
+                "code": "4.3.5",
+                "description": "describe that artificial gravity is created to counter weightlessness;",
+                "cognitiveLevel": "U",
+                "sourcePage": 14
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "4.4",
+            "name": "4.4 Moment of Inertia",
+            "slos": [
+              {
+                "code": "4.4.1",
+                "description": "explain moment of inertia and its SI unit with dimension;",
+                "cognitiveLevel": "U",
+                "sourcePage": 15
+              },
+              {
+                "code": "4.4.2",
+                "description": "compare the moment of inertia in rod, ring, disc and sphere;",
+                "cognitiveLevel": "U",
+                "sourcePage": 15
+              },
+              {
+                "code": "4.4.3",
+                "description": "derive relationship between torque, moment of inertia and angular acceleration;",
+                "cognitiveLevel": "A",
+                "sourcePage": 15
+              },
+              {
+                "code": "4.4.4",
+                "description": "solve word problems related to the given relationships;",
+                "cognitiveLevel": "A",
+                "sourcePage": 15
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "4.5",
+            "name": "4.5 Angular Momentum",
+            "slos": [
+              {
+                "code": "4.5.1",
+                "description": "explain angular momentum and its SI unit with dimension;",
+                "cognitiveLevel": "U",
+                "sourcePage": 15
+              },
+              {
+                "code": "4.5.2",
+                "description": "solve word problems related to angular momentum;",
+                "cognitiveLevel": "A",
+                "sourcePage": 15
+              },
+              {
+                "code": "4.5.3",
+                "description": "explain the law of conservation of angular momentum;",
+                "cognitiveLevel": "U",
+                "sourcePage": 15
+              },
+              {
+                "code": "4.5.4",
+                "description": "illustrate the applications of conservation of angular momentum in:\na. flywheels to store rotational energy,\nb. gyroscopes in navigation system,\nc. ice skaters to adjust their angular velocity.",
+                "cognitiveLevel": "A",
+                "sourcePage": 15
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 5,
+        "name": "Deformation in Solids",
+        "subtopics": [
+          {
+            "subtopicNumber": "5.1",
+            "name": "5.1 Types of Solids",
+            "slos": [
+              {
+                "code": "5.1.1",
+                "description": "distinguish between the structures of crystalline, amorphous and polymeric solids;",
+                "cognitiveLevel": "U",
+                "sourcePage": 16
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "5.2",
+            "name": "5.2 Deformation in Solids",
+            "slos": [
+              {
+                "code": "5.2.1",
+                "description": "describe the deformation of solids in one dimension;",
+                "cognitiveLevel": "U",
+                "sourcePage": 16
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "5.3",
+            "name": "5.3 Tensile and Plastic Deformation",
+            "slos": [
+              {
+                "code": "5.3.1",
+                "description": "describe terms elastic deformation, plastic deformation and elastic limit;",
+                "cognitiveLevel": "U",
+                "sourcePage": 16
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "5.4",
+            "name": "5.4 Stress, Strain and Young Modulus",
+            "slos": [
+              {
+                "code": "5.4.1",
+                "description": "define stress, strain and Young modulus;",
+                "cognitiveLevel": "R",
+                "sourcePage": 16
+              },
+              {
+                "code": "5.4.2",
+                "description": "interpret force extension graph for a deformed material;",
+                "cognitiveLevel": "E",
+                "sourcePage": 16
+              },
+              {
+                "code": "5.4.3",
+                "description": "solve word problems related to Young modulus;",
+                "cognitiveLevel": "A",
+                "sourcePage": 16
+              },
+              {
+                "code": "5.4.4",
+                "description": "use daily life objects to explain stress, strain and Young modulus;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 16
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "5.5",
+            "name": "5.5 Elastic Potential Energy of Materials",
+            "slos": [
+              {
+                "code": "5.5.1",
+                "description": "determine the elastic potential energy of a material by using $E=\\frac{1}{2}Fx=\\frac{1}{2}kx^2$.",
+                "cognitiveLevel": "A",
+                "sourcePage": 16
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 6,
+        "name": "Fluids Dynamics",
+        "subtopics": [
+          {
+            "subtopicNumber": "6.1",
+            "name": "6.1 Floating Objects",
+            "slos": [
+              {
+                "code": "6.1.1",
+                "description": "describe upthrust;",
+                "cognitiveLevel": "U",
+                "sourcePage": 17
+              },
+              {
+                "code": "6.1.2",
+                "description": "solve word problems using $\\mathrm{Upthrust}=\\rho gV$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 17
+              },
+              {
+                "code": "6.1.3",
+                "description": "state the principle of floatation in terms of upthrust;",
+                "cognitiveLevel": "R",
+                "sourcePage": 17
+              },
+              {
+                "code": "6.1.4",
+                "description": "state Archimedes’ principle of floatation;",
+                "cognitiveLevel": "R",
+                "sourcePage": 17
+              },
+              {
+                "code": "6.1.5",
+                "description": "justify that ships are engineered to float in the sea;",
+                "cognitiveLevel": "E",
+                "sourcePage": 17
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "6.2",
+            "name": "6.2 Streamline and Turbulent Flow",
+            "slos": [
+              {
+                "code": "6.2.1",
+                "description": "define the following terms:\na. streamline flow (laminar flow),\nb. turbulent flow,\nc. incompressible flow;",
+                "cognitiveLevel": "R",
+                "sourcePage": 17
+              },
+              {
+                "code": "6.2.2",
+                "description": "state the conditions required for turbulent flow;",
+                "cognitiveLevel": "R",
+                "sourcePage": 17
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "6.3",
+            "name": "6.3 Equation of Continuity",
+            "slos": [
+              {
+                "code": "6.3.1",
+                "description": "derive the equation of continuity;",
+                "cognitiveLevel": "A",
+                "sourcePage": 17
+              },
+              {
+                "code": "6.3.2",
+                "description": "explain that squeezing one end of a rubber pipe results in increase in flow velocity at the other end;",
+                "cognitiveLevel": "U",
+                "sourcePage": 17
+              },
+              {
+                "code": "6.3.3",
+                "description": "solve word problems related to the equation of continuity;",
+                "cognitiveLevel": "A",
+                "sourcePage": 17
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "6.4",
+            "name": "6.4 Bernoulli’s Equation",
+            "slos": [
+              {
+                "code": "6.4.1",
+                "description": "derive Bernoulli’s equation;",
+                "cognitiveLevel": "A",
+                "sourcePage": 17
+              },
+              {
+                "code": "6.4.2",
+                "description": "justify that the difference in pressure can arise from different rates of flow of a fluid;",
+                "cognitiveLevel": "E",
+                "sourcePage": 17
+              },
+              {
+                "code": "6.4.3",
+                "description": "explain Bernoulli effect in the following cases:\na. atomizer,\nb. swing of ball,\nc. the lift of golf ball (the magnus effect),\nd. venturi duct;",
+                "cognitiveLevel": "U",
+                "sourcePage": 17
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "6.5",
+            "name": "6.5 Viscous Fluids and Fluid Friction",
+            "slos": [
+              {
+                "code": "6.5.1",
+                "description": "define the following terms:\na. viscous fluids,\nb. non-viscous fluids;",
+                "cognitiveLevel": "R",
+                "sourcePage": 18
+              },
+              {
+                "code": "6.5.2",
+                "description": "describe that viscous force in a fluid causes a retarding force on an object moving through it;",
+                "cognitiveLevel": "U",
+                "sourcePage": 18
+              },
+              {
+                "code": "6.5.3",
+                "description": "explain that real fluids are viscous fluids;",
+                "cognitiveLevel": "U",
+                "sourcePage": 18
+              },
+              {
+                "code": "6.5.4",
+                "description": "describe the following terms:\na. fluid friction,\nb. super fluidity;",
+                "cognitiveLevel": "U",
+                "sourcePage": 18
+              },
+              {
+                "code": "6.5.5",
+                "description": "use different liquids in the surroundings to explain fluid friction and super fluidity.",
+                "cognitiveLevel": "FA",
+                "sourcePage": 18
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 7,
+        "name": "Oscillations",
+        "subtopics": [
+          {
+            "subtopicNumber": "7.1",
+            "name": "7.1 Simple Harmonic Motion (S.H.M.)",
+            "slos": [
+              {
+                "code": "7.1.1",
+                "description": "define periodic and non-periodic oscillation;",
+                "cognitiveLevel": "R",
+                "sourcePage": 19
+              },
+              {
+                "code": "7.1.2",
+                "description": "describe Simple Harmonic Motion (S.H.M.);",
+                "cognitiveLevel": "U",
+                "sourcePage": 19
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "7.2",
+            "name": "7.2 Uniform Circular Motion and S.H.M.",
+            "slos": [
+              {
+                "code": "7.2.1",
+                "description": "define the following terms in the context of oscillations:\na. displacement,\nb. amplitude,\nc. period,\nd. frequency,\ne. angular frequency,\nf. phase difference;",
+                "cognitiveLevel": "R",
+                "sourcePage": 19
+              },
+              {
+                "code": "7.2.2",
+                "description": "relate S.H.M. with uniform circular motion;",
+                "cognitiveLevel": "U",
+                "sourcePage": 19
+              },
+              {
+                "code": "7.2.3",
+                "description": "derive expression for instantaneous displacement, velocity and acceleration in terms of angular velocity $(\\omega)$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 19
+              },
+              {
+                "code": "7.2.4",
+                "description": "solve word problems related to the SLO # 7.2.3;",
+                "cognitiveLevel": "A",
+                "sourcePage": 19
+              },
+              {
+                "code": "7.2.5",
+                "description": "analyse graphical representations of the variations of displacement, velocity and acceleration with time for simple harmonic motion;",
+                "cognitiveLevel": "An",
+                "sourcePage": 19
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "7.3",
+            "name": "7.3 Mass-Spring System",
+            "slos": [
+              {
+                "code": "7.3.1",
+                "description": "explain that the motion of a body under elastic restoring force is S.H.M.;",
+                "cognitiveLevel": "U",
+                "sourcePage": 19
+              },
+              {
+                "code": "7.3.2",
+                "description": "derive an expression for the time period of a mass-spring system;",
+                "cognitiveLevel": "A",
+                "sourcePage": 19
+              },
+              {
+                "code": "7.3.3",
+                "description": "solve word problems using the expression for the time period of a mass-spring system;",
+                "cognitiveLevel": "A",
+                "sourcePage": 19
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "7.4",
+            "name": "7.4 Simple Pendulum",
+            "slos": [
+              {
+                "code": "7.4.1",
+                "description": "explain that the motion of a simple pendulum is S.H.M.;",
+                "cognitiveLevel": "U",
+                "sourcePage": 20
+              },
+              {
+                "code": "7.4.2",
+                "description": "derive an expression for the time period of a simple pendulum;",
+                "cognitiveLevel": "A",
+                "sourcePage": 20
+              },
+              {
+                "code": "7.4.3",
+                "description": "solve word problems using the expression for the time period of a simple pendulum;",
+                "cognitiveLevel": "A",
+                "sourcePage": 20
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "7.5",
+            "name": "7.5 Energy Conservation in S.H.M.",
+            "slos": [
+              {
+                "code": "7.5.1",
+                "description": "derive an expression to show that energy is conserved in mass- spring system executing S.H.M.;",
+                "cognitiveLevel": "A",
+                "sourcePage": 20
+              },
+              {
+                "code": "7.5.2",
+                "description": "solve word problems related to given expression;",
+                "cognitiveLevel": "A",
+                "sourcePage": 20
+              },
+              {
+                "code": "7.5.3",
+                "description": "analyse the interchange between kinetic and potential energy during simple harmonic motion;",
+                "cognitiveLevel": "An",
+                "sourcePage": 20
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "7.6",
+            "name": "7.6 Free and Forced Oscillation",
+            "slos": [
+              {
+                "code": "7.6.1",
+                "description": "exemplify free and forced oscillation;",
+                "cognitiveLevel": "U",
+                "sourcePage": 20
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "7.7",
+            "name": "7.7 Resonance",
+            "slos": [
+              {
+                "code": "7.7.1",
+                "description": "define resonance;",
+                "cognitiveLevel": "R",
+                "sourcePage": 20
+              },
+              {
+                "code": "7.7.2",
+                "description": "describe applications and consequences of resonance in real life;",
+                "cognitiveLevel": "U",
+                "sourcePage": 20
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "7.8",
+            "name": "7.8 Damped Oscillations",
+            "slos": [
+              {
+                "code": "7.8.1",
+                "description": "explain damped oscillation;",
+                "cognitiveLevel": "U",
+                "sourcePage": 20
+              },
+              {
+                "code": "7.8.2",
+                "description": "list different applications of damped oscillation;",
+                "cognitiveLevel": "R",
+                "sourcePage": 20
+              },
+              {
+                "code": "7.8.3",
+                "description": "illustrate displacement-time graphs to show light, critical and heavy damping.",
+                "cognitiveLevel": "A",
+                "sourcePage": 20
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 8,
+        "name": "Waves",
+        "subtopics": [
+          {
+            "subtopicNumber": "8.1",
+            "name": "8.1 Wave Motion",
+            "slos": [
+              {
+                "code": "8.1.1",
+                "description": "define progressive waves;",
+                "cognitiveLevel": "R",
+                "sourcePage": 21
+              },
+              {
+                "code": "8.1.2",
+                "description": "explain energy transfer through a progressive wave;",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              },
+              {
+                "code": "8.1.3",
+                "description": "solve word problems using $\\mathrm{intensity}=\\frac{\\mathrm{power}}{\\mathrm{area}}$ and $\\mathrm{intensity}\\propto(\\mathrm{amplitude})^2$ for a progressive wave;",
+                "cognitiveLevel": "A",
+                "sourcePage": 21
+              },
+              {
+                "code": "8.1.4",
+                "description": "solve word problems using $V=f\\lambda$;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 21
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "8.2",
+            "name": "8.2 Transverse and Longitudinal Waves",
+            "slos": [
+              {
+                "code": "8.2.1",
+                "description": "differentiate between transverse and longitudinal waves;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 21
+              },
+              {
+                "code": "8.2.2",
+                "description": "analyse graphical representations of transverse and longitudinal waves;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 21
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "8.3",
+            "name": "8.3 Superposition of Waves",
+            "slos": [
+              {
+                "code": "8.3.1",
+                "description": "state the principle of superposition of two waves;",
+                "cognitiveLevel": "R",
+                "sourcePage": 21
+              },
+              {
+                "code": "8.3.2",
+                "description": "describe the phenomenon of interference of sound waves;",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              },
+              {
+                "code": "8.3.3",
+                "description": "calculate the phase difference between two waves;",
+                "cognitiveLevel": "A",
+                "sourcePage": 21
+              },
+              {
+                "code": "8.3.4",
+                "description": "explain the formation of beats using diagrams;",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "8.4",
+            "name": "8.4 Stationary Waves",
+            "slos": [
+              {
+                "code": "8.4.1",
+                "description": "define the terms nodes and antinodes;",
+                "cognitiveLevel": "R",
+                "sourcePage": 21
+              },
+              {
+                "code": "8.4.2",
+                "description": "describe the formation of stationary waves in a string and air column;",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              },
+              {
+                "code": "8.4.3",
+                "description": "solve word problems related to stationary waves;",
+                "cognitiveLevel": "A",
+                "sourcePage": 21
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "8.5",
+            "name": "8.5 Doppler’s Effect",
+            "slos": [
+              {
+                "code": "8.5.1",
+                "description": "describe Doppler’s effect;",
+                "cognitiveLevel": "U",
+                "sourcePage": 22
+              },
+              {
+                "code": "8.5.2",
+                "description": "derive the relation between the original frequency of source of sound and the apparent frequency detected by the listener in following conditions:\na. when the source is at rest and the listener is moving towards or away from the source,\nb. when the listener is at rest and the source is moving towards or away from the listener,\nc. when both source and listener are moving towards each other,\nd. when both source and listener are moving away from each other;",
+                "cognitiveLevel": "A",
+                "sourcePage": 22
+              },
+              {
+                "code": "8.5.3",
+                "description": "solve word problems using the above relations mentioned in the SLO # 8.5.2;",
+                "cognitiveLevel": "A",
+                "sourcePage": 22
+              },
+              {
+                "code": "8.5.4",
+                "description": "explain the application of Doppler’s effect in electromagnetic waves;",
+                "cognitiveLevel": "U",
+                "sourcePage": 22
+              },
+              {
+                "code": "8.5.5",
+                "description": "apply Doppler’s effect to understand the working of radar, sonar, satellites and red and blue shifts;",
+                "cognitiveLevel": "A",
+                "sourcePage": 22
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "8.6",
+            "name": "8.6 Waves in Modern World",
+            "slos": [
+              {
+                "code": "8.6.1",
+                "description": "use of waves in modern world for:\na. medical purposes,\nb. digital transmission,\nc. storage of information,\nd. monitoring earthquake and tsunami.",
+                "cognitiveLevel": "FA",
+                "sourcePage": 22
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 9,
+        "name": "Physical Optics",
+        "subtopics": [
+          {
+            "subtopicNumber": "9.1",
+            "name": "9.1 Nature of Light",
+            "slos": [
+              {
+                "code": "9.1.1",
+                "description": "discuss different points of view about nature of light;",
+                "cognitiveLevel": "E",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.1.2",
+                "description": "discuss the concept of wave-front;",
+                "cognitiveLevel": "E",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.1.3",
+                "description": "describe Huygen’s principle;",
+                "cognitiveLevel": "U",
+                "sourcePage": 23
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "9.2",
+            "name": "9.2 Interference of Light",
+            "slos": [
+              {
+                "code": "9.2.1",
+                "description": "define coherent and monochromatic sources of light;",
+                "cognitiveLevel": "R",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.2.2",
+                "description": "define interference of light;",
+                "cognitiveLevel": "R",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.2.3",
+                "description": "state conditions necessary for the interference of light;",
+                "cognitiveLevel": "R",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.2.4",
+                "description": "explain Young’s double slit experiment;",
+                "cognitiveLevel": "U",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.2.5",
+                "description": "derive relation for fringe spacing;",
+                "cognitiveLevel": "A",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.2.6",
+                "description": "solve word problems related to the fringe spacing;",
+                "cognitiveLevel": "A",
+                "sourcePage": 23
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "9.3",
+            "name": "9.3 Michelson’s Interferometer",
+            "slos": [
+              {
+                "code": "9.3.1",
+                "description": "describe the construction and working of Michelson’s interferometer;",
+                "cognitiveLevel": "U",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.3.2",
+                "description": "describe qualitatively about gravitational waves;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.3.3",
+                "description": "state that a gravitational wave passes a body of mass creates a distortion in spacetime;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.3.4",
+                "description": "describe the use of interferometers in detecting gravitational waves;",
+                "cognitiveLevel": "U",
+                "sourcePage": 23
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "9.4",
+            "name": "9.4 Diffraction of Light",
+            "slos": [
+              {
+                "code": "9.4.1",
+                "description": "define diffraction of light;",
+                "cognitiveLevel": "R",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.4.2",
+                "description": "describe diffraction of light by diffraction grating;",
+                "cognitiveLevel": "U",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.4.3",
+                "description": "describe diffraction in a narrow slit;",
+                "cognitiveLevel": "U",
+                "sourcePage": 23
+              },
+              {
+                "code": "9.4.4",
+                "description": "solve word problems related to diffraction of light;",
+                "cognitiveLevel": "A",
+                "sourcePage": 23
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "9.5",
+            "name": "9.5 Bragg’s Law",
+            "slos": [
+              {
+                "code": "9.5.1",
+                "description": "state Bragg’s law;",
+                "cognitiveLevel": "R",
+                "sourcePage": 24
+              },
+              {
+                "code": "9.5.2",
+                "description": "describe diffraction of X-rays through crystals;",
+                "cognitiveLevel": "U",
+                "sourcePage": 24
+              },
+              {
+                "code": "9.5.3",
+                "description": "derive the equation $2d\\sin\\theta=m\\lambda$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 24
+              },
+              {
+                "code": "9.5.4",
+                "description": "solve word problems related to the given equation;",
+                "cognitiveLevel": "A",
+                "sourcePage": 24
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "9.6",
+            "name": "9.6 Polarisation",
+            "slos": [
+              {
+                "code": "9.6.1",
+                "description": "describe unpolarised and polarised light;",
+                "cognitiveLevel": "U",
+                "sourcePage": 24
+              },
+              {
+                "code": "9.6.2",
+                "description": "explain polarisation with reference to transverse waves;",
+                "cognitiveLevel": "U",
+                "sourcePage": 24
+              },
+              {
+                "code": "9.6.3",
+                "description": "explain polarisation by reflection;",
+                "cognitiveLevel": "U",
+                "sourcePage": 24
+              },
+              {
+                "code": "9.6.4",
+                "description": "explain polarisation by a polaroid;",
+                "cognitiveLevel": "U",
+                "sourcePage": 24
+              },
+              {
+                "code": "9.6.5",
+                "description": "state Malus’s law;",
+                "cognitiveLevel": "R",
+                "sourcePage": 24
+              },
+              {
+                "code": "9.6.6",
+                "description": "solve word problems related to the Malus’s law;",
+                "cognitiveLevel": "A",
+                "sourcePage": 24
+              },
+              {
+                "code": "9.6.7",
+                "description": "describe the applications of polarisation in daily life.",
+                "cognitiveLevel": "U",
+                "sourcePage": 24
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 10,
+        "name": "Thermodynamics",
+        "subtopics": [
+          {
+            "subtopicNumber": "10.1",
+            "name": "10.1 Heat and Temperature",
+            "slos": [
+              {
+                "code": "10.1.1",
+                "description": "distinguish between heat and temperature;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              },
+              {
+                "code": "10.1.2",
+                "description": "describe heat as a form of transit energy;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              },
+              {
+                "code": "10.1.3",
+                "description": "identify that regions of equal temperature are in thermal equilibrium;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              },
+              {
+                "code": "10.1.4",
+                "description": "investigate to provide evidence for the transfer of thermal energy between two bodies at different temperatures in a closed system;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 25
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.2",
+            "name": "10.2 Fundamentals of the Ideal Gas",
+            "slos": [
+              {
+                "code": "10.2.1",
+                "description": "state Boyle’s law and Charles’s law;",
+                "cognitiveLevel": "R",
+                "sourcePage": 25
+              },
+              {
+                "code": "10.2.2",
+                "description": "describe that a gas obeying $PV\\propto T$ is an ideal gas;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.3",
+            "name": "10.3 Kinetic Molecular Theory of Gases",
+            "slos": [
+              {
+                "code": "10.3.1",
+                "description": "state basic postulates of kinetic molecular theory of gases;",
+                "cognitiveLevel": "R",
+                "sourcePage": 25
+              },
+              {
+                "code": "10.3.2",
+                "description": "derive relation $PV=\\frac{1}{3}Nm\\langle v^2\\rangle$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 25
+              },
+              {
+                "code": "10.3.3",
+                "description": "calculate the root-mean-square speed of an ideal gas;",
+                "cognitiveLevel": "A",
+                "sourcePage": 25
+              },
+              {
+                "code": "10.3.4",
+                "description": "derive the formula for the average translational kinetic energy of a gas;",
+                "cognitiveLevel": "A",
+                "sourcePage": 25
+              },
+              {
+                "code": "10.3.5",
+                "description": "solve word problems related to given average translational kinetic energy of a gas;",
+                "cognitiveLevel": "A",
+                "sourcePage": 25
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.4",
+            "name": "10.4 Internal Energy and Work",
+            "slos": [
+              {
+                "code": "10.4.1",
+                "description": "describe internal energy of an ideal gas as the sum of their kinetic energy of molecules only;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              },
+              {
+                "code": "10.4.2",
+                "description": "explain that internal energy is function of ‘state’ and is independent of paths;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              },
+              {
+                "code": "10.4.3",
+                "description": "explain work done in thermodynamics;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              },
+              {
+                "code": "10.4.4",
+                "description": "differentiate between the work done by a gas and the work done on a gas;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.5",
+            "name": "10.5 First Law of Thermodynamics",
+            "slos": [
+              {
+                "code": "10.5.1",
+                "description": "explain the first law of thermodynamics;",
+                "cognitiveLevel": "U",
+                "sourcePage": 26
+              },
+              {
+                "code": "10.5.2",
+                "description": "apply the first law of thermodynamics in:\na. isothermal,\nb. adiabatic,\nc. isobaric,\nd. isochoric processes;",
+                "cognitiveLevel": "A",
+                "sourcePage": 26
+              },
+              {
+                "code": "10.5.3",
+                "description": "calculate the following on the basis of the first law of thermodynamics:\na. change in internal energy,\nb. work done,\nc. change in heat;",
+                "cognitiveLevel": "A",
+                "sourcePage": 26
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.6",
+            "name": "10.6 Molar Specific Heat of Gases",
+            "slos": [
+              {
+                "code": "10.6.1",
+                "description": "define the terms:\na. specific heat,\nb. molar specific heat;",
+                "cognitiveLevel": "R",
+                "sourcePage": 26
+              },
+              {
+                "code": "10.6.2",
+                "description": "explain $C_p>C_v$;",
+                "cognitiveLevel": "U",
+                "sourcePage": 26
+              },
+              {
+                "code": "10.6.3",
+                "description": "show that $C_p-C_v=R$ by using first law of thermodynamics;",
+                "cognitiveLevel": "A",
+                "sourcePage": 26
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.7",
+            "name": "10.7 Reversible and Irreversible Process",
+            "slos": [
+              {
+                "code": "10.7.1",
+                "description": "describe the concept of reversible and irreversible processes;",
+                "cognitiveLevel": "U",
+                "sourcePage": 26
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.8",
+            "name": "10.8 Second Law of Thermodynamics",
+            "slos": [
+              {
+                "code": "10.8.1",
+                "description": "explain the second law of thermodynamics using schematic diagram;",
+                "cognitiveLevel": "U",
+                "sourcePage": 26
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.9",
+            "name": "10.9 Carnot Engine",
+            "slos": [
+              {
+                "code": "10.9.1",
+                "description": "describe heat engine with reference to the second law of thermodynamics;",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              },
+              {
+                "code": "10.9.2",
+                "description": "explain the working principle of Carnot engine and its four processes with pressure-volume (PV) diagram;",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              },
+              {
+                "code": "10.9.3",
+                "description": "derive the formula for efficiency of Carnot engine;",
+                "cognitiveLevel": "A",
+                "sourcePage": 27
+              },
+              {
+                "code": "10.9.4",
+                "description": "solve word problems related to efficiency of Carnot engine;",
+                "cognitiveLevel": "A",
+                "sourcePage": 27
+              },
+              {
+                "code": "10.9.5",
+                "description": "design an energy efficient device for daily life use;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 27
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.10",
+            "name": "10.10 Refrigerator",
+            "slos": [
+              {
+                "code": "10.10.1",
+                "description": "describe refrigerator as a reverse of heat engine;",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              },
+              {
+                "code": "10.10.2",
+                "description": "derive expression for the coefficient of performance of a refrigerator;",
+                "cognitiveLevel": "A",
+                "sourcePage": 27
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.11",
+            "name": "10.11 Entropy",
+            "slos": [
+              {
+                "code": "10.11.1",
+                "description": "explain ‘entropy’;",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              },
+              {
+                "code": "10.11.2",
+                "description": "describe positive and negative entropy;",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              },
+              {
+                "code": "10.11.3",
+                "description": "explain that increase in entropy is the evidence of increase in temperature of a system;",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              },
+              {
+                "code": "10.11.4",
+                "description": "explain that energy is degraded during all natural processes;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 27
+              },
+              {
+                "code": "10.11.5",
+                "description": "explain environmental crisis as an entropy crisis.",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "practicals": [
+      {
+        "number": 1,
+        "chapter": 1,
+        "activity": "Determine the capacity and thickness of a test tube by using Vernier callipers.",
+        "apparatus": "Vernier callipers, test tube."
+      },
+      {
+        "number": 2,
+        "chapter": 1,
+        "activity": "Measure the diameter of few ball bearings of different sizes using screw gauge and estimate their volumes.",
+        "apparatus": "Screw gauges, steel ball bearings."
+      },
+      {
+        "number": 3,
+        "chapter": 1,
+        "activity": "Determine the radius of curvature of any spherical surface by using a spherometer.",
+        "apparatus": "Spherometer, convex or concave lens/ mirror."
+      },
+      {
+        "number": 4,
+        "chapter": 2,
+        "activity": "Determine the weight of a body by vector addition of forces. (Parallelogram Method)",
+        "apparatus": "Gravesend’s apparatus, slotted weights, thread nos., plane mirror strip."
+      },
+      {
+        "number": 5,
+        "chapter": 3,
+        "activity": "Measure the free fall time of a ball using a ticker-timer and hence, calculate the value of ‘g’.",
+        "apparatus": "Ticker-tape vibrator, roll of ticker-tape, steel ball, transformer, sellotape."
+      },
+      {
+        "number": 6,
+        "chapter": 3,
+        "activity": "Investigate the value of acceleration due to gravity ‘g’ by free fall method using electronic timer.",
+        "apparatus": "Free fall apparatus, steel ball, electronic timer with power supply, plumb line, meter rod."
+      },
+      {
+        "number": 7,
+        "chapter": 7,
+        "activity": "Verify that the time period of the simple pendulum is directly proportional to the square root of its length and hence, find the value of acceleration due to gravity ‘g’ from the graph.",
+        "apparatus": "Simple pendulum, stopwatch, stand with clamp, thread, cork, Vernier callipers."
+      },
+      {
+        "number": 8,
+        "chapter": 8,
+        "activity": "Determine the frequency of AC by Melde’s apparatus/ electric sonometer.",
+        "apparatus": "AC vibrator, step-down transformer (6V), connecting wires, thread, pulley, scale plan."
+      },
+      {
+        "number": 9,
+        "chapter": 8,
+        "activity": "Investigate the laws of vibration of stretched strings by sonometer or electromagnetic method. (Use copper wire instead of iron wire)",
+        "apparatus": "Sonometer, tuning forks of different frequencies, hanger, ½ kg weights, wires of different diameter, physical/ digital/ spring balance, weight box, meter rod."
+      },
+      {
+        "number": 10,
+        "chapter": 8,
+        "activity": "Determine the wavelength of sound in air using stationary waves and calculate the speed of sound using resonance tube.",
+        "apparatus": "Resonance apparatus, different tuning forks of known frequencies, thermometer, Vernier callipers, rubber pad, two set squares, beaker."
+      },
+      {
+        "number": 11,
+        "chapter": 10,
+        "activity": "Determine the specific heat capacity of solid using method of mixture (Regnaults Method).",
+        "apparatus": "Regnaults apparatus for specific heat, thermometer, solid ball, calorimeter."
+      },
+      {
+        "number": 12,
+        "chapter": 10,
+        "activity": "Determine the specific heat capacity of water by electrical method.",
+        "apparatus": "Electrical calorimeter, 1/5oC thermometer, battery, rheostat, key, ammeter, voltmeter, connecting wires, stopwatch, physical/ digital/ spring balance, weight box."
+      }
+    ],
+    "assessmentPage": 52
+  },
+  "12": {
+    "units": [
+      {
+        "unitNumber": 11,
+        "name": "Gravitation",
+        "subtopics": [
+          {
+            "subtopicNumber": "11.1",
+            "name": "11.1 Newton’s Law of Gravitation",
+            "slos": [
+              {
+                "code": "11.1.1",
+                "description": "explain Newton’s law of gravitation;",
+                "cognitiveLevel": "U",
+                "sourcePage": 28
+              },
+              {
+                "code": "11.1.2",
+                "description": "solve word problems using Newton’s law of gravitation;",
+                "cognitiveLevel": "A",
+                "sourcePage": 28
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.2",
+            "name": "11.2 Gravitational Field Strength",
+            "slos": [
+              {
+                "code": "11.2.1",
+                "description": "define gravitational field strength;",
+                "cognitiveLevel": "R",
+                "sourcePage": 28
+              },
+              {
+                "code": "11.2.2",
+                "description": "solve word problems using the relation $g=\\frac{GM}{r^2}$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 28
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.3",
+            "name": "11.3 Gravitational Force and Motion of Satellite",
+            "slos": [
+              {
+                "code": "11.3.1",
+                "description": "analyse circular orbits in gravitational fields;",
+                "cognitiveLevel": "An",
+                "sourcePage": 28
+              },
+              {
+                "code": "11.3.2",
+                "description": "define geo-stationary satellite;",
+                "cognitiveLevel": "R",
+                "sourcePage": 28
+              },
+              {
+                "code": "11.3.3",
+                "description": "analyse the motion of geo-stationary satellites;",
+                "cognitiveLevel": "An",
+                "sourcePage": 28
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.4",
+            "name": "11.4 Variation in value of ‘g’",
+            "slos": [
+              {
+                "code": "11.4.1",
+                "description": "derive the relation for the variation of gravitational field strength with height and depth;",
+                "cognitiveLevel": "A",
+                "sourcePage": 28
+              },
+              {
+                "code": "11.4.2",
+                "description": "analyse that ‘g’ is approximately constant for small changes in height near the Earth’s surface;",
+                "cognitiveLevel": "An",
+                "sourcePage": 28
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.5",
+            "name": "11.5 Gravitational Potential",
+            "slos": [
+              {
+                "code": "11.5.1",
+                "description": "calculate gravitational potential;",
+                "cognitiveLevel": "A",
+                "sourcePage": 28
+              },
+              {
+                "code": "11.5.2",
+                "description": "justify that the concept of gravitational potential leads to the gravitational potential energy of two-point masses.",
+                "cognitiveLevel": "E",
+                "sourcePage": 28
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 12,
+        "name": "Electrostatics",
+        "subtopics": [
+          {
+            "subtopicNumber": "12.1",
+            "name": "12.1 Charge",
+            "slos": [
+              {
+                "code": "12.1.1",
+                "description": "define charge and its types;",
+                "cognitiveLevel": "R",
+                "sourcePage": 29
+              },
+              {
+                "code": "12.1.2",
+                "description": "calculate the total charge on a body as integral multiple of elementary charge (electron);",
+                "cognitiveLevel": "A",
+                "sourcePage": 29
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "12.2",
+            "name": "12.2 Coulomb’s Law",
+            "slos": [
+              {
+                "code": "12.2.1",
+                "description": "state Coulomb’s law for static charges;",
+                "cognitiveLevel": "R",
+                "sourcePage": 29
+              },
+              {
+                "code": "12.2.2",
+                "description": "derive a relation for electrostatic force;",
+                "cognitiveLevel": "A",
+                "sourcePage": 29
+              },
+              {
+                "code": "12.2.3",
+                "description": "solve word problems related to the electrostatic force;",
+                "cognitiveLevel": "A",
+                "sourcePage": 29
+              },
+              {
+                "code": "12.2.4",
+                "description": "describe the effect of medium on Coulomb’s force;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "12.2.5",
+                "description": "explain the concept of electrostatic shielding;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "12.2.6",
+                "description": "describe working of faraday cage;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "12.3",
+            "name": "12.3 Electric Field and Electric Field Intensity",
+            "slos": [
+              {
+                "code": "12.3.1",
+                "description": "describe electric field and electric field intensity around an isolated point charge;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "12.3.2",
+                "description": "compare the formation of electric field lines when:\na. same charges are brought together,\nb. opposite charges are brought together;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "12.3.3",
+                "description": "derive an expression for the magnitude of electric field intensity of a point charge at a distance;",
+                "cognitiveLevel": "A",
+                "sourcePage": 29
+              },
+              {
+                "code": "12.3.4",
+                "description": "solve word problems using the relation $E=\\frac{kq}{r^2}$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 29
+              },
+              {
+                "code": "12.3.5",
+                "description": "illustrate electric field intensity as a function of position;",
+                "cognitiveLevel": "A",
+                "sourcePage": 29
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "12.4",
+            "name": "12.4 Electric Flux",
+            "slos": [
+              {
+                "code": "12.4.1",
+                "description": "explain electric flux as a dot product of electric field intensity and area vector;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "12.5",
+            "name": "12.5 Gauss’s Law",
+            "slos": [
+              {
+                "code": "12.5.1",
+                "description": "explain Gauss’s law;",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "12.5.2",
+                "description": "apply Gauss’s law to find the electric field intensity produced by:\na. a hollow charged spherical surface,\nb. an infinite sheet of charges,\nc. two oppositely charged parallel plates;",
+                "cognitiveLevel": "A",
+                "sourcePage": 30
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "12.6",
+            "name": "12.6 Electric Potential",
+            "slos": [
+              {
+                "code": "12.6.1",
+                "description": "describe electric potential at a point as the work done in bringing a unit charge from infinity to that point;",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "12.6.2",
+                "description": "state unit of electric potential;",
+                "cognitiveLevel": "R",
+                "sourcePage": 30
+              },
+              {
+                "code": "12.6.3",
+                "description": "describe electric field as potential gradient;",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "12.6.4",
+                "description": "derive an expression for electric potential at a point due to a point charge;",
+                "cognitiveLevel": "A",
+                "sourcePage": 30
+              },
+              {
+                "code": "12.6.5",
+                "description": "illustrate electric potential as a function of position;",
+                "cognitiveLevel": "A",
+                "sourcePage": 30
+              },
+              {
+                "code": "12.6.6",
+                "description": "define electron volt (eV);",
+                "cognitiveLevel": "R",
+                "sourcePage": 30
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "12.7",
+            "name": "12.7 Capacitor",
+            "slos": [
+              {
+                "code": "12.7.1",
+                "description": "derive capacitance of a parallel plate capacitor in terms of area, distance and permittivity of free space;",
+                "cognitiveLevel": "A",
+                "sourcePage": 30
+              },
+              {
+                "code": "12.7.2",
+                "description": "calculate equivalent capacitance of different capacitors connected in series and parallel combinations;",
+                "cognitiveLevel": "A",
+                "sourcePage": 30
+              },
+              {
+                "code": "12.7.3",
+                "description": "analyse graphs of potential difference, charge and current with reference to time for a capacitor charging and discharging through a resistor;",
+                "cognitiveLevel": "An",
+                "sourcePage": 30
+              },
+              {
+                "code": "12.7.4",
+                "description": "describe time constant, show that the product of RC has the same unit as time;",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "12.7.5",
+                "description": "use equations of the form $x=x_0e^{-\\left(\\frac{t}{RC}\\right)}$ where $x$ could represent current, charge or potential difference for a capacitor discharging through resistor;",
+                "cognitiveLevel": "A",
+                "sourcePage": 30
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "12.8",
+            "name": "12.8 Energy Stored in a Capacitor",
+            "slos": [
+              {
+                "code": "12.8.1",
+                "description": "list the use of capacitors in various household appliances;",
+                "cognitiveLevel": "R",
+                "sourcePage": 31
+              },
+              {
+                "code": "12.8.2",
+                "description": "explain polarisation of dielectric of a capacitor;",
+                "cognitiveLevel": "U",
+                "sourcePage": 31
+              },
+              {
+                "code": "12.8.3",
+                "description": "show that energy stored in a capacitor is $W=\\frac{1}{2}QV$ and $W=\\frac{1}{2}CV^2$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 31
+              },
+              {
+                "code": "12.8.4",
+                "description": "determine the electric potential energy stored in a capacitor from the area under the potential-charge graph.",
+                "cognitiveLevel": "A",
+                "sourcePage": 31
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 13,
+        "name": "Electric Current",
+        "subtopics": [
+          {
+            "subtopicNumber": "13.1",
+            "name": "13.1 Current Electricity",
+            "slos": [
+              {
+                "code": "13.1.1",
+                "description": "define electric current;",
+                "cognitiveLevel": "R",
+                "sourcePage": 32
+              },
+              {
+                "code": "13.1.2",
+                "description": "describe the flow of current in a conductor;",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              },
+              {
+                "code": "13.1.3",
+                "description": "solve word problems using the expression $I=Anvq$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 32
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "13.2",
+            "name": "13.2 Resistance and Resistivity",
+            "slos": [
+              {
+                "code": "13.2.1",
+                "description": "define resistance and resistivity;",
+                "cognitiveLevel": "R",
+                "sourcePage": 32
+              },
+              {
+                "code": "13.2.2",
+                "description": "derive a relation between resistance and resistivity;",
+                "cognitiveLevel": "A",
+                "sourcePage": 32
+              },
+              {
+                "code": "13.2.3",
+                "description": "solve word problems using the relation $R=\\frac{\\rho l}{A}$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 32
+              },
+              {
+                "code": "13.2.4",
+                "description": "describe the relationship between temperature and resistance of a conductor;",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              },
+              {
+                "code": "13.2.5",
+                "description": "state that the resistance of a light-dependent resistor (LDR) decreases as the light intensity increases;",
+                "cognitiveLevel": "R",
+                "sourcePage": 32
+              },
+              {
+                "code": "13.2.6",
+                "description": "calculate the value of carbon resistance by using the following colour codes includes:\na. 3 band colour code,\nb. 4 band colour code,\nc. 5 band colour code,\nd. 6 band colour code;",
+                "cognitiveLevel": "A",
+                "sourcePage": 32
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "13.3",
+            "name": "13.3 Electromotive Force (e.m.f.) and Potential Difference",
+            "slos": [
+              {
+                "code": "13.3.1",
+                "description": "state Ohm’s law;",
+                "cognitiveLevel": "R",
+                "sourcePage": 33
+              },
+              {
+                "code": "13.3.2",
+                "description": "illustrate the I-V characteristics of a metallic conductor at constant temperature, a semiconductor diode, thermistor and a filament lamp;",
+                "cognitiveLevel": "A",
+                "sourcePage": 33
+              },
+              {
+                "code": "13.3.3",
+                "description": "define electromotive force (e.m.f.) and internal resistance;",
+                "cognitiveLevel": "R",
+                "sourcePage": 33
+              },
+              {
+                "code": "13.3.4",
+                "description": "compare electromotive force with terminal potential difference;",
+                "cognitiveLevel": "U",
+                "sourcePage": 33
+              },
+              {
+                "code": "13.3.5",
+                "description": "derive a relation to understand the effects of the internal resistance of a source of e.m.f. on the terminal potential difference;",
+                "cognitiveLevel": "A",
+                "sourcePage": 33
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "13.4",
+            "name": "13.4 Electric Power",
+            "slos": [
+              {
+                "code": "13.4.1",
+                "description": "define electric power;",
+                "cognitiveLevel": "R",
+                "sourcePage": 33
+              },
+              {
+                "code": "13.4.2",
+                "description": "derive relations for electric power in terms of current (I), voltage (V) and resistance (R);",
+                "cognitiveLevel": "A",
+                "sourcePage": 33
+              },
+              {
+                "code": "13.4.3",
+                "description": "calculate the power dissipation due to the internal resistance of a circuit;",
+                "cognitiveLevel": "A",
+                "sourcePage": 33
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "13.5",
+            "name": "13.5 Kirchoff’s Laws",
+            "slos": [
+              {
+                "code": "13.5.1",
+                "description": "explain Kirchoff’s laws;",
+                "cognitiveLevel": "U",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.5.2",
+                "description": "explain conservation of charge in a circuit with the help of Kirchoff’s first law;",
+                "cognitiveLevel": "U",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.5.3",
+                "description": "explain conservation of energy in a circuit with the help of Kirchoff’s second law;",
+                "cognitiveLevel": "U",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.5.4",
+                "description": "derive a formula for equivalent resistance of two or more resistors using Kirchhoff's law in:\na. series,\nb. parallel;",
+                "cognitiveLevel": "A",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.5.5",
+                "description": "solve problems using Kirchhoff’s laws;",
+                "cognitiveLevel": "A",
+                "sourcePage": 34
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "13.6",
+            "name": "13.6 Potential Divider",
+            "slos": [
+              {
+                "code": "13.6.1",
+                "description": "explain the principle and working of a potential divider circuit;",
+                "cognitiveLevel": "U",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.6.2",
+                "description": "explain the use of thermistors and light-dependent resistors in potential dividers;",
+                "cognitiveLevel": "U",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.6.3",
+                "description": "describe the potentiometer with the help of a diagram;",
+                "cognitiveLevel": "U",
+                "sourcePage": 34
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "13.7",
+            "name": "13.7 D.C. Circuits",
+            "slos": [
+              {
+                "code": "13.7.1",
+                "description": "describe the Wheatstone bridge circuit with the help of a diagram;",
+                "cognitiveLevel": "U",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.7.2",
+                "description": "calculate the unknown resistance by using a Whetstone bridge;",
+                "cognitiveLevel": "A",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.7.3",
+                "description": "find (e.m.f.) of cell using null method;",
+                "cognitiveLevel": "A",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.7.4",
+                "description": "compare the (e.m.f.) of two cells by using a potentiometer.",
+                "cognitiveLevel": "U",
+                "sourcePage": 34
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 14,
+        "name": "Electromagnetism",
+        "subtopics": [
+          {
+            "subtopicNumber": "14.1",
+            "name": "14.1 Magnetic Field by a Current Carrying Conductor",
+            "slos": [
+              {
+                "code": "14.1.1",
+                "description": "describe magnetic field due to current in a straight wire and solenoid;",
+                "cognitiveLevel": "U",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.1.2",
+                "description": "describe the direction of magnetic field produced by a current carrying conductor;",
+                "cognitiveLevel": "U",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.1.3",
+                "description": "describe Biot-Savart’s law;",
+                "cognitiveLevel": "U",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.1.4",
+                "description": "describe magnetic flux and magnetic flux density;",
+                "cognitiveLevel": "U",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.1.5",
+                "description": "solve word problems using $\\phi=\\vec{B}\\cdot\\vec{A}$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.1.6",
+                "description": "explain Ampere’s law;",
+                "cognitiveLevel": "U",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.1.7",
+                "description": "discuss applications of Ampere’s law in:\na. solenoid,\nb. toroid;",
+                "cognitiveLevel": "E",
+                "sourcePage": 35
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "14.2",
+            "name": "14.2 Magnetic Force",
+            "slos": [
+              {
+                "code": "14.2.1",
+                "description": "explain that force act on a current-carrying conductor placed in a magnetic field with directions as interpreted by Fleming’s left-hand rule;",
+                "cognitiveLevel": "U",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.2.2",
+                "description": "derive an expression for force, i.e. $F=ILB\\sin\\theta$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.2.3",
+                "description": "solve word problems using $F=ILB\\sin\\theta$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.2.4",
+                "description": "derive an equation for force on a moving charge in a uniform magnetic field and beam of particles;",
+                "cognitiveLevel": "A",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.2.5",
+                "description": "solve word problems using an equation for force on a moving charge in a uniform magnetic field and beam of particles;",
+                "cognitiveLevel": "A",
+                "sourcePage": 35
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "14.3",
+            "name": "14.3 Magnetic Torque",
+            "slos": [
+              {
+                "code": "14.3.1",
+                "description": "derive an expression of torque due to a couple acting on a coil;",
+                "cognitiveLevel": "A",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.3.2",
+                "description": "solve word problems using an expression of torque due to a couple acting on a coil;",
+                "cognitiveLevel": "A",
+                "sourcePage": 35
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "14.4",
+            "name": "14.4 Practical Application of Electromagnetism",
+            "slos": [
+              {
+                "code": "14.4.1",
+                "description": "list the essential steps to convert a galvanometer into voltmeter and ammeter;",
+                "cognitiveLevel": "R",
+                "sourcePage": 36
+              },
+              {
+                "code": "14.4.2",
+                "description": "describe Hall effect;",
+                "cognitiveLevel": "U",
+                "sourcePage": 36
+              },
+              {
+                "code": "14.4.3",
+                "description": "derive the expression $V_H=\\frac{BI}{ntq}$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 36
+              },
+              {
+                "code": "14.4.4",
+                "description": "solve word problems related to $V_H=\\frac{BI}{ntq}$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 36
+              },
+              {
+                "code": "14.4.5",
+                "description": "explain that electric and magnetic fields can be used in velocity selection in fields like mass spectrometry, charged particle accelerators and plasma physics.",
+                "cognitiveLevel": "U",
+                "sourcePage": 36
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 15,
+        "name": "Electromagnetic Induction and Alternating Current",
+        "subtopics": [
+          {
+            "subtopicNumber": "15.1",
+            "name": "15.1 Law of Electromagnetic Induction",
+            "slos": [
+              {
+                "code": "15.1.1",
+                "description": "describe electromagnetic induction;",
+                "cognitiveLevel": "U",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.1.2",
+                "description": "explain Faraday’s law of electromagnetic induction;",
+                "cognitiveLevel": "U",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.1.3",
+                "description": "determine the direction of induced e.m.f. using Lenz’s law;",
+                "cognitiveLevel": "A",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.1.4",
+                "description": "solve word problems using the Faraday’s and Lenz’s laws of electromagnetic induction;",
+                "cognitiveLevel": "A",
+                "sourcePage": 37
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "15.2",
+            "name": "15.2 Seismometer",
+            "slos": [
+              {
+                "code": "15.2.1",
+                "description": "describe the components and working mechanism of electromagnetic seismometer;",
+                "cognitiveLevel": "U",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.2.2",
+                "description": "explain that electromagnetic induction is applied in seismometer to detect earthquakes;",
+                "cognitiveLevel": "U",
+                "sourcePage": 37
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "15.3",
+            "name": "15.3 Inductance",
+            "slos": [
+              {
+                "code": "15.3.1",
+                "description": "explain self and mutual induction with formulae and units;",
+                "cognitiveLevel": "U",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.3.2",
+                "description": "identify inductors as important components of A.C. circuits termed as chokes;",
+                "cognitiveLevel": "U",
+                "sourcePage": 37
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "15.4",
+            "name": "15.4 Alternating Current (A.C.) as Sinusoidal Wave",
+            "slos": [
+              {
+                "code": "15.4.1",
+                "description": "define sinusoidal waves;",
+                "cognitiveLevel": "R",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.4.2",
+                "description": "define alternating current and alternating voltage;",
+                "cognitiveLevel": "R",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.4.3",
+                "description": "define the following terms:\na. time period,\nb. frequency,\nc. peak value,\nd. peak to peak value;",
+                "cognitiveLevel": "R",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.4.4",
+                "description": "calculate a sinusoidal alternating current or voltage using equation $x=x_0\\sin(\\omega t)$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.4.5",
+                "description": "calculate the root mean square (r.m.s.) value of alternate current and alternate voltage;",
+                "cognitiveLevel": "A",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.4.6",
+                "description": "explain that the mean power in a resistive load is half of the maximum power of a sinusoidal alternating current;",
+                "cognitiveLevel": "U",
+                "sourcePage": 37
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "15.5",
+            "name": "15.5 A.C. Circuits",
+            "slos": [
+              {
+                "code": "15.5.1",
+                "description": "explain the flow of A.C. through resistor, capacitor and inductor;",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              },
+              {
+                "code": "15.5.2",
+                "description": "define reactance of capacitor and inductor;",
+                "cognitiveLevel": "R",
+                "sourcePage": 38
+              },
+              {
+                "code": "15.5.3",
+                "description": "explain the factors that affect reactance in A.C. circuits;",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              },
+              {
+                "code": "15.5.4",
+                "description": "explain ‘phase lag’ and ‘phase lead’ in a circuit through graphs/ vector diagram;",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              },
+              {
+                "code": "15.5.5",
+                "description": "derive the expression of impedance as vector summation of resistance in series (R-C and R-L) circuits;",
+                "cognitiveLevel": "A",
+                "sourcePage": 38
+              },
+              {
+                "code": "15.5.6",
+                "description": "solve word problems using the expression of impedance;",
+                "cognitiveLevel": "A",
+                "sourcePage": 38
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "15.6",
+            "name": "15.6 Semiconductor Devices",
+            "slos": [
+              {
+                "code": "15.6.1",
+                "description": "describe intrinsic and extrinsic semiconductor materials;",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              },
+              {
+                "code": "15.6.2",
+                "description": "compare P-type and N-type semiconductor;",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              },
+              {
+                "code": "15.6.3",
+                "description": "describe formation of p-n junction in diode with labelled diagram;",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              },
+              {
+                "code": "15.6.4",
+                "description": "describe forward and reverse bias;",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "15.7",
+            "name": "15.7 Rectification and Smoothing",
+            "slos": [
+              {
+                "code": "15.7.1",
+                "description": "define rectification;",
+                "cognitiveLevel": "R",
+                "sourcePage": 38
+              },
+              {
+                "code": "15.7.2",
+                "description": "compare Half wave and Full wave rectification;",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              },
+              {
+                "code": "15.7.3",
+                "description": "explain the use of four diodes (bridge rectifier) for the full wave rectification of an alternating current;",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              },
+              {
+                "code": "15.7.4",
+                "description": "analyse the effect of a single capacitor in smoothing the output of a rectifier circuit, including the impact of capacitance values and load resistance on ripple voltage and waveform characteristics.",
+                "cognitiveLevel": "An",
+                "sourcePage": 38
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 16,
+        "name": "Quantum Mechanics",
+        "subtopics": [
+          {
+            "subtopicNumber": "16.1",
+            "name": "16.1 Einstein Special Theory of Relativity",
+            "slos": [
+              {
+                "code": "16.1.1",
+                "description": "distinguish between inertial and non-inertial frames of reference;",
+                "cognitiveLevel": "U",
+                "sourcePage": 39
+              },
+              {
+                "code": "16.1.2",
+                "description": "explain postulates of special theory of relativity;",
+                "cognitiveLevel": "U",
+                "sourcePage": 39
+              },
+              {
+                "code": "16.1.3",
+                "description": "describe qualitatively and quantitatively the consequences of special theory of relativity;",
+                "cognitiveLevel": "U",
+                "sourcePage": 39
+              },
+              {
+                "code": "16.1.4",
+                "description": "describe that if the speed of light (c) becomes constant, then the space and time become relative;",
+                "cognitiveLevel": "U",
+                "sourcePage": 39
+              },
+              {
+                "code": "16.1.5",
+                "description": "describe that spacetime is a mathematical model in relativity that treats time as a fourth dimension of the traditional three dimensions of space;",
+                "cognitiveLevel": "U",
+                "sourcePage": 39
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "16.2",
+            "name": "16.2 Quantum Theory",
+            "slos": [
+              {
+                "code": "16.2.1",
+                "description": "explain Planck’s quantum theory of electromagnetic wave;",
+                "cognitiveLevel": "U",
+                "sourcePage": 39
+              },
+              {
+                "code": "16.2.2",
+                "description": "discuss the extension of Planck’s theory given by Einstein;",
+                "cognitiveLevel": "E",
+                "sourcePage": 39
+              },
+              {
+                "code": "16.2.3",
+                "description": "solve word problems using the relations:\na. $E=pc$,\nb. $p=\\frac{hf}{c}$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 39
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "16.3",
+            "name": "16.3 Photoelectric Effect",
+            "slos": [
+              {
+                "code": "16.3.1",
+                "description": "define the following terms:\na. threshold frequency,\nb. cutoff wavelength,\nc. work function,\nd. stopping potential;",
+                "cognitiveLevel": "R",
+                "sourcePage": 39
+              },
+              {
+                "code": "16.3.2",
+                "description": "describe photoelectric effect;",
+                "cognitiveLevel": "U",
+                "sourcePage": 39
+              },
+              {
+                "code": "16.3.3",
+                "description": "explain different features of photoelectric effect using graphs;",
+                "cognitiveLevel": "U",
+                "sourcePage": 39
+              },
+              {
+                "code": "16.3.4",
+                "description": "derive Einstein’s photoelectric equation;",
+                "cognitiveLevel": "A",
+                "sourcePage": 39
+              },
+              {
+                "code": "16.3.5",
+                "description": "solve word problems using photoelectric equation;",
+                "cognitiveLevel": "A",
+                "sourcePage": 39
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "16.4",
+            "name": "16.4 Compton’s Effect",
+            "slos": [
+              {
+                "code": "16.4.1",
+                "description": "describe Compton’s effect;",
+                "cognitiveLevel": "U",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.4.2",
+                "description": "solve word problems using $\\Delta\\lambda=\\frac{h}{m_0c}(1-\\cos\\theta)$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 40
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "16.5",
+            "name": "16.5 Wave-Particle Duality",
+            "slos": [
+              {
+                "code": "16.5.1",
+                "description": "compare wave nature and particle nature of light;",
+                "cognitiveLevel": "U",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.5.2",
+                "description": "state de-Broglie’s hypothesis;",
+                "cognitiveLevel": "R",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.5.3",
+                "description": "explain the wave nature of particles with reference to de- Broglie’s hypothesis;",
+                "cognitiveLevel": "U",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.5.4",
+                "description": "discuss the results of Davison and Germer experiment;",
+                "cognitiveLevel": "E",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.5.5",
+                "description": "solve word problems using the relations $\\lambda=\\frac{h}{mv}$ and $\\lambda=\\frac{h}{\\sqrt{2mVe}}$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.5.6",
+                "description": "compare the phenomenon of pair production and pair annihilation;",
+                "cognitiveLevel": "U",
+                "sourcePage": 40
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "16.6",
+            "name": "16.6 Atomic Structure and Heisenberg’s Uncertainty Principle",
+            "slos": [
+              {
+                "code": "16.6.1",
+                "description": "describe Bohr’s atomic model of hydrogen atom;",
+                "cognitiveLevel": "U",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.6.2",
+                "description": "explain hydrogen spectrum in terms of energy levels;",
+                "cognitiveLevel": "U",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.6.3",
+                "description": "derive relation for the wavelength of radiation emitted out by an electron using $\\frac{1}{\\lambda}=R_H\\left[\\frac{1}{p^2}-\\frac{1}{n^2}\\right]$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.6.4",
+                "description": "solve word problems using $\\frac{1}{\\lambda}=R_H\\left[\\frac{1}{p^2}-\\frac{1}{n^2}\\right]$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.6.5",
+                "description": "explain the formation and significance of emission and absorption line spectra;",
+                "cognitiveLevel": "U",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.6.6",
+                "description": "explain Heisenberg’s Uncertainty Principle;",
+                "cognitiveLevel": "U",
+                "sourcePage": 40
+              },
+              {
+                "code": "16.6.7",
+                "description": "explain that Heisenberg’s Uncertainty Principle demonstrates the inaccuracies of Bohr atomic model.",
+                "cognitiveLevel": "U",
+                "sourcePage": 40
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 17,
+        "name": "Nuclear Physics",
+        "subtopics": [
+          {
+            "subtopicNumber": "17.1",
+            "name": "17.1 Structure of Nucleus",
+            "slos": [
+              {
+                "code": "17.1.1",
+                "description": "describe the composition and structure of the atomic nucleus;",
+                "cognitiveLevel": "U",
+                "sourcePage": 41
+              },
+              {
+                "code": "17.1.2",
+                "description": "explain the forces that hold the nucleus together and the role of mesons in mediating these forces;",
+                "cognitiveLevel": "U",
+                "sourcePage": 41
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "17.2",
+            "name": "17.2 Mass Defect and Binding Energy",
+            "slos": [
+              {
+                "code": "17.2.1",
+                "description": "define the following terms,\na. mass defect,\nb. binding energy;",
+                "cognitiveLevel": "R",
+                "sourcePage": 41
+              },
+              {
+                "code": "17.2.2",
+                "description": "identify (graphically) variation of binding energy per nucleon using mass number;",
+                "cognitiveLevel": "U",
+                "sourcePage": 41
+              },
+              {
+                "code": "17.2.3",
+                "description": "show simple nuclear reactions by nuclear equations;",
+                "cognitiveLevel": "A",
+                "sourcePage": 41
+              },
+              {
+                "code": "17.2.4",
+                "description": "calculate mass defect and binding energy;",
+                "cognitiveLevel": "A",
+                "sourcePage": 41
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "17.3",
+            "name": "17.3 Radioactivity",
+            "slos": [
+              {
+                "code": "17.3.1",
+                "description": "define the term ‘radioactivity’;",
+                "cognitiveLevel": "R",
+                "sourcePage": 41
+              },
+              {
+                "code": "17.3.2",
+                "description": "list the properties of α, β and γ radiations;",
+                "cognitiveLevel": "R",
+                "sourcePage": 41
+              },
+              {
+                "code": "17.3.3",
+                "description": "describe that nucleon number and charge number are conserved in nuclear processes;",
+                "cognitiveLevel": "U",
+                "sourcePage": 41
+              },
+              {
+                "code": "17.3.4",
+                "description": "explain α, β and γ decay with balanced equations;",
+                "cognitiveLevel": "U",
+                "sourcePage": 41
+              },
+              {
+                "code": "17.3.5",
+                "description": "state that antineutrinos (electron) are produced during β– decay and neutrinos (electron) are produced during β+ decay;",
+                "cognitiveLevel": "R",
+                "sourcePage": 41
+              },
+              {
+                "code": "17.3.6",
+                "description": "explain that α-particles have discrete energies but that β-particles have a continuous range of energies because (anti)neutrinos are emitted in β-decay;",
+                "cognitiveLevel": "U",
+                "sourcePage": 41
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "17.4",
+            "name": "17.4 Radioactive Decay Law",
+            "slos": [
+              {
+                "code": "17.4.1",
+                "description": "state the law of radioactive decay;",
+                "cognitiveLevel": "R",
+                "sourcePage": 42
+              },
+              {
+                "code": "17.4.2",
+                "description": "define activity and decay constant;",
+                "cognitiveLevel": "R",
+                "sourcePage": 42
+              },
+              {
+                "code": "17.4.3",
+                "description": "explain that radioactive decay is both spontaneous and random;",
+                "cognitiveLevel": "U",
+                "sourcePage": 42
+              },
+              {
+                "code": "17.4.4",
+                "description": "illustrate the exponential nature of radioactive decay;",
+                "cognitiveLevel": "A",
+                "sourcePage": 42
+              },
+              {
+                "code": "17.4.5",
+                "description": "solve word problems using the relation $A=\\lambda N$ and $N=N_0e^{-\\lambda t}$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 42
+              },
+              {
+                "code": "17.4.6",
+                "description": "define half-life of a radioactive element;",
+                "cognitiveLevel": "R",
+                "sourcePage": 42
+              },
+              {
+                "code": "17.4.7",
+                "description": "derive relation for half-life of a radioactive element;",
+                "cognitiveLevel": "A",
+                "sourcePage": 42
+              },
+              {
+                "code": "17.4.8",
+                "description": "solve word problems using the relation for the half-life of a radioactive element;",
+                "cognitiveLevel": "A",
+                "sourcePage": 42
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "17.5",
+            "name": "17.5 Nuclear Reactions",
+            "slos": [
+              {
+                "code": "17.5.1",
+                "description": "differentiate between nuclear fission and fusion;",
+                "cognitiveLevel": "U",
+                "sourcePage": 42
+              },
+              {
+                "code": "17.5.2",
+                "description": "explain the role of neutrons in fission chain reaction;",
+                "cognitiveLevel": "U",
+                "sourcePage": 42
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "17.6",
+            "name": "17.6 Nuclear Reactor",
+            "slos": [
+              {
+                "code": "17.6.1",
+                "description": "explain the working principle of a nuclear reactor;",
+                "cognitiveLevel": "U",
+                "sourcePage": 42
+              },
+              {
+                "code": "17.6.2",
+                "description": "describe the function of the principal components of a water moderated nuclear reactor;",
+                "cognitiveLevel": "U",
+                "sourcePage": 42
+              },
+              {
+                "code": "17.6.3",
+                "description": "discuss the significance of nuclear reactions in space.",
+                "cognitiveLevel": "FA",
+                "sourcePage": 42
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 18,
+        "name": "Particle Physics",
+        "subtopics": [
+          {
+            "subtopicNumber": "18.1",
+            "name": "18.1 Basic Forces of Nature",
+            "slos": [
+              {
+                "code": "18.1.1",
+                "description": "describe basic forces of nature;",
+                "cognitiveLevel": "U",
+                "sourcePage": 43
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "18.2",
+            "name": "18.2 Fundamental Particles",
+            "slos": [
+              {
+                "code": "18.2.1",
+                "description": "state the two fundamental building blocks of matter (fermions and bosons);",
+                "cognitiveLevel": "R",
+                "sourcePage": 43
+              },
+              {
+                "code": "18.2.2",
+                "description": "state Higgs Boson as a fundamental particle which is responsible for the particle’s mass;",
+                "cognitiveLevel": "R",
+                "sourcePage": 43
+              },
+              {
+                "code": "18.2.3",
+                "description": "state W-boson, Z-boson, gluon, and photons as fundamental particles called exchange particles or force carriers;",
+                "cognitiveLevel": "R",
+                "sourcePage": 43
+              },
+              {
+                "code": "18.2.4",
+                "description": "state that fermions are further divided into leptons and quarks;",
+                "cognitiveLevel": "R",
+                "sourcePage": 43
+              },
+              {
+                "code": "18.2.5",
+                "description": "state that electrons and neutrinos are fundamental particles called leptons;",
+                "cognitiveLevel": "R",
+                "sourcePage": 43
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "18.3",
+            "name": "18.3 Quarks and Anti-Quarks",
+            "slos": [
+              {
+                "code": "18.3.1",
+                "description": "describe quarks and anti-quarks;",
+                "cognitiveLevel": "U",
+                "sourcePage": 43
+              },
+              {
+                "code": "18.3.2",
+                "description": "list the six types/ flavours of quarks and anti-quarks;",
+                "cognitiveLevel": "R",
+                "sourcePage": 43
+              },
+              {
+                "code": "18.3.3",
+                "description": "state that a hadron may be either a baryon (consisting of three quarks) or a meson (consisting of one quark and an antiquark);",
+                "cognitiveLevel": "R",
+                "sourcePage": 43
+              },
+              {
+                "code": "18.3.4",
+                "description": "describe protons and neutrons in terms of their quark composition;",
+                "cognitiveLevel": "U",
+                "sourcePage": 43
+              },
+              {
+                "code": "18.3.5",
+                "description": "describe the changes to quark composition that take place during β– and β+ decay;",
+                "cognitiveLevel": "U",
+                "sourcePage": 43
+              },
+              {
+                "code": "18.3.6",
+                "description": "construct a block diagram of standard model of particle physics;",
+                "cognitiveLevel": "C",
+                "sourcePage": 43
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "18.4",
+            "name": "18.4 Particle Accelerator",
+            "slos": [
+              {
+                "code": "18.4.1",
+                "description": "explain the working principle of particle accelerators and its uses.",
+                "cognitiveLevel": "U",
+                "sourcePage": 43
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 19,
+        "name": "Medical and Space Physics",
+        "subtopics": [
+          {
+            "subtopicNumber": "19.1",
+            "name": "19.1 Production and Use of Ultrasound",
+            "slos": [
+              {
+                "code": "19.1.1",
+                "description": "describe the piezo-electric effect;",
+                "cognitiveLevel": "U",
+                "sourcePage": 44
+              },
+              {
+                "code": "19.1.2",
+                "description": "explain the generation and detection of ultrasound by piezo- electric transducer;",
+                "cognitiveLevel": "U",
+                "sourcePage": 44
+              },
+              {
+                "code": "19.1.3",
+                "description": "describe the specific acoustic impedance of a medium as $Z=\\rho c$, where $c$ is the speed of sound in the medium;",
+                "cognitiveLevel": "U",
+                "sourcePage": 44
+              },
+              {
+                "code": "19.1.4",
+                "description": "define coupling medium;",
+                "cognitiveLevel": "R",
+                "sourcePage": 44
+              },
+              {
+                "code": "19.1.5",
+                "description": "solve word problems using $\\frac{I_r}{I_0}=\\frac{(Z_1-Z_2)^2}{(Z_1+Z_2)^2}$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 44
+              },
+              {
+                "code": "19.1.6",
+                "description": "explain the working principle of ultrasound in diagnosing problems in internal structures;",
+                "cognitiveLevel": "U",
+                "sourcePage": 44
+              },
+              {
+                "code": "19.1.7",
+                "description": "calculate the attenuation of ultrasound in matter using $I=I_0e^{-\\mu x}$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 44
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "19.2",
+            "name": "19.2 Production and Use of X-rays",
+            "slos": [
+              {
+                "code": "19.2.1",
+                "description": "describe inner shell transitions;",
+                "cognitiveLevel": "U",
+                "sourcePage": 44
+              },
+              {
+                "code": "19.2.2",
+                "description": "explain production of X-rays and their properties;",
+                "cognitiveLevel": "U",
+                "sourcePage": 44
+              },
+              {
+                "code": "19.2.3",
+                "description": "explain the use of X-rays in imaging internal body structures;",
+                "cognitiveLevel": "U",
+                "sourcePage": 44
+              },
+              {
+                "code": "19.2.4",
+                "description": "explain the working of computed tomography (CT) scans;",
+                "cognitiveLevel": "U",
+                "sourcePage": 44
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "19.3",
+            "name": "19.3 PET Scanning",
+            "slos": [
+              {
+                "code": "19.3.1",
+                "description": "discuss the use of medical tracer use in positron emission tomography (PET) scanning;",
+                "cognitiveLevel": "E",
+                "sourcePage": 44
+              },
+              {
+                "code": "19.3.2",
+                "description": "explain PET scanning including the use of β+ decay tracers, the concept of annihilation in tissue and the production of gamma-ray photons;",
+                "cognitiveLevel": "U",
+                "sourcePage": 44
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "19.4",
+            "name": "19.4 Luminosity and Inverse Square Law",
+            "slos": [
+              {
+                "code": "19.4.1",
+                "description": "define the term ‘luminosity’;",
+                "cognitiveLevel": "R",
+                "sourcePage": 45
+              },
+              {
+                "code": "19.4.2",
+                "description": "describe inverse square law for radiant flux intensity ($F$) in terms of the luminosity ($L$) of the source $F=\\frac{L}{4\\pi d^2}$;",
+                "cognitiveLevel": "U",
+                "sourcePage": 45
+              },
+              {
+                "code": "19.4.3",
+                "description": "describe standard candle;",
+                "cognitiveLevel": "U",
+                "sourcePage": 45
+              },
+              {
+                "code": "19.4.4",
+                "description": "calculate the distances of galaxies using the standard candle;",
+                "cognitiveLevel": "A",
+                "sourcePage": 45
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "19.5",
+            "name": "19.5 Stellar Radii",
+            "slos": [
+              {
+                "code": "19.5.1",
+                "description": "explain Wein’s displacement law;",
+                "cognitiveLevel": "U",
+                "sourcePage": 45
+              },
+              {
+                "code": "19.5.2",
+                "description": "calculate the surface temperature of a star using Wein’s displacement law;",
+                "cognitiveLevel": "A",
+                "sourcePage": 45
+              },
+              {
+                "code": "19.5.3",
+                "description": "state Stefan–Boltzmann’s law; calculate the radius of a star using relation L = 4πσr2T4;",
+                "cognitiveLevel": "R",
+                "sourcePage": 45
+              },
+              {
+                "code": "19.5.4",
+                "description": "calculate the radius of a star using relation $L=4\\pi\\sigma r^2T^4$;",
+                "cognitiveLevel": "A",
+                "sourcePage": 45
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "19.6",
+            "name": "19.6 Hubble Law",
+            "slos": [
+              {
+                "code": "19.6.1",
+                "description": "explain the increased wavelength in the emission and absorption spectra lines from distant objects;",
+                "cognitiveLevel": "U",
+                "sourcePage": 45
+              },
+              {
+                "code": "19.6.2",
+                "description": "explain redshift leads to the idea that the Universe is expanding;",
+                "cognitiveLevel": "U",
+                "sourcePage": 45
+              },
+              {
+                "code": "19.6.3",
+                "description": "explain Hubble’s law and its relation to the Big Bang theory.",
+                "cognitiveLevel": "U",
+                "sourcePage": 45
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 20,
+        "name": "Nature of Science",
+        "subtopics": [
+          {
+            "subtopicNumber": "20.1",
+            "name": "20.1 Debates about Aesthetic in Physics",
+            "slos": [
+              {
+                "code": "20.1.1",
+                "description": "explain inherent mathematical beauty in the natural world by means of:\na. elegance of simplicity,\nb. symmetry;",
+                "cognitiveLevel": "U",
+                "sourcePage": 46
+              },
+              {
+                "code": "20.1.2",
+                "description": "explain counterargument with examples to the claim that physical truths must inherent mathematical elegance or display;",
+                "cognitiveLevel": "U",
+                "sourcePage": 46
+              },
+              {
+                "code": "20.1.3",
+                "description": "explain the pros and cons in the debate over whether humans should research:\na. on the existence of aliens/ extraterrestrial life,\nb. research into subatomic particles should continue, given the existence of nuclear weapons;",
+                "cognitiveLevel": "U",
+                "sourcePage": 46
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "20.2",
+            "name": "20.2 Thought Experiments",
+            "slos": [
+              {
+                "code": "20.2.1",
+                "description": "explain the thought experiments along with examples;",
+                "cognitiveLevel": "U",
+                "sourcePage": 46
+              },
+              {
+                "code": "20.2.2",
+                "description": "explain that thought experiments have conveyed key concepts that would have been difficult to investigate through empirical methods, e.g. Newton’s cannonball.",
+                "cognitiveLevel": "U",
+                "sourcePage": 46
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "practicals": [
+      {
+        "number": 1,
+        "chapter": 12,
+        "activity": "Determine the relation between current and capacitance when different capacitors are used in AC circuit using different series and parallel combinations of capacitors.",
+        "apparatus": "AC milliammeter, AC voltmeter, capacitors of different capacitances, step-down transformer, sand paper, connecting wires."
+      },
+      {
+        "number": 2,
+        "chapter": 12,
+        "activity": "Determine time constant by charging and discharging a capacitor through a resistor.",
+        "apparatus": "Voltmeter, power supply, large value capacitor, two way key, stopwatch."
+      },
+      {
+        "number": 3,
+        "chapter": 13,
+        "activity": "Investigate the relationship between current passing through a tungsten filament lamp and the potential applied across it.",
+        "apparatus": "36 W, 12 V car bulb, bulb holder, 12 V battery, high resistance rheostat, voltmeter, ammeter, key, sandpaper, connecting wires."
+      },
+      {
+        "number": 4,
+        "chapter": 13,
+        "activity": "Determine resistance of voltmeter by drawing graph between (R) and (I/V).",
+        "apparatus": "Voltmeter, resistance box, two keys, sandpaper, connecting wires, graph paper."
+      },
+      {
+        "number": 5,
+        "chapter": 13,
+        "activity": "Determine resistance of wire by slide wire bridge.",
+        "apparatus": "Slide wire bridge, resistance box, unknown resistance, galvanometer, rheostat, cell, tapping key, connecting wires, sandpaper."
+      },
+      {
+        "number": 6,
+        "chapter": 13,
+        "activity": "Determine internal resistance of a cell using potentiometer.",
+        "apparatus": "Potentiometer, battery, ammeter, resistance box, rheostat, two keys, galvanometer, cell, shunt wire, sandpaper, connecting wires."
+      },
+      {
+        "number": 7,
+        "chapter": 13,
+        "activity": "Determine electromotive force (e.m.f.) of a cell using potentiometer.",
+        "apparatus": "Potentiometer, battery, two-way key, rheostat, ammeter, key, shunt, wire, galvanometer, sandpaper, connecting wires."
+      },
+      {
+        "number": 8,
+        "chapter": 14,
+        "activity": "Variation of magnetic field due to current flowing in a solenoid.",
+        "apparatus": "Circular coil of insulated copper fitted in a board, white paper plain sheet (A-4 size), scissors, compass needle, battery, ammeter, key plug, rheostat, connecting wires."
+      },
+      {
+        "number": 9,
+        "chapter": 14,
+        "activity": "Convert galvanometer into voltmeter of range 3 V.",
+        "apparatus": "Galvanometer, voltmeter (0–3 V), battery, two resistance box, one- way key, rheostat, connecting wires and sand paper."
+      },
+      {
+        "number": 10,
+        "chapter": 15,
+        "activity": "Study the relationship between current and capacitive reactance in an A.C. circuit and calculate capacitive reactance.",
+        "apparatus": "AC milliammeter, AC voltmeter, capacitors of different, capacitances, step-down transformer, sandpaper, connecting wires."
+      },
+      {
+        "number": 11,
+        "chapter": 15,
+        "activity": "Draw characteristics of semiconductor diode and calculate forward and reverse current resistances.",
+        "apparatus": "Semi-conductor diode, voltmeter, milliammeter, micro-ammeter, 500 Ω rheostat, 1 kΩ resistor, 3 V battery, sandpaper, connecting wires."
+      },
+      {
+        "number": 12,
+        "chapter": 16,
+        "activity": "Study of the variation of electric current with intensity of light using a photocell.",
+        "apparatus": "Photocell, galvanometer, battery, rheostat, key, electric bulb with case, connecting wires."
+      }
+    ],
+    "assessmentPage": 53
+  }
+}

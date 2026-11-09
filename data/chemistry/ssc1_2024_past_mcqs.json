@@ -1,0 +1,1408 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "The branch of chemistry that deals with the study of producing valuable materials in significant quantities by manipulating the raw materials is",
+    "options": {
+      "A": "analytical chemistry.",
+      "B": "industrial chemistry.",
+      "C": "physical chemistry.",
+      "D": "nuclear chemistry."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "1.1.1",
+    "sloText": "Define chemistry and identify its major branches (physical, organic, inorganic, analytical, biochemistry, industrial, nuclear and environmental chemistry);",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Industrial chemistry deals with chemical processes on an industrial scale to manufacture valuable products (like fertilizers, glass, cement, and synthetic fibers) from raw materials.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Analytical chemistry deals with the separation, identification, and quantification of components of materials."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Industrial chemistry applies chemical and physical processes to transform raw materials into commercial products in large quantities."
+      },
+      {
+        "key": "C",
+        "reason": "Physical chemistry deals with the relationship between the physical properties of substances and their chemical composition and transformations."
+      },
+      {
+        "key": "D",
+        "reason": "Nuclear chemistry deals with radioactivity, nuclear processes, and properties of atomic nuclei."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "stem": "Which of the following examples represents a type of chemical reaction?",
+    "options": {
+      "A": "Melting of ice cream",
+      "B": "Dissolution of sugar in water",
+      "C": "Vapourisation of ethyl alcohol",
+      "D": "Mixing of baking soda and vinegar"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.5.3",
+    "sloText": "Distinguish between physical and chemical changes;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Mixing baking soda (sodium bicarbonate) and vinegar (acetic acid) is a chemical reaction that produces sodium acetate, water, and bubbles of carbon dioxide gas, forming new chemical substances.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Melting is a physical change of state from solid to liquid without altering chemical identity."
+      },
+      {
+        "key": "B",
+        "reason": "Dissolution of sugar is a physical process where sugar molecules disperse in water without forming new bonds."
+      },
+      {
+        "key": "C",
+        "reason": "Vapourisation is a physical change from liquid to gas."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. The reaction produces carbon dioxide gas, water, and sodium acetate, representing a genuine chemical change."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "stem": "Which of the following options shows the CORRECT classification of substances in the given table?",
+    "options": {
+      "A": "Element: Brass | Mixture: Carbon | Compound: Ammonium Chloride",
+      "B": "Element: Carbon | Mixture: Ammonium Chloride | Compound: Brass",
+      "C": "Element: Ammonium Chloride | Mixture: Brass | Compound: Carbon",
+      "D": "Element: Carbon | Mixture: Brass | Compound: Ammonium Chloride"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.2.8",
+    "sloText": "Classify matter as elements, compounds and mixtures;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Carbon is an element consisting of identical carbon atoms; Brass is a homogeneous mixture (alloy) of copper and zinc; Ammonium chloride (NH4Cl) is a chemical compound consisting of nitrogen, hydrogen, and chlorine in a fixed stoichiometric ratio.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Brass is an alloy (mixture), not an element."
+      },
+      {
+        "key": "B",
+        "reason": "Ammonium chloride is a compound, not a mixture; brass is a mixture, not a compound."
+      },
+      {
+        "key": "C",
+        "reason": "Ammonium chloride is a compound, and carbon is an element."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Carbon is an element, brass is an alloy (mixture), and ammonium chloride is a compound."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "stem": "A compound X has an empirical formula C3H3O and its molecular mass is 110. Which of the following represents the molecular formula of compound X?",
+    "options": {
+      "A": "CHO",
+      "B": "C3H3O3",
+      "C": "C6H6O",
+      "D": "C6H6O2"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "1.4.3",
+    "sloText": "Deduce the molecular formula of a compound from its empirical formula and molar mass;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Empirical formula mass of C3H3O = (3 * 12) + (3 * 1) + 16 = 36 + 3 + 16 = 55. The scaling factor n = 110 / 55 = 2. Molecular formula = (C3H3O)2 = C6H6O2.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "CHO has a molar mass of 29 g/mol."
+      },
+      {
+        "key": "B",
+        "reason": "C3H3O3 has a molar mass of 87 g/mol."
+      },
+      {
+        "key": "C",
+        "reason": "C6H6O has a molar mass of 94 g/mol."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. The empirical mass is 55 amu, and 110 / 55 = 2, giving (C3H3O)2 = C6H6O2."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "stem": "In humans and other animals, starch is broken down into its constituent sugar molecules through the process of",
+    "options": {
+      "A": "synthesis.",
+      "B": "hydrolysis.",
+      "C": "displacement.",
+      "D": "condensation."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.5.3",
+    "sloText": "Describe types of chemical reactions including hydrolysis and condensation;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Hydrolysis is the chemical breakdown of a compound due to reaction with water; digestive enzymes use water to cleave glycosidic bonds in starch into glucose units.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Synthesis is the building of larger molecules from smaller units."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Starch digestion involves enzymatic hydrolysis where water molecules are consumed to break polymer chains into monomeric sugars."
+      },
+      {
+        "key": "C",
+        "reason": "Displacement is a reaction where one element displaces another from a compound."
+      },
+      {
+        "key": "D",
+        "reason": "Condensation joins smaller molecules into larger polymers with the release of water."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "stem": "A gaseous solution is formed when",
+    "options": {
+      "A": "copper combines with tin.",
+      "B": "ammonia dissolves in water.",
+      "C": "naphthalene ball sublimes in air.",
+      "D": "iron amalgamates with chromium."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.2.1",
+    "sloText": "Identify states of matter in solutions (solid, liquid, gas) with everyday examples;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Sublimation of a solid naphthalene ball into air results in solid naphthalene vapours uniformly dispersed in gaseous air, forming a solid-in-gas homogeneous gaseous solution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Copper with tin forms bronze, which is a solid solution (alloy)."
+      },
+      {
+        "key": "B",
+        "reason": "Ammonia dissolving in water produces an aqueous liquid solution."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Naphthalene vaporizing into atmospheric air creates a solid-in-gas homogeneous mixture (gaseous solution)."
+      },
+      {
+        "key": "D",
+        "reason": "Amalgamation forms a solid/liquid metallic mixture."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "stem": "A student is given 0.1 M stock solution of sodium carbonate (Na2CO3) to dilute it up to 0.01 M in 100 cm3 measuring flask. If the volume of the stock solution is 500 cm3, then the amount of sodium carbonate used in the stock solution would be (Note: C=12, O=16, Na=23)",
+    "options": {
+      "A": "53 g.",
+      "B": "10.6 g.",
+      "C": "5.3 g.",
+      "D": "0.106 g."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "6.4.6",
+    "sloText": "Solve problems involving molarity, mass, and volume of standard solutions;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Molar mass of Na2CO3 = (2 * 23) + 12 + (3 * 16) = 106 g/mol. Volume of stock solution = 500 cm3 = 0.5 dm3. Molarity = 0.1 M. Mass = Molarity * Molar Mass * Volume(dm3) = 0.1 * 106 * 0.5 = 5.3 g.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "53 g would correspond to 1.0 M solution in 0.5 dm3."
+      },
+      {
+        "key": "B",
+        "reason": "10.6 g corresponds to 0.1 M in 1.0 dm3."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Mass = 0.1 mol/dm3 * 106 g/mol * 0.5 dm3 = 5.3 g."
+      },
+      {
+        "key": "D",
+        "reason": "0.106 g is the amount in the diluted 100 cm3 flask, not in the 500 cm3 stock solution."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "stem": "When a seed crystal is added to a supersaturated solution, it causes the",
+    "options": {
+      "A": "solution to turn into a colloid.",
+      "B": "solution to become unsaturated.",
+      "C": "solute to solidify out of the solution.",
+      "D": "solute to dissolve completely in water."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.6.2",
+    "sloText": "Differentiate between saturated, unsaturated and supersaturated solutions;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "A supersaturated solution is unstable because it holds more dissolved solute than normal saturation. Adding a tiny seed crystal provides nucleation sites, triggering rapid precipitation/crystallization of the excess solute.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Precipitation yields crystalline solid, not a colloidal sol."
+      },
+      {
+        "key": "B",
+        "reason": "The solution becomes saturated as excess solute precipitates, not unsaturated."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The excess dissolved solute precipitates rapidly around the seed crystal."
+      },
+      {
+        "key": "D",
+        "reason": "A supersaturated solution already contains excess solute and cannot dissolve more."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "stem": "The given diagram shows a chromatogram of several inks. Based on the given chromatogram, it can be inferred that",
+    "options": {
+      "A": "red and blue inks are present in brown ink.",
+      "B": "yellow and blue inks are present in black ink.",
+      "C": "black is a mixture of blue, red and green inks.",
+      "D": "brown is a mixture of red, green and black inks."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "6.6.5",
+    "sloText": "Interpret paper chromatograms to identify components of mixtures;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "diagramUrl": "/paper-crops/CHM-IX-2024-P1/q9.png",
+    "diagramBased": true,
+    "explanation": "Looking at the horizontal Rf migration heights on the chromatogram plate, the spots for black ink line up directly with the reference spots for yellow and blue inks.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The spots in brown ink do not align with blue ink."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Black ink exhibits components matching the migration heights of yellow and blue inks."
+      },
+      {
+        "key": "C",
+        "reason": "Green ink spots do not match black ink's upper band."
+      },
+      {
+        "key": "D",
+        "reason": "Brown ink shows separate components not comprising black ink."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "stem": "The molarity of the given sodium hydroxide solution will be (Note: Atomic mass of Na = 23 amu, O = 16 amu, H = 1 amu)",
+    "options": {
+      "A": "0.03 M.",
+      "B": "0.19 M.",
+      "C": "0.79 M.",
+      "D": "1.26 M."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "6.4.3",
+    "sloText": "Calculate molarity from given mass of solute and volume of solution;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "diagramUrl": "/paper-crops/CHM-IX-2024-P1/q10.png",
+    "diagramBased": true,
+    "explanation": "Molar mass of NaOH = 23 + 16 + 1 = 40 g/mol. Moles of NaOH = 15.8 g / 40 g/mol = 0.395 mol. Volume = 500 cm3 = 0.5 dm3. Molarity = 0.395 mol / 0.5 dm3 = 0.79 M.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "0.03 M is an arithmetic underestimation."
+      },
+      {
+        "key": "B",
+        "reason": "0.19 M incorrectly divides by 2 dm3."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. M = (15.8 / 40) / 0.5 = 0.395 / 0.5 = 0.79 M."
+      },
+      {
+        "key": "D",
+        "reason": "1.26 M incorrectly inverts the volume multiplier."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "stem": "A metal compound has the formula XCl2 and a relative formula mass of 95.211. The relative atomic mass of X is (Note: 35.5 Cl)",
+    "options": {
+      "A": "24.211",
+      "B": "59.711",
+      "C": "61.211",
+      "D": "78.211"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "2.1.2",
+    "sloText": "Calculate relative molecular mass and relative formula mass of compounds;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Formula mass of XCl2 = atomic mass of X + 2 * (35.5) = atomic mass of X + 71.0. Therefore, atomic mass of X = 95.211 - 71.0 = 24.211 amu (corresponding to Magnesium, Mg).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. 95.211 - (2 * 35.5) = 24.211."
+      },
+      {
+        "key": "B",
+        "reason": "59.711 subtracts only one chlorine atom (95.211 - 35.5)."
+      },
+      {
+        "key": "C",
+        "reason": "61.211 represents an incorrect chlorine valence factor."
+      },
+      {
+        "key": "D",
+        "reason": "78.211 subtracts only 17 amu (atomic number rather than atomic mass)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "stem": "How many protons are present in an ion with atomic number 8, mass number 16 and a 2\u2013 charge?",
+    "options": {
+      "A": "06",
+      "B": "08",
+      "C": "14",
+      "D": "16"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "2.1.2",
+    "sloText": "Determine atomic number, mass number and subatomic composition of atoms and ions;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "The atomic number (Z) fundamentally defines the number of protons in an atom or ion. Ionization involves gaining or losing electrons, never altering the nuclear proton count. Thus, Z = 8 means there are 8 protons.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "6 subtracts 2 from the atomic number, confusing protons with electron loss."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Protons are determined strictly by the atomic number (Z = 8), which does not change upon ion formation."
+      },
+      {
+        "key": "C",
+        "reason": "14 is mass number minus charge."
+      },
+      {
+        "key": "D",
+        "reason": "16 is the mass number (protons + neutrons)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "stem": "Each p sub-shell can hold a maximum number of",
+    "options": {
+      "A": "2 electrons.",
+      "B": "3 electrons.",
+      "C": "6 electrons.",
+      "D": "8 electrons."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Knowledge",
+    "slo": "2.5.1",
+    "sloText": "State the maximum number of electrons that can be accommodated in s, p, d, and f sub-shells;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "A p sub-shell comprises 3 degenerate orbitals (px, py, pz). According to Pauli's exclusion principle, each orbital accommodates at most 2 electrons with opposite spins, yielding a maximum of 3 * 2 = 6 electrons.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "2 electrons is the capacity of an s sub-shell or a single orbital."
+      },
+      {
+        "key": "B",
+        "reason": "3 is the number of orbitals in a p sub-shell, not electrons."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The p sub-shell has 3 orbitals and holds up to 6 electrons."
+      },
+      {
+        "key": "D",
+        "reason": "8 is the maximum capacity of the entire second main shell (s + p)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "stem": "Uranium has two isotopes, 235U and 238U. 238U differs from 235U by having 3 more",
+    "options": {
+      "A": "protons.",
+      "B": "neutrons.",
+      "C": "protons and electrons.",
+      "D": "neutrons and electrons."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "2.2.1",
+    "sloText": "Define isotopes and identify differences in their subatomic particles;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Isotopes of an element possess identical atomic numbers (92 protons and 92 electrons for uranium) but differ in mass number due to varying numbers of neutrons: 238 - 235 = 3 extra neutrons in 238U.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "All uranium isotopes have exactly 92 protons."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. 238U has 146 neutrons while 235U has 143 neutrons, a difference of 3 neutrons."
+      },
+      {
+        "key": "C",
+        "reason": "Isotopes never differ in proton or electron count in neutral atoms."
+      },
+      {
+        "key": "D",
+        "reason": "Electrons remain equal (92) in both neutral isotopes."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "stem": "In Rutherford\u2019s experiment, when \u03b1-particles are passed through a thin metal foil, most of them go straight through the foil because of the",
+    "options": {
+      "A": "repulsion of protons.",
+      "B": "empty spaces in an atom.",
+      "C": "high speed of \u03b1-particles.",
+      "D": "negative charge of electrons."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "2.1.1",
+    "sloText": "Describe Rutherford's atomic model and its observations and conclusions;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "In Rutherford's alpha-scattering experiment, the fact that over 99% of alpha particles passed undeviated through gold foil proved that the majority of an atom's volume is empty space.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Proton repulsion caused large-angle deflection of the few particles that approached the nucleus."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Undeviated transmission proved that most of the atom is empty space."
+      },
+      {
+        "key": "C",
+        "reason": "High speed alone does not explain lack of deviation; empty space prevented electrostatic deflection."
+      },
+      {
+        "key": "D",
+        "reason": "Electrons have negligible mass and cannot alter the path of heavy alpha particles."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "stem": "Neon and argon are classified as noble gases because they have",
+    "options": {
+      "A": "coloured vapours.",
+      "B": "same atomic number.",
+      "C": "non-metallic character.",
+      "D": "full outer electron shell."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.2.1",
+    "sloText": "Explain the chemical inertness of noble gases in terms of complete valence shells;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Neon (2, 8) and Argon (2, 8, 8) have completely filled outer electron shells (stable octets), rendering them chemically unreactive and monoatomic under standard conditions.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Noble gases are colourless and odourless in their standard states."
+      },
+      {
+        "key": "B",
+        "reason": "Different elements have different atomic numbers (Ne=10, Ar=18)."
+      },
+      {
+        "key": "C",
+        "reason": "Many non-metals are highly reactive; non-metallic nature alone does not make a noble gas."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Completely filled valence shells impart exceptional chemical inertness."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "stem": "Consider the given dot and cross diagram representing the valence shell electrons of the bonded elements. Which group of the modern periodic table does the element X belong to?",
+    "options": {
+      "A": "IA",
+      "B": "IIIA",
+      "C": "VA",
+      "D": "VIA"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "3.1.3",
+    "sloText": "Relate valence electrons and dot-and-cross structures to group numbers in the periodic table;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "diagramUrl": "/paper-crops/CHM-IX-2024-P1/q17.png",
+    "diagramBased": true,
+    "explanation": "In [XH4]+, four hydrogen atoms provide 1 electron each (4 electrons). The overall charge is +1 (loss of 1 electron), and the central atom X contributes 5 valence electrons to form four shared pairs, meaning element X belongs to Group VA (Group 15, e.g., Nitrogen in NH4+).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Group IA elements have only 1 valence electron."
+      },
+      {
+        "key": "B",
+        "reason": "Group IIIA elements have 3 valence electrons."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Central atom X contributes 5 valence electrons, placing it in Group VA."
+      },
+      {
+        "key": "D",
+        "reason": "Group VIA elements have 6 valence electrons."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "stem": "Given is the electronic configuration of an element: 1s2 2s2 2p6 3s2 3p6 4s2 3d10. Which block of the periodic table does the element belong to?",
+    "options": {
+      "A": "s",
+      "B": "p",
+      "C": "d",
+      "D": "f"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.1.5,3.1.4",
+    "sloText": "Classify elements into s, p, d, and f blocks based on electronic configuration;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "An element's block is determined by the subshell into which the differentiating (last) valence electron enters. Here, electrons are actively filling the 3d subshell, which designates Zinc (Z=30) as a d-block transition element.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "s-block elements have their differentiating electron in the s orbital."
+      },
+      {
+        "key": "B",
+        "reason": "p-block elements fill the p orbitals after 3d is complete."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The 3d subshell receives the final electrons, placing it in the d-block."
+      },
+      {
+        "key": "D",
+        "reason": "f-block elements involve filling the 4f or 5f subshells."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "stem": "Which of the TWO given elements belong to the same group of the modern periodic table? I Phosphorus (2, 8, 5) II Silicon (2, 8, 4) III Nitrogen (2, 5) IV Oxygen (2, 6)",
+    "options": {
+      "A": "I and II",
+      "B": "I and III",
+      "C": "II and IV",
+      "D": "III and IV"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "3.1.3",
+    "sloText": "Relate position of elements in groups to valence shell electrons;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Elements in the same group possess the same number of valence electrons. Both Phosphorus (2, 8, 5) and Nitrogen (2, 5) have 5 valence electrons and belong to Group 15 (VA).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Phosphorus has 5 valence electrons while Silicon has 4."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Both Nitrogen and Phosphorus have 5 valence electrons in their outermost shell."
+      },
+      {
+        "key": "C",
+        "reason": "Silicon has 4 valence electrons while Oxygen has 6."
+      },
+      {
+        "key": "D",
+        "reason": "Nitrogen has 5 valence electrons while Oxygen has 6."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "stem": "Metallic character of elements depends on their ability to",
+    "options": {
+      "A": "form anions.",
+      "B": "show low density.",
+      "C": "lose valence electrons.",
+      "D": "attract shared electrons."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.2.1",
+    "sloText": "Explain trends in metallic and non-metallic character across periods and down groups;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Metallic character (electropositivity) is defined by the ease with which an atom loses its valence electrons to form positive cations.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Anion formation is characteristic of non-metals (electronegative elements)."
+      },
+      {
+        "key": "B",
+        "reason": "Most transition metals exhibit high densities."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Readily losing valence electrons to form cations defines metallic character."
+      },
+      {
+        "key": "D",
+        "reason": "Attracting shared electrons is electronegativity, prominent in non-metals."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "stem": "A substance X has the following characteristics: I. Indefinite shape and volume II. Can easily be compressed. The substance X could be identified as",
+    "options": {
+      "A": "steam.",
+      "B": "coffee.",
+      "C": "mercury.",
+      "D": "table salt."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.1.1",
+    "sloText": "Describe characteristics of the gaseous state including compressibility and indefinite shape and volume;",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "explanation": "Gases have neither definite shape nor definite volume and are highly compressible due to large intermolecular distances. Steam (gaseous water) matches both properties.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Steam is a gas with indefinite shape, indefinite volume, and high compressibility."
+      },
+      {
+        "key": "B",
+        "reason": "Coffee is a liquid with definite volume and virtually incompressible."
+      },
+      {
+        "key": "C",
+        "reason": "Mercury is a dense liquid metal with fixed volume."
+      },
+      {
+        "key": "D",
+        "reason": "Table salt is a crystalline solid with definite shape and volume."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "stem": "Some of the gases with their relative molecular masses are given in the table below: I Helium (4), II Ethene (28), III Methane (16), IV Chlorine (71), V Oxygen (32). Which option shows the CORRECT sequence of gases according to their rates of diffusion, i.e., from fastest to slowest?",
+    "options": {
+      "A": "I, III, II, V, IV",
+      "B": "II, III, IV, V, I",
+      "C": "III, V, I, II, IV",
+      "D": "IV, V, II, III, I"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.2.1",
+    "sloText": "Apply Graham's law of diffusion to rank gases by rates of diffusion;",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "explanation": "According to Graham's law, the rate of diffusion is inversely proportional to the square root of molar mass. The lighter the gas, the faster it diffuses: Helium (4) > Methane (16) > Ethene (28) > Oxygen (32) > Chlorine (71). Hence I, III, II, V, IV.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Arranged from lowest to highest molar mass: He (4) > CH4 (16) > C2H4 (28) > O2 (32) > Cl2 (71)."
+      },
+      {
+        "key": "B",
+        "reason": "Does not begin with the lightest gas (Helium)."
+      },
+      {
+        "key": "C",
+        "reason": "Methane is heavier than helium and cannot diffuse faster than helium."
+      },
+      {
+        "key": "D",
+        "reason": "This is ordered from slowest to fastest."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "stem": "When rubbing alcohol is applied on a cut, it feels cold on the skin because of the process of",
+    "options": {
+      "A": "condensation.",
+      "B": "sublimation.",
+      "C": "evaporation.",
+      "D": "freezing."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.4.1",
+    "sloText": "Explain evaporation as a cooling process in terms of kinetic molecular theory;",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "explanation": "Evaporation is a cooling process because high-kinetic-energy molecules escape from the liquid surface into vapour, leaving lower-energy molecules behind and absorbing latent heat from the skin.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Condensation releases heat and causes warming."
+      },
+      {
+        "key": "B",
+        "reason": "Sublimation is a direct solid-to-gas transition."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Fast-moving alcohol molecules evaporate rapidly, absorbing latent heat of vaporization from the skin and producing a cooling sensation."
+      },
+      {
+        "key": "D",
+        "reason": "Freezing is liquid turning into solid."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "stem": "When few drops of ink are added in water, they slowly start to disperse. This spreading of molecules can be enhanced by increasing temperature. What will be the impact on the molecules when the temperature is increased?",
+    "options": {
+      "A": "Velocity of the molecules will increase.",
+      "B": "Pressure on the molecules will decrease.",
+      "C": "Intermolecular forces of attraction will increase.",
+      "D": "Volume occupied by the molecules will decrease."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.4.1",
+    "sloText": "Explain the effect of temperature on the kinetic energy and diffusion of liquid particles;",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "explanation": "Temperature is a direct measure of the average kinetic energy of molecules (KE = 1/2 m v^2). Increasing temperature increases the velocity and kinetic energy of water and ink molecules, speeding up diffusion.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Thermal energy raises average kinetic energy, directly increasing molecular velocity."
+      },
+      {
+        "key": "B",
+        "reason": "Liquid molecular pressure does not decrease to cause diffusion."
+      },
+      {
+        "key": "C",
+        "reason": "Intermolecular forces weaken at higher thermal energies rather than increasing."
+      },
+      {
+        "key": "D",
+        "reason": "Liquids expand slightly upon heating rather than contracting."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "stem": "Plastic and rubber are the examples of amorphous solids because they",
+    "options": {
+      "A": "show a regular three-dimensional geometry.",
+      "B": "exhibit the phenomenon of anisotropy.",
+      "C": "melt over a wide range of temperature.",
+      "D": "possess definite cleavage planes."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.5.2",
+    "sloText": "Differentiate between crystalline and amorphous solids;",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "explanation": "Unlike crystalline solids which have sharp, well-defined melting points, amorphous solids lack long-range structural order and gradually soften and melt over a broad temperature range.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Regular geometry is a feature of crystalline solids."
+      },
+      {
+        "key": "B",
+        "reason": "Anisotropy is shown by crystalline solids; amorphous solids are isotropic."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Amorphous solids lack uniform bond energies and melt over a wide temperature range."
+      },
+      {
+        "key": "D",
+        "reason": "Definite cleavage planes are characteristic of crystalline solids."
+      }
+    ]
+  },
+  {
+    "questionNumber": 26,
+    "stem": "The ion of which of these elements will have the same number of electrons as an atom of neon (10Ne20)?",
+    "options": {
+      "A": "3Li7",
+      "B": "4Be9",
+      "C": "12Mg24",
+      "D": "19K39"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.1.2",
+    "sloText": "Determine electron configuration of isoelectronic ions and noble gas atoms;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "A neon atom has 10 electrons. Magnesium (atomic number 12) loses its 2 valence electrons to form Mg2+, having 12 - 2 = 10 electrons, which is isoelectronic with neon.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Li+ has 3 - 1 = 2 electrons (isoelectronic with helium)."
+      },
+      {
+        "key": "B",
+        "reason": "Be2+ has 4 - 2 = 2 electrons (isoelectronic with helium)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Mg2+ has 12 - 2 = 10 electrons, identical to neon."
+      },
+      {
+        "key": "D",
+        "reason": "K+ has 19 - 1 = 18 electrons (isoelectronic with argon)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 27,
+    "stem": "The given table shows the electronic structures of two different elements: Element X: 2, 8, 8, 2; Element Y: 2, 8, 6. What will be the type and formula of the compound formed when elements X and Y react together?",
+    "options": {
+      "A": "Ionic Compound, XY",
+      "B": "Ionic Compound, XY2",
+      "C": "Covalent Compound, X2Y",
+      "D": "Covalent Compound, X2Y2"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "4.2.3",
+    "sloText": "Predict formulas of ionic and covalent compounds from valence configurations;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Element X (Calcium) has 2 valence electrons and readily loses them to form X2+. Element Y (Sulfur) has 6 valence electrons and readily gains 2 electrons to form Y2-. The electrostatic combination forms an ionic compound with empirical formula XY (CaS).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Complete transfer of 2 electrons from X to Y forms the ionic compound XY."
+      },
+      {
+        "key": "B",
+        "reason": "XY2 would require a monovalent anion."
+      },
+      {
+        "key": "C",
+        "reason": "Reaction between a metal and a non-metal forms an ionic compound, not covalent."
+      },
+      {
+        "key": "D",
+        "reason": "Bonding between electropositive metal and electronegative non-metal is ionic."
+      }
+    ]
+  },
+  {
+    "questionNumber": 28,
+    "stem": "Consider the given pairs of elements: I. Hydrogen and potassium, II. Oxygen and potassium, III. Hydrogen and carbon, IV. Oxygen and carbon. Which pairs of elements can form covalent bonds when they react with each other?",
+    "options": {
+      "A": "I and II",
+      "B": "I and III",
+      "C": "II and IV",
+      "D": "III and IV"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.3.1",
+    "sloText": "Differentiate between ionic and covalent bonding between metals and non-metals;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Covalent bonds form by mutual sharing of electrons between non-metallic elements. Potassium is a metal that forms ionic bonds with hydrogen (KH) and oxygen (K2O). Carbon, hydrogen, and oxygen are all non-metals, so III (H + C) and IV (O + C) form covalent bonds.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Potassium is an alkali metal that forms ionic compounds."
+      },
+      {
+        "key": "B",
+        "reason": "Potassium in pair I forms an ionic hydride."
+      },
+      {
+        "key": "C",
+        "reason": "Pair II involves metallic potassium forming ionic oxide."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Both III (hydrocarbons) and IV (carbon oxides) involve non-metals forming covalent bonds."
+      }
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "stem": "A polar covalent compound is formed, when one atom of",
+    "options": {
+      "A": "sulphur combines with two atoms of oxygen.",
+      "B": "carbon combines with four atoms of chlorine.",
+      "C": "sulphur combines with three atoms of oxygen.",
+      "D": "carbon combines with four atoms of hydrogen."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.3.5",
+    "sloText": "Distinguish between polar and non-polar covalent molecules based on electronegativity difference and molecular geometry;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "SO2 (sulfur dioxide) has a bent geometry due to a lone pair on sulfur, creating an asymmetrical charge distribution and a permanent net dipole moment. CCl4, SO3, and CH4 are highly symmetrical (tetrahedral or trigonal planar) where individual bond dipoles cancel out completely.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. SO2 has a bent non-linear shape, causing bond dipoles not to cancel and giving a polar molecule."
+      },
+      {
+        "key": "B",
+        "reason": "CCl4 is tetrahedral and symmetrical; bond dipoles cancel to yield a non-polar molecule."
+      },
+      {
+        "key": "C",
+        "reason": "SO3 is planar and symmetrical; bond dipoles cancel completely."
+      },
+      {
+        "key": "D",
+        "reason": "CH4 is symmetrical tetrahedral with virtually non-polar C-H bonds."
+      }
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "stem": "Which of the following bonds is present between copper atoms that allows copper to conduct electricity?",
+    "options": {
+      "A": "Ionic bond",
+      "B": "Metallic bond",
+      "C": "Covalent bond",
+      "D": "Co-ordinate covalent bond"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.5.2",
+    "sloText": "Describe metallic bonding and relate it to electrical conductivity;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Metallic bonding consists of an array of positive metal ions immersed in a delocalised 'sea' of mobile valence electrons. These free electrons move freely through the lattice, enabling electrical conduction.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Ionic bonding occurs between cations and anions of different electronegativity."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Metallic bonding features delocalised mobile electrons that conduct electric current."
+      },
+      {
+        "key": "C",
+        "reason": "Covalent bonds have localized shared electron pairs that do not conduct electricity."
+      },
+      {
+        "key": "D",
+        "reason": "Coordinate bonding involves localized donation of an electron pair."
+      }
+    ]
+  },
+  {
+    "questionNumber": 31,
+    "stem": "Reduction is defined as a chemical process which involves",
+    "options": {
+      "A": "loss of electrons.",
+      "B": "addition of oxygen.",
+      "C": "removal of hydrogen.",
+      "D": "decrease in oxidation state."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "7.1.1",
+    "sloText": "Define oxidation and reduction in terms of loss/gain of electrons and changes in oxidation state;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "In terms of modern electrochemical definitions, reduction is the gain of electrons resulting in a decrease in the oxidation state (number) of an atom or ion.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Loss of electrons is oxidation."
+      },
+      {
+        "key": "B",
+        "reason": "Addition of oxygen is oxidation."
+      },
+      {
+        "key": "C",
+        "reason": "Removal of hydrogen is oxidation."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Gain of electrons decreases the oxidation number, which defines reduction."
+      }
+    ]
+  },
+  {
+    "questionNumber": 32,
+    "stem": "The reaction between hydrogen and black copper(II) oxide is written as follows: CuO(s) + H2(g) \u2192 Cu(s) + H2O(l). In this reaction, which substance is oxidised?",
+    "options": {
+      "A": "H2(g)",
+      "B": "Cu(s)",
+      "C": "H2O(l)",
+      "D": "CuO(s)"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "7.3.2",
+    "sloText": "Identify oxidizing and reducing agents in redox reactions;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "Hydrogen (H2) gains oxygen to form H2O, and its oxidation state increases from 0 in elemental H2 to +1 in H2O. Therefore, H2 is oxidised.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Hydrogen gains oxygen and its oxidation state increases from 0 to +1, meaning it is oxidised."
+      },
+      {
+        "key": "B",
+        "reason": "Cu(s) is a product of reduction."
+      },
+      {
+        "key": "C",
+        "reason": "H2O is the oxidation product, not the reactant oxidised."
+      },
+      {
+        "key": "D",
+        "reason": "CuO loses oxygen and its copper is reduced from +2 to 0."
+      }
+    ]
+  },
+  {
+    "questionNumber": 33,
+    "stem": "The oxidation state of chlorine in ClO3\u2212 is",
+    "options": {
+      "A": "+1",
+      "B": "+3",
+      "C": "+5",
+      "D": "+7"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "7.2.3",
+    "sloText": "Calculate oxidation numbers of elements in polyatomic ions;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "In the chlorate ion (ClO3-), oxygen has an oxidation number of -2. Let chlorine's oxidation number be x. Then: x + 3(-2) = -1 => x - 6 = -1 => x = +5.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "+1 is the oxidation state of chlorine in hypochlorite (ClO-)."
+      },
+      {
+        "key": "B",
+        "reason": "+3 is the oxidation state of chlorine in chlorite (ClO2-)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. x + 3(-2) = -1 => x = +5."
+      },
+      {
+        "key": "D",
+        "reason": "+7 is the oxidation state of chlorine in perchlorate (ClO4-)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 34,
+    "stem": "A voltaic (galvanic) cell is an electrochemical cell which",
+    "options": {
+      "A": "converts electrical energy into chemical energy.",
+      "B": "generates electricity through spontaneous redox reaction.",
+      "C": "comprises of two electrodes made up of the same inert metal.",
+      "D": "consists of a positively charged anode and a negatively charged cathode."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.4.13",
+    "sloText": "Differentiate between electrolytic and voltaic (galvanic) cells;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "A voltaic (galvanic) cell harnesses the energy of a spontaneous chemical redox reaction to generate electric current (chemical energy into electrical energy).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Converting electrical energy to chemical energy describes an electrolytic cell."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Spontaneous electron transfer produces an electric current in a voltaic cell."
+      },
+      {
+        "key": "C",
+        "reason": "Voltaic cells require electrodes of different reduction potentials to establish a potential difference."
+      },
+      {
+        "key": "D",
+        "reason": "In a voltaic cell, the anode is negative and the cathode is positive."
+      }
+    ]
+  },
+  {
+    "questionNumber": 35,
+    "stem": "Galvanising is one of the methods to prevent iron from rusting. This method involves coating of iron with a protective layer of",
+    "options": {
+      "A": "tin.",
+      "B": "zinc.",
+      "C": "aluminium.",
+      "D": "magnesium."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "7.6.3",
+    "sloText": "Describe methods of rust prevention including galvanizing, tin plating and electroplating;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "Galvanising is the process of applying a protective sacrificial zinc coating to iron or steel to prevent rusting.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Coating iron with tin is called tin plating."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Galvanising specifically refers to applying a protective coating of zinc."
+      },
+      {
+        "key": "C",
+        "reason": "Aluminium coating is called aluminizing."
+      },
+      {
+        "key": "D",
+        "reason": "Magnesium blocks are used for cathodic protection, not surface galvanization."
+      }
+    ]
+  },
+  {
+    "questionNumber": 36,
+    "stem": "A metallic anchor is used to prevent ships from drifting due to wind or ocean current. Anchors are often made up of iron because it",
+    "options": {
+      "A": "is sonorous.",
+      "B": "is unreactive.",
+      "C": "has high density.",
+      "D": "has low melting point."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.1.1",
+    "sloText": "Describe the physical properties and everyday applications of transition metals;",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "explanation": "Ship anchors require massive weight in a compact volume to sink rapidly and grip the seabed; iron's high density (7.87 g/cm3) provides the required gravitational ballast.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Sonorous property (ringing sound) is useful for bells, not anchors."
+      },
+      {
+        "key": "B",
+        "reason": "Iron is reactive and prone to rusting in saltwater."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. High density enables the anchor to be compact yet heavy enough to hold a ship firmly."
+      },
+      {
+        "key": "D",
+        "reason": "Iron has a very high melting point (1538 \u00b0C), not low."
+      }
+    ]
+  },
+  {
+    "questionNumber": 37,
+    "stem": "All of the following metals exist in combined state in nature EXCEPT",
+    "options": {
+      "A": "magnesium.",
+      "B": "aluminium.",
+      "C": "platinum.",
+      "D": "sodium."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.2.7",
+    "sloText": "Classify metals as reactive, moderately reactive, or unreactive (noble metals) based on occurrence in nature;",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "explanation": "Platinum is an exceptionally unreactive noble metal located at the bottom of the electrochemical reactivity series. Due to its resistance to oxidation, it occurs naturally in the native (free/uncombined) elemental state.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Magnesium is a reactive alkaline earth metal found as carbonates and sulfates."
+      },
+      {
+        "key": "B",
+        "reason": "Aluminium is highly electropositive and occurs in ores like bauxite."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Platinum is a noble metal and occurs native (uncombined) in nature."
+      },
+      {
+        "key": "D",
+        "reason": "Sodium is an alkali metal that reacts vigorously and is only found in salts like NaCl."
+      }
+    ]
+  },
+  {
+    "questionNumber": 38,
+    "stem": "A carbonate of metal X has the following characteristics: White, odourless powder; Insoluble in water; Decomposes into lime and carbon dioxide. The metal X can be identified as",
+    "options": {
+      "A": "sodium.",
+      "B": "calcium.",
+      "C": "platinum.",
+      "D": "magnesium."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.2.4",
+    "sloText": "Describe the thermal decomposition and chemical properties of carbonates of Group II metals;",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "explanation": "Calcium carbonate (CaCO3, limestone) is a white water-insoluble powder that undergoes thermal decomposition upon heating to yield quicklime (calcium oxide, CaO) and carbon dioxide gas: CaCO3(s) -> CaO(s) + CO2(g).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Sodium carbonate (Na2CO3) is readily soluble in water and does not decompose to lime."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. CaCO3 is insoluble in water and decomposes into lime (CaO) and CO2."
+      },
+      {
+        "key": "C",
+        "reason": "Platinum does not form a stable carbonate mineral."
+      },
+      {
+        "key": "D",
+        "reason": "Magnesium carbonate decomposes into magnesia (MgO), not lime."
+      }
+    ]
+  },
+  {
+    "questionNumber": 39,
+    "stem": "An element X exists as a diatomic gas at room temperature. Each atom of element X requires one electron to form a stable X\u22121 ion. Based on the given information, the element X is a/ an",
+    "options": {
+      "A": "alkaline earth metal.",
+      "B": "alkali metal.",
+      "C": "inert metal.",
+      "D": "non-metal."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.3.1",
+    "sloText": "Identify halogens as diatomic non-metals forming univalent anions;",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "explanation": "Diatomic gaseous elements that gain one electron to achieve noble gas electron configuration are halogens (Group 17, such as F2 and Cl2), which are non-metals.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Alkaline earth metals are solid metals that lose two electrons to form +2 ions."
+      },
+      {
+        "key": "B",
+        "reason": "Alkali metals are solid metals that lose one electron to form +1 cations."
+      },
+      {
+        "key": "C",
+        "reason": "Inert gases are monoatomic and unreactive."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Halogens (F2, Cl2) are diatomic gaseous non-metals forming -1 anions."
+      }
+    ]
+  },
+  {
+    "questionNumber": 40,
+    "stem": "Halogens react with hydrogen gas to produce hydrogen halides that are water soluble gases. When dissolved in water, all of these gases produce strong acids EXCEPT",
+    "options": {
+      "A": "hydrogen bromide.",
+      "B": "hydrogen chloride.",
+      "C": "hydrogen fluoride.",
+      "D": "hydrogen iodide."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.3.1",
+    "sloText": "Describe the acidic strength and properties of hydrohalic acids (HF, HCl, HBr, HI);",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "explanation": "Hydrofluoric acid (HF) is a weak acid in aqueous solution because of the exceptionally strong H-F bond enthalpy and strong intermolecular hydrogen bonding, which impedes complete dissociation into H+ and F- ions. In contrast, HCl, HBr, and HI are strong acids that dissociate completely.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "HBr is a strong acid that ionizes completely in water."
+      },
+      {
+        "key": "B",
+        "reason": "HCl is a well-known strong acid."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. HF has a very high bond dissociation energy and is only partially dissociated (weak acid) in aqueous solution."
+      },
+      {
+        "key": "D",
+        "reason": "HI has the lowest bond dissociation energy and is the strongest hydrohalic acid."
+      }
+    ]
+  }
+]

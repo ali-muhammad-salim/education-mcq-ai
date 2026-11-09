@@ -5,6 +5,7 @@ import prisma from '@/lib/prisma';
 import { verifyPassword, hashPassword, generateToken } from '@/lib/auth';
 import { assertOrigin, rateLimit } from '@/lib/security';
 import { apiError, ApiError } from '@/lib/api';
+import { sessionMeta } from '@/lib/session-meta';
 export async function POST(req: NextRequest) {
   try {
     assertOrigin(req);
@@ -15,7 +16,7 @@ export async function POST(req: NextRequest) {
     if (user.status !== 'ACTIVE') throw new ApiError(403, 'ACCOUNT_INACTIVE', 'This account is not active.');
     if (!user.passwordHash.startsWith('scrypt:')) await prisma.user.update({ where: { id: user.id }, data: { passwordHash: await hashPassword(input.password) } });
     const token = generateToken(), expiresAt = new Date(Date.now() + 7 * 86400000);
-    await prisma.userSession.create({ data: { userId: user.id, token: sessionTokenHash(token), expiresAt } });
+    await prisma.userSession.create({ data: { userId: user.id, token: sessionTokenHash(token), expiresAt, ...sessionMeta(req) } });
     const response = NextResponse.json({ success: true, user: { id: user.id, email: user.email, name: user.name, role: user.role, avatarUrl: user.avatarUrl } });
     response.cookies.set('mcqs_session', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax', path: '/', expires: expiresAt });
     return response;

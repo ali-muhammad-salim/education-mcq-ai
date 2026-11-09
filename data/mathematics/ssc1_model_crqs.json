@@ -1,0 +1,647 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "section": "Constructed Response Questions (CRQs)",
+    "questionText": "Apply the laws of exponents to simplify $\\sqrt[3]{125\\times\\dfrac{x^{-4}}{x^2}}\\times\\sqrt{\\dfrac{x^4}{25}}$ in its simplest form.",
+    "originalSlo": "1.5.1",
+    "currentSlo": "1.5.1",
+    "current_slo": "1.5.1",
+    "current_mapping": [
+      {
+        "code": "1.5.1",
+        "description": "apply the laws of exponents to simplify expressions with real base and exponents:\nx^m · x^n = x^(m+n),\n(xy)^m = x^m y^m,\n(x^m)^n = x^(mn),\n(x/y)^m = x^m / y^m, where y ≠ 0,\ny^0 = 1,\nx^m / x^n = x^(m-n), where x ≠ 0.",
+        "topic": "Real Numbers"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 1,
+    "unitName": "Real Numbers",
+    "chapter": "Real Numbers",
+    "sloText": "apply the laws of exponents to simplify expressions with real base and exponents:\nx^m · x^n = x^(m+n),\n(xy)^m = x^m y^m,\n(x^m)^n = x^(mn),\n(x/y)^m = x^m / y^m, where y ≠ 0,\ny^0 = 1,\nx^m / x^n = x^(m-n), where x ≠ 0.",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for simplifying $\\dfrac{x^{-4}}{x^2}=x^{-6}$.",
+      "1 mark for obtaining $\\sqrt[3]{125x^{-6}}=5x^{-2}$ and $\\sqrt{\\dfrac{x^4}{25}}=\\dfrac{x^2}{5}$.",
+      "1 mark for the final simplification $5x^{-2}\\times\\dfrac{x^2}{5}=1$."
+    ],
+    "rubric": [
+      "1 mark for simplifying $\\dfrac{x^{-4}}{x^2}=x^{-6}$.",
+      "1 mark for obtaining $\\sqrt[3]{125x^{-6}}=5x^{-2}$ and $\\sqrt{\\dfrac{x^4}{25}}=\\dfrac{x^2}{5}$.",
+      "1 mark for the final simplification $5x^{-2}\\times\\dfrac{x^2}{5}=1$."
+    ],
+    "modelAnswer": "Using the quotient law, $\\dfrac{x^{-4}}{x^2}=x^{-6}$. Thus $\\sqrt[3]{125x^{-6}}=5x^{-2}$ and $\\sqrt{\\dfrac{x^4}{25}}=\\dfrac{x^2}{5}$. Their product is $5x^{-2}\\times\\dfrac{x^2}{5}=1$, for $x\\ne0$.",
+    "betterResponse": "Using the quotient law, $\\dfrac{x^{-4}}{x^2}=x^{-6}$. Thus $\\sqrt[3]{125x^{-6}}=5x^{-2}$ and $\\sqrt{\\dfrac{x^4}{25}}=\\dfrac{x^2}{5}$. Their product is $5x^{-2}\\times\\dfrac{x^2}{5}=1$, for $x\\ne0$.",
+    "weakerResponse": "Adds exponents instead of subtracting in x^(−4)/x^2 (writing x^(−2) inside the cube root) or confuses ∛125 with √125.",
+    "overallPerformance": "Model Paper item assessing SLO 1.5.1 (Application of laws of exponents with real base and exponents).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Practise converting nth roots to fractional powers (1/n) before applying product and quotient laws of indices.",
+      "Always simplify negative exponents carefully using x^m / x^n = x^(m − n) and x^0 = 1."
+    ],
+    "diagramUrl": null,
+    "pageNumber": 3
+  },
+  {
+    "questionNumber": "Q.2",
+    "section": "Constructed Response Questions (CRQs)",
+    "questionText": "Find the value of x for log_6(1) + (log_6(216)) / (log_6(36)) = x.",
+    "originalSlo": "2.4.1",
+    "currentSlo": "2.4.1",
+    "current_slo": "2.4.1",
+    "current_mapping": [
+      {
+        "code": "2.4.1",
+        "description": "solve problems using the given laws of logarithm (without using log and antilog tables) in SLO 2.3.1.",
+        "topic": "Logarithms"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 2,
+    "unitName": "Logarithms",
+    "chapter": "Logarithms",
+    "sloText": "solve problems using the given laws of logarithm (without using log and antilog tables) in SLO 2.3.1.",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for expressing 216 = 6^3 and 36 = 6^2 (or applying log_6(1) = 0).",
+      "1 mark for applying the power law of logarithms: log_6(6^3) = 3 log_6(6) = 3 and log_6(6^2) = 2 log_6(6) = 2.",
+      "1 mark for evaluating x = 0 + 3/2 = 3/2 (or 1.5)."
+    ],
+    "rubric": [
+      "1 mark for expressing 216 = 6^3 and 36 = 6^2 (or applying log_6(1) = 0).",
+      "1 mark for applying the power law of logarithms: log_6(6^3) = 3 log_6(6) = 3 and log_6(6^2) = 2 log_6(6) = 2.",
+      "1 mark for evaluating x = 0 + 3/2 = 3/2 (or 1.5)."
+    ],
+    "modelAnswer": "Given: log_6(1) + (log_6(216)) / (log_6(36)) = x.\nStep 1: Since log_a(1) = 0, log_6(1) = 0. Express 216 as 6^3 and 36 as 6^2:\n0 + log_6(6^3) / log_6(6^2) = x.\nStep 2: Apply the power law log_a(m^n) = n log_a(m):\n(3 log_6(6)) / (2 log_6(6)) = x.\nStep 3: Since log_6(6) = 1:\nx = 3/2 = 1.5.",
+    "betterResponse": "Identifies log_6(1) = 0, rewrites 216 = 6^3 and 36 = 6^2, applies log_a(m^n) = n log_a(m) without log tables, and obtains x = 3/2.",
+    "weakerResponse": "Treats log_6(216) / log_6(36) as log_6(216 − 36) or log_6(216 / 36) = log_6(6) = 1, confusing a quotient of two logarithms with the logarithm of a quotient.",
+    "overallPerformance": "Model Paper item assessing SLO 2.4.1 (Solving problems using the laws of logarithms without log tables).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Distinguish clearly between log_a(m/n) = log_a(m) − log_a(n) and the ratio (log_a(m)) / (log_a(n))."
+    ],
+    "diagramUrl": null,
+    "pageNumber": 3
+  },
+  {
+    "questionNumber": "Q.3",
+    "section": "Constructed Response Questions (CRQs)",
+    "questionText": "In a class of 50 students, 25 students use X-mobile network; whereas, 38 students use Y-mobile network. Hence, each student uses at least one of the two mobile networks.\nCalculate the number of students who use both X and Y-mobile networks.",
+    "originalSlo": "3.5.1",
+    "currentSlo": "3.5.1",
+    "current_slo": "3.5.1",
+    "current_mapping": [
+      {
+        "code": "3.5.1",
+        "description": "apply concepts of set theory up to three overlapping sets to solve world problems;",
+        "topic": "Sets Theory"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 3,
+    "unitName": "Sets Theory",
+    "chapter": "Sets Theory",
+    "sloText": "apply concepts of set theory up to three overlapping sets to solve world problems;",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for stating the given cardinalities: n(X ∪ Y) = 50, n(X) = 25, n(Y) = 38.",
+      "1 mark for applying the inclusion-exclusion formula: n(X ∪ Y) = n(X) + n(Y) − n(X ∩ Y).",
+      "1 mark for calculating n(X ∩ Y) = 25 + 38 − 50 = 13 students."
+    ],
+    "rubric": [
+      "1 mark for stating the given cardinalities: n(X ∪ Y) = 50, n(X) = 25, n(Y) = 38.",
+      "1 mark for applying the inclusion-exclusion formula: n(X ∪ Y) = n(X) + n(Y) − n(X ∩ Y).",
+      "1 mark for calculating n(X ∩ Y) = 25 + 38 − 50 = 13 students."
+    ],
+    "modelAnswer": "Let X be the set of students using X-mobile network and Y be the set of students using Y-mobile network.\nGiven: Total students n(X ∪ Y) = 50, n(X) = 25, and n(Y) = 38.\nUsing the principle of inclusion-exclusion for two overlapping sets:\nn(X ∪ Y) = n(X) + n(Y) − n(X ∩ Y)\n50 = 25 + 38 − n(X ∩ Y)\n50 = 63 − n(X ∩ Y)\nn(X ∩ Y) = 63 − 50 = 13.\nHence, 13 students use both X and Y-mobile networks.",
+    "betterResponse": "Clearly defines n(X ∪ Y) = 50, n(X) = 25, and n(Y) = 38, applies n(X ∪ Y) = n(X) + n(Y) − n(X ∩ Y), and computes n(X ∩ Y) = 13.",
+    "weakerResponse": "Subtracts 38 − 25 = 13 without justification or adds 50 + 25 − 38 = 37 due to misplacing n(X ∪ Y) in the formula.",
+    "overallPerformance": "Model Paper item assessing SLO 3.5.1 (Applying concepts of set theory to solve word problems).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Always write out the cardinality relation n(A ∪ B) = n(A) + n(B) − n(A ∩ B) before substituting numerical values."
+    ],
+    "diagramUrl": null,
+    "pageNumber": 4
+  },
+  {
+    "questionNumber": "Q.4a",
+    "section": "Constructed Response Questions (CRQs) — Attempt EITHER Part a OR Part b of Q.4",
+    "questionText": "i. By completing the given table, plot the function $f(x)=\\lvert x-2\\rvert+3$, on the given graph. (2 Marks)\n\n| $x$ | $0$ | $2$ |\n| --- | --- | --- |\n| $f(x)$ | $5$ |  |\n\nii. Write the range of the function given in part i. (1 Mark)",
+    "originalSlo": "4.4.1",
+    "currentSlo": "4.4.1",
+    "current_slo": "4.4.1",
+    "current_mapping": [
+      {
+        "code": "4.4.1",
+        "description": "plot graphs of a constant function, identity function, linear function and absolute valued functions;",
+        "topic": "Functions and Graphs"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 4,
+    "unitName": "Functions and Graphs",
+    "chapter": "Functions and Graphs",
+    "sloText": "plot graphs of a constant function, identity function, linear function and absolute valued functions;",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for the missing table value $f(2)=\\lvert2-2\\rvert+3=3$.",
+      "1 mark for the V-shaped graph with vertex $(2,3)$ and points $(0,5)$ and $(4,5)$.",
+      "1 mark for the range $[3,\\infty)$, equivalently $y\\ge3$."
+    ],
+    "rubric": [
+      "1 mark for the missing table value $f(2)=\\lvert2-2\\rvert+3=3$.",
+      "1 mark for the V-shaped graph with vertex $(2,3)$ and points $(0,5)$ and $(4,5)$.",
+      "1 mark for the range $[3,\\infty)$, equivalently $y\\ge3$."
+    ],
+    "modelAnswer": "i. Completing the table for f(x) = |x − 2| + 3:\n• At x = 0: f(0) = |0 − 2| + 3 = 2 + 3 = 5 (given).\n• At x = 2: f(2) = |2 − 2| + 3 = 0 + 3 = 3.\n• At x = 4: f(4) = |4 − 2| + 3 = 2 + 3 = 5.\nPlot the points (0, 5), (2, 3), and (4, 5) on the grid and join them with straight rays starting from the vertex (2, 3) to form a V-shaped graph.\nii. Since |x − 2| ≥ 0 for all x ∈ R, f(x) = |x − 2| + 3 ≥ 3. Therefore, the range of the function is y ≥ 3 (or [3, +∞)).",
+    "betterResponse": "The missing table value is $f(2)=3$. Plot the V-shaped graph of $f(x)=\\lvert x-2\\rvert+3$ with vertex $(2,3)$, passing through $(0,5)$ and $(4,5)$. The range is $[3,\\infty)$.",
+    "weakerResponse": "Connects only (0, 5) and (2, 3) as a single straight line extending below y = 3 instead of reflecting at the vertex (2, 3), or confuses domain with range.",
+    "overallPerformance": "Model Paper item assessing SLOs 4.4.1 and 4.4.2 (Plotting absolute value functions and determining range from the graph).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Locate the vertex of f(x) = |x − h| + k at (h, k) first, then plot symmetric points on both sides of x = h."
+    ],
+    "diagramUrl": "/paper-crops/MTH-IX-P2/q4a-graph.png",
+    "pageNumber": 5
+  },
+  {
+    "questionNumber": "Q.4b",
+    "section": "Constructed Response Questions (CRQs) — Attempt EITHER Part a OR Part b of Q.4",
+    "questionText": "Two sets are defined as S = {1, 2, 3, 4} and T = {2, 6, 8}.\ni. Find an into function from S to T. (1 Mark)\nii. Is it possible to find a one-one and onto function (bijective function) from S to T? Justify your answer.",
+    "originalSlo": "4.1.2",
+    "currentSlo": "4.1.2",
+    "current_slo": "4.1.2",
+    "current_mapping": [
+      {
+        "code": "4.1.2",
+        "description": "describe:\na. into function,\nb. into and one-one function (injective function),\nc. onto function (surjective function),\nd. one-one and onto function (bijective function);",
+        "topic": "Functions and Graphs"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 4,
+    "unitName": "Functions and Graphs",
+    "chapter": "Functions and Graphs",
+    "sloText": "describe:\na. into function,\nb. into and one-one function (injective function),\nc. onto function (surjective function),\nd. one-one and onto function (bijective function);",
+    "cognitiveLevel": "U",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for writing any valid into function f: S → T where Domain(f) = {1, 2, 3, 4} and Range(f) ⊂ T (e.g., f = {(1, 2), (2, 2), (3, 6), (4, 6)}).",
+      "1 mark for stating 'No, it is not possible to find a bijective function from S to T'.",
+      "1 mark for a valid justification: n(S) = 4 ≠ n(T) = 3; by the pigeonhole principle, mapping 4 elements of S to 3 elements of T requires at least two elements of S to share the same image in T, so the function cannot be one-one (injective)."
+    ],
+    "rubric": [
+      "1 mark for writing any valid into function f: S → T where Domain(f) = {1, 2, 3, 4} and Range(f) ⊂ T (e.g., f = {(1, 2), (2, 2), (3, 6), (4, 6)}).",
+      "1 mark for stating 'No, it is not possible to find a bijective function from S to T'.",
+      "1 mark for a valid justification: n(S) = 4 ≠ n(T) = 3; by the pigeonhole principle, mapping 4 elements of S to 3 elements of T requires at least two elements of S to share the same image in T, so the function cannot be one-one (injective)."
+    ],
+    "modelAnswer": "i. An into function f from S = {1, 2, 3, 4} to T = {2, 6, 8} must have domain S and range a proper subset of T:\nf = {(1, 2), (2, 2), (3, 6), (4, 6)} (where Domain = S and Range = {2, 6} ⊂ T).\nii. No, it is not possible to find a one-one and onto (bijective) function from S to T.\nJustification: Set S has 4 elements (n(S) = 4) whereas set T has only 3 elements (n(T) = 3). For a function from S to T to be one-one (injective), each of the 4 elements of S must map to a distinct element of T, which requires at least 4 elements in T. Since n(S) ≠ n(T), no bijective function can exist between S and T.",
+    "betterResponse": "Writes a valid set of 4 ordered pairs with domain S and range properly contained in T, states 'No' for part ii, and explains that n(S) = 4 > n(T) = 3 prevents a one-to-one correspondence.",
+    "weakerResponse": "Writes a relation in part i that omits an element of S (only 2 or 3 ordered pairs) or whose range equals all of T = {2, 6, 8}.",
+    "overallPerformance": "Model Paper item assessing SLOs 4.1.2 and 4.1.3 (Into and bijective functions).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Verify that every element of the domain appears exactly once as a first coordinate and check cardinality conditions for bijections."
+    ],
+    "diagramUrl": null,
+    "pageNumber": 6
+  },
+  {
+    "questionNumber": "Q.5a",
+    "section": "Constructed Response Questions (CRQs) — Attempt EITHER Part a OR Part b of Q.5",
+    "questionText": "The algebraic expression x^3 + 3x^2 + ax − b is divided by x + 2 and the remainder is −12.\nFind the value of a when b = −12.",
+    "originalSlo": "5.3.2",
+    "currentSlo": "5.3.2",
+    "current_slo": "5.3.2",
+    "current_mapping": [
+      {
+        "code": "5.3.2",
+        "description": "solve the expression to find the remainder using remainder theorem;\n(Note: when a polynomial of degree up to 4 is divided by polynomial of degree up to 2)",
+        "topic": "Factorisation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 5,
+    "unitName": "Factorisation",
+    "chapter": "Factorisation",
+    "sloText": "solve the expression to find the remainder using remainder theorem;\n(Note: when a polynomial of degree up to 4 is divided by polynomial of degree up to 2)",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for setting P(x) = x^3 + 3x^2 + ax − (−12) = x^3 + 3x^2 + ax + 12 and identifying x = −2 from the divisor x + 2 = 0.",
+      "1 mark for applying the Remainder Theorem P(−2) = −12: (−2)^3 + 3(−2)^2 + a(−2) + 12 = −12.",
+      "1 mark for simplifying −8 + 12 − 2a + 12 = −12 ⇒ 16 − 2a = −12 ⇒ 2a = 28 ⇒ a = 14."
+    ],
+    "rubric": [
+      "1 mark for setting P(x) = x^3 + 3x^2 + ax − (−12) = x^3 + 3x^2 + ax + 12 and identifying x = −2 from the divisor x + 2 = 0.",
+      "1 mark for applying the Remainder Theorem P(−2) = −12: (−2)^3 + 3(−2)^2 + a(−2) + 12 = −12.",
+      "1 mark for simplifying −8 + 12 − 2a + 12 = −12 ⇒ 16 − 2a = −12 ⇒ 2a = 28 ⇒ a = 14."
+    ],
+    "modelAnswer": "Let P(x) = x^3 + 3x^2 + ax − b.\nGiven b = −12, P(x) = x^3 + 3x^2 + ax − (−12) = x^3 + 3x^2 + ax + 12.\nBy the Remainder Theorem, when P(x) is divided by x + 2, the remainder is P(−2) = −12:\n(−2)^3 + 3(−2)^2 + a(−2) + 12 = −12\n−8 + 3(4) − 2a + 12 = −12\n−8 + 12 − 2a + 12 = −12\n16 − 2a = −12\n2a = 28 ⇒ a = 14.",
+    "betterResponse": "Substitutes x = −2 and b = −12 into P(x) with correct sign handling (−b = +12), equates P(−2) to −12, and solves to get a = 14.",
+    "weakerResponse": "Substitutes x = +2 instead of x = −2, or writes −b as −12 instead of −(−12) = +12.",
+    "overallPerformance": "Model Paper item assessing SLO 5.3.2 (Solving problems using the Remainder Theorem).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Watch signs carefully when substituting negative values into odd and even powers and into −b when b = −12."
+    ],
+    "diagramUrl": null,
+    "pageNumber": 6
+  },
+  {
+    "questionNumber": "Q.5b",
+    "section": "Constructed Response Questions (CRQs) — Attempt EITHER Part a OR Part b of Q.5",
+    "questionText": "Factorise the expression 36a^4 + 12a^2b + b^2 − 9.",
+    "originalSlo": "5.2.1",
+    "currentSlo": "5.2.1",
+    "current_slo": "5.2.1",
+    "current_mapping": [
+      {
+        "code": "5.2.1",
+        "description": "factorise the expression of the following types:\na. ka + kb + kc,\nb. ac + ad + bc + bd,\nc. a^2 ± 2ab + b^2,\nd. a^2 - b^2,\ne. a^2 ± 2ab + b^2 - c^2,\nf. a^4 ± a^2b^2 + b^4 or a^4 + b^4,\ng. ax^2 + bx + c,\nh. (a^3 ± 3a^2b + 3ab^2 ± b^3),\ni. a^3 ± b^3;",
+        "topic": "Factorisation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 5,
+    "unitName": "Factorisation",
+    "chapter": "Factorisation",
+    "sloText": "factorise the expression of the following types:\na. ka + kb + kc,\nb. ac + ad + bc + bd,\nc. a^2 ± 2ab + b^2,\nd. a^2 - b^2,\ne. a^2 ± 2ab + b^2 - c^2,\nf. a^4 ± a^2b^2 + b^4 or a^4 + b^4,\ng. ax^2 + bx + c,\nh. (a^3 ± 3a^2b + 3ab^2 ± b^3),\ni. a^3 ± b^3;",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for grouping the first three terms as a perfect square trinomial: (36a^4 + 12a^2b + b^2) − 9 = ((6a^2)^2 + 2(6a^2)(b) + b^2) − 9.",
+      "1 mark for rewriting as a difference of two squares: (6a^2 + b)^2 − 3^2.",
+      "1 mark for applying X^2 − Y^2 = (X − Y)(X + Y) to obtain (6a^2 + b − 3)(6a^2 + b + 3)."
+    ],
+    "rubric": [
+      "1 mark for grouping the first three terms as a perfect square trinomial: (36a^4 + 12a^2b + b^2) − 9 = ((6a^2)^2 + 2(6a^2)(b) + b^2) − 9.",
+      "1 mark for rewriting as a difference of two squares: (6a^2 + b)^2 − 3^2.",
+      "1 mark for applying X^2 − Y^2 = (X − Y)(X + Y) to obtain (6a^2 + b − 3)(6a^2 + b + 3)."
+    ],
+    "modelAnswer": "Given expression: 36a^4 + 12a^2b + b^2 − 9.\nStep 1: Group the first three terms, which form a perfect square trinomial:\n= [(6a^2)^2 + 2(6a^2)(b) + b^2] − 9\n= (6a^2 + b)^2 − 3^2.\nStep 2: Apply the difference of two squares identity X^2 − Y^2 = (X − Y)(X + Y):\n= (6a^2 + b − 3)(6a^2 + b + 3).",
+    "betterResponse": "Recognises 36a^4 + 12a^2b + b^2 as (6a^2 + b)^2, expresses 9 as 3^2, and factors the difference of squares into (6a^2 + b − 3)(6a^2 + b + 3).",
+    "weakerResponse": "Attempts 2-by-2 grouping (36a^4 + 12a^2b) + (b^2 − 9), which does not yield a common binomial factor.",
+    "overallPerformance": "Model Paper item assessing SLO 5.2.1e (Factorising expressions of the form a^2 ± 2ab + b^2 − c^2).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "For four-term expressions containing three square terms, check whether three terms form a perfect square trinomial (a ± b)^2 − c^2."
+    ],
+    "diagramUrl": null,
+    "pageNumber": 6
+  },
+  {
+    "questionNumber": "Q.6",
+    "section": "Constructed Response Questions (CRQs)",
+    "questionText": "Complete the solution of the square root of an algebraic expression by filling the space provided.",
+    "originalSlo": "6.3.1",
+    "currentSlo": "6.3.1",
+    "current_slo": "6.3.1",
+    "current_mapping": [
+      {
+        "code": "6.3.1",
+        "description": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;",
+        "topic": "Algebraic Manipulation"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 6,
+    "unitName": "Algebraic Manipulation",
+    "chapter": "Algebraic Manipulation",
+    "sloText": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for the first-stage terms $6x^2$ and $36x^4$.",
+      "1 mark for the middle-stage terms $-96x^3+76x^2$, divisor $12x^2-8x$, quotient term $-8x$, and product $-96x^3+64x^2$.",
+      "1 mark for the final-stage expression $12x^2-16x+1$, quotient term $1$ and remainder $0$, giving the root $6x^2-8x+1$."
+    ],
+    "rubric": [
+      "1 mark for the first-stage terms $6x^2$ and $36x^4$.",
+      "1 mark for the middle-stage terms $-96x^3+76x^2$, divisor $12x^2-8x$, quotient term $-8x$, and product $-96x^3+64x^2$.",
+      "1 mark for the final-stage expression $12x^2-16x+1$, quotient term $1$ and remainder $0$, giving the root $6x^2-8x+1$."
+    ],
+    "modelAnswer": "The completed square root is $6x^2-8x+1$.\n$(6x^2-8x+1)^2=36x^4-96x^3+76x^2-16x+1$.\nFirst divisor and quotient term: $6x^2$; first product: $36x^4$.\nSecond divisor: $12x^2-8x$; next quotient term: $-8x$.\n$-96x^3+76x^2-(-96x^3+64x^2)=12x^2$.\nBring down $-16x+1$, giving $12x^2-16x+1$.\nThe final divisor is $12x^2-16x+1$ and the final quotient term is $1$, leaving remainder $0$.",
+    "betterResponse": "The completed square root is $6x^2-8x+1$.\n$(6x^2-8x+1)^2=36x^4-96x^3+76x^2-16x+1$.\nFirst divisor and quotient term: $6x^2$; first product: $36x^4$.\nSecond divisor: $12x^2-8x$; next quotient term: $-8x$.\n$-96x^3+76x^2-(-96x^3+64x^2)=12x^2$.\nBring down $-16x+1$, giving $12x^2-16x+1$.\nThe final divisor is $12x^2-16x+1$ and the final quotient term is $1$, leaving remainder $0$.",
+    "weakerResponse": "Writes 64x^2 instead of 76x^2 in the original polynomial dividend by forgetting to add the +12x^2 needed for the final step.",
+    "overallPerformance": "Model Paper item assessing SLO 6.3.1b (Calculating square root of algebraic expressions by the division method).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "In the division method for square roots, remember to double the entire current quotient at each new step."
+    ],
+    "diagramUrl": "/paper-crops/MTH-IX-P2/q6.png",
+    "pageNumber": 7
+  },
+  {
+    "questionNumber": "Q.7a",
+    "section": "Constructed Response Questions (CRQs) — Attempt EITHER Part a OR Part b of Q.7",
+    "questionText": "Given that k − k^2 √(x + 1) = k √(x + 1), where k > 0.\nShow, by working, that the above equation reduces to x + 1 = (1 / (k + 1))^2.",
+    "originalSlo": "7.1.4",
+    "currentSlo": "7.1.4",
+    "current_slo": "7.1.4",
+    "current_mapping": [
+      {
+        "code": "7.1.4",
+        "description": "solve radical equations reducible to linear form;",
+        "topic": "Linear Equations and Inequalities"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 7,
+    "unitName": "Linear Equations and Inequalities",
+    "chapter": "Linear Equations and Inequalities",
+    "sloText": "solve radical equations reducible to linear form;",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for dividing through by k (since k > 0) or factoring out k and collecting the √(x + 1) terms on one side: 1 = (k + 1)√(x + 1).",
+      "1 mark for isolating the radical: √(x + 1) = 1 / (k + 1).",
+      "1 mark for squaring both sides to obtain x + 1 = (1 / (k + 1))^2."
+    ],
+    "rubric": [
+      "1 mark for dividing through by k (since k > 0) or factoring out k and collecting the √(x + 1) terms on one side: 1 = (k + 1)√(x + 1).",
+      "1 mark for isolating the radical: √(x + 1) = 1 / (k + 1).",
+      "1 mark for squaring both sides to obtain x + 1 = (1 / (k + 1))^2."
+    ],
+    "modelAnswer": "Given: k − k^2 √(x + 1) = k √(x + 1), where k > 0.\nStep 1: Divide both sides of the equation by k (valid since k > 0):\n1 − k √(x + 1) = √(x + 1).\nStep 2: Add k √(x + 1) to both sides and factor out √(x + 1):\n1 = k √(x + 1) + √(x + 1)\n1 = (k + 1) √(x + 1).\nStep 3: Divide both sides by (k + 1) and square both sides:\n√(x + 1) = 1 / (k + 1)\nx + 1 = (1 / (k + 1))^2. (Shown)",
+    "betterResponse": "Divides by k > 0, groups the radical terms as (k + 1)√(x + 1) = 1, isolates √(x + 1) = 1/(k + 1), and squares both sides clearly.",
+    "weakerResponse": "Squares the original equation term-by-term (writing k^2 − k^4(x + 1) = k^2(x + 1)) instead of isolating √(x + 1) first.",
+    "overallPerformance": "Model Paper item assessing SLO 7.1.4 (Solving radical equations reducible to linear form).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Always isolate the radical expression on one side of the equation before squaring both sides."
+    ],
+    "diagramUrl": null,
+    "pageNumber": 7
+  },
+  {
+    "questionNumber": "Q.7b",
+    "section": "Constructed Response Questions (CRQs) — Attempt EITHER Part a OR Part b of Q.7",
+    "questionText": "Draw the graph for the inequalities 2x + y < 8 and x + y < 6.\nHence, find the region bounded by the inequalities. (Note: x > 0 and y > 0)",
+    "originalSlo": "7.3.5",
+    "currentSlo": "7.3.5",
+    "current_slo": "7.3.5",
+    "current_mapping": [
+      {
+        "code": "7.3.5",
+        "description": "solve two linear inequalities with two variables graphically;",
+        "topic": "Linear Equations and Inequalities"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 7,
+    "unitName": "Linear Equations and Inequalities",
+    "chapter": "Linear Equations and Inequalities",
+    "sloText": "solve two linear inequalities with two variables graphically;",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for finding the boundary intercepts and plotting the dashed boundary line 2x + y = 8 through (0, 8) and (4, 0).",
+      "1 mark for finding the boundary intercepts and plotting the dashed boundary line x + y = 6 through (0, 6) and (6, 0), intersecting 2x + y = 8 at (2, 4).",
+      "1 mark for shading/identifying the bounded quadrilateral region in the first quadrant with vertices (0, 0), (4, 0), (2, 4), and (0, 6)."
+    ],
+    "rubric": [
+      "1 mark for finding the boundary intercepts and plotting the dashed boundary line 2x + y = 8 through (0, 8) and (4, 0).",
+      "1 mark for finding the boundary intercepts and plotting the dashed boundary line x + y = 6 through (0, 6) and (6, 0), intersecting 2x + y = 8 at (2, 4).",
+      "1 mark for shading/identifying the bounded quadrilateral region in the first quadrant with vertices (0, 0), (4, 0), (2, 4), and (0, 6)."
+    ],
+    "modelAnswer": "Step 1: Boundary line L_1 for 2x + y < 8 is 2x + y = 8:\n• When x = 0, y = 8 → (0, 8).\n• When y = 0, x = 4 → (4, 0).\nPlot a dashed line through (0, 8) and (4, 0). Testing (0, 0) gives 0 < 8 (True), so shade below L_1.\nStep 2: Boundary line L_2 for x + y < 6 is x + y = 6:\n• When x = 0, y = 6 → (0, 6).\n• When y = 0, x = 6 → (6, 0).\nPlot a dashed line through (0, 6) and (6, 0). Testing (0, 0) gives 0 < 6 (True), so shade below L_2.\nStep 3: Intersection of 2x + y = 8 and x + y = 6 is (2, 4). With x > 0 and y > 0, the common bounded region is the interior of the quadrilateral with vertices O(0, 0), A(4, 0), B(2, 4), and C(0, 6).",
+    "betterResponse": "Plots both boundary lines accurately through their x- and y-intercepts (using dashed lines for strict inequalities) and shades the overlapping quadrilateral region with corner points (0, 0), (4, 0), (2, 4), and (0, 6).",
+    "weakerResponse": "Shades the entire region below only one line or shades the triangular region between (4, 0), (6, 0), and (2, 4) where 2x + y > 8.",
+    "overallPerformance": "Model Paper item assessing SLO 7.3.5 (Solving two linear inequalities with two variables graphically).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Find both axis intercepts for each boundary equation and test (0, 0) to confirm which half-plane to shade."
+    ],
+    "diagramUrl": "/paper-crops/MTH-IX-P2/q7b.png",
+    "pageNumber": 8
+  },
+  {
+    "questionNumber": "Q.8",
+    "section": "Constructed Response Questions (CRQs)",
+    "questionText": "The coordinates of the vertices of a triangle PQR are P(1, 2), Q(1, 6) and R(3, 4). The midpoints of PQ and QR are S(1, 4) and T(a, b) respectively.\nFind the coordinates of point T and distance between S and T.",
+    "originalSlo": "9.2.1",
+    "currentSlo": "9.2.1",
+    "current_slo": "9.2.1",
+    "current_mapping": [
+      {
+        "code": "9.2.1",
+        "description": "calculate the midpoint of a line segment;",
+        "topic": "Introduction to Coordinate Geometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 9,
+    "unitName": "Introduction to Coordinate Geometry",
+    "chapter": "Introduction to Coordinate Geometry",
+    "sloText": "calculate the midpoint of a line segment;",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for applying the midpoint formula to Q(1, 6) and R(3, 4) to find T(a, b) = ((1 + 3)/2, (6 + 4)/2) = (2, 5).",
+      "1 mark for substituting S(1, 4) and T(2, 5) into the distance formula: |ST| = √((2 − 1)^2 + (5 − 4)^2).",
+      "1 mark for calculating |ST| = √(1^2 + 1^2) = √2 units (≈ 1.414 units)."
+    ],
+    "rubric": [
+      "1 mark for applying the midpoint formula to Q(1, 6) and R(3, 4) to find T(a, b) = ((1 + 3)/2, (6 + 4)/2) = (2, 5).",
+      "1 mark for substituting S(1, 4) and T(2, 5) into the distance formula: |ST| = √((2 − 1)^2 + (5 − 4)^2).",
+      "1 mark for calculating |ST| = √(1^2 + 1^2) = √2 units (≈ 1.414 units)."
+    ],
+    "modelAnswer": "Step 1: Find the coordinates of midpoint T(a, b) of side QR joining Q(1, 6) and R(3, 4):\nT(a, b) = ((x_1 + x_2)/2, (y_1 + y_2)/2) = ((1 + 3)/2, (6 + 4)/2) = (4/2, 10/2) = (2, 5).\nStep 2: Find the distance between S(1, 4) and T(2, 5) using the distance formula:\n|ST| = √((2 − 1)^2 + (5 − 4)^2) = √(1^2 + 1^2) = √(1 + 1) = √2 units (or ≈ 1.414 units).",
+    "betterResponse": "Computes T(2, 5) using the midpoint formula on Q(1, 6) and R(3, 4), then applies the distance formula between S(1, 4) and T(2, 5) to obtain √2 units.",
+    "weakerResponse": "Uses P(1, 2) and R(3, 4) to find T instead of Q(1, 6) and R(3, 4), or subtracts coordinates in the midpoint formula.",
+    "overallPerformance": "Model Paper item assessing SLOs 9.2.1 and 9.1.3 (Midpoint formula and distance between two points).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Read the vertex labels carefully from the problem statement: T is the midpoint of QR, not PR."
+    ],
+    "diagramUrl": "/paper-crops/MTH-IX-P2/q8.png",
+    "pageNumber": 9
+  },
+  {
+    "questionNumber": "Q.9a",
+    "section": "Constructed Response Questions (CRQs) — Attempt ANY TWO parts from a, b and c of Q.9",
+    "questionText": "A man stands on a flat surface at a distance of 50 metres from a vertical $x$ metre high electric pole. The angle of elevation of the top of electric pole from the man on the flat surface is $\\theta$.\ni. Show that $\\theta=\\tan^{-1}\\left(\\dfrac{x}{50}\\right)$. (1 Mark)\nii. Hence, find the height of electric pole when the angle of elevation is $45^\\circ$. (2 Marks)",
+    "originalSlo": "14.5.2",
+    "currentSlo": "14.5.2",
+    "current_slo": "14.5.2",
+    "current_mapping": [
+      {
+        "code": "14.5.2",
+        "description": "solve word problems involving angle of elevation and depression in a right-angled triangle.",
+        "topic": "Introduction to Trigonometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 14,
+    "unitName": "Introduction to Trigonometry",
+    "chapter": "Introduction to Trigonometry",
+    "sloText": "solve word problems involving angle of elevation and depression in a right-angled triangle.",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for $\\tan\\theta=\\dfrac{x}{50}$ and $\\theta=\\tan^{-1}\\left(\\dfrac{x}{50}\\right)$.",
+      "1 mark for substituting $\\theta=45^\\circ$ in $\\tan45^\\circ=\\dfrac{x}{50}$.",
+      "1 mark for $x=50$ metres."
+    ],
+    "rubric": [
+      "1 mark for $\\tan\\theta=\\dfrac{x}{50}$ and $\\theta=\\tan^{-1}\\left(\\dfrac{x}{50}\\right)$.",
+      "1 mark for substituting $\\theta=45^\\circ$ in $\\tan45^\\circ=\\dfrac{x}{50}$.",
+      "1 mark for $x=50$ metres."
+    ],
+    "modelAnswer": "i. $\\tan\\theta=\\dfrac{\\text{opposite}}{\\text{adjacent}}=\\dfrac{x}{50}$. Hence $\\theta=\\tan^{-1}\\left(\\dfrac{x}{50}\\right)$.\nii. At $\\theta=45^\\circ$, $\\tan45^\\circ=\\dfrac{x}{50}=1$. Therefore $x=50$ metres.",
+    "betterResponse": "i. $\\tan\\theta=\\dfrac{\\text{opposite}}{\\text{adjacent}}=\\dfrac{x}{50}$. Hence $\\theta=\\tan^{-1}\\left(\\dfrac{x}{50}\\right)$.\nii. At $\\theta=45^\\circ$, $\\tan45^\\circ=\\dfrac{x}{50}=1$. Therefore $x=50$ metres.",
+    "weakerResponse": "Swaps opposite and adjacent sides (writing tan θ = 50/x) or forgets the value of tan 45° = 1.",
+    "overallPerformance": "Model Paper item assessing SLO 14.5.2 (Solving word problems involving angle of elevation in a right-angled triangle).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Sketch and label the right-angled triangle clearly showing the horizontal base (adjacent) and vertical height (opposite)."
+    ],
+    "diagramUrl": null,
+    "pageNumber": 10
+  },
+  {
+    "questionNumber": "Q.9b",
+    "section": "Constructed Response Questions (CRQs) — Attempt ANY TWO parts from a, b and c of Q.9",
+    "questionText": "In the given diagram, ABE and CDE are two right angled triangles.\n(AB = 8 cm, AE = 10 cm, CD = 3 cm, BD = 9 cm)\nCalculate the length of CE.",
+    "originalSlo": "14.3.1",
+    "currentSlo": "14.3.1",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);",
+        "topic": "Introduction to Trigonometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 14,
+    "unitName": "Introduction to Trigonometry",
+    "chapter": "Introduction to Trigonometry",
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for applying Pythagoras' theorem in right-angled triangle ABE to find BE = √(10^2 − 8^2) = √(100 − 64) = √36 = 6 cm.",
+      "1 mark for finding ED = BD − BE = 9 − 6 = 3 cm.",
+      "1 mark for applying Pythagoras' theorem in right-angled triangle CDE to find CE = √(ED^2 + CD^2) = √(3^2 + 3^2) = √18 = 3√2 cm (≈ 4.24 cm)."
+    ],
+    "rubric": [
+      "1 mark for applying Pythagoras' theorem in right-angled triangle ABE to find BE = √(10^2 − 8^2) = √(100 − 64) = √36 = 6 cm.",
+      "1 mark for finding ED = BD − BE = 9 − 6 = 3 cm.",
+      "1 mark for applying Pythagoras' theorem in right-angled triangle CDE to find CE = √(ED^2 + CD^2) = √(3^2 + 3^2) = √18 = 3√2 cm (≈ 4.24 cm)."
+    ],
+    "modelAnswer": "Step 1: In right-angled triangle ABE (right-angled at B), apply Pythagoras' theorem:\nAE^2 = AB^2 + BE^2\n10^2 = 8^2 + BE^2 ⇒ BE^2 = 100 − 64 = 36 ⇒ BE = 6 cm.\nStep 2: Since B, E, D lie on a straight line with BD = 9 cm:\nED = BD − BE = 9 − 6 = 3 cm.\nStep 3: In right-angled triangle CDE (right-angled at D), apply Pythagoras' theorem:\nCE^2 = ED^2 + CD^2 = 3^2 + 3^2 = 9 + 9 = 18\nCE = √18 = 3√2 cm (or ≈ 4.24 cm).",
+    "betterResponse": "Uses Pythagoras' theorem on ΔABE to get BE = 6 cm, subtracts from BD = 9 cm to get ED = 3 cm, and applies Pythagoras' theorem on ΔCDE to get CE = √18 = 3√2 cm.",
+    "weakerResponse": "Assumes E is the midpoint of BD (taking ED = 4.5 cm) instead of first finding BE = 6 cm from ΔABE.",
+    "overallPerformance": "Model Paper item assessing SLO 14.3.1 (Determining unknown sides in right-angled triangles using Pythagoras' theorem).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Never assume a point divides a segment equally unless stated; use the given sides of ΔABE to calculate BE first."
+    ],
+    "diagramUrl": "/paper-crops/MTH-IX-P2/q9b.png",
+    "pageNumber": 11
+  },
+  {
+    "questionNumber": "Q.9c",
+    "section": "Constructed Response Questions (CRQs) — Attempt ANY TWO parts from a, b and c of Q.9",
+    "questionText": "Prove that sin(θ) / (tan(θ) + cot(θ)) = sin^2(θ) cos(θ).",
+    "originalSlo": "14.4.2",
+    "currentSlo": "14.4.2",
+    "current_slo": "14.4.2",
+    "current_mapping": [
+      {
+        "code": "14.4.2",
+        "description": "prove different trigonometric relations using the trigonometric identities mentioned in SLO 14.4.1;",
+        "topic": "Introduction to Trigonometry"
+      }
+    ],
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "outOfSyllabus": false,
+    "current_syllabus_reviewed": true,
+    "unitNumber": 14,
+    "unitName": "Introduction to Trigonometry",
+    "chapter": "Introduction to Trigonometry",
+    "sloText": "prove different trigonometric relations using the trigonometric identities mentioned in SLO 14.4.1;",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "checkingHints": [
+      "1 mark for expressing tan(θ) = sin(θ)/cos(θ) and cot(θ) = cos(θ)/sin(θ) on the Left-Hand Side (LHS).",
+      "1 mark for combining the denominator over a common denominator: (sin^2(θ) + cos^2(θ)) / (sin(θ) cos(θ)) = 1 / (sin(θ) cos(θ)).",
+      "1 mark for simplifying sin(θ) ÷ [1 / (sin(θ) cos(θ))] = sin^2(θ) cos(θ) = RHS."
+    ],
+    "rubric": [
+      "1 mark for expressing tan(θ) = sin(θ)/cos(θ) and cot(θ) = cos(θ)/sin(θ) on the Left-Hand Side (LHS).",
+      "1 mark for combining the denominator over a common denominator: (sin^2(θ) + cos^2(θ)) / (sin(θ) cos(θ)) = 1 / (sin(θ) cos(θ)).",
+      "1 mark for simplifying sin(θ) ÷ [1 / (sin(θ) cos(θ))] = sin^2(θ) cos(θ) = RHS."
+    ],
+    "modelAnswer": "Left-Hand Side (LHS) = sin(θ) / (tan(θ) + cot(θ))\nStep 1: Substitute tan(θ) = sin(θ)/cos(θ) and cot(θ) = cos(θ)/sin(θ):\nLHS = sin(θ) / [ (sin(θ)/cos(θ)) + (cos(θ)/sin(θ)) ]\nStep 2: Combine the fractions in the denominator:\nLHS = sin(θ) / [ (sin^2(θ) + cos^2(θ)) / (sin(θ) cos(θ)) ]\nStep 3: Apply the fundamental identity sin^2(θ) + cos^2(θ) = 1:\nLHS = sin(θ) / [ 1 / (sin(θ) cos(θ)) ] = sin(θ) × sin(θ) cos(θ) = sin^2(θ) cos(θ) = RHS. (Hence proved)",
+    "betterResponse": "Rewrites tan θ and cot θ in terms of sin θ and cos θ, simplifies the denominator using sin^2 θ + cos^2 θ = 1 to 1/(sin θ cos θ), and multiplies to obtain sin^2 θ cos θ.",
+    "weakerResponse": "Cancels sin θ incorrectly before finding a common denominator for tan θ + cot θ.",
+    "overallPerformance": "Model Paper item assessing SLO 14.4.2 (Proving trigonometric relations using fundamental trigonometric identities).",
+    "betterResponseImage": null,
+    "weakerResponseImage": null,
+    "suggestions": [
+      "Convert tangent and cotangent into sine and cosine ratios and simplify complex fractions step-by-step."
+    ],
+    "diagramUrl": null,
+    "pageNumber": 12
+  }
+]

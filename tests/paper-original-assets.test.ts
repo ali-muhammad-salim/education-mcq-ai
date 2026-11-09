@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
+import sourceMetadata from '@/data/paper_source_metadata.json';
 import { getFallbackPaper } from '@/lib/paperDataService';
 
 describe('Bundled annual paper originals', () => {
@@ -21,4 +22,20 @@ describe('Bundled annual paper originals', () => {
       expect(createHash('sha256').update(bytes).digest('hex')).toBe(expectedHash);
     });
   }
+});
+
+describe('Source-specific paper covers', () => {
+  it('keeps every bundled time limit and mark total tied to its original PDF', () => {
+    for (const [code, cover] of Object.entries(sourceMetadata)) {
+      const paper=getFallbackPaper(code)!;
+      expect(paper.totalMarks).toBe(cover.totalMarks);
+      expect(paper.durationMinutes).toBe(cover.durationMinutes);
+      expect(createHash('sha256').update(readFileSync(path.join(process.cwd(),'public',cover.sourceUrl))).digest('hex')).toBe(cover.sourceSha256);
+    }
+    expect(getFallbackPaper('CS-IX-2017-P1')?.durationMinutes).toBe(35);
+    expect(getFallbackPaper('CS-X-2019-P1')?.totalMarks).toBe(25);
+    expect(getFallbackPaper('MTH-IX-2018-P2')?.rubricInstruction).toContain('ELEVEN');
+    expect(getFallbackPaper('CHM-IX-2019-P2')?.rubricInstruction).toContain('EIGHT');
+    expect(getFallbackPaper('CS-IX-2022-P1')?.markScalingNote).toContain('40 marks to theory');
+  });
 });

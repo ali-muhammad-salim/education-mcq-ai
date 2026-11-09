@@ -1,0 +1,636 @@
+[
+  {
+    "id": "mth-x-2019-p2-q1a",
+    "questionNumber": "1a",
+    "questionText": "Simplify $(a^3 x^2 - 2a^2 xb + ab^2) \\div (a^3 x^2 - ab^2)$ to express as $\\frac{ax - b}{ax + b}$.",
+    "marks": 5,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 2,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.1.",
+    "choiceGroup": "1",
+    "modelAnswer": "**Step 1: Factor the numerator:**\n$$a^3 x^2 - 2a^2 xb + ab^2 = a(a^2 x^2 - 2axb + b^2) = a(ax - b)^2$$\n\n**Step 2: Factor the denominator:**\n$$a^3 x^2 - ab^2 = a(a^2 x^2 - b^2) = a(ax - b)(ax + b)$$\n\n**Step 3: Simplify the quotient:**\n$$\\frac{a(ax - b)^2}{a(ax - b)(ax + b)} = \\frac{ax - b}{ax + b}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 1a.",
+    "originalSlo": "15.2.2",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "6.2.2",
+    "current_mapping": [
+      {
+        "code": "6.2.2",
+        "topic": "Algebraic Manipulation",
+        "description": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 6 SLO 6.2.2 (Perform algebraic operations on rational expressions).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q1a_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q1a_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q1b",
+    "questionNumber": "1b",
+    "questionText": "Complete the solution of the square root of an algebraic expression by filling the space provided. Hence, verify your answer.\n\n$$\\begin{array}{r|l} & 6x^2 - 8x + 1 \\\\ \\hline 6x^2 & 36x^4 - 96x^3 + 76x^2 - 16x + 1 \\\\ +6x^2 & -36x^4 \\\\ \\hline 12x^2 - 8x & -96x^3 + 76x^2 \\\\ -8x & \\mp 96x^3 \\pm 64x^2 \\\\ \\hline 12x^2 - 16x + 1 & 12x^2 - 16x + 1 \\\\ +1 & -12x^2 + 16x - 1 \\\\ \\hline & 0 \\end{array}$$",
+    "marks": 5,
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P2/q1b.png",
+    "pageNumber": 3,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.1.",
+    "choiceGroup": "1",
+    "modelAnswer": "**1. Solution of Division Method:**\n- First term of root: $\\sqrt{36x^4} = 6x^2$\n- Second term of root: $\\frac{-96x^3}{12x^2} = -8x$\n- Third term of root: $\\frac{12x^2}{12x^2} = 1$\n- Required Square Root: $\\pm(6x^2 - 8x + 1)$\n\n**2. Verification:**\n$$(6x^2 - 8x + 1)^2 = (6x^2)^2 + (-8x)^2 + (1)^2 + 2(6x^2)(-8x) + 2(6x^2)(1) + 2(-8x)(1)$$\n$$= 36x^4 + 64x^2 + 1 - 96x^3 + 12x^2 - 16x = 36x^4 - 96x^3 + 76x^2 - 16x + 1 \\quad \\text{Verified!}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 1b.",
+    "originalSlo": "15.3.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "6.3.1",
+    "current_mapping": [
+      {
+        "code": "6.3.1",
+        "topic": "Algebraic Manipulation",
+        "description": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 6 SLO 6.3.1 (Find square root of algebraic expression by division method).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q1b_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q1b_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q2",
+    "questionNumber": "2",
+    "questionText": "If $\\frac{8x - 17}{x(2x + 1)} = \\frac{A}{x} + \\frac{B}{2x + 1}$, then find the value of $B$.",
+    "marks": 3,
+    "cognitiveLevel": "U",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 4,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "**Step 1: Multiply both sides by $x(2x + 1)$:**\n$$8x - 17 = A(2x + 1) + Bx$$\n\n**Step 2: Substitute $x = -\\frac{1}{2}$ to eliminate $A$:**\n$$8\\left(-\\frac{1}{2}\\right) - 17 = A(0) + B\\left(-\\frac{1}{2}\\right)$$\n$$-4 - 17 = -\\frac{1}{2}B \\implies -21 = -\\frac{1}{2}B \\implies B = 42$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 2.",
+    "originalSlo": "16.1.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "6.4.2",
+    "current_mapping": [
+      {
+        "code": "6.4.2",
+        "topic": "Algebraic Manipulation",
+        "description": "convert an algebraic fraction into partial fractions when its denominator consists of:\na. non-repeated linear factors,\nb. repeated linear factors;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 6 SLO 6.4.2 (Resolve into partial fractions with distinct linear factors).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "convert an algebraic fraction into partial fractions when its denominator consists of:\na. non-repeated linear factors,\nb. repeated linear factors;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q2_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q2_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q3a",
+    "questionNumber": "3a",
+    "questionText": "It is given that $k - k^2\\sqrt{x + 1} = k\\sqrt{x + 1}$, where $k > 0$.\n\ni. Show, by working, that the above equation reduces to $x + 1 = \\left(\\frac{1}{k + 1}\\right)^2$. (4 Marks)\n\nii. Hence, find the value of $x$ when $k = 1$. (1 Mark)",
+    "marks": 5,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 5,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.3.",
+    "choiceGroup": "3",
+    "modelAnswer": "**Part i:**\n$$k - k^2\\sqrt{x + 1} = k\\sqrt{x + 1}$$\nSince $k > 0$, divide throughout by $k$:\n$$1 - k\\sqrt{x + 1} = \\sqrt{x + 1}$$\n$$1 = \\sqrt{x + 1} + k\\sqrt{x + 1} = (k + 1)\\sqrt{x + 1}$$\n$$\\sqrt{x + 1} = \\frac{1}{k + 1}$$\nSquaring both sides:\n$$x + 1 = \\left(\\frac{1}{k + 1}\\right)^2 \\quad \\text{Shown!}$$\n\n**Part ii:**\nFor $k = 1$:\n$$x + 1 = \\left(\\frac{1}{1 + 1}\\right)^2 = \\left(\\frac{1}{2}\\right)^2 = \\frac{1}{4}$$\n$$x = \\frac{1}{4} - 1 = -\\frac{3}{4}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 3a.",
+    "originalSlo": "17.1.2",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "7.1.4",
+    "current_mapping": [
+      {
+        "code": "7.1.4",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve radical equations reducible to linear form;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 7 SLO 7.1.4 (Solve radical equations reducible to linear form).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve radical equations reducible to linear form;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q3a_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q3a_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q3b",
+    "questionNumber": "3b",
+    "questionText": "It is given that $\\left|x - \\frac{3}{a}\\right| + 5 > 5$, $a = \\frac{1}{3}$ and $x$ is an integer.\n\nFind the value of $x$ which does NOT satisfy the given inequality.",
+    "marks": 5,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 6,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.3.",
+    "choiceGroup": "3",
+    "modelAnswer": "**Step 1: Simplify the expression:**\nGiven $a = \\frac{1}{3}$, then $\\frac{3}{a} = \\frac{3}{1/3} = 9$.\nThe inequality becomes:\n$$\\left|x - 9\\right| + 5 > 5 \\implies |x - 9| > 0$$\n\n**Step 2: Determine non-satisfying values:**\nFor all real numbers, $|x - 9| \\ge 0$.\nThe inequality $|x - 9| > 0$ holds for all real numbers except when $|x - 9| = 0$, which occurs when $x = 9$.\n\n**Conclusion:**\nThe integer value of $x$ which does NOT satisfy the given inequality is $x = 9$.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 3b.",
+    "originalSlo": "17.2.2",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "7.3.3",
+    "current_mapping": [
+      {
+        "code": "7.3.3",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve absolute valued inequalities in one variable and represent the solution on the number line;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 7 SLO 7.3.3 (Equations and inequalities involving absolute value).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve absolute valued inequalities in one variable and represent the solution on the number line;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q3b_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q3b_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q4",
+    "questionNumber": "4",
+    "questionText": "Given that $\\left\\{\\left(1, \\frac{a}{2}\\right)\\right\\}$ is the solution set of simultaneous linear equations $x + y = 3$ and $2x + 3y = 8$.\n\na. Line $2x + 3y = 8$ is shown in the given graph. On the same graph, draw another line $x + y = 3$ by taking two points only. (2 Marks)\n\nb. From the graph, find the solution set. (1 Mark)\n\nc. Hence, find the value of $a$. (1 Mark)",
+    "marks": 4,
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P2/q4.png",
+    "pageNumber": 7,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "**Part a: Table of values for $x + y = 3$:**\n- When $x = 1$, $y = 2 \\implies (1, 2)$\n- When $x = 2$, $y = 1 \\implies (2, 1)$\nPlot these two points and draw the straight line through them on the coordinate grid.\n\n**Part b: Solution set from graph:**\nThe two straight lines intersect at the point $(1, 2)$.\n$$\\text{Solution Set} = \\{(1, 2)\\}$$\n\n**Part c: Finding $a$:**\nGiven solution is $\\left(1, \\frac{a}{2}\\right) = (1, 2) \\implies \\frac{a}{2} = 2 \\implies a = 4$.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 4.",
+    "originalSlo": "18.2.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "7.3.5",
+    "current_mapping": [
+      {
+        "code": "7.3.5",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve two linear inequalities with two variables graphically;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 7 SLO 7.3.5 (Solve two linear equations in two variables graphically).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve two linear inequalities with two variables graphically;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q4_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q4_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q5",
+    "questionNumber": "5",
+    "questionText": "Find the solution set of $3x^2 - 4x + 2 = 0$ by using quadratic formula.",
+    "marks": 4,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 8,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "**Given equation:** $3x^2 - 4x + 2 = 0$\nCoefficients: $a = 3, b = -4, c = 2$\n\n**Quadratic Formula:**\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n$$x = \\frac{-(-4) \\pm \\sqrt{(-4)^2 - 4(3)(2)}}{2(3)}$$\n$$x = \\frac{4 \\pm \\sqrt{16 - 24}}{6} = \\frac{4 \\pm \\sqrt{-8}}{6} = \\frac{4 \\pm 2\\sqrt{-2}}{6} = \\frac{2 \\pm \\sqrt{-2}}{3}$$\n\n$$\\text{Solution Set} = \\left\\{\\frac{2 \\pm \\sqrt{-2}}{3}\\right\\}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 5.",
+    "originalSlo": "19.1.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "15.2.1",
+    "current_mapping": [
+      {
+        "code": "15.2.1",
+        "topic": "Quadratic Equations",
+        "description": "solve a quadratic equation in one variable by:\na. factorisation method,\nb. completing square method,\nc. using quadratic formula;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 10 Unit 15 SLO 15.2.1 (Solve quadratic equations using the quadratic formula).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 15,
+    "sloText": "solve a quadratic equation in one variable by:\na. factorisation method,\nb. completing square method,\nc. using quadratic formula;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q5_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q5_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q6a",
+    "questionNumber": "6a",
+    "questionText": "For the given points $M$, $P$ and $N$ whose coordinates are $(1,1), (0,1)$ and $(-1,1)$ respectively, find the value of $k$ such that $MN : MP = k : 1$.",
+    "marks": 3,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 9,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.6.",
+    "choiceGroup": "6",
+    "modelAnswer": "**Distance Formula:** $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$\n\n- Distance $MN$ between $M(1, 1)$ and $N(-1, 1)$:\n$$MN = \\sqrt{(-1 - 1)^2 + (1 - 1)^2} = \\sqrt{(-2)^2 + 0} = \\sqrt{4} = 2$$\n\n- Distance $MP$ between $M(1, 1)$ and $P(0, 1)$:\n$$MP = \\sqrt{(0 - 1)^2 + (1 - 1)^2} = \\sqrt{(-1)^2 + 0} = \\sqrt{1} = 1$$\n\n**Finding $k$:**\n$$\\frac{MN}{MP} = \\frac{k}{1} \\implies \\frac{2}{1} = \\frac{k}{1} \\implies k = 2$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 6a.",
+    "originalSlo": "20.1.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "9.1.3",
+    "current_mapping": [
+      {
+        "code": "9.1.3",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "determine the distance between two given points;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 9 SLO 9.1.3 (Apply distance formula to find distance between two points).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "determine the distance between two given points;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q6a_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q6a_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q6b",
+    "questionNumber": "6b",
+    "questionText": "The midpoint of $P_1(x, -3)$ and $P_2(y, 7)$ is $(a, b)$. Show that $a - b = \\frac{1}{2}(x + y - 4)$.",
+    "marks": 3,
+    "cognitiveLevel": "U",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 9,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.6.",
+    "choiceGroup": "6",
+    "modelAnswer": "**Midpoint Formula:**\n$$\\text{Midpoint } (a, b) = \\left(\\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2}\\right)$$\n\n$$a = \\frac{x + y}{2}, \\quad b = \\frac{-3 + 7}{2} = \\frac{4}{2} = 2$$\n\n**Subtracting $b$ from $a$:**\n$$a - b = \\frac{x + y}{2} - 2 = \\frac{x + y - 4}{2} = \\frac{1}{2}(x + y - 4) \\quad \\text{Shown!}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 6b.",
+    "originalSlo": "20.2.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "9.2.1",
+    "current_mapping": [
+      {
+        "code": "9.2.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "calculate the midpoint of a line segment;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 9 SLO 9.2.1 (Apply midpoint formula to find coordinates of midpoint of a line segment).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "calculate the midpoint of a line segment;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q6b_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q6b_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q7a",
+    "questionNumber": "7a",
+    "questionText": "A man stands on a flat surface at a distance of 50 metres from a vertical electric pole, $x$ metre high. The angle of elevation of the top of electric pole from the man on flat surface is $\\theta$.\n\ni. Use the given condition to show that $\\theta = \\tan^{-1}\\left(\\frac{x}{50}\\right)$. (1 Mark)\n\nii. Hence, find the height of electric pole when the angle of elevation is $45^\\circ$. (2 Marks)\n\niii. After some time, the man moves $y$ metres back from his original position. Express in terms of $x$ and $y$, the angle of elevation of the top of electric pole from the new position of man. (1 Mark)",
+    "marks": 4,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 10,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.7.",
+    "choiceGroup": "7",
+    "modelAnswer": "**Part i:**\nIn the right-angled triangle formed by the pole and the flat ground:\n$$\\tan \\theta = \\frac{\\text{Perpendicular}}{\\text{Base}} = \\frac{x}{50} \\implies \\theta = \\tan^{-1}\\left(\\frac{x}{50}\\right) \\quad \\text{Shown!}$$\n\n**Part ii:**\nWhen $\\theta = 45^\\circ$:\n$$\\tan 45^\\circ = \\frac{x}{50} \\implies 1 = \\frac{x}{50} \\implies x = 50\\text{ metres}$$\n\n**Part iii:**\nWhen the man moves $y$ metres further back, the total distance from the base becomes $(50 + y)$ metres.\n$$\\text{New angle of elevation } \\theta_{\\text{new}} = \\tan^{-1}\\left(\\frac{x}{50 + y}\\right)$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 7a.",
+    "originalSlo": "21.3.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "14.5.1",
+    "current_mapping": [
+      {
+        "code": "14.5.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "describe the angle of elevation and depression;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 14 SLO 14.5.1 (Describe the angle of elevation and depression; solve problems).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "describe the angle of elevation and depression;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q7a_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q7a_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q7b",
+    "questionNumber": "7b",
+    "questionText": "i. Define the term radian. (1 Mark)\n\nii. Derive $l = r\\theta$, where $r$ is the radius of the circle, $l$ is the length of circular arc and $\\theta$ is the central angle measured in radians. (2 Marks)\n\niii. Hence, find $\\theta$ when $l = \\frac{1}{2}r$. (1 Mark)",
+    "marks": 4,
+    "cognitiveLevel": "K",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 11,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.7.",
+    "choiceGroup": "7",
+    "modelAnswer": "**Part i: Definition of Radian:**\nA radian is the measure of an angle subtended at the centre of a circle by an arc whose length is equal to the radius of the circle.\n\n**Part ii: Derivation of $l = r\\theta$:**\nBy the geometric property of circles, the central angle subtended by an arc is directly proportional to the arc length:\n$$\\frac{\\theta\\text{ radians}}{1\\text{ radian}} = \\frac{\\text{length of arc } l}{\\text{length of arc of 1 radian } (r)}$$\n$$\\frac{\\theta}{1} = \\frac{l}{r} \\implies l = r\\theta$$\n\n**Part iii: Finding $\\theta$:**\nGiven $l = \\frac{1}{2}r$:\n$$\\theta = \\frac{l}{r} = \\frac{\\frac{1}{2}r}{r} = \\frac{1}{2}\\text{ radian} = 0.5\\text{ rad}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 7b.",
+    "originalSlo": "21.1.2",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "14.1.3",
+    "current_mapping": [
+      {
+        "code": "14.1.3",
+        "topic": "Introduction to Trigonometry",
+        "description": "define radian;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 14 SLO 14.1.3 (Define radian and establish the relation between arc length, radius and central angle $l = r\\theta$).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "define radian;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q7b_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q7b_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q8a",
+    "questionNumber": "8a",
+    "questionText": "Show, by working, that the given lengths $2ab$, $a^2 - b^2$ and $a^2 + b^2$ are the sides of a right angled triangle.\n\n(Note: $a$ and $b$ are positive integers.)",
+    "marks": 4,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 12,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.8.",
+    "choiceGroup": "8",
+    "modelAnswer": "**Converse of Pythagoras’ Theorem:**\nLet the three lengths be:\n$$p = 2ab, \\quad q = a^2 - b^2, \\quad r = a^2 + b^2$$\nSince $a, b > 0$, the longest side is $r = a^2 + b^2$.\n\nCalculate sum of squares of the two shorter sides:\n$$p^2 + q^2 = (2ab)^2 + (a^2 - b^2)^2 = 4a^2 b^2 + (a^4 - 2a^2 b^2 + b^4) = a^4 + 2a^2 b^2 + b^4$$\n\nCalculate square of the longest side:\n$$r^2 = (a^2 + b^2)^2 = a^4 + 2a^2 b^2 + b^4$$\n\nSince $p^2 + q^2 = r^2$, by the converse of Pythagoras theorem, the given lengths are the sides of a right angled triangle.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 8a.",
+    "originalSlo": "22.1.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 14 SLO 14.3.1 (Apply Pythagoras theorem and its converse).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q8a_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q8a_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q8b",
+    "questionNumber": "8b",
+    "questionText": "Let $P, Q$ and $R$ be the sides of a right angled triangle such that $P$ is the longest side, where $P = x + \\frac{1}{2}$ and $Q = \\sqrt{x(x + 1)}$.\n\nShow that the third side $R$ is constant.",
+    "marks": 4,
+    "cognitiveLevel": "A",
+    "isDiagram": false,
+    "diagramUrl": null,
+    "pageNumber": 12,
+    "choiceInstruction": "ATTEMPT EITHER PART a OR PART b OF Q.8.",
+    "choiceGroup": "8",
+    "modelAnswer": "**By Pythagoras’ Theorem:**\nSince $P$ is the longest side (hypotenuse):\n$$P^2 = Q^2 + R^2 \\implies R^2 = P^2 - Q^2$$\n\nExpand $P^2$:\n$$P^2 = \\left(x + \\frac{1}{2}\\right)^2 = x^2 + 2(x)\\left(\\frac{1}{2}\\right) + \\frac{1}{4} = x^2 + x + \\frac{1}{4}$$\n\nCalculate $Q^2$:\n$$Q^2 = (\\sqrt{x(x + 1)})^2 = x(x + 1) = x^2 + x$$\n\nSubtract:\n$$R^2 = \\left(x^2 + x + \\frac{1}{4}\\right) - (x^2 + x) = \\frac{1}{4}$$\n$$R = \\sqrt{\\frac{1}{4}} = \\frac{1}{2}$$\n\nSince $R = \\frac{1}{2}$ is independent of $x$, the third side $R$ is constant.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 8b.",
+    "originalSlo": "22.1.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 9 Unit 14 SLO 14.3.1 (Apply Pythagoras theorem).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q8b_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q8b_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q9",
+    "questionNumber": "9",
+    "questionText": "The given circle having centre $O$ has a radius of 8 units. Two equal chords $PQ$ and $RS$ are of length $l$ units respectively.\n\na. State, in terms of $l$, the length of $TS$. (1 Mark)\n\nb. Hence, find the value of $l$ when $OT = 5$ units. (3 Marks)",
+    "marks": 4,
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P2/q9.png",
+    "pageNumber": 13,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "**Part a: Length of $TS$ in terms of $l$:**\nA straight line drawn from the centre of a circle perpendicular to a chord bisects the chord.\nSince $OT \\perp RS$ and $RS = l$:\n$$TS = \\frac{l}{2}\\text{ units}$$\n\n**Part b: Finding $l$ when $OT = 5$:**\nIn right-angled triangle $\\Delta OTS$ ($OS = 8$ is the radius):\n$$OS^2 = OT^2 + TS^2$$\n$$8^2 = 5^2 + \\left(\\frac{l}{2}\\right)^2$$\n$$64 = 25 + \\frac{l^2}{4} \\implies \\frac{l^2}{4} = 39 \\implies l^2 = 156 \\implies l = \\sqrt{156} = 2\\sqrt{39} \\approx 12.49\\text{ units}$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 9.",
+    "originalSlo": "23.1.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "20.1.1",
+    "current_mapping": [
+      {
+        "code": "20.1.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. one and only one circle can pass through three non-collinear points,\nb. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre is perpendicular to the chord and vice versa,\nc. if two chords of a circle are congruent then they will be equidistant from the centre and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 10 Unit 20 SLO 20.1.1 (A straight line drawn from the centre of a circle to bisect a chord is perpendicular to the chord).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. one and only one circle can pass through three non-collinear points,\nb. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre is perpendicular to the chord and vice versa,\nc. if two chords of a circle are congruent then they will be equidistant from the centre and vice versa;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q9_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q9_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q10",
+    "questionNumber": "10",
+    "questionText": "In the diagram, $O$ is the centre of the circle and it is given that $\\angle OSP = 23^\\circ$ and $PS = PR$.\n\na. State the value of $\\angle OPS$. (1 Mark)\n\nb. Find the value of $\\angle SOR$. Show all the necessary working with a valid reason. (3 Marks)",
+    "marks": 4,
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P2/q10.png",
+    "pageNumber": 14,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "**Part a: Value of $\\angle OPS$:**\nIn $\\Delta OPS$, $OP = OS = \\text{radius of circle}$.\nSince $\\Delta OPS$ is isosceles, the base angles are equal:\n$$\\angle OPS = \\angle OSP = 23^\\circ$$\n\n**Part b: Finding $\\angle SOR$:**\n- In $\\Delta OPS$, the sum of angles is $180^\\circ$:\n$$\\angle POS = 180^\\circ - (23^\\circ + 23^\\circ) = 180^\\circ - 46^\\circ = 134^\\circ$$\n- Since $PS = PR$ (equal chords), chords $PS$ and $PR$ subtend equal central angles: $\\Delta OPS \\cong \\Delta OPR$ (by SSS congruence), so:\n$$\\angle POR = \\angle POS = 134^\\circ$$\n- The total angle around the centre $O$ is $360^\\circ$:\n$$\\angle SOR = 360^\\circ - (\\angle POS + \\angle POR) = 360^\\circ - (134^\\circ + 134^\\circ) = 360^\\circ - 268^\\circ = 92^\\circ$$",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 10.",
+    "originalSlo": "23.2.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": "20.3.1",
+    "current_mapping": [
+      {
+        "code": "20.3.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Mapped to Grade 10 Unit 20 SLO 20.3.1 (Equal chords subtend equal central angles in a circle).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;",
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q10_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q10_weaker.png"
+  },
+  {
+    "id": "mth-x-2019-p2-q11",
+    "questionNumber": "11",
+    "questionText": "Two circles of same radii with their centres are shown in the given diagram. Draw direct common tangents to the given circles. Show all the necessary steps.",
+    "marks": 5,
+    "cognitiveLevel": "A",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/MTH-X-2019-P2/q11.png",
+    "pageNumber": 15,
+    "choiceInstruction": null,
+    "choiceGroup": null,
+    "modelAnswer": "**Geometrical Construction Steps:**\n\n1. **Join Centres:** Join the given centres $O$ and $O\\'$ with a straight line segment $OO\\'$.\n2. **Construct Perpendiculars:** At centre $O$, construct a line perpendicular to $OO\\'$ intersecting the circumference at points $T_1$ and $T_2$.\n3. **Construct Parallel Perpendiculars:** At centre $O\\'$, construct a perpendicular to $OO\\'$ on the same sides, intersecting the circumference at points $T_1\\'$ and $T_2\\'$.\n4. **Draw Tangents:** Draw straight lines through $T_1$ and $T_1\\'$, and through $T_2$ and $T_2\\'$.\n5. **Conclusion:** Lines $T_1 T_1\\'$ and $T_2 T_2\\'$ are the required direct common tangents to the two circles.",
+    "modelAnswerOrigin": "INDEPENDENT_SOLUTION_CHECKED_WITH_EMARKING",
+    "officialMarkingNotes": "See Notes from E-Marking Centre on SSC-II Mathematics Examination April/May 2019 for Question 11.",
+    "originalSlo": "25.1.1",
+    "section": "CRQ",
+    "sourceSha256": "bf7b510cc716bcfc76582ecb1d4a09c5356551279ed4064eb55d431f2e3010ae",
+    "current_slo": null,
+    "current_mapping": [],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "OUT_OF_CURRENT_SYLLABUS",
+    "mappingReason": "Drawing direct common tangents to two circles was included in the 2006 national curriculum under Practical Geometry (SLO 25.1.1) but is not explicitly contained in the active 2025-2027 revised curriculum.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "unitNumber": null,
+    "sloText": null,
+    "betterResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q11_better.png",
+    "weakerResponseImage": "/paper-crops/MTH-X-2019-EMARKING/q11_weaker.png"
+  }
+]

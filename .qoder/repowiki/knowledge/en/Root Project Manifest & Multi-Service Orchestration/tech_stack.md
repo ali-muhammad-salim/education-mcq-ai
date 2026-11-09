@@ -1,0 +1,1 @@
+Next.js 16 + React 19 on Node, TypeScript, Prisma ORM against PostgreSQL 16 with pgvector, Vitest for tests, PDF.js for PDF rendering, KaTeX for math, Zod for schemas, Ollama Qwen models for local AI inference, and PyTest for Python-side tooling.

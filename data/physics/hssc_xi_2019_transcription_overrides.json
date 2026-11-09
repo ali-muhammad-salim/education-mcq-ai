@@ -1,0 +1,117 @@
+{
+  "PHY-XI-2019-P1": {
+    "2": {
+      "stem": "A uniformly accelerated ball moving along a straight line obeys $s=v_i t+\\frac12 at^2$. What is the dimension of each term?",
+      "choices": {
+        "A": "$[L]$",
+        "B": "$[T]$",
+        "C": "$[LT^{-1}]$",
+        "D": "$[LT^{-2}]$"
+      }
+    },
+    "5": {
+      "choices": {
+        "A": "First quadrant",
+        "B": "Second quadrant",
+        "C": "Third quadrant",
+        "D": "Fourth quadrant"
+      }
+    },
+    "6": {
+      "stem": "Torque is the vector product of the moment arm $\\vec r$ and force $\\vec F$. What is the direction of torque?",
+      "choices": {
+        "A": "Along $\\vec F$",
+        "B": "Along $\\vec r$",
+        "C": "Parallel to the plane containing $\\vec r$ and $\\vec F$",
+        "D": "Perpendicular to the plane containing $\\vec r$ and $\\vec F$"
+      }
+    },
+    "11": {
+      "stem": "Two balls are released simultaneously from point A with zero vertical velocity, as shown in the diagram. They follow different paths but reach the ground at the same time because of their",
+      "figure": [
+        580,
+        61,
+        845,
+        333
+      ]
+    },
+    "13": {
+      "figure": [
+        669,
+        38,
+        791,
+        206
+      ]
+    },
+    "19": {
+      "stem": "A body moves with uniform speed along a circular path. What type of motion does its projection along a diameter execute?"
+    },
+    "21": {
+      "choices": {
+        "A": "$-mg\\theta$",
+        "B": "$-mg$",
+        "C": "$mg\\theta$",
+        "D": "$mg$"
+      },
+      "figure": [
+        621,
+        39,
+        829,
+        269
+      ]
+    },
+    "30": {
+      "stem": "In an isothermal process, what happens to the internal energy of the ideal gas?"
+    },
+    "35": {
+      "stem": "The graph shows four processes for a fixed amount of ideal gas, all starting at state a. In which process does the system do zero work on its surroundings?",
+      "choices": {
+        "A": "Process A",
+        "B": "Process B",
+        "C": "Process C",
+        "D": "Process D"
+      },
+      "figure": [
+        50,
+        115,
+        451,
+        435
+      ]
+    }
+  },
+  "PHY-XI-2019-P2": {
+    "1": {
+      "stem": "In the relativistic-mass convention, an object of rest mass $m_0$ moving at speed $v$ has relativistic mass $m=\\frac{m_0}{\\sqrt{1-v^2/c^2}}$, where $c$ is the speed of light. Show that $v^2/c^2$ is dimensionless and use the expression to explain why $m$ approaches infinity as $v$ approaches $c$."
+    },
+    "4": {
+      "stem": "Work done in Earth’s gravitational field is independent of the path followed by an object. Explain the statement and draw a diagram to support your explanation."
+    },
+    "7": {
+      "stem": "Calculate the frequency of a simple pendulum with length 50 cm. Take g as 9.8 m/s²."
+    },
+    "8": {
+      "stem": "The diagram shows a standing wave on an inextensible string. Find the wavelength.",
+      "figure": [
+        13,
+        91,
+        680,
+        247
+      ]
+    },
+    "11": {
+      "stem": "The diagrams show a gas being compressed by a piston with no heat exchange.\na. Identify the thermodynamic process. (1 Mark)\nb. Apply the first law of thermodynamics to the process, using mathematical equations. (2 Marks)\nc. State how the temperature and internal energy change. (1 Mark)",
+      "figure": [
+        121,
+        89,
+        546,
+        366
+      ]
+    },
+    "12": {
+      "stem": "EITHER\na. Calculate the escape speeds, in kilometres per second, for Earth and the Moon. Their masses are $6.0\\times10^{24}\\,\\mathrm{kg}$ and $7.35\\times10^{22}\\,\\mathrm{kg}$, and their radii are $6.4\\times10^6\\,\\mathrm m$ and $1.7\\times10^6\\,\\mathrm m$, respectively. Take $G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2\\,kg^{-2}}$.\nOR\nb. An 18 horsepower motor lifts 200 kg of water through a height of 125 m. Calculate the time in seconds. Take g as 9.8 m/s²."
+    },
+    "13": {
+      "stem": "EITHER\na. Oceanologists are discussing using the temperature difference between surface and deep ocean water to operate a heat engine. If the high temperature is 20°C and the low temperature is 4°C, calculate the ideal efficiency. (5 Marks)\nOR\nb. A gas absorbs 100 J of heat at a constant pressure of $1.50\\times10^2\\,\\mathrm{Pa}$. Its volume changes by $0.1\\,\\mathrm{m^3}$. Calculate\n   i. the work done by the gas. (3 Marks)\n   ii. the change in internal energy. (2 Marks)"
+    }
+  }
+}

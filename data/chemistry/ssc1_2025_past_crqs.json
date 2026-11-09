@@ -1,0 +1,398 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "pageNumber": 2,
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "chapter": "Atomic Structure",
+    "slo": "2.1.2",
+    "current_slo": "3.1.2",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "3.1.2",
+        "description": "calculate the mass number, number of electrons, protons, and neutrons in atoms and ions.",
+        "topic": "Atomic Structure"
+      }
+    ],
+    "stem": "The atom of an element X has 8 neutrons, 8 protons and 8 electrons.\na. Identify element X. (1 Mark)\nb. If the element X forms an ion X^-2, then how many valence electrons will this ion contain? (1 Mark)\nc. An isotope of this element X has mass number 18. How many neutrons are there in an atom of this isotope? (1 Mark)",
+    "modelAnswer": "**Part a (1 Mark):**\n- **Element X is Oxygen (O)** (Atomic number $Z = 8$ protons).\n\n**Part b (1 Mark):**\n- A neutral oxygen atom has 6 valence electrons ($2, 6$). By gaining 2 electrons to form the $X^{2-}$ (oxide, $O^{2-}$) ion, it completes a stable octet, so it contains **8 valence electrons**.\n\n**Part c (1 Mark):**\n- Number of neutrons = $\\text{Mass number } (A) - \\text{Atomic number } (Z) = 18 - 8 = \\mathbf{10\\text{ neutrons}}$.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correctly identifies element X as Oxygen."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly states that the X^-2 ion contains 8 valence electrons."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly calculates the number of neutrons as 10 (18 - 8)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.2",
+    "pageNumber": 2,
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "chapter": "Periodic Table and Periodicity",
+    "slo": "3.2.3",
+    "current_slo": "4.3.4",
+    "cognitiveLevel": "U",
+    "marks": 3,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "4.3.4",
+        "description": "explain the periodic trend of electron affinity within a group and a period.",
+        "topic": "Periodic Table and Periodicity"
+      }
+    ],
+    "stem": "a. Define the term, \u2018electron affinity\u2019. (1 Mark)\nb. Describe, with a reason, the trend of electron affinity within a group of the periodic table. (2 Marks)",
+    "modelAnswer": "**Part a \u2014 Definition (1 Mark):**\nElectron affinity is the amount of energy released when an electron is added to the outermost valence shell of an isolated neutral gaseous atom to form a univalent negative ion (anion): $X(g) + e^- \\rightarrow X^-(g) + \\text{energy}$.\n\n**Part b \u2014 Trend and Reason (2 Marks):**\n- **Trend:** Electron affinity generally **decreases** from top to bottom within a group of the periodic table.\n- **Scientific Reason:** As we descend a group, the number of electron shells increases, causing an increase in atomic radius and shielding effect of inner electrons. The incoming electron is further away from the nucleus and experiences a weaker effective nuclear attraction, resulting in less energy being released when an electron is added.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Accurately defines electron affinity as energy released when an electron is added to an isolated gaseous atom to form an anion."
+      },
+      {
+        "marks": 1,
+        "description": "States that electron affinity decreases down a group."
+      },
+      {
+        "marks": 1,
+        "description": "Justifies the decreasing trend using increasing atomic size, increased shielding, and weaker nuclear attraction for an added electron."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.3",
+    "pageNumber": 3,
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "chapter": "States of Matter",
+    "slo": "5.4.1",
+    "current_slo": "6.2.3",
+    "cognitiveLevel": "U",
+    "marks": 3,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "6.2.3",
+        "description": "relate boiling point and vapour pressure of liquids to intermolecular forces.",
+        "topic": "States of Matter"
+      }
+    ],
+    "stem": "a. Which has a higher boiling point, oxygen gas or liquid water? (1 Mark)\nb. Give reasons with reference to both oxygen gas and liquid water to support your answer to part a. (2 Marks)",
+    "modelAnswer": "**Part a (1 Mark):**\n**Liquid water** has a significantly higher boiling point ($100\\text{ }^\\circ\\text{C}$ vs $-183\\text{ }^\\circ\\text{C}$ for oxygen gas).\n\n**Part b \u2014 Scientific Reasoning (2 Marks):**\n- **Liquid Water:** Water ($H_2O$) molecules are highly polar and held together by an extensive three-dimensional network of strong **intermolecular hydrogen bonds**. Breaking these strong hydrogen bonds requires a substantial amount of heat energy, resulting in a high boiling point.\n- **Oxygen Gas:** Oxygen ($O_2$) is a non-polar homonuclear diatomic molecule held together only by very weak **London dispersion (van der Waals) forces**. Very little thermal energy is needed to overcome these weak forces, resulting in an extremely low boiling point.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correctly identifies liquid water as having a higher boiling point."
+      },
+      {
+        "marks": 1,
+        "description": "Explains that water molecules are held by strong intermolecular hydrogen bonds requiring high thermal energy to overcome."
+      },
+      {
+        "marks": 1,
+        "description": "Explains that non-polar oxygen molecules are held by weak van der Waals / London dispersion forces requiring little thermal energy."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.4",
+    "pageNumber": 3,
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "chapter": "Periodic Table and Periodicity",
+    "slo": "8.2.3",
+    "current_slo": "4.3.2",
+    "cognitiveLevel": "U",
+    "marks": 4,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "4.3.2",
+        "description": "differentiate between first and second ionisation energies of alkali and alkaline earth metals.",
+        "topic": "Periodic Table and Periodicity"
+      }
+    ],
+    "stem": "Explain why the\na. first ionisation energy decreases down the group of alkali metals. (2 Marks)\nb. second ionisation energy of sodium is higher than that of magnesium. (2 Marks)",
+    "modelAnswer": "**Part a \u2014 Trend of First Ionisation Energy Down Group IA (2 Marks):**\nAs we move down the group of alkali metals, the number of electron shells increases, which causes an increase in atomic radius and a greater shielding effect by inner core electrons. Consequently, the effective nuclear attraction experienced by the single outermost valence electron decreases significantly, making it much easier to remove with lower energy input.\n\n**Part b \u2014 Comparison of Second Ionisation Energies of Na and Mg (2 Marks):**\n- **Sodium:** Sodium ($_{11}Na: 1s^2 2s^2 2p^6 3s^1$) loses its single valence electron to form $Na^+$ ($1s^2 2s^2 2p^6$), attaining a very stable noble gas configuration (isoelectronic with neon) with an inner closed octet close to the nucleus. Removing a second electron requires disrupting this stable noble-gas octet, which requires an enormous amount of energy ($4562\\text{ kJ/mol}$).\n- **Magnesium:** Magnesium ($_{12}Mg: 1s^2 2s^2 2p^6 3s^2$) forms $Mg^+$ ($1s^2 2s^2 2p^6 3s^1$) after the first ionisation. Removing the second electron involves extracting the remaining valence electron from the same $3s$ sub-shell rather than breaking a stable inner noble-gas shell, requiring significantly less energy ($1451\\text{ kJ/mol}$).",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Identifies cause for part a: increasing atomic size, additional shells, and greater shielding effect."
+      },
+      {
+        "marks": 1,
+        "description": "Identifies effect for part a: decreased nuclear attraction on outer electron requiring less energy."
+      },
+      {
+        "marks": 1,
+        "description": "Explains that sodium's second electron is removed from a stable noble-gas inner shell (2p6 octet)."
+      },
+      {
+        "marks": 1,
+        "description": "Explains that magnesium's second electron is removed from the outer valence 3s sub-shell."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5 (EITHER)",
+    "pageNumber": 4,
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "chapter": "Stoichiometry",
+    "slo": "1.5.2",
+    "current_slo": "2.3.1",
+    "cognitiveLevel": "U",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "2.3.1",
+        "description": "write balanced chemical equations and describe observable characteristics of chemical reactions.",
+        "topic": "Stoichiometry"
+      }
+    ],
+    "stem": "EITHER\na. In each of the given cases, provide a balanced chemical equation and describe any TWO characteristics of a chemical reaction that occurs between:\ni. Zinc granules and dilute sulphuric acid (3 Marks)\nii. Calcium oxide (quicklime) and water (3 Marks)",
+    "modelAnswer": "**Case i: Zinc granules and dilute sulphuric acid (3 Marks):**\n- **Balanced Chemical Equation (1 Mark):**\n  $$\\text{Zn}_{(s)} + \\text{H}_2\\text{SO}_{4(aq)} \\rightarrow \\text{ZnSO}_{4(aq)} + \\text{H}_{2(g)}$$\n- **TWO Characteristics of the Reaction (2 Marks):**\n  1. *Evolution of a Gas:* Rapid bubbling and vigorous effervescence due to the release of hydrogen gas ($H_2$).\n  2. *Exothermic Change:* Heat energy is liberated, causing the test tube/reaction container to feel noticeably warm.\n  *(Alternative valid characteristics: The solid zinc granules dissolve / decrease in size; a change of state occurs from solid metal and liquid acid to a clear aqueous salt solution).*\n\n**Case ii: Calcium oxide (quicklime) and water (3 Marks):**\n- **Balanced Chemical Equation (1 Mark):**\n  $$\\text{CaO}_{(s)} + \\text{H}_2\\text{O}_{(l)} \\rightarrow \\text{Ca(OH)}_{2(aq)}$$\n- **TWO Characteristics of the Reaction (2 Marks):**\n  1. *Strongly Exothermic Reaction:* A large amount of heat is liberated, often producing hissing sounds and boiling steam as quicklime slakes.\n  2. *Formation of a New Substance / Combination Reaction:* Two reactants combine to form a single product, calcium hydroxide (slaked lime), yielding a milky alkaline suspension/solution with a sharp temperature rise.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Writes the balanced equation for Zn + H2SO4 -> ZnSO4 + H2."
+      },
+      {
+        "marks": 2,
+        "description": "Describes two valid characteristics for case i (gas evolution, exothermic warming, or zinc dissolving)."
+      },
+      {
+        "marks": 1,
+        "description": "Writes the balanced equation for CaO + H2O -> Ca(OH)2."
+      },
+      {
+        "marks": 2,
+        "description": "Describes two valid characteristics for case ii (strongly exothermic heat release, formation of slaked lime/alkaline solution, combination reaction)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5 (OR)",
+    "pageNumber": 4,
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "chapter": "Solutions",
+    "slo": "6.6.2",
+    "current_slo": "7.7.1",
+    "cognitiveLevel": "U",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "7.7.1",
+        "description": "describe the process of crystallisation to obtain pure solid solutes from solutions.",
+        "topic": "Solutions"
+      }
+    ],
+    "stem": "OR\nb. You have a solution of copper(II) sulphate in water. You want to obtain pure, solid copper(II) sulphate from it.\ni. Describe why the technique of filtering copper(II) sulphate solution will not work. (1 Mark)\nii. Which method will you use instead? Give a reason to support your answer. (2 Marks)\niii. Describe how you will obtain pure, solid copper(II) sulphate in THREE steps using the method identified in part ii. (3 Marks)",
+    "modelAnswer": "**Part i \u2014 Why Filtration Will Not Work (1 Mark):**\nCopper(II) sulphate forms a true homogeneous solution in water where the copper ($Cu^{2+}$) and sulphate ($SO_4^{2-}$) ions are completely dissolved and solvated at ionic dimensions. Because there are no undissolved solid particles, all solute particles pass through the microscopic pores of the filter paper along with the water molecules; filtration can only separate insoluble suspended solids from liquids.\n\n**Part ii \u2014 Alternative Method & Reason (2 Marks):**\n- **Method:** **Crystallisation** (1 Mark).\n- **Reason:** Crystallisation allows the recovery of a soluble solid solute in pure crystalline form from a solution without thermal decomposition, by evaporating the solvent to saturation and allowing solute ions to assemble into an orderly crystal lattice upon cooling (1 Mark).\n\n**Part iii \u2014 Three Steps of Crystallisation (3 Marks):**\n- **Step 1 (Heating to Saturation):** Gently heat the copper(II) sulphate solution in an evaporating basin over a water bath to evaporate water until the solution becomes concentrated and saturated (tested when crystals begin to form on a cold glass rod dipped in the solution).\n- **Step 2 (Slow Cooling):** Turn off the heat and allow the hot saturated solution to cool slowly and undisturbed at room temperature, allowing pure copper(II) sulphate crystals to grow.\n- **Step 3 (Filtration & Drying):** Filter off the solid crystals from the remaining mother liquor, rinse with a small amount of ice-cold distilled water, and dry the crystals gently between sheets of filter paper.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Explains that filtration fails because CuSO4 is completely dissolved as solvated ions in a true homogeneous solution and passes through filter paper."
+      },
+      {
+        "marks": 1,
+        "description": "Identifies the method as crystallisation."
+      },
+      {
+        "marks": 1,
+        "description": "Provides valid rationale for crystallisation (recovering pure solid crystals from solution without decomposition)."
+      },
+      {
+        "marks": 3,
+        "description": "Accurately describes the three sequential steps: 1. gentle heating to saturation, 2. slow cooling to form crystals, 3. filtering and drying crystals between filter papers."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6 (EITHER)",
+    "pageNumber": 6,
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "chapter": "Structure of Molecules",
+    "slo": "4.4.3",
+    "current_slo": "5.4.1",
+    "cognitiveLevel": "U",
+    "marks": 6,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-2025-P2/q6a.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "5.4.1",
+        "description": "compare coordinate covalent bonds with covalent bonds and describe the formation of ammonium chloride.",
+        "topic": "Structure of Molecules"
+      }
+    ],
+    "stem": "EITHER\na. Given below are the dot and cross structures of ammonia and hydrogen chloride. These two molecules on combining form ammonium chloride.\ni. Name the bond that joins nitrogen of ammonia and hydrogen of hydrogen chloride. (1 Mark)\nii. Describe the formation of ammonium chloride. (2 Marks)\niii. Write THREE differences between the bond identified in part i and the one that already exists between nitrogen and hydrogen in ammonia. (3 Marks)",
+    "modelAnswer": "**Part a.i \u2014 Name of Bond (1 Mark):**\n**Coordinate covalent bond** (also known as a **dative covalent bond**).\n\n**Part a.ii \u2014 Description of Ammonium Chloride Formation (2 Marks):**\n1. **Coordinate Bond Formation:** The nitrogen atom in an ammonia molecule ($NH_3$) possesses an unshared lone pair of valence electrons. It donates this electron pair to an electron-deficient hydrogen ion ($H^+$, proton) from $HCl$, forming a coordinate covalent bond and producing a tetrahedral **ammonium cation** ($NH_4^+$).\n2. **Ionic Bond Formation:** The positively charged ammonium ion ($NH_4^+$) and the negatively charged chloride ion ($Cl^-$) are attracted to each other by strong electrostatic forces, forming an **ionic bond** that completes the solid ammonium chloride ($NH_4Cl$) crystal lattice.\n\n**Part a.iii \u2014 THREE Differences Between Coordinate Covalent and Normal Covalent Bonds (3 Marks):**\n\n| Feature | Coordinate Covalent Bond ($N \\rightarrow H^+$ in $NH_4^+$) | Normal Covalent Bond ($N-H$ in $NH_3$) |\n| :--- | :--- | :--- |\n| **1. Origin of Shared Electrons** | Both electrons of the shared pair are donated exclusively by one atom (the nitrogen lone pair). | Each bonded atom contributes one electron to the shared electron pair (mutual sharing). |\n| **2. Participant Relationship** | Involves a distinct electron pair donor (Lewis base) and an electron pair acceptor (Lewis acid). | Involves equal sharing between two bonded atoms without formal donor/acceptor roles. |\n| **3. Symbolic Representation** | Represented by an arrow ($\\rightarrow$) pointing from donor atom to acceptor atom. | Represented by a simple solid line ($-$). |",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correctly names the bond as coordinate covalent (or dative) bond."
+      },
+      {
+        "marks": 1,
+        "description": "Describes donation of nitrogen lone pair to H+ ion to form ammonium ion (NH4+)."
+      },
+      {
+        "marks": 1,
+        "description": "Describes electrostatic attraction between NH4+ and Cl- forming an ionic bond in NH4Cl."
+      },
+      {
+        "marks": 3,
+        "description": "Provides three valid distinctions between coordinate covalent and covalent bonds (origin of electron pair, donor/acceptor roles, and arrow vs single line representation)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6 (OR)",
+    "pageNumber": 6,
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "chapter": "Electrochemistry",
+    "slo": "7.4.13",
+    "current_slo": "8.2.3",
+    "cognitiveLevel": "U",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "8.2.3",
+        "description": "describe features and operation of voltaic (Galvanic) cells.",
+        "topic": "Electrochemistry"
+      }
+    ],
+    "stem": "OR\nb. Describe any SIX features of a voltaic cell (Galvanic cell). (6 Marks)",
+    "modelAnswer": "**Salient Features of a Voltaic (Galvanic) Cell:**\n1. **Energy Conversion:** Converts stored chemical energy directly into electrical energy.\n2. **Spontaneous Reaction:** Operates via a spontaneous oxidation-reduction (redox) chemical reaction without needing an external power source.\n3. **Two Half-Cells:** Consists of two separate half-cells (an oxidation half-cell and a reduction half-cell), each containing a metal electrode immersed in an aqueous solution of its own salt.\n4. **Anode (Negative Electrode):** Oxidation (loss of electrons) occurs at the anode, which acts as the negative terminal where electrons accumulate: $M \\rightarrow M^{n+} + ne^-$.\n5. **Cathode (Positive Electrode):** Reduction (gain of electrons) occurs at the cathode, which acts as the positive terminal: $M^{n+} + ne^- \\rightarrow M$.\n6. **Electron Flow in External Circuit:** Electrons flow spontaneously through the external conducting wire from the negative anode to the positive cathode.\n7. **Role of Salt Bridge:** The two half-cells are connected by an inverted U-tube containing an inert electrolyte gel (salt bridge), which completes the electrical circuit and maintains electrical neutrality by facilitating ion migration.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Feature 1: Converts chemical energy into electrical energy."
+      },
+      {
+        "marks": 1,
+        "description": "Feature 2: Operates via spontaneous redox reactions."
+      },
+      {
+        "marks": 1,
+        "description": "Feature 3: Composed of two separate half-cells connected by external wire and salt bridge."
+      },
+      {
+        "marks": 1,
+        "description": "Feature 4: Anode is the negative electrode where oxidation takes place."
+      },
+      {
+        "marks": 1,
+        "description": "Feature 5: Cathode is the positive electrode where reduction takes place."
+      },
+      {
+        "marks": 1,
+        "description": "Feature 6: Salt bridge maintains electrical neutrality and completes the internal circuit."
+      }
+    ]
+  }
+]

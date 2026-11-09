@@ -1,0 +1,1122 @@
+[
+  {
+    "unitNumber": 8,
+    "name": "Number Systems and Encoding Schemes",
+    "page": 28,
+    "examSpec": {
+      "mcqs": 4,
+      "crqs": 1,
+      "crqMarks": 3,
+      "erqs": 0,
+      "totalMarks": 7
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "8.1",
+        "subNumber": "8.1",
+        "name": "8.1 Number Systems",
+        "slos": [
+          {
+            "code": "8.1.1",
+            "description": "describe the number system and its following types in computers: a. decimal (denary), b. binary, c. hexadecimal;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "8.1.2",
+            "description": "describe the uses of number systems and their significance in computing;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "8.1.3",
+            "description": "convert numbers between binary, decimal (denary), and hexadecimal systems accurately using conversion methods;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.2",
+        "subNumber": "8.2",
+        "name": "8.2 Binary Arithmetic: Addition, Subtraction, Multiplication and Division",
+        "slos": [
+          {
+            "code": "8.2.1",
+            "description": "apply the binary number system to solve arithmetic problems involving addition, subtraction, multiplication, and division;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "8.2.2",
+            "description": "determine 1's and 2's complement of binary numbers;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.3",
+        "subNumber": "8.3",
+        "name": "8.3 Encoding Data Scheme Representation",
+        "slos": [
+          {
+            "code": "8.3.1",
+            "description": "explain the following types of coding schemes to represent data: a. ASCII, b. Unicode;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.4",
+        "subNumber": "8.4",
+        "name": "8.4 Introduction to Operating System",
+        "slos": [
+          {
+            "code": "8.4.1",
+            "description": "define Operating System (OS);",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "8.4.2",
+            "description": "describe the functions of the following OS: a. memory management, b. I/O management, c. file management, d. resource management, e. user management, f. process management;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.5",
+        "subNumber": "8.5",
+        "name": "8.5 Classification and Types of Operating System",
+        "slos": [
+          {
+            "code": "8.5.1",
+            "description": "classify OS into single-user and multiuser OS;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "8.5.2",
+            "description": "differentiate among the following types of OS: a. batch processing system, b. time-sharing system, c. real-time system;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "8.5.3",
+            "description": "explain the following types of user interfaces provided by OS: a. Command Line Interface (CLI), e.g., DOS and UNIX, b. Menu Driven Interface (MDI), e.g., Novel, c. Graphical User Interface (GUI), e.g., Macintosh, Linux and Windows;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.6",
+        "subNumber": "8.6",
+        "name": "8.6 Interrupts and Buffers",
+        "slos": [
+          {
+            "code": "8.6.1",
+            "description": "define the following terms: a. interrupts, b. buffers;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "8.6.2",
+            "description": "differentiate between process and threads;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "8.7",
+        "subNumber": "8.7",
+        "name": "8.7 Integrated Development Environment (IDE) Software",
+        "slos": [
+          {
+            "code": "8.7.1",
+            "description": "explain Integrated Development Environment (IDE) and its following features: a. code editor, b. translator, c. debugger, d. loader, e. linker.",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 9,
+    "name": "Computational Thinking and Algorithm",
+    "page": 30,
+    "examSpec": {
+      "mcqs": 7,
+      "crqs": 1,
+      "crqMarks": 3,
+      "erqs": 0,
+      "totalMarks": 10
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "9.1",
+        "subNumber": "9.1",
+        "name": "9.1 Algorithm and Flowchart",
+        "slos": [
+          {
+            "code": "9.1.1",
+            "description": "write algorithms to address the following types of problems: a. conditional algorithm (I. if, II. nested if, III. if else, IV. else if, V. switch), b. iteration algorithm (I. for, II. while, III. do-while, IV. nested loops), c. searching algorithm (I. linear, II. binary), d. sorting algorithm (I. selection, II. bubble);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "9.1.2",
+            "description": "draw flowcharts related to SLO # 9.1.1.",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 10,
+    "name": "Programming in JavaScript",
+    "page": 31,
+    "examSpec": {
+      "mcqs": 8,
+      "crqs": 3,
+      "crqMarks": 7,
+      "erqGroup": "6 Marks (Choose ONE from TWO)",
+      "totalMarks": 21
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "10.1",
+        "subNumber": "10.1",
+        "name": "10.1 Introduction to Programming Languages",
+        "slos": [
+          {
+            "code": "10.1.1",
+            "description": "differentiate between program syntax and program semantics;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.1.2",
+            "description": "describe the following programming languages: a. low-level languages (I. machine language, II. assembly language), b. high-level languages (I. procedural language, II. structured language, III. object-oriented language);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.1.3",
+            "description": "differentiate among an assembler, compiler and an interpreter;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.2",
+        "subNumber": "10.2",
+        "name": "10.2 Input and Output Functions in JavaScript",
+        "slos": [
+          {
+            "code": "10.2.1",
+            "description": "apply the following functions to display the output: a. innerHTML, b. document.write( ), c. window.alert( );",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.2.2",
+            "description": "write a JavaScript code containing the following data types: a. String, b. Number, c. BigInt, d. Boolean, e. Undefined, f. Null;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.2.3",
+            "description": "write a JavaScript code that uses input functions prompt( );",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.3",
+        "subNumber": "10.3",
+        "name": "10.3 Operators in JavaScript",
+        "slos": [
+          {
+            "code": "10.3.1",
+            "description": "write a JavaScript program to solve arithmetic problems by using arithmetic operators;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.3.2",
+            "description": "use the following assignment operators in a JavaScript code: a. assignment operator (=), b. compound assignment operator (+=, -=, *=, /=, %=);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.3.3",
+            "description": "use the increment (++) and decrement (--) operators in a JavaScript code;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.3.4",
+            "description": "use the following relational operators in a JavaScript code: a. less than (<), b. greater than (>), c. less than or equal to (<=), d. greater than or equal to (>=), e. equal to (==), f. strict equal to (equal value and equal type) (===), g. not equal to (!=), h. strict not equal to (not equal value and not equal type) (!==);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.3.5",
+            "description": "use the following logical operators in a JavaScript code: a. AND (&&), b. OR (||), c. NOT (!);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.3.6",
+            "description": "differentiate among the assignment operator (=), equal to operator (==) and identity operator (===);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.3.7",
+            "description": "use the conditional (ternary) operator in a JavaScript code;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.3.8",
+            "description": "simplify an expression by using the order of precedence of operators;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.4",
+        "subNumber": "10.4",
+        "name": "10.4 Conditional Control Structure",
+        "slos": [
+          {
+            "code": "10.4.1",
+            "description": "describe control structures and their types;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.4.2",
+            "description": "explain the structure of if, if-else, nested if-else, or if-else-if and switch statement;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.4.3",
+            "description": "write JavaScript code to implement the following statements: a. if statement, b. if-else statement, c. if-else or if-else-if, d. switch statement;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 33,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.4.4",
+            "description": "compare if, if else, if-else-if, and switch statements;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.5",
+        "subNumber": "10.5",
+        "name": "10.5 Loop Structure",
+        "slos": [
+          {
+            "code": "10.5.1",
+            "description": "describe loop and its different types;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.5.2",
+            "description": "explain the structure of for, while, and do while loop in JavaScript;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.5.3",
+            "description": "write JavaScript code to implement the following loops: a. for loop, b. while loop, c. do while loop, d. nested loop;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 33,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.5.4",
+            "description": "write the output of a given program having a loop and selection structures;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 33,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.5.5",
+            "description": "use break and continue statements in a JavaScript code;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 33,
+            "isPractical": true,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.6",
+        "subNumber": "10.6",
+        "name": "10.6 Introduction to Arrays",
+        "slos": [
+          {
+            "code": "10.6.1",
+            "description": "explain the array concerning the array name, size, index number, and arrangement of elements in the memory;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.6.2",
+            "description": "write JavaScript code to declare and initialise a one-dimensional array with different sizes and data types;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.6.3",
+            "description": "apply the process of traversing using all types of loops for input, output, and manipulation of elements;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.6.4",
+            "description": "write a program that stores numeric values in a one-dimensional array using a for loop and obtains the highest, lowest, and average values.",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 11,
+    "name": "Data and Analysis",
+    "page": 35,
+    "examSpec": {
+      "mcqs": 4,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 12: 6 Marks (Choose ONE from TWO)",
+      "groupTotalMarks": 16
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "11.1",
+        "subNumber": "11.1",
+        "name": "11.1 Scope of Artificial Intelligence",
+        "slos": [
+          {
+            "code": "11.1.1",
+            "description": "explain Artificial Intelligence (AI) and its applications in modern technology;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.1.2",
+            "description": "analyse the impact, scope, and emerging trends of Artificial Intelligence (AI) in the following fields: a. AI engineering, b. robotics, c. military and aviation, d. mechanical engineering, e. AI-assisted surgery;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "11.2",
+        "subNumber": "11.2",
+        "name": "11.2 Scope of Machine Learning",
+        "slos": [
+          {
+            "code": "11.2.1",
+            "description": "explain the following machine-learning skills: a. AI-enabled systems learning from large data, b. supervised and unsupervised learning, c. automation and scalability, d. fraud detection;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.2.2",
+            "description": "use data mining techniques to extract patterns and insights from given datasets for real-world applications;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "11.2.3",
+            "description": "apply Natural Language Processing (NLP) concepts in real-world applications like speech recognition, translation, and text analysis;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "11.3",
+        "subNumber": "11.3",
+        "name": "11.3 Big Data and Applications of Big Data in Real-World Business",
+        "slos": [
+          {
+            "code": "11.3.1",
+            "description": "explain the big data concept and its significance in managing and reviewing large datasets;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.3.2",
+            "description": "explain the following big data analysis methods: a. descriptive analytics, b. diagnostic analytics, c. predictive analytics, d. prescriptive analytics;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.3.3",
+            "description": "illustrate the real-world business applications in big data;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "11.3.4",
+            "description": "analyse datasets to extract insights in various domains;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 12,
+    "name": "Security, Privacy and Data Integrity",
+    "page": 36,
+    "examSpec": {
+      "mcqs": 6,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 11: 6 Marks (Choose ONE from TWO)",
+      "groupTotalMarks": 16
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "12.1",
+        "subNumber": "12.1",
+        "name": "12.1 Safe and Responsible Use of Information Sources",
+        "slos": [
+          {
+            "code": "12.1.1",
+            "description": "describe information literacy and its importance;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.1.2",
+            "description": "explain the essentials of good digital citizenship (safe and responsible use of technology);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.1.3",
+            "description": "explain key concepts of copyright, plagiarism, and piracy;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.1.4",
+            "description": "analyse ethical issues that arise in ICT while navigating online environments;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "12.1.5",
+            "description": "assess the importance of online safety, responsibility and respectfulness;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "12.1.6",
+            "description": "examine the health concerns associated with the excessive use of ICT devices and their impact on well-being;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "12.1.7",
+            "description": "assess the significance of maintaining online safety, demonstrating responsible digital behaviour, and fostering respectful communication in digital spaces;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "12.2",
+        "subNumber": "12.2",
+        "name": "12.2 Cyberbullying and Harassment",
+        "slos": [
+          {
+            "code": "12.2.1",
+            "description": "describe cyberbullying;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.2.2",
+            "description": "analyse the impacts of cyberbullying on students;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "12.2.3",
+            "description": "suggest effective strategies to prevent cyberbullying and promote responsible digital behaviour;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "12.3",
+        "subNumber": "12.3",
+        "name": "12.3 The Digital Divide",
+        "slos": [
+          {
+            "code": "12.3.1",
+            "description": "describe the digital divide and its following types: a. access divide, b. skill divide, c. income divide, d. geographical divide, e. cultural divide;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.3.2",
+            "description": "explain the following causes of the digital divide: a. economical, b. geographical, c. educational, d. social and cultural, e. government policies;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.3.3",
+            "description": "explain the following effects of the digital divide: a. unequal access to information, b. education gap, c. economic disadvantage, d. social isolation, e. health disparities, f. democratic participation;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.3.4",
+            "description": "recommend strategies to reduce the digital divide and improve digital accessibility.",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 13,
+    "name": "Digital Literacy",
+    "page": 38,
+    "examSpec": {
+      "mcqs": 7,
+      "crqs": 0,
+      "erqs": 0,
+      "totalMarks": 7
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "13.1",
+        "subNumber": "13.1",
+        "name": "13.1 Digital Literacy and Tools of Digital Technology",
+        "slos": [
+          {
+            "code": "13.1.1",
+            "description": "differentiate between digital literacy and digital technology;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.1.2",
+            "description": "apply digital technology tools to improve communication, security, and problem-solving in daily life;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "13.1.3",
+            "description": "evaluate the effectiveness of digital technologies in different real-life scenarios to optimise productivity and connectivity;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "13.2",
+        "subNumber": "13.2",
+        "name": "13.2 Digital Artefact Design and Development",
+        "slos": [
+          {
+            "code": "13.2.1",
+            "description": "explain digital artefacts;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.2.2",
+            "description": "use the following digital tools in real-world tasks by applying digital literacy and creativity: a. Canva for graphic designing, b. Scratch for coding, c. Microsoft PowerPoint for creating presentations, d. Microsoft Excel for entering data or calculations, e. Microsoft Word for formatting text or using templates;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "13.2.3",
+            "description": "explore simple information gathering using online resources and digital libraries.",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 14,
+    "name": "Entrepreneurship in the Digital Age",
+    "page": 39,
+    "examSpec": {
+      "mcqs": 4,
+      "crqs": 0,
+      "erqs": 0,
+      "totalMarks": 4
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "14.1",
+        "subNumber": "14.1",
+        "name": "14.1 Digital Marketing Fundamentals",
+        "slos": [
+          {
+            "code": "14.1.1",
+            "description": "explain the concepts of design thinking and business planning, emphasising their role in problem-solving and entrepreneurship;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "14.1.2",
+            "description": "explain entrepreneurial skills and ideas for a small business;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "14.1.3",
+            "description": "explain the following components of devising a business plan: a. executive summary, b. startup, c. analyse the market, d. enlist products/ services, e. target market, f. promotional strategy, g. budget;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "14.1.4",
+            "description": "suggest digital marketing strategies to promote products, services, or ideas effectively;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "14.1.5",
+            "description": "construct a business plan for a product or service based on your community or global needs;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "14.2",
+        "subNumber": "14.2",
+        "name": "14.2 Digital Tools to Conduct Research Surveys and Questionnaires",
+        "slos": [
+          {
+            "code": "14.2.1",
+            "description": "design customisable surveys and questionnaires to gather insights for developing a business idea (e.g., google forms, survey monkey).",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  }
+]

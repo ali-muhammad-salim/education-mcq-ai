@@ -1,0 +1,386 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "pageNumber": 2,
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "chapter": "Chemical Equilibrium",
+    "slo": "9.3.1",
+    "current_slo": "9.3.1",
+    "cognitiveLevel": "U",
+    "marks": 4,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "9.3.1",
+        "description": "apply Le Chatelier\u2019s principle to predict the effect of changes in temperature, concentration, and pressure on equilibrium.",
+        "topic": "Chemical Equilibrium"
+      }
+    ],
+    "stem": "a. Consider the following chemical equation.\n2H2(g) + O2(g) \u21cc 2H2O(l)\n\ni. Identify the direction in which the given equation shows endothermic reaction. (1 Mark)\nii. Give ONE reason to justify your answer to part i. (1 Mark)\n\nb. Consider the given reaction at equilibrium.\nCO(g) + H2O(g) \u21cc CO2(g) + H2(g)\nWhat will be the effect on the concentration of H2O if a small amount of CO gas is added to the reaction mixture? Give a reason to support your answer. (2 Marks)",
+    "modelAnswer": "**Part a.i \u2014 Direction of Endothermic Reaction (1 Mark):**\nThe given equation represents an endothermic process in the **reverse (backward) direction** ($2H_2O(l) \\rightarrow 2H_2(g) + O_2(g)$).\n\n**Part a.ii \u2014 Scientific Justification (1 Mark):**\nThe forward reaction is the combustion/synthesis of water, which is highly exothermic (releases energy). Therefore, the reverse reaction\u2014which involves breaking strong covalent $O-H$ bonds in water\u2014requires the net absorption of energy from the surroundings, making it endothermic.\n\n**Part b \u2014 Effect of Adding CO Gas and Reason (2 Marks):**\n- **Effect:** The concentration of $H_2O$ will **decrease** (1 Mark).\n- **Reason:** According to Le Chatelier\u2019s principle, when a disturbance is applied to a system at equilibrium, the system shifts in a direction that opposes the disturbance. Adding reactant $CO(g)$ increases its concentration; to consume the added $CO$, the equilibrium shifts in the **forward direction**, which reacts with and consumes $H_2O(g)$, thereby decreasing its concentration (1 Mark).",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Identifies the reverse / backward reaction as endothermic."
+      },
+      {
+        "marks": 1,
+        "description": "Justifies that decomposition / breaking bonds in water requires absorption of energy."
+      },
+      {
+        "marks": 1,
+        "description": "States that the concentration of H2O decreases."
+      },
+      {
+        "marks": 1,
+        "description": "Explains via Le Chatelier's principle that adding CO shifts equilibrium forward to consume reactants."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.2",
+    "pageNumber": 3,
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "chapter": "Organic Chemistry",
+    "slo": "11.2.1",
+    "current_slo": "11.2.1",
+    "cognitiveLevel": "R",
+    "marks": 3,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "11.2.1",
+        "description": "define homologous series and state general formulas for alkanes, alkenes, and alkynes.",
+        "topic": "Organic Chemistry"
+      }
+    ],
+    "stem": "a. What is meant by the term \u2018homologous series\u2019? (1 Mark)\n\nb. State the general formula for alkanes and alkynes. (2 Marks)\nAlkanes: ___________________________________________________________________________\nAlkynes: ___________________________________________________________________________",
+    "modelAnswer": "**Part a \u2014 Definition of Homologous Series (1 Mark):**\nA homologous series is a family or group of organic compounds having the same functional group and similar chemical properties, in which each successive member differs from the preceding one by a constant $-CH_2-$ (methylene) unit and a molecular mass of $14\\text{ amu}$, and can be represented by a common general formula.\n\n**Part b \u2014 General Formulas (2 Marks):**\n- **Alkanes:** **$C_n H_{2n+2}$** (where $n = 1, 2, 3, \\dots$) (1 Mark)\n- **Alkynes:** **$C_n H_{2n-2}$** (where $n = 2, 3, 4, \\dots$) (1 Mark)",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Defines homologous series including same general formula, similar chemical properties, and differing by -CH2- unit."
+      },
+      {
+        "marks": 1,
+        "description": "States general formula of alkanes as CnH2n+2."
+      },
+      {
+        "marks": 1,
+        "description": "States general formula of alkynes as CnH2n-2."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.3",
+    "pageNumber": 3,
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "chapter": "Natural and Synthetic Polymers",
+    "slo": "13.1.2",
+    "current_slo": "13.1.2",
+    "cognitiveLevel": "U",
+    "marks": 3,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-X-P2/q3.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "13.1.2",
+        "description": "describe the structure of proteins and the factors causing denaturation.",
+        "topic": "Natural and Synthetic Polymers"
+      }
+    ],
+    "stem": "The given diagram illustrates the change in the structure of a protein molecule due to increase in temperature.\n\na. Name the process of changing a folded protein molecule into an unfolded protein molecule. (1 Mark)\n\nb. Write ONE chemical change that causes the unfolding of the protein molecule. (1 Mark)\n\nc. What is the effect of unfolding on the function of the protein molecule? (1 Mark)",
+    "modelAnswer": "**Part a \u2014 Process Name (1 Mark):**\n**Protein denaturation** (or denaturation of protein).\n\n**Part b \u2014 Chemical Change Causing Unfolding (1 Mark):**\nThe disruption and breaking of non-covalent stabilizing bonds\u2014specifically **hydrogen bonds**, ionic interactions (salt bridges), or hydrophobic interactions\u2014that maintain the specific secondary, tertiary, and quaternary three-dimensional folding of the polypeptide chain.\n\n**Part c \u2014 Effect on Function (1 Mark):**\nThe protein **loses its biological activity and function** (e.g., loss of enzymatic catalytic ability) because the specific, native three-dimensional conformation of its active site is destroyed.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Names the process as denaturation (or protein denaturation)."
+      },
+      {
+        "marks": 1,
+        "description": "Identifies breakage/disruption of hydrogen bonds, ionic bonds, or hydrophobic interactions."
+      },
+      {
+        "marks": 1,
+        "description": "Explains loss of biological activity, catalytic function, or native active site shape."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.4",
+    "pageNumber": 4,
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "chapter": "Environmental Chemistry II: Water",
+    "slo": "15.2.2",
+    "current_slo": "15.2.2",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "15.2.2",
+        "description": "explain methods of removing permanent hardness of water using ion-exchange resins and their regeneration.",
+        "topic": "Environmental Chemistry II: Water"
+      }
+    ],
+    "stem": "An industrial plant receives hard water containing calcium and magnesium ions. The plant wants to make the water soft using an ion exchange resin.\n\na. Identify the type of hardness in water that will be removed by the ion exchanger. (1 Mark)\n\nb. Describe the process of removing this hardness from water through the ion exchange resin. (1 Mark)\n\nc. If the resin becomes saturated, suggest a practical method to regenerate it so that it can be reused. (1 Mark)",
+    "modelAnswer": "**Part a \u2014 Type of Hardness Removed (1 Mark):**\n**Permanent hardness** (as well as temporary hardness; ion exchangers remove both calcium and magnesium hardness completely).\n\n**Part b \u2014 Description of Hardness Removal (1 Mark):**\nWhen hard water passes through the column containing cation exchange resin (such as sodium zeolite or sulfonated synthetic resin, $R-Na$), the multivalent hardness-causing ions ($Ca^{2+}$ and $Mg^{2+}$) in the water are preferentially bound to the resin and exchanged for innocuous sodium ions ($Na^+$): \n$$2R-Na(s) + Ca^{2+}(aq) \\rightarrow R_2-Ca(s) + 2Na^+(aq)$$\nBecause calcium and magnesium ions remain trapped in the resin matrix, the emerging water is softened.\n\n**Part c \u2014 Practical Method to Regenerate Saturated Resin (1 Mark):**\nFlush the exhausted resin column with a **concentrated sodium chloride solution (brine, $10\\%\\text{ NaCl}$)**. The high concentration of $Na^+$ ions displaces the bound $Ca^{2+}$ and $Mg^{2+}$ ions from the resin into the wastewater, restoring the active sodium form of the resin ($R_2-Ca + 2NaCl \\rightarrow 2R-Na + CaCl_2$).",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Identifies permanent hardness (or both temporary and permanent hardness)."
+      },
+      {
+        "marks": 1,
+        "description": "Describes the exchange of Ca2+ and Mg2+ ions in hard water with Na+ ions in the resin."
+      },
+      {
+        "marks": 1,
+        "description": "Suggests flushing with concentrated sodium chloride (brine) solution to regenerate the resin."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5 (EITHER)",
+    "pageNumber": 5,
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "chapter": "Acids, Bases and Salts",
+    "slo": "10.2.3",
+    "current_slo": "10.2.3",
+    "cognitiveLevel": "A",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "10.2.3",
+        "description": "perform volumetric titration calculations to determine molarity of unknown acid/base solutions.",
+        "topic": "Acids, Bases and Salts"
+      }
+    ],
+    "stem": "EITHER\na. In a titration process, 15 cm3 of 0.5 M dilute sulphuric acid is completely used to neutralise 10 cm3 of sodium hydroxide solution.\n\nCalculate the molarity of sodium hydroxide solution with the help of a balanced chemical equation. (6 Marks)",
+    "modelAnswer": "**Step 1: Balanced Chemical Equation (2 Marks):**\n$$\\text{H}_2\\text{SO}_{4(aq)} + 2\\text{NaOH}_{(aq)} \\rightarrow \\text{Na}_2\\text{SO}_{4(aq)} + 2\\text{H}_2\\text{O}_{(l)}$$\nFrom the stoichiometry:\n- Moles of acid ($n_1$) = **1**\n- Moles of base ($n_2$) = **2**\n\n**Step 2: Given Data and Volumetric Equation (2 Marks):**\n- For Sulphuric Acid ($H_2SO_4$):\n  - Molarity of acid ($M_1$) = **0.5 M**\n  - Volume of acid ($V_1$) = **15 cm3**\n- For Sodium Hydroxide ($NaOH$):\n  - Molarity of base ($M_2$) = **?**\n  - Volume of base ($V_2$) = **10 cm3**\n\nApplying the titration formula:\n$$\\frac{M_1 \\times V_1}{n_1} = \\frac{M_2 \\times V_2}{n_2}$$\n\n**Step 3: Calculation of Molarity (2 Marks):**\n$$\\frac{0.5 \\times 15}{1} = \\frac{M_2 \\times 10}{2}$$\n$$7.5 = 5 \\times M_2$$\n$$M_2 = \\frac{7.5}{5} = \\mathbf{1.5\\text{ M}}$$\n\n**Conclusion:**\nThe molarity of the sodium hydroxide solution is **1.5 M** (or $1.5\\text{ mol dm}^{-3}$).",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Writes the fully balanced chemical equation with correct coefficients: H2SO4 + 2NaOH -> Na2SO4 + 2H2O."
+      },
+      {
+        "marks": 1,
+        "description": "Identifies the stoichiometric mole ratio: 1 mole H2SO4 reacts with 2 moles NaOH."
+      },
+      {
+        "marks": 1,
+        "description": "States and substitutes values into the volumetric titration formula (M1V1/n1 = M2V2/n2)."
+      },
+      {
+        "marks": 2,
+        "description": "Calculates the correct numerical molarity of 1.5 M with appropriate units."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5 (OR)",
+    "pageNumber": 5,
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "chapter": "Hydrocarbons",
+    "slo": "12.2.2",
+    "current_slo": "12.2.2",
+    "cognitiveLevel": "A",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "12.2.2",
+        "description": "illustrate the oxidation reactions of alkenes and alkynes with potassium permanganate solution.",
+        "topic": "Hydrocarbons"
+      }
+    ],
+    "stem": "OR\nb.\ni. Using balanced chemical equation(s), illustrate the complete steps of oxidation of the following organic compounds with potassium permanganate (KMnO4) solution. (4 Marks)\nI. Ethene\nII. Ethyne\n\nii. Name the final products obtained on complete oxidation of (I) ethene and (II) ethyne in part i. (2 Marks)",
+    "modelAnswer": "**Part b.i \u2014 Balanced Oxidation Equations (4 Marks):**\n\n**I. Oxidation of Ethene (2 Marks):**\nWhen ethene is treated with cold, dilute alkaline potassium permanganate (Baeyer\u2019s reagent), it undergoes syn-dihydroxylation across the double bond:\n$$\\text{H}_2\\text{C}=\\text{CH}_2 + [\\text{O}] + \\text{H}_2\\text{O} \\xrightarrow{\\text{KMnO}_4\\text{, cold/alkaline}} \\text{CH}_2(\\text{OH})-\\text{CH}_2(\\text{OH})$$\n*(The pink color of $KMnO_4$ is discharged, and brown $MnO_2$ precipitate forms).*\n\n**II. Oxidation of Ethyne (2 Marks):**\nEthyne reacts with alkaline potassium permanganate to undergo oxidative cleavage in two sequential steps:\n- **Step 1:** Initial oxidation forms glyoxal (ethanedial):\n  $$\\text{HC}\\equiv\\text{CH} + 2[\\text{O}] \\rightarrow \\text{OHC}-\\text{CHO}$$\n- **Step 2:** Further oxidation oxidizes both aldehyde groups into carboxylic acids (ethanedioic acid / oxalic acid):\n  $$\\text{OHC}-\\text{CHO} + 2[\\text{O}] \\rightarrow \\text{HOOC}-\\text{COOH}$$\n- **Overall Equation:**\n  $$\\text{HC}\\equiv\\text{CH} + 4[\\text{O}] \\xrightarrow{\\text{KMnO}_4} \\text{HOOC}-\\text{COOH}$$\n*(Under vigorous hot acidic conditions, oxalic acid oxidizes further to $2CO_2 + 2H_2O$).*\n\n**Part b.ii \u2014 Names of Final Products (2 Marks):**\n- **(I) Ethene:** **Ethane-1,2-diol** (commonly known as **ethylene glycol**) (1 Mark)\n- **(II) Ethyne:** **Ethanedioic acid** (commonly known as **oxalic acid**) / or Carbon dioxide and water upon complete mineralization (1 Mark)",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Writes the balanced chemical equation for oxidation of ethene to ethane-1,2-diol."
+      },
+      {
+        "marks": 2,
+        "description": "Writes the balanced chemical equation(s) for the stepwise or overall oxidation of ethyne to oxalic acid."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly names the final product of ethene oxidation as ethane-1,2-diol (or ethylene glycol)."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly names the final product of ethyne oxidation as ethanedioic acid (or oxalic acid / CO2 and H2O)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6 (EITHER)",
+    "pageNumber": 7,
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "chapter": "Environmental Chemistry I: Atmosphere",
+    "slo": "14.2.2",
+    "current_slo": "14.2.2",
+    "cognitiveLevel": "E",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "14.2.2",
+        "description": "evaluate the environmental impacts of vehicular emissions and urban air pollutants.",
+        "topic": "Environmental Chemistry I: Atmosphere"
+      }
+    ],
+    "stem": "EITHER\na. When petrol is burnt in an internal combustion engine of a car by an electrical spark which passes through the air/ petrol mixture, it produces gases such as carbon monoxide and oxides of nitrogen. The release of these gases from car exhaust considerably pollutes the environment.\n\nEvaluate which gas poses a greater threat to the environment in urban areas of Pakistan by\ni. identifying the main pollution problem caused by each of these gases. (2 Marks)\nii. analysing any TWO harmful impacts of each of the identified problems (in part i) on the environment. (4 Marks)",
+    "modelAnswer": "**Part a.i \u2014 Main Pollution Problems Identified (2 Marks):**\n1. **Carbon Monoxide (CO):** Causes **acute toxic atmospheric pollution / toxic air poisoning** in localized urban corridors and serves as an indirect precursor to tropospheric ozone.\n2. **Oxides of Nitrogen (NOx \u2014 NO and NO2):** Triggers the formation of **photochemical smog** (severe winter/autumn urban haze) and **acid rain** ($HNO_3$).\n\n**Part a.ii \u2014 Analysis of Harmful Impacts on Environment & Urban Context (4 Marks):**\n- **Harmful Impacts of Carbon Monoxide (2 Marks):**\n  1. *Human Health & Physiological Stress:* CO binds tightly to blood hemoglobin with an affinity ~200 times higher than oxygen, forming carboxyhemoglobin ($COHb$). This drastically reduces oxygen delivery to vital organs, causing headaches, dizziness, cardiovascular distress, and asphyxiation in congested traffic.\n  2. *Atmospheric Oxidation Capacity:* CO reacts with hydroxyl radicals ($\\bullet OH$) in the troposphere, depleting the natural cleansing capacity of the atmosphere and increasing the atmospheric lifetime of greenhouse gases like methane ($CH_4$).\n\n- **Harmful Impacts of Oxides of Nitrogen / Smog & Acid Rain (2 Marks):**\n  1. *Photochemical Smog & Respiratory Crisis:* In cities like Lahore, Karachi, and Faisalabad, solar UV radiation photolyzes $NO_2$ in the presence of hydrocarbons, generating peroxyacetyl nitrate (PAN) and ground-level ozone. This creates dense smog that severely reduces visibility, causes eye irritation, and exacerbates asthma, bronchitis, and respiratory hospitalizations.\n  2. *Ecological & Structural Damage from Acid Rain:* $NO_x$ oxidizes to nitric acid ($HNO_3$), which precipitates as acid rain. This acidifies urban soil and waterways, leaches essential soil minerals ($Ca^{2+}, Mg^{2+}$), damages agricultural crops, and corrodes historic limestone/marble buildings and metal infrastructure.\n\n- **Evaluation / Synthesis:** In urban areas of Pakistan, **oxides of nitrogen ($NO_x$) pose a significantly greater overall threat to the environment** because their impacts extend across entire metropolitan regions in the form of persistent winter smog and regional acid rain, whereas $CO$ is primarily an acute localized inhalation hazard.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Identifies the main pollution problem caused by CO (acute toxicity / ground-level ozone precursor)."
+      },
+      {
+        "marks": 1,
+        "description": "Identifies the main pollution problems caused by NOx (photochemical smog and acid rain)."
+      },
+      {
+        "marks": 2,
+        "description": "Analyses two distinct harmful impacts of CO on human health and atmospheric chemistry."
+      },
+      {
+        "marks": 2,
+        "description": "Analyses two distinct harmful impacts of NOx/smog/acid rain on urban ecology, human respiratory health, or infrastructure."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6 (OR)",
+    "pageNumber": 7,
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "chapter": "Chemical Industries",
+    "slo": "16.2.2",
+    "current_slo": "16.2.2",
+    "cognitiveLevel": "E",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "16.2.2",
+        "description": "evaluate the reactions and extraction of iron from haematite in a blast furnace.",
+        "topic": "Chemical Industries"
+      }
+    ],
+    "stem": "OR\nb. A blast furnace is charged with haematite ore, coke and limestone from the top. It is then heated by blowing hot air in it from the base.\n\nUsing the given information, evaluate the effectiveness of the stages that enable the extraction of iron from its ore. Write chemical equations and/ or reasons to support your answer. (6 Marks)",
+    "modelAnswer": "**Evaluation of Blast Furnace Stages in the Extraction of Iron:**\n\n**Stage 1: Production of Heat and the Chief Reducing Agent (CO) (2 Marks):**\n- At the base (combustion zone, ~1900 \u00b0C), coke burns in pre-heated air in a strongly exothermic reaction that provides the necessary high thermal energy for the furnace:\n  $$\\text{C}_{(s)} + \\text{O}_{2(g)} \\rightarrow \\text{CO}_{2(g)} + \\text{Heat}$$\n- As $CO_2$ rises through the upper bed of incandescent coke, it is reduced endothermically to carbon monoxide, the primary reducing gas:\n  $$\\text{CO}_{2(g)} + \\text{C}_{(s)} \\rightarrow 2\\text{CO}_{(g)}$$\n\n**Stage 2: Reduction of Haematite ($Fe_2O_3$) to Molten Iron (2 Marks):**\n- In the upper reduction zone (~400 \u00b0C - 700 \u00b0C), carbon monoxide effectively reduces haematite ore in stepwise stages to spongy/molten metallic iron:\n  $$\\text{Fe}_2\\text{O}_{3(s)} + 3\\text{CO}_{(g)} \\rightarrow 2\\text{Fe}_{(l)} + 3\\text{CO}_{2(g)}$$\n- Molten iron trickles down to the bottom hearth (heavier phase) and is tapped off periodically as pig iron / cast iron.\n\n**Stage 3: Thermal Decomposition of Flux and Removal of Silica Impurities as Slag (2 Marks):**\n- In the middle zone (~800 \u00b0C - 1000 \u00b0C), limestone ($CaCO_3$) decomposes thermally to provide calcium oxide (basic flux):\n  $$\\text{CaCO}_{3(s)} \\xrightarrow{\\Delta} \\text{CaO}_{(s)} + \\text{CO}_{2(g)}$$\n- The basic flux reacts with acidic sandy gangue (silica, $SiO_2$) present in haematite to form molten calcium silicate slag:\n  $$\\text{CaO}_{(s)} + \\text{SiO}_{2(s)} \\rightarrow \\text{CaSiO}_{3(l)}$$\n- Molten slag is less dense than molten iron and floats as an immiscible layer on top, protecting the molten iron from re-oxidation and allowing it to be tapped off separately.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Evaluates Stage 1 (combustion of coke to CO2 and reduction to CO) with balanced chemical equations."
+      },
+      {
+        "marks": 2,
+        "description": "Evaluates Stage 2 (reduction of Fe2O3 by CO to molten iron) with balanced chemical equation."
+      },
+      {
+        "marks": 2,
+        "description": "Evaluates Stage 3 (decomposition of limestone and slag formation with SiO2) with balanced equations and floating protective mechanism."
+      }
+    ]
+  }
+]

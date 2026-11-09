@@ -1,0 +1,229 @@
+{
+  "title": "Chemistry X \u00b7 2025 \u00b7 E-Marking Notes (Questions & Solved Better Responses)",
+  "examYear": 2025,
+  "board": "AKU-EB",
+  "classLevel": "SSC-II (Class X)",
+  "subject": "Chemistry",
+  "sourceUrl": "/materials/ssc/chemistry/ssc-2/chemistry-x-2025-emarking.pdf",
+  "introduction": "This document has been produced for the teachers and candidates of the Secondary School Certificate (SSC) Part II Chemistry. It contains official comments on candidates' responses to the 2025 SSC-II Examination, indicating the quality of the responses and highlighting their relative strengths and weaknesses.",
+  "generalObservations": "Most candidates demonstrated a thorough understanding of specific concepts and provided effective responses. Candidates' responses were well-structured in chronological order based on sub-parts. They excelled in identifying the meaning of a reversible reaction symbol and the ester functional group in fats and oils, classifying cyclic organic compounds, and describing metallurgical operations. Nevertheless, teachers should concentrate on: (1) Reason behind each factor affecting chemical equilibrium, (2) Classification of organic compounds as alicyclic and aromatic, (3) Recognition of the purpose of each step in raw water treatment, (4) Melting and boiling points of substances regardless of their physical states, and (5) Writing chemical formulae and balancing chemical equations.",
+  "questions": [
+    {
+      "questionNumber": "Q.1",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Consider the given reaction at equilibrium and answer the following questions.\nCaCO3(s) \u21cc CaO(s) + CO2(g)   (\u0394H = 178.3 kJ mol^-1)\na. What does the symbol \u21cc mean?\nb. Predict the effect on the given equilibrium if the system experiences the following conditions:\n   i. Increasing temperature\n   ii. Increasing pressure\n   iii. Decreasing carbon dioxide concentration",
+      "originalSlo": "9.3.7, 9.1.3",
+      "currentSlo": "9.3.7",
+      "sloText": "Determine the effect of catalyst, temperature, pressure and concentration on a reversible reaction at equilibrium; show both forward and reverse reactions using chemical equations.",
+      "maxMarks": 4,
+      "cognitiveLevel": "A",
+      "diagramUrl": "/paper-crops/CHM-X-2025-P2/q1.png",
+      "checkingHints": [
+        "a. 1 mark for the correct meaning of the symbol (reversible reaction).",
+        "b. 1 mark for predicting the correct effect in each case (3 required):",
+        "   i. Increasing temperature -> shifts right / forward direction.",
+        "   ii. Increasing pressure -> shifts left / reverse direction.",
+        "   iii. Decreasing CO2 concentration -> shifts right / forward direction."
+      ],
+      "overallPerformance": "Candidates showed a significant understanding of the symbol given in the equation. However, some candidates displayed confusion between reversible and reverse reactions and incorrectly associated factors affecting the rate of reversible reactions with equilibrium shifts.",
+      "betterResponses": "In part (a), better responses correctly identified the double-headed or two half-headed opposite arrows as indicating a reversible reaction involving both forward and reverse processes. In part (b)(i), candidates interpreted the positive \u0394H value correctly as endothermic and stated that adding heat shifts the reaction forward (left to right). In part (b)(ii), candidates explained that applying pressure affects CO2(g) (the only gas) and shifts the equilibrium in the reverse direction (towards fewer moles of gas, right to left). In part (b)(iii), candidates stated that decreasing product CO2 concentration shifts the equilibrium forward (left to right) to form more products.",
+      "weakerResponses": "In weaker responses to part (a), candidates interpreted the symbol as 'equilibrium state' or 'rate of forward reaction = rate of reverse reaction' rather than reversibility. In part (b)(i), several claimed increasing temperature shifts equilibrium to the reverse side. In part (b)(ii), many stated pressure has no effect because gases are not present on both sides, or claimed pressure can be applied to only one side. In part (b)(iii), candidates claimed decreasing CO2 shifts equilibrium to the left or increases H2O concentration.",
+      "betterResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q1_better.png",
+      "weakerResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q1_weaker.png",
+      "suggestions": [
+        "Use interactive Le Chatelier simulations to visually reinforce equilibrium shifts for heterogeneous equilibria like CaCO3(s) \u21cc CaO(s) + CO2(g).",
+        "Emphasise that in an endothermic reaction (+\u0394H), heat acts as a reactant, and clarify that pressure shifts occur whenever there is a net difference in gaseous moles (\u0394n_g \u2260 0), even if gas is on only one side."
+      ],
+      "currentTopic": "Chemical Equilibrium & Le Chatelier's Principle",
+      "outOfSyllabus": false,
+      "modelAnswer": "a. The symbol \u21cc means that the reaction is reversible (proceeds in both forward and reverse directions).\nb.i. Increasing temperature shifts the equilibrium to the right (forward direction) because the forward reaction is endothermic (+\u0394H).\nb.ii. Increasing pressure shifts the equilibrium to the left (reverse direction) towards fewer moles of gas (0 moles of gas on left vs 1 mole of CO2 gas on right).\nb.iii. Decreasing CO2 concentration shifts the equilibrium to the right (forward direction) to replenish CO2."
+    },
+    {
+      "questionNumber": "Q.2",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Consider the following structures of organic compounds:\nI: Phenol (benzene ring with -OH)\nII: Cyclohexane (saturated hexagon)\nIII: Tetrahydrofuran (5-membered ring with O heteroatom)\nClassify each compound in the given table based on its structure (Alicyclic | Heterocyclic | Aromatic).",
+      "originalSlo": "11.2.1",
+      "currentSlo": "11.2.1",
+      "sloText": "Classify organic compounds into acyclic and cyclic compounds with examples.",
+      "maxMarks": 3,
+      "cognitiveLevel": "U",
+      "diagramUrl": "/paper-crops/CHM-X-2025-P2/q2.png",
+      "checkingHints": [
+        "1 mark for each correct classification (3 required):",
+        "- Alicyclic: II",
+        "- Heterocyclic: III",
+        "- Aromatic: I"
+      ],
+      "overallPerformance": "A significant number of candidates successfully classified the given structures. However, the most common error was the inability to distinguish between benzenoid (aromatic) and non-benzenoid (alicyclic) hexagonal structures.",
+      "betterResponses": "Better responses accurately recognised the alternating double bonds within the hexagonal benzene ring of Compound I (phenol) and classified it under Aromatic. Compound II (non-benzenoid cyclohexane) was placed under Alicyclic, and Compound III (five-membered ring containing an oxygen heteroatom) was placed under Heterocyclic.",
+      "weakerResponses": "Weaker responses confused whether the hexagonal six-membered rings in Compounds I and II were aromatic or alicyclic, or mistook the exocyclic -OH oxygen of phenol for a ring heteroatom. Some candidates wrote functional group descriptions instead of classifying the compounds.",
+      "betterResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q2_better.png",
+      "weakerResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q2_weaker.png",
+      "suggestions": [
+        "Use structural flashcards contrasting cyclohexane (alicyclic, no alternating double bonds) with benzene/phenol (aromatic, conjugated pi ring) and furan/tetrahydrofuran/pyridine (heterocyclic, non-carbon atom inside the ring perimeter)."
+      ],
+      "currentTopic": "Organic Chemistry & Classification of Cyclic Compounds",
+      "outOfSyllabus": false,
+      "modelAnswer": "- Alicyclic: II (Cyclohexane)\n- Heterocyclic: III (Tetrahydrofuran)\n- Aromatic: I (Phenol)"
+    },
+    {
+      "questionNumber": "Q.3",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "a. Identify the functional group common in both, fats and oils. (1 Mark)\nb. Is the melting point of fats lower than that of oils? Provide a reason for your response. (2 Marks)",
+      "originalSlo": "13.4.2",
+      "currentSlo": "13.4.2",
+      "sloText": "Differentiate between fats and oils.",
+      "maxMarks": 3,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "a. 1 mark for identifying the correct functional group: Ester (RCOOR').",
+        "b. 1 mark for writing about the higher melting points of fats ('No, melting point of fats is higher than oils') + 1 mark for the correct reason (fats are saturated with closely packed chains and stronger intermolecular forces, solid at room temperature)."
+      ],
+      "overallPerformance": "Overall, candidates showed a good performance on part (a), but many struggled to justify their response with a suitable chemical reason in part (b).",
+      "betterResponses": "In part (a), better responses identified the ester group (RCOOR' or triglycerides) as common to both fats and oils. In part (b), candidates disagreed with the statement ('No, the melting point of fats is higher than that of oils') and justified that fats are triglycerides of saturated fatty acids (single C\u2013C bonds) whose chains pack tightly with strong van der Waals forces (solid at room temperature), whereas oils contain unsaturated C=C bonds with kinks that prevent close packing.",
+      "weakerResponses": "In part (a), weaker responses listed amino acids, ketones, ethers, or sources ('fats come from animals, oils from plants') instead of the ester functional group. In part (b), candidates agreed with the false premise ('Yes, melting point of fats is lower') or argued that double bonds in oils make their melting point higher.",
+      "betterResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q3_better.png",
+      "weakerResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q3_weaker.png",
+      "suggestions": [
+        "Demonstrate that melting point is an intermolecular property: because fats are already solid at room temperature (~25\u00b0C) while oils are already melted (liquid), fats must have a higher melting point than oils.",
+        "Show molecular models of straight saturated stearic acid chains vs. bent cis-oleic acid chains to illustrate how kinks weaken van der Waals packing."
+      ],
+      "currentTopic": "Natural and Synthetic Polymers (Lipids: Fats & Oils)",
+      "outOfSyllabus": false,
+      "modelAnswer": "a. Functional group: Ester group (R\u2013C(=O)\u2013OR').\nb. No, the melting point of fats is higher than that of oils. Fats are saturated compounds (solid at room temperature) whose molecules pack closely with stronger intermolecular forces, requiring more heat to melt than liquid unsaturated oils."
+    },
+    {
+      "questionNumber": "Q.4",
+      "section": "Constructed Response Questions (CRQs)",
+      "questionText": "Write the purpose of each of the following processes involved in raw water treatment.\ni. Passing raw water through the beds of sand and gravel\nii. Treatment of raw water with activated charcoal\niii. Addition of aluminium sulphate in raw water",
+      "originalSlo": "15.4.4",
+      "currentSlo": "15.4.4",
+      "sloText": "Compare the processes of raw water treatment and sewage treatment.",
+      "maxMarks": 3,
+      "cognitiveLevel": "U",
+      "diagramUrl": "/paper-crops/CHM-X-2025-P2/q4.png",
+      "checkingHints": [
+        "1 mark for each purpose (3 required):",
+        "i. Sand and gravel beds: Fine filtration to remove small and fine suspended solid particles.",
+        "ii. Activated charcoal: To remove bad tastes, foul odours/smells, and colour.",
+        "iii. Aluminium sulphate: Coagulant to stick/clump suspended particles together into flocs that settle down."
+      ],
+      "overallPerformance": "Overall performance was satisfactory, though many candidates confused the specific roles of activated charcoal, alum coagulation, and chlorination.",
+      "betterResponses": "In part (i), better responses stated the purpose of sand and gravel beds as fine filtration to remove small/fine solid dirt particles. In part (ii), candidates identified that activated charcoal removes bad tastes, foul smells/odours, and colour. In part (iii), candidates explained that aluminium sulphate acts as a coagulant (flocculant) to clump fine suspended particles together so they settle out during sedimentation.",
+      "weakerResponses": "Weaker responses confused fine filtration with coarse screening ('removing leaves and sticks'), claimed activated charcoal kills bacteria (confusing it with chlorination), and claimed aluminium sulphate softens hard water or disinfects pathogens.",
+      "betterResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q4_better.png",
+      "weakerResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q4_weaker.png",
+      "suggestions": [
+        "Teach potable water treatment as a distinct sequential flow chart where each reagent has a unique role: Alum = Coagulation of suspended solids; Sand/Gravel = Fine filtration; Activated Charcoal = Deodorising & taste removal; Chlorine = Disinfection of bacteria/pathogens."
+      ],
+      "currentTopic": "Environmental Chemistry II: Water Treatment",
+      "outOfSyllabus": false,
+      "modelAnswer": "i. To filter the water and remove small and fine solid particles.\nii. To remove bad tastes and foul/evil smells (and colour).\niii. Acts as a coagulant to clump/stick all the fine suspended particles together so they settle down."
+    },
+    {
+      "questionNumber": "Q.5a",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. Write balanced equations to show the chemical reactions between the following sets of reactants. (2 Marks)\n   I. Sulphuric acid and magnesium metal\n   II. Hydrochloric acid and copper(II) oxide\nii. Identify and describe the types of chemical reactions that each set of reactants undergoes in part 'i'. (4 Marks)",
+      "originalSlo": "10.7.3",
+      "currentSlo": "10.7.3",
+      "sloText": "Describe the methods of preparing soluble and insoluble salts.",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "i. 1 mark for each balanced chemical equation (2 required):",
+        "   I. H2SO4(aq) + Mg(s) -> MgSO4(aq) + H2(g)",
+        "   II. 2HCl(aq) + CuO(s) -> CuCl2(aq) + H2O(l)",
+        "ii. 1 mark for identifying each type of reaction (2 required) + 1 mark for describing each type of reaction (2 required)."
+      ],
+      "overallPerformance": "Most candidates attempted part (a). Performance depended heavily on writing the correct formula for copper(II) oxide (CuO) and balancing HCl with a coefficient of 2.",
+      "betterResponses": "Better responses wrote accurate, balanced equations: H2SO4 + Mg -> MgSO4 + H2\u2191 and 2HCl + CuO -> CuCl2 + H2O. In part (ii), they identified reaction I as a single displacement (substitution) reaction where magnesium replaces hydrogen in H2SO4 to form a neutral salt and evolve H2 gas, and reaction II as a double displacement (and acid-base neutralisation) reaction where copper replaces hydrogen and oxygen combines with hydrogen to form salt and water.",
+      "weakerResponses": "Weaker responses wrote wrong formulas such as Cu2O or CuOH instead of CuO, forgot the stoichiometric coefficient 2 on HCl, or simply repeated word equations without identifying single and double displacement reactions.",
+      "betterResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q5a_better.png",
+      "weakerResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q5a_weaker.png",
+      "suggestions": [
+        "Provide targeted drills on Roman numeral oxidation state notation\u2014e.g. Copper(I) oxide = Cu2O vs. Copper(II) oxide = CuO\u2014and general methods of salt preparation (Acid + Metal = Single Displacement; Acid + Metal Oxide = Double Displacement / Neutralisation)."
+      ],
+      "currentTopic": "Acids, Bases and Salts (Preparation of Soluble Salts)",
+      "outOfSyllabus": false,
+      "modelAnswer": "i.I. H2SO4 + Mg -> MgSO4 + H2\u2191\ni.II. 2HCl + CuO -> CuCl2 + H2O\nii.I. Single displacement reaction: magnesium replaces hydrogen from sulphuric acid to form magnesium sulphate salt and evolve hydrogen gas.\nii.II. Double displacement (neutralisation) reaction: copper(II) oxide and hydrochloric acid exchange ions to form copper(II) chloride salt and water."
+    },
+    {
+      "questionNumber": "Q.5b",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "Consider the given conversion reactions.\n\u2022 Ethane from ethyne (acetylene)\n\u2022 Propane from 1-chloropropane\nFor each reaction,\ni. write a balanced chemical equation mentioning conditions where required. (4 Marks)\nii. identify the type of reaction for each conversion in part 'i'. (2 Marks)",
+      "originalSlo": "12.5.4",
+      "currentSlo": "12.5.4",
+      "sloText": "Show the preparation of alkanes from hydrogenation of alkenes and alkynes and reduction of alkyl halides using chemical equations.",
+      "maxMarks": 6,
+      "cognitiveLevel": "A",
+      "checkingHints": [
+        "i. 1 mark for each complete balanced equation (2 required) + 1 mark for each condition (2 required):",
+        "   - HC\u2261CH + 2H2 --(Ni, 250-300\u00b0C)--> H3C-CH3",
+        "   - CH3-CH2-CH2-Cl + 2[H] --(Zn/dil. HCl)--> CH3-CH2-CH3 + HCl",
+        "ii. 1 mark for correct identification of each reaction (2 required): Hydrogenation (addition) and Reduction."
+      ],
+      "overallPerformance": "A smaller portion of candidates opted for 5b, but several outstanding responses were observed (including a student who proposed a valid two-step retrosynthetic route via dehydrohalogenation of 1-chloropropane with alcoholic KOH followed by hydrogenation of propene). The most common error was omitting the required catalysts and conditions.",
+      "betterResponses": "Better responses accurately depicted structural formulas for converting ethyne to ethane using 2 moles of H2 over a Nickel catalyst at 200\u2013300\u00b0C (or Pt/Pd at room temperature), and converting 1-chloropropane to propane + HCl using nascent hydrogen 2[H] generated from Zn/dilute HCl. In part (ii), they identified the first conversion as hydrogenation of alkynes and the second as reduction of alkyl halides.",
+      "weakerResponses": "Weaker responses reversed reactants and products (starting with ethane to make ethyne), used molecular formulas instead of structural formulas for 1-chloropropane, omitted catalysts/conditions, or misnamed the reactions as 'oxidation', 'ionisation', or 'halogenation'.",
+      "betterResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q5b_better.png",
+      "weakerResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q5b_weaker.png",
+      "suggestions": [
+        "Emphasise the linguistic phrasing 'A from B' (meaning B is the reactant and A is the product).",
+        "Require students to always write structural formulas and reaction conditions above/below the reaction arrow in organic conversions."
+      ],
+      "currentTopic": "Hydrocarbons & Preparation of Alkanes",
+      "outOfSyllabus": false,
+      "modelAnswer": "i. 1. Ethane from ethyne: HC\u2261CH + 2H2 --(Ni, 250\u2013300\u00b0C)--> H3C\u2013CH3\n   2. Propane from 1-chloropropane: CH3\u2013CH2\u2013CH2\u2013Cl + 2[H] --(Zn / dil. HCl)--> CH3\u2013CH2\u2013CH3 + HCl\nii. 1. Hydrogenation (addition reaction) of alkynes.\n   2. Reduction (substitution reaction) of alkyl halides."
+    },
+    {
+      "questionNumber": "Q.6a",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "i. Name the man-made chemical substance that causes ozone depletion. (1 Mark)\nii. Using balanced chemical equations, illustrate the destruction of the ozone layer. (3 Marks)\niii. Write any TWO harmful effects of ozone depletion. (2 Marks)",
+      "originalSlo": "14.5.2",
+      "currentSlo": "14.5.2",
+      "sloText": "Describe ozone depletion and its effects.",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "i. 1 mark for naming chlorofluorocarbon (CFCs / CFCl3).",
+        "ii. 1 mark for writing each equation (3 required): CFCl3 --(UV)--> CFCl2\u2022 + Cl\u2022; O3 + Cl\u2022 -> OCl\u2022 + O2; OCl\u2022 -> O\u2022 + Cl\u2022 and O\u2022 + O\u2022 -> O2.",
+        "iii. 1 mark for writing each effect of ozone depletion (any 2 required: skin cancer, eye cataracts, immune suppression, crop/food-chain damage)."
+      ],
+      "overallPerformance": "The majority of candidates opted for 6a and knew the effects of ozone depletion, though many struggled to write the complete 3-step free-radical chain reaction with radical dots (\u2022) and UV light.",
+      "betterResponses": "Better responses named chlorofluorocarbons (CFCs / CFCl3), wrote the complete free-radical chain mechanism showing UV photolysis of CFCl3 to generate Cl\u2022 radicals, reaction of Cl\u2022 with O3 to form OCl\u2022 and O2, and regeneration of Cl\u2022 and O2, and listed valid UV-related effects such as skin cancer, eye cataracts, crop damage, and food-chain disruption.",
+      "weakerResponses": "Weaker responses named CO, CO2, or SO2 instead of CFCs, wrote the natural oxygen-ozone combination (O + O2 -> O3) instead of CFC radical destruction, omitted radical dots (\u2022), or confused ozone layer depletion with greenhouse global warming (glacier melting and flooding).",
+      "betterResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q6a_better.png",
+      "weakerResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q6a_weaker.png",
+      "suggestions": [
+        "Clearly distinguish the mechanism and consequences of Stratospheric Ozone Depletion (CFCs -> Cl\u2022 radicals -> UV radiation -> skin cancer & cataracts) from Global Warming / Greenhouse Effect (CO2, CH4 -> trapping IR heat -> rising temperatures & glacier melting)."
+      ],
+      "currentTopic": "Environmental Chemistry I: Atmosphere & Ozone Depletion",
+      "outOfSyllabus": false,
+      "modelAnswer": "i. Chlorofluorocarbons (CFCs, e.g. CFCl3).\nii. 1. CFCl3 --(UV)--> CFCl2\u2022 + Cl\u2022\n   2. O3 + Cl\u2022 -> OCl\u2022 + O2\n   3. OCl\u2022 -> O\u2022 + Cl\u2022  and  O\u2022 + O\u2022 -> O2\niii. 1. Causes skin cancer and eye cataracts due to UV rays reaching Earth.\n   2. Damages crops and disrupts the food chain."
+    },
+    {
+      "questionNumber": "Q.6b",
+      "section": "Extended Response Questions (ERQs)",
+      "questionText": "Briefly describe any SIX steps involved in the metallurgical process. (6 Marks)",
+      "originalSlo": "16.1.2",
+      "currentSlo": "16.1.2",
+      "sloText": "Describe metallurgical operations.",
+      "maxMarks": 6,
+      "cognitiveLevel": "U",
+      "checkingHints": [
+        "1 mark for describing each step (any 6 required; 2 marks max if only names of 6 processes are listed without descriptions)."
+      ],
+      "overallPerformance": "Candidates who attempted 6b generally understood the topic well, though some listed only process names in a flowchart without describing them, losing marks.",
+      "betterResponses": "Better responses organised the metallurgical operations chronologically across concentration of ore (crushing/grinding, gravity separation, froth flotation, magnetic separation), extraction of metal (roasting, smelting, Bessemerisation), and electrolytic refining, clearly explaining the purpose and physical/chemical basis of each step.",
+      "weakerResponses": "Weaker responses merely listed the names of the processes without descriptions (earning at most 2 marks), or confused magnetic separation and froth flotation mechanisms.",
+      "betterResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q6b_better.png",
+      "weakerResponseImage": "/paper-crops/CHM-X-2025-EMARKING/q6b_weaker.png",
+      "suggestions": [
+        "Remind students that the command word 'Briefly describe' requires a 1\u20132 sentence explanation of the purpose and mechanism of each step, not just a bare list of headings."
+      ],
+      "currentTopic": "Chemical Industries & Metallurgy",
+      "outOfSyllabus": false,
+      "modelAnswer": "1. Crushing and Grinding: Crushing ore into fine powder to increase surface area.\n2. Gravity Separation: Separating ore from gangue based on density differences using water.\n3. Froth Flotation: Separating oil-wetted sulphide ore in pine-oil froth from water-wetted gangue.\n4. Magnetic Separation: Using electromagnetic rollers to separate magnetic ore/impurities from non-magnetic ones.\n5. Roasting: Heating concentrated ore in air below its melting point to convert sulphides to oxides and remove volatile impurities.\n6. Smelting & Refining: Reducing roasted ore with coke in a furnace to molten metal, followed by Bessemerisation and electrolytic refining to obtain 99.99% pure metal."
+    }
+  ]
+}

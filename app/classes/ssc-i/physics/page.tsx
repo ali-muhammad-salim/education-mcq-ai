@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import MathText from '@/components/MathText';
+import StructuredContent from '@/components/StructuredContent';
 import { smartMatch } from '@/lib/smartSearch';
 
 // Static Data Imports
@@ -826,7 +827,7 @@ export default function SSC1PhysicsPage() {
                                           {slo.code}
                                         </span>
                                         <div style={{ flexGrow: 1, lineHeight: 1.55 }}>
-                                          {slo.description}
+                                          <StructuredContent text={slo.description} />
                                           {slo.isPractical && (
                                             <span style={{
                                               marginLeft: '8px',

@@ -1,0 +1,306 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Draw the structure of an ion with the following features.\n• Charge of −3\n• Atomic number = 15\n• Nucleon number = 31",
+    "marks": 3,
+    "cognitiveLevel": "Application",
+    "originalSlo": "2.1.3",
+    "currentSlo": "2.1.3",
+    "sloText": "Draw the atomic structure of the first twenty elements of the periodic table and their ions using their mass number.",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "checkingHints": [
+      "1 mark for showing the correct number of shells with electrons (2, 8, 8).",
+      "1 mark for showing the nucleus with the correct number of neutrons (16) and protons (15).",
+      "1 mark for showing the charge on the ion (-3) outside brackets."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Three concentric electron shells containing 2 electrons in K-shell, 8 in L-shell, and 8 in M-shell (argon-like stable octet)."
+      },
+      {
+        "marks": 1,
+        "description": "Central nucleus labeled with 15 protons (p = 15) and 16 neutrons (n = 31 - 15 = 16)."
+      },
+      {
+        "marks": 1,
+        "description": "Overall ion enclosed in brackets with a -3 charge indicated (P^3-)."
+      }
+    ],
+    "modelAnswer": "1. Ion Identification:\n- Element with atomic number 15 is Phosphorus (P).\n- Nucleon number = 31, so Neutrons = 31 - 15 = 16 neutrons.\n- Protons = 15.\n- Ion has a charge of -3, meaning it gained 3 electrons:\n  Electrons = 15 + 3 = 18 electrons.\n- Electronic configuration of P^3-: 2, 8, 8 (K=2, L=8, M=8).\n\n2. Structural Representation:\n- Central nucleus: [ 15 p+, 16 n0 ]\n- 1st shell (K): 2 electrons\n- 2nd shell (L): 8 electrons\n- 3rd shell (M): 8 electrons\n- Enclosing square brackets with '-3' superscript charge: [ P ]^3-",
+    "betterResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q1_better.png",
+    "weakerResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q1_weaker.png"
+  },
+  {
+    "questionNumber": "Q.2",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Complete the following blanks with reference to the physical properties of labelled elements.\nF\nCl Odour = ____________________\nBr Physical State at Room Temperature = ____________________\nI Colour = ____________________\nAt",
+    "marks": 3,
+    "cognitiveLevel": "Knowledge",
+    "originalSlo": "3.1.6",
+    "currentSlo": "4.2.1",
+    "sloText": "Discuss the physical and chemical properties of: a. group I b. group II c. group VII d. group VIII.",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "diagramUrl": "/paper-crops/CHM-IX-2023-P2/q2.png",
+    "diagramBased": true,
+    "checkingHints": [
+      "1 mark for odour of chlorine: pungent / choking / suffocating / irritating odour.",
+      "1 mark for physical state of bromine: liquid (reddish-brown liquid).",
+      "1 mark for colour of iodine: purple / violet / dark grey / black (solid)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Chlorine odour: Pungent / choking odour."
+      },
+      {
+        "marks": 1,
+        "description": "Bromine physical state at room temperature: Liquid."
+      },
+      {
+        "marks": 1,
+        "description": "Iodine colour: Purple / Dark purple-black / Grey-black."
+      }
+    ],
+    "modelAnswer": "• Chlorine (Cl) Odour = Pungent / choking / irritating suffocating odour\n• Bromine (Br) Physical State at Room Temperature = Liquid\n• Iodine (I) Colour = Dark grey / purple-black (lustrous purple solid)",
+    "betterResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q2_better.png",
+    "weakerResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q2_weaker.png"
+  },
+  {
+    "questionNumber": "Q.3",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "When ammonium chloride (NH4Cl) is heated in a test tube, it results in the formation of ammonia (NH3) and hydrogen chloride (HCl) gases. The fumes of the gases can be observed moving along the test tube.\n(Note: Atomic mass of N = 14 amu, H = 1 amu and Cl = 35.5 amu)\na. Name the process that allows the movement of gases along the test tube. (1 Mark)\nb. Which gas, ammonia or hydrogen chloride, will travel at a faster speed? Give a suitable reason to support your answer. (2 Marks)",
+    "marks": 3,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "5.2.1",
+    "currentSlo": "5.2.1",
+    "sloText": "Explain the properties of gases: a. diffusion b. effusion c. condensation d. density e. compressibility.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "checkingHints": [
+      "1 mark for naming the process as diffusion.",
+      "1 mark for identifying Ammonia (NH3) as the faster travelling gas.",
+      "1 mark for stating that rate of diffusion is inversely proportional to molecular mass (ammonia is lighter: 17 g/mol vs HCl: 36.5 g/mol)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part a: Diffusion."
+      },
+      {
+        "marks": 1,
+        "description": "Part b (identification): Ammonia (NH3)."
+      },
+      {
+        "marks": 1,
+        "description": "Part b (reason): Graham's law of diffusion states that lighter gases diffuse faster than heavier gases. Molar mass of NH3 = 14 + 3 = 17 g/mol, which is lower than molar mass of HCl = 1 + 35.5 = 36.5 g/mol."
+      }
+    ],
+    "modelAnswer": "a. The process that allows the movement of gases along the test tube is diffusion.\n\nb. Ammonia (NH3) gas will travel at a faster speed.\nReason: According to Graham's Law of Diffusion, the rate of diffusion of a gas is inversely proportional to the square root of its molecular mass (rate ∝ 1/√M). Ammonia has a lower molar mass (17 g/mol) compared to hydrogen chloride (36.5 g/mol). Being lighter and less dense, ammonia molecules have higher average molecular velocities at the same temperature and diffuse faster.",
+    "betterResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q3_better.png",
+    "weakerResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q3_weaker.png"
+  },
+  {
+    "questionNumber": "Q.4",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "When a piece of Mg ribbon is lit, it burns with a dazzling white light. The combination of Mg with oxygen produces a white substance.\na. Identify the element that has the symbol Mg. (1 Mark)\nb. Write a balanced chemical equation to show the given chemical reaction. (2 Marks)\nc. Which type of bond is formed in the product of this reaction? (1 Mark)",
+    "marks": 4,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "8.2.4",
+    "currentSlo": "8.2.4",
+    "sloText": "Describe the physical and chemical properties of sodium, calcium and magnesium with respect to their position on periodic table.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "checkingHints": [
+      "1 mark for identifying element Mg as Magnesium.",
+      "1 mark for correct chemical formulas in equation (Mg, O2, MgO) and 1 mark for correct balancing: 2Mg + O2 -> 2MgO.",
+      "1 mark for identifying bond as ionic bond (electrovalent bond)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Element name: Magnesium."
+      },
+      {
+        "marks": 2,
+        "description": "Balanced equation: 2Mg(s) + O2(g) -> 2MgO(s) [1 mark for correct reactants and products with O2 as diatomic, 1 mark for balancing coefficients 2, 1, 2]."
+      },
+      {
+        "marks": 1,
+        "description": "Type of bond: Ionic bond (electrovalent bond)."
+      }
+    ],
+    "modelAnswer": "a. The element that has the symbol Mg is Magnesium.\n\nb. Balanced Chemical Equation:\n   2Mg(s) + O2(g) -> 2MgO(s)\n\nc. Type of Bond: Ionic bond (electrovalent bond formed by the transfer of two electrons from magnesium to oxygen, producing Mg2+ and O2- ions).",
+    "betterResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q4_better.png",
+    "weakerResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q4_weaker.png"
+  },
+  {
+    "questionNumber": "Q.5a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "An experiment shows that a compound Y contains 80% carbon and 20% hydrogen by mass. If the relative molecular mass of this compound is 30.07 g/mol, then\ni. calculate the empirical formula of the compound Y. (3 Marks)\nii. determine its molecular formula. (3 Marks)\n(Note: Atomic mass of C = 12 amu and H = 1 amu)",
+    "marks": 6,
+    "cognitiveLevel": "Application",
+    "originalSlo": "1.4.2",
+    "currentSlo": "2.4.2",
+    "sloText": "Calculate empirical formula using the percentages of elements; (calculate the molecular formula using molecular mass and empirical formula).",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "checkingHints": [
+      "1 mark for calculating moles of each element (C = 80/12 = 6.67; H = 20/1 = 20).",
+      "1 mark for simplest atomic ratio (C: 6.67/6.67 = 1; H: 20/6.67 = 3).",
+      "1 mark for empirical formula CH3.",
+      "1 mark for calculating empirical formula mass of CH3 (12 + 3 = 15 g/mol).",
+      "1 mark for calculating n = 30.07 / 15 ≈ 2.",
+      "1 mark for molecular formula C2H6."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Moles calculation: Moles of C = 80 / 12 = 6.67 mol; Moles of H = 20 / 1 = 20 mol."
+      },
+      {
+        "marks": 1,
+        "description": "Mole ratio: C = 6.67 / 6.67 = 1; H = 20 / 6.67 = 3."
+      },
+      {
+        "marks": 1,
+        "description": "Empirical formula is CH3."
+      },
+      {
+        "marks": 1,
+        "description": "Empirical formula mass = 12 + 3(1) = 15 g/mol."
+      },
+      {
+        "marks": 1,
+        "description": "Value of n = Molecular mass / Empirical mass = 30.07 / 15 = 2.004 ≈ 2."
+      },
+      {
+        "marks": 1,
+        "description": "Molecular formula = (CH3) * 2 = C2H6 (Ethane)."
+      }
+    ],
+    "modelAnswer": "i. Calculation of Empirical Formula:\n1. Moles of each element in 100 g of compound Y:\n   - Moles of Carbon (C) = 80 g / 12 g/mol = 6.67 mol\n   - Moles of Hydrogen (H) = 20 g / 1 g/mol = 20.0 mol\n\n2. Simplest atomic ratio (divide by 6.67):\n   - C : 6.67 / 6.67 = 1\n   - H : 20.0 / 6.67 = 3\n\nEmpirical Formula = CH3\n\nii. Determination of Molecular Formula:\n1. Empirical formula mass of CH3 = 12 + (3 * 1) = 15 g/mol\n2. Factor n = Molecular mass / Empirical mass = 30.07 / 15 = 2.004 ≈ 2\n3. Molecular formula = n * (CH3) = (CH3)2 = C2H6 (Ethane)",
+    "betterResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q5a_better.png",
+    "weakerResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q5a_weaker.png"
+  },
+  {
+    "questionNumber": "Q.5b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "You have a solution of copper(II) sulphate in water. You want to obtain solid copper(II) sulphate from it.\ni. Describe why the technique of filtering copper(II) sulphate solution will not work. (1 Mark)\nii. Which method will you use instead? Give a reason to support your answer. (2 Marks)\niii. Describe how you will obtain solid copper(II) sulphate in THREE steps using the method identified in part ii. (3 Marks)",
+    "marks": 6,
+    "cognitiveLevel": "Application",
+    "originalSlo": "6.6.2",
+    "currentSlo": "7.5.2",
+    "sloText": "Describe methods of crystallization and explain why filtration cannot separate soluble salts;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "checkingHints": [
+      "1 mark for explaining that copper(II) sulphate is completely soluble in water, forming a homogeneous solution where ions pass through filter paper.",
+      "1 mark for naming crystallisation and 1 mark for reasoning that it yields pure solid crystals without thermal decomposition.",
+      "3 marks for describing the three steps (heating to saturation point, cooling for crystal formation, filtering and drying crystals)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part i: Filtration only separates insoluble solids from liquids. Copper(II) sulphate dissolves completely in water to form a true homogeneous solution; dissolved Cu2+ and SO4^2- ions pass freely through filter pores."
+      },
+      {
+        "marks": 2,
+        "description": "Part ii: Method: Crystallisation (1 mark). Reason: Upon concentrating the solution and cooling, copper(II) sulphate precipitates out as pure blue hydrated crystals (CuSO4·5H2O) without decomposing the salt (1 mark)."
+      },
+      {
+        "marks": 3,
+        "description": "Part iii (Three steps, 1 mark each): 1. Heat the solution in an evaporating dish to evaporate water until a saturated solution / crystallization point is reached. 2. Allow the hot saturated solution to cool slowly at room temperature to enable crystal growth. 3. Filter the separated crystals from the mother liquor, rinse with cold distilled water, and dry gently between filter papers."
+      }
+    ],
+    "modelAnswer": "i. Why Filtration Will Not Work:\nCopper(II) sulphate is a soluble ionic salt that dissolves completely in water to form a homogeneous true solution. The dissolved copper and sulphate ions are separated at the molecular level (< 1 nm) and pass directly through the pores of filter paper with the water molecules; filtration can only separate insoluble suspended solids.\n\nii. Alternative Method & Reason:\n• Method: Crystallisation.\n• Reason: Crystallisation allows the dissolved solute to separate out as pure, well-formed crystals of hydrated copper(II) sulphate (CuSO4·5H2O) upon cooling a concentrated solution, avoiding thermal decomposition that would occur if heated to complete dryness.\n\niii. Three Steps of Crystallisation:\n1. Evaporation to Saturation Point: Gently heat the copper(II) sulphate solution in an evaporating dish until it becomes concentrated and saturated (tested when crystals form on a cold glass rod placed in the solution).\n2. Cooling and Crystal Growth: Stop heating and leave the hot saturated solution undisturbed to cool slowly at room temperature, allowing large blue crystals of copper(II) sulphate to form.\n3. Separation and Drying: Separate the crystals from the remaining liquid by filtration, wash them with a small amount of cold distilled water, and dry the crystals by pressing them between sheets of filter paper.",
+    "betterResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q5b_better.png",
+    "weakerResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q5b_weaker.png"
+  },
+  {
+    "questionNumber": "Q.6a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "Consider the given dot and cross structure of a compound: [:Cl:]- (2,8,8) [Ca]2+ (2,8,8) [:Cl:]- (2,8,8).\nWith reference to the given dot and cross structure,\ni. identify the type of bond that exists in it. (1 Mark)\nii. describe the role of each atom in the formation of the bond identified in part i. (2 Marks)\niii. write any THREE general characteristics of such types of compounds. (3 Marks)",
+    "marks": 6,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "4.2.4",
+    "currentSlo": "5.3.1",
+    "sloText": "Describe the characteristics of ionic compounds; (describe the formation of an ionic bond.)",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "diagramUrl": "/paper-crops/CHM-IX-2023-P2/q6a.png",
+    "diagramBased": true,
+    "checkingHints": [
+      "1 mark for identifying ionic bond (electrovalent bond).",
+      "1 mark for role of calcium (loses 2 valence electrons to form Ca2+) and 1 mark for role of chlorine (each Cl gains 1 electron to form Cl-).",
+      "1 mark for each valid characteristic of ionic compounds (any 3 required: high melting/boiling points, electrical conductivity in molten/aqueous state, solubility in polar solvents, crystalline solid structure)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Type of bond: Ionic bond (electrovalent bond)."
+      },
+      {
+        "marks": 2,
+        "description": "Role of each atom: Calcium atom loses 2 valence electrons to achieve stable octet configuration (2,8,8) forming Ca2+ ion (1 mark). Two chlorine atoms each accept 1 electron into their valence shell to achieve stable octet (2,8,8) forming two Cl- chloride ions (1 mark)."
+      },
+      {
+        "marks": 3,
+        "description": "Characteristics (any 3, 1 mark each): 1. High melting and boiling points due to strong electrostatic attraction throughout the lattice. 2. Good electrical conductors in molten state or aqueous solution, but non-conductors in solid state. 3. Soluble in polar solvents like water and insoluble in non-polar organic solvents. 4. Exist as hard, brittle crystalline solids with definite crystal lattices."
+      }
+    ],
+    "modelAnswer": "i. Type of Chemical Bond:\nIonic bond (electrovalent bond).\n\nii. Role of Each Atom in Bond Formation:\n• Calcium atom (Ca): Possesses electron configuration (2, 8, 8, 2) and acts as an electron donor, losing its 2 valence electrons to achieve a stable noble gas configuration (2, 8, 8), forming a dipositive calcium cation (Ca2+).\n• Chlorine atoms (Cl): Each chlorine atom possesses electron configuration (2, 8, 7) and acts as an electron acceptor, gaining 1 electron into its valence shell to achieve a stable octet (2, 8, 8), forming a uninegative chloride anion (Cl-).\n\niii. Three General Characteristics of Ionic Compounds:\n1. High Melting and Boiling Points: The strong electrostatic forces of attraction between oppositely charged ions (Ca2+ and Cl-) in the giant ionic crystal lattice require large amounts of thermal energy to overcome.\n2. Electrical Conductivity: Solid ionic compounds do not conduct electricity because ions are locked in fixed lattice positions; however, they become excellent electrical conductors when molten or dissolved in water where ions become mobile.\n3. Solubility in Polar Solvents: Ionic compounds are readily soluble in polar solvents such as water (due to favorable ion-dipole attractions) but insoluble in non-polar organic solvents like benzene or petrol.",
+    "betterResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q6a_better.png",
+    "weakerResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q6a_weaker.png"
+  },
+  {
+    "questionNumber": "Q.6b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "i. Define the term, ‘electrolysis’. (1 Mark)\nii. Describe the electrolysis of concentrated sodium chloride solution (brine). Support your answer by writing chemical equations for reactions occurring at the cathode and the anode of the electrolytic cell. (5 Marks)",
+    "marks": 6,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "7.5.2",
+    "currentSlo": "8.2.5",
+    "sloText": "Describe the manufacturing of sodium hydroxide from aqueous solution of NaCl (brine) using electrolytic cells;",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "checkingHints": [
+      "1 mark for defining electrolysis (decomposition of an electrolyte by direct electric current).",
+      "1 mark for explaining reduction at cathode and 1 mark for balanced cathode reaction: 2H+ + 2e- -> H2.",
+      "1 mark for explaining oxidation at anode and 1 mark for balanced anode reaction: 2Cl- -> Cl2 + 2e-.",
+      "1 mark for explaining combination of remaining Na+ and OH- ions to form sodium hydroxide (NaOH) solution."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Definition of electrolysis: The chemical decomposition of an ionic substance (electrolyte) in molten state or aqueous solution by the passage of a direct electric current."
+      },
+      {
+        "marks": 1,
+        "description": "Cathode explanation: H+ ions from water are preferentially discharged over Na+ ions due to higher reduction potential."
+      },
+      {
+        "marks": 1,
+        "description": "Cathode half-equation: 2H+(aq) + 2e- -> H2(g) [or 2H2O(l) + 2e- -> H2(g) + 2OH-(aq)]."
+      },
+      {
+        "marks": 1,
+        "description": "Anode explanation: Cl- ions are preferentially discharged over OH- ions due to high concentration in brine."
+      },
+      {
+        "marks": 1,
+        "description": "Anode half-equation: 2Cl-(aq) -> Cl2(g) + 2e- (Oxidation)."
+      },
+      {
+        "marks": 1,
+        "description": "Product solution: As H+ and Cl- are discharged and evolve as gases, Na+ and OH- ions accumulate in solution, yielding sodium hydroxide (NaOH)."
+      }
+    ],
+    "modelAnswer": "i. Definition of Electrolysis:\nElectrolysis is the process in which electrical energy from a direct electric current is passed through an electrolyte (in molten state or aqueous solution) to drive a non-spontaneous chemical redox reaction and decompose the substance.\n\nii. Electrolysis of Concentrated Sodium Chloride Solution (Brine):\nBrine contains four types of ions:\n- From NaCl: Na+(aq) and Cl-(aq)\n- From H2O ionization: H+(aq) and OH-(aq)\n\n1. Reaction at the Anode (Oxidation):\nDue to the high concentration of chloride ions in brine, Cl- ions are discharged in preference to OH- ions at the graphite anode, losing electrons to form chlorine gas:\n2Cl-(aq) -> Cl2(g) + 2e-\n\n2. Reaction at the Cathode (Reduction):\nHydrogen ions (H+) have a higher reduction potential than sodium ions (Na+); therefore, H+ ions are selectively discharged at the perforated iron cathode, gaining electrons to evolve hydrogen gas:\n2H+(aq) + 2e- -> H2(g)   [or 2H2O(l) + 2e- -> H2(g) + 2OH-(aq)]\n\n3. Formation of Sodium Hydroxide Solution:\nAs H+ and Cl- ions leave the solution as gaseous hydrogen and chlorine, the remaining sodium ions (Na+) and hydroxide ions (OH-) combine in the aqueous medium, leaving a concentrated solution of caustic soda (sodium hydroxide, NaOH):\nNa+(aq) + OH-(aq) -> NaOH(aq)\n\n4. Overall Balanced Equation:\n2NaCl(aq) + 2H2O(l) -> 2NaOH(aq) + Cl2(g) + H2(g)",
+    "betterResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q6b_better.png",
+    "weakerResponseImage": "/paper-crops/CHM-IX-2023-EMARKING/q6b_weaker.png"
+  }
+]

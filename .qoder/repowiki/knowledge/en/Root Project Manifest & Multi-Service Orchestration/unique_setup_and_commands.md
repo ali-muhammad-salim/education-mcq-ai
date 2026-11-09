@@ -1,0 +1,1 @@
+Database is provisioned exclusively via `docker compose up db` (credentials `prisma/prisma_password/mcqs_db`). App bootstrap is `npm install` (which runs `prisma generate`), then `npm run dev` or `npm run build`. Workers are started with `npm run worker`. Database operations use `npm run db:migrate`, `npm run db:push`, and `npm run db:bootstrap-admin`.

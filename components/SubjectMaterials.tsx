@@ -13,6 +13,9 @@ import styles from "./rise/discovery.module.css";
 import { studyScope, studyChapters } from "@/services/study/navigation";
 import { subjectMaterialTypes } from "@/services/materials/catalog";
 import { supportingMaterialLabels } from '@/lib/materialTypes';
+import { mappedChapterGroups, mappedTheoryUnits } from '@/services/materials/practice';
+import { hsscPhysicsSyllabus } from '@/lib/hsscPhysicsSyllabus';
+import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 
 type Group = "papers" | "practice" | "study" | "lab" | "support";
 
@@ -31,14 +34,31 @@ export default async function SubjectMaterials({
 }) {
   const scope = studyScope(params.board, params.class, params.subject);
   if (!scope) notFound();
+  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const senior = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const [documents, chapters] = await Promise.all([
-    subjectMaterialTypes(params.board, params.class, params.subject),
+    subjectMaterialTypes(params.board, params.class, params.subject).catch(error => {
+      if (hssc && error.name === "PrismaClientInitializationError") return new Set<string>();
+      throw error;
+    }),
     studyChapters(scope),
   ]);
   const legacy =
     scope.board.id === "akueb" &&
     scope.meta.slug === "physics" &&
     [9, 10].includes(scope.classDef.level);
+  const isCsIX = scope.board.id === "akueb" && scope.meta.slug === "computer-science" && scope.classDef.level === 9;
+  const isCsX = scope.board.id === "akueb" && scope.meta.slug === "computer-science" && scope.classDef.level === 10;
+  const isChemIX = scope.board.id === "akueb" && scope.meta.slug === "chemistry" && scope.classDef.level === 9;
+  const isChemX = scope.board.id === "akueb" && scope.meta.slug === "chemistry" && scope.classDef.level === 10;
+  const chemistry = isChemIX || isChemX;
+  const mathematics =
+    scope.board.id === "akueb" &&
+    scope.meta.slug === "mathematics" &&
+    [9, 10].includes(scope.classDef.level);
+  const [mathMcqs, mathTheory] = mathematics
+    ? await Promise.all([mappedChapterGroups(scope.board.shortCode, scope.classDef.level, scope.meta.title), mappedTheoryUnits(scope.board.shortCode, scope.classDef.level, scope.meta.title)])
+    : [[], []];
   const available = (kind: string) => documents.has(kind);
   const items: {
     label: string;
@@ -49,28 +69,37 @@ export default async function SubjectMaterials({
     {
       label: "Syllabus",
       href: scope.baseUrl + "/syllabus",
-      pending: !legacy && !available("syllabus"),
+      pending: !hssc && !legacy && !isCsIX && !isCsX && !chemistry && !mathematics && !available("syllabus"),
       group: "papers",
     },
     {
       label: "Model papers",
       href: scope.baseUrl + "/model-papers",
-      pending: !legacy && !available("model_paper"),
+      pending: !senior && !legacy && !isCsIX && !chemistry && !available("model_paper"),
       group: "papers",
     },
     {
       label: "Past papers",
       href: scope.baseUrl + "/pastpapers",
       pending:
-        !legacy && !available("past_paper"),
+        !(senior?.grade === 11) && !legacy && !isCsIX && !chemistry && !available("past_paper"),
       group: "papers",
     },
     {
       label: "Books & resource guides",
       href: scope.baseUrl + "/books",
-      pending: !legacy && !available("textbook"),
+      pending: !senior && !legacy && !chemistry && !available("textbook"),
       group: "papers",
     },
+    ...(hssc ? [{
+      label: "Chapters & learning outcomes",
+      href: scope.baseUrl + "/study",
+      group: "study" as Group,
+    }] : []),
+    ...(senior ? [
+      { label: "Teaching & learning resource guide", href: senior.base + "/books?view=guide", group: "papers" as Group },
+      { label: "28-week instructional pacing guide", href: senior.base + "/books?view=pacing", group: "papers" as Group },
+    ] : []),
     ...(legacy
       ? [
           {
@@ -92,13 +121,40 @@ export default async function SubjectMaterials({
             group: "papers" as Group,
           },
         ]
-      : []),
+      : chemistry
+        ? [
+            {
+              label: "Teaching & learning resource guide",
+              href:
+                scope.classDef.level === 9
+                  ? "/resources/chemistry-ix-resource-guide"
+                  : "/resources/chemistry-x-resource-guide",
+              pending: false,
+              group: "papers" as Group,
+            },
+            {
+              label: "28-week instructional pacing guide",
+              href:
+                scope.classDef.level === 9
+                  ? "/resources/chemistry-ix-pacing-guide"
+                  : "/resources/chemistry-x-pacing-guide",
+              pending: false,
+              group: "papers" as Group,
+            },
+          ]
+        : []),
     {
       label: "MCQs (Chapter-wise, Past Papers & Full Book)",
       href: scope.baseUrl + "/mcqs",
-      pending: !legacy && !available("mcq"),
+      pending: !senior && !legacy && !isCsIX && !chemistry && !mathMcqs.length && !available("mcq"),
       group: "practice",
     },
+    ...(['crqs', 'erqs', 'numericals'] as const).filter(mode => mathTheory.some(unit => unit[mode].length > 0)).map(mode => ({
+      label: mode === 'crqs' ? 'Chapter-wise CRQs (Short Response Questions)' : mode === 'erqs' ? 'Chapter-wise ERQs (Extended Response Questions)' : 'Chapter-wise Numericals & Worked Problems',
+      href: scope.baseUrl + '/' + mode,
+      pending: false,
+      group: 'practice' as Group,
+    })),
     ...(legacy
       ? [
           {
@@ -147,7 +203,7 @@ export default async function SubjectMaterials({
     {
       label: "Practicals",
       href: scope.baseUrl + "/practicals",
-      pending: !(legacy && scope.classDef.level === 9) && !available('practical_paper'),
+      pending: !hssc && !(legacy && scope.classDef.level === 9) && !chemistry && !available('practical_paper'),
       group: "lab",
     },
     ...Object.entries(supportingMaterialLabels)

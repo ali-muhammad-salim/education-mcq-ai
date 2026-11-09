@@ -108,9 +108,13 @@ checkpoints/prepare-ui-review.cjs
 # Local document inventories and generated import reports
 output/
 .next-ssc-import-preview/
+.next-chapter-check/
 
 # Redesign visual regression baselines
 .design-baseline/
 
 # Source archives
 *.zip
+
+# local agent session logs (contain credentials)
+Run_application_and_verify_*.md

@@ -1,0 +1,2117 @@
+[
+  {
+    "id": "mth-x-2024-p1-q1",
+    "questionNumber": "1",
+    "stem": "Consider the given table for grade 10 students’ scores in a mathematics test:\n\n$$\\begin{array}{|c|c|c|} \\hline \\text{Scores} & \\text{Observations} & \\text{Frequency} \\\\ \\hline 21 - 25 & 21, 23, 23, 25, 25 & 5 \\\\ 26 - 30 & 29, 29, 29 & 3 \\\\ 31 - 35 & 32, 33, 34, 35, 35 & 5 \\\\ 36 - 40 & 38, 38, 38, 38, 40, 39, 38, 39, 39, 40 & 10 \\\\ 41 - 45 & 44, 44, 44, 44, 45, 45 & 6 \\\\ 46 - 50 & 49, 49, 50 & 3 \\\\ \\hline \\end{array}$$\n\nThe total number of students in grade 10 are",
+    "options": {
+      "A": "10",
+      "B": "15",
+      "C": "32",
+      "D": "50"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "The total number of students is the sum of frequencies: $\\sum f = 5 + 3 + 5 + 10 + 6 + 3 = 32$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "14.1.1",
+    "slo": "14.1.1",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 3,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "22.1.1",
+    "current_mapping": [
+      {
+        "code": "22.1.1",
+        "topic": "Basic Statistics",
+        "description": "construct a grouped frequency table (using direct and tally marks method);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The total number of students is the sum of frequencies: $\\sum f = 5 + 3 + 5 + 10 + 6 + 3 = 32$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 22,
+    "sloText": "construct a grouped frequency table (using direct and tally marks method);"
+  },
+  {
+    "id": "mth-x-2024-p1-q2",
+    "questionNumber": "2",
+    "stem": "The given pie chart shows the number of students together with their favourite fruit in a school. What is the percentage of the students whose favourite fruit is orange?",
+    "options": {
+      "A": "11.1",
+      "B": "18.2",
+      "C": "22.2",
+      "D": "40.0"
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Total students $= 45\\ (\\text{Apple}) + 60\\ (\\text{Mango}) + 40\\ (\\text{Orange}) + 50\\ (\\text{Banana}) + 25\\ (\\text{Grapes}) = 220$. The percentage of students liking orange is $\\frac{40}{220} \\times 100\\% \\approx 18.18\\% \\approx 18.2\\%$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "14.1.4",
+    "slo": "14.1.4",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 3,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q2.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "22.2.1",
+    "current_mapping": [
+      {
+        "code": "22.2.1",
+        "topic": "Basic Statistics",
+        "description": "construct a cumulative frequency table;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Total students $= 45\\ (\\text{Apple}) + 60\\ (\\text{Mango}) + 40\\ (\\text{Orange}) + 50\\ (\\text{Banana}) + 25\\ (\\text{Grapes}) = 220$. The percentage of students liking orange is $\\frac{40}{220} \\times 100\\% \\approx 18.18\\% \\approx 18.2\\%$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 22,
+    "sloText": "construct a cumulative frequency table;"
+  },
+  {
+    "id": "mth-x-2024-p1-q3",
+    "questionNumber": "3",
+    "stem": "If the mean of $b, b-1, b-2, b-3\\text{ and }b-4$ is 30, then the value of $b$ will be",
+    "options": {
+      "A": "8",
+      "B": "20",
+      "C": "28",
+      "D": "32"
+    },
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "The sum of the 5 numbers is $5b - 10$. The mean is $\\frac{5b - 10}{5} = b - 2 = 30 \\implies b = 32$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "14.3.1",
+    "slo": "14.3.1",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 4,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "22.3.1",
+    "current_mapping": [
+      {
+        "code": "22.3.1",
+        "topic": "Basic Statistics",
+        "description": "calculate the arithmetic mean by direct method (only), weighted mean, median and mode for ungrouped data;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The sum of the 5 numbers is $5b - 10$. The mean is $\\frac{5b - 10}{5} = b - 2 = 30 \\implies b = 32$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 22,
+    "sloText": "calculate the arithmetic mean by direct method (only), weighted mean, median and mode for ungrouped data;"
+  },
+  {
+    "id": "mth-x-2024-p1-q4",
+    "questionNumber": "4",
+    "stem": "The mean of 33, 35, 38, 39, 41, 42, 40, 38 and 36 is 38. To increase the mean from 38 to 40, what should be added to each observation in the data?",
+    "options": {
+      "A": "-4",
+      "B": "-2",
+      "C": "2",
+      "D": "4"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "By the change of origin property of arithmetic mean, if a constant $c$ is added to every observation, the mean increases by $c$. To increase the mean from 38 to 40, we add $40 - 38 = 2$ to each observation.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "14.3.5",
+    "slo": "14.3.5",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 4,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "22.3.1",
+    "current_mapping": [
+      {
+        "code": "22.3.1",
+        "topic": "Basic Statistics",
+        "description": "calculate the arithmetic mean by direct method (only), weighted mean, median and mode for ungrouped data;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "By the change of origin property of arithmetic mean, if a constant $c$ is added to every observation, the mean increases by $c$. To increase the mean from 38 to 40, we add $40 - 38 = 2$ to each observation.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 22,
+    "sloText": "calculate the arithmetic mean by direct method (only), weighted mean, median and mode for ungrouped data;"
+  },
+  {
+    "id": "mth-x-2024-p1-q5",
+    "questionNumber": "5",
+    "stem": "The given table shows the weights in kilograms (kg) of 5 workers in a super store.\n\n$$\\begin{array}{|c|c|} \\hline \\text{Weight } x\\text{ (kg)} & x^2 \\\\ \\hline 45 & 2025 \\\\ 45 & 2025 \\\\ 47.5 & 2256.25 \\\\ 49.6 & 2460.16 \\\\ 50.5 & 2550.25 \\\\ \\hline \\sum x = 237.6 & \\sum x^2 = 11316.66 \\\\ \\hline \\end{array}$$\n\nThe standard deviation in the weights of workers is",
+    "options": {
+      "A": "67.24",
+      "B": "47.07",
+      "C": "5.18",
+      "D": "2.27"
+    },
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Standard deviation $\\sigma = \\sqrt{\\frac{\\sum x^2}{n} - \\left(\\frac{\\sum x}{n}\\right)^2} = \\sqrt{\\frac{11316.66}{5} - (47.52)^2} = \\sqrt{2263.332 - 2258.1504} = \\sqrt{5.1816} \\approx 2.276\\text{ kg} \\approx 2.27$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "14.4.1",
+    "slo": "14.4.1",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 4,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "22.4.1",
+    "current_mapping": [
+      {
+        "code": "22.4.1",
+        "topic": "Basic Statistics",
+        "description": "calculate the range, variance and standard deviation for grouped and ungrouped data;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Standard deviation $\\sigma = \\sqrt{\\frac{\\sum x^2}{n} - \\left(\\frac{\\sum x}{n}\\right)^2} = \\sqrt{\\frac{11316.66}{5} - (47.52)^2} = \\sqrt{2263.332 - 2258.1504} = \\sqrt{5.1816} \\approx 2.276\\text{ kg} \\approx 2.27$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 22,
+    "sloText": "calculate the range, variance and standard deviation for grouped and ungrouped data;"
+  },
+  {
+    "id": "mth-x-2024-p1-q6",
+    "questionNumber": "6",
+    "stem": "If the range of a data set is 7 and its lowest term is −3, then the highest term is",
+    "options": {
+      "A": "-10",
+      "B": "-4",
+      "C": "4",
+      "D": "10"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "$\\text{Range} = X_{\\max} - X_{\\min} \\implies 7 = X_{\\max} - (-3) \\implies X_{\\max} = 7 - 3 = 4$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "14.4.1",
+    "slo": "14.4.1",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 4,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "22.4.1",
+    "current_mapping": [
+      {
+        "code": "22.4.1",
+        "topic": "Basic Statistics",
+        "description": "calculate the range, variance and standard deviation for grouped and ungrouped data;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$\\text{Range} = X_{\\max} - X_{\\min} \\implies 7 = X_{\\max} - (-3) \\implies X_{\\max} = 7 - 3 = 4$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 22,
+    "sloText": "calculate the range, variance and standard deviation for grouped and ungrouped data;"
+  },
+  {
+    "id": "mth-x-2024-p1-q7",
+    "questionNumber": "7",
+    "stem": "The highest common factor (HCF) of the expressions $4x^2 - 4x + 1$ and $4x^2 - 2x$ is",
+    "options": {
+      "A": "2x",
+      "B": "2x - 1",
+      "C": "2x(2x - 1)^2",
+      "D": "2x^2 + 2x - 1"
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Factorizing: $4x^2 - 4x + 1 = (2x - 1)^2$ and $4x^2 - 2x = 2x(2x - 1)$. The highest common factor is $2x - 1$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "15.1.1",
+    "slo": "15.1.1",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 5,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "6.1.1",
+    "current_mapping": [
+      {
+        "code": "6.1.1",
+        "topic": "Algebraic Manipulation",
+        "description": "determine the highest common factor (H.C.F.) and the least common multiple (L.C.M.) of algebraic expressions using factorisation;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Factorizing: $4x^2 - 4x + 1 = (2x - 1)^2$ and $4x^2 - 2x = 2x(2x - 1)$. The highest common factor is $2x - 1$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "determine the highest common factor (H.C.F.) and the least common multiple (L.C.M.) of algebraic expressions using factorisation;"
+  },
+  {
+    "id": "mth-x-2024-p1-q8",
+    "questionNumber": "8",
+    "stem": "The least common multiple (LCM) of $(x^3 - 1)$ and $(x^2 + x + 1)$ is",
+    "options": {
+      "A": "x - 1",
+      "B": "x^2 + x + 1",
+      "C": "(x - 1)(x^2 + x + 1)",
+      "D": "(x - 1)^2 (x^2 + x + 1)"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "$x^3 - 1 = (x - 1)(x^2 + x + 1)$. The other expression is already $x^2 + x + 1$. The LCM is $(x - 1)(x^2 + x + 1) = x^3 - 1$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "15.1.2",
+    "slo": "15.1.2",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 5,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "6.1.1",
+    "current_mapping": [
+      {
+        "code": "6.1.1",
+        "topic": "Algebraic Manipulation",
+        "description": "determine the highest common factor (H.C.F.) and the least common multiple (L.C.M.) of algebraic expressions using factorisation;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$x^3 - 1 = (x - 1)(x^2 + x + 1)$. The other expression is already $x^2 + x + 1$. The LCM is $(x - 1)(x^2 + x + 1) = x^3 - 1$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "determine the highest common factor (H.C.F.) and the least common multiple (L.C.M.) of algebraic expressions using factorisation;"
+  },
+  {
+    "id": "mth-x-2024-p1-q9",
+    "questionNumber": "9",
+    "stem": "On simplifying the expressions $\\frac{1}{(x-y)^2} + \\frac{1}{[-(x-y)]^2}$, we get",
+    "options": {
+      "A": "0",
+      "B": "\\frac{2}{(x-y)^2}",
+      "C": "-\\frac{2}{(x-y)^2}",
+      "D": "\\frac{x^2+y^2-2}{(x-y)^2}"
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Since $[-(x-y)]^2 = (-(x-y))^2 = (x-y)^2$, the sum is $\\frac{1}{(x-y)^2} + \\frac{1}{(x-y)^2} = \\frac{2}{(x-y)^2}$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "15.13",
+    "slo": "15.13",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 5,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "6.2.2",
+    "current_mapping": [
+      {
+        "code": "6.2.2",
+        "topic": "Algebraic Manipulation",
+        "description": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Since $[-(x-y)]^2 = (-(x-y))^2 = (x-y)^2$, the sum is $\\frac{1}{(x-y)^2} + \\frac{1}{(x-y)^2} = \\frac{2}{(x-y)^2}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;"
+  },
+  {
+    "id": "mth-x-2024-p1-q10",
+    "questionNumber": "10",
+    "stem": "The simplest form of $\\frac{3x}{x^2 - 2x + 1} \\div \\frac{x}{x-1}$ is",
+    "options": {
+      "A": "3",
+      "B": "\\frac{3}{2-x}",
+      "C": "\\frac{3-2x}{x}",
+      "D": "\\frac{3}{x-1}"
+    },
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "$\\frac{3x}{(x-1)^2} \\div \\frac{x}{x-1} = \\frac{3x}{(x-1)^2} \\times \\frac{x-1}{x} = \\frac{3}{x-1}$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "15.2.1",
+    "slo": "15.2.1",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 5,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "6.2.2",
+    "current_mapping": [
+      {
+        "code": "6.2.2",
+        "topic": "Algebraic Manipulation",
+        "description": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$\\frac{3x}{(x-1)^2} \\div \\frac{x}{x-1} = \\frac{3x}{(x-1)^2} \\times \\frac{x-1}{x} = \\frac{3}{x-1}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;"
+  },
+  {
+    "id": "mth-x-2024-p1-q11",
+    "questionNumber": "11",
+    "stem": "$\\frac{x+1}{x-3}$ is the reduced form of",
+    "options": {
+      "A": "\\frac{(x+1)(x-1)}{(x-3)(x-1)^2}",
+      "B": "\\frac{(x-1)(x+1)}{(x-3)(x+1)^2}",
+      "C": "\\frac{(x^2 - 1)(x-3)}{(x-3)^2 (x-1)}",
+      "D": "\\frac{(x^2 + 1)(x-3)}{(x-3)^2 (x+1)}"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Simplifying Option C: $\\frac{(x^2 - 1)(x-3)}{(x-3)^2 (x-1)} = \\frac{(x-1)(x+1)(x-3)}{(x-3)^2(x-1)} = \\frac{x+1}{x-3}$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "15.2.1",
+    "slo": "15.2.1",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 6,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "6.2.2",
+    "current_mapping": [
+      {
+        "code": "6.2.2",
+        "topic": "Algebraic Manipulation",
+        "description": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Simplifying Option C: $\\frac{(x^2 - 1)(x-3)}{(x-3)^2 (x-1)} = \\frac{(x-1)(x+1)(x-3)}{(x-3)^2(x-1)} = \\frac{x+1}{x-3}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "simplify algebraic fractional expressions or rational expressions involving basic operations of +, -, ×, ÷;"
+  },
+  {
+    "id": "mth-x-2024-p1-q12",
+    "questionNumber": "12",
+    "stem": "$\\sqrt{\\frac{t^6}{s^4} + \\frac{t^3}{s^2} + \\frac{1}{4}}$ is equal to",
+    "options": {
+      "A": "3t",
+      "B": "\\frac{t^6}{s^4} + \\frac{1}{4}",
+      "C": "\\left(\\frac{t^3}{s^2} + \\frac{1}{2}\\right)",
+      "D": "\\left(\\frac{t^3}{s^3} + \\frac{1}{2}\\right)"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Notice that $\\frac{t^6}{s^4} + \\frac{t^3}{s^2} + \\frac{1}{4} = \\left(\\frac{t^3}{s^2}\\right)^2 + 2\\left(\\frac{t^3}{s^2}\\right)\\left(\\frac{1}{2}\\right) + \\left(\\frac{1}{2}\\right)^2 = \\left(\\frac{t^3}{s^2} + \\frac{1}{2}\\right)^2$. Taking square root gives $\\left(\\frac{t^3}{s^2} + \\frac{1}{2}\\right)$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "15.31",
+    "slo": "15.31",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 6,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "6.3.1",
+    "current_mapping": [
+      {
+        "code": "6.3.1",
+        "topic": "Algebraic Manipulation",
+        "description": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Notice that $\\frac{t^6}{s^4} + \\frac{t^3}{s^2} + \\frac{1}{4} = \\left(\\frac{t^3}{s^2}\\right)^2 + 2\\left(\\frac{t^3}{s^2}\\right)\\left(\\frac{1}{2}\\right) + \\left(\\frac{1}{2}\\right)^2 = \\left(\\frac{t^3}{s^2} + \\frac{1}{2}\\right)^2$. Taking square root gives $\\left(\\frac{t^3}{s^2} + \\frac{1}{2}\\right)$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "calculate square root of algebraic expressions by:\na. factorisation,\nb. division;"
+  },
+  {
+    "id": "mth-x-2024-p1-q13",
+    "questionNumber": "13",
+    "stem": "To resolve $\\frac{3x - 7}{(3x+2)^2 (3x+7)}$ into its partial fractions, the CORRECT form is",
+    "options": {
+      "A": "\\frac{A}{(3x+2)^2} + \\frac{B}{3x+7}",
+      "B": "\\frac{A}{(3x+2)^2} - \\frac{B}{3x+7}",
+      "C": "\\frac{A}{3x+2} + \\frac{B}{(3x+2)^2} + \\frac{C}{3x+7}",
+      "D": "\\frac{A}{x} + \\frac{Bx+C}{(3x+2)^2} - \\frac{D}{3x+7}"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "For repeated linear factor $(3x+2)^2$ and non-repeated linear factor $(3x+7)$, the proper partial fraction decomposition is $\\frac{A}{3x+2} + \\frac{B}{(3x+2)^2} + \\frac{C}{3x+7}$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "16.2.1(b)",
+    "slo": "16.2.1(b)",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 6,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "6.4.2",
+    "current_mapping": [
+      {
+        "code": "6.4.2",
+        "topic": "Algebraic Manipulation",
+        "description": "convert an algebraic fraction into partial fractions when its denominator consists of:\na. non-repeated linear factors,\nb. repeated linear factors;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "For repeated linear factor $(3x+2)^2$ and non-repeated linear factor $(3x+7)$, the proper partial fraction decomposition is $\\frac{A}{3x+2} + \\frac{B}{(3x+2)^2} + \\frac{C}{3x+7}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 6,
+    "sloText": "convert an algebraic fraction into partial fractions when its denominator consists of:\na. non-repeated linear factors,\nb. repeated linear factors;"
+  },
+  {
+    "id": "mth-x-2024-p1-q14",
+    "questionNumber": "14",
+    "stem": "The solution of $2x - 3 = -3 - 2x$ is",
+    "options": {
+      "A": "0",
+      "B": "-1.5",
+      "C": "-3",
+      "D": "not possible"
+    },
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "$2x - 3 = -3 - 2x \\implies 2x + 2x = -3 + 3 \\implies 4x = 0 \\implies x = 0$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "17.1.2",
+    "slo": "17.1.2",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 7,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "7.1.1",
+    "current_mapping": [
+      {
+        "code": "7.1.1",
+        "topic": "Linear Equations and Inequalities",
+        "description": "define linear equation in one variable;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$2x - 3 = -3 - 2x \\implies 2x + 2x = -3 + 3 \\implies 4x = 0 \\implies x = 0$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "define linear equation in one variable;"
+  },
+  {
+    "id": "mth-x-2024-p1-q15",
+    "questionNumber": "15",
+    "stem": "Which of the following condition(s) is/ are possible for $|x|$?\n\nI. $|x| < 0$\nII. $|x| = 0$\nIII. $|x| > 0$",
+    "options": {
+      "A": "I only",
+      "B": "III only",
+      "C": "I and II",
+      "D": "II and III"
+    },
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "By definition of absolute value for real $x$, $|x| \\ge 0$. It can equal 0 (when $x = 0$) or be strictly positive (when $x \\ne 0$). It can never be negative ($|x| < 0$ is impossible). Thus II and III are possible.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "17.4.3",
+    "slo": "17.4.3",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 7,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "7.2.2",
+    "current_mapping": [
+      {
+        "code": "7.2.2",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve equations involving absolute valued functions in one variable;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "By definition of absolute value for real $x$, $|x| \\ge 0$. It can equal 0 (when $x = 0$) or be strictly positive (when $x \\ne 0$). It can never be negative ($|x| < 0$ is impossible). Thus II and III are possible.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve equations involving absolute valued functions in one variable;"
+  },
+  {
+    "id": "mth-x-2024-p1-q16",
+    "questionNumber": "16",
+    "stem": "Two times of a number $x$ reduced by 3 is 5. The equation representing the given situation is",
+    "options": {
+      "A": "2 - 3x = 5",
+      "B": "2x - 3 = 5",
+      "C": "2x + 3 = 5",
+      "D": "2(x - 3) = 5"
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "\"Two times of a number $x$\" is $2x$. \"Reduced by 3\" means subtracting 3, yielding $2x - 3$. \"is 5\" means $= 5$. The equation is $2x - 3 = 5$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "17.1.4",
+    "slo": "17.1.4",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 7,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "7.1.1",
+    "current_mapping": [
+      {
+        "code": "7.1.1",
+        "topic": "Linear Equations and Inequalities",
+        "description": "define linear equation in one variable;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "\"Two times of a number $x$\" is $2x$. \"Reduced by 3\" means subtracting 3, yielding $2x - 3$. \"is 5\" means $= 5$. The equation is $2x - 3 = 5$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "define linear equation in one variable;"
+  },
+  {
+    "id": "mth-x-2024-p1-q17",
+    "questionNumber": "17",
+    "stem": "The roots which satisfy the equation $|4x - 2| = 14$ are",
+    "options": {
+      "A": "-4 and 3",
+      "B": "-3 and 4",
+      "C": "-12 and 16",
+      "D": "-16 and 12"
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "$|4x - 2| = 14 \\implies 4x - 2 = 14 \\implies 4x = 16 \\implies x = 4$; or $4x - 2 = -14 \\implies 4x = -12 \\implies x = -3$. The roots are $-3$ and $4$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "17.2.2",
+    "slo": "17.2.2",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 7,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "7.2.2",
+    "current_mapping": [
+      {
+        "code": "7.2.2",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve equations involving absolute valued functions in one variable;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$|4x - 2| = 14 \\implies 4x - 2 = 14 \\implies 4x = 16 \\implies x = 4$; or $4x - 2 = -14 \\implies 4x = -12 \\implies x = -3$. The roots are $-3$ and $4$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve equations involving absolute valued functions in one variable;"
+  },
+  {
+    "id": "mth-x-2024-p1-q18",
+    "questionNumber": "18",
+    "stem": "The given number line is the result of",
+    "options": {
+      "A": "y \\le -5",
+      "B": "y > -5",
+      "C": "1.5 \\le y < 5",
+      "D": "1.5 < y \\le 5"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "The number line shows a closed (solid) circle at $1.5$ and an open (hollow) circle at $5$, with the interval between them shaded. This represents the compound inequality $1.5 \\le y < 5$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "17.4.2",
+    "slo": "17.4.2",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 7,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q18.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "7.3.1",
+    "current_mapping": [
+      {
+        "code": "7.3.1",
+        "topic": "Linear Equations and Inequalities",
+        "description": "define inequalities:\na. less than (<),\nb. greater than (>),\nc. less than or equal (≤),\nd. greater than or equal (≥);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The number line shows a closed (solid) circle at $1.5$ and an open (hollow) circle at $5$, with the interval between them shaded. This represents the compound inequality $1.5 \\le y < 5$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "define inequalities:\na. less than (<),\nb. greater than (>),\nc. less than or equal (≤),\nd. greater than or equal (≥);"
+  },
+  {
+    "id": "mth-x-2024-p1-q19",
+    "questionNumber": "19",
+    "stem": "The solution set of $|x| < -2$ is",
+    "options": {
+      "A": "\\{-2, -3, -4, \\dots\\}",
+      "B": "\\{-2, -1, 0, 1, 2\\}",
+      "C": "\\{-1, 0, 1\\}",
+      "D": "\\{ \\}"
+    },
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "The absolute value $|x|$ of any real number is non-negative ($|x| \\ge 0$). It can never be strictly less than $-2$. Therefore, the solution set is empty, denoted by $\\{\\}$ (or $\\emptyset$).",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "17.4.3(a)",
+    "slo": "17.4.3(a)",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 7,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "7.2.2",
+    "current_mapping": [
+      {
+        "code": "7.2.2",
+        "topic": "Linear Equations and Inequalities",
+        "description": "solve equations involving absolute valued functions in one variable;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The absolute value $|x|$ of any real number is non-negative ($|x| \\ge 0$). It can never be strictly less than $-2$. Therefore, the solution set is empty, denoted by $\\{\\}$ (or $\\emptyset$).",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 7,
+    "sloText": "solve equations involving absolute valued functions in one variable;"
+  },
+  {
+    "id": "mth-x-2024-p1-q20",
+    "questionNumber": "20",
+    "stem": "If $(a, b)$ is a point in the Cartesian plane and $a > 0$ and $b < 0$, then the point lies in the",
+    "options": {
+      "A": "I quadrant.",
+      "B": "II quadrant.",
+      "C": "III quadrant.",
+      "D": "IV quadrant."
+    },
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "In the Cartesian coordinate system: Quadrant I has $(+, +)$, Quadrant II has $(-, +)$, Quadrant III has $(-, -)$, and Quadrant IV has $(+, -)$. Since $a > 0$ (positive) and $b < 0$ (negative), $(a, b)$ lies in the IV quadrant.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "18.1.3",
+    "slo": "18.1.3",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 8,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "9.1.1",
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "describe coordinate geometry;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "In the Cartesian coordinate system: Quadrant I has $(+, +)$, Quadrant II has $(-, +)$, Quadrant III has $(-, -)$, and Quadrant IV has $(+, -)$. Since $a > 0$ (positive) and $b < 0$ (negative), $(a, b)$ lies in the IV quadrant.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "describe coordinate geometry;"
+  },
+  {
+    "id": "mth-x-2024-p1-q21",
+    "questionNumber": "21",
+    "stem": "The slope and $y$-intercept in the given graph are",
+    "options": {
+      "A": "-2 and 3 respectively.",
+      "B": "-2 and 1.5 respectively.",
+      "C": "-0.5 and 3 respectively.",
+      "D": "-0.5 and 1.5 respectively."
+    },
+    "correctOption": "A",
+    "official_answer": "•",
+    "solved_correct_option": "A",
+    "answerStatus": "ANSWER_CORRECTED",
+    "answer_review_note": "Official key contains a bullet (•) placeholder. Independent derivation conclusively gives slope $m = -2$ and $y$-intercept $c = 3$ (Option A). Verified against line passing through $(0, 3)$ and $(1.5, 0)$.",
+    "explanation": "The line passes through $(0, 3)$ and $(1.5, 0)$. The $y$-intercept is $c = 3$. The slope is $m = \\frac{0 - 3}{1.5 - 0} = \\frac{-3}{1.5} = -2$. Thus slope and $y$-intercept are $-2$ and $3$ respectively.",
+    "answer_origin": "Reviewed correction: mathematical ground truth takes precedence over printed key erratum",
+    "originalSlo": "18.1.6(b)",
+    "slo": "18.1.6(b)",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 8,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q21.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "9.4.1",
+    "current_mapping": [
+      {
+        "code": "9.4.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The line passes through $(0, 3)$ and $(1.5, 0)$. The $y$-intercept is $c = 3$. The slope is $m = \\frac{0 - 3}{1.5 - 0} = \\frac{-3}{1.5} = -2$. Thus slope and $y$-intercept are $-2$ and $3$ respectively.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "describe equation of a straight line in:\na. slope-intercept form,\nb. point-slope form;"
+  },
+  {
+    "id": "mth-x-2024-p1-q22",
+    "questionNumber": "22",
+    "stem": "The given graph shows the relation between temperature in Fahrenheit and Celsius scale. From the given graph, the value of −10 degree Celsius on Fahrenheit scale would be",
+    "options": {
+      "A": "-14",
+      "B": "-11",
+      "C": "14",
+      "D": "50"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Using the conversion formula $F = \\frac{9}{5}C + 32$: for $C = -10$, $F = \\frac{9}{5}(-10) + 32 = -18 + 32 = 14^\\circ\\text{F}$. From the graph at $C = -10$, the line corresponds to $F = 14$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "18.2.2(c)",
+    "slo": "18.2.2(c)",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 9,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q22.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "9.5.1",
+    "current_mapping": [
+      {
+        "code": "9.5.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "apply the concepts of coordinate geometry to real world problems."
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Using the conversion formula $F = \\frac{9}{5}C + 32$: for $C = -10$, $F = \\frac{9}{5}(-10) + 32 = -18 + 32 = 14^\\circ\\text{F}$. From the graph at $C = -10$, the line corresponds to $F = 14$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "apply the concepts of coordinate geometry to real world problems."
+  },
+  {
+    "id": "mth-x-2024-p1-q23",
+    "questionNumber": "23",
+    "stem": "The standard form of the quadratic equation $\\frac{3}{2} + x^2 = 2x$ is",
+    "options": {
+      "A": "2x^2 + 4x + 3 = 0",
+      "B": "2x^2 - 4x + 3 = 0",
+      "C": "x^2 + 4x + 3 = 0",
+      "D": "x^2 - 2x + 3 = 0"
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Multiply the entire equation by 2: $3 + 2x^2 = 4x \\implies 2x^2 - 4x + 3 = 0$. This is in standard form $ax^2 + bx + c = 0$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "19.1.2",
+    "slo": "19.1.2",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 9,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "15.1.2",
+    "current_mapping": [
+      {
+        "code": "15.1.2",
+        "topic": "Quadratic Equations",
+        "description": "convert a given quadratic equation in standard form;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Multiply the entire equation by 2: $3 + 2x^2 = 4x \\implies 2x^2 - 4x + 3 = 0$. This is in standard form $ax^2 + bx + c = 0$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 15,
+    "sloText": "convert a given quadratic equation in standard form;"
+  },
+  {
+    "id": "mth-x-2024-p1-q24",
+    "questionNumber": "24",
+    "stem": "To complete the square of the equation $2y^2 - 10y + m = 0$, the value of $m$ will be",
+    "options": {
+      "A": "-\\frac{25}{2}",
+      "B": "-\\frac{25}{8}",
+      "C": "\\frac{25}{8}",
+      "D": "\\frac{25}{2}"
+    },
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Divide by 2: $y^2 - 5y + \\frac{m}{2} = 0$. To form a perfect square $(y - \\frac{5}{2})^2 = y^2 - 5y + \\frac{25}{4}$, the constant term must be $\\frac{25}{4} \\implies \\frac{m}{2} = \\frac{25}{4} \\implies m = \\frac{25}{2}$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "19.2.1",
+    "slo": "19.2.1",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 10,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "15.2.1",
+    "current_mapping": [
+      {
+        "code": "15.2.1",
+        "topic": "Quadratic Equations",
+        "description": "solve a quadratic equation in one variable by:\na. factorisation method,\nb. completing square method,\nc. using quadratic formula;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Divide by 2: $y^2 - 5y + \\frac{m}{2} = 0$. To form a perfect square $(y - \\frac{5}{2})^2 = y^2 - 5y + \\frac{25}{4}$, the constant term must be $\\frac{25}{4} \\implies \\frac{m}{2} = \\frac{25}{4} \\implies m = \\frac{25}{2}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 15,
+    "sloText": "solve a quadratic equation in one variable by:\na. factorisation method,\nb. completing square method,\nc. using quadratic formula;"
+  },
+  {
+    "id": "mth-x-2024-p1-q25",
+    "questionNumber": "25",
+    "stem": "The discriminant of the equation $5x^2 = 20$ is",
+    "options": {
+      "A": "-400",
+      "B": "-380",
+      "C": "380",
+      "D": "400"
+    },
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "In standard form: $5x^2 + 0x - 20 = 0$, where $a = 5, b = 0, c = -20$. The discriminant is $\\Delta = b^2 - 4ac = 0^2 - 4(5)(-20) = +400$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "19.3.2",
+    "slo": "19.3.2",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 10,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "15.4.1",
+    "current_mapping": [
+      {
+        "code": "15.4.1",
+        "topic": "Quadratic Equations",
+        "description": "define discriminant (b^2 - 4ac) of the quadratic equation ax^2 + bx + c = 0; a ≠ 0;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "In standard form: $5x^2 + 0x - 20 = 0$, where $a = 5, b = 0, c = -20$. The discriminant is $\\Delta = b^2 - 4ac = 0^2 - 4(5)(-20) = +400$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 15,
+    "sloText": "define discriminant (b^2 - 4ac) of the quadratic equation ax^2 + bx + c = 0; a ≠ 0;"
+  },
+  {
+    "id": "mth-x-2024-p1-q26",
+    "questionNumber": "26",
+    "stem": "Asfar walks at an average speed of $\\left(x - \\frac{1}{x}\\right)\\text{ km/h}$ for $x$ hours. After this, he cycles at an average speed of $(3x + 2)\\text{ km/h}$ for $x$ hours. If he covers 10 km in this journey, then the expression representing total distance covered will be (Note: Distance = speed × time)",
+    "options": {
+      "A": "4x^2 + 2x - 1 = 10",
+      "B": "3x^2 + 2x - 1 = 10",
+      "C": "4x^2 - 2x + 1 = 10",
+      "D": "3x^2 + 2x + 1 = 10"
+    },
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Walking distance $= \\left(x - \\frac{1}{x}\\right) \\times x = x^2 - 1$. Cycling distance $= (3x + 2) \\times x = 3x^2 + 2x$. Total distance $= (x^2 - 1) + (3x^2 + 2x) = 4x^2 + 2x - 1 = 10$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "19.3.5",
+    "slo": "19.3.5",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 10,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "15.5.1",
+    "current_mapping": [
+      {
+        "code": "15.5.1",
+        "topic": "Quadratic Equations",
+        "description": "solve system of two simultaneous equations in two variables when:\na. one equation is linear and the other is quadratic (i.e., a_1 x + b_1 y = c_1, a_2 x^2 + b_2 y^2 = c_2),\nb. both the equations are quadratic (i.e., a_1 x^2 + b_1 y^2 = c_1, a_2 x^2 + b_2 y^2 = c_2);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Walking distance $= \\left(x - \\frac{1}{x}\\right) \\times x = x^2 - 1$. Cycling distance $= (3x + 2) \\times x = 3x^2 + 2x$. Total distance $= (x^2 - 1) + (3x^2 + 2x) = 4x^2 + 2x - 1 = 10$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 15,
+    "sloText": "solve system of two simultaneous equations in two variables when:\na. one equation is linear and the other is quadratic (i.e., a_1 x + b_1 y = c_1, a_2 x^2 + b_2 y^2 = c_2),\nb. both the equations are quadratic (i.e., a_1 x^2 + b_1 y^2 = c_1, a_2 x^2 + b_2 y^2 = c_2);"
+  },
+  {
+    "id": "mth-x-2024-p1-q27",
+    "questionNumber": "27",
+    "stem": "In the given diagram, the length of line segment $AB$ is",
+    "options": {
+      "A": "6",
+      "B": "7",
+      "C": "8",
+      "D": "10"
+    },
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Points are $A(0, 0)$ and $B(6, 8)$. By the distance formula, $AB = \\sqrt{(6 - 0)^2 + (8 - 0)^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "20.1.3",
+    "slo": "20.1.3",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 10,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q27.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "9.1.1",
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "describe coordinate geometry;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Points are $A(0, 0)$ and $B(6, 8)$. By the distance formula, $AB = \\sqrt{(6 - 0)^2 + (8 - 0)^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "describe coordinate geometry;"
+  },
+  {
+    "id": "mth-x-2024-p1-q28",
+    "questionNumber": "28",
+    "stem": "Which of the given set of points is non-collinear?",
+    "options": {
+      "A": "(0, 1), (0, 3), (0, 5)",
+      "B": "(1, 0), (3, 0), (5, 0)",
+      "C": "(-1, 0), (0, 1), (0, 0)",
+      "D": "(-1, -1), (0, 0), (1, 1)"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Points in A all lie on the line $x = 0$ (collinear). Points in B lie on $y = 0$ (collinear). Points in D lie on $y = x$ (collinear). For C: $(-1, 0)$ and $(0, 0)$ lie on the $x$-axis, but $(0, 1)$ lies on the $y$-axis; the slope between $(-1, 0)$ and $(0, 0)$ is 0, while between $(0, 0)$ and $(0, 1)$ it is undefined. They form a triangle and are non-collinear.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "20.2 .2",
+    "slo": "20.2 .2",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 11,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "9.1.1",
+    "current_mapping": [
+      {
+        "code": "9.1.1",
+        "topic": "Introduction to Coordinate Geometry",
+        "description": "describe coordinate geometry;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Points in A all lie on the line $x = 0$ (collinear). Points in B lie on $y = 0$ (collinear). Points in D lie on $y = x$ (collinear). For C: $(-1, 0)$ and $(0, 0)$ lie on the $x$-axis, but $(0, 1)$ lies on the $y$-axis; the slope between $(-1, 0)$ and $(0, 0)$ is 0, while between $(0, 0)$ and $(0, 1)$ it is undefined. They form a triangle and are non-collinear.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 9,
+    "sloText": "describe coordinate geometry;"
+  },
+  {
+    "id": "mth-x-2024-p1-q29",
+    "questionNumber": "29",
+    "stem": "The decimal form of the angle $25^\\circ 18\\' 36\\'\\'$ is",
+    "options": {
+      "A": "25.15°",
+      "B": "25.31°",
+      "C": "25.41°",
+      "D": "25.91°"
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "$25^\\circ 18\\' 36\\'\\' = 25 + \\frac{18}{60} + \\frac{36}{3600} = 25 + 0.30 + 0.01 = 25.31^\\circ$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "21.1.2",
+    "slo": "21.1.2",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 11,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "14.1.2",
+    "current_mapping": [
+      {
+        "code": "14.1.2",
+        "topic": "Introduction to Trigonometry",
+        "description": "convert an angle from D°M'S\" to decimal form or vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$25^\\circ 18\\' 36\\'\\' = 25 + \\frac{18}{60} + \\frac{36}{3600} = 25 + 0.30 + 0.01 = 25.31^\\circ$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "convert an angle from D°M'S\" to decimal form or vice versa;"
+  },
+  {
+    "id": "mth-x-2024-p1-q30",
+    "questionNumber": "30",
+    "stem": "On simplification, the expression $\\sqrt{2\\sec^2 \\theta - 2\\tan^2 \\theta}$ is equal to",
+    "options": {
+      "A": "2(\\sec \\theta - \\tan \\theta)",
+      "B": "\\sqrt{2}(\\sec \\theta - \\tan \\theta)",
+      "C": "\\sqrt{2}",
+      "D": "2"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "$\\sqrt{2\\sec^2 \\theta - 2\\tan^2 \\theta} = \\sqrt{2(\\sec^2 \\theta - \\tan^2 \\theta)}$. Using the fundamental Pythagorean identity $\\sec^2 \\theta - \\tan^2 \\theta = 1$, we get $\\sqrt{2(1)} = \\sqrt{2}$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "21.4.2",
+    "slo": "21.4.2",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 11,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "14.4.1",
+    "current_mapping": [
+      {
+        "code": "14.4.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "explain the fundamental trigonometric identities i.e., sin^2(θ) + cos^2(θ) = 1, 1 + tan^2(θ) = sec^2(θ), 1 + cot^2(θ) = cosec^2(θ);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$\\sqrt{2\\sec^2 \\theta - 2\\tan^2 \\theta} = \\sqrt{2(\\sec^2 \\theta - \\tan^2 \\theta)}$. Using the fundamental Pythagorean identity $\\sec^2 \\theta - \\tan^2 \\theta = 1$, we get $\\sqrt{2(1)} = \\sqrt{2}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "explain the fundamental trigonometric identities i.e., sin^2(θ) + cos^2(θ) = 1, 1 + tan^2(θ) = sec^2(θ), 1 + cot^2(θ) = cosec^2(θ);"
+  },
+  {
+    "id": "mth-x-2024-p1-q31",
+    "questionNumber": "31",
+    "stem": "Use the given image to answer Q.31 and Q.32.\n\nWith reference to the trigonometric ratios, the distance of the ladder from the wall is",
+    "options": {
+      "A": "$\\frac{2}{\\sqrt{3}}\\text{ m.}$",
+      "B": "$\\frac{3}{\\sqrt{3}}\\text{ m.}$",
+      "C": "$\\frac{3}{2}\\text{ m.}$",
+      "D": "6 m."
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "In the right triangle formed by the wall and ground: $\\tan 30^\\circ = \\frac{\\text{Opposite}}{\\text{Adjacent}} = \\frac{\\text{Height of wall}}{\\text{Distance from wall}} = \\frac{3}{d}$. Thus $d = \\frac{3}{\\tan 30^\\circ} = \\frac{3}{1/\\sqrt{3}} = 3\\sqrt{3}\\text{ m}$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "21.5 .2",
+    "slo": "21.5 .2",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 11,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q31.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "14.5.2",
+    "current_mapping": [
+      {
+        "code": "14.5.2",
+        "topic": "Introduction to Trigonometry",
+        "description": "solve word problems involving angle of elevation and depression in a right-angled triangle."
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "In the right triangle formed by the wall and ground: $\\tan 30^\\circ = \\frac{\\text{Opposite}}{\\text{Adjacent}} = \\frac{\\text{Height of wall}}{\\text{Distance from wall}} = \\frac{3}{d}$. Thus $d = \\frac{3}{\\tan 30^\\circ} = \\frac{3}{1/\\sqrt{3}} = 3\\sqrt{3}\\text{ m}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "solve word problems involving angle of elevation and depression in a right-angled triangle."
+  },
+  {
+    "id": "mth-x-2024-p1-q32",
+    "questionNumber": "32",
+    "stem": "The angle of depression is",
+    "options": {
+      "A": "30°",
+      "B": "60°",
+      "C": "120°",
+      "D": "150°"
+    },
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "The angle of depression from the top of the wall to the foot of the ladder equals the angle of elevation of the ladder from the ground (alternate interior angles between horizontal lines), which is $30^\\circ$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "21.5 .1",
+    "slo": "21.5 .1",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 11,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "14.5.1",
+    "current_mapping": [
+      {
+        "code": "14.5.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "describe the angle of elevation and depression;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The angle of depression from the top of the wall to the foot of the ladder equals the angle of elevation of the ladder from the ground (alternate interior angles between horizontal lines), which is $30^\\circ$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "describe the angle of elevation and depression;"
+  },
+  {
+    "id": "mth-x-2024-p1-q33",
+    "questionNumber": "33",
+    "stem": "The value of $\\frac{\\sec(45^\\circ)}{\\sin(45^\\circ)}$ in simplest form will be",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "$\\frac{1}{\\sqrt{2}}$",
+      "D": "$\\frac{1}{2\\sqrt{2}}$"
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "$\\sec 45^\\circ = \\sqrt{2}$ and $\\sin 45^\\circ = \\frac{1}{\\sqrt{2}}$. Therefore, $\\frac{\\sec 45^\\circ}{\\sin 45^\\circ} = \\frac{\\sqrt{2}}{1/\\sqrt{2}} = \\sqrt{2} \\times \\sqrt{2} = 2$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "21.3 .2",
+    "slo": "21.3 .2",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 12,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "14.2.3",
+    "current_mapping": [
+      {
+        "code": "14.2.3",
+        "topic": "Introduction to Trigonometry",
+        "description": "calculate the values of trigonometric ratios and their reciprocals for 30°, 45° and 60°;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$\\sec 45^\\circ = \\sqrt{2}$ and $\\sin 45^\\circ = \\frac{1}{\\sqrt{2}}$. Therefore, $\\frac{\\sec 45^\\circ}{\\sin 45^\\circ} = \\frac{\\sqrt{2}}{1/\\sqrt{2}} = \\sqrt{2} \\times \\sqrt{2} = 2$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "calculate the values of trigonometric ratios and their reciprocals for 30°, 45° and 60°;"
+  },
+  {
+    "id": "mth-x-2024-p1-q34",
+    "questionNumber": "34",
+    "stem": "If $\\sin x = \\frac{3}{5}$ and the terminal arm of the angle is in II quadrant, then $\\cot x$ is",
+    "options": {
+      "A": "$-\\frac{4}{3}$",
+      "B": "$-\\frac{3}{4}$",
+      "C": "$\\frac{3}{4}$",
+      "D": "$\\frac{4}{3}$"
+    },
+    "correctOption": "A",
+    "official_answer": "A",
+    "solved_correct_option": "A",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "In Quadrant II, $\\cos x < 0$. With $\\sin x = 3/5$, $\\cos x = -\\sqrt{1 - (3/5)^2} = -\\sqrt{16/25} = -4/5$. Then $\\cot x = \\frac{\\cos x}{\\sin x} = \\frac{-4/5}{3/5} = -\\frac{4}{3}$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "21.3.3",
+    "slo": "21.3.3",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 12,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "14.2.2",
+    "current_mapping": [
+      {
+        "code": "14.2.2",
+        "topic": "Introduction to Trigonometry",
+        "description": "identify the signs of trigonometric ratios in different quadrants;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "In Quadrant II, $\\cos x < 0$. With $\\sin x = 3/5$, $\\cos x = -\\sqrt{1 - (3/5)^2} = -\\sqrt{16/25} = -4/5$. Then $\\cot x = \\frac{\\cos x}{\\sin x} = \\frac{-4/5}{3/5} = -\\frac{4}{3}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "identify the signs of trigonometric ratios in different quadrants;"
+  },
+  {
+    "id": "mth-x-2024-p1-q35",
+    "questionNumber": "35",
+    "stem": "The expression $\\tan^2 \\theta \\cos^2 \\theta$ can also be expressed as",
+    "options": {
+      "A": "$\\csc^2 \\theta$",
+      "B": "$\\sec^2 \\theta$",
+      "C": "$\\sin^2 \\theta$",
+      "D": "$\\cos^2 \\theta$"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "$\\tan^2 \\theta \\cos^2 \\theta = \\left(\\frac{\\sin^2 \\theta}{\\cos^2 \\theta}\\right) \\cos^2 \\theta = \\sin^2 \\theta$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "21.4.2",
+    "slo": "21.4.2",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 12,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "14.4.1",
+    "current_mapping": [
+      {
+        "code": "14.4.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "explain the fundamental trigonometric identities i.e., sin^2(θ) + cos^2(θ) = 1, 1 + tan^2(θ) = sec^2(θ), 1 + cot^2(θ) = cosec^2(θ);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$\\tan^2 \\theta \\cos^2 \\theta = \\left(\\frac{\\sin^2 \\theta}{\\cos^2 \\theta}\\right) \\cos^2 \\theta = \\sin^2 \\theta$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "explain the fundamental trigonometric identities i.e., sin^2(θ) + cos^2(θ) = 1, 1 + tan^2(θ) = sec^2(θ), 1 + cot^2(θ) = cosec^2(θ);"
+  },
+  {
+    "id": "mth-x-2024-p1-q36",
+    "questionNumber": "36",
+    "stem": "If $\\cos(-240^\\circ) = \\sin x$, then the value of $x$ will be",
+    "options": {
+      "A": "-240",
+      "B": "-150",
+      "C": "150",
+      "D": "240"
+    },
+    "correctOption": "B",
+    "official_answer": "•",
+    "solved_correct_option": "B",
+    "answerStatus": "ANSWER_CORRECTED",
+    "answer_review_note": "Official key contains a bullet (•) placeholder. Independently solved: $\\cos(-240^\\circ) = -1/2 = \\sin(-150^\\circ)$, which unambiguously corresponds to Option B ($x = -150$).",
+    "explanation": "$\\cos(-240^\\circ) = \\cos(240^\\circ) = \\cos(180^\\circ + 60^\\circ) = -\\cos(60^\\circ) = -\\frac{1}{2}$. We evaluate $\\sin x$ for each option: $\\sin(-150^\\circ) = -\\sin(150^\\circ) = -\\sin(180^\\circ - 30^\\circ) = -\\sin(30^\\circ) = -\\frac{1}{2}$. Thus $x = -150$.",
+    "answer_origin": "Reviewed correction: mathematical ground truth takes precedence over printed key erratum",
+    "originalSlo": "21.3.1",
+    "slo": "21.3.1",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 12,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "14.2.2",
+    "current_mapping": [
+      {
+        "code": "14.2.2",
+        "topic": "Introduction to Trigonometry",
+        "description": "identify the signs of trigonometric ratios in different quadrants;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "$\\cos(-240^\\circ) = \\cos(240^\\circ) = \\cos(180^\\circ + 60^\\circ) = -\\cos(60^\\circ) = -\\frac{1}{2}$. We evaluate $\\sin x$ for each option: $\\sin(-150^\\circ) = -\\sin(150^\\circ) = -\\sin(180^\\circ - 30^\\circ) = -\\sin(30^\\circ) = -\\frac{1}{2}$. Thus $x = -150$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "identify the signs of trigonometric ratios in different quadrants;"
+  },
+  {
+    "id": "mth-x-2024-p1-q37",
+    "questionNumber": "37",
+    "stem": "If the lengths of sides of a right angled triangle are 5 cm, 5 cm and $(a+2)\\text{ cm}$, then the value of $a$ will be",
+    "options": {
+      "A": "$3\\sqrt{2}\\text{ cm.}$",
+      "B": "$7\\sqrt{2}\\text{ cm.}$",
+      "C": "$(5\\sqrt{2} - 2)\\text{ cm.}$",
+      "D": "$(5\\sqrt{2} + 2)\\text{ cm.}$"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "The two equal legs are $5\\text{ cm}$ and $5\\text{ cm}$. The hypotenuse is $(a+2)\\text{ cm}$. By Pythagoras theorem: $(a+2)^2 = 5^2 + 5^2 = 50 \\implies a+2 = \\sqrt{50} = 5\\sqrt{2} \\implies a = 5\\sqrt{2} - 2\\text{ cm}$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "22.1.1",
+    "slo": "22.1.1",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 12,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The two equal legs are $5\\text{ cm}$ and $5\\text{ cm}$. The hypotenuse is $(a+2)\\text{ cm}$. By Pythagoras theorem: $(a+2)^2 = 5^2 + 5^2 = 50 \\implies a+2 = \\sqrt{50} = 5\\sqrt{2} \\implies a = 5\\sqrt{2} - 2\\text{ cm}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+  },
+  {
+    "id": "mth-x-2024-p1-q38",
+    "questionNumber": "38",
+    "stem": "In the given figure, if $AB = 5\\text{ cm}$ and $AC = 3\\text{ cm}$, then $BC$ is equal to",
+    "options": {
+      "A": "2 cm.",
+      "B": "4 cm.",
+      "C": "$\\sqrt{34}\\text{ cm.}$",
+      "D": "8 cm."
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "In right-angled triangle $ABC$, right-angled at $C$: $AB^2 = AC^2 + BC^2 \\implies 5^2 = 3^2 + BC^2 \\implies 25 = 9 + BC^2 \\implies BC^2 = 16 \\implies BC = 4\\text{ cm}$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "22.1.1",
+    "slo": "22.1.1",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 13,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q38.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "14.3.1",
+    "current_mapping": [
+      {
+        "code": "14.3.1",
+        "topic": "Introduction to Trigonometry",
+        "description": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "In right-angled triangle $ABC$, right-angled at $C$: $AB^2 = AC^2 + BC^2 \\implies 5^2 = 3^2 + BC^2 \\implies 25 = 9 + BC^2 \\implies BC^2 = 16 \\implies BC = 4\\text{ cm}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 14,
+    "sloText": "determine the unknown sides or angles in a right-angled triangle by applying Pythagoras' theorem and the sine, cosine and tangent ratios for acute angles (30°, 45°, and 60°);"
+  },
+  {
+    "id": "mth-x-2024-p1-q39",
+    "questionNumber": "39",
+    "stem": "In the given circle with centre $O$, $PS$ is perpendicular to $QR$ at point $S$. If $\\angle OQS = 72^\\circ$, then the value of $\\angle ROS$ is equal to",
+    "options": {
+      "A": "9°",
+      "B": "18°",
+      "C": "36°",
+      "D": "54°"
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "In right-angled triangle $OQS$ (since $PS \\perp QR$, $\\angle OSQ = 90^\\circ$): $\\angle QOS = 90^\\circ - 72^\\circ = 18^\\circ$. Since diameter $PS$ is perpendicular to chord $QR$, it bisects the chord and the central angle subtended by $QR$, so $\\angle ROS = \\angle QOS = 18^\\circ$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "23.1.1(b)",
+    "slo": "23.1.1(b)",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 13,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q39.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "20.1.1",
+    "current_mapping": [
+      {
+        "code": "20.1.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. one and only one circle can pass through three non-collinear points,\nb. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre is perpendicular to the chord and vice versa,\nc. if two chords of a circle are congruent then they will be equidistant from the centre and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "In right-angled triangle $OQS$ (since $PS \\perp QR$, $\\angle OSQ = 90^\\circ$): $\\angle QOS = 90^\\circ - 72^\\circ = 18^\\circ$. Since diameter $PS$ is perpendicular to chord $QR$, it bisects the chord and the central angle subtended by $QR$, so $\\angle ROS = \\angle QOS = 18^\\circ$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. one and only one circle can pass through three non-collinear points,\nb. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre is perpendicular to the chord and vice versa,\nc. if two chords of a circle are congruent then they will be equidistant from the centre and vice versa;"
+  },
+  {
+    "id": "mth-x-2024-p1-q40",
+    "questionNumber": "40",
+    "stem": "In the given diagram, $O$ is the centre of the circle. If $OE = OF$, then which one is TRUE?",
+    "options": {
+      "A": "$\\overline{AD} = \\overline{CD}$",
+      "B": "$\\overline{AB} = \\overline{CD}$",
+      "C": "$\\overline{OC} = \\overline{OF}$",
+      "D": "$\\overline{OA} = \\overline{OF}$"
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "By the circle theorem: Chords of a circle which are equidistant from the centre are congruent. Since $OE = OF$, chord $AB$ and chord $CD$ are equidistant from centre $O$, hence $AB = CD$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "23.1.1(b)",
+    "slo": "23.1.1(b)",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 14,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q40.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "20.1.1",
+    "current_mapping": [
+      {
+        "code": "20.1.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. one and only one circle can pass through three non-collinear points,\nb. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre is perpendicular to the chord and vice versa,\nc. if two chords of a circle are congruent then they will be equidistant from the centre and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "By the circle theorem: Chords of a circle which are equidistant from the centre are congruent. Since $OE = OF$, chord $AB$ and chord $CD$ are equidistant from centre $O$, hence $AB = CD$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. one and only one circle can pass through three non-collinear points,\nb. a straight line drawn from the centre of a circle to bisect a chord which is not a diametre is perpendicular to the chord and vice versa,\nc. if two chords of a circle are congruent then they will be equidistant from the centre and vice versa;"
+  },
+  {
+    "id": "mth-x-2024-p1-q41",
+    "questionNumber": "41",
+    "stem": "In the given diagram, $AP$ and $PB$ are the two tangents to the given circle with centre $O$ at points $A$ and $B$ respectively.\n\nThe length of $AP$ is",
+    "options": {
+      "A": "a",
+      "B": "b",
+      "C": "c",
+      "D": "a - b"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "The diagram labels tangent $PB = c$. By the theorem on tangents drawn from an external point to a circle, the two tangent segments from the external point to the points of contact are equal in length: $AP = PB = c$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "24.1.1(c)",
+    "slo": "24.1.1(c)",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 14,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q41.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "20.2.1",
+    "current_mapping": [
+      {
+        "code": "20.2.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if a line is drawn perpendicular to a radial segment of a circle at its outer end point, it is tangent to the circle at that point and vice versa,\nb. the two tangents drawn to a circle from a point outside it is equal in length,\nc. if two circles touch externally or internally the distance between their centres is respectively equal to the sum or difference of their radii;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "The diagram labels tangent $PB = c$. By the theorem on tangents drawn from an external point to a circle, the two tangent segments from the external point to the points of contact are equal in length: $AP = PB = c$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if a line is drawn perpendicular to a radial segment of a circle at its outer end point, it is tangent to the circle at that point and vice versa,\nb. the two tangents drawn to a circle from a point outside it is equal in length,\nc. if two circles touch externally or internally the distance between their centres is respectively equal to the sum or difference of their radii;"
+  },
+  {
+    "id": "mth-x-2024-p1-q42",
+    "questionNumber": "42",
+    "stem": "The radii of two circles are 7 cm and 4 cm. If the distance between their centres is 8 cm, then the circles will",
+    "options": {
+      "A": "not touch at any point.",
+      "B": "touch each other internally.",
+      "C": "touch each other externally.",
+      "D": "intersect each other at two points."
+    },
+    "correctOption": "D",
+    "official_answer": "D",
+    "solved_correct_option": "D",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Let $r_1 = 7\\text{ cm}, r_2 = 4\\text{ cm}$, distance between centres $d = 8\\text{ cm}$. Difference of radii $= |r_1 - r_2| = 7 - 4 = 3\\text{ cm}$. Sum of radii $= r_1 + r_2 = 7 + 4 = 11\\text{ cm}$. Since $|r_1 - r_2| < d < r_1 + r_2$ ($3 < 8 < 11$), the circles intersect each other at two distinct points.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "24.1.1(d)",
+    "slo": "24.1.1(d)",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 15,
+    "marks": 1,
+    "diagramUrl": null,
+    "isDiagram": false,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "20.2.1",
+    "current_mapping": [
+      {
+        "code": "20.2.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if a line is drawn perpendicular to a radial segment of a circle at its outer end point, it is tangent to the circle at that point and vice versa,\nb. the two tangents drawn to a circle from a point outside it is equal in length,\nc. if two circles touch externally or internally the distance between their centres is respectively equal to the sum or difference of their radii;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Let $r_1 = 7\\text{ cm}, r_2 = 4\\text{ cm}$, distance between centres $d = 8\\text{ cm}$. Difference of radii $= |r_1 - r_2| = 7 - 4 = 3\\text{ cm}$. Sum of radii $= r_1 + r_2 = 7 + 4 = 11\\text{ cm}$. Since $|r_1 - r_2| < d < r_1 + r_2$ ($3 < 8 < 11$), the circles intersect each other at two distinct points.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if a line is drawn perpendicular to a radial segment of a circle at its outer end point, it is tangent to the circle at that point and vice versa,\nb. the two tangents drawn to a circle from a point outside it is equal in length,\nc. if two circles touch externally or internally the distance between their centres is respectively equal to the sum or difference of their radii;"
+  },
+  {
+    "id": "mth-x-2024-p1-q43",
+    "questionNumber": "43",
+    "stem": "In the given circle with centre $O$, if $PQ$ and $RS$ are equal chords, then the equal angles are\n\nI. $\\angle POQ = \\angle ROS$\nII. $\\angle POR = \\angle QOS$\nIII. $\\angle ORS = \\angle POQ$",
+    "options": {
+      "A": "I only.",
+      "B": "III only.",
+      "C": "I and II.",
+      "D": "II and III."
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "Equal chords subtend equal central angles, so $\\angle POQ = \\angle ROS$ (I is true). Adding the common angle $\\angle QOR$ to both sides gives $\\angle POQ + \\angle QOR = \\angle ROS + \\angle QOR \\implies \\angle POR = \\angle QOS$ (II is true). Angle $\\angle ORS$ is a base angle of an isosceles triangle, not equal to central angle $\\angle POQ$. Thus I and II are equal.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "25.1.1(b)",
+    "slo": "25.1.1(b)",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 15,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q43.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "20.3.1",
+    "current_mapping": [
+      {
+        "code": "20.3.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "Equal chords subtend equal central angles, so $\\angle POQ = \\angle ROS$ (I is true). Adding the common angle $\\angle QOR$ to both sides gives $\\angle POQ + \\angle QOR = \\angle ROS + \\angle QOR \\implies \\angle POR = \\angle QOS$ (II is true). Angle $\\angle ORS$ is a base angle of an isosceles triangle, not equal to central angle $\\angle POQ$. Thus I and II are equal.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+  },
+  {
+    "id": "mth-x-2024-p1-q44",
+    "questionNumber": "44",
+    "stem": "The given diagram shows a circle having centre at $O$. The chord $AB$ and $BC$ are congruent.\n\nIf the length of chord $BC = \\frac{1}{2}a\\text{ cm}$, then the sum of lengths of chord $DE$ and chord $EF$ is",
+    "options": {
+      "A": "2a cm.",
+      "B": "a cm.",
+      "C": "$\\frac{1}{2}a\\text{ cm.}$",
+      "D": "$\\frac{1}{4}a\\text{ cm.}$"
+    },
+    "correctOption": "B",
+    "official_answer": "B",
+    "solved_correct_option": "B",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "In the symmetric diagram with congruent chords: chord $AB = BC = \\frac{1}{2}a\\text{ cm}$. Chords $DE$ and $EF$ are congruent to $AB$ and $BC$ ($DE = EF = \\frac{1}{2}a\\text{ cm}$). Thus the sum of lengths is $DE + EF = \\frac{1}{2}a + \\frac{1}{2}a = a\\text{ cm}$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "25.1.1(c)",
+    "slo": "25.1.1(c)",
+    "cognitiveLevel": "U",
+    "originalCognitiveLevel": "U",
+    "pageNumber": 15,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q44.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "20.3.1",
+    "current_mapping": [
+      {
+        "code": "20.3.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "In the symmetric diagram with congruent chords: chord $AB = BC = \\frac{1}{2}a\\text{ cm}$. Chords $DE$ and $EF$ are congruent to $AB$ and $BC$ ($DE = EF = \\frac{1}{2}a\\text{ cm}$). Thus the sum of lengths is $DE + EF = \\frac{1}{2}a + \\frac{1}{2}a = a\\text{ cm}$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. if two chords of circle (or of congruent circles) are equal, then their corresponding arcs (minor, major or semi-circular) are congruent and vice versa,\nb. equal chords of a circle (or of congruent circles) subtend equal angles at the centre (at the corresponding centres) and vice versa;"
+  },
+  {
+    "id": "mth-x-2024-p1-q45",
+    "questionNumber": "45",
+    "stem": "Given is an inscribed triangle $MNQ$, where $O$ is the centre of the circle.\n\nThe value of $x$ is",
+    "options": {
+      "A": "90°",
+      "B": "100°",
+      "C": "120°",
+      "D": "135°"
+    },
+    "correctOption": "C",
+    "official_answer": "C",
+    "solved_correct_option": "C",
+    "answerStatus": "VERIFIED",
+    "answer_review_note": "",
+    "explanation": "By the inscribed angle theorem, the angle subtended by an arc at the centre is twice the angle subtended by it at any point on the remaining part of the circle. The inscribed angle $\\angle MNQ = 60^\\circ$ is subtended by arc $MQ$. The central angle subtended by the same arc $MQ$ is $x^\\circ = 2 \\times 60^\\circ = 120^\\circ$.",
+    "answer_origin": "Independently solved and verified against source text",
+    "originalSlo": "26.1.1(a)",
+    "slo": "26.1.1(a)",
+    "cognitiveLevel": "A",
+    "originalCognitiveLevel": "A",
+    "pageNumber": 16,
+    "marks": 1,
+    "diagramUrl": "/paper-crops/MTH-X-2024-P1/q45.png",
+    "isDiagram": true,
+    "sourceSha256": "1ed3a7f38b85a9e3a30b20eb3e0b925dec0d9997bea01f7bdbc6dc7ef748ff72",
+    "current_slo": "20.4.1",
+    "current_mapping": [
+      {
+        "code": "20.4.1",
+        "topic": "Circles",
+        "description": "apply the following theorems to solve related problems:\na. the measure of a central angle of a minor arc of a circle, is double that of the angle subtended by the corresponding major arc,\nb. any two angles in the same segment of a circle are equal,\nc. the inscribed angle in a semi-circle is a right angle,\nd. the angle in a segment greater than a semi-circle is less than a right angle,\ne. the angle in a segment less than a semi-circle is greater than right angle,\nf. the opposite angles of any quadrilateral inscribed in a circle are supplementary."
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 10,
+      "subject": "Mathematics"
+    },
+    "mappingStatus": "MAPPED_TO_CURRENT_SYLLABUS",
+    "mappingReason": "By the inscribed angle theorem, the angle subtended by an arc at the centre is twice the angle subtended by it at any point on the remaining part of the circle. The inscribed angle $\\angle MNQ = 60^\\circ$ is subtended by arc $MQ$. The central angle subtended by the same arc $MQ$ is $x^\\circ = 2 \\times 60^\\circ = 120^\\circ$.",
+    "syllabusEdition": "2025 Revised (First Exam 2027)",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "unitNumber": 20,
+    "sloText": "apply the following theorems to solve related problems:\na. the measure of a central angle of a minor arc of a circle, is double that of the angle subtended by the corresponding major arc,\nb. any two angles in the same segment of a circle are equal,\nc. the inscribed angle in a semi-circle is a right angle,\nd. the angle in a segment greater than a semi-circle is less than a right angle,\ne. the angle in a segment less than a semi-circle is greater than right angle,\nf. the opposite angles of any quadrilateral inscribed in a circle are supplementary."
+  }
+]

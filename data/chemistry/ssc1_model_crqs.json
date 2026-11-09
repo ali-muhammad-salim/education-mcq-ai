@@ -1,0 +1,402 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "chapter": "Fundamentals of Chemistry",
+    "slo": "1.3.7",
+    "current_slo": "1.3.7",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "1.3.7",
+        "description": "determine the formula of a compound based on the valencies of combining elements.",
+        "topic": "Fundamentals of Chemistry"
+      }
+    ],
+    "stem": "Determine the chemical formula for carbon disulphide by completing the given table.\n(Note: 12_6 C and 32_16 S)\n\n| Compound | Valency of Carbon | Valency of Sulphur | Chemical Formula |\n| :--- | :--- | :--- | :--- |\n| Carbon disulphide | | | |",
+    "modelAnswer": "**Completed Table:**\n\n| Compound | Valency of Carbon | Valency of Sulphur | Chemical Formula |\n| :--- | :---: | :---: | :---: |\n| **Carbon disulphide** | **4** | **2** | **CS2** |\n\n**Scientific Working / Derivation:**\n- Carbon (Group IVA, atomic number 6) has 4 valence electrons and a valency of 4.\n- Sulphur (Group VIA, atomic number 16) has 6 valence electrons and requires 2 electrons to complete its octet, giving it a valency of 2.\n- Applying the criss-cross rule: $C_2S_4 \\rightarrow$ simplifying to the lowest whole-number ratio gives **CS2**.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correctly states the valency of carbon as 4."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly states the valency of sulphur as 2."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly writes the empirical/chemical formula as CS2."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.2",
+    "pageNumber": 2,
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "chapter": "Atomic Structure",
+    "slo": "3.3.2",
+    "current_slo": "3.3.2",
+    "cognitiveLevel": "A",
+    "marks": 3,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "3.3.2",
+        "description": "draw Bohr's atomic structure of atoms and ions up to atomic number 20.",
+        "topic": "Atomic Structure"
+      }
+    ],
+    "stem": "An atom of an element X has atomic number 12 and mass number 24. It loses 2 electrons from its outer most shell and acquires a +2 charge.\n\nDraw the atomic structure of the ion of element X.",
+    "modelAnswer": "**Atomic Structure of the X^2+ (Magnesium) Ion:**\n\n1. **Nuclear Composition:**\n   - Protons ($p$) = Atomic number = **12**\n   - Neutrons ($n$) = Mass number - Atomic number = 24 - 12 = **12**\n   - Central nucleus is labeled with **12p, 12n**.\n\n2. **Electronic Shell Configuration:**\n   - Neutral atom electron count = 12 (configuration: 2, 8, 2).\n   - Upon losing 2 outermost electrons, the $X^{2+}$ ion has **10 electrons**.\n   - **K-shell (1st inner shell):** 2 electrons (represented as pairs of dots or crosses).\n   - **L-shell (2nd outer shell):** 8 electrons (represented as four pairs of dots/crosses forming a stable octet).\n   - The M-shell is empty and eliminated.\n\n3. **Ionic Representation:**\n   - Enclosed within large square brackets with the superscript charge labeled: **[ X ]2+**.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correctly identifies and labels the nucleus with 12 protons and 12 neutrons."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly draws the electronic configuration showing 2 electrons in K-shell and 8 electrons in L-shell (stable neon octet)."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly shows square brackets and the net +2 charge on the ion."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.3",
+    "pageNumber": 2,
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "chapter": "Periodic Table and Periodicity",
+    "slo": "4.3.4",
+    "current_slo": "4.3.4",
+    "cognitiveLevel": "U",
+    "marks": 4,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "4.3.4",
+        "description": "explain the periodic trends in electronegativity across periods and down groups.",
+        "topic": "Periodic Table and Periodicity"
+      }
+    ],
+    "stem": "Explain the electronegativity trend across the period and down the group in the periodic table.\n\nAcross the period: ____________________________________________________________________\n\nDown the group: _____________________________________________________________________",
+    "modelAnswer": "**Across the period:**\nElectronegativity **increases** from left to right across a period.\n*Reason:* As we move across a period, the atomic number and nuclear charge (effective nuclear charge, $Z_{eff}$) continuously increase while the number of shielding electron shells remains constant. Consequently, the atomic radius decreases, and the electrostatic attraction exerted by the nucleus on the shared pair of electrons becomes significantly stronger.\n\n**Down the group:**\nElectronegativity **decreases** from top to bottom down a group.\n*Reason:* As we descend a group, additional electron shells are added, which increases the atomic radius and the screening (shielding) effect of inner core electrons. The increased distance and shielding weaken the electrostatic pull of the nucleus on valence and shared electrons.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "States that electronegativity increases across the period."
+      },
+      {
+        "marks": 1,
+        "description": "Justifies the period trend using increasing nuclear charge, constant shielding, and decreasing atomic radius."
+      },
+      {
+        "marks": 1,
+        "description": "States that electronegativity decreases down the group."
+      },
+      {
+        "marks": 1,
+        "description": "Justifies the group trend using increasing number of shells, increased shielding effect, and larger atomic radius."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.4",
+    "pageNumber": 3,
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "chapter": "States of Matter",
+    "slo": "6.2.3",
+    "current_slo": "6.2.3",
+    "cognitiveLevel": "E",
+    "marks": 3,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "6.2.3",
+        "description": "relate boiling point and vapour pressure of liquids to intermolecular forces.",
+        "topic": "States of Matter"
+      }
+    ],
+    "stem": "Consider a closed container with liquid having weak intermolecular forces. This liquid experiences both, vapour pressure and boiling point at constant temperature.\n\nAssess the influence of weak intermolecular forces on the vapour pressure and the boiling point of the liquid. Support your answer with scientific reasoning.",
+    "modelAnswer": "**1. Influence on Vapour Pressure:**\n- **Assessment:** The liquid will exhibit a **high vapour pressure**.\n- **Scientific Reasoning:** Weak intermolecular forces offer low resistance to molecular separation. At any given temperature, a large proportion of surface liquid molecules possess sufficient kinetic energy to overcome these weak cohesive forces and escape into the vapor phase, resulting in a high concentration of vapor particles and high collision frequency with the container walls.\n\n**2. Influence on Boiling Point:**\n- **Assessment:** The liquid will have a **low boiling point**.\n- **Scientific Reasoning:** A liquid boils when its internal saturated vapour pressure equals the external atmospheric pressure. Because the liquid has weak attractive forces and exerts a high vapour pressure even at modest temperatures, its vapour pressure reaches atmospheric pressure at a lower temperature, requiring less heat energy to boil.",
+    "rubric": [
+      {
+        "marks": 1.5,
+        "description": "Assesses vapour pressure as high and provides reasoning based on ease of molecular escape and weak cohesive forces."
+      },
+      {
+        "marks": 1.5,
+        "description": "Assesses boiling point as low and explains that vapour pressure equals atmospheric pressure at a lower temperature."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5 (EITHER)",
+    "pageNumber": 4,
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "chapter": "Stoichiometry",
+    "slo": "2.3.1",
+    "current_slo": "2.3.1",
+    "cognitiveLevel": "A",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "2.3.1",
+        "description": "balance chemical equations and solve stoichiometric calculations involving mass and mole relationships.",
+        "topic": "Stoichiometry"
+      }
+    ],
+    "stem": "EITHER\na.\ni. Balance the given chemical equation by inserting numbers where necessary. (1 Mark)\n____ CH4(g) + ____ O2(g) \u2192 ____ CO2(g) + ____ H2O(l)\n\nii. Calculate the mass of carbon dioxide and water produced on complete combustion of 0.25 mol of methane.\n(Note: Molar mass of C = 12 g, O = 16 g and H = 1 g. To solve the numerical, use equation in part i after balancing.) (5 Marks)",
+    "modelAnswer": "**Part a.i \u2014 Balanced Chemical Equation (1 Mark):**\n**1** CH4(g) + **2** O2(g) \u2192 **1** CO2(g) + **2** H2O(l)\n\n**Part a.ii \u2014 Stoichiometric Calculations (5 Marks):**\n- Given: Moles of methane burned = **0.25 mol**\n- Molar masses:\n  - $M(CO_2) = 12 + (2 \\times 16) = 44\\text{ g/mol}$\n  - $M(H_2O) = (2 \\times 1) + 16 = 18\\text{ g/mol}$\n\n1. **Mass of Carbon Dioxide (CO2) Produced:**\n   - From the balanced equation: $1\\text{ mol } CH_4 \\rightarrow 1\\text{ mol } CO_2$\n   - Moles of $CO_2$ produced = $0.25\\text{ mol}$\n   - $\\text{Mass of } CO_2 = \\text{Moles} \\times \\text{Molar Mass} = 0.25\\text{ mol} \\times 44\\text{ g/mol} = \\mathbf{11\\text{ g}}$ (2.5 Marks)\n\n2. **Mass of Water (H2O) Produced:**\n   - From the balanced equation: $1\\text{ mol } CH_4 \\rightarrow 2\\text{ mol } H_2O$\n   - Moles of $H_2O$ produced = $0.25\\text{ mol} \\times 2 = 0.50\\text{ mol}$\n   - $\\text{Mass of } H_2O = \\text{Moles} \\times \\text{Molar Mass} = 0.50\\text{ mol} \\times 18\\text{ g/mol} = \\mathbf{9\\text{ g}}$ (2.5 Marks)",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correctly balances the chemical equation with coefficients 1, 2, 1, 2."
+      },
+      {
+        "marks": 1,
+        "description": "Calculates molar masses of CO2 (44 g/mol) and H2O (18 g/mol)."
+      },
+      {
+        "marks": 1.5,
+        "description": "Determines moles and final mass of CO2 as 11 g with correct units."
+      },
+      {
+        "marks": 1.5,
+        "description": "Determines moles and final mass of H2O as 9 g with correct units."
+      },
+      {
+        "marks": 1,
+        "description": "Shows logical step-by-step stoichiometric mole-ratio working."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5 (OR)",
+    "pageNumber": 4,
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "chapter": "Structure of Molecules",
+    "slo": "5.1.2",
+    "current_slo": "5.1.2",
+    "cognitiveLevel": "A",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "5.1.2",
+        "description": "represent the formation of ionic bonds using electron dot and cross structures.",
+        "topic": "Structure of Molecules"
+      }
+    ],
+    "stem": "OR\nb. Given below are four elements.\n| Non-Metal | Metal |\n| :--- | :--- |\n| Chlorine (35.5_17 Cl) | Magnesium (24_12 Mg) |\n| Oxygen (16_8 O) | Potassium (39_19 K) |\n\ni. Identify TWO elements from the given table which, when form ions, show the same electronic arrangement as a neon (20_10 Ne) atom. (2 Marks)\n\nii. Illustrate the formation of an ionic compound using the elements identified in part i with the help of dot and cross structure of the compound. (4 Marks)",
+    "modelAnswer": "**Part b.i \u2014 Identification of Isoelectronic Elements (2 Marks):**\n- Neon ($_{10}Ne$) has 10 electrons with configuration $(2, 8)$.\n- **Magnesium ($_{12}Mg$):** Has 12 electrons $(2, 8, 2)$. It loses 2 electrons to form $Mg^{2+}$ with **10 electrons** $(2, 8)$.\n- **Oxygen ($_{8}O$):** Has 8 electrons $(2, 6)$. It gains 2 electrons to form $O^{2-}$ with **10 electrons** $(2, 8)$.\n*(Note: Chlorine forms Cl- with 18 electrons and Potassium forms K+ with 18 electrons, which are isoelectronic with Argon, not Neon).*\n\n**Part b.ii \u2014 Dot and Cross Structure of Magnesium Oxide (MgO) (4 Marks):**\n1. **Reactant Atoms:**\n   - Magnesium atom: $[2, 8, 2]$ with two valence electrons shown as dots $(\\bullet\\bullet)$.\n   - Oxygen atom: $[2, 6]$ with six valence electrons shown as crosses $(\\times\\times\\times\\times\\times\\times)$.\n2. **Electron Transfer:**\n   - Magnesium transfers both of its valence dots to the oxygen atom.\n3. **Resulting Ions in Crystal Lattice:**\n   - Magnesium cation: $[Mg]^{2+}$ with electronic configuration $(2, 8)$.\n   - Oxide anion: $[:\\ddot{O}:]^{2-}$ (showing 6 crosses and 2 dots) with configuration $(2, 8)$.\n   - Formula: **MgO** (Magnesium oxide held by strong electrostatic ionic bonding).",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correctly identifies Magnesium (forms Mg2+ with 10 electrons)."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly identifies Oxygen (forms O2- with 10 electrons)."
+      },
+      {
+        "marks": 1,
+        "description": "Illustrates the neutral atoms with distinct dots and crosses in their valence shells."
+      },
+      {
+        "marks": 1,
+        "description": "Clearly indicates the transfer of two electrons from magnesium to oxygen."
+      },
+      {
+        "marks": 2,
+        "description": "Draws the final dot-and-cross structure of [Mg]2+ and [O]2- with correct charges and stable octets."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6 (EITHER)",
+    "pageNumber": 6,
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "chapter": "Solutions",
+    "slo": "7.2.1",
+    "current_slo": "7.2.1",
+    "cognitiveLevel": "E",
+    "marks": 6,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-P2/q6a.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "7.2.1",
+        "description": "interpret solubility curves and evaluate the effect of temperature on solubility.",
+        "topic": "Solutions"
+      }
+    ],
+    "stem": "EITHER\na. The given graph represents the effect of temperature on the solubility of sodium sulphate (Na2SO4).\nAssess the graph to answer the following questions.\n\ni. Identify the highest and the lowest solubility values of Na2SO4. (2 Marks)\n\nii. Evaluate the solubility trend of Na2SO4 with temperature. How does it differ from the general solubility rule and why? (4 Marks)",
+    "modelAnswer": "**Part a.i \u2014 Solubility Values from Graph (2 Marks):**\n- **Highest solubility value:** Approximately **50 g of Na2SO4 / 100 g of H2O** (recorded at approximately 32.4 \u00b0C).\n- **Lowest solubility value:** Approximately **5 g of Na2SO4 / 100 g of H2O** (recorded at 0 \u00b0C).\n\n**Part a.ii \u2014 Evaluation of Trend & Scientific Reasoning (4 Marks):**\n- **Description of Trend:** From 0 \u00b0C up to 32.4 \u00b0C, solubility increases steeply with increasing temperature. Above 32.4 \u00b0C, the solubility curve reaches a sharp peak and then gradually decreases with further increase in temperature.\n- **Difference from General Rule:** The general solubility rule for most solid solutes states that solubility increases continuously with rising temperature (endothermic dissolution). Na2SO4 exhibits discontinuous / retrograde solubility.\n- **Scientific Reason:** Below 32.4 \u00b0C, sodium sulphate crystallizes as decahydrate (Glauber's salt, $Na_2SO_4 \\cdot 10H_2O$), whose dissolution process is endothermic ($\\Delta H > 0$); hence heating increases solubility. At 32.4 \u00b0C (transition temperature), it loses its water of crystallization and transforms into anhydrous sodium sulphate ($Na_2SO_4$), whose dissolution is exothermic ($\\Delta H < 0$). According to Le Chatelier\u2019s principle, increasing temperature shifts exothermic equilibrium backwards, causing solubility to decrease.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Correctly reads highest solubility as ~50 g/100 g water (accept 48-52 g)."
+      },
+      {
+        "marks": 1,
+        "description": "Correctly reads lowest solubility as ~5 g/100 g water (accept 4-6 g at 0 \u00b0C)."
+      },
+      {
+        "marks": 1,
+        "description": "Accurately describes the two-phase trend (increasing up to ~32 \u00b0C and decreasing thereafter)."
+      },
+      {
+        "marks": 1,
+        "description": "States how it differs from the general rule of continuous increase."
+      },
+      {
+        "marks": 2,
+        "description": "Explains the transition from hydrated Na2SO4\u00b710H2O (endothermic) to anhydrous Na2SO4 (exothermic) with Le Chatelier's principle."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6 (OR)",
+    "pageNumber": 6,
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "chapter": "Electrochemistry",
+    "slo": "8.3.1",
+    "current_slo": "8.3.1",
+    "cognitiveLevel": "E",
+    "marks": 6,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Chemistry"
+    },
+    "current_mapping": [
+      {
+        "code": "8.3.1",
+        "description": "describe electrolytic processes and construct electrode half-equations.",
+        "topic": "Electrochemistry"
+      }
+    ],
+    "stem": "OR\nb. A student sets up an electrolytic cell using molten potassium chloride (KCl). Electrodes are connected to a power source and electrolysis begins.\n\ni. Deduce the direction of movement of cations and anions during electrolysis. Construct balanced chemical equation to represent the reactions occurring at each electrode. (4 Marks)\n\nii. Evaluate the role of the power source in the electrolytic process and predict what would happen if the power source was removed. (2 Marks)",
+    "modelAnswer": "**Part b.i \u2014 Direction of Ions and Electrode Equations (4 Marks):**\n1. **Direction of Movement:**\n   - **Cations ($K^+$ ions):** Migrate towards the negatively charged **cathode**.\n   - **Anions ($Cl^-$ ions):** Migrate towards the positively charged **anode**.\n\n2. **Electrode Chemical Equations:**\n   - **At Cathode (Reduction):**\n     $K^+(l) + e^- \\rightarrow K(l)$  *(or $2K^+ + 2e^- \\rightarrow 2K$)*\n   - **At Anode (Oxidation):**\n     $2Cl^-(l) \\rightarrow Cl_2(g) + 2e^-$\n   - **Overall Cell Reaction:**\n     $2KCl(l) \\rightarrow 2K(l) + Cl_2(g)$\n\n**Part b.ii \u2014 Role of Power Source & Prediction (2 Marks):**\n- **Role of Power Source:** The direct current (DC) power supply functions as an electron pump that provides external electrical energy to force non-spontaneous chemical redox reactions to occur. It withdraws electrons from the anode (making it positive) and forces electrons onto the cathode (making it negative).\n- **Prediction:** If the power source is removed, the external voltage and electron flow immediately drop to zero. The migration and discharge of $K^+$ and $Cl^-$ ions cease instantly, halting the production of potassium metal and chlorine gas.",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Deduces that K+ cations migrate to the cathode and Cl- anions migrate to the anode."
+      },
+      {
+        "marks": 1.5,
+        "description": "Writes the balanced reduction half-equation at the cathode (K+ + e- -> K)."
+      },
+      {
+        "marks": 1.5,
+        "description": "Writes the balanced oxidation half-equation at the anode (2Cl- -> Cl2 + 2e-)."
+      },
+      {
+        "marks": 1,
+        "description": "Explains that the power source supplies energy to drive a non-spontaneous redox reaction."
+      },
+      {
+        "marks": 1,
+        "description": "Predicts that the electrolytic reaction stops immediately when the power source is disconnected."
+      }
+    ]
+  }
+]

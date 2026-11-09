@@ -24,6 +24,59 @@ export const physics2024Resources = [
   { label: 'E-marking notes', href: '/resources/physics-ix-2024-emarking', year: 2024 },
 ];
 
+// Canonical sibling-page switcher shown on every page of a Physics IX annual set.
+export const physicsIx2024PaperTabs = [
+  { label: 'Paper 1 · official answer key', href: '/resources/physics-ix-2024-key' },
+  { label: 'E-marking notes', href: '/resources/physics-ix-2024-emarking' },
+  { label: 'Paper 1 · answers & explanations', href: '/past-papers/PHY-IX-2024-P1?view=solved' },
+  { label: 'Paper 2 (CRQ & ERQ)', href: '/past-papers/PHY-IX-2024-P2' },
+];
+
+export const physicsIx2025PaperTabs = [
+  { label: 'Paper 1 · official answer key', href: '/resources/physics-ix-2025-key' },
+  { label: 'E-marking notes', href: '/resources/physics-ix-2025-emarking' },
+  { label: 'Paper 1 · answers & explanations', href: '/past-papers/PHY-IX-2025-P1?view=solved' },
+  { label: 'Paper 2 (CRQ & ERQ)', href: '/past-papers/PHY-IX-2025-P2' },
+];
+
+export const chem2025Resources = [
+  { label: 'Paper 1 · official answer key', href: '/resources/chemistry-ix-2025-key', year: 2025 },
+  { label: 'E-marking notes', href: '/resources/chemistry-ix-2025-emarking', year: 2025 },
+  { label: 'Paper 1 · official answer key', href: '/resources/chemistry-ix-2024-key', year: 2024 },
+  { label: 'E-marking notes', href: '/resources/chemistry-ix-2024-emarking', year: 2024 },
+  { label: 'Paper 1 · official answer key', href: '/resources/chemistry-ix-2023-key', year: 2023 },
+  { label: 'E-marking notes', href: '/resources/chemistry-ix-2023-emarking', year: 2023 },
+  { label: 'Paper 1 (Theory + ATP) · official answer key', href: '/resources/chemistry-ix-2022-key', year: 2022 },
+  { label: 'Paper 1 (Theory + ATP) · official answer key', href: '/resources/chemistry-ix-2021-key', year: 2021 },
+  { label: 'Paper 1 · official answer key', href: '/resources/chemistry-ix-2019-key', year: 2019 },
+  { label: 'E-marking notes', href: '/resources/chemistry-ix-2019-emarking', year: 2019 },
+  { label: 'Paper 1 · official answer key', href: '/resources/chemistry-ix-2018-key', year: 2018 },
+  { label: 'E-marking notes', href: '/resources/chemistry-ix-2018-emarking', year: 2018 },
+  { label: 'Paper 1 · official answer key', href: '/resources/chemistry-ix-2017-key', year: 2017 },
+  { label: 'E-marking notes', href: '/resources/chemistry-ix-2017-emarking', year: 2017 },
+];
+
+export const chemX2025Resources = [
+  { label: 'Paper 1 · official answer key', href: '/resources/chemistry-x-2025-key', year: 2025 },
+  { label: 'E-marking notes', href: '/resources/chemistry-x-2025-emarking', year: 2025 },
+];
+
+export const chemX2024Resources = [
+  { label: 'Paper 1 · official answer key', href: '/resources/chemistry-x-2024-key', year: 2024 },
+  { label: 'E-marking notes', href: '/resources/chemistry-x-2024-emarking', year: 2024 },
+];
+
+export const chemX2023Resources = [
+  { label: 'Paper 1 · official answer key', href: '/resources/chemistry-x-2023-key', year: 2023 },
+  { label: 'E-marking notes', href: '/resources/chemistry-x-2023-emarking', year: 2023 },
+];
+
+export const chemXResources = [
+  ...chemX2025Resources,
+  ...chemX2024Resources,
+  ...chemX2023Resources,
+];
+
 export const annualAnswerReviews: Record<number, string> = {
   12: 'Official key: D (80 N). The ideal-rope tension interpretation (40 N) needs educator review before approving a teaching explanation.',
   39: 'Official key: C (poor absorbers and good emitters). This combination conflicts with the usual relationship between absorption and emission for the same radiation. An educator must review the source before this is used as a teaching explanation.',
@@ -170,3 +223,71 @@ export function annualX2025CurrentMapping(number: string | number, stem: string)
     mapping_reason: reviewedX2025.reviewMethod,
   };
 }
+
+export const cs2025Resources = [
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-ix-2025-key', year: 2025 },
+  { label: 'E-marking notes', href: '/resources/computer-science-ix-2025-emarking', year: 2025 },
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-ix-2024-key', year: 2024 },
+  { label: 'E-marking notes', href: '/resources/computer-science-ix-2024-emarking', year: 2024 },
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-ix-2023-key', year: 2023 },
+  { label: 'E-marking notes', href: '/resources/computer-science-ix-2023-emarking', year: 2023 },
+  { label: 'Paper 1 (Theory + ATP) · official answer key', href: '/resources/computer-science-ix-2022-key', year: 2022 },
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-ix-2019-key', year: 2019 },
+  { label: 'E-marking notes', href: '/resources/computer-science-ix-2019-emarking', year: 2019 },
+  { label: 'E-marking notes', href: '/resources/computer-science-ix-2018-emarking', year: 2018 },
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-ix-2017-key', year: 2017 },
+  { label: 'E-marking notes', href: '/resources/computer-science-ix-2017-emarking', year: 2017 },
+];
+
+export const csAnnual2025AnswerReviews: Record<number, string> = {};
+
+export const csAnnual2024AnswerReviews: Record<number, string> = {
+  9: 'Official 2024 AKU-EB Answer Key credits both D and A ("D,A"): Statement D ("Level 3 cache memory is smallest in storage capacity than other two levels") is FALSE because L3 cache is the largest in capacity, while Statement A ("Level 2 cache memory is located on the microprocessor") was historically considered false in older textbooks where L2 resided on the motherboard.',
+  39: 'Printed key PDF shows "•" (bullet glyph) due to font encoding; verified HTML anchor syntax answer is A (<a href="https://www.piac.com.pk">Visit PIA Website</a>).',
+};
+
+export const csAnnual2023AnswerReviews: Record<number, string> = {
+  11: 'Official 2023 AKU-EB Answer Key shows "*" (grace mark / ungraded item because IT careers under legacy SLO 1.2.2 overlapped in some textbooks). Verified technical answer is A ("I only" — writing programs to solve problems is the job of a Computer Programmer, whereas a System Analyst analyses requirements and plans solutions [II and III]).',
+};
+
+export const csAnnual2022AnswerReviews: Record<number, string> = {
+  5: 'Official 2022 AKU-EB Answer Key is D ("Level 3 cache memory is smaller in storage capacity than other two levels" is FALSE because L3 cache is the largest in capacity). Option A reflects legacy textbook phrasing where L2 cache was originally placed on the motherboard.',
+};
+
+export const csAnnual2019AnswerReviews: Record<number, string> = {};
+
+export const csAnnual2017AnswerReviews: Record<number, string> = {};
+export const csX2025Resources = [
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-x-2025-key', year: 2025 },
+  { label: 'E-marking notes', href: '/resources/computer-science-x-2025-emarking', year: 2025 },
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-x-2024-key', year: 2024 },
+  { label: 'E-marking notes', href: '/resources/computer-science-x-2024-emarking', year: 2024 },
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-x-2023-key', year: 2023 },
+  { label: 'E-marking notes', href: '/resources/computer-science-x-2023-emarking', year: 2023 },
+  { label: 'Paper 1 (Theory + ATP) · official answer key', href: '/resources/computer-science-x-2022-key', year: 2022 },
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-x-2019-key', year: 2019 },
+  { label: 'E-marking notes', href: '/resources/computer-science-x-2019-emarking', year: 2019 },
+  { label: 'E-marking notes', href: '/resources/computer-science-x-2018-emarking', year: 2018 },
+  { label: 'Paper 1 · official answer key', href: '/resources/computer-science-x-2017-key', year: 2017 },
+  { label: 'E-marking notes', href: '/resources/computer-science-x-2017-emarking', year: 2017 },
+];
+
+export const csAnnualX2017AnswerReviews: Record<number, string> = {};
+
+export const csAnnualX2019AnswerReviews: Record<number, string> = {
+  21: "Official 2019 AKU-EB Answer Key credits both A and C ('A,C'): In GW-BASIC, lines are automatically sorted and executed in ascending order of line numbers (10 -> 20 -> 30 -> 40 -> 50 -> 60), outputting A - B = -10, A * B = 200, and A + B = 30 (Option A); Option C (30, -10, 200) corresponds to top-to-bottom visual reading order (50 -> 30 -> 40).",
+};
+
+export const csAnnualX2022AnswerReviews: Record<number, string> = {};
+
+export const csAnnualX2025AnswerReviews: Record<number, string> = {};
+
+export const csAnnualX2024AnswerReviews: Record<number, string> = {
+  8: "Official 2024 AKU-EB Answer Key credits both C and D ('C,D'): Both structured programming languages (C) and procedural programming languages (D) are based upon the concept of modular programming.",
+  26: "Official 2024 AKU-EB Answer Key is D ('int i = 5;'). In a standard 5-repetition loop for (int i = 1; i <= 5; i++), the initialisation expression int i = 1; (Option C) executes only once at loop entry, whereas int i = 5; (Option D) causes the loop itself to execute only once.",
+  31: "Official 2024 AKU-EB Answer Key is A ('switch statement'). In C and JavaScript, break is used to exit from both a switch statement (A) and a for / while / do-while loop (C).",
+};
+
+export const csAnnualX2023AnswerReviews: Record<number, string> = {
+  37: "Official 2023 AKU-EB Answer Key credits both D and B ('D,B'): In Microsoft Excel, the built-in function name to find the highest value in Test4 (column E) is =MAX(E2:E9) (Option B), while Option D (=MAXIMUM(E2:E9)) was also awarded credit.",
+};

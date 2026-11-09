@@ -1,0 +1,319 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.1.1",
+    "original_slo": "1.1.1",
+    "current_slo": null,
+    "cognitiveLevel": "K",
+    "marks": 5,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "Names of some computing devices that were invented during the evolution of computer are given below:\n\u2022 `ENIAC` \u2022 `UNIVAC` \u2022 `Mark-1` \u2022 `Abacus` \u2022 `Difference engine` \u2022 `Punch card tabulator` \u2022 `Analytical engine` \u2022 `Pascal's Pascaline calculator`\n\nChoose appropriate name from the list inside the box and write it with corresponding statement about a computing device. *(Note: Only one name can be used for one statement.)* (5 Marks)\n**i.** `_________________________` was steam powered, fully automatic and could print the results as well.\n**ii.** `_________________________` works on decimal arithmetic rather than binary arithmetic.\n**iii.** `_________________________` was a general purpose, fully program-controlled and automatic mechanical digital computer.\n**iv.** `_________________________` had a system of gears. One-tooth gear of this machine engages tooth with a ten-tooth gear once every time it revolves.\n**v.** `_________________________` processes data in numerical form using digital circuits.",
+    "modelAnswer": "**i.** **`Difference engine`** was steam powered, fully automatic and could print the results as well. *(Invented by Charles Babbage in 1822)*\n**ii.** **`ENIAC`** works on decimal arithmetic rather than binary arithmetic. *(Electronic Numerical Integrator and Computer)*\n**iii.** **`Analytical engine`** (or **`Mark-1`**) was a general purpose, fully program-controlled and automatic mechanical/electromechanical digital computer.\n**iv.** **`Pascal's Pascaline calculator`** had a system of gears. One-tooth gear of this machine engages tooth with a ten-tooth gear once every time it revolves. *(Invented by Blaise Pascal in 1642)*\n**v.** **`Mark-1`** (or **`UNIVAC`** / **`ENIAC`**) processes data in numerical form using digital circuits.",
+    "betterResponse": "Better responses showed a strong understanding of the evolution of computers and matched each statement accurately: i. Difference engine, ii. ENIAC, iii. Analytical engine, iv. Pascal's Pascaline calculator, v. Mark-1.",
+    "weakerResponse": "Weaker responses identified Difference engine and Pascal's Pascaline calculator but randomly guessed Abacus or Punch card tabulator for the remaining statements.",
+    "rubric": [
+      {
+        "marks": 5,
+        "description": "1 mark for each correct computing device: i. Difference engine, ii. ENIAC, iii. Analytical engine, iv. Pascal's Pascaline calculator, v. Mark-1 (5 \u00d7 1 = 5 Marks)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.2",
+    "pageNumber": 2,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "4.1.2 / 3.1.2",
+    "original_slo": "4.1.2 / 3.1.2",
+    "current_slo": "1.3.1",
+    "cognitiveLevel": "A",
+    "marks": 5,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.3.1",
+        "description": "distinguish among the memory measuring units such as bits, bytes, kilobytes, megabytes, and gigabytes in computer memory;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.2.1",
+        "description": "define various input and output devices, including keyboards, touchscreen, pointing devices, biometric scanners, sensors, recognition systems, audio devices, display screens, printers, plotters, cutters, and actuators;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**a.** How many image files, of size 512 kilobytes each, can be stored on 1500 megabytes of a DVD? Show your working. (2 Marks)\n\n**b.** THREE types of events are performed by a mouse. Describe the purpose of these events: **Left Click**, **Right Click**, and **Drag**. (3 Marks)",
+    "modelAnswer": "### Part a: Number of 512 KB Image Files on a 1500 MB DVD (2 Marks)\n1. Convert DVD storage capacity from Megabytes (MB) to Kilobytes (KB):\n   $$1\\text{ MB} = 1024\\text{ KB}$$\n   $$1500\\text{ MB} = 1500 \\times 1024\\text{ KB} = 1,536,000\\text{ KB}$$\n2. Divide total capacity in KB by the size of each image file ($512\\text{ KB}$):\n   $$\\text{Number of files} = \\frac{1,536,000\\text{ KB}}{512\\text{ KB}} = 3000\\text{ image files}$$\n   *(Alternative method: $1\\text{ MB} = 1024\\text{ KB}$ holds $\\frac{1024}{512} = 2\\text{ files per MB}$, so $1500\\text{ MB} \\times 2 = 3000\\text{ files}$.)*\n\n---\n### Part b: Purpose of Mouse Events (3 Marks \u2014 1 Mark Each)\n\n| Left Click | Right Click | Drag |\n| :--- | :--- | :--- |\n| Used to **select** an icon, file, or folder on the screen, click a button/hyperlink, or (with a double left-click) **open/execute** a program or file. | Used to open a **context (pop-up) menu** for the selected object showing relevant actions and **Properties** (e.g., Cut, Copy, Rename, Properties). | Holding down the left mouse button while moving the mouse pointer to **move (drag and drop)** an icon, window, or file to a new location or **highlight/select multiple items**. |",
+    "betterResponse": "In 2a, better responses converted 1500 MB = 1500 \u00d7 1024 = 1,536,000 KB and divided by 512 KB to obtain 3000 files. In 2b, candidates clearly distinguished Left Click (select/open item), Right Click (open context/pop-up properties menu), and Drag (hold left button to move/reposition or group-select items).",
+    "weakerResponse": "In 2a, weaker responses divided 1500 by 512 without converting MB to KB (getting 2.929 files). In 2b, candidates swapped Left Click and Right Click or described mouse wheel scrolling under Drag.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a: 1 mark for converting 1500 MB = 1,536,000 KB (or 1 MB = 2 files of 512 KB) + 1 mark for calculating 3000 image files."
+      },
+      {
+        "marks": 3,
+        "description": "Part b: 1 mark each for describing Left Click (select/click/open), Right Click (open pop-up context menu/properties), and Drag (move/drag-and-drop object while holding left button)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.3",
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "5.1.2 / 5.2.2",
+    "original_slo": "5.1.2 / 5.2.2",
+    "current_slo": null,
+    "cognitiveLevel": "A",
+    "marks": 5,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "**a.** Convert the given octal number into decimal number. Show your working. (2 Marks)\n$$(65.4)_8$$\n\n**b.** Show that binary addition of two numbers, $(01000111)_2$ and $(01110100)_2$, gives a result which is equal to $187$ in decimal number system. (3 Marks)",
+    "modelAnswer": "### Part a: Octal $(65.4)_8$ to Decimal Conversion (2 Marks)\nMultiply each octal digit by its positional power of $8$ ($8^1, 8^0$ to the left of the radix point and $8^{-1}$ to the right):\n$$(65.4)_8 = (6 \\times 8^1) + (5 \\times 8^0) + (4 \\times 8^{-1})$$\n$$(65.4)_8 = (6 \\times 8) + (5 \\times 1) + \\left(4 \\times \\frac{1}{8}\\right)$$\n$$(65.4)_8 = 48 + 5 + 0.5 = (53.5)_{10}$$\n\n---\n### Part b: Binary Addition & Decimal Verification (3 Marks)\n**Step 1: Binary Addition of $(01000111)_2$ and $(01110100)_2$:**\n```text\n  Carry:    1 1 1\n          0 1 0 0 0 1 1 1   (71 in decimal)\n        + 0 1 1 1 0 1 0 0   (116 in decimal)\n        -----------------\n          1 0 1 1 1 0 1 1\n```\n**Step 2: Convert Binary Sum $(10111011)_2$ to Decimal:**\n$$(10111011)_2 = (1 \\times 2^7) + (0 \\times 2^6) + (1 \\times 2^5) + (1 \\times 2^4) + (1 \\times 2^3) + (0 \\times 2^2) + (1 \\times 2^1) + (1 \\times 2^0)$$\n$$(10111011)_2 = 128 + 0 + 32 + 16 + 8 + 0 + 2 + 1 = (187)_{10}$$\n*(Verified: $(10111011)_2 = 187_{10}$.)*",
+    "betterResponse": "In 3a, better responses assigned $8^1$, $8^0$, and $8^{-1}$ around the radix point to get $48 + 5 + 0.5 = 53.5$. In 3b, candidates added the two 8-bit binary numbers to obtain $(10111011)_2$ and expanded its positional powers of 2 ($128 + 32 + 16 + 8 + 2 + 1 = 187$) to prove equality with $187_{10}$.",
+    "weakerResponse": "In 3a, weaker responses ignored the fractional power $8^{-1}$ and wrote $53.4$. In 3b, candidates performed the binary addition to get $(10111011)_2$ but omitted the conversion proving that $(10111011)_2 = 187_{10}$.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a: 1 mark for positional expansion $(6 \\times 8^1) + (5 \\times 8^0) + (4 \\times 8^{-1})$ + 1 mark for final answer $(53.5)_{10}$."
+      },
+      {
+        "marks": 3,
+        "description": "Part b: 1.5 marks for correct binary addition yielding $(10111011)_2$ + 1.5 marks for showing that $(10111011)_2 = 128 + 32 + 16 + 8 + 2 + 1 = 187_{10}$."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.4",
+    "pageNumber": 3,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "7.1.3 / 8.1.3 / 9.1.3",
+    "original_slo": "7.1.3 / 8.1.3 / 9.1.3",
+    "current_slo": null,
+    "cognitiveLevel": "A",
+    "marks": 6,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2018-P2/q4c.png",
+    "in_syllabus": false,
+    "out_of_syllabus": true,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [],
+    "stem": "**a.** Asher wants to launch the start menu on his computer system which has Windows operating system installed but the mouse connected to his computer system is not working.\nMention any TWO ways in which Asher could launch the start menu without using the mouse. (2 Marks)\n\n**b.** Given is a list of change case options available in MS Word:\n\u2022 `Sentence case` \u2022 `Lowercase` \u2022 `Uppercase` \u2022 `Capitalize each word` \u2022 `Toggle case`\nSelect appropriate change case option for each word from the given list and write it in the third column of the table. (2 Marks)\n\n| Before Applying Change Case | After Applying Change Case | Change Case Option Used |\n| :--- | :--- | :--- |\n| `CompuTer` | `cOMPUtER` | |\n| `FLOPPY` | `Floppy` | |\n\n**c.** To insert any chart in MS PowerPoint, we enter data in the MS Excel file that should be depicted in the chart.\nComplete the given MS Excel table by filling the shaded cells with reference to the given chart. (2 Marks)",
+    "modelAnswer": "### Part a: Launching Windows Start Menu Without a Mouse (2 Marks \u2014 1 Mark Each)\n1. Press the **`Windows` logo key** (`Win`) on the keyboard.\n2. Press the **`Ctrl + Esc`** keyboard shortcut.\n*(Alternative valid answers: Use a laptop touchpad/trackball, touchscreen, or Windows Speech Recognition.)*\n\n---\n### Part b: MS Word Change Case Options (2 Marks \u2014 1 Mark Each)\n\n| Before Applying Change Case | After Applying Change Case | Change Case Option Used |\n| :--- | :--- | :--- |\n| `CompuTer` | `cOMPUtER` | **`Toggle case`** |\n| `FLOPPY` | `Floppy` | **`Sentence case`** *(or **`Capitalize each word`**)* |\n\n---\n### Part c: Completed MS Excel Table for the PowerPoint Chart (2 Marks)\n\n| *(Class / Category)* | **Male** | **Female** |\n| :--- | :--- | :--- |\n| **Class 9** | 19 | 9 |\n| **Class 10** | 15 | 5 |\n| **Class 11** | 17 | 7 |\n| **Class 12** | 14 | 4 |",
+    "betterResponse": "In 4a, better responses stated pressing the Windows key on the keyboard and pressing Ctrl + Esc. In 4b, candidates selected Toggle case for `cOMPUtER` and Sentence case (or Capitalize each word) for `Floppy`. In 4c, candidates filled the top column headers with `Male` and `Female` and the left row headers with `Class 9`, `Class 10`, `Class 11`, and `Class 12`.",
+    "weakerResponse": "In 4a, weaker responses wrote 'press Start button on keyboard' or 'press Ctrl + S'. In 4b, candidates confused Toggle case with Capitalize each word. In 4c, candidates swapped Male and Female or wrote totals (`19 + 9 = 28`) in the left column.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a: 1 mark each for any TWO valid methods to open the Start menu without a mouse (pressing Windows key, pressing Ctrl + Esc, using touchpad/trackball)."
+      },
+      {
+        "marks": 2,
+        "description": "Part b: 1 mark for `Toggle case` + 1 mark for `Sentence case` (or `Capitalize each word`)."
+      },
+      {
+        "marks": 2,
+        "description": "Part c: 1 mark for top column headers (`Male`, `Female` in correct order) + 1 mark for left row headers (`Class 9`, `Class 10`, `Class 11`, `Class 12`)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.5",
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "7.1.2 / 7.2.2",
+    "original_slo": "7.1.2 / 7.2.2",
+    "current_slo": "1.5.2",
+    "cognitiveLevel": "K",
+    "marks": 4,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**a.** Define the following types of user interface:\n**i.** Command Line Interface (CLI) (1 Mark)\n**ii.** Graphical User Interface (GUI) (1 Mark)\n\n**b.** Define 'internal' and 'external' commands in DOS and give an example of any ONE of these. (2 Marks)",
+    "modelAnswer": "### Part a: Definitions of CLI and GUI (2 Marks)\n- **i. Command Line Interface (CLI) (1 Mark):** A text-based user interface in which the user interacts with the operating system by typing explicit **text commands** using a keyboard at a command prompt (e.g., MS-DOS, UNIX shell).\n- **ii. Graphical User Interface (GUI) (1 Mark):** A visual user interface in which the user interacts with the computer using graphical elements such as **windows, icons, menus, and a pointing device/mouse (`WIMP`)** (e.g., Microsoft Windows, macOS, Ubuntu Linux).\n\n---\n### Part b: Internal and External Commands in MS-DOS (2 Marks)\n- **Internal Commands:** Commands that are built directly into the **`COMMAND.COM`** command interpreter and loaded into **main memory (RAM)** automatically when the computer boots. They execute immediately without needing a separate disk file.\n  - *Examples:* `DIR`, `CLS`, `VER`, `MD`, `CD`, `COPY`, `DEL`, `TIME`, `DATE`.\n- **External Commands:** Commands that are NOT built into `COMMAND.COM` in RAM; instead, they reside on secondary storage (hard disk/floppy) as separate executable files (**`.COM`, `.EXE`, or `.BAT`**) and must be loaded from disk when executed.\n  - *Examples:* `FORMAT`, `DISKCOPY`, `CHKDSK`, `DELTREE`, `XCOPY`, `EDIT`.",
+    "betterResponse": "In 5a, better responses defined CLI as a text-command interface operated via keyboard and GUI as a visual interface operated via icons, menus, windows, and pointers. In 5b, candidates defined Internal DOS commands as those resident in `COMMAND.COM` in memory (e.g., `CLS`, `DIR`) and External DOS commands as separate `.BAT`, `.COM`, or `.EXE` files on disk (e.g., `CHKDSK`, `FORMAT`).",
+    "weakerResponse": "In 5a, weaker responses wrote comparisons/features ('GUI is easy and uses more memory') rather than defining what CLI and GUI are. In 5b, candidates wrote circular definitions like 'internal commands are used internally and external commands are used externally'.",
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a: 1 mark for defining CLI (text command interface via keyboard) + 1 mark for defining GUI (visual interface using icons, menus, windows, and mouse)."
+      },
+      {
+        "marks": 2,
+        "description": "Part b: 1.5 marks for defining Internal commands (in `COMMAND.COM` / RAM) and External commands (separate `.COM`/`.EXE`/`.BAT` files on disk) + 0.5 mark for any ONE valid command example."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.6",
+    "pageNumber": 6,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.1.3 / 1.2.5 / 1.6.3 / 1.3.2",
+    "original_slo": "1.1.3 / 2.1.4",
+    "current_slo": "1.2.5",
+    "cognitiveLevel": "U",
+    "marks": 8,
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CS-IX-2018-P2/q6b.png",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.2.5",
+        "description": "illustrate the system bus and its types, including data bus, address bus and control bus, along with their roles in computer architecture using a diagram;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.6.3",
+        "description": "describe the following types of language translators: a. compilers, b. interpreter, c. assembler;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.3.2",
+        "description": "compare the types of primary memory, i.e., Random Access Memory (RAM) and Read Only Memory (ROM);",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**EITHER**\n**a.**\n**i.** Differentiate among **supercomputers**, **minicomputers** and **microcomputers** on the basis of their **size**, **computation speed**, **cost** and **use**. (5 Marks)\n**ii.** Write any THREE advantages of using **integrated circuits (ICs)** over **transistors** in third generation of computers. (3 Marks)\n\n**OR**\n**b.**\n**i.** The given image shows the system bus in a typical computer. Identify **address bus**, **control bus** and **data bus** (`A`, `B`, `C`) on the basis of connections shown among CPU, Memory and Input and Output units of a computer system. (3 Marks)\n**ii.** Describe the following types of translators: **Compiler**, **Interpreter**, and **Assembler**. (3 Marks)\n**iii.** Describe the role of **RAM** and **ROM** in computer. (2 Marks)",
+    "modelAnswer": "### Part a: Classification of Computers & Integrated Circuits vs Transistors (8 Marks)\n**i. Comparison of Supercomputers, Minicomputers, and Microcomputers (5 Marks):**\n\n| Factor | Supercomputers | Minicomputers | Microcomputers |\n| :--- | :--- | :--- | :--- |\n| **Size** | **Largest** in size (occupies entire special air-conditioned rooms). | **Medium-sized** (cabinet/rack-sized, smaller than super/mainframe but larger than microcomputers). | **Smallest** and most compact (fits on a desk, lap, or palm). |\n| **Speed** | **Fastest** computation speed (trillions of floating-point operations per second \u2014 FLOPS). | **High multi-user speed** (faster than microcomputers but slower than supercomputers). | **Lowest relative speed** among the three (designed for a single user's tasks). |\n| **Cost** | **Most expensive** (millions of dollars to build and maintain). | **Moderately expensive** (thousands to tens of thousands of dollars). | **Least expensive / most affordable** for individuals. |\n| **Use** | Complex scientific research, global weather forecasting, nuclear simulations, and aerospace modelling. | Departmental servers, medium-sized business transaction processing, and industrial process control. | Personal everyday use at homes, schools, and offices (word processing, web browsing, gaming). |\n\n**ii. THREE Advantages of Integrated Circuits (ICs) over Transistors (3 Marks \u2014 1 Mark Each):**\n1. **Compact Miniaturisation:** An IC packs hundreds or thousands of transistors onto a single tiny silicon chip, drastically reducing the physical size and weight of computers.\n2. **Higher Processing Speed & Reliability:** Shorter internal signal paths on a silicon chip allow much faster switching speeds (nanoseconds) and fewer soldered-joint failures.\n3. **Lower Power Consumption & Less Heat:** ICs consume significantly less electrical power and generate less heat than thousands of discrete transistors.\n\n---\n### Part b: System Buses, Language Translators & Primary Memory (8 Marks)\n**i. Identification of System Buses A, B, and C from the Diagram (3 Marks \u2014 1 Mark Each):**\n- **A:** **Data Bus** *(bidirectional arrows `<-->` connecting CPU, Memory, and Input/Output)*\n- **B:** **Address Bus** *(unidirectional arrows pointing out from CPU to Memory and Input/Output)*\n- **C:** **Control Bus** *(arrows carrying control/status signals across CPU, Memory, and Input/Output)*\n\n**ii. Description of Language Translators (3 Marks \u2014 1 Mark Each):**\n\n| Compiler | Interpreter | Assembler |\n| :--- | :--- | :--- |\n| Translates an **entire high-level language program** into machine code **all at once** before execution, generating a standalone executable file and reporting all syntax errors together. | Translates and executes a **high-level language program line by line** (statement by statement), stopping immediately whenever an error is encountered without producing a separate object file. | Translates a low-level **assembly language program** (written in symbolic mnemonics like `ADD`, `MOV`) into binary machine code. |\n\n**iii. Role of RAM and ROM in a Computer (2 Marks \u2014 1 Mark Each):**\n- **RAM (Random Access Memory):** Volatile read/write primary memory that **temporarily stores the active operating system, currently running application programs, and data** being processed by the CPU.\n- **ROM (Read-Only Memory):** Non-volatile permanent primary memory that **stores the BIOS (Basic Input/Output System) and bootstrap startup instructions** required to boot and initialise the computer when power is turned on.",
+    "betterResponse": "In 6a, better responses accurately compared Supercomputers, Minicomputers, and Microcomputers across size, speed, cost, and use, and listed three advantages of ICs over transistors (smaller size, higher speed, lower power/heat). In 6b, candidates correctly identified `A = Data Bus`, `B = Address Bus`, and `C = Control Bus`, described Compiler (whole program), Interpreter (line by line), and Assembler (assembly to machine code), and explained the roles of RAM (volatile working memory) and ROM (non-volatile BIOS boot memory).",
+    "weakerResponse": "In 6a, weaker responses swapped Minicomputers and Microcomputers or claimed 'ICs store more data than transistors'. In 6b, weaker responses swapped Compiler and Interpreter or reversed RAM and ROM volatility.",
+    "rubric": [
+      {
+        "marks": 4,
+        "description": "Part a(i): 5 marks for differentiating Supercomputers, Minicomputers, and Microcomputers across Size, Speed, Cost, and Use. OR Part b(i): 1 mark each for identifying A = Data Bus, B = Address Bus, and C = Control Bus (3 Marks)."
+      },
+      {
+        "marks": 4,
+        "description": "Part a(ii): 1 mark each for THREE advantages of ICs over transistors (3 Marks). OR Part b(ii-iii): 1 mark each for Compiler, Interpreter, and Assembler (3 Marks) + 1 mark each for the role of RAM and ROM (2 Marks)."
+      }
+    ]
+  },
+  {
+    "questionNumber": "Q.7",
+    "pageNumber": 8,
+    "unitNumber": 1,
+    "unitName": "The Computer System",
+    "chapter": "The Computer System",
+    "slo": "1.5.3 / 1.5.2",
+    "original_slo": "7.1.1",
+    "current_slo": "1.5.3",
+    "cognitiveLevel": "A",
+    "marks": 7,
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "syllabus_reviewed": true,
+    "current_syllabus_reviewed": true,
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Computer Science"
+    },
+    "current_mapping": [
+      {
+        "code": "1.5.3",
+        "description": "describe the purpose of the following application software: a. word processor, b. spreadsheet, c. database management, d. presentation/ desktop publication, e. communication, f. entertainment;",
+        "topic": "The Computer System"
+      },
+      {
+        "code": "1.5.2",
+        "description": "explain the following types of system software: a. operating system, b. device drivers, c. utility programs, d. language processors;",
+        "topic": "The Computer System"
+      }
+    ],
+    "stem": "**EITHER**\n**a.**\n**i.** Identify any TWO application software that can help a teacher to improve his/ her routine tasks such as preparation of lecture, report cards, attendance registers and time table. (1 Mark)\n**ii.** Describe THREE uses of each software identified in part (i). (6 Marks)\n\n**OR**\n**b.** Utility software is a type of system software used to support the computer infrastructure, distinguishing it from application software which is aimed at directly performing tasks that benefit ordinary users.\nExplain the functionality of any FOUR utility software using appropriate examples. (7 Marks)",
+    "modelAnswer": "### Part a: Application Software for a Teacher's Routine Tasks (7 Marks)\n**i. TWO Application Software for a Teacher (1 Mark \u2014 0.5 Mark Each):**\n1. **Spreadsheet Software** *(e.g., Microsoft Excel / Google Sheets)*\n2. **Presentation Software** *(e.g., Microsoft PowerPoint)* or **Word Processing Software** *(e.g., Microsoft Word)*\n\n**ii. THREE Uses of Each Identified Software for a Teacher (6 Marks \u2014 3 Marks Each):**\n- **Uses of MS Excel (Spreadsheet Software) (3 Marks):**\n  1. **Automated Report Cards & Grading:** Using built-in formulas (`SUM`, `AVERAGE`, `IF`, `MIN`, `MAX`) to automatically calculate student totals, percentages, and letter grades without manual calculation errors.\n  2. **Attendance Registers:** Maintaining daily/monthly student attendance sheets and automatically computing attendance percentages.\n  3. **Class Timetables & Performance Charts:** Organising structured rows and columns for class schedules and generating bar/pie charts to visualise class exam performance.\n- **Uses of MS PowerPoint (Presentation Software) (3 Marks):**\n  1. **Interactive Multimedia Lectures:** Designing engaging slide decks with diagrams, images, audio/video clips, and animations to explain complex concepts visually.\n  2. **Reusable Lesson Plans & Revision Summaries:** Saving structured topic slides that can be updated and reused across academic terms or shared with students.\n  3. **Visualising Data & Charts in Class:** Embedding charts, tables, and SmartArt flowcharts to present topic breakdowns clearly on a projector.\n\n---\n### Part b: Functionality of FOUR Utility Software with Examples (7 Marks)\n1. **Antivirus Software (e.g., McAfee, Norton, Avira, Windows Defender):** Scans hard drives, USB flash drives, and incoming downloads in real time to detect, quarantine, and remove malicious software (viruses, worms, trojans, spyware).\n2. **File Compression Utility (e.g., WinZip, WinRAR, 7-Zip):** Compresses large files and folders into smaller archive packages (`.zip`, `.rar`) so they occupy less disk space and can be emailed or transferred faster.\n3. **Backup & Recovery Utility (e.g., Windows Backup, BackupMyPC, Acronis):** Creates duplicate copies of important files, databases, and system images on external drives or cloud storage so data can be restored after accidental deletion or hardware failure.\n4. **Disk Defragmenter / Disk Cleanup Utility (e.g., Windows Defragmenter, CCleaner):** Reorganises fragmented file clusters contiguously on a magnetic hard disk (and removes temporary junk files) to improve file access speed and free up storage space.",
+    "betterResponse": "In 7a, more than 70% of candidates attempted this part and performed well, identifying MS Excel and MS PowerPoint (or MS Word) and describing three teacher-specific uses for each (attendance registers, formula-based report cards, timetables, and multimedia lecture slides). In 7b, better responses named four valid utility programs (e.g., BackupMyPC, WinZip, McAfee Antivirus, Screen Saver / Disk Cleanup) and clearly explained how each maintains or protects the system.",
+    "weakerResponse": "In 7a, weaker responses wrote generic categories ('education software, productivity software') or described uses from a student's perspective instead of a teacher's. In 7b, weaker responses confused utility software with compilers, operating systems (DOS, Windows), or application suites (MS Word, Photoshop).",
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part a(i): 0.5 mark each for naming TWO relevant application software (e.g., MS Excel, MS PowerPoint, MS Word) = 1 Mark. OR Part b: 1 mark for naming four valid utility software examples."
+      },
+      {
+        "marks": 6,
+        "description": "Part a(ii): 1 mark each for THREE teacher-specific uses of the first software (3 Marks) + 1 mark each for THREE teacher-specific uses of the second software (3 Marks) = 6 Marks. OR Part b: 1.5 marks each for explaining the functionality of FOUR utility software (Antivirus, File Compression, Backup, Disk Cleanup/Defragmenter/Screen Saver) = 6 Marks."
+      }
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+Repository root that wires the Next.js web app, Prisma data layer, Node worker processes, and Python-based AI/assessment workers behind a shared PostgreSQL + pgvector database via Docker Compose.

@@ -1,0 +1,102 @@
+{
+  "mcqMappings": "1.4.1 1.2.2 2.2.1 2.2.1 2.4.3 4.1.1 4.1.2 3.3.1 3.3.1+11.3.1 3.5.1 3.3.1 11.3.1 4.2.1 4.2.1 6.2.1 6.3.2 7.4.2 7.5.1 7.7.1 7.8.2 - 8.5.2 9.1.1 9.1.3 9.4.3 10.2.1 10.5.2 10.8.1 10.9.3 10.11.1",
+  "held": {},
+  "mcqNotes": {
+    "20": "The digital stem specifies the device designed to damp oscillations. Other real oscillators can also lose energy through damping.",
+    "21": "For an ideal gas $v=\\sqrt{\\gamma P/\\rho}=\\sqrt{\\gamma RT/M}$. At fixed temperature, changing pressure changes the density in the same proportion, so the speed stays the same and pressure alone does not affect it. Density and temperature each change the speed, which makes B the correct choice.",
+    "26": "Boyle’s law applies to a fixed amount of gas at constant temperature, $PV=$ constant. Of the conditions offered, only temperature (III) is explicitly required; the fixed amount of gas is implicit in the statement of the law, and density is not held constant because $\\rho=m/V$ changes as the volume changes. Choice B is the best available key.",
+    "30": "Entropy is a state function that measures how much of a system’s energy is unavailable for doing useful work, which is choice C. The other choices describe a change in energy or environmental degradation rather than entropy itself."
+  },
+  "written": {
+    "1": {
+      "mapping": "1.1.4+1.2.2+2.4.2",
+      "level": "U",
+      "solution": "Work is a scalar dot product, $W=\\vec F\\cdot\\vec s$, and is expressed in joules. Torque is an axial vector, $\\vec\\tau=\\vec r\\times\\vec F$, and is expressed in newton-metres. Both are force times length and have dimensions $ML^2T^{-2}$. The different names distinguish the physical quantities."
+    },
+    "2": {
+      "mapping": "1.2.3",
+      "level": "U",
+      "solution": "The dimensions of $2as$ are $(LT^{-2})L=L^2T^{-2}$. Each squared velocity on the right has dimensions $(LT^{-1})^2=L^2T^{-2}$. The numerical factor 2 is dimensionless, so both sides agree."
+    },
+    "3": {
+      "mapping": "2.2.3",
+      "level": "A",
+      "solution": "Draw a 5 N arrow east and a 10 N arrow south. Draw the resultant as the diagonal of the rectangle, pointing southeast. Because the forces are perpendicular, $F_{\\mathrm{net}}=\\sqrt{5^2+10^2}=5\\sqrt5\\,\\mathrm N\\approx11.2\\,\\mathrm N$."
+    },
+    "4": {
+      "mapping": "3.2.3",
+      "level": "U",
+      "solution": "The principle is impulse. The same momentum change can occur over a longer stopping time, so $F_{\\mathrm{avg}}=\\Delta p/\\Delta t$ is smaller. An airbag cushions a passenger, a truck arrestor bed extends the stopping time, and bending the knees extends the time taken to come to rest after landing."
+    },
+    "5": {
+      "mapping": "-",
+      "level": "K",
+      "solution": "Three examples are solar energy, wind energy and geothermal energy."
+    },
+    "6": {
+      "mapping": "4.3.5+11.3.2+11.3.3",
+      "level": "U",
+      "solution": "a. A geostationary satellite has a circular equatorial orbit in the direction of Earth’s rotation, with a period equal to one sidereal day. It appears fixed over the same longitude, so a ground station can keep an antenna pointed at it.\nb. Orbiting alone gives apparent weightlessness. If the habitat spins about its own axis, occupants move in a circle. The outer floor then pushes inward on them to provide $a_c=\\omega^2r$, and they feel a supporting force like weight."
+    },
+    "7": {
+      "mapping": "6.4.1+6.3.1+6.2.1",
+      "level": "U",
+      "solution": "a. The pressure, speed and height labels fit Bernoulli’s equation: $P_1+\\frac12\\rho v_1^2+\\rho gh_1=P_2+\\frac12\\rho v_2^2+\\rho gh_2$. The areas and speeds also satisfy $A_1v_1=A_2v_2$ for steady incompressible flow.\nb. The idealisation assumes steady flow, constant density and negligible viscosity."
+    },
+    "8": {
+      "mapping": "7.4.2",
+      "level": "K",
+      "solution": "The period depends on the pendulum length $L$ and local gravitational acceleration $g$. For small amplitudes, $T=2\\pi\\sqrt{L/g}$."
+    },
+    "9": {
+      "mapping": "7.1.2+7.2.3",
+      "level": "U",
+      "solution": "The displacement varies sinusoidally about equilibrium. The acceleration is proportional to displacement and points toward equilibrium, $a=-\\omega^2x$. Speed is greatest at equilibrium and zero at the two turning points."
+    },
+    "10": {
+      "mapping": "8.5.4+8.5.5",
+      "level": "U",
+      "solution": "The radar transmits radio waves and detects the echo from the aircraft. The round-trip time gives the slant range $R=c\\Delta t/2$. A measured beam elevation angle $\\alpha$ gives altitude relative to the radar of approximately $R\\sin\\alpha$ in flat geometry. The Doppler frequency shift of the echo gives the velocity component along the beam. For a stationary radar and low target speeds, $|\\Delta f|\\approx2f_0|v_r|/c$."
+    },
+    "11": {
+      "mapping": "9.2.2+9.2.3",
+      "level": "U",
+      "solution": "a. The phenomenon is interference.\nb. Waves superpose. In-phase contributions reinforce one another and out-of-phase contributions can cancel, producing alternating maxima and minima.\nc. For a stable pattern, use waves of the same frequency that maintain a constant phase difference and overlap at the observation points."
+    },
+    "12": {
+      "mapping": "10.9.4",
+      "level": "A",
+      "solution": "From $\\eta=1-T_C/T_H$, $T_C=(1-\\eta)T_H=(1-0.65)(590)=206.5\\,\\mathrm K$, or about $207\\,\\mathrm K$."
+    },
+    "13a": {
+      "mapping": "3.3.1",
+      "level": "A",
+      "solution": "An infinitesimal displacement $d\\vec r$ gives $dW=\\vec F\\cdot d\\vec r$. Dividing by time gives $P=dW/dt=\\vec F\\cdot\\vec v=Fv\\cos\\theta$. When force and velocity are parallel in the same direction, $P=Fv$."
+    },
+    "13b": {
+      "mapping": "3.5.1",
+      "level": "A",
+      "solution": "The net force is in the direction of displacement. With $F_{\\mathrm{net}}=ma$ and $v_f^2-v_i^2=2a\\Delta x$, the net work is $W_{\\mathrm{net}}=F_{\\mathrm{net}}\\Delta x=ma\\Delta x=\\frac12mv_f^2-\\frac12mv_i^2$."
+    },
+    "14a": {
+      "mapping": "-",
+      "level": "U",
+      "solution": "Newton treated the pressure changes as isothermal, so the bulk modulus was $B=P$ and the sound speed $v=\\sqrt{P/\\rho}$. Laplace recognised that the rapid compressions and rarefactions are approximately adiabatic, so $B=\\gamma P$. The corrected formula is $v=\\sqrt{\\gamma P/\\rho}$, larger by a factor $\\sqrt\\gamma$."
+    },
+    "14b": {
+      "mapping": "-",
+      "level": "U",
+      "solution": "i. For an ideal gas, $v=\\sqrt{\\gamma P/\\rho}=\\sqrt{\\gamma RT/M}$. At fixed pressure, lower density gives higher speed. At fixed gas composition, higher absolute temperature gives higher speed, and changing pressure at fixed temperature also changes density in the same proportion, leaving speed unchanged.\nii. Longitudinal sound travels at a speed set by elastic stiffness divided by density under the square root. Typical solids have much greater stiffness relative to density than liquids and gases, so sound usually travels faster through them."
+    },
+    "15a": {
+      "mapping": "10.3.2",
+      "level": "A",
+      "solution": "Random molecular motion is isotropic, so $\\langle v_x^2\\rangle=\\langle v_y^2\\rangle=\\langle v_z^2\\rangle$. Since $\\langle v^2\\rangle=\\langle v_x^2\\rangle+\\langle v_y^2\\rangle+\\langle v_z^2\\rangle$, each component contributes one-third of the mean-square speed. Pressure is the same on walls of every orientation, so $P=P_x=Nm\\langle v^2\\rangle/(3V)$. Equivalently, $PV=\\tfrac13Nm\\langle v^2\\rangle$."
+    },
+    "15b": {
+      "mapping": "10.5.1+10.5.2",
+      "level": "U",
+      "solution": "i. The balanced scale depicts conservation of energy. The system’s internal-energy change is heat supplied less work done by the system, $\\Delta U=Q-W_{\\mathrm{by}}$, or $Q=\\Delta U+W_{\\mathrm{by}}$.\nii. In an isothermal ideal-gas process the temperature and therefore internal energy are constant. With $\\Delta U=0$, the first law reduces to $Q=W_{\\mathrm{by}}$."
+    }
+  }
+}

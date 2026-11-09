@@ -2,6 +2,7 @@
 
 import React from 'react';
 import MathText from '@/components/MathText';
+import { educationalLines, restoreInlineLetteredLists } from '@/lib/inlineEducationalLists';
 
 interface StructuredContentProps {
   text: string;
@@ -11,6 +12,7 @@ interface StructuredContentProps {
 
 export default function StructuredContent({ text, className = '', style = {} }: StructuredContentProps) {
   if (!text) return null;
+  text = restoreInlineLetteredLists(text);
 
   // 1. Check if text contains a Markdown table (| col1 | col2 |)
   if (text.includes('|') && text.split('\n').some(line => line.trim().startsWith('|') && line.trim().endsWith('|'))) {
@@ -66,6 +68,7 @@ export default function StructuredContent({ text, className = '', style = {} }: 
                 <tr style={{ background: 'var(--primary-light, #e6f0ed)', borderBottom: '2px solid var(--border-color, #cbd5e1)' }}>
                   {headerCells.map((cell, cIdx) => (
                     <th key={cIdx} style={{
+                      border: '1px solid var(--border-color, #cbd5e1)',
                       padding: '10px 14px',
                       textAlign: 'left',
                       fontWeight: 700,
@@ -84,6 +87,7 @@ export default function StructuredContent({ text, className = '', style = {} }: 
                   }}>
                     {row.map((cell, cIdx) => (
                       <td key={cIdx} style={{
+                        border: '1px solid var(--border-color, #cbd5e1)',
                         padding: '9px 14px',
                         color: 'var(--text-color, #1e293b)'
                       }}>
@@ -192,30 +196,18 @@ export default function StructuredContent({ text, className = '', style = {} }: 
     }
   }
 
-  // 3. Multiline with Roman numerals or bullets
+  // Shared markers are also used by answers, explanations and quiz text.
   if (text.includes('\n') || text.includes('•')) {
-    const lines = text.split('\n');
     return (
       <div className={`structured-content ${className}`} style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', ...style }}>
-        {lines.map((line, lIdx) => {
-          const trimmed = line.trim();
-          if (!trimmed) return <div key={lIdx} style={{ height: '0.25rem' }} />;
-          const isBullet = trimmed.startsWith('•') || /^(I|II|III|IV|V)\./i.test(trimmed);
-          if (isBullet) {
-            const cleanText = trimmed.replace(/^•\s*/, '');
-            return (
-              <div key={lIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', paddingLeft: '0.75rem' }}>
-                <span style={{ color: 'var(--primary-color, #0b5e4a)', fontWeight: 800 }}>•</span>
-                <span style={{ flex: 1 }}><MathText text={cleanText} /></span>
+        {educationalLines(text).map((line, index) => !line.body.trim()
+          ? <div key={index} style={{ height: '0.25rem' }} />
+          : line.marker
+            ? <div key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', paddingLeft: line.kind === 'roman' ? '1.1rem' : '0.4rem' }}>
+                <span style={{ fontWeight: line.kind === 'roman' ? 400 : 700, color: 'var(--primary-color, #0b5e4a)', minWidth: line.kind === 'roman' ? '1.65rem' : '1.35rem' }}>{line.marker}</span>
+                <span style={{ flex: 1 }}><MathText text={line.body} /></span>
               </div>
-            );
-          }
-          return (
-            <div key={lIdx}>
-              <MathText text={line} />
-            </div>
-          );
-        })}
+            : <div key={index}><MathText text={line.body} /></div>)}
       </div>
     );
   }

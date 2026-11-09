@@ -1,0 +1,306 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Consider the given reaction at equilibrium.\nPCl3(g) + Cl2(g) \u21cc PCl5(g)   (\u0394H = \u2212124 kJ/mol)\na. With reference to the given chemical reaction, complete the table by writing the reason for each cause and effect. (2 Marks)\n   i. Cause and Effect: Increase in temperature shifts equilibrium towards left | Reason: ?\n   ii. Cause and Effect: Increase in pressure shifts equilibrium towards right | Reason: ?\nb. Identify the principle applied to this chemical reaction. Support your identification with a suitable reason. (2 Marks)",
+    "marks": 4,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "9.3.7",
+    "currentSlo": "9.3.7",
+    "sloText": "Determine the effect of catalyst, temperature, pressure and concentration on a reversible reaction at equilibrium using Le Chatelier's principle.",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "diagramUrl": "/paper-crops/CHM-X-2024-P2/q1a.png",
+    "checkingHints": [
+      "Part a (2 marks - 1 mark for each correct reason):",
+      "- i. Because \u0394H = \u2212124 kJ/mol (negative), the forward reaction is exothermic (releases heat); therefore, increasing temperature (adding heat) favours the endothermic reverse reaction (shifts left) to absorb the excess heat.",
+      "- ii. There are 2 moles of gas on the reactant side (1 mol PCl3 + 1 mol Cl2) and only 1 mole of gas on the product side (1 mol PCl5); increasing pressure shifts the equilibrium towards the side with fewer moles of gas (shifts right).",
+      "Part b (2 marks):",
+      "- 1 mark for identifying Le Chatelier's principle.",
+      "- 1 mark for stating the reason/definition: If an external stress (change in temperature, pressure, or concentration) is applied to a system at equilibrium, the system shifts in the direction that counteracts or nullifies the applied stress to re-establish equilibrium."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part a.i: Explains that the reaction is exothermic (\u0394H is negative), so adding heat shifts the reaction in the endothermic reverse direction (left)."
+      },
+      {
+        "marks": 1,
+        "description": "Part a.ii: Explains that the product side has fewer moles of gas (1 mole vs 2 moles on reactant side), so increasing pressure shifts equilibrium to the right."
+      },
+      {
+        "marks": 1,
+        "description": "Part b: Identifies Le Chatelier's Principle."
+      },
+      {
+        "marks": 1,
+        "description": "Part b: Explains that the system shifts to undo/nullify the external stress (temperature/pressure change) applied to the equilibrium."
+      }
+    ],
+    "modelAnswer": "a. Reasons for the Given Equilibrium Shifts:\ni. Increase in temperature shifts equilibrium towards left:\n   - Reason: The negative enthalpy change (\u0394H = \u2212124 kJ/mol) shows that the forward reaction is exothermic (heat is released as a product). When temperature is increased, the system absorbs the added heat by shifting in the endothermic reverse direction (towards the left / reactants).\n\nii. Increase in pressure shifts equilibrium towards right:\n   - Reason: According to the balanced equation, 2 moles of gaseous reactants (1 mole PCl3 + 1 mole Cl2) combine to form 1 mole of gaseous product (1 mole PCl5). When pressure is increased, the volume decreases (mass per unit volume increases), so the equilibrium shifts towards the side with fewer moles of gas\u2014the product side (right)\u2014to reduce pressure.\n\nb. Principle Applied and Justification:\n- Principle: Le Chatelier's Principle.\n- Reason / Justification: Le Chatelier's Principle states that if an external stress (such as a change in temperature, pressure, or concentration) is applied to a reversible system at dynamic equilibrium, the system adjusts itself and shifts in the direction that counteracts (undoes/nullifies) the applied stress in order to restore equilibrium."
+  },
+  {
+    "questionNumber": "Q.2",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Given are three different compounds with four carbon atoms.\nCompound I: Cyclobutane (four-membered saturated ring, C4H8)\nCompound II: Butanoic acid (CH3\u2013CH2\u2013CH2\u2013CO2H)\nCompound III: 1-Butene (CH3\u2013CH2\u2013CH=CH2, C4H8)\na. Identify compound II based on its functional group. (1 Mark)\nb. Write any ONE similarity and ONE difference between compounds I and III. (2 Marks)",
+    "marks": 3,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "11.2.1, 11.5.3",
+    "currentSlo": "11.5.3",
+    "sloText": "Classify organic compounds into acyclic and cyclic compounds and identify a molecule's functional group using structural formulas.",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "diagramUrl": "/paper-crops/CHM-X-2024-P2/q2.png",
+    "checkingHints": [
+      "a. 1 mark for identifying the functional group / class of Compound II as Carboxylic acid (carboxyl group, \u2013COOH / \u2013CO2H; IUPAC name: butanoic acid).",
+      "b. 1 mark for any ONE valid similarity between Compounds I and III:",
+      "   - Both have the exact same molecular formula C4H8 (4 carbon atoms and 8 hydrogen atoms) and general formula CnH2n (they are structural/ring-chain isomers).",
+      "   - Both are hydrocarbons (composed only of carbon and hydrogen).",
+      "c. 1 mark for any ONE valid difference between Compounds I and III:",
+      "   - Compound I (cyclobutane) is a closed-chain (cyclic / alicyclic) saturated hydrocarbon containing only C\u2013C single bonds, whereas Compound III (1-butene) is an open-chain (acyclic) unsaturated hydrocarbon (alkene) containing a C=C double bond."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part a: Identifies Compound II as a Carboxylic acid (or carboxyl functional group / butanoic acid)."
+      },
+      {
+        "marks": 1,
+        "description": "Part b (Similarity): States that both Compounds I and III have the same molecular formula C4H8 (4 carbons and 8 hydrogens) or are hydrocarbons."
+      },
+      {
+        "marks": 1,
+        "description": "Part b (Difference): Contrasts Compound I (cyclic / closed-chain / saturated cycloalkane with single bonds) with Compound III (acyclic / open-chain / unsaturated alkene with a C=C double bond)."
+      }
+    ],
+    "modelAnswer": "a. Identification of Compound II:\nCompound II contains the carboxyl functional group (\u2013CO2H or \u2013COOH); therefore, it belongs to the Carboxylic acid class of organic compounds (specifically, Butanoic acid).\n\nb. Comparison Between Compound I (Cyclobutane) and Compound III (1-Butene):\n- Similarity (Any One):\n  Both Compound I and Compound III are hydrocarbons having the exact same molecular formula, C4H8 (containing 4 carbon atoms and 8 hydrogen atoms, general formula CnH2n).\n- Difference (Any One):\n  Compound I is a closed-chain (cyclic / alicyclic) saturated hydrocarbon containing only carbon-carbon single bonds, whereas Compound III is an open-chain (acyclic) unsaturated hydrocarbon (alkene) containing a carbon-carbon double bond (C=C)."
+  },
+  {
+    "questionNumber": "Q.3",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Two beakers, labelled as A and B, contain two different carbohydrates. The carbohydrate in beaker A dissolves only in hot water while the carbohydrate in beaker B easily dissolves in cold water.\na. Which beaker contains sugar and which one has starch? (1 Mark)\nb. Why the carbohydrate in beaker A dissolves in hot water only? (1 Mark)\nc. Name the simplest form of carbohydrates. (1 Mark)",
+    "marks": 3,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "13.1.3",
+    "currentSlo": "13.1.3",
+    "sloText": "Compare the solubility and properties of starch (polysaccharides) and sugars (monosaccharides/disaccharides) in water.",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "checkingHints": [
+      "a. 1 mark for correct identification of both beakers: Beaker A contains Starch, and Beaker B contains Sugar.",
+      "b. 1 mark for the correct reason: Starch in Beaker A is a complex macromolecular polysaccharide with numerous glycosidic linkages (and branched amylopectin / linear amylose chains) that is insoluble in cold water and requires thermal energy (hot water) to disrupt intermolecular hydrogen bonds and dissolve/hydrolyse.",
+      "c. 1 mark for naming the simplest form of carbohydrates: Monosaccharides (e.g., glucose, fructose, galactose)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part a: Identifies Beaker A = Starch and Beaker B = Sugar."
+      },
+      {
+        "marks": 1,
+        "description": "Part b: Explains that starch is a large, complex polysaccharide with many glycosidic linkages requiring heat energy (hot water) to break intermolecular attractions and dissolve."
+      },
+      {
+        "marks": 1,
+        "description": "Part c: Names Monosaccharides (or glucose) as the simplest form of carbohydrates."
+      }
+    ],
+    "modelAnswer": "a. Identification of Beakers:\n- Beaker A contains Starch.\n- Beaker B contains Sugar.\n\nb. Reason Why the Carbohydrate in Beaker A (Starch) Dissolves Only in Hot Water:\nStarch is a high-molecular-weight macromolecular polysaccharide composed of long chains of glucose units joined by numerous glycosidic linkages (consisting of linear water-soluble amylose and branched insoluble amylopectin). Because of its large, complex polymeric structure, it is insoluble in cold water and requires the thermal energy of hot water to disrupt its strong intramolecular/intermolecular hydrogen bonding so the amylose fraction can disperse and dissolve.\n\nc. Simplest Form of Carbohydrates:\nMonosaccharides (such as glucose, fructose, and galactose)."
+  },
+  {
+    "questionNumber": "Q.4",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Write any THREE features of water with reference to its occurrence on the Earth. (3 Marks)",
+    "marks": 3,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "15.1.2",
+    "currentSlo": "15.1.2",
+    "sloText": "Describe the occurrence and distribution of water in the environment.",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "checkingHints": [
+      "1 mark for each valid feature regarding the occurrence of water on Earth (any 3 required):",
+      "1. Surface Coverage: Water covers approximately 71% (nearly three-fourths) of the Earth's surface.",
+      "2. Ocean Distribution: About 97% of all water on Earth occurs as saline (salty) ocean and sea water, which is unfit for direct human consumption.",
+      "3. Freshwater Distribution: Only about 2.1% to 2.2% is locked in polar ice caps and glaciers, about 0.6% occurs as groundwater/inland water, and only ~0.2% is readily potable surface freshwater in rivers, lakes, and streams.",
+      "4. Coexistence in All Three States of Matter: Water is the only natural substance on Earth that exists simultaneously in all three physical states\u2014solid (glaciers, ice caps, snow), liquid (oceans, rivers, lakes, rain, underground water), and gas (water vapour in the atmosphere, clouds, fog)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "States ocean abundance (~97% of Earth's water is in oceans/seas) or surface coverage (~71% of Earth's surface)."
+      },
+      {
+        "marks": 1,
+        "description": "States distribution of remaining water in glaciers/ice caps (~2.1%), groundwater (~0.6%), and atmospheric vapour."
+      },
+      {
+        "marks": 1,
+        "description": "States that only a tiny fraction (~0.2% to 1%) is potable freshwater OR that water occurs naturally in all three states of matter (solid, liquid, gas)."
+      }
+    ],
+    "modelAnswer": "Three Features of Water with Reference to Its Occurrence on the Earth:\n1. Abundance and Ocean Distribution: Water covers approximately 71% of the Earth's surface. Out of the total water present on Earth, about 97% resides in the oceans and seas as saline (salty) water.\n2. Glaciers, Groundwater, and Atmospheric Occurrence: The remaining ~3% of Earth's water is freshwater, most of which (~2.1%) is frozen in polar ice caps and glaciers, while the rest occurs as underground water (groundwater), inland lakes/rivers, and water vapour in the atmosphere.\n3. Scarcity of Potable Water & Existence in Three States: Only about 0.2% (less than 1%) of the total water on Earth is directly available as potable (drinkable) freshwater for human and terrestrial life. Furthermore, water is unique in occurring naturally across all three physical states on Earth: solid (ice/glaciers), liquid (oceans/rivers/rain), and gas (atmospheric water vapour)."
+  },
+  {
+    "questionNumber": "Q.5a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "i. Write any FOUR industrial uses of common salt. (4 Marks)\nii. Give any ONE example of each of the following types of salt. (2 Marks)\n   I. Mixed salt\n   II. Double salt",
+    "marks": 6,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "10.7.5, 10.7.4",
+    "currentSlo": "10.7.5",
+    "sloText": "Discuss the uses of salts in daily life and industries; exemplify the different types of salts (acidic, basic, normal, double, mixed, and complex).",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "checkingHints": [
+      "Part i (4 marks - 1 mark for each valid industrial use of common salt, NaCl; any 4 required):",
+      "1. Used as the primary raw material (brine) in the Solvay process for the industrial manufacture of washing soda (Na2CO3) and baking soda (NaHCO3).",
+      "2. Used in the electrolysis of molten NaCl (Down's cell) to manufacture sodium metal and chlorine gas, and electrolysis of brine (Nelson's cell) to manufacture caustic soda (NaOH).",
+      "3. Used in the food processing and canning industry for preserving meat, fish, vegetables, and pickles, and flavouring food.",
+      "4. Used commercially to regenerate exhausted sodium zeolite resins in industrial water-softening ion-exchange plants.",
+      "5. Used in the manufacture of soaps (salting out of soap), detergents, plastics (PVC), glass, pottery glazes, and dyes.",
+      "Part ii (2 marks):",
+      "- I. Mixed salt (1 mark): Bleaching powder, Ca(OCl)Cl (or sodium potassium carbonate, NaKCO3 / potassium sodium tartrate).",
+      "- II. Double salt (1 mark): Potash alum, K2SO4\u00b7Al2(SO4)3\u00b724H2O (or Mohr's salt, FeSO4\u00b7(NH4)2SO4\u00b76H2O, or Ferric alum, K2SO4\u00b7Fe2(SO4)3\u00b724H2O)."
+    ],
+    "rubric": [
+      {
+        "marks": 4,
+        "description": "Part i: States any 4 industrial uses of common salt (NaCl) (1 mark each)."
+      },
+      {
+        "marks": 1,
+        "description": "Part ii.I: Gives 1 valid example (name or formula) of a Mixed salt, e.g., Bleaching powder Ca(OCl)Cl."
+      },
+      {
+        "marks": 1,
+        "description": "Part ii.II: Gives 1 valid example (name or formula) of a Double salt, e.g., Potash alum K2SO4\u00b7Al2(SO4)3\u00b724H2O."
+      }
+    ],
+    "modelAnswer": "i. Four Industrial Uses of Common Salt (Sodium Chloride, NaCl):\n1. Manufacture of Soda Ash and Baking Soda (Solvay Process): Concentrated aqueous sodium chloride (brine) is used as the primary raw material in the Solvay process for the industrial production of sodium carbonate (Na2CO3) and sodium bicarbonate (NaHCO3).\n2. Manufacture of Caustic Soda, Sodium Metal, and Chlorine Gas: Common salt is electrolysed in Down's cell (molten NaCl) to produce metallic sodium and chlorine gas, and in Nelson's cell (aqueous brine) to manufacture caustic soda (NaOH), hydrochloric acid, and bleaching agents.\n3. Regeneration of Ion-Exchange Resins in Water Softening: Concentrated NaCl solution is used industrially to flush and regenerate exhausted calcium/magnesium zeolite resins back into active sodium zeolite:\n   Ca-Zeolite + 2NaCl -> Na2-Zeolite + CaCl2\n4. Food Preservation, Soap, and Chemical Industries: It is extensively used in the food industry for curing and preserving fish, meat, and pickles, and in the soap industry for precipitating ('salting out') soap from glycerol, as well as in manufacturing PVC plastics, glass, and dyes.\n\nii. Examples of Salt Types:\nI. Mixed Salt (contains more than one acidic or basic radical):\n   - Bleaching powder (Calcium chloro-hypochlorite): Ca(OCl)Cl  (or Sodium potassium carbonate, NaKCO3).\nII. Double Salt (formed by equimolar crystallisation of two normal salts):\n   - Potash alum: K2SO4 \u00b7 Al2(SO4)3 \u00b7 24H2O  (or Mohr's salt: FeSO4 \u00b7 (NH4)2SO4 \u00b7 6H2O, or Ferric alum: K2SO4 \u00b7 Fe2(SO4)3 \u00b7 24H2O)."
+  },
+  {
+    "questionNumber": "Q.5b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "Hydrocarbons are used as feedstock (raw material) in many industrial processes. A few examples of hydrocarbon feeds are ethylene and acetylene.\ni. Draw the structure for ethylene and acetylene. (2 Marks)\nii. Describe the use of the following hydrocarbons in the manufacturing of their respective polymer and any TWO durable articles in the mentioned industries. (4 Marks)\n   I. Ethylene in plastic industry\n   II. Acetylene in rubber industry",
+    "marks": 6,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "12.4.1",
+    "currentSlo": "12.4.1",
+    "sloText": "Explain the use of hydrocarbons (ethylene and acetylene) as chemical feedstocks in the plastic and synthetic rubber industries.",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "checkingHints": [
+      "Part i (2 marks):",
+      "- 1 mark for drawing the structure of ethylene (ethene, C2H4): H2C=CH2 showing the carbon-carbon double bond and four C\u2013H single bonds.",
+      "- 1 mark for drawing the structure of acetylene (ethyne, C2H2): H\u2013C\u2261C\u2013H showing the carbon-carbon triple bond and two C\u2013H single bonds.",
+      "Part ii.I - Ethylene in plastic industry (2 marks):",
+      "- 1 mark for stating that ethylene is polymerised to manufacture polyethene (polyethylene) / PVC / polystyrene.",
+      "- 1 mark for naming any TWO durable plastic articles: plastic shopping bags, plates/crockery, toys, plastic bottles, pipes, electrical insulation, or automobile parts.",
+      "Part ii.II - Acetylene in rubber industry (2 marks):",
+      "- 1 mark for stating that acetylene is converted into vinyl acetylene / chloroprene / butadiene to manufacture synthetic rubber (neoprene / polybutadiene rubber).",
+      "- 1 mark for naming any TWO durable rubber articles: automobile tyres, rubber footwear (slippers/shoes), hoses, conveyor belts, gloves, or toys."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part i: Draws accurate structural formula of ethylene (H2C=CH2)."
+      },
+      {
+        "marks": 1,
+        "description": "Part i: Draws accurate structural formula of acetylene (H\u2013C\u2261C\u2013H)."
+      },
+      {
+        "marks": 2,
+        "description": "Part ii.I: Names the polymer made from ethylene (polyethene / PVC) (1 mark) and lists 2 durable plastic articles (1 mark)."
+      },
+      {
+        "marks": 2,
+        "description": "Part ii.II: Names the polymer made from acetylene (butadiene / neoprene synthetic rubber) (1 mark) and lists 2 durable rubber articles (1 mark)."
+      }
+    ],
+    "modelAnswer": "i. Structural Formulas of Ethylene and Acetylene:\n1. Ethylene (Ethene, C2H4):\n   H2C = CH2   (Two carbon atoms joined by a double covalent bond, each bonded to two hydrogen atoms).\n2. Acetylene (Ethyne, C2H2):\n   H \u2013 C \u2261 C \u2013 H   (Two carbon atoms joined by a triple covalent bond, each bonded to one hydrogen atom).\n\nii. Industrial Polymer Manufacturing and Durable Articles:\nI. Ethylene in the Plastic Industry:\n   - Polymer Manufacturing: Ethylene (ethene) molecules undergo addition polymerisation at high temperature and pressure in the presence of catalysts to manufacture Polyethene (polyethylene), as well as polyvinyl chloride (PVC) and polystyrene.\n   - Two Durable Articles: Plastic shopping bags/containers, household crockery (plates, bowls, bottles), toys, PVC water pipes, and automobile components.\n\nII. Acetylene in the Rubber Industry:\n   - Polymer Manufacturing: Acetylene (ethyne) is used as a chemical feedstock to synthesise butadiene and chloroprene monomers, which are polymerised to manufacture synthetic rubber (such as polybutadiene rubber and neoprene rubber).\n   - Two Durable Articles: Automobile and aircraft tyres, rubber footwear (shoes, boots, slippers), industrial hoses, gloves, and waterproof mats."
+  },
+  {
+    "questionNumber": "Q.6a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "In Karachi, Lahore and Islamabad, the use of private vehicles has increased drastically due to insufficient public transport. Higher usage of private vehicles has increased fuel consumption in these cities.\ni. Describe any THREE effects of increased fuel consumption on the environment. (3 Marks)\nii. With reference to the effects described in part i, suggest any THREE ways to minimise them at the government level. (3 Marks)",
+    "marks": 6,
+    "cognitiveLevel": "Application",
+    "originalSlo": "14.3.2, 14.3.4",
+    "currentSlo": "14.3.4",
+    "sloText": "Describe sources and effects of air pollutants and recommend strategies that governments adopt to control air pollution.",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "checkingHints": [
+      "Part i (3 marks - 1 mark for each valid environmental effect of increased vehicular fuel consumption; any 3 required):",
+      "1. Global Warming & Climate Change: Increased combustion of petrol and diesel releases massive amounts of carbon dioxide (CO2, a greenhouse gas) that traps infrared heat, leading to global warming, melting of glaciers, rising sea levels, and flash floods.",
+      "2. Acid Rain & Ocean Acidification: Vehicular engines emit nitrogen oxides (NOx) and sulphur dioxide (SO2), which react with atmospheric moisture to form nitric and sulphuric acids (acid rain), damaging crops, soil, buildings, and aquatic life.",
+      "3. Photochemical Smog, Poor AQI & Respiratory Diseases: Incomplete combustion releases toxic carbon monoxide (CO), unburnt hydrocarbons (VOCs), and particulate matter (soot), degrading the Air Quality Index (AQI), forming winter smog, and causing asthma, bronchitis, and lung damage.",
+      "Part ii (3 marks - 1 mark for each government-level mitigation strategy; any 3 required):",
+      "1. Expand and modernise mass public transport systems (e.g., electric metro buses, green/red lines, commuter rail) and encourage carpooling to reduce private vehicle traffic.",
+      "2. Enforce mandatory installation of catalytic converters in all automobiles to convert toxic CO and NOx into harmless CO2 and N2, and enforce strict vehicle emission inspections.",
+      "3. Promote clean, renewable energy and electric vehicles (EVs), ban deforestation, and launch large-scale urban afforestation / tree plantation drives to absorb excess CO2."
+    ],
+    "rubric": [
+      {
+        "marks": 3,
+        "description": "Part i: Describes 3 distinct environmental effects of increased fuel consumption (e.g., global warming/climate change from CO2, acid rain from NOx/SO2, smog/respiratory hazards from CO and particulates) (1 mark each)."
+      },
+      {
+        "marks": 3,
+        "description": "Part ii: Suggests 3 actionable government-level policies to minimise air pollution (e.g., public transport expansion, mandatory catalytic converters, renewable energy/EV transition, urban afforestation) (1 mark each)."
+      }
+    ],
+    "modelAnswer": "i. Three Effects of Increased Vehicular Fuel Consumption on the Environment:\n1. Global Warming and Climate Change: Burning large quantities of petrol and diesel releases excessive carbon dioxide (CO2) and nitrous oxide into the atmosphere. These greenhouse gases trap outgoing infrared radiation, causing global warming, accelerated melting of glaciers, rising sea levels, and severe flooding.\n2. Formation of Acid Rain: High-temperature combustion in vehicle engines produces oxides of nitrogen (NO, NO2) and sulphur dioxide (SO2). These gases react with atmospheric water vapour to form nitric acid (HNO3) and sulphuric acid (H2SO4), falling as acid rain that acidifies soil and water bodies and corrodes buildings.\n3. Photochemical Smog, Poor Air Quality (AQI), and Respiratory Illnesses: Incomplete combustion of fuel releases poisonous carbon monoxide (CO), volatile organic compounds (VOCs), and fine particulate matter, creating dense urban smog and hazardous AQI levels that trigger asthma, bronchitis, and lung diseases.\n\nii. Three Government-Level Strategies to Minimise These Environmental Effects:\n1. Expansion of Sustainable Public Transport & EVs: The government should invest heavily in efficient mass transit systems (such as electric metro trains and bus rapid transit) and incentivise electric vehicles (EVs) and clean fuels (biogas/solar) to drastically reduce private petrol/diesel vehicle usage.\n2. Mandatory Catalytic Converters & Emission Regulations: The government should pass and enforce strict environmental laws requiring all vehicles to install catalytic converters (which convert toxic CO and NOx into less harmful CO2 and N2) and ban poorly maintained smoke-emitting vehicles.\n3. Large-Scale Afforestation & Urban Forestry Drives: The government should strictly restrict deforestation and spearhead nationwide tree-plantation campaigns and green belts in major cities so that plants absorb excess atmospheric CO2 via photosynthesis."
+  },
+  {
+    "questionNumber": "Q.6b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "Diesel and petrol are liquid fuels that are extracted from petroleum. Diesel is used in ships while petrol is utilised as fuel for internal combustion engines of cars.\ni. Name and describe the process through which diesel and petrol are obtained from petroleum. (2 Marks)\nii. Describe which type of hydrocarbons diesel and petrol are. With reference to their boiling points, mention their point of collection from the apparatus. (4 Marks)",
+    "marks": 6,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "16.6.4",
+    "currentSlo": "16.6.4",
+    "sloText": "Describe the fractional distillation of petroleum and compare the composition, boiling range, and collection points of petroleum fractions.",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "checkingHints": [
+      "Part i (2 marks):",
+      "- 1 mark for naming the process: Fractional distillation.",
+      "- 1 mark for describing the process: Separation of a mixture of miscible liquids (crude oil) into different useful fractions based on differences in their boiling points and molecular masses by heating crude oil to ~400\u00b0C in a tall fractionating column.",
+      "Part ii (4 marks):",
+      "- 1 mark for describing the diesel fraction: Consists of longer-chain hydrocarbons (C13 to C15 / C13\u2013C18 alkanes, more viscous) with a higher boiling point range of 250\u00b0C to 350\u00b0C.",
+      "- 1 mark for stating diesel's collection point: Collected at the lower end (fifth fraction from top) of the fractionating column where temperatures are higher.",
+      "- 1 mark for describing the petrol (gasoline) fraction: Consists of shorter-chain volatile hydrocarbons (C7 to C10 alkanes, less viscous and more flammable) with a lower boiling point range of 80\u00b0C to 170\u00b0C.",
+      "- 1 mark for stating petrol's collection point: Distilled and collected near the upper end (third fraction from top) of the fractionating tower where temperatures are cooler."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part i: Names the process as Fractional Distillation."
+      },
+      {
+        "marks": 1,
+        "description": "Part i: Describes fractional distillation as separating crude oil into fractions based on their boiling points in a fractionating tower at ~400\u00b0C."
+      },
+      {
+        "marks": 1,
+        "description": "Part ii (Diesel composition & BP): Identifies diesel as C13\u2013C15 hydrocarbons with a higher boiling range of 250\u00b0C\u2013350\u00b0C."
+      },
+      {
+        "marks": 1,
+        "description": "Part ii (Diesel collection point): States that diesel is collected at the lower section of the fractionating column."
+      },
+      {
+        "marks": 1,
+        "description": "Part ii (Petrol composition & BP): Identifies petrol (gasoline) as C7\u2013C10 hydrocarbons with a lower boiling range of 80\u00b0C\u2013170\u00b0C."
+      },
+      {
+        "marks": 1,
+        "description": "Part ii (Petrol collection point): States that petrol is collected near the upper section of the fractionating column."
+      }
+    ],
+    "modelAnswer": "i. Name and Description of the Separation Process:\n- Name of Process: Fractional Distillation.\n- Description: Fractional distillation is the physical separation of a complex mixture of miscible liquids (crude oil / petroleum) into different hydrocarbon fractions according to differences in their boiling points and molecular weights. Crude oil is heated in a furnace to about 400\u00b0C, and its vapours are passed into a tall fractionating tower (column) that is hot at the bottom and gradually cooler towards the top; each fraction condenses at the tray height corresponding to its boiling point range.\n\nii. Hydrocarbon Composition, Boiling Points, and Points of Collection:\n1. Diesel Oil Fraction:\n   - Type of Hydrocarbons & Boiling Point: Diesel consists of relatively longer-chain, heavier, and more viscous alkanes/hydrocarbons containing 13 to 15 carbon atoms per molecule (C13 to C15). Because of stronger intermolecular forces, it has a higher boiling point range of 250\u00b0C to 350\u00b0C.\n   - Point of Collection: Because of its high boiling point, diesel condenses and is collected towards the lower end (fifth outlet from the top, above fuel oil) of the fractionating column.\n\n2. Petrol (Gasoline) Fraction:\n   - Type of Hydrocarbons & Boiling Point: Petrol (gasoline) consists of shorter-chain, lighter, more volatile, and highly flammable alkanes/hydrocarbons containing 7 to 10 carbon atoms per molecule (C7 to C10). It has a much lower boiling point range of 80\u00b0C to 170\u00b0C.\n   - Point of Collection: Because of its low boiling point, petrol vapours rise high up the column and are condensed and collected near the upper end (third outlet from the top, below petroleum ether) of the fractionating tower."
+  }
+]

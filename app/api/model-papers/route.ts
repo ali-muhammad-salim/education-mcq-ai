@@ -8,7 +8,7 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const paperCode = searchParams.get('paperCode');
-    const classLevel = searchParams.get('class'); // '9', '10'
+    const classLevel = searchParams.get('class');
     const download = searchParams.get('download'); // 'json', 'csv'
 
     const whereClause: any = {};
@@ -41,8 +41,7 @@ export async function GET(request: Request) {
     for (const entry of getAllStandardPapers()) { if (!papers.some(p => p.paperCode === entry.paperCode) && (!paperCode || entry.paperCode === paperCode)) { const paper = getFallbackPaper(entry.paperCode); if (paper) papers.push(paper); } }
     const filteredPapers = papers.filter(p => {
       if (!classLevel || classLevel === 'all') return true;
-      if (classLevel === '9') return p.academicClass?.level === 9;
-      if (classLevel === '10') return p.academicClass?.level === 10;
+      if (['9', '10', '11', '12'].includes(classLevel)) return p.academicClass?.level === Number(classLevel);
       return true;
     });
 

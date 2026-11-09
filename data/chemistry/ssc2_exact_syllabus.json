@@ -1,0 +1,2076 @@
+[
+  {
+    "unitNumber": 9,
+    "name": "Chemical Equilibrium",
+    "page": 28,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 1,
+      "crqMarks": 4,
+      "totalMarks": 9
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "9.1",
+        "subNumber": "9.1",
+        "name": "9.1 Reversible Reactions and Dynamic Equilibrium",
+        "slos": [
+          {
+            "code": "9.1.1",
+            "description": "define chemical equilibrium as a dynamic state in a reversible reaction;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "9.1.2",
+            "description": "describe the macroscopic characteristics of:\na. forward and reverse reactions,\nb. dynamic equilibrium;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "9.1.3",
+            "description": "explain the necessary conditions for equilibrium and the ways through which equilibrium can be recognised;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "9.1.4",
+            "description": "construct balanced chemical equations to represent both forward and reverse reactions;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "9.2",
+        "subNumber": "9.2",
+        "name": "9.2 Thermal Reactions",
+        "slos": [
+          {
+            "code": "9.2.1",
+            "description": "explain the connection of a system (open, closed and isolated) with its surroundings in terms of energy transfer;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "9.2.2",
+            "description": "differentiate between exothermic and endothermic reactions with examples;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "9.2.3",
+            "description": "define the term, ‘enthalpy change’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "9.2.4",
+            "description": "explain the activation energy required for a catalysed and uncatalysed reaction pathway, including the effect of catalysts on reaction rates;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "9.2.5",
+            "description": "illustrate an energy profile diagram for exothermic and endothermic reactions;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 28,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "9.3",
+        "subNumber": "9.3",
+        "name": "9.3 Law of Mass Action and Le Chatelier’s Principle",
+        "slos": [
+          {
+            "code": "9.3.1",
+            "description": "state the law of mass action;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "9.3.2",
+            "description": "derive the equilibrium constant expression of a reaction and its unit;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "9.3.3",
+            "description": "predict the direction and extent of reversible reactions using reaction quotient Q_C and equilibrium constant K_C;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "9.3.4",
+            "description": "predict the direction of a reversible reaction using molar concentration of reactants and products through the calculation of Q_C;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "9.3.5",
+            "description": "state Le Chatelier’s principle;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "9.3.6",
+            "description": "deduce the effect of catalyst, temperature, pressure and concentration on a reversible reaction at equilibrium.",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 29,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 10,
+    "name": "Acids, Bases and Salts",
+    "page": 30,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 12: 6 Marks (Choose any ONE from TWO)",
+      "groupTotalMarks": 16
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "10.1",
+        "subNumber": "10.1",
+        "name": "10.1 Concepts of Acids and Bases",
+        "slos": [
+          {
+            "code": "10.1.1",
+            "description": "exemplify Arrhenius acids and bases;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.1.2",
+            "description": "illustrate dissociation equations for acids or bases in aqueous solution;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.1.3",
+            "description": "state Brønsted-Lowry theory;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "10.1.4",
+            "description": "classify substances as acids or bases or as proton donors or proton acceptors using Brønsted-Lowry theory;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.1.5",
+            "description": "explain the limitations of Arrhenius and Brønsted-Lowry theory;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.1.6",
+            "description": "state Lewis concepts of acids and bases;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "10.1.7",
+            "description": "classify substances as Lewis acids or bases;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.1.8",
+            "description": "describe the amphoteric nature of water using the equation of its self-ionisation;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.2",
+        "subNumber": "10.2",
+        "name": "10.2 Properties of Acids and Bases",
+        "slos": [
+          {
+            "code": "10.2.1",
+            "description": "explain the physical properties of acids and bases;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.2.2",
+            "description": "differentiate between alkalis and bases;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.2.3",
+            "description": "illustrate the chemical properties of:\na. acids (reaction with bases, active metals, metal oxides metal carbonates and metal bicarbonates),\nb. bases (reaction with ammonium salts);",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.3",
+        "subNumber": "10.3",
+        "name": "10.3 Strengths and Applications of Acids and Bases",
+        "slos": [
+          {
+            "code": "10.3.1",
+            "description": "explain the acidity of bases and the basicity of acids;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.3.2",
+            "description": "exemplify strong and weak acids and bases;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 30,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.3.3",
+            "description": "exemplify the uses of acids and bases in the following areas:\na. household settings (cleaning, personal care and cooking),\nb. industries (chemical manufacturing, mining and water treatment),\nc. artistic endeavours (glass etching and metal etching);",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.4",
+        "subNumber": "10.4",
+        "name": "10.4 pH and pOH",
+        "slos": [
+          {
+            "code": "10.4.1",
+            "description": "describe pH and pOH using mathematical equations;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.4.2",
+            "description": "illustrate the use of pH paper and a pH meter in measuring the pH of body fluids, beverages, personal care products, household items and fruit juices;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.4.3",
+            "description": "determine a solution as neutral, acidic or basic based on hydrogen ion or hydroxide ion concentration using pH and pOH scale;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.4.4",
+            "description": "calculate the pH and pOH of solutions using the concentrations of hydrogen or hydroxide ions;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.5",
+        "subNumber": "10.5",
+        "name": "10.5 Acid-Base Titration",
+        "slos": [
+          {
+            "code": "10.5.1",
+            "description": "construct balanced chemical equations of a neutralisation reaction;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.5.2",
+            "description": "illustrate the role of indicators such as phenolphthalein, methyl orange, and litmus paper in detecting the endpoint during an acid-base titration;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.5.3",
+            "description": "differentiate between the endpoint and equivalence point in an acid-base titration;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.5.4",
+            "description": "solve problems based on acid-base titrations;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 31,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "10.6",
+        "subNumber": "10.6",
+        "name": "10.6 Salts",
+        "slos": [
+          {
+            "code": "10.6.1",
+            "description": "define the term ‘salt’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "10.6.2",
+            "description": "explain the properties of salts;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.6.3",
+            "description": "exemplify the different types of salts, i.e., acidic, basic, normal (based on replaceable H⁺ and OH⁻ ions), double, mixed and complex;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "10.6.4",
+            "description": "predict the solubility of different salts based on the general solubility rules for common ionic compounds;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.6.5",
+            "description": "illustrate the preparation, separation and purification of soluble salts by the reaction of an acid with:\na. an alkali (titration),\nb. excess metal,\nc. excess insoluble base,\nd. excess insoluble carbonate;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.6.6",
+            "description": "illustrate the preparation of insoluble salts by precipitation;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "10.6.7",
+            "description": "explain the applications of salts in everyday activities and industries, including food preservation and flavouring, textile manufacturing, paper production, metallurgy, water treatment, fertiliser production, animal feed supplementation, remediation of salty soils, and de-icing and road maintenance.",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 32,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 11,
+    "name": "Organic Chemistry",
+    "page": 33,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 1,
+      "crqMarks": 3,
+      "totalMarks": 8
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "11.1",
+        "subNumber": "11.1",
+        "name": "11.1 Organic Compounds",
+        "slos": [
+          {
+            "code": "11.1.1",
+            "description": "explain the general characteristics of organic compounds;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.1.2",
+            "description": "explain the diversity and magnitude of organic compounds;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.1.3",
+            "description": "identify sources of organic compounds;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.1.4",
+            "description": "identify the uses of organic compounds in daily life;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "11.2",
+        "subNumber": "11.2",
+        "name": "11.2 Classification of Organic Compounds",
+        "slos": [
+          {
+            "code": "11.2.1",
+            "description": "classify organic compounds into acyclic and cyclic compounds with examples;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.2.2",
+            "description": "describe the homologous series and its characteristics;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.2.3",
+            "description": "define the term ‘functional group’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "11.2.4",
+            "description": "classify various organic compounds into alkanes, alkenes, alkynes, alkyl halides, alcohols, amines, ethers, aldehydes, ketones, carboxylic acids, acid amides, esters and nitro compounds based on their functional groups;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.2.5",
+            "description": "determine a molecule’s functional group (mentioned in SLO 11.2.4) using structural, condensed and skeletal formulae and systematic names of compounds up to seven carbon atoms;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "11.2.6",
+            "description": "draw structural, condensed, skeletal and molecular formulae for organic compounds up to seven carbon atoms including:\na. alkanes,\nb. alkenes,\nc. alkynes,\nd. alcohols,\ne. carboxylic acids;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 33,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "11.2.7",
+            "description": "determine carboxylic acids, phenols, aldehydes and ketones using the following chemical tests:\na. sodium bicarbonate (NaHCO₃) test,\nb. ferric chloride (FeCl₃) test,\nc. Tollen’s test (silver mirror test),\nd. Fehling’s test,\ne. sodium nitroprusside test;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "11.3",
+        "subNumber": "11.3",
+        "name": "11.3 Alkyl Group",
+        "slos": [
+          {
+            "code": "11.3.1",
+            "description": "illustrate the formation of alkyl groups by the removal of hydrogen atom from their corresponding alkanes up to five carbon atoms;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "11.4",
+        "subNumber": "11.4",
+        "name": "11.4 Isomerism",
+        "slos": [
+          {
+            "code": "11.4.1",
+            "description": "define the terms ‘isomerism’ and ‘structural isomerism’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "11.4.2",
+            "description": "describe the following types of structural isomerism with examples:\na. chain isomerism,\nb. positional isomerism,\nc. functional group isomerism;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.4.3",
+            "description": "draw possible structures of the chain isomers of alkanes up to five carbon atoms;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "11.5",
+        "subNumber": "11.5",
+        "name": "11.5 Nomenclature",
+        "slos": [
+          {
+            "code": "11.5.1",
+            "description": "explain the systematic nomenclature of organic compounds according to IUPAC rules;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "11.5.2",
+            "description": "apply the IUPAC system in naming the following compounds up to seven carbon atoms:\na. alkanes,\nb. alkenes,\nc. alkynes,\nd. alcohols,\ne. carboxylic acids.",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 34,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 12,
+    "name": "Hydrocarbons",
+    "page": 35,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 10: 6 Marks (Choose any ONE from TWO)",
+      "groupTotalMarks": 16
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "12.1",
+        "subNumber": "12.1",
+        "name": "12.1 Saturated and Unsaturated Hydrocarbons",
+        "slos": [
+          {
+            "code": "12.1.1",
+            "description": "define the term ‘hydrocarbons’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "12.1.2",
+            "description": "distinguish between saturated and unsaturated hydrocarbons (including tests with iodine, bromine and potassium permanganate);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "12.2",
+        "subNumber": "12.2",
+        "name": "12.2 Uses of Hydrocarbons",
+        "slos": [
+          {
+            "code": "12.2.1",
+            "description": "explain the uses of hydrocarbons as:\na. fuel,\nb. feedstock in industry;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "12.3",
+        "subNumber": "12.3",
+        "name": "12.3 Alkanes",
+        "slos": [
+          {
+            "code": "12.3.1",
+            "description": "describe the tetrahedral structure of alkanes with reference to the four bonds of each carbon atom;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.3.2",
+            "description": "illustrate the preparation of alkanes through the following methods:\na. cracking of larger hydrocarbons,\nb. hydrogenation of alkenes and alkynes,\nc. reduction of alkyl halides;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "12.3.3",
+            "description": "explain the physical properties (physical state, melting and boiling points, density, odour and solubility) of alkanes;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.3.4",
+            "description": "describe the complete and incomplete combustion of alkanes;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "12.4",
+        "subNumber": "12.4",
+        "name": "12.4 Alkenes",
+        "slos": [
+          {
+            "code": "12.4.1",
+            "description": "describe the plane and angles formed by carbon atoms in alkenes;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.4.2",
+            "description": "explain the physical properties (physical state, melting and boiling points, density, odour and solubility) of alkenes;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 35,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.4.3",
+            "description": "illustrate the preparation of alkenes through the following methods:\na. cracking of large alkane molecules using a high temperature and a catalyst,\nb. dehydration of alcohols,\nc. dehydrohalogenation of alkyl halides;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "12.4.4",
+            "description": "illustrate the addition reactions of alkenes with:\na. hydrogen in the presence of a nickel catalyst,\nb. steam in the presence of an acid catalyst;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "12.5",
+        "subNumber": "12.5",
+        "name": "12.5 Alkynes",
+        "slos": [
+          {
+            "code": "12.5.1",
+            "description": "explain the physical properties (physical state, melting and boiling points, density, odour and solubility) of alkynes;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.5.2",
+            "description": "explain the use of ethyne as fuel for welding and in artificial ripening of fruits;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "12.5.3",
+            "description": "illustrate the preparation of alkynes through the following methods:\na. dehydrohalogenations of 1,2-dihalides,\nb. dehalogenations of tetrahalides;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "12.6",
+        "subNumber": "12.6",
+        "name": "12.6 Reactions of Hydrocarbons",
+        "slos": [
+          {
+            "code": "12.6.1",
+            "description": "illustrate halogenations of alkanes, alkenes and alkynes up to three carbon atoms;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "12.6.2",
+            "description": "illustrate oxidation (with KMnO₄) of ethene and ethyne;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "12.6.3",
+            "description": "differentiate between ethene and ethyne using silver nitrate test.",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 36,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 13,
+    "name": "Natural and Synthetic Polymers",
+    "page": 37,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 1,
+      "crqMarks": 3,
+      "totalMarks": 8
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "13.1",
+        "subNumber": "13.1",
+        "name": "13.1 Types of Polymers and Polymerisation",
+        "slos": [
+          {
+            "code": "13.1.1",
+            "description": "define the following terms:\na. monomers,\nb. polymers,\nc. polymerisation;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "13.1.2",
+            "description": "differentiate between natural and synthetic polymers;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.1.3",
+            "description": "differentiate between addition and condensation polymerisation;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "13.2",
+        "subNumber": "13.2",
+        "name": "13.2 Synthetic Polymers",
+        "slos": [
+          {
+            "code": "13.2.1",
+            "description": "identify the repeating unit of an addition polymer from its given structure, specifically focusing on polyethylene (polyethene) and polyvinyl chloride (PVC);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.2.2",
+            "description": "elaborate the environmental impact of plastics, emphasising challenges related to their disposal in landfill sites;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "13.3",
+        "subNumber": "13.3",
+        "name": "13.3 Carbohydrates",
+        "slos": [
+          {
+            "code": "13.3.1",
+            "description": "define the term ‘carbohydrates’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "13.3.2",
+            "description": "classify carbohydrates into monosaccharides, oligosaccharides and polysaccharides with examples;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.3.3",
+            "description": "compare the solubility of starch and glucose in water;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.3.4",
+            "description": "illustrate the medicinal use of dextrose;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "13.4",
+        "subNumber": "13.4",
+        "name": "13.4 Proteins and Enzymes",
+        "slos": [
+          {
+            "code": "13.4.1",
+            "description": "define the term ‘proteins’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "13.4.2",
+            "description": "describe peptide linkage between amino acids in a polypeptide chain;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.4.3",
+            "description": "explain the primary, secondary and tertiary structural features of protein molecule;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.4.4",
+            "description": "explain enzymes as biological catalysts including definition, functions, factors affecting enzyme activity and examples related to human body;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 37,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.4.5",
+            "description": "exemplify the commercial uses of enzymes in the following industries:\na. food,\nb. detergent,\nc. pharmaceutical;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "13.5",
+        "subNumber": "13.5",
+        "name": "13.5 Lipids",
+        "slos": [
+          {
+            "code": "13.5.1",
+            "description": "define the term ‘lipids’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "13.5.2",
+            "description": "compare the structures of fats and oil;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.5.3",
+            "description": "explain hydrogenation of vegetable oil;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "13.6",
+        "subNumber": "13.6",
+        "name": "13.6 Nucleic Acids",
+        "slos": [
+          {
+            "code": "13.6.1",
+            "description": "define the term ‘nucleic acids’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "13.6.2",
+            "description": "describe the basic structural features of deoxyribonucleic acid (DNA) and ribonucleic acid (RNA);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.6.3",
+            "description": "explain the importance of nucleic acids;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "13.7",
+        "subNumber": "13.7",
+        "name": "13.7 Vitamins",
+        "slos": [
+          {
+            "code": "13.7.1",
+            "description": "describe ‘vitamins’ and their significance in biological functions;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.7.2",
+            "description": "classify vitamins based on solubility;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.7.3",
+            "description": "discuss the sources, functions and deficiency diseases of vitamin A, B complex, C, D, E and K;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "13.8",
+        "subNumber": "13.8",
+        "name": "13.8 Sources and Uses",
+        "slos": [
+          {
+            "code": "13.8.1",
+            "description": "identify the sources of carbohydrates, proteins and lipids;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "13.8.2",
+            "description": "explain the importance of carbohydrates, proteins and lipids for humans;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "13.8.3",
+            "description": "explain the significance of agricultural and nutritional sciences.",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 38,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 14,
+    "name": "Environmental Chemistry I: Atmosphere",
+    "page": 39,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 16: 6 Marks (Choose any ONE from TWO)",
+      "groupTotalMarks": 16
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "14.1",
+        "subNumber": "14.1",
+        "name": "14.1 Environmental Spheres",
+        "slos": [
+          {
+            "code": "14.1.1",
+            "description": "define the term ‘environmental chemistry’;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "14.1.2",
+            "description": "differentiate among environmental spheres (lithosphere, hydrosphere, biosphere and atmosphere);",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "14.2",
+        "subNumber": "14.2",
+        "name": "14.2 Layers of Atmosphere",
+        "slos": [
+          {
+            "code": "14.2.1",
+            "description": "state the composition of clean air;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "14.2.2",
+            "description": "describe the different layers of the atmosphere;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "14.2.3",
+            "description": "differentiate between stratosphere and troposphere;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "14.3",
+        "subNumber": "14.3",
+        "name": "14.3 Air Pollutants, Their Effects and Control",
+        "slos": [
+          {
+            "code": "14.3.1",
+            "description": "classify major air pollutants into primary and secondary categories based on their sources and formation mechanism;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "14.3.2",
+            "description": "discuss the sources and effects of air pollutants (carbon dioxide, carbon monoxide, particulates, methane, oxides of nitrogen and sulphur dioxide) on the environment and human health;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "14.3.3",
+            "description": "explain the formation of oxides of nitrogen in car engines and the role of catalytic converters in reducing them;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "14.3.4",
+            "description": "recommend strategies to control air pollution;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "14.4",
+        "subNumber": "14.4",
+        "name": "14.4 Environmental Issues (Acid Rain, Ozone Depletion and Global Warming), Their Effects and Control",
+        "slos": [
+          {
+            "code": "14.4.1",
+            "description": "describe acid rain;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "14.4.2",
+            "description": "relate the effects of acid rain to the properties of acids;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "14.4.3",
+            "description": "explain ozone formation;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "14.4.4",
+            "description": "explain ozone depletion and its effects;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "14.4.5",
+            "description": "define the term ‘greenhouse effect’;",
+            "cognitiveLevel": "Remembering",
+            "cognitiveShort": "R",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": true,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "14.4.6",
+            "description": "explain the contribution of greenhouse gases, such as carbon dioxide and methane, to global warming;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "14.4.7",
+            "description": "discuss the effects of global warming;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "14.4.8",
+            "description": "suggest strategies to reduce the effects of global warming and acid rain.",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 39,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 15,
+    "name": "Environmental Chemistry II: Water",
+    "page": 40,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 1,
+      "crqMarks": 3,
+      "totalMarks": 8
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "15.1",
+        "subNumber": "15.1",
+        "name": "15.1 Properties of Water",
+        "slos": [
+          {
+            "code": "15.1.1",
+            "description": "explain the composition and physical properties of water;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "15.1.2",
+            "description": "analyse water’s anomalous behaviour and its significance;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "15.1.3",
+            "description": "distinguish between distilled water and tap water with their applications in practical chemistry;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "15.1.4",
+            "description": "explain the unique properties of water that make it a universal solvent;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "15.1.5",
+            "description": "explain the significance of naturally occurring substances in water;\na. dissolved oxygen,\nb. essential minerals;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "15.2",
+        "subNumber": "15.2",
+        "name": "15.2 Softness and Hardness of Water",
+        "slos": [
+          {
+            "code": "15.2.1",
+            "description": "differentiate among soft, temporary and permanent hard water;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "15.2.2",
+            "description": "apply methods to eliminate temporary and permanent hardness of water;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "15.2.3",
+            "description": "explain the decrease in soap effectiveness caused by hard water;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "15.3",
+        "subNumber": "15.3",
+        "name": "15.3 Water Pollution and Treatment",
+        "slos": [
+          {
+            "code": "15.3.1",
+            "description": "identify water pollutants originating from agricultural, industrial, and household wastes;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "15.3.2",
+            "description": "discuss the effects of agricultural, industrial and household wastes on life;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "15.3.3",
+            "description": "compare the processes of raw water treatment and sewage treatment;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "15.3.4",
+            "description": "explain the use of chlorine in maintaining the cleanliness of swimming pool;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "15.4",
+        "subNumber": "15.4",
+        "name": "15.4 Water Borne Diseases",
+        "slos": [
+          {
+            "code": "15.4.1",
+            "description": "discuss the causes, symptoms and preventive measures of various types of water-borne diseases, i.e., diarrhoea, cholera, dysentery, cryptosporidiosis, fluorosis, jaundice, hepatitis, typhoid and hookworm infection.",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 40,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unitNumber": 16,
+    "name": "Chemical Industries",
+    "page": 41,
+    "examSpec": {
+      "mcqs": 5,
+      "crqs": 0,
+      "erqGroup": "Combined with Topic 14: 6 Marks (Choose any ONE from TWO)",
+      "groupTotalMarks": 16
+    },
+    "subtopics": [
+      {
+        "subtopicNum": "16.1",
+        "subNumber": "16.1",
+        "name": "16.1 Industries and Basic Metallurgical Operations",
+        "slos": [
+          {
+            "code": "16.1.1",
+            "description": "relate the study of chemistry to careers in industry;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 41,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "16.1.2",
+            "description": "explain the following metallurgical operations:\na. crushing and grinding of the ore,\nb. concentration of the ore,\nc. extraction of the metal,\nd. purification and refining of the metal;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 41,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "16.1.3",
+            "description": "assess extraction methods based on the position of metals in the reactivity series such as:\na. electrolysis for the most reactive metals,\nb. reduction by carbon or hydrogen for moderately reactive metals,\nc. natural occurrence or heating for least reactive metals;",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 41,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "16.2",
+        "subNumber": "16.2",
+        "name": "16.2 Extraction of Metals",
+        "slos": [
+          {
+            "code": "16.2.1",
+            "description": "describe the extraction of iron from hematite ore in the blast furnace;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 41,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "16.2.2",
+            "description": "differentiate between iron and steel;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 41,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "16.2.3",
+            "description": "explain the process of extracting aluminium from purified bauxite (aluminium oxide) through electrolysis;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 41,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "16.2.4",
+            "description": "describe the extraction and refining of copper;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 41,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "16.3",
+        "subNumber": "16.3",
+        "name": "16.3 Manufacturing of Mineral Acids and Sodium Carbonate",
+        "slos": [
+          {
+            "code": "16.3.1",
+            "description": "illustrate the production of sulphuric acid through the Contact process including a flowchart diagram;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 41,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "16.3.2",
+            "description": "illustrate the production of nitric acid through the Ostwald process including a flowchart diagram;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 41,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "16.3.3",
+            "description": "illustrate the basic reactions involved in the manufacturing of sodium carbonate through the Solvay process including a flowchart diagram;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 41,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      },
+      {
+        "subtopicNum": "16.4",
+        "subNumber": "16.4",
+        "name": "16.4 Ammonia and its Uses",
+        "slos": [
+          {
+            "code": "16.4.1",
+            "description": "illustrate the production of ammonia through the Haber process including a flowchart diagram;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 42,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "16.4.2",
+            "description": "illustrate the manufacturing of urea including a flowchart diagram;",
+            "cognitiveLevel": "Application",
+            "cognitiveShort": "A",
+            "sourcePage": 42,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "16.4.3",
+            "description": "explain the use of urea, ammonium salts and nitrates in making fertilisers;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 42,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "16.4.4",
+            "description": "differentiate between synthetic fertilisers and natural fertilisers based on their advantages and disadvantages;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 42,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          }
+        ]
+      },
+      {
+        "subtopicNum": "16.5",
+        "subNumber": "16.5",
+        "name": "16.5 Petroleum Industry",
+        "slos": [
+          {
+            "code": "16.5.1",
+            "description": "describe the composition, formation and properties of:\na. petroleum,\nb. natural gas;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 42,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "16.5.2",
+            "description": "explain the process of fractional distillation of petroleum;",
+            "cognitiveLevel": "Understanding",
+            "cognitiveShort": "U",
+            "sourcePage": 42,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": true,
+            "levelA": false
+          },
+          {
+            "code": "16.5.3",
+            "description": "analyse the separation of fractions based on the following properties:\na. carbon chain length,\nb. volatility,\nc. boiling point range,\nd. density;",
+            "cognitiveLevel": "Analysing",
+            "cognitiveShort": "An",
+            "sourcePage": 42,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          },
+          {
+            "code": "16.5.4",
+            "description": "identify the uses of the following fractions of petroleum in daily life:\na. refinery gas fraction,\nb. gasoline/ petrol fraction,\nc. naphtha fraction,\nd. kerosene/ paraffin fraction,\ne. diesel oil/ gas oil fraction,\nf. fuel oil fraction,\ng. lubricating oil fraction,\nh. bitumen fraction;",
+            "cognitiveLevel": "Formative Assessment",
+            "cognitiveShort": "FA",
+            "sourcePage": 42,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": false
+          },
+          {
+            "code": "16.5.5",
+            "description": "discuss the need for different methods and materials to put out (extinguish) different types of fire (wood, oil, electric).",
+            "cognitiveLevel": "Evaluation",
+            "cognitiveShort": "E",
+            "sourcePage": 43,
+            "isPractical": false,
+            "levelR": false,
+            "levelU": false,
+            "levelA": true
+          }
+        ]
+      }
+    ]
+  }
+]

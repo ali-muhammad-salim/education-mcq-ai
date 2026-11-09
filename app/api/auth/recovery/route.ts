@@ -8,6 +8,7 @@ import { serializable } from '@/repositories/transaction';
 import { hashPassword } from '@/lib/passwords';
 import { isEmailConfigured, sendTransactionalEmail } from '@/lib/email';
 import { configuredSiteUrl } from '@/lib/site-url';
+import { invalidateUserSessions } from '@/lib/auth';
 export async function POST(req: NextRequest) {
   try { assertOrigin(req);
     const input = z.object({ action: z.enum(['SEND_RESET','RESET','SEND_VERIFY','VERIFY']), email: z.string().trim().email().max(254).transform(s => s.toLowerCase()).optional(), token: z.string().regex(/^[a-f0-9]{64}$/).optional(), password: z.string().min(12).max(256).optional() }).parse(await req.json());
@@ -33,6 +34,7 @@ export async function POST(req: NextRequest) {
     }
     if (!input.token || (!verification && !input.password)) throw new ApiError(400, 'TOKEN_REQUIRED', 'Use a valid link and supply the required information.');
     const passwordHash = !verification ? await hashPassword(input.password!) : undefined;
+    let resetUserId: string | null = null;
     await serializable(async tx => {
       const challenge = await tx.authChallenge.findUnique({ where: { identifier } });
       if (!challenge || challenge.expiresAt <= new Date() || !timingSafeEqual(Buffer.from(challenge.codeHash, 'hex'), createHash('sha256').update(input.token!).digest())) throw new ApiError(400, 'LINK_EXPIRED', 'This link is invalid, expired, or already used. Request a new link.');
@@ -40,9 +42,10 @@ export async function POST(req: NextRequest) {
       if (!account || account.status !== 'ACTIVE' || account.id !== challenge.name) throw new ApiError(400, 'LINK_EXPIRED', 'This link is unavailable.');
       await tx.authChallenge.delete({ where: { identifier } });
       await tx.user.update({ where: { id: account.id }, data: verification ? { emailVerified: true } : { passwordHash } });
-      if (!verification) await tx.userSession.deleteMany({ where: { userId: account.id } });
+      if (!verification) { await tx.userSession.deleteMany({ where: { userId: account.id } }); resetUserId = account.id; }
       await tx.auditLog.create({ data: { userId: account.id, action: verification ? 'EMAIL_VERIFIED' : 'PASSWORD_RESET', resource: 'User', resourceId: account.id } });
     });
+    if (resetUserId) invalidateUserSessions(resetUserId);
     const response = NextResponse.json({ success: true, message: verification ? 'Email verified.' : 'Password reset. Sign in with your new password.' });
     if (!verification) response.cookies.delete('mcqs_session');
     return response;

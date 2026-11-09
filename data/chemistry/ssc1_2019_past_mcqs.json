@@ -1,0 +1,1142 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "A heterogeneous mixture is formed when water is added to",
+    "options": {
+      "A": "butter.",
+      "B": "honey.",
+      "C": "glucose.",
+      "D": "alcohol."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.2.8",
+    "sloText": "Differentiate between elements, compounds and mixtures.",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Butter is an emulsion composed primarily of milk fats and water droplets, making it immiscible and non-uniform when mixed with water (a heterogeneous mixture). In contrast, honey, glucose, and alcohol dissolve completely in water to form homogeneous aqueous solutions.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Butter is hydrophobic/fat-based and forms a distinct phase with water, creating a heterogeneous emulsion mixture."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Honey is rich in sugars and miscible with water, dissolving to form a homogeneous solution."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Glucose is a highly soluble polar monosaccharide forming a uniform homogeneous solution in water."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Ethanol and water are completely miscible in all proportions via hydrogen bonding, forming a homogeneous mixture."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "stem": "Which of the following diagrams represents a pure compound?",
+    "options": {
+      "A": "Diagram A (mixture of two diatomic elements)",
+      "B": "Diagram B (pure diatomic elemental molecules)",
+      "C": "Diagram C (triatomic molecules composed of two different elements in a fixed ratio)",
+      "D": "Diagram D (mixture of monoatomic atoms and diatomic molecules)"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.2.8",
+    "sloText": "Differentiate between elements, compounds and mixtures using particulate representations.",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-2019-P1/q2.png",
+    "explanation": "A pure compound consists of identical molecules, each composed of two or more different chemical elements chemically combined in a fixed stoichiometric ratio. In Diagram C, every particle is an identical triatomic molecule containing one central atom bonded to two different partner atoms (similar to H2O or CO2). Diagram B shows a pure element (identical diatomic molecules of the same atom), while Diagrams A and D represent mixtures.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Diagram A depicts a mixture of two distinct diatomic molecular species."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Diagram B represents a pure diatomic element (all atoms are identical)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Diagram C illustrates identical multi-element compound molecules in a fixed definite proportion."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Diagram D illustrates a heterogeneous mixture of isolated single atoms and diatomic molecules."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "stem": "The branch of chemistry that emphasises on plantation to overcome greenhouse effect is",
+    "options": {
+      "A": "biochemistry.",
+      "B": "organic chemistry.",
+      "C": "physical chemistry.",
+      "D": "environmental chemistry."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.1.1",
+    "sloText": "Define chemistry and identify its major branches (physical, organic, inorganic, analytical, biochemistry, industrial, nuclear and environmental chemistry).",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Environmental chemistry is the branch of chemistry that studies chemical processes occurring in the environment, the impacts of human activities (such as atmospheric greenhouse gas accumulation and global warming), and sustainable mitigation strategies like afforestation.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Biochemistry investigates chemical substances and processes occurring within living organisms."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Organic chemistry focuses on the study of carbon-containing compounds and hydrocarbons."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Physical chemistry focuses on the fundamental physical principles, laws, and energetics governing chemical transformations."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Environmental chemistry focuses on environmental pollutants, atmospheric chemistry, greenhouse effects, and ecological remedies."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "stem": "Ozone (O3) is a highly reactive gas which is formed in the stratosphere with the help of ultraviolet radiations.\nIf 10.5 moles of ozone gas is formed in the stratosphere, then its mass in grams will be\n(Note: 16_8 O)",
+    "options": {
+      "A": "84",
+      "B": "168",
+      "C": "252",
+      "D": "504"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "2.2.1",
+    "sloText": "Interconvert between moles, mass, and molar mass using stoichiometric relationships.",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "The molar mass of ozone (O3) = 3 \u00d7 16 g/mol = 48 g/mol. Mass in grams = Moles \u00d7 Molar mass = 10.5 mol \u00d7 48 g/mol = 504 g.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 84 g would correspond to only 1.75 moles of ozone."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. 168 g corresponds to 10.5 moles of monoatomic oxygen (10.5 \u00d7 16), failing to multiply by 3 for O3."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 252 g corresponds to half the correct mass (5.25 moles of O3)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Mass = 10.5 moles \u00d7 48 g/mol = 504 g."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "stem": "Which of the following bond(s) is/ are present in NH4+?\nI. Coordinate covalent\nII. Covalent\nIII. Ionic",
+    "options": {
+      "A": "I only",
+      "B": "III only",
+      "C": "I and II",
+      "D": "II and III"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.3.1",
+    "sloText": "Describe the formation of a coordinate covalent bond using ammonia (NH3) and hydrogen ion (H+) to form ammonium ion (NH4+).",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In the ammonium cation (NH4+), the nitrogen atom forms three shared pairs of electrons with three hydrogen atoms (three single covalent bonds) and donates its lone pair of electrons to an electron-deficient H+ ion (one coordinate covalent bond). Ionic bonding only occurs when NH4+ pairs with an external anion (e.g. Cl-), not within the polyatomic ion itself.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Coordinate covalent is present, but it also contains three normal covalent bonds."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. There is no ionic bond within the NH4+ cation itself."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. NH4+ contains three polar covalent N-H bonds and one coordinate covalent (dative) N->H+ bond."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Ionic bonds are formed between distinct oppositely charged ions, not within the ammonium molecular ion."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "stem": "Which of the following properties is TRUE for ionic compounds?",
+    "options": {
+      "A": "They are malleable and ductile.",
+      "B": "They have low melting and boiling points.",
+      "C": "They are brittle and dissolve easily in non-polar solvents.",
+      "D": "They dissolve in polar solvents and conduct electricity in molten form."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "5.4.1",
+    "sloText": "Describe characteristics and physical properties of ionic compounds.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Ionic compounds are formed of electrostatic giant crystal lattices. They dissolve in polar solvents (like water) via ion-dipole interactions and conduct electric current in molten or aqueous states because their ions are free to migrate.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Metals are malleable and ductile; ionic crystals are brittle and shatter upon stress."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Strong omnidirectional electrostatic attraction gives ionic compounds very high melting and boiling points."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. While brittle, ionic compounds are insoluble in non-polar organic solvents."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. High dielectric polar solvents dissolve ionic lattices into mobile ions that conduct electricity in molten and solution phases."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "stem": "The dot and cross structure for the molecule of hydrogen sulphide is\n(Note: 1_1 H and 32_16 S)",
+    "options": {
+      "A": "Structure A with triple bonded hydrogens",
+      "B": "Structure B with single bonds but no lone pairs on sulfur",
+      "C": "Structure C with 1 shared pair and 3 lone pairs",
+      "D": "Structure D with two single covalent bonds (shared pairs) and two lone pairs on the central sulfur atom"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "5.2.2",
+    "sloText": "Draw dot and cross structures for simple covalent molecules.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-2019-P1/q7.png",
+    "explanation": "Sulfur has 6 valence electrons (Group 16) and each hydrogen atom has 1 valence electron. Sulfur shares one electron with each of the two hydrogen atoms to form two single covalent bonds (two shared pairs), while retaining 4 unshared valence electrons as two non-bonding lone pairs to complete its stable octet (8 valence electrons). Diagram D correctly shows two H-S single bonds and two lone pairs on sulfur.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Hydrogen can only accommodate a duet of 2 electrons, not multiple bonds."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Sulfur must retain its two lone pairs (4 non-bonding electrons) to satisfy the octet rule."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Fails to account for both hydrogen atoms bonded to sulfur."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Displays 2 single covalent bond pairs and 2 lone pairs on central sulfur, satisfying octet for sulfur and duet for hydrogen."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "stem": "An element X belongs to group 15 and period 3 of the modern periodic table.\nThe number of electrons that would be present in the valence shell of the given element is",
+    "options": {
+      "A": "3",
+      "B": "5",
+      "C": "15",
+      "D": "18"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "4.1.2",
+    "sloText": "Relate the group number of an element to the number of electrons in its valence shell.",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In the modern periodic table, main group elements in Group 15 (Group VA) have 5 valence electrons in their outermost shell with the general valence electronic configuration ns2 np3 (such as Phosphorus, Z=15: [Ne] 3s2 3p3).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 3 corresponds to the period number or Group 13 elements."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Group 15 elements have exactly 5 valence electrons (ns2 np3)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 15 is the atomic number of phosphorus, not the number of valence electrons."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 18 is the maximum capacity of the M shell or Group 18 noble gases."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "stem": "Among the given solutions of potassium permanganate (KMnO4), which one has the highest concentration of water in it?",
+    "options": {
+      "A": "100 cm3 of 0.1 M KMnO4",
+      "B": "100 cm3 of 0.01 M KMnO4",
+      "C": "100 cm3 of 2 M KMnO4",
+      "D": "100 cm3 of 2.5 M KMnO4"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.2.2",
+    "sloText": "Interpret concentration of solutions and distinguish between dilute and concentrated solutions.",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-2019-P1/q9.png",
+    "explanation": "Molarity measures solute concentration (moles of solute per litre of solution). The lowest molarity (0.01 M) represents the most dilute solution, meaning it contains the least solute particles and therefore the highest concentration and proportion of water (solvent) per unit volume.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. 0.1 M has 10 times more solute than 0.01 M, reducing the water fraction."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. 0.01 M is the most dilute solution with the fewest solute particles, yielding the highest water concentration."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. 2 M is a very concentrated solution with lower water concentration."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 2.5 M has the highest solute concentration, which gives it the lowest water concentration."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "stem": "A student, for his research, prepared 1.25 M potassium chloride stock solution. What volume of the stock solution will he use to further prepare a 250 mL dilute solution of 0.2 M?",
+    "options": {
+      "A": "40 mL",
+      "B": "50 mL",
+      "C": "62.5 mL",
+      "D": "250 mL"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "7.2.4",
+    "sloText": "Perform dilution calculations using the molarity formula M1V1 = M2V2.",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Applying the dilution equation M1V1 = M2V2:\n(1.25 M) \u00d7 V1 = (0.2 M) \u00d7 (250 mL)\nV1 = (0.2 \u00d7 250) / 1.25 = 50 / 1.25 = 40 mL.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. V1 = (0.2 M \u00d7 250 mL) / 1.25 M = 40 mL."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Results from dividing 250 by 5 instead of 1.25."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Arithmetic inversion error (1.25 \u00d7 50)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. 250 mL is the final total volume of the diluted solution."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "stem": "Which of the following is NOT a solution?",
+    "options": {
+      "A": "Fog",
+      "B": "Butter",
+      "C": "Bronze",
+      "D": "Ammonia"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.1.1",
+    "sloText": "Define solution and distinguish solutions from pure chemical substances and colloids.",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Pure ammonia (NH3) is a pure chemical compound with a fixed chemical formula and constant composition, not a solution mixture. Fog (liquid in gas aerosol), butter (colloid/solid emulsion), and bronze (solid solution / alloy of copper and tin) are mixtures.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Fog is a colloidal solution consisting of liquid water droplets dispersed in air."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Butter is a colloidal solution of water dispersed in solid fat."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Bronze is a solid solution (alloy) of copper and tin."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Pure ammonia is a single chemical compound (pure substance), not a solution mixture."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "stem": "Which of the following statements defines a solution?",
+    "options": {
+      "A": "A pure compound having one or more solutes dissolved in a solvent",
+      "B": "A homogeneous mixture having one or more solutes dissolved in a solvent",
+      "C": "A heterogeneous mixture having one or more solutes dissolved in a solvent",
+      "D": "A pure compound having a solute and a solvent mixed in a fixed ratio by mass"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "7.1.1",
+    "sloText": "Define a solution as a homogeneous mixture of two or more substances.",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "By definition, a solution is a homogeneous mixture composed of two or more substances, where the dissolved substance is called the solute and the dissolving medium is called the solvent.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. A solution is a physical mixture, never a pure compound."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. A solution is defined as a homogeneous mixture of one or more solutes dissolved in a solvent."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Heterogeneous mixtures have non-uniform composition (suspensions or emulsions)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Solutions can vary in concentration and are not chemically bound in fixed mass ratios."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "stem": "In the periodic table, the group which consists of purely metals is",
+    "options": {
+      "A": "IIA",
+      "B": "IIIA",
+      "C": "VA",
+      "D": "VIIIA"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "4.1.3",
+    "sloText": "Identify metals, non-metals and metalloids in the periodic table.",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Group IIA (alkaline earth metals: Be, Mg, Ca, Sr, Ba, Ra) consists exclusively of metallic elements. Group IIIA contains the metalloid boron; Group VA contains non-metals (N, P), metalloids (As, Sb), and a metal (Bi); Group VIIIA contains noble gases (non-metals).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Group IIA alkaline earth metals are 100% metallic elements."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Group IIIA contains boron, which is a metalloid/semi-metal."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Group VA contains non-metals (N, P) and metalloids (As, Sb)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Group VIIIA consists entirely of non-metallic noble gases."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "stem": "The valence shell electronic configuration of the most electronegative element of the periodic table is",
+    "options": {
+      "A": "ns2 np3",
+      "B": "ns2 np4",
+      "C": "ns2 np5",
+      "D": "ns2 np6"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.2.3",
+    "sloText": "Determine the electronic configuration and electronegativity trends across groups.",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Fluorine (F) is the most electronegative element in the entire periodic table (Pauling value 4.0). Belonging to Group 17 (halogens), its valence shell electronic configuration is ns2 np5 (2s2 2p5 for fluorine).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. ns2 np3 is the configuration for Group 15 pnictogens."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. ns2 np4 is the configuration for Group 16 chalcogens."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Fluorine is the most electronegative element and has the halogen valence configuration ns2 np5."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. ns2 np6 represents the stable closed shell of Group 18 noble gases."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "stem": "An oxygen atom is similar to an atom of sulphur because they both",
+    "options": {
+      "A": "form diatomic molecules.",
+      "B": "have the same number of protons.",
+      "C": "form cations with a double negative charge.",
+      "D": "have the same number of valence electrons."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.1.2",
+    "sloText": "Relate the group number of an element to the number of valence electrons.",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Both oxygen (atomic number 8) and sulphur (atomic number 16) reside in Group 16 (Group VIA) of the periodic table. Elements in the same group possess the same number of valence electrons (6 valence electrons: ns2 np4), conferring similar chemical properties.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Oxygen forms diatomic O2 molecules, whereas sulphur naturally forms polyatomic crown-shaped S8 rings."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Oxygen has 8 protons while sulphur has 16 protons."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. They form anions with double negative charge (O2-, S2-), not cations."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. As members of Group 16, both oxygen and sulfur contain 6 valence electrons."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "stem": "Which periodic trend is observed in moving down group 17 of the modern periodic table?",
+    "options": {
+      "A": "Decreasing reactivity",
+      "B": "Decreasing boiling point",
+      "C": "Increasing electronegativity",
+      "D": "Increasing ionisation energy"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "4.2.1",
+    "sloText": "Describe trends in physical and chemical properties of Group 17 halogens.",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In Group 17 (the halogens), chemical reactivity decreases down the group from fluorine to iodine. Because atomic radius and electron shielding increase down the group, the effective nuclear attraction for incoming electrons diminishes, lowering oxidising strength and reactivity. Conversely, boiling points increase down the group due to stronger London dispersion forces.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Halogen reactivity decreases down the group as electronegativity and electron affinity drop."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Boiling points increase down Group 17 (F2 gas -> I2 solid) due to increasing London dispersion forces."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Electronegativity decreases down Group 17 as atomic radius increases."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Ionisation energy decreases down the group due to increasing shielding."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "stem": "The given table shows four different atoms, P, Q, R and S.\nAtom | Number of Protons | Number of Neutrons | Number of Electrons\nP | 17 | 18 | 17\nQ | 18 | 22 | 18\nR | 19 | 20 | 19\nS | 17 | 20 | 17\nWhich two atoms in the given table are isotopes of each other?",
+    "options": {
+      "A": "P and Q",
+      "B": "Q and R",
+      "C": "R and S",
+      "D": "P and S"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.3.1",
+    "sloText": "Define isotopes and identify isotopes of an element based on protons and neutrons.",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Isotopes are atoms of the same chemical element that have the identical number of protons (atomic number Z) and electrons, but different numbers of neutrons (and hence different mass numbers). Both atom P and atom S possess 17 protons (chlorine) but differ in their neutron count (18 in P vs 20 in S).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. P has 17 protons and Q has 18 protons, representing two completely different elements."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Q has 18 protons (Argon) and R has 19 protons (Potassium)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. R (19 protons) and S (17 protons) are different elements."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. P and S have the exact same proton number (17) but different neutron counts (18 vs 20), making them isotopes of chlorine (Cl-35 and Cl-37)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "stem": "If an element X has atomic number 15, then its valence shell electronic configuration will be",
+    "options": {
+      "A": "2s1, 2p4",
+      "B": "2s2, 2p3",
+      "C": "3s1, 3p4",
+      "D": "3s2, 3p3"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "3.2.1",
+    "sloText": "Write the electronic configuration of elements of the first three periods.",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "An element with atomic number Z = 15 has 15 electrons. Filling atomic subshells in order of increasing energy: 1s2 2s2 2p6 3s2 3p3. The outermost (valence) shell is n = 3, which contains 3s2 3p3 (5 valence electrons).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Violates Hund's rule and represents an excited state in shell 2."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. 2s2 2p3 is the valence configuration of nitrogen (Z=7), not Z=15."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The 3s subshell must be completely filled with 2 electrons before filling 3p."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Complete configuration is 1s2 2s2 2p6 3s2 3p3, so the valence shell configuration is 3s2 3p3."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "stem": "The atomic structure of boron (11_5 B) is represented by",
+    "options": {
+      "A": "Diagram A (2 electrons in K shell, 3 electrons in L shell)",
+      "B": "Diagram B (3 electrons in K shell, 2 electrons in L shell)",
+      "C": "Diagram C (2 electrons in K shell, 5 electrons in L shell)",
+      "D": "Diagram D (5 electrons in K shell)"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "3.2.2",
+    "sloText": "Draw the atomic structure of the first twenty elements of the periodic table.",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-2019-P1/q19.png",
+    "explanation": "Boron has atomic number Z = 5 and mass number A = 11. It has 5 electrons distributed across energy levels: 2 electrons in the innermost K shell (maximum capacity = 2) and 3 electrons in the outer L shell. Diagram A correctly displays this arrangement.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Diagram A depicts 2 electrons in the first (K) shell and 3 electrons in the second (L) shell."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. The K shell has a maximum capacity of 2 electrons (2n^2); it cannot hold 3 electrons."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Shows 7 total electrons, which corresponds to nitrogen (Z=7)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Fails shell capacity rules by placing all 5 electrons in K shell."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "stem": "Which of the following statements is TRUE about Bohr's atomic model?",
+    "options": {
+      "A": "It shows that an atom produces continuous spectrum.",
+      "B": "It proves that the plum-pudding model of an atom was correct.",
+      "C": "It proves that the size and energy of each orbit in an atom is quantised.",
+      "D": "It shows that electrons emit radiation when revolving around the nucleus."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Knowledge",
+    "slo": "3.1.4",
+    "sloText": "Describe Bohr's atomic model and its postulates regarding quantised energy orbits.",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Bohr's atomic model postulated that electrons revolve only in discrete, stationary circular orbits of fixed radius and fixed energy (quantised energy levels). Electrons do not radiate energy while in these stationary orbits, explaining atomic stability and discrete line spectra.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Bohr's model explains the line spectrum (discrete emission spectrum), not a continuous spectrum."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Rutherford and Bohr disproved Thomson's plum-pudding model."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Bohr established that electrons reside in stationary orbits where energy and angular momentum are quantised."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Electrons do not radiate energy in their stationary orbits; radiation is emitted only when transitioning between orbits."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "stem": "Solids, liquids and gases differ from each other on the basis of all of the following EXCEPT",
+    "options": {
+      "A": "size of particles.",
+      "B": "velocity of particles.",
+      "C": "space among particles.",
+      "D": "arrangement of particles."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.1.1",
+    "sloText": "Apply kinetic molecular theory to explain the behavior and properties of solids, liquids, and gases.",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "According to Kinetic Molecular Theory, changing the physical state of a substance alters the velocity (kinetic energy), intermolecular spacing, and spatial arrangement of its constituent particles, but the fundamental size and dimensions of individual molecules remain identical.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Particle size is a constant intrinsic property of the molecules and does not change when shifting between solid, liquid, and gas phases."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Particle velocity increases markedly from solids (vibrational only) to gases (high-speed translational)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Intermolecular space is negligible in solids/liquids and very large in gases."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Arrangement is highly ordered in crystalline solids, random in liquids, and completely disordered in gases."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "stem": "Sulphur dioxide and methane gas have different rates of diffusion at a fixed temperature because they both have different",
+    "options": {
+      "A": "chemical bonding.",
+      "B": "molecular masses.",
+      "C": "molecular formula.",
+      "D": "intermolecular forces."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.2.2",
+    "sloText": "Explain diffusion in gases on the basis of molecular mass (Graham's Law).",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "According to Graham's law of diffusion, the rate of diffusion of a gas is inversely proportional to the square root of its molecular mass (rate \u221d 1/\u221aM). Methane (CH4 = 16 g/mol) diffuses twice as fast as sulphur dioxide (SO2 = 64 g/mol) because of its significantly lower molecular mass.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Rate of gaseous diffusion depends on mass and kinetic velocity, not internal chemical bonding."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Rate of diffusion is governed by molecular mass; lighter gas molecules travel at higher root-mean-square velocities at a given temperature."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. The molecular formula reflects chemical identity, but rate of diffusion is quantitatively controlled by molecular mass."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. In ideal gas diffusion, intermolecular attractions are negligible compared to thermal kinetic energy."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "stem": "The given diagram shows the process of\n(Diagram shows an inverted funnel with cotton plug over an evaporating dish containing ammonium chloride heated by a Bunsen burner)",
+    "options": {
+      "A": "boiling.",
+      "B": "melting.",
+      "C": "sublimation.",
+      "D": "condensation."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.1.3",
+    "sloText": "Describe changes of state including sublimation of ammonium chloride.",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-2019-P1/q23.png",
+    "explanation": "The apparatus shows the standard laboratory demonstration of sublimation: impure ammonium chloride salt in a china dish is heated by a Bunsen burner under an inverted glass funnel plugged with cotton. Ammonium chloride sublimes directly from solid to vapor upon heating and condenses back as pure solid crystals on the cool inner walls of the funnel.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Boiling refers to rapid liquid-to-gas transition throughout the bulk of a liquid."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Melting is the transition from solid to liquid."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The setup depicts sublimation, where solid NH4Cl converts directly into vapor and deposits as purified solid on the cooler upper walls of the inverted funnel."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Condensation is purely gas to liquid, whereas sublimation involves direct solid-gas phase transition."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "stem": "Liquids can be converted into solids by",
+    "options": {
+      "A": "increasing collision among the molecules.",
+      "B": "decreasing kinetic energy of the molecules.",
+      "C": "increasing volume occupied by the molecules.",
+      "D": "decreasing force of attraction among the molecules."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.1.2",
+    "sloText": "Explain the effect of temperature changes on the kinetic energy and state of matter (freezing/solidification).",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Solidification (freezing) occurs when temperature drops, which decreases the average kinetic energy and velocity of liquid molecules. As molecules slow down, intermolecular attractive forces overcome kinetic motion, pulling particles into orderly fixed positions in a crystalline lattice.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Increasing collision frequency typically accompanies higher kinetic energy and heating."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Cooling decreases molecular kinetic energy, allowing attractive forces to bind particles into rigid solid structures."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Most liquids contract upon freezing (occupying less volume, with water being a rare exception due to hydrogen bonding)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Decreasing attractive forces would lead toward vaporization, not solidification."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "stem": "The following diagram shows an electrolytic cell used for electroplating iron with chromium.\nThe chemical reaction that takes place at cathode is",
+    "options": {
+      "A": "Cr(s) -> Cr2+(aq) + 2e-",
+      "B": "Cr2+(aq) + 2e- -> Cr(s)",
+      "C": "Cr(s) -> Cr3+(aq) + 3e-",
+      "D": "Cr3+(aq) + 3e- -> Cr(s)"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.3.3",
+    "sloText": "Describe the process of electroplating of metals including chromium on iron.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": true,
+    "diagramBased": true,
+    "diagramUrl": "/paper-crops/CHM-IX-2019-P1/q25.png",
+    "explanation": "In an electroplating cell, the object to be plated (iron cathode) is connected to the negative terminal of the DC battery. Reduction occurs at the cathode, where trivalent chromium cations (Cr3+) from the acidified electrolyte gain 3 electrons and deposit as metallic chromium: Cr3+(aq) + 3e- -> Cr(s).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. This is an oxidation half-reaction involving divalent chromium."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. In chromium sulphate plating baths, chromium exists predominantly as Cr3+ cations."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Oxidation occurs at the anode (loss of electrons), not at the cathode."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Reduction occurs at the cathode: Cr3+(aq) + 3e- -> Cr(s), depositing a protective lustrous chromium metal layer."
+      }
+    ]
+  },
+  {
+    "questionNumber": 26,
+    "stem": "The oxidation state of chlorine in ClO3- is",
+    "options": {
+      "A": "+1",
+      "B": "+3",
+      "C": "+5",
+      "D": "+7"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "8.1.3",
+    "sloText": "Assign oxidation states to elements in polyatomic ions using oxidation rules.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "In the chlorate polyatomic ion (ClO3-), the sum of oxidation numbers equals the net charge (-1). Each oxygen has an oxidation state of -2:\nOxidation state of Cl + 3(-2) = -1\nCl - 6 = -1\nCl = +6 - 1 = +5.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. +1 is the oxidation state of chlorine in hypochlorite (ClO-)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. +3 is the oxidation state of chlorine in chlorite (ClO2-)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. In ClO3-, Cl + 3(-2) = -1 => Cl = +5."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. +7 is the oxidation state of chlorine in perchlorate (ClO4-)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 27,
+    "stem": "A voltaic (galvanic) cell is an electrochemical cell which",
+    "options": {
+      "A": "converts electrical energy into chemical energy.",
+      "B": "generates electricity through spontaneous redox reaction.",
+      "C": "comprises of two electrodes made up of the same inert metal.",
+      "D": "consists of a positively charged anode and a negatively charged cathode."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.2.1",
+    "sloText": "Distinguish between electrolytic and galvanic cells.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "A voltaic (galvanic) cell utilizes spontaneous chemical redox reactions between two distinct half-cells to produce an electric current, converting chemical energy directly into electrical energy.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Electrolytic cells convert electrical energy into chemical energy."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Voltaic cells generate an electromotive force (electricity) from spontaneous chemical oxidation-reduction reactions."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Voltaic cells require electrodes of different standard reduction potentials to generate a voltage difference."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. In a galvanic cell, the anode is negative (source of electrons) and the cathode is positive."
+      }
+    ]
+  },
+  {
+    "questionNumber": 28,
+    "stem": "Like metals, most of the non-metals react with oxygen to form oxides. The nature of the oxides of non-metals, with a few exceptions, is",
+    "options": {
+      "A": "basic.",
+      "B": "acidic.",
+      "C": "neutral.",
+      "D": "amphoteric."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "4.2.4",
+    "sloText": "Differentiate between metallic (basic) and non-metallic (acidic) oxides.",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Most non-metallic elements react with oxygen to form acidic oxides (acid anhydrides like SO2, SO3, CO2, P4O10, NO2) which dissolve in water to produce acidic solutions and neutralize bases.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Metals form basic oxides (e.g. Na2O, CaO, MgO)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Non-metal oxides dissolve in water to generate oxyacids (e.g. CO2 + H2O -> H2CO3; SO3 + H2O -> H2SO4)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect. Only a few neutral oxides exist (such as CO, NO, N2O); the overwhelming majority are acidic."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Amphoteric oxides are typically formed by metalloids and boundary metals like aluminium and zinc."
+      }
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "stem": "Silver is a noble metal because it is",
+    "options": {
+      "A": "highly ductile and malleable.",
+      "B": "white lustrous in appearance.",
+      "C": "resistant to oxidation in moist air.",
+      "D": "poor conductor of heat and electricity."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "8.4.1",
+    "sloText": "Describe the chemical inertness and properties of noble metals (gold, silver, platinum).",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Noble metals (such as gold, platinum, and silver) are characterized chemically by their relative inertness and resistance to chemical oxidation, corrosion, and tarnishing in moist air under ordinary atmospheric conditions.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Malleability and ductility are physical properties common to many metals (e.g., copper, aluminium) without making them noble."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Lustre is a universal physical metallic property."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Chemical nobility refers specifically to high resistance to chemical corrosion and atmospheric oxidation."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Silver is the best electrical and thermal conductor among all known elements."
+      }
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "stem": "Which of the following classification of metals is CORRECT?\nAlkali Metal | Alkaline Earth Metal",
+    "options": {
+      "A": "Sodium | Cesium",
+      "B": "Beryllium | Lithium",
+      "C": "Rubidium | Strontium",
+      "D": "Barium | Calcium"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Knowledge",
+    "slo": "4.1.3",
+    "sloText": "Classify metals into alkali metals (Group 1) and alkaline earth metals (Group 2).",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "isDiagram": false,
+    "diagramBased": false,
+    "diagramUrl": null,
+    "explanation": "Alkali metals belong to Group 1 (Li, Na, K, Rb, Cs, Fr) and alkaline earth metals belong to Group 2 (Be, Mg, Ca, Sr, Ba, Ra). In pair C, Rubidium (Rb) is correctly an alkali metal and Strontium (Sr) is correctly an alkaline earth metal.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect. Both Sodium and Cesium are alkali metals (Group 1)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect. Beryllium is an alkaline earth metal (Group 2) and Lithium is an alkali metal (Group 1)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Rubidium is in Group 1 (alkali metal) and Strontium is in Group 2 (alkaline earth metal)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect. Both Barium and Calcium are alkaline earth metals (Group 2)."
+      }
+    ]
+  }
+]

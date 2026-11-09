@@ -1,0 +1,1760 @@
+[
+  {
+    "questionNumber": 1,
+    "stem": "The formula of an ionic compound containing a metal ion (M+3) and a non-metal ion (X\u22121) is",
+    "options": {
+      "A": "3MX.",
+      "B": "M3X.",
+      "C": "MX3.",
+      "D": "M3X3."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.2.11",
+    "sloText": "Deduce chemical formulas of ionic compounds using valencies of cations and anions;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "To achieve electrical neutrality, one M3+ cation combines with three X- anions, giving the chemical formula MX3.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "3MX represents 3 separate formula units of a 1:1 compound."
+      },
+      {
+        "key": "B",
+        "reason": "M3X would correspond to M+ and X3-."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. M^3+ + 3X^- -> MX3."
+      },
+      {
+        "key": "D",
+        "reason": "Subscripts in ionic empirical formulas must be in the simplest whole-number ratio (1:3)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "stem": "Which of the following is NOT an empirical formula?",
+    "options": {
+      "A": "CH2",
+      "B": "CH2O",
+      "C": "C2H4N2",
+      "D": "C3H6O2"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.4.3",
+    "sloText": "Distinguish between empirical and molecular formulas;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "An empirical formula is the simplest whole-number ratio of atoms in a compound. In C2H4N2, the subscripts 2:4:2 can be simplified by dividing by 2 to CH2N; hence it is a molecular formula, not an empirical formula.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "1:2 is in simplest whole-number ratio."
+      },
+      {
+        "key": "B",
+        "reason": "1:2:1 is in simplest whole-number ratio (e.g. formaldehyde/glucose empirical formula)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The subscripts 2:4:2 have a common divisor of 2 and can be reduced to CH2N."
+      },
+      {
+        "key": "D",
+        "reason": "3:6:2 cannot be reduced further."
+      }
+    ]
+  },
+  {
+    "questionNumber": 3,
+    "stem": "A sample of hydrocarbon undergoes complete combustion to produce carbon dioxide (CO2) and water (H2O). If 8.80 g of carbon dioxide is obtained, then what will be the mass of carbon present in it? (Note: Atomic mass of C = 12 amu, O = 16 amu and H = 1 amu)",
+    "options": {
+      "A": "2.4 g",
+      "B": "3.8 g",
+      "C": "12.0 g",
+      "D": "32.3 g"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "1.5.6",
+    "sloText": "Calculate mass of constituent elements in combustion analysis products;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Molar mass of CO2 = 12 + 2(16) = 44 g/mol. Fraction of carbon in CO2 = 12 / 44. Mass of carbon = (12 / 44) * 8.80 g = 2.4 g.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. (12 / 44) * 8.80 g = 2.4 g."
+      },
+      {
+        "key": "B",
+        "reason": "Calculation error."
+      },
+      {
+        "key": "C",
+        "reason": "12.0 g is the atomic mass of carbon."
+      },
+      {
+        "key": "D",
+        "reason": "Exceeds the total mass of CO2 produced."
+      }
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "stem": "The values of w, x, y and z in the given chemical equation are: w Al(s) + x CuSO4(aq) -> y Cu(s) + z Al2(SO4)3(aq)",
+    "options": {
+      "A": "w=2, x=1, y=1, z=2",
+      "B": "w=2, x=3, y=2, z=1",
+      "C": "w=2, x=3, y=3, z=1",
+      "D": "w=3, x=2, y=2, z=1"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "1.5.5",
+    "sloText": "Balance chemical equations using stoichiometric coefficients;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Balancing atoms: 2 Al gives z=1 Al2(SO4)3; 3 sulfate groups require x=3 CuSO4; 3 copper atoms give y=3 Cu. Thus, w=2, x=3, y=3, z=1.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Unbalanced for copper and sulfate."
+      },
+      {
+        "key": "B",
+        "reason": "Copper is unbalanced (3 on left, 2 on right)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. 2Al + 3CuSO4 -> 3Cu + 1Al2(SO4)3."
+      },
+      {
+        "key": "D",
+        "reason": "Aluminium and copper are unbalanced."
+      }
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "stem": "Which type of chemical reaction is shown in the given equation? H2S(g) + Cl2(g) -> S(s) + 2HCl(g)",
+    "options": {
+      "A": "Combustion",
+      "B": "Decomposition",
+      "C": "Single displacement",
+      "D": "Double displacement"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.5.3",
+    "sloText": "Classify chemical reactions into synthesis, decomposition, single and double displacement;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Chlorine is more reactive than sulfur and displaces sulfur from hydrogen sulfide to form hydrogen chloride and elemental sulfur, representing a single displacement reaction.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Combustion requires reaction with oxygen."
+      },
+      {
+        "key": "B",
+        "reason": "Decomposition involves a single compound breaking down into simpler substances."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Chlorine displaces sulfur from its compound (single displacement)."
+      },
+      {
+        "key": "D",
+        "reason": "Double displacement involves mutual exchange of ions between two compounds."
+      }
+    ]
+  },
+  {
+    "questionNumber": 6,
+    "stem": "The reactants of a double displacement reaction are",
+    "options": {
+      "A": "two elements.",
+      "B": "two ionic compounds.",
+      "C": "two diatomic molecules.",
+      "D": "an element and an ionic compound."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.5.3",
+    "sloText": "Identify the nature of reactants and products in precipitation and double displacement reactions;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "In a double displacement (metathesis) reaction, two ionic compounds in aqueous solution exchange their cations and anions to form two new ionic compounds.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Two elements undergo direct combination/synthesis."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Double displacement occurs between two soluble ionic compounds that exchange ions."
+      },
+      {
+        "key": "C",
+        "reason": "Reaction between diatomic molecules is synthesis."
+      },
+      {
+        "key": "D",
+        "reason": "An element and an ionic compound undergo single displacement."
+      }
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "stem": "Which of the following actions will result in a combustion reaction?",
+    "options": {
+      "A": "Freezing a juice bottle",
+      "B": "Lighting a scented candle",
+      "C": "Cutting an apple into slices",
+      "D": "Mixing iron filings with sand"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "1.5.3",
+    "sloText": "Identify combustion as a rapid exothermic reaction with oxygen;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Combustion is a rapid exothermic reaction of a fuel with oxygen producing heat and light. Lighting a candle involves the combustion of hydrocarbon paraffin wax in atmospheric oxygen.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Freezing is a physical phase change."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Burning candle wax in air is a combustion reaction."
+      },
+      {
+        "key": "C",
+        "reason": "Cutting an apple is a mechanical physical change."
+      },
+      {
+        "key": "D",
+        "reason": "Mixing iron and sand is physical mixture formation."
+      }
+    ]
+  },
+  {
+    "questionNumber": 8,
+    "stem": "Deuterium and tritium are atoms of the same element, i.e. hydrogen. They both have the same: I. atomic mass, II. atomic number, III. number of neutrons, IV. number of electrons",
+    "options": {
+      "A": "I and II.",
+      "B": "I and III.",
+      "C": "II and IV.",
+      "D": "III and IV."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "2.2.1",
+    "sloText": "Describe the isotopes of hydrogen (protium, deuterium, tritium);",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Isotopes of hydrogen have identical atomic numbers (Z = 1, meaning 1 proton and 1 electron) but differ in atomic mass due to neutron count (deuterium has 1 neutron, tritium has 2 neutrons).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Atomic masses differ (D=2, T=3)."
+      },
+      {
+        "key": "B",
+        "reason": "Both atomic mass and neutron count differ."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Isotopes have identical atomic numbers and electron counts."
+      },
+      {
+        "key": "D",
+        "reason": "Neutron count differs (1 vs 2)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "stem": "If an element has 3 electrons in its valence (M) shell, then what will be its atomic number?",
+    "options": {
+      "A": "15",
+      "B": "13",
+      "C": "10",
+      "D": "5"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "2.1.2",
+    "sloText": "Determine atomic number from electron shell distribution (K, L, M shells);",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "If the M shell is the valence shell containing 3 electrons, the inner K and L shells must be completely filled: K=2, L=8, M=3. Total electrons = 2 + 8 + 3 = 13 (Aluminium).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "15 corresponds to 5 valence electrons in M shell (Phosphorus)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. 2 (K) + 8 (L) + 3 (M) = 13."
+      },
+      {
+        "key": "C",
+        "reason": "10 corresponds to filled L shell (Neon)."
+      },
+      {
+        "key": "D",
+        "reason": "5 has 3 valence electrons in L shell (Boron), not M shell."
+      }
+    ]
+  },
+  {
+    "questionNumber": 10,
+    "stem": "How many electrons, protons and neutrons are there in a nitrogen (14_7 N^\u22123) ion?",
+    "options": {
+      "A": "Electrons: 4 | Protons: 7 | Neutrons: 10",
+      "B": "Electrons: 7 | Protons: 7 | Neutrons: 7",
+      "C": "Electrons: 10 | Protons: 7 | Neutrons: 7",
+      "D": "Electrons: 17 | Protons: 14 | Neutrons: 7"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "2.1.2",
+    "sloText": "Determine protons, neutrons and electrons in polyatomic and multivalent ions;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Atomic number = 7 => 7 protons. Mass number = 14 => Neutrons = 14 - 7 = 7. Charge is -3 => Electrons = 7 + 3 = 10 electrons.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect electron and neutron counts."
+      },
+      {
+        "key": "B",
+        "reason": "This is a neutral nitrogen atom, not a -3 nitride ion."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Protons = 7, Neutrons = 7, Electrons = 10."
+      },
+      {
+        "key": "D",
+        "reason": "Protons cannot be 14 (14 is the mass number)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "stem": "The electronic configuration provides information about all of the following features of an atom EXCEPT the",
+    "options": {
+      "A": "group and the period it belongs to.",
+      "B": "type of chemical bond it can form.",
+      "C": "presence of neutrons in the nucleus.",
+      "D": "distribution of electrons in different shells."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "2.5.1",
+    "sloText": "Explain what electronic configurations represent and identify independent nuclear properties;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Electronic configuration describes only electron distribution across orbitals and shells. It provides no information about the number or presence of neutrons in the nucleus.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Highest shell gives period; valence electrons give group."
+      },
+      {
+        "key": "B",
+        "reason": "Valence electrons determine whether an atom forms ionic or covalent bonds."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Neutrons reside in the nucleus and do not affect orbital electron configuration."
+      },
+      {
+        "key": "D",
+        "reason": "Electron distribution is the direct definition of electronic configuration."
+      }
+    ]
+  },
+  {
+    "questionNumber": 12,
+    "stem": "According to Rutherford atomic model, the nucleus in an atom is",
+    "options": {
+      "A": "large and hard.",
+      "B": "small and dense.",
+      "C": "neutral and hollow.",
+      "D": "light and revolving."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "2.3.1",
+    "sloText": "Describe the features of the atomic nucleus in Rutherford's nuclear model;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Rutherford's alpha-scattering experiment proved that the positive charge and almost all the mass of an atom are concentrated in an extremely small, dense central region called the nucleus.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The nucleus is extremely small compared to total atomic volume."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Rutherford concluded the nucleus is tiny, positively charged, and extremely dense."
+      },
+      {
+        "key": "C",
+        "reason": "The nucleus is positively charged and contains dense matter, not hollow."
+      },
+      {
+        "key": "D",
+        "reason": "Electrons revolve, not the nucleus."
+      }
+    ]
+  },
+  {
+    "questionNumber": 13,
+    "stem": "In nuclear reactors, the radioactive isotope used to produce energy is",
+    "options": {
+      "A": "cobalt-60.",
+      "B": "iodine-131.",
+      "C": "strontium-90.",
+      "D": "uranium-235."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "2.2.3",
+    "sloText": "Identify industrial and medical applications of radioactive isotopes;",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "explanation": "Uranium-235 is fissile and undergoes controlled nuclear fission in power reactors to generate vast thermal energy for electricity generation.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Cobalt-60 is used in radiotherapy for cancer treatment."
+      },
+      {
+        "key": "B",
+        "reason": "Iodine-131 is used for thyroid imaging and treatment."
+      },
+      {
+        "key": "C",
+        "reason": "Strontium-90 is a beta emitter used in industrial thickness gauges."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Uranium-235 is the primary nuclear fuel in power reactors."
+      }
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "stem": "Given are the characteristics of an element X: A salt former, Found in liquid state, Reddish brown in colour, Exists as a diatomic molecule. The element X identified is",
+    "options": {
+      "A": "sodium.",
+      "B": "chlorine.",
+      "C": "bromine.",
+      "D": "beryllium."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.1.6",
+    "sloText": "Identify halogens based on physical states, colours and elemental properties;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Bromine (Br2) is a halogen ('salt-former') and the only non-metallic element that is a volatile reddish-brown liquid at room temperature.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Sodium is a soft silvery metal."
+      },
+      {
+        "key": "B",
+        "reason": "Chlorine is a greenish-yellow gas."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Bromine is a reddish-brown liquid halogen existing as Br2."
+      },
+      {
+        "key": "D",
+        "reason": "Beryllium is a grey solid alkaline earth metal."
+      }
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "stem": "The electronic configuration of an element of group IIA and period 3 is",
+    "options": {
+      "A": "1s2, 2s1",
+      "B": "1s2, 2s2, 2p1",
+      "C": "1s2, 2s2, 2p3",
+      "D": "1s2, 2s2, 2p6, 3s2"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "3.1.3",
+    "sloText": "Deduce electron configurations from group and period locations in the periodic table;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Period 3 indicates the outermost shell is n=3; Group IIA indicates 2 valence electrons in the s subshell (3s2). The full configuration is 1s2 2s2 2p6 3s2 (Magnesium, Z=12).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Group IA, Period 2 (Lithium)."
+      },
+      {
+        "key": "B",
+        "reason": "Group IIIA, Period 2 (Boron)."
+      },
+      {
+        "key": "C",
+        "reason": "Group VA, Period 2 (Nitrogen)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. 1s2 2s2 2p6 3s2 corresponds to Magnesium (Group IIA, Period 3)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "stem": "With reference to the different groups of the modern periodic table, the information that stands CORRECT is that all the elements in group",
+    "options": {
+      "A": "13 are metals.",
+      "B": "16 form 2+ cations.",
+      "C": "17 produce basic oxides.",
+      "D": "18 exist in gaseous state."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.2.1",
+    "sloText": "Describe general group properties across s, p block families;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "All elements in Group 18 (He, Ne, Ar, Kr, Xe, Rn) are monoatomic noble gases at room temperature.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Boron in Group 13 is a metalloid/semi-metal."
+      },
+      {
+        "key": "B",
+        "reason": "Group 16 non-metals form 2- anions, not 2+ cations."
+      },
+      {
+        "key": "C",
+        "reason": "Group 17 halogens form acidic oxides."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. All Group 18 noble gases exist in the gaseous state."
+      }
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "stem": "When an atom M combines with another atom X, an ionic bond is formed. In this reaction, the atomic radius of the atom X increases because",
+    "options": {
+      "A": "it loses electrons to atom M.",
+      "B": "it gains electrons from atom M.",
+      "C": "its protons get tightly packed inside the nucleus.",
+      "D": "its ionisation energy increases on forming the ionic bond."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "3.2.3",
+    "sloText": "Explain the change in size when atoms form anions and cations;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Non-metal atom X gains electrons to form an anion. Added electrons increase mutual electron-electron repulsion and decrease effective nuclear charge per electron, causing the electron cloud to expand (ionic radius > atomic radius).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Losing electrons causes radius to decrease (cation formation)."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Gaining electrons forms an anion with expanded electron cloud."
+      },
+      {
+        "key": "C",
+        "reason": "Nuclear proton packing does not change."
+      },
+      {
+        "key": "D",
+        "reason": "Ionisation energy is energy to remove electrons."
+      }
+    ]
+  },
+  {
+    "questionNumber": 18,
+    "stem": "The quantity of energy that an isolated, gaseous atom in the ground electronic state must absorb to discharge an electron is termed as",
+    "options": {
+      "A": "kinetic energy.",
+      "B": "shielding effect.",
+      "C": "electron affinity.",
+      "D": "ionisation energy."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Knowledge",
+    "slo": "3.2.2",
+    "sloText": "Define ionisation energy and state its units;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "explanation": "Ionisation energy is the minimum energy required to remove the most loosely bound valence electron from an isolated neutral gaseous atom in its ground state.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Kinetic energy is energy of motion."
+      },
+      {
+        "key": "B",
+        "reason": "Shielding effect is screening of nuclear pull by inner core electrons."
+      },
+      {
+        "key": "C",
+        "reason": "Electron affinity is energy released upon electron addition."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Ionisation energy is energy absorbed to discharge an electron."
+      }
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "stem": "The given ion is formed from an element belonging to group:",
+    "options": {
+      "A": "IIA.",
+      "B": "IVA.",
+      "C": "VIA.",
+      "D": "VIIIA."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "3.1.3",
+    "sloText": "Relate ion charges and electronic structures to group numbers;",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "diagramUrl": "/paper-crops/CHM-IX-2022-P1/q19.png",
+    "diagramBased": true,
+    "explanation": "The diagram displays a 2+ cation with 10 electrons (2 in first shell, 8 in second shell). The parent neutral atom had 10 + 2 = 12 electrons with 2 valence electrons in shell 3, which is Magnesium, belonging to Group IIA.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. A 2+ ion with 10 electrons originates from a Group IIA neutral atom (Z=12)."
+      },
+      {
+        "key": "B",
+        "reason": "Group IVA forms 4- or covalent bonds."
+      },
+      {
+        "key": "C",
+        "reason": "Group VIA forms 2- anions."
+      },
+      {
+        "key": "D",
+        "reason": "Group VIIIA noble gases do not readily form dipositive cations."
+      }
+    ]
+  },
+  {
+    "questionNumber": 20,
+    "stem": "The ionic compound whose both ions represent the same electronic configuration as that of neon atom (10_Ne) is (Note: 24_12 Mg, 39_19 K, 35_17 Cl and 16_8 O)",
+    "options": {
+      "A": "K2O",
+      "B": "KCl",
+      "C": "MgO",
+      "D": "MgCl2"
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "4.1.1",
+    "sloText": "Identify isoelectronic ions and noble gas configurations in ionic compounds;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Neon has 10 electrons. In MgO, Mg2+ has 12 - 2 = 10 electrons and O2- has 8 + 2 = 10 electrons. Both ions are isoelectronic with neon.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "K+ has 18 electrons (isoelectronic with argon)."
+      },
+      {
+        "key": "B",
+        "reason": "Both K+ and Cl- have 18 electrons (isoelectronic with argon)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Both Mg2+ (10e) and O2- (10e) have the electronic configuration of neon."
+      },
+      {
+        "key": "D",
+        "reason": "Cl- has 18 electrons."
+      }
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "stem": "Which of these elements will gain an electron to form an anion?",
+    "options": {
+      "A": "Boron",
+      "B": "Argon",
+      "C": "Lithium",
+      "D": "Chlorine"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.1.5",
+    "sloText": "Predict ion formation based on electronegativity and valence shell configuration;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Chlorine (Group VIIA) has 7 valence electrons and high electronegativity; it readily gains 1 electron to complete its stable octet and form a chloride anion (Cl-).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Boron typically shares electrons in covalent bonds."
+      },
+      {
+        "key": "B",
+        "reason": "Argon has a complete octet and does not gain electrons."
+      },
+      {
+        "key": "C",
+        "reason": "Lithium is an alkali metal that loses an electron to form Li+ cation."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Chlorine gains 1 electron to form the stable chloride anion Cl-."
+      }
+    ]
+  },
+  {
+    "questionNumber": 22,
+    "stem": "The table shows information about species P (8 protons, 8 neutrons, 2, 8) and Q (16 protons, 16 neutrons, 2, 8, 8). Based on the given information, species P and Q are the",
+    "options": {
+      "A": "atoms of inert gases.",
+      "B": "positively charged ions.",
+      "C": "negatively charged ions.",
+      "D": "isotopes of the same element."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.1.2",
+    "sloText": "Identify anions by comparing proton and electron counts;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Species P has 8 protons but 10 electrons (charge = -2, O2-). Species Q has 16 protons but 18 electrons (charge = -2, S2-). Since electron count exceeds proton count, both are negatively charged ions (anions).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Neutral atoms have equal proton and electron counts."
+      },
+      {
+        "key": "B",
+        "reason": "Positively charged ions have fewer electrons than protons."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. In both species, electron count exceeds proton count by 2, forming -2 anions."
+      },
+      {
+        "key": "D",
+        "reason": "Isotopes must have identical proton counts."
+      }
+    ]
+  },
+  {
+    "questionNumber": 23,
+    "stem": "Which of the following statements stands TRUE for the formation of lithium chloride? (Note: 7_3 Li and 35_17 Cl)",
+    "options": {
+      "A": "A lithium atom gives an electron to the chlorine atom.",
+      "B": "A chlorine atom gives an electron to the lithium atom.",
+      "C": "A chlorine atom shares an electron with the lithium atom.",
+      "D": "A lithium atom accepts a pair of electrons from the chlorine atom."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.2.1",
+    "sloText": "Describe electron transfer in ionic bonding of alkali halides;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "Lithium (metal, 2, 1) transfers its single valence electron to chlorine (non-metal, 2, 8, 7) forming Li+ and Cl-, which are held by electrostatic attraction.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Lithium atom transfers 1 electron to chlorine atom to form Li+ and Cl-."
+      },
+      {
+        "key": "B",
+        "reason": "Chlorine does not transfer electrons to alkali metals."
+      },
+      {
+        "key": "C",
+        "reason": "Lithium chloride bonding is electrovalent (ionic), not covalent sharing."
+      },
+      {
+        "key": "D",
+        "reason": "Lithium is electropositive and donates an electron."
+      }
+    ]
+  },
+  {
+    "questionNumber": 24,
+    "stem": "Which set of property and example is TRUE for polar covalent compounds?",
+    "options": {
+      "A": "Electrons are pulled equally by bonded atoms | Example: CCl4",
+      "B": "Electrons are pulled unequally by bonded atoms | Example: CCl4",
+      "C": "Electrons are pulled equally by bonded atoms | Example: HCl",
+      "D": "Electrons are pulled unequally by bonded atoms | Example: HCl"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.3.6",
+    "sloText": "Differentiate polar from non-polar covalent bonds and molecules;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "In a polar covalent compound, bonding electrons are pulled unequally due to difference in electronegativity, creating dipole poles as in HCl.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "This describes non-polar compounds."
+      },
+      {
+        "key": "B",
+        "reason": "CCl4 has individual polar bonds, but due to symmetrical tetrahedral geometry, it is a non-polar molecule."
+      },
+      {
+        "key": "C",
+        "reason": "Electrons in HCl are shared unequally."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. In polar covalent HCl, chlorine pulls shared electrons unequally toward itself."
+      }
+    ]
+  },
+  {
+    "questionNumber": 25,
+    "stem": "A coordinate covalent bond is formed when",
+    "options": {
+      "A": "one atom shares an electron pair with another atom.",
+      "B": "one atom loses electrons and the other atom acquires them.",
+      "C": "two like atoms share their unpaired electrons with each other.",
+      "D": "two unlike atoms share their unpaired electrons with each other."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "4.4.1",
+    "sloText": "Define coordinate covalent (dative) bond in terms of donor and acceptor atoms;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "A coordinate (dative) covalent bond is a covalent bond in which both shared electrons are contributed by only one of the bonded atoms (the donor atom).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. One atom donates the shared electron pair to an acceptor atom."
+      },
+      {
+        "key": "B",
+        "reason": "Complete loss and gain of electrons describes ionic bonding."
+      },
+      {
+        "key": "C",
+        "reason": "Equal sharing of unpaired electrons describes normal non-polar covalent bonding."
+      },
+      {
+        "key": "D",
+        "reason": "Mutual sharing describes normal polar covalent bonding."
+      }
+    ]
+  },
+  {
+    "questionNumber": 26,
+    "stem": "Which type of attractive forces are present between I2 molecules?",
+    "options": {
+      "A": "Ionic bonding",
+      "B": "Dispersion forces",
+      "C": "Hydrogen bonding",
+      "D": "Dipole-dipole forces"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "4.6.1",
+    "sloText": "Describe London dispersion forces in non-polar diatomic halogens;",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "explanation": "I2 is a symmetrical, non-polar diatomic molecule. The only intermolecular forces operating between I2 molecules are temporary induced dipole-induced dipole (London dispersion) forces.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Ionic bonding occurs between oppositely charged ions."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Non-polar halogen molecules are held together by London dispersion forces."
+      },
+      {
+        "key": "C",
+        "reason": "Hydrogen bonding requires hydrogen bonded to N, O, or F."
+      },
+      {
+        "key": "D",
+        "reason": "Dipole-dipole forces require permanent molecular dipoles."
+      }
+    ]
+  },
+  {
+    "questionNumber": 27,
+    "stem": "The given figure exemplifies the process of",
+    "options": {
+      "A": "dissolution.",
+      "B": "neutralisation.",
+      "C": "crystallisation.",
+      "D": "decomposition."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.1.1",
+    "sloText": "Describe the dissolution of ionic solids in water in terms of hydration of ions;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "diagramUrl": "/paper-crops/CHM-IX-2022-P1/q27.png",
+    "diagramBased": true,
+    "explanation": "The diagram illustrates polar water molecules surrounding and separating sodium (Na+) and chloride (Cl-) ions from the crystal lattice by ion-dipole hydration forces, which is the process of dissolution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Hydration of salt ions by polar water dipoles represents dissolution."
+      },
+      {
+        "key": "B",
+        "reason": "Neutralisation is an acid-base reaction producing salt and water."
+      },
+      {
+        "key": "C",
+        "reason": "Crystallisation is solid solute coming out of solution."
+      },
+      {
+        "key": "D",
+        "reason": "Decomposition involves breaking a molecule into simpler chemical substances."
+      }
+    ]
+  },
+  {
+    "questionNumber": 28,
+    "stem": "Bronze is an alloy consisting of 88% copper and 12% tin. Therefore, it is a solution of",
+    "options": {
+      "A": "solid in solid.",
+      "B": "liquid in solid.",
+      "C": "solid in liquid.",
+      "D": "liquid in liquid."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.2.1",
+    "sloText": "Identify types of solutions based on physical states of solute and solvent;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Bronze is a homogeneous solid solution (alloy) where solid tin solute is uniformly dissolved in solid copper solvent.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Bronze is an alloy, which is a solid-in-solid solution."
+      },
+      {
+        "key": "B",
+        "reason": "Dental amalgam (mercury in silver) is liquid in solid."
+      },
+      {
+        "key": "C",
+        "reason": "Saltwater is solid in liquid."
+      },
+      {
+        "key": "D",
+        "reason": "Alcohol in water is liquid in liquid."
+      }
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "stem": "A sugar solution is prepared by dissolving 10 g of sugar in 55 g of water. The mass percent of solvent in the given solution is",
+    "options": {
+      "A": "15.38%.",
+      "B": "18.18%.",
+      "C": "81.82%.",
+      "D": "84.62%."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "6.4.5",
+    "sloText": "Calculate mass percentage (m/m) of solute and solvent in solutions;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Total mass of solution = mass of solute (10 g) + mass of solvent (55 g) = 65 g. Mass percent of solvent = (55 g / 65 g) * 100 = 84.62%.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "15.38% is the mass percent of the solute (10 / 65 * 100)."
+      },
+      {
+        "key": "B",
+        "reason": "18.18% calculates 10 / 55 * 100."
+      },
+      {
+        "key": "C",
+        "reason": "81.82% subtracts 18.18% from 100%."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Mass % of solvent = (55 / 65) * 100 = 84.62%."
+      }
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "stem": "Consider the given characteristics of the particles of a mixture: Large but cannot be seen with naked eyes; Big but can pass through the filter paper; Quite stable and do not settle down for a long time. The mixture to which these characteristics BEST fit is",
+    "options": {
+      "A": "lemonade.",
+      "B": "soap lather.",
+      "C": "sand in water.",
+      "D": "milk of magnesia."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.7.1",
+    "sloText": "Identify characteristics of colloidal particles (size 1-1000 nm, Tyndall effect, stability);",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Colloidal particles range between 1 and 1000 nm: invisible to naked eye, pass through regular filter paper, and remain dispersed stably. Soap lather is a gas-in-liquid colloidal foam.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Lemonade is a true solution with sub-nanometer solute particles."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Soap lather is a colloid matching all given criteria."
+      },
+      {
+        "key": "C",
+        "reason": "Sand in water is a coarse suspension that settles immediately."
+      },
+      {
+        "key": "D",
+        "reason": "Milk of magnesia is a suspension that settles on standing."
+      }
+    ]
+  },
+  {
+    "questionNumber": 31,
+    "stem": "The given graph shows variation in the solubility of potassium nitrate and sodium chloride salts with temperature. The TRUE interpretation of the given graph is that, with the rise in temperature, the solubility of",
+    "options": {
+      "A": "both salts increases with the release of heat.",
+      "B": "both salts increases with the absorption of heat.",
+      "C": "NaCl increases while that of KNO3 shows loss of heat.",
+      "D": "KNO3 increases while that of NaCl shows no change in heat."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "6.5.3",
+    "sloText": "Interpret temperature-solubility curves for salts with endothermic, exothermic, or near-zero heat of solution;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "diagramUrl": "/paper-crops/CHM-IX-2022-P1/q31.png",
+    "diagramBased": true,
+    "explanation": "KNO3 has a steep positive slope showing marked increase in solubility with temperature (endothermic heat of solution). In contrast, NaCl shows an almost horizontal flat line indicating negligible change in solubility and nearly zero net heat change upon dissolution.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Endothermic dissolution absorbs heat rather than releasing it."
+      },
+      {
+        "key": "B",
+        "reason": "NaCl shows very little change with temperature."
+      },
+      {
+        "key": "C",
+        "reason": "KNO3 solubility increases dramatically, not NaCl."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. KNO3 solubility increases steeply while NaCl curve is almost flat with negligible thermal effect."
+      }
+    ]
+  },
+  {
+    "questionNumber": 32,
+    "stem": "The method that can be used to investigate the presence of different food colours in a beverage is",
+    "options": {
+      "A": "alloying.",
+      "B": "crystallisation.",
+      "C": "decomposition.",
+      "D": "chromatography."
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.6.5",
+    "sloText": "Explain the application of paper chromatography in identifying synthetic dyes and pigments;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Paper chromatography separates and identifies soluble synthetic dyes and pigments in food or drink based on differential migration rates in a solvent.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Alloying is melting and blending metals."
+      },
+      {
+        "key": "B",
+        "reason": "Crystallisation is purifying solid salts."
+      },
+      {
+        "key": "C",
+        "reason": "Decomposition breaks down compounds into simpler products."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Paper chromatography separates and identifies dissolved food dyes."
+      }
+    ]
+  },
+  {
+    "questionNumber": 33,
+    "stem": "A mixture is formed when chalk is added to water. The particles in this mixture",
+    "options": {
+      "A": "cannot be seen by the naked eye.",
+      "B": "settle over time if left undisturbed.",
+      "C": "have a diameter less than 1000 nm.",
+      "D": "cannot be separated through filtration."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.7.1",
+    "sloText": "Describe the characteristics of suspensions (particle size > 1000 nm, settling, turbidity);",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Chalk in water is a heterogeneous suspension with particle diameters greater than 1000 nm. The particles are visible, can be trapped on filter paper, and settle to the bottom under gravity when left undisturbed.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Chalk particles are large enough to be clearly visible to the naked eye."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Suspensions are unstable and their particles settle upon standing."
+      },
+      {
+        "key": "C",
+        "reason": "Suspension particles have diameters exceeding 1000 nm."
+      },
+      {
+        "key": "D",
+        "reason": "Suspension particles are easily separated by filtration."
+      }
+    ]
+  },
+  {
+    "questionNumber": 34,
+    "stem": "The term, \u2018oxidation\u2019 of a substance means",
+    "options": {
+      "A": "gain of electron and loss of oxygen atom.",
+      "B": "gain of oxygen atom and loss of electron.",
+      "C": "gain of electron and loss of hydrogen atom.",
+      "D": "gain of hydrogen atom and loss of electron."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Knowledge",
+    "slo": "7.1.1",
+    "sloText": "Define oxidation in terms of addition of oxygen, removal of hydrogen and loss of electrons;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "Oxidation is defined classically as the gain of oxygen (or loss of hydrogen), and electronically as the loss of electrons resulting in an increased oxidation state.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Gain of electrons is reduction."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Oxidation entails gain of oxygen and loss of electrons."
+      },
+      {
+        "key": "C",
+        "reason": "Gain of electrons is reduction."
+      },
+      {
+        "key": "D",
+        "reason": "Gain of hydrogen is reduction."
+      }
+    ]
+  },
+  {
+    "questionNumber": 35,
+    "stem": "The oxidation number of phosphorus in NaH2PO4 is",
+    "options": {
+      "A": "\u22125",
+      "B": "\u22123",
+      "C": "+3",
+      "D": "+5"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "7.2.3",
+    "sloText": "Determine oxidation states of non-metals in ternary oxy-salts;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "In NaH2PO4: Na has +1, each H has +1, each O has -2. For a neutral salt: (+1) + 2(+1) + x + 4(-2) = 0 => 1 + 2 + x - 8 = 0 => x - 5 = 0 => x = +5.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Phosphorus exhibits positive oxidation states when bonded to electronegative oxygen."
+      },
+      {
+        "key": "B",
+        "reason": "-3 is the oxidation state in phosphides (e.g. PH3)."
+      },
+      {
+        "key": "C",
+        "reason": "+3 is the oxidation state in phosphites (e.g. H3PO3)."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. x + 3 - 8 = 0 => x = +5."
+      }
+    ]
+  },
+  {
+    "questionNumber": 36,
+    "stem": "Which substance gets reduced when a piece of magnesium is dipped into a copper(II) salt solution?",
+    "options": {
+      "A": "Copper ions",
+      "B": "Copper atoms",
+      "C": "Magnesium ions",
+      "D": "Magnesium atoms"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "7.3.2",
+    "sloText": "Identify the species oxidised and reduced in single displacement redox reactions;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "In the reaction Mg(s) + Cu2+(aq) -> Mg2+(aq) + Cu(s), copper(II) ions (Cu2+) gain 2 electrons to form elemental copper atoms, meaning copper ions are reduced.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Cu2+ ions gain electrons and are reduced to elemental Cu."
+      },
+      {
+        "key": "B",
+        "reason": "Copper atoms are the product of reduction, not the reactant reduced."
+      },
+      {
+        "key": "C",
+        "reason": "Magnesium ions are the product of oxidation."
+      },
+      {
+        "key": "D",
+        "reason": "Magnesium atoms lose electrons and undergo oxidation."
+      }
+    ]
+  },
+  {
+    "questionNumber": 37,
+    "stem": "Consider the given substances: I. Fe, II. FeCl2, III. FeCl3. The substance(s) that can be used as a reducing agent is/ are",
+    "options": {
+      "A": "I only.",
+      "B": "I and II.",
+      "C": "III only.",
+      "D": "II and III."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.3.2",
+    "sloText": "Identify substances capable of acting as reducing agents based on available oxidation states;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "A reducing agent undergoes oxidation (increase in oxidation number). Fe (state 0) can be oxidised to +2 or +3. FeCl2 (Fe2+) can be oxidised to Fe3+. However, FeCl3 (Fe3+) is at its maximum stable oxidation state and can only act as an oxidising agent. Thus, I and II can act as reducing agents.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "FeCl2 can also be oxidised to FeCl3 and acts as a reducing agent."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Both metallic Fe (0) and ferrous Fe2+ (+2) can undergo oxidation to higher oxidation states."
+      },
+      {
+        "key": "C",
+        "reason": "FeCl3 contains Fe in its highest +3 state and can only act as an oxidiser."
+      },
+      {
+        "key": "D",
+        "reason": "FeCl3 cannot be oxidised further under normal conditions."
+      }
+    ]
+  },
+  {
+    "questionNumber": 38,
+    "stem": "Given are the properties of a solution: Does not conduct electricity; Solute is dissolved completely; Solute is not dissociated into ions. Based on the given properties, the solution identified is",
+    "options": {
+      "A": "dilute solution of non-electrolyte.",
+      "B": "dilute solution of strong electrolyte.",
+      "C": "concentrated solution of weak electrolyte.",
+      "D": "concentrated solution of strong electrolyte."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.4.1",
+    "sloText": "Classify solutions as strong, weak and non-electrolytes based on ion dissociation and conductivity;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "A non-electrolyte dissolves in water as neutral molecules (like glucose or urea) without forming any ions, resulting in zero electrical conductivity.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Dissolving without ionic dissociation characterizes non-electrolytes."
+      },
+      {
+        "key": "B",
+        "reason": "Strong electrolytes dissociate completely into ions and conduct electricity well."
+      },
+      {
+        "key": "C",
+        "reason": "Weak electrolytes partially dissociate into ions and show measurable conductance."
+      },
+      {
+        "key": "D",
+        "reason": "Strong electrolytes conduct electricity with high intensity."
+      }
+    ]
+  },
+  {
+    "questionNumber": 39,
+    "stem": "During the manufacturing process of caustic soda in Nelson\u2019s cell, the by-product that is obtained at anode is/ are",
+    "options": {
+      "A": "chlorine gas.",
+      "B": "hydrogen gas.",
+      "C": "sodium metal.",
+      "D": "water vapours."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.5.2",
+    "sloText": "Describe the electrode reactions in Nelson's cell for commercial caustic soda manufacture;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "In Nelson's cell for brine electrolysis, chloride ions (Cl-) migrate to the carbon/graphite anode and undergo oxidation to release chlorine gas: 2Cl- -> Cl2 + 2e-.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Chlorine gas is liberated at the anode."
+      },
+      {
+        "key": "B",
+        "reason": "Hydrogen gas is discharged at the cathode."
+      },
+      {
+        "key": "C",
+        "reason": "Sodium metal is never produced in aqueous electrolysis due to H+ discharge."
+      },
+      {
+        "key": "D",
+        "reason": "Water is a reactant solvent."
+      }
+    ]
+  },
+  {
+    "questionNumber": 40,
+    "stem": "The term, \u2018rusting\u2019 refers to the corrosion of",
+    "options": {
+      "A": "iron.",
+      "B": "copper.",
+      "C": "chromium.",
+      "D": "aluminium."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Knowledge",
+    "slo": "7.6.2",
+    "sloText": "Define corrosion and specify rusting as the corrosion of iron and steel;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "While 'corrosion' is the general degradation of any metal by environmental redox reactions, the specific term 'rusting' is reserved exclusively for the electrochemical corrosion of iron and steel into hydrated iron(III) oxide (Fe2O3\u00b7xH2O).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Rusting is specifically the electrochemical oxidation of iron to hydrated ferric oxide."
+      },
+      {
+        "key": "B",
+        "reason": "Corrosion of copper produces a green patina of basic copper carbonate."
+      },
+      {
+        "key": "C",
+        "reason": "Chromium forms a passive protective oxide layer."
+      },
+      {
+        "key": "D",
+        "reason": "Aluminium forms an adherent protective Al2O3 film."
+      }
+    ]
+  },
+  {
+    "questionNumber": 41,
+    "stem": "[ATP] A student used solvent X to separate a mixture of salt and sugar because sugar is soluble in X while salt is not. Based on this information, the solvent X used by the student is",
+    "options": {
+      "A": "oil.",
+      "B": "water.",
+      "C": "ethanol.",
+      "D": "acetic acid."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Application",
+    "slo": "1.2.8",
+    "sloText": "Apply differential solubility of components to separate solid-solid mixtures;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Sugar (a covalent organic polyol) is soluble in polar organic solvents like ethanol (ethyl alcohol), whereas sodium chloride (an ionic lattice) is insoluble in ethanol, allowing clean separation by extraction and filtration.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Neither salt nor sugar dissolves in non-polar cooking oil."
+      },
+      {
+        "key": "B",
+        "reason": "Both salt and sugar are highly soluble in water, preventing separation."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Sugar dissolves in ethanol while common salt does not."
+      },
+      {
+        "key": "D",
+        "reason": "Acetic acid partially dissolves both substances."
+      }
+    ]
+  },
+  {
+    "questionNumber": 42,
+    "stem": "[ATP] In a science laboratory, Mariam prepared a mixture of SiO2 and K2SO4.Al2(SO4)3.24H2O in water. She then applied the process of filtration on the mixture. An inference Mariam must have made through this experiment is that",
+    "options": {
+      "A": "SiO2 is insoluble in water.",
+      "B": "SiO2 easily passes through the filter paper.",
+      "C": "K2SO4.Al2(SO4)3.24H2O is an amorphous solid.",
+      "D": "K2SO4.Al2(SO4)3.24H2O easily settles down in water."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "1.2.8",
+    "sloText": "Infer solubility and separation outcomes for alum and silica mixtures via filtration;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Potash alum [K2SO4\u00b7Al2(SO4)3\u00b724H2O] dissolves in water and passes through the filter paper into the filtrate, while sand (silicon dioxide, SiO2) is insoluble and is retained on the filter paper as residue.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. SiO2 remains on the filter paper because it is completely insoluble in water."
+      },
+      {
+        "key": "B",
+        "reason": "SiO2 is retained as a residue on the filter paper."
+      },
+      {
+        "key": "C",
+        "reason": "Potash alum forms octahedral crystals, not an amorphous solid."
+      },
+      {
+        "key": "D",
+        "reason": "Alum dissolves completely in water rather than settling as insoluble grit."
+      }
+    ]
+  },
+  {
+    "questionNumber": 43,
+    "stem": "[ATP] A student accidentally dropped some iron filings in a bottle of sodium chloride. Which step(s) should he/ she follow to remove the iron filings?",
+    "options": {
+      "A": "Use a magnet only",
+      "B": "Dissolve the mixture in water and filter it",
+      "C": "Dissolve the mixture in water, filter it and crystallise the filtrate",
+      "D": "Use a magnet, dissolve the mixture in water, filter and evaporate it"
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Application",
+    "slo": "1.2.8",
+    "sloText": "Select the most efficient separation technique for magnetic and non-magnetic solids;",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "explanation": "Iron is ferromagnetic while sodium chloride is non-magnetic. Using a magnet wrapped in plastic wrap easily and directly extracts all iron filings from dry salt in a single physical step without requiring solvents, dissolution, filtration, or crystallization.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Magnetic separation is immediate, non-destructive, and requires no chemicals or heating."
+      },
+      {
+        "key": "B",
+        "reason": "Filtration leaves wet salt solution that would still require subsequent drying."
+      },
+      {
+        "key": "C",
+        "reason": "Unnecessarily complex when simple magnetic separation suffices."
+      },
+      {
+        "key": "D",
+        "reason": "Redundant and inefficient steps."
+      }
+    ]
+  },
+  {
+    "questionNumber": 44,
+    "stem": "[ATP] When sucrose is dissolved in water, its solubility increases with the rise in temperature because sucrose",
+    "options": {
+      "A": "evolves heat in water.",
+      "B": "ionises completely in water.",
+      "C": "absorbs heat from the water.",
+      "D": "reacts chemically with water."
+    },
+    "correctOption": "C",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.5.3",
+    "sloText": "Relate endothermic heat of solution of sugars to increased solubility at elevated temperatures;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "The dissolution of sucrose in water is an endothermic process (\u0394H > 0), meaning it absorbs heat from the surrounding water. By Le Chatelier's principle, supplying more heat shifts the dissolution equilibrium forward, increasing solubility.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Evolving heat corresponds to exothermic dissolution where solubility decreases with temperature."
+      },
+      {
+        "key": "B",
+        "reason": "Sucrose is a non-electrolyte and does not ionise in water."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Endothermic dissolution absorbs thermal energy, so higher temperatures enhance solubility."
+      },
+      {
+        "key": "D",
+        "reason": "Sucrose undergoes physical dissolution, not chemical decomposition with water."
+      }
+    ]
+  },
+  {
+    "questionNumber": 45,
+    "stem": "[ATP] Oxalic acid is a primary standard substance because of its high",
+    "options": {
+      "A": "density.",
+      "B": "stability.",
+      "C": "solubility.",
+      "D": "reactivity."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.4.3",
+    "sloText": "Identify the criteria of primary standard substances in volumetric analysis;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "A primary standard must be obtained in high purity (> 99.9%), have a known stable chemical composition that does not absorb moisture (non-hygroscopic) or oxidize in air, and possess high stability under ordinary laboratory conditions. Oxalic acid dihydrate (H2C2O4\u00b72H2O) meets all these criteria.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Density is irrelevant to primary standard suitability."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. High chemical stability, definite stoichiometric composition, and non-deliquescence are essential for primary standards."
+      },
+      {
+        "key": "C",
+        "reason": "High solubility alone does not make a substance a primary standard (e.g. NaOH is highly soluble but is a secondary standard)."
+      },
+      {
+        "key": "D",
+        "reason": "Extremely high reactivity makes substances unstable standards."
+      }
+    ]
+  },
+  {
+    "questionNumber": 46,
+    "stem": "[ATP] In a laboratory, Altamash is provided with a 250 mL volumetric flask to prepare 0.1 M oxalic acid solution. How much mass of oxalic acid (H2C2O4.2H2O) does he require to accomplish his task? (Note: 12_6 C, 1_1 H and 16_8 O)",
+    "options": {
+      "A": "2.25 g",
+      "B": "3.15 g",
+      "C": "25.0 g",
+      "D": "50.4 g"
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Application",
+    "slo": "6.4.3",
+    "sloText": "Calculate the mass of hydrated solute required to prepare a standard molar solution;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Molar mass of hydrated oxalic acid (H2C2O4\u00b72H2O) = 2(1) + 2(12) + 4(16) + 2(18) = 2 + 24 + 64 + 36 = 126 g/mol. Volume = 250 mL = 0.250 dm3. Mass = Molarity * Molar Mass * Volume = 0.1 mol/dm3 * 126 g/mol * 0.250 dm3 = 3.15 g.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Calculated using anhydrous oxalic acid mass (90 g/mol) instead of dihydrate."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. 0.1 * 126 * 0.250 = 3.15 g."
+      },
+      {
+        "key": "C",
+        "reason": "Arithmetic calculation error."
+      },
+      {
+        "key": "D",
+        "reason": "Calculation error."
+      }
+    ]
+  },
+  {
+    "questionNumber": 47,
+    "stem": "[ATP] The following steps are ensured when preparing crystals of pure copper sulphate (CuSO4.5H2O) from an impure sample of blue vitriol: A few drops of dilute sulphuric acid are added to the aqueous solution; The filtrate should be evaporated only up to the crystallisation point. The purpose of adding dilute sulphuric acid is to",
+    "options": {
+      "A": "breakdown copper sulphate into its ions.",
+      "B": "prevent the hydrolysis of copper sulphate.",
+      "C": "cause the decomposition of copper sulphate.",
+      "D": "remove impurities present in copper sulphate."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.6.3",
+    "sloText": "Explain the practical precautions in salt crystallization including suppressing cation hydrolysis;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Copper(II) sulphate in hot aqueous solution undergoes slight hydrolysis: Cu2+ + 2H2O \u21cc Cu(OH)2 + 2H+, which can precipitate cloudy basic copper salt and dull the crystal transparency. Adding a few drops of dilute H2SO4 suppresses this hydrolysis, maintaining clear, pure blue crystals.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Water already dissolves and dissociates the salt into ions."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Dilute H2SO4 shifts the hydrolysis equilibrium backward, preventing turbidity and basic salt precipitation."
+      },
+      {
+        "key": "C",
+        "reason": "Acid prevents decomposition rather than causing it."
+      },
+      {
+        "key": "D",
+        "reason": "Insoluble impurities are removed by filtration, not by acid addition."
+      }
+    ]
+  },
+  {
+    "questionNumber": 48,
+    "stem": "[ATP] If heating is exceeded (beyond the crystallisation point) to dryness, then this causes: I. disappearance of blue colour, II. loss of water of crystallisation, III. disappearance of the compound, IV. loss of turbidity from the solution",
+    "options": {
+      "A": "I and II.",
+      "B": "I and III.",
+      "C": "II and IV.",
+      "D": "III and IV."
+    },
+    "correctOption": "A",
+    "cognitiveLevel": "Understanding",
+    "slo": "6.6.3",
+    "sloText": "Describe the effect of overheating hydrated salts to complete dryness;",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "explanation": "Hydrated copper(II) sulphate (CuSO4\u00b75H2O) is bright blue. Overheating to dryness drives off the five molecules of coordinated water of crystallization, converting it into white anhydrous copper(II) sulphate powder (CuSO4). Hence, I and II occur.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Overheating removes water of crystallization and turns blue hydrated crystals into white anhydrous powder."
+      },
+      {
+        "key": "B",
+        "reason": "The compound does not disappear; it remains as white solid powder."
+      },
+      {
+        "key": "C",
+        "reason": "Turbidity is not an indicator here."
+      },
+      {
+        "key": "D",
+        "reason": "Statement III is false."
+      }
+    ]
+  },
+  {
+    "questionNumber": 49,
+    "stem": "[ATP] Electroplating is a redox reaction that is performed to prevent iron from corrosion. Considering this information, all of the following statements are true EXCEPT that this process involves the",
+    "options": {
+      "A": "transfer of electrons between reactants.",
+      "B": "use of a salt bridge for the migration of ions.",
+      "C": "use of electrical energy to initiate the reaction.",
+      "D": "electrolyte of the same metal being coated on iron."
+    },
+    "correctOption": "B",
+    "cognitiveLevel": "Understanding",
+    "slo": "7.4.8",
+    "sloText": "Identify the components of an electroplating cell and distinguish from galvanic cells;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "explanation": "Electroplating is conducted in a single electrolytic bath with a shared electrolyte solution where ions move directly between the anode and cathode. Salt bridges are used exclusively in two-compartment voltaic/galvanic cells to connect separate half-cells.",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Electroplating is an electrolytic redox process involving electron transfer."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Electroplating uses a single cell without any salt bridge."
+      },
+      {
+        "key": "C",
+        "reason": "Direct current power initiates the non-spontaneous deposition reaction."
+      },
+      {
+        "key": "D",
+        "reason": "The electrolyte must contain ions of the plating metal (e.g. NiSO4 for nickel plating)."
+      }
+    ]
+  },
+  {
+    "questionNumber": 50,
+    "stem": "[ATP] Consider the given table of electrolytic cells: Cell X: No light; Cell Y: A dim light; Cell Z: A bright light. Based on the given observations, the electrolyte that would be MOST likely present in the electrolytic cells X, Y and Z are",
+    "options": {
+      "A": "X: potassium chloride | Y: sugar | Z: acetic acid",
+      "B": "X: sugar | Y: ethanol | Z: hydrochloric acid",
+      "C": "X: acetic acid | Y: hydrochloric acid | Z: sugar",
+      "D": "X: ethanol | Y: acetic acid | Z: potassium chloride"
+    },
+    "correctOption": "D",
+    "cognitiveLevel": "Application",
+    "slo": "7.4.6",
+    "sloText": "Infer relative electrolyte strength (non, weak, strong) from conductivity bulb brightness;",
+    "unitNumber": 7,
+    "unitName": "Solutions",
+    "diagramUrl": "/paper-crops/CHM-IX-2022-P1/q50.png",
+    "diagramBased": true,
+    "explanation": "Cell X produces no light -> Non-electrolyte (Ethanol, which dissolves as neutral molecules). Cell Y produces dim light -> Weak electrolyte (Acetic acid, which ionizes only partially in water). Cell Z produces bright light -> Strong electrolyte (Potassium chloride, which dissociates completely into mobile K+ and Cl- ions).",
+    "option_feedback": [
+      {
+        "key": "A",
+        "reason": "KCl is a strong electrolyte and would produce bright light in Cell X."
+      },
+      {
+        "key": "B",
+        "reason": "Ethanol is a non-electrolyte and would produce no light in Cell Y."
+      },
+      {
+        "key": "C",
+        "reason": "Acetic acid would produce dim light in Cell X, not zero light."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Ethanol (non-electrolyte), acetic acid (weak electrolyte), and KCl (strong electrolyte)."
+      }
+    ]
+  }
+]

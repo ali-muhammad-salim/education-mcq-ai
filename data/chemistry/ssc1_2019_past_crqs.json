@@ -1,0 +1,404 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "State any FOUR characteristics of an ionic compound.",
+    "marks": 4,
+    "cognitiveLevel": "Knowledge",
+    "originalSlo": "5.4.1",
+    "currentSlo": "5.4.1",
+    "sloText": "Describe the characteristics and physical properties of ionic compounds.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "checkingHints": [
+      "1 mark for each valid physical or chemical characteristic of ionic compounds (any 4):",
+      "- Crystalline solid structure composed of a regular 3D lattice of positive and negative ions.",
+      "- High melting and boiling points due to strong electrostatic forces of attraction between oppositely charged ions.",
+      "- Good electrical conductivity in molten or aqueous state (non-conductors in solid state).",
+      "- High solubility in polar solvents (e.g. water) and insolubility in non-polar organic solvents.",
+      "- Hard and brittle nature (shatter when stress causes like charges to align and repel)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Mentions crystalline lattice structure / 3D regular arrangement of ions."
+      },
+      {
+        "marks": 1,
+        "description": "Mentions high melting and boiling points with reference to strong electrostatic forces."
+      },
+      {
+        "marks": 1,
+        "description": "Mentions electrical conductivity in aqueous or molten form due to mobile ions."
+      },
+      {
+        "marks": 1,
+        "description": "Mentions solubility in water / polar solvents or brittle mechanical nature."
+      }
+    ],
+    "modelAnswer": "Characteristics of Ionic Compounds:\n1. Crystalline Structure: Ionic compounds exist as hard, crystalline solids consisting of a regular, three-dimensional giant ionic lattice arrangement of alternating positive cations and negative anions.\n2. High Melting and Boiling Points: Because immense thermal energy is required to overcome the strong omnidirectional electrostatic forces of attraction holding the ions in the crystal lattice, they have very high melting and boiling temperatures.\n3. Electrical Conductivity: In the solid state, ions are locked into fixed positions and cannot conduct electricity; however, when melted (molten) or dissolved in water (aqueous solution), the crystal lattice breaks apart, producing mobile ions that freely conduct electric current.\n4. Solubility: They dissolve readily in polar solvents like water (due to favorable ion-dipole interactions that stabilize separated ions) but are insoluble in non-polar organic solvents like benzene or ether.\n5. Brittleness: When a mechanical strike or pressure is applied, planes of ions slide relative to each other, bringing ions of like charge into direct contact, causing catastrophic electrostatic repulsion and crystal fracture."
+  },
+  {
+    "questionNumber": "Q.2",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "An analytical chemist uses chromatography to investigate the types of amino acids present in a mixture of amino acids. He represents the mixture as M, and the known amino acids as 1, 2, 3, 4 and 5. During experimentation, he ensures that the base line containing spots is placed above the solvent level. After experimentation, he sprays the chromatogram with a solution of ninhydrin. The given chromatogram shows his investigation result.\na. Why is the base line containing spots placed above the solvent level? (1 Mark)\nb. What is the purpose of spraying ninhydrin solution on chromatogram? (1 Mark)\nc. Based on his investigation, identify the amino acids which are present in the mixture. (2 Marks)",
+    "marks": 4,
+    "cognitiveLevel": "Application",
+    "originalSlo": "1.2.9",
+    "currentSlo": "1.2.9",
+    "sloText": "Explain the principle and technique of paper chromatography including Rf values and locating agents.",
+    "unitNumber": 1,
+    "unitName": "Fundamentals of Chemistry",
+    "diagramUrl": "/paper-crops/CHM-IX-2019-P2/q2.png",
+    "checkingHints": [
+      "Part a: 1 mark for stating that the baseline is placed above solvent level to prevent the sample spots from dissolving directly into the solvent reservoir.",
+      "Part b: 1 mark for identifying ninhydrin as a locating agent used to visualize / develop colorless amino acid spots (producing purple/pink coloration).",
+      "Part c: 2 marks for correctly matching the spots of mixture M with reference spots 1, 3, and 5 (or stating amino acids 1, 3 and 5)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part a: Explains baseline elevation prevents sample from dissolving/washing away into bulk solvent reservoir."
+      },
+      {
+        "marks": 1,
+        "description": "Part b: Identifies ninhydrin as a locating agent to reveal/visualize colorless amino acid spots."
+      },
+      {
+        "marks": 2,
+        "description": "Part c: Accurately identifies amino acids corresponding to heights of spots in mixture M (amino acids 1, 3, and 5)."
+      }
+    ],
+    "modelAnswer": "a. The baseline containing sample spots is placed above the solvent level so that the spots are drawn upwards by capillary action rather than dissolving directly into the solvent reservoir and being washed away.\nb. Amino acids are colorless compounds; ninhydrin solution acts as a chemical locating agent that reacts with the amino acids to produce visible coloured (purple/violet) spots on the chromatogram.\nc. By comparing the vertical travel distance (retention / Rf position) of the spots in mixture M with the reference standards, mixture M contains amino acids 1, 3, and 5."
+  },
+  {
+    "questionNumber": "Q.3",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Write a reason for each of the following periodic trends observed in the periodic table.\na. Electronegativity increases across the period. (1 Mark)\nb. Shielding effect increases down the group. (1 Mark)\nc. Atomic radius decreases across the period. (1 Mark)\nd. Ionisation energy decreases down the group. (1 Mark)",
+    "marks": 4,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "4.2.2",
+    "currentSlo": "4.2.2",
+    "sloText": "Explain the periodic trends across periods and down groups (atomic radius, ionisation energy, electron affinity, electronegativity, shielding effect).",
+    "unitNumber": 4,
+    "unitName": "Periodic Table and Periodicity",
+    "checkingHints": [
+      "1 mark for each correct scientific explanation (total 4):",
+      "a. Across a period, nuclear charge (number of protons) increases while shielding effect remains constant, increasing effective nuclear pull on shared/bonding electron pairs.",
+      "b. Down a group, new energy shells are added, increasing the number of intervening inner electrons that screen outer valence electrons from nuclear pull.",
+      "c. Across a period, protons increase while electrons enter the same shell, pulling the electron cloud closer to the nucleus due to increased effective nuclear charge.",
+      "d. Down a group, atomic size and shielding effect increase, placing valence electrons farther from the nucleus and reducing nuclear attraction, making them easier to remove."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part a: Cites increasing nuclear charge / effective nuclear charge with constant shielding across the period."
+      },
+      {
+        "marks": 1,
+        "description": "Part b: Cites addition of extra electron shells / inner core electrons down the group."
+      },
+      {
+        "marks": 1,
+        "description": "Part c: Cites higher nuclear charge pulling electrons of the same shell inward across the period."
+      },
+      {
+        "marks": 1,
+        "description": "Part d: Cites increased atomic radius and shielding lowering attraction for outer electrons down the group."
+      }
+    ],
+    "modelAnswer": "a. Electronegativity increases across a period because the nuclear charge (number of protons) increases while the number of inner shielding shells remains constant. Consequently, the effective nuclear charge increases, exerting a stronger electrostatic pull on bonding pairs of electrons.\nb. Shielding effect increases down a group because each successive period adds a new principal energy shell. The resulting increase in the number of inner core electrons effectively shields the valence electrons from the electrostatic pull of the nucleus.\nc. Atomic radius decreases across a period because the number of protons increases while electrons are added to the same valence shell. The increased effective nuclear charge pulls the valence electron cloud closer to the nucleus, shrinking atomic size.\nd. Ionisation energy decreases down a group because both atomic radius and shielding effect increase, positioning valence electrons progressively farther from the nucleus. The weakened nuclear electrostatic attraction requires less energy to remove the outermost electron."
+  },
+  {
+    "questionNumber": "Q.4",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Write any ONE similarity and TWO differences between the given atoms A and B.\nAtom A: p = 17, n = 20\nAtom B: p = 17, n = 18",
+    "marks": 3,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "3.3.1",
+    "currentSlo": "3.3.1",
+    "sloText": "Define and describe isotopes of an element with examples.",
+    "unitNumber": 3,
+    "unitName": "Atomic Structure",
+    "diagramUrl": "/paper-crops/CHM-IX-2019-P2/q4.png",
+    "checkingHints": [
+      "1 mark for identifying one valid similarity (e.g., both have 17 protons / same atomic number / 17 electrons / same chemical properties / both are chlorine atoms).",
+      "2 marks for identifying two valid differences (1 mark each):",
+      "- Different number of neutrons (Atom A has 20 neutrons, Atom B has 18 neutrons).",
+      "- Different mass number (Atom A has mass number 37, Atom B has mass number 35).",
+      "- Difference in physical properties (e.g., mass, density)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "States 1 correct similarity: same atomic number / number of protons (17) / same chemical element (chlorine)."
+      },
+      {
+        "marks": 1,
+        "description": "States difference 1: different number of neutrons (Atom A = 20, Atom B = 18)."
+      },
+      {
+        "marks": 1,
+        "description": "States difference 2: different mass numbers (Atom A = 37, Atom B = 35) or physical mass."
+      }
+    ],
+    "modelAnswer": "Similarity between atoms A and B:\n- Both atoms have the same number of protons (p = 17) and the same atomic number (Z = 17), meaning they are isotopes of the same element, chlorine (Cl), and possess identical chemical properties and electronic configuration (2, 8, 7).\n\nDifferences between atoms A and B:\n1. Number of Neutrons: Atom A has 20 neutrons, whereas Atom B has 18 neutrons.\n2. Mass Number / Nucleon Number: Atom A has a mass number of 37 (A = 17 + 20 = 37 amu, Chlorine-37), whereas Atom B has a mass number of 35 (A = 17 + 18 = 35 amu, Chlorine-35), resulting in slightly different physical properties such as mass and density."
+  },
+  {
+    "questionNumber": "Q.5",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Consider a closed container with liquid having weak intermolecular forces. This liquid experiences both, vapour pressure and boiling point at constant temperature.\na. Describe the effect of presence of weak intermolecular forces on the vapour pressure of the liquid. (2 Marks)\nb. Relate the vapour pressure (described in part a) with the boiling point of the liquid. (1 Mark)",
+    "marks": 3,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "6.3.2",
+    "currentSlo": "6.3.2",
+    "sloText": "Explain the factors affecting vapour pressure and boiling point of liquids (intermolecular forces, temperature, atmospheric pressure).",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "checkingHints": [
+      "Part a (2 marks):",
+      "- 1 mark for stating that weak intermolecular forces allow molecules to escape easily from the liquid surface into the vapor phase.",
+      "- 1 mark for concluding that the liquid exhibits high vapour pressure / higher rate of evaporation.",
+      "Part b (1 mark):",
+      "- 1 mark for explaining that high vapour pressure means the liquid reaches atmospheric pressure at a lower temperature, resulting in a low boiling point."
+    ],
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part a: Explains easy molecular escape and establishes resulting high vapour pressure."
+      },
+      {
+        "marks": 1,
+        "description": "Part b: Relates higher vapour pressure to a lower boiling point (inversely proportional)."
+      }
+    ],
+    "modelAnswer": "a. When a liquid has weak intermolecular forces of attraction, relatively little kinetic energy is required to overcome these forces. As a result, surface molecules readily escape from the liquid phase into the vapor phase (high rate of evaporation), resulting in a high concentration of vapor particles and high vapour pressure in the closed container.\nb. Boiling occurs when the vapour pressure of a liquid equals the external atmospheric pressure. Because the liquid already has a high vapour pressure at moderate temperatures, it requires less heating to match atmospheric pressure, meaning the liquid has a low boiling point."
+  },
+  {
+    "questionNumber": "Q.6",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Give a scientific reason why gold is\na. used in making jewellery. (1 Mark)\nb. alloyed with copper when making jewellery. (1 Mark)\nc. extensively used in dentistry. (1 Mark)",
+    "marks": 3,
+    "cognitiveLevel": "Application",
+    "originalSlo": "8.4.1",
+    "currentSlo": "8.4.1",
+    "sloText": "Describe the physical and chemical properties and uses of noble metals (gold, silver, platinum).",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "checkingHints": [
+      "1 mark for each valid scientific reason (total 3):",
+      "a. Gold is a noble metal with high chemical inertness, high lustrous appearance, resistance to corrosion/tarnishing, and high malleability/ductility to shape into intricate designs.",
+      "b. Pure 24-karat gold is too soft and malleable; alloying with copper increases hardness, mechanical strength, and wear resistance.",
+      "c. Gold is chemically inert, non-toxic, biocompatible (does not corrode in oral fluids/saliva or release toxic ions), and malleable enough to create tight-fitting dental crowns and fillings."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part a: Cites lustrous appearance, high malleability, and resistance to corrosion / chemical inertness."
+      },
+      {
+        "marks": 1,
+        "description": "Part b: Cites increasing hardness and mechanical strength since pure gold is too soft."
+      },
+      {
+        "marks": 1,
+        "description": "Part c: Cites high biocompatibility, non-toxicity, and resistance to corrosion by saliva and food acids."
+      }
+    ],
+    "modelAnswer": "a. Gold is used in jewellery because it is chemically unreactive (noble metal) and does not tarnish, corrode, or oxidize in air or moisture, retaining its brilliant metallic lustre indefinitely, while being extremely malleable and ductile for shaping into intricate ornaments.\nb. Pure 24-karat gold is extremely soft and easily bends, scratches, or deforms during daily wear. Alloying gold with copper creates a solid solution that disrupts the uniform metal crystal lattice, significantly increasing hardness, durability, and tensile strength.\nc. Gold is extensively used in dentistry (crowns, inlays, fillings) because it is biocompatible, non-reactive, and resistant to corrosion by saliva, oral enzymes, and acidic foods, ensuring it does not tarnish or cause adverse allergic or toxic reactions in body tissues."
+  },
+  {
+    "questionNumber": "Q.7a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "A compound contains 24% carbon, 12% hydrogen and 64% oxygen by mass. The relative molecular mass of this compound is 50.057 g/mol.\ni. Calculate the empirical formula of the given compound. (5 Marks)\nii. Determine its molecular formula. (2 Marks)\n(Note: Atomic mass of C = 12 amu, H = 1 amu and O = 16 amu)",
+    "marks": 7,
+    "cognitiveLevel": "Application",
+    "originalSlo": "2.3.1",
+    "currentSlo": "2.3.1",
+    "sloText": "Determine the empirical formula and molecular formula of a compound from percentage composition and molecular mass.",
+    "unitNumber": 2,
+    "unitName": "Stoichiometry",
+    "checkingHints": [
+      "Part i (5 marks):",
+      "- 1 mark for expressing percentage as mass in 100 g (C = 24 g, H = 12 g, O = 64 g).",
+      "- 2 marks for calculating moles of each element (C: 24/12 = 2 moles; H: 12/1 = 12 moles; O: 64/16 = 4 moles).",
+      "- 1 mark for dividing by smallest mole value to find atomic ratio (C: 2/2 = 1; H: 12/2 = 6; O: 4/2 = 2).",
+      "- 1 mark for writing the empirical formula: CH6O2.",
+      "Part ii (2 marks):",
+      "- 1 mark for calculating empirical formula mass (12 + 6(1) + 2(16) = 12 + 6 + 32 = 50 g/mol) and finding n = 50.057 / 50 \u2248 1.",
+      "- 1 mark for stating the molecular formula: (CH6O2)1 = CH6O2."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Converts percentages to grams based on 100 g sample."
+      },
+      {
+        "marks": 2,
+        "description": "Calculates moles of Carbon, Hydrogen, and Oxygen correctly."
+      },
+      {
+        "marks": 1,
+        "description": "Divides by smallest mole number (2) to obtain simplest atomic ratio (1 : 6 : 2)."
+      },
+      {
+        "marks": 1,
+        "description": "States correct empirical formula: CH6O2."
+      },
+      {
+        "marks": 1,
+        "description": "Calculates empirical formula mass (50 amu) and integer ratio n = 1."
+      },
+      {
+        "marks": 1,
+        "description": "States final molecular formula: CH6O2."
+      }
+    ],
+    "modelAnswer": "i. Calculation of Empirical Formula:\nAssume 100 g of the compound:\n- Mass of Carbon (C) = 24 g\n- Mass of Hydrogen (H) = 12 g\n- Mass of Oxygen (O) = 64 g\n\nCalculate number of moles (gram atoms):\n- Moles of C = 24 g / 12 g/mol = 2.0 mol\n- Moles of H = 12 g / 1 g/mol = 12.0 mol\n- Moles of O = 64 g / 16 g/mol = 4.0 mol\n\nDetermine atomic ratio by dividing each by the smallest number of moles (2.0):\n- C = 2.0 / 2.0 = 1\n- H = 12.0 / 2.0 = 6\n- O = 4.0 / 2.0 = 2\n\nSimplest whole-number ratio is C : H : O = 1 : 6 : 2\nEmpirical Formula = CH6O2\n\nii. Determination of Molecular Formula:\n- Empirical Formula Mass = (1 \u00d7 12) + (6 \u00d7 1) + (2 \u00d7 16) = 12 + 6 + 32 = 50 g/mol\n- Molecular Mass given = 50.057 g/mol\n- Value of n = Molecular mass / Empirical formula mass = 50.057 / 50 \u2248 1\n- Molecular Formula = (Empirical Formula)_n = (CH6O2)_1 = CH6O2"
+  },
+  {
+    "questionNumber": "Q.7b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "Given below are four elements:\nNon-Metal: Chlorine (35_17 Cl), Oxygen (16_8 O)\nMetal: Magnesium (24_12 Mg), Potassium (39_19 K)\ni. Identify TWO elements from the given table which, when form ions, show the same electronic arrangement as a neon (20_10 Ne) atom. (2 Marks)\nii. Illustrate the formation of an ionic compound using the elements identified in part i with the help of dot and cross structure of the compound. (5 Marks)",
+    "marks": 7,
+    "cognitiveLevel": "Application",
+    "originalSlo": "5.1.2",
+    "currentSlo": "5.1.2",
+    "sloText": "Describe the formation of ionic bonds using dot and cross structures for simple binary compounds.",
+    "unitNumber": 5,
+    "unitName": "Structure of Molecules",
+    "checkingHints": [
+      "Part i (2 marks):",
+      "- 1 mark for identifying Magnesium (Mg) which loses 2 electrons to form Mg2+ (12 - 2 = 10 e-, matching Neon).",
+      "- 1 mark for identifying Oxygen (O) which gains 2 electrons to form O2- (8 + 2 = 10 e-, matching Neon).",
+      "(Note: Cl forms Cl- with 18 e- [Argon]; K forms K+ with 18 e- [Argon]).",
+      "Part ii (5 marks):",
+      "- 1 mark for stating electronic configurations before and after electron transfer.",
+      "- 1 mark for showing Mg losing 2 valence electrons and O gaining 2 valence electrons.",
+      "- 1 mark for drawing Mg2+ cation enclosed in brackets with +2 charge.",
+      "- 1 mark for drawing O2- anion with 8 valence electrons (dots and crosses) enclosed in brackets with -2 charge.",
+      "- 1 mark for correct overall compound representation: MgO (Magnesium oxide)."
+    ],
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part i: Correctly identifies Magnesium and Oxygen."
+      },
+      {
+        "marks": 1,
+        "description": "Shows electronic configurations of neutral Mg (2, 8, 2) and O (2, 6)."
+      },
+      {
+        "marks": 1,
+        "description": "Illustrates transfer of 2 electrons from Mg atom to O atom."
+      },
+      {
+        "marks": 1,
+        "description": "Draws Mg2+ cation with lost valence electrons and [Mg]2+ notation."
+      },
+      {
+        "marks": 1,
+        "description": "Draws oxide anion [ :O: ]2- with octet of dots and crosses."
+      },
+      {
+        "marks": 1,
+        "description": "Shows resultant ionic compound formula MgO with strong electrostatic attraction."
+      }
+    ],
+    "modelAnswer": "i. Identification of Elements with Neon Configuration:\nNeon (Ne, Z = 10) has 10 electrons with configuration 2, 8.\n- Magnesium (Mg, Z = 12): Neutral Mg has 12 electrons (2, 8, 2). It loses 2 valence electrons to form Mg2+ (10 electrons: 2, 8), matching neon.\n- Oxygen (O, Z = 8): Neutral O has 8 electrons (2, 6). It gains 2 electrons into its valence shell to form O2- (10 electrons: 2, 8), matching neon.\n(Chlorine forms Cl- with 18 e- and Potassium forms K+ with 18 e-, both matching Argon, not Neon).\nTherefore, the two elements are Magnesium (Mg) and Oxygen (O).\n\nii. Formation of Ionic Compound (MgO):\n1. Electron Transfer:\n- Magnesium atom: Mg (2, 8, 2) -> Mg2+ (2, 8) + 2e-\n- Oxygen atom: O (2, 6) + 2e- -> O2- (2, 8)\nMagnesium completely transfers its two valence electrons (represented as crosses) to the valence shell of the oxygen atom (represented with 6 dots).\n\n2. Dot and Cross Representation:\n- Magnesium atom (2 valence crosses: \u2022\u2022) transfers 2 electrons to Oxygen atom (6 valence dots: :\u00d6:).\n- Formed ions:\n  [ Mg ]^(2+)   [ :\u00d6: (with two crosses) ]^(2-)\n  Both ions achieve the stable octet electronic configuration of neon (1s2 2s2 2p6).\n\n3. Resulting Compound:\nThe oppositely charged ions Mg2+ and O2- are held together by strong electrostatic forces of attraction, forming the giant ionic compound Magnesium Oxide (MgO)."
+  },
+  {
+    "questionNumber": "Q.8a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "i. Describe the arrangement and movement of particles in solids, liquids and gases. (6 Marks)\nii. What happens to the particles during effusion in gases? (1 Mark)",
+    "marks": 7,
+    "cognitiveLevel": "Knowledge",
+    "originalSlo": "6.1.1",
+    "currentSlo": "6.1.1",
+    "sloText": "Describe the arrangement and movement of particles in three states of matter and explain effusion in gases.",
+    "unitNumber": 6,
+    "unitName": "States of Matter",
+    "checkingHints": [
+      "Part i (6 marks): 1 mark for arrangement and 1 mark for movement in each state:",
+      "- Solid: Closely packed in regular orderly arrangement (1 mark); vibrate about fixed positions only (1 mark).",
+      "- Liquid: Close together but in random/disordered arrangement (1 mark); slide past one another / move randomly in short distances (1 mark).",
+      "- Gas: Far apart with vast empty spaces (1 mark); move rapidly, freely, and randomly in all directions (1 mark).",
+      "Part ii (1 mark):",
+      "- 1 mark for explaining that gas particles escape through a tiny pinhole/opening one by one into an area of lower pressure due to continuous random high-speed motion without collisions."
+    ],
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Describes solids: tightly packed in fixed regular lattice; vibrational motion only."
+      },
+      {
+        "marks": 2,
+        "description": "Describes liquids: closely packed with irregular arrangement; translational sliding motion."
+      },
+      {
+        "marks": 2,
+        "description": "Describes gases: widely separated with huge spaces; fast random translational motion."
+      },
+      {
+        "marks": 1,
+        "description": "Explains effusion: escape of individual gas particles through a tiny pinhole."
+      }
+    ],
+    "modelAnswer": "i. Arrangement and Movement of Particles in Three States of Matter:\n\n1. Solids:\n- Arrangement: Particles are tightly packed together in a fixed, highly ordered, three-dimensional crystalline lattice with negligible intermolecular space.\n- Movement: Strong intermolecular forces hold particles in fixed positions; particles cannot translate or move past one another but only vibrate back and forth about their fixed mean positions.\n\n2. Liquids:\n- Arrangement: Particles are closely packed but without regular order (disordered/random arrangement), with slight intermolecular spaces.\n- Movement: Intermolecular forces are moderately strong, allowing particles to slide over and past one another in continuous fluid motion while remaining within the bulk volume.\n\n3. Gases:\n- Arrangement: Particles are extremely far apart from each other with vast intermolecular empty spaces compared to the size of the particles; arrangement is completely random and disordered.\n- Movement: Intermolecular forces are negligible; particles move independently at very high speeds in straight lines and random directions, colliding elastically with one another and container walls.\n\nii. Movement of Particles During Effusion:\nEffusion is the process by which gas molecules escape from a container through a microscopic hole or pinhole (whose diameter is smaller than the mean free path of the gas) into an evacuated space or region of lower pressure. During effusion, individual gas molecules, driven by their high thermal velocity and random motion, pass through the tiny opening one by one without colliding with one another in the orifice."
+  },
+  {
+    "questionNumber": "Q.8b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "The given diagram shows different conditions to investigate rusting of iron.\nTest Tube I: Nail in ordinary water open to air\nTest Tube II: Nail with anhydrous calcium chloride (drying agent) sealed with stopper\nTest Tube III: Nail in boiled water (no dissolved air) covered with layer of oil and sealed with stopper\nTest Tube IV: Nail in salt water open to air\ni. In which of the given test tubes, I to IV, will the iron nail rust? Explain why the iron nail rusts in the identified test tube(s) and not in others. (6 Marks)\nii. Why is the process of rusting a redox reaction? (1 Mark)",
+    "marks": 7,
+    "cognitiveLevel": "Application",
+    "originalSlo": "8.3.1",
+    "currentSlo": "8.3.1",
+    "sloText": "Explain the conditions necessary for rusting of iron and justify corrosion as an electrochemical redox process.",
+    "unitNumber": 8,
+    "unitName": "Electrochemistry",
+    "diagramUrl": "/paper-crops/CHM-IX-2019-P2/q8b.png",
+    "checkingHints": [
+      "Part i (6 marks):",
+      "- 1 mark for identifying that the iron nail will rust in Test Tube I and Test Tube IV (or primarily in IV with accelerated rusting).",
+      "- 1 mark for explaining Test Tube I: Contains both required conditions for rusting (dissolved water and atmospheric oxygen/air).",
+      "- 1 mark for explaining Test Tube IV: Contains water and oxygen PLUS salt (electrolyte), which greatly accelerates rusting by enhancing electrical conductivity.",
+      "- 1 mark for explaining Test Tube II: Does NOT rust because anhydrous calcium chloride absorbs all moisture, providing only dry air (no water).",
+      "- 1 mark for explaining Test Tube III: Does NOT rust because boiled water drives out dissolved air and the oil layer prevents atmospheric oxygen from entering (water present, but no oxygen).",
+      "- 1 mark for concluding that BOTH oxygen and water are essential prerequisites for rusting.",
+      "Part ii (1 mark):",
+      "- 1 mark for explaining that iron loses electrons (oxidised: Fe -> Fe2+ + 2e-) while oxygen gains electrons in the presence of water (reduced: O2 + 2H2O + 4e- -> 4OH-)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Identifies Test Tubes I and IV as the conditions where rusting occurs."
+      },
+      {
+        "marks": 1,
+        "description": "Explains Test Tube I: presence of both water and atmospheric oxygen."
+      },
+      {
+        "marks": 1,
+        "description": "Explains Test Tube IV: presence of water, oxygen, and salt electrolyte which accelerates rusting."
+      },
+      {
+        "marks": 1,
+        "description": "Explains Test Tube II: anhydrous CaCl2 removes moisture, so no water is present."
+      },
+      {
+        "marks": 1,
+        "description": "Explains Test Tube III: boiled water has no dissolved air, and oil layer blocks oxygen."
+      },
+      {
+        "marks": 1,
+        "description": "Summarizes condition requirement: both air (O2) and moisture (H2O) must be simultaneously present."
+      },
+      {
+        "marks": 1,
+        "description": "Justifies redox: Fe is oxidised (loses electrons) and O2 is reduced (gains electrons)."
+      }
+    ],
+    "modelAnswer": "i. Identification and Explanation of Rusting Conditions:\nThe iron nail will rust in Test Tube I and Test Tube IV (with rusting occurring most rapidly and severely in Test Tube IV).\n\nScientific Reasons for Each Test Tube:\n- Test Tube I (Rusting Occurs): Both essential conditions for rusting\u2014moisture (water) and atmospheric oxygen (air)\u2014are present.\n- Test Tube IV (Fastest / Severe Rusting Occurs): Both water and oxygen are available, and the dissolved salt (NaCl) acts as an electrolyte. Ions in solution increase the electrical conductivity of water, accelerating the electrochemical transfer of electrons and dramatically speeding up the formation of rust (hydrated iron(III) oxide).\n- Test Tube II (No Rusting): Anhydrous calcium chloride (CaCl2) acts as a powerful desiccant that absorbs all water vapor, creating completely dry air. In the absence of moisture/water, iron cannot rust.\n- Test Tube III (No Rusting): Boiling the water drives out all dissolved atmospheric oxygen/air, and the floating oil layer forms an impermeable barrier preventing atmospheric oxygen from re-dissolving. In the absence of oxygen, iron cannot rust.\n\nConclusion: Both oxygen and moisture must be simultaneously present for the corrosion of iron to proceed.\n\nii. Why Rusting is a Redox Reaction:\nRusting is an electrochemical oxidation-reduction (redox) process because:\n- Oxidation occurs at the anodic site, where metallic iron atoms lose electrons: Fe(s) -> Fe^(2+)(aq) + 2e^-\n- Reduction occurs at the cathodic site, where dissolved oxygen molecules gain electrons in the presence of water: O2(g) + 2H2O(l) + 4e^- -> 4OH^-(aq)\nBecause iron undergoes oxidation (increase in oxidation state from 0 to +2/+3) and oxygen undergoes reduction (decrease in oxidation state from 0 to -2), rusting is a classic redox reaction."
+  }
+]

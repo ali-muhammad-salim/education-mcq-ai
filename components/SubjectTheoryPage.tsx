@@ -5,7 +5,9 @@ import { normalizeBoardId, normalizeClassRoman, CLASS_DEFINITIONS, SUPPORTED_BOA
 import { getSubjectMeta } from '@/lib/subjectMetadata';
 import ContentUnavailable from '@/components/ContentUnavailable';
 import ChapterTheoryPracticeClient, { type TheorySectionMode } from '@/components/ChapterTheoryPracticeClient';
-import chapterBank from '@/data/physics/chapter_wise_theory_bank.json';
+import physicsChapterBank from '@/data/physics/chapter_wise_theory_bank.json';
+import csChapterBank from '@/data/computer-science/chapter_wise_theory_bank.json';
+import { mappedTheoryUnits } from '@/services/materials/practice';
 
 interface PageProps {
   params: Promise<{ board: string; class: string; subject: string }>;
@@ -15,7 +17,7 @@ interface PageProps {
 const MODE_LABELS: Record<TheorySectionMode, string> = {
   crqs: 'Chapter-wise CRQs',
   erqs: 'Chapter-wise ERQs',
-  numericals: 'Chapter-wise Numericals',
+  numericals: 'Chapter-wise Numericals & Algorithms',
   notes: 'Chapter-wise Notes & SLOs',
 };
 
@@ -32,12 +34,19 @@ export default async function SubjectTheoryPage({ params, mode }: PageProps) {
   const meta = getSubjectMeta(rawSubject);
   const baseUrl = `/${board.id}/${classRoman}/${meta.slug}`;
 
-  const isSupportedPhysics = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'physics';
-  if (!isSupportedPhysics) {
+  const isSupportedSubject =
+    board.id === 'akueb' &&
+    ['IX', 'X'].includes(classRoman) &&
+    (['physics', 'computer-science'].includes(meta.slug) || (['mathematics', 'chemistry'].includes(meta.slug) && mode !== 'notes'));
+
+  if (!isSupportedSubject) {
     return <ContentUnavailable title={`${classDef.name} ${meta.title} ${MODE_LABELS[mode]}`} />;
   }
 
-  const units = (classRoman === 'IX' ? (chapterBank as any)['9'] : (chapterBank as any)['10']) || [];
+  const activeBank = meta.slug === 'computer-science' ? csChapterBank : physicsChapterBank;
+  const units = ['mathematics', 'chemistry'].includes(meta.slug)
+    ? await mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
+    : (classRoman === 'IX' ? (activeBank as any)['9'] : (activeBank as any)['10']) || [];
 
   return (
     <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1rem 1rem 0 1rem' }}>

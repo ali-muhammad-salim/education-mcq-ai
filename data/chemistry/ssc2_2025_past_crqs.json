@@ -1,0 +1,287 @@
+[
+  {
+    "questionNumber": "Q.1",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Consider the given reaction at equilibrium and answer the following questions.\nCaCO3(s) \u21cc CaO(s) + CO2(g)   (\u0394H = 178.3 kJ mol^-1)\na. What does the symbol \u21cc mean? (1 Mark)\nb. Predict the effect on the given equilibrium if the system experiences the following conditions. (3 Marks)\n   i. Increasing temperature\n   ii. Increasing pressure\n   iii. Decreasing carbon dioxide concentration",
+    "marks": 4,
+    "cognitiveLevel": "Application",
+    "originalSlo": "9.3.7, 9.1.3",
+    "currentSlo": "9.3.7",
+    "sloText": "Determine the effect of catalyst, temperature, pressure and concentration on a reversible reaction at equilibrium; show both forward and reverse reactions using chemical equations.",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "diagramUrl": "/paper-crops/CHM-X-2025-P2/q1.png",
+    "checkingHints": [
+      "a. 1 mark for the correct meaning of the symbol (reversible reaction / reaction proceeds in both forward and reverse directions).",
+      "b. 1 mark for predicting the correct effect in each case (3 required):",
+      "   i. Increasing temperature: Equilibrium shifts to the right / forward direction (towards products) because \u0394H is positive (endothermic).",
+      "   ii. Increasing pressure: Equilibrium shifts to the left / reverse direction (towards reactant CaCO3) because CO2(g) is on the product side (1 mole of gas on right vs 0 moles of gas on left).",
+      "   iii. Decreasing CO2 concentration: Equilibrium shifts to the right / forward direction to produce more CO2."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part a: Identifies \u21cc as representing a reversible reaction (both forward and reverse reactions occur)."
+      },
+      {
+        "marks": 1,
+        "description": "Part b.i: Predicts shift in forward direction / towards products (right) upon increasing temperature."
+      },
+      {
+        "marks": 1,
+        "description": "Part b.ii: Predicts shift in reverse direction / towards reactants (left) upon increasing pressure."
+      },
+      {
+        "marks": 1,
+        "description": "Part b.iii: Predicts shift in forward direction / towards products (right) upon decreasing CO2 concentration."
+      }
+    ],
+    "modelAnswer": "a. Meaning of the Symbol (\u21cc):\nThe double half-headed arrow symbol (\u21cc) indicates a reversible chemical reaction\u2014one that proceeds simultaneously in both the forward direction (left to right) and the reverse direction (right to left).\n\nb. Effect of Conditions on the Equilibrium System:\ni. Increasing Temperature:\n   - Effect: The equilibrium shifts in the forward direction (to the right, favouring the formation of CaO and CO2).\n   - Reason: Since \u0394H = +178.3 kJ mol^-1 (positive), the forward decomposition reaction is endothermic; adding heat favours the endothermic forward direction to absorb the excess thermal energy.\n\nii. Increasing Pressure:\n   - Effect: The equilibrium shifts in the reverse direction (to the left, favouring the formation of solid CaCO3).\n   - Reason: Carbon dioxide (CO2) on the product side is the only gaseous component (1 mole of gas on the product side vs. 0 moles of gas on the reactant side). Increasing pressure shifts equilibrium towards the side with fewer moles of gas (reactant side).\n\niii. Decreasing Carbon Dioxide (CO2) Concentration:\n   - Effect: The equilibrium shifts in the forward direction (to the right, decomposing more CaCO3 into CaO and CO2).\n   - Reason: Removing a product (CO2) causes the system to shift forward to replenish the removed CO2 and restore equilibrium."
+  },
+  {
+    "questionNumber": "Q.2",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Consider the following structures of organic compounds:\nI: Phenol (benzene ring with -OH group)\nII: Cyclohexane (saturated six-membered carbon ring)\nIII: Tetrahydrofuran (saturated five-membered ring containing an oxygen heteroatom)\nClassify each compound in the given table based on its structure:\nColumns: Alicyclic | Heterocyclic | Aromatic",
+    "marks": 3,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "11.2.1",
+    "currentSlo": "11.2.1",
+    "sloText": "Classify organic compounds into acyclic and cyclic (alicyclic, aromatic, heterocyclic) compounds with examples.",
+    "unitNumber": 11,
+    "unitName": "Organic Chemistry",
+    "diagramUrl": "/paper-crops/CHM-X-2025-P2/q2.png",
+    "checkingHints": [
+      "1 mark for each correct classification (3 required):",
+      "- Alicyclic: Compound II (cyclohexane - homocyclic non-benzenoid ring).",
+      "- Heterocyclic: Compound III (five-membered ring containing an oxygen heteroatom within the ring).",
+      "- Aromatic: Compound I (phenol - contains a benzenoid ring with alternating double bonds)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Places Compound II under Alicyclic."
+      },
+      {
+        "marks": 1,
+        "description": "Places Compound III under Heterocyclic."
+      },
+      {
+        "marks": 1,
+        "description": "Places Compound I under Aromatic."
+      }
+    ],
+    "modelAnswer": "Classification of Cyclic Organic Compounds:\n- Alicyclic: Compound II (Cyclohexane \u2014 a saturated homocyclic, non-benzenoid six-membered carbon ring).\n- Heterocyclic: Compound III (Tetrahydrofuran \u2014 a cyclic compound containing an oxygen heteroatom inside the five-membered ring alongside carbon atoms).\n- Aromatic: Compound I (Phenol \u2014 a benzenoid aromatic compound containing a hexagonal benzene ring with alternating conjugate double bonds)."
+  },
+  {
+    "questionNumber": "Q.3",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "a. Identify the functional group common in both, fats and oils. (1 Mark)\nb. Is the melting point of fats lower than that of oils? Provide a reason for your response. (2 Marks)",
+    "marks": 3,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "13.4.2",
+    "currentSlo": "13.4.2",
+    "sloText": "Differentiate between fats and oils based on saturation, physical state, and melting point.",
+    "unitNumber": 13,
+    "unitName": "Natural and Synthetic Polymers",
+    "checkingHints": [
+      "a. 1 mark for identifying the correct functional group: Ester group (-COO- or RCOOR', triglyceride ester linkage).",
+      "b. 1 mark for stating 'No, the melting point of fats is HIGHER than that of oils' (or oils have a lower melting point than fats).",
+      "   1 mark for the correct reason: Fats consist of saturated fatty acid chains (single C\u2013C bonds) that pack closely together with strong intermolecular (van der Waals) forces, making them solid at room temperature, whereas oils contain unsaturated fatty acids (C=C double bonds) that introduce kinks/bends, preventing close packing and resulting in weaker intermolecular forces and lower melting points."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part a: Identifies the Ester functional group (R\u2013COO\u2013R' / triglyceride)."
+      },
+      {
+        "marks": 1,
+        "description": "Part b: States 'No' / clarifies that fats have a higher melting point than oils."
+      },
+      {
+        "marks": 1,
+        "description": "Part b: Explains that saturated chains in fats pack tightly with stronger intermolecular forces (solid at room temperature) compared to kinked unsaturated chains in liquid oils."
+      }
+    ],
+    "modelAnswer": "a. Common Functional Group in Fats and Oils:\nEster functional group (\u2013COO\u2013 or R\u2013C(=O)\u2013OR', specifically triesters / triglycerides of glycerol and fatty acids).\n\nb. Comparison of Melting Points of Fats and Oils:\n- Answer: No, the melting point of fats is HIGHER than that of oils (oils have a lower melting point than fats).\n- Reason: Fats are composed predominantly of saturated fatty acids (containing only carbon-carbon single bonds), which allow their straight hydrocarbon chains to pack tightly together, creating stronger intermolecular van der Waals forces. Consequently, fats are solids at room temperature and require more heat energy (a higher temperature) to melt. Conversely, oils consist of unsaturated fatty acids containing one or more C=C double bonds that introduce bends/kinks in the chains, preventing close packing, weakening intermolecular attractions, and making them liquids at room temperature with lower melting points."
+  },
+  {
+    "questionNumber": "Q.4",
+    "section": "Section B: Constructed Response Questions (CRQs)",
+    "questionText": "Write the purpose of each of the following processes involved in raw water treatment.\ni. Passing raw water through the beds of sand and gravel (1 Mark)\nii. Treatment of raw water with activated charcoal (1 Mark)\niii. Addition of aluminium sulphate in raw water (1 Mark)",
+    "marks": 3,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "15.4.4",
+    "currentSlo": "15.4.4",
+    "sloText": "Compare the processes of raw water treatment and sewage treatment.",
+    "unitNumber": 15,
+    "unitName": "Environmental Chemistry II: Water",
+    "diagramUrl": "/paper-crops/CHM-X-2025-P2/q4.png",
+    "checkingHints": [
+      "1 mark for each purpose (3 required):",
+      "i. Sand and gravel beds: Fine filtration to remove remaining fine solid / suspended insoluble dirt particles.",
+      "ii. Activated charcoal: Adsorption to remove unpleasant tastes, foul odours/smells, and dissolved colour-causing organic impurities.",
+      "iii. Aluminium sulphate (alum): Coagulation / flocculation\u2014clumping tiny suspended colloidal particles and dirt together into heavy gelatinous flocs (sludge) that settle down easily during sedimentation."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part i: States removal of fine suspended solid particles via filtration."
+      },
+      {
+        "marks": 1,
+        "description": "Part ii: States removal of bad taste, foul odours, and discolouration."
+      },
+      {
+        "marks": 1,
+        "description": "Part iii: States coagulation/flocculation to clump fine suspended impurities so they settle out."
+      }
+    ],
+    "modelAnswer": "Purposes of Processes in Raw Water Treatment:\ni. Passing raw water through beds of sand and gravel:\n   - Purpose: Fine filtration to trap and remove fine suspended solid particles, silt, and insoluble dirt.\nii. Treatment of raw water with activated charcoal:\n   - Purpose: To adsorb and remove unpleasant tastes, foul odours (bad smells), and dissolved colour-causing organic contaminants.\niii. Addition of aluminium sulphate (alum) in raw water:\n   - Purpose: Coagulation (flocculation)\u2014it forms a gelatinous precipitate of aluminium hydroxide that clumps fine suspended clay, dust, and colloidal impurities together into larger, heavier aggregates (flocs) that rapidly settle to the bottom during sedimentation."
+  },
+  {
+    "questionNumber": "Q.5a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "i. Write balanced equations to show the chemical reactions between the following sets of reactants. (2 Marks)\n   I. Sulphuric acid and magnesium metal\n   II. Hydrochloric acid and copper(II) oxide\nii. Identify and describe the types of chemical reactions that each set of reactants undergoes in part 'i'. (4 Marks)",
+    "marks": 6,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "10.7.3",
+    "currentSlo": "10.7.3",
+    "sloText": "Describe the methods of preparing soluble and insoluble salts using balanced chemical equations.",
+    "unitNumber": 10,
+    "unitName": "Acids, Bases and Salts",
+    "checkingHints": [
+      "i. 1 mark for each balanced chemical equation (2 required):",
+      "   I. H2SO4(aq) + Mg(s) -> MgSO4(aq) + H2(g)",
+      "   II. 2HCl(aq) + CuO(s) -> CuCl2(aq) + H2O(l)",
+      "ii. 1 mark for identifying each type of reaction (2 required) + 1 mark for describing each type of reaction (2 required):",
+      "   - Reaction I: Single displacement (or substitution/replacement) reaction (1 mark), where the more reactive metal magnesium displaces hydrogen from dilute sulphuric acid to form soluble magnesium sulphate salt and evolve hydrogen gas (1 mark).",
+      "   - Reaction II: Double displacement (or neutralisation) reaction (1 mark), where the basic metallic oxide CuO exchanges ions with HCl to form soluble copper(II) chloride salt and water (1 mark)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part i.I: Writes balanced equation H2SO4 + Mg -> MgSO4 + H2."
+      },
+      {
+        "marks": 1,
+        "description": "Part i.II: Writes balanced equation 2HCl + CuO -> CuCl2 + H2O."
+      },
+      {
+        "marks": 2,
+        "description": "Part ii.I: Identifies Reaction I as a single displacement (replacement) reaction and describes Mg displacing H2 from H2SO4."
+      },
+      {
+        "marks": 2,
+        "description": "Part ii.II: Identifies Reaction II as a double displacement / acid-base neutralisation reaction and describes ion exchange forming salt (CuCl2) and water."
+      }
+    ],
+    "modelAnswer": "i. Balanced Chemical Equations:\nI. Reaction between sulphuric acid and magnesium metal:\n   H2SO4(aq) + Mg(s) -> MgSO4(aq) + H2(g)\u2191\n\nII. Reaction between hydrochloric acid and copper(II) oxide:\n   2HCl(aq) + CuO(s) -> CuCl2(aq) + H2O(l)\n\nii. Identification and Description of Reaction Types:\nI. First Reaction (H2SO4 + Mg):\n   - Type of Reaction: Single displacement (or single replacement / substitution) reaction.\n   - Description: Magnesium is an electropositive metal situated above hydrogen in the reactivity series. It displaces (substitutes) hydrogen ions from dilute sulphuric acid to form an aqueous solution of a soluble salt (magnesium sulphate, MgSO4) with the evolution of hydrogen gas (H2).\n\nII. Second Reaction (2HCl + CuO):\n   - Type of Reaction: Double displacement reaction (specifically an acid-base neutralisation reaction).\n   - Description: Copper(II) oxide (CuO) is an insoluble basic metallic oxide that reacts with hydrochloric acid (HCl) by exchanging ions\u2014copper(II) ions (Cu2+) combine with chloride ions (Cl-) to form soluble copper(II) chloride salt (CuCl2), while oxide ions (O2-) combine with hydrogen ions (H+) to form neutral water (H2O)."
+  },
+  {
+    "questionNumber": "Q.5b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "Consider the given conversion reactions.\n\u2022 Ethane from ethyne (acetylene)\n\u2022 Propane from 1-chloropropane\nFor each reaction,\ni. write a balanced chemical equation mentioning conditions where required. (4 Marks)\nii. identify the type of reaction for each conversion in part 'i'. (2 Marks)",
+    "marks": 6,
+    "cognitiveLevel": "Application",
+    "originalSlo": "12.5.4",
+    "currentSlo": "12.5.4",
+    "sloText": "Show the preparation of alkanes from hydrogenation of alkenes and alkynes and reduction of alkyl halides using chemical equations.",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "checkingHints": [
+      "i. 1 mark for each complete balanced equation (2 required) + 1 mark for each reaction condition (2 required):",
+      "   1. Ethane from ethyne: HC\u2261CH + 2H2 -> H3C\u2013CH3 (1 mark); Condition: Nickel (Ni) catalyst at 200\u2013300\u00b0C (or Pt/Pd at room temperature) (1 mark).",
+      "   2. Propane from 1-chloropropane: CH3\u2013CH2\u2013CH2\u2013Cl + 2[H] -> CH3\u2013CH2\u2013CH3 + HCl (1 mark); Condition: Zinc metal in dilute hydrochloric acid (Zn / dil. HCl) generating nascent hydrogen (1 mark).",
+      "ii. 1 mark for correct identification of each reaction type (2 required):",
+      "   1. Ethane from ethyne: Catalytic Hydrogenation (or addition reaction).",
+      "   2. Propane from 1-chloropropane: Reduction of alkyl halide (or substitution reaction by nascent hydrogen)."
+    ],
+    "rubric": [
+      {
+        "marks": 2,
+        "description": "Part i (1st conversion): Writes balanced equation HC\u2261CH + 2H2 -> CH3\u2013CH3 (1 mark) and states Ni catalyst at 200\u2013300\u00b0C or Pt/Pd condition (1 mark)."
+      },
+      {
+        "marks": 2,
+        "description": "Part i (2nd conversion): Writes balanced structural equation CH3\u2013CH2\u2013CH2\u2013Cl + 2[H] -> CH3\u2013CH2\u2013CH3 + HCl (1 mark) and states Zn / dilute HCl condition (1 mark)."
+      },
+      {
+        "marks": 1,
+        "description": "Part ii (1st conversion): Identifies reaction as Hydrogenation (addition of hydrogen)."
+      },
+      {
+        "marks": 1,
+        "description": "Part ii (2nd conversion): Identifies reaction as Reduction of alkyl halide."
+      }
+    ],
+    "modelAnswer": "i. Balanced Chemical Equations with Reaction Conditions:\n\n1. Conversion of Ethyne (Acetylene) to Ethane:\n   - Equation:\n     HC\u2261CH(g) + 2H2(g)  ---[ Ni, 200\u2013300\u00b0C ]--->  H3C\u2013CH3(g)\n     (Can also be written as a 2-step addition via ethene: HC\u2261CH + H2 -> H2C=CH2, then H2C=CH2 + H2 -> H3C\u2013CH3).\n   - Conditions: Presence of finely divided Nickel (Ni) catalyst heated to 200\u2013300\u00b0C (or Platinum/Palladium catalyst at room temperature).\n\n2. Conversion of 1-Chloropropane to Propane:\n   - Equation:\n     CH3\u2013CH2\u2013CH2\u2013Cl + 2[H]  ---[ Zn / dil. HCl ]--->  CH3\u2013CH2\u2013CH3 + HCl\n   - Conditions: Heating with Zinc metal and dilute hydrochloric acid (Zn / dil. HCl), which generates highly reactive nascent hydrogen [H] in situ.\n\nii. Identification of Reaction Types:\n1. Ethane from ethyne: Catalytic Hydrogenation (an addition reaction in which two moles of molecular hydrogen add across the carbon-carbon triple bond to form a saturated alkane).\n2. Propane from 1-chloropropane: Reduction of an alkyl halide (a replacement/substitution reaction in which nascent hydrogen replaces the chlorine atom and forms HCl)."
+  },
+  {
+    "questionNumber": "Q.6a",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "i. Name the man-made chemical substance that causes ozone depletion. (1 Mark)\nii. Using balanced chemical equations, illustrate the destruction of the ozone layer. (3 Marks)\niii. Write any TWO harmful effects of ozone depletion. (2 Marks)",
+    "marks": 6,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "14.5.2",
+    "currentSlo": "14.5.2",
+    "sloText": "Describe ozone depletion, its free-radical chemical mechanism, and its harmful effects.",
+    "unitNumber": 14,
+    "unitName": "Environmental Chemistry I: Atmosphere",
+    "checkingHints": [
+      "i. 1 mark for naming chlorofluorocarbons (CFCs, e.g., Freon / CFCl3 / CF2Cl2).",
+      "ii. 1 mark for each balanced chemical equation (3 required):",
+      "   1. Initiation (photolysis by UV radiation): CFCl3 --(UV)--> CFCl2\u2022 + Cl\u2022",
+      "   2. Propagation step 1 (attack on ozone): Cl\u2022 + O3 -> ClO\u2022 + O2",
+      "   3. Propagation step 2 / regeneration of chlorine radical: ClO\u2022 -> O\u2022 + Cl\u2022  and  O\u2022 + O\u2022 -> O2  (or ClO\u2022 + O\u2022 -> Cl\u2022 + O2).",
+      "iii. 1 mark for each valid harmful effect of ozone depletion (any 2 required):",
+      "   - Causes skin cancer and premature skin ageing in humans due to increased UV radiation reaching Earth.",
+      "   - Causes eye cataracts and damages the immune system, increasing infectious diseases.",
+      "   - Damages agricultural crops and disrupts marine/aquatic food chains (phytoplankton)."
+    ],
+    "rubric": [
+      {
+        "marks": 1,
+        "description": "Part i: Identifies Chlorofluorocarbons (CFCs / CFCl3)."
+      },
+      {
+        "marks": 3,
+        "description": "Part ii: Writes the 3 balanced radical equations illustrating UV cleavage of CFCl3, reaction of Cl\u2022 with O3, and regeneration of Cl\u2022."
+      },
+      {
+        "marks": 2,
+        "description": "Part iii: States 2 valid harmful effects of increased UV radiation from ozone depletion (1 mark each)."
+      }
+    ],
+    "modelAnswer": "i. Man-Made Substance Causing Ozone Depletion:\nChlorofluorocarbons (CFCs), such as trichlorofluoromethane (CFCl3) and dichlorodifluoromethane (CF2Cl2), used in refrigerants and aerosol sprays.\n\nii. Balanced Chemical Equations Illustrating Destruction of the Ozone Layer:\n1. Initiation (Generation of Chlorine Free Radical by UV Light):\n   Ultraviolet (UV) radiation in the stratosphere breaks the C\u2013Cl bond in CFCs to produce highly reactive chlorine free radicals (Cl\u2022):\n   CFCl3  ---[ UV light ]--->  CFCl2\u2022 + Cl\u2022\n\n2. Destruction of Ozone & Formation of Monoxide Radical:\n   The chlorine free radical attacks an ozone molecule (O3), converting it into ordinary molecular oxygen (O2) and a chlorine monoxide radical (ClO\u2022):\n   Cl\u2022 + O3  --->  ClO\u2022 + O2\n\n3. Regeneration of Chlorine Free Radical (Chain Propagation):\n   The chlorine monoxide radical dissociates / reacts with atomic oxygen to regenerate the chlorine free radical (Cl\u2022), which can then destroy thousands more ozone molecules:\n   ClO\u2022  --->  O\u2022 + Cl\u2022\n   O\u2022 + O\u2022  --->  O2\n   (Or combined: ClO\u2022 + O\u2022 ---> Cl\u2022 + O2)\n\niii. Two Harmful Effects of Ozone Depletion:\n1. Human Health Hazards (Skin Cancer & Eye Cataracts): Depletion of the stratospheric ozone shield allows harmful solar ultraviolet (UV-B) rays to reach the Earth's surface, directly causing skin cancer (melanoma), eye cataracts, and suppression of the human immune system.\n2. Ecological & Agricultural Disruption: Increased UV radiation damages terrestrial crops (reducing agricultural yield) and destroys microscopic marine phytoplankton, disrupting the entire aquatic food chain."
+  },
+  {
+    "questionNumber": "Q.6b",
+    "section": "Section C: Extended Response Questions (ERQs)",
+    "questionText": "Briefly describe any SIX steps involved in the metallurgical process. (6 Marks)",
+    "marks": 6,
+    "cognitiveLevel": "Understanding",
+    "originalSlo": "16.1.2",
+    "currentSlo": "16.1.2",
+    "sloText": "Describe the metallurgical operations involved in the extraction of metals from their ores.",
+    "unitNumber": 16,
+    "unitName": "Chemical Industries",
+    "checkingHints": [
+      "1 mark for describing each step (any 6 required; note: maximum 2 marks if candidate only lists names without descriptions):",
+      "1. Crushing and Grinding (Pulverisation): Breaking large ore rocks into a fine powder to increase surface area for subsequent physical and chemical treatment.",
+      "2. Concentration of Ore (Ore Dressing) \u2014 Gravity Separation (Hydraulic Washing): Separating denser ore particles from lighter earthy gangue impurities using a stream of running water.",
+      "3. Froth Flotation Process: Concentrating sulphide ores by agitating powdered ore in a mixture of pine oil and water with compressed air; oil-wetted sulphide ore rises in the froth while water-wetted gangue sinks.",
+      "4. Electromagnetic Separation: Separating magnetic ore particles (or magnetic impurities like chromite/magnetite) from non-magnetic components using a moving belt over magnetic rollers.",
+      "5. Roasting: Heating the concentrated sulphide ore strongly in the presence of excess air below its melting point to convert sulphides into metallic oxides and remove volatile impurities as SO2.",
+      "6. Smelting (Reduction): Heating the roasted ore with a reducing agent (coke/carbon) and flux in a blast furnace at high temperature to reduce metal oxides into molten metal (matte).",
+      "7. Bessemerisation: Blowing hot air through molten metal/matte in a Bessemer converter to oxidise remaining impurities and convert cuprous sulphide/oxide into blister copper.",
+      "8. Refining (Electrolytic Purification): Purifying the crude extracted metal to 99.99% purity using electrolysis (impure metal as anode, pure metal strip as cathode)."
+    ],
+    "rubric": [
+      {
+        "marks": 6,
+        "description": "Briefly describes any 6 chronological steps of the metallurgical process (1 mark per described step; max 2 marks if only names are listed)."
+      }
+    ],
+    "modelAnswer": "Six Steps Involved in the Metallurgical Extraction of Metals:\n\n1. Crushing and Grinding (Pulverisation):\n   Huge lumps of mined ore are crushed in jaw crushers and ground into a fine powder in ball mills or stamp mills so that the surface area is maximised for efficient physical separation and chemical reactions.\n\n2. Gravity Separation (Hydraulic Washing):\n   Based on differences in density between the metallic ore and earthy gangue impurities, powdered ore is agitated with a stream of running water on a sloped vibrating table; heavier ore particles settle down in grooves while lighter gangue particles wash away.\n\n3. Froth Flotation Process:\n   Used specifically for sulphide ores (e.g., copper pyrite, CuFeS2), the powdered ore is mixed with water and pine oil and agitated with compressed air. The hydrophobic sulphide ore particles are wetted by oil and float to the surface with the air froth, while hydrophilic gangue particles are wetted by water and sink to the bottom.\n\n4. Electromagnetic Separation:\n   Powdered ore is passed over a conveyor belt moving around a magnetic roller; magnetic components (such as iron ores or magnetic impurities) are attracted and fall in a separate heap close to the magnet, while non-magnetic particles fly farther away.\n\n5. Roasting:\n   The concentrated ore is heated strongly in the presence of excess air at a temperature below its melting point. Roasting converts sulphide ores into oxides, removes moisture, and expels volatile impurities (such as sulphur, arsenic, and antimony) as gaseous oxides (e.g., 2CuFeS2 + O2 -> Cu2S + 2FeS + SO2).\n\n6. Smelting and Bessemerisation:\n   - Smelting: The roasted ore is mixed with coke and sand (SiO2 flux) and melted in a blast furnace; iron impurities form removable iron silicate slag (FeSiO3) while copper forms molten 'matte' (Cu2S + FeS).\n   - Bessemerisation: Molten matte is transferred to a Bessemer converter where hot air blasts oxidise FeS and convert Cu2S into 98% pure blister copper (2Cu2O + Cu2S -> 6Cu + SO2).\n\n7. Electrolytic Refining:\n   Crude blister copper (anode) and thin pure copper sheets (cathode) are electrolysed in an acidified CuSO4 bath; pure copper (99.99%) deposits on the cathode while noble metal impurities settle as anode mud."
+  }
+]

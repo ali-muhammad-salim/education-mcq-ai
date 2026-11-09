@@ -37,7 +37,17 @@ export interface CachedExam {
   questionTimes?: Record<string, number>;
   bookmarkedQuestions?: number[];
   startedAtMs?: number;
+  // Guest attempts are kept on this device only until they can be replayed after sign-in.
+  guest?: boolean;
+  paperCode?: string;
+  practiceDurationMin?: number;
+  practiceUntimed?: boolean;
+  submitted?: boolean;
+  submittedAt?: string;
+  expiresAt?: string;
 }
+
+export const GUEST_RETENTION_MS = 48 * 60 * 60 * 1000;
 
 export interface AttemptQuestionReview {
   displayNumber: number;
@@ -83,12 +93,16 @@ export interface AttemptHistoryEntry {
   peerAvgTimePerQuestionSec: number;
   compositeIndex: number;
   percentile: number;
+  verifiedSampleSize?: number;
   speedPercentile: number;
   quadrantLabel: string;
   tabSwitchCount: number;
   isPartial: boolean;
   isRetryIncorrectMode?: boolean;
   questions: AttemptQuestionReview[];
+  guest?: boolean;
+  expiresAt?: string;
+  syncedAttemptId?: string;
 }
 
 function openDatabase(): Promise<IDBDatabase> {
@@ -132,12 +146,84 @@ export function cacheExam(key: string, exam: CachedExam) {
   return operation(key, 'readwrite', store => store.put(exam, key));
 }
 
-export function readExam(key: string): Promise<CachedExam | undefined> {
-  return operation(key, 'readonly', store => store.get(key));
+function expired(expiresAt?: string) {
+  return Boolean(expiresAt) && Date.parse(expiresAt as string) <= Date.now();
+}
+
+export async function readExam(key: string): Promise<CachedExam | undefined> {
+  const exam = await operation<CachedExam | undefined>(key, 'readonly', store => store.get(key));
+  if (exam && expired(exam.expiresAt)) {
+    await removeExam(key).catch(() => undefined);
+    return undefined;
+  }
+  return exam;
 }
 
 export function removeExam(key: string) {
   return operation(key, 'readwrite', store => store.delete(key));
+}
+
+/** Every locally cached attempt, used to replay guest work after sign-in. */
+export async function listCachedExams(prefix = 'exam:'): Promise<{ key: string; exam: CachedExam }[]> {
+  if (typeof indexedDB === 'undefined') return [];
+  const db = await openDatabase();
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction('attempts', 'readonly');
+    const store = transaction.objectStore('attempts');
+    const values: { key: string; exam: CachedExam }[] = [];
+    const request = store.openCursor();
+    request.onsuccess = () => {
+      const cursor = request.result;
+      if (!cursor) return;
+      const key = String(cursor.key);
+      if (key.startsWith(prefix) && cursor.value && typeof cursor.value === 'object') {
+        values.push({ key, exam: cursor.value as CachedExam });
+      }
+      cursor.continue();
+    };
+    transaction.oncomplete = () => {
+      db.close();
+      resolve(values);
+    };
+    transaction.onerror = () => {
+      db.close();
+      reject(transaction.error);
+    };
+  });
+}
+
+export async function markGuestAttemptSynced(paperCode: string, localAttemptId: string, serverAttemptId: string) {
+  const list = await readAttemptHistory(paperCode);
+  if (!list.length) return;
+  const next = list.map(entry =>
+    entry.attemptId === localAttemptId
+      ? { ...entry, attemptId: serverAttemptId, guest: false, expiresAt: undefined, syncedAttemptId: serverAttemptId }
+      : entry
+  );
+  const key = `history:${(paperCode || 'DEFAULT').toUpperCase()}`;
+  await operation(key, 'readwrite', store => store.put(next, key)).catch(() => undefined);
+}
+
+/** Drop guest drafts and results whose retention window has elapsed. */
+export async function pruneExpiredLocalData(): Promise<void> {
+  if (typeof indexedDB === 'undefined') return;
+  try {
+    const exams = await listCachedExams('exam:');
+    for (const item of exams) {
+      if (expired(item.exam.expiresAt)) await removeExam(item.key).catch(() => undefined);
+    }
+    const histories = await listCachedExams('history:');
+    for (const item of histories) {
+      const list = item.exam as unknown as AttemptHistoryEntry[];
+      if (!Array.isArray(list)) continue;
+      const kept = list.filter(entry => !expired(entry.expiresAt));
+      if (kept.length === list.length) continue;
+      if (kept.length === 0) await operation(item.key, 'readwrite', store => store.delete(item.key)).catch(() => undefined);
+      else await operation(item.key, 'readwrite', store => store.put(kept, item.key)).catch(() => undefined);
+    }
+  } catch {
+    // Storage may be unavailable (private mode); cached work simply stays absent.
+  }
 }
 
 export async function saveAttemptHistory(paperCode: string, entry: AttemptHistoryEntry): Promise<AttemptHistoryEntry[]> {
@@ -146,7 +232,7 @@ export async function saveAttemptHistory(paperCode: string, entry: AttemptHistor
   const key = `history:${normCode}`;
   try {
     const existing = (await operation<AttemptHistoryEntry[] | undefined>(key, 'readonly', store => store.get(key))) || [];
-    const filtered = existing.filter(item => item.attemptId !== entry.attemptId);
+    const filtered = existing.filter(item => item.attemptId !== entry.attemptId && !expired(item.expiresAt));
     const nextEntry: AttemptHistoryEntry = {
       ...entry,
       attemptNumber: entry.attemptNumber || filtered.length + 1,
@@ -165,7 +251,13 @@ export async function readAttemptHistory(paperCode: string): Promise<AttemptHist
   const key = `history:${normCode}`;
   try {
     const list = await operation<AttemptHistoryEntry[] | undefined>(key, 'readonly', store => store.get(key));
-    return Array.isArray(list) ? list : [];
+    if (!Array.isArray(list)) return [];
+    const kept = list.filter(entry => !expired(entry.expiresAt));
+    if (kept.length !== list.length) {
+      if (kept.length === 0) await operation(key, 'readwrite', store => store.delete(key)).catch(() => undefined);
+      else await operation(key, 'readwrite', store => store.put(kept, key)).catch(() => undefined);
+    }
+    return kept;
   } catch {
     return [];
   }

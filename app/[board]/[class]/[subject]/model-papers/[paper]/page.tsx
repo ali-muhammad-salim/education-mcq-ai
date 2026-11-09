@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import DocumentViews from "@/components/DocumentViews";
 import PaperViewerClient from "@/components/PaperViewerClient";
 import styles from "@/components/MaterialLayout.module.css";
+import { hsscPhysicsResources } from "@/lib/hsscPhysicsResources";
 export const dynamic = "force-dynamic";
 export default async function Page({
   params,
@@ -30,9 +31,15 @@ export default async function Page({
     scope.board.id === "akueb" &&
     scope.meta.slug === "physics" &&
     [9, 10].includes(scope.classDef.level);
-  const code = "PHY-" + scope.classDef.roman + "-" + part;
-  const fallback = legacy ? getFallbackPaper(code) : null;
-  const stored = legacy
+  const isChemistry =
+    scope.board.id === "akueb" &&
+    scope.meta.slug === "chemistry" &&
+    [9, 10].includes(scope.classDef.level);
+  const hssc = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const supported = legacy || isChemistry || Boolean(hssc);
+  const code = (isChemistry ? "CHM-" : "PHY-") + scope.classDef.roman + "-" + part;
+  const fallback = supported ? getFallbackPaper(code) : null;
+  const stored = supported
     ? await prisma.pastPaper.findFirst({
         where: {
           paperCode: code,
@@ -59,6 +66,9 @@ export default async function Page({
             },
           },
         },
+      }).catch(error => {
+        if (hssc && error.name === "PrismaClientInitializationError") return null;
+        throw error;
       })
     : null;
   const paper = stored?.questions.length
@@ -81,9 +91,12 @@ export default async function Page({
         .map(presentPaperQuestion)
     : [];
   const practical =
+    hssc && part === "P3" ? hssc.practical :
     legacy && scope.classDef.level === 9 && part === "P3"
       ? "/materials/ssc/physics/ssc-1/ssc-i-physics-sample-practical.pdf"
-      : undefined;
+      : isChemistry && part === "P3"
+        ? `/materials/ssc/chemistry/ssc-${scope.classDef.level === 9 ? "1" : "2"}/chemistry-practical-model-paper-${scope.classDef.level === 9 ? "ix" : "x"}.pdf`
+        : undefined;
   return (
     <section className={styles.page}>
       <Breadcrumbs

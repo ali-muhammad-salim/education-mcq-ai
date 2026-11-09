@@ -1,0 +1,115 @@
+{
+  "mcqMappings": "1.4.1 1.4.1 2.2.3 2.3.3 4.4.3 4.1.1 4.1.2 - 3.5.1 3.3.1 3.5.1 4.4.4 4.2.2 11.3.1 6.3.2+6.4.2 6.5.5 7.5.3 7.6.1 7.7.1 7.7.1+7.8.1 8.5.1 8.4.1 9.4.4 9.2.3 9.6.2 10.2.1 10.4.3 10.5.2 10.7.1 10.9.3",
+  "held": {},
+  "corrected": {
+    "14": "A",
+    "23": "A",
+    "29": "A"
+  },
+  "mcqNotes": {
+    "10": "The digital choice uses the precise term energy transfer. The printed choice calls work a form of energy.",
+    "14": "The printed choice A read 1.75 × 10⁵ km/s, which is not a physical orbital speed. Using r = 13,014 km and the printed constants, the circular orbital speed is $v=\\sqrt{GM/r}\\approx5.55$ km/s, so choice A has been corrected to that value. The key letter A is unchanged.",
+    "16": "The printed key gives A for the classroom ordering. Paint, honey and toothpaste can have different viscosities depending on their composition, temperature and rate of deformation.",
+    "23": "The printed choice A read 0.085°, which does not follow from the data. Using third order, $d\\sin\\theta=3\\lambda$ with the printed slit spacing and wavelength gives $\\theta=\\sin^{-1}(3\\lambda/d)\\approx0.172°$, so choice A has been corrected to that value. The key letter A is unchanged.",
+    "26": "The digital stem states the fixed-temperature and fixed-gas-amount conditions.",
+    "27": "The digital stem states positive external pressure. Expansion into a vacuum would do zero boundary work.",
+    "29": "The printed key gives A. In an irreversible process the entropy of an isolated system increases, so choice A has been corrected to 'an increase in entropy.' Heat loss is possible but not required (adiabatic free expansion has Q = 0), so the original wording could not be keyed. The key letter A is unchanged."
+  },
+  "written": {
+    "1": {
+      "mapping": "1.3.1",
+      "level": "U",
+      "solution": "Accuracy describes how close a result is to the true or accepted value. Precision describes how closely repeated results agree. A systematic offset can make a tightly clustered set inaccurate, while large random scatter indicates low precision."
+    },
+    "2": {
+      "mapping": "1.4.1",
+      "level": "A",
+      "solution": "Using the least count as the absolute uncertainty, the percentage uncertainty is $100(0.01/20)=0.05\\%$. If a half-division convention were specified, the result would be $0.025\\%$."
+    },
+    "3": {
+      "mapping": "2.1.2",
+      "level": "U",
+      "solution": "Magnitude is a length and is nonnegative: $\\lVert\\vec A\\rVert=\\sqrt{A_x^2+A_y^2+A_z^2}$. It is strictly positive for a nonzero vector and zero for the null vector."
+    },
+    "4": {
+      "mapping": "2.2.2",
+      "level": "U",
+      "solution": "Draw the first vector, then place the tail of the next at its head without changing length or direction. The resultant runs from the first tail to the final head. Vector addition is commutative and associative, so changing the order can change the intermediate path but leaves the resultant unchanged."
+    },
+    "5": {
+      "mapping": "3.2.5",
+      "level": "U",
+      "solution": "i. Identical masses in a head-on elastic collision exchange velocities. A stops and B moves to the right with A’s initial speed.\nii. Both balls move to the left. If D initially has speed $u$, then $v_D=(m_D-m_C)u/(m_D+m_C)$ and $v_C=2m_Du/(m_D+m_C)$ are their final speed magnitudes."
+    },
+    "6": {
+      "mapping": "3.3.1",
+      "level": "A",
+      "solution": "At constant velocity the upward force balances weight. The useful work is $mgh=(85)(9.8)(15)=12495\\,\\mathrm J$. The useful average power is $W/t=12495/12=1041.25\\,\\mathrm W\\approx1.04\\,\\mathrm{kW}$."
+    },
+    "7": {
+      "mapping": "4.5.3+4.5.4",
+      "level": "U",
+      "solution": "i. With zero net external torque, angular momentum is conserved. About the rotation axis, $L=I\\omega$, so $I_i\\omega_i=I_f\\omega_f$.\nii. Pulling the arms inward decreases the moment of inertia $I$. The angular speed $\\omega$ increases to keep angular momentum constant."
+    },
+    "8": {
+      "mapping": "6.5.2+6.1.2",
+      "level": "A",
+      "solution": "The source says the drag becomes zero. It is the net force that becomes zero at terminal speed. For low-Reynolds-number flow, upward Stokes drag is $6\\pi\\eta r v_t$. With displaced volume $V=\\tfrac43\\pi r^3$, upward buoyancy is $\\rho_f Vg$. Force balance gives $mg-\\rho_f Vg=6\\pi\\eta r v_t$, hence $v_t=2r^2g(\\rho_{\\rm ball}-\\rho_f)/(9\\eta)$. Neglecting buoyancy gives $v_t=mg/(6\\pi\\eta r)$."
+    },
+    "9": {
+      "mapping": "7.6.1",
+      "level": "U",
+      "solution": "Free oscillation continues after the initial disturbance with no periodic drive, at the system’s natural frequency in the ideal model. Forced oscillation is sustained by an external periodic force and, in steady state, follows the driving frequency. A swing pushed repeatedly is an example of forced oscillation."
+    },
+    "10": {
+      "mapping": "7.1.1+7.1.2",
+      "level": "K",
+      "solution": "Oscillatory motion repeatedly moves back and forth about an equilibrium position. Periodic motion repeats after equal time intervals. Uniform circular motion is periodic even though the full circular path is not an oscillation along a line."
+    },
+    "11": {
+      "mapping": "8.5.2",
+      "level": "A",
+      "solution": "B is receding and is heard at the lower frequency. With sound speed $c$, source speed $u$ and emitted frequency $f_0$, the approaching A is heard at $f_A=f_0c/(c-u)$ and the receding B at $f_B=f_0c/(c+u)$. For accelerating trucks, use their instantaneous speeds at emission in this school-model comparison."
+    },
+    "12": {
+      "mapping": "9.1.3+9.2.4",
+      "level": "U",
+      "solution": "Draw semicircular secondary wavefronts spreading rightward from $S$ and reaching both $S_1$ and $S_2$. Draw two overlapping families of semicircular wavefronts spreading from $S_1$ and $S_2$. Their paths to the central point on the screen are equal, so they reinforce there. This is Young’s double-slit experiment."
+    },
+    "13": {
+      "mapping": "10.9.4",
+      "level": "A",
+      "solution": "Over one complete cycle, $Q_H=W+Q_C=500+2000=2500\\,\\mathrm J$. Thus $\\eta=W/Q_H=500/2500=0.20$, or $20\\%$."
+    },
+    "14a": {
+      "mapping": "11.3.1+11.5.2",
+      "level": "A",
+      "solution": "i. The launch site depends on the target orbit. For a low-inclination eastward launch, Earth provides a speed boost of $\\Omega R\\cos\\phi$ at latitude $\\phi$, which is greatest at the equator. Higher-latitude sites can suit high-inclination missions. The question’s general claim does not follow from $v_{\\mathrm{orb}}=\\sqrt{GM/r}$, which describes speed at the orbital radius.\nii. Using $v_e=\\sqrt{2GM/R}$ gives $\\sqrt{2(6.67\\times10^{-11})(6.0\\times10^{24})/(6.4\\times10^6)}\\approx11.2\\,\\mathrm{km/s}$."
+    },
+    "14b": {
+      "mapping": "3.1.2+3.3.1",
+      "level": "A",
+      "solution": "Taking the applied force to be the net horizontal force, $a=3500/1200\\approx2.917\\,\\mathrm{m/s^2}$. At 8 s the speed is $27.5+8a\\approx50.83\\,\\mathrm{m/s}$. With force parallel to velocity, $P=Fv\\approx3500(50.83)=1.78\\times10^5\\,\\mathrm W$."
+    },
+    "15a": {
+      "mapping": "8.5.3",
+      "level": "A",
+      "solution": "In front of the moving source, $\\lambda=(c-u)/f_0=(340-120)/800=0.275\\,\\mathrm m$. The stationary observer receives $f'=c/\\lambda=340/0.275\\approx1236\\,\\mathrm{Hz}$."
+    },
+    "15b": {
+      "mapping": "8.5.3",
+      "level": "A",
+      "solution": "As printed, the pod emits two different frequencies. That does not determine the pod’s motion. For 150 kHz sound travelling at 2050 m/s in water, $\\lambda=c/f\\approx0.0137\\,\\mathrm m$. If 100 kHz was instead the emitted frequency and 150 kHz was measured by a stationary listener ahead of the pod, then $f'=f_0c/(c-u)$ gives an approaching speed of about $683\\,\\mathrm{m/s}$. That speed requires the extra Doppler assumption and is not a realistic dolphin speed."
+    },
+    "16a": {
+      "mapping": "10.4.3",
+      "level": "A",
+      "solution": "If the piston area is $A$ and its outward displacement is $dy$, the gas exerts $F=PA$ in a quasistatic process. Then $dW=F\\,dy=P A\\,dy=P\\,dV$. Integrating gives $W=\\int_{V_i}^{V_f}P\\,dV$. For constant pressure, $W=P(V_f-V_i)$."
+    },
+    "16b": {
+      "mapping": "10.11.5",
+      "level": "U",
+      "solution": "1. Thermal pollution disperses waste heat into air or water.\n2. Burning fuels converts concentrated chemical energy into dispersed heat and exhaust.\n3. Mixing pollutants into water makes separation energy-intensive.\n4. Dispersing fine waste and microplastics makes recovery difficult and requires energy.\n5. Extracting and scattering concentrated mineral resources increases the work needed for recovery.\nThese examples involve irreversible dispersal of energy or materials. Thermodynamic entropy has a precise definition and does not by itself measure ecological harm."
+    }
+  }
+}

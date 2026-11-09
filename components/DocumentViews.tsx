@@ -3,6 +3,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { FileText, Sparkles } from "lucide-react";
 import styles from "./MaterialLayout.module.css";
 import OriginalDocument from "./OriginalDocument";
+import ContinuousDocument from "./ContinuousDocument";
 import { safeDocumentUrl } from "@/lib/paperPresentation";
 
 export default function DocumentViews({
@@ -10,11 +11,13 @@ export default function DocumentViews({
   title,
   children,
   initialView,
+  continuousPdf = false,
 }: {
   original?: string | null;
   title: string;
   children?: ReactNode;
   initialView?: "digital" | "original";
+  continuousPdf?: boolean;
 }) {
   original = safeDocumentUrl(original);
   const [view, setView] = useState(
@@ -98,7 +101,11 @@ export default function DocumentViews({
       {view === "digital" ? (
         children
       ) : original ? (
-        <OriginalDocument url={original} title={title} />
+        continuousPdf ? (
+          <ContinuousDocument url={original} title={title} />
+        ) : (
+          <OriginalDocument url={original} title={title} />
+        )
       ) : (
         <p className={styles.muted}>Original document unavailable.</p>
       )}

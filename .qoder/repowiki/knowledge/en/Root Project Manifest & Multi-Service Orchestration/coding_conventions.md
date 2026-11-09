@@ -1,0 +1,3 @@
+- Node-side scripts live under `scripts/` and are executed via `tsx` from npm scripts rather than being imported as modules.
+- Containerized deployments are expressed per-service with dedicated `Dockerfile.*` files (web, worker, ai-worker, assessment-worker) instead of a single monolithic image.
+- Runtime configuration is externalized to environment variables consumed by Prisma and the application at startup rather than hard-coded.

@@ -16,6 +16,12 @@ import { canonicalModel } from '@/services/ai/provider';
 import { getAllStandardPapers, getFallbackPaper } from '@/lib/paperDataService';
 import physicsIX from '@/data/physics/ssc1_exact_syllabus.json';
 import physicsX from '@/data/physics/ssc2_exact_syllabus.json';
+import csIX from '@/data/computer-science/ssc1_exact_syllabus.json';
+import csX from '@/data/computer-science/ssc2_exact_syllabus.json';
+import chemIX from '@/data/chemistry/ssc1_exact_syllabus.json';
+import chemX from '@/data/chemistry/ssc2_exact_syllabus.json';
+import { hsscPhysicsSyllabus } from '@/lib/hsscPhysicsSyllabus';
+import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 
 export interface SearchResultItem {
   id: string;
@@ -172,14 +178,58 @@ export async function searchEducationalContent(
     /* Continue with bundled syllabus, papers, and question bank search when DB is unavailable. */
   }
 
-  // 4. Smart Typo + Synonym Search across all 337 Syllabus SLOs (Class IX & X)
-  for (const [level, units, roman] of [
-    [9, physicsIX as any[], 'IX'],
-    [10, physicsX as any[], 'X'],
-  ] as const) {
+  // 4. Search the bundled syllabi and link directly to chapter and SLO anchors.
+  const syllabusSets = [
+    { level: 9, roman: 'IX', subject: 'Physics', slug: 'physics', units: physicsIX as any[] },
+    { level: 10, roman: 'X', subject: 'Physics', slug: 'physics', units: physicsX as any[] },
+    { level: 11, roman: 'XI', subject: 'Physics', slug: 'physics', units: hsscPhysicsSyllabus('akueb', 11, 'physics')!.units },
+    { level: 12, roman: 'XII', subject: 'Physics', slug: 'physics', units: hsscPhysicsSyllabus('akueb', 12, 'physics')!.units },
+    { level: 9, roman: 'IX', subject: 'Computer Science', slug: 'computer-science', units: csIX as any[] },
+    { level: 10, roman: 'X', subject: 'Computer Science', slug: 'computer-science', units: csX as any[] },
+    { level: 9, roman: 'IX', subject: 'Chemistry', slug: 'chemistry', units: chemIX as any[] },
+    { level: 10, roman: 'X', subject: 'Chemistry', slug: 'chemistry', units: chemX as any[] },
+  ] as const;
+
+  for (const { level, roman, subject, slug, units } of syllabusSets) {
     if (filters.classLevel && filters.classLevel !== level) continue;
+    const chapterQuiz = level <= 10;
+    const syllabusUrl = `/akueb/${roman}/${slug}/syllabus`;
+    if (!chapterQuiz) {
+      const title = `Physics Class ${roman} · HSSC ${level === 11 ? 'I' : 'II'} · 2025 Syllabus`;
+      const score = smartScore(title, q);
+      if (score >= 0.68) addResult({
+        id: `physics-hssc-syllabus-${level}`, type: 'RESOURCE', title, score,
+        boardId: 'akueb', classLevel: level, subject, badge: 'Syllabus', url: syllabusUrl,
+      });
+    }
     for (const unit of units) {
-      for (const sub of unit.subtopics || []) {
+      const subtopics = unit.subtopics || [];
+      const sloCount = subtopics.reduce(
+        (sum: number, sub: any) => sum + (sub.slos?.length || 0),
+        0
+      );
+      const topicNames = subtopics.map((sub: any) => sub.name).join(' ');
+      const unitScore = smartScore(
+        `${subject} Class ${roman} Unit ${unit.unitNumber} ${unit.name} ${topicNames} ${chapterQuiz ? 'chapter wise mcqs quiz practice' : 'syllabus learning outcomes'}`,
+        q
+      );
+      if (unitScore >= 0.68) {
+        addResult({
+          id: `chapter-${chapterQuiz ? 'quiz' : 'syllabus'}-${level}-${slug}-${unit.unitNumber}`,
+          type: 'RESOURCE',
+          title: `${subject} ${roman} · Unit ${unit.unitNumber}: ${unit.name} — ${chapterQuiz ? 'Chapter-Wise MCQs Quiz' : 'Syllabus'}`,
+          description: chapterQuiz
+            ? `Chapter-wise MCQ quiz covering ${subtopics.length} subtopics and ${sloCount} SLOs, with model and past-paper questions plus instant answer checking.`
+            : `${subtopics.length} subtopics and ${sloCount} learning outcomes from the 2025 syllabus.`,
+          boardId: 'akueb',
+          classLevel: level,
+          subject,
+          badge: chapterQuiz ? 'Chapter MCQs' : 'Syllabus chapter',
+          url: chapterQuiz ? `/akueb/${roman}/${slug}/mcqs/chapter-wise?unit=${unit.unitNumber}` : syllabusUrl + '#unit-' + unit.unitNumber,
+          score: unitScore,
+        });
+      }
+      for (const sub of subtopics) {
         for (const slo of sub.slos || []) {
           const score = smartScore(
             `Unit ${unit.unitNumber} ${unit.name} ${sub.name} ${slo.code} ${slo.description}`,
@@ -188,15 +238,15 @@ export async function searchEducationalContent(
           );
           if (score >= 0.68) {
             addResult({
-              id: `slo-${level}-${slo.code}`,
+              id: `slo-${level}-${slug}-${slo.code}`,
               type: 'SLO',
               title: `SLO ${slo.code} · Unit ${unit.unitNumber}: ${unit.name}`,
               description: slo.description,
               boardId: 'akueb',
               classLevel: level,
-              subject: 'Physics',
+              subject,
               badge: `Class ${roman} · ${slo.cognitiveLevel}`,
-              url: `/akueb/${roman}/physics/syllabus#slo-${encodeURIComponent(slo.code)}`,
+              url: syllabusUrl + '#slo-' + encodeURIComponent(slo.code),
               score,
             });
           }
@@ -259,6 +309,17 @@ export async function searchEducationalContent(
 
   // 6. Official Guides (E-Marking Notes, Answer Keys, Resource Guides, Pacing Guides, Practical Paper III)
   const guides: SearchResultItem[] = [
+    ...[11, 12].flatMap(level => {
+      const hssc = hsscPhysicsResources("akueb", level, "Physics")!;
+      return [
+        { label: "Teaching and learning resource guide", href: "/books?view=guide" },
+        { label: "28-week pacing guide", href: "/books?view=pacing" },
+        { label: "Paper III sample practical", href: "/practicals" },
+      ].map(({ label, href }): SearchResultItem => ({
+        id: `physics-hssc-${level}-${href}`, type: "RESOURCE", title: `Physics Class ${hssc.roman} · ${label}`,
+        boardId: "akueb", classLevel: level, subject: "Physics", url: hssc.base + href,
+      }));
+    }),
     {
       id: 'guide-emarking-2025',
       type: 'RESOURCE',
@@ -468,6 +529,138 @@ export async function searchEducationalContent(
       badge: 'Chapter SLO Notes',
       url: '/akueb/X/physics/chapter-notes',
     },
+    {
+      id: 'syllabus-physics-ix',
+      type: 'RESOURCE',
+      title: 'Physics IX · 2025 Syllabus, Units 1–10 & Student Learning Outcomes',
+      description: 'Complete SSC-I Physics curriculum: unit-wise themes, subtopics, 2025 SLO codes, cognitive levels, and assessment scheme.',
+      boardId: 'akueb',
+      classLevel: 9,
+      subject: 'Physics',
+      badge: 'Syllabus',
+      url: '/akueb/IX/physics/syllabus',
+    },
+    {
+      id: 'syllabus-physics-x',
+      type: 'RESOURCE',
+      title: 'Physics X · 2025 Syllabus, Units 11–20 & Student Learning Outcomes',
+      description: 'Complete SSC-II Physics curriculum: unit-wise themes, subtopics, 2025 SLO codes, cognitive levels, and assessment scheme.',
+      boardId: 'akueb',
+      classLevel: 10,
+      subject: 'Physics',
+      badge: 'Syllabus',
+      url: '/akueb/X/physics/syllabus',
+    },
+    {
+      id: 'syllabus-cs-ix',
+      type: 'RESOURCE',
+      title: 'Computer Science IX · 2025 Syllabus, Units 1–7 & Student Learning Outcomes',
+      description: 'Complete SSC-I Computer Science curriculum: unit-wise themes, subtopics, 2025 SLO codes, cognitive levels, assessment scheme, and the official grade-9 syllabus PDF.',
+      boardId: 'akueb',
+      classLevel: 9,
+      subject: 'Computer Science',
+      badge: 'Syllabus',
+      url: '/akueb/IX/computer-science/syllabus',
+    },
+    {
+      id: 'syllabus-cs-x',
+      type: 'RESOURCE',
+      title: 'Computer Science X · 2025 Syllabus, Units 8–14 & Student Learning Outcomes',
+      description: 'Complete SSC-II Computer Science curriculum: unit-wise themes, subtopics, 2025 SLO codes, cognitive levels, assessment scheme, and the official grade-10 syllabus PDF.',
+      boardId: 'akueb',
+      classLevel: 10,
+      subject: 'Computer Science',
+      badge: 'Syllabus',
+      url: '/akueb/X/computer-science/syllabus',
+    },
+    {
+      id: 'mcqs-chapter-wise-ix',
+      type: 'RESOURCE',
+      title: 'Physics IX · Chapter-Wise MCQs Quiz Hub (Units 1–10)',
+      description: 'Practise multiple-choice quizzes unit by unit with instant answer checking, cognitive-level filters, and 2024 & 2025 past-paper coverage.',
+      boardId: 'akueb',
+      classLevel: 9,
+      subject: 'Physics',
+      badge: 'MCQ Quizzes',
+      url: '/akueb/IX/physics/mcqs/chapter-wise',
+    },
+    {
+      id: 'mcqs-past-papers-ix',
+      type: 'RESOURCE',
+      title: 'Physics IX · Past-Paper MCQ Quiz Archive (2024 & 2025)',
+      description: 'Complete annual Paper I multiple-choice quizzes from the 2024 and 2025 AKUEB examinations with answer review.',
+      boardId: 'akueb',
+      classLevel: 9,
+      subject: 'Physics',
+      badge: 'MCQ Quizzes',
+      url: '/akueb/IX/physics/mcqs/past-papers',
+    },
+    {
+      id: 'mcqs-chapter-wise-x',
+      type: 'RESOURCE',
+      title: 'Physics X · Chapter-Wise MCQs Quiz Hub (Units 11–20)',
+      description: 'Practise multiple-choice quizzes unit by unit with instant answer checking, cognitive-level filters, and 2024 & 2025 past-paper coverage.',
+      boardId: 'akueb',
+      classLevel: 10,
+      subject: 'Physics',
+      badge: 'MCQ Quizzes',
+      url: '/akueb/X/physics/mcqs/chapter-wise',
+    },
+    {
+      id: 'mcqs-past-papers-x',
+      type: 'RESOURCE',
+      title: 'Physics X · Past-Paper MCQ Quiz Archive (2024 & 2025)',
+      description: 'Complete annual Paper I multiple-choice quizzes from the 2024 and 2025 AKUEB examinations with answer review.',
+      boardId: 'akueb',
+      classLevel: 10,
+      subject: 'Physics',
+      badge: 'MCQ Quizzes',
+      url: '/akueb/X/physics/mcqs/past-papers',
+    },
+    {
+      id: 'mcqs-chapter-wise-cs-ix',
+      type: 'RESOURCE',
+      title: 'Computer Science IX · Chapter-Wise MCQs Quiz Hub (Units 1–7)',
+      description: 'Practise SSC-I Computer Science multiple-choice quizzes unit by unit with instant answer checking and 2024 & 2025 past-paper coverage.',
+      boardId: 'akueb',
+      classLevel: 9,
+      subject: 'Computer Science',
+      badge: 'MCQ Quizzes',
+      url: '/akueb/IX/computer-science/mcqs/chapter-wise',
+    },
+    {
+      id: 'mcqs-past-papers-cs-ix',
+      type: 'RESOURCE',
+      title: 'Computer Science IX · Past-Paper MCQ Quiz Archive (2025)',
+      description: 'Annual Paper I multiple-choice quiz from the 2025 AKUEB Computer Science examination with answer review.',
+      boardId: 'akueb',
+      classLevel: 9,
+      subject: 'Computer Science',
+      badge: 'MCQ Quizzes',
+      url: '/akueb/IX/computer-science/mcqs/past-papers',
+    },
+    {
+      id: 'mcqs-chapter-wise-cs-x',
+      type: 'RESOURCE',
+      title: 'Computer Science X · Chapter-Wise MCQs Quiz Hub (Units 8–14)',
+      description: 'Practise SSC-II Computer Science multiple-choice quizzes unit by unit with instant answer checking and 2025 past-paper coverage.',
+      boardId: 'akueb',
+      classLevel: 10,
+      subject: 'Computer Science',
+      badge: 'MCQ Quizzes',
+      url: '/akueb/X/computer-science/mcqs/chapter-wise',
+    },
+    {
+      id: 'mcqs-past-papers-cs-x',
+      type: 'RESOURCE',
+      title: 'Computer Science X · Past-Paper MCQ Quiz Archive (2025)',
+      description: 'Annual Paper I multiple-choice quiz from the 2025 AKUEB Computer Science examination with answer review.',
+      boardId: 'akueb',
+      classLevel: 10,
+      subject: 'Computer Science',
+      badge: 'MCQ Quizzes',
+      url: '/akueb/X/computer-science/mcqs/past-papers',
+    },
   ];
 
   for (const g of guides) {
@@ -478,8 +671,27 @@ export async function searchEducationalContent(
     }
   }
 
-  return [...results.values()]
+  const ranked = [...results.values()]
     .filter(item => !filters.type || filters.type === 'ALL' || item.type === filters.type)
-    .sort((a, b) => (b.score || 0) - (a.score || 0))
-    .slice(0, 24);
+    .sort((a, b) => (b.score || 0) - (a.score || 0));
+
+  // Keep a spread of result kinds so every search category has something to show,
+  // instead of one large bucket (e.g. solved questions) crowding out guides and quizzes.
+  const bucketFor = (item: SearchResultItem): 'mcq' | 'syllabus' | 'paper' | 'guide' => {
+    if (item.type === 'SLO') return 'syllabus';
+    if (item.type === 'QUESTION') return 'paper';
+    if (item.url?.includes('/mcqs') || item.url?.startsWith('/quizzes/')) return 'mcq';
+    if (item.url?.startsWith('/past-papers/')) return 'paper';
+    return 'guide';
+  };
+  const bucketCaps = { mcq: 44, syllabus: 24, paper: 24, guide: 16 } as const;
+  const bucketCounts = { mcq: 0, syllabus: 0, paper: 0, guide: 0 };
+  const diversified: SearchResultItem[] = [];
+  for (const item of ranked) {
+    const bucket = bucketFor(item);
+    if (bucketCounts[bucket] >= bucketCaps[bucket]) continue;
+    bucketCounts[bucket] += 1;
+    diversified.push(item);
+  }
+  return diversified;
 }
