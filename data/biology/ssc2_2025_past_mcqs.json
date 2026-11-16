@@ -1,0 +1,972 @@
+[
+  {
+    "number": "1",
+    "page": 2,
+    "code": "11.2.2",
+    "stem": "The CORRECT description about the metaphase plate is that it is",
+    "choices": [
+      "a plate-like structure composed of phragmoplast.",
+      "originated from the centromeres of chromosomes.",
+      "a region in a dividing cell where centrioles multiply.",
+      "the equatorial plane at which the chromosomes are aligned."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "10.2.2",
+    "originalLevel": "U",
+    "explanation": "The metaphase plate is the equatorial plane of chromosome alignment.",
+    "feedback": [
+      "A phragmoplast helps form the plant cell plate later.",
+      "Centromeres help attach chromosomes to spindles but do not form the plane.",
+      "Centriole duplication is unrelated to chromosome alignment here.",
+      "Chromosomes align at the equator during metaphase."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "2",
+    "page": 2,
+    "code": "11.1.2",
+    "stem": "Skin cells do NOT enter $G_0$ phase of the cell cycle as",
+    "choices": [
+      "they lack $G_1$ phase.",
+      "they keep on dividing.",
+      "their nuclei degenerate forever.",
+      "their supply of proteins is stopped."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "10.1.3",
+    "originalLevel": "U",
+    "explanation": "Skin cells in the basal layer divide continuously to replace cells shed from the surface, so they remain in the active cell cycle and do not enter G0.",
+    "feedback": [
+      "Cycling skin cells pass through G1.",
+      "Continual division keeps these cells in the cell cycle rather than G0.",
+      "Basal skin cells retain their nuclei and divide.",
+      "Protein synthesis continues in cycling cells."
+    ],
+    "diagramUrl": null,
+    "answerStatus": "ANSWER_CONFIRMED",
+    "answerOrigin": "OFFICIAL_KEY_VERIFIED"
+  },
+  {
+    "number": "3",
+    "page": 2,
+    "code": "11.2.6",
+    "stem": "If a cell undergoes three successive mitotic divisions, then the total number of daughter cells formed by this division will be",
+    "choices": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "10.2.6",
+    "originalLevel": "U",
+    "explanation": "Three rounds of doubling yield 2³ = 8 cells.",
+    "feedback": [
+      "This follows one round.",
+      "This follows two rounds.",
+      "Each round doubles the total, rather than adding two.",
+      "One cell produces eight descendants after three rounds."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "4",
+    "page": 2,
+    "code": "11.3.1",
+    "stem": "The given diagram shows homologous chromosomes in early prophase-I of meiosis. The positioning of homologous chromosomes shows the",
+    "choices": [
+      "synapsis between sister chromatids.",
+      "synapsis between non-sister chromatids.",
+      "crossing over between sister chromatids.",
+      "crossing over between non-sister chromatids."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "10.3.1",
+    "originalLevel": "U",
+    "explanation": "The homologues pair during synapsis in early prophase I.",
+    "feedback": [
+      "Sister chromatids are already held together.",
+      "The figure shows the pairing of homologues with non-sister chromatids side by side.",
+      "Normal crossing over takes place between non-sister chromatids.",
+      "No exchange of segments is shown here."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-2/biology-x-2025-paper-i-q4.png"
+  },
+  {
+    "number": "5",
+    "page": 2,
+    "code": "12.4.5",
+    "stem": "In a patient, kidney tests reveal the malfunctioning of a portion of nephrons that assist in adjusting blood pH by secreting hydrogen and ammonium ions. The part of the nephrons that would be affected in this patient is",
+    "choices": [
+      "loop of Henle.",
+      "Bowman’s capsule.",
+      "distal convoluted tubule.",
+      "proximal convoluted tubule."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "11.4.4",
+    "originalLevel": "U",
+    "explanation": "The distal convoluted tubule secretes hydrogen and ammonium ions to fine-tune blood pH, so malfunction of this segment impairs acid excretion.",
+    "feedback": [
+      "The loop mainly handles salt and water.",
+      "Bowman's capsule collects filtrate.",
+      "The distal convoluted tubule secretes H+ and ammonium ions.",
+      "The proximal tubule reabsorbs most filtrate and also secretes H+, but ammonium secretion is a distal function."
+    ],
+    "diagramUrl": null,
+    "answerStatus": "ANSWER_CONFIRMED",
+    "answerOrigin": "OFFICIAL_KEY_VERIFIED"
+  },
+  {
+    "number": "6",
+    "page": 3,
+    "code": "12.5.6",
+    "stem": "The given diagram represents a part of the dialyser. The substances that would be present in the dialysate are",
+    "choices": [
+      "water, salt and urea.",
+      "glucose, urea and salt.",
+      "glucose, water and salt.",
+      "water, glucose and urea."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "11.5.5",
+    "originalLevel": "U",
+    "explanation": "Fresh dialysate contains water and controlled concentrations of electrolytes and sometimes glucose. It starts with little or no urea so urea can diffuse out of blood.",
+    "feedback": [
+      "Added urea would reduce the gradient.",
+      "This includes urea and omits water.",
+      "These fit the intended composition of fresh dialysate.",
+      "This includes urea and omits salts."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-2/biology-x-2025-paper-i-q6.png"
+  },
+  {
+    "number": "7",
+    "page": 3,
+    "code": "12.3.3",
+    "stem": "The given flowchart shows the components of a negative feedback control system for thermoregulation. In the human body, the structure(s) that serve(s) as coordinator is/ are",
+    "choices": [
+      "hypothalamus.",
+      "thermoreceptors.",
+      "hair erector muscles in skin.",
+      "blood capillaries in the skin."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "11.1.2,11.3.2",
+    "originalLevel": "U",
+    "explanation": "The hypothalamus integrates thermal information and coordinates responses.",
+    "feedback": [
+      "It acts as the coordinator.",
+      "Thermoreceptors detect temperature changes.",
+      "Hair erector muscles are effectors.",
+      "Skin blood vessels participate in the response rather than coordinating it."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-2/biology-x-2025-paper-i-q7.png"
+  },
+  {
+    "number": "8",
+    "page": 3,
+    "code": "12.4.5",
+    "stem": "In the kidneys of human beings, blood pressure plays an important role in the process of urine formation. This is because blood pressure helps to",
+    "choices": [
+      "secrete hydrogen ions in tubules.",
+      "form filtrate through glomerulus.",
+      "reabsorb glucose in the Loop of Henle.",
+      "increase solute concentration in the filtrate."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "11.4.5",
+    "originalLevel": "U",
+    "explanation": "Hydrostatic pressure drives glomerular ultrafiltration.",
+    "feedback": [
+      "Tubular secretion uses cellular transport processes.",
+      "Pressure pushes water and small solutes into Bowman’s capsule.",
+      "Glucose is normally reclaimed mainly in the proximal tubule.",
+      "This does not describe the main initial role of blood pressure."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "9",
+    "page": 3,
+    "code": "12.2.2",
+    "stem": "Halophytes tend to maintain a hypertonic cell sap. However, if they failed to maintain this hypertonicity then",
+    "choices": [
+      "the stomata would close.",
+      "water would enter the cell.",
+      "transpiration would increase.",
+      "the cells would become flaccid."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "11.2.2",
+    "originalLevel": "U",
+    "explanation": "Without concentrated cell sap, saline surroundings oppose water uptake and can reduce turgor.",
+    "feedback": [
+      "Stomata may respond later, but this is not the direct condition of the cells.",
+      "The loss of the osmotic gradient can prevent water entry.",
+      "Increased transpiration does not directly follow.",
+      "Reduced turgor results in flaccid cells."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "10",
+    "page": 4,
+    "code": "13.3.1",
+    "stem": "Based on the direction of nerve impulses, the CORRECTLY labelled structure of a motor neuron is\n\n(Note: Arrow indicates direction of nerve impulse.)",
+    "choices": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "12.3.5",
+    "originalLevel": "U",
+    "explanation": "The motor neuron conducts signals from the dendrites and cell body along the axon.",
+    "feedback": [
+      "The labels and arrow match the usual direction.",
+      "It switches the indicated dendrites and axon.",
+      "The arrow points towards the dendrites.",
+      "Both the direction and the labelling are inconsistent."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-2/biology-x-2025-paper-i-q10.png"
+  },
+  {
+    "number": "11",
+    "page": 4,
+    "code": "13.3.6",
+    "stem": "Consider the given functions.\n\n• Blinking of eye\n• Peristalsis\n• Heartbeat\n\nThe part of human brain that controls the given functions is",
+    "choices": [
+      "cerebrum.",
+      "cerebellum.",
+      "hypothalamus.",
+      "medulla oblongata."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "12.3.2",
+    "originalLevel": "U",
+    "explanation": "The medulla oblongata contains the autonomic centres that regulate heartbeat and peristalsis, and brainstem reflexes such as blinking.",
+    "feedback": [
+      "The cerebrum is mainly responsible for voluntary activity.",
+      "The cerebellum coordinates movement and balance.",
+      "The hypothalamus links the nervous and endocrine systems.",
+      "The medulla controls these involuntary functions."
+    ],
+    "diagramUrl": null,
+    "answerStatus": "ANSWER_CONFIRMED",
+    "answerOrigin": "OFFICIAL_KEY_VERIFIED"
+  },
+  {
+    "number": "12",
+    "page": 5,
+    "code": "13.3.2",
+    "stem": "In the central nervous system, relay neuron transmits nerve impulse from",
+    "choices": [
+      "receptor to effector.",
+      "motor neuron to effector.",
+      "sensory neuron to receptor.",
+      "sensory neuron to motor neuron."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "12.3.5",
+    "originalLevel": "K",
+    "explanation": "A relay neuron in the CNS can connect sensory input to a motor neuron.",
+    "feedback": [
+      "An entire reflex arc includes more than one neuron.",
+      "This is the route of a motor neuron.",
+      "Sensory signals normally move away from the receptor.",
+      "The relay neuron connects these parts of the pathway."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "13",
+    "page": 5,
+    "code": "13.5.2",
+    "stem": "In the human body, endocrine glands are located adjacent to different organs. The option that CORRECTLY matches the endocrine gland with its adjacent organ is",
+    "choices": [
+      "Gland: adrenal gland, Adjacent organ: liver",
+      "Gland: pituitary gland, Adjacent organ: brain",
+      "Gland: pancreas, Adjacent organ: kidney",
+      "Gland: thyroid gland, Adjacent organ: stomach"
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "12.5.2",
+    "originalLevel": "U",
+    "explanation": "The pituitary lies at the base of the brain.",
+    "feedback": [
+      "The adrenal glands are above the kidneys.",
+      "The pituitary is connected to the hypothalamus.",
+      "The pancreas lies mainly behind the stomach.",
+      "The thyroid lies in the neck."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "14",
+    "page": 5,
+    "code": "13.3.11",
+    "stem": "An example of involuntary action is",
+    "choices": [
+      "raising hand to ask a question.",
+      "stretching arms during exercise.",
+      "exhaling air while blowing a whistle.",
+      "sneezing in response to inhalation of irritants."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "12.3.6",
+    "originalLevel": "U",
+    "explanation": "Sneezing in response to irritation is an involuntary reflex.",
+    "feedback": [
+      "Raising a hand to ask a question is intentional.",
+      "A deliberate stretch is voluntary.",
+      "Blowing a whistle is a deliberately controlled action.",
+      "Irritation can trigger sneezing without a conscious decision."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "15",
+    "page": 5,
+    "code": "13.4.1",
+    "stem": "The given diagram represents the internal structure of human ear. The part which contains sound receptors is labelled as",
+    "choices": [
+      "Label A",
+      "Label B",
+      "Label C",
+      "Label D"
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "12.4.1",
+    "originalLevel": "U",
+    "explanation": "The cochlea contains the sensory hair cells that detect sound.",
+    "feedback": [
+      "A indicates a region outside the cochlear sound receptors.",
+      "B points to the coiled cochlea.",
+      "C indicates the auditory tube.",
+      "D points to a middle-ear region."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-2/biology-x-2025-paper-i-q15.png"
+  },
+  {
+    "number": "16",
+    "page": 6,
+    "code": "15.2.4",
+    "stem": "Consider the given diagrams I and II. The types of artificial vegetative propagation in plants shown in the given diagrams are",
+    "choices": [
+      "Diagram I: budding, Diagram II: suckering",
+      "Diagram I: suckering, Diagram II: budding",
+      "Diagram I: stem cutting, Diagram II: grafting",
+      "Diagram I: grafting, Diagram II: stem cutting"
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "14.2.4",
+    "originalLevel": "U",
+    "explanation": "I shows a severed stem rooted separately; II joins part of one plant to another.",
+    "feedback": [
+      "I is a cutting, not budding.",
+      "I is not a sucker growing from an existing plant.",
+      "Cutting and grafting match respectively.",
+      "This reverses the two techniques."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-2/biology-x-2025-paper-i-q16.png"
+  },
+  {
+    "number": "17",
+    "page": 6,
+    "code": "15.3.4",
+    "stem": "Double fertilisation in plants results in the formation of",
+    "choices": [
+      "one haploid zygote.",
+      "two haploid zygotes.",
+      "one triploid endosperm cell.",
+      "two triploid endosperm cells."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "14.3.3",
+    "originalLevel": "U",
+    "explanation": "One fusion forms a diploid zygote and the other usually forms triploid endosperm.",
+    "feedback": [
+      "The zygote is diploid.",
+      "Only one zygote forms.",
+      "The second sperm fuses with the central cell containing two polar nuclei.",
+      "One endosperm cell is formed initially by the second fusion."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "18",
+    "page": 6,
+    "code": "15.1.2",
+    "stem": "The option that exemplifies the disadvantage of asexual reproduction is that",
+    "choices": [
+      "mango trees take five to six years to bloom from the time of planting.",
+      "a bacterial infection in tomato plants spread rapidly and causes a massive lose.",
+      "trees developed by seeds are often large and expensive to maintain in an orchard.",
+      "retention of superior qualities in wheat crops is difficult to maintain due to genetic variations."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "14.1.2",
+    "originalLevel": "U",
+    "explanation": "Low variation in a clonal crop can leave many plants susceptible to the same infection.",
+    "feedback": [
+      "A delay in flowering does not show the genetic drawback.",
+      "Rapid spread among susceptible crop plants is consistent with this drawback.",
+      "Seed production is a sexual route.",
+      "Genetic reshuffling in sexual reproduction presents a different problem."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "19",
+    "page": 6,
+    "code": "15.3.5",
+    "stem": "In the embryo sac of flowering plants, the synergid cells are found near the",
+    "choices": [
+      "antipodal cells.",
+      "central cell.",
+      "tube cells.",
+      "egg cell."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "14.3.3",
+    "originalLevel": "U",
+    "explanation": "The synergids flank the egg at the micropylar end of the embryo sac.",
+    "feedback": [
+      "Antipodal cells are at the opposite end.",
+      "The central cell lies between the poles.",
+      "A tube cell is part of the male gametophyte.",
+      "The egg lies beside the synergids."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "20",
+    "page": 7,
+    "code": "15.5.1",
+    "stem": "The given schematic diagram represents one of the forms of reproduction. This type of reproduction is identified as",
+    "choices": [
+      "budding.",
+      "fragmentation.",
+      "multiple fission.",
+      "parthenogenesis."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "14.2.5",
+    "originalLevel": "U",
+    "explanation": "Parthenogenesis is development from an unfertilised egg.",
+    "feedback": [
+      "Budding starts as an outgrowth.",
+      "Fragmentation begins when a parent splits into pieces.",
+      "Multiple fission involves repeated nuclear division and splitting.",
+      "The diagram states development without fertilisation."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-2/biology-x-2025-paper-i-q20.png"
+  },
+  {
+    "number": "21",
+    "page": 7,
+    "code": "14.2.3",
+    "stem": "In the given diagram of pelvic girdle, the part that forms ball and socket joint with femur is labelled as",
+    "choices": [
+      "Label A",
+      "Label B",
+      "Label C",
+      "Label D"
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "13.1.6",
+    "originalLevel": "U",
+    "explanation": "The acetabulum is the socket that receives the femoral head.",
+    "feedback": [
+      "A indicates the upper ilium.",
+      "B points to the socket at the side of the pelvis.",
+      "C indicates a lower opening region.",
+      "D indicates the anterior lower pelvis."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-2/biology-x-2025-paper-i-q21.png"
+  },
+  {
+    "number": "22",
+    "page": 7,
+    "code": "14.1.4",
+    "stem": "In the human body, the set of structures which is composed of cartilage is",
+    "choices": [
+      "epiglottis, trachea and nose tip.",
+      "ear pinnae, larynx and pharynx.",
+      "pharynx, larynx and oesophagus.",
+      "epiglottis, oesophagus and trachea."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "13.1.2",
+    "originalLevel": "U",
+    "explanation": "The epiglottis, tracheal rings and the tip of the nose include cartilage.",
+    "feedback": [
+      "All three have cartilaginous structures.",
+      "The pharynx is not a cartilaginous structure.",
+      "The pharynx and oesophagus do not fit.",
+      "The oesophagus does not have the cartilage identified here."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "23",
+    "page": 7,
+    "code": "14.1.3",
+    "stem": "The CORRECT description about the hyoid bone is that it",
+    "choices": [
+      "helps in moving the tongue.",
+      "covers the opening of the trachea.",
+      "is a part of the appendicular skeleton.",
+      "is the shortest bone of the human skeleton."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "13.1.6",
+    "originalLevel": "U",
+    "explanation": "The hyoid anchors muscles involved in moving the tongue.",
+    "feedback": [
+      "It provides attachment for tongue muscles.",
+      "The epiglottis helps protect the airway opening.",
+      "The hyoid is part of the axial skeleton.",
+      "The stapes is the smallest bone."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "24",
+    "page": 8,
+    "code": "16.1.2",
+    "stem": "In the living cells, the hereditary unit that controls the production of proteins is",
+    "choices": [
+      "genes.",
+      "nucleus.",
+      "ribosomes.",
+      "cytoplasm."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "15.1.2",
+    "originalLevel": "K",
+    "explanation": "Genes are the hereditary units that encode products such as proteins.",
+    "feedback": [
+      "A gene carries information used to make a protein or functional RNA.",
+      "The nucleus is an organelle containing genes.",
+      "Ribosomes translate RNA.",
+      "Cytoplasm is a cellular compartment."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "25",
+    "page": 8,
+    "code": "16.2.5",
+    "stem": "If the sequence of nucleotides of the parent strand in a DNA molecule is CTGTTAG, then the daughter strand would have the sequence as",
+    "choices": [
+      "TCACCGA",
+      "GACAATC",
+      "UCACCGA",
+      "GACAAUC"
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "15.2.3",
+    "originalLevel": "U",
+    "explanation": "Pair C–G and A–T to obtain the complementary letters GACAATC as aligned to the printed strand.",
+    "feedback": [
+      "The bases do not complement the given strand.",
+      "Each base is paired correctly.",
+      "U is used in RNA.",
+      "The U would need to be T in DNA."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "26",
+    "page": 8,
+    "code": "16.4.2",
+    "stem": "The given table shows some examples of genetic cross and their resultant phenotypes.\n\n|  | Genetic cross | Resultant phenotype |\n| --- | --- | --- |\n| I | Two flies with brown body and red eyes are crossed | 19% of offspring have black bodies and red eyes |\n| II | A man with free earlobes and a woman with attached earlobes have children | 50% with attached earlobes and 50% with free earlobes |\n| III | A cat with black fur mates with a cat with brown fur | 100% of offspring with black fur |\n| IV | Two tall pea plants with purple flowers are crossed | One out of 16 offspring is short with white flowers |\n\nBased on the genetic cross and phenotypes of offspring, Mendel’s law of independent assortment is applied on",
+    "choices": [
+      "I and II.",
+      "I and IV.",
+      "II and III.",
+      "III and IV."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "15.3.6",
+    "originalLevel": "A",
+    "explanation": "I and IV are the two examples involving two traits. The data alone do not prove independence.",
+    "feedback": [
+      "II considers one trait.",
+      "I follows two traits and IV also follows two traits.",
+      "Both II and III concern only one trait.",
+      "III does not test two traits."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "27",
+    "page": 8,
+    "code": "16.4.1",
+    "stem": "A botanist crossed a heterozygous red fruit plant with a yellow fruit plant. (Note: The allele for red fruit (R) colour is dominant over the allele for yellow fruit (r) colour.) The genotypes of offspring produced by this cross will be",
+    "choices": [
+      "Rr, Rr, rr, rr.",
+      "RR, RR, rr, rr.",
+      "RR, Rr, Rr, rr.",
+      "Rr, RR, RR, rr."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "15.3.4",
+    "originalLevel": "A",
+    "explanation": "Rr × rr produces equal proportions of Rr and rr.",
+    "feedback": [
+      "Half get R from the red parent; all get r from the yellow parent.",
+      "The yellow parent cannot contribute R.",
+      "RR cannot occur in this cross.",
+      "The yellow parent contributes only r."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "28",
+    "page": 9,
+    "code": "16.4.5",
+    "stem": "A black feathered chicken is crossed with a white feathered chicken in the given cross. The appearance of feather colour in F1 generation is an example of",
+    "choices": [
+      "dominance.",
+      "codominance.",
+      "recessiveness.",
+      "incomplete dominance."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "15.3.7",
+    "originalLevel": "A",
+    "explanation": "Both black and white feathers are expressed in the heterozygote.",
+    "feedback": [
+      "Complete dominance would mask one colour.",
+      "Codominance allows both traits to be expressed.",
+      "A recessive trait alone would not account for both colours.",
+      "Incomplete dominance gives an intermediate phenotype."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-2/biology-x-2025-paper-i-q28.png"
+  },
+  {
+    "number": "29",
+    "page": 9,
+    "code": "16.5.7",
+    "stem": "In a population, the beneficial traits become more common due to natural selection because of the",
+    "choices": [
+      "survival of diseased organisms.",
+      "modification of environmental factors.",
+      "adaptability of organisms to the environment.",
+      "complete change in genetic makeup of organisms."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "15.4.6",
+    "originalLevel": "U",
+    "explanation": "Heritable traits that improve success in an environment tend to be passed on more often.",
+    "feedback": [
+      "Survival of diseased individuals does not explain the trend.",
+      "The environment does not need to be modified for selection to occur.",
+      "Better-suited organisms can leave more offspring.",
+      "Individuals do not need to undergo a wholesale genetic change."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "30",
+    "page": 9,
+    "code": "17.2.3",
+    "stem": "The given diagram illustrates a food web. All of the following information is interpreted from the given food web EXCEPT that",
+    "choices": [
+      "flow of energy is bidirectional.",
+      "organisms have greater adaptability.",
+      "organisms have alternate food resources.",
+      "it contains several interconnected food chains."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "16.2.3",
+    "originalLevel": "A",
+    "explanation": "Energy flows in one direction along each feeding arrow, from producer to consumer, so it is not bidirectional. The web shows alternative food sources (C) and several interconnected chains (D); greater adaptability (B) can be inferred from the multiple feeding links.",
+    "feedback": [
+      "Energy flow is unidirectional, so this is not interpreted from the web.",
+      "Multiple feeding links suggest adaptability.",
+      "Several organisms have more than one food source.",
+      "The interconnected chains form a food web."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-2/biology-x-2025-paper-i-q30.png",
+    "answerStatus": "ANSWER_CONFIRMED",
+    "answerOrigin": "OFFICIAL_KEY_VERIFIED"
+  },
+  {
+    "number": "31",
+    "page": 10,
+    "code": "17.4.2",
+    "stem": "In an ecosystem, the population size of a species increases to a certain time, and then it starts to level-off (no further increase in the population size). The population size levels-off PRIMARILY due to",
+    "choices": [
+      "decreased predation pressure.",
+      "migration of species to other ecosystems.",
+      "competition within species for limited resources.",
+      "decreased reproductive success due to genetic mutation."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "16.4.2",
+    "originalLevel": "U",
+    "explanation": "Competition for limited resources intensifies as a population approaches carrying capacity.",
+    "feedback": [
+      "Reduced predation usually favours population growth.",
+      "Migration can affect numbers but is not the general explanation for levelling off.",
+      "Limited resources constrain further growth.",
+      "No evidence for a specific mutation is given."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "32",
+    "page": 10,
+    "code": "17.2.6",
+    "stem": "Consider the given food chain.\n\nTree → Termites → Lizard → Owl\n\nThe CORRECT pyramid of number for this food chain is",
+    "choices": [
+      "Pyramid A",
+      "Pyramid B",
+      "Pyramid C",
+      "Pyramid D"
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "16.2.5",
+    "originalLevel": "A",
+    "explanation": "The intended diagram has many termites supported by a tree, with fewer lizards and owls higher in the chain.",
+    "feedback": [
+      "Termites form the widest tier, above the producer and below the consumers.",
+      "Its tree tier is broader than the termite tier.",
+      "Its owl tier is the widest.",
+      "It makes the tree widest and does not show many termites."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-2/biology-x-2025-paper-i-q32.png"
+  },
+  {
+    "number": "33",
+    "page": 10,
+    "code": "17.7.1",
+    "stem": "The suggestion that exemplifies the ‘reduce principle’ of the 3Rs cycle is",
+    "choices": [
+      "buying items as per need.",
+      "using biodegradable bags.",
+      "processing old materials into new products.",
+      "sharing leftovers rather than throwing them away."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "16.7.1",
+    "originalLevel": "U",
+    "explanation": "Buying only what is needed prevents waste at source.",
+    "feedback": [
+      "It reduces unnecessary consumption.",
+      "A biodegradable bag can reduce persistence, but does not necessarily reduce the number bought.",
+      "Processing old material is recycling.",
+      "Sharing leftovers is reuse or redistribution."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "34",
+    "page": 10,
+    "code": "17.2.2",
+    "stem": "In contrast to the flow of energy in an ecosystem, the flow of materials",
+    "choices": [
+      "remains unaffected by sunlight.",
+      "causes energy loss at each trophic level.",
+      "is from producers to tertiary consumers.",
+      "is cyclic due to the activity of decomposers."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "16.2.2",
+    "originalLevel": "U",
+    "explanation": "Decomposers return matter to the environment, allowing it to cycle.",
+    "feedback": [
+      "Sunlight may affect processes that drive material cycles.",
+      "This describes energy transfer.",
+      "Materials also return through waste and decomposition.",
+      "Decomposition returns nutrients to the cycle."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "35",
+    "page": 11,
+    "code": "18.2.3",
+    "stem": "In the food and beverage industry, bacteria are used in the production of",
+    "choices": [
+      "bread.",
+      "cream.",
+      "yogurt.",
+      "alcohol."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "17.2.3",
+    "originalLevel": "K",
+    "explanation": "Yogurt is made by bacterial fermentation of milk.",
+    "feedback": [
+      "Bread commonly uses yeast.",
+      "Cream is separated from milk; plain cream does not require fermentation.",
+      "Lactic acid bacteria ferment the lactose in milk.",
+      "Alcoholic beverages are normally fermented by yeast."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "36",
+    "page": 11,
+    "code": "18.3.1",
+    "stem": "A bacterium is considered genetically modified when it has",
+    "choices": [
+      "a foreign gene.",
+      "many plasmids.",
+      "a complete genome.",
+      "restriction endonucleases."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "17.3.2",
+    "originalLevel": "K",
+    "explanation": "A deliberately introduced foreign gene is evidence of genetic modification in this question.",
+    "feedback": [
+      "This is the feature that distinguishes the intended example.",
+      "Plasmids can occur naturally.",
+      "Bacteria have genomes regardless of modification.",
+      "Restriction enzymes can occur naturally."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "37",
+    "page": 11,
+    "code": "18.3.4",
+    "stem": "Haemophilia, an inherited disease can be eliminated from human population with the help of genetic engineering by",
+    "choices": [
+      "producing vaccines.",
+      "making anti-viral proteins.",
+      "modifying the genes in the human egg cells.",
+      "providing enzymes through transgenic bacteria."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "17.3.4",
+    "originalLevel": "U",
+    "explanation": "Modifying the genes in egg cells (germline gene therapy) would prevent the haemophilia allele from being inherited, so it could reduce the disease in later generations. Vaccines, antiviral proteins and enzyme therapy do not remove the inherited allele.",
+    "feedback": [
+      "A vaccine does not remove an inherited allele.",
+      "Antiviral proteins do not correct a clotting-gene defect.",
+      "Correcting the gene in germline cells prevents transmission to offspring.",
+      "Enzyme replacement treats symptoms but does not eliminate the allele."
+    ],
+    "diagramUrl": null,
+    "answerStatus": "ANSWER_CONFIRMED",
+    "answerOrigin": "OFFICIAL_KEY_VERIFIED"
+  },
+  {
+    "number": "38",
+    "page": 11,
+    "code": "19.3.4",
+    "stem": "One of the MAIN causes of development of resistance in bacteria is",
+    "choices": [
+      "self-medication.",
+      "self-examination.",
+      "use of genetically modified crops.",
+      "use of advanced diagnostic techniques."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "18.3.3",
+    "originalLevel": "U",
+    "explanation": "Inappropriate antibiotic use can select resistant bacteria.",
+    "feedback": [
+      "Self-medication with antibiotics can contribute to misuse.",
+      "Examining oneself does not itself expose bacteria to antibiotics.",
+      "The option does not identify the stated cause.",
+      "Diagnostics can help target treatment and are not the causal misuse."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "39",
+    "page": 11,
+    "code": "19.3.1",
+    "stem": "A doctor prescribed cephalosporin antibiotic to a patient for the treatment of an infection. Based on the prescribed medication, the type of infection this patient suffers from is",
+    "choices": [
+      "viral.",
+      "fungal.",
+      "bacterial.",
+      "parasitic."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "18.3.1",
+    "originalLevel": "U",
+    "explanation": "Cephalosporins are antibacterial drugs.",
+    "feedback": [
+      "They do not treat a viral infection itself.",
+      "Antifungals target fungal infections.",
+      "A bacterial infection is the inference intended by the prescription.",
+      "They are not the general treatment for parasitic infections."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "40",
+    "page": 11,
+    "code": "19.2.3",
+    "stem": "The MOST expected withdrawal symptoms that a person addicted with heroine may experience are",
+    "choices": [
+      "restlessness and insomnia.",
+      "feeling overjoyed and hyperactive.",
+      "extreme food craving and constipation.",
+      "acute alertness and excessive sweating."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "18.2.5",
+    "originalLevel": "K",
+    "explanation": "Restlessness and difficulty sleeping are recognised opioid withdrawal symptoms.",
+    "feedback": [
+      "Both symptoms are consistent with withdrawal.",
+      "Euphoria is not the usual withdrawal description.",
+      "Constipation is associated with opioid use rather than typical withdrawal.",
+      "Sweating can occur, but acute alertness is not the characteristic pair."
+    ],
+    "diagramUrl": null
+  }
+]

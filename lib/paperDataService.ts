@@ -71,6 +71,7 @@ import chem2Past2023Crqs from '@/data/chemistry/ssc2_2023_past_crqs.json';
 import mth1ModelMcqs from '@/data/mathematics/ssc1_model_mcqs.json';
 import mth1ModelCrqs from '@/data/mathematics/ssc1_model_crqs.json';
 import { reviewedMathematicsPapers } from '@/lib/mathematicsPapers';
+import { reviewedBiologyPapers } from '@/lib/biologyPapers';
 import { hsscPhysicsPapers } from '@/lib/hsscPhysicsResources';
 import { hsscXiAnnualPapers } from '@/lib/hsscXiAnnualPhysics';
 import chemistryIXSyllabus from '@/data/chemistry/ssc1_exact_syllabus.json';
@@ -735,6 +736,9 @@ function computeFallbackPaper(code: string): PaperData | null {
   if (hssc) return hssc;
   const mathematics = reviewedMathematicsPapers.find(paper => paper.paperCode === code);
   if (mathematics) return mathematics;
+  const biology = reviewedBiologyPapers.find(paper => paper.paperCode === code);
+  if (biology) return biology;
+  if (code.startsWith('BIO-')) return null;
   const specPaper = computeSpecPaper(code);
   if (specPaper) return specPaper;
 
@@ -3233,7 +3237,7 @@ export function getAllStandardPapers(): Array<{
   _count: { questions: number };
 }> {
   const basePapers = [
-    ...[...reviewedMathematicsPapers, ...hsscPhysicsPapers, ...hsscXiAnnualPapers].map(paper => ({
+    ...[...reviewedBiologyPapers, ...reviewedMathematicsPapers, ...hsscPhysicsPapers, ...hsscXiAnnualPapers].map(paper => ({
       id: paper.id, paperCode: paper.paperCode, title: paper.title,
       examSession: paper.examSession!, examYear: paper.examYear,
       fileUrl: paper.fileUrl!, academicClass: paper.academicClass,

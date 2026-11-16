@@ -34,13 +34,13 @@ export default async function ChapterTheoryUnitPage({ params, mode }: PageProps)
   const meta = getSubjectMeta(rawSubject);
   const baseUrl = `/${board.id}/${classRoman}/${meta.slug}`;
 
-  const isSupportedSubject = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && ['physics', 'computer-science', 'mathematics', 'chemistry'].includes(meta.slug);
+  const isSupportedSubject = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && ['physics', 'computer-science', 'mathematics', 'chemistry', 'biology'].includes(meta.slug);
   if (!isSupportedSubject) {
     return <ContentUnavailable title={`${classDef.name} ${meta.title} ${MODE_LABELS[mode]}`} />;
   }
 
   const activeBank = meta.slug === 'computer-science' ? csChapterBank : chapterBank;
-  const units = ['mathematics', 'chemistry'].includes(meta.slug)
+  const units = ['mathematics', 'chemistry', 'biology'].includes(meta.slug)
     ? await mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
     : (classRoman === 'IX' ? (activeBank as any)['9'] : (activeBank as any)['10']) || [];
   const unitMatch = /^(\d+)/.exec(rawUnit);

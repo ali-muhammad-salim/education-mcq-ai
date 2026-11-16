@@ -12,6 +12,7 @@ import StructuredContent from '@/components/StructuredContent';
 import { SubjectMeta } from '@/lib/subjectMetadata';
 import { scrollAndPulse } from '@/lib/anchorPulse';
 import type { physicsSyllabusSections } from '@/lib/physicsSyllabusSections';
+import type { sscBiologySyllabus } from '@/lib/sscBiologySyllabus';
 import styles from './SyllabusClient.module.css';
 
 interface Props {
@@ -22,9 +23,16 @@ interface Props {
   units: any[];
   originalUrl?: string;
   physicsSections?: ReturnType<typeof physicsSyllabusSections>;
+  biologySections?: ReturnType<typeof sscBiologySyllabus>;
 }
 
-export default function SyllabusClient({ board, classDef, meta, baseUrl, units, originalUrl, physicsSections }: Props) {
+function outcomeAnchor(subject: string, slo: { code: string; cognitiveLevel: string }) {
+  return subject === 'biology' && slo.code === '16.2.4' && slo.cognitiveLevel === 'U'
+    ? '16.2.4-U' : slo.code;
+}
+
+export default function SyllabusClient({ board, classDef, meta, baseUrl, units, originalUrl, physicsSections, biologySections }: Props) {
+  const sections = physicsSections ?? biologySections;
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedUnit, setSelectedUnit] = useState<number | 'all'>('all');
   const [cognitiveFilter, setCognitiveFilter] = useState<'all' | 'R' | 'U' | 'A' | 'An' | 'E' | 'C' | 'FA'>('all');
@@ -47,7 +55,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
       }
       const code = decodeURIComponent(window.location.hash.replace('#slo-', ''));
       if (!code) return;
-      const unit = units.find(u => u.subtopics.some((t: any) => t.slos.some((o: any) => o.code === code)));
+      const unit = units.find(u => u.subtopics.some((t: any) => t.slos.some((o: any) => outcomeAnchor(meta.slug, o) === code)));
       if (unit) {
         setExpandedUnits(old => ({ ...old, [unit.unitNumber]: true }));
         setSelectedUnit('all');
@@ -59,7 +67,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
     followHash();
     window.addEventListener('hashchange', followHash);
     return () => window.removeEventListener('hashchange', followHash);
-  }, [units]);
+  }, [units, meta.slug]);
 
   const toggleUnit = (uNum: number) => {
     setExpandedUnits(prev => ({ ...prev, [uNum]: !prev[uNum] }));
@@ -114,7 +122,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
         </div>
       </header>
 
-      {physicsSections?.firstExam && <p>2025 syllabus · Examined from the {physicsSections.firstExam} annual session.</p>}
+      {sections?.firstExam && <p>2025 syllabus · Examined from the {sections.firstExam} annual session.</p>}
 
       <div className={styles.searchBar}>
         <label className={styles.searchField}>
@@ -155,42 +163,42 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
       </div>
 
       {/* Exam Specification Summary Bar (when available) */}
-      {physicsSections ? (
+      {sections ? (
         <>
           <details className={styles.scheme}>
-            <summary>Scheme of Assessment — {classDef.name} ({physicsSections.paperI + physicsSections.paperII + physicsSections.paperIII} marks)</summary>
+            <summary>Scheme of Assessment — {classDef.name} ({sections.paperI + sections.paperII + sections.paperIII} marks)</summary>
             <div className={styles.schemeContent}>
               <div className={styles.schemeFacts}>
-                <span>Paper I <strong>{physicsSections.paperI} MCQs · {physicsSections.paperI} marks</strong></span>
-                <span>Paper II <strong>CRQs {physicsSections.paperII - 10} + ERQs 10 · {physicsSections.paperII} marks</strong></span>
-                <span>Paper III <strong>Practical · {physicsSections.paperIII} marks</strong></span>
-                <span>Cognitive weightage <strong>{physicsSections.cognitiveWeight}</strong></span>
+                <span>Paper I <strong>{sections.paperI} MCQs · {sections.paperI} marks</strong></span>
+                <span>Paper II <strong>CRQs {sections.paperII - 2 * sections.erqMarks} + ERQs {2 * sections.erqMarks} · {sections.paperII} marks</strong></span>
+                <span>Paper III <strong>Practical · {sections.paperIII} marks</strong></span>
+                <span>Cognitive weightage <strong>{sections.cognitiveWeight}</strong></span>
               </div>
               <div className={styles.schemeTopics} aria-label="Chapter question allocation">
-                {physicsSections.chapters.map(chapter => (
+                {sections.chapters.map(chapter => (
                   <div key={chapter.number}>
                     <strong>{chapter.number}. {units.find(unit => unit.unitNumber === chapter.number)?.name}</strong>
                     <span>{chapter.mcqs} MCQs{chapter.crqMarks ? ` · 1 CRQ (${chapter.crqMarks} marks)` : ''}</span>
                   </div>
                 ))}
               </div>
-              <p><strong>ERQs:</strong> Choose one question from each pair, worth 5 marks each. Chapter pairs: {physicsSections.erqPairs.map(pair => pair.join(' or ')).join('; ')}.</p>
-              <a href={physicsSections.original + '#page=' + physicsSections.assessmentPage} target="_blank" rel="noopener noreferrer">Open the official assessment table (PDF)</a>
+              <p><strong>ERQs:</strong> Choose one question from each pair, worth {sections.erqMarks} marks each. Chapter pairs: {sections.erqPairs.map(pair => pair.join(' or ')).join('; ')}.</p>
+              <a href={sections.original + '#page=' + sections.assessmentPage} target="_blank" rel="noopener noreferrer">Open the official assessment table (PDF)</a>
             </div>
           </details>
           <details className={styles.scheme}>
-            <summary>Practical Activities — {classDef.name} ({physicsSections.paperIII} marks)</summary>
+            <summary>Practical Activities — {classDef.name} ({sections.paperIII} marks)</summary>
             <div className={styles.schemeContent}>
               <p>Paper III is assessed separately. Bring your practical journal or portfolio, endorsed by your school.</p>
-              <ol className={styles.practicalList}>
+              {physicsSections && <ol className={styles.practicalList}>
                 {physicsSections.practicals.map(item => (
                   <li key={item.number}>
                     <p><strong>Chapter {item.chapter}:</strong> {item.activity}</p>
                     <p><strong>Apparatus:</strong> {item.apparatus}</p>
                   </li>
                 ))}
-              </ol>
-              <a href={physicsSections.original + '#page=' + physicsSections.practicalPage} target="_blank" rel="noopener noreferrer">Open the official practical activities (PDF)</a>
+              </ol>}
+              <a href={sections.original + '#page=' + sections.practicalPage} target="_blank" rel="noopener noreferrer">Open the official practical activities (PDF)</a>
             </div>
           </details>
         </>
@@ -300,7 +308,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
                             {subtopic.slos && subtopic.slos.map((slo: any, sloIdx: number) => {
                               const lv = syllabusLevel(slo.cognitiveLevel) || slo.cognitiveShort || slo.cognitiveLevel;
                               return (
-                                <tr id={"slo-" + slo.code} key={sloIdx} style={{ borderBottom: '1px solid #f0f4f2' }}>
+                                <tr id={"slo-" + outcomeAnchor(meta.slug, slo)} key={sloIdx} style={{ borderBottom: '1px solid #f0f4f2' }}>
                                   <td style={{ padding: '8px 12px', fontWeight: 700, color: 'var(--text-color)', fontFamily: 'monospace' }}>
                                     {slo.code}
                                   </td>

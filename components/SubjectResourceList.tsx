@@ -18,6 +18,7 @@ import rg10 from '@/data/physics/ssc2_resource_guide.json';
 import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 import { hsscPhysicsSyllabus } from '@/lib/hsscPhysicsSyllabus';
 import { hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
+import { biology2022Archive, biology2024Archive, biologyX2017Archive, biologyX2018Archive, biologyX2019Archive, biologyX2021Archive, biologyX2022Archive, biologyX2023Archive, biologyX2024Archive, biologyX2025Archive } from '@/lib/biology2024Resources';
 
 export default async function SubjectResourceList({
   params,
@@ -41,6 +42,7 @@ export default async function SubjectResourceList({
     textbook: "Books",
   };
   const mathematics = scope.board.id === 'akueb' && scope.meta.slug === 'mathematics';
+  const biology = scope.board.id === 'akueb' && scope.meta.slug === 'biology';
   const documents = await subjectMaterials(
     params.board,
     params.class,
@@ -162,21 +164,30 @@ export default async function SubjectResourceList({
       }
     );
   }
-  if (mathematics && type === 'past_paper' && !after) {
+  if ((mathematics || biology) && type === 'past_paper' && !after) {
     const references = await prisma.book.findMany({
-      where: { subject: { equals: 'Mathematics', mode: 'insensitive' }, className: scope.classDef.name, boardAssociation: 'AKU-EB' },
+      where: { subject: { equals: mathematics ? 'Mathematics' : 'Biology', mode: 'insensitive' }, className: scope.classDef.name, boardAssociation: 'AKU-EB' },
       select: { sourceFile: true, publicationYear: true, metadata: true },
     });
     for (const reference of references) {
       const kind = (reference.metadata as Record<string, unknown> | null)?.resourceType;
       const href = safeDocumentUrl(reference.sourceFile);
       if (!href || !reference.publicationYear || !['answer_key', 'e_marking'].includes(String(kind))) continue;
-      const markingPage = /^\/materials\/ssc\/mathematics\/ssc-[12]\/(mathematics-(?:ix|x)-(?:201[789]|202[345])-emarking)\.pdf$/.exec(href)?.[1];
-      items.push({ label: kind === 'answer_key' ? 'Paper 1 keys' : 'Paper 2 E-marking', href: markingPage ? '/resources/' + markingPage : href, year: reference.publicationYear });
+      const markingPage = /^\/materials\/ssc\/(?:mathematics|biology)\/ssc-[12]\/((?:mathematics|biology)-(?:ix|x)-(?:201[789]|202[345])-emarking)\.pdf$/.exec(href)?.[1];
+      const keyPage = /^\/materials\/ssc\/biology\/ssc-[12]\/((?:biology-ix-202[35]|biology-x-(?:2017|2018|2019|2021|2024))-keys)\.pdf$/.exec(href)?.[1];
+      const linkHref = kind === 'answer_key' ? (keyPage ? '/resources/' + keyPage.replace(/-keys$/, '-key') : href) : (markingPage ? '/resources/' + markingPage : href);
+      items.push({ label: kind === 'answer_key' ? 'Paper 1 keys' : 'Paper 2 E-marking', href: linkHref, year: reference.publicationYear });
+    }
+  }
+  if (biology && type === 'past_paper' && !after) {
+    for (const archive of [biology2022Archive, biology2024Archive, biologyX2017Archive, biologyX2018Archive, biologyX2019Archive, biologyX2021Archive, biologyX2022Archive, biologyX2023Archive, biologyX2024Archive, biologyX2025Archive]) {
+      if (items.some(item => item.href === archive[0].href)) {
+        items.push(...archive.filter(item => !items.some(existing => existing.href === item.href)));
+      }
     }
   }
   const archiveLabels = ['Paper 1', 'Paper 1 keys', 'Paper 2', 'Paper 2 E-marking'];
-  const displayItems = mathematics && type === 'past_paper'
+  const displayItems = (mathematics || biology) && type === 'past_paper'
     ? [...new Map(items.map(item => {
       const label = /e[- ]?marking/i.test(item.label) ? 'Paper 2 E-marking'
         : /\bkeys?\b/i.test(item.label) ? 'Paper 1 keys'

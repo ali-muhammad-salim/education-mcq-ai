@@ -51,6 +51,13 @@ import chemXKey2024 from '@/data/chemistry/ssc2_2024_official_key.json';
 import chemXEmarking2024 from '@/data/chemistry/ssc2_2024_emarking.json';
 import chemXKey2023 from '@/data/chemistry/ssc2_2023_official_key.json';
 import chemXEmarking2023 from '@/data/chemistry/ssc2_2023_emarking.json';
+import bioKey2025 from '@/data/biology/ssc1_2025_official_key.json';
+import bioKey2023 from '@/data/biology/ssc1_2023_official_key.json';
+import bioKeyX2024 from '@/data/biology/ssc2_2024_official_key.json';
+import bioKeyX2019 from '@/data/biology/ssc2_2019_official_key.json';
+import bioKeyX2018 from '@/data/biology/ssc2_2018_official_key.json';
+import bioKeyX2017 from '@/data/biology/ssc2_2017_official_key.json';
+import bioKeyX2021 from '@/data/biology/ssc2_2021_official_key.json';
 import rg9 from '@/data/physics/ssc1_resource_guide.json';
 import rg10 from '@/data/physics/ssc2_resource_guide.json';
 import chemRg9 from '@/data/chemistry/ssc1_resource_guide.json';
@@ -66,10 +73,25 @@ import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-rev
 import StructuredContent from '@/components/StructuredContent';
 import { hsscXiAnnualPapers, hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
 import { getFallbackPaper } from '@/lib/paperDataService';
-import { safeDocumentUrl } from '@/lib/paperPresentation';
+import { paperMetadata, safeDocumentUrl } from '@/lib/paperPresentation';
+import prisma from '@/lib/prisma';
+import { biology2024Archive, biology2024PdfRoot, biologyX2017Archive, biologyX2017PdfRoot, biologyX2018Archive, biologyX2018PdfRoot, biologyX2019Archive, biologyX2019PdfRoot, biologyX2021Archive, biologyX2021PdfRoot, biologyX2023Archive, biologyX2023PdfRoot, biologyX2024Archive, biologyX2024PdfRoot, biologyX2025Archive, biologyX2025PdfRoot } from '@/lib/biology2024Resources';
 export const dynamic='force-dynamic';
 
 const SUPPORTED_RESOURCES = [
+  'biology-ix-2025-key',
+  'biology-ix-2025-emarking',
+  'biology-ix-2023-key',
+  'biology-ix-2023-emarking',
+  'biology-x-2024-key',
+  'biology-x-2024-emarking',
+  'biology-x-2019-key',
+  'biology-x-2019-emarking',
+  'biology-x-2018-key',
+  'biology-x-2018-emarking',
+  'biology-x-2017-key',
+  'biology-x-2017-emarking',
+  'biology-x-2021-key',
   'physics-ix-2025-key',
   'physics-ix-2024-key',
   'physics-ix-2025-emarking',
@@ -133,6 +155,72 @@ const SUPPORTED_RESOURCES = [
 export default async function Page({params}:{params:Promise<{resource:string}>}) {
   const {resource}=await params;
   const mathMarking = /^mathematics-(ix|x)-(201[789]|202[345])-emarking$/.exec(resource);
+  const bioMarking = /^biology-(ix|x)-(2017|2018|2019|202[345])-emarking$/.exec(resource);
+  if (bioMarking) {
+    const [, grade, year] = bioMarking;
+    const roman = grade.toUpperCase();
+    const code = `BIO-${roman}-${year}-P2`;
+    const localArchive = year === '2024' && grade === 'ix' ? { tabs: biology2024Archive, root: biology2024PdfRoot }
+      : year === '2017' && grade === 'x' ? { tabs: biologyX2017Archive, root: biologyX2017PdfRoot }
+      : year === '2018' && grade === 'x' ? { tabs: biologyX2018Archive, root: biologyX2018PdfRoot }
+      : year === '2019' && grade === 'x' ? { tabs: biologyX2019Archive, root: biologyX2019PdfRoot }
+      : year === '2023' && grade === 'x' ? { tabs: biologyX2023Archive, root: biologyX2023PdfRoot }
+      : year === '2024' && grade === 'x' ? { tabs: biologyX2024Archive, root: biologyX2024PdfRoot }
+      : year === '2025' && grade === 'x' ? { tabs: biologyX2025Archive, root: biologyX2025PdfRoot } : null;
+    const paper = localArchive ? await prisma.pastPaper.findFirst({
+      where: { paperCode: code, verificationStatus: 'REVIEWED_WITH_SOURCE_NOTES' },
+      select: { paperCode: true, questions: { select: { id: true, questionNumber: true, questionText: true, sourceRegion: true } } },
+    }) : getFallbackPaper(code);
+    const original = localArchive ? localArchive.root + 'emarking.pdf'
+      : safeDocumentUrl(paperMetadata(paper?.questions[0]?.sourceRegion).original_reference_source);
+    if (!paper || !original) notFound();
+    const paperPath = '/past-papers/' + paper.paperCode;
+    const base = `/akueb/${roman}/biology`;
+    const title = `Biology ${roman} · ${year} · E-marking notes`;
+    return (
+      <section className={styles.page}>
+        <Link href={base + '/pastpapers'}>← Biology past papers</Link>
+        <h1>{title}</h1>
+        {localArchive && <PaperResourceNav tabs={localArchive.tabs} current={'/resources/' + resource} />}
+        <DocumentViews title={title} original={original}>
+          <div className={styles.digital}>
+            {[...paper.questions].sort((a, b) => String(a.questionNumber).localeCompare(String(b.questionNumber), undefined, { numeric: true })).map(question => {
+              const meta = paperMetadata(question.sourceRegion);
+              const sloGrade = meta.mapping_scope?.grade;
+              const sloBase = sloGrade === 9 || sloGrade === 10
+                ? `/akueb/${sloGrade === 9 ? 'IX' : 'X'}/biology`
+                : base;
+              return (
+                <article key={question.id}>
+                  <h2>Question {question.questionNumber}</h2>
+                  {meta.choice_instruction && <p>{meta.choice_instruction}</p>}
+                  <StructuredContent text={question.questionText} />
+                  <p>
+                    {meta.current_slo && <><Link href={`${sloBase}/syllabus#slo-${meta.current_slo}`}>SLO {meta.current_slo}</Link> · </>}
+                    Cognitive level {meta.cognitive_level} · <Link href={`${paperPath}#question-${question.questionNumber}`}>Open in Paper 2</Link>
+                  </p>
+                  <h3>Project worked solution</h3>
+                  <StructuredContent text={meta.model_answer || ''} />
+                  {meta.official_marking_notes && <>
+                    <h3>Board marking guidance</h3>
+                    <StructuredContent text={meta.official_marking_notes} />
+                  </>}
+                  {(['better', 'weaker'] as const).map(kind => {
+                    const src = safeDocumentUrl(meta[`${kind}_response_image`]);
+                    const label = kind === 'better' ? 'Stronger response' : 'Weaker response';
+                    return src && <figure key={kind}>
+                      <figcaption>{label}</figcaption>
+                      <img src={src} alt={`${label} for question ${question.questionNumber}`} loading="lazy" style={{ maxWidth: '100%', height: 'auto' }} />
+                    </figure>;
+                  })}
+                </article>
+              );
+            })}
+          </div>
+        </DocumentViews>
+      </section>
+    );
+  }
   if (mathMarking) {
     const [, grade, year] = mathMarking;
     const roman = grade.toUpperCase();
@@ -225,6 +313,98 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
     );
   }
   if (!SUPPORTED_RESOURCES.includes(resource as any)) notFound();
+
+  if (resource === 'biology-x-2024-key' || resource === 'biology-x-2021-key' || resource === 'biology-x-2019-key' || resource === 'biology-x-2018-key' || resource === 'biology-x-2017-key') {
+    const year = resource === 'biology-x-2017-key' ? '2017' : resource === 'biology-x-2018-key' ? '2018' : resource === 'biology-x-2019-key' ? '2019' : resource === 'biology-x-2021-key' ? '2021' : '2024';
+    const keyData = resource === 'biology-x-2017-key' ? bioKeyX2017 : resource === 'biology-x-2018-key' ? bioKeyX2018 : resource === 'biology-x-2019-key' ? bioKeyX2019 : resource === 'biology-x-2021-key' ? bioKeyX2021 : bioKeyX2024;
+    const title = `Biology X · ${year} · Official answer key`;
+    const original = `/materials/ssc/biology/ssc-2/biology-x-${year}-keys.pdf`;
+    return (
+      <section className={styles.page}>
+        <Link href="/akueb/X/biology/pastpapers">← Biology X past papers</Link>
+        <h1>{title}</h1>
+        <DocumentViews title={title} original={original}>
+          <div className={styles.digital}>
+            <div style={{overflowX:'auto'}}>
+              <table style={{width:'100%',borderCollapse:'collapse'}}>
+                <caption>Official {year} SSC-II exam-year references · current 2025 syllabus mappings are shown on each question</caption>
+                <thead>
+                  <tr>
+                    {['Question','Original SLO','Official Key','Verified Key','Level','Notes'].map(x=>(
+                      <th key={x} style={{textAlign:'left',padding:'.75rem',borderBottom:'1px solid var(--border-color)'}}>{x}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {keyData.map((row: any)=>(
+                    <tr key={row.questionNumber}>
+                      <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}>{row.questionNumber}</td>
+                      <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}>{row.originalSlo}</td>
+                      <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}><strong>{row.officialKey}</strong></td>
+                      <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}><strong>{row.verifiedKey}</strong></td>
+                      <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}>{row.cognitiveLevel}</td>
+                      <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}>{row.note || '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p>K: Knowledge · U: Understanding · A: Application and beyond</p>
+            <Link href={`/past-papers/BIO-X-${year}-P1?view=solved`}>Paper 1 · answers & explanations →</Link>
+          </div>
+        </DocumentViews>
+        <nav className={styles.actions}>
+          <Link className={styles.button} href={`/past-papers/BIO-X-${year}-P1`}>Paper 1</Link>
+          {year !== '2021' && <Link className={styles.button} href={`/past-papers/BIO-X-${year}-P2`}>Paper 2</Link>}
+        </nav>
+      </section>
+    );
+  }
+  if (resource === 'biology-ix-2025-key' || resource === 'biology-ix-2023-key') {
+    const is2023 = resource === 'biology-ix-2023-key';
+    const year = is2023 ? '2023' : '2025';
+    const keyData = is2023 ? bioKey2023 : bioKey2025;
+    const title = `Biology IX · ${year} · Official answer key`;
+    const original = `/materials/ssc/biology/ssc-1/biology-ix-${year}-keys.pdf`;
+    return (
+      <section className={styles.page}>
+        <Link href="/akueb/IX/biology/pastpapers">← Biology IX past papers</Link>
+        <h1>{title}</h1>
+        <DocumentViews title={title} original={original}>
+          <div className={styles.digital}>
+            <div style={{overflowX:'auto'}}>
+              <table style={{width:'100%',borderCollapse:'collapse'}}>
+                <caption>Official {year} SSC-I exam-year references · current 2025 syllabus mappings are shown on each question</caption>
+                <thead>
+                  <tr>
+                    {['Question','Original SLO','Answer','Level'].map(x=>(
+                      <th key={x} style={{textAlign:'left',padding:'.75rem',borderBottom:'1px solid var(--border-color)'}}>{x}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {keyData.map((row: any)=>(
+                    <tr key={row.question}>
+                      <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}>{row.question}</td>
+                      <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}>{row.oldSlo}</td>
+                      <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}><strong>{row.answer}</strong></td>
+                      <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}>{row.level}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p>K: Knowledge · U: Understanding · A: Application and beyond</p>
+            <Link href={`/past-papers/BIO-IX-${year}-P1?view=solved`}>Paper 1 · answers & explanations →</Link>
+          </div>
+        </DocumentViews>
+        <nav className={styles.actions}>
+          <Link className={styles.button} href={`/past-papers/BIO-IX-${year}-P1`}>Paper 1</Link>
+          <Link className={styles.button} href={`/past-papers/BIO-IX-${year}-P2`}>Paper 2</Link>
+        </nav>
+      </section>
+    );
+  }
 
   if (resource === 'physics-ix-2025-key') {
     const title = 'Physics IX · 2025 · Official answer key';

@@ -24,6 +24,7 @@ import { paperResources } from '@/services/materials/references';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import { applyAnswerDecision } from '@/lib/legacyAnswerReview';
 import { hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
+import { biology2022Archive, biology2024Archive, biologyX2017Archive, biologyX2018Archive, biologyX2019Archive, biologyX2021Archive, biologyX2022Archive, biologyX2023Archive, biologyX2024Archive, biologyX2025Archive } from '@/lib/biology2024Resources';
 
 export const dynamic = "force-dynamic";
 
@@ -168,6 +169,52 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     paper.academicClass?.programme?.board?.shortCode || "AKU-EB";
   const mathematicsManifest = /^MTH-IX-20\d{2}-P[12]$/.test(paper.paperCode || '') ? mathematicsPaperManifests[paper.examYear] : undefined;
   const hsscModel = /^PHY-XII?-P[12]$/.test(paper.paperCode || '');
+  const biologyModel = /^BIO-(?:IX|X)-MODEL-20\d{2}-P[12]$/.test(paper.paperCode || '');
+  const biology2024 = /^BIO-IX-2024-P[12]$/.test(paper.paperCode || '');
+  const biologyXArchive = /^BIO-X-2017-P[12]$/.test(paper.paperCode || '') ? biologyX2017Archive
+    : /^BIO-X-2018-P[12]$/.test(paper.paperCode || '') ? biologyX2018Archive
+    : /^BIO-X-2019-P[12]$/.test(paper.paperCode || '') ? biologyX2019Archive
+    : /^BIO-X-2023-P[12]$/.test(paper.paperCode || '') ? biologyX2023Archive
+    : /^BIO-X-2024-P[12]$/.test(paper.paperCode || '') ? biologyX2024Archive
+    : /^BIO-X-2025-P[12]$/.test(paper.paperCode || '') ? biologyX2025Archive : null;
+  const biology2022 = /^BIO-(?:IX|X)-2022-P1$/.test(paper.paperCode || '');
+  const biology2021 = /^BIO-X-2021-P1$/.test(paper.paperCode || '');
+  if (biology2022 || biology2021) {
+    paper.totalMarks = 50;
+    paper.durationMinutes = 100;
+  }
+  if (biologyModel || biology2024 || biologyXArchive) {
+    const written = paper.paperCode.endsWith('-P2');
+    if (paper.paperCode === 'BIO-X-2017-P1') {
+      paper.totalMarks = 25;
+      paper.durationMinutes = 35;
+    } else if (paper.paperCode === 'BIO-X-2017-P2') {
+      paper.totalMarks = 40;
+      paper.durationMinutes = 145;
+      paper.rubricInstruction = 'Answer all eight questions. For each of Questions 7 and 8, attempt one alternative only.';
+    } else if (paper.paperCode === 'BIO-X-2018-P1') {
+      paper.totalMarks = 25;
+      paper.durationMinutes = 35;
+    } else if (paper.paperCode === 'BIO-X-2018-P2') {
+      paper.totalMarks = 40;
+      paper.durationMinutes = 145;
+      paper.rubricInstruction = 'Answer all eight questions. For each of Questions 7 and 8, attempt one alternative only.';
+    } else if (paper.paperCode === 'BIO-X-2019-P1') {
+      paper.totalMarks = 25;
+      paper.durationMinutes = 40;
+    } else if (paper.paperCode === 'BIO-X-2019-P2') {
+      paper.totalMarks = 40;
+      paper.durationMinutes = 140;
+      paper.rubricInstruction = 'Answer all eight questions. For each of Questions 7 and 8, attempt one alternative only.';
+    } else {
+      paper.totalMarks = written ? 25 : 40;
+      paper.durationMinutes = written ? 110 : 70;
+      if (written) paper.rubricInstruction = biology2024
+        ? 'Answer all seven questions. For each of Questions 6 and 7, attempt one alternative only.'
+        : biologyXArchive ? 'Answer all six questions. For each of Questions 5 and 6, attempt one alternative only.'
+        : `Answer all ${isGrade9 ? 'eight' : 'seven'} questions. For each of Questions ${isGrade9 ? '7 and 8' : '6 and 7'}, attempt one alternative only.`;
+    }
+  }
   return (
     <section className={styles.page}>
       <Breadcrumbs
@@ -184,8 +231,8 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
           },
           { label: subjectName, href: scope?.baseUrl || "/" },
           {
-            label: hsscModel ? "Model papers" : "Past papers",
-            href: scope ? scope.baseUrl + (hsscModel ? "/model-papers" : "/pastpapers") : "/past-papers",
+            label: hsscModel || biologyModel ? "Model papers" : "Past papers",
+            href: scope ? scope.baseUrl + (hsscModel || biologyModel ? "/model-papers" : "/pastpapers") : "/past-papers",
           },
           { label: paper.paperCode || paper.title, active: true },
         ]}
@@ -203,12 +250,22 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
       {!paper.sourceDocumentId && /^PHY-IX-2025-P[12]$/.test(paper.paperCode||'') && <PaperResourceNav tabs={physicsIx2025PaperTabs} />}
       {!paper.sourceDocumentId && /^PHY-IX-2024-P[12]$/.test(paper.paperCode||'') && <PaperResourceNav tabs={physicsIx2024PaperTabs} />}
       {/^PHY-XI-(?:201[7-9]|202[1-5])-P[12]$/.test(paper.paperCode || '') && <PaperResourceNav tabs={hsscXiAnnualResources.filter(item => item.year === paper.examYear)} />}
+      {biology2024 && <PaperResourceNav tabs={biology2024Archive} current={'/past-papers/' + paper.paperCode} />}
+      {biologyXArchive && <PaperResourceNav tabs={biologyXArchive} current={'/past-papers/' + paper.paperCode} />}
+      {biology2022 && <>
+        <PaperResourceNav tabs={isGrade9 ? biology2022Archive : biologyX2022Archive} current={'/past-papers/' + paper.paperCode} />
+        <p>100 minutes · 50 marks · 40 Theory MCQs and 10 Alternate to Practical MCQs. The board scaled the 40 Theory marks to 65 for examination results.</p>
+      </>}
+      {biology2021 && <>
+        <PaperResourceNav tabs={biologyX2021Archive} current={'/past-papers/' + paper.paperCode} />
+        <p>100 minutes · 50 marks · 40 Theory MCQs and 10 Alternate to Practical (ATP) MCQs. The marks obtained on the 40 MCQs will be equated to the total marks of 65 for the theory examination results.</p>
+      </>}
       <Suspense fallback={<p>Loading paper…</p>}>
         <PaperViewerClient
           paper={paper}
           questions={displayQuestions}
           hideHeader
-          historical={!hsscModel}
+          historical={!(hsscModel || biologyModel)}
         />
       </Suspense>
     </section>

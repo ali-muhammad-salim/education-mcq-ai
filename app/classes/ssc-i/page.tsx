@@ -105,7 +105,7 @@ export default function SSC1Page() {
           { name: 'Physics', code: 'PHY-IX', desc: 'Syllabus, 40 MCQs, CRQs, Practicals & Pacing Guide', ready: true, href: '/classes/ssc-i/physics' },
           { name: 'Mathematics', code: 'MTH-IX', desc: 'Algebra, Geometry, Trigonometry & Past Papers', ready: false, href: '/syllabus' },
           { name: 'Chemistry', code: 'CHM-IX', desc: 'Atomic Structure, Chemical Bonding & Solutions', ready: false, href: '/syllabus' },
-          { name: 'Biology', code: 'BIO-IX', desc: 'Cell Biology, Biodiversity, Bioenergetics', ready: false, href: '/syllabus' },
+          { name: 'Biology', code: 'BIO-IX', desc: 'Cell Biology, Biodiversity, Bioenergetics', ready: true, href: '/akueb/IX/biology' },
           { name: 'Computer Science', code: 'CSC-IX', desc: 'Computer Systems, Networks, Programming Logic', ready: false, href: '/syllabus' },
           { name: 'English Compulsory', code: 'ENG-IX', desc: 'Reading Comprehension, Essay & Formal Letters', ready: false, href: '/syllabus' },
           { name: 'Urdu Compulsory', code: 'URD-IX', desc: 'Nazm, Ghazal, Grammar & Creative Writing', ready: false, href: '/syllabus' },

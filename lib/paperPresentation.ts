@@ -44,7 +44,7 @@ export function paperAnswer(
   choices: Record<string, string>,
 ) {
   if (meta.answer_status === 'KEY_CONFLICT' || meta.answer_status === 'OFFICIAL_ASTERISK') return undefined;
-  if (typeof meta.official_answer === 'string' && !/^[A-D]$/i.test(meta.official_answer.trim()) && meta.answer_status !== 'ANSWER_CORRECTED') return undefined;
+  if (typeof meta.official_answer === 'string' && !/^[A-D](?:,\s*[A-D])*$/i.test(meta.official_answer.trim()) && meta.answer_status !== 'ANSWER_CORRECTED') return undefined;
   const candidate =
     meta.correct_answer || meta.solved_correct_option || meta.correctOption;
   const key =
@@ -109,6 +109,7 @@ export function safePaperOriginal(
   if (
     url &&
     /-20\d\d-P[123]$/i.test(code || "") &&
+    !/-MODEL-/i.test(code || "") &&
     /model[-_ ]paper/i.test(url)
   )
     return undefined;
@@ -116,6 +117,7 @@ export function safePaperOriginal(
 }
 
 export function paperLabel(code: string | null | undefined, title: string) {
+  if (/-MODEL-/i.test(code || "")) return title;
   const annual = /-((?:19|20)\d\d)-P([123])$/i.exec(code || "");
   if (annual) return annual[1] + " · Paper " + annual[2];
   const model = /^PHY-(?:IX|X)-P([123])$/i.exec(code || "");

@@ -1,0 +1,3342 @@
+{
+  "9": [
+    {
+      "unitNumber": 1,
+      "name": "Introduction to Biology",
+      "subtopics": [
+        {
+          "subtopicNumber": "1.1",
+          "name": "1.1 Introduction",
+          "slos": [
+            {
+              "code": "1.1.1",
+              "description": "define ‘biology’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 10
+            },
+            {
+              "code": "1.1.2",
+              "description": "differentiate among the major divisions of biology, i.e., botany, zoology and microbiology;",
+              "cognitiveLevel": "U",
+              "sourcePage": 10
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "1.2",
+          "name": "1.2 Divisions and Branches of Biology",
+          "slos": [
+            {
+              "code": "1.2.1",
+              "description": "explain the significance of given branches of biology, i.e., morphology, anatomy, physiology, embryology, taxonomy, cell biology (cytology), histology, palaeontology, pathology, environmental biology (ecology), sociobiology, molecular biology, immunology, genetics, pharmacology, marine biology, freshwater biology;",
+              "cognitiveLevel": "U",
+              "sourcePage": 10
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "1.3",
+          "name": "1.3 Relationship of Biology with Other Sciences",
+          "slos": [
+            {
+              "code": "1.3.1",
+              "description": "relate biology to other branches of science, i.e., biophysics, biochemistry, biostatistics, biomathematics (biometry), biogeography, bio-economics, computational biology and biotechnology;",
+              "cognitiveLevel": "U",
+              "sourcePage": 10
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "1.4",
+          "name": "1.4 Careers in Biology",
+          "slos": [
+            {
+              "code": "1.4.1",
+              "description": "describe the roles and responsibilities of professionals working in medicine and surgery, fisheries, agriculture, animal husbandry, horticulture, farming and forestry;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 10
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "1.5",
+          "name": "1.5 Study of Life from the Perspective of the Holy Quran",
+          "slos": [
+            {
+              "code": "1.5.1",
+              "description": "explain instructions about the origin and the characteristics of life given in the verses (Sura-e-Ambia, verse: 30, Sura-e- Rehman, verse 14, Sura-e-Al-Mominoon, verse 14, Sura-e-Al- Nur, verse 45) of the Holy Quran;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 11
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "1.6",
+          "name": "1.6 The Levels of Organisation",
+          "slos": [
+            {
+              "code": "1.6.1",
+              "description": "describe bioelements as the most basic level of biological organisation;",
+              "cognitiveLevel": "U",
+              "sourcePage": 11
+            },
+            {
+              "code": "1.6.2",
+              "description": "explain biomolecules and their types, i.e., micro molecules and macro molecules (based on molecular masses);",
+              "cognitiveLevel": "U",
+              "sourcePage": 11
+            },
+            {
+              "code": "1.6.3",
+              "description": "differentiate among the levels of organisation of life (sub- atomic particles, atom, molecules, organelles, cells, tissues, organs, organ systems, organism, population, community, ecosystem, biosphere);",
+              "cognitiveLevel": "U",
+              "sourcePage": 11
+            },
+            {
+              "code": "1.6.4",
+              "description": "identify the types of tissues that form different organs i.e., stomach/ lungs in human beings and leaf/ root/ stem in plants;",
+              "cognitiveLevel": "U",
+              "sourcePage": 11
+            },
+            {
+              "code": "1.6.5",
+              "description": "exemplify that different organ systems work together to form a functioning human body;",
+              "cognitiveLevel": "U",
+              "sourcePage": 11
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "1.7",
+          "name": "1.7 Division of Labour in Unicellular and Multicellular Organisms",
+          "slos": [
+            {
+              "code": "1.7.1",
+              "description": "define ‘division of labour’ in living organisms;",
+              "cognitiveLevel": "R",
+              "sourcePage": 11
+            },
+            {
+              "code": "1.7.2",
+              "description": "compare division of labour in unicellular and multicellular organisms;",
+              "cognitiveLevel": "U",
+              "sourcePage": 11
+            },
+            {
+              "code": "1.7.3",
+              "description": "differentiate between colony-level and tissue-level organisation in volvox and frog respectively;",
+              "cognitiveLevel": "U",
+              "sourcePage": 11
+            },
+            {
+              "code": "1.7.4",
+              "description": "justify that the volvox colony does not meet the criteria for having the true tissue-level organisation;",
+              "cognitiveLevel": "E",
+              "sourcePage": 11
+            },
+            {
+              "code": "1.7.5",
+              "description": "evaluate the role of different cell types within a specific tissue/ organ for its overall functioning.",
+              "cognitiveLevel": "E",
+              "sourcePage": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 2,
+      "name": "Solving a Biological Problem",
+      "subtopics": [
+        {
+          "subtopicNumber": "2.1",
+          "name": "2.1 Biological Method",
+          "slos": [
+            {
+              "code": "2.1.1",
+              "description": "explain steps involved in the biological method, i.e., recognition of a biological problem, observation (qualitative and quantitative), building up hypotheses via inductive and deductive reasoning, deducing, devising experiments, inferring and reporting results, proposing theory and putting forward law/ principle (malaria can be taken as an example);",
+              "cognitiveLevel": "U",
+              "sourcePage": 12
+            },
+            {
+              "code": "2.1.2",
+              "description": "differentiate between hypothesis, theory and law in the context of scientific research;",
+              "cognitiveLevel": "U",
+              "sourcePage": 12
+            },
+            {
+              "code": "2.1.3",
+              "description": "design a solution for a biological problem by following the scientific method:\na. formulate a working hypothesis,\nb. write instructions for conducting investigations or following a procedure,\nc. design an appropriate experiment with a control group, dependent, independent and constant variables,\nd. organise data appropriately using techniques such as tables and graphs,\ne. plot a bar graph, line graph and pie chart from the given set of biological data,\nf. interpret bar graph, line graph, pie chart, scatter plot chart and histogram from the given set of biological data,\ng. analyse data to make predictions, decisions or make conclusions;",
+              "cognitiveLevel": "C",
+              "sourcePage": 12
+            },
+            {
+              "code": "2.1.4",
+              "description": "justify that science is a collaborative field that requires interdisciplinary researchers working together to share knowledge and critique ideas.",
+              "cognitiveLevel": "E",
+              "sourcePage": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 3,
+      "name": "Biodiversity",
+      "subtopics": [
+        {
+          "subtopicNumber": "3.1",
+          "name": "3.1 Introduction",
+          "slos": [
+            {
+              "code": "3.1.1",
+              "description": "define the terms ‘biodiversity’ and ‘classification’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 13
+            },
+            {
+              "code": "3.1.2",
+              "description": "describe the importance of biodiversity for producing food, obtaining drugs, getting industrial products, maintaining ecosystems and recycling nutrients;",
+              "cognitiveLevel": "U",
+              "sourcePage": 13
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "3.2",
+          "name": "3.2 Aims and Principles of Classification",
+          "slos": [
+            {
+              "code": "3.2.1",
+              "description": "describe aims and principles of classification;",
+              "cognitiveLevel": "U",
+              "sourcePage": 13
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "3.3",
+          "name": "3.3 Phylogeny",
+          "slos": [
+            {
+              "code": "3.3.1",
+              "description": "define ‘phylogeny’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 13
+            },
+            {
+              "code": "3.3.2",
+              "description": "explain that classification systems aims to reflect evolutionary relationships;",
+              "cognitiveLevel": "U",
+              "sourcePage": 13
+            },
+            {
+              "code": "3.3.3",
+              "description": "describe basis of classification of living organisms with reference to homology and analogy;",
+              "cognitiveLevel": "U",
+              "sourcePage": 13
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "3.4",
+          "name": "3.4 History of Classification Systems",
+          "slos": [
+            {
+              "code": "3.4.1",
+              "description": "describe the contribution of different biologists (Aristotle, Abu Usman Umer Aljahiz, Ernest Hackel, Robert Whittaker, Margulis and Schwartz) in proposing the classification schemes;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 13
+            },
+            {
+              "code": "3.4.2",
+              "description": "compare two-kingdom, three-kingdom, four-kingdom and five- kingdom classification systems;",
+              "cognitiveLevel": "U",
+              "sourcePage": 13
+            },
+            {
+              "code": "3.4.3",
+              "description": "describe that Robert Whittaker’s five-kingdom classification system provides a more comprehensive understanding of the diversity of living organisms compared to other classification systems;",
+              "cognitiveLevel": "U",
+              "sourcePage": 13
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "3.5",
+          "name": "3.5 Units of Classification",
+          "slos": [
+            {
+              "code": "3.5.1",
+              "description": "explain the hierarchical structure of classification from species to kingdom (species, genus, family, order, class, division/ phyla, kingdom);",
+              "cognitiveLevel": "U",
+              "sourcePage": 14
+            },
+            {
+              "code": "3.5.2",
+              "description": "differentiate among the domains of biological classification system (bacteria, archaea and eukarya);",
+              "cognitiveLevel": "U",
+              "sourcePage": 14
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "3.6",
+          "name": "3.6 Binomial Nomenclature",
+          "slos": [
+            {
+              "code": "3.6.1",
+              "description": "list the universal rules adopted for writing the scientific name of a species, including the use of binomial nomenclature;",
+              "cognitiveLevel": "R",
+              "sourcePage": 14
+            },
+            {
+              "code": "3.6.2",
+              "description": "explain the significance of using binomial nomenclature in ensuring clarity and consistency in scientific communication;",
+              "cognitiveLevel": "U",
+              "sourcePage": 14
+            },
+            {
+              "code": "3.6.3",
+              "description": "apply the rules of binomial nomenclature for writing the scientific names of given species;",
+              "cognitiveLevel": "A",
+              "sourcePage": 14
+            },
+            {
+              "code": "3.6.4",
+              "description": "assess likely evolutionary relationships between organisms based on their binomial names;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 14
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "3.7",
+          "name": "3.7 The Five Kingdoms",
+          "slos": [
+            {
+              "code": "3.7.1",
+              "description": "describe salient features of prokaryotes taking bacteria as an example;",
+              "cognitiveLevel": "U",
+              "sourcePage": 15
+            },
+            {
+              "code": "3.7.2",
+              "description": "describe salient features of the given protists: chlamydomonas and paramecium;",
+              "cognitiveLevel": "U",
+              "sourcePage": 15
+            },
+            {
+              "code": "3.7.3",
+              "description": "describe salient features of fungi taking rhizopus as an example;",
+              "cognitiveLevel": "U",
+              "sourcePage": 15
+            },
+            {
+              "code": "3.7.4",
+              "description": "classify kingdom plantae based on their major characteristics (seed producing and non-seed producing, flowering and non- flowering, number of cotyledons);",
+              "cognitiveLevel": "U",
+              "sourcePage": 15
+            },
+            {
+              "code": "3.7.5",
+              "description": "differentiate between monocot and dicot plants in terms of types of roots, arrangement of vascular bundles in stem, types of venations and number of floral leaves;",
+              "cognitiveLevel": "U",
+              "sourcePage": 15
+            },
+            {
+              "code": "3.7.6",
+              "description": "differentiate among invertebrates (sycon, jellyfish, tapeworm, roundworm, earthworm, snail, butterfly and sea star) based on their salient features;",
+              "cognitiveLevel": "U",
+              "sourcePage": 15
+            },
+            {
+              "code": "3.7.7",
+              "description": "differentiate among vertebrates (fish, frog, lizard, bird and cat) based on their salient features;",
+              "cognitiveLevel": "U",
+              "sourcePage": 15
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "3.8",
+          "name": "3.8 Acellular structure",
+          "slos": [
+            {
+              "code": "3.8.1",
+              "description": "describe the general structure of virus;",
+              "cognitiveLevel": "U",
+              "sourcePage": 15
+            },
+            {
+              "code": "3.8.2",
+              "description": "justify the exclusion of viruses from the five-kingdom classification system;",
+              "cognitiveLevel": "E",
+              "sourcePage": 15
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "3.9",
+          "name": "3.9 Viral Diseases",
+          "slos": [
+            {
+              "code": "3.9.1",
+              "description": "list common diseases caused by pathogens (viruses, bacteria, protozoan, fungi);",
+              "cognitiveLevel": "FA",
+              "sourcePage": 16
+            },
+            {
+              "code": "3.9.2",
+              "description": "describe the causes, symptoms and preventive measures of Covid 19;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 16
+            },
+            {
+              "code": "3.9.3",
+              "description": "identify zoonotic diseases, i.e., anthrax, plaque and rabies with reference to their modes of transmission;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 16
+            },
+            {
+              "code": "3.9.4",
+              "description": "describe vector borne diseases such as zika virus, malaria, dengue and chikungunya;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 16
+            },
+            {
+              "code": "3.9.5",
+              "description": "state the causes of some common types of allergies (i.e., food allergy, insect sting’s allergy, drug allergy and hay fever);",
+              "cognitiveLevel": "FA",
+              "sourcePage": 16
+            },
+            {
+              "code": "3.9.6",
+              "description": "describe viral diseases of plants commonly present in Pakistan, in terms of their effect on plant health, yield and methods used for their treatment (leaf curl virus, banana bunchy top virus, mosaic of sugarcane, potato leaf roll virus).",
+              "cognitiveLevel": "FA",
+              "sourcePage": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 4,
+      "name": "Cells and Tissues",
+      "subtopics": [
+        {
+          "subtopicNumber": "4.1",
+          "name": "4.1 Microscopy and the Emergence of Cell Theory",
+          "slos": [
+            {
+              "code": "4.1.1",
+              "description": "define ‘magnification’ and ‘resolution’ of the microscope;",
+              "cognitiveLevel": "R",
+              "sourcePage": 17
+            },
+            {
+              "code": "4.1.2",
+              "description": "compare light microscopy and electron microscopy;",
+              "cognitiveLevel": "U",
+              "sourcePage": 17
+            },
+            {
+              "code": "4.1.3",
+              "description": "calculate the total magnification of a specimen observed under a compound light microscope by applying the formula: Total Magnification = Eyepiece Magnification × Objective Lens Magnification",
+              "cognitiveLevel": "A",
+              "sourcePage": 17
+            },
+            {
+              "code": "4.1.4",
+              "description": "differentiate among scanning electron microscopy and transmission electron microscopy;",
+              "cognitiveLevel": "U",
+              "sourcePage": 17
+            },
+            {
+              "code": "4.1.5",
+              "description": "identify whether an image is from a light microscope, scanning electron microscope or transmission electron microscope based on image resolution, magnification and structural details observed;",
+              "cognitiveLevel": "U",
+              "sourcePage": 17
+            },
+            {
+              "code": "4.1.6",
+              "description": "trace development of the cell theory from Aristotle to Robert Hooke, Antonie van Leeuwenhoek, Robert Brown and Schwann and Schleiden;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 17
+            },
+            {
+              "code": "4.1.7",
+              "description": "state the postulates of cell theory;",
+              "cognitiveLevel": "R",
+              "sourcePage": 17
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "4.2",
+          "name": "4.2 Cellular Organelles",
+          "slos": [
+            {
+              "code": "4.2.1",
+              "description": "explain structure, composition and functions of the sub-cellular components of a eukaryotic cell (cell wall, plasma membrane, nucleus, cytoplasm, cytoskeleton, Golgi bodies, mitochondria, vacuole, ribosomes, endoplasmic reticulum, lysosomes, peroxisomes, centrioles and plastids) with the help of diagrams/ photomicrographs;",
+              "cognitiveLevel": "U",
+              "sourcePage": 17
+            },
+            {
+              "code": "4.2.2",
+              "description": "compare:\na. prokaryotic and eukaryotic cells,\nb. plant and animal cells;",
+              "cognitiveLevel": "U",
+              "sourcePage": 17
+            },
+            {
+              "code": "4.2.3",
+              "description": "evaluate the overall effect of a malfunctioned organelle on the cellular function;",
+              "cognitiveLevel": "E",
+              "sourcePage": 17
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "4.3",
+          "name": "4.3 Cell Specialisation",
+          "slos": [
+            {
+              "code": "4.3.1",
+              "description": "define ‘stem cells’ as unspecialised cells;",
+              "cognitiveLevel": "R",
+              "sourcePage": 18
+            },
+            {
+              "code": "4.3.2",
+              "description": "describe cell specialisation and its importance for the efficient functioning of complex organisms;",
+              "cognitiveLevel": "U",
+              "sourcePage": 18
+            },
+            {
+              "code": "4.3.3",
+              "description": "relate structure of the following specialised cells with their functions: a. root hair cells - for absorption of water and minerals, b. xylem vessels - for conduction and support, c. mesophyll cells - for photosynthesis and gaseous exchange, d. epidermal cells with cuticle - for protection and regulation of water loss, e. red blood cells - for transport of oxygen and f. nerve cells - for conduction of nerve impulse;",
+              "cognitiveLevel": "U",
+              "sourcePage": 18
+            },
+            {
+              "code": "4.3.4",
+              "description": "assess the potential impacts on the functioning of multicellular organisms if the cells (a – f) mentioned in SLO 4.3.3 were not specialised;",
+              "cognitiveLevel": "E",
+              "sourcePage": 18
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "4.4",
+          "name": "4.4 Surface Area to Volume Ratio",
+          "slos": [
+            {
+              "code": "4.4.1",
+              "description": "calculate the surface area to volume ratio of different-sized cells (cubes) using appropriate formulas and measurements;",
+              "cognitiveLevel": "A",
+              "sourcePage": 18
+            },
+            {
+              "code": "4.4.2",
+              "description": "evaluate the relationship between surface area to volume ratio and cell size;",
+              "cognitiveLevel": "E",
+              "sourcePage": 18
+            },
+            {
+              "code": "4.4.3",
+              "description": "assess the efficiency of cellular processes, such as nutrient/ gaseous exchange and excretion, based on the surface area-to- volume ratio of cells;",
+              "cognitiveLevel": "E",
+              "sourcePage": 18
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "4.5",
+          "name": "4.5 Active and Passive Transport of Matter",
+          "slos": [
+            {
+              "code": "4.5.1",
+              "description": "define ‘tonicity’ of the solution;",
+              "cognitiveLevel": "R",
+              "sourcePage": 18
+            },
+            {
+              "code": "4.5.2",
+              "description": "describe different types of solution based on the types of tonicities (hypertonic solution, hypotonic solution and isotonic solution);",
+              "cognitiveLevel": "U",
+              "sourcePage": 18
+            },
+            {
+              "code": "4.5.3",
+              "description": "analyse the effects on plant and animal cells when placed in hypotonic, hypertonic and isotonic solutions;",
+              "cognitiveLevel": "An",
+              "sourcePage": 18
+            },
+            {
+              "code": "4.5.4",
+              "description": "differentiate between plasmolysis and deplasmolysis;",
+              "cognitiveLevel": "U",
+              "sourcePage": 19
+            },
+            {
+              "code": "4.5.5",
+              "description": "compare different types of membranes (permeable, partially permeable and impermeable);",
+              "cognitiveLevel": "U",
+              "sourcePage": 19
+            },
+            {
+              "code": "4.5.6",
+              "description": "predict the direction of movement of molecules through permeable, partially permeable and impermeable membranes based on their properties and concentration gradients;",
+              "cognitiveLevel": "E",
+              "sourcePage": 19
+            },
+            {
+              "code": "4.5.7",
+              "description": "compare the phenomena of diffusion, facilitated diffusion, osmosis, active transport, endocytosis and exocytosis;",
+              "cognitiveLevel": "U",
+              "sourcePage": 19
+            },
+            {
+              "code": "4.5.8",
+              "description": "analyse the factors that affect rate of diffusion in cells, i.e., surface area, temperature, concentration gradient and distance;",
+              "cognitiveLevel": "An",
+              "sourcePage": 19
+            },
+            {
+              "code": "4.5.9",
+              "description": "describe the significance of passive transport and active transport, i.e.:\na. facilitated diffusion: transport of glucose,\nb. diffusion: gaseous exchange in plants and animals,\nc. osmosis: water absorption by root hair cell,\nd. active transport: sodium-potassium pump in nerve cells, uptake of glucose in the intestinal cells of humans and mineral ions into root hair cells of plants;",
+              "cognitiveLevel": "U",
+              "sourcePage": 19
+            },
+            {
+              "code": "4.5.10",
+              "description": "exemplify the importance of turgor pressure in plants;",
+              "cognitiveLevel": "U",
+              "sourcePage": 19
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "4.6",
+          "name": "4.6 Tissues (Types of Plant and Animal Tissues)",
+          "slos": [
+            {
+              "code": "4.6.1",
+              "description": "describe tissue as a group of cells with similar size, shape and function;",
+              "cognitiveLevel": "U",
+              "sourcePage": 19
+            },
+            {
+              "code": "4.6.2",
+              "description": "differentiate between simple and compound plant tissues;",
+              "cognitiveLevel": "U",
+              "sourcePage": 19
+            },
+            {
+              "code": "4.6.3",
+              "description": "compare major plant tissues in terms of their cell specificities, locations and functions, i.e., simple tissues (meristematic tissues and permanent tissues including epidermal, parenchyma, collenchyma and sclerenchyma) and compound tissues (xylem and phloem);",
+              "cognitiveLevel": "U",
+              "sourcePage": 19
+            },
+            {
+              "code": "4.6.4",
+              "description": "compare major animal tissues in terms of their sub types, cell specificities, locations and functions (epithelial, connective, muscular and nervous tissues).",
+              "cognitiveLevel": "U",
+              "sourcePage": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 5,
+      "name": "Gaseous Exchange",
+      "subtopics": [
+        {
+          "subtopicNumber": "5.1",
+          "name": "5.1 Introduction",
+          "slos": [
+            {
+              "code": "5.1.1",
+              "description": "differentiate between breathing (ventilation) and respiration;",
+              "cognitiveLevel": "U",
+              "sourcePage": 20
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "5.2",
+          "name": "5.2 Gaseous Exchange in Plants",
+          "slos": [
+            {
+              "code": "5.2.1",
+              "description": "compare photosynthesis and respiration in plants;",
+              "cognitiveLevel": "U",
+              "sourcePage": 20
+            },
+            {
+              "code": "5.2.2",
+              "description": "describe the process of gaseous exchange in plants, highlighting the roles of stomata in the leaves and lenticels in the stems;",
+              "cognitiveLevel": "U",
+              "sourcePage": 20
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "5.3",
+          "name": "5.3 Gaseous Exchange in Human Beings",
+          "slos": [
+            {
+              "code": "5.3.1",
+              "description": "relate the structure of each part of human respiratory system with its function i.e., nasal passages, pharynx, larynx, glottis, trachea, bronchi, bronchioles, alveoli, lungs, pleural membranes, thoracic cavity, ribs, sternum, external and internal intercostal muscles and diaphragm;",
+              "cognitiveLevel": "U",
+              "sourcePage": 20
+            },
+            {
+              "code": "5.3.2",
+              "description": "describe the role of goblet cells, mucus and ciliated epithelial cells in protecting the breathing system from pathogens and particles;",
+              "cognitiveLevel": "U",
+              "sourcePage": 20
+            },
+            {
+              "code": "5.3.3",
+              "description": "assess the overall impact of a malfunctioned respiratory organ or structure on the overall function of respiratory system;",
+              "cognitiveLevel": "E",
+              "sourcePage": 20
+            },
+            {
+              "code": "5.3.4",
+              "description": "explain the adaptations of alveoli for efficient gaseous exchange;",
+              "cognitiveLevel": "U",
+              "sourcePage": 20
+            },
+            {
+              "code": "5.3.5",
+              "description": "explain gaseous exchange in alveoli;",
+              "cognitiveLevel": "U",
+              "sourcePage": 20
+            },
+            {
+              "code": "5.3.6",
+              "description": "predict the overall impact on alveolar function if a specific alveolar adaptation is compromised;",
+              "cognitiveLevel": "E",
+              "sourcePage": 20
+            },
+            {
+              "code": "5.3.7",
+              "description": "describe mechanism of breathing (inhalation and exhalation) with reference to the role of ribs, internal and external intercostal muscles and diaphragm in producing volume and pressure changes in the thorax leading to the ventilation of lungs;",
+              "cognitiveLevel": "U",
+              "sourcePage": 20
+            },
+            {
+              "code": "5.3.8",
+              "description": "analyse the effect of exercise on the rate and depth of breathing;",
+              "cognitiveLevel": "An",
+              "sourcePage": 20
+            },
+            {
+              "code": "5.3.9",
+              "description": "differentiate between the composition of inspired and expired air;",
+              "cognitiveLevel": "U",
+              "sourcePage": 21
+            },
+            {
+              "code": "5.3.10",
+              "description": "predict the physiological implications of changes in the composition of inspired and expired air under different conditions (e.g. during exercise, rest and exposure to polluted environments);",
+              "cognitiveLevel": "FA",
+              "sourcePage": 21
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "5.4",
+          "name": "5.4 Respiratory Disorders",
+          "slos": [
+            {
+              "code": "5.4.1",
+              "description": "describe causes, symptoms, treatment and prevention of the following respiratory diseases:\na. bronchitis,\nb. emphysema,\nc. pneumonia,\nd. asthma,\ne. lung cancer;",
+              "cognitiveLevel": "U",
+              "sourcePage": 21
+            },
+            {
+              "code": "5.4.2",
+              "description": "analyse the effects of smoking on the lungs and circulatory system.",
+              "cognitiveLevel": "An",
+              "sourcePage": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 6,
+      "name": "Enzymes",
+      "subtopics": [
+        {
+          "subtopicNumber": "6.1",
+          "name": "6.1 Characteristics of Enzymes",
+          "slos": [
+            {
+              "code": "6.1.1",
+              "description": "define ‘metabolism’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.1.2",
+              "description": "compare catabolic and anabolic reactions in terms of energy requirement, molecular changes, significance and examples;",
+              "cognitiveLevel": "U",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.1.3",
+              "description": "describe the role of enzymes as biological catalysts;",
+              "cognitiveLevel": "U",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.1.4",
+              "description": "explain the key characteristics of enzymes, including specificity, reusability and sensitivity to environmental factors;",
+              "cognitiveLevel": "U",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.1.5",
+              "description": "compare the functioning of enzymes with inorganic catalysts in terms of specificity and reaction conditions;",
+              "cognitiveLevel": "U",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.1.6",
+              "description": "define ‘cofactors’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.1.7",
+              "description": "differentiate between the main types of cofactors: prosthetic groups, coenzymes and metal ions (activators);",
+              "cognitiveLevel": "U",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.1.8",
+              "description": "illustrate with examples that cofactors assist enzymes in facilitating biochemical reactions;",
+              "cognitiveLevel": "A",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.1.9",
+              "description": "compare intracellular and extracellular enzymes;",
+              "cognitiveLevel": "U",
+              "sourcePage": 22
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "6.2",
+          "name": "6.2 Factors Affecting Activity of Enzymes",
+          "slos": [
+            {
+              "code": "6.2.1",
+              "description": "assess the impact of varying temperatures on the rate of enzyme-catalysed reactions;",
+              "cognitiveLevel": "E",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.2.2",
+              "description": "illustrate the effect of pH on enzyme activity;",
+              "cognitiveLevel": "A",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.2.3",
+              "description": "analyse examples of enzymes that work best at specific pH levels, i.e., pepsin and renin in the stomach, amylase in mouth and small intestine, trypsin and lipase in small intestine and catalase in cells;",
+              "cognitiveLevel": "An",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.2.4",
+              "description": "analyse the relationship between rate of enzyme-catalysed reactions and substrate/ enzyme concentrations;",
+              "cognitiveLevel": "An",
+              "sourcePage": 22
+            },
+            {
+              "code": "6.2.5",
+              "description": "evaluate the progression of enzyme-catalysed reactions by measuring changes in the concentrations of reactants and products over time;",
+              "cognitiveLevel": "E",
+              "sourcePage": 22
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "6.3",
+          "name": "6.3 Mechanism of Enzyme Action",
+          "slos": [
+            {
+              "code": "6.3.1",
+              "description": "define ‘activation energy’ of chemical reaction;",
+              "cognitiveLevel": "R",
+              "sourcePage": 23
+            },
+            {
+              "code": "6.3.2",
+              "description": "analyse graphs showing activation energy of biochemical reactions with and without enzymes;",
+              "cognitiveLevel": "An",
+              "sourcePage": 23
+            },
+            {
+              "code": "6.3.3",
+              "description": "illustrate the mechanism of enzyme action with reference to the substrate, active site, enzyme-substrate complex and product(s) according to lock and key and induced-fit models;",
+              "cognitiveLevel": "A",
+              "sourcePage": 23
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "6.4",
+          "name": "6.4 Industrial Uses of Enzymes",
+          "slos": [
+            {
+              "code": "6.4.1",
+              "description": "identify specific enzymes used in industrial processes (e.g. proteases in detergents, amylases in baking or lipases in biofuels).",
+              "cognitiveLevel": "FA",
+              "sourcePage": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 7,
+      "name": "Bioenergetics",
+      "subtopics": [
+        {
+          "subtopicNumber": "7.1",
+          "name": "7.1 Introduction",
+          "slos": [
+            {
+              "code": "7.1.1",
+              "description": "define ‘bioenergetics’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 24
+            },
+            {
+              "code": "7.1.2",
+              "description": "describe the importance of oxidation-reduction reactions for the flow of energy through living systems;",
+              "cognitiveLevel": "U",
+              "sourcePage": 24
+            },
+            {
+              "code": "7.1.3",
+              "description": "describe adenosine triphosphate (ATP) as the chief energy currency of all cells;",
+              "cognitiveLevel": "U",
+              "sourcePage": 24
+            },
+            {
+              "code": "7.1.4",
+              "description": "describe synthesis and breaking of ATP through adenosine triphosphate-adenosine diphosphate (ATP-ADP) cycle;",
+              "cognitiveLevel": "U",
+              "sourcePage": 24
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "7.2",
+          "name": "7.2 Photosynthesis",
+          "slos": [
+            {
+              "code": "7.2.1",
+              "description": "define ‘photosynthesis’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 24
+            },
+            {
+              "code": "7.2.2",
+              "description": "state the equation (in words and symbols) for photosynthesis;",
+              "cognitiveLevel": "R",
+              "sourcePage": 24
+            },
+            {
+              "code": "7.2.3",
+              "description": "describe that chlorophyll traps light energy and converts it into chemical energy for the formation of carbohydrates and their subsequent storage;",
+              "cognitiveLevel": "U",
+              "sourcePage": 24
+            },
+            {
+              "code": "7.2.4",
+              "description": "describe the utilisation and storage of carbohydrates produced in photosynthesis, focusing on starch as an energy reservoir, cellulose for constructing cell walls, glucose utilised in respiration to generate energy and sucrose for transport throughout the plant;",
+              "cognitiveLevel": "U",
+              "sourcePage": 24
+            },
+            {
+              "code": "7.2.5",
+              "description": "describe the events of light dependent reaction of photosynthesis including its location in chloroplast, absorption of light energy by photosystem-II, photolysis of water, release of oxygen gas as a byproduct, electron transport chain, ATP synthesis, excitation in photosystem-I and formation of NADPH2 ;",
+              "cognitiveLevel": "U",
+              "sourcePage": 24
+            },
+            {
+              "code": "7.2.6",
+              "description": "describe light independent reactions as a cyclic process including its location in chloroplast, the substances required, i.e., carbon dioxide, pentose sugar, ATP and NADPH2 and the products, i.e., 3 carbon sugar which eventually converts into 6 carbon sugar;",
+              "cognitiveLevel": "U",
+              "sourcePage": 25
+            },
+            {
+              "code": "7.2.7",
+              "description": "explain the adaptations of leaves, i.e., large surface area, thinness, distribution of chloroplasts, cuticle, guard cells, stomata, upper and lower epidermis, palisade and spongy mesophylls, air spaces, xylem, phloem and petiole for photosynthesis;",
+              "cognitiveLevel": "U",
+              "sourcePage": 25
+            },
+            {
+              "code": "7.2.8",
+              "description": "analyse the impact of the loss of specific leaf adaptations (as given in SLO 7.2.7) on the plant’s physiological processes;",
+              "cognitiveLevel": "An",
+              "sourcePage": 25
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "7.3",
+          "name": "7.3 Factors Affecting Rate of Photosynthesis",
+          "slos": [
+            {
+              "code": "7.3.1",
+              "description": "define ‘limiting factor’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 25
+            },
+            {
+              "code": "7.3.2",
+              "description": "explain the effect of temperature, light intensity and carbon dioxide concentration in limiting the rate of photosynthesis;",
+              "cognitiveLevel": "U",
+              "sourcePage": 25
+            },
+            {
+              "code": "7.3.3",
+              "description": "interpret graphs showing the relationship between photosynthetic rate and various limiting factors, i.e., temperature, light intensity and carbon dioxide concentration;",
+              "cognitiveLevel": "E",
+              "sourcePage": 25
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "7.4",
+          "name": "7.4 Cellular Respiration",
+          "slos": [
+            {
+              "code": "7.4.1",
+              "description": "define ‘cellular respiration’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 26
+            },
+            {
+              "code": "7.4.2",
+              "description": "state aerobic respiration by means of word and symbolic equation;",
+              "cognitiveLevel": "R",
+              "sourcePage": 26
+            },
+            {
+              "code": "7.4.3",
+              "description": "differentiate between photosynthesis and respiration;",
+              "cognitiveLevel": "U",
+              "sourcePage": 26
+            },
+            {
+              "code": "7.4.4",
+              "description": "differentiate between alcoholic fermentation and lactic acid fermentation in terms of their pathways, end products, organisms involved and conditions under which each occurs;",
+              "cognitiveLevel": "U",
+              "sourcePage": 26
+            },
+            {
+              "code": "7.4.5",
+              "description": "identify the three main stages of cellular respiration: glycolysis, the Krebs cycle and the electron transport chain;",
+              "cognitiveLevel": "U",
+              "sourcePage": 26
+            },
+            {
+              "code": "7.4.6",
+              "description": "describe the process of glycolysis, including its location, specific reactants and products;",
+              "cognitiveLevel": "U",
+              "sourcePage": 26
+            },
+            {
+              "code": "7.4.7",
+              "description": "describe decarboxylation and dehydrogenation of pyruvate in link reaction (conversion of pyruvate to acetyl CoA);",
+              "cognitiveLevel": "U",
+              "sourcePage": 26
+            },
+            {
+              "code": "7.4.8",
+              "description": "describe the Krebs cycle (Citric acid or TCA cycle), including its location, specific reactants and products;",
+              "cognitiveLevel": "U",
+              "sourcePage": 26
+            },
+            {
+              "code": "7.4.9",
+              "description": "describe the process of the electron transport chain (ETC), including its location, specific reactants, products and its role in ATP production during cellular respiration;",
+              "cognitiveLevel": "U",
+              "sourcePage": 26
+            },
+            {
+              "code": "7.4.10",
+              "description": "describe that lactic acid builds up in the muscles and blood during vigorous exercise causing an oxygen debt;",
+              "cognitiveLevel": "U",
+              "sourcePage": 26
+            },
+            {
+              "code": "7.4.11",
+              "description": "explain the removal of oxygen debt after exercise, with respect to:\na. continuation of fast heart rate to transport lactic acid in the blood from the muscles to the liver,\nb. continuation of deeper and faster breathing to supply oxygen for aerobic respiration of lactic acid,\nc. aerobic respiration of lactic acid in the liver;",
+              "cognitiveLevel": "U",
+              "sourcePage": 26
+            },
+            {
+              "code": "7.4.12",
+              "description": "compare aerobic and anaerobic respiration in terms of location, energy yield, reactants and products, efficiency and conditions under which each occurs;",
+              "cognitiveLevel": "U",
+              "sourcePage": 27
+            },
+            {
+              "code": "7.4.13",
+              "description": "describe the various functions of respiratory energy (ATP) in the body, including muscle contraction, active transport, biochemical reactions, i.e., synthesis of macromolecules like proteins, nucleic acids and maintaining homeostasis.",
+              "cognitiveLevel": "U",
+              "sourcePage": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 8,
+      "name": "Nutrition and Digestion",
+      "subtopics": [
+        {
+          "subtopicNumber": "8.1",
+          "name": "8.1 Mineral Nutrition in Plants",
+          "slos": [
+            {
+              "code": "8.1.1",
+              "description": "describe the concept of mineral nutrition in plants;",
+              "cognitiveLevel": "U",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.1.2",
+              "description": "classify minerals into macronutrients (carbon, hydrogen, oxygen, nitrogen, phosphorus, potassium, calcium, magnesium and sulphur) and micro-nutrients (boron, chlorine, manganese, iron, zinc, copper and molybdenum);",
+              "cognitiveLevel": "U",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.1.3",
+              "description": "describe that nitrogen is important in protein synthesis and magnesium for chlorophyll formation;",
+              "cognitiveLevel": "U",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.1.4",
+              "description": "analyse visual symptoms and growth patterns to diagnose nitrate deficiency and magnesium deficiency in plants (e.g. stunted growth, yellowing of leaves due to nitrate deficiency and slower growth, reduced yield, poor root development, interveinal chlorosis due to magnesium deficiency);",
+              "cognitiveLevel": "An",
+              "sourcePage": 28
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "8.2",
+          "name": "8.2 Components of Human Food",
+          "slos": [
+            {
+              "code": "8.2.1",
+              "description": "classify carbohydrates as monosaccharides, disaccharides and polysaccharides with examples;",
+              "cognitiveLevel": "U",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.2.2",
+              "description": "state the composition and general formula of carbohydrate;",
+              "cognitiveLevel": "R",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.2.3",
+              "description": "identify the food sources and metabolic functions of carbohydrates;",
+              "cognitiveLevel": "U",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.2.4",
+              "description": "illustrate the general structure of amino acid;",
+              "cognitiveLevel": "A",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.2.5",
+              "description": "describe the linking of amino acids through peptide bonds to form a polypeptide chain (polymer);",
+              "cognitiveLevel": "U",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.2.6",
+              "description": "identify the food sources and functions of protein;",
+              "cognitiveLevel": "U",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.2.7",
+              "description": "illustrate the general structure of lipid (triglyceride) molecule (head with glycerol and tail with three chains of fatty acids);",
+              "cognitiveLevel": "A",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.2.8",
+              "description": "describe the food sources and functions of lipids/ fats;",
+              "cognitiveLevel": "U",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.2.9",
+              "description": "calculate the energy content of carbohydrates, proteins and fats in a food;",
+              "cognitiveLevel": "A",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.2.10",
+              "description": "identify food sources and metabolic functions of vitamin A, B, C, D and K;",
+              "cognitiveLevel": "U",
+              "sourcePage": 28
+            },
+            {
+              "code": "8.2.11",
+              "description": "identify food sources and metabolic functions of calcium and iron;",
+              "cognitiveLevel": "U",
+              "sourcePage": 29
+            },
+            {
+              "code": "8.2.12",
+              "description": "describe the deficiency diseases of vitamins A, B, C, D and K and minerals (calcium and iron);",
+              "cognitiveLevel": "U",
+              "sourcePage": 29
+            },
+            {
+              "code": "8.2.13",
+              "description": "identify sources and functions of water and dietary fibre in the body;",
+              "cognitiveLevel": "U",
+              "sourcePage": 29
+            },
+            {
+              "code": "8.2.14",
+              "description": "analyse different scenarios to identify the specific nutrient deficiencies based on symptoms and lifestyle factors;",
+              "cognitiveLevel": "An",
+              "sourcePage": 29
+            },
+            {
+              "code": "8.2.15",
+              "description": "suggest appropriate solutions, such as dietary adjustments, supplementation to correct the deficiencies;",
+              "cognitiveLevel": "E",
+              "sourcePage": 29
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "8.3",
+          "name": "8.3 Balanced Diet",
+          "slos": [
+            {
+              "code": "8.3.1",
+              "description": "define ‘balanced diet’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 29
+            },
+            {
+              "code": "8.3.2",
+              "description": "describe the significance of balanced diet;",
+              "cognitiveLevel": "U",
+              "sourcePage": 29
+            },
+            {
+              "code": "8.3.3",
+              "description": "analyse the importance of a balanced diet and variations in energy requirements based on factors such as age, gender, physical activity and body condition (e.g. pregnancy, lactation, or illness);",
+              "cognitiveLevel": "An",
+              "sourcePage": 29
+            },
+            {
+              "code": "8.3.4",
+              "description": "create a weekly balanced diet meal plan for your family;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 29
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "8.4",
+          "name": "8.4 Ingestion, Digestion and Absorption of Food in Human Beings",
+          "slos": [
+            {
+              "code": "8.4.1",
+              "description": "explain the significance of ingestion, digestion, absorption, assimilation or egestion;",
+              "cognitiveLevel": "U",
+              "sourcePage": 29
+            },
+            {
+              "code": "8.4.2",
+              "description": "relate the following structures of alimentary canal with their functions:\na. mouth,\nb. oesophagus,\nc. stomach,\nd. small intestine,\ne. large intestine or colon,\nf. rectum,\ng. anus;",
+              "cognitiveLevel": "U",
+              "sourcePage": 30
+            },
+            {
+              "code": "8.4.3",
+              "description": "explain the structure and digestive functions of organs and glands associated with the alimentary canal (gut/ gastrointestinal tract), i.e., salivary glands, liver, gall bladder and pancreas;",
+              "cognitiveLevel": "U",
+              "sourcePage": 30
+            },
+            {
+              "code": "8.4.4",
+              "description": "explain the mechanism of swallowing, emphasising the roles of the tongue, larynx, pharynx and epiglottis;",
+              "cognitiveLevel": "U",
+              "sourcePage": 30
+            },
+            {
+              "code": "8.4.5",
+              "description": "describe the coordination of circular and longitudinal muscles during peristalsis in the oesophagus, stomach and intestines to propel the food forward through the digestive tract;",
+              "cognitiveLevel": "U",
+              "sourcePage": 30
+            },
+            {
+              "code": "8.4.6",
+              "description": "describe the functions of hydrochloric acid in the stomach;",
+              "cognitiveLevel": "U",
+              "sourcePage": 30
+            },
+            {
+              "code": "8.4.7",
+              "description": "describe digestion of food in mouth, oesophagus, stomach and small intestine;",
+              "cognitiveLevel": "U",
+              "sourcePage": 30
+            },
+            {
+              "code": "8.4.8",
+              "description": "describe the action of enzymes in specific regions of the alimentary canal with respect to their substrates and products;",
+              "cognitiveLevel": "U",
+              "sourcePage": 30
+            },
+            {
+              "code": "8.4.9",
+              "description": "describe the structural adaptations of small intestine and villi for absorbing digested nutrients;",
+              "cognitiveLevel": "U",
+              "sourcePage": 30
+            },
+            {
+              "code": "8.4.10",
+              "description": "describe the absorption of nutrients, i.e., sugars, amino acids, mineral salts, vitamins, glycerol and fatty acids through intestinal villi;",
+              "cognitiveLevel": "U",
+              "sourcePage": 30
+            },
+            {
+              "code": "8.4.11",
+              "description": "describe the transportation of absorbed nutrients to the liver via the hepatic portal vein;",
+              "cognitiveLevel": "U",
+              "sourcePage": 30
+            },
+            {
+              "code": "8.4.12",
+              "description": "describe the functions of liver associated with assimilation of sugars and amino acids, i.e., regulation of blood glucose concentration and deamination of amino acids;",
+              "cognitiveLevel": "U",
+              "sourcePage": 31
+            },
+            {
+              "code": "8.4.13",
+              "description": "describe the role of large intestine in water and electrolyte absorption, formation and storage of faeces, productions of vitamins (e.g. Vitamin K and some B vitamins) and waste processing;",
+              "cognitiveLevel": "U",
+              "sourcePage": 31
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "8.5",
+          "name": "8.5 Disorders of Gut",
+          "slos": [
+            {
+              "code": "8.5.1",
+              "description": "describe the symptoms, causes, treatment and preventions of the disorders of the gut, i.e., [Irritable Bowel Syndrome (IBS) or diarrhoea and constipation], dyspepsia or [(Gastroesophageal Reflux Disease (GERD)], gastroenteritis, ulcer and food poisoning;",
+              "cognitiveLevel": "U",
+              "sourcePage": 31
+            },
+            {
+              "code": "8.5.2",
+              "description": "analyse the impact of malfunctions in specific features or structures of the gastrointestinal tract on digestion and absorption of food.",
+              "cognitiveLevel": "An",
+              "sourcePage": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 9,
+      "name": "Transport",
+      "subtopics": [
+        {
+          "subtopicNumber": "9.1",
+          "name": "9.1 Introduction",
+          "slos": [
+            {
+              "code": "9.1.1",
+              "description": "describe the importance of transport system in living organisms;",
+              "cognitiveLevel": "U",
+              "sourcePage": 32
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "9.2",
+          "name": "9.2 Transport of Water and Ions in Plants and Transpiration",
+          "slos": [
+            {
+              "code": "9.2.1",
+              "description": "explain the structural adaptations of xylem and phloem in vascular plants;",
+              "cognitiveLevel": "U",
+              "sourcePage": 32
+            },
+            {
+              "code": "9.2.2",
+              "description": "illustrate the positions of tissues (xylem, phloem and cortex) as seen in transverse sections (diagrams or photomicrographs) of non-woody dicotyledonous roots and stems;",
+              "cognitiveLevel": "A",
+              "sourcePage": 32
+            },
+            {
+              "code": "9.2.3",
+              "description": "define: a. root pressure b. capillary action c. transpiration and transpiration pull;",
+              "cognitiveLevel": "R",
+              "sourcePage": 32
+            },
+            {
+              "code": "9.2.4",
+              "description": "explain the pathways and processes, i.e., osmosis, capillary action, cohesion and adhesion, transpiration pull to transport water through the root, stem and leaf;",
+              "cognitiveLevel": "U",
+              "sourcePage": 32
+            },
+            {
+              "code": "9.2.5",
+              "description": "describe that water evaporates from the surfaces of the mesophyll cells into air spaces and then diffuses out of the leaves through the stomata as water vapour;",
+              "cognitiveLevel": "U",
+              "sourcePage": 32
+            },
+            {
+              "code": "9.2.6",
+              "description": "describe temperature, light, wind, surface area and humidity as the factors affecting the rate of transpiration;",
+              "cognitiveLevel": "U",
+              "sourcePage": 32
+            },
+            {
+              "code": "9.2.7",
+              "description": "relate wilting with excessive transpiration;",
+              "cognitiveLevel": "U",
+              "sourcePage": 32
+            },
+            {
+              "code": "9.2.8",
+              "description": "describe the significance of transpiration;",
+              "cognitiveLevel": "U",
+              "sourcePage": 32
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "9.3",
+          "name": "9.3 Phloem Translocation",
+          "slos": [
+            {
+              "code": "9.3.1",
+              "description": "define ‘phloem translocation’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 32
+            },
+            {
+              "code": "9.3.2",
+              "description": "describe the terms ‘source’ and ‘sink’ with reference to translocation in plants;",
+              "cognitiveLevel": "U",
+              "sourcePage": 32
+            },
+            {
+              "code": "9.3.3",
+              "description": "explain pressure flow mechanism of translocation in plants;",
+              "cognitiveLevel": "U",
+              "sourcePage": 32
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "9.4",
+          "name": "9.4 Types and Efficiency of Circulatory Systems",
+          "slos": [
+            {
+              "code": "9.4.1",
+              "description": "describe the circulatory system as a system of blood vessels with a pump and valves to ensure one-way flow of blood;",
+              "cognitiveLevel": "U",
+              "sourcePage": 32
+            },
+            {
+              "code": "9.4.2",
+              "description": "relate the circulatory system to other transport systems (e.g. postal systems, plumbing systems) in terms of the delivery of materials (oxygen, nutrients) to and removal of waste products from the body;",
+              "cognitiveLevel": "U",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.4.3",
+              "description": "compare different types of circulatory systems, i.e., open and close circulatory systems, single circuit and double circuit circulations;",
+              "cognitiveLevel": "U",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.4.4",
+              "description": "describe the advantages of a double circulation system over single circulation system;",
+              "cognitiveLevel": "U",
+              "sourcePage": 33
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "9.5",
+          "name": "9.5 Components of Blood and Blood Group Systems",
+          "slos": [
+            {
+              "code": "9.5.1",
+              "description": "describe the components and functions of blood;",
+              "cognitiveLevel": "U",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.5.2",
+              "description": "describe the composition of blood plasma;",
+              "cognitiveLevel": "U",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.5.3",
+              "description": "relate the structure of red blood cells, white blood cells (neutrophils, eosinophils, basophils, monocytes and lymphocytes) and platelets with their functions;",
+              "cognitiveLevel": "U",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.5.4",
+              "description": "explain the blood group systems, i.e., ABO and Rh;",
+              "cognitiveLevel": "U",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.5.5",
+              "description": "determine the risk of incompatibility in blood transfusion due to antigen-antibody reactions;",
+              "cognitiveLevel": "A",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.5.6",
+              "description": "describe symptoms, causes and treatments of anaemia, leukaemia, thalassemia and haemophilia;",
+              "cognitiveLevel": "U",
+              "sourcePage": 33
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "9.6",
+          "name": "9.6 Blood Vessels and Tissue Fluid",
+          "slos": [
+            {
+              "code": "9.6.1",
+              "description": "relate the structure of arteries, veins and capillaries with their respective functions in transporting blood throughout the body;",
+              "cognitiveLevel": "U",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.6.2",
+              "description": "define ‘tissue fluid (interstitial fluid)’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.6.3",
+              "description": "differentiate between tissue fluid and lymph;",
+              "cognitiveLevel": "U",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.6.4",
+              "description": "illustrate the transfer of materials between capillaries and tissue fluid;",
+              "cognitiveLevel": "A",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.6.5",
+              "description": "identify origin, location and target areas of main arteries, i.e., pulmonary arteries, aorta with hepatic artery, renal arteries and femoral arteries;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 33
+            },
+            {
+              "code": "9.6.6",
+              "description": "identify origin, location and target areas of main veins, i.e., pulmonary veins, superior vena cava, inferior vena cava with femoral veins, renal veins and hepatic vein;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 34
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "9.7",
+          "name": "9.7 Human Heart",
+          "slos": [
+            {
+              "code": "9.7.1",
+              "description": "identify the components of the mammalian heart, including the pericardium, muscular wall, septum, left and right ventricles, atria, atrioventricular and semilunar valves and associated blood vessels;",
+              "cognitiveLevel": "U",
+              "sourcePage": 34
+            },
+            {
+              "code": "9.7.2",
+              "description": "explain the functional demands on the heart chambers that lead to differences in their muscle wall thickness, i.e., left and right ventricles, atria and ventricles;",
+              "cognitiveLevel": "U",
+              "sourcePage": 34
+            },
+            {
+              "code": "9.7.3",
+              "description": "explain the functioning of heart in terms of the contraction of atria and ventricles and the action of the valves in a heartbeat;",
+              "cognitiveLevel": "U",
+              "sourcePage": 34
+            },
+            {
+              "code": "9.7.4",
+              "description": "describe the reason for low-pressure circulation to the lungs and a high-pressure circulation to the body tissues;",
+              "cognitiveLevel": "U",
+              "sourcePage": 34
+            },
+            {
+              "code": "9.7.5",
+              "description": "define the terms ‘heartbeat’ and ‘heart/ pulse rate’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 34
+            },
+            {
+              "code": "9.7.6",
+              "description": "evaluate the role of cardiovascular health in determining heart rate response and recovery time after exercise;",
+              "cognitiveLevel": "E",
+              "sourcePage": 34
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "9.8",
+          "name": "9.8 Cardiovascular Disorders",
+          "slos": [
+            {
+              "code": "9.8.1",
+              "description": "differentiate between arteriosclerosis and atherosclerosis;",
+              "cognitiveLevel": "U",
+              "sourcePage": 35
+            },
+            {
+              "code": "9.8.2",
+              "description": "describe that plaque buildup narrows the coronary arteries and restricts blood flow to the heart;",
+              "cognitiveLevel": "U",
+              "sourcePage": 35
+            },
+            {
+              "code": "9.8.3",
+              "description": "describe the causes and symptoms of angina pectoris (chest pain) and myocardial infarction (heart attack);",
+              "cognitiveLevel": "U",
+              "sourcePage": 35
+            },
+            {
+              "code": "9.8.4",
+              "description": "describe the preventive measures (such as dietary changes and regular exercise) and treatment options (like medications, e.g. aspirin and surgical procedures, e.g. angioplasty, coronary artery bypass grafting) for coronary heart diseases;",
+              "cognitiveLevel": "U",
+              "sourcePage": 35
+            },
+            {
+              "code": "9.8.5",
+              "description": "analyse lifestyle factors such as diet, physical activity and smoking that contribute to coronary heart diseases (CHDs);",
+              "cognitiveLevel": "An",
+              "sourcePage": 35
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "9.9",
+          "name": "9.9 Immune system",
+          "slos": [
+            {
+              "code": "9.9.1",
+              "description": "define the terms: ‘pathogen’, ‘antigen’ and ‘antibody’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 35
+            },
+            {
+              "code": "9.9.2",
+              "description": "list the main components of the immune system, i.e., white blood cells, antibodies, and lymph nodes;",
+              "cognitiveLevel": "R",
+              "sourcePage": 35
+            },
+            {
+              "code": "9.9.3",
+              "description": "describe the function of each component (mentioned in SLO 9.9.2) in defending the body against pathogens;",
+              "cognitiveLevel": "U",
+              "sourcePage": 35
+            },
+            {
+              "code": "9.9.4",
+              "description": "list the components of the: first line of defence, i.e., physical barriers (e.g. nasal hair, ear wax, tears and cilia skin, mucous membranes and stomach acid), second line of defence (e.g. phagocytic cells, inflammation and fever) and third line of defence (e.g. B cells, T cells and antibodies);",
+              "cognitiveLevel": "R",
+              "sourcePage": 35
+            },
+            {
+              "code": "9.9.5",
+              "description": "differentiate between innate/ non-specific immunity (first and second lines of defence) and adaptive/ specific immunity (third line of defence) in terms of their: cell types, role in the body, response time, memory and specificity);",
+              "cognitiveLevel": "U",
+              "sourcePage": 35
+            },
+            {
+              "code": "9.9.6",
+              "description": "describe that phagocytic cell (e.g. macrophages, neutrophils, dendritic cells and natural killer cells) ingest and destroy pathogens as part of the second line of defence;",
+              "cognitiveLevel": "U",
+              "sourcePage": 35
+            },
+            {
+              "code": "9.9.7",
+              "description": "describe the production of antibodies by B-cells to neutralise pathogens, the role of phagocytosis in eliminating pathogens and the importance of memory cells in providing long-term immunity;",
+              "cognitiveLevel": "U",
+              "sourcePage": 36
+            },
+            {
+              "code": "9.9.8",
+              "description": "describe that vaccines work to stimulate the immune system and provide protection against specific diseases;",
+              "cognitiveLevel": "U",
+              "sourcePage": 36
+            },
+            {
+              "code": "9.9.9",
+              "description": "differentiate between active (natural and artificial) and passive (natural and artificial) immunity;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 36
+            },
+            {
+              "code": "9.9.10",
+              "description": "explain the steps involved in the process of blood clotting, i.e., vascular spasm (vasoconstriction), platelet plug formation, the coagulation cascade (clot formation) and clot retraction and repair.",
+              "cognitiveLevel": "U",
+              "sourcePage": 36
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "10": [
+    {
+      "unitNumber": 10,
+      "name": "Biostatistics",
+      "subtopics": [
+        {
+          "subtopicNumber": "10.1",
+          "name": "10.1 Introduction",
+          "slos": [
+            {
+              "code": "10.1.1",
+              "description": "define ‘biostatistics’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 37
+            },
+            {
+              "code": "10.1.2",
+              "description": "describe the significance of biostatistics in biological research and data analysis;",
+              "cognitiveLevel": "U",
+              "sourcePage": 37
+            },
+            {
+              "code": "10.1.3",
+              "description": "differentiate between measures of central tendency (mean, median, mode) with their importance in summarising biological data;",
+              "cognitiveLevel": "U",
+              "sourcePage": 37
+            },
+            {
+              "code": "10.1.4",
+              "description": "calculate mean, median and mode for a given set of biological data;",
+              "cognitiveLevel": "A",
+              "sourcePage": 37
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "10.2",
+          "name": "10.2 Data handling",
+          "slos": [
+            {
+              "code": "10.2.1",
+              "description": "analyse trends or patterns in a biological data by plotting graph/ histogram;",
+              "cognitiveLevel": "An",
+              "sourcePage": 37
+            },
+            {
+              "code": "10.2.2",
+              "description": "interpret graphical representations of data, i.e., line graphs, bar charts, histograms and pie charts, used in biological studies;",
+              "cognitiveLevel": "E",
+              "sourcePage": 37
+            },
+            {
+              "code": "10.2.3",
+              "description": "analyse biological data using statistical methods to make meaningful conclusions.",
+              "cognitiveLevel": "An",
+              "sourcePage": 37
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 11,
+      "name": "Cell Cycle",
+      "subtopics": [
+        {
+          "subtopicNumber": "11.1",
+          "name": "11.1 Cell Cycle (Interphase and Mitotic Phase)",
+          "slos": [
+            {
+              "code": "11.1.1",
+              "description": "define ‘cell cycle’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.1.2",
+              "description": "illustrate different phases (interphase and mitotic phase) of cell cycle;",
+              "cognitiveLevel": "A",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.1.3",
+              "description": "describe the key events of different sub-phases of interphase, i.e., G1phase, S phase and G2 phase;",
+              "cognitiveLevel": "U",
+              "sourcePage": 38
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "11.2",
+          "name": "11.2 Mitosis",
+          "slos": [
+            {
+              "code": "11.2.1",
+              "description": "define ‘mitosis’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.2.2",
+              "description": "describe the different stages of mitosis;",
+              "cognitiveLevel": "U",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.2.3",
+              "description": "compare the processes of cytokinesis in animal and plant cells;",
+              "cognitiveLevel": "U",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.2.4",
+              "description": "differentiate between:\na. chromosome and chromatid,\nb. haploid and diploid cells with examples;",
+              "cognitiveLevel": "U",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.2.5",
+              "description": "analyse changes in the amount of DNA during different stages of cell cycle through graph;",
+              "cognitiveLevel": "An",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.2.6",
+              "description": "explain the significance of mitosis in cell replacement, development and growth, regeneration and asexual reproduction in living organisms;",
+              "cognitiveLevel": "U",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.2.7",
+              "description": "predict the consequences of spindle fibre malfunction during prophase on chromosome segregation in later stages of mitosis;",
+              "cognitiveLevel": "E",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.2.8",
+              "description": "describe that errors in the control of mitosis lead to benign tumor and enable cancer cells to invade other tissues and form metastases;",
+              "cognitiveLevel": "U",
+              "sourcePage": 38
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "11.3",
+          "name": "11.3 Meiosis",
+          "slos": [
+            {
+              "code": "11.3.1",
+              "description": "define the terms: ‘meiosis’, ‘homologous chromosomes’, ‘sister and non-sister chromatids’, ‘synapsis’ and ‘crossing over’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.3.2",
+              "description": "describe the stages of meiosis I and meiosis II;",
+              "cognitiveLevel": "U",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.3.3",
+              "description": "illustrate homologous chromosome pairs, haploid/ diploid cells in diagrams or micrographs of different stages of meiosis;",
+              "cognitiveLevel": "A",
+              "sourcePage": 38
+            },
+            {
+              "code": "11.3.4",
+              "description": "describe that meiosis contributes to genetic variation through processes such as crossing over and independent assortment;",
+              "cognitiveLevel": "U",
+              "sourcePage": 39
+            },
+            {
+              "code": "11.3.5",
+              "description": "differentiate between meiosis and mitosis in terms of process, purpose, and outcomes;",
+              "cognitiveLevel": "U",
+              "sourcePage": 39
+            },
+            {
+              "code": "11.3.6",
+              "description": "explain the significance of meiosis in generating genetic diversity, preserving species-specific chromosome numbers and producing gametes;",
+              "cognitiveLevel": "U",
+              "sourcePage": 39
+            },
+            {
+              "code": "11.3.7",
+              "description": "predict the changes in number of chromosomes, chromatids and DNA molecules during different stages of the cell cycle in various conditions, i.e., normal cell division, errors in mitosis or meiosis and exposure to mutagens;",
+              "cognitiveLevel": "E",
+              "sourcePage": 39
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "11.4",
+          "name": "11.4 Necrosis and Apoptosis",
+          "slos": [
+            {
+              "code": "11.4.1",
+              "description": "define ‘apoptosis’ as programmed cell death and ‘necrosis’ as uncontrolled cell death;",
+              "cognitiveLevel": "R",
+              "sourcePage": 39
+            },
+            {
+              "code": "11.4.2",
+              "description": "compare apoptosis and necrosis with respect to their causes and processes.",
+              "cognitiveLevel": "U",
+              "sourcePage": 39
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 12,
+      "name": "Homeostasis",
+      "subtopics": [
+        {
+          "subtopicNumber": "12.1",
+          "name": "12.1 Introduction",
+          "slos": [
+            {
+              "code": "12.1.1",
+              "description": "define ‘homeostasis’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 40
+            },
+            {
+              "code": "12.1.2",
+              "description": "explain the importance of homeostasis;",
+              "cognitiveLevel": "U",
+              "sourcePage": 40
+            },
+            {
+              "code": "12.1.3",
+              "description": "describe the key components of a negative feedback loop, i.e., stimulus, sensor (receptor), control centre and effector;",
+              "cognitiveLevel": "U",
+              "sourcePage": 40
+            },
+            {
+              "code": "12.1.4",
+              "description": "explain how homeostasis works in terms of negative feedback mechanisms;",
+              "cognitiveLevel": "U",
+              "sourcePage": 40
+            },
+            {
+              "code": "12.1.5",
+              "description": "describe the three main aspects of homeostasis, i.e., osmoregulation, thermoregulation and excretion;",
+              "cognitiveLevel": "U",
+              "sourcePage": 40
+            },
+            {
+              "code": "12.1.6",
+              "description": "differentiate between: a. excretion and secretion,\nb. egestion and excretion;",
+              "cognitiveLevel": "U",
+              "sourcePage": 40
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "12.2",
+          "name": "12.2 Homeostasis in Plants",
+          "slos": [
+            {
+              "code": "12.2.1",
+              "description": "describe the mechanism of excretion in plants for carbon dioxide, water, oxygen, latex, resins and gums;",
+              "cognitiveLevel": "U",
+              "sourcePage": 40
+            },
+            {
+              "code": "12.2.2",
+              "description": "compare the adaptations of hydrophytes, halophytes, mesophytes and xerophytes in relation to their osmotic adjustments and environmental conditions;",
+              "cognitiveLevel": "U",
+              "sourcePage": 40
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "12.3",
+          "name": "12.3 Homeostasis in Human Beings",
+          "slos": [
+            {
+              "code": "12.3.1",
+              "description": "identify skin, lungs and kidneys as major organs involved in homeostasis;",
+              "cognitiveLevel": "U",
+              "sourcePage": 40
+            },
+            {
+              "code": "12.3.2",
+              "description": "relate the internal structure of skin with its function to regulate body temperature;",
+              "cognitiveLevel": "U",
+              "sourcePage": 40
+            },
+            {
+              "code": "12.3.3",
+              "description": "explain temperature regulation as an example of negative feedback mechanisms in the human body;",
+              "cognitiveLevel": "U",
+              "sourcePage": 40
+            },
+            {
+              "code": "12.3.4",
+              "description": "describe the role of lungs in keeping carbon dioxide concentration down to a certain level;",
+              "cognitiveLevel": "U",
+              "sourcePage": 40
+            },
+            {
+              "code": "12.3.5",
+              "description": "explain the negative feedback loop of antidiuretic hormone (ADH)/ vasopressin in osmoregulation, including the roles of osmoreceptors as sensors, hypothalamus as the control centre and kidneys as effectors;",
+              "cognitiveLevel": "U",
+              "sourcePage": 41
+            },
+            {
+              "code": "12.3.6",
+              "description": "describe homeostatic control of blood glucose level;",
+              "cognitiveLevel": "U",
+              "sourcePage": 41
+            },
+            {
+              "code": "12.3.7",
+              "description": "analyse trends in blood glucose fluctuations due to diet and physical activity;",
+              "cognitiveLevel": "An",
+              "sourcePage": 41
+            },
+            {
+              "code": "12.3.8",
+              "description": "identify normal and abnormal blood glucose ranges for fasting, before meals and after meals;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 41
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "12.4",
+          "name": "12.4 Urinary System of Human Beings",
+          "slos": [
+            {
+              "code": "12.4.1",
+              "description": "describe the functions of different organs of urinary system;",
+              "cognitiveLevel": "U",
+              "sourcePage": 41
+            },
+            {
+              "code": "12.4.2",
+              "description": "describe the internal structure of the human kidney;",
+              "cognitiveLevel": "U",
+              "sourcePage": 41
+            },
+            {
+              "code": "12.4.3",
+              "description": "define ‘nephron’ as an excretory unit of kidney;",
+              "cognitiveLevel": "R",
+              "sourcePage": 41
+            },
+            {
+              "code": "12.4.4",
+              "description": "explain the structure and function of following parts of nephron:\na. renal or malpighian corpuscle (Bowman’s capsule and glomerulus),\nb. proximal convoluted tube,\nc. loop of Henle,\nd. distal convoluted tube,\ne. collecting duct,\nf. associated blood vessels;",
+              "cognitiveLevel": "U",
+              "sourcePage": 41
+            },
+            {
+              "code": "12.4.5",
+              "description": "describe the processes involved in urine formation, i.e., ultrafiltration, reabsorption and secretion;",
+              "cognitiveLevel": "U",
+              "sourcePage": 41
+            },
+            {
+              "code": "12.4.6",
+              "description": "predict the consequences if a specific part of the nephron fails to function properly;",
+              "cognitiveLevel": "E",
+              "sourcePage": 41
+            },
+            {
+              "code": "12.4.7",
+              "description": "analyse the impact of functional impairments of nephron using the case study of glomerulonephritis and diabetic nephropathy;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 41
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "12.5",
+          "name": "12.5 Disorders of Kidney",
+          "slos": [
+            {
+              "code": "12.5.1",
+              "description": "identify the causes of kidney stone;",
+              "cognitiveLevel": "U",
+              "sourcePage": 42
+            },
+            {
+              "code": "12.5.2",
+              "description": "identify lithotripsy and surgery as methods to remove kidney stones;",
+              "cognitiveLevel": "U",
+              "sourcePage": 42
+            },
+            {
+              "code": "12.5.3",
+              "description": "describe the general procedure of lithotripsy, including patient’s preparation, the use of shock waves or laser technology and the role of imaging techniques in targeting stones;",
+              "cognitiveLevel": "U",
+              "sourcePage": 42
+            },
+            {
+              "code": "12.5.4",
+              "description": "describe the causes of kidney failure;",
+              "cognitiveLevel": "U",
+              "sourcePage": 42
+            },
+            {
+              "code": "12.5.5",
+              "description": "explain haemodialysis (kidney machine) as a treatment for kidney failure;",
+              "cognitiveLevel": "U",
+              "sourcePage": 42
+            },
+            {
+              "code": "12.5.6",
+              "description": "analyse the working mechanism of a dialysis machine, including the roles of the dialyser, dialysate and semi- permeable membrane in filtering the blood;",
+              "cognitiveLevel": "An",
+              "sourcePage": 42
+            },
+            {
+              "code": "12.5.7",
+              "description": "analyse the effectiveness and limitations of dialysis and kidney transplantation as treatment options for kidney failure.",
+              "cognitiveLevel": "FA",
+              "sourcePage": 42
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 13,
+      "name": "Coordination and Control",
+      "subtopics": [
+        {
+          "subtopicNumber": "13.1",
+          "name": "13.1 Introduction",
+          "slos": [
+            {
+              "code": "13.1.1",
+              "description": "define the term ‘coordination’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 43
+            },
+            {
+              "code": "13.1.2",
+              "description": "explain the significance of coordination in living organisms;",
+              "cognitiveLevel": "U",
+              "sourcePage": 43
+            },
+            {
+              "code": "13.1.3",
+              "description": "identify the two main systems involved in coordination and control: the nervous system and the endocrine system;",
+              "cognitiveLevel": "U",
+              "sourcePage": 43
+            },
+            {
+              "code": "13.1.4",
+              "description": "illustrate the process and main components of a coordinated action (response activity) as stimulus, receptor, coordinator, effector and response;",
+              "cognitiveLevel": "A",
+              "sourcePage": 43
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "13.2",
+          "name": "13.2 Types of Coordination (Nervous and Chemical Coordination)",
+          "slos": [
+            {
+              "code": "13.2.1",
+              "description": "differentiate between two main types of coordination in living organisms, i.e., nervous (electrical) and chemical (hormonal);",
+              "cognitiveLevel": "U",
+              "sourcePage": 43
+            },
+            {
+              "code": "13.2.2",
+              "description": "classify the human nervous system in terms of:\na. the central nervous system (CNS) consisting of the brain and the spinal cord,\nb. the peripheral nervous system (PNS) consisting of the nerves outside of the brain and spinal cord, i.e., the nerves consisting of the sensory and motor division: I. the motor division consisting of the autonomic and somatic nervous system, II. the autonomic nervous system consisting of the sympathetic and parasympathetic nervous system;",
+              "cognitiveLevel": "U",
+              "sourcePage": 43
+            },
+            {
+              "code": "13.2.3",
+              "description": "differentiate between: a. autonomic and somatic nervous system b. sympathetic and parasympathetic nervous system;",
+              "cognitiveLevel": "U",
+              "sourcePage": 43
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "13.3",
+          "name": "13.3 Human Nervous System",
+          "slos": [
+            {
+              "code": "13.3.1",
+              "description": "describe the key structural components of a neuron with their respective functions, i.e., neurilemma, cell body (soma), dendrites, axon, myelin sheath, nodes of Ranvier and Schwann cells;",
+              "cognitiveLevel": "U",
+              "sourcePage": 43
+            },
+            {
+              "code": "13.3.2",
+              "description": "differentiate between the structure and functions of sensory, relay (intermediate) and motor neurons;",
+              "cognitiveLevel": "U",
+              "sourcePage": 43
+            },
+            {
+              "code": "13.3.3",
+              "description": "differentiate between neuron, nerve fibre and nerve;",
+              "cognitiveLevel": "U",
+              "sourcePage": 43
+            },
+            {
+              "code": "13.3.4",
+              "description": "classify nerves as sensory, motor and mixed nerves;",
+              "cognitiveLevel": "U",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.5",
+              "description": "identify parts of the brain as forebrain, midbrain and hindbrain;",
+              "cognitiveLevel": "U",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.6",
+              "description": "explain functions of the different parts of brain, i.e., cerebrum, thalamus, hypothalamus, pituitary gland, midbrain (optic lobes), cerebellum, medulla oblongata and pons;",
+              "cognitiveLevel": "U",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.7",
+              "description": "evaluate the effects of injuries or diseases on the functions of specific brain areas;",
+              "cognitiveLevel": "E",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.8",
+              "description": "differentiate between cross-sectional views of brain and spinal cord with reference to white and grey matter;",
+              "cognitiveLevel": "U",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.9",
+              "description": "identify the structures visible in the cross-sectional view of spinal cord, i.e., white and grey matter, spinal nerves, dorsal root, ventral root, central canal and the associated neurons;",
+              "cognitiveLevel": "U",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.10",
+              "description": "rectify the diagram of cross-section of spinal cord for common mistakes such as misplaced structures or incorrect labellings;",
+              "cognitiveLevel": "A",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.11",
+              "description": "differentiate between voluntary and involuntary actions;",
+              "cognitiveLevel": "U",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.12",
+              "description": "define ‘reflex action’ and ‘reflex arc’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.13",
+              "description": "trace the sequence of events in a reflex arc during common reflex actions;",
+              "cognitiveLevel": "U",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.14",
+              "description": "explain the significance of reflex actions in everyday safety;",
+              "cognitiveLevel": "U",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.15",
+              "description": "state that nerve impulses are electrical signals that travel across neurons;",
+              "cognitiveLevel": "R",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.16",
+              "description": "define ‘neurotransmitters’ with examples, i.e., dopamine, acetylcholine, norepinephrine and epinephrine;",
+              "cognitiveLevel": "R",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.17",
+              "description": "describe synapse as a junction between two neurons or a neuron and a target or effector cell such as a muscle cell;",
+              "cognitiveLevel": "U",
+              "sourcePage": 44
+            },
+            {
+              "code": "13.3.18",
+              "description": "describe the key components of a synapse, i.e., neurotransmitter, presynaptic neuron, synaptic cleft and postsynaptic neuron;",
+              "cognitiveLevel": "U",
+              "sourcePage": 44
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "13.4",
+          "name": "13.4 Human Sensory Organs (Ear and Eye)",
+          "slos": [
+            {
+              "code": "13.4.1",
+              "description": "explain the structure and functions of each part of human auditory (ear) and visual (eye) receptors;",
+              "cognitiveLevel": "U",
+              "sourcePage": 45
+            },
+            {
+              "code": "13.4.2",
+              "description": "differentiate between pupil reflex in dim and bright light;",
+              "cognitiveLevel": "U",
+              "sourcePage": 45
+            },
+            {
+              "code": "13.4.3",
+              "description": "relate image formation in the human eye with image formation in the dark chamber used by Ibn-al-Haitham in his experiment;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 45
+            },
+            {
+              "code": "13.4.4",
+              "description": "explain accommodation to view near and distant objects in terms of the contraction and relaxation of the ciliary muscles, tension in the suspensory ligaments, shape of the lens and refraction of light;",
+              "cognitiveLevel": "U",
+              "sourcePage": 45
+            },
+            {
+              "code": "13.4.5",
+              "description": "differentiate between defects of eye, i.e., short sightedness and long sightedness;",
+              "cognitiveLevel": "U",
+              "sourcePage": 45
+            },
+            {
+              "code": "13.4.6",
+              "description": "illustrate the treatment of short and long sightedness using ray diagrams;",
+              "cognitiveLevel": "A",
+              "sourcePage": 45
+            },
+            {
+              "code": "13.4.7",
+              "description": "differentiate between rod cells and cone cells based on their structure, function and role in vision;",
+              "cognitiveLevel": "U",
+              "sourcePage": 45
+            },
+            {
+              "code": "13.4.8",
+              "description": "describe the role of vitamin A in vision and the impact of its deficiency on retina;",
+              "cognitiveLevel": "U",
+              "sourcePage": 45
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "13.5",
+          "name": "13.5 Endocrine System",
+          "slos": [
+            {
+              "code": "13.5.1",
+              "description": "define the terms ‘hormone’ and ‘endocrine system’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 45
+            },
+            {
+              "code": "13.5.2",
+              "description": "describe the location and functions of major glands of the endocrine system, i.e., pituitary, parathyroid, thyroid, pancreas, adrenal, testes and ovary;",
+              "cognitiveLevel": "U",
+              "sourcePage": 45
+            },
+            {
+              "code": "13.5.3",
+              "description": "assess the problems associated with the hyper or hypo secretion of somatotrophin, thyroid-stimulating hormone, vasopressin/ ADH, thyroxin, calcitonin, adrenaline, insulin, glucagon, testosterone, estrogen and progesterone;",
+              "cognitiveLevel": "E",
+              "sourcePage": 45
+            },
+            {
+              "code": "13.5.4",
+              "description": "describe diabetes and its subtypes (type 1 and type II) in terms of insulin production and utilisation, affected age group and treatment strategies;",
+              "cognitiveLevel": "U",
+              "sourcePage": 45
+            },
+            {
+              "code": "13.5.5",
+              "description": "explain the roles of adrenaline (epinephrine) during emergency (fight or flight) and acetylcholine during rest and digest (parasympathetic nervous system) conditions;",
+              "cognitiveLevel": "U",
+              "sourcePage": 46
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "13.6",
+          "name": "13.6 Nervous Disorders",
+          "slos": [
+            {
+              "code": "13.6.1",
+              "description": "explain the causes, symptoms and treatment of paralysis and epilepsy.",
+              "cognitiveLevel": "U",
+              "sourcePage": 46
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 14,
+      "name": "Support and Movement",
+      "subtopics": [
+        {
+          "subtopicNumber": "14.1",
+          "name": "14.1 Human Skeleton (Axial and Appendicular Skeleton)",
+          "slos": [
+            {
+              "code": "14.1.1",
+              "description": "define ‘skeleton’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 47
+            },
+            {
+              "code": "14.1.2",
+              "description": "explain the functions of skeleton in human body;",
+              "cognitiveLevel": "U",
+              "sourcePage": 47
+            },
+            {
+              "code": "14.1.3",
+              "description": "relate the main components of the axial skeleton (skull, middle ear ossicles, hyoid bone, vertebral column and ribcage) and the appendicular skeleton (upper limbs, lower limbs, pectoral girdle and pelvic girdle) with their functions;",
+              "cognitiveLevel": "U",
+              "sourcePage": 47
+            },
+            {
+              "code": "14.1.4",
+              "description": "differentiate between cartilage and bone;",
+              "cognitiveLevel": "U",
+              "sourcePage": 47
+            },
+            {
+              "code": "14.1.5",
+              "description": "differentiate between tendons and ligaments in terms of their function and flexibility;",
+              "cognitiveLevel": "U",
+              "sourcePage": 47
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "14.2",
+          "name": "14.2 Types of Joints",
+          "slos": [
+            {
+              "code": "14.2.1",
+              "description": "define ‘joint/ articulation’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 47
+            },
+            {
+              "code": "14.2.2",
+              "description": "differentiate among different types of joints (i.e., immoveable, slightly moveable and freely moveable joints) with examples;",
+              "cognitiveLevel": "U",
+              "sourcePage": 47
+            },
+            {
+              "code": "14.2.3",
+              "description": "compare hinge joints and ball-and-socket joints on the basis of their locations and working;",
+              "cognitiveLevel": "U",
+              "sourcePage": 47
+            },
+            {
+              "code": "14.2.4",
+              "description": "relate the key structures of hinge and ball-and-socket joints, i.e., joint capsule, ligaments, tendons, articular cartilage, synovial fluid and synovial membrane with their functions;",
+              "cognitiveLevel": "U",
+              "sourcePage": 47
+            },
+            {
+              "code": "14.2.5",
+              "description": "analyse that injuries to hinge and ball-and-socket joints can limit movement;",
+              "cognitiveLevel": "An",
+              "sourcePage": 47
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "14.3",
+          "name": "14.3 Antagonistic Muscles",
+          "slos": [
+            {
+              "code": "14.3.1",
+              "description": "differentiate between locomotion and movement;",
+              "cognitiveLevel": "U",
+              "sourcePage": 47
+            },
+            {
+              "code": "14.3.2",
+              "description": "define ‘antagonism’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 47
+            },
+            {
+              "code": "14.3.3",
+              "description": "describe action of flexors (biceps) and extensors (triceps) as a pair of opposing (antagonistic) muscles;",
+              "cognitiveLevel": "U",
+              "sourcePage": 47
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "14.4",
+          "name": "14.4 Disorders of Skeletal System",
+          "slos": [
+            {
+              "code": "14.4.1",
+              "description": "describe osteoporosis as a condition characterised by weakened bones and increased risk of fractures and arthritis as inflammation of one or more joints, causing pain and stiffness;",
+              "cognitiveLevel": "U",
+              "sourcePage": 48
+            },
+            {
+              "code": "14.4.2",
+              "description": "assess the causes, common symptoms, risk factors and treatments of osteoporosis and arthritis;",
+              "cognitiveLevel": "E",
+              "sourcePage": 48
+            },
+            {
+              "code": "14.4.3",
+              "description": "evaluate the impact of nutrition (e.g. calcium, vitamin D) on bone health and the role of hydration and collagen in maintaining cartilage function;",
+              "cognitiveLevel": "E",
+              "sourcePage": 48
+            },
+            {
+              "code": "14.4.4",
+              "description": "analyse that exercise improves joint stability and reduces the likelihood of injuries (e.g. sprains, strains, fractures) by strengthening muscles and ligaments around joints.",
+              "cognitiveLevel": "FA",
+              "sourcePage": 48
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 15,
+      "name": "Reproduction",
+      "subtopics": [
+        {
+          "subtopicNumber": "15.1",
+          "name": "15.1 Introduction",
+          "slos": [
+            {
+              "code": "15.1.1",
+              "description": "state the importance of reproduction;",
+              "cognitiveLevel": "R",
+              "sourcePage": 49
+            },
+            {
+              "code": "15.1.2",
+              "description": "differentiate between asexual and sexual reproduction;",
+              "cognitiveLevel": "U",
+              "sourcePage": 49
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "15.2",
+          "name": "15.2 Asexual Reproduction in Bacteria, Protists, Fungi and Plants",
+          "slos": [
+            {
+              "code": "15.2.1",
+              "description": "describe different types of asexual reproduction, i.e., binary fission, multiple fission, budding, fragmentation, spore formation, parthenogenesis, apomixis and vegetative propagation with examples;",
+              "cognitiveLevel": "U",
+              "sourcePage": 49
+            },
+            {
+              "code": "15.2.2",
+              "description": "distinguish between natural and artificial vegetative propagation;",
+              "cognitiveLevel": "U",
+              "sourcePage": 49
+            },
+            {
+              "code": "15.2.3",
+              "description": "explain natural vegetative propagation in plants through underground stems (i.e., runners, bulbs, rhizome, tuber and suckers) and leaves (e.g. Bryophyllum);",
+              "cognitiveLevel": "U",
+              "sourcePage": 49
+            },
+            {
+              "code": "15.2.4",
+              "description": "explain methods of artificial vegetative propagation (i.e., stem cutting, layering, grafting and tissue culture);",
+              "cognitiveLevel": "U",
+              "sourcePage": 49
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "15.3",
+          "name": "15.3 Sexual Reproduction in Flowering Plants",
+          "slos": [
+            {
+              "code": "15.3.1",
+              "description": "describe structure and function of each whorl of a flower;",
+              "cognitiveLevel": "U",
+              "sourcePage": 49
+            },
+            {
+              "code": "15.3.2",
+              "description": "differentiate between self and cross pollination;",
+              "cognitiveLevel": "U",
+              "sourcePage": 49
+            },
+            {
+              "code": "15.3.3",
+              "description": "assess the role of biotic and abiotic agents (such as wind and insects) in aiding cross-pollination and their potential response to environmental changes;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 49
+            },
+            {
+              "code": "15.3.4",
+              "description": "explain the events that occur during the life cycle of a flowering plant;",
+              "cognitiveLevel": "U",
+              "sourcePage": 49
+            },
+            {
+              "code": "15.3.5",
+              "description": "evaluate the role of meiosis and mitosis in the formation of the male and female gametophytes (pollen grains and embryo sac);",
+              "cognitiveLevel": "E",
+              "sourcePage": 49
+            },
+            {
+              "code": "15.3.6",
+              "description": "differentiate between the structural adaptations of wind-pollinated and insect-pollinated flowers;",
+              "cognitiveLevel": "U",
+              "sourcePage": 49
+            },
+            {
+              "code": "15.3.7",
+              "description": "analyse the impact of compromised structural adaptations in insect-pollinated and wind-pollinated flowers on the efficiency of pollen dispersal and the likelihood of successful pollination;",
+              "cognitiveLevel": "An",
+              "sourcePage": 49
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "15.4",
+          "name": "15.4 Germination of Seed",
+          "slos": [
+            {
+              "code": "15.4.1",
+              "description": "differentiate between structure of monocot and dicot seeds;",
+              "cognitiveLevel": "U",
+              "sourcePage": 50
+            },
+            {
+              "code": "15.4.2",
+              "description": "differentiate between epigeal and hypogeal germination;",
+              "cognitiveLevel": "U",
+              "sourcePage": 50
+            },
+            {
+              "code": "15.4.3",
+              "description": "describe conditions necessary for germination of seeds;",
+              "cognitiveLevel": "U",
+              "sourcePage": 50
+            },
+            {
+              "code": "15.4.4",
+              "description": "analyse the outcomes of seeds exposed to varying conditions, i.e., stressful environments or conditions outside the optimal range;",
+              "cognitiveLevel": "An",
+              "sourcePage": 50
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "15.5",
+          "name": "15.5 Reproduction in Animals (Asexual and Sexual)",
+          "slos": [
+            {
+              "code": "15.5.1",
+              "description": "describe methods of asexual reproduction in animals, i.e., binary and multiple fission, budding, fragmentation and parthenogenesis with examples;",
+              "cognitiveLevel": "U",
+              "sourcePage": 50
+            },
+            {
+              "code": "15.5.2",
+              "description": "define ‘fertilisation’ and ‘gametogenesis’ (spermatogenesis and oogenesis);",
+              "cognitiveLevel": "R",
+              "sourcePage": 50
+            },
+            {
+              "code": "15.5.3",
+              "description": "differentiate between external and internal fertilisation;",
+              "cognitiveLevel": "U",
+              "sourcePage": 50
+            },
+            {
+              "code": "15.5.4",
+              "description": "explain male and female reproductive systems of rabbit;",
+              "cognitiveLevel": "U",
+              "sourcePage": 50
+            },
+            {
+              "code": "15.5.5",
+              "description": "compare processes of gametogenesis in male and female rabbit;",
+              "cognitiveLevel": "U",
+              "sourcePage": 50
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "15.6",
+          "name": "15.6 Sexually Transmitted Diseases (STDs)",
+          "slos": [
+            {
+              "code": "15.6.1",
+              "description": "explain the cause, symptoms and prevention of Acquired Immunodeficiency Syndrome (AIDS).",
+              "cognitiveLevel": "U",
+              "sourcePage": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 16,
+      "name": "Inheritance",
+      "subtopics": [
+        {
+          "subtopicNumber": "16.1",
+          "name": "16.1 Introduction",
+          "slos": [
+            {
+              "code": "16.1.1",
+              "description": "define ‘genetics’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 51
+            },
+            {
+              "code": "16.1.2",
+              "description": "describe genes as the units of inheritance;",
+              "cognitiveLevel": "U",
+              "sourcePage": 51
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "16.2",
+          "name": "16.2 Chromosomes, DNA and Genes",
+          "slos": [
+            {
+              "code": "16.2.1",
+              "description": "describe the chemical composition of a chromosome;",
+              "cognitiveLevel": "U",
+              "sourcePage": 51
+            },
+            {
+              "code": "16.2.2",
+              "description": "sketch the general structure of a nucleotide;",
+              "cognitiveLevel": "A",
+              "sourcePage": 51
+            },
+            {
+              "code": "16.2.3",
+              "description": "illustrate the double helical structure of deoxyribonucleic acid (DNA);",
+              "cognitiveLevel": "A",
+              "sourcePage": 51
+            },
+            {
+              "code": "16.2.4",
+              "description": "determine the percentages of each nitrogenous base in a specified DNA fragment, using the principle of complementary base pairing (Chargaff’s rule);",
+              "cognitiveLevel": "E",
+              "sourcePage": 51
+            },
+            {
+              "code": "16.2.4",
+              "description": "differentiate between a gene and an allele;",
+              "cognitiveLevel": "U",
+              "sourcePage": 51
+            },
+            {
+              "code": "16.2.5",
+              "description": "describe the process of DNA replication, including the key steps involved such as unwinding of the DNA, adding of nucleotides and the formation of two identical DNA molecules;",
+              "cognitiveLevel": "U",
+              "sourcePage": 51
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "16.3",
+          "name": "16.3 Central Dogma of Protein synthesis",
+          "slos": [
+            {
+              "code": "16.3.1",
+              "description": "describe the structure of RNA;",
+              "cognitiveLevel": "U",
+              "sourcePage": 51
+            },
+            {
+              "code": "16.3.2",
+              "description": "differentiate between RNA and DNA;",
+              "cognitiveLevel": "U",
+              "sourcePage": 51
+            },
+            {
+              "code": "16.3.3",
+              "description": "compare the types of RNA, i.e., messenger RNA (mRNA), ribosomal RNA (rRNA) and transfer RNA (tRNA);",
+              "cognitiveLevel": "U",
+              "sourcePage": 51
+            },
+            {
+              "code": "16.3.4",
+              "description": "differentiate between codons and anticodons;",
+              "cognitiveLevel": "U",
+              "sourcePage": 51
+            },
+            {
+              "code": "16.3.5",
+              "description": "describe the processes of transcription and translation;",
+              "cognitiveLevel": "U",
+              "sourcePage": 51
+            },
+            {
+              "code": "16.3.6",
+              "description": "convert the mRNA sequence (codons) to DNA and tRNA anticodons and vice versa;",
+              "cognitiveLevel": "A",
+              "sourcePage": 51
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "16.4",
+          "name": "16.4 Mendel’s Law of Segregation and Independent Assortment",
+          "slos": [
+            {
+              "code": "16.4.1",
+              "description": "define the terms: dominant, recessive, phenotype, genotype, homozygous, heterozygous, parental generation (P1), filial one and second (F1 and F2) generations and pedigree;",
+              "cognitiveLevel": "R",
+              "sourcePage": 52
+            },
+            {
+              "code": "16.4.2",
+              "description": "state Mendel’s Law of Segregation and Law of Independent Assortment;",
+              "cognitiveLevel": "R",
+              "sourcePage": 52
+            },
+            {
+              "code": "16.4.3",
+              "description": "determine that 3:1 monohybrid F2 phenotypic ratio is evidence of segregation of alleles;",
+              "cognitiveLevel": "A",
+              "sourcePage": 52
+            },
+            {
+              "code": "16.4.4",
+              "description": "determine that 9:3:3:1 dihybrid F-2 phenotypic ratio is evidence of independent assortment;",
+              "cognitiveLevel": "A",
+              "sourcePage": 52
+            },
+            {
+              "code": "16.4.5",
+              "description": "determine the genotypic and phenotypic ratios of co-dominance using examples (e.g. ABO blood group system, roan coat colour in animals, checkered chicken, variegated flower and sickle cell anaemia);",
+              "cognitiveLevel": "A",
+              "sourcePage": 52
+            },
+            {
+              "code": "16.4.6",
+              "description": "determine the genotypic and phenotypic ratios of incomplete dominance using examples (e.g. flower colour in Japanese 4 O’ clock plant, hair texture, skin colour, hair colour, eye colour in animals and humans);",
+              "cognitiveLevel": "A",
+              "sourcePage": 52
+            },
+            {
+              "code": "16.4.7",
+              "description": "predict the phenotypic and genotypic outcomes of offspring based on the genotype of parents and ancestral lineage using pedigree charts;",
+              "cognitiveLevel": "E",
+              "sourcePage": 52
+            },
+            {
+              "code": "16.4.8",
+              "description": "define ‘autosomes’ and ‘sex chromosomes’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 52
+            },
+            {
+              "code": "16.4.9",
+              "description": "describe the roles of the X and Y chromosomes in gender determination in humans;",
+              "cognitiveLevel": "U",
+              "sourcePage": 52
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "16.5",
+          "name": "16.5 Variation and Evolution",
+          "slos": [
+            {
+              "code": "16.5.1",
+              "description": "define ‘species’, ‘speciation’ and ‘evolution’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 52
+            },
+            {
+              "code": "16.5.2",
+              "description": "describe sources of variation, i.e., mutation, crossing over, environmental factors, independent assortment of chromosomes and fertilisation that leads to speciation and evolution;",
+              "cognitiveLevel": "U",
+              "sourcePage": 52
+            },
+            {
+              "code": "16.5.3",
+              "description": "differentiate between continuous and discontinuous variation;",
+              "cognitiveLevel": "U",
+              "sourcePage": 52
+            },
+            {
+              "code": "16.5.4",
+              "description": "construct histograms using biostatistical methods to show continuous variation in different human traits (i.e., height, weight, skin/ eye/ hair colour, intelligence, finger length and foot size);",
+              "cognitiveLevel": "An",
+              "sourcePage": 53
+            },
+            {
+              "code": "16.5.5",
+              "description": "analyse frequencies of discontinuous variation in categorical traits across human populations, i.e., blood groups, earlobe attachment, polydactyly/ extra fingers or toes, tongue rolling, cleft chin, presence or absence of dimples, gender, widow’s peak and Hitchhiker’s thumb by using bar chart and pie chart;",
+              "cognitiveLevel": "An",
+              "sourcePage": 53
+            },
+            {
+              "code": "16.5.6",
+              "description": "explain the observations Darwin made during his voyage on HMS Beagle;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 53
+            },
+            {
+              "code": "16.5.7",
+              "description": "explain the main points of the theory of natural selection (Darwinism), i.e., over production, struggle for existence, heritable variation and survival of the fittest;",
+              "cognitiveLevel": "U",
+              "sourcePage": 53
+            },
+            {
+              "code": "16.5.8",
+              "description": "describe artificial selection as a means of improvement of yield in economically important plants and animals;",
+              "cognitiveLevel": "U",
+              "sourcePage": 53
+            },
+            {
+              "code": "16.5.9",
+              "description": "describe evidence of evolution from palaeontology (fossil record), comparative anatomy (homologous and analogous structures, vestigial structures) and selective breeding.",
+              "cognitiveLevel": "U",
+              "sourcePage": 53
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 17,
+      "name": "Man and His Environment",
+      "subtopics": [
+        {
+          "subtopicNumber": "17.1",
+          "name": "17.1 The Ecosystem: Levels of Ecological Organisation; Components",
+          "slos": [
+            {
+              "code": "17.1.1",
+              "description": "describe the levels of ecological organisation, i.e., species, population, community, habitat, ecosystem and biosphere with examples;",
+              "cognitiveLevel": "U",
+              "sourcePage": 54
+            },
+            {
+              "code": "17.1.2",
+              "description": "differentiate between biotic and abiotic components of the ecosystem with examples;",
+              "cognitiveLevel": "U",
+              "sourcePage": 54
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "17.2",
+          "name": "17.2 Flow of Energy in the Ecosystem",
+          "slos": [
+            {
+              "code": "17.2.1",
+              "description": "describe trophic levels (producer, primary consumer, secondary consumer and tertiary consumer) of an ecosystem;",
+              "cognitiveLevel": "U",
+              "sourcePage": 54
+            },
+            {
+              "code": "17.2.2",
+              "description": "compare flow of materials (cyclic) and flow of energy (non- cyclic) in the ecosystem;",
+              "cognitiveLevel": "U",
+              "sourcePage": 54
+            },
+            {
+              "code": "17.2.3",
+              "description": "construct food chains and food webs of different ecosystems;",
+              "cognitiveLevel": "An",
+              "sourcePage": 54
+            },
+            {
+              "code": "17.2.4",
+              "description": "infer that the transfer of energy from one trophic level to another is inefficient;",
+              "cognitiveLevel": "An",
+              "sourcePage": 54
+            },
+            {
+              "code": "17.2.5",
+              "description": "analyse the impact of an increase or decrease in the population of a certain species on other species’ population within a food web;",
+              "cognitiveLevel": "An",
+              "sourcePage": 54
+            },
+            {
+              "code": "17.2.6",
+              "description": "illustrate pyramids of numbers, energy and biomass for the given food chains;",
+              "cognitiveLevel": "A",
+              "sourcePage": 54
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "17.3",
+          "name": "17.3 Biogeochemical Cycles (Carbon and Nitrogen Cycle)",
+          "slos": [
+            {
+              "code": "17.3.1",
+              "description": "illustrate different stages of carbon cycle and nitrogen cycle;",
+              "cognitiveLevel": "A",
+              "sourcePage": 54
+            },
+            {
+              "code": "17.3.2",
+              "description": "relate biogeochemical cycles with flow of energy and ecological balance;",
+              "cognitiveLevel": "U",
+              "sourcePage": 54
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "17.4",
+          "name": "17.4 Interactions in the Ecosystem (Competition, Predation, Symbiosis)",
+          "slos": [
+            {
+              "code": "17.4.1",
+              "description": "define ‘population growth’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 54
+            },
+            {
+              "code": "17.4.2",
+              "description": "analyse the factors affecting the rate of population growth including competition, predation, symbiosis (parasitism, mutualism, commensalisms);",
+              "cognitiveLevel": "An",
+              "sourcePage": 54
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "17.5",
+          "name": "17.5 Human Impact on the Environment",
+          "slos": [
+            {
+              "code": "17.5.1",
+              "description": "explain that anthropogenic (human activities) in the environment, i.e., deforestation, pollution, overuse of fossil fuels, agricultural practices, introduction of new species, overhunting, mining and urbanisation can disrupt an ecosystem and threaten the survival of some species;",
+              "cognitiveLevel": "U",
+              "sourcePage": 55
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "17.6",
+          "name": "17.6 Pollution, its Consequences and Control",
+          "slos": [
+            {
+              "code": "17.6.1",
+              "description": "explain causes of air, water and land pollution;",
+              "cognitiveLevel": "U",
+              "sourcePage": 55
+            },
+            {
+              "code": "17.6.2",
+              "description": "suggest possible actions to control each kind of pollution;",
+              "cognitiveLevel": "E",
+              "sourcePage": 55
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "17.7",
+          "name": "17.7 Conservation of Resources",
+          "slos": [
+            {
+              "code": "17.7.1",
+              "description": "apply the concept of environmental care through acting upon the principle of ‘The 3Rs’ (reduce, reuse and recycle);",
+              "cognitiveLevel": "A",
+              "sourcePage": 55
+            },
+            {
+              "code": "17.7.2",
+              "description": "evaluate the effectiveness of a designed solution for reducing the impact of human activities on the environment.",
+              "cognitiveLevel": "FA",
+              "sourcePage": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 18,
+      "name": "Biotechnology",
+      "subtopics": [
+        {
+          "subtopicNumber": "18.1",
+          "name": "18.1 Introduction",
+          "slos": [
+            {
+              "code": "18.1.1",
+              "description": "define ‘biotechnology’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 56
+            },
+            {
+              "code": "18.1.2",
+              "description": "describe the importance of biotechnology;",
+              "cognitiveLevel": "U",
+              "sourcePage": 56
+            },
+            {
+              "code": "18.1.3",
+              "description": "state the contributions of Paul Berg in the field of genetic engineering;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 56
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "18.2",
+          "name": "18.2 Industrial Fermentation",
+          "slos": [
+            {
+              "code": "18.2.1",
+              "description": "compare the methods of fermentation in yeast and bacteria;",
+              "cognitiveLevel": "U",
+              "sourcePage": 56
+            },
+            {
+              "code": "18.2.2",
+              "description": "describe functions of different parts of a fermenter;",
+              "cognitiveLevel": "U",
+              "sourcePage": 56
+            },
+            {
+              "code": "18.2.3",
+              "description": "describe methods of producing different products, i.e., yogurt, bread, cheese, antibiotics and alcohol in fermenters;",
+              "cognitiveLevel": "U",
+              "sourcePage": 56
+            },
+            {
+              "code": "18.2.4",
+              "description": "describe the advantages of using fermenters in preparing food products;",
+              "cognitiveLevel": "U",
+              "sourcePage": 56
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "18.3",
+          "name": "18.3 Genetic Engineering",
+          "slos": [
+            {
+              "code": "18.3.1",
+              "description": "describe objectives of genetic engineering;",
+              "cognitiveLevel": "U",
+              "sourcePage": 56
+            },
+            {
+              "code": "18.3.2",
+              "description": "illustrate the steps of recombinant DNA technology in the production of human insulin/ growth hormone;",
+              "cognitiveLevel": "A",
+              "sourcePage": 56
+            },
+            {
+              "code": "18.3.3",
+              "description": "describe major achievements of genetic engineering with reference to improvement in the traits of agricultural crops, i.e., herbicide resistance, virus resistance and insect resistance;",
+              "cognitiveLevel": "U",
+              "sourcePage": 56
+            },
+            {
+              "code": "18.3.4",
+              "description": "describe major achievements of genetic engineering in health and medicine, i.e., production of insulin, human growth hormone, vaccine against hepatitis B and interferon;",
+              "cognitiveLevel": "U",
+              "sourcePage": 56
+            },
+            {
+              "code": "18.3.5",
+              "description": "define ‘bioremediation’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 56
+            },
+            {
+              "code": "18.3.6",
+              "description": "infer that bioremediation can help us in taking better care of our environment.",
+              "cognitiveLevel": "An",
+              "sourcePage": 56
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unitNumber": 19,
+      "name": "Pharmacology",
+      "subtopics": [
+        {
+          "subtopicNumber": "19.1",
+          "name": "19.1 Introduction",
+          "slos": [
+            {
+              "code": "19.1.1",
+              "description": "define ‘pharmacology’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 57
+            },
+            {
+              "code": "19.1.2",
+              "description": "define the term ‘drug’;",
+              "cognitiveLevel": "R",
+              "sourcePage": 57
+            },
+            {
+              "code": "19.1.3",
+              "description": "identify various sources of drugs, i.e., minerals, animals, plants, synthetics and microorganisms;",
+              "cognitiveLevel": "U",
+              "sourcePage": 57
+            },
+            {
+              "code": "19.1.4",
+              "description": "describe main usages of painkillers, antibiotics, vaccines and sedatives;",
+              "cognitiveLevel": "U",
+              "sourcePage": 57
+            },
+            {
+              "code": "19.1.5",
+              "description": "state the contribution of Joseph Lister in the discovery of antiseptics;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 57
+            },
+            {
+              "code": "19.1.6",
+              "description": "describe the discovery of penicillin by Alexander Fleming;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 57
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "19.2",
+          "name": "19.2 Medicinal and Addictive Drugs",
+          "slos": [
+            {
+              "code": "19.2.1",
+              "description": "describe addictive drugs, including sedatives, narcotics (e.g. morphine and heroin) and hallucinogens (e.g. marijuana), focusing on their effects;",
+              "cognitiveLevel": "U",
+              "sourcePage": 57
+            },
+            {
+              "code": "19.2.2",
+              "description": "describe associated social problems of drug addiction, i.e., severe social abandonment and crimes;",
+              "cognitiveLevel": "U",
+              "sourcePage": 57
+            },
+            {
+              "code": "19.2.3",
+              "description": "list withdrawal symptoms of addiction to heroine;",
+              "cognitiveLevel": "R",
+              "sourcePage": 57
+            },
+            {
+              "code": "19.2.4",
+              "description": "list different plants which are common in Pakistan and used for getting hallucinogens and narcotics;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 57
+            }
+          ]
+        },
+        {
+          "subtopicNumber": "19.3",
+          "name": "19.3 Antibiotics and Vaccines",
+          "slos": [
+            {
+              "code": "19.3.1",
+              "description": "describe sulphonamides, tetracyclines and cephalosporins as the major groups of antibiotics being used;",
+              "cognitiveLevel": "U",
+              "sourcePage": 57
+            },
+            {
+              "code": "19.3.2",
+              "description": "differentiate between bactericidal and bacteriostatic effects of antibiotics with examples;",
+              "cognitiveLevel": "U",
+              "sourcePage": 57
+            },
+            {
+              "code": "19.3.3",
+              "description": "compare broad-spectrum antibiotics (e.g. amoxicillin) with narrow-spectrum antibiotics (e.g. penicillin), including their applications and effectiveness against different bacterial infections;",
+              "cognitiveLevel": "FA",
+              "sourcePage": 57
+            },
+            {
+              "code": "19.3.4",
+              "description": "describe the development of antibiotic resistance in bacteria and the mechanisms involved;",
+              "cognitiveLevel": "U",
+              "sourcePage": 58
+            },
+            {
+              "code": "19.3.5",
+              "description": "differentiate between antibiotics and vaccines in terms of their mode of action, time and method of administration, effectiveness against types of pathogens, duration of effectiveness and impact on the immune system;",
+              "cognitiveLevel": "U",
+              "sourcePage": 58
+            },
+            {
+              "code": "19.3.6",
+              "description": "assess the role of antibiotics and vaccines in public health, considering issues such as antibiotic resistance and vaccine coverage rates.",
+              "cognitiveLevel": "FA",
+              "sourcePage": 58
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

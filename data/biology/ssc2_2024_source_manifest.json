@@ -1,0 +1,155 @@
+{
+  "sources": {
+    "p1": {
+      "filename": "biology-x-2024-paper-i.pdf",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-paper-i.pdf",
+      "pages": 16,
+      "bytes": 741885,
+      "sha256": "38c9e71ed95a9980608e96edba1c177dfa06f88ef81b6e46f170f6893e71c9a9"
+    },
+    "p2": {
+      "filename": "biology-x-2024-paper-ii.pdf",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-paper-ii.pdf",
+      "pages": 8,
+      "bytes": 444626,
+      "sha256": "878ba37ef06c924560c59a9be5a0d276b534aa70f34f9d7b08efe2f94a7f68aa"
+    },
+    "key": {
+      "filename": "biology-x-2024-keys.pdf",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-keys.pdf",
+      "pages": 1,
+      "bytes": 72761,
+      "sha256": "c2189e099846a27b510566ea311cb9255d2b29cfa8e3341218884e9a00d4e057"
+    },
+    "em": {
+      "filename": "biology-x-2024-emarking.pdf",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking.pdf",
+      "pages": 20,
+      "bytes": 1551522,
+      "sha256": "85150a801c2938caf45bea9b0b52f017be5dd3a9154b1dc6651dae8185bf7827"
+    }
+  },
+  "crops": [
+    {
+      "role": "paper-i-q3",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-paper-i-q3.png"
+    },
+    {
+      "role": "paper-i-q19",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-paper-i-q19.png"
+    },
+    {
+      "role": "paper-i-q20",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-paper-i-q20.png"
+    },
+    {
+      "role": "paper-i-q23",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-paper-i-q23.png"
+    },
+    {
+      "role": "paper-i-q24",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-paper-i-q24.png"
+    },
+    {
+      "role": "paper-i-q34",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-paper-i-q34.png"
+    },
+    {
+      "role": "paper-ii-q3",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-paper-ii-q3.png"
+    },
+    {
+      "role": "emarking-1_stronger",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q1-stronger.png"
+    },
+    {
+      "role": "emarking-1_weaker",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q1-weaker.png"
+    },
+    {
+      "role": "emarking-2_stronger",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q2-stronger.png"
+    },
+    {
+      "role": "emarking-2_weaker",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q2-weaker.png"
+    },
+    {
+      "role": "emarking-3_stronger",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q3-stronger.png"
+    },
+    {
+      "role": "emarking-3_weaker",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q3-weaker.png"
+    },
+    {
+      "role": "emarking-4_stronger",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q4-stronger.png"
+    },
+    {
+      "role": "emarking-4_weaker",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q4-weaker.png"
+    },
+    {
+      "role": "emarking-5a_stronger",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q5a-stronger.png"
+    },
+    {
+      "role": "emarking-5a_weaker",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q5a-weaker.png"
+    },
+    {
+      "role": "emarking-5b_stronger",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q5b-stronger.png"
+    },
+    {
+      "role": "emarking-5b_weaker",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q5b-weaker.png"
+    },
+    {
+      "role": "emarking-6a_stronger",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q6a-stronger.png"
+    },
+    {
+      "role": "emarking-6a_weaker",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q6a-weaker.png"
+    },
+    {
+      "role": "emarking-6b_stronger",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q6b-stronger.png"
+    },
+    {
+      "role": "emarking-6b_weaker",
+      "url": "/materials/ssc/biology/ssc-2/biology-x-2024-emarking-q6b-weaker.png"
+    }
+  ],
+  "paperI": {
+    "totalQuestions": 40,
+    "totalMarks": 40,
+    "durationMinutes": 70
+  },
+  "paperII": {
+    "printedQuestions": 6,
+    "digitalEntriesIncludingAlternatives": 8,
+    "totalMarks": 25,
+    "durationMinutes": 110,
+    "choiceGroups": {
+      "5": {
+        "choose": 1,
+        "of": [
+          "5a",
+          "5b"
+        ],
+        "marks": 6
+      },
+      "6": {
+        "choose": 1,
+        "of": [
+          "6a",
+          "6b"
+        ],
+        "marks": 6
+      }
+    }
+  }
+}

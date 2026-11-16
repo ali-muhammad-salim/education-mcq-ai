@@ -21,6 +21,7 @@ export interface HsscQuizQuestion {
 }
 
 export interface HsscPaperView {
+  chapterOnly?: boolean;
   code: string;
   title: string;
   session: string;
@@ -31,6 +32,7 @@ export interface HsscPaperView {
 }
 
 export interface HsscUnitView {
+  topicId?: string;
   unitNumber: number;
   name: string;
   topics: string[];

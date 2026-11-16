@@ -24,6 +24,7 @@ export function physicsSyllabusSections(board: string, grade: number, subject: s
     paperI: hssc ? 50 : 40,
     paperII: hssc ? 35 : 25,
     paperIII: hssc ? 15 : 10,
+    erqMarks: 5,
     cognitiveWeight: hssc ? "R 0–15% · U 45–60% · A and beyond 25–40%" : "R 10–15% · U 55–60% · A and beyond 20–30%",
     chapters: mcqs.map((count, index) => ({ number: (partTwo ? 11 : 1) + index, mcqs: count, crqMarks: crqs[index] })),
     erqPairs,

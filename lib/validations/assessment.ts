@@ -16,7 +16,9 @@ export const questionSchema = z.object({
 }).superRefine((q, ctx) => {
   const choice = ['MCQ_SINGLE', 'MCQ_MULTIPLE', 'TRUE_FALSE'].includes(q.questionType), correct = q.options.filter(o => o.isCorrect).length;
   if (choice && (q.options.length < 2 || (q.questionType === 'MCQ_MULTIPLE' ? correct < 1 : correct !== 1))) ctx.addIssue({ code: 'custom', message: 'Choice questions require valid options and answer keys.' });
-  if (new Set(q.options.map(o => o.text.trim().toLowerCase())).size !== q.options.length) ctx.addIssue({ code: 'custom', message: 'Options must be distinct.' });
+  // Letter case can distinguish printed scientific choices, such as RR and Rr.
+  const optionTexts = q.options.map(o => q.provenance === 'PAST_PAPER' ? o.text.trim() : o.text.trim().toLowerCase());
+  if (new Set(optionTexts).size !== q.options.length) ctx.addIssue({ code: 'custom', message: 'Options must be distinct.' });
   const ids = q.options.map((o, i) => o.id || String.fromCharCode(65 + i));
   if (new Set(ids).size !== ids.length) ctx.addIssue({ code: 'custom', message: 'Option IDs must be distinct.' });
   if (q.questionType === 'NUMERICAL' && (!q.correctAnswerText?.trim() || !Number.isFinite(Number(q.correctAnswerText)))) ctx.addIssue({ code: 'custom', message: 'Numerical questions require a numeric answer.' });

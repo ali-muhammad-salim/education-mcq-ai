@@ -1,0 +1,965 @@
+[
+  {
+    "number": "1",
+    "page": 2,
+    "code": "1.2.1",
+    "stem": "Consider the given image. The researcher in the given image can be identified as a",
+    "choices": [
+      "histologist.",
+      "taxonomist.",
+      "palaeontologist.",
+      "biotechnologist."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.2.1",
+    "originalLevel": "U",
+    "explanation": "Palaeontologists study fossils.",
+    "feedback": [
+      "Histology studies tissues.",
+      "Taxonomy names and classifies organisms.",
+      "Skull and bone fossils are palaeontological evidence.",
+      "Biotechnology uses organisms or biological processes for practical applications."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-1/biology-ix-2024-paper-i-q1.png"
+  },
+  {
+    "number": "2",
+    "page": 2,
+    "code": "1.7.2",
+    "stem": "In contrast to multicellular organisms, unicellular organisms",
+    "choices": [
+      "show division of labour at organ system level.",
+      "are entirely exposed to the environment.",
+      "have complex body organisation.",
+      "always reproduce sexually."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "1.8.1",
+    "originalLevel": "U",
+    "explanation": "A single cell directly interfaces with its surroundings.",
+    "feedback": [
+      "One cell has no organ systems.",
+      "The whole organism consists of that one cell.",
+      "Organ systems make multicellular organisation more complex.",
+      "Many unicellular organisms reproduce asexually."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "3",
+    "page": 2,
+    "code": "2.1.1",
+    "stem": "Consider the following observations.\n\nI. The temperature of a room increases by 5 °C.\nII. Flowers in an orchard have round shaped petals.\nIII. The growth of fungus on a piece of bread indicates that it is stale.\nIV. The rate of reaction increases twice by increasing the enzyme concentration.\n\nThe CORRECT pair of qualitative observations is",
+    "choices": [
+      "I and II.",
+      "I and IV.",
+      "II and III.",
+      "III and IV."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "2.1.1",
+    "originalLevel": "U",
+    "explanation": "Descriptions II and III are qualitative.",
+    "feedback": [
+      "I measures a temperature change.",
+      "Both report numerical changes.",
+      "Shape and the reported condition are descriptive.",
+      "IV states a numerical rate change."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "4",
+    "page": 3,
+    "code": "2.1.3",
+    "stem": "The given graph shows the number of students having different blood groups in a class. If three students with blood group A and four students with blood group B leave the class while two students with blood group O join the class, then which blood group students are present least in number?",
+    "choices": [
+      "Blood Group O",
+      "Blood Group A",
+      "Blood Group B",
+      "Blood Group AB"
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "2.1.2",
+    "originalLevel": "A",
+    "explanation": "A becomes 22, B 16, AB stays 30, and O becomes 17.",
+    "feedback": [
+      "O rises to 17.",
+      "A falls to 22.",
+      "B falls to 16, the smallest count.",
+      "AB stays at 30."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-1/biology-ix-2024-paper-i-q4.png"
+  },
+  {
+    "number": "5",
+    "page": 3,
+    "code": "3.4.2",
+    "stem": "The given table shows structural characteristics of an organism.\n\n| Property | Present or Absent |\n| --- | --- |\n| Cell wall | Present |\n| Nuclear membrane | Present |\n| Ribosomes | Present |\n| Multi-cellularity | Absent |\n\nBased on the given characteristics, the organism could be placed in kingdom",
+    "choices": [
+      "Protista.",
+      "Monera.",
+      "Plantae.",
+      "Fungi."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "3.5.4",
+    "originalLevel": "U",
+    "explanation": "In the prescribed five-kingdom scheme, a unicellular eukaryotic organism with a cell wall, nuclear membrane and ribosomes is placed in kingdom Protista. Monera lack a nuclear membrane, Plantae are multicellular, and Fungi are treated as multicellular.",
+    "feedback": [
+      "Unicellular eukaryotes with a cell wall are classified as protists.",
+      "Monera lack a membrane-bound nuclear membrane.",
+      "Plantae are multicellular in this scheme.",
+      "Fungi are multicellular in the prescribed classification."
+    ],
+    "diagramUrl": null,
+    "answerStatus": "ANSWER_CONFIRMED",
+    "answerOrigin": "OFFICIAL_KEY_VERIFIED",
+    "answerReviewNote": "Official key A confirmed under the prescribed five-kingdom scheme: Fungi are treated as multicellular, so a unicellular walled eukaryote is a protist."
+  },
+  {
+    "number": "6",
+    "page": 4,
+    "code": "3.5.1",
+    "stem": "Consider the given table.\n\n| Unit of Classification | Example |\n| --- | --- |\n| Kingdom · Animalia | housefly, butterfly, whale, frog, snake, bush fly, fruit fly, mayfly |\n| Phylum · Arthropoda | housefly, butterfly, fruit fly, bush fly, mayfly |\n| Genus · Musca | housefly, bush fly |\n| Species · domestica | housefly |\n\nAccording to the given classification, the animal which shares the MOST common characteristics with housefly is a",
+    "choices": [
+      "mayfly.",
+      "fruit fly.",
+      "bush fly.",
+      "butterfly."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "3.4.1",
+    "originalLevel": "U",
+    "explanation": "The bush fly shares the genus Musca with the housefly in the table.",
+    "feedback": [
+      "A mayfly only shares broader ranks here.",
+      "The fruit fly is not listed under Musca.",
+      "A shared genus indicates the closest relationship among the options.",
+      "The butterfly is in the same phylum but not the listed genus."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "7",
+    "page": 4,
+    "code": "3.7.5",
+    "stem": "The set of structures, which represent monocot plants, is",
+    "choices": [
+      "I, III and V.",
+      "I, IV and V.",
+      "II, IV and VI.",
+      "II, III, and VI."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "3.5.6",
+    "originalLevel": "U",
+    "explanation": "I, IV and V show monocot features: flower parts in threes, parallel venation and scattered vascular bundles.",
+    "feedback": [
+      "III and V do not both show the required traits.",
+      "All three features fit monocots.",
+      "II and VI show the contrasting dicot features.",
+      "It includes dicot structures."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-1/biology-ix-2024-paper-i-q7.png"
+  },
+  {
+    "number": "8",
+    "page": 4,
+    "code": "17.5.1",
+    "stem": "In 2011, Western black rhinoceros were declared as critically endangered animals due to their over-hunting. Which of the following conservation measures is the MOST effective in preventing the rhinoceros from extinction?",
+    "choices": [
+      "Vaccinating them regularly",
+      "Introducing different species in their habitat",
+      "Attaching metal tags to identify them as endangered animals",
+      "Establishing sanctuaries where human interference would be limited"
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "3.7.1",
+    "originalLevel": "U",
+    "explanation": "A protected sanctuary can reduce the human interference and hunting identified in the question.",
+    "feedback": [
+      "Vaccination does not address overhunting.",
+      "Introducing species can disrupt the existing habitat.",
+      "Tags identify animals but do not directly reduce hunting.",
+      "Protected habitat directly addresses the stated threat."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "9",
+    "page": 5,
+    "code": "4.2.1",
+    "stem": "Which of the following CORRECTLY identifies the organelle shown in the diagram?",
+    "choices": [
+      "Ribosome",
+      "Chloroplast",
+      "Mitochondria",
+      "Endoplasmic reticulum"
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "4.2.1",
+    "originalLevel": "U",
+    "explanation": "Stacks of thylakoids identify the chloroplast.",
+    "feedback": [
+      "Ribosomes lack internal membranes.",
+      "The figure shows grana in a chloroplast.",
+      "Mitochondria have cristae rather than stacked grana.",
+      "ER is a network of sacs and tubules."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-1/biology-ix-2024-paper-i-q9.png"
+  },
+  {
+    "number": "10",
+    "page": 5,
+    "code": "4.2.1",
+    "stem": "In the cell, Golgi apparatus lies near the endoplasmic reticulum because Golgi apparatus",
+    "choices": [
+      "provides mechanical strength to the endoplasmic reticulum.",
+      "receives and utilises ATP molecules from the endoplasmic reticulum.",
+      "modifies and packages proteins produced by the endoplasmic reticulum.",
+      "controls the movement of substances in and out of the endoplasmic reticulum."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "4.2.2",
+    "originalLevel": "U",
+    "explanation": "The Golgi receives, modifies and sorts proteins sent from the rough ER.",
+    "feedback": [
+      "The Golgi does not prop up the ER.",
+      "The ER is not a source of ATP for the Golgi.",
+      "Transport vesicles deliver proteins from the ER for Golgi processing.",
+      "This does not describe the Golgi's main relationship with the ER."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "11",
+    "page": 5,
+    "code": "4.5.7",
+    "stem": "Which of the following options exemplifies the process of exocytosis in a cell?",
+    "choices": [
+      "Phagocytosis of bacteria by white blood cells",
+      "Secretion of digestive enzymes by pancreatic cells",
+      "Movement of glucose against the gradient with the help of membrane-bound proteins",
+      "Movement of sodium and potassium ions from a neuron through sodium-potassium pump"
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "4.3.3",
+    "originalLevel": "A",
+    "explanation": "Vesicles fuse with the cell membrane and release pancreatic enzymes outside the cell.",
+    "feedback": [
+      "Phagocytosis brings materials into cells.",
+      "Secretion from pancreatic vesicles is exocytosis.",
+      "Pumping glucose across a membrane is carrier-mediated transport.",
+      "The sodium–potassium pump is active transport."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "12",
+    "page": 5,
+    "code": "4.1.2",
+    "stem": "The specimens that can be observed under electron microscope are\n\nI. a sample of epithelial layer\nII. a culture of reproducing bacteria\nIII. a moving amoeba in a drop of water\nIV. a piece of tissue taken from mammary gland",
+    "choices": [
+      "I and II.",
+      "I and IV.",
+      "II and III.",
+      "III and IV."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "4.1.1",
+    "originalLevel": "U",
+    "explanation": "Conventional electron microscopy uses prepared, non-living samples.",
+    "feedback": [
+      "II describes a living, reproducing culture.",
+      "Both tissue specimens can be fixed and prepared.",
+      "Reproducing bacteria and a moving amoeba cannot be observed alive with this method.",
+      "A moving amoeba must be observed alive."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "13",
+    "page": 6,
+    "code": "4.3.3",
+    "stem": "The given table shows function of structures, P, Q and R in living things.\n\n| Structure | Function |\n| --- | --- |\n| P | Transport water molecules |\n| Q | Transport oxygen molecules |\n| R | Absorb surrounding water through osmosis |\n\nThe option which CORRECTLY identifies the structures P, Q and R is",
+    "choices": [
+      "P: xylem vessels, Q: red blood cells, R: root hair cells",
+      "P: red blood cells, Q: root hair cells, R: xylem vessels",
+      "P: root hair cells, Q: xylem vessels, R: red blood cells",
+      "P: root hair cells, Q: red blood cells, R: xylem vessels"
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "4.2.4",
+    "originalLevel": "U",
+    "explanation": "Xylem carries water, red blood cells carry oxygen and root hairs absorb water by osmosis.",
+    "feedback": [
+      "All three functions match.",
+      "Red cells carry oxygen rather than transporting water through tissues.",
+      "Root hair cells absorb rather than conduct water through the plant.",
+      "The root hair and xylem functions are reversed."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "14",
+    "page": 6,
+    "code": "4.4.3",
+    "stem": "Jamal calculated the surface area to volume ratio of four different sizes of potato cubes (A, B, C and D) and he plotted the given graph to analyse the results. With reference to the graph, the potato cube that has more efficient rate of diffusion is",
+    "choices": [
+      "Cube A",
+      "Cube B",
+      "Cube C",
+      "Cube D"
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "4.2.6",
+    "originalLevel": "U",
+    "explanation": "Cube A has the greatest surface area per unit volume.",
+    "feedback": [
+      "A has the highest plotted ratio.",
+      "B has less surface per unit volume.",
+      "C has a lower ratio still.",
+      "D has the lowest plotted ratio."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-1/biology-ix-2024-paper-i-q14.png"
+  },
+  {
+    "number": "15",
+    "page": 7,
+    "code": "7.2.5",
+    "stem": "Consider the given chemical reaction of water breakdown.\n\n$\\mathrm{H_2O}\\rightarrow 2\\mathrm{H^+}+2\\mathrm{e^-}+\\frac{1}{2}\\mathrm{O_2}$\n\nThe electrons resulted in the given reaction are gained by",
+    "choices": [
+      "CO2 in the carbon fixation.",
+      "O2 during cellular respiration.",
+      "chlorophyll in the photosystem.",
+      "ADP in electron transport chain."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "7.2.5",
+    "originalLevel": "U",
+    "explanation": "Electrons from water replace the electrons lost by chlorophyll in photosystem II.",
+    "feedback": [
+      "Carbon fixation uses reducing power later.",
+      "This is photolysis, not the respiratory electron transport chain.",
+      "The oxidised photosystem II reaction centre receives replacement electrons.",
+      "ADP is phosphorylated rather than accepting these electrons."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "16",
+    "page": 7,
+    "code": "7.2.5",
+    "stem": "Suppose ATP synthesis is stopped in an illuminated chloroplast. This may happen due to",
+    "choices": [
+      "damaged thylakoid membrane.",
+      "denaturation of enzymes present in stroma.",
+      "excessive absorption of light by chloroplast.",
+      "excessive transfer of protons from stroma to thylakoid space."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "7.2.5",
+    "originalLevel": "U",
+    "explanation": "Damage to the thylakoid can disrupt the proton gradient that drives ATP synthase.",
+    "feedback": [
+      "An intact membrane is needed to maintain the gradient.",
+      "Stromal enzymes carry out later reactions and do not directly maintain the gradient.",
+      "Excess light alone does not establish the stated defect.",
+      "Proton movement into the lumen builds the gradient."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "17",
+    "page": 7,
+    "code": "7.1.4",
+    "stem": "When a molecule of adenosine diphosphate reacts with water, it gives",
+    "choices": [
+      "adenosine triphosphate and hydrogen gas.",
+      "adenosine monophosphate and hydrogen gas.",
+      "adenosine triphosphate and inorganic phosphate.",
+      "adenosine monophosphate and inorganic phosphate."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "7.1.4",
+    "originalLevel": "U",
+    "explanation": "Hydrolysis removes one phosphate group from ADP, giving AMP and inorganic phosphate.",
+    "feedback": [
+      "Hydrolysis does not add a phosphate or release hydrogen gas.",
+      "The AMP product is correct, but hydrogen gas is not produced.",
+      "ATP needs a phosphate added to ADP.",
+      "Loss of a phosphate yields AMP plus inorganic phosphate."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "18",
+    "page": 7,
+    "code": "7.4.4",
+    "stem": "Consider the given word equations.\n\nI. glucose → lactic acid + energy\nII. glucose → ethanol + carbon dioxide + energy\nIII. glucose + oxygen → carbon dioxide + water + energy\nIV. carbon dioxide + water + energy → glucose + oxygen\n\nThe option that shows the equation for anaerobic respiration in humans and in yeast is",
+    "choices": [
+      "Humans: I, Yeast: II",
+      "Humans: I, Yeast: III",
+      "Humans: II, Yeast: IV",
+      "Humans: III, Yeast: IV"
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "7.4.3",
+    "originalLevel": "U",
+    "explanation": "Humans produce lactate while yeast produces ethanol and carbon dioxide during fermentation.",
+    "feedback": [
+      "I shows lactate and II alcoholic fermentation.",
+      "III is aerobic respiration.",
+      "II is yeast fermentation and IV is photosynthesis.",
+      "III and IV are not the stated fermentations."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "19",
+    "page": 8,
+    "code": "7.3.3",
+    "stem": "The given graph shows one of the factors affecting rate of photosynthesis. The option that CORRECTLY identifies the limiting factor(s) in the labelled parts I and II is",
+    "choices": [
+      "I: light intensity, II: carbon dioxide and temperature",
+      "I: carbon dioxide and temperature, II: light intensity",
+      "I: light intensity and carbon dioxide, II: water",
+      "I: water, II: light intensity and carbon dioxide"
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "7.3.2",
+    "originalLevel": "A",
+    "explanation": "At I the rate rises with light. At II light is no longer limiting and CO₂ or temperature could be limiting. The plateau alone does not identify which one.",
+    "feedback": [
+      "Light limits the rising part; CO₂ and temperature are plausible limits at the plateau.",
+      "It reverses the roles of the two phases.",
+      "The graph does not identify water as the factor at the plateau.",
+      "The rise tracks light, not a change in water."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-1/biology-ix-2024-paper-i-q19.png"
+  },
+  {
+    "number": "20",
+    "page": 8,
+    "code": "7.2.6",
+    "stem": "Calvin cycle occurs in the stroma of chloroplast because the stroma contains",
+    "choices": [
+      "required enzymes.",
+      "DNA and ribosomes.",
+      "photosynthetic pigments.",
+      "ATP synthase complexes."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "7.2.5",
+    "originalLevel": "U",
+    "explanation": "The enzymes of the Calvin cycle are in the stroma.",
+    "feedback": [
+      "Carbon-fixation enzymes such as RuBisCO occur in the stroma.",
+      "DNA and ribosomes are present, but they do not perform carbon fixation.",
+      "Photosynthetic pigments are in the thylakoid membranes.",
+      "ATP synthase is associated with thylakoid membranes."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "21",
+    "page": 8,
+    "code": "8.4.4",
+    "stem": "In the human respiratory system, the function of epiglottis is to",
+    "choices": [
+      "moist and warm the incoming air.",
+      "keep the air ways open all the time.",
+      "filter dust particles and kill the bacteria.",
+      "prevent the food particles from entering the trachea."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "5.3.2",
+    "originalLevel": "U",
+    "explanation": "The epiglottis folds over the laryngeal opening during swallowing.",
+    "feedback": [
+      "Warming and moistening occur mainly in the nasal passages.",
+      "Cartilage helps maintain airway patency.",
+      "Mucus and cilia help trap and clear particles.",
+      "Blocking the airway entrance keeps food out of the trachea."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "22",
+    "page": 8,
+    "code": "5.3.2",
+    "stem": "In the human respiratory system, the hypersecretion (increased production) of mucus causes development of respiratory diseases such as bronchitis. All of the following factors cause over-production of mucus EXCEPT",
+    "choices": [
+      "viral infections.",
+      "bacterial infections.",
+      "malfunctioning of cilia.",
+      "hyperactivity of goblet cells."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "5.4.1",
+    "originalLevel": "U",
+    "explanation": "Malfunctioning cilia chiefly reduce mucus clearance.",
+    "feedback": [
+      "Viral infection can stimulate mucus secretion.",
+      "Bacterial irritation can increase secretion.",
+      "Cilia move mucus; they do not secrete it.",
+      "Goblet cells secrete mucus."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "23",
+    "page": 9,
+    "code": "5.4.1",
+    "stem": "The given images show the comparison of healthy and diseased alveolar sacs (I and II) in humans. The alveolar sacs I and II represent",
+    "choices": [
+      "I: emphysema, II: pneumonia",
+      "I: pneumonia, II: emphysema",
+      "I: asthma, II: bronchitis",
+      "I: bronchitis, II: asthma"
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.4.1",
+    "originalLevel": "U",
+    "explanation": "Fluid and inflammatory cells suggest pneumonia. Destroyed alveolar walls suggest emphysema.",
+    "feedback": [
+      "The diagnoses are reversed.",
+      "Both abnormalities match.",
+      "The drawings show alveolar changes rather than the airway changes typical of asthma or bronchitis.",
+      "Neither proposed airway condition matches both alveolar changes."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-1/biology-ix-2024-paper-i-q23.png"
+  },
+  {
+    "number": "24",
+    "page": 9,
+    "code": "5.3.7",
+    "stem": "The given steps occur during breathing mechanism in the human respiratory system.\n\nI. Size of chest cavity decreases\nII. Pressure in the lungs decreases\nIII. The muscles of diaphragm relax\nIV. Ribs move upwards and outwards\n\nThe steps which take place during exhalation are",
+    "choices": [
+      "I and II.",
+      "I and III.",
+      "II and IV.",
+      "III and IV."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.3.4",
+    "originalLevel": "U",
+    "explanation": "During normal exhalation the diaphragm relaxes and chest volume decreases.",
+    "feedback": [
+      "Lung pressure increases, rather than decreases.",
+      "I and III occur during normal exhalation.",
+      "Decreased pressure and upward ribs describe inhalation.",
+      "Upward and outward rib movement is an inhalation change."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "25",
+    "page": 9,
+    "code": "6.1.9",
+    "stem": "The chemical reaction that requires extra-cellular enzymes is",
+    "choices": [
+      "breakdown of fats.",
+      "oxidation of glucose.",
+      "synthesis of proteins.",
+      "reduction of carbon dioxide."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "6.1.8",
+    "originalLevel": "U",
+    "explanation": "Digestive lipase can act outside cells in the gut lumen.",
+    "feedback": [
+      "Fat digestion by lipase is an extracellular example.",
+      "Glucose oxidation occurs within cells.",
+      "Protein synthesis occurs on ribosomes in cells.",
+      "Photosynthetic carbon dioxide reduction takes place inside chloroplasts."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "26",
+    "page": 10,
+    "code": "5.3.8",
+    "stem": "The given graph shows the oxygen consumption during and after exercise. With reference to the given graph, the period of strenuous exercise would be from",
+    "choices": [
+      "5 to 10 minutes.",
+      "10 to 15 minutes.",
+      "15 to 20 minutes.",
+      "20 to 25 minutes."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.3.5",
+    "originalLevel": "A",
+    "explanation": "Oxygen consumption reaches its peak plateau during the 10–15-minute interval.",
+    "feedback": [
+      "Consumption is rising before the peak.",
+      "This interval corresponds to the highest readings.",
+      "The rate decreases through much of this interval.",
+      "Rates are lower in recovery."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-1/biology-ix-2024-paper-i-q26.png"
+  },
+  {
+    "number": "27",
+    "page": 10,
+    "code": "6.3.3",
+    "stem": "The given diagram represents an enzyme-catalysed reaction. With reference to lock and key model, the enzyme that can catalyse this reaction is",
+    "choices": [
+      "Diagram A",
+      "Diagram B",
+      "Diagram C",
+      "Diagram D"
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "6.3.1",
+    "originalLevel": "U",
+    "explanation": "A complementary active site must accommodate both substrates in the right orientation.",
+    "feedback": [
+      "Its recesses do not match both shapes.",
+      "The binding pocket does not provide complementary positions for both substrates.",
+      "Both substrates can fit the illustrated complementary pocket.",
+      "Its pocket does not match the two substrate shapes together."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-1/biology-ix-2024-paper-i-q27.png"
+  },
+  {
+    "number": "28",
+    "page": 11,
+    "code": "6.2.1",
+    "stem": "The given graph shows the effect of temperature on the enzyme activity. The temperature range at which the substrate molecules will no longer fit into enzyme is",
+    "choices": [
+      "10 – 20 °C.",
+      "20 – 30 °C.",
+      "30 – 40 °C.",
+      "50 – 60 °C."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "6.2.2",
+    "originalLevel": "A",
+    "explanation": "The final temperature range is associated with the sharp fall to the lowest activity after the optimum.",
+    "feedback": [
+      "Activity increases at low temperatures.",
+      "Activity is still rising.",
+      "This range contains the illustrated optimum, where binding is effective.",
+      "At high temperatures denaturation can alter the active-site shape."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-1/biology-ix-2024-paper-i-q28.png"
+  },
+  {
+    "number": "29",
+    "page": 11,
+    "code": "8.4.4",
+    "stem": "Which of the following indicates the movement of larynx and state of trachea during the swallowing of food?",
+    "choices": [
+      "Movement of larynx: Up, Passage to trachea: Open",
+      "Movement of larynx: Up, Passage to trachea: Closed",
+      "Movement of larynx: Down, Passage to trachea: Open",
+      "Movement of larynx: Down, Passage to trachea: Closed"
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "8.5.3",
+    "originalLevel": "U",
+    "explanation": "The larynx rises and the tracheal entrance closes.",
+    "feedback": [
+      "Airway entry is closed during the swallow.",
+      "The larynx rises while the airway opening is protected.",
+      "Both changes are reversed.",
+      "The closure is right, but the direction of movement is wrong."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "30",
+    "page": 11,
+    "code": "8.1.3",
+    "stem": "In plants, the molecule that will be DIRECTLY affected by the deficiency of magnesium ions in soil is",
+    "choices": [
+      "starch.",
+      "cellulose.",
+      "chlorophyll.",
+      "carbon dioxide."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "8.1.4",
+    "originalLevel": "K",
+    "explanation": "Magnesium is the central ion of chlorophyll.",
+    "feedback": [
+      "Starch contains no magnesium as part of its structure.",
+      "Cellulose is a glucose polymer with no magnesium in its structure.",
+      "A shortage directly affects chlorophyll production.",
+      "Carbon dioxide does not contain magnesium."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "31",
+    "page": 12,
+    "code": "8.4.6",
+    "stem": "What will happen if the human stomach is unable to secrete hydrochloric acid?",
+    "choices": [
+      "Lipid digestion will inhibit",
+      "Amylase enzyme will denature",
+      "Stomach muscles will destruct",
+      "Pepsinogen will remain inactive"
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.5.4",
+    "originalLevel": "U",
+    "explanation": "Stomach acid helps activate pepsinogen to pepsin.",
+    "feedback": [
+      "Lipid digestion is not the direct consequence in this list.",
+      "Reduced acidity would not itself denature amylase.",
+      "Muscle destruction does not follow.",
+      "Reduced acidity interferes with pepsinogen activation."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "32",
+    "page": 12,
+    "code": "8.2.13",
+    "stem": "Following are diseases that are related to dietary habits.\n\n• Heart diseases\n• Constipation\n• Inflammation of colon\n• Irritated bowel syndrome\n\nWhich of the following diets is MOST likely to develop the given diseases?",
+    "choices": [
+      "A diet with low fiber",
+      "A diet with low sodium level",
+      "A diet with moderate sugar content",
+      "A diet with moderate unsaturated fats"
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.2.6",
+    "originalLevel": "U",
+    "explanation": "A low-fibre diet is the best match, especially for constipation. The listed conditions have multiple causes.",
+    "feedback": [
+      "Less fibre can reduce stool bulk and contribute to constipation.",
+      "Low sodium does not explain the combination.",
+      "The question gives no evidence that moderate sugar is the most direct match.",
+      "Moderate unsaturated fat intake does not explain constipation."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "33",
+    "page": 12,
+    "code": "8.4.13",
+    "stem": "Zaheer’s gut is unable to absorb mineral salts and water from the undigested food because of an abnormality in his",
+    "choices": [
+      "stomach.",
+      "oesophagus.",
+      "large intestine.",
+      "small intestine."
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "8.5.2",
+    "originalLevel": "U",
+    "explanation": "The large intestine reclaims water and electrolytes from remaining material.",
+    "feedback": [
+      "The stomach mainly mixes and digests food.",
+      "The oesophagus transports food.",
+      "This is the relevant function of the large intestine.",
+      "The small intestine absorbs most nutrients, but the question refers to undigested residue."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "34",
+    "page": 12,
+    "code": "8.4.8",
+    "stem": "Which of the following CORRECTLY identifies the site of action of trypsin and pepsin in the alimentary canal of human?",
+    "choices": [
+      "Trypsin: Ileum, Pepsin: Colon",
+      "Trypsin: Stomach, Pepsin: Duodenum",
+      "Trypsin: Colon, Pepsin: Ileum",
+      "Trypsin: Duodenum, Pepsin: Stomach"
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.5.4",
+    "originalLevel": "U",
+    "explanation": "Trypsin acts in the small intestine, beginning in the duodenum, and pepsin acts in the stomach.",
+    "feedback": [
+      "Pepsin does not act in the colon.",
+      "The sites are reversed.",
+      "The colon and ileum do not match this pair.",
+      "Both sites are correct."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "35",
+    "page": 12,
+    "code": "9.2.1",
+    "stem": "The cells that transport organic nutrients from leaves to the other parts of a plant are",
+    "choices": [
+      "vessels and tracheids.",
+      "sieve tubes and tracheids.",
+      "companion cells and vessels.",
+      "sieve tubes and companion cells."
+    ],
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "9.3.9",
+    "originalLevel": "K",
+    "explanation": "Organic nutrients move through phloem, which includes sieve tubes and companion cells.",
+    "feedback": [
+      "Both are xylem cell types.",
+      "Tracheids are xylem, rather than phloem.",
+      "Vessels carry water in xylem.",
+      "Both are associated with phloem transport."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "36",
+    "page": 13,
+    "code": "9.7.3",
+    "stem": "During the circulation of blood through atria and ventricles of human heart, atrioventricular valves close when blood pressure is",
+    "choices": [
+      "higher in atria than aorta.",
+      "higher in ventricles than atria.",
+      "lower in aorta than pulmonary arteries.",
+      "lower in ventricles than pulmonary arteries."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "9.5.3",
+    "originalLevel": "U",
+    "explanation": "Atrioventricular valves close when ventricular pressure exceeds atrial pressure.",
+    "feedback": [
+      "The relevant pressure difference is across each valve.",
+      "Higher ventricular pressure shuts the valves and prevents backflow.",
+      "This compares two arteries rather than atria and ventricles.",
+      "It compares the ventricle with an artery rather than with its atrium."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "37",
+    "page": 13,
+    "code": "9.2.7",
+    "stem": "In plants, excessive transpiration causes",
+    "choices": [
+      "loss of turgidity in leaves cells.",
+      "increase in the cellular respiration.",
+      "increase in the rate of photosynthesis.",
+      "loss of water from phloem to xylem tissues."
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "9.3.6",
+    "originalLevel": "U",
+    "explanation": "Excess water loss lowers leaf-cell turgor and can cause wilting.",
+    "feedback": [
+      "Loss of water causes loss of turgidity.",
+      "Increased cellular respiration is not the direct consequence.",
+      "Water stress can reduce photosynthesis.",
+      "This does not describe the direct result of excessive evaporation."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "38",
+    "page": 13,
+    "code": "9.6.6",
+    "stem": "The blood vessel which carries deoxygenated blood from lower body parts to heart is",
+    "choices": [
+      "pulmonary vein.",
+      "inferior vena cava.",
+      "hepatic portal vein.",
+      "superior vena cava."
+    ],
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "9.7.4",
+    "originalLevel": "K",
+    "explanation": "The inferior vena cava returns deoxygenated blood from the lower body.",
+    "feedback": [
+      "Pulmonary veins return oxygenated blood from the lungs.",
+      "This vessel brings systemic blood back from below the heart.",
+      "The hepatic portal vein takes blood to the liver.",
+      "The superior vena cava drains the upper body."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "39",
+    "page": 13,
+    "code": "9.5.3",
+    "stem": "The given table shows blood reports of four individuals (A, B, C and D). With reference to changes in the count of blood cells, the blood report of the individual that indicates the presence of a bacterial infection is\n\n| Test | A | B | C | D | Reference range |\n| --- | --- | --- | --- | --- | --- |\n| WBCs (per mm³) | 14,000 | 10,000 | 11,000 | 8,900 | 4,000–11,000 |\n| Neutrophils (%) | 88 | 61 | 40 | 50 | 50–70 |\n| Lymphocytes (%) | 13 | 32 | 20 | 18 | 25–40 |",
+    "choices": [
+      "Report A",
+      "Report B",
+      "Report C",
+      "Report D"
+    ],
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "9.4.2",
+    "originalLevel": "U",
+    "explanation": "Elevated total white cells and neutrophils make A the best match. A blood count alone is not a diagnosis.",
+    "feedback": [
+      "Both the WBC count and neutrophil percentage are above the printed ranges.",
+      "Both values are in the printed ranges.",
+      "The neutrophil percentage is below the printed range.",
+      "The white cell count is in range and neutrophils are at the lower limit."
+    ],
+    "diagramUrl": null
+  },
+  {
+    "number": "40",
+    "page": 14,
+    "code": "9.6.5",
+    "stem": "The given diagram shows longitudinal section of the human heart. Which of the following options is CORRECT about the concentration of carbon dioxide and blood pressure in the vessel labelled as Y?",
+    "choices": [
+      "Carbon dioxide concentration: High, Blood pressure: High",
+      "Carbon dioxide concentration: Low, Blood pressure: High",
+      "Carbon dioxide concentration: High, Blood pressure: Low",
+      "Carbon dioxide concentration: Low, Blood pressure: Low"
+    ],
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "9.5.1",
+    "originalLevel": "U",
+    "explanation": "Y is the pulmonary trunk, which takes CO₂-rich blood from the right ventricle into the low-pressure pulmonary circuit.",
+    "feedback": [
+      "The CO₂ is high but pulmonary pressure is relatively low.",
+      "Neither low CO₂ nor high pressure fits.",
+      "Both features match pulmonary arterial blood.",
+      "The blood has not yet lost CO₂ in the lungs."
+    ],
+    "diagramUrl": "/materials/ssc/biology/ssc-1/biology-ix-2024-paper-i-q40.png"
+  }
+]

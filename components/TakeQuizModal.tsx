@@ -99,7 +99,9 @@ export default function TakeQuizModal({
   paperCode,
   questions
 }: TakeQuizModalProps) {
-  const officialDuration = /^PHY-XI-201[78]-P1$/i.test(paperCode) ? 40 : /^PHY-XI-202[12]-P1$/i.test(paperCode) ? 130 : 50;
+  const officialDuration = /^BIO-(?:IX|X)-2022-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 100
+    : /^BIO-(?:IX-(?:MODEL-2026|2024)|X-(?:MODEL-2027|2023|2025))-P1(?:-MCQS-\d+)?$/i.test(paperCode)
+      ? 70 : /^PHY-XI-201[78]-P1$/i.test(paperCode) ? 40 : /^PHY-XI-202[12]-P1$/i.test(paperCode) ? 130 : 50;
   // Navigation / Phase State: 'auth' -> 'setup' -> 'active' -> 'completed'
   const [phase, setPhase] = useState<'auth' | 'setup' | 'active' | 'completed'>('setup');
   const [showFinishConfirmModal, setShowFinishConfirmModal] = useState<boolean>(false);

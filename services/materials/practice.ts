@@ -33,7 +33,7 @@ async function chapterSourceQuestions(topicId: string, questionTypes: string[]) 
   if (!topic) throw new ApiError(404, 'CHAPTER_NOT_FOUND', 'This chapter is not in the current syllabus.');
   const version = topic.syllabusVersion;
   if (version.sourceDocumentId && !await prisma.knowledgeDocument.findFirst({ where: { ...publicMaterialWhere, id: version.sourceDocumentId }, select: { id: true } })) throw new ApiError(404, 'CURRICULUM_WITHDRAWN', 'This curriculum source is awaiting review.');
-  const rows = await prisma.pastPaperQuestion.findMany({ where: { verified: true, syllabusVersionId: version.id, questionType: { in: questionTypes }, topics: { some: { topicId } }, pastPaper: chapterPaperWhere }, include: { pastPaper: { select: { id: true, paperCode: true, examYear: true, title: true, sourceDocumentId: true, sourceHash: true, verificationStatus: true, sourceDocument: { select: { catalogMetadata: true } } } } }, orderBy: [{ createdAt: 'asc' }, { id: 'asc' }], take: 301 });
+  const rows = await prisma.pastPaperQuestion.findMany({ where: { verified: true, syllabusVersionId: version.id, questionType: { in: questionTypes }, topics: { some: { topicId } }, pastPaper: chapterPaperWhere }, include: { pastPaper: { select: { id: true, paperCode: true, examYear: true, examType: true, academicClass: { select: { level: true } }, title: true, sourceDocumentId: true, sourceHash: true, verificationStatus: true, sourceDocument: { select: { catalogMetadata: true } } } } }, orderBy: [{ createdAt: 'asc' }, { id: 'asc' }], take: 301 });
   if (rows.length > 300) throw new ApiError(422, 'CHAPTER_PRACTICE_TOO_LARGE', 'This chapter needs paginated practice sets before starting one assessment.');
   const questions = rows.filter(q => {
     if (!chapterPaperIsPublished(q.pastPaper)) return false;
@@ -64,6 +64,7 @@ export async function mappedChapterGroups(board: string, grade: number, subject:
       return { id: q.id, questionNumber: i + 1, originalQuestionNumber: q.questionNumber,
         rawQuestionNumber: q.questionNumber, paperCode: q.pastPaper.paperCode || q.pastPaperId,
         sourceTitle: q.pastPaper.title, sourcePaperId: q.pastPaperId, sourceYear: q.pastPaper.examYear, examYear: q.pastPaper.examYear,
+        sourceGrade: q.pastPaper.academicClass?.level, examType: q.pastPaper.examType,
         unitNumber: Number(topic.topicNumber), unitName: topic.name, current_slo: meta.current_slo,
         stem: q.questionText, options: paperChoices(meta.choices), correctOption: paperAnswer(meta, paperChoices(meta.choices)),
         explanation: content.explanation, cognitiveLevel: content.cognitiveLevel, diagramUrl: content.diagramUrl,

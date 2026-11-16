@@ -16,6 +16,8 @@ import { supportingMaterialLabels } from '@/lib/materialTypes';
 import { mappedChapterGroups, mappedTheoryUnits } from '@/services/materials/practice';
 import { hsscPhysicsSyllabus } from '@/lib/hsscPhysicsSyllabus';
 import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
+import { sscBiologySyllabus } from '@/lib/sscBiologySyllabus';
+import prisma from '@/lib/prisma';
 
 type Group = "papers" | "practice" | "study" | "lab" | "support";
 
@@ -36,13 +38,23 @@ export default async function SubjectMaterials({
   if (!scope) notFound();
   const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const senior = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
-  const [documents, chapters] = await Promise.all([
+  const biology = sscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const [documents, chapters, biologyPapers] = await Promise.all([
     subjectMaterialTypes(params.board, params.class, params.subject).catch(error => {
-      if (hssc && error.name === "PrismaClientInitializationError") return new Set<string>();
+      if ((hssc || biology) && error.name === "PrismaClientInitializationError") return new Set<string>();
       throw error;
     }),
     studyChapters(scope),
+    biology ? prisma.pastPaper.findMany({
+      where: { paperCode: { startsWith: `BIO-${scope.classDef.roman}-` }, sourceHash: { not: null }, verificationStatus: "REVIEWED_WITH_SOURCE_NOTES" },
+      select: { examType: true },
+    }).catch(error => {
+      if (error.name === "PrismaClientInitializationError") return [];
+      throw error;
+    }) : [],
   ]);
+  const biologyModel = biologyPapers.some(paper => paper.examType === "MODEL_EXAM");
+  const biologyAnnual = biologyPapers.some(paper => paper.examType === "ANNUAL");
   const legacy =
     scope.board.id === "akueb" &&
     scope.meta.slug === "physics" &&
@@ -56,9 +68,10 @@ export default async function SubjectMaterials({
     scope.board.id === "akueb" &&
     scope.meta.slug === "mathematics" &&
     [9, 10].includes(scope.classDef.level);
-  const [mathMcqs, mathTheory] = mathematics
-    ? await Promise.all([mappedChapterGroups(scope.board.shortCode, scope.classDef.level, scope.meta.title), mappedTheoryUnits(scope.board.shortCode, scope.classDef.level, scope.meta.title)])
-    : [[], []];
+  const [mathMcqs, mappedTheory] = await Promise.all([
+    mathematics ? mappedChapterGroups(scope.board.shortCode, scope.classDef.level, scope.meta.title) : [],
+    mathematics || biologyPapers.length ? mappedTheoryUnits(scope.board.shortCode, scope.classDef.level, scope.meta.title) : [],
+  ]);
   const available = (kind: string) => documents.has(kind);
   const items: {
     label: string;
@@ -69,20 +82,20 @@ export default async function SubjectMaterials({
     {
       label: "Syllabus",
       href: scope.baseUrl + "/syllabus",
-      pending: !hssc && !legacy && !isCsIX && !isCsX && !chemistry && !mathematics && !available("syllabus"),
+      pending: !biology && !hssc && !legacy && !isCsIX && !isCsX && !chemistry && !mathematics && !available("syllabus"),
       group: "papers",
     },
     {
       label: "Model papers",
       href: scope.baseUrl + "/model-papers",
-      pending: !senior && !legacy && !isCsIX && !chemistry && !available("model_paper"),
+      pending: !biologyModel && !senior && !legacy && !isCsIX && !chemistry && !available("model_paper"),
       group: "papers",
     },
     {
       label: "Past papers",
       href: scope.baseUrl + "/pastpapers",
       pending:
-        !(senior?.grade === 11) && !legacy && !isCsIX && !chemistry && !available("past_paper"),
+        !biologyAnnual && !(senior?.grade === 11) && !legacy && !isCsIX && !chemistry && !available("past_paper"),
       group: "papers",
     },
     {
@@ -91,7 +104,7 @@ export default async function SubjectMaterials({
       pending: !senior && !legacy && !chemistry && !available("textbook"),
       group: "papers",
     },
-    ...(hssc ? [{
+    ...(hssc || biology ? [{
       label: "Chapters & learning outcomes",
       href: scope.baseUrl + "/study",
       group: "study" as Group,
@@ -146,10 +159,10 @@ export default async function SubjectMaterials({
     {
       label: "MCQs (Chapter-wise, Past Papers & Full Book)",
       href: scope.baseUrl + "/mcqs",
-      pending: !senior && !legacy && !isCsIX && !chemistry && !mathMcqs.length && !available("mcq"),
+      pending: !biologyPapers.length && !senior && !legacy && !isCsIX && !chemistry && !mathMcqs.length && !available("mcq"),
       group: "practice",
     },
-    ...(['crqs', 'erqs', 'numericals'] as const).filter(mode => mathTheory.some(unit => unit[mode].length > 0)).map(mode => ({
+    ...(['crqs', 'erqs', 'numericals'] as const).filter(mode => mappedTheory.some(unit => unit[mode].length > 0)).map(mode => ({
       label: mode === 'crqs' ? 'Chapter-wise CRQs (Short Response Questions)' : mode === 'erqs' ? 'Chapter-wise ERQs (Extended Response Questions)' : 'Chapter-wise Numericals & Worked Problems',
       href: scope.baseUrl + '/' + mode,
       pending: false,
@@ -202,8 +215,8 @@ export default async function SubjectMaterials({
         }))),
     {
       label: "Practicals",
-      href: scope.baseUrl + "/practicals",
-      pending: !hssc && !(legacy && scope.classDef.level === 9) && !chemistry && !available('practical_paper'),
+      href: biology ? biology.original + '#page=' + biology.practicalPage : scope.baseUrl + "/practicals",
+      pending: !biology && !hssc && !(legacy && scope.classDef.level === 9) && !chemistry && !available('practical_paper'),
       group: "lab",
     },
     ...Object.entries(supportingMaterialLabels)

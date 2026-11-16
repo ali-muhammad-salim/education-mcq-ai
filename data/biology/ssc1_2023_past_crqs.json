@@ -1,0 +1,367 @@
+[
+  {
+    "questionNumber": "1",
+    "type": "CRQ",
+    "marks": 2,
+    "pageNumber": 2,
+    "originalSlo": "1.2.1",
+    "current_slo": "1.2.1",
+    "cognitiveLevel": "U",
+    "grade": 9,
+    "questionText": "A biological research department is working on a project in which the biologists have to study the fossils, with reference to their chemical composition, origin and binomial nomenclature.\n\nIdentify any TWO branches of biology which are involved in this project.",
+    "modelAnswer": "Any TWO of the following branches with justification:\n1. **Palaeontology**: The study of fossils, their geological age, structure, and evolutionary history.\n2. **Taxonomy**: The identification, classification, and naming (binomial nomenclature) of organisms.\n3. **Biochemistry**: The study of the chemical composition and chemical compounds forming living organisms and their preserved fossil remains.\n4. **Evolution**: The study of the origins, ancestral lineage, and historical development of organisms over geological time.",
+    "officialMarkingNotes": "Award 1 mark for each correctly identified branch of biology (maximum 2 marks):\n- Palaeontology (study of fossils)\n- Taxonomy (binomial nomenclature / classification)\n- Biochemistry (chemical composition)\n- Evolutionary biology / Evolution (origin of fossils)\nCandidates should identify the branch based on the context provided in the question stem.",
+    "sourceSha256": "6ad4b77e0781bab82151990f969c63687a704de24038af5d078c3c89336143f3",
+    "currentSlo": "1.2.1",
+    "current_mapping": [
+      {
+        "code": "1.2.1",
+        "description": "explain the significance of given branches of biology, i.e., morphology, anatomy, physiology, embryology, taxonomy, cell biology (cytology), histology, palaeontology, pathology, environmental biology (ecology), sociobiology, molecular biology, immunology, genetics, pharmacology, marine biology, freshwater biology;",
+        "topic": "Introduction to Biology",
+        "grade": 9
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Biology"
+    },
+    "mappingStatus": "IN_SCOPE",
+    "mappingReason": "Any TWO of the following branches with justification:\n1. **Palaeontology**: The study of fossils, their geological age, structure, and evolutionary history.\n2. **Taxonomy**: The identification, classification, and naming (binomial nomenclature) of organisms.\n3. **Biochemistry**: The study of the chemical composition and chemical compounds forming living organisms and their preserved fossil remains.\n4. **Evolution**: The study of the origins, ancestral lineage, and historical development of organisms over geological time.",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "syllabusEdition": "2025 SSC Biology",
+    "unitNumber": 1,
+    "unitName": "Introduction to Biology",
+    "sloText": "explain the significance of given branches of biology, i.e., morphology, anatomy, physiology, embryology, taxonomy, cell biology (cytology), histology, palaeontology, pathology, environmental biology (ecology), sociobiology, molecular biology, immunology, genetics, pharmacology, marine biology, freshwater biology;",
+    "betterResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q1_better.png",
+    "weakerResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q1_weaker.png"
+  },
+  {
+    "questionNumber": "2",
+    "type": "CRQ",
+    "marks": 3,
+    "pageNumber": 2,
+    "originalSlo": "2.1.2",
+    "current_slo": "2.1.2",
+    "cognitiveLevel": "A",
+    "grade": 9,
+    "questionText": "Consider the given graph.\n\nUsing the information in the given graph,\na. identify the dependent and independent variables. (2 Marks)\nb. interpret the trend in population. (1 Mark)",
+    "modelAnswer": "a. Dependent and independent variables:\n- **Dependent variable**: Population (in billions) [plotted on the y-axis, responding variable]\n- **Independent variable**: Year (or Time in years) [plotted on the x-axis, manipulated/predictor variable]\n\nb. Trend in population:\n- From 1750 to 1950, human population grew at a very slow and gradual rate; after 1950, human population experienced rapid, steep, and exponential growth, reaching projected levels over 6 billion by 2050.",
+    "officialMarkingNotes": "Part a (2 marks): 1 mark for identifying 'Population' (or Population/billion) as the dependent variable; 1 mark for identifying 'Year' (or Time) as the independent variable.\nPart b (1 mark): 1 mark for describing the overall trend: e.g. population increases over time; slow increase from 1750 to 1950 followed by sharp/rapid/exponential increase after 1950.",
+    "diagramUrl": "/paper-crops/BIO-IX-2023-P2/q2_population_graph.png",
+    "isDiagram": true,
+    "sourceSha256": "6ad4b77e0781bab82151990f969c63687a704de24038af5d078c3c89336143f3",
+    "currentSlo": "2.1.2",
+    "current_mapping": [
+      {
+        "code": "2.1.2",
+        "description": "differentiate between hypothesis, theory and law in the context of scientific research;",
+        "topic": "Solving a Biological Problem",
+        "grade": 9
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Biology"
+    },
+    "mappingStatus": "IN_SCOPE",
+    "mappingReason": "a. Dependent and independent variables:\n- **Dependent variable**: Population (in billions) [plotted on the y-axis, responding variable]\n- **Independent variable**: Year (or Time in years) [plotted on the x-axis, manipulated/predictor variable]\n\nb. Trend in population:\n- From 1750 to 1950, human population grew at a very slow and gradual rate; after 1950, human population experienced rapid, steep, and exponential growth, reaching projected levels over 6 billion by 2050.",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "syllabusEdition": "2025 SSC Biology",
+    "unitNumber": 2,
+    "unitName": "Solving a Biological Problem",
+    "sloText": "differentiate between hypothesis, theory and law in the context of scientific research;",
+    "betterResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q2_better.png",
+    "weakerResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q2_weaker.png"
+  },
+  {
+    "questionNumber": "3",
+    "type": "CRQ",
+    "marks": 3,
+    "pageNumber": 3,
+    "originalSlo": "3.3.4",
+    "current_slo": "3.4.3",
+    "cognitiveLevel": "U",
+    "grade": 9,
+    "questionText": "The five-kingdom classification system better explains the diversity of living organisms.\n\nWrite any THREE points to support the given statement.",
+    "modelAnswer": "Any THREE supporting points (1 mark each):\n1. **Separation of prokaryotes from eukaryotes**: It isolates prokaryotic bacteria lacking true membrane-bound nuclei into Kingdom Monera, recognizing the fundamental distinction in cellular organization.\n2. **Appropriate placement of Fungi**: Unlike earlier two-kingdom systems that misclassified fungi as plants, it recognizes fungi as distinct absorptive heterotrophs with chitin in their cell walls.\n3. **Resolution of ambiguous organisms in Protista**: It groups simple, unicellular, and colonial eukaryotes (like *Euglena* and algae) with mixed plant-animal characteristics into Kingdom Protista.\n4. **Clear division based on modes of nutrition**: It clearly differentiates organisms based on distinct trophic mechanisms: autotrophic photosynthesis (Plantae), absorptive heterotrophy (Fungi), and ingestive heterotrophy (Animalia).",
+    "officialMarkingNotes": "Award 1 mark for each valid scientific point supporting why the five-kingdom system is superior (maximum 3 marks):\n- Clear distinction between prokaryotes (Kingdom Monera) and eukaryotes.\n- Fungi given their own separate kingdom based on absorptive nutrition and chitin cell walls.\n- Unicellular eukaryotes placed in Kingdom Protista, eliminating confusion.\n- Based on multiple robust criteria: cellular structure, body organization, and modes of nutrition.",
+    "sourceSha256": "6ad4b77e0781bab82151990f969c63687a704de24038af5d078c3c89336143f3",
+    "currentSlo": "3.4.3",
+    "current_mapping": [
+      {
+        "code": "3.4.3",
+        "description": "describe that Robert Whittaker’s five-kingdom classification system provides a more comprehensive understanding of the diversity of living organisms compared to other classification systems;",
+        "topic": "Biodiversity",
+        "grade": 9
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Biology"
+    },
+    "mappingStatus": "IN_SCOPE",
+    "mappingReason": "Any THREE supporting points (1 mark each):\n1. **Separation of prokaryotes from eukaryotes**: It isolates prokaryotic bacteria lacking true membrane-bound nuclei into Kingdom Monera, recognizing the fundamental distinction in cellular organization.\n2. **Appropriate placement of Fungi**: Unlike earlier two-kingdom systems that misclassified fungi as plants, it recognizes fungi as distinct absorptive heterotrophs with chitin in their cell walls.\n3. **Resolution of ambiguous organisms in Protista**: It groups simple, unicellular, and colonial eukaryotes (like *Euglena* and algae) with mixed plant-animal characteristics into Kingdom Protista.\n4. **Clear division based on modes of nutrition**: It clearly differentiates organisms based on distinct trophic mechanisms: autotrophic photosynthesis (Plantae), absorptive heterotrophy (Fungi), and ingestive heterotrophy (Animalia).",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "syllabusEdition": "2025 SSC Biology",
+    "unitNumber": 3,
+    "unitName": "Biodiversity",
+    "sloText": "describe that Robert Whittaker’s five-kingdom classification system provides a more comprehensive understanding of the diversity of living organisms compared to other classification systems;",
+    "betterResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q3_better.png",
+    "weakerResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q3_weaker.png"
+  },
+  {
+    "questionNumber": "4",
+    "type": "CRQ",
+    "marks": 3,
+    "pageNumber": 4,
+    "originalSlo": "5.3.5",
+    "current_slo": "7.4.11",
+    "cognitiveLevel": "A",
+    "grade": 9,
+    "questionText": "The given graph represents the effect of exercise on breathing rate.\n\na. Identify the time period in which maximum amount of oxygen would be consumed by the body. (1 Mark)\nb. Why does the breathing rate remain high at the beginning of the recovery period? (1 Mark)\nc. Mention the physiological activity other than breathing rate that will also increase during exercise. (1 Mark)",
+    "modelAnswer": "a. **Time period of maximum oxygen consumption**: Exercise period (from 5 minutes to 35 minutes / between 5 and 35 minutes).\n\nb. **Reason for elevated breathing rate in early recovery**: To repay the 'oxygen debt' accumulated during anaerobic respiration during intense exercise, and to provide oxygen for metabolizing/oxidizing accumulated lactic acid in the liver and removing surplus carbon dioxide.\n\nc. **Other physiological activity increased during exercise**: Heart rate (pulse rate) / sweating (perspiration) / blood pressure / core body temperature.",
+    "officialMarkingNotes": "Part a (1 mark): Exercise period / 5 to 35 minutes / during strenuous exercise.\nPart b (1 mark): To clear oxygen debt / eliminate accumulated lactic acid / expel excess carbon dioxide produced during exercise.\nPart c (1 mark): Heart rate / pulse rate / body temperature / sweating / cardiac output.",
+    "diagramUrl": "/paper-crops/BIO-IX-2023-P2/q4_breathing_graph.png",
+    "isDiagram": true,
+    "sourceSha256": "6ad4b77e0781bab82151990f969c63687a704de24038af5d078c3c89336143f3",
+    "currentSlo": "7.4.11",
+    "current_mapping": [
+      {
+        "code": "7.4.11",
+        "description": "explain the removal of oxygen debt after exercise, with respect to:\na. continuation of fast heart rate to transport lactic acid in the blood from the muscles to the liver,\nb. continuation of deeper and faster breathing to supply oxygen for aerobic respiration of lactic acid,\nc. aerobic respiration of lactic acid in the liver;",
+        "topic": "Bioenergetics",
+        "grade": 9
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Biology"
+    },
+    "mappingStatus": "IN_SCOPE",
+    "mappingReason": "a. **Time period of maximum oxygen consumption**: Exercise period (from 5 minutes to 35 minutes / between 5 and 35 minutes).\n\nb. **Reason for elevated breathing rate in early recovery**: To repay the 'oxygen debt' accumulated during anaerobic respiration during intense exercise, and to provide oxygen for metabolizing/oxidizing accumulated lactic acid in the liver and removing surplus carbon dioxide.\n\nc. **Other physiological activity increased during exercise**: Heart rate (pulse rate) / sweating (perspiration) / blood pressure / core body temperature.",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "syllabusEdition": "2025 SSC Biology",
+    "unitNumber": 7,
+    "unitName": "Bioenergetics",
+    "sloText": "explain the removal of oxygen debt after exercise, with respect to:\na. continuation of fast heart rate to transport lactic acid in the blood from the muscles to the liver,\nb. continuation of deeper and faster breathing to supply oxygen for aerobic respiration of lactic acid,\nc. aerobic respiration of lactic acid in the liver;",
+    "betterResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q4_better.png",
+    "weakerResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q4_weaker.png"
+  },
+  {
+    "questionNumber": "5",
+    "type": "CRQ",
+    "marks": 2,
+    "pageNumber": 4,
+    "originalSlo": "6.1.7",
+    "current_slo": "6.1.7",
+    "cognitiveLevel": "U",
+    "grade": 9,
+    "questionText": "Describe any TWO ways in which co-factors help enzymes to work effectively.",
+    "modelAnswer": "Any TWO ways (1 mark each):\n1. **Substrate binding and bridging**: Cofactors can act as a physical chemical bridge between the enzyme's active site and the substrate molecule, facilitating proper binding and alignment.\n2. **Chemical group or electron transfer**: Coenzymes (organic cofactors like NAD+, FAD) actively participate in catalysis by accepting or donating chemical groups, electrons, or hydrogen atoms during the reaction.\n3. **Active site stabilization / conformational shape**: Inorganic cofactor ions (like Mg2+, Zn2+, Fe2+) help maintain or induce the optimal three-dimensional catalytic conformation of the active site.",
+    "officialMarkingNotes": "Award 1 mark for each valid function of cofactors (maximum 2 marks):\n- Act as bridges between enzyme and substrate.\n- Help in electron or chemical group transfer during chemical reaction.\n- Stabilize enzyme structure and shape of active site.\n- Directly participate in catalysis to speed up reaction.",
+    "sourceSha256": "6ad4b77e0781bab82151990f969c63687a704de24038af5d078c3c89336143f3",
+    "currentSlo": "6.1.7",
+    "current_mapping": [
+      {
+        "code": "6.1.7",
+        "description": "differentiate between the main types of cofactors: prosthetic groups, coenzymes and metal ions (activators);",
+        "topic": "Enzymes",
+        "grade": 9
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Biology"
+    },
+    "mappingStatus": "IN_SCOPE",
+    "mappingReason": "Any TWO ways (1 mark each):\n1. **Substrate binding and bridging**: Cofactors can act as a physical chemical bridge between the enzyme's active site and the substrate molecule, facilitating proper binding and alignment.\n2. **Chemical group or electron transfer**: Coenzymes (organic cofactors like NAD+, FAD) actively participate in catalysis by accepting or donating chemical groups, electrons, or hydrogen atoms during the reaction.\n3. **Active site stabilization / conformational shape**: Inorganic cofactor ions (like Mg2+, Zn2+, Fe2+) help maintain or induce the optimal three-dimensional catalytic conformation of the active site.",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "syllabusEdition": "2025 SSC Biology",
+    "unitNumber": 6,
+    "unitName": "Enzymes",
+    "sloText": "differentiate between the main types of cofactors: prosthetic groups, coenzymes and metal ions (activators);",
+    "betterResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q5_better.png",
+    "weakerResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q5_weaker.png"
+  },
+  {
+    "questionNumber": "6a",
+    "type": "ERQ",
+    "marks": 6,
+    "pageNumber": 5,
+    "originalSlo": "4.2.2",
+    "choiceGroup": "6",
+    "choiceInstruction": "EITHER a OR b (Total 6 Marks)",
+    "current_slo": "4.2.1",
+    "cognitiveLevel": "U",
+    "grade": 9,
+    "questionText": "EITHER\na. Describe any SIX functions of cell membrane in the human body.",
+    "modelAnswer": "Any SIX distinct functions of the cell membrane in the human body (1 mark each):\n1. **Selective permeability / regulation of transport**: Regulates the entry and exit of molecules, allowing essential nutrients (glucose, ions) to enter while retaining cellular contents and barring harmful toxins.\n2. **Protection and containment**: Encloses the cytoplasm and subcellular organelles, shielding the internal physiological machinery from the external chemical and physical environment.\n3. **Cellular communication and signalling**: Membrane receptor proteins bind specific ligands (hormones, neurotransmitters), triggering intracellular biochemical signal transduction cascades.\n4. **Cell recognition and immunity**: Glycoproteins and glycolipids on the extracellular surface act as unique molecular identification markers (antigens), allowing immune cells to distinguish self from non-self.\n5. **Facilitation of endocytosis and exocytosis**: Flexible lipid bilayer invaginates to ingest large macromolecules via pinocytosis and phagocytosis, or fuses with secretory vesicles to expel waste and hormones.\n6. **Cell-to-cell adhesion and tissue formation**: Specialized membrane junction proteins (desmosomes, tight junctions, gap junctions) connect adjacent cells into cohesive functional tissues.\n7. **Maintenance of electrical membrane potential**: Active ion transport pumps (e.g., Na+/K+ ATPase) maintain resting electrical gradients across the membrane, critical for neuronal conduction and muscle contraction.",
+    "officialMarkingNotes": "Award 1 mark for each well-described function of the plasma membrane in the human body (maximum 6 marks):\n1. Selective transport / permeability (passive and active transport).\n2. Protection / cellular integrity.\n3. Cell signalling / receptors for hormones.\n4. Cell recognition / self-antigens.\n5. Endocytosis and exocytosis.\n6. Cell adhesion / junction formation.\n7. Maintenance of electrical resting potential / ion balance.",
+    "sourceSha256": "6ad4b77e0781bab82151990f969c63687a704de24038af5d078c3c89336143f3",
+    "currentSlo": "4.2.1",
+    "current_mapping": [
+      {
+        "code": "4.2.1",
+        "description": "explain structure, composition and functions of the sub-cellular components of a eukaryotic cell (cell wall, plasma membrane, nucleus, cytoplasm, cytoskeleton, Golgi bodies, mitochondria, vacuole, ribosomes, endoplasmic reticulum, lysosomes, peroxisomes, centrioles and plastids) with the help of diagrams/ photomicrographs;",
+        "topic": "Cells and Tissues",
+        "grade": 9
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Biology"
+    },
+    "mappingStatus": "IN_SCOPE",
+    "mappingReason": "Any SIX distinct functions of the cell membrane in the human body (1 mark each):\n1. **Selective permeability / regulation of transport**: Regulates the entry and exit of molecules, allowing essential nutrients (glucose, ions) to enter while retaining cellular contents and barring harmful toxins.\n2. **Protection and containment**: Encloses the cytoplasm and subcellular organelles, shielding the internal physiological machinery from the external chemical and physical environment.\n3. **Cellular communication and signalling**: Membrane receptor proteins bind specific ligands (hormones, neurotransmitters), triggering intracellular biochemical signal transduction cascades.\n4. **Cell recognition and immunity**: Glycoproteins and glycolipids on the extracellular surface act as unique molecular identification markers (antigens), allowing immune cells to distinguish self from non-self.\n5. **Facilitation of endocytosis and exocytosis**: Flexible lipid bilayer invaginates to ingest large macromolecules via pinocytosis and phagocytosis, or fuses with secretory vesicles to expel waste and hormones.\n6. **Cell-to-cell adhesion and tissue formation**: Specialized membrane junction proteins (desmosomes, tight junctions, gap junctions) connect adjacent cells into cohesive functional tissues.\n7. **Maintenance of electrical membrane potential**: Active ion transport pumps (e.g., Na+/K+ ATPase) maintain resting electrical gradients across the membrane, critical for neuronal conduction and muscle contraction.",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "syllabusEdition": "2025 SSC Biology",
+    "unitNumber": 4,
+    "unitName": "Cells and Tissues",
+    "sloText": "explain structure, composition and functions of the sub-cellular components of a eukaryotic cell (cell wall, plasma membrane, nucleus, cytoplasm, cytoskeleton, Golgi bodies, mitochondria, vacuole, ribosomes, endoplasmic reticulum, lysosomes, peroxisomes, centrioles and plastids) with the help of diagrams/ photomicrographs;",
+    "betterResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q6a_better.png",
+    "weakerResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q6a_weaker.png"
+  },
+  {
+    "questionNumber": "6b",
+    "type": "ERQ",
+    "marks": 6,
+    "pageNumber": 5,
+    "originalSlo": "7.2.4",
+    "choiceGroup": "6",
+    "choiceInstruction": "EITHER a OR b (Total 6 Marks)",
+    "current_slo": "7.2.7",
+    "cognitiveLevel": "U",
+    "grade": 9,
+    "questionText": "OR\nb. Describe any THREE structural adaptations of chloroplast for harvesting light energy and carrying out photosynthesis.",
+    "modelAnswer": "Any THREE structural adaptations with clear functional descriptions (2 marks each = 6 marks):\n1. **Extensive thylakoid network stacked into grana**:\n   - *Structure*: The inner membrane forms disc-shaped membranous sacs (thylakoids) organized into dense vertical stacks called grana.\n   - *Adaptation*: Provides an enormous surface area embedding photosystems I and II, light-harvesting chlorophyll and carotenoid pigments, electron transport chains, and ATP synthase complexes for efficient light capture and photophosphorylation.\n\n2. **Fluid stroma containing essential enzymes and ribosomes**:\n   - *Structure*: The gelatinous aqueous fluid surrounding grana contains Rubisco, enzymes of the Calvin cycle, chloroplast DNA, and 70S ribosomes.\n   - *Adaptation*: Provides the optimal biochemical microenvironment for carbon dioxide fixation and reduction of triose phosphate into glucose during the light-independent reactions.\n\n3. **Double membrane envelope with selective permeability**:\n   - *Structure*: An outer membrane with porins and a selectively permeable inner membrane enclose the chloroplast.\n   - *Adaptation*: Isolates the photosynthetic reactions from cytosolic enzymes, creating a specialized compartment and regulating metabolite exchange (e.g. exporting synthesized sugars).\n\n4. **Narrow thylakoid lumen for proton gradient accumulation**:\n   - *Structure*: The enclosed, tight internal compartment of thylakoid discs.\n   - *Adaptation*: Enables rapid accumulation of high proton (H+) concentration from water photolysis and ETC pumping, creating a steep electrochemical proton gradient to drive chemiosmotic ATP synthesis.",
+    "officialMarkingNotes": "Award up to 2 marks for each well-described structural adaptation (1 mark for structure, 1 mark for functional explanation; maximum 3 adaptations = 6 marks):\n- Grana / thylakoid membranes (large surface area for pigments and light absorption).\n- Stroma (enzymes for dark reactions / Calvin cycle).\n- Double membrane (selective compartmentalization).\n- Thylakoid lumen (proton gradient formation for ATP synthesis).",
+    "sourceSha256": "6ad4b77e0781bab82151990f969c63687a704de24038af5d078c3c89336143f3",
+    "currentSlo": "7.2.7",
+    "current_mapping": [
+      {
+        "code": "7.2.7",
+        "description": "explain the adaptations of leaves, i.e., large surface area, thinness, distribution of chloroplasts, cuticle, guard cells, stomata, upper and lower epidermis, palisade and spongy mesophylls, air spaces, xylem, phloem and petiole for photosynthesis;",
+        "topic": "Bioenergetics",
+        "grade": 9
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Biology"
+    },
+    "mappingStatus": "IN_SCOPE",
+    "mappingReason": "Any THREE structural adaptations with clear functional descriptions (2 marks each = 6 marks):\n1. **Extensive thylakoid network stacked into grana**:\n   - *Structure*: The inner membrane forms disc-shaped membranous sacs (thylakoids) organized into dense vertical stacks called grana.\n   - *Adaptation*: Provides an enormous surface area embedding photosystems I and II, light-harvesting chlorophyll and carotenoid pigments, electron transport chains, and ATP synthase complexes for efficient light capture and photophosphorylation.\n\n2. **Fluid stroma containing essential enzymes and ribosomes**:\n   - *Structure*: The gelatinous aqueous fluid surrounding grana contains Rubisco, enzymes of the Calvin cycle, chloroplast DNA, and 70S ribosomes.\n   - *Adaptation*: Provides the optimal biochemical microenvironment for carbon dioxide fixation and reduction of triose phosphate into glucose during the light-independent reactions.\n\n3. **Double membrane envelope with selective permeability**:\n   - *Structure*: An outer membrane with porins and a selectively permeable inner membrane enclose the chloroplast.\n   - *Adaptation*: Isolates the photosynthetic reactions from cytosolic enzymes, creating a specialized compartment and regulating metabolite exchange (e.g. exporting synthesized sugars).\n\n4. **Narrow thylakoid lumen for proton gradient accumulation**:\n   - *Structure*: The enclosed, tight internal compartment of thylakoid discs.\n   - *Adaptation*: Enables rapid accumulation of high proton (H+) concentration from water photolysis and ETC pumping, creating a steep electrochemical proton gradient to drive chemiosmotic ATP synthesis.",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "syllabusEdition": "2025 SSC Biology",
+    "unitNumber": 7,
+    "unitName": "Bioenergetics",
+    "sloText": "explain the adaptations of leaves, i.e., large surface area, thinness, distribution of chloroplasts, cuticle, guard cells, stomata, upper and lower epidermis, palisade and spongy mesophylls, air spaces, xylem, phloem and petiole for photosynthesis;",
+    "betterResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q6b_better.png",
+    "weakerResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q6b_weaker.png"
+  },
+  {
+    "questionNumber": "7a",
+    "type": "ERQ",
+    "marks": 6,
+    "pageNumber": 6,
+    "originalSlo": "8.4.2",
+    "choiceGroup": "7",
+    "choiceInstruction": "EITHER a OR b (Total 6 Marks)",
+    "current_slo": "8.3.4",
+    "cognitiveLevel": "A",
+    "grade": 9,
+    "questionText": "EITHER\na. Analyse how climate change can lead to famine in an area.",
+    "modelAnswer": "Detailed analysis of climate change leading to famine (6 marks, covering distinct logical mechanisms):\n1. **Prolonged droughts and water scarcity**: Global warming alters precipitation patterns, causing severe, prolonged droughts that deplete groundwater and irrigation reservoirs, leading to catastrophic crop wilting and failure.\n2. **Severe flooding and soil degradation**: Intense unseasonal downpours and glacial melt cause flash floods that submerge agricultural farmland, destroy standing food crops, wash away nutrient-rich topsoil, and waterlog fields so planting is impossible.\n3. **Extreme heatwaves and thermal stress**: Elevated ambient temperatures beyond physiological thermal optimums inhibit photosynthetic enzymes (such as Rubisco), disrupt pollination and seed set, and drastically reduce agricultural crop yields.\n4. **Proliferation of agricultural pests and plant diseases**: Warmer temperatures accelerate reproduction and expand the geographical ranges of destructive insect pests (e.g. locust swarms) and fungal blights, destroying vast tracts of staple food crops.\n5. **Livestock mortality and forage loss**: Heat stress and desertification reduce pasture forage and livestock drinking water, causing widespread death of cattle and goats, eliminating dairy and meat sources.\n6. **Economic collapse and food insecurity**: Severe food shortages trigger hyperinflation of food prices, rendering staple commodities unaffordable for vulnerable populations and causing widespread famine, malnutrition, and starvation.",
+    "officialMarkingNotes": "Award 1 mark for each valid, logically developed step/mechanism explaining how climate change leads to famine (maximum 6 marks):\n- Droughts leading to crop failure.\n- Floods washing away crops and fertile topsoil.\n- High temperatures reducing crop productivity and photosynthesis.\n- Proliferation of agricultural pests and plant diseases.\n- Death and loss of livestock.\n- Depletion of water resources for irrigation.\n- Socioeconomic food scarcity and acute famine.",
+    "sourceSha256": "6ad4b77e0781bab82151990f969c63687a704de24038af5d078c3c89336143f3",
+    "currentSlo": "8.3.4",
+    "current_mapping": [
+      {
+        "code": "8.3.4",
+        "description": "create a weekly balanced diet meal plan for your family;",
+        "topic": "Nutrition and Digestion",
+        "grade": 9
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Biology"
+    },
+    "mappingStatus": "IN_SCOPE",
+    "mappingReason": "Detailed analysis of climate change leading to famine (6 marks, covering distinct logical mechanisms):\n1. **Prolonged droughts and water scarcity**: Global warming alters precipitation patterns, causing severe, prolonged droughts that deplete groundwater and irrigation reservoirs, leading to catastrophic crop wilting and failure.\n2. **Severe flooding and soil degradation**: Intense unseasonal downpours and glacial melt cause flash floods that submerge agricultural farmland, destroy standing food crops, wash away nutrient-rich topsoil, and waterlog fields so planting is impossible.\n3. **Extreme heatwaves and thermal stress**: Elevated ambient temperatures beyond physiological thermal optimums inhibit photosynthetic enzymes (such as Rubisco), disrupt pollination and seed set, and drastically reduce agricultural crop yields.\n4. **Proliferation of agricultural pests and plant diseases**: Warmer temperatures accelerate reproduction and expand the geographical ranges of destructive insect pests (e.g. locust swarms) and fungal blights, destroying vast tracts of staple food crops.\n5. **Livestock mortality and forage loss**: Heat stress and desertification reduce pasture forage and livestock drinking water, causing widespread death of cattle and goats, eliminating dairy and meat sources.\n6. **Economic collapse and food insecurity**: Severe food shortages trigger hyperinflation of food prices, rendering staple commodities unaffordable for vulnerable populations and causing widespread famine, malnutrition, and starvation.",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "syllabusEdition": "2025 SSC Biology",
+    "unitNumber": 8,
+    "unitName": "Nutrition and Digestion",
+    "sloText": "create a weekly balanced diet meal plan for your family;",
+    "betterResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q7a_better.png",
+    "weakerResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q7a_weaker.png"
+  },
+  {
+    "questionNumber": "7b",
+    "type": "ERQ",
+    "marks": 6,
+    "pageNumber": 6,
+    "originalSlo": "9.6.1",
+    "choiceGroup": "7",
+    "choiceInstruction": "EITHER a OR b (Total 6 Marks)",
+    "current_slo": "9.6.1",
+    "cognitiveLevel": "A",
+    "grade": 9,
+    "questionText": "OR\nb. Each of the given blood vessels has a specialised structure which is adapted for its specific function.\n\ni. Identify ONE structural feature of each blood vessel. (3 Marks)\nii. Describe how each structural feature identified in part i enables the respective blood vessel to perform a specific function. (3 Marks)",
+    "modelAnswer": "i. ONE structural feature of each blood vessel (3 Marks):\n- **Artery**: Thick tunica media containing abundant smooth muscle fibres and elastic connective tissue fibres (or thick wall with narrow lumen).\n- **Vein**: Presence of semi-lunar internal valves (or thin muscular wall with wide lumen).\n- **Capillary**: Extremely thin wall consisting of a single layer of squamous endothelial cells with no muscle or connective tissue.\n\nii. Description of how each structural feature enables its specific function (3 Marks):\n- **Artery adaptation**: The thick, muscular, and elastic wall allows arteries to stretch and recoil under high, pulsing systolic pressure generated by ventricular contraction without bursting, maintaining continuous forward blood flow.\n- **Vein adaptation**: Semi-lunar valves prevent the backflow of blood under low pressure and gravity, ensuring unidirectional venous return of deoxygenated blood back towards the heart.\n- **Capillary adaptation**: The microscopic single-cell thick endothelial wall provides an extremely short diffusion distance, permitting rapid and efficient diffusion of oxygen, carbon dioxide, nutrients, and waste products between blood and surrounding tissue cells.",
+    "officialMarkingNotes": "Part i (3 marks): 1 mark for one valid structural feature of each:\n- Artery: thick wall / elastic fibres / thick smooth muscle / narrow lumen.\n- Vein: thin wall / presence of valves / large wide lumen.\n- Capillary: single layer of endothelial cells / one cell thick wall / microscopic diameter.\n\nPart ii (3 marks): 1 mark for describing how each structural feature relates to its function:\n- Artery: withstands and maintains high hydrostatic pulsing pressure.\n- Vein: prevents backflow of blood under low pressure towards the heart.\n- Capillary: allows rapid diffusion/exchange of gases, nutrients and wastes with tissue fluid.",
+    "diagramUrl": "/paper-crops/BIO-IX-2023-P2/q7b_blood_vessels.png",
+    "isDiagram": true,
+    "sourceSha256": "6ad4b77e0781bab82151990f969c63687a704de24038af5d078c3c89336143f3",
+    "currentSlo": "9.6.1",
+    "current_mapping": [
+      {
+        "code": "9.6.1",
+        "description": "relate the structure of arteries, veins and capillaries with their respective functions in transporting blood throughout the body;",
+        "topic": "Transport",
+        "grade": 9
+      }
+    ],
+    "mapping_scope": {
+      "board": "AKU-EB",
+      "grade": 9,
+      "subject": "Biology"
+    },
+    "mappingStatus": "IN_SCOPE",
+    "mappingReason": "i. ONE structural feature of each blood vessel (3 Marks):\n- **Artery**: Thick tunica media containing abundant smooth muscle fibres and elastic connective tissue fibres (or thick wall with narrow lumen).\n- **Vein**: Presence of semi-lunar internal valves (or thin muscular wall with wide lumen).\n- **Capillary**: Extremely thin wall consisting of a single layer of squamous endothelial cells with no muscle or connective tissue.\n\nii. Description of how each structural feature enables its specific function (3 Marks):\n- **Artery adaptation**: The thick, muscular, and elastic wall allows arteries to stretch and recoil under high, pulsing systolic pressure generated by ventricular contraction without bursting, maintaining continuous forward blood flow.\n- **Vein adaptation**: Semi-lunar valves prevent the backflow of blood under low pressure and gravity, ensuring unidirectional venous return of deoxygenated blood back towards the heart.\n- **Capillary adaptation**: The microscopic single-cell thick endothelial wall provides an extremely short diffusion distance, permitting rapid and efficient diffusion of oxygen, carbon dioxide, nutrients, and waste products between blood and surrounding tissue cells.",
+    "in_syllabus": true,
+    "out_of_syllabus": false,
+    "current_syllabus_reviewed": true,
+    "syllabusEdition": "2025 SSC Biology",
+    "unitNumber": 9,
+    "unitName": "Transport",
+    "sloText": "relate the structure of arteries, veins and capillaries with their respective functions in transporting blood throughout the body;",
+    "betterResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q7b_better.png",
+    "weakerResponseImage": "/paper-crops/BIO-IX-2023-EMARKING/q7b_weaker.png"
+  }
+]

@@ -28,6 +28,10 @@ import { reviewedMathematicsPapers } from '@/lib/mathematicsPapers';
 import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 import { hsscMcqsData } from '@/lib/hsscMcqsData';
 import HsscMcqsClient from '@/app/[board]/[class]/[subject]/mcqs/HsscMcqsClient';
+import { sscBiologySyllabus } from '@/lib/sscBiologySyllabus';
+import type { HsscMcqsData } from '@/lib/hsscMcqsData';
+import prisma from '@/lib/prisma';
+import { paperAnswer, paperChoices, paperMetadata } from '@/lib/paperPresentation';
 
 interface PageProps {
   params: Promise<{ board: string; class: string; subject: string }>;
@@ -49,8 +53,70 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
   const classDef = CLASS_DEFINITIONS[classRoman];
   const meta = getSubjectMeta(rawSubject);
   const hssc = hsscPhysicsResources(boardId, classDef.level, meta.slug);
-  if (hssc) {
-    const data = hsscMcqsData(classDef.level, hssc.base);
+  const biology = sscBiologySyllabus(boardId, classDef.level, meta.slug);
+  if (hssc || biology) {
+    const base = `/${board.id}/${classRoman}/${meta.slug}`;
+    let data: HsscMcqsData;
+    if (hssc) {
+      data = hsscMcqsData(classDef.level, base);
+    } else {
+      const chapters = await mappedChapterGroups(board.shortCode, classDef.level, meta.title);
+      const mapped = chapters.flatMap(group => group.questions);
+      const sources = new Map<string, HsscMcqsData['papers'][number]>();
+      for (const q of new Map(mapped.map(q => [q.id, q])).values()) {
+        const annual = q.examType === 'ANNUAL';
+        const paper = sources.get(q.paperCode) ?? {
+          code: q.paperCode, title: q.sourceTitle, session: annual ? String(q.examYear) : 'Model',
+          year: annual ? q.examYear : null, chapterOnly: q.sourceGrade !== classDef.level,
+          paper: 'I', href: '/past-papers/' + q.sourcePaperId, questions: [],
+        };
+        paper.questions.push({
+          id: q.id, questionNumber: q.rawQuestionNumber, questionText: q.stem,
+          questionType: 'MULTIPLE_CHOICE', marks: 1, difficulty: q.cognitiveLevel,
+          diagramBased: Boolean(q.diagramUrl), sourceRegion: { ...q.sourceRegion, correct_answer: q.correctOption },
+          topics: [{ topic: { name: q.unitName, topicNumber: String(q.unitNumber) } }],
+        });
+        sources.set(q.paperCode, paper);
+      }
+      const papers = [...sources.values()];
+      // A historical Biology question may now belong to the other grade.
+      // Chapter pools follow that mapping while full papers retain their original scope.
+      const localAnnualPapers = papers.filter(paper => paper.year !== null && !paper.chapterOnly);
+      if (localAnnualPapers.length) {
+        const crossGrade = await prisma.pastPaperQuestion.findMany({
+          where: {
+            pastPaper: { paperCode: { in: localAnnualPapers.map(paper => paper.code) }, sourceDocumentId: null },
+            syllabusVersion: { isLatest: true, subject: { name: 'Biology', academicClass: { level: { not: classDef.level } } } },
+            verified: true, questionType: 'MULTIPLE_CHOICE',
+          },
+          include: { pastPaper: { select: { paperCode: true } } },
+        });
+        for (const q of crossGrade) {
+          const paper = sources.get(q.pastPaper.paperCode ?? '');
+          const region = paperMetadata(q.sourceRegion);
+          const correct = paperAnswer(region, paperChoices(region.choices));
+          if (paper && correct) paper.questions.push({
+            id: q.id, questionNumber: q.questionNumber, questionText: q.questionText,
+            questionType: q.questionType, marks: q.marks ?? 1, difficulty: q.difficulty ?? undefined,
+            diagramBased: q.diagramBased, sourceRegion: { ...region, correct_answer: correct },
+          });
+        }
+      }
+      for (const paper of papers) paper.questions.sort((a, b) => Number(a.questionNumber) - Number(b.questionNumber));
+      data = {
+        papers,
+        totalQuestions: new Set(mapped.map(q => q.id)).size,
+        units: biology!.units.map(unit => ({
+          topicId: chapters.find(group => group.questions[0]?.unitNumber === unit.unitNumber)?.id,
+          unitNumber: unit.unitNumber, name: unit.name, topics: unit.subtopics.map(item => item.name),
+          href: base + '/mcqs/chapter-wise/' + unit.unitNumber,
+          groups: papers.map(paper => ({
+            paperCode: paper.code,
+            questionIds: mapped.filter(q => q.paperCode === paper.code && q.unitNumber === unit.unitNumber).map(q => q.id),
+          })),
+        })),
+      };
+    }
     const chapterUnit = chapter ? data.units.find(unit => String(unit.unitNumber) === chapter) : undefined;
     if (chapter && !chapterUnit) notFound();
     const hsscCategory = category ? mcqCategories.find(item => item.key === category) : undefined;
@@ -61,8 +127,8 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
             { label: 'Home', href: '/' },
             { label: board.name, href: `/${board.id}` },
             { label: `${classDef.name} (${classDef.stageLabel})`, href: `/${board.id}/${classRoman}` },
-            { label: meta.title, href: hssc.base },
-            { label: hsscCategory?.label || 'MCQs', href: hsscCategory ? `${hssc.base}/mcqs/${hsscCategory.id}` : undefined, active: !chapterUnit },
+            { label: meta.title, href: base },
+            { label: hsscCategory?.label || 'MCQs', href: hsscCategory ? `${base}/mcqs/${hsscCategory.id}` : undefined, active: !chapterUnit },
             ...(chapterUnit ? [{ label: chapterUnit.name, active: true }] : []),
           ]}
         />
@@ -75,7 +141,8 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
           className={classDef.name}
           classLabel={`${classDef.name} (${classDef.stageLabel})`}
           subjectTitle={meta.title}
-          baseUrl={hssc.base}
+          baseUrl={base}
+          theory={biology ? ['crqs', 'erqs'] : undefined}
           category={category}
           chapter={chapter ?? null}
           data={data}

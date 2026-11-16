@@ -87,6 +87,35 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   const quiz = await prisma.quiz.findFirst({ where: { OR: [{ id: identifier }, { code: identifier.toUpperCase() }] }, include: quizInclude });
   if (quiz) return quiz;
   const key = identifier.toUpperCase();
+  const biologyPaper = /^(BIO-(?:IX-(?:MODEL-2026|2022|2023|2024)|X-(?:MODEL-2027|2017|2018|2019|2021|2022|2023|2024|2025))-P1)(?:-MCQS-\d+)?$/.exec(key);
+  if (biologyPaper) {
+    const paper = await prisma.pastPaper.findFirst({
+      where: { paperCode: biologyPaper[1], sourceDocumentId: null, ...chapterPaperWhere },
+      include: {
+        sourceDocument: { select: { catalogMetadata: true } },
+        questions: {
+          where: { verified: true, questionType: 'MULTIPLE_CHOICE', syllabusVersion: { isLatest: true, subject: { name: 'Biology' } } },
+        },
+      },
+    });
+    if (!paper || !chapterPaperIsPublished(paper) || !paper.questions.length) {
+      throw new ApiError(404, 'QUIZ_NOT_FOUND', 'No reviewed Biology questions are available for this paper.');
+    }
+    const content = paper.questions.sort((a, b) => Number(a.questionNumber) - Number(b.questionNumber)).map(sourceChoiceContent);
+    const hash = createHash('sha256').update(JSON.stringify(content)).digest('hex').slice(0, 24);
+    const id = 'practice-biology-' + hash;
+    const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
+    return prisma.quiz.upsert({
+      where: { id }, update: {}, include: quizInclude,
+      create: {
+        id, code: id, teacherId: owner.id, subjectId: paper.subjectId, classId: paper.classId,
+        title: paper.title, status: 'PUBLISHED', visibility: 'PUBLIC', durationMin: paper.examYear === 2022 ? 100 : 70,
+        totalMarks: content.reduce((total, question) => total + question.marks, 0),
+        questions: { create: content.map((q, i) => ({ orderIndex: i + 1, marks: q.marks, questionData: q })) },
+        settings: { create: { maxAttempts: 100, allowRetries: true, showCorrectAnswers: true, immediateFeedback: true, tabMonitoringEnabled: false } },
+      },
+    });
+  }
 
   // Support multi-paper Unit / Chapter / Cognitive timed quizzes (Model + 2025 + 2024)
   const unitMatch = /^(PHY|CS|CHM)-(IX|X)-UNIT-(\d{1,2})-(ALL|PAST)-(ALL|R|U|A|DIAGRAM)$/.exec(key);
@@ -174,7 +203,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
 }
 
 export async function assertQuizAccess(quiz: LoadedQuiz, user: AuthUser | null, taking = false, db: Prisma.TransactionClient = prisma) {
-  if(quiz.id.startsWith('practice-chapter-')){
+  if(quiz.id.startsWith('practice-chapter-') || quiz.id.startsWith('practice-biology-')){
     const ids=quiz.questions.map(q=>(q.questionData as Record<string,Prisma.JsonValue>).sourceQuestionId).filter((id):id is string=>typeof id==='string');
     const sources=await db.pastPaperQuestion.findMany({where:{id:{in:ids},verified:true,syllabusVersion:{isLatest:true,OR:[{sourceDocumentId:null},{sourceDocument:publicMaterialWhere}]},pastPaper:chapterPaperWhere},select:{pastPaperId:true,pastPaper:{select:{id:true,sourceDocumentId:true,sourceHash:true,verificationStatus:true,sourceDocument:{select:{catalogMetadata:true,totalPages:true,_count:{select:{artifacts:true}}}}}}}});
     if(ids.length!==quiz.questions.length||sources.length!==ids.length||sources.some(q=>{const d=q.pastPaper.sourceDocument;return !chapterPaperIsPublished(q.pastPaper)||(d&&d.totalPages!==d._count.artifacts);}))throw new ApiError(404,'CHAPTER_SOURCE_CHANGED','The chapter source or syllabus changed. Start a fresh chapter practice.');

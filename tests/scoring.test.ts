@@ -16,6 +16,19 @@ describe('Assessment boundaries', () => {
     expect(() => normalizeQuestion({ ...question.content, options: question.content.options.map(o => ({ ...o, isCorrect: false })) })).toThrow();
     expect(() => normalizeQuestion({ ...question.content, options: question.content.options.map(o => ({ ...o, id: 'same' })) })).toThrow();
   });
+  it('preserves case-sensitive genotype choices in past-paper questions', () => {
+    const content = normalizeQuestion({
+      provenance: 'PAST_PAPER', stemText: 'Which genotype is heterozygous?',
+      options: [
+        { id: 'A', text: 'Rr', isCorrect: true },
+        { id: 'B', text: 'RR', isCorrect: false },
+        { id: 'C', text: 'rr', isCorrect: false },
+      ],
+    });
+    const q = { ...question, content };
+    expect(gradeAnswer(q, { selectedOptionId: 'A' })).toBe(3);
+    expect(gradeAnswer(q, { selectedOptionId: 'B' })).toBe(0);
+  });
   it('uses a zero numerical tolerance exactly and does not treat blank input as zero', () => {
     const q = { ...question, content: normalizeQuestion({ questionType: 'NUMERICAL', stemText: 'Calculate', correctAnswerText: '0', numericalTolerance: 0 }) };
     expect(gradeAnswer(q, { numericAnswer: '' })).toBe(0); expect(gradeAnswer(q, { numericAnswer: '0.01' })).toBe(0); expect(gradeAnswer(q, { numericAnswer: '0' })).toBe(3);

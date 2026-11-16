@@ -4,6 +4,7 @@ import { publishedStudyWhere } from "@/services/study/visibility";
 import { publicMaterialWhere } from "@/lib/materialVisibility";
 import { getSubjectMeta } from "@/lib/subjectMetadata";
 import { hsscPhysicsSyllabus } from "@/lib/hsscPhysicsSyllabus";
+import { sscBiologySyllabus } from "@/lib/sscBiologySyllabus";
 
 import {SUPPORTED_BOARDS, CLASS_DEFINITIONS, normalizeBoardId, normalizeClassRoman} from './boardCatalog';
 export {SUPPORTED_BOARDS, CLASS_DEFINITIONS, normalizeBoardId, normalizeClassRoman} from './boardCatalog';
@@ -61,6 +62,7 @@ export async function getClassSubjects(
   if (!boardInfo) return null;
   const classDef = CLASS_DEFINITIONS[classRoman];
   const hssc = hsscPhysicsSyllabus(boardInfo.id, classDef.level, "physics");
+  const biology = sscBiologySyllabus(boardInfo.id, classDef.level, "biology");
 
   let subjects: any[] = [];
   let useDatabase = true;
@@ -161,6 +163,10 @@ export async function getClassSubjects(
     const meta = getSubjectMeta("Physics");
     subjects.push({ ...meta, id: meta.slug, name: meta.title, code: null, papersCount: 0 });
   }
+  if (biology && !bySlug.has("biology")) {
+    const meta = getSubjectMeta("Biology");
+    subjects.push({ ...meta, id: meta.slug, name: meta.title, code: null, papersCount: 0 });
+  }
 
   const reviewed = useDatabase ? await prisma.knowledgeDocument.findMany({
     where: {
@@ -199,20 +205,23 @@ export async function getClassSubjects(
       )
     : [];
   for (const row of noteSubjects) publishedSubjects.add(row.subjectId);
-  subjects = subjects.map((sub) => ({
-    ...sub,
-    ...(hssc && sub.slug === "physics" ? {
-      chapterCount: hssc.units.length,
-      sloCount: hssc.units.reduce((count, unit) => count + unit.subtopics.reduce((sum, topic) => sum + topic.slos.length, 0), 0),
-    } : {}),
-    available:
-      (Boolean(hssc) && sub.slug === "physics") ||
+  subjects = subjects.map((sub) => {
+    const syllabus = sub.slug === "biology" ? biology : sub.slug === "physics" ? hssc : null;
+    return {
+      ...sub,
+      ...(syllabus ? {
+        chapterCount: syllabus.units.length,
+        sloCount: syllabus.units.reduce((count, unit) => count + unit.subtopics.reduce((sum, topic) => sum + topic.slos.length, 0), 0),
+      } : {}),
+      available:
+      Boolean(syllabus) ||
       publishedSubjects.has(sub.id) ||
       (sub.papersCount || 0) > 0 ||
       (boardInfo.id === "akueb" &&
         ["IX", "X"].includes(classRoman) &&
         ["physics", "computer-science", "chemistry", "mathematics"].includes(sub.slug)),
-  }));
+    };
+  });
   // Sort so Physics and Science subjects appear top
   subjects.sort((a, b) => {
     if ((b.papersCount || 0) !== (a.papersCount || 0)) {

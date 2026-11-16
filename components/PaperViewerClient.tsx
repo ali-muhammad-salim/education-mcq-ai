@@ -539,7 +539,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
               </span>
               {(hsscAnnual || /^MTH-(?:IX|X)-(?:201[789]|202[345])-P2$/.test(paper.paperCode || '') || !paper.paperCode?.includes('-P2') || paper.paperCode?.includes('2024') || paper.paperCode?.includes('2025')) && !(paper.paperCode?.startsWith('CHM-') && (paper.examYear === 2021 || paper.examYear === 2022)) ? (
                 <Link
-                  href={hsscAnnual ? `/resources/physics-xi-${paper.examYear}-emarking` : `/resources/${paper.paperCode?.startsWith('MTH-') ? 'mathematics' : paper.paperCode?.startsWith('CS-') ? 'computer-science' : paper.paperCode?.startsWith('CHM-') ? 'chemistry' : 'physics'}-${isGrade9 ? 'ix' : 'x'}-${paper.examYear}-emarking`}
+                  href={hsscAnnual ? `/resources/physics-xi-${paper.examYear}-emarking` : `/resources/${paper.paperCode?.startsWith('MTH-') ? 'mathematics' : paper.paperCode?.startsWith('CS-') ? 'computer-science' : paper.paperCode?.startsWith('CHM-') ? 'chemistry' : paper.paperCode?.startsWith('BIO-') ? 'biology' : 'physics'}-${isGrade9 ? 'ix' : 'x'}-${paper.examYear}-emarking`}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -744,7 +744,13 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                     paddingBottom: showCorrectAnswers ? '1.75rem' : '2.5rem',
                     borderBottom: idx === questions.length - 1 ? 'none' : '1px solid #e5e7eb'
                   }}>
-                    {meta.assessmentSection && (qNum === '1' || qNum === '51') && <h2 style={{ margin: '0 0 1rem' }}>{meta.assessmentSection} ({qNum === '1' ? 'Questions 1–50' : 'Questions 51–65'})</h2>}
+                    {meta.assessmentSection && (() => {
+                      const alternate = /^BIO-(?:IX|X)-2022-P1$/.test(paper.paperCode || '');
+                      const split = alternate ? '41' : '51';
+                      if (qNum !== '1' && qNum !== split) return null;
+                      const range = alternate ? (qNum === '1' ? '1–40' : '41–50') : (qNum === '1' ? '1–50' : '51–65');
+                      return <h2 style={{ margin: '0 0 1rem' }}>{meta.assessmentSection} (Questions {range})</h2>;
+                    })()}
 
                     {/* Question Header & Marks */}
                     <div data-question-head style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.6rem' }}>

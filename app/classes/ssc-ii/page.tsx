@@ -105,7 +105,7 @@ export default function SSC2Page() {
           { name: 'Physics', code: 'PHY-X', desc: 'Syllabus, 40 MCQs, CRQs, Pacing Guide & References', ready: true, href: '/classes/ssc-ii/physics' },
           { name: 'Mathematics', code: 'MTH-X', desc: 'Matrices, Sets, Statistics, Practical Geometry', ready: false, href: '/syllabus' },
           { name: 'Chemistry', code: 'CHM-X', desc: 'Chemical Equilibrium, Acids & Bases, Hydrocarbons', ready: false, href: '/syllabus' },
-          { name: 'Biology', code: 'BIO-X', desc: 'Gaseous Exchange, Homeostasis, Genetics & Biotechnology', ready: false, href: '/syllabus' },
+          { name: 'Biology', code: 'BIO-X', desc: 'Homeostasis, Inheritance and Biotechnology', ready: true, href: '/akueb/X/biology' },
           { name: 'Computer Science', code: 'CSC-X', desc: 'C / Python Programming, Algorithms, Database Systems', ready: false, href: '/syllabus' },
           { name: 'English Compulsory', code: 'ENG-X', desc: 'Critical Reading, Argumentative Writing & Synthesis', ready: false, href: '/syllabus' },
           { name: 'Urdu Compulsory', code: 'URD-X', desc: 'Literature Comprehension, Grammar & Essays', ready: false, href: '/syllabus' },

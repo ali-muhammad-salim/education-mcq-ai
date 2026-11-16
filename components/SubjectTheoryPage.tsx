@@ -37,14 +37,14 @@ export default async function SubjectTheoryPage({ params, mode }: PageProps) {
   const isSupportedSubject =
     board.id === 'akueb' &&
     ['IX', 'X'].includes(classRoman) &&
-    (['physics', 'computer-science'].includes(meta.slug) || (['mathematics', 'chemistry'].includes(meta.slug) && mode !== 'notes'));
+    (['physics', 'computer-science'].includes(meta.slug) || (['mathematics', 'chemistry', 'biology'].includes(meta.slug) && mode !== 'notes'));
 
   if (!isSupportedSubject) {
     return <ContentUnavailable title={`${classDef.name} ${meta.title} ${MODE_LABELS[mode]}`} />;
   }
 
   const activeBank = meta.slug === 'computer-science' ? csChapterBank : physicsChapterBank;
-  const units = ['mathematics', 'chemistry'].includes(meta.slug)
+  const units = ['mathematics', 'chemistry', 'biology'].includes(meta.slug)
     ? await mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
     : (classRoman === 'IX' ? (activeBank as any)['9'] : (activeBank as any)['10']) || [];
 

@@ -27,6 +27,7 @@ interface HsscMcqsClientProps {
   category?: McqCategory;
   chapter?: string | null;
   data: HsscMcqsData;
+  theory?: ('crqs' | 'erqs')[];
 }
 
 interface QuizLaunch {
@@ -100,6 +101,7 @@ export default function HsscMcqsClient({
   category,
   chapter,
   data,
+  theory,
 }: HsscMcqsClientProps) {
   const router = useRouter();
   const [quiz, setQuiz] = useState<QuizLaunch | null>(null);
@@ -134,6 +136,7 @@ export default function HsscMcqsClient({
     });
 
   const startupPrefix = classCode + '-CH';
+  const ssc = classLevel < 11;
   const launch = (title: string, code: string, questions: HsscQuizQuestion[]) => {
     if (!questions.length) return;
     setQuiz({ title, code, questions });
@@ -146,7 +149,7 @@ export default function HsscMcqsClient({
     const title = group
       ? `${unit.name} — ${group.paper.title}`
       : `${unit.name} — chapter practice`;
-    const code = group
+    const code = !group && unit.topicId ? `CURRICULUM:${unit.topicId}:ALL` : group
       ? `${startupPrefix}-${unit.unitNumber}-${group.paper.session.replace(/\s+/g, '')}-${group.paper.paper}-${questions.length}`
       : `${startupPrefix}-${unit.unitNumber}-ALL-${questions.length}`;
     launch(title, code, questions);
@@ -155,7 +158,7 @@ export default function HsscMcqsClient({
   const launchPaper = (paper: HsscPaperView) =>
     launch(`${paper.title} — MCQs`, `${paper.code}-MCQS-${paper.questions.length}`, paper.questions);
 
-  const paperQuestions = data.papers.filter(paper => paper.questions.length > 0);
+  const paperQuestions = data.papers.filter(paper => !paper.chapterOnly && paper.questions.length > 0);
   const unitCount = data.units.length;
 
   const masthead = (() => {
@@ -227,7 +230,7 @@ export default function HsscMcqsClient({
   }));
 
   const annualPapers = data.papers
-    .filter(paper => paper.year !== null && paper.paper === 'I')
+    .filter(paper => !paper.chapterOnly && paper.year !== null && paper.paper === 'I')
     .sort((a, b) => (b.year || 0) - (a.year || 0));
 
   const unitEntries: UnitEntry[] = data.units.map(unit => {
@@ -269,7 +272,7 @@ export default function HsscMcqsClient({
 
   const modelPapers = data.papers.filter(paper => paper.year === null);
   const allAnnualPapers = data.papers
-    .filter(paper => paper.year !== null)
+    .filter(paper => !paper.chapterOnly && paper.year !== null)
     .sort((a, b) => (b.year || 0) - (a.year || 0) || a.code.localeCompare(b.code));
 
   if (chapterUnit) {
@@ -310,10 +313,10 @@ export default function HsscMcqsClient({
             />
             <Link
               scroll={false}
-              href={`${baseUrl}/syllabus#unit-${chapterUnit.unitNumber}`}
+              href={region.current_slo ? `${baseUrl}/syllabus#slo-${region.current_slo}` : `${baseUrl}/syllabus#unit-${chapterUnit.unitNumber}`}
               style={{ background: '#ecfdf5', color: '#066e4f', border: '1px solid #a7f3d0', padding: '2px 9px', borderRadius: '5px', fontSize: '0.8rem', fontWeight: 800, textDecoration: 'none' }}
             >
-              Syllabus: Unit {chapterUnit.unitNumber}
+              {region.current_slo ? `SLO ${region.current_slo}` : `Syllabus: Unit ${chapterUnit.unitNumber}`}
             </Link>
             {tier && (
               <span style={{ background: '#ffffff', color: '#475569', border: '1px solid #cbd5e1', padding: '2px 8px', borderRadius: '5px', fontSize: '0.76rem', fontWeight: 600 }}>
@@ -325,7 +328,10 @@ export default function HsscMcqsClient({
       };
     });
     const quizQuestions = visible.map(entry => entry.question);
-    const title = `Unit ${chapterUnit.unitNumber}: ${chapterUnit.name} • Chapter-Wise MCQs (Model + Annual Papers)`;
+    const title = `Unit ${chapterUnit.unitNumber}: ${chapterUnit.name} • Chapter-Wise MCQs`;
+    const quizCode = chapterUnit.topicId && !search.trim() && (filter === 'all' || filter === 'diagram')
+      ? `CURRICULUM:${chapterUnit.topicId}:${FILTER_TAG[filter]}`
+      : `${startupPrefix}-${chapterUnit.unitNumber}-${FILTER_TAG[filter]}-${quizQuestions.length}`;
     return (
       <>
         <McqPracticeSheet
@@ -333,14 +339,14 @@ export default function HsscMcqsClient({
           items={items}
           onBack={() => router.push(baseUrl + '/mcqs/chapter-wise')}
           boardName={boardFullName}
-          certificate={`HIGHER SECONDARY SCHOOL CERTIFICATE · ${className}`}
+          certificate={`${ssc ? 'SECONDARY' : 'HIGHER SECONDARY'} SCHOOL CERTIFICATE · ${className}`}
           paperLine={`${subjectTitle} · Paper I (Multiple Choice Questions)`}
           filter={filter}
           onFilter={setFilter}
           search={search}
           onSearch={setSearch}
           onTakeQuiz={() =>
-            launch(title, `${startupPrefix}-${chapterUnit.unitNumber}-${FILTER_TAG[filter]}-${quizQuestions.length}`, quizQuestions)
+            launch(title, quizCode, quizQuestions)
           }
         />
         <TakeQuizModal
@@ -382,7 +388,7 @@ export default function HsscMcqsClient({
         }
       />
 
-      <HubRail baseUrl={baseUrl} active={category} />
+      <HubRail baseUrl={baseUrl} active={category} theory={theory} />
 
       {!category && <HubDirectory baseUrl={baseUrl} notes={directoryNotes} />}
 
