@@ -6,6 +6,7 @@ import {
   safeDocumentUrl,
   presentPaperQuestion,
   safePaperOriginal,
+  biologyPaperPdfHref,
 } from "@/lib/paperPresentation";
 describe("Paper interaction data", () => {
   it("never substitutes a model PDF for an annual paper original", () => {
@@ -47,5 +48,14 @@ describe("Paper interaction data", () => {
     expect(
       paperChoices({ a: "One", B: { text: "Two" }, C: { other: "No text" } }),
     ).toEqual({ A: "One", B: "Two" });
+  });
+  it("points biology papers without a question page at their original PDF", () => {
+    expect(biologyPaperPdfHref("BIO-IX-2022-P1")).toBe(
+      "/materials/ssc/biology/ssc-1/biology-ix-2022-paper-i.pdf",
+    );
+    expect(biologyPaperPdfHref("BIO-X-2025-P2")).toBe(
+      "/materials/ssc/biology/ssc-2/biology-x-2025-paper-ii.pdf",
+    );
+    expect(biologyPaperPdfHref("PHY-IX-2024-P1")).toBeNull();
   });
 });

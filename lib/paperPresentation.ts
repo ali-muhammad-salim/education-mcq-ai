@@ -125,3 +125,12 @@ export function paperLabel(code: string | null | undefined, title: string) {
   if (/CHAP1-2$/i.test(code || "")) return "Chapters 1–2 · past questions";
   return title;
 }
+
+/** Original PDF for a biology paper code, used when the paper has no question page. */
+export function biologyPaperPdfHref(code: string): string | null {
+  const match = /^BIO-(IX|X)-(\d{4})-(P1|P2)$/i.exec(code);
+  if (!match) return null;
+  const [, roman, year, part] = match;
+  const ssc = roman.toUpperCase() === "IX" ? "1" : "2";
+  return `/materials/ssc/biology/ssc-${ssc}/biology-${roman.toLowerCase()}-${year}-${part.toUpperCase() === "P1" ? "paper-i" : "paper-ii"}.pdf`;
+}

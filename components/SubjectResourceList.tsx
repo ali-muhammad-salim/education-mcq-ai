@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {paperLabel, safeDocumentUrl} from "@/lib/paperPresentation";
+import {paperLabel, safeDocumentUrl, biologyPaperPdfHref} from "@/lib/paperPresentation";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "./Breadcrumbs";
 import MaterialList, { type MaterialItem } from "./MaterialList";
@@ -7,7 +7,7 @@ import DocumentViews from "./DocumentViews";
 import styles from "./MaterialLayout.module.css";
 import { studyScope } from "@/services/study/navigation";
 import { subjectMaterials } from "@/services/materials/catalog";
-import { getAllStandardPapers } from "@/lib/paperDataService";
+import { getAllStandardPapers, getFallbackPaper } from "@/lib/paperDataService";
 import prisma from "@/lib/prisma";
 import {publicMaterialWhere} from '@/lib/materialVisibility';
 import { physics2025Resources, physicsX2025Resources, cs2025Resources, csX2025Resources, chem2025Resources, chemXResources } from '@/lib/legacyPaperEvidence';
@@ -67,7 +67,7 @@ export default async function SubjectResourceList({
   const hasStandardPapers =
     legacy || Boolean(hssc) ||
     (scope.board.id === "akueb" &&
-      ["computer-science", "chemistry"].includes(scope.meta.slug) &&
+      ["computer-science", "chemistry", "mathematics", "biology"].includes(scope.meta.slug) &&
       [9, 10].includes(scope.classDef.level));
   if (legacy && type==='past_paper' && !after) items.push(...(scope.classDef.level===9 ? physics2025Resources : physicsX2025Resources));
   if (hssc?.grade === 11 && type === "past_paper" && !after) items.push(...hsscXiAnnualResources);
@@ -180,9 +180,19 @@ export default async function SubjectResourceList({
     }
   }
   if (biology && type === 'past_paper' && !after) {
+    const seenHrefs = new Set(items.map(item => item.href));
+    const roman = scope.classDef.level === 9 ? 'IX' : 'X';
     for (const archive of [biology2022Archive, biology2024Archive, biologyX2017Archive, biologyX2018Archive, biologyX2019Archive, biologyX2021Archive, biologyX2022Archive, biologyX2023Archive, biologyX2024Archive, biologyX2025Archive]) {
-      if (items.some(item => item.href === archive[0].href)) {
-        items.push(...archive.filter(item => !items.some(existing => existing.href === item.href)));
+      if (!archive[0].href.includes(`BIO-${roman}-`)) continue;
+      for (const entry of archive) {
+        let href = entry.href;
+        if (href.startsWith('/past-papers/')) {
+          const code = decodeURIComponent(href.slice('/past-papers/'.length));
+          if (!getFallbackPaper(code)) href = biologyPaperPdfHref(code) ?? href;
+        }
+        if (seenHrefs.has(href)) continue;
+        seenHrefs.add(href);
+        items.push({ ...entry, href });
       }
     }
   }
