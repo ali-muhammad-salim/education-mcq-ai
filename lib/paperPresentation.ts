@@ -134,3 +134,39 @@ export function biologyPaperPdfHref(code: string): string | null {
   const ssc = roman.toUpperCase() === "IX" ? "1" : "2";
   return `/materials/ssc/biology/ssc-${ssc}/biology-${roman.toLowerCase()}-${year}-${part.toUpperCase() === "P1" ? "paper-i" : "paper-ii"}.pdf`;
 }
+
+/** Canonicalize a listing label so paper, key and marking rows share one slot per year. */
+export function normalizePaperListingLabel(label: string): string {
+  if (/e[- ]?marking/i.test(label)) return "Paper 2 E-marking";
+  if (/\bkeys?\b/i.test(label)) return "Paper 1 keys";
+  if (/\bpaper\s*(2|II)\b/i.test(label)) return "Paper 2";
+  if (/\bpaper\s*(1|I)\b/i.test(label)) return "Paper 1";
+  return label;
+}
+
+const isDigitalPaperHref = (href: string) => href.startsWith("/past-papers/");
+
+/**
+ * Merge paper listing rows by year + canonical label. A digital question page
+ * (/past-papers/...) always wins its slot over a PDF fallback, no matter which
+ * order the rows arrive in; otherwise the earliest row wins and exact
+ * duplicates collapse.
+ */
+export function mergePaperListings<T extends { label: string; href: string; year?: number }>(
+  items: T[],
+): T[] {
+  const merged = new Map<string, T>();
+  for (const item of items) {
+    const normalized = { ...item, label: normalizePaperListingLabel(item.label) };
+    const key = `${item.year ?? ""}:${normalized.label}`;
+    const existing = merged.get(key);
+    if (!existing) {
+      merged.set(key, normalized);
+      continue;
+    }
+    if (isDigitalPaperHref(normalized.href) && !isDigitalPaperHref(existing.href)) {
+      merged.set(key, normalized);
+    }
+  }
+  return [...merged.values()];
+}

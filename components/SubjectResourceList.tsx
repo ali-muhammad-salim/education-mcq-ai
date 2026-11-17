@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {paperLabel, safeDocumentUrl, biologyPaperPdfHref} from "@/lib/paperPresentation";
+import {paperLabel, safeDocumentUrl, biologyPaperPdfHref, mergePaperListings} from "@/lib/paperPresentation";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "./Breadcrumbs";
 import MaterialList, { type MaterialItem } from "./MaterialList";
@@ -198,13 +198,7 @@ export default async function SubjectResourceList({
   }
   const archiveLabels = ['Paper 1', 'Paper 1 keys', 'Paper 2', 'Paper 2 E-marking'];
   const displayItems = (mathematics || biology) && type === 'past_paper'
-    ? [...new Map(items.map(item => {
-      const label = /e[- ]?marking/i.test(item.label) ? 'Paper 2 E-marking'
-        : /\bkeys?\b/i.test(item.label) ? 'Paper 1 keys'
-        : /\bpaper\s*(2|II)\b/i.test(item.label) ? 'Paper 2'
-        : /\bpaper\s*(1|I)\b/i.test(item.label) ? 'Paper 1' : item.label;
-      return [`${item.year}:${label}`, { ...item, label }] as const;
-    })).values()].sort((a, b) => archiveLabels.indexOf(a.label) - archiveLabels.indexOf(b.label))
+    ? mergePaperListings(items).sort((a, b) => archiveLabels.indexOf(a.label) - archiveLabels.indexOf(b.label))
     : items;
   const activeGuide =
     scope.meta.slug === "chemistry"
