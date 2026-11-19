@@ -74,7 +74,7 @@ function cleanAndNormalizeMath(text: string): string {
 }
 
 // Render inline Markdown: `code`, ***bold-italic***, **bold**, *italic*, ~~strike~~
-function renderInlineMarkdown(segment: string, keyPrefix: string): React.ReactNode[] {
+function renderInlineMarkdown(segment: string, keyPrefix: string, plain: (text: string) => React.ReactNode = text => text): React.ReactNode[] {
   if (!segment) return [];
   const tokenRegex = /(`[^`]+`|\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|~~[^~]+~~|\*(?!\s)[^*\n]+?(?<!\s)\*)/g;
   const nodes: React.ReactNode[] = [];
@@ -83,7 +83,7 @@ function renderInlineMarkdown(segment: string, keyPrefix: string): React.ReactNo
 
   while ((match = tokenRegex.exec(segment)) !== null) {
     if (match.index > lastIdx) {
-      nodes.push(segment.slice(lastIdx, match.index));
+      nodes.push(plain(segment.slice(lastIdx, match.index)));
     }
     const token = match[0];
     const k = `${keyPrefix}-${match.index}`;
@@ -107,15 +107,15 @@ function renderInlineMarkdown(segment: string, keyPrefix: string): React.ReactNo
     } else if (token.startsWith('***') && token.endsWith('***')) {
       nodes.push(
         <strong key={k}>
-          <em>{token.slice(3, -3)}</em>
+          <em>{renderInlineMarkdown(token.slice(3, -3), k, plain)}</em>
         </strong>
       );
     } else if (token.startsWith('**') && token.endsWith('**')) {
-      nodes.push(<strong key={k}>{token.slice(2, -2)}</strong>);
+      nodes.push(<strong key={k}>{renderInlineMarkdown(token.slice(2, -2), k, plain)}</strong>);
     } else if (token.startsWith('~~') && token.endsWith('~~')) {
-      nodes.push(<del key={k}>{token.slice(2, -2)}</del>);
+      nodes.push(<del key={k}>{renderInlineMarkdown(token.slice(2, -2), k, plain)}</del>);
     } else if (token.startsWith('*') && token.endsWith('*')) {
-      nodes.push(<em key={k}>{token.slice(1, -1)}</em>);
+      nodes.push(<em key={k}>{renderInlineMarkdown(token.slice(1, -1), k, plain)}</em>);
     } else {
       nodes.push(token);
     }
@@ -123,7 +123,7 @@ function renderInlineMarkdown(segment: string, keyPrefix: string): React.ReactNo
   }
 
   if (lastIdx < segment.length) {
-    nodes.push(segment.slice(lastIdx));
+    nodes.push(plain(segment.slice(lastIdx)));
   }
   return nodes;
 }
@@ -131,7 +131,6 @@ function renderInlineMarkdown(segment: string, keyPrefix: string): React.ReactNo
 export default function MathText({ text, className, style }: MathTextProps) {
   if (!text) return null;
 
-  text = repairMathEscapes(text);
   const lines = educationalLines(text);
   if (!text.includes('```') && (lines.filter(line => line.marker).length > 1 || lines.some(line => line.kind === 'bullet'))) {
     return <span className={className} style={{ display: 'block', ...style }}>
@@ -141,10 +140,15 @@ export default function MathText({ text, className, style }: MathTextProps) {
       </span>)}
     </span>;
   }
-  const processableText = formatEducationalMath(text.split(/(```[\s\S]*?```|`[^`\n]*`)/g).map((part, i) => i % 2 ? part : cleanAndNormalizeMath(part)).join(''));
+  const processableText = text.split(/(```[\s\S]*?```|`[^`\n]*`)/g).map((part, i) => i % 2 ? part : formatEducationalMath(cleanAndNormalizeMath(repairMathEscapes(part)))).join('');
 
-  // Split by inline math delimiter $...$ or $$...$$
+  // Opaque math/code nodes remain inside surrounding Markdown emphasis.
+  // Choose a marker absent from the source so user text can never reference a node.
+  let marker = '\uE000';
+  while (processableText.includes(marker)) marker += '\uE000';
   const parts: React.ReactNode[] = [];
+  let markdown = '';
+  const protect = () => { markdown += `${marker}${parts.length - 1}\uE001`; };
   const regex = /(```[\s\S]*?```|`[^`\n]*`|\$\$[\s\S]*?\$\$|\$[^\$\n]+?\$)/g;
   let lastIndex = 0;
   let match;
@@ -153,7 +157,7 @@ export default function MathText({ text, className, style }: MathTextProps) {
     // Add text preceding the match
     if (match.index > lastIndex) {
       const plainSeg = processableText.substring(lastIndex, match.index);
-      parts.push(...renderInlineMarkdown(plainSeg, `md-${lastIndex}`));
+      markdown += plainSeg;
     }
 
     const matchedStr = match[0];
@@ -161,6 +165,7 @@ export default function MathText({ text, className, style }: MathTextProps) {
       const fenced = matchedStr.startsWith('```');
       if (fenced) parts.push(<code key={`code-${match.index}`} style={{ display: 'block', whiteSpace: 'pre-wrap', overflowX: 'auto' }}>{matchedStr.slice(3, -3).replace(/^[\w+-]+\n/, '')}</code>);
       else parts.push(...renderInlineMarkdown(matchedStr, `code-${match.index}`));
+      protect();
       lastIndex = regex.lastIndex;
       continue;
     }
@@ -186,9 +191,10 @@ export default function MathText({ text, className, style }: MathTextProps) {
           style={{ margin: isDisplayMode ? '0.5rem 0' : '0 2px', ...(isDisplayMode ? { display: 'block', maxWidth: '100%', overflowX: 'auto', overflowY: 'hidden' } : {}) }}
         />
       );
-    } catch (e) {
+    } catch {
       parts.push(matchedStr);
     }
+    protect();
 
     lastIndex = regex.lastIndex;
   }
@@ -196,12 +202,16 @@ export default function MathText({ text, className, style }: MathTextProps) {
   // Add remaining text
   if (lastIndex < processableText.length) {
     const tailSeg = processableText.substring(lastIndex);
-    parts.push(...renderInlineMarkdown(tailSeg, `md-tail-${lastIndex}`));
+    markdown += tailSeg;
   }
+  const resolve = (segment: string) => segment.split(new RegExp(`(${marker}\\d+\uE001)`, 'g')).map((part, index) =>
+    part.startsWith(marker) && part.endsWith('\uE001')
+      ? <React.Fragment key={index}>{parts[Number(part.slice(marker.length, -1))]}</React.Fragment>
+      : part);
 
   return (
     <span className={className} style={style}>
-      {parts.length > 0 ? parts : text}
+      {renderInlineMarkdown(markdown, 'md', resolve)}
     </span>
   );
 }

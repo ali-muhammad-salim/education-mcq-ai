@@ -20,6 +20,7 @@ import csIX from '@/data/computer-science/ssc1_exact_syllabus.json';
 import csX from '@/data/computer-science/ssc2_exact_syllabus.json';
 import chemIX from '@/data/chemistry/ssc1_exact_syllabus.json';
 import chemX from '@/data/chemistry/ssc2_exact_syllabus.json';
+import { hsscComputerScienceSyllabus } from "@/lib/hsscComputerScienceSyllabus";
 import { hsscPhysicsSyllabus } from '@/lib/hsscPhysicsSyllabus';
 import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 
@@ -184,6 +185,8 @@ export async function searchEducationalContent(
     { level: 10, roman: 'X', subject: 'Physics', slug: 'physics', units: physicsX as any[] },
     { level: 11, roman: 'XI', subject: 'Physics', slug: 'physics', units: hsscPhysicsSyllabus('akueb', 11, 'physics')!.units },
     { level: 12, roman: 'XII', subject: 'Physics', slug: 'physics', units: hsscPhysicsSyllabus('akueb', 12, 'physics')!.units },
+    { level: 11, roman: 'XI', subject: 'Computer Science', slug: 'computer-science', units: hsscComputerScienceSyllabus('akueb', 11, 'computer-science')!.units },
+    { level: 12, roman: 'XII', subject: 'Computer Science', slug: 'computer-science', units: hsscComputerScienceSyllabus('akueb', 12, 'computer-science')!.units },
     { level: 9, roman: 'IX', subject: 'Computer Science', slug: 'computer-science', units: csIX as any[] },
     { level: 10, roman: 'X', subject: 'Computer Science', slug: 'computer-science', units: csX as any[] },
     { level: 9, roman: 'IX', subject: 'Chemistry', slug: 'chemistry', units: chemIX as any[] },
@@ -195,10 +198,10 @@ export async function searchEducationalContent(
     const chapterQuiz = level <= 10;
     const syllabusUrl = `/akueb/${roman}/${slug}/syllabus`;
     if (!chapterQuiz) {
-      const title = `Physics Class ${roman} · HSSC ${level === 11 ? 'I' : 'II'} · 2025 Syllabus`;
+      const title = `${subject} Class ${roman} · HSSC ${level === 11 ? 'I' : 'II'} · 2025 Syllabus`;
       const score = smartScore(title, q);
       if (score >= 0.68) addResult({
-        id: `physics-hssc-syllabus-${level}`, type: 'RESOURCE', title, score,
+        id: `${slug}-hssc-syllabus-${level}`, type: 'RESOURCE', title, score,
         boardId: 'akueb', classLevel: level, subject, badge: 'Syllabus', url: syllabusUrl,
       });
     }

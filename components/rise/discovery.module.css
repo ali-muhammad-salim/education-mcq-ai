@@ -30,9 +30,11 @@
   transition: color var(--r-fast) var(--r-ease), border-color var(--r-fast) var(--r-ease);
 }
 
-.trailLink:hover {
-  color: var(--r-emerald) !important;
-  border-bottom-color: var(--r-emerald);
+@media (hover: hover) and (pointer: fine) {
+  .trailLink:hover {
+    color: var(--r-emerald) !important;
+    border-bottom-color: var(--r-emerald);
+  }
 }
 
 .trailSep {
@@ -137,7 +139,7 @@
 .classGrid {
   display: grid;
   gap: var(--r-3);
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -168,10 +170,11 @@
     box-shadow var(--r-fast) var(--r-ease);
 }
 
-.classTile:hover {
-  border-color: var(--r-emerald);
-  transform: translateY(-2px);
-  box-shadow: var(--r-shadow);
+@media (hover: hover) and (pointer: fine) {
+  .classTile:hover {
+    border-color: var(--r-emerald);
+    box-shadow: var(--r-shadow);
+  }
 }
 
 .classRoman {
@@ -225,13 +228,9 @@
   transition: background var(--r-fast) var(--r-ease);
 }
 
-.indexLink:hover {
-  background: var(--r-surface);
-}
-
-.indexLink:hover .indexArrow {
-  color: var(--r-emerald);
-  transform: translateX(3px);
+@media (hover: hover) and (pointer: fine) {
+  .indexLink:hover { background: var(--r-surface); }
+  .indexLink:hover .indexArrow { color: var(--r-emerald); }
 }
 
 .indexNum {
@@ -433,7 +432,7 @@
 .itemGrid {
   display: grid;
   gap: var(--r-3);
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -463,9 +462,8 @@
   transition: border-color var(--r-fast) var(--r-ease), transform var(--r-fast) var(--r-ease);
 }
 
-.item:hover {
-  border-color: var(--r-emerald);
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .item:hover { border-color: var(--r-emerald); }
 }
 
 .itemIcon {
@@ -518,6 +516,46 @@
 .itemPending .itemLabel {
   color: var(--r-ink-muted);
   font-weight: 500;
+}
+
+.shell { min-width: 0; overflow-wrap: anywhere; }
+.classGrid > *, .itemGrid > *, .metaItem, .filterLabel { min-width: 0; }
+
+.trailLink:focus-visible,
+.classTile:focus-visible,
+.indexLink:focus-visible,
+.item:focus-visible {
+  outline: 2px solid var(--r-emerald);
+  outline-offset: 3px;
+}
+
+.classTile:active, .item:active { border-color: var(--r-emerald); }
+.indexLink:active { background: var(--r-surface-sunk); }
+.trailLink:active { border-bottom-color: var(--r-emerald); }
+
+@media (max-width: 619px) {
+  .shell { padding: var(--r-2) var(--r-1) var(--r-7); }
+  .trail { gap: var(--r-1) var(--r-2); }
+  .trailLink { display: inline-flex; align-items: center; min-height: 44px; }
+  .masthead { margin: var(--r-3) 0 var(--r-5); padding-top: var(--r-3); }
+  .mastTitle { margin-top: var(--r-2); font-size: clamp(1.65rem, 6vw, 2.1rem); }
+  .mastLede { margin-top: var(--r-3); font-size: 1rem; }
+  .mastMeta { margin-top: var(--r-4); padding-top: var(--r-3); gap: var(--r-3) var(--r-4); }
+  .sectionHead, .groupHead { flex-wrap: wrap; gap: var(--r-2); margin-bottom: var(--r-3); }
+  .sectionNote, .indexNote { white-space: normal; }
+  .classTile { padding: var(--r-4); }
+  .classRoman { font-size: var(--r-text-2xl); }
+  .filter { margin-bottom: var(--r-4); }
+  .filterInput { font-size: 1rem; }
+  .indexLink { gap: var(--r-1) var(--r-2); padding-inline: var(--r-2); }
+  .groups { gap: var(--r-5); }
+  .item { padding: var(--r-3); }
+  .notice { padding: var(--r-3); margin-bottom: var(--r-5); }
+  .empty { padding: var(--r-5) var(--r-3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trailLink, .classTile, .indexLink, .indexArrow, .filterInput, .item { transition: none; }
 }
 
 .srOnly {

@@ -1,0 +1,50 @@
+1 9.1.1 D | Clear, quick controls reduce the effort required to perform tasks.
+2 9.1.2 A | Unique credentials and software updates reduce credential reuse and known software vulnerabilities.
+3 9.1.3 A | A screen reader supplies the spoken information required by the scenario.
+4 9.1.3 B | Assistive controls reduce the need for precise gestures and physical actions.
+5 9.2.2 C | A confusing interface increases cognitive effort, errors and task completion time.
+6 9.3.1 A | Navigation and task completion are direct usability outcomes of HCI design.
+7 9.3.2 D | The extra authentication step improves security while adding interaction time.
+8 10.1.1 B | A data structure organises and stores data for effective use.
+9 10.1.2 A | The conventional array model uses a fixed-size sequence of contiguous storage locations.
+10 10.1.2 D | A queue normally follows first-in, first-out ordering.
+11 10.2.1 B | Traversal visits elements in sequence to read or process them.
+12 10.3.1 A | A tree represents branching choices and their descendants.
+13 10.3.3 - | The printed algorithm visits subfolders, so only Folder A and Folder B are displayed. No option gives two. Counting all files and folders below the root would give six, but the pseudocode does not visit files or include a counter.
+14 10.3.4 - | With conventional zero-based bounds low=0, high=7 and midpoint floor((low+high)/2), the first value is 320. An upper-midpoint implementation would start at 400, so the midpoint convention should be stated in the explanation.
+15 10.3.5 C | Visiting a parent before recursively processing its children from left to right is pre-order traversal. Updating the node during its visit does not change this order.
+16 11.2.4 A | Rebinding the local integer n to 15 does not change the caller's x, which remains 10.
+17 11.2.4 B | modify rebinds its local name info to a new dictionary. The original student dictionary remains unchanged with age 16.
+18 11.3.3 A | Student is the class that defines a common structure for its instances.
+19 11.5.3 C | Encapsulation controls access to state through the object's methods.
+20 11.3.4 A | print separates the brand and year with a space and emits no quotes.
+21 11.3.4 B | The literal Welcome, contains a comma. print adds a space before Ahmed, producing Welcome, Ahmed.
+22 11.5.8 C | Car replaces type with Car and overrides info. ElectricCar inherits that method and sets battery to Lithium.
+23 11.7.2 C | 12 times (7+3) minus integer division 7//3 is 120-2=118.
+24 11.7.3 A | Looking up the key Sara returns the integer 92.
+25 11.9.5 D | D declares EmpID as the primary key, EmpName as VARCHAR(50) and Salary as INT NOT NULL.
+26 12.1.1 A | Machine learning learns patterns from data. The printed word outlines is imprecise but A is the only option expressing learning and adaptation.
+27 12.1.3 A | Measuring accuracy, precision, recall and F1 evaluates a trained model.
+28 12.2.3 B | The p-value 0.03 is below the specified significance threshold 0.05, so the result is statistically significant at that level.
+29 12.1.3 D | Constructing useful derived input columns is feature engineering.
+30 12.3.1 A | RMSE uses squared errors before taking their root and therefore gives large errors greater weight. RMSE is related to model evaluation, but the syllabus outcome's explicit list does not name RMSE.
+31 12.3.1 B | An ROC curve compares true-positive and false-positive rates across classification thresholds.
+32 12.3.1 B | Accuracy is the proportion of all predictions that are correct.
+33 13.1.1 B | Monitoring and automated energy control can reduce unnecessary electricity demand.
+34 13.1.1 D | Livestock sensors support continuous tracking of animal health and location.
+35 13.1.2 B | Cloud storage provides remotely accessible off-site storage and can support scalable capacity and managed backups. Protection depends on the service configuration.
+36 13.2.1 D | Deep learning uses neural networks with multiple layers to learn complex representations.
+37 13.2.2 B | Deep models can interpret complex sensor data for recognition and driving decisions.
+38 14.1.1 A | Privacy concerns a person's control over collection and use of personal information.
+39 14.1.2 C | Eavesdropping covertly observes communications to obtain information.
+40 14.1.2 C | DNS spoofing manipulates name resolution and can redirect users to fraudulent destinations.
+41 14.1.3 B | A firewall permits or blocks traffic according to configured rules.
+42 14.1.3 D | Encryption protects the confidentiality of stored data when an attacker lacks the decryption key.
+43 14.2.2 B | HTTPS protects transport using TLS encryption and authentication.
+44 14.3.1 D | D describes encryption, a central cryptographic operation. Cryptography also includes integrity, authentication and related techniques.
+45 15.1.1 A | A research question identifies a matter or problem to investigate.
+46 15.1.2 A | A case study examines a particular subject in its context.
+47 15.1.3 A | Visual summaries can improve clarity while leaving methodological details less accessible. Detailed reports can complement them.
+48 16.1.1 A | An MVP tests core assumptions early using feedback from real users.
+49 16.1.5 D | Entering expenses and viewing the total is the smallest prototype that tests the stated core use.
+50 16.1.7 C | Learning from early user behaviour enables refinement or revision of business assumptions before a full investment.

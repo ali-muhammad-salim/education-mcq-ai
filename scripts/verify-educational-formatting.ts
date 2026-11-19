@@ -31,3 +31,4 @@ for(const [text,source] of texts){
 }
 mkdirSync('output/sitewide-format-review',{recursive:true});writeFileSync('output/sitewide-format-review/content-audit.json',JSON.stringify({textsChecked:texts.size,formulasChecked:formulas,unsupportedSourceExpressions:issues},null,2));
 console.log(JSON.stringify({textsChecked:texts.size,formulasChecked:formulas,unsupportedSourceExpressions:issues.slice(0,12),totalUnsupported:issues.length},null,2));
+if (issues.length > 0) process.exitCode = 1;

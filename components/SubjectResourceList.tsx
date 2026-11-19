@@ -1,4 +1,10 @@
+import { hsscComputerScience2019Resources } from '@/lib/hsscComputerScience2019';
+import { hsscComputerScience2021Resources } from '@/lib/hsscComputerScience2021';
+import { hsscComputerScience2022Resources } from '@/lib/hsscComputerScience2022';
+import { hsscComputerScience2023Resources } from '@/lib/hsscComputerScience2023';
 import Link from "next/link";
+import { hsscComputerScience2024Resources } from "@/lib/hsscComputerScience2024";
+import { hsscComputerScienceResources } from "@/lib/hsscComputerScienceResources";
 import {paperLabel, safeDocumentUrl, biologyPaperPdfHref, mergePaperListings} from "@/lib/paperPresentation";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "./Breadcrumbs";
@@ -18,6 +24,7 @@ import rg10 from '@/data/physics/ssc2_resource_guide.json';
 import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 import { hsscPhysicsSyllabus } from '@/lib/hsscPhysicsSyllabus';
 import { hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
+import { computerScienceXi2025Resources } from '@/lib/hsscXiAnnualComputerScience';
 import { biology2022Archive, biology2024Archive, biologyX2017Archive, biologyX2018Archive, biologyX2019Archive, biologyX2021Archive, biologyX2022Archive, biologyX2023Archive, biologyX2024Archive, biologyX2025Archive } from '@/lib/biology2024Resources';
 
 export default async function SubjectResourceList({
@@ -35,6 +42,7 @@ export default async function SubjectResourceList({
 }) {
   const scope = studyScope(params.board, params.class, params.subject);
   if (!scope) notFound();
+  const computerScience = hsscComputerScienceResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const hssc = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const titles = {
     model_paper: "Model papers",
@@ -50,7 +58,7 @@ export default async function SubjectResourceList({
     type==='past_paper'?['past_paper','answer_key','e_marking']:type,
     after,
   ).catch(error => {
-    if (hssc && error.name === "PrismaClientInitializationError") return [];
+    if ((hssc || computerScience) && error.name === "PrismaClientInitializationError") return [];
     throw error;
   });
   const items: MaterialItem[] = documents
@@ -60,6 +68,10 @@ export default async function SubjectResourceList({
       href: doc.metadata.compiledPaperId?'/past-papers/'+doc.metadata.compiledPaperId:"/materials/" + doc.id,
       year: /^\d{4}$/.test(doc.metadata.examYear||'')?Number(doc.metadata.examYear):undefined,
     }));
+  if (computerScience && type === "model_paper" && !after) {
+    items.push(...computerScience.papers.map(paper => ({ label: paper.label, href: paper.href, year: computerScience.year })));
+  }
+  if (computerScience?.grade === 11 && type === "past_paper" && !after) for (const archive of [hsscComputerScience2024Resources,hsscComputerScience2023Resources,hsscComputerScience2022Resources,hsscComputerScience2021Resources,hsscComputerScience2019Resources]) items.push(...archive.papers.map(paper => ({label:paper.label, href:paper.href, year:archive.year})));
   const legacy =
     scope.board.id === "akueb" &&
     scope.meta.slug === "physics" &&
@@ -71,6 +83,9 @@ export default async function SubjectResourceList({
       [9, 10].includes(scope.classDef.level));
   if (legacy && type==='past_paper' && !after) items.push(...(scope.classDef.level===9 ? physics2025Resources : physicsX2025Resources));
   if (hssc?.grade === 11 && type === "past_paper" && !after) items.push(...hsscXiAnnualResources);
+  if (scope.board.id === 'akueb' && scope.meta.slug === 'computer-science' && scope.classDef.level === 11 && type === 'past_paper' && !after) {
+    items.push(...computerScienceXi2025Resources);
+  }
   if (scope.board.id === 'akueb' && scope.meta.slug === 'computer-science' && [9, 10].includes(scope.classDef.level) && type === 'past_paper' && !after) {
     items.push(...(scope.classDef.level === 9 ? cs2025Resources : csX2025Resources));
   }
@@ -104,7 +119,7 @@ export default async function SubjectResourceList({
       orderBy: { examYear: "desc" },
       take: 100,
     }).catch(error => {
-      if (hssc && error.name === "PrismaClientInitializationError") return [];
+      if ((hssc || computerScience) && error.name === "PrismaClientInitializationError") return [];
       throw error;
     });
     const seen = new Set<string>();

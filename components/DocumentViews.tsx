@@ -12,12 +12,14 @@ export default function DocumentViews({
   children,
   initialView,
   continuousPdf = false,
+  digitalLabel = "Digital Paper",
 }: {
   original?: string | null;
   title: string;
   children?: ReactNode;
   initialView?: "digital" | "original";
   continuousPdf?: boolean;
+  digitalLabel?: string;
 }) {
   original = safeDocumentUrl(original);
   const [view, setView] = useState(
@@ -67,7 +69,7 @@ export default function DocumentViews({
             }}
           >
             <Sparkles size={18} />
-            <span>Digital Paper</span>
+            <span>{digitalLabel}</span>
           </button>
         )}
         {original && (

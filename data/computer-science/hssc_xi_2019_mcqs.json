@@ -1,0 +1,1082 @@
+[
+  {
+    "number": "1",
+    "page": 2,
+    "stem": "The number of stages in the data processing cycle is",
+    "choices": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "The conventional data-processing cycle has input, processing, output and storage: four stages. The other counts omit or add stages to this model.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. The conventional data-processing cycle has input, processing, output and storage: four stages. The other counts omit or add stages to this model."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. The conventional data-processing cycle has input, processing, output and storage: four stages. The other counts omit or add stages to this model."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The conventional data-processing cycle has input, processing, output and storage: four stages. The other counts omit or add stages to this model."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. The conventional data-processing cycle has input, processing, output and storage: four stages. The other counts omit or add stages to this model."
+      }
+    ]
+  },
+  {
+    "number": "2",
+    "page": 2,
+    "stem": "An example of database software is",
+    "choices": {
+      "A": "Microsoft PowerPoint.",
+      "B": "Microsoft Access.",
+      "C": "Microsoft Word.",
+      "D": "Microsoft Excel."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Microsoft Access is a database-management application. PowerPoint is presentation software, Word is a word processor and Excel is primarily a spreadsheet.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. Microsoft Access is a database-management application. PowerPoint is presentation software, Word is a word processor and Excel is primarily a spreadsheet."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Microsoft Access is a database-management application. PowerPoint is presentation software, Word is a word processor and Excel is primarily a spreadsheet."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. Microsoft Access is a database-management application. PowerPoint is presentation software, Word is a word processor and Excel is primarily a spreadsheet."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. Microsoft Access is a database-management application. PowerPoint is presentation software, Word is a word processor and Excel is primarily a spreadsheet."
+      }
+    ]
+  },
+  {
+    "number": "3",
+    "page": 2,
+    "stem": "Omar travels to Sukkur for a workshop. He must:\n\n- Show a presentation to 25 participants.\n- Play an audio clip.\n- Photograph the workshop.\n- Email the photographs to his manager.\n\nWhich set of devices, besides his laptop, supports all these tasks?",
+    "choices": {
+      "A": "printer, speaker, scanner and flash drive.",
+      "B": "projector, microphone, camera and flash drive.",
+      "C": "projector, speakers, camera and network interface card.",
+      "D": "printer, microphone, scanner and network interface card."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A projector presents to the group, speakers play audio, a camera captures photographs and a network interface supports emailing. A microphone records input rather than playing audio; printers and scanners do not replace the required devices.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. A projector presents to the group, speakers play audio, a camera captures photographs and a network interface supports emailing. A microphone records input rather than playing audio; printers and scanners do not replace the required devices."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. A projector presents to the group, speakers play audio, a camera captures photographs and a network interface supports emailing. A microphone records input rather than playing audio; printers and scanners do not replace the required devices."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. A projector presents to the group, speakers play audio, a camera captures photographs and a network interface supports emailing. A microphone records input rather than playing audio; printers and scanners do not replace the required devices."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. A projector presents to the group, speakers play audio, a camera captures photographs and a network interface supports emailing. A microphone records input rather than playing audio; printers and scanners do not replace the required devices."
+      }
+    ]
+  },
+  {
+    "number": "4",
+    "page": 2,
+    "stem": "Consider these features:\n\n- Short access time.\n- Temporary data storage.\n- Used for computer cache.\n\nWhich type of memory has these features?",
+    "choices": {
+      "A": "dynamic random access memory.",
+      "B": "static random access memory.",
+      "C": "read only memory.",
+      "D": "flash memory."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "SRAM is volatile, fast working memory commonly used for cache. DRAM needs refresh and is normally slower; ROM and flash are nonvolatile.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. SRAM is volatile, fast working memory commonly used for cache. DRAM needs refresh and is normally slower; ROM and flash are nonvolatile."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. SRAM is volatile, fast working memory commonly used for cache. DRAM needs refresh and is normally slower; ROM and flash are nonvolatile."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. SRAM is volatile, fast working memory commonly used for cache. DRAM needs refresh and is normally slower; ROM and flash are nonvolatile."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. SRAM is volatile, fast working memory commonly used for cache. DRAM needs refresh and is normally slower; ROM and flash are nonvolatile."
+      }
+    ]
+  },
+  {
+    "number": "5",
+    "page": 3,
+    "stem": "Which software performs all these functions?\n\n- File management.\n- Memory management.\n- Processor management.\n- Input and output device management.",
+    "choices": {
+      "A": "utility software.",
+      "B": "operating system.",
+      "C": "application software.",
+      "D": "compiler and interpreter."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "An operating system manages files, memory, processors and I/O devices. Utilities perform narrower maintenance tasks, applications serve users and compilers/interpreters translate or execute code.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. An operating system manages files, memory, processors and I/O devices. Utilities perform narrower maintenance tasks, applications serve users and compilers/interpreters translate or execute code."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. An operating system manages files, memory, processors and I/O devices. Utilities perform narrower maintenance tasks, applications serve users and compilers/interpreters translate or execute code."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. An operating system manages files, memory, processors and I/O devices. Utilities perform narrower maintenance tasks, applications serve users and compilers/interpreters translate or execute code."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. An operating system manages files, memory, processors and I/O devices. Utilities perform narrower maintenance tasks, applications serve users and compilers/interpreters translate or execute code."
+      }
+    ]
+  },
+  {
+    "number": "6",
+    "page": 3,
+    "stem": "The stage of system development life cycle (SDLC) during which changes are made to software and hardware to support the system’s operational effectiveness is",
+    "choices": {
+      "A": "testing.",
+      "B": "debugging.",
+      "C": "maintenance.",
+      "D": "problem analysis."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "",
+    "level": "U",
+    "slo": "1.4.1",
+    "grade": 11,
+    "explanation": "Maintenance changes an operational system to correct problems, adapt it or keep it effective. Testing checks behaviour, debugging locates/removes faults and initial problem analysis defines requirements.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. Maintenance changes an operational system to correct problems, adapt it or keep it effective. Testing checks behaviour, debugging locates/removes faults and initial problem analysis defines requirements."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. Maintenance changes an operational system to correct problems, adapt it or keep it effective. Testing checks behaviour, debugging locates/removes faults and initial problem analysis defines requirements."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Maintenance changes an operational system to correct problems, adapt it or keep it effective. Testing checks behaviour, debugging locates/removes faults and initial problem analysis defines requirements."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. Maintenance changes an operational system to correct problems, adapt it or keep it effective. Testing checks behaviour, debugging locates/removes faults and initial problem analysis defines requirements."
+      }
+    ]
+  },
+  {
+    "number": "7",
+    "page": 3,
+    "stem": "The hardware devices required to build a computer network are",
+    "choices": {
+      "A": "bridge, firewall and monitor.",
+      "B": "firewall, modem and scanner.",
+      "C": "modem, monitor and scanner.",
+      "D": "bridge, firewall and modem."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A bridge, modem and a dedicated firewall appliance can be network hardware. A monitor or scanner is not a network-interconnection device. Firewalls can also be software; the answer assumes an appliance.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. A bridge, modem and a dedicated firewall appliance can be network hardware. A monitor or scanner is not a network-interconnection device. Firewalls can also be software; the answer assumes an appliance."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. A bridge, modem and a dedicated firewall appliance can be network hardware. A monitor or scanner is not a network-interconnection device. Firewalls can also be software; the answer assumes an appliance."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. A bridge, modem and a dedicated firewall appliance can be network hardware. A monitor or scanner is not a network-interconnection device. Firewalls can also be software; the answer assumes an appliance."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. A bridge, modem and a dedicated firewall appliance can be network hardware. A monitor or scanner is not a network-interconnection device. Firewalls can also be software; the answer assumes an appliance."
+      }
+    ]
+  },
+  {
+    "number": "8",
+    "page": 3,
+    "stem": "`RS-232` is the most common standard of the",
+    "choices": {
+      "A": "physical layer.",
+      "B": "data link layer.",
+      "C": "network layer.",
+      "D": "transport layer."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "RS-232 specifies electrical/signalling/interface properties at the physical layer. It does not define data-link addressing, network routing or transport services.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. RS-232 specifies electrical/signalling/interface properties at the physical layer. It does not define data-link addressing, network routing or transport services."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. RS-232 specifies electrical/signalling/interface properties at the physical layer. It does not define data-link addressing, network routing or transport services."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. RS-232 specifies electrical/signalling/interface properties at the physical layer. It does not define data-link addressing, network routing or transport services."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. RS-232 specifies electrical/signalling/interface properties at the physical layer. It does not define data-link addressing, network routing or transport services."
+      }
+    ]
+  },
+  {
+    "number": "9",
+    "page": 3,
+    "stem": "Which row correctly differentiates client–server and peer-to-peer network models?",
+    "choices": {
+      "A": "| Client–server | Peer-to-peer |\n| --- | --- |\n| Hard to manage | Easy to manage |",
+      "B": "| Client–server | Peer-to-peer |\n| --- | --- |\n| Centralised | Decentralised |",
+      "C": "| Client–server | Peer-to-peer |\n| --- | --- |\n| Inexpensive to implement | Expensive to implement |",
+      "D": "| Client–server | Peer-to-peer |\n| --- | --- |\n| Suitable for few users | Suitable for many users |"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A client–server design centralises services in servers; a peer-to-peer design distributes roles among peers. The other rows reverse the usual cost, scale or management comparison.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. A client–server design centralises services in servers; a peer-to-peer design distributes roles among peers. The other rows reverse the usual cost, scale or management comparison."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. A client–server design centralises services in servers; a peer-to-peer design distributes roles among peers. The other rows reverse the usual cost, scale or management comparison."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. A client–server design centralises services in servers; a peer-to-peer design distributes roles among peers. The other rows reverse the usual cost, scale or management comparison."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. A client–server design centralises services in servers; a peer-to-peer design distributes roles among peers. The other rows reverse the usual cost, scale or management comparison."
+      }
+    ]
+  },
+  {
+    "number": "10",
+    "page": 4,
+    "stem": "A topology in which each node is connected to exactly two other nodes is",
+    "choices": {
+      "A": "bus topology.",
+      "B": "star topology.",
+      "C": "ring topology.",
+      "D": "tree topology."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "",
+    "level": "K",
+    "slo": "1.5.2",
+    "grade": 11,
+    "explanation": "In a simple ring each node connects to its two neighbours. A star uses a central node, a bus a shared backbone and a tree a branching hierarchy.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. In a simple ring each node connects to its two neighbours. A star uses a central node, a bus a shared backbone and a tree a branching hierarchy."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. In a simple ring each node connects to its two neighbours. A star uses a central node, a bus a shared backbone and a tree a branching hierarchy."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. In a simple ring each node connects to its two neighbours. A star uses a central node, a bus a shared backbone and a tree a branching hierarchy."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. In a simple ring each node connects to its two neighbours. A star uses a central node, a bus a shared backbone and a tree a branching hierarchy."
+      }
+    ]
+  },
+  {
+    "number": "11",
+    "page": 4,
+    "stem": "If computer A sends data to computer B, then the first open system interconnection (OSI) model layer at computer B through which data will be received is",
+    "choices": {
+      "A": "application layer.",
+      "B": "transport layer.",
+      "C": "network layer.",
+      "D": "physical layer."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The receiving computer encounters incoming signals at the physical layer first and then processes higher layers. Application, transport and network are not the first receiving layer.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. The receiving computer encounters incoming signals at the physical layer first and then processes higher layers. Application, transport and network are not the first receiving layer."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. The receiving computer encounters incoming signals at the physical layer first and then processes higher layers. Application, transport and network are not the first receiving layer."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. The receiving computer encounters incoming signals at the physical layer first and then processes higher layers. Application, transport and network are not the first receiving layer."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. The receiving computer encounters incoming signals at the physical layer first and then processes higher layers. Application, transport and network are not the first receiving layer."
+      }
+    ]
+  },
+  {
+    "number": "12",
+    "page": 4,
+    "stem": "The device that works on data link layer of OSI model is",
+    "choices": {
+      "A": "connector.",
+      "B": "switch.",
+      "C": "router.",
+      "D": "cable."
+    },
+    "answer": "B",
+    "officialAnswer": "*",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The printed key withdraws this question with an asterisk, but the wording has a clear answer: B, an ordinary Ethernet switch, forwards frames at the data-link layer. A router primarily routes at the network layer; cables and connectors belong to the physical medium. This reviewed answer is supplied independently of the withdrawn board key.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. The printed key withdraws this question with an asterisk, but the wording has a clear answer: B, an ordinary Ethernet switch, forwards frames at the data-link layer. A router primarily routes at the network layer; cables and connectors belong to the physical medium. This reviewed answer is supplied independently of the withdrawn board key."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The printed key withdraws this question with an asterisk, but the wording has a clear answer: B, an ordinary Ethernet switch, forwards frames at the data-link layer. A router primarily routes at the network layer; cables and connectors belong to the physical medium. This reviewed answer is supplied independently of the withdrawn board key."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. The printed key withdraws this question with an asterisk, but the wording has a clear answer: B, an ordinary Ethernet switch, forwards frames at the data-link layer. A router primarily routes at the network layer; cables and connectors belong to the physical medium. This reviewed answer is supplied independently of the withdrawn board key."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. The printed key withdraws this question with an asterisk, but the wording has a clear answer: B, an ordinary Ethernet switch, forwards frames at the data-link layer. A router primarily routes at the network layer; cables and connectors belong to the physical medium. This reviewed answer is supplied independently of the withdrawn board key."
+      }
+    ]
+  },
+  {
+    "number": "13",
+    "page": 4,
+    "stem": "Which row gives correct examples of the three data-communication modes?",
+    "choices": {
+      "A": "| Simplex | Half-duplex | Full-duplex |\n| --- | --- | --- |\n| Radio broadcast | Walkie-talkie | Telephone |",
+      "B": "| Simplex | Half-duplex | Full-duplex |\n| --- | --- | --- |\n| Telephone | Radio broadcast | Walkie-talkie |",
+      "C": "| Simplex | Half-duplex | Full-duplex |\n| --- | --- | --- |\n| Walkie-talkie | Radio broadcast | Telephone |",
+      "D": "| Simplex | Half-duplex | Full-duplex |\n| --- | --- | --- |\n| Radio broadcast | Telephone | Walkie-talkie |"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Radio broadcast is one-way/simplex, a walkie-talkie alternates directions/half-duplex and a telephone permits simultaneous two-way/full-duplex speech. Other rows mismatch the examples.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Radio broadcast is one-way/simplex, a walkie-talkie alternates directions/half-duplex and a telephone permits simultaneous two-way/full-duplex speech. Other rows mismatch the examples."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. Radio broadcast is one-way/simplex, a walkie-talkie alternates directions/half-duplex and a telephone permits simultaneous two-way/full-duplex speech. Other rows mismatch the examples."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. Radio broadcast is one-way/simplex, a walkie-talkie alternates directions/half-duplex and a telephone permits simultaneous two-way/full-duplex speech. Other rows mismatch the examples."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. Radio broadcast is one-way/simplex, a walkie-talkie alternates directions/half-duplex and a telephone permits simultaneous two-way/full-duplex speech. Other rows mismatch the examples."
+      }
+    ]
+  },
+  {
+    "number": "14",
+    "page": 4,
+    "stem": "The component of fibre optic cable that protects it from physical damage is",
+    "choices": {
+      "A": "core.",
+      "B": "jacket.",
+      "C": "buffer.",
+      "D": "cladding."
+    },
+    "answer": null,
+    "officialAnswer": "C,B",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The official key accepts both buffer and jacket. Both protect fibre at different structural levels: the buffer protects the fibre and the outer jacket protects the cable assembly. The broad wording does not select one uniquely, so this is excluded from single-answer scoring.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Not uniquely scorable. The official key accepts both buffer and jacket. Both protect fibre at different structural levels: the buffer protects the fibre and the outer jacket protects the cable assembly. The broad wording does not select one uniquely, so this is excluded from single-answer scoring."
+      },
+      {
+        "key": "B",
+        "reason": "Not uniquely scorable. The official key accepts both buffer and jacket. Both protect fibre at different structural levels: the buffer protects the fibre and the outer jacket protects the cable assembly. The broad wording does not select one uniquely, so this is excluded from single-answer scoring."
+      },
+      {
+        "key": "C",
+        "reason": "Not uniquely scorable. The official key accepts both buffer and jacket. Both protect fibre at different structural levels: the buffer protects the fibre and the outer jacket protects the cable assembly. The broad wording does not select one uniquely, so this is excluded from single-answer scoring."
+      },
+      {
+        "key": "D",
+        "reason": "Not uniquely scorable. The official key accepts both buffer and jacket. Both protect fibre at different structural levels: the buffer protects the fibre and the outer jacket protects the cable assembly. The broad wording does not select one uniquely, so this is excluded from single-answer scoring."
+      }
+    ]
+  },
+  {
+    "number": "15",
+    "page": 5,
+    "stem": "Which image has the lowest resolution?",
+    "choices": {
+      "A": "![Resolution sample A](/paper-crops/CS-XI-2019-P1/diagram-15-A.png)",
+      "B": "![Resolution sample B](/paper-crops/CS-XI-2019-P1/diagram-15-B.png)",
+      "C": "![Resolution sample C](/paper-crops/CS-XI-2019-P1/diagram-15-C.png)",
+      "D": "![Resolution sample D](/paper-crops/CS-XI-2019-P1/diagram-15-D.png)"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Image B has the coarsest visible pixel blocks and therefore the lowest spatial resolution among the supplied images. Judge resolution from pixel detail rather than printed image size alone.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. Image B has the coarsest visible pixel blocks and therefore the lowest spatial resolution among the supplied images. Judge resolution from pixel detail rather than printed image size alone."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Image B has the coarsest visible pixel blocks and therefore the lowest spatial resolution among the supplied images. Judge resolution from pixel detail rather than printed image size alone."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. Image B has the coarsest visible pixel blocks and therefore the lowest spatial resolution among the supplied images. Judge resolution from pixel detail rather than printed image size alone."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. Image B has the coarsest visible pixel blocks and therefore the lowest spatial resolution among the supplied images. Judge resolution from pixel detail rather than printed image size alone."
+      }
+    ]
+  },
+  {
+    "number": "16",
+    "page": 5,
+    "stem": "Which row correctly differentiates conventional serial and parallel communication?",
+    "choices": {
+      "A": "| Serial | Parallel |\n| --- | --- |\n| Expensive to implement | Cheap to implement |",
+      "B": "| Serial | Parallel |\n| --- | --- |\n| Multiple bits at once | One bit at a time |",
+      "C": "| Serial | Parallel |\n| --- | --- |\n| Fast data communication | Slow data communication |",
+      "D": "| Serial | Parallel |\n| --- | --- |\n| Used over long distances | Used over short distances |"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "D is the intended conventional comparison: serial links are suitable for longer distances, whereas traditional parallel buses are used over shorter distances because of skew/crosstalk. B reverses the bit-transfer definitions; A and C make unsupported universal cost/speed claims.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. D is the intended conventional comparison: serial links are suitable for longer distances, whereas traditional parallel buses are used over shorter distances because of skew/crosstalk. B reverses the bit-transfer definitions; A and C make unsupported universal cost/speed claims."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. D is the intended conventional comparison: serial links are suitable for longer distances, whereas traditional parallel buses are used over shorter distances because of skew/crosstalk. B reverses the bit-transfer definitions; A and C make unsupported universal cost/speed claims."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. D is the intended conventional comparison: serial links are suitable for longer distances, whereas traditional parallel buses are used over shorter distances because of skew/crosstalk. B reverses the bit-transfer definitions; A and C make unsupported universal cost/speed claims."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. D is the intended conventional comparison: serial links are suitable for longer distances, whereas traditional parallel buses are used over shorter distances because of skew/crosstalk. B reverses the bit-transfer definitions; A and C make unsupported universal cost/speed claims."
+      }
+    ]
+  },
+  {
+    "number": "17",
+    "page": 5,
+    "stem": "The maximum capacity of a link to transfer data from sender to receiver over a computer network is called",
+    "choices": {
+      "A": "baseband.",
+      "B": "bandwidth.",
+      "C": "full duplex.",
+      "D": "modulation."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Bandwidth in this networking context means the maximum link data-transfer capacity. Baseband is a signalling concept, full duplex a direction mode and modulation a carrier-encoding process.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. Bandwidth in this networking context means the maximum link data-transfer capacity. Baseband is a signalling concept, full duplex a direction mode and modulation a carrier-encoding process."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Bandwidth in this networking context means the maximum link data-transfer capacity. Baseband is a signalling concept, full duplex a direction mode and modulation a carrier-encoding process."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. Bandwidth in this networking context means the maximum link data-transfer capacity. Baseband is a signalling concept, full duplex a direction mode and modulation a carrier-encoding process."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. Bandwidth in this networking context means the maximum link data-transfer capacity. Baseband is a signalling concept, full duplex a direction mode and modulation a carrier-encoding process."
+      }
+    ]
+  },
+  {
+    "number": "18",
+    "page": 5,
+    "stem": "The communication medium that is most commonly used for the distribution of cable television signals is",
+    "choices": {
+      "A": "fibre optics.",
+      "B": "microwave.",
+      "C": "coaxial cable.",
+      "D": "twisted-pair cable."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Coaxial cable is the conventional cable-TV distribution medium meant by this historical question. Modern networks may also use fibre in hybrid or all-fibre systems.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. Coaxial cable is the conventional cable-TV distribution medium meant by this historical question. Modern networks may also use fibre in hybrid or all-fibre systems."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. Coaxial cable is the conventional cable-TV distribution medium meant by this historical question. Modern networks may also use fibre in hybrid or all-fibre systems."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Coaxial cable is the conventional cable-TV distribution medium meant by this historical question. Modern networks may also use fibre in hybrid or all-fibre systems."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. Coaxial cable is the conventional cable-TV distribution medium meant by this historical question. Modern networks may also use fibre in hybrid or all-fibre systems."
+      }
+    ]
+  },
+  {
+    "number": "19",
+    "page": 6,
+    "stem": "Hina is a school teacher. She wants to generate graphs that represent percentages of marks obtained by all students of her class. The most suitable software to do this task is",
+    "choices": {
+      "A": "spreadsheet.",
+      "B": "word processor.",
+      "C": "graphics package.",
+      "D": "presentation software."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A spreadsheet can calculate percentages and graph numeric student marks. A word processor, graphics package or presentation application is less directly suited to the data calculations.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. A spreadsheet can calculate percentages and graph numeric student marks. A word processor, graphics package or presentation application is less directly suited to the data calculations."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. A spreadsheet can calculate percentages and graph numeric student marks. A word processor, graphics package or presentation application is less directly suited to the data calculations."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. A spreadsheet can calculate percentages and graph numeric student marks. A word processor, graphics package or presentation application is less directly suited to the data calculations."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. A spreadsheet can calculate percentages and graph numeric student marks. A word processor, graphics package or presentation application is less directly suited to the data calculations."
+      }
+    ]
+  },
+  {
+    "number": "20",
+    "page": 6,
+    "stem": "The MOST important concern associated with online banking is",
+    "choices": {
+      "A": "excessive cost.",
+      "B": "delayed services.",
+      "C": "compromise of privacy.",
+      "D": "lack of availability of services."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "",
+    "level": "U",
+    "slo": "1.7.2",
+    "grade": 11,
+    "explanation": "Compromise of privacy is the relevant online-banking risk among the listed choices, involving disclosure of personal/financial data. Cost, delay and availability are not the intended principal concern in this question.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. Compromise of privacy is the relevant online-banking risk among the listed choices, involving disclosure of personal/financial data. Cost, delay and availability are not the intended principal concern in this question."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. Compromise of privacy is the relevant online-banking risk among the listed choices, involving disclosure of personal/financial data. Cost, delay and availability are not the intended principal concern in this question."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Compromise of privacy is the relevant online-banking risk among the listed choices, involving disclosure of personal/financial data. Cost, delay and availability are not the intended principal concern in this question."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. Compromise of privacy is the relevant online-banking risk among the listed choices, involving disclosure of personal/financial data. Cost, delay and availability are not the intended principal concern in this question."
+      }
+    ]
+  },
+  {
+    "number": "21",
+    "page": 6,
+    "stem": "One of the core applications of computer aided design (CAD) is designing",
+    "choices": {
+      "A": "cars.",
+      "B": "maps.",
+      "C": "posters.",
+      "D": "presentations."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "CAD is used for engineering product designs such as cars. Maps are normally associated with GIS/cartography, posters with graphics/design and presentations with presentation tools.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. CAD is used for engineering product designs such as cars. Maps are normally associated with GIS/cartography, posters with graphics/design and presentations with presentation tools."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. CAD is used for engineering product designs such as cars. Maps are normally associated with GIS/cartography, posters with graphics/design and presentations with presentation tools."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. CAD is used for engineering product designs such as cars. Maps are normally associated with GIS/cartography, posters with graphics/design and presentations with presentation tools."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. CAD is used for engineering product designs such as cars. Maps are normally associated with GIS/cartography, posters with graphics/design and presentations with presentation tools."
+      }
+    ]
+  },
+  {
+    "number": "22",
+    "page": 6,
+    "stem": "One of the potential drawbacks of e-commerce is that",
+    "choices": {
+      "A": "it allows comparing prices among several providers.",
+      "B": "it needs a well-built website but not the infrastructure.",
+      "C": "consumer is unable to experience the product before purchase.",
+      "D": "consumer can read the online good or bad reviews about a product."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "An online buyer cannot physically inspect or try the product before delivery. Price comparisons and reviews are benefits; e-commerce still needs fulfilment/payment infrastructure.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. An online buyer cannot physically inspect or try the product before delivery. Price comparisons and reviews are benefits; e-commerce still needs fulfilment/payment infrastructure."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. An online buyer cannot physically inspect or try the product before delivery. Price comparisons and reviews are benefits; e-commerce still needs fulfilment/payment infrastructure."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. An online buyer cannot physically inspect or try the product before delivery. Price comparisons and reviews are benefits; e-commerce still needs fulfilment/payment infrastructure."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. An online buyer cannot physically inspect or try the product before delivery. Price comparisons and reviews are benefits; e-commerce still needs fulfilment/payment infrastructure."
+      }
+    ]
+  },
+  {
+    "number": "23",
+    "page": 6,
+    "stem": "When a processor writes data into the main memory, it sends a signal to initiate the data writing process. This signal is sent via",
+    "choices": {
+      "A": "data bus.",
+      "B": "serial port.",
+      "C": "control bus.",
+      "D": "parallel port."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The write control signal travels on the control bus. The data bus carries the data values; serial and parallel ports are peripheral interfaces rather than the requested control-signal path.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. The write control signal travels on the control bus. The data bus carries the data values; serial and parallel ports are peripheral interfaces rather than the requested control-signal path."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. The write control signal travels on the control bus. The data bus carries the data values; serial and parallel ports are peripheral interfaces rather than the requested control-signal path."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The write control signal travels on the control bus. The data bus carries the data values; serial and parallel ports are peripheral interfaces rather than the requested control-signal path."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. The write control signal travels on the control bus. The data bus carries the data values; serial and parallel ports are peripheral interfaces rather than the requested control-signal path."
+      }
+    ]
+  },
+  {
+    "number": "24",
+    "page": 6,
+    "stem": "An instruction performs a simple division of two integers. The CPU register that would store the result of division is",
+    "choices": {
+      "A": "program counter register.",
+      "B": "accumulator register.",
+      "C": "instruction register.",
+      "D": "data buffer register."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "In the accumulator-based CPU model assumed by the paper, the arithmetic result is held in the accumulator. PC holds the next instruction address, IR the instruction and the data buffer stages memory transfers. Specific real architectures may use other result registers.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. In the accumulator-based CPU model assumed by the paper, the arithmetic result is held in the accumulator. PC holds the next instruction address, IR the instruction and the data buffer stages memory transfers. Specific real architectures may use other result registers."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. In the accumulator-based CPU model assumed by the paper, the arithmetic result is held in the accumulator. PC holds the next instruction address, IR the instruction and the data buffer stages memory transfers. Specific real architectures may use other result registers."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. In the accumulator-based CPU model assumed by the paper, the arithmetic result is held in the accumulator. PC holds the next instruction address, IR the instruction and the data buffer stages memory transfers. Specific real architectures may use other result registers."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. In the accumulator-based CPU model assumed by the paper, the arithmetic result is held in the accumulator. PC holds the next instruction address, IR the instruction and the data buffer stages memory transfers. Specific real architectures may use other result registers."
+      }
+    ]
+  },
+  {
+    "number": "25",
+    "page": 7,
+    "stem": "In fetch-decode-execute cycle, the fetch operation places the instruction fetched from the memory into the",
+    "choices": {
+      "A": "program counter register.",
+      "B": "data buffer register.",
+      "C": "instruction register.",
+      "D": "flag register."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The fetched instruction is ultimately placed in the instruction register for decoding. It may pass through a memory/data buffer first; PC holds an address and flag registers hold status bits.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. The fetched instruction is ultimately placed in the instruction register for decoding. It may pass through a memory/data buffer first; PC holds an address and flag registers hold status bits."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. The fetched instruction is ultimately placed in the instruction register for decoding. It may pass through a memory/data buffer first; PC holds an address and flag registers hold status bits."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The fetched instruction is ultimately placed in the instruction register for decoding. It may pass through a memory/data buffer first; PC holds an address and flag registers hold status bits."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. The fetched instruction is ultimately placed in the instruction register for decoding. It may pass through a memory/data buffer first; PC holds an address and flag registers hold status bits."
+      }
+    ]
+  },
+  {
+    "number": "26",
+    "page": 7,
+    "stem": "Which of the following is TRUE about Trojan horse?",
+    "choices": {
+      "A": "It replicates itself over network.",
+      "B": "It affects boot sector of floppy disk.",
+      "C": "It replicates itself within a computer.",
+      "D": "It seems as valid beneficial software but it is not."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "",
+    "level": "A",
+    "slo": "1.8.1",
+    "grade": 11,
+    "explanation": "A Trojan disguises malicious functionality as useful/legitimate software. Self-replication is characteristic of worms or viruses, and a boot-sector infection is a particular virus behaviour rather than the Trojan definition.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. A Trojan disguises malicious functionality as useful/legitimate software. Self-replication is characteristic of worms or viruses, and a boot-sector infection is a particular virus behaviour rather than the Trojan definition."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. A Trojan disguises malicious functionality as useful/legitimate software. Self-replication is characteristic of worms or viruses, and a boot-sector infection is a particular virus behaviour rather than the Trojan definition."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. A Trojan disguises malicious functionality as useful/legitimate software. Self-replication is characteristic of worms or viruses, and a boot-sector infection is a particular virus behaviour rather than the Trojan definition."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. A Trojan disguises malicious functionality as useful/legitimate software. Self-replication is characteristic of worms or viruses, and a boot-sector infection is a particular virus behaviour rather than the Trojan definition."
+      }
+    ]
+  },
+  {
+    "number": "27",
+    "page": 7,
+    "stem": "NewFile.xls is saved in MyFiles, which is inside MyData on drive D. Which path opens the file?",
+    "choices": {
+      "A": "```text\nD:\\MyData\\MyFiles\\NewFile.xls\n```",
+      "B": "```text\nD:\\MyFiles\\MyData\\NewFile.xls\n```",
+      "C": "```text\nD:\\\\MyData\\MyFiles\\NewFile.xls\n```",
+      "D": "```text\nD:\\\\MyFiles\\MyData\\NewFile.xls\n```"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "A follows drive D, folder MyData, subfolder MyFiles and file NewFile.xls with single Windows path separators. B reverses the folders; C and D introduce an extra separator after the drive in the offered syntax.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. A follows drive D, folder MyData, subfolder MyFiles and file NewFile.xls with single Windows path separators. B reverses the folders; C and D introduce an extra separator after the drive in the offered syntax."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. A follows drive D, folder MyData, subfolder MyFiles and file NewFile.xls with single Windows path separators. B reverses the folders; C and D introduce an extra separator after the drive in the offered syntax."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. A follows drive D, folder MyData, subfolder MyFiles and file NewFile.xls with single Windows path separators. B reverses the folders; C and D introduce an extra separator after the drive in the offered syntax."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. A follows drive D, folder MyData, subfolder MyFiles and file NewFile.xls with single Windows path separators. B reverses the folders; C and D introduce an extra separator after the drive in the offered syntax."
+      }
+    ]
+  },
+  {
+    "number": "28",
+    "page": 7,
+    "stem": "Which sequence correctly inserts WordArt into an MS Word document?",
+    "choices": {
+      "A": "1. Click Insert\n2. Click WordArt in the Text group\n3. Select a character style\n4. Type and format the text",
+      "B": "1. Click WordArt in the Text group\n2. Click Insert\n3. Select a character style\n4. Type and format the text",
+      "C": "1. Select a character style\n2. Click WordArt in the Text group\n3. Click Insert\n4. Type and format the text",
+      "D": "1. Type and format the text\n2. Click Insert\n3. Click WordArt in the Text group\n4. Select a character style"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Use Insert, then WordArt, choose a style, and enter/format the text. The other sequences attempt later actions before opening the required ribbon control.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Use Insert, then WordArt, choose a style, and enter/format the text. The other sequences attempt later actions before opening the required ribbon control."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. Use Insert, then WordArt, choose a style, and enter/format the text. The other sequences attempt later actions before opening the required ribbon control."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. Use Insert, then WordArt, choose a style, and enter/format the text. The other sequences attempt later actions before opening the required ribbon control."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. Use Insert, then WordArt, choose a style, and enter/format the text. The other sequences attempt later actions before opening the required ribbon control."
+      }
+    ]
+  },
+  {
+    "number": "29",
+    "page": 8,
+    "stem": "Consider the Excel sheet below.\n\n| Row | A | B | C |\n| --- | --- | --- | --- |\n| 1 | 5 | 4 | 1 |\n| 2 | 10 | 6 | 3 |\n| 3 | 15 | 8 | 5 |\n| 4 | 20 | 10 | 7 |\n| 5 | 25 | 12 | 9 |\n| 6 | 30 | 14 | 11 |\n\nWhich formula sums cells A1, A2, A3, A4, A5 and B2 to give 81?",
+    "choices": {
+      "A": "```text\n=ADD(A1:A5:B2)\n```",
+      "B": "```text\n=ADD(A1:A5,B2)\n```",
+      "C": "```text\n=SUM(A1:A5:B2)\n```",
+      "D": "```text\n=SUM(A1:A5,B2)\n```"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "SUM(A1:A5,B2) adds 5+10+15+20+25+6=81. Excel has no ordinary ADD function; the offered chained-colon reference is not the intended disjoint sum.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. SUM(A1:A5,B2) adds 5+10+15+20+25+6=81. Excel has no ordinary ADD function; the offered chained-colon reference is not the intended disjoint sum."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. SUM(A1:A5,B2) adds 5+10+15+20+25+6=81. Excel has no ordinary ADD function; the offered chained-colon reference is not the intended disjoint sum."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. SUM(A1:A5,B2) adds 5+10+15+20+25+6=81. Excel has no ordinary ADD function; the offered chained-colon reference is not the intended disjoint sum."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. SUM(A1:A5,B2) adds 5+10+15+20+25+6=81. Excel has no ordinary ADD function; the offered chained-colon reference is not the intended disjoint sum."
+      }
+    ]
+  },
+  {
+    "number": "30",
+    "page": 8,
+    "stem": "Which of the following options represents the hostname in the given email address? alizeh@spark.edu",
+    "choices": {
+      "A": "@",
+      "B": "edu",
+      "C": "spark",
+      "D": "alizeh"
+    },
+    "answer": null,
+    "officialAnswer": "C",
+    "originalSlo": "",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "The printed key chooses spark, but spark is only a label within the email domain spark.edu. The full domain is not offered, and an email domain need not identify a unique mail-server hostname. The wording is technically incomplete, so this item is held out of scored quizzes.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Not uniquely scorable. The printed key chooses spark, but spark is only a label within the email domain spark.edu. The full domain is not offered, and an email domain need not identify a unique mail-server hostname. The wording is technically incomplete, so this item is held out of scored quizzes."
+      },
+      {
+        "key": "B",
+        "reason": "Not uniquely scorable. The printed key chooses spark, but spark is only a label within the email domain spark.edu. The full domain is not offered, and an email domain need not identify a unique mail-server hostname. The wording is technically incomplete, so this item is held out of scored quizzes."
+      },
+      {
+        "key": "C",
+        "reason": "Not uniquely scorable. The printed key chooses spark, but spark is only a label within the email domain spark.edu. The full domain is not offered, and an email domain need not identify a unique mail-server hostname. The wording is technically incomplete, so this item is held out of scored quizzes."
+      },
+      {
+        "key": "D",
+        "reason": "Not uniquely scorable. The printed key chooses spark, but spark is only a label within the email domain spark.edu. The full domain is not offered, and an email domain need not identify a unique mail-server hostname. The wording is technically incomplete, so this item is held out of scored quizzes."
+      }
+    ]
+  }
+]

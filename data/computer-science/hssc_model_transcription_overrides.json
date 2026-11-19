@@ -1,0 +1,268 @@
+{
+  "XI": {
+    "3": {
+      "stem": "Consider the given logic circuit. Which truth table shows its output?",
+      "choices": {
+        "A": "| X | Y | XY | YX | Z |\n| --- | --- | --- | --- | --- |\n| 0 | 0 | 0 | 0 | 0 |\n| 0 | 1 | 0 | 0 | 0 |\n| 1 | 0 | 0 | 0 | 0 |\n| 1 | 1 | 1 | 1 | 1 |",
+        "B": "| X | Y | XY | YX | Z |\n| --- | --- | --- | --- | --- |\n| 0 | 0 | 0 | 1 | 1 |\n| 0 | 1 | 0 | 1 | 0 |\n| 1 | 0 | 1 | 0 | 1 |\n| 1 | 1 | 1 | 1 | 0 |",
+        "C": "| X | Y | XY | YX | Z |\n| --- | --- | --- | --- | --- |\n| 0 | 0 | 0 | 0 | 0 |\n| 0 | 1 | 0 | 1 | 1 |\n| 1 | 0 | 1 | 0 | 1 |\n| 1 | 1 | 1 | 1 | 1 |",
+        "D": "| X | Y | XY | YX | Z |\n| --- | --- | --- | --- | --- |\n| 0 | 0 | 1 | 1 | 1 |\n| 0 | 1 | 0 | 1 | 0 |\n| 1 | 0 | 1 | 0 | 1 |\n| 1 | 1 | 1 | 0 | 0 |"
+      },
+      "diagramUrl": "/paper-crops/CS-XI-P1/diagram-3.png"
+    },
+    "24": {
+      "stem": "Which code prompts for age and displays \"Your age is 18\" when the user enters 18?",
+      "choices": {
+        "A": "```python\ninput(\"Enter your age: \")\nprint(\"Your age is\" age)\n```",
+        "B": "```python\ninput(\"Enter your age: \") = age\nprint(\"Your age is\", age)\n```",
+        "C": "```python\nage = input(\"Enter your age: \")\nprint(\"Your age is\", age)\n```",
+        "D": "```python\nprint = \"Enter your age\" + input(age)\nprint(\"Your age is\" age)\n```"
+      }
+    },
+    "25": {
+      "stem": "Consider the following Python code. What is its output?\n\n```python\nfor i in range(1, 4):\n    for j in range(1, i + 1):\n        print(j, end=\"\")\n    print()\n```",
+      "choices": {
+        "A": "```text\n1\n21\n321\n```",
+        "B": "```text\n1\n12\n123\n```",
+        "C": "```text\n1\n23\n234\n```",
+        "D": "```text\n1\n13\n134\n```"
+      }
+    },
+    "26": {
+      "stem": "Which code prints \"Excellent\" if the percentage is above 90 and the subject is \"Math\"?",
+      "choices": {
+        "A": "```python\npercentage = int(input(\"Enter your percentage: \"))\nsubject = input(\"Enter your subject: \")\nif percentage > 90:\n    if subject == \"Math\"\n        print(\"Excellent\")\n```",
+        "B": "```python\npercentage = int(input(\"Enter your percentage: \"))\nsubject = input(\"Enter your subject: \")\nif percentage > 90\n    if subject == \"Math\":\n        print(\"Excellent\")\n```",
+        "C": "```python\npercentage = str(input(\"Enter your percentage: \"))\nsubject = input(\"Enter your subject: \")\nif percentage > 90:\n    if subject == \"Math\":\n        print(\"Excellent\")\n```",
+        "D": "```python\npercentage = int(input(\"Enter your percentage: \"))\nsubject = input(\"Enter your subject: \")\nif percentage > 90:\n    if subject == \"Math\":\n        print(\"Excellent\")\n```"
+      }
+    },
+    "11": {
+      "stem": "Consider the given algorithm.\nThe output of the given algorithm is\n\n```text\nStep 1: Start\nStep 2: A = 7, B = 5\nStep 3: If A % 2 == 1 Then A = A * B\nStep 4: If A > 10 Then B = A - B % 5\nStep 5: C = B - 20 * 1\nStep 6: Output C\nStep 7: Stop\n```",
+      "choices": {
+        "A": "-10",
+        "B": "15",
+        "C": "-15",
+        "D": "20"
+      }
+    },
+    "12": {
+      "stem": "Consider the given algorithm.\nThe output of the given algorithm is\n\n```text\nStep 1: Start\nStep 2: X = 4, Y = 2, C = 14\nStep 3: Y = X * Y\nStep 4: D = C - (Y + X)\nStep 5: If D >= 2 Then Goto Step 3\nStep 6: Output D = D * (-2)\nStep 7: Stop\n```",
+      "choices": {
+        "A": "12",
+        "B": "20",
+        "C": "44",
+        "D": "-44"
+      }
+    },
+    "13": {
+      "stem": "Consider the given algorithm.\nThe result of the given algorithm after execution is\n\n```text\nStep 1: Start\nStep 2: Set T = 10\nStep 3: If T % 2 == 0 Then T = T + 5\nStep 4: If T % 3 == 0 Then T = T + 6\nStep 5: If T == 21 Then T = T + 6\nStep 6: Output T\nStep 7: Stop\n```",
+      "choices": {
+        "A": "21",
+        "B": "22",
+        "C": "26",
+        "D": "27"
+      }
+    },
+    "14": {
+      "stem": "Consider the given algorithm.\nThe output that the algorithm will produce after execution is\n\n```text\nStep 1: Start\nStep 2: Set M = 2, N = 5\nStep 3: While N >= 1\n    M = M + N\n    N = N - 2\nStep 4: If N < 13 Then M = M + 1\nStep 5: Output M\nStep 6: Stop\n```",
+      "choices": {
+        "A": "10",
+        "B": "11",
+        "C": "12",
+        "D": "13"
+      }
+    },
+    "16": {
+      "stem": "A student implements the following algorithm to search for a value in a list using linear\nsearch.\nDuring the search for the value ‘9’, which elements will be compared using the linear search\nalgorithm?\n\n```text\nStep 1: Set A = [12, 17, 5, 9, 4]\nStep 2: Set target = 9\nStep 3: If element == target:\n    Print \"Found\"\nStep 4: Break\n```",
+      "choices": {
+        "A": "12, 17, 5, 9, 4",
+        "B": "12, 17, 5, 9",
+        "C": "12, 17",
+        "D": "9"
+      }
+    },
+    "23": {
+      "stem": "If the user inputs 10/2+5*3, what is displayed?\n\n```python\nexp = input(\"Enter expression: \")\nresult = eval(exp)\nprint(result)\n```",
+      "choices": {
+        "A": "30.0",
+        "B": "25.0",
+        "C": "20.0",
+        "D": "15.0"
+      }
+    },
+    "27": {
+      "stem": "What is the output of this Python program?\n\n```python\ni = 1\nwhile True:\n    if i == 4:\n        i += 1\n        continue\n    if i == 7:\n        exit()\n    print(i)\n    i += 1\n```",
+      "choices": {
+        "A": "1 2 3 5 6",
+        "B": "1 2 3 4 5 6",
+        "C": "1 2 3 5 6 7",
+        "D": "1 2 3 4 5 6 7"
+      }
+    },
+    "28": {
+      "stem": "Which type of error occurs in this program?\n\n```python\na = input(\"Enter first number: \")\nb = input(\"Enter second number: \")\naverage = (a + b) / 2\nprint(\"Average is:\", average)\n```",
+      "choices": {
+        "A": "syntax error.",
+        "B": "logical error.",
+        "C": "runtime error.",
+        "D": "semantic error."
+      }
+    },
+    "29": {
+      "stem": "What is the role of assert in the printed debugging example?\n\n```python\ndef safe_divide(a, b):\n    assert b != 0,\n    result = a / b\n    print(\"Result:\", result)\n    return result\n```",
+      "choices": {
+        "A": "ensure the function always produces a non-zero result.",
+        "B": "silently handle division and return null when ‘b’ is zero.",
+        "C": "force the program to stop if ‘b’ is zero during execution.",
+        "D": "convert the zero denominator into a small non-zero value."
+      }
+    },
+    "19": {
+      "stem": "The format for writing a multi-line comment in Python is",
+      "choices": {
+        "A": "```python\n''' This explains the logic in detail '''\n```",
+        "B": "```python\n-- This starts a comment block\n```",
+        "C": "```python\n/* This comment spans lines */\n```",
+        "D": "```python\n#* This is a comment *#\n```"
+      }
+    },
+    "20": {
+      "stem": "The command to change the turtle’s pen color to red is",
+      "choices": {
+        "A": "```python\nturtle.fill(\"red\")\n```",
+        "B": "```python\nturtle.pen(\"red\")\n```",
+        "C": "```python\nturtle.line(\"red\")\n```",
+        "D": "```python\nturtle.color(\"red\")\n```"
+      }
+    },
+    "21": {
+      "stem": "To utilise the datetime module in Python, the appropriate syntax is",
+      "choices": {
+        "A": "```python\nimport datetime\n```",
+        "B": "```python\ninstall datetime\n```",
+        "C": "```python\nload datetime\n```",
+        "D": "```python\nuse datetime\n```"
+      }
+    },
+    "22": {
+      "stem": "Which of the following variable names follows all naming rules and conventions in Python?",
+      "choices": {
+        "A": "```python\nstudent name\n```",
+        "B": "```python\nStudent-Name\n```",
+        "C": "```python\n@studentname\n```",
+        "D": "```python\n_student_name\n```"
+      }
+    },
+    "2": {
+      "stem": "A two-input NAND gate produces an output of 0 when",
+      "choices": {
+        "A": "first input is 0, the other is 1.",
+        "B": "first input is 1, the other is 0.",
+        "C": "both inputs are 0.",
+        "D": "both inputs are 1."
+      }
+    },
+    "6": {
+      "stem": "A business needs immediate access to email, CRM and accounting applications, with no manual software maintenance or updates. Which cloud service model best meets these conditions?",
+      "choices": {
+        "A": "SaaS model with access to off-the-shelf business tools.",
+        "B": "PaaS model offering tools, runtime, and hosting in the cloud.",
+        "C": "IaaS model for controlling network firewalls and physical servers.",
+        "D": "hosted desktop model allowing basic software access without development tools."
+      }
+    },
+    "43": {
+      "stem": "Ibrahim is working on a research project at a coffee shop using free public Wi‑Fi. While\ndownloading academic articles, he logs into his cloud storage and email accounts unaware that\nthe admin may be monitoring the network.\nTo minimise the risk of exposing personal data, his BEST course of action would be to",
+      "choices": {
+        "A": "turn off auto-sync features for apps on his device.",
+        "B": "use incognito mode in Chrome to prevent tracking.",
+        "C": "switch to mobile data only if the website asks for a password.",
+        "D": "use a VPN connection that hides data from external networks."
+      }
+    }
+  },
+  "XII": {
+    "16": {
+      "stem": "Consider the following Python program. What is its output?\n\n```python\ndef change(n):\n    n = n + 5\n    print(\"Inside function:\", n)\n\nx = 10\nchange(x)\nprint(\"Outside function:\", x)\n```",
+      "choices": {
+        "A": "```text\nInside function: 15\nOutside function: 10\n```",
+        "B": "```text\nInside function: 15\nOutside function: 15\n```",
+        "C": "```text\nInside function: 10\nOutside function: 10\n```",
+        "D": "```text\nInside function: 5\nOutside function: 10\n```"
+      }
+    },
+    "17": {
+      "stem": "Consider the following Python program. What is its output?\n\n```python\ndef show(info):\n    print(\"Function output:\", info)\n\nstudent = {\"name\": \"Sara\", \"age\": 16}\nshow(student)\n\ndef modify(info):\n    info = {\"name\": \"Sara\", \"age\": 17}\n\nmodify(student)\nprint(\"Final result:\", student)\n```",
+      "choices": {
+        "A": "```text\nFunction output: {'name': 'Sara', 'age': 16}\nFinal result: {'name': 'Sara', 'age': 17}\n```",
+        "B": "```text\nFunction output: {'name': 'Sara', 'age': 16}\nFinal result: {'name': 'Sara', 'age': 16}\n```",
+        "C": "```text\nFunction output: {'name': 'Sara', 'age': 17}\nFinal result: {'name': 'Sara', 'age': 17}\n```",
+        "D": "```text\nFunction output: {'name': 'Sara', 'age': 16}\nFinal result: {'name': 'Sara'}\n```"
+      }
+    },
+    "22": {
+      "stem": "Consider the following Python program. What is its output?\n\n```python\nclass Vehicle:\n    def __init__(self):\n        self.type = \"Generic Vehicle\"\n\n    def info(self):\n        return self.type\n\nclass Car(Vehicle):\n    def __init__(self):\n        super().__init__()\n        self.type = \"Car\"\n\n    def info(self):\n        return \"This is a \" + self.type\n\nclass ElectricCar(Car):\n    def __init__(self):\n        super().__init__()\n        self.battery = \"Lithium\"\n\ndef main():\n    e = ElectricCar()\n    print(e.info())\n    print(e.battery)\n\nmain()\n```",
+      "choices": {
+        "A": "```text\nGeneric Vehicle\nLithium\n```",
+        "B": "```text\nThis is a Generic Vehicle\nCar\n```",
+        "C": "```text\nThis is a Car\nLithium\n```",
+        "D": "```text\nThis is a Lithium Car\n```"
+      }
+    },
+    "25": {
+      "stem": "A database developer creates Employees inside CompanyDB. EmpID must be the primary key, EmpName must be VARCHAR(50), and Salary must be an integer that cannot be NULL. Which MS SQL definition meets these requirements?",
+      "choices": {
+        "A": "```sql\nCREATE TABLE Employees (\n    EmpID INT NOT NULL,\n    EmpName VARCHAR(50),\n    Salary INT NOT NULL,\n    PK_Emp PRIMARY KEY (EmpName)\n);\n```",
+        "B": "```sql\nCREATE TABLE Employees (\n    EmpID INT,\n    EmpName VARCHAR(50) NOT NULL,\n    Salary INT,\n    PRIMARY KEY (EmpID)\n);\n```",
+        "C": "```sql\nCREATE TABLE Employees (\n    EmpID INT UNIQUE NOT NULL,\n    EmpName VARCHAR(50),\n    Salary INT NULL\n);\n```",
+        "D": "```sql\nCREATE TABLE Employees (\n    EmpID INT PRIMARY KEY,\n    EmpName VARCHAR(50),\n    Salary INT NOT NULL\n);\n```"
+      }
+    },
+    "20": {
+      "stem": "What is the output of this Python program?\n\n```python\nclass Car:\n    def __init__(self):\n        self.year = 2020\n        self.brand = \"Toyota\"\n\n    def show_info(self):\n        print(self.brand, self.year)\n\nmy_car = Car()\nmy_car.show_info()\n```",
+      "choices": {
+        "A": "```text\nToyota 2020\n```",
+        "B": "```text\n'Toyota', 2020\n```",
+        "C": "```text\nToyota\n2020\n```",
+        "D": "```text\n2020 Toyota\n```"
+      }
+    },
+    "21": {
+      "stem": "What is the output of this Python program?\n\n```python\nclass Player:\n    def __init__(self, name):\n        self.name = name\n\n    def greet(self):\n        print(\"Welcome,\", self.name)\n\ndef main():\n    p1 = Player(\"Ahmed\")\n    p1.greet()\n\nmain()\n```",
+      "choices": {
+        "A": "Welcome Ahmed",
+        "B": "Welcome, Ahmed",
+        "C": "‘Welcome’ Ahmed",
+        "D": "‘Welcome’, Ahmed"
+      }
+    },
+    "23": {
+      "stem": "What is the output of this Python program?\n\n```python\ndef main():\n    data = {\"x\": 12, \"y\": 7, \"z\": 3}\n    result = data[\"x\"] * (data[\"y\"] + data[\"z\"]) - data[\"y\"] // data[\"z\"]\n    print(result)\n\nmain()\n```",
+      "choices": {
+        "A": "96",
+        "B": "117.67",
+        "C": "118",
+        "D": "122.33"
+      }
+    },
+    "24": {
+      "stem": "What is the output of this Python program?\n\n```python\ndef main():\n    scores = {\"Adnan\": 85, \"Sara\": 92, \"John\": 78}\n    result = scores[\"Sara\"]\n    print(result)\n\nmain()\n```",
+      "choices": {
+        "A": "92",
+        "B": "Sara",
+        "C": "‘Sara’ : 92",
+        "D": "“Sara” : 92"
+      }
+    },
+    "13": {
+      "stem": "Consider the following algorithm used by a file management system.\n\n```text\n1. Start at the root folder.\n2. For each subfolder in the current folder:\n   a. Display the folder name.\n   b. Move into the subfolder and repeat Step 2.\n3. When no more subfolders exist, return to the previous level.\n```\n\n```text\nRoot\n├── Folder A\n│   ├── File 1\n│   └── File 2\n├── Folder B\n│   └── File 3\n└── File 4\n```\n\nBased on the given algorithm, how many items are counted?",
+      "choices": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "7"
+      }
+    }
+  }
+}

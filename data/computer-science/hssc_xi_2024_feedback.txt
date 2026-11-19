@@ -1,0 +1,50 @@
+1 | A mouse is less suited to direct pen drawing. | A trackball controls a pointer. | A phone is less specialised for this drawing task. | A graphics tablet accepts natural pen-based drawing input.
+2 | Input captures the raw data. | Output presents results. | Storage retains data. | Processing transforms the data after capture.
+3 | This is the intended traditional size-class answer, subject to modern taxonomy limitations. | Microcomputers normally use operating systems. | Scientific research is not their defining exclusive use. | Microcomputers do not universally have the highest speed.
+4 | Games are application software. | Games and a DBMS are applications in this classification. | A compiler and disk cleaner are system software. | A DBMS is classified as application software here.
+5 | Translators convert program code. | The specific maintenance category is utilities. | Disk cleanup and defragmentation are utility tasks. | Drivers interface with particular hardware.
+6 | Freeware need not expose source code. | Shareware commonly limits trial use. | Licensed software is a broad category including proprietary products. | Open-source licence terms permit these source-code freedoms.
+7 | A mouse requires manual pointer input. | A keyboard requires manual character entry. | A touchscreen normally requires user touches. | A reader captures a barcode's encoded data automatically.
+8 | A standard printer outputs results. | A scanner captures input. | A light pen supplies input. | A touchscreen both displays output and senses input.
+9 | OMR detects marked response locations. | OCR recognises written characters. | QR readers decode two-dimensional symbols. | MICR reads magnetically printed characters.
+10 | A monitor is a transient display. | A projector displays images. | A plotter produces drawings rather than the specified archival microfilm. | COM creates physical microfilm records.
+11 | Four thousand is far below four mebibytes. | 4096 bytes equals four kibibytes. | Four million uses the decimal megabyte scale. | 4 times 1024 squared equals 4194304.
+12 | Both use transistors, with DRAM also using capacitors. | DRAM requires refresh. | Both are ordinarily volatile. | Slow access is not a shared defining advantage.
+13 | II also fits the intended PROM description. | UV erasure and the stated UV qualification concern EPROM. | I and II match the textbook description. | III does not identify PROM correctly.
+14 | Internet access is not the BIOS's primary initialisation task. | Bootstrapping follows hardware initialisation, but the key targets hardware checks. | Applications run after system startup. | Power-on checks test essential hardware.
+15 | L1 is normally faster than L2. | Cache sizes vary across implementations. | Relative power use depends on design and workload. | L1 is normally integrated on the processor die rather than the motherboard.
+16 | Cache is semiconductor memory. | Registers are semiconductor storage. | A CD-ROM is optically read. | USB flash uses non-volatile semiconductor memory.
+17 | A magnetic hard disk provides direct access. | Tape uses sequential access. | USB flash is not magnetic. | SSD storage is not magnetic.
+18 | An SD card is not optical. | A flash drive is not optical. | A conventional CD lacks 2 GB capacity. | DVD capacity fits, but a recordable variant is needed to write a new video.
+19 | DVD access is direct. | Flash supports direct access. | Tape is read sequentially. | Magnetic disks support direct block access.
+20 | Expansion cards are separate peripherals. | The motherboard hosts components including the CPU. | The control unit belongs to the CPU. | The system unit is the larger enclosure and assembly.
+21 | Address 00101 supplies instruction 11001100. | This fetches the next listed address. | This fetches a later address. | This fetches the previous address, contradicting the stated PC.
+22 | Data transfer moves values. | I/O handles external input and output. | Data processing performs computations. | Program control includes branches and jumps.
+23 | Zero-address formats use implicit operands. | One explicit address does not provide the two locations described. | Two addresses specify the source and destination arrangement. | Three-address formats usually separate destination and two source operands.
+24 | Storage is not instruction interpretation. | Fetch obtains the instruction. | Decode interprets the received instruction. | Execute performs the decoded operation.
+25 | RISC is not limited to arithmetic. | Simpler individual instructions are central to RISC. | A small instruction count alone is not the distinguishing emphasis here. | RISC designs commonly make substantial use of registers.
+26 | A power supply primarily converts and delivers power. | Device control is a different function. | Computation occurs in processing units. | Supplying the components is the stated role.
+27 | A PS/2 connector is circular. | A traditional serial port has a different connector shape. | The image shows the HDMI connector profile. | FireWire has a different connector profile.
+28 | Gigabit identifies the specific 1000 Mbps capability. | A modem card does not imply this Ethernet speed. | Wireless capability does not establish exactly 1000 Mbps. | NIC is the broad category and can include the specific gigabit card.
+29 | Both-sided layouts are possible, but not universal. | Physical sidedness does not establish this universal pairing. | This confuses physical placement with electrical contact organisation. | Both module types can also use chips on both sides.
+30 | WAN covers a much larger area. | LAN connects a local network of devices. | Near-me-area is not the intended standard class. | A tracker and phone fit a personal area network.
+31 | The sender originates the message. | The medium carries it. | A protocol defines communication rules. | The receiver accepts the message.
+32 | Light is the specific optical carrier. | Radio waves are outside the optical range. | Optical fibres do not transmit data using sound waves. | Light is electromagnetic, so this broad option also includes the correct carrier.
+33 | Two is not the conventional layer count. | The conventional TCP/IP model has four layers. | Six is not the conventional count. | Seven is the OSI model's count.
+34 | Four bits are insufficient. | Eight bits are one byte. | Four bytes give 32 bits. | Eight bytes give 64 bits.
+35 | Wi-Fi supplies WLAN connectivity. | Bluetooth is usually associated with personal-area networking. | Cellular access uses a mobile-network infrastructure. | Satellite communication is not the named WLAN example.
+36 | Wireless access is not inherently more secure. | It supports movement and flexible placement. | Initial costs depend on the installation. | Wireless is not inherently faster than wired networks.
+37 | Subscriber credentials support network authentication. | Playing media is a phone/application task. | Contact storage is a secondary historical capability. | A SIM does not power the phone.
+38 | A base station provides radio access. | A handset is an endpoint. | A switching node routes calls. | A landline network is not the mobile switching component.
+39 | This is the intended common-use exception, with specialised GPS meteorology acknowledged. | Navigation is a core GPS application. | Geocaching uses location estimates. | Fleet tracking uses location and movement data.
+40 | A network database is not uniquely established by the scenario. | Spatial relational databases can store this data effectively too. | A hierarchy is not uniquely required by the stated data. | Object-oriented storage can be suitable but is not uniquely required.
+41 | INSERT is DML. | GRANT manages permissions through DCL. | These tasks concern DML and DDL. | Deleting objects and records is not DCL.
+42 | Text does not represent the shown checkbox field type. | Yes/No is the Boolean Access field type. | Numeric fields normally show numeric values. | An OLE object stores embedded or linked object data.
+43 | Secondary keys are generally search fields and need not be unique. | A unique candidate not selected as primary is an alternate key. | The scenario uses email as the selected identifier under the key's interpretation. | A foreign key references another table.
+44 | One-to-one contradicts multiple partners on both sides. | One-to-many restricts the reverse side. | Many-to-one restricts the doctor-to-patient side. | Both directions permit multiple related entities.
+45 | Double bars mean exactly one, both minimum and maximum. | Zero is not indicated by the double-bar marker. | A circle and crow's foot would express optional-many participation. | This marker has no crow's foot for many.
+46 | SELECT lists the two fields separated by commas. | Asterisks cannot prefix those selected field names this way. | AND is not the select-list separator. | The wildcard and AND expression do not form this projection.
+47 | SORT is not the SQL ordering clause. | The clause requires ORDER BY. | SORT BY is not the shown SQL clause. | ORDER BY Salary ASC gives ascending salaries.
+48 | TRUNCATE retains the table definition. | REMOVE TABLE is not the SQL statement. | DELETE TABLE is invalid SQL syntax. | DROP TABLE removes the entire table.
+49 | This sets Black only for V123. | This updates every matching Buzuki company row. | This sets Silver rather than Black. | This also sets Silver rather than Black.
+50 | This treats Diaz as a company criterion. | The same criteria row combines Buzuki and Diaz with AND. | This targets the year rather than the specified car model. | Separate criteria rows combine the tests with OR and match extra rows.

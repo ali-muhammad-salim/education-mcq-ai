@@ -5,11 +5,25 @@
 
 .shell {
   max-width: 1180px;
+  min-width: 0;
   margin: 0 auto;
   padding-bottom: var(--r-9);
   display: flex;
   flex-direction: column;
   gap: var(--r-6);
+  overflow-wrap: anywhere;
+}
+
+.shell > *,
+.desk > *,
+.progressGrid > *,
+.quizTile,
+.panelHead > *,
+.resumeText > div,
+.guestText,
+.guestText > div,
+.archiveTile > span {
+  min-width: 0;
 }
 
 /* ── Page header ─────────────────────────────────────────────────────── */
@@ -83,9 +97,13 @@
   align-items: center;
   justify-content: center;
   gap: var(--r-2);
-  min-height: 40px;
-  padding: 0 var(--r-4);
+  min-height: 44px;
+  min-width: 0;
+  max-width: 100%;
+  padding: var(--r-2) var(--r-4);
   border-radius: var(--r-radius);
+  white-space: normal;
+  text-align: center;
   font-size: var(--r-text-sm);
   font-weight: 600;
   cursor: pointer;
@@ -100,32 +118,35 @@
   border: 1px solid var(--r-rule-strong);
 }
 
-.ghostAction:hover {
-  background: var(--r-surface-sunk);
-}
-
 .primaryAction {
   background: var(--r-emerald);
   color: #ffffff;
   border: 1px solid transparent;
 }
 
-.primaryAction:hover {
-  background: var(--r-emerald-press);
-}
-
 .iconAction {
-  width: 40px;
+  width: 44px;
+  flex-shrink: 0;
   padding: 0;
   background: transparent;
   color: var(--r-ink-muted);
   border: 1px solid var(--r-rule);
 }
 
-.iconAction:hover {
-  background: var(--r-wrong-wash);
-  color: var(--r-wrong);
-  border-color: currentColor;
+@media (hover: hover) and (pointer: fine) {
+  .ghostAction:hover:not(:disabled) {
+    background: var(--r-surface-sunk);
+  }
+
+  .primaryAction:hover:not(:disabled) {
+    background: var(--r-emerald-press);
+  }
+
+  .iconAction:hover:not(:disabled) {
+    background: var(--r-wrong-wash);
+    color: var(--r-wrong);
+    border-color: currentColor;
+  }
 }
 
 /* ── Desk heading ────────────────────────────────────────────────────── */
@@ -282,9 +303,11 @@
 .resumeAction {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--r-2);
-  min-height: 42px;
-  padding: 0 var(--r-5);
+  min-height: 44px;
+  max-width: 100%;
+  padding: var(--r-2) var(--r-5);
   border-radius: var(--r-radius);
   background: var(--r-flag);
   color: #14100a;
@@ -294,9 +317,11 @@
   transition: transform var(--r-fast) var(--r-ease), filter var(--r-fast) var(--r-ease);
 }
 
-.resumeAction:hover {
-  filter: brightness(1.08);
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .resumeAction:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
 }
 
 /* ── Classrooms ──────────────────────────────────────────────────────── */
@@ -320,6 +345,8 @@
   display: inline-flex;
   align-items: center;
   gap: var(--r-2);
+  min-width: 0;
+  max-width: 100%;
   padding: var(--r-1) var(--r-3);
   border: 1px solid var(--r-rule);
   border-radius: var(--r-radius-full);
@@ -361,13 +388,14 @@
   transition: color var(--r-fast) var(--r-ease), border-color var(--r-fast) var(--r-ease);
 }
 
-.tab:hover {
-  color: var(--r-ink);
-  border-bottom-color: var(--r-rule-strong);
+@media (hover: hover) and (pointer: fine) {
+  .tab:hover:not(.tabActive) {
+    color: var(--r-ink);
+    border-bottom-color: var(--r-rule-strong);
+  }
 }
 
-.tabActive,
-.tabActive:hover {
+.tabActive {
   color: var(--r-emerald);
   border-bottom-color: var(--r-emerald);
 }
@@ -382,6 +410,7 @@
   font-weight: 600;
   color: var(--r-ink-muted);
   text-align: center;
+  transition: background-color var(--r-fast) var(--r-ease), color var(--r-fast) var(--r-ease);
 }
 
 .tabActive .tabCount {
@@ -420,14 +449,17 @@
   display: inline-flex;
   align-items: center;
   gap: 2px;
+  min-height: 44px;
   font-size: var(--r-text-sm);
   font-weight: 600;
   color: var(--r-emerald);
 }
 
-.panelLink:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+@media (hover: hover) and (pointer: fine) {
+  .panelLink:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
 /* ── Empty state ─────────────────────────────────────────────────────── */
@@ -491,14 +523,17 @@
     transform var(--r-base) var(--r-ease);
 }
 
-.quizTile:hover {
-  border-color: var(--r-emerald);
-  box-shadow: var(--r-shadow);
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .quizTile:hover {
+    border-color: var(--r-emerald);
+    box-shadow: var(--r-shadow);
+    transform: translateY(-2px);
+  }
 }
 
 .quizTop {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--r-2);
@@ -562,25 +597,31 @@
   transition: background-color var(--r-fast) var(--r-ease);
 }
 
-.quizAction:hover {
-  background: var(--r-emerald-press);
-}
-
 .quizArrow {
+  flex-shrink: 0;
   transition: transform var(--r-fast) var(--r-ease);
 }
 
-.quizAction:hover .quizArrow {
-  transform: translateX(3px);
+@media (hover: hover) and (pointer: fine) {
+  .quizAction:hover {
+    background: var(--r-emerald-press);
+  }
+
+  .quizAction:hover .quizArrow {
+    transform: translateX(3px);
+  }
 }
 
 /* ── Results table ───────────────────────────────────────────────────── */
 
 .tableWrap {
+  min-width: 0;
+  max-width: 100%;
   border: 1px solid var(--r-rule);
   border-radius: var(--r-radius-lg);
   background: var(--r-surface);
-  overflow: hidden;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
 }
 
 .resultsTable {
@@ -614,8 +655,10 @@
   vertical-align: middle;
 }
 
-.resultsTable tbody tr:hover {
-  background: var(--r-surface-sunk);
+@media (hover: hover) and (pointer: fine) {
+  .resultsTable tbody tr:hover {
+    background: var(--r-surface-sunk);
+  }
 }
 
 .resultTitle {
@@ -677,7 +720,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--r-1);
-  min-height: 34px;
+  min-height: 44px;
   padding: 0 var(--r-3);
   border: 1px solid var(--r-rule-strong);
   border-radius: var(--r-radius-sm);
@@ -688,9 +731,11 @@
   transition: background-color var(--r-fast) var(--r-ease), border-color var(--r-fast) var(--r-ease);
 }
 
-.reviewLink:hover {
-  background: var(--r-emerald-wash);
-  border-color: var(--r-emerald);
+@media (hover: hover) and (pointer: fine) {
+  .reviewLink:hover {
+    background: var(--r-emerald-wash);
+    border-color: var(--r-emerald);
+  }
 }
 
 /* ── Progress ────────────────────────────────────────────────────────── */
@@ -879,9 +924,11 @@
   transition: border-color var(--r-fast) var(--r-ease), background-color var(--r-fast) var(--r-ease);
 }
 
-.archiveTile:hover {
-  border-color: var(--r-emerald);
-  background: var(--r-emerald-wash);
+@media (hover: hover) and (pointer: fine) {
+  .archiveTile:hover {
+    border-color: var(--r-emerald);
+    background: var(--r-emerald-wash);
+  }
 }
 
 .archiveName {
@@ -932,7 +979,12 @@
 
 .modal {
   width: 100%;
+  min-width: 0;
   max-width: 420px;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  overflow-wrap: anywhere;
   display: flex;
   flex-direction: column;
   gap: var(--r-3);
@@ -958,6 +1010,8 @@
 
 .codeInput {
   width: 100%;
+  min-width: 0;
+  min-height: 44px;
   box-sizing: border-box;
   padding: var(--r-3);
   border: 1px solid var(--r-rule-strong);
@@ -993,13 +1047,14 @@
 
 .modalActions {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: var(--r-2);
   margin-top: var(--r-2);
 }
 
 .modalCancel {
-  min-height: 40px;
+  min-height: 44px;
   padding: 0 var(--r-4);
   border: 0;
   border-radius: var(--r-radius);
@@ -1010,13 +1065,15 @@
   cursor: pointer;
 }
 
-.modalCancel:hover {
-  background: var(--r-surface-sunk);
-  color: var(--r-ink);
+@media (hover: hover) and (pointer: fine) {
+  .modalCancel:hover {
+    background: var(--r-surface-sunk);
+    color: var(--r-ink);
+  }
 }
 
 .modalSubmit {
-  min-height: 40px;
+  min-height: 44px;
   padding: 0 var(--r-5);
   border: 0;
   border-radius: var(--r-radius);
@@ -1027,8 +1084,10 @@
   cursor: pointer;
 }
 
-.modalSubmit:hover:not(:disabled) {
-  background: var(--r-emerald-press);
+@media (hover: hover) and (pointer: fine) {
+  .modalSubmit:hover:not(:disabled) {
+    background: var(--r-emerald-press);
+  }
 }
 
 .modalSubmit:disabled {
@@ -1180,14 +1239,17 @@
   text-decoration: none;
 }
 
-.guardAction:hover {
-  background: var(--r-emerald-press);
+@media (hover: hover) and (pointer: fine) {
+  .guardAction:hover {
+    background: var(--r-emerald-press);
+  }
 }
 
 /* ── Pagination ──────────────────────────────────────────────────────── */
 
 .pager {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: var(--r-3);
@@ -1197,7 +1259,7 @@
 }
 
 .pagerButton {
-  min-height: 36px;
+  min-height: 44px;
   padding: 0 var(--r-4);
   border: 1px solid var(--r-rule-strong);
   border-radius: var(--r-radius-sm);
@@ -1208,9 +1270,11 @@
   cursor: pointer;
 }
 
-.pagerButton:hover:not(:disabled) {
-  border-color: var(--r-emerald);
-  color: var(--r-emerald);
+@media (hover: hover) and (pointer: fine) {
+  .pagerButton:hover:not(:disabled) {
+    border-color: var(--r-emerald);
+    color: var(--r-emerald);
+  }
 }
 
 .pagerButton:disabled {
@@ -1221,17 +1285,56 @@
 /* ── Small screens ───────────────────────────────────────────────────── */
 
 @media (max-width: 700px) {
+  .shell {
+    gap: var(--r-5);
+    padding-bottom: var(--r-7);
+  }
+
+  .topbar {
+    gap: var(--r-3);
+    padding-bottom: var(--r-3);
+  }
+
+  .desk {
+    gap: var(--r-4);
+  }
+
+  .heading {
+    margin-top: var(--r-2);
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+  }
+
+  .lede {
+    margin-top: var(--r-2);
+  }
+
+  .ledgerCell,
+  .resume,
+  .guestBanner {
+    padding: var(--r-3);
+  }
+
+  .quizTile,
+  .mastery,
+  .trend,
+  .emptyState,
+  .modal,
+  .guardPanel {
+    padding: var(--r-4);
+  }
+
   .tabs {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
   }
 
-  .tab {
+  .tabs .tab {
     justify-content: center;
+    flex-wrap: wrap;
     gap: 4px;
     min-width: 0;
-    padding: 0 6px;
+    padding: 8px 6px;
     font-size: 0.8rem;
   }
 
@@ -1245,7 +1348,18 @@
   }
 
   .iconAction {
-    flex: 0 0 40px;
+    flex: 0 0 44px;
+  }
+
+  .modalActions > * {
+    flex: 1 1 auto;
+    max-width: 100%;
+    padding: var(--r-2) var(--r-3);
+  }
+
+  .masteryHead {
+    flex-wrap: wrap;
+    gap: var(--r-1) var(--r-3);
   }
 
   .resumeAction,
@@ -1255,6 +1369,12 @@
 
   .archiveGrid {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 460px) {
+  .tab > svg {
+    display: none;
   }
 }
 
@@ -1273,5 +1393,65 @@
 
   .ledgerCell:last-child {
     border-bottom: 0;
+  }
+}
+
+.modal > * {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.topActions svg,
+.classroomChip svg,
+.resumeAction svg,
+.blockTitle svg,
+.streak svg {
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .panel[role='tabpanel'],
+  .modal {
+    animation: panelEnter 180ms var(--r-ease);
+  }
+}
+
+@keyframes panelEnter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+
+  .ghostAction,
+  .primaryAction,
+  .iconAction,
+  .resumeAction,
+  .tab,
+  .tabCount,
+  .quizTile,
+  .quizAction,
+  .quizArrow,
+  .reviewLink,
+  .fill,
+  .archiveTile {
+    transition: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: reduce) {
+  .resumeAction:hover,
+  .quizTile:hover,
+  .quizAction:hover .quizArrow {
+    transform: none;
   }
 }

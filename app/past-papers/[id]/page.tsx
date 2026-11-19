@@ -1,3 +1,6 @@
+import { hsscComputerScience2019Resources } from '@/lib/hsscComputerScience2019';
+import { hsscComputerScience2021Resources } from '@/lib/hsscComputerScience2021';
+import { hsscComputerScience2023Resources } from '@/lib/hsscComputerScience2023';
 import React, { Suspense } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { presentPaperQuestion, paperLabel } from "@/lib/paperPresentation";
@@ -23,7 +26,10 @@ import { publishedCurriculum } from '@/services/materials/curriculum';
 import { paperResources } from '@/services/materials/references';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import { applyAnswerDecision } from '@/lib/legacyAnswerReview';
+import { hsscComputerScience2024Resources } from '@/lib/hsscComputerScience2024';
+import { hsscComputerScienceResources } from '@/lib/hsscComputerScienceResources';
 import { hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
+import { computerScienceXi2025Resources } from '@/lib/hsscXiAnnualComputerScience';
 import { biology2022Archive, biology2024Archive, biologyX2017Archive, biologyX2018Archive, biologyX2019Archive, biologyX2021Archive, biologyX2022Archive, biologyX2023Archive, biologyX2024Archive, biologyX2025Archive } from '@/lib/biology2024Resources';
 
 export const dynamic = "force-dynamic";
@@ -168,7 +174,9 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
   paper.boardCode =
     paper.academicClass?.programme?.board?.shortCode || "AKU-EB";
   const mathematicsManifest = /^MTH-IX-20\d{2}-P[12]$/.test(paper.paperCode || '') ? mathematicsPaperManifests[paper.examYear] : undefined;
-  const hsscModel = /^PHY-XII?-P[12]$/.test(paper.paperCode || '');
+  const hsscModel = /^(?:PHY|CS)-XII?-P[12]$/.test(paper.paperCode || '');
+  const csAnnual = /^CS-XI-2019-P[12]$/.test(paper.paperCode || '') ? hsscComputerScience2019Resources : paper.paperCode === 'CS-XI-2021-P1' ? hsscComputerScience2021Resources : /^CS-XI-2023-P[12]$/.test(paper.paperCode || '') ? hsscComputerScience2023Resources : /^CS-XI-2024-P[12]$/.test(paper.paperCode || '') ? hsscComputerScience2024Resources : null;
+  const csResources = /^CS-XII?-P[12]$/.test(paper.paperCode || '') ? hsscComputerScienceResources('akueb', paper.academicClass.level, 'computer-science') : null;
   const biologyModel = /^BIO-(?:IX|X)-MODEL-20\d{2}-P[12]$/.test(paper.paperCode || '');
   const biology2024 = /^BIO-IX-2024-P[12]$/.test(paper.paperCode || '');
   const biologyXArchive = /^BIO-X-2017-P[12]$/.test(paper.paperCode || '') ? biologyX2017Archive
@@ -250,6 +258,9 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
       {!paper.sourceDocumentId && /^PHY-IX-2025-P[12]$/.test(paper.paperCode||'') && <PaperResourceNav tabs={physicsIx2025PaperTabs} />}
       {!paper.sourceDocumentId && /^PHY-IX-2024-P[12]$/.test(paper.paperCode||'') && <PaperResourceNav tabs={physicsIx2024PaperTabs} />}
       {/^PHY-XI-(?:201[7-9]|202[1-5])-P[12]$/.test(paper.paperCode || '') && <PaperResourceNav tabs={hsscXiAnnualResources.filter(item => item.year === paper.examYear)} />}
+      {/^CS-XI-(?:201[7-9]|202[1-5])-P[12]$/.test(paper.paperCode || '') && <PaperResourceNav tabs={computerScienceXi2025Resources.filter(item => item.year === paper.examYear)} />}
+      {csAnnual && <><PaperResourceNav tabs={csAnnual.papers.map(p=>({label:p.label,href:p.href}))} /><p>Historical {csAnnual.year} paper. Some topics have no direct outcome in the current syllabus. {csAnnual.year === 2024 ? "The marking guide is project-authored." : (csAnnual.year === 2023 || csAnnual.year === 2019) ? "Official e-marking examples accompany reviewed typed questions and worked answers." : "This combined paper includes 50 theory and 15 alternate-to-practical MCQs. Only the paper and key were supplied."}</p></>}
+      {csResources && <PaperResourceNav tabs={csResources.papers.map(item => ({label: item.label, href: item.href}))} />}
       {biology2024 && <PaperResourceNav tabs={biology2024Archive} current={'/past-papers/' + paper.paperCode} />}
       {biologyXArchive && <PaperResourceNav tabs={biologyXArchive} current={'/past-papers/' + paper.paperCode} />}
       {biology2022 && <>

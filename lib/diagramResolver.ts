@@ -61,6 +61,8 @@ export function resolveQuestionDiagram(
   if (!normKey && !numStr) return undefined;
 
   const pCode = (paperCode || '').toUpperCase().trim();
+  // HSSC XI/XII must never fall back to a Class X/IX paper's diagrams.
+  if (/^(?:CS|CSC|PHY|MTH|CHM|BIO)-XII?(?:-|$)/.test(pCode) && !verifiedManifest[pCode]) return undefined;
 
   // Check Class IX before Class X because Roman numeral 'IX' contains the letter 'X'
   const isClass9 =

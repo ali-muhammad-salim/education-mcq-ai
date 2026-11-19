@@ -13,6 +13,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import MathText from '@/components/MathText';
 import StructuredContent from '@/components/StructuredContent';
 import { smartMatch } from '@/lib/smartSearch';
+import { physicsUnit16Resource } from '@/lib/physicsUnit16Resource';
 
 // Static Data Imports
 import ssc2ExactSyllabus from '../../../../data/physics/ssc2_exact_syllabus.json';
@@ -279,7 +280,7 @@ export default function SSC2PhysicsPage() {
           { id: 'crqs', label: '✍️ Model Paper II (CRQs & ERQs)', icon: FileText },
           { id: 'vault', label: '📥 PDF Download Vault', icon: Download },
           { id: 'pacing', label: '📅 28-Week Pacing Guide', icon: Calendar },
-          { id: 'resources', label: '📚 Textbooks & PhET Links', icon: ExternalLink },
+          { id: 'resources', label: '📚 Resources', icon: ExternalLink },
         ].map(tab => {
           const isActive = activeTab === tab.id;
           return (
@@ -1708,6 +1709,7 @@ export default function SSC2PhysicsPage() {
       {/* ================= TAB 6: TEXTBOOKS & RESOURCES ================= */}
       {activeTab === 'resources' && (
         <div>
+          <p><Link href={physicsUnit16Resource.href}>{physicsUnit16Resource.title} and practice quiz →</Link></p>
           <div style={{ marginBottom: '1.5rem' }}>
             <h2 style={{ fontSize: '1.5rem', color: '#0b5e4a', marginBottom: '0.35rem', fontWeight: 800 }}>
               Official Textbook Alignments & Digital Simulations (Class 10)

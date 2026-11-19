@@ -1,0 +1,1252 @@
+{
+  "1": {
+    "slo": "1.1.2",
+    "answer": "A",
+    "explanation": "A binary zero represents the low or off state.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Zero corresponds to the off or low state."
+      },
+      {
+        "key": "B",
+        "reason": "An active pulse is associated with the high state."
+      },
+      {
+        "key": "C",
+        "reason": "A strong pulse represents a high state in this simplified model."
+      },
+      {
+        "key": "D",
+        "reason": "A continuous current is not the defined representation of binary zero."
+      }
+    ]
+  },
+  "2": {
+    "slo": "1.2.2",
+    "answer": "D",
+    "explanation": "NAND is false only when both inputs are true.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "NAND of 0 and 1 is 1."
+      },
+      {
+        "key": "B",
+        "reason": "NAND of 1 and 0 is 1."
+      },
+      {
+        "key": "C",
+        "reason": "NAND of 0 and 0 is 1."
+      },
+      {
+        "key": "D",
+        "reason": "NAND of 1 and 1 is 0."
+      }
+    ]
+  },
+  "3": {
+    "slo": "1.2.5",
+    "answer": "A",
+    "explanation": "Both AND gates compute XY. OR of those identical outputs remains XY, giving 0, 0, 0, 1.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Both AND columns and the final output are 0,0,0,1."
+      },
+      {
+        "key": "B",
+        "reason": "The intermediate values and final output do not match the two AND gates."
+      },
+      {
+        "key": "C",
+        "reason": "This output is the OR truth sequence, which differs from the circuit's repeated AND result."
+      },
+      {
+        "key": "D",
+        "reason": "Its intermediate and output values do not represent the circuit."
+      }
+    ]
+  },
+  "4": {
+    "slo": "1.4.1",
+    "answer": "B",
+    "explanation": "Design specifies architecture, interfaces and workflows.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Deployment planning is not the structure and interface design described."
+      },
+      {
+        "key": "B",
+        "reason": "Architecture, interfaces and workflows are design outputs."
+      },
+      {
+        "key": "C",
+        "reason": "Marketing is outside the technical design activity."
+      },
+      {
+        "key": "D",
+        "reason": "Test planning concerns verification and does not identify the requested design work."
+      }
+    ]
+  },
+  "5": {
+    "slo": "1.5.4",
+    "answer": "D",
+    "explanation": "A full mesh provides dedicated links and alternate paths between nodes.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A bus shares a common medium and lacks dedicated device-to-device links."
+      },
+      {
+        "key": "B",
+        "reason": "A star depends on its central component."
+      },
+      {
+        "key": "C",
+        "reason": "A ring links neighbours along a cycle."
+      },
+      {
+        "key": "D",
+        "reason": "A full mesh supplies dedicated links and multiple paths."
+      }
+    ]
+  },
+  "6": {
+    "slo": "1.6.2",
+    "answer": "A",
+    "explanation": "SaaS supplies managed applications without requiring the customer to maintain the software.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "SaaS provides managed ready-made business applications."
+      },
+      {
+        "key": "B",
+        "reason": "PaaS supplies a development platform."
+      },
+      {
+        "key": "C",
+        "reason": "IaaS supplies infrastructure requiring more customer administration."
+      },
+      {
+        "key": "D",
+        "reason": "A hosted desktop does not identify the fully managed application service as precisely."
+      }
+    ]
+  },
+  "7": {
+    "slo": "1.7.1",
+    "answer": null,
+    "explanation": "Both A and B describe essential cybersecurity functions. Securing communication and protecting credentials are both valid, so the wording does not establish one best answer.",
+    "status": "KEY_CONFLICT",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Securing communication is a genuine cybersecurity function, making A defensible."
+      },
+      {
+        "key": "B",
+        "reason": "Protecting banking credentials is also a genuine function, making B defensible."
+      },
+      {
+        "key": "C",
+        "reason": "Monitoring can support detection but does not distinguish a unique answer from A and B."
+      },
+      {
+        "key": "D",
+        "reason": "Multi-user access is an application capability, not itself a security guarantee."
+      }
+    ]
+  },
+  "8": {
+    "slo": "1.9.1",
+    "answer": "C",
+    "explanation": "C is the intended checkout protection. Confidentiality comes from encryption, while tamper detection additionally requires authentication or an integrity mechanism, as used in TLS.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Encryption does not remove old user accounts."
+      },
+      {
+        "key": "B",
+        "reason": "Encryption does not prevent cookie storage."
+      },
+      {
+        "key": "C",
+        "reason": "This is the intended protected-checkout answer, with integrity additionally requiring authentication or tamper detection."
+      },
+      {
+        "key": "D",
+        "reason": "The merchant endpoint may legitimately decrypt and process payment data."
+      }
+    ]
+  },
+  "9": {
+    "slo": "2.1.2",
+    "answer": "C",
+    "explanation": "Decomposition divides the classroom-cleaning problem into smaller tasks.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Selecting components does not describe dividing the problem."
+      },
+      {
+        "key": "B",
+        "reason": "Categorisation alone does not capture the task breakdown."
+      },
+      {
+        "key": "C",
+        "reason": "Decomposition divides the goal into smaller tasks."
+      },
+      {
+        "key": "D",
+        "reason": "Predicting outcomes concerns evaluation rather than task decomposition."
+      }
+    ]
+  },
+  "10": {
+    "slo": "2.1.2",
+    "answer": "B",
+    "explanation": "Algorithm design specifies a logical sequence of steps.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Abstraction removes irrelevant detail."
+      },
+      {
+        "key": "B",
+        "reason": "A logical sequence of steps is an algorithm."
+      },
+      {
+        "key": "C",
+        "reason": "Pattern recognition finds recurring structures."
+      },
+      {
+        "key": "D",
+        "reason": "Decomposition splits a larger problem into subproblems."
+      }
+    ]
+  },
+  "11": {
+    "slo": "2.2.1",
+    "answer": "B",
+    "explanation": "A becomes 35. B becomes 35 minus (5 modulo 5), which is 35. C is 35 minus 20, giving 15.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The calculation gives a positive result."
+      },
+      {
+        "key": "B",
+        "reason": "A becomes 35, B becomes 35, and C becomes 15."
+      },
+      {
+        "key": "C",
+        "reason": "The subtraction yields positive 15."
+      },
+      {
+        "key": "D",
+        "reason": "B is 35, giving 15 after subtracting 20."
+      }
+    ]
+  },
+  "12": {
+    "slo": "2.2.1",
+    "answer": "C",
+    "explanation": "The first iteration gives Y=8 and D=2. The second gives Y=32 and D=-22, which exits the loop. Multiplying D by -2 gives 44.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "After the second loop, D is -22 before multiplication."
+      },
+      {
+        "key": "B",
+        "reason": "The loop does not stop at the first positive D."
+      },
+      {
+        "key": "C",
+        "reason": "The second D is -22 and multiplying by -2 gives 44."
+      },
+      {
+        "key": "D",
+        "reason": "Two negative factors give positive 44."
+      }
+    ]
+  },
+  "13": {
+    "slo": "2.2.1",
+    "answer": "D",
+    "explanation": "T changes from 10 to 15, then 21, then 27 as all three conditions become true in sequence.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "T=21 triggers the third conditional update."
+      },
+      {
+        "key": "B",
+        "reason": "Each applicable update must be included."
+      },
+      {
+        "key": "C",
+        "reason": "The final update adds six to 21."
+      },
+      {
+        "key": "D",
+        "reason": "The sequential updates produce 15,21,27."
+      }
+    ]
+  },
+  "14": {
+    "slo": "2.2.1",
+    "answer": "C",
+    "explanation": "M accumulates 5, 3 and 1, reaching 11. N then equals -1 and the final condition increases M to 12.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The loop alone ends at 11, and the final condition adds one."
+      },
+      {
+        "key": "B",
+        "reason": "This omits the final increment."
+      },
+      {
+        "key": "C",
+        "reason": "Adding 5,3,1 to 2 gives 11, then the final increment gives 12."
+      },
+      {
+        "key": "D",
+        "reason": "The total is 12 after the final increment."
+      }
+    ]
+  },
+  "15": {
+    "slo": "2.2.1",
+    "answer": "A",
+    "explanation": "The first insertion produces [3,8,5,1]. Inserting 5 into the sorted prefix next gives [3,5,8,1].",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "After inserting 3 and then 5, the sorted prefix is [3,5,8]."
+      },
+      {
+        "key": "B",
+        "reason": "This is the state after the first insertion."
+      },
+      {
+        "key": "C",
+        "reason": "This is the completely sorted list after the last insertion."
+      },
+      {
+        "key": "D",
+        "reason": "This is the original unsorted state."
+      }
+    ]
+  },
+  "16": {
+    "slo": "2.2.1",
+    "answer": "B",
+    "explanation": "The intended linear search visits 12,17,5,9 and stops at the match. The printed pseudocode omits an explicit iteration step, which should be noted.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Linear search stops when it reaches the matching 9."
+      },
+      {
+        "key": "B",
+        "reason": "The search checks 12,17,5,9 in sequence."
+      },
+      {
+        "key": "C",
+        "reason": "Stopping after 17 would miss the target."
+      },
+      {
+        "key": "D",
+        "reason": "Linear search starts at the first item rather than jumping directly to the match."
+      }
+    ]
+  },
+  "17": {
+    "slo": "3.1.3",
+    "answer": "C",
+    "explanation": "Objects combine state with related behaviour.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Direct memory manipulation is not the distinguishing object model."
+      },
+      {
+        "key": "B",
+        "reason": "Functions and stepwise decomposition also occur in procedural programming."
+      },
+      {
+        "key": "C",
+        "reason": "Objects combine state and related operations."
+      },
+      {
+        "key": "D",
+        "reason": "Loops and conditions are shared by many programming styles."
+      }
+    ]
+  },
+  "18": {
+    "slo": "3.9.3",
+    "answer": "A",
+    "explanation": "Debugging tools support step-by-step execution and variable inspection.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Debuggers can step through execution and inspect variables."
+      },
+      {
+        "key": "B",
+        "reason": "Skipping debugging is not a debugging benefit."
+      },
+      {
+        "key": "C",
+        "reason": "Delaying errors does not help locate them."
+      },
+      {
+        "key": "D",
+        "reason": "IDEs cannot automatically fix every possible program defect."
+      }
+    ]
+  },
+  "19": {
+    "slo": "3.1.7",
+    "answer": null,
+    "explanation": "A is a triple-quoted string literal, commonly used informally as a block comment. Python comments begin with #, so the item conflates string literals with comments. D also starts with # and is a valid single-line comment. No uniquely correct multiline-comment syntax is supplied.",
+    "status": "KEY_CONFLICT",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "This is a string literal, sometimes used informally as a block comment."
+      },
+      {
+        "key": "B",
+        "reason": "Double hyphens do not start a Python comment."
+      },
+      {
+        "key": "C",
+        "reason": "Slash-star delimiters are not Python comment syntax."
+      },
+      {
+        "key": "D",
+        "reason": "The leading # makes this a valid single-line comment, which adds ambiguity to the wording."
+      }
+    ]
+  },
+  "20": {
+    "slo": "3.2.3",
+    "answer": "D",
+    "explanation": "turtle.color(\"red\") sets the pen and fill colours to red.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "fill is not the stated pen-colour setter."
+      },
+      {
+        "key": "B",
+        "reason": "pen does not accept this colour string as the shown positional configuration."
+      },
+      {
+        "key": "C",
+        "reason": "line is not the standard turtle pen-colour command."
+      },
+      {
+        "key": "D",
+        "reason": "color sets the pen and fill colours to red."
+      }
+    ]
+  },
+  "21": {
+    "slo": "3.3.3",
+    "answer": "A",
+    "explanation": "import datetime imports the module.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "import loads the datetime module for use."
+      },
+      {
+        "key": "B",
+        "reason": "install is not a Python import statement."
+      },
+      {
+        "key": "C",
+        "reason": "load is not the module import syntax."
+      },
+      {
+        "key": "D",
+        "reason": "use is not the module import syntax."
+      }
+    ]
+  },
+  "22": {
+    "slo": "3.4.4",
+    "answer": "D",
+    "explanation": "_student_name is a legal Python identifier. Spaces, hyphens and @ cannot be used within these proposed identifiers.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Python identifiers cannot contain a space."
+      },
+      {
+        "key": "B",
+        "reason": "A hyphen is parsed as an operator."
+      },
+      {
+        "key": "C",
+        "reason": "@ cannot prefix an ordinary variable identifier in this assignment context."
+      },
+      {
+        "key": "D",
+        "reason": "Letters and underscores form a valid identifier."
+      }
+    ]
+  },
+  "23": {
+    "slo": "3.5.2",
+    "answer": "C",
+    "explanation": "Division yields 5.0 and multiplication yields 15. Adding them gives 20.0.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Standard precedence gives 20.0."
+      },
+      {
+        "key": "B",
+        "reason": "The evaluated result is 20.0."
+      },
+      {
+        "key": "C",
+        "reason": "10/2 is 5.0 and 5*3 is 15, totalling 20.0."
+      },
+      {
+        "key": "D",
+        "reason": "This omits the division term."
+      }
+    ]
+  },
+  "24": {
+    "slo": "3.5.4",
+    "answer": "C",
+    "explanation": "Assigning input to age and printing it with a comma supplies the required space and value.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The input is not assigned, and the print call lacks a separator."
+      },
+      {
+        "key": "B",
+        "reason": "A function call cannot be an assignment target."
+      },
+      {
+        "key": "C",
+        "reason": "The entered text is assigned to age and printed with a separating space."
+      },
+      {
+        "key": "D",
+        "reason": "This does not assign input to age and contains an invalid print expression."
+      }
+    ]
+  },
+  "25": {
+    "slo": "3.8.3",
+    "answer": "B",
+    "explanation": "The inner loop prints 1, then 12, then 123 on separate lines.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The inner loop counts upward, not downward."
+      },
+      {
+        "key": "B",
+        "reason": "The successive ranges print 1,12,123 on separate lines."
+      },
+      {
+        "key": "C",
+        "reason": "Each inner loop starts at 1."
+      },
+      {
+        "key": "D",
+        "reason": "The inner loop includes every integer from 1 through i."
+      }
+    ]
+  },
+  "26": {
+    "slo": "3.7.2",
+    "answer": "D",
+    "explanation": "D converts the input to an integer and supplies the required colon on both nested if statements.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The inner if statement is missing a colon."
+      },
+      {
+        "key": "B",
+        "reason": "The outer if statement is missing a colon."
+      },
+      {
+        "key": "C",
+        "reason": "Comparing a string with integer 90 raises TypeError."
+      },
+      {
+        "key": "D",
+        "reason": "Both conditions have colons and percentage is converted to an integer."
+      }
+    ]
+  },
+  "27": {
+    "slo": "3.8.5",
+    "answer": "A",
+    "explanation": "continue skips printing 4. exit stops execution before 7 is printed. The output is 1,2,3,5,6 on separate lines.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Four is skipped, and execution stops before printing seven."
+      },
+      {
+        "key": "B",
+        "reason": "continue prevents four being printed."
+      },
+      {
+        "key": "C",
+        "reason": "exit stops the program before seven is printed."
+      },
+      {
+        "key": "D",
+        "reason": "Four is skipped and seven is never printed."
+      }
+    ]
+  },
+  "28": {
+    "slo": "3.9.2",
+    "answer": "C",
+    "explanation": "input returns strings. Adding them concatenates them, then division by 2 raises TypeError during execution.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The program is syntactically valid."
+      },
+      {
+        "key": "B",
+        "reason": "The immediate failure is a TypeError during execution."
+      },
+      {
+        "key": "C",
+        "reason": "Dividing the concatenated string by two raises a runtime TypeError."
+      },
+      {
+        "key": "D",
+        "reason": "This label does not identify the actual exception as precisely as runtime error."
+      }
+    ]
+  },
+  "29": {
+    "slo": "3.9.5",
+    "answer": null,
+    "explanation": "The printed assert b != 0, has a trailing comma without a following message and raises SyntaxError before execution. Removing that comma makes C the intended answer in normal execution with assertions enabled.",
+    "status": "KEY_CONFLICT",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The trailing comma makes the source invalid before the assertion can run."
+      },
+      {
+        "key": "B",
+        "reason": "An assertion does not silently return null."
+      },
+      {
+        "key": "C",
+        "reason": "C describes the intended assertion after its syntax is repaired, but the printed source cannot execute."
+      },
+      {
+        "key": "D",
+        "reason": "Assertions do not replace a zero denominator with another value."
+      }
+    ]
+  },
+  "30": {
+    "slo": "4.1.2",
+    "answer": "A",
+    "explanation": "K-means groups unlabelled data by similarity.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "K-means groups similar unlabelled observations."
+      },
+      {
+        "key": "B",
+        "reason": "Regression predicts numerical targets."
+      },
+      {
+        "key": "C",
+        "reason": "Feature ranking assesses input importance rather than forming customer groups."
+      },
+      {
+        "key": "D",
+        "reason": "The option describes prediction rules rather than the stated unlabelled grouping task."
+      }
+    ]
+  },
+  "31": {
+    "slo": "4.1.3",
+    "answer": "D",
+    "explanation": "The scenario concerns selecting or removing input features to improve performance and interpretation.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "No change to the number of classes is described."
+      },
+      {
+        "key": "B",
+        "reason": "The observation is about accuracy and interpretation, not just timing."
+      },
+      {
+        "key": "C",
+        "reason": "Output type is not the feature-selection change described."
+      },
+      {
+        "key": "D",
+        "reason": "Removing redundant or correlated features is the stated change."
+      }
+    ]
+  },
+  "32": {
+    "slo": "4.3.2",
+    "answer": "C",
+    "explanation": "Analysing multiple traffic data sources supports decisions that improve traffic flow.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Maintenance alerts are outside the traffic-flow task."
+      },
+      {
+        "key": "B",
+        "reason": "Recording evidence does not perform the adaptive scheduling described."
+      },
+      {
+        "key": "C",
+        "reason": "Analysed traffic data informs signal decisions."
+      },
+      {
+        "key": "D",
+        "reason": "Toll-receipt budgeting does not optimise traffic signals here."
+      }
+    ]
+  },
+  "33": {
+    "slo": "5.1.1",
+    "answer": "B",
+    "explanation": "IoT connects physical devices to digital communication systems.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Local instructions alone do not supply connectivity."
+      },
+      {
+        "key": "B",
+        "reason": "Connected physical devices exchange data with digital systems."
+      },
+      {
+        "key": "C",
+        "reason": "The option explicitly omits connectivity."
+      },
+      {
+        "key": "D",
+        "reason": "Isolated manual exchange misses the connected-device network."
+      }
+    ]
+  },
+  "34": {
+    "slo": "5.1.2",
+    "answer": "D",
+    "explanation": "Sensors detect physical changes and produce corresponding data signals.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A dashboard presents information after sensing and processing."
+      },
+      {
+        "key": "B",
+        "reason": "A processor executes the control logic."
+      },
+      {
+        "key": "C",
+        "reason": "This describes downstream control communication."
+      },
+      {
+        "key": "D",
+        "reason": "Sensors convert physical measurements into usable signals or data."
+      }
+    ]
+  },
+  "35": {
+    "slo": "5.1.3",
+    "answer": "D",
+    "explanation": "Continuous vital-sign data supports proactive decisions without replacing clinical judgement.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The scenario supports clinicians and does not eliminate them."
+      },
+      {
+        "key": "B",
+        "reason": "Monitoring is continuous rather than restricted to late threshold events."
+      },
+      {
+        "key": "C",
+        "reason": "Sensors do not replace all records or clinical observations."
+      },
+      {
+        "key": "D",
+        "reason": "Continuous measurements support earlier informed decisions."
+      }
+    ]
+  },
+  "36": {
+    "slo": "5.2.2",
+    "answer": null,
+    "explanation": "Both A (improving treatment decisions) and B (developing protocols from aggregate data) are real healthcare applications of analytics. The question provides no criterion that uniquely selects one.",
+    "status": "KEY_CONFLICT",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Improving treatment decisions is a valid application of analytics."
+      },
+      {
+        "key": "B",
+        "reason": "Building protocols from aggregate data can also be a valid application, so the source does not establish a unique answer."
+      },
+      {
+        "key": "C",
+        "reason": "Digitisation alone does not perform analysis."
+      },
+      {
+        "key": "D",
+        "reason": "Routing data alone does not establish analytics."
+      }
+    ]
+  },
+  "37": {
+    "slo": "5.2.4",
+    "answer": "B",
+    "explanation": "Vehicle embedded systems control dedicated tasks such as braking, engine management and airbag deployment.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Infotainment is distinct from the critical control functions requested."
+      },
+      {
+        "key": "B",
+        "reason": "Embedded controllers manage dedicated vehicle functions."
+      },
+      {
+        "key": "C",
+        "reason": "Unrelated downloadable software does not explain the main control role."
+      },
+      {
+        "key": "D",
+        "reason": "Non-essential media is not the critical embedded task."
+      }
+    ]
+  },
+  "38": {
+    "slo": "5.3.4",
+    "answer": "A",
+    "explanation": "Blockchain can provide shared, auditable records for IoT data.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Shared auditable records are a relevant blockchain use."
+      },
+      {
+        "key": "B",
+        "reason": "Fixed local scheduling does not inherently require blockchain."
+      },
+      {
+        "key": "C",
+        "reason": "Internal rule-based optimisation does not establish a shared ledger use."
+      },
+      {
+        "key": "D",
+        "reason": "Analytics without transaction records does not identify the ledger benefit."
+      }
+    ]
+  },
+  "39": {
+    "slo": "5.4.2",
+    "answer": "B",
+    "explanation": "The scenario combines operational gains with workforce displacement and transparency concerns.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Supply-chain coordination does not address the worker and trust concerns described."
+      },
+      {
+        "key": "B",
+        "reason": "This includes both the operational benefits and the social concerns."
+      },
+      {
+        "key": "C",
+        "reason": "Chatbots are not part of the scenario."
+      },
+      {
+        "key": "D",
+        "reason": "Complete elimination of human roles is not established."
+      }
+    ]
+  },
+  "40": {
+    "slo": "6.1.2",
+    "answer": "B",
+    "explanation": "Factual claims supported by credible citations can be checked against evidence.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Conversational tone does not establish reliability."
+      },
+      {
+        "key": "B",
+        "reason": "Checkable facts and credible citations support reliability."
+      },
+      {
+        "key": "C",
+        "reason": "Popularity does not establish accuracy."
+      },
+      {
+        "key": "D",
+        "reason": "Simplicity alone does not establish evidence quality."
+      }
+    ]
+  },
+  "41": {
+    "slo": "6.1.3",
+    "answer": "D",
+    "explanation": "Keywords and trusted-source filters support focused, reliable digital research.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Sponsorship does not establish credibility."
+      },
+      {
+        "key": "B",
+        "reason": "Social-media ranking does not verify evidence."
+      },
+      {
+        "key": "C",
+        "reason": "Popularity and comments do not ensure reliable results."
+      },
+      {
+        "key": "D",
+        "reason": "Relevant keywords and credible sources support reliable research."
+      }
+    ]
+  },
+  "42": {
+    "slo": "6.1.4",
+    "answer": "B",
+    "explanation": "Comparing a viral post with verified reporting supports responsible assessment before sharing.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Agreement with popular opinion is not verification."
+      },
+      {
+        "key": "B",
+        "reason": "Independent verified reporting can corroborate or challenge the claim."
+      },
+      {
+        "key": "C",
+        "reason": "An emotional reaction does not establish accuracy."
+      },
+      {
+        "key": "D",
+        "reason": "Sharing uncertainty still spreads an unverified claim."
+      }
+    ]
+  },
+  "43": {
+    "slo": "6.2.3",
+    "answer": "D",
+    "explanation": "A trusted VPN protects traffic between the device and VPN endpoint from local-network observation. It does not guarantee that all websites or the VPN provider are trustworthy.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Disabling sync does not protect all traffic."
+      },
+      {
+        "key": "B",
+        "reason": "Incognito mainly limits local browsing traces rather than network observation."
+      },
+      {
+        "key": "C",
+        "reason": "Waiting for a password prompt does not protect other sensitive traffic."
+      },
+      {
+        "key": "D",
+        "reason": "A trusted VPN protects the device-to-VPN connection against local-network observation."
+      }
+    ]
+  },
+  "44": {
+    "slo": "6.5.1",
+    "answer": null,
+    "explanation": "A, B and D are all valid green-computing actions. The wording gives no criterion that selects just one of them.",
+    "status": "KEY_CONFLICT",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Sleep mode is a valid energy-saving measure."
+      },
+      {
+        "key": "B",
+        "reason": "Lower brightness can also reduce electricity use."
+      },
+      {
+        "key": "C",
+        "reason": "Frequent replacement can increase manufacturing impacts and waste."
+      },
+      {
+        "key": "D",
+        "reason": "Responsible electronics recycling is also a green-computing measure, so the question has multiple valid answers."
+      }
+    ]
+  },
+  "45": {
+    "slo": "6.5.2",
+    "answer": "C",
+    "explanation": "Scheduled shutdown saves operating energy, while frequent replacement can increase electronic waste.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Bandwidth use does not capture the environmental trade-off asked."
+      },
+      {
+        "key": "B",
+        "reason": "Privacy is a different issue from environmental impact."
+      },
+      {
+        "key": "C",
+        "reason": "Energy savings coexist with increased replacement waste."
+      },
+      {
+        "key": "D",
+        "reason": "Frequent replacement can increase electronic waste."
+      }
+    ]
+  },
+  "46": {
+    "slo": "6.6.1",
+    "answer": "D",
+    "explanation": "Sharing subtitled media enables people to learn about unfamiliar cultures.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The example describes sharing across borders rather than preventing expression."
+      },
+      {
+        "key": "B",
+        "reason": "International engagement exceeds local-only preferences."
+      },
+      {
+        "key": "C",
+        "reason": "Cultural merging is not the sole or necessary outcome shown."
+      },
+      {
+        "key": "D",
+        "reason": "Subtitles and shared media enable cross-cultural understanding."
+      }
+    ]
+  },
+  "47": {
+    "slo": "7.1.2",
+    "answer": "B",
+    "explanation": "Digital literacy supports informed and responsible online participation.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Minimal source checking does not support responsible participation."
+      },
+      {
+        "key": "B",
+        "reason": "Informed and mindful decisions apply digital literacy."
+      },
+      {
+        "key": "C",
+        "reason": "Trending material still requires evaluation."
+      },
+      {
+        "key": "D",
+        "reason": "Confidence without verification is insufficient."
+      }
+    ]
+  },
+  "48": {
+    "slo": "7.3.1",
+    "answer": "C",
+    "explanation": "Personal interviews can gather detailed qualitative accounts.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Calculating test averages is quantitative."
+      },
+      {
+        "key": "B",
+        "reason": "Analysing numerical records is primarily quantitative in this option."
+      },
+      {
+        "key": "C",
+        "reason": "Detailed interviews can produce qualitative accounts."
+      },
+      {
+        "key": "D",
+        "reason": "Fixed-response surveys primarily produce structured quantitative data."
+      }
+    ]
+  },
+  "49": {
+    "slo": "7.3.2",
+    "answer": "C",
+    "explanation": "Prototype testing reveals design problems and user preferences early.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Developer participation is not the main data-collection benefit described."
+      },
+      {
+        "key": "B",
+        "reason": "A limited prototype cannot prove correct operation in every setting."
+      },
+      {
+        "key": "C",
+        "reason": "User testing reveals flaws and preferences early."
+      },
+      {
+        "key": "D",
+        "reason": "Trust may improve, but it is not the direct testing objective stated."
+      }
+    ]
+  },
+  "50": {
+    "slo": "7.3.3",
+    "answer": null,
+    "explanation": "The stem seeks better qualitative interview questions. A improves specificity but incorrectly requires closed-ended questions. C contradicts itself by calling yes/no questions open-ended. None offers specific, neutral, open-ended interview questions.",
+    "status": "KEY_CONFLICT",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Specific, aligned questions help, but requiring closed responses conflicts with the qualitative interview aim."
+      },
+      {
+        "key": "B",
+        "reason": "Unguided conversation can worsen the off-topic problem."
+      },
+      {
+        "key": "C",
+        "reason": "Yes/no questions are closed rather than open-ended."
+      },
+      {
+        "key": "D",
+        "reason": "Removing all emotional topics is not a justified general remedy."
+      }
+    ]
+  }
+}

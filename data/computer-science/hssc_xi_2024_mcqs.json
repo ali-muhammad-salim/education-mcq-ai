@@ -1,0 +1,1805 @@
+[
+  {
+    "number": "1",
+    "page": 2,
+    "stem": "Ayan wants to draw some 2D/ 3D illustrations using a computing device. The computing device that is BEST to perform the given task is",
+    "choices": {
+      "A": "mouse.",
+      "B": "trackball.",
+      "C": "smartphone.",
+      "D": "graphic tablet."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.1.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A graphics tablet supports direct pen-based drawing and illustration.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A mouse is less suited to direct pen drawing."
+      },
+      {
+        "key": "B",
+        "reason": "A trackball controls a pointer."
+      },
+      {
+        "key": "C",
+        "reason": "A phone is less specialised for this drawing task."
+      },
+      {
+        "key": "D",
+        "reason": "A graphics tablet accepts natural pen-based drawing input."
+      }
+    ]
+  },
+  {
+    "number": "2",
+    "page": 2,
+    "stem": "The step of data processing cycle that is involved in taking raw data for processing is",
+    "choices": {
+      "A": "input.",
+      "B": "output.",
+      "C": "storage.",
+      "D": "process."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "1.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Input supplies raw data to the processing system.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Input captures the raw data."
+      },
+      {
+        "key": "B",
+        "reason": "Output presents results."
+      },
+      {
+        "key": "C",
+        "reason": "Storage retains data."
+      },
+      {
+        "key": "D",
+        "reason": "Processing transforms the data after capture."
+      }
+    ]
+  },
+  {
+    "number": "3",
+    "page": 2,
+    "stem": "Which of the following characteristics distinguishes a microcomputer from other computer types?",
+    "choices": {
+      "A": "It is physically the smallest type of computer.",
+      "B": "It operates without the need for an operating system.",
+      "C": "It is primarily used for scientific and research purposes.",
+      "D": "It has the highest processing speed among all computers."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "1.1.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "In the traditional mainframe/minicomputer/microcomputer classification, A is the intended answer. Modern physical size alone does not define a microcomputer, whose processor is a microprocessor.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "This is the intended traditional size-class answer, subject to modern taxonomy limitations."
+      },
+      {
+        "key": "B",
+        "reason": "Microcomputers normally use operating systems."
+      },
+      {
+        "key": "C",
+        "reason": "Scientific research is not their defining exclusive use."
+      },
+      {
+        "key": "D",
+        "reason": "Microcomputers do not universally have the highest speed."
+      }
+    ]
+  },
+  {
+    "number": "4",
+    "page": 2,
+    "stem": "Consider the given examples of software. I. Games II. Compiler III. Disk Cleaner IV. Database Management System The examples of system software are",
+    "choices": {
+      "A": "I and II.",
+      "B": "I and IV.",
+      "C": "II and III.",
+      "D": "III and IV."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Compilers translate programs and disk cleaners maintain the system, so II and III are system software.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Games are application software."
+      },
+      {
+        "key": "B",
+        "reason": "Games and a DBMS are applications in this classification."
+      },
+      {
+        "key": "C",
+        "reason": "A compiler and disk cleaner are system software."
+      },
+      {
+        "key": "D",
+        "reason": "A DBMS is classified as application software here."
+      }
+    ]
+  },
+  {
+    "number": "5",
+    "page": 2,
+    "stem": "Which type of system software is responsible for performing disk cleanup and defragmentation?",
+    "choices": {
+      "A": "Language translators",
+      "B": "Operating system",
+      "C": "Utility software",
+      "D": "Device driver"
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Disk cleanup and defragmentation are utility functions.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Translators convert program code."
+      },
+      {
+        "key": "B",
+        "reason": "The specific maintenance category is utilities."
+      },
+      {
+        "key": "C",
+        "reason": "Disk cleanup and defragmentation are utility tasks."
+      },
+      {
+        "key": "D",
+        "reason": "Drivers interface with particular hardware."
+      }
+    ]
+  },
+  {
+    "number": "6",
+    "page": 2,
+    "stem": "A type of software that allows users to freely use, modify and distribute the source code is",
+    "choices": {
+      "A": "freeware.",
+      "B": "shareware.",
+      "C": "licensed software.",
+      "D": "open source software."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.2.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Open-source licences permit access to and modification and redistribution of source code subject to licence terms.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Freeware need not expose source code."
+      },
+      {
+        "key": "B",
+        "reason": "Shareware commonly limits trial use."
+      },
+      {
+        "key": "C",
+        "reason": "Licensed software is a broad category including proprietary products."
+      },
+      {
+        "key": "D",
+        "reason": "Open-source licence terms permit these source-code freedoms."
+      }
+    ]
+  },
+  {
+    "number": "7",
+    "page": 3,
+    "stem": "Example of auto capture device is",
+    "choices": {
+      "A": "mouse.",
+      "B": "keyboard.",
+      "C": "touch screen.",
+      "D": "barcode reader."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.3.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A barcode reader captures encoded data without manually typing each character.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A mouse requires manual pointer input."
+      },
+      {
+        "key": "B",
+        "reason": "A keyboard requires manual character entry."
+      },
+      {
+        "key": "C",
+        "reason": "A touchscreen normally requires user touches."
+      },
+      {
+        "key": "D",
+        "reason": "A reader captures a barcode's encoded data automatically."
+      }
+    ]
+  },
+  {
+    "number": "8",
+    "page": 3,
+    "stem": "Which of the following devices can perform both input and output operations?",
+    "choices": {
+      "A": "Printer",
+      "B": "Scanner",
+      "C": "Light Pen",
+      "D": "Touch Screen"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.3.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A touchscreen displays output and detects input.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A standard printer outputs results."
+      },
+      {
+        "key": "B",
+        "reason": "A scanner captures input."
+      },
+      {
+        "key": "C",
+        "reason": "A light pen supplies input."
+      },
+      {
+        "key": "D",
+        "reason": "A touchscreen both displays output and senses input."
+      }
+    ]
+  },
+  {
+    "number": "9",
+    "page": 3,
+    "stem": "Scanner scans filled-in bubbles from answer sheets for grading multiple choice questions. The device/ reader identified from the given description is a/ an",
+    "choices": {
+      "A": "Optical Mark Reader (OMR).",
+      "B": "Optical Character Reader (OCR).",
+      "C": "Quick Response (QR) code reader.",
+      "D": "Magnetic Ink Character Reader (MICR)."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "1.3.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "OMR detects marked positions such as filled answer bubbles.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "OMR detects marked response locations."
+      },
+      {
+        "key": "B",
+        "reason": "OCR recognises written characters."
+      },
+      {
+        "key": "C",
+        "reason": "QR readers decode two-dimensional symbols."
+      },
+      {
+        "key": "D",
+        "reason": "MICR reads magnetically printed characters."
+      }
+    ]
+  },
+  {
+    "number": "10",
+    "page": 3,
+    "stem": "Consider the given properties. \n-  It is used for converting output for long-term storage and archiving purposes. \n-  It is often used for preserving critical documents and records. \n-  It has high data security against digital threats. The BEST output device that describes the given properties is",
+    "choices": {
+      "A": "Monitor.",
+      "B": "Projector.",
+      "C": "Flatbed plotter.",
+      "D": "Computer Output Microfilm (COM)."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.3.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Computer output microfilm produces durable physical archival records.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A monitor is a transient display."
+      },
+      {
+        "key": "B",
+        "reason": "A projector displays images."
+      },
+      {
+        "key": "C",
+        "reason": "A plotter produces drawings rather than the specified archival microfilm."
+      },
+      {
+        "key": "D",
+        "reason": "COM creates physical microfilm records."
+      }
+    ]
+  },
+  {
+    "number": "11",
+    "page": 3,
+    "stem": "4 Mebibyte is equal to",
+    "choices": {
+      "A": "4,000 bytes.",
+      "B": "4,096 bytes.",
+      "C": "4,000,000 bytes.",
+      "D": "4,194,304 bytes."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "2.1.2",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "Four mebibytes are 4 × 1024 × 1024 = 4194304 bytes.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Four thousand is far below four mebibytes."
+      },
+      {
+        "key": "B",
+        "reason": "4096 bytes equals four kibibytes."
+      },
+      {
+        "key": "C",
+        "reason": "Four million uses the decimal megabyte scale."
+      },
+      {
+        "key": "D",
+        "reason": "4 times 1024 squared equals 4194304."
+      }
+    ]
+  },
+  {
+    "number": "12",
+    "page": 3,
+    "stem": "The characteristic that is shared by both SRAM and DRAM is",
+    "choices": {
+      "A": "use of transistors for data storage.",
+      "B": "lack of refresh requirements.",
+      "C": "non-volatile storage.",
+      "D": "slow access time."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "2.2.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Both SRAM and DRAM use transistors. DRAM also stores charge in capacitors and requires refresh.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Both use transistors, with DRAM also using capacitors."
+      },
+      {
+        "key": "B",
+        "reason": "DRAM requires refresh."
+      },
+      {
+        "key": "C",
+        "reason": "Both are ordinarily volatile."
+      },
+      {
+        "key": "D",
+        "reason": "Slow access is not a shared defining advantage."
+      }
+    ]
+  },
+  {
+    "number": "13",
+    "page": 4,
+    "stem": "Consider the given characteristics. I. It was used in early computer systems. II. It is smaller in size because of no erasure capability. III. It can retain data for upto 20 years, if not exposed to UV light. The characteristic(s) that BEST describe PROM is/ are",
+    "choices": {
+      "A": "I only.",
+      "B": "III only.",
+      "C": "I and II.",
+      "D": "II and III."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "2.2.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The intended PROM characteristics are I and II. Ultraviolet erasure relates to EPROM, so III does not distinguish PROM correctly.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "II also fits the intended PROM description."
+      },
+      {
+        "key": "B",
+        "reason": "UV erasure and the stated UV qualification concern EPROM."
+      },
+      {
+        "key": "C",
+        "reason": "I and II match the textbook description."
+      },
+      {
+        "key": "D",
+        "reason": "III does not identify PROM correctly."
+      }
+    ]
+  },
+  {
+    "number": "14",
+    "page": 4,
+    "stem": "The PRIMARY role of the Basic Input/ Output System (BIOS) is",
+    "choices": {
+      "A": "connecting to the internet.",
+      "B": "loading the operating system.",
+      "C": "executing application software.",
+      "D": "checking hardware components."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "2.2.5",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "BIOS performs power-on hardware checks as part of initialisation, then initiates the boot process.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Internet access is not the BIOS's primary initialisation task."
+      },
+      {
+        "key": "B",
+        "reason": "Bootstrapping follows hardware initialisation, but the key targets hardware checks."
+      },
+      {
+        "key": "C",
+        "reason": "Applications run after system startup."
+      },
+      {
+        "key": "D",
+        "reason": "Power-on checks test essential hardware."
+      }
+    ]
+  },
+  {
+    "number": "15",
+    "page": 4,
+    "stem": "In contrast to L2 cache, L1 cache",
+    "choices": {
+      "A": "is slower.",
+      "B": "is fixed in size.",
+      "C": "consumes less power.",
+      "D": "is located on the motherboard."
+    },
+    "answer": null,
+    "officialAnswer": "C,D",
+    "originalSlo": "2.2.6",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The official key accepts C and D. L1 is normally on the processor die, so D is incorrect for modern architectures. Relative power consumption is implementation dependent. The question lacks a universal valid distinction among these options.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "L1 is normally faster than L2."
+      },
+      {
+        "key": "B",
+        "reason": "Cache sizes vary across implementations."
+      },
+      {
+        "key": "C",
+        "reason": "Relative power use depends on design and workload."
+      },
+      {
+        "key": "D",
+        "reason": "L1 is normally integrated on the processor die rather than the motherboard."
+      }
+    ]
+  },
+  {
+    "number": "16",
+    "page": 4,
+    "stem": "Which of the following memories uses optical storage technology?",
+    "choices": {
+      "A": "Cache",
+      "B": "Register",
+      "C": "CD-ROM",
+      "D": "USB flash drive"
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "2.3.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "CD-ROM stores data optically.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Cache is semiconductor memory."
+      },
+      {
+        "key": "B",
+        "reason": "Registers are semiconductor storage."
+      },
+      {
+        "key": "C",
+        "reason": "A CD-ROM is optically read."
+      },
+      {
+        "key": "D",
+        "reason": "USB flash uses non-volatile semiconductor memory."
+      }
+    ]
+  },
+  {
+    "number": "17",
+    "page": 4,
+    "stem": "The type of storage that is typically used for direct data access and stores data in magnetic form is",
+    "choices": {
+      "A": "hard disk.",
+      "B": "magnetic tapes.",
+      "C": "USB flash drive.",
+      "D": "Solid State Drive (SSD)."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "2.3.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A magnetic hard disk supports direct access. Tape is sequential and the other listed media use flash memory.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A magnetic hard disk provides direct access."
+      },
+      {
+        "key": "B",
+        "reason": "Tape uses sequential access."
+      },
+      {
+        "key": "C",
+        "reason": "USB flash is not magnetic."
+      },
+      {
+        "key": "D",
+        "reason": "SSD storage is not magnetic."
+      }
+    ]
+  },
+  {
+    "number": "18",
+    "page": 4,
+    "stem": "Sana is a video editor. She wants to store a video of 2 GB. In the given scenario, the type of optical storage media, Sana will use is",
+    "choices": {
+      "A": "SD card.",
+      "B": "flash drive.",
+      "C": "CD-ROM.",
+      "D": "DVD-ROM."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "2.3.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A DVD has sufficient capacity for a 2 GB video and is optical. The printed DVD-ROM is read-only, so writing a new recording would require an appropriate recordable DVD variant.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "An SD card is not optical."
+      },
+      {
+        "key": "B",
+        "reason": "A flash drive is not optical."
+      },
+      {
+        "key": "C",
+        "reason": "A conventional CD lacks 2 GB capacity."
+      },
+      {
+        "key": "D",
+        "reason": "DVD capacity fits, but a recordable variant is needed to write a new video."
+      }
+    ]
+  },
+  {
+    "number": "19",
+    "page": 5,
+    "stem": "An example of sequential storage device is",
+    "choices": {
+      "A": "DVD.",
+      "B": "flash drive.",
+      "C": "magnetic tape.",
+      "D": "magnetic disk."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "2.3.6",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Magnetic tape is accessed sequentially.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "DVD access is direct."
+      },
+      {
+        "key": "B",
+        "reason": "Flash supports direct access."
+      },
+      {
+        "key": "C",
+        "reason": "Tape is read sequentially."
+      },
+      {
+        "key": "D",
+        "reason": "Magnetic disks support direct block access."
+      }
+    ]
+  },
+  {
+    "number": "20",
+    "page": 5,
+    "stem": "Which of the following is a component of a central processing unit?",
+    "choices": {
+      "A": "Expansion cards",
+      "B": "Motherboard",
+      "C": "Control unit",
+      "D": "System unit"
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "3.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The control unit is part of the CPU.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Expansion cards are separate peripherals."
+      },
+      {
+        "key": "B",
+        "reason": "The motherboard hosts components including the CPU."
+      },
+      {
+        "key": "C",
+        "reason": "The control unit belongs to the CPU."
+      },
+      {
+        "key": "D",
+        "reason": "The system unit is the larger enclosure and assembly."
+      }
+    ]
+  },
+  {
+    "number": "21",
+    "page": 5,
+    "stem": "The memory contains the following addresses and contents.\n\n| Address | Content |\n| --- | --- |\n| 00100 | 10101010 |\n| 00101 | 11001100 |\n| 00110 | 11110000 |\n| 00111 | 00110011 |\n\nIf PC holds 00101 at the beginning of the fetch cycle, what are the values placed in MAR and IR?",
+    "choices": {
+      "A": "| MAR | IR |\n| --- | --- |\n| 00101 | 11001100 |",
+      "B": "| MAR | IR |\n| --- | --- |\n| 00110 | 11110000 |",
+      "C": "| MAR | IR |\n| --- | --- |\n| 00111 | 00110011 |",
+      "D": "| MAR | IR |\n| --- | --- |\n| 00100 | 10101010 |"
+    },
+    "answer": "A",
+    "officialAnswer": "D",
+    "originalSlo": "3.1.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "At the start of the fetch cycle, MAR receives PC address 00101 and the instruction register receives 11001100 from that address. The published D points to the previous address and is incorrect.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Address 00101 supplies instruction 11001100."
+      },
+      {
+        "key": "B",
+        "reason": "This fetches the next listed address."
+      },
+      {
+        "key": "C",
+        "reason": "This fetches a later address."
+      },
+      {
+        "key": "D",
+        "reason": "This fetches the previous address, contradicting the stated PC."
+      }
+    ]
+  },
+  {
+    "number": "22",
+    "page": 5,
+    "stem": "The type of CPU instruction that is responsible for changing the sequence of program execution, such as branching to different program segments is",
+    "choices": {
+      "A": "data transfer instruction.",
+      "B": "input/ output instruction.",
+      "C": "data processing instruction.",
+      "D": "program control instruction."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "3.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Program-control instructions change the execution sequence.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Data transfer moves values."
+      },
+      {
+        "key": "B",
+        "reason": "I/O handles external input and output."
+      },
+      {
+        "key": "C",
+        "reason": "Data processing performs computations."
+      },
+      {
+        "key": "D",
+        "reason": "Program control includes branches and jumps."
+      }
+    ]
+  },
+  {
+    "number": "23",
+    "page": 6,
+    "stem": "The instruction format that allows the operation to be performed on one explicit source operand, and the result to be stored in a second explicit destination operand is",
+    "choices": {
+      "A": "zero address instruction.",
+      "B": "one address instruction.",
+      "C": "two address instruction.",
+      "D": "three address instruction."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "3.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Two-address instructions explicitly identify two operand locations, commonly using one as both input and destination.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Zero-address formats use implicit operands."
+      },
+      {
+        "key": "B",
+        "reason": "One explicit address does not provide the two locations described."
+      },
+      {
+        "key": "C",
+        "reason": "Two addresses specify the source and destination arrangement."
+      },
+      {
+        "key": "D",
+        "reason": "Three-address formats usually separate destination and two source operands."
+      }
+    ]
+  },
+  {
+    "number": "24",
+    "page": 6,
+    "stem": "A stage of fetch-decode-execute cycle, that begins when the instruction is received by the control unit is",
+    "choices": {
+      "A": "store.",
+      "B": "fetch.",
+      "C": "decode.",
+      "D": "execute."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "3.2.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Decode interprets the fetched instruction in the control unit.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Storage is not instruction interpretation."
+      },
+      {
+        "key": "B",
+        "reason": "Fetch obtains the instruction."
+      },
+      {
+        "key": "C",
+        "reason": "Decode interprets the received instruction."
+      },
+      {
+        "key": "D",
+        "reason": "Execute performs the decoded operation."
+      }
+    ]
+  },
+  {
+    "number": "25",
+    "page": 6,
+    "stem": "CISC architecture focuses on providing a wide variety of instructions to handle complex tasks efficiently, often involving memory access. In contrary to the above statement, RISC architectures simplifies instructions and places a heavier emphasis on",
+    "choices": {
+      "A": "including instructions for arithmetic calculations only.",
+      "B": "reducing the complexity of individual instructions.",
+      "C": "reducing the number of available instructions.",
+      "D": "minimising the number of registers available."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "3.2.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "RISC emphasises relatively simple instructions and efficient execution.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "RISC is not limited to arithmetic."
+      },
+      {
+        "key": "B",
+        "reason": "Simpler individual instructions are central to RISC."
+      },
+      {
+        "key": "C",
+        "reason": "A small instruction count alone is not the distinguishing emphasis here."
+      },
+      {
+        "key": "D",
+        "reason": "RISC designs commonly make substantial use of registers."
+      }
+    ]
+  },
+  {
+    "number": "26",
+    "page": 6,
+    "stem": "The PRIMARY function of the power supply within the system unit is to",
+    "choices": {
+      "A": "stores electrical power.",
+      "B": "control input and output devices.",
+      "C": "process data and perform calculations.",
+      "D": "supply electrical power to all internal components."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "4.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The power supply provides electrical power to internal components.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A power supply primarily converts and delivers power."
+      },
+      {
+        "key": "B",
+        "reason": "Device control is a different function."
+      },
+      {
+        "key": "C",
+        "reason": "Computation occurs in processing units."
+      },
+      {
+        "key": "D",
+        "reason": "Supplying the components is the stated role."
+      }
+    ]
+  },
+  {
+    "number": "27",
+    "page": 7,
+    "stem": "Given is the image of a computer port. The name of this port is a/ an",
+    "choices": {
+      "A": "PS/2 port.",
+      "B": "serial port.",
+      "C": "HDMI port.",
+      "D": "fire wire port."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "4.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The illustrated port is HDMI.",
+    "diagramUrl": "/paper-crops/CS-XI-2024-P1/diagram-27.png",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A PS/2 connector is circular."
+      },
+      {
+        "key": "B",
+        "reason": "A traditional serial port has a different connector shape."
+      },
+      {
+        "key": "C",
+        "reason": "The image shows the HDMI connector profile."
+      },
+      {
+        "key": "D",
+        "reason": "FireWire has a different connector profile."
+      }
+    ]
+  },
+  {
+    "number": "28",
+    "page": 7,
+    "stem": "The expansion card that can provide the data transfer speed up to 1000 Mbps is",
+    "choices": {
+      "A": "gigabit card.",
+      "B": "modem card.",
+      "C": "wireless network card.",
+      "D": "network interface card (NIC)."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "4.2.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "A gigabit network card supports 1000 Mbps. NIC is a broader category that can include a gigabit card, so A is the specific intended type.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Gigabit identifies the specific 1000 Mbps capability."
+      },
+      {
+        "key": "B",
+        "reason": "A modem card does not imply this Ethernet speed."
+      },
+      {
+        "key": "C",
+        "reason": "Wireless capability does not establish exactly 1000 Mbps."
+      },
+      {
+        "key": "D",
+        "reason": "NIC is the broad category and can include the specific gigabit card."
+      }
+    ]
+  },
+  {
+    "number": "29",
+    "page": 7,
+    "stem": "Which option describes memory-chip placement on both sides of SIMM and DIMM modules?",
+    "choices": {
+      "A": "| SIMM | DIMM |\n| --- | --- |\n| Yes | Yes |",
+      "B": "| SIMM | DIMM |\n| --- | --- |\n| Yes | No |",
+      "C": "| SIMM | DIMM |\n| --- | --- |\n| No | Yes |",
+      "D": "| SIMM | DIMM |\n| --- | --- |\n| No | No |"
+    },
+    "answer": null,
+    "officialAnswer": "*",
+    "originalSlo": "4.2.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The official key gives a star. Chip placement can be single-sided or double-sided for both SIMM and DIMM modules. Their electrical contact arrangements define the distinction. No universal option follows from physical chip placement.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Both-sided layouts are possible, but not universal."
+      },
+      {
+        "key": "B",
+        "reason": "Physical sidedness does not establish this universal pairing."
+      },
+      {
+        "key": "C",
+        "reason": "This confuses physical placement with electrical contact organisation."
+      },
+      {
+        "key": "D",
+        "reason": "Both module types can also use chips on both sides."
+      }
+    ]
+  },
+  {
+    "number": "30",
+    "page": 7,
+    "stem": "If Tooba wants to connect her fitness tracker device with the smart phone, then the type of network she will use is",
+    "choices": {
+      "A": "wide area network.",
+      "B": "local area network.",
+      "C": "near-me-area network.",
+      "D": "personal area network."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "5.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A fitness tracker and nearby phone normally form a personal area network.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "WAN covers a much larger area."
+      },
+      {
+        "key": "B",
+        "reason": "LAN connects a local network of devices."
+      },
+      {
+        "key": "C",
+        "reason": "Near-me-area is not the intended standard class."
+      },
+      {
+        "key": "D",
+        "reason": "A tracker and phone fit a personal area network."
+      }
+    ]
+  },
+  {
+    "number": "31",
+    "page": 8,
+    "stem": "In a network, the component that is responsible for initiating the communication process by creating and sending data or information is",
+    "choices": {
+      "A": "sender.",
+      "B": "medium.",
+      "C": "protocol.",
+      "D": "receiver."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "5.1.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The sender creates and transmits the information.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The sender originates the message."
+      },
+      {
+        "key": "B",
+        "reason": "The medium carries it."
+      },
+      {
+        "key": "C",
+        "reason": "A protocol defines communication rules."
+      },
+      {
+        "key": "D",
+        "reason": "The receiver accepts the message."
+      }
+    ]
+  },
+  {
+    "number": "32",
+    "page": 8,
+    "stem": "In fibre optic cables, the data is transmitted through",
+    "choices": {
+      "A": "light waves.",
+      "B": "radio waves.",
+      "C": "sound waves.",
+      "D": "electromagnetic waves."
+    },
+    "answer": null,
+    "officialAnswer": "A",
+    "originalSlo": "5.1.5",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The key selects A, but light is electromagnetic radiation, so both A and D describe the carrier. The question gives no specificity criterion that uniquely selects one.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Light is the specific optical carrier."
+      },
+      {
+        "key": "B",
+        "reason": "Radio waves are outside the optical range."
+      },
+      {
+        "key": "C",
+        "reason": "Optical fibres do not transmit data using sound waves."
+      },
+      {
+        "key": "D",
+        "reason": "Light is electromagnetic, so this broad option also includes the correct carrier."
+      }
+    ]
+  },
+  {
+    "number": "33",
+    "page": 8,
+    "stem": "The number of layers in TCP/ IP model is",
+    "choices": {
+      "A": "two.",
+      "B": "four.",
+      "C": "six.",
+      "D": "seven."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.3.1",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "The conventional TCP/IP model has four layers. Some teaching models split its link layer into two.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Two is not the conventional layer count."
+      },
+      {
+        "key": "B",
+        "reason": "The conventional TCP/IP model has four layers."
+      },
+      {
+        "key": "C",
+        "reason": "Six is not the conventional count."
+      },
+      {
+        "key": "D",
+        "reason": "Seven is the OSI model's count."
+      }
+    ]
+  },
+  {
+    "number": "34",
+    "page": 8,
+    "stem": "An IPv4 address is made up of",
+    "choices": {
+      "A": "4 bits.",
+      "B": "8 bits.",
+      "C": "4 bytes.",
+      "D": "8 bytes."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "5.3.5",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "An IPv4 address contains 32 bits, equivalent to four bytes.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Four bits are insufficient."
+      },
+      {
+        "key": "B",
+        "reason": "Eight bits are one byte."
+      },
+      {
+        "key": "C",
+        "reason": "Four bytes give 32 bits."
+      },
+      {
+        "key": "D",
+        "reason": "Eight bytes give 64 bits."
+      }
+    ]
+  },
+  {
+    "number": "35",
+    "page": 8,
+    "stem": "An example of wireless Local Area Network (WLAN) is",
+    "choices": {
+      "A": "Wi-Fi.",
+      "B": "bluetooth.",
+      "C": "cellular network.",
+      "D": "satellite communication."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "6.1.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Wi-Fi provides wireless local-area networking.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Wi-Fi supplies WLAN connectivity."
+      },
+      {
+        "key": "B",
+        "reason": "Bluetooth is usually associated with personal-area networking."
+      },
+      {
+        "key": "C",
+        "reason": "Cellular access uses a mobile-network infrastructure."
+      },
+      {
+        "key": "D",
+        "reason": "Satellite communication is not the named WLAN example."
+      }
+    ]
+  },
+  {
+    "number": "36",
+    "page": 8,
+    "stem": "In contrast to wired network, wireless network has",
+    "choices": {
+      "A": "greater security.",
+      "B": "mobility and flexibility.",
+      "C": "lower initial setup costs.",
+      "D": "higher data transfer speeds."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "6.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Mobility and flexibility are characteristic advantages of wireless access.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Wireless access is not inherently more secure."
+      },
+      {
+        "key": "B",
+        "reason": "It supports movement and flexible placement."
+      },
+      {
+        "key": "C",
+        "reason": "Initial costs depend on the installation."
+      },
+      {
+        "key": "D",
+        "reason": "Wireless is not inherently faster than wired networks."
+      }
+    ]
+  },
+  {
+    "number": "37",
+    "page": 8,
+    "stem": "The PRIMARY purpose of a SIM (Subscriber Identity Module) card in mobile communication is to",
+    "choices": {
+      "A": "authenticate the user and connect to the mobile network.",
+      "B": "play multimedia content using mobile network.",
+      "C": "store contact information in the mobile device.",
+      "D": "provide electrical power to the mobile device."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "6.3.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A SIM stores subscriber credentials used for mobile-network authentication.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Subscriber credentials support network authentication."
+      },
+      {
+        "key": "B",
+        "reason": "Playing media is a phone/application task."
+      },
+      {
+        "key": "C",
+        "reason": "Contact storage is a secondary historical capability."
+      },
+      {
+        "key": "D",
+        "reason": "A SIM does not power the phone."
+      }
+    ]
+  },
+  {
+    "number": "38",
+    "page": 9,
+    "stem": "The component that is responsible for routing incoming and outgoing calls in a mobile communication network is",
+    "choices": {
+      "A": "base station.",
+      "B": "mobile phone.",
+      "C": "switching node.",
+      "D": "landline telephone network."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "6.3.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A switching node routes calls through the mobile communication system.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A base station provides radio access."
+      },
+      {
+        "key": "B",
+        "reason": "A handset is an endpoint."
+      },
+      {
+        "key": "C",
+        "reason": "A switching node routes calls."
+      },
+      {
+        "key": "D",
+        "reason": "A landline network is not the mobile switching component."
+      }
+    ]
+  },
+  {
+    "number": "39",
+    "page": 9,
+    "stem": "All of the following are common applications of GPS technology EXCEPT",
+    "choices": {
+      "A": "weather forecasting.",
+      "B": "navigation and mapping.",
+      "C": "geocaching and outdoor activities.",
+      "D": "vehicle tracking and fleet management."
+    },
+    "answer": "A",
+    "officialAnswer": "*",
+    "originalSlo": "6.3.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A is the intended exception among common consumer GPS applications. The official star is preserved. Specialised GPS meteorology can contribute to weather research, but weather forecasting is not the direct consumer positioning function tested here.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "This is the intended common-use exception, with specialised GPS meteorology acknowledged."
+      },
+      {
+        "key": "B",
+        "reason": "Navigation is a core GPS application."
+      },
+      {
+        "key": "C",
+        "reason": "Geocaching uses location estimates."
+      },
+      {
+        "key": "D",
+        "reason": "Fleet tracking uses location and movement data."
+      }
+    ]
+  },
+  {
+    "number": "40",
+    "page": 9,
+    "stem": "Usman is working on a project that involves storing geographical data, including maps, coordinates and related information. The MOST suitable database model for this project will be",
+    "choices": {
+      "A": "network database.",
+      "B": "relational database.",
+      "C": "hierarchical database.",
+      "D": "object-oriented database."
+    },
+    "answer": null,
+    "officialAnswer": "D",
+    "originalSlo": "7.1.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The key selects D, but geographical data can also be stored effectively in spatial relational databases. The scenario gives no requirements that uniquely establish an object-oriented model as most suitable.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A network database is not uniquely established by the scenario."
+      },
+      {
+        "key": "B",
+        "reason": "Spatial relational databases can store this data effectively too."
+      },
+      {
+        "key": "C",
+        "reason": "A hierarchy is not uniquely required by the stated data."
+      },
+      {
+        "key": "D",
+        "reason": "Object-oriented storage can be suitable but is not uniquely required."
+      }
+    ]
+  },
+  {
+    "number": "41",
+    "page": 9,
+    "stem": "Consider the given tasks. I. Inserting data into the database II. Deleting objects from the database III. Deleting records from the database IV. Granting permissions to the database users The task(s) performed by data control language of SQL is/ are",
+    "choices": {
+      "A": "I only.",
+      "B": "IV only.",
+      "C": "I, II and III.",
+      "D": "II, III and IV."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "7.1.6",
+    "level": "U",
+    "slo": "11.11.2",
+    "grade": 12,
+    "explanation": "GRANT controls user permissions. Insertion and record deletion are DML, and object deletion is DDL.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "INSERT is DML."
+      },
+      {
+        "key": "B",
+        "reason": "GRANT manages permissions through DCL."
+      },
+      {
+        "key": "C",
+        "reason": "These tasks concern DML and DDL."
+      },
+      {
+        "key": "D",
+        "reason": "Deleting objects and records is not DCL."
+      }
+    ]
+  },
+  {
+    "number": "42",
+    "page": 10,
+    "stem": "The name of data type used in the field Married is",
+    "choices": {
+      "A": "Text.",
+      "B": "Yes/ No.",
+      "C": "Number.",
+      "D": "OLE Object."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "7.1.6",
+    "level": "K",
+    "slo": "11.9.5",
+    "grade": 12,
+    "explanation": "The checkboxes show a Boolean Yes/No field in MS Access. A corresponding SQL Server column would use BIT. This maps to constructing typed tables, with the original Access interface retained.",
+    "diagramUrl": "/paper-crops/CS-XI-2024-P1/diagram-42.png",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Text does not represent the shown checkbox field type."
+      },
+      {
+        "key": "B",
+        "reason": "Yes/No is the Boolean Access field type."
+      },
+      {
+        "key": "C",
+        "reason": "Numeric fields normally show numeric values."
+      },
+      {
+        "key": "D",
+        "reason": "An OLE object stores embedded or linked object data."
+      }
+    ]
+  },
+  {
+    "number": "43",
+    "page": 10,
+    "stem": "A customer database in an e-commerce platform uses email addresses to uniquely identify users. However, the platform also assigns a user-specific ID number. What type of key is the user-specific ID number?",
+    "choices": {
+      "A": "Secondary Key",
+      "B": "Alternate Key",
+      "C": "Primary Key",
+      "D": "Foreign Key"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "7.2.2",
+    "level": "U",
+    "slo": "11.9.4",
+    "grade": 12,
+    "explanation": "If email is the selected primary identifier, another unique candidate identifier serves as an alternate key, as intended by the official key.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Secondary keys are generally search fields and need not be unique."
+      },
+      {
+        "key": "B",
+        "reason": "A unique candidate not selected as primary is an alternate key."
+      },
+      {
+        "key": "C",
+        "reason": "The scenario uses email as the selected identifier under the key's interpretation."
+      },
+      {
+        "key": "D",
+        "reason": "A foreign key references another table."
+      }
+    ]
+  },
+  {
+    "number": "44",
+    "page": 10,
+    "stem": "In a hospital management system database, there are two entities: \"Doctor\" and \"Patient.\" A doctor can  treat multiple patients, and a patient can consult multiple doctors. The type of relationship exists between the \"Doctor\" and \"Patient\" entities is",
+    "choices": {
+      "A": "one-to-one relationship.",
+      "B": "one-to-many relationship.",
+      "C": "many-to-one relationship.",
+      "D": "many-to-many relationship."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "7.2.3",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "Each doctor can treat multiple patients and each patient can consult multiple doctors, giving many-to-many cardinality.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "One-to-one contradicts multiple partners on both sides."
+      },
+      {
+        "key": "B",
+        "reason": "One-to-many restricts the reverse side."
+      },
+      {
+        "key": "C",
+        "reason": "Many-to-one restricts the doctor-to-patient side."
+      },
+      {
+        "key": "D",
+        "reason": "Both directions permit multiple related entities."
+      }
+    ]
+  },
+  {
+    "number": "45",
+    "page": 10,
+    "stem": "Consider the given image representing cardinality and modality. The CORRECT interpretation of cardinality and modality from the given image is that",
+    "choices": {
+      "A": "cardinality is one and modality is one.",
+      "B": "cardinality is zero and modality is zero.",
+      "C": "cardinality is zero and modality is many.",
+      "D": "cardinality is many and modality is many."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "7.4.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The double-bar marker denotes exactly one, with maximum one and minimum one.",
+    "diagramUrl": "/paper-crops/CS-XI-2024-P1/diagram-45.png",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Double bars mean exactly one, both minimum and maximum."
+      },
+      {
+        "key": "B",
+        "reason": "Zero is not indicated by the double-bar marker."
+      },
+      {
+        "key": "C",
+        "reason": "A circle and crow's foot would express optional-many participation."
+      },
+      {
+        "key": "D",
+        "reason": "This marker has no crow's foot for many."
+      }
+    ]
+  },
+  {
+    "number": "46",
+    "page": 11,
+    "stem": "In an MS Access database, if you want to retrieve the \"ProductDescription\" and \"Price\" fields from a table called \"Inventory\", the CORRECT query will be",
+    "choices": {
+      "A": "```sql\nSelect ProductDescription, Price From Inventory;\n```",
+      "B": "```sql\nSelect *ProductDescription, *Price From Inventory;\n```",
+      "C": "```sql\nSelect ProductDescription AND Price From Inventory;\n```",
+      "D": "```sql\nSelect *(ProductDescription AND Price) From Inventory;\n```"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.5.1",
+    "level": "A",
+    "slo": "11.11.4",
+    "grade": 12,
+    "explanation": "SELECT lists columns separated by commas and FROM identifies the table.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "SELECT lists the two fields separated by commas."
+      },
+      {
+        "key": "B",
+        "reason": "Asterisks cannot prefix those selected field names this way."
+      },
+      {
+        "key": "C",
+        "reason": "AND is not the select-list separator."
+      },
+      {
+        "key": "D",
+        "reason": "The wildcard and AND expression do not form this projection."
+      }
+    ]
+  },
+  {
+    "number": "47",
+    "page": 11,
+    "stem": "In a database table named \"Employees,\" you need to fetch records sorted by their \"Salary\" column from low to high salary. The SQL (DML) statement used will be",
+    "choices": {
+      "A": "```sql\nSelect * From Employees Sort Salary ASC;\n```",
+      "B": "```sql\nSelect * From Employees Order Salary ASC;\n```",
+      "C": "```sql\nSelect * From Employees Sort By Salary ASC;\n```",
+      "D": "```sql\nSelect * From Employees Order By Salary ASC;\n```"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.5.1",
+    "level": "A",
+    "slo": "11.11.4",
+    "grade": 12,
+    "explanation": "ORDER BY Salary ASC sorts salaries from low to high.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "SORT is not the SQL ordering clause."
+      },
+      {
+        "key": "B",
+        "reason": "The clause requires ORDER BY."
+      },
+      {
+        "key": "C",
+        "reason": "SORT BY is not the shown SQL clause."
+      },
+      {
+        "key": "D",
+        "reason": "ORDER BY Salary ASC gives ascending salaries."
+      }
+    ]
+  },
+  {
+    "number": "48",
+    "page": 11,
+    "stem": "In a database, there is a table named \"Inventory\" that needs to be deleted completely. The SQL (DDL) statement used for this purpose will be",
+    "choices": {
+      "A": "```sql\nTruncate Table Inventory;\n```",
+      "B": "```sql\nRemove Table Inventory;\n```",
+      "C": "```sql\nDelete Table Inventory;\n```",
+      "D": "```sql\nDrop Table Inventory;\n```"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.5.2",
+    "level": "A",
+    "slo": "11.11.2",
+    "grade": 12,
+    "explanation": "DROP TABLE removes the table definition and its rows. TRUNCATE removes rows while retaining the table.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "TRUNCATE retains the table definition."
+      },
+      {
+        "key": "B",
+        "reason": "REMOVE TABLE is not the SQL statement."
+      },
+      {
+        "key": "C",
+        "reason": "DELETE TABLE is invalid SQL syntax."
+      },
+      {
+        "key": "D",
+        "reason": "DROP TABLE removes the entire table."
+      }
+    ]
+  },
+  {
+    "number": "49",
+    "page": 12,
+    "stem": "Use the Vehicle table below. Which design-view query changes Buzuki Gultus from Silver to Black?\n\n| Reg_No | Company | Model | Color | Year |\n| --- | --- | --- | --- | --- |\n| V121 | Fonda | Rezel | White | 2019 |\n| V122 | Photon | Gaga | Black | 2022 |\n| V123 | Buzuki | Gultus | Silver | 2021 |\n| V124 | Toyoto | Norolla | Black | 2020 |\n| V125 | Buzuki | Diaz | Grey | 2019 |",
+    "choices": {
+      "A": "| Grid row | Reg_No | Company | Model | Color | Year |\n| --- | --- | --- | --- | --- | --- |\n| Update To |  |  |  | Black |  |\n| Criteria | =\"V123\" |  |  |  |  |",
+      "B": "| Grid row | Reg_No | Company | Model | Color | Year |\n| --- | --- | --- | --- | --- | --- |\n| Update To |  |  |  | Black |  |\n| Criteria |  | =\"Buzuki\" |  |  |  |",
+      "C": "| Grid row | Reg_No | Company | Model | Color | Year |\n| --- | --- | --- | --- | --- | --- |\n| Update To |  |  |  | Silver |  |\n| Criteria |  | =\"Buzuki\" |  |  |  |",
+      "D": "| Grid row | Reg_No | Company | Model | Color | Year |\n| --- | --- | --- | --- | --- | --- |\n| Update To |  |  |  | Silver |  |\n| Criteria | =\"V123\" | =\"Buzuki\" |  |  |  |"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.4.3",
+    "level": "A",
+    "slo": "11.11.3",
+    "grade": 12,
+    "explanation": "A updates Color to Black for Reg_No V123, the Buzuki Gultus record. B changes all Buzuki records, while C and D use Silver as the updated colour.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "This sets Black only for V123."
+      },
+      {
+        "key": "B",
+        "reason": "This updates every matching Buzuki company row."
+      },
+      {
+        "key": "C",
+        "reason": "This sets Silver rather than Black."
+      },
+      {
+        "key": "D",
+        "reason": "This also sets Silver rather than Black."
+      }
+    ]
+  },
+  {
+    "number": "50",
+    "page": 13,
+    "stem": "Use the Vehicle table below. Which design-view delete query removes the Buzuki Diaz record?\n\n| Reg_No | Company | Model | Color | Year |\n| --- | --- | --- | --- | --- |\n| V121 | Fonda | Rezel | White | 2019 |\n| V122 | Photon | Gaga | Black | 2022 |\n| V123 | Buzuki | Gultus | Silver | 2021 |\n| V124 | Toyoto | Norolla | Black | 2020 |\n| V125 | Buzuki | Diaz | Grey | 2019 |",
+    "choices": {
+      "A": "| Grid row | Reg_No | Company | Model | Color | Year |\n| --- | --- | --- | --- | --- | --- |\n| Delete | Where | Where | Where | Where | Where |\n| Criteria |  | =\"Diaz\" |  |  |  |",
+      "B": "| Grid row | Reg_No | Company | Model | Color | Year |\n| --- | --- | --- | --- | --- | --- |\n| Delete | Where | Where | Where | Where | Where |\n| Criteria |  | =\"Buzuki\" | =\"Diaz\" |  |  |",
+      "C": "| Grid row | Reg_No | Company | Model | Color | Year |\n| --- | --- | --- | --- | --- | --- |\n| Delete | Where | Where | Where | Where | Where |\n| Criteria |  |  |  |  | =\"2019\" |",
+      "D": "| Grid row | Reg_No | Company | Model | Color | Year |\n| --- | --- | --- | --- | --- | --- |\n| Delete | Where | Where | Where | Where | Where |\n| Criteria |  | =\"Buzuki\" |  |  |  |\n| Or |  |  | =\"Diaz\" |  |  |"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "8.4.4",
+    "level": "A",
+    "slo": "11.11.3",
+    "grade": 12,
+    "explanation": "B combines Company=Buzuki and Model=Diaz in the same criteria row, giving an AND condition. D puts the conditions on different rows, giving OR and deleting extra records.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "This treats Diaz as a company criterion."
+      },
+      {
+        "key": "B",
+        "reason": "The same criteria row combines Buzuki and Diaz with AND."
+      },
+      {
+        "key": "C",
+        "reason": "This targets the year rather than the specified car model."
+      },
+      {
+        "key": "D",
+        "reason": "Separate criteria rows combine the tests with OR and match extra rows."
+      }
+    ]
+  }
+]

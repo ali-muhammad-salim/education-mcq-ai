@@ -99,7 +99,7 @@ export default function TakeQuizModal({
   paperCode,
   questions
 }: TakeQuizModalProps) {
-  const officialDuration = /^BIO-(?:IX|X)-2022-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 100
+  const officialDuration = /^CS-XI-2019-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 45 : /^CS-XI-2021-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 130 : /^CS-XII?(?:-20\d{2})?-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 90 : /^BIO-(?:IX|X)-2022-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 100
     : /^BIO-(?:IX-(?:MODEL-2026|2024)|X-(?:MODEL-2027|2023|2025))-P1(?:-MCQS-\d+)?$/i.test(paperCode)
       ? 70 : /^PHY-XI-201[78]-P1$/i.test(paperCode) ? 40 : /^PHY-XI-202[12]-P1$/i.test(paperCode) ? 130 : 50;
   // Navigation / Phase State: 'auth' -> 'setup' -> 'active' -> 'completed'
@@ -2049,9 +2049,9 @@ export default function TakeQuizModal({
                         className={`${styles.option}${tone}`}
                       >
                         <span aria-hidden="true" className={styles.bubble}>{key}</span>
-                        <span className={styles.optionText}>
-                          <MathText text={String(optText)} />
-                        </span>
+                        <div className={styles.optionText}>
+                          <StructuredContent text={String(optText)} />
+                        </div>
 
                         {/* Peer Popularity Percentage Pill on Reveal */}
                         {isAnswered && (
@@ -2090,7 +2090,7 @@ export default function TakeQuizModal({
                     </div>
 
                     <div className={styles.markBody}>
-                      <div><strong>Correct option ({currentQ.correctOption})</strong> <MathText text={currentQ.options[currentQ.correctOption] || ''} /></div>
+                      <div><strong>Correct option ({currentQ.correctOption})</strong> <StructuredContent text={currentQ.options[currentQ.correctOption] || ''} /></div>
                       <div>
                         <strong>Why this is correct:</strong> <MathText text={currentQ.explanation} />
                       </div>
@@ -2540,7 +2540,7 @@ export default function TakeQuizModal({
                             </div>
 
                             <div className={styles.entryStem}>
-                              <MathText text={item.questionText} />
+                              <StructuredContent text={item.questionText} />
                             </div>
 
                             <div className={styles.answerPair}>
@@ -2548,7 +2548,7 @@ export default function TakeQuizModal({
                                 className={`${styles.answer}${isRight ? ` ${styles.answerRight}` : isAtt ? ` ${styles.answerWrong}` : ''}`}
                               >
                                 <span className={styles.label}>Your answer</span>
-                                <MathText text={item.selectedText || item.selectedOption || 'Not answered'} />
+                                <StructuredContent text={item.selectedText || item.selectedOption || 'Not answered'} />
                               </div>
                               <div className={`${styles.answer} ${styles.answerRight}`}>
                                 <span className={styles.label}>Correct answer</span>

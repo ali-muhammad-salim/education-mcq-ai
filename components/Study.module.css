@@ -126,7 +126,7 @@
   align-items: center;
 }
 .root :focus-visible {
-  outline: 3px solid #18ab80;
+  outline: 3px solid var(--primary-color);
   outline-offset: 3px;
 }
 .notice {
@@ -253,18 +253,25 @@
 }
 @media (max-width: 700px) {
   .root {
-    margin: 1rem auto;
+    margin: 0.5rem auto;
+    padding: 0 0.25rem;
   }
   .header {
     flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
   }
+  .header p { margin: 0.5rem 0; }
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
+  .chips, .actions { gap: 0.5rem; }
+  .cover { padding: 0.75rem; }
   .filters {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .panel,
   .card,
   .block {
-    padding: 1rem;
+    padding: 0.75rem;
   }
   .actions > button,
   .actions > .button {
@@ -287,10 +294,7 @@
 }
 @media (max-width: 400px) {
   .filters {
-    grid-template-columns: 1fr;
-  }
-  .root {
-    padding: 0 0.75rem;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 @media print {
@@ -384,4 +388,35 @@
 .chapterLink { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.2rem; border: 1px solid var(--border-color); border-radius: 12px; background: var(--card-bg); text-decoration: none; min-height: 64px; }
 .chapterLink span { min-width: 0; }
 .chapterLink small { display: block; margin-top: .25rem; }
-.chapterLink:hover { border-color: var(--primary-color); }
+.root, .reader, .header > *, .grid > * { min-width: 0; }
+.root { overflow-wrap: anywhere; }
+.toc a { display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; }
+
+@media screen {
+  .reader pre, .reader table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .reader pre { white-space: pre; overflow-wrap: normal; }
+  .reader pre code { white-space: inherit; }
+}
+
+.chapterLink, .toc a, .block summary, .cover summary {
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .chapterLink:hover, .toc a:hover { border-color: var(--primary-color); }
+  .block summary:hover, .cover summary:hover { background: var(--bg-color); }
+}
+.chapterLink:active, .toc a:active { border-color: var(--primary-color); }
+.block summary:active, .cover summary:active { background: var(--bg-color); }
+
+@media (max-width: 700px) {
+  .chapterLink { gap: 0.75rem; padding: 0.75rem; }
+  .root input:not([type="checkbox"]), .root select, .root textarea { font-size: 1rem; }
+  .toc { padding: 0.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chapterLink, .toc a, .block summary, .cover summary { transition: none; }
+}

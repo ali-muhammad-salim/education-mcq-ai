@@ -1,0 +1,50 @@
+1 - D | A graphics tablet supports direct pen-based drawing and illustration.
+2 - A | Input supplies raw data to the processing system.
+3 - A | In the traditional mainframe/minicomputer/microcomputer classification, A is the intended answer. Modern physical size alone does not define a microcomputer, whose processor is a microprocessor.
+4 - C | Compilers translate programs and disk cleaners maintain the system, so II and III are system software.
+5 - C | Disk cleanup and defragmentation are utility functions.
+6 - D | Open-source licences permit access to and modification and redistribution of source code subject to licence terms.
+7 - D | A barcode reader captures encoded data without manually typing each character.
+8 - D | A touchscreen displays output and detects input.
+9 - A | OMR detects marked positions such as filled answer bubbles.
+10 - D | Computer output microfilm produces durable physical archival records.
+11 - D | Four mebibytes are 4 × 1024 × 1024 = 4194304 bytes.
+12 - A | Both SRAM and DRAM use transistors. DRAM also stores charge in capacitors and requires refresh.
+13 - C | The intended PROM characteristics are I and II. Ultraviolet erasure relates to EPROM, so III does not distinguish PROM correctly.
+14 - D | BIOS performs power-on hardware checks as part of initialisation, then initiates the boot process.
+15 - - | The official key accepts C and D. L1 is normally on the processor die, so D is incorrect for modern architectures. Relative power consumption is implementation dependent. The question lacks a universal valid distinction among these options.
+16 - C | CD-ROM stores data optically.
+17 - A | A magnetic hard disk supports direct access. Tape is sequential and the other listed media use flash memory.
+18 - D | A DVD has sufficient capacity for a 2 GB video and is optical. The printed DVD-ROM is read-only, so writing a new recording would require an appropriate recordable DVD variant.
+19 - C | Magnetic tape is accessed sequentially.
+20 - C | The control unit is part of the CPU.
+21 - A | At the start of the fetch cycle, MAR receives PC address 00101 and the instruction register receives 11001100 from that address. The published D points to the previous address and is incorrect.
+22 - D | Program-control instructions change the execution sequence.
+23 - C | Two-address instructions explicitly identify two operand locations, commonly using one as both input and destination.
+24 - C | Decode interprets the fetched instruction in the control unit.
+25 - B | RISC emphasises relatively simple instructions and efficient execution.
+26 - D | The power supply provides electrical power to internal components.
+27 - C | The illustrated port is HDMI.
+28 - A | A gigabit network card supports 1000 Mbps. NIC is a broader category that can include a gigabit card, so A is the specific intended type.
+29 - - | The official key gives a star. Chip placement can be single-sided or double-sided for both SIMM and DIMM modules. Their electrical contact arrangements define the distinction. No universal option follows from physical chip placement.
+30 - D | A fitness tracker and nearby phone normally form a personal area network.
+31 - A | The sender creates and transmits the information.
+32 - - | The key selects A, but light is electromagnetic radiation, so both A and D describe the carrier. The question gives no specificity criterion that uniquely selects one.
+33 - B | The conventional TCP/IP model has four layers. Some teaching models split its link layer into two.
+34 - C | An IPv4 address contains 32 bits, equivalent to four bytes.
+35 - A | Wi-Fi provides wireless local-area networking.
+36 - B | Mobility and flexibility are characteristic advantages of wireless access.
+37 - A | A SIM stores subscriber credentials used for mobile-network authentication.
+38 - C | A switching node routes calls through the mobile communication system.
+39 - A | A is the intended exception among common consumer GPS applications. The official star is preserved. Specialised GPS meteorology can contribute to weather research, but weather forecasting is not the direct consumer positioning function tested here.
+40 - - | The key selects D, but geographical data can also be stored effectively in spatial relational databases. The scenario gives no requirements that uniquely establish an object-oriented model as most suitable.
+41 12:11.11.2 B | GRANT controls user permissions. Insertion and record deletion are DML, and object deletion is DDL.
+42 12:11.9.5 B | The checkboxes show a Boolean Yes/No field in MS Access. A corresponding SQL Server column would use BIT. This maps to constructing typed tables, with the original Access interface retained.
+43 12:11.9.4 B | If email is the selected primary identifier, another unique candidate identifier serves as an alternate key, as intended by the official key.
+44 - D | Each doctor can treat multiple patients and each patient can consult multiple doctors, giving many-to-many cardinality.
+45 - A | The double-bar marker denotes exactly one, with maximum one and minimum one.
+46 12:11.11.4 A | SELECT lists columns separated by commas and FROM identifies the table.
+47 12:11.11.4 D | ORDER BY Salary ASC sorts salaries from low to high.
+48 12:11.11.2 D | DROP TABLE removes the table definition and its rows. TRUNCATE removes rows while retaining the table.
+49 12:11.11.3 A | A updates Color to Black for Reg_No V123, the Buzuki Gultus record. B changes all Buzuki records, while C and D use Silver as the updated colour.
+50 12:11.11.3 B | B combines Company=Buzuki and Model=Diaz in the same criteria row, giving an AND condition. D puts the conditions on different rows, giving OR and deleting extra records.

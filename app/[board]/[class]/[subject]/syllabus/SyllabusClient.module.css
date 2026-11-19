@@ -3,7 +3,8 @@
 .header h1{margin:0;color:#fff;font-size:clamp(1.35rem,2.5vw,1.8rem);line-height:1.2}
 .headerLinks{display:flex;gap:.5rem;flex-wrap:wrap}
 .headerLinks a{display:inline-flex;align-items:center;gap:.35rem;min-height:40px;padding:.45rem .7rem;border:1px solid #7bb8a4;border-radius:8px;color:#fff;font-size:.82rem;font-weight:700;text-decoration:none}
-.headerLinks a:hover,.headerLinks a:focus-visible{background:#ffffff24}
+.headerLinks a:focus-visible{outline:2px solid var(--r-mint, #c9eee0);outline-offset:3px}
+@media (hover: hover) and (pointer: fine){.headerLinks a:hover{background:#ffffff24}}
 .searchBar{display:flex;gap:.6rem;align-items:end;margin-bottom:.7rem}
 .searchField{display:flex;align-items:center;gap:.5rem;flex:1;min-width:0;min-height:44px;padding:0 .75rem;border:1px solid var(--border-color);border-radius:10px;background:var(--card-bg);color:var(--text-light)}
 .searchField:focus-within{outline:2px solid var(--primary-color);outline-offset:1px}
@@ -15,7 +16,8 @@
 .chapterBar strong{flex:none;color:var(--primary-color)}
 .chapterScroller{display:flex;gap:.4rem;min-width:0;overflow-x:auto;padding:.2rem 0 .35rem;scrollbar-width:thin}
 .chapterScroller button{flex:none;white-space:nowrap;min-height:38px;padding:.4rem .75rem;border:1px solid var(--border-color);border-radius:999px;background:var(--card-bg);color:var(--text-color);font:inherit;font-weight:700;cursor:pointer}
-.chapterScroller button:hover,.chapterScroller button:focus-visible{border-color:var(--primary-color);color:var(--primary-color);outline-offset:2px}
+.chapterScroller button:focus-visible{outline:2px solid var(--primary-color);outline-offset:2px}
+@media (hover: hover) and (pointer: fine){.chapterScroller button:hover{border-color:var(--primary-color);color:var(--primary-color)}}
 .levelGuide{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem .9rem;margin:0 0 1rem;padding:.85rem 1rem;border:1px solid var(--border-color);border-radius:12px;background:var(--card-bg);font-size:.82rem;color:var(--text-color)}
 .levelGuide>strong{color:var(--primary-color);margin-right:.25rem}.levelGuide b{color:var(--primary-color)}
 .scheme{margin-bottom:1.5rem;border:1px solid var(--border-color);border-radius:14px;background:var(--card-bg);color:var(--text-color);overflow:hidden}
@@ -26,15 +28,59 @@
 .schemeTopics strong{color:var(--primary-color)}.schemeTopics span{text-align:right}
 .practicalList{padding-inline-start:1.5rem}.practicalList li{padding:.55rem 0;border-bottom:1px solid var(--border-color)}.practicalList p{margin:.25rem 0;overflow-wrap:anywhere}
 .unit{scroll-margin-top:145px}.tableWrap{max-width:100%;overflow-x:auto}.sloTable{width:100%}
-@media(max-width:700px){.header{padding:.85rem 1rem}.headerLinks{width:100%}.searchBar{flex-direction:column;align-items:stretch}.searchField,.mobileFilter{width:100%}.chapterBar{display:block}.chapterBar strong{display:block;margin-bottom:.3rem}.levelGuide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem;padding:.75rem}.levelGuide>strong{grid-column:1/-1}.schemeContent{padding:0 .8rem .8rem}.schemeFacts,.schemeTopics{grid-template-columns:1fr}.tableWrap{overflow:visible}.sloTable,.sloTable tbody{display:block;width:100%}.sloTable thead{display:none}.sloTable tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.2rem .5rem;margin:.6rem 0;padding:.65rem;border:1px solid var(--border-color);border-radius:10px;background:var(--card-bg)}.sloTable td{display:block;min-width:0;padding:0!important;overflow-wrap:anywhere}.sloTable td:first-child{grid-column:1;grid-row:1}.sloTable td:nth-child(2){grid-column:1/-1;grid-row:2}.sloTable td:last-child{grid-column:2;grid-row:1;text-align:right!important}}
+@media(max-width:700px){.header{padding:.85rem 1rem}.headerLinks{width:100%}.searchBar{flex-direction:column;align-items:stretch}.searchField,.mobileFilter{width:100%}.chapterBar{display:block}.chapterBar strong{display:block;margin-bottom:.3rem}.levelGuide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem;padding:.75rem}.levelGuide>strong{grid-column:1/-1}.schemeContent{padding:0 .8rem .8rem}.schemeFacts,.schemeTopics{grid-template-columns:minmax(0,1fr)}.tableWrap{overflow:visible}.sloTable,.sloTable > tbody{display:block;width:100%}.sloTable > thead{display:none}.sloTable > tbody > tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.2rem .5rem;margin:.6rem 0;padding:.65rem;border:1px solid var(--border-color);border-radius:10px;background:var(--card-bg)}.sloTable > tbody > tr > td{display:block;min-width:0;padding:0!important;overflow-wrap:anywhere}.sloTable > tbody > tr > td:first-child{grid-column:1;grid-row:1}.sloTable > tbody > tr > td:nth-child(2){grid-column:1/-1;grid-row:2}.sloTable > tbody > tr > td:last-child{grid-column:2;grid-row:1;text-align:right!important}}
 .unitHeader{display:flex;align-items:center;gap:.55rem;padding:.75rem 1rem;background:var(--surface-muted)}
 .chapterQuiz{flex:none;display:inline-flex;align-items:center;gap:.35rem;min-height:34px;padding:.35rem .6rem;border-radius:8px;background:#0b5e4a;color:#fff;font-size:.76rem;font-weight:800;line-height:1;text-decoration:none;white-space:nowrap}
-.chapterQuiz:hover,.chapterQuiz:focus-visible{background:#084637;color:#fff}
+@media (hover: hover) and (pointer: fine){.chapterQuiz:hover{background:var(--r-emerald-press, #084637);color:#fff}}
 .chapterQuiz:focus-visible{outline:3px solid var(--primary-color);outline-offset:2px}
 .chapterQuizWord{display:inline}
 .unitToggle{flex:1;min-width:0;display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.35rem .5rem;border:0;border-radius:8px;background:transparent;color:inherit;font:inherit;cursor:pointer;text-align:left}
-.unitToggle:hover{background:var(--bg-color)}
+@media (hover: hover) and (pointer: fine){.unitToggle:hover{background:var(--bg-color)}}
 .unitToggle svg{flex:none;color:var(--primary-color)}
 .unitToggle:focus-visible{outline:3px solid var(--primary-color);outline-offset:-2px}
 .unitToggleTitle{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
-@media(max-width:700px){.unitHeader{padding:.6rem;gap:.4rem}.chapterQuiz{min-height:32px;padding:.3rem .5rem;font-size:.72rem}.chapterQuizWord{display:none}.unitToggle{padding:.3rem .2rem}}
+.header > *, .unit, .schemeContent, .schemeFacts > *, .levelGuide > * { min-width: 0; overflow-wrap: anywhere; }
+.headerLinks a, .chapterScroller button, .chapterQuiz, .unitToggle {
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.headerLinks a:active { background: #ffffff24; }
+.chapterScroller button:active { border-color: var(--primary-color); }
+.chapterQuiz:active { background: var(--r-emerald-press, #084637); }
+.unitToggle:active { background: var(--bg-color); }
+.mobileFilter select:focus-visible, .sloTable:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+.unit pre, .schemeContent pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+  overflow-wrap: normal;
+}
+.unit pre code { white-space: inherit; }
+.unit :global(.katex-display) { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.sloTable > tbody > tr > td table { display: block; max-width: 100%; overflow-x: auto; }
+
+@media(max-width:700px) {
+  .header { padding: .75rem; gap: .6rem; }
+  .headerLinks a, .chapterScroller button, .chapterQuiz, .unitToggle { min-height: 44px; box-sizing: border-box; }
+  .headerLinks a { flex: 1 1 auto; justify-content: center; font-size: .875rem; }
+  .searchField input, .mobileFilter select { font-size: 1rem; }
+  .mobileFilter { min-width: 0; }
+  .chapterScroller { padding: .25rem; }
+  .chapterScroller button { padding: .35rem .65rem; }
+  .levelGuide { font-size: .875rem; }
+  .scheme summary { padding: .75rem; }
+  .unitHeader { padding: .5rem; gap: .4rem; flex-wrap: wrap; }
+  .chapterQuiz { padding: .35rem .6rem; font-size: .8125rem; white-space: normal; }
+  .chapterQuizWord { display: none; }
+  .unitToggle { padding: .3rem .2rem; flex-basis: 65%; }
+  .unitToggleTitle { gap: .4rem; }
+  /* The content wrapper has inline desktop padding; keep this override local. */
+  .unit > .unitHeader + div { padding: .5rem !important; }
+  .sloTable > tbody > tr { gap: .35rem .5rem; padding: .65rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .headerLinks a, .chapterScroller button, .chapterQuiz, .unitToggle { transition: none; }
+}

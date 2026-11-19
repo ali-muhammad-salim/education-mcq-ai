@@ -36,7 +36,7 @@ export default async function SubjectTheoryPage({ params, mode }: PageProps) {
 
   const isSupportedSubject =
     board.id === 'akueb' &&
-    ['IX', 'X'].includes(classRoman) &&
+    (['IX', 'X'].includes(classRoman) || (meta.slug === 'computer-science' && ['XI', 'XII'].includes(classRoman) && mode !== 'notes')) &&
     (['physics', 'computer-science'].includes(meta.slug) || (['mathematics', 'chemistry', 'biology'].includes(meta.slug) && mode !== 'notes'));
 
   if (!isSupportedSubject) {
@@ -44,13 +44,17 @@ export default async function SubjectTheoryPage({ params, mode }: PageProps) {
   }
 
   const activeBank = meta.slug === 'computer-science' ? csChapterBank : physicsChapterBank;
-  const units = ['mathematics', 'chemistry', 'biology'].includes(meta.slug)
+  const units = ['mathematics', 'chemistry', 'biology'].includes(meta.slug) || (meta.slug === 'computer-science' && ['XI', 'XII'].includes(classRoman))
     ? await mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
     : (classRoman === 'IX' ? (activeBank as any)['9'] : (activeBank as any)['10']) || [];
 
   return (
-    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1rem 1rem 0 1rem' }}>
-      <Breadcrumbs
+    <div className={mode === 'notes' ? 'rise-ui' : undefined} style={{ maxWidth: '1280px', margin: '0 auto', padding: mode === 'notes' ? '0 0.25rem' : '1rem 1rem 0 1rem' }}>
+      {mode === 'notes' ? (
+        <Breadcrumbs items={[
+          { label: `${board.name} · ${classDef.name} · ${meta.title}`, href: baseUrl },
+        ]} />
+      ) : <Breadcrumbs
         items={[
           { label: 'Home', href: '/' },
           { label: board.name, href: `/${board.id}` },
@@ -58,7 +62,7 @@ export default async function SubjectTheoryPage({ params, mode }: PageProps) {
           { label: meta.title, href: baseUrl },
           { label: MODE_LABELS[mode], active: true },
         ]}
-      />
+      />}
       <ChapterTheoryPracticeClient
         board={board}
         classDef={classDef}

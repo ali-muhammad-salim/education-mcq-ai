@@ -1,3 +1,5 @@
+import { hsscComputerScienceResources } from "@/lib/hsscComputerScienceResources";
+import { hsscComputerScienceSyllabus } from "@/lib/hsscComputerScienceSyllabus";
 import StructuredContent from '@/components/StructuredContent';
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -23,7 +25,9 @@ export default async function Page({
   const raw = await params,
     scope = studyScope(raw.board, raw.class, raw.subject);
   if (!scope) notFound();
-  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug)
+    ?? hsscComputerScienceSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const computerScience = hsscComputerScienceResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const senior = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const documents = await subjectMaterials(raw.board, raw.class, raw.subject, 'practical_paper').catch(error => {
     if (hssc && error.name === "PrismaClientInitializationError") return [];
@@ -86,6 +90,7 @@ export default async function Page({
         ]}
       />
       <h1>Practicals</h1>
+      {computerScience && <p><Link href={computerScience.papers[2].href}>Open Class {computerScience.roman} practical model paper and worked solution</Link></p>}
       {senior && (
         <DocumentViews title="Physics Paper III sample practical" original={senior.practical} continuousPdf>
           <div className={styles.digital}>
@@ -110,7 +115,7 @@ export default async function Page({
         <div className={styles.digital}>
           <h2>Official syllabus practical activities</h2>
           <p>Paper III is assessed separately and carries 15 marks.</p>
-          <p><a href={hssc.original + '#page=' + (scope.classDef.level === 11 ? 48 : 50)} target="_blank" rel="noopener noreferrer">Open the practical activities in the original PDF</a></p>
+          <p><a href={hssc.original + '#page=' + (computerScience ? (scope.classDef.level === 11 ? 40 : 42) : (scope.classDef.level === 11 ? 48 : 50))} target="_blank" rel="noopener noreferrer">Open the practical activities in the original PDF</a></p>
           <ol>
             {hssc.practicals.map(item => (
               <li key={item.number}>

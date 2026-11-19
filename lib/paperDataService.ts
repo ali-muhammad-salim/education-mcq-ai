@@ -1,3 +1,7 @@
+import { hsscComputerScience2019Papers } from '@/lib/hsscComputerScience2019';
+import { hsscComputerScience2021Papers } from '@/lib/hsscComputerScience2021';
+import { hsscComputerScience2022Papers } from '@/lib/hsscComputerScience2022';
+import { hsscComputerScience2023Papers } from '@/lib/hsscComputerScience2023';
 import fs from 'fs';
 import { createHash } from 'node:crypto';
 import chemistryMappingReview from '@/data/chemistry/reviewed_syllabus_mappings_2025.json';
@@ -72,6 +76,10 @@ import mth1ModelMcqs from '@/data/mathematics/ssc1_model_mcqs.json';
 import mth1ModelCrqs from '@/data/mathematics/ssc1_model_crqs.json';
 import { reviewedMathematicsPapers } from '@/lib/mathematicsPapers';
 import { reviewedBiologyPapers } from '@/lib/biologyPapers';
+import { additionalBiologyPapers } from '@/lib/biologyFallbackPapers';
+const allBiologyPapers = [...reviewedBiologyPapers, ...additionalBiologyPapers];
+import { hsscComputerScience2024Papers } from '@/lib/hsscComputerScience2024';
+import { hsscComputerSciencePapers } from '@/lib/hsscComputerSciencePapers';
 import { hsscPhysicsPapers } from '@/lib/hsscPhysicsResources';
 import { hsscXiAnnualPapers } from '@/lib/hsscXiAnnualPhysics';
 import chemistryIXSyllabus from '@/data/chemistry/ssc1_exact_syllabus.json';
@@ -120,6 +128,7 @@ export interface QuestionData {
     isDiagram?: boolean;
     diagramBased?: boolean;
     cognitive_level?: string;
+    original_cognitive_level?: string;
     is_numerical?: boolean;
     slo?: string;
     original_slo_text?: string;
@@ -302,7 +311,9 @@ export function findUploadedPaper(paperCode: string): any | null {
  * Returns canonical PaperData and its questions for Model Papers & Past Papers
  */
 export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
-  const code = (paperCodeOrId || '').replace(/\.html?$/i, '').toUpperCase().trim();
+  const code = (paperCodeOrId || '').replace(/\.html?$/i, '').toUpperCase().trim()
+    .replace(/^FALLBACK-CS-X-(\d{4})-(P[12])$/, 'CS-X-$1-$2')
+    .replace(/^FALLBACK-CS-X-MODEL-(P[12])$/, 'CS-X-$1');
   if (!process.env.VITEST && STANDARD_PAPER_CACHE.has(code)) {
     return STANDARD_PAPER_CACHE.get(code)!;
   }
@@ -613,7 +624,7 @@ function chemistryQuestion(
 
   if (isMcq) {
     return {
-      id: `${spec.paperCode.toLowerCase()}-q${qNum}`.replace(/[^a-z0-9-]/g, ''),
+      id: `${spec.paperCode.toLowerCase()}-q${qNum.toLowerCase()}`.replace(/[^a-z0-9-]/g, ''),
       questionNumber: qNum,
       questionText: item.stem || item.questionText || '',
       questionType: 'MULTIPLE_CHOICE',
@@ -655,7 +666,7 @@ function chemistryQuestion(
     : '';
 
   return {
-    id: `${spec.paperCode.toLowerCase()}-q${qNum}`.replace(/[^a-z0-9-]/g, ''),
+    id: `${spec.paperCode.toLowerCase()}-q${qNum.toLowerCase()}`.replace(/[^a-z0-9-]/g, ''),
     questionNumber: qNum,
     questionText: item.questionText || item.stem || '',
     questionType: isErq ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE',
@@ -664,7 +675,12 @@ function chemistryQuestion(
     isDiagram: Boolean(diagramUrl || item.isDiagram || item.diagramBased),
     diagramBased: Boolean(diagramUrl || item.diagramBased),
     sourceRegion: {
-      rubric: item.rubric || [],
+      rubric: (item.rubric || []).map((entry: string | { marks: number; description: string }) => {
+        if (typeof entry !== 'string') return entry;
+        const explicitMarks = entry.match(/^\s*(\d+(?:\.\d+)?)\s+marks?\b/i);
+        if (!explicitMarks) throw new Error(`Missing explicit rubric marks: ${spec.paperCode}/${qNum}`);
+        return { marks: Number(explicitMarks[1]), description: entry };
+      }),
       model_answer: item.modelAnswer || item.model_answer || '',
       better_response: item.betterResponse || '',
       weaker_response: item.weakerResponse || '',
@@ -732,11 +748,11 @@ function computeSpecPaper(code: string): PaperData | null {
 }
 
 function computeFallbackPaper(code: string): PaperData | null {
-  const hssc = [...hsscPhysicsPapers, ...hsscXiAnnualPapers].find(paper => paper.paperCode === code);
+  const hssc = [...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].find(paper => paper.paperCode === code);
   if (hssc) return hssc;
   const mathematics = reviewedMathematicsPapers.find(paper => paper.paperCode === code);
   if (mathematics) return mathematics;
-  const biology = reviewedBiologyPapers.find(paper => paper.paperCode === code);
+  const biology = allBiologyPapers.find(paper => paper.paperCode === code);
   if (biology) return biology;
   if (code.startsWith('BIO-')) return null;
   const specPaper = computeSpecPaper(code);
@@ -3237,7 +3253,7 @@ export function getAllStandardPapers(): Array<{
   _count: { questions: number };
 }> {
   const basePapers = [
-    ...[...reviewedBiologyPapers, ...reviewedMathematicsPapers, ...hsscPhysicsPapers, ...hsscXiAnnualPapers].map(paper => ({
+    ...[...allBiologyPapers, ...reviewedMathematicsPapers, ...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].map(paper => ({
       id: paper.id, paperCode: paper.paperCode, title: paper.title,
       examSession: paper.examSession!, examYear: paper.examYear,
       fileUrl: paper.fileUrl!, academicClass: paper.academicClass,

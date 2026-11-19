@@ -1,1 +1,184 @@
-.page{max-width:1100px;margin:auto;padding:2rem 1rem;color:var(--text-color);line-height:1.6}.controls{display:flex;flex-wrap:wrap;align-items:end;gap:1rem;margin:1rem 0}.controls label{display:grid;gap:.5rem;min-width:0}.controls input{max-width:100%;min-height:44px;color:var(--text-color)}.controls button{min-height:44px;padding:.75rem 1rem;border:0;border-radius:8px;background:#0b5e4a;color:white;font:inherit;cursor:pointer}.controls button:disabled{opacity:.5;cursor:not-allowed}.table{overflow-x:auto;border:1px solid var(--border-color);border-radius:12px} .table table{width:100%;border-collapse:collapse;background:var(--card-bg)}.table th,.table td{text-align:left;padding:.75rem;border-bottom:1px solid var(--border-color);vertical-align:top;overflow-wrap:anywhere}.table summary{cursor:pointer;min-height:32px}.table td:first-child{min-width:180px}@media(max-width:600px){.controls{display:grid}.controls button{width:100%}.page{padding:1rem}.table th,.table td{padding:.5rem}}
+.page {
+  max-width: 1100px;
+  min-width: 0;
+  margin: auto;
+  padding: 2rem 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.page > a,
+.table td > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.controls label {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.controls input {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  color: var(--text-color);
+}
+
+.controls input::file-selector-button {
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.controls input:disabled::file-selector-button {
+  cursor: not-allowed;
+}
+
+.page button {
+  min-height: 44px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 8px;
+  background: #0b5e4a;
+  color: white;
+  font: inherit;
+  line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+
+.page button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page :is(a, button, input, summary):focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+.table {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.table table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  background: var(--card-bg);
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.table summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 0.5rem 0;
+  transition: color 140ms ease;
+}
+
+.table details[open] summary {
+  color: var(--primary-color);
+}
+
+.table td:first-child {
+  min-width: 180px;
+}
+
+.table td > button,
+.table td > a {
+  margin: 0.5rem 0.5rem 0 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .page button:hover:not(:disabled) {
+    background: #084b3b;
+  }
+
+  .table summary:hover {
+    color: var(--primary-color);
+  }
+
+  .page a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 0.75rem 0.25rem;
+  }
+
+  .page h1 {
+    margin: 0.5rem 0 0.75rem;
+    font-size: clamp(1.6rem, 6vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .controls input,
+  .controls button {
+    width: 100%;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .table details[open] {
+    animation: disclosureEnter 160ms ease-out;
+  }
+}
+
+@keyframes disclosureEnter {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page button,
+  .table summary {
+    transition: none;
+  }
+}

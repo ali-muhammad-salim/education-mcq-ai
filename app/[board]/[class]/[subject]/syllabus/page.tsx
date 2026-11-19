@@ -15,6 +15,7 @@ import mathIX from "@/data/mathematics/ssc1_exact_syllabus.json";
 import mathX from "@/data/mathematics/ssc2_exact_syllabus.json";
 import SyllabusClient from "./SyllabusClient";
 import {publishedCurriculum} from '@/services/materials/curriculum';
+import { hsscComputerScienceSyllabus, hsscComputerScienceSections } from "@/lib/hsscComputerScienceSyllabus";
 import { hsscPhysicsSyllabus } from "@/lib/hsscPhysicsSyllabus";
 import { physicsSyllabusSections } from "@/lib/physicsSyllabusSections";
 import { sscBiologySyllabus } from "@/lib/sscBiologySyllabus";
@@ -28,9 +29,10 @@ export default async function Page({
     scope = studyScope(raw.board, raw.class, raw.subject);
   if (!scope) notFound();
   const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const computerScience = hsscComputerScienceSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const biology = sscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const compiled = await publishedCurriculum(scope.board.shortCode,scope.classDef.level,scope.meta.title).catch(error => {
-    if ((hssc || biology) && error.name === "PrismaClientInitializationError") return null;
+    if ((hssc || biology || computerScience) && error.name === "PrismaClientInitializationError") return null;
     throw error;
   });
   const docs = await subjectMaterials(
@@ -39,7 +41,7 @@ export default async function Page({
     raw.subject,
     "syllabus",
   ).catch(error => {
-    if ((hssc || biology) && error.name === "PrismaClientInitializationError") return [];
+    if ((hssc || biology || computerScience) && error.name === "PrismaClientInitializationError") return [];
     throw error;
   });
   const isPhysics =
@@ -82,7 +84,7 @@ export default async function Page({
           ? '/materials/ssc/physics/ssc-1/physics-ssc-i-syllabus-grade-9-dedicated.pdf'
           : '/materials/ssc/physics/ssc-2/physics-ssc-ii-syllabus-grade-10-dedicated.pdf');
 
-  const originalPdf = legacy ? dedicatedOriginalPdf : (compiled?.original ?? biology?.original ?? hssc?.original ?? defaultOriginalPdf);
+  const originalPdf = compiled?.original ?? (legacy ? dedicatedOriginalPdf : (biology?.original ?? computerScience?.original ?? hssc?.original ?? defaultOriginalPdf));
 
   const defaultUnits = isComputerScience
     ? (scope.classDef.level === 9 ? csIX : csX)
@@ -114,7 +116,7 @@ export default async function Page({
           }))}
         />
       )}{" "}
-      {hssc || biology || legacy || compiled ? (
+      {hssc || biology || computerScience || legacy || compiled ? (
         <DocumentViews
           title={scope.meta.title+" syllabus"}
           original={originalPdf}
@@ -122,9 +124,10 @@ export default async function Page({
         >
           <SyllabusClient board={scope.board} classDef={scope.classDef} meta={scope.meta} baseUrl={scope.baseUrl}
             originalUrl={originalPdf}
-            units={compiled?.units ?? biology?.units ?? hssc?.units ?? defaultUnits}
+            units={compiled?.units ?? biology?.units ?? computerScience?.units ?? hssc?.units ?? defaultUnits}
+            computerScienceSections={hsscComputerScienceSections(scope.board.id, scope.classDef.level, scope.meta.slug)}
             biologySections={compiled ? null : biology}
-            physicsSections={!compiled || isPhysics ? physicsSyllabusSections(scope.board.id, scope.classDef.level, scope.meta.slug) : null}
+            physicsSections={!compiled ? physicsSyllabusSections(scope.board.id, scope.classDef.level, scope.meta.slug) : null}
           />
         </DocumentViews>
       ) : (

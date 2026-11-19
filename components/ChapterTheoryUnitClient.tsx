@@ -245,7 +245,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                       )}
                     </div>
 
-                    <span style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-color, #111827)' }}>[{item.marks}]</span>
+                    {item.marks != null && <span style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-color, #111827)' }}>[{item.marks}]</span>}
                   </div>
 
                   <div style={{ fontSize: '1.1rem', fontWeight: 400, color: 'var(--text-color, #1f2937)', lineHeight: 1.7, marginBottom: '0.9rem' }}>

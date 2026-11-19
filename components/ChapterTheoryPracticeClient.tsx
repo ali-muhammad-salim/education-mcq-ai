@@ -10,6 +10,8 @@ import type { BoardInfo, ClassDefinition } from '@/lib/boardCatalog';
 import type { SubjectMeta } from '@/lib/subjectMetadata';
 import MathText from '@/components/MathText';
 import { smartMatch } from '@/lib/smartSearch';
+import { physicsUnit16Resource } from '@/lib/physicsUnit16Resource';
+import materialStyles from './MaterialLayout.module.css';
 
 export type TheorySectionMode = 'crqs' | 'erqs' | 'numericals' | 'notes';
 
@@ -85,12 +87,12 @@ export interface ChapterUnitData {
     questionNumber: string;
     sourceTitle: string;
     sourceHref: string;
-    examYear: number;
+    examYear?: number;
     problem: string;
     formula?: string;
     options?: Record<string, string>;
     correctOption?: string;
-    marks: number;
+    marks?: number;
     originalSlo?: string;
     currentSlo?: string;
     currentSloDescription?: string;
@@ -196,7 +198,25 @@ export default function ChapterTheoryPracticeClient({
   });
 
   return (
-    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem 1rem 5rem 1rem', fontFamily: "'Inter', sans-serif" }}>
+    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: mode === 'notes' ? '0.5rem 0 2rem' : '1.5rem 1rem 5rem 1rem', fontFamily: "'Inter', sans-serif" }}>
+      {mode === 'notes' ? (
+        <header style={{ marginBottom: '1rem' }}>
+          <h1 style={{ fontSize: 'clamp(1.35rem, 4vw, 1.8rem)', lineHeight: 1.2, margin: '0 0 0.75rem', color: 'var(--text-color)' }}>
+            {meta.title} notes
+          </h1>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            <select aria-label="Chapter" value={selectedUnitNum ?? ''}
+              onChange={e => setSelectedUnitNum(e.target.value ? Number(e.target.value) : null)}
+              style={{ flex: '1 1 200px', minWidth: 0, minHeight: 44, padding: '0.6rem', borderRadius: 8, border: '1px solid var(--border-color)', background: 'var(--card-bg)', color: 'var(--text-color)' }}>
+              <option value="">All chapters ({totalItemsCount} notes)</option>
+              {units.map(unit => <option key={unit.unitNumber} value={unit.unitNumber}>{unit.unitNumber}. {unit.name}</option>)}
+            </select>
+            <input type="search" aria-label="Search notes" placeholder="Search notes or SLO code"
+              value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
+              style={{ flex: '1 1 200px', minWidth: 0, minHeight: 44, padding: '0.6rem', borderRadius: 8, border: '1px solid var(--border-color)', background: 'var(--card-bg)', color: 'var(--text-color)' }} />
+          </div>
+        </header>
+      ) : (<>
       {/* Hero Banner */}
       <div
         style={{
@@ -302,33 +322,13 @@ export default function ChapterTheoryPracticeClient({
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
           <div>
             <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#111827', margin: 0 }}>
-              {mode === 'notes' ? 'Select a Chapter (or Browse All Below)' : 'Select a Chapter to Open Its Question Paper'}
+              Select a Chapter to Open Its Question Paper
             </h2>
             <p style={{ fontSize: '0.86rem', color: '#64748b', margin: '0.2rem 0 0 0' }}>
-              {mode === 'notes'
-                ? 'Click any unit card to filter to that specific chapter, or use the search bar to find any concept, formula, or SLO code.'
-                : 'Each chapter opens on its own exam-formatted page with every question, official rubric, and E-Marking script for that unit.'}
+              Each chapter opens on its own exam-formatted page with every question, official rubric, and E-Marking script for that unit.
             </p>
           </div>
 
-          {mode === 'notes' && (
-            <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', alignItems: 'center' }}>
-              <input
-                type="search"
-                value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
-                placeholder="Search questions, formulas, typos, synonyms, SLO..."
-                style={{
-                  padding: '0.55rem 0.95rem',
-                  borderRadius: '8px',
-                  border: '1.5px solid #cbd5e1',
-                  fontSize: '0.85rem',
-                  minWidth: '260px',
-                  outline: 'none',
-                }}
-              />
-            </div>
-          )}
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '0.85rem' }}>
@@ -365,16 +365,7 @@ export default function ChapterTheoryPracticeClient({
                 </div>
               </>
             );
-            return mode === 'notes' ? (
-              <button
-                key={u.unitNumber}
-                type="button"
-                onClick={() => setSelectedUnitNum(isSelected ? null : u.unitNumber)}
-                style={directoryStyle}
-              >
-                {unitCardBody}
-              </button>
-            ) : (
+            return (
               <Link key={u.unitNumber} href={`${baseUrl}/${mode}/${u.unitNumber}`} style={directoryStyle}>
                 {unitCardBody}
               </Link>
@@ -383,23 +374,29 @@ export default function ChapterTheoryPracticeClient({
         </div>
       </div>
 
+      </>)}
       {/* Chapter-by-Chapter Questions / Numericals / Notes Listing */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         {mode === 'notes' && activeUnits.map(unit => {
+            const extra = board.id === 'akueb' && classDef.level === 10 && meta.slug === 'physics' && unit.unitNumber === physicsUnit16Resource.unit
+              ? physicsUnit16Resource : null;
+            const query = searchQuery.trim();
+            const showExtra = extra && (!query || smartMatch(extra.title + ' electricity extra resources quiz resistors', query));
           const filteredDefs = unit.definitions.filter(d =>
               !searchQuery.trim()
                 ? true
                 : smartMatch(`${unit.name} ${d.slo_code || ''} ${d.term} ${d.definition}`, searchQuery, d.slo_code)
             );
-            if (!filteredDefs.length) return null;
+            if (!filteredDefs.length && !showExtra) return null;
             return (
               <section
                 key={unit.unitNumber}
+                id={`unit-${unit.unitNumber}`}
                 style={{
                   background: '#ffffff',
                   border: '1.5px solid #dce5e1',
-                  borderRadius: '16px',
-                  padding: '1.75rem',
+                  borderRadius: '12px',
+                  padding: '0.875rem',
                   boxShadow: '0 4px 14px rgba(0,0,0,0.03)',
                 }}
               >
@@ -420,6 +417,12 @@ export default function ChapterTheoryPracticeClient({
                   </Link>
                 </div>
 
+                {showExtra && (
+                  <div className={materialStyles.actions}>
+                    <Link className={materialStyles.button} href={extra.href}>D.C. Circuits notes & PDF</Link>
+                    <Link className={materialStyles.button} href={'/quizzes/' + extra.quizCode + '/take'}>Unit 16 practice quiz</Link>
+                  </div>
+                )}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '0.9rem' }}>
                   {filteredDefs.map((def, idx) => (
                     <div

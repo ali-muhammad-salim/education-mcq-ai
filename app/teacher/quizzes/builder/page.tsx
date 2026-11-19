@@ -14,6 +14,7 @@ import {
 
 import { useDialog } from '@/lib/use-dialog';
 import { questionSchema } from '@/lib/validations/assessment';
+import { createQuizDraftIdentity, parseQuizDraft, quizDraftKey, serializeQuizDraft, type QuizDraftIdentity } from '@/lib/quiz-builder-draft';
 import MathText from '@/components/MathText';
 import { QuizSharingSettings } from '@/components/AssessmentManagement';
 import RichMathChemDiagramEditor from '@/components/RichMathChemDiagramEditor';
@@ -98,16 +99,15 @@ const QUICK_MATH_SYMBOLS = [
   { label: 'Ω', insert: '$\\Omega$' }
 ];
 
-function GoogleFormsQuizBuilderContent() {
+function GoogleFormsQuizBuilderContent({ editQuizId, duplicate }: { editQuizId: string | null; duplicate: boolean }) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const editQuizId = searchParams ? searchParams.get('id') : null;
+  const [quizLoaded, setQuizLoaded] = useState(!editQuizId);
 
   // Active Tab
   const [activeTab, setActiveTab] = useState<'questions' | 'settings'>('questions');
 
   // Quiz Meta State
-  const [quizId, setQuizId] = useState<string | null>(editQuizId);
+  const [quizId, setQuizId] = useState<string | null>(duplicate ? null : editQuizId);
   const [title, setTitle] = useState('Untitled assessment');
   const [scheduleStart, setScheduleStart] = useState(''), [scheduleEnd, setScheduleEnd] = useState('');
   const [description, setDescription] = useState('Official curriculum assessment aligned with AKU-EB Student Learning Objectives (SLOs). Answer all questions.');
@@ -173,24 +173,26 @@ function GoogleFormsQuizBuilderContent() {
 
   useEffect(() => { const warn = (event: BeforeUnloadEvent) => { if (saveStatus === 'unsaved' || saveStatus === 'error') { event.preventDefault(); event.returnValue = ''; } }; window.addEventListener('beforeunload', warn); return () => window.removeEventListener('beforeunload', warn); }, [saveStatus]);
 
-  // Load existing quiz if edit mode
+  // Keep pending loads from replacing a restored draft or a different route's state.
   useEffect(() => {
+    const controller = new AbortController();
     if (editQuizId) {
-      loadQuiz(editQuizId);
+      void loadQuiz(editQuizId, controller.signal);
     }
-  }, [editQuizId]);
+    return () => controller.abort();
+  }, [editQuizId, duplicate]);
 
-  async function loadQuiz(id: string) {
+  async function loadQuiz(id: string, signal: AbortSignal) {
     try {
       setSaveStatus('saving');
-      const res = await fetch(`/api/quizzes/${id}?mode=edit`);
+      const res = await fetch(`/api/quizzes/${id}?mode=edit`, { signal });
       const data = await res.json();
+      if (signal.aborted) return;
       if (!res.ok) throw new Error(data.error?.message || 'Unable to load this assessment.');
       if (data.success && data.quiz) {
         const q = data.quiz;
-        const duplicate = searchParams?.get('duplicate') === '1';
         setQuizId(duplicate ? null : q.id);
-      if (duplicate) setQuizCode(null);
+        if (duplicate) setQuizCode(null);
         else if (q.code) setQuizCode(q.code);
         else setQuizCode(q.id);
         setTitle((duplicate ? 'Copy of ' : '') + (q.title || 'Untitled Assessment'));
@@ -232,19 +234,72 @@ function GoogleFormsQuizBuilderContent() {
           })));
         }
         setSaveStatus(duplicate ? 'unsaved' : 'saved');
+        setQuizLoaded(true);
       }
     } catch (err) {
+      if (signal.aborted) return;
       triggerToast(err instanceof Error ? err.message : 'Unable to load assessment.');
       console.error('Failed to load quiz:', err);
       setSaveStatus('error');
     }
   }
 
-  const draftKey = useRef('');
+  const [draftIdentity, setDraftIdentity] = useState<QuizDraftIdentity | null>(null);
+  const draftKey = draftIdentity ? quizDraftKey(draftIdentity) : '';
   const [draftAvailable, setDraftAvailable] = useState(false);
-  useEffect(() => { void fetch('/api/auth/me').then(r => r.json()).then(data => { if (data.user) { draftKey.current = 'builder-draft:' + data.user.id + ':' + (editQuizId || 'new'); setDraftAvailable(Boolean(sessionStorage.getItem(draftKey.current))); } }); }, [editQuizId]);
-  useEffect(() => { if (draftAvailable || saveStatus !== 'unsaved' || !draftKey.current) return; const timer = setTimeout(() => { try { sessionStorage.setItem(draftKey.current, JSON.stringify({ quizId, title, description, boardId, classLevel, subject, durationMin, visibility, scheduleStart, scheduleEnd, settings, questions })); } catch { /* The online save action remains available if browser storage is full. */ } }, 500); return () => clearTimeout(timer); }, [title, description, boardId, classLevel, subject, durationMin, visibility, scheduleStart, scheduleEnd, settings, questions, saveStatus, draftAvailable, quizId]);
-  const restoreDraft = () => { try { const draft = JSON.parse(sessionStorage.getItem(draftKey.current) || 'null'); if (!draft || !Array.isArray(draft.questions)) return; setQuizId(draft.quizId || null); setTitle(draft.title); setDescription(draft.description); setBoardId(draft.boardId); setClassLevel(draft.classLevel); setSubject(draft.subject); setDurationMin(draft.durationMin); setVisibility(draft.visibility); setScheduleStart(draft.scheduleStart || ''); setScheduleEnd(draft.scheduleEnd || ''); setSettings(draft.settings); setQuestions(draft.questions); setSaveStatus('unsaved'); setDraftAvailable(false); } catch { triggerToast('This local draft could not be restored.'); } };
+  useEffect(() => {
+    const controller = new AbortController();
+    void fetch('/api/auth/me', { signal: controller.signal }).then(r => r.json()).then(data => {
+      if (controller.signal.aborted || !data.user?.id) return;
+      const identity = createQuizDraftIdentity(data.user.id, editQuizId, duplicate);
+      setDraftIdentity(identity);
+      try {
+        setDraftAvailable(Boolean(parseQuizDraft(sessionStorage.getItem(quizDraftKey(identity)), identity)));
+      } catch { /* Browser storage may be unavailable; online saving still works. */ }
+    }).catch(() => { /* Do not use an unscoped draft if the account cannot be resolved. */ });
+    return () => controller.abort();
+  }, [editQuizId, duplicate]);
+
+  useEffect(() => {
+    if (!quizLoaded || draftAvailable || saveStatus !== 'unsaved' || !draftIdentity) return;
+    const timer = setTimeout(() => {
+      try {
+        sessionStorage.setItem(draftKey, serializeQuizDraft(draftIdentity, {
+          quizId, quizCode, status, title, description, boardId, classLevel, subject,
+          durationMin, visibility, scheduleStart, scheduleEnd, settings, questions,
+        }));
+      } catch { /* The online save action remains available if browser storage is full. */ }
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [title, description, boardId, classLevel, subject, durationMin, visibility, scheduleStart, scheduleEnd, settings, questions, saveStatus, draftAvailable, quizId, quizCode, status, draftIdentity, draftKey, quizLoaded]);
+
+  const restoreDraft = () => {
+    if (!quizLoaded || !draftIdentity) return;
+    try {
+      const draft = parseQuizDraft<QuizSettings, QuizQuestionData>(sessionStorage.getItem(draftKey), draftIdentity, status);
+      if (!draft) {
+        setDraftAvailable(false);
+        triggerToast('This local draft could not be restored.');
+        return;
+      }
+      setQuizId(draft.quizId);
+      setQuizCode(draft.quizCode);
+      setStatus(draft.status);
+      setTitle(draft.title);
+      setDescription(draft.description);
+      setBoardId(draft.boardId);
+      setClassLevel(draft.classLevel);
+      setSubject(draft.subject);
+      setDurationMin(draft.durationMin);
+      setVisibility(draft.visibility);
+      setScheduleStart(draft.scheduleStart);
+      setScheduleEnd(draft.scheduleEnd);
+      setSettings(draft.settings);
+      setQuestions(draft.questions);
+      setSaveStatus('unsaved');
+      setDraftAvailable(false);
+    } catch { triggerToast('This local draft could not be restored.'); }
+  };
   // Calculate total points
   const totalPoints = questions.reduce((sum, q) => sum + (Number(q.marks) || 1), 0);
 
@@ -263,6 +318,7 @@ function GoogleFormsQuizBuilderContent() {
   async function reviseQuestion(question: QuizQuestionData) { try { const response = await fetch('/api/dashboard/teacher/doubts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'REVISE', doubtId: question.reviewId, question }) }); const data = await response.json(); if (!response.ok) throw new Error(data.error?.message || 'Unable to submit revision.'); triggerToast('Revision sent to the educator review queue. Approve it before publishing.'); } catch (error) { triggerToast(error instanceof Error ? error.message : 'Unable to submit revision.'); } }
   // Save Quiz
   const handleSaveQuiz = async (publish = false) => {
+    if (!quizLoaded) return;
     try {
       setSaveStatus('saving');
       const targetStatus = publish ? 'PUBLISHED' : status;
@@ -291,10 +347,11 @@ function GoogleFormsQuizBuilderContent() {
       const data = await res.json();
       if (data.success) {
         setQuizId(data.quizId);
-        if (draftKey.current) sessionStorage.removeItem(draftKey.current);
+        setStatus(targetStatus);
+        setDraftAvailable(false);
+        try { if (draftKey) sessionStorage.removeItem(draftKey); } catch { /* A storage failure must not undo a successful cloud save. */ }
         if (data.code) setQuizCode(data.code);
         if (publish) {
-          setStatus('PUBLISHED');
           setIsShareModalOpen(true);
         }
         setSaveStatus('saved');
@@ -1578,7 +1635,7 @@ function GoogleFormsQuizBuilderContent() {
       </div>
 
       <div style={{ maxWidth: 770, margin: '1rem auto' }}>{questions.some(q => q.reviewId) && <button className="gf-draft-btn" onClick={() => void syncReviews()}>Sync approved question revisions</button>}</div>
-      {draftAvailable && (
+      {draftAvailable && quizLoaded && (
         <div role="status" className="gf-draft-notice">
           <span className="gf-blank-rule">Unsaved draft</span>
           <p>This browser tab is holding changes that were never saved to the server.</p>
@@ -1587,7 +1644,7 @@ function GoogleFormsQuizBuilderContent() {
             <button
               type="button"
               className="gf-draft-btn"
-              onClick={() => { sessionStorage.removeItem(draftKey.current); setDraftAvailable(false); }}
+              onClick={() => { try { sessionStorage.removeItem(draftKey); setDraftAvailable(false); } catch { triggerToast('This local draft could not be discarded.'); } }}
             >
               Discard
             </button>
@@ -2576,11 +2633,19 @@ function ShareQuizModal({
   );
 }
 
+function QuizBuilderRoute() {
+  const searchParams = useSearchParams();
+  const editQuizId = searchParams?.get('id') || null;
+  const duplicate = Boolean(editQuizId) && searchParams?.get('duplicate') === '1';
+  // Search-param navigation reuses the page; remount before another mode can save stale state.
+  return <GoogleFormsQuizBuilderContent key={JSON.stringify([editQuizId, duplicate])} editQuizId={editQuizId} duplicate={duplicate} />;
+}
+
 export default function GoogleFormsQuizBuilder() {
 
   return (
     <React.Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'sans-serif' }}>Loading Quiz Builder...</div>}>
-      <GoogleFormsQuizBuilderContent />
+      <QuizBuilderRoute />
     </React.Suspense>
   );
 }

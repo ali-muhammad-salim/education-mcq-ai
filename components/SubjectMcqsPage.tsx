@@ -25,6 +25,7 @@ import pastX2025 from '@/data/physics/ssc2_2025_past_mcqs.json';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import { applyAnswerDecision } from '@/lib/legacyAnswerReview';
 import { reviewedMathematicsPapers } from '@/lib/mathematicsPapers';
+import { hsscComputerScienceResources } from '@/lib/hsscComputerScienceResources';
 import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 import { hsscMcqsData } from '@/lib/hsscMcqsData';
 import HsscMcqsClient from '@/app/[board]/[class]/[subject]/mcqs/HsscMcqsClient';
@@ -52,13 +53,13 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
   if (!board) notFound();
   const classDef = CLASS_DEFINITIONS[classRoman];
   const meta = getSubjectMeta(rawSubject);
-  const hssc = hsscPhysicsResources(boardId, classDef.level, meta.slug);
+  const hssc = hsscPhysicsResources(boardId, classDef.level, meta.slug) ?? hsscComputerScienceResources(boardId, classDef.level, meta.slug);
   const biology = sscBiologySyllabus(boardId, classDef.level, meta.slug);
   if (hssc || biology) {
     const base = `/${board.id}/${classRoman}/${meta.slug}`;
     let data: HsscMcqsData;
     if (hssc) {
-      data = hsscMcqsData(classDef.level, base);
+      data = hsscMcqsData(classDef.level, base, meta.slug);
     } else {
       const chapters = await mappedChapterGroups(board.shortCode, classDef.level, meta.title);
       const mapped = chapters.flatMap(group => group.questions);
@@ -142,7 +143,7 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
           classLabel={`${classDef.name} (${classDef.stageLabel})`}
           subjectTitle={meta.title}
           baseUrl={base}
-          theory={biology ? ['crqs', 'erqs'] : undefined}
+          theory={biology || meta.slug === 'computer-science' ? ['crqs', 'erqs'] : undefined}
           category={category}
           chapter={chapter ?? null}
           data={data}

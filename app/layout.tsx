@@ -1,6 +1,8 @@
 import './globals.css';
 import './mobile.css';
 import './design-system.css';
+import './interactions.css';
+import SiteInteractions from '@/components/SiteInteractions';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BookOpen, GraduationCap, UploadCloud, ShieldCheck, ArrowRight, Mail } from 'lucide-react';
@@ -42,6 +44,7 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
+        <SiteInteractions />
         <div className="app-layout">
           <NavProgress />
           

@@ -161,8 +161,8 @@ html.dark .rise-ui .masthead {
   border: 1px solid rgba(255, 255, 255, 0.32);
 }
 
-.mastBack:hover {
-  background: rgba(255, 255, 255, 0.2);
+@media (hover: hover) and (pointer: fine) {
+  .mastBack:hover { background: rgba(255, 255, 255, 0.2); }
 }
 
 .mastPrimary {
@@ -177,14 +177,12 @@ html.dark .rise-ui .mastPrimary {
   color: #07382c;
 }
 
-.mastPrimary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+@media (hover: hover) and (pointer: fine) {
+  .mastPrimary:hover { box-shadow: inset 0 0 0 2px var(--r-mint); }
 }
 
-.mastBack:active,
-.mastPrimary:active {
-  transform: translateY(1px) scale(0.98);
+.mastBack:active, .mastPrimary:active {
+  box-shadow: inset 0 0 0 2px var(--r-mint);
 }
 
 /* ── Category rail ─────────────────────────────────────────────────────── */
@@ -213,17 +211,16 @@ html.dark .rise-ui .mastPrimary {
     transform var(--r-fast) var(--r-ease);
 }
 
-.railLink:hover {
-  border-color: var(--r-emerald);
-  background: var(--r-emerald-wash);
+@media (hover: hover) and (pointer: fine) {
+  .railLink:not(.railOn):hover {
+    border-color: var(--r-emerald);
+    background: var(--r-emerald-wash);
+  }
 }
 
-.railLink:active {
-  transform: scale(0.97);
-}
+.railLink:active { border-color: var(--r-emerald); }
 
-.railOn,
-.railOn:hover {
+.railOn {
   border-color: var(--r-emerald);
   background: var(--r-emerald);
   color: #fff !important;
@@ -446,37 +443,21 @@ html.dark .rise-ui .railOn {
   background: var(--r-surface);
   box-shadow: var(--r-shadow-sm);
   color: var(--r-ink);
-  animation: tileIn var(--r-slow) var(--r-ease) both;
   transition: transform var(--r-base) var(--r-ease), border-color var(--r-base) var(--r-ease),
     box-shadow var(--r-base) var(--r-ease);
 }
 
-.tile:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--r-emerald) 45%, var(--r-rule));
-  box-shadow: var(--r-shadow-lg);
+@media (hover: hover) and (pointer: fine) {
+  .tile:not(.tileEmpty):hover {
+    border-color: color-mix(in srgb, var(--r-emerald) 45%, var(--r-rule));
+    box-shadow: var(--r-shadow);
+  }
 }
 
 .tileEmpty {
   border-style: dashed;
   background: var(--r-surface-sunk);
   box-shadow: none;
-}
-
-.tileEmpty:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-@keyframes tileIn {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 .tileHead {
@@ -652,7 +633,7 @@ html.dark .rise-ui .railOn {
 }
 
 .action:active {
-  transform: scale(0.97);
+  box-shadow: inset 0 0 0 2px var(--r-rule-strong);
 }
 
 .actionPrimary {
@@ -666,17 +647,12 @@ html.dark .rise-ui .actionPrimary {
   color: #06251c !important;
 }
 
-.actionPrimary:hover {
-  background: var(--r-emerald-press);
-  box-shadow: 0 6px 16px color-mix(in srgb, var(--r-emerald) 30%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .actionPrimary:hover { background: var(--r-emerald-press); }
 }
 
 .actionArrow {
   transition: transform var(--r-fast) var(--r-ease);
-}
-
-.actionPrimary:hover .actionArrow {
-  transform: translateX(3px);
 }
 
 .actionQuiet {
@@ -685,9 +661,11 @@ html.dark .rise-ui .actionPrimary {
   color: var(--r-emerald) !important;
 }
 
-.actionQuiet:hover {
-  border-color: var(--r-emerald);
-  background: var(--r-emerald-wash);
+@media (hover: hover) and (pointer: fine) {
+  .actionQuiet:hover {
+    border-color: var(--r-emerald);
+    background: var(--r-emerald-wash);
+  }
 }
 
 /* ── Cognitive tiers ───────────────────────────────────────────────────── */
@@ -728,9 +706,11 @@ html.dark .rise-ui .actionPrimary {
   background: var(--tier-ink);
 }
 
-.tier .actionPrimary:hover {
-  background: var(--tier-ink);
-  filter: brightness(0.92);
+@media (hover: hover) and (pointer: fine) {
+  .tier .actionPrimary:hover {
+    background: var(--tier-ink);
+    box-shadow: inset 0 0 0 2px var(--tier-wash);
+  }
 }
 
 .toneRecall {
@@ -774,20 +754,18 @@ html.dark .rise-ui .actionPrimary {
   border-radius: 14px;
   background: var(--r-surface);
   box-shadow: var(--r-shadow-sm);
-  animation: tileIn var(--r-slow) var(--r-ease) both;
   transition: transform var(--r-base) var(--r-ease), border-color var(--r-base) var(--r-ease),
     box-shadow var(--r-base) var(--r-ease);
 }
 
-.dirTile:hover {
-  transform: translateY(-2px);
-  border-color: var(--r-emerald);
-  box-shadow: var(--r-shadow-lg);
+@media (hover: hover) and (pointer: fine) {
+  .dirTile:hover {
+    border-color: var(--r-emerald);
+    box-shadow: var(--r-shadow);
+  }
 }
 
-.dirTile:active {
-  transform: scale(0.99);
-}
+.dirTile:active { border-color: var(--r-emerald); }
 
 .dirIcon {
   display: inline-flex;
@@ -835,9 +813,8 @@ html.dark .rise-ui .actionPrimary {
   transition: transform var(--r-fast) var(--r-ease), color var(--r-fast) var(--r-ease);
 }
 
-.dirTile:hover .dirArrow {
-  transform: translateX(3px);
-  color: var(--r-emerald);
+@media (hover: hover) and (pointer: fine) {
+  .dirTile:hover .dirArrow { color: var(--r-emerald); }
 }
 
 /* ── Empty state ───────────────────────────────────────────────────────── */
@@ -1031,9 +1008,40 @@ html.dark .rise-ui .actionPrimary {
   }
 }
 
-@media (hover: none) {
-  .tile:hover,
-  .dirTile:hover {
-    transform: none;
-  }
+.shell { overflow-wrap: anywhere; }
+.grid > *, .directory > *, .segment { min-width: 0; }
+.tileHead { flex-wrap: wrap; }
+
+.mastBack:focus-visible, .mastPrimary:focus-visible,
+.railLink:focus-visible, .action:focus-visible,
+.segmentBtn:focus-visible, .dirTile:focus-visible {
+  outline: 2px solid var(--r-emerald);
+  outline-offset: 3px;
+}
+.mastBack:focus-visible, .mastPrimary:focus-visible { outline-color: var(--r-mint); }
+.segmentBtn:active { color: var(--r-emerald); }
+
+@media (max-width: 700px) {
+  .masthead { margin-inline: 0; padding: var(--r-3); }
+  .masthead .mastTitle { font-size: 1.4rem; line-height: 1.2; }
+  .masthead .mastLede, .section .sectionNote, .dirNote { font-size: 0.9375rem; }
+  .badge, .statLabel, .unitBadge, .tierBadge { font-size: 0.75rem; }
+  .mastBack, .mastPrimary, .railLink, .action, .segmentBtn, .searchInput, .toggle { min-height: 44px; }
+  .mastBack, .mastPrimary, .railLink, .action, .segmentBtn, .toggle { font-size: 0.875rem; }
+  .searchInput { font-size: 1rem; }
+  .rail { margin-inline: 0; padding: var(--r-1); mask-image: none; scrollbar-width: thin; }
+  .rail::-webkit-scrollbar { display: block; height: 4px; }
+  .railLink { flex-shrink: 0; }
+  .grid, .directory { grid-template-columns: minmax(0, 1fr); }
+  .tile { padding: var(--r-3); }
+  .tile .tileTopics { display: block; overflow: visible; font-size: 0.9375rem; }
+  .segment { flex-wrap: wrap; }
+  .dirTile { padding: var(--r-3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mastBack, .mastPrimary, .railLink, .searchInput, .segmentBtn,
+  .toggleTrack, .toggleTrack::after, .tile, .action, .actionArrow,
+  .dirTile, .dirArrow { transition: none; }
+  .meterModel, .meterPast { animation: none; }
 }

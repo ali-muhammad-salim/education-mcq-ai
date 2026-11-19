@@ -1055,10 +1055,11 @@
     box-shadow var(--r-fast) var(--r-ease), transform var(--r-fast) var(--r-ease);
 }
 
-.option:hover:not(:disabled) {
-  border-color: var(--r-emerald);
-  box-shadow: var(--r-shadow);
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .option:hover:not(:disabled) {
+    border-color: var(--r-emerald);
+    box-shadow: var(--r-shadow);
+  }
 }
 
 .option:active:not(:disabled) {
@@ -1102,9 +1103,11 @@
     color var(--r-base) var(--r-ease), transform var(--r-base) var(--r-ease);
 }
 
-.option:hover:not(:disabled) .bubble {
-  border-color: var(--r-emerald);
-  color: var(--r-emerald);
+@media (hover: hover) and (pointer: fine) {
+  .option:hover:not(:disabled) .bubble {
+    border-color: var(--r-emerald);
+    color: var(--r-emerald);
+  }
 }
 
 .optionChosen .bubble {
@@ -1477,7 +1480,7 @@
 
 .scoreGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   gap: var(--r-3);
   margin: var(--r-5) 0 var(--r-4);
 }
@@ -2352,6 +2355,84 @@
   .barTools .primary {
     padding: 0 0.55rem;
     font-size: var(--r-text-sm);
+  }
+}
+
+/* Only the mounted completion report reveals; question reading stays still. */
+@media (prefers-reduced-motion: no-preference) {
+  .results .reportHead {
+    animation: reportReveal 240ms var(--r-ease) both;
+  }
+}
+
+@keyframes reportReveal {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+.chip,
+.filter {
+  transition: background-color var(--r-fast) var(--r-ease),
+    color var(--r-fast) var(--r-ease), border-color var(--r-fast) var(--r-ease);
+}
+
+.optionText {
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .stepper,
+  .launch {
+    flex-wrap: wrap;
+  }
+  .stepper > button {
+    flex: 1 1 120px;
+  }
+  .resumeActions {
+    width: 100%;
+  }
+  .resumeActions > button {
+    flex: 1 1 140px;
+    min-height: 44px;
+  }
+  .chip,
+  .filter,
+  .attempt,
+  .textButton {
+    min-height: 44px;
+  }
+  .sheetClose {
+    width: 44px;
+    height: 44px;
+  }
+  .mode {
+    min-height: 44px;
+  }
+  .launch .primary {
+    min-width: 0;
+  }
+  .launch .primary span {
+    white-space: normal;
+  }
+  .plateValue,
+  .candidateName {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay *,
+  .promptOverlay * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .primary:active,
+  .quiet:active,
+  .tool:active,
+  .slot:hover,
+  .slot:active,
+  .option:active {
+    transform: none !important;
   }
 }
 

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { requireUser, rateLimit } from '@/lib/security';
 import { ApiError, apiError } from '@/lib/api';
-import { invalidateSession, invalidateUserSessions, sessionTokenHash } from '@/lib/auth';
+import { sessionTokenHash } from '@/lib/auth';
 import { hashPassword, verifyPassword } from '@/lib/passwords';
 import { z } from 'zod';
 
@@ -15,16 +15,18 @@ export async function GET(req: NextRequest) {
   try {
     const user = await requireUser(req);
     const hash = currentTokenHash(req);
-    const [profile, request, sessions] = await Promise.all([
+    const activeSessionWhere = { userId: user.id, expiresAt: { gt: new Date() } };
+    const [profile, request, sessions, activeSessions] = await Promise.all([
       prisma.user.findUnique({ where: { id: user.id }, select: { id: true, name: true, email: true, emailVerified: true, role: true, createdAt: true } }),
       prisma.auditLog.findFirst({ where: { userId: user.id, action: { in: ['TEACHER_ACCESS_REQUESTED', 'TEACHER_ACCESS_REJECTED'] } }, orderBy: { createdAt: 'desc' }, select: { action: true, createdAt: true } }),
-      prisma.userSession.findMany({ where: { userId: user.id, expiresAt: { gt: new Date() } }, orderBy: { createdAt: 'desc' }, take: 20, select: { id: true, token: true, ipAddress: true, userAgent: true, createdAt: true, expiresAt: true } }),
+      prisma.userSession.findMany({ where: activeSessionWhere, orderBy: { createdAt: 'desc' }, take: 20, select: { id: true, token: true, ipAddress: true, userAgent: true, createdAt: true, expiresAt: true } }),
+      prisma.userSession.count({ where: activeSessionWhere }),
     ]);
     return NextResponse.json({
       success: true,
       user: profile,
       teacherRequest: request,
-      activeSessions: sessions.length,
+      activeSessions,
       sessions: sessions.map(({ token, ...session }) => ({ ...session, current: token === hash })),
     });
   } catch (error) { return apiError(error); }
@@ -48,13 +50,11 @@ export async function POST(req: NextRequest) {
       await prisma.user.update({ where: { id: user.id }, data: { name: input.name } });
     } else if (input.action === 'REVOKE_SESSIONS') {
       await prisma.userSession.deleteMany({ where: { userId: user.id } });
-      invalidateUserSessions(user.id);
       response.cookies.delete('mcqs_session');
     } else if (input.action === 'REVOKE_SESSION') {
       const target = await prisma.userSession.findFirst({ where: { id: input.sessionId, userId: user.id }, select: { id: true, token: true } });
       if (!target) throw new ApiError(404, 'SESSION_NOT_FOUND', 'That device is already signed out.');
       await prisma.userSession.delete({ where: { id: target.id } });
-      invalidateSession(target.token);
       const current = target.token === hash;
       const result = NextResponse.json({ success: true, current });
       if (current) result.cookies.delete('mcqs_session');
@@ -65,7 +65,6 @@ export async function POST(req: NextRequest) {
       if (!await verifyPassword(input.currentPassword, account.passwordHash)) throw new ApiError(400, 'INVALID_PASSWORD', 'Your current password is incorrect.');
       await prisma.user.update({ where: { id: user.id }, data: { passwordHash: await hashPassword(input.newPassword) } });
       await prisma.userSession.deleteMany({ where: { userId: user.id, ...(hash ? { token: { not: hash } } : {}) } });
-      invalidateUserSessions(user.id);
     } else {
       await prisma.auditLog.create({ data: { userId: user.id, action: 'TEACHER_ACCESS_REQUESTED', resource: 'User', resourceId: user.id, details: { reason: input.reason } } });
     }

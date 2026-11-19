@@ -1,0 +1,302 @@
+[
+  [
+    "Minicomputers serve mid-sized departments, not enterprise-wide transaction scaling.",
+    "Supercomputers focus on high-performance scientific simulations rather than transactional business records.",
+    "Microcomputers (personal computers) are single-user workstations.",
+    "Mainframe computers provide massive I/O bandwidth, reliability, and enterprise throughput."
+  ],
+  [
+    "Data capture belongs to the input stage and presenting data belongs to the output stage.",
+    "Presenting data belongs to the output stage rather than the processing stage.",
+    "Data capture belongs to the input stage.",
+    "Executing CPU instructions and transforming raw data into structured information define the processing stage."
+  ],
+  [
+    "Managing hardware resources (CPU, RAM, storage, I/O) is the primary role of the operating system.",
+    "The OS manages system hardware to support applications, not to run applications exclusively.",
+    "Internet connectivity is a networking capability managed by OS drivers, not its primary purpose.",
+    "Security is an integrated feature, but hardware abstraction and resource management remain primary."
+  ],
+  [
+    "Open-source software includes accessible source code without feature-limiting trial expiration.",
+    "Licensed software requires purchase prior to authorized deployment.",
+    "Shareware is distributed free on a trial basis with feature or time restrictions.",
+    "Freeware is fully free indefinitely without requiring payment, though closed-source."
+  ],
+  [
+    "Providing an application platform is the function of the core operating system.",
+    "Utility software performs maintenance, optimization, and routine housekeeping tasks.",
+    "UI enhancements may be cosmetic features, but not the primary functional role of utilities.",
+    "Compiling high-level languages is the function of language translators, not general utilities."
+  ],
+  [
+    "Word processors specialize in formatted text documents, not mathematical data modeling.",
+    "Web browsers retrieve and render web pages.",
+    "Spreadsheets provide formula engines and grid structures ideal for mathematical and data analysis.",
+    "Code/text editors provide raw text editing without automated calculation engines."
+  ],
+  [
+    "Joysticks are designed for directional gaming control, lacking graphic precision.",
+    "Trackballs offer ergonomic cursor navigation but lack freehand drawing stroke control.",
+    "Touchpads are general pointing devices with limited stroke fidelity for detailed art.",
+    "Graphics tablets utilize pressure-sensitive styluses to deliver high-resolution drawing precision."
+  ],
+  [
+    "Stylus pens without conductive tips work on resistive screens, not basic capacitive screens.",
+    "Pressure-based input characterizes resistive touch technology.",
+    "Capacitive touchscreens require the natural electrical capacitance and conductance of human skin.",
+    "Outdoor visibility depends on display brightness and anti-glare coatings, not capacitive sensing."
+  ],
+  [
+    "Barcode readers scan printed 1D lines, not magnetic ATM bank cards.",
+    "Optical mark readers detect shaded bubble marks on exam sheets.",
+    "Magnetic card readers (MCR) decode the magnetic stripe on ATM cards.",
+    "QR code readers decode 2D optical matrix symbols."
+  ],
+  [
+    "Magnetic Ink Character Recognition (MICR) reads magnetized iron-oxide numbers on cheques.",
+    "QR code readers scan 2D barcodes, not standardized banking cheque lines.",
+    "Optical Character Recognition (OCR) reads standard printed text optically without magnetic verification.",
+    "Barcode readers decode linear striped codes."
+  ],
+  [
+    "Five bytes would omit one of the 6 characters in 'ADD-ON'.",
+    "The word 'ADD-ON' consists of 6 characters (A, D, D, -, O, N), requiring exactly 6 bytes.",
+    "Forty bytes overstates character storage by an order of magnitude.",
+    "Forty-eight bytes confuses bits (48 bits) with bytes."
+  ],
+  [
+    "Two Tebibytes (TiB) equal 2 x 1024 = 2048 Gibibytes (GiB).",
+    "Mebibytes (MiB) are smaller by a factor of 1024.",
+    "1024 MiB equals 1 GiB, far smaller than 2 TiB.",
+    "1024 GiB equals only 1 TiB."
+  ],
+  [
+    "Temporary storage describes volatile RAM.",
+    "ROM permanently stores non-volatile startup firmware (such as BIOS/UEFI).",
+    "Standard ROM cannot be directly rewritten during normal runtime.",
+    "Adding and deleting data describes rewritable secondary storage or RAM."
+  ],
+  [
+    "Cache memory stores frequently referenced instructions and data close to CPU execution units.",
+    "Permanent file storage is handled by secondary storage (SSD/HDD).",
+    "The complete operating system resides in storage and RAM, not small cache memory.",
+    "Cache provides accelerated access speed, not bulk storage capacity."
+  ],
+  [
+    "DRAM requires periodic electrical refreshing because capacitor charges decay.",
+    "Each DRAM memory cell is constructed from a single transistor and a single capacitor.",
+    "DRAM is slower than multi-transistor SRAM.",
+    "DRAM is volatile and requires continuous power to retain data."
+  ],
+  [
+    "Static RAM (SRAM) provides the sub-nanosecond speeds required for CPU cache.",
+    "DRAM is used for main system memory, not on-die processor cache.",
+    "SDRAM is synchronous DRAM used for main memory modules.",
+    "DDR SDRAM is high-speed main system RAM."
+  ],
+  [
+    "L3 cache is larger in storage capacity and slower in access speed than L1 and L2 caches.",
+    "L3 is larger, not smaller than L1/L2.",
+    "L3 differs markedly in both capacity and access timing from L1 and L2.",
+    "L3 is slower, not faster than L1 and L2."
+  ],
+  [
+    "CDs use 780 nm infrared lasers.",
+    "Blu-ray discs use 405 nm blue-violet lasers.",
+    "The board key accepts option C (I and II), grouping legacy optical formats.",
+    "DVDs use 650 nm red lasers, while Blu-ray uses blue-violet."
+  ],
+  [
+    "Flash memory stores data by trapping electrons inside floating-gate transistor cells.",
+    "Spinning magnetic platters describe traditional hard disk drives (HDDs).",
+    "Lasers read and write optical discs, not solid-state flash memory.",
+    "Flash memory is non-volatile persistent storage, not temporary."
+  ],
+  [
+    "Data flow routing is managed by the system bus and control unit.",
+    "Long-term data is preserved in non-volatile secondary storage.",
+    "Registers provide immediate, temporary on-chip data storage during CPU processing.",
+    "Peripheral bus interfaces connect external devices."
+  ],
+  [
+    "The Stack Pointer (SP) tracks the top address of the call stack in memory.",
+    "The Accumulator (AC) stores intermediate calculation results generated by the ALU.",
+    "The Base Register (BR) holds base memory addresses for relative addressing.",
+    "The Status Register (SR) stores conditional status flags (zero, carry, overflow)."
+  ],
+  [
+    "Retrieving the next instruction occurs during the fetch phase.",
+    "Writing results back occurs during memory write-back.",
+    "The execute phase interprets control signals and executes the instruction action.",
+    "Decoding the instruction occurs during the decode phase."
+  ],
+  [
+    "Registers are internal CPU memory elements.",
+    "The system unit is the external computer housing, not an internal component of the CPU.",
+    "The control unit is a primary core subsystem of the CPU.",
+    "Internal buses interconnect CPU registers, the ALU, and the control unit."
+  ],
+  [
+    "The base register (BX) and counter register (CX) serve as versatile general-purpose registers.",
+    "The instruction register (IR) is a dedicated special-purpose register.",
+    "Both IR and MAR are special-purpose internal registers.",
+    "The Memory Address Register (MAR) is dedicated to memory addressing, not general storage."
+  ],
+  [
+    "I/O operations involve input/output instructions, not simple internal data transfer.",
+    "Direct disk transfers are handled via DMA controllers, not basic register instructions.",
+    "Data transfer instructions (MOV, LOAD, STORE) transfer values between registers and RAM.",
+    "Direct transfers to disk require peripheral controller commands."
+  ],
+  [
+    "HDMI carries high-definition digital video and multi-channel digital audio simultaneously.",
+    "Serial ports carry low-speed asynchronous character data.",
+    "USB connects peripherals, though USB-C can support display with DisplayPort alt-mode.",
+    "PS/2 ports connect legacy keyboards and mice."
+  ],
+  [
+    "Wireless network cards communicate over radio frequencies without wires.",
+    "Modems modulate and demodulate analog carrier signals over telephone/cable lines.",
+    "A Gigabit Network Card (Gigabit Ethernet NIC) provides high-speed wired network connectivity.",
+    "Sound cards process and output audio signals."
+  ],
+  [
+    "SIMMs have a 32-bit path, whereas DIMMs have a 64-bit path.",
+    "SIMMs feature a 32-bit channel path, while DIMMs deliver a 64-bit channel path.",
+    "DIMMs doubled the bus width compared to older SIMMs.",
+    "SIMMs cannot transfer 64 bits in a single cycle."
+  ],
+  [
+    "Mice and monitors are external peripherals.",
+    "Monitors, keyboards, and mice are external peripheral devices.",
+    "The system unit fundamentally houses the casing, internal power supply, and motherboard.",
+    "Keyboards are external input peripherals."
+  ],
+  [
+    "Computer networks are fundamentally built to enable digital communication and shared resource access.",
+    "Processing complex calculations is the job of the CPU and GPU.",
+    "Massive data storage is provided by storage area networks (SAN) or hard drives.",
+    "Graphic rendering is performed by the display GPU."
+  ],
+  [
+    "Metropolitan Area Networks (MAN) span entire cities or large metropolitan areas.",
+    "Interplanetary Internet (IPN) is designed for deep-space communications across planets.",
+    "Wide Area Networks (WAN) span broad geographical regions and countries.",
+    "Body Area Networks (BAN) operate across centimeters to a few meters for wearable devices."
+  ],
+  [
+    "Physical and network layers remain distinct lower layers in network reference models.",
+    "The network and transport layers operate independently beneath the application layer.",
+    "The TCP/IP Application layer absorbs the OSI Session, Presentation, and Application layers.",
+    "The transport layer remains a separate standalone layer in TCP/IP."
+  ],
+  [
+    "A bus topology shares a single central cable without redundant paths.",
+    "A star topology connects all nodes to one central hub or switch.",
+    "A ring topology connects nodes in a single circular loop.",
+    "A mesh topology provides multiple interconnected redundant paths between nodes."
+  ],
+  [
+    "Star topologies connect radially to a central device.",
+    "In a ring topology, every node connects to two neighbors forming a closed single loop.",
+    "Tree topologies branch hierarchically from a root node.",
+    "Mesh topologies feature multiple point-to-point interconnections rather than one closed ring."
+  ],
+  [
+    "LTE is a cellular telecommunication standard spanning kilometers.",
+    "Wi-Fi typically covers local area ranges of 30 to 100 meters.",
+    "WiMAX provides broadband metropolitan wireless access over several kilometers.",
+    "Bluetooth is designed for short-range personal area wireless communication within 10 meters."
+  ],
+  [
+    "Infrared/wireless networks allow mobile devices to join without running or altering physical cables.",
+    "Optic fibre networks require physical optical fiber cable drops.",
+    "Coaxial cable networks require physical coaxial wiring.",
+    "Telephone line networks depend on physical twisted-pair copper wires."
+  ],
+  [
+    "Line of sight refers to an unobstructed, straight visual path between transmitter and receiver.",
+    "Earth curvature limits line of sight, but does not define the term itself.",
+    "Signal transmission distance is attenuation range, not line of sight.",
+    "Frequency indicates wave oscillation rate, not spatial trajectory."
+  ],
+  [
+    "Traditional GSM split voice and GPRS data into separate switched slots.",
+    "FDMA divides frequency bands among users.",
+    "Early 2G/3G CDMA configurations handled voice and data separately.",
+    "LTE uses all-IP packet architectures (like VoLTE) enabling concurrent voice and data on the same link."
+  ],
+  [
+    "GPS does not increase computer local network bandwidth.",
+    "GPS does not provide internet access speed acceleration.",
+    "The primary purpose of GPS is providing accurate real-time geographic positioning and navigation.",
+    "GPS satellites broadcast low-bandwidth timing signals, not high-volume bulk data sharing."
+  ],
+  [
+    "DBMS reduces data inconsistency through centralized constraints.",
+    "DBMS enhances, rather than limits, concurrent user data access.",
+    "DBMS simplifies data integration across application modules.",
+    "High initial implementation, hardware, and licensing costs represent a major disadvantage of DBMS."
+  ],
+  [
+    "The network model permits multiple parent records per child.",
+    "The hierarchical model organizes data in a tree structure with single parents and multiple children.",
+    "Object-oriented models organize data into classes and encapsulation hierarchies.",
+    "Object-relational models extend relational tables with object features."
+  ],
+  [
+    "Uniquely identifying records is the primary role of the primary key.",
+    "Data types are enforced by schema column definitions.",
+    "A foreign key establishes a verified referential relationship linking two tables.",
+    "Large text is stored in text/blob fields, not foreign key attributes."
+  ],
+  [
+    "A single piece of data is a data element or field value.",
+    "A database record (tuple) is a complete collection of related fields describing one entity.",
+    "Visual representation describes database forms or diagrammatic reports.",
+    "Storage format describes file formats, not the relational entity record."
+  ],
+  [
+    "Record refers to a horizontal row (tuple).",
+    "Tuple is another term for a row or record.",
+    "In a relational database table, a vertical column is termed a field (or attribute).",
+    "A file is an entire collection of related records or a database file."
+  ],
+  [
+    "Employee_Name consists of text characters.",
+    "Employee_Age is an integer numerical quantity suitable for mathematical evaluation.",
+    "Gender is stored as text or a single-character code (M/F).",
+    "Address contains alphanumeric text strings."
+  ],
+  [
+    "Tables store raw data in row/column matrices.",
+    "A Form object provides a user-friendly graphical interface for entering and editing data.",
+    "Queries retrieve and filter specific data subsets.",
+    "Reports format and summarize data for printed presentation."
+  ],
+  [
+    "Filtering data is the function of database queries.",
+    "The primary role of a table is storing persistent structured data in rows and columns.",
+    "Generating reports is the purpose of database report objects.",
+    "Viewing data interactively on screen is commonly facilitated by forms and datasheets."
+  ],
+  [
+    "TRUNCATE TABLE empties table contents but preserves the table structure.",
+    "REMOVE TABLE is not standard SQL DDL syntax.",
+    "DELETE TABLE is invalid SQL; DELETE FROM removes records, not table schemas.",
+    "DROP TABLE is the DDL command that removes both table data and its schema definition."
+  ],
+  [
+    "The SQL query 'Select CarModel, CarPrice From Cars;' cleanly selects the two specified fields.",
+    "Prefixing field names with asterisks produces a syntax error.",
+    "AND cannot replace the comma between selected field names in a SELECT clause.",
+    "Parenthetical conjunction syntax is invalid in a SELECT list."
+  ],
+  [
+    "Updating existing data is performed by the UPDATE statement.",
+    "Inserting new data is performed by the INSERT statement.",
+    "The WHERE clause evaluates logical conditions to filter records returned or modified.",
+    "Deleting data is initiated by the DELETE statement, while WHERE constrains the scope."
+  ]
+]

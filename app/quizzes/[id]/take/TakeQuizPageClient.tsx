@@ -8,16 +8,17 @@ interface Props {
   paperTitle: string;
   paperCode: string;
   questions: any[];
+  returnHref?: string;
 }
 
-export default function TakeQuizPageClient({ paperTitle, paperCode, questions }: Props) {
+export default function TakeQuizPageClient({ paperTitle, paperCode, questions, returnHref }: Props) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
     setIsOpen(false);
     const sourceCode=paperCode.replace(/-SET-[0-9-]+$/,'');
-    router.push(sourceCode.startsWith('PHY-') ? `/past-papers/${sourceCode}` : '/quizzes');
+    router.push(returnHref || (sourceCode.startsWith('PHY-') ? `/past-papers/${sourceCode}` : '/quizzes'));
   };
 
   return (

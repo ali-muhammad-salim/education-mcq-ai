@@ -11,6 +11,7 @@ import { filterSyllabus, syllabusLevel, syllabusDisplayText } from '@/lib/syllab
 import StructuredContent from '@/components/StructuredContent';
 import { SubjectMeta } from '@/lib/subjectMetadata';
 import { scrollAndPulse } from '@/lib/anchorPulse';
+import type { hsscComputerScienceSections } from "@/lib/hsscComputerScienceSyllabus";
 import type { physicsSyllabusSections } from '@/lib/physicsSyllabusSections';
 import type { sscBiologySyllabus } from '@/lib/sscBiologySyllabus';
 import styles from './SyllabusClient.module.css';
@@ -23,6 +24,7 @@ interface Props {
   units: any[];
   originalUrl?: string;
   physicsSections?: ReturnType<typeof physicsSyllabusSections>;
+  computerScienceSections?: ReturnType<typeof hsscComputerScienceSections>;
   biologySections?: ReturnType<typeof sscBiologySyllabus>;
 }
 
@@ -31,13 +33,13 @@ function outcomeAnchor(subject: string, slo: { code: string; cognitiveLevel: str
     ? '16.2.4-U' : slo.code;
 }
 
-export default function SyllabusClient({ board, classDef, meta, baseUrl, units, originalUrl, physicsSections, biologySections }: Props) {
-  const sections = physicsSections ?? biologySections;
+export default function SyllabusClient({ board, classDef, meta, baseUrl, units, originalUrl, physicsSections, biologySections, computerScienceSections }: Props) {
+  const sections = physicsSections ?? biologySections ?? computerScienceSections;
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedUnit, setSelectedUnit] = useState<number | 'all'>('all');
   const [cognitiveFilter, setCognitiveFilter] = useState<'all' | 'R' | 'U' | 'A' | 'An' | 'E' | 'C' | 'FA'>('all');
   const [expandedUnits, setExpandedUnits] = useState<Record<number, boolean>>({
-    1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true,
+    15: true, 16: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true,
     8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true
   });
 
@@ -89,11 +91,11 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
     (meta.slug === 'physics' || meta.slug === 'computer-science' || meta.slug === 'chemistry') &&
     (classDef.roman === 'IX' || classDef.roman === 'X');
   const hsscChapterPractice = Boolean(physicsSections?.firstExam);
-  const pdfUrl = isCS
+  const pdfUrl = originalUrl || (isCS
     ? (classDef.roman === 'IX'
       ? '/materials/ssc/computer-science/ssc-1/computer-science-ssc-i-syllabus-grade-9-dedicated.pdf'
       : '/materials/ssc/computer-science/ssc-2/computer-science-ssc-ii-syllabus-grade-10-dedicated.pdf')
-    : (originalUrl || (classDef.roman === 'IX'
+    : (classDef.roman === 'IX'
       ? '/materials/ssc/physics/ssc-1/physics-ssc-i-syllabus-grade-9-dedicated.pdf'
       : '/materials/ssc/physics/ssc-2/physics-ssc-ii-syllabus-grade-10-dedicated.pdf'));
 
@@ -178,11 +180,11 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
                 {sections.chapters.map(chapter => (
                   <div key={chapter.number}>
                     <strong>{chapter.number}. {units.find(unit => unit.unitNumber === chapter.number)?.name}</strong>
-                    <span>{chapter.mcqs} MCQs{chapter.crqMarks ? ` · 1 CRQ (${chapter.crqMarks} marks)` : ''}</span>
+                    <span>{computerScienceSections && classDef.level === 11 && chapter.number === 8 ? 'Formative assessment' : `${chapter.mcqs} MCQs`}{chapter.crqMarks ? ` · ${computerScienceSections ? chapter.crqMarks / 3 : 1} CRQ(s) (${chapter.crqMarks} marks)` : ''}</span>
                   </div>
                 ))}
               </div>
-              <p><strong>ERQs:</strong> Choose one question from each pair, worth {sections.erqMarks} marks each. Chapter pairs: {sections.erqPairs.map(pair => pair.join(' or ')).join('; ')}.</p>
+              <p><strong>ERQs:</strong> Choose one question from each pair, worth {sections.erqMarks} marks each. Chapter pairs: {sections.erqPairs.map(pair => pair[0] === pair[1] ? `two alternatives from chapter ${pair[0]}` : pair.join(' or ')).join('; ')}.</p>
               <a href={sections.original + '#page=' + sections.assessmentPage} target="_blank" rel="noopener noreferrer">Open the official assessment table (PDF)</a>
             </div>
           </details>
@@ -190,8 +192,8 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
             <summary>Practical Activities — {classDef.name} ({sections.paperIII} marks)</summary>
             <div className={styles.schemeContent}>
               <p>Paper III is assessed separately. Bring your practical journal or portfolio, endorsed by your school.</p>
-              {physicsSections && <ol className={styles.practicalList}>
-                {physicsSections.practicals.map(item => (
+              {(physicsSections || computerScienceSections) && <ol className={styles.practicalList}>
+                {(physicsSections ?? computerScienceSections)!.practicals.map(item => (
                   <li key={item.number}>
                     <p><strong>Chapter {item.chapter}:</strong> {item.activity}</p>
                     <p><strong>Apparatus:</strong> {item.apparatus}</p>

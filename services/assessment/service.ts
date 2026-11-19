@@ -13,6 +13,8 @@ import {publicMaterialWhere} from '@/lib/materialVisibility';
 import {mappedChapterQuestions,sourceChoiceContent,chapterPaperWhere,chapterPaperIsPublished} from '@/services/materials/practice';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import { applyAnswerDecision, legacyAnswerCases } from '@/lib/legacyAnswerReview';
+import { physicsUnit16Resource } from '@/lib/physicsUnit16Resource';
+import unit16Questions from '@/data/physics/ssc2_unit16_extra_mcqs.json';
 
 export const quizInclude = { settings: true, questions: { orderBy: { orderIndex: 'asc' as const } }, teacher: { select: { name: true } } } satisfies Prisma.QuizInclude;
 export type LoadedQuiz = Prisma.QuizGetPayload<{ include: typeof quizInclude }>;
@@ -87,6 +89,42 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   const quiz = await prisma.quiz.findFirst({ where: { OR: [{ id: identifier }, { code: identifier.toUpperCase() }] }, include: quizInclude });
   if (quiz) return quiz;
   const key = identifier.toUpperCase();
+  if (key === physicsUnit16Resource.quizCode) {
+    const questions = unit16Questions.map(question => ({
+      orderIndex: question.number,
+      marks: 1,
+      questionData: normalizeQuestion({
+        questionType: 'MCQ_SINGLE',
+        stemText: question.stem,
+        topicName: 'D.C. Circuits',
+        provenance: 'IMPORTED',
+        explanation: question.explanation,
+        options: question.options.map((text, index) => ({
+          id: 'ABCD'[index],
+          text,
+          isCorrect: 'ABCD'[index] === question.answer,
+        })),
+      }),
+    }));
+    const revision = createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16);
+    const id = 'practice-' + key + '-' + revision;
+    const owner = await prisma.user.upsert({
+      where: { email: 'practice-content@system.invalid' },
+      update: {},
+      create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' },
+    });
+    return prisma.quiz.upsert({
+      where: { id },
+      update: {},
+      include: quizInclude,
+      create: {
+        id, code: id, teacherId: owner.id, title: 'Class 10 Physics · Unit 16 D.C. Circuits Practice',
+        status: 'PUBLISHED', visibility: 'PUBLIC', durationMin: 40, totalMarks: questions.length,
+        questions: { create: questions },
+        settings: { create: { maxAttempts: 100, allowRetries: true, showCorrectAnswers: true, immediateFeedback: true, tabMonitoringEnabled: false } },
+      },
+    });
+  }
   const biologyPaper = /^(BIO-(?:IX-(?:MODEL-2026|2022|2023|2024)|X-(?:MODEL-2027|2017|2018|2019|2021|2022|2023|2024|2025))-P1)(?:-MCQS-\d+)?$/.exec(key);
   if (biologyPaper) {
     const paper = await prisma.pastPaper.findFirst({
@@ -173,7 +211,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   }
 
   const subset = /^((?:PHY|CS|CHM|MTH)-(?:IX|X|XI|XII)(?:-20\d{2})?-P1)-SET-([0-9-]+)$/.exec(key);
-  const paperCode = subset?.[1] || practiceCodes[key] || key;
+  const paperCode = subset?.[1] || practiceCodes[key] || key.replace(/^(CS-XII?(?:-20\d{2})?-P1)-MCQS-\d+$/, '$1');
   const paper = getFallbackPaper(paperCode);
   const registeredMcqs = paper && paper.questions.length > 0 && paper.questions.every(q => q.questionType === 'MULTIPLE_CHOICE') && getAllStandardPapers().some(p => p.paperCode === paperCode && /-P1$/.test(p.paperCode));
   if (!allowedPractice.has(paperCode) && !registeredMcqs) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Assessment not found.');
@@ -193,7 +231,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   });
   // A suspended, passwordless content owner can never authenticate.
   const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
-  const isHsscPhysics = /^PHY-XII?(?:-(?:201[7-9]|202[1-5]))?-P1$/.test(paperCode);
+  const isHsscPhysics = /^(?:PHY|CS)-XII?(?:-(?:201[7-9]|202[1-5]))?-P1$/.test(paperCode);
   const academic = paperCode.startsWith('MTH-') || isHsscPhysics ? await prisma.pastPaper.findFirst({ where: { paperCode }, select: { classId: true, subjectId: true } }) : null;
   // Corrected Maths content starts a fresh quiz; previous attempts retain their frozen questions.
   const revision = paperCode.startsWith('MTH-') || isHsscPhysics ? '-' + createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16) : '';
@@ -256,7 +294,7 @@ export async function startAttempt(identifier: string, user: AuthUser, preferenc
     const active = await tx.quizAttempt.findFirst({ where: { quizId: quiz.id, studentId: user.id, status: 'IN_PROGRESS' }, orderBy: { startedAt: 'desc' }, include: { answers: true } });
     if (active) {
       if (preferences.forceNewAttempt) {
-        await tx.quizAttempt.update({ where: { id: active.id }, data: { status: 'GRADED', submittedAt: new Date() } });
+        await gradeAttemptInTransaction(tx, quiz.id, user, active.id);
       } else {
         return attemptResponse(active, current);
       }
@@ -338,29 +376,32 @@ export async function submitFromBrowser(identifier: string, user: AuthUser, atte
 }
 
 export async function submitAttempt(identifier: string, user: AuthUser, attemptId: string) {
-  return lockedTransaction(async tx => {
-    await tx.$queryRaw`SELECT "id" FROM "QuizAttempt" WHERE "id" = ${attemptId} FOR UPDATE`;
-    const attempt = await tx.quizAttempt.findUnique({ where: { id: attemptId }, include: { answers: true } });
-    if (!attempt || attempt.studentId !== user.id || attempt.quizId !== identifier) throw new ApiError(403, 'FORBIDDEN', 'Attempt not found or unauthorized.');
-    if (!['IN_PROGRESS','SUBMITTED'].includes(attempt.status)) return { attemptId: attempt.id, status: attempt.status, submittedAt: attempt.submittedAt, alreadySubmitted: true };
-    const quiz = await tx.quiz.findUniqueOrThrow({ where: { id: attempt.quizId }, select: { settings: true } });
-    const questions = snapshotSchema.parse(attempt.questionSnapshot), byId = new Map(attempt.answers.map(a => [a.questionId, a.answerPayload]));
-    let total = 0, pending = false;
-    const grades = questions.map(q => {
-      const payload = byId.get(q.id) ?? {}, answered = hasAnswer(q, payload);
-      let score = gradeAnswer(q, payload);
-      if (quiz.settings?.manualGradingRequired && answered) score = null;
-      if (score === 0 && quiz.settings?.negativeMarking && answered) score = -quiz.settings.negativeMarkValue;
-      if (score === null) pending = true; else total += score;
-      return { questionId: q.id, score, auto: score !== null };
-    });
-    await tx.quizAnswer.createMany({ data: questions.filter(q => !byId.has(q.id)).map(q => ({ attemptId, questionId: q.id, answerPayload: {} })), skipDuplicates: true });
-    await tx.$executeRaw`UPDATE "QuizAnswer" a SET "score" = g.score, "isAutoGraded" = g.auto FROM jsonb_to_recordset(${JSON.stringify(grades)}::jsonb) AS g("questionId" text, score double precision, auto boolean) WHERE a."attemptId" = ${attemptId} AND a."questionId" = g."questionId"`;
-    const status = pending ? 'GRADING_PENDING' : 'GRADED';
-    const finalized = await tx.quizAttempt.update({ where: { id: attemptId }, data: { status, autoScore: total, totalScore: total, submittedAt: attempt.submittedAt ?? new Date() } });
-    if (attempt.status === 'IN_PROGRESS') await tx.assessmentEvent.create({ data: { attemptId, eventType: 'SUBMITTED', metadata: { expired: attempt.deadline < new Date(), autoScore: total } } });
-    return { attemptId, status, submittedAt: finalized.submittedAt };
+  return lockedTransaction(tx => gradeAttemptInTransaction(tx, identifier, user, attemptId));
+}
+
+// Share the caller's transaction so a rejected restart also rolls back grading.
+async function gradeAttemptInTransaction(tx: Prisma.TransactionClient, identifier: string, user: AuthUser, attemptId: string) {
+  await tx.$queryRaw`SELECT "id" FROM "QuizAttempt" WHERE "id" = ${attemptId} FOR UPDATE`;
+  const attempt = await tx.quizAttempt.findUnique({ where: { id: attemptId }, include: { answers: true } });
+  if (!attempt || attempt.studentId !== user.id || attempt.quizId !== identifier) throw new ApiError(403, 'FORBIDDEN', 'Attempt not found or unauthorized.');
+  if (!['IN_PROGRESS','SUBMITTED'].includes(attempt.status)) return { attemptId: attempt.id, status: attempt.status, submittedAt: attempt.submittedAt, alreadySubmitted: true };
+  const quiz = await tx.quiz.findUniqueOrThrow({ where: { id: attempt.quizId }, select: { settings: true } });
+  const questions = snapshotSchema.parse(attempt.questionSnapshot), byId = new Map(attempt.answers.map(a => [a.questionId, a.answerPayload]));
+  let total = 0, pending = false;
+  const grades = questions.map(q => {
+    const payload = byId.get(q.id) ?? {}, answered = hasAnswer(q, payload);
+    let score = gradeAnswer(q, payload);
+    if (quiz.settings?.manualGradingRequired && answered) score = null;
+    if (score === 0 && quiz.settings?.negativeMarking && answered) score = -quiz.settings.negativeMarkValue;
+    if (score === null) pending = true; else total += score;
+    return { questionId: q.id, score, auto: score !== null };
   });
+  await tx.quizAnswer.createMany({ data: questions.filter(q => !byId.has(q.id)).map(q => ({ attemptId, questionId: q.id, answerPayload: {} })), skipDuplicates: true });
+  await tx.$executeRaw`UPDATE "QuizAnswer" a SET "score" = g.score, "isAutoGraded" = g.auto FROM jsonb_to_recordset(${JSON.stringify(grades)}::jsonb) AS g("questionId" text, score double precision, auto boolean) WHERE a."attemptId" = ${attemptId} AND a."questionId" = g."questionId"`;
+  const status = pending ? 'GRADING_PENDING' : 'GRADED';
+  const finalized = await tx.quizAttempt.update({ where: { id: attemptId }, data: { status, autoScore: total, totalScore: total, submittedAt: attempt.submittedAt ?? new Date() } });
+  if (attempt.status === 'IN_PROGRESS') await tx.assessmentEvent.create({ data: { attemptId, eventType: 'SUBMITTED', metadata: { expired: attempt.deadline < new Date(), autoScore: total } } });
+  return { attemptId, status, submittedAt: finalized.submittedAt };
 }
 
 export function resultsReleased(settings: QuizSetting | null, submitted: boolean, now = new Date()) {

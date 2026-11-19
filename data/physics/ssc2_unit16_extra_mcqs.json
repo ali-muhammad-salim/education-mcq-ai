@@ -1,0 +1,470 @@
+[
+  {
+    "number": 1,
+    "page": 13,
+    "stem": "In a series combination of resistors, the quantity that remains the same through each resistor is:",
+    "options": [
+      "Voltage",
+      "Current",
+      "Resistance",
+      "Power"
+    ],
+    "answer": "B",
+    "explanation": "A series circuit has one path, so the same current passes through every resistor."
+  },
+  {
+    "number": 2,
+    "page": 13,
+    "stem": "In a parallel combination of resistors, the potential difference across each resistor is:",
+    "options": [
+      "Different",
+      "Zero",
+      "The same",
+      "Double"
+    ],
+    "answer": "C",
+    "explanation": "Parallel branches connect to the same two nodes and therefore have the same potential difference."
+  },
+  {
+    "number": 3,
+    "page": 14,
+    "stem": "Three resistors are connected in series. The total resistance is:",
+    "options": [
+      "Less than the smallest resistance",
+      "Equal to the largest resistance",
+      "The sum of individual resistances",
+      "The product of individual resistances"
+    ],
+    "answer": "C",
+    "explanation": "In series, the voltage drops add. Since the current is common, the resistances add."
+  },
+  {
+    "number": 4,
+    "page": 14,
+    "stem": "Which combination provides more than one path for electric current?",
+    "options": [
+      "Series combination",
+      "Parallel combination",
+      "Single-cell circuit",
+      "Open circuit"
+    ],
+    "answer": "B",
+    "explanation": "A parallel connection splits into branches, giving current more than one path."
+  },
+  {
+    "number": 5,
+    "page": 14,
+    "stem": "If one resistor in a series circuit becomes disconnected, the current in the circuit:",
+    "options": [
+      "Increases",
+      "Decreases slightly",
+      "Becomes zero",
+      "Remains unchanged"
+    ],
+    "answer": "C",
+    "explanation": "Disconnecting a series component opens the only path, so steady current becomes zero."
+  },
+  {
+    "number": 6,
+    "page": 14,
+    "stem": "In a parallel circuit, if one branch becomes disconnected, the other branches:",
+    "options": [
+      "Also stop working",
+      "Continue working",
+      "Have zero voltage",
+      "Become a series circuit"
+    ],
+    "answer": "B",
+    "explanation": "The remaining branches are still connected across the supply and can continue to carry current."
+  },
+  {
+    "number": 7,
+    "page": 15,
+    "stem": "The equivalent resistance of a parallel combination is always:",
+    "options": [
+      "Greater than the largest resistor",
+      "Equal to the largest resistor",
+      "Less than the smallest resistor",
+      "Equal to the sum of resistors"
+    ],
+    "answer": "C",
+    "explanation": "For two or more finite positive resistances, the reciprocal sum exceeds the largest individual reciprocal, so equivalent resistance is below the smallest branch resistance."
+  },
+  {
+    "number": 8,
+    "page": 15,
+    "stem": "Domestic electrical appliances are generally connected in parallel because:",
+    "options": [
+      "They receive different voltages",
+      "They receive the same potential difference and operate independently",
+      "They have the same resistance",
+      "The current is always zero"
+    ],
+    "answer": "B",
+    "explanation": "Parallel appliances share the supply voltage and can be switched on or off independently."
+  },
+  {
+    "number": 9,
+    "page": 15,
+    "stem": "When resistors are connected in series, the total potential difference is:",
+    "options": [
+      "Less than the potential difference across each resistor",
+      "Equal to zero",
+      "The sum of potential differences across individual resistors",
+      "Always equal to the current"
+    ],
+    "answer": "C",
+    "explanation": "The supply voltage equals the sum of the individual voltage drops around the series loop."
+  },
+  {
+    "number": 10,
+    "page": 15,
+    "stem": "Two resistors of 4 Ω and 6 Ω are connected in series. Their equivalent resistance is:",
+    "options": [
+      "2 Ω",
+      "10 Ω",
+      "24 Ω",
+      "1.5 Ω"
+    ],
+    "answer": "B",
+    "explanation": "Series resistances add: 4 Ω + 6 Ω = 10 Ω."
+  },
+  {
+    "number": 11,
+    "page": 15,
+    "stem": "Three resistors of 2 Ω, 3 Ω and 5 Ω are connected in series. Their total resistance is:",
+    "options": [
+      "5 Ω",
+      "6 Ω",
+      "10 Ω",
+      "30 Ω"
+    ],
+    "answer": "C",
+    "explanation": "Series resistances add: 2 Ω + 3 Ω + 5 Ω = 10 Ω."
+  },
+  {
+    "number": 12,
+    "page": 16,
+    "stem": "Two resistors of 6 Ω and 3 Ω are connected in parallel. Their equivalent resistance is:",
+    "options": [
+      "9 Ω",
+      "3 Ω",
+      "2 Ω",
+      "18 Ω"
+    ],
+    "answer": "C",
+    "explanation": "The reciprocal resistance is 1/6 + 1/3 = 1/2 per ohm, giving 2 Ω."
+  },
+  {
+    "number": 13,
+    "page": 16,
+    "stem": "Two resistors of 4 Ω and 4 Ω are connected in parallel. Their equivalent resistance is:",
+    "options": [
+      "8 Ω",
+      "4 Ω",
+      "2 Ω",
+      "16 Ω"
+    ],
+    "answer": "C",
+    "explanation": "Two equal 4 Ω resistors in parallel have half the resistance of one, or 2 Ω."
+  },
+  {
+    "number": 14,
+    "page": 16,
+    "stem": "Three resistors of 6 Ω each are connected in parallel. The equivalent resistance is:",
+    "options": [
+      "18 Ω",
+      "6 Ω",
+      "3 Ω",
+      "2 Ω"
+    ],
+    "answer": "D",
+    "explanation": "Three equal 6 Ω branches give 6 Ω ÷ 3 = 2 Ω."
+  },
+  {
+    "number": 15,
+    "page": 16,
+    "stem": "A 2 Ω resistor and a 4 Ω resistor are connected in series. This combination is connected in parallel with a 3 Ω resistor. The equivalent resistance is:",
+    "options": [
+      "9 Ω",
+      "6 Ω",
+      "2 Ω",
+      "3 Ω"
+    ],
+    "answer": "C",
+    "explanation": "The series pair gives 6 Ω. In parallel with 3 Ω, that gives 2 Ω."
+  },
+  {
+    "number": 16,
+    "page": 17,
+    "stem": "A 6 Ω resistor and a 3 Ω resistor are connected in parallel. This combination is connected in series with a 2 Ω resistor. The total resistance is:",
+    "options": [
+      "11 Ω",
+      "4 Ω",
+      "3 Ω",
+      "2 Ω"
+    ],
+    "answer": "B",
+    "explanation": "The 6 Ω and 3 Ω parallel pair gives 2 Ω. Adding the 2 Ω series resistor gives 4 Ω."
+  },
+  {
+    "number": 17,
+    "page": 17,
+    "stem": "An electric circuit is defined as:",
+    "options": [
+      "A device that produces light",
+      "A complete conducting path through which electric current flows",
+      "A material that does not conduct electricity",
+      "A source of heat only"
+    ],
+    "answer": "B",
+    "explanation": "A conducting loop provides a complete path for electric current."
+  },
+  {
+    "number": 18,
+    "page": 17,
+    "stem": "Which condition is necessary for current to flow in a simple electric circuit?",
+    "options": [
+      "The circuit must be open",
+      "The circuit must be complete",
+      "The switch must be removed",
+      "The resistance must be infinite"
+    ],
+    "answer": "B",
+    "explanation": "With a supply present, a complete conducting path allows steady current to flow."
+  },
+  {
+    "number": 19,
+    "page": 17,
+    "stem": "An ammeter is connected in:",
+    "options": [
+      "Parallel with the resistor",
+      "Series with the resistor",
+      "Either series or parallel",
+      "An open circuit only"
+    ],
+    "answer": "B",
+    "explanation": "An ammeter goes in series so the same current passes through the meter and the resistor."
+  },
+  {
+    "number": 20,
+    "page": 17,
+    "stem": "A voltmeter is connected in:",
+    "options": [
+      "Series",
+      "Parallel",
+      "Between two batteries only",
+      "A separate open circuit"
+    ],
+    "answer": "B",
+    "explanation": "A voltmeter connects across the two terminals of the component, placing it in parallel."
+  },
+  {
+    "number": 21,
+    "page": 18,
+    "stem": "The circuit symbol of a single electric cell consists of:",
+    "options": [
+      "Two equal parallel lines",
+      "One long line and one short line",
+      "A circle with a cross",
+      "A zigzag line"
+    ],
+    "answer": "B",
+    "explanation": "The long line represents the positive terminal and the short line the negative terminal."
+  },
+  {
+    "number": 22,
+    "page": 18,
+    "stem": "In the circuit-symbol convention used in these notes, which arrangement represents a battery?",
+    "options": [
+      "A single resistor",
+      "Two or more cells connected together",
+      "A single switch",
+      "Two ammeters"
+    ],
+    "answer": "B",
+    "explanation": "In the circuit-symbol convention used here, a battery symbol shows two or more cells."
+  },
+  {
+    "number": 23,
+    "page": 18,
+    "stem": "Which component allows current to flow mainly in one direction?",
+    "options": [
+      "Resistor",
+      "Diode",
+      "Fuse",
+      "Thermistor"
+    ],
+    "answer": "B",
+    "explanation": "A diode conducts mainly in the forward direction and blocks reverse current in normal operation."
+  },
+  {
+    "number": 24,
+    "page": 18,
+    "stem": "The main function of a fuse in an electrical circuit is to:",
+    "options": [
+      "Increase voltage",
+      "Increase resistance permanently",
+      "Protect the circuit from excessive current",
+      "Store electrical energy"
+    ],
+    "answer": "C",
+    "explanation": "A fuse melts and opens the circuit when excessive current heats its element."
+  },
+  {
+    "number": 25,
+    "page": 18,
+    "stem": "Which circuit component is represented by a circle with a cross inside?",
+    "options": [
+      "Ammeter",
+      "Lamp",
+      "Voltmeter",
+      "Cell"
+    ],
+    "answer": "B",
+    "explanation": "A circle with a cross is the conventional symbol for a lamp."
+  },
+  {
+    "number": 26,
+    "page": 19,
+    "stem": "An LDR is a component whose resistance:",
+    "options": [
+      "Increases when light intensity increases",
+      "Decreases when light intensity increases",
+      "Remains constant in all conditions",
+      "Becomes zero in darkness"
+    ],
+    "answer": "B",
+    "explanation": "A typical light-dependent resistor has lower resistance in brighter light."
+  },
+  {
+    "number": 27,
+    "page": 19,
+    "stem": "An LED is a semiconductor device that:",
+    "options": [
+      "Produces light when current flows in the correct direction",
+      "Measures electric current",
+      "Stores electric charge",
+      "Measures potential difference"
+    ],
+    "answer": "A",
+    "explanation": "A forward-biased LED emits light when sufficient current flows."
+  },
+  {
+    "number": 28,
+    "page": 19,
+    "stem": "A variable resistor is used to:",
+    "options": [
+      "Measure current",
+      "Change the resistance in a circuit",
+      "Convert AC into DC",
+      "Produce electrical energy"
+    ],
+    "answer": "B",
+    "explanation": "A variable resistor allows the resistance to be adjusted."
+  },
+  {
+    "number": 29,
+    "page": 19,
+    "stem": "The resistance of an NTC thermistor:",
+    "options": [
+      "Increases with temperature",
+      "Decreases with temperature",
+      "Remains constant with temperature",
+      "Becomes infinite at room temperature"
+    ],
+    "answer": "B",
+    "explanation": "NTC means negative temperature coefficient. Its resistance falls as temperature rises."
+  },
+  {
+    "number": 30,
+    "page": 20,
+    "stem": "An ideal ammeter has:",
+    "options": [
+      "Very high resistance",
+      "Zero resistance",
+      "Infinite resistance",
+      "No connection with the circuit"
+    ],
+    "answer": "B",
+    "explanation": "An ideal ammeter has zero resistance. A practical ammeter has very low resistance."
+  },
+  {
+    "number": 31,
+    "page": 20,
+    "stem": "A fixed resistor is commonly represented by:",
+    "options": [
+      "A zigzag line",
+      "A circle with V",
+      "Two parallel unequal lines",
+      "A circle with A"
+    ],
+    "answer": "A",
+    "explanation": "The zigzag is one common fixed-resistor symbol. A rectangle is also used in IEC diagrams."
+  },
+  {
+    "number": 32,
+    "page": 20,
+    "stem": "A 12 V battery is connected to a 4 Ω resistor. The current flowing through the resistor is:",
+    "options": [
+      "2 A",
+      "3 A",
+      "4 A",
+      "48 A"
+    ],
+    "answer": "B",
+    "explanation": "Ohm’s law gives I = V/R = 12 V ÷ 4 Ω = 3 A."
+  },
+  {
+    "number": 33,
+    "page": 20,
+    "stem": "Three resistors of 2 Ω, 3 Ω and 5 Ω are connected in series across a 20 V battery. The current in the circuit is:",
+    "options": [
+      "1 A",
+      "2 A",
+      "4 A",
+      "10 A"
+    ],
+    "answer": "B",
+    "explanation": "The total resistance is 10 Ω, so I = 20 V ÷ 10 Ω = 2 A."
+  },
+  {
+    "number": 34,
+    "page": 21,
+    "stem": "Two resistors of 6 Ω and 3 Ω are connected in parallel across a 12 V battery. The total current supplied by the battery is:",
+    "options": [
+      "2 A",
+      "4 A",
+      "6 A",
+      "8 A"
+    ],
+    "answer": "C",
+    "explanation": "The branch currents are 12 V ÷ 6 Ω = 2 A and 12 V ÷ 3 Ω = 4 A. They add to 6 A."
+  },
+  {
+    "number": 35,
+    "page": 21,
+    "stem": "A 4 Ω resistor carries a current of 2 A. The power dissipated by the resistor is:",
+    "options": [
+      "4 W",
+      "8 W",
+      "12 W",
+      "16 W"
+    ],
+    "answer": "D",
+    "explanation": "P = I²R = (2 A)² × 4 Ω = 16 W."
+  },
+  {
+    "number": 36,
+    "page": 21,
+    "stem": "Three resistors of 2 Ω, 4 Ω and 6 Ω are connected in series across a 24 V supply. The voltage across the 4 Ω resistor is:",
+    "options": [
+      "4 V",
+      "6 V",
+      "8 V",
+      "12 V"
+    ],
+    "answer": "C",
+    "explanation": "The total resistance is 12 Ω, giving 2 A. Across 4 Ω the voltage drop is 2 A × 4 Ω = 8 V."
+  }
+]

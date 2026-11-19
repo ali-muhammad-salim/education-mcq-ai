@@ -1,0 +1,124 @@
+[
+  {
+    "number": "1",
+    "page": 2,
+    "marks": 6,
+    "stem": "Q.1. (Total 6 Marks)\ni. Mention any TWO computing devices for input, output and storage. (3 Marks)\n\n| Type of Device | Device 1 | Device 2 |\n| :--- | :--- | :--- |\n| Input | | |\n| Output | | |\n| Storage | | |\n\nii. Define the following software categories: (3 Marks)\nI. Freeware\nII. Shareware\nIII. Open-Source",
+    "answer": "**i. Computing Devices for Input, Output, and Storage (3 Marks):**\n\n| Type of Device | Device 1 | Device 2 |\n| :--- | :--- | :--- |\n| **Input** | Keyboard / Optical Mouse | Graphics Tablet / Optical Scanner |\n| **Output** | Monitor / Display Screen | Laser Printer / Audio Speakers |\n| **Storage** | Hard Disk Drive (HDD) / Solid State Drive (SSD) | USB Flash Drive / Optical Disc (CD/DVD/Blu-ray) |\n\n*(Award 1 mark for any two valid input devices, 1 mark for any two valid output devices, and 1 mark for any two valid storage devices.)*\n\n**ii. Software Categories Definitions (3 Marks):**\n- **I. Freeware:** Proprietary software distributed at no monetary cost for unlimited personal or commercial use. The author retains full copyright, and the source code remains closed and non-modifiable. *(1 Mark)*\n- **II. Shareware:** Commercial software distributed free of charge on a trial basis, typically with feature limitations or an expiration timer, requiring license purchase for complete ongoing functionality. *(1 Mark)*\n- **III. Open-Source:** Software whose source code is freely published under an approved open license (e.g., GPL, MIT, Apache), permitting users to inspect, modify, improve, and redistribute the program. *(1 Mark)*",
+    "rubric": [
+      "Award 1 mark for any two valid input devices, 1 mark for two output devices, and 1 mark for two storage devices.",
+      "Award 1 mark for each accurate software definition (Freeware, Shareware, Open-Source) up to 3 marks."
+    ],
+    "mapping": null
+  },
+  {
+    "number": "2",
+    "page": 2,
+    "marks": 3,
+    "stem": "Q.2. (Total 3 Marks)\nWrite any THREE differences between DRAM and SRAM.\n\n| S.No. | DRAM | SRAM |\n| :---: | :--- | :--- |\n| 1 | | |\n| 2 | | |\n| 3 | | |",
+    "answer": "**THREE Differences Between DRAM and SRAM (3 Marks):**\n\n| S.No. | DRAM (Dynamic RAM) | SRAM (Static RAM) |\n| :---: | :--- | :--- |\n| **1** | **Internal Construction:** Constructed using a single transistor and a single storage capacitor per memory cell. | Constructed using multiple transistors (typically 4\u20136 flip-flop transistors) per memory cell without capacitors. |\n| **2** | **Refreshing Requirement:** Requires continuous, periodic electrical refreshing because capacitors gradually leak charge. | Does not require electrical refreshing; data remains stable as long as power is maintained. |\n| **3** | **Access Speed & Latency:** Slower access times (20\u201360 ns) with higher latency; used for primary system memory. | Much faster access times (1\u201310 ns) with ultra-low latency; used for CPU L1, L2, and L3 cache memory. |\n\n*(Award 1 mark for each accurate, clearly contrasted point of difference up to 3 marks. Alternative: DRAM has higher packaging density and lower cost per bit; SRAM has lower density and higher cost per bit.)*",
+    "rubric": [
+      "Award 1 mark for each accurate point of contrast (construction, refreshing, speed/usage) up to 3 marks."
+    ],
+    "mapping": null
+  },
+  {
+    "number": "3",
+    "page": 3,
+    "marks": 3,
+    "stem": "Q.3. (Total 3 Marks)\nDescribe the function of each type of internal bus, i.e, data bus, address bus and control bus.",
+    "answer": "**Functions of Internal Buses (3 Marks):**\n- **Data Bus:** A bidirectional pathway that carries actual data words, instruction opcodes, and operand values between the CPU, system memory (RAM), and peripheral I/O interfaces. Bus width (e.g. 32-bit or 64-bit) determines data throughput per clock cycle. *(1 Mark)*\n- **Address Bus:** A unidirectional pathway driven by the CPU that carries the binary physical memory address or I/O port address specifying where data is to be retrieved from or stored to. Bus width ($2^n$) defines the maximum addressable memory space. *(1 Mark)*\n- **Control Bus:** A set of signal lines that transmit timing and command control signals (e.g., Memory Read, Memory Write, I/O Read, I/O Write, Clock, and Interrupt Requests) from the CPU to synchronize bus operations across all connected modules. *(1 Mark)*",
+    "rubric": [
+      "Award 1 mark for the function of the data bus.",
+      "Award 1 mark for the function of the address bus.",
+      "Award 1 mark for the function of the control bus."
+    ],
+    "mapping": null
+  },
+  {
+    "number": "4",
+    "page": 3,
+    "marks": 3,
+    "stem": "Q.4. (Total 3 Marks)\nA technician is upgrading an older server to increase memory for handling more users and applications.\nBased on the given scenario, answer the following questions.\ni. Which memory module will be used by the technician to increase memory? (1 Mark)\nii. Give any TWO reasons in support of your stance in part i. (2 Marks)",
+    "answer": "**Server Memory Upgrade (3 Marks):**\n- **i. Memory Module Used:** **Dual Inline Memory Module (DIMM)** (specifically Registered / Buffered ECC DDR DIMMs for enterprise servers). *(1 Mark)*\n- **ii. TWO Reasons in Support of DIMM (2 Marks):**\n  1. **64-bit Independent Data Bus Path:** DIMMs feature independent electrical contacts on both sides of the module to provide a full 64-bit wide data bus (compared to older 32-bit SIMMs), doubling data transfer throughput per memory access. *(1 Mark)*\n  2. **High Capacity, Multi-channel & ECC Support:** DIMMs accommodate significantly higher memory densities, support multi-channel interleaving, and feature Error-Correcting Code (ECC) architecture critical for detecting and correcting single-bit memory corruptions under demanding concurrent server workloads. *(1 Mark)*",
+    "rubric": [
+      "1 mark for identifying Dual Inline Memory Module (DIMM).",
+      "1 mark each for two valid reasons (64-bit bus width, ECC/capacity/multi-channel support)."
+    ],
+    "mapping": null
+  },
+  {
+    "number": "5",
+    "page": 4,
+    "marks": 3,
+    "stem": "Q.5. (Total 3 Marks)\nDefine the following terms in the context of wireless communication:\ni. Radio signals (1 Mark)\nii. Radio transceivers (1 Mark)\niii. Access point (1 Mark)",
+    "answer": "**Wireless Communication Definitions (3 Marks):**\n- **i. Radio signals:** Electromagnetic waves propagated through free space within the radio frequency spectrum ($3\\text{ kHz}$ to $300\\text{ GHz}$), modulated to transmit data, voice, or multimedia information without physical guided conductors. *(1 Mark)*\n- **ii. Radio transceivers:** An integrated electronic hardware unit that combines both radio transmitter and radio receiver circuits, sharing a common housing and antenna to facilitate bidirectional wireless transmission. *(1 Mark)*\n- **iii. Access point (WAP):** A dedicated networking device connected to a wired local area network (LAN) that transmits and receives radio frequency signals, enabling wireless-capable client devices (laptops, phones) to access network resources. *(1 Mark)*",
+    "rubric": [
+      "1 mark each for accurate technical definitions of radio signals, radio transceivers, and access points."
+    ],
+    "mapping": null
+  },
+  {
+    "number": "6",
+    "page": 4,
+    "marks": 3,
+    "stem": "Q.6. (Total 3 Marks)\nIn a university database, there are two entities: Students and Departments.\nWith reference to the given information,\ni. identify the type of relationship between the Student and Department entities. (1 Mark)\nii. provide an example of this relationship type. (2 Marks)",
+    "answer": "**Student and Department Relationship (3 Marks):**\n- **i. Type of Relationship:** **One-to-Many ($1:N$) relationship** from `Department` to `Student` (or **Many-to-One ($N:1$)** from `Student` to `Department`). *(1 Mark)*\n- **ii. Practical Example:**\n  - In a university database, one academic department (e.g., *Department of Computer Science*) enrolls many students in its various degree tracks ($1:N$). Conversely, each student is officially registered in only one primary academic department ($N:1$). *(2 Marks)*",
+    "rubric": [
+      "1 mark for identifying One-to-Many relationship (or Many-to-One).",
+      "2 marks for clear, concrete university department-to-student example."
+    ],
+    "mapping": null
+  },
+  {
+    "number": "7a",
+    "page": 5,
+    "marks": 7,
+    "stem": "Q.7. (Total 7 Marks)\nEITHER\na.\ni. Describe the function of each layer of the Transmission Control Protocol/ Internet Protocol (TCP/IP) protocol architecture. (4 Marks)\nii. Name at least ONE protocol for any three layers described in part i. (3 Marks)",
+    "answer": "**EITHER a. TCP/IP Protocol Architecture (7 Marks):**\n\n**i. Functions of Each Layer (4 Marks):**\n1. **Application Layer:** Provides direct network communication interfaces and protocol services to end-user software applications, handling high-level data formatting, encoding, and dialogue control (e.g., web, mail, file transfer). *(1 Mark)*\n2. **Transport Layer:** Establishes reliable or datagram host-to-host end-to-end communication channels. It handles packet segmentation, reassembly, flow control, port-based multiplexing, and error recovery (via TCP or UDP). *(1 Mark)*\n3. **Internet Layer:** Responsible for logical addressing (IP addresses) and routing packets across interconnected, heterogeneous networks, encapsulating transport segments into IP packets. *(1 Mark)*\n4. **Network Access Layer:** Manages physical hardware addressing (MAC addresses), framing of IP packets into physical network frames, and transmitting raw bits as electrical, optical, or radio signals across the physical medium. *(1 Mark)*\n\n**ii. Protocol Names for Any Three Layers (3 Marks):**\n- **Application Layer:** HTTP / HTTPS / FTP / DNS / SMTP. *(1 Mark)*\n- **Transport Layer:** TCP / UDP. *(1 Mark)*\n- **Internet Layer:** IP (IPv4 / IPv6) / ICMP / ARP. *(1 Mark)*",
+    "rubric": [
+      "1 mark for the function of each of the 4 TCP/IP layers (4 marks).",
+      "1 mark for at least one protocol named for each of any three layers (3 marks)."
+    ],
+    "mapping": null
+  },
+  {
+    "number": "7b",
+    "page": 5,
+    "marks": 7,
+    "stem": "Q.7. (Total 7 Marks)\nOR\nb.\ni. Describe the term, Global Positioning System (GPS). (1 Mark)\nii. Explain the importance of GPS in any THREE points. (3 Marks)\niii. Explain the THREE limitations of GPS. (3 Marks)",
+    "answer": "**OR b. Global Positioning System (GPS) (7 Marks):**\n\n**i. Description of GPS (1 Mark):**\n- A space-based satellite navigation system comprising a constellation of at least 24 orbiting satellites broadcasting synchronized radio signals, allowing terrestrial receivers to calculate their exact three-dimensional coordinates (latitude, longitude, altitude) and precise time through trilateration. *(1 Mark)*\n\n**ii. THREE Points of Importance (3 Marks):**\n1. **Accurate Turn-by-Turn Navigation:** Powers real-time vehicular, marine, and aviation navigation, optimizing routes and monitoring traffic. *(1 Mark)*\n2. **Emergency Response and Tracking:** Enables first responders to locate 911 callers, track emergency vehicles, and direct search-and-rescue teams during natural disasters. *(1 Mark)*\n3. **Precision Surveying and UTC Time Synchronization:** Supplies millimeter-precision geographic data for engineering construction and provides global atomic clock time synchronization essential for banking networks and electrical power grids. *(1 Mark)*\n\n**iii. THREE Limitations of GPS (3 Marks):**\n1. **Line-of-Sight Blockage:** Microwave signals cannot penetrate dense buildings, tunnels, underground structures, or deep underwater environments, and are degraded in urban canyons. *(1 Mark)*\n2. **Susceptibility to Jamming and Spoofing:** Weak incoming satellite signals can be blocked by deliberate local radio interference (jamming) or falsified by malicious signal simulators (spoofing). *(1 Mark)*\n3. **Atmospheric Delays and Power Demand:** Ionospheric and tropospheric variations introduce propagation delays that degrade accuracy, while continuous satellite tracking causes high battery consumption on mobile devices. *(1 Mark)*",
+    "rubric": [
+      "1 mark for accurate definition of GPS.",
+      "1 mark each for 3 valid points of importance (3 marks).",
+      "1 mark each for 3 valid limitations (3 marks)."
+    ],
+    "mapping": null
+  },
+  {
+    "number": "8a",
+    "page": 6,
+    "marks": 7,
+    "stem": "Q.8. (Total 7 Marks)\nEITHER\na. Consider the given image showing three tables in an MS Access database of a company.\n\nA number of employees work in each department of the company. Each department is managed by an employee. Each child of an employee is identified by the employee\u2019s name. Furthermore, the company has the policy that only one parent can work for the company.\n\nDraw an entity-relationship diagram (ERD) for this database. (7 Marks)",
+    "answer": "**EITHER a. Entity-Relationship Diagram (ERD) (7 Marks):**\n\n**1. Entity Sets (Rectangles) (2 Marks):**\n- `EMPLOYEE` (Strong Entity): Attributes are `EmpID` (Primary Key - underlined), `Salary`, `Ph_No`.\n- `DEPARTMENT` (Strong Entity): Attributes are `Dept_No` (Primary Key - underlined), `Dept_Name`, `Budget`.\n- `CHILD` / `CHILDREN_OF_EMPLOYEE` (Weak Entity): Represented by a **double rectangle**. Attributes are `Parent_Name` / `Child_Name` (Partial Key / Discriminator - dashed underline) and `Age`.\n\n**2. Relationships and Structural Constraints (Diamonds) (4 Marks):**\n- **`Works_In` Relationship (Diamond):** Connects `EMPLOYEE` and `DEPARTMENT`. Cardinality is **Many-to-One ($N:1$)** because multiple employees work in one department.\n- **`Manages` Relationship (Diamond):** Connects `EMPLOYEE` and `DEPARTMENT`. Cardinality is **One-to-One ($1:1$)** because each department is managed by a single employee.\n- **`Has_Child` Identifying Relationship (Double Diamond):** Connects strong entity `EMPLOYEE` to weak entity `CHILD`. Cardinality is **One-to-Many ($1:N$)** with total participation on `CHILD` (every child must belong to an employee, and only one parent works for the company).\n\n**3. Complete ERD Diagram Representation (1 Mark):**\n\n```\n          [Dept_No] (PK)   [Dept_Name]   [Budget]\n                 \\              |          /\n              +---------------------------------+\n              |           DEPARTMENT            |\n              +---------------------------------+\n                   | [1]                  | [1]\n                   |                      |\n             +-----------+          +------------+\n             |  Manages  |          |  Works_In  |\n             +-----------+          +------------+\n                   | [1]                  | [N]\n                   |                      |\n              +---------------------------------+\n              |            EMPLOYEE             |\n              +---------------------------------+\n                 /              |          \\\n          [EmpID] (PK)       [Salary]    [Ph_No]\n                                |\n                               [1]\n                                |\n                     +=====================+\n                     ||     Has_Child     || (Identifying Relationship)\n                     +=====================+\n                                |\n                               [N]\n                                |\n                     +=====================+\n                     ||       CHILD       || (Weak Entity)\n                     +=====================+\n                            /         \\\n           [Parent_Name] (Partial PK)  [Age]\n```",
+    "rubric": [
+      "2 marks for identifying entities (including Child as weak entity).",
+      "4 marks for relationship diamonds and cardinalities (Works_In N:1, Manages 1:1, Has_Child 1:N).",
+      "1 mark for notational correctness and attributes with primary/partial keys."
+    ],
+    "mapping": null
+  },
+  {
+    "number": "8b",
+    "page": 6,
+    "marks": 7,
+    "stem": "Q.8. (Total 7 Marks)\nOR\nb. Consider an employee management system that stores information about employees in a company. This system allows administrators to insert new employee records, retrieve employee details, and delete records.\nBased on the given scenario, a table named as Employees has fields Employee_ID, Name, Department, Salary, Designation, Employment_type.\n\nWrite SQL queries for this database table to\ni. insert a new record of a regular employee, Dawood_Ahmed, who joined the IT department as Associate with the salary of Rs 75000. (5 Marks)\nii. retrieve the details of all employees working in the \u2018Sales\u2019 department. (1 Mark)\niii. delete an employee record whose Employee_ID is 5. (1 Mark)",
+    "answer": "**OR b. SQL Queries for Employee Management System (7 Marks):**\n\n**i. Insert Query for Dawood_Ahmed (5 Marks):**\n```sql\nINSERT INTO Employees (Employee_ID, Name, Department, Salary, Designation, Employment_type)\nVALUES (101, 'Dawood_Ahmed', 'IT', 75000, 'Associate', 'regular');\n```\n*Note: If Employee_ID is AutoNumber / Identity, the following is also fully correct:*\n```sql\nINSERT INTO Employees (Name, Department, Salary, Designation, Employment_type)\nVALUES ('Dawood_Ahmed', 'IT', 75000, 'Associate', 'regular');\n```\n*(Marking: Correct `INSERT INTO Employees` 1m, proper column listing 1m, `VALUES` keyword 1m, string quotes on text fields 1m, integer 75000 without quotes 1m.)*\n\n**ii. Query to Retrieve Employees in 'Sales' Department (1 Mark):**\n```sql\nSELECT * FROM Employees \nWHERE Department = 'Sales';\n```\n*(Award 1 mark for correct `SELECT *` with `WHERE Department = 'Sales'`.)*\n\n**iii. Query to Delete Employee with Employee_ID = 5 (1 Mark):**\n```sql\nDELETE FROM Employees \nWHERE Employee_ID = 5;\n```\n*(Award 1 mark for correct `DELETE FROM Employees WHERE Employee_ID = 5`.)*",
+    "rubric": [
+      "5 marks for correct INSERT statement with proper fields, values, and quotes.",
+      "1 mark for correct SELECT statement with WHERE Department = 'Sales'.",
+      "1 mark for correct DELETE statement with WHERE Employee_ID = 5."
+    ],
+    "mapping": "12:11.11.3"
+  }
+]

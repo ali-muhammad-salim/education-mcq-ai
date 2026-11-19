@@ -1,3 +1,10 @@
+import { hsscComputerScience2019Papers } from '@/lib/hsscComputerScience2019';
+import { hsscComputerScience2021Papers } from '@/lib/hsscComputerScience2021';
+import { hsscComputerScience2022Papers } from '@/lib/hsscComputerScience2022';
+import { hsscComputerScience2023Papers } from '@/lib/hsscComputerScience2023';
+import { hsscComputerScience2024Papers } from './hsscComputerScience2024';
+import { hsscComputerSciencePapers } from './hsscComputerSciencePapers';
+import { hsscComputerScienceSyllabus } from './hsscComputerScienceSyllabus';
 import { hsscPhysicsPapers } from './hsscPhysicsResources';
 import { hsscXiAnnualPapers } from './hsscXiAnnualPhysics';
 import { hsscPhysicsSyllabus } from './hsscPhysicsSyllabus';
@@ -77,12 +84,12 @@ function quizQuestion(question: QuestionData): HsscQuizQuestion | null {
   };
 }
 
-export function hsscMcqsData(level: number, base: string): HsscMcqsData {
-  const syllabus = hsscPhysicsSyllabus('akueb', level, 'physics');
+export function hsscMcqsData(level: number, base: string, subject = 'physics'): HsscMcqsData {
+  const syllabus = subject === 'computer-science' ? hsscComputerScienceSyllabus('akueb', level, subject) : hsscPhysicsSyllabus('akueb', level, 'physics');
   if (!syllabus) return { units: [], papers: [], totalQuestions: 0 };
 
-  const papers = [...hsscPhysicsPapers, ...hsscXiAnnualPapers]
-    .filter(paper => paper.academicClass.level === level)
+  const papers = (subject === 'computer-science' ? [...hsscComputerSciencePapers,...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers] : [...hsscPhysicsPapers, ...hsscXiAnnualPapers])
+    .filter(paper => paper.academicClass.level === level || (subject === 'computer-science' && paper.questions.some(q => q.sourceRegion.mapping_scope?.grade === level && q.sourceRegion.in_syllabus)))
     .sort((a, b) => b.examYear - a.examYear || a.paperCode.localeCompare(b.paperCode));
 
   const questionUnits = new Map<string, number[]>();
@@ -102,12 +109,13 @@ export function hsscMcqsData(level: number, base: string): HsscMcqsData {
             .filter(number => Number.isInteger(number) && unitNumbers.has(number))
         ),
       ];
-      if (!units.length) continue;
+      if (!units.length && (subject !== 'computer-science' || paper.academicClass.level !== level)) continue;
       questionUnits.set(question.id, units);
       const view = quizQuestion(question);
       if (view) questions.push(view);
     }
     return {
+      chapterOnly: paper.academicClass.level !== level,
       code: paper.paperCode,
       title: year ? `${year} Annual Paper ${paperNumber}` : `Model Paper ${paperNumber}`,
       session: year ? String(year) : 'Model',

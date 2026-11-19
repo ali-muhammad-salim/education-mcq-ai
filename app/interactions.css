@@ -1,0 +1,147 @@
+/* Progressive, route-scoped enhancement. Document readers never enter this zone.
+   :has is a second guard for a reader embedded by a future route. */
+body[data-rise-motion='on']:not(:has([data-paper-page])) {
+  --ui-press: 110ms;
+  --ui-settle: 240ms;
+  --ui-spring: cubic-bezier(.16, 1, .3, 1);
+}
+
+:where(body[data-rise-motion='on']:not(:has([data-paper-page]))) :is(a[href], button, summary, [role='button'], [role='tab']) {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: color var(--ui-press) ease, background-color var(--ui-settle) ease,
+    border-color var(--ui-settle) ease, box-shadow var(--ui-settle) ease,
+    scale var(--ui-settle) var(--ui-spring);
+}
+
+:where(body[data-rise-motion='on']:not(:has([data-paper-page]))) :is(button, summary, [role='button'], [role='tab']):not(:disabled):not([aria-disabled='true']):active {
+  scale: .975;
+  transition-duration: var(--ui-press);
+}
+
+:where(body[data-rise-motion='on']:not(:has([data-paper-page]))) a[href]:active {
+  text-decoration-color: currentColor;
+}
+
+:where(body[data-rise-motion='on']:not(:has([data-paper-page]))) :is(a[href], button, summary, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--r-emerald, var(--primary-color));
+  outline-offset: 3px;
+}
+
+:where(body[data-rise-motion='on']:not(:has([data-paper-page]))) :is(input, select, textarea) {
+  transition: border-color var(--ui-settle) ease, box-shadow var(--ui-settle) ease;
+  accent-color: var(--r-emerald, var(--primary-color));
+}
+
+:where(body[data-rise-motion='on']:not(:has([data-paper-page]))) :is(input, select, textarea):focus-visible {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--r-emerald, var(--primary-color)) 12%, transparent);
+}
+
+/* No translated ancestor: fixed menus and exam HUDs keep their viewport anchor. */
+@media (prefers-reduced-motion: no-preference) {
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) .main-content > .rise-ui {
+    animation: riseSurfaceIn 260ms ease-out;
+  }
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) details::details-content {
+    opacity: 0;
+    transition: opacity 200ms ease, content-visibility 200ms allow-discrete;
+  }
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) details[open]::details-content {
+    opacity: 1;
+  }
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) .site-nav.mobile-open .site-nav-links {
+    animation: riseMenuIn 220ms var(--ui-spring);
+  }
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) :is([role='status'], [role='alert']) {
+    animation: riseSurfaceIn 200ms ease-out;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) a[href]:hover {
+    text-decoration-color: var(--r-emerald, var(--primary-color));
+    text-underline-offset: .2em;
+  }
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) :is(button, [role='button']):not(:disabled):not([aria-disabled='true']):hover {
+    border-color: var(--r-emerald, var(--primary-color));
+  }
+}
+
+/* Geometry uses the server-rendered Rise boundary, never the effect's motion
+   flag: phone content must not reflow when hydration enables tap feedback. */
+@media (max-width: 700px) {
+  .main-content:has(> .rise-ui):not(:has([data-paper-page])) {
+    padding: .75rem .4rem !important;
+  }
+  :where(.main-content > .rise-ui) :is(form, fieldset) {
+    min-width: 0;
+  }
+  :where(.main-content > .rise-ui) :is(input, select, textarea) {
+    scroll-margin-top: 6rem;
+  }
+  :where(.main-content > .rise-ui) :is(pre, .katex-display) {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+  }
+  .main-content > .rise-ui :is(.resource-list-item, .paper-list-item) {
+    gap: .5rem;
+    padding: .7rem !important;
+  }
+  :where(.main-content > .rise-ui) :is(.resource-list-item, .paper-list-item) > div:last-child {
+    gap: .4rem;
+  }
+  .app-layout:has(> .main-content > .rise-ui):not(:has([data-paper-page])) > footer {
+    padding: 1rem .65rem calc(1rem + env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* Shared authentication and code-entry dialogs keep their existing focus trap. */
+@media (max-width: 700px) {
+  body:has(.main-content > .rise-ui):not(:has([data-paper-page])) [role='dialog'][aria-label='Sign in or register'] > div {
+    padding: 1.1rem !important;
+    border-radius: 14px;
+    max-height: calc(100dvh - 1.3rem) !important;
+  }
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) :is([aria-label='Close dialog'], [aria-label='Close code dialog'], [aria-label='Close search']) {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) [role='dialog']:is([aria-label='Sign in or register'], [aria-label='Enter assessment code'], [aria-label='Universal smart search']) > div {
+    animation: riseDialogIn 240ms var(--ui-spring);
+  }
+}
+@keyframes riseDialogIn {
+  from { opacity: .5; translate: 0 8px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes riseSurfaceIn {
+  from { opacity: .65; }
+  to { opacity: 1; }
+}
+@keyframes riseMenuIn {
+  from { opacity: 0; clip-path: inset(0 0 12% 0); }
+  to { opacity: 1; clip-path: inset(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) *,
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) *::before,
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  :where(body[data-rise-motion='on']:not(:has([data-paper-page]))) :is(button, summary, [role='button'], [role='tab']):active {
+    scale: none;
+  }
+}
+
+@media print {
+  body[data-rise-motion] * { animation: none !important; transition: none !important; }
+}

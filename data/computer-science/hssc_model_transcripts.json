@@ -1,0 +1,1707 @@
+{
+  "XI": [
+    {
+      "number": 1,
+      "page": 2,
+      "stem": "A binary 0 in a digital system represents a/ an",
+      "choices": {
+        "A": "off signal.",
+        "B": "active pulse.",
+        "C": "strong electrical pulse.",
+        "D": "continuous current flow."
+      },
+      "region": [
+        46.31999969482422,
+        91.32795715332031,
+        555,
+        182.3279571533203
+      ]
+    },
+    {
+      "number": 2,
+      "page": 2,
+      "stem": "A two-input NAND gate produces an output of 0 when",
+      "choices": {
+        "A": "first input is 0, the other is 1.",
+        "B": "first input is 1, the other is 0.",
+        "C": "both inputs are 0.",
+        "D": "both inputs are 1."
+      },
+      "region": [
+        46.31999969482422,
+        184.3279571533203,
+        555,
+        275.3580017089844
+      ]
+    },
+    {
+      "number": 3,
+      "page": 2,
+      "stem": "Consider the given logic circuit. Which truth table shows its output?",
+      "choices": {
+        "A": "| X | Y | XY | YX | Z |\n| --- | --- | --- | --- | --- |\n| 0 | 0 | 0 | 0 | 0 |\n| 0 | 1 | 0 | 0 | 0 |\n| 1 | 0 | 0 | 0 | 0 |\n| 1 | 1 | 1 | 1 | 1 |",
+        "B": "| X | Y | XY | YX | Z |\n| --- | --- | --- | --- | --- |\n| 0 | 0 | 0 | 1 | 1 |\n| 0 | 1 | 0 | 1 | 0 |\n| 1 | 0 | 1 | 0 | 1 |\n| 1 | 1 | 1 | 1 | 0 |",
+        "C": "| X | Y | XY | YX | Z |\n| --- | --- | --- | --- | --- |\n| 0 | 0 | 0 | 0 | 0 |\n| 0 | 1 | 0 | 1 | 1 |\n| 1 | 0 | 1 | 0 | 1 |\n| 1 | 1 | 1 | 1 | 1 |",
+        "D": "| X | Y | XY | YX | Z |\n| --- | --- | --- | --- | --- |\n| 0 | 0 | 1 | 1 | 1 |\n| 0 | 1 | 0 | 1 | 0 |\n| 1 | 0 | 1 | 0 | 1 |\n| 1 | 1 | 1 | 0 | 0 |"
+      },
+      "region": [
+        46.31999969482422,
+        277.3580017089844,
+        555,
+        780
+      ],
+      "diagramUrl": "/paper-crops/CS-XI-P1/diagram-3.png"
+    },
+    {
+      "number": 4,
+      "page": 3,
+      "stem": "The activity carried out during the design phase of the Software Development Life Cycle (SDLC) is",
+      "choices": {
+        "A": "drafting deployment plan, release checklist, and licensing model.",
+        "B": "developing the structure, interface layout, and system workflow.",
+        "C": "planning marketing strategy, branding visuals, and client pitch.",
+        "D": "creating testing strategy, validation plan, and test cases."
+      },
+      "region": [
+        74.66400146484375,
+        91.32795715332031,
+        555,
+        196.1280059814453
+      ]
+    },
+    {
+      "number": 5,
+      "page": 3,
+      "stem": "A network topology that provides high reliability due to dedicated links between all devices is",
+      "choices": {
+        "A": "bus layout with one shared communication medium.",
+        "B": "star layout with a single central communication hub.",
+        "C": "ring layout with data passing through each connected device.",
+        "D": "mesh layout with point-to-point connections among all nodes."
+      },
+      "region": [
+        74.66400146484375,
+        198.1280059814453,
+        555,
+        289.1579895019531
+      ]
+    },
+    {
+      "number": 6,
+      "page": 3,
+      "stem": "A business needs immediate access to email, CRM and accounting applications, with no manual software maintenance or updates. Which cloud service model best meets these conditions?",
+      "choices": {
+        "A": "SaaS model with access to off-the-shelf business tools.",
+        "B": "PaaS model offering tools, runtime, and hosting in the cloud.",
+        "C": "IaaS model for controlling network firewalls and physical servers.",
+        "D": "hosted desktop model allowing basic software access without development tools."
+      },
+      "region": [
+        74.66400146484375,
+        291.1579895019531,
+        555,
+        463.0579833984375
+      ]
+    },
+    {
+      "number": 7,
+      "page": 3,
+      "stem": "The function that makes cybersecurity essential in financial transactions is that it",
+      "choices": {
+        "A": "secures communication channels between users and financial servers.",
+        "B": "prevents hackers from gaining access to sensitive banking credentials.",
+        "C": "enables real-time monitoring of digital payment activities.",
+        "D": "supports multi-user access to online banking platforms."
+      },
+      "region": [
+        74.66400146484375,
+        465.0579833984375,
+        555,
+        556.0579833984375
+      ]
+    },
+    {
+      "number": 8,
+      "page": 3,
+      "stem": "A user purchases items from an e-commerce website with encryption enabled. During checkout, encryption ensures that the",
+      "choices": {
+        "A": "website automatically removes outdated user accounts.",
+        "B": "browser prevents cookies from being stored on the device.",
+        "C": "payment information remains confidential and tamper-proof.",
+        "D": "transaction details are hidden from the website’s database and vendors."
+      },
+      "region": [
+        74.54399871826172,
+        558.0579833984375,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 9,
+      "page": 4,
+      "stem": "A robotics team is designing a robot to clean classrooms. They divided the main goal into smaller tasks, such as detecting dirt, moving to it, and vacuuming it. The step of computational thinking is demonstrated in this situation is",
+      "choices": {
+        "A": "selecting components based on performance needs.",
+        "B": "organising tasks based on functional categories.",
+        "C": "breaking the problem into smaller logical steps.",
+        "D": "predicting outcomes based on previous testing."
+      },
+      "region": [
+        46.31999969482422,
+        91.32795715332031,
+        555,
+        221.92799377441406
+      ]
+    },
+    {
+      "number": 10,
+      "page": 4,
+      "stem": "While solving a problem, creating a clear and logical sequence of steps reflects",
+      "choices": {
+        "A": "abstraction for focusing on essential details.",
+        "B": "algorithm design for accurate implementation.",
+        "C": "pattern recognition for identifying repeated elements.",
+        "D": "decomposition for breaking down complex problems."
+      },
+      "region": [
+        46.31999969482422,
+        223.92799377441406,
+        555,
+        314.9579772949219
+      ]
+    },
+    {
+      "number": 11,
+      "page": 4,
+      "stem": "Consider the given algorithm.\nThe output of the given algorithm is\n\n```text\nStep 1: Start\nStep 2: A = 7, B = 5\nStep 3: If A % 2 == 1 Then A = A * B\nStep 4: If A > 10 Then B = A - B % 5\nStep 5: C = B - 20 * 1\nStep 6: Output C\nStep 7: Stop\n```",
+      "choices": {
+        "A": "-10",
+        "B": "15",
+        "C": "-15",
+        "D": "20"
+      },
+      "region": [
+        46.31999969482422,
+        316.9579772949219,
+        555,
+        542.9779663085938
+      ]
+    },
+    {
+      "number": 12,
+      "page": 4,
+      "stem": "Consider the given algorithm.\nThe output of the given algorithm is\n\n```text\nStep 1: Start\nStep 2: X = 4, Y = 2, C = 14\nStep 3: Y = X * Y\nStep 4: D = C - (Y + X)\nStep 5: If D >= 2 Then Goto Step 3\nStep 6: Output D = D * (-2)\nStep 7: Stop\n```",
+      "choices": {
+        "A": "12",
+        "B": "20",
+        "C": "44",
+        "D": "-44"
+      },
+      "region": [
+        46.31999969482422,
+        544.9779663085938,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 13,
+      "page": 5,
+      "stem": "Consider the given algorithm.\nThe result of the given algorithm after execution is\n\n```text\nStep 1: Start\nStep 2: Set T = 10\nStep 3: If T % 2 == 0 Then T = T + 5\nStep 4: If T % 3 == 0 Then T = T + 6\nStep 5: If T == 21 Then T = T + 6\nStep 6: Output T\nStep 7: Stop\n```",
+      "choices": {
+        "A": "21",
+        "B": "22",
+        "C": "26",
+        "D": "27"
+      },
+      "region": [
+        74.66400146484375,
+        91.32795715332031,
+        555,
+        367.1579895019531
+      ]
+    },
+    {
+      "number": 14,
+      "page": 5,
+      "stem": "Consider the given algorithm.\nThe output that the algorithm will produce after execution is\n\n```text\nStep 1: Start\nStep 2: Set M = 2, N = 5\nStep 3: While N >= 1\n    M = M + N\n    N = N - 2\nStep 4: If N < 13 Then M = M + 1\nStep 5: Output M\nStep 6: Stop\n```",
+      "choices": {
+        "A": "10",
+        "B": "11",
+        "C": "12",
+        "D": "13"
+      },
+      "region": [
+        74.66400146484375,
+        369.1579895019531,
+        555,
+        630.6079711914062
+      ]
+    },
+    {
+      "number": 15,
+      "page": 5,
+      "stem": "A list of integers Z = [8, 3, 5, 1] is being sorted using insertion sort. What will be the state of the list after performing the second insertion?",
+      "choices": {
+        "A": "[3, 5, 8, 1]",
+        "B": "[3, 8, 5, 1]",
+        "C": "[1, 3, 5, 8]",
+        "D": "[8, 3, 5, 1]"
+      },
+      "region": [
+        74.66400146484375,
+        632.6079711914062,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 16,
+      "page": 6,
+      "stem": "A student implements the following algorithm to search for a value in a list using linear\nsearch.\nDuring the search for the value ‘9’, which elements will be compared using the linear search\nalgorithm?\n\n```text\nStep 1: Set A = [12, 17, 5, 9, 4]\nStep 2: Set target = 9\nStep 3: If element == target:\n    Print \"Found\"\nStep 4: Break\n```",
+      "choices": {
+        "A": "12, 17, 5, 9, 4",
+        "B": "12, 17, 5, 9",
+        "C": "12, 17",
+        "D": "9"
+      },
+      "region": [
+        46.31999969482422,
+        91.32795715332031,
+        555,
+        337.75799560546875
+      ]
+    },
+    {
+      "number": 17,
+      "page": 6,
+      "stem": "The MAIN feature of object-oriented programming that differentiates it from other type of languages is to",
+      "choices": {
+        "A": "control memory directly using commands.",
+        "B": "break problems into a list of steps using functions.",
+        "C": "combine data and related actions into a single unit.",
+        "D": "write code that runs in a straight line using loops and conditions."
+      },
+      "region": [
+        46.31999969482422,
+        339.75799560546875,
+        555,
+        452.8580017089844
+      ]
+    },
+    {
+      "number": 18,
+      "page": 6,
+      "stem": "The benefit of using a Python Integrated Development Environment (IDE) for debugging code is that it",
+      "choices": {
+        "A": "allows tracing code step-by-step and shows variable values.",
+        "B": "skips the debugging process and speed up execution.",
+        "C": "delays error messages to avoid user interruption.",
+        "D": "fixes all code errors without user input."
+      },
+      "region": [
+        46.31999969482422,
+        454.8580017089844,
+        555,
+        567.93798828125
+      ]
+    },
+    {
+      "number": 19,
+      "page": 6,
+      "stem": "The format for writing a multi-line comment in Python is",
+      "choices": {
+        "A": "```python\n''' This explains the logic in detail '''\n```",
+        "B": "```python\n-- This starts a comment block\n```",
+        "C": "```python\n/* This comment spans lines */\n```",
+        "D": "```python\n#* This is a comment *#\n```"
+      },
+      "region": [
+        46.31999969482422,
+        569.93798828125,
+        555,
+        660.9679565429688
+      ]
+    },
+    {
+      "number": 20,
+      "page": 6,
+      "stem": "The command to change the turtle’s pen color to red is",
+      "choices": {
+        "A": "```python\nturtle.fill(\"red\")\n```",
+        "B": "```python\nturtle.pen(\"red\")\n```",
+        "C": "```python\nturtle.line(\"red\")\n```",
+        "D": "```python\nturtle.color(\"red\")\n```"
+      },
+      "region": [
+        46.31999969482422,
+        662.9679565429688,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 21,
+      "page": 7,
+      "stem": "To utilise the datetime module in Python, the appropriate syntax is",
+      "choices": {
+        "A": "```python\nimport datetime\n```",
+        "B": "```python\ninstall datetime\n```",
+        "C": "```python\nload datetime\n```",
+        "D": "```python\nuse datetime\n```"
+      },
+      "region": [
+        74.66400146484375,
+        91.32795715332031,
+        555,
+        182.3279571533203
+      ]
+    },
+    {
+      "number": 22,
+      "page": 7,
+      "stem": "Which of the following variable names follows all naming rules and conventions in Python?",
+      "choices": {
+        "A": "```python\nstudent name\n```",
+        "B": "```python\nStudent-Name\n```",
+        "C": "```python\n@studentname\n```",
+        "D": "```python\n_student_name\n```"
+      },
+      "region": [
+        74.66400146484375,
+        184.3279571533203,
+        555,
+        275.3580017089844
+      ]
+    },
+    {
+      "number": 23,
+      "page": 7,
+      "stem": "If the user inputs 10/2+5*3, what is displayed?\n\n```python\nexp = input(\"Enter expression: \")\nresult = eval(exp)\nprint(result)\n```",
+      "choices": {
+        "A": "30.0",
+        "B": "25.0",
+        "C": "20.0",
+        "D": "15.0"
+      },
+      "region": [
+        74.66400146484375,
+        277.3580017089844,
+        555,
+        468.5780029296875
+      ]
+    },
+    {
+      "number": 24,
+      "page": 7,
+      "stem": "Which code prompts for age and displays \"Your age is 18\" when the user enters 18?",
+      "choices": {
+        "A": "```python\ninput(\"Enter your age: \")\nprint(\"Your age is\" age)\n```",
+        "B": "```python\ninput(\"Enter your age: \") = age\nprint(\"Your age is\", age)\n```",
+        "C": "```python\nage = input(\"Enter your age: \")\nprint(\"Your age is\", age)\n```",
+        "D": "```python\nprint = \"Enter your age\" + input(age)\nprint(\"Your age is\" age)\n```"
+      },
+      "region": [
+        74.66400146484375,
+        470.5780029296875,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 25,
+      "page": 8,
+      "stem": "Consider the following Python code. What is its output?\n\n```python\nfor i in range(1, 4):\n    for j in range(1, i + 1):\n        print(j, end=\"\")\n    print()\n```",
+      "choices": {
+        "A": "```text\n1\n21\n321\n```",
+        "B": "```text\n1\n12\n123\n```",
+        "C": "```text\n1\n23\n234\n```",
+        "D": "```text\n1\n13\n134\n```"
+      },
+      "region": [
+        46.31999969482422,
+        91.32795715332031,
+        555,
+        374.3580017089844
+      ]
+    },
+    {
+      "number": 26,
+      "page": 8,
+      "stem": "Which code prints \"Excellent\" if the percentage is above 90 and the subject is \"Math\"?",
+      "choices": {
+        "A": "```python\npercentage = int(input(\"Enter your percentage: \"))\nsubject = input(\"Enter your subject: \")\nif percentage > 90:\n    if subject == \"Math\"\n        print(\"Excellent\")\n```",
+        "B": "```python\npercentage = int(input(\"Enter your percentage: \"))\nsubject = input(\"Enter your subject: \")\nif percentage > 90\n    if subject == \"Math\":\n        print(\"Excellent\")\n```",
+        "C": "```python\npercentage = str(input(\"Enter your percentage: \"))\nsubject = input(\"Enter your subject: \")\nif percentage > 90:\n    if subject == \"Math\":\n        print(\"Excellent\")\n```",
+        "D": "```python\npercentage = int(input(\"Enter your percentage: \"))\nsubject = input(\"Enter your subject: \")\nif percentage > 90:\n    if subject == \"Math\":\n        print(\"Excellent\")\n```"
+      },
+      "region": [
+        46.31999969482422,
+        376.3580017089844,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 27,
+      "page": 9,
+      "stem": "What is the output of this Python program?\n\n```python\ni = 1\nwhile True:\n    if i == 4:\n        i += 1\n        continue\n    if i == 7:\n        exit()\n    print(i)\n    i += 1\n```",
+      "choices": {
+        "A": "1 2 3 5 6",
+        "B": "1 2 3 4 5 6",
+        "C": "1 2 3 5 6 7",
+        "D": "1 2 3 4 5 6 7"
+      },
+      "region": [
+        74.66400146484375,
+        91.32795715332031,
+        555,
+        390.3179931640625
+      ]
+    },
+    {
+      "number": 28,
+      "page": 9,
+      "stem": "Which type of error occurs in this program?\n\n```python\na = input(\"Enter first number: \")\nb = input(\"Enter second number: \")\naverage = (a + b) / 2\nprint(\"Average is:\", average)\n```",
+      "choices": {
+        "A": "syntax error.",
+        "B": "logical error.",
+        "C": "runtime error.",
+        "D": "semantic error."
+      },
+      "region": [
+        74.66400146484375,
+        392.3179931640625,
+        555,
+        601.2979736328125
+      ]
+    },
+    {
+      "number": 29,
+      "page": 9,
+      "stem": "What is the role of assert in the printed debugging example?\n\n```python\ndef safe_divide(a, b):\n    assert b != 0,\n    result = a / b\n    print(\"Result:\", result)\n    return result\n```",
+      "choices": {
+        "A": "ensure the function always produces a non-zero result.",
+        "B": "silently handle division and return null when ‘b’ is zero.",
+        "C": "force the program to stop if ‘b’ is zero during execution.",
+        "D": "convert the zero denominator into a small non-zero value."
+      },
+      "region": [
+        74.66400146484375,
+        603.2979736328125,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 30,
+      "page": 10,
+      "stem": "An analyst needs to group unlabelled customer data based on the similarity in their spending behaviour. The given task can be performed by using",
+      "choices": {
+        "A": "k-means clustering to segment similar data points.",
+        "B": "regression modeling to predict numeric targets.",
+        "C": "feature ranking to evaluate variable influence.",
+        "D": "decision trees to automate prediction rules."
+      },
+      "region": [
+        46.31999969482422,
+        91.32795715332031,
+        555,
+        196.1280059814453
+      ]
+    },
+    {
+      "number": 31,
+      "page": 10,
+      "stem": "A team compares two statistical models, one includes highly correlated features, the other excludes them. They observe improved accuracy and interpretability in the second model, leading them to revisit the role of input variables in shaping model behaviour and outcomes. The given information directly focuses on",
+      "choices": {
+        "A": "scaling accuracy using the number of classes.",
+        "B": "estimating training time from selection method.",
+        "C": "measuring model complexity using output type.",
+        "D": "removing features to improve model performance."
+      },
+      "region": [
+        46.31999969482422,
+        198.1280059814453,
+        555,
+        342.5579833984375
+      ]
+    },
+    {
+      "number": 32,
+      "page": 10,
+      "stem": "To reduce traffic congestion, a metropolitan transport authority implements an AI-powered traffic management system. It analyses Global Positioning System (GPS) data, camera feeds, signal timing logs, and commuter patterns to adjust traffic light schedules. The given case illustrates the role of data science in facilitating system-level improvement through",
+      "choices": {
+        "A": "automating basic vehicle maintenance alerts using timestamps.",
+        "B": "recording video evidence data for law enforcement inquiries.",
+        "C": "enhancing traffic flow using data-driven decision-making.",
+        "D": "collecting toll booth receipts for annual budget reporting."
+      },
+      "region": [
+        46.31999969482422,
+        344.5579833984375,
+        555,
+        502.7779846191406
+      ]
+    },
+    {
+      "number": 33,
+      "page": 10,
+      "stem": "The contribution of Internet of Things (IoT) to modern device networks is",
+      "choices": {
+        "A": "coordinating device responses based on predefined local instructions.",
+        "B": "enabling real-time communication between digital and physical systems.",
+        "C": "centralising control of multiple hardware components without connectivity.",
+        "D": "facilitating data exchange between isolated systems using manual input methods."
+      },
+      "region": [
+        46.31999969482422,
+        504.7779846191406,
+        555,
+        595.7779541015625
+      ]
+    },
+    {
+      "number": 34,
+      "page": 10,
+      "stem": "In an IoT system, the role of sensors is to",
+      "choices": {
+        "A": "present visual data directly to the user through dashboard screens.",
+        "B": "execute predefined logic to coordinate device-to-device interactions.",
+        "C": "transmit control signals from cloud services to local interface components.",
+        "D": "detect physical changes in the environment and convert them into digital data."
+      },
+      "region": [
+        46.31999969482422,
+        597.7779541015625,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 35,
+      "page": 11,
+      "stem": "A hospital integrates an IoT-based patient monitoring system that continuously records vital signs such as heart rate, oxygen levels, and pulse rate data. Physicians use this information to revise treatment plans in advance of visible symptoms, particularly in emergencies. Based on the given scenario, IoT enhances healthcare practice through",
+      "choices": {
+        "A": "automated treatments that reduce reliance on clinical staff.",
+        "B": "data access limited to post-threshold alerts in critical cases.",
+        "C": "wearable sensors replacing all manual health record-keeping.",
+        "D": "proactive decisions based on continuous physiological monitoring."
+      },
+      "region": [
+        74.66400146484375,
+        91.32795715332031,
+        555,
+        235.7279815673828
+      ]
+    },
+    {
+      "number": 36,
+      "page": 11,
+      "stem": "In healthcare system, big data analytics (BDA) supports advancements by",
+      "choices": {
+        "A": "enhancing treatment plans for guiding decisions.",
+        "B": "using aggregated statistics to build protocols.",
+        "C": "digitising patient histories for easier access.",
+        "D": "automating data flow to departments."
+      },
+      "region": [
+        74.66400146484375,
+        237.7279815673828,
+        555,
+        328.75799560546875
+      ]
+    },
+    {
+      "number": 37,
+      "page": 11,
+      "stem": "In automated vehicles, embedded systems are MAINLY responsible for",
+      "choices": {
+        "A": "supporting cloud-based updates for social and infotainment applications.",
+        "B": "managing critical tasks like engine control, braking, and airbag deployment.",
+        "C": "running downloadable programs not related to driving or onboard diagnostics.",
+        "D": "displaying non-essential media through connected operating system interfaces."
+      },
+      "region": [
+        74.66400146484375,
+        330.75799560546875,
+        555,
+        421.75799560546875
+      ]
+    },
+    {
+      "number": 38,
+      "page": 11,
+      "stem": "Blockchain integration in IoT systems is useful when",
+      "choices": {
+        "A": "devices record shared data in secure and auditable formats.",
+        "B": "systems aim to enhance coordination through localised scheduling.",
+        "C": "platforms focus on optimising internal operations using fixed rules.",
+        "D": "devices communicate for predictive analytics without transaction logs."
+      },
+      "region": [
+        74.66400146484375,
+        423.75799560546875,
+        555,
+        514.7779541015625
+      ]
+    },
+    {
+      "number": 39,
+      "page": 11,
+      "stem": "An industrial manufacturer deploys AI-driven predictive maintenance across its production lines. While downtime and repair costs are significantly reduced, employees raise concerns about job displacement and lack of transparency in decision-making. The given scenario PRIMARILY reflects a situation that includes",
+      "choices": {
+        "A": "deployment of AI tools to coordinate cloud-based supply chains.",
+        "B": "management of AI gains alongside workforce and trust concerns.",
+        "C": "integration of AI chatbots to streamline service-based communication.",
+        "D": "elimination of human roles using AI to achieve fully autonomous operations."
+      },
+      "region": [
+        74.66400146484375,
+        516.7779541015625,
+        555,
+        661.2079467773438
+      ]
+    },
+    {
+      "number": 40,
+      "page": 11,
+      "stem": "A reliable source of information is recognised when it",
+      "choices": {
+        "A": "communicates information in a conversational tone.",
+        "B": "offers factual content with supporting citations.",
+        "C": "presents popular insights shared widely online.",
+        "D": "features general knowledge in simple terms."
+      },
+      "region": [
+        74.66400146484375,
+        663.2079467773438,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 41,
+      "page": 12,
+      "stem": "Effective digital research involves tools that",
+      "choices": {
+        "A": "highlight sponsored content and less credible sources.",
+        "B": "rank posts from social media and discussion boards.",
+        "C": "present results based on popularity and comments.",
+        "D": "filter results using keywords and trusted sources."
+      },
+      "region": [
+        46.31999969482422,
+        91.32795715332031,
+        555,
+        182.3279571533203
+      ]
+    },
+    {
+      "number": 42,
+      "page": 12,
+      "stem": "Adnan sees a viral news post on social media with a dramatic headline and strong public reactions. To respond critically and responsibly, he should",
+      "choices": {
+        "A": "focus on how the post aligns with popular opinion.",
+        "B": "compare it with reports from verified news sources.",
+        "C": "comment based on how the headline made him feel.",
+        "D": "share it with a note saying he is unsure of its authenticity."
+      },
+      "region": [
+        46.31999969482422,
+        184.3279571533203,
+        555,
+        289.1579895019531
+      ]
+    },
+    {
+      "number": 43,
+      "page": 12,
+      "stem": "Ibrahim is working on a research project at a coffee shop using free public Wi‑Fi. While downloading academic articles, he logs into his cloud storage and email accounts unaware that the admin may be monitoring the network. To minimise the risk of exposing personal data, his BEST course of action would be to",
+      "choices": {
+        "A": "turn off auto-sync features for apps on his device.",
+        "B": "use incognito mode in Chrome to prevent tracking.",
+        "C": "switch to mobile data only if the website asks for a password.",
+        "D": "use a VPN connection that hides data from external networks."
+      },
+      "region": [
+        46.31999969482422,
+        291.1579895019531,
+        555,
+        435.5780029296875
+      ]
+    },
+    {
+      "number": 44,
+      "page": 12,
+      "stem": "Green computing encourages users to",
+      "choices": {
+        "A": "reduce energy usage by enabling sleep mode when idle.",
+        "B": "save power by lowering screen brightness on all devices.",
+        "C": "support sustainability by upgrading devices more frequently.",
+        "D": "minimise environmental impact by recycling electronic devices."
+      },
+      "region": [
+        46.31999969482422,
+        437.5780029296875,
+        555,
+        528.5780029296875
+      ]
+    },
+    {
+      "number": 45,
+      "page": 12,
+      "stem": "Sara automates her home using smart lights, speakers, and appliances. She uses less electricity by scheduling devices to turn off when not in use. Over time, however, she begins replacing devices frequently to keep up with compatibility and software updates. With reference to Sara’s situation, the environmental impact of connectivity is that",
+      "choices": {
+        "A": "smart devices simplify life but consume bandwidth.",
+        "B": "smart systems reduce electricity costs but limit privacy.",
+        "C": "energy is saved in the short term, but e-waste may increase.",
+        "D": "frequent updates lead to higher device speeds but lower waste."
+      },
+      "region": [
+        46.31999969482422,
+        530.5780029296875,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 46,
+      "page": 13,
+      "stem": "A video-sharing platform allows creators from different countries to upload content in their native languages with subtitles. As a result, international viewers engage with unfamiliar customs, music, and humour. The option that explains the impact of connectivity on cultural exchange is that it",
+      "choices": {
+        "A": "limits cultural expression due to global content filters.",
+        "B": "encourages creators to adapt only to local preferences.",
+        "C": "reduces the uniqueness of each culture by merging trends.",
+        "D": "promotes cross-cultural understanding through shared media."
+      },
+      "region": [
+        74.66400146484375,
+        91.32795715332031,
+        555,
+        235.7279815673828
+      ]
+    },
+    {
+      "number": 47,
+      "page": 13,
+      "stem": "In the context of online engagement, digital literacy helps individuals to",
+      "choices": {
+        "A": "engage actively in digital discussions with minimal source-checking.",
+        "B": "participate in online spaces using informed and mindful decisions.",
+        "C": "form conclusions based mainly on trending online content.",
+        "D": "confidently share opinions online without verifying facts."
+      },
+      "region": [
+        74.66400146484375,
+        237.7279815673828,
+        555,
+        328.75799560546875
+      ]
+    },
+    {
+      "number": 48,
+      "page": 13,
+      "stem": "In a study about student motivation, a qualitative approach would likely include",
+      "choices": {
+        "A": "calculating performance averages from test scores.",
+        "B": "analysing attendance records and participation logs.",
+        "C": "conducting personal interviews to gather detailed insights.",
+        "D": "administering a standardised survey with fixed-response items."
+      },
+      "region": [
+        74.66400146484375,
+        330.75799560546875,
+        555,
+        421.75799560546875
+      ]
+    },
+    {
+      "number": 49,
+      "page": 13,
+      "stem": "A tech company is designing a smart house system and releases a prototype version to a limited group of users. The goal is to observe user behaviour and gather feedback on the system’s functionality, accessibility, and responsiveness. The use of a prototype that enhances the data collection process at the current stage of development is to",
+      "choices": {
+        "A": "ensure developers stay fully involved in every testing phase.",
+        "B": "help verify the system operates correctly in all possible settings.",
+        "C": "support early identification of design flaws and user preferences.",
+        "D": "strengthen user trust before the product reaches the wider market."
+      },
+      "region": [
+        74.66400146484375,
+        423.75799560546875,
+        555,
+        581.9779663085938
+      ]
+    },
+    {
+      "number": 50,
+      "page": 13,
+      "stem": "A graduate student designing a study on remote work satisfaction starts by crafting research questions. However, the questions are vague, e.g., “Tell me about your job” which leads to off-topic or overly brief responses during pilot interviews. The change that would improve the quality of the data collection plan is to",
+      "choices": {
+        "A": "revise the questions to be specific, close-ended, and goal-aligned.",
+        "B": "rely on spontaneous conversation instead of guiding questions.",
+        "C": "use open-ended questions that require yes/ no responses.",
+        "D": "remove emotional topics to avoid biased feedback."
+      },
+      "region": [
+        74.66400146484375,
+        583.9779663085938,
+        555,
+        780
+      ]
+    }
+  ],
+  "XII": [
+    {
+      "number": 1,
+      "page": 2,
+      "stem": "Digital devices improve ease of use by",
+      "choices": {
+        "A": "providing periodic updates for stability.",
+        "B": "supporting add‑on accessories and extra features.",
+        "C": "offering advanced settings mainly for expert users.",
+        "D": "simplifying tasks through clear and quick controls."
+      },
+      "region": [
+        46.31999969482422,
+        91.44795227050781,
+        555,
+        182.4479522705078
+      ]
+    },
+    {
+      "number": 2,
+      "page": 2,
+      "stem": "Strong data protection in a device is achieved by",
+      "choices": {
+        "A": "using unique credentials and keeping software updated.",
+        "B": "renaming files to make them difficult to identify.",
+        "C": "organising files and folders to maintain security.",
+        "D": "installing apps from known sources."
+      },
+      "region": [
+        46.31999969482422,
+        184.4479522705078,
+        555,
+        275.4779968261719
+      ]
+    },
+    {
+      "number": 3,
+      "page": 2,
+      "stem": "Ayesha, a university student with low vision, struggles to read text on her tablet during online classes. Increasing the font size helps her, but she still misses important details unless she hears instructions for what’s on the screen. Based on the given situation, the suitable feature to turn on her tablet that helps her is a",
+      "choices": {
+        "A": "screen reader that provides audio guidance.",
+        "B": "file sorting tools that organise documents.",
+        "C": "magnify tools that enlarge selected areas.",
+        "D": "high‑contrast application theme."
+      },
+      "region": [
+        46.31999969482422,
+        277.4779968261719,
+        555,
+        421.87799072265625
+      ]
+    },
+    {
+      "number": 4,
+      "page": 2,
+      "stem": "A user with limited hand movement finds it difficult to tap small buttons and perform precise gestures on a smartphone. He wants a feature that helps him control the device with fewer physical actions. Based on the given situation, the accessibility feature that is applicable here is a/ an",
+      "choices": {
+        "A": "an alternate larger keyboard that improves typing comfort.",
+        "B": "assistive control that offers easy on‑screen actions.",
+        "C": "display tone setting that adjusts screen colours.",
+        "D": "gesture guide that explains different swipes."
+      },
+      "region": [
+        46.31999969482422,
+        423.87799072265625,
+        555,
+        568.2979736328125
+      ]
+    },
+    {
+      "number": 5,
+      "page": 2,
+      "stem": "Employees at an organisation are struggling with a new software tool. Even simple tasks now take longer because the layout feels messy, important buttons do not stand out, and people often click the wrong option before finding what they need. Based on Human Computer Interaction (HCI) principles, the reason that has reduced efficiency and task effectiveness in the given situation is the",
+      "choices": {
+        "A": "detailed training sessions are not being scheduled before rollout.",
+        "B": "screen appearances are not as appealing as the older system.",
+        "C": "interface makes users work harder to figure out what to do.",
+        "D": "desktops they use are not good enough for multitasking."
+      },
+      "region": [
+        46.31999969482422,
+        570.2979736328125,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 6,
+      "page": 3,
+      "stem": "HCI design reflections impact the usability and performance of the system by",
+      "choices": {
+        "A": "improving ease of navigation and task completion.",
+        "B": "changing the visual theme without affecting function.",
+        "C": "adjusting hardware components unrelated to interaction.",
+        "D": "adding elements that make screens look attractive and busy."
+      },
+      "region": [
+        74.66400146484375,
+        91.44795227050781,
+        555,
+        182.4479522705078
+      ]
+    },
+    {
+      "number": 7,
+      "page": 3,
+      "stem": "An educational institute introduces a new system where teachers must enter a password and then confirm a code sent to their phone before they can open their class records. Teachers find it time-consuming. Based on the given situation, the element that can be used as the HCI trade‑off is",
+      "choices": {
+        "A": "high-resolution graphics.",
+        "B": "visual design choices.",
+        "C": "cost effectiveness.",
+        "D": "stronger security."
+      },
+      "region": [
+        74.66400146484375,
+        184.4479522705078,
+        555,
+        328.87799072265625
+      ]
+    },
+    {
+      "number": 8,
+      "page": 3,
+      "stem": "The term data structure is defined as a",
+      "choices": {
+        "A": "step‑by‑step set of rules and instructions for solving a computational problem.",
+        "B": "method of organising and storing data so it can be used efficiently.",
+        "C": "storage device that manages memory inside a computer.",
+        "D": "visual layout used to display information on a screen."
+      },
+      "region": [
+        74.66400146484375,
+        330.87799072265625,
+        555,
+        421.87799072265625
+      ]
+    },
+    {
+      "number": 9,
+      "page": 3,
+      "stem": "An array is referred as a",
+      "choices": {
+        "A": "fixed‑size set of elements stored in consecutive locations.",
+        "B": "set of linked records branching into multiple directions.",
+        "C": "structure where items are processed in arrival order.",
+        "D": "flexible group of items that automatically shrinks."
+      },
+      "region": [
+        74.54399871826172,
+        423.87799072265625,
+        555,
+        514.89794921875
+      ]
+    },
+    {
+      "number": 10,
+      "page": 3,
+      "stem": "A queue is a data structure in which the",
+      "choices": {
+        "A": "most recent item is removed first.",
+        "B": "item can have multiple child nodes.",
+        "C": "items are stored in a memory inline.",
+        "D": "items are handled in the order they arrive."
+      },
+      "region": [
+        74.66400146484375,
+        516.89794921875,
+        555,
+        607.89794921875
+      ]
+    },
+    {
+      "number": 11,
+      "page": 3,
+      "stem": "In an array, traversal is the process of",
+      "choices": {
+        "A": "linking elements together to form a branching structure.",
+        "B": "visiting each element one after another to read or use its value.",
+        "C": "inserting new data anywhere without shifting existing elements.",
+        "D": "removing items from the front and adding new ones at the back."
+      },
+      "region": [
+        74.66400146484375,
+        609.89794921875,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 12,
+      "page": 4,
+      "stem": "A game developer is building a feature that lets the computer decide its next move by checking different options step by step. Each choice splits into further possible choices until it picks the best one. Based on the given situation, the data structure that is appropriate for modelling the given feature is",
+      "choices": {
+        "A": "tree.",
+        "B": "stack.",
+        "C": "queue.",
+        "D": "ordered list."
+      },
+      "region": [
+        46.31999969482422,
+        91.44795227050781,
+        555,
+        249.64796447753906
+      ]
+    },
+    {
+      "number": 13,
+      "page": 4,
+      "stem": "Consider the following algorithm used by a file management system.\n\n```text\n1. Start at the root folder.\n2. For each subfolder in the current folder:\n   a. Display the folder name.\n   b. Move into the subfolder and repeat Step 2.\n3. When no more subfolders exist, return to the previous level.\n```\n\n```text\nRoot\n├── Folder A\n│   ├── File 1\n│   └── File 2\n├── Folder B\n│   └── File 3\n└── File 4\n```\n\nBased on the given algorithm, how many items are counted?",
+      "choices": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "7"
+      },
+      "region": [
+        46.31999969482422,
+        251.64796447753906,
+        555,
+        480.93798828125
+      ]
+    },
+    {
+      "number": 14,
+      "page": 4,
+      "stem": "A bookstore app keeps all book prices in a sorted list, so it can quickly locate a price. The price list is: [120, 180, 250, 320, 400, 450, 520, 580]. A customer wants to check if the price of 400 is available. Using binary search, the FIRST element that the algorithm will check in the given information will be",
+      "choices": {
+        "A": "250",
+        "B": "320",
+        "C": "400",
+        "D": "450"
+      },
+      "region": [
+        46.31999969482422,
+        482.93798828125,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 15,
+      "page": 5,
+      "stem": "A company stores employee information in a hierarchical tree, where each manager node contains several employee nodes. The software needs to generate a report that lists employees in the same order as they would appear using the following pattern: \n-  Visit the manager first \n-  Then move through all team members from left to right \n-  Continue this pattern down the hierarchy The system must also update each visited node’s “lastChecked” field as it passes through.",
+      "choices": {
+        "A": "level‑order.",
+        "B": "post-order.",
+        "C": "pre-order.",
+        "D": "in-order."
+      },
+      "region": [
+        74.66400146484375,
+        91.44795227050781,
+        555,
+        291.7980041503906
+      ]
+    },
+    {
+      "number": 16,
+      "page": 5,
+      "stem": "Consider the following Python program. What is its output?\n\n```python\ndef change(n):\n    n = n + 5\n    print(\"Inside function:\", n)\n\nx = 10\nchange(x)\nprint(\"Outside function:\", x)\n```",
+      "choices": {
+        "A": "```text\nInside function: 15\nOutside function: 10\n```",
+        "B": "```text\nInside function: 15\nOutside function: 15\n```",
+        "C": "```text\nInside function: 10\nOutside function: 10\n```",
+        "D": "```text\nInside function: 5\nOutside function: 10\n```"
+      },
+      "region": [
+        74.66400146484375,
+        293.7980041503906,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 17,
+      "page": 6,
+      "stem": "Consider the following Python program. What is its output?\n\n```python\ndef show(info):\n    print(\"Function output:\", info)\n\nstudent = {\"name\": \"Sara\", \"age\": 16}\nshow(student)\n\ndef modify(info):\n    info = {\"name\": \"Sara\", \"age\": 17}\n\nmodify(student)\nprint(\"Final result:\", student)\n```",
+      "choices": {
+        "A": "```text\nFunction output: {'name': 'Sara', 'age': 16}\nFinal result: {'name': 'Sara', 'age': 17}\n```",
+        "B": "```text\nFunction output: {'name': 'Sara', 'age': 16}\nFinal result: {'name': 'Sara', 'age': 16}\n```",
+        "C": "```text\nFunction output: {'name': 'Sara', 'age': 17}\nFinal result: {'name': 'Sara', 'age': 17}\n```",
+        "D": "```text\nFunction output: {'name': 'Sara', 'age': 16}\nFinal result: {'name': 'Sara'}\n```"
+      },
+      "region": [
+        46.31999969482422,
+        91.44795227050781,
+        555,
+        419.2380065917969
+      ]
+    },
+    {
+      "number": 18,
+      "page": 6,
+      "stem": "Adnan is developing a school management system. He designs a structure called ‘Student’ that includes details like name, roll number, and grade. Later, he creates multiple real students, such as Ahad, Sara, and Altaf, each with their own specific information based on that structure. Based on the given situation, the ‘Student’ represents in terms of Object Oriented Programming (OOP) as a/ an",
+      "choices": {
+        "A": "class.",
+        "B": "object.",
+        "C": "method.",
+        "D": "attribute."
+      },
+      "region": [
+        46.20000076293945,
+        421.2380065917969,
+        555,
+        593.2579345703125
+      ]
+    },
+    {
+      "number": 19,
+      "page": 6,
+      "stem": "Arham is a developer, building a banking application in Python. He creates a class called Account in which the balance should not be changed directly from outside the class. Instead, he provides methods like deposit() and withdraw( ) to safely update the balance. Based on the given situation, the concept of OOP applied by Arham is",
+      "choices": {
+        "A": "abstraction.",
+        "B": "inheritance.",
+        "C": "encapsulation.",
+        "D": "polymorphism."
+      },
+      "region": [
+        49.560001373291016,
+        595.2579345703125,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 20,
+      "page": 7,
+      "stem": "What is the output of this Python program?\n\n```python\nclass Car:\n    def __init__(self):\n        self.year = 2020\n        self.brand = \"Toyota\"\n\n    def show_info(self):\n        print(self.brand, self.year)\n\nmy_car = Car()\nmy_car.show_info()\n```",
+      "choices": {
+        "A": "```text\nToyota 2020\n```",
+        "B": "```text\n'Toyota', 2020\n```",
+        "C": "```text\nToyota\n2020\n```",
+        "D": "```text\n2020 Toyota\n```"
+      },
+      "region": [
+        74.66400146484375,
+        91.44795227050781,
+        555,
+        373.0379943847656
+      ]
+    },
+    {
+      "number": 21,
+      "page": 7,
+      "stem": "What is the output of this Python program?\n\n```python\nclass Player:\n    def __init__(self, name):\n        self.name = name\n\n    def greet(self):\n        print(\"Welcome,\", self.name)\n\ndef main():\n    p1 = Player(\"Ahmed\")\n    p1.greet()\n\nmain()\n```",
+      "choices": {
+        "A": "Welcome Ahmed",
+        "B": "Welcome, Ahmed",
+        "C": "‘Welcome’ Ahmed",
+        "D": "‘Welcome’, Ahmed"
+      },
+      "region": [
+        74.66400146484375,
+        375.0379943847656,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 22,
+      "page": 8,
+      "stem": "Consider the following Python program. What is its output?\n\n```python\nclass Vehicle:\n    def __init__(self):\n        self.type = \"Generic Vehicle\"\n\n    def info(self):\n        return self.type\n\nclass Car(Vehicle):\n    def __init__(self):\n        super().__init__()\n        self.type = \"Car\"\n\n    def info(self):\n        return \"This is a \" + self.type\n\nclass ElectricCar(Car):\n    def __init__(self):\n        super().__init__()\n        self.battery = \"Lithium\"\n\ndef main():\n    e = ElectricCar()\n    print(e.info())\n    print(e.battery)\n\nmain()\n```",
+      "choices": {
+        "A": "```text\nGeneric Vehicle\nLithium\n```",
+        "B": "```text\nThis is a Generic Vehicle\nCar\n```",
+        "C": "```text\nThis is a Car\nLithium\n```",
+        "D": "```text\nThis is a Lithium Car\n```"
+      },
+      "region": [
+        46.20000076293945,
+        91.44795227050781,
+        555,
+        583.2979736328125
+      ]
+    },
+    {
+      "number": 23,
+      "page": 8,
+      "stem": "What is the output of this Python program?\n\n```python\ndef main():\n    data = {\"x\": 12, \"y\": 7, \"z\": 3}\n    result = data[\"x\"] * (data[\"y\"] + data[\"z\"]) - data[\"y\"] // data[\"z\"]\n    print(result)\n\nmain()\n```",
+      "choices": {
+        "A": "96",
+        "B": "117.67",
+        "C": "118",
+        "D": "122.33"
+      },
+      "region": [
+        46.31999969482422,
+        585.2979736328125,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 24,
+      "page": 9,
+      "stem": "What is the output of this Python program?\n\n```python\ndef main():\n    scores = {\"Adnan\": 85, \"Sara\": 92, \"John\": 78}\n    result = scores[\"Sara\"]\n    print(result)\n\nmain()\n```",
+      "choices": {
+        "A": "92",
+        "B": "Sara",
+        "C": "‘Sara’ : 92",
+        "D": "“Sara” : 92"
+      },
+      "region": [
+        74.66400146484375,
+        91.44795227050781,
+        555,
+        294.7980041503906
+      ]
+    },
+    {
+      "number": 25,
+      "page": 9,
+      "stem": "A database developer creates Employees inside CompanyDB. EmpID must be the primary key, EmpName must be VARCHAR(50), and Salary must be an integer that cannot be NULL. Which MS SQL definition meets these requirements?",
+      "choices": {
+        "A": "```sql\nCREATE TABLE Employees (\n    EmpID INT NOT NULL,\n    EmpName VARCHAR(50),\n    Salary INT NOT NULL,\n    PK_Emp PRIMARY KEY (EmpName)\n);\n```",
+        "B": "```sql\nCREATE TABLE Employees (\n    EmpID INT,\n    EmpName VARCHAR(50) NOT NULL,\n    Salary INT,\n    PRIMARY KEY (EmpID)\n);\n```",
+        "C": "```sql\nCREATE TABLE Employees (\n    EmpID INT UNIQUE NOT NULL,\n    EmpName VARCHAR(50),\n    Salary INT NULL\n);\n```",
+        "D": "```sql\nCREATE TABLE Employees (\n    EmpID INT PRIMARY KEY,\n    EmpName VARCHAR(50),\n    Salary INT NOT NULL\n);\n```"
+      },
+      "region": [
+        74.54399871826172,
+        296.7980041503906,
+        555,
+        656.16796875
+      ]
+    },
+    {
+      "number": 26,
+      "page": 9,
+      "stem": "Machine learning (ML) can be defined as a",
+      "choices": {
+        "A": "system that advances decisions by studying outlines from data.",
+        "B": "program that depends solely on manual instructions for tasks.",
+        "C": "system that relies completely on fixed rules for all outcomes.",
+        "D": "method that organises data without adapting behaviour."
+      },
+      "region": [
+        74.54399871826172,
+        658.16796875,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 27,
+      "page": 10,
+      "stem": "A hospital builds a model that predicts heart disease. After training the model, they assess its accuracy, precision, recall, and F1 score to evaluate its reliability before using it with real patients. Based on the given situation, the Machine learning (ML) model-building step used is",
+      "choices": {
+        "A": "model assessment.",
+        "B": "feature plotting.",
+        "C": "train test split.",
+        "D": "model tuning."
+      },
+      "region": [
+        46.31999969482422,
+        91.44795227050781,
+        555,
+        235.8479766845703
+      ]
+    },
+    {
+      "number": 28,
+      "page": 10,
+      "stem": "A researcher runs a statistical test and gets a P‑value of 0.03 with a significance level (α) of 0.05. Based on the given information, the output shows that the result",
+      "choices": {
+        "A": "is not significant because the P‑value must be equal to zero to reject the null hypothesis.",
+        "B": "is statistically significant because the P‑value is below the chosen threshold.",
+        "C": "fails the test automatically because the P‑value cannot be smaller than 0.05.",
+        "D": "can be interpreted because the significance level must always be 0.01."
+      },
+      "region": [
+        46.31999969482422,
+        237.8479766845703,
+        555,
+        368.4779968261719
+      ]
+    },
+    {
+      "number": 29,
+      "page": 10,
+      "stem": "A retail company is trying to predict which customers will buy products again next month. The raw dataset contains transaction dates, purchase amounts, and customer IDs. The data scientist creates new columns such as “total_spent_last_3_months” and “days_since_last_purchase.” Based on the given situation, the ML step used is",
+      "choices": {
+        "A": "data splitting.",
+        "B": "model training.",
+        "C": "model deployment.",
+        "D": "feature engineering."
+      },
+      "region": [
+        46.20000076293945,
+        370.4779968261719,
+        555,
+        528.697998046875
+      ]
+    },
+    {
+      "number": 30,
+      "page": 10,
+      "stem": "A company builds a model to predict next month’s energy consumption for each household. When evaluating the model, the team notices that very large prediction mistakes are being penalised much more heavily than small mistakes. The model’s overall prediction error score is 8.4. Based on the given situation, the model evaluation metric used is",
+      "choices": {
+        "A": "RMSE (Root Mean Square Error).",
+        "B": "rand index.",
+        "C": "accuracy.",
+        "D": "f1 score."
+      },
+      "region": [
+        46.31999969482422,
+        530.697998046875,
+        555,
+        688.927978515625
+      ]
+    },
+    {
+      "number": 31,
+      "page": 10,
+      "stem": "The ROC (Receiver Operating Characteristic) curve is used to evaluate",
+      "choices": {
+        "A": "close predictions in a model that are close to the actual numeric values.",
+        "B": "classifier that distinguishes between classes at various thresholds.",
+        "C": "predicted positive cases in a model that were corrected or not.",
+        "D": "model cluster accurately that matches the true labels."
+      },
+      "region": [
+        46.20000076293945,
+        690.927978515625,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 32,
+      "page": 11,
+      "stem": "When evaluating a model that performs well across all its predictions, accuracy refers to the",
+      "choices": {
+        "A": "positive predictions that were correct.",
+        "B": "all predictions that the model classified correctly.",
+        "C": "real positive cases that the model successfully identified.",
+        "D": "measure of precision and recall expressed as a single score."
+      },
+      "region": [
+        74.66400146484375,
+        91.44795227050781,
+        555,
+        182.4479522705078
+      ]
+    },
+    {
+      "number": 33,
+      "page": 11,
+      "stem": "The feature of Internet of Things (IoT) based smart homes that is most relevant for reducing electricity shortages in Pakistan is",
+      "choices": {
+        "A": "automatically connecting and disconnecting home appliances.",
+        "B": "remote monitoring and automated control of energy use.",
+        "C": "using only imported IoT devices.",
+        "D": "eliminating the manual switches."
+      },
+      "region": [
+        74.54399871826172,
+        184.4479522705078,
+        555,
+        289.2779846191406
+      ]
+    },
+    {
+      "number": 34,
+      "page": 11,
+      "stem": "IoT-enabled livestock monitoring that supports farmers in Pakistan is by",
+      "choices": {
+        "A": "lowering feed consumption through unrestricted animal movement.",
+        "B": "improving animal growth through automated feeding systems.",
+        "C": "fully replacing veterinary diagnosis and treatment services.",
+        "D": "continuously tracking animals’ health and location."
+      },
+      "region": [
+        74.54399871826172,
+        291.2779846191406,
+        555,
+        382.2779846191406
+      ]
+    },
+    {
+      "number": 35,
+      "page": 11,
+      "stem": "A medium-sized company in Pakistan manages a large amount of customer data. Previously, the company stored all data on local servers, which required frequent maintenance, physical space, and backup systems. To reduce costs and ensure that data remains accessible even during power failures or hardware damage, the company decides to shift its data storage approach. Based on the given situation, the company’s data shifting from local servers to cloud‑based storage is important because cloud computing",
+      "choices": {
+        "A": "centralises data storage by relying on on‑site hardware and data centers.",
+        "B": "provides off‑site storage with scalability, automatic backups, and remote access.",
+        "C": "eliminates the risk of data loss by storing it in physical data centers within the company.",
+        "D": "reduces electricity usage by storing data permanently on personal devices instead of servers."
+      },
+      "region": [
+        74.54399871826172,
+        384.2779846191406,
+        555,
+        583.89794921875
+      ]
+    },
+    {
+      "number": 36,
+      "page": 11,
+      "stem": "The relationship between deep learning networks and neural networks is explained by the idea that deep learning",
+      "choices": {
+        "A": "focuses on manual feature selection rather than layered processing of data.",
+        "B": "simplifies neural network structures by reducing the number of processing layers.",
+        "C": "uses a completely different architecture that is unrelated to traditional neural networks.",
+        "D": "represents an advanced form of neural networks with hidden layers for complex learning."
+      },
+      "region": [
+        74.54399871826172,
+        585.89794921875,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 37,
+      "page": 12,
+      "stem": "A self‑driving car must recognise pedestrians, vehicles, and road signs in the busy traffic conditions. Based on the given information, deep learning networks are suitable for this task because they can",
+      "choices": {
+        "A": "react only to pre‑programmed road maps.",
+        "B": "interpret complex sensor inputs in real time.",
+        "C": "replace physical sensors with software logic.",
+        "D": "operate without continuous environmental data."
+      },
+      "region": [
+        46.20000076293945,
+        91.44795227050781,
+        555,
+        235.8479766845703
+      ]
+    },
+    {
+      "number": 38,
+      "page": 12,
+      "stem": "In information systems, privacy is defined as the",
+      "choices": {
+        "A": "right of individuals to control their personal data collection and its use.",
+        "B": "process of encrypting data during transmission and communication.",
+        "C": "protection of systems against unauthorised technical attacks.",
+        "D": "prevention of physical damage to computing devices."
+      },
+      "region": [
+        46.31999969482422,
+        237.8479766845703,
+        555,
+        328.87799072265625
+      ]
+    },
+    {
+      "number": 39,
+      "page": 12,
+      "stem": "In a cyberattack, eavesdropping can be described as",
+      "choices": {
+        "A": "altering packets of data during data transmission.",
+        "B": "generating false network traffic to slow server systems.",
+        "C": "monitoring transmission covertly to capture sensitive information.",
+        "D": "deleting transmitted data before it reaches the receiver in channels."
+      },
+      "region": [
+        46.31999969482422,
+        330.87799072265625,
+        555,
+        421.87799072265625
+      ]
+    },
+    {
+      "number": 40,
+      "page": 12,
+      "stem": "In a cyberattack, Domain Name System (DNS) spoofing is harmful because it",
+      "choices": {
+        "A": "infects browsers with malicious extensions.",
+        "B": "damages the physical network domain name system.",
+        "C": "redirects users to fake websites by altering name resolution.",
+        "D": "blocks access to all the websites permanently through VPN."
+      },
+      "region": [
+        46.20000076293945,
+        423.87799072265625,
+        555,
+        514.89794921875
+      ]
+    },
+    {
+      "number": 41,
+      "page": 12,
+      "stem": "A network firewall blocks incoming traffic from unknown external sources while allowing trusted internal communication. This behaviour of a firewall shows that it",
+      "choices": {
+        "A": "analyses internal files for virus transmission.",
+        "B": "filters network traffic based on predefined rules.",
+        "C": "monitors user behaviour in real-time transmission.",
+        "D": "encrypts all internal data flowing across the network."
+      },
+      "region": [
+        46.20000076293945,
+        516.89794921875,
+        555,
+        621.7279663085938
+      ]
+    },
+    {
+      "number": 42,
+      "page": 12,
+      "stem": "An organisation converts confidential documents into an unreadable format before storing them on external servers. Even if an unauthorised person gains access to those files, the information remains meaningless without a specific key. Based on the given situation, the security measure is effective because of encryption",
+      "choices": {
+        "A": "stops unauthorised users from duplicating the data.",
+        "B": "conceals system operations from network attackers.",
+        "C": "prevents malicious software from entering the network.",
+        "D": "ensures data remains secret even when access is compromised."
+      },
+      "region": [
+        46.20000076293945,
+        623.7279663085938,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 43,
+      "page": 13,
+      "stem": "A user notices that a website address begins with HTTPS instead of HTTP while entering login details. This difference indicates that the HTTPS",
+      "choices": {
+        "A": "allows access to websites without an internet connection.",
+        "B": "encrypts data during transmission to improve security.",
+        "C": "blocks all cyberattack automatically on the website.",
+        "D": "transfers data faster than HTTP without encryption."
+      },
+      "region": [
+        74.54399871826172,
+        91.44795227050781,
+        555,
+        196.2480010986328
+      ]
+    },
+    {
+      "number": 44,
+      "page": 13,
+      "stem": "In information security, cryptography is a process that",
+      "choices": {
+        "A": "hides data within another medium.",
+        "B": "blocks cyberattack through traffic control.",
+        "C": "detects unauthorised access to the network.",
+        "D": "converts information into an unreadable form."
+      },
+      "region": [
+        74.54399871826172,
+        198.2480010986328,
+        555,
+        289.2779846191406
+      ]
+    },
+    {
+      "number": 45,
+      "page": 13,
+      "stem": "In research methodology, a research question or problem is known as a",
+      "choices": {
+        "A": "matter to be studied.",
+        "B": "data collection method.",
+        "C": "final research conclusion.",
+        "D": "summary of research findings."
+      },
+      "region": [
+        74.54399871826172,
+        291.2779846191406,
+        555,
+        382.2779846191406
+      ]
+    },
+    {
+      "number": 46,
+      "page": 13,
+      "stem": "A case study is a research approach that involves a",
+      "choices": {
+        "A": "contextual analysis of a unique subject.",
+        "B": "statistical comparison of variables.",
+        "C": "broad survey of large populations.",
+        "D": "summary of existing literature."
+      },
+      "region": [
+        74.54399871826172,
+        384.2779846191406,
+        555,
+        475.2980041503906
+      ]
+    },
+    {
+      "number": 47,
+      "page": 13,
+      "stem": "A research team presents its findings using interactive dashboards, charts, and short video summaries shared online. While a few quickly understand the key insights, some academic readers question whether all methodological details are easily accessible or not. Based on the given situation, it can be inferred that the research communication practices using digital tools are MOST effective when they",
+      "choices": {
+        "A": "prioritise visual clarity but may limit detailed procedural explanation.",
+        "B": "guarantee accurate interpretation regardless of audience background.",
+        "C": "ensure equal accessibility and understanding for all audience types.",
+        "D": "replace the need for written research reports entirely."
+      },
+      "region": [
+        74.54399871826172,
+        477.2980041503906,
+        555,
+        635.5279541015625
+      ]
+    },
+    {
+      "number": 48,
+      "page": 13,
+      "stem": "A small software startup develops a Minimum Viable Product (MVP) that includes only the most important features of an app. The team releases it to a limited group of users and carefully observes the use of app before deciding what improvements to make. Based on the given scenario, the purpose of an MVP is to",
+      "choices": {
+        "A": "test key ideas early by collecting feedback.",
+        "B": "add advanced features before public release.",
+        "C": "generate maximum revenue at the first launch.",
+        "D": "present a final product ready for long‑term customers."
+      },
+      "region": [
+        74.54399871826172,
+        637.5279541015625,
+        555,
+        780
+      ]
+    },
+    {
+      "number": 49,
+      "page": 14,
+      "stem": "A student plans to design a Minimum Viable Product (MVP) to help users quickly record daily expenses. The goal is to check whether users find the idea useful before investing more time and resources. By applying MVP development principles, the suitable prototype for the given situation is a/ an",
+      "choices": {
+        "A": "app that includes expense tracking along with budgeting tips and reports.",
+        "B": "visually detailed design with final working expense features and reports.",
+        "C": "complete financial management system with bank integration.",
+        "D": "app that allows users to enter the expenses and view the total."
+      },
+      "region": [
+        46.20000076293945,
+        91.44795227050781,
+        555,
+        249.64796447753906
+      ]
+    },
+    {
+      "number": 50,
+      "page": 14,
+      "stem": "A startup initially tested its business idea by releasing a very simple online version with only one core function. Early users showed interest, but their behaviour revealed that the product was useful in a different way than originally expected. The company adjusted its direction before investing in a full product. Based on the given case, the success of the MVP can be analysed by the fact that it",
+      "choices": {
+        "A": "demonstrated early system stability and reliability to reduce future development risk.",
+        "B": "created an immediate market reputation and credibility through initial user growth.",
+        "C": "enabled early testing and refinement of assumptions based on user’s attitude.",
+        "D": "accelerated full product design and development by minimising uncertainty."
+      },
+      "region": [
+        46.20000076293945,
+        251.64796447753906,
+        555,
+        780
+      ]
+    }
+  ]
+}

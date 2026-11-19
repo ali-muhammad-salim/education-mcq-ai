@@ -1,0 +1,1252 @@
+{
+  "1": {
+    "slo": "9.1.1",
+    "answer": "D",
+    "explanation": "Clear, quick controls reduce the effort required to perform tasks.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Updates improve stability rather than simplify the interaction directly."
+      },
+      {
+        "key": "B",
+        "reason": "Accessories may add capabilities without making tasks easier."
+      },
+      {
+        "key": "C",
+        "reason": "Expert settings can increase complexity."
+      },
+      {
+        "key": "D",
+        "reason": "Clear controls directly simplify tasks."
+      }
+    ]
+  },
+  "2": {
+    "slo": "9.1.2",
+    "answer": "A",
+    "explanation": "Unique credentials and software updates reduce credential reuse and known software vulnerabilities.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Unique credentials and updates address common account and software risks."
+      },
+      {
+        "key": "B",
+        "reason": "Renaming does not control access."
+      },
+      {
+        "key": "C",
+        "reason": "Folder organisation does not enforce security."
+      },
+      {
+        "key": "D",
+        "reason": "Trusted app sources help, but this is less complete than A."
+      }
+    ]
+  },
+  "3": {
+    "slo": "9.1.3",
+    "answer": "A",
+    "explanation": "A screen reader supplies the spoken information required by the scenario.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Spoken guidance supplies the missing access mode."
+      },
+      {
+        "key": "B",
+        "reason": "Sorting files does not provide audio access."
+      },
+      {
+        "key": "C",
+        "reason": "Magnification repeats an adjustment that is insufficient here."
+      },
+      {
+        "key": "D",
+        "reason": "Contrast changes do not supply spoken instructions."
+      }
+    ]
+  },
+  "4": {
+    "slo": "9.1.3",
+    "answer": "B",
+    "explanation": "Assistive controls reduce the need for precise gestures and physical actions.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A larger keyboard helps typing but does not address all gestures."
+      },
+      {
+        "key": "B",
+        "reason": "Assistive controls reduce precise physical actions."
+      },
+      {
+        "key": "C",
+        "reason": "Colour tone does not address motor control."
+      },
+      {
+        "key": "D",
+        "reason": "Instructions explain gestures rather than reduce the physical demand."
+      }
+    ]
+  },
+  "5": {
+    "slo": "9.2.2",
+    "answer": "C",
+    "explanation": "A confusing interface increases cognitive effort, errors and task completion time.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The scenario directly identifies layout problems rather than absent training."
+      },
+      {
+        "key": "B",
+        "reason": "Appearance alone does not explain the task errors described."
+      },
+      {
+        "key": "C",
+        "reason": "The interface increases cognitive effort and errors."
+      },
+      {
+        "key": "D",
+        "reason": "No evidence establishes inadequate hardware."
+      }
+    ]
+  },
+  "6": {
+    "slo": "9.3.1",
+    "answer": "A",
+    "explanation": "Navigation and task completion are direct usability outcomes of HCI design.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Easier navigation improves effectiveness and efficiency."
+      },
+      {
+        "key": "B",
+        "reason": "A cosmetic change alone does not establish a usability improvement."
+      },
+      {
+        "key": "C",
+        "reason": "Unrelated hardware adjustments do not improve the interaction design."
+      },
+      {
+        "key": "D",
+        "reason": "Extra clutter can impair navigation."
+      }
+    ]
+  },
+  "7": {
+    "slo": "9.3.2",
+    "answer": "D",
+    "explanation": "The extra authentication step improves security while adding interaction time.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Resolution is not the authentication trade-off."
+      },
+      {
+        "key": "B",
+        "reason": "The scenario does not describe visual styling."
+      },
+      {
+        "key": "C",
+        "reason": "No cost comparison is given."
+      },
+      {
+        "key": "D",
+        "reason": "Additional authentication improves security while requiring more interaction."
+      }
+    ]
+  },
+  "8": {
+    "slo": "10.1.1",
+    "answer": "B",
+    "explanation": "A data structure organises and stores data for effective use.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "This defines an algorithm."
+      },
+      {
+        "key": "B",
+        "reason": "This defines a data structure."
+      },
+      {
+        "key": "C",
+        "reason": "A data structure is a logical organisation, not a storage device."
+      },
+      {
+        "key": "D",
+        "reason": "A visual layout is an interface representation."
+      }
+    ]
+  },
+  "9": {
+    "slo": "10.1.2",
+    "answer": "A",
+    "explanation": "The conventional array model uses a fixed-size sequence of contiguous storage locations.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "This describes the conventional array model."
+      },
+      {
+        "key": "B",
+        "reason": "Branching records describe a tree."
+      },
+      {
+        "key": "C",
+        "reason": "Arrival-order processing describes a queue."
+      },
+      {
+        "key": "D",
+        "reason": "Automatic resizing is not a defining property of a fixed-size array."
+      }
+    ]
+  },
+  "10": {
+    "slo": "10.1.2",
+    "answer": "D",
+    "explanation": "A queue normally follows first-in, first-out ordering.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Removing the newest entry first describes a stack."
+      },
+      {
+        "key": "B",
+        "reason": "Child nodes describe a tree."
+      },
+      {
+        "key": "C",
+        "reason": "Contiguous memory alone does not define queue behaviour."
+      },
+      {
+        "key": "D",
+        "reason": "A standard queue processes arrivals first-in, first-out."
+      }
+    ]
+  },
+  "11": {
+    "slo": "10.2.1",
+    "answer": "B",
+    "explanation": "Traversal visits elements in sequence to read or process them.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Branching links concern a tree."
+      },
+      {
+        "key": "B",
+        "reason": "Traversal visits array elements."
+      },
+      {
+        "key": "C",
+        "reason": "Insertion is distinct from traversal and can require shifting."
+      },
+      {
+        "key": "D",
+        "reason": "Removing from the front and adding to the back concerns queue operations."
+      }
+    ]
+  },
+  "12": {
+    "slo": "10.3.1",
+    "answer": "A",
+    "explanation": "A tree represents branching choices and their descendants.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A tree represents the branching decisions."
+      },
+      {
+        "key": "B",
+        "reason": "A stack stores last-in, first-out entries."
+      },
+      {
+        "key": "C",
+        "reason": "A queue stores first-in, first-out entries."
+      },
+      {
+        "key": "D",
+        "reason": "An ordered list does not directly represent branching descendants."
+      }
+    ]
+  },
+  "13": {
+    "slo": "10.3.3",
+    "answer": null,
+    "explanation": "The printed algorithm visits subfolders, so only Folder A and Folder B are displayed. No option gives two. Counting all files and folders below the root would give six, but the pseudocode does not visit files or include a counter.",
+    "status": "KEY_CONFLICT",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Four counts the files alone, which the printed algorithm never visits."
+      },
+      {
+        "key": "B",
+        "reason": "Five is neither the folder count nor the number of descendants."
+      },
+      {
+        "key": "C",
+        "reason": "Six counts every descendant, requiring a broader traversal than the printed subfolder algorithm."
+      },
+      {
+        "key": "D",
+        "reason": "Seven includes the root and every descendant, which the algorithm does not count."
+      }
+    ]
+  },
+  "14": {
+    "slo": "10.3.4",
+    "answer": null,
+    "explanation": "With conventional zero-based bounds low=0, high=7 and midpoint floor((low+high)/2), the first value is 320. An upper-midpoint implementation would start at 400, so the midpoint convention should be stated in the explanation.",
+    "status": "KEY_CONFLICT",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "250 is not the midpoint for the initial full interval."
+      },
+      {
+        "key": "B",
+        "reason": "320 is the first midpoint under the usual lower-midpoint convention."
+      },
+      {
+        "key": "C",
+        "reason": "400 is possible under an upper-midpoint convention, which the source does not exclude."
+      },
+      {
+        "key": "D",
+        "reason": "450 is not an initial midpoint of the eight-element interval."
+      }
+    ]
+  },
+  "15": {
+    "slo": "10.3.5",
+    "answer": "C",
+    "explanation": "Visiting a parent before recursively processing its children from left to right is pre-order traversal. Updating the node during its visit does not change this order.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Level-order visits all nodes at a depth before descending."
+      },
+      {
+        "key": "B",
+        "reason": "Post-order visits children before the parent."
+      },
+      {
+        "key": "C",
+        "reason": "Pre-order visits the parent before its descendant subtrees."
+      },
+      {
+        "key": "D",
+        "reason": "In-order inserts the parent visit between child subtree visits in a binary tree."
+      }
+    ]
+  },
+  "16": {
+    "slo": "11.2.4",
+    "answer": "A",
+    "explanation": "Rebinding the local integer n to 15 does not change the caller's x, which remains 10.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The local integer becomes 15 while the caller's x remains 10."
+      },
+      {
+        "key": "B",
+        "reason": "Rebinding the local name does not rebind x."
+      },
+      {
+        "key": "C",
+        "reason": "The addition changes the local value to 15."
+      },
+      {
+        "key": "D",
+        "reason": "The local addition yields 15, not 5."
+      }
+    ]
+  },
+  "17": {
+    "slo": "11.2.4",
+    "answer": "B",
+    "explanation": "modify rebinds its local name info to a new dictionary. The original student dictionary remains unchanged with age 16.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Rebinding info does not mutate student."
+      },
+      {
+        "key": "B",
+        "reason": "Both prints show the unchanged original dictionary with age 16."
+      },
+      {
+        "key": "C",
+        "reason": "The first print occurs before modify and must show age 16."
+      },
+      {
+        "key": "D",
+        "reason": "The original dictionary retains both keys."
+      }
+    ]
+  },
+  "18": {
+    "slo": "11.3.3",
+    "answer": "A",
+    "explanation": "Student is the class that defines a common structure for its instances.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The common Student definition is a class."
+      },
+      {
+        "key": "B",
+        "reason": "Ahad, Sara and Altaf are example instances or objects."
+      },
+      {
+        "key": "C",
+        "reason": "A method is an operation defined for the class."
+      },
+      {
+        "key": "D",
+        "reason": "An attribute is one property such as name."
+      }
+    ]
+  },
+  "19": {
+    "slo": "11.5.3",
+    "answer": "C",
+    "explanation": "Encapsulation controls access to state through the object's methods.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Abstraction focuses on hiding implementation complexity."
+      },
+      {
+        "key": "B",
+        "reason": "Inheritance derives a class from another."
+      },
+      {
+        "key": "C",
+        "reason": "Controlled state updates through methods illustrate encapsulation."
+      },
+      {
+        "key": "D",
+        "reason": "Polymorphism concerns different implementations of a common interface."
+      }
+    ]
+  },
+  "20": {
+    "slo": "11.3.4",
+    "answer": "A",
+    "explanation": "print separates the brand and year with a space and emits no quotes.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "print displays the two values separated by a space."
+      },
+      {
+        "key": "B",
+        "reason": "print does not add quotes or a comma between these arguments."
+      },
+      {
+        "key": "C",
+        "reason": "Both values are printed on one line."
+      },
+      {
+        "key": "D",
+        "reason": "The code prints brand before year."
+      }
+    ]
+  },
+  "21": {
+    "slo": "11.3.4",
+    "answer": "B",
+    "explanation": "The literal Welcome, contains a comma. print adds a space before Ahmed, producing Welcome, Ahmed.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The printed string contains a comma after Welcome."
+      },
+      {
+        "key": "B",
+        "reason": "The comma is part of the string, followed by print's separating space."
+      },
+      {
+        "key": "C",
+        "reason": "print does not add quotation marks."
+      },
+      {
+        "key": "D",
+        "reason": "The output contains no quotation marks."
+      }
+    ]
+  },
+  "22": {
+    "slo": "11.5.8",
+    "answer": "C",
+    "explanation": "Car replaces type with Car and overrides info. ElectricCar inherits that method and sets battery to Lithium.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The Car constructor replaces the inherited type value."
+      },
+      {
+        "key": "B",
+        "reason": "The overridden method uses Car and the battery value is Lithium."
+      },
+      {
+        "key": "C",
+        "reason": "The inherited overridden method returns This is a Car, followed by Lithium."
+      },
+      {
+        "key": "D",
+        "reason": "The battery is printed on a separate line and is not inserted into info."
+      }
+    ]
+  },
+  "23": {
+    "slo": "11.7.2",
+    "answer": "C",
+    "explanation": "12 times (7+3) minus integer division 7//3 is 120-2=118.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The multiplication gives 120 before the subtraction."
+      },
+      {
+        "key": "B",
+        "reason": "Floor division yields an integer 2, not a fraction."
+      },
+      {
+        "key": "C",
+        "reason": "120 minus 2 equals 118."
+      },
+      {
+        "key": "D",
+        "reason": "The expression subtracts the floor quotient rather than adding it."
+      }
+    ]
+  },
+  "24": {
+    "slo": "11.7.3",
+    "answer": "A",
+    "explanation": "Looking up the key Sara returns the integer 92.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The dictionary value at Sara is 92."
+      },
+      {
+        "key": "B",
+        "reason": "The lookup returns the value, not its key."
+      },
+      {
+        "key": "C",
+        "reason": "Indexing returns the value rather than a key-value representation."
+      },
+      {
+        "key": "D",
+        "reason": "Indexing returns only the stored integer."
+      }
+    ]
+  },
+  "25": {
+    "slo": "11.9.5",
+    "answer": "D",
+    "explanation": "D declares EmpID as the primary key, EmpName as VARCHAR(50) and Salary as INT NOT NULL.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The key names EmpName rather than EmpID and the printed constraint syntax is invalid."
+      },
+      {
+        "key": "B",
+        "reason": "Salary is nullable, contrary to the requirement."
+      },
+      {
+        "key": "C",
+        "reason": "UNIQUE is not the declared PRIMARY KEY and Salary allows NULL."
+      },
+      {
+        "key": "D",
+        "reason": "All three required column constraints are present."
+      }
+    ]
+  },
+  "26": {
+    "slo": "12.1.1",
+    "answer": "A",
+    "explanation": "Machine learning learns patterns from data. The printed word outlines is imprecise but A is the only option expressing learning and adaptation.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "This is the only option describing learning patterns from data."
+      },
+      {
+        "key": "B",
+        "reason": "Solely manual fixed instructions do not describe learning."
+      },
+      {
+        "key": "C",
+        "reason": "An entirely fixed-rule system does not learn from data."
+      },
+      {
+        "key": "D",
+        "reason": "Organising data without adaptation does not capture machine learning."
+      }
+    ]
+  },
+  "27": {
+    "slo": "12.1.3",
+    "answer": "A",
+    "explanation": "Measuring accuracy, precision, recall and F1 evaluates a trained model.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "These metrics assess the trained model."
+      },
+      {
+        "key": "B",
+        "reason": "Plotting features does not calculate these performance measures."
+      },
+      {
+        "key": "C",
+        "reason": "Splitting data precedes the assessment described."
+      },
+      {
+        "key": "D",
+        "reason": "Tuning adjusts model settings rather than simply measuring performance."
+      }
+    ]
+  },
+  "28": {
+    "slo": "12.2.3",
+    "answer": "B",
+    "explanation": "The p-value 0.03 is below the specified significance threshold 0.05, so the result is statistically significant at that level.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A p-value need not be zero to reject at a specified threshold."
+      },
+      {
+        "key": "B",
+        "reason": "0.03 is below 0.05."
+      },
+      {
+        "key": "C",
+        "reason": "P-values smaller than 0.05 are permitted."
+      },
+      {
+        "key": "D",
+        "reason": "The stated significance level is 0.05 and need not always be 0.01."
+      }
+    ]
+  },
+  "29": {
+    "slo": "12.1.3",
+    "answer": "D",
+    "explanation": "Constructing useful derived input columns is feature engineering.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Splitting partitions observations into datasets."
+      },
+      {
+        "key": "B",
+        "reason": "Training fits a model to its inputs."
+      },
+      {
+        "key": "C",
+        "reason": "Deployment puts a model into operational use."
+      },
+      {
+        "key": "D",
+        "reason": "Creating useful derived inputs is feature engineering."
+      }
+    ]
+  },
+  "30": {
+    "slo": "12.3.1",
+    "answer": "A",
+    "explanation": "RMSE uses squared errors before taking their root and therefore gives large errors greater weight. RMSE is related to model evaluation, but the syllabus outcome's explicit list does not name RMSE.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Squaring errors gives large mistakes greater weight in RMSE."
+      },
+      {
+        "key": "B",
+        "reason": "Rand index assesses clustering agreement."
+      },
+      {
+        "key": "C",
+        "reason": "Accuracy counts correct classifications."
+      },
+      {
+        "key": "D",
+        "reason": "F1 combines classification precision and recall."
+      }
+    ]
+  },
+  "31": {
+    "slo": "12.3.1",
+    "answer": "B",
+    "explanation": "An ROC curve compares true-positive and false-positive rates across classification thresholds.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Numerical prediction error is a regression concern."
+      },
+      {
+        "key": "B",
+        "reason": "ROC evaluates class separation across thresholds."
+      },
+      {
+        "key": "C",
+        "reason": "Correctness among positive predictions describes precision."
+      },
+      {
+        "key": "D",
+        "reason": "Matching clusters to labels is a clustering evaluation concern."
+      }
+    ]
+  },
+  "32": {
+    "slo": "12.3.1",
+    "answer": "B",
+    "explanation": "Accuracy is the proportion of all predictions that are correct.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correctness among predicted positives defines precision."
+      },
+      {
+        "key": "B",
+        "reason": "Accuracy concerns correctness across all predictions."
+      },
+      {
+        "key": "C",
+        "reason": "Detection among actual positives defines recall."
+      },
+      {
+        "key": "D",
+        "reason": "The combined precision-recall measure is F1."
+      }
+    ]
+  },
+  "33": {
+    "slo": "13.1.1",
+    "answer": "B",
+    "explanation": "Monitoring and automated energy control can reduce unnecessary electricity demand.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Switching appliances alone does not describe monitoring or demand-aware control."
+      },
+      {
+        "key": "B",
+        "reason": "Monitoring and control can reduce wasted energy."
+      },
+      {
+        "key": "C",
+        "reason": "Import origin does not determine energy management effectiveness."
+      },
+      {
+        "key": "D",
+        "reason": "Removing switches does not establish an energy-saving benefit."
+      }
+    ]
+  },
+  "34": {
+    "slo": "13.1.1",
+    "answer": "D",
+    "explanation": "Livestock sensors support continuous tracking of animal health and location.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Unrestricted movement does not establish a reduction in feed needs."
+      },
+      {
+        "key": "B",
+        "reason": "Automated feeding is a different application from monitoring health and location."
+      },
+      {
+        "key": "C",
+        "reason": "Monitoring supports veterinary care rather than replacing diagnosis."
+      },
+      {
+        "key": "D",
+        "reason": "Connected sensors can continuously track health and location."
+      }
+    ]
+  },
+  "35": {
+    "slo": "13.1.2",
+    "answer": "B",
+    "explanation": "Cloud storage provides remotely accessible off-site storage and can support scalable capacity and managed backups. Protection depends on the service configuration.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "On-site hardware retains the infrastructure dependency described."
+      },
+      {
+        "key": "B",
+        "reason": "Remote storage and managed services can meet the stated aims."
+      },
+      {
+        "key": "C",
+        "reason": "No storage design eliminates every risk, and these servers remain on-site."
+      },
+      {
+        "key": "D",
+        "reason": "Personal-device storage is not the proposed cloud approach."
+      }
+    ]
+  },
+  "36": {
+    "slo": "13.2.1",
+    "answer": "D",
+    "explanation": "Deep learning uses neural networks with multiple layers to learn complex representations.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Deep models learn layered representations rather than rely solely on manual features."
+      },
+      {
+        "key": "B",
+        "reason": "Deep networks use multiple layers rather than defining depth by fewer layers."
+      },
+      {
+        "key": "C",
+        "reason": "Deep learning is a neural-network approach."
+      },
+      {
+        "key": "D",
+        "reason": "Multiple hidden processing layers support learning complex representations."
+      }
+    ]
+  },
+  "37": {
+    "slo": "13.2.2",
+    "answer": "B",
+    "explanation": "Deep models can interpret complex sensor data for recognition and driving decisions.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Fixed maps cannot recognise all changing objects in live traffic."
+      },
+      {
+        "key": "B",
+        "reason": "Deep models can analyse complex sensor inputs."
+      },
+      {
+        "key": "C",
+        "reason": "Physical observations still require sensors."
+      },
+      {
+        "key": "D",
+        "reason": "Safe perception requires current environmental observations."
+      }
+    ]
+  },
+  "38": {
+    "slo": "14.1.1",
+    "answer": "A",
+    "explanation": "Privacy concerns a person's control over collection and use of personal information.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Privacy concerns control of personal information and its use."
+      },
+      {
+        "key": "B",
+        "reason": "Encryption is a security technique."
+      },
+      {
+        "key": "C",
+        "reason": "Protecting systems from technical attacks concerns security."
+      },
+      {
+        "key": "D",
+        "reason": "Preventing physical damage is not the definition of privacy."
+      }
+    ]
+  },
+  "39": {
+    "slo": "14.1.2",
+    "answer": "C",
+    "explanation": "Eavesdropping covertly observes communications to obtain information.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Altering packets is active tampering."
+      },
+      {
+        "key": "B",
+        "reason": "Flooding traffic is a denial-of-service technique."
+      },
+      {
+        "key": "C",
+        "reason": "Covert interception of communications is eavesdropping."
+      },
+      {
+        "key": "D",
+        "reason": "Deleting data is interference rather than passive observation."
+      }
+    ]
+  },
+  "40": {
+    "slo": "14.1.2",
+    "answer": "C",
+    "explanation": "DNS spoofing manipulates name resolution and can redirect users to fraudulent destinations.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Malicious extensions are a different attack mechanism."
+      },
+      {
+        "key": "B",
+        "reason": "Spoofing alters logical resolution rather than physically damaging DNS."
+      },
+      {
+        "key": "C",
+        "reason": "Falsified name resolution can direct users to fake sites."
+      },
+      {
+        "key": "D",
+        "reason": "VPN blocking is not what defines DNS spoofing."
+      }
+    ]
+  },
+  "41": {
+    "slo": "14.1.3",
+    "answer": "B",
+    "explanation": "A firewall permits or blocks traffic according to configured rules.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Scanning files for viruses is an antivirus task."
+      },
+      {
+        "key": "B",
+        "reason": "Firewall rules govern whether traffic is permitted."
+      },
+      {
+        "key": "C",
+        "reason": "Behaviour monitoring is not the specific rule-based action described."
+      },
+      {
+        "key": "D",
+        "reason": "A firewall does not inherently encrypt all traffic."
+      }
+    ]
+  },
+  "42": {
+    "slo": "14.1.3",
+    "answer": "D",
+    "explanation": "Encryption protects the confidentiality of stored data when an attacker lacks the decryption key.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Encryption does not by itself prevent copying ciphertext."
+      },
+      {
+        "key": "B",
+        "reason": "Concealing system operations is not the stated goal."
+      },
+      {
+        "key": "C",
+        "reason": "Encryption is not an anti-malware barrier."
+      },
+      {
+        "key": "D",
+        "reason": "The data remains unintelligible without the decryption key."
+      }
+    ]
+  },
+  "43": {
+    "slo": "14.2.2",
+    "answer": "B",
+    "explanation": "HTTPS protects transport using TLS encryption and authentication.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "HTTPS still requires a network connection."
+      },
+      {
+        "key": "B",
+        "reason": "HTTPS uses TLS to protect the connection."
+      },
+      {
+        "key": "C",
+        "reason": "HTTPS cannot prevent every attack on a website."
+      },
+      {
+        "key": "D",
+        "reason": "Encryption and authentication, rather than guaranteed speed, distinguish HTTPS."
+      }
+    ]
+  },
+  "44": {
+    "slo": "14.3.1",
+    "answer": "D",
+    "explanation": "D describes encryption, a central cryptographic operation. Cryptography also includes integrity, authentication and related techniques.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Hiding data inside another medium describes steganography."
+      },
+      {
+        "key": "B",
+        "reason": "Traffic filtering is a firewall function."
+      },
+      {
+        "key": "C",
+        "reason": "Intrusion detection identifies suspicious access."
+      },
+      {
+        "key": "D",
+        "reason": "Making plaintext unreadable describes encryption within cryptography."
+      }
+    ]
+  },
+  "45": {
+    "slo": "15.1.1",
+    "answer": "A",
+    "explanation": "A research question identifies a matter or problem to investigate.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A research question identifies the matter to investigate."
+      },
+      {
+        "key": "B",
+        "reason": "Data collection methods describe how evidence is gathered."
+      },
+      {
+        "key": "C",
+        "reason": "A conclusion follows investigation."
+      },
+      {
+        "key": "D",
+        "reason": "A summary reports findings after the work."
+      }
+    ]
+  },
+  "46": {
+    "slo": "15.1.2",
+    "answer": "A",
+    "explanation": "A case study examines a particular subject in its context.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A case study investigates a particular subject in context."
+      },
+      {
+        "key": "B",
+        "reason": "A statistical comparison is not the defining feature of a case study."
+      },
+      {
+        "key": "C",
+        "reason": "Broad population surveys differ from a focused case study."
+      },
+      {
+        "key": "D",
+        "reason": "A literature summary reviews existing publications."
+      }
+    ]
+  },
+  "47": {
+    "slo": "15.1.3",
+    "answer": "A",
+    "explanation": "Visual summaries can improve clarity while leaving methodological details less accessible. Detailed reports can complement them.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "This recognises the scenario's clarity-versus-detail limitation."
+      },
+      {
+        "key": "B",
+        "reason": "Different audiences can interpret the same presentation differently."
+      },
+      {
+        "key": "C",
+        "reason": "Equal accessibility is not guaranteed by these tools."
+      },
+      {
+        "key": "D",
+        "reason": "Detailed written reports can still be necessary."
+      }
+    ]
+  },
+  "48": {
+    "slo": "16.1.1",
+    "answer": "A",
+    "explanation": "An MVP tests core assumptions early using feedback from real users.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The minimum product tests assumptions with early feedback."
+      },
+      {
+        "key": "B",
+        "reason": "Advanced features are deliberately limited at this stage."
+      },
+      {
+        "key": "C",
+        "reason": "Immediate maximum revenue is not the defining objective."
+      },
+      {
+        "key": "D",
+        "reason": "An MVP is an early learning vehicle rather than a final feature-complete product."
+      }
+    ]
+  },
+  "49": {
+    "slo": "16.1.5",
+    "answer": "D",
+    "explanation": "Entering expenses and viewing the total is the smallest prototype that tests the stated core use.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Budgeting tips and reports exceed the core test described."
+      },
+      {
+        "key": "B",
+        "reason": "A polished final design adds work before validating the core idea."
+      },
+      {
+        "key": "C",
+        "reason": "Bank integration greatly expands the test's scope."
+      },
+      {
+        "key": "D",
+        "reason": "Entry and a total test the central expense-recording function."
+      }
+    ]
+  },
+  "50": {
+    "slo": "16.1.7",
+    "answer": "C",
+    "explanation": "Learning from early user behaviour enables refinement or revision of business assumptions before a full investment.",
+    "status": "PROJECT_REVIEWED",
+    "origin": "PROJECT_REVIEW",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Reliability may matter, but the scenario's main learning concerns a changed use case."
+      },
+      {
+        "key": "B",
+        "reason": "User interest alone is not the adaptation described."
+      },
+      {
+        "key": "C",
+        "reason": "Observed user behaviour informs revision of the assumptions."
+      },
+      {
+        "key": "D",
+        "reason": "The team changes direction through evidence rather than simply accelerating a fixed design."
+      }
+    ]
+  }
+}

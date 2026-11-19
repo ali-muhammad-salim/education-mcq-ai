@@ -1,0 +1,1805 @@
+[
+  {
+    "number": "1",
+    "page": 2,
+    "stem": "There are four stages in data processing cycle and in each stage a number of tasks are performed. TWO tasks that are performed during processing stage are",
+    "choices": {
+      "A": "data capture and presenting data to user.",
+      "B": "executing instructions and presenting data to user.",
+      "C": "data capture and transform raw data into information.",
+      "D": "executing instructions and transform raw data into information."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Processing executes instructions and transforms raw data; capture is input and presentation is output.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. Processing executes instructions and transforms raw data; capture is input and presentation is output."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. Processing executes instructions and transforms raw data; capture is input and presentation is output."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. Processing executes instructions and transforms raw data; capture is input and presentation is output."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Processing executes instructions and transforms raw data; capture is input and presentation is output."
+      }
+    ]
+  },
+  {
+    "number": "2",
+    "page": 2,
+    "stem": "A software that reduces the logical size of a file to save disk space is an example of a/ an",
+    "choices": {
+      "A": "device driver.",
+      "B": "utility software.",
+      "C": "operating system.",
+      "D": "productivity software."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "1.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Compression is a maintenance utility; a driver controls hardware, an OS manages resources and productivity software creates user work.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. Compression is a maintenance utility; a driver controls hardware, an OS manages resources and productivity software creates user work."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Compression is a maintenance utility; a driver controls hardware, an OS manages resources and productivity software creates user work."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. Compression is a maintenance utility; a driver controls hardware, an OS manages resources and productivity software creates user work."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. Compression is a maintenance utility; a driver controls hardware, an OS manages resources and productivity software creates user work."
+      }
+    ]
+  },
+  {
+    "number": "3",
+    "page": 2,
+    "stem": "An example of an open source software is",
+    "choices": {
+      "A": "Skype.",
+      "B": "Linux.",
+      "C": "Adobe Reader.",
+      "D": "Microsoft Windows."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "1.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Linux is open source; the other named products are proprietary in this question.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. Linux is open source; the other named products are proprietary in this question."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Linux is open source; the other named products are proprietary in this question."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. Linux is open source; the other named products are proprietary in this question."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. Linux is open source; the other named products are proprietary in this question."
+      }
+    ]
+  },
+  {
+    "number": "4",
+    "page": 2,
+    "stem": "It consists of a normal scanner and some special softwares. The scanner scans text from a document and the software changes the scanned text into editable text. The device/ reader identified from the given description is a/ an",
+    "choices": {
+      "A": "quick response code reader.",
+      "B": "magnetic ink character reader.",
+      "C": "optical mark recognition reader.",
+      "D": "optical character recognition reader."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.3.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "OCR recognises scanned characters; QR reads encoded symbols, MICR reads magnetic ink and OMR detects filled marks.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. OCR recognises scanned characters; QR reads encoded symbols, MICR reads magnetic ink and OMR detects filled marks."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. OCR recognises scanned characters; QR reads encoded symbols, MICR reads magnetic ink and OMR detects filled marks."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. OCR recognises scanned characters; QR reads encoded symbols, MICR reads magnetic ink and OMR detects filled marks."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. OCR recognises scanned characters; QR reads encoded symbols, MICR reads magnetic ink and OMR detects filled marks."
+      }
+    ]
+  },
+  {
+    "number": "5",
+    "page": 2,
+    "stem": "When a user installs an app in a smartphone, the app is stored in a",
+    "choices": {
+      "A": "RAM.",
+      "B": "ROM.",
+      "C": "cache.",
+      "D": "hard disk."
+    },
+    "answer": null,
+    "officialAnswer": "B",
+    "originalSlo": "1.1.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Installed apps reside in writable nonvolatile flash storage. RAM/cache are volatile, true ROM is not writable app storage and phones do not normally contain a hard disk. The printed key B uses ROM loosely; no precise option is supplied.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Not uniquely scorable. Installed apps reside in writable nonvolatile flash storage. RAM/cache are volatile, true ROM is not writable app storage and phones do not normally contain a hard disk. The printed key B uses ROM loosely; no precise option is supplied."
+      },
+      {
+        "key": "B",
+        "reason": "Not uniquely scorable. Installed apps reside in writable nonvolatile flash storage. RAM/cache are volatile, true ROM is not writable app storage and phones do not normally contain a hard disk. The printed key B uses ROM loosely; no precise option is supplied."
+      },
+      {
+        "key": "C",
+        "reason": "Not uniquely scorable. Installed apps reside in writable nonvolatile flash storage. RAM/cache are volatile, true ROM is not writable app storage and phones do not normally contain a hard disk. The printed key B uses ROM loosely; no precise option is supplied."
+      },
+      {
+        "key": "D",
+        "reason": "Not uniquely scorable. Installed apps reside in writable nonvolatile flash storage. RAM/cache are volatile, true ROM is not writable app storage and phones do not normally contain a hard disk. The printed key B uses ROM loosely; no precise option is supplied."
+      }
+    ]
+  },
+  {
+    "number": "6",
+    "page": 2,
+    "stem": "The MOST appropriate computer system used for storing and processing information of large banks is a",
+    "choices": {
+      "A": "minicomputer.",
+      "B": "supercomputer.",
+      "C": "microcomputer.",
+      "D": "mainframe computer."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.1.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A mainframe handles large-scale concurrent bank transactions; a supercomputer targets intensive numerical calculation and a microcomputer is an individual system.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. A mainframe handles large-scale concurrent bank transactions; a supercomputer targets intensive numerical calculation and a microcomputer is an individual system."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. A mainframe handles large-scale concurrent bank transactions; a supercomputer targets intensive numerical calculation and a microcomputer is an individual system."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. A mainframe handles large-scale concurrent bank transactions; a supercomputer targets intensive numerical calculation and a microcomputer is an individual system."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. A mainframe handles large-scale concurrent bank transactions; a supercomputer targets intensive numerical calculation and a microcomputer is an individual system."
+      }
+    ]
+  },
+  {
+    "number": "7",
+    "page": 3,
+    "stem": "A software that is used as an interface between user and machine is an example of a/ an",
+    "choices": {
+      "A": "device driver.",
+      "B": "operating system.",
+      "C": "language translator.",
+      "D": "entertainment software."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "1.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "An operating system provides the user/system interface; a driver serves hardware, a translator converts code and entertainment software is an application.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. An operating system provides the user/system interface; a driver serves hardware, a translator converts code and entertainment software is an application."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. An operating system provides the user/system interface; a driver serves hardware, a translator converts code and entertainment software is an application."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. An operating system provides the user/system interface; a driver serves hardware, a translator converts code and entertainment software is an application."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. An operating system provides the user/system interface; a driver serves hardware, a translator converts code and entertainment software is an application."
+      }
+    ]
+  },
+  {
+    "number": "8",
+    "page": 3,
+    "stem": "The examples of manual data entry devices are",
+    "choices": {
+      "A": "interactive whiteboards and touchscreens.",
+      "B": "quick response code readers and touchscreens.",
+      "C": "interactive whiteboards and optical character readers.",
+      "D": "optical character readers and quick response code readers."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "1.3.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Touchscreens and interactive whiteboards accept deliberate manual input; OCR and QR readers capture encoded/scanned data automatically.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Touchscreens and interactive whiteboards accept deliberate manual input; OCR and QR readers capture encoded/scanned data automatically."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. Touchscreens and interactive whiteboards accept deliberate manual input; OCR and QR readers capture encoded/scanned data automatically."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. Touchscreens and interactive whiteboards accept deliberate manual input; OCR and QR readers capture encoded/scanned data automatically."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. Touchscreens and interactive whiteboards accept deliberate manual input; OCR and QR readers capture encoded/scanned data automatically."
+      }
+    ]
+  },
+  {
+    "number": "9",
+    "page": 3,
+    "stem": "In contrast to the capacitive and the resistive touch screen technologies, the infrared technology",
+    "choices": {
+      "A": "is the most expensive technology.",
+      "B": "is least durable than other two technologies.",
+      "C": "has poor screen visibility in bright sunlight.",
+      "D": "uses polyester on the upper layer and glass on the lower layer of the screen."
+    },
+    "answer": null,
+    "officialAnswer": "A",
+    "originalSlo": "1.3.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The key selects A, but relative cost depends on implementation and date. The statement does not establish a universal comparison of infrared, capacitive and resistive screens.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Not uniquely scorable. The key selects A, but relative cost depends on implementation and date. The statement does not establish a universal comparison of infrared, capacitive and resistive screens."
+      },
+      {
+        "key": "B",
+        "reason": "Not uniquely scorable. The key selects A, but relative cost depends on implementation and date. The statement does not establish a universal comparison of infrared, capacitive and resistive screens."
+      },
+      {
+        "key": "C",
+        "reason": "Not uniquely scorable. The key selects A, but relative cost depends on implementation and date. The statement does not establish a universal comparison of infrared, capacitive and resistive screens."
+      },
+      {
+        "key": "D",
+        "reason": "Not uniquely scorable. The key selects A, but relative cost depends on implementation and date. The statement does not establish a universal comparison of infrared, capacitive and resistive screens."
+      }
+    ]
+  },
+  {
+    "number": "10",
+    "page": 3,
+    "stem": "If a person wants to use a software on trial basis before purchasing it, then the type of software used will be",
+    "choices": {
+      "A": "freeware.",
+      "B": "firmware.",
+      "C": "shareware.",
+      "D": "open source software."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.2.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Shareware permits trial use before payment; freeware is free to use, firmware is device software and open source refers to source-code licensing.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. Shareware permits trial use before payment; freeware is free to use, firmware is device software and open source refers to source-code licensing."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. Shareware permits trial use before payment; freeware is free to use, firmware is device software and open source refers to source-code licensing."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Shareware permits trial use before payment; freeware is free to use, firmware is device software and open source refers to source-code licensing."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. Shareware permits trial use before payment; freeware is free to use, firmware is device software and open source refers to source-code licensing."
+      }
+    ]
+  },
+  {
+    "number": "11",
+    "page": 3,
+    "stem": "Which of the following memories, can a CPU directly communicate with?",
+    "choices": {
+      "A": "Register",
+      "B": "`CD-ROM`",
+      "C": "`DVD-ROM`",
+      "D": "USB Flash Drive"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "2.1.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Registers are directly used within the CPU; optical discs and USB storage require input/output operations.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Registers are directly used within the CPU; optical discs and USB storage require input/output operations."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. Registers are directly used within the CPU; optical discs and USB storage require input/output operations."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. Registers are directly used within the CPU; optical discs and USB storage require input/output operations."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. Registers are directly used within the CPU; optical discs and USB storage require input/output operations."
+      }
+    ]
+  },
+  {
+    "number": "12",
+    "page": 3,
+    "stem": "In contrast to the primary memory, the secondary memory",
+    "choices": {
+      "A": "is costly.",
+      "B": "is volatile in nature.",
+      "C": "`is accessed by I/O channels.`",
+      "D": "always has a lower storage capacity."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "2.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Secondary storage is reached through I/O controllers/channels; it is generally nonvolatile and lower cost per byte, and capacity is not always smaller.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. Secondary storage is reached through I/O controllers/channels; it is generally nonvolatile and lower cost per byte, and capacity is not always smaller."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. Secondary storage is reached through I/O controllers/channels; it is generally nonvolatile and lower cost per byte, and capacity is not always smaller."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Secondary storage is reached through I/O controllers/channels; it is generally nonvolatile and lower cost per byte, and capacity is not always smaller."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. Secondary storage is reached through I/O controllers/channels; it is generally nonvolatile and lower cost per byte, and capacity is not always smaller."
+      }
+    ]
+  },
+  {
+    "number": "13",
+    "page": 4,
+    "stem": "Omar stored a data of 5 GB on an optical storage media. Later on, he stored an additional data of 3 GB on the same media. In the given scenario, the type of optical storage is a",
+    "choices": {
+      "A": "DVD-R",
+      "B": "DVD-RW",
+      "C": "`CD-ROM`",
+      "D": "`DVD-ROM`"
+    },
+    "answer": null,
+    "officialAnswer": "B",
+    "originalSlo": "2.3.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The key selects DVD-RW, but the scenario needs 8 GB capacity and does not specify disc layers or overwriting. A suitable multisession DVD-R may also append data. No unique choice follows.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Not uniquely scorable. The key selects DVD-RW, but the scenario needs 8 GB capacity and does not specify disc layers or overwriting. A suitable multisession DVD-R may also append data. No unique choice follows."
+      },
+      {
+        "key": "B",
+        "reason": "Not uniquely scorable. The key selects DVD-RW, but the scenario needs 8 GB capacity and does not specify disc layers or overwriting. A suitable multisession DVD-R may also append data. No unique choice follows."
+      },
+      {
+        "key": "C",
+        "reason": "Not uniquely scorable. The key selects DVD-RW, but the scenario needs 8 GB capacity and does not specify disc layers or overwriting. A suitable multisession DVD-R may also append data. No unique choice follows."
+      },
+      {
+        "key": "D",
+        "reason": "Not uniquely scorable. The key selects DVD-RW, but the scenario needs 8 GB capacity and does not specify disc layers or overwriting. A suitable multisession DVD-R may also append data. No unique choice follows."
+      }
+    ]
+  },
+  {
+    "number": "14",
+    "page": 4,
+    "stem": "Which option gives the precise locations of L1, L2 and L3 cache memory?",
+    "choices": {
+      "A": "| Microprocessor chip | Motherboard |\n| --- | --- |\n| L1 and L2 | L3 |",
+      "B": "| Microprocessor chip | Motherboard |\n| --- | --- |\n| L1 | L2 and L3 |",
+      "C": "| Microprocessor chip | Motherboard |\n| --- | --- |\n| L2 and L3 | L1 |",
+      "D": "| Microprocessor chip | Motherboard |\n| --- | --- |\n| L3 | L1 and L2 |"
+    },
+    "answer": null,
+    "officialAnswer": "B",
+    "originalSlo": "2.2.6",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Cache placement depends on processor architecture; modern processors commonly integrate L1, L2 and L3. No processor is specified, so the historical motherboard split in key B is not universally correct.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Not uniquely scorable. Cache placement depends on processor architecture; modern processors commonly integrate L1, L2 and L3. No processor is specified, so the historical motherboard split in key B is not universally correct."
+      },
+      {
+        "key": "B",
+        "reason": "Not uniquely scorable. Cache placement depends on processor architecture; modern processors commonly integrate L1, L2 and L3. No processor is specified, so the historical motherboard split in key B is not universally correct."
+      },
+      {
+        "key": "C",
+        "reason": "Not uniquely scorable. Cache placement depends on processor architecture; modern processors commonly integrate L1, L2 and L3. No processor is specified, so the historical motherboard split in key B is not universally correct."
+      },
+      {
+        "key": "D",
+        "reason": "Not uniquely scorable. Cache placement depends on processor architecture; modern processors commonly integrate L1, L2 and L3. No processor is specified, so the historical motherboard split in key B is not universally correct."
+      }
+    ]
+  },
+  {
+    "number": "15",
+    "page": 4,
+    "stem": "How many kibibytes are there in four mebibytes?",
+    "choices": {
+      "A": "2000",
+      "B": "2048",
+      "C": "4000",
+      "D": "4096"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "2.1.2",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "One MiB is 1024 KiB, so four MiB is 4096 KiB; the other values use incorrect factors.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. One MiB is 1024 KiB, so four MiB is 4096 KiB; the other values use incorrect factors."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. One MiB is 1024 KiB, so four MiB is 4096 KiB; the other values use incorrect factors."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. One MiB is 1024 KiB, so four MiB is 4096 KiB; the other values use incorrect factors."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. One MiB is 1024 KiB, so four MiB is 4096 KiB; the other values use incorrect factors."
+      }
+    ]
+  },
+  {
+    "number": "16",
+    "page": 4,
+    "stem": "In binary number system, if 1.5KB of memory is converted into bits, then the result will be",
+    "choices": {
+      "A": "8000 bits.",
+      "B": "8192 bits.",
+      "C": "12000 bits.",
+      "D": "12288 bits."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "2.1.2",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "Using the explicitly intended binary convention, 1.5 times 1024 bytes times 8 bits per byte is 12288 bits. Modern unambiguous notation is 1.5 KiB.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. Using the explicitly intended binary convention, 1.5 times 1024 bytes times 8 bits per byte is 12288 bits. Modern unambiguous notation is 1.5 KiB."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. Using the explicitly intended binary convention, 1.5 times 1024 bytes times 8 bits per byte is 12288 bits. Modern unambiguous notation is 1.5 KiB."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. Using the explicitly intended binary convention, 1.5 times 1024 bytes times 8 bits per byte is 12288 bits. Modern unambiguous notation is 1.5 KiB."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Using the explicitly intended binary convention, 1.5 times 1024 bytes times 8 bits per byte is 12288 bits. Modern unambiguous notation is 1.5 KiB."
+      }
+    ]
+  },
+  {
+    "number": "17",
+    "page": 4,
+    "stem": "An example of a solid state storage device is a",
+    "choices": {
+      "A": "hard disk.",
+      "B": "`CD-ROM.`",
+      "C": "`DVD-RAM.`",
+      "D": "secure digital card."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "2.3.1",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "An SD card uses solid-state flash; a hard disk is magnetic and the other two options are optical media.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. An SD card uses solid-state flash; a hard disk is magnetic and the other two options are optical media."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. An SD card uses solid-state flash; a hard disk is magnetic and the other two options are optical media."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. An SD card uses solid-state flash; a hard disk is magnetic and the other two options are optical media."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. An SD card uses solid-state flash; a hard disk is magnetic and the other two options are optical media."
+      }
+    ]
+  },
+  {
+    "number": "18",
+    "page": 4,
+    "stem": "One of the types of non-volatile memory is",
+    "choices": {
+      "A": "Cache.",
+      "B": "SRAM.",
+      "C": "DRAM.",
+      "D": "PROM."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "2.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "PROM retains data without power; SRAM, DRAM and ordinary processor cache are volatile.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. PROM retains data without power; SRAM, DRAM and ordinary processor cache are volatile."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. PROM retains data without power; SRAM, DRAM and ordinary processor cache are volatile."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. PROM retains data without power; SRAM, DRAM and ordinary processor cache are volatile."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. PROM retains data without power; SRAM, DRAM and ordinary processor cache are volatile."
+      }
+    ]
+  },
+  {
+    "number": "19",
+    "page": 5,
+    "stem": "Primary memory is a part of the computer system that holds data and instructions for processing. It is mainly used by the system at startup and to run various types of programs such as operating system. The given statement refers to all of the following types of memory EXCEPT",
+    "choices": {
+      "A": "RAM.",
+      "B": "ROM.",
+      "C": "flash memory.",
+      "D": "cache memory."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "2.3.5",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Under the textbook classification used here, RAM, ROM and cache are primary memory and flash storage is secondary. Flash can also implement firmware, so this classification is contextual.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. Under the textbook classification used here, RAM, ROM and cache are primary memory and flash storage is secondary. Flash can also implement firmware, so this classification is contextual."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. Under the textbook classification used here, RAM, ROM and cache are primary memory and flash storage is secondary. Flash can also implement firmware, so this classification is contextual."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Under the textbook classification used here, RAM, ROM and cache are primary memory and flash storage is secondary. Flash can also implement firmware, so this classification is contextual."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. Under the textbook classification used here, RAM, ROM and cache are primary memory and flash storage is secondary. Flash can also implement firmware, so this classification is contextual."
+      }
+    ]
+  },
+  {
+    "number": "20",
+    "page": 5,
+    "stem": "Data transfer instruction is used to transfer data between the",
+    "choices": {
+      "A": "`RAM and I/O.`",
+      "B": "`I/O and hard disk.`",
+      "C": "register and RAM.",
+      "D": "register and hard disk."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "3.2.1",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "A load/store transfers between registers and RAM; the other pairs describe peripheral/storage transfers rather than the intended CPU instruction.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. A load/store transfers between registers and RAM; the other pairs describe peripheral/storage transfers rather than the intended CPU instruction."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. A load/store transfers between registers and RAM; the other pairs describe peripheral/storage transfers rather than the intended CPU instruction."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. A load/store transfers between registers and RAM; the other pairs describe peripheral/storage transfers rather than the intended CPU instruction."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. A load/store transfers between registers and RAM; the other pairs describe peripheral/storage transfers rather than the intended CPU instruction."
+      }
+    ]
+  },
+  {
+    "number": "21",
+    "page": 5,
+    "stem": "Consider the following memory contents.\n\n| Memory address | Content |\n| --- | --- |\n| 10101 | 11000011 |\n| 10110 | 11010010 |\n| 10111 | 11011100 |\n| 11000 | 10001001 |\n\nIf PC holds 10110 at the beginning of the fetch cycle, what contents are placed in MAR, MDR and IR?",
+    "choices": {
+      "A": "| MAR | MDR | IR |\n| --- | --- | --- |\n| 10110 | 11010010 | 11010010 |",
+      "B": "| MAR | MDR | IR |\n| --- | --- | --- |\n| 10111 | 11011100 | 11011100 |",
+      "C": "| MAR | MDR | IR |\n| --- | --- | --- |\n| 11010010 | 11010010 | 10110 |",
+      "D": "| MAR | MDR | IR |\n| --- | --- | --- |\n| 11011100 | 11011100 | 10111 |"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "3.2.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "PC initially contains 10110, which is copied to MAR; memory content 11010010 enters MDR and then IR. The next address must not be fetched prematurely.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. PC initially contains 10110, which is copied to MAR; memory content 11010010 enters MDR and then IR. The next address must not be fetched prematurely."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. PC initially contains 10110, which is copied to MAR; memory content 11010010 enters MDR and then IR. The next address must not be fetched prematurely."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. PC initially contains 10110, which is copied to MAR; memory content 11010010 enters MDR and then IR. The next address must not be fetched prematurely."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. PC initially contains 10110, which is copied to MAR; memory content 11010010 enters MDR and then IR. The next address must not be fetched prematurely."
+      }
+    ]
+  },
+  {
+    "number": "22",
+    "page": 5,
+    "stem": "Which row correctly categorises these CPU instructions?",
+    "choices": {
+      "A": "| Data transfer | Data processing | Program control |\n| --- | --- | --- |\n| LOAD | DIV | LOOP |",
+      "B": "| Data transfer | Data processing | Program control |\n| --- | --- | --- |\n| LOOP | DIV | LOAD |",
+      "C": "| Data transfer | Data processing | Program control |\n| --- | --- | --- |\n| LOAD | LOOP | DIV |",
+      "D": "| Data transfer | Data processing | Program control |\n| --- | --- | --- |\n| DIV | LOAD | LOOP |"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "3.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "LOAD transfers data, DIV performs arithmetic and LOOP controls program flow. Every other row misclassifies at least two instructions.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. LOAD transfers data, DIV performs arithmetic and LOOP controls program flow. Every other row misclassifies at least two instructions."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. LOAD transfers data, DIV performs arithmetic and LOOP controls program flow. Every other row misclassifies at least two instructions."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. LOAD transfers data, DIV performs arithmetic and LOOP controls program flow. Every other row misclassifies at least two instructions."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. LOAD transfers data, DIV performs arithmetic and LOOP controls program flow. Every other row misclassifies at least two instructions."
+      }
+    ]
+  },
+  {
+    "number": "23",
+    "page": 6,
+    "stem": "All of the following are the components of the central processing unit EXCEPT",
+    "choices": {
+      "A": "registers.",
+      "B": "system unit.",
+      "C": "control unit.",
+      "D": "internal buses."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "3.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The system unit encloses the whole computer assembly; registers, control circuitry and internal buses are CPU components.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. The system unit encloses the whole computer assembly; registers, control circuitry and internal buses are CPU components."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The system unit encloses the whole computer assembly; registers, control circuitry and internal buses are CPU components."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. The system unit encloses the whole computer assembly; registers, control circuitry and internal buses are CPU components."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. The system unit encloses the whole computer assembly; registers, control circuitry and internal buses are CPU components."
+      }
+    ]
+  },
+  {
+    "number": "24",
+    "page": 6,
+    "stem": "The examples of general-purpose registers are the",
+    "choices": {
+      "A": "base register and counter register.",
+      "B": "data register and instruction register.",
+      "C": "instruction register and accumulator register.",
+      "D": "accumulator register and memory address register."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "3.1.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Base and counter registers can be general purpose in the textbook architecture; instruction register and MAR have dedicated roles.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Base and counter registers can be general purpose in the textbook architecture; instruction register and MAR have dedicated roles."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. Base and counter registers can be general purpose in the textbook architecture; instruction register and MAR have dedicated roles."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. Base and counter registers can be general purpose in the textbook architecture; instruction register and MAR have dedicated roles."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. Base and counter registers can be general purpose in the textbook architecture; instruction register and MAR have dedicated roles."
+      }
+    ]
+  },
+  {
+    "number": "25",
+    "page": 6,
+    "stem": "If the op-code of a microprocessor consists of 6 bits, then how many distinct operations can be performed by the device?",
+    "choices": {
+      "A": "6",
+      "B": "16",
+      "C": "32",
+      "D": "64"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "3.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Six opcode bits encode 2 to the power 6, or 64, different bit patterns; 6, 16 and 32 are not that count.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. Six opcode bits encode 2 to the power 6, or 64, different bit patterns; 6, 16 and 32 are not that count."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. Six opcode bits encode 2 to the power 6, or 64, different bit patterns; 6, 16 and 32 are not that count."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. Six opcode bits encode 2 to the power 6, or 64, different bit patterns; 6, 16 and 32 are not that count."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Six opcode bits encode 2 to the power 6, or 64, different bit patterns; 6, 16 and 32 are not that count."
+      }
+    ]
+  },
+  {
+    "number": "26",
+    "page": 6,
+    "stem": "The THREE main components in a system unit are",
+    "choices": {
+      "A": "casing, mouse and monitor.",
+      "B": "monitor, keyboard and mouse.",
+      "C": "casing, power supply and motherboard.",
+      "D": "keyboard, power supply and motherboard."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "4.1.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Casing, power supply and motherboard belong to the system unit; mouse, keyboard and monitor are external peripherals.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. Casing, power supply and motherboard belong to the system unit; mouse, keyboard and monitor are external peripherals."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. Casing, power supply and motherboard belong to the system unit; mouse, keyboard and monitor are external peripherals."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Casing, power supply and motherboard belong to the system unit; mouse, keyboard and monitor are external peripherals."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. Casing, power supply and motherboard belong to the system unit; mouse, keyboard and monitor are external peripherals."
+      }
+    ]
+  },
+  {
+    "number": "27",
+    "page": 6,
+    "stem": "Given is the image of a computer port. The name of this port is a/ an",
+    "choices": {
+      "A": "`PS/2 port.`",
+      "B": "serial port.",
+      "C": "HDMI port.",
+      "D": "fire wire port."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "4.2.1",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "diagramUrl": "/paper-crops/CS-XI-2023-P1/diagram-27.png",
+    "explanation": "The round mini-DIN connector in the diagram is PS/2; serial, HDMI and FireWire connectors have different shapes.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. The round mini-DIN connector in the diagram is PS/2; serial, HDMI and FireWire connectors have different shapes."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. The round mini-DIN connector in the diagram is PS/2; serial, HDMI and FireWire connectors have different shapes."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. The round mini-DIN connector in the diagram is PS/2; serial, HDMI and FireWire connectors have different shapes."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. The round mini-DIN connector in the diagram is PS/2; serial, HDMI and FireWire connectors have different shapes."
+      }
+    ]
+  },
+  {
+    "number": "28",
+    "page": 7,
+    "stem": "An integrated graphic card uses some of the computer’s memory when displaying heavy graphics. This memory is a",
+    "choices": {
+      "A": "RAM.",
+      "B": "ROM.",
+      "C": "flash memory.",
+      "D": "magnetic storage."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "4.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Integrated graphics commonly shares system RAM; ROM, flash and magnetic storage are not the working display memory intended here.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Integrated graphics commonly shares system RAM; ROM, flash and magnetic storage are not the working display memory intended here."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. Integrated graphics commonly shares system RAM; ROM, flash and magnetic storage are not the working display memory intended here."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. Integrated graphics commonly shares system RAM; ROM, flash and magnetic storage are not the working display memory intended here."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. Integrated graphics commonly shares system RAM; ROM, flash and magnetic storage are not the working display memory intended here."
+      }
+    ]
+  },
+  {
+    "number": "29",
+    "page": 7,
+    "stem": "How many types of modems are there?",
+    "choices": {
+      "A": "Two",
+      "B": "Three",
+      "C": "Four",
+      "D": "Five"
+    },
+    "answer": null,
+    "officialAnswer": "B",
+    "originalSlo": "4.2.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "No classification is specified: modems can be grouped by medium, form factor or service standard, with different counts. The printed answer Three is not a universal count.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Not uniquely scorable. No classification is specified: modems can be grouped by medium, form factor or service standard, with different counts. The printed answer Three is not a universal count."
+      },
+      {
+        "key": "B",
+        "reason": "Not uniquely scorable. No classification is specified: modems can be grouped by medium, form factor or service standard, with different counts. The printed answer Three is not a universal count."
+      },
+      {
+        "key": "C",
+        "reason": "Not uniquely scorable. No classification is specified: modems can be grouped by medium, form factor or service standard, with different counts. The printed answer Three is not a universal count."
+      },
+      {
+        "key": "D",
+        "reason": "Not uniquely scorable. No classification is specified: modems can be grouped by medium, form factor or service standard, with different counts. The printed answer Three is not a universal count."
+      }
+    ]
+  },
+  {
+    "number": "30",
+    "page": 7,
+    "stem": "Using the mobile data, Shams shared a picture with his friend who was sitting in the same room. Both friends use different mobile service providers. The network created between Shams and his friend while transferring the picture is an example of a",
+    "choices": {
+      "A": "wide area network.",
+      "B": "local area network.",
+      "C": "near-me-area network.",
+      "D": "personal area network."
+    },
+    "answer": "A",
+    "officialAnswer": "C",
+    "originalSlo": "5.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Mobile data sent through different carriers traverses wide-area cellular networks even when the users are nearby. Proximity does not turn this path into a LAN, PAN or near-me network. Correct A replaces printed C.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Mobile data sent through different carriers traverses wide-area cellular networks even when the users are nearby. Proximity does not turn this path into a LAN, PAN or near-me network. Correct A replaces printed C."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. Mobile data sent through different carriers traverses wide-area cellular networks even when the users are nearby. Proximity does not turn this path into a LAN, PAN or near-me network. Correct A replaces printed C."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. Mobile data sent through different carriers traverses wide-area cellular networks even when the users are nearby. Proximity does not turn this path into a LAN, PAN or near-me network. Correct A replaces printed C."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. Mobile data sent through different carriers traverses wide-area cellular networks even when the users are nearby. Proximity does not turn this path into a LAN, PAN or near-me network. Correct A replaces printed C."
+      }
+    ]
+  },
+  {
+    "number": "31",
+    "page": 7,
+    "stem": "A topology in which all nodes are directly connected to each other is the",
+    "choices": {
+      "A": "bus topology.",
+      "B": "star topology.",
+      "C": "ring topology.",
+      "D": "mesh topology."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "5.1.9",
+    "level": "U",
+    "slo": "1.5.2",
+    "grade": 11,
+    "explanation": "In a full mesh every pair of nodes has a direct link; bus, star and ring do not provide every pairwise link.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. In a full mesh every pair of nodes has a direct link; bus, star and ring do not provide every pairwise link."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. In a full mesh every pair of nodes has a direct link; bus, star and ring do not provide every pairwise link."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. In a full mesh every pair of nodes has a direct link; bus, star and ring do not provide every pairwise link."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. In a full mesh every pair of nodes has a direct link; bus, star and ring do not provide every pairwise link."
+      }
+    ]
+  },
+  {
+    "number": "32",
+    "page": 7,
+    "stem": "A topology which is integration of various star topologies together in a single bus is a",
+    "choices": {
+      "A": "bus topology.",
+      "B": "star topology.",
+      "C": "tree topology.",
+      "D": "mesh topology."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "5.1.9",
+    "level": "U",
+    "slo": "1.5.2",
+    "grade": 11,
+    "explanation": "Multiple star segments joined along a common backbone form the textbook tree topology; this is not a single bus, star or mesh.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. Multiple star segments joined along a common backbone form the textbook tree topology; this is not a single bus, star or mesh."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. Multiple star segments joined along a common backbone form the textbook tree topology; this is not a single bus, star or mesh."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Multiple star segments joined along a common backbone form the textbook tree topology; this is not a single bus, star or mesh."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. Multiple star segments joined along a common backbone form the textbook tree topology; this is not a single bus, star or mesh."
+      }
+    ]
+  },
+  {
+    "number": "33",
+    "page": 7,
+    "stem": "Consider the given protocols: I. TCP II. ICMP III. UDP IV. IGMP The protocols that work on the transport layer of OSI model are",
+    "choices": {
+      "A": "I and II.",
+      "B": "I and III.",
+      "C": "II and IV.",
+      "D": "III and IV."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "TCP and UDP provide transport-layer services; ICMP and IGMP operate at the network/internet layer.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. TCP and UDP provide transport-layer services; ICMP and IGMP operate at the network/internet layer."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. TCP and UDP provide transport-layer services; ICMP and IGMP operate at the network/internet layer."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. TCP and UDP provide transport-layer services; ICMP and IGMP operate at the network/internet layer."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. TCP and UDP provide transport-layer services; ICMP and IGMP operate at the network/internet layer."
+      }
+    ]
+  },
+  {
+    "number": "34",
+    "page": 8,
+    "stem": "Data at each level is generally termed as protocol data unit (PDU). The unit at the data link layer is termed as",
+    "choices": {
+      "A": "a segment.",
+      "B": "a packet.",
+      "C": "a frame.",
+      "D": "bits."
+    },
+    "answer": "C",
+    "officialAnswer": "B",
+    "originalSlo": "5.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The data-link PDU is a frame. A segment is associated with transport, a packet with network and bits with physical transmission. Correct C replaces printed B.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. The data-link PDU is a frame. A segment is associated with transport, a packet with network and bits with physical transmission. Correct C replaces printed B."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. The data-link PDU is a frame. A segment is associated with transport, a packet with network and bits with physical transmission. Correct C replaces printed B."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The data-link PDU is a frame. A segment is associated with transport, a packet with network and bits with physical transmission. Correct C replaces printed B."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. The data-link PDU is a frame. A segment is associated with transport, a packet with network and bits with physical transmission. Correct C replaces printed B."
+      }
+    ]
+  },
+  {
+    "number": "35",
+    "page": 8,
+    "stem": "Manzoor has moved to a new city for employment. The nature of his job requires him to travel around the city and enter data using his company’s website. Which of the following modes of communication is PRIMARILY needed to be used in the given situation?",
+    "choices": {
+      "A": "`Wi-Fi`",
+      "B": "Bluetooth",
+      "C": "WiMAX",
+      "D": "Infra-red"
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "6.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "WiMAX is the city/metropolitan wireless-access option among those listed; Bluetooth and infrared are short range and one ordinary Wi-Fi access point does not cover a city.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is C. WiMAX is the city/metropolitan wireless-access option among those listed; Bluetooth and infrared are short range and one ordinary Wi-Fi access point does not cover a city."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is C. WiMAX is the city/metropolitan wireless-access option among those listed; Bluetooth and infrared are short range and one ordinary Wi-Fi access point does not cover a city."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. WiMAX is the city/metropolitan wireless-access option among those listed; Bluetooth and infrared are short range and one ordinary Wi-Fi access point does not cover a city."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is C. WiMAX is the city/metropolitan wireless-access option among those listed; Bluetooth and infrared are short range and one ordinary Wi-Fi access point does not cover a city."
+      }
+    ]
+  },
+  {
+    "number": "36",
+    "page": 8,
+    "stem": "Which of the following is/ are based on the concept of line of sight communication? I. Communication via Wi-Fi II. Communication via Satellite III. Communication via Bluetooth",
+    "choices": {
+      "A": "I only",
+      "B": "II only",
+      "C": "I and III",
+      "D": "II and III"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "6.3.5",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The intended answer is satellite communication, requiring a clear radio path to the satellite. Ordinary local Wi-Fi and Bluetooth can operate without a direct visual line of sight; obstructions still affect them.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. The intended answer is satellite communication, requiring a clear radio path to the satellite. Ordinary local Wi-Fi and Bluetooth can operate without a direct visual line of sight; obstructions still affect them."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The intended answer is satellite communication, requiring a clear radio path to the satellite. Ordinary local Wi-Fi and Bluetooth can operate without a direct visual line of sight; obstructions still affect them."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. The intended answer is satellite communication, requiring a clear radio path to the satellite. Ordinary local Wi-Fi and Bluetooth can operate without a direct visual line of sight; obstructions still affect them."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. The intended answer is satellite communication, requiring a clear radio path to the satellite. Ordinary local Wi-Fi and Bluetooth can operate without a direct visual line of sight; obstructions still affect them."
+      }
+    ]
+  },
+  {
+    "number": "37",
+    "page": 8,
+    "stem": "The network in which users can be added without changing the physical connections of the network is a/ an",
+    "choices": {
+      "A": "infra-red network.",
+      "B": "optic fibre network.",
+      "C": "coaxial cable network.",
+      "D": "telephone line network."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "6.1.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Infrared is the only wireless medium listed; the other three require guided physical cabling. Infrared devices still need a suitable optical path.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Infrared is the only wireless medium listed; the other three require guided physical cabling. Infrared devices still need a suitable optical path."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. Infrared is the only wireless medium listed; the other three require guided physical cabling. Infrared devices still need a suitable optical path."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. Infrared is the only wireless medium listed; the other three require guided physical cabling. Infrared devices still need a suitable optical path."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. Infrared is the only wireless medium listed; the other three require guided physical cabling. Infrared devices still need a suitable optical path."
+      }
+    ]
+  },
+  {
+    "number": "38",
+    "page": 8,
+    "stem": "All of the following elements may weaken the wireless signals EXCEPT",
+    "choices": {
+      "A": "buildings.",
+      "B": "bad weather.",
+      "C": "long distance.",
+      "D": "guided media."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "6.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Buildings, propagation distance and weather can attenuate radio links; guided media is a different transmission category, not an environmental attenuation condition as listed.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. Buildings, propagation distance and weather can attenuate radio links; guided media is a different transmission category, not an environmental attenuation condition as listed."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. Buildings, propagation distance and weather can attenuate radio links; guided media is a different transmission category, not an environmental attenuation condition as listed."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. Buildings, propagation distance and weather can attenuate radio links; guided media is a different transmission category, not an environmental attenuation condition as listed."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Buildings, propagation distance and weather can attenuate radio links; guided media is a different transmission category, not an environmental attenuation condition as listed."
+      }
+    ]
+  },
+  {
+    "number": "39",
+    "page": 9,
+    "stem": "In a cellular communication, a call is made from mobile phone X to mobile phone Y. Based on the given situation, mobile phone X FIRST gets connected to the",
+    "choices": {
+      "A": "base station.",
+      "B": "switching node.",
+      "C": "mobile phone Y.",
+      "D": "landline network."
+    },
+    "answer": "A",
+    "officialAnswer": "B",
+    "originalSlo": "6.3.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A handset first communicates over the air with its serving base station; switching and onward networks are reached through that station. Correct A replaces printed B.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. A handset first communicates over the air with its serving base station; switching and onward networks are reached through that station. Correct A replaces printed B."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. A handset first communicates over the air with its serving base station; switching and onward networks are reached through that station. Correct A replaces printed B."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. A handset first communicates over the air with its serving base station; switching and onward networks are reached through that station. Correct A replaces printed B."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. A handset first communicates over the air with its serving base station; switching and onward networks are reached through that station. Correct A replaces printed B."
+      }
+    ]
+  },
+  {
+    "number": "40",
+    "page": 9,
+    "stem": "All of the following are the advantages of database management system EXCEPT",
+    "choices": {
+      "A": "data redundancy.",
+      "B": "data consistency.",
+      "C": "data recovery.",
+      "D": "data security."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "7.1.2",
+    "level": "U",
+    "slo": "11.9.1",
+    "grade": 12,
+    "explanation": "A DBMS aims to reduce unnecessary redundancy while supporting consistency, recovery and security; duplicated data is not itself an advantage.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. A DBMS aims to reduce unnecessary redundancy while supporting consistency, recovery and security; duplicated data is not itself an advantage."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. A DBMS aims to reduce unnecessary redundancy while supporting consistency, recovery and security; duplicated data is not itself an advantage."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. A DBMS aims to reduce unnecessary redundancy while supporting consistency, recovery and security; duplicated data is not itself an advantage."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. A DBMS aims to reduce unnecessary redundancy while supporting consistency, recovery and security; duplicated data is not itself an advantage."
+      }
+    ]
+  },
+  {
+    "number": "41",
+    "page": 9,
+    "stem": "Consider the given uses: \n-  Minimises the duplication of information \n-  Safeguards the database against certain anomalies \n-  Divides large tables into small well organised tables In terms of database, which of the following includes all the given uses?",
+    "choices": {
+      "A": "Modality",
+      "B": "Cardinality",
+      "C": "Relationship",
+      "D": "Normalisation"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "7.4.6",
+    "level": "U",
+    "slo": "11.10.1",
+    "grade": 12,
+    "explanation": "Normalisation decomposes tables to reduce redundant facts and update anomalies; modality/cardinality describe relationships rather than this design process.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is D. Normalisation decomposes tables to reduce redundant facts and update anomalies; modality/cardinality describe relationships rather than this design process."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is D. Normalisation decomposes tables to reduce redundant facts and update anomalies; modality/cardinality describe relationships rather than this design process."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is D. Normalisation decomposes tables to reduce redundant facts and update anomalies; modality/cardinality describe relationships rather than this design process."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Normalisation decomposes tables to reduce redundant facts and update anomalies; modality/cardinality describe relationships rather than this design process."
+      }
+    ]
+  },
+  {
+    "number": "42",
+    "page": 9,
+    "stem": "Consider the entity-relationship diagram. Which row correctly interprets its modality (minimum) and cardinality (maximum) at Table X and Table Y?",
+    "choices": {
+      "A": "| X modality | X cardinality | Y modality | Y cardinality |\n| --- | --- | --- | --- |\n| One | Zero | Many | One |",
+      "B": "| X modality | X cardinality | Y modality | Y cardinality |\n| --- | --- | --- | --- |\n| Zero | One | One | Many |",
+      "C": "| X modality | X cardinality | Y modality | Y cardinality |\n| --- | --- | --- | --- |\n| One | Zero | One | Many |",
+      "D": "| X modality | X cardinality | Y modality | Y cardinality |\n| --- | --- | --- | --- |\n| Zero | One | Many | One |"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "7.4.4",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "diagramUrl": "/paper-crops/CS-XI-2023-P1/diagram-42.png",
+    "explanation": "The X end shows optional one (zero minimum, one maximum); the Y end shows mandatory many (one minimum, many maximum). Only row B matches both ends.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. The X end shows optional one (zero minimum, one maximum); the Y end shows mandatory many (one minimum, many maximum). Only row B matches both ends."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The X end shows optional one (zero minimum, one maximum); the Y end shows mandatory many (one minimum, many maximum). Only row B matches both ends."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. The X end shows optional one (zero minimum, one maximum); the Y end shows mandatory many (one minimum, many maximum). Only row B matches both ends."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. The X end shows optional one (zero minimum, one maximum); the Y end shows mandatory many (one minimum, many maximum). Only row B matches both ends."
+      }
+    ]
+  },
+  {
+    "number": "43",
+    "page": 10,
+    "stem": "Which of the following data modelling types addresses the unique requirements of a specific business?",
+    "choices": {
+      "A": "Conceptual Data Modelling",
+      "B": "Enterprise Data Modelling",
+      "C": "Physical Data Modelling",
+      "D": "Logical Data Modelling"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "7.4.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The intended textbook term is enterprise data modelling for organisation-wide business requirements; conceptual/logical/physical describe abstraction stages rather than that organisational scope.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. The intended textbook term is enterprise data modelling for organisation-wide business requirements; conceptual/logical/physical describe abstraction stages rather than that organisational scope."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The intended textbook term is enterprise data modelling for organisation-wide business requirements; conceptual/logical/physical describe abstraction stages rather than that organisational scope."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. The intended textbook term is enterprise data modelling for organisation-wide business requirements; conceptual/logical/physical describe abstraction stages rather than that organisational scope."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. The intended textbook term is enterprise data modelling for organisation-wide business requirements; conceptual/logical/physical describe abstraction stages rather than that organisational scope."
+      }
+    ]
+  },
+  {
+    "number": "44",
+    "page": 10,
+    "stem": "The given diagram shows an example of a database model. Bases on the given information, the database model can be identified as a/ an",
+    "choices": {
+      "A": "network database model.",
+      "B": "hierarchy database model.",
+      "C": "object-oriented database model.",
+      "D": "object relational database model."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "7.1.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "diagramUrl": "/paper-crops/CS-XI-2023-P1/diagram-44.png",
+    "explanation": "The diagram is a parent-child tree, indicating a hierarchical model; network models permit more general connections and the object models are different representations.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. The diagram is a parent-child tree, indicating a hierarchical model; network models permit more general connections and the object models are different representations."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The diagram is a parent-child tree, indicating a hierarchical model; network models permit more general connections and the object models are different representations."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. The diagram is a parent-child tree, indicating a hierarchical model; network models permit more general connections and the object models are different representations."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. The diagram is a parent-child tree, indicating a hierarchical model; network models permit more general connections and the object models are different representations."
+      }
+    ]
+  },
+  {
+    "number": "45",
+    "page": 10,
+    "stem": "A freelancer has developed a library management database system with the following entities: Books, Readers, Publishers, Authentication_System, Reports and Staff Which of the following is a well-defined relationship between the Authentication_System entity and the Staff entity?",
+    "choices": {
+      "A": "One-to-one",
+      "B": "One-to-many",
+      "C": "Many-to-one",
+      "D": "Many-to-many"
+    },
+    "answer": null,
+    "officialAnswer": "B",
+    "originalSlo": "7.4.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The relationship is not determined by the entity names. One central authentication system serving many staff would make B plausible, but one account per staff or other designs also fit. Business rules are missing, so the printed B is retained only as provenance.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Not uniquely scorable. The relationship is not determined by the entity names. One central authentication system serving many staff would make B plausible, but one account per staff or other designs also fit. Business rules are missing, so the printed B is retained only as provenance."
+      },
+      {
+        "key": "B",
+        "reason": "Not uniquely scorable. The relationship is not determined by the entity names. One central authentication system serving many staff would make B plausible, but one account per staff or other designs also fit. Business rules are missing, so the printed B is retained only as provenance."
+      },
+      {
+        "key": "C",
+        "reason": "Not uniquely scorable. The relationship is not determined by the entity names. One central authentication system serving many staff would make B plausible, but one account per staff or other designs also fit. Business rules are missing, so the printed B is retained only as provenance."
+      },
+      {
+        "key": "D",
+        "reason": "Not uniquely scorable. The relationship is not determined by the entity names. One central authentication system serving many staff would make B plausible, but one account per staff or other designs also fit. Business rules are missing, so the printed B is retained only as provenance."
+      }
+    ]
+  },
+  {
+    "number": "46",
+    "page": 10,
+    "stem": "The MS Access query that will fetch records that consist of CarModel and CarPrice fields from a database table named as Cars is",
+    "choices": {
+      "A": "```sql\nSelect CarModel, CarPrice From Cars;\n```",
+      "B": "```sql\nSelect *CarModel, *CarPrice From Cars;\n```",
+      "C": "```sql\nSelect CarModel AND CarPrice From Cars;\n```",
+      "D": "```sql\nSelect *(CarModel AND CarPrice) From Cars;\n```"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.5.1",
+    "level": "A",
+    "slo": "11.11.4",
+    "grade": 12,
+    "explanation": "A comma-separated projection selects CarModel and CarPrice from Cars. Asterisks attached to names, AND between selected columns and the parenthesised starred expression are invalid here.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. A comma-separated projection selects CarModel and CarPrice from Cars. Asterisks attached to names, AND between selected columns and the parenthesised starred expression are invalid here."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. A comma-separated projection selects CarModel and CarPrice from Cars. Asterisks attached to names, AND between selected columns and the parenthesised starred expression are invalid here."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. A comma-separated projection selects CarModel and CarPrice from Cars. Asterisks attached to names, AND between selected columns and the parenthesised starred expression are invalid here."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. A comma-separated projection selects CarModel and CarPrice from Cars. Asterisks attached to names, AND between selected columns and the parenthesised starred expression are invalid here."
+      }
+    ]
+  },
+  {
+    "number": "47",
+    "page": 11,
+    "stem": "The MS Access query that will fetch all the records of clients living in Karachi from a database table named as Clients is",
+    "choices": {
+      "A": "```sql\nSelect * From Clients Where City = 'Karachi';\n```",
+      "B": "```sql\nSelect * From Clients Where City = $Karachi;\n```",
+      "C": "```sql\nSelect * From Karachi Where Table = Clients;\n```",
+      "D": "```sql\nSelect * From City = Karachi Where Table = Clients;\n```"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.5.1",
+    "level": "A",
+    "slo": "11.11.4",
+    "grade": 12,
+    "explanation": "SELECT * FROM Clients WHERE City = 'Karachi' selects every column of the matching rows. Other options contain malformed literals or FROM/WHERE syntax.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. SELECT * FROM Clients WHERE City = 'Karachi' selects every column of the matching rows. Other options contain malformed literals or FROM/WHERE syntax."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. SELECT * FROM Clients WHERE City = 'Karachi' selects every column of the matching rows. Other options contain malformed literals or FROM/WHERE syntax."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. SELECT * FROM Clients WHERE City = 'Karachi' selects every column of the matching rows. Other options contain malformed literals or FROM/WHERE syntax."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. SELECT * FROM Clients WHERE City = 'Karachi' selects every column of the matching rows. Other options contain malformed literals or FROM/WHERE syntax."
+      }
+    ]
+  },
+  {
+    "number": "48",
+    "page": 11,
+    "stem": "The MS Access query that will fetch all the records of clients having monthly income between 50,000 and 75,000 rupees from a database table named as Clients is",
+    "choices": {
+      "A": "```sql\nSelect * From Clients Where Income > 50,000 OR Income < 75,000;\n```",
+      "B": "```sql\nSelect * From Clients Where Income > 50000 AND Income < 75000;\n```",
+      "C": "```sql\nSelect * From Income = 50000 AND Income = 75000 Where Table = Clients;\n```",
+      "D": "```sql\nSelect * From Income >= 50000 AND Income =< 75000 Where Table = Clients;\n```"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "8.5.1",
+    "level": "A",
+    "slo": "11.11.4",
+    "grade": 12,
+    "explanation": "B is the valid query for income strictly above 50000 and below 75000. If endpoints are meant to be inclusive use BETWEEN 50000 AND 75000; no printed option expresses that correctly. A misuses OR and numeric commas, C has invalid clauses and D uses =< instead of <=.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the correct option is B. B is the valid query for income strictly above 50000 and below 75000. If endpoints are meant to be inclusive use BETWEEN 50000 AND 75000; no printed option expresses that correctly. A misuses OR and numeric commas, C has invalid clauses and D uses =< instead of <=."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. B is the valid query for income strictly above 50000 and below 75000. If endpoints are meant to be inclusive use BETWEEN 50000 AND 75000; no printed option expresses that correctly. A misuses OR and numeric commas, C has invalid clauses and D uses =< instead of <=."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is B. B is the valid query for income strictly above 50000 and below 75000. If endpoints are meant to be inclusive use BETWEEN 50000 AND 75000; no printed option expresses that correctly. A misuses OR and numeric commas, C has invalid clauses and D uses =< instead of <=."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is B. B is the valid query for income strictly above 50000 and below 75000. If endpoints are meant to be inclusive use BETWEEN 50000 AND 75000; no printed option expresses that correctly. A misuses OR and numeric commas, C has invalid clauses and D uses =< instead of <=."
+      }
+    ]
+  },
+  {
+    "number": "49",
+    "page": 11,
+    "stem": "Fatima has created a database table named as Stores. She wants to insert a column named as ContactNumber. The query that she should use to do this task is",
+    "choices": {
+      "A": "```sql\nAlter Table Stores Add ContactNumber Int;\n```",
+      "B": "```sql\nAlter Table Stores Include ContactNumber Int;\n```",
+      "C": "```sql\nAlter Stores Table Append ContactNumber Int;\n```",
+      "D": "```sql\nAlter Insert ContactNumber Int Where Table = Stores;\n```"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.5.2",
+    "level": "A",
+    "slo": "11.11.2",
+    "grade": 12,
+    "explanation": "ALTER TABLE Stores ADD ContactNumber INT is the only valid listed column-addition statement. In practical database design a telephone number should normally be text to retain leading zeros and plus signs.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. ALTER TABLE Stores ADD ContactNumber INT is the only valid listed column-addition statement. In practical database design a telephone number should normally be text to retain leading zeros and plus signs."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. ALTER TABLE Stores ADD ContactNumber INT is the only valid listed column-addition statement. In practical database design a telephone number should normally be text to retain leading zeros and plus signs."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. ALTER TABLE Stores ADD ContactNumber INT is the only valid listed column-addition statement. In practical database design a telephone number should normally be text to retain leading zeros and plus signs."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. ALTER TABLE Stores ADD ContactNumber INT is the only valid listed column-addition statement. In practical database design a telephone number should normally be text to retain leading zeros and plus signs."
+      }
+    ]
+  },
+  {
+    "number": "50",
+    "page": 11,
+    "stem": "The MS Access query that will delete a database table named as Class is",
+    "choices": {
+      "A": "```sql\nDrop Table Class;\n```",
+      "B": "```sql\nErase Table Class;\n```",
+      "C": "```sql\nDelete Table Class;\n```",
+      "D": "```sql\nRemove Table Class;\n```"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.5.2",
+    "level": "U",
+    "slo": "11.11.2",
+    "grade": 12,
+    "explanation": "DROP TABLE Class removes the table definition and its data; ERASE TABLE and REMOVE TABLE are not these SQL commands, and DELETE removes rows rather than a table definition.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. DROP TABLE Class removes the table definition and its data; ERASE TABLE and REMOVE TABLE are not these SQL commands, and DELETE removes rows rather than a table definition."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the correct option is A. DROP TABLE Class removes the table definition and its data; ERASE TABLE and REMOVE TABLE are not these SQL commands, and DELETE removes rows rather than a table definition."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the correct option is A. DROP TABLE Class removes the table definition and its data; ERASE TABLE and REMOVE TABLE are not these SQL commands, and DELETE removes rows rather than a table definition."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the correct option is A. DROP TABLE Class removes the table definition and its data; ERASE TABLE and REMOVE TABLE are not these SQL commands, and DELETE removes rows rather than a table definition."
+      }
+    ]
+  }
+]

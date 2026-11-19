@@ -97,27 +97,35 @@ export function asciiMathToLatex(expression: string, latexGroups = false): strin
   // numerator/denominator and an exponent such as p^(x+2) stays together.
   if (source.includes('/')) {
     let depth = 0;
-    const separators: number[] = [], divisions: {at:number;size:number;operator:string}[] = [];
+    const separators: {at:number;size:number}[] = [], divisions: {at:number;size:number;operator:string}[] = [];
     for (let i = 0; i < source.length; i++) {
       if (source[i] === '\\') {
         const environment = /^\\begin\{(bmatrix|pmatrix|matrix|vmatrix|Vmatrix|Bmatrix|array)\}[\s\S]*?\\end\{\1\}/.exec(source.slice(i));
         if (environment) { i += environment[0].length - 1; continue; }
+        // Control symbols such as \, and \; are indivisible, not punctuation.
+        // Relations terminate a slash operand just like their ASCII equivalents.
+        const command = /^\\(?:[A-Za-z]+|[^A-Za-z])/.exec(source.slice(i));
+        if (command) {
+          const token = command[0];
+          if (token === '\\{') depth++;
+          else if (token === '\\}') depth--;
+          else if (!depth && /^\\(?:times|cdot|div)$/.test(token)) divisions.push({at:i,size:token.length,operator:token});
+          else if (!depth && /^\\(?:approx|leq?|geq?|neq?)$/.test(token)) separators.push({at:i,size:token.length});
+          i += token.length - 1;
+          continue;
+        }
       }
       if ('([{'.includes(source[i])) depth++;
       else if (')]}'.includes(source[i])) depth--;
       else if (!depth && /[/*·×÷]/.test(source[i])) divisions.push({at:i,size:1,operator:source[i]});
-      else if (!depth && source[i] === '\\') {
-        const operator = /^\\(?:times|cdot|div)\b/.exec(source.slice(i));
-        if (operator) { divisions.push({at:i,size:operator[0].length,operator:operator[0]}); i += operator[0].length - 1; }
-      }
-      else if (!depth && /[=±≠≤≥<>+,;]/.test(source[i])) separators.push(i);
-      else if (!depth && source[i] === '-' && i > 0 && !/[=+*/^(]/.test(source.slice(0,i).trim().slice(-1))) separators.push(i);
+      else if (!depth && /[=±≠≤≥<>+,;]/.test(source[i])) separators.push({at:i,size:1});
+      else if (!depth && source[i] === '-' && i > 0 && !/[=+*/^(]/.test(source.slice(0,i).trim().slice(-1))) separators.push({at:i,size:1});
     }
     if (separators.length) {
       let start = 0, result = '';
-      for (const at of separators) {
-        result += asciiMathToLatex(source.slice(start, at), latexGroups) + asciiMathToLatex(source[at], latexGroups);
-        start = at + 1;
+      for (const {at,size} of separators) {
+        result += asciiMathToLatex(source.slice(start, at), latexGroups) + asciiMathToLatex(source.slice(at, at + size), latexGroups);
+        start = at + size;
       }
       return result + asciiMathToLatex(source.slice(start), latexGroups);
     }
@@ -438,6 +446,8 @@ export function formatEducationalMath(text: string): string {
 /** Existing LaTeX remains intact; only the affected notation needs conversion. */
 export function formatExplicitMath(expression: string): string {
   const restored = repairMathEscapes(expression)
+    // Older imported paper metadata can retain this known duplicated command.
+    .replace(/\\anglengle\b/g, '\\angle')
     .replace(/\\'(?=$|[\s\\',;)=])/g, "'")
     .replace(/\\overarc\{([^{}]+)\}/g, '\\overset{\\frown}{$1}')
     .replace(/\\text\{\s*\\mu\s*([A-Za-z]+)\}/g, '\\mu\\,\\mathrm{$1}')

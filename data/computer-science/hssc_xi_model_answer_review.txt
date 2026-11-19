@@ -1,0 +1,50 @@
+1 1.1.2 A | A binary zero represents the low or off state.
+2 1.2.2 D | NAND is false only when both inputs are true.
+3 1.2.5 A | Both AND gates compute XY. OR of those identical outputs remains XY, giving 0, 0, 0, 1.
+4 1.4.1 B | Design specifies architecture, interfaces and workflows.
+5 1.5.4 D | A full mesh provides dedicated links and alternate paths between nodes.
+6 1.6.2 A | SaaS supplies managed applications without requiring the customer to maintain the software.
+7 1.7.1 - | Both A and B describe essential cybersecurity functions. Securing communication and protecting credentials are both valid, so the wording does not establish one best answer.
+8 1.9.1 C | C is the intended checkout protection. Confidentiality comes from encryption, while tamper detection additionally requires authentication or an integrity mechanism, as used in TLS.
+9 2.1.2 C | Decomposition divides the classroom-cleaning problem into smaller tasks.
+10 2.1.2 B | Algorithm design specifies a logical sequence of steps.
+11 2.2.1 B | A becomes 35. B becomes 35 minus (5 modulo 5), which is 35. C is 35 minus 20, giving 15.
+12 2.2.1 C | The first iteration gives Y=8 and D=2. The second gives Y=32 and D=-22, which exits the loop. Multiplying D by -2 gives 44.
+13 2.2.1 D | T changes from 10 to 15, then 21, then 27 as all three conditions become true in sequence.
+14 2.2.1 C | M accumulates 5, 3 and 1, reaching 11. N then equals -1 and the final condition increases M to 12.
+15 2.2.1 A | The first insertion produces [3,8,5,1]. Inserting 5 into the sorted prefix next gives [3,5,8,1].
+16 2.2.1 B | The intended linear search visits 12,17,5,9 and stops at the match. The printed pseudocode omits an explicit iteration step, which should be noted.
+17 3.1.3 C | Objects combine state with related behaviour.
+18 3.9.3 A | Debugging tools support step-by-step execution and variable inspection.
+19 3.1.7 - | A is a triple-quoted string literal, commonly used informally as a block comment. Python comments begin with #, so the item conflates string literals with comments. D also starts with # and is a valid single-line comment. No uniquely correct multiline-comment syntax is supplied.
+20 3.2.3 D | turtle.color("red") sets the pen and fill colours to red.
+21 3.3.3 A | import datetime imports the module.
+22 3.4.4 D | _student_name is a legal Python identifier. Spaces, hyphens and @ cannot be used within these proposed identifiers.
+23 3.5.2 C | Division yields 5.0 and multiplication yields 15. Adding them gives 20.0.
+24 3.5.4 C | Assigning input to age and printing it with a comma supplies the required space and value.
+25 3.8.3 B | The inner loop prints 1, then 12, then 123 on separate lines.
+26 3.7.2 D | D converts the input to an integer and supplies the required colon on both nested if statements.
+27 3.8.5 A | continue skips printing 4. exit stops execution before 7 is printed. The output is 1,2,3,5,6 on separate lines.
+28 3.9.2 C | input returns strings. Adding them concatenates them, then division by 2 raises TypeError during execution.
+29 3.9.5 - | The printed assert b != 0, has a trailing comma without a following message and raises SyntaxError before execution. Removing that comma makes C the intended answer in normal execution with assertions enabled.
+30 4.1.2 A | K-means groups unlabelled data by similarity.
+31 4.1.3 D | The scenario concerns selecting or removing input features to improve performance and interpretation.
+32 4.3.2 C | Analysing multiple traffic data sources supports decisions that improve traffic flow.
+33 5.1.1 B | IoT connects physical devices to digital communication systems.
+34 5.1.2 D | Sensors detect physical changes and produce corresponding data signals.
+35 5.1.3 D | Continuous vital-sign data supports proactive decisions without replacing clinical judgement.
+36 5.2.2 - | Both A (improving treatment decisions) and B (developing protocols from aggregate data) are real healthcare applications of analytics. The question provides no criterion that uniquely selects one.
+37 5.2.4 B | Vehicle embedded systems control dedicated tasks such as braking, engine management and airbag deployment.
+38 5.3.4 A | Blockchain can provide shared, auditable records for IoT data.
+39 5.4.2 B | The scenario combines operational gains with workforce displacement and transparency concerns.
+40 6.1.2 B | Factual claims supported by credible citations can be checked against evidence.
+41 6.1.3 D | Keywords and trusted-source filters support focused, reliable digital research.
+42 6.1.4 B | Comparing a viral post with verified reporting supports responsible assessment before sharing.
+43 6.2.3 D | A trusted VPN protects traffic between the device and VPN endpoint from local-network observation. It does not guarantee that all websites or the VPN provider are trustworthy.
+44 6.5.1 - | A, B and D are all valid green-computing actions. The wording gives no criterion that selects just one of them.
+45 6.5.2 C | Scheduled shutdown saves operating energy, while frequent replacement can increase electronic waste.
+46 6.6.1 D | Sharing subtitled media enables people to learn about unfamiliar cultures.
+47 7.1.2 B | Digital literacy supports informed and responsible online participation.
+48 7.3.1 C | Personal interviews can gather detailed qualitative accounts.
+49 7.3.2 C | Prototype testing reveals design problems and user preferences early.
+50 7.3.3 - | The stem seeks better qualitative interview questions. A improves specificity but incorrectly requires closed-ended questions. C contradicts itself by calling yes/no questions open-ended. None offers specific, neutral, open-ended interview questions.

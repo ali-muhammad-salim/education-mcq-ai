@@ -1,0 +1,2350 @@
+[
+  {
+    "number": "1",
+    "page": 2,
+    "stem": "Rawaha has downloaded a text editor. He can use some of its features for ten days. After ten days, he must purchase it to use the software further and get benefit from all of its features.\n\nThis software is an example of",
+    "choices": {
+      "A": "licensed software.",
+      "B": "freeware software.",
+      "C": "shareware software.",
+      "D": "open source software."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.2.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Shareware is proprietary software provided to users free of charge on a trial basis for a limited period or with limited capabilities, requiring purchase for continued full usage.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; while shareware is proprietary, licensed commercial software typically requires purchasing a license prior to usage rather than offering a time-limited free trial."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; freeware is available at zero cost permanently without any trial expiration or requirement to purchase."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Software provided for a 10-day trial that requires purchasing a full license afterwards is the textbook definition of shareware."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; open-source software provides public access to source code for modification and redistributing under open licenses."
+      }
+    ]
+  },
+  {
+    "number": "2",
+    "page": 2,
+    "stem": "When a transaction is made using the Automated Teller Machine (ATM), then the information is updated in the bank database.\n\nThe bank database stores this information in",
+    "choices": {
+      "A": "RAM.",
+      "B": "ROM.",
+      "C": "hard disk.",
+      "D": "flash drive."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.1.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Permanent bank database records must survive system restarts and power failures; they are stored persistently on non-volatile secondary storage like hard disk drives / enterprise SAN storage.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; RAM is volatile primary memory whose contents are lost when power is removed, making it unsuitable for persistent database storage."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; ROM is read-only memory used for storing bootstrapping firmware, not dynamic transaction databases."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Enterprise database tables and transaction logs are stored persistently on secondary storage devices such as hard disks."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; flash drives are removable personal storage media, not the primary persistent storage backend of a centralised bank database system."
+      }
+    ]
+  },
+  {
+    "number": "3",
+    "page": 2,
+    "stem": "Which of the following options shows the CORRECT categorisation of computers based on their cost?\n\n| | Low Cost $\\longrightarrow$ High Cost |\n| :--- | :--- |\n| **A** | Supercomputer $\\longrightarrow$ Mainframe Computer $\\longrightarrow$ Minicomputer |\n| **B** | Mainframe Computer $\\longrightarrow$ Minicomputer $\\longrightarrow$ Supercomputer |\n| **C** | Minicomputer $\\longrightarrow$ Mainframe Computer $\\longrightarrow$ Supercomputer |\n| **D** | Supercomputer $\\longrightarrow$ Minicomputer $\\longrightarrow$ Mainframe Computer |",
+    "choices": {
+      "A": "Supercomputer $\\longrightarrow$ Mainframe Computer $\\longrightarrow$ Minicomputer",
+      "B": "Mainframe Computer $\\longrightarrow$ Minicomputer $\\longrightarrow$ Supercomputer",
+      "C": "Minicomputer $\\longrightarrow$ Mainframe Computer $\\longrightarrow$ Supercomputer",
+      "D": "Supercomputer $\\longrightarrow$ Minicomputer $\\longrightarrow$ Mainframe Computer"
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.1.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "In order of ascending scale, complexity, and cost: Minicomputers cost less than enterprise Mainframes, which cost substantially less than multi-million dollar Supercomputers.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; supercomputers are the most expensive class of computers, not the lowest in cost."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; minicomputers are less expensive than mainframes."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. From low to high cost: Minicomputer < Mainframe Computer < Supercomputer."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; supercomputers are the highest cost computers in this spectrum."
+      }
+    ]
+  },
+  {
+    "number": "4",
+    "page": 2,
+    "stem": "The MOST appropriate computer system used for designing and controlling fighter planes and rockets is",
+    "choices": {
+      "A": "minicomputer.",
+      "B": "supercomputer.",
+      "C": "microcomputer.",
+      "D": "mainframe computer."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "1.1.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Computational fluid dynamics (CFD), aerodynamic simulation, and real-time guidance of military aerospace vehicles require floating-point compute capabilities delivered by supercomputers.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; minicomputers lack the massive floating-point processing power required for advanced aerospace simulations."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Complex aerodynamic simulation, trajectory calculations, and rocket telemetry design require supercomputers."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; microcomputers (personal computers) cannot handle the extreme computational intensity of full-scale rocket and fighter jet aerodynamic modeling."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; mainframe computers excel in high-volume transaction processing and bulk I/O rather than specialized numerical scientific supercomputing."
+      }
+    ]
+  },
+  {
+    "number": "5",
+    "page": 2,
+    "stem": "A software assists the operating system in providing a virus-free environment to the users.\n\nThis software is an example of",
+    "choices": {
+      "A": "device driver.",
+      "B": "utility software.",
+      "C": "operating system.",
+      "D": "productivity software."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "1.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Antivirus programs are utility software designed to assist the operating system in maintaining, securing, and optimizing system health and integrity.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; device drivers communicate between the operating system and specific hardware peripherals."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Antivirus and system security software are classified as utility software."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the operating system provides core resource management and execution platforms, while antivirus software assists it."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; productivity software includes user-oriented office suites like word processors and spreadsheets."
+      }
+    ]
+  },
+  {
+    "number": "6",
+    "page": 3,
+    "stem": "Consider the given examples of software.\n\nI. Games  \nII. Compiler  \nIII. Disk Cleaner  \nIV. Database Management System  \n\nThe examples of system software are",
+    "choices": {
+      "A": "I and II.",
+      "B": "I and IV.",
+      "C": "II and III.",
+      "D": "III and IV."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Compilers (language translators) and Disk Cleaners (system utilities) directly manage computer hardware and software resources, qualifying them as system software. Games and DBMS are application software.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; games are application software created for entertainment."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; games are application software."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. A compiler (translator) and a disk cleaner (utility) are system software programs."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; a DBMS is classified as an application software package used for creating and managing user databases."
+      }
+    ]
+  },
+  {
+    "number": "7",
+    "page": 3,
+    "stem": "The set of examples of automatic data capture devices is",
+    "choices": {
+      "A": "scanner and microphone.",
+      "B": "scanner and barcode reader.",
+      "C": "microphone and magnetic card reader.",
+      "D": "barcode reader and magnetic card reader."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.3.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Automatic data capture (ADC) devices read encoded data directly from an object or medium without manual human transcription. Barcode readers and magnetic stripe card readers directly digitise encoded data.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; microphones capture continuous analogue acoustic waves requiring human speech or audio sources rather than automated data symbols."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; standard flatbed scanners require manual document placement and user interaction rather than automated data stream acquisition."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; a microphone is a manual audio input device, not an automated data capture device."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Both barcode readers and magnetic stripe readers capture encoded machine-readable data directly and automatically."
+      }
+    ]
+  },
+  {
+    "number": "8",
+    "page": 3,
+    "stem": "In contrast to the capacitive and the infrared touch screen technologies, the resistive technology",
+    "choices": {
+      "A": "is a very expensive technology.",
+      "B": "uses only glass as the screen material.",
+      "C": "has poor screen visibility in strong sun light.",
+      "D": "is more durable than other two technologies."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.3.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Resistive touch screens rely on flexible multi-layered polyethylene and conductive sheets separated by spacer dots. These reflective plastic layers cause glare and severely degrade visibility under strong sunlight.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; resistive touch screens are among the cheapest touch technologies to produce."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; resistive technology requires flexible plastic outer membranes to compress against the underlying layer."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The multiple reflective flexible layers in resistive panels result in poor visibility under bright sunlight."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the soft plastic top layer of resistive screens is prone to scratches and wear, making it less durable than solid glass capacitive screens."
+      }
+    ]
+  },
+  {
+    "number": "9",
+    "page": 4,
+    "stem": "Consider the given image.\n\nThe type of device whose internal working is shown in this image is an example of",
+    "choices": {
+      "A": "plotter.",
+      "B": "printer.",
+      "C": "monitor.",
+      "D": "projector."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.3.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "diagramUrl": "/paper-crops/CS-XI-2022-P1/question-9.png",
+    "explanation": "The diagram illustrates the internal components of a Cathode Ray Tube (CRT) display monitor: heater, cathode, electron gun, focusing coil, deflecting coils, and phosphor-coated fluorescent screen.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; a plotter uses pens or inkjet nozzles to draw vector graphics on paper."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; printers transfer ink or toner onto physical paper."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The diagram depicts a cathode ray tube (CRT) display monitor."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; projectors use high-intensity lamps with LCD or DLP micro-mirror arrays to project onto external surfaces."
+      }
+    ]
+  },
+  {
+    "number": "10",
+    "page": 4,
+    "stem": "Which of the following output devices used cold cathode fluorescent lamp (CCFL) as the backlighting method?",
+    "choices": {
+      "A": "Digital Light Projectors",
+      "B": "Light Emitting Diode Monitors",
+      "C": "Liquid Crystal Display Monitors",
+      "D": "Liquid Crystal Display Projectors"
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.3.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Traditional LCD monitors contain non-emitting liquid crystal matrices that require an auxiliary backlight source; early LCDs used Cold Cathode Fluorescent Lamps (CCFL) before LED backlights became standard.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; DLP projectors use ultra-high-pressure arc lamps or solid-state LEDs/lasers reflecting off micro-mirror chips."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; LED monitors utilize light-emitting diodes as their backlighting source, not CCFL tubes."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Traditional LCD monitors utilized cold cathode fluorescent lamps (CCFL) as their illumination backlight."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; LCD projectors use high-wattage metal-halide lamps, xenon lamps, or laser modules."
+      }
+    ]
+  },
+  {
+    "number": "11",
+    "page": 4,
+    "stem": "In contrast to inkjet printers, the laser printers",
+    "choices": {
+      "A": "use liquid ink to print text and images.",
+      "B": "use properties of static electricity to produce text and images.",
+      "C": "print a page line by line rather than printing a whole page in a go.",
+      "D": "use a stepper motor and belt which moves the print head assembly across the page."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "1.3.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Laser printers rely on electrophotographic technology: an electrostatic charge is drawn onto a rotating photoreceptor drum by a laser beam, attracting powdered toner which is fused to paper with heat.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; inkjet printers use liquid ink, whereas laser printers use dry powdered toner."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Laser printers utilize static electricity on a photosensitive drum to attract toner particles."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; laser printers are page printers that compose and print entire pages at once, whereas inkjet printers print line-by-line."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; print head carriage assemblies moved by stepper belts are characteristic of inkjet and dot matrix printers."
+      }
+    ]
+  },
+  {
+    "number": "12",
+    "page": 4,
+    "stem": "Which of the following devices can perform both input and output operations?",
+    "choices": {
+      "A": "Printer",
+      "B": "Scanner",
+      "C": "Light pen",
+      "D": "Touch screen"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.3.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A touch screen functions as a visual output display while simultaneously detecting user fingertip/stylus touches as input signals.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; a printer is strictly an output device."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; a scanner is strictly an input device."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; a light pen is strictly a pointing input device."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. A touchscreen displays visual output and receives direct touch input, making it a dual I/O device."
+      }
+    ]
+  },
+  {
+    "number": "13",
+    "page": 5,
+    "stem": "An example of storage device is",
+    "choices": {
+      "A": "Vacuum tube (shown in image A)",
+      "B": "Motherboard (shown in image B)",
+      "C": "Integrated circuit chip (shown in image C)",
+      "D": "RAM module (shown in image D)"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.1.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "diagramUrl": "/paper-crops/CS-XI-2022-P1/question-13.png",
+    "explanation": "Image D shows a RAM (Random Access Memory) module, which is the primary semiconductor storage component of a computer system.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; image A depicts a vacuum tube used for electronic amplification/switching in first-generation computers."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; image B shows a motherboard, which is the main circuit board interconnecting components."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; image C shows a standard dual in-line package (DIP) integrated circuit processor/controller."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Image D depicts a RAM module, which serves as computer memory/storage."
+      }
+    ]
+  },
+  {
+    "number": "14",
+    "page": 5,
+    "stem": "IBM Thinkpad and Toshiba Satellite series are examples of",
+    "choices": {
+      "A": "minicomputer.",
+      "B": "supercomputer.",
+      "C": "microcomputer.",
+      "D": "mainframe computer."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.1.3",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Laptops, notebooks, and desktop PCs powered by single-chip microprocessors belong to the microcomputer category.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; minicomputers are multi-user mid-range systems larger than personal laptops."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; supercomputers are massive multi-node scientific computational installations."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. ThinkPad and Satellite laptop lines are personal portable microcomputers."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; mainframes are large-scale enterprise server systems."
+      }
+    ]
+  },
+  {
+    "number": "15",
+    "page": 5,
+    "stem": "The smallest accessible unit of memory is",
+    "choices": {
+      "A": "bit.",
+      "B": "byte.",
+      "C": "word.",
+      "D": "nibble."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "2.1.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "While a bit is the smallest unit of data, memory architectures address and retrieve data in groups of 8 bits. Thus, a byte is the smallest directly addressable/accessible unit in computer memory.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; a bit is the basic binary storage element, but computers do not access individual bits independently on memory buses."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. In byte-addressable computer architecture, the byte (8 bits) is the smallest accessible unit of memory."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; a word consists of multiple bytes (e.g. 32 bits or 64 bits), which is larger than a single byte."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; a nibble is 4 bits and is not individually addressed by standard memory controllers."
+      }
+    ]
+  },
+  {
+    "number": "16",
+    "page": 5,
+    "stem": "If one character occupies 8 bits in a computer memory, then the number of bytes required to store the word ADD-ON will be",
+    "choices": {
+      "A": "5 bytes.",
+      "B": "6 bytes.",
+      "C": "40 bytes.",
+      "D": "48 bytes."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "2.1.2",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "The string 'ADD-ON' consists of 6 distinct characters: 'A', 'D', 'D', '-', 'O', 'N'. Since 8 bits equals 1 byte per character, storing 6 characters requires 6 bytes.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; 5 bytes ignores the hyphen '-' character in the word ADD-ON."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. 'ADD-ON' has 6 characters (including the hyphen); at 1 byte per character, it requires 6 bytes."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; 40 bytes is 320 bits, far exceeding the size of 6 characters."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; 48 is the number of bits (6 * 8 = 48 bits), but the question asks for bytes."
+      }
+    ]
+  },
+  {
+    "number": "17",
+    "page": 5,
+    "stem": "In binary system, on converting 2KB of memory into bytes, the result will be",
+    "choices": {
+      "A": "2048 bytes.",
+      "B": "2000 bytes.",
+      "C": "1024 bytes.",
+      "D": "1000 bytes."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "2.1.2",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "In binary memory calculations, $1\\text{ KB} = 2^{10}\\text{ bytes} = 1024\\text{ bytes}$. Therefore, $2\\text{ KB} = 2 \\times 1024 = 2048\\text{ bytes}$.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. $2 \\text{ KB} = 2 \\times 1024 \\text{ bytes} = 2048 \\text{ bytes}$."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; 2000 bytes represents decimal (metric) notation ($2 \\times 1000$), not binary base-2 system."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; 1024 bytes is the size of 1 KB, not 2 KB."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; 1000 bytes is decimal 1 KB."
+      }
+    ]
+  },
+  {
+    "number": "18",
+    "page": 6,
+    "stem": "The CORRECT features of ROM are\n\nI. expensive  \nII. read only operations  \nIII. read and write operations  \nIV. pre-programmed memory",
+    "choices": {
+      "A": "I and III.",
+      "B": "II and III.",
+      "C": "II and IV.",
+      "D": "III and IV."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "2.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "ROM (Read-Only Memory) is non-volatile, pre-programmed memory supplied by hardware manufacturers that supports read-only operations during normal computer execution.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; ROM does not support arbitrary read/write operations during execution."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; ROM is read-only, not read and write."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. ROM features read-only operations (II) and pre-programmed firmware memory (IV)."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; read and write operations describe RAM, not standard ROM."
+      }
+    ]
+  },
+  {
+    "number": "19",
+    "page": 6,
+    "stem": "Given are the features of one of the types of memory.\n\n- It consumes low power.\n- It has the least access time.\n- It has the fastest processing time.\n\nBased on these features, the type of memory identified is",
+    "choices": {
+      "A": "PROM.",
+      "B": "SRAM.",
+      "C": "DRAM.",
+      "D": "EPROM."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "2.2.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Static RAM (SRAM) uses multi-transistor flip-flop bistable latches without requiring dynamic capacitor refresh cycles, providing the fastest access time and lowest active power overhead for cache applications.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; PROM is non-volatile programmable read-only memory, which is much slower than cache SRAM."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. SRAM (Static RAM) provides the shortest access time, fastest speed, and low power retention."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; DRAM has longer access times than SRAM because its capacitor charges must be periodically refreshed."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; EPROM is erasable programmable ROM, not high-speed primary memory."
+      }
+    ]
+  },
+  {
+    "number": "20",
+    "page": 6,
+    "stem": "The major characteristics of any memory device are\n\nI. cost  \nII. access time  \nIII. access mode  \nIV. data transfer rate",
+    "choices": {
+      "A": "I, II and III.",
+      "B": "I, II and IV.",
+      "C": "I, III and IV.",
+      "D": "II, III and IV."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "2.1.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "In computer architecture classification, the intrinsic functional operational characteristics of memory devices are access time (latency), access mode (sequential, direct, random), and transfer rate (bandwidth).",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; cost is an economic metric rather than a physical memory operational parameter."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; access mode is a critical architectural characteristic."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; access time is essential in determining memory hierarchy performance."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Access time (II), access mode (III), and data transfer rate (IV) are the technical performance characteristics."
+      }
+    ]
+  },
+  {
+    "number": "21",
+    "page": 6,
+    "stem": "An example of sequential storage device is",
+    "choices": {
+      "A": "DVD.",
+      "B": "flash drive.",
+      "C": "magnetic tape.",
+      "D": "magnetic disk."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "2.3.6",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Magnetic tape stores data in a linear sequence along its ribbon length; finding a specific record requires winding past preceding records sequentially.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; DVDs support direct optical sector access."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; flash drives provide random access to flash blocks."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Magnetic tape is a sequential access storage device."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; magnetic disks provide direct/random access using moving actuator arms and rotating platters."
+      }
+    ]
+  },
+  {
+    "number": "22",
+    "page": 6,
+    "stem": "The device that has the highest storage capacity is",
+    "choices": {
+      "A": "CD.",
+      "B": "DVD.",
+      "C": "Floppy disk.",
+      "D": "Blue-ray disk."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "2.3.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Floppy disks store 1.44 MB, standard CDs store 700 MB, single-layer DVDs store 4.7 GB, while single-layer Blu-ray discs store 25 GB (and 50 GB dual-layer), making Blu-ray the highest in capacity.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; a standard CD stores approximately 700 MB."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; a standard single-layer DVD holds 4.7 GB, which is lower than Blu-ray."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; a 3.5-inch floppy disk holds only 1.44 MB."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Blu-ray discs utilize shorter 405 nm blue-violet laser wavelengths to achieve capacities of 25 GB to 50 GB or higher."
+      }
+    ]
+  },
+  {
+    "number": "23",
+    "page": 7,
+    "stem": "All of the following are examples of secondary storage EXCEPT",
+    "choices": {
+      "A": "registers.",
+      "B": "optical disk.",
+      "C": "chip memory.",
+      "D": "magnetic tape."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "2.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Registers are internal processor storage elements embedded within the CPU core for immediate instruction execution, occupying the top of the memory hierarchy rather than secondary storage.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Registers are internal CPU storage components, not secondary storage."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; optical discs (CDs, DVDs, Blu-rays) are secondary storage media."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; flash memory chips (solid-state drives, memory cards) function as non-volatile secondary storage."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; magnetic tape is secondary/tertiary storage."
+      }
+    ]
+  },
+  {
+    "number": "24",
+    "page": 7,
+    "stem": "One of the types of volatile memory is",
+    "choices": {
+      "A": "SRAM.",
+      "B": "PROM.",
+      "C": "EPROM.",
+      "D": "EEPROM."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "2.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Volatile memory loses its stored data when electrical power is switched off. Static RAM (SRAM) is volatile; PROM, EPROM, and EEPROM are varieties of non-volatile ROM.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. SRAM is volatile memory that requires continuous power to maintain its stored bits."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; PROM is non-volatile programmable read-only memory."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; EPROM is non-volatile memory."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; EEPROM is non-volatile electrically erasable memory."
+      }
+    ]
+  },
+  {
+    "number": "25",
+    "page": 7,
+    "stem": "The number of functions performed by BIOS is",
+    "choices": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "2.2.5",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "In standard computer systems curricula, BIOS performs four core functions: Power-On Self-Test (POST), Bootstrap loader, BIOS drivers / basic runtime services, and CMOS setup configuration.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; BIOS performs four distinct startup and hardware interface functions."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; BIOS performs four core functions."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; BIOS performs four core functions."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. BIOS performs 4 primary functions: POST, bootstrap loader, BIOS drivers, and CMOS configuration setup."
+      }
+    ]
+  },
+  {
+    "number": "26",
+    "page": 7,
+    "stem": "In comparison to magnetic tape, magnetic disk is better because\n\nI. it is less expensive.  \nII. it provides direct access.  \nIII. it can add data to existing device.",
+    "choices": {
+      "A": "I only.",
+      "B": "III only.",
+      "C": "I and II.",
+      "D": "II and III."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "2.3.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Magnetic disks allow direct/random access to sectors without winding through preceding data, and allow updating or appending records in-place without rewriting the entire medium.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; magnetic tape cartridges are generally cheaper per terabyte for archival storage than high-speed disk drives."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; direct access is a major advantage of magnetic disk."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; tape is less expensive per unit storage than hard disks."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Direct access (II) and the ability to update/add data to an existing device without rewriting the full tape (III) make magnetic disks superior for active workloads."
+      }
+    ]
+  },
+  {
+    "number": "27",
+    "page": 7,
+    "stem": "A type of network that uses infrared and Bluetooth technologies for data communication is",
+    "choices": {
+      "A": "wide area network.",
+      "B": "local area network.",
+      "C": "personal area network.",
+      "D": "metropolitan area network."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "5.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A Personal Area Network (PAN) interconnects digital devices within an individual's immediate personal workspace (typically within 10 meters) using short-range wireless technologies like Bluetooth and infrared.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; a WAN covers large geographical regions using long-haul telecommunications circuits and satellites."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; a LAN covers a room, building, or campus typically using Ethernet and Wi-Fi."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. A Personal Area Network (PAN) utilizes short-range Bluetooth and infrared to connect personal peripherals."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; a MAN covers an entire city using fiber optic rings or wireless backhauls."
+      }
+    ]
+  },
+  {
+    "number": "28",
+    "page": 7,
+    "stem": "Which of the following media has the HIGHEST data rate?",
+    "choices": {
+      "A": "Coaxial cable",
+      "B": "Telephone cable",
+      "C": "Fibre optic cable",
+      "D": "Twisted pair cable"
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "5.1.5",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Fibre optic cable transmits modulated light beams through ultra-pure silica glass strands, providing theoretical bandwidths exceeding gigabits and terabits per second with minimal attenuation.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; coaxial cable bandwidth is significantly lower than optical fiber."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; traditional copper telephone cable has low bandwidth capacity."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Optical fiber provides the highest bandwidth and data transfer rate among physical guided transmission media."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; twisted pair cable achieves high speeds up to 10–40 Gbps over short distances, but cannot match fiber optic capacities."
+      }
+    ]
+  },
+  {
+    "number": "29",
+    "page": 7,
+    "stem": "A device that forwards data on the basis of IP address is",
+    "choices": {
+      "A": "hub.",
+      "B": "router.",
+      "C": "switch.",
+      "D": "network interface card."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.1.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A router operates at the Network Layer (Layer 3) of the OSI model and inspects destination logical IP addresses in packet headers to forward data across interconnected networks.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; a hub is a physical layer (Layer 1) device that broadcasts electrical signals blindly to all ports."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. A router inspects IP addresses to make intelligent forwarding and routing decisions."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; standard switches operate at the Data Link layer (Layer 2) and forward frames based on physical MAC addresses."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; a NIC connects a physical device to a transmission medium using hardware MAC addresses."
+      }
+    ]
+  },
+  {
+    "number": "30",
+    "page": 8,
+    "stem": "Consider the given image.\n\nThe topology in the given image is an example of a",
+    "choices": {
+      "A": "bus topology.",
+      "B": "star topology.",
+      "C": "ring topology.",
+      "D": "mesh topology."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.1.9",
+    "level": "U",
+    "slo": "1.5.2",
+    "grade": 11,
+    "diagramUrl": "/paper-crops/CS-XI-2022-P1/question-30.png",
+    "explanation": "In the diagram, multiple computing devices (laptops, PCs, server, printer) are each connected via dedicated point-to-point cables radiating outward to a central hub/switch, which defines a star topology.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; a bus topology shares a single linear backbone cable terminated at both ends."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. A central network device with dedicated cables running to each peripheral workstation is a star topology."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; a ring topology connects each device to exactly two neighboring devices forming a closed circular loop."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; a mesh topology connects every node directly to multiple or all other nodes without a single central hub."
+      }
+    ]
+  },
+  {
+    "number": "31",
+    "page": 8,
+    "stem": "A network topology in which all nodes are connected to each other is called",
+    "choices": {
+      "A": "bus topology.",
+      "B": "star topology.",
+      "C": "tree topology.",
+      "D": "mesh topology."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "5.1.9",
+    "level": "U",
+    "slo": "1.5.2",
+    "grade": 11,
+    "explanation": "In a full mesh network topology, every node has a dedicated physical point-to-point communication link connected directly to every other node in the network ($n(n-1)/2$ links for $n$ nodes).",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; in a bus topology, nodes connect to a common shared cable rather than directly to each other."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; star topology nodes communicate through a central switch or hub."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; a tree topology connects star networks hierarchically."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. In a mesh topology, every node is directly connected to all other nodes."
+      }
+    ]
+  },
+  {
+    "number": "32",
+    "page": 8,
+    "stem": "Consider the given protocols.\n\nI. FTP  \nII. SSL  \nIII. HTTP  \nIV. IMAP  \n\nThe protocols that work on the application layer of OSI model are",
+    "choices": {
+      "A": "I and II.",
+      "B": "I and III.",
+      "C": "II and IV.",
+      "D": "III and IV."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Under the AKU-EB 2009 specification, File Transfer Protocol (FTP, I) and Hypertext Transfer Protocol (HTTP, III) are core Application layer protocols providing end-user services.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; SSL operates primarily between the application and transport layers (Presentation/Session/Transport) to provide cryptographic security."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. FTP and HTTP are textbook Application layer protocols."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; SSL is not purely an Application layer protocol in the classical OSI model."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; while IMAP is an application layer mail protocol, the official board curriculum key pairs I (FTP) and III (HTTP)."
+      }
+    ]
+  },
+  {
+    "number": "33",
+    "page": 9,
+    "stem": "Consider the given responsibilities.\n\nI. It provides and manages the mechanism of routing.  \nII. It adds logical address of sender and receiver to each protocol data unit.  \n\nAn OSI model layer which has these responsibilities is",
+    "choices": {
+      "A": "session layer.",
+      "B": "network layer.",
+      "C": "data link layer.",
+      "D": "application layer."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The Network Layer (Layer 3) is responsible for logical addressing (attaching source and destination IP addresses) and path determination (routing) across interconnected networks.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the Session layer manages dialogues and connections between application processes."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The Network layer performs logical addressing and manages packet routing."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the Data Link layer handles physical MAC addressing and node-to-node frame delivery."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the Application layer provides network interfaces directly to user applications."
+      }
+    ]
+  },
+  {
+    "number": "34",
+    "page": 9,
+    "stem": "The number of layers in TCP/ IP model is",
+    "choices": {
+      "A": "two.",
+      "B": "four.",
+      "C": "six.",
+      "D": "seven."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.3.1",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "The standard DoD TCP/IP protocol suite model consists of 4 functional layers: Network Access (Link), Internet, Transport (Host-to-Host), and Application.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the TCP/IP model has 4 layers."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The TCP/IP reference model comprises 4 layers."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; neither OSI nor TCP/IP uses 6 layers."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; seven layers describes the ISO/OSI model, not TCP/IP."
+      }
+    ]
+  },
+  {
+    "number": "35",
+    "page": 9,
+    "stem": "The default subnet mask of Class A of IPv4 address is",
+    "choices": {
+      "A": "255.0.0.0",
+      "B": "255.255.0.0",
+      "C": "255.255.255.0",
+      "D": "255.255.255.255"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "5.3.5",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Class A IPv4 networks designate the first 8 bits for network identification and the remaining 24 bits for host addressing (/8), yielding the default subnet mask 255.0.0.0.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. 255.0.0.0 (/8) is the default subnet mask for Class A IPv4 networks."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; 255.255.0.0 (/16) is the default subnet mask for Class B networks."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; 255.255.255.0 (/24) is the default subnet mask for Class C networks."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; 255.255.255.255 (/32) represents a host broadcast or individual host mask."
+      }
+    ]
+  },
+  {
+    "number": "36",
+    "page": 9,
+    "stem": "An IPv4 address is made up of",
+    "choices": {
+      "A": "4 bits.",
+      "B": "8 bits.",
+      "C": "4 bytes.",
+      "D": "8 bytes."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "5.3.5",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "An Internet Protocol version 4 (IPv4) address has a length of 32 bits, which corresponds exactly to 4 octets (4 bytes) written in dotted-decimal format.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; 4 bits is a single hexadecimal digit or nibble."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; 8 bits is one byte, which is just one octet of an IPv4 address."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. An IPv4 address is 32 bits, which equals 4 bytes."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; 8 bytes equals 64 bits."
+      }
+    ]
+  },
+  {
+    "number": "37",
+    "page": 9,
+    "stem": "An IPv4 address has 8 bits for network ID and 24 bits for host ID. This IP address belongs to",
+    "choices": {
+      "A": "class A.",
+      "B": "class B.",
+      "C": "class C.",
+      "D": "class D."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "5.3.6",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "In classful IPv4 addressing, Class A allocates 8 bits (first octet, range 1-126) for the Network ID and 24 bits (last three octets) for Host IDs, allowing over 16 million hosts per network.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Class A assigns 8 bits for network ID and 24 bits for host IDs."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; Class B assigns 16 bits for network ID and 16 bits for host ID."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; Class C assigns 24 bits for network ID and 8 bits for host ID."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; Class D is reserved for multicast groups and does not use host/network partitioning."
+      }
+    ]
+  },
+  {
+    "number": "38",
+    "page": 9,
+    "stem": "Consider the given examples of IPv4 address.\n\nI. 192.200.258.240  \nII. 200.100.127.192  \nIII. 250.150.200.125  \nIV. 165.265.189.233  \n\nThe INVALID examples of IPv4 addresses are",
+    "choices": {
+      "A": "I and II.",
+      "B": "I and IV.",
+      "C": "II and III.",
+      "D": "III and IV."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.3.6",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Each byte (octet) in an IPv4 address must be an integer between 0 and 255. Address I has 258 (> 255) and Address IV has 265 (> 255), making both addresses invalid.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; address II (200.100.127.192) has valid octets all within 0-255."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. In address I, 258 exceeds 255; in address IV, 265 exceeds 255. Both are invalid."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; addresses II and III both have valid octets between 0 and 255."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; address III (250.150.200.125) is a valid IPv4 address."
+      }
+    ]
+  },
+  {
+    "number": "39",
+    "page": 10,
+    "stem": "Consider the given block diagram of a database model.\n\n```mermaid\ngraph TD\n    College --> Department\n    College --> Infrastructure\n    Department --> Course\n    Department --> Teachers\n    Department --> Students\n```\n\nThis is an example of",
+    "choices": {
+      "A": "network database model.",
+      "B": "relational database model.",
+      "C": "hierarchical database model.",
+      "D": "object-oriented database model."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "7.1.4",
+    "level": "U",
+    "slo": "11.9.3",
+    "grade": 12,
+    "diagramUrl": "/paper-crops/CS-XI-2022-P1/question-39.png",
+    "explanation": "In a hierarchical database model, entities are structured like an inverted tree with single root parent nodes branching into subordinate child nodes in strict 1:N parent-child relationships.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; a network model allows child records to have multiple parent records (graph structure)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; a relational model organizes data in two-dimensional tables linked by primary and foreign keys."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. The tree structure with a single parent branching down to child entities represents a hierarchical database model."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; an object-oriented database model integrates object-oriented programming concepts (encapsulation, methods, classes) with database storage."
+      }
+    ]
+  },
+  {
+    "number": "40",
+    "page": 10,
+    "stem": "Consider the given tasks.\n\nI. Inserting data into the database  \nII. Deleting objects from the database  \nIII. Deleting records from the database  \nIV. Granting permissions to the database users  \n\nThe task(s) performed by data control language of SQL is/ are",
+    "choices": {
+      "A": "I only.",
+      "B": "IV only.",
+      "C": "I, II and III.",
+      "D": "II, III and IV."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "7.1.6",
+    "level": "U",
+    "slo": "11.11.1",
+    "grade": 12,
+    "explanation": "Data Control Language (DCL) commands (`GRANT` and `REVOKE`) control security and user privileges over database objects. Inserting (I) and deleting records (III) are DML; deleting objects (II) is DDL.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; inserting data (`INSERT`) is a Data Manipulation Language (DML) task."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Granting user permissions (`GRANT`) is the function of Data Control Language (DCL)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; inserting data and deleting records are DML tasks."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; deleting objects (`DROP`) is DDL, and deleting records (`DELETE`) is DML."
+      }
+    ]
+  },
+  {
+    "number": "41",
+    "page": 10,
+    "stem": "The name of data type used in the field Married is",
+    "choices": {
+      "A": "Text.",
+      "B": "Yes/No.",
+      "C": "Number.",
+      "D": "OLE Object."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "7.2.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "diagramUrl": "/paper-crops/CS-XI-2022-P1/question-41.png",
+    "explanation": "In MS Access datasheets, fields represented visually with clickable toggle checkboxes correspond to the boolean Yes/No data type.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; text fields store alphanumeric strings and display plain text values."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. The Married field displays checkboxes, which corresponds to the Yes/No boolean data type in MS Access."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; number fields display numeric digits."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; OLE Object fields store binary attachments, bitmaps, or embedded documents."
+      }
+    ]
+  },
+  {
+    "number": "42",
+    "page": 11,
+    "stem": "Consider the given image representing cardinality and modality.\n\nThe CORRECT interpretation of cardinality and modality from the given image is that",
+    "choices": {
+      "A": "cardinality is one and modality is one.",
+      "B": "cardinality is zero and modality is zero.",
+      "C": "cardinality is zero and modality is many.",
+      "D": "cardinality is many and modality is many."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "7.4.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "diagramUrl": "/paper-crops/CS-XI-2022-P1/question-42.png",
+    "explanation": "In Information Engineering (Crow's Foot) ERD notation, two vertical parallel bars (`||`) crossing the relationship line denote mandatory one: the outer bar represents cardinality of one (maximum = 1) and the inner bar represents modality of one (minimum = 1).",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Two vertical bars indicate a minimum of one (modality = 1) and a maximum of one (cardinality = 1)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; a circle (0) is used to represent zero/optional modality."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; many is indicated by a crow's foot symbol."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; cardinality of many is represented by crow's feet."
+      }
+    ]
+  },
+  {
+    "number": "43",
+    "page": 11,
+    "stem": "In MS Access, a form allows the user all of the following EXCEPT to",
+    "choices": {
+      "A": "view records.",
+      "B": "update a field.",
+      "C": "delete records.",
+      "D": "set the primary key."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.3.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A form is a graphical user interface used for entering, navigating, viewing, editing, and deleting records. Setting or changing table schema constraints like a Primary Key can only be performed in Table Design View.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; viewing table records is a primary function of forms."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; users can edit and update field values directly through form textboxes."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; records can be deleted from a table using form delete controls."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Defining or modifying the primary key is a structural schema change that must be done in Table Design View, not in a form."
+      }
+    ]
+  },
+  {
+    "number": "44",
+    "page": 11,
+    "stem": "The types of layouts available to create forms in MS Access are",
+    "choices": {
+      "A": "two.",
+      "B": "three.",
+      "C": "four.",
+      "D": "five."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "8.3.1",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "The Microsoft Access Form Wizard provides four primary layout arrangements: Columnar, Tabular, Datasheet, and Justified.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; MS Access provides four standard form layouts."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; MS Access provides four standard form layouts."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. MS Access Form Wizard offers 4 layouts: Columnar, Tabular, Datasheet, and Justified."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; there are four standard form layouts."
+      }
+    ]
+  },
+  {
+    "number": "45",
+    "page": 12,
+    "stem": "Consider the given database table named as WTRData that shows the data of T20I women's cricket teams that are placed at 6th to 10th positions as on January 5, 2020.\n\n| Position | Country | WeightedMatches | Points |\n| :---: | :--- | :---: | :---: |\n| 6 | South Africa | 24 | 5776 |\n| 7 | Pakistan | 31 | 7080 |\n| 8 | Sri Lanka | 22 | 4420 |\n| 9 | Bangladesh | 29 | 5641 |\n| 10 | Ireland | 22 | 3622 |\n\nIf the descending sort is applied on the field Country of this table, then in which order will the values in WeightedMatches appear?",
+    "choices": {
+      "A": "22, 24, 31, 22, 29",
+      "B": "29, 22, 31, 24, 22",
+      "C": "22, 22, 24, 29, 31",
+      "D": "31, 29, 24, 22, 22"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.2.6",
+    "level": "A",
+    "slo": "11.11.2",
+    "grade": 12,
+    "explanation": "Sorting Country descending gives: Sri Lanka (WeightedMatches = 22), South Africa (24), Pakistan (31), Ireland (22), Bangladesh (29). Thus, WeightedMatches values appear in the order: 22, 24, 31, 22, 29.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Sorting Country Z-to-A yields Sri Lanka (22), South Africa (24), Pakistan (31), Ireland (22), Bangladesh (29)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; this reflects ascending order of Country (Bangladesh, Ireland, Pakistan, South Africa, Sri Lanka)."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; this sorts WeightedMatches directly in ascending numerical order."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; this sorts WeightedMatches directly in descending numerical order."
+      }
+    ]
+  },
+  {
+    "number": "46",
+    "page": 12,
+    "stem": "Which of the following tasks is done ONLY in design view of table?",
+    "choices": {
+      "A": "Spell check",
+      "B": "Sorting data",
+      "C": "Inserting data",
+      "D": "Changing Data Type"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Changing a field's underlying data type or field properties alters the structural schema definition of the table, which in MS Access is done in Table Design View. Spell check, sorting, and inserting records occur in Datasheet View.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; spell checking is performed while viewing or editing data in Datasheet View."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; sorting records is done in Datasheet View."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; record insertion occurs in Datasheet View."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Modifying field data types is a schema definition task exclusive to Table Design View."
+      }
+    ]
+  },
+  {
+    "number": "47",
+    "page": 12,
+    "stem": "Which of the following can be used as a field name in MS Access database table?",
+    "choices": {
+      "A": "LastName!",
+      "B": "Last.Name",
+      "C": "[LastName]",
+      "D": "L@$tName"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "MS Access field naming syntax forbids periods (`.`), exclamation marks (`!`), grave accents (``` ` ```), and square brackets (`[` `]`) because they are reserved delimiters in SQL expressions. Symbols like `@` and `$` are permitted.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; exclamation marks (`!`) are forbidden in MS Access field names."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; periods (`.`) are forbidden as they are used to delimit table and field names."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; square brackets (`[]`) are forbidden because Access uses them to enclose identifier names in queries."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. 'L@$tName' contains valid allowed characters in MS Access field names."
+      }
+    ]
+  },
+  {
+    "number": "48",
+    "page": 13,
+    "stem": "The SQL query to display the records from the table named as Invoice for first six months of 2019 is",
+    "choices": {
+      "A": "Select * From Invoice Where OrderDate >= #1/1/2019# AND OrderDate <= #6/30/2019#;",
+      "B": "Select * From Invoice Where OrderDate = #1/1/2019# AND OrderDate = #6/30/2019#;",
+      "C": "Select * From Invoice Where OrderDate >= '1/1/2019' AND OrderDate <= '6/30/2019';",
+      "D": "Select * From Invoice Where OrderDate = '1/1/2019' AND OrderDate = '6/30/2019';"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.5.1",
+    "level": "A",
+    "slo": "11.11.2",
+    "grade": 12,
+    "explanation": "In MS Access SQL, date literals must be enclosed with hash symbols (`#`). To retrieve records for the first six months (January 1 through June 30), the criteria is `OrderDate >= #1/1/2019# AND OrderDate <= #6/30/2019#`.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Date literals use `#` delimiters, and `>= #1/1/2019# AND <= #6/30/2019#` selects the first six months."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; a single OrderDate value cannot simultaneously equal both dates using `= ... AND = ...`."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; single quotes are used for string literals, whereas MS Access SQL requires `#` for date literals."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; single quotes are incorrect for dates in Access SQL, and equality to two distinct dates returns zero records."
+      }
+    ]
+  },
+  {
+    "number": "49",
+    "page": 13,
+    "stem": "In MS Access database, a table field with text data type can store up to",
+    "choices": {
+      "A": "127 characters.",
+      "B": "255 characters.",
+      "C": "512 characters.",
+      "D": "1024 characters."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "8.2.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "In MS Access, the standard Short Text data type has a maximum field size of 255 characters. Larger text requires the Long Text (Memo) data type.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; the maximum text limit is 255 characters."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. A standard text field in MS Access stores up to 255 characters."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the limit is 255 characters."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; storing beyond 255 characters requires the Memo/Long Text type."
+      }
+    ]
+  },
+  {
+    "number": "50",
+    "page": 13,
+    "stem": "Shakir wants to apply the following restriction on a field of MS Access database table having numeric data type.\n\n*Data entry must be blank or greater than 500*\n\nTo apply the given restriction, the CORRECT data validation rule will be",
+    "choices": {
+      "A": "< 500 Or 0?",
+      "B": "> 500 Or Is 0",
+      "C": "> 500 Or Is Null",
+      "D": "< 500 Or Is \"Null\""
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "8.2.12",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "In MS Access field validation rules, a blank entry is evaluated using `Is Null`. Requiring the value to be greater than 500 or blank translates directly to `> 500 Or Is Null`.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; '< 500' checks for less than 500, and '0?' is invalid syntax."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; 'Is 0' requires the number zero rather than accepting blank/null fields."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. '> 500 Or Is Null' enforces that the numeric value must either exceed 500 or be left unassigned/blank."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; 'Is \"Null\"' treats 'Null' as a literal text string rather than a SQL null state, and '< 500' tests the wrong inequality."
+      }
+    ]
+  },
+  {
+    "number": "51",
+    "page": 14,
+    "stem": "Use the given database table named as Employee_Info to answer Q.51, Q.52, Q.53, Q.54 and Q.55.\n\n| Employee_ID | Employee_Name | Country | Salary | Joining_Date |\n| :---: | :--- | :--- | :---: | :---: |\n| 1 | Ali | Pakistan | $15,000.00 | 1/4/2021 |\n| 2 | John | USA | $20,000.00 | 9/1/2019 |\n| 3 | Ali | Bangladesh | $15,000.00 | 9/1/2019 |\n| 4 | Rahul | India | $18,000.00 | 1/10/2022 |\n| 5 | Adnan | Pakistan | $22,000.00 | 4/8/2019 |\n| 6 | Kinza | Pakistan | $15,000.00 | 4/8/2019 |\n\nIn the given table, the field that will be set as a primary key is",
+    "choices": {
+      "A": "Salary",
+      "B": "joining_Date",
+      "C": "Employee_ID",
+      "D": "Employee_Name"
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "8.2.3",
+    "level": "U",
+    "slo": "11.9.5",
+    "grade": 12,
+    "explanation": "A primary key must contain unique, non-null values for each record. Employee_ID uniquely identifies each employee tuple, whereas names, countries, salaries, and dates contain duplicates.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; Salary contains duplicate values ($15,000.00 appears multiple times)."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; Joining_Date contains duplicates (e.g. 4/8/2019)."
+      },
+      {
+        "key": "C",
+        "reason": "Correct. Employee_ID has unique values (1 through 6) for every employee, making it the primary key."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; Employee_Name contains duplicate values (Ali appears twice)."
+      }
+    ]
+  },
+  {
+    "number": "52",
+    "page": 14,
+    "stem": "The data type used for the field Salary is",
+    "choices": {
+      "A": "Text.",
+      "B": "Memo.",
+      "C": "Lookup.",
+      "D": "Currency."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "In MS Access, numeric monetary amounts formatted with currency symbols and two decimal places (e.g. `$15,000.00`) are stored under the Currency data type.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; text is for general alphanumeric strings without numerical monetary calculation support."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; memo (long text) is for descriptive text paragraphs."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; lookup fields pull selections from another table or value list."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Values like '$15,000.00' represent monetary values stored using the Currency data type."
+      }
+    ]
+  },
+  {
+    "number": "53",
+    "page": 14,
+    "stem": "If the given condition is entered, then the employees' names fetched will be\n\n`(Country=\"Pakistan\") AND (Salary=15000)`",
+    "choices": {
+      "A": "Ali, Adnan, Kinza",
+      "B": "Adnan, Kinza",
+      "C": "Ali, Ali, Kinza",
+      "D": "Ali, Kinza"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.4.2",
+    "level": "A",
+    "slo": "11.11.2",
+    "grade": 12,
+    "explanation": "Checking each record for both Country = 'Pakistan' AND Salary = 15000: Record 1 (Ali, Pakistan, 15000) matches; Record 5 (Adnan) has Salary 22000 (no); Record 6 (Kinza, Pakistan, 15000) matches. Thus, Ali and Kinza are returned.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; Adnan has a salary of $22,000, failing the Salary=15000 condition."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; Adnan does not match Salary=15000, and Ali is omitted."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; the second Ali is from Bangladesh, not Pakistan."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Only Employee 1 (Ali) and Employee 6 (Kinza) are from Pakistan with a salary of 15000."
+      }
+    ]
+  },
+  {
+    "number": "54",
+    "page": 15,
+    "stem": "Which condition will be used to find the data of employees whose Salary is greater than $20,000?",
+    "choices": {
+      "A": "Salary>20,000",
+      "B": "Salary>20000",
+      "C": "Salary>\"20000\"",
+      "D": "Salary IS GREATER THAN 20000"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "8.4.2",
+    "level": "U",
+    "slo": "11.11.2",
+    "grade": 12,
+    "explanation": "In SQL and query criteria, numeric and currency comparisons use plain integer/decimal constants without commas or quotation marks (`Salary > 20000`).",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; commas are not allowed in numeric query literals."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Numerical criteria must be entered as unquoted numbers without comma separators: `Salary > 20000`."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; quotation marks treat the value as a text string instead of a number."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; 'IS GREATER THAN' is not valid SQL syntax; the relational operator `>` must be used."
+      }
+    ]
+  },
+  {
+    "number": "55",
+    "page": 15,
+    "stem": "If a condition is given to fetch the employee's/ employees' name(s) from Pakistan or India and their date of joining is 4/8/2019, then the number of records displayed will be",
+    "choices": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "8.4.2",
+    "level": "A",
+    "slo": "11.11.2",
+    "grade": 12,
+    "explanation": "Checking the records: Employee 5 (Adnan: Pakistan, 4/8/2019) matches; Employee 6 (Kinza: Pakistan, 4/8/2019) matches. Rahul is from India but joined on 1/10/2022. Exactly 2 records match.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; both Adnan and Kinza joined on 4/8/2019 from Pakistan."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. Exactly 2 records (Adnan and Kinza) satisfy the criteria."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; only 2 employees joined on 4/8/2019 from the specified countries."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; only 2 records match both criteria."
+      }
+    ]
+  },
+  {
+    "number": "56",
+    "page": 15,
+    "stem": "Consider the given form named as Vehicle_Info.\n\nThe layout of the form is",
+    "choices": {
+      "A": "tabular.",
+      "B": "justified.",
+      "C": "datasheet.",
+      "D": "columnar."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.3.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "diagramUrl": "/paper-crops/CS-XI-2022-P1/question-56.png",
+    "explanation": "In an MS Access Columnar form layout, each field appears on a separate line with its label to the left and field value stacked vertically, displaying one record at a time.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; tabular layout displays field labels across the top with multiple records below in horizontal rows."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; justified layout spreads fields across lines so they align evenly on both left and right margins."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; datasheet layout displays rows and columns like an Excel spreadsheet or Access table datasheet."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. The fields are stacked vertically one above the other, which defines the columnar layout."
+      }
+    ]
+  },
+  {
+    "number": "57",
+    "page": 16,
+    "stem": "Use the given database table named as Vehicle_Info to answer Q.57, Q.58 and Q.59.\n\n| Reg_No | Company | Model | Color | Year |\n| :--- | :--- | :--- | :--- | :---: |\n| V121 | Fonda | Rezel | White | 2019 |\n| V122 | Photon | Gaga | Black | 2022 |\n| V123 | Buzuki | Gultus | Silver | 2021 |\n| V124 | Toyoto | Norolla | Black | 2020 |\n| V125 | Buzuki | Diaz | Grey | 2019 |\n\nThe query created in design view to display complete record(s) of vehicles with black color is",
+    "choices": {
+      "A": "![Query Design A](/paper-crops/CS-XI-2022-P1/question-57-a.png)",
+      "B": "![Query Design B](/paper-crops/CS-XI-2022-P1/question-57-b.png)",
+      "C": "![Query Design C](/paper-crops/CS-XI-2022-P1/question-57-c.png)",
+      "D": "![Query Design D](/paper-crops/CS-XI-2022-P1/question-57-d.png)"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.4.2",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "To display complete records, the Show checkbox must be checked for all fields (Reg_No, Company, Model, Color, Year), and the filter criterion under the Color column must specify `='Black'`. Grid D satisfies both conditions.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; Grid A leaves the Criteria row blank, returning all vehicles regardless of color."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; Grid B leaves the Year field unchecked, so it does not display complete records."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; Grid C unchecks Reg_No, Model, Color, and Year, showing only the Company name."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Grid D checks Show for all 5 fields and places `='Black'` in the Criteria row for Color."
+      }
+    ]
+  },
+  {
+    "number": "58",
+    "page": 17,
+    "stem": "The query created in design view to change the color of Buzuki Gultus to Black from Silver is",
+    "choices": {
+      "A": "![Update Query Design A](/paper-crops/CS-XI-2022-P1/question-58-a.png)",
+      "B": "![Update Query Design B](/paper-crops/CS-XI-2022-P1/question-58-b.png)",
+      "C": "![Update Query Design C](/paper-crops/CS-XI-2022-P1/question-58-c.png)",
+      "D": "![Update Query Design D](/paper-crops/CS-XI-2022-P1/question-58-d.png)"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.4.3",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "In an MS Access Update Query design grid, 'Update To:' specifies the new value ('Black' in the Color field), while 'Criteria:' identifies which record to modify. Since Buzuki Gultus has Reg_No 'V123', criteria `='V123'` under Reg_No uniquely identifies the target vehicle to update.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Grid A updates Color to 'Black' for the vehicle matching primary key criteria `='V123'`."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; Grid B uses criteria `='Buzuki'` under Company without filtering on Model or Reg_No, which would incorrectly update all Buzuki vehicles."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; Grid C updates Color to 'Silver' instead of changing it to 'Black'."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; Grid D sets Update To 'Silver' and has criteria on both Reg_No and Company."
+      }
+    ]
+  },
+  {
+    "number": "59",
+    "page": 18,
+    "stem": "The query created in design view to delete an existing record of Buzuki Diaz is",
+    "choices": {
+      "A": "![Delete Query Design A](/paper-crops/CS-XI-2022-P1/question-59-a.png)",
+      "B": "![Delete Query Design B](/paper-crops/CS-XI-2022-P1/question-59-b.png)",
+      "C": "![Delete Query Design C](/paper-crops/CS-XI-2022-P1/question-59-c.png)",
+      "D": "![Delete Query Design D](/paper-crops/CS-XI-2022-P1/question-59-d.png)"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.4.4",
+    "level": "A",
+    "slo": null,
+    "grade": null,
+    "explanation": "To delete the record of 'Buzuki Diaz', the Delete row specifies 'Where', and criteria must match both Company = 'Buzuki' AND Model = 'Diaz'. Grid D places 'Where' under all fields and specifies `='Buzuki'` under Company and `='Diaz'` under Model on the same Criteria row.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; Grid A puts criteria `='Diaz'` under Company instead of Model."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; Grid B omits 'Where' under the Reg_No column and puts criteria across columns without primary key targeting."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; Grid C filters on Year = 2019, which would delete all 2019 vehicles."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. Grid D correctly targets Company `='Buzuki'` and Model `='Diaz'` with Delete: Where."
+      }
+    ]
+  },
+  {
+    "number": "60",
+    "page": 18,
+    "stem": "If a student wants to add a new record to an existing table by using data from other sources, then the type of query used will be",
+    "choices": {
+      "A": "alter.",
+      "B": "insert.",
+      "C": "update.",
+      "D": "append."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.4.5",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "In Microsoft Access, an Append Query is an action query that retrieves a set of records from one or more tables/data sources and adds them to an existing destination table.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; an ALTER query modifies table structural schema, not record data."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; in SQL syntax, `INSERT INTO ... SELECT` is used, but in MS Access query type classifications, this action query is specifically called an Append query."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; an UPDATE query modifies existing records in place rather than appending new rows."
+      },
+      {
+        "key": "D",
+        "reason": "Correct. In MS Access, an Append Query adds records from external or source tables into an existing table."
+      }
+    ]
+  },
+  {
+    "number": "61",
+    "page": 19,
+    "stem": "The layout of the given report is",
+    "choices": {
+      "A": "Block.",
+      "B": "Outline.",
+      "C": "Stepped.",
+      "D": "Datasheet."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.6.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "diagramUrl": "/paper-crops/CS-XI-2022-P1/question-61.png",
+    "explanation": "In Microsoft Access Report Wizard layouts, the Block layout places column headings across the top of the detail block and aligns field values directly in rectangular blocks beneath them with page framing.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. The report illustrates the Block layout where column headers and data align in rectangular blocks."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; Outline layout groups fields with stepped indentations on separate lines."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; Stepped layout places grouped header fields on separate upper lines with child records stepped below."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; Datasheet layout displays plain grid lines like a spreadsheet."
+      }
+    ]
+  },
+  {
+    "number": "62",
+    "page": 20,
+    "stem": "Use the given database table named as Student and its specifications to answer Q.62, Q.63 and Q.64.\n\n| Std_ID | Std_Name | Total_CreditHours | DateofAdmission | Email_Address |\n| :---: | :--- | :---: | :---: | :--- |\n| 1 | Abida | 20 | 4/5/2020 | abida@xyz.com |\n| 2 | Kashifa | 20 | 3/7/2021 | kashifa@xyz.com |\n| 3 | Mahad | 14 | 13/9/2020 | mahad@xyz.com |\n\n**Specifications:**\n- The `Std_ID` field is a primary key.\n- The `DateofAdmission` field should have Date as data type.\n- The `Total_CreditHours` field should have numeric data type.\n- The name field should store up to 50 text characters and cannot be left empty.\n- The email column can only store unique values.\n\nThe SQL query to create the table with the given specification is",
+    "choices": {
+      "A": "```sql\nCREATE TABLE Student\n(Std_ID int PRIMARY KEY,\nStd_Name text(50) NOT NULL,\nTotal_CreditHours numeric,\nDateofAdmission date,\nEmail_Address text(50) NOT NULL);\n```",
+      "B": "```sql\nCREATE TABLE Student\n(Std_ID int PRIMARY KEY,\nStd_Name text(50),\nTotal_CreditHours int,\nDateofAdmission date,\nEmail_Address text(50) unique);\n```",
+      "C": "```sql\nCREATE TABLE Student\n(Std_ID int PRIMARY KEY,\nStd_Name text(50) NOT NULL,\nTotal_CreditHours int,\nDateofAdmission date,\nEmail_Address text(50) unique);\n```",
+      "D": "```sql\nCREATE TABLE Student\n(Std_ID int,\nStd_Name text(50) NOT NULL,\nTotal_CreditHours int,\nDateofAdmission date,\nEmail_Address text(50),\nPrimary key (Std_ID));\n```"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.5.2",
+    "level": "A",
+    "slo": "11.11.3",
+    "grade": 12,
+    "explanation": "Option A defines `Std_ID int PRIMARY KEY`, `Std_Name text(50) NOT NULL`, `Total_CreditHours numeric` (matching numeric specification), `DateofAdmission date`, and `Email_Address text(50) NOT NULL` as published in the official key.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. Option A implements the table schema with `Std_ID PRIMARY KEY`, `Std_Name NOT NULL`, and `Total_CreditHours numeric`."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; Option B omits `NOT NULL` on `Std_Name`, violating the specification that name cannot be left empty."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; while Option C defines unique email, official board key A specifies numeric credit hours and primary key constraints."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; Option D omits uniqueness on email."
+      }
+    ]
+  },
+  {
+    "number": "63",
+    "page": 21,
+    "stem": "In this table a new column named CourseDescription is needed which can store alphanumeric values up to 50 characters. The CORRECT query for this purpose is",
+    "choices": {
+      "A": "UPDATE TABLE Student\nADD COLUMN Course-Description varchar(50);",
+      "B": "ALTER TABLE Student\nADD COLUMN CourseDescription varchar(50);",
+      "C": "UPDATE TABLE Student\nADD CourseDescription varchar(50);",
+      "D": "ALTER TABLE Student\nADD Course-Description varchar(50);"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "8.5.2",
+    "level": "A",
+    "slo": "11.9.5",
+    "grade": 12,
+    "explanation": "Adding a new attribute to an existing table alters the table schema, requiring the `ALTER TABLE` DDL command: `ALTER TABLE Student ADD COLUMN CourseDescription varchar(50);`.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Incorrect; UPDATE is a DML command used to modify record values, not alter table schema; also hyphenated 'Course-Description' is incorrect."
+      },
+      {
+        "key": "B",
+        "reason": "Correct. `ALTER TABLE Student ADD COLUMN CourseDescription varchar(50);` adds the new column with correct syntax."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; UPDATE cannot add columns to a table."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; the column name requested is `CourseDescription` without a hyphen."
+      }
+    ]
+  },
+  {
+    "number": "64",
+    "page": 21,
+    "stem": "The record with Std_ID 3 needs to be edited according to the given criteria.\n\n- Change Std_Name to Umar\n- Change Email_Address to umar@xyz.com\n\nThe SQL query for the given criteria is",
+    "choices": {
+      "A": "```sql\nUPDATE Student\nSET \nStd_Name=\"Umar\",Email_Address=\"umar@xyz.com\"\nWHERE Std_ID=3;\n```",
+      "B": "```sql\nUPDATE Student\nSET (Std_Name=\"Umar\" AND \nEmail_Address=\"umar@xyz.com\")\nWHERE Std_ID=3;\n```",
+      "C": "```sql\nUPDATE TABLE Student\nSET Std_Name='Umar' && \nEmail_Address='umar@xyz.com'\nWHERE Std_ID=3;\n```",
+      "D": "```sql\nUPDATE TABLE Student\nSET Std_Name='Umar' AND \nEmail_Address='umar@xyz.com'\nWHERE Std_ID='3';\n```"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.5.1",
+    "level": "A",
+    "slo": "11.11.4",
+    "grade": 12,
+    "explanation": "SQL UPDATE syntax is `UPDATE table_name SET col1 = val1, col2 = val2 WHERE condition;`. Multiple assignment clauses are separated by commas, not `AND` or `&&`, and the keyword `TABLE` is not used after `UPDATE`.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. `UPDATE Student SET Std_Name=\"Umar\", Email_Address=\"umar@xyz.com\" WHERE Std_ID=3;` follows proper SQL syntax."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; the SET clause does not use parentheses or AND between column assignments."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; `UPDATE TABLE` is invalid SQL, and `&&` cannot be used in a SET clause."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; `UPDATE TABLE` is invalid syntax and `AND` cannot separate assignments in a SET clause."
+      }
+    ]
+  },
+  {
+    "number": "65",
+    "page": 21,
+    "stem": "Consider a database table named Employee with the fields ID, Name, Address, City and Country.\n\nThe SQL query that will delete all the records of employees whose ID is 1 will be",
+    "choices": {
+      "A": "DELETE FROM Employee WHERE ID=1;",
+      "B": "DELETE FROM Employee WHERE ID='1';",
+      "C": "DELETE FROM Employee WHERE ID= =1;",
+      "D": "DELETE FROM Employee WHERE ID EQUALS 1;"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.5.1",
+    "level": "A",
+    "slo": "11.11.4",
+    "grade": 12,
+    "explanation": "The standard SQL syntax to remove records matching a predicate is `DELETE FROM table_name WHERE condition;`. For a numeric primary key ID, `WHERE ID=1;` is the correct condition.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Correct. `DELETE FROM Employee WHERE ID=1;` deletes records where ID equals 1."
+      },
+      {
+        "key": "B",
+        "reason": "Incorrect; quotes are used for string data types, whereas ID is numeric."
+      },
+      {
+        "key": "C",
+        "reason": "Incorrect; `= =` is invalid SQL syntax."
+      },
+      {
+        "key": "D",
+        "reason": "Incorrect; 'EQUALS' is not a valid SQL comparison keyword; `=` must be used."
+      }
+    ]
+  }
+]

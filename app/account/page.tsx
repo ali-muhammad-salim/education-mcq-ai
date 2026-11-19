@@ -355,7 +355,9 @@ export default function AccountPage() {
               <section className={styles.panel} aria-labelledby="sessions-title">
                 <div className={styles.panelHead}>
                   <h2 id="sessions-title" className={styles.panelTitle}>Where you’re signed in</h2>
-                  <p className={styles.panelNote}>Active devices with a valid session. Sign out anything you don’t recognise.</p>
+                  <p className={styles.panelNote}>Active devices with a valid session. Sign out anything you don’t recognise.
+                    {data.activeSessions > data.sessions.length && ` Showing the ${data.sessions.length} most recent of ${data.activeSessions} active sessions. Use “Sign out all devices” to revoke every session, including older ones.`}
+                  </p>
                 </div>
                 {data.sessions.length ? (
                   <ul className={styles.sessions}>

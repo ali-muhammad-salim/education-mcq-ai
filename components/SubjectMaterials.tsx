@@ -11,9 +11,12 @@ import {
 import Trail from "./rise/Trail";
 import styles from "./rise/discovery.module.css";
 import { studyScope, studyChapters } from "@/services/study/navigation";
+import { physicsUnit16Resource } from "@/lib/physicsUnit16Resource";
 import { subjectMaterialTypes } from "@/services/materials/catalog";
 import { supportingMaterialLabels } from '@/lib/materialTypes';
 import { mappedChapterGroups, mappedTheoryUnits } from '@/services/materials/practice';
+import { hsscComputerScienceResources } from "@/lib/hsscComputerScienceResources";
+import { hsscComputerScienceSyllabus } from "@/lib/hsscComputerScienceSyllabus";
 import { hsscPhysicsSyllabus } from '@/lib/hsscPhysicsSyllabus';
 import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 import { sscBiologySyllabus } from '@/lib/sscBiologySyllabus';
@@ -36,7 +39,9 @@ export default async function SubjectMaterials({
 }) {
   const scope = studyScope(params.board, params.class, params.subject);
   if (!scope) notFound();
-  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug)
+    ?? hsscComputerScienceSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const computerScience = hsscComputerScienceResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const senior = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const biology = sscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const [documents, chapters, biologyPapers] = await Promise.all([
@@ -69,8 +74,8 @@ export default async function SubjectMaterials({
     scope.meta.slug === "mathematics" &&
     [9, 10].includes(scope.classDef.level);
   const [mathMcqs, mappedTheory] = await Promise.all([
-    mathematics ? mappedChapterGroups(scope.board.shortCode, scope.classDef.level, scope.meta.title) : [],
-    mathematics || biologyPapers.length ? mappedTheoryUnits(scope.board.shortCode, scope.classDef.level, scope.meta.title) : [],
+    mathematics || computerScience ? mappedChapterGroups(scope.board.shortCode, scope.classDef.level, scope.meta.title) : [],
+    mathematics || computerScience || biologyPapers.length ? mappedTheoryUnits(scope.board.shortCode, scope.classDef.level, scope.meta.title) : [],
   ]);
   const available = (kind: string) => documents.has(kind);
   const items: {
@@ -88,14 +93,14 @@ export default async function SubjectMaterials({
     {
       label: "Model papers",
       href: scope.baseUrl + "/model-papers",
-      pending: !biologyModel && !senior && !legacy && !isCsIX && !chemistry && !available("model_paper"),
+      pending: !computerScience && !biologyModel && !senior && !legacy && !isCsIX && !chemistry && !available("model_paper"),
       group: "papers",
     },
     {
       label: "Past papers",
       href: scope.baseUrl + "/pastpapers",
       pending:
-        !biologyAnnual && !(senior?.grade === 11) && !legacy && !isCsIX && !chemistry && !available("past_paper"),
+        !biologyAnnual && !(computerScience?.grade === 11) && !(senior?.grade === 11) && !legacy && !isCsIX && !chemistry && !available("past_paper"),
       group: "papers",
     },
     {
@@ -159,7 +164,7 @@ export default async function SubjectMaterials({
     {
       label: "MCQs (Chapter-wise, Past Papers & Full Book)",
       href: scope.baseUrl + "/mcqs",
-      pending: !biologyPapers.length && !senior && !legacy && !isCsIX && !chemistry && !mathMcqs.length && !available("mcq"),
+      pending: !computerScience && !biologyPapers.length && !senior && !legacy && !isCsIX && !chemistry && !mathMcqs.length && !available("mcq"),
       group: "practice",
     },
     ...(['crqs', 'erqs', 'numericals'] as const).filter(mode => mappedTheory.some(unit => unit[mode].length > 0)).map(mode => ({
@@ -219,6 +224,12 @@ export default async function SubjectMaterials({
       pending: !biology && !hssc && !(legacy && scope.classDef.level === 9) && !chemistry && !available('practical_paper'),
       group: "lab",
     },
+    ...(scope.board.id === 'akueb' && scope.classDef.level === 10 && scope.meta.slug === 'physics'
+      ? [
+          { label: 'Formula sheets', href: scope.baseUrl + '/study?kind=FORMULA_SHEET', group: 'study' as Group },
+          { label: 'Extra resources · D.C. Circuits notes and quiz', href: physicsUnit16Resource.href, group: 'support' as Group },
+        ]
+      : []),
     ...Object.entries(supportingMaterialLabels)
       .filter(([kind]) => kind !== 'practical_paper' && available(kind))
       .map(([kind, label]) => ({

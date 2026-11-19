@@ -163,13 +163,13 @@ export default function HsscMcqsClient({
 
   const masthead = (() => {
     if (category === 'past_papers') {
-      const years = data.papers.filter(paper => paper.year !== null && paper.paper === 'I');
+      const years = data.papers.filter(paper => !paper.chapterOnly && paper.year !== null && paper.paper === 'I');
       const mcqs = years.reduce((total, paper) => total + paper.questions.length, 0);
       return {
         stamp: `${boardName} · ${classLabel} · ${subjectTitle}`,
         title: 'Past-paper MCQs',
         lede:
-          'Annual Paper I MCQ sections, year by year, with the board key resolved and option feedback for every distractor. Sit a year as a quiz or open the original paper beside it.',
+          'Annual Paper I MCQ sections, year by year, with reviewed answers and option feedback for every distractor. Sit a year as a quiz or open the original paper beside it.',
         meta: [
           { key: 'Years', value: String(years.length) },
           { key: 'MCQs', value: String(mcqs) },
@@ -186,7 +186,7 @@ export default function HsscMcqsClient({
         lede:
           'Sit a complete model or annual paper. Paper I is multiple choice; Paper II is the written script and opens in the paper reader.',
         meta: [
-          { key: 'Papers', value: String(data.papers.length) },
+          { key: 'Papers', value: String(data.papers.filter(paper => !paper.chapterOnly).length) },
           { key: 'MCQs', value: String(paperQuestions.reduce((total, paper) => total + paper.questions.length, 0)) },
         ]
       };
@@ -218,12 +218,13 @@ export default function HsscMcqsClient({
 
   const directoryNotes: Partial<Record<McqCategory, string>> = {
     chapter_wise: `${unitCount} units · ${data.totalQuestions} MCQs`,
-    past_papers: `${data.papers.filter(paper => paper.year !== null && paper.paper === 'I').length} annual Paper I sets`,
-    full_book: `${data.papers.length} model and annual papers`,
+    past_papers: `${data.papers.filter(paper => !paper.chapterOnly && paper.year !== null && paper.paper === 'I').length} annual Paper I sets`,
+    full_book: `${data.papers.filter(paper => !paper.chapterOnly).length} model and annual papers`,
     cognitive: 'Recall · Understanding · Application · Evaluation',
   };
 
-  const cognitiveQuestions = data.papers.flatMap(paper => paper.questions);
+  const syllabusQuestionIds = new Set(data.units.flatMap(unit => unit.groups.flatMap(group => group.questionIds)));
+  const cognitiveQuestions = data.papers.flatMap(paper => paper.questions).filter(question => syllabusQuestionIds.has(question.id));
   const cognitiveCounts = COGNITIVE_TIERS.map(tier => ({
     ...tier,
     count: cognitiveQuestions.filter(question => tierOf(question.difficulty) === tier.key).length,
@@ -261,7 +262,7 @@ export default function HsscMcqsClient({
     meta: paper.questions.length ? `${paper.questions.length} MCQs` : 'Written',
     title: paper.title,
     description: paper.questions.length
-      ? 'Multiple-choice section with the board key and option-by-option feedback.'
+      ? 'Multiple-choice section with reviewed answers and option-by-option feedback.'
       : 'Written script. Opens in the paper reader.',
     tone: paper.year === null ? 'model' : 'past',
     actions: [

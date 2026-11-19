@@ -3,6 +3,7 @@ import { Prisma } from "@prisma/client";
 import { publishedStudyWhere } from "@/services/study/visibility";
 import { publicMaterialWhere } from "@/lib/materialVisibility";
 import { getSubjectMeta } from "@/lib/subjectMetadata";
+import { hsscComputerScienceSyllabus } from "@/lib/hsscComputerScienceSyllabus";
 import { hsscPhysicsSyllabus } from "@/lib/hsscPhysicsSyllabus";
 import { sscBiologySyllabus } from "@/lib/sscBiologySyllabus";
 
@@ -62,6 +63,7 @@ export async function getClassSubjects(
   if (!boardInfo) return null;
   const classDef = CLASS_DEFINITIONS[classRoman];
   const hssc = hsscPhysicsSyllabus(boardInfo.id, classDef.level, "physics");
+  const computerScience = hsscComputerScienceSyllabus(boardInfo.id, classDef.level, "computer-science");
   const biology = sscBiologySyllabus(boardInfo.id, classDef.level, "biology");
 
   let subjects: any[] = [];
@@ -163,6 +165,10 @@ export async function getClassSubjects(
     const meta = getSubjectMeta("Physics");
     subjects.push({ ...meta, id: meta.slug, name: meta.title, code: null, papersCount: 0 });
   }
+  if (computerScience && !bySlug.has("computer-science")) {
+    const meta = getSubjectMeta("Computer Science");
+    subjects.push({ ...meta, id: meta.slug, name: meta.title, code: null, papersCount: 0 });
+  }
   if (biology && !bySlug.has("biology")) {
     const meta = getSubjectMeta("Biology");
     subjects.push({ ...meta, id: meta.slug, name: meta.title, code: null, papersCount: 0 });
@@ -206,7 +212,7 @@ export async function getClassSubjects(
     : [];
   for (const row of noteSubjects) publishedSubjects.add(row.subjectId);
   subjects = subjects.map((sub) => {
-    const syllabus = sub.slug === "biology" ? biology : sub.slug === "physics" ? hssc : null;
+    const syllabus = sub.slug === "biology" ? biology : sub.slug === "physics" ? hssc : sub.slug === "computer-science" ? computerScience : null;
     return {
       ...sub,
       ...(syllabus ? {

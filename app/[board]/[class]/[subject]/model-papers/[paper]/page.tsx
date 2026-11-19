@@ -1,126 +1,38 @@
+import Link from "next/link";
+import { redirect } from "next/navigation";
 import { notFound } from "next/navigation";
-import { studyScope } from "@/services/study/navigation";
-import { getFallbackPaper } from "@/lib/paperDataService";
-import prisma from "@/lib/prisma";
-import { presentPaperQuestion } from "@/lib/paperPresentation";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import DocumentViews from "@/components/DocumentViews";
-import PaperViewerClient from "@/components/PaperViewerClient";
+import StructuredContent from "@/components/StructuredContent";
+import { studyScope } from "@/services/study/navigation";
+import { hsscComputerScienceResources } from "@/lib/hsscComputerScienceResources";
+import { computerSciencePractical } from "@/lib/hsscComputerSciencePractical";
 import styles from "@/components/MaterialLayout.module.css";
-import { hsscPhysicsResources } from "@/lib/hsscPhysicsResources";
-export const dynamic = "force-dynamic";
-export default async function Page({
-  params,
-}: {
-  params: Promise<{
-    board: string;
-    class: string;
-    subject: string;
-    paper: string;
-  }>;
+
+export default async function Page({ params }: {
+  params: Promise<{ board: string; class: string; subject: string; paper: string }>;
 }) {
-  const raw = await params,
-    scope = studyScope(raw.board, raw.class, raw.subject);
+  const raw = await params;
+  const scope = studyScope(raw.board, raw.class, raw.subject);
   if (!scope) notFound();
-  const part = raw.paper
-    .toUpperCase()
-    .replace(/^PAPER-?/, "P")
-    .replace(/^([123])$/, "P$1");
-  if (!["P1", "P2", "P3"].includes(part)) notFound();
-  const legacy =
-    scope.board.id === "akueb" &&
-    scope.meta.slug === "physics" &&
-    [9, 10].includes(scope.classDef.level);
-  const isChemistry =
-    scope.board.id === "akueb" &&
-    scope.meta.slug === "chemistry" &&
-    [9, 10].includes(scope.classDef.level);
-  const hssc = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
-  const supported = legacy || isChemistry || Boolean(hssc);
-  const code = (isChemistry ? "CHM-" : "PHY-") + scope.classDef.roman + "-" + part;
-  const fallback = supported ? getFallbackPaper(code) : null;
-  const stored = supported
-    ? await prisma.pastPaper.findFirst({
-        where: {
-          paperCode: code,
-          academicClass: {
-            level: scope.classDef.level,
-            programme: {
-              board: {
-                shortCode: {
-                  equals: scope.board.shortCode,
-                  mode: "insensitive",
-                },
-              },
-            },
-          },
-          subject: { name: { equals: scope.meta.title, mode: "insensitive" } },
-        },
-        include: {
-          academicClass: true,
-          subject: true,
-          questions: {
-            include: {
-              topics: { include: { topic: true } },
-              slos: { include: { slo: true } },
-            },
-          },
-        },
-      }).catch(error => {
-        if (hssc && error.name === "PrismaClientInitializationError") return null;
-        throw error;
-      })
-    : null;
-  const paper = stored?.questions.length
-    ? {
-        ...stored,
-        paperCode: stored.paperCode || code,
-        fileUrl: stored.fileUrl || fallback?.fileUrl || undefined,
-        boardCode: scope.board.shortCode,
-      }
-    : fallback;
-  const questions = paper
-    ? [...paper.questions]
-        .sort((a, b) =>
-          String(a.questionNumber).localeCompare(
-            String(b.questionNumber),
-            undefined,
-            { numeric: true },
-          ),
-        )
-        .map(presentPaperQuestion)
-    : [];
-  const practical =
-    hssc && part === "P3" ? hssc.practical :
-    legacy && scope.classDef.level === 9 && part === "P3"
-      ? "/materials/ssc/physics/ssc-1/ssc-i-physics-sample-practical.pdf"
-      : isChemistry && part === "P3"
-        ? `/materials/ssc/chemistry/ssc-${scope.classDef.level === 9 ? "1" : "2"}/chemistry-practical-model-paper-${scope.classDef.level === 9 ? "ix" : "x"}.pdf`
-        : undefined;
-  return (
-    <section className={styles.page}>
-      <Breadcrumbs
-        items={[
-          { label: scope.board.name, href: "/" + scope.board.id },
-          {
-            label: scope.classDef.name,
-            href: "/" + scope.board.id + "/" + scope.classDef.roman,
-          },
-          { label: scope.meta.title, href: scope.baseUrl },
-          { label: "Model papers", href: scope.baseUrl + "/model-papers" },
-          { label: part, active: true },
-        ]}
-      />
-      <h1>
-        {part === "P3" ? "Practical paper" : "Model paper " + part.slice(1)}
-      </h1>
-      {paper ? (
-        <PaperViewerClient paper={paper} questions={questions} hideHeader />
-      ) : practical ? (
-        <DocumentViews original={practical} title="Practical paper" />
-      ) : (
-        <p className={styles.muted}>Coming soon</p>
-      )}
-    </section>
-  );
+  const resources = hsscComputerScienceResources(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const paper = resources?.papers.find(item => item.slug === raw.paper);
+  if (!resources || !paper) notFound();
+  if (raw.paper !== "practical") redirect(`/past-papers/CS-${resources.roman}-P${raw.paper === "paper-i" ? 1 : 2}`);
+  const practical = raw.paper === "practical" ? computerSciencePractical(resources.grade) : null;
+  return <section className={styles.page}>
+    <p><Link href={scope.baseUrl + "/model-papers"}>Model papers</Link></p>
+    <h1>Computer Science Class {resources.roman} · {paper.label}</h1>
+    <p>{resources.year} and onwards · {paper.minutes} minutes · {paper.marks} marks</p>
+    <nav className={styles.actions} aria-label="Model paper resources">
+      {resources.papers.map(item => <Link key={item.slug} href={item.href} aria-current={item.slug === raw.paper ? "page" : undefined}>{item.label}</Link>)}
+      <a href={paper.file} target="_blank" rel="noopener noreferrer">Original PDF</a>
+    </nav>
+    {practical ? <DocumentViews title={paper.label} original={paper.file} continuousPdf>
+      <div className={styles.digital}>
+        <StructuredContent text={practical.tasks} />
+        <p><Link href={scope.baseUrl + "/syllabus#unit-" + (resources.grade === 11 ? 3 : 11)}>Related syllabus chapter</Link></p>
+        <details><summary>Worked solution</summary><StructuredContent text={practical.solution} /></details>
+      </div>
+    </DocumentViews> : <DocumentViews title={paper.label} original={paper.file} continuousPdf />}
+  </section>;
 }

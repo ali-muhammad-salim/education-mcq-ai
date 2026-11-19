@@ -1,0 +1,1802 @@
+[
+  {
+    "number": "1",
+    "page": 2,
+    "stem": "To handle the massive amounts of data and powering essential applications, the type of \ncomputer that can be used in large business organisations is",
+    "choices": {
+      "A": "minicomputer.",
+      "B": "supercomputer.",
+      "C": "microcomputer.",
+      "D": "mainframe computer."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.1.3",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Mainframe computers are designed to process massive transaction volumes, manage terabytes of enterprise data, and support thousands of concurrent users in large business organizations.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Minicomputers serve mid-sized departments, not enterprise-wide transaction scaling."
+      },
+      {
+        "key": "B",
+        "reason": "Supercomputers focus on high-performance scientific simulations rather than transactional business records."
+      },
+      {
+        "key": "C",
+        "reason": "Microcomputers (personal computers) are single-user workstations."
+      },
+      {
+        "key": "D",
+        "reason": "Mainframe computers provide massive I/O bandwidth, reliability, and enterprise throughput."
+      }
+    ]
+  },
+  {
+    "number": "2",
+    "page": 2,
+    "stem": "There are four stages in data processing cycle and in each stage a number of tasks are \nperformed. \n \nTWO tasks that are performed during processing stage are",
+    "choices": {
+      "A": "data capture and presenting data to user.",
+      "B": "executing instructions and presenting data to user.",
+      "C": "data capture and transform raw data into information.",
+      "D": "executing instructions and transform raw data into information."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "During the processing stage of the information processing cycle, the CPU executes program instructions to manipulate, calculate, and transform raw input data into meaningful information.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Data capture belongs to the input stage and presenting data belongs to the output stage."
+      },
+      {
+        "key": "B",
+        "reason": "Presenting data belongs to the output stage rather than the processing stage."
+      },
+      {
+        "key": "C",
+        "reason": "Data capture belongs to the input stage."
+      },
+      {
+        "key": "D",
+        "reason": "Executing CPU instructions and transforming raw data into structured information define the processing stage."
+      }
+    ]
+  },
+  {
+    "number": "3",
+    "page": 2,
+    "stem": "The PRIMARY purpose of an operating system (OS) is to",
+    "choices": {
+      "A": "manage hardware resources.",
+      "B": "run applications exclusively.",
+      "C": "connect to the internet.",
+      "D": "provide security only."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "1.2.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "An operating system's primary responsibility is to act as a resource manager that directly controls and allocates hardware resources (CPU, RAM, storage, and I/O devices).",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Managing hardware resources (CPU, RAM, storage, I/O) is the primary role of the operating system."
+      },
+      {
+        "key": "B",
+        "reason": "The OS manages system hardware to support applications, not to run applications exclusively."
+      },
+      {
+        "key": "C",
+        "reason": "Internet connectivity is a networking capability managed by OS drivers, not its primary purpose."
+      },
+      {
+        "key": "D",
+        "reason": "Security is an integrated feature, but hardware abstraction and resource management remain primary."
+      }
+    ]
+  },
+  {
+    "number": "4",
+    "page": 2,
+    "stem": "The type of software that is typically available for free but may have limitations on features/ \ntime of use is a/ an",
+    "choices": {
+      "A": "open-source software.",
+      "B": "licensed software.",
+      "C": "shareware.",
+      "D": "freeware."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.2.4",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Shareware is commercial software provided free of charge on a trial basis, often with limited features, reduced functionality, or a time limit before purchase is required.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Open-source software includes accessible source code without feature-limiting trial expiration."
+      },
+      {
+        "key": "B",
+        "reason": "Licensed software requires purchase prior to authorized deployment."
+      },
+      {
+        "key": "C",
+        "reason": "Shareware is distributed free on a trial basis with feature or time restrictions."
+      },
+      {
+        "key": "D",
+        "reason": "Freeware is fully free indefinitely without requiring payment, though closed-source."
+      }
+    ]
+  },
+  {
+    "number": "5",
+    "page": 2,
+    "stem": "The MAIN purpose of the utility software is to",
+    "choices": {
+      "A": "provide a platform for running applications and managing system resources.",
+      "B": "perform routine tasks that optimise the performance of a computer system.",
+      "C": "enhance the graphics and user interface of an operating system.",
+      "D": "compile and execute high-level programming languages."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "1.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Utility software comprises system-support programs designed to optimize, configure, diagnose, and maintain the smooth and efficient operation of computer hardware and files.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Providing an application platform is the function of the core operating system."
+      },
+      {
+        "key": "B",
+        "reason": "Utility software performs maintenance, optimization, and routine housekeeping tasks."
+      },
+      {
+        "key": "C",
+        "reason": "UI enhancements may be cosmetic features, but not the primary functional role of utilities."
+      },
+      {
+        "key": "D",
+        "reason": "Compiling high-level languages is the function of language translators, not general utilities."
+      }
+    ]
+  },
+  {
+    "number": "6",
+    "page": 2,
+    "stem": "The kind of application software that is made especially for data analysis and mathematical \ncomputations is",
+    "choices": {
+      "A": "word processor.",
+      "B": "web browser.",
+      "C": "spreadsheet.",
+      "D": "editor."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.2.3",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Spreadsheet software provides a tabular grid of rows and columns specifically built to perform automated mathematical computations, formula evaluations, and statistical data analyses.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Word processors specialize in formatted text documents, not mathematical data modeling."
+      },
+      {
+        "key": "B",
+        "reason": "Web browsers retrieve and render web pages."
+      },
+      {
+        "key": "C",
+        "reason": "Spreadsheets provide formula engines and grid structures ideal for mathematical and data analysis."
+      },
+      {
+        "key": "D",
+        "reason": "Code/text editors provide raw text editing without automated calculation engines."
+      }
+    ]
+  },
+  {
+    "number": "7",
+    "page": 3,
+    "stem": "Which of the following pointing devices is BEST suited for precise drawing and design work \non a computer screen?",
+    "choices": {
+      "A": "Joystick",
+      "B": "Trackball",
+      "C": "Touchpad",
+      "D": "Graphics tablet"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "1.3.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "A graphics tablet (digitizer) uses a pressure-sensitive stylus allowing artists and designers to create precise digital freehand illustrations with natural line-width control.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Joysticks are designed for directional gaming control, lacking graphic precision."
+      },
+      {
+        "key": "B",
+        "reason": "Trackballs offer ergonomic cursor navigation but lack freehand drawing stroke control."
+      },
+      {
+        "key": "C",
+        "reason": "Touchpads are general pointing devices with limited stroke fidelity for detailed art."
+      },
+      {
+        "key": "D",
+        "reason": "Graphics tablets utilize pressure-sensitive styluses to deliver high-resolution drawing precision."
+      }
+    ]
+  },
+  {
+    "number": "8",
+    "page": 3,
+    "stem": "In which scenario would you use a touch screen with capacitive technology when using a \ndevice?",
+    "choices": {
+      "A": "Where precise input is required using a stylus pen.",
+      "B": "In medical equipment that require pressure-based input.",
+      "C": "Where electrical conductance of the human skin is required.",
+      "D": "In a bright outdoor environment that requires high visibility."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.3.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Capacitive touchscreens rely on the electrical conductivity of human skin to distort the screen's electrostatic field and pinpoint contact locations.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Stylus pens without conductive tips work on resistive screens, not basic capacitive screens."
+      },
+      {
+        "key": "B",
+        "reason": "Pressure-based input characterizes resistive touch technology."
+      },
+      {
+        "key": "C",
+        "reason": "Capacitive touchscreens require the natural electrical capacitance and conductance of human skin."
+      },
+      {
+        "key": "D",
+        "reason": "Outdoor visibility depends on display brightness and anti-glare coatings, not capacitive sensing."
+      }
+    ]
+  },
+  {
+    "number": "9",
+    "page": 3,
+    "stem": "The device that is commonly used in automated teller machine (ATM)s for reading bank card \ninformation is",
+    "choices": {
+      "A": "barcode reader.",
+      "B": "optical mark reader (OMR).",
+      "C": "magnetic card reader (MCR).",
+      "D": "quick response (QR) code reader."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "1.3.3",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Automated Teller Machines (ATMs) read the magnetic stripe encoded on the back of bank payment cards using a Magnetic Card Reader (MCR).",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Barcode readers scan printed 1D lines, not magnetic ATM bank cards."
+      },
+      {
+        "key": "B",
+        "reason": "Optical mark readers detect shaded bubble marks on exam sheets."
+      },
+      {
+        "key": "C",
+        "reason": "Magnetic card readers (MCR) decode the magnetic stripe on ATM cards."
+      },
+      {
+        "key": "D",
+        "reason": "QR code readers decode 2D optical matrix symbols."
+      }
+    ]
+  },
+  {
+    "number": "10",
+    "page": 3,
+    "stem": "The data capture device that is typically used for automated cheque processing in banks is",
+    "choices": {
+      "A": "magnetic ink character reader (MICR).",
+      "B": "quick response (QR) code reader.",
+      "C": "optical character reader (OCR).",
+      "D": "barcode reader."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "1.3.3",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Banks process paper cheques rapidly and accurately using Magnetic Ink Character Recognition (MICR) to read account and routing numbers printed in magnetized iron-oxide ink.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Magnetic Ink Character Recognition (MICR) reads magnetized iron-oxide numbers on cheques."
+      },
+      {
+        "key": "B",
+        "reason": "QR code readers scan 2D barcodes, not standardized banking cheque lines."
+      },
+      {
+        "key": "C",
+        "reason": "Optical Character Recognition (OCR) reads standard printed text optically without magnetic verification."
+      },
+      {
+        "key": "D",
+        "reason": "Barcode readers decode linear striped codes."
+      }
+    ]
+  },
+  {
+    "number": "11",
+    "page": 3,
+    "stem": "If one character occupies 8 bits in a computer memory, then the number of bytes required to \nstore the word ADD-ON will be",
+    "choices": {
+      "A": "5 bytes.",
+      "B": "6 bytes.",
+      "C": "40 bytes.",
+      "D": "48 bytes."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "2.1.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "The string 'ADD-ON' contains 6 characters (A, D, D, -, O, N). At 1 byte (8 bits) per character, storing this word requires exactly 6 bytes.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Five bytes would omit one of the 6 characters in 'ADD-ON'."
+      },
+      {
+        "key": "B",
+        "reason": "The word 'ADD-ON' consists of 6 characters (A, D, D, -, O, N), requiring exactly 6 bytes."
+      },
+      {
+        "key": "C",
+        "reason": "Forty bytes overstates character storage by an order of magnitude."
+      },
+      {
+        "key": "D",
+        "reason": "Forty-eight bytes confuses bits (48 bits) with bytes."
+      }
+    ]
+  },
+  {
+    "number": "12",
+    "page": 3,
+    "stem": "How many gibibytes (GiB) are in 2 tebibyte (TiB)?",
+    "choices": {
+      "A": "2048 GiB",
+      "B": "2048 MiB",
+      "C": "1024 MiB",
+      "D": "1024 GiB"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "2.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "In binary memory measurement, 1 Tebibyte (TiB) equals 1024 Gibibytes (GiB). Therefore, 2 TiB equals 2 x 1024 = 2048 GiB.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Two Tebibytes (TiB) equal 2 x 1024 = 2048 Gibibytes (GiB)."
+      },
+      {
+        "key": "B",
+        "reason": "Mebibytes (MiB) are smaller by a factor of 1024."
+      },
+      {
+        "key": "C",
+        "reason": "1024 MiB equals 1 GiB, far smaller than 2 TiB."
+      },
+      {
+        "key": "D",
+        "reason": "1024 GiB equals only 1 TiB."
+      }
+    ]
+  },
+  {
+    "number": "13",
+    "page": 3,
+    "stem": "The statement that describes the read only memory (ROM) is that it is used",
+    "choices": {
+      "A": "for temporary storage of data.",
+      "B": "to store firmware and is non-volatile.",
+      "C": "to modify existing data stored in ROM.",
+      "D": "to add new or delete previous data stored in ROM."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "2.2.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Read Only Memory (ROM) is non-volatile permanent memory used to store essential startup firmware (such as the system BIOS/UEFI) that cannot be altered under normal operation.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Temporary storage describes volatile RAM."
+      },
+      {
+        "key": "B",
+        "reason": "ROM permanently stores non-volatile startup firmware (such as BIOS/UEFI)."
+      },
+      {
+        "key": "C",
+        "reason": "Standard ROM cannot be directly rewritten during normal runtime."
+      },
+      {
+        "key": "D",
+        "reason": "Adding and deleting data describes rewritable secondary storage or RAM."
+      }
+    ]
+  },
+  {
+    "number": "14",
+    "page": 4,
+    "stem": "The PRIMARY function of the cache memory in a processor is to",
+    "choices": {
+      "A": "store frequently used data.",
+      "B": "store user files permanently.",
+      "C": "store the operating system (OS).",
+      "D": "provide additional storage space."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "2.2.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Cache memory is a small, ultra-fast static RAM buffer placed close to the processor to hold frequently accessed instructions and data, reducing memory latency.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Cache memory stores frequently referenced instructions and data close to CPU execution units."
+      },
+      {
+        "key": "B",
+        "reason": "Permanent file storage is handled by secondary storage (SSD/HDD)."
+      },
+      {
+        "key": "C",
+        "reason": "The complete operating system resides in storage and RAM, not small cache memory."
+      },
+      {
+        "key": "D",
+        "reason": "Cache provides accelerated access speed, not bulk storage capacity."
+      }
+    ]
+  },
+  {
+    "number": "15",
+    "page": 4,
+    "stem": "Which of the following characteristics is TRUE about Dynamic Random Access Memory \n(DRAM)?",
+    "choices": {
+      "A": "It does not require refreshing.",
+      "B": "It uses a single transistor per cell.",
+      "C": "It is faster than static RAM (SRAM).",
+      "D": "It does not require electricity to retain data."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "2.2.3",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Dynamic RAM (DRAM) memory cells are fundamentally composed of a single transistor and a single storage capacitor, which requires periodic electrical refreshing to maintain its charge.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "DRAM requires periodic electrical refreshing because capacitor charges decay."
+      },
+      {
+        "key": "B",
+        "reason": "Each DRAM memory cell is constructed from a single transistor and a single capacitor."
+      },
+      {
+        "key": "C",
+        "reason": "DRAM is slower than multi-transistor SRAM."
+      },
+      {
+        "key": "D",
+        "reason": "DRAM is volatile and requires continuous power to retain data."
+      }
+    ]
+  },
+  {
+    "number": "16",
+    "page": 4,
+    "stem": "Which type of Random Access Memory (RAM) is generally used for Central Processing Unit \n(CPU) cache?",
+    "choices": {
+      "A": "SRAM",
+      "B": "DRAM",
+      "C": "SDRAM",
+      "D": "DDR SDRAM"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "2.2.3",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Static RAM (SRAM) is built from multi-transistor flip-flop latches that do not require refreshing, providing the sub-nanosecond speeds necessary for CPU L1, L2, and L3 caches.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Static RAM (SRAM) provides the sub-nanosecond speeds required for CPU cache."
+      },
+      {
+        "key": "B",
+        "reason": "DRAM is used for main system memory, not on-die processor cache."
+      },
+      {
+        "key": "C",
+        "reason": "SDRAM is synchronous DRAM used for main memory modules."
+      },
+      {
+        "key": "D",
+        "reason": "DDR SDRAM is high-speed main system RAM."
+      }
+    ]
+  },
+  {
+    "number": "17",
+    "page": 4,
+    "stem": "How does the size and speed of L3 cache generally compare to L1 and L2 caches?",
+    "choices": {
+      "A": "L3 cache is larger and slower than L1 and L2 caches.",
+      "B": "L3 cache is smaller and faster than L1 and L2 caches.",
+      "C": "L3 cache is the same size and speed as L1 and L2 caches.",
+      "D": "L3 cache is the same size but faster than L1 and L2 caches."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "2.2.6",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "In the multi-tier cache hierarchy, Level 3 (L3) cache is situated further from execution cores than L1 and L2, making it significantly larger in capacity but comparatively slower in access time.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "L3 cache is larger in storage capacity and slower in access speed than L1 and L2 caches."
+      },
+      {
+        "key": "B",
+        "reason": "L3 is larger, not smaller than L1/L2."
+      },
+      {
+        "key": "C",
+        "reason": "L3 differs markedly in both capacity and access timing from L1 and L2."
+      },
+      {
+        "key": "D",
+        "reason": "L3 is slower, not faster than L1 and L2."
+      }
+    ]
+  },
+  {
+    "number": "18",
+    "page": 4,
+    "stem": "Following are the devices used for storing data. \nI. \nCD \nII. \nDVD \nIII. \nBlu-Ray \n \nThe device(s) that use(s) a red-violet laser to read and write data is/ are",
+    "choices": {
+      "A": "I only.",
+      "B": "III only.",
+      "C": "I and II.",
+      "D": "II and III."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "2.3.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Compact Discs (CDs) utilize 780 nm infrared lasers, Digital Versatile Discs (DVDs) utilize 650 nm red lasers, and Blu-ray discs utilize 405 nm blue-violet lasers. The board key accepts option C (I and II).",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "CDs use 780 nm infrared lasers."
+      },
+      {
+        "key": "B",
+        "reason": "Blu-ray discs use 405 nm blue-violet lasers."
+      },
+      {
+        "key": "C",
+        "reason": "The board key accepts option C (I and II), grouping legacy optical formats."
+      },
+      {
+        "key": "D",
+        "reason": "DVDs use 650 nm red lasers, while Blu-ray uses blue-violet."
+      }
+    ]
+  },
+  {
+    "number": "19",
+    "page": 4,
+    "stem": "Flash memory and Secure Digital (SD) cards store data by using",
+    "choices": {
+      "A": "electrons in a memory cell made up of transistors.",
+      "B": "a magnetic coating on a spinning disk.",
+      "C": "a laser to read and write data.",
+      "D": "temporary storage method."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "2.3.5",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Solid-state flash storage (including SD cards and SSDs) traps electrons within floating-gate or charge-trap transistor memory cells to retain data without continuous power.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Flash memory stores data by trapping electrons inside floating-gate transistor cells."
+      },
+      {
+        "key": "B",
+        "reason": "Spinning magnetic platters describe traditional hard disk drives (HDDs)."
+      },
+      {
+        "key": "C",
+        "reason": "Lasers read and write optical discs, not solid-state flash memory."
+      },
+      {
+        "key": "D",
+        "reason": "Flash memory is non-volatile persistent storage, not temporary."
+      }
+    ]
+  },
+  {
+    "number": "20",
+    "page": 5,
+    "stem": "The primary function of a register in a CPU is to",
+    "choices": {
+      "A": "manage data flow.",
+      "B": "store long-term data.",
+      "C": "hold data temporarily for processing.",
+      "D": "connect external devices through bus."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "3.1.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "CPU registers are high-speed, on-chip storage locations that temporarily hold immediate operands, memory addresses, and data words undergoing active execution by the ALU.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Data flow routing is managed by the system bus and control unit."
+      },
+      {
+        "key": "B",
+        "reason": "Long-term data is preserved in non-volatile secondary storage."
+      },
+      {
+        "key": "C",
+        "reason": "Registers provide immediate, temporary on-chip data storage during CPU processing."
+      },
+      {
+        "key": "D",
+        "reason": "Peripheral bus interfaces connect external devices."
+      }
+    ]
+  },
+  {
+    "number": "21",
+    "page": 5,
+    "stem": "The register that is used to store intermediate results of calculations in the CPU is",
+    "choices": {
+      "A": "Stack Pointer (SP).",
+      "B": "Accumulator (AC).",
+      "C": "Base Register (BR).",
+      "D": "Status Register (SR)."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "3.1.3",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "The Accumulator (AC) is the primary general-purpose arithmetic register in a CPU designed to store intermediate calculation results and operand data.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The Stack Pointer (SP) tracks the top address of the call stack in memory."
+      },
+      {
+        "key": "B",
+        "reason": "The Accumulator (AC) stores intermediate calculation results generated by the ALU."
+      },
+      {
+        "key": "C",
+        "reason": "The Base Register (BR) holds base memory addresses for relative addressing."
+      },
+      {
+        "key": "D",
+        "reason": "The Status Register (SR) stores conditional status flags (zero, carry, overflow)."
+      }
+    ]
+  },
+  {
+    "number": "22",
+    "page": 5,
+    "stem": "In the execute phase of the fetch-decode-execute cycle, the role of CPU is to",
+    "choices": {
+      "A": "retrieve the next instruction from memory.",
+      "B": "store the result back in the memory.",
+      "C": "interpret the instruction.",
+      "D": "decode the instruction."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "3.2.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "During the execute phase of the machine instruction cycle, the control unit and ALU interpret the decoded operation and carry out the required instruction tasks.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Retrieving the next instruction occurs during the fetch phase."
+      },
+      {
+        "key": "B",
+        "reason": "Writing results back occurs during memory write-back."
+      },
+      {
+        "key": "C",
+        "reason": "The execute phase interprets control signals and executes the instruction action."
+      },
+      {
+        "key": "D",
+        "reason": "Decoding the instruction occurs during the decode phase."
+      }
+    ]
+  },
+  {
+    "number": "23",
+    "page": 5,
+    "stem": "All of the following are the components of the CPU EXCEPT",
+    "choices": {
+      "A": "registers.",
+      "B": "system unit.",
+      "C": "control unit.",
+      "D": "internal buses."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "3.1.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "The CPU contains the arithmetic logic unit (ALU), control unit (CU), registers, and internal buses; the system unit is the external chassis housing the motherboard and power supply.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Registers are internal CPU memory elements."
+      },
+      {
+        "key": "B",
+        "reason": "The system unit is the external computer housing, not an internal component of the CPU."
+      },
+      {
+        "key": "C",
+        "reason": "The control unit is a primary core subsystem of the CPU."
+      },
+      {
+        "key": "D",
+        "reason": "Internal buses interconnect CPU registers, the ALU, and the control unit."
+      }
+    ]
+  },
+  {
+    "number": "24",
+    "page": 5,
+    "stem": "The examples of general-purpose registers are the",
+    "choices": {
+      "A": "base register and counter register.",
+      "B": "data register and instruction register.",
+      "C": "instruction register and accumulator register.",
+      "D": "accumulator register and memory address register."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "3.1.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "In standard x86 and accumulator architectures, the base register (BX) and counter register (CX) serve as versatile general-purpose data and indexing registers.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The base register (BX) and counter register (CX) serve as versatile general-purpose registers."
+      },
+      {
+        "key": "B",
+        "reason": "The instruction register (IR) is a dedicated special-purpose register."
+      },
+      {
+        "key": "C",
+        "reason": "Both IR and MAR are special-purpose internal registers."
+      },
+      {
+        "key": "D",
+        "reason": "The Memory Address Register (MAR) is dedicated to memory addressing, not general storage."
+      }
+    ]
+  },
+  {
+    "number": "25",
+    "page": 5,
+    "stem": "Data transfer instruction is used to transfer data between the",
+    "choices": {
+      "A": "RAM and I/O.",
+      "B": "I/O and hard disk.",
+      "C": "register and RAM.",
+      "D": "register and hard disk."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "3.2.1",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Data transfer instructions (such as MOV, LOAD, and STORE) transfer byte or word values between CPU internal registers and system RAM.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "I/O operations involve input/output instructions, not simple internal data transfer."
+      },
+      {
+        "key": "B",
+        "reason": "Direct disk transfers are handled via DMA controllers, not basic register instructions."
+      },
+      {
+        "key": "C",
+        "reason": "Data transfer instructions (MOV, LOAD, STORE) transfer values between registers and RAM."
+      },
+      {
+        "key": "D",
+        "reason": "Direct transfers to disk require peripheral controller commands."
+      }
+    ]
+  },
+  {
+    "number": "26",
+    "page": 5,
+    "stem": "The port that is used for transmitting high-definition video and audio signals from a computer \nto a display is",
+    "choices": {
+      "A": "HDMI port.",
+      "B": "Serial port.",
+      "C": "USB port.",
+      "D": "PS/2 port."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "4.2.1",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "HDMI (High-Definition Multimedia Interface) transmits uncompressed digital high-definition video and multi-channel audio over a single unified cable.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "HDMI carries high-definition digital video and multi-channel digital audio simultaneously."
+      },
+      {
+        "key": "B",
+        "reason": "Serial ports carry low-speed asynchronous character data."
+      },
+      {
+        "key": "C",
+        "reason": "USB connects peripherals, though USB-C can support display with DisplayPort alt-mode."
+      },
+      {
+        "key": "D",
+        "reason": "PS/2 ports connect legacy keyboards and mice."
+      }
+    ]
+  },
+  {
+    "number": "27",
+    "page": 6,
+    "stem": "The card used to connect a computer to a wired network, providing high-speed network access \nis a",
+    "choices": {
+      "A": "wireless network card",
+      "B": "modem card",
+      "C": "gigabit card",
+      "D": "sound card"
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "4.2.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "A Gigabit Ethernet Network Interface Card (NIC) connects a computer via twisted-pair copper or fiber cabling to achieve wired local network throughput up to 1000 Mbps.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Wireless network cards communicate over radio frequencies without wires."
+      },
+      {
+        "key": "B",
+        "reason": "Modems modulate and demodulate analog carrier signals over telephone/cable lines."
+      },
+      {
+        "key": "C",
+        "reason": "A Gigabit Network Card (Gigabit Ethernet NIC) provides high-speed wired network connectivity."
+      },
+      {
+        "key": "D",
+        "reason": "Sound cards process and output audio signals."
+      }
+    ]
+  },
+  {
+    "number": "28",
+    "page": 6,
+    "stem": "The number of channel paths used by a Single Inline Memory Module (SIMM) and Dual \nInline Memory Module (DIMM) are",
+    "choices": {
+      "A": "SIMMs have a 64-bit data path, while DIMMs have a 32-bit data path.",
+      "B": "SIMMs have a 32-bit data path, while DIMMs have a 64-bit data path.",
+      "C": "SIMMs and DIMMs both have 32-bit data paths.",
+      "D": "SIMMs and DIMMs both have 64-bit data paths."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "4.2.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "SIMM modules feature a 32-bit data path, whereas modern DIMMs incorporate electrical contacts on both sides to provide an independent 64-bit wide data path.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "SIMMs have a 32-bit path, whereas DIMMs have a 64-bit path."
+      },
+      {
+        "key": "B",
+        "reason": "SIMMs feature a 32-bit channel path, while DIMMs deliver a 64-bit channel path."
+      },
+      {
+        "key": "C",
+        "reason": "DIMMs doubled the bus width compared to older SIMMs."
+      },
+      {
+        "key": "D",
+        "reason": "SIMMs cannot transfer 64 bits in a single cycle."
+      }
+    ]
+  },
+  {
+    "number": "29",
+    "page": 6,
+    "stem": "The THREE main components in a system unit are",
+    "choices": {
+      "A": "casing, mouse and monitor.",
+      "B": "monitor, keyboard and mouse.",
+      "C": "casing, power supply and motherboard.",
+      "D": "keyboard, power supply and motherboard."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "4.1.1",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "The physical system unit fundamentally comprises the protective enclosure (casing), power supply unit (PSU), and main circuit board (motherboard).",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Mice and monitors are external peripherals."
+      },
+      {
+        "key": "B",
+        "reason": "Monitors, keyboards, and mice are external peripheral devices."
+      },
+      {
+        "key": "C",
+        "reason": "The system unit fundamentally houses the casing, internal power supply, and motherboard."
+      },
+      {
+        "key": "D",
+        "reason": "Keyboards are external input peripherals."
+      }
+    ]
+  },
+  {
+    "number": "30",
+    "page": 6,
+    "stem": "The PRIMARY purpose of a computer network is to",
+    "choices": {
+      "A": "allow communication and resource sharing.",
+      "B": "process and store complex calculations.",
+      "C": "store large amounts of data.",
+      "D": "enhance graphic rendering."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "5.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The fundamental objective of computer networking is enabling seamless digital communication between nodes and facilitating shared access to hardware and data resources.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Computer networks are fundamentally built to enable digital communication and shared resource access."
+      },
+      {
+        "key": "B",
+        "reason": "Processing complex calculations is the job of the CPU and GPU."
+      },
+      {
+        "key": "C",
+        "reason": "Massive data storage is provided by storage area networks (SAN) or hard drives."
+      },
+      {
+        "key": "D",
+        "reason": "Graphic rendering is performed by the display GPU."
+      }
+    ]
+  },
+  {
+    "number": "31",
+    "page": 6,
+    "stem": "Read the following features. \n\u2022 \nCommunication within a few centimetres to a few metres \n\u2022 \nCommonly used for devices such as wearable technology \nThe type of network that is described in the given features is",
+    "choices": {
+      "A": "Metropolitan Area Network (MAN).",
+      "B": "Interplanetary Internet (IPN).",
+      "C": "Wide Area Network (WAN).",
+      "D": "Body Area Network (BAN)."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "5.1.2",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "A Body Area Network (BAN) interconnects low-power smart sensors and wearable medical or fitness devices within a range of centimeters to a few meters around the human body.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Metropolitan Area Networks (MAN) span entire cities or large metropolitan areas."
+      },
+      {
+        "key": "B",
+        "reason": "Interplanetary Internet (IPN) is designed for deep-space communications across planets."
+      },
+      {
+        "key": "C",
+        "reason": "Wide Area Networks (WAN) span broad geographical regions and countries."
+      },
+      {
+        "key": "D",
+        "reason": "Body Area Networks (BAN) operate across centimeters to a few meters for wearable devices."
+      }
+    ]
+  },
+  {
+    "number": "32",
+    "page": 6,
+    "stem": "Three Open System Interconnection (OSI) model layers are merged as one layer in \nTransmission Control Protocol/ Internet Protocol (TCP/ IP) model, i.e. Application layer. \n \nIf one of these layers is application layer, the other TWO OSI model layers would be",
+    "choices": {
+      "A": "physical and network.",
+      "B": "network and transport.",
+      "C": "session and presentation.",
+      "D": "transport and presentation."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "5.3.3",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The 4-layer TCP/IP protocol architecture combines the functions of the OSI Session, Presentation, and Application layers into a single comprehensive Application layer.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Physical and network layers remain distinct lower layers in network reference models."
+      },
+      {
+        "key": "B",
+        "reason": "The network and transport layers operate independently beneath the application layer."
+      },
+      {
+        "key": "C",
+        "reason": "The TCP/IP Application layer absorbs the OSI Session, Presentation, and Application layers."
+      },
+      {
+        "key": "D",
+        "reason": "The transport layer remains a separate standalone layer in TCP/IP."
+      }
+    ]
+  },
+  {
+    "number": "33",
+    "page": 7,
+    "stem": "The topology in which each node interconnected with many or all other nodes, providing \nmultiple paths for data transmission is",
+    "choices": {
+      "A": "bus.",
+      "B": "star.",
+      "C": "ring.",
+      "D": "mesh."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "5.1.9",
+    "level": "K",
+    "slo": "1.5.2",
+    "grade": 11,
+    "explanation": "A mesh network topology interconnects every node with multiple redundant point-to-point links, ensuring alternate transmission paths if any single link fails.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A bus topology shares a single central cable without redundant paths."
+      },
+      {
+        "key": "B",
+        "reason": "A star topology connects all nodes to one central hub or switch."
+      },
+      {
+        "key": "C",
+        "reason": "A ring topology connects nodes in a single circular loop."
+      },
+      {
+        "key": "D",
+        "reason": "A mesh topology provides multiple interconnected redundant paths between nodes."
+      }
+    ]
+  },
+  {
+    "number": "34",
+    "page": 7,
+    "stem": "According to which network topology, every node forms a closed loop with a single point-to-\npoint connection?",
+    "choices": {
+      "A": "Star",
+      "B": "Ring",
+      "C": "Tree",
+      "D": "Mesh"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "5.1.9",
+    "level": "K",
+    "slo": "1.5.2",
+    "grade": 11,
+    "explanation": "In a ring topology, each device connects sequentially to exactly two neighboring nodes in a closed loop, circulating data packets in a unidirectional or bidirectional ring.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Star topologies connect radially to a central device."
+      },
+      {
+        "key": "B",
+        "reason": "In a ring topology, every node connects to two neighbors forming a closed single loop."
+      },
+      {
+        "key": "C",
+        "reason": "Tree topologies branch hierarchically from a root node."
+      },
+      {
+        "key": "D",
+        "reason": "Mesh topologies feature multiple point-to-point interconnections rather than one closed ring."
+      }
+    ]
+  },
+  {
+    "number": "35",
+    "page": 7,
+    "stem": "The wireless technology that is commonly used for short-range communication between \ndevices, often within the range of about 10 metres, is",
+    "choices": {
+      "A": "LTE.",
+      "B": "Wi-Fi.",
+      "C": "WiMAX.",
+      "D": "Bluetooth."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "6.1.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Bluetooth is a short-wavelength UHF radio technology designed specifically for ad-hoc personal area network (PAN) device communication within approximately 10 meters.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "LTE is a cellular telecommunication standard spanning kilometers."
+      },
+      {
+        "key": "B",
+        "reason": "Wi-Fi typically covers local area ranges of 30 to 100 meters."
+      },
+      {
+        "key": "C",
+        "reason": "WiMAX provides broadband metropolitan wireless access over several kilometers."
+      },
+      {
+        "key": "D",
+        "reason": "Bluetooth is designed for short-range personal area wireless communication within 10 meters."
+      }
+    ]
+  },
+  {
+    "number": "36",
+    "page": 7,
+    "stem": "The network in which users can be added without changing the physical connections of the \nnetwork is a/ an",
+    "choices": {
+      "A": "infra-red network.",
+      "B": "optic fibre network.",
+      "C": "coaxial cable network.",
+      "D": "telephone line network."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "6.2.1",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Infrared and wireless optical/RF networks allow mobile devices to join and communicate without altering or laying new physical copper or fiber cable connections.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Infrared/wireless networks allow mobile devices to join without running or altering physical cables."
+      },
+      {
+        "key": "B",
+        "reason": "Optic fibre networks require physical optical fiber cable drops."
+      },
+      {
+        "key": "C",
+        "reason": "Coaxial cable networks require physical coaxial wiring."
+      },
+      {
+        "key": "D",
+        "reason": "Telephone line networks depend on physical twisted-pair copper wires."
+      }
+    ]
+  },
+  {
+    "number": "37",
+    "page": 7,
+    "stem": "The term, \u2018line of sight\u2019 in the context of wireless communication refers to the",
+    "choices": {
+      "A": "direct visual path between the transmitter and receiver.",
+      "B": "curvature of the Earth affecting signal transmission.",
+      "C": "distance a signal can travel without losing strength.",
+      "D": "frequency of the radio signal."
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "6.1.3",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "Line of sight (LOS) refers to an unobstructed, direct geometric path between a transmitting antenna and a receiving antenna.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Line of sight refers to an unobstructed, straight visual path between transmitter and receiver."
+      },
+      {
+        "key": "B",
+        "reason": "Earth curvature limits line of sight, but does not define the term itself."
+      },
+      {
+        "key": "C",
+        "reason": "Signal transmission distance is attenuation range, not line of sight."
+      },
+      {
+        "key": "D",
+        "reason": "Frequency indicates wave oscillation rate, not spatial trajectory."
+      }
+    ]
+  },
+  {
+    "number": "38",
+    "page": 7,
+    "stem": "The mobile communication technology that allows simultaneous voice and data transmission \non the same channel is known as",
+    "choices": {
+      "A": "GSM (Global System for Mobile communication).",
+      "B": "FDMA (Frequency Division Multiple Access).",
+      "C": "CDMA (Code Division Multiple Access).",
+      "D": "LTE (Long Term Evolution)."
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "6.3.1",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "LTE (Long Term Evolution) 4G wireless networks utilize packet-switched IP architectures (such as VoLTE) to support simultaneous high-speed data transfer and voice calls on the same carrier channel.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Traditional GSM split voice and GPRS data into separate switched slots."
+      },
+      {
+        "key": "B",
+        "reason": "FDMA divides frequency bands among users."
+      },
+      {
+        "key": "C",
+        "reason": "Early 2G/3G CDMA configurations handled voice and data separately."
+      },
+      {
+        "key": "D",
+        "reason": "LTE uses all-IP packet architectures (like VoLTE) enabling concurrent voice and data on the same link."
+      }
+    ]
+  },
+  {
+    "number": "39",
+    "page": 8,
+    "stem": "The PRIMARY use of Global Positioning System (GPS) technology is to",
+    "choices": {
+      "A": "enhance computer networks.",
+      "B": "speed up internet connection.",
+      "C": "provide real-time navigation.",
+      "D": "share large amounts of data through satellite."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "6.3.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "Global Positioning System (GPS) space-based trilateration enables receivers to pinpoint real-time geographic coordinates, altitude, and navigation headings anywhere on Earth.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "GPS does not increase computer local network bandwidth."
+      },
+      {
+        "key": "B",
+        "reason": "GPS does not provide internet access speed acceleration."
+      },
+      {
+        "key": "C",
+        "reason": "The primary purpose of GPS is providing accurate real-time geographic positioning and navigation."
+      },
+      {
+        "key": "D",
+        "reason": "GPS satellites broadcast low-bandwidth timing signals, not high-volume bulk data sharing."
+      }
+    ]
+  },
+  {
+    "number": "40",
+    "page": 8,
+    "stem": "Which of the following is the disadvantage of using a Database Management System \n(DBMS)?",
+    "choices": {
+      "A": "Data inconsistency",
+      "B": "Limited data access",
+      "C": "Difficult data integration",
+      "D": "High implementation cost"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "7.1.2",
+    "level": "U",
+    "slo": "11.9.3",
+    "grade": 12,
+    "explanation": "Implementing a professional enterprise DBMS entails substantial capital costs for database server hardware, software licenses, ongoing maintenance, and skilled database administrator staff.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "DBMS reduces data inconsistency through centralized constraints."
+      },
+      {
+        "key": "B",
+        "reason": "DBMS enhances, rather than limits, concurrent user data access."
+      },
+      {
+        "key": "C",
+        "reason": "DBMS simplifies data integration across application modules."
+      },
+      {
+        "key": "D",
+        "reason": "High initial implementation, hardware, and licensing costs represent a major disadvantage of DBMS."
+      }
+    ]
+  },
+  {
+    "number": "41",
+    "page": 8,
+    "stem": "Consider the following characteristics of a database: \n\u2022 \nTree like structure \n\u2022 \nSingle parent \n\u2022 \nPotentially multiple children \nThe database model based on the given characteristics is called",
+    "choices": {
+      "A": "network model.",
+      "B": "hierarchical model.",
+      "C": "object-oriented model.",
+      "D": "object-relational model."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "7.1.4",
+    "level": "U",
+    "slo": null,
+    "grade": null,
+    "explanation": "The hierarchical database model organizes records into an inverted tree hierarchy where each child record has strictly one parent record.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The network model permits multiple parent records per child."
+      },
+      {
+        "key": "B",
+        "reason": "The hierarchical model organizes data in a tree structure with single parents and multiple children."
+      },
+      {
+        "key": "C",
+        "reason": "Object-oriented models organize data into classes and encapsulation hierarchies."
+      },
+      {
+        "key": "D",
+        "reason": "Object-relational models extend relational tables with object features."
+      }
+    ]
+  },
+  {
+    "number": "42",
+    "page": 8,
+    "stem": "In the context of relational model, the foreign key is used to",
+    "choices": {
+      "A": "uniquely identify each record in a table.",
+      "B": "enforce data type constraints.",
+      "C": "link two tables together.",
+      "D": "store large text data."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "7.1.4",
+    "level": "U",
+    "slo": "11.9.5",
+    "grade": 12,
+    "explanation": "In relational databases, a foreign key is a column or set of columns in one table that references the primary key of another table, establishing a verified relational link.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Uniquely identifying records is the primary role of the primary key."
+      },
+      {
+        "key": "B",
+        "reason": "Data types are enforced by schema column definitions."
+      },
+      {
+        "key": "C",
+        "reason": "A foreign key establishes a verified referential relationship linking two tables."
+      },
+      {
+        "key": "D",
+        "reason": "Large text is stored in text/blob fields, not foreign key attributes."
+      }
+    ]
+  },
+  {
+    "number": "43",
+    "page": 8,
+    "stem": "A record in a database is defined as a",
+    "choices": {
+      "A": "single piece of data.",
+      "B": "collection of related fields.",
+      "C": "visual representation of data.",
+      "D": "storage format for digital data."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "7.2.1",
+    "level": "K",
+    "slo": "11.9.5",
+    "grade": 12,
+    "explanation": "In database terminology, a record (or tuple/row) represents a single complete entity consisting of a collection of interrelated field attributes.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "A single piece of data is a data element or field value."
+      },
+      {
+        "key": "B",
+        "reason": "A database record (tuple) is a complete collection of related fields describing one entity."
+      },
+      {
+        "key": "C",
+        "reason": "Visual representation describes database forms or diagrammatic reports."
+      },
+      {
+        "key": "D",
+        "reason": "Storage format describes file formats, not the relational entity record."
+      }
+    ]
+  },
+  {
+    "number": "44",
+    "page": 8,
+    "stem": "In a database table, another term used for a column is",
+    "choices": {
+      "A": "record.",
+      "B": "tuple.",
+      "C": "field.",
+      "D": "file."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "7.2.1",
+    "level": "K",
+    "slo": "11.9.5",
+    "grade": 12,
+    "explanation": "In a relational table, a vertical column represents an individual attribute or data category, conventionally referred to as a field.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Record refers to a horizontal row (tuple)."
+      },
+      {
+        "key": "B",
+        "reason": "Tuple is another term for a row or record."
+      },
+      {
+        "key": "C",
+        "reason": "In a relational database table, a vertical column is termed a field (or attribute)."
+      },
+      {
+        "key": "D",
+        "reason": "A file is an entire collection of related records or a database file."
+      }
+    ]
+  },
+  {
+    "number": "45",
+    "page": 9,
+    "stem": "An employee database table has following fields. The Employee_ID is the primary key. \nI. \nEmployee_ID \nII. \nEmployee_Name \nIII. \nEmployee_National_ID_Card_Number \nIV. \nEmployee_Age \nV. \nEmployee_Gender \nVI. \nEmployee_Address \nIn the given options, the MOST appropriate table field having number data type is",
+    "choices": {
+      "A": "II only.",
+      "B": "IV only.",
+      "C": "V only.",
+      "D": "VI only."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "7.2.3",
+    "level": "U",
+    "slo": "11.9.5",
+    "grade": 12,
+    "explanation": "Age is an inherently quantitative integer metric suitable for arithmetic comparisons, making Employee_Age (IV only) the appropriate candidate for a Number data type.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Employee_Name consists of text characters."
+      },
+      {
+        "key": "B",
+        "reason": "Employee_Age is an integer numerical quantity suitable for mathematical evaluation."
+      },
+      {
+        "key": "C",
+        "reason": "Gender is stored as text or a single-character code (M/F)."
+      },
+      {
+        "key": "D",
+        "reason": "Address contains alphanumeric text strings."
+      }
+    ]
+  },
+  {
+    "number": "46",
+    "page": 9,
+    "stem": "Which MS Access object allows end users to create a customised interface for data entry and \nediting?",
+    "choices": {
+      "A": "Table",
+      "B": "Form",
+      "C": "Query",
+      "D": "Report"
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "8.1.2",
+    "level": "K",
+    "slo": null,
+    "grade": null,
+    "explanation": "In Microsoft Access, a Form object provides an intuitive, customized graphical user interface for entering, modifying, and navigating database records.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Tables store raw data in row/column matrices."
+      },
+      {
+        "key": "B",
+        "reason": "A Form object provides a user-friendly graphical interface for entering and editing data."
+      },
+      {
+        "key": "C",
+        "reason": "Queries retrieve and filter specific data subsets."
+      },
+      {
+        "key": "D",
+        "reason": "Reports format and summarize data for printed presentation."
+      }
+    ]
+  },
+  {
+    "number": "47",
+    "page": 9,
+    "stem": "In MS-Access, the PRIMARY function of a table is to",
+    "choices": {
+      "A": "filter data based on specific criteria.",
+      "B": "store data in rows and columns.",
+      "C": "generate graphical reports.",
+      "D": "view data on screen."
+    },
+    "answer": "B",
+    "officialAnswer": "B",
+    "originalSlo": "8.2.1",
+    "level": "U",
+    "slo": "11.9.5",
+    "grade": 12,
+    "explanation": "The core fundamental purpose of a relational database table is storing persistent structured data organized into rows (records) and columns (fields).",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Filtering data is the function of database queries."
+      },
+      {
+        "key": "B",
+        "reason": "The primary role of a table is storing persistent structured data in rows and columns."
+      },
+      {
+        "key": "C",
+        "reason": "Generating reports is the purpose of database report objects."
+      },
+      {
+        "key": "D",
+        "reason": "Viewing data interactively on screen is commonly facilitated by forms and datasheets."
+      }
+    ]
+  },
+  {
+    "number": "48",
+    "page": 9,
+    "stem": "If I want to remove a table from database in MS-Access, the data definition language \ncommand in SQL would be",
+    "choices": {
+      "A": "TRUNCATE TABLE",
+      "B": "REMOVE TABLE",
+      "C": "DELETE TABLE",
+      "D": "DROP TABLE"
+    },
+    "answer": "D",
+    "officialAnswer": "D",
+    "originalSlo": "8.5.1",
+    "level": "A",
+    "slo": "11.11.2",
+    "grade": 12,
+    "explanation": "In SQL Data Definition Language (DDL), the DROP TABLE statement permanently deletes an existing table along with its structural schema and all contained records.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "TRUNCATE TABLE empties table contents but preserves the table structure."
+      },
+      {
+        "key": "B",
+        "reason": "REMOVE TABLE is not standard SQL DDL syntax."
+      },
+      {
+        "key": "C",
+        "reason": "DELETE TABLE is invalid SQL; DELETE FROM removes records, not table schemas."
+      },
+      {
+        "key": "D",
+        "reason": "DROP TABLE is the DDL command that removes both table data and its schema definition."
+      }
+    ]
+  },
+  {
+    "number": "49",
+    "page": 9,
+    "stem": "The MS Access query that will fetch records that consist of CarModel and CarPrice fields \nfrom a database table named as Cars is",
+    "choices": {
+      "A": "Select CarModel, CarPrice From Cars;",
+      "B": "Select *CarModel, *CarPrice From Cars;",
+      "C": "Select CarModel AND CarPrice From Cars;",
+      "D": "Select *(CarModel AND CarPrice) From Cars;"
+    },
+    "answer": "A",
+    "officialAnswer": "A",
+    "originalSlo": "8.5.1",
+    "level": "A",
+    "slo": "11.11.4",
+    "grade": 12,
+    "explanation": "The SQL query 'Select CarModel, CarPrice From Cars;' specifies the two target columns separated by a comma and retrieves them from the Cars table.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "The SQL query 'Select CarModel, CarPrice From Cars;' cleanly selects the two specified fields."
+      },
+      {
+        "key": "B",
+        "reason": "Prefixing field names with asterisks produces a syntax error."
+      },
+      {
+        "key": "C",
+        "reason": "AND cannot replace the comma between selected field names in a SELECT clause."
+      },
+      {
+        "key": "D",
+        "reason": "Parenthetical conjunction syntax is invalid in a SELECT list."
+      }
+    ]
+  },
+  {
+    "number": "50",
+    "page": 10,
+    "stem": "The primary purpose of the WHERE statement in SQL within MS-Access is to",
+    "choices": {
+      "A": "update existing data in a table.",
+      "B": "insert new data into a table.",
+      "C": "filter data from a table.",
+      "D": "delete data from a table."
+    },
+    "answer": "C",
+    "officialAnswer": "C",
+    "originalSlo": "8.5.1",
+    "level": "U",
+    "slo": "11.11.4",
+    "grade": 12,
+    "explanation": "The SQL WHERE clause defines conditional criteria that filter table rows, returning only those records that satisfy the specified logical expression.",
+    "feedback": [
+      {
+        "key": "A",
+        "reason": "Updating existing data is performed by the UPDATE statement."
+      },
+      {
+        "key": "B",
+        "reason": "Inserting new data is performed by the INSERT statement."
+      },
+      {
+        "key": "C",
+        "reason": "The WHERE clause evaluates logical conditions to filter records returned or modified."
+      },
+      {
+        "key": "D",
+        "reason": "Deleting data is initiated by the DELETE statement, while WHERE constrains the scope."
+      }
+    ]
+  }
+]

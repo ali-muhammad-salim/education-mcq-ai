@@ -10,52 +10,89 @@ interface StructuredContentProps {
   style?: React.CSSProperties;
 }
 
+// Split only structural pipes: code spans and escaped pipes belong to the cell.
+function tableCells(line: string): string[] {
+  const cells: string[] = [];
+  let cell = '';
+  const source = line.trim().slice(1, -1);
+  for (let i = 0; i < source.length; i++) {
+    const math = /^(\$\$[^\n]*?\$\$|\$[^$\n]+\$|\\\([^\n]*?\\\)|\\\[[^\n]*?\\\])/.exec(source.slice(i));
+    if (math) {
+      cell += math[0];
+      i += math[0].length - 1;
+    } else if (source[i] === '\\' && i + 1 < source.length) {
+      cell += source[i + 1] === '|' ? '|' : source[i] + source[i + 1];
+      i++;
+    } else if (source[i] === '`') {
+      const run = /^`+/.exec(source.slice(i))![0];
+      const end = source.indexOf(run, i + run.length);
+      if (end !== -1) {
+        cell += source.slice(i, end + run.length);
+        i = end + run.length - 1;
+      } else cell += source[i];
+    } else if (source[i] === '|') {
+      cells.push(cell.trim());
+      cell = '';
+    } else cell += source[i];
+  }
+  cells.push(cell.trim());
+  return cells;
+}
+
+function contentBlocks(text: string) {
+  const lines = text.split(/\r?\n/);
+  const blocks: Array<{ kind: 'text' | 'table' | 'code'; text: string }> = [];
+  const isRow = (line: string) => /^\s*\|.*\|\s*$/.test(line);
+  for (let i = 0; i < lines.length;) {
+    const fence = /^\s*(`{3,}|~{3,})[^\r\n]*$/.exec(lines[i]);
+    if (fence) {
+      const start = ++i;
+      const close = new RegExp(`^\\s*${fence[1][0]}{${fence[1].length},}\\s*$`);
+      while (i < lines.length && !close.test(lines[i])) i++;
+      blocks.push({ kind: 'code', text: lines.slice(start, i).join('\n') + (i > start ? '\n' : '') });
+      if (i < lines.length) i++;
+    } else if (isRow(lines[i]) && i + 1 < lines.length && isRow(lines[i + 1])) {
+      const start = i++;
+      while (i < lines.length && isRow(lines[i])) i++;
+      blocks.push({ kind: 'table', text: lines.slice(start, i).join('\n') });
+    } else {
+      const previous = blocks[blocks.length - 1];
+      if (previous?.kind === 'text') previous.text += '\n' + lines[i];
+      else blocks.push({ kind: 'text', text: lines[i] });
+      i++;
+    }
+  }
+  return blocks;
+}
+
 export default function StructuredContent({ text, className = '', style = {} }: StructuredContentProps) {
   if (!text) return null;
+  const image = /^\s*!\[([^\]]*)\]\((\/paper-crops\/[^\s)]+)\)\s*$/.exec(text);
+  if (image) return <img className={className} src={image[2]} alt={image[1]} loading="lazy" style={{maxWidth:'100%',height:'auto',...style}} />;
+  const blocks = contentBlocks(text);
+  if (blocks.some(block => block.kind === 'code') || blocks.length > 1) {
+    return <div className={`structured-content ${className}`} style={{ display: 'flex', flexDirection: 'column', gap: blocks.some(block => block.kind === 'table') ? '0.75rem' : '0.4rem', ...style }}>
+      {blocks.map((block, index) => block.kind === 'code'
+        ? <code key={index} style={{ display: 'block', whiteSpace: 'pre-wrap', overflowX: 'auto' }}>{block.text}</code>
+        : block.kind === 'text' && blocks.some(item => item.kind === 'table')
+          ? <div key={index}>{block.text.split(/\r?\n/).map((line, lineIndex) => <div key={lineIndex}><MathText text={line} /></div>)}</div>
+          : <StructuredContent key={index} text={block.text} />)}
+    </div>;
+  }
   text = restoreInlineLetteredLists(text);
 
   // 1. Check if text contains a Markdown table (| col1 | col2 |)
   if (text.includes('|') && text.split('\n').some(line => line.trim().startsWith('|') && line.trim().endsWith('|'))) {
-    const lines = text.split('\n');
-    const tableLines: string[] = [];
-    const beforeLines: string[] = [];
-    const afterLines: string[] = [];
-    let state: 'before' | 'table' | 'after' = 'before';
-
-    lines.forEach(line => {
-      const trimmed = line.trim();
-      if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
-        state = 'table';
-        tableLines.push(trimmed);
-      } else if (state === 'table') {
-        state = 'after';
-        afterLines.push(line);
-      } else if (state === 'before') {
-        beforeLines.push(line);
-      } else {
-        afterLines.push(line);
-      }
-    });
-
-    if (tableLines.length >= 2) {
-      // Parse header, separator, rows
-      const headerCells = tableLines[0].split('|').map(c => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1);
-      const isSeparator = tableLines[1].replace(/[\s|:-]/g, '').length === 0;
-      const dataRows = (isSeparator ? tableLines.slice(2) : tableLines.slice(1)).map(row => 
-        row.split('|').map(c => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1)
-      );
+    const tableLines = text.split('\n');
+    if (blocks[0]?.kind === 'table') {
+      const headerCells = tableCells(tableLines[0]);
+      const isSeparator = tableCells(tableLines[1]).every(cell => /^:?-+:?$/.test(cell));
+      const dataRows = (isSeparator ? tableLines.slice(2) : tableLines.slice(1)).map(tableCells);
 
       return (
-        <div className={`structured-content ${className}`} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', ...style }}>
-          {beforeLines.length > 0 && (
-            <div>
-              {beforeLines.map((l, idx) => (
-                <div key={idx}><MathText text={l} /></div>
-              ))}
-            </div>
-          )}
+        <div className={`structured-content ${className}`} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', minWidth: 0, maxWidth: '100%', width: '100%', ...style }}>
 
-          <div style={{ overflowX: 'auto', margin: '0.6rem 0' }}>
+          <div style={{ overflowX: 'auto', minWidth: 0, maxWidth: '100%', width: '100%', margin: '0.6rem 0' }}>
             <table style={{
               width: '100%',
               borderCollapse: 'collapse',
@@ -74,7 +111,7 @@ export default function StructuredContent({ text, className = '', style = {} }: 
                       fontWeight: 700,
                       color: 'var(--primary-color, #0b5e4a)'
                     }}>
-                      <MathText text={cell} />
+                      {/^[A-Z][a-z]+(?:_[A-Za-z][A-Za-z0-9]*)+$/.test(cell) ? cell : <MathText text={cell} />}
                     </th>
                   ))}
                 </tr>
@@ -91,7 +128,7 @@ export default function StructuredContent({ text, className = '', style = {} }: 
                         padding: '9px 14px',
                         color: 'var(--text-color, #1e293b)'
                       }}>
-                        <MathText text={cell} />
+                        {/^[A-Z][a-z]+(?:_[A-Za-z][A-Za-z0-9]*)+$/.test(cell) ? cell : <MathText text={cell} />}
                       </td>
                     ))}
                   </tr>
@@ -100,13 +137,6 @@ export default function StructuredContent({ text, className = '', style = {} }: 
             </table>
           </div>
 
-          {afterLines.length > 0 && (
-            <div>
-              {afterLines.map((l, idx) => (
-                <div key={idx}><MathText text={l} /></div>
-              ))}
-            </div>
-          )}
         </div>
       );
     }

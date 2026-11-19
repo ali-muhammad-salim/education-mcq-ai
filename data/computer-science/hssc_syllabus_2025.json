@@ -1,0 +1,2118 @@
+{
+  "11": {
+    "units": [
+      {
+        "unitNumber": 1,
+        "name": "Computing Systems",
+        "subtopics": [
+          {
+            "subtopicNumber": "1.1",
+            "name": "1.1 Data Representation in a Digital Computer",
+            "slos": [
+              {
+                "code": "1.1.1",
+                "description": "differentiate between analog and digital signals;",
+                "cognitiveLevel": "U",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.1.2",
+                "description": "explain the binary data representation using binary pulses, i.e., 0/ low/ off and 1/ high/ on;",
+                "cognitiveLevel": "U",
+                "sourcePage": 10
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "1.2",
+            "name": "1.2 Logic Gates Remember, U = Understand, A = Apply and bey",
+            "slos": [
+              {
+                "code": "1.2.1",
+                "description": "define the following terms:\na. digital logic,\nb. logic gates and logic circuits,\nc. truth table;",
+                "cognitiveLevel": "R",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.2.2",
+                "description": "explain the following logic gates in terms of the number of inputs and outputs using truth tables:\na. AND,\nb. OR,\nc. NOT,\nd. NAND,\ne. NOR,\nf.  Exclusive OR (XOR),\ng. Exclusive NOR (XNOR);",
+                "cognitiveLevel": "U",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.2.3",
+                "description": "identify logic gates from the truth table;",
+                "cognitiveLevel": "U",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.2.4",
+                "description": "explain the uses of logic gates in digital devices;",
+                "cognitiveLevel": "U",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.2.5",
+                "description": "represent the logic circuits in the form of a truth table;",
+                "cognitiveLevel": "A",
+                "sourcePage": 10
+              },
+              {
+                "code": "1.2.6",
+                "description": "explain the following Boolean identities:\na.  Identity Law,\nb. Distributive Law,\nc.  Associative Law,\nd. Commutative Law,\ne.  Inverse (Complement) Law,\nf.  De Morgan’s Theorem,\ng. Absorption Law;",
+                "cognitiveLevel": "U",
+                "sourcePage": 11
+              },
+              {
+                "code": "1.2.7",
+                "description": "construct a logic circuit for a given real-life problem;",
+                "cognitiveLevel": "A",
+                "sourcePage": 11
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "1.3",
+            "name": "1.3 Karnaugh Map (K-Map)",
+            "slos": [
+              {
+                "code": "1.3.1",
+                "description": "simplify two-variable and three-variable Boolean functions using Karnaugh map;",
+                "cognitiveLevel": "A",
+                "sourcePage": 11
+              },
+              {
+                "code": "1.3.2",
+                "description": "convert the given algebraic expression into its Sum of Products (SOP) and Product of Sums (POS) forms;",
+                "cognitiveLevel": "A",
+                "sourcePage": 11
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "1.4",
+            "name": "1.4 Software Development",
+            "slos": [
+              {
+                "code": "1.4.1",
+                "description": "explain Software Development Life Cycle (SDLC) and its different phases;",
+                "cognitiveLevel": "U",
+                "sourcePage": 11
+              },
+              {
+                "code": "1.4.2",
+                "description": "compare the phases, advantages and disadvantages of the following software development models:\na. waterfall model,\nb. agile model;",
+                "cognitiveLevel": "U",
+                "sourcePage": 11
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "1.5",
+            "name": "1.5 Network Topology",
+            "slos": [
+              {
+                "code": "1.5.1",
+                "description": "define network topology;",
+                "cognitiveLevel": "R",
+                "sourcePage": 12
+              },
+              {
+                "code": "1.5.2",
+                "description": "explain the following network topologies with diagrams:\na. bus,\nb. ring,\nc. star,\nd. tree,\ne. mesh,\nf. hybrid;",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              },
+              {
+                "code": "1.5.3",
+                "description": "explain the advantages, disadvantages and applications of network topologies mentioned in SLO # 1.5.2;",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              },
+              {
+                "code": "1.5.4",
+                "description": "compare scalability and reliability of network topologies;",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "1.6",
+            "name": "1.6 Cloud Computing",
+            "slos": [
+              {
+                "code": "1.6.1",
+                "description": "explain cloud computing, its characteristics, and impact on modern IT infrastructure;",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              },
+              {
+                "code": "1.6.2",
+                "description": "explain the following cloud computing service models with examples:\na. Software as a Service (SaaS),\nb. Platform as a Service (PaaS),\nc. Infrastructure as a Service (IaaS);",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              },
+              {
+                "code": "1.6.3",
+                "description": "explain the following cloud computing types:\na. public cloud,\nb. private cloud,\nc. community cloud,\nd. hybrid cloud;",
+                "cognitiveLevel": "U",
+                "sourcePage": 12
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "1.7",
+            "name": "1.7 Understanding Cybersecurity Fundamentals",
+            "slos": [
+              {
+                "code": "1.7.1",
+                "description": "describe cybersecurity and its importance;",
+                "cognitiveLevel": "U",
+                "sourcePage": 13
+              },
+              {
+                "code": "1.7.2",
+                "description": "explain the following cybersecurity fundamentals:\na. confidentiality,\nb. integrity,\nc. availability;",
+                "cognitiveLevel": "U",
+                "sourcePage": 13
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "1.8",
+            "name": "1.8 Common Cybersecurity Threats",
+            "slos": [
+              {
+                "code": "1.8.1",
+                "description": "explain the following cybersecurity threats and their impact:\na. malware,\nb. phishing,\nc. pharming,\nd. Denial of Service (DoS),\ne. Distributed Denial of Service (DDoS),\nf. ransomware;",
+                "cognitiveLevel": "U",
+                "sourcePage": 13
+              },
+              {
+                "code": "1.8.2",
+                "description": "recommend effective measures to safeguard against cybersecurity threats to enhance digital security;",
+                "cognitiveLevel": "E",
+                "sourcePage": 13
+              },
+              {
+                "code": "1.8.3",
+                "description": "design a multi-layered security strategy for a given situation that integrates preventive, detective, and corrective measures to mitigate the risks associated with DoS, DDoS, and ransomware attacks;",
+                "cognitiveLevel": "C",
+                "sourcePage": 13
+              },
+              {
+                "code": "1.8.4",
+                "description": "create a cybersecurity awareness campaign highlighting common threats and effective prevention methods for your community;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 13
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "1.9",
+            "name": "1.9 = Formative Assessment, not to be assessed under Data Encryption",
+            "slos": [
+              {
+                "code": "1.9.1",
+                "description": "describe encryption and its importance;",
+                "cognitiveLevel": "U",
+                "sourcePage": 13
+              },
+              {
+                "code": "1.9.2",
+                "description": "relate the terms cryptography and encryption;",
+                "cognitiveLevel": "U",
+                "sourcePage": 13
+              },
+              {
+                "code": "1.9.3",
+                "description": "compare the following types of encryption techniques in terms of speed, key management, and use cases:\na. symmetric,\nb. asymmetric;",
+                "cognitiveLevel": "U",
+                "sourcePage": 13
+              },
+              {
+                "code": "1.9.4",
+                "description": "explain the advantages and disadvantages of symmetric and asymmetric encryption.",
+                "cognitiveLevel": "U",
+                "sourcePage": 14
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 2,
+        "name": "Computational Thinking and Algorithm",
+        "subtopics": [
+          {
+            "subtopicNumber": "2.1",
+            "name": "2.1 g Computational Thinking and Artefacts",
+            "slos": [
+              {
+                "code": "2.1.1",
+                "description": "define the term computational thinking;",
+                "cognitiveLevel": "R",
+                "sourcePage": 14
+              },
+              {
+                "code": "2.1.2",
+                "description": "describe different steps of computational thinking;",
+                "cognitiveLevel": "U",
+                "sourcePage": 14
+              },
+              {
+                "code": "2.1.3",
+                "description": "explain the following computational artefacts of software development process:\na. computational solution design,\nb. planning and development of computational artefacts,\nc. testing computational artefacts;",
+                "cognitiveLevel": "U",
+                "sourcePage": 14
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "2.2",
+            "name": "2.2 Algorithm",
+            "slos": [
+              {
+                "code": "2.2.1",
+                "description": "apply basic computational algorithms to perform the following operations in programming:\na. arithmetic, relational, and logical computations,\nb. conditional (selection) statements,\nc. iterative (loop-based) processes,\nd. sorting techniques (insertion sort, bubble sort),\ne. searching techniques (binary search, linear search).",
+                "cognitiveLevel": "A",
+                "sourcePage": 14
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 3,
+        "name": "Programming Fundamentals (Python)",
+        "subtopics": [
+          {
+            "subtopicNumber": "3.1",
+            "name": "3.1 Programming Basics",
+            "slos": [
+              {
+                "code": "3.1.1",
+                "description": "define program and programming language;",
+                "cognitiveLevel": "R",
+                "sourcePage": 15
+              },
+              {
+                "code": "3.1.2",
+                "description": "differentiate between program syntax and program semantics;",
+                "cognitiveLevel": "U",
+                "sourcePage": 15
+              },
+              {
+                "code": "3.1.3",
+                "description": "explain the following types of programming languages:\na. low-level languages: I. machine language, II. assembly language,\nb. high-level languages: I. procedural language, II. structured language, III. object-oriented language;",
+                "cognitiveLevel": "U",
+                "sourcePage": 15
+              },
+              {
+                "code": "3.1.4",
+                "description": "explain the functions of an/a assembler, compiler, and interpreter;",
+                "cognitiveLevel": "U",
+                "sourcePage": 15
+              },
+              {
+                "code": "3.1.5",
+                "description": "explain the Python language and its applications;",
+                "cognitiveLevel": "U",
+                "sourcePage": 15
+              },
+              {
+                "code": "3.1.6",
+                "description": "explain the Python Integrated Development Environment (IDE);",
+                "cognitiveLevel": "U",
+                "sourcePage": 15
+              },
+              {
+                "code": "3.1.7",
+                "description": "describe comments in Python programming;",
+                "cognitiveLevel": "U",
+                "sourcePage": 15
+              },
+              {
+                "code": "3.1.8",
+                "description": "write a Python program using single-line and multiple-line comments;",
+                "cognitiveLevel": "A",
+                "sourcePage": 15
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.2",
+            "name": "3.2 Turtle Graphics",
+            "slos": [
+              {
+                "code": "3.2.1",
+                "description": "define turtle graphics;",
+                "cognitiveLevel": "R",
+                "sourcePage": 16
+              },
+              {
+                "code": "3.2.2",
+                "description": "use turtle library in Python program;",
+                "cognitiveLevel": "A",
+                "sourcePage": 16
+              },
+              {
+                "code": "3.2.3",
+                "description": "draw different shapes using the following functions:\na. Movement: get screen( ), right( ) / rt( ), left( )/ lt( ), forward( )/ fd( ), backward( )/ bk( ),\nb. Screen Functions: clear( ), reset( ), stamp( ), clearstamp( ), bgcolor( ), title( ),\nc. Changing Turtle Attributes: shapesize( ), pensize( ), fillcolor( ), pencolor( ), color( ), shape( ), speed( ), begin_fill( )….end_fill(), penup( ), pendown( ),\nd. Preset Shapes: circle( ), dot( );",
+                "cognitiveLevel": "A",
+                "sourcePage": 16
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.3",
+            "name": "3.3 Libraries",
+            "slos": [
+              {
+                "code": "3.3.1",
+                "description": "describe the purpose of libraries;",
+                "cognitiveLevel": "U",
+                "sourcePage": 16
+              },
+              {
+                "code": "3.3.2",
+                "description": "write the syntax of installing a library in Python language;",
+                "cognitiveLevel": "A",
+                "sourcePage": 16
+              },
+              {
+                "code": "3.3.3",
+                "description": "write a Python program that imports the datetime module and uses the following arguments:\na. %A,\nb. %B,\nc. %C,\nd. %D,\ne. %H,\nf. %I,\ng. %S,\nh. %Y;",
+                "cognitiveLevel": "A",
+                "sourcePage": 16
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.4",
+            "name": "3.4 Constants and Variables in Python Programming",
+            "slos": [
+              {
+                "code": "3.4.1",
+                "description": "define the following basic data types in Python programming:\na. char,\nb. str,\nc. int,\nd. float,\ne. bool;",
+                "cognitiveLevel": "R",
+                "sourcePage": 17
+              },
+              {
+                "code": "3.4.2",
+                "description": "differentiate between variable and constant;",
+                "cognitiveLevel": "U",
+                "sourcePage": 17
+              },
+              {
+                "code": "3.4.3",
+                "description": "differentiate between local and global variables;",
+                "cognitiveLevel": "U",
+                "sourcePage": 17
+              },
+              {
+                "code": "3.4.4",
+                "description": "write valid variable names based on the variable naming rules;",
+                "cognitiveLevel": "A",
+                "sourcePage": 17
+              },
+              {
+                "code": "3.4.5",
+                "description": "write a Python program to\na. utilise different data types,\nb. demonstrate implicit and explicit type casting of variables;",
+                "cognitiveLevel": "A",
+                "sourcePage": 17
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.5",
+            "name": "3.5 Input Output Handling",
+            "slos": [
+              {
+                "code": "3.5.1",
+                "description": "describe the purpose of using eval( ) in Python;",
+                "cognitiveLevel": "U",
+                "sourcePage": 17
+              },
+              {
+                "code": "3.5.2",
+                "description": "write a Python program to use the eval( ) function;",
+                "cognitiveLevel": "A",
+                "sourcePage": 17
+              },
+              {
+                "code": "3.5.3",
+                "description": "write a program to display a message and the value of the variable using the print( ) statement;",
+                "cognitiveLevel": "A",
+                "sourcePage": 17
+              },
+              {
+                "code": "3.5.4",
+                "description": "write a program for taking input during the execution of a program using the input( ) statement;",
+                "cognitiveLevel": "A",
+                "sourcePage": 17
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.6",
+            "name": "3.6 Operators in Python Programming",
+            "slos": [
+              {
+                "code": "3.6.1",
+                "description": "differentiate between operator and operand;",
+                "cognitiveLevel": "U",
+                "sourcePage": 18
+              },
+              {
+                "code": "3.6.2",
+                "description": "describe the following types of operators:\na. assignment operator,\nb. membership operators,\nc. arithmetic operators,\nd. bitwise operators,\ne. comparison (relational) operators,\nf. logical operators;",
+                "cognitiveLevel": "U",
+                "sourcePage": 18
+              },
+              {
+                "code": "3.6.3",
+                "description": "write a Python program using the following operators;\na. arithmetic operators,\nb. bitwise operators,\nc. comparison (relational) operators,\nd. logical operators;",
+                "cognitiveLevel": "A",
+                "sourcePage": 18
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.7",
+            "name": "3.7 Selection Statements in Python Programming",
+            "slos": [
+              {
+                "code": "3.7.1",
+                "description": "describe if, if-else, and elif statements;",
+                "cognitiveLevel": "U",
+                "sourcePage": 18
+              },
+              {
+                "code": "3.7.2",
+                "description": "write a Python program using the following statements:\na. if,\nb. if-else,\nc. if-elif-else,\nd. nested if,\ne. pass;",
+                "cognitiveLevel": "A",
+                "sourcePage": 18
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.8",
+            "name": "3.8 Repetition (Loop) in Python Programming",
+            "slos": [
+              {
+                "code": "3.8.1",
+                "description": "describe loop and its types in Python programming;",
+                "cognitiveLevel": "U",
+                "sourcePage": 19
+              },
+              {
+                "code": "3.8.2",
+                "description": "describe the structure of for and while loop;",
+                "cognitiveLevel": "U",
+                "sourcePage": 19
+              },
+              {
+                "code": "3.8.3",
+                "description": "write a Python program using the following loops:\na. for,\nb. while,\nc. nested for;",
+                "cognitiveLevel": "A",
+                "sourcePage": 19
+              },
+              {
+                "code": "3.8.4",
+                "description": "describe the break, continue, and exit statements in Python;",
+                "cognitiveLevel": "U",
+                "sourcePage": 19
+              },
+              {
+                "code": "3.8.5",
+                "description": "write a Python program using the following statements:\na. break,\nb. continue,\nc. exit( ) function;",
+                "cognitiveLevel": "A",
+                "sourcePage": 19
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "3.9",
+            "name": "3.9 Debugging in Python",
+            "slos": [
+              {
+                "code": "3.9.1",
+                "description": "describe the importance of debugging;",
+                "cognitiveLevel": "U",
+                "sourcePage": 19
+              },
+              {
+                "code": "3.9.2",
+                "description": "explain different types of bugs (errors) in Python code;",
+                "cognitiveLevel": "U",
+                "sourcePage": 19
+              },
+              {
+                "code": "3.9.3",
+                "description": "explain the process of finding bugs using an Integrated Development Environment (IDE);",
+                "cognitiveLevel": "U",
+                "sourcePage": 19
+              },
+              {
+                "code": "3.9.4",
+                "description": "explain breakpoints to pause execution;",
+                "cognitiveLevel": "U",
+                "sourcePage": 19
+              },
+              {
+                "code": "3.9.5",
+                "description": "apply the process of debugging using the print statement and assert keyword in Python;",
+                "cognitiveLevel": "A",
+                "sourcePage": 19
+              },
+              {
+                "code": "3.9.6",
+                "description": "apply the process of identifying and resolving bugs using the Python debugger (pdb).",
+                "cognitiveLevel": "A",
+                "sourcePage": 19
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 4,
+        "name": "Data and Analysis",
+        "subtopics": [
+          {
+            "subtopicNumber": "4.1",
+            "name": "4.1 Statistical Modelling",
+            "slos": [
+              {
+                "code": "4.1.1",
+                "description": "define the following terms:\na. statistics,\nb. statistical modeling;",
+                "cognitiveLevel": "R",
+                "sourcePage": 20
+              },
+              {
+                "code": "4.1.2",
+                "description": "explain the following statistical modeling techniques (supervised and unsupervised):\na. regression,\nb. classification,\nc. k-means clustering;",
+                "cognitiveLevel": "U",
+                "sourcePage": 20
+              },
+              {
+                "code": "4.1.3",
+                "description": "analyse the process of developing a statistical model in the context of data analysis;",
+                "cognitiveLevel": "An",
+                "sourcePage": 20
+              },
+              {
+                "code": "4.1.4",
+                "description": "evaluate the effectiveness of statistical modeling in solving real-world problems in the fields of healthcare and finance;",
+                "cognitiveLevel": "E",
+                "sourcePage": 20
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "4.2",
+            "name": "4.2 Experimental Design in Data Science",
+            "slos": [
+              {
+                "code": "4.2.1",
+                "description": "define the following terms:\na. correlation,\nb. causation,\nc. population,\nd. parameters,\ne. random sample;",
+                "cognitiveLevel": "R",
+                "sourcePage": 20
+              },
+              {
+                "code": "4.2.2",
+                "description": "differentiate between observational studies and experimental studies in data science;",
+                "cognitiveLevel": "U",
+                "sourcePage": 20
+              },
+              {
+                "code": "4.2.3",
+                "description": "describe the principles of experimental design flow;",
+                "cognitiveLevel": "U",
+                "sourcePage": 20
+              },
+              {
+                "code": "4.2.4",
+                "description": "explain the steps involved in the experimental design flow;",
+                "cognitiveLevel": "U",
+                "sourcePage": 20
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "4.3",
+            "name": "4.3 Statistics and Data Visuals",
+            "slos": [
+              {
+                "code": "4.3.1",
+                "description": "explain the data collection methods and its types;",
+                "cognitiveLevel": "U",
+                "sourcePage": 20
+              },
+              {
+                "code": "4.3.2",
+                "description": "analyse the role of data science in addressing real-world problems, supported by practical examples.",
+                "cognitiveLevel": "An",
+                "sourcePage": 20
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 5,
+        "name": "Applications of Computer Science",
+        "subtopics": [
+          {
+            "subtopicNumber": "5.1",
+            "name": "5.1 Introduction to Internet of Things (IoT",
+            "slos": [
+              {
+                "code": "5.1.1",
+                "description": "describe Internet of Things (IoT) and its importance in connecting physical devices;",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              },
+              {
+                "code": "5.1.2",
+                "description": "explain the following components of an IoT system:\na. sensors,\nb. processors,\nc. connectivity,\nd. user interface;",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              },
+              {
+                "code": "5.1.3",
+                "description": "examine IoT’s role in improving operations and addressing real-world challenges in manufacturing, agriculture, and healthcare sectors;",
+                "cognitiveLevel": "An",
+                "sourcePage": 21
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "5.2",
+            "name": "5.2 Core Technologies Powering IoT",
+            "slos": [
+              {
+                "code": "5.2.1",
+                "description": "describe key technologies that enable Internet of Things (IoT);",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              },
+              {
+                "code": "5.2.2",
+                "description": "describe big data analytics (BDA) and its applications in different fields;",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              },
+              {
+                "code": "5.2.3",
+                "description": "describe communication protocols that facilitate data exchange between Internet of Things (IoT) devices;",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              },
+              {
+                "code": "5.2.4",
+                "description": "explain embedded systems and their application;",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              },
+              {
+                "code": "5.2.5",
+                "description": "explain Wireless Sensor Networks (WSN) and their applications in the Internet of Things (IoT);",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "5.3",
+            "name": "5.3 Blockchain and Blockchain Networks",
+            "slos": [
+              {
+                "code": "5.3.1",
+                "description": "define blockchain technology;",
+                "cognitiveLevel": "R",
+                "sourcePage": 21
+              },
+              {
+                "code": "5.3.2",
+                "description": "list the technologies that enable blockchain;",
+                "cognitiveLevel": "R",
+                "sourcePage": 21
+              },
+              {
+                "code": "5.3.3",
+                "description": "explain blockchain networks and the following types:\na. public blockchain network,\nb. private blockchain network,\nc. permissioned blockchain network,\nd. consortium blockchain network;",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              },
+              {
+                "code": "5.3.4",
+                "description": "explain the integration of blockchain and IoT;",
+                "cognitiveLevel": "U",
+                "sourcePage": 21
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "5.4",
+            "name": "5.4 Stakeholders in AI Systems",
+            "slos": [
+              {
+                "code": "5.4.1",
+                "description": "describe the stakeholders involved in an Artificial Intelligence (AI) system;",
+                "cognitiveLevel": "U",
+                "sourcePage": 22
+              },
+              {
+                "code": "5.4.2",
+                "description": "evaluate the benefits and challenges of Artificial Intelligence (AI) in healthcare, education, and industry.",
+                "cognitiveLevel": "E",
+                "sourcePage": 22
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 6,
+        "name": "Impacts of Computing",
+        "subtopics": [
+          {
+            "subtopicNumber": "6.1",
+            "name": "6.1 Information Sources",
+            "slos": [
+              {
+                "code": "6.1.1",
+                "description": "define the following types of information sources:\na. books,\nb. articles,\nc. websites;",
+                "cognitiveLevel": "R",
+                "sourcePage": 23
+              },
+              {
+                "code": "6.1.2",
+                "description": "explain reliable and unreliable sources of information;",
+                "cognitiveLevel": "U",
+                "sourcePage": 23
+              },
+              {
+                "code": "6.1.3",
+                "description": "explain the use of search engines and databases to find reliable information;",
+                "cognitiveLevel": "U",
+                "sourcePage": 23
+              },
+              {
+                "code": "6.1.4",
+                "description": "discuss the responsible and critical use of social media to access and share information;",
+                "cognitiveLevel": "E",
+                "sourcePage": 23
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "6.2",
+            "name": "6.2 Information Privacy and Security",
+            "slos": [
+              {
+                "code": "6.2.1",
+                "description": "define privacy and security;",
+                "cognitiveLevel": "R",
+                "sourcePage": 23
+              },
+              {
+                "code": "6.2.2",
+                "description": "describe the importance of protecting personal information online;",
+                "cognitiveLevel": "U",
+                "sourcePage": 23
+              },
+              {
+                "code": "6.2.3",
+                "description": "suggest strategies for safeguarding personal data while accessing information sources;",
+                "cognitiveLevel": "E",
+                "sourcePage": 23
+              },
+              {
+                "code": "6.2.4",
+                "description": "evaluate the impact of data breaches and the misuse of information on individuals, organisations, and society;",
+                "cognitiveLevel": "E",
+                "sourcePage": 23
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "6.3",
+            "name": "6.3 Ethical Use of Information",
+            "slos": [
+              {
+                "code": "6.3.1",
+                "description": "explain the ethical use of information and intellectual property;",
+                "cognitiveLevel": "U",
+                "sourcePage": 23
+              },
+              {
+                "code": "6.3.2",
+                "description": "explain the consequences of misinformation and unethical information practices;",
+                "cognitiveLevel": "U",
+                "sourcePage": 23
+              },
+              {
+                "code": "6.3.3",
+                "description": "discuss real-world cases that involve ethical dilemmas related to the use of information and their effects on individuals, organisations, and society;",
+                "cognitiveLevel": "E",
+                "sourcePage": 23
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "6.4",
+            "name": "6.4 Connectivity in Computing",
+            "slos": [
+              {
+                "code": "6.4.1",
+                "description": "define the term ‘connectivity’ in the context of computing;",
+                "cognitiveLevel": "R",
+                "sourcePage": 24
+              },
+              {
+                "code": "6.4.2",
+                "description": "describe the following components involved in achieving connectivity:\na. devices,\nb. networks,\nc. protocols,\nd. internet;",
+                "cognitiveLevel": "U",
+                "sourcePage": 24
+              },
+              {
+                "code": "6.4.3",
+                "description": "describe the following communication technologies enabled by computing:\na. social media platforms,\nb. email,\nc. instant messaging,\nd. video conferencing;",
+                "cognitiveLevel": "U",
+                "sourcePage": 24
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "6.5",
+            "name": "6.5 Environmental Impacts of Connectivity in Computing",
+            "slos": [
+              {
+                "code": "6.5.1",
+                "description": "explain the concept of green computing;",
+                "cognitiveLevel": "U",
+                "sourcePage": 24
+              },
+              {
+                "code": "6.5.2",
+                "description": "analyse the positive and negative environmental impacts of connectivity in computing across fields such as cloud computing and smart devices;",
+                "cognitiveLevel": "An",
+                "sourcePage": 24
+              },
+              {
+                "code": "6.5.3",
+                "description": "examine the environmental impact of data centres, considering factors such as energy consumption and e-waste;",
+                "cognitiveLevel": "An",
+                "sourcePage": 24
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "6.6",
+            "name": "6.6 Cultural Impacts of Connectivity",
+            "slos": [
+              {
+                "code": "6.6.1",
+                "description": "analyse the role of enhanced connectivity in facilitating global cultural exchange;",
+                "cognitiveLevel": "An",
+                "sourcePage": 24
+              },
+              {
+                "code": "6.6.2",
+                "description": "discuss the preservation or loss of local cultures in the digital age;",
+                "cognitiveLevel": "E",
+                "sourcePage": 24
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "6.7",
+            "name": "6.7 Human Impact of Connectivity",
+            "slos": [
+              {
+                "code": "6.7.1",
+                "description": "discuss the positive and negative impacts of digital connectivity on human behaviour and society, including work and employment.",
+                "cognitiveLevel": "E",
+                "sourcePage": 24
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 7,
+        "name": "Digital Literacy",
+        "subtopics": [
+          {
+            "subtopicNumber": "7.1",
+            "name": "7.1 Introduction to Digital Literacy",
+            "slos": [
+              {
+                "code": "7.1.1",
+                "description": "describe digital literacy and its importance;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              },
+              {
+                "code": "7.1.2",
+                "description": "explain the role of digital literacy in academic and everyday life;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "7.2",
+            "name": "7.2 Introduction to Advanced Search Techniques",
+            "slos": [
+              {
+                "code": "7.2.1",
+                "description": "describe advanced search techniques and their importance;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              },
+              {
+                "code": "7.2.2",
+                "description": "differentiate between basic and advanced searches;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "7.3",
+            "name": "7.3 Designing Data-Collection Approaches",
+            "slos": [
+              {
+                "code": "7.3.1",
+                "description": "describe the following data collection methods:\na. qualitative,\nb. quantitative;",
+                "cognitiveLevel": "U",
+                "sourcePage": 25
+              },
+              {
+                "code": "7.3.2",
+                "description": "discuss the use of prototypes and simulations in data collection, including their purpose and advantages;",
+                "cognitiveLevel": "E",
+                "sourcePage": 25
+              },
+              {
+                "code": "7.3.3",
+                "description": "design a data-collection plan using qualitative interviews by:\na. formulating research questions,\nb. developing interview guides and protocols;",
+                "cognitiveLevel": "C",
+                "sourcePage": 25
+              },
+              {
+                "code": "7.3.4",
+                "description": "create surveys for quantitative data collection by:\na. writing clear and unbiased survey questions,\nb. selecting appropriate survey platforms and tools.",
+                "cognitiveLevel": "C",
+                "sourcePage": 25
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 8,
+        "name": "Entrepreneurship in the Digital Age",
+        "subtopics": [
+          {
+            "subtopicNumber": "8.1",
+            "name": "8.1 Designing and Iterating User Centered Prototypes",
+            "slos": [
+              {
+                "code": "8.1.1",
+                "description": "apply basic design principles to develop a low-fidelity prototype that addresses a specific user problem;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 26
+              },
+              {
+                "code": "8.1.2",
+                "description": "illustrate the user journey and key features of the prototype using visual tools such as sketches or storyboards;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 26
+              },
+              {
+                "code": "8.1.3",
+                "description": "determine improvements in the prototype based on user testing and feedback;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 26
+              },
+              {
+                "code": "8.1.4",
+                "description": "analyse test results to identify whether the prototype meets user needs or validates a business assumption;",
+                "cognitiveLevel": "FA",
+                "sourcePage": 26
+              },
+              {
+                "code": "8.1.5",
+                "description": "evaluate the effectiveness of the final prototype in addressing user needs and suggest future improvements.",
+                "cognitiveLevel": "FA",
+                "sourcePage": 26
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "practicals": [
+      {
+        "number": 1,
+        "chapter": 3,
+        "activity": "Write a Python program to use single-line and multiple-line comments.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 2,
+        "chapter": 3,
+        "activity": "Write a Python program to use different data types.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 3,
+        "chapter": 3,
+        "activity": "Write a Python program to demonstrate the eval( ) function.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 4,
+        "chapter": 3,
+        "activity": "Write a Python program to display a message and the value of the variable using the print( ) statement.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 5,
+        "chapter": 3,
+        "activity": "Write a Python program for taking input during the execution of a program using the input( ) statement.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 6,
+        "chapter": 3,
+        "activity": "Write a Python program using arithmetic operators.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 7,
+        "chapter": 3,
+        "activity": "Write a Python program using bitwise operators.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 8,
+        "chapter": 3,
+        "activity": "Write a Python program using comparison (relational) operators.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 9,
+        "chapter": 3,
+        "activity": "Write a Python program using logical operators.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 10,
+        "chapter": 3,
+        "activity": "Write a Python program for each if, if-else, and if-elif-else statement.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 11,
+        "chapter": 3,
+        "activity": "Write a Python program using a nested if statement.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 12,
+        "chapter": 3,
+        "activity": "Write a Python program using the pass statement.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 13,
+        "chapter": 3,
+        "activity": "Write a Python program that uses a for loop.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 14,
+        "chapter": 3,
+        "activity": "Write a Python program that uses a while loop.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 15,
+        "chapter": 3,
+        "activity": "Write a Python program that uses break statement.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 16,
+        "chapter": 3,
+        "activity": "Write a Python program that uses the continue statement.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 17,
+        "chapter": 3,
+        "activity": "Write a Python program that uses exit( ) function.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 18,
+        "chapter": 3,
+        "activity": "Write a Python program using a nested for loop.",
+        "apparatus": "Computer · Python IDE"
+      }
+    ],
+    "assessmentPage": 47,
+    "practicalPage": 40
+  },
+  "12": {
+    "units": [
+      {
+        "unitNumber": 9,
+        "name": "Computing Systems",
+        "subtopics": [
+          {
+            "subtopicNumber": "9.1",
+            "name": "9.1 Usability, Security and Accessibility of Devices",
+            "slos": [
+              {
+                "code": "9.1.1",
+                "description": "describe the use of digital device in terms of ease of use and efficiency;",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              },
+              {
+                "code": "9.1.2",
+                "description": "describe the security features of devices and best practices for data protection;",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              },
+              {
+                "code": "9.1.3",
+                "description": "explain the ways in which accessibility features in devices support users with disabilities;",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "9.2",
+            "name": "9.2 Human Interaction with Computer Systems in Terms of Usability",
+            "slos": [
+              {
+                "code": "9.2.1",
+                "description": "describe Human-Computer Interaction (HCI) and its importance;",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              },
+              {
+                "code": "9.2.2",
+                "description": "analyse the influence of Human-Computer Interaction (HCI) on user efficiency and task effectiveness;",
+                "cognitiveLevel": "An",
+                "sourcePage": 27
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "9.3",
+            "name": "9.3 Design Consideration mber, U = Understand, A = Apply and beyo",
+            "slos": [
+              {
+                "code": "9.3.1",
+                "description": "describe HCI design considerations and their effects on usability and system performance;",
+                "cognitiveLevel": "U",
+                "sourcePage": 27
+              },
+              {
+                "code": "9.3.2",
+                "description": "analyse the trade-offs involved in designing HCI in the context of:\na. security,\nb. user-friendliness,\nc. cost-effectiveness.",
+                "cognitiveLevel": "An",
+                "sourcePage": 27
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 10,
+        "name": "Computational Thinking and Algorithm",
+        "subtopics": [
+          {
+            "subtopicNumber": "10.1",
+            "name": "10.1 Complex Data Structure",
+            "slos": [
+              {
+                "code": "10.1.1",
+                "description": "define data structure;",
+                "cognitiveLevel": "R",
+                "sourcePage": 28
+              },
+              {
+                "code": "10.1.2",
+                "description": "describe the following types of data structures:\na. list,\nb. array,\nc. tree,\nd. stack,\ne. queue;",
+                "cognitiveLevel": "U",
+                "sourcePage": 28
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.2",
+            "name": "10.2 Operations on Data Structures",
+            "slos": [
+              {
+                "code": "10.2.1",
+                "description": "describe the traversal operation on an array;",
+                "cognitiveLevel": "U",
+                "sourcePage": 28
+              },
+              {
+                "code": "10.2.2",
+                "description": "describe the enqueue and dequeue operations in a queue;",
+                "cognitiveLevel": "U",
+                "sourcePage": 28
+              },
+              {
+                "code": "10.2.3",
+                "description": "explain the push and pop operations in a stack;",
+                "cognitiveLevel": "U",
+                "sourcePage": 28
+              },
+              {
+                "code": "10.2.4",
+                "description": "explain the following operations on a tree:\na. traversing, I. in order, II. pre-order, III. post order,\nb. binary search;",
+                "cognitiveLevel": "U",
+                "sourcePage": 28
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "10.3",
+            "name": "10.3 Applications of Data Structures",
+            "slos": [
+              {
+                "code": "10.3.1",
+                "description": "explain the application of tree data structures;",
+                "cognitiveLevel": "U",
+                "sourcePage": 28
+              },
+              {
+                "code": "10.3.2",
+                "description": "explain the application of the binary search algorithms;",
+                "cognitiveLevel": "U",
+                "sourcePage": 28
+              },
+              {
+                "code": "10.3.3",
+                "description": "apply tree data structures to represent hierarchical data models such as file systems or organisational charts;",
+                "cognitiveLevel": "A",
+                "sourcePage": 28
+              },
+              {
+                "code": "10.3.4",
+                "description": "use the binary search algorithm to locate elements in sorted data efficiently;",
+                "cognitiveLevel": "A",
+                "sourcePage": 28
+              },
+              {
+                "code": "10.3.5",
+                "description": "illustrate the use of tree traversal techniques in data retrieval and manipulation tasks.",
+                "cognitiveLevel": "A",
+                "sourcePage": 28
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 11,
+        "name": "Programming Fundamentals (Python",
+        "subtopics": [
+          {
+            "subtopicNumber": "11.1",
+            "name": "11.1 Introduction to Function in Python Programming",
+            "slos": [
+              {
+                "code": "11.1.1",
+                "description": "describe predefined and user-defined functions;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "11.1.2",
+                "description": "describe the advantages of user-defined functions;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "11.1.3",
+                "description": "describe the signature of the functions, i.e., function name, arguments, and return value;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "11.1.4",
+                "description": "explain the process of creating a user-defined function, i.e., function declaration, function definition, and function call;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "11.1.5",
+                "description": "differentiate among the following variable types used in functions:\na. local,\nb. global;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "11.1.6",
+                "description": "write a program involving a user-defined function;",
+                "cognitiveLevel": "A",
+                "sourcePage": 29
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.2",
+            "name": "11.2 Passing Arguments and Returning Values",
+            "slos": [
+              {
+                "code": "11.2.1",
+                "description": "define default argument;",
+                "cognitiveLevel": "R",
+                "sourcePage": 29
+              },
+              {
+                "code": "11.2.2",
+                "description": "describe the purpose of the return statement;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "11.2.3",
+                "description": "write a program that demonstrates the return statement;",
+                "cognitiveLevel": "A",
+                "sourcePage": 29
+              },
+              {
+                "code": "11.2.4",
+                "description": "write a program to invoke a user-defined function and pass arguments by constant, value, and reference;",
+                "cognitiveLevel": "A",
+                "sourcePage": 29
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.3",
+            "name": "11.3 Classes and Objects in Object- Oriented Programming (OOP)",
+            "slos": [
+              {
+                "code": "11.3.1",
+                "description": "describe Object-Oriented Programming (OOP) and functional programming;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "11.3.2",
+                "description": "compare the advantages and disadvantages of Object-Oriented Programming (OOP) and functional programming;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "11.3.3",
+                "description": "explain class and object in terms of OOP;",
+                "cognitiveLevel": "U",
+                "sourcePage": 29
+              },
+              {
+                "code": "11.3.4",
+                "description": "write a Python program to\na. declare a class with data members and member functions defined within its body,\nb. create objects of the class in the main() function and call its member functions using those objects;",
+                "cognitiveLevel": "A",
+                "sourcePage": 29
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.4",
+            "name": "11.4 Access Modifiers (Public, Private and Protected )",
+            "slos": [
+              {
+                "code": "11.4.1",
+                "description": "differentiate between private and public access specifiers in Object-Oriented Programming (OOP);",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "11.4.2",
+                "description": "write a Python program that demonstrates private access to class members using name mangling;",
+                "cognitiveLevel": "A",
+                "sourcePage": 30
+              },
+              {
+                "code": "11.4.3",
+                "description": "write a Python program that demonstrates public access to class members;",
+                "cognitiveLevel": "A",
+                "sourcePage": 30
+              },
+              {
+                "code": "11.4.4",
+                "description": "write a Python program that defines a class with both public and private members and demonstrates their usage;",
+                "cognitiveLevel": "A",
+                "sourcePage": 30
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.5",
+            "name": "11.5 Pillars of OOP (Inheritance, Encapsulation, Abstraction and Polymorphism)",
+            "slos": [
+              {
+                "code": "11.5.1",
+                "description": "describe inheritance and its access specifiers in Python programming;",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "11.5.2",
+                "description": "explain the types of inheritance in Python programming using different classes;",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "11.5.3",
+                "description": "explain encapsulation in Python programming;",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "11.5.4",
+                "description": "explain polymorphism in Python programming;",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "11.5.5",
+                "description": "explain the function of constructors and destructors in Object- Oriented Programming (OOP);",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "11.5.6",
+                "description": "differentiate among the types of constructors, i.e., default constructor, user-defined constructor, and constructor overloading;",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "11.5.7",
+                "description": "differentiate between overloading and overriding in OOP;",
+                "cognitiveLevel": "U",
+                "sourcePage": 30
+              },
+              {
+                "code": "11.5.8",
+                "description": "write a program of inheritance using the base class and the derived class;",
+                "cognitiveLevel": "A",
+                "sourcePage": 30
+              },
+              {
+                "code": "11.5.9",
+                "description": "write a program of inheritance for three access specifiers;",
+                "cognitiveLevel": "A",
+                "sourcePage": 30
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.6",
+            "name": "11.6 Working with List",
+            "slos": [
+              {
+                "code": "11.6.1",
+                "description": "explain the concept of a list in Python programming including its name, size, index number, and arrangement of elements in the memory;",
+                "cognitiveLevel": "U",
+                "sourcePage": 31
+              },
+              {
+                "code": "11.6.2",
+                "description": "explain the purpose of storing elements in an ordered list;",
+                "cognitiveLevel": "U",
+                "sourcePage": 31
+              },
+              {
+                "code": "11.6.3",
+                "description": "write a Python program to use a one-dimensional list with different sizes and data types;",
+                "cognitiveLevel": "A",
+                "sourcePage": 31
+              },
+              {
+                "code": "11.6.4",
+                "description": "write a Python program to create, add, modify, and remove items in a list;",
+                "cognitiveLevel": "A",
+                "sourcePage": 31
+              },
+              {
+                "code": "11.6.5",
+                "description": "write a Python program that stores numeric values in a one- dimensional list using a for loop and find the highest, lowest, average, and search for a value;",
+                "cognitiveLevel": "A",
+                "sourcePage": 31
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.7",
+            "name": "11.7 Working with Dictionaries",
+            "slos": [
+              {
+                "code": "11.7.1",
+                "description": "describe dictionary and its uses in Python programming;",
+                "cognitiveLevel": "U",
+                "sourcePage": 31
+              },
+              {
+                "code": "11.7.2",
+                "description": "write a Python program to construct and retrieve values from a dictionary in Python programming;",
+                "cognitiveLevel": "A",
+                "sourcePage": 31
+              },
+              {
+                "code": "11.7.3",
+                "description": "write a Python program to find a value in a dictionary using the key value;",
+                "cognitiveLevel": "A",
+                "sourcePage": 31
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.8",
+            "name": "11.8 File Handling in Python Programming",
+            "slos": [
+              {
+                "code": "11.8.1",
+                "description": "describe the importance of disk I/O;",
+                "cognitiveLevel": "U",
+                "sourcePage": 31
+              },
+              {
+                "code": "11.8.2",
+                "description": "explain file handling methods and the following file operations in Python programming:\na. create,\nb. read,\nc. write,\nd. append;",
+                "cognitiveLevel": "U",
+                "sourcePage": 31
+              },
+              {
+                "code": "11.8.3",
+                "description": "write a Python program that performs the following file operations:\na. create and write data to a file,\nb. read from and append data to the file,\nc. write new data and then read it from the file;",
+                "cognitiveLevel": "A",
+                "sourcePage": 31
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.9",
+            "name": "11.9 Introduction to Database (MS SQL)",
+            "slos": [
+              {
+                "code": "11.9.1",
+                "description": "describe database and its importance;",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              },
+              {
+                "code": "11.9.2",
+                "description": "differentiate between Database Management System (DBMS) and Relational Database Management System (RDBMS);",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              },
+              {
+                "code": "11.9.3",
+                "description": "describe the MS SQL database;",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              },
+              {
+                "code": "11.9.4",
+                "description": "describe the following keys:\na. primary key,\nb. foreign key,\nc. candidate key,\nd. alternate key\ne. secondary key;",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              },
+              {
+                "code": "11.9.5",
+                "description": "construct a database and tables using MS SQL;",
+                "cognitiveLevel": "A",
+                "sourcePage": 32
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.10",
+            "name": "11.10 Data Normalisation",
+            "slos": [
+              {
+                "code": "11.10.1",
+                "description": "describe data normalisation and its importance in a database;",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              },
+              {
+                "code": "11.10.2",
+                "description": "explain 1NF, 2NF and 3NF forms of data normalisation;",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.11",
+            "name": "11.11 Structure Query Language (SQL)",
+            "slos": [
+              {
+                "code": "11.11.1",
+                "description": "describe the Structured Query Language (SQL) and its importance;",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              },
+              {
+                "code": "11.11.2",
+                "description": "explain the following types of SQL statements:\na. Data Manipulation Language (DML),\nb. Data Definition Language (DDL),\nc. Data Control Language (DCL),\nd. Transaction Control Language (TCL),\ne. Data Query Language (DQL);",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              },
+              {
+                "code": "11.11.3",
+                "description": "explain data manipulation language (DML) statements ;",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              },
+              {
+                "code": "11.11.4",
+                "description": "apply SELECT statement with clauses:\na. WHERE,\nb. Order by;",
+                "cognitiveLevel": "A",
+                "sourcePage": 32
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "11.12",
+            "name": "11.12 Connecting Database with Python",
+            "slos": [
+              {
+                "code": "11.12.1",
+                "description": "explain the process of connecting a database with Python;",
+                "cognitiveLevel": "U",
+                "sourcePage": 32
+              },
+              {
+                "code": "11.12.2",
+                "description": "write a program to connect a database with Python.",
+                "cognitiveLevel": "A",
+                "sourcePage": 32
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 12,
+        "name": "Data and Analysis",
+        "subtopics": [
+          {
+            "subtopicNumber": "12.1",
+            "name": "12.1 Introduction to Machine Learning (ML)",
+            "slos": [
+              {
+                "code": "12.1.1",
+                "description": "define Machine Learning (ML);",
+                "cognitiveLevel": "R",
+                "sourcePage": 33
+              },
+              {
+                "code": "12.1.2",
+                "description": "differentiate between Machine Learning (ML) and rule-based algorithm;",
+                "cognitiveLevel": "U",
+                "sourcePage": 33
+              },
+              {
+                "code": "12.1.3",
+                "description": "explain the following basics of Machine Learning (ML) model building:\na. feature engineering,\nb. train test split,\nc. model assessment;",
+                "cognitiveLevel": "U",
+                "sourcePage": 33
+              },
+              {
+                "code": "12.1.4",
+                "description": "explain the following Machine Learning (ML) algorithms:\na. regression,\nb. clustering,\nc. classification;",
+                "cognitiveLevel": "U",
+                "sourcePage": 33
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "12.2",
+            "name": "12.2 Hypothesis and Hypothesis Testing",
+            "slos": [
+              {
+                "code": "12.2.1",
+                "description": "describe hypothesis and its role in statistical analysis;",
+                "cognitiveLevel": "U",
+                "sourcePage": 33
+              },
+              {
+                "code": "12.2.2",
+                "description": "describe the null hypothesis and the alternative hypothesis;",
+                "cognitiveLevel": "U",
+                "sourcePage": 33
+              },
+              {
+                "code": "12.2.3",
+                "description": "explain P value and significance testing;",
+                "cognitiveLevel": "U",
+                "sourcePage": 33
+              },
+              {
+                "code": "12.2.4",
+                "description": "explain the following tests:\na. f-test,\nb. chi-square test,\nc. ANOVA;",
+                "cognitiveLevel": "U",
+                "sourcePage": 33
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "12.3",
+            "name": "12.3 Key Model Performance Metrics",
+            "slos": [
+              {
+                "code": "12.3.1",
+                "description": "explain the following performance evaluation techniques;\na. accuracy,\nb. precision,\nc. recall,\nd. f1 score,\ne. rand index,\nf. ROC (Receiver Operating Characteristic),\ng. RMSE (Root Mean Square Error).",
+                "cognitiveLevel": "U",
+                "sourcePage": 33
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 13,
+        "name": "Applications of Computer Science",
+        "subtopics": [
+          {
+            "subtopicNumber": "13.1",
+            "name": "13.1 Applications of IoT (Internet of Things), Cloud Computing and Blockchain in Pakistan",
+            "slos": [
+              {
+                "code": "13.1.1",
+                "description": "describe the following key applications of IoT in Pakistan:\na. smart homes,\nb. agriculture,\nc. smart cities,\nd. healthcare monitoring systems;",
+                "cognitiveLevel": "U",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.1.2",
+                "description": "explain the importance of cloud computing in Pakistan for data storage;",
+                "cognitiveLevel": "U",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.1.3",
+                "description": "evaluate the benefits and challenges of cloud computing for data management in Pakistan;",
+                "cognitiveLevel": "E",
+                "sourcePage": 34
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "13.2",
+            "name": "13.2 Deep Learning and its Application",
+            "slos": [
+              {
+                "code": "13.2.1",
+                "description": "explain the relationship between deep learning networks and neural networks;",
+                "cognitiveLevel": "U",
+                "sourcePage": 34
+              },
+              {
+                "code": "13.2.2",
+                "description": "analyse the applications of neural networks, including deep learning models, in fields such as healthcare, finance, and autonomous vehicles.",
+                "cognitiveLevel": "An",
+                "sourcePage": 34
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 14,
+        "name": "Impacts of Computing",
+        "subtopics": [
+          {
+            "subtopicNumber": "14.1",
+            "name": "14.1 Introduction to Privacy and Security",
+            "slos": [
+              {
+                "code": "14.1.1",
+                "description": "define the terms, privacy and security;",
+                "cognitiveLevel": "R",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.1.2",
+                "description": "describe the following common types of cyberattacks:\na. Denial of Service (DoS) and Distributed Denial of Service (DDoS) attack,\nb. ransomware,\nc. spyware,\nd. viruses,\ne. phishing,\nf. Domain Name System (DNS) spoofing,\ng. waterhole attack,\nh. fake Wireless Access Point (WAP),\ni. eavesdropping;",
+                "cognitiveLevel": "U",
+                "sourcePage": 35
+              },
+              {
+                "code": "14.1.3",
+                "description": "explain the following basic security methods:\na. strong passwords,\nb. Two-Factor Authentication (2FA),\nc. antivirus and anti-malware software,\nd. checking logs,\ne. firewall,\nf. Intrusion Detection System (IDS);\ng. encryption;",
+                "cognitiveLevel": "U",
+                "sourcePage": 35
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "14.2",
+            "name": "14.2 Security Protocols",
+            "slos": [
+              {
+                "code": "14.2.1",
+                "description": "explain the following network security protocols:\na. Secure Socket Layer (SSL)\nb. Transport Layer Security (TLS),\nc. Internet Protocol Security (IPsec),\nd. Secure Shell (SSH),\ne. Hypertext Transfer Protocol (HTTP),\nf. Hypertext Transfer Protocol Secure (HTTPS),\ng. Wireless Protected Access (WPA/ WPA2/ WPA3),\nh. File Transfer Protocol Secure (FTPS),\ni. Simple Network Management Protocol (SNMP);",
+                "cognitiveLevel": "U",
+                "sourcePage": 36
+              },
+              {
+                "code": "14.2.2",
+                "description": "differentiate between HTTP and HTTPS;",
+                "cognitiveLevel": "U",
+                "sourcePage": 36
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "14.3",
+            "name": "14.3 Cryptography",
+            "slos": [
+              {
+                "code": "14.3.1",
+                "description": "define cryptography;",
+                "cognitiveLevel": "R",
+                "sourcePage": 36
+              },
+              {
+                "code": "14.3.2",
+                "description": "differentiate between cybersecurity and cryptography;",
+                "cognitiveLevel": "U",
+                "sourcePage": 36
+              },
+              {
+                "code": "14.3.3",
+                "description": "explain the following different types of ciphers:\na. plain,\nb. ceaser,\nc. shift,\nd. substitution,\ne. transposition,\nf. stream cipher,\ng. block cipher.",
+                "cognitiveLevel": "U",
+                "sourcePage": 36
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 15,
+        "name": "Digital Literacy",
+        "subtopics": [
+          {
+            "subtopicNumber": "15.1",
+            "name": "15.1 Understanding Advance Searches an Digital Tools in Research",
+            "slos": [
+              {
+                "code": "15.1.1",
+                "description": "define research questions/ problems;",
+                "cognitiveLevel": "R",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.1.2",
+                "description": "describe a case study in research;",
+                "cognitiveLevel": "U",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.1.3",
+                "description": "analyse the effectiveness of digital tools in communicating research results and conclusions;",
+                "cognitiveLevel": "An",
+                "sourcePage": 37
+              },
+              {
+                "code": "15.1.4",
+                "description": "evaluate the effectiveness of advanced search techniques in locating information on a research topic;",
+                "cognitiveLevel": "E",
+                "sourcePage": 37
+              }
+            ]
+          },
+          {
+            "subtopicNumber": "15.2",
+            "name": "15.2 Formative Assessment, not to be assessed under Plan, Execute, and Communicate Research",
+            "slos": [
+              {
+                "code": "15.2.1",
+                "description": "present the data using appropriate digital tools.",
+                "cognitiveLevel": "FA",
+                "sourcePage": 37
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitNumber": 16,
+        "name": "Entrepreneurship in the Digital Age",
+        "subtopics": [
+          {
+            "subtopicNumber": "16.1",
+            "name": "16.1 Understanding Minimum Viable Product (MVP) and Business Ideas",
+            "slos": [
+              {
+                "code": "16.1.1",
+                "description": "define Minimum Viable Product (MVP);",
+                "cognitiveLevel": "R",
+                "sourcePage": 38
+              },
+              {
+                "code": "16.1.2",
+                "description": "explain the key characteristics of a successful MVP;",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              },
+              {
+                "code": "16.1.3",
+                "description": "differentiate between MVP and prototype;",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              },
+              {
+                "code": "16.1.4",
+                "description": "explain the riskiest assumption (Business Model);",
+                "cognitiveLevel": "U",
+                "sourcePage": 38
+              },
+              {
+                "code": "16.1.5",
+                "description": "apply the principles of MVP development to design a simple prototype for a specific user need;",
+                "cognitiveLevel": "A",
+                "sourcePage": 38
+              },
+              {
+                "code": "16.1.6",
+                "description": "analyse the process of designing a test using an MVP;",
+                "cognitiveLevel": "An",
+                "sourcePage": 38
+              },
+              {
+                "code": "16.1.7",
+                "description": "analyse case studies of successful businesses that created their MVPs.",
+                "cognitiveLevel": "An",
+                "sourcePage": 38
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "practicals": [
+      {
+        "number": 1,
+        "chapter": 11,
+        "activity": "Write a Python program involving a user-defined function.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 2,
+        "chapter": 11,
+        "activity": "Write a Python program to invoke a user-defined function and pass arguments by constant, value, and reference.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 3,
+        "chapter": 11,
+        "activity": "Write a Python program to demonstrate the return statement.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 4,
+        "chapter": 11,
+        "activity": "Write a Python program that defines a class with data members and member functions. In the main( ) function, create objects of the class and use them to call its member functions.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 5,
+        "chapter": 11,
+        "activity": "Write a Python program in which class members are accessible wherever the object is visible (public access specifier).",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 6,
+        "chapter": 11,
+        "activity": "Write the basic syntax of inheritance using the base class and the derived class.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 7,
+        "chapter": 11,
+        "activity": "Write a Python program to create, add, modify, and remove items in a list.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 8,
+        "chapter": 11,
+        "activity": "Write a Python program that stores numeric values in a one-dimensional list using a for loop and find the highest, lowest, average, and search for a value.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 9,
+        "chapter": 11,
+        "activity": "Write a Python program to find a value in a list.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 10,
+        "chapter": 11,
+        "activity": "Write a Python program to construct and retrieve values from a dictionary.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 11,
+        "chapter": 11,
+        "activity": "Write a Python program to find a value in a dictionary using the key value.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 12,
+        "chapter": 11,
+        "activity": "Write a Python program that creates and writes data to a file.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 13,
+        "chapter": 11,
+        "activity": "Write a Python program that reads and appends data to the file .",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 14,
+        "chapter": 11,
+        "activity": "Write a Python program that writes and reads data to the file program involving user defined function to calculate average of numbers.",
+        "apparatus": "Computer · Python IDE"
+      },
+      {
+        "number": 15,
+        "chapter": 11,
+        "activity": "Construct a database and tables using MS SQL .",
+        "apparatus": "Computer · MS SQL"
+      },
+      {
+        "number": 16,
+        "chapter": 11,
+        "activity": "Apply SELECT statement with clauses: a. WHERE,\nb. Order by.",
+        "apparatus": "Computer · MS SQL"
+      }
+    ],
+    "assessmentPage": 48,
+    "practicalPage": 42
+  }
+}

@@ -1,0 +1,1154 @@
+{
+  "papers": {
+    "CS-XI-2025-P1": [
+      {
+        "number": 1,
+        "page": 2,
+        "marks": 1,
+        "stem": "To handle the massive amounts of data and powering essential applications, the type of \ncomputer that can be used in large business organisations is",
+        "choices": {
+          "A": "minicomputer.",
+          "B": "supercomputer.",
+          "C": "microcomputer.",
+          "D": "mainframe computer."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=2",
+        "diagram": null
+      },
+      {
+        "number": 2,
+        "page": 2,
+        "marks": 1,
+        "stem": "There are four stages in data processing cycle and in each stage a number of tasks are \nperformed. \n \nTWO tasks that are performed during processing stage are",
+        "choices": {
+          "A": "data capture and presenting data to user.",
+          "B": "executing instructions and presenting data to user.",
+          "C": "data capture and transform raw data into information.",
+          "D": "executing instructions and transform raw data into information."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=2",
+        "diagram": null
+      },
+      {
+        "number": 3,
+        "page": 2,
+        "marks": 1,
+        "stem": "The PRIMARY purpose of an operating system (OS) is to",
+        "choices": {
+          "A": "manage hardware resources.",
+          "B": "run applications exclusively.",
+          "C": "connect to the internet.",
+          "D": "provide security only."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=2",
+        "diagram": null
+      },
+      {
+        "number": 4,
+        "page": 2,
+        "marks": 1,
+        "stem": "The type of software that is typically available for free but may have limitations on features/ \ntime of use is a/ an",
+        "choices": {
+          "A": "open-source software.",
+          "B": "licensed software.",
+          "C": "shareware.",
+          "D": "freeware."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=2",
+        "diagram": null
+      },
+      {
+        "number": 5,
+        "page": 2,
+        "marks": 1,
+        "stem": "The MAIN purpose of the utility software is to",
+        "choices": {
+          "A": "provide a platform for running applications and managing system resources.",
+          "B": "perform routine tasks that optimise the performance of a computer system.",
+          "C": "enhance the graphics and user interface of an operating system.",
+          "D": "compile and execute high-level programming languages."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=2",
+        "diagram": null
+      },
+      {
+        "number": 6,
+        "page": 2,
+        "marks": 1,
+        "stem": "The kind of application software that is made especially for data analysis and mathematical \ncomputations is",
+        "choices": {
+          "A": "word processor.",
+          "B": "web browser.",
+          "C": "spreadsheet.",
+          "D": "editor."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=2",
+        "diagram": null
+      },
+      {
+        "number": 7,
+        "page": 3,
+        "marks": 1,
+        "stem": "Which of the following pointing devices is BEST suited for precise drawing and design work \non a computer screen?",
+        "choices": {
+          "A": "Joystick",
+          "B": "Trackball",
+          "C": "Touchpad",
+          "D": "Graphics tablet"
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=3",
+        "diagram": null
+      },
+      {
+        "number": 8,
+        "page": 3,
+        "marks": 1,
+        "stem": "In which scenario would you use a touch screen with capacitive technology when using a \ndevice?",
+        "choices": {
+          "A": "Where precise input is required using a stylus pen.",
+          "B": "In medical equipment that require pressure-based input.",
+          "C": "Where electrical conductance of the human skin is required.",
+          "D": "In a bright outdoor environment that requires high visibility."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=3",
+        "diagram": null
+      },
+      {
+        "number": 9,
+        "page": 3,
+        "marks": 1,
+        "stem": "The device that is commonly used in automated teller machine (ATM)s for reading bank card \ninformation is",
+        "choices": {
+          "A": "barcode reader.",
+          "B": "optical mark reader (OMR).",
+          "C": "magnetic card reader (MCR).",
+          "D": "quick response (QR) code reader."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=3",
+        "diagram": null
+      },
+      {
+        "number": 10,
+        "page": 3,
+        "marks": 1,
+        "stem": "The data capture device that is typically used for automated cheque processing in banks is",
+        "choices": {
+          "A": "magnetic ink character reader (MICR).",
+          "B": "quick response (QR) code reader.",
+          "C": "optical character reader (OCR).",
+          "D": "barcode reader."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=3",
+        "diagram": null
+      },
+      {
+        "number": 11,
+        "page": 3,
+        "marks": 1,
+        "stem": "If one character occupies 8 bits in a computer memory, then the number of bytes required to \nstore the word ADD-ON will be",
+        "choices": {
+          "A": "5 bytes.",
+          "B": "6 bytes.",
+          "C": "40 bytes.",
+          "D": "48 bytes."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=3",
+        "diagram": null
+      },
+      {
+        "number": 12,
+        "page": 3,
+        "marks": 1,
+        "stem": "How many gibibytes (GiB) are in 2 tebibyte (TiB)?",
+        "choices": {
+          "A": "2048 GiB",
+          "B": "2048 MiB",
+          "C": "1024 MiB",
+          "D": "1024 GiB"
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=3",
+        "diagram": null
+      },
+      {
+        "number": 13,
+        "page": 3,
+        "marks": 1,
+        "stem": "The statement that describes the read only memory (ROM) is that it is used",
+        "choices": {
+          "A": "for temporary storage of data.",
+          "B": "to store firmware and is non-volatile.",
+          "C": "to modify existing data stored in ROM.",
+          "D": "to add new or delete previous data stored in ROM."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=3",
+        "diagram": null
+      },
+      {
+        "number": 14,
+        "page": 4,
+        "marks": 1,
+        "stem": "The PRIMARY function of the cache memory in a processor is to",
+        "choices": {
+          "A": "store frequently used data.",
+          "B": "store user files permanently.",
+          "C": "store the operating system (OS).",
+          "D": "provide additional storage space."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=4",
+        "diagram": null
+      },
+      {
+        "number": 15,
+        "page": 4,
+        "marks": 1,
+        "stem": "Which of the following characteristics is TRUE about Dynamic Random Access Memory \n(DRAM)?",
+        "choices": {
+          "A": "It does not require refreshing.",
+          "B": "It uses a single transistor per cell.",
+          "C": "It is faster than static RAM (SRAM).",
+          "D": "It does not require electricity to retain data."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=4",
+        "diagram": null
+      },
+      {
+        "number": 16,
+        "page": 4,
+        "marks": 1,
+        "stem": "Which type of Random Access Memory (RAM) is generally used for Central Processing Unit \n(CPU) cache?",
+        "choices": {
+          "A": "SRAM",
+          "B": "DRAM",
+          "C": "SDRAM",
+          "D": "DDR SDRAM"
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=4",
+        "diagram": null
+      },
+      {
+        "number": 17,
+        "page": 4,
+        "marks": 1,
+        "stem": "How does the size and speed of L3 cache generally compare to L1 and L2 caches?",
+        "choices": {
+          "A": "L3 cache is larger and slower than L1 and L2 caches.",
+          "B": "L3 cache is smaller and faster than L1 and L2 caches.",
+          "C": "L3 cache is the same size and speed as L1 and L2 caches.",
+          "D": "L3 cache is the same size but faster than L1 and L2 caches."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=4",
+        "diagram": null
+      },
+      {
+        "number": 18,
+        "page": 4,
+        "marks": 1,
+        "stem": "Following are the devices used for storing data. \nI. \nCD \nII. \nDVD \nIII. \nBlu-Ray \n \nThe device(s) that use(s) a red-violet laser to read and write data is/ are",
+        "choices": {
+          "A": "I only.",
+          "B": "III only.",
+          "C": "I and II.",
+          "D": "II and III."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=4",
+        "diagram": null
+      },
+      {
+        "number": 19,
+        "page": 4,
+        "marks": 1,
+        "stem": "Flash memory and Secure Digital (SD) cards store data by using",
+        "choices": {
+          "A": "electrons in a memory cell made up of transistors.",
+          "B": "a magnetic coating on a spinning disk.",
+          "C": "a laser to read and write data.",
+          "D": "temporary storage method."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=4",
+        "diagram": null
+      },
+      {
+        "number": 20,
+        "page": 5,
+        "marks": 1,
+        "stem": "The primary function of a register in a CPU is to",
+        "choices": {
+          "A": "manage data flow.",
+          "B": "store long-term data.",
+          "C": "hold data temporarily for processing.",
+          "D": "connect external devices through bus."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=5",
+        "diagram": null
+      },
+      {
+        "number": 21,
+        "page": 5,
+        "marks": 1,
+        "stem": "The register that is used to store intermediate results of calculations in the CPU is",
+        "choices": {
+          "A": "Stack Pointer (SP).",
+          "B": "Accumulator (AC).",
+          "C": "Base Register (BR).",
+          "D": "Status Register (SR)."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=5",
+        "diagram": null
+      },
+      {
+        "number": 22,
+        "page": 5,
+        "marks": 1,
+        "stem": "In the execute phase of the fetch-decode-execute cycle, the role of CPU is to",
+        "choices": {
+          "A": "retrieve the next instruction from memory.",
+          "B": "store the result back in the memory.",
+          "C": "interpret the instruction.",
+          "D": "decode the instruction."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=5",
+        "diagram": null
+      },
+      {
+        "number": 23,
+        "page": 5,
+        "marks": 1,
+        "stem": "All of the following are the components of the CPU EXCEPT",
+        "choices": {
+          "A": "registers.",
+          "B": "system unit.",
+          "C": "control unit.",
+          "D": "internal buses."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=5",
+        "diagram": null
+      },
+      {
+        "number": 24,
+        "page": 5,
+        "marks": 1,
+        "stem": "The examples of general-purpose registers are the",
+        "choices": {
+          "A": "base register and counter register.",
+          "B": "data register and instruction register.",
+          "C": "instruction register and accumulator register.",
+          "D": "accumulator register and memory address register."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=5",
+        "diagram": null
+      },
+      {
+        "number": 25,
+        "page": 5,
+        "marks": 1,
+        "stem": "Data transfer instruction is used to transfer data between the",
+        "choices": {
+          "A": "RAM and I/O.",
+          "B": "I/O and hard disk.",
+          "C": "register and RAM.",
+          "D": "register and hard disk."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=5",
+        "diagram": null
+      },
+      {
+        "number": 26,
+        "page": 5,
+        "marks": 1,
+        "stem": "The port that is used for transmitting high-definition video and audio signals from a computer \nto a display is",
+        "choices": {
+          "A": "HDMI port.",
+          "B": "Serial port.",
+          "C": "USB port.",
+          "D": "PS/2 port."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=5",
+        "diagram": null
+      },
+      {
+        "number": 27,
+        "page": 6,
+        "marks": 1,
+        "stem": "The card used to connect a computer to a wired network, providing high-speed network access \nis a",
+        "choices": {
+          "A": "wireless network card",
+          "B": "modem card",
+          "C": "gigabit card",
+          "D": "sound card"
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=6",
+        "diagram": null
+      },
+      {
+        "number": 28,
+        "page": 6,
+        "marks": 1,
+        "stem": "The number of channel paths used by a Single Inline Memory Module (SIMM) and Dual \nInline Memory Module (DIMM) are",
+        "choices": {
+          "A": "SIMMs have a 64-bit data path, while DIMMs have a 32-bit data path.",
+          "B": "SIMMs have a 32-bit data path, while DIMMs have a 64-bit data path.",
+          "C": "SIMMs and DIMMs both have 32-bit data paths.",
+          "D": "SIMMs and DIMMs both have 64-bit data paths."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=6",
+        "diagram": null
+      },
+      {
+        "number": 29,
+        "page": 6,
+        "marks": 1,
+        "stem": "The THREE main components in a system unit are",
+        "choices": {
+          "A": "casing, mouse and monitor.",
+          "B": "monitor, keyboard and mouse.",
+          "C": "casing, power supply and motherboard.",
+          "D": "keyboard, power supply and motherboard."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=6",
+        "diagram": null
+      },
+      {
+        "number": 30,
+        "page": 6,
+        "marks": 1,
+        "stem": "The PRIMARY purpose of a computer network is to",
+        "choices": {
+          "A": "allow communication and resource sharing.",
+          "B": "process and store complex calculations.",
+          "C": "store large amounts of data.",
+          "D": "enhance graphic rendering."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=6",
+        "diagram": null
+      },
+      {
+        "number": 31,
+        "page": 6,
+        "marks": 1,
+        "stem": "Read the following features. \n\u2022 \nCommunication within a few centimetres to a few metres \n\u2022 \nCommonly used for devices such as wearable technology \nThe type of network that is described in the given features is",
+        "choices": {
+          "A": "Metropolitan Area Network (MAN).",
+          "B": "Interplanetary Internet (IPN).",
+          "C": "Wide Area Network (WAN).",
+          "D": "Body Area Network (BAN)."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=6",
+        "diagram": null
+      },
+      {
+        "number": 32,
+        "page": 6,
+        "marks": 1,
+        "stem": "Three Open System Interconnection (OSI) model layers are merged as one layer in \nTransmission Control Protocol/ Internet Protocol (TCP/ IP) model, i.e. Application layer. \n \nIf one of these layers is application layer, the other TWO OSI model layers would be",
+        "choices": {
+          "A": "physical and network.",
+          "B": "network and transport.",
+          "C": "session and presentation.",
+          "D": "transport and presentation."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=6",
+        "diagram": null
+      },
+      {
+        "number": 33,
+        "page": 7,
+        "marks": 1,
+        "stem": "The topology in which each node interconnected with many or all other nodes, providing \nmultiple paths for data transmission is",
+        "choices": {
+          "A": "bus.",
+          "B": "star.",
+          "C": "ring.",
+          "D": "mesh."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=7",
+        "diagram": null
+      },
+      {
+        "number": 34,
+        "page": 7,
+        "marks": 1,
+        "stem": "According to which network topology, every node forms a closed loop with a single point-to-\npoint connection?",
+        "choices": {
+          "A": "Star",
+          "B": "Ring",
+          "C": "Tree",
+          "D": "Mesh"
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=7",
+        "diagram": null
+      },
+      {
+        "number": 35,
+        "page": 7,
+        "marks": 1,
+        "stem": "The wireless technology that is commonly used for short-range communication between \ndevices, often within the range of about 10 metres, is",
+        "choices": {
+          "A": "LTE.",
+          "B": "Wi-Fi.",
+          "C": "WiMAX.",
+          "D": "Bluetooth."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=7",
+        "diagram": null
+      },
+      {
+        "number": 36,
+        "page": 7,
+        "marks": 1,
+        "stem": "The network in which users can be added without changing the physical connections of the \nnetwork is a/ an",
+        "choices": {
+          "A": "infra-red network.",
+          "B": "optic fibre network.",
+          "C": "coaxial cable network.",
+          "D": "telephone line network."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=7",
+        "diagram": null
+      },
+      {
+        "number": 37,
+        "page": 7,
+        "marks": 1,
+        "stem": "The term, \u2018line of sight\u2019 in the context of wireless communication refers to the",
+        "choices": {
+          "A": "direct visual path between the transmitter and receiver.",
+          "B": "curvature of the Earth affecting signal transmission.",
+          "C": "distance a signal can travel without losing strength.",
+          "D": "frequency of the radio signal."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=7",
+        "diagram": null
+      },
+      {
+        "number": 38,
+        "page": 7,
+        "marks": 1,
+        "stem": "The mobile communication technology that allows simultaneous voice and data transmission \non the same channel is known as",
+        "choices": {
+          "A": "GSM (Global System for Mobile communication).",
+          "B": "FDMA (Frequency Division Multiple Access).",
+          "C": "CDMA (Code Division Multiple Access).",
+          "D": "LTE (Long Term Evolution)."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=7",
+        "diagram": null
+      },
+      {
+        "number": 39,
+        "page": 8,
+        "marks": 1,
+        "stem": "The PRIMARY use of Global Positioning System (GPS) technology is to",
+        "choices": {
+          "A": "enhance computer networks.",
+          "B": "speed up internet connection.",
+          "C": "provide real-time navigation.",
+          "D": "share large amounts of data through satellite."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=8",
+        "diagram": null
+      },
+      {
+        "number": 40,
+        "page": 8,
+        "marks": 1,
+        "stem": "Which of the following is the disadvantage of using a Database Management System \n(DBMS)?",
+        "choices": {
+          "A": "Data inconsistency",
+          "B": "Limited data access",
+          "C": "Difficult data integration",
+          "D": "High implementation cost"
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=8",
+        "diagram": null
+      },
+      {
+        "number": 41,
+        "page": 8,
+        "marks": 1,
+        "stem": "Consider the following characteristics of a database: \n\u2022 \nTree like structure \n\u2022 \nSingle parent \n\u2022 \nPotentially multiple children \nThe database model based on the given characteristics is called",
+        "choices": {
+          "A": "network model.",
+          "B": "hierarchical model.",
+          "C": "object-oriented model.",
+          "D": "object-relational model."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=8",
+        "diagram": null
+      },
+      {
+        "number": 42,
+        "page": 8,
+        "marks": 1,
+        "stem": "In the context of relational model, the foreign key is used to",
+        "choices": {
+          "A": "uniquely identify each record in a table.",
+          "B": "enforce data type constraints.",
+          "C": "link two tables together.",
+          "D": "store large text data."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=8",
+        "diagram": null
+      },
+      {
+        "number": 43,
+        "page": 8,
+        "marks": 1,
+        "stem": "A record in a database is defined as a",
+        "choices": {
+          "A": "single piece of data.",
+          "B": "collection of related fields.",
+          "C": "visual representation of data.",
+          "D": "storage format for digital data."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=8",
+        "diagram": null
+      },
+      {
+        "number": 44,
+        "page": 8,
+        "marks": 1,
+        "stem": "In a database table, another term used for a column is",
+        "choices": {
+          "A": "record.",
+          "B": "tuple.",
+          "C": "field.",
+          "D": "file."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=8",
+        "diagram": null
+      },
+      {
+        "number": 45,
+        "page": 9,
+        "marks": 1,
+        "stem": "An employee database table has following fields. The Employee_ID is the primary key. \nI. \nEmployee_ID \nII. \nEmployee_Name \nIII. \nEmployee_National_ID_Card_Number \nIV. \nEmployee_Age \nV. \nEmployee_Gender \nVI. \nEmployee_Address \nIn the given options, the MOST appropriate table field having number data type is",
+        "choices": {
+          "A": "II only.",
+          "B": "IV only.",
+          "C": "V only.",
+          "D": "VI only."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=9",
+        "diagram": null
+      },
+      {
+        "number": 46,
+        "page": 9,
+        "marks": 1,
+        "stem": "Which MS Access object allows end users to create a customised interface for data entry and \nediting?",
+        "choices": {
+          "A": "Table",
+          "B": "Form",
+          "C": "Query",
+          "D": "Report"
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=9",
+        "diagram": null
+      },
+      {
+        "number": 47,
+        "page": 9,
+        "marks": 1,
+        "stem": "In MS-Access, the PRIMARY function of a table is to",
+        "choices": {
+          "A": "filter data based on specific criteria.",
+          "B": "store data in rows and columns.",
+          "C": "generate graphical reports.",
+          "D": "view data on screen."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=9",
+        "diagram": null
+      },
+      {
+        "number": 48,
+        "page": 9,
+        "marks": 1,
+        "stem": "If I want to remove a table from database in MS-Access, the data definition language \ncommand in SQL would be",
+        "choices": {
+          "A": "TRUNCATE TABLE",
+          "B": "REMOVE TABLE",
+          "C": "DELETE TABLE",
+          "D": "DROP TABLE"
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=9",
+        "diagram": null
+      },
+      {
+        "number": 49,
+        "page": 9,
+        "marks": 1,
+        "stem": "The MS Access query that will fetch records that consist of CarModel and CarPrice fields \nfrom a database table named as Cars is",
+        "choices": {
+          "A": "Select CarModel, CarPrice From Cars;",
+          "B": "Select *CarModel, *CarPrice From Cars;",
+          "C": "Select CarModel AND CarPrice From Cars;",
+          "D": "Select *(CarModel AND CarPrice) From Cars;"
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=9",
+        "diagram": null
+      },
+      {
+        "number": 50,
+        "page": 10,
+        "marks": 1,
+        "stem": "The primary purpose of the WHERE statement in SQL within MS-Access is to",
+        "choices": {
+          "A": "update existing data in a table.",
+          "B": "insert new data into a table.",
+          "C": "filter data from a table.",
+          "D": "delete data from a table."
+        },
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-i.pdf#page=10",
+        "diagram": null
+      }
+    ],
+    "CS-XI-2025-P2": [
+      {
+        "number": "1",
+        "page": 2,
+        "marks": 6,
+        "stem": "Q.1. (Total 6 Marks)\ni. Mention any TWO computing devices for input, output and storage. (3 Marks)\n\n| Type of Device | Device 1 | Device 2 |\n| :--- | :--- | :--- |\n| Input | | |\n| Output | | |\n| Storage | | |\n\nii. Define the following software categories: (3 Marks)\nI. Freeware\nII. Shareware\nIII. Open-Source",
+        "choices": null,
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-ii.pdf#page=2",
+        "diagram": null
+      },
+      {
+        "number": "2",
+        "page": 2,
+        "marks": 3,
+        "stem": "Q.2. (Total 3 Marks)\nWrite any THREE differences between DRAM and SRAM.\n\n| S.No. | DRAM | SRAM |\n| :---: | :--- | :--- |\n| 1 | | |\n| 2 | | |\n| 3 | | |",
+        "choices": null,
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-ii.pdf#page=2",
+        "diagram": null
+      },
+      {
+        "number": "3",
+        "page": 3,
+        "marks": 3,
+        "stem": "Q.3. (Total 3 Marks)\nDescribe the function of each type of internal bus, i.e, data bus, address bus and control bus.",
+        "choices": null,
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-ii.pdf#page=3",
+        "diagram": null
+      },
+      {
+        "number": "4",
+        "page": 3,
+        "marks": 3,
+        "stem": "Q.4. (Total 3 Marks)\nA technician is upgrading an older server to increase memory for handling more users and applications.\nBased on the given scenario, answer the following questions.\ni. Which memory module will be used by the technician to increase memory? (1 Mark)\nii. Give any TWO reasons in support of your stance in part i. (2 Marks)",
+        "choices": null,
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-ii.pdf#page=3",
+        "diagram": null
+      },
+      {
+        "number": "5",
+        "page": 4,
+        "marks": 3,
+        "stem": "Q.5. (Total 3 Marks)\nDefine the following terms in the context of wireless communication:\ni. Radio signals (1 Mark)\nii. Radio transceivers (1 Mark)\niii. Access point (1 Mark)",
+        "choices": null,
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-ii.pdf#page=4",
+        "diagram": null
+      },
+      {
+        "number": "6",
+        "page": 4,
+        "marks": 3,
+        "stem": "Q.6. (Total 3 Marks)\nIn a university database, there are two entities: Students and Departments.\nWith reference to the given information,\ni. identify the type of relationship between the Student and Department entities. (1 Mark)\nii. provide an example of this relationship type. (2 Marks)",
+        "choices": null,
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-ii.pdf#page=4",
+        "diagram": null
+      },
+      {
+        "number": "7",
+        "page": 5,
+        "marks": 7,
+        "stem": "Q.7. (Total 7 Marks)\nEITHER\na.\ni. Describe the function of each layer of the Transmission Control Protocol/ Internet Protocol (TCP/IP) protocol architecture. (4 Marks)\nii. Name at least ONE protocol for any three layers described in part i. (3 Marks)\n\nOR\nb.\ni. Describe the term, Global Positioning System (GPS). (1 Mark)\nii. Explain the importance of GPS in any THREE points. (3 Marks)\niii. Explain the THREE limitations of GPS. (3 Marks)",
+        "choices": null,
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-ii.pdf#page=5",
+        "diagram": null
+      },
+      {
+        "number": "8",
+        "page": 6,
+        "marks": 7,
+        "stem": "Q.8. (Total 7 Marks)\nEITHER\na. Consider the given image showing three tables in an MS Access database of a company.\n\nA number of employees work in each department of the company. Each department is managed by an employee. Each child of an employee is identified by the employee\u2019s name. Furthermore, the company has the policy that only one parent can work for the company.\n\nDraw an entity-relationship diagram (ERD) for this database. (7 Marks)\n\nOR\nb. Consider an employee management system that stores information about employees in a company. This system allows administrators to insert new employee records, retrieve employee details, and delete records.\nBased on the given scenario, a table named as Employees has fields Employee_ID, Name, Department, Salary, Designation, Employment_type.\n\nWrite SQL queries for this database table to\ni. insert a new record of a regular employee, Dawood_Ahmed, who joined the IT department as Associate with the salary of Rs 75000. (5 Marks)\nii. retrieve the details of all employees working in the \u2018Sales\u2019 department. (1 Mark)\niii. delete an employee record whose Employee_ID is 5. (1 Mark)",
+        "choices": null,
+        "facsimile": "/materials/hssc/computer-science/computer-science-xi-2025-paper-ii.pdf#page=6",
+        "diagram": "/paper-crops/CS-XI-2025-P2/question-8a.png"
+      }
+    ]
+  },
+  "key": [
+    {
+      "number": 1,
+      "originalSlo": "1.1.3",
+      "answer": "D",
+      "level": "K"
+    },
+    {
+      "number": 2,
+      "originalSlo": "1.1.2",
+      "answer": "D",
+      "level": "U"
+    },
+    {
+      "number": 3,
+      "originalSlo": "1.2.2",
+      "answer": "A",
+      "level": "K"
+    },
+    {
+      "number": 4,
+      "originalSlo": "1.2.4",
+      "answer": "C",
+      "level": "K"
+    },
+    {
+      "number": 5,
+      "originalSlo": "1.2.2",
+      "answer": "B",
+      "level": "U"
+    },
+    {
+      "number": 6,
+      "originalSlo": "1.2.3",
+      "answer": "C",
+      "level": "K"
+    },
+    {
+      "number": 7,
+      "originalSlo": "1.3.2",
+      "answer": "D",
+      "level": "K"
+    },
+    {
+      "number": 8,
+      "originalSlo": "1.3.2",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "number": 9,
+      "originalSlo": "1.3.3",
+      "answer": "C",
+      "level": "K"
+    },
+    {
+      "number": 10,
+      "originalSlo": "1.3.3",
+      "answer": "A",
+      "level": "K"
+    },
+    {
+      "number": 11,
+      "originalSlo": "2.1.2",
+      "answer": "B",
+      "level": "K"
+    },
+    {
+      "number": 12,
+      "originalSlo": "2.1.2",
+      "answer": "A",
+      "level": "U"
+    },
+    {
+      "number": 13,
+      "originalSlo": "2.2.2",
+      "answer": "B",
+      "level": "U"
+    },
+    {
+      "number": 14,
+      "originalSlo": "2.2.2",
+      "answer": "A",
+      "level": "K"
+    },
+    {
+      "number": 15,
+      "originalSlo": "2.2.3",
+      "answer": "B",
+      "level": "K"
+    },
+    {
+      "number": 16,
+      "originalSlo": "2.2.3",
+      "answer": "A",
+      "level": "K"
+    },
+    {
+      "number": 17,
+      "originalSlo": "2.2.6",
+      "answer": "A",
+      "level": "U"
+    },
+    {
+      "number": 18,
+      "originalSlo": "2.3.3",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "number": 19,
+      "originalSlo": "2.3.5",
+      "answer": "A",
+      "level": "U"
+    },
+    {
+      "number": 20,
+      "originalSlo": "3.1.2",
+      "answer": "C",
+      "level": "K"
+    },
+    {
+      "number": 21,
+      "originalSlo": "3.1.3",
+      "answer": "B",
+      "level": "K"
+    },
+    {
+      "number": 22,
+      "originalSlo": "3.2.3",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "number": 23,
+      "originalSlo": "3.1.2",
+      "answer": "B",
+      "level": "K"
+    },
+    {
+      "number": 24,
+      "originalSlo": "3.1.3",
+      "answer": "A",
+      "level": "U"
+    },
+    {
+      "number": 25,
+      "originalSlo": "3.2.1",
+      "answer": "C",
+      "level": "K"
+    },
+    {
+      "number": 26,
+      "originalSlo": "4.2.1",
+      "answer": "A",
+      "level": "K"
+    },
+    {
+      "number": 27,
+      "originalSlo": "4.2.2",
+      "answer": "C",
+      "level": "K"
+    },
+    {
+      "number": 28,
+      "originalSlo": "4.2.3",
+      "answer": "B",
+      "level": "U"
+    },
+    {
+      "number": 29,
+      "originalSlo": "4.1.1",
+      "answer": "C",
+      "level": "K"
+    },
+    {
+      "number": 30,
+      "originalSlo": "5.1.2",
+      "answer": "A",
+      "level": "U"
+    },
+    {
+      "number": 31,
+      "originalSlo": "5.1.2",
+      "answer": "D",
+      "level": "U"
+    },
+    {
+      "number": 32,
+      "originalSlo": "5.3.3",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "number": 33,
+      "originalSlo": "5.1.9",
+      "answer": "D",
+      "level": "K"
+    },
+    {
+      "number": 34,
+      "originalSlo": "5.1.9",
+      "answer": "B",
+      "level": "K"
+    },
+    {
+      "number": 35,
+      "originalSlo": "6.1.1",
+      "answer": "D",
+      "level": "U"
+    },
+    {
+      "number": 36,
+      "originalSlo": "6.2.1",
+      "answer": "A",
+      "level": "U"
+    },
+    {
+      "number": 37,
+      "originalSlo": "6.1.3",
+      "answer": "A",
+      "level": "K"
+    },
+    {
+      "number": 38,
+      "originalSlo": "6.3.1",
+      "answer": "D",
+      "level": "K"
+    },
+    {
+      "number": 39,
+      "originalSlo": "6.3.4",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "number": 40,
+      "originalSlo": "7.1.2",
+      "answer": "D",
+      "level": "U"
+    },
+    {
+      "number": 41,
+      "originalSlo": "7.1.4",
+      "answer": "B",
+      "level": "U"
+    },
+    {
+      "number": 42,
+      "originalSlo": "7.1.4",
+      "answer": "C",
+      "level": "U"
+    },
+    {
+      "number": 43,
+      "originalSlo": "7.2.1",
+      "answer": "B",
+      "level": "K"
+    },
+    {
+      "number": 44,
+      "originalSlo": "7.2.1",
+      "answer": "C",
+      "level": "K"
+    },
+    {
+      "number": 45,
+      "originalSlo": "7.2.3",
+      "answer": "B",
+      "level": "U"
+    },
+    {
+      "number": 46,
+      "originalSlo": "8.1.2",
+      "answer": "B",
+      "level": "K"
+    },
+    {
+      "number": 47,
+      "originalSlo": "8.2.1",
+      "answer": "B",
+      "level": "U"
+    },
+    {
+      "number": 48,
+      "originalSlo": "8.5.1",
+      "answer": "D",
+      "level": "A"
+    },
+    {
+      "number": 49,
+      "originalSlo": "8.5.1",
+      "answer": "A",
+      "level": "A"
+    },
+    {
+      "number": 50,
+      "originalSlo": "8.5.1",
+      "answer": "C",
+      "level": "U"
+    }
+  ],
+  "notes": {
+    "1": {
+      "page": 2,
+      "originalSlo": "1.2.2+1.2.4",
+      "level": "U",
+      "better": "Lists precise devices and accurately differentiates freeware, shareware, and open-source.",
+      "weaker": "Confuses freeware with open-source software."
+    },
+    "2": {
+      "page": 2,
+      "originalSlo": "2.2.3",
+      "level": "U",
+      "better": "Clearly articulates internal construction, refresh requirement, and speed differences.",
+      "weaker": "States only that SRAM is faster without explaining why."
+    },
+    "3": {
+      "page": 3,
+      "originalSlo": "3.1.2",
+      "level": "K",
+      "better": "Accurately defines directionality and role of data, address, and control buses.",
+      "weaker": "Confuses address bus with data bus."
+    },
+    "4": {
+      "page": 3,
+      "originalSlo": "4.2.3",
+      "level": "A",
+      "better": "Identifies DIMM and explains 64-bit data path and ECC/multi-channel advantages.",
+      "weaker": "Selects SIMM or provides generic speed claims."
+    },
+    "5": {
+      "page": 4,
+      "originalSlo": "6.1.1+6.1.3",
+      "level": "K",
+      "better": "Provides accurate technical definitions for radio signals, transceivers, and access points.",
+      "weaker": "Gives non-technical descriptions."
+    },
+    "6": {
+      "page": 4,
+      "originalSlo": "7.1.4",
+      "level": "U",
+      "better": "Identifies One-to-Many relationship with a clear academic department example.",
+      "weaker": "Labels relationship as One-to-One."
+    },
+    "7a": {
+      "page": 5,
+      "originalSlo": "5.1.2",
+      "level": "U",
+      "better": "Thoroughly details all four TCP/IP layers with accurate protocols for each.",
+      "weaker": "Mixes up OSI 7 layers with TCP/IP 4 layers."
+    },
+    "7b": {
+      "page": 5,
+      "originalSlo": "6.3.4",
+      "level": "U",
+      "better": "Explains satellite trilateration, real-world utility, and urban canyon / jamming limits.",
+      "weaker": "Lists generic internet features."
+    },
+    "8a": {
+      "page": 6,
+      "originalSlo": "7.2.3",
+      "level": "A",
+      "better": "Draws complete ERD with weak entity Child, partial key, and correct cardinalities.",
+      "weaker": "Fails to represent weak entity or misses Manages 1:1 relationship."
+    },
+    "8b": {
+      "page": 6,
+      "originalSlo": "8.5.1",
+      "level": "A",
+      "better": "Writes syntactically exact SQL statements for INSERT, SELECT WHERE, and DELETE.",
+      "weaker": "Syntax errors in INSERT column-value matching or quotes."
+    }
+  }
+}

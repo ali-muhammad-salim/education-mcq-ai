@@ -380,7 +380,7 @@ export default function McqPracticeSheet({
                 {/* Options — selectable in Practice Mode, paper layout otherwise */}
                 <div style={{ marginLeft: '2.5rem', marginBottom: '1rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                   {interactiveMode ? (
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '0.65rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: Object.values(optionsObj).some(value => /^\s*\|/m.test(String(value))) ? 'minmax(0, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '0.65rem' }}>
                       {['A', 'B', 'C', 'D'].map(optKey => {
                         const optText = optionsObj[optKey];
                         if (!optText) return null;
@@ -406,13 +406,13 @@ export default function McqPracticeSheet({
                             }}
                           >
                             <strong style={{ color: isSelected ? '#0b5e4a' : '#111827' }}>{optKey}.</strong>
-                            <div style={{ flexGrow: 1 }}><MathText text={String(optText)} /></div>
+                            <div style={{ flexGrow: 1, minWidth: 0 }}><StructuredContent text={String(optText)} /></div>
                           </button>
                         );
                       })}
                     </div>
                   ) : (
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))', gap: '0.65rem 1.5rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: Object.values(optionsObj).some(value => /^\s*\|/m.test(String(value))) ? 'minmax(0, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))', gap: '0.65rem 1.5rem' }}>
                       {['A', 'B', 'C', 'D'].map(optKey => {
                         const optText = optionsObj[optKey];
                         if (!optText) return null;
@@ -437,8 +437,8 @@ export default function McqPracticeSheet({
                             <strong style={{ minWidth: '22px', color: isAnswerKey ? '#166534' : '#111827' }}>
                               {optKey}.
                             </strong>
-                            <div style={{ flexGrow: 1 }}>
-                              <MathText text={String(optText)} />
+                            <div style={{ flexGrow: 1, minWidth: 0 }}>
+                              <StructuredContent text={String(optText)} />
                             </div>
                             {isAnswerKey && (
                               <span style={{
@@ -485,7 +485,7 @@ export default function McqPracticeSheet({
                           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.92rem', fontWeight: 800, color: isCorrect ? '#166534' : '#b91c1c', marginBottom: '0.35rem' }}>
                             {isCorrect ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
                             <span>{isCorrect ? 'Correct' : 'Incorrect'}</span>
-                            <span>Correct option ({correctKey}) <MathText text={optionsObj[correctKey] || ''} /></span>
+                            <div>Correct option ({correctKey}) <StructuredContent text={optionsObj[correctKey] || ''} /></div>
                           </div>
                           {!isCorrect && selectedOpt && (
                             <div style={{ fontSize: '0.86rem', color: '#b91c1c', marginBottom: '0.35rem', lineHeight: 1.5 }}>

@@ -18,11 +18,13 @@ import chemIX from "@/data/chemistry/ssc1_exact_syllabus.json";
 import chemX from "@/data/chemistry/ssc2_exact_syllabus.json";
 import mathIX from "@/data/mathematics/ssc1_exact_syllabus.json";
 import mathX from "@/data/mathematics/ssc2_exact_syllabus.json";
+import { hsscComputerScienceSyllabus } from "@/lib/hsscComputerScienceSyllabus";
 import { hsscPhysicsSyllabus } from "@/lib/hsscPhysicsSyllabus";
 import { sscBiologySyllabus } from "@/lib/sscBiologySyllabus";
 
 function syllabusChapters(scope: NonNullable<ReturnType<typeof studyScope>>) {
-  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug)
+    ?? hsscComputerScienceSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const biology = sscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   if (
     scope.board.id !== "akueb" ||
@@ -81,7 +83,8 @@ export function studyScope(
 export async function studyChapters(
   scope: NonNullable<ReturnType<typeof studyScope>>,
 ) {
-  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug)
+    ?? hsscComputerScienceSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const biology = sscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   // Resolve within the selected board AND class. The same subject name is not
   // sufficient to identify a curriculum.

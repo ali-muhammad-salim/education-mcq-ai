@@ -147,7 +147,9 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
   const isGrade9 = className.includes('IX') || paper.academicClass?.level === 9;
   const hsscAnnual = /^PHY-XI-(?:201[7-9]|202[1-5])-P[12]$/.test(paper.paperCode || '');
   const hsscPhysics = hsscAnnual || /^PHY-XII?-P[12]$/.test(paper.paperCode || '');
-  const gradeLabel = hsscPhysics ? (paper.academicClass?.level === 11 ? 'CLASS XI' : 'CLASS XII') : isGrade9 ? 'CLASS IX' : 'CLASS X';
+  const hsscComputerScience = /^CS-XII?(?:-20\d{2})?-P[12]$/.test(paper.paperCode || '');
+  const isHssc = hsscPhysics || hsscComputerScience;
+  const gradeLabel = isHssc ? (paper.academicClass?.level === 11 ? 'CLASS XI' : 'CLASS XII') : isGrade9 ? 'CLASS IX' : 'CLASS X';
   const subjectId = paper.subjectId || (paper.subject as any)?.id || '3e6f82ae-95dc-4edb-b806-d75b194a21cd';
 
   const practiceItems = isPaper2 ? [] : questions.map((question, index) => {
@@ -539,7 +541,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
               </span>
               {(hsscAnnual || /^MTH-(?:IX|X)-(?:201[789]|202[345])-P2$/.test(paper.paperCode || '') || !paper.paperCode?.includes('-P2') || paper.paperCode?.includes('2024') || paper.paperCode?.includes('2025')) && !(paper.paperCode?.startsWith('CHM-') && (paper.examYear === 2021 || paper.examYear === 2022)) ? (
                 <Link
-                  href={hsscAnnual ? `/resources/physics-xi-${paper.examYear}-emarking` : `/resources/${paper.paperCode?.startsWith('MTH-') ? 'mathematics' : paper.paperCode?.startsWith('CS-') ? 'computer-science' : paper.paperCode?.startsWith('CHM-') ? 'chemistry' : paper.paperCode?.startsWith('BIO-') ? 'biology' : 'physics'}-${isGrade9 ? 'ix' : 'x'}-${paper.examYear}-emarking`}
+                  href={/^CS-XI-2019-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2019-emarking' : /^CS-XI-2023-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2023-emarking' : /^CS-XI-2024-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2024-marking' : hsscAnnual ? `/resources/physics-xi-${paper.examYear}-emarking` : `/resources/${paper.paperCode?.startsWith('MTH-') ? 'mathematics' : paper.paperCode?.startsWith('CS-') ? 'computer-science' : paper.paperCode?.startsWith('CHM-') ? 'chemistry' : paper.paperCode?.startsWith('BIO-') ? 'biology' : 'physics'}-${isGrade9 ? 'ix' : 'x'}-${paper.examYear}-emarking`}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -554,7 +556,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                   }}
                 >
                   <Sparkles size={15} />
-                  <span>Open Solved E-Marking Notes (Better Responses) →</span>
+                  <span>{/^CS-XI-2024-P[12]$/.test(paper.paperCode || '') ? 'Open project-authored marking guide →' : 'Open Solved E-Marking Notes (Better Responses) →'}</span>
                 </Link>
               ) : null}
             </div>
@@ -580,13 +582,13 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                 AGA KHAN UNIVERSITY EXAMINATION BOARD
               </div>
               <div style={{ fontSize: '1.15rem', fontWeight: 800, letterSpacing: '0.5px', color: '#111827', marginBottom: '0.35rem' }}>
-                {hsscPhysics ? 'HIGHER SECONDARY SCHOOL CERTIFICATE' : 'SECONDARY SCHOOL CERTIFICATE'}
+                {isHssc ? 'HIGHER SECONDARY SCHOOL CERTIFICATE' : 'SECONDARY SCHOOL CERTIFICATE'}
               </div>
               <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#111827', marginBottom: '0.35rem' }}>
                 {gradeLabel}
               </div>
               <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#111827', marginBottom: '0.4rem' }}>
-                {paper.examSession?.toUpperCase().includes('MODEL') ? (hsscPhysics ? `MODEL EXAMINATIONS ${paper.examYear} AND ONWARDS` : 'MODEL EXAMINATIONS') : `ANNUAL EXAMINATIONS (THEORY) ${paper.examYear}`}
+                {paper.examSession?.toUpperCase().includes('MODEL') ? (isHssc ? `MODEL EXAMINATIONS ${paper.examYear} AND ONWARDS` : 'MODEL EXAMINATIONS') : `ANNUAL EXAMINATIONS (THEORY) ${paper.examYear}`}
               </div>
               <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#111827', marginBottom: '0.4rem' }}>
                 {paper.subject?.name || 'Physics'} {isPaper2 ? 'Paper II' : 'Paper I'}
@@ -819,7 +821,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                             fontSize: '0.8rem',
                             fontWeight: 800
                           }}>
-                            {meta.mapping_status === 'NO_DIRECT_OUTCOME' ? 'No direct outcome in current IX–X syllabus' : mapping.status === 'outside' ? 'Out of 2025 Syllabus' : 'SLO mapping awaiting review'}
+                            {meta.mapping_status === 'NO_DIRECT_OUTCOME' ? 'No direct outcome in the current syllabus' : mapping.status === 'outside' ? 'Out of 2025 Syllabus' : 'SLO mapping awaiting review'}
                           </span>
                         )}
                         {hsscPhysics && mapping.status === 'mapped' && Array.isArray(meta.current_mapping) &&
@@ -905,7 +907,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                                   ].filter(Boolean).join(' ')}
                                 >
                                   <strong className={practice.key}>{optKey}.</strong>
-                                  <span className={practice.text}><MathText text={optText} /></span>
+                                  <div className={practice.text}><StructuredContent text={optText} /></div>
                                   {isRight && <CheckCircle2 size={16} color="#16a34a" className={practice.mark} aria-hidden="true" />}
                                   {isWrong && <XCircle size={16} color="#dc2626" className={practice.mark} aria-hidden="true" />}
                                 </button>
@@ -914,7 +916,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                           </div>
                         ) : (
                           /* Standard / Quick Study Mode Options */
-                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '0.65rem' }}>
+                          <div style={{ display: 'grid', gridTemplateColumns: Object.values(choices).some(value => /^\s*\|/m.test(String(value))) ? 'minmax(0, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '0.65rem' }}>
                             {['A', 'B', 'C', 'D'].map(optKey => {
                               const optText = choices[optKey] || '';
                               if (!optText) return null;
@@ -936,8 +938,8 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                                   <strong style={{ minWidth: '22px', color: showCorrectAnswers && isThisCorrect ? '#166534' : '#111827' }}>
                                     {optKey}.
                                   </strong>
-                                  <div style={{ flexGrow: 1 }}>
-                                    <MathText text={optText} />
+                                  <div style={{ flexGrow: 1, minWidth: 0 }}>
+                                    <StructuredContent text={optText} />
                                   </div>
                                   {showCorrectAnswers && isThisCorrect && (
                                     <span style={{
@@ -969,7 +971,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                             <div className={practice.feedbackTitle}>
                               {isCorrect ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
                               <span>{isCorrect ? 'Correct' : 'Incorrect'}</span>
-                              <span>Correct option ({correctKey}) <MathText text={correctOptionText} /></span>
+                              <div>Correct option ({correctKey}) <StructuredContent text={correctOptionText} /></div>
                             </div>
                             {!isCorrect && selectedOpt && (
                               <div className={practice.reason}>
@@ -1089,11 +1091,13 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                             <summary style={{ cursor: 'pointer', fontWeight: 700 }}>{hsscPhysics ? 'Worked solution' : 'Worked solution and e-marking examples'}</summary>
                             <p><strong>Supplementary worked solution</strong> · {meta.model_answer_origin}</p>
                             <StructuredContent text={meta.model_answer || ''} />
+                            {meta.official_marking_notes && <><h4>Official checking comments</h4><StructuredContent text={meta.official_marking_notes} /></>}
                             {meta.answer_review_note && <p role="note"><strong>Source discrepancy:</strong> {meta.answer_review_note}</p>}
                             {meta.original_reference_source && <p><a href={meta.original_reference_source} target="_blank" rel="noreferrer">Original board e-marking notes</a></p>}
                             {(['better', 'weaker'] as const).map(kind => meta[`${kind}_response_image`] && (
                               <figure key={kind}>
                                 <figcaption>{kind === 'better' ? 'Better' : 'Weaker'} response · original board example</figcaption>
+                                {meta[`${kind}_response`] && <StructuredContent text={meta[`${kind}_response`]} />}
                                 <img src={meta[`${kind}_response_image`]} alt={`${kind} response for question ${qNum}`} style={{ maxWidth: '100%', height: 'auto' }} />
                               </figure>
                             ))}
@@ -1157,7 +1161,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
         onClose={() => setQuizModalOpen(false)}
         paperTitle={paper.title}
         paperCode={paper.paperCode || 'PHY-IX-P1'}
-        questions={hsscPhysics ? questions.filter((question, index) =>
+        questions={isHssc ? questions.filter((question, index) =>
           practiceItems.some(item => item.qNum === (question.questionNumber || String(index + 1)))
         ) : questions}
       />
