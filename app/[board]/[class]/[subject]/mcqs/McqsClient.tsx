@@ -40,6 +40,8 @@ import McqPracticeSheet, { type PracticeItem } from '@/components/McqPracticeShe
 import TakeQuizModal from '@/components/TakeQuizModal';
 import { smartMatch } from '@/lib/smartSearch';
 import { questionSyllabus } from '@/lib/questionSyllabus';
+import { physicsUnit16Resource } from '@/lib/physicsUnit16Resource';
+import { physicsUnit16ChapterQuestions } from '@/lib/physicsUnit16Questions';
 import {
   HubEmpty, HubMasthead, HubRail, HubSection, HubShell, PaperGrid, TierGrid, UnitBrowser,
   type PaperEntry, type TierEntry, type UnitEntry,
@@ -256,6 +258,7 @@ const CS_CLASS_X_UNITS: ChapterDef[] = [
 ];
 
 function belongsToUnit(q: any, unit: ChapterDef, isAnnual: boolean): boolean {
+  if (q.paperCode === physicsUnit16Resource.quizCode) return q.unitNumber === unit.unitNumber;
   if (Number(q.unitNumber) === unit.unitNumber) return true;
   if (isAnnual) {
     return String(q.current_slo || q.slo || '').startsWith(unit.unitNumber + '.');
@@ -269,6 +272,8 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   const isChem = meta.slug === 'chemistry';
   const isMath = meta.slug === 'mathematics';
   const isPhysics = !isCs && !isChem && !isMath;
+  const extraChapterQuestions = board.id === 'akueb' && meta.slug === 'physics' && classDef.level === 10
+    ? physicsUnit16ChapterQuestions : [];
   const currentMappedQuestions = (isMath || isChem) ? mappedChapters.flatMap(chapter => chapter.questions) : [];
   const subjPrefix = isChem ? 'CHM' : isMath ? 'MTH' : isCs ? 'CS' : 'PHY';
   const chemistryUnits: ChapterDef[] = [];
@@ -297,6 +302,8 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   const initialUnit = initialChapter
     ? unitsList.find(unit => unit.slug === initialChapter || String(unit.unitNumber) === initialChapter) || null
     : null;
+  const chapterPracticeTitle = (unit: ChapterDef) =>
+    `Unit ${unit.unitNumber}: ${unit.name} • Chapter-wise MCQs`;
 
   const router = useRouter();
   const [mappedChapter,setMappedChapter]=useState<string|null>(null);
@@ -305,7 +312,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   const [hubTab] = useState<'chapter_wise' | 'past_papers' | 'full_book' | 'cognitive'>(initialCategory || (questions.length?'chapter_wise':'past_papers'));
   const [selectedUnit, setSelectedUnit] = useState<ChapterDef | null>(initialUnit);
   const [practiceTitle, setPracticeTitle] = useState<string>(initialUnit
-    ? `Unit ${initialUnit.unitNumber}: ${initialUnit.name} • Chapter-Wise MCQs (Model + 2024 & 2025 Past Papers)`
+    ? chapterPracticeTitle(initialUnit)
     : 'All Questions Practice');
 
   // Interactive Quiz / Practice States
@@ -445,6 +452,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     ...mapped2022Pool.map((q: any) => ({ ...q, questionNumber: 400 + Number(q.rawQuestionNumber) })),
     ...mapped2019Pool.map((q: any) => ({ ...q, questionNumber: 500 + Number(q.rawQuestionNumber) })),
     ...mapped2017Pool.map((q: any) => ({ ...q, questionNumber: 600 + Number(q.rawQuestionNumber) })),
+    ...extraChapterQuestions,
   ].filter(q => !isChem || !mappedChapters.length || currentMappedQuestions.includes(q));
 
   const combinedAnnualPool: any[] = [
@@ -550,17 +558,17 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     return groups.map((items) => {
       const [rep] = items;
       const seen = new Set<string>();
-      const sources: { label: string; qNum: number | string; code?: string }[] = [];
+      const sources: { label: string; qNum: number | string; code?: string; href?: string }[] = [];
       for (const item of items) {
         const title = String(item.sourceTitle || '');
         const yearMatch = title.match(/\b(19|20)\d{2}\b/);
-        const label = /^model/i.test(title) ? 'Model 1' : item.examYear ? String(item.examYear) : yearMatch ? yearMatch[0] : 'Model 1';
+        const label = item.sourceHref ? title : /^model/i.test(title) ? 'Model 1' : item.examYear ? String(item.examYear) : yearMatch ? yearMatch[0] : 'Model 1';
         const qNum = item.rawQuestionNumber || item.questionNumber;
         const code = item.paperCode;
         const sourceKey = `${label}|${qNum}|${code || ''}`;
         if (seen.has(sourceKey)) continue;
         seen.add(sourceKey);
-        sources.push({ label, qNum, code });
+        sources.push({ label, qNum, code, href: item.sourceHref });
       }
       return { ...rep, __sources: sources };
     });
@@ -575,7 +583,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     setSelectedUnit(unit);
     setPracticeTitle(isChem ? `Unit ${unit.unitNumber}: ${unit.name} • Reviewed Chemistry questions` : isPastPaper
       ? `Unit ${unit.unitNumber}: ${unit.name} • Past Examination Archive (2024 & 2025)`
-      : `Unit ${unit.unitNumber}: ${unit.name} • Chapter-Wise MCQs (Model + 2024 & 2025 Past Papers)`
+      : chapterPracticeTitle(unit)
     );
     setCognitiveFilter('all');
     setCurrentView('practice');
@@ -598,7 +606,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     setMappedChapter(null);
     setPracticeSource('chapter_all');
     setSelectedUnit(initialUnit);
-    setPracticeTitle(isChem ? `Unit ${initialUnit.unitNumber}: ${initialUnit.name} • Reviewed Chemistry questions` : `Unit ${initialUnit.unitNumber}: ${initialUnit.name} • Chapter-Wise MCQs (Model + 2024 & 2025 Past Papers)`);
+    setPracticeTitle(isChem ? `Unit ${initialUnit.unitNumber}: ${initialUnit.name} • Reviewed Chemistry questions` : chapterPracticeTitle(initialUnit));
     setCognitiveFilter('all');
     setCurrentView('practice');
   }, [initialChapter]);
@@ -771,21 +779,23 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
           {hubTab === 'chapter_wise' && (
             <HubSection
               title="Chapter-wise curriculum practice bank"
-              note={`Every model and past-paper MCQ filed under the 2025 AKU-EB ${meta.title} syllabus unit it examines, with instant feedback and SLO mappings.`}
+              note={`Practice questions organized by 2025 AKU-EB ${meta.title} syllabus unit, with instant feedback.`}
             >
               <UnitBrowser
                 units={unitsList.map((unit): UnitEntry => {
                   const model = mappedModelPool.filter((q: any) => belongsToUnit(q, unit, false)).length;
                   const past = combinedAnnualPool.filter((q: any) => belongsToUnit(q, unit, true)).length;
+                  const extra = extraChapterQuestions.filter(q => belongsToUnit(q, unit, false)).length;
                   return {
                     id: `unit-${unit.unitNumber}`,
                     number: unit.unitNumber,
                     title: unit.name,
                     topics: unit.topics,
-                    total: model + past,
+                    total: model + past + extra,
                     breakdown: [
                       { label: 'model', value: model, tone: 'model' },
                       { label: 'past-paper', value: past, tone: 'past' },
+                      { label: 'from notes', value: extra, tone: 'model' },
                     ],
                     action: { label: `Practice unit ${unit.unitNumber}`, href: `${baseUrl}/mcqs/chapter-wise/${unit.slug}`, icon: 'arrow' },
                     secondary: past > 0 ? { label: 'Past papers only', onClick: () => handleStartChapterPractice(unit, true), icon: 'paper' } : undefined,

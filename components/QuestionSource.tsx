@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { questionSyllabus } from '@/lib/questionSyllabus';
 
-type SourceEntry = { label: string; qNum: number | string; code?: string };
+type SourceEntry = { label: string; qNum: number | string; code?: string; href?: string };
 
 export default function QuestionSource({ question, source, board, grade, subject, sources, hideSlo, inline }: { question: Record<string, any>; source: 'model' | 'annual' | 'mapped'; board: string; grade: number; subject: string; sources?: SourceEntry[]; hideSlo?: boolean; inline?: boolean }) {
   const meta = question.sourceRegion || question;
@@ -16,16 +16,19 @@ export default function QuestionSource({ question, source, board, grade, subject
   return (
     <div style={{display: inline ? 'inline-flex' : 'flex',flexWrap:'wrap',alignItems:'baseline',gap:'.15rem .45rem',fontSize:'.72rem',lineHeight:1.45,color:'var(--text-light)',marginBottom: inline ? 0 : '.45rem'}}>
       <span style={{fontWeight:600}}>
-        {entries.map((entry, index) => (
-          <span key={`${entry.label}-${entry.qNum}-${index}`}>
-            {entry.code ? (
-              <Link scroll={false} href={'/past-papers/'+encodeURIComponent(entry.code)+'#question-'+encodeURIComponent(String(entry.qNum))} style={{fontWeight:700}}>Q{entry.qNum} ({entry.label})</Link>
-            ) : (
-              <span>Q{entry.qNum} ({entry.label})</span>
-            )}
-            {index < entries.length - 1 ? ', ' : ''}
-          </span>
-        ))}
+        {entries.map((entry, index) => {
+          const href = entry.href ?? (entry.code && `/past-papers/${encodeURIComponent(entry.code)}#question-${encodeURIComponent(String(entry.qNum))}`);
+          return (
+            <span key={`${entry.label}-${entry.qNum}-${index}`}>
+              {href ? (
+                <Link scroll={false} href={href} style={{fontWeight:700}}>Q{entry.qNum} ({entry.label})</Link>
+              ) : (
+                <span>Q{entry.qNum} ({entry.label})</span>
+              )}
+              {index < entries.length - 1 ? ', ' : ''}
+            </span>
+          );
+        })}
       </span>
       {!hideSlo && (mapping.status === 'mapped' ? (
         <Link scroll={false} href={mapping.href!} style={{ display:'inline-flex', alignItems:'center', color:'#0b5e4a', background:'#ecfdf5', border:'1px solid #a7f3d0', padding:'0 6px', borderRadius:'5px', fontWeight:700, fontSize:'.7rem' }}>

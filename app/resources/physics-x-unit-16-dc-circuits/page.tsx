@@ -4,9 +4,14 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import DocumentViews from '@/components/DocumentViews';
 import styles from '@/components/MaterialLayout.module.css';
 import { physicsUnit16Resource as resource } from '@/lib/physicsUnit16Resource';
+import { physicsUnit16ChapterQuestions } from '@/lib/physicsUnit16Questions';
+import chapterBank from '@/data/physics/chapter_wise_theory_bank.json';
+import StructuredContent from '@/components/StructuredContent';
 
 const assetRoot = '/materials/ssc/physics/ssc-2';
 const classPath = '/akueb/X/physics';
+const workedExamples = chapterBank['10'].find(unit => unit.unitNumber === resource.unit)?.numericals
+  .filter(item => item.sourceHref === resource.href) ?? [];
 
 export default function Unit16ResourcePage() {
   return (
@@ -18,7 +23,8 @@ export default function Unit16ResourcePage() {
       ]} />
       <h1>{resource.title}</h1>
       <div className={styles.actions}>
-        <Link className={styles.button} href={'/quizzes/' + resource.quizCode + '/take'}>Start 36-question practice quiz</Link>
+        <Link className={styles.button} href={'/quizzes/' + resource.quizCode + '/take'}>Start {physicsUnit16ChapterQuestions.length}-question practice quiz</Link>
+        <Link className={styles.button} href={classPath + '/numericals/' + resource.unit}>View worked numericals</Link>
       </div>
       <DocumentViews original={resource.pdf} title={resource.title} digitalLabel="Digital notes">
         <article className={styles.digital}>
@@ -28,12 +34,11 @@ export default function Unit16ResourcePage() {
             <h3>Series</h3>
             <p>There is one path, so the same current flows through every resistor (I = I₁ = I₂ = I₃). The voltage drops add (V = V₁ + V₂ + V₃). Substituting V = IR and dividing by I gives R = R₁ + R₂ + R₃. A break stops current throughout the loop.</p>
             <Image src={assetRoot + '/unit-16-series.webp'} alt="Battery and three resistors on a single conducting loop" width={1000} height={449} unoptimized style={{ width: '100%', height: 'auto', background: 'white' }} />
-            <p>Worked example — 2 Ω, 4 Ω and 6 Ω in series give R = 2 + 4 + 6 = 12 Ω.</p>
             <h3>Parallel</h3>
             <p>All branches connect across the same two nodes, so V = V₁ = V₂ = V₃. The branch currents add (I = I₁ + I₂ + I₃). Substituting I = V/R and dividing by V gives 1/R = 1/R₁ + 1/R₂ + 1/R₃. The equivalent resistance is below the smallest branch resistance. Other branches can still operate if one opens.</p>
             <Image src={assetRoot + '/unit-16-parallel.webp'} alt="Three resistors on separate branches across the same two nodes" width={1000} height={475} unoptimized style={{ width: '100%', height: 'auto', background: 'white' }} />
-            <p>Worked example — 6 Ω, 3 Ω and 2 Ω in parallel give 1/R = 1/6 + 1/3 + 1/2 = 1 Ω⁻¹, so R = 1 Ω. Domestic appliances are connected in parallel so they share the supply voltage and operate independently.</p>
-            <p>For mixed circuits, simplify a series or parallel group at a time. A 6 Ω and 3 Ω parallel pair gives 2 Ω. Add a 2 Ω resistor in series with that pair and the total is 4 Ω.</p>
+            <p>Domestic appliances are connected in parallel so they share the supply voltage and operate independently.</p>
+            <p>For mixed circuits, simplify a series or parallel group at a time.</p>
           </section>
           <section>
             <h2>Electric circuits and circuit symbols · 16.2.1–16.2.2</h2>
@@ -52,8 +57,19 @@ export default function Unit16ResourcePage() {
           <section>
             <h2>Current, voltage and power · 16.2.3</h2>
             <p>Find the equivalent resistance first, then use I = V/R for the whole circuit. Use the series current or the parallel branch voltage to find the quantities for each component. Power is P = VI. For a resistor, P = I²R = V²/R.</p>
-            <p>Worked example — 2 Ω, 4 Ω and 6 Ω in series across 24 V draw 2 A. The voltage drop across 4 Ω is 8 V and its power is 16 W.</p>
           </section>
+          {workedExamples.length > 0 && (
+            <section>
+              <h2>Worked numericals</h2>
+              {workedExamples.map(item => (
+                <div key={item.id}>
+                  <h3>{item.questionNumber}</h3>
+                  <p>{item.problem}</p>
+                  <StructuredContent text={item.solution} />
+                </div>
+              ))}
+            </section>
+          )}
           <section>
             <h2>Corrections to the original PDF</h2>
             <ul>

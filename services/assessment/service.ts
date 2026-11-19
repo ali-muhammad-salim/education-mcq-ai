@@ -14,7 +14,7 @@ import {mappedChapterQuestions,sourceChoiceContent,chapterPaperWhere,chapterPape
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import { applyAnswerDecision, legacyAnswerCases } from '@/lib/legacyAnswerReview';
 import { physicsUnit16Resource } from '@/lib/physicsUnit16Resource';
-import unit16Questions from '@/data/physics/ssc2_unit16_extra_mcqs.json';
+import { includesPhysicsUnit16Notes, physicsUnit16ChapterQuestions } from '@/lib/physicsUnit16Questions';
 
 export const quizInclude = { settings: true, questions: { orderBy: { orderIndex: 'asc' as const } }, teacher: { select: { name: true } } } satisfies Prisma.QuizInclude;
 export type LoadedQuiz = Prisma.QuizGetPayload<{ include: typeof quizInclude }>;
@@ -59,6 +59,21 @@ export function sourcePracticeQuestion(q: QuestionData) {
   });
 }
 
+function unit16PracticeQuestion(question: typeof physicsUnit16ChapterQuestions[number]) {
+  return normalizeQuestion({
+    questionType: 'MCQ_SINGLE',
+    stemText: question.stem,
+    topicName: 'D.C. Circuits',
+    provenance: 'IMPORTED',
+    explanation: question.explanation,
+    options: Object.entries(question.options).map(([id, text]) => ({
+      id,
+      text,
+      isCorrect: id === question.correctOption,
+    })),
+  });
+}
+
 const parsedSnapshotCache = new Map<string, FrozenQuestion[]>();
 const practiceQuizCache = new Map<string, { quiz: LoadedQuiz; expiresAt: number }>();
 function getParsedSnapshot(attemptId: string, rawSnapshot: Prisma.JsonValue | null, fallbackQuiz?: LoadedQuiz): FrozenQuestion[] {
@@ -90,21 +105,10 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   if (quiz) return quiz;
   const key = identifier.toUpperCase();
   if (key === physicsUnit16Resource.quizCode) {
-    const questions = unit16Questions.map(question => ({
-      orderIndex: question.number,
+    const questions = physicsUnit16ChapterQuestions.map(question => ({
+      orderIndex: question.rawQuestionNumber,
       marks: 1,
-      questionData: normalizeQuestion({
-        questionType: 'MCQ_SINGLE',
-        stemText: question.stem,
-        topicName: 'D.C. Circuits',
-        provenance: 'IMPORTED',
-        explanation: question.explanation,
-        options: question.options.map((text, index) => ({
-          id: 'ABCD'[index],
-          text,
-          isCorrect: 'ABCD'[index] === question.answer,
-        })),
-      }),
+      questionData: unit16PracticeQuestion(question),
     }));
     const revision = createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16);
     const id = 'practice-' + key + '-' + revision;
@@ -183,21 +187,26 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
       }
       return true;
     });
-    if (!filtered.length) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'No practice questions found for this unit filter.');
-    const questions = filtered.map((q, i) => {
-      const content = sourcePracticeQuestion(q);
-      return { orderIndex: i + 1, marks: content.marks, questionData: content };
-    });
+    const includeUnit16Notes = includesPhysicsUnit16Notes(key);
+    const notes = includeUnit16Notes
+      ? physicsUnit16ChapterQuestions
+        .filter(q => cogFilter === 'ALL' || q.cognitiveLevel[0] === cogFilter)
+        .map(q => ({ ...unit16PracticeQuestion(q), cognitiveLevel: q.cognitiveLevel }))
+      : [];
+    const content = [...filtered.map(sourcePracticeQuestion), ...notes];
+    if (!content.length) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'No practice questions found for this unit filter.');
+    const questions = content.map((q, i) => ({ orderIndex: i + 1, marks: q.marks, questionData: q }));
+    const revision = includeUnit16Notes ? '-NOTES-' + createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16) : '';
     const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
     const subjTitle = subjPrefix === 'CS' ? 'Computer Science' : subjPrefix === 'CHM' ? 'Chemistry' : 'Physics';
     const title = unitNum > 0 ? `${subjTitle} Class ${roman} — Unit ${unitNum} Practice (${questions.length} questions)` : `${subjTitle} Class ${roman} — Complete Bank (${questions.length} questions)`;
     return prisma.quiz.upsert({
-      where: { id: `practice-${key}` },
+      where: { id: `practice-${key}${revision}` },
       update: {},
       include: quizInclude,
       create: {
-        id: `practice-${key}`,
-        code: `PRACTICE-${key}`,
+        id: `practice-${key}${revision}`,
+        code: `PRACTICE-${key}${revision}`,
         teacherId: owner.id,
         title,
         status: 'PUBLISHED',

@@ -5,6 +5,7 @@ import { ApiError, apiError } from '@/lib/api';
 import { getSessionUser } from '@/lib/auth';
 import { requireUser } from '@/lib/security';
 import { resultsReleased } from '@/services/assessment/service';
+import { includesPhysicsUnit16Notes } from '@/lib/physicsUnit16Questions';
 import {
   MIN_PERCENTILE_ATTEMPTS,
   classifySpeedAccuracyQuadrant,
@@ -76,8 +77,9 @@ function rank(entries: LeaderboardEntry[]): LeaderboardEntry[] {
 
 async function loadAnalytics(identifier: string, currentUserId?: string | null): Promise<PaperAnalyticsPayload> {
   const paperCode = identifier.trim().toUpperCase();
+  const includesNotes = includesPhysicsUnit16Notes(paperCode);
   const quiz = await prisma.quiz.findFirst({
-    where: {
+    where: includesNotes ? { code: { startsWith: `PRACTICE-${paperCode}-NOTES-` } } : {
       OR: [
         { id: `practice-${paperCode}` },
         { id: identifier },
@@ -85,6 +87,7 @@ async function loadAnalytics(identifier: string, currentUserId?: string | null):
         { code: `PRACTICE-${paperCode}` },
       ],
     },
+    ...(includesNotes ? { orderBy: { createdAt: 'desc' } } : {}),
     select: { id: true, totalMarks: true },
   });
 
