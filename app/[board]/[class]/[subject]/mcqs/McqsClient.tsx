@@ -717,7 +717,17 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       diagram,
       meta: (
         <>
-          <QuestionSource question={q} source={mappedChapter ? 'mapped' : (q.examYear || isAnnualSource) ? 'annual' : 'model'} board={board.shortCode} grade={classDef.level} subject={meta.title} sources={q.__sources} hideSlo inline />
+          <QuestionSource
+            question={q}
+            source={mappedChapter ? 'mapped' : (q.examYear || isAnnualSource) ? 'annual' : 'model'}
+            board={board.shortCode}
+            grade={classDef.level}
+            subject={meta.title}
+            sources={q.__sources}
+            hideQuestionNumber={selectedUnit !== null}
+            hideSlo
+            inline
+          />
           {mapping.status === 'mapped' ? (
             <Link
               scroll={false}

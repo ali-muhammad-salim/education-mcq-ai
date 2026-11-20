@@ -3,7 +3,7 @@ import { questionSyllabus } from '@/lib/questionSyllabus';
 
 type SourceEntry = { label: string; qNum: number | string; code?: string; href?: string };
 
-export default function QuestionSource({ question, source, board, grade, subject, sources, hideSlo, inline }: { question: Record<string, any>; source: 'model' | 'annual' | 'mapped'; board: string; grade: number; subject: string; sources?: SourceEntry[]; hideSlo?: boolean; inline?: boolean }) {
+export default function QuestionSource({ question, source, board, grade, subject, sources, hideSlo, inline, hideQuestionNumber }: { question: Record<string, any>; source: 'model' | 'annual' | 'mapped'; board: string; grade: number; subject: string; sources?: SourceEntry[]; hideSlo?: boolean; inline?: boolean; hideQuestionNumber?: boolean }) {
   const meta = question.sourceRegion || question;
   const mapping = questionSyllabus(meta, question.slos, grade, subject, board, true);
   const year = question.examYear || 2025;
@@ -18,12 +18,14 @@ export default function QuestionSource({ question, source, board, grade, subject
       <span style={{fontWeight:600}}>
         {entries.map((entry, index) => {
           const href = entry.href ?? (entry.code && `/past-papers/${encodeURIComponent(entry.code)}#question-${encodeURIComponent(String(entry.qNum))}`);
+          const sourceLabel = hideQuestionNumber ? entry.label : `Q${entry.qNum} (${entry.label})`;
+          const originalQuestion = hideQuestionNumber ? `${entry.label}, original question ${entry.qNum}` : undefined;
           return (
             <span key={`${entry.label}-${entry.qNum}-${index}`}>
               {href ? (
-                <Link scroll={false} href={href} style={{fontWeight:700}}>Q{entry.qNum} ({entry.label})</Link>
+                <Link scroll={false} href={href} aria-label={originalQuestion} title={originalQuestion} style={{fontWeight:700}}>{sourceLabel}</Link>
               ) : (
-                <span>Q{entry.qNum} ({entry.label})</span>
+                <span title={originalQuestion}>{sourceLabel}</span>
               )}
               {index < entries.length - 1 ? ', ' : ''}
             </span>

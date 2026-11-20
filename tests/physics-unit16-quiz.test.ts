@@ -35,12 +35,19 @@ test('Unit 16 pages render the notes questions and worked numericals', async () 
     meta: getSubjectMeta('physics'),
     baseUrl: '/akueb/X/physics',
     questions: modelQuestions,
+    annualQuestions: [],
     initialCategory: 'chapter_wise' as const,
   };
   const directory = renderToStaticMarkup(createElement(McqsClient, props));
   expect(directory).toMatch(/36(?:<!-- -->)? (?:<!-- -->)?from notes/);
   const chapter = renderToStaticMarkup(createElement(McqsClient, { ...props, initialChapter: 'dc-circuits' }));
-  expect(chapter.match(/Q\d+ \(D\.C\. Circuits Notes\)/g)).toHaveLength(36);
+  expect(chapter.match(/>D\.C\. Circuits Notes<\/a>/g)).toHaveLength(36);
+  expect(chapter).not.toMatch(/>Q\d+ \(D\.C\. Circuits Notes\)/);
+  expect(chapter).toContain('aria-label="D.C. Circuits Notes, original question 1"');
+  expect(chapter).toContain('/past-papers/PHY-X-P1#question-18');
+  const numbers = Array.from(chapter.matchAll(/>Q\.(\d+)\.</g), match => Number(match[1]));
+  expect(numbers.length).toBeGreaterThan(36);
+  expect(numbers).toEqual(numbers.map((_, index) => index + 1));
   const adjacentChapter = renderToStaticMarkup(createElement(McqsClient, { ...props, initialChapter: 'electric-current' }));
   expect(adjacentChapter).not.toContain('D.C. Circuits Notes');
 
