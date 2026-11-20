@@ -28,7 +28,7 @@ vi.mock('next/navigation', async importOriginal => ({
 }));
 vi.mock('@/components/TakeQuizModal', () => ({ default: () => null }));
 
-test('Unit 16 pages render the notes questions and worked numericals', async () => {
+test('Unit 16 pages render chapter questions, worked numericals and document filters', async () => {
   const props = {
     board: SUPPORTED_BOARDS.find(board => board.id === 'akueb')!,
     classDef: CLASS_DEFINITIONS.X,
@@ -55,10 +55,13 @@ test('Unit 16 pages render the notes questions and worked numericals', async () 
     params: Promise.resolve({ board: 'akueb', class: 'X', subject: 'physics', unit: '16' }),
     mode: 'numericals',
   }));
-  const notes = renderToStaticMarkup(createElement(Unit16ResourcePage));
   for (const title of ['Example 1', 'Example 2', 'Q16 worked', 'Q36 extended']) {
     expect(numericals).toContain(title);
-    expect(notes).toContain(title);
+  }
+  for (const [view, heading] of [[undefined, 'Notes'], ['mcqs', 'MCQs'], ['original', 'Original PDF']] as const) {
+    const page = renderToStaticMarkup(await Unit16ResourcePage({ searchParams: Promise.resolve({ view }) }));
+    expect(page).toMatch(new RegExp(`<a [^>]*aria-current="page"[^>]*>${heading}</a>`));
+    expect(page).toContain(physicsUnit16Resource.pdf);
   }
 });
 

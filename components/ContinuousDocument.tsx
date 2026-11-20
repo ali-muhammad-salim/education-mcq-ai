@@ -13,13 +13,21 @@ type PageSize = { width: number; height: number };
 export default function ContinuousDocument({
   url,
   title,
+  firstPage = 1,
+  lastPage,
+  firstPageInset = 0,
+  lastPageInset = 0,
 }: {
   url: string;
   title: string;
+  firstPage?: number;
+  lastPage?: number;
+  firstPageInset?: number;
+  lastPageInset?: number;
 }) {
   const [pdf, setPdf] = useState<PDFDocumentProxy | null>(null);
   const [pageSizes, setPageSizes] = useState<PageSize[]>([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(firstPage);
   const [zoom, setZoom] = useState(1);
   const [width, setWidth] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -48,7 +56,7 @@ export default function ContinuousDocument({
     setPageSizes([]);
     setLoadedPages(new Set());
     setFailedPages(new Set());
-    setPage(1);
+    setPage(firstPage);
     setLoading(true);
     setError("");
     void import("pdfjs-dist")
@@ -81,7 +89,9 @@ export default function ContinuousDocument({
       disposed = true;
       void loadingTask?.destroy().catch(() => {});
     };
-  }, [url]);
+  }, [url, firstPage]);
+
+  const endPage = Math.min(lastPage ?? Infinity, pdf?.numPages ?? firstPage);
 
   useEffect(() => {
     if (!pdf) return;
@@ -89,7 +99,7 @@ export default function ContinuousDocument({
     void (async () => {
       try {
         const sizes: PageSize[] = [];
-        for (let n = 1; n <= pdf.numPages; n++) {
+        for (let n = firstPage; n <= endPage; n++) {
           const viewport = (await pdf.getPage(n)).getViewport({ scale: 1 });
           sizes.push({ width: viewport.width, height: viewport.height });
         }
@@ -101,13 +111,13 @@ export default function ContinuousDocument({
     return () => {
       disposed = true;
     };
-  }, [pdf]);
+  }, [pdf, firstPage, endPage]);
 
   useEffect(() => {
     if (!pdf || width < 1 || pageSizes.length === 0) return;
     let disposed = false;
 
-    for (let n = 1; n <= pdf.numPages; n++) {
+    for (let n = firstPage; n <= endPage; n++) {
       tokens.current.set(n, (tokens.current.get(n) || 0) + 1);
       const task = tasks.current.get(n);
       if (task) {
@@ -148,7 +158,7 @@ export default function ContinuousDocument({
 
     const renderPage = async (n: number) => {
       const canvas = canvases.current.get(n);
-      const size = pageSizes[n - 1];
+      const size = pageSizes[n - firstPage];
       if (!canvas || !size || disposed) return;
       const token = (tokens.current.get(n) || 0) + 1;
       tokens.current.set(n, token);
@@ -219,7 +229,7 @@ export default function ContinuousDocument({
       }
       tasks.current.clear();
     };
-  }, [pdf, width, zoom, pageSizes]);
+  }, [pdf, width, zoom, pageSizes, firstPage, endPage]);
 
   useEffect(() => {
     if (!pdf || pageSizes.length === 0) return;
@@ -227,7 +237,7 @@ export default function ContinuousDocument({
     const update = () => {
       frame = 0;
       const marker = 160;
-      let current = 1;
+      let current = firstPage;
       for (const [n, element] of pageHosts.current) {
         if (element.getBoundingClientRect().top <= marker) {
           current = Math.max(current, n);
@@ -246,10 +256,10 @@ export default function ContinuousDocument({
       window.removeEventListener("resize", onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
-  }, [pdf, pageSizes]);
+  }, [pdf, pageSizes, firstPage]);
 
   const scrollToPage = (value: number) => {
-    const target = Math.max(1, Math.min(value, pageSizes.length || 1));
+    const target = Math.max(firstPage, Math.min(value, endPage));
     setPage(target);
     pageHosts.current
       .get(target)
@@ -265,7 +275,7 @@ export default function ContinuousDocument({
           <button
             className={styles.button}
             aria-label="Previous page"
-            disabled={page <= 1}
+            disabled={page <= firstPage}
             onClick={() => scrollToPage(page - 1)}
           >
             <ChevronLeft size={18} />
@@ -277,18 +287,18 @@ export default function ContinuousDocument({
               value={page}
               onChange={(event) => scrollToPage(Number(event.target.value))}
             >
-              {Array.from({ length: pdf.numPages }, (_, index) => (
-                <option key={index + 1} value={index + 1}>
-                  {index + 1}
+              {pageSizes.map((_, index) => (
+                <option key={index + firstPage} value={index + firstPage}>
+                  {index + firstPage}
                 </option>
               ))}
             </select>
-            <span>/ {pdf.numPages}</span>
+            <span>/ {endPage}</span>
           </label>
           <button
             className={styles.button}
             aria-label="Next page"
-            disabled={page >= pdf.numPages}
+            disabled={page >= endPage}
             onClick={() => scrollToPage(page + 1)}
           >
             <ChevronRight size={18} />
@@ -326,7 +336,7 @@ export default function ContinuousDocument({
           style={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            alignItems: "flex-start",
             gap: "14px",
             maxWidth: "100%",
             overflowX: "auto",
@@ -337,8 +347,10 @@ export default function ContinuousDocument({
           }}
         >
           {pageSizes.map((size, index) => {
-            const n = index + 1;
+            const n = index + firstPage;
             const height = (cssWidth * size.height) / size.width;
+            const top = n === firstPage ? firstPageInset : 0;
+            const bottom = n === endPage ? lastPageInset : 0;
             return (
               <div
                 key={n}
@@ -351,7 +363,9 @@ export default function ContinuousDocument({
                   position: "relative",
                   flex: "none",
                   width: cssWidth,
-                  height,
+                  height: height * (1 - top - bottom),
+                  overflow: "hidden",
+                  marginInline: "auto",
                   background: "#ffffff",
                   boxShadow: "0 1px 3px rgba(15, 23, 42, 0.16)",
                   scrollMarginTop: "96px",
@@ -364,7 +378,7 @@ export default function ContinuousDocument({
                   }}
                   role="img"
                   aria-label={title + " — page " + n}
-                  style={{ display: "block", width: cssWidth, height }}
+                  style={{ display: "block", width: cssWidth, height, transform: `translateY(-${top * 100}%)` }}
                 />
                 {!loadedPages.has(n) && (
                   <span
