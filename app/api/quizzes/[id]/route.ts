@@ -6,6 +6,7 @@ import prisma from '@/lib/prisma';
 import { enrichQuizMetadata } from '@/services/assessment/catalog';
 import { resolveQuiz, assertQuizAccess } from '@/services/assessment/service';
 import { normalizeQuestion, studentQuestion } from '@/services/assessment/scoring';
+import { groupDuplicateQuestions } from '@/lib/uniqueQuestions';
 export async function GET(req: NextRequest, context: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await context.params, user = await getSessionUser(req);
@@ -14,9 +15,10 @@ export async function GET(req: NextRequest, context: { params: Promise<{ id: str
     await assertQuizAccess(quiz, user);
     const edit = req.nextUrl.searchParams.get('mode') === 'edit';
     if (edit && (!user || (user.role !== 'ADMIN' && quiz.teacherId !== user.id))) throw new ApiError(403, 'FORBIDDEN', 'Only the author can edit this assessment.');
-    return NextResponse.json({ success: true, quiz: { ...(await enrichQuizMetadata([quiz]))[0], settings: edit ? quiz.settings : { maxAttempts: quiz.settings?.maxAttempts, showCorrectAnswers: quiz.settings?.showCorrectAnswers, immediateFeedback: quiz.settings?.immediateFeedback }, teacherName: quiz.teacher.name,
-      questions: quiz.questions.map(q => { const content = normalizeQuestion(q.questionData);
-        return edit ? { ...content, id: q.id, orderIndex: q.orderIndex, marks: q.marks } : studentQuestion({ id: q.id, orderIndex: q.orderIndex, marks: q.marks, content }); }) } });
+    const prepared = quiz.questions.map(q => ({ id: q.id, orderIndex: q.orderIndex, marks: q.marks, content: normalizeQuestion(q.questionData) }));
+    const questions = edit ? prepared : groupDuplicateQuestions(prepared, q => q.content).map(([q], index) => ({ ...q, orderIndex: index + 1 }));
+    return NextResponse.json({ success: true, quiz: { ...(await enrichQuizMetadata([quiz]))[0], totalMarks: questions.reduce((total, q) => total + q.marks, 0), settings: edit ? quiz.settings : { maxAttempts: quiz.settings?.maxAttempts, showCorrectAnswers: quiz.settings?.showCorrectAnswers, immediateFeedback: quiz.settings?.immediateFeedback }, teacherName: quiz.teacher.name,
+      questions: questions.map(q => edit ? { ...q.content, id: q.id, orderIndex: q.orderIndex, marks: q.marks } : studentQuestion(q)) } });
   } catch (error) { return apiError(error); }
 }
 export async function DELETE(req: NextRequest, context: { params: Promise<{ id: string }> }) {

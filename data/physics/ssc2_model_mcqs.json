@@ -1007,7 +1007,7 @@
       "D": "4"
     },
     "correctOption": "A",
-    "explanation": "Point 1 is located at the main branch or a branch carrying the total current or differently configured depending on the ladder network, but analyzing standard ladder or parallel resistor configurations in typical AKU-EB problems, point 1 typically experiences the lowest/highest division. Wait, looking at the diagram, point 1 is at the furthest branch or main feed. Let's trace the circuit: resistances $R$ in series/parallel combination. Point 1 is at the very end of the network where the current divides successively, so the branch farthest from the source (point 1) receives the lowest magnitude of current.",
+    "explanation": "Points 1, 2 and 3 are in parallel branches with resistances of 3R, 2R and R. Each branch has the same voltage V across it. By Ohm’s law, the currents are V/(3R), V/(2R) and V/R, so point 1 carries the smallest current. Point 4 carries the sum of the three branch currents.",
     "cognitiveLevel": "Application",
     "isDiagram": true,
     "isNumerical": false,
@@ -1041,7 +1041,7 @@
       },
       {
         "key": "C",
-        "reason": "Point 3 is in the main/lower-resistance path and carries more current than the high-resistance branch at Point 1."
+        "reason": "Point 3 is in the R branch and carries V/R, which is larger than the current V/(3R) at point 1."
       },
       {
         "key": "D",

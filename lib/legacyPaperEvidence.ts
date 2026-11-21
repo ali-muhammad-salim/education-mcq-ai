@@ -243,7 +243,7 @@ export const csAnnual2025AnswerReviews: Record<number, string> = {};
 
 export const csAnnual2024AnswerReviews: Record<number, string> = {
   9: 'Official 2024 AKU-EB Answer Key credits both D and A ("D,A"): Statement D ("Level 3 cache memory is smallest in storage capacity than other two levels") is FALSE because L3 cache is the largest in capacity, while Statement A ("Level 2 cache memory is located on the microprocessor") was historically considered false in older textbooks where L2 resided on the motherboard.',
-  39: 'Printed key PDF shows "•" (bullet glyph) due to font encoding; verified HTML anchor syntax answer is A (<a href="https://www.piac.com.pk">Visit PIA Website</a>).',
+  39: 'The source PDF displays a bullet in the answer cell. The educator solution is A, which correctly uses an HTML anchor with an href attribute.',
 };
 
 export const csAnnual2023AnswerReviews: Record<number, string> = {

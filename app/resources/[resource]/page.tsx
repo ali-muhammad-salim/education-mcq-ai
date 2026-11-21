@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { uniqueQuestions } from '@/lib/uniqueQuestions';
+import { sscComputerScienceMapping } from '@/lib/sscComputerScienceSyllabus';
 import DocumentViews from '@/components/DocumentViews';
 import key from '@/data/physics/ssc1_2025_official_key.json';
 import key2024 from '@/data/physics/ssc1_2024_official_key.json';
@@ -181,8 +183,7 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href={base + '/pastpapers'}>← Biology past papers</Link>
         <h1>{title}</h1>
-        {localArchive && <PaperResourceNav tabs={localArchive.tabs} current={'/resources/' + resource} />}
-        <DocumentViews title={title} original={original}>
+        <DocumentViews title={title} original={original} resourceLinks={localArchive ? <PaperResourceNav tabs={localArchive.tabs} current={'/resources/' + resource} inline /> : <Link href={paperPath}>Paper 2</Link>}>
           <div className={styles.digital}>
             {[...paper.questions].sort((a, b) => String(a.questionNumber).localeCompare(String(b.questionNumber), undefined, { numeric: true })).map(question => {
               const meta = paperMetadata(question.sourceRegion);
@@ -234,9 +235,9 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href={base + '/pastpapers'}>← Mathematics past papers</Link>
         <h1>{title}</h1>
-        <DocumentViews title={title} original={original}>
+        <DocumentViews title={title} original={original} resourceLinks={<Link href={paperPath}>Paper 2</Link>}>
           <div className={styles.digital}>
-            {paper.questions.map(question => {
+            {uniqueQuestions(paper.questions).map(question => {
               const meta = question.sourceRegion;
               const sloGrade = meta.mapping_scope?.grade;
               const sloBase = sloGrade === 9 || sloGrade === 10
@@ -278,10 +279,9 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href="/akueb/XI/physics/pastpapers">← Physics past papers</Link>
         <h1>{title}</h1>
-        <PaperResourceNav tabs={hsscXiAnnualResources.filter(item => item.year === annualMarking.year)} current={markingPath} />
-        <DocumentViews title={title} original={annualMarking.original}>
+        <DocumentViews title={title} original={annualMarking.original} resourceLinks={<PaperResourceNav tabs={hsscXiAnnualResources.filter(item => item.year === annualMarking.year)} current={markingPath} inline />}>
           <div className={styles.digital}>
-            {paper.questions.map(question => {
+            {uniqueQuestions(paper.questions).map(question => {
               const number = question.questionNumber;
               const examples = question.sourceRegion.emarkingExamples ?? [];
               const alternatives = question.questionText.split(/(?:^EITHER|\bOR)\s*\n[ab]\.\s*/);
@@ -323,7 +323,10 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href="/akueb/X/biology/pastpapers">← Biology X past papers</Link>
         <h1>{title}</h1>
-        <DocumentViews title={title} original={original}>
+        <DocumentViews title={title} original={original} resourceLinks={<>
+            <Link href={`/past-papers/BIO-X-${year}-P1`}>Paper 1</Link>
+            {year !== '2021' && <Link href={`/past-papers/BIO-X-${year}-P2`}>Paper 2</Link>}
+        </>}>
           <div className={styles.digital}>
             <div style={{overflowX:'auto'}}>
               <table style={{width:'100%',borderCollapse:'collapse'}}>
@@ -353,10 +356,6 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
             <Link href={`/past-papers/BIO-X-${year}-P1?view=solved`}>Paper 1 · answers & explanations →</Link>
           </div>
         </DocumentViews>
-        <nav className={styles.actions}>
-          <Link className={styles.button} href={`/past-papers/BIO-X-${year}-P1`}>Paper 1</Link>
-          {year !== '2021' && <Link className={styles.button} href={`/past-papers/BIO-X-${year}-P2`}>Paper 2</Link>}
-        </nav>
       </section>
     );
   }
@@ -370,7 +369,10 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href="/akueb/IX/biology/pastpapers">← Biology IX past papers</Link>
         <h1>{title}</h1>
-        <DocumentViews title={title} original={original}>
+        <DocumentViews title={title} original={original} resourceLinks={<>
+            <Link href={`/past-papers/BIO-IX-${year}-P1`}>Paper 1</Link>
+            <Link href={`/past-papers/BIO-IX-${year}-P2`}>Paper 2</Link>
+        </>}>
           <div className={styles.digital}>
             <div style={{overflowX:'auto'}}>
               <table style={{width:'100%',borderCollapse:'collapse'}}>
@@ -398,10 +400,6 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
             <Link href={`/past-papers/BIO-IX-${year}-P1?view=solved`}>Paper 1 · answers & explanations →</Link>
           </div>
         </DocumentViews>
-        <nav className={styles.actions}>
-          <Link className={styles.button} href={`/past-papers/BIO-IX-${year}-P1`}>Paper 1</Link>
-          <Link className={styles.button} href={`/past-papers/BIO-IX-${year}-P2`}>Paper 2</Link>
-        </nav>
       </section>
     );
   }
@@ -413,8 +411,7 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href="/akueb/IX/physics/pastpapers">← Physics past papers</Link>
         <h1>{title}</h1>
-        <PaperResourceNav tabs={physicsIx2025PaperTabs} current="/resources/physics-ix-2025-key" />
-        <DocumentViews title={title} original={key.sourceUrl}>
+        <DocumentViews title={title} original={key.sourceUrl} resourceLinks={<PaperResourceNav tabs={physicsIx2025PaperTabs} current="/resources/physics-ix-2025-key" inline />}>
           <div className={styles.digital}>
             <div style={{overflowX:'auto'}}>
               <table style={{width:'100%',borderCollapse:'collapse'}}>
@@ -449,13 +446,8 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
               </table>
             </div>
             <p>K: Knowledge · U: Understanding · A: Application and beyond</p>
-            <Link href="/past-papers/PHY-IX-2025-P1?view=solved">Paper 1 · answers & explanations →</Link>
           </div>
         </DocumentViews>
-        <nav className={styles.actions}>
-          <Link className={styles.button} href="/past-papers/PHY-IX-2025-P1">Paper 1</Link>
-          <Link className={styles.button} href="/past-papers/PHY-IX-2025-P2">Paper 2</Link>
-        </nav>
       </section>
     );
   }
@@ -466,8 +458,7 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href="/akueb/IX/physics/pastpapers">← Physics past papers</Link>
         <h1>{title}</h1>
-        <PaperResourceNav tabs={physicsIx2024PaperTabs} current="/resources/physics-ix-2024-key" />
-        <DocumentViews title={title} original={key2024.sourceUrl}>
+        <DocumentViews title={title} original={key2024.sourceUrl} resourceLinks={<PaperResourceNav tabs={physicsIx2024PaperTabs} current="/resources/physics-ix-2024-key" inline />}>
           <div className={styles.digital}>
             <div style={{overflowX:'auto'}}>
               <table style={{width:'100%',borderCollapse:'collapse'}}>
@@ -499,14 +490,8 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
               </table>
             </div>
             <p>K: Knowledge · U: Understanding · A: Application and beyond</p>
-            <Link href="/past-papers/PHY-IX-2024-P1?view=solved">2024 Paper 1 · answers & explanations →</Link>
           </div>
         </DocumentViews>
-        <nav className={styles.actions}>
-          <Link className={styles.button} href="/past-papers/PHY-IX-2024-P1">2024 Paper 1</Link>
-          <Link className={styles.button} href="/past-papers/PHY-IX-2024-P2">2024 Paper 2</Link>
-          <Link className={styles.button} href="/resources/physics-ix-2024-emarking">2024 E-marking notes</Link>
-        </nav>
       </section>
     );
   }
@@ -517,7 +502,11 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href="/akueb/X/physics/pastpapers">← Physics X past papers</Link>
         <h1>{title}</h1>
-        <DocumentViews title={title} original={keyX2025.sourceUrl}>
+        <DocumentViews title={title} original={keyX2025.sourceUrl} resourceLinks={<>
+            <Link href="/past-papers/PHY-X-2025-P1">2025 Paper 1</Link>
+            <Link href="/past-papers/PHY-X-2025-P2">2025 Paper 2</Link>
+            <Link href="/resources/physics-x-2025-emarking">2025 E-marking notes</Link>
+        </>}>
           <div className={styles.digital}>
             <div style={{overflowX:'auto'}}>
               <table style={{width:'100%',borderCollapse:'collapse'}}>
@@ -552,11 +541,6 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
             <Link href="/past-papers/PHY-X-2025-P1?view=solved">2025 Class X Paper 1 · answers & explanations →</Link>
           </div>
         </DocumentViews>
-        <nav className={styles.actions}>
-          <Link className={styles.button} href="/past-papers/PHY-X-2025-P1">2025 Paper 1</Link>
-          <Link className={styles.button} href="/past-papers/PHY-X-2025-P2">2025 Paper 2</Link>
-          <Link className={styles.button} href="/resources/physics-x-2025-emarking">2025 E-marking notes</Link>
-        </nav>
       </section>
     );
   }
@@ -584,7 +568,11 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href={`/akueb/${csRoman}/computer-science/pastpapers`}>← Computer Science {csRoman} past papers</Link>
         <h1>{title}</h1>
-        <DocumentViews title={title} original={activeCsKey.sourceUrl}>
+        <DocumentViews title={title} original={activeCsKey.sourceUrl} resourceLinks={<>
+            <Link href={`/past-papers/CS-${csRoman}-${csYear}-P1`}>{csYear} Paper 1</Link>
+            {!isCs2022Key && <Link href={`/past-papers/CS-${csRoman}-${csYear}-P2`}>{csYear} Paper 2</Link>}
+            {!isCs2022Key && <Link href={`/resources/computer-science-${csLower}-${csYear}-emarking`}>{csYear} E-marking notes</Link>}
+        </>}>
           <div className={styles.digital}>
             <div style={{overflowX:'auto'}}>
               <table style={{width:'100%',borderCollapse:'collapse'}}>
@@ -619,11 +607,6 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
             <Link href={`/past-papers/CS-${csRoman}-${csYear}-P1?view=solved`}>{csYear} Computer Science Paper 1 · answers & explanations →</Link>
           </div>
         </DocumentViews>
-        <nav className={styles.actions}>
-          <Link className={styles.button} href={`/past-papers/CS-${csRoman}-${csYear}-P1`}>{csYear} Paper 1</Link>
-          {!isCs2022Key && <Link className={styles.button} href={`/past-papers/CS-${csRoman}-${csYear}-P2`}>{csYear} Paper 2</Link>}
-          {!isCs2022Key && <Link className={styles.button} href={`/resources/computer-science-${csLower}-${csYear}-emarking`}>{csYear} E-marking notes</Link>}
-        </nav>
       </section>
     );
   }
@@ -641,7 +624,11 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href={`/akueb/${chemRoman}/chemistry/pastpapers`}>← Chemistry {chemRoman} past papers</Link>
         <h1>{title}</h1>
-        <DocumentViews title={title} original={activeChemKey.sourceUrl}>
+        <DocumentViews title={title} original={activeChemKey.sourceUrl} resourceLinks={<>
+            <Link href={`/past-papers/CHM-${chemRoman}-${chemYear}-P1`}>{chemYear} Paper 1</Link>
+            {hasPaper2 && <Link href={`/past-papers/CHM-${chemRoman}-${chemYear}-P2`}>{chemYear} Paper 2</Link>}
+            {hasEmarking && <Link href={`/resources/chemistry-${chemLower}-${chemYear}-emarking`}>{chemYear} E-marking notes</Link>}
+        </>}>
           <div className={styles.digital}>
             <div style={{overflowX:'auto'}}>
               <table style={{width:'100%',borderCollapse:'collapse'}}>
@@ -671,11 +658,6 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
             <Link href={`/past-papers/CHM-${chemRoman}-${chemYear}-P1?view=solved`}>{chemYear} Chemistry Paper 1 · answers & explanations →</Link>
           </div>
         </DocumentViews>
-        <nav className={styles.actions}>
-          <Link className={styles.button} href={`/past-papers/CHM-${chemRoman}-${chemYear}-P1`}>{chemYear} Paper 1</Link>
-          {hasPaper2 && <Link className={styles.button} href={`/past-papers/CHM-${chemRoman}-${chemYear}-P2`}>{chemYear} Paper 2</Link>}
-          {hasEmarking && <Link className={styles.button} href={`/resources/chemistry-${chemLower}-${chemYear}-emarking`}>{chemYear} E-marking notes</Link>}
-        </nav>
       </section>
     );
   }
@@ -700,13 +682,11 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href={`/akueb/${roman}/${subjSlug}/pastpapers`}>← {subjTitle} {roman} past papers</Link>
         <h1>{title}</h1>
-        {(resource === 'physics-ix-2024-emarking' || resource === 'physics-ix-2025-emarking') && (
-          <PaperResourceNav
-            tabs={resource.includes('-2024-') ? physicsIx2024PaperTabs : physicsIx2025PaperTabs}
-            current={`/resources/${resource}`}
-          />
-        )}
-        <DocumentViews title={title} original={activeEmarking.sourceUrl}>
+        <DocumentViews title={title} original={activeEmarking.sourceUrl} resourceLinks={<>
+            {!(isCs && is2018) && <Link href={`/past-papers/${pPrefix}-${roman}-${yearStr}-P1`}>{yearStr} Paper 1</Link>}
+            <Link href={`/past-papers/${pPrefix}-${roman}-${yearStr}-P2`}>{yearStr} Paper 2</Link>
+            {!(isCs && is2018) && <Link href={`/resources/${subjSlug}-${roman.toLowerCase()}-${yearStr}-key`}>{yearStr} Official answer key</Link>}
+        </>}>
           <div
             style={{
               background: '#ffffff',
@@ -739,8 +719,13 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
             </div>
 
             <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-              {activeEmarking.questions.map((q: any) => {
-                const isOut = Boolean(q.outOfSyllabus) || !q.currentSlo;
+              {uniqueQuestions(activeEmarking.questions).map((q: any) => {
+                const reviewed = isCs ? sscComputerScienceMapping(`CS-${roman}-${yearStr}-P2`, q.questionNumber, q.outOfSyllabus ? null : q.currentSlo, q.questionText) : undefined;
+                const outcome = reviewed?.current_mapping[0];
+                const currentSlo = reviewed ? outcome?.code : q.currentSlo;
+                const currentTopic = reviewed ? outcome?.topic : q.currentTopic;
+                const syllabusClass = outcome ? outcome.grade === 9 ? 'IX' : 'X' : roman;
+                const isOut = !currentSlo || (reviewed ? reviewed.out_of_syllabus : Boolean(q.outOfSyllabus));
                 return (
                   <article
                     key={q.questionNumber}
@@ -784,9 +769,9 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
                       </div>
 
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                        {!isOut && q.currentSlo ? (
+                        {!isOut ? (
                           <Link
-                            href={`/akueb/${roman}/${subjSlug}/syllabus#slo-${q.currentSlo}`}
+                            href={`/akueb/${syllabusClass}/${subjSlug}/syllabus#slo-${currentSlo}`}
                             style={{
                               background: '#ecfdf5',
                               color: '#066e4f',
@@ -798,7 +783,7 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
                               textDecoration: 'none',
                             }}
                           >
-                            2025 Syllabus: SLO {q.currentSlo}{q.currentTopic ? ` • ${q.currentTopic}` : ''} ↗
+                            2025 Syllabus: {syllabusClass !== roman ? `Class ${syllabusClass} · ` : ''}SLO {currentSlo}{currentTopic ? ` • ${currentTopic}` : ''} ↗
                           </Link>
                         ) : (
                           <span
@@ -815,6 +800,8 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
                             Out of 2025 Syllabus
                           </span>
                         )}
+                        {reviewed?.current_mapping.slice(1).map(item => <Link key={item.code} href={`/akueb/${item.grade === 9 ? 'IX' : 'X'}/computer-science/syllabus#slo-${item.code}`}>SLO {item.code} ↗</Link>)}
+                        {reviewed?.mapping_reason && <span title={reviewed.mapping_reason}>Legacy-language practice</span>}
                         <span
                           style={{
                             background: '#f1f5f9',
@@ -903,11 +890,6 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
             </div>
           </div>
         </DocumentViews>
-        <nav className={styles.actions}>
-          {!(isCs && is2018) && <Link className={styles.button} href={`/past-papers/${pPrefix}-${roman}-${yearStr}-P1`}>{yearStr} Paper 1</Link>}
-          <Link className={styles.button} href={`/past-papers/${pPrefix}-${roman}-${yearStr}-P2`}>{yearStr} Paper 2</Link>
-          {!(isCs && is2018) && <Link className={styles.button} href={`/resources/${subjSlug}-${roman.toLowerCase()}-${yearStr}-key`}>{yearStr} Official answer key</Link>}
-        </nav>
       </section>
     );
   }
@@ -923,7 +905,7 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
       <section className={styles.page}>
         <Link href={`/akueb/${roman}/${subjSlug}`}>← {subjTitle} {roman}</Link>
         <h1>{guide.title}</h1>
-        <DocumentViews title={guide.title} original={guide.sourceUrl}>
+        <DocumentViews title={guide.title} original={guide.sourceUrl} resourceLinks={null}>
           <div className={styles.digital}>
             <p><strong>Recommended Key Textbook:</strong> {guide.recommendedKeyTextbook}</p>
             <div style={{overflowX:'auto'}}>
@@ -979,7 +961,7 @@ export default async function Page({params}:{params:Promise<{resource:string}>})
     <section className={styles.page}>
       <Link href={`/akueb/${roman}/${pacingSlug}`}>← {pacingSubject} {roman}</Link>
       <h1>{pacingTitle}</h1>
-      <DocumentViews title={pacingTitle} original={pacingOriginal}>
+      <DocumentViews title={pacingTitle} original={pacingOriginal} resourceLinks={null}>
         <div className={styles.digital}>
           <div style={{overflowX:'auto'}}>
             <table style={{width:'100%',borderCollapse:'collapse'}}>

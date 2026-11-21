@@ -717,7 +717,7 @@
         "topic": "Programming Fundamentals (JavaScript, HTML & CSS)"
       }
     ],
-    "stem": "Read the given FOUR statements related to HTML.\nI. HTML tags are case sensitive\nII. Each HTML tag is surrounded by < >\nIII. The first tag in any HTML code is <head>\nIV. The last tag in any HTML code is </html>\n\nWhich of the TWO statements are INCORRECT?",
+    "stem": "Read the given FOUR statements related to HTML.\nI. HTML tags are case sensitive\nII. Each HTML tag is surrounded by `< >`\nIII. The first tag in any HTML code is `<head>`\nIV. The last tag in any HTML code is `</html>`\n\nWhich of the TWO statements are INCORRECT?",
     "options": {
       "A": "I and II",
       "B": "I and III",
@@ -772,10 +772,10 @@
     ],
     "stem": "Consider the given image of a web page.\n\nThe HTML code that should replace the box to complete the given code in order to display this web page is\n\n```html\n<html>\n<body>\n<h2>Personal Information Table</h2>\n<table style=\"width:50%\">\n  [ ? ]\n</table>\n</body>\n</html>\n```",
     "options": {
-      "A": "<th> <h3>Name</h3> <h3>Address</h3> <h3>Contact Number</h3> </th>",
-      "B": "<tr> <th>Name</th> <th>Address</th> <th>Contact Number</th> </tr>",
-      "C": "<th> <tr>Name</tr> <tr>Address</tr> <tr>Contact Number</tr> </th>",
-      "D": "<tr> <col>Name</col> <col>Address</col> <col>Contact Number</col> </tr>"
+      "A": "```html\n<th>\n  <h3>Name</h3>\n  <h3>Address</h3>\n  <h3>Contact Number</h3>\n</th>\n```",
+      "B": "```html\n<tr>\n  <th>Name</th>\n  <th>Address</th>\n  <th>Contact Number</th>\n</tr>\n```",
+      "C": "```html\n<th>\n  <tr>Name</tr>\n  <tr>Address</tr>\n  <tr>Contact Number</tr>\n</th>\n```",
+      "D": "```html\n<tr>\n  <col>Name</col>\n  <col>Address</col>\n  <col>Contact Number</col>\n</tr>\n```"
     },
     "correctOption": "B",
     "explanation": "In HTML tables, a horizontal table row is defined first using <tr>...</tr>, and each bold column header cell inside that row is defined using <th>...</th>.",
@@ -825,10 +825,10 @@
     ],
     "stem": "An image with the following specifications is to be inserted in a web page.\n\u2022 The name of the image is flower.jpg\n\u2022 The alternative text for image is \"Flower Picture\"\n\u2022 The width and height of the image are to be 100 pixels\n\u2022 A solid black border having thickness of 3 pixels surrounds the picture\n\nThe HTML code to insert these specifications in a web page is",
     "options": {
-      "A": "<img src=\"flower\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
-      "B": "<alt=\"Flower Picture\" img src=\"flower.jpg\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
-      "C": "<img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
-      "D": "<style=\"border:3px solid black\" img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\">"
+      "A": "```html\n<img src=\"flower\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">\n```",
+      "B": "```html\n<alt=\"Flower Picture\" img src=\"flower.jpg\" width=\"100\" height=\"100\" style=\"border:3px solid black\">\n```",
+      "C": "```html\n<img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">\n```",
+      "D": "```html\n<style=\"border:3px solid black\" img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\">\n```"
     },
     "correctOption": "C",
     "explanation": "An HTML image element must begin with the tag name `<img` followed by the full filename including extension (`src=\"flower.jpg\"`), `alt=\"Flower Picture\"`, `width=\"100\"`, `height=\"100\"`, and `style=\"border:3px solid black\"`.",
@@ -878,10 +878,10 @@
     ],
     "stem": "The HTML code to show X\u2082 + Y\u00b2 on a webpage is",
     "options": {
-      "A": "X<sup>2</sup> + Y<sub>2</sub>",
-      "B": "X<sub>2</sub> + Y<sup>2</sup>",
-      "C": "<sub>X</sub>2 + <sup>Y</sup>2",
-      "D": "<sup>X</sup>2 + <sub>Y</sub>2"
+      "A": "```html\nX<sup>2</sup> + Y<sub>2</sub>\n```",
+      "B": "```html\nX<sub>2</sub> + Y<sup>2</sup>\n```",
+      "C": "```html\n<sub>X</sub>2 + <sup>Y</sup>2\n```",
+      "D": "```html\n<sup>X</sup>2 + <sub>Y</sub>2\n```"
     },
     "correctOption": "B",
     "explanation": "In X\u2082 + Y\u00b2, the '2' after X is a subscript (`<sub>2</sub>`) and the '2' after Y is a superscript (`<sup>2</sup>`), giving `X<sub>2</sub> + Y<sup>2</sup>`.",
@@ -931,10 +931,10 @@
     ],
     "stem": "Following line is written in a webpage.\n\nVisit BBC News Urdu for latest news in Urdu.\n\nWhen someone clicks hyperlink BBC News Urdu, then https://www.bbc.com/urdu is opened. The HTML code for this line is",
     "options": {
-      "A": "<p>Visit<\"BBC News Urdu\">a href=https://www.bbc.com/urdu</a>for latest news in Urdu.</p>",
-      "B": "<p>Visit <\"https://www.bbc.com/urdu\"> a href=BBC News Urdu</a> for latest news in Urdu.</p>",
-      "C": "<p>Visit <a href = \"BBC News Urdu\"> https://www.bbc.com/urdu </a> for latest news in Urdu.</p>",
-      "D": "<p>Visit <a href = \"https://www.bbc.com/urdu\">BBC News Urdu</a> for latest news in Urdu.</p>"
+      "A": "```html\n<p>Visit<\"BBC News Urdu\">a href=https://www.bbc.com/urdu</a>for latest news in Urdu.</p>\n```",
+      "B": "```html\n<p>Visit <\"https://www.bbc.com/urdu\"> a href=BBC News Urdu</a> for latest news in Urdu.</p>\n```",
+      "C": "```html\n<p>Visit <a href = \"BBC News Urdu\"> https://www.bbc.com/urdu </a> for latest news in Urdu.</p>\n```",
+      "D": "```html\n<p>Visit <a href = \"https://www.bbc.com/urdu\">BBC News Urdu</a> for latest news in Urdu.</p>\n```"
     },
     "correctOption": "D",
     "explanation": "In HTML, an anchor hyperlink uses `<a href=\"URL\">Clickable Text</a>`. Placing `\"https://www.bbc.com/urdu\"` in `href` and `BBC News Urdu` between `<a>` and `</a>` makes 'BBC News Urdu' the clickable link.",
@@ -984,10 +984,10 @@
     ],
     "stem": "A text with the following specifications is to be displayed on a web page.\n\u2022 italic style\n\u2022 green color\n\u2022 font size of 20px\n\nThe HTML code to insert these specifications in a web page through inline CSS is",
     "options": {
-      "A": "<p style=\"italic; green; size: 20;\">Welcome!</p>",
-      "B": "<p style=\"font: green 20px italic;\">Welcome!</p>",
-      "C": "<p style=\"font-color: green; style: italic; size: 20px;\">Welcome!</p>",
-      "D": "<p style=\"font-style: italic; color: green; font-size: 20px;\">Welcome!</p>"
+      "A": "```html\n<p style=\"italic; green; size: 20;\">Welcome!</p>\n```",
+      "B": "```html\n<p style=\"font: green 20px italic;\">Welcome!</p>\n```",
+      "C": "```html\n<p style=\"font-color: green; style: italic; size: 20px;\">Welcome!</p>\n```",
+      "D": "```html\n<p style=\"font-style: italic; color: green; font-size: 20px;\">Welcome!</p>\n```"
     },
     "correctOption": "D",
     "explanation": "Standard CSS property names for inline styling are `font-style: italic;`, `color: green;`, and `font-size: 20px;` inside the `style` attribute.",
@@ -1037,10 +1037,10 @@
     ],
     "stem": "The JavaScript code that uses the prompt( ) function to ask for the user\u2019s name and store it in a variable is",
     "options": {
-      "A": "var name = prompt(\"What is your name?\");",
-      "B": "prompt(\"What is your name?\", name);",
-      "C": "name = prompt(\"Enter your name:\");",
-      "D": "var name = prompt;"
+      "A": "```javascript\nvar name = prompt(\"What is your name?\");\n```",
+      "B": "```javascript\nprompt(\"What is your name?\", name);\n```",
+      "C": "```javascript\nname = prompt(\"Enter your name:\");\n```",
+      "D": "```javascript\nvar name = prompt;\n```"
     },
     "correctOption": "A",
     "explanation": "In JavaScript, `var name = prompt(\"What is your name?\");` properly declares the variable using `var` and assigns the user's input returned by `prompt()` to `name`.",
@@ -1090,10 +1090,10 @@
     ],
     "stem": "Which of the following is a valid variable name in JavaScript?",
     "options": {
-      "A": "1stName",
-      "B": "$salary",
-      "C": "@city",
-      "D": "const"
+      "A": "```javascript\n1stName\n```",
+      "B": "```javascript\n$salary\n```",
+      "C": "```javascript\n@city\n```",
+      "D": "```javascript\nconst\n```"
     },
     "correctOption": "B",
     "explanation": "In JavaScript, valid identifiers must begin with a letter, an underscore (`_`), or a dollar sign (`$`); therefore, `$salary` is a valid variable name.",
@@ -1143,10 +1143,10 @@
     ],
     "stem": "Consider the given image of a web page showing a sentence. The font style of the sentence is Courier New.\n\nThe HTML code to show this sentence is",
     "options": {
-      "A": "<p This is an <b><I>Important</I></b> paragraph</p> style=\"font-family:'Courier New' \">",
-      "B": "<p style=\"font-family:'Courier New' \">This is an <b><I>Important</I></b> paragraph.</p>",
-      "C": "<p style=\"font-family:'Courier New' \">This is an <b><I>Important<\\b><\\I> paragraph.<\\p>",
-      "D": "<p style:\"font-family='Courier New' \">This is an <b><I>Important</I></b> paragraph.</p>"
+      "A": "```html\n<p This is an <b><I>Important</I></b> paragraph</p> style=\"font-family:'Courier New' \">\n```",
+      "B": "```html\n<p style=\"font-family:'Courier New' \">This is an <b><I>Important</I></b> paragraph.</p>\n```",
+      "C": "```html\n<p style=\"font-family:'Courier New' \">This is an <b><I>Important<\\b><\\I> paragraph.<\\p>\n```",
+      "D": "```html\n<p style:\"font-family='Courier New' \">This is an <b><I>Important</I></b> paragraph.</p>\n```"
     },
     "correctOption": "B",
     "explanation": "Option B places `style=\"font-family:'Courier New' \"` inside the opening `<p>` tag and properly nests and closes `<b><I>Important</I></b>` using forward slashes `/`.",
@@ -1944,7 +1944,7 @@
       "D": "applying more than one method other than a password."
     },
     "correctOption": "D",
-    "explanation": "Two-step verification (2FA) strengthens authentication by requiring a second verification factor (such as an OTP code or biometric check) in addition to the user's password.",
+    "explanation": "D is the closest choice. Two-step verification requires a second check, such as a one-time code, in addition to the first check. The first step can be a password.",
     "option_feedback": [
       {
         "key": "A",

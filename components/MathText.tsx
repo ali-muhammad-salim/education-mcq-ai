@@ -2,6 +2,7 @@
 
 import React from 'react';
 import katex from 'katex';
+import CodeSnippet from '@/components/CodeSnippet';
 import { formatEducationalMath, formatExplicitMath, repairMathEscapes } from '@/lib/syllabusMath';
 import { educationalLines } from '@/lib/inlineEducationalLists';
 
@@ -76,7 +77,7 @@ function cleanAndNormalizeMath(text: string): string {
 // Render inline Markdown: `code`, ***bold-italic***, **bold**, *italic*, ~~strike~~
 function renderInlineMarkdown(segment: string, keyPrefix: string, plain: (text: string) => React.ReactNode = text => text): React.ReactNode[] {
   if (!segment) return [];
-  const tokenRegex = /(`[^`]+`|\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|~~[^~]+~~|\*(?!\s)[^*\n]+?(?<!\s)\*)/g;
+  const tokenRegex = /(`[^`]+`|<u>[^<>\n]+<\/u>|\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|~~[^~]+~~|\*(?!\s)[^*\n]+?(?<!\s)\*)/g;
   const nodes: React.ReactNode[] = [];
   let lastIdx = 0;
   let match: RegExpExecArray | null;
@@ -89,21 +90,10 @@ function renderInlineMarkdown(segment: string, keyPrefix: string, plain: (text: 
     const k = `${keyPrefix}-${match.index}`;
     if (token.startsWith('`') && token.endsWith('`')) {
       nodes.push(
-        <code
-          key={k}
-          style={{
-            background: 'rgba(15, 23, 42, 0.07)',
-            border: '1px solid rgba(15, 23, 42, 0.12)',
-            padding: '1px 5px',
-            borderRadius: '4px',
-            fontFamily: "'JetBrains Mono', 'Fira Code', Consolas, monospace",
-            fontSize: '0.88em',
-            color: '#0f172a',
-          }}
-        >
-          {token.slice(1, -1)}
-        </code>
+        <CodeSnippet key={k} text={token.slice(1, -1)} inline />
       );
+    } else if (token.startsWith('<u>')) {
+      nodes.push(<u key={k}>{renderInlineMarkdown(token.slice(3, -4), k, plain)}</u>);
     } else if (token.startsWith('***') && token.endsWith('***')) {
       nodes.push(
         <strong key={k}>
@@ -163,7 +153,12 @@ export default function MathText({ text, className, style }: MathTextProps) {
     const matchedStr = match[0];
     if (matchedStr.startsWith('`')) {
       const fenced = matchedStr.startsWith('```');
-      if (fenced) parts.push(<code key={`code-${match.index}`} style={{ display: 'block', whiteSpace: 'pre-wrap', overflowX: 'auto' }}>{matchedStr.slice(3, -3).replace(/^[\w+-]+\n/, '')}</code>);
+      if (fenced) {
+        const body = matchedStr.slice(3, -3);
+        const fence = /^([\w+-]*)\r?\n/.exec(body);
+        // MathText can be nested in inline markup. StructuredContent uses a block-level pre.
+        parts.push(<CodeSnippet key={`code-${match.index}`} text={body.slice(fence?.[0].length ?? 0)} language={fence?.[1]} inlineBlock />);
+      }
       else parts.push(...renderInlineMarkdown(matchedStr, `code-${match.index}`));
       protect();
       lastIndex = regex.lastIndex;

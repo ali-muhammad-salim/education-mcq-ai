@@ -6,8 +6,8 @@ import { getSubjectMeta } from '@/lib/subjectMetadata';
 import ContentUnavailable from '@/components/ContentUnavailable';
 import ChapterTheoryUnitClient from '@/components/ChapterTheoryUnitClient';
 import type { TheorySectionMode } from '@/components/ChapterTheoryPracticeClient';
-import chapterBank from '@/data/physics/chapter_wise_theory_bank.json';
-import csChapterBank from '@/data/computer-science/chapter_wise_theory_bank.json';
+import { physicsChapterBank } from '@/lib/physicsChapterBank';
+import { sscComputerScienceTheory } from '@/lib/sscComputerScienceTheory';
 import { mappedTheoryUnits } from '@/services/materials/practice';
 
 interface PageProps {
@@ -39,10 +39,11 @@ export default async function ChapterTheoryUnitPage({ params, mode }: PageProps)
     return <ContentUnavailable title={`${classDef.name} ${meta.title} ${MODE_LABELS[mode]}`} />;
   }
 
-  const activeBank = meta.slug === 'computer-science' ? csChapterBank : chapterBank;
   const units = ['mathematics', 'chemistry', 'biology'].includes(meta.slug)
     ? await mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
-    : (classRoman === 'IX' ? (activeBank as any)['9'] : (activeBank as any)['10']) || [];
+    : meta.slug === 'computer-science'
+      ? sscComputerScienceTheory(classRoman === 'IX' ? 9 : 10)
+      : (physicsChapterBank as any)[classRoman === 'IX' ? '9' : '10'] || [];
   const unitMatch = /^(\d+)/.exec(rawUnit);
   const unitNumber = unitMatch ? Number(unitMatch[1]) : NaN;
   const unit = units.find((u: any) => u.unitNumber === unitNumber);

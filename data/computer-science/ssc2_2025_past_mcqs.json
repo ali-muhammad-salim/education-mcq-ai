@@ -969,10 +969,10 @@
     "questionNumber": 26,
     "stem": "Use the given program to answer Q. 26 and Q. 27.\n\n```c\n#include<stdio.h>\nint main( )\n{\n  int i = 15, j = 8;\n  do\n  {\n    printf(\"Data Science \\n\");\n  }\n  while (i-- > j++);\n  return 0;\n}\n```\n\nIf `printf (\"Data Science \\n\");` is replaced by `printf (\"\\n%d\",j);` then the output will be",
     "options": {
-      "A": "8, 9, 10, 11, 12 (printed on separate lines)",
-      "B": "12, 11, 10, 9, 8 (printed on separate lines)",
-      "C": "9, 10, 11, 12 (printed on separate lines)",
-      "D": "12, 11, 10, 9 (printed on separate lines)"
+      "A": "```text\n8\n9\n10\n11\n12\n```",
+      "B": "```text\n12\n11\n10\n9\n8\n```",
+      "C": "```text\n9\n10\n11\n12\n```",
+      "D": "```text\n12\n11\n10\n9\n```"
     },
     "correctAnswer": "A",
     "correctOption": "A",

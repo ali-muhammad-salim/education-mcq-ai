@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { physicsUnit17Resource } from './lib/physicsUnit17Resources';
 const config: NextConfig = {
   distDir: process.env.NEXT_BUILD_DIR || '.next',
   async headers() {
@@ -19,6 +20,11 @@ const config: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: `${physicsUnit17Resource.chapterHref}/mcqs/chapter-wise/${physicsUnit17Resource.unit}`,
+        destination: physicsUnit17Resource.mcqsHref,
+        permanent: true,
+      },
       { source: '/uploads/past_paper_auto_1791881747833_Physics-IX-Paper-I-2025.pdf', destination: '/materials/ssc/physics/ssc-1/physics-ix-2025-paper-i.pdf', permanent: true },
       { source: '/uploads/past_paper_Class_IX_1791885389646_Physics-IX-Paper-II-2025.pdf', destination: '/materials/ssc/physics/ssc-1/physics-ix-2025-paper-ii.pdf', permanent: true },
     ];

@@ -994,10 +994,10 @@
     "questionNumber": 26,
     "stem": "Consider the following output.\n\n`Value of Y=25`\n\nWhich of the following C codes will show this output?",
     "options": {
-      "A": "`int Y=25; puts(\"Value of Y=\", \"25\")`",
-      "B": "`int Y=25; puts(\"Value of Y=25\", Y);`",
-      "C": "`int Y=25; printf(\"Value of Y=%d\", \"Y\");`",
-      "D": "`int Y=25; printf(\"Value of Y=%d\", Y);`"
+      "A": "```c\nint Y=25;\nputs(\"Value of Y=\", \"25\")\n```",
+      "B": "```c\nint Y=25;\nputs(\"Value of Y=25\", Y);\n```",
+      "C": "```c\nint Y=25;\nprintf(\"Value of Y=%d\", \"Y\");\n```",
+      "D": "```c\nint Y=25;\nprintf(\"Value of Y=%d\", Y);\n```"
     },
     "correctAnswer": "D",
     "correctOption": "D",
@@ -1515,10 +1515,10 @@
     "questionNumber": 39,
     "stem": "Use the given program to answer Q.38, Q.39 and Q.40.\n\n```c\n#include<stdio.h>\nint main()\n{\n  int i=5, j=10;\n  do\n  {\n    printf(\"Computer Science \\n\");\n  }\n  while (i++ < j--);\n  return 0;\n}\n```\n\nIf `printf(\"Computer Science \\n\");` is replaced by `printf(\"%d \\n\",j);` then the output will be",
     "options": {
-      "A": "`10, 9, 8, 7` (printed on separate lines)",
-      "B": "`9, 8, 7, 6` (printed on separate lines)",
-      "C": "`9, 8, 7` (printed on separate lines)",
-      "D": "`10, 9, 8` (printed on separate lines)"
+      "A": "```text\n10\n9\n8\n7\n```",
+      "B": "```text\n9\n8\n7\n6\n```",
+      "C": "```text\n9\n8\n7\n```",
+      "D": "```text\n10\n9\n8\n```"
     },
     "correctAnswer": "A",
     "correctOption": "A",

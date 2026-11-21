@@ -20,15 +20,13 @@ describe('Practice source normalization', () => {
     }
   });
   it('keeps disputed official-key entries on the paper but out of single-answer grading', () => {
-    for (const [code, number] of [
-      ['CS-IX-2023-P1', 11], ['CS-IX-2024-P1', 9],
-      ['CS-X-2019-P1', 21], ['CS-X-2023-P1', 37], ['CS-X-2024-P1', 8],
+    for (const [code, excluded] of [
+      ['CS-IX-2023-P1', [11, 20]], ['CS-IX-2024-P1', [9, 39]],
+      ['CS-X-2019-P1', [21]], ['CS-X-2023-P1', [37]], ['CS-X-2024-P1', [8, 26, 31]],
     ] as const) {
       const paper = getFallbackPaper(code)!;
-      expect(paper.questions.some(q => Number(q.questionNumber) === number)).toBe(true);
-      const scored = gradablePracticeQuestions(code, paper.questions);
-      expect(scored).toHaveLength(paper.questions.length - 1);
-      expect(scored.some(q => Number(q.questionNumber) === number)).toBe(false);
+      const scored = new Set(gradablePracticeQuestions(code, paper.questions));
+      expect(paper.questions.filter(q => !scored.has(q)).map(q => Number(q.questionNumber))).toEqual(excluded);
     }
   });
 });

@@ -5,8 +5,8 @@ import { normalizeBoardId, normalizeClassRoman, CLASS_DEFINITIONS, SUPPORTED_BOA
 import { getSubjectMeta } from '@/lib/subjectMetadata';
 import ContentUnavailable from '@/components/ContentUnavailable';
 import ChapterTheoryPracticeClient, { type TheorySectionMode } from '@/components/ChapterTheoryPracticeClient';
-import physicsChapterBank from '@/data/physics/chapter_wise_theory_bank.json';
-import csChapterBank from '@/data/computer-science/chapter_wise_theory_bank.json';
+import { physicsChapterBank } from '@/lib/physicsChapterBank';
+import { sscComputerScienceTheory } from '@/lib/sscComputerScienceTheory';
 import { mappedTheoryUnits } from '@/services/materials/practice';
 
 interface PageProps {
@@ -43,10 +43,11 @@ export default async function SubjectTheoryPage({ params, mode }: PageProps) {
     return <ContentUnavailable title={`${classDef.name} ${meta.title} ${MODE_LABELS[mode]}`} />;
   }
 
-  const activeBank = meta.slug === 'computer-science' ? csChapterBank : physicsChapterBank;
   const units = ['mathematics', 'chemistry', 'biology'].includes(meta.slug) || (meta.slug === 'computer-science' && ['XI', 'XII'].includes(classRoman))
     ? await mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
-    : (classRoman === 'IX' ? (activeBank as any)['9'] : (activeBank as any)['10']) || [];
+    : meta.slug === 'computer-science'
+      ? sscComputerScienceTheory(classRoman === 'IX' ? 9 : 10)
+      : (physicsChapterBank as any)[classRoman === 'IX' ? '9' : '10'] || [];
 
   return (
     <div className={mode === 'notes' ? 'rise-ui' : undefined} style={{ maxWidth: '1280px', margin: '0 auto', padding: mode === 'notes' ? '0 0.25rem' : '1rem 1rem 0 1rem' }}>

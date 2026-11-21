@@ -46,10 +46,14 @@ test('Unit 16 pages render chapter questions, worked numericals and document fil
   expect(chapter).toContain('aria-label="D.C. Circuits Notes, original question 1"');
   expect(chapter).toContain('/past-papers/PHY-X-P1#question-18');
   const numbers = Array.from(chapter.matchAll(/>Q\.(\d+)\.</g), match => Number(match[1]));
-  expect(numbers.length).toBeGreaterThan(36);
+  expect(numbers).toHaveLength(39);
   expect(numbers).toEqual(numbers.map((_, index) => index + 1));
+  expect(chapter).not.toContain('/past-papers/PHY-X-P1#question-19');
+  expect(chapter).not.toContain('/past-papers/PHY-X-P1#question-20');
   const adjacentChapter = renderToStaticMarkup(createElement(McqsClient, { ...props, initialChapter: 'electric-current' }));
   expect(adjacentChapter).not.toContain('D.C. Circuits Notes');
+  expect(adjacentChapter).toContain('/past-papers/PHY-X-P1#question-19');
+  expect(adjacentChapter).toContain('/past-papers/PHY-X-P1#question-20');
 
   const numericals = renderToStaticMarkup(await ChapterTheoryUnitPage({
     params: Promise.resolve({ board: 'akueb', class: 'X', subject: 'physics', unit: '16' }),
@@ -60,8 +64,8 @@ test('Unit 16 pages render chapter questions, worked numericals and document fil
   }
   for (const [view, heading] of [[undefined, 'Notes'], ['mcqs', 'MCQs'], ['original', 'Original PDF']] as const) {
     const page = renderToStaticMarkup(await Unit16ResourcePage({ searchParams: Promise.resolve({ view }) }));
-    expect(page).toMatch(new RegExp(`<a [^>]*aria-current="page"[^>]*>${heading}</a>`));
-    expect(page).toContain(physicsUnit16Resource.pdf);
+    expect(page).toMatch(new RegExp(`<a [^>]*aria-current="page"[^>]*>(?:<svg[^]*?</svg><span>)?${heading}(?:</span>)?</a>`));
+    expect(page).toContain(`href="${physicsUnit16Resource.href}?view=original"`);
   }
 });
 
@@ -106,6 +110,17 @@ test('Class X chapter quizzes include notes in Unit 16 and the full bank with ma
   const notesByStem = new Map(physicsUnit16ChapterQuestions.map(q => [q.stem, q]));
   for (const [code, expected] of cases) {
     const quiz = await resolveQuiz(code);
+    if (code === 'PHY-X-UNIT-16-ALL-ALL') {
+      expect(quiz.questions).toHaveLength(39);
+      const paperKeys = ['C', 'A', 'D'];
+      for (const [index, question] of quiz.questions.slice(0, 3).entries()) {
+        const content = normalizeQuestion(question.questionData);
+        const frozen = { ...question, id: String(question.orderIndex), content };
+        for (const option of content.options) {
+          expect(gradeAnswer(frozen, { selectedOptionId: option.id })).toBe(option.id === paperKeys[index] ? 1 : 0);
+        }
+      }
+    }
     const notes = quiz.questions.map(q => normalizeQuestion(q.questionData)).filter(q => notesByStem.has(q.stemText));
     expect(notes.map(q => q.stemText)).toEqual(expected.map(q => q.stem));
     for (const q of notes) {

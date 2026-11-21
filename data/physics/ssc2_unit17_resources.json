@@ -1,0 +1,857 @@
+{
+  "crqs": [
+    {
+      "id": "unit17-2-q1",
+      "questionNumber": "Q1",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=5",
+      "currentSlo": "17.2.1",
+      "questionText": "Define the forces acting between magnetic poles. Explain the behaviour of like and unlike magnetic poles.",
+      "modelAnswer": "1. Magnetic force is the force of attraction or repulsion between magnetic poles.\n2. Like magnetic poles repel each other.\n3. Unlike magnetic poles attract each other.\n4. A north pole attracts a south pole, while two north poles or two south poles repel."
+    },
+    {
+      "id": "unit17-2-q2",
+      "questionNumber": "Q2",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=5",
+      "currentSlo": "17.2.1",
+      "questionText": "Differentiate between magnetic and non-magnetic materials. Give two examples of each.",
+      "modelAnswer": "1. Magnetic materials are attracted strongly by magnets and can be magnetised.\n2. Examples include iron, nickel and cobalt.\n3. Non-magnetic materials are not attracted significantly by ordinary magnets.\n4. Examples include wood, plastic, glass and rubber."
+    },
+    {
+      "id": "unit17-2-q3",
+      "questionNumber": "Q3",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=5",
+      "currentSlo": "17.2.1",
+      "questionText": "Explain why a magnet attracts an iron nail but does not attract a wooden stick.",
+      "modelAnswer": "1. Iron is a magnetic material, whereas wood is non-magnetic.\n2. The magnet induces magnetism in the iron nail.\n3. The induced pole nearest to the magnet is opposite to the nearby pole, producing attraction.\n4. Wood is not readily magnetised, so the wooden stick is not attracted significantly."
+    },
+    {
+      "id": "unit17-2-q4",
+      "questionNumber": "Q4",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=5",
+      "currentSlo": "17.2.2",
+      "questionText": "Define the direction of a magnetic field at a point. How can it be determined experimentally?",
+      "modelAnswer": "1. The field direction at a point is the direction in which the north-seeking pole of a small compass points.\n2. Place a small compass at the required point near the magnet.\n3. The compass needle aligns with the local magnetic field.\n4. The direction of the compass needle's north pole gives the field direction."
+    },
+    {
+      "id": "unit17-2-q5",
+      "questionNumber": "Q5",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=5",
+      "currentSlo": "17.2.2",
+      "questionText": "Describe the direction of magnetic field lines inside and outside a bar magnet.",
+      "modelAnswer": "1. Outside a bar magnet, field lines travel from north to south.\n2. Inside the magnet, they travel from south to north.\n3. They form continuous closed curves.\n4. The field direction at any point is along the tangent to the field line at that point."
+    },
+    {
+      "id": "unit17-2-q6",
+      "questionNumber": "Q6",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=5",
+      "currentSlo": "17.2.3",
+      "questionText": "What are magnetic field lines? Describe four properties.",
+      "modelAnswer": "1. Magnetic field lines are imaginary lines used to represent the direction and relative strength of a magnetic field.\n2. Outside a magnet, they travel from north to south.\n3. Inside a magnet, they travel from south to north, forming closed curves.\n4. They never intersect because the field at one point cannot have two directions.\n5. Closely spaced lines indicate a stronger field."
+    },
+    {
+      "id": "unit17-2-q7",
+      "questionNumber": "Q7",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=5",
+      "currentSlo": "17.2.3",
+      "questionText": "Describe the magnetic field pattern between two unlike magnetic poles placed close to each other.",
+      "modelAnswer": "1. Unlike magnetic poles attract each other.\n2. Field lines are directed from the north pole towards the south pole in the space between them.\n3. The lines are concentrated in the region between the poles.\n4. For suitably shaped poles, the field in the central region can be approximately uniform."
+    },
+    {
+      "id": "unit17-2-q8",
+      "questionNumber": "Q8",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=6",
+      "currentSlo": "17.2.3",
+      "questionText": "Describe the magnetic field pattern between two like magnetic poles.",
+      "modelAnswer": "1. Like magnetic poles repel each other.\n2. The field lines bend away from the region between the poles.\n3. The lines do not join one like pole directly to the other.\n4. A neutral point may occur where the fields from the two magnets cancel."
+    },
+    {
+      "id": "unit17-2-q9",
+      "questionNumber": "Q9",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=6",
+      "currentSlo": "17.2.4",
+      "questionText": "Differentiate between strong and weak magnetic fields with reference to field lines.",
+      "modelAnswer": "1. A strong field is represented by closely spaced field lines.\n2. A weak field is represented by widely spaced field lines.\n3. Closely spaced lines indicate greater field strength; widely spaced lines indicate lower field strength.\n4. The field around a bar magnet is generally strongest near its poles."
+    },
+    {
+      "id": "unit17-2-q10",
+      "questionNumber": "Q10",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=6",
+      "currentSlo": "17.2.4",
+      "questionText": "Explain how the strength of a magnetic field can be identified by observing field lines.",
+      "modelAnswer": "1. Magnetic field strength is represented by the density of field lines.\n2. Where lines are close together, the field is strong.\n3. Where lines are far apart, the field is weak.\n4. Around a bar magnet, the field is generally strongest near the poles."
+    },
+    {
+      "id": "unit17-2-q11",
+      "questionNumber": "Q11",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=6",
+      "currentSlo": "17.2.5",
+      "questionText": "Define magnetic flux. State its SI unit and explain what it represents.",
+      "modelAnswer": "1. Magnetic flux is a measure of the magnetic field passing through a given surface.\n2. It is represented by the Greek letter Φ (phi).\n3. Its SI unit is the weber (Wb).\n4. It depends on field strength, surface area and the orientation of the surface."
+    },
+    {
+      "id": "unit17-2-q12",
+      "questionNumber": "Q12",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=6",
+      "currentSlo": "17.2.5",
+      "questionText": "Write the mathematical expression for magnetic flux and explain the quantities involved.",
+      "modelAnswer": "1. Φ = BA cos θ.\n2. Φ is magnetic flux, measured in weber (Wb).\n3. B is magnetic flux density, measured in tesla (T).\n4. A is the surface area in square metres (m²).\n5. θ is the angle between the magnetic field and the normal (perpendicular) to the surface."
+    },
+    {
+      "id": "unit17-2-q13",
+      "questionNumber": "Q13",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=6",
+      "currentSlo": "17.2.5",
+      "questionText": "Explain how the orientation of a surface affects magnetic flux.",
+      "modelAnswer": "1. Flux depends on the angle between the field and the normal to the surface.\n2. Flux is maximum when the field is perpendicular to the surface (parallel to the normal).\n3. Flux is zero when the field is parallel to the surface.\n4. At 60° to the normal, flux is half its maximum value."
+    },
+    {
+      "id": "unit17-2-q16",
+      "questionNumber": "Q16",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=7",
+      "currentSlo": "17.2.6",
+      "questionText": "Explain how the Earth's magnetic field is produced.",
+      "modelAnswer": "1. The Earth has a hot, liquid outer core consisting mainly of iron and nickel.\n2. Heat from inside the Earth drives convection currents in the conducting liquid metal.\n3. The movement of this electrically conducting liquid produces electric currents.\n4. These currents generate a magnetic field around the Earth.\n5. This process is called the geodynamo effect."
+    },
+    {
+      "id": "unit17-2-q17",
+      "questionNumber": "Q17",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=7",
+      "currentSlo": "17.2.6",
+      "questionText": "Describe the importance of the Earth's magnetic field for life on Earth.",
+      "modelAnswer": "1. The Earth's magnetic field extends into space and forms the magnetosphere.\n2. It deflects many charged particles arriving from the Sun.\n3. It helps protect the atmosphere from the effects of the solar wind.\n4. It provides a natural reference for compass navigation."
+    },
+    {
+      "id": "unit17-2-q18",
+      "questionNumber": "Q18",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=7",
+      "currentSlo": "17.2.6",
+      "questionText": "Explain how a compass helps us identify the direction of the Earth's magnetic field.",
+      "modelAnswer": "1. A compass contains a small magnetised needle.\n2. The needle is free to rotate and aligns with the local magnetic field.\n3. Its north-seeking end points approximately towards geographic north.\n4. A compass can therefore be used for navigation and to identify the approximate north–south direction."
+    },
+    {
+      "id": "unit17-2-q19",
+      "questionNumber": "Q19",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=8",
+      "currentSlo": "17.2.1",
+      "questionText": "A student brings the north pole of a bar magnet near the north pole of another bar magnet. Predict what will happen and explain why.",
+      "modelAnswer": "1. The magnets will repel each other.\n2. Both facing poles are north poles.\n3. Like magnetic poles repel."
+    },
+    {
+      "id": "unit17-2-q20",
+      "questionNumber": "Q20",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=8",
+      "currentSlo": "17.2.4",
+      "questionText": "A student observes that magnetic field lines are close together near the poles of a magnet but widely spaced farther away. What does this tell us?",
+      "modelAnswer": "1. The magnetic field is strongest near the poles.\n2. The field becomes weaker farther away.\n3. The spacing of field lines represents field strength."
+    },
+    {
+      "id": "unit17-2-q21",
+      "questionNumber": "Q21",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=8",
+      "currentSlo": "17.2.6",
+      "questionText": "Why does a freely suspended bar magnet tend to settle approximately in the north–south direction?",
+      "modelAnswer": "1. The Earth produces a magnetic field and behaves approximately like a giant magnet.\n2. A freely suspended bar magnet experiences a turning effect in the Earth's field.\n3. It rotates to align with the local magnetic field.\n4. It therefore settles approximately in the north–south direction."
+    },
+    {
+      "id": "unit17-3-q1",
+      "questionNumber": "Q1",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=2",
+      "currentSlo": "17.3.1",
+      "questionText": "What is the shape of the magnetic field lines around a straight current-carrying conductor? Describe their arrangement.",
+      "modelAnswer": "The field lines are concentric circles centred on the wire. Their direction is given by the right-hand grip rule. The field becomes weaker as distance from the wire increases."
+    },
+    {
+      "id": "unit17-3-q2",
+      "questionNumber": "Q2",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=2",
+      "currentSlo": "17.3.1",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/3-q2.webp",
+      "questionText": "Draw a diagram showing the magnetic field around a straight current-carrying conductor when current flows vertically upwards.",
+      "modelAnswer": "The field consists of concentric circular lines around the wire. Use the right-hand grip rule to show their direction."
+    },
+    {
+      "id": "unit17-3-q3",
+      "questionNumber": "Q3",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=2",
+      "currentSlo": "17.3.1",
+      "questionText": "State the right-hand grip rule and explain how it determines the magnetic-field direction.",
+      "modelAnswer": "Grip the wire with the right hand so the thumb points in the direction of conventional current. The curled fingers show the direction of the magnetic field."
+    },
+    {
+      "id": "unit17-3-q4",
+      "questionNumber": "Q4",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=2",
+      "currentSlo": "17.3.1",
+      "questionText": "What happens to the magnetic field around a straight wire when the direction of current is reversed?",
+      "modelAnswer": "The magnetic-field direction reverses. Its circular pattern remains the same, and its strength at a fixed distance remains unchanged if the current magnitude is unchanged."
+    },
+    {
+      "id": "unit17-3-q5",
+      "questionNumber": "Q5",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=3",
+      "currentSlo": "17.3.1",
+      "questionText": "Describe the magnetic-field pattern produced by a current-carrying solenoid.",
+      "modelAnswer": "A solenoid is a coil of many turns of insulated wire. Its field resembles that of a bar magnet. Inside a long solenoid, field lines are straight, parallel and close together; outside, they curve around from one end to the other."
+    },
+    {
+      "id": "unit17-3-q6",
+      "questionNumber": "Q6",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=4",
+      "currentSlo": "17.3.1",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/3-q6.webp",
+      "questionText": "Draw a labelled diagram of a current-carrying solenoid showing its magnetic field lines and poles.",
+      "modelAnswer": "The solenoid has north and south poles. The field inside is nearly uniform, with straight, parallel lines; outside, the lines form closed curves."
+    },
+    {
+      "id": "unit17-3-q7",
+      "questionNumber": "Q7",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=4",
+      "currentSlo": "17.3.1",
+      "questionText": "Why is the magnetic field inside a long solenoid considered uniform?",
+      "modelAnswer": "Inside a long solenoid, field lines are approximately straight, parallel and equally spaced. Therefore, the field has nearly constant strength and direction away from the ends."
+    },
+    {
+      "id": "unit17-3-q8",
+      "questionNumber": "Q8",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=4",
+      "currentSlo": "17.3.1",
+      "questionText": "State two similarities between the magnetic field of a bar magnet and a current-carrying solenoid.",
+      "modelAnswer": "Both have north and south poles, and both produce similar magnetic-field patterns. Both can attract magnetic materials such as iron."
+    },
+    {
+      "id": "unit17-3-q9",
+      "questionNumber": "Q9",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=4",
+      "currentSlo": "17.3.1",
+      "questionText": "How can the north and south poles of a current-carrying solenoid be identified?",
+      "modelAnswer": "Viewed from an end, anticlockwise current makes that end a north pole; clockwise current makes it a south pole."
+    },
+    {
+      "id": "unit17-3-q10",
+      "questionNumber": "Q10",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=4",
+      "currentSlo": "17.3.1",
+      "questionText": "Compare the magnetic-field patterns of a straight current-carrying wire and a current-carrying solenoid.",
+      "modelAnswer": "A straight wire produces concentric circular field lines and has no distinct north or south end-poles. A solenoid produces a bar-magnet-like field, has north and south poles, and has a nearly uniform field inside."
+    },
+    {
+      "id": "unit17-3-q11",
+      "questionNumber": "Q11",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=5",
+      "currentSlo": "17.3.2",
+      "questionText": "What happens to the strength of the magnetic field around a straight conductor when the current is increased?",
+      "modelAnswer": "The magnetic field becomes stronger. In a field-line diagram, the lines are represented as more closely spaced near the conductor."
+    },
+    {
+      "id": "unit17-3-q12",
+      "questionNumber": "Q12",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=5",
+      "currentSlo": "17.3.2",
+      "questionText": "What happens to the magnetic field when current through a straight conductor is decreased?",
+      "modelAnswer": "The magnetic field becomes weaker. Its direction remains unchanged if the current direction is unchanged."
+    },
+    {
+      "id": "unit17-3-q13",
+      "questionNumber": "Q13",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=5",
+      "currentSlo": "17.3.2",
+      "questionText": "Describe the effect of reversing the current in a solenoid.",
+      "modelAnswer": "The magnetic-field direction reverses and the north and south poles exchange positions. The strength remains the same if the current magnitude is unchanged."
+    },
+    {
+      "id": "unit17-3-q14",
+      "questionNumber": "Q14",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=5",
+      "currentSlo": "17.3.2",
+      "questionText": "A student increases the current through a solenoid from 1 A to 3 A. Explain the expected change in its magnetic field, assuming other conditions remain constant.",
+      "modelAnswer": "The field becomes stronger. For an ideal solenoid, field strength is proportional to current, so tripling the current approximately triples the field strength."
+    },
+    {
+      "id": "unit17-3-q15",
+      "questionNumber": "Q15",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=5",
+      "currentSlo": "17.3.2",
+      "questionText": "A solenoid has its battery terminals interchanged. Explain what happens to its magnetic properties.",
+      "modelAnswer": "The current direction reverses, so the magnetic-field direction reverses. The north and south poles exchange positions. If current magnitude is unchanged, field strength remains approximately the same."
+    },
+    {
+      "id": "unit17-3-q16",
+      "questionNumber": "Q16",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=5",
+      "currentSlo": "17.3.2",
+      "questionText": "Explain how an experiment using a straight wire and plotting compass demonstrates that current produces a magnetic field.",
+      "modelAnswer": "Place a compass near a straight wire connected to a battery and switch. Close the switch and observe the needle deflect. Reverse the battery connections; the needle deflects in the opposite direction. This shows that current produces a magnetic field whose direction depends on current direction."
+    },
+    {
+      "id": "unit17-3-q17",
+      "questionNumber": "Q17",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=5",
+      "currentSlo": "17.3.2",
+      "questionText": "A compass needle deflects more when current through a wire is increased. Explain why.",
+      "modelAnswer": "Increasing current increases the magnetic-field strength around the wire. The stronger field exerts a greater turning effect on the compass needle, producing greater deflection."
+    },
+    {
+      "id": "unit17-3-q18",
+      "questionNumber": "Q18",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=6",
+      "currentSlo": "17.3.2",
+      "questionText": "Complete the relationship between current and magnetic field for: (i) current increased, (ii) current decreased, (iii) current reversed.",
+      "modelAnswer": "(i) Field becomes stronger. (ii) Field becomes weaker. (iii) Field direction reverses."
+    },
+    {
+      "id": "unit17-3-q19",
+      "questionNumber": "Q19",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=7",
+      "currentSlo": "17.3.3",
+      "questionText": "Explain the working principle of a loudspeaker using the magnetic effect of electric current.",
+      "modelAnswer": "A loudspeaker has a permanent magnet and a voice coil attached to a cone. Current in the coil produces a magnetic field. This interacts with the permanent magnet's field, creating a force on the coil. The coil and cone vibrate, producing sound waves."
+    },
+    {
+      "id": "unit17-3-q20",
+      "questionNumber": "Q20",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=7",
+      "currentSlo": "17.3.3",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/3-q20.webp",
+      "questionText": "Draw a labelled diagram of a loudspeaker and identify its main components.",
+      "modelAnswer": "Label the permanent magnet, voice coil, diaphragm (cone) and direction of sound waves."
+    },
+    {
+      "id": "unit17-3-q21",
+      "questionNumber": "Q21",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=7",
+      "currentSlo": "17.3.3",
+      "questionText": "Why does the coil of a loudspeaker move when electric current passes through it?",
+      "modelAnswer": "The current-carrying coil produces a magnetic field. This interacts with the permanent magnet's field, producing a force that moves the coil."
+    },
+    {
+      "id": "unit17-3-q22",
+      "questionNumber": "Q22",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=7",
+      "currentSlo": "17.3.3",
+      "questionText": "Explain why the cone of a loudspeaker vibrates when alternating current passes through its voice coil.",
+      "modelAnswer": "Alternating current repeatedly changes direction, so the coil's magnetic field and the force on the coil reverse. The coil and attached cone move backwards and forwards, producing sound."
+    },
+    {
+      "id": "unit17-3-q23",
+      "questionNumber": "Q23",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=7",
+      "currentSlo": "17.3.3",
+      "questionText": "What is the function of the diaphragm or cone in a loudspeaker?",
+      "modelAnswer": "The cone is attached to the voice coil. It vibrates with the coil and makes the surrounding air vibrate, producing sound waves."
+    },
+    {
+      "id": "unit17-3-q24",
+      "questionNumber": "Q24",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=8",
+      "currentSlo": "17.3.3",
+      "questionText": "What happens to the sound if the frequency of the alternating current supplied to a loudspeaker increases?",
+      "modelAnswer": "The voice coil and cone vibrate at a higher frequency. The sound frequency increases, so the perceived pitch becomes higher."
+    },
+    {
+      "id": "unit17-3-q25",
+      "questionNumber": "Q25",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=9",
+      "currentSlo": "17.3.3",
+      "questionText": "What is an electromagnetic relay? Explain its function in an electrical circuit.",
+      "modelAnswer": "A relay is an electrically operated switch. A coil wound around a soft-iron core becomes an electromagnet when current flows. It attracts an armature, which operates contacts to open or close another circuit."
+    },
+    {
+      "id": "unit17-3-q26",
+      "questionNumber": "Q26",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=9",
+      "currentSlo": "17.3.3",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/3-q26.webp",
+      "questionText": "Draw a labelled diagram of an electromagnetic relay showing its main components.",
+      "modelAnswer": "Label the coil, soft-iron core, armature, return spring and electrical contacts."
+    },
+    {
+      "id": "unit17-3-q27",
+      "questionNumber": "Q27",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=9",
+      "currentSlo": "17.3.3",
+      "questionText": "Describe what happens when current is switched on in the coil of an electromagnetic relay.",
+      "modelAnswer": "Current flows through the coil and magnetises the soft-iron core. The electromagnet attracts the armature. The armature moves and changes the switch contacts, making or breaking the controlled circuit depending on the relay design."
+    },
+    {
+      "id": "unit17-3-q28",
+      "questionNumber": "Q28",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=9",
+      "currentSlo": "17.3.3",
+      "questionText": "Explain how a relay can control a high-current circuit using a low-current circuit.",
+      "modelAnswer": "A small current energises the relay coil. The electromagnet attracts the armature, which operates contacts in a separate circuit. Thus, a low-current control circuit can switch a separate higher-current circuit."
+    },
+    {
+      "id": "unit17-3-q29",
+      "questionNumber": "Q29",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=9",
+      "currentSlo": "17.3.3",
+      "questionText": "Why is soft iron used as the core of an electromagnetic relay instead of steel?",
+      "modelAnswer": "Soft iron is easily magnetised and loses most of its magnetism when current is switched off. This allows the relay to operate repeatedly."
+    },
+    {
+      "id": "unit17-3-q30",
+      "questionNumber": "Q30",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=10",
+      "currentSlo": "17.3.3",
+      "questionText": "What happens to the armature and contacts of a normally open relay when current through its coil is switched off?",
+      "modelAnswer": "The coil's magnetic field disappears, so it no longer attracts the armature. The return spring moves the armature back and the normally open contacts separate, breaking the controlled circuit."
+    },
+    {
+      "id": "unit17-3-q31",
+      "questionNumber": "Q31",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=11",
+      "currentSlo": "17.3.2",
+      "questionText": "A student connects a straight wire to a battery and places a plotting compass near it. What happens when the battery connections are reversed?",
+      "modelAnswer": "The current direction reverses, so the magnetic-field direction also reverses. The compass needle deflects in the opposite direction."
+    },
+    {
+      "id": "unit17-3-q32",
+      "questionNumber": "Q32",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=11",
+      "currentSlo": "17.3.1",
+      "questionText": "A solenoid is connected to a variable power supply. Explain two ways to increase its magnetic-field strength.",
+      "modelAnswer": "Increase the current through the solenoid and/or increase the number of turns per unit length. Inserting a suitable soft-iron core also makes the field stronger."
+    },
+    {
+      "id": "unit17-3-q33",
+      "questionNumber": "Q33",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=11",
+      "currentSlo": "17.3.3",
+      "questionText": "A loudspeaker produces sound when alternating current passes through its voice coil. Why does direct current not produce continuous sound in the same way?",
+      "modelAnswer": "Direct current produces a force in one direction rather than a repeatedly reversing force. The coil moves to a displaced position and does not vibrate continuously as it does with an alternating signal."
+    },
+    {
+      "id": "unit17-3-q34",
+      "questionNumber": "Q34",
+      "sourceTitle": "17.3 · Magnetic Effect of Electric Current",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-3-magnetism.pdf#page=11",
+      "currentSlo": "17.3.3",
+      "questionText": "An electromagnetic relay is used in an automatic switching circuit. Explain why it is useful for controlling electrical appliances.",
+      "modelAnswer": "A small control current energises the coil. The resulting magnetic field attracts the armature and closes the contacts in a separate circuit. When the control current is switched off, the spring returns the armature and the contacts open."
+    },
+    {
+      "id": "unit17-4-q1",
+      "questionNumber": "Q1",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=1",
+      "currentSlo": "17.4.1",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/4-q1.webp",
+      "questionText": "Describe an experiment to demonstrate that a magnetic force acts on a current-carrying conductor placed in a magnetic field.",
+      "modelAnswer": "1.  Suspend a straight aluminium rod horizontally between the poles of a strong horseshoe magnet.\n2.  Connect the rod to a battery and a switch.\n3. When the switch is closed, current flows through the conductor.\n4. The conductor moves or gets displaced, showing that a magnetic force acts on it.\n5. When the switch is opened, the conductor returns to its original position.\n6.  This demonstrates that a current-carrying conductor experiences a force in a magnetic field."
+    },
+    {
+      "id": "unit17-4-q2",
+      "questionNumber": "Q2",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=2",
+      "currentSlo": "17.4.1",
+      "questionText": "Explain why a current-carrying conductor experiences a force when placed in a magnetic field.",
+      "modelAnswer": "• A current-carrying conductor produces its own magnetic field.\n• When placed in an external magnetic field, the two magnetic fields interact.\n•  This interaction produces a resultant magnetic field.\n• As a result, a force acts on the conductor.\n• The direction of the force depends on the direction of current and the external magnetic field."
+    },
+    {
+      "id": "unit17-4-q3",
+      "questionNumber": "Q3",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=3",
+      "currentSlo": "17.4.1",
+      "questionText": "A straight conductor carrying current is placed between the north and south poles of a magnet. Explain what happens when the current is switched on.",
+      "modelAnswer": "• The conductor experiences a magnetic force.\n• The force acts perpendicular to both the direction of current and the magnetic field.\n• The conductor moves in the direction of the force.\n•  This is the basic principle of an electric motor."
+    },
+    {
+      "id": "unit17-4-q4",
+      "questionNumber": "Q4",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=3",
+      "currentSlo": "17.4.2",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/4-q4.webp",
+      "questionText": "State and explain Fleming’s left-hand rule. Draw a labelled diagram.",
+      "modelAnswer": "Fleming’s left-hand rule states that: If the thumb, first finger and middle finger of the left hand are held mutually perpendicular to one another:\n• Thumb: Represents the direction of force or motion.\n•  First finger: Represents the direction of magnetic field.\n• Middle finger: Represents the direction of conventional current. The three directions are at right angles to one another."
+    },
+    {
+      "id": "unit17-4-q5",
+      "questionNumber": "Q5",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=4",
+      "currentSlo": "17.4.2",
+      "questionText": "A current-carrying conductor is placed in a magnetic field directed from left to right. Using Fleming’s left-hand rule, explain how the direction of force can be determined.",
+      "modelAnswer": "1.  Point the first finger of the left hand in the direction of the magnetic field (left to right).\n2.  Point the middle finger in the direction of conventional current.\n3.  Extend the thumb perpendicular to the other two fingers.\n4. The thumb indicates the direction of the magnetic force acting on the conductor."
+    },
+    {
+      "id": "unit17-4-q6",
+      "questionNumber": "Q6",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=4",
+      "currentSlo": "17.4.2",
+      "questionText": "Why are the thumb, first finger and middle finger held perpendicular to one another in Fleming’s left-hand rule?",
+      "modelAnswer": "The three fingers represent three mutually perpendicular directions:\n• Magnetic field.\n•  Electric current.\n• Magnetic force. This arrangement helps determine the direction of force on a current-carrying conductor placed in a magnetic field."
+    },
+    {
+      "id": "unit17-4-q7",
+      "questionNumber": "Q7",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=5",
+      "currentSlo": "17.4.3",
+      "questionText": "Describe the effect on the direction of magnetic force when the direction of current in a conductor is reversed while the magnetic field remains unchanged.",
+      "modelAnswer": "• Reversing the current reverses the direction of the magnetic force.\n• The magnetic field remains unchanged.\n•  This can be explained using Fleming’s left-hand rule.\n• The conductor moves in the opposite direction."
+    },
+    {
+      "id": "unit17-4-q8",
+      "questionNumber": "Q8",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=5",
+      "currentSlo": "17.4.3",
+      "questionText": "What happens to the direction of magnetic force when the direction of the magnetic field is reversed but the current remains unchanged?",
+      "modelAnswer": "• The direction of magnetic force is reversed.\n• The current remains in its original direction.\n• The magnetic field changes direction.\n• According to Fleming’s left-hand rule, the conductor experiences force in the opposite direction."
+    },
+    {
+      "id": "unit17-4-q9",
+      "questionNumber": "Q9",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=5",
+      "currentSlo": "17.4.3",
+      "questionText": "Explain what happens to the direction of force if both the current and the magnetic field are reversed simultaneously.",
+      "modelAnswer": "• Reversing the current alone reverses the magnetic force.\n• Reversing the magnetic field alone also reverses the magnetic force.\n• When both are reversed simultaneously, the two reversals cancel each other.\n•  Therefore, the direction of the magnetic force remains unchanged."
+    },
+    {
+      "id": "unit17-4-q10",
+      "questionNumber": "Q10",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=5",
+      "currentSlo": "17.4.3",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/4-q10.webp",
+      "questionText": "A conductor experiences an upward magnetic force. Predict the direction of force in each situation: (a) The current is reversed but the magnetic field remains unchanged. (b) The magnetic field is reversed but the current remains unchanged. (c) Both current and magnetic field are reversed.",
+      "modelAnswer": "(a) Downward if only the current is reversed.\n(b) Downward if only the magnetic field is reversed.\n(c) Upward if both are reversed."
+    },
+    {
+      "id": "unit17-4-q11",
+      "questionNumber": "Q11",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=6",
+      "currentSlo": "17.4.4",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/4-q11.webp",
+      "questionText": "Describe the magnetic field pattern between two parallel conductors carrying currents in the same direction. Explain the force between them.",
+      "modelAnswer": "• Each conductor produces a circular magnetic field around itself.\n• When currents flow in the same direction, the magnetic fields between the conductors oppose each other.\n• The magnetic field becomes weaker in the region between the wires.\n• The conductors experience an attractive force.\n•  Therefore, parallel conductors carrying currents in the same direction attract each other."
+    },
+    {
+      "id": "unit17-4-q12",
+      "questionNumber": "Q12",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=7",
+      "currentSlo": "17.4.4",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/4-q12.webp",
+      "questionText": "Describe the magnetic field pattern between two parallel conductors carrying currents in opposite directions. Explain the force between them.",
+      "modelAnswer": "• Each conductor produces a circular magnetic field.\n• When currents flow in opposite directions, the magnetic fields between the conductors act in the same direction.\n• The magnetic field becomes stronger in the region between the wires.\n• The conductors experience a repulsive force.\n•  Therefore, parallel conductors carrying currents in opposite directions repel each other."
+    },
+    {
+      "id": "unit17-4-q13",
+      "questionNumber": "Q13",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=8",
+      "currentSlo": "17.4.4",
+      "questionText": "Compare the forces between two parallel current-carrying conductors when: (a) Currents flow in the same direction. (b) Currents flow in opposite directions.",
+      "modelAnswer": "(a) In the same direction, the wires attract. Their fields oppose one another between the wires.\n(b) In opposite directions, the wires repel. Their fields reinforce one another between the wires."
+    },
+    {
+      "id": "unit17-4-q14",
+      "questionNumber": "Q14",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=8",
+      "currentSlo": "17.4.4",
+      "questionText": "Two long parallel wires are placed close to each other. Both carry electric current in the same direction. Explain why the wires move towards each other.",
+      "modelAnswer": "• Each wire produces a magnetic field around itself.\n• The magnetic fields interact with the currents in the other wire.\n•  This interaction produces attractive magnetic forces.\n• Both wires experience forces towards each other.\n• Hence, the wires move towards each other."
+    },
+    {
+      "id": "unit17-4-q15",
+      "questionNumber": "Q15",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=9",
+      "currentSlo": "17.4.4",
+      "questionText": "Two parallel conductors carry currents in opposite directions. A student claims that the conductors will attract each other because both produce magnetic fields. Is the student correct? Explain your answer.",
+      "modelAnswer": "No, the student is incorrect.\n• Both conductors produce magnetic fields around themselves.\n• The magnetic fields reinforce each other in the region between the conductors.\n•  This interaction produces repulsive forces.\n•  Therefore, the conductors move away from each other."
+    },
+    {
+      "id": "unit17-4-q16",
+      "questionNumber": "Q16",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=9",
+      "currentSlo": "17.4.1",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/5-q13.webp",
+      "questionText": "An electric motor contains a rectangular coil placed between the poles of a magnet. Explain how the magnetic force produces rotation of the coil.",
+      "modelAnswer": "1.  Current flows through the rectangular coil.\n2. The coil is placed in an external magnetic field.\n3.  Opposite forces act on the two sides of the coil.\n4.  These forces act in opposite directions and produce a turning effect (torque).\n5. The coil starts rotating.\n6.  This is the basic principle of an electric motor."
+    },
+    {
+      "id": "unit17-4-q17",
+      "questionNumber": "Q17",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=10",
+      "currentSlo": "17.4.3",
+      "questionText": "A student reverses the connections of a battery supplying current to a conductor placed in a magnetic field. Predict the change in the conductor's motion and explain your answer.",
+      "modelAnswer": "• Reversing the battery connections reverses the direction of current.\n• The external magnetic field remains unchanged.\n• According to Fleming’s left-hand rule, the direction of force is reversed.\n•  Therefore, the conductor moves in the opposite direction."
+    },
+    {
+      "id": "unit17-4-q18",
+      "questionNumber": "Q18",
+      "sourceTitle": "17.4 · Magnetic Force on Conductors",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-4-magnetism.pdf#page=10",
+      "currentSlo": "17.4.4",
+      "questionText": "A student investigates the force between two parallel current-carrying wires. The current in one wire is reversed. (a) What happens to the direction of force between the wires? (b) Explain the reason for this change.",
+      "modelAnswer": "(a) The nature of the force changes from attraction to repulsion, or from repulsion to attraction.\n(b) Reversing the current in one wire changes the currents from flowing in the same direction to flowing in opposite directions, or vice versa. Consequently, the magnetic field interaction changes and the force between the wires is reversed."
+    },
+    {
+      "id": "unit17-5-q1",
+      "questionNumber": "Q1",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=1",
+      "currentSlo": "17.5.1",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/5-q1.webp",
+      "questionText": "Describe why a current-carrying rectangular coil placed in a magnetic field experiences a turning effect (torque).",
+      "modelAnswer": "1. A rectangular coil carrying current is placed between the poles of a magnet.\n2. The two opposite sides of the coil experience magnetic forces in opposite directions.\n3.  These forces act along different lines of action.\n4. They form a couple that produces a turning effect called torque.\n5. As a result, the coil starts rotating."
+    },
+    {
+      "id": "unit17-5-q2",
+      "questionNumber": "Q2",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=1",
+      "currentSlo": "17.5.1",
+      "questionText": "Explain how Fleming’s left-hand rule is used to determine the direction of forces acting on the two sides of a current-carrying coil.",
+      "modelAnswer": "• The first finger represents the direction of the magnetic field.\n• The middle finger represents the direction of conventional current.\n• The thumb represents the direction of magnetic force.\n• Applying this rule to both sides of the coil shows that the forces act in opposite directions.\n• These forces produce a turning effect on the coil."
+    },
+    {
+      "id": "unit17-5-q3",
+      "questionNumber": "Q3",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=2",
+      "currentSlo": "17.5.1",
+      "questionText": "What is meant by torque? Explain how torque is produced in a current-carrying coil.",
+      "modelAnswer": "Torque is the turning effect of a force about an axis of rotation. In a current-carrying coil:\n• Magnetic forces act on opposite sides of the coil.\n• The forces act in opposite directions.\n• They produce a turning effect around the axis.\n•  This turning effect causes the coil to rotate."
+    },
+    {
+      "id": "unit17-5-q4",
+      "questionNumber": "Q4",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=2",
+      "currentSlo": "17.5.1",
+      "questionText": "A rectangular coil is placed between the north and south poles of a magnet. Explain what happens when current passes through the coil.",
+      "modelAnswer": "• The current-carrying coil produces its own magnetic field.\n• The external magnetic field interacts with the coil.\n• Magnetic forces act on the two opposite sides of the coil.\n• These forces produce torque.\n• The coil starts rotating about its axis."
+    },
+    {
+      "id": "unit17-5-q5",
+      "questionNumber": "Q5",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=2",
+      "currentSlo": "17.5.2",
+      "questionText": "Explain how increasing the area of a current-carrying coil increases the turning effect.",
+      "modelAnswer": "• A larger coil has a greater distance between its opposite sides.\n•  This increases the perpendicular separation between the forces.\n• The turning effect or torque increases.\n•  Therefore, increasing the area of the coil increases its turning effect."
+    },
+    {
+      "id": "unit17-5-q6",
+      "questionNumber": "Q6",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=2",
+      "currentSlo": "17.5.2",
+      "questionText": "Describe the effect of increasing the electric current flowing through a coil placed in a magnetic field.",
+      "modelAnswer": "•  Increasing current increases the magnetic force acting on the sides of the coil.\n•  Greater forces act on the opposite sides.\n• The turning effect becomes greater.\n•  Therefore, increasing current increases torque."
+    },
+    {
+      "id": "unit17-5-q7",
+      "questionNumber": "Q7",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=3",
+      "currentSlo": "17.5.2",
+      "questionText": "Explain why increasing the number of turns of a coil increases its turning effect.",
+      "modelAnswer": "• Each turn of the coil experiences magnetic forces.\n•  Increasing the number of turns increases the total magnetic force producing rotation.\n•  Consequently, the turning effect increases.\n•  Therefore, a coil with more turns produces greater torque."
+    },
+    {
+      "id": "unit17-5-q8",
+      "questionNumber": "Q8",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=3",
+      "currentSlo": "17.5.2",
+      "questionText": "Explain how increasing the strength of the magnetic field affects the turning effect of a current-carrying coil.",
+      "modelAnswer": "• A stronger magnetic field produces greater magnetic forces on the current-carrying coil.\n• The forces acting on opposite sides of the coil increase.\n•  This increases the turning effect.\n• Hence, increasing magnetic field strength increases torque."
+    },
+    {
+      "id": "unit17-5-q9",
+      "questionNumber": "Q9",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=3",
+      "currentSlo": "17.5.2",
+      "questionText": "A student wants to increase the turning effect of a simple electric motor. Describe four changes that can be made to achieve this.",
+      "modelAnswer": "The turning effect can be increased by:\n1.  Increasing the area of the coil.\n2.  Increasing the current flowing through the coil.\n3.  Increasing the number of turns of the coil.\n4.  Using a stronger magnetic field."
+    },
+    {
+      "id": "unit17-5-q10",
+      "questionNumber": "Q10",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=3",
+      "currentSlo": "17.5.2",
+      "questionText": "A coil has a small area, few turns and carries a low current. Explain how changing these properties can improve the performance of an electric motor.",
+      "modelAnswer": "•  Increasing the coil area increases the distance between the forces.\n•  Increasing the number of turns increases the total force acting on the coil.\n•  Increasing the current increases the magnetic force.\n•  Increasing the magnetic field strength also increases the magnetic force.\n•  All these changes increase the turning effect and improve the motor's ability to rotate."
+    },
+    {
+      "id": "unit17-5-q11",
+      "questionNumber": "Q11",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=4",
+      "currentSlo": "17.5.2",
+      "questionText": "Two coils are placed in identical magnetic fields. Coil A has more turns than coil B, while both carry the same current and have the same area. Which coil experiences a greater turning effect? Explain.",
+      "modelAnswer": "Coil A experiences a greater turning effect because:\n•   It has more turns than coil B.\n• Each turn experiences magnetic forces.\n• The combined turning effect of all the turns is greater.\n•  Therefore, coil A experiences greater torque."
+    },
+    {
+      "id": "unit17-5-q12",
+      "questionNumber": "Q12",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=4",
+      "currentSlo": "17.5.2",
+      "questionText": "How does increasing each of the following affect the torque on a current-carrying coil: its area, the current, the number of turns, and the magnetic field strength?",
+      "modelAnswer": "With the other factors and orientation fixed, increasing any of the four factors increases the turning effect."
+    },
+    {
+      "id": "unit17-5-q13",
+      "questionNumber": "Q13",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=4",
+      "currentSlo": "17.5.3",
+      "betterResponseImage": "/materials/ssc/physics/ssc-2/unit-17/5-q13.webp",
+      "questionText": "Describe the construction of a simple D.C. motor with the help of a labelled diagram.",
+      "modelAnswer": "A simple D.C. motor consists of the following parts:\n1.  Rectangular coil: A coil of insulated copper wire that rotates in the magnetic field.\n2.  Permanent magnets: Produce a magnetic field between their north and south poles.\n3.  Split-ring commutator: Reverses the direction of current in the coil after every half-turn.\n4.  Carbon brushes: Maintain electrical contact between the rotating commutator and the external circuit.\n5.  Axle: Supports the coil and allows it to rotate.\n6.  D.C. battery: Supplies direct current to the coil."
+    },
+    {
+      "id": "unit17-5-q14",
+      "questionNumber": "Q14",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=5",
+      "currentSlo": "17.5.3",
+      "questionText": "Explain the working principle of a simple D.C. motor.",
+      "modelAnswer": "A D.C. motor works on the principle that a current-carrying conductor placed in a magnetic field experiences a force.\n• When current flows through the coil, its two opposite sides experience forces in opposite directions.\n• These forces produce a turning effect or torque.\n• The coil starts rotating.\n•  After every half-turn, the split-ring commutator reverses the current direction.\n•  This keeps the turning effect in the same rotational direction.\n•  Therefore, the coil continues rotating."
+    },
+    {
+      "id": "unit17-5-q15",
+      "questionNumber": "Q15",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=5",
+      "currentSlo": "17.5.3",
+      "questionText": "Explain the function of the split-ring commutator in a D.C. motor.",
+      "modelAnswer": "• The split-ring commutator consists of two separate conducting halves.\n•   It is connected to the ends of the rotating coil.\n•   It reverses the current direction in the coil after every half-turn.\n•  This ensures that the turning effect continues in the same rotational direction.\n•  Thus, it allows continuous rotation of the motor."
+    },
+    {
+      "id": "unit17-5-q16",
+      "questionNumber": "Q16",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=5",
+      "currentSlo": "17.5.3",
+      "questionText": "What is the function of carbon brushes in a D.C. motor?",
+      "modelAnswer": "• Carbon brushes are stationary conducting contacts.\n• They press against the split-ring commutator.\n• They allow current to flow from the battery into the rotating coil.\n• They maintain electrical contact while the coil rotates."
+    },
+    {
+      "id": "unit17-5-q17",
+      "questionNumber": "Q17",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=6",
+      "currentSlo": "17.5.3",
+      "questionText": "What would happen if the split-ring commutator of a D.C. motor were replaced by two complete rings? Explain.",
+      "modelAnswer": "• The current in the coil would not automatically reverse after every half-turn.\n• The direction of torque would reverse after each half-turn.\n• The coil would not continue rotating in the same direction.\n•  Therefore, the split-ring commutator is essential for continuous rotation in a simple D.C. motor."
+    },
+    {
+      "id": "unit17-5-q18",
+      "questionNumber": "Q18",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=6",
+      "currentSlo": "17.5.3",
+      "questionText": "Explain how electrical energy is converted into mechanical energy in a D.C. motor.",
+      "modelAnswer": "• The battery supplies electrical energy to the coil.\n•  Current flows through the coil placed in a magnetic field.\n• Magnetic forces act on the coil.\n• These forces produce torque and cause rotation.\n• The rotating coil produces mechanical energy.\n•  Thus, a D.C. motor converts electrical energy into mechanical energy."
+    },
+    {
+      "id": "unit17-5-q19",
+      "questionNumber": "Q19",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=6",
+      "currentSlo": "17.5.3",
+      "questionText": "A D.C. motor is not rotating even though it is connected to a battery. Identify possible reasons.",
+      "modelAnswer": "Possible reasons include:\n1. The battery is discharged.\n2. The electrical connections are loose.\n3. The carbon brushes are not making proper contact.\n4. The coil is damaged or disconnected.\n5. The coil or axle is mechanically jammed."
+    },
+    {
+      "id": "unit17-5-q20",
+      "questionNumber": "Q20",
+      "sourceTitle": "17.5 · D.C. Motors and Torque",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-5-magnetism.pdf#page=6",
+      "currentSlo": "17.5.3",
+      "questionText": "Explain why the current-carrying coil in a D.C. motor must be free to rotate in a magnetic field.",
+      "modelAnswer": "The coil must be free to rotate for the motor to deliver mechanical motion. Current in the coil interacts with the magnetic field, producing forces on opposite sides of the coil. Those forces create torque."
+    }
+  ],
+  "numericals": [
+    {
+      "id": "unit17-2-q14",
+      "questionNumber": "Q14",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=6",
+      "currentSlo": "17.2.5",
+      "problem": "A uniform magnetic field of 0.5 T passes perpendicularly through a flat surface of area 0.2 m². Calculate the magnetic flux.",
+      "formula": "Φ = BA cos θ",
+      "solution": "1. Given: B = 0.5 T, A = 0.2 m² and θ = 0° (field perpendicular to surface).\n2. Formula: Φ = BA cos θ.\n3. Substitution: Φ = 0.5 × 0.2 × cos 0°.\n4. Φ = 0.5 × 0.2 × 1 = 0.1 Wb."
+    },
+    {
+      "id": "unit17-2-q15",
+      "questionNumber": "Q15",
+      "sourceTitle": "17.2 · Magnetic Fields and Flux",
+      "sourceHref": "/materials/ssc/physics/ssc-2/unit-17-2-magnetism.pdf#page=6",
+      "currentSlo": "17.2.5",
+      "problem": "A rectangular surface of area 0.4 m² is placed in a uniform magnetic field of 0.25 T. The angle between the field and the normal is 60°. Calculate the magnetic flux.",
+      "formula": "Φ = BA cos θ",
+      "solution": "1. Given: B = 0.25 T, A = 0.4 m² and θ = 60°.\n2. Formula: Φ = BA cos θ.\n3. Substitution: Φ = 0.25 × 0.4 × cos 60°.\n4. Φ = 0.25 × 0.4 × 0.5 = 0.05 Wb."
+    }
+  ]
+}

@@ -9,7 +9,6 @@ export default function Page(){
  return <section className={styles.page}>
   <h1>Computer Science XI 2019 e-marking notes</h1>
   <p>Official AKU-EB response examples and checking comments accompany typed questions and project-reviewed worked answers. Source errors and assumptions are explained in the answers. Both ERQ alternatives are included.</p>
-  <p><Link href="/past-papers/CS-XI-2019-P2">Open Paper II</Link></p>
-  <PaperViewerClient paper={{...paper,fileUrl:hsscComputerScience2019Resources.papers[3].file}} questions={paper.questions.map(presentPaperQuestion)} historical hideHeader/>
+  <PaperViewerClient paper={{...paper,fileUrl:hsscComputerScience2019Resources.papers[3].file}} questions={paper.questions.map(presentPaperQuestion)} historical hideHeader resourceLinks={<Link href="/past-papers/CS-XI-2019-P2">Open Paper II</Link>}/>
  </section>;
 }

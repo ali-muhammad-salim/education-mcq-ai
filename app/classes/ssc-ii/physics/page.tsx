@@ -18,6 +18,7 @@ import { physicsUnit16Resource } from '@/lib/physicsUnit16Resource';
 // Static Data Imports
 import ssc2ExactSyllabus from '../../../../data/physics/ssc2_exact_syllabus.json';
 import ssc2McqsData from '../../../../data/physics/ssc2_model_mcqs.json';
+import { uniqueQuestions } from '@/lib/uniqueQuestions';
 import ssc2CrqsData from '../../../../data/physics/ssc2_model_crqs.json';
 import ssc2PacingData from '../../../../data/physics/ssc2_pacing.json';
 
@@ -58,12 +59,12 @@ export default function SSC2PhysicsPage() {
   };
 
   // Filtered MCQs
-  const filteredMcqs = ssc2McqsData.filter((q: any) => {
+  const filteredMcqs = uniqueQuestions(ssc2McqsData.filter((q: any) => {
     if (mcqFilter === 'all') return true;
     if (mcqFilter === 'diagram') return q.isDiagram;
     if (mcqFilter === 'numerical') return q.isNumerical;
     return q.cognitiveLevel === mcqFilter;
-  });
+  }));
 
   // Filtered Units for Syllabus (Units 11-20)
   const filteredUnits = ssc2ExactSyllabus.filter((u: any) => {
@@ -1388,7 +1389,7 @@ export default function SSC2PhysicsPage() {
 
           {crqViewMode === 'interactive' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              {ssc2CrqsData.map((q: any) => (
+              {uniqueQuestions(ssc2CrqsData).map((q: any) => (
                 <div
                   key={q.questionNumber}
                   style={{

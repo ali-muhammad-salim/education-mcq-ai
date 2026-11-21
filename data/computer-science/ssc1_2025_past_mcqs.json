@@ -1997,10 +1997,10 @@
     ],
     "stem": "The HTML code to display X⁹+Y₃*Z⁶ is",
     "options": {
-      "A": "X<sup>9</sup>+Y<sub>3</sub>*Z <sup>6</sup>",
-      "B": "X<sub>9</sub>+Y<sup>3</sup>*Z<sub>6</sub>",
-      "C": "<sup>X9</sup>+<sub>Y3</sub>*<sup>Z6</sup>",
-      "D": "<sub>X9</sub>+<sup>Y3</sup>*<sub>Z6</sub>"
+      "A": "```html\nX<sup>9</sup>+Y<sub>3</sub>*Z <sup>6</sup>\n```",
+      "B": "```html\nX<sub>9</sub>+Y<sup>3</sup>*Z<sub>6</sub>\n```",
+      "C": "```html\n<sup>X9</sup>+<sub>Y3</sub>*<sup>Z6</sup>\n```",
+      "D": "```html\n<sub>X9</sub>+<sup>Y3</sup>*<sub>Z6</sub>\n```"
     },
     "correctOption": "A",
     "explanation": "In `X⁹+Y₃*Z⁶`, 9 and 6 are superscripts (`<sup>9</sup>` and `<sup>6</sup>`) while 3 is a subscript (`<sub>3</sub>`), giving `X<sup>9</sup>+Y<sub>3</sub>*Z <sup>6</sup>`.",
@@ -2053,10 +2053,10 @@
     ],
     "stem": "Use this information to answer Q.38 and Q.39.\nConsider the given text:\n`Click here to open LinkedIn`\n\nThe HTML code to make the hyperlink of the given text is",
     "options": {
-      "A": "<a href:\"https://www.linkedin.com/\"><a>Click here to open LinkedIn </a>",
-      "B": "<a href=https://www.linkedin.com/>Click here to open LinkedIn </a>",
-      "C": "Click here to open LinkedIn <a href=\"https://www.linkedin.com/\">",
-      "D": "<a>Click here to open LinkedIn </a> <a href=https://www.linkedin.com/>"
+      "A": "```html\n<a href:\"https://www.linkedin.com/\"><a>Click here to open LinkedIn </a>\n```",
+      "B": "```html\n<a href=https://www.linkedin.com/>Click here to open LinkedIn </a>\n```",
+      "C": "```html\nClick here to open LinkedIn <a href=\"https://www.linkedin.com/\">\n```",
+      "D": "```html\n<a>Click here to open LinkedIn </a> <a href=https://www.linkedin.com/>\n```"
     },
     "correctOption": "B",
     "explanation": "An HTML hyperlink uses `<a href=URL>Link Text</a>`, wrapping the visible text `Click here to open LinkedIn` between the opening `<a href=...>` tag and the closing `</a>` tag.",
@@ -2109,10 +2109,10 @@
     ],
     "stem": "Use this information to answer Q.38 and Q.39.\nConsider the given text:\n`Click here to open LinkedIn`\n\nThe HTML code to show this text in magenta color over white background is",
     "options": {
-      "A": "<body style:\"background-color white;\"> <p style:\"color magenta\">Click here to open LinkedIn</p>",
-      "B": "<style=\"background color<white>;\"> <p style=\"color<magenta>\"> Click here to open LinkedIn </p>",
-      "C": "<style=\"background color=white;\"> <p style=\"color=magenta\"> Click here to open LinkedIn </p>",
-      "D": "<body style=\"background-color:white;\"> <p style=\"color:magenta;\">Click here to open LinkedIn</p>"
+      "A": "```html\n<body style:\"background-color white;\"> <p style:\"color magenta\">Click here to open LinkedIn</p>\n```",
+      "B": "```html\n<style=\"background color<white>;\"> <p style=\"color<magenta>\"> Click here to open LinkedIn </p>\n```",
+      "C": "```html\n<style=\"background color=white;\"> <p style=\"color=magenta\"> Click here to open LinkedIn </p>\n```",
+      "D": "```html\n<body style=\"background-color:white;\"> <p style=\"color:magenta;\">Click here to open LinkedIn</p>\n```"
     },
     "correctOption": "D",
     "explanation": "Valid inline CSS syntax uses `style=\"property:value;\"`, so `<body style=\"background-color:white;\">` sets a white page background and `<p style=\"color:magenta;\">` sets magenta text colour.",

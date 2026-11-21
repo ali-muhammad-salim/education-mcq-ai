@@ -1002,10 +1002,10 @@
     "pageNumber": 7,
     "stem": "There are different types of logic gates.\n\nThe Boolean expression to represent an AND operation is",
     "options": {
-      "A": "X + Y = Z",
-      "B": "X . Y = Z",
-      "C": "X * Y = Z",
-      "D": "X' + Y = Z"
+      "A": "$X + Y = Z$",
+      "B": "$X \\cdot Y = Z$",
+      "C": "$X \\ast Y = Z$",
+      "D": "$X' + Y = Z$"
     },
     "correctAnswer": "B",
     "correctOption": "B",
@@ -1040,10 +1040,10 @@
   {
     "questionNumber": 25,
     "pageNumber": 7,
-    "stem": "If A = 1 then what would be the result of Boolean expression (A . NOT(A)) + A?",
+    "stem": "If $A = 1$, what is the result of the Boolean expression $(A \\cdot \\overline{A}) + A$?",
     "options": {
-      "A": "-A",
-      "B": "NOT(A)",
+      "A": "$-A$",
+      "B": "$\\overline{A}$",
       "C": "0",
       "D": "1"
     },

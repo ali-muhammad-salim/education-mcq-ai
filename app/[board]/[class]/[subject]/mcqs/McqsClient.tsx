@@ -41,7 +41,11 @@ import TakeQuizModal from '@/components/TakeQuizModal';
 import { smartMatch } from '@/lib/smartSearch';
 import { questionSyllabus } from '@/lib/questionSyllabus';
 import { physicsUnit16Resource } from '@/lib/physicsUnit16Resource';
-import { physicsUnit16ChapterQuestions } from '@/lib/physicsUnit16Questions';
+import { physicsUnit17Resource } from '@/lib/physicsUnit17Resources';
+import { physicsSupplementaryQuestions } from '@/lib/physicsSupplementaryQuestions';
+import { sscComputerScienceMcqReview } from '@/lib/sscComputerScienceMcqReview';
+import { sscComputerScienceMapping, sscComputerScienceUnits } from '@/lib/sscComputerScienceSyllabus';
+import { groupDuplicateQuestions } from '@/lib/uniqueQuestions';
 import {
   HubEmpty, HubMasthead, HubRail, HubSection, HubShell, PaperGrid, TierGrid, UnitBrowser,
   type PaperEntry, type TierEntry, type UnitEntry,
@@ -52,6 +56,7 @@ interface Props {
   useReviewedLegacy?: boolean;
   annualQuestions?: any[];
   mappedChapters?:{id:string;name:string;questions:any[]}[];
+  computerChapterQuestions?: any[];
   availableTheorySections?: string[];
   reviewedPapers?: { paperCode: string; title: string; examYear: number; count: number }[];
   board: BoardInfo;
@@ -206,7 +211,7 @@ const CLASS_X_UNITS: ChapterDef[] = [
   {
     unitNumber: 17,
     name: 'Magnetism and Electromagnetism',
-    slug: 'magnetism-and-electromagnetism',
+    slug: physicsUnit17Resource.mcqSlug,
     topics: 'Domain Theory, Magnetic Field Lines, Field of Straight Conductor & Solenoid, Force on Conductor, Fleming Left-Hand Rule, DC Motor',
     qRange: [23, 26],
     pastPaperCount: 30
@@ -258,7 +263,15 @@ const CS_CLASS_X_UNITS: ChapterDef[] = [
 ];
 
 function belongsToUnit(q: any, unit: ChapterDef, isAnnual: boolean): boolean {
-  if (q.paperCode === physicsUnit16Resource.quizCode) return q.unitNumber === unit.unitNumber;
+  if (/^CS-(IX|X)-/.test(q.paperCode || '')) {
+    return (q.sourceRegion || q).current_mapping?.some((outcome: { unitNumber?: number }) => outcome.unitNumber === unit.unitNumber) === true;
+  }
+  if (q.paperCode === physicsUnit16Resource.quizCode || q.paperCode === physicsUnit17Resource.mcqSourceCode) {
+    return q.unitNumber === unit.unitNumber;
+  }
+  if (q.paperCode === 'PHY-X-P1' && unit.unitNumber === physicsUnit16Resource.unit) {
+    return Number(q.unitNumber) === unit.unitNumber;
+  }
   if (Number(q.unitNumber) === unit.unitNumber) return true;
   if (isAnnual) {
     return String(q.current_slo || q.slo || '').startsWith(unit.unitNumber + '.');
@@ -267,13 +280,13 @@ function belongsToUnit(q: any, unit: ChapterDef, isAnnual: boolean): boolean {
   return qNum >= unit.qRange[0] && qNum <= unit.qRange[1];
 }
 
-export default function McqsClient({ board, classDef, meta, baseUrl, questions,mappedChapters=[],availableTheorySections=['crqs','erqs','numericals','chapter-notes'],reviewedPapers=[],initialCategory,useReviewedLegacy=false,annualQuestions=past2025,initialChapter }: Props) {
+export default function McqsClient({ board, classDef, meta, baseUrl, questions,mappedChapters=[],computerChapterQuestions,availableTheorySections=['crqs','erqs','numericals','chapter-notes'],reviewedPapers=[],initialCategory,useReviewedLegacy=false,annualQuestions=past2025,initialChapter }: Props) {
   const isCs = meta.slug === 'computer-science';
   const isChem = meta.slug === 'chemistry';
   const isMath = meta.slug === 'mathematics';
   const isPhysics = !isCs && !isChem && !isMath;
   const extraChapterQuestions = board.id === 'akueb' && meta.slug === 'physics' && classDef.level === 10
-    ? physicsUnit16ChapterQuestions : [];
+    ? physicsSupplementaryQuestions : [];
   const currentMappedQuestions = (isMath || isChem) ? mappedChapters.flatMap(chapter => chapter.questions) : [];
   const subjPrefix = isChem ? 'CHM' : isMath ? 'MTH' : isCs ? 'CS' : 'PHY';
   const chemistryUnits: ChapterDef[] = [];
@@ -297,7 +310,10 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   const unitsList = isChem || isMath
     ? chemistryUnits
     : questions.length
-      ? (isCs ? (classDef.roman === 'IX' ? CS_CLASS_IX_UNITS : CS_CLASS_X_UNITS) : (classDef.roman === 'IX' ? CLASS_IX_UNITS : CLASS_X_UNITS))
+      ? (isCs ? (classDef.roman === 'IX' ? CS_CLASS_IX_UNITS : CS_CLASS_X_UNITS).map(unit => {
+        const official = sscComputerScienceUnits[classDef.roman === 'IX' ? 9 : 10].find(item => item.unitNumber === unit.unitNumber);
+        return { ...unit, topics: official?.subtopics.map(topic => topic.name).join(' · ') ?? unit.topics };
+      }) : (classDef.roman === 'IX' ? CLASS_IX_UNITS : CLASS_X_UNITS))
       : [];
   const initialUnit = initialChapter
     ? unitsList.find(unit => unit.slug === initialChapter || String(unit.unitNumber) === initialChapter) || null
@@ -322,7 +338,17 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
   const [practiceSource, setPracticeSource] = useState<'model' | 'annual' | 'annual2024' | 'annual2023' | 'annual2022' | 'annual2019' | 'annual2017' | 'annual_all' | 'chapter_all'>('chapter_all');
 
-  const mappedModelPool = questions.map((q: any) => ({
+  const eligibleMcqs = (items: any[], year?: number) => isCs
+    ? items.flatMap(q => {
+      const code = `CS-${classDef.roman}${year ? `-${year}` : ''}-P1`;
+      return sscComputerScienceMcqReview(code, q.questionNumber) ? [] : [{
+        ...q,
+        ...sscComputerScienceMapping(code, q.questionNumber, q.out_of_syllabus ? null : q.current_slo, q.stem),
+      }];
+    })
+    : items;
+
+  const mappedModelPool = eligibleMcqs(questions).map((q: any) => ({
     ...q,
     paperCode: `${subjPrefix}-${classDef.roman}-P1`,
     sourceTitle: 'Model Paper 1',
@@ -334,7 +360,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   const active2025Raw = classDef.roman === 'X' && isPhysics && !annualQuestions?.length ? pastX2025 : annualQuestions;
 
   const mapped2025Pool = (classDef.roman === 'IX' || classDef.roman === 'X') && active2025Raw.length > 0
-    ? active2025Raw.map((q: any) => ({
+    ? eligibleMcqs(active2025Raw, 2025).map((q: any) => ({
         ...q,
         ...(isPhysics ? (classDef.roman === 'IX' ? annualOriginalReference(q.questionNumber) : annualX2025OriginalReference(q.questionNumber)) : {}),
         ...(q.answer_review_note ? { answer_review_note: q.answer_review_note } : {}),
@@ -353,7 +379,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     : [];
 
   const active2024Raw = isCs
-    ? (classDef.roman === 'IX' ? csPast2024.filter(q => Number(q.questionNumber) !== 9) : csXPast2024)
+    ? eligibleMcqs(classDef.roman === 'IX' ? csPast2024 : csXPast2024, 2024)
     : isChem
       ? (classDef.roman === 'IX' ? chemPast2024 : [])
       : isMath
@@ -379,7 +405,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       }))
     : [];
 
-  const active2023Raw = isCs ? (classDef.roman === 'IX' ? csPast2023.filter(q => Number(q.questionNumber) !== 11) : csXPast2023) : [];
+  const active2023Raw = isCs ? eligibleMcqs(classDef.roman === 'IX' ? csPast2023 : csXPast2023, 2023) : [];
   const mapped2023Pool = isCs && active2023Raw.length > 0
     ? active2023Raw.map((q: any) => ({
         ...q,
@@ -398,7 +424,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       }))
     : [];
 
-  const active2022Raw = isCs ? (classDef.roman === 'IX' ? csPast2022 : csXPast2022) : [];
+  const active2022Raw = isCs ? eligibleMcqs(classDef.roman === 'IX' ? csPast2022 : csXPast2022, 2022) : [];
   const mapped2022Pool = isCs && active2022Raw.length > 0
     ? active2022Raw.map((q: any) => ({
         ...q,
@@ -414,7 +440,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       }))
     : [];
 
-  const active2019Raw = isCs ? (classDef.roman === 'IX' ? csPast2019 : csXPast2019) : [];
+  const active2019Raw = isCs ? eligibleMcqs(classDef.roman === 'IX' ? csPast2019 : csXPast2019, 2019) : [];
   const mapped2019Pool = isCs && active2019Raw.length > 0
     ? active2019Raw.map((q: any) => ({
         ...q,
@@ -430,7 +456,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       }))
     : [];
 
-  const active2017Raw = isCs ? (classDef.roman === 'IX' ? csPast2017 : csXPast2017) : [];
+  const active2017Raw = isCs ? eligibleMcqs(classDef.roman === 'IX' ? csPast2017 : csXPast2017, 2017) : [];
   const mapped2017Pool = isCs && active2017Raw.length > 0
     ? active2017Raw.map((q: any) => ({
         ...q,
@@ -443,7 +469,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       }))
     : [];
 
-  const combinedChapterPool: any[] = [
+  const combinedChapterPool: any[] = computerChapterQuestions ?? [
     ...currentMappedQuestions,
     ...mappedModelPool,
     ...mapped2025Pool.map((q: any) => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
@@ -455,7 +481,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     ...extraChapterQuestions,
   ].filter(q => !isChem || !mappedChapters.length || currentMappedQuestions.includes(q));
 
-  const combinedAnnualPool: any[] = [
+  const combinedAnnualPool: any[] = computerChapterQuestions?.filter(q => q.examYear) ?? [
     ...currentMappedQuestions,
     ...mapped2025Pool,
     ...mapped2024Pool.map((q: any) => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
@@ -467,7 +493,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
   const fullPapers = [
     ...reviewedPapers.map(paper => ({ title: paper.title, desc: 'Complete original examination paper with reviewed answers and source diagrams.', items: paper.count, time: 'Custom timer', badge: `ANNUAL ${paper.examYear}`, source: 'annual' as const, paperCode: paper.paperCode })),
-    ...(questions.length ? [{ title: `${meta.title} Model Paper I`, desc: 'Practice the available model-paper MCQs with answer feedback and 2025 syllabus SLO mappings.', items: questions.length, time: 'Custom timer', badge: 'MODEL PAPER', source: 'model' as const }] : []),
+    ...(mappedModelPool.length ? [{ title: `${meta.title} Model Paper I`, desc: 'Practice the available model-paper MCQs with answer feedback and 2025 syllabus SLO mappings.', items: mappedModelPool.length, time: 'Custom timer', badge: 'MODEL PAPER', source: 'model' as const }] : []),
     ...(questions.length && mapped2025Pool.length > 0 && (classDef.roman === 'IX' || classDef.roman === 'X') ? [
       { title: 'Annual Examination 2025 — Paper I', desc: 'Original 2025 examination MCQs with official answer key, cropped diagrams, and reviewed 2025 syllabus mappings.', items: mapped2025Pool.length, time: 'Custom timer', badge: 'ANNUAL 2025', source: 'annual' as const },
     ] : []),
@@ -526,53 +552,22 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     return q.cognitiveLevel === cognitiveFilter;
   });
 
-  // Collapse identical or trivially reworded question stems; keep every paper it came from as a compact source list.
-  const displayQuestions: any[] = (() => {
-    const stemText = (q: any) => String(q.stem || q.questionText || '');
-    const exactKey = (q: any) => stemText(q)
-      .toLowerCase()
-      .replace(/<[^>]*>/g, ' ')
-      .replace(/[^a-z0-9]+/g, ' ')
-      .trim();
-    const ignoredWords = new Set('a an as at be by for from in is it its of on or the that this to was were with'.split(' '));
-    const contentKey = (q: any) => exactKey(q)
-      .split(' ')
-      .filter(word => word && !ignoredWords.has(word))
-      .sort()
-      .join(' ');
-    // Diagram questions with near-identical wording can still show different images, so only their exact stems merge.
-    const hasDiagram = (q: any) => Boolean(q.diagramBased || q.isDiagram || q.diagramUrl || q.diagram);
-    const groups: any[][] = [];
-    const byExact = new Map<string, any[]>();
-    const byContent = new Map<string, any[]>();
-    for (const q of activeQuestions) {
-      const exact = exactKey(q) || `q-${q.questionNumber}`;
-      const content = hasDiagram(q) ? '' : contentKey(q);
-      const group = byExact.get(exact) || (content ? byContent.get(content) : undefined);
-      if (group) group.push(q);
-      else groups.push([q]);
-      const target = group || groups[groups.length - 1];
-      byExact.set(exact, target);
-      if (content) byContent.set(content, target);
-    }
-    return groups.map((items) => {
-      const [rep] = items;
-      const seen = new Set<string>();
-      const sources: { label: string; qNum: number | string; code?: string; href?: string }[] = [];
-      for (const item of items) {
-        const title = String(item.sourceTitle || '');
-        const yearMatch = title.match(/\b(19|20)\d{2}\b/);
-        const label = item.sourceHref ? title : /^model/i.test(title) ? 'Model 1' : item.examYear ? String(item.examYear) : yearMatch ? yearMatch[0] : 'Model 1';
-        const qNum = item.rawQuestionNumber || item.questionNumber;
-        const code = item.paperCode;
-        const sourceKey = `${label}|${qNum}|${code || ''}`;
-        if (seen.has(sourceKey)) continue;
-        seen.add(sourceKey);
-        sources.push({ label, qNum, code, href: item.sourceHref });
-      }
-      return { ...rep, __sources: sources };
+  const withResolvedFigure = (q: any) => ({
+    ...q,
+    diagramUrl: resolveQuestionDiagram(q.paperCode, q.rawQuestionNumber || q.questionNumber, q),
+  });
+  const countQuestions = (pool: any[]) => groupDuplicateQuestions(pool, withResolvedFigure).length;
+  const displayQuestions = groupDuplicateQuestions(activeQuestions, withResolvedFigure).map(items => {
+    const [representative] = items;
+    const sources = items.map(item => {
+      const title = String(item.sourceTitle || '');
+      const year = title.match(/\b(19|20)\d{2}\b/)?.[0];
+      const sourceLabel = item.sourceHref ? title : /^model/i.test(title) ? 'Model 1' : String(item.examYear || year || 'Model 1');
+      const label = item.sourceGrade && item.sourceGrade !== classDef.level ? `${sourceLabel} · Class ${item.sourceGrade === 9 ? 'IX' : 'X'}` : sourceLabel;
+      return { label, qNum: item.rawQuestionNumber || item.questionNumber, code: item.paperCode, href: item.sourceHref };
     });
-  })();
+    return { ...representative, __sources: sources };
+  });
 
   // Stable per-question key so selections survive search and cognitive filtering.
   const questionKey = (q: any) => `${q.paperCode || q.sourcePaperId || 'model'}-${q.rawQuestionNumber || q.questionNumber}`;
@@ -630,6 +625,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
   };
 
   const examYears = [...new Set(combinedChapterPool.map((q: any) => Number(q.examYear)).filter(Boolean))].sort((a, b) => b - a);
+  const chapterQuestionCount = countQuestions(combinedChapterPool);
 
   const paperEntries: PaperEntry[] = fullPapers.map((paper, index) => ({
     id: `${paper.badge}-${index}`,
@@ -690,7 +686,12 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     const rawQNum = q.rawQuestionNumber || q.questionNumber || idx + 1;
     const correctKey = q.correctOption || q.correctAnswer;
     const qMeta = q.sourceRegion || q;
-    const mapping = questionSyllabus(qMeta, q.slos, classDef.level, meta.title, board.shortCode, true);
+    const activeOutcome = isCs && selectedUnit
+      ? qMeta.current_mapping?.find((outcome: { unitNumber?: number }) => outcome.unitNumber === selectedUnit.unitNumber)
+      : undefined;
+    const mappingGrade = isCs ? activeOutcome?.grade ?? qMeta.mapping_scope?.grade ?? classDef.level : classDef.level;
+    const mappingMeta = activeOutcome ? { ...qMeta, mapping_scope: { ...qMeta.mapping_scope, grade: mappingGrade }, current_mapping: [activeOutcome] } : qMeta;
+    const mapping = questionSyllabus(mappingMeta, q.slos, mappingGrade, meta.title, board.shortCode, true);
     const isOutOfSyllabus = mapping.status === 'outside' || Boolean(qMeta.out_of_syllabus);
     const cognitiveRaw = String(q.cognitiveLevel || qMeta.cognitive_level || '');
     const cognitiveLabel = cognitiveRaw === 'K' || cognitiveRaw === 'Remembering'
@@ -734,7 +735,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
               href={mapping.href!}
               style={{ background: '#ecfdf5', color: '#066e4f', border: '1px solid #a7f3d0', padding: '2px 9px', borderRadius: '5px', fontSize: '0.8rem', fontWeight: 800, textDecoration: 'none' }}
             >
-              2025 Syllabus: SLO {mapping.code}
+              2025 Syllabus: {mappingGrade !== classDef.level ? `Class ${mappingGrade === 9 ? 'IX' : 'X'} · ` : ''}SLO {mapping.code}
             </Link>
           ) : (
             <span style={{
@@ -754,6 +755,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
               Cognitive Level: {cognitiveLabel}
             </span>
           )}
+          {isCs && qMeta.mapping_reason && <span title={qMeta.mapping_reason}>Legacy-language practice</span>}
         </>
       ),
     };
@@ -773,14 +775,14 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
             lede="Chapter-by-chapter practice, past board papers, and full-length timed tests."
             stats={[
               { label: 'Units', value: unitsList.length },
-              { label: 'MCQs', value: combinedChapterPool.length },
+              { label: 'MCQs', value: chapterQuestionCount },
               { label: 'Papers', value: fullPapers.length },
               ...(examYears.length ? [{ label: 'Years', value: examYears.length > 1 ? `${examYears[examYears.length - 1]}–${examYears[0]}` : String(examYears[0]) }] : []),
             ]}
             back={{ href: baseUrl, label: `Back to ${meta.title} subject hub` }}
-            primary={combinedChapterPool.length ? {
-              label: `Practice all questions (${combinedChapterPool.length})`,
-              onClick: () => handleStartFullBookPractice(`${classDef.name} Complete Question Bank (All ${combinedChapterPool.length} Items)`, 'chapter_all'),
+            primary={chapterQuestionCount ? {
+              label: `Practice all questions (${chapterQuestionCount})`,
+              onClick: () => handleStartFullBookPractice(`${classDef.name} Complete Question Bank (All ${chapterQuestionCount} Items)`, 'chapter_all'),
             } : undefined}
           />
 
@@ -793,15 +795,15 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
             >
               <UnitBrowser
                 units={unitsList.map((unit): UnitEntry => {
-                  const model = mappedModelPool.filter((q: any) => belongsToUnit(q, unit, false)).length;
-                  const past = combinedAnnualPool.filter((q: any) => belongsToUnit(q, unit, true)).length;
-                  const extra = extraChapterQuestions.filter(q => belongsToUnit(q, unit, false)).length;
+                  const model = countQuestions(mappedModelPool.filter(q => belongsToUnit(q, unit, false)));
+                  const past = countQuestions(combinedAnnualPool.filter(q => belongsToUnit(q, unit, true)));
+                  const extra = countQuestions(extraChapterQuestions.filter(q => belongsToUnit(q, unit, false)));
                   return {
                     id: `unit-${unit.unitNumber}`,
                     number: unit.unitNumber,
                     title: unit.name,
                     topics: unit.topics,
-                    total: model + past + extra,
+                    total: countQuestions(combinedChapterPool.filter(q => belongsToUnit(q, unit, Boolean(q.examYear)))),
                     breakdown: [
                       { label: 'model', value: model, tone: 'model' },
                       { label: 'past-paper', value: past, tone: 'past' },
@@ -826,7 +828,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                       number: index + 1,
                       title: chapter.name,
                       topics: '',
-                      total: chapter.questions.length,
+                      total: countQuestions(chapter.questions),
                       badge: `Chapter ${index + 1}`,
                       countLabel: 'past MCQs',
                       action: {
@@ -902,7 +904,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                   title: tier.title,
                   note: tier.note,
                   tone: tier.tone,
-                  count: combinedChapterPool.filter((q: any) => q.cognitiveLevel === tier.level).length,
+                  count: countQuestions(combinedChapterPool.filter(q => q.cognitiveLevel === tier.level)),
                   action: { label: `Start ${tier.level.toLowerCase()} drill`, onClick: () => handleStartCognitiveSprint(tier.level), icon: 'play' },
                 }))}
               />

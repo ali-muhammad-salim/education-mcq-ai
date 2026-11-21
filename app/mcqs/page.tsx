@@ -1,4 +1,5 @@
 import { getFallbackPaper } from '@/lib/paperDataService';
+import { uniqueQuestions } from '@/lib/uniqueQuestions';
 import Link from 'next/link';
 import { prisma } from '../../lib/prisma';
 import { Award, CheckCircle2, Download, Sparkles, ArrowRight, HelpCircle } from 'lucide-react';
@@ -8,7 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 export const dynamic = 'force-dynamic';
 
 export default async function McqBankPage() {
-  const mcqs: any[] = await prisma.pastPaperQuestion.findMany({
+  const sourceQuestions: any[] = await prisma.pastPaperQuestion.findMany({
     where: { questionType: { in: ['MCQ_SINGLE', 'MULTIPLE_CHOICE'] } },
     include: {
       pastPaper: {
@@ -21,7 +22,8 @@ export default async function McqBankPage() {
     ]
   });
 
-  if (!mcqs.length) for (const code of ['PHY-IX-P1', 'PHY-X-P1']) { const paper = getFallbackPaper(code); if (paper) mcqs.push(...paper.questions.map(q => ({ ...q, pastPaper: paper }))); }
+  if (!sourceQuestions.length) for (const code of ['PHY-IX-P1', 'PHY-X-P1']) { const paper = getFallbackPaper(code); if (paper) sourceQuestions.push(...paper.questions.map(q => ({ ...q, pastPaper: paper }))); }
+  const mcqs = uniqueQuestions(sourceQuestions);
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '5rem' }}>
       {/* Universal Breadcrumb */}

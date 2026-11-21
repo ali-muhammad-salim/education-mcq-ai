@@ -262,10 +262,10 @@
     "pageNumber": 3,
     "stem": "The CORRECT sequence of steps of an algorithm to calculate the average of three numbers is\n\n| Option A | Option B |\n| :--- | :--- |\n| 1. Input the values of three numbers<br>2. Divide the sum of three numbers by 3 to get average value<br>3. Add the values of three numbers<br>4. Output the average value | 1. Input the values of three numbers<br>2. Add the values of three numbers<br>3. Divide the sum of three numbers by 3 to get average value<br>4. Output the average value |\n\n| Option C | Option D |\n| :--- | :--- |\n| 1. Input the values of three numbers<br>2. Divide the sum of three numbers by 3 to get average value<br>3. Output the average value<br>4. Add the values of three numbers | 1. Input the values of three numbers<br>2. Add the values of three numbers<br>3. Output the average value<br>4. Divide the sum of three numbers by 3 to get average value |",
     "options": {
-      "A": "1. Input three numbers -> 2. Divide sum by 3 -> 3. Add three numbers -> 4. Output average",
-      "B": "1. Input the values of three numbers -> 2. Add the values of three numbers -> 3. Divide the sum of three numbers by 3 to get average value -> 4. Output the average value",
-      "C": "1. Input three numbers -> 2. Divide sum by 3 -> 3. Output average -> 4. Add three numbers",
-      "D": "1. Input three numbers -> 2. Add three numbers -> 3. Output average -> 4. Divide sum by 3"
+      "A": "1. Input the values of three numbers\n2. Divide the sum of three numbers by 3 to get average value\n3. Add the values of three numbers\n4. Output the average value",
+      "B": "1. Input the values of three numbers\n2. Add the values of three numbers\n3. Divide the sum of three numbers by 3 to get average value\n4. Output the average value",
+      "C": "1. Input the values of three numbers\n2. Divide the sum of three numbers by 3 to get average value\n3. Output the average value\n4. Add the values of three numbers",
+      "D": "1. Input the values of three numbers\n2. Add the values of three numbers\n3. Output the average value\n4. Divide the sum of three numbers by 3 to get average value"
     },
     "correctAnswer": "B",
     "correctOption": "B",
@@ -520,10 +520,10 @@
     "pageNumber": 5,
     "stem": "The GW-BASIC program that outputs PASSWORD ten times on screen is\n\n| Option A | Option B |\n| :--- | :--- |\n| `10 FOR X = 0 TO 10`<br>`20 PRINT \"PASSWORD\"`<br>`30 X = X + 1`<br>`40 NEXT`<br>`50 END` | `10 FOR X = 0 TO 10`<br>`20 PRINT \"PASSWORD\"`<br>`30 NEXT`<br>`40 END` |\n\n| Option C | Option D |\n| :--- | :--- |\n| `10 FOR X = 1 TO 10`<br>`20 PRINT \"PASSWORD\"`<br>`30 X = X + 1`<br>`40 NEXT`<br>`50 END` | `10 FOR X = 1 TO 10`<br>`20 PRINT \"PASSWORD\"`<br>`30 NEXT`<br>`40 END` |",
     "options": {
-      "A": "10 FOR X = 0 TO 10 / 20 PRINT \"PASSWORD\" / 30 X = X + 1 / 40 NEXT / 50 END",
-      "B": "10 FOR X = 0 TO 10 / 20 PRINT \"PASSWORD\" / 30 NEXT / 40 END",
-      "C": "10 FOR X = 1 TO 10 / 20 PRINT \"PASSWORD\" / 30 X = X + 1 / 40 NEXT / 50 END",
-      "D": "10 FOR X = 1 TO 10 / 20 PRINT \"PASSWORD\" / 30 NEXT / 40 END"
+      "A": "```basic\n10 FOR X = 0 TO 10\n20 PRINT \"PASSWORD\"\n30 X = X + 1\n40 NEXT\n50 END\n```",
+      "B": "```basic\n10 FOR X = 0 TO 10\n20 PRINT \"PASSWORD\"\n30 NEXT\n40 END\n```",
+      "C": "```basic\n10 FOR X = 1 TO 10\n20 PRINT \"PASSWORD\"\n30 X = X + 1\n40 NEXT\n50 END\n```",
+      "D": "```basic\n10 FOR X = 1 TO 10\n20 PRINT \"PASSWORD\"\n30 NEXT\n40 END\n```"
     },
     "correctAnswer": "D",
     "correctOption": "D",
@@ -698,10 +698,10 @@
     "pageNumber": 7,
     "stem": "Consider the GW-BASIC code given below.\n\n```basic\n10 X = 0\n20 WHILE X <= 20\n30 PRINT X\n40 X = X + 3\n50 WEND\n60 END\n```\n\nThe output of this code will be",
     "options": {
-      "A": "0",
-      "B": "3",
-      "C": "3, 6, 9, 12, 15, 18",
-      "D": "0, 3, 6, 9, 12, 15, 18"
+      "A": "```text\n0\n```",
+      "B": "```text\n3\n```",
+      "C": "```text\n3\n6\n9\n12\n15\n18\n```",
+      "D": "```text\n0\n3\n6\n9\n12\n15\n18\n```"
     },
     "correctAnswer": "D",
     "correctOption": "D",
@@ -870,10 +870,10 @@
     "pageNumber": 8,
     "stem": "Read the given GW-BASIC code.\n\n```basic\n10 A = 10\n20 B = 20\n50 PRINT A + B\n30 PRINT A - B\n40 PRINT A * B\n60 END\n```\n\nThe output of this GW-BASIC code in CORRECT sequence is",
     "options": {
-      "A": "-10, 200, 30",
-      "B": "200, 30, -10",
-      "C": "30, -10, 200",
-      "D": "-10, 30, 200"
+      "A": "```text\n-10\n200\n30\n```",
+      "B": "```text\n200\n30\n-10\n```",
+      "C": "```text\n30\n-10\n200\n```",
+      "D": "```text\n-10\n30\n200\n```"
     },
     "correctAnswer": "A",
     "correctOption": "A",

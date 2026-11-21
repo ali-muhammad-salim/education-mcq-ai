@@ -5,7 +5,7 @@ import { ApiError, apiError } from '@/lib/api';
 import { getSessionUser } from '@/lib/auth';
 import { requireUser } from '@/lib/security';
 import { resultsReleased } from '@/services/assessment/service';
-import { includesPhysicsUnit16Notes } from '@/lib/physicsUnit16Questions';
+import { includesPhysicsSupplementaryQuestions } from '@/lib/physicsSupplementaryQuestions';
 import {
   MIN_PERCENTILE_ATTEMPTS,
   classifySpeedAccuracyQuadrant,
@@ -77,7 +77,8 @@ function rank(entries: LeaderboardEntry[]): LeaderboardEntry[] {
 
 async function loadAnalytics(identifier: string, currentUserId?: string | null): Promise<PaperAnalyticsPayload> {
   const paperCode = identifier.trim().toUpperCase();
-  const includesNotes = includesPhysicsUnit16Notes(paperCode);
+  const includesNotes = includesPhysicsSupplementaryQuestions(paperCode);
+  const computerScienceMcq = /^CS-(IX|X)(-\d{4})?-P1$/.test(paperCode);
   const quiz = await prisma.quiz.findFirst({
     where: includesNotes ? { code: { startsWith: `PRACTICE-${paperCode}-NOTES-` } } : {
       OR: [
@@ -85,9 +86,10 @@ async function loadAnalytics(identifier: string, currentUserId?: string | null):
         { id: identifier },
         { code: paperCode },
         { code: `PRACTICE-${paperCode}` },
+        ...(computerScienceMcq ? [{ code: { startsWith: `PRACTICE-${paperCode}-`, not: { startsWith: `PRACTICE-${paperCode}-SET-` } } }] : []),
       ],
     },
-    ...(includesNotes ? { orderBy: { createdAt: 'desc' } } : {}),
+    ...(includesNotes || computerScienceMcq ? { orderBy: { createdAt: 'desc' } } : {}),
     select: { id: true, totalMarks: true },
   });
 

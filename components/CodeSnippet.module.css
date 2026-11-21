@@ -1,0 +1,54 @@
+.block,
+.embeddedBlock,
+.inlineCode {
+  color: #d4d4d4;
+  background: #1e1e1e;
+  border: 1px solid #454545;
+  border-radius: 6px;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.block,
+.embeddedBlock {
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 4;
+  line-height: 1.55;
+}
+
+.embeddedBlock { display: block; }
+
+.block code {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  padding: 0;
+  border: 0;
+}
+
+.inlineCode,
+.inlineText {
+  padding: 1px 5px;
+  overflow-wrap: anywhere;
+}
+
+.inlineText {
+  background: rgba(100, 116, 139, 0.12);
+  border-radius: 4px;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.keyword, .tag { color: #6ab4ef; }
+.identifier { color: #9cdcfe; }
+.string { color: #ce9178; }
+.number { color: #b5cea8; }
+.comment { color: #91b47d; }
+.call { color: #dcdcaa; }
+.directive { color: #c586c0; }
+.operator { color: #d4d4d4; }

@@ -12,6 +12,7 @@ import Trail from "./rise/Trail";
 import styles from "./rise/discovery.module.css";
 import { studyScope, studyChapters } from "@/services/study/navigation";
 import { physicsUnit16Resource } from "@/lib/physicsUnit16Resource";
+import { physicsUnit17Resource } from "@/lib/physicsUnit17Resources";
 import { subjectMaterialTypes } from "@/services/materials/catalog";
 import { supportingMaterialLabels } from '@/lib/materialTypes';
 import { mappedChapterGroups, mappedTheoryUnits } from '@/services/materials/practice';
@@ -228,6 +229,7 @@ export default async function SubjectMaterials({
       ? [
           { label: 'Formula sheets', href: scope.baseUrl + '/study?kind=FORMULA_SHEET', group: 'study' as Group },
           { label: 'Extra resources · D.C. Circuits notes and quiz', href: physicsUnit16Resource.href, group: 'support' as Group },
+          { label: 'Extra resources · Magnetism and Electromagnetism', href: physicsUnit17Resource.href, group: 'support' as Group },
         ]
       : []),
     ...Object.entries(supportingMaterialLabels)

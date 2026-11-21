@@ -7,6 +7,7 @@ import type { BoardInfo, ClassDefinition } from '@/lib/boardCatalog';
 import type { SubjectMeta } from '@/lib/subjectMetadata';
 import MathText from '@/components/MathText';
 import StructuredContent from '@/components/StructuredContent';
+import { uniqueQuestions } from '@/lib/uniqueQuestions';
 import type { ChapterUnitData, TheorySectionMode } from '@/components/ChapterTheoryPracticeClient';
 
 type UnitSectionMode = Exclude<TheorySectionMode, 'notes'>;
@@ -44,17 +45,16 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
   const [showAllSolutions, setShowAllSolutions] = useState(false);
 
   const sectionInfo = SECTION_META[mode];
-  const items =
-    mode === 'crqs' ? unit.crqs : mode === 'erqs' ? unit.erqs : unit.numericals;
+  const crqErqItems = mode === 'numericals' ? [] : uniqueQuestions(mode === 'crqs' ? unit.crqs : unit.erqs);
+  const numericalItems = mode === 'numericals' ? uniqueQuestions(unit.numericals) : [];
+  const items = mode === 'numericals' ? numericalItems : crqErqItems;
   const totalMarks = items.reduce((acc, i) => acc + (i.marks || 0), 0);
+  const allItemsHaveMarks = items.every(item => item.marks != null);
   const examYears = [...new Set(items.map(i => i.examYear).filter(Boolean))].sort();
 
   const toggleReveal = (id: string) => {
     setRevealedIds(prev => ({ ...prev, [id]: !prev[id] }));
   };
-
-  const crqErqItems = mode === 'numericals' ? [] : (items as typeof unit.crqs);
-  const numericalItems = mode === 'numericals' ? (items as typeof unit.numericals) : [];
 
   return (
     <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem 1rem 5rem 1rem', fontFamily: SANS }}>
@@ -78,7 +78,9 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
           SECONDARY SCHOOL CERTIFICATE · {classDef.name}
         </div>
         <div style={{ fontSize: '0.9rem', marginTop: '3px' }}>
-          {examYears.length > 1
+          {examYears.length > 0 && items.some(item => !item.examYear)
+            ? 'EXAMINATION AND SUPPLEMENTARY PRACTICE (THEORY)'
+            : examYears.length > 1
             ? `ANNUAL EXAMINATIONS ${examYears[0]} & ${examYears[examYears.length - 1]} (THEORY)`
             : examYears.length === 1
               ? `ANNUAL EXAMINATIONS ${examYears[0]} (THEORY)`
@@ -103,7 +105,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
             Unit {unit.unitNumber}: {unit.name}
           </h2>
           <span style={{ fontFamily: SANS, fontSize: '0.78rem', fontWeight: 700, color: '#0b5e4a' }}>
-            {items.length} {sectionInfo.kind} Items · {totalMarks} Marks Total
+            {items.length} {sectionInfo.kind} Items{allItemsHaveMarks && ` · ${totalMarks} Marks Total`}
           </span>
         </div>
       </div>
@@ -409,9 +411,11 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                       ) : null}
                     </div>
 
-                    <span style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-color, #111827)' }}>
-                      [{item.marks}] · Level {item.cognitiveLevel || 'U'}
-                    </span>
+                    {item.marks != null && (
+                      <span style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-color, #111827)' }}>
+                        [{item.marks}] · Level {item.cognitiveLevel || 'U'}
+                      </span>
+                    )}
                   </div>
 
                   <div style={{ fontSize: '1.1rem', fontWeight: 400, color: 'var(--text-color, #1f2937)', lineHeight: 1.7, marginBottom: '1rem' }}>
@@ -435,7 +439,9 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                       rows={mode === 'erqs' ? 4 : 2}
                       value={draftResponses[item.id] || ''}
                       onChange={e => setDraftResponses(prev => ({ ...prev, [item.id]: e.target.value }))}
-                      placeholder="Write your practice answer here before comparing with the official Checking Hints and Model Response..."
+                      placeholder={item.solutionOrigin === 'supplied_resource'
+                        ? 'Write your practice answer before viewing the supplied solution.'
+                        : 'Write your practice answer here before comparing with the official Checking Hints and Model Response...'}
                       style={{
                         width: '100%',
                         padding: '0.65rem 0.85rem',
@@ -465,7 +471,9 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                       marginBottom: isOpen ? '0.85rem' : 0,
                     }}
                   >
-                    {isOpen ? 'Hide Solution & E-Marking Notes' : 'Show Solution, Rubric & E-Marking Notes'}
+                    {item.solutionOrigin === 'supplied_resource'
+                      ? (isOpen ? 'Hide solution' : 'Show solution')
+                      : (isOpen ? 'Hide Solution & E-Marking Notes' : 'Show Solution, Rubric & E-Marking Notes')}
                   </button>
 
                   {isOpen && (
@@ -501,11 +509,11 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                         {item.betterResponseImage && (
                           <div style={{ marginTop: '0.75rem' }}>
                             <div style={{ fontFamily: SANS, fontSize: '0.76rem', fontWeight: 700, color: '#166534', marginBottom: '0.25rem' }}>
-                              Authentic E-Marking Better Candidate Script:
+                              {item.solutionOrigin === 'supplied_resource' ? 'Diagram from the resource' : 'Authentic E-Marking Better Candidate Script:'}
                             </div>
                             <img
                               src={item.betterResponseImage}
-                              alt={`Better candidate script for ${item.questionNumber}`}
+                              alt={item.solutionOrigin === 'supplied_resource' ? `Solution diagram for ${item.questionNumber}` : `Better candidate script for ${item.questionNumber}`}
                               style={{ maxWidth: '100%', borderRadius: '6px', border: '1px solid #86efac', background: '#ffffff', padding: '4px' }}
                             />
                           </div>

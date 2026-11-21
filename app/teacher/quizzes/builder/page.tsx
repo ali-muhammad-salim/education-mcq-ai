@@ -16,6 +16,8 @@ import { useDialog } from '@/lib/use-dialog';
 import { questionSchema } from '@/lib/validations/assessment';
 import { createQuizDraftIdentity, parseQuizDraft, quizDraftKey, serializeQuizDraft, type QuizDraftIdentity } from '@/lib/quiz-builder-draft';
 import MathText from '@/components/MathText';
+import StructuredContent from '@/components/StructuredContent';
+import { uniqueQuestions } from '@/lib/uniqueQuestions';
 import { QuizSharingSettings } from '@/components/AssessmentManagement';
 import RichMathChemDiagramEditor from '@/components/RichMathChemDiagramEditor';
 import './builder.css';
@@ -1843,7 +1845,7 @@ function QuestionBankModal({
       const data = await res.json();
       if (!res.ok) throw new Error(data.error?.message || 'Unable to load question bank.');
       if (data.success && requestId === bankRequest.current) {
-        setBankQuestions(previous => page === 1 ? data.questions || [] : [...previous, ...(data.questions || [])]); setBankPage(page); setBankHasMore(Boolean(data.hasMore));
+        setBankQuestions(previous => uniqueQuestions(page === 1 ? data.questions || [] : [...previous, ...(data.questions || [])])); setBankPage(page); setBankHasMore(Boolean(data.hasMore));
       }
     } catch (err) {
       setBankQuestions([]); setBankError(err instanceof Error ? err.message : 'Unable to load question bank.');
@@ -1972,10 +1974,8 @@ function QuestionBankModal({
                       onChange={() => {}}
                       style={{ marginTop: '3px', cursor: 'pointer', accentColor: 'var(--r-emerald)' }}
                     />
-                    <div style={{ flex: 1 }}>
-                      <p style={{ fontSize: '14px', fontWeight: 500, color: 'var(--r-ink)' }}>
-                        <MathText text={item.stemText} />
-                      </p>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <StructuredContent text={item.stemText} style={{ fontSize: '14px', fontWeight: 500, color: 'var(--r-ink)' }} />
 
                       {Array.isArray(item.options) && item.options.length > 0 && (
                         <div className="mobile-stack-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', marginTop: '8px' }}>
@@ -1986,12 +1986,13 @@ function QuestionBankModal({
                                 fontSize: '12px',
                                 padding: '4px 8px',
                                 borderRadius: '4px',
+                                minWidth: 0,
                                 background: opt.isCorrect ? 'var(--r-right-wash)' : 'var(--r-surface)',
                                 color: opt.isCorrect ? 'var(--r-right)' : 'var(--r-ink)',
                                 fontWeight: opt.isCorrect ? 700 : 400
                               }}
                             >
-                              <strong>{String.fromCharCode(65 + oIdx)}.</strong> <MathText text={opt.text} />
+                              <strong>{String.fromCharCode(65 + oIdx)}.</strong> <StructuredContent text={opt.text} />
                             </div>
                           ))}
                         </div>

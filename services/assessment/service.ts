@@ -14,7 +14,11 @@ import {mappedChapterQuestions,sourceChoiceContent,chapterPaperWhere,chapterPape
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import { applyAnswerDecision, legacyAnswerCases } from '@/lib/legacyAnswerReview';
 import { physicsUnit16Resource } from '@/lib/physicsUnit16Resource';
-import { includesPhysicsUnit16Notes, physicsUnit16ChapterQuestions } from '@/lib/physicsUnit16Questions';
+import { physicsUnit16ChapterQuestions } from '@/lib/physicsUnit16Questions';
+import { includesPhysicsSupplementaryQuestions, physicsSupplementaryQuestions } from '@/lib/physicsSupplementaryQuestions';
+import { physicsUnit17Resource } from '@/lib/physicsUnit17Resources';
+import { sscComputerScienceMcqReview } from '@/lib/sscComputerScienceMcqReview';
+import { groupDuplicateQuestions, uniqueQuestions } from '@/lib/uniqueQuestions';
 
 export const quizInclude = { settings: true, questions: { orderBy: { orderIndex: 'asc' as const } }, teacher: { select: { name: true } } } satisfies Prisma.QuizInclude;
 export type LoadedQuiz = Prisma.QuizGetPayload<{ include: typeof quizInclude }>;
@@ -24,18 +28,8 @@ const practiceCodes: Record<string, string> = {
 };
 const allowedPractice = new Set(['PHY-IX-P1', 'PHY-IX-P2', 'PHY-X-P1', 'PHY-X-P2', 'PHY-IX-2025-P1', 'PHY-IX-2025-P2', 'PHY-IX-2024-P1', 'PHY-IX-2024-P2', 'PHY-X-2025-P1', 'PHY-X-2025-P2', 'CS-IX-P1', 'CS-IX-P2', 'CS-X-P1', 'CS-X-P2', 'CS-IX-2025-P1', 'CS-IX-2025-P2', 'CS-IX-2024-P1', 'CS-IX-2024-P2', 'CS-IX-2023-P1', 'CS-IX-2023-P2', 'CS-IX-2022-P1', 'CS-IX-2019-P1', 'CS-IX-2019-P2', 'CS-IX-2018-P2', 'CS-IX-2017-P1', 'CS-IX-2017-P2', 'CS-X-2025-P1', 'CS-X-2025-P2', 'CS-X-2024-P1', 'CS-X-2024-P2', 'CS-X-2023-P1', 'CS-X-2023-P2', 'CS-X-2022-P1', 'CS-X-2019-P1', 'CS-X-2019-P2', 'CS-X-2018-P2', 'CS-X-2017-P1', 'CS-X-2017-P2']);
 
-// These printed keys contain an asterisk or credit multiple options. Keep the
-// source questions visible in the paper, but do not grade them as MCQ_SINGLE.
-const ungradableOfficialKeyQuestions: Record<string, number[]> = {
-  'CS-IX-2023-P1': [11],
-  'CS-IX-2024-P1': [9],
-  'CS-X-2019-P1': [21],
-  'CS-X-2023-P1': [37],
-  'CS-X-2024-P1': [8],
-};
 export function gradablePracticeQuestions(paperCode: string, questions: QuestionData[]) {
-  const excluded = ungradableOfficialKeyQuestions[paperCode];
-  return questions.filter(q => (!excluded || !excluded.includes(Number(q.questionNumber))) &&
+  return questions.filter(q => !sscComputerScienceMcqReview(paperCode, q.questionNumber) &&
     (q.questionType !== 'MULTIPLE_CHOICE' || !!paperAnswer(q.sourceRegion, paperChoices(q.sourceRegion.choices))));
 }
 
@@ -59,11 +53,11 @@ export function sourcePracticeQuestion(q: QuestionData) {
   });
 }
 
-function unit16PracticeQuestion(question: typeof physicsUnit16ChapterQuestions[number]) {
+function supplementaryPracticeQuestion(question: typeof physicsSupplementaryQuestions[number]) {
   return normalizeQuestion({
     questionType: 'MCQ_SINGLE',
     stemText: question.stem,
-    topicName: 'D.C. Circuits',
+    topicName: question.unitNumber === physicsUnit17Resource.unit ? physicsUnit17Resource.title : 'D.C. Circuits',
     provenance: 'IMPORTED',
     explanation: question.explanation,
     options: Object.entries(question.options).map(([id, text]) => ({
@@ -95,7 +89,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   if(chapter){
     const {topic,questions}=await mappedChapterQuestions(chapter[1],chapter[2].toUpperCase());
     if(!questions.length)throw new ApiError(404,'CHAPTER_QUESTIONS_UNAVAILABLE','No reviewed questions are available for this chapter filter.');
-    const content=questions.map(sourceChoiceContent);
+    const content=uniqueQuestions(questions).map(sourceChoiceContent);
     const hash=(await import('node:crypto')).createHash('sha256').update(JSON.stringify(content)).digest('hex').slice(0,24);
     const id='practice-chapter-'+hash;
     const owner=await prisma.user.upsert({where:{email:'practice-content@system.invalid'},update:{},create:{email:'practice-content@system.invalid',name:'Practice Library',role:'TEACHER',status:'SUSPENDED'}});
@@ -105,10 +99,10 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   if (quiz) return quiz;
   const key = identifier.toUpperCase();
   if (key === physicsUnit16Resource.quizCode) {
-    const questions = physicsUnit16ChapterQuestions.map(question => ({
-      orderIndex: question.rawQuestionNumber,
+    const questions = uniqueQuestions(physicsUnit16ChapterQuestions).map((question, index) => ({
+      orderIndex: index + 1,
       marks: 1,
-      questionData: unit16PracticeQuestion(question),
+      questionData: supplementaryPracticeQuestion(question),
     }));
     const revision = createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16);
     const id = 'practice-' + key + '-' + revision;
@@ -143,7 +137,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
     if (!paper || !chapterPaperIsPublished(paper) || !paper.questions.length) {
       throw new ApiError(404, 'QUIZ_NOT_FOUND', 'No reviewed Biology questions are available for this paper.');
     }
-    const content = paper.questions.sort((a, b) => Number(a.questionNumber) - Number(b.questionNumber)).map(sourceChoiceContent);
+    const content = uniqueQuestions(paper.questions.sort((a, b) => Number(a.questionNumber) - Number(b.questionNumber))).map(sourceChoiceContent);
     const hash = createHash('sha256').update(JSON.stringify(content)).digest('hex').slice(0, 24);
     const id = 'practice-biology-' + hash;
     const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
@@ -167,15 +161,17 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
     const paperCodes = subjPrefix === 'CHM'
       ? getAllStandardPapers().filter(p => /^CHM-(IX|X)(-20\d{2})?-P1$/.test(p.paperCode)).map(p => p.paperCode)
       : subjPrefix === 'CS'
-      ? roman === 'IX'
-        ? (mode === 'PAST' ? ['CS-IX-2025-P1', 'CS-IX-2024-P1', 'CS-IX-2023-P1', 'CS-IX-2022-P1', 'CS-IX-2019-P1', 'CS-IX-2017-P1'] : ['CS-IX-P1', 'CS-IX-2025-P1', 'CS-IX-2024-P1', 'CS-IX-2023-P1', 'CS-IX-2022-P1', 'CS-IX-2019-P1', 'CS-IX-2017-P1'])
-        : (mode === 'PAST' ? ['CS-X-2025-P1', 'CS-X-2024-P1', 'CS-X-2023-P1', 'CS-X-2022-P1', 'CS-X-2019-P1', 'CS-X-2017-P1'] : ['CS-X-P1', 'CS-X-2025-P1', 'CS-X-2024-P1', 'CS-X-2023-P1', 'CS-X-2022-P1', 'CS-X-2019-P1', 'CS-X-2017-P1'])
+      ? getAllStandardPapers().filter(p => /^CS-(IX|X)-(?:\d{4}-)?P1$/.test(p.paperCode) && (mode !== 'PAST' || /-\d{4}-/.test(p.paperCode))).map(p => p.paperCode)
       : roman === 'IX'
         ? (mode === 'PAST' ? ['PHY-IX-2025-P1', 'PHY-IX-2024-P1'] : ['PHY-IX-P1', 'PHY-IX-2025-P1', 'PHY-IX-2024-P1'])
         : (mode === 'PAST' ? ['PHY-X-2025-P1'] : ['PHY-X-P1', 'PHY-X-2025-P1']);
     const allQuestions = paperCodes.flatMap(code => gradablePracticeQuestions(code, getFallbackPaper(code)?.questions || [])).filter(q => subjPrefix !== 'CHM' || (q.sourceRegion.mapping_review_source_sha256 && q.sourceRegion.current_slo && q.sourceRegion.mapping_scope?.grade === (roman === 'IX' ? 9 : 10)));
     const filtered = allQuestions.filter(q => {
-      if (unitNum > 0) {
+      if (subjPrefix === 'CS') {
+        if (!q.sourceRegion.current_mapping?.some(outcome =>
+          outcome.grade === (roman === 'IX' ? 9 : 10) && (!unitNum || Number(outcome.code.split('.')[0]) === unitNum)
+        )) return false;
+      } else if (unitNum > 0) {
         const qTopicNum = Number(q.topics?.[0]?.topic?.topicNumber || 0);
         if (qTopicNum !== unitNum) return false;
       }
@@ -187,16 +183,21 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
       }
       return true;
     });
-    const includeUnit16Notes = includesPhysicsUnit16Notes(key);
-    const notes = includeUnit16Notes
-      ? physicsUnit16ChapterQuestions
-        .filter(q => cogFilter === 'ALL' || q.cognitiveLevel[0] === cogFilter)
-        .map(q => ({ ...unit16PracticeQuestion(q), cognitiveLevel: q.cognitiveLevel }))
+    const includeNotes = includesPhysicsSupplementaryQuestions(key);
+    const notes = includeNotes
+      ? physicsSupplementaryQuestions
+        .filter(q => (unitNum === 0 || q.unitNumber === unitNum) && (cogFilter === 'ALL' || q.cognitiveLevel[0] === cogFilter))
       : [];
-    const content = [...filtered.map(sourcePracticeQuestion), ...notes];
+    const candidates = [
+      ...filtered.map(question => ({ question, build: () => sourcePracticeQuestion(question) })),
+      ...notes.map(question => ({ question, build: () => ({ ...supplementaryPracticeQuestion(question), cognitiveLevel: question.cognitiveLevel }) })),
+    ];
+    const content = groupDuplicateQuestions(candidates, entry => entry.question).map(([entry]) => entry.build());
     if (!content.length) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'No practice questions found for this unit filter.');
     const questions = content.map((q, i) => ({ orderIndex: i + 1, marks: q.marks, questionData: q }));
-    const revision = includeUnit16Notes ? '-NOTES-' + createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16) : '';
+    const revision = includeNotes || subjPrefix === 'CS' || content.length !== candidates.length
+      ? (includeNotes ? '-NOTES-' : '-') + createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16)
+      : '';
     const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
     const subjTitle = subjPrefix === 'CS' ? 'Computer Science' : subjPrefix === 'CHM' ? 'Chemistry' : 'Physics';
     const title = unitNum > 0 ? `${subjTitle} Class ${roman} — Unit ${unitNum} Practice (${questions.length} questions)` : `${subjTitle} Class ${roman} — Complete Bank (${questions.length} questions)`;
@@ -234,7 +235,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
     if (source.length !== numbers.size) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Some selected practice questions are unavailable.');
   }
   if (key.includes('KINEMATICS') || key.includes('WAVES')) source = source.slice(0, 15);
-  const questions = source.map((q, i) => {
+  const questions = uniqueQuestions(source).map((q, i) => {
     const content = sourcePracticeQuestion(q);
     return { orderIndex: i + 1, marks: content.marks, questionData: content };
   });
@@ -242,8 +243,10 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
   const isHsscPhysics = /^(?:PHY|CS)-XII?(?:-(?:201[7-9]|202[1-5]))?-P1$/.test(paperCode);
   const academic = paperCode.startsWith('MTH-') || isHsscPhysics ? await prisma.pastPaper.findFirst({ where: { paperCode }, select: { classId: true, subjectId: true } }) : null;
-  // Corrected Maths content starts a fresh quiz; previous attempts retain their frozen questions.
-  const revision = paperCode.startsWith('MTH-') || isHsscPhysics ? '-' + createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16) : '';
+  // Revised content starts a fresh quiz so existing attempts keep their frozen questions.
+  const revision = questions.length !== source.length || paperCode.startsWith('MTH-') || isHsscPhysics || /^CS-(IX|X)(-\d{4})?-P1$/.test(paperCode)
+    ? '-' + createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16)
+    : '';
   return prisma.quiz.upsert({ where: { id: `practice-${key}${revision}` }, update: academic || {}, include: quizInclude,
     create: { id: `practice-${key}${revision}`, code: `PRACTICE-${key}${revision}`, teacherId: owner.id, ...(academic || {}), title: subset ? paper.title + ' — Selected practice (' + questions.length + ' questions)' : paper.title, status: 'PUBLISHED', visibility: 'PUBLIC', durationMin: subset || !isHsscPhysics ? questions.length <= 15 ? 20 : 55 : paper.durationMinutes ?? 90,
       totalMarks: questions.reduce((sum, q) => sum + q.marks, 0), questions: { create: questions }, settings: { create: { maxAttempts: 100, allowRetries: true, showCorrectAnswers: true, immediateFeedback: true, tabMonitoringEnabled: false } } } });
@@ -273,19 +276,21 @@ export async function assertQuizAccess(quiz: LoadedQuiz, user: AuthUser | null, 
 
 async function freezeReviewedQuiz(quiz:LoadedQuiz,db:Prisma.TransactionClient) {
   const legacyAnnual=!quiz.sourceDocumentId && (/^practice-PHY-IX-2025-P1(?:$|-SET-[0-9-]+$)/.test(quiz.id)||quiz.code==='PHY-IX-2025-P1');
-  if(!legacyAnnual)return freeze(quiz);
+  if(!legacyAnnual)return freeze(quiz, true);
   const decisions=await publishedAnswerDecisions(db);
-  if(!decisions.some(item=>item.status==='APPROVE_CORRECTION'))return freeze(quiz);
+  if(!decisions.some(item=>item.status==='APPROVE_CORRECTION'))return freeze(quiz, true);
   return freeze({...quiz,questions:quiz.questions.map(q=>{
     const content=normalizeQuestion(q.questionData), options=Object.fromEntries(content.options.map(option=>[option.id,option.text]));
     const item=legacyAnswerCases.find(candidate=>candidate.stem.replace(/\s+/g,' ').trim()===content.stemText.replace(/\s+/g,' ').trim());
     const approved=item?applyAnswerDecision({},item.number,content.stemText,options,decisions):{};
     return approved.correct_answer?{...q,questionData:{...content,explanation:approved.explanation,options:content.options.map(option=>({...option,isCorrect:option.id===approved.correct_answer,feedback:''}))}}:q;
-  })});
+  })}, true);
 }
-function freeze(quiz: LoadedQuiz): FrozenQuestion[] {
+function freeze(quiz: LoadedQuiz, distinct = false): FrozenQuestion[] {
   const shuffle = <T,>(items: T[]) => { for (let i = items.length - 1; i > 0; i--) { const j = randomInt(i + 1); [items[i], items[j]] = [items[j], items[i]]; } return items; };
-  const questions = quiz.questions.map(q => { const content = normalizeQuestion(q.questionData); if (quiz.settings?.randomizeOptions) content.options = shuffle([...content.options]); return { id: q.id, orderIndex: q.orderIndex, marks: q.marks, content }; });
+  const prepared = quiz.questions.map(q => ({ id: q.id, orderIndex: q.orderIndex, marks: q.marks, content: normalizeQuestion(q.questionData) }));
+  const questions = distinct ? groupDuplicateQuestions(prepared, q => q.content).map(([first]) => first) : prepared;
+  if (quiz.settings?.randomizeOptions) for (const question of questions) question.content.options = shuffle([...question.content.options]);
   if (quiz.settings?.randomizeQuestions) shuffle(questions);
   return questions.map((q, i) => ({ ...q, orderIndex: i + 1 }));
 }
