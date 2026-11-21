@@ -5,7 +5,7 @@ import { normalizeBoardId, normalizeClassRoman, CLASS_DEFINITIONS, SUPPORTED_BOA
 import { getSubjectMeta } from '@/lib/subjectMetadata';
 import ContentUnavailable from '@/components/ContentUnavailable';
 import ChapterTheoryPracticeClient, { type TheorySectionMode } from '@/components/ChapterTheoryPracticeClient';
-import physicsChapterBank from '@/data/physics/chapter_wise_theory_bank.json';
+import { physicsChapterBank } from '@/lib/physicsChapterBank';
 import { sscComputerScienceTheory } from '@/lib/sscComputerScienceTheory';
 import { mappedTheoryUnits } from '@/services/materials/practice';
 
