@@ -1,5 +1,86 @@
 /* Practice-mode options, answer feedback and the floating practice HUD. */
 
+.sheetControls {
+  container-type: inline-size;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color, #dce5e1);
+  border-radius: 12px;
+  background: var(--card-bg, #fff);
+}
+
+.sheetControl {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  border: 1px solid var(--border-color, #cbd5e1);
+  border-radius: 999px;
+  background: var(--bg-color, #f8fafc);
+  color: var(--text-color, #334155);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 750;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.sheetControl svg {
+  flex: none;
+}
+
+.sheetControl:hover,
+.sheetControl[aria-pressed='true'] {
+  border-color: var(--primary-color, #0b5e4a);
+}
+
+.sheetControl[aria-pressed='true'] {
+  background: var(--primary-light, #ecfdf5);
+  color: var(--primary-color, #0b5e4a);
+}
+
+.sheetQuiz {
+  background: #0b5e4a;
+  border-color: #0b5e4a;
+  color: #fff;
+}
+
+.sheetControl:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.sheetControlShort {
+  display: none;
+}
+
+@container (max-width: 400px) {
+  .sheetControl {
+    padding-inline: 0.55rem;
+    font-size: 0.8rem;
+  }
+
+  .sheetControlFull {
+    display: none;
+  }
+
+  .sheetControlShort {
+    display: inline;
+  }
+}
+
+@container (max-width: 260px) {
+  .sheetControl svg {
+    display: none;
+  }
+}
+
 .options {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));

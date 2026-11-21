@@ -21,6 +21,8 @@ import ssc1Past2024Crqs from '@/data/physics/ssc1_2024_past_crqs.json';
 import ssc2Past2025Mcqs from '@/data/physics/ssc2_2025_past_mcqs.json';
 import ssc2Past2025Crqs from '@/data/physics/ssc2_2025_past_crqs.json';
 import cs1ModelMcqs from '@/data/computer-science/ssc1_model_mcqs.json';
+import { sscComputerScienceMcqReview } from '@/lib/sscComputerScienceMcqReview';
+import { sscComputerScienceMapping } from '@/lib/sscComputerScienceSyllabus';
 import cs1ModelCrqs from '@/data/computer-science/ssc1_model_crqs.json';
 import cs2ModelMcqs from '@/data/computer-science/ssc2_model_mcqs.json';
 import cs2ModelCrqs from '@/data/computer-science/ssc2_model_crqs.json';
@@ -135,6 +137,8 @@ export interface QuestionData {
     original_reference_verified?: boolean;
     original_reference_source?: string;
     official_answer?: string;
+    accepted_options?: string[];
+    single_answer_review_required?: boolean;
     official_alternate_answer?: string;
     assessmentSection?: string;
     answer_review_note?: string;
@@ -356,6 +360,28 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
         mapping_status: 'PENDING_REVIEW',
         mapping_reason: 'The proposed SLO code does not exist in the current project syllabus. Semantic remapping is required.',
       } };
+    }),
+  } : raw?.paperCode.startsWith('CS-') ? {
+    ...raw,
+    questions: raw.questions.map(q => {
+      const review = sscComputerScienceMcqReview(raw.paperCode, q.questionNumber);
+      const meta = q.sourceRegion;
+      const mapping = sscComputerScienceMapping(raw.paperCode, q.questionNumber, meta.out_of_syllabus ? null : meta.current_slo, q.questionText);
+      if (!mapping) return q;
+      const outcomes = mapping.current_mapping;
+      return {
+        ...q,
+        topics: [...new Map(outcomes.map(outcome => [outcome.unitNumber, {
+          topic: { name: outcome.topic, topicNumber: String(outcome.unitNumber) },
+        }])).values()],
+        slos: outcomes.map(({ code, description }) => ({ slo: { code, description } })),
+        sourceRegion: {
+          ...meta,
+          ...mapping,
+          slo_text: outcomes[0]?.description,
+          ...(review ? { ...review, single_answer_review_required: true } : {}),
+        },
+      };
     }),
   } : raw;
   if (!process.env.VITEST && computed && computed.questions.length > 0) {

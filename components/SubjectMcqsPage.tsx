@@ -18,7 +18,7 @@ import csPast2025 from '@/data/computer-science/ssc1_2025_past_mcqs.json';
 import csXPast2025 from '@/data/computer-science/ssc2_2025_past_mcqs.json';
 import { mappedChapterGroups, mappedTheoryUnits } from '@/services/materials/practice';
 import { mcqCategories, type McqCategory } from '@/lib/mcqCategories';
-import { HubDirectory, HubMasthead, HubRail, HubShell } from '@/components/rise/McqHub';
+import { HubDirectory, HubMasthead, HubShell } from '@/components/rise/McqHub';
 import { publishedCurriculum } from '@/services/materials/curriculum';
 import past2025 from '@/data/physics/ssc1_2025_past_mcqs.json';
 import pastX2025 from '@/data/physics/ssc2_2025_past_mcqs.json';
@@ -33,6 +33,7 @@ import { sscBiologySyllabus } from '@/lib/sscBiologySyllabus';
 import type { HsscMcqsData } from '@/lib/hsscMcqsData';
 import prisma from '@/lib/prisma';
 import { paperAnswer, paperChoices, paperMetadata } from '@/lib/paperPresentation';
+import { getAllStandardPapers, getFallbackPaper } from '@/lib/paperDataService';
 
 interface PageProps {
   params: Promise<{ board: string; class: string; subject: string }>;
@@ -156,6 +157,36 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
   const isCs = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'computer-science';
   const isChem = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'chemistry';
   const isMath = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'mathematics';
+  const computerChapterQuestions = isCs && category ? getAllStandardPapers()
+    .filter(paper => /^CS-(IX|X)-(?:\d{4}-)?P1$/.test(paper.paperCode))
+    .flatMap(({ paperCode }) => {
+      const paper = getFallbackPaper(paperCode)!;
+      const annual = /-\d{4}-/.test(paperCode);
+      return paper.questions.flatMap(q => {
+        const region = q.sourceRegion;
+        const options = paperChoices(region.choices);
+        const correctOption = paperAnswer(region, options);
+        if (!correctOption || !region.current_mapping?.some(outcome => outcome.grade === classDef.level)) return [];
+        return [{
+          id: q.id,
+          paperCode,
+          sourceTitle: paper.title,
+          sourceGrade: paper.academicClass.level,
+          examYear: annual ? paper.examYear : undefined,
+          questionNumber: q.questionNumber,
+          rawQuestionNumber: q.questionNumber,
+          stem: q.questionText,
+          options,
+          correctOption,
+          explanation: region.explanation,
+          current_slo: region.current_slo,
+          cognitiveLevel: ({ K: 'Remembering', R: 'Remembering', U: 'Understanding', A: 'Application' } as Record<string, string>)[q.difficulty || ''] || q.difficulty,
+          diagramBased: q.diagramBased,
+          diagramUrl: region.diagramUrl,
+          sourceRegion: region,
+        }];
+      });
+    }) : undefined;
   const mathTheory = isMath || isChem ? await mappedTheoryUnits(board.shortCode, classDef.level, meta.title) : [];
   const availableTheorySections = (isMath || isChem)
     ? (['crqs', 'erqs', 'numericals'] as const).filter(section => mathTheory.some(unit => unit[section].length > 0))
@@ -193,7 +224,6 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
             lede="Choose how you want to practise: by syllabus unit, by board paper, as a full timed test, or by the thinking a question asks for."
             back={{ href: baseUrl, label: `Back to ${meta.title} subject hub` }}
           />
-          <HubRail baseUrl={baseUrl} theory={availableTheorySections ?? (legacy ? ['crqs', 'erqs', 'numericals', 'chapter-notes'] : [])} />
           <HubDirectory baseUrl={baseUrl} />
         </HubShell>
       ) : (
@@ -221,6 +251,7 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
                   : []
           }
           mappedChapters={mappedChapters}
+          computerChapterQuestions={computerChapterQuestions}
           availableTheorySections={availableTheorySections}
           reviewedPapers={isMath ? reviewedMathematicsPapers.filter(p => p.academicClass.level === classDef.level && p.paperCode.endsWith('-P1')).sort((a,b) => b.examYear-a.examYear).map(p => ({ paperCode: p.paperCode, title: p.title, examYear: p.examYear, count: p.questions.length })) : []}
           initialCategory={category}

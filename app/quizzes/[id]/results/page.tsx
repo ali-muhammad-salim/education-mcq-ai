@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { QuestionMarker } from '@/components/AssessmentManagement';
 import MathText from '@/components/MathText';
+import StructuredContent from '@/components/StructuredContent';
 
 export default function AssessmentResultsPage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter();
@@ -519,7 +520,7 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
                   {result.canGrade && <QuestionMarker quizId={quizId} answerId={q.quizAnswerId} maximum={q.marks} score={q.scoreAwarded} feedback={q.teacherComment} />}
                   {/* Question Stem with KaTeX math */}
                   <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-color, #2c3e38)', lineHeight: 1.55 }}>
-                    <MathText text={q.stemText} />
+                    <StructuredContent text={q.stemText} />
                   </div>
 
                   {/* Visual SVG diagram if present */}
@@ -581,11 +582,11 @@ export default function AssessmentResultsPage({ params }: { params: Promise<{ id
                               gap: '0.5rem'
                             }}
                           >
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: textDecoration }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0, textDecoration }}>
                               <span style={{ fontWeight: 800, color: 'var(--text-light, #5a7a6f)' }}>
                                 {String.fromCharCode(65 + oIdx)}.
                               </span>
-                              <MathText text={opt.text} />
+                              <StructuredContent text={opt.text} style={{ minWidth: 0 }} />
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
                               {isStudentChoice && (

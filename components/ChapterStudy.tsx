@@ -7,6 +7,7 @@ import { studyKinds, studyLabels } from "@/services/study/contracts";
 import styles from "./Study.module.css";
 import { hsscPhysicsSyllabus } from "@/lib/hsscPhysicsSyllabus";
 import { physicsUnit16Resource } from "@/lib/physicsUnit16Resource";
+import { physicsUnit17Resource } from "@/lib/physicsUnit17Resources";
 
 const descriptions: Record<string, string> = {
   CHAPTER_NOTES: "Understand the key ideas, one section at a time.",
@@ -40,12 +41,15 @@ export default async function ChapterStudy({
     "/study" +
     (chapter ? "/" + encodeURIComponent(chapter.id) : "");
   const title = chapter ? chapter.name : "Choose a chapter";
-  const isExtraResourceChapter = (topicNumber: string | null) =>
-    scope.board.id === "akueb" && scope.classDef.level === 10 && scope.meta.slug === "physics" &&
-    Number(topicNumber) === physicsUnit16Resource.unit;
+  const isPhysicsX = scope.board.id === "akueb" && scope.classDef.level === 10 && scope.meta.slug === "physics";
+  const isUnit16 = (topicNumber: string | null) => isPhysicsX && Number(topicNumber) === physicsUnit16Resource.unit;
+  const isUnit17 = (topicNumber: string | null) => isPhysicsX && Number(topicNumber) === physicsUnit17Resource.unit;
   const hasUnit16Sheet = (topicNumber: string | null, resourceKind: string | undefined) =>
-    isExtraResourceChapter(topicNumber) && (resourceKind === "FORMULA_SHEET" || resourceKind === "CHEAT_SHEET");
+    isUnit16(topicNumber) && (resourceKind === "FORMULA_SHEET" || resourceKind === "CHEAT_SHEET");
+  const hasUnit17Material = (topicNumber: string | null, resourceKind: string | undefined) =>
+    isUnit17(topicNumber) && ["CHAPTER_NOTES", "NUMERICAL_GUIDE", "FORMULA_SHEET", "CHEAT_SHEET", "PRACTICE_SET"].includes(resourceKind ?? "");
   const showUnit16Sheet = chapter && hasUnit16Sheet(chapter.topicNumber, selected);
+  const showUnit17Material = chapter && hasUnit17Material(chapter.topicNumber, selected);
   return (
     <section className={styles.root}>
       <Breadcrumbs
@@ -102,7 +106,8 @@ export default async function ChapterStudy({
                         {hssc && !selected ? "View learning outcomes" :
                           c.kinds.some(k => k.count && (!selected || k.kind === selected)) ||
                           hasUnit16Sheet(c.topicNumber, selected) ||
-                          (!selected && isExtraResourceChapter(c.topicNumber)) ? "" : "Coming soon"}
+                          hasUnit17Material(c.topicNumber, selected) ||
+                          (!selected && (isUnit16(c.topicNumber) || isUnit17(c.topicNumber))) ? "" : "Coming soon"}
                       </small>
                     </span>
                     <span aria-hidden="true">→</span>
@@ -149,7 +154,40 @@ export default async function ChapterStudy({
               <Link href={physicsUnit16Resource.href}>D.C. Circuits notes and original PDF</Link>
             </article>
           )}
-          {(!showUnit16Sheet || chapter.kinds.some(k => k.kind === selected && k.count > 0)) && <StudyLibrary
+          {showUnit17Material && (
+            <article className={styles.panel}>
+              {selected === "FORMULA_SHEET" && (
+                <>
+                  <h2>Unit 17 formulas</h2>
+                  <dl>
+                    <dt><strong>Magnetic flux</strong></dt>
+                    <dd>Φ = BA cos θ for a uniform field through a flat surface. θ is the angle between the field and the surface normal. Φ is in webers (Wb).</dd>
+                    <dt><strong>Magnetic force</strong></dt>
+                    <dd>F = BIL when the wire is perpendicular to the magnetic field. F is in newtons (N).</dd>
+                    <dt><strong>Turning effect of a coil</strong></dt>
+                    <dd>With orientation fixed, torque increases with coil area, current, number of turns and magnetic field strength.</dd>
+                  </dl>
+                </>
+              )}
+              {selected === "CHEAT_SHEET" && (
+                <ul>
+                  {physicsUnit17Resource.topics.map(topic => 'revisionPage' in topic && (
+                    <li key={topic.id}><Link href={topic.pdf + '#page=' + topic.revisionPage}>{topic.title} quick revision</Link></li>
+                  ))}
+                </ul>
+              )}
+              {(selected === "NUMERICAL_GUIDE" || selected === "FORMULA_SHEET") &&
+                <p><Link href={scope.baseUrl + '/numericals/17'}>Unit 17 worked magnetic-flux problems</Link></p>}
+              {selected === "PRACTICE_SET" && (
+                <ul>
+                  <li><Link href={physicsUnit17Resource.mcqsHref}>Unit 17 MCQs</Link></li>
+                  <li><Link href={scope.baseUrl + '/crqs/17'}>Unit 17 CRQs</Link></li>
+                </ul>
+              )}
+              <Link href={physicsUnit17Resource.href}>Magnetism resource packs and PDFs</Link>
+            </article>
+          )}
+          {((!showUnit16Sheet && !showUnit17Material) || chapter.kinds.some(k => k.kind === selected && k.count > 0)) && <StudyLibrary
             key={chapter.id + selected}
             board={scope.board.shortCode}
             grade={String(scope.classDef.level)}
@@ -161,17 +199,23 @@ export default async function ChapterStudy({
       ) : (
         <>
           <div className={styles.grid}>
-            {isExtraResourceChapter(chapter.topicNumber) && (
+            {isUnit16(chapter.topicNumber) && (
               <article className={styles.card}>
                 <h2>Extra resources</h2>
                 <Link className={styles.button} href={physicsUnit16Resource.href}>D.C. Circuits notes and quiz →</Link>
+              </article>
+            )}
+            {isUnit17(chapter.topicNumber) && (
+              <article className={styles.card}>
+                <h2>Extra resources</h2>
+                <Link className={styles.button} href={physicsUnit17Resource.href}>Magnetism resource packs and PDFs →</Link>
               </article>
             )}
             {chapter.kinds.map(({ kind: resourceKind, count }) => (
               <article className={styles.card} key={resourceKind}>
                 <h2>{studyLabels[resourceKind]}</h2>
                 <p className={styles.muted}>{descriptions[resourceKind]}</p>
-                {count || hasUnit16Sheet(chapter.topicNumber, resourceKind) ? (
+                {count || hasUnit16Sheet(chapter.topicNumber, resourceKind) || hasUnit17Material(chapter.topicNumber, resourceKind) ? (
                   <Link
                     className={styles.button}
                     href={chapterUrl + "?kind=" + resourceKind}

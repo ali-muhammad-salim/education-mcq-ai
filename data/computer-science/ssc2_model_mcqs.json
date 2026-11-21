@@ -515,8 +515,8 @@
       "C": "u -> Number, v -> String, w -> BigInt, x -> Boolean, y -> Undefined, z -> Null",
       "D": "u -> String, v -> Number, w -> Number, x -> Boolean, y -> Undefined, z -> String"
     },
-    "correctAnswer": "A",
-    "correctOption": "A",
+    "correctAnswer": "",
+    "correctOption": "",
     "slo": "10.2.2",
     "current_slo": "10.2.2",
     "sloText": "write a JavaScript code containing the following data types: a. String, b. Number, c. BigInt, d. Boolean, e. Undefined, f. Null;",
@@ -541,7 +541,7 @@
     ],
     "diagramBased": false,
     "isDiagram": false,
-    "explanation": "Matching each value to the six JavaScript data types in SLO `10.2.2`:\n- `u = \"Hello\"` $\\rightarrow$ **String**\n- `v = 42` $\\rightarrow$ **Number**\n- `w = 9007199254740993` (exceeds $2^{53}-1$) $\\rightarrow$ **BigInt**\n- `x = true` $\\rightarrow$ **Boolean**\n- `let y;` (uninitialised variable) $\\rightarrow$ **Undefined**\n- `z = null` $\\rightarrow$ **Null** (`A`).",
+    "explanation": "As printed, the types are String, Number, Number, Boolean, Undefined, and Null. The literal `9007199254740993` has type Number and rounds to `9007199254740992`. BigInt requires the suffix `n` or an explicit BigInt conversion. No option matches all six types.",
     "examYear": 2027,
     "paperCode": "CS-X-P1"
   },
@@ -1360,7 +1360,7 @@
     ],
     "diagramBased": false,
     "isDiagram": false,
-    "explanation": "When connecting over untrusted public Wi-Fi networks, **using a Virtual Private Network (VPN) to encrypt all network traffic** (`D`) prevents packet sniffing and man-in-the-middle interception.",
+    "explanation": "D is the best choice. A VPN encrypts traffic sent through the tunnel between the device and the VPN endpoint, reducing exposure to eavesdropping on local Wi-Fi. It does not encrypt the public network itself.",
     "examYear": 2027,
     "paperCode": "CS-X-P1"
   },

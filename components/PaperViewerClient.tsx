@@ -13,9 +13,11 @@ import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 import DownloadCountdownModal from '@/components/DownloadCountdownModal';
 import TakeQuizModal from '@/components/TakeQuizModal';
 import ContinuousDocument from '@/components/ContinuousDocument';
+import ResourceDocumentNav from '@/components/ResourceDocumentNav';
 import PracticeHud from '@/components/PracticeHud';
 import practice from '@/components/Practice.module.css';
 import {safePaperOriginal, paperAnswer, paperChoices} from '@/lib/paperPresentation';
+import { groupDuplicateQuestions } from '@/lib/uniqueQuestions';
 import {questionSyllabus} from '@/lib/questionSyllabus';
 import {scrollAndPulse} from '@/lib/anchorPulse';
 
@@ -54,11 +56,14 @@ interface Props {
   questions: Question[];
   backUrl?: string;
   hideHeader?: boolean;
+  resourceLinks?: React.ReactNode;
   pdfUrl?: string;
   historical?: boolean;
 }
 
-export default function PaperViewerClient({ paper, questions, backUrl, hideHeader = false, pdfUrl, historical = false }: Props) {
+export default function PaperViewerClient({ paper, questions: sourceQuestions, backUrl, hideHeader = false, pdfUrl, historical = false, resourceLinks }: Props) {
+  const groups = groupDuplicateQuestions(sourceQuestions, question => ({ ...question, paperCode: paper.paperCode }));
+  const questions = groups.map(([question]) => question);
   const [displayMode, setDisplayMode] = useState<'generated' | 'original_pdf'>(
     questions && questions.length > 0 ? 'generated' : 'original_pdf'
   );
@@ -282,7 +287,16 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
       )}
 
       {/* Primary Display Mode Selector (Exact Dark Navy + Emerald Green Pill Switcher) */}
-      <div
+      {resourceLinks !== undefined ? (
+        <ResourceDocumentNav
+          links={resourceLinks}
+          digitalLabel="Digital Paper"
+          showOriginal={displayMode === 'original_pdf'}
+          pdfAvailable={Boolean(original)}
+          onShowDigital={() => setDisplayMode('generated')}
+          onShowOriginal={() => setDisplayMode('original_pdf')}
+        />
+      ) : <div
         role="group"
         aria-label="Document view"
         data-paper-switch
@@ -349,7 +363,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
           <FileText size={18} />
           <span>Original PDF</span>
         </button>
-      </div>
+      </div>}
 
       {/* ========================================================================= */}
       {/* OPTION 2: EMBEDDED ORIGINAL BOARD PDF VIEWER                              */}
@@ -710,20 +724,29 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                 const mappingLevel = historical && meta.current_syllabus_reviewed && [9, 10, 11, 12].includes(meta.mapping_scope?.grade)
                   ? meta.mapping_scope.grade : paper.academicClass?.level || 9;
                 const mapping = questionSyllabus(meta,q.slos,mappingLevel,paper.subject?.name || 'Physics',paper.boardCode || 'AKU-EB',historical);
+                const sscComputerScience = /^CS-(IX|X)-/.test(paper.paperCode || '');
                 const sloCode = mapping.code;
                 const topicName = mapping.topic;
 
                 // Correct answer and candidate responses
                 const correctKey = paperAnswer(meta, choices) || '';
                 const correctOptionText = choices[correctKey] || '';
+                const sourceAcceptedOptions: string[] = meta.accepted_options || [];
+                const hasBoardAlternates = typeof meta.official_answer === 'string' && meta.official_answer.includes(',');
+                const optionLabel = hasBoardAlternates ? 'Board accepted' : 'Valid option';
+                const answerSummary = sourceAcceptedOptions.length > 0
+                  ? `${optionLabel}${!hasBoardAlternates && sourceAcceptedOptions.length > 1 ? 's' : ''}: ${sourceAcceptedOptions.join(', ')}`
+                  : correctKey ? `Correct Option: ${correctKey}`
+                    : meta.single_answer_review_required ? 'Excluded from single-answer scoring'
+                      : meta.answer_status === 'KEY_CONFLICT' ? 'No unique valid answer' : 'Review pending';
                 const answerLabel = meta.answer_origin === 'PROJECT_SOLVED' ? 'Project-solved answer' : 'Answer key';
                 const betterResponse = meta.better_response || meta.model_answer || (
                   isPaper2
                     ? meta.explanation || 'A reviewed model response is not available for this item.'
-                    : correctKey ? (meta.explanation || `${answerLabel}: ${correctKey} (${correctOptionText}).`) : 'A reviewed answer key is not available.'
+                    : meta.explanation || (correctKey ? `${answerLabel}: ${correctKey} (${correctOptionText}).` : 'A reviewed answer key is not available.')
                 );
                 const optionFeedback: Array<{ key: string; reason: string }> = Array.isArray(meta.option_feedback) ? meta.option_feedback : [];
-                const otherOptions = optionFeedback.filter(option => option.reason && option.key !== correctKey);
+                const otherOptions = optionFeedback.filter(option => option.reason && option.key !== correctKey && !sourceAcceptedOptions.includes(option.key));
                 const optionReview = otherOptions.length > 0 && (
                   <details>
                     <summary>Reasoning for {correctKey ? 'the other options' : 'each option'}</summary>
@@ -746,6 +769,9 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                     paddingBottom: showCorrectAnswers ? '1.75rem' : '2.5rem',
                     borderBottom: idx === questions.length - 1 ? 'none' : '1px solid #e5e7eb'
                   }}>
+                    {[...new Set(groups[idx].slice(1).map(question => question.questionNumber))]
+                      .filter(number => String(number) !== qNum)
+                      .map(number => <span key={number} id={`question-${number}`} />)}
                     {meta.assessmentSection && (() => {
                       const alternate = /^BIO-(?:IX|X)-2022-P1$/.test(paper.paperCode || '');
                       const split = alternate ? '41' : '51';
@@ -809,7 +835,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                               textDecoration: 'none'
                             }}
                           >
-                            2025 Syllabus: SLO {sloCode}{topicName ? ` • ${topicName}` : ''} ↗
+                            2025 Syllabus: {sscComputerScience && mappingLevel !== paper.academicClass?.level ? `Class ${mappingLevel === 9 ? 'IX' : 'X'} · ` : ''}SLO {sloCode}{topicName ? ` • ${topicName}` : ''} ↗
                           </Link>
                         ) : (
                           <span style={{
@@ -824,12 +850,13 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                             {meta.mapping_status === 'NO_DIRECT_OUTCOME' ? 'No direct outcome in the current syllabus' : mapping.status === 'outside' ? 'Out of 2025 Syllabus' : 'SLO mapping awaiting review'}
                           </span>
                         )}
-                        {hsscPhysics && mapping.status === 'mapped' && Array.isArray(meta.current_mapping) &&
+                        {(hsscPhysics || sscComputerScience) && mapping.status === 'mapped' && Array.isArray(meta.current_mapping) &&
                           meta.current_mapping.slice(1).map((outcome: { code: string; grade?: number }) => (
-                            <Link key={outcome.code} href={(outcome.grade ? `/akueb/${outcome.grade === 12 ? 'XII' : 'XI'}/physics/syllabus` : mapping.href!.split('#')[0]) + '#slo-' + encodeURIComponent(outcome.code)}>
+                            <Link key={outcome.code} href={(outcome.grade ? (sscComputerScience ? `/akueb/${outcome.grade === 9 ? 'IX' : 'X'}/computer-science/syllabus` : `/akueb/${outcome.grade === 12 ? 'XII' : 'XI'}/physics/syllabus`) : mapping.href!.split('#')[0]) + '#slo-' + encodeURIComponent(outcome.code)}>
                               SLO {outcome.code} ↗
                             </Link>
                           ))}
+                        {sscComputerScience && meta.mapping_reason && <span title={meta.mapping_reason}>Legacy-language practice</span>}
 
                         {(q.difficulty || meta.cognitive_level) && (
                           <span style={{
@@ -920,7 +947,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                             {['A', 'B', 'C', 'D'].map(optKey => {
                               const optText = choices[optKey] || '';
                               if (!optText) return null;
-                              const isThisCorrect = meta.official_answer === 'D,A' ? ['D', 'A'].includes(optKey) : optKey === correctKey;
+                              const isThisCorrect = sourceAcceptedOptions.length > 0 ? sourceAcceptedOptions.includes(optKey) : optKey === correctKey;
 
                               return (
                                 <div key={optKey} style={{
@@ -952,7 +979,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                                       marginLeft: 'auto',
                                       whiteSpace: 'nowrap'
                                     }}>
-                                      ✓ Correct Key
+                                      {sourceAcceptedOptions.length > 0 ? `✓ ${optionLabel}` : '✓ Correct Key'}
                                     </span>
                                   )}
                                 </div>
@@ -1004,7 +1031,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                           }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
                               <span style={{ fontSize: '0.82rem', fontWeight: 800, color: '#166534', background: '#dcfce7', padding: '2px 8px', borderRadius: '4px' }}>
-                                {correctKey ? `Correct Option: ${correctKey}` : meta.answer_status === 'KEY_CONFLICT' ? 'No unique valid answer' : 'Review pending'}
+                                {answerSummary}
                               </span>
                             </div>
                             <div style={{ fontSize: '0.92rem', lineHeight: 1.6, color: '#1e3a8a' }}>
@@ -1049,7 +1076,7 @@ export default function PaperViewerClient({ paper, questions, backUrl, hideHeade
                               }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
                                   <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#166534', background: '#dcfce7', padding: '3px 8px', borderRadius: '4px' }}>
-                                    {correctKey ? `Correct Option: ${correctKey}` : meta.answer_status === 'KEY_CONFLICT' ? 'No unique valid answer' : 'Review pending'}
+                                    {answerSummary}
                                   </span>
                                 </div>
                                 <div style={{ fontSize: '0.92rem', lineHeight: 1.6 }}>

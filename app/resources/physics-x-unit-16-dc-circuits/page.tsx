@@ -1,16 +1,18 @@
 import Link from 'next/link';
+import { FileText } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ContinuousDocument from '@/components/ContinuousDocument';
 import styles from '@/components/MaterialLayout.module.css';
 import { physicsUnit16Resource as resource } from '@/lib/physicsUnit16Resource';
 import { physicsUnit16ChapterQuestions } from '@/lib/physicsUnit16Questions';
+import navigation from '@/components/ResourceNavigation.module.css';
 
 const classPath = '/akueb/X/physics';
-const filters = [
+const topics = [
   { id: 'notes', label: 'Notes', href: resource.href },
   { id: 'mcqs', label: 'MCQs', href: resource.href + '?view=mcqs' },
-  { id: 'original', label: 'Original PDF', href: resource.href + '?view=original' },
 ] as const;
+const original = { id: 'original', label: 'Original PDF', href: resource.href + '?view=original' } as const;
 
 // Page 13 contains both sections. The break falls in the whitespace above the MCQS heading.
 const splitPage = 13;
@@ -22,7 +24,7 @@ export default async function Unit16ResourcePage({
   searchParams: Promise<{ view?: string | string[] }>;
 }) {
   const { view } = await searchParams;
-  const active = filters.find(filter => filter.id === view) ?? filters[0];
+  const active = view === original.id ? original : topics.find(topic => topic.id === view) ?? topics[0];
   const section = active.id === 'notes'
     ? { lastPage: splitPage, lastPageInset: 1 - splitInset }
     : active.id === 'mcqs' ? { firstPage: splitPage, firstPageInset: splitInset } : {};
@@ -35,27 +37,30 @@ export default async function Unit16ResourcePage({
         { label: 'D.C. Circuits', active: true },
       ]} />
       <h1>{resource.title}</h1>
-      <nav className={styles.actions} aria-label="D.C. Circuits content">
-        {filters.map(filter => (
+      <nav className={navigation.topics} aria-label="D.C. Circuits content">
+        {topics.map(topic => (
           <Link
-            key={filter.id}
-            className={styles.button}
-            href={filter.href}
-            aria-current={filter.id === active.id ? 'page' : undefined}
+            key={topic.id}
+            className={`${styles.button} ${navigation.topic}`}
+            href={topic.href}
+            aria-current={topic.id === active.id ? 'page' : undefined}
           >
-            {filter.label}
+            {topic.label}
           </Link>
         ))}
       </nav>
-      <div className={styles.actions}>
-        <Link className={styles.button} href={'/quizzes/' + resource.quizCode + '/take'}>
+      <nav className={navigation.links} aria-label="Chapter practice and original PDF">
+        <Link href={'/quizzes/' + resource.quizCode + '/take'}>
           Start {physicsUnit16ChapterQuestions.length}-question practice quiz
         </Link>
-        <Link className={styles.button} href={classPath + '/numericals/' + resource.unit}>
+        <Link href={classPath + '/numericals/' + resource.unit}>
           View worked numericals
         </Link>
-        <a className={styles.button} href={resource.pdf} target="_blank" rel="noreferrer">Open full PDF</a>
-      </div>
+        <Link className={`${styles.button} ${navigation.pdf}`} href={original.href} aria-current={active.id === original.id ? 'page' : undefined}>
+          <FileText size={16} aria-hidden="true" />
+          <span>Original PDF</span>
+        </Link>
+      </nav>
       {active.id !== 'original' && (
         <details>
           <summary>Corrections for practice</summary>

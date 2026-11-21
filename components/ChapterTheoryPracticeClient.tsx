@@ -1,5 +1,7 @@
 'use client';
 
+import { uniqueQuestions } from '@/lib/uniqueQuestions';
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import {
@@ -11,6 +13,7 @@ import type { SubjectMeta } from '@/lib/subjectMetadata';
 import MathText from '@/components/MathText';
 import { smartMatch } from '@/lib/smartSearch';
 import { physicsUnit16Resource } from '@/lib/physicsUnit16Resource';
+import { physicsUnit17Resource } from '@/lib/physicsUnit17Resources';
 import materialStyles from './MaterialLayout.module.css';
 
 export type TheorySectionMode = 'crqs' | 'erqs' | 'numericals' | 'notes';
@@ -33,9 +36,9 @@ export interface ChapterUnitData {
     questionNumber: string;
     sourceTitle: string;
     sourceHref: string;
-    examYear: number;
+    examYear?: number;
     questionText: string;
-    marks: number;
+    marks?: number;
     cognitiveLevel?: string;
     originalSlo?: string;
     originalSloText?: string;
@@ -170,9 +173,9 @@ export default function ChapterTheoryPracticeClient({
   } : SECTION_META[mode];
 
   const getUnitItems = (u: ChapterUnitData) => {
-    if (mode === 'crqs') return u.crqs;
-    if (mode === 'erqs') return u.erqs;
-    if (mode === 'numericals') return u.numericals;
+    if (mode === 'crqs') return uniqueQuestions(u.crqs);
+    if (mode === 'erqs') return uniqueQuestions(u.erqs);
+    if (mode === 'numericals') return uniqueQuestions(u.numericals);
     return u.definitions;
   };
 
@@ -378,16 +381,18 @@ export default function ChapterTheoryPracticeClient({
       {/* Chapter-by-Chapter Questions / Numericals / Notes Listing */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         {mode === 'notes' && activeUnits.map(unit => {
-            const extra = board.id === 'akueb' && classDef.level === 10 && meta.slug === 'physics' && unit.unitNumber === physicsUnit16Resource.unit
-              ? physicsUnit16Resource : null;
+            const physicsX = board.id === 'akueb' && classDef.level === 10 && meta.slug === 'physics';
+            const extra = physicsX && unit.unitNumber === physicsUnit16Resource.unit ? physicsUnit16Resource : null;
+            const magnetism = physicsX && unit.unitNumber === physicsUnit17Resource.unit ? physicsUnit17Resource : null;
             const query = searchQuery.trim();
             const showExtra = extra && (!query || smartMatch(extra.title + ' electricity extra resources quiz resistors', query));
+            const showMagnetism = magnetism && (!query || smartMatch(magnetism.title + ' flux solenoid loudspeaker relay Fleming torque motor extra resources', query));
           const filteredDefs = unit.definitions.filter(d =>
               !searchQuery.trim()
                 ? true
                 : smartMatch(`${unit.name} ${d.slo_code || ''} ${d.term} ${d.definition}`, searchQuery, d.slo_code)
             );
-            if (!filteredDefs.length && !showExtra) return null;
+            if (!filteredDefs.length && !showExtra && !showMagnetism) return null;
             return (
               <section
                 key={unit.unitNumber}
@@ -421,6 +426,11 @@ export default function ChapterTheoryPracticeClient({
                   <div className={materialStyles.actions}>
                     <Link className={materialStyles.button} href={extra.href}>D.C. Circuits notes & PDF</Link>
                     <Link className={materialStyles.button} href={'/quizzes/' + extra.quizCode + '/take'}>Unit 16 practice quiz</Link>
+                  </div>
+                )}
+                {showMagnetism && (
+                  <div className={materialStyles.actions}>
+                    <Link className={materialStyles.button} href={magnetism.href}>Magnetism resource packs and PDFs</Link>
                   </div>
                 )}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '0.9rem' }}>

@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowLeft, Award, BookOpen, CheckCircle2, Eye, EyeOff, XCircle } from 'lucide-react';
+import { ArrowLeft, Award, BookOpen, CheckCircle2, Eye, EyeOff, Pencil, XCircle } from 'lucide-react';
 import MathText from '@/components/MathText';
 import StructuredContent from '@/components/StructuredContent';
+import styles from './Practice.module.css';
 
 export type PracticeFilter = 'all' | 'Remembering' | 'Understanding' | 'Application' | 'diagram';
 
@@ -34,6 +35,7 @@ interface McqPracticeSheetProps {
 }
 
 const FILTERS: { id: PracticeFilter; label: string }[] = [
+  { id: 'all', label: 'All' },
   { id: 'Remembering', label: 'Remembering' },
   { id: 'Understanding', label: 'Understanding' },
   { id: 'Application', label: 'Application' },
@@ -116,101 +118,46 @@ export default function McqPracticeSheet({
             <span>{backLabel}</span>
           </button>
 
-          <div>
-            <h2 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#111827', margin: 0 }}>
-              {title}
-            </h2>
-            <span style={{ fontSize: '0.8rem', color: '#64748b' }}>
-              {items.length} Questions Available
-            </span>
-          </div>
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#111827', margin: 0 }}>
+            {title}
+          </h2>
         </div>
       </div>
 
-      {/* Control bar — same three controls as the Digital Paper */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-        gap: '1rem',
-        background: '#ffffff',
-        border: '1.5px solid #dce5e1',
-        borderRadius: '12px',
-        padding: '1rem 1.5rem',
-        marginBottom: '2rem',
-        boxShadow: '0 2px 10px rgba(11, 94, 74, 0.04)'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          <button
-            type="button"
-            onClick={() => setShowAllAnswers(prev => !prev)}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.6rem',
-              padding: '9px 20px',
-              borderRadius: '30px',
-              fontSize: '0.9rem',
-              fontWeight: 800,
-              cursor: 'pointer',
-              border: showAllAnswers ? '2px solid #0b5e4a' : '2px solid #cbd5e1',
-              background: showAllAnswers ? '#ecfdf5' : '#f8fafc',
-              color: showAllAnswers ? '#0b5e4a' : '#475569',
-              boxShadow: showAllAnswers ? '0 2px 10px rgba(11, 94, 74, 0.15)' : 'none',
-              transition: 'all 0.2s ease'
-            }}
-          >
-            <span style={{ fontSize: '1.15rem' }}>{showAllAnswers ? '✅' : '⚪'}</span>
-            <span>{showAllAnswers ? 'Hide correct answers' : 'Show correct answer only'}</span>
-          </button>
+      <div className={styles.sheetControls} role="group" aria-label="MCQ practice controls">
+        <button
+          type="button"
+          onClick={() => setShowAllAnswers(prev => !prev)}
+          className={styles.sheetControl}
+          aria-label="Show correct answers"
+          aria-pressed={showAllAnswers}
+        >
+          {showAllAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
+          <span className={styles.sheetControlFull}>{showAllAnswers ? 'Hide answers' : 'Show answers'}</span>
+          <span className={styles.sheetControlShort}>Answers</span>
+        </button>
 
-          <button
-            type="button"
-            onClick={() => setInteractiveMode(prev => !prev)}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.6rem',
-              padding: '9px 20px',
-              borderRadius: '30px',
-              fontSize: '0.9rem',
-              fontWeight: 800,
-              cursor: 'pointer',
-              border: interactiveMode ? '2px solid #2563eb' : '2px solid #cbd5e1',
-              background: interactiveMode ? '#eff6ff' : '#f8fafc',
-              color: interactiveMode ? '#1d4ed8' : '#475569',
-              boxShadow: interactiveMode ? '0 2px 10px rgba(37, 99, 235, 0.15)' : 'none',
-              transition: 'all 0.2s ease'
-            }}
-          >
-            <span>{interactiveMode ? '📝 Practice Mode (Active)' : '✏️ Practice & Select Options'}</span>
-          </button>
+        <button
+          type="button"
+          onClick={() => setInteractiveMode(prev => !prev)}
+          className={styles.sheetControl}
+          aria-pressed={interactiveMode}
+        >
+          <Pencil size={16} aria-hidden="true" />
+          <span>Practice</span>
+        </button>
 
-          <button
-            type="button"
-            disabled={!items.length}
-            onClick={onTakeQuiz}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              padding: '9px 22px',
-              borderRadius: '30px',
-              fontSize: '0.92rem',
-              fontWeight: 800,
-              cursor: items.length ? 'pointer' : 'not-allowed',
-              border: 'none',
-              background: '#0b5e4a',
-              color: '#ffffff',
-              boxShadow: '0 4px 14px rgba(11, 94, 74, 0.25)',
-              transition: 'all 0.2s ease'
-            }}
-          >
-            <Award size={18} />
-            <span>Take A Quiz</span>
-          </button>
-        </div>
+        <button
+          type="button"
+          disabled={!items.length}
+          onClick={onTakeQuiz}
+          className={`${styles.sheetControl} ${styles.sheetQuiz}`}
+          aria-label="Take quiz"
+        >
+          <Award size={16} aria-hidden="true" />
+          <span className={styles.sheetControlFull}>Take quiz</span>
+          <span className={styles.sheetControlShort}>Quiz</span>
+        </button>
       </div>
 
       {/* Browse filter bar — read-only preview unless Practice Mode is on */}
@@ -241,9 +188,11 @@ export default function McqPracticeSheet({
             outline: 'none'
           }}
         />
-        {[{ id: 'all' as const, label: `All (${items.length})` }, ...FILTERS].map(f => (
+        {FILTERS.map(f => (
           <button
             key={f.id}
+            type="button"
+            aria-pressed={filter === f.id}
             onClick={() => onFilter(f.id)}
             style={{
               padding: '0.5rem 0.9rem',
@@ -259,9 +208,10 @@ export default function McqPracticeSheet({
             {f.label}
           </button>
         ))}
-        <span style={{ marginLeft: 'auto', fontSize: '0.76rem', fontWeight: 600, color: 'var(--text-light, #4b5563)' }}>
-          {interactiveMode ? 'Practice Mode · select an option, then check your answer' : 'Read-only preview · turn on Practice & Select Options to answer'}
-        </span>
+        <div style={{ flexBasis: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '0.25rem 0.75rem', fontSize: '0.76rem', color: 'var(--text-light, #4b5563)' }}>
+          <strong role="status">Showing {items.length} {items.length === 1 ? 'question' : 'questions'}</strong>
+          <span>{interactiveMode ? 'Select an option, then check your answer' : 'Turn on Practice to answer questions'}</span>
+        </div>
       </div>
 
       {/* Exam-paper masthead */}

@@ -11,7 +11,9 @@ export default function QuestionSource({ question, source, board, grade, subject
   const label = question.sourceTitle ? `${question.sourceYear && !question.sourceTitle.includes(String(question.sourceYear)) ? question.sourceYear+' · ' : ''}${question.sourceTitle}` : (source === 'annual' ? `${year} · Annual · Paper 1` : source === 'model' ? 'Model paper · Paper 1' : 'Past paper');
   const qDisplayNum = question.rawQuestionNumber || question.originalQuestionNumber || question.questionNumber;
   const isOut = mapping.status === 'outside' || Boolean(meta.out_of_syllabus);
-  const entries: SourceEntry[] = sources && sources.length ? sources : [{ label, qNum: qDisplayNum, code }];
+  const entries: SourceEntry[] = sources?.length
+    ? [...new Map(sources.map(entry => [JSON.stringify([entry.code, entry.href, entry.qNum]), entry])).values()]
+    : [{ label, qNum: qDisplayNum, code }];
 
   return (
     <div style={{display: inline ? 'inline-flex' : 'flex',flexWrap:'wrap',alignItems:'baseline',gap:'.15rem .45rem',fontSize:'.72rem',lineHeight:1.45,color:'var(--text-light)',marginBottom: inline ? 0 : '.45rem'}}>

@@ -43,6 +43,7 @@ export function paperAnswer(
   meta: Record<string, any>,
   choices: Record<string, string>,
 ) {
+  if (meta.single_answer_review_required === true) return undefined;
   if (meta.answer_status === 'KEY_CONFLICT' || meta.answer_status === 'OFFICIAL_ASTERISK') return undefined;
   if (typeof meta.official_answer === 'string' && !/^[A-D](?:,\s*[A-D])*$/i.test(meta.official_answer.trim()) && meta.answer_status !== 'ANSWER_CORRECTED') return undefined;
   const candidate =

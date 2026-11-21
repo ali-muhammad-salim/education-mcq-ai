@@ -9,10 +9,17 @@ export interface PaperResourceTab {
 export default function PaperResourceNav({
   tabs,
   current,
+  inline = false,
 }: {
   tabs: PaperResourceTab[];
   current?: string;
+  inline?: boolean;
 }) {
+  if (inline) {
+    return tabs.filter(tab => tab.href !== current).map(tab => (
+      <Link key={tab.href} href={tab.href}>{tab.label}</Link>
+    ));
+  }
   return (
     <nav className={styles.actions} aria-label="Paper resources">
       {tabs.map((tab) => (

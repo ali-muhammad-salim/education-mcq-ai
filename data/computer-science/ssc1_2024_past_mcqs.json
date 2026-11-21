@@ -1841,10 +1841,10 @@
     ],
     "stem": "Which of the following HTML tags does NOT need a closing tag?",
     "options": {
-      "A": "<title>",
-      "B": "<head>",
-      "C": "<br>",
-      "D": "<p>"
+      "A": "```html\n<title>\n```",
+      "B": "```html\n<head>\n```",
+      "C": "```html\n<br>\n```",
+      "D": "```html\n<p>\n```"
     },
     "correctOption": "C",
     "explanation": "The <br> (line break) tag is an empty (void/singular) HTML element that inserts a line break immediately and does not wrap content or require a closing </br> tag.",
@@ -1897,10 +1897,10 @@
     ],
     "stem": "Consider the given image of a webpage.\nThe following changes need to be made in the heading:\nFont style: Calibri\nFont color: Blue\nFont size: 35 pixels\nThe HTML code that will make these changes is",
     "options": {
-      "A": "<p style=\"font-family:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>",
-      "B": "<p style=\"font:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>",
-      "C": "<p style=\"font-family:Calibri; color:Blue; font-size:35px;\">Content Management System</p>",
-      "D": "<p style=\"font:Calibri; color:Blue; font-size:35px;\">Content Management System</p>"
+      "A": "```html\n<p style=\"font-family:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>\n```",
+      "B": "```html\n<p style=\"font:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>\n```",
+      "C": "```html\n<p style=\"font-family:Calibri; color:Blue; font-size:35px;\">Content Management System</p>\n```",
+      "D": "```html\n<p style=\"font:Calibri; color:Blue; font-size:35px;\">Content Management System</p>\n```"
     },
     "correctOption": "C",
     "explanation": "In inline CSS via the HTML style attribute, the typeface is set with font-family:Calibri, the text colour is set with color:Blue, and the font size is set with font-size:35px.",
@@ -2009,10 +2009,10 @@
     ],
     "stem": "Which of the following HTML codes should be used to display white text on a background having black color?",
     "options": {
-      "A": "<body style=\"color: white; background-color: black;\">Some text here</body>",
-      "B": "<body \"bgcolor=black fgcolor=white\">Some text here</body>",
-      "C": "<body backgroundcolor=black text=white> Some text here</body>",
-      "D": "<body bgcolor=black foregroundcolor=white> Some text here</body>"
+      "A": "```html\n<body style=\"color: white; background-color: black;\">Some text here</body>\n```",
+      "B": "```html\n<body \"bgcolor=black fgcolor=white\">Some text here</body>\n```",
+      "C": "```html\n<body backgroundcolor=black text=white> Some text here</body>\n```",
+      "D": "```html\n<body bgcolor=black foregroundcolor=white> Some text here</body>\n```"
     },
     "correctOption": "A",
     "explanation": "Using inline CSS inside the <body> tag's style attribute, 'color: white;' sets the foreground text colour to white and 'background-color: black;' sets the page background to black.",
@@ -2065,13 +2065,13 @@
     ],
     "stem": "Consider the given image of a web page.\nWhen someone clicks on Visit PIA Website then they are redirected to https://www.piac.com.pk\nThe HTML code to insert this hyperlink is",
     "options": {
-      "A": "<a href=\"https://www.piac.com.pk\">Visit PIA Website</a>",
-      "B": "<a Visit PIA Website : href=\"https://www.piac.com.pk\" </a>",
-      "C": "<a Visit PIA Website : href=\"https://www.piac.com.pk\"> </a>",
-      "D": "<a>Visit PIA Website : href=\"https://www.piac.com.pk\"> </a>"
+      "A": "```html\n<a href=\"https://www.piac.com.pk\">Visit PIA Website</a>\n```",
+      "B": "```html\n<a Visit PIA Website : href=\"https://www.piac.com.pk\" </a>\n```",
+      "C": "```html\n<a Visit PIA Website : href=\"https://www.piac.com.pk\"> </a>\n```",
+      "D": "```html\n<a>Visit PIA Website : href=\"https://www.piac.com.pk\"> </a>\n```"
     },
     "correctOption": "A",
-    "explanation": "An HTML hyperlink uses the anchor element <a> with the href attribute inside the opening tag specifying the target URL, followed by the clickable link text and closing </a> tag: <a href=\"https://www.piac.com.pk\">Visit PIA Website</a>.",
+    "explanation": "Option A is a valid HTML anchor. Put the URL in the `href` attribute and the clickable text between `<a>` and `</a>`. The printed key displays a bullet for this question.",
     "option_feedback": [
       {
         "key": "B",
@@ -2121,10 +2121,10 @@
     ],
     "stem": "Two of the tags that are related to tables in HTML are",
     "options": {
-      "A": "<tr> </tr> and <th> </th>",
-      "B": "<br> </br> and <dt> </dt>",
-      "C": "<tr> </tr> and <br> </br>",
-      "D": "<th> </th> and <dt> </dt>"
+      "A": "```html\n<tr> </tr> and <th> </th>\n```",
+      "B": "```html\n<br> </br> and <dt> </dt>\n```",
+      "C": "```html\n<tr> </tr> and <br> </br>\n```",
+      "D": "```html\n<th> </th> and <dt> </dt>\n```"
     },
     "correctOption": "A",
     "explanation": "In HTML tables, <tr>...</tr> defines a table row and <th>...</th> defines a bold/centred table header cell inside a row.",

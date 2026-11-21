@@ -18,7 +18,3 @@ export const physicsUnit16ChapterQuestions = unit16Questions.map(question => ({
     : 'Remembering',
   diagramBased: false,
 }));
-
-export function includesPhysicsUnit16Notes(quizCode: string) {
-  return /^PHY-X-UNIT-(0|16)-ALL-(ALL|R|U|A)$/.test(quizCode);
-}

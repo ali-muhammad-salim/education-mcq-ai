@@ -1971,10 +1971,10 @@
     ],
     "stem": "The HTML code to show X₂ + Y² on a webpage is",
     "options": {
-      "A": "X<sup>2</sup> + Y<sub>2</sub>",
-      "B": "X<sub>2</sub> + Y<sup>2</sup>",
-      "C": "<sub>X</sub>2 + <sup>Y</sup>2",
-      "D": "<sup>X</sup>2 + <sub>Y</sub>2"
+      "A": "```html\nX<sup>2</sup> + Y<sub>2</sub>\n```",
+      "B": "```html\nX<sub>2</sub> + Y<sup>2</sup>\n```",
+      "C": "```html\n<sub>X</sub>2 + <sup>Y</sup>2\n```",
+      "D": "```html\n<sup>X</sup>2 + <sub>Y</sub>2\n```"
     },
     "correctOption": "B",
     "explanation": "In HTML, <sub>2</sub> renders the '2' as a subscript below the baseline (X₂) and <sup>2</sup> renders the '2' as a superscript above the baseline (Y²), giving X<sub>2</sub> + Y<sup>2</sup>.",
@@ -2027,10 +2027,10 @@
     ],
     "stem": "Following line is written in a webpage.\nVisit BBC News Urdu for latest news in Urdu.\nWhen someone clicks hyperlink BBC News Urdu, then https://www.bbc.com/urdu is opened. The HTML code for this line is",
     "options": {
-      "A": "<p>Visit<\"BBC News Urdu\">a href=https://www.bbc.com/urdu</a>for latest news in Urdu.</p>",
-      "B": "<p>Visit <\"https://www.bbc.com/urdu\"> a href=BBC News Urdu</a> for latest news in Urdu.</p>",
-      "C": "<p>Visit <a href = \"BBC News Urdu\"> https://www.bbc.com/urdu </a> for latest news in Urdu.</p>",
-      "D": "<p>Visit <a href = \"https://www.bbc.com/urdu\">BBC News Urdu</a> for latest news in Urdu.</p>"
+      "A": "```html\n<p>Visit<\"BBC News Urdu\">a href=https://www.bbc.com/urdu</a>for latest news in Urdu.</p>\n```",
+      "B": "```html\n<p>Visit <\"https://www.bbc.com/urdu\"> a href=BBC News Urdu</a> for latest news in Urdu.</p>\n```",
+      "C": "```html\n<p>Visit <a href = \"BBC News Urdu\"> https://www.bbc.com/urdu </a> for latest news in Urdu.</p>\n```",
+      "D": "```html\n<p>Visit <a href = \"https://www.bbc.com/urdu\">BBC News Urdu</a> for latest news in Urdu.</p>\n```"
     },
     "correctOption": "D",
     "explanation": "In HTML, the anchor tag <a href=\"https://www.bbc.com/urdu\">BBC News Urdu</a> sets the destination URL in the href attribute and places the clickable text 'BBC News Urdu' between the opening <a> and closing </a> tags.",
@@ -2083,10 +2083,10 @@
     ],
     "stem": "Consider the given text.\n[ Click here to open google ]\nThe HTML code to show this text in white color over black background is",
     "options": {
-      "A": "<style:\"background-color black;\"><p style:\"color white\">Click here to open google</p>",
-      "B": "<style=\"background color<black>;\"><p style=\"color<white>\"> Click here to open google </p>",
-      "C": "<style=\"background color=black;\"><p style=\"color=white\"> Click here to open google </p>",
-      "D": "<body style=\"background-color:black;\"><p style=\"color:white;\">Click here to open google</p>"
+      "A": "```html\n<style:\"background-color black;\"><p style:\"color white\">Click here to open google</p>\n```",
+      "B": "```html\n<style=\"background color<black>;\"><p style=\"color<white>\"> Click here to open google </p>\n```",
+      "C": "```html\n<style=\"background color=black;\"><p style=\"color=white\"> Click here to open google </p>\n```",
+      "D": "```html\n<body style=\"background-color:black;\"><p style=\"color:white;\">Click here to open google</p>\n```"
     },
     "correctOption": "D",
     "explanation": "Valid inline CSS uses the style=\"property:value;\" syntax inside HTML element tags: <body style=\"background-color:black;\"> sets the page background to black and <p style=\"color:white;\"> sets the paragraph text colour to white.",

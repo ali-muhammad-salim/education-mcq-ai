@@ -5,6 +5,7 @@ import styles from "./MaterialLayout.module.css";
 import OriginalDocument from "./OriginalDocument";
 import ContinuousDocument from "./ContinuousDocument";
 import { safeDocumentUrl } from "@/lib/paperPresentation";
+import ResourceDocumentNav from "./ResourceDocumentNav";
 
 export default function DocumentViews({
   original,
@@ -13,6 +14,7 @@ export default function DocumentViews({
   initialView,
   continuousPdf = false,
   digitalLabel = "Digital Paper",
+  resourceLinks,
 }: {
   original?: string | null;
   title: string;
@@ -20,6 +22,7 @@ export default function DocumentViews({
   initialView?: "digital" | "original";
   continuousPdf?: boolean;
   digitalLabel?: string;
+  resourceLinks?: ReactNode;
 }) {
   original = safeDocumentUrl(original);
   const [view, setView] = useState(
@@ -31,7 +34,16 @@ export default function DocumentViews({
 
   return (
     <div>
-      <div
+      {resourceLinks !== undefined ? (
+        <ResourceDocumentNav
+          links={resourceLinks}
+          digitalLabel={children ? digitalLabel : undefined}
+          showOriginal={view === "original"}
+          pdfAvailable={Boolean(original)}
+          onShowDigital={() => setView("digital")}
+          onShowOriginal={() => setView("original")}
+        />
+      ) : <div
         role="group"
         aria-label="Document view"
         style={{
@@ -98,7 +110,7 @@ export default function DocumentViews({
             <span>Original PDF</span>
           </button>
         )}
-      </div>
+      </div>}
 
       {view === "digital" ? (
         children

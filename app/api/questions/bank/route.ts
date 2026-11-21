@@ -4,6 +4,9 @@ import { requireUser } from '@/lib/security';
 import { z } from 'zod';
 import { apiError } from '@/lib/api';
 import { paperAnswer, paperChoices } from '@/lib/paperPresentation';
+import { getFallbackPaper } from '@/lib/paperDataService';
+import { sscComputerScienceMcqReview } from '@/lib/sscComputerScienceMcqReview';
+import { uniqueQuestions } from '@/lib/uniqueQuestions';
 import { questionSchema } from '@/lib/validations/assessment';
 import { smartMatch, smartScore } from '@/lib/smartSearch';
 import ssc1ModelMcqs from '@/data/physics/ssc1_model_mcqs.json';
@@ -76,7 +79,7 @@ export async function GET(req: NextRequest) {
         skip: query ? 0 : (page - 1) * limit,
         include: {
           pastPaper: {
-            select: { paperCode: true, examYear: true, title: true }
+            select: { paperCode: true, examYear: true, title: true, sourceDocumentId: true }
           },
           cognitiveLevels: {
             include: { cognitiveLevel: true }
@@ -85,9 +88,16 @@ export async function GET(req: NextRequest) {
       });
 
       if (pastQuestions && pastQuestions.length > 0) {
-        let mapped = pastQuestions.filter(q => q.questionType !== 'MULTIPLE_CHOICE' || !!paperAnswer((q.sourceRegion as Record<string, unknown>) || {}, paperChoices((q.sourceRegion as Record<string, unknown>)?.choices))).map(q => {
+        let mapped = pastQuestions.filter(q => q.questionType !== 'MULTIPLE_CHOICE' || (
+          !sscComputerScienceMcqReview(q.pastPaper?.paperCode || '', q.questionNumber)
+          && !!paperAnswer((q.sourceRegion as Record<string, unknown>) || {}, paperChoices((q.sourceRegion as Record<string, unknown>)?.choices))
+        )).map(q => {
           const cog = q.cognitiveLevels?.[0]?.cognitiveLevel?.level || q.difficulty || 'Understanding';
-          const sr = (q.sourceRegion as any) || {};
+          const code = q.pastPaper?.paperCode || '';
+          const bundled = !q.pastPaper?.sourceDocumentId && /^CS-(IX|X)(-\d{4})?-P1$/.test(code)
+            ? getFallbackPaper(code)?.questions.find(question => question.questionNumber === String(q.questionNumber))
+            : undefined;
+          const sr: Record<string, any> = { ...(q.sourceRegion as Record<string, any>), ...bundled?.sourceRegion };
 
           let opts: { id: string; text: string; isCorrect: boolean }[] = [];
           if (sr.choices && typeof sr.choices === 'object') {
@@ -108,7 +118,10 @@ export async function GET(req: NextRequest) {
           return {
             id: q.id,
             questionType: ({ MULTIPLE_CHOICE: 'MCQ_SINGLE', CONSTRUCTED_RESPONSE: 'CRQ', EXTENDED_RESPONSE: 'LONG_ANSWER' } as Record<string, string>)[q.questionType] || q.questionType || 'MCQ_SINGLE',
-            stemText: q.questionText,
+            stemText: bundled?.questionText ?? q.questionText,
+            diagramUrl: sr.diagramUrl || sr.diagram_url || undefined,
+            diagramBased: q.diagramBased || sr.diagramBased || sr.isDiagram,
+            questionNumber: q.questionNumber,
             difficulty: q.difficulty || 'Medium',
             marks: q.marks || 1,
             cognitiveLevel: cog,
@@ -139,7 +152,7 @@ export async function GET(req: NextRequest) {
         }
 
         hasMore = mapped.length > limit;
-        formatted = mapped.slice(0, limit);
+        formatted = uniqueQuestions(mapped.slice(0, limit));
       }
     } catch (dbErr) {
       console.warn('Database query failed for question bank, falling back to static bundles:', dbErr);
@@ -213,7 +226,8 @@ export async function GET(req: NextRequest) {
         ];
       }
 
-      formatted = combinedRaw.map(({ raw: q, cls, source, year }, idx) => {
+      formatted = combinedRaw.flatMap(({ raw: q, cls, source, year }, idx) => {
+        if (sscComputerScienceMcqReview(source, q.questionNumber)) return [];
         const rawOpts = q.options || {};
         const correctKey = (q.correctOption || '').toUpperCase().trim();
         const opts = Object.entries(rawOpts).map(([key, val]) => ({
@@ -228,10 +242,13 @@ export async function GET(req: NextRequest) {
           ? 'Medium'
           : 'Easy';
 
-        return {
+        return [{
           id: `bank-ssc${cls}-${year}-${idx}-q${q.questionNumber}`,
           questionType: 'MCQ_SINGLE',
           stemText: q.stem || '',
+          diagramUrl: q.diagramUrl || undefined,
+          diagramBased: q.diagramBased || q.isDiagram,
+          questionNumber: q.questionNumber,
           difficulty: diff,
           marks: q.marks || 1,
           cognitiveLevel: q.cognitiveLevel || 'Understanding',
@@ -241,7 +258,7 @@ export async function GET(req: NextRequest) {
           sourcePaper: source,
           examYear: year,
           provenance: 'QUESTION_BANK'
-        };
+        }];
       });
 
       if (query) {
@@ -263,6 +280,7 @@ export async function GET(req: NextRequest) {
         formatted = formatted.filter(q => q.difficulty.toUpperCase() === difficulty);
       }
 
+      formatted = uniqueQuestions(formatted);
       hasMore = formatted.length > limit;
       formatted = formatted.slice(0, limit);
     }

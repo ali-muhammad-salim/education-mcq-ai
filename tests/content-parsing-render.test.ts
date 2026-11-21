@@ -5,6 +5,8 @@ import StructuredContent from '../components/StructuredContent';
 import MathText from '../components/MathText';
 import biology from '../data/biology/ssc1_2023_past_mcqs.json';
 import computer from '../data/computer-science/chapter_wise_theory_bank.json';
+import csIxModel from '../data/computer-science/ssc1_model_mcqs.json';
+import csX2019 from '../data/computer-science/ssc2_2019_past_mcqs.json';
 
 function record(id: string, value: unknown = computer): Record<string, unknown> {
   if (value && typeof value === 'object') {
@@ -18,6 +20,7 @@ function record(id: string, value: unknown = computer): Record<string, unknown> 
 }
 const render = (text: string, inline = false) => renderToStaticMarkup(React.createElement(inline ? MathText : StructuredContent, { text }));
 const tables = (html: string) => html.match(/<table\b[\s\S]*?<\/table>/g) ?? [];
+const renderedText = (html: string) => html.replace(/<[^>]*>/g, '');
 
 describe('content parsing rendered with real React and KaTeX', () => {
   it('keeps BIO-IX-2023-P1 Q24 tables on either side of the instruction', () => {
@@ -41,7 +44,7 @@ describe('content parsing rendered with real React and KaTeX', () => {
   });
   it('preserves the complete 2025 C program without accidental math', () => {
     const html = render(String(record('cs-x-2025-p2-q3-u10').questionText));
-    expect(html).toContain('for (int i=20;i&lt;50;i+=5)\nprintf(&quot;\\n%d&quot;, i);\n</code>');
+    expect(renderedText(html)).toContain('for (int i=20;i&lt;50;i+=5)\nprintf(&quot;\\n%d&quot;, i);\n');
     expect(html).not.toContain('katex');
     expect(html).not.toContain('```');
   });
@@ -55,13 +58,13 @@ describe('content parsing rendered with real React and KaTeX', () => {
     const html = render('| Label | Value | Empty |\n| --- | --- | --- |\n| left\\|right | `a || b` | |');
     expect(html.match(/<td\b/g)).toHaveLength(3);
     expect(html).toContain('left|right');
-    expect(html).toMatch(/<code[^>]*>a \|\| b<\/code>/);
+    expect(renderedText(html)).toContain('a || b');
   });
   it('keeps fenced content opaque to table, list, math and HTML parsing', () => {
     const html = render('Before\n```c\n| a | b |\n| c | d |\na. $x$ <script>\nb. **literal** \\frac{1}{2}\n```\nAfter');
     expect(tables(html)).toHaveLength(0);
     expect(html).not.toContain('katex');
-    expect(html).toContain('a. $x$ &lt;script&gt;\nb. **literal** \\frac{1}{2}');
+    expect(renderedText(html)).toContain('a. $x$ &lt;script&gt;\nb. **literal** \\frac{1}{2}');
     expect(html.indexOf('Before')).toBeLessThan(html.indexOf('<code'));
     expect(html.indexOf('After')).toBeGreaterThan(html.indexOf('</code>'));
   });
@@ -76,7 +79,7 @@ describe('content parsing rendered with real React and KaTeX', () => {
     expect(html.match(/<code\b/g)).toHaveLength(1);
     expect(html).not.toContain('```');
     expect(html).not.toContain('katex');
-    expect(html).toContain('int x = 1;');
+    expect(renderedText(html)).toContain('int x = 1;');
     expect(html).toContain('$x$');
   });
   it('preserves the existing ungapped prose wrappers surrounding a simple table', () => {
@@ -94,5 +97,17 @@ describe('content parsing rendered with real React and KaTeX', () => {
     expect(list).toContain('>b.</span>');
     expect(list).toContain('gap:0.4rem');
     expect(render('<img src=x onerror=alert(1)>', true)).toContain('&lt;img');
+  });
+  it('renders GW-BASIC table cells with line breaks and HTML options as literal highlighted code', () => {
+    const basic = csX2019.find(q => q.questionNumber === 13)!;
+    const html = render(basic.stem);
+    expect(tables(html)).toHaveLength(2);
+    expect(html.match(/<br\/?\s*>/g)).toHaveLength(14);
+    expect(html).not.toContain('&lt;br&gt;');
+    const option = render(csIxModel.find(q => q.questionNumber === 15)!.options.B);
+    expect(option).toContain('<pre');
+    expect(option).toMatch(/<span[^>]*>&lt;tr<\/span>/);
+    expect(renderedText(option)).toContain('&lt;tr&gt;\n  &lt;th&gt;Name&lt;/th&gt;');
+    expect(option).not.toContain('<tr>');
   });
 });

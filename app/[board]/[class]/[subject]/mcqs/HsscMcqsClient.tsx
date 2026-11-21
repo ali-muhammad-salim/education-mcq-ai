@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import TakeQuizModal from '@/components/TakeQuizModal';
 import QuestionSource from '@/components/QuestionSource';
 import McqPracticeSheet, { type PracticeFilter, type PracticeItem } from '@/components/McqPracticeSheet';
+import { groupDuplicateQuestions, uniqueQuestions } from '@/lib/uniqueQuestions';
 import { smartMatch } from '@/lib/smartSearch';
 import type { McqCategory } from '@/lib/mcqCategories';
 import {
@@ -139,7 +140,7 @@ export default function HsscMcqsClient({
   const ssc = classLevel < 11;
   const launch = (title: string, code: string, questions: HsscQuizQuestion[]) => {
     if (!questions.length) return;
-    setQuiz({ title, code, questions });
+    setQuiz({ title, code, questions: uniqueQuestions(questions) });
   };
 
   const launchUnit = (unit: HsscUnitView, group?: QuizGroup) => {
@@ -224,7 +225,7 @@ export default function HsscMcqsClient({
   };
 
   const syllabusQuestionIds = new Set(data.units.flatMap(unit => unit.groups.flatMap(group => group.questionIds)));
-  const cognitiveQuestions = data.papers.flatMap(paper => paper.questions).filter(question => syllabusQuestionIds.has(question.id));
+  const cognitiveQuestions = uniqueQuestions(data.papers.flatMap(paper => paper.questions).filter(question => syllabusQuestionIds.has(question.id)));
   const cognitiveCounts = COGNITIVE_TIERS.map(tier => ({
     ...tier,
     count: cognitiveQuestions.filter(question => tierOf(question.difficulty) === tier.key).length,
@@ -236,10 +237,8 @@ export default function HsscMcqsClient({
 
   const unitEntries: UnitEntry[] = data.units.map(unit => {
     const groups = groupsFor(unit);
-    const total = groups.reduce((sum, group) => sum + group.questions.length, 0);
-    const model = groups
-      .filter(group => group.paper.year === null)
-      .reduce((sum, group) => sum + group.questions.length, 0);
+    const total = uniqueQuestions(groups.flatMap(group => group.questions)).length;
+    const model = uniqueQuestions(groups.filter(group => group.paper.year === null).flatMap(group => group.questions)).length;
     return {
       id: `unit-${unit.unitNumber}`,
       number: unit.unitNumber,
@@ -288,7 +287,8 @@ export default function HsscMcqsClient({
       if (filter === 'diagram') return Boolean(question.diagramBased || region.diagramUrl);
       return LEVEL_FILTER[tierOf(question.difficulty)] === filter;
     });
-    const items: PracticeItem[] = visible.map(({ question, paper }) => {
+    const groups = groupDuplicateQuestions(visible, entry => entry.question);
+    const items: PracticeItem[] = groups.map(([{ question, paper }, ...duplicates]) => {
       const region = question.sourceRegion as Record<string, any>;
       const correct = String(region.correct_answer || '');
       const tier = COGNITIVE_TIERS.find(item => item.key === tierOf(question.difficulty));
@@ -308,7 +308,11 @@ export default function HsscMcqsClient({
               board={boardCode}
               grade={classLevel}
               subject={subjectTitle}
-              sources={[{ label: paper.year === null ? `Model · Paper ${paper.paper}` : `${paper.year} · Paper ${paper.paper}`, qNum: question.questionNumber, code: paper.code }]}
+              sources={[{ question, paper }, ...duplicates].map(entry => ({
+                label: `${entry.paper.year ?? 'Model'} · Paper ${entry.paper.paper}`,
+                qNum: entry.question.questionNumber,
+                code: entry.paper.code,
+              }))}
               hideSlo
               inline
             />
@@ -328,7 +332,7 @@ export default function HsscMcqsClient({
         ),
       };
     });
-    const quizQuestions = visible.map(entry => entry.question);
+    const quizQuestions = groups.map(([entry]) => entry.question);
     const title = `Unit ${chapterUnit.unitNumber}: ${chapterUnit.name} • Chapter-Wise MCQs`;
     const quizCode = chapterUnit.topicId && !search.trim() && (filter === 'all' || filter === 'diagram')
       ? `CURRICULUM:${chapterUnit.topicId}:${FILTER_TAG[filter]}`
@@ -389,9 +393,9 @@ export default function HsscMcqsClient({
         }
       />
 
-      <HubRail baseUrl={baseUrl} active={category} theory={theory} />
-
-      {!category && <HubDirectory baseUrl={baseUrl} notes={directoryNotes} />}
+      {category
+        ? <HubRail baseUrl={baseUrl} active={category} theory={theory} />
+        : <HubDirectory baseUrl={baseUrl} notes={directoryNotes} />}
 
       {category === 'chapter_wise' && (
         <HubSection title="Syllabus units" note={`${unitCount} units · ${data.totalQuestions} MCQs`}>

@@ -1571,10 +1571,10 @@
     ],
     "stem": "Two of the tags that are related to tables in HTML are",
     "options": {
-      "A": "<tr></tr> and <th></th>",
-      "B": "<br></br> and <dt></dt>",
-      "C": "<tr></tr> and <br></br>",
-      "D": "<th></th> and <dt></dt>"
+      "A": "```html\n<tr></tr> and <th></th>\n```",
+      "B": "```html\n<br></br> and <dt></dt>\n```",
+      "C": "```html\n<tr></tr> and <br></br>\n```",
+      "D": "```html\n<th></th> and <dt></dt>\n```"
     },
     "correctOption": "A",
     "explanation": "In HTML tables, <tr>...</tr> defines a table row and <th>...</th> defines a table header cell.",
@@ -1683,10 +1683,10 @@
     ],
     "stem": "An image with the following specifications is to be inserted in a web page.\n• The name of the image is flower.jpg\n• The alternative text for image is \"Flower Picture\"\n• The width and height of the image are to be 100 pixels\n• A solid black border having thickness of 3 pixels surrounds the picture\nThe HTML code to insert these specifications in a web page is",
     "options": {
-      "A": "<img src=\"flower\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
-      "B": "<alt=\"Flower Picture\" img src=\"flower.jpg\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
-      "C": "<img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">",
-      "D": "<style=\"border:3px solid black\" img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\">"
+      "A": "```html\n<img src=\"flower\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">\n```",
+      "B": "```html\n<alt=\"Flower Picture\" img src=\"flower.jpg\" width=\"100\" height=\"100\" style=\"border:3px solid black\">\n```",
+      "C": "```html\n<img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\" style=\"border:3px solid black\">\n```",
+      "D": "```html\n<style=\"border:3px solid black\" img src=\"flower.jpg\" alt=\"Flower Picture\" width=\"100\" height=\"100\">\n```"
     },
     "correctOption": "C",
     "explanation": "Option C opens with the <img> tag name and correctly sets src=\"flower.jpg\" (including the .jpg file extension), alt=\"Flower Picture\", width=\"100\", height=\"100\", and style=\"border:3px solid black\".",
@@ -1739,10 +1739,10 @@
     ],
     "stem": "Consider the given image of a web page showing a sentence. The font style of sentence is Courier New.\nThe HTML code to show this sentence is",
     "options": {
-      "A": "<p This is <b><I>Important</I></b> paragraph</p> style=\"font-family:'Courier New' \">",
-      "B": "<p style=\"font-family:'Courier New' \">This is <b><I>Important</I></b> paragraph.</p>",
-      "C": "<p style=\"font-family:'Courier New' \">This is <b><I>Important<\\b><\\I> paragraph.<\\p>",
-      "D": "<p style:\"font-family='Courier New' \">This is <b><I>Important</I></b> paragraph.</p>"
+      "A": "```html\n<p This is <b><I>Important</I></b> paragraph</p> style=\"font-family:'Courier New' \">\n```",
+      "B": "```html\n<p style=\"font-family:'Courier New' \">This is <b><I>Important</I></b> paragraph.</p>\n```",
+      "C": "```html\n<p style=\"font-family:'Courier New' \">This is <b><I>Important<\\b><\\I> paragraph.<\\p>\n```",
+      "D": "```html\n<p style:\"font-family='Courier New' \">This is <b><I>Important</I></b> paragraph.</p>\n```"
     },
     "correctOption": "B",
     "explanation": "Option B places the inline CSS style=\"font-family:'Courier New'\" inside the opening <p> tag and properly nests and closes <b><I>Important</I></b> with forward slashes.",
@@ -1795,10 +1795,10 @@
     ],
     "stem": "Given is the image of a webpage showing a sentence (`I   Love   Pakistan.`).\nThe HTML code for displaying the sentence is",
     "options": {
-      "A": "I<p><p><p>Love<p><p><p>Pakistan.",
-      "B": "I<br><br><br>Love<br><br><br>Pakistan.",
-      "C": "I&href;&href;&href;Love&href;&href;&href;Pakistan.",
-      "D": "I&nbsp;&nbsp;&nbsp;Love&nbsp;&nbsp;&nbsp;Pakistan."
+      "A": "```html\nI<p><p><p>Love<p><p><p>Pakistan.\n```",
+      "B": "```html\nI<br><br><br>Love<br><br><br>Pakistan.\n```",
+      "C": "```html\nI&href;&href;&href;Love&href;&href;&href;Pakistan.\n```",
+      "D": "```html\nI&nbsp;&nbsp;&nbsp;Love&nbsp;&nbsp;&nbsp;Pakistan.\n```"
     },
     "correctOption": "D",
     "explanation": "Browsers collapse multiple ordinary spaces into a single space; to insert three consecutive horizontal spaces between words on the same line, the non-breaking space entity &nbsp; is repeated: I&nbsp;&nbsp;&nbsp;Love&nbsp;&nbsp;&nbsp;Pakistan.",
@@ -1963,13 +1963,13 @@
     ],
     "stem": "Which of the following HTML tags does not need a closing tag?",
     "options": {
-      "A": "<title>",
-      "B": "<head>",
-      "C": "<br>",
-      "D": "<p>"
+      "A": "```html\n<title>\n```",
+      "B": "```html\n<head>\n```",
+      "C": "```html\n<br>\n```",
+      "D": "```html\n<p>\n```"
     },
     "correctOption": "C",
-    "explanation": "The <br> tag is an empty (singular/void) HTML tag that inserts a line break and does not require a closing tag.",
+    "explanation": "The intended answer is C. `<br>` is a void element, so it never has a closing tag. HTML can omit the closing tags for some other elements, such as `<p>` and `<head>`, in specific contexts.",
     "option_feedback": [
       {
         "key": "A",
@@ -2131,13 +2131,13 @@
     ],
     "stem": "Consider the given text (`How are you?`).\nThe HTML code to show this text in white color over the magenta background is",
     "options": {
-      "A": "<style:\"background-color magenta;\">\n<p style:\"color white\">How are you?</p>",
-      "B": "<style=\"background color<magenta>;\">\n<p style=\"color<white>\">How are you?</p>",
-      "C": "<style=\"background color=magenta;\">\n<p style=\"color=white\">How are you?</p>",
-      "D": "<style=\"background-color:magenta;\">\n<p style=\"color:white\">How are you?</p>"
+      "A": "```html\n<style:\"background-color magenta;\">\n<p style:\"color white\">How are you?</p>\n```",
+      "B": "```html\n<style=\"background color<magenta>;\">\n<p style=\"color<white>\">How are you?</p>\n```",
+      "C": "```html\n<style=\"background color=magenta;\">\n<p style=\"color=white\">How are you?</p>\n```",
+      "D": "```html\n<style=\"background-color:magenta;\">\n<p style=\"color:white\">How are you?</p>\n```"
     },
     "correctOption": "D",
-    "explanation": "Option D uses valid CSS property-value syntax with a hyphen in 'background-color:magenta;' and colons separating property names and values ('color:white').",
+    "explanation": "The printed key points to D, which contains the intended CSS declarations. As written, `<style=\"…\">` is invalid HTML. For example, use `<body style=\"background-color: magenta;\">` and `<p style=\"color: white;\">`.",
     "option_feedback": [
       {
         "key": "A",
@@ -2187,10 +2187,10 @@
     ],
     "stem": "The bold code line in the given HTML code is INCORRECT.\n`<body style =\"background-color:Burly Wood;\"/body>`\nThe CORRECT code line to show Burly Wood color in the background of a web page is",
     "options": {
-      "A": "<body style=\"background-color:BurlyWood;\">",
-      "B": "<body style=\"background-color=Burly Wood;\">",
-      "C": "<body style=\"background-color<BurlyWood;>\">",
-      "D": "<body style=\"background-color=BurlyWood;\"/body>"
+      "A": "```html\n<body style=\"background-color:BurlyWood;\">\n```",
+      "B": "```html\n<body style=\"background-color=Burly Wood;\">\n```",
+      "C": "```html\n<body style=\"background-color<BurlyWood;>\">\n```",
+      "D": "```html\n<body style=\"background-color=BurlyWood;\"/body>\n```"
     },
     "correctOption": "A",
     "explanation": "In HTML/CSS, standard named colours like BurlyWood are written without spaces after a colon (background-color:BurlyWood;) inside a properly closed opening <body ...> tag.",
@@ -2299,10 +2299,10 @@
     ],
     "stem": "[ATP] Which of the following HTML codes should be used to display white text on a background having black color?",
     "options": {
-      "A": "<body bgcolor=black text=white>",
-      "B": "<body bgcolor=black fgcolor=white>",
-      "C": "<body backgroundcolor=black text=white>",
-      "D": "<body bgcolor=black foregroundcolor=white>"
+      "A": "```html\n<body bgcolor=black text=white>\n```",
+      "B": "```html\n<body bgcolor=black fgcolor=white>\n```",
+      "C": "```html\n<body backgroundcolor=black text=white>\n```",
+      "D": "```html\n<body bgcolor=black foregroundcolor=white>\n```"
     },
     "correctOption": "A",
     "explanation": "Using HTML <body> attributes, bgcolor=black sets the page background colour to black and text=white sets the body text colour to white.",
@@ -2411,10 +2411,10 @@
     ],
     "stem": "[ATP] Consider the given image.\nThe HTML code to add a red colored, 7 pixels-thick border around the image is",
     "options": {
-      "A": "<style>img{border:7px solid red;}</style>",
-      "B": "</style>img{border:7px solid red;}<style>",
-      "C": "<style><img>{border:7px solid red;}</style>",
-      "D": "</style><img>{border:7px solid red;}<style>"
+      "A": "```html\n<style>img{border:7px solid red;}</style>\n```",
+      "B": "```html\n</style>img{border:7px solid red;}<style>\n```",
+      "C": "```html\n<style><img>{border:7px solid red;}</style>\n```",
+      "D": "```html\n</style><img>{border:7px solid red;}<style>\n```"
     },
     "correctOption": "A",
     "explanation": "An internal CSS stylesheet uses <style>...</style> tags and targets the img element selector without angle brackets: <style>img{border:7px solid red;}</style>.",
@@ -2467,10 +2467,10 @@
     ],
     "stem": "[ATP] Consider the given image showing a hyperlink added to a webpage (`Click Here for ZOOM`).\nWhen someone clicks on Click Here for Zoom, then the Zoom website with the following address will be opened: https://zoom.us/\nThe CORRECT HTML code for this purpose is",
     "options": {
-      "A": "<a href=\"https://zoom.us/\">Click Here for ZOOM</a>",
-      "B": "<a>href=\"https://zoom.us/\">Click Here for ZOOM</a>",
-      "C": "<a Click Here for ZOOM>href=\"https://zoom.us/\"</a>",
-      "D": "<a>Click Here for ZOOM>href=\"https://zoom.us/\"</a>"
+      "A": "```html\n<a href=\"https://zoom.us/\">Click Here for ZOOM</a>\n```",
+      "B": "```html\n<a>href=\"https://zoom.us/\">Click Here for ZOOM</a>\n```",
+      "C": "```html\n<a Click Here for ZOOM>href=\"https://zoom.us/\"</a>\n```",
+      "D": "```html\n<a>Click Here for ZOOM>href=\"https://zoom.us/\"</a>\n```"
     },
     "correctOption": "A",
     "explanation": "An HTML hyperlink places the href=\"https://zoom.us/\" attribute inside the opening <a> tag and places the visible link text 'Click Here for ZOOM' between <a> and </a>.",
@@ -2523,10 +2523,10 @@
     ],
     "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.46.\nThe following changes need to be made in the heading:\nFont style: Calibri | Font color: Blue | Font size: 35 pixels\nThe replaced HTML code will be",
     "options": {
-      "A": "<p style=\"font-family:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>",
-      "B": "<p style=\"font:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>",
-      "C": "<p style=\"font-family:Calibri; color:Blue; font-size:35px;\">Content Management System</p>",
-      "D": "<p style=\"font:Calibri; color:Blue; font-size:35px;\">Content Management System</p>"
+      "A": "```html\n<p style=\"font-family:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>\n```",
+      "B": "```html\n<p style=\"font:Calibri; font-color:Blue; font-size:35px;\">Content Management System</p>\n```",
+      "C": "```html\n<p style=\"font-family:Calibri; color:Blue; font-size:35px;\">Content Management System</p>\n```",
+      "D": "```html\n<p style=\"font:Calibri; color:Blue; font-size:35px;\">Content Management System</p>\n```"
     },
     "correctOption": "C",
     "explanation": "In inline CSS, the font typeface is set with font-family:Calibri, the text colour is set with color:Blue, and the font size is set with font-size:35px.",
@@ -2579,10 +2579,10 @@
     ],
     "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.47.\nThe HTML code to display the text below the heading (`A content management system (CMS) is a` **software application** `that enables` <u>users</u> `to create, edit, collaborate on, publish and store digital` ~~data~~ `content.`) is",
     "options": {
-      "A": "<p>A content management system (CMS) is a </b>software application</b> that enables </u>users</u> to create, edit, collaborate on, publish and store digital </strike>data</strike> content.</p>",
-      "B": "<p>A content management system (CMS) is a <b>software application</b> that enables <u>users</u> to create, edit, collaborate on, publish and store digital <strike>data</strike> content.</p>",
-      "C": "<p>A content management system (CMS) is a <u>software application</u> that enables <b>users</b> to create, edit, collaborate on, publish and store digital <strike>data</strike> content.</p>",
-      "D": "<p>A content management system (CMS) is a <u>software application</b> that enables <b>users</u> to create, edit, collaborate on, publish and store digital </strike>data<strike> content.</p>"
+      "A": "```html\n<p>A content management system (CMS) is a </b>software application</b> that enables </u>users</u> to create, edit, collaborate on, publish and store digital </strike>data</strike> content.</p>\n```",
+      "B": "```html\n<p>A content management system (CMS) is a <b>software application</b> that enables <u>users</u> to create, edit, collaborate on, publish and store digital <strike>data</strike> content.</p>\n```",
+      "C": "```html\n<p>A content management system (CMS) is a <u>software application</u> that enables <b>users</b> to create, edit, collaborate on, publish and store digital <strike>data</strike> content.</p>\n```",
+      "D": "```html\n<p>A content management system (CMS) is a <u>software application</b> that enables <b>users</u> to create, edit, collaborate on, publish and store digital </strike>data<strike> content.</p>\n```"
     },
     "correctOption": "B",
     "explanation": "In the screenshot, 'software application' is bold (<b>...</b>), 'users' is underlined (<u>...</u>), and 'data' has a strikethrough line (<strike>...</strike>), all enclosed in <p>...</p>.",
@@ -2635,10 +2635,10 @@
     ],
     "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.48.\nThe HTML code to display the heading shown in this image is",
     "options": {
-      "A": "<h1>Content Management System</h1>",
-      "B": "<h6>Content Management System</h6>",
-      "C": "<b>Content Management System</b>",
-      "D": "<title>Content Management System</title>"
+      "A": "```html\n<h1>Content Management System</h1>\n```",
+      "B": "```html\n<h6>Content Management System</h6>\n```",
+      "C": "```html\n<b>Content Management System</b>\n```",
+      "D": "```html\n<title>Content Management System</title>\n```"
     },
     "correctOption": "A",
     "explanation": "The main top-level largest heading on an HTML page ('Content Management System') is created using the <h1>...</h1> heading element.",
@@ -2691,10 +2691,10 @@
     ],
     "stem": "[ATP] Use the given image (`CMS — Content Management System`) to answer Q.49.\nThe HTML code to show the text on the image of tab (`CMS`) is",
     "options": {
-      "A": "<h4>CMS</h4>",
-      "B": "<title>CMS</title>",
-      "C": "<html>CMS</html>",
-      "D": "<head>CMS</head>"
+      "A": "```html\n<h4>CMS</h4>\n```",
+      "B": "```html\n<title>CMS</title>\n```",
+      "C": "```html\n<html>CMS</html>\n```",
+      "D": "```html\n<head>CMS</head>\n```"
     },
     "correctOption": "B",
     "explanation": "The <title>CMS</title> element inside the <head> section specifies the document title that is displayed on the web browser's title bar or tab.",
@@ -2747,10 +2747,10 @@
     ],
     "stem": "[ATP] Consider the given image showing the text displayed on a web page:\n**List of Science Subjects**\n• Physics\n• Chemistry\n• Biology\nThe HTML code that would display the list shown in the web page is",
     "options": {
-      "A": "<li> <ul>Physics</ul> <ul>Chemistry</ul> <ul>Biology</ul> </li>",
-      "B": "<li> <ol>Physics</ol> <ol>Chemistry</ol> <ol>Biology</ol> </li>",
-      "C": "<ul> <li>Physics</li> <li>Chemistry</li> <li>Biology</li> </ul>",
-      "D": "<ol> <li>Physics</li> <li>Chemistry</li> <li>Biology</li> </ol>"
+      "A": "```html\n<li> <ul>Physics</ul> <ul>Chemistry</ul> <ul>Biology</ul> </li>\n```",
+      "B": "```html\n<li> <ol>Physics</ol> <ol>Chemistry</ol> <ol>Biology</ol> </li>\n```",
+      "C": "```html\n<ul> <li>Physics</li> <li>Chemistry</li> <li>Biology</li> </ul>\n```",
+      "D": "```html\n<ol> <li>Physics</li> <li>Chemistry</li> <li>Biology</li> </ol>\n```"
     },
     "correctOption": "C",
     "explanation": "A bulleted (unordered) list in HTML is created by wrapping the individual list items (<li>Physics</li>, <li>Chemistry</li>, <li>Biology</li>) inside an outer <ul>...</ul> container.",

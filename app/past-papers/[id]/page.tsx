@@ -64,7 +64,7 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     console.error("Error fetching past paper detail:", err);
   }
 
-  const fallback = getFallbackPaper(cleanId);
+  const fallback = getFallbackPaper(paper?.paperCode || cleanId);
   if (!paper) {
     if (fallback) {
       paper = fallback;
@@ -85,16 +85,25 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     paper.questions = paper.questions.map((dbQ: any) => {
       const fbQ = fbMap.get(String(dbQ.questionNumber));
       if (!fbQ) return dbQ;
+      const sscComputer = /^CS-(?:IX|X)-(?:\d{4}-)?P[12]$/.test(fallback.paperCode);
+      const useBundledMcq = sscComputer && !paper.sourceDocumentId && fallback.paperCode.endsWith('-P1');
       return {
         ...dbQ,
+        ...(useBundledMcq ? { questionText: fbQ.questionText } : {}),
         sourceRegion: {
           ...fbQ.sourceRegion,
           ...(typeof dbQ.sourceRegion === 'object' && dbQ.sourceRegion ? dbQ.sourceRegion : {}),
+          ...(useBundledMcq ? fbQ.sourceRegion : {}),
           current_syllabus_reviewed: fbQ.sourceRegion.current_syllabus_reviewed ?? true,
           syllabus_reviewed: fbQ.sourceRegion.syllabus_reviewed ?? true,
           mapping_scope: fbQ.sourceRegion.mapping_scope,
           current_mapping: fbQ.sourceRegion.current_mapping,
           current_slo: fbQ.sourceRegion.current_slo,
+          ...(sscComputer ? {
+            in_syllabus: fbQ.sourceRegion.in_syllabus,
+            out_of_syllabus: fbQ.sourceRegion.out_of_syllabus,
+            mapping_reason: fbQ.sourceRegion.mapping_reason,
+          } : {}),
           slo: fbQ.sourceRegion.slo || (dbQ.sourceRegion as any)?.slo,
           original_slo_text: fbQ.sourceRegion.original_slo_text,
           original_reference_verified: fbQ.sourceRegion.original_reference_verified,

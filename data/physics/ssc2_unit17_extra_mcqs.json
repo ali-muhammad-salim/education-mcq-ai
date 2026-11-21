@@ -1,0 +1,340 @@
+[
+  {
+    "number": 1,
+    "page": 1,
+    "stem": "When two north poles of magnets are brought close together, they:",
+    "options": {
+      "A": "Attract each other",
+      "B": "Repel each other",
+      "C": "Have no effect",
+      "D": "Become neutral"
+    },
+    "answer": "B",
+    "slo": "17.2.1",
+    "explanation": "Like magnetic poles repel, so two north poles push away from each other."
+  },
+  {
+    "number": 2,
+    "page": 1,
+    "stem": "Which statement is correct about unlike magnetic poles?",
+    "options": {
+      "A": "They repel",
+      "B": "They attract",
+      "C": "They lose magnetism",
+      "D": "They produce no force"
+    },
+    "answer": "B",
+    "slo": "17.2.1",
+    "explanation": "Unlike poles attract: a north pole attracts a south pole."
+  },
+  {
+    "number": 3,
+    "page": 1,
+    "stem": "A bar magnet attracts an iron nail because:",
+    "options": {
+      "A": "Iron is magnetic",
+      "B": "Iron is non-magnetic",
+      "C": "Both have similar poles",
+      "D": "Iron produces electricity"
+    },
+    "answer": "A",
+    "slo": "17.2.1",
+    "explanation": "Iron can be magnetised by induction. The pole induced nearest the magnet is opposite to the nearby pole, so the nail is attracted."
+  },
+  {
+    "number": 4,
+    "page": 1,
+    "stem": "Which pair contains magnetic materials?",
+    "options": {
+      "A": "Wood and glass",
+      "B": "Copper and plastic",
+      "C": "Iron and nickel",
+      "D": "Rubber and paper"
+    },
+    "answer": "C",
+    "slo": "17.2.1",
+    "explanation": "Iron and nickel are ferromagnetic and are strongly attracted by ordinary magnets."
+  },
+  {
+    "number": 5,
+    "page": 1,
+    "stem": "Which instrument can show the direction of a horizontal magnetic field at a point?",
+    "options": {
+      "A": "A compass needle",
+      "B": "An ammeter",
+      "C": "A voltmeter",
+      "D": "A thermometer"
+    },
+    "answer": "A",
+    "slo": "17.2.2",
+    "explanation": "The north-seeking end of a small compass indicates the local magnetic field direction."
+  },
+  {
+    "number": 6,
+    "page": 1,
+    "stem": "Outside a bar magnet, magnetic field lines travel from:",
+    "options": {
+      "A": "South to north",
+      "B": "North to south",
+      "C": "East to west",
+      "D": "South to east"
+    },
+    "answer": "B",
+    "slo": "17.2.2",
+    "explanation": "Outside a bar magnet, the field points away from its north pole and toward its south pole."
+  },
+  {
+    "number": 7,
+    "page": 1,
+    "stem": "In a horizontal magnetic field, which part of the compass needle points in the direction of the field?",
+    "options": {
+      "A": "South pole",
+      "B": "North-seeking pole",
+      "C": "Pivot",
+      "D": "Case"
+    },
+    "answer": "B",
+    "slo": "17.2.2",
+    "explanation": "The north-seeking pole of a compass points along the local magnetic field."
+  },
+  {
+    "number": 8,
+    "page": 2,
+    "stem": "Inside a bar magnet, magnetic field lines travel from:",
+    "options": {
+      "A": "North to south",
+      "B": "South to north",
+      "C": "East to west",
+      "D": "North to east"
+    },
+    "answer": "B",
+    "slo": "17.2.2",
+    "explanation": "Inside the bar magnet, field lines return from south to north and complete the loops."
+  },
+  {
+    "number": 9,
+    "page": 2,
+    "stem": "Magnetic field lines around a bar magnet are:",
+    "options": {
+      "A": "Straight parallel lines",
+      "B": "Closed continuous curves",
+      "C": "Broken lines",
+      "D": "Random lines"
+    },
+    "answer": "B",
+    "slo": "17.2.3",
+    "explanation": "Magnetic field lines form closed loops through and around a bar magnet."
+  },
+  {
+    "number": 10,
+    "page": 2,
+    "stem": "Magnetic field lines never:",
+    "options": {
+      "A": "Form closed curves",
+      "B": "Pass through a magnet",
+      "C": "Intersect each other",
+      "D": "Have a direction"
+    },
+    "answer": "C",
+    "slo": "17.2.3",
+    "explanation": "A field has a single direction at each point where it is nonzero, so two field lines cannot cross there."
+  },
+  {
+    "number": 11,
+    "page": 2,
+    "stem": "Between unlike poles, magnetic field lines are directed:",
+    "options": {
+      "A": "From north to south",
+      "B": "Away from both poles",
+      "C": "In random directions",
+      "D": "From south to north outside the magnet"
+    },
+    "answer": "A",
+    "slo": "17.2.3",
+    "explanation": "In the gap between unlike poles, field lines run from north toward south."
+  },
+  {
+    "number": 12,
+    "page": 2,
+    "stem": "The closeness of magnetic field lines indicates:",
+    "options": {
+      "A": "Temperature",
+      "B": "Magnetic field strength",
+      "C": "Electrical resistance",
+      "D": "Mass"
+    },
+    "answer": "B",
+    "slo": "17.2.3",
+    "explanation": "In a field-line diagram, more closely spaced lines represent a stronger field."
+  },
+  {
+    "number": 13,
+    "duplicateGroup": "field-strength-from-line-spacing",
+    "page": 2,
+    "stem": "A strong magnetic field is represented by:",
+    "options": {
+      "A": "Widely spaced lines",
+      "B": "Closely spaced lines",
+      "C": "No lines",
+      "D": "Broken lines"
+    },
+    "answer": "B",
+    "slo": "17.2.4",
+    "explanation": "Closer spacing represents a stronger magnetic field."
+  },
+  {
+    "number": 14,
+    "page": 2,
+    "stem": "Where are field lines most closely spaced around a bar magnet?",
+    "options": {
+      "A": "At its centre",
+      "B": "Near its poles",
+      "C": "Far away",
+      "D": "Equally everywhere"
+    },
+    "answer": "B",
+    "slo": "17.2.4",
+    "explanation": "The field is strongest near the poles of a typical bar magnet, where the lines cluster."
+  },
+  {
+    "number": 15,
+    "page": 2,
+    "stem": "A weak magnetic field has:",
+    "options": {
+      "A": "Closely spaced lines",
+      "B": "Widely spaced lines",
+      "C": "No field",
+      "D": "Intersecting lines"
+    },
+    "answer": "B",
+    "slo": "17.2.4",
+    "explanation": "Widely spaced field lines represent a weaker field."
+  },
+  {
+    "number": 16,
+    "duplicateGroup": "field-strength-from-line-spacing",
+    "page": 3,
+    "stem": "The field is generally strongest where field lines are:",
+    "options": {
+      "A": "Far apart",
+      "B": "Close together",
+      "C": "Absent",
+      "D": "Broken"
+    },
+    "answer": "B",
+    "slo": "17.2.4",
+    "explanation": "Closer lines indicate a stronger magnetic field in the region."
+  },
+  {
+    "number": 17,
+    "page": 3,
+    "stem": "Magnetic flux is represented by:",
+    "options": {
+      "A": "Φ",
+      "B": "I",
+      "C": "R",
+      "D": "V"
+    },
+    "answer": "A",
+    "slo": "17.2.5",
+    "explanation": "Magnetic flux is denoted by the Greek capital letter phi, Φ."
+  },
+  {
+    "number": 18,
+    "page": 3,
+    "stem": "The SI unit of magnetic flux is:",
+    "options": {
+      "A": "Tesla",
+      "B": "Weber",
+      "C": "Ampere",
+      "D": "Newton"
+    },
+    "answer": "B",
+    "slo": "17.2.5",
+    "explanation": "Magnetic flux is measured in webers (Wb). Tesla measures magnetic flux density B."
+  },
+  {
+    "number": 19,
+    "page": 3,
+    "stem": "Magnetic flux through a flat surface in a uniform field is given by which expression, where θ is the angle between the field and the surface normal?",
+    "options": {
+      "A": "Φ = BA cos θ",
+      "B": "Φ = IR",
+      "C": "Φ = VIt",
+      "D": "Φ = B/A"
+    },
+    "answer": "A",
+    "slo": "17.2.5",
+    "explanation": "For a uniform field and a flat surface, Φ = BA cos θ, where θ is measured from the normal."
+  },
+  {
+    "number": 20,
+    "page": 3,
+    "stem": "For a given nonzero field strength and area, the magnitude of magnetic flux is greatest when the magnetic field is:",
+    "options": {
+      "A": "Parallel to the surface",
+      "B": "Perpendicular to the surface",
+      "C": "At 45° to the surface",
+      "D": "Zero"
+    },
+    "answer": "B",
+    "slo": "17.2.5",
+    "explanation": "The magnitude of flux is greatest when the field is perpendicular to the surface, because it is parallel or antiparallel to the surface normal."
+  },
+  {
+    "number": 21,
+    "page": 3,
+    "stem": "The Earth's magnetic field is mainly produced by:",
+    "options": {
+      "A": "Atmosphere",
+      "B": "Electric currents in its liquid outer core",
+      "C": "Mountains",
+      "D": "Ocean waves"
+    },
+    "answer": "B",
+    "slo": "17.2.6",
+    "explanation": "Motion of electrically conducting fluid in Earth’s outer core sustains the electric currents that generate its magnetic field."
+  },
+  {
+    "number": 22,
+    "page": 3,
+    "stem": "The Earth's outer core mainly consists of:",
+    "options": {
+      "A": "Solid rock",
+      "B": "Liquid iron and nickel",
+      "C": "Water and oxygen",
+      "D": "Sand"
+    },
+    "answer": "B",
+    "slo": "17.2.6",
+    "explanation": "Earth’s liquid outer core is composed mainly of iron, with nickel and lighter elements."
+  },
+  {
+    "number": 23,
+    "page": 4,
+    "stem": "The Earth's magnetic field helps protect it from:",
+    "options": {
+      "A": "Sound waves",
+      "B": "Charged particles from the Sun",
+      "C": "Rainfall",
+      "D": "Earthquakes"
+    },
+    "answer": "B",
+    "slo": "17.2.6",
+    "explanation": "Earth’s magnetic field deflects many charged particles from the solar wind."
+  },
+  {
+    "number": 24,
+    "page": 4,
+    "stem": "Away from Earth’s magnetic poles and nearby magnets, which direction does a compass needle that can turn horizontally align with?",
+    "options": {
+      "A": "East–west direction",
+      "B": "The local magnetic north–south direction",
+      "C": "Upward direction only",
+      "D": "Random direction"
+    },
+    "answer": "B",
+    "slo": "17.2.6",
+    "explanation": "A compass aligns approximately north–south because its needle aligns with the horizontal component of Earth’s local field."
+  }
+]
