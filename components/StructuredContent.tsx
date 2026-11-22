@@ -40,9 +40,11 @@ function tableCells(line: string): string[] {
   return cells;
 }
 
+const imageLine = /^\s*!\[([^\]]*)\]\((\/(?:paper-crops\/|materials\/hssc\/biology\/model-paper-questions\/)[^\s)]+)\)\s*$/;
+
 function contentBlocks(text: string) {
   const lines = text.split(/\r?\n/);
-  const blocks: Array<{ kind: 'text' | 'table' | 'code'; text: string; language?: string }> = [];
+  const blocks: Array<{ kind: 'text' | 'table' | 'code' | 'image'; text: string; language?: string }> = [];
   const isRow = (line: string) => /^\s*\|.*\|\s*$/.test(line);
   for (let i = 0; i < lines.length;) {
     const fence = /^\s*(`{3,}|~{3,})\s*([\w+-]*)[^\r\n]*$/.exec(lines[i]);
@@ -52,6 +54,8 @@ function contentBlocks(text: string) {
       while (i < lines.length && !close.test(lines[i])) i++;
       blocks.push({ kind: 'code', language: fence[2], text: lines.slice(start, i).join('\n') + (i > start ? '\n' : '') });
       if (i < lines.length) i++;
+    } else if (imageLine.test(lines[i])) {
+      blocks.push({ kind: 'image', text: lines[i++] });
     } else if (isRow(lines[i]) && i + 1 < lines.length && isRow(lines[i + 1])) {
       const start = i++;
       while (i < lines.length && isRow(lines[i])) i++;
@@ -85,7 +89,7 @@ function TableCellContent({ text }: { text: string }) {
 
 export default function StructuredContent({ text, className = '', style = {} }: StructuredContentProps) {
   if (!text) return null;
-  const image = /^\s*!\[([^\]]*)\]\((\/paper-crops\/[^\s)]+)\)\s*$/.exec(text);
+  const image = imageLine.exec(text);
   if (image) return <img className={className} src={image[2]} alt={image[1]} loading="lazy" style={{maxWidth:'100%',height:'auto',...style}} />;
   const blocks = contentBlocks(text);
   if (blocks.some(block => block.kind === 'code') || blocks.length > 1) {

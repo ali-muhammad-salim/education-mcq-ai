@@ -42,12 +42,14 @@ test('Unit 17 routes show the four source packs and link matching practice secti
   const params = Promise.resolve({ board: 'akueb', class: 'X', subject: 'physics', unit: '17' });
   const crqs = renderToStaticMarkup(await ChapterTheoryUnitPage({ params, mode: 'crqs' }));
   expect(crqs.match(/>Show solution<\/button>/g)).toHaveLength(91);
+  expect(Array.from(crqs.matchAll(/>Q\.(\d+)\.</g), match => Number(match[1])))
+    .toEqual(Array.from({ length: 93 }, (_, index) => index + 1));
   for (const q of supplements.crqs) {
     expect(q.modelAnswer).toBeTruthy();
     if (q.betterResponseImage) expect(existsSync('public' + q.betterResponseImage)).toBe(true);
   }
   const numericals = renderToStaticMarkup(await ChapterTheoryUnitPage({ params, mode: 'numericals' }));
-  expect(numericals.match(/17\.2 · Magnetic Fields and Flux/g)).toHaveLength(2);
+  expect(numericals.match(/>17\.2 · Magnetic Fields and Flux ↗<\/a>/g)).toHaveLength(2);
 });
 
 test('Unit 17 notes MCQs appear in chapter practice and grade from the reviewed keys', async () => {

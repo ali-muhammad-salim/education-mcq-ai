@@ -28,6 +28,7 @@ import { reviewedMathematicsPapers } from '@/lib/mathematicsPapers';
 import { hsscComputerScienceResources } from '@/lib/hsscComputerScienceResources';
 import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 import { hsscMcqsData } from '@/lib/hsscMcqsData';
+import { hsscBiologyChapterMcqs } from '@/lib/hsscBiologyChapterQuestions';
 import HsscMcqsClient from '@/app/[board]/[class]/[subject]/mcqs/HsscMcqsClient';
 import { sscBiologySyllabus } from '@/lib/sscBiologySyllabus';
 import type { HsscMcqsData } from '@/lib/hsscMcqsData';
@@ -56,10 +57,13 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
   const meta = getSubjectMeta(rawSubject);
   const hssc = hsscPhysicsResources(boardId, classDef.level, meta.slug) ?? hsscComputerScienceResources(boardId, classDef.level, meta.slug);
   const biology = sscBiologySyllabus(boardId, classDef.level, meta.slug);
-  if (hssc || biology) {
-    const base = `/${board.id}/${classRoman}/${meta.slug}`;
+  const base = `/${board.id}/${classRoman}/${meta.slug}`;
+  const seniorBiology = hsscBiologyChapterMcqs(boardId, classDef.level, meta.slug, base);
+  if (hssc || biology || seniorBiology) {
     let data: HsscMcqsData;
-    if (hssc) {
+    if (seniorBiology) {
+      data = seniorBiology;
+    } else if (hssc) {
       data = hsscMcqsData(classDef.level, base, meta.slug);
     } else {
       const chapters = await mappedChapterGroups(board.shortCode, classDef.level, meta.title);
@@ -144,7 +148,8 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
           classLabel={`${classDef.name} (${classDef.stageLabel})`}
           subjectTitle={meta.title}
           baseUrl={base}
-          theory={biology || meta.slug === 'computer-science' ? ['crqs', 'erqs'] : undefined}
+          theory={biology || seniorBiology || meta.slug === 'computer-science' ? ['crqs', 'erqs'] : undefined}
+          readOnly={Boolean(seniorBiology)}
           category={category}
           chapter={chapter ?? null}
           data={data}

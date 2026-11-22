@@ -13,6 +13,7 @@ const REVEAL_SECRET = 'rise-quiz-reveal-v1';
 export interface QuestionReveal {
   correctOptionId?: string;
   correctLetter: string;
+  correctLetters?: string[];
   explanation: string;
   optionFeedback?: Record<string, string>;
   unit?: string;

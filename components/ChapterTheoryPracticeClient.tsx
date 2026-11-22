@@ -65,7 +65,7 @@ export interface ChapterUnitData {
     sourceHref: string;
     examYear: number;
     questionText: string;
-    marks: number;
+    marks?: number;
     cognitiveLevel?: string;
     originalSlo?: string;
     originalSloText?: string;
@@ -166,7 +166,11 @@ export default function ChapterTheoryPracticeClient({
   const [selectedUnitNum, setSelectedUnitNum] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const sectionInfo = ['mathematics', 'chemistry'].includes(meta.slug) ? {
+  const seniorBiology = meta.slug === 'biology' && classDef.level >= 11;
+  const sectionInfo = seniorBiology ? {
+    ...SECTION_META[mode],
+    subtitle: 'Biology model-paper questions grouped by syllabus chapter, with links to the original question and alternatives.',
+  } : ['mathematics', 'chemistry'].includes(meta.slug) ? {
     ...SECTION_META[mode],
     title: mode === 'numericals' ? 'Chapter-Wise Worked Problems' : SECTION_META[mode].title,
     subtitle: 'Reviewed examination questions grouped automatically by their current syllabus chapter and SLO. Original paper references, diagrams and supplementary worked solutions are retained.',
@@ -193,6 +197,7 @@ export default function ChapterTheoryPracticeClient({
     { href: `${baseUrl}/numericals`, label: 'Chapter-wise Numericals', active: mode === 'numericals' },
     { href: `${baseUrl}/chapter-notes`, label: 'Chapter Notes & SLOs', active: mode === 'notes' },
   ].filter(link => {
+    if (seniorBiology) return link.href.endsWith('/chapter-wise') || link.href.endsWith('/crqs') || link.href.endsWith('/erqs');
     if (!['mathematics', 'chemistry'].includes(meta.slug)) return true;
     if (link.href.endsWith('/erqs')) return units.some(unit => unit.erqs.length > 0);
     if (link.href.endsWith('/numericals')) return units.some(unit => unit.numericals.length > 0);

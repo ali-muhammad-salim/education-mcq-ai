@@ -7,6 +7,7 @@ import ContentUnavailable from '@/components/ContentUnavailable';
 import ChapterTheoryPracticeClient, { type TheorySectionMode } from '@/components/ChapterTheoryPracticeClient';
 import { physicsChapterBank } from '@/lib/physicsChapterBank';
 import { sscComputerScienceTheory } from '@/lib/sscComputerScienceTheory';
+import { hsscBiologyChapterTheory } from '@/lib/hsscBiologyChapterQuestions';
 import { mappedTheoryUnits } from '@/services/materials/practice';
 
 interface PageProps {
@@ -34,20 +35,21 @@ export default async function SubjectTheoryPage({ params, mode }: PageProps) {
   const meta = getSubjectMeta(rawSubject);
   const baseUrl = `/${board.id}/${classRoman}/${meta.slug}`;
 
-  const isSupportedSubject =
+  const seniorBiology = mode === 'crqs' || mode === 'erqs' ? hsscBiologyChapterTheory(boardId, classDef.level, meta.slug) : null;
+  const isSupportedSubject = seniorBiology || (
     board.id === 'akueb' &&
     (['IX', 'X'].includes(classRoman) || (meta.slug === 'computer-science' && ['XI', 'XII'].includes(classRoman) && mode !== 'notes')) &&
-    (['physics', 'computer-science'].includes(meta.slug) || (['mathematics', 'chemistry', 'biology'].includes(meta.slug) && mode !== 'notes'));
+    (['physics', 'computer-science'].includes(meta.slug) || (['mathematics', 'chemistry', 'biology'].includes(meta.slug) && mode !== 'notes')));
 
   if (!isSupportedSubject) {
     return <ContentUnavailable title={`${classDef.name} ${meta.title} ${MODE_LABELS[mode]}`} />;
   }
 
-  const units = ['mathematics', 'chemistry', 'biology'].includes(meta.slug) || (meta.slug === 'computer-science' && ['XI', 'XII'].includes(classRoman))
+  const units = seniorBiology ?? (['mathematics', 'chemistry', 'biology'].includes(meta.slug) || (meta.slug === 'computer-science' && ['XI', 'XII'].includes(classRoman))
     ? await mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
     : meta.slug === 'computer-science'
       ? sscComputerScienceTheory(classRoman === 'IX' ? 9 : 10)
-      : (physicsChapterBank as any)[classRoman === 'IX' ? '9' : '10'] || [];
+      : (physicsChapterBank as any)[classRoman === 'IX' ? '9' : '10'] || []);
 
   return (
     <div className={mode === 'notes' ? 'rise-ui' : undefined} style={{ maxWidth: '1280px', margin: '0 auto', padding: mode === 'notes' ? '0 0.25rem' : '1rem 1rem 0 1rem' }}>

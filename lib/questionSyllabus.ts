@@ -20,7 +20,8 @@ export function questionSyllabus(
   const sscComputer = normalizeBoardId(board) === 'akueb' && subject.toLowerCase() === 'computer science' && (level === 9 || level === 10);
   const canonical = sscComputer ? sscComputerScienceOutcomes.get(supplied?.code) : undefined;
   const current = sscComputer ? (canonical?.grade === level ? canonical : undefined) : supplied;
-  if(meta.current_syllabus_reviewed===true&&scoped?.grade===level&&normalizeBoardId(scoped.board)===normalizeBoardId(board)&&String(scoped.subject).toLowerCase()===subject.toLowerCase()&&typeof current?.code==='string'&&typeof current.description==='string'&&typeof current.topic==='string')return {status:'mapped' as const,originalCode,code:current.code,description:current.description,topic:current.topic,href:`/${normalizeBoardId(board)}/${({9:'IX',10:'X',11:'XI',12:'XII'} as Record<number,string>)[level]||level}/${getSubjectMeta(subject).slug}/syllabus#slo-${encodeURIComponent(current.code)}`};
+  const permitsMapping = meta.mapping_status !== 'NO_DIRECT_OUTCOME';
+  if(permitsMapping&&meta.current_syllabus_reviewed===true&&scoped?.grade===level&&normalizeBoardId(scoped.board)===normalizeBoardId(board)&&String(scoped.subject).toLowerCase()===subject.toLowerCase()&&typeof current?.code==='string'&&typeof current.description==='string'&&typeof current.topic==='string')return {status:'mapped' as const,originalCode,code:current.code,description:current.description,topic:current.topic,href:`/${normalizeBoardId(board)}/${({9:'IX',10:'X',11:'XI',12:'XII'} as Record<number,string>)[level]||level}/${getSubjectMeta(subject).slug}/syllabus#slo-${encodeURIComponent(current.code)}`};
   // An identical code in two editions does not establish an academic equivalence.
   const code = historical
     ? meta.current_syllabus_reviewed === true &&
@@ -29,6 +30,7 @@ export function questionSyllabus(
       : undefined
     : originalCode;
   if (
+    permitsMapping &&
     board.toLowerCase().replace(/[^a-z0-9]/g, "") === "akueb" &&
     subject.toLowerCase() === "physics" &&
     [9, 10].includes(level) &&

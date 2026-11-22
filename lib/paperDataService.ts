@@ -84,6 +84,7 @@ import { hsscComputerScience2024Papers } from '@/lib/hsscComputerScience2024';
 import { hsscComputerSciencePapers } from '@/lib/hsscComputerSciencePapers';
 import { hsscPhysicsPapers } from '@/lib/hsscPhysicsResources';
 import { hsscXiAnnualPapers } from '@/lib/hsscXiAnnualPhysics';
+import { biologyXiAnnualPapers } from '@/lib/hsscXiAnnualBiology';
 import chemistryIXSyllabus from '@/data/chemistry/ssc1_exact_syllabus.json';
 import chemistryXSyllabus from '@/data/chemistry/ssc2_exact_syllabus.json';
 
@@ -120,7 +121,7 @@ export interface QuestionData {
     current_syllabus_reviewed?: boolean;
     mapping_scope?: { board: string; grade: number; subject: string };
     current_mapping?: Array<{ code: string; description: string; topic: string; grade?: number }>;
-    emarkingExamples?: Array<{ part: string; better: string; weaker: string; solution: string; originalSlo?: string; pdf: string; level?: string; currentSlo?: { code: string; grade: number } }>;
+    emarkingExamples?: Array<{ part: string; better?: string; weaker?: string; solution: string; originalSlo?: string; pdf: string; level?: string; currentSlo?: { code: string; grade: number }; overall?: string; betterNotes?: string; weakerNotes?: string }>;
     current_slo?: string | null;
     mapping_review_source_sha256?: string;
     mapping_review_source_url?: string;
@@ -138,6 +139,8 @@ export interface QuestionData {
     original_reference_source?: string;
     official_answer?: string;
     accepted_options?: string[];
+    score_accepted_options?: boolean;
+    quiz_stem?: string;
     single_answer_review_required?: boolean;
     official_alternate_answer?: string;
     assessmentSection?: string;
@@ -149,6 +152,10 @@ export interface QuestionData {
     official_marking_notes?: string;
     choice_instruction?: string;
     choice_group?: string | null;
+    group_question_number?: number;
+    chapter_href?: string;
+    chapter_name?: string;
+    chapter_mapping_verified?: boolean;
     mapping_status?: string;
     mapping_reason?: string;
     syllabus_edition?: string;
@@ -177,6 +184,9 @@ export interface PaperData {
   durationMinutes?: number;
   rubricInstruction?: string;
   markScalingNote?: string;
+  questionCount?: number;
+  printedCode?: string;
+  markingGuideUrl?: string;
   fileUrl?: string;
   academicClass: {
     name: string;
@@ -780,6 +790,8 @@ function computeFallbackPaper(code: string): PaperData | null {
   if (mathematics) return mathematics;
   const biology = allBiologyPapers.find(paper => paper.paperCode === code);
   if (biology) return biology;
+  const annualBiology = biologyXiAnnualPapers.find(paper => paper.paperCode === code);
+  if (annualBiology) return annualBiology;
   if (code.startsWith('BIO-')) return null;
   const specPaper = computeSpecPaper(code);
   if (specPaper) return specPaper;
@@ -3279,7 +3291,7 @@ export function getAllStandardPapers(): Array<{
   _count: { questions: number };
 }> {
   const basePapers = [
-    ...[...allBiologyPapers, ...reviewedMathematicsPapers, ...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].map(paper => ({
+    ...[...allBiologyPapers, ...biologyXiAnnualPapers, ...reviewedMathematicsPapers, ...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].map(paper => ({
       id: paper.id, paperCode: paper.paperCode, title: paper.title,
       examSession: paper.examSession!, examYear: paper.examYear,
       fileUrl: paper.fileUrl!, academicClass: paper.academicClass,

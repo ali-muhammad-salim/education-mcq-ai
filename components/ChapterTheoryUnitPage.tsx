@@ -8,6 +8,7 @@ import ChapterTheoryUnitClient from '@/components/ChapterTheoryUnitClient';
 import type { TheorySectionMode } from '@/components/ChapterTheoryPracticeClient';
 import { physicsChapterBank } from '@/lib/physicsChapterBank';
 import { sscComputerScienceTheory } from '@/lib/sscComputerScienceTheory';
+import { hsscBiologyChapterTheory } from '@/lib/hsscBiologyChapterQuestions';
 import { mappedTheoryUnits } from '@/services/materials/practice';
 
 interface PageProps {
@@ -34,16 +35,17 @@ export default async function ChapterTheoryUnitPage({ params, mode }: PageProps)
   const meta = getSubjectMeta(rawSubject);
   const baseUrl = `/${board.id}/${classRoman}/${meta.slug}`;
 
-  const isSupportedSubject = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && ['physics', 'computer-science', 'mathematics', 'chemistry', 'biology'].includes(meta.slug);
+  const seniorBiology = mode === 'numericals' ? null : hsscBiologyChapterTheory(boardId, classDef.level, meta.slug);
+  const isSupportedSubject = seniorBiology || (board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && ['physics', 'computer-science', 'mathematics', 'chemistry', 'biology'].includes(meta.slug));
   if (!isSupportedSubject) {
     return <ContentUnavailable title={`${classDef.name} ${meta.title} ${MODE_LABELS[mode]}`} />;
   }
 
-  const units = ['mathematics', 'chemistry', 'biology'].includes(meta.slug)
+  const units = seniorBiology ?? (['mathematics', 'chemistry', 'biology'].includes(meta.slug)
     ? await mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
     : meta.slug === 'computer-science'
       ? sscComputerScienceTheory(classRoman === 'IX' ? 9 : 10)
-      : (physicsChapterBank as any)[classRoman === 'IX' ? '9' : '10'] || [];
+      : (physicsChapterBank as any)[classRoman === 'IX' ? '9' : '10'] || []);
   const unitMatch = /^(\d+)/.exec(rawUnit);
   const unitNumber = unitMatch ? Number(unitMatch[1]) : NaN;
   const unit = units.find((u: any) => u.unitNumber === unitNumber);
@@ -70,6 +72,7 @@ export default async function ChapterTheoryUnitPage({ params, mode }: PageProps)
         baseUrl={baseUrl}
         mode={mode}
         unit={unit}
+        paperQuestionsOnly={Boolean(seniorBiology)}
       />
     </div>
   );

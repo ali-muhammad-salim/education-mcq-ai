@@ -136,10 +136,12 @@ export function HubRail({
   baseUrl,
   active,
   theory = [],
+  categories,
 }: {
   baseUrl: string;
   active?: McqCategory;
   theory?: string[];
+  categories?: McqCategory[];
 }) {
   const railRef = useRef<HTMLElement>(null);
 
@@ -161,7 +163,7 @@ export function HubRail({
       >
         All categories
       </Link>
-      {mcqCategories.map(item => (
+      {mcqCategories.filter(item => !categories || categories.includes(item.key)).map(item => (
         <Link
           key={item.id}
           className={`${styles.railLink} ${item.key === active ? styles.railOn : ''}`}
@@ -484,13 +486,17 @@ const DIRECTORY_COPY: Record<McqCategory, string> = {
 export function HubDirectory({
   baseUrl,
   notes = {},
+  categories,
+  descriptions = {},
 }: {
   baseUrl: string;
   notes?: Partial<Record<McqCategory, string>>;
+  categories?: McqCategory[];
+  descriptions?: Partial<Record<McqCategory, string>>;
 }) {
   return (
     <ul className={styles.directory}>
-      {mcqCategories.map(item => {
+      {mcqCategories.filter(item => !categories || categories.includes(item.key)).map(item => {
         const Icon = DIRECTORY_ICONS[item.key];
         return (
           <li key={item.id}>
@@ -500,7 +506,7 @@ export function HubDirectory({
               </span>
               <span className={styles.dirBody}>
                 <span className={styles.dirTitle}>{item.label}</span>
-                <span className={styles.dirNote}>{DIRECTORY_COPY[item.key]}</span>
+                <span className={styles.dirNote}>{descriptions[item.key] ?? DIRECTORY_COPY[item.key]}</span>
                 {notes[item.key] ? <span className={styles.dirMeta}>{notes[item.key]}</span> : null}
               </span>
               <ArrowRight size={18} aria-hidden="true" className={styles.dirArrow} />

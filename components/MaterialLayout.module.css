@@ -109,6 +109,49 @@
   line-height: 1.65;
   overflow-wrap: anywhere;
 }
+.practicalStage {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  margin: 0 0 1rem;
+  padding: clamp(.85rem, 3vw, 1.5rem);
+}
+.practicalStage h3,
+.practicalStage h4 {
+  margin: 0;
+  line-height: 1.4;
+}
+.practicalStage p { margin: .5rem 0; }
+.practicalStage ol { padding-inline-start: 1.35rem; margin-bottom: 0; }
+.practicalHeading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .25rem 1rem;
+}
+.practicalHeading span {
+  color: var(--primary-color);
+  font-size: .85rem;
+  font-weight: 700;
+}
+.practicalTask {
+  border-top: 1px solid var(--border-color);
+  padding-top: .8rem;
+  margin-top: .9rem;
+}
+.practicalResponse {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+.practicalDrawing {
+  min-height: 9rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: .6rem .8rem;
+  margin-top: .6rem;
+  color: var(--text-light);
+}
 .source {
   margin: 1.2rem 0;
   padding: 0.8rem 0;
