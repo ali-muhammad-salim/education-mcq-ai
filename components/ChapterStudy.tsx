@@ -199,6 +199,15 @@ export default async function ChapterStudy({
       ) : (
         <>
           <div className={styles.grid}>
+            {chapter.topicNumber && (
+              <article className={styles.card}>
+                <h2>Chapter quiz</h2>
+                <p className={styles.muted}>Sit every board MCQ filed under this chapter with instant feedback and a score.</p>
+                <Link className={styles.button} href={`${scope.baseUrl}/mcqs/chapter-wise/${chapter.topicNumber}?quiz=1`}>
+                  Start quiz →
+                </Link>
+              </article>
+            )}
             {isUnit16(chapter.topicNumber) && (
               <article className={styles.card}>
                 <h2>Extra resources</h2>

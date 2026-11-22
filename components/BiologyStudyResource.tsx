@@ -31,6 +31,7 @@ export default function BiologyStudyResource({ resource, original }: { resource:
       <p>{resource.topics}</p>
       {'author' in resource && <p className={styles.muted}>Slides by {resource.author}</p>}
       <div className={styles.actions}>
+        <Link className={styles.button} href={`${baseUrl}/mcqs/chapter-wise/${resource.unit}?quiz=1`}>Start quiz</Link>
         <Link className={styles.button} href={`${baseUrl}/mcqs/chapter-wise/${resource.unit}`}>Chapter-wise MCQs</Link>
         <Link className={styles.button} href={`${baseUrl}/crqs/${resource.unit}`}>Chapter-wise CRQs</Link>
         {resource.written.some(question => question.extended) && (

@@ -99,6 +99,21 @@ test.each([11, 12])('Grade %i Biology MCQs show all four printed choices', grade
   }
 });
 
+test.each([11, 12])('Grade %i chapter-wise MCQs can all be scored in a quiz', grade => {
+  const data = hsscBiologyChapterMcqs('akueb', grade, 'biology', '/biology')!;
+  const questions = new Map(data.papers.flatMap(paper => paper.questions.map(question => [question.id, question] as const)));
+  const indexed = [...new Set(data.units.flatMap(unit => unit.groups.flatMap(group => group.questionIds)))];
+  expect(indexed.length).toBeGreaterThan(0);
+  for (const id of indexed) {
+    const question = questions.get(id);
+    expect(question, id).toBeDefined();
+    const { sourceRegion } = question!;
+    const choices = sourceRegion.choices as Record<string, string>;
+    expect(Object.keys(choices ?? {})).toEqual(['A', 'B', 'C', 'D']);
+    expect(paperScoringAnswers(sourceRegion, choices), id).not.toHaveLength(0);
+  }
+});
+
 test('Class XI Biology Q4 renders each chemical structure as its own option', () => {
   const [paper] = hsscBiologyModelPapers('akueb', 11, 'biology');
   const q4 = paper.questions.find(question => question.number === 4);

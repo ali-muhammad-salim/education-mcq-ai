@@ -127,6 +127,31 @@ export default function McqPracticeSheet({
             {title}
           </h2>
         </div>
+
+        {!readOnly && (
+          <button
+            type="button"
+            disabled={!items.length}
+            onClick={onTakeQuiz}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              background: items.length ? '#0b5e4a' : '#e2e8f0',
+              color: items.length ? '#ffffff' : '#94a3b8',
+              border: 'none',
+              borderRadius: '8px',
+              padding: '9px 18px',
+              fontSize: '0.9rem',
+              fontWeight: 800,
+              cursor: items.length ? 'pointer' : 'not-allowed',
+              boxShadow: items.length ? '0 4px 12px rgba(11,94,74,0.2)' : 'none'
+            }}
+          >
+            <Award size={17} aria-hidden="true" />
+            <span>Start quiz</span>
+          </button>
+        )}
       </div>
 
       {!readOnly && <div className={styles.sheetControls} role="group" aria-label="MCQ practice controls">
@@ -157,10 +182,10 @@ export default function McqPracticeSheet({
           disabled={!items.length}
           onClick={onTakeQuiz}
           className={`${styles.sheetControl} ${styles.sheetQuiz}`}
-          aria-label="Take quiz"
+          aria-label="Start quiz"
         >
           <Award size={16} aria-hidden="true" />
-          <span className={styles.sheetControlFull}>Take quiz</span>
+          <span className={styles.sheetControlFull}>Start quiz</span>
           <span className={styles.sheetControlShort}>Quiz</span>
         </button>
       </div>}

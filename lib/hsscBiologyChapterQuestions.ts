@@ -1,6 +1,6 @@
 import type { ChapterUnitData } from '@/components/ChapterTheoryPracticeClient';
 import type { HsscMcqsData, HsscPaperView } from '@/lib/hsscMcqsData';
-import { hsscBiologyModelPapers } from '@/lib/hsscBiologyModelPapers';
+import { hsscBiologyMcqMetadata, hsscBiologyModelPapers } from '@/lib/hsscBiologyModelPapers';
 import { hsscBiologySyllabus } from '@/lib/hsscBiologySyllabus';
 import { biologyStudyResourceQuiz, hsscBiologyStudyResources } from '@/lib/hsscBiologyStudyResources';
 import { biologyXiAnnualArchives, biologyXiAnnualChapter, biologyXiAnnualYears } from '@/lib/hsscXiAnnualBiology';
@@ -37,13 +37,18 @@ export function hsscBiologyChapterMcqs(board: string, grade: number, subject: st
     title: `${paper.year} Model ${paper.label}`,
     session: 'Model', year: null, paper: paper.part === 1 ? 'I' : 'II', href: paper.href,
     chapterOnly: sourceGrade !== grade,
-    questions: paper.questions.flatMap(question => 'choices' in question &&
-      (sourceGrade === grade || syllabus.units.some(unit => unit.unitNumber === hsscBiologyQuestionChapter(sourceGrade, 1, question.number))) ? [{
-      id: `biology-${paper.roman}-${question.number}`,
-      questionNumber: String(question.number), questionText: question.stem,
-      questionType: 'MULTIPLE_CHOICE', marks: question.marks, diagramBased: question.figures.length > 0,
-      sourceRegion: { choices: Object.fromEntries(question.choices.map((choice, index) => ['ABCD'[index], choice])) },
-    }] : []),
+    questions: paper.questions.flatMap(question => {
+      if (!('choices' in question)) return [];
+      if (sourceGrade !== grade && !syllabus.units.some(unit => unit.unitNumber === hsscBiologyQuestionChapter(sourceGrade, 1, question.number))) return [];
+      // Carry the reviewed key and distractor feedback so chapter practice and quizzes can score.
+      const metadata = hsscBiologyMcqMetadata(paper.roman, question);
+      return [{
+        id: `biology-${paper.roman}-${question.number}`,
+        questionNumber: String(question.number), questionText: metadata.quiz_stem ?? question.stem,
+        questionType: 'MULTIPLE_CHOICE', marks: question.marks, diagramBased: question.figures.length > 0,
+        sourceRegion: metadata,
+      }];
+    }),
     })).filter(paper => !paper.chapterOnly || paper.questions.length > 0));
   for (const { year, papers: [first] } of biologyXiAnnualArchives) {
     papers.push({

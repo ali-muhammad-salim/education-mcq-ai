@@ -219,6 +219,7 @@ export type UnitEntry = {
   breakdown?: Array<{ label: string; value: number; tone: 'model' | 'past' }>;
   action: HubAction;
   secondary?: HubAction;
+  tertiary?: HubAction;
   emptyNote?: string;
   emptyAction?: HubAction;
 };
@@ -376,6 +377,7 @@ function UnitTile({ unit, max, noun }: { unit: UnitEntry; max: number; noun: str
           <>
             <ActionControl action={unit.action} tone="primary" />
             {unit.secondary ? <ActionControl action={unit.secondary} tone="quiet" /> : null}
+            {unit.tertiary ? <ActionControl action={unit.tertiary} tone="quiet" /> : null}
           </>
         )}
       </div>

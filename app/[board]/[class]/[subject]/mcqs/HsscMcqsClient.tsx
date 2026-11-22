@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import TakeQuizModal from '@/components/TakeQuizModal';
@@ -140,8 +140,11 @@ export default function HsscMcqsClient({
 
   const startupPrefix = classCode + '-CH';
   const ssc = classLevel < 11;
+  // Chapter-wise practice stays interactive even on otherwise read-only banks:
+  // every chapter question is backed by a reviewed key, so students can sit a quiz.
+  const chapterPractice = !readOnly || category === 'chapter_wise';
   const launch = (title: string, code: string, questions: HsscQuizQuestion[]) => {
-    if (readOnly || !questions.length) return;
+    if (!chapterPractice || !questions.length) return;
     setQuiz({ title, code, questions: uniqueQuestions(questions) });
   };
 
@@ -160,6 +163,13 @@ export default function HsscMcqsClient({
 
   const launchPaper = (paper: HsscPaperView) =>
     launch(`${paper.title} — MCQs`, `${paper.code}-MCQS-${paper.questions.length}`, paper.questions);
+
+  // A chapter page opened with ?quiz=1 goes straight into the chapter quiz.
+  useEffect(() => {
+    if (!chapterUnit || typeof window === 'undefined') return;
+    if (new URLSearchParams(window.location.search).get('quiz') !== '1') return;
+    launchUnit(chapterUnit);
+  }, [chapterUnit]);
 
   const paperQuestions = data.papers.filter(paper => !paper.chapterOnly && paper.questions.length > 0);
   const unitCount = data.units.length;
@@ -254,7 +264,7 @@ export default function HsscMcqsClient({
         { label: 'study resource', value: study, tone: 'model' },
       ],
       action: { label: `Open unit ${unit.unitNumber}`, href: unit.href, icon: 'arrow' },
-      secondary: total && !readOnly ? { label: 'Quick quiz', onClick: () => launchUnit(unit), icon: 'play' } : undefined,
+      secondary: total && chapterPractice ? { label: 'Start quiz', onClick: () => launchUnit(unit), icon: 'play' } : undefined,
       emptyAction: { label: 'Learning outcomes', href: `${baseUrl}/syllabus#unit-${unit.unitNumber}`, icon: 'book' },
     };
   });
@@ -357,7 +367,7 @@ export default function HsscMcqsClient({
           onFilter={setFilter}
           search={search}
           onSearch={setSearch}
-          readOnly={readOnly}
+          readOnly={!chapterPractice}
           onTakeQuiz={() =>
             launch(title, quizCode, quizQuestions)
           }

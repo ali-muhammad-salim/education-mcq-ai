@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Eye, EyeOff, Lightbulb } from 'lucide-react';
+import { ArrowLeft, Eye, EyeOff, Lightbulb, Play } from 'lucide-react';
 import type { BoardInfo, ClassDefinition } from '@/lib/boardCatalog';
 import type { SubjectMeta } from '@/lib/subjectMetadata';
 import MathText from '@/components/MathText';
@@ -142,26 +142,48 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
           <span>All Chapters — {meta.title} {sectionInfo.kind}s</span>
         </Link>
 
-        {!paperQuestionsOnly && <button
-          type="button"
-          onClick={() => setShowAllSolutions(!showAllSolutions)}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.4rem',
-            padding: '0.55rem 1rem',
-            borderRadius: '8px',
-            border: '1.5px solid #0b5e4a',
-            background: showAllSolutions ? '#ecfdf5' : '#ffffff',
-            color: '#0b5e4a',
-            fontWeight: 700,
-            fontSize: '0.84rem',
-            cursor: 'pointer',
-          }}
-        >
-          {showAllSolutions ? <EyeOff size={15} /> : <Eye size={15} />}
-          <span>{showAllSolutions ? 'Hide All Solutions (Self-Test)' : 'Show All Solutions & Rubrics'}</span>
-        </button>}
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.65rem' }}>
+          <Link
+            href={`${baseUrl}/mcqs/chapter-wise/${unit.unitNumber}?quiz=1`}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              background: '#0b5e4a',
+              color: '#ffffff',
+              border: '1.5px solid #0b5e4a',
+              padding: '0.55rem 1.1rem',
+              borderRadius: '8px',
+              fontSize: '0.86rem',
+              fontWeight: 800,
+              textDecoration: 'none',
+            }}
+          >
+            <Play size={15} aria-hidden="true" />
+            <span>Start quiz</span>
+          </Link>
+
+          {!paperQuestionsOnly && <button
+            type="button"
+            onClick={() => setShowAllSolutions(!showAllSolutions)}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              padding: '0.55rem 1rem',
+              borderRadius: '8px',
+              border: '1.5px solid #0b5e4a',
+              background: showAllSolutions ? '#ecfdf5' : '#ffffff',
+              color: '#0b5e4a',
+              fontWeight: 700,
+              fontSize: '0.84rem',
+              cursor: 'pointer',
+            }}
+          >
+            {showAllSolutions ? <EyeOff size={15} /> : <Eye size={15} />}
+            <span>{showAllSolutions ? 'Hide All Solutions (Self-Test)' : 'Show All Solutions & Rubrics'}</span>
+          </button>}
+        </div>
       </div>
 
       {/* Question sheets */}

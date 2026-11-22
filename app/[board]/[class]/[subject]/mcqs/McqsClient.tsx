@@ -604,6 +604,9 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     setPracticeTitle(isChem ? `Unit ${initialUnit.unitNumber}: ${initialUnit.name} • Reviewed Chemistry questions` : chapterPracticeTitle(initialUnit));
     setCognitiveFilter('all');
     setCurrentView('practice');
+    if (typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('quiz') === '1') {
+      setQuizModalOpen(true);
+    }
   }, [initialChapter]);
 
   const handleStartFullBookPractice = (title: string, source: 'model' | 'annual' | 'annual2024' | 'annual2023' | 'annual2022' | 'annual2019' | 'annual2017' | 'annual_all' | 'chapter_all' = 'model') => {
@@ -808,8 +811,9 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                       { label: 'past-paper', value: past, tone: 'past' },
                       { label: 'from notes', value: extra, tone: 'model' },
                     ],
-                    action: { label: `Practice unit ${unit.unitNumber}`, href: `${baseUrl}/mcqs/chapter-wise/${unit.slug}`, icon: 'arrow' },
-                    secondary: past > 0 ? { label: 'Past papers only', onClick: () => handleStartChapterPractice(unit, true), icon: 'paper' } : undefined,
+                    action: { label: 'Start quiz', href: `${baseUrl}/mcqs/chapter-wise/${unit.slug}?quiz=1`, icon: 'play' },
+                    secondary: { label: `Open chapter ${unit.unitNumber}`, href: `${baseUrl}/mcqs/chapter-wise/${unit.slug}`, icon: 'arrow' },
+                    tertiary: past > 0 ? { label: 'Past papers only', onClick: () => handleStartChapterPractice(unit, true), icon: 'paper' } : undefined,
                     emptyAction: { label: 'Learning outcomes', href: `${baseUrl}/syllabus#unit-${unit.unitNumber}`, icon: 'book' },
                   };
                 })}

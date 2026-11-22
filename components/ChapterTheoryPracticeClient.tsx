@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowLeft,
+  Play,
   Sparkles,
 } from 'lucide-react';
 import type { BoardInfo, ClassDefinition } from '@/lib/boardCatalog';
@@ -374,9 +375,31 @@ export default function ChapterTheoryPracticeClient({
               </>
             );
             return (
-              <Link key={u.unitNumber} href={`${baseUrl}/${mode}/${u.unitNumber}`} style={directoryStyle}>
-                {unitCardBody}
-              </Link>
+              <div key={u.unitNumber} style={directoryStyle}>
+                <Link
+                  href={`${baseUrl}/${mode}/${u.unitNumber}`}
+                  style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1, color: 'inherit', textDecoration: 'none' }}
+                >
+                  {unitCardBody}
+                </Link>
+                <Link
+                  href={`${baseUrl}/mcqs/chapter-wise/${u.unitNumber}?quiz=1`}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
+                    borderTop: '1px solid #e2e8f0',
+                    paddingTop: '0.55rem',
+                    color: '#0b5e4a',
+                    fontSize: '0.8rem',
+                    fontWeight: 800,
+                    textDecoration: 'none',
+                  }}
+                >
+                  <Play size={13} aria-hidden="true" />
+                  <span>Start quiz</span>
+                </Link>
+              </div>
             );
           })}
         </div>
@@ -419,12 +442,21 @@ export default function ChapterTheoryPracticeClient({
                       Unit {unit.unitNumber}: {unit.name}
                     </h3>
                   </div>
-                  <Link
-                    href={`${baseUrl}/syllabus`}
-                    style={{ color: '#0b5e4a', fontWeight: 700, fontSize: '0.85rem', textDecoration: 'none' }}
-                  >
-                    Open in Full 2025 Syllabus ↗
-                  </Link>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexWrap: 'wrap' }}>
+                    <Link
+                      href={`${baseUrl}/mcqs/chapter-wise/${unit.unitNumber}?quiz=1`}
+                      style={{ background: '#0b5e4a', color: '#ffffff', padding: '6px 12px', borderRadius: '7px', fontWeight: 800, fontSize: '0.82rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
+                    >
+                      <Play size={13} aria-hidden="true" />
+                      Start quiz
+                    </Link>
+                    <Link
+                      href={`${baseUrl}/syllabus`}
+                      style={{ color: '#0b5e4a', fontWeight: 700, fontSize: '0.85rem', textDecoration: 'none' }}
+                    >
+                      Open in Full 2025 Syllabus ↗
+                    </Link>
+                  </div>
                 </div>
 
                 {showExtra && (
