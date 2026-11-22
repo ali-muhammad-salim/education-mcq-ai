@@ -19,6 +19,7 @@ interface Props {
   baseUrl: string;
   mode: UnitSectionMode;
   unit: ChapterUnitData;
+  paperQuestionsOnly?: boolean;
 }
 
 const SECTION_META: Record<UnitSectionMode, { paperLine: string; kind: string }> = {
@@ -39,7 +40,7 @@ const SECTION_META: Record<UnitSectionMode, { paperLine: string; kind: string }>
 const SERIF = "'Times New Roman', Times, serif";
 const SANS = "'Inter', sans-serif";
 
-export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl, mode, unit }: Props) {
+export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl, mode, unit, paperQuestionsOnly = false }: Props) {
   const [revealedIds, setRevealedIds] = useState<Record<string, boolean>>({});
   const [draftResponses, setDraftResponses] = useState<Record<string, string>>({});
   const [showAllSolutions, setShowAllSolutions] = useState(false);
@@ -78,7 +79,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
           SECONDARY SCHOOL CERTIFICATE · {classDef.name}
         </div>
         <div style={{ fontSize: '0.9rem', marginTop: '3px' }}>
-          {examYears.length > 0 && items.some(item => !item.examYear)
+          {paperQuestionsOnly ? 'MODEL EXAMINATION PAPER (THEORY)' : examYears.length > 0 && items.some(item => !item.examYear)
             ? 'EXAMINATION AND SUPPLEMENTARY PRACTICE (THEORY)'
             : examYears.length > 1
             ? `ANNUAL EXAMINATIONS ${examYears[0]} & ${examYears[examYears.length - 1]} (THEORY)`
@@ -141,7 +142,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
           <span>All Chapters — {meta.title} {sectionInfo.kind}s</span>
         </Link>
 
-        <button
+        {!paperQuestionsOnly && <button
           type="button"
           onClick={() => setShowAllSolutions(!showAllSolutions)}
           style={{
@@ -160,14 +161,15 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
         >
           {showAllSolutions ? <EyeOff size={15} /> : <Eye size={15} />}
           <span>{showAllSolutions ? 'Hide All Solutions (Self-Test)' : 'Show All Solutions & Rubrics'}</span>
-        </button>
+        </button>}
       </div>
 
       {/* Question sheets */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', fontFamily: SERIF }}>
         {mode === 'numericals'
-          ? numericalItems.map(item => {
+          ? numericalItems.map((item, index) => {
               const isOpen = showAllSolutions || revealedIds[item.id];
+              const sourceReference = `${item.sourceTitle}, original reference ${item.questionNumber}`;
               return (
                 <article
                   key={item.id}
@@ -204,11 +206,13 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                           color: 'var(--text-color, #111827)',
                         }}
                       >
-                        {item.questionNumber}
+                        {`Q.${index + 1}.`}
                       </span>
                       {item.sourceHref ? (
                         <Link
                           href={item.sourceHref}
+                          aria-label={sourceReference}
+                          title={sourceReference}
                           style={{
                             fontFamily: SANS,
                             background: '#f1f5f9',
@@ -223,7 +227,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                           {item.sourceTitle} ↗
                         </Link>
                       ) : (
-                        <span style={{ fontFamily: SANS, fontSize: '0.76rem', fontWeight: 700, color: 'var(--text-light, #475569)' }}>
+                        <span title={sourceReference} style={{ fontFamily: SANS, fontSize: '0.76rem', fontWeight: 700, color: 'var(--text-light, #475569)' }}>
                           {item.sourceTitle}
                         </span>
                       )}
@@ -326,8 +330,9 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                 </article>
               );
             })
-          : crqErqItems.map(item => {
+          : crqErqItems.map((item, index) => {
               const isOpen = showAllSolutions || revealedIds[item.id];
+              const sourceReference = `${item.sourceTitle}, original reference ${item.questionNumber}`;
               return (
                 <article
                   key={item.id}
@@ -364,11 +369,13 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                           color: 'var(--text-color, #111827)',
                         }}
                       >
-                        {item.questionNumber}
+                        {`Q.${index + 1}.`}
                       </span>
                       {item.sourceHref ? (
                         <Link
                           href={item.sourceHref}
+                          aria-label={sourceReference}
+                          title={sourceReference}
                           style={{
                             fontFamily: SANS,
                             background: '#f1f5f9',
@@ -383,7 +390,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                           {item.sourceTitle} ↗
                         </Link>
                       ) : (
-                        <span style={{ fontFamily: SANS, fontSize: '0.76rem', fontWeight: 700, color: 'var(--text-light, #475569)' }}>
+                        <span title={sourceReference} style={{ fontFamily: SANS, fontSize: '0.76rem', fontWeight: 700, color: 'var(--text-light, #475569)' }}>
                           {item.sourceTitle}
                         </span>
                       )}
@@ -439,7 +446,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                       rows={mode === 'erqs' ? 4 : 2}
                       value={draftResponses[item.id] || ''}
                       onChange={e => setDraftResponses(prev => ({ ...prev, [item.id]: e.target.value }))}
-                      placeholder={item.solutionOrigin === 'supplied_resource'
+                      placeholder={paperQuestionsOnly ? 'Write your practice answer here.' : item.solutionOrigin === 'supplied_resource'
                         ? 'Write your practice answer before viewing the supplied solution.'
                         : 'Write your practice answer here before comparing with the official Checking Hints and Model Response...'}
                       style={{
@@ -455,7 +462,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                     />
                   </div>
 
-                  <button
+                  {(!paperQuestionsOnly || item.solutionOrigin === 'supplied_resource') && <button
                     type="button"
                     onClick={() => toggleReveal(item.id)}
                     style={{
@@ -474,7 +481,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                     {item.solutionOrigin === 'supplied_resource'
                       ? (isOpen ? 'Hide solution' : 'Show solution')
                       : (isOpen ? 'Hide Solution & E-Marking Notes' : 'Show Solution, Rubric & E-Marking Notes')}
-                  </button>
+                  </button>}
 
                   {isOpen && (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>

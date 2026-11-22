@@ -130,7 +130,7 @@ export default function MathText({ text, className, style }: MathTextProps) {
       </span>)}
     </span>;
   }
-  const processableText = text.split(/(```[\s\S]*?```|`[^`\n]*`)/g).map((part, i) => i % 2 ? part : formatEducationalMath(cleanAndNormalizeMath(repairMathEscapes(part)))).join('');
+  const processableText = text.split(/(```[\s\S]*?```|`[^`\n]*`|<u>[^<>\n]+<\/u>)/g).map((part, i) => i % 2 ? part : formatEducationalMath(cleanAndNormalizeMath(repairMathEscapes(part)))).join('');
 
   // Opaque math/code nodes remain inside surrounding Markdown emphasis.
   // Choose a marker absent from the source so user text can never reference a node.

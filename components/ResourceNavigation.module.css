@@ -11,10 +11,6 @@
   grid-auto-columns: minmax(9rem, 1fr);
 }
 
-.topics > .single {
-  justify-self: start;
-}
-
 .topic {
   font-size: 0.875rem;
   line-height: 1.35;
@@ -29,7 +25,7 @@
   white-space: nowrap;
 }
 
-.links > a:not(.pdf) {
+.links > a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -37,17 +33,4 @@
   color: var(--text-color);
   text-decoration: underline;
   text-underline-offset: 0.18em;
-}
-
-.links > .pdf {
-  margin-inline-start: auto;
-  border-color: var(--primary-color);
-  color: var(--text-color);
-  background: var(--surface-muted);
-}
-
-.links > .pdf[aria-pressed="true"],
-.links > .pdf[aria-current="page"] {
-  background: var(--primary-color);
-  color: var(--card-bg);
 }

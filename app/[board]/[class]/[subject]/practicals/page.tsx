@@ -1,9 +1,11 @@
 import { hsscComputerScienceResources } from "@/lib/hsscComputerScienceResources";
 import { hsscComputerScienceSyllabus } from "@/lib/hsscComputerScienceSyllabus";
+import { hsscBiologyPractical } from "@/lib/hsscBiologyPractical";
+import BiologyPracticalPaper, { biologyPracticalInstructions } from "@/components/BiologyPracticalPaper";
 import StructuredContent from '@/components/StructuredContent';
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import DocumentViews from "@/components/DocumentViews";
+import PracticalPaperReader from "@/components/PracticalPaperReader";
 import { studyScope } from "@/services/study/navigation";
 import styles from "@/components/MaterialLayout.module.css";
 import { subjectMaterials } from '@/services/materials/catalog';
@@ -19,8 +21,10 @@ import ssc2ChemPracticals from '@/data/chemistry/ssc2_practicals.json';
 export const dynamic = 'force-dynamic';
 export default async function Page({
   params,
+  searchParams,
 }: {
   params: Promise<{ board: string; class: string; subject: string }>;
+  searchParams?: Promise<{ view?: string }>;
 }) {
   const raw = await params,
     scope = studyScope(raw.board, raw.class, raw.subject);
@@ -29,8 +33,11 @@ export default async function Page({
     ?? hsscComputerScienceSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const computerScience = hsscComputerScienceResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const senior = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const seniorBiology = hsscBiologyPractical(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const view = (await searchParams)?.view === 'original' ? 'original' : undefined;
+  const readerScope = { subject: scope.meta.title, subjectCode: scope.meta.code, grade: scope.classDef.level, roman: scope.classDef.roman };
   const documents = await subjectMaterials(raw.board, raw.class, raw.subject, 'practical_paper').catch(error => {
-    if (hssc && error.name === "PrismaClientInitializationError") return [];
+    if ((hssc || seniorBiology) && error.name === "PrismaClientInitializationError") return [];
     throw error;
   });
   const isPhysicsIX =
@@ -92,11 +99,9 @@ export default async function Page({
       <h1>Practicals</h1>
       {computerScience && <p><Link href={computerScience.papers[2].href}>Open Class {computerScience.roman} practical model paper and worked solution</Link></p>}
       {senior && (
-        <DocumentViews title="Physics Paper III sample practical" original={senior.practical} continuousPdf>
+        <PracticalPaperReader {...readerScope} year={senior.year} durationMinutes={60} totalMarks={15} original={senior.practical} initialView={view}>
           <div className={styles.digital}>
-            <h2>Sample Practical Paper III · Class {senior.roman}</h2>
             <p>{senior.practicalObjective}</p>
-            <p><strong>Time:</strong> 60 minutes · <strong>Marks:</strong> 15</p>
             <ol>
               <li><strong>Stage I (2 marks).</strong> Select and name the apparatus.</li>
               <li><strong>Stage II (6 marks).</strong> {senior.grade === 11 ? 'Determine the zero correction and record the length and diameter measurements.' : 'Record three bridge readings and calculate the resistance for each trial.'}</li>
@@ -104,14 +109,25 @@ export default async function Page({
               <li><strong>School record (3 marks).</strong></li>
             </ol>
             <p><a href={senior.practical + '#page=2'} target="_blank" rel="noreferrer">Open the original task and observation tables</a></p>
-            <p><Link href={senior.base + '/syllabus#unit-' + senior.practicalTopic}>Related syllabus chapter</Link></p>
+            <p><Link href={senior.base + '/syllabus#unit-' + senior.practicalTopic}>2025 syllabus · Chapter {senior.practicalTopic}</Link></p>
           </div>
-        </DocumentViews>
+        </PracticalPaperReader>
       )}
-      {hssc && documents.length > 0 && (
+      {(hssc || seniorBiology) && documents.length > 0 && (
         <MaterialList items={documents.map(doc => ({ label: doc.metadata.title || 'Practical paper', href: '/materials/' + doc.id }))} />
       )}
-      {hssc ? (
+      {seniorBiology ? (
+        <>
+          <nav className={styles.actions} aria-label="Biology practical resources">
+            <Link className={styles.button} href={`${scope.baseUrl}/syllabus`}>Biology syllabus</Link>
+            <a className={styles.button} href={seniorBiology.original} target="_blank" rel="noopener noreferrer">Open PDF in new tab</a>
+          </nav>
+          <PracticalPaperReader {...readerScope} year={seniorBiology.year} durationMinutes={60} totalMarks={15}
+            original={seniorBiology.original} initialView={view} instructions={biologyPracticalInstructions}>
+            <BiologyPracticalPaper paper={seniorBiology} />
+          </PracticalPaperReader>
+        </>
+      ) : hssc ? (
         <div className={styles.digital}>
           <h2>Official syllabus practical activities</h2>
           <p>Paper III is assessed separately and carries 15 marks.</p>
@@ -128,12 +144,10 @@ export default async function Page({
       ) : documents.length ? (
         <MaterialList items={documents.map(doc => ({ label: doc.metadata.title || 'Practical paper', href: '/materials/' + doc.id }))} />
       ) : original ? (
-        <DocumentViews title={scope.meta.title + " Practical Model Paper III"} original={original}>
+        <PracticalPaperReader {...readerScope} year={isChemX || isCsX ? 2027 : 2026}
+          durationMinutes={isCsIX || isCsX ? 60 : 40} totalMarks={10} original={original} initialView={view}>
           <div className={styles.digital} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <div style={{ padding: '1.25rem', border: '1.5px solid var(--border-color, #dce5e1)', borderRadius: 12, background: '#f8faf9' }}>
-              <h2 style={{ marginTop: 0, color: '#0b5e4a' }}>
-                Model Examination Paper {(isChemX || isCsX) ? '2027' : '2026'} &amp; Onwards — {scope.meta.title} Paper III (Practical)
-              </h2>
               {(isCsIX || isCsX) ? (
                 <p style={{ margin: 0, lineHeight: 1.6 }}>
                   <strong>Time Allowed:</strong> 1 hour · <strong>Total Marks:</strong> 10 (Stage I: 2 Marks, Stage II: 2 Marks, Stage III: 4 Marks, School Record: 2 Marks) · <strong>Instructions:</strong> Copy and paste the HTML/JavaScript codes for Task 1 through Task 6 into an MS Word file, save it with your Name and Candidate ID, and submit the printout along with the practical booklet.
@@ -194,7 +208,7 @@ export default async function Page({
               </article>
             ))}
           </div>
-        </DocumentViews>
+        </PracticalPaperReader>
       ) : (
         <p className={styles.muted}>Coming soon</p>
       )}

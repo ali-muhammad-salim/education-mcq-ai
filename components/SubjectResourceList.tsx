@@ -23,8 +23,11 @@ import rg9 from '@/data/physics/ssc1_resource_guide.json';
 import rg10 from '@/data/physics/ssc2_resource_guide.json';
 import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 import { hsscPhysicsSyllabus } from '@/lib/hsscPhysicsSyllabus';
+import { hsscBiologyPractical } from '@/lib/hsscBiologyPractical';
+import { hsscBiologyModelPapers } from '@/lib/hsscBiologyModelPapers';
 import { hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
 import { computerScienceXi2025Resources } from '@/lib/hsscXiAnnualComputerScience';
+import { biologyXiAnnualArchives } from '@/lib/hsscXiAnnualBiology';
 import { biology2022Archive, biology2024Archive, biologyX2017Archive, biologyX2018Archive, biologyX2019Archive, biologyX2021Archive, biologyX2022Archive, biologyX2023Archive, biologyX2024Archive, biologyX2025Archive } from '@/lib/biology2024Resources';
 
 export default async function SubjectResourceList({
@@ -44,6 +47,7 @@ export default async function SubjectResourceList({
   if (!scope) notFound();
   const computerScience = hsscComputerScienceResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const hssc = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const biologyPractical = type === 'model_paper' ? hsscBiologyPractical(scope.board.id, scope.classDef.level, scope.meta.slug) : null;
   const titles = {
     model_paper: "Model papers",
     past_paper: "Past papers",
@@ -51,6 +55,7 @@ export default async function SubjectResourceList({
   };
   const mathematics = scope.board.id === 'akueb' && scope.meta.slug === 'mathematics';
   const biology = scope.board.id === 'akueb' && scope.meta.slug === 'biology';
+  const biologyXiAnnual = biology && scope.classDef.level === 11 && type === 'past_paper';
   const documents = await subjectMaterials(
     params.board,
     params.class,
@@ -58,7 +63,7 @@ export default async function SubjectResourceList({
     type==='past_paper'?['past_paper','answer_key','e_marking']:type,
     after,
   ).catch(error => {
-    if ((hssc || computerScience) && error.name === "PrismaClientInitializationError") return [];
+    if ((hssc || computerScience || biologyPractical || biologyXiAnnual) && error.name === "PrismaClientInitializationError") return [];
     throw error;
   });
   const items: MaterialItem[] = documents
@@ -70,6 +75,14 @@ export default async function SubjectResourceList({
     }));
   if (computerScience && type === "model_paper" && !after) {
     items.push(...computerScience.papers.map(paper => ({ label: paper.label, href: paper.href, year: computerScience.year })));
+  }
+  if (biologyPractical && !after) {
+    items.push(...hsscBiologyModelPapers(scope.board.id, scope.classDef.level, scope.meta.slug).map(paper => ({
+      label: `Biology ${paper.label} · ${paper.part === 1 ? 'Multiple choice' : 'Written responses'}`,
+      href: paper.href,
+      year: paper.year,
+    })));
+    items.push({ label: 'Biology Paper III · Sample practical', href: `${scope.baseUrl}/practicals`, year: biologyPractical.year });
   }
   if (computerScience?.grade === 11 && type === "past_paper" && !after) for (const archive of [hsscComputerScience2024Resources,hsscComputerScience2023Resources,hsscComputerScience2022Resources,hsscComputerScience2021Resources,hsscComputerScience2019Resources]) items.push(...archive.papers.map(paper => ({label:paper.label, href:paper.href, year:archive.year})));
   const legacy =
@@ -83,6 +96,7 @@ export default async function SubjectResourceList({
       [9, 10].includes(scope.classDef.level));
   if (legacy && type==='past_paper' && !after) items.push(...(scope.classDef.level===9 ? physics2025Resources : physicsX2025Resources));
   if (hssc?.grade === 11 && type === "past_paper" && !after) items.push(...hsscXiAnnualResources);
+  if (biologyXiAnnual && !after) items.push(...biologyXiAnnualArchives.flatMap(archive => archive.resources));
   if (scope.board.id === 'akueb' && scope.meta.slug === 'computer-science' && scope.classDef.level === 11 && type === 'past_paper' && !after) {
     items.push(...computerScienceXi2025Resources);
   }
@@ -119,7 +133,7 @@ export default async function SubjectResourceList({
       orderBy: { examYear: "desc" },
       take: 100,
     }).catch(error => {
-      if ((hssc || computerScience) && error.name === "PrismaClientInitializationError") return [];
+      if ((hssc || computerScience || biologyPractical || biologyXiAnnual) && error.name === "PrismaClientInitializationError") return [];
       throw error;
     });
     const seen = new Set<string>();
@@ -196,7 +210,7 @@ export default async function SubjectResourceList({
   }
   if (biology && type === 'past_paper' && !after) {
     const seenHrefs = new Set(items.map(item => item.href));
-    const roman = scope.classDef.level === 9 ? 'IX' : 'X';
+    const roman = scope.classDef.roman;
     for (const archive of [biology2022Archive, biology2024Archive, biologyX2017Archive, biologyX2018Archive, biologyX2019Archive, biologyX2021Archive, biologyX2022Archive, biologyX2023Archive, biologyX2024Archive, biologyX2025Archive]) {
       if (!archive[0].href.includes(`BIO-${roman}-`)) continue;
       for (const entry of archive) {

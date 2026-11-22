@@ -52,6 +52,13 @@ export function paperAnswer(
     typeof candidate === "string" ? candidate.trim().toUpperCase() : "";
   return Object.hasOwn(choices, key) ? key : undefined;
 }
+export function paperScoringAnswers(meta: Record<string, any>, choices: Record<string, string>) {
+  const primary = paperAnswer(meta, choices);
+  if (!primary) return [];
+  const alternates: unknown[] = meta.score_accepted_options === true && Array.isArray(meta.accepted_options) ? meta.accepted_options : [];
+  return [...new Set([primary, ...alternates.filter((key): key is string => typeof key === 'string' && Object.hasOwn(choices, key))])].sort();
+}
+
 export function safeDocumentUrl(value: string | null | undefined) {
   if (!value || /[\u0000-\u0020\\]/.test(value)) return undefined;
   if (value.startsWith("/") && !value.startsWith("//")) return value;

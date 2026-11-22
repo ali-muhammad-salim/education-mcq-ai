@@ -725,7 +725,6 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
             grade={classDef.level}
             subject={meta.title}
             sources={q.__sources}
-            hideQuestionNumber={selectedUnit !== null}
             hideSlo
             inline
           />

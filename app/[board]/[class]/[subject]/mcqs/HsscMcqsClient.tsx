@@ -29,6 +29,7 @@ interface HsscMcqsClientProps {
   chapter?: string | null;
   data: HsscMcqsData;
   theory?: ('crqs' | 'erqs')[];
+  readOnly?: boolean;
 }
 
 interface QuizLaunch {
@@ -103,6 +104,7 @@ export default function HsscMcqsClient({
   chapter,
   data,
   theory,
+  readOnly = false,
 }: HsscMcqsClientProps) {
   const router = useRouter();
   const [quiz, setQuiz] = useState<QuizLaunch | null>(null);
@@ -139,7 +141,7 @@ export default function HsscMcqsClient({
   const startupPrefix = classCode + '-CH';
   const ssc = classLevel < 11;
   const launch = (title: string, code: string, questions: HsscQuizQuestion[]) => {
-    if (!questions.length) return;
+    if (readOnly || !questions.length) return;
     setQuiz({ title, code, questions: uniqueQuestions(questions) });
   };
 
@@ -238,7 +240,8 @@ export default function HsscMcqsClient({
   const unitEntries: UnitEntry[] = data.units.map(unit => {
     const groups = groupsFor(unit);
     const total = uniqueQuestions(groups.flatMap(group => group.questions)).length;
-    const model = uniqueQuestions(groups.filter(group => group.paper.year === null).flatMap(group => group.questions)).length;
+    const model = uniqueQuestions(groups.filter(group => group.paper.year === null && !group.paper.studyResource).flatMap(group => group.questions)).length;
+    const study = groups.filter(group => group.paper.studyResource).reduce((count, group) => count + group.questions.length, 0);
     return {
       id: `unit-${unit.unitNumber}`,
       number: unit.unitNumber,
@@ -247,10 +250,11 @@ export default function HsscMcqsClient({
       total,
       breakdown: [
         { label: 'model', value: model, tone: 'model' },
-        { label: 'past-paper', value: total - model, tone: 'past' },
+        { label: 'past-paper', value: total - model - study, tone: 'past' },
+        { label: 'study resource', value: study, tone: 'model' },
       ],
       action: { label: `Open unit ${unit.unitNumber}`, href: unit.href, icon: 'arrow' },
-      secondary: total ? { label: 'Quick quiz', onClick: () => launchUnit(unit), icon: 'play' } : undefined,
+      secondary: total && !readOnly ? { label: 'Quick quiz', onClick: () => launchUnit(unit), icon: 'play' } : undefined,
       emptyAction: { label: 'Learning outcomes', href: `${baseUrl}/syllabus#unit-${unit.unitNumber}`, icon: 'book' },
     };
   });
@@ -261,16 +265,16 @@ export default function HsscMcqsClient({
     meta: paper.questions.length ? `${paper.questions.length} MCQs` : 'Written',
     title: paper.title,
     description: paper.questions.length
-      ? 'Multiple-choice section with reviewed answers and option-by-option feedback.'
+      ? readOnly ? 'Multiple-choice questions from Paper I.' : 'Multiple-choice section with reviewed answers and option-by-option feedback.'
       : 'Written script. Opens in the paper reader.',
     tone: paper.year === null ? 'model' : 'past',
     actions: [
-      ...(paper.questions.length ? [{ label: 'Take quiz', icon: 'play' as const, onClick: () => launchPaper(paper) }] : []),
+      ...(paper.questions.length && !readOnly ? [{ label: 'Take quiz', icon: 'play' as const, onClick: () => launchPaper(paper) }] : []),
       { label: 'Open paper', icon: 'paper' as const, href: paper.href },
     ],
   });
 
-  const modelPapers = data.papers.filter(paper => paper.year === null);
+  const modelPapers = data.papers.filter(paper => paper.year === null && !paper.studyResource);
   const allAnnualPapers = data.papers
     .filter(paper => !paper.chapterOnly && paper.year !== null)
     .sort((a, b) => (b.year || 0) - (a.year || 0) || a.code.localeCompare(b.code));
@@ -297,6 +301,8 @@ export default function HsscMcqsClient({
         stem: question.questionText,
         options: (region.choices || {}) as Record<string, string>,
         correct,
+        correctOptions: region.score_accepted_options ? region.accepted_options : undefined,
+        revealInPreview: paper.studyResource,
         solution: region.explanation || (correct ? `Answer key: ${correct}.` : 'A reviewed answer key is not available for this question.'),
         optionFeedback: region.option_feedback,
         diagram: typeof region.diagramUrl === 'string' ? region.diagramUrl : null,
@@ -309,9 +315,10 @@ export default function HsscMcqsClient({
               grade={classLevel}
               subject={subjectTitle}
               sources={[{ question, paper }, ...duplicates].map(entry => ({
-                label: `${entry.paper.year ?? 'Model'} · Paper ${entry.paper.paper}`,
+                label: entry.paper.studyResource ? entry.paper.title : `${entry.paper.year ?? 'Model'} · Paper ${entry.paper.paper}`,
                 qNum: entry.question.questionNumber,
                 code: entry.paper.code,
+                href: readOnly ? `${entry.paper.href}#question-${entry.question.questionNumber}` : undefined,
               }))}
               hideSlo
               inline
@@ -323,7 +330,7 @@ export default function HsscMcqsClient({
             >
               {region.current_slo ? `SLO ${region.current_slo}` : `Syllabus: Unit ${chapterUnit.unitNumber}`}
             </Link>
-            {tier && (
+            {tier && !readOnly && (
               <span style={{ background: '#ffffff', color: '#475569', border: '1px solid #cbd5e1', padding: '2px 8px', borderRadius: '5px', fontSize: '0.76rem', fontWeight: 600 }}>
                 Cognitive Level: {question.difficulty || tier.code} ({tier.label})
               </span>
@@ -350,6 +357,7 @@ export default function HsscMcqsClient({
           onFilter={setFilter}
           search={search}
           onSearch={setSearch}
+          readOnly={readOnly}
           onTakeQuiz={() =>
             launch(title, quizCode, quizQuestions)
           }
@@ -370,16 +378,16 @@ export default function HsscMcqsClient({
       <HubMasthead
         board={boardName}
         classLabel={classLabel}
-        title={category ? masthead.title : `${subjectTitle} MCQs`}
+        title={readOnly && category === 'full_book' ? 'Biology model papers' : category ? masthead.title : `${subjectTitle} MCQs`}
         lede={
-          category
+          readOnly ? 'Browse Biology questions by syllabus chapter or open a complete paper.' : category
             ? masthead.lede
             : 'Choose how you want to practise: by syllabus unit, by board paper, as a full timed test, or by the thinking a question asks for.'
         }
         stats={category ? masthead.meta.map(item => ({ label: item.key, value: item.value })) : []}
         back={{ href: baseUrl, label: `Back to ${subjectTitle} subject hub` }}
         primary={
-          category && cognitiveQuestions.length
+          !readOnly && category && cognitiveQuestions.length
             ? {
                 label: `Practice all questions (${cognitiveQuestions.length})`,
                 onClick: () =>
@@ -394,8 +402,9 @@ export default function HsscMcqsClient({
       />
 
       {category
-        ? <HubRail baseUrl={baseUrl} active={category} theory={theory} />
-        : <HubDirectory baseUrl={baseUrl} notes={directoryNotes} />}
+        ? <HubRail baseUrl={baseUrl} active={category} theory={theory} categories={readOnly ? ['chapter_wise'] : undefined} />
+        : <HubDirectory baseUrl={baseUrl} notes={directoryNotes} categories={readOnly ? ['chapter_wise'] : undefined}
+            descriptions={readOnly ? { chapter_wise: 'Model, annual and study-resource MCQs grouped by syllabus chapter.' } : undefined} />}
 
       {category === 'chapter_wise' && (
         <HubSection title="Syllabus units" note={`${unitCount} units · ${data.totalQuestions} MCQs`}>
@@ -437,7 +446,7 @@ export default function HsscMcqsClient({
         </>
       )}
 
-      {category === 'cognitive' && (
+      {!readOnly && category === 'cognitive' && (
         <HubSection title="Cognitive levels" note={`${cognitiveQuestions.length} MCQs`}>
           <TierGrid
             tiers={cognitiveCounts.map(

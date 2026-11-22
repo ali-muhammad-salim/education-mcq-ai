@@ -29,6 +29,7 @@ export interface HsscQuizQuestion {
 
 export interface HsscPaperView {
   chapterOnly?: boolean;
+  studyResource?: boolean;
   code: string;
   title: string;
   session: string;

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { uniqueQuestions } from '@/lib/uniqueQuestions';
 import { sscComputerScienceMapping } from '@/lib/sscComputerScienceSyllabus';
 import DocumentViews from '@/components/DocumentViews';
+import BiologyStudyResource from '@/components/BiologyStudyResource';
+import { hsscBiologyStudyResources } from '@/lib/hsscBiologyStudyResources';
 import key from '@/data/physics/ssc1_2025_official_key.json';
 import key2024 from '@/data/physics/ssc1_2024_official_key.json';
 import emarking from '@/data/physics/ssc1_2025_emarking.json';
@@ -74,6 +76,7 @@ import { annualAnswerReviews, annual2024AnswerReviews, annualX2025AnswerReviews,
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import StructuredContent from '@/components/StructuredContent';
 import { hsscXiAnnualPapers, hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
+import { biologyXi2021AnswerReview, biologyXi2022VerificationReport, biologyXiAnnualArchives } from '@/lib/hsscXiAnnualBiology';
 import { getFallbackPaper } from '@/lib/paperDataService';
 import { paperMetadata, safeDocumentUrl } from '@/lib/paperPresentation';
 import prisma from '@/lib/prisma';
@@ -154,8 +157,61 @@ const SUPPORTED_RESOURCES = [
   'chemistry-x-pacing-guide',
 ] as const;
 
-export default async function Page({params}:{params:Promise<{resource:string}>}) {
+export default async function Page({params, searchParams}:{params:Promise<{resource:string}>; searchParams?: Promise<{view?: string}>}) {
   const {resource}=await params;
+  const study = hsscBiologyStudyResources.find(item => item.href === '/resources/' + resource);
+  if (study) return <BiologyStudyResource resource={study} original={(await searchParams)?.view === 'original'} />;
+  const xiBiology = biologyXiAnnualArchives.find(archive => archive.resources.some(item => item.href === '/resources/' + resource));
+  if (xiBiology) {
+    const { year, root, resources, key, marking } = xiBiology;
+    const isKey = resource.endsWith('-key');
+    const title = `Biology Class XI · ${year} ${isKey ? 'Official MCQ Key' : 'E-marking Notes'}`;
+    const original = root + (isKey ? 'key.pdf' : 'emarking.pdf');
+    return <section className={styles.page}>
+      <p><Link href="/akueb/XI/biology/pastpapers">Class XI Biology past papers</Link></p>
+      <h1>{title}</h1>
+      <DocumentViews original={original} title={title} continuousPdf
+        digitalLabel={isKey ? 'Digital Answer Key' : 'Digital Notes'}
+        initialView={(await searchParams)?.view === 'original' ? 'original' : 'digital'}
+        resourceLinks={<PaperResourceNav tabs={resources} current={'/resources/' + resource} inline />}>
+        {isKey ? <div style={{ overflowX: 'auto' }}>
+          {year === 2022 && <p>The original key PDF covers Theory (Q1–50). The Alternate to Practical answers (Q51–65) come from the <a href={biologyXi2022VerificationReport}>AKU-EB verification report</a>.</p>}
+          {year === 2021 && <p>The verification report awards universal credit for Q64. RiseLearner also accepts A for Q1 and B for Q47 in practice. The table preserves the board’s listed answers.</p>}
+          {year === 2018 && <p>For Q18, the board key lists D. RiseLearner also accepts B in practice because both groups can share the listed features.</p>}
+          <table className={styles.table}>
+            <thead><tr><th scope="col">Question</th>{year > 2019 && <th scope="col">Original SLO</th>}<th scope="col">{year === 2021 || year === 2018 ? 'Board answer' : 'Accepted answer'}</th><th scope="col">Cognitive level</th></tr></thead>
+            <tbody>{key.map(row => {
+              const review = year === 2021 ? biologyXi2021AnswerReview[row.number] : undefined;
+              return <tr key={row.number}>
+                <th scope="row"><Link href={`/past-papers/BIO-XI-${year}-P1?view=solved#question-${row.number}`}>Q{row.number}</Link></th>
+                {year > 2019 && <td>{row.originalSlo}</td>}
+                <td>{row.answer.join(' or ')}{row.universal && ' · Any option earns credit'}{review && <> · Also accepted in practice <a href={review.source}>{review.answer}</a></>}</td>
+                <td>{row.level}</td>
+              </tr>;
+            })}</tbody>
+          </table>
+        </div> : <div className={styles.digital}>
+          <p>{year <= 2019
+            ? 'AKU-EB commentary and examples of stronger and weaker candidate responses for Paper II.'
+            : 'AKU-EB checking hints, commentary, and candidate response examples for Paper II. The original PDF also includes the teaching suggestions and annexures.'}</p>
+          {marking.map(note => <details key={note.number} className={styles.practicalStage}>
+            <summary>Question {note.number}{note.originalSlo && ` · Original SLO ${note.originalSlo}`}</summary>
+            <p><Link href={`/past-papers/BIO-XI-${year}-P2#question-${note.number}`}>Open question</Link> · <a href={`${original}#page=${note.page}`}>PDF page {note.page}</a></p>
+            {note.hints && <h3>Checking hints</h3>}
+            {year === 2025 && note.number === '1' && <p>The exam paper assigns 4 marks to this question. The e-marking table lists 3, while the individual checking hints add up to 4.</p>}
+            {note.hints && <StructuredContent text={note.hints} />}
+            {note.overall && <><h3>Overall performance</h3><StructuredContent text={note.overall} /></>}
+            <h3>Stronger response</h3>
+            <StructuredContent text={note.better} />
+            {note.images.better && <img src={note.images.better} alt={`Stronger response for Q${note.number}`} loading="lazy" style={{ maxWidth: '100%' }} />}
+            <h3>Weaker response</h3>
+            <StructuredContent text={note.weaker} />
+            {note.images.weaker && <img src={note.images.weaker} alt={`Weaker response for Q${note.number}`} loading="lazy" style={{ maxWidth: '100%' }} />}
+          </details>)}
+        </div>}
+      </DocumentViews>
+    </section>;
+  }
   const mathMarking = /^mathematics-(ix|x)-(201[789]|202[345])-emarking$/.exec(resource);
   const bioMarking = /^biology-(ix|x)-(2017|2018|2019|202[345])-emarking$/.exec(resource);
   if (bioMarking) {

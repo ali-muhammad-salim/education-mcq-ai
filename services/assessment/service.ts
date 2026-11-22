@@ -8,7 +8,7 @@ import { saveAnswerSchema } from '@/lib/validations/assessment';
 import { FrozenQuestion, answerFeedback, gradeAnswer, hasAnswer, normalizeQuestion, snapshotSchema, studentQuestion } from './scoring';
 import { z } from 'zod';
 import { randomInt, createHash } from 'node:crypto';
-import { paperAnswer, paperChoices } from '@/lib/paperPresentation';
+import { paperAnswer, paperChoices, paperScoringAnswers } from '@/lib/paperPresentation';
 import {publicMaterialWhere} from '@/lib/materialVisibility';
 import {mappedChapterQuestions,sourceChoiceContent,chapterPaperWhere,chapterPaperIsPublished} from '@/services/materials/practice';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
@@ -19,6 +19,7 @@ import { includesPhysicsSupplementaryQuestions, physicsSupplementaryQuestions } 
 import { physicsUnit17Resource } from '@/lib/physicsUnit17Resources';
 import { sscComputerScienceMcqReview } from '@/lib/sscComputerScienceMcqReview';
 import { groupDuplicateQuestions, uniqueQuestions } from '@/lib/uniqueQuestions';
+import { hsscBiologyModelQuizPaper } from '@/lib/hsscBiologyModelPapers';
 
 export const quizInclude = { settings: true, questions: { orderBy: { orderIndex: 'asc' as const } }, teacher: { select: { name: true } } } satisfies Prisma.QuizInclude;
 export type LoadedQuiz = Prisma.QuizGetPayload<{ include: typeof quizInclude }>;
@@ -37,17 +38,19 @@ export function gradablePracticeQuestions(paperCode: string, questions: Question
 // omitted optional fields. Normalize at this boundary, keeping teacher input strict.
 export function sourcePracticeQuestion(q: QuestionData) {
   const meta = q.sourceRegion;
-  const choices = paperChoices(meta.choices), correct = paperAnswer(meta, choices);
+  const choices = paperChoices(meta.choices), correct = paperScoringAnswers(meta, choices);
   const fbList = Array.isArray(meta.option_feedback) ? meta.option_feedback : [];
   return normalizeQuestion({
     questionType: q.questionType === 'MULTIPLE_CHOICE' ? 'MCQ_SINGLE' : 'LONG_ANSWER',
+    provenance: 'PAST_PAPER',
+    acceptAnyCorrectOption: correct.length > 1 ? true : undefined,
     stemText: q.questionText, marks: q.marks || 1, difficulty: q.difficulty,
     cognitiveLevel: typeof meta.cognitive_level === 'string' ? meta.cognitive_level : undefined,
     explanation: typeof meta.explanation === 'string' ? meta.explanation : undefined,
     diagramUrl: typeof meta.diagramUrl === 'string' ? meta.diagramUrl : undefined,
     options: Object.entries(choices).map(([id, text]) => {
       const fbItem = fbList.find(item => item.key.toUpperCase() === id.toUpperCase());
-      return { id, text, isCorrect: id === correct, ...(fbItem?.reason ? { feedback: fbItem.reason } : {}) };
+      return { id, text, isCorrect: correct.includes(id), ...(fbItem?.reason ? { feedback: fbItem.reason } : {}) };
     }),
     rubric: meta.rubric ? JSON.stringify(meta.rubric) : undefined,
   });
@@ -221,10 +224,11 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   }
 
   const subset = /^((?:PHY|CS|CHM|MTH)-(?:IX|X|XI|XII)(?:-20\d{2})?-P1)-SET-([0-9-]+)$/.exec(key);
-  const paperCode = subset?.[1] || practiceCodes[key] || key.replace(/^(CS-XII?(?:-20\d{2})?-P1)-MCQS-\d+$/, '$1');
-  const paper = getFallbackPaper(paperCode);
+  const paperCode = subset?.[1] || practiceCodes[key] || key.replace(/^((?:CS-XII?(?:-20\d{2})?|BIO-XI-(?:201[7-9]|202[1-5]))-P1)-MCQS-\d+$/, '$1');
+  const biologyModel = hsscBiologyModelQuizPaper(paperCode);
+  const paper = biologyModel ?? getFallbackPaper(paperCode);
   const registeredMcqs = paper && paper.questions.length > 0 && paper.questions.every(q => q.questionType === 'MULTIPLE_CHOICE') && getAllStandardPapers().some(p => p.paperCode === paperCode && /-P1$/.test(p.paperCode));
-  if (!allowedPractice.has(paperCode) && !registeredMcqs) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Assessment not found.');
+  if (!allowedPractice.has(paperCode) && !registeredMcqs && !biologyModel) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Assessment not found.');
   if (!paper) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'Practice paper not found.');
   let source = gradablePracticeQuestions(paperCode, paper.questions);
   if (subset) {
@@ -236,19 +240,19 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   }
   if (key.includes('KINEMATICS') || key.includes('WAVES')) source = source.slice(0, 15);
   const questions = uniqueQuestions(source).map((q, i) => {
-    const content = sourcePracticeQuestion(q);
+    const content = sourcePracticeQuestion(q.sourceRegion.quiz_stem ? { ...q, questionText: q.sourceRegion.quiz_stem } : q);
     return { orderIndex: i + 1, marks: content.marks, questionData: content };
   });
   // A suspended, passwordless content owner can never authenticate.
   const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
-  const isHsscPhysics = /^(?:PHY|CS)-XII?(?:-(?:201[7-9]|202[1-5]))?-P1$/.test(paperCode);
+  const isHsscPhysics = /^(?:(?:PHY|CS)-XII?(?:-(?:201[7-9]|202[1-5]))?|BIO-XI-(?:201[7-9]|202[1-5]))-P1$/.test(paperCode);
   const academic = paperCode.startsWith('MTH-') || isHsscPhysics ? await prisma.pastPaper.findFirst({ where: { paperCode }, select: { classId: true, subjectId: true } }) : null;
   // Revised content starts a fresh quiz so existing attempts keep their frozen questions.
-  const revision = questions.length !== source.length || paperCode.startsWith('MTH-') || isHsscPhysics || /^CS-(IX|X)(-\d{4})?-P1$/.test(paperCode)
+  const revision = biologyModel || questions.length !== source.length || paperCode.startsWith('MTH-') || isHsscPhysics || /^CS-(IX|X)(-\d{4})?-P1$/.test(paperCode)
     ? '-' + createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16)
     : '';
   return prisma.quiz.upsert({ where: { id: `practice-${key}${revision}` }, update: academic || {}, include: quizInclude,
-    create: { id: `practice-${key}${revision}`, code: `PRACTICE-${key}${revision}`, teacherId: owner.id, ...(academic || {}), title: subset ? paper.title + ' — Selected practice (' + questions.length + ' questions)' : paper.title, status: 'PUBLISHED', visibility: 'PUBLIC', durationMin: subset || !isHsscPhysics ? questions.length <= 15 ? 20 : 55 : paper.durationMinutes ?? 90,
+    create: { id: `practice-${key}${revision}`, code: `PRACTICE-${key}${revision}`, teacherId: owner.id, ...(academic || {}), title: subset ? paper.title + ' — Selected practice (' + questions.length + ' questions)' : paper.title, status: 'PUBLISHED', visibility: 'PUBLIC', durationMin: !subset && (isHsscPhysics || biologyModel) ? paper.durationMinutes ?? 90 : questions.length <= 15 ? 20 : 55,
       totalMarks: questions.reduce((sum, q) => sum + q.marks, 0), questions: { create: questions }, settings: { create: { maxAttempts: 100, allowRetries: true, showCorrectAnswers: true, immediateFeedback: true, tabMonitoringEnabled: false } } } });
 }
 

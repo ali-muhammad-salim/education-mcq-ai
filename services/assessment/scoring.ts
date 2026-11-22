@@ -11,6 +11,9 @@ export function studentQuestion(q: FrozenQuestion) {
   const correctIdx = q.content.options.findIndex(o => o.isCorrect);
   const correctOpt = correctIdx >= 0 ? q.content.options[correctIdx] : undefined;
   const correctLetter = correctIdx >= 0 ? String.fromCharCode(65 + correctIdx) : '';
+  const correctLetters = q.content.acceptAnyCorrectOption
+    ? q.content.options.flatMap((option, index) => option.isCorrect ? [String.fromCharCode(65 + index)] : [])
+    : undefined;
   const optionFeedback: Record<string, string> = {};
   q.content.options.forEach((o, idx) => {
     if (o.feedback) {
@@ -20,6 +23,7 @@ export function studentQuestion(q: FrozenQuestion) {
   const encryptedReveal = encryptQuestionReveal(q.id, {
     correctOptionId: correctOpt?.id || '',
     correctLetter,
+    correctLetters,
     explanation: q.content.explanation || (correctOpt ? `The correct answer is (${correctLetter}) ${correctOpt.text}.` : ''),
     optionFeedback: Object.keys(optionFeedback).length > 0 ? optionFeedback : undefined,
     unit: q.content.unit,
@@ -75,6 +79,10 @@ export function answerFeedback(q: FrozenQuestion, input: unknown, score: number 
   if (['MCQ_SINGLE','TRUE_FALSE'].includes(c.questionType)) {
     const option=c.options.find(o=>o.id===a.selectedOptionId);
     const chosen = option?.text || 'Unknown option';
+    if (c.acceptAnyCorrectOption) {
+      const expected = c.options.filter(o => o.isCorrect).map(o => o.text).join(' or ');
+      return `Your answer “${chosen}” does not match either accepted answer: ${expected}.`;
+    }
     const expected = c.options.find(o=>o.isCorrect)?.text || '';
     return `Your answer “${chosen}” does not match the correct answer “${expected}”.`+(option?.feedback?' '+option.feedback:'');
   }

@@ -12,10 +12,13 @@ export const questionSchema = z.object({
   unit: z.string().max(100).optional(), acceptedAnswers: z.array(z.string().max(4000)).max(50).optional(),
   pastPaperRef: z.string().max(500).optional(), customDifficultyDesc: z.string().max(2000).optional(),
   reviewId: z.string().max(160).optional(), provenance: z.enum(['TEACHER_CREATED', 'QUESTION_BANK', 'AI_GENERATED', 'IMPORTED', 'PAST_PAPER']).optional(),
+  acceptAnyCorrectOption: z.literal(true).optional(),
   drawingSvg: z.string().max(200000).optional(), diagramUrl: z.string().max(250000).refine(v => v.startsWith('/') && !v.startsWith('//') || /^https?:\/\//i.test(v) || v.startsWith('data:image/'), 'Use a valid image URL.').optional(), matchingPairs: z.array(z.object({ left: z.string(), right: z.string() })).max(30).default([]),
 }).superRefine((q, ctx) => {
   const choice = ['MCQ_SINGLE', 'MCQ_MULTIPLE', 'TRUE_FALSE'].includes(q.questionType), correct = q.options.filter(o => o.isCorrect).length;
-  if (choice && (q.options.length < 2 || (q.questionType === 'MCQ_MULTIPLE' ? correct < 1 : correct !== 1))) ctx.addIssue({ code: 'custom', message: 'Choice questions require valid options and answer keys.' });
+  const acceptsAlternates = q.acceptAnyCorrectOption && q.questionType === 'MCQ_SINGLE' && q.provenance === 'PAST_PAPER';
+  if (q.acceptAnyCorrectOption && !acceptsAlternates) ctx.addIssue({ code: 'custom', message: 'Alternate answers apply only to single-choice past-paper questions.' });
+  if (choice && (q.options.length < 2 || (q.questionType === 'MCQ_MULTIPLE' || acceptsAlternates ? correct < 1 : correct !== 1))) ctx.addIssue({ code: 'custom', message: 'Choice questions require valid options and answer keys.' });
   // Letter case can distinguish printed scientific choices, such as RR and Rr.
   const optionTexts = q.options.map(o => q.provenance === 'PAST_PAPER' ? o.text.trim() : o.text.trim().toLowerCase());
   if (new Set(optionTexts).size !== q.options.length) ctx.addIssue({ code: 'custom', message: 'Options must be distinct.' });

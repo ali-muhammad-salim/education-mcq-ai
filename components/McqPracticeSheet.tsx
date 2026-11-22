@@ -13,6 +13,8 @@ export interface PracticeItem {
   stem: string;
   options: Record<string, string>;
   correct?: string;
+  correctOptions?: string[];
+  revealInPreview?: boolean;
   solution: string;
   optionFeedback?: unknown;
   diagram?: string | null;
@@ -32,6 +34,7 @@ interface McqPracticeSheetProps {
   search: string;
   onSearch: (value: string) => void;
   onTakeQuiz: () => void;
+  readOnly?: boolean;
 }
 
 const FILTERS: { id: PracticeFilter; label: string }[] = [
@@ -61,6 +64,7 @@ export default function McqPracticeSheet({
   search,
   onSearch,
   onTakeQuiz,
+  readOnly = false,
 }: McqPracticeSheetProps) {
   const [revealedAnswers, setRevealedAnswers] = useState<Record<string, boolean>>({});
   const [showAllAnswers, setShowAllAnswers] = useState(false);
@@ -69,7 +73,8 @@ export default function McqPracticeSheet({
   const [checkedAnswers, setCheckedAnswers] = useState<Record<string, boolean>>({});
 
   const checkedQuestionCount = items.filter(item => checkedAnswers[item.key]).length;
-  const practiceCorrect = items.filter(item => checkedAnswers[item.key] && userAnswers[item.key] === item.correct).length;
+  const practiceCorrect = items.filter(item => checkedAnswers[item.key] &&
+    (item.correctOptions ? item.correctOptions.includes(userAnswers[item.key]) : userAnswers[item.key] === item.correct)).length;
 
   const toggleReveal = (key: string) => setRevealedAnswers(prev => ({ ...prev, [key]: !prev[key] }));
   const selectOption = (key: string, option: string) => {
@@ -124,7 +129,7 @@ export default function McqPracticeSheet({
         </div>
       </div>
 
-      <div className={styles.sheetControls} role="group" aria-label="MCQ practice controls">
+      {!readOnly && <div className={styles.sheetControls} role="group" aria-label="MCQ practice controls">
         <button
           type="button"
           onClick={() => setShowAllAnswers(prev => !prev)}
@@ -158,7 +163,7 @@ export default function McqPracticeSheet({
           <span className={styles.sheetControlFull}>Take quiz</span>
           <span className={styles.sheetControlShort}>Quiz</span>
         </button>
-      </div>
+      </div>}
 
       {/* Browse filter bar — read-only preview unless Practice Mode is on */}
       <div style={{
@@ -188,7 +193,7 @@ export default function McqPracticeSheet({
             outline: 'none'
           }}
         />
-        {FILTERS.map(f => (
+        {FILTERS.filter(f => !readOnly || f.id === 'all' || f.id === 'diagram').map(f => (
           <button
             key={f.id}
             type="button"
@@ -210,7 +215,7 @@ export default function McqPracticeSheet({
         ))}
         <div style={{ flexBasis: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '0.25rem 0.75rem', fontSize: '0.76rem', color: 'var(--text-light, #4b5563)' }}>
           <strong role="status">Showing {items.length} {items.length === 1 ? 'question' : 'questions'}</strong>
-          <span>{interactiveMode ? 'Select an option, then check your answer' : 'Turn on Practice to answer questions'}</span>
+          {!readOnly && <span>{interactiveMode ? 'Select an option, then check your answer' : 'Turn on Practice to answer questions'}</span>}
         </div>
       </div>
 
@@ -259,10 +264,12 @@ export default function McqPracticeSheet({
           items.map((item, idx) => {
             const rowKey = item.key;
             const isRevealed = revealedAnswers[rowKey];
-            const correctKey = item.correct || '';
+            const accepted = item.correctOptions ?? (item.correct ? [item.correct] : []);
+            const correctKey = accepted.join(' or ');
+            const correctLabel = accepted.length > 1 ? 'Correct options' : 'Correct option';
             const selectedOpt = userAnswers[rowKey];
             const isChecked = Boolean(checkedAnswers[rowKey]);
-            const isCorrect = isChecked && selectedOpt === correctKey;
+            const isCorrect = isChecked && accepted.includes(selectedOpt);
             const optionsObj = item.options;
             const solutionText = item.solution;
 
@@ -367,7 +374,7 @@ export default function McqPracticeSheet({
                         const optText = optionsObj[optKey];
                         if (!optText) return null;
 
-                        const isAnswerKey = (isRevealed || showAllAnswers) && correctKey === optKey;
+                        const isAnswerKey = (isRevealed || showAllAnswers) && accepted.includes(optKey);
                         return (
                           <div
                             key={optKey}
@@ -435,7 +442,7 @@ export default function McqPracticeSheet({
                           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.92rem', fontWeight: 800, color: isCorrect ? '#166534' : '#b91c1c', marginBottom: '0.35rem' }}>
                             {isCorrect ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
                             <span>{isCorrect ? 'Correct' : 'Incorrect'}</span>
-                            <div>Correct option ({correctKey}) <StructuredContent text={optionsObj[correctKey] || ''} /></div>
+                            <div>{correctLabel} ({correctKey}) {accepted.map(key => <StructuredContent key={key} text={optionsObj[key] || ''} />)}</div>
                           </div>
                           {!isCorrect && selectedOpt && (
                             <div style={{ fontSize: '0.86rem', color: '#b91c1c', marginBottom: '0.35rem', lineHeight: 1.5 }}>
@@ -444,7 +451,7 @@ export default function McqPracticeSheet({
                             </div>
                           )}
                           <div style={{ fontSize: '0.88rem', color: '#1e293b', lineHeight: 1.55 }}>
-                            <strong>Why Option ({correctKey}) is correct: </strong>
+                            <strong>{correctLabel} ({correctKey}) </strong>
                             <MathText text={solutionText} />
                           </div>
                         </div>
@@ -454,7 +461,7 @@ export default function McqPracticeSheet({
                 </div>
 
                 {/* Solution — answer sheet when "Show correct answer only" is on, toggle otherwise */}
-                <div style={{ marginLeft: '2.5rem', marginTop: '0.5rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                {(!readOnly || item.revealInPreview) && <div style={{ marginLeft: '2.5rem', marginTop: '0.5rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                   {showAllAnswers ? (
                     <div style={{
                       background: '#f0fdf4',
@@ -472,7 +479,7 @@ export default function McqPracticeSheet({
                           padding: '2px 8px',
                           borderRadius: '4px'
                         }}>
-                          Answer sheet: {correctKey ? `Option ${correctKey}` : 'Review pending'}
+                          Answer sheet: {correctKey || 'Review pending'}
                         </span>
                       </div>
                       <div style={{ fontSize: '0.92rem', lineHeight: 1.6 }}>
@@ -522,7 +529,7 @@ export default function McqPracticeSheet({
                               padding: '3px 8px',
                               borderRadius: '4px'
                             }}>
-                              Correct Option: {correctKey || 'Review pending'}
+                              {correctLabel}: {correctKey || 'Review pending'}
                             </span>
                           </div>
                           <div style={{ fontSize: '0.92rem', lineHeight: 1.6 }}>
@@ -532,7 +539,7 @@ export default function McqPracticeSheet({
                       )}
                     </>
                   )}
-                </div>
+                </div>}
               </div>
             );
           })

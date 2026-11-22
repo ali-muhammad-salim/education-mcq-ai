@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
-  FileText, Award, CheckCircle2, XCircle, AlertCircle,
+  Award, CheckCircle2, XCircle, AlertCircle,
   HelpCircle, Sparkles, BookOpen, Clock, Download, ChevronRight, Check, Eye, EyeOff,
   ShieldCheck, AlertTriangle, Lightbulb, CheckSquare, Edit3, ArrowLeft
 } from 'lucide-react';
@@ -12,11 +12,12 @@ import StructuredContent from '@/components/StructuredContent';
 import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 import DownloadCountdownModal from '@/components/DownloadCountdownModal';
 import TakeQuizModal from '@/components/TakeQuizModal';
-import ContinuousDocument from '@/components/ContinuousDocument';
+import PaperPdfPanel from '@/components/PaperPdfPanel';
 import ResourceDocumentNav from '@/components/ResourceDocumentNav';
+import PaperViewSwitch from '@/components/PaperViewSwitch';
 import PracticeHud from '@/components/PracticeHud';
 import practice from '@/components/Practice.module.css';
-import {safePaperOriginal, paperAnswer, paperChoices} from '@/lib/paperPresentation';
+import {safePaperOriginal, paperAnswer, paperChoices, paperScoringAnswers} from '@/lib/paperPresentation';
 import { groupDuplicateQuestions } from '@/lib/uniqueQuestions';
 import {questionSyllabus} from '@/lib/questionSyllabus';
 import {scrollAndPulse} from '@/lib/anchorPulse';
@@ -39,6 +40,12 @@ interface Paper {
   durationMinutes?: number;
   rubricInstruction?: string;
   markScalingNote?: string;
+  questionCount?: number;
+  instructions?: string[];
+  coverNote?: string;
+  answerKeyLabel?: string;
+  printedCode?: string;
+  markingGuideUrl?: string;
   id: string;
   title: string;
   paperCode?: string;
@@ -59,13 +66,24 @@ interface Props {
   resourceLinks?: React.ReactNode;
   pdfUrl?: string;
   historical?: boolean;
+  readOnly?: boolean;
+  initialView?: 'original';
+  digitalContent?: React.ReactNode;
 }
 
-export default function PaperViewerClient({ paper, questions: sourceQuestions, backUrl, hideHeader = false, pdfUrl, historical = false, resourceLinks }: Props) {
+const syllabusBadge: React.CSSProperties = {
+  background: '#ecfdf5', color: '#066e4f', border: '1px solid #a7f3d0',
+  padding: '2px 9px', borderRadius: '5px', fontSize: '0.8rem', fontWeight: 800, textDecoration: 'none',
+};
+
+export default function PaperViewerClient({ paper, questions: sourceQuestions, backUrl, hideHeader = false, pdfUrl, historical = false, resourceLinks, readOnly = false, initialView, digitalContent }: Props) {
   const groups = groupDuplicateQuestions(sourceQuestions, question => ({ ...question, paperCode: paper.paperCode }));
   const questions = groups.map(([question]) => question);
+  const hasDigital = questions.length > 0 || Boolean(digitalContent);
+  const isPractical = /-P3$/i.test(paper.paperCode || '');
+  const questionCount = paper.questionCount ?? questions.length;
   const [displayMode, setDisplayMode] = useState<'generated' | 'original_pdf'>(
-    questions && questions.length > 0 ? 'generated' : 'original_pdf'
+    hasDigital && initialView !== 'original' ? 'generated' : 'original_pdf'
   );
   const [showCorrectAnswers, setShowCorrectAnswers] = useState<boolean>(false);
   const [interactiveMode, setInteractiveMode] = useState<boolean>(false);
@@ -80,11 +98,13 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
     if (typeof window !== 'undefined') {
       const search = window.location.search || '';
       const hash = window.location.hash || '';
-      if (new URLSearchParams(search).get('view')==='solved') {
+      const view = new URLSearchParams(search).get('view');
+      if (view === 'original' && original) setDisplayMode('original_pdf');
+      if (!readOnly && view === 'solved') {
         setShowCorrectAnswers(true);
         setRevealedSolutions(Object.fromEntries(questions.map(q=>[q.questionNumber,true])));
       }
-      if (search.includes('quiz') || search.includes('take') || hash === '#quiz') {
+      if (!readOnly && !isPractical && (search.includes('quiz') || search.includes('take') || hash === '#quiz')) {
         setQuizModalOpen(true);
       }
     }
@@ -142,7 +162,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
     return sourceRegion;
   };
 
-  const isPaper2 = !paper.paperCode?.toUpperCase().includes('CHAP') && (
+  const isPaper2 = !isPractical && !paper.paperCode?.toUpperCase().includes('CHAP') && (
     (paper.paperCode && (paper.paperCode.toUpperCase().includes('-P2') || paper.paperCode.toUpperCase().endsWith('P2'))) ||
     (paper.title && paper.title.toUpperCase().includes('PAPER II')) ||
     questions.some(q => q.questionType === 'CONSTRUCTED_RESPONSE' || q.questionType === 'EXTENDED_RESPONSE')
@@ -153,8 +173,10 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
   const hsscAnnual = /^PHY-XI-(?:201[7-9]|202[1-5])-P[12]$/.test(paper.paperCode || '');
   const hsscPhysics = hsscAnnual || /^PHY-XII?-P[12]$/.test(paper.paperCode || '');
   const hsscComputerScience = /^CS-XII?(?:-20\d{2})?-P[12]$/.test(paper.paperCode || '');
-  const isHssc = hsscPhysics || hsscComputerScience;
+  const hsscBiologyAnnual = /^BIO-XI-(?:201[7-9]|202[1-5])-P[12]$/.test(paper.paperCode || '');
+  const isHssc = hsscPhysics || hsscComputerScience || (paper.academicClass?.level ?? 0) >= 11;
   const gradeLabel = isHssc ? (paper.academicClass?.level === 11 ? 'CLASS XI' : 'CLASS XII') : isGrade9 ? 'CLASS IX' : 'CLASS X';
+  const paperName = `${paper.subject?.name || 'Physics'} ${isPractical ? 'Paper III Practical' : isPaper2 ? 'Paper II' : 'Paper I'}`;
   const subjectId = paper.subjectId || (paper.subject as any)?.id || '3e6f82ae-95dc-4edb-b806-d75b194a21cd';
 
   const practiceItems = isPaper2 ? [] : questions.map((question, index) => {
@@ -162,12 +184,12 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
     const choices = paperChoices(metadata.choices || metadata.options || (question as any).options || (question as any).choices || {});
     return {
       qNum: question.questionNumber || String(index + 1),
-      correctKey: paperAnswer(metadata, choices) || ''
+      correctKeys: paperScoringAnswers(metadata, choices)
     };
-  }).filter(item => item.correctKey);
+  }).filter(item => item.correctKeys.length);
   const practiceTotal = practiceItems.length;
   const practiceAnswered = practiceItems.filter(item => userAnswers[item.qNum]).length;
-  const practiceCorrect = practiceItems.filter(item => userAnswers[item.qNum] && userAnswers[item.qNum] === item.correctKey).length;
+  const practiceCorrect = practiceItems.filter(item => item.correctKeys.includes(userAnswers[item.qNum])).length;
 
   return (
     <div data-paper-page data-practice-active={interactiveMode && displayMode === 'generated' && !isPaper2 ? 'true' : undefined} style={{ marginTop: '0.5rem', paddingBottom: interactiveMode && displayMode === 'generated' ? '6.5rem' : undefined }}>
@@ -237,7 +259,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-            {!isPaper2 && (
+            {!isPaper2 && !isPractical && !readOnly && (
               <button
                 type="button"
                 onClick={() => setQuizModalOpen(true)}
@@ -290,155 +312,26 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
       {resourceLinks !== undefined ? (
         <ResourceDocumentNav
           links={resourceLinks}
-          digitalLabel="Digital Paper"
+          digitalLabel={hasDigital ? 'Digital Paper' : undefined}
           showOriginal={displayMode === 'original_pdf'}
           pdfAvailable={Boolean(original)}
           onShowDigital={() => setDisplayMode('generated')}
           onShowOriginal={() => setDisplayMode('original_pdf')}
         />
-      ) : <div
-        role="group"
-        aria-label="Document view"
-        data-paper-switch
-        style={{
-          background: '#151f32',
-          border: '1px solid #26334d',
-          borderRadius: '14px',
-          padding: '6px',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '6px',
-          marginBottom: '1.5rem',
-          boxShadow: '0 4px 16px rgba(15, 23, 42, 0.18)',
-        }}
-      >
-        <button
-          type="button"
-          aria-pressed={displayMode === 'generated'}
-          onClick={() => setDisplayMode('generated')}
-          data-paper-switch-btn
-          style={{
-            padding: '11px 20px',
-            borderRadius: '10px',
-            fontSize: '0.95rem',
-            minHeight: '46px',
-            fontWeight: 800,
-            background: displayMode === 'generated' ? '#066e4f' : 'transparent',
-            color: '#ffffff',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '0.5rem',
-            transition: 'all 0.15s ease',
-          }}
-        >
-          <Sparkles size={18} />
-          <span>Digital Paper</span>
-        </button>
-
-        <button
-          type="button"
-          aria-pressed={displayMode === 'original_pdf'}
-          onClick={() => setDisplayMode('original_pdf')}
-          data-paper-switch-btn
-          style={{
-            padding: '11px 20px',
-            borderRadius: '10px',
-            fontSize: '0.95rem',
-            minHeight: '46px',
-            fontWeight: 800,
-            background: displayMode === 'original_pdf' ? '#066e4f' : 'transparent',
-            color: '#ffffff',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '0.5rem',
-            transition: 'all 0.15s ease',
-          }}
-        >
-          <FileText size={18} />
-          <span>Original PDF</span>
-        </button>
-      </div>}
+      ) : <PaperViewSwitch
+        digitalLabel={hasDigital ? 'Digital Paper' : undefined}
+        showOriginal={displayMode === 'original_pdf'}
+        pdfAvailable={Boolean(original)}
+        onShowDigital={() => setDisplayMode('generated')}
+        onShowOriginal={() => setDisplayMode('original_pdf')}
+      />}
 
       {/* ========================================================================= */}
       {/* OPTION 2: EMBEDDED ORIGINAL BOARD PDF VIEWER                              */}
       {/* ========================================================================= */}
-      {displayMode === 'original_pdf' && (
-        <div style={{
-          background: '#ffffff',
-          border: '1.5px solid #cbd5e1',
-          borderRadius: '14px',
-          overflow: 'hidden',
-          boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
-          marginBottom: '3rem'
-        }}>
-          <div style={{
-            padding: '0.85rem 1.25rem',
-            background: '#f1f5f9',
-            borderBottom: '1px solid #cbd5e1',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            fontSize: '0.88rem',
-            fontWeight: 600,
-            color: 'var(--text-color)',
-            flexWrap: 'wrap',
-            gap: '0.75rem'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <FileText size={18} color="#0b5e4a" />
-              <span>Original Board Document: <strong>{paper.title}</strong></span>
-            </div>
-            {(() => {
-              const safeUrl = original;
-              return safeUrl ? (
-                <a
-                  href={safeUrl}
-                  download
-                  style={{ color: 'var(--primary-color)', flexShrink: 0, fontWeight: 700, textDecoration: 'underline', fontSize: '0.82rem' }}
-                >
-                  Direct Download ⬇
-                </a>
-              ) : null;
-            })()}
-          </div>
-          {(() => {
-            const safeUrl = original;
-            return safeUrl ? (
-              <div style={{padding:"1rem"}}><ContinuousDocument url={safeUrl} title={paper.title} /></div>
-            ) : (
-              <div style={{ padding: '3.5rem 2rem', textAlign: 'center', color: '#64748b' }}>
-                <p style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.5rem' }}>
-                  Scanned PDF is currently being digitized for this session.
-                </p>
-                <p style={{ fontSize: '0.9rem', color: '#64748b', marginBottom: '1.5rem' }}>
-                  All authentic board questions and verified solutions are available in digital interactive format below.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setDisplayMode('generated')}
-                  style={{
-                    background: '#0b5e4a',
-                    color: '#ffffff',
-                    padding: '10px 22px',
-                    borderRadius: '8px',
-                    fontWeight: 700,
-                    border: 'none',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Switch to Digital Interactive Examination →
-                </button>
-              </div>
-            );
-          })()}
-        </div>
-      )}
+      {displayMode === 'original_pdf' && (original ? (
+        <PaperPdfPanel url={original} title={paper.title} />
+      ) : <p>Original document unavailable.</p>)}
 
       {/* ========================================================================= */}
       {/* OPTION 1: GENERATED DIGITAL INTERACTIVE VIEW (WITH TOGGLE & WORKING SLOS) */}
@@ -446,7 +339,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
       {displayMode === 'generated' && (
         <>
           {/* Control Bar (For Paper I: Answer Toggle & Timed Quiz | For Paper II: Exact Ditto Question Paper Notice + Link to Solved E-Marking Notes) */}
-          {!isPaper2 ? (
+          {readOnly || isPractical ? null : !isPaper2 ? (
             <div style={{
               display: 'flex',
               alignItems: 'center',
@@ -555,7 +448,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
               </span>
               {(hsscAnnual || /^MTH-(?:IX|X)-(?:201[789]|202[345])-P2$/.test(paper.paperCode || '') || !paper.paperCode?.includes('-P2') || paper.paperCode?.includes('2024') || paper.paperCode?.includes('2025')) && !(paper.paperCode?.startsWith('CHM-') && (paper.examYear === 2021 || paper.examYear === 2022)) ? (
                 <Link
-                  href={/^CS-XI-2019-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2019-emarking' : /^CS-XI-2023-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2023-emarking' : /^CS-XI-2024-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2024-marking' : hsscAnnual ? `/resources/physics-xi-${paper.examYear}-emarking` : `/resources/${paper.paperCode?.startsWith('MTH-') ? 'mathematics' : paper.paperCode?.startsWith('CS-') ? 'computer-science' : paper.paperCode?.startsWith('CHM-') ? 'chemistry' : paper.paperCode?.startsWith('BIO-') ? 'biology' : 'physics'}-${isGrade9 ? 'ix' : 'x'}-${paper.examYear}-emarking`}
+                  href={paper.markingGuideUrl ?? (/^CS-XI-2019-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2019-emarking' : /^CS-XI-2023-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2023-emarking' : /^CS-XI-2024-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2024-marking' : hsscAnnual ? `/resources/physics-xi-${paper.examYear}-emarking` : `/resources/${paper.paperCode?.startsWith('MTH-') ? 'mathematics' : paper.paperCode?.startsWith('CS-') ? 'computer-science' : paper.paperCode?.startsWith('CHM-') ? 'chemistry' : paper.paperCode?.startsWith('BIO-') ? 'biology' : 'physics'}-${isGrade9 ? 'ix' : 'x'}-${paper.examYear}-emarking`)}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -605,14 +498,15 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                 {paper.examSession?.toUpperCase().includes('MODEL') ? (isHssc ? `MODEL EXAMINATIONS ${paper.examYear} AND ONWARDS` : 'MODEL EXAMINATIONS') : `ANNUAL EXAMINATIONS (THEORY) ${paper.examYear}`}
               </div>
               <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#111827', marginBottom: '0.4rem' }}>
-                {paper.subject?.name || 'Physics'} {isPaper2 ? 'Paper II' : 'Paper I'}
+                {paperName}
               </div>
               <div style={{ fontSize: '1rem', fontWeight: 800, color: '#111827' }}>
                 {`Time: ${paper.durationMinutes ?? (isPaper2 ? 110 : 70)} minutes     Marks: ${paper.totalMarks ?? (isPaper2 ? 25 : questions.length)}`}
               </div>
+              {paper.coverNote && <p style={{ marginBottom: 0 }}>{paper.coverNote}</p>}
 
               {/* Authentic AKU-EB Instructions & Rubric Box */}
-              {!showCorrectAnswers && (
+              {!showCorrectAnswers && (!isPractical || paper.instructions) && (
                 <div data-paper-cover-notes style={{
                   marginTop: '1.5rem',
                   borderTop: '1.5px solid #111827',
@@ -626,7 +520,11 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                   <div style={{ fontWeight: 700, fontSize: '0.94rem', marginBottom: '0.6rem', color: '#111827' }}>
                     Please read the following instructions carefully.
                   </div>
-                  {isPaper2 ? (
+                  {paper.instructions ? (
+                    <ol style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.92rem', color: '#111827', lineHeight: 1.6 }}>
+                      {paper.instructions.map(instruction => <li key={instruction}><StructuredContent text={instruction} /></li>)}
+                    </ol>
+                  ) : isPaper2 ? (
                     <div style={{ fontSize: '0.94rem', color: '#111827', lineHeight: 1.6 }}>
                       <p style={{ margin: '0 0 0.75rem 0' }}>
                         1. &nbsp;&nbsp;Check your name and school information. Sign if it is accurate.
@@ -692,14 +590,17 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
               fontFamily: 'system-ui, sans-serif',
               fontWeight: 600
             }}>
-              <span>{paper.subject?.name || 'Physics'} {isPaper2 ? 'Paper II' : 'Paper I'} &bull; {gradeLabel} ({paper.examYear})</span>
-              <span>
-                {showCorrectAnswers ? '⭐ Quick Study Mode: Questions, SLO Mappings & Answer Key' : `Total ${questions.length} Examination Items • SLO Mapped`}
-              </span>
+              <span>{paperName} &bull; {gradeLabel} ({paper.examYear})</span>
+              {questionCount > 0 && <span>
+                {showCorrectAnswers
+                  ? paper.answerKeyLabel ?? '⭐ Quick Study Mode: Questions, SLO Mappings & Answer Key'
+                  : `Total ${questionCount} Examination Items`}
+              </span>}
             </div>
 
             {/* Questions Listing */}
             <div data-paper-questions style={{ padding: '2.5rem' }}>
+              {digitalContent}
               {questions.map((q, idx) => {
                 const meta = parseSourceRegion(q.sourceRegion);
                 const rawChoices = meta.choices || meta.options || (q as any).options || (q as any).choices || {};
@@ -724,12 +625,14 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                 const mappingLevel = historical && meta.current_syllabus_reviewed && [9, 10, 11, 12].includes(meta.mapping_scope?.grade)
                   ? meta.mapping_scope.grade : paper.academicClass?.level || 9;
                 const mapping = questionSyllabus(meta,q.slos,mappingLevel,paper.subject?.name || 'Physics',paper.boardCode || 'AKU-EB',historical);
+                const verifiedChapter = meta.chapter_mapping_verified === true && meta.chapter_name && meta.chapter_href;
                 const sscComputerScience = /^CS-(IX|X)-/.test(paper.paperCode || '');
                 const sloCode = mapping.code;
                 const topicName = mapping.topic;
 
                 // Correct answer and candidate responses
                 const correctKey = paperAnswer(meta, choices) || '';
+                const scoringAnswers = paperScoringAnswers(meta, choices);
                 const correctOptionText = choices[correctKey] || '';
                 const sourceAcceptedOptions: string[] = meta.accepted_options || [];
                 const hasBoardAlternates = typeof meta.official_answer === 'string' && meta.official_answer.includes(',');
@@ -761,7 +664,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                 // Interactive practice variables
                 const selectedOpt = userAnswers[qNum];
                 const isChecked = checkedAnswers[qNum];
-                const isCorrect = isChecked && selectedOpt === correctKey;
+                const isCorrect = isChecked && scoringAnswers.includes(selectedOpt);
 
                 return (
                   <div id={"question-"+qNum} key={q.id} style={{
@@ -769,6 +672,8 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                     paddingBottom: showCorrectAnswers ? '1.75rem' : '2.5rem',
                     borderBottom: idx === questions.length - 1 ? 'none' : '1px solid #e5e7eb'
                   }}>
+                    {meta.group_question_number && <span id={`question-${meta.group_question_number}`} />}
+                    {readOnly && meta.choice_instruction && <p data-question-block style={{ fontWeight: 700 }}>{meta.choice_instruction}</p>}
                     {[...new Set(groups[idx].slice(1).map(question => question.questionNumber))]
                       .filter(number => String(number) !== qNum)
                       .map(number => <span key={number} id={`question-${number}`} />)}
@@ -804,7 +709,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                     </div>
 
                     {/* Current 2025 Syllabus SLO Badge (or Out of 2025 Syllabus Badge) */}
-                    <div data-question-block data-slo-badge style={{
+                    {(!readOnly || verifiedChapter || mapping.status === 'mapped') && <div data-question-block data-slo-badge style={{
                       marginLeft: '2.5rem',
                       marginBottom: '1rem',
                       padding: '0.6rem 0.9rem',
@@ -817,25 +722,20 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                       fontFamily: 'system-ui, -apple-system, sans-serif'
                     }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
-                        {meta.mapping_status === 'MOVED_TO_GRADE_X' ? (
+                        {verifiedChapter ? (
+                          <Link href={verifiedChapter} style={syllabusBadge}>
+                            2025 Syllabus: {meta.chapter_name} ↗
+                          </Link>
+                        ) : meta.mapping_status === 'MOVED_TO_GRADE_X' ? (
                           <Link href={`/akueb/X/mathematics/syllabus#slo-${encodeURIComponent(meta.current_slo || '')}`}>
                             Current syllabus: moved to Class X · SLO {meta.current_slo}
                           </Link>
                         ) : mapping.status === 'mapped' && !meta.out_of_syllabus ? (
                           <Link
                             href={mapping.href!}
-                            style={{
-                              background: '#ecfdf5',
-                              color: '#066e4f',
-                              border: '1px solid #a7f3d0',
-                              padding: '2px 9px',
-                              borderRadius: '5px',
-                              fontSize: '0.8rem',
-                              fontWeight: 800,
-                              textDecoration: 'none'
-                            }}
+                            style={syllabusBadge}
                           >
-                            2025 Syllabus: {sscComputerScience && mappingLevel !== paper.academicClass?.level ? `Class ${mappingLevel === 9 ? 'IX' : 'X'} · ` : ''}SLO {sloCode}{topicName ? ` • ${topicName}` : ''} ↗
+                            2025 Syllabus: {(sscComputerScience || hsscBiologyAnnual) && mappingLevel !== paper.academicClass?.level ? `Class ${({ 9: 'IX', 10: 'X', 11: 'XI', 12: 'XII' } as Record<number, string>)[mappingLevel]} · ` : ''}SLO {sloCode}{topicName ? ` • ${topicName}` : ''} ↗
                           </Link>
                         ) : (
                           <span style={{
@@ -847,12 +747,12 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                             fontSize: '0.8rem',
                             fontWeight: 800
                           }}>
-                            {meta.mapping_status === 'NO_DIRECT_OUTCOME' ? 'No direct outcome in the current syllabus' : mapping.status === 'outside' ? 'Out of 2025 Syllabus' : 'SLO mapping awaiting review'}
+                            {meta.mapping_status === 'NO_DIRECT_OUTCOME' ? 'No direct match in the current syllabus' : mapping.status === 'outside' ? 'Out of 2025 Syllabus' : 'SLO mapping awaiting review'}
                           </span>
                         )}
-                        {(hsscPhysics || sscComputerScience) && mapping.status === 'mapped' && Array.isArray(meta.current_mapping) &&
+                        {(hsscPhysics || sscComputerScience || hsscBiologyAnnual) && mapping.status === 'mapped' && Array.isArray(meta.current_mapping) &&
                           meta.current_mapping.slice(1).map((outcome: { code: string; grade?: number }) => (
-                            <Link key={outcome.code} href={(outcome.grade ? (sscComputerScience ? `/akueb/${outcome.grade === 9 ? 'IX' : 'X'}/computer-science/syllabus` : `/akueb/${outcome.grade === 12 ? 'XII' : 'XI'}/physics/syllabus`) : mapping.href!.split('#')[0]) + '#slo-' + encodeURIComponent(outcome.code)}>
+                            <Link key={outcome.code} href={(outcome.grade && !hsscBiologyAnnual ? (sscComputerScience ? `/akueb/${outcome.grade === 9 ? 'IX' : 'X'}/computer-science/syllabus` : `/akueb/${outcome.grade === 12 ? 'XII' : 'XI'}/physics/syllabus`) : mapping.href!.split('#')[0]) + '#slo-' + encodeURIComponent(outcome.code)}>
                               SLO {outcome.code} ↗
                             </Link>
                           ))}
@@ -872,8 +772,8 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                           </span>
                         )}
                       </div>
-                    </div>
-                    {meta.choice_instruction && <p data-question-block style={{ marginLeft: '2.5rem', fontWeight: 700 }}>{meta.choice_instruction}</p>}
+                    </div>}
+                    {!readOnly && meta.choice_instruction && <p data-question-block style={{ marginLeft: '2.5rem', fontWeight: 700 }}>{meta.choice_instruction}</p>}
                     {/* Cropped Diagram / Graph / Circuit (if present) */}
                     {(() => {
                       if (q.diagramBased === false || (q as any).isDiagram === false) return null;
@@ -906,7 +806,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                     {/* ---------------------------------------------------- */}
                     {/* PAPER 1: OPTIONS & VERIFIED KEY                      */}
                     {/* ---------------------------------------------------- */}
-                    {!isPaper2 && choices && Object.keys(choices).length > 0 && (
+                    {!isPaper2 && (!meta.quiz_stem || (interactiveMode && correctKey)) && Object.keys(choices).length > 0 && (
                       <div data-question-block style={{ marginLeft: '2.5rem', marginBottom: '1rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
 
                         {/* Interactive Practice Mode */}
@@ -916,8 +816,8 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                               const optText = choices[optKey] || '';
                               if (!optText) return null;
                               const isSelected = selectedOpt === optKey;
-                              const isRight = isChecked && optKey === correctKey;
-                              const isWrong = isChecked && isSelected && optKey !== correctKey;
+                              const isRight = isChecked && scoringAnswers.includes(optKey);
+                              const isWrong = isChecked && isSelected && !isRight;
                               return (
                                 <button
                                   key={optKey}
@@ -998,7 +898,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                             <div className={practice.feedbackTitle}>
                               {isCorrect ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
                               <span>{isCorrect ? 'Correct' : 'Incorrect'}</span>
-                              <div>Correct option ({correctKey}) <StructuredContent text={correctOptionText} /></div>
+                              {scoringAnswers.map(key => <div key={key}>{scoringAnswers.length > 1 ? 'Accepted option' : 'Correct option'} ({key}) <StructuredContent text={choices[key]} /></div>)}
                             </div>
                             {!isCorrect && selectedOpt && (
                               <div className={practice.reason}>
@@ -1007,7 +907,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                               </div>
                             )}
                             <div className={practice.explanation}>
-                              <strong>Why Option ({correctKey}) is correct: </strong>
+                              <strong>{scoringAnswers.length > 1 ? 'Why these options earn credit' : `Why option (${correctKey}) earns credit`}: </strong>
                               <MathText text={betterResponse} />
                             </div>
                           </div>
@@ -1018,7 +918,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                     {/* ---------------------------------------------------- */}
                     {/* PAPER 1: SOLUTION / REASONING CARD                   */}
                     {/* ---------------------------------------------------- */}
-                    {!isPaper2 && (
+                    {!readOnly && !isPaper2 && (
                       <div data-question-block style={{ marginLeft: '2.5rem', marginTop: '0.5rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                         {showCorrectAnswers ? (
                           /* Quick Study: Automatically Show Solution & Key */
@@ -1098,19 +998,22 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                     {/* ---------------------------------------------------- */}
                     {isPaper2 && (
                       <div data-question-block style={{ marginLeft: '2.5rem', marginTop: '0.75rem' }}>
-                        {hsscAnnual && meta.emarkingExamples?.map((item: { part: string; solution: string; pdf: string; better: string; weaker: string }) => (
+                        {(hsscAnnual || paper.markingGuideUrl) && meta.emarkingExamples?.map((item: { part: string; solution: string; pdf: string; better?: string; weaker?: string; overall?: string; betterNotes?: string; weakerNotes?: string }) => (
                           <details key={item.part} style={{ marginBottom: '1rem' }}>
-                            <summary>Worked solution and board examples · Q{item.part}</summary>
+                            <summary>{paper.markingGuideUrl ? 'Board marking notes and examples' : 'Worked solution and board examples'} · Q{item.part}</summary>
                             <StructuredContent text={item.solution} />
-                            <p><a href={item.pdf} target="_blank" rel="noreferrer">Open the board’s checking hints and original reference</a></p>
-                            <figure>
+                            <p><a href={item.pdf} target="_blank" rel="noreferrer">Open the board’s original marking notes</a></p>
+                            {item.overall && <StructuredContent text={item.overall} />}
+                            {item.betterNotes && <StructuredContent text={item.betterNotes} />}
+                            {item.better && <figure>
                               <figcaption>Stronger response · board example</figcaption>
                               <img src={item.better} alt={`Stronger response for question ${item.part}`} loading="lazy" style={{ maxWidth: '100%' }} />
-                            </figure>
-                            <figure>
+                            </figure>}
+                            {item.weakerNotes && <StructuredContent text={item.weakerNotes} />}
+                            {item.weaker && <figure>
                               <figcaption>Weaker response · board example</figcaption>
                               <img src={item.weaker} alt={`Weaker response for question ${item.part}`} loading="lazy" style={{ maxWidth: '100%' }} />
-                            </figure>
+                            </figure>}
                           </details>
                         ))}
                         {meta.model_answer_origin && (
@@ -1161,9 +1064,9 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
               color: '#111827',
               background: '#ffffff'
             }}>
-              <span>{hsscPhysics || paper.paperCode?.startsWith('CS-') || paper.paperCode?.startsWith('CHM-') || paper.paperCode?.startsWith('MTH-') ? paper.paperCode : !isGrade9 ? (isPaper2 ? 'S2502-1721120' : 'S2502-1721110') : paper.examYear === 2024 ? (isPaper2 ? 'S2401-1711120' : 'S2401-1711110') : (isPaper2 ? 'S2501-1711120' : 'S2501-1711110')}</span>
+              <span>{paper.printedCode ?? (readOnly || isHssc || paper.paperCode?.startsWith('CS-') || paper.paperCode?.startsWith('CHM-') || paper.paperCode?.startsWith('MTH-') ? paper.paperCode : !isGrade9 ? (isPaper2 ? 'S2502-1721120' : 'S2502-1721110') : paper.examYear === 2024 ? (isPaper2 ? 'S2401-1711120' : 'S2401-1711110') : (isPaper2 ? 'S2501-1711120' : 'S2501-1711110'))}</span>
               <span style={{ letterSpacing: '1px' }}>END OF PAPER</span>
-              <span>{paper.subject?.name || 'Physics'} {isPaper2 ? 'Paper II' : 'Paper I'}</span>
+              <span>{paperName}</span>
             </div>
           </div>
 
@@ -1183,15 +1086,18 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
       />}
 
       {/* Full-featured Take A Quiz Modal */}
-      <TakeQuizModal
+      {!readOnly && !isPractical && <TakeQuizModal
         isOpen={quizModalOpen}
         onClose={() => setQuizModalOpen(false)}
         paperTitle={paper.title}
         paperCode={paper.paperCode || 'PHY-IX-P1'}
         questions={isHssc ? questions.filter((question, index) =>
           practiceItems.some(item => item.qNum === (question.questionNumber || String(index + 1)))
-        ) : questions}
-      />
+        ).map(question => {
+          const stem = parseSourceRegion(question.sourceRegion).quiz_stem;
+          return typeof stem === 'string' ? { ...question, questionText: stem } : question;
+        }) : questions}
+      />}
 
     </div>
   );

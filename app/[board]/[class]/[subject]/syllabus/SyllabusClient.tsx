@@ -14,6 +14,7 @@ import { scrollAndPulse } from '@/lib/anchorPulse';
 import type { hsscComputerScienceSections } from "@/lib/hsscComputerScienceSyllabus";
 import type { physicsSyllabusSections } from '@/lib/physicsSyllabusSections';
 import type { sscBiologySyllabus } from '@/lib/sscBiologySyllabus';
+import type { hsscBiologySyllabus } from '@/lib/hsscBiologySyllabus';
 import styles from './SyllabusClient.module.css';
 
 interface Props {
@@ -26,25 +27,34 @@ interface Props {
   physicsSections?: ReturnType<typeof physicsSyllabusSections>;
   computerScienceSections?: ReturnType<typeof hsscComputerScienceSections>;
   biologySections?: ReturnType<typeof sscBiologySyllabus>;
+  seniorBiologySections?: ReturnType<typeof hsscBiologySyllabus>;
 }
 
-function outcomeAnchor(subject: string, slo: { code: string; cognitiveLevel: string }) {
-  return subject === 'biology' && slo.code === '16.2.4' && slo.cognitiveLevel === 'U'
+function outcomeAnchor(subject: string, grade: number, slo: { code: string; cognitiveLevel: string }) {
+  return subject === 'biology' && grade === 10 && slo.code === '16.2.4' && slo.cognitiveLevel === 'U'
     ? '16.2.4-U' : slo.code;
 }
 
-export default function SyllabusClient({ board, classDef, meta, baseUrl, units, originalUrl, physicsSections, biologySections, computerScienceSections }: Props) {
-  const sections = physicsSections ?? biologySections ?? computerScienceSections;
+export default function SyllabusClient({ board, classDef, meta, baseUrl, units, originalUrl, physicsSections, biologySections, seniorBiologySections, computerScienceSections }: Props) {
+  const sections = physicsSections ?? biologySections ?? seniorBiologySections ?? computerScienceSections;
+  const practicals = seniorBiologySections?.practicals ?? physicsSections?.practicals ?? computerScienceSections?.practicals;
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedUnit, setSelectedUnit] = useState<number | 'all'>('all');
   const [cognitiveFilter, setCognitiveFilter] = useState<'all' | 'R' | 'U' | 'A' | 'An' | 'E' | 'C' | 'FA'>('all');
-  const [expandedUnits, setExpandedUnits] = useState<Record<number, boolean>>({
-    15: true, 16: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true,
-    8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true
-  });
+  const [expandedUnits, setExpandedUnits] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     const followHash = () => {
+      const practicalMatch = window.location.hash.match(/^#practical-(\d+)$/);
+      if (practicalMatch && seniorBiologySections) {
+        const target = document.getElementById(`practical-${practicalMatch[1]}`);
+        const details = target?.closest('details');
+        if (details) {
+          details.open = true;
+          requestAnimationFrame(() => scrollAndPulse(target!.id, 'center'));
+        }
+        return;
+      }
       const unitMatch = window.location.hash.match(/^#unit-(\d+)$/);
       if (unitMatch) {
         const unitNumber = Number(unitMatch[1]);
@@ -57,7 +67,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
       }
       const code = decodeURIComponent(window.location.hash.replace('#slo-', ''));
       if (!code) return;
-      const unit = units.find(u => u.subtopics.some((t: any) => t.slos.some((o: any) => outcomeAnchor(meta.slug, o) === code)));
+      const unit = units.find(u => u.subtopics.some((t: any) => t.slos.some((o: any) => outcomeAnchor(meta.slug, classDef.level, o) === code)));
       if (unit) {
         setExpandedUnits(old => ({ ...old, [unit.unitNumber]: true }));
         setSelectedUnit('all');
@@ -69,10 +79,10 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
     followHash();
     window.addEventListener('hashchange', followHash);
     return () => window.removeEventListener('hashchange', followHash);
-  }, [units, meta.slug]);
+  }, [units, meta.slug, classDef.level, seniorBiologySections]);
 
   const toggleUnit = (uNum: number) => {
-    setExpandedUnits(prev => ({ ...prev, [uNum]: !prev[uNum] }));
+    setExpandedUnits(prev => ({ ...prev, [uNum]: prev[uNum] === false }));
   };
 
   const jumpToUnit = (unitNumber: number) => {
@@ -90,7 +100,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
   const supportsChapterMcqs =
     (meta.slug === 'physics' || meta.slug === 'computer-science' || meta.slug === 'chemistry') &&
     (classDef.roman === 'IX' || classDef.roman === 'X');
-  const hsscChapterPractice = Boolean(physicsSections?.firstExam);
+  const hsscChapterPractice = Boolean(physicsSections?.firstExam || seniorBiologySections);
   const pdfUrl = originalUrl || (isCS
     ? (classDef.roman === 'IX'
       ? '/materials/ssc/computer-science/ssc-1/computer-science-ssc-i-syllabus-grade-9-dedicated.pdf'
@@ -192,14 +202,15 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
             <summary>Practical Activities — {classDef.name} ({sections.paperIII} marks)</summary>
             <div className={styles.schemeContent}>
               <p>Paper III is assessed separately. Bring your practical journal or portfolio, endorsed by your school.</p>
-              {(physicsSections || computerScienceSections) && <ol className={styles.practicalList}>
-                {(physicsSections ?? computerScienceSections)!.practicals.map(item => (
-                  <li key={item.number}>
+              {practicals?.length ? <ol className={styles.practicalList}>
+                {practicals.map(item => (
+                  <li key={item.number} id={seniorBiologySections ? `practical-${item.number}` : undefined}>
                     <p><strong>Chapter {item.chapter}:</strong> {item.activity}</p>
-                    <p><strong>Apparatus:</strong> {item.apparatus}</p>
+                    {item.apparatus && <p><strong>Apparatus:</strong> {item.apparatus}</p>}
+                    {'chemicals' in item && typeof item.chemicals === 'string' && item.chemicals && item.chemicals !== '-' && <p><strong>Chemicals:</strong> {item.chemicals}</p>}
                   </li>
                 ))}
-              </ol>}
+              </ol> : null}
               <a href={sections.original + '#page=' + sections.practicalPage} target="_blank" rel="noopener noreferrer">Open the official practical activities (PDF)</a>
             </div>
           </details>
@@ -310,7 +321,7 @@ export default function SyllabusClient({ board, classDef, meta, baseUrl, units, 
                             {subtopic.slos && subtopic.slos.map((slo: any, sloIdx: number) => {
                               const lv = syllabusLevel(slo.cognitiveLevel) || slo.cognitiveShort || slo.cognitiveLevel;
                               return (
-                                <tr id={"slo-" + outcomeAnchor(meta.slug, slo)} key={sloIdx} style={{ borderBottom: '1px solid #f0f4f2' }}>
+                                <tr id={"slo-" + outcomeAnchor(meta.slug, classDef.level, slo)} key={sloIdx} style={{ borderBottom: '1px solid #f0f4f2' }}>
                                   <td style={{ padding: '8px 12px', fontWeight: 700, color: 'var(--text-color)', fontFamily: 'monospace' }}>
                                     {slo.code}
                                   </td>

@@ -16,7 +16,7 @@ import StructuredContent from '@/components/StructuredContent';
 import styles from '@/components/rise/quiz.module.css';
 import { resolveQuestionDiagram } from '@/lib/diagramResolver';
 import { decryptQuestionReveal } from '@/lib/quiz-crypto';
-import { paperAnswer, paperChoices, paperMetadata } from '@/lib/paperPresentation';
+import { paperScoringAnswers, paperChoices, paperMetadata } from '@/lib/paperPresentation';
 import {
   readExam,
   readAttemptHistory,
@@ -99,9 +99,9 @@ export default function TakeQuizModal({
   paperCode,
   questions
 }: TakeQuizModalProps) {
-  const officialDuration = /^CS-XI-2019-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 45 : /^CS-XI-2021-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 130 : /^CS-XII?(?:-20\d{2})?-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 90 : /^BIO-(?:IX|X)-2022-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 100
+  const officialDuration = /^CS-XI-2019-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 45 : /^(?:CS-XI-2021|BIO-XI-202[12])-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 130 : /^(?:CS-XII?(?:-20\d{2})?|BIO-XII?-MODEL-20\d{2}|BIO-XI-202[345])-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 90 : /^BIO-(?:IX|X)-2022-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 100
     : /^BIO-(?:IX-(?:MODEL-2026|2024)|X-(?:MODEL-2027|2023|2025))-P1(?:-MCQS-\d+)?$/i.test(paperCode)
-      ? 70 : /^PHY-XI-201[78]-P1$/i.test(paperCode) ? 40 : /^PHY-XI-202[12]-P1$/i.test(paperCode) ? 130 : 50;
+      ? 70 : /^(?:PHY|BIO)-XI-201[78]-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 40 : /^PHY-XI-202[12]-P1$/i.test(paperCode) ? 130 : 50;
   // Navigation / Phase State: 'auth' -> 'setup' -> 'active' -> 'completed'
   const [phase, setPhase] = useState<'auth' | 'setup' | 'active' | 'completed'>('setup');
   const [showFinishConfirmModal, setShowFinishConfirmModal] = useState<boolean>(false);
@@ -484,7 +484,7 @@ export default function TakeQuizModal({
       const decrypted = decryptQuestionReveal(qId, encryptedBlob);
       if (decrypted && decrypted.correctLetter) {
         return {
-          correctOption: decrypted.correctLetter,
+          correctOption: decrypted.correctLetters?.join(',') || decrypted.correctLetter,
           explanation: decrypted.explanation,
           optionFeedback: decrypted.optionFeedback,
           topicName: decrypted.unit || '',
@@ -495,15 +495,15 @@ export default function TakeQuizModal({
       if (propMatch) {
         const sr = paperMetadata(propMatch.sourceRegion ?? propMatch);
         const rawChoices = paperChoices(sr.choices || sr.options);
-        const rawCorrectKey = paperAnswer(sr, rawChoices);
-        if (!rawCorrectKey) return null;
+        const rawCorrectKeys = paperScoringAnswers(sr, rawChoices);
+        if (!rawCorrectKeys.length) return null;
         const optionLetter = (key: string) => {
           if (!currentOptions || !rawChoices[key] || norm(currentOptions[key]) === norm(rawChoices[key])) return key;
           const matches = Object.entries(currentOptions).filter(([, text]) => norm(text) === norm(rawChoices[key]));
           return matches.length === 1 ? matches[0][0] : undefined;
         };
-        const matchedLetter = optionLetter(rawCorrectKey);
-        if (!matchedLetter) return null;
+        const matched = rawCorrectKeys.map(optionLetter);
+        if (matched.some(letter => !letter)) return null;
         const fbMap: Record<string, string> = {};
         if (Array.isArray(sr.option_feedback)) {
           for (const item of sr.option_feedback) {
@@ -513,8 +513,8 @@ export default function TakeQuizModal({
           }
         }
         return {
-          correctOption: matchedLetter,
-          explanation: sr.explanation || `The correct answer is (${matchedLetter}) ${rawChoices[rawCorrectKey]}.`,
+          correctOption: matched.join(','),
+          explanation: sr.explanation || `The correct answer is (${matched[0]}) ${rawChoices[rawCorrectKeys[0]]}.`,
           optionFeedback: Object.keys(fbMap).length > 0 ? fbMap : undefined,
           topicName: propMatch.topics?.[0]?.topic?.name || '',
         };
@@ -619,7 +619,7 @@ export default function TakeQuizModal({
         const rev = aq.correctOption
           ? { correctOption: aq.correctOption }
           : revealQuestionOnDemand(aq.id, aq.encryptedReveal, aq.questionText, aq.options);
-        if (!chosen || chosen !== rev?.correctOption) {
+        if (!chosen || !rev?.correctOption.split(',').includes(chosen)) {
           targetNums.add(Number(aq.originalQuestionNumber || aq.displayNumber));
         }
       }
@@ -731,11 +731,13 @@ export default function TakeQuizModal({
           }
         : revealQuestionOnDemand(q.id, q.encryptedReveal, q.questionText, q.options);
 
-      const correctKey = revealed?.correctOption || 'A';
+      const acceptedKeys = (revealed?.correctOption || '').split(',').filter(Boolean);
+      const correctKey = acceptedKeys[0] || '';
+      const correctOptionsText = acceptedKeys.map(key => `(${key}) ${q.options[key] || ''}`).join(' or ');
       const expl = revealed?.explanation || 'Verified against the official AKU-EB answer key.';
       const optFb = revealed?.optionFeedback;
       const unitTitle = revealed?.topicName || q.topicName || 'General';
-      const isRight = isAttempted && chosenKey === correctKey;
+      const isRight = isAttempted && acceptedKeys.includes(chosenKey);
       const marks = q.marks || 1;
       const scoreAwarded = isRight ? marks : 0;
 
@@ -791,7 +793,7 @@ export default function TakeQuizModal({
         options: q.options,
         selectedOption: chosenKey,
         selectedText: chosenKey ? `(${chosenKey}) ${q.options[chosenKey] || ''}` : 'Unattempted',
-        correctOption: `(${correctKey}) ${q.options[correctKey] || ''}`,
+        correctOption: correctOptionsText,
         isCorrect: isRight,
         isAttempted,
         marks,
@@ -807,7 +809,7 @@ export default function TakeQuizModal({
 
       updatedActive.push({
         ...q,
-        correctOption: `(${correctKey}) ${q.options[correctKey] || ''}`,
+        correctOption: correctOptionsText,
         selectedText: chosenKey ? `(${chosenKey}) ${q.options[chosenKey] || ''}` : 'Not answered',
         explanation: expl,
         optionFeedback: optFb,
@@ -1055,14 +1057,15 @@ export default function TakeQuizModal({
   const currentQ = activeQuestions[currentIndex];
   const currentSelected = currentQ ? userSelections[currentQ.displayNumber.toString()] : null;
   const isAnswered = Boolean(currentSelected) && Boolean(currentQ?.correctOption);
-  const isCurrentCorrect = isAnswered && currentQ && currentSelected === currentQ.correctOption;
+  const currentCorrectKeys = currentQ?.correctOption.split(',').filter(Boolean) ?? [];
+  const isCurrentCorrect = isAnswered && currentSelected !== null && currentCorrectKeys.includes(currentSelected);
   const currentQTimeSec = currentQ ? questionTimes[String(currentQ.displayNumber)] || 0 : 0;
   const currentQTelemetry = currentQ
     ? paperAnalytics?.questionStats?.[String(currentQ.originalQuestionNumber || currentQ.displayNumber)] ||
       getBaselineQuestionTelemetry(
         paperCode,
         currentQ.originalQuestionNumber || currentQ.displayNumber,
-        currentQ.correctOption || 'B',
+        currentCorrectKeys[0] || 'B',
         Boolean(currentQ.diagramUrl),
         currentQ.difficulty
       )
@@ -1078,7 +1081,7 @@ export default function TakeQuizModal({
       const sel = userSelections[String(q.displayNumber)];
       if (sel) {
         attempted++;
-        if (q.correctOption && sel === q.correctOption) correct++;
+        if (q.correctOption.split(',').includes(sel)) correct++;
       }
     }
     return {
@@ -1912,7 +1915,7 @@ export default function TakeQuizModal({
                         const idx = activeQuestions.findIndex(item => item.id === q.id);
                         const sel = userSelections[q.displayNumber.toString()];
                         const answered = Boolean(sel);
-                        const isRight = answered && q.correctOption && sel === q.correctOption;
+                        const isRight = answered && q.correctOption.split(',').includes(sel);
                         const isFlagged = bookmarkedQuestions.includes(q.displayNumber);
                         const isCurrent = idx === currentIndex;
 
@@ -2028,7 +2031,7 @@ export default function TakeQuizModal({
                       currentQ.questionType === 'MCQ_MULTIPLE'
                         ? Boolean(optionId && engine.exam?.answers[currentQ.id]?.payload.selectedOptionIds?.includes(optionId))
                         : currentSelected === key;
-                    const isRightAnswer = currentQ.correctOption === key;
+                    const isRightAnswer = currentCorrectKeys.includes(key);
                     const peerPct = currentQTelemetry?.optionDistribution?.[key] ?? 25;
                     const isPeerTrap = isAnswered && !isRightAnswer && peerPct >= 18;
 
@@ -2090,7 +2093,7 @@ export default function TakeQuizModal({
                     </div>
 
                     <div className={styles.markBody}>
-                      <div><strong>Correct option ({currentQ.correctOption})</strong> <StructuredContent text={currentQ.options[currentQ.correctOption] || ''} /></div>
+                      {currentCorrectKeys.map(key => <div key={key}><strong>{currentCorrectKeys.length > 1 ? 'Accepted option' : 'Correct option'} ({key})</strong> <StructuredContent text={currentQ.options[key] || ''} /></div>)}
                       <div>
                         <strong>Why this is correct:</strong> <MathText text={currentQ.explanation} />
                       </div>
