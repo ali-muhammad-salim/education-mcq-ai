@@ -1,0 +1,114 @@
+[
+  {
+    "number": "1", "marks": 3, "slo": "10.4.1", "page": 2,
+    "stem": "Describe any THREE important contributions of physics in the field of technology.",
+    "solution": "1. Electromagnetic induction allows generators to convert mechanical energy into electricity.\n2. Electromagnetic waves allow radios and mobile phones to send and receive information.\n3. Semiconductor physics makes transistors possible, providing the switches used in computers.",
+    "checking": "Describe three distinct technologies and connect each one to an application of physics.",
+    "better": "The candidate explains practical contributions using examples from areas such as communications, transport or electricity.",
+    "weaker": "The candidate gives fewer than three relevant contributions or lists names without explaining the role of physics."
+  },
+  {
+    "number": "2", "marks": 3, "slo": "2.4.3", "page": 3, "figure": true,
+    "stem": "Use the velocity–time graph to interpret the acceleration on each segment.\n\n**i.** A to B (1 mark)\n\n**ii.** B to C (1 mark)\n\n**iii.** C to D (1 mark)",
+    "solution": "**i.** A to B has a straight, positive slope, so acceleration is constant and positive.\n\n**ii.** B to C is horizontal, so velocity is constant and acceleration is zero.\n\n**iii.** C to D has a straight, negative slope, so acceleration is constant and negative. The body slows down.",
+    "checking": "Identify positive, zero and negative acceleration on the three segments using their gradients.",
+    "better": "The candidate interprets the slope separately for each segment and describes acceleration.",
+    "weaker": "The candidate describes only the velocity or gives the wrong sign for a slope."
+  },
+  {
+    "number": "3", "marks": 3, "slo": "3.5.3", "page": 4,
+    "stem": "List any THREE methods of reducing friction.",
+    "solution": "1. Apply a lubricant between sliding surfaces.\n2. Use rollers or ball bearings to replace sliding contact with rolling contact.\n3. Smooth rough sliding surfaces where appropriate to reduce interlocking between them.",
+    "checking": "List three distinct, appropriate friction-reduction methods.",
+    "better": "The candidate gives methods such as lubrication, using bearings and smoothing surfaces.",
+    "weaker": "The candidate lists ways to increase friction or repeats the same method."
+  },
+  {
+    "number": "4", "marks": 3, "slo": "4.3.2", "page": 5, "figure": true,
+    "stem": "Use the figure to answer both parts.\n\n**i.** Which car is more stable with reference to its centre of gravity (●)? (1 mark)\n\n**ii.** Explain how the position of the centre of gravity and the area of the base affect that car’s stability. (2 marks)",
+    "solution": "**i.** Car **2** is more stable in the illustrated position. The vertical line through its centre of gravity lies within its base of support.\n\n**ii.** A lower centre of gravity makes it harder for the line of action of weight to move past a support edge. A wider base in the direction of tipping increases the tilt needed to reach that edge.",
+    "checking": "Identify car 2 and explain the effects of centre-of-gravity position and base width.",
+    "better": "The candidate identifies car 2 and uses the line of action of weight and the base of support to explain why.",
+    "weaker": "The candidate answers only one part or gives a definition without connecting it to the car."
+  },
+  {
+    "number": "5", "marks": 3, "slo": null, "page": 7, "figure": true,
+    "stem": "Calculate the gravitational force between the two balls in the figure. Take G = 6.67 × 10⁻¹¹ N·m²/kg².",
+    "solution": "The masses are 5 kg and 10 kg, and their centres are 5 m apart. Newton’s law gives F = Gm₁m₂/r² = (6.67 × 10⁻¹¹ × 5 × 10)/(5²) = **1.334 × 10⁻¹⁰ N**. The force is attractive.",
+    "checking": "Read the two masses and centre-to-centre distance, use Newton’s law and report the force in newtons.",
+    "better": "The candidate reads the diagram correctly and squares the distance before dividing.",
+    "weaker": "The candidate substitutes the wrong masses or fails to apply the inverse-square relation."
+  },
+  {
+    "number": "6", "marks": 3, "slo": "6.4.2", "page": 8, "figure": true,
+    "stem": "Identify the types of energy at positions 1, 2 and 3 in the diagram of a thermal power plant.",
+    "solution": "**1. Thermal energy.** Burning coal heats the boiler water and produces steam.\n\n**2. Mechanical energy.** Moving steam turns the turbine.\n\n**3. Electrical energy.** The generator converts the turbine’s motion to electricity.",
+    "checking": "Identify thermal, mechanical and electrical energy in the positions shown.",
+    "better": "The candidate follows the conversion sequence through the boiler, turbine and generator.",
+    "weaker": "The candidate labels energy stored in the fuel instead of the energy at a numbered stage or mixes up the turbine and generator."
+  },
+  {
+    "number": "7", "marks": 3, "slo": "7.4.4", "page": 9,
+    "stem": "Calculate the pressure due to the fluid at a depth of 10 cm in still water. Take the density of water as 1,000 kg/m³ and g as 10 m/s².",
+    "solution": "Convert the depth to 0.10 m. The pressure due to the water alone is P = ρgh = 1,000 × 10 × 0.10 = **1,000 Pa**. This is the pressure above the value at the surface.",
+    "checking": "Convert the depth to metres, use ρgh and give the result in pascals.",
+    "better": "The candidate uses 0.10 m and reports the pressure due to the water column.",
+    "weaker": "The candidate substitutes 10 m or uses a formula for a different pressure problem."
+  },
+  {
+    "number": "8", "marks": 4, "slo": "9.1.4", "page": 10,
+    "stem": "A 4 cm thick cast-iron sheet has a cross-sectional area of 10,000 cm². One face is at 500°C and the other at 600°C. How much heat passes through the sheet each second? Take its thermal conductivity as 85 W/(m·K).",
+    "solution": "The thickness is 0.04 m and the area is 1 m². The temperature difference is 100 K. For steady conduction, the heat-transfer rate is kAΔT/L = (85 × 1 × 100)/0.04 = **212,500 J/s**, or **212.5 kJ/s**. Thus **212.5 kJ** passes through in one second.",
+    "checking": "Convert both dimensions to SI units and apply the conduction formula. The e-marking notes print 212,500 kJ/s. The substitution gives 212,500 J/s.",
+    "better": "The candidate converts centimetres and square centimetres separately and uses the temperature difference.",
+    "weaker": "The candidate treats area conversion as a length conversion or uses the wrong heat-transfer relation."
+  },
+  {
+    "number": "9a", "marks": 5, "slo": "1.4.4", "page": 12,
+    "stem": "A boat moves south at 30 m/s relative to the water. The river flows east at 15 m/s.\n\n**i.** Draw a labelled vector diagram. (1 mark)\n\n**ii.** Show the direction of the boat’s resultant motion on the diagram. (1 mark)\n\n**iii.** Calculate the resultant velocity. (3 marks)",
+    "solution": "Draw the 30 m/s south vector. Starting at its arrowhead, draw the 15 m/s east vector. Draw the resultant from the first tail to the last head.\n\n![Head-to-tail diagram for the southward boat velocity and eastward current](/paper-crops/PHY-IX-2017-P2/solution-9a.webp)\n\nThe perpendicular components give √(30² + 15²) = **33.5 m/s**. The angle east of south is arctan(15/30) = **26.6°**.",
+    "checking": "Draw the component vectors head to tail, show the resultant pointing southeast, then calculate its magnitude.",
+    "better": "The candidate labels both vectors, draws the resultant and uses Pythagoras’ theorem correctly.",
+    "weaker": "The candidate leaves out the direction arrows or adds the two perpendicular magnitudes directly."
+  },
+  {
+    "number": "9b", "marks": 5, "slo": "3.3.1", "page": 14, "figure": true,
+    "stem": "A rope gives an object of mass m an upward acceleration a.\n\n**i.** Label the direction of the object’s weight and the direction of tension in the rope. (2 marks)\n\n**ii.** Given that the weight is mg, derive a simplified expression for the tension in the rope. (3 marks)",
+    "solution": "**i.** At the object, draw tension T vertically upwards and weight mg vertically downwards.\n\n**ii.** Taking upwards as positive, Newton’s second law gives T − mg = ma. Rearranging gives **T = m(g + a)**.",
+    "checking": "Show both force directions and apply Newton’s second law to the upward net force.",
+    "better": "The candidate labels both forces and adds mg when rearranging T − mg = ma.",
+    "weaker": "The candidate confuses the direction of acceleration with the direction of weight or equates tension to ma alone."
+  },
+  {
+    "number": "10a", "marks": 5, "slo": "6.5.3", "page": 17,
+    "stem": "“A working system cannot have an efficiency of 100%.” Justify the statement with reference to heat rejection, heat transfer or the Carnot limit.",
+    "solution": "A cyclic heat engine takes heat from a hot source, converts part of it to work, and rejects the rest to a cooler sink. Its efficiency is useful work divided by heat input. Energy conservation gives work = heat input − heat rejected. For a heat engine operating between reservoirs at finite absolute temperatures, the Carnot upper bound is η = 1 − T_cold/T_hot. Because the cold reservoir is above absolute zero, the bound is below 100%. Real engines have additional losses due to friction and other irreversible processes.",
+    "checking": "Explain why a cyclic heat engine must reject some heat and identify any additional real-world losses or the theoretical limit.",
+    "better": "The candidate distinguishes useful work from heat rejected and relates that distinction to efficiency.",
+    "weaker": "The candidate lists heat-transfer modes without explaining why some energy is unavailable as useful work."
+  },
+  {
+    "number": "10b", "marks": 5, "slo": "7.3.3", "page": 19,
+    "stem": "Describe why atmospheric pressure falls above sea level. Refer to gravity, air compression and the temperature of the surroundings.",
+    "solution": "Gravity gives the air column weight. At sea level there is a larger column of air above, so that weight compresses the lower layers more strongly. Higher up there is less air above, so pressure is lower and the air is generally less dense. The pressure drop over a small rise depends on air density and local gravity. Temperature affects density and how quickly pressure changes with height, but the air-column weight is the reason pressure decreases upwards.",
+    "checking": "Relate pressure to the weight of overlying air, describe compression near sea level, and explain the role of temperature.",
+    "better": "The candidate links gravity and the amount of air above a point to pressure, with temperature as an influence on density.",
+    "weaker": "The candidate omits one of the requested factors or treats pressure as depending only on temperature."
+  },
+  {
+    "number": "11a", "marks": 5, "slo": "8.2.9", "page": 21,
+    "stem": "Explain how evaporation causes cooling. Use a daily-life example.",
+    "solution": "Some of the highest-energy liquid molecules escape from the surface during evaporation. The remaining molecules have a lower average kinetic energy, so the liquid cools. Evaporation also requires energy, which can be drawn from an object in contact with the liquid. For example, sweat evaporating from skin absorbs energy from the skin and cools the body.",
+    "checking": "Explain molecular escape, the drop in average kinetic energy, and how a daily-life example transfers energy away.",
+    "better": "The candidate uses an example such as sweating and explains why the remaining system cools.",
+    "weaker": "The candidate describes evaporation without connecting it to a reduction in temperature."
+  },
+  {
+    "number": "11b", "marks": 5, "slo": "9.4.1", "page": 23,
+    "stem": "Discuss any FIVE applications of heat transfer by radiation.",
+    "solution": "1. A solar cooker absorbs sunlight on a dark surface and warms the cookware.\n2. A solar water heater absorbs solar radiation and transfers the energy to water.\n3. An infrared heater emits radiation that is absorbed by people and surfaces across a gap.\n4. An infrared thermometer estimates the temperature of a surface from the thermal radiation it emits.\n5. A reflective emergency blanket reduces radiant heat loss from a person by reflecting infrared radiation back towards the body.",
+    "checking": "Give five distinct uses and explain the role of radiation in each.",
+    "better": "The candidate links each example to absorption, emission or reflection of radiation.",
+    "weaker": "The candidate lists examples governed mainly by conduction or convection without explaining a role for radiation."
+  }
+]

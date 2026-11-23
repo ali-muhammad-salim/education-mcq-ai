@@ -1,0 +1,1044 @@
+[
+  {
+    "stem": "If 1.76 cm³ is the volume of one cube, then the volume of twenty-one such cubes rounded off to three significant figures is",
+    "options": [
+      "36.0 cm³.",
+      "36.9 cm³.",
+      "36.96 cm³.",
+      "37.0 cm³."
+    ],
+    "officialSlo": "1.7.3",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "1.7.2",
+    "reasons": [
+      "Multiplying 21 by 1.76 gives 36.96 cm³. Rounding cannot make this 36.0 cm³.",
+      "36.9 cm³ truncates the fourth significant digit instead of rounding it.",
+      "36.96 cm³ is the unrounded result and has four significant figures.",
+      "21 × 1.76 = 36.96 cm³. The fourth significant digit is 6, so the result rounds to 37.0 cm³."
+    ]
+  },
+  {
+    "stem": "The number 123.4 can also be written in scientific notation as",
+    "options": [
+      "0.1234 × 10³",
+      "1.234 × 10⁻²",
+      "1.234 × 10²",
+      "12.34 × 10¹"
+    ],
+    "officialSlo": "1.5.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "1.3.2",
+    "reasons": [
+      "This has the same value, but the coefficient is below 1.",
+      "The negative exponent gives 0.01234.",
+      "Moving the decimal two places left gives 1.234 × 10², with the coefficient between 1 and 10.",
+      "The value is equivalent, but the coefficient must be less than 10."
+    ]
+  },
+  {
+    "stem": "The prefix used for the multiple value of 10⁻⁹ is",
+    "options": [
+      "atto.",
+      "pico.",
+      "nano.",
+      "femto."
+    ],
+    "officialSlo": "1.4.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "1.3.1",
+    "reasons": [
+      "Atto represents 10⁻¹⁸.",
+      "Pico represents 10⁻¹².",
+      "Nano represents 10⁻⁹.",
+      "Femto represents 10⁻¹⁵."
+    ]
+  },
+  {
+    "stem": "All of the following are the scalar quantities EXCEPT",
+    "options": [
+      "time.",
+      "mass.",
+      "distance.",
+      "velocity."
+    ],
+    "officialSlo": "2.4.2",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "1.4.2",
+    "reasons": [
+      "Time has magnitude only.",
+      "Mass has magnitude only.",
+      "Distance is path length and has no direction.",
+      "Velocity includes both magnitude and direction, so it is a vector."
+    ]
+  },
+  {
+    "stem": "A child drops a tennis ball from the height of 10 m. The velocity of the ball just before it strikes the ground will be (Note: The value of acceleration due to gravity is 9.8 m/s².)",
+    "options": [
+      "14.0 m/s.",
+      "19.8 m/s.",
+      "21.8 m/s.",
+      "98.0 m/s."
+    ],
+    "officialSlo": "2.9.2",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "2.5.2",
+    "reasons": [
+      "The ball starts from rest, so v = √(2gh) = √(2 × 9.8 × 10) = 14.0 m/s downward.",
+      "This is larger than the square root of 196.",
+      "Substituting the given height and g gives 14.0 m/s.",
+      "Multiplying g by height does not give velocity and has the wrong units."
+    ]
+  },
+  {
+    "stem": "If a stone placed at a certain height takes 5 seconds to reach the ground when it is dropped, then the distance covered by this stone will be (Note: The value of acceleration due to gravity is 9.8 m/s².)",
+    "options": [
+      "24.5 m.",
+      "49.0 m.",
+      "122.5 m.",
+      "490.0 m."
+    ],
+    "officialSlo": "2.9.2",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "2.5.2",
+    "reasons": [
+      "This treats the fall distance as proportional to t. From rest it increases as t².",
+      "49 is 9.8 × 5, the final speed in m/s.",
+      "s = ½gt² = ½ × 9.8 × 5² = 122.5 m.",
+      "The given values in the free-fall distance formula yield 122.5 m."
+    ]
+  },
+  {
+    "stem": "The moving blades of an electric fan exemplifies",
+    "options": [
+      "circular motion.",
+      "rotatory motion.",
+      "vibratory motion.",
+      "translatory motion."
+    ],
+    "officialSlo": "2.2.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "2.2.1",
+    "reasons": [
+      "A point on a blade follows a circle. The motion of the rigid blades as a whole is rotation about the axis.",
+      "The blades rotate together about a fixed shaft, exemplifying rotatory motion.",
+      "Vibratory motion is repeated oscillation about an equilibrium position.",
+      "The fan blades turn about an axis rather than translating together."
+    ],
+    "reviewNote": "The blades form a rigid body rotating about the shaft. A point on a blade also follows a circular path, but A describes the path of a point rather than the motion of the blade assembly."
+  },
+  {
+    "stem": "The given table shows the distance covered by a car in four different segments.\n\n| Segment | Distance covered (m) |\n| --- | --- |\n| I | 0–10 |\n| II | 11–22 |\n| III | 23–35 |\n| IV | 36–49 |\n\nIf the car takes the same interval of time to cover all four segments, then the car",
+    "options": [
+      "is accelerating.",
+      "is decelerating.",
+      "has uniform velocity.",
+      "comes to rest after each segment."
+    ],
+    "officialSlo": "2.9.1",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "2.3.3",
+    "reasons": [
+      "The car covers more distance in successive equal intervals, so its average speed increases over the intervals.",
+      "Deceleration would give decreasing speeds, contrary to the trend.",
+      "Uniform velocity would give equal distances in equal times.",
+      "Segment distances alone give no evidence that the car stops at the boundaries."
+    ]
+  },
+  {
+    "stem": "A force of 10 N is acting on a body along x-axis. The value of its y-component will be",
+    "options": [
+      "0 N.",
+      "5 N.",
+      "10 N.",
+      "20 N."
+    ],
+    "officialSlo": "2.7.2",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "The entire force lies on the x-axis, so the perpendicular y-component is 0 N.",
+      "The force has no y-component to take half of.",
+      "10 N is the magnitude of the x-component.",
+      "A y-component of 20 N would exceed the magnitude of the entire force."
+    ]
+  },
+  {
+    "stem": "If two forces of 3 N and 4 N are acting at a point, perpendicular to each other, then their resultant force will be",
+    "options": [
+      "5 N.",
+      "7 N.",
+      "25 N.",
+      "√7 N."
+    ],
+    "officialSlo": "2.7.2",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "1.4.4",
+    "reasons": [
+      "The right-angle components give √(3² + 4²) = 5 N.",
+      "Adding both magnitudes would apply to forces in the same direction.",
+      "25 is the square of the magnitude. The resultant is its square root.",
+      "A square root is needed, but the value under it is 3² + 4² = 25."
+    ]
+  },
+  {
+    "stem": "Consider the given speed-time graph. The speed of an object from point X to Y is",
+    "options": [
+      "decreasing.",
+      "increasing.",
+      "uniform.",
+      "zero."
+    ],
+    "officialSlo": "2.8.3",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "2.4.1",
+    "reasons": [
+      "The segment from X to Y does not slope downward.",
+      "A rising line would indicate increasing speed. X to Y is horizontal.",
+      "The graph has the same speed reading throughout the horizontal X–Y segment.",
+      "The horizontal line is above the time axis, so the speed is nonzero."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "A 36 N force pulls a system of three masses on a horizontal frictionless surface as shown in the given figure. The acceleration of this system of masses is",
+    "options": [
+      "0.5 m/s².",
+      "2 m/s².",
+      "5 m/s².",
+      "18 m/s²."
+    ],
+    "officialSlo": "3.3.5",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "A",
+    "slo": "3.3.1",
+    "reasons": [
+      "The acceleration is the net force divided by the total mass of 18 kg.",
+      "The external force accelerates all three blocks. 36/(8 + 6 + 4) = 2 m/s².",
+      "Using only one mass omits the other blocks the force accelerates.",
+      "18 kg is the combined mass, not the acceleration."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "A mass m with velocity v strikes a wall perpendicularly and returns with the same velocity. What is the change in momentum of the body when it returns?",
+    "options": [
+      "– mv",
+      "2mv",
+      "– 2mv",
+      "zero"
+    ],
+    "officialSlo": "3.2.7",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "3.4.4",
+    "reasons": [
+      "The return momentum is −mv. The change also includes subtracting the initial momentum.",
+      "2mv is the magnitude of the change. Its sign is negative when the incoming direction is positive.",
+      "With the incoming direction positive, Δp = (−mv) − mv = −2mv.",
+      "The speed is unchanged but the direction reverses, so momentum changes."
+    ]
+  },
+  {
+    "stem": "An astronaut is sitting in a rocket on the Earth which is ready to launch to the Moon. When the astronaut will reach to the Moon, his weight and mass would",
+    "options": [
+      "increase · remain the same",
+      "remain the same · increase",
+      "decrease · remain the same",
+      "remain the same · decrease"
+    ],
+    "officialSlo": "3.3.3",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "3.1.1",
+    "reasons": [
+      "The Moon’s weaker gravity decreases weight.",
+      "Gravity changes weight while the astronaut’s mass stays constant.",
+      "The Moon’s weaker gravity lowers weight and leaves mass unchanged.",
+      "Weight changes with gravity and mass stays constant."
+    ],
+    "headings": [
+      "Weight",
+      "Mass"
+    ]
+  },
+  {
+    "stem": "If the two ends of a string are stretched by two opposite forces of 10 N each, then the tension in the string is",
+    "options": [
+      "0 N.",
+      "5 N.",
+      "10 N.",
+      "20 N."
+    ],
+    "officialSlo": "3.3.5",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "3.3.1",
+    "reasons": [
+      "Zero is the net external force on the string. The string remains under tension.",
+      "Each end is pulled with 10 N. No factor of one-half is needed.",
+      "An ideal string under balanced 10 N pulls has a tension of 10 N at every section.",
+      "Adding the pulls’ magnitudes gives 20 N, which is neither the net force nor the tension."
+    ]
+  },
+  {
+    "stem": "How much centripetal force is needed to move a body of mass 10 kg in a circle of radius 20 m with a speed 3 m/s?",
+    "options": [
+      "1.5 N",
+      "4.5 N",
+      "13 N",
+      "33 N"
+    ],
+    "officialSlo": "3.5.3",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "A",
+    "slo": null,
+    "reasons": [
+      "1.5 results from using v instead of v².",
+      "Using F = mv²/r gives 10 × 3²/20 = 4.5 N.",
+      "The centripetal force uses the given speed squared and divides by the radius.",
+      "The given mass, radius and speed give 4.5 N."
+    ]
+  },
+  {
+    "stem": "The measure of inertia of a body is its",
+    "options": [
+      "mass.",
+      "force.",
+      "weight.",
+      "velocity."
+    ],
+    "officialSlo": "3.3.2",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "K",
+    "slo": "3.1.2",
+    "reasons": [
+      "Mass measures how strongly an object resists a change in motion.",
+      "Force causes acceleration, while mass determines the inertia.",
+      "Weight also depends on the local gravitational field.",
+      "Changing velocity does not change the object’s mass in this setting."
+    ]
+  },
+  {
+    "stem": "If a body of mass 10 kg is placed on the surface of the Earth, then the pull of the Earth on the body will be (Note: The value of acceleration due to gravity is 9.8 m/s².)",
+    "options": [
+      "0.98 N.",
+      "19.8 N.",
+      "98 N.",
+      "100 N."
+    ],
+    "officialSlo": "3.1.3",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "3.1.4",
+    "reasons": [
+      "The calculation requires multiplying 10 by 9.8.",
+      "The mass and gravitational field strength are multiplied, giving 98 N.",
+      "The force is mg = 10 × 9.8 = 98 N.",
+      "100 N would use g ≈ 10 m/s². The question specifies 9.8 m/s²."
+    ]
+  },
+  {
+    "stem": "It is difficult to drive a car on an oily road because the frictional force",
+    "options": [
+      "increases.",
+      "decreases.",
+      "becomes zero.",
+      "remains unchanged."
+    ],
+    "officialSlo": "3.4.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "3.5.1",
+    "reasons": [
+      "Oil commonly reduces friction between the tyres and the road.",
+      "The tyres have less grip on the oily surface, so the available friction decreases.",
+      "Oil can reduce traction substantially without eliminating it entirely.",
+      "The change in surface conditions affects traction."
+    ]
+  },
+  {
+    "stem": "A sports racing car is made stable by",
+    "options": [
+      "raising its height.",
+      "increasing its speed.",
+      "decreasing its width.",
+      "lowering its centre of gravity."
+    ],
+    "officialSlo": "4.6.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "4.3.2",
+    "reasons": [
+      "A higher centre of gravity increases tipping tendency.",
+      "Higher speed during a turn can increase tipping tendency.",
+      "A narrower wheelbase across the car reduces stability.",
+      "A lower centre of gravity makes it harder for the line of action of weight to pass outside the support base."
+    ]
+  },
+  {
+    "stem": "The perpendicular distance between axis of rotation and line of action of force is called",
+    "options": [
+      "momentum.",
+      "acceleration.",
+      "moment arm.",
+      "displacement."
+    ],
+    "officialSlo": "4.1.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "4.1.3",
+    "reasons": [
+      "Momentum is mass times velocity.",
+      "Acceleration is the rate of change of velocity.",
+      "The moment arm is the perpendicular distance between the rotation axis and the line of action of the force.",
+      "Displacement describes a change in position."
+    ]
+  },
+  {
+    "stem": "If, after disturbance, a body again comes to rest and its centre of gravity does not change, then this phenomenon is/ are called\n\nI. Stable equilibrium\n\nII. Unstable equilibrium\n\nIII. Neutral equilibrium",
+    "options": [
+      "I only.",
+      "III only.",
+      "I and III.",
+      "II and III."
+    ],
+    "officialSlo": "4.5.6",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "4.4.2",
+    "reasons": [
+      "A stable body returns to its original position. That fits if the statement compares the final and original heights, but does not cover neutral equilibrium.",
+      "Neutral equilibrium is the direct answer if the height of the centre of gravity stays constant throughout the disturbance.",
+      "The board marks this because a stable body can return to its original height, while a neutral body can settle at the same height in a new position.",
+      "An unstable body tends to depart from its original position as the centre of gravity lowers."
+    ],
+    "reviewNote": "The board lists C. B also earns practice credit because neutral equilibrium is the direct answer if “does not change” means the height stays constant throughout the displacement.",
+    "acceptedOptions": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "stem": "Compared to the sea level, the atmospheric pressure on mountains is",
+    "options": [
+      "equal.",
+      "higher.",
+      "lower.",
+      "zero."
+    ],
+    "officialSlo": "7.4.3",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "7.3.3",
+    "reasons": [
+      "Pressure generally falls as altitude increases.",
+      "There is less atmosphere above a mountain than above sea level.",
+      "A mountain has a shorter column of atmosphere above it, so the air pressure is lower.",
+      "Atmospheric pressure falls with altitude but is still positive on mountains."
+    ]
+  },
+  {
+    "stem": "To push the liquid up in a straw, the air pressure inside the straw will",
+    "options": [
+      "increase.",
+      "decrease.",
+      "become zero.",
+      "remain constant."
+    ],
+    "officialSlo": "7.3.2",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "7.3.1",
+    "reasons": [
+      "Increasing pressure in the straw would oppose the upward push from outside.",
+      "Reducing pressure inside the straw lets atmospheric pressure on the exposed liquid push it up.",
+      "The inside pressure only needs to be below the outside pressure.",
+      "The pressure difference is created by lowering the pressure inside the straw."
+    ]
+  },
+  {
+    "stem": "According to the kinetic molecular model of matter, the molecules of a substance",
+    "options": [
+      "are in the state of rest.",
+      "are in the state of motion.",
+      "have constant momentum.",
+      "have same velocity during collision."
+    ],
+    "officialSlo": "7.1.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": "8.1.1",
+    "reasons": [
+      "The kinetic molecular model treats particles as moving even in a solid.",
+      "The particles of matter are in continual motion.",
+      "Individual particle momentum can change during interactions and collisions.",
+      "Particles can have different velocities and exchange momentum in collisions."
+    ]
+  },
+  {
+    "stem": "The property of solids that restore them to their original shapes when the external force acting on them stops is called",
+    "options": [
+      "buoyancy.",
+      "elasticity.",
+      "strain.",
+      "stress."
+    ],
+    "officialSlo": "7.8.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": null,
+    "reasons": [
+      "Buoyancy is an upward force from a fluid.",
+      "Elasticity is the ability to recover the original shape after unloading, within the elastic limit.",
+      "Strain measures deformation relative to the original dimensions.",
+      "Stress measures internal force per unit area."
+    ]
+  },
+  {
+    "stem": "A parcel box of weight 500 N is placed on a table. If the area of the bottom of the box is measured as 0.50 m², then the pressure exerted by the box on the table will be",
+    "options": [
+      "250 Pa.",
+      "499.5 Pa.",
+      "500.5 Pa.",
+      "1000 Pa."
+    ],
+    "officialSlo": "7.5.4",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "A",
+    "slo": "7.2.1",
+    "reasons": [
+      "Pressure is force divided by area, not their product.",
+      "Divide 500 N by 0.50 m².",
+      "Dividing by 0.50 doubles 500 rather than adding 0.50.",
+      "P = F/A = 500/0.50 = 1,000 Pa."
+    ]
+  },
+  {
+    "stem": "In a magic show, a performer lies down on a bed of nails without any injury. However, when the same performer steps on a single nail, it goes right through his foot. With reference to the given situation, which of the following statements is TRUE?",
+    "options": [
+      "Area is same in both cases, but more force is applied on the bed of nails.",
+      "Force remains the same but more pressure on the bed of nails.",
+      "Force increases but less pressure on the bed of nails.",
+      "More force is exerted on a single nail than on the entire bed of nails."
+    ],
+    "officialSlo": "7.3.2",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "7.2.2",
+    "reasons": [
+      "The contact area is much larger across many nail tips.",
+      "At the same total force, the larger area produces lower pressure on the bed of nails.",
+      "Higher pressure on one nail can be explained by smaller area without increasing the total load.",
+      "The board lists D. The crucial difference is greater pressure on a single nail, not necessarily greater total force."
+    ],
+    "reviewNote": "The board lists D. None of the choices states the physical explanation: for the same total supporting force, a single nail has less contact area and exerts more pressure. All choices earn practice credit.",
+    "acceptedOptions": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": "The force is spread across a larger contact area on the bed of nails. For the same total supporting force, P = F/A is therefore much larger on one nail. The question gives practice credit for any choice because it omits this explanation."
+  },
+  {
+    "stem": "In a clinical thermometer, mercury does not fall back to the bulb because",
+    "options": [
+      "it is less in quantity.",
+      "it is in a capillary tube.",
+      "of the shape of the thermometer’s bulb.",
+      "of the constriction in the capillary tube."
+    ],
+    "officialSlo": "8.2.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "8.3.5",
+    "reasons": [
+      "The quantity of mercury does not hold the reading after withdrawal.",
+      "The capillary moves mercury in a way that makes expansion visible, but an unrestricted capillary would let it retreat.",
+      "The bulb contains the mercury but does not trap the column at the maximum reading.",
+      "The narrow constriction retains the maximum reading until the thermometer is shaken down."
+    ]
+  },
+  {
+    "stem": "All of the following are factors on which the rate of evaporation depends EXCEPT for the",
+    "options": [
+      "surface area.",
+      "surface temperature.",
+      "colour of the surface.",
+      "pressure at the surface."
+    ],
+    "officialSlo": "8.6.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "8.2.10",
+    "reasons": [
+      "A larger liquid surface exposes more molecules that can escape.",
+      "A higher temperature makes it more likely that liquid molecules can escape.",
+      "Colour itself is not a direct evaporation factor when temperature and other conditions are fixed.",
+      "Pressure and vapour conditions above a liquid can affect evaporation."
+    ]
+  },
+  {
+    "stem": "The escape of high kinetic energy molecules in the form of vapours from the surface of a liquid without heating is known as",
+    "options": [
+      "fusion.",
+      "boiling.",
+      "evaporation.",
+      "condensation."
+    ],
+    "officialSlo": "8.6.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "8.2.8",
+    "reasons": [
+      "Fusion is the melting of a solid.",
+      "Boiling occurs throughout the liquid at its boiling temperature.",
+      "Evaporation occurs when sufficiently energetic molecules escape from the surface.",
+      "Condensation is vapour becoming liquid."
+    ]
+  },
+  {
+    "stem": "If an inflated tyre of a car bursts, then the temperature of air that will escape from the tyre",
+    "options": [
+      "increases.",
+      "decreases.",
+      "becomes 100°C.",
+      "remains constant."
+    ],
+    "officialSlo": "8.2.3",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "A rapid expansion generally cools the air rather than heating it.",
+      "Air expanding rapidly out of the tyre can cool during the expansion.",
+      "Nothing in the scenario fixes the temperature at 100°C.",
+      "A constant temperature would require conditions different from the rapid expansion assumed here."
+    ]
+  },
+  {
+    "stem": "If the temperature of a substance is 20°C, then its temperature in Kelvin scale will be",
+    "options": [
+      "– 253 K.",
+      "– 6.66 K.",
+      "68 K.",
+      "293 K."
+    ],
+    "officialSlo": "8.2.2",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "A",
+    "slo": "8.3.2",
+    "reasons": [
+      "The Celsius value must be increased by 273.15, not shifted to a negative absolute temperature.",
+      "The factor 5/9 is for Fahrenheit conversions and does not apply to the Celsius–kelvin offset.",
+      "68 is the numerical Fahrenheit equivalent, not the kelvin value.",
+      "20 + 273.15 = 293.15 K, which rounds to 293 K."
+    ]
+  },
+  {
+    "stem": "When a glass test tube which is heated at a high temperature is immediately immersed in a beaker of cold water, it cracks because as compared to the cold water, the glass has",
+    "options": [
+      "low thermal conductivity.",
+      "low specific heat capacity.",
+      "high thermal conductivity.",
+      "high specific heat capacity."
+    ],
+    "officialSlo": "8.3.2",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "Low conductivity can help maintain temperature differences within the glass. Cracking is due to thermal stress from uneven contraction.",
+      "The board selects low specific heat capacity. It can affect the temperature response but cannot, on its own, explain thermal shock.",
+      "Higher conductivity would tend to even out the temperature within the glass faster.",
+      "High specific heat capacity would reduce temperature change per unit heat lost and is not the board’s explanation."
+    ],
+    "reviewNote": "The board lists B. Thermal shock comes from uneven cooling and contraction through the glass, which creates stress. A comparison of specific heat capacities alone does not explain the crack."
+  },
+  {
+    "stem": "An example of a good conductor of heat is a",
+    "options": [
+      "glass door.",
+      "frying pan.",
+      "wooden door.",
+      "leather jacket."
+    ],
+    "officialSlo": "9.1.6",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": "9.1.5",
+    "reasons": [
+      "Glass conducts heat poorly compared with typical metals.",
+      "The metal body of a frying pan conducts heat from the stove to the food.",
+      "Wood is a poor conductor of heat.",
+      "Leather is used as an insulating material, not as a good heat conductor."
+    ]
+  },
+  {
+    "stem": "Radiations incident on a surface increases its temperature. Which of the following characteristics should be present in a surface that can protect itself MOST effectively against radiation?",
+    "options": [
+      "Poor absorber and poor emitter",
+      "Poor absorber and good emitter",
+      "Good absorber and poor emitter",
+      "Good absorber and good emitter"
+    ],
+    "officialSlo": "9.4.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "9.3.2",
+    "reasons": [
+      "A weak absorber takes in less incident radiation. In the same wavelength band, a weak absorber is also a weak emitter.",
+      "A weak solar absorber with strong infrared emission can stay cooler when the incoming and outgoing radiation occupy different wavelength bands.",
+      "A strong absorber takes in more incident radiation. Weak emission also reduces radiative cooling.",
+      "A strong absorber takes in more incident radiation, so it does not meet the weak-absorption criterion."
+    ],
+    "reviewNote": "The board lists B. Practice also accepts A for absorption and emission in the same radiation band. B can apply to a spectrally selective surface that reflects incoming sunlight and emits thermal infrared.",
+    "acceptedOptions": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "stem": "Which of the following statements is FALSE about heat transfer?",
+    "options": [
+      "Conduction is poor in gases.",
+      "The hotter the substance, the less will be the radiation.",
+      "A cold substance attains the temperature of its surroundings.",
+      "As a substance absorbs heat, its temperature always increases."
+    ],
+    "officialSlo": "9.5.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "Gases generally conduct heat poorly compared with solids such as metals.",
+      "For a fixed surface, thermal emission increases as temperature rises, so this statement is false.",
+      "A body normally approaches its surroundings’ temperature during passive thermal equilibration.",
+      "This is also false. During a phase change, a substance can absorb heat while its temperature stays constant."
+    ],
+    "reviewNote": "The board lists B. D is false as well because a substance can absorb latent heat at constant temperature during a phase change. Both choices earn practice credit.",
+    "acceptedOptions": [
+      "B",
+      "D"
+    ]
+  },
+  {
+    "stem": "All of the following are the methods to prevent heat loss from houses in winter EXCEPT",
+    "options": [
+      "tiled floor.",
+      "carpeted floor.",
+      "double ceiling.",
+      "double glazed windows."
+    ],
+    "officialSlo": "9.2.1",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "9.4.1",
+    "reasons": [
+      "Ordinary tiles do not provide the thermal insulation of carpet or trapped air in the other choices.",
+      "Carpet and its backing can trap air and reduce heat transfer through the floor.",
+      "A double ceiling can create an insulating air space.",
+      "Double glazing reduces heat transfer through the window."
+    ]
+  },
+  {
+    "stem": "The process of transfer of heat in liquids and gases is/ are\n\nI. Conduction\n\nII. Convection\n\nIII. Radiation",
+    "options": [
+      "I only.",
+      "II only.",
+      "I and III.",
+      "II and III."
+    ],
+    "officialSlo": "9.3.2",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": "9.2.1",
+    "reasons": [
+      "Conduction occurs in fluids, but it is not the dominant bulk process the board intends.",
+      "The board identifies convection, the transport of thermal energy by motion of the fluid.",
+      "Conduction and radiation can both occur. This option leaves out convection.",
+      "Convection and radiation can both occur. This option leaves out conduction."
+    ],
+    "reviewNote": "The board lists B, the usual dominant bulk mechanism in liquids and gases. Conduction and radiation can also occur in fluids, so the literal wording is broader than the intended question."
+  },
+  {
+    "stem": "When a wooden spoon is dipped in a bowl of soup, it does not become hot. In the given situation, the wooden spoon acts as a/ an",
+    "options": [
+      "electrical conductor.",
+      "electrical insulator.",
+      "heat conductor.",
+      "heat insulator."
+    ],
+    "officialSlo": "9.2.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "9.1.6",
+    "reasons": [
+      "The question concerns thermal insulation rather than conduction of electricity.",
+      "Wood is often electrically insulating, but that does not explain the observation here.",
+      "A good heat conductor would carry thermal energy along the spoon more quickly.",
+      "Wood has low thermal conductivity, so heat spreads along the spoon slowly."
+    ]
+  },
+  {
+    "stem": "You are given a glass test tube to determine its volume. The instrument that will be the BEST choice to determine the volume is",
+    "options": [
+      "meter rule.",
+      "screw gauge.",
+      "measuring tape.",
+      "Vernier callipers."
+    ],
+    "officialSlo": "1.6.2",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "1.5.1",
+    "reasons": [
+      "A metre rule gives length and has limited precision for the diameter.",
+      "A screw gauge can measure small external dimensions, but the question’s intended estimate needs a suitable internal diameter measurement.",
+      "A tape measure is not precise for a small tube or its internal diameter.",
+      "Vernier callipers can measure the internal diameter and depth to estimate the tube’s capacity from its geometry."
+    ],
+    "reviewNote": "Vernier callipers are the best of the choices for measuring internal dimensions. For a direct capacity measurement of the rounded tube, filling it and measuring the water separately would be more accurate."
+  },
+  {
+    "stem": "The given figure focuses on the magnified part of Vernier callipers. The main scale reading on the Vernier callipers is",
+    "options": [
+      "30.1 mm.",
+      "31.0 mm.",
+      "35.0 mm.",
+      "40.1 mm."
+    ],
+    "officialSlo": "1.6.2",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "1.5.3",
+    "reasons": [
+      "An extra fractional reading would be from the Vernier scale. The question asks for the main scale alone.",
+      "The Vernier zero has passed the 31 mm tick on the main scale, so the main-scale reading is 31.0 mm.",
+      "The zero mark has not reached the 35 mm tick.",
+      "The 40 mm label is well to the right of the Vernier zero."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "In an amusement park, a child takes a slide. He starts from rest and his velocity becomes 5 m/s in 5 s just before his feet touch the ground. The acceleration of the child is",
+    "options": [
+      "1 m/s².",
+      "5 m/s².",
+      "10 m/s².",
+      "25 m/s²."
+    ],
+    "officialSlo": "2.8.3",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "2.3.2",
+    "reasons": [
+      "a = (5 − 0)/5 = 1 m/s².",
+      "5 m/s is the final velocity, not the acceleration.",
+      "A change of 5 m/s spread over 5 s gives 1 m/s².",
+      "Multiplying velocity by time gives the wrong units for acceleration."
+    ]
+  },
+  {
+    "stem": "In the given mass-spring system, five slotted weights each of 50 g are hanged on the helical spring. If one slotted weight is removed from the spring, then the reading on the metre scale will be (Note: There is no systematic error in the instrument.)",
+    "options": [
+      "3 cm.",
+      "6 cm.",
+      "12 cm.",
+      "15 cm."
+    ],
+    "officialSlo": "2.8.4",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "5.1.4",
+    "reasons": [
+      "3 cm is the reduction when one of five identical weights is removed.",
+      "6 cm corresponds to two loads at 3 cm per load, but four weights remain.",
+      "In the intended proportional spring model, the indicated 15 cm becomes 15 × 4/5 = 12 cm.",
+      "15 cm is the reading with all five weights attached."
+    ],
+    "reviewNote": "The paper assumes a correctly zeroed spring, negligible hanger mass and a linear response, so the scale reading is proportional to the number of slotted weights.",
+    "diagram": true
+  },
+  {
+    "stem": "The given figure shows the vector addition of forces. If F₁ = F₂ = 50 N are acting on an unknown object ‘O’, then the weight of the object will be",
+    "options": [
+      "0 N.",
+      "50 N.",
+      "100 N.",
+      "150 N."
+    ],
+    "officialSlo": "2.6.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "The horizontal components cancel, but the two upward components add.",
+      "Each force contributes 50 sin 30° = 25 N vertically. In equilibrium they support the object’s 50 N weight.",
+      "100 N adds the full forces, although each is inclined and only its vertical part supports the object.",
+      "The upward components together are only 50 N."
+    ],
+    "reviewNote": "The board assumes that the pictured object is in equilibrium under its weight and the two upward forces.",
+    "diagram": true
+  },
+  {
+    "stem": "The given figure shows two equal boxes, I and II, hanged on a meter rod fixed at the fulcrum. A student has been given the task by his/ her teacher to balance the meter rod. He/ she should",
+    "options": [
+      "place box I in the centre.",
+      "place boxes I and II over each other.",
+      "move box I towards the fulcrum.",
+      "move box I away from the fulcrum."
+    ],
+    "officialSlo": "3.3.5",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "4.2.1",
+    "reasons": [
+      "At the pivot, box I would have zero moment and could not counter box II.",
+      "Putting both boxes together on one side would make their moments act in the same direction.",
+      "Moving box I inward reduces its moment, worsening the imbalance.",
+      "The equal boxes need equal perpendicular lever arms. Moving box I farther from the pivot increases its opposing moment."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "In the given figure, a uniform meter rod is balanced at its centre by a fulcrum. The distances d₁, d₂ and d₃ are equal to 40 cm, 10 cm and 15 cm respectively. If F₁ and F₂ are equal to 5 N and 10 N respectively, then the magnitude of F₃ will be",
+    "options": [
+      "5 N.",
+      "20 N.",
+      "50 N.",
+      "80 N."
+    ],
+    "officialSlo": "4.2.2",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "A",
+    "slo": "4.2.2",
+    "reasons": [
+      "This would give only 75 N·cm of opposing moment.",
+      "Balancing moments gives F₃ × 15 = 5 × 40 + 10 × 10, so F₃ = 20 N.",
+      "The 50 N force would produce too much clockwise moment.",
+      "80 N would create a much larger moment than the two forces on the left."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "In a science lab, a student heats up a chemical substance from 10°C to 20°C which requires thermal energy of 1000 J. If mass of the substance is 10 kg, then the specific heat capacity of the substance will be",
+    "options": [
+      "3 J/(kg·°C).",
+      "5 J/(kg·°C).",
+      "10 J/(kg·°C).",
+      "15 J/(kg·°C)."
+    ],
+    "officialSlo": "8.5.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "8.2.7",
+    "reasons": [
+      "Divide 1,000 J by the product of 10 kg and 10°C.",
+      "5 is half the correct value. Use the 10°C temperature rise, not the final temperature of 20°C.",
+      "c = Q/(mΔT) = 1,000/(10 × 10) = 10 J/(kg·°C).",
+      "The initial temperature is 10°C and the final is 20°C, so the rise is 10°C."
+    ]
+  },
+  {
+    "stem": "The given graph shows the changes of ice into water on heating. Which of the following statements is TRUE about the given graph?",
+    "options": [
+      "At point II, water starts boiling.",
+      "The region II to III represents condensation.",
+      "At point III, all the water gets converted into steam.",
+      "The region I to II represents ice and water in thermal equilibrium."
+    ],
+    "officialSlo": "8.5.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "8.2.5",
+    "reasons": [
+      "Point II is the end of the melting plateau, not the start of boiling.",
+      "From II to III the liquid warms, with no condensation shown.",
+      "At III the boiling plateau begins. The water has not all vapourised yet.",
+      "From I to II, added energy melts ice at constant temperature while ice and water coexist."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "The pointer of a spring balance in figure II moves up, when a metallic ball, suspended from it, is immersed into a liquid that is denser as compared to air. Refer figure I for comparison. This difference in reading is observed because",
+    "options": [
+      "density of the liquid changes.",
+      "upthrust on the ball becomes less.",
+      "of apparent loss in the weight of the ball.",
+      "weight of the ball acts vertically downwards."
+    ],
+    "officialSlo": "7.5.6",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "The balance moves because the surrounding fluid exerts buoyancy. The liquid’s density need not change.",
+      "A denser surrounding fluid exerts greater, not smaller, upthrust for the same displaced volume.",
+      "The liquid exerts a greater upward buoyant force, so the spring balance measures a smaller apparent weight.",
+      "Gravity still acts downwards in both figures and therefore cannot explain the difference."
+    ],
+    "diagram": true
+  }
+]

@@ -71,6 +71,12 @@ import pacing10 from '@/data/physics/ssc2_pacing.json';
 import chemPacing9 from '@/data/chemistry/ssc1_pacing.json';
 import chemPacing10 from '@/data/chemistry/ssc2_pacing.json';
 import styles from '@/components/MaterialLayout.module.css';
+import { physicsIx2023AnswerKey, physicsIx2023Marking, physicsIx2023References, physicsIx2023Tabs } from '@/lib/physicsIx2023Papers';
+import { physicsIx2019AnswerKey, physicsIx2019Marking, physicsIx2019Papers, physicsIx2019References, physicsIx2019Tabs } from '@/lib/physicsIx2019Papers';
+import { physicsIx2018AnswerKey, physicsIx2018Marking, physicsIx2018Papers, physicsIx2018References, physicsIx2018Tabs } from '@/lib/physicsIx2018Papers';
+import { physicsIx2017AnswerKey, physicsIx2017Marking, physicsIx2017Papers, physicsIx2017References, physicsIx2017Tabs } from '@/lib/physicsIx2017Papers';
+import { physicsIx2022AnswerKey, physicsIx2022Key, physicsIx2022Paper, physicsIx2022Tabs } from '@/lib/physicsIx2022Paper';
+import { physicsIx2021AnswerKey, physicsIx2021Key, physicsIx2021Paper, physicsIx2021Tabs } from '@/lib/physicsIx2021Paper';
 import PaperResourceNav from '@/components/PaperResourceNav';
 import { annualAnswerReviews, annual2024AnswerReviews, annualX2025AnswerReviews, csAnnual2025AnswerReviews, csAnnual2024AnswerReviews, csAnnual2023AnswerReviews, csAnnual2022AnswerReviews, csAnnualX2024AnswerReviews, csAnnualX2023AnswerReviews, csAnnualX2019AnswerReviews, physicsIx2024PaperTabs, physicsIx2025PaperTabs } from '@/lib/legacyPaperEvidence';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
@@ -78,7 +84,7 @@ import StructuredContent from '@/components/StructuredContent';
 import { hsscXiAnnualPapers, hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
 import { biologyXi2021AnswerReview, biologyXi2022VerificationReport, biologyXiAnnualArchives } from '@/lib/hsscXiAnnualBiology';
 import { getFallbackPaper } from '@/lib/paperDataService';
-import { paperMetadata, safeDocumentUrl } from '@/lib/paperPresentation';
+import { paperChoices, paperMetadata, paperScoringAnswers, safeDocumentUrl } from '@/lib/paperPresentation';
 import prisma from '@/lib/prisma';
 import { biology2024Archive, biology2024PdfRoot, biologyX2017Archive, biologyX2017PdfRoot, biologyX2018Archive, biologyX2018PdfRoot, biologyX2019Archive, biologyX2019PdfRoot, biologyX2021Archive, biologyX2021PdfRoot, biologyX2023Archive, biologyX2023PdfRoot, biologyX2024Archive, biologyX2024PdfRoot, biologyX2025Archive, biologyX2025PdfRoot } from '@/lib/biology2024Resources';
 export const dynamic='force-dynamic';
@@ -159,11 +165,68 @@ const SUPPORTED_RESOURCES = [
 
 export default async function Page({params, searchParams}:{params:Promise<{resource:string}>; searchParams?: Promise<{view?: string}>}) {
   const {resource}=await params;
+  const resourceHref = '/resources/' + resource;
+  const combinedPhysics = [
+    { key: physicsIx2021Key, tabs: physicsIx2021Tabs, answerKey: physicsIx2021AnswerKey, paper: physicsIx2021Paper },
+    { key: physicsIx2022Key, tabs: physicsIx2022Tabs, answerKey: physicsIx2022AnswerKey, paper: physicsIx2022Paper },
+  ].find(archive => archive.key.href === resourceHref);
+  const reviewedPhysics = [
+    { refs: physicsIx2017References, tabs: physicsIx2017Tabs, answerKey: physicsIx2017AnswerKey, marking: physicsIx2017Marking, paper: physicsIx2017Papers[0] },
+    { refs: physicsIx2018References, tabs: physicsIx2018Tabs, answerKey: physicsIx2018AnswerKey, marking: physicsIx2018Marking, paper: physicsIx2018Papers[0] },
+    { refs: physicsIx2019References, tabs: physicsIx2019Tabs, answerKey: physicsIx2019AnswerKey, marking: physicsIx2019Marking, paper: physicsIx2019Papers[0] },
+    { refs: physicsIx2023References, tabs: physicsIx2023Tabs, answerKey: physicsIx2023AnswerKey, marking: physicsIx2023Marking },
+  ].find(archive => archive.refs.some(item => item.href === resourceHref));
+  const physicsArchive = combinedPhysics?.key ?? reviewedPhysics?.refs.find(item => item.href === resourceHref);
+  if (physicsArchive) {
+    const tabs = combinedPhysics?.tabs ?? reviewedPhysics!.tabs;
+    const answerKey = combinedPhysics?.answerKey ?? reviewedPhysics!.answerKey;
+    const marking = reviewedPhysics?.marking ?? [];
+    const scoredPaper = combinedPhysics?.paper ?? reviewedPhysics?.paper;
+    const showOriginalSlo = answerKey.some(row => row.slo);
+    const practiceAnswers = new Map(scoredPaper?.questions.flatMap(({ questionNumber, sourceRegion }) => {
+      const accepted = paperScoringAnswers(sourceRegion, paperChoices(sourceRegion.choices));
+      if (accepted.length === 1 && accepted[0] === sourceRegion.official_answer) return [];
+      return [[Number(questionNumber), accepted.length === 4 ? 'Any option earns credit' : accepted.join(' or ')]];
+    }));
+    const isKey = resource.endsWith('-key');
+    const title = 'Physics Class IX · ' + physicsArchive.year + ' ' + physicsArchive.label;
+    return <section className={styles.page}>
+      <p><Link href="/akueb/IX/physics/pastpapers">Class IX Physics past papers</Link></p>
+      <h1>{title}</h1>
+      <DocumentViews original={physicsArchive.fileUrl} title={title} continuousPdf
+        digitalLabel={isKey ? 'Digital Answer Key' : 'Digital Notes'}
+        initialView={(await searchParams)?.view === 'original' ? 'original' : 'digital'}
+        resourceLinks={<PaperResourceNav tabs={tabs} current={physicsArchive.href} inline />}>
+        {isKey ? <div style={{ overflowX: 'auto' }}>
+          {combinedPhysics ? <p>Q1–40 are Theory and Q41–50 are Alternate to Practical. The table preserves the published board answers and shows where practice scoring differs.</p> : physicsArchive.year === 2017 ? <p>The board lists D for Q24. Practice scores C because surface colour does not directly affect evaporation at fixed temperature and other conditions.</p> : physicsArchive.year === 2018 ? <p>The board answers are reproduced as printed. The practice adjustments for Q11, Q18 and Q19 are shown in the table.</p> : physicsArchive.year === 2019 ? <p>The board prints an asterisk for Q28. The practice quiz scores D because thermal conductivity is a material property.</p> : <p>For Q30, the board lists C. Practice uses A because surface tension requires higher pressure inside a soap bubble. <a href="https://www.physics.umd.edu/courses/Phys405/Boyd/ajp00917.pdf">See the pressure calculation</a>.</p>}
+          <table className={styles.table}>
+            <thead><tr><th scope="col">Question</th>{showOriginalSlo && <th scope="col">Original SLO</th>}<th scope="col">Board answer</th>{scoredPaper && <th scope="col">Practice scoring adjustment</th>}<th scope="col">Cognitive level</th></tr></thead>
+            <tbody>{answerKey.map(row => <tr key={row.number}>
+              <th scope="row"><Link href={'/past-papers/PHY-IX-' + physicsArchive.year + '-P1?view=solved#question-' + row.number}>Q{row.number}</Link></th>
+              {showOriginalSlo && <td>{row.slo}</td>}<td>{row.letter}</td>{scoredPaper && <td>{practiceAnswers.get(row.number) ?? '—'}</td>}<td>{({ K: 'Knowledge', U: 'Understanding', A: 'Application' } as Record<string, string>)[row.level]}</td>
+            </tr>)}</tbody>
+          </table>
+        </div> : <div className={styles.digital}>
+          <p>AKU-EB commentary and examples of stronger and weaker responses. The original PDF includes the board’s full notes.</p>
+          {marking.map(note => <details key={note.number} className={styles.practicalStage}>
+            <summary>Question {note.number} · {note.marks} marks</summary>
+            <p><Link href={'/past-papers/PHY-IX-' + physicsArchive.year + '-P2?view=solved#question-' + note.number}>Open question</Link> · <a href={note.example.pdf}>PDF page {note.page}</a></p>
+            <h3>Checking hints</h3><p>{note.checking}</p>
+            <h3>Stronger response</h3><p>{note.better}</p>
+            <img src={note.example.better} alt={'Stronger candidate response for Q' + note.number} loading="lazy" style={{ maxWidth: '100%' }} />
+            <h3>Weaker response</h3><p>{note.weaker}</p>
+            <img src={note.example.weaker} alt={'Weaker candidate response for Q' + note.number} loading="lazy" style={{ maxWidth: '100%' }} />
+          </details>)}
+        </div>}
+      </DocumentViews>
+    </section>;
+  }
   const study = hsscBiologyStudyResources.find(item => item.href === '/resources/' + resource);
   if (study) return <BiologyStudyResource resource={study} original={(await searchParams)?.view === 'original'} />;
   const xiBiology = biologyXiAnnualArchives.find(archive => archive.resources.some(item => item.href === '/resources/' + resource));
   if (xiBiology) {
-    const { year, root, resources, key, marking } = xiBiology;
+    const { year, root, resources, key, marking, papers: [mcqPaper] } = xiBiology;
+    const mcqMetadata = new Map(mcqPaper.questions.map(question => [question.questionNumber, question.sourceRegion]));
     const isKey = resource.endsWith('-key');
     const title = `Biology Class XI · ${year} ${isKey ? 'Official MCQ Key' : 'E-marking Notes'}`;
     const original = root + (isKey ? 'key.pdf' : 'emarking.pdf');
@@ -176,16 +239,17 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
         resourceLinks={<PaperResourceNav tabs={resources} current={'/resources/' + resource} inline />}>
         {isKey ? <div style={{ overflowX: 'auto' }}>
           {year === 2022 && <p>The original key PDF covers Theory (Q1–50). The Alternate to Practical answers (Q51–65) come from the <a href={biologyXi2022VerificationReport}>AKU-EB verification report</a>.</p>}
-          {year === 2021 && <p>The verification report awards universal credit for Q64. RiseLearner also accepts A for Q1 and B for Q47 in practice. The table preserves the board’s listed answers.</p>}
-          {year === 2018 && <p>For Q18, the board key lists D. RiseLearner also accepts B in practice because both groups can share the listed features.</p>}
           <table className={styles.table}>
-            <thead><tr><th scope="col">Question</th>{year > 2019 && <th scope="col">Original SLO</th>}<th scope="col">{year === 2021 || year === 2018 ? 'Board answer' : 'Accepted answer'}</th><th scope="col">Cognitive level</th></tr></thead>
+            <thead><tr><th scope="col">Question</th>{year > 2019 && <th scope="col">Original SLO</th>}<th scope="col">Board answer</th><th scope="col">Cognitive level</th></tr></thead>
             <tbody>{key.map(row => {
               const review = year === 2021 ? biologyXi2021AnswerReview[row.number] : undefined;
+              const extraChoices = paperScoringAnswers(mcqMetadata.get(row.number) ?? {}, row.choices).filter(choice => !row.answer.includes(choice));
               return <tr key={row.number}>
                 <th scope="row"><Link href={`/past-papers/BIO-XI-${year}-P1?view=solved#question-${row.number}`}>Q{row.number}</Link></th>
                 {year > 2019 && <td>{row.originalSlo}</td>}
-                <td>{row.answer.join(' or ')}{row.universal && ' · Any option earns credit'}{review && <> · Also accepted in practice <a href={review.source}>{review.answer}</a></>}</td>
+                <td>{row.answer.join(' or ')}{row.universal ? ' · Any option earns credit' : extraChoices.length > 0 && <>
+                  {' · Also accepted in practice '}{review ? <a href={review.source}>{extraChoices.join(' or ')}</a> : extraChoices.join(' or ')}
+                </>}</td>
                 <td>{row.level}</td>
               </tr>;
             })}</tbody>

@@ -42,6 +42,14 @@ import { smartMatch } from '@/lib/smartSearch';
 import { questionSyllabus } from '@/lib/questionSyllabus';
 import { physicsUnit16Resource } from '@/lib/physicsUnit16Resource';
 import { physicsUnit17Resource } from '@/lib/physicsUnit17Resources';
+import { physicsIx2026ChapterMcqs } from '@/lib/physicsIx2026Papers';
+import { physicsIx2023ChapterMcqs } from '@/lib/physicsIx2023Papers';
+import { physicsIx2019ChapterMcqs } from '@/lib/physicsIx2019Papers';
+import { physicsIx2018ChapterMcqs } from '@/lib/physicsIx2018Papers';
+import { physicsIx2017ChapterMcqs } from '@/lib/physicsIx2017Papers';
+import { physicsIx2022ChapterMcqs } from '@/lib/physicsIx2022Paper';
+import { physicsIx2021ChapterMcqs } from '@/lib/physicsIx2021Paper';
+import { paperChoices, paperScoringAnswers } from '@/lib/paperPresentation';
 import { physicsSupplementaryQuestions } from '@/lib/physicsSupplementaryQuestions';
 import { sscComputerScienceMcqReview } from '@/lib/sscComputerScienceMcqReview';
 import { sscComputerScienceMapping, sscComputerScienceUnits } from '@/lib/sscComputerScienceSyllabus';
@@ -469,8 +477,10 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       }))
     : [];
 
+  const physicsAnnual = isPhysics && classDef.roman === 'IX' ? [...physicsIx2026ChapterMcqs, ...physicsIx2023ChapterMcqs, ...physicsIx2022ChapterMcqs, ...physicsIx2021ChapterMcqs, ...physicsIx2019ChapterMcqs, ...physicsIx2018ChapterMcqs, ...physicsIx2017ChapterMcqs] : [];
   const combinedChapterPool: any[] = computerChapterQuestions ?? [
     ...currentMappedQuestions,
+    ...physicsAnnual,
     ...mappedModelPool,
     ...mapped2025Pool.map((q: any) => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
     ...mapped2024Pool.map((q: any) => ({ ...q, questionNumber: 200 + Number(q.rawQuestionNumber) })),
@@ -483,6 +493,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
 
   const combinedAnnualPool: any[] = computerChapterQuestions?.filter(q => q.examYear) ?? [
     ...currentMappedQuestions,
+    ...physicsAnnual,
     ...mapped2025Pool,
     ...mapped2024Pool.map((q: any) => ({ ...q, questionNumber: 100 + Number(q.rawQuestionNumber) })),
     ...mapped2023Pool.map((q: any) => ({ ...q, questionNumber: 200 + Number(q.rawQuestionNumber) })),
@@ -577,7 +588,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     setPracticeSource(isPastPaper ? 'annual_all' : 'chapter_all');
     setSelectedUnit(unit);
     setPracticeTitle(isChem ? `Unit ${unit.unitNumber}: ${unit.name} • Reviewed Chemistry questions` : isPastPaper
-      ? `Unit ${unit.unitNumber}: ${unit.name} • Past Examination Archive (2024 & 2025)`
+      ? `Unit ${unit.unitNumber}: ${unit.name} • Past Examination Archive`
       : chapterPracticeTitle(unit)
     );
     setCognitiveFilter('all');
@@ -716,6 +727,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       stem: q.stem || q.questionText || '',
       options: q.options || q.choices || {},
       correct: correctKey,
+      correctOptions: qMeta.score_accepted_options === true ? paperScoringAnswers(qMeta, paperChoices(q.options || q.choices)) : undefined,
       solution: qMeta.explanation || q.explanation || qMeta.better_response || qMeta.model_answer || (correctKey ? `Answer key: ${correctKey}.` : 'A reviewed answer key is not available for this question.'),
       optionFeedback: qMeta.option_feedback,
       diagram,

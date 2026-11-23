@@ -77,6 +77,16 @@ describe('Site-wide educational formatting',()=>{
   expect(formatEducationalMath('30 kg/cm²')).toContain(String.raw`\frac{30 kg}{cm²}`);
   expect(formatEducationalMath('A ∩ B = {1, 2}')).toContain(String.raw`A \cap B = \{1, 2\}`);
  });
+ it('keeps SI motion units inline in question text, answer options and solutions',()=>{
+  for (const component of [MathText, ScientificText, StructuredContent]) {
+   const html = render('0 m/s < v < 550 m/s. Take g as 9.8 m / s2 and momentum as 10 kg·m/s.', component);
+   expect(html).toContain('m/s');
+   expect(html).toContain('9.8 m/s²');
+   expect(html).toContain('10 kg·m/s');
+   expect(html).not.toContain('mfrac');
+  }
+  expect(formatEducationalMath('7m/s; 12 km/s; 10 m/s^{2}')).toBe('7m/s; 12 km/s; 10 m/s²');
+ });
  it('keeps unsupported notation visible and escapes source HTML',()=>{
   expect(render(String.raw`$\unknownmath{x}$`)).toContain('unknownmath');
   expect(render(String.raw`$\unknownmath{x}$`)).not.toContain('katex-error');

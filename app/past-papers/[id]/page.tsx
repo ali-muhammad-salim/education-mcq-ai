@@ -12,6 +12,13 @@ import { notFound } from "next/navigation";
 import PaperViewerClient from "./PaperViewerClient";
 import PaperResourceNav from "@/components/PaperResourceNav";
 import { getFallbackPaper } from "@/lib/paperDataService";
+import { physicsIx2026Tabs } from '@/lib/physicsIx2026Papers';
+import { physicsIx2023Tabs } from '@/lib/physicsIx2023Papers';
+import { physicsIx2019Tabs } from '@/lib/physicsIx2019Papers';
+import { physicsIx2018Tabs } from '@/lib/physicsIx2018Papers';
+import { physicsIx2017Tabs } from '@/lib/physicsIx2017Papers';
+import { physicsIx2022Tabs } from '@/lib/physicsIx2022Paper';
+import { physicsIx2021Tabs } from '@/lib/physicsIx2021Paper';
 import { mathematicsPaperManifests } from '@/lib/mathematicsPapers';
 import {publicMaterialWhere} from '@/lib/materialVisibility';
 import {
@@ -67,7 +74,14 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
 
   const fallback = getFallbackPaper(paper?.paperCode || cleanId);
   const xiBiologyArchive = biologyXiAnnualArchives.find(archive => archive.papers.some(item => item.paperCode === fallback?.paperCode));
-  if (fallback && xiBiologyArchive && !paper?.sourceDocumentId) {
+  const physicsIx2026 = /^PHY-IX-2026-P[12]$/.test(fallback?.paperCode || '');
+  const physicsTabs = /^PHY-IX-2017-P[12]$/.test(fallback?.paperCode || '') ? physicsIx2017Tabs
+    : /^PHY-IX-2018-P[12]$/.test(fallback?.paperCode || '') ? physicsIx2018Tabs
+    : /^PHY-IX-2019-P[12]$/.test(fallback?.paperCode || '') ? physicsIx2019Tabs
+    : /^PHY-IX-2023-P[12]$/.test(fallback?.paperCode || '') ? physicsIx2023Tabs : undefined;
+  const combinedPhysicsTabs = fallback?.paperCode === 'PHY-IX-2021-P1' ? physicsIx2021Tabs
+    : fallback?.paperCode === 'PHY-IX-2022-P1' ? physicsIx2022Tabs : undefined;
+  if (fallback && (xiBiologyArchive || physicsIx2026 || physicsTabs || combinedPhysicsTabs) && !paper?.sourceDocumentId) {
     paper = fallback;
   } else if (!paper) {
     if (fallback) {
@@ -270,6 +284,12 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
       ]} />}
       {!paper.sourceDocumentId && /^PHY-IX-2025-P[12]$/.test(paper.paperCode||'') && <PaperResourceNav tabs={physicsIx2025PaperTabs} />}
       {!paper.sourceDocumentId && /^PHY-IX-2024-P[12]$/.test(paper.paperCode||'') && <PaperResourceNav tabs={physicsIx2024PaperTabs} />}
+      {combinedPhysicsTabs && <PaperResourceNav tabs={combinedPhysicsTabs} current={'/past-papers/' + paper.paperCode} />}
+      {physicsTabs && <PaperResourceNav tabs={physicsTabs} current={'/past-papers/' + paper.paperCode} />}
+      {physicsIx2026 && !paper.sourceDocumentId && <>
+        <PaperResourceNav tabs={physicsIx2026Tabs} current={'/past-papers/' + paper.paperCode} />
+        <p>RiseLearner independently solved these questions. The answers and worked solutions are for practice.</p>
+      </>}
       {/^PHY-XI-(?:201[7-9]|202[1-5])-P[12]$/.test(paper.paperCode || '') && <PaperResourceNav tabs={hsscXiAnnualResources.filter(item => item.year === paper.examYear)} />}
       {/^CS-XI-(?:201[7-9]|202[1-5])-P[12]$/.test(paper.paperCode || '') && <PaperResourceNav tabs={computerScienceXi2025Resources.filter(item => item.year === paper.examYear)} />}
       {xiBiologyArchive && <PaperResourceNav tabs={xiBiologyArchive.resources} current={'/past-papers/' + paper.paperCode} />}

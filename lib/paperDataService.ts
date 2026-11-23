@@ -85,6 +85,13 @@ import { hsscComputerSciencePapers } from '@/lib/hsscComputerSciencePapers';
 import { hsscPhysicsPapers } from '@/lib/hsscPhysicsResources';
 import { hsscXiAnnualPapers } from '@/lib/hsscXiAnnualPhysics';
 import { biologyXiAnnualPapers } from '@/lib/hsscXiAnnualBiology';
+import { physicsIx2026Papers } from '@/lib/physicsIx2026Papers';
+import { physicsIx2023Papers } from '@/lib/physicsIx2023Papers';
+import { physicsIx2019Papers } from '@/lib/physicsIx2019Papers';
+import { physicsIx2018Papers } from '@/lib/physicsIx2018Papers';
+import { physicsIx2017Papers } from '@/lib/physicsIx2017Papers';
+import { physicsIx2022Paper } from '@/lib/physicsIx2022Paper';
+import { physicsIx2021Paper } from '@/lib/physicsIx2021Paper';
 import chemistryIXSyllabus from '@/data/chemistry/ssc1_exact_syllabus.json';
 import chemistryXSyllabus from '@/data/chemistry/ssc2_exact_syllabus.json';
 
@@ -784,6 +791,8 @@ function computeSpecPaper(code: string): PaperData | null {
 }
 
 function computeFallbackPaper(code: string): PaperData | null {
+  const reviewedSscPhysics = [...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers].find(paper => paper.paperCode === code);
+  if (reviewedSscPhysics) return reviewedSscPhysics;
   const hssc = [...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].find(paper => paper.paperCode === code);
   if (hssc) return hssc;
   const mathematics = reviewedMathematicsPapers.find(paper => paper.paperCode === code);
@@ -3291,7 +3300,7 @@ export function getAllStandardPapers(): Array<{
   _count: { questions: number };
 }> {
   const basePapers = [
-    ...[...allBiologyPapers, ...biologyXiAnnualPapers, ...reviewedMathematicsPapers, ...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].map(paper => ({
+    ...[...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers, ...allBiologyPapers, ...biologyXiAnnualPapers, ...reviewedMathematicsPapers, ...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].map(paper => ({
       id: paper.id, paperCode: paper.paperCode, title: paper.title,
       examSession: paper.examSession!, examYear: paper.examYear,
       fileUrl: paper.fileUrl!, academicClass: paper.academicClass,

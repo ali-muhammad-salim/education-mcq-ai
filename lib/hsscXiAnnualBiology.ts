@@ -7,6 +7,7 @@ import source2023 from '@/data/biology/hssc_xi_2023.json';
 import source2024 from '@/data/biology/hssc_xi_2024.json';
 import source2025 from '@/data/biology/hssc_xi_2025.json';
 import { hsscBiologySyllabus } from '@/lib/hsscBiologySyllabus';
+import { hsscBiologyOptionFeedback } from '@/lib/hsscBiologyOptionFeedback';
 import type { PaperData, QuestionData } from '@/lib/paperDataService';
 
 export const biologyXiAnnualYears = [2025, 2024, 2023, 2022, 2021, 2019, 2018, 2017] as const;
@@ -22,6 +23,13 @@ const sources: Record<AnnualYear, {
 }> = { 2017: source2017, 2018: source2018, 2019: source2019, 2021: source2021, 2022: source2022, 2023: source2023, 2024: source2024, 2025: source2025 };
 
 export const biologyXi2022VerificationReport = 'https://www.nursinghero.com/study-files/23430367';
+const additionalPracticeChoices: Partial<Record<AnnualYear, Record<string, string>>> = {
+  2018: { '18': 'B' },
+  2019: { '23': 'B' },
+  2022: { '33': 'C', '55': 'D' },
+  2023: { '13': 'C', '25': 'B', '45': 'C' },
+  2024: { '50': 'D' },
+};
 export const biologyXi2021AnswerReview: Record<string, { answer: string; explanation: string; source: string }> = {
   '1': {
     answer: 'A',
@@ -203,9 +211,10 @@ function annualArchive(year: AnnualYear) {
       const magnesiumQuestion = year === 2023 && q.number === '13';
       const bryophyteQuestion = year === 2018 && q.number === '18';
       const answerReview = year === 2021 ? biologyXi2021AnswerReview[q.number] : undefined;
-      const accepted = q.universal ? Object.keys(q.choices) : answerReview ? [...q.answer, answerReview.answer]
-        : magnesiumQuestion ? [q.answer[0], 'C'] : bryophyteQuestion ? [q.answer[0], 'B'] : q.answer;
+      const extraChoice = answerReview?.answer ?? additionalPracticeChoices[year]?.[q.number];
+      const accepted = q.universal ? Object.keys(q.choices) : [...new Set(extraChoice ? [...q.answer, extraChoice] : q.answer)];
       const practical = combinesPractical && Number(q.number) > 50;
+      const feedback = hsscBiologyOptionFeedback(String(year), q.number);
       return {
       id: `${code}-q${q.number}`, questionNumber: q.number, questionText: q.stem,
       questionType: 'MULTIPLE_CHOICE', marks: q.marks, difficulty: q.level,
@@ -220,7 +229,11 @@ function annualArchive(year: AnnualYear) {
           ? 'The AKU-EB key lists A. RiseLearner also accepts C because magnesium deficiency can affect mitochondrial ATP production as well as ribosome assembly.'
           : bryophyteQuestion
           ? 'The AKU-EB key lists D (hornworts). RiseLearner also accepts B (mosses) because moss and hornwort sporophytes can share the listed features. A persistent basal meristem would distinguish hornworts.'
-          : q.answer.length > 1 ? `The official AKU-EB answer key awards credit for either ${q.answer.join(' or ')}.` : undefined),
+          : extraChoice && feedback
+          ? `AKU-EB lists ${q.answer.join(' or ')}. RiseLearner also accepts ${extraChoice}. ${feedback.find(option => option.key === extraChoice)?.reason ?? ''}`.trim()
+          : q.answer.length > 1 ? `The official AKU-EB answer key awards credit for either ${q.answer.join(' or ')}.`
+          : feedback?.find(option => option.key === q.answer[0])?.reason),
+        option_feedback: feedback,
         answer_origin: 'OFFICIAL_KEY_VERIFIED', slo: q.originalSlo, original_cognitive_level: q.level,
         original_reference_source: practical && year === 2022 ? biologyXi2022VerificationReport : root + 'key.pdf',
         original_reference_verified: true,

@@ -1,0 +1,114 @@
+[
+  {
+    "number": "1", "marks": 3, "slo": "10.4.1", "page": 2,
+    "stem": "“Physics helps in the development of our society.” Describe any THREE important roles of physics in the development of society.",
+    "solution": "1. Electromagnetic induction allows generators to supply electricity for homes, hospitals and industry.\n2. The behaviour of electromagnetic waves makes radio and mobile communication possible.\n3. The interaction of X-rays with body tissues enables medical imaging, including the detection of bone fractures.",
+    "checking": "Describe three distinct benefits or uses of physics in society.",
+    "better": "The candidate explains relevant contributions in areas such as electricity, telecommunications or transport.",
+    "weaker": "The candidate gives only one role or lists unrelated physics principles without explaining their use."
+  },
+  {
+    "number": "2", "marks": 3, "slo": "2.4.2", "page": 3, "figure": true,
+    "stem": "The speed–time graph shows the journey of a motorcyclist.\n\n**a.** Calculate the acceleration in the first 20 seconds. (2 marks)\n\n**b.** For how many seconds is the speed constant? (1 mark)",
+    "solution": "**a.** The speed rises from 0 to 25 m/s in 20 s. The graph’s gradient gives a = (25 − 0)/(20 − 0) = **1.25 m/s²**.\n\n**b.** The horizontal part runs from 20 s to 50 s. The speed is constant for **30 s**.",
+    "checking": "Use the gradient of the rising segment and read the time interval of the horizontal segment.",
+    "better": "The candidate takes both velocity readings from the graph and subtracts the endpoints of the plateau.",
+    "weaker": "The candidate uses the wrong part of the graph or reports the plateau’s speed instead of its duration."
+  },
+  {
+    "number": "3", "marks": 3, "slo": null, "page": 4,
+    "stem": "A 1,000 kg car moves in a circular path of radius 50 m at a constant speed of 25 m/s. Calculate the centripetal force on the car.",
+    "solution": "F = mv²/r = 1,000 × 25²/50 = **12,500 N**. The net centripetal force is directed towards the centre of the circle.",
+    "checking": "Use the centripetal-force formula, square the speed, substitute the values and give the result in newtons.",
+    "better": "The candidate uses the correct ratio and obtains the correct force.",
+    "weaker": "The candidate swaps the speed and radius or fails to square the speed."
+  },
+  {
+    "number": "4", "marks": 3, "slo": "4.3.1", "page": 5,
+    "stem": "The centre of gravity of a hollow sphere lies within its hollow region. Justify the statement.",
+    "solution": "For a uniform spherical shell in a nearly uniform gravitational field, opposite elements have equal mass and are equally far from the centre. Their contributions to the position of the centre of mass balance. The centre of mass, and therefore the centre of gravity, is at the geometric centre, in the empty space enclosed by the shell. A shell with uneven mass distribution need not have its centre of gravity there.",
+    "checking": "Use the sphere’s symmetry to locate the point where its total weight can be treated as acting.",
+    "better": "The candidate relates weight and symmetry to the geometric centre in the hollow region.",
+    "weaker": "The candidate invokes buoyancy or atmospheric pressure without explaining the centre of gravity."
+  },
+  {
+    "number": "5", "marks": 3, "slo": null, "page": 6,
+    "stem": "Differentiate between the orbit of a comet and the orbit of a planet in THREE points.\n\n| No. | Orbit of a comet | Orbit of a planet |\n| --- | --- | --- |\n| 1 |  |  |\n| 2 |  |  |\n| 3 |  |  |",
+    "solution": "| Typical comet orbit | Typical planet orbit in the Solar System |\n| --- | --- |\n| Often a very elongated ellipse | Usually close to circular |\n| Distance from the Sun can change greatly during one orbit | Distance usually changes less, relative to the average orbital distance |\n| A long-period comet can take centuries or more to return | The eight planets have much shorter periods than many long-period comets |\n\nThese are typical comparisons. Short-period comets exist, so period alone does not classify an object.",
+    "checking": "Give three paired comparisons about the orbits, such as shape, distance variation and orbital period.",
+    "better": "The candidate compares the orbits rather than the shapes of the bodies and gives three distinctions.",
+    "weaker": "The candidate compares the objects themselves or gives fewer than three paired points."
+  },
+  {
+    "number": "6", "marks": 3, "slo": "6.5.2", "page": 7, "figure": true,
+    "stem": "Calculate the percentage efficiency of the light bulb shown in the diagram.",
+    "solution": "The bulb receives 300 J of electrical energy and delivers 30 J in the useful form of light. Efficiency = (useful output ÷ total input) × 100% = (30/300) × 100% = **10%**. The remaining 270 J is transferred as heat.",
+    "checking": "Use the light energy as useful output, divide by electrical input, and express the result as a percentage.",
+    "better": "The candidate correctly identifies both energy values and obtains 10%.",
+    "weaker": "The candidate uses heat as useful output, reverses the ratio or omits the percentage conversion."
+  },
+  {
+    "number": "7", "marks": 3, "slo": "7.3.2", "page": 8, "figure": true,
+    "stem": "A mercury-filled test tube is inverted into a beaker that also contains mercury. Assume the closed end of the test tube is a vacuum. Compare the pressure at points (1), (2) and (3) in the diagram.",
+    "solution": "**Point 1** is at the vacuum, so its absolute pressure is approximately zero. **Point 2** is exposed to the atmosphere, so its pressure is atmospheric. **Point 3** is at the same level as point 2 in connected, stationary mercury, so it has the same pressure. Hence **P₂ = P₃ = Pₐₜₘ = ρgh > P₁**.",
+    "checking": "Identify vacuum pressure at point 1, atmospheric pressure at point 2, and the equal pressure at point 3.",
+    "better": "The candidate uses the vacuum, the exposed surface and the same-level rule for connected liquid.",
+    "weaker": "The candidate describes a barometer generally without comparing all three marked points."
+  },
+  {
+    "number": "8", "marks": 4, "slo": "9.1.4", "page": 9,
+    "stem": "A metallic conductor is 6 m long and has a cross-sectional area of 18 m². The temperature difference between its ends is 50 K and heat flows through it at 40 × 10³ W. Calculate its thermal conductivity.",
+    "solution": "For steady conduction, the heat-transfer rate is kAΔT/L. Therefore k = (heat-transfer rate × L)/(AΔT) = (40,000 × 6)/(18 × 50) ≈ **267 W/(m·K)**.",
+    "checking": "Write the steady-state conduction relation, rearrange for k, substitute the data and include the SI unit.",
+    "better": "The candidate uses the heat-transfer rate in watts and obtains approximately 267 W/(m·K).",
+    "weaker": "The candidate omits k from the conduction relation or puts the area or temperature difference on the wrong side of the ratio."
+  },
+  {
+    "number": "9a", "marks": 5, "slo": null, "page": 11,
+    "stem": "A body moves with initial velocity A and reaches velocity B after time t, covering distance S. Use this information to derive the equation **2aS = B² − A²**.",
+    "solution": "For constant acceleration along a straight line, B = A + at. The average velocity is (A + B)/2. Using S as displacement, 2S = (A + B)t. Multiply by a and substitute at = B − A. Then 2aS = (A + B)(B − A) = **B² − A²**. Distance equals the magnitude of displacement here if the body does not reverse direction.",
+    "checking": "State the constant-acceleration assumption, write both motion relationships, eliminate time and simplify the product.",
+    "better": "The candidate shows the average-velocity step and eliminates time without skipping the difference-of-squares step.",
+    "weaker": "The candidate states the result without derivation or substitutes unrelated motion equations."
+  },
+  {
+    "number": "9b", "marks": 5, "slo": "3.4.3", "page": 13,
+    "stem": "Car seatbelts and airbags protect passengers during crashes.\n\n**i.** Explain both features using the concept of momentum. (3 marks)\n\n**ii.** Relate the same idea to a person landing after a jump. (2 marks)",
+    "solution": "**i.** A passenger’s momentum has to decrease during a collision. For the same change in momentum, increasing the stopping time decreases the average force. A seatbelt restrains the passenger and increases stopping time compared with a sudden strike against the interior. The airbag cushions the stop and spreads the force over a larger area.\n\n**ii.** Bending the knees during a landing increases the time over which the body slows down, reducing the average stopping force for the same change in momentum.",
+    "checking": "Connect a longer stopping time to a smaller average force for the same momentum change and apply it to all three examples.",
+    "better": "The candidate explains the momentum change, the effect of time and the connection between the crash and landing examples.",
+    "weaker": "The candidate gives only the formula for momentum or fails to connect the two situations."
+  },
+  {
+    "number": "10a", "marks": 5, "slo": "6.4.6", "page": 15,
+    "stem": "“Renewable energy sources are better than non-renewable sources.” Justify the statement in FIVE points in the context of Pakistan.",
+    "solution": "1. Pakistan can use sunlight to generate electricity without consuming a fuel reserve.\n2. Wind generation at suitable windy sites can supplement power from other sources.\n3. Using local renewable resources can reduce reliance on imported fuels.\n4. Solar and wind generation produce no combustion exhaust during operation, helping reduce local air pollution when they replace fossil-fuel generation.\n5. Distributed renewables can provide electricity for off-grid communities and farms where extending a grid connection is difficult.",
+    "checking": "Explain five distinct advantages using examples relevant to Pakistan.",
+    "better": "The candidate connects electricity needs and local resources to several distinct reasons for using renewables.",
+    "weaker": "The candidate lists resources without justifying them or gives examples unconnected to Pakistan."
+  },
+  {
+    "number": "10b", "marks": 5, "slo": null, "page": 17,
+    "stem": "A submarine can float or submerge.\n\n**i.** Name and state the principle on which this depends. (2 marks)\n\n**ii.** Explain how this principle allows a submarine to submerge and rise. (3 marks)",
+    "solution": "**i.** Archimedes’ principle says that an object wholly or partly immersed in a fluid receives an upward buoyant force equal to the weight of the fluid it displaces.\n\n**ii.** Taking water into ballast tanks increases the average density and can make the weight exceed the buoyant force, so the submarine sinks. Expelling ballast water can make the buoyant force greater than the weight, so it rises. When the two balance, the net vertical force is zero.",
+    "checking": "State Archimedes’ principle and explain how changing the ballast changes the balance between weight and upthrust.",
+    "better": "The candidate correctly states the principle and links the ballast change to sinking and rising.",
+    "weaker": "The candidate names buoyancy without stating the principle or fails to relate the forces to the motion."
+  },
+  {
+    "number": "11a", "marks": 5, "slo": "8.2.8", "page": 19,
+    "stem": "“Evaporation takes place at all temperatures, whereas boiling takes place at a fixed temperature under a given pressure.” Explain this statement using evaporation and boiling point.",
+    "solution": "Evaporation takes place at the liquid surface. Some molecules in a distribution of energies have enough kinetic energy to escape the surface at any temperature at which the liquid is present.\n\nBoiling takes place throughout the liquid. At a given external pressure, the boiling point is the temperature at which the liquid’s vapour pressure equals that pressure, allowing bubbles of vapour to form and grow in the liquid.",
+    "checking": "Distinguish surface evaporation from bulk boiling and explain why the boiling point depends on pressure.",
+    "better": "The candidate explains molecular escape and identifies when vapour bubbles can form throughout the liquid.",
+    "weaker": "The candidate lists only factors affecting evaporation or memorised boiling points."
+  },
+  {
+    "number": "11b", "marks": 5, "slo": null, "page": 21,
+    "stem": "Describe transfer of heat by radiation with reference to infrared radiation and the energies of electrons in different orbits.",
+    "solution": "Thermal radiation carries energy as electromagnetic waves and can travel through a vacuum. Objects at ordinary temperatures emit much of this energy in the infrared. In an atomic transition, an electron dropping to a lower allowed energy level releases the energy difference as a photon. The photon is infrared if that difference corresponds to an infrared frequency. An absorbed photon transfers energy to the material.\n\nThermal radiation from ordinary solids is generally broadband, with material processes such as vibrations also contributing. It need not come solely from jumps between atomic electron levels.",
+    "checking": "Identify infrared as electromagnetic radiation, explain that it needs no material medium, and relate an allowed change in energy to emission or absorption.",
+    "better": "The candidate links heat transfer through space to radiation and describes photon emission during a downward energy transition.",
+    "weaker": "The candidate lists conduction and convection or describes unrelated energy processes without explaining radiation."
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "number": "1", "marks": 2, "slo": "10.4.1", "officialSlo": "1.1.1", "level": "K", "page": 2,
+    "stem": "Write any TWO points about the importance of physics in science and technology.",
+    "solution": "1. Electromagnetic induction explains how generators convert mechanical energy into electrical energy for homes and industry.\n2. Physics explains how X-rays pass through soft tissue more readily than bone, enabling medical imaging.",
+    "checking": "Award 1 mark for each of two relevant points.",
+    "better": "The candidate connects physical principles to practical applications.",
+    "weaker": "The candidate defines physics or gives unrelated statements without explaining its importance."
+  },
+  {
+    "number": "2", "marks": 3, "slo": "4.1.2", "officialSlo": "4.1.2", "level": "K", "page": 3,
+    "stem": "Write any THREE examples of turning effect of force from daily life.",
+    "solution": "1. Pushing a door handle turns the door about its hinges.\n2. Pulling on a spanner turns a nut about its axis.\n3. Applying a force around the rim of a steering wheel turns it about the steering column.",
+    "checking": "Award 1 mark for each of three distinct everyday examples.",
+    "better": "The candidate gives examples in which an applied force produces rotation about an identifiable axis.",
+    "weaker": "The candidate gives definitions or types of equilibrium instead of everyday examples of torque."
+  },
+  {
+    "number": "3", "marks": 2, "slo": null, "officialSlo": "5.2.2", "level": "U", "page": 5,
+    "stem": "Two identical balls of masses m₁ and m₂, where m₁ = m₂, are separated by a distance r. If the distance between the two balls is doubled, derive an equation to show that the gravitational force becomes one-quarter of its initial value.",
+    "solution": "The initial gravitational force is F = Gm₁m₂/r². With the same masses at separation 2r, F′ = Gm₁m₂/(2r)² = Gm₁m₂/(4r²) = F/4.",
+    "checking": "Award 1 mark per valid mathematical step in the derivation, up to 2 marks.",
+    "better": "The candidate substitutes 2r into Newton’s law and squares the entire denominator.",
+    "weaker": "The candidate mishandles the square or uses an unrelated equation."
+  },
+  {
+    "number": "4", "marks": 3, "slo": "8.3.2", "officialSlo": "8.2.2", "level": "A", "page": 6,
+    "stem": "Convert 100°F into degrees Celsius (°C) and kelvins (K).",
+    "solution": "T(°C) = (100 − 32) × 5/9 = 37.777…°C ≈ **37.78°C**.\n\nT(K) = 37.777… + 273.15 = **310.93 K** (about 311 K). Using the board’s classroom approximation of 273 for the offset gives about 310.8 K.",
+    "checking": "Award 1 mark for the correct substitutions, 1 mark for the Celsius value and 1 mark for the kelvin value.",
+    "better": "The candidate applies the correct offsets and reports both values with units.",
+    "weaker": "The candidate uses the wrong scale factor or adds 373 instead of about 273."
+  },
+  {
+    "number": "5", "marks": 3, "slo": "9.1.5", "officialSlo": "9.1.2, 9.2.1, 9.4.1", "level": "U", "page": 8, "figure": true,
+    "stem": "The diagram shows a soldering iron used to melt solder for joining wires in an electrical circuit.\n\n**a.** Why is the tip made of copper? (1 mark)\n\n**b.** Why is the handle made of plastic? (1 mark)\n\n**c.** Name the process that transfers heat from the copper tip to the solder. (1 mark)",
+    "solution": "**a.** Copper is a good thermal conductor, so it transfers energy quickly to the solder.\n\n**b.** Plastic is a poor thermal conductor, so less heat reaches the hand.\n\n**c.** Thermal conduction through direct contact.",
+    "checking": "Award 1 mark for each of parts a, b and c.",
+    "better": "The candidate describes copper as a good thermal conductor, identifies plastic as an insulator and names conduction.",
+    "weaker": "The candidate gives properties unrelated to heat flow or chooses the wrong transfer process."
+  },
+  {
+    "number": "6a", "marks": 6, "slo": "2.5.2", "officialSlo": "2.9.2", "level": "A", "page": 10,
+    "stem": "A rescue helicopter is ascending vertically at 20 m/s. At a height of 60 m above the Earth, a packet of relief goods is accidentally dropped. Calculate how long the packet takes to reach the ground. Take g = 10 m/s².",
+    "solution": "Take upwards as positive. At release, u = +20 m/s, a = −10 m/s² and the displacement to ground is −60 m.\n\nUsing s = ut + ½at² gives −60 = 20t − 5t², so t² − 4t − 12 = 0.\n\nFactor to get (t − 6)(t + 2) = 0. The time after release is **6 s**. The −2 s root is before release.",
+    "checking": "Award 1 mark for recording the data and up to 5 marks for valid mathematical steps.",
+    "better": "The candidate keeps the packet’s initial upward velocity, uses consistent signs and selects the positive time.",
+    "weaker": "The candidate assumes zero speed at release, chooses an inappropriate equation or applies inconsistent signs."
+  },
+  {
+    "number": "6b", "marks": 6, "slo": "3.4.4", "officialSlo": "3.2.3", "level": "A", "page": 12,
+    "stem": "A net force of 1,000 N is applied to a passenger bus for 10 s, causing the bus to move on a straight road. Calculate the momentum of the bus.",
+    "solution": "Impulse equals the change in momentum. Therefore Δp = FΔt = 1,000 N × 10 s = **10,000 kg·m/s** in the direction of the force.\n\nThe e-marking notes use the interpretation that the bus starts from rest. Under that assumption its final momentum is 10,000 kg·m/s. For a bus already moving, the data only determine the change, and final momentum equals initial momentum plus that change.",
+    "checking": "Award up to 5 marks for the mathematical steps and 1 mark for the SI unit of momentum.",
+    "better": "The candidate relates net force and duration to change in momentum and uses the correct unit.",
+    "weaker": "The candidate substitutes into an unrelated formula or omits the SI unit."
+  },
+  {
+    "number": "7a", "marks": 6, "slo": "6.5.3", "officialSlo": "6.5.3", "level": "U", "page": 14,
+    "stem": "Explain in any SIX points why machines cannot give 100% efficiency in their surroundings.",
+    "solution": "1. Sliding surfaces and bearings turn some input work into heat through friction.\n2. Air resistance uses some energy to set nearby air in motion.\n3. Vibrating parts radiate sound that carries energy away.\n4. Electrical resistance heats the wiring in electrically driven machines.\n5. Repeated deformation of belts or tyres dissipates energy internally.\n6. A hot machine or engine loses some thermal energy to cooler surroundings.",
+    "checking": "Award 1 mark per relevant point, up to 6 marks.",
+    "better": "The candidate explains several distinct ways energy leaves the useful output pathway.",
+    "weaker": "The candidate repeats one idea in different words or gives causes unrelated to useful output."
+  },
+  {
+    "number": "7b", "marks": 6, "slo": "8.1.3", "officialSlo": "7.1.2", "level": "A", "page": 16,
+    "stem": "Describe the fourth state of matter, plasma, in any SIX points.",
+    "solution": "1. Plasma contains free electrons and ions from a partly or fully ionised gas.\n2. Heating a gas or supplying energy through an electrical discharge can create plasma.\n3. Mobile charged particles allow plasma to conduct electricity.\n4. Electric and magnetic fields strongly affect the motion of the charged particles.\n5. On large scales many plasmas are nearly neutral because the positive and negative charge densities approximately balance.\n6. Plasma occurs naturally in stars and lightning and can be created in fluorescent lamps.",
+    "checking": "Award 1 mark per relevant point, up to 6 marks.",
+    "better": "The candidate identifies the charged constituents and explains properties such as conductivity and response to fields.",
+    "weaker": "The candidate confuses plasma with an ordinary neutral gas or repeats the same property."
+  }
+]

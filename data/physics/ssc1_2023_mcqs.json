@@ -1,0 +1,807 @@
+[
+  {
+    "stem": "The number 123.4 can be written in scientific notation as",
+    "options": [
+      "1.234 × 10⁻²",
+      "12.34 × 10¹",
+      "1.234 × 10²",
+      "0.1234 × 10³"
+    ],
+    "officialSlo": "1.5.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "1.3.2",
+    "reasons": [
+      "The negative exponent gives 0.01234.",
+      "The value matches, but 12.34 is outside the required coefficient range from 1 up to 10.",
+      "Moving the decimal two places left gives 1.234 × 10².",
+      "The value matches, but the coefficient must be at least 1."
+    ]
+  },
+  {
+    "stem": "Candela is the S.I. unit of",
+    "options": [
+      "luminous intensity.",
+      "amount of a substance.",
+      "temperature of an object.",
+      "electric current in a circuit."
+    ],
+    "officialSlo": "1.3.2",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "K",
+    "slo": "1.2.1",
+    "reasons": [
+      "Candela (cd) is the SI base unit of luminous intensity.",
+      "Amount of substance is measured in moles (mol).",
+      "The SI base unit of thermodynamic temperature is the kelvin (K).",
+      "The SI base unit of electric current is the ampere (A)."
+    ]
+  },
+  {
+    "stem": "The sum of 8.2 × 10⁴ and 4 × 10⁶ in scientific notation is",
+    "options": [
+      "4.08 × 10⁶",
+      "4.08 × 10¹⁰",
+      "12.2 × 10⁶",
+      "12.2 × 10¹⁰"
+    ],
+    "officialSlo": "1.5.1",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "1.3.2",
+    "reasons": [
+      "Rewrite 8.2 × 10⁴ as 0.082 × 10⁶ and add to get 4.082 × 10⁶, approximately 4.08 × 10⁶.",
+      "The power of ten is four orders of magnitude too large.",
+      "8.2 and 4 cannot be added directly because their powers of ten differ.",
+      "Adding the coefficients and adding the exponents are both invalid operations for this sum."
+    ]
+  },
+  {
+    "stem": "A 4 kg school bag is being carried by a student. The mass of the bag in grams (g) is equal to",
+    "options": [
+      "4 × 10⁻³ g.",
+      "4 × 10⁻² g.",
+      "4 × 10² g.",
+      "4 × 10³ g."
+    ],
+    "officialSlo": "1.4.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "1.3.1",
+    "reasons": [
+      "4 × 10⁻³ g is 0.004 g.",
+      "4 × 10⁻² g is 0.04 g.",
+      "4 × 10² g is 400 g.",
+      "Multiply by 1,000 g/kg to obtain 4,000 g."
+    ]
+  },
+  {
+    "stem": "The S.I. unit that represents a vector quantity is",
+    "options": [
+      "A",
+      "K",
+      "m³",
+      "m/s²"
+    ],
+    "officialSlo": "2.4.2",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "K",
+    "slo": "1.4.2",
+    "reasons": [
+      "A measures electric current, treated as a scalar quantity here.",
+      "K measures temperature, a scalar.",
+      "m³ measures volume, a scalar.",
+      "m/s² measures acceleration, which has both magnitude and direction."
+    ]
+  },
+  {
+    "stem": "If two forces of 3 N and 4 N are perpendicular to each other, then the magnitude of their resultant force will be",
+    "options": [
+      "√7 N.",
+      "5 N.",
+      "7 N.",
+      "25 N."
+    ],
+    "officialSlo": "2.7.2",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "A",
+    "slo": "1.4.4",
+    "reasons": [
+      "Add the squares 3² and 4², then take the square root. √7 does not do this.",
+      "The components are perpendicular, so the resultant is √(3² + 4²) = 5 N.",
+      "Adding 3 and 4 would give the resultant if the forces acted in the same direction.",
+      "25 is the square of the resultant magnitude. Its square root is 5 N."
+    ]
+  },
+  {
+    "stem": "In a mountainous region where land sliding is common, a piece of rock suddenly falls from a certain height and strikes the ground in 3 s. The distance that this piece of rock covers to reach the ground is (Note: The value of acceleration due to gravity is 9.8 m/s².)",
+    "options": [
+      "14.7 m.",
+      "44.1 m.",
+      "88.2 m.",
+      "176.4 m."
+    ],
+    "officialSlo": "2.10.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "A",
+    "slo": "2.5.2",
+    "reasons": [
+      "The time must be squared: use ½ × 9.8 × 3².",
+      "From rest, the distance is ½gt² = 44.1 m.",
+      "This calculation omits the factor of one-half.",
+      "The fall starts from rest and lasts 3 s, giving 44.1 m."
+    ]
+  },
+  {
+    "stem": "The given table shows the distance covered by a car in four different segments.\n\n| Segment | Distance covered (m) |\n| --- | --- |\n| I | 0–10 |\n| II | 11–22 |\n| III | 23–35 |\n| IV | 36–49 |\n\nIf the car takes the same interval of time to cover all four segments, then the car",
+    "options": [
+      "is accelerating.",
+      "is decelerating.",
+      "has uniform velocity.",
+      "comes to rest after each segment."
+    ],
+    "officialSlo": "2.9.1",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "2.3.3",
+    "reasons": [
+      "The car covers more distance in successive equal intervals, so its average speed increases over the intervals.",
+      "Deceleration would give decreasing speeds, contrary to the trend.",
+      "Uniform velocity would give equal distances in equal times.",
+      "Segment distances alone give no evidence that the car stops at the boundaries."
+    ]
+  },
+  {
+    "stem": "The physical quantity that is measured in metre per second (m/s) is",
+    "options": [
+      "time.",
+      "velocity.",
+      "distance.",
+      "acceleration."
+    ],
+    "officialSlo": "2.3.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": "2.3.1",
+    "reasons": [
+      "Time is measured in seconds.",
+      "Velocity is displacement divided by time, measured in m/s.",
+      "Distance is measured in metres.",
+      "Acceleration is measured in m/s²."
+    ]
+  },
+  {
+    "stem": "Inertia of a body depends on its",
+    "options": [
+      "mass.",
+      "force.",
+      "weight.",
+      "velocity."
+    ],
+    "officialSlo": "3.3.2",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "K",
+    "slo": "3.1.2",
+    "reasons": [
+      "Mass measures resistance to a change in velocity.",
+      "Net force causes acceleration, while mass determines the inertia.",
+      "Weight depends on the local gravitational field. Inertia follows mass.",
+      "Changing velocity does not in itself change inertia in this setting."
+    ]
+  },
+  {
+    "stem": "If a body of mass 10 kg is placed on the surface of the Earth, then the pull of the Earth on the body will be (Note: The value of acceleration due to gravity is 9.8 m/s².)",
+    "options": [
+      "0.98 N.",
+      "19.8 N.",
+      "98 N.",
+      "100 N."
+    ],
+    "officialSlo": "3.1.3",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "3.1.4",
+    "reasons": [
+      "Multiply 10 kg by 9.8 m/s².",
+      "The mass and acceleration must be multiplied, giving 98 N.",
+      "Weight is mg = 10 × 9.8 = 98 N.",
+      "100 N would follow from rounding g to 10 m/s². The question gives 9.8 m/s²."
+    ]
+  },
+  {
+    "stem": "A bullet is fired from a gun with the velocity of 550 m/s.\n\nWhich of the following is TRUE for the gun’s backward recoil velocity (v)?",
+    "options": [
+      "0 m/s",
+      "0 m/s < v < 550 m/s",
+      "550 m/s",
+      "550 m/s < v < 1100 m/s"
+    ],
+    "officialSlo": "3.2.7",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "3.4.5",
+    "reasons": [
+      "For the usual freely recoiling system, momentum conservation requires an opposite recoil.",
+      "The recoil speed is smaller than the other body's speed because the recoiling body has much greater mass.",
+      "Equal speeds would require equal masses for their opposite momenta.",
+      "A greater recoil speed would require the recoiling body to have smaller mass."
+    ]
+  },
+  {
+    "stem": "In a throw ball champions trophy match, a player spins a metallic ball of mass 3 kg in a circle of radius 1 m with a velocity of 2 m/s before throwing the ball. The magnitude of centripetal force applied by the player will be",
+    "options": [
+      "5 N.",
+      "6 N.",
+      "12 N.",
+      "18 N."
+    ],
+    "officialSlo": "3.5.3",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": null,
+    "reasons": [
+      "The calculation uses the square of 2 m/s and gives 12 N.",
+      "6 N comes from using speed instead of speed squared.",
+      "F = mv²/r = 3 × 2² / 1 = 12 N.",
+      "The given mass, speed and radius give 12 N."
+    ],
+    "reviewNote": "The current syllabus defines centripetal force. This item requires calculating mv²/r, which has no direct Class IX outcome."
+  },
+  {
+    "stem": "An astronaut is sitting in a rocket on the Earth which is ready to launch to the Moon. When the astronaut will reach to the Moon, his weight and mass would",
+    "options": [
+      "increase · remain the same",
+      "remain the same · increase",
+      "decrease · remain the same",
+      "remain the same · decrease"
+    ],
+    "officialSlo": "3.3.3",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "3.1.1",
+    "reasons": [
+      "The Moon's weaker gravity decreases weight.",
+      "Gravity changes weight, while the astronaut's mass stays constant.",
+      "The Moon's weaker gravity lowers weight and leaves mass unchanged.",
+      "Weight changes with gravity and mass stays constant."
+    ]
+  },
+  {
+    "stem": "If a uniform metre rule is adjusted on a pivot at 50 cm mark, then it will",
+    "options": [
+      "be balanced.",
+      "turn clockwise.",
+      "fall on the ground.",
+      "turn anti-clockwise."
+    ],
+    "officialSlo": "4.1.2",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "4.3.1",
+    "reasons": [
+      "The pivot is at the uniform rule's centre and the clockwise and anticlockwise moments balance.",
+      "There is no excess clockwise moment about the centre.",
+      "The pivot supports the ruler when it is balanced.",
+      "There is no excess anticlockwise moment about the centre."
+    ]
+  },
+  {
+    "stem": "If a student is unable to open a door, then which of the following condition(s) is/ are FALSE for the given situation?\n\nI. The net force on the door is 0 N.\n\nII. The applied force is greater than 0 N.\n\nIII. The force is applied on the hinges of the door.",
+    "options": [
+      "I only",
+      "II only",
+      "I and III",
+      "II and III"
+    ],
+    "officialSlo": "4.5.4",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "4.1.2",
+    "reasons": [
+      "A stationary door can have zero net force because its support and latch can balance applied forces.",
+      "The board marks II only as false, but the door may stay closed even when a nonzero force is applied.",
+      "The stem does not establish where the force is applied, and zero net force is possible.",
+      "The stem does not establish whether the force is zero or whether it acts at the hinges."
+    ],
+    "reviewNote": "The board awards B. A door can stay shut under a nonzero applied force, and the stem gives no point of application, so it does not uniquely establish which statements are false."
+  },
+  {
+    "stem": "If a body returns to its previous position after a slight jerk, then the body is said to be in",
+    "options": [
+      "zero equilibrium.",
+      "stable equilibrium.",
+      "neutral equilibrium.",
+      "unstable equilibrium."
+    ],
+    "officialSlo": "4.5.2",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": "4.4.2",
+    "reasons": [
+      "Returning after a disturbance is the defining feature of stable equilibrium.",
+      "A small displacement creates a restoring effect that brings the body back.",
+      "In neutral equilibrium the body stays in its new position.",
+      "In unstable equilibrium the body moves further from its original position."
+    ]
+  },
+  {
+    "stem": "A sports racing car is made stable by",
+    "options": [
+      "raising its height.",
+      "increasing its speed.",
+      "decreasing its width.",
+      "lowering its centre of gravity."
+    ],
+    "officialSlo": "4.6.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "4.3.2",
+    "reasons": [
+      "Raising the centre of gravity makes tipping easier.",
+      "Driving faster can increase the tendency to tip when turning.",
+      "A narrower base makes tipping easier.",
+      "A lower centre of gravity makes it harder for the line of action of weight to pass outside the base."
+    ]
+  },
+  {
+    "stem": "The mass of a student on the surface of the Earth is measured as 100 kg. If the Earth’s mass is decreased, without changing in its radius, then the weight of the student will (Note: The value of acceleration due to gravity is 9.8 m/s².)",
+    "options": [
+      "become zero.",
+      "remain 980 N.",
+      "be less than 980 N.",
+      "be more than 980 N."
+    ],
+    "officialSlo": "5.2.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": null,
+    "reasons": [
+      "A positive Earth mass still exerts a gravitational force.",
+      "At fixed radius, reducing the Earth's mass decreases the gravitational field strength.",
+      "At fixed radius, g = GM/r² decreases with Earth mass, so the student's weight falls below 980 N.",
+      "The field strength would increase if Earth's mass increased at fixed radius."
+    ]
+  },
+  {
+    "stem": "The gravitational force between two objects is measured as 200 N. If the distance between them decreases by half, then the new value of the force of gravitation will be",
+    "options": [
+      "50 N.",
+      "100 N.",
+      "400 N.",
+      "800 N."
+    ],
+    "officialSlo": "5.1.5",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "A",
+    "slo": null,
+    "reasons": [
+      "The force would fall to 50 N if the separation doubled.",
+      "Halving separation increases the force.",
+      "Halving separation gives four times the force, following the inverse-square law.",
+      "F becomes 200 / (½)² = 800 N."
+    ]
+  },
+  {
+    "stem": "If an astronaut drops an object outside from a spaceship that is revolving in a circular orbit into the upper space, then the object will",
+    "options": [
+      "reach the Earth’s surface.",
+      "escape from the solar system.",
+      "stick to the spaceship outer body.",
+      "continue to revolve in the circular orbit."
+    ],
+    "officialSlo": "5.5.2",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "The released object retains the spacecraft's orbital motion in the ideal case.",
+      "Release alone supplies no extra speed to escape.",
+      "Release alone supplies no force that would cause it to stick.",
+      "If gently released, the object keeps essentially the same initial position and orbital velocity and continues in orbit."
+    ]
+  },
+  {
+    "stem": "An object has a weight W when it is on the surface of a planet of radius R. The gravitational force on the object after it has been moved to a distance of 2R from the centre of the planet is",
+    "options": [
+      "2W",
+      "4W",
+      "½W",
+      "¼W"
+    ],
+    "officialSlo": "5.1.5",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "Gravity decreases as distance from the centre increases.",
+      "Doubling the radius ratio makes the force four times smaller.",
+      "The inverse-square law gives a factor of one-quarter, not one-half.",
+      "At 2R the force is W × (R/2R)² = W/4."
+    ]
+  },
+  {
+    "stem": "In the given figure, a person exerts force which causes the car to move forward. This is an example of",
+    "options": [
+      "torque.",
+      "efficiency.",
+      "work done.",
+      "rotatory motion."
+    ],
+    "officialSlo": "6.1.2",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "6.1.1",
+    "reasons": [
+      "Torque describes a turning effect about a pivot.",
+      "Efficiency compares useful output with input.",
+      "The push has a component along the displacement, so the person does work on the car.",
+      "The figure shows forward displacement, the relevant feature for work."
+    ]
+  },
+  {
+    "stem": "Due to heavy rain, a mango of mass 0.3 kg drops from a tree in a mango orchard from a height of 40 m. Ignoring the air resistance, the potential energy of the mango is (Note: The value of acceleration due to gravity as 9.8 m/s².)",
+    "options": [
+      "32.6 J.",
+      "50.1 J.",
+      "117.6 J.",
+      "133.3 J."
+    ],
+    "officialSlo": "6.2.3",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "6.3.3",
+    "reasons": [
+      "The product of the given mass, gravitational field and height is 117.6 J.",
+      "This is not the product 0.3 × 9.8 × 40.",
+      "Relative to the ground, mgh = 0.3 × 9.8 × 40 = 117.6 J.",
+      "Using the stated mass and height gives 117.6 J."
+    ]
+  },
+  {
+    "stem": "A person lifts his luggage and climbs up the stairs. If he performs a work done of 10 J to climb up the stairs in 60 s, then the value of power of the person will be",
+    "options": [
+      "0.166 W.",
+      "6 W.",
+      "50 W.",
+      "70 W."
+    ],
+    "officialSlo": "6.6.2",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "6.6.2",
+    "reasons": [
+      "Power is work divided by time: 10/60 ≈ 0.1667 W, matching A.",
+      "6 results from dividing time by work.",
+      "Power is a ratio here, so subtracting time and work is invalid.",
+      "Adding joules and seconds does not give watts."
+    ]
+  },
+  {
+    "stem": "A snow avalanche is a rapid flow of snow down a slope, such as hill or mountain. When it occurs, then the potential energy it contains is converted into\n\nI. Chemical energy\n\nII. Kinetic energy\n\nIII. Sound energy",
+    "options": [
+      "I only.",
+      "II only.",
+      "I and II.",
+      "II and III."
+    ],
+    "officialSlo": "6.3.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "6.4.1",
+    "reasons": [
+      "The release of gravitational potential energy does not primarily produce chemical energy.",
+      "The snow gains kinetic energy and also produces sound.",
+      "The snow gains kinetic energy, while sound is also produced.",
+      "The snow gains kinetic energy as it moves and produces sound during motion and collisions."
+    ]
+  },
+  {
+    "stem": "All of the following are the examples of non-renewable energy sources EXCEPT",
+    "options": [
+      "wind energy.",
+      "nuclear energy.",
+      "energy from fossil fuels.",
+      "energy from minerals and ores."
+    ],
+    "officialSlo": "6.4.6",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "6.4.5",
+    "reasons": [
+      "Wind is naturally replenished, so it is the renewable example.",
+      "Conventional nuclear fuel comes from finite reserves.",
+      "Fossil fuels take geological timescales to form and are depleted by use.",
+      "The paper refers to finite mined resources used as fuels, such as uranium ore."
+    ]
+  },
+  {
+    "stem": "A cubical block of length x m each is completely immersed into water. The upthrust of water applied on the cubical block is (Note: Take the acceleration due to gravity as ‘g’ m/s² and density of water as ‘ρ’ kg/m³.)",
+    "options": [
+      "ρ g x².",
+      "ρ g x³.",
+      "ρ g x⁴.",
+      "ρ g x⁵."
+    ],
+    "officialSlo": "7.6.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "x² is an area, while displaced water must be measured by volume.",
+      "A fully immersed cube displaces x³ m³ of water. Its buoyant force is the weight ρgx³ of that water.",
+      "x⁴ does not describe the volume of a cube.",
+      "The correct power of x for the displaced volume is three."
+    ]
+  },
+  {
+    "stem": "A metal piece and a wooden log of equal size are thrown into the river. The piece of metal sinks whereas the wooden log does not. This is because the wooden log",
+    "options": [
+      "has no density.",
+      "is denser than the metal piece.",
+      "is less dense than the metal piece.",
+      "has equal density as of the metal piece."
+    ],
+    "officialSlo": "7.2.2",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "Wood has a positive mass per unit volume.",
+      "The wood floats because its average density is below the water's, while the metal sinks.",
+      "For the stated observations, the floating log is less dense than the metal piece.",
+      "Equal average densities would not explain the different behaviour in the same water."
+    ]
+  },
+  {
+    "stem": "Children love to play with soap bubbles. If a soap bubble is stable in the air, then the atmospheric pressure will be",
+    "options": [
+      "more than outside · less than inside",
+      "less than outside · more than inside",
+      "equal to outside · equal to inside",
+      "equal to zero · more than zero"
+    ],
+    "officialSlo": "7.4.1",
+    "officialAnswer": "C",
+    "key": "A",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "The surface tension of the two interfaces requires a higher internal pressure. For a thin spherical soap film, ΔP = 4γ/r.",
+      "A higher outside pressure would act in the same inward sense as surface tension.",
+      "The official key marks C. A finite spherical film with positive surface tension requires a positive pressure difference.",
+      "The trapped air in a stable bubble has positive absolute pressure."
+    ],
+    "reviewNote": "The official key awards C. Practice awards A using the Young–Laplace pressure difference for a soap bubble."
+  },
+  {
+    "stem": "According to the kinetic theory of matter, a particle moves MORE rapidly in the state of",
+    "options": [
+      "solid.",
+      "liquid.",
+      "plasma.",
+      "gaseous."
+    ],
+    "officialSlo": "7.1.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "8.1.2",
+    "reasons": [
+      "Particles in a solid vibrate about positions and lack the free motion assumed here for gases.",
+      "Liquid particles move past each other but remain close, unlike the gas model the key expects.",
+      "Plasma particle speeds depend on species and temperature, so the stem cannot establish a universal ranking.",
+      "The key uses the usual solid–liquid–gas comparison. Including plasma makes a universal speed ranking untenable without stated conditions."
+    ],
+    "reviewNote": "The board awards D under the usual solid–liquid–gas comparison. Including plasma makes the question underdetermined without temperatures and particle species."
+  },
+  {
+    "stem": "If a tunnel is passing underneath an ocean, then the water pressure applied on the walls of the tunnel will be",
+    "options": [
+      "zero.",
+      "equal to the atmospheric pressure.",
+      "lower than the atmospheric pressure.",
+      "higher than the atmospheric pressure."
+    ],
+    "officialSlo": "7.4.3",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "7.4.3",
+    "reasons": [
+      "Water exerts pressure at depth.",
+      "The water column adds pressure above the surface value.",
+      "At depth the total pressure is atmospheric pressure plus the water-column contribution.",
+      "The absolute pressure is Pₐₜₘ + ρgh, which exceeds atmospheric pressure at positive depth."
+    ]
+  },
+  {
+    "stem": "The 40 degree Centigrade in Fahrenheit scale is",
+    "options": [
+      "80 degree.",
+      "104 degree.",
+      "233 degree.",
+      "313 degree."
+    ],
+    "officialSlo": "8.2.2",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "A",
+    "slo": "8.3.2",
+    "reasons": [
+      "Use °F = (9/5)°C + 32. Substituting 40 gives 104°F.",
+      "40 × 9/5 + 32 = 104°F.",
+      "233 is not the calculated Fahrenheit value.",
+      "313 is the approximate kelvin value of 40°C."
+    ]
+  },
+  {
+    "stem": "After swimming on a hot summer day, our body feels cool. This is because",
+    "options": [
+      "water is a poor conductor of heat.",
+      "air circulation is higher in the surrounding.",
+      "water evaporates by taking heat from the body.",
+      "body temperature is higher than the surrounding temperature."
+    ],
+    "officialSlo": "8.6.3",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "8.2.9",
+    "reasons": [
+      "The cooling described is due to evaporation of water from the skin.",
+      "Moving air can speed evaporation. The cooling mechanism is heat absorbed by evaporation.",
+      "Evaporating water absorbs latent heat from the skin, cooling it.",
+      "Even on a hot day, evaporation removes energy from the skin."
+    ]
+  },
+  {
+    "stem": "The amount of heat absorbed by 2 kg of water is 4.512 × 10⁶ J in process of changing from liquid to vapour. The heat requires to convert 3 kg of water into vapour will be",
+    "options": [
+      "1.128 × 10⁶ J.",
+      "2.256 × 10⁶ J.",
+      "4.512 × 10⁶ J.",
+      "6.768 × 10⁶ J."
+    ],
+    "officialSlo": "8.5.2",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "K",
+    "slo": "8.2.7",
+    "reasons": [
+      "The heat scales directly with mass. The factor is 3/2.",
+      "2.256 × 10⁶ J is the heat needed for 1 kg.",
+      "4.512 × 10⁶ J is the given amount for 2 kg.",
+      "For 3 kg, multiply the 2 kg value by 3/2 to obtain 6.768 × 10⁶ J."
+    ]
+  },
+  {
+    "stem": "Same volume of copper, water and air are given equal amount of heat. The CORRECT sequence of expansion from maximum to minimum is",
+    "options": [
+      "copper, water, air.",
+      "water, air, copper.",
+      "air, copper, water.",
+      "air, water, copper."
+    ],
+    "officialSlo": "8.7.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "The board expects air to expand more than either condensed material under the assumed ordinary conditions.",
+      "The expected qualitative sequence puts air ahead of water.",
+      "The expected qualitative sequence puts water ahead of copper.",
+      "Air, water, copper is the intended qualitative order. Equal volumes and equal heat inputs alone do not fix a universal order without temperature and constraints."
+    ],
+    "reviewNote": "The board awards D as the usual qualitative order. Actual expansion under equal heat input depends on heat capacity, initial temperature, and mechanical conditions."
+  },
+  {
+    "stem": "In winter season, a metallic handle of a door will feel colder to touch than a wooden handle because metal has",
+    "options": [
+      "low thermal conductivity.",
+      "high thermal conductivity.",
+      "low specific heat capacity.",
+      "high specific heat capacity."
+    ],
+    "officialSlo": "9.1.4",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "9.1.5",
+    "reasons": [
+      "Metal's high conductivity accounts for the rapid loss of heat from the hand.",
+      "Metal transfers heat away from the hand faster than wood at the same starting temperature.",
+      "Specific heat capacity describes energy per unit mass per degree. Conductivity explains this comparison.",
+      "Rapid transfer from the hand is explained by conductivity."
+    ]
+  },
+  {
+    "stem": "The amount of radiation from a body depends upon all of the following factors EXCEPT",
+    "options": [
+      "colour.",
+      "weight.",
+      "texture.",
+      "temperature."
+    ],
+    "officialSlo": "9.4.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "9.3.2",
+    "reasons": [
+      "Surface colour can affect emissivity and therefore radiation.",
+      "Weight is not an independent factor in the usual thermal-radiation model.",
+      "Surface finish can affect emissivity and therefore radiation.",
+      "Radiated power depends strongly on absolute surface temperature."
+    ]
+  },
+  {
+    "stem": "White surfaces as compared to black surfaces made of same material reflects",
+    "options": [
+      "less heat.",
+      "more heat.",
+      "zero amount of heat.",
+      "same amount of heat."
+    ],
+    "officialSlo": "9.5.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "9.3.2",
+    "reasons": [
+      "In the intended comparison white surfaces reflect more of the incident radiation.",
+      "White surfaces generally reflect more radiation than black surfaces in the textbook comparison, with other properties held constant.",
+      "Reflection from a white surface is not zero.",
+      "The comparison relies on a difference in absorptivity and reflectivity."
+    ]
+  },
+  {
+    "stem": "Stainless steel pans are usually provided with copper bottoms. The reason for this is that",
+    "options": [
+      "pans made by copper appear colourful.",
+      "stainless steel is a good conductor of heat.",
+      "stainless steel is more expensive than copper.",
+      "copper is a better conductor of heat than stainless steel."
+    ],
+    "officialSlo": "9.1.2",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "9.1.6",
+    "reasons": [
+      "Appearance does not explain the choice of material for heat transfer.",
+      "The copper base is used because copper conducts heat better than stainless steel.",
+      "The design choice here is about heat transfer, not material prices.",
+      "Copper's higher thermal conductivity spreads heat across the base efficiently."
+    ]
+  }
+]

@@ -35,6 +35,13 @@ import type { HsscMcqsData } from '@/lib/hsscMcqsData';
 import prisma from '@/lib/prisma';
 import { paperAnswer, paperChoices, paperMetadata } from '@/lib/paperPresentation';
 import { getAllStandardPapers, getFallbackPaper } from '@/lib/paperDataService';
+import { physicsIx2026Papers } from '@/lib/physicsIx2026Papers';
+import { physicsIx2023Papers } from '@/lib/physicsIx2023Papers';
+import { physicsIx2019Papers } from '@/lib/physicsIx2019Papers';
+import { physicsIx2018Papers } from '@/lib/physicsIx2018Papers';
+import { physicsIx2017Papers } from '@/lib/physicsIx2017Papers';
+import { physicsIx2022Paper } from '@/lib/physicsIx2022Paper';
+import { physicsIx2021Paper } from '@/lib/physicsIx2021Paper';
 
 interface PageProps {
   params: Promise<{ board: string; class: string; subject: string }>;
@@ -258,7 +265,10 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
           mappedChapters={mappedChapters}
           computerChapterQuestions={computerChapterQuestions}
           availableTheorySections={availableTheorySections}
-          reviewedPapers={isMath ? reviewedMathematicsPapers.filter(p => p.academicClass.level === classDef.level && p.paperCode.endsWith('-P1')).sort((a,b) => b.examYear-a.examYear).map(p => ({ paperCode: p.paperCode, title: p.title, examYear: p.examYear, count: p.questions.length })) : []}
+          reviewedPapers={(isMath ? reviewedMathematicsPapers : isPhysics && classDef.level === 9 ? [...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers] : [])
+            .filter(p => p.academicClass.level === classDef.level && p.paperCode.endsWith('-P1'))
+            .sort((a,b) => b.examYear-a.examYear)
+            .map(p => ({ paperCode: p.paperCode, title: p.title, examYear: p.examYear, count: p.questions.length }))}
           initialCategory={category}
           initialChapter={chapter}
           useReviewedLegacy={isPhysics && !(await publishedCurriculum(board.shortCode, classDef.level, meta.title))}

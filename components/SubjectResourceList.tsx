@@ -1,3 +1,9 @@
+import { physicsIx2023References } from '@/lib/physicsIx2023Papers';
+import { physicsIx2019References } from '@/lib/physicsIx2019Papers';
+import { physicsIx2018References } from '@/lib/physicsIx2018Papers';
+import { physicsIx2017References } from '@/lib/physicsIx2017Papers';
+import { physicsIx2022Key } from '@/lib/physicsIx2022Paper';
+import { physicsIx2021Key } from '@/lib/physicsIx2021Paper';
 import { hsscComputerScience2019Resources } from '@/lib/hsscComputerScience2019';
 import { hsscComputerScience2021Resources } from '@/lib/hsscComputerScience2021';
 import { hsscComputerScience2022Resources } from '@/lib/hsscComputerScience2022';
@@ -56,6 +62,8 @@ export default async function SubjectResourceList({
   const mathematics = scope.board.id === 'akueb' && scope.meta.slug === 'mathematics';
   const biology = scope.board.id === 'akueb' && scope.meta.slug === 'biology';
   const biologyXiAnnual = biology && scope.classDef.level === 11 && type === 'past_paper';
+  const physicsIxAnnual = scope.board.id === 'akueb' && scope.meta.slug === 'physics' &&
+    scope.classDef.level === 9 && type === 'past_paper';
   const documents = await subjectMaterials(
     params.board,
     params.class,
@@ -63,7 +71,7 @@ export default async function SubjectResourceList({
     type==='past_paper'?['past_paper','answer_key','e_marking']:type,
     after,
   ).catch(error => {
-    if ((hssc || computerScience || biologyPractical || biologyXiAnnual) && error.name === "PrismaClientInitializationError") return [];
+    if ((hssc || computerScience || biologyPractical || biologyXiAnnual || physicsIxAnnual) && error.name === "PrismaClientInitializationError") return [];
     throw error;
   });
   const items: MaterialItem[] = documents
@@ -94,6 +102,7 @@ export default async function SubjectResourceList({
     (scope.board.id === "akueb" &&
       ["computer-science", "chemistry", "mathematics", "biology"].includes(scope.meta.slug) &&
       [9, 10].includes(scope.classDef.level));
+  if (legacy && scope.classDef.level === 9 && type === "past_paper" && !after) items.push(...physicsIx2023References, physicsIx2022Key, physicsIx2021Key, ...physicsIx2019References, ...physicsIx2018References, ...physicsIx2017References);
   if (legacy && type==='past_paper' && !after) items.push(...(scope.classDef.level===9 ? physics2025Resources : physicsX2025Resources));
   if (hssc?.grade === 11 && type === "past_paper" && !after) items.push(...hsscXiAnnualResources);
   if (biologyXiAnnual && !after) items.push(...biologyXiAnnualArchives.flatMap(archive => archive.resources));
@@ -133,7 +142,7 @@ export default async function SubjectResourceList({
       orderBy: { examYear: "desc" },
       take: 100,
     }).catch(error => {
-      if ((hssc || computerScience || biologyPractical || biologyXiAnnual) && error.name === "PrismaClientInitializationError") return [];
+      if ((hssc || computerScience || biologyPractical || biologyXiAnnual || physicsIxAnnual) && error.name === "PrismaClientInitializationError") return [];
       throw error;
     });
     const seen = new Set<string>();

@@ -7,12 +7,41 @@ import { hsscBiologyChapterMcqs, hsscBiologyChapterTheory } from '@/lib/hsscBiol
 import { hsscBiologyModelPapers, hsscBiologyModelQuizPaper } from '@/lib/hsscBiologyModelPapers';
 import { hsscBiologySyllabus } from '@/lib/hsscBiologySyllabus';
 import { hsscBiologyStudyResources } from '@/lib/hsscBiologyStudyResources';
+import { hsscBiologyOptionFeedback } from '@/lib/hsscBiologyOptionFeedback';
 import { paperScoringAnswers } from '@/lib/paperPresentation';
 import { gradeAnswer, studentQuestion } from '@/services/assessment/scoring';
 import { sourcePracticeQuestion } from '@/services/assessment/service';
 import { decryptQuestionReveal } from '@/lib/quiz-crypto';
 import { biologyXi2022VerificationReport, biologyXiAnnualArchives } from '@/lib/hsscXiAnnualBiology';
 import { getAllStandardPapers, getFallbackPaper } from '@/lib/paperDataService';
+
+test('every HSSC Biology paper MCQ keeps four individual reasons throughout quiz conversion', () => {
+  const papers = [
+    ...biologyXiAnnualArchives.map(archive => archive.papers[0]),
+    ...([11, 12] as const).map(grade => {
+      const model = hsscBiologyModelPapers('akueb', grade, 'biology').find(paper => paper.part === 1)!;
+      return hsscBiologyModelQuizPaper(`BIO-${model.roman}-MODEL-${model.year}-P1`)!;
+    }),
+  ];
+  expect(papers.flatMap(paper => paper.questions).length).toBe(475);
+  for (const paper of papers) {
+    for (const question of paper.questions) {
+      const normalised = sourcePracticeQuestion(question);
+      expect(normalised.options?.map(option => [option.id, option.feedback]), question.id).toEqual(
+        'ABCD'.split('').map(key => [key, expect.stringMatching(/\S/)]),
+      );
+    }
+  }
+  for (const resource of hsscBiologyStudyResources) {
+    for (const question of resource.mcqs) {
+      expect(hsscBiologyOptionFeedback('study', question.id)?.map(option => option.reason), question.id)
+        .toEqual(Array.from({ length: 4 }, () => expect.stringMatching(/\S/)));
+    }
+  }
+  const question = biologyXiAnnualArchives.find(archive => archive.year === 2024)!.papers[0].questions[49];
+  expect(question.sourceRegion.official_answer).toBe('B');
+  expect(sourcePracticeQuestion(question).options?.filter(choice => choice.isCorrect).map(choice => choice.id)).toEqual(['B', 'D']);
+});
 
 test('Class XI Biology study resources link original assets, canonical papers and direct chapter questions', () => {
   const syllabus = hsscBiologySyllabus('akueb', 11, 'biology')!;
@@ -213,10 +242,14 @@ test.each([
   expect(written.questions).toHaveLength(13);
   expect(written.questions.filter(question => !question.questionNumber.endsWith('b')).reduce((sum, question) => sum + question.marks, 0)).toBe(35);
   expect(key[multi - 1].answer).toEqual(official);
+  const revisedChoices: Record<string, string[]> = year === 2024
+    ? { '50': ['B', 'D'] }
+    : { '25': ['B', 'C'], '45': ['C', 'D'] };
   for (const [index, question] of mcq.questions.entries()) {
     const content = sourcePracticeQuestion(question);
     expect(content.options).toHaveLength(4);
-    expect(content.options.filter(option => option.isCorrect).map(option => option.id)).toEqual(index === multi - 1 ? graded : key[index].answer);
+    expect(content.options.filter(option => option.isCorrect).map(option => option.id))
+      .toEqual(index === multi - 1 ? graded : revisedChoices[question.questionNumber] ?? key[index].answer);
     for (const option of content.options) {
       const image = /\]\((\/paper-crops\/[^)]+)\)/.exec(option.text)?.[1];
       if (image) expect(existsSync('public' + image)).toBe(true);
@@ -309,7 +342,8 @@ test('Class XI 2019 preserves the source papers, key, marking examples and direc
   for (const [index, question] of mcq.questions.entries()) {
     const item = sourcePracticeQuestion(question);
     expect(item.options).toHaveLength(4);
-    expect(item.options.filter(option => option.isCorrect).map(option => option.id)).toEqual(key[index].answer);
+    expect(item.options.filter(option => option.isCorrect).map(option => option.id))
+      .toEqual(question.questionNumber === '23' ? ['A', 'B'] : key[index].answer);
   }
   expect(mcq.questions[6].sourceRegion.choices?.B).toContain('question-7-option-b.png');
   expect(mcq.questions[32].questionText).toContain('| I: K⁺ ions |');

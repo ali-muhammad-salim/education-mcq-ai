@@ -1,5 +1,6 @@
 import data from '@/data/biology/hssc_model_papers.json';
 import { normalizeBoardId } from '@/lib/boardCatalog';
+import { hsscBiologyOptionFeedback } from '@/lib/hsscBiologyOptionFeedback';
 
 // RiseLearner solutions in printed question order.
 const answers = {
@@ -25,6 +26,7 @@ export function hsscBiologyMcqMetadata(roman: string, question: { number: number
   const key = answers[roman as keyof typeof answers]?.[question.number - 1];
   const questionId = `${roman}-${question.number}`;
   const alternatives = alternateAnswers[questionId];
+  const feedback = hsscBiologyOptionFeedback(roman, question.number);
   const explanation = roman === 'XI' ? ({
     4: 'Structure B has an additional carboxyl group in its side chain.',
     25: 'Diagram C shows conidia produced externally on a branching conidiophore.',
@@ -35,7 +37,8 @@ export function hsscBiologyMcqMetadata(roman: string, question: { number: number
     accepted_options: key && alternatives ? [key, ...alternatives].sort() : undefined,
     score_accepted_options: Boolean(alternatives),
     answer_origin: 'PROJECT_SOLVED',
-    explanation: reviewNotes[questionId] ?? explanation,
+    explanation: reviewNotes[questionId] ?? explanation ?? feedback?.find(option => option.key === key)?.reason,
+    option_feedback: feedback,
     quiz_stem: table ? question.stem.slice(0, table.index).trim() : undefined,
   };
 }

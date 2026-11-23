@@ -446,7 +446,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
               <span style={{ fontSize: '0.88rem', fontWeight: 700, color: '#334155' }}>
                 📄 {paper.paperCode?.startsWith('CS-') ? 'Digital study version of Paper II — compare with the original document' : 'Exact Digital Copy of Official Paper II Question Booklet (Unanswered Exam Format • 2025 Syllabus Mapped)'}
               </span>
-              {(hsscAnnual || /^MTH-(?:IX|X)-(?:201[789]|202[345])-P2$/.test(paper.paperCode || '') || !paper.paperCode?.includes('-P2') || paper.paperCode?.includes('2024') || paper.paperCode?.includes('2025')) && !(paper.paperCode?.startsWith('CHM-') && (paper.examYear === 2021 || paper.examYear === 2022)) ? (
+              {(paper.markingGuideUrl || hsscAnnual || /^MTH-(?:IX|X)-(?:201[789]|202[345])-P2$/.test(paper.paperCode || '') || !paper.paperCode?.includes('-P2') || paper.paperCode?.includes('2024') || paper.paperCode?.includes('2025')) && !(paper.paperCode?.startsWith('CHM-') && (paper.examYear === 2021 || paper.examYear === 2022)) ? (
                 <Link
                   href={paper.markingGuideUrl ?? (/^CS-XI-2019-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2019-emarking' : /^CS-XI-2023-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2023-emarking' : /^CS-XI-2024-P[12]$/.test(paper.paperCode || '') ? '/resources/computer-science-xi-2024-marking' : hsscAnnual ? `/resources/physics-xi-${paper.examYear}-emarking` : `/resources/${paper.paperCode?.startsWith('MTH-') ? 'mathematics' : paper.paperCode?.startsWith('CS-') ? 'computer-science' : paper.paperCode?.startsWith('CHM-') ? 'chemistry' : paper.paperCode?.startsWith('BIO-') ? 'biology' : 'physics'}-${isGrade9 ? 'ix' : 'x'}-${paper.examYear}-emarking`)}
                   style={{
@@ -637,7 +637,9 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                 const sourceAcceptedOptions: string[] = meta.accepted_options || [];
                 const hasBoardAlternates = typeof meta.official_answer === 'string' && meta.official_answer.includes(',');
                 const optionLabel = hasBoardAlternates ? 'Board accepted' : 'Valid option';
-                const answerSummary = sourceAcceptedOptions.length > 0
+                const answerSummary = scoringAnswers.length === 4 && Object.keys(choices).length === 4
+                  ? 'Any option earns practice credit'
+                  : sourceAcceptedOptions.length > 0
                   ? `${optionLabel}${!hasBoardAlternates && sourceAcceptedOptions.length > 1 ? 's' : ''}: ${sourceAcceptedOptions.join(', ')}`
                   : correctKey ? `Correct Option: ${correctKey}`
                     : meta.single_answer_review_required ? 'Excluded from single-answer scoring'
@@ -649,13 +651,15 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                     : meta.explanation || (correctKey ? `${answerLabel}: ${correctKey} (${correctOptionText}).` : 'A reviewed answer key is not available.')
                 );
                 const optionFeedback: Array<{ key: string; reason: string }> = Array.isArray(meta.option_feedback) ? meta.option_feedback : [];
-                const otherOptions = optionFeedback.filter(option => option.reason && option.key !== correctKey && !sourceAcceptedOptions.includes(option.key));
-                const optionReview = otherOptions.length > 0 && (
+                const reviewedOptions = optionFeedback.filter(option => option.reason);
+                const optionReview = reviewedOptions.length > 0 && (
                   <details>
-                    <summary>Reasoning for {correctKey ? 'the other options' : 'each option'}</summary>
+                    <summary>Reasoning for each option</summary>
                     <ul>
-                      {otherOptions.map(option => (
-                        <li key={option.key}><strong>{option.key}.</strong> <MathText text={option.reason} /></li>
+                      {reviewedOptions.map(option => (
+                        <li key={option.key}>
+                          <strong>{option.key}{scoringAnswers.includes(option.key) ? ' (accepted)' : ''}.</strong> <MathText text={option.reason} />
+                        </li>
                       ))}
                     </ul>
                   </details>
@@ -678,7 +682,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                       .filter(number => String(number) !== qNum)
                       .map(number => <span key={number} id={`question-${number}`} />)}
                     {meta.assessmentSection && (() => {
-                      const alternate = /^BIO-(?:IX|X)-2022-P1$/.test(paper.paperCode || '');
+                      const alternate = /^(?:BIO-(?:IX|X)-2022|PHY-IX-202[12])-P1$/.test(paper.paperCode || '');
                       const split = alternate ? '41' : '51';
                       if (qNum !== '1' && qNum !== split) return null;
                       const range = alternate ? (qNum === '1' ? '1–40' : '41–50') : (qNum === '1' ? '1–50' : '51–65');
@@ -910,6 +914,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                               <strong>{scoringAnswers.length > 1 ? 'Why these options earn credit' : `Why option (${correctKey}) earns credit`}: </strong>
                               <MathText text={betterResponse} />
                             </div>
+                            {optionReview}
                           </div>
                         )}
                       </div>
@@ -1018,7 +1023,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                         ))}
                         {meta.model_answer_origin && (
                           <details style={{ marginBottom: '1rem' }}>
-                            <summary style={{ cursor: 'pointer', fontWeight: 700 }}>{hsscPhysics ? 'Worked solution' : 'Worked solution and e-marking examples'}</summary>
+                            <summary style={{ cursor: 'pointer', fontWeight: 700 }}>{meta.official_marking_notes || meta.better_response_image || meta.weaker_response_image ? 'Worked solution and e-marking examples' : 'Worked solution'}</summary>
                             <p><strong>Supplementary worked solution</strong> · {meta.model_answer_origin}</p>
                             <StructuredContent text={meta.model_answer || ''} />
                             {meta.official_marking_notes && <><h4>Official checking comments</h4><StructuredContent text={meta.official_marking_notes} /></>}
@@ -1091,12 +1096,12 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
         onClose={() => setQuizModalOpen(false)}
         paperTitle={paper.title}
         paperCode={paper.paperCode || 'PHY-IX-P1'}
-        questions={isHssc ? questions.filter((question, index) =>
-          practiceItems.some(item => item.qNum === (question.questionNumber || String(index + 1)))
+        questions={questions.filter((question, index) =>
+          !isHssc || practiceItems.some(item => item.qNum === (question.questionNumber || String(index + 1)))
         ).map(question => {
           const stem = parseSourceRegion(question.sourceRegion).quiz_stem;
           return typeof stem === 'string' ? { ...question, questionText: stem } : question;
-        }) : questions}
+        })}
       />}
 
     </div>

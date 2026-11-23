@@ -434,12 +434,15 @@ export function repairMathEscapes(text: string): string {
 export function formatEducationalMath(text: string): string {
   // Code, explicit equations, links, e-mail addresses, paths and dates are opaque.
   const protectedSpans = /(\$\$[\s\S]*?\$\$|\$[^$\n]+\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|```[\s\S]*?```|`[^`\n]*`|https?:\/\/[^\s<>]+|www\.[^\s<>]+|[\w.+-]+@[\w.-]+\.[A-Za-z]+|[A-Za-z]:\\[^\s]+|\b\d{1,4}\/\d{1,2}\/\d{2,4}\b|\b(?:19|20)\d{2}\/\d{2,4}\b)/g;
+  const motionUnits = /(?<![A-Za-z_/])((?:kg(?:[ \t]*[·⋅][ \t]*|[ \t]+))?[kcm]?m[ \t]*\/[ \t]*s(?:[²³23]|\^\{?[23]\}?)?)(?![\w/²³^])/g;
   return repairMathEscapes(text).split(protectedSpans).map((part, i) => {
     if (i % 2) return part;
-    part = part.replace(/\b(m\s*\/\s*s|kg\s*\/\s*m)([23])\b|(\d\s+m)([23])\b/g, (_, compound, power, length, lengthPower) =>
-      (compound ?? length) + ((power ?? lengthPower) === '2' ? '²' : '³'));
-    if (/[₀-₉⁰-⁹⁺⁻]/.test(part) && !/[\/^_√\u0304\u033f]/.test(part)) return part;
-    return formatSyllabusMath(part);
+    return part.split(motionUnits).map((span, index) => {
+      if (index % 2) return span.replace(/[ \t]*\/[ \t]*/, '/').replace(/\^?\{?([23])\}?$/, (_, power) => power === '2' ? '²' : '³');
+      const normalized = span.replace(/\b(kg\s*\/\s*m|\d\s+m)([23])\b/g, (_, unit, power) => unit + (power === '2' ? '²' : '³'));
+      if (/[₀-₉⁰-⁹⁺⁻]/.test(normalized) && !/[\/^_√\u0304\u033f]/.test(normalized)) return normalized;
+      return formatSyllabusMath(normalized);
+    }).join('');
   }).join('');
 }
 

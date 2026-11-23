@@ -4,6 +4,7 @@ import StructuredContent from './StructuredContent';
 import StudyResourceQuiz from './StudyResourceQuiz';
 import styles from './MaterialLayout.module.css';
 import { biologyStudyResourceQuiz, type hsscBiologyStudyResources } from '@/lib/hsscBiologyStudyResources';
+import { hsscBiologyOptionFeedback } from '@/lib/hsscBiologyOptionFeedback';
 
 type Resource = (typeof hsscBiologyStudyResources)[number];
 const baseUrl = '/akueb/XI/biology';
@@ -57,6 +58,11 @@ export default function BiologyStudyResource({ resource, original }: { resource:
               <summary>{question.answers.length ? 'Show answer' : 'Review this question'}</summary>
               {question.answers.length > 0 && <p><strong>{question.answers.join(' or ')}</strong></p>}
               <StructuredContent text={question.explanation} />
+              <ul>
+                {hsscBiologyOptionFeedback('study', question.id)?.map(({ key, reason }) => (
+                  <li key={key}><strong>{key}.</strong> {reason}</li>
+                ))}
+              </ul>
             </details>
           </article>
         ))}

@@ -1,0 +1,98 @@
+[
+  {
+    "number": "1", "marks": 2, "slo": "1.5.3", "page": 2, "figure": true,
+    "stem": "Write the name of the physical quantity measured by each instrument shown (I and II).",
+    "solution": "**I.** The measuring cylinder measures **volume**.\n\n**II.** The physical balance measures **mass**.",
+    "checking": "Identify one measured quantity for each instrument.",
+    "better": "The candidate correctly names volume and mass.",
+    "weaker": "The candidate names the instruments instead of the quantities or confuses mass with weight."
+  },
+  {
+    "number": "2", "marks": 3, "slo": "2.3.3", "page": 3,
+    "stem": "Differentiate between speed and velocity in any THREE points.\n\n| No. | Speed | Velocity |\n| --- | --- | --- |\n| 1 |  |  |\n| 2 |  |  |\n| 3 |  |  |",
+    "solution": "| Speed | Velocity |\n| --- | --- |\n| A scalar with magnitude only | A vector with magnitude and direction |\n| Average speed is total distance divided by elapsed time | Average velocity is displacement divided by elapsed time |\n| Average speed is positive for a completed lap | Average velocity is zero for a completed lap because displacement is zero |",
+    "checking": "Give three distinct, paired differences.",
+    "better": "The candidate compares direction, the two definitions, and how the quantities behave in an example or graph.",
+    "weaker": "The candidate gives only the formulas or fails to complete all three comparisons."
+  },
+  {
+    "number": "3", "marks": 3, "slo": "3.4.5", "page": 4,
+    "stem": "What happens when a very heavy ball collides head-on with a light stationary ball on a flat surface? Describe your answer using the law of conservation of momentum.",
+    "solution": "With negligible external impulse, total momentum is unchanged. The light ball gains forward momentum and the heavy ball loses the same amount. Because the heavy ball has much greater mass, its speed changes only slightly.\n\nFor a nearly elastic collision and a very large mass ratio, the light ball can move forward at nearly twice the heavy ball’s initial speed. The roughly twofold speed also requires the elastic-collision assumption.",
+    "checking": "State the momentum balance and describe how the motion of each ball changes. The board’s near-double-speed example assumes an elastic collision.",
+    "better": "The candidate applies conservation to both balls and explains why the lighter ball’s speed changes much more.",
+    "weaker": "The candidate merely states the law or presents calculations without describing the motion of both balls."
+  },
+  {
+    "number": "4", "marks": 2, "slo": "4.4.2", "page": 5,
+    "stem": "There are three states of equilibrium. Write ONE daily-life example for each of any TWO states. Name the state in each example.",
+    "solution": "1. **Stable equilibrium.** A ball at the bottom of a bowl rolls back towards the bottom after a small displacement.\n2. **Neutral equilibrium.** A ball on a level surface comes to rest at its new position without changing the height of its centre of gravity.\n\nAnother valid example is **unstable equilibrium**, such as a pencil balanced vertically on its tip.",
+    "checking": "Give two valid examples and label each with its state of equilibrium.",
+    "better": "The candidate names two states and chooses a familiar example that clearly illustrates each one.",
+    "weaker": "The candidate gives unrelated examples of motion or uses labels that do not match the examples."
+  },
+  {
+    "number": "5", "marks": 3, "slo": null, "page": 6,
+    "stem": "The masses of the Earth and Moon are 5.98 × 10²⁴ kg and 7.35 × 10²² kg respectively. Their separation is 3.84 × 10⁵ km. Take G = 6.67 × 10⁻¹¹ N·m²/kg². Calculate the gravitational force the Earth exerts on the Moon.",
+    "solution": "Convert the separation to metres: r = 3.84 × 10⁸ m.\n\nNewton’s law gives F = GMm/r². Substituting gives F = (6.67 × 10⁻¹¹)(5.98 × 10²⁴)(7.35 × 10²²)/(3.84 × 10⁸)² ≈ **1.99 × 10²⁰ N**, directed towards Earth.",
+    "checking": "Convert kilometres to metres, use Newton’s law with the supplied masses and centre-to-centre distance, then give the force in newtons.",
+    "better": "The candidate converts the distance, uses the inverse-square formula and reaches the correct magnitude.",
+    "weaker": "The candidate uses Earth’s radius or substitutes surface-gravity data in place of the Earth–Moon separation."
+  },
+  {
+    "number": "6", "marks": 4, "slo": "7.1.3", "page": 7, "figure": true,
+    "stem": "What are the FOUR necessary steps to find the density of a stone with the apparatus shown?",
+    "solution": "1. Hang the stone from the spring balance in air and record its weight W.\n2. Fill the overflow vessel to the spout. Fully immerse the stone without touching the vessel and collect the displaced water. Measure its volume V with a graduated vessel. This is the stone’s volume.\n3. Calculate its mass from m = W/g.\n4. Calculate density from ρ = m/V, using consistent units.\n\nWith an ungraduated collecting beaker, use the spring balance to record the apparent immersed weight W′. The buoyant force W − W′ gives V = (W − W′)/(ρwater g), which can then be used in the same density calculation.",
+    "checking": "Give a sequence that obtains the stone’s mass and volume and uses both to calculate density.",
+    "better": "The candidate measures the weight, finds volume by displacement, converts weight to mass, and divides by volume.",
+    "weaker": "The candidate only states the density formula or names the apparatus without explaining how to obtain the two measurements."
+  },
+  {
+    "number": "7", "marks": 4, "slo": "8.2.1", "page": 8,
+    "stem": "**a.** Define thermal expansion of solids. (1 mark)\n\n**b.** A metal rim is heated before it is fitted to a wooden cart wheel. Give the scientific reason. (3 marks)",
+    "solution": "**a.** Thermal expansion is the increase in a solid’s dimensions when its temperature rises.\n\n**b.** Heating expands the metal rim and increases its inner diameter so it fits over the wheel. As the rim cools and contracts, it grips the wheel firmly.",
+    "checking": "Define thermal expansion, then link heating, increased diameter, fitting and cooling to the tight final fit.",
+    "better": "The candidate explains expansion on heating and contraction on cooling in the context of fitting the rim.",
+    "weaker": "The candidate discusses heat conduction or gives a definition without explaining the rim’s change in diameter."
+  },
+  {
+    "number": "8", "marks": 4, "slo": "9.1.5", "page": 10,
+    "stem": "**a.** A fur coat has skin on the inside and fur on the outside. Why can it feel warmer when worn inside out? (2 marks)\n\n**b.** Walking barefoot on carpet feels warmer than walking on tiles. Give the scientific reason. (2 marks)",
+    "solution": "**a.** With the fur against the body, the hairs can trap a layer of still air close to the body and the outer skin can limit wind penetrating the fur. Trapped air reduces heat loss. The effect assumes the fur is dry and retains its loft.\n\n**b.** Carpet fibres and trapped air conduct heat away from the feet more slowly than tiles. Even at the same starting temperature, the tiles feel colder because the feet lose heat faster.",
+    "checking": "Explain insulation by trapped air and compare heat transfer from the feet into carpet and tile.",
+    "better": "The candidate links trapped air or material conductivity to a lower rate of heat loss.",
+    "weaker": "The candidate relies on surface roughness, reflection or absorption without explaining conduction and insulation in the two examples."
+  },
+  {
+    "number": "9a", "marks": 5, "slo": "2.3.2", "page": 12,
+    "stem": "A sports car starts from rest. It covers 900 m to attain a speed of 80 m/s. Determine its acceleration and the time required to reach this speed.",
+    "solution": "Assume uniform acceleration. The average speed is (0 + 80)/2 = 40 m/s, so the elapsed time is t = 900/40 = **22.5 s**.\n\nThen a = (80 − 0)/22.5 = **3.56 m/s²** to three significant figures. The board notes quote 22.47 s, which is close to the result from the given data.",
+    "checking": "Use constant-acceleration motion, show how the data give both acceleration and time, and include the correct units.",
+    "better": "The candidate uses a valid pair of motion relationships and reports both requested results.",
+    "weaker": "The candidate mixes unrelated equations or gives only a description instead of calculating the two values."
+  },
+  {
+    "number": "9b", "marks": 5, "slo": "3.4.4", "page": 13,
+    "stem": "A sports bike and a car have masses of 325 kg and 1,754 kg respectively.\n\n**i.** Find the momentum of the sports bike at 140 km/h. (3 marks)\n\n**ii.** Find the car’s velocity if both vehicles have the same momentum. (2 marks)",
+    "solution": "**i.** 140 km/h = 140/3.6 = 38.888… m/s. The bike’s momentum is p = 325 × 38.888… ≈ **12,639 kg·m/s**.\n\n**ii.** For equal momentum, the car’s velocity is v = p/1,754 ≈ **7.21 m/s**, in the same direction.",
+    "checking": "Convert the bike’s speed to m/s, calculate its momentum and divide that value by the car’s mass.",
+    "better": "The candidate converts the units and carries the momentum from the first calculation into the second.",
+    "weaker": "The candidate uses the force equation, calculates acceleration, or overlooks the equal-momentum condition."
+  },
+  {
+    "number": "10a", "marks": 5, "slo": "6.4.5", "page": 16,
+    "stem": "Explain renewable and non-renewable sources of energy and give any THREE examples of each.",
+    "solution": "**Renewable sources** are replenished naturally on human timescales. Examples are solar energy, wind energy and hydroelectric power from flowing water.\n\n**Non-renewable sources** come from finite reserves that are not replenished on useful human timescales. Examples are coal, petroleum and natural gas.",
+    "checking": "Explain both categories and supply three correctly classified examples for each.",
+    "better": "The candidate distinguishes natural replenishment from finite reserves and classifies the examples correctly.",
+    "weaker": "The candidate mixes the categories, gives only examples, or leaves out part of the question."
+  },
+  {
+    "number": "10b", "marks": 5, "slo": null, "page": 19,
+    "stem": "**i.** Which types of forces act on a body in a fluid if it is (I) partially immersed and (II) completely immersed? (4 marks)\n\n**ii.** Why does upthrust act upwards? (1 mark)",
+    "solution": "**i.** In both cases, weight acts downwards and the liquid’s pressure forces produce an upward net buoyant force. For partial immersion, the liquid acts only on wetted surfaces and forces are measured relative to atmospheric pressure. For full immersion, liquid pressure acts on the whole surface. On a simple block, the lower face experiences an upward pressure force and the upper face a downward pressure force.\n\n**ii.** Pressure increases with depth. The pressure force on the lower face exceeds that on the upper face, giving a resultant upward force. In still uniform liquid its magnitude is the weight of liquid displaced.",
+    "checking": "Distinguish the pressure forces in partial and complete immersion and explain the pressure difference that produces upthrust.",
+    "better": "The candidate describes how fluid pressure acts on the surfaces and uses the increase in pressure with depth to explain the upward resultant.",
+    "weaker": "The candidate mentions only gravity or describes the motion of the object without identifying the fluid-pressure forces."
+  }
+]

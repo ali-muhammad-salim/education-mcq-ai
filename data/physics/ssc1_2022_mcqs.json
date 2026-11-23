@@ -1,0 +1,1036 @@
+[
+  {
+    "stem": "The scientific notation of 0.00002019 is",
+    "options": [
+      "2.019 × 10⁻⁵",
+      "2.019 × 10⁻⁴",
+      "2.019 × 10⁴",
+      "2.019 × 10⁵"
+    ],
+    "officialSlo": "1.5.1",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "1.3.2",
+    "reasons": [
+      "Move the decimal five places right to get 2.019, so the power is −5.",
+      "This is ten times the stated value.",
+      "A positive exponent makes the result much greater than 1.",
+      "A positive exponent of 5 makes the result much greater than 1."
+    ]
+  },
+  {
+    "stem": "The total number of significant figures in 2030 is",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    "officialSlo": "1.7.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "1.7.1",
+    "reasons": [
+      "The zero between 2 and 3 counts as significant.",
+      "Under the usual textbook convention for a whole number with no decimal point, the significant digits are 2, 0 and 3.",
+      "Four significant figures would mean the final zero is measured too. The notation alone does not establish that.",
+      "There are only four printed digits."
+    ],
+    "reviewNote": "The board interprets the final zero as a placeholder. A number written as 2030 without further precision information can also represent four significant figures."
+  },
+  {
+    "stem": "The instrument used to measure the length of a solid cylinder is called a",
+    "options": [
+      "screw gauge.",
+      "physical balance.",
+      "Vernier callipers.",
+      "measuring cylinder."
+    ],
+    "officialSlo": "1.6.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "1.5.1",
+    "reasons": [
+      "A screw gauge is for very small dimensions such as wire diameter.",
+      "A physical balance measures mass.",
+      "The outside jaws of Vernier callipers can measure the distance between the cylinder’s flat ends.",
+      "A measuring cylinder gives liquid volume or displaced volume."
+    ]
+  },
+  {
+    "stem": "Which of the following physical quantities is obtained by dividing the change in velocity by the time interval?",
+    "options": [
+      "Speed",
+      "Distance",
+      "Acceleration",
+      "Displacement"
+    ],
+    "officialSlo": "2.3.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "2.3.1",
+    "reasons": [
+      "Speed measures distance per unit time.",
+      "Distance is a length, not a rate of change of velocity.",
+      "Acceleration equals change in velocity divided by the elapsed time.",
+      "Displacement is the directed change in position."
+    ]
+  },
+  {
+    "stem": "If a tractor starts from rest in a field, reaching its maximum velocity of 5 m/s in 10 s, then the acceleration of the tractor will be",
+    "options": [
+      "0.5 m/s².",
+      "2 m/s².",
+      "5 m/s².",
+      "15 m/s²."
+    ],
+    "officialSlo": "2.9.2",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "2.3.2",
+    "reasons": [
+      "a = (5 − 0)/10 = 0.5 m/s².",
+      "2 does not follow from dividing 5 by 10.",
+      "5 m/s is the final velocity and still needs to be divided by 10 s.",
+      "Adding 5 and 10 mixes different physical units."
+    ]
+  },
+  {
+    "stem": "A distance-time graph of a moving object is given below. With reference to the given graph, the distance covered during 10 to 12 hrs is",
+    "options": [
+      "0 km.",
+      "4 km.",
+      "5 km.",
+      "10 km."
+    ],
+    "officialSlo": "2.3.2",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "2.4.1",
+    "reasons": [
+      "The graph stays at 10 km from hour 10 to hour 12, so the distance covered in that interval is zero.",
+      "4 km is the rise from hour 12 to hour 16.",
+      "There is no rise during the requested interval.",
+      "10 km is the cumulative distance at hour 10, not the distance added."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "A school bus starts moving from rest with an acceleration of 2 m/s². If it covers a distance of 25 m, then the final velocity of the bus will be",
+    "options": [
+      "0 m/s.",
+      "10 m/s.",
+      "50 m/s.",
+      "100 m/s."
+    ],
+    "officialSlo": "2.9.2",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "A",
+    "slo": null,
+    "reasons": [
+      "Starting from rest does not mean the bus remains at rest.",
+      "v² = u² + 2as = 100 m²/s², so v = 10 m/s.",
+      "Doubling the distance alone does not give velocity.",
+      "100 is v², so take its square root."
+    ]
+  },
+  {
+    "stem": "In a cricket match, a batsman hits a ball vertically upward with a velocity of 10 m/s. The maximum height attained by the ball will be (Note: The acceleration due to gravity is 9.8 m/s².)",
+    "options": [
+      "0.51 m.",
+      "1.96 m.",
+      "5.10 m.",
+      "10.20 m."
+    ],
+    "officialSlo": "2.9.2",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "2.5.2",
+    "reasons": [
+      "The upward launch speed is 10 m/s and the height is u²/(2g).",
+      "1.96 m does not follow from 100/19.6.",
+      "The vertical speed is zero at maximum height, so h = 10²/(2 × 9.8) ≈ 5.10 m.",
+      "This is approximately the result of omitting the factor of 2."
+    ]
+  },
+  {
+    "stem": "The value of acceleration due to gravity ‘g’ is considered to be constant (9.8 m/s²) for",
+    "options": [
+      "the Mars orbiting the Sun.",
+      "a rocket launched in the air.",
+      "an object in free fall motion.",
+      "a car moving on a straight road."
+    ],
+    "officialSlo": "2.10.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "2.5.1",
+    "reasons": [
+      "The relevant acceleration for Mars’s orbit is due chiefly to the Sun.",
+      "A rocket under thrust is not in free fall and need not remain near Earth’s surface.",
+      "Gravity is approximately constant at 9.8 m/s² for free fall close to Earth’s surface.",
+      "The car is supported by the road and is not in free fall."
+    ]
+  },
+  {
+    "stem": "A brick falls from the top of a building of 100 m high. The final velocity of the brick, when it hits the ground will be (Note: The acceleration due to gravity is 9.8 m/s².)",
+    "options": [
+      "19.6 m/s.",
+      "20.4 m/s.",
+      "44.2 m/s.",
+      "200.0 m/s."
+    ],
+    "officialSlo": "2.9.2",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "2.5.2",
+    "reasons": [
+      "Calculate √(2gh), which is larger than 19.6 m/s here.",
+      "Substitution into √(2 × 9.8 × 100) gives about 44.2 m/s.",
+      "From rest, v = √(2gh) ≈ 44.2 m/s downward.",
+      "The acceleration and height must be combined under a square root."
+    ]
+  },
+  {
+    "stem": "An asteroid hit vertically on the surface of the Earth with a certain velocity. The velocity and acceleration due to gravity of the asteroid just before hitting the ground will be",
+    "options": [
+      "maximum · positive",
+      "minimum · positive",
+      "zero · negative",
+      "zero · positive"
+    ],
+    "officialSlo": "2.10.1",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "2.5.1",
+    "reasons": [
+      "With downward chosen positive and air resistance ignored, the asteroid is fastest just before impact and g is positive.",
+      "In the paper’s free-fall model, speed increases before impact.",
+      "Zero speed could occur after impact, outside the interval asked about.",
+      "A falling asteroid has nonzero speed just before impact."
+    ],
+    "reviewNote": "The board assumes downward is positive and models the motion as free fall. The sign of gravitational acceleration depends on the chosen axis.",
+    "headings": [
+      "Velocity",
+      "Acceleration due to gravity"
+    ]
+  },
+  {
+    "stem": "Which of the following physical quantities is due to the pull of the gravity?",
+    "options": [
+      "Mass",
+      "Inertia",
+      "Weight",
+      "Tension"
+    ],
+    "officialSlo": "3.3.4",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "3.1.1",
+    "reasons": [
+      "Mass is an intrinsic property of the body.",
+      "Inertia is resistance to a change of motion.",
+      "Weight is the gravitational force acting on a body.",
+      "Tension is a pulling force transmitted by a taut string or cable."
+    ]
+  },
+  {
+    "stem": "Two different metallic plates slid over each other in a machine. The material that will reduce the MOST of the friction between them is",
+    "options": [
+      "oil.",
+      "wax.",
+      "soap.",
+      "water."
+    ],
+    "officialSlo": "3.4.3",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "K",
+    "slo": "3.5.3",
+    "reasons": [
+      "Lubricating oil forms a film that reduces direct contact between the sliding metal surfaces.",
+      "Wax can sometimes lubricate, but the intended machine lubricant is oil.",
+      "Soap can make surfaces slippery but is not the intended lubricant for these metal plates.",
+      "Water is a poor general-purpose lubricant for sliding machine parts."
+    ]
+  },
+  {
+    "stem": "A light inextensible rope is pulled by two boys in opposite directions with a force of 5 N each. The total tension in the rope will be",
+    "options": [
+      "0 N.",
+      "5 N.",
+      "10 N.",
+      "25 N."
+    ],
+    "officialSlo": "3.3.5",
+    "officialAnswer": "C",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "3.3.1",
+    "reasons": [
+      "Zero is the net external force on the rope. The rope remains under tension.",
+      "An isolated section of the ideal rope is balanced by a 5 N pull in each direction, so the tension is 5 N.",
+      "The official key lists 10 N. Adding magnitudes of the opposite external pulls gives neither the net force nor the tension.",
+      "25 has no basis in force balance and would come from multiplying the pulls."
+    ],
+    "reviewNote": "The board key lists C (10 N). The ideal rope is in equilibrium under opposite 5 N pulls, so its tension is 5 N (B)."
+  },
+  {
+    "stem": "A boy attached a stone of mass 0.1 kg at the end of a 1 m long rope. If the boy rotates the stone in a circle with a velocity of 2 m/s, then the tension in the rope will be",
+    "options": [
+      "0.025 N.",
+      "0.4 N.",
+      "2 N.",
+      "4 N."
+    ],
+    "officialSlo": "3.5.3",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "A",
+    "slo": null,
+    "reasons": [
+      "Use mv²/r, including the square of the speed.",
+      "Treating the rope tension as the inward force in the intended model gives 0.1 × 2²/1 = 0.4 N.",
+      "2 is the speed in m/s, not the tension in newtons.",
+      "4 is v² numerically. Multiplication by 0.1 kg and division by 1 m give 0.4 N."
+    ],
+    "reviewNote": "The intended calculation treats tension as the centripetal force, as in a horizontal circular-motion model."
+  },
+  {
+    "stem": "A student pedals a bicycle for 15 s. After some time, he/ she finishes cycling due to which the bicycle stops after 30 s. Which of the following physical quantities is responsible for bringing the bicycle at rest?",
+    "options": [
+      "Mass",
+      "Inertia",
+      "Weight",
+      "Friction"
+    ],
+    "officialSlo": "3.4.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "3.5.1",
+    "reasons": [
+      "Mass does not supply a force opposing motion.",
+      "Inertia would keep the bicycle moving in the absence of a net force.",
+      "Weight acts downward and is balanced vertically by the road when riding on level ground.",
+      "Frictional resistance and drag oppose motion and eventually bring the bicycle to rest."
+    ]
+  },
+  {
+    "stem": "If a school van takes a sharp turn, then the students sitting in the van would feel a push in outward direction due to",
+    "options": [
+      "inertia.",
+      "torque.",
+      "equilibrium.",
+      "frictional force."
+    ],
+    "officialSlo": "3.3.6",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "3.1.2",
+    "reasons": [
+      "The riders tend to continue in a straight line as the van changes direction.",
+      "Torque refers to the turning effect of a force about an axis.",
+      "Equilibrium means the relevant forces or moments balance, whereas a turning van accelerates.",
+      "Friction or contact can make a rider turn with the van. The tendency to continue straight comes from inertia."
+    ]
+  },
+  {
+    "stem": "If 1 N force moves a 2 kg object in a circle of radius 8 m, then the velocity of the object will be",
+    "options": [
+      "2 m/s.",
+      "4 m/s.",
+      "10 m/s.",
+      "16 m/s."
+    ],
+    "officialSlo": "3.5.3",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": null,
+    "reasons": [
+      "v = √(Fr/m) = √(1 × 8/2) = 2 m/s.",
+      "4 is the calculated value of v².",
+      "10 m/s would require much more than 1 N at the stated mass and radius.",
+      "16 does not follow from the centripetal-force relation."
+    ]
+  },
+  {
+    "stem": "A teacher places a coin on a piece of card board that is placed on the open end of a glass. He/ she pulls the card board with a jerk. If the coin falls in the glass, then which of the following is demonstrated in the given experiment?",
+    "options": [
+      "Inertia",
+      "Friction",
+      "Balanced forces",
+      "Law of momentum"
+    ],
+    "officialSlo": "3.5.3",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "3.1.2",
+    "reasons": [
+      "The coin tends to stay at rest while the card quickly slides out. Gravity then pulls it into the glass.",
+      "Friction is present, but the short contact time keeps the card from dragging the coin far.",
+      "The coin has a downward net force once its support is removed.",
+      "The demonstration is a standard example of inertia."
+    ]
+  },
+  {
+    "stem": "A plumber is trying to open a screw with a spanner by applying a perpendicular force of 50 N at a distance of 0.1 m. The torque produced by the force will be",
+    "options": [
+      "5 units.",
+      "49.9 units.",
+      "50.1 units.",
+      "500 units."
+    ],
+    "officialSlo": "4.2.2",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "4.1.3",
+    "reasons": [
+      "Torque is perpendicular force times lever arm, 50 × 0.1 = 5 N·m.",
+      "Subtracting the distance from the force mixes units.",
+      "Adding the distance to the force mixes units.",
+      "The lever arm is 0.1 m, so the result is one-tenth of 50 N·m."
+    ]
+  },
+  {
+    "stem": "If the two opposite parallel forces of the same magnitude are applied on an object along different lines of action, then the object will experience",
+    "options": [
+      "torque.",
+      "couple.",
+      "equilibrium.",
+      "frictional force."
+    ],
+    "officialSlo": "4.4.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": null,
+    "reasons": [
+      "The forces produce a torque, but the requested name for this pair of equal and opposite forces is a couple.",
+      "Equal and opposite parallel forces on different lines of action constitute a couple.",
+      "The net force is zero but the nonzero moment can cause rotation.",
+      "The arrangement does not identify the forces as friction."
+    ]
+  },
+  {
+    "stem": "In a children park, two children are sitting on a sea saw. If the sea saw is not moving, then the net torque will be",
+    "options": [
+      "τ = 0",
+      "0 < τ < 1",
+      "τ = 1",
+      "1 < τ < 2"
+    ],
+    "officialSlo": "4.5.4",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "4.4.3",
+    "reasons": [
+      "The seesaw stays at rest when clockwise and anticlockwise moments cancel, so τ = 0.",
+      "Any positive torque implies a rotational imbalance.",
+      "A value of 1 would give a nonzero net torque.",
+      "A torque above 1 would also imply a nonzero net torque."
+    ]
+  },
+  {
+    "stem": "It is said that a cup of frozen ice cream has less volume as compared to the same amount of melted ice cream. At room temperature, the mass and density of the melted ice cream will",
+    "options": [
+      "change · be high",
+      "remain the same · be low",
+      "change · be low",
+      "remain the same · be high"
+    ],
+    "officialSlo": "7.2.2",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "7.1.1",
+    "reasons": [
+      "The stated melting changes volume. It does not change mass if none is lost.",
+      "For the same mass, the larger volume specified for melted ice cream gives a lower density.",
+      "The density decreases under the premise, but mass is conserved.",
+      "With mass held fixed, greater volume lowers density."
+    ],
+    "headings": [
+      "Mass of ice cream",
+      "Density of ice cream"
+    ]
+  },
+  {
+    "stem": "As compared to the sea level, atmospheric pressure on mountains",
+    "options": [
+      "is lower.",
+      "is higher.",
+      "is the same.",
+      "varies unpredictably."
+    ],
+    "officialSlo": "7.4.3",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "7.3.3",
+    "reasons": [
+      "At higher altitude there is less atmosphere above, so pressure is generally lower.",
+      "A higher pressure generally occurs lower in the atmosphere.",
+      "Pressure is not constant with altitude.",
+      "Weather can change the readings, but the general altitude trend is predictable."
+    ]
+  },
+  {
+    "stem": "The state of matter in which molecules are closely packed together and have vibratory motion is",
+    "options": [
+      "gas.",
+      "solid.",
+      "liquid.",
+      "plasma."
+    ],
+    "officialSlo": "7.1.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": "8.1.2",
+    "reasons": [
+      "Gas particles are widely separated and move freely.",
+      "Solid particles are closely packed and vibrate about fixed positions.",
+      "Liquid particles are close but can slide past each other.",
+      "Plasma contains charged particles and does not have the fixed arrangement described."
+    ]
+  },
+  {
+    "stem": "A student is given a task to find the density of an irregular object. The appropriate set of apparatus required will be",
+    "options": [
+      "Vernier callipers · Water · Measuring cylinder",
+      "Screw gauge · Physical balance · Water",
+      "Physical balance · Water · Measuring cylinder",
+      "Spring balance · Measuring cylinder · Metre rule"
+    ],
+    "officialSlo": "7.5.6",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "7.1.3",
+    "reasons": [
+      "A calliper does not supply the object’s mass, and its shape makes displacement the practical volume method.",
+      "This set can measure mass but lacks a graduated vessel to measure displacement.",
+      "Use a physical balance for mass and a measuring cylinder with water for displaced volume, then calculate mass divided by volume.",
+      "A metre rule does not determine the volume of an irregular object, and a spring balance reads weight."
+    ],
+    "headings": [
+      "Apparatus 1",
+      "Apparatus 2",
+      "Apparatus 3"
+    ]
+  },
+  {
+    "stem": "A change caused by stress in original shape, volume or length is called as",
+    "options": [
+      "strain.",
+      "density.",
+      "pressure.",
+      "elasticity."
+    ],
+    "officialSlo": "7.9.1",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "K",
+    "slo": null,
+    "reasons": [
+      "Strain measures deformation, commonly as a fractional change in length or volume.",
+      "Density is mass per unit volume.",
+      "Pressure is normal force per unit area.",
+      "Elasticity is the ability to recover shape after a deforming force is removed."
+    ]
+  },
+  {
+    "stem": "The example of Archimedes’ principle is a",
+    "options": [
+      "moving car.",
+      "floating ship.",
+      "moving rocket.",
+      "flying aeroplane."
+    ],
+    "officialSlo": "7.5.5",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": null,
+    "reasons": [
+      "Ordinary driving illustrates forces such as friction, not the intended buoyancy example.",
+      "The upthrust on a floating ship equals the weight of the water it displaces.",
+      "A rocket’s thrust comes from ejecting propellant.",
+      "Aerodynamic lift is the main support for a flying aeroplane."
+    ]
+  },
+  {
+    "stem": "Doctors use clinical thermometer to measure the temperature of a person. If a person has high fever, then the mercury in the bulb will",
+    "options": [
+      "expand.",
+      "contract.",
+      "remain unchanged.",
+      "vary unpredictably."
+    ],
+    "officialSlo": "8.2.1",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "8.3.3",
+    "reasons": [
+      "As the bulb warms, mercury expands and rises in the capillary.",
+      "Mercury contracts when it cools.",
+      "Heating changes the volume of mercury.",
+      "The thermal expansion is predictable over the thermometer’s working range."
+    ]
+  },
+  {
+    "stem": "In which of the following options will the rate of evaporation be the greatest?",
+    "options": [
+      "Wide open container of water",
+      "Narrow open container of water",
+      "Open container of water with a moving fan overhead",
+      "Covered container of water"
+    ],
+    "officialSlo": "8.6.4",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "8.2.10",
+    "reasons": [
+      "The broad surface helps evaporation, but there is no moving fan above it.",
+      "The narrow surface gives less area for evaporation.",
+      "Moving air removes water vapour from above the surface. The exposed water therefore evaporates fastest in the illustrated set.",
+      "A lid traps humid air above the water and reduces net evaporation."
+    ],
+    "optionDiagrams": true
+  },
+  {
+    "stem": "Which of the following statements is CORRECT, in order to increase the temperature of a substance?",
+    "options": [
+      "It depends on the density of the object.",
+      "It depends on the internal energy of the object.",
+      "It is directly proportional to the amount of heat absorbed.",
+      "It is inversely proportional to the amount of heat evolved."
+    ],
+    "officialSlo": "8.2.3",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "8.2.3",
+    "reasons": [
+      "Density alone does not specify how much a sample’s temperature rises.",
+      "Total internal energy alone does not determine the rise for a given energy transfer.",
+      "For fixed mass and specific heat capacity with no phase change, ΔT = Q/(mc), so the rise is proportional to the heat absorbed.",
+      "Heat released by the sample reduces its thermal energy under the conditions of this comparison."
+    ]
+  },
+  {
+    "stem": "Considerable gaps are left in the construction of a railway track because of",
+    "options": [
+      "linear thermal expansion.",
+      "linear thermal contraction.",
+      "volumetric thermal expansion.",
+      "volumetric thermal contraction."
+    ],
+    "officialSlo": "8.7.1",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "8.2.1",
+    "reasons": [
+      "Gaps allow the rails to lengthen as their temperature rises.",
+      "Contraction widens an existing gap. The gap prevents compression or buckling as rails heat and expand.",
+      "The gap accommodates the change in length along the track.",
+      "A rail warming under the Sun expands instead of contracting."
+    ]
+  },
+  {
+    "stem": "It is commonly observed that the temperature of the land rises more quickly as compared to the temperature of the sea. The option that describes the reason of the given phenomena is",
+    "options": [
+      "less · more",
+      "more · less",
+      "higher in summer · lower in winter",
+      "lower in winter · higher in summer"
+    ],
+    "officialSlo": "8.3.1",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "8.2.3",
+    "reasons": [
+      "The comparison is reversed. Water generally has the greater specific heat capacity.",
+      "Under comparable heating, water’s greater specific heat capacity gives a smaller temperature rise.",
+      "The effect is explained by the materials’ heat capacities, rather than a comparison of different seasons.",
+      "The seasonal labels do not explain the difference in temperature rise under comparable heating."
+    ],
+    "headings": [
+      "Specific heat of water",
+      "Specific heat of land"
+    ]
+  },
+  {
+    "stem": "A 0.3 kg copper pipe needs to be heated from 50°C to 60°C. The energy required to heat the pipe will be (Note: Take the specific heat capacity of copper as 444 J/(kg·°C).)",
+    "options": [
+      "1332 J.",
+      "6660 J.",
+      "7992 J.",
+      "14652 J."
+    ],
+    "officialSlo": "8.3.1",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "8.2.7",
+    "reasons": [
+      "Q = mcΔT = 0.3 × 444 × 10 = 1,332 J.",
+      "Use the stated 0.3 kg and the 10°C temperature rise.",
+      "The relevant temperature interval is 60 − 50 = 10°C.",
+      "This value does not follow from multiplying the three given factors."
+    ]
+  },
+  {
+    "stem": "If the temperature of an object is higher as compared to its surroundings, then it will",
+    "options": [
+      "radiate less heat.",
+      "conduct less heat.",
+      "absorb more heat.",
+      "radiate more heat."
+    ],
+    "officialSlo": "9.5.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "9.3.3",
+    "reasons": [
+      "At fixed emissivity, a warmer surface emits more thermal radiation per unit area.",
+      "Conduction depends on contact and material properties. The temperature comparison explains the radiation choice.",
+      "The warmer object emits more than it absorbs from cooler surroundings under the usual assumptions.",
+      "A warmer object tends to lose energy by net radiation to cooler surroundings."
+    ]
+  },
+  {
+    "stem": "In large working organisations, central heating systems is installed to save energy in the winter season. In a closed room, the heating system MAINLY works on the phenomenon of",
+    "options": [
+      "radiation.",
+      "convection.",
+      "evaporation.",
+      "condensation."
+    ],
+    "officialSlo": "9.3.2",
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "9.4.1",
+    "reasons": [
+      "Radiation may warm nearby surfaces, but circulating warm air is the main room-heating mechanism described.",
+      "Warm air rises and cooler air moves to replace it, giving convection currents.",
+      "Evaporation requires a liquid changing into vapour.",
+      "Condensation is a vapour changing into liquid and does not explain circulation of warm air."
+    ]
+  },
+  {
+    "stem": "In a household kitchen, handles of spoons and utensils are made up of wood or rubber. This is because wood and rubber are",
+    "options": [
+      "bad conductors.",
+      "semiconductors.",
+      "good conductors.",
+      "super conductors."
+    ],
+    "officialSlo": "9.1.7",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "K",
+    "slo": "9.1.6",
+    "reasons": [
+      "Wood and rubber conduct heat poorly, reducing the heat transferred to the hand.",
+      "Semiconductor is an electrical classification and does not explain the choice of these handles.",
+      "A good thermal conductor would carry heat to the hand more readily.",
+      "Superconductivity concerns electrical resistance under special conditions."
+    ]
+  },
+  {
+    "stem": "Which of the following surfaces is the BEST radiator of heat energy?",
+    "options": [
+      "A dull black surface",
+      "A shiny silver surface",
+      "A dark coloured surface",
+      "A light coloured surface"
+    ],
+    "officialSlo": "9.1.6",
+    "officialAnswer": "B",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "9.3.2",
+    "reasons": [
+      "In the textbook comparison, a dull black surface has high emissivity and is the best radiator at the same temperature.",
+      "The board lists shiny silver, which has low emissivity and is a good reflector.",
+      "A dark surface can radiate well, but this description does not specify the dull finish of A.",
+      "A light surface is generally a weaker emitter in the intended comparison."
+    ],
+    "reviewNote": "The board key lists B (shiny silver). At the same temperature, a dull black surface is the best radiator among the options (A)."
+  },
+  {
+    "stem": "Heat reaches the surface of the Earth from the Sun MAINLY because of\n\nI. Radiation\n\nII. Convection\n\nIII. Conduction",
+    "options": [
+      "I only.",
+      "III only.",
+      "I and II.",
+      "II and III."
+    ],
+    "officialSlo": "9.4.1",
+    "officialAnswer": "C",
+    "key": "A",
+    "cognitive": "K",
+    "slo": "9.3.1",
+    "reasons": [
+      "Radiation carries solar energy across the near-vacuum of space to Earth.",
+      "Conduction requires material contact and does not carry heat across space.",
+      "The board lists I and II. Convection can redistribute heat in the atmosphere after absorption, but it cannot transport solar energy across space.",
+      "Neither conduction nor convection can carry energy from the Sun across the near-vacuum."
+    ],
+    "reviewNote": "The board key lists C (radiation and convection). Solar energy travels across space by radiation, so A is correct."
+  },
+  {
+    "stem": "In the greenhouse effect, the greenhouse gases in the lower atmosphere",
+    "options": [
+      "disintegrate into other gases.",
+      "help radiations to escape to space.",
+      "ionise other gases in the surrounding.",
+      "prevent radiations from escaping in the space."
+    ],
+    "officialSlo": "9.5.2",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "9.4.2",
+    "reasons": [
+      "Greenhouse warming does not require the gases to break apart.",
+      "The gases absorb and re-emit some outgoing infrared radiation, reducing direct escape to space.",
+      "Ionisation is not the greenhouse mechanism.",
+      "Greenhouse gases absorb and re-emit outgoing infrared radiation and thereby reduce the rate at which heat escapes."
+    ]
+  },
+  {
+    "stem": "The given figure focuses on the magnified part of a Vernier callipers. The name of the scale(s) shown in the magnified part is/ are\n\nI. Main scale\n\nII. Vernier scale\n\nIII. Circular scale",
+    "options": [
+      "I only.",
+      "II only.",
+      "I and II.",
+      "II and III."
+    ],
+    "officialSlo": "1.6.2",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "1.5.3",
+    "reasons": [
+      "The main scale is present, and the sliding Vernier scale is also shown.",
+      "The Vernier appears alongside the main scale, so II alone is incomplete.",
+      "The magnified drawing shows the fixed main scale and the sliding Vernier scale.",
+      "A circular scale is associated with instruments such as a screw gauge. The two scales here are linear."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "The instrument used to measure the diametre of a metallic wire is",
+    "options": [
+      "metre scale.",
+      "spherometre.",
+      "screw gauge.",
+      "physical balance."
+    ],
+    "officialSlo": "1.6.2",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "1.5.1",
+    "reasons": [
+      "A metre rule does not resolve a thin wire’s diameter accurately.",
+      "A spherometer is designed for curvatures or small thickness measurements, not the standard wire method.",
+      "A screw gauge grips the wire between its anvil and spindle and measures its diameter precisely.",
+      "A physical balance measures mass."
+    ]
+  },
+  {
+    "stem": "If a ball is moving vertically upward, then the magnitude of acceleration due to gravity for the ball will be",
+    "options": [
+      "– 980 m/s².",
+      "– 9.8 m/s².",
+      "9.8 m/s².",
+      "980 m/s²."
+    ],
+    "officialSlo": "2.10.1",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "2.5.1",
+    "reasons": [
+      "A magnitude cannot be negative and 980 m/s² is about one hundred times too large.",
+      "Minus 9.8 m/s² is a signed component when up is positive. The magnitude is positive.",
+      "Gravity acts downward with magnitude about 9.8 m/s², including while the ball moves upwards.",
+      "980 cm/s² equals 9.8 m/s². The units shown here are m/s²."
+    ]
+  },
+  {
+    "stem": "The following apparatus is used in a physics lab to find acceleration of a rolling ball with a help of a graph. While drawing the graph 2S and t² are taken on y-axis and x-axis respectively. Which of the following mathematical equations takes 2S and t² as a dependent and an independent variables to find the acceleration?",
+    "options": [
+      "S = vt",
+      "$v_f = v_i + at$",
+      "$S = v_i t + \\frac{1}{2}at^2$",
+      "$2aS = v_f^2 - v_i^2$"
+    ],
+    "officialSlo": "2.8.3",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": null,
+    "reasons": [
+      "S = vt describes constant velocity and does not relate distance to squared time.",
+      "The equation relates velocity to time and supplies no expression for displacement.",
+      "For release from rest, S = vᵢt + ½at² becomes 2S = at², so acceleration is the graph’s slope.",
+      "The relation links speed and displacement and contains no time-squared term."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "In the given mass-spring system, five slotted weights each of 50 g are hanged to a helical spring. The reading on the metre scale is",
+    "options": [
+      "0 cm.",
+      "10 cm.",
+      "15 cm.",
+      "20 cm."
+    ],
+    "officialSlo": "2.8.4",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "1.5.3",
+    "reasons": [
+      "Zero is the reference mark near the top of the scale.",
+      "The pointer is below the 10 cm graduation.",
+      "The pointer lies halfway between 10 cm and 20 cm, giving 15 cm.",
+      "The pointer is above the 20 cm graduation."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "The given figure shows two boxes, I and II, hanged on a metre rod that is fixed at a fulcrum. A student has been given the task by his/ her teacher to balance the metre rod by keeping the position of the boxes unchanged on the rod. He/ she should",
+    "options": [
+      "increase the weight of box I.",
+      "increase the weight of box II.",
+      "move the fulcrum towards box I.",
+      "equally increase the weight of both the boxes."
+    ],
+    "officialSlo": "3.3.5",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "4.2.1",
+    "reasons": [
+      "The left-hand moment dominates in the drawing. Increasing the weight of box I on the right increases the opposing moment.",
+      "Increasing the weight of box II increases the moment on the side already down.",
+      "Moving the fulcrum towards box I shortens its lever arm and lengthens box II’s, increasing the imbalance.",
+      "Box II is farther from the fulcrum, so adding equal weights increases the moment more on its side."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "The following figures show uniform metre rod placed on a fulcrum in three different positions I, II and III. Forces of equal magnitudes are acting on each ends of the rod in the case of",
+    "options": [
+      "II only.",
+      "III only.",
+      "I and II.",
+      "I and III."
+    ],
+    "officialSlo": "4.5.5",
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "4.2.1",
+    "reasons": [
+      "The intended drawing shows the rod balanced with a central fulcrum in II. Equal arms then require equal forces for equal opposing moments.",
+      "The downward tilt in III does not show the balanced case intended by the paper.",
+      "Only II shows the intended balanced case.",
+      "Both I and III are tilted and are not the intended balanced case."
+    ],
+    "reviewNote": "The intended interpretation is a balanced rod with a central pivot in II. The drawing by itself does not measure either end force.",
+    "diagram": true
+  },
+  {
+    "stem": "In a science lab, a student heats up a metallic piece from 30°C to 80°C which requires thermal energy of 500 J. If mass of the piece is 1 kg, then the specific heat capacity of the metal will be",
+    "options": [
+      "4.5 J/(kg·°C).",
+      "6.2 J/(kg·°C).",
+      "10.0 J/(kg·°C).",
+      "16.6 J/(kg·°C)."
+    ],
+    "officialSlo": "8.3.2",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "8.2.7",
+    "reasons": [
+      "Use the 50°C rise to calculate 500/(1 × 50).",
+      "This is below the result obtained with the given 1 kg mass and 50°C rise.",
+      "c = Q/(mΔT) = 500/(1 × 50) = 10 J/(kg·°C).",
+      "This is about 500/30, which uses the starting temperature instead of the temperature change."
+    ]
+  },
+  {
+    "stem": "In a science lab, a student put a block in a beaker completely filled with water. He observed that some amount of water spills out from the beaker. Which of the following principles/ laws depicts the given situation?",
+    "options": [
+      "Pascal’s law",
+      "Principle of moments",
+      "Archimedes’ principle",
+      "Law of conservation of momentum"
+    ],
+    "officialSlo": "7.5.6",
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "Pascal’s law is about the transmission of pressure in a confined fluid.",
+      "The principle of moments is about rotational equilibrium.",
+      "The immersed object displaces its submerged volume of water. The weight of the displaced water is the buoyant force in Archimedes’ principle.",
+      "The observation concerns displaced fluid, not conservation of momentum."
+    ],
+    "diagram": true,
+    "reviewNote": "The observation demonstrates water displacement. The board connects it to Archimedes’ principle, which also specifies the buoyant force."
+  },
+  {
+    "stem": "The given graph shows change in the states of ice on heating. Which of the following statements is TRUE about the point V?",
+    "options": [
+      "Water starts boiling",
+      "Ice converts into water",
+      "Water starts vaporising",
+      "Entire water converts into steam"
+    ],
+    "officialSlo": "8.5.1",
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "A",
+    "slo": "8.2.5",
+    "reasons": [
+      "Water starts to boil at the start of the 100°C plateau, at III.",
+      "Melting takes place during the lower-temperature plateau.",
+      "V is beyond the 100°C boiling plateau, so vaporisation has already ended.",
+      "V is on the rising-temperature steam segment. All the liquid water has vaporised by the end of the preceding plateau."
+    ],
+    "diagram": true
+  }
+]
