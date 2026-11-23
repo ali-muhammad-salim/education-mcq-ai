@@ -416,6 +416,11 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                           {item.sourceTitle}
                         </span>
                       )}
+                      {item.additionalSources?.map(source => (
+                        <Link key={source.href} href={source.href} style={{ fontFamily: SANS, fontSize: '0.76rem', fontWeight: 700 }}>
+                          {source.title} ↗
+                        </Link>
+                      ))}
                       {item.currentSlo ? (
                         <Link
                           href={`${baseUrl}/syllabus#slo-${item.currentSlo}`}

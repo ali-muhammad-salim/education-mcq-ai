@@ -1,0 +1,590 @@
+[
+  {
+    "stem": "The scientific notation of 0.00002019 is",
+    "options": [
+      "2.019 × 10⁻⁵",
+      "2.019 × 10⁻⁴",
+      "2.019 × 10⁴",
+      "2.019 × 10⁵"
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "1.3.2",
+    "reasons": [
+      "Moving the decimal five places to the right gives 2.019, so the exponent is −5.",
+      "This would give 0.0002019, ten times the stated number.",
+      "A positive exponent makes the answer much larger than 1.",
+      "A positive exponent of five gives 201,900."
+    ]
+  },
+  {
+    "stem": "Which of the following instruments is used to measure the internal diameter of a pipe?",
+    "options": [
+      "Metre rule",
+      "Screw gauge",
+      "Vernier callipers",
+      "Measuring cylinder"
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "1.5.1",
+    "reasons": [
+      "A metre rule does not reach the internal diameter accurately.",
+      "A standard screw gauge measures small external dimensions.",
+      "The internal jaws of Vernier callipers contact opposite sides of the pipe’s bore.",
+      "A measuring cylinder measures volume."
+    ]
+  },
+  {
+    "stem": "An athlete runs around a circular track of radius 50 m and finishes at the same point where he began his journey. His total displacement in metre(s) is evaluated to be",
+    "options": [
+      "0",
+      "π/2",
+      "2π",
+      "100π"
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "2.3.1",
+    "reasons": [
+      "Displacement is final position minus initial position. The runner finishes at the start, so the displacement is 0 m.",
+      "The runner returns to the same position, so there is no nonzero displacement.",
+      "The circumference gives the distance travelled, while the displacement is zero.",
+      "100π m is the distance of one lap, not the displacement."
+    ]
+  },
+  {
+    "stem": "A distance-time graph of a moving object is given below. With reference to the given graph, the distance covered during 10 to 12 hours is",
+    "options": [
+      "0 km.",
+      "2 km.",
+      "5 km.",
+      "10 km."
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "2.4.1",
+    "reasons": [
+      "The line is flat at 10 km from hour 10 to hour 12, so no additional distance is covered.",
+      "The interval is 2 hours. Its distance change is 0 km.",
+      "A distance of 5 km would require a rise of 5 km on the vertical axis.",
+      "10 km is the cumulative reading throughout the interval, not the increase."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "A car starts from rest and has uniform acceleration of 10 m/s². After some time it possess the velocity of 30 m/s. The distance covered by the car during this time is",
+    "options": [
+      "920 m.",
+      "880 m.",
+      "50 m.",
+      "45 m."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "A",
+    "slo": null,
+    "reasons": [
+      "920 m does not follow from v² = u² + 2as.",
+      "Use the square of 30 m/s together with 2 × 10 m/s², which gives 45 m.",
+      "Substitution into s = (v² − u²)/(2a) gives 45 m.",
+      "From rest, s = 30²/(2 × 10) = 45 m."
+    ]
+  },
+  {
+    "stem": "A boy starts his travelling from a point P and ends at point S. The magnitude of displacement from point P to S is",
+    "options": [
+      "3 m.",
+      "5 m.",
+      "8 m.",
+      "13 m."
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "2.3.3",
+    "reasons": [
+      "The two horizontal 5 m segments cancel. The final position is 3 m directly above the starting point.",
+      "5 m is the length of each horizontal leg, and the legs cancel.",
+      "8 m counts part of the path. Displacement uses only the start and end positions.",
+      "13 m is the total path length 5 + 3 + 5, not the displacement."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "The momentum of a moving truck as shown in the given diagram is",
+    "options": [
+      "3,978 kg·m/s.",
+      "4,022 kg·m/s.",
+      "88,000 kg·m/s.",
+      "968,000 kg·m/s."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "3.4.4",
+    "reasons": [
+      "This comes from subtracting the speed from the mass, which mixes units.",
+      "This comes from adding the numerical values of mass and speed, which mixes units.",
+      "Momentum equals mass multiplied by velocity: 4,000 × 22 = 88,000 kg·m/s in the direction shown.",
+      "Momentum is linear in speed. It is not calculated by squaring the speed."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "In the given figure, two blocks of masses m₁ and m₂ are attached with an inextensible string such that the pulley and the horizontal surface are frictionless. If the blocks are at rest, then the tension in the string at point A will be",
+    "options": [
+      "zero.",
+      "equal to tension at point B.",
+      "less than tension at point B.",
+      "greater than tension at point B."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "An ideal string under load carries a nonzero tension.",
+      "For an ideal massless string over a frictionless pulley, the tension at A equals the tension at B.",
+      "The frictionless pulley changes the direction of the force without reducing its magnitude.",
+      "The ideal pulley does not increase tension on either side."
+    ],
+    "diagram": true,
+    "reviewNote": "The statement that the blocks stay at rest requires a restraint or another balancing force. Equality of the two tensions follows from the ideal string and pulley, even if the blocks accelerate."
+  },
+  {
+    "stem": "An object is moving on a horizontal surface. The force exerted by the horizontal surface that opposes the motion of the object is",
+    "options": [
+      "weight.",
+      "gravity.",
+      "tension.",
+      "friction."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "K",
+    "slo": "3.5.1",
+    "reasons": [
+      "Weight acts downward and is not the horizontal force from the surface.",
+      "Gravity is not the contact force exerted by the surface.",
+      "Tension is a pull in a string or similar object.",
+      "Sliding friction acts along the surface opposite the relative motion."
+    ]
+  },
+  {
+    "stem": "In an elastic collision, which of the following also remains conserved along with momentum?",
+    "options": [
+      "Potential energy",
+      "Kinetic energy",
+      "Sound energy",
+      "Heat energy"
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": null,
+    "reasons": [
+      "Potential energy can change temporarily during compression, but kinetic energy before and after is the defining comparison.",
+      "An elastic collision conserves total kinetic energy as well as total momentum.",
+      "Sound is one way mechanical energy can be transferred out of the motion, not the defining conserved quantity.",
+      "Thermal energy is not the additional conserved mechanical quantity used to identify an elastic collision."
+    ]
+  },
+  {
+    "stem": "If the maximum moment of force on a door is 10 N·m by an applied force of 2.25 N, then the distance of handle from hinge (pivot) is",
+    "options": [
+      "0.225 m.",
+      "4.444 m.",
+      "12.250 m.",
+      "22.500 m."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "A",
+    "slo": "4.1.3",
+    "reasons": [
+      "Use the moment divided by the force, with the force perpendicular at maximum moment.",
+      "At maximum moment the applied force is perpendicular to the lever arm, so r = 10/2.25 ≈ 4.444 m.",
+      "Adding a torque to a force mixes units.",
+      "22.5 is the product 10 × 2.25. The lever arm requires division."
+    ]
+  },
+  {
+    "stem": "Two forces act at the right angle at point O, as shown in the given figure. What will be the magnitude and direction of the resultant force?",
+    "options": [
+      "15 N · along OQ",
+      "15 N · along PR",
+      "21 N · along OQ",
+      "21 N · along PR"
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "1.4.4",
+    "reasons": [
+      "The forces are perpendicular. Their resultant has magnitude √(12² + 9²) = 15 N and points along OQ, the diagonal from O.",
+      "15 N is the right magnitude, but PR points along the other diagonal.",
+      "OQ is the correct direction, but 21 N adds the perpendicular magnitudes directly.",
+      "Neither direct addition nor the other diagonal gives the resultant."
+    ],
+    "headings": [
+      "Magnitude",
+      "Direction"
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "Let suppose, a hole is drilled through the Earth along the diameter and a stone is dropped into it. When the stone reaches the centre of the Earth keeping same size and shape, it has constant",
+    "options": [
+      "mass.",
+      "weight.",
+      "momentum.",
+      "acceleration."
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "A",
+    "slo": "3.1.1",
+    "reasons": [
+      "The stone’s mass is unchanged as it moves through the Earth.",
+      "Weight depends on the local gravitational field and is zero at the centre in the symmetric model.",
+      "Momentum depends on velocity, which changes as the stone falls.",
+      "The acceleration varies with position inside Earth and is zero at the centre in the symmetric model."
+    ]
+  },
+  {
+    "stem": "A satellite is revolving around the Earth in a circular orbit with a velocity v. If the gravitational force between the satellite and the Earth suddenly disappears, then the velocity of the satellite will be",
+    "options": [
+      "0",
+      "v",
+      "2v",
+      "infinite."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "3.3.1",
+    "reasons": [
+      "The satellite retains its instantaneous velocity immediately after the force disappears.",
+      "With no net force, it continues at the same speed v along the tangent at the point where gravity vanishes.",
+      "There is no impulse to double the speed.",
+      "Removing the inward force does not increase the speed."
+    ]
+  },
+  {
+    "stem": "If the radius of the Earth shrinks by 1%, while its mass remains the same, then the acceleration due to gravity on the Earth’s surface would",
+    "options": [
+      "increase.",
+      "decrease.",
+      "remain the same.",
+      "vary in an unpredictable manner."
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "For fixed Earth mass, g = GM/r². Reducing r increases g.",
+      "The inverse-square relation gives an increase as the radius decreases.",
+      "A fixed mass does not keep g fixed when the radius changes.",
+      "The inverse-square relation predicts the direction of change."
+    ]
+  },
+  {
+    "stem": "If a planet comes closer to the Sun, then the planet will",
+    "options": [
+      "orbit faster.",
+      "orbit slower.",
+      "fall into the Sun.",
+      "keep moving with the same speed as earlier."
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "A planet moves faster on the closer part of a bound orbit. A smaller circular orbit about the same Sun also has greater orbital speed.",
+      "In the intended orbital comparison, the nearer motion is faster.",
+      "Moving closer on a bound orbit does not by itself make the planet collide with the Sun.",
+      "Orbital speed depends on distance from the Sun in the comparisons assumed here."
+    ],
+    "reviewNote": "The answer assumes the planet moves closer on the same bound orbit, or compares circular orbits around the same Sun. The stem does not specify what caused the change."
+  },
+  {
+    "stem": "An astronaut returns from the Moon to the Earth. Which of the following is the CORRECT description about his/ her mass and weight?",
+    "options": [
+      "Less on Earth than Moon · Same on Earth and Moon",
+      "More on Earth than Moon · Same on Earth and Moon",
+      "Same on Earth and Moon · Less on Earth than Moon",
+      "Same on Earth and Moon · More on Earth than Moon"
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "K",
+    "slo": "3.1.1",
+    "reasons": [
+      "The astronaut’s mass does not change and Earth’s stronger gravity increases weight.",
+      "Mass stays the same while weight increases on Earth.",
+      "The weight is greater on Earth because local gravity is stronger.",
+      "The same mass experiences greater weight on Earth because g is larger there."
+    ],
+    "headings": [
+      "Mass",
+      "Weight"
+    ]
+  },
+  {
+    "stem": "A car travels a distance of 150 m in the direction of a constant force of 50 N. The work done on the car is",
+    "options": [
+      "3 J.",
+      "100 J.",
+      "200 J.",
+      "7500 J."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "A",
+    "slo": "6.1.2",
+    "reasons": [
+      "Work in the force direction is the product Fd.",
+      "Adding, subtracting or dividing the given force and distance does not compute work.",
+      "Work is 50 × 150 joules.",
+      "The force and displacement are aligned, so W = Fd = 50 × 150 = 7,500 J."
+    ]
+  },
+  {
+    "stem": "A car has stopped after screeching to avoid a crash with a van. With reference to the given situation, the kinetic energy of the car will then be converted into",
+    "options": [
+      "sound energy only.",
+      "heat and sound energy.",
+      "heat and potential energy.",
+      "potential and sound energy."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "6.4.1",
+    "reasons": [
+      "The screech carries some energy as sound, and friction produces heat.",
+      "Braking friction converts most of the lost kinetic energy into thermal energy and some into sound.",
+      "The scenario gives a sound and provides no reason to assume increased potential energy.",
+      "The braking dissipates energy as heat, which this option omits."
+    ]
+  },
+  {
+    "stem": "If a loading truck has an output of 3600 J and its efficiency is 50%, then the input provided to the truck will be",
+    "options": [
+      "18 J.",
+      "72 J.",
+      "7200 J.",
+      "10800 J."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "6.5.2",
+    "reasons": [
+      "The input must exceed the useful output because the efficiency is below 100%.",
+      "This is below the stated output and inconsistent with 50% efficiency.",
+      "Efficiency = output/input = 0.50, so input = 3,600/0.50 = 7,200 J.",
+      "At 50% efficiency the input is twice, not three times, the output."
+    ]
+  },
+  {
+    "stem": "As compared to the sea level, atmospheric pressure on mountains",
+    "options": [
+      "is lower.",
+      "is higher.",
+      "is the same.",
+      "varies unpredictably."
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "7.3.3",
+    "reasons": [
+      "A mountain has a shorter column of atmosphere above it, so the air pressure is lower.",
+      "A higher pressure generally occurs lower in the atmosphere.",
+      "Atmospheric pressure decreases with altitude.",
+      "Weather can affect a reading, but the general decrease with altitude is predictable."
+    ]
+  },
+  {
+    "stem": "While drinking juice with the help of a straw from a juice can, the air pressure inside the straw will",
+    "options": [
+      "increase.",
+      "decrease.",
+      "remain constant.",
+      "vary unpredictably."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "7.3.1",
+    "reasons": [
+      "Raising the internal pressure would oppose the upward push from outside.",
+      "Reducing the pressure in the straw lets the atmospheric pressure on the liquid surface push the juice upward.",
+      "The liquid rises because a pressure difference is created.",
+      "Suction lowers the pressure in the straw relative to the surroundings."
+    ]
+  },
+  {
+    "stem": "A change caused by stress in original shape, volume or length is called as",
+    "options": [
+      "strain.",
+      "density.",
+      "pressure.",
+      "elasticity."
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "K",
+    "slo": null,
+    "reasons": [
+      "Strain measures the deformation caused by stress, usually as a change relative to the original dimension.",
+      "Density is mass per unit volume.",
+      "Pressure is normal force per unit area.",
+      "Elasticity is the ability to recover shape after the deforming force is removed."
+    ]
+  },
+  {
+    "stem": "If the temperature of a gas is increased continuously, then which of the following energies increases in the gas molecules?",
+    "options": [
+      "Heat energy",
+      "Light energy",
+      "Kinetic energy",
+      "Potential energy"
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "8.1.4",
+    "reasons": [
+      "Heat is energy transferred because of a temperature difference. The molecular quantity tied to the gas temperature is average kinetic energy.",
+      "Warming an ordinary gas does not imply an increase in light energy in its molecules.",
+      "The average translational kinetic energy of gas molecules increases as the absolute temperature rises.",
+      "In the ideal-gas model the temperature relation is with molecular kinetic energy, not intermolecular potential energy."
+    ]
+  },
+  {
+    "stem": "If the temperature of a hot pot is 125°C, then its temperature in kelvin will be",
+    "options": [
+      "148 K.",
+      "225 K.",
+      "257 K.",
+      "398 K."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "A",
+    "slo": "8.3.2",
+    "reasons": [
+      "Add 273.15 to the Celsius reading rather than subtracting the Celsius value from 273.",
+      "There is no conversion rule that gives 225 K here.",
+      "125°C equals 398.15 K, not 257 K.",
+      "T = 125 + 273.15 = 398.15 K, or 398 K to the nearest kelvin."
+    ]
+  },
+  {
+    "stem": "When Sun rays fall on a stone and water in a beaker, the stone becomes hot quickly as compared to water. This is because the stone has",
+    "options": [
+      "more heat capacity than water.",
+      "more thermal expansion than water.",
+      "less latent heat of fusion than water.",
+      "less specific heat capacity than water."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "8.2.3",
+    "reasons": [
+      "For equal mass and absorbed energy, a higher heat capacity gives a smaller temperature rise.",
+      "Expansion changes dimensions, not how much energy is needed per degree in this comparison.",
+      "Latent heat of fusion concerns melting. Neither sample has to melt here.",
+      "For equal mass and absorbed heat, ΔT = Q/(mc). A smaller specific heat capacity gives the stone a larger temperature rise."
+    ],
+    "reviewNote": "The intended comparison assumes comparable mass and energy absorbed. In real sunlight, surface absorptivity, container and sample mass can also affect the heating rate."
+  },
+  {
+    "stem": "In evaporation, water starts converting into vapours",
+    "options": [
+      "at exactly 4°C.",
+      "at any temperature.",
+      "more than 100°C only.",
+      "between 0°C and 4°C only."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "8.2.8",
+    "reasons": [
+      "Evaporation is not restricted to 4°C.",
+      "Water molecules can escape from a liquid surface at any temperature at which liquid water is present.",
+      "Liquid water evaporates below the boiling point.",
+      "Evaporation occurs over a much wider temperature range than 0–4°C."
+    ]
+  },
+  {
+    "stem": "If the thickness of a wall is doubled, then the thermal conductivity will",
+    "options": [
+      "become one half.",
+      "become double.",
+      "become one fourth.",
+      "remain same."
+    ],
+    "officialAnswer": "*",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "9.1.2",
+    "reasons": [
+      "Doubling thickness can halve the heat-transfer rate under fixed conditions. The material’s conductivity stays constant.",
+      "Thermal resistance doubles under fixed conditions, while thermal conductivity is unchanged.",
+      "There is no inverse-square dependence on thickness for steady conduction through a flat wall.",
+      "Thermal conductivity is a material property. Doubling the thickness changes the thermal resistance, while the conductivity stays the same."
+    ],
+    "reviewNote": "The published key displays an asterisk and does not specify an answer letter. Practice scores D because thermal conductivity is a material property."
+  },
+  {
+    "stem": "Heat reaches the surface of the Earth from the Sun MAINLY because of\n\nI. Radiation\n\nII. Convection\n\nIII. Conduction",
+    "options": [
+      "I only",
+      "III only",
+      "I and II",
+      "II and III"
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "K",
+    "slo": "9.3.1",
+    "reasons": [
+      "Radiation carries solar energy across the near-vacuum of space to Earth.",
+      "Conduction needs matter to transfer thermal energy across a region.",
+      "Convection can redistribute energy after sunlight arrives, but it cannot carry it across space.",
+      "Convection and conduction require a material medium, so neither is the mechanism across space."
+    ]
+  },
+  {
+    "stem": "All of the following factors affect the rate of transfer of energy in radiation EXCEPT",
+    "options": [
+      "surface area.",
+      "surface temperature.",
+      "shape of the surface.",
+      "colour and texture of the surface."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "9.3.3",
+    "reasons": [
+      "A larger emitting surface sends out more energy at the same temperature and emissivity.",
+      "Thermal emission increases as surface temperature rises.",
+      "For the board’s simplified isolated-surface comparison, area, temperature and emissivity determine the emitted power. Shape alone is not a separate factor.",
+      "Colour and finish can affect how strongly a surface emits infrared radiation."
+    ],
+    "reviewNote": "The board’s answer assumes a simple isolated surface. Geometry can affect the net exchange of radiation between surfaces that face or partly shield one another."
+  }
+]

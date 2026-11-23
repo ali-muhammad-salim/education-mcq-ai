@@ -1,4 +1,5 @@
 import type { HsscQuizQuestion } from '@/lib/hsscMcqsData';
+import { hsscBiologyOptionFeedback } from '@/lib/hsscBiologyOptionFeedback';
 
 const image = (name: string, description: string) => `![${description}](/paper-crops/BIO-XI-STUDY/${name}.png)`;
 
@@ -83,7 +84,7 @@ export const hsscBiologyStudyResources = [
         '| C | Locomotory organs | Present | Absent | Absent |',
         '| D | Hermaphroditism | Absent | Present | Present |',
       ].join('\n'), ['Row A', 'Row B', 'Row C', 'Row D'], 'D', 'Typical polychaetes have separate sexes. Earthworms and leeches are hermaphroditic.', 2015),
-      mcq('2014-19', 87, '9.3.3', 'Which is an exception to the adaptations for parasitism in acoelomate flatworms?', ['Well-developed suckers and hooks', 'Absence of an epidermal layer', 'Degeneration of the muscular system', 'Complex digestive system'], 'D', 'Parasitic flatworms typically have a reduced gut, and tapeworms lack a digestive tract.', 2014),
+      mcq('2014-19', 87, '9.3.3', 'Which is an exception to the adaptations for parasitism in acoelomate flatworms?', ['Well-developed suckers and hooks', 'Loss of the free-living ciliated epidermis', 'Reduction in structures for active locomotion', 'Complex digestive system'], 'D', 'Parasitic flatworms typically have a reduced gut, and tapeworms lack a digestive tract.', 2014),
       mcq('2014-20', 87, '9.5.6', 'Which feature limits the success of typical amphibians on land?', ['Glands in the skin instead of scales', 'Lungs in place of adult gills', 'External fertilisation instead of internal fertilisation', 'Limbs in place of fins'], 'C', 'In many amphibians, external fertilisation and early development depend on water.', 2014),
       mcq('2013-19', 89, '9.3.10', 'A triploblastic, bilaterally symmetrical, unsegmented animal has a mantle. To which phylum does it belong?', ['Echinodermata', 'Arthropoda', 'Mollusca', 'Annelida'], 'C', 'A mantle is characteristic of molluscs.', 2013),
       mcq('2012-19', 91, '9.3.6', 'Which group consists entirely of arthropods?', ['Annelids, insects and myriapods', 'Arachnids, crustaceans and myriapods', 'Crustaceans, insects and molluscs', 'Insects, myriapods and nematodes'], 'B', 'Arachnids, crustaceans and myriapods all belong to Arthropoda.', 2012),
@@ -124,6 +125,7 @@ export function biologyStudyResourceQuiz(resource: (typeof hsscBiologyStudyResou
       choices: Object.fromEntries(question.options.map((choice, index) => ['ABCD'[index], choice])),
       current_slo: question.slo, correct_answer: question.answers[0], explanation: question.explanation,
       accepted_options: question.answers, score_accepted_options: question.answers.length > 1,
+      option_feedback: hsscBiologyOptionFeedback('study', question.id),
     },
   }));
 }

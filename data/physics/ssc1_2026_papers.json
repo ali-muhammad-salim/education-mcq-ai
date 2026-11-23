@@ -1,0 +1,751 @@
+{
+  "mcqs": [
+    {
+      "slo": "1.7.1",
+      "stem": "Which of the following numbers has 4 significant figures?",
+      "options": [
+        "7000",
+        "500.0",
+        "0.0003",
+        "0.0100"
+      ],
+      "key": "B",
+      "reasons": [
+        "Without a decimal or scientific notation, the trailing zeros are ambiguous.",
+        "All three trailing zeros are significant because the precision is indicated by the decimal point.",
+        "The leading zeros are placeholders. Only the 3 is significant.",
+        "The 1 and the two trailing zeros make three significant figures."
+      ]
+    },
+    {
+      "slo": "1.4.2",
+      "stem": "The option that correctly identifies scalar and vector quantities is",
+      "options": [
+        "Displacement · Distance",
+        "Acceleration · Force",
+        "Speed · Velocity",
+        "Work · Energy"
+      ],
+      "key": "C",
+      "reasons": [
+        "Displacement is a vector and distance is a scalar, so the order is reversed.",
+        "Acceleration and force are both vectors.",
+        "Speed has magnitude only. Velocity has magnitude and direction.",
+        "Work and energy are both scalars."
+      ]
+    },
+    {
+      "slo": "1.3.2",
+      "stem": "The number 123.4 can also be written in scientific notation as",
+      "options": [
+        "1234 × 10¹",
+        "1.234 × 10²",
+        "1.234 × 10⁻²",
+        "0.1234 × 10⁻³"
+      ],
+      "key": "B",
+      "reasons": [
+        "The coefficient is too large and the expression equals 12,340.",
+        "Moving the decimal two places left gives 1.234, so the multiplier is 10².",
+        "The negative exponent gives 0.01234.",
+        "The coefficient is below 1 and the exponent gives 0.0001234."
+      ]
+    },
+    {
+      "slo": "2.4.1",
+      "stem": "If a speed–time graph shows a straight line sloping downwards to the x-axis, then this indicates that the speed",
+      "options": [
+        "Increases.",
+        "Decreases.",
+        "Becomes zero.",
+        "Remains constant."
+      ],
+      "key": "B",
+      "reasons": [
+        "An increasing speed would give an upward slope.",
+        "The negative slope shows that speed decreases throughout the interval.",
+        "Zero speed would require the plotted line to reach the time axis. The visible segment shows speed decreasing.",
+        "Constant speed would produce a horizontal line."
+      ],
+      "figure": "question-4"
+    },
+    {
+      "slo": "2.3.2",
+      "stem": "If an athlete runs along a linear track of 100 m in 10 seconds, then their average velocity will be",
+      "options": [
+        "0 m/s",
+        "0.1 m/s",
+        "10 m/s",
+        "1000 m/s"
+      ],
+      "key": "C",
+      "reasons": [
+        "Zero average velocity would require zero net displacement.",
+        "0.1 comes from dividing the time by the distance rather than the displacement by the time.",
+        "Taking the stated straight run as 100 m of displacement, average velocity is 100 ÷ 10 = 10 m/s in the direction of motion.",
+        "Multiplying displacement by time does not give a velocity."
+      ]
+    },
+    {
+      "slo": "2.2.1",
+      "stem": "The type of motion that is experienced by the hands of an analogue clock is",
+      "options": [
+        "Linear.",
+        "Rotational.",
+        "Oscillatory.",
+        "Circulatory."
+      ],
+      "key": "B",
+      "reasons": [
+        "The complete hand does not move along a straight line.",
+        "Each hand is a rigid object turning about its fixed pivot.",
+        "The hands keep turning in the same direction rather than moving back and forth.",
+        "The tip follows a circular path, but the entire hand rotates about an axis."
+      ]
+    },
+    {
+      "slo": "2.1.1",
+      "stem": "If an object changes its position with respect to its surroundings, then it is in the state of",
+      "options": [
+        "Neutral equilibrium.",
+        "Stable equilibrium.",
+        "Motion.",
+        "Rest."
+      ],
+      "key": "C",
+      "reasons": [
+        "Neutral equilibrium describes what happens after a displacement, not whether position is changing.",
+        "Stable equilibrium concerns whether an object returns after a disturbance.",
+        "A changing position relative to a reference describes motion.",
+        "An object at rest keeps the same position relative to its reference."
+      ]
+    },
+    {
+      "slo": "2.4.3",
+      "stem": "From the given graphs, the graph that depicts a body at complete rest is",
+      "options": [
+        "A horizontal distance–time line",
+        "A decreasing curve",
+        "A sloping segment between two horizontal segments",
+        "An increasing straight line"
+      ],
+      "key": "A",
+      "reasons": [
+        "The horizontal line gives a constant distance throughout, indicating rest.",
+        "Distance changes along the descending curve.",
+        "The sloping middle segment shows motion.",
+        "The increasing straight line shows distance changing at a constant rate."
+      ]
+    },
+    {
+      "slo": "2.5.1",
+      "stem": "The acceleration due to gravity is the acceleration of objects when they are",
+      "options": [
+        "In free fall motion.",
+        "Moving in an aeroplane.",
+        "Placed at the surface of the Earth.",
+        "Moving along the surface of the Earth."
+      ],
+      "key": "A",
+      "reasons": [
+        "In ideal free fall gravity is the only force, so the acceleration is g.",
+        "An aircraft is also subject to thrust, lift and drag.",
+        "A supported object can feel gravity without accelerating.",
+        "Surface motion may involve friction and support forces."
+      ]
+    },
+    {
+      "slo": "3.4.2",
+      "stem": "The rate of change of momentum is",
+      "options": [
+        "Displacement.",
+        "Impulse.",
+        "Inertia.",
+        "Force."
+      ],
+      "key": "D",
+      "reasons": [
+        "Displacement measures change in position.",
+        "Impulse is the change in momentum itself.",
+        "Inertia describes resistance to a change of motion.",
+        "Newton’s second law identifies net force as the rate of change of momentum."
+      ]
+    },
+    {
+      "slo": "3.4.4",
+      "stem": "A 0.5 kg ball is dropped from a height. If its velocity is 10 m/s before hitting the ground, its momentum will be",
+      "options": [
+        "0.05 N·s",
+        "5 N·s",
+        "10.5 N·s",
+        "20 N·s"
+      ],
+      "key": "B",
+      "reasons": [
+        "Dividing 0.5 by 10 gives 0.05 but does not calculate momentum.",
+        "Momentum is 0.5 × 10 = 5 kg·m/s, equivalent to 5 N·s, downwards.",
+        "Adding mass to velocity mixes quantities with different units.",
+        "Dividing velocity by mass does not give momentum."
+      ]
+    },
+    {
+      "slo": "3.5.1",
+      "stem": "If a book is pushed horizontally on a table, then the force that resists its motion is",
+      "options": [
+        "Electromagnetic force.",
+        "Gravitational force.",
+        "Frictional force.",
+        "Normal force."
+      ],
+      "key": "C",
+      "reasons": [
+        "Electromagnetic interactions underlie contact forces microscopically. The macroscopic force opposing sliding is friction.",
+        "Gravity acts downward rather than opposing the horizontal motion.",
+        "Friction acts along the contact surface against relative sliding.",
+        "The normal force acts perpendicular to the table."
+      ]
+    },
+    {
+      "slo": "3.4.1",
+      "stem": "The net amount of inertia present in a moving body is called",
+      "options": [
+        "Force.",
+        "Torque.",
+        "Impulse.",
+        "Momentum."
+      ],
+      "key": "D",
+      "reasons": [
+        "Force changes momentum. It is not a property an object possesses because it is moving.",
+        "Torque measures the turning effect of a force.",
+        "Impulse measures change in momentum.",
+        "The intended answer is momentum, p = mv. The wording is imprecise because mass measures inertia."
+      ]
+    },
+    {
+      "slo": "3.3.4",
+      "stem": "A passenger car stuck in rainwater experiences an 80 N forward pull, while rainwater and mud exert 40 N in the opposite direction along the same line. The resultant force on the car will be",
+      "options": [
+        "20 N",
+        "40 N",
+        "120 N",
+        "3200 N"
+      ],
+      "key": "B",
+      "reasons": [
+        "The difference between the two forces is 40 N.",
+        "Taking forward as positive, 80 − 40 = 40 N forward.",
+        "Adding the magnitudes would apply if the forces acted in the same direction.",
+        "Multiplying the forces does not produce a resultant in newtons."
+      ]
+    },
+    {
+      "slo": "3.1.4",
+      "stem": "If a box weighs 100 N on the surface of the Earth, then its mass will be",
+      "options": [
+        "0.098 kg",
+        "10.20 kg",
+        "100 kg",
+        "980 kg"
+      ],
+      "key": "B",
+      "reasons": [
+        "This does not follow from dividing the weight by Earth’s gravitational field strength.",
+        "Using m = W/g, 100 ÷ 9.8 ≈ 10.20 kg.",
+        "100 is the numerical value of the weight in newtons.",
+        "Multiplying by g reverses the required calculation."
+      ]
+    },
+    {
+      "slo": "3.4.4",
+      "stem": "If a force of 10 N acts on a body for 2 s, then the impulse on the body will be",
+      "options": [
+        "5 N·s",
+        "8 N·s",
+        "12 N·s",
+        "20 N·s"
+      ],
+      "key": "D",
+      "reasons": [
+        "Dividing force by time does not give impulse.",
+        "Subtracting time from a force is dimensionally invalid.",
+        "Adding time and force is dimensionally invalid.",
+        "For a constant force, impulse is FΔt = 10 × 2 = 20 N·s."
+      ]
+    },
+    {
+      "slo": "3.1.2",
+      "stem": "Inertia of a body is measured in terms of its",
+      "options": [
+        "Mass.",
+        "Force.",
+        "Weight.",
+        "Velocity."
+      ],
+      "key": "A",
+      "reasons": [
+        "Mass measures resistance to acceleration.",
+        "A force causes acceleration and does not measure inertia.",
+        "Weight depends on the local gravitational field as well as mass.",
+        "A body has inertia even when its velocity is zero."
+      ]
+    },
+    {
+      "slo": "4.3.1",
+      "stem": "If a uniform metre rule is adjusted on a pivot at the 50 cm mark, then it will",
+      "options": [
+        "Fall.",
+        "Be balanced.",
+        "Turn clockwise.",
+        "Turn anticlockwise."
+      ],
+      "key": "B",
+      "reasons": [
+        "The pivot supports the rule at its centre of mass.",
+        "Its weight passes through the central pivot, giving zero torque about it.",
+        "There is no net clockwise moment.",
+        "There is no net anticlockwise moment."
+      ]
+    },
+    {
+      "slo": "4.4.2",
+      "stem": "If a cone-shaped object is placed on its pointed tip, then it shows",
+      "options": [
+        "Dynamic equilibrium.",
+        "Unstable equilibrium.",
+        "Neutral equilibrium.",
+        "Stable equilibrium."
+      ],
+      "key": "B",
+      "reasons": [
+        "The cone is initially at rest, not in steady motion.",
+        "A slight tilt lowers the centre of mass and produces a moment that topples the cone.",
+        "Tilting the cone changes its centre-of-mass height.",
+        "A small displacement does not produce a restoring moment."
+      ]
+    },
+    {
+      "slo": "5.1.5",
+      "stem": "All of the following are applications of Hooke’s law except",
+      "options": [
+        "Balance wheel of a mechanical clock.",
+        "Digital stopwatch.",
+        "Galvanometer.",
+        "Spring scale."
+      ],
+      "key": "B",
+      "reasons": [
+        "A balance spring provides a restoring torque for small angular displacements.",
+        "A digital stopwatch generally uses an electronic timebase rather than a calibrated spring.",
+        "A control spring provides a restoring torque in a moving-coil galvanometer.",
+        "A spring scale measures force using extension within the elastic range."
+      ]
+    },
+    {
+      "slo": "6.4.5",
+      "stem": "All of the following types of renewable energy sources are shown in the given picture except",
+      "options": [
+        "Solar.",
+        "Wind.",
+        "Hydel.",
+        "Biomass."
+      ],
+      "key": "C",
+      "reasons": [
+        "The Sun and photovoltaic panels depict solar power.",
+        "The turbines depict wind power.",
+        "No flowing-water power installation is shown.",
+        "The trees represent biomass in this illustration."
+      ],
+      "figure": "question-21"
+    },
+    {
+      "slo": "6.1.2",
+      "stem": "A student carries a heavy school bag weighing 150 N on their shoulders while standing in the school assembly for 10 minutes. The work done by the student on the bag will be",
+      "options": [
+        "0 J",
+        "140 J",
+        "160 J",
+        "1500 J"
+      ],
+      "key": "A",
+      "reasons": [
+        "The bag has no displacement, so the mechanical work on it is zero.",
+        "The elapsed time does not substitute for displacement in the work equation.",
+        "No displacement is given that could produce this amount of work.",
+        "Multiplying 150 N by 10 minutes does not give energy in joules."
+      ]
+    },
+    {
+      "slo": "6.6.2",
+      "stem": "If a machine does 600 J of work removing debris from a collapsed building in 20 s, then its power will be",
+      "options": [
+        "30 W",
+        "580 W",
+        "620 W",
+        "12000 W"
+      ],
+      "key": "A",
+      "reasons": [
+        "Power is energy transferred per unit time, so 600 ÷ 20 = 30 W.",
+        "Subtracting seconds from joules is dimensionally invalid.",
+        "Adding seconds to joules is dimensionally invalid.",
+        "Power requires division by the time, not multiplication."
+      ]
+    },
+    {
+      "slo": "6.4.6",
+      "stem": "The advantage of solar power generation is that it",
+      "options": [
+        "Has no high installation cost.",
+        "Produces no greenhouse gases.",
+        "Works in all weather conditions.",
+        "Provides a continuous supply of electricity."
+      ],
+      "key": "B",
+      "reasons": [
+        "Initial equipment and installation can be costly.",
+        "Solar panels generate electricity without direct greenhouse gas emissions during operation. Manufacturing and installation can have emissions.",
+        "Clouds and other weather conditions can reduce electrical output.",
+        "Solar output varies with sunlight. A continuous supply generally requires storage or backup."
+      ]
+    },
+    {
+      "slo": "6.4.3",
+      "stem": "Hypothetically, a perpetual motion machine is designed to",
+      "options": [
+        "Convert potential energy to kinetic energy only.",
+        "Work forever without energy loss.",
+        "Reduce friction force only.",
+        "Increase efficiency."
+      ],
+      "key": "B",
+      "reasons": [
+        "Perpetual motion is not defined by a particular energy conversion.",
+        "It is imagined to run indefinitely without energy input or loss. A real device cannot supply useful work indefinitely without an energy source.",
+        "Reducing friction can slow dissipation but does not make a machine perpetual.",
+        "Greater efficiency does not imply operation forever."
+      ]
+    },
+    {
+      "slo": "6.3.3",
+      "stem": "During a landslide in the mountainous region of Pakistan, a rock of mass 2000 kg slides down the slope with a constant speed of 300 m/s. Its kinetic energy will be",
+      "options": [
+        "6.0 × 10⁵ J",
+        "4.5 × 10⁷ J",
+        "9.0 × 10⁷ J",
+        "1.8 × 10⁸ J"
+      ],
+      "key": "C",
+      "reasons": [
+        "6.0 × 10⁵ is the numerical value of mv, which is momentum.",
+        "This is half the correct result.",
+        "½mv² = ½ × 2000 × 300² = 9.0 × 10⁷ J.",
+        "This is mv² and omits the factor of one-half."
+      ]
+    },
+    {
+      "slo": "7.3.3",
+      "stem": "Which option depicts atmospheric pressure at sea level and at mountains?",
+      "options": [
+        "Low · High",
+        "Low · Low",
+        "High · High",
+        "High · Low"
+      ],
+      "key": "D",
+      "reasons": [
+        "Pressure generally falls rather than rises with altitude.",
+        "Sea-level pressure is higher in this comparison.",
+        "There is usually less air above an observer at high altitude.",
+        "A taller column of air is above sea level, giving higher pressure than at a mountain."
+      ]
+    },
+    {
+      "slo": "7.1.3",
+      "stem": "If a gold bar has a mass of 20 g and a density of 19.3 g/cm³, what is its volume?",
+      "options": [
+        "0.965 cm³",
+        "1.036 cm³",
+        "39.3 cm³",
+        "386 cm³"
+      ],
+      "key": "B",
+      "reasons": [
+        "0.965 comes from reversing the quotient and has reciprocal units.",
+        "Volume = mass ÷ density = 20 ÷ 19.3 ≈ 1.036 cm³.",
+        "Adding mass to density does not give volume.",
+        "Multiplying mass by density does not give volume."
+      ]
+    },
+    {
+      "slo": "7.4.2",
+      "stem": "If a small force is applied to the small piston of a hydraulic press, it can lift a heavy load because pressure",
+      "options": [
+        "Decreases with per unit area.",
+        "Is only transmitted vertically, not sideways.",
+        "Decreases as the fluid flows to the larger piston.",
+        "Is transmitted equally, so force multiplies per unit area."
+      ],
+      "key": "D",
+      "reasons": [
+        "The press operates by transmitting an applied pressure change.",
+        "Pressure in a confined fluid is transmitted in all directions.",
+        "Pascal’s principle explains the press without requiring a pressure decrease at the larger piston.",
+        "The intended choice is D. The same pressure change produces a larger total force on a larger piston area, F = PA."
+      ]
+    },
+    {
+      "slo": "7.2.2",
+      "stem": "It is easier to push a sharp thumb pin than a blunt one into a soft board because the sharp pin has a small",
+      "options": [
+        "Area.",
+        "Mass.",
+        "Length.",
+        "Volume."
+      ],
+      "key": "A",
+      "reasons": [
+        "The smaller tip area gives greater pressure for the same applied force.",
+        "Mass does not directly determine pressure at the tip.",
+        "The relevant property is the contact area, not total pin length.",
+        "The pin’s total volume is not the denominator in P = F/A."
+      ]
+    },
+    {
+      "slo": "8.2.4",
+      "stem": "The heat energy required to change a substance from solid to liquid without a change in temperature is known as",
+      "options": [
+        "Heat capacity.",
+        "Latent heat of fusion.",
+        "Specific heat capacity.",
+        "Latent heat of vapourisation."
+      ],
+      "key": "B",
+      "reasons": [
+        "Heat capacity relates heat transfer to a temperature change.",
+        "Fusion means melting. Heat is absorbed at the melting point without raising the temperature during the phase change.",
+        "Specific heat capacity concerns temperature change per unit mass.",
+        "Vapourisation concerns the liquid-to-gas transition."
+      ]
+    },
+    {
+      "slo": "8.2.7",
+      "stem": "A 2 kg copper rod is heated from 30°C to 70°C. How much heat is absorbed? The specific heat capacity of copper is 400 J/(kg·°C).",
+      "options": [
+        "24000 J",
+        "32000 J",
+        "56000 J",
+        "80000 J"
+      ],
+      "key": "B",
+      "reasons": [
+        "This uses 30°C rather than the 40°C rise.",
+        "Q = mcΔT = 2 × 400 × (70 − 30) = 32,000 J.",
+        "This uses the final temperature rather than the temperature change.",
+        "This uses 100°C rather than the 40°C rise."
+      ]
+    },
+    {
+      "slo": "8.1.3",
+      "stem": "The statement that best describes plasma is that it is",
+      "options": [
+        "A collection of neutral atoms.",
+        "A mixture of liquids and gases.",
+        "Insoluble particles in a liquid.",
+        "The ions and free electrons of a gas."
+      ],
+      "key": "D",
+      "reasons": [
+        "A neutral gas does not have the free charge carriers described here.",
+        "A liquid mixed with a gas is not the defining feature of plasma.",
+        "Insoluble particles in liquid describe a suspension.",
+        "Plasma is a gas containing mobile charged particles, including ions and free electrons."
+      ]
+    },
+    {
+      "slo": "8.3.2",
+      "stem": "Affan measures the temperature of water as 212°F. The temperature in Celsius is",
+      "options": [
+        "80°C",
+        "90°C",
+        "100°C",
+        "120°C"
+      ],
+      "key": "C",
+      "reasons": [
+        "80°C corresponds to 176°F.",
+        "90°C corresponds to 194°F.",
+        "(212 − 32) × 5/9 = 100°C.",
+        "120°C corresponds to 248°F."
+      ]
+    },
+    {
+      "slo": "8.2.10",
+      "stem": "The rate of evaporation is least when the wet clothes are",
+      "options": [
+        "Kept in the balcony.",
+        "Kept in a closed room.",
+        "Hanging in dry weather.",
+        "Hanging in sunny weather."
+      ],
+      "key": "B",
+      "reasons": [
+        "An exposed balcony usually has better air movement.",
+        "In the intended comparison, poor ventilation lets moist air accumulate around the clothes.",
+        "Dry air favours evaporation.",
+        "Sunlight can warm the clothes and increase evaporation."
+      ]
+    },
+    {
+      "slo": "8.1.5",
+      "stem": "Heating an iron rod increases its internal energy because its",
+      "options": [
+        "Mass increases.",
+        "Density increases.",
+        "Sound gets louder.",
+        "Particles vibrate faster."
+      ],
+      "key": "D",
+      "reasons": [
+        "Heating does not add matter to the rod.",
+        "Expansion tends to lower density when mass stays constant.",
+        "Sound is not the mechanism of the internal energy increase.",
+        "Heating increases the average energy of the particles vibrating about their lattice positions."
+      ]
+    },
+    {
+      "slo": "9.1.1",
+      "stem": "With reference to heat transfer in solids, the correct statement is that heat",
+      "options": [
+        "Flows from lower to higher temperature.",
+        "Flows from a hotter body towards a colder body.",
+        "Is independent of the size of the body’s surface.",
+        "Is independent of the temperature of the surroundings."
+      ],
+      "key": "B",
+      "reasons": [
+        "Spontaneous heat transfer proceeds towards lower temperature.",
+        "A temperature difference drives heat from the hotter region to the colder region.",
+        "Cross-sectional area can affect the rate of conduction.",
+        "The surrounding temperature can affect the temperature difference and net transfer."
+      ]
+    },
+    {
+      "slo": "9.3.2",
+      "stem": "Solar panels are painted dull black because this surface",
+      "options": [
+        "Absorbs maximum radiation from the Sun.",
+        "Stays cooler during sunlight in summer.",
+        "Reduces heat emission by the Sun.",
+        "Reflects maximum radiation."
+      ],
+      "key": "A",
+      "reasons": [
+        "A dull black surface is a good absorber of incident radiation. The wording fits solar thermal collectors particularly well.",
+        "Strong absorption tends to warm the surface.",
+        "Changing the collector’s surface does not change what the Sun emits.",
+        "Shiny, light-coloured surfaces generally reflect more incident radiation."
+      ]
+    },
+    {
+      "slo": "10.2.2",
+      "stem": "The role of Physics in space exploration is observed in the application of",
+      "options": [
+        "Rocket propulsion.",
+        "Improving air quality index.",
+        "Designing shockproof buildings.",
+        "Reducing global warming."
+      ],
+      "key": "A",
+      "reasons": [
+        "Rocket thrust applies momentum conservation and Newton’s third law to launch spacecraft.",
+        "Air quality monitoring is an environmental application.",
+        "Shock-resistant buildings are an application of mechanics on Earth.",
+        "Climate mitigation applies physics but is not the direct example of spacecraft propulsion."
+      ]
+    },
+    {
+      "slo": "10.4.1",
+      "stem": "Physics serves as the foundation for civil, mechanical and electrical engineering because it",
+      "options": [
+        "Provides concepts of force, motion and energy.",
+        "Deals with the study of historical inventions.",
+        "Develops clones of human organs.",
+        "Discovers the nucleus of an atom."
+      ],
+      "key": "A",
+      "reasons": [
+        "These physical principles explain loads, machines and energy transfer across the fields listed.",
+        "The history of inventions is not what gives engineering its physical principles.",
+        "Cloning is a biological application.",
+        "Nuclear structure is a particular discovery, not the general reason in the question."
+      ]
+    }
+  ],
+  "written": [
+    {
+      "number": "1",
+      "marks": 3,
+      "slo": "1.6.2",
+      "stem": "Write THREE differences between precision and accuracy.",
+      "solution": "| Precision | Accuracy |\n| --- | --- |\n| Describes how closely repeated readings agree with one another. | Describes how close the result is to the true or accepted value. |\n| Random variation reduces precision by spreading the readings out. | A systematic offset can reduce accuracy even when readings agree closely. |\n| For a true value of 10.00 cm, readings of 9.49, 9.50 and 9.51 cm are precise. | Those readings are inaccurate because they are centred near 9.50 cm. |"
+    },
+    {
+      "number": "2",
+      "marks": 3,
+      "slo": "4.1.3",
+      "stem": "A student pushes their classroom door with a force of 20 N at a perpendicular distance of 0.1 m from its hinges.\n\n(i) Calculate the moment of force acting on the door. (2 marks)\n\n(ii) What happens to the moment if the same force is applied closer to the hinges? (1 mark)",
+      "solution": "(i) Moment = force × perpendicular distance = 20 × 0.1 = **2 N·m**.\n\n(ii) The moment decreases because the perpendicular distance from the pivot is smaller."
+    },
+    {
+      "number": "3",
+      "marks": 3,
+      "slo": "5.1.1",
+      "stem": "A student squeezes a rubber ball.\n\n(i) What effect does the force have on the ball? (1 mark)\n\n(ii) Give TWO other examples of this effect. (2 marks)",
+      "solution": "(i) The force deforms the ball, changing its shape.\n\n(ii) Stretching an elastic band makes it longer. Pressing modelling clay flattens it."
+    },
+    {
+      "number": "4",
+      "marks": 3,
+      "slo": "7.4.4",
+      "stem": "A swimmer is 5 m below the surface of a pool. The density of water is 1000 kg/m³ and gravitational acceleration is 9.8 m/s².\n\n(i) Calculate the pressure due to the water at this depth. (2 marks)\n\n(ii) State ONE factor that affects liquid pressure. (1 mark)",
+      "solution": "(i) Pressure due to water = ρgh = 1000 × 9.8 × 5 = **49,000 Pa**. This is the gauge pressure due to the water.\n\n(ii) Depth is one factor. At fixed density and gravity, pressure increases with depth."
+    },
+    {
+      "number": "5",
+      "marks": 3,
+      "slo": "9.2.3",
+      "stem": "Describe THREE ways in which convection currents in the ocean help marine plants and animals survive.",
+      "solution": "1. Currents redistribute heat, reducing extremes in habitats.\n2. Rising water can bring dissolved nutrients to sunlit layers, supporting phytoplankton and the food webs they feed.\n3. Circulation can carry oxygen-rich surface water to deeper layers, supporting respiration."
+    },
+    {
+      "number": "6a",
+      "marks": 5,
+      "slo": "2.3.4",
+      "stem": "Your teacher says that 3 × 10⁸ m/s is the maximum speed of an object in the universe.\n\n(i) Explain the significance of the value in Physics. (2 marks)\n\n(ii) Explain its importance for electromagnetic signals used by cell phones. (2 marks)\n\n(iii) Why is this speed limited for travelling in space exploration? (1 mark)",
+      "solution": "(i) About **3 × 10⁸ m/s** is the speed of light in a vacuum and the upper speed limit for transmission of information. A massive object can approach this speed without reaching it.\n\n(ii) Cell phones use electromagnetic waves. In air these travel nearly at the speed of light, so local propagation time is small. Propagation delay still increases with distance.\n\n(iii) A spacecraft has mass. The energy needed to accelerate it grows without bound as it approaches the speed of light, so the limit prevents instantaneous travel across astronomical distances."
+    },
+    {
+      "number": "6b",
+      "marks": 5,
+      "slo": "3.6.2",
+      "stem": "(i) Give ONE example of centripetal force supplied by each of the following: tension, friction and gravitational force. (3 marks)\n\n(ii) Explain how these forces keep objects moving in a circular path. (2 marks)",
+      "solution": "(i) **Tension:** a ball swung on a string. **Friction:** static friction between tyres and a level road as a car turns. **Gravity:** Earth’s attraction on a satellite in a circular orbit.\n\n(ii) Each supplies a net force toward the centre. This changes the direction of velocity continuously and keeps the object on a circular path. Without it the object would continue along the tangent."
+    },
+    {
+      "number": "7a",
+      "marks": 5,
+      "slo": "6.5.2",
+      "stem": "An electric heater consumes 1000 J of electrical energy and produces 600 J of useful heat energy.\n\n(i) Write the formula for efficiency. (1 mark)\n\n(ii) Calculate the heater’s efficiency as a percentage. (4 marks)",
+      "solution": "(i) Efficiency (%) = (useful energy output ÷ total energy input) × 100.\n\n(ii) Substituting the stated energies gives (600 J ÷ 1000 J) × 100 = **60%**."
+    },
+    {
+      "number": "7b",
+      "marks": 5,
+      "slo": "8.2.7",
+      "stem": "A student heats 100 g of ice at 0°C until it melts, then warms the water to 80°C. The specific heat capacity of water is 4200 J/(kg·°C) and the latent heat of fusion of ice is 3.34 × 10⁵ J/kg.\n\n(i) Calculate the heat required to melt the ice. (2 marks)\n\n(ii) Calculate the heat required to raise the temperature of the water to 80°C. (2 marks)\n\n(iii) Find the total heat supplied. (1 mark)",
+      "solution": "Mass = 100 g = 0.100 kg.\n\n(i) Melting: Q = mL = 0.100 × 3.34 × 10⁵ = **33,400 J**.\n\n(ii) Warming: Q = mcΔT = 0.100 × 4200 × (80 − 0) = **33,600 J**.\n\n(iii) Total = 33,400 + 33,600 = **67,000 J (67.0 kJ)**, assuming no heat loss."
+    }
+  ]
+}

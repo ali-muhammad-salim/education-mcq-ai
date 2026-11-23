@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, Award, BookOpen, CheckCircle2, Eye, EyeOff, Pencil, XCircle } from 'lucide-react';
 import MathText from '@/components/MathText';
 import StructuredContent from '@/components/StructuredContent';
+import McqOptionReasons from '@/components/McqOptionReasons';
 import styles from './Practice.module.css';
 
 export type PracticeFilter = 'all' | 'Remembering' | 'Understanding' | 'Application' | 'diagram';
@@ -297,6 +298,8 @@ export default function McqPracticeSheet({
             const isCorrect = isChecked && accepted.includes(selectedOpt);
             const optionsObj = item.options;
             const solutionText = item.solution;
+            const optionReview = <McqOptionReasons accepted={accepted}
+              reasons={Object.fromEntries(Object.keys(optionsObj).map(key => [key, feedbackFor(item.optionFeedback, key)]))} />;
 
             return (
               <div
@@ -479,6 +482,7 @@ export default function McqPracticeSheet({
                             <strong>{correctLabel} ({correctKey}) </strong>
                             <MathText text={solutionText} />
                           </div>
+                          {optionReview}
                         </div>
                       )}
                     </div>
@@ -509,6 +513,7 @@ export default function McqPracticeSheet({
                       </div>
                       <div style={{ fontSize: '0.92rem', lineHeight: 1.6 }}>
                         <MathText text={solutionText} />
+                        {optionReview}
                       </div>
                     </div>
                   ) : (
@@ -559,6 +564,7 @@ export default function McqPracticeSheet({
                           </div>
                           <div style={{ fontSize: '0.92rem', lineHeight: 1.6 }}>
                             <MathText text={solutionText} />
+                            {optionReview}
                           </div>
                         </div>
                       )}

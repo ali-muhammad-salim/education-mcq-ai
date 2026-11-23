@@ -50,6 +50,8 @@ export interface CachedExam {
 export const GUEST_RETENTION_MS = 48 * 60 * 60 * 1000;
 
 export interface AttemptQuestionReview {
+  optionFeedback?: Record<string, string>;
+  acceptedOptions?: string[];
   displayNumber: number;
   originalQuestionNumber: string;
   questionText: string;

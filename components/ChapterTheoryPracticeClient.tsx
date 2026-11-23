@@ -37,6 +37,7 @@ export interface ChapterUnitData {
     questionNumber: string;
     sourceTitle: string;
     sourceHref: string;
+    additionalSources?: Array<{ title: string; href: string }>;
     examYear?: number;
     questionText: string;
     marks?: number;
@@ -64,6 +65,7 @@ export interface ChapterUnitData {
     questionNumber: string;
     sourceTitle: string;
     sourceHref: string;
+    additionalSources?: Array<{ title: string; href: string }>;
     examYear: number;
     questionText: string;
     marks?: number;

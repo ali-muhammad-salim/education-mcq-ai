@@ -53,7 +53,7 @@ export function guestQuestionsFrom(paperCode: string, source: GuestQuestionSourc
     const meta = metadata(question.sourceRegion);
     const choices = sourceOptions(question);
     const sortable = Object.keys(choices).sort();
-    const stem = String(question.questionText || question.stemText || question.stem || '').trim();
+    const stem = String(meta.quiz_stem ?? (question.questionText || question.stemText || question.stem || '')).trim();
     const declaredType = String(question.questionType || '');
     return {
       id: String(question.id || `${paperCode}-guest-${index + 1}`),

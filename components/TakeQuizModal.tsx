@@ -8,6 +8,7 @@ import {
   Bookmark, Trophy, BarChart3, Zap, WifiOff, RefreshCw
 } from 'lucide-react';
 import MathText from '@/components/MathText';
+import McqOptionReasons from '@/components/McqOptionReasons';
 import AuthModal from '@/components/AuthModal';
 import { useDialog } from '@/lib/use-dialog';
 import { useSecureExam } from '@/lib/use-secure-exam';
@@ -99,8 +100,8 @@ export default function TakeQuizModal({
   paperCode,
   questions
 }: TakeQuizModalProps) {
-  const officialDuration = /^CS-XI-2019-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 45 : /^(?:CS-XI-2021|BIO-XI-202[12])-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 130 : /^(?:CS-XII?(?:-20\d{2})?|BIO-XII?-MODEL-20\d{2}|BIO-XI-202[345])-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 90 : /^BIO-(?:IX|X)-2022-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 100
-    : /^BIO-(?:IX-(?:MODEL-2026|2024)|X-(?:MODEL-2027|2023|2025))-P1(?:-MCQS-\d+)?$/i.test(paperCode)
+  const officialDuration = /^PHY-IX-201[78]-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 35 : /^(?:CS-XI|PHY-IX)-2019-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 45 : /^(?:CS-XI-2021|BIO-XI-202[12])-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 130 : /^(?:CS-XII?(?:-20\d{2})?|BIO-XII?-MODEL-20\d{2}|BIO-XI-202[345])-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 90 : /^(?:BIO-(?:IX|X)-2022|PHY-IX-202[12])-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 100
+    : /^(?:PHY-IX-202[36]|BIO-(?:IX-(?:MODEL-2026|2024)|X-(?:MODEL-2027|2023|2025)))-P1(?:-MCQS-\d+)?$/i.test(paperCode)
       ? 70 : /^(?:PHY|BIO)-XI-201[78]-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 40 : /^PHY-XI-202[12]-P1$/i.test(paperCode) ? 130 : 50;
   // Navigation / Phase State: 'auth' -> 'setup' -> 'active' -> 'completed'
   const [phase, setPhase] = useState<'auth' | 'setup' | 'active' | 'completed'>('setup');
@@ -491,7 +492,8 @@ export default function TakeQuizModal({
         };
       }
       const norm = (s: string) => (s || '').replace(/\s+/g, ' ').trim();
-      const propMatch = (questions || []).find(pq => norm(pq.questionText || (pq as any).stem) === norm(stemText || ''));
+      const propMatch = questions.find(question => question.id === qId)
+        ?? questions.find(question => norm(question.questionText || (question as any).stem) === norm(stemText || ''));
       if (propMatch) {
         const sr = paperMetadata(propMatch.sourceRegion ?? propMatch);
         const rawChoices = paperChoices(sr.choices || sr.options);
@@ -803,6 +805,8 @@ export default function TakeQuizModal({
         optionDistribution: qTelemetry.optionDistribution,
         timeTag,
         explanation: expl,
+        optionFeedback: optFb,
+        acceptedOptions: acceptedKeys,
         whyIncorrect: whyInc,
         topicName: unitTitle,
       });
@@ -2109,6 +2113,7 @@ export default function TakeQuizModal({
                           />
                         </div>
                       )}
+                      {currentQ.optionFeedback && <McqOptionReasons reasons={currentQ.optionFeedback} accepted={currentCorrectKeys} />}
                     </div>
                   </div>
                 )}
@@ -2562,6 +2567,7 @@ export default function TakeQuizModal({
                             <div className={styles.why}>
                               <div className={styles.whyHead}>Why this is the answer</div>
                               <MathText text={item.explanation} />
+                              {item.optionFeedback && <McqOptionReasons reasons={item.optionFeedback} accepted={item.acceptedOptions} />}
 
                               {!isRight && item.whyIncorrect && (
                                 <div className={styles.whyWrong}>

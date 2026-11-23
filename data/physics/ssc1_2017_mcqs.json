@@ -1,0 +1,485 @@
+[
+  {
+    "stem": "The total number of basic physical quantities are",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "9"
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "1.2.1",
+    "reasons": [
+      "Three base quantities are not enough to cover the SI system.",
+      "The SI uses seven base quantities, not five.",
+      "The seven SI base quantities are time, length, mass, electric current, thermodynamic temperature, amount of substance, and luminous intensity.",
+      "The SI has seven base quantities. Other quantities can be derived from them."
+    ]
+  },
+  {
+    "stem": "The density of pure water is 1000 kg/m³. This value in scientific notation can be written as",
+    "options": [
+      "1.0 × 10⁻³ kg/m³",
+      "10.0 × 10⁻³ kg/m³",
+      "1.0 × 10³ kg/m³",
+      "10.0 × 10³ kg/m³"
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "1.3.2",
+    "reasons": [
+      "A negative exponent produces a tiny value, while water's density is 1,000 kg/m³.",
+      "This gives 0.010 kg/m³, far below the stated value, and its coefficient is not normalized.",
+      "Move the decimal three places to the left: 1,000 kg/m³ = 1.0 × 10³ kg/m³.",
+      "10.0 × 10³ gives 10,000 kg/m³ and its coefficient is too large for normalized scientific notation."
+    ]
+  },
+  {
+    "stem": "Which of the following measuring instruments is used to find the diameter of a metallic wire?",
+    "options": [
+      "Ruler",
+      "Physical balance",
+      "Micrometer screw gauge",
+      "Measuring cylinder"
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "1.5.1",
+    "reasons": [
+      "The ruler usually lacks sufficient resolution to measure a thin wire.",
+      "A physical balance measures mass, not diameter.",
+      "A micrometer screw gauge measures the small separation between its anvil and spindle when the wire is between them.",
+      "A measuring cylinder measures volume, not the wire's diameter."
+    ],
+    "optionDiagrams": true
+  },
+  {
+    "stem": "If a body is falling freely, its motion will be",
+    "options": [
+      "linear.",
+      "random.",
+      "periodic.",
+      "vibratory."
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "K",
+    "slo": "2.2.1",
+    "reasons": [
+      "A body released from rest falls along a vertical straight line in the model used here.",
+      "Free fall near Earth's surface follows a predictable path.",
+      "It does not repeat at regular intervals.",
+      "It does not oscillate about an equilibrium position."
+    ],
+    "reviewNote": "The intended example is an object released from rest and falling vertically. A projectile in free fall with a horizontal velocity can follow a curved path."
+  },
+  {
+    "stem": "Which of the following statements is CORRECT about force and velocity?",
+    "options": [
+      "Both are scalar quantities.",
+      "Both are vector quantities.",
+      "Force is a vector quantity and velocity is a scalar quantity.",
+      "Force is a scalar quantity and velocity is a vector quantity."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "1.4.2",
+    "reasons": [
+      "Force and velocity both require a direction to specify them.",
+      "Force and velocity are both vectors, with magnitude and direction.",
+      "Velocity has a direction, unlike scalar speed.",
+      "Force has a direction as well as a magnitude."
+    ]
+  },
+  {
+    "stem": "The gradient of a line on the distance-time graph represents",
+    "options": [
+      "time.",
+      "speed.",
+      "acceleration.",
+      "displacement."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "2.4.2",
+    "reasons": [
+      "Time is the horizontal-axis quantity, not the gradient.",
+      "The gradient is change in distance divided by elapsed time, which is speed.",
+      "Acceleration is the gradient of a velocity–time graph.",
+      "Displacement is a change in position rather than the gradient of a distance–time graph."
+    ]
+  },
+  {
+    "stem": "If a body is taken to the surface of the moon, then which of the following physical quantities of the body will change?",
+    "options": [
+      "Mass",
+      "Length",
+      "Weight",
+      "Density"
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "3.1.1",
+    "reasons": [
+      "Mass is a property of the body and stays the same.",
+      "Changing gravitational location does not by itself change the body's length.",
+      "Weight is mg, and the Moon's lower gravitational field strength reduces the weight.",
+      "With mass and volume unchanged, density stays the same."
+    ]
+  },
+  {
+    "stem": "If the force acting on a body is doubled, then the acceleration produced in it will be",
+    "options": [
+      "halved.",
+      "tripled.",
+      "doubled.",
+      "quadrupled."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "3.3.1",
+    "reasons": [
+      "Doubling the net force increases acceleration for a fixed mass.",
+      "A tripling of net force would give triple acceleration.",
+      "Newton's second law gives a = F/m, so doubling the net force doubles a if mass is fixed.",
+      "A fourfold acceleration would require four times the net force for the same mass."
+    ]
+  },
+  {
+    "stem": "Two equal but opposite parallel forces acting at different points on a body would form a",
+    "options": [
+      "torque.",
+      "couple.",
+      "moment arm.",
+      "line of action."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": null,
+    "reasons": [
+      "The pair produces a torque, but the pair of forces itself is called a couple.",
+      "A couple consists of equal and opposite parallel forces acting along different lines.",
+      "A moment arm is the perpendicular distance to a force's line of action.",
+      "A line of action shows where one force acts, not the name of the pair."
+    ]
+  },
+  {
+    "stem": "The product of force and moment arm of the force is called",
+    "options": [
+      "torque.",
+      "couple.",
+      "equilibrium.",
+      "centre of gravity."
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "K",
+    "slo": "4.1.3",
+    "reasons": [
+      "The torque magnitude is force multiplied by its perpendicular moment arm.",
+      "A couple consists of two equal and opposite forces, rather than the product of force and distance.",
+      "Equilibrium describes balanced forces and moments.",
+      "The centre of gravity is the effective point at which weight acts."
+    ]
+  },
+  {
+    "stem": "A point where the whole weight of a body acts vertically downward is called the",
+    "options": [
+      "centre of Earth.",
+      "point of contact.",
+      "centre of gravity.",
+      "point of applied force."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "4.3.1",
+    "reasons": [
+      "Earth's centre is not generally the point where an object's total weight can be treated as acting.",
+      "A support or contact point can be far from the point at which the object's weight acts.",
+      "The centre of gravity is the point through which the body's resultant weight acts.",
+      "An applied force can act at any chosen point on the object."
+    ]
+  },
+  {
+    "stem": "The value of acceleration due to gravity ‘g’ decreases with the",
+    "options": [
+      "decrease in mass.",
+      "increase in weight.",
+      "decrease in density.",
+      "increase in altitude."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "Reducing the test body's mass changes its weight, while its gravitational acceleration is unchanged.",
+      "Weight is proportional to g for fixed mass, rather than inverse to it.",
+      "The test body's density does not set the gravitational acceleration at its location.",
+      "For Earth held fixed, increasing altitude increases distance from its centre, reducing g."
+    ],
+    "reviewNote": "The intended comparison keeps Earth’s mass fixed and changes the altitude. The mass in option A would matter if it meant the mass of the attracting body, rather than the test object."
+  },
+  {
+    "stem": "The moon revolves around the Earth due to the gravitational force exerted on the moon by the",
+    "options": [
+      "Sun.",
+      "Earth.",
+      "space.",
+      "satellite."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "3.6.2",
+    "reasons": [
+      "The Sun also attracts the Moon, but Earth provides the main inward acceleration of the Moon relative to Earth.",
+      "Earth's gravitational force supplies the inward force that keeps the Moon in orbit around Earth.",
+      "Space is not a body acting as the orbital attractor.",
+      "An unspecified satellite does not supply the main inward force."
+    ]
+  },
+  {
+    "stem": "If an astronaut attain a height equal to the radius of the Earth, then his weight related to the Earth surface will become",
+    "options": [
+      "half.",
+      "twice.",
+      "one-third.",
+      "one-fourth."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "The force is inverse-square in distance from Earth's centre, not inverse-linear.",
+      "Moving farther from Earth reduces weight.",
+      "At twice the radius, the inverse-square factor is 1/2².",
+      "Altitude R puts the astronaut at 2R from Earth's centre. The weight is therefore one-quarter of its surface value."
+    ]
+  },
+  {
+    "stem": "If the kinetic energy of a 200 kg object is 10,000 J, then the velocity of the object will be",
+    "options": [
+      "0.01 m/s.",
+      "0.02 m/s.",
+      "10 m/s.",
+      "100 m/s."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "6.3.3",
+    "reasons": [
+      "Using speed as the square root of 2Eₖ/m gives 10 m/s.",
+      "The calculation requires dividing twice the kinetic energy by the mass and then taking a square root.",
+      "Eₖ = ½mv² gives v = √(2 × 10,000/200) = 10 m/s.",
+      "100 is the value of v², so the speed is its square root."
+    ]
+  },
+  {
+    "stem": "The vertical height of a staircase is 5 m. If a student of mass 51 kg runs up the stairs in 10 s, then the power exerted by the student will be (Note: Take acceleration due to gravity ‘g’ = 10 m/s².)",
+    "options": [
+      "2.55 W",
+      "25.5 W",
+      "255 W",
+      "2550 W"
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "6.6.2",
+    "reasons": [
+      "Calculate the work against gravity and divide it by the elapsed time.",
+      "This is ten times smaller than 2,550 J divided by 10 s.",
+      "The useful work against gravity is mgh = 51 × 10 × 5 = 2,550 J. Power is 2,550/10 = 255 W.",
+      "2,550 J is the work against gravity, before division by time."
+    ]
+  },
+  {
+    "stem": "If 25 N force is applied to drag a table in the horizontal direction through a distance of 5 m, then the magnitude of work done on the table will be",
+    "options": [
+      "0.2 J",
+      "5 J",
+      "20 J",
+      "125 J"
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "A",
+    "slo": "6.1.2",
+    "reasons": [
+      "This comes from dividing distance by force instead of multiplying force by distance.",
+      "5 m is the distance alone, not the work.",
+      "Subtracting 5 from 25 mixes different physical quantities.",
+      "The force is in the direction of motion, so W = Fd = 25 × 5 = 125 J."
+    ]
+  },
+  {
+    "stem": "If a person exerts force which causes a car to move forward, then this is an example of",
+    "options": [
+      "power.",
+      "efficiency.",
+      "work done.",
+      "rotatory motion."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "6.1.1",
+    "reasons": [
+      "Power tells how quickly work is done, and no time is given.",
+      "Efficiency compares useful output with total input.",
+      "The force acts along a nonzero displacement, so it does work on the car.",
+      "The car moves forward, and the question asks about work done by the push."
+    ]
+  },
+  {
+    "stem": "According to the kinetic molecular model of matter, molecules of a substance",
+    "options": [
+      "are in the state of rest.",
+      "are in the state of motion.",
+      "have constant momentum.",
+      "have same velocity during collision."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": "8.1.1",
+    "reasons": [
+      "Even in solids, particles generally vibrate about their positions.",
+      "The kinetic molecular model treats particles as being in continual motion.",
+      "A molecule's momentum may change in collisions.",
+      "Molecules typically have different velocities, which can change when they collide."
+    ]
+  },
+  {
+    "stem": "The property of matter by which it restores its length, shape or volume after the removal of the deforming force is called",
+    "options": [
+      "stress.",
+      "strain.",
+      "elasticity.",
+      "elastic limit."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": null,
+    "reasons": [
+      "Stress is internal force per unit area under a load.",
+      "Strain is the deformation relative to the original dimension.",
+      "Elasticity is the ability to recover the original dimensions after unloading within the elastic range.",
+      "The elastic limit is the boundary beyond which that recovery is incomplete."
+    ]
+  },
+  {
+    "stem": "The quantity that determines the average kinetic energy of the molecules of a substance is known as",
+    "options": [
+      "heat.",
+      "temperature.",
+      "latent heat of fusion.",
+      "latent heat of vaporisation."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": "8.1.4",
+    "reasons": [
+      "Heat is energy in transfer due to a temperature difference.",
+      "Temperature reflects average particle kinetic energy in the kinetic model.",
+      "Latent heat of fusion is associated with melting and freezing.",
+      "Latent heat of vaporisation is associated with changing between liquid and vapour."
+    ]
+  },
+  {
+    "stem": "The escape of high kinetic energy molecules in the form of vapours from the surface of a liquid without heating is known as",
+    "options": [
+      "fusion.",
+      "boiling.",
+      "evaporation.",
+      "condensation."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "8.2.8",
+    "reasons": [
+      "Fusion means melting.",
+      "Boiling takes place throughout the liquid at the boiling point.",
+      "Evaporation occurs when sufficiently energetic molecules escape from the surface of a liquid.",
+      "Condensation changes vapour into liquid."
+    ]
+  },
+  {
+    "stem": "The table given below shows four different substances of equal masses with their values of specific heat capacity. If the same amount of heat is given to all, then which substance will show the maximum rise in temperature?",
+    "options": [
+      "Brick · 900",
+      "Carbon · 121",
+      "Alcohol · 2,500",
+      "Aluminium · 903"
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "8.2.7",
+    "reasons": [
+      "Brick has a higher specific heat capacity than carbon. For equal mass and heat input, it warms less.",
+      "ΔT = Q/(mc). With the same Q and m, the smallest specific heat capacity, 121 J/(kg·K), gives the greatest rise.",
+      "Alcohol has the largest specific heat capacity listed, so it has the smallest temperature rise.",
+      "Aluminium has a higher specific heat capacity than carbon and warms less."
+    ],
+    "headings": [
+      "Substance of equal mass",
+      "Specific heat capacity (J/(kg·K))"
+    ]
+  },
+  {
+    "stem": "All of the following are factors on which the rate of evaporation depends EXCEPT for the",
+    "options": [
+      "surface area.",
+      "surface temperature.",
+      "colour of the surface.",
+      "pressure at the surface."
+    ],
+    "officialAnswer": "D",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "8.2.10",
+    "reasons": [
+      "A larger liquid surface allows more molecules to escape per unit time.",
+      "A higher surface temperature gives more molecules enough energy to escape.",
+      "At fixed temperature and other conditions, colour is not itself a direct factor in evaporation.",
+      "The printed key lists D. Pressure and vapour conditions above a liquid can affect the evaporation rate."
+    ],
+    "reviewNote": "The official key lists D. Practice scores C because colour does not directly determine evaporation when the surface temperature and other conditions are fixed."
+  },
+  {
+    "stem": "All of the following show transfer of heat by convection EXCEPT the use of",
+    "options": [
+      "fans to dry off sweat.",
+      "hot air to fly off gliders.",
+      "gas heaters to heat up rooms.",
+      "heating pads to relax muscles."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "9.2.1",
+    "reasons": [
+      "A fan creates forced airflow, carrying vapour away and helping sweat evaporate.",
+      "Rising warm air creates currents that can lift a glider.",
+      "Air warmed by a heater rises and is replaced by cooler air, circulating heat around a room.",
+      "A heating pad transfers heat to skin mainly through direct contact, which is conduction."
+    ]
+  }
+]

@@ -1,0 +1,493 @@
+[
+  {
+    "stem": "Which of the following is a derived physical quantity?",
+    "options": [
+      "Time",
+      "Mass",
+      "Length",
+      "Volume"
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "K",
+    "slo": "1.1.3",
+    "reasons": [
+      "Time is an SI base quantity measured in seconds.",
+      "Mass is an SI base quantity measured in kilograms.",
+      "Length is an SI base quantity measured in metres.",
+      "Volume is derived from length cubed and has SI unit m³."
+    ]
+  },
+  {
+    "stem": "The prefix used for the multiple value of 10⁻⁹ is",
+    "options": [
+      "atto.",
+      "pico.",
+      "nano.",
+      "femto."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "K",
+    "slo": "1.3.1",
+    "reasons": [
+      "Atto represents 10⁻¹⁸.",
+      "Pico represents 10⁻¹².",
+      "Nano represents 10⁻⁹.",
+      "Femto represents 10⁻¹⁵."
+    ]
+  },
+  {
+    "stem": "In 0.020180, the total numbers of significant figures are",
+    "options": [
+      "four.",
+      "five.",
+      "six.",
+      "seven."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": "1.7.1",
+    "reasons": [
+      "Both the zero between 2 and 1 and the final zero after the decimal count.",
+      "The significant digits are 2, 0, 1, 8 and 0. The leading zeros are placeholders.",
+      "This includes a leading zero, which does not express precision.",
+      "The zeros before the first nonzero digit do not count."
+    ]
+  },
+  {
+    "stem": "The type of motion that takes place in a simple pendulum is",
+    "options": [
+      "linear.",
+      "circular.",
+      "random.",
+      "vibratory."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "2.2.1",
+    "reasons": [
+      "The bob moves along a curved path, rather than a straight line.",
+      "The bob traces an arc, but the complete motion is repeated back-and-forth motion.",
+      "The motion is periodic and follows a predictable path.",
+      "A simple pendulum oscillates about its equilibrium position, an example of vibratory motion."
+    ]
+  },
+  {
+    "stem": "Which of the following is a vector quantity?",
+    "options": [
+      "Time",
+      "Mass",
+      "Distance",
+      "Velocity"
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "1.4.2",
+    "reasons": [
+      "Time is a scalar measured without direction.",
+      "Mass has magnitude only.",
+      "Distance describes path length without direction.",
+      "Velocity includes magnitude and direction."
+    ]
+  },
+  {
+    "stem": "A ball is dropped from the top of a building. If it takes four seconds to reach the ground, then the height of the building is (Note: Use the value of acceleration due to gravity ‘g’ as 10 m/s².)",
+    "options": [
+      "20 m",
+      "40 m",
+      "80 m",
+      "160 m"
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "A",
+    "slo": "2.5.2",
+    "reasons": [
+      "From rest, the height depends on the square of 4 s, not only on 4.",
+      "40 is the final speed in m/s, not the height.",
+      "From rest, s = ½gt² = ½ × 10 × 4² = 80 m.",
+      "This omits the factor of one-half in the displacement equation."
+    ]
+  },
+  {
+    "stem": "Using head to tail rule of vector addition, which vector diagram, represents the resultant of vectors A and B as vector C?",
+    "options": [
+      "Vectors A and B meet at the apex. C points left.",
+      "A and B both point towards the apex. C points left.",
+      "A and B both point towards the apex. C points right.",
+      "A points to the apex, B points down to the right, and C points right."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "1.4.3",
+    "reasons": [
+      "A and B meet head to tail, but C points from the finish back to the start.",
+      "A and B meet head to head, and C is drawn in the opposite base direction.",
+      "C has the right base direction but the head of A meets the head, rather than the tail, of B.",
+      "Join the tail of B to the head of A. C runs from the tail of A to the head of B."
+    ],
+    "optionDiagrams": true
+  },
+  {
+    "stem": "When a bucket full of water is rapidly whirled in a vertical circular path as shown in the given diagram, then water in the bucket",
+    "options": [
+      "falls out at once.",
+      "remains fully in it.",
+      "leaks out gradually.",
+      "reduces to half in quantity."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "Water need not fall if the bucket moves fast enough at the top.",
+      "At sufficient speed the water can follow the circular path and maintain contact with the bucket even at the top.",
+      "The ideal model assumes sufficient speed and ignores spillage due to sloshing.",
+      "No fixed fraction is lost in the ideal circular-motion model."
+    ],
+    "diagram": true,
+    "reviewNote": "The board assumes sufficient speed and ideal motion without sloshing. At the top, the water must still have enough speed to follow the circular path."
+  },
+  {
+    "stem": "The turning effect of a force about an axis of rotation is called",
+    "options": [
+      "torque.",
+      "couple.",
+      "momentum.",
+      "equilibrium."
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "K",
+    "slo": "4.1.2",
+    "reasons": [
+      "Torque is the turning effect of a force about an axis.",
+      "A couple consists of two equal and opposite forces on different lines of action, producing a torque.",
+      "Momentum is mass multiplied by velocity.",
+      "Equilibrium describes balanced forces and torques, not the name of the turning effect."
+    ]
+  },
+  {
+    "stem": "If the contact of a rotating stone attached with a string breaks, then in which direction will the detached stone move?",
+    "options": [
+      "Straight arrow pointing left from the top of the circle.",
+      "Curved arrow following the circle from the lower point.",
+      "Straight arrow pointing down from the top of the circle.",
+      "Straight arrow pointing up from the bottom of the circle."
+    ],
+    "officialAnswer": "A",
+    "key": "A",
+    "cognitive": "U",
+    "slo": "3.3.1",
+    "reasons": [
+      "When the string breaks, it stops providing the inward force. The stone initially moves along the tangent to the circle.",
+      "Following the curved path would require a continuing inward force.",
+      "The stone’s instantaneous velocity is perpendicular to the radius, not along it.",
+      "From the bottom point the straight upward arrow is radial, not tangential."
+    ],
+    "optionDiagrams": true
+  },
+  {
+    "stem": "If the position of a body is disturbed and it does not return to its original position, then the body will be in\n\nI. Stable equilibrium\n\nII. Neutral equilibrium\n\nIII. Unstable equilibrium",
+    "options": [
+      "I only",
+      "III only",
+      "I and II",
+      "II and III"
+    ],
+    "officialAnswer": "B",
+    "key": "D",
+    "cognitive": "K",
+    "slo": "4.4.2",
+    "reasons": [
+      "A stable body tends to return to its original equilibrium position after a small disturbance.",
+      "Unstable equilibrium fits the behaviour, but neutral equilibrium does as well.",
+      "Stable equilibrium should be excluded because the body tends to return.",
+      "A neutral body can stay in its new position, while an unstable body moves farther away. Neither returns by itself."
+    ],
+    "reviewNote": "The published key lists B. Practice scores D because both neutral and unstable equilibrium can leave a body away from its starting position."
+  },
+  {
+    "stem": "While digging, a miner moves 25 km deep down in a coal mine. Compared to his actual weight on the surface of the Earth, his weight inside the coal mine will",
+    "options": [
+      "increase.",
+      "decrease.",
+      "remain the same.",
+      "vary in an unpredictable manner."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "In the textbook uniform-Earth model, the gravitational field weakens with depth.",
+      "The intended uniform-Earth model gives g proportional to distance from the centre inside the Earth, so weight decreases.",
+      "Weight depends on the local field and is not generally fixed as depth changes.",
+      "A specified density model predicts the change. The real-Earth value depends on the density profile."
+    ],
+    "reviewNote": "B follows from the introductory uniform-density Earth model. In a real Earth profile, the change in g with shallow depth depends on the distribution of mass."
+  },
+  {
+    "stem": "The value of acceleration due to gravity ‘g’ varies with the",
+    "options": [
+      "distance of the Earth from the Sun.",
+      "change in temperature of the Earth.",
+      "distance from the centre of the Earth.",
+      "change in atmospheric pressure on Earth’s surface."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "The question concerns Earth’s own gravitational field, which depends on position relative to Earth’s centre.",
+      "The usual model relates g to mass distribution and distance rather than to Earth’s temperature.",
+      "The strength of Earth’s gravitational field varies with distance from its centre.",
+      "Atmospheric pressure does not directly determine gravitational field strength."
+    ]
+  },
+  {
+    "stem": "All the planets revolve around the Sun due to the presence of",
+    "options": [
+      "cohesive force between the planets.",
+      "centripetal force between the planets.",
+      "mutual attraction between the planets.",
+      "gravitational attraction between planets and the Sun."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "3.6.2",
+    "reasons": [
+      "Cohesion between nearby particles is not the force keeping planets in their orbits.",
+      "Centripetal means directed inward. Here the inward force on a planet comes mainly from the Sun.",
+      "Planet–planet gravity can perturb orbits, while the Sun’s gravity is dominant.",
+      "The Sun’s gravitational attraction provides the inward force that keeps each planet in orbit."
+    ]
+  },
+  {
+    "stem": "Force (F) is applied to move the block across a smooth surface from point (X) to point (Y) as shown in the given diagram. The amount of work done by the applied force (F) is",
+    "options": [
+      "2 J",
+      "20 J",
+      "200 J",
+      "2000 J"
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "A",
+    "slo": "6.1.2",
+    "reasons": [
+      "The stated force and displacement must be multiplied, not divided.",
+      "20 N is the force, while work also depends on the distance.",
+      "20 × 100 equals 2,000 J.",
+      "The force is parallel to the displacement, so W = Fd = 20 × 100 = 2,000 J."
+    ],
+    "diagram": true
+  },
+  {
+    "stem": "A metallic ball is dropped from a certain height as shown in the given figure. Neglecting the air resistance, the total energy of the ball will be",
+    "options": [
+      "maximum at II and III only.",
+      "maximum at I and II only.",
+      "same at I and III only.",
+      "same at all positions."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "6.4.1",
+    "reasons": [
+      "Energy is conserved at every listed position during the fall.",
+      "Kinetic energy increases while potential energy decreases. Their sum stays the same.",
+      "Equality of the total is not limited to I and III.",
+      "With air resistance ignored, kinetic plus gravitational potential energy is constant throughout the fall."
+    ],
+    "diagram": true,
+    "reviewNote": "The energy stays constant at every point shown during free fall, before impact with the floor."
+  },
+  {
+    "stem": "The cycle in which conversion of energy takes place at fossil fuel power stations is",
+    "options": [
+      "Heat → light → kinetic",
+      "Heat → light → electrical",
+      "Heat → kinetic → electrical",
+      "Heat → electrical → chemical"
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "6.4.2",
+    "reasons": [
+      "A fossil-fuel station uses heat to drive a turbine, without a light stage in the process.",
+      "The generator uses the turbine’s motion rather than a light stage.",
+      "Combustion supplies heat, moving steam or gas spins a turbine, and a generator converts that motion to electrical energy.",
+      "Chemical energy is the energy stored in the fuel before combustion."
+    ]
+  },
+  {
+    "stem": "Three different balls of the same diameter are immersed in water completely. Which of the following is TRUE about the upthrust exerted by water on the balls?",
+    "options": [
+      "All balls have the same upthrust.",
+      "Iron ball has maximum upthrust.",
+      "Cork ball has maximum upthrust.",
+      "Lead ball has maximum upthrust."
+    ],
+    "officialAnswer": "C",
+    "key": "A",
+    "cognitive": "U",
+    "slo": null,
+    "reasons": [
+      "The balls have the same submerged volume in the same water, so they displace equal weights of water and receive equal upthrust.",
+      "The material changes the ball’s weight, while the buoyant force depends on the displaced water.",
+      "The board lists C. Cork’s low weight makes it more likely to float, but it does not give a greater buoyant force at the same submerged volume.",
+      "Lead’s greater weight does not displace more water when the balls have equal diameter and are fully immersed."
+    ],
+    "diagram": true,
+    "reviewNote": "The published key lists C. Practice scores A because each fully submerged ball displaces the same volume of water."
+  },
+  {
+    "stem": "According to the kinetic theory of matter, particles move randomly with high velocities in",
+    "options": [
+      "solids.",
+      "gases.",
+      "liquids.",
+      "plasma."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": "8.1.2",
+    "reasons": [
+      "Particles in a solid vibrate about fixed positions.",
+      "In the usual solid–liquid–gas comparison, gas particles move freely in random directions and can have high speeds.",
+      "Liquid particles move around one another but remain close compared with gas particles.",
+      "Plasma particles can also move rapidly. The board intends the ordinary gas comparison, and speed alone does not separate gases from plasmas."
+    ],
+    "reviewNote": "The board lists B. Practice also accepts D because particles in a plasma can move rapidly and randomly. The question does not specify a condition that separates plasma from a gas.",
+    "acceptedOptions": [
+      "B",
+      "D"
+    ]
+  },
+  {
+    "stem": "Force acting on unit area of an object causing changes in its shape and size is called",
+    "options": [
+      "strain.",
+      "stress.",
+      "viscosity.",
+      "elasticity."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": null,
+    "reasons": [
+      "Strain is the fractional deformation due to applied stress.",
+      "Stress is force per unit area acting within a material under load.",
+      "Viscosity describes resistance to flow.",
+      "Elasticity describes recovery of shape after a load is removed."
+    ]
+  },
+  {
+    "stem": "Mercury is commonly used in a glass thermometer because it",
+    "options": [
+      "is easily available.",
+      "is silver in appearance.",
+      "has a high freezing point.",
+      "expands evenly with respect to temperature."
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "U",
+    "slo": "8.3.5",
+    "reasons": [
+      "Availability is not the property that makes the reading track temperature.",
+      "Its silvery appearance makes it easy to see, while the question asks about the property that makes the scale reliable.",
+      "Mercury freezes below 0°C, and a high freezing point would restrict the useful range.",
+      "Mercury expands approximately uniformly over the working range of the thermometer."
+    ]
+  },
+  {
+    "stem": "If the temperature of a substance is 20°C, then its temperature in Kelvin scale will be",
+    "options": [
+      "–253 K",
+      "–6.66 K",
+      "68 K",
+      "293 K"
+    ],
+    "officialAnswer": "D",
+    "key": "D",
+    "cognitive": "A",
+    "slo": "8.3.2",
+    "reasons": [
+      "Kelvin temperature is obtained by adding 273.15 to the Celsius value.",
+      "No valid Celsius-to-kelvin conversion gives a negative result for 20°C.",
+      "68 is the Fahrenheit value of 20°C.",
+      "20 + 273.15 = 293.15 K, which rounds to 293 K."
+    ]
+  },
+  {
+    "stem": "When a small piece of red-hot iron is dropped into a vessel of boiling water, the temperature of water will",
+    "options": [
+      "increase.",
+      "decrease.",
+      "remain constant.",
+      "become same as iron."
+    ],
+    "officialAnswer": "C",
+    "key": "C",
+    "cognitive": "U",
+    "slo": "8.2.5",
+    "reasons": [
+      "At fixed pressure, added energy sustains boiling as long as liquid water remains.",
+      "The hot iron transfers energy into the water, so cooling is not the expected effect.",
+      "At fixed pressure the bulk water stays at its boiling temperature. Added energy goes into vaporisation.",
+      "The iron cools while water boils. The water does not reach the original temperature of the iron."
+    ]
+  },
+  {
+    "stem": "An example of a good conductor of heat is a",
+    "options": [
+      "glass door.",
+      "frying pan.",
+      "wooden door.",
+      "leather jacket."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": "9.1.5",
+    "reasons": [
+      "Glass is a poorer conductor than common metals.",
+      "A metal frying pan conducts energy efficiently from the heat source to the food.",
+      "Wood is used as a thermal insulator.",
+      "Leather is much less conductive than metal and helps reduce heat loss."
+    ]
+  },
+  {
+    "stem": "The ventilator in a room works on the principle of",
+    "options": [
+      "radiation.",
+      "convection.",
+      "conduction.",
+      "evaporation."
+    ],
+    "officialAnswer": "B",
+    "key": "B",
+    "cognitive": "K",
+    "slo": "9.2.1",
+    "reasons": [
+      "Radiation can transfer energy without flowing air, but that is not how the ventilator mainly works.",
+      "Warm, less dense air rises and leaves through a high ventilator. Cooler air enters to replace it.",
+      "Conduction transfers energy through contact without bulk air movement.",
+      "Evaporation is a change from liquid to vapour and is not the ventilator’s mechanism."
+    ]
+  }
+]

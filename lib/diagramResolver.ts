@@ -61,6 +61,7 @@ export function resolveQuestionDiagram(
   if (!normKey && !numStr) return undefined;
 
   const pCode = (paperCode || '').toUpperCase().trim();
+  if (/^PHY-IX-(?:(?:201[789]|202[36])-P[12]|202[12]-P1)$/.test(pCode)) return undefined;
   // HSSC XI/XII must never fall back to a Class X/IX paper's diagrams.
   if (/^(?:CS|CSC|PHY|MTH|CHM|BIO)-XII?(?:-|$)/.test(pCode) && !verifiedManifest[pCode]) return undefined;
 
