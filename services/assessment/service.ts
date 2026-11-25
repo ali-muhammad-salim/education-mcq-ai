@@ -162,7 +162,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
     const [, subjPrefix, roman, unitNumStr, mode, cogFilter] = unitMatch;
     const unitNum = Number(unitNumStr);
     const paperCodes = subjPrefix === 'CHM'
-      ? getAllStandardPapers().filter(p => /^CHM-(IX|X)(-20\d{2})?-P1$/.test(p.paperCode)).map(p => p.paperCode)
+      ? getAllStandardPapers().filter(p => /^CHM-(IX|X)(-20\d{2})?-P1$/.test(p.paperCode) && (mode !== 'PAST' || /-\d{4}-/.test(p.paperCode))).map(p => p.paperCode)
       : subjPrefix === 'CS'
       ? getAllStandardPapers().filter(p => /^CS-(IX|X)-(?:\d{4}-)?P1$/.test(p.paperCode) && (mode !== 'PAST' || /-\d{4}-/.test(p.paperCode))).map(p => p.paperCode)
       : roman === 'IX'
@@ -198,7 +198,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
     const content = groupDuplicateQuestions(candidates, entry => entry.question).map(([entry]) => entry.build());
     if (!content.length) throw new ApiError(404, 'QUIZ_NOT_FOUND', 'No practice questions found for this unit filter.');
     const questions = content.map((q, i) => ({ orderIndex: i + 1, marks: q.marks, questionData: q }));
-    const revision = includeNotes || subjPrefix === 'CS' || (subjPrefix === 'PHY' && roman === 'IX') || content.length !== candidates.length
+    const revision = includeNotes || subjPrefix === 'CS' || subjPrefix === 'CHM' || (subjPrefix === 'PHY' && roman === 'IX') || content.length !== candidates.length
       ? (includeNotes ? '-NOTES-' : '-') + createHash('sha256').update(JSON.stringify(questions)).digest('hex').slice(0, 16)
       : '';
     const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
@@ -224,7 +224,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   }
 
   const subset = /^((?:PHY|CS|CHM|MTH)-(?:IX|X|XI|XII)(?:-20\d{2})?-P1)-SET-([0-9-]+)$/.exec(key);
-  const paperCode = subset?.[1] || practiceCodes[key] || key.replace(/^((?:CS-XII?(?:-20\d{2})?|BIO-XI-(?:201[7-9]|202[1-5]))-P1)-MCQS-\d+$/, '$1');
+  const paperCode = subset?.[1] || practiceCodes[key] || key.replace(/^((?:CS-XII?(?:-20\d{2})?|CHM-X-(?:201[7-9]|202[126])|BIO-XI-(?:201[7-9]|202[1-5])|BIO-IX-(?:201[7-9]|2021|2026))-P1)-MCQS-\d+$/, '$1');
   const biologyModel = hsscBiologyModelQuizPaper(paperCode);
   const paper = biologyModel ?? getFallbackPaper(paperCode);
   const registeredMcqs = paper && paper.questions.length > 0 && paper.questions.every(q => q.questionType === 'MULTIPLE_CHOICE') && getAllStandardPapers().some(p => p.paperCode === paperCode && /-P1$/.test(p.paperCode));
@@ -245,7 +245,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   });
   // A suspended, passwordless content owner can never authenticate.
   const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
-  const hasPaperTiming = paperCode === 'PHY-IX-2026-P1' || /^(?:(?:PHY|CS)-XII?(?:-(?:201[7-9]|202[1-5]))?|BIO-XI-(?:201[7-9]|202[1-5]))-P1$/.test(paperCode);
+  const hasPaperTiming = /^(?:(?:PHY|BIO)-IX-2026|BIO-IX-(?:201[7-9]|2021))-P1$/.test(paperCode) || /^CHM-(?:IX|X(?:-(?:201[7-9]|202[126]))?)-P1$/.test(paperCode) || /^(?:(?:PHY|CS)-XII?(?:-(?:201[7-9]|202[1-5]))?|BIO-XI-(?:201[7-9]|202[1-5]))-P1$/.test(paperCode);
   const academic = paperCode.startsWith('MTH-') || hasPaperTiming ? await prisma.pastPaper.findFirst({ where: { paperCode }, select: { classId: true, subjectId: true } }) : null;
   // Revised content starts a fresh quiz so existing attempts keep their frozen questions.
   const revision = biologyModel || questions.length !== source.length || paperCode.startsWith('MTH-') || hasPaperTiming || /^CS-(IX|X)(-\d{4})?-P1$/.test(paperCode)

@@ -11,8 +11,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PaperViewerClient from "./PaperViewerClient";
 import PaperResourceNav from "@/components/PaperResourceNav";
-import { getFallbackPaper } from "@/lib/paperDataService";
+import { combinedChemistryXArchives, getFallbackPaper } from "@/lib/paperDataService";
 import { physicsIx2026Tabs } from '@/lib/physicsIx2026Papers';
+import { chemistryX2026Tabs } from '@/lib/chemistryX2026';
+import { chemistryX2019Tabs } from '@/lib/chemistryX2019';
+import { chemistryX2018Tabs } from '@/lib/chemistryX2018';
+import { chemistryX2017Tabs } from '@/lib/chemistryX2017';
 import { physicsIx2023Tabs } from '@/lib/physicsIx2023Papers';
 import { physicsIx2019Tabs } from '@/lib/physicsIx2019Papers';
 import { physicsIx2018Tabs } from '@/lib/physicsIx2018Papers';
@@ -38,6 +42,9 @@ import { hsscComputerScienceResources } from '@/lib/hsscComputerScienceResources
 import { hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
 import { computerScienceXi2025Resources } from '@/lib/hsscXiAnnualComputerScience';
 import { biologyXiAnnualArchives } from '@/lib/hsscXiAnnualBiology';
+import { biologyIx2026Tabs } from '@/lib/biologyIx2026';
+import { biologyIx2021Tabs } from '@/lib/biologyIx2021';
+import { biologyIxAnnualArchives } from '@/lib/biologyPapers';
 import { biology2022Archive, biology2024Archive, biologyX2017Archive, biologyX2018Archive, biologyX2019Archive, biologyX2021Archive, biologyX2022Archive, biologyX2023Archive, biologyX2024Archive, biologyX2025Archive } from '@/lib/biology2024Resources';
 
 export const dynamic = "force-dynamic";
@@ -73,6 +80,14 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
   }
 
   const fallback = getFallbackPaper(paper?.paperCode || cleanId);
+  const biologyIx2026 = /^BIO-IX-2026-P[12]$/.test(fallback?.paperCode || '');
+  const biologyIx2021 = fallback?.paperCode === 'BIO-IX-2021-P1';
+  const biologyIxArchive = biologyIxAnnualArchives.find(archive => archive.papers.some(entry => entry.paperCode === fallback?.paperCode))?.tabs;
+  const chemistryModel = /^CHM-(IX|X)-P[12]$/.test(fallback?.paperCode || '');
+  const chemistryX2026 = /^CHM-X-2026-P[12]$/.test(fallback?.paperCode || '');
+  const earlyChemistryTabs = [chemistryX2017Tabs, chemistryX2018Tabs, chemistryX2019Tabs]
+    .find(tabs => tabs.some(tab => tab.href === '/past-papers/' + fallback?.paperCode));
+  const combinedChemistry = combinedChemistryXArchives.find(archive => archive.paper.paperCode === fallback?.paperCode);
   const xiBiologyArchive = biologyXiAnnualArchives.find(archive => archive.papers.some(item => item.paperCode === fallback?.paperCode));
   const physicsIx2026 = /^PHY-IX-2026-P[12]$/.test(fallback?.paperCode || '');
   const physicsTabs = /^PHY-IX-2017-P[12]$/.test(fallback?.paperCode || '') ? physicsIx2017Tabs
@@ -81,7 +96,7 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     : /^PHY-IX-2023-P[12]$/.test(fallback?.paperCode || '') ? physicsIx2023Tabs : undefined;
   const combinedPhysicsTabs = fallback?.paperCode === 'PHY-IX-2021-P1' ? physicsIx2021Tabs
     : fallback?.paperCode === 'PHY-IX-2022-P1' ? physicsIx2022Tabs : undefined;
-  if (fallback && (xiBiologyArchive || physicsIx2026 || physicsTabs || combinedPhysicsTabs) && !paper?.sourceDocumentId) {
+  if (fallback && (chemistryModel || chemistryX2026 || earlyChemistryTabs || combinedChemistry || biologyIx2026 || biologyIx2021 || biologyIxArchive || xiBiologyArchive || physicsIx2026 || physicsTabs || combinedPhysicsTabs) && !paper?.sourceDocumentId) {
     paper = fallback;
   } else if (!paper) {
     if (fallback) {
@@ -213,7 +228,7 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     : /^BIO-X-2024-P[12]$/.test(paper.paperCode || '') ? biologyX2024Archive
     : /^BIO-X-2025-P[12]$/.test(paper.paperCode || '') ? biologyX2025Archive : null;
   const biology2022 = /^BIO-(?:IX|X)-2022-P1$/.test(paper.paperCode || '');
-  const biology2021 = /^BIO-X-2021-P1$/.test(paper.paperCode || '');
+  const biology2021 = /^BIO-(?:IX|X)-2021-P1$/.test(paper.paperCode || '');
   if (biology2022 || biology2021) {
     paper.totalMarks = 50;
     paper.durationMinutes = 100;
@@ -286,6 +301,15 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
       {!paper.sourceDocumentId && /^PHY-IX-2024-P[12]$/.test(paper.paperCode||'') && <PaperResourceNav tabs={physicsIx2024PaperTabs} />}
       {combinedPhysicsTabs && <PaperResourceNav tabs={combinedPhysicsTabs} current={'/past-papers/' + paper.paperCode} />}
       {physicsTabs && <PaperResourceNav tabs={physicsTabs} current={'/past-papers/' + paper.paperCode} />}
+      {chemistryX2026 && !paper.sourceDocumentId && <>
+        <PaperResourceNav tabs={chemistryX2026Tabs} current={'/past-papers/' + paper.paperCode} />
+        {paper.paperCode === 'CHM-X-2026-P1' && <p>MCQ answers and explanations were prepared by RiseLearner. The board’s e-marking notes cover Paper II.</p>}
+      </>}
+      {earlyChemistryTabs && !paper.sourceDocumentId && <PaperResourceNav tabs={earlyChemistryTabs} current={'/past-papers/' + paper.paperCode} />}
+      {combinedChemistry && !earlyChemistryTabs && !paper.sourceDocumentId && <>
+        <PaperResourceNav tabs={combinedChemistry.tabs} current={'/past-papers/' + paper.paperCode} />
+        {combinedChemistry.paper.questions.length === 50 && <p>100 minutes · 50 marks · 40 Theory MCQs and 10 Alternate to Practical MCQs. The board scaled the Theory marks from 40 to 65 for examination results.</p>}
+      </>}
       {physicsIx2026 && !paper.sourceDocumentId && <>
         <PaperResourceNav tabs={physicsIx2026Tabs} current={'/past-papers/' + paper.paperCode} />
         <p>RiseLearner independently solved these questions. The answers and worked solutions are for practice.</p>
@@ -296,13 +320,18 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
       {csAnnual && <><PaperResourceNav tabs={csAnnual.papers.map(p=>({label:p.label,href:p.href}))} /><p>Historical {csAnnual.year} paper. Some topics have no direct outcome in the current syllabus. {csAnnual.year === 2024 ? "The marking guide is project-authored." : (csAnnual.year === 2023 || csAnnual.year === 2019) ? "Official e-marking examples accompany reviewed typed questions and worked answers." : "This combined paper includes 50 theory and 15 alternate-to-practical MCQs. Only the paper and key were supplied."}</p></>}
       {csResources && <PaperResourceNav tabs={csResources.papers.map(item => ({label: item.label, href: item.href}))} />}
       {biology2024 && <PaperResourceNav tabs={biology2024Archive} current={'/past-papers/' + paper.paperCode} />}
+      {biologyIxArchive && !paper.sourceDocumentId && <PaperResourceNav tabs={biologyIxArchive} current={'/past-papers/' + paper.paperCode} />}
+      {biologyIx2026 && !paper.sourceDocumentId && <>
+        <PaperResourceNav tabs={biologyIx2026Tabs} current={'/past-papers/' + paper.paperCode} />
+        {paper.paperCode.endsWith('-P1') && <p>RiseLearner independently solved these MCQs for practice. The board’s official Paper I key is not included.</p>}
+      </>}
       {biologyXArchive && <PaperResourceNav tabs={biologyXArchive} current={'/past-papers/' + paper.paperCode} />}
       {biology2022 && <>
         <PaperResourceNav tabs={isGrade9 ? biology2022Archive : biologyX2022Archive} current={'/past-papers/' + paper.paperCode} />
         <p>100 minutes · 50 marks · 40 Theory MCQs and 10 Alternate to Practical MCQs. The board scaled the 40 Theory marks to 65 for examination results.</p>
       </>}
       {biology2021 && <>
-        <PaperResourceNav tabs={biologyX2021Archive} current={'/past-papers/' + paper.paperCode} />
+        <PaperResourceNav tabs={biologyIx2021 ? biologyIx2021Tabs : biologyX2021Archive} current={'/past-papers/' + paper.paperCode} />
         <p>100 minutes · 50 marks · 40 Theory MCQs and 10 Alternate to Practical (ATP) MCQs. The marks obtained on the 40 MCQs will be equated to the total marks of 65 for the theory examination results.</p>
       </>}
       <Suspense fallback={<p>Loading paper…</p>}>

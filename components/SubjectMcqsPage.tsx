@@ -34,8 +34,9 @@ import { sscBiologySyllabus } from '@/lib/sscBiologySyllabus';
 import type { HsscMcqsData } from '@/lib/hsscMcqsData';
 import prisma from '@/lib/prisma';
 import { paperAnswer, paperChoices, paperMetadata } from '@/lib/paperPresentation';
-import { getAllStandardPapers, getFallbackPaper } from '@/lib/paperDataService';
+import { combinedChemistryXArchives, getAllStandardPapers, getFallbackPaper } from '@/lib/paperDataService';
 import { physicsIx2026Papers } from '@/lib/physicsIx2026Papers';
+import { chemistryX2026Papers } from '@/lib/chemistryX2026';
 import { physicsIx2023Papers } from '@/lib/physicsIx2023Papers';
 import { physicsIx2019Papers } from '@/lib/physicsIx2019Papers';
 import { physicsIx2018Papers } from '@/lib/physicsIx2018Papers';
@@ -86,7 +87,7 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
         paper.questions.push({
           id: q.id, questionNumber: q.rawQuestionNumber, questionText: q.stem,
           questionType: 'MULTIPLE_CHOICE', marks: 1, difficulty: q.cognitiveLevel,
-          diagramBased: Boolean(q.diagramUrl), sourceRegion: { ...q.sourceRegion, correct_answer: q.correctOption },
+          diagramBased: q.diagramBased, sourceRegion: { ...q.sourceRegion, correct_answer: q.correctOption },
           topics: [{ topic: { name: q.unitName, topicNumber: String(q.unitNumber) } }],
         });
         sources.set(q.paperCode, paper);
@@ -164,11 +165,13 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
       </div>
     );
   }
-  const mappedChapters = category ? await mappedChapterGroups(board.shortCode, classDef.level, meta.title) : [];
   const isPhysics = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'physics';
   const isCs = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'computer-science';
   const isChem = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'chemistry';
   const isMath = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'mathematics';
+  const legacy = isPhysics || isCs || isChem || isMath;
+  const mappedChapters = category || !legacy ? await mappedChapterGroups(board.shortCode, classDef.level, meta.title) : [];
+  if (!legacy && !mappedChapters.length) return <ContentUnavailable title={classDef.name + ' ' + meta.title + ' resources'} />;
   const computerChapterQuestions = isCs && category ? getAllStandardPapers()
     .filter(paper => /^CS-(IX|X)-(?:\d{4}-)?P1$/.test(paper.paperCode))
     .flatMap(({ paperCode }) => {
@@ -203,8 +206,6 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
   const availableTheorySections = (isMath || isChem)
     ? (['crqs', 'erqs', 'numericals'] as const).filter(section => mathTheory.some(unit => unit[section].length > 0))
     : undefined;
-  const legacy = isPhysics || isCs || isChem || isMath;
-  if (category && !legacy && !mappedChapters.length) return <ContentUnavailable title={classDef.name + ' ' + meta.title + ' resources'} />;
   const baseUrl = `/${board.id}/${classRoman}/${meta.slug}`;
 
   const mcqsData = isCs ? (classRoman === 'IX' ? cs1Mcqs : cs2Mcqs) : isChem ? (classRoman === 'IX' ? chem1Mcqs : chem2Mcqs) : isMath ? (classRoman === 'IX' ? mth1Mcqs : []) : isPhysics ? (classRoman === 'IX' ? ssc1Mcqs : ssc2Mcqs) : [];
@@ -265,7 +266,7 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
           mappedChapters={mappedChapters}
           computerChapterQuestions={computerChapterQuestions}
           availableTheorySections={availableTheorySections}
-          reviewedPapers={(isMath ? reviewedMathematicsPapers : isPhysics && classDef.level === 9 ? [...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers] : [])
+          reviewedPapers={(isMath ? reviewedMathematicsPapers : isChem ? [...chemistryX2026Papers, ...combinedChemistryXArchives.map(archive => archive.paper)] : isPhysics && classDef.level === 9 ? [...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers] : [])
             .filter(p => p.academicClass.level === classDef.level && p.paperCode.endsWith('-P1'))
             .sort((a,b) => b.examYear-a.examYear)
             .map(p => ({ paperCode: p.paperCode, title: p.title, examYear: p.examYear, count: p.questions.length }))}

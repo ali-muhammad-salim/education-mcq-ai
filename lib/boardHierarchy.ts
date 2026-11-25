@@ -6,6 +6,7 @@ import { getSubjectMeta } from "@/lib/subjectMetadata";
 import { hsscComputerScienceSyllabus } from "@/lib/hsscComputerScienceSyllabus";
 import { hsscPhysicsSyllabus } from "@/lib/hsscPhysicsSyllabus";
 import { sscBiologySyllabus } from "@/lib/sscBiologySyllabus";
+import { hsscBiologySyllabus } from "@/lib/hsscBiologySyllabus";
 
 import {SUPPORTED_BOARDS, CLASS_DEFINITIONS, normalizeBoardId, normalizeClassRoman} from './boardCatalog';
 export {SUPPORTED_BOARDS, CLASS_DEFINITIONS, normalizeBoardId, normalizeClassRoman} from './boardCatalog';
@@ -64,7 +65,16 @@ export async function getClassSubjects(
   const classDef = CLASS_DEFINITIONS[classRoman];
   const hssc = hsscPhysicsSyllabus(boardInfo.id, classDef.level, "physics");
   const computerScience = hsscComputerScienceSyllabus(boardInfo.id, classDef.level, "computer-science");
-  const biology = sscBiologySyllabus(boardInfo.id, classDef.level, "biology");
+  const biology = sscBiologySyllabus(boardInfo.id, classDef.level, "biology")
+    ?? hsscBiologySyllabus(boardInfo.id, classDef.level, "biology");
+  const ssc = boardInfo.id === "akueb" && ["IX", "X"].includes(classRoman);
+  const bundledSubjects = ssc
+    ? ["physics", "computer-science", "chemistry", "mathematics", "biology"]
+    : [
+      ...(hssc ? ["physics"] : []),
+      ...(computerScience ? ["computer-science"] : []),
+      ...(biology ? ["biology"] : []),
+    ];
 
   let subjects: any[] = [];
   let useDatabase = true;
@@ -155,22 +165,16 @@ export async function getClassSubjects(
   // slug, so collapse them to one card and prefer the canonical title.
   const bySlug = new Map<string, (typeof subjects)[number]>();
   for (const subject of subjects) {
-    const existing = bySlug.get(subject.slug);
+    const slug = ssc && subject.slug === "mathematics-science-group" ? "mathematics" : subject.slug;
+    const existing = bySlug.get(slug);
     if (!existing || subject.name === getSubjectMeta(subject.name).title) {
-      bySlug.set(subject.slug, subject);
+      bySlug.set(slug, { ...subject, slug });
     }
   }
   subjects = Array.from(bySlug.values());
-  if (hssc && !bySlug.has("physics")) {
-    const meta = getSubjectMeta("Physics");
-    subjects.push({ ...meta, id: meta.slug, name: meta.title, code: null, papersCount: 0 });
-  }
-  if (computerScience && !bySlug.has("computer-science")) {
-    const meta = getSubjectMeta("Computer Science");
-    subjects.push({ ...meta, id: meta.slug, name: meta.title, code: null, papersCount: 0 });
-  }
-  if (biology && !bySlug.has("biology")) {
-    const meta = getSubjectMeta("Biology");
+  for (const slug of bundledSubjects) {
+    if (bySlug.has(slug)) continue;
+    const meta = getSubjectMeta(slug);
     subjects.push({ ...meta, id: meta.slug, name: meta.title, code: null, papersCount: 0 });
   }
 
@@ -223,9 +227,7 @@ export async function getClassSubjects(
       Boolean(syllabus) ||
       publishedSubjects.has(sub.id) ||
       (sub.papersCount || 0) > 0 ||
-      (boardInfo.id === "akueb" &&
-        ["IX", "X"].includes(classRoman) &&
-        ["physics", "computer-science", "chemistry", "mathematics"].includes(sub.slug)),
+      bundledSubjects.includes(sub.slug),
     };
   });
   // Sort so Physics and Science subjects appear top

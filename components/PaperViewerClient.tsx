@@ -1026,6 +1026,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                             <summary style={{ cursor: 'pointer', fontWeight: 700 }}>{meta.official_marking_notes || meta.better_response_image || meta.weaker_response_image ? 'Worked solution and e-marking examples' : 'Worked solution'}</summary>
                             <p><strong>Supplementary worked solution</strong> · {meta.model_answer_origin}</p>
                             <StructuredContent text={meta.model_answer || ''} />
+                            {meta.mapping_status === 'NO_DIRECT_OUTCOME' && meta.mapping_reason && <p role="note">{meta.mapping_reason}</p>}
                             {meta.official_marking_notes && <><h4>Official checking comments</h4><StructuredContent text={meta.official_marking_notes} /></>}
                             {meta.answer_review_note && <p role="note"><strong>Source discrepancy:</strong> {meta.answer_review_note}</p>}
                             {meta.original_reference_source && <p><a href={meta.original_reference_source} target="_blank" rel="noreferrer">Original board e-marking notes</a></p>}

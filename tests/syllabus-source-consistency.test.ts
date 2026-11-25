@@ -40,4 +40,19 @@ describe('Syllabus source consistency', () => {
     const tree = elements(await Page({ params: Promise.resolve({ board: 'akueb', class: 'ix', subject: 'physics' }) }));
     expect(tree.find(element => 'original' in element.props)!.props.original).toBe('/materials/ssc/physics/ssc-1/physics-ssc-i-syllabus-grade-9-dedicated.pdf');
   });
+
+  it('shows Class IX Chemistry with the complete board PDF and its assessment and practical sections', async () => {
+    sources.published.mockResolvedValue(null);
+    const tree = elements(await Page({ params: Promise.resolve({ board: 'akueb', class: 'ix', subject: 'chemistry' }) }));
+    const syllabus = tree.find(element => 'units' in element.props)!;
+    const original = '/materials/ssc/chemistry/ssc-1/chemistry-ssc-full-syllabus-2025.pdf';
+    expect(tree.find(element => 'original' in element.props)!.props.original).toBe(original);
+    expect(syllabus.props.units).toHaveLength(8);
+    expect(syllabus.props.chemistrySections).toMatchObject({
+      original,
+      assessmentPage: 50,
+      practicalPage: 45,
+      practicals: expect.arrayContaining([expect.objectContaining({ number: 12, chapter: 8 })]),
+    });
+  });
 });

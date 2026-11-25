@@ -6,8 +6,8 @@
     "unitName": "Chemical Equilibrium",
     "chapter": "Chemical Equilibrium",
     "slo": "9.3.1",
-    "current_slo": "9.3.1",
-    "cognitiveLevel": "Remembering",
+    "current_slo": "9.3.6",
+    "cognitiveLevel": "E",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -23,8 +23,8 @@
     },
     "current_mapping": [
       {
-        "code": "9.3.1",
-        "description": "state the law of mass action;",
+        "code": "9.3.6",
+        "description": "deduce the effect of catalyst, temperature, pressure and concentration on a reversible reaction at equilibrium.",
         "topic": "Chemical Equilibrium"
       }
     ],
@@ -38,6 +38,10 @@
     "correctOption": "A",
     "explanation": "The reaction N2O4(g) \u21cb 2NO2(g) is endothermic (\u0394H > 0). According to Le Chatelier\u2019s principle, increasing the temperature shifts equilibrium in the endothermic (forward) direction, increasing NO2 formation. Furthermore, the forward reaction converts 1 mole of gas into 2 moles of gas; lowering the pressure shifts equilibrium towards the side with more moles of gas (forward direction). Thus, high temperature and low pressure favor NO2 production.",
     "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The reaction N2O4(g) \u21cb 2NO2(g) is endothermic (\u0394H > 0). According to Le Chatelier\u2019s principle, increasing the temperature shifts equilibrium in the endothermic (forward) direction, increasing NO2 formation. Furthermore, the forward reaction converts 1 mole of gas into 2 moles of gas; lowering the pressure shifts equilibrium towards the side with more moles of gas (forward direction). Thus, high temperature and low pressure favor NO2 production."
+      },
       {
         "key": "B",
         "reason": "Low temperature favors the exothermic backward reaction, and high pressure shifts equilibrium towards fewer gas moles (N2O4)."
@@ -59,8 +63,8 @@
     "unitName": "Chemical Equilibrium",
     "chapter": "Chemical Equilibrium",
     "slo": "9.1.1",
-    "current_slo": "9.1.1",
-    "cognitiveLevel": "Remembering",
+    "current_slo": "9.1.3",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -76,8 +80,8 @@
     },
     "current_mapping": [
       {
-        "code": "9.1.1",
-        "description": "define chemical equilibrium as a dynamic state in a reversible reaction;",
+        "code": "9.1.3",
+        "description": "explain the necessary conditions for equilibrium and the ways through which equilibrium can be recognised;",
         "topic": "Chemical Equilibrium"
       }
     ],
@@ -100,6 +104,10 @@
         "reason": "Constant temperature is essential because equilibrium constants are temperature-dependent."
       },
       {
+        "key": "C",
+        "reason": "At dynamic chemical equilibrium, the rates of the forward and backward reactions are equal, and macroscopic properties (like temperature, pressure, and color) remain constant in a closed vessel. However, the equilibrium concentrations (amounts) of reactants and products are generally NOT equal; they depend on the magnitude of the equilibrium constant Kc."
+      },
+      {
         "key": "D",
         "reason": "Equal rates of forward and reverse reactions is the fundamental definition of dynamic equilibrium."
       }
@@ -112,8 +120,8 @@
     "unitName": "Chemical Equilibrium",
     "chapter": "Chemical Equilibrium",
     "slo": "9.2.2",
-    "current_slo": "9.2.2",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "9.3.2",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -129,8 +137,8 @@
     },
     "current_mapping": [
       {
-        "code": "9.2.2",
-        "description": "differentiate between exothermic and endothermic reactions with examples;",
+        "code": "9.3.2",
+        "description": "derive the equilibrium constant expression of a reaction and its unit;",
         "topic": "Chemical Equilibrium"
       }
     ],
@@ -149,6 +157,10 @@
         "reason": "Here \u0394n = (1 + 1) - (1 + 1) = 0, so Kc has no units (dimensionless)."
       },
       {
+        "key": "B",
+        "reason": "The unit of Kc is (mol dm-3)^\u0394n, where \u0394n = (moles of gaseous products) - (moles of gaseous reactants). For reaction B (2NO + O2 \u21cb 2NO2): \u0394n = 2 - (2 + 1) = -1. Therefore, Kc unit = (mol dm-3)^-1 = mol-1 dm3."
+      },
+      {
         "key": "C",
         "reason": "Here \u0394n = (2 + 1) - 2 = +1, so Kc has units of mol dm-3."
       },
@@ -165,8 +177,8 @@
     "unitName": "Chemical Equilibrium",
     "chapter": "Chemical Equilibrium",
     "slo": "9.2.3",
-    "current_slo": "9.2.3",
-    "cognitiveLevel": "Remembering",
+    "current_slo": "9.3.4",
+    "cognitiveLevel": "E",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -182,8 +194,8 @@
     },
     "current_mapping": [
       {
-        "code": "9.2.3",
-        "description": "define the term, \u2018enthalpy change\u2019;",
+        "code": "9.3.4",
+        "description": "predict the direction of a reversible reaction using molar concentration of reactants and products through the calculation of Q_C;",
         "topic": "Chemical Equilibrium"
       }
     ],
@@ -202,6 +214,10 @@
         "reason": "If Qc > Kc, the net reaction would proceed backward, not forward."
       },
       {
+        "key": "B",
+        "reason": "The reaction quotient is calculated as: Qc = ([CO] [H2]^3) / ([CH4] [H2O]) = (8.0 \u00d7 10^-3 \u00d7 (3.0 \u00d7 10^-3)^3) / (6.0 \u00d7 10^-3 \u00d7 4.0 \u00d7 10^-3) = (8.0 \u00d7 10^-3 \u00d7 2.7 \u00d7 10^-8) / (2.4 \u00d7 10^-5) = (2.16 \u00d7 10^-10) / (2.4 \u00d7 10^-5) = 9.0 \u00d7 10^-6. Comparing with Kc = 2.4 \u00d7 10^-4 (240 \u00d7 10^-6), we find that Qc < Kc. Since Qc is less than Kc, the net reaction must proceed in the FORWARD direction to convert reactants into products until Qc equals Kc."
+      },
+      {
         "key": "C",
         "reason": "Qc is 9.0 \u00d7 10^-6, which is strictly smaller than Kc (2.4 \u00d7 10^-4)."
       },
@@ -214,12 +230,12 @@
   {
     "questionNumber": 5,
     "pageNumber": 2,
-    "unitNumber": 12,
-    "unitName": "Hydrocarbons",
-    "chapter": "Hydrocarbons",
+    "unitNumber": 9,
+    "unitName": "Chemical Equilibrium",
+    "chapter": "Chemical Equilibrium",
     "slo": "12.1.2",
-    "current_slo": "12.1.2",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "9.2.2",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -235,9 +251,9 @@
     },
     "current_mapping": [
       {
-        "code": "12.1.2",
-        "description": "distinguish between saturated and unsaturated hydrocarbons (including tests with iodine, bromine and potassium permanganate);",
-        "topic": "Hydrocarbons"
+        "code": "9.2.2",
+        "description": "differentiate between exothermic and endothermic reactions with examples;",
+        "topic": "Chemical Equilibrium"
       }
     ],
     "stem": "The option that exemplifies an exothermic process is",
@@ -259,6 +275,10 @@
         "reason": "Melting is a phase change that absorbs latent heat of fusion, which is endothermic."
       },
       {
+        "key": "C",
+        "reason": "The combustion of petrol (hydrocarbons) in an internal combustion engine is a strongly exothermic oxidation reaction that releases substantial thermal and mechanical energy: C8H18 + 12.5 O2 \u2192 8 CO2 + 9 H2O + Heat."
+      },
+      {
         "key": "D",
         "reason": "Fractional distillation requires continuous heating to vaporize petroleum fractions, making it endothermic."
       }
@@ -271,8 +291,8 @@
     "unitName": "Acids, Bases and Salts",
     "chapter": "Acids, Bases and Salts",
     "slo": "10.3.1",
-    "current_slo": "10.3.1",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "10.6.6",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -288,8 +308,8 @@
     },
     "current_mapping": [
       {
-        "code": "10.3.1",
-        "description": "explain the acidity of bases and the basicity of acids;",
+        "code": "10.6.6",
+        "description": "illustrate the preparation of insoluble salts by precipitation;",
         "topic": "Acids, Bases and Salts"
       }
     ],
@@ -314,6 +334,10 @@
       {
         "key": "C",
         "reason": "No water or gas is produced in this precipitation reaction."
+      },
+      {
+        "key": "D",
+        "reason": "This double displacement precipitation reaction yields insoluble silver chloride and soluble barium nitrate: BaCl2(aq) + 2AgNO3(aq) \u2192 2AgCl(s)\u2193 + Ba(NO3)2(aq). AgCl precipitates as a white insoluble solid, while Ba(NO3)2 remains dissolved as a soluble salt."
       }
     ]
   },
@@ -325,7 +349,7 @@
     "chapter": "Acids, Bases and Salts",
     "slo": "10.1.1",
     "current_slo": "10.1.1",
-    "cognitiveLevel": "Understanding",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -361,6 +385,10 @@
         "reason": "The Lewis concept defines bases as electron-pair donors."
       },
       {
+        "key": "B",
+        "reason": "According to the Arrhenius theory of acids and bases, a base is a substance that dissociates in aqueous solution to produce hydroxide ions (OH-). Calcium hydroxide dissociating in water into Ca2+ and OH- ions is a textbook example of an Arrhenius base."
+      },
+      {
         "key": "C",
         "reason": "Faraday formulated the laws of electrolysis and electrochemical equivalence, not an acid-base definition."
       },
@@ -377,8 +405,8 @@
     "unitName": "Acids, Bases and Salts",
     "chapter": "Acids, Bases and Salts",
     "slo": "10.2.1",
-    "current_slo": "10.2.1",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "10.4.3",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -394,8 +422,8 @@
     },
     "current_mapping": [
       {
-        "code": "10.2.1",
-        "description": "explain the physical properties of acids and bases;",
+        "code": "10.4.3",
+        "description": "determine a solution as neutral, acidic or basic based on hydrogen ion or hydroxide ion concentration using pH and pOH scale;",
         "topic": "Acids, Bases and Salts"
       }
     ],
@@ -414,6 +442,10 @@
         "reason": "A basic solution requires pH > 7 and pOH < 7 (high [OH-])."
       },
       {
+        "key": "B",
+        "reason": "pOH = -log[OH-] = -log(1 \u00d7 10^-12) = 12. Since pH + pOH = 14 at 25 \u00b0C, pH = 14 - 12 = 2. A pH of 2 corresponds to a very high hydrogen ion concentration ([H+] = 10^-2 M), classifying the solution as highly acidic."
+      },
+      {
         "key": "C",
         "reason": "Slightly basic solutions have a pH around 7.5 to 8.5."
       },
@@ -430,8 +462,8 @@
     "unitName": "Acids, Bases and Salts",
     "chapter": "Acids, Bases and Salts",
     "slo": "10.1.2",
-    "current_slo": "10.1.2",
-    "cognitiveLevel": "Application",
+    "current_slo": "10.6.5",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
@@ -447,8 +479,8 @@
     },
     "current_mapping": [
       {
-        "code": "10.1.2",
-        "description": "illustrate dissociation equations for acids or bases in aqueous solution;",
+        "code": "10.6.5",
+        "description": "illustrate the preparation, separation and purification of soluble salts by the reaction of an acid with:\na. an alkali (titration),\nb. excess metal,\nc. excess insoluble base,\nd. excess insoluble carbonate;",
         "topic": "Acids, Bases and Salts"
       }
     ],
@@ -471,6 +503,10 @@
         "reason": "Chlorine is not formed, and blue litmus turns red only in acidic solution, whereas excess CaCO3 neutralized all acid."
       },
       {
+        "key": "C",
+        "reason": "In Step 1, dilute HCl reacts with CaCO3 in an effervescent neutralization reaction: CaCO3(s) + 2HCl(aq) \u2192 CaCl2(aq) + H2O(l) + CO2(g)\u2191, releasing carbon dioxide gas bubbles. Because excess CaCO3 was added, all the acid was neutralized. In Step 2, filtration yields a neutral aqueous solution of calcium chloride (CaCl2). In Step 3, testing the neutral salt solution with blue litmus paper results in NO CHANGE (it remains blue)."
+      },
+      {
         "key": "D",
         "reason": "The filtrate is neutral CaCl2; blue litmus only turns red if unreacted acid remains, but excess insoluble base was added."
       }
@@ -483,8 +519,8 @@
     "unitName": "Acids, Bases and Salts",
     "chapter": "Acids, Bases and Salts",
     "slo": "10.3.2",
-    "current_slo": "10.3.2",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "10.6.3",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -500,8 +536,8 @@
     },
     "current_mapping": [
       {
-        "code": "10.3.2",
-        "description": "exemplify strong and weak acids and bases;",
+        "code": "10.6.3",
+        "description": "exemplify the different types of salts, i.e., acidic, basic, normal (based on replaceable H\u207a and OH\u207b ions), double, mixed and complex;",
         "topic": "Acids, Bases and Salts"
       }
     ],
@@ -520,6 +556,10 @@
         "reason": "Acidic salts contain replaceable hydrogen atoms (such as NaHCO3 or NaHSO4)."
       },
       {
+        "key": "B",
+        "reason": "Carnallite (KCl\u00b7MgCl2\u00b76H2O or KMgCl3\u00b76H2O) is a double salt. Double salts are formed by the equimolar crystallization of two distinct simple salts; they maintain their identity in crystalline form but dissociate completely into their individual constituent simple ions (K+, Mg2+, and Cl-) when dissolved in water."
+      },
+      {
         "key": "C",
         "reason": "Normal salts form by total neutralization of an acid by a base and contain only one type of metal cation."
       },
@@ -536,8 +576,8 @@
     "unitName": "Hydrocarbons",
     "chapter": "Hydrocarbons",
     "slo": "12.3.3",
-    "current_slo": "12.3.3",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "12.6.3",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -553,8 +593,8 @@
     },
     "current_mapping": [
       {
-        "code": "12.3.3",
-        "description": "explain the physical properties (physical state, melting and boiling points, density, odour and solubility) of alkanes;",
+        "code": "12.6.3",
+        "description": "differentiate between ethene and ethyne using silver nitrate test.",
         "topic": "Hydrocarbons"
       }
     ],
@@ -571,6 +611,10 @@
       {
         "key": "A",
         "reason": "Terminal alkynes donate protons (act as weak acids), not bases."
+      },
+      {
+        "key": "B",
+        "reason": "In ethyne (H-C\u2261C-H), the carbon atoms are sp-hybridized with 50% s-character, making them highly electronegative. This polarizes the terminal C-H bond, allowing the terminal hydrogen atom to act as weakly acidic and be displaced by silver ions (Ag+) to form insoluble silver acetylide (Ag-C\u2261C-Ag)."
       },
       {
         "key": "C",
@@ -590,7 +634,7 @@
     "chapter": "Hydrocarbons",
     "slo": "12.1.2",
     "current_slo": "12.1.2",
-    "cognitiveLevel": "Understanding",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -632,6 +676,10 @@
       {
         "key": "C",
         "reason": "This is TRUE: Alkanes are saturated and lack accessible pi bonds."
+      },
+      {
+        "key": "D",
+        "reason": "Statement D is FALSE: Alkanes are composed of non-polar C-C and C-H bonds and are insoluble in polar solvents like water (following 'like dissolves like'). Their resistance to oxidation by KMnO4 stems from their saturated nature, non-polar sigma bonds, and lack of electrophilic/nucleophilic attack sites."
       }
     ]
   },
@@ -642,8 +690,8 @@
     "unitName": "Hydrocarbons",
     "chapter": "Hydrocarbons",
     "slo": "12.2.1",
-    "current_slo": "12.2.1",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "12.4.3",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -659,8 +707,8 @@
     },
     "current_mapping": [
       {
-        "code": "12.2.1",
-        "description": "explain the uses of hydrocarbons as:\na. fuel,\nb. feedstock in industry;",
+        "code": "12.4.3",
+        "description": "illustrate the preparation of alkenes through the following methods:\na. cracking of large alkane molecules using a high temperature and a catalyst,\nb. dehydration of alcohols,\nc. dehydrohalogenation of alkyl halides;",
         "topic": "Hydrocarbons"
       }
     ],
@@ -679,6 +727,10 @@
         "reason": "Reduction involves addition of hydrogen or gain of electrons; here a water molecule is eliminated."
       },
       {
+        "key": "B",
+        "reason": "Ethanol (C2H5OH) is converted into ethene (C2H4) via acidic dehydration (removal of a molecule of water) by heating with concentrated sulphuric acid at 170 \u00b0C or passing over heated alumina (Al2O3) at 350 \u00b0C: C2H5OH \u2192 C2H4 + H2O."
+      },
+      {
         "key": "C",
         "reason": "Neutralisation is the reaction between an acid and a base to form a salt and water."
       },
@@ -695,8 +747,8 @@
     "unitName": "Hydrocarbons",
     "chapter": "Hydrocarbons",
     "slo": "12.1.2",
-    "current_slo": "12.1.2",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "12.3.4",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -712,8 +764,8 @@
     },
     "current_mapping": [
       {
-        "code": "12.1.2",
-        "description": "distinguish between saturated and unsaturated hydrocarbons (including tests with iodine, bromine and potassium permanganate);",
+        "code": "12.3.4",
+        "description": "describe the complete and incomplete combustion of alkanes;",
         "topic": "Hydrocarbons"
       }
     ],
@@ -736,6 +788,10 @@
         "reason": "Combustion oxidizes hydrogen to water vapor; molecular H2 gas is not released."
       },
       {
+        "key": "C",
+        "reason": "The stoichiometric combustion equation is: CH4(g) + 2O2(g) \u2192 CO2(g) + 2H2O(l) + 890 kJ/mol heat. Complete combustion produces exactly 1 mole of carbon dioxide gas and 2 moles of water alongside heat energy."
+      },
+      {
         "key": "D",
         "reason": "Hydrogen atoms combine with oxygen to yield water (H2O), not elemental H2 gas."
       }
@@ -748,12 +804,12 @@
     "unitName": "Hydrocarbons",
     "chapter": "Hydrocarbons",
     "slo": "12.1.2",
-    "current_slo": "12.1.2",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "12.6.1",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
-    "diagramUrl": "/paper-crops/CHM-X-P1/q15.png",
+    "diagramUrl": null,
     "in_syllabus": true,
     "out_of_syllabus": false,
     "syllabus_reviewed": true,
@@ -765,17 +821,17 @@
     },
     "current_mapping": [
       {
-        "code": "12.1.2",
-        "description": "distinguish between saturated and unsaturated hydrocarbons (including tests with iodine, bromine and potassium permanganate);",
+        "code": "12.6.1",
+        "description": "illustrate halogenations of alkanes, alkenes and alkynes up to three carbon atoms;",
         "topic": "Hydrocarbons"
       }
     ],
     "stem": "A substitution reaction takes place when bromine reacts with",
     "options": {
-      "A": "Ethene (A)",
-      "B": "Ethenol (B)",
-      "C": "Ethyne (C)",
-      "D": "Ethane (D)"
+      "A": "![Option A: first displayed structural formula](/paper-crops/CHM-X-P1/q15-a.png)",
+      "B": "![Option B: second displayed structural formula](/paper-crops/CHM-X-P1/q15-b.png)",
+      "C": "![Option C: third displayed structural formula](/paper-crops/CHM-X-P1/q15-c.png)",
+      "D": "![Option D: fourth displayed structural formula](/paper-crops/CHM-X-P1/q15-d.png)"
     },
     "correctOption": "D",
     "explanation": "Ethane (structure D, CH3-CH3) is a saturated alkane with single covalent bonds. It reacts with halogens like bromine exclusively via free-radical substitution in the presence of sunlight: C2H6 + Br2 --hv--> C2H5Br + HBr. Alkenes and alkynes (A, B, C) possess pi bonds and undergo electrophilic addition reactions instead.",
@@ -791,18 +847,22 @@
       {
         "key": "C",
         "reason": "Ethyne has a triple bond and undergoes stepwise halogen addition to form 1,1,2,2-tetrabromoethane."
+      },
+      {
+        "key": "D",
+        "reason": "Ethane (structure D, CH3-CH3) is a saturated alkane with single covalent bonds. It reacts with halogens like bromine exclusively via free-radical substitution in the presence of sunlight: C2H6 + Br2 --hv--> C2H5Br + HBr. Alkenes and alkynes (A, B, C) possess pi bonds and undergo electrophilic addition reactions instead."
       }
     ]
   },
   {
     "questionNumber": 16,
     "pageNumber": 5,
-    "unitNumber": 11,
-    "unitName": "Organic Chemistry",
-    "chapter": "Organic Chemistry",
+    "unitNumber": 12,
+    "unitName": "Hydrocarbons",
+    "chapter": "Hydrocarbons",
     "slo": "11.1.1",
-    "current_slo": "11.1.1",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "12.1.1",
+    "cognitiveLevel": "R",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -818,9 +878,9 @@
     },
     "current_mapping": [
       {
-        "code": "11.1.1",
-        "description": "explain the general characteristics of organic compounds;",
-        "topic": "Organic Chemistry"
+        "code": "12.1.1",
+        "description": "define the term \u2018hydrocarbons\u2019;",
+        "topic": "Hydrocarbons"
       }
     ],
     "stem": "Alkanes, alkenes and alkynes are classified as organic compounds. This is because they all",
@@ -833,6 +893,10 @@
     "correctOption": "A",
     "explanation": "Hydrocarbons are organic compounds composed exclusively of carbon and hydrogen atoms. Alkanes (aliphatic saturated), alkenes (aliphatic unsaturated with double bonds), and alkynes (aliphatic unsaturated with triple bonds) form the fundamental classes of hydrocarbons.",
     "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Hydrocarbons are organic compounds composed exclusively of carbon and hydrogen atoms. Alkanes (aliphatic saturated), alkenes (aliphatic unsaturated with double bonds), and alkynes (aliphatic unsaturated with triple bonds) form the fundamental classes of hydrocarbons."
+      },
       {
         "key": "B",
         "reason": "Alkenes and alkynes are unsaturated compounds containing double and triple bonds; only alkanes are saturated."
@@ -854,8 +918,8 @@
     "unitName": "Organic Chemistry",
     "chapter": "Organic Chemistry",
     "slo": "11.2.1",
-    "current_slo": "11.2.1",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "11.5.2",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -871,8 +935,8 @@
     },
     "current_mapping": [
       {
-        "code": "11.2.1",
-        "description": "classify organic compounds into acyclic and cyclic compounds with examples;",
+        "code": "11.5.2",
+        "description": "apply the IUPAC system in naming the following compounds up to seven carbon atoms:\na. alkanes,\nb. alkenes,\nc. alkynes,\nd. alcohols,\ne. carboxylic acids.",
         "topic": "Organic Chemistry"
       }
     ],
@@ -895,6 +959,10 @@
         "reason": "The numbering 2,4 is higher than 1,3 and '-ene' omits the diene prefix."
       },
       {
+        "key": "C",
+        "reason": "The continuous carbon chain has 5 carbon atoms (root: penta). Numbering from the left gives the double bonds the lowest locants: C1 and C3 (1,3-pentadiene). Numbering from the right would give locants 2,4, which is higher and violates IUPAC rules."
+      },
+      {
         "key": "D",
         "reason": "Numbering from the right gives higher locants (2,4) and violates the lowest-locant rule."
       }
@@ -907,8 +975,8 @@
     "unitName": "Organic Chemistry",
     "chapter": "Organic Chemistry",
     "slo": "11.3.1",
-    "current_slo": "11.3.1",
-    "cognitiveLevel": "Application",
+    "current_slo": "11.2.5",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -924,8 +992,8 @@
     },
     "current_mapping": [
       {
-        "code": "11.3.1",
-        "description": "illustrate the formation of alkyl groups by the removal of hydrogen atom from their corresponding alkanes up to five carbon atoms;",
+        "code": "11.2.5",
+        "description": "determine a molecule\u2019s functional group (mentioned in SLO 11.2.4) using structural, condensed and skeletal formulae and systematic names of compounds up to seven carbon atoms;",
         "topic": "Organic Chemistry"
       }
     ],
@@ -950,6 +1018,10 @@
       {
         "key": "C",
         "reason": "CH3COCH2CH3 contains the ketone functional group (-CO-)."
+      },
+      {
+        "key": "D",
+        "reason": "The ester functional group is represented by -COO- (R-COO-R'). In ethyl ethanoate (CH3COOCH2CH3), an acyl group (CH3-C=O) is bonded to an ethoxy group (-O-CH2CH3), characteristic of an ester."
       }
     ]
   },
@@ -960,8 +1032,8 @@
     "unitName": "Organic Chemistry",
     "chapter": "Organic Chemistry",
     "slo": "11.3.1",
-    "current_slo": "11.3.1",
-    "cognitiveLevel": "Application",
+    "current_slo": "11.2.5",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -977,8 +1049,8 @@
     },
     "current_mapping": [
       {
-        "code": "11.3.1",
-        "description": "illustrate the formation of alkyl groups by the removal of hydrogen atom from their corresponding alkanes up to five carbon atoms;",
+        "code": "11.2.5",
+        "description": "determine a molecule\u2019s functional group (mentioned in SLO 11.2.4) using structural, condensed and skeletal formulae and systematic names of compounds up to seven carbon atoms;",
         "topic": "Organic Chemistry"
       }
     ],
@@ -1001,6 +1073,10 @@
         "reason": "They are not isomers at all because their formulas contain different numbers of hydrogen atoms (6 vs 8)."
       },
       {
+        "key": "C",
+        "reason": "CH3COCH3 (acetone) contains a ketone functional group (>C=O) and has molecular formula C3H6O. CH3OCH2CH3 (methoxyethane) contains an ether functional group (-O-) and has molecular formula C3H8O. Because their functional groups are entirely different (ketone vs. ether), statement C is scientifically accurate."
+      },
+      {
         "key": "D",
         "reason": "Ketones and ethers belong to different homologous series with completely different general formulas and chemical properties."
       }
@@ -1013,8 +1089,8 @@
     "unitName": "Organic Chemistry",
     "chapter": "Organic Chemistry",
     "slo": "11.3.1",
-    "current_slo": "11.3.1",
-    "cognitiveLevel": "Application",
+    "current_slo": "11.2.5",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": true,
     "diagramBased": true,
@@ -1030,12 +1106,12 @@
     },
     "current_mapping": [
       {
-        "code": "11.3.1",
-        "description": "illustrate the formation of alkyl groups by the removal of hydrogen atom from their corresponding alkanes up to five carbon atoms;",
+        "code": "11.2.5",
+        "description": "determine a molecule\u2019s functional group (mentioned in SLO 11.2.4) using structural, condensed and skeletal formulae and systematic names of compounds up to seven carbon atoms;",
         "topic": "Organic Chemistry"
       }
     ],
-    "stem": "The functional group present in the given molecule of vinegar is the\nCH3-C(=O)-OH",
+    "stem": "The functional group present in the given molecule of vinegar is the",
     "options": {
       "A": "ketone.",
       "B": "alcohol.",
@@ -1056,6 +1132,10 @@
       {
         "key": "C",
         "reason": "An aldehyde has a carbonyl bonded to at least one hydrogen atom (R-CHO)."
+      },
+      {
+        "key": "D",
+        "reason": "Vinegar is an aqueous solution of ethanoic acid (acetic acid, CH3COOH). The structural formula shows a carbonyl group (C=O) directly attached to a hydroxyl group (-OH), which constitutes the carboxylic acid functional group (-COOH)."
       }
     ]
   },
@@ -1066,8 +1146,8 @@
     "unitName": "Natural and Synthetic Polymers",
     "chapter": "Natural and Synthetic Polymers",
     "slo": "13.2.2",
-    "current_slo": "13.2.2",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "13.6.2",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1083,8 +1163,8 @@
     },
     "current_mapping": [
       {
-        "code": "13.2.2",
-        "description": "elaborate the environmental impact of plastics, emphasising challenges related to their disposal in landfill sites;",
+        "code": "13.6.2",
+        "description": "describe the basic structural features of deoxyribonucleic acid (DNA) and ribonucleic acid (RNA);",
         "topic": "Natural and Synthetic Polymers"
       }
     ],
@@ -1096,7 +1176,7 @@
       "D": "II and III."
     },
     "correctOption": "D",
-    "explanation": "DNA is a double-stranded helical macromolecule that possesses the enzymatic ability to undergo semi-conservative self-replication (statement II is true; RNA is transcribed from DNA and does not self-replicate). DNA is located in the cell nucleus and also in eukaryotic organelles such as mitochondria (mitochondrial DNA, mtDNA) (statement III is true). Statement I is false because DNA is double-stranded while RNA is typically single-stranded.",
+    "explanation": "D is the intended school-level choice: cellular DNA is typically double-stranded, is copied by replication, and occurs in mitochondria. Mitochondria also contain RNA, so location alone does not distinguish the two.",
     "option_feedback": [
       {
         "key": "A",
@@ -1109,6 +1189,10 @@
       {
         "key": "C",
         "reason": "Omits statement II; DNA is uniquely capable of self-replication."
+      },
+      {
+        "key": "D",
+        "reason": "D is the intended school-level choice: cellular DNA is typically double-stranded, is copied by replication, and occurs in mitochondria. Mitochondria also contain RNA, so location alone does not distinguish the two."
       }
     ]
   },
@@ -1119,8 +1203,8 @@
     "unitName": "Natural and Synthetic Polymers",
     "chapter": "Natural and Synthetic Polymers",
     "slo": "13.1.1",
-    "current_slo": "13.1.1",
-    "cognitiveLevel": "Remembering",
+    "current_slo": "13.3.2",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1136,8 +1220,8 @@
     },
     "current_mapping": [
       {
-        "code": "13.1.1",
-        "description": "define the following terms:\na. monomers,\nb. polymers,\nc. polymerisation;",
+        "code": "13.3.2",
+        "description": "classify carbohydrates into monosaccharides, oligosaccharides and polysaccharides with examples;",
         "topic": "Natural and Synthetic Polymers"
       }
     ],
@@ -1160,6 +1244,10 @@
         "reason": "Peptide bonds link amino acids together in polypeptide chains and proteins."
       },
       {
+        "key": "C",
+        "reason": "Maltose is formed when two D-glucose monosaccharide molecules undergo a condensation reaction with the elimination of a water molecule, forming an \u03b1(1\u21924) glycosidic linkage (ether bond between sugars)."
+      },
+      {
         "key": "D",
         "reason": "Phosphodiester bonds link nucleotides together along the sugar-phosphate backbone of nucleic acids (DNA/RNA)."
       }
@@ -1172,8 +1260,8 @@
     "unitName": "Natural and Synthetic Polymers",
     "chapter": "Natural and Synthetic Polymers",
     "slo": "13.1.2",
-    "current_slo": "13.1.2",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "13.4.2",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1189,8 +1277,8 @@
     },
     "current_mapping": [
       {
-        "code": "13.1.2",
-        "description": "differentiate between natural and synthetic polymers;",
+        "code": "13.4.2",
+        "description": "describe peptide linkage between amino acids in a polypeptide chain;",
         "topic": "Natural and Synthetic Polymers"
       }
     ],
@@ -1213,6 +1301,10 @@
         "reason": "Breakdown of proteins does not occur by simple oxidation; water is required to hydrolyze amide bonds."
       },
       {
+        "key": "C",
+        "reason": "Peptide linkages (-CO-NH-) in proteins are synthesized by condensation (dehydration synthesis) reactions between the amino group (-NH2) of one amino acid and the carboxyl group (-COOH) of another with the loss of water. Conversely, during digestion or degradation, peptide linkages are cleaved by enzymatic hydrolysis (addition of water)."
+      },
+      {
         "key": "D",
         "reason": "Breakdown occurs via hydrolysis, not oxidation."
       }
@@ -1225,8 +1317,8 @@
     "unitName": "Natural and Synthetic Polymers",
     "chapter": "Natural and Synthetic Polymers",
     "slo": "13.1.3",
-    "current_slo": "13.1.3",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "13.5.3",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1242,8 +1334,8 @@
     },
     "current_mapping": [
       {
-        "code": "13.1.3",
-        "description": "differentiate between addition and condensation polymerisation;",
+        "code": "13.5.3",
+        "description": "explain hydrogenation of vegetable oil;",
         "topic": "Natural and Synthetic Polymers"
       }
     ],
@@ -1257,6 +1349,10 @@
     "correctOption": "A",
     "explanation": "Vegetable oils are liquid triglycerides containing polyunsaturated fatty acid chains with carbon-carbon double bonds. Industrial catalytic hydrogenation (in the presence of finely divided Ni catalyst at ~60 \u00b0C to 200 \u00b0C) adds hydrogen across the double bonds, converting them into solid saturated fats (vanaspati ghee) containing only carbon-carbon single bonds.",
     "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Vegetable oils are liquid triglycerides containing polyunsaturated fatty acid chains with carbon-carbon double bonds. Industrial catalytic hydrogenation (in the presence of finely divided Ni catalyst at ~60 \u00b0C to 200 \u00b0C) adds hydrogen across the double bonds, converting them into solid saturated fats (vanaspati ghee) containing only carbon-carbon single bonds."
+      },
       {
         "key": "B",
         "reason": "The product is saturated fat, not unsaturated fat."
@@ -1278,8 +1374,8 @@
     "unitName": "Natural and Synthetic Polymers",
     "chapter": "Natural and Synthetic Polymers",
     "slo": "13.3.1",
-    "current_slo": "13.3.1",
-    "cognitiveLevel": "Remembering",
+    "current_slo": "13.4.5",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1295,8 +1391,8 @@
     },
     "current_mapping": [
       {
-        "code": "13.3.1",
-        "description": "define the term \u2018carbohydrates\u2019;",
+        "code": "13.4.5",
+        "description": "exemplify the commercial uses of enzymes in the following industries:\na. food,\nb. detergent,\nc. pharmaceutical;",
         "topic": "Natural and Synthetic Polymers"
       }
     ],
@@ -1310,6 +1406,10 @@
     "correctOption": "A",
     "explanation": "Amylase is a digestive enzyme that catalyzes the hydrolysis of starch (amylose and amylopectin) in flour into fermentable maltose and glucose sugars, providing yeast with nutrients for fermentation and dough rising.",
     "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Amylase is a digestive enzyme that catalyzes the hydrolysis of starch (amylose and amylopectin) in flour into fermentable maltose and glucose sugars, providing yeast with nutrients for fermentation and dough rising."
+      },
       {
         "key": "B",
         "reason": "Lactose is milk sugar, hydrolyzed by lactase."
@@ -1332,7 +1432,7 @@
     "chapter": "Environmental Chemistry II: Water",
     "slo": "15.2.1",
     "current_slo": "15.2.1",
-    "cognitiveLevel": "Understanding",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1374,6 +1474,10 @@
       {
         "key": "C",
         "reason": "Aluminium is not a natural causative agent of permanent water hardness."
+      },
+      {
+        "key": "D",
+        "reason": "Permanent hardness of water is caused by dissolved calcium and magnesium chlorides and sulphates (CaCl2, MgCl2, CaSO4, MgSO4). These salts cannot be removed by simple boiling."
       }
     ]
   },
@@ -1384,8 +1488,8 @@
     "unitName": "Environmental Chemistry II: Water",
     "chapter": "Environmental Chemistry II: Water",
     "slo": "15.3.2",
-    "current_slo": "15.3.2",
-    "cognitiveLevel": "Evaluation",
+    "current_slo": "15.3.4",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1401,8 +1505,8 @@
     },
     "current_mapping": [
       {
-        "code": "15.3.2",
-        "description": "discuss the effects of agricultural, industrial and household wastes on life;",
+        "code": "15.3.4",
+        "description": "explain the use of chlorine in maintaining the cleanliness of swimming pool;",
         "topic": "Environmental Chemistry II: Water"
       }
     ],
@@ -1425,6 +1529,10 @@
         "reason": "Flocculation aggregates colloidal debris but does not act as a chemical disinfectant."
       },
       {
+        "key": "C",
+        "reason": "Naegleria fowleri is a pathogenic amoeba found in warm freshwater bodies. Routine chlorination (maintaining adequate free chlorine residual) destroys microbial cell membranes and kills the amoeba, preventing primary amoebic meningoencephalitis."
+      },
+      {
         "key": "D",
         "reason": "Sedimentation allows dense particles to settle under gravity and does not sterilize water."
       }
@@ -1437,8 +1545,8 @@
     "unitName": "Environmental Chemistry II: Water",
     "chapter": "Environmental Chemistry II: Water",
     "slo": "15.3.1",
-    "current_slo": "15.3.1",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "15.4.1",
+    "cognitiveLevel": "E",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1454,8 +1562,8 @@
     },
     "current_mapping": [
       {
-        "code": "15.3.1",
-        "description": "identify water pollutants originating from agricultural, industrial, and household wastes;",
+        "code": "15.4.1",
+        "description": "discuss the causes, symptoms and preventive measures of various types of water-borne diseases, i.e., diarrhoea, cholera, dysentery, cryptosporidiosis, fluorosis, jaundice, hepatitis, typhoid and hookworm infection.",
         "topic": "Environmental Chemistry II: Water"
       }
     ],
@@ -1480,6 +1588,10 @@
       {
         "key": "C",
         "reason": "Excess uric acid accumulation causes gout and kidney stones."
+      },
+      {
+        "key": "D",
+        "reason": "Jaundice (icterus) is characterized by a yellowish pigmentation of the skin and eyes caused by hyperbilirubinemia\u2014an abnormal buildup of bile pigments (bilirubin) in the bloodstream resulting from liver inflammation, hepatitis, or obstruction of bile ducts."
       }
     ]
   },
@@ -1491,7 +1603,7 @@
     "chapter": "Environmental Chemistry II: Water",
     "slo": "15.2.2",
     "current_slo": "15.2.2",
-    "cognitiveLevel": "Application",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1531,6 +1643,10 @@
         "reason": "Calcium chloride is highly soluble in water."
       },
       {
+        "key": "C",
+        "reason": "In Clark\u2019s method for softening temporary hard water, slaked lime (Ca(OH)2) is added, converting soluble calcium bicarbonate into insoluble calcium carbonate precipitate: Ca(HCO3)2(aq) + Ca(OH)2(aq) \u2192 2CaCO3(s)\u2193 + 2H2O(l)."
+      },
+      {
         "key": "D",
         "reason": "Calcium bicarbonate is the soluble species initially causing temporary hardness; it is converted to carbonate precipitate."
       }
@@ -1543,8 +1659,8 @@
     "unitName": "Environmental Chemistry II: Water",
     "chapter": "Environmental Chemistry II: Water",
     "slo": "15.1.2",
-    "current_slo": "15.1.2",
-    "cognitiveLevel": "Analysing",
+    "current_slo": "15.3.2",
+    "cognitiveLevel": "E",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1560,8 +1676,8 @@
     },
     "current_mapping": [
       {
-        "code": "15.1.2",
-        "description": "analyse water\u2019s anomalous behaviour and its significance;",
+        "code": "15.3.2",
+        "description": "discuss the effects of agricultural, industrial and household wastes on life;",
         "topic": "Environmental Chemistry II: Water"
       }
     ],
@@ -1575,6 +1691,10 @@
     "correctOption": "A",
     "explanation": "Excess nitrates and phosphates from agricultural fertilizers induce eutrophication, causing explosive growth of algal blooms. When the dense algae die, aerobic decomposers multiply rapidly and consume dissolved oxygen (DO), creating hypoxic conditions and causing aquatic asphyxiation.",
     "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Excess nitrates and phosphates from agricultural fertilizers induce eutrophication, causing explosive growth of algal blooms. When the dense algae die, aerobic decomposers multiply rapidly and consume dissolved oxygen (DO), creating hypoxic conditions and causing aquatic asphyxiation."
+      },
       {
         "key": "B",
         "reason": "Atmospheric nitrogen remains essentially unchanged in water solubility."
@@ -1596,8 +1716,8 @@
     "unitName": "Environmental Chemistry I: Atmosphere",
     "chapter": "Environmental Chemistry I: Atmosphere",
     "slo": "14.2.1",
-    "current_slo": "14.2.1",
-    "cognitiveLevel": "Remembering",
+    "current_slo": "14.3.2",
+    "cognitiveLevel": "E",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1613,8 +1733,8 @@
     },
     "current_mapping": [
       {
-        "code": "14.2.1",
-        "description": "state the composition of clean air;",
+        "code": "14.3.2",
+        "description": "discuss the sources and effects of air pollutants (carbon dioxide, carbon monoxide, particulates, methane, oxides of nitrogen and sulphur dioxide) on the environment and human health;",
         "topic": "Environmental Chemistry I: Atmosphere"
       }
     ],
@@ -1639,6 +1759,10 @@
       {
         "key": "C",
         "reason": "While trace NOx can form at high flame temperatures, the acute fatal sleeping hazard is carbon monoxide."
+      },
+      {
+        "key": "D",
+        "reason": "In poorly ventilated or closed bedrooms, oxygen levels drop over time, causing natural gas (methane) to undergo incomplete combustion: 2CH4 + 3O2 \u2192 2CO + 4H2O. The resulting carbon monoxide (CO) is a silent, odorless, toxic gas that binds irreversibly to hemoglobin, causing asphyxiation and death."
       }
     ]
   },
@@ -1649,8 +1773,8 @@
     "unitName": "Environmental Chemistry I: Atmosphere",
     "chapter": "Environmental Chemistry I: Atmosphere",
     "slo": "14.3.1",
-    "current_slo": "14.3.1",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "14.3.4",
+    "cognitiveLevel": "E",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1666,8 +1790,8 @@
     },
     "current_mapping": [
       {
-        "code": "14.3.1",
-        "description": "classify major air pollutants into primary and secondary categories based on their sources and formation mechanism;",
+        "code": "14.3.4",
+        "description": "recommend strategies to control air pollution;",
         "topic": "Environmental Chemistry I: Atmosphere"
       }
     ],
@@ -1681,6 +1805,10 @@
     "correctOption": "A",
     "explanation": "Automotive emissions from millions of individual private motor vehicles are the leading source of urban air pollutants (CO, NOx, VOCs, particulate matter PM2.5). Shifting towards public transit and avoiding excessive private vehicular use drastically curbs air pollution.",
     "option_feedback": [
+      {
+        "key": "A",
+        "reason": "Automotive emissions from millions of individual private motor vehicles are the leading source of urban air pollutants (CO, NOx, VOCs, particulate matter PM2.5). Shifting towards public transit and avoiding excessive private vehicular use drastically curbs air pollution."
+      },
       {
         "key": "B",
         "reason": "Planting trees absorbs CO2 and produces oxygen; citizens should encourage afforestation, not avoid it."
@@ -1702,8 +1830,8 @@
     "unitName": "Environmental Chemistry I: Atmosphere",
     "chapter": "Environmental Chemistry I: Atmosphere",
     "slo": "14.1.1",
-    "current_slo": "14.1.1",
-    "cognitiveLevel": "Formative Assessment",
+    "current_slo": "14.1.2",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1719,8 +1847,8 @@
     },
     "current_mapping": [
       {
-        "code": "14.1.1",
-        "description": "define the term \u2018environmental chemistry\u2019;",
+        "code": "14.1.2",
+        "description": "differentiate among environmental spheres (lithosphere, hydrosphere, biosphere and atmosphere);",
         "topic": "Environmental Chemistry I: Atmosphere"
       }
     ],
@@ -1739,6 +1867,10 @@
         "reason": "The lithosphere encompasses the Earth's solid crust and rocks, not the ambient air."
       },
       {
+        "key": "B",
+        "reason": "Decomposers (bacteria, fungi) are living organisms belonging to the biosphere. When they respire and decompose organic matter, they liberate carbon dioxide directly into the surrounding air, which constitutes the atmosphere."
+      },
+      {
         "key": "C",
         "reason": "Decomposers are biological entities, so the interaction must include the biosphere."
       },
@@ -1755,8 +1887,8 @@
     "unitName": "Environmental Chemistry I: Atmosphere",
     "chapter": "Environmental Chemistry I: Atmosphere",
     "slo": "14.2.3",
-    "current_slo": "14.2.3",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "14.4.2",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1772,8 +1904,8 @@
     },
     "current_mapping": [
       {
-        "code": "14.2.3",
-        "description": "differentiate between stratosphere and troposphere;",
+        "code": "14.4.2",
+        "description": "relate the effects of acid rain to the properties of acids;",
         "topic": "Environmental Chemistry I: Atmosphere"
       }
     ],
@@ -1798,6 +1930,10 @@
       {
         "key": "C",
         "reason": "Ozone layer depletion is caused by chlorofluorocarbons (CFCs) and halons in the stratosphere."
+      },
+      {
+        "key": "D",
+        "reason": "Acid rain (pH < 5.6) acidifies rivers and freshwater lakes. The low pH leaches toxic aluminium ions (Al3+) from surrounding soil into aquatic systems, which clogs fish gills and disrupts their osmotic balance, leading to the mass death of aquatic life."
       }
     ]
   },
@@ -1808,8 +1944,8 @@
     "unitName": "Environmental Chemistry I: Atmosphere",
     "chapter": "Environmental Chemistry I: Atmosphere",
     "slo": "14.2.3",
-    "current_slo": "14.2.3",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "14.4.2",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1825,8 +1961,8 @@
     },
     "current_mapping": [
       {
-        "code": "14.2.3",
-        "description": "differentiate between stratosphere and troposphere;",
+        "code": "14.4.2",
+        "description": "relate the effects of acid rain to the properties of acids;",
         "topic": "Environmental Chemistry I: Atmosphere"
       }
     ],
@@ -1845,6 +1981,10 @@
         "reason": "Acid rain decreases soil pH, it does not increase it."
       },
       {
+        "key": "B",
+        "reason": "Acid rain adds hydrogen ions (H+) to the soil, which DECREASES soil pH (making it more acidic, so statement I is false). The acidity leaches and mobilizes toxic heavy metals such as aluminium (Al3+), lead (Pb2+), and mercury (Hg2+) from insoluble soil minerals into the soil solution (statement II is true). This acidity and metal toxicity harm or kill delicate soil microorganisms, decreasing their population (statement III is false). Thus, only statement II increases."
+      },
+      {
         "key": "C",
         "reason": "Both pH and microbial count decrease in acidic soils."
       },
@@ -1861,8 +2001,8 @@
     "unitName": "Chemical Industries",
     "chapter": "Chemical Industries",
     "slo": "16.1.1",
-    "current_slo": "16.1.1",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "16.4.1",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1878,8 +2018,8 @@
     },
     "current_mapping": [
       {
-        "code": "16.1.1",
-        "description": "relate the study of chemistry to careers in industry;",
+        "code": "16.4.1",
+        "description": "illustrate the production of ammonia through the Haber process including a flowchart diagram;",
         "topic": "Chemical Industries"
       }
     ],
@@ -1893,6 +2033,10 @@
     "correctOption": "A",
     "explanation": "The balanced thermochemical equation for the Haber synthesis of ammonia is: N2(g) + 3H2(g) \u21cb 2NH3(g) (\u0394H = -92 kJ/mol). Nitrogen and hydrogen combine in a stoichiometric volume/mole ratio of 1 : 3, and the overall reaction is exothermic (releases heat).",
     "option_feedback": [
+      {
+        "key": "A",
+        "reason": "The balanced thermochemical equation for the Haber synthesis of ammonia is: N2(g) + 3H2(g) \u21cb 2NH3(g) (\u0394H = -92 kJ/mol). Nitrogen and hydrogen combine in a stoichiometric volume/mole ratio of 1 : 3, and the overall reaction is exothermic (releases heat)."
+      },
       {
         "key": "B",
         "reason": "The stoichiometric mole ratio is 1:3, and the reaction is exothermic, not endothermic."
@@ -1914,8 +2058,8 @@
     "unitName": "Chemical Industries",
     "chapter": "Chemical Industries",
     "slo": "16.1.2",
-    "current_slo": "16.1.2",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "16.4.2",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1931,8 +2075,8 @@
     },
     "current_mapping": [
       {
-        "code": "16.1.2",
-        "description": "explain the following metallurgical operations:\na. crushing and grinding of the ore,\nb. concentration of the ore,\nc. extraction of the metal,\nd. purification and refining of the metal;",
+        "code": "16.4.2",
+        "description": "illustrate the manufacturing of urea including a flowchart diagram;",
         "topic": "Chemical Industries"
       }
     ],
@@ -1957,6 +2101,10 @@
       {
         "key": "C",
         "reason": "Molecular hydrogen gas is not released during urea manufacture."
+      },
+      {
+        "key": "D",
+        "reason": "In the industrial manufacturing of urea fertilizer, ammonia reacts with carbon dioxide under high pressure (~200 atm) and temperature (~180 \u00b0C) to form ammonium carbamate intermediate, which subsequently dehydrates to form urea and water: CO2 + 2NH3 \u2192 NH2COONH4 \u2192 (NH2)2CO + H2O."
       }
     ]
   },
@@ -1967,8 +2115,8 @@
     "unitName": "Chemical Industries",
     "chapter": "Chemical Industries",
     "slo": "16.2.1",
-    "current_slo": "16.2.1",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "16.2.4",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -1984,8 +2132,8 @@
     },
     "current_mapping": [
       {
-        "code": "16.2.1",
-        "description": "describe the extraction of iron from hematite ore in the blast furnace;",
+        "code": "16.2.4",
+        "description": "describe the extraction and refining of copper;",
         "topic": "Chemical Industries"
       }
     ],
@@ -2008,6 +2156,10 @@
         "reason": "FeO is the basic oxide impurity before it reacts with silica flux to form slag."
       },
       {
+        "key": "C",
+        "reason": "During copper smelting, iron(II) oxide (FeO) impurity reacts with added silica flux (sand, SiO2) in the reverberatory furnace to form molten iron(II) silicate slag: FeO(s) + SiO2(s) \u2192 FeSiO3(l). Slag is less dense than molten matte (Cu2S + FeS) and floats on top where it is skimmed off."
+      },
+      {
         "key": "D",
         "reason": "CuFeS2 is chalcopyrite (copper pyrite), the starting unrefined copper ore."
       }
@@ -2020,8 +2172,8 @@
     "unitName": "Chemical Industries",
     "chapter": "Chemical Industries",
     "slo": "16.1.3",
-    "current_slo": "16.1.3",
-    "cognitiveLevel": "Evaluation",
+    "current_slo": "16.3.3",
+    "cognitiveLevel": "A",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -2037,8 +2189,8 @@
     },
     "current_mapping": [
       {
-        "code": "16.1.3",
-        "description": "assess extraction methods based on the position of metals in the reactivity series such as:\na. electrolysis for the most reactive metals,\nb. reduction by carbon or hydrogen for moderately reactive metals,\nc. natural occurrence or heating for least reactive metals;",
+        "code": "16.3.3",
+        "description": "illustrate the basic reactions involved in the manufacturing of sodium carbonate through the Solvay process including a flowchart diagram;",
         "topic": "Chemical Industries"
       }
     ],
@@ -2061,6 +2213,10 @@
         "reason": "Limestone (CaCO3) is calcined in the kiln to generate lime (CaO) and CO2; it does not react directly with NH4Cl."
       },
       {
+        "key": "C",
+        "reason": "In the ammonia recovery tower of Solvay's process, ammonium chloride (NH4Cl solution obtained from the carbonation tower filtrate) is heated with milk of lime (slaked lime, Ca(OH)2): 2NH4Cl + Ca(OH)2 \u2192 CaCl2 + 2H2O + 2NH3\u2191. The recovered ammonia is recycled back into the process."
+      },
+      {
         "key": "D",
         "reason": "Sodium chloride and ammonium bicarbonate are the reactants in the carbonation tower."
       }
@@ -2073,8 +2229,8 @@
     "unitName": "Chemical Industries",
     "chapter": "Chemical Industries",
     "slo": "16.2.1",
-    "current_slo": "16.2.1",
-    "cognitiveLevel": "Understanding",
+    "current_slo": "16.1.2",
+    "cognitiveLevel": "U",
     "marks": 1,
     "isDiagram": false,
     "diagramBased": false,
@@ -2090,8 +2246,8 @@
     },
     "current_mapping": [
       {
-        "code": "16.2.1",
-        "description": "describe the extraction of iron from hematite ore in the blast furnace;",
+        "code": "16.1.2",
+        "description": "explain the following metallurgical operations:\na. crushing and grinding of the ore,\nb. concentration of the ore,\nc. extraction of the metal,\nd. purification and refining of the metal;",
         "topic": "Chemical Industries"
       }
     ],
@@ -2112,6 +2268,10 @@
       {
         "key": "B",
         "reason": "Oxides are not converted into sulphates during industrial copper extraction."
+      },
+      {
+        "key": "C",
+        "reason": "Roasting is the metallurgical process of heating concentrated sulphide ore (such as chalcopyrite, CuFeS2) in a regulated current of excess air below its melting point. This oxidizes metal sulphides into metal oxides (and iron sulphide) while liberating sulphur dioxide gas: 2CuFeS2 + O2 \u2192 Cu2S + 2FeS + SO2 and 2FeS + 3O2 \u2192 2FeO + 2SO2."
       },
       {
         "key": "D",

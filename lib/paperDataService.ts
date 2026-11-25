@@ -86,6 +86,13 @@ import { hsscPhysicsPapers } from '@/lib/hsscPhysicsResources';
 import { hsscXiAnnualPapers } from '@/lib/hsscXiAnnualPhysics';
 import { biologyXiAnnualPapers } from '@/lib/hsscXiAnnualBiology';
 import { physicsIx2026Papers } from '@/lib/physicsIx2026Papers';
+import { chemistryX2026Papers } from '@/lib/chemistryX2026';
+import { chemistryX2021 } from '@/lib/chemistryX2021';
+import { chemistryX2022 } from '@/lib/chemistryX2022';
+import { chemistryX2019, chemistryX2019PaperII } from '@/lib/chemistryX2019';
+import { chemistryX2018, chemistryX2018PaperII } from '@/lib/chemistryX2018';
+import { chemistryX2017, chemistryX2017PaperII } from '@/lib/chemistryX2017';
+import { chemistryXDuplicateKey } from '@/lib/combinedChemistryPaper';
 import { physicsIx2023Papers } from '@/lib/physicsIx2023Papers';
 import { physicsIx2019Papers } from '@/lib/physicsIx2019Papers';
 import { physicsIx2018Papers } from '@/lib/physicsIx2018Papers';
@@ -126,6 +133,7 @@ export interface QuestionData {
     out_of_syllabus?: boolean;
     syllabus_reviewed?: boolean;
     current_syllabus_reviewed?: boolean;
+    reviewed_duplicate_key?: string;
     mapping_scope?: { board: string; grade: number; subject: string };
     current_mapping?: Array<{ code: string; description: string; topic: string; grade?: number }>;
     emarkingExamples?: Array<{ part: string; better?: string; weaker?: string; solution: string; originalSlo?: string; pdf: string; level?: string; currentSlo?: { code: string; grade: number }; overall?: string; betterNotes?: string; weakerNotes?: string }>;
@@ -653,6 +661,11 @@ function chemistryQuestion(
   const qNum = String(item.questionNumber ?? item.questionNo ?? '');
   const subjectName = spec.subjectName || 'Chemistry';
   const unitName = item.unitName || item.chapter || `${subjectName} (Class ${spec.level === 9 ? 'IX' : 'X'})`;
+  const reviewedModel = /^CHM-(IX|X)-P[12]$/.test(spec.paperCode);
+  const mappingSource = reviewedModel ? {
+    mapping_review_source_sha256: chemistryMappingReview.syllabus.sha256,
+    mapping_review_source_url: chemistryMappingReview.syllabus.url,
+  } : {};
   const diagramUrl: string | undefined =
     item.diagramUrl ||
     resolveQuestionDiagram(spec.paperCode, qNum, item) ||
@@ -677,9 +690,18 @@ function chemistryQuestion(
       diagramBased: Boolean(diagramUrl || item.diagramBased),
       sourceRegion: {
         choices: item.options || {},
-        correct_answer: item.correctOption || item.correctAnswer || 'A',
+        correct_answer: item.correctOption || item.correctAnswer || (reviewedModel ? undefined : 'A'),
         explanation: item.explanation || '',
         option_feedback: item.option_feedback || item.optionFeedback || [],
+        ...(reviewedModel ? {
+          answer_origin: 'PROJECT_SOLVED',
+          accepted_options: item.accepted_options,
+          score_accepted_options: item.score_accepted_options,
+          answer_review_note: item.answer_review_note,
+          single_answer_review_required: item.single_answer_review_required,
+          reviewed_duplicate_key: chemistryXDuplicateKey(spec.paperCode, qNum),
+        } : {}),
+        ...mappingSource,
         slo: item.slo || sloCode,
         current_slo: sloCode || null,
         slo_text: sloText,
@@ -725,6 +747,8 @@ function chemistryQuestion(
         return { marks: Number(explicitMarks[1]), description: entry };
       }),
       model_answer: item.modelAnswer || item.model_answer || '',
+      ...(reviewedModel ? { model_answer_origin: 'RiseLearner' } : {}),
+      ...mappingSource,
       better_response: item.betterResponse || '',
       weaker_response: item.weakerResponse || '',
       overall_performance: item.overallPerformance || '',
@@ -790,7 +814,16 @@ function computeSpecPaper(code: string): PaperData | null {
   };
 }
 
+export const combinedChemistryXArchives = [chemistryX2017, chemistryX2018, chemistryX2019, chemistryX2021, chemistryX2022];
+
 function computeFallbackPaper(code: string): PaperData | null {
+  if (code === chemistryX2019PaperII.paperCode) return chemistryX2019PaperII;
+  if (code === chemistryX2018PaperII.paperCode) return chemistryX2018PaperII;
+  if (code === chemistryX2017PaperII.paperCode) return chemistryX2017PaperII;
+  const combinedChemistry = combinedChemistryXArchives.find(archive => archive.paper.paperCode === code);
+  if (combinedChemistry) return combinedChemistry.paper;
+  const chemistry2026 = chemistryX2026Papers.find(paper => paper.paperCode === code);
+  if (chemistry2026) return chemistry2026;
   const reviewedSscPhysics = [...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers].find(paper => paper.paperCode === code);
   if (reviewedSscPhysics) return reviewedSscPhysics;
   const hssc = [...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].find(paper => paper.paperCode === code);
@@ -3300,7 +3333,7 @@ export function getAllStandardPapers(): Array<{
   _count: { questions: number };
 }> {
   const basePapers = [
-    ...[...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers, ...allBiologyPapers, ...biologyXiAnnualPapers, ...reviewedMathematicsPapers, ...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].map(paper => ({
+    ...[...chemistryX2026Papers, chemistryX2019PaperII, chemistryX2018PaperII, chemistryX2017PaperII, ...combinedChemistryXArchives.map(archive => archive.paper), ...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers, ...allBiologyPapers, ...biologyXiAnnualPapers, ...reviewedMathematicsPapers, ...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].map(paper => ({
       id: paper.id, paperCode: paper.paperCode, title: paper.title,
       examSession: paper.examSession!, examYear: paper.examYear,
       fileUrl: paper.fileUrl!, academicClass: paper.academicClass,

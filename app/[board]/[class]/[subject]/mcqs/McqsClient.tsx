@@ -579,6 +579,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     });
     return { ...representative, __sources: sources };
   });
+  const quizQuestions = displayQuestions.filter(q => (q.sourceRegion || q).single_answer_review_required !== true);
 
   // Stable per-question key so selections survive search and cognitive filtering.
   const questionKey = (q: any) => `${q.paperCode || q.sourcePaperId || 'model'}-${q.rawQuestionNumber || q.questionNumber}`;
@@ -692,7 +693,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       : practiceSource === 'annual2017' ? '-2017'
       : '';
     const basePaper = `${subjPrefix}-${classDef.roman}${yearSuffix}-P1`;
-    const nums = [...new Set(displayQuestions.map((q: any) => Number(q.rawQuestionNumber || q.questionNumber)))].sort((a: number, b: number) => a - b);
+    const nums = [...new Set(quizQuestions.map((q: any) => Number(q.rawQuestionNumber || q.questionNumber)))].sort((a: number, b: number) => a - b);
     return `${basePaper}-SET-${nums.join('-')}`;
   })();
 
@@ -727,6 +728,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       stem: q.stem || q.questionText || '',
       options: q.options || q.choices || {},
       correct: correctKey,
+      unscored: qMeta.single_answer_review_required === true,
       correctOptions: qMeta.score_accepted_options === true ? paperScoringAnswers(qMeta, paperChoices(q.options || q.choices)) : undefined,
       solution: qMeta.explanation || q.explanation || qMeta.better_response || qMeta.model_answer || (correctKey ? `Answer key: ${correctKey}.` : 'A reviewed answer key is not available for this question.'),
       optionFeedback: qMeta.option_feedback,
@@ -952,7 +954,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
         onClose={() => setQuizModalOpen(false)}
         paperTitle={practiceTitle}
         paperCode={activeQuizCode}
-        questions={displayQuestions}
+        questions={quizQuestions}
       />
     </div>
   );

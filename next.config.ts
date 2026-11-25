@@ -21,6 +21,11 @@ const config: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/akueb/:grade(IX|X)/mathematics-science-group/:path*',
+        destination: '/akueb/:grade/mathematics/:path*',
+        permanent: true,
+      },
+      {
         source: `${physicsUnit17Resource.chapterHref}/mcqs/chapter-wise/${physicsUnit17Resource.unit}`,
         destination: physicsUnit17Resource.mcqsHref,
         permanent: true,

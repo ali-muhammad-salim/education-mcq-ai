@@ -15,6 +15,7 @@ export interface PracticeItem {
   options: Record<string, string>;
   correct?: string;
   correctOptions?: string[];
+  unscored?: boolean;
   revealInPreview?: boolean;
   solution: string;
   optionFeedback?: unknown;
@@ -340,6 +341,7 @@ export default function McqPracticeSheet({
                   fontFamily: 'system-ui, -apple-system, sans-serif'
                 }}>
                   {item.meta}
+                  {item.unscored && <span>Unscored</span>}
                 </div>
 
                 {item.diagram && (
@@ -364,7 +366,7 @@ export default function McqPracticeSheet({
 
                 {/* Options — selectable in Practice Mode, paper layout otherwise */}
                 <div style={{ marginLeft: '2.5rem', marginBottom: '1rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  {interactiveMode ? (
+                  {interactiveMode && !item.unscored ? (
                     <div style={{ display: 'grid', gridTemplateColumns: Object.values(optionsObj).some(value => /^\s*\|/m.test(String(value))) ? 'minmax(0, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '0.65rem' }}>
                       {['A', 'B', 'C', 'D'].map(optKey => {
                         const optText = optionsObj[optKey];
@@ -445,7 +447,7 @@ export default function McqPracticeSheet({
                     </div>
                   )}
 
-                  {interactiveMode && (
+                  {interactiveMode && !item.unscored && (
                     <div style={{ marginTop: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                       {!isChecked ? (
                         <button
@@ -508,7 +510,7 @@ export default function McqPracticeSheet({
                           padding: '2px 8px',
                           borderRadius: '4px'
                         }}>
-                          Answer sheet: {correctKey || 'Review pending'}
+                          Answer sheet: {correctKey || (item.unscored ? 'No valid option' : 'Review pending')}
                         </span>
                       </div>
                       <div style={{ fontSize: '0.92rem', lineHeight: 1.6 }}>
