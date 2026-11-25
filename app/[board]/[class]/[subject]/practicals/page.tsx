@@ -1,6 +1,8 @@
 import { hsscComputerScienceResources } from "@/lib/hsscComputerScienceResources";
 import { hsscComputerScienceSyllabus } from "@/lib/hsscComputerScienceSyllabus";
 import { hsscBiologyPractical } from "@/lib/hsscBiologyPractical";
+import { sscBiologySyllabus } from "@/lib/sscBiologySyllabus";
+import { physicsSyllabusSections } from "@/lib/physicsSyllabusSections";
 import BiologyPracticalPaper, { biologyPracticalInstructions } from "@/components/BiologyPracticalPaper";
 import StructuredContent from '@/components/StructuredContent';
 import { notFound } from "next/navigation";
@@ -34,10 +36,13 @@ export default async function Page({
   const computerScience = hsscComputerScienceResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const senior = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const seniorBiology = hsscBiologyPractical(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const syllabusPracticals = sscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug) ?? (scope.classDef.level === 10
+    ? physicsSyllabusSections(scope.board.id, scope.classDef.level, scope.meta.slug)
+    : null);
   const view = (await searchParams)?.view === 'original' ? 'original' : undefined;
   const readerScope = { subject: scope.meta.title, subjectCode: scope.meta.code, grade: scope.classDef.level, roman: scope.classDef.roman };
   const documents = await subjectMaterials(raw.board, raw.class, raw.subject, 'practical_paper').catch(error => {
-    if ((hssc || seniorBiology) && error.name === "PrismaClientInitializationError") return [];
+    if ((hssc || seniorBiology || syllabusPracticals) && error.name === "PrismaClientInitializationError") return [];
     throw error;
   });
   const isPhysicsIX =
@@ -113,7 +118,7 @@ export default async function Page({
           </div>
         </PracticalPaperReader>
       )}
-      {(hssc || seniorBiology) && documents.length > 0 && (
+      {(hssc || seniorBiology || syllabusPracticals) && documents.length > 0 && (
         <MaterialList items={documents.map(doc => ({ label: doc.metadata.title || 'Practical paper', href: '/materials/' + doc.id }))} />
       )}
       {seniorBiology ? (
@@ -127,6 +132,12 @@ export default async function Page({
             <BiologyPracticalPaper paper={seniorBiology} />
           </PracticalPaperReader>
         </>
+      ) : syllabusPracticals ? (
+        <div className={styles.digital}>
+          <h2>Official syllabus practical activities</h2>
+          <p>Paper III is assessed separately and carries {syllabusPracticals.paperIII} marks.</p>
+          <p><a href={syllabusPracticals.original + '#page=' + syllabusPracticals.practicalPage}>Open the Class {scope.classDef.roman} practical activities (PDF)</a></p>
+        </div>
       ) : hssc ? (
         <div className={styles.digital}>
           <h2>Official syllabus practical activities</h2>

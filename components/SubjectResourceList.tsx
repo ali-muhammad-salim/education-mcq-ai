@@ -18,10 +18,9 @@ import MaterialList, { type MaterialItem } from "./MaterialList";
 import DocumentViews from "./DocumentViews";
 import styles from "./MaterialLayout.module.css";
 import { studyScope } from "@/services/study/navigation";
-import { subjectMaterials } from "@/services/materials/catalog";
-import { getAllStandardPapers, getFallbackPaper } from "@/lib/paperDataService";
+import { subjectMaterials, subjectPaperListings } from "@/services/materials/catalog";
+import { combinedChemistryXArchives, getFallbackPaper } from "@/lib/paperDataService";
 import prisma from "@/lib/prisma";
-import {publicMaterialWhere} from '@/lib/materialVisibility';
 import { physics2025Resources, physicsX2025Resources, cs2025Resources, csX2025Resources, chem2025Resources, chemXResources } from '@/lib/legacyPaperEvidence';
 import chemRg9 from '@/data/chemistry/ssc1_resource_guide.json';
 import chemRg10 from '@/data/chemistry/ssc2_resource_guide.json';
@@ -34,6 +33,13 @@ import { hsscBiologyModelPapers } from '@/lib/hsscBiologyModelPapers';
 import { hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
 import { computerScienceXi2025Resources } from '@/lib/hsscXiAnnualComputerScience';
 import { biologyXiAnnualArchives } from '@/lib/hsscXiAnnualBiology';
+import { biologyIx2026Notes } from '@/lib/biologyIx2026';
+import { chemistryX2026Notes } from '@/lib/chemistryX2026';
+import { chemistryX2019Notes } from '@/lib/chemistryX2019';
+import { chemistryX2018Notes } from '@/lib/chemistryX2018';
+import { chemistryX2017Notes } from '@/lib/chemistryX2017';
+import { biologyIx2021Tabs } from '@/lib/biologyIx2021';
+import { biologyIxAnnualArchives } from '@/lib/biologyPapers';
 import { biology2022Archive, biology2024Archive, biologyX2017Archive, biologyX2018Archive, biologyX2019Archive, biologyX2021Archive, biologyX2022Archive, biologyX2023Archive, biologyX2024Archive, biologyX2025Archive } from '@/lib/biology2024Resources';
 
 export default async function SubjectResourceList({
@@ -71,7 +77,7 @@ export default async function SubjectResourceList({
     type==='past_paper'?['past_paper','answer_key','e_marking']:type,
     after,
   ).catch(error => {
-    if ((hssc || computerScience || biologyPractical || biologyXiAnnual || physicsIxAnnual) && error.name === "PrismaClientInitializationError") return [];
+    if ((hssc || computerScience || (biology && type !== "textbook") || physicsIxAnnual) && error.name === "PrismaClientInitializationError") return [];
     throw error;
   });
   const items: MaterialItem[] = documents
@@ -97,15 +103,19 @@ export default async function SubjectResourceList({
     scope.board.id === "akueb" &&
     scope.meta.slug === "physics" &&
     [9, 10].includes(scope.classDef.level);
-  const hasStandardPapers =
-    legacy || Boolean(hssc) ||
-    (scope.board.id === "akueb" &&
-      ["computer-science", "chemistry", "mathematics", "biology"].includes(scope.meta.slug) &&
-      [9, 10].includes(scope.classDef.level));
+  const ssc = scope.board.id === 'akueb' && [9, 10].includes(scope.classDef.level);
+  const sscChemistry = ssc && scope.meta.slug === 'chemistry';
+  const sscPracticals = ssc && (
+    ['biology', 'chemistry', 'computer-science'].includes(scope.meta.slug) ||
+    (legacy && scope.classDef.level === 9)
+  );
   if (legacy && scope.classDef.level === 9 && type === "past_paper" && !after) items.push(...physicsIx2023References, physicsIx2022Key, physicsIx2021Key, ...physicsIx2019References, ...physicsIx2018References, ...physicsIx2017References);
   if (legacy && type==='past_paper' && !after) items.push(...(scope.classDef.level===9 ? physics2025Resources : physicsX2025Resources));
   if (hssc?.grade === 11 && type === "past_paper" && !after) items.push(...hsscXiAnnualResources);
   if (biologyXiAnnual && !after) items.push(...biologyXiAnnualArchives.flatMap(archive => archive.resources));
+  if (biology && scope.classDef.level === 9 && type === 'past_paper' && !after) {
+    items.push(biologyIx2026Notes, biologyIx2021Tabs[1], ...biologyIxAnnualArchives.flatMap(archive => archive.tabs.slice(2)));
+  }
   if (scope.board.id === 'akueb' && scope.meta.slug === 'computer-science' && scope.classDef.level === 11 && type === 'past_paper' && !after) {
     items.push(...computerScienceXi2025Resources);
   }
@@ -114,58 +124,17 @@ export default async function SubjectResourceList({
   }
   if (scope.board.id === 'akueb' && scope.meta.slug === 'chemistry' && [9, 10].includes(scope.classDef.level) && type === 'past_paper' && !after) {
     items.push(...(scope.classDef.level === 9 ? chem2025Resources : chemXResources));
+    if (scope.classDef.level === 10) items.push(chemistryX2026Notes, chemistryX2019Notes, chemistryX2018Notes, chemistryX2017Notes, ...combinedChemistryXArchives.map(archive => archive.tabs[1]));
   }
   if (type !== "textbook" && !after) {
-    const stored = await prisma.pastPaper.findMany({
-      where: {
-        academicClass: {
-          level: scope.classDef.level,
-          programme: {
-            board: {
-              shortCode: { equals: scope.board.shortCode, mode: "insensitive" },
-            },
-          },
-        },
-        subject: { name: { equals: scope.meta.title, mode: "insensitive" } },
-        examType: type === "model_paper" ? "MODEL_EXAM" : "ANNUAL",
-        OR:[{sourceDocumentId:null},{sourceDocument:publicMaterialWhere}],
-      },
-      select: {
-        id: true,
-        paperCode: true,
-        title: true,
-        fileUrl: true,
-        examYear:true,
-        sourceDocument:{select:{catalogMetadata:true}},
-        _count: { select: { questions: true } },
-      },
-      orderBy: { examYear: "desc" },
-      take: 100,
-    }).catch(error => {
-      if ((hssc || computerScience || biologyPractical || biologyXiAnnual || physicsIxAnnual) && error.name === "PrismaClientInitializationError") return [];
-      throw error;
-    });
+    const papers = await subjectPaperListings(scope, type === "model_paper" ? "MODEL_EXAM" : "ANNUAL", scope.board.id === 'akueb');
     const seen = new Set<string>();
-    const listed=new Set(items.map(i=>i.href));
-    for (const paper of [
-      ...stored.filter(p=>!p.sourceDocument||(p.sourceDocument.catalogMetadata as Record<string,unknown>|null)?.compiledPaperId===p.id),
-      ...(hasStandardPapers
-        ? getAllStandardPapers().filter(
-            (p) =>
-              p.academicClass?.level === scope.classDef.level &&
-              (p.subject?.name || "").toLowerCase() === scope.meta.title.toLowerCase() &&
-              (type === "model_paper"
-                ? /MODEL/i.test(p.examSession || "")
-                : !/MODEL/i.test(p.examSession || "")),
-          )
-        : []),
-    ]) {
+    const listed = new Set(items.map(item => item.href));
+    for (const paper of papers) {
       const code = paper.paperCode || paper.id;
-      if (/CHAP1-2/i.test(code) || /Chapters\s*1\s*&\s*2/i.test(paper.title || "")) continue;
       if (seen.has(code)) continue;
       if(listed.has('/past-papers/'+encodeURIComponent(code)))continue;
       seen.add(code);
-      if (!paper.fileUrl && !paper._count.questions) continue;
       items.push({
         label: paperLabel(paper.paperCode,paper.title),
         href: "/past-papers/" + encodeURIComponent(code),
@@ -174,9 +143,7 @@ export default async function SubjectResourceList({
     }
     if (
       type === "model_paper" &&
-      hasStandardPapers &&
-      (hssc || scope.classDef.level === 9 || ["computer-science", "chemistry"].includes(scope.meta.slug)) &&
-      !after
+      (hssc || sscPracticals)
     )
       items.push({
         label: "Practical paper",
@@ -187,8 +154,7 @@ export default async function SubjectResourceList({
       { label: "Teaching & learning resource guide", href: hssc.base + "/books?view=guide" },
       { label: "28-week pacing guide", href: hssc.base + "/books?view=pacing" },
     );
-  } else if ((legacy || (scope.board.id === "akueb" && scope.meta.slug === "chemistry")) && !after) {
-    const isChem = scope.meta.slug === "chemistry";
+  } else if ((legacy || sscChemistry) && !after) {
     items.push(
       {
         label: "Resources guide",
@@ -196,7 +162,7 @@ export default async function SubjectResourceList({
       },
       {
         label: "28-week pacing guide",
-        href: isChem
+        href: sscChemistry
           ? (scope.classDef.level === 9 ? "/resources/chemistry-ix-pacing-guide" : "/resources/chemistry-x-pacing-guide")
           : (scope.classDef.level === 9 ? "/resources/physics-ix-pacing-guide" : "/resources/physics-x-pacing-guide"),
       }
@@ -273,7 +239,7 @@ export default async function SubjectResourceList({
             <p><a href={(pacing ? hssc.pacing : hssc.guide) + "#page=" + (pacing ? 1 : hssc.guidePage)} target="_blank" rel="noreferrer">Open the official Class {hssc.roman} guide</a></p>
           </div>
         </DocumentViews>
-      ) : guide && (legacy || scope.meta.slug === "chemistry") ? (
+      ) : type === "textbook" && guide && (legacy || sscChemistry) ? (
         <DocumentViews
           title="Resources guide"
           original={

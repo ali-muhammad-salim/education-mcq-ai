@@ -38,6 +38,9 @@ function questionKey(question: Question) {
   const stem = compareText(question.stemText || question.stem || question.questionText || question.problem || '');
   if (!stem) return undefined;
   const region = paperMetadata(question.sourceRegion);
+  if (region.current_syllabus_reviewed === true && typeof region.reviewed_duplicate_key === 'string' && region.reviewed_duplicate_key) {
+    return JSON.stringify(['reviewed-cross-paper', region.reviewed_duplicate_key]);
+  }
   const raw = question.options ?? question.choices ?? region.choices ?? region.options;
   const values: unknown[] = Array.isArray(raw) ? raw : raw && typeof raw === 'object' ? Object.values(raw) : [];
   const options = values.map(value => {

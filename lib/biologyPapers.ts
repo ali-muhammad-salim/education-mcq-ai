@@ -1,4 +1,9 @@
 import { biology2025Papers } from './biology2025';
+import { biologyIx2026Papers } from './biologyIx2026';
+import { biologyIx2021Paper } from './biologyIx2021';
+import { biologyIx2019 } from './biologyIx2019';
+import { biologyIx2018 } from './biologyIx2018';
+import { biologyIx2017 } from './biologyIx2017';
 import { biology2023Papers } from './biology2023';
 import { biologyX2024Papers } from './biologyX2024';
 import { biologyX2019Papers } from './biologyX2019';
@@ -30,7 +35,12 @@ export {
   manifestX2021,
 };
 
+export const biologyIxAnnualArchives = [biologyIx2017, biologyIx2018, biologyIx2019];
+
 export const reviewedBiologyPapers = [
+  ...biologyIx2026Papers,
+  biologyIx2021Paper,
+  ...biologyIxAnnualArchives.flatMap(archive => archive.papers),
   ...biology2025Papers,
   ...biology2023Papers,
   ...biologyX2024Papers,
