@@ -1325,7 +1325,7 @@ export default function Navbar() {
         onSuccess={(user) => {
           setAuthUser(user);
           if (window.location.pathname.startsWith('/dashboard')) {
-            window.location.href = user.role === 'STUDENT' ? '/dashboard/student' : '/dashboard/teacher';
+            window.location.href = '/dashboard';
           }
         }}
       />

@@ -1,4 +1,5 @@
 import syllabus from '@/data/physics/ssc1_exact_syllabus.json';
+import syllabusX from '@/data/physics/ssc2_exact_syllabus.json';
 import type { QuestionData } from '@/lib/paperDataService';
 
 interface AnnualMcq {
@@ -17,21 +18,28 @@ interface AnnualMcq {
   diagram?: boolean;
   optionDiagrams?: boolean;
   assessmentSection?: string;
+  pageNumber?: number;
+  mappingReason?: string;
+  reviewedDuplicateKey?: string;
 }
 
 const choices = ['A', 'B', 'C', 'D'];
 const outcomes = new Map(syllabus.flatMap(unit => unit.subtopics.flatMap(topic => topic.slos.map(outcome => [
   outcome.code, { description: outcome.description, topic: unit.name, unit: unit.unitNumber },
 ] as const))));
+const outcomesX = new Map(syllabusX.flatMap(unit => unit.subtopics.flatMap(topic => topic.slos.map(outcome => [
+  outcome.code, { description: outcome.description, topic: unit.name, unit: unit.unitNumber },
+] as const))));
 
-export function physicsIxSyllabusMapping(code: string | null) {
-  const scope = { board: 'AKU-EB', grade: 9, subject: 'Physics' };
+export function physicsIxSyllabusMapping(code: string | null, grade: 9 | 10 = 9) {
+  const scope = { board: 'AKU-EB', grade, subject: 'Physics' };
   const reviewed = { current_syllabus_reviewed: true, mapping_scope: scope };
   if (!code) {
     return { sourceRegion: { ...reviewed, current_slo: null, out_of_syllabus: true, mapping_status: 'NO_DIRECT_OUTCOME' } };
   }
 
-  const outcome = outcomes.get(code)!;
+  const outcome = (grade === 10 ? outcomesX : outcomes).get(code);
+  if (!outcome) throw new Error('Unknown Class ' + grade + ' Physics SLO ' + code);
   return {
     topics: [{ topic: { name: outcome.topic, topicNumber: outcome.unit } }],
     sourceRegion: {
@@ -41,7 +49,7 @@ export function physicsIxSyllabusMapping(code: string | null) {
   };
 }
 
-export function physicsIxAnnualMcqs(rows: AnnualMcq[], paperCode: string, keyHref: string): QuestionData[] {
+export function physicsIxAnnualMcqs(rows: AnnualMcq[], paperCode: string, keyHref: string, grade: 9 | 10 = 9): QuestionData[] {
   const crop = (suffix: string | number) => '/paper-crops/' + paperCode + '/question-' + suffix + '.webp';
   return rows.map((row, index) => {
     const number = index + 1;
@@ -55,7 +63,7 @@ export function physicsIxAnnualMcqs(rows: AnnualMcq[], paperCode: string, keyHre
       '| --- | ' + headings.map(() => '---').join(' | ') + ' |',
       ...row.options.map((option, i) => '| ' + choices[i] + ' | ' + option.split(' · ').join(' | ') + ' |'),
     ].join('\n') : undefined;
-    const syllabusMapping = physicsIxSyllabusMapping(row.slo);
+    const syllabusMapping = physicsIxSyllabusMapping(row.slo, grade);
     return {
       ...syllabusMapping, id: paperCode + '-q' + number, questionNumber: String(number),
       questionText: table ? row.stem + '\n\n' + table : row.stem,
@@ -75,6 +83,9 @@ export function physicsIxAnnualMcqs(rows: AnnualMcq[], paperCode: string, keyHre
         original_reference_verified: true, original_reference_source: keyHref,
         diagramUrl: row.diagram ? crop(number) : undefined,
         assessmentSection: row.assessmentSection,
+        pageNumber: row.pageNumber,
+        mapping_reason: row.mappingReason,
+        reviewed_duplicate_key: row.reviewedDuplicateKey,
       },
     };
   });

@@ -15,11 +15,13 @@ import mathIX from "@/data/mathematics/ssc1_exact_syllabus.json";
 import mathX from "@/data/mathematics/ssc2_exact_syllabus.json";
 import SyllabusClient from "./SyllabusClient";
 import {publishedCurriculum} from '@/services/materials/curriculum';
+import { isBundledMathematics, mathematicsStoreUnavailable } from '@/services/materials/mathematicsAvailability';
 import { hsscComputerScienceSyllabus, hsscComputerScienceSections } from "@/lib/hsscComputerScienceSyllabus";
 import { hsscPhysicsSyllabus } from "@/lib/hsscPhysicsSyllabus";
 import { physicsSyllabusSections } from "@/lib/physicsSyllabusSections";
 import { hsscBiologySyllabus } from "@/lib/hsscBiologySyllabus";
 import { sscBiologySyllabus } from "@/lib/sscBiologySyllabus";
+import { sscChemistryIxSections } from "@/lib/sscChemistrySyllabus";
 export const dynamic = "force-dynamic";
 export default async function Page({
   params,
@@ -33,7 +35,9 @@ export default async function Page({
   const computerScience = hsscComputerScienceSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const biology = sscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const seniorBiology = hsscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const isMathematics = isBundledMathematics(scope.board.id, scope.classDef.level, scope.meta.slug);
   const compiled = await publishedCurriculum(scope.board.shortCode,scope.classDef.level,scope.meta.title, seniorBiology?.id).catch(error => {
+    if (isMathematics && mathematicsStoreUnavailable(error)) return null;
     if ((hssc || biology || seniorBiology || computerScience) && error.name === "PrismaClientInitializationError") return null;
     throw error;
   });
@@ -43,6 +47,7 @@ export default async function Page({
     raw.subject,
     "syllabus",
   ).catch(error => {
+    if (isMathematics && mathematicsStoreUnavailable(error)) return [];
     if ((hssc || biology || seniorBiology || computerScience) && error.name === "PrismaClientInitializationError") return [];
     throw error;
   });
@@ -58,11 +63,8 @@ export default async function Page({
     scope.board.id === "akueb" &&
     scope.meta.slug === "chemistry" &&
     [9, 10].includes(scope.classDef.level);
-  const isMathematics =
-    scope.board.id === "akueb" &&
-    scope.meta.slug === "mathematics" &&
-    [9, 10].includes(scope.classDef.level);
   const legacy = isPhysics || isComputerScience || isChemistry || isMathematics;
+  const chemistry = isChemistry && scope.classDef.level === 9 ? sscChemistryIxSections : null;
 
   const defaultOriginalPdf = isComputerScience
     ? `/materials/ssc/computer-science/ssc-${scope.classDef.level === 9 ? '1' : '2'}/computer-science-ssc-full-syllabus-2025.pdf`
@@ -78,7 +80,7 @@ export default async function Page({
       : '/materials/ssc/computer-science/ssc-2/computer-science-ssc-ii-syllabus-grade-10-dedicated.pdf')
     : isChemistry
       ? (scope.classDef.level === 9
-        ? '/materials/ssc/chemistry/ssc-1/chemistry-ssc-i-syllabus-grade-9-dedicated.pdf'
+        ? sscChemistryIxSections.original
         : '/materials/ssc/chemistry/ssc-2/chemistry-ssc-ii-syllabus-grade-10-dedicated.pdf')
       : isMathematics
         ? `/materials/ssc/mathematics/ssc-${scope.classDef.level === 9 ? '1' : '2'}/mathematics-science-group-ssc-syllabus-2025.pdf`
@@ -130,6 +132,7 @@ export default async function Page({
             computerScienceSections={hsscComputerScienceSections(scope.board.id, scope.classDef.level, scope.meta.slug)}
             seniorBiologySections={seniorBiology && (!compiled || compiled.id === seniorBiology.id) ? seniorBiology : null}
             biologySections={compiled ? null : biology}
+            chemistrySections={chemistry && (!compiled || compiled.original === chemistry.original) ? chemistry : null}
             physicsSections={!compiled ? physicsSyllabusSections(scope.board.id, scope.classDef.level, scope.meta.slug) : null}
           />
         </DocumentViews>

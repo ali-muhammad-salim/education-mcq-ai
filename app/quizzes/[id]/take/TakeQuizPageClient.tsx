@@ -17,8 +17,7 @@ export default function TakeQuizPageClient({ paperTitle, paperCode, questions, r
 
   const handleClose = () => {
     setIsOpen(false);
-    const sourceCode=paperCode.replace(/-SET-[0-9-]+$/,'');
-    router.push(returnHref || (sourceCode.startsWith('PHY-') ? `/past-papers/${sourceCode}` : '/quizzes'));
+    router.push(returnHref || '/quizzes');
   };
 
   return (

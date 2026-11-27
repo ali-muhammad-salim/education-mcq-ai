@@ -6,7 +6,45 @@ import { ApiError } from "@/lib/api";
 import { studyScope } from "@/services/study/navigation";
 import { getSubjectMeta } from "@/lib/subjectMetadata";
 import { materialResourceTypes } from '@/lib/materialTypes';
+import { getAllStandardPapers } from '@/lib/paperDataService';
+import { isBundledMathematics, mathematicsStoreUnavailable } from './mathematicsAvailability';
 export const materialScopeWhere=(ids:string[]):Prisma.KnowledgeDocumentWhereInput=>({OR:[{subjectId:{in:ids}},...ids.map(id=>({catalogMetadata:{path:['scopeSubjectIds'],array_contains:[id]}}))]});
+
+export async function subjectPaperListings(
+  scope: NonNullable<ReturnType<typeof studyScope>>,
+  examType: 'MODEL_EXAM' | 'ANNUAL',
+  includeStandard: boolean,
+) {
+  const stored = await prisma.pastPaper.findMany({
+    where: {
+      academicClass: { level: scope.classDef.level, programme: { board: { shortCode: { equals: scope.board.shortCode, mode: 'insensitive' } } } },
+      subject: { name: { equals: scope.meta.title, mode: 'insensitive' } },
+      examType,
+      OR: [{ sourceDocumentId: null }, { sourceDocument: publicMaterialWhere }],
+    },
+    select: {
+      id: true, paperCode: true, title: true, fileUrl: true, examYear: true,
+      sourceDocument: { select: { catalogMetadata: true } },
+      _count: { select: { questions: true } },
+    },
+    orderBy: { examYear: 'desc' },
+    take: 100,
+  }).catch(error => {
+    if (includeStandard && isBundledMathematics(scope.board.id, scope.classDef.level, scope.meta.slug) && mathematicsStoreUnavailable(error)) return [];
+    if (includeStandard && error.name === 'PrismaClientInitializationError') return [];
+    throw error;
+  });
+  const standard = includeStandard ? getAllStandardPapers().filter(paper =>
+    paper.academicClass.level === scope.classDef.level &&
+    paper.subject.name.toLowerCase() === scope.meta.title.toLowerCase() &&
+    /MODEL/i.test(paper.examSession || '') === (examType === 'MODEL_EXAM'),
+  ) : [];
+  return [
+    ...stored.filter(paper => !paper.sourceDocument || (paper.sourceDocument.catalogMetadata as Record<string, unknown> | null)?.compiledPaperId === paper.id),
+    ...standard,
+  ].filter(paper => (paper.fileUrl || paper._count.questions) &&
+    !/CHAP1-2/i.test(paper.paperCode || paper.id) && !/Chapters\s*1\s*&\s*2/i.test(paper.title || ''));
+}
 
 export const materialMetadata = z.object({
   title: z.string().max(240).optional(),

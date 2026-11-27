@@ -15,6 +15,7 @@ import type { hsscComputerScienceSections } from "@/lib/hsscComputerScienceSylla
 import type { physicsSyllabusSections } from '@/lib/physicsSyllabusSections';
 import type { sscBiologySyllabus } from '@/lib/sscBiologySyllabus';
 import type { hsscBiologySyllabus } from '@/lib/hsscBiologySyllabus';
+import type { sscChemistryIxSections } from '@/lib/sscChemistrySyllabus';
 import styles from './SyllabusClient.module.css';
 
 interface Props {
@@ -28,6 +29,7 @@ interface Props {
   computerScienceSections?: ReturnType<typeof hsscComputerScienceSections>;
   biologySections?: ReturnType<typeof sscBiologySyllabus>;
   seniorBiologySections?: ReturnType<typeof hsscBiologySyllabus>;
+  chemistrySections?: typeof sscChemistryIxSections | null;
 }
 
 function outcomeAnchor(subject: string, grade: number, slo: { code: string; cognitiveLevel: string }) {
@@ -35,9 +37,9 @@ function outcomeAnchor(subject: string, grade: number, slo: { code: string; cogn
     ? '16.2.4-U' : slo.code;
 }
 
-export default function SyllabusClient({ board, classDef, meta, baseUrl, units, originalUrl, physicsSections, biologySections, seniorBiologySections, computerScienceSections }: Props) {
-  const sections = physicsSections ?? biologySections ?? seniorBiologySections ?? computerScienceSections;
-  const practicals = seniorBiologySections?.practicals ?? physicsSections?.practicals ?? computerScienceSections?.practicals;
+export default function SyllabusClient({ board, classDef, meta, baseUrl, units, originalUrl, physicsSections, biologySections, seniorBiologySections, computerScienceSections, chemistrySections }: Props) {
+  const sections = physicsSections ?? biologySections ?? seniorBiologySections ?? computerScienceSections ?? chemistrySections;
+  const practicals = seniorBiologySections?.practicals ?? physicsSections?.practicals ?? computerScienceSections?.practicals ?? chemistrySections?.practicals;
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedUnit, setSelectedUnit] = useState<number | 'all'>('all');
   const [cognitiveFilter, setCognitiveFilter] = useState<'all' | 'R' | 'U' | 'A' | 'An' | 'E' | 'C' | 'FA'>('all');

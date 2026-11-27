@@ -71,6 +71,13 @@ import pacing10 from '@/data/physics/ssc2_pacing.json';
 import chemPacing9 from '@/data/chemistry/ssc1_pacing.json';
 import chemPacing10 from '@/data/chemistry/ssc2_pacing.json';
 import styles from '@/components/MaterialLayout.module.css';
+import { physicsX2017AnswerKey, physicsX2017Marking, physicsX2017Papers, physicsX2017References, physicsX2017Tabs } from '@/lib/physicsX2017Papers';
+import { physicsX2018AnswerKey, physicsX2018Marking, physicsX2018Papers, physicsX2018References, physicsX2018Tabs } from '@/lib/physicsX2018Papers';
+import { physicsX2019AnswerKey, physicsX2019Marking, physicsX2019Papers, physicsX2019References, physicsX2019Tabs } from '@/lib/physicsX2019Papers';
+import { physicsX2021AnswerKey, physicsX2021Key, physicsX2021Paper, physicsX2021Tabs } from '@/lib/physicsX2021Paper';
+import { physicsX2022AnswerKey, physicsX2022Key, physicsX2022Paper, physicsX2022Tabs } from '@/lib/physicsX2022Paper';
+import { physicsX2023AnswerKey, physicsX2023Marking, physicsX2023Papers, physicsX2023References, physicsX2023Tabs } from '@/lib/physicsX2023Papers';
+import { physicsX2024AnswerKey, physicsX2024Marking, physicsX2024Papers, physicsX2024References, physicsX2024Tabs } from '@/lib/physicsX2024Papers';
 import { physicsIx2023AnswerKey, physicsIx2023Marking, physicsIx2023References, physicsIx2023Tabs } from '@/lib/physicsIx2023Papers';
 import { physicsIx2019AnswerKey, physicsIx2019Marking, physicsIx2019Papers, physicsIx2019References, physicsIx2019Tabs } from '@/lib/physicsIx2019Papers';
 import { physicsIx2018AnswerKey, physicsIx2018Marking, physicsIx2018Papers, physicsIx2018References, physicsIx2018Tabs } from '@/lib/physicsIx2018Papers';
@@ -83,8 +90,24 @@ import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-rev
 import StructuredContent from '@/components/StructuredContent';
 import { hsscXiAnnualPapers, hsscXiAnnualResources } from '@/lib/hsscXiAnnualPhysics';
 import { biologyXi2021AnswerReview, biologyXi2022VerificationReport, biologyXiAnnualArchives } from '@/lib/hsscXiAnnualBiology';
-import { getFallbackPaper } from '@/lib/paperDataService';
-import { paperChoices, paperMetadata, paperScoringAnswers, safeDocumentUrl } from '@/lib/paperPresentation';
+import { biologyIx2026Notes, biologyIx2026ResponseImage, biologyIx2026Tabs } from '@/lib/biologyIx2026';
+import { biologyIx2021Key, biologyIx2021Tabs } from '@/lib/biologyIx2021';
+import { biologyIxAnnualArchives } from '@/lib/biologyPapers';
+import { biologyIx2026Written } from '@/lib/biologyIx2026Written';
+import { chemistryX2026Notes, chemistryX2026ResponseImage, chemistryX2026Tabs } from '@/lib/chemistryX2026';
+import { chemistryX2026Written } from '@/lib/chemistryX2026Written';
+import { chemistryIx2026Notes, chemistryIx2026ResponseImage, chemistryIx2026Tabs } from '@/lib/chemistryIx2026';
+import { chemistryIx2026Written } from '@/lib/chemistryIx2026Written';
+import { mathematicsIx2026Notes, mathematicsIx2026Tabs } from '@/lib/mathematicsIx2026';
+import { mathematicsX2026Notes, mathematicsX2026Tabs } from '@/lib/mathematicsX2026';
+import { chemistryX2019Notes, chemistryX2019ResponseImage, chemistryX2019Tabs } from '@/lib/chemistryX2019';
+import { chemistryX2019Written } from '@/lib/chemistryX2019Written';
+import { chemistryX2018Notes, chemistryX2018ResponseImage, chemistryX2018Tabs } from '@/lib/chemistryX2018';
+import { chemistryX2018Written } from '@/lib/chemistryX2018Written';
+import { chemistryX2017Notes, chemistryX2017ResponseImage, chemistryX2017Tabs } from '@/lib/chemistryX2017';
+import { chemistryX2017Written } from '@/lib/chemistryX2017Written';
+import { combinedChemistryXArchives, getFallbackPaper } from '@/lib/paperDataService';
+import { paperChoices, paperMetadata, paperQuestionNumber, paperScoringAnswers, safeDocumentUrl } from '@/lib/paperPresentation';
 import prisma from '@/lib/prisma';
 import { biology2024Archive, biology2024PdfRoot, biologyX2017Archive, biologyX2017PdfRoot, biologyX2018Archive, biologyX2018PdfRoot, biologyX2019Archive, biologyX2019PdfRoot, biologyX2021Archive, biologyX2021PdfRoot, biologyX2023Archive, biologyX2023PdfRoot, biologyX2024Archive, biologyX2024PdfRoot, biologyX2025Archive, biologyX2025PdfRoot } from '@/lib/biology2024Resources';
 export const dynamic='force-dynamic';
@@ -93,6 +116,13 @@ const SUPPORTED_RESOURCES = [
   'biology-ix-2025-key',
   'biology-ix-2025-emarking',
   'biology-ix-2023-key',
+  'biology-ix-2021-key',
+  'biology-ix-2019-key',
+  'biology-ix-2019-emarking',
+  'biology-ix-2018-key',
+  'biology-ix-2018-emarking',
+  'biology-ix-2017-key',
+  'biology-ix-2017-emarking',
   'biology-ix-2023-emarking',
   'biology-x-2024-key',
   'biology-x-2024-emarking',
@@ -109,6 +139,18 @@ const SUPPORTED_RESOURCES = [
   'physics-ix-2024-emarking',
   'physics-x-2025-key',
   'physics-x-2025-emarking',
+  'physics-x-2024-key',
+  'physics-x-2024-emarking',
+  'physics-x-2023-key',
+  'physics-x-2023-emarking',
+  'physics-x-2022-key',
+  'physics-x-2021-key',
+  'physics-x-2019-key',
+  'physics-x-2019-emarking',
+  'physics-x-2018-key',
+  'physics-x-2018-emarking',
+  'physics-x-2017-key',
+  'physics-x-2017-emarking',
   'physics-ix-resource-guide',
   'physics-x-resource-guide',
   'physics-ix-pacing-guide',
@@ -157,6 +199,14 @@ const SUPPORTED_RESOURCES = [
   'chemistry-x-2024-emarking',
   'chemistry-x-2023-key',
   'chemistry-x-2023-emarking',
+  'chemistry-x-2022-key',
+  'chemistry-x-2021-key',
+  'chemistry-x-2019-key',
+  'chemistry-x-2019-emarking',
+  'chemistry-x-2018-key',
+  'chemistry-x-2018-emarking',
+  'chemistry-x-2017-key',
+  'chemistry-x-2017-emarking',
   'chemistry-ix-resource-guide',
   'chemistry-x-resource-guide',
   'chemistry-ix-pacing-guide',
@@ -167,10 +217,17 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
   const {resource}=await params;
   const resourceHref = '/resources/' + resource;
   const combinedPhysics = [
+    { key: physicsX2021Key, tabs: physicsX2021Tabs, answerKey: physicsX2021AnswerKey, paper: physicsX2021Paper },
+    { key: physicsX2022Key, tabs: physicsX2022Tabs, answerKey: physicsX2022AnswerKey, paper: physicsX2022Paper },
     { key: physicsIx2021Key, tabs: physicsIx2021Tabs, answerKey: physicsIx2021AnswerKey, paper: physicsIx2021Paper },
     { key: physicsIx2022Key, tabs: physicsIx2022Tabs, answerKey: physicsIx2022AnswerKey, paper: physicsIx2022Paper },
   ].find(archive => archive.key.href === resourceHref);
   const reviewedPhysics = [
+    { refs: physicsX2017References, tabs: physicsX2017Tabs, answerKey: physicsX2017AnswerKey, marking: physicsX2017Marking, paper: physicsX2017Papers[0] },
+    { refs: physicsX2018References, tabs: physicsX2018Tabs, answerKey: physicsX2018AnswerKey, marking: physicsX2018Marking, paper: physicsX2018Papers[0] },
+    { refs: physicsX2019References, tabs: physicsX2019Tabs, answerKey: physicsX2019AnswerKey, marking: physicsX2019Marking, paper: physicsX2019Papers[0] },
+    { refs: physicsX2023References, tabs: physicsX2023Tabs, answerKey: physicsX2023AnswerKey, marking: physicsX2023Marking, paper: physicsX2023Papers[0] },
+    { refs: physicsX2024References, tabs: physicsX2024Tabs, answerKey: physicsX2024AnswerKey, marking: physicsX2024Marking, paper: physicsX2024Papers[0] },
     { refs: physicsIx2017References, tabs: physicsIx2017Tabs, answerKey: physicsIx2017AnswerKey, marking: physicsIx2017Marking, paper: physicsIx2017Papers[0] },
     { refs: physicsIx2018References, tabs: physicsIx2018Tabs, answerKey: physicsIx2018AnswerKey, marking: physicsIx2018Marking, paper: physicsIx2018Papers[0] },
     { refs: physicsIx2019References, tabs: physicsIx2019Tabs, answerKey: physicsIx2019AnswerKey, marking: physicsIx2019Marking, paper: physicsIx2019Papers[0] },
@@ -185,24 +242,33 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
     const showOriginalSlo = answerKey.some(row => row.slo);
     const practiceAnswers = new Map(scoredPaper?.questions.flatMap(({ questionNumber, sourceRegion }) => {
       const accepted = paperScoringAnswers(sourceRegion, paperChoices(sourceRegion.choices));
+      if ((scoredPaper?.paperCode === 'PHY-X-2023-P1' && [5, 12, 39].includes(Number(questionNumber))) ||
+        (scoredPaper?.paperCode === 'PHY-X-2021-P1' && questionNumber === '5')) {
+        const letter = accepted[0];
+        return [[Number(questionNumber), letter + ' · ' + paperChoices(sourceRegion.choices)[letter]]];
+      }
       if (accepted.length === 1 && accepted[0] === sourceRegion.official_answer) return [];
       return [[Number(questionNumber), accepted.length === 4 ? 'Any option earns credit' : accepted.join(' or ')]];
     }));
     const isKey = resource.endsWith('-key');
-    const title = 'Physics Class IX · ' + physicsArchive.year + ' ' + physicsArchive.label;
+    const roman = resource.startsWith('physics-x-') ? 'X' : 'IX';
+    const paperPrefix = '/past-papers/PHY-' + roman + '-' + physicsArchive.year;
+    const title = 'Physics Class ' + roman + ' · ' + physicsArchive.year + ' ' + physicsArchive.label;
     return <section className={styles.page}>
-      <p><Link href="/akueb/IX/physics/pastpapers">Class IX Physics past papers</Link></p>
+      <p><Link href={'/akueb/' + roman + '/physics/pastpapers'}>Class {roman} Physics past papers</Link></p>
       <h1>{title}</h1>
       <DocumentViews original={physicsArchive.fileUrl} title={title} continuousPdf
         digitalLabel={isKey ? 'Digital Answer Key' : 'Digital Notes'}
         initialView={(await searchParams)?.view === 'original' ? 'original' : 'digital'}
         resourceLinks={<PaperResourceNav tabs={tabs} current={physicsArchive.href} inline />}>
         {isKey ? <div style={{ overflowX: 'auto' }}>
-          {combinedPhysics ? <p>Q1–40 are Theory and Q41–50 are Alternate to Practical. The table preserves the published board answers and shows where practice scoring differs.</p> : physicsArchive.year === 2017 ? <p>The board lists D for Q24. Practice scores C because surface colour does not directly affect evaporation at fixed temperature and other conditions.</p> : physicsArchive.year === 2018 ? <p>The board answers are reproduced as printed. The practice adjustments for Q11, Q18 and Q19 are shown in the table.</p> : physicsArchive.year === 2019 ? <p>The board prints an asterisk for Q28. The practice quiz scores D because thermal conductivity is a material property.</p> : <p>For Q30, the board lists C. Practice uses A because surface tension requires higher pressure inside a soap bubble. <a href="https://www.physics.umd.edu/courses/Phys405/Boyd/ajp00917.pdf">See the pressure calculation</a>.</p>}
+          {combinedPhysics ? <p>Q1–40 are Theory and Q41–50 are Alternate to Practical. The table preserves the published board answers and shows where practice scoring differs.</p> : roman === 'X' && physicsArchive.year === 2017 ? <p>Practice uses the board’s answer letters. Q3 uses four 15 cm wavefront intervals to give 45 cm/s. The digital versions of Q6 and Q23–25 clarify the conditions for the keyed answers.</p> : roman === 'X' && physicsArchive.year === 2018 ? <p>Q9 and Q16 each accept A or C. The digital version updates option A in Q25 because the original liver example can occur after liver irradiation. <a href="https://pubmed.ncbi.nlm.nih.gov/16183482/">Clinical study</a>.</p> : roman === 'X' && physicsArchive.year === 2019 ? <p>Q5 scores C (12 cm) from the signed mirror equation. Q8 accepts A or C for the relaxed-eye and finite-image adjustments of a magnifier.</p> : roman === 'X' && physicsArchive.year === 2023 ? <p>Q2 accepts B or C. Digital Q5 uses regularity of vibration, Q12 gives the image distance as infinity and Q39 gives I only for the direct peaceful application of fission. The board letters below are as printed.</p> : roman === 'X' ? <p>The printed key shows 0 in several cells and a dot for Q10. The table keeps those entries and gives the independently checked practice answers. Q10 uses a corrected 15 cm option. Q23 accepts A or C.</p> : physicsArchive.year === 2017 ? <p>The board lists D for Q24. Practice scores C because surface colour does not directly affect evaporation at fixed temperature and other conditions.</p> : physicsArchive.year === 2018 ? <p>The board answers are reproduced as printed. The practice adjustments for Q11, Q18 and Q19 are shown in the table.</p> : physicsArchive.year === 2019 ? <p>The board prints an asterisk for Q28. The practice quiz scores D because thermal conductivity is a material property.</p> : <p>For Q30, the board lists C. Practice uses A because surface tension requires higher pressure inside a soap bubble. <a href="https://www.physics.umd.edu/courses/Phys405/Boyd/ajp00917.pdf">See the pressure calculation</a>.</p>}
+          {scoredPaper?.paperCode === 'PHY-X-2021-P1' && <p>Digital Q5 uses 90 cm/s. Practice scores A for Q12 and B (3.333 Ω) for Q25.</p>}
+          {scoredPaper?.paperCode === 'PHY-X-2022-P1' && <p>Q29 accepts B or C for overheating from excessive current. Q30 scores B (242 W). Over two seconds the bulb transfers 484 J of energy.</p>}
           <table className={styles.table}>
             <thead><tr><th scope="col">Question</th>{showOriginalSlo && <th scope="col">Original SLO</th>}<th scope="col">Board answer</th>{scoredPaper && <th scope="col">Practice scoring adjustment</th>}<th scope="col">Cognitive level</th></tr></thead>
             <tbody>{answerKey.map(row => <tr key={row.number}>
-              <th scope="row"><Link href={'/past-papers/PHY-IX-' + physicsArchive.year + '-P1?view=solved#question-' + row.number}>Q{row.number}</Link></th>
+              <th scope="row"><Link href={paperPrefix + '-P1?view=solved#question-' + row.number}>Q{row.number}</Link></th>
               {showOriginalSlo && <td>{row.slo}</td>}<td>{row.letter}</td>{scoredPaper && <td>{practiceAnswers.get(row.number) ?? '—'}</td>}<td>{({ K: 'Knowledge', U: 'Understanding', A: 'Application' } as Record<string, string>)[row.level]}</td>
             </tr>)}</tbody>
           </table>
@@ -210,7 +276,7 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
           <p>AKU-EB commentary and examples of stronger and weaker responses. The original PDF includes the board’s full notes.</p>
           {marking.map(note => <details key={note.number} className={styles.practicalStage}>
             <summary>Question {note.number} · {note.marks} marks</summary>
-            <p><Link href={'/past-papers/PHY-IX-' + physicsArchive.year + '-P2?view=solved#question-' + note.number}>Open question</Link> · <a href={note.example.pdf}>PDF page {note.page}</a></p>
+            <p><Link href={paperPrefix + '-P2?view=solved#question-' + note.number}>Open question</Link> · <a href={note.example.pdf}>PDF page {note.page}</a></p>
             <h3>Checking hints</h3><p>{note.checking}</p>
             <h3>Stronger response</h3><p>{note.better}</p>
             <img src={note.example.better} alt={'Stronger candidate response for Q' + note.number} loading="lazy" style={{ maxWidth: '100%' }} />
@@ -218,6 +284,44 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
             <img src={note.example.weaker} alt={'Weaker candidate response for Q' + note.number} loading="lazy" style={{ maxWidth: '100%' }} />
           </details>)}
         </div>}
+      </DocumentViews>
+    </section>;
+  }
+  const annualNotes = biologyIxAnnualArchives.find(archive => archive.notes.href === '/resources/' + resource);
+  const chemistryNotes = [
+    { grade: 'IX', notes: chemistryIx2026Notes, rows: chemistryIx2026Written, responseImage: chemistryIx2026ResponseImage, tabs: chemistryIx2026Tabs },
+    { grade: 'X', notes: chemistryX2026Notes, rows: chemistryX2026Written, responseImage: chemistryX2026ResponseImage, tabs: chemistryX2026Tabs },
+    { grade: 'X', notes: chemistryX2019Notes, rows: chemistryX2019Written, responseImage: chemistryX2019ResponseImage, tabs: chemistryX2019Tabs },
+    { grade: 'X', notes: chemistryX2018Notes, rows: chemistryX2018Written, responseImage: chemistryX2018ResponseImage, tabs: chemistryX2018Tabs },
+    { grade: 'X', notes: chemistryX2017Notes, rows: chemistryX2017Written, responseImage: chemistryX2017ResponseImage, tabs: chemistryX2017Tabs },
+  ].find(archive => archive.notes.href === '/resources/' + resource);
+  const reviewedNotes = chemistryNotes?.notes
+    ?? annualNotes?.notes ?? (biologyIx2026Notes.href === '/resources/' + resource ? biologyIx2026Notes : null);
+  if (reviewedNotes) {
+    const { year, href, fileUrl } = reviewedNotes;
+    const writtenItems = chemistryNotes?.rows ?? annualNotes?.writtenItems;
+    const rows = writtenItems?.map(row => ({ ...row, stronger: undefined, weaker: undefined })) ?? biologyIx2026Written;
+    const responseImage = chemistryNotes?.responseImage ?? annualNotes?.responseImage ?? biologyIx2026ResponseImage;
+    const tabs = chemistryNotes?.tabs ?? annualNotes?.tabs ?? biologyIx2026Tabs;
+    const title = `${chemistryNotes ? 'Class ' + chemistryNotes.grade + ' Chemistry' : 'Class IX Biology'} ${year} E-marking Notes`;
+    return <section className={styles.page}>
+      <p><Link href={chemistryNotes ? '/akueb/' + chemistryNotes.grade + '/chemistry/pastpapers' : '/akueb/IX/biology/pastpapers'}>Past papers</Link></p>
+      <h1>{title}</h1>
+      <DocumentViews title={title} original={fileUrl} continuousPdf digitalLabel="Digital Notes"
+        initialView={(await searchParams)?.view === 'original' ? 'original' : 'digital'}
+        resourceLinks={<PaperResourceNav tabs={tabs} current={href} inline />}>
+        <div className={styles.digital}>
+          <p>Summaries of the board’s marking guidance with original candidate examples. Open the PDF for the full commentary.</p>
+          {rows.map(row => <details key={row.number} className={styles.practicalStage}>
+            <summary>Question {row.number} · {row.marks} marks</summary>
+            <p><Link href={`${tabs[1].href}?view=solved#question-${row.number}`}>Open question</Link> · <a href={fileUrl + '#page=' + row.notesPage}>PDF page {row.notesPage}</a></p>
+            <h3>Checking hints</h3><p>{row.hints}</p>
+            <h3>Stronger response</h3>{row.stronger && <p>{row.stronger}</p>}
+            <img src={responseImage(row.number, 'stronger')} alt={'Stronger candidate response for Q' + row.number} loading="lazy" style={{ maxWidth: '100%' }} />
+            <h3>Weaker response</h3>{row.weaker && <p>{row.weaker}</p>}
+            <img src={responseImage(row.number, 'weaker')} alt={'Weaker candidate response for Q' + row.number} loading="lazy" style={{ maxWidth: '100%' }} />
+          </details>)}
+        </div>
       </DocumentViews>
     </section>;
   }
@@ -276,7 +380,7 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
       </DocumentViews>
     </section>;
   }
-  const mathMarking = /^mathematics-(ix|x)-(201[789]|202[345])-emarking$/.exec(resource);
+  const mathMarking = /^mathematics-(ix|x)-(201[789]|202[3456])-emarking$/.exec(resource);
   const bioMarking = /^biology-(ix|x)-(2017|2018|2019|202[345])-emarking$/.exec(resource);
   if (bioMarking) {
     const [, grade, year] = bioMarking;
@@ -346,7 +450,9 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
     const [, grade, year] = mathMarking;
     const roman = grade.toUpperCase();
     const paper = getFallbackPaper(`MTH-${roman}-${year}-P2`);
-    const original = safeDocumentUrl(paper?.questions[0]?.sourceRegion.original_reference_source);
+    const notes2026 = year === '2026' ? (roman === 'X' ? mathematicsX2026Notes : mathematicsIx2026Notes) : undefined;
+    const tabs2026 = roman === 'X' ? mathematicsX2026Tabs : mathematicsIx2026Tabs;
+    const original = notes2026?.fileUrl ?? safeDocumentUrl(paper?.questions[0]?.sourceRegion.original_reference_source);
     if (!paper || !original) notFound();
     const paperPath = '/past-papers/' + paper.paperCode;
     const base = `/akueb/${roman}/mathematics`;
@@ -355,7 +461,8 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
       <section className={styles.page}>
         <Link href={base + '/pastpapers'}>← Mathematics past papers</Link>
         <h1>{title}</h1>
-        <DocumentViews title={title} original={original} resourceLinks={<Link href={paperPath}>Paper 2</Link>}>
+        <DocumentViews title={title} original={original} continuousPdf={Boolean(notes2026)} initialView={(await searchParams)?.view === 'original' ? 'original' : 'digital'}
+          resourceLinks={notes2026 ? <PaperResourceNav tabs={tabs2026} current={notes2026.href} inline /> : <Link href={paperPath}>Paper 2</Link>}>
           <div className={styles.digital}>
             {uniqueQuestions(paper.questions).map(question => {
               const meta = question.sourceRegion;
@@ -367,12 +474,18 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
                 <article key={question.id}>
                   <h2>Question {question.questionNumber}</h2>
                   <StructuredContent text={question.questionText} />
+                  {notes2026 && meta.diagramUrl && <img src={meta.diagramUrl} alt={`Diagram for question ${question.questionNumber}`} loading="lazy" style={{ maxWidth: '100%', height: 'auto' }} />}
                   <p>
                     {meta.current_slo && <><Link href={`${sloBase}/syllabus#slo-${meta.current_slo}`}>SLO {meta.current_slo}</Link> · </>}
                     Cognitive level {meta.cognitive_level} · <Link href={`${paperPath}#question-${question.questionNumber}`}>Open in Paper 2</Link>
                   </p>
+                  {notes2026 && <p><a href={meta.original_reference_source}>Marking notes for this question (PDF)</a></p>}
                   <h3>Worked solution</h3>
                   <StructuredContent text={meta.model_answer || ''} />
+                  {notes2026 && meta.official_marking_notes && <>
+                    <h3>Checking hints</h3>
+                    <StructuredContent text={meta.official_marking_notes} />
+                  </>}
                   {(['better', 'weaker'] as const).map(kind => {
                     const src = safeDocumentUrl(meta[`${kind}_response_image`]);
                     const label = kind === 'better' ? 'Stronger response' : 'Weaker response';
@@ -479,27 +592,36 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
       </section>
     );
   }
-  if (resource === 'biology-ix-2025-key' || resource === 'biology-ix-2023-key') {
+  const ixAnnualKey = biologyIxAnnualArchives.find(archive => archive.tabs[2].href === '/resources/' + resource);
+  if (ixAnnualKey || resource === 'biology-ix-2025-key' || resource === 'biology-ix-2023-key' || resource === 'biology-ix-2021-key') {
+    const is2021 = resource === 'biology-ix-2021-key';
     const is2023 = resource === 'biology-ix-2023-key';
-    const year = is2023 ? '2023' : '2025';
-    const keyData = is2023 ? bioKey2023 : bioKey2025;
+    const year = resource.split('-')[2];
+    const keyData = ixAnnualKey ? ixAnnualKey.key.map(row => ({ ...row, question: row.number, oldSlo: undefined })) : is2021 ? biologyIx2021Key.map(row => ({
+      question: row.number,
+      oldSlo: row.originalSlo,
+      answer: row.alternate ? row.answer + ' (main), ' + row.alternate + ' (alternate)' : row.answer,
+      level: row.level,
+    })) : is2023 ? bioKey2023 : bioKey2025;
     const title = `Biology IX · ${year} · Official answer key`;
     const original = `/materials/ssc/biology/ssc-1/biology-ix-${year}-keys.pdf`;
     return (
       <section className={styles.page}>
         <Link href="/akueb/IX/biology/pastpapers">← Biology IX past papers</Link>
         <h1>{title}</h1>
-        <DocumentViews title={title} original={original} resourceLinks={<>
+        <DocumentViews title={title} original={original} resourceLinks={is2021 || ixAnnualKey
+          ? <PaperResourceNav tabs={ixAnnualKey?.tabs ?? biologyIx2021Tabs} current={'/resources/' + resource} inline />
+          : <>
             <Link href={`/past-papers/BIO-IX-${year}-P1`}>Paper 1</Link>
             <Link href={`/past-papers/BIO-IX-${year}-P2`}>Paper 2</Link>
         </>}>
           <div className={styles.digital}>
             <div style={{overflowX:'auto'}}>
               <table style={{width:'100%',borderCollapse:'collapse'}}>
-                <caption>Official {year} SSC-I exam-year references · current 2025 syllabus mappings are shown on each question</caption>
+                <caption>Official {year} SSC-I answer key · current 2025 syllabus mappings are shown on each question</caption>
                 <thead>
                   <tr>
-                    {['Question','Original SLO','Answer','Level'].map(x=>(
+                    {(ixAnnualKey ? ['Question','Answer','Level'] : ['Question','Original SLO','Answer','Level']).map(x=>(
                       <th key={x} style={{textAlign:'left',padding:'.75rem',borderBottom:'1px solid var(--border-color)'}}>{x}</th>
                     ))}
                   </tr>
@@ -508,7 +630,7 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
                   {keyData.map((row: any)=>(
                     <tr key={row.question}>
                       <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}>{row.question}</td>
-                      <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}>{row.oldSlo}</td>
+                      {!ixAnnualKey && <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}>{row.oldSlo}</td>}
                       <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}><strong>{row.answer}</strong></td>
                       <td style={{padding:'.65rem',borderBottom:'1px solid var(--border-color)'}}>{row.level}</td>
                     </tr>
@@ -734,7 +856,9 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
   if (resource.startsWith('chemistry-') && resource.endsWith('-key')) {
     const isChemXKey = resource.startsWith('chemistry-x-');
     const chemYear = resource.split('-')[2];
-    const activeChemKey: any = chemYear === '2025' ? (isChemXKey ? chemXKey2025 : chemKey2025) : chemYear === '2024' ? (isChemXKey ? chemXKey2024 : chemKey2024) : chemYear === '2023' ? (isChemXKey ? chemXKey2023 : chemKey2023) : chemYear === '2022' ? chemKey2022 : chemYear === '2021' ? chemKey2021 : chemYear === '2019' ? chemKey2019 : chemYear === '2018' ? chemKey2018 : chemKey2017;
+    const combinedChemistry = combinedChemistryXArchives.find(archive => archive.tabs[1].href === '/resources/' + resource);
+    const activeChemKey: any = combinedChemistry?.key ?? (chemYear === '2025' ? (isChemXKey ? chemXKey2025 : chemKey2025) : chemYear === '2024' ? (isChemXKey ? chemXKey2024 : chemKey2024) : chemYear === '2023' ? (isChemXKey ? chemXKey2023 : chemKey2023) : chemYear === '2022' ? chemKey2022 : chemYear === '2021' ? chemKey2021 : chemYear === '2019' ? chemKey2019 : chemYear === '2018' ? chemKey2018 : chemKey2017);
+    const hasOriginalSlo = !combinedChemistry || combinedChemistry.key.entries.some(row => row.slo);
     const chemRoman = isChemXKey ? 'X' : 'IX';
     const chemLower = isChemXKey ? 'x' : 'ix';
     const hasPaper2 = chemYear !== '2021' && chemYear !== '2022';
@@ -744,18 +868,21 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
       <section className={styles.page}>
         <Link href={`/akueb/${chemRoman}/chemistry/pastpapers`}>← Chemistry {chemRoman} past papers</Link>
         <h1>{title}</h1>
-        <DocumentViews title={title} original={activeChemKey.sourceUrl} resourceLinks={<>
+        <DocumentViews title={title} original={activeChemKey.sourceUrl}
+          initialView={combinedChemistry && (await searchParams)?.view === 'original' ? 'original' : 'digital'}
+          resourceLinks={<>
             <Link href={`/past-papers/CHM-${chemRoman}-${chemYear}-P1`}>{chemYear} Paper 1</Link>
             {hasPaper2 && <Link href={`/past-papers/CHM-${chemRoman}-${chemYear}-P2`}>{chemYear} Paper 2</Link>}
             {hasEmarking && <Link href={`/resources/chemistry-${chemLower}-${chemYear}-emarking`}>{chemYear} E-marking notes</Link>}
         </>}>
           <div className={styles.digital}>
+            {combinedChemistry?.paper.questions.length === 50 && <p>Questions 1–40 are Theory. Questions 41–50 are Alternate to Practical. The table shows the board’s published answers.{chemYear === '2021' ? ' The quiz also accepts B and D on Q5.' : ' The quiz also accepts C on Q1 and D on Q3 and Q49.'}</p>}
             <div style={{overflowX:'auto'}}>
               <table style={{width:'100%',borderCollapse:'collapse'}}>
                 <caption>Official {chemYear} SSC-{isChemXKey ? 'II' : 'I'} exam-year references · current 2025 syllabus mappings are shown on each question</caption>
                 <thead>
                   <tr>
-                    {['Question','Original SLO','Answer','Level'].map(x=>(
+                    {(hasOriginalSlo ? ['Question','Original SLO','Answer','Level'] : ['Question','Answer','Level']).map(x=>(
                       <th key={x} style={{textAlign:'left',padding:'.75rem',borderBottom:'1px solid var(--border-color)'}}>{x}</th>
                     ))}
                   </tr>
@@ -766,7 +893,7 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
                       <td style={{padding:'.65rem'}}>
                         <Link href={`/past-papers/CHM-${chemRoman}-${chemYear}-P1?view=solved#question-${row.questionNumber}`}>{row.questionNumber}</Link>
                       </td>
-                      <td>{row.slo}</td>
+                      {hasOriginalSlo && <td>{row.slo}</td>}
                       <td><strong>{row.answer}</strong></td>
                       <td>{row.cognitiveLevel}</td>
                     </tr>
@@ -797,6 +924,8 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
     const subjTitle = isChem ? 'Chemistry' : isCs ? 'Computer Science' : 'Physics';
     const subjSlug = isChem ? 'chemistry' : isCs ? 'computer-science' : 'physics';
     const pPrefix = isChem ? 'CHM' : isCs ? 'CS' : 'PHY';
+    const chemistryQuestions = isChem ? getFallbackPaper([pPrefix, roman, yearStr, 'P2'].join('-'))?.questions : undefined;
+    const chemistryMappings = new Map(chemistryQuestions?.map(question => [paperQuestionNumber(question.questionNumber), question.sourceRegion]));
     const title = `${subjTitle} ${roman} · ${yearStr} · E-Marking Notes (Questions & Solved Better Responses)`;
     return (
       <section className={styles.page}>
@@ -841,11 +970,15 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
             <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               {uniqueQuestions(activeEmarking.questions).map((q: any) => {
                 const reviewed = isCs ? sscComputerScienceMapping(`CS-${roman}-${yearStr}-P2`, q.questionNumber, q.outOfSyllabus ? null : q.currentSlo, q.questionText) : undefined;
-                const outcome = reviewed?.current_mapping[0];
-                const currentSlo = reviewed ? outcome?.code : q.currentSlo;
-                const currentTopic = reviewed ? outcome?.topic : q.currentTopic;
-                const syllabusClass = outcome ? outcome.grade === 9 ? 'IX' : 'X' : roman;
-                const isOut = !currentSlo || (reviewed ? reviewed.out_of_syllabus : Boolean(q.outOfSyllabus));
+                const chemistry = isChem ? chemistryMappings.get(paperQuestionNumber(q.questionNumber)) : undefined;
+                const outcome = isChem
+                  ? chemistry?.current_syllabus_reviewed ? chemistry.current_mapping?.[0] : undefined
+                  : reviewed?.current_mapping[0];
+                const currentSlo = isChem || reviewed ? outcome?.code : q.currentSlo;
+                const currentTopic = isChem || reviewed ? outcome?.topic : q.currentTopic;
+                const syllabusGrade = outcome?.grade ?? chemistry?.mapping_scope?.grade;
+                const syllabusClass = syllabusGrade === 9 ? 'IX' : syllabusGrade === 10 ? 'X' : roman;
+                const isOut = !currentSlo || (!isChem && (reviewed ? reviewed.out_of_syllabus : Boolean(q.outOfSyllabus)));
                 return (
                   <article
                     key={q.questionNumber}
@@ -917,7 +1050,7 @@ export default async function Page({params, searchParams}:{params:Promise<{resou
                               fontWeight: 800,
                             }}
                           >
-                            Out of 2025 Syllabus
+                            {isChem && chemistry?.mapping_status !== 'NO_DIRECT_OUTCOME' ? 'SLO mapping awaiting review' : 'Out of 2025 Syllabus'}
                           </span>
                         )}
                         {reviewed?.current_mapping.slice(1).map(item => <Link key={item.code} href={`/akueb/${item.grade === 9 ? 'IX' : 'X'}/computer-science/syllabus#slo-${item.code}`}>SLO {item.code} ↗</Link>)}

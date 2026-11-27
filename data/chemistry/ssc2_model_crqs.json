@@ -6,7 +6,7 @@
     "unitName": "Chemical Equilibrium",
     "chapter": "Chemical Equilibrium",
     "slo": "9.3.1",
-    "current_slo": "9.3.1",
+    "current_slo": "9.2.2",
     "cognitiveLevel": "U",
     "marks": 4,
     "isDiagram": false,
@@ -23,8 +23,8 @@
     },
     "current_mapping": [
       {
-        "code": "9.3.1",
-        "description": "apply Le Chatelier\u2019s principle to predict the effect of changes in temperature, concentration, and pressure on equilibrium.",
+        "code": "9.2.2",
+        "description": "differentiate between exothermic and endothermic reactions with examples;",
         "topic": "Chemical Equilibrium"
       }
     ],
@@ -56,8 +56,8 @@
     "unitName": "Organic Chemistry",
     "chapter": "Organic Chemistry",
     "slo": "11.2.1",
-    "current_slo": "11.2.1",
-    "cognitiveLevel": "R",
+    "current_slo": "11.2.2",
+    "cognitiveLevel": "U",
     "marks": 3,
     "isDiagram": false,
     "diagramBased": false,
@@ -73,12 +73,12 @@
     },
     "current_mapping": [
       {
-        "code": "11.2.1",
-        "description": "define homologous series and state general formulas for alkanes, alkenes, and alkynes.",
+        "code": "11.2.2",
+        "description": "describe the homologous series and its characteristics;",
         "topic": "Organic Chemistry"
       }
     ],
-    "stem": "a. What is meant by the term \u2018homologous series\u2019? (1 Mark)\n\nb. State the general formula for alkanes and alkynes. (2 Marks)\nAlkanes: ___________________________________________________________________________\nAlkynes: ___________________________________________________________________________",
+    "stem": "a. What is meant by the term \u2018homologous series\u2019? (1 Mark)\n\nb. State the general formula for alkanes and alkynes. (2 Marks)\nAlkanes:\nAlkynes:",
     "modelAnswer": "**Part a \u2014 Definition of Homologous Series (1 Mark):**\nA homologous series is a family or group of organic compounds having the same functional group and similar chemical properties, in which each successive member differs from the preceding one by a constant $-CH_2-$ (methylene) unit and a molecular mass of $14\\text{ amu}$, and can be represented by a common general formula.\n\n**Part b \u2014 General Formulas (2 Marks):**\n- **Alkanes:** **$C_n H_{2n+2}$** (where $n = 1, 2, 3, \\dots$) (1 Mark)\n- **Alkynes:** **$C_n H_{2n-2}$** (where $n = 2, 3, 4, \\dots$) (1 Mark)",
     "rubric": [
       {
@@ -102,7 +102,7 @@
     "unitName": "Natural and Synthetic Polymers",
     "chapter": "Natural and Synthetic Polymers",
     "slo": "13.1.2",
-    "current_slo": "13.1.2",
+    "current_slo": "13.4.3",
     "cognitiveLevel": "U",
     "marks": 3,
     "isDiagram": true,
@@ -119,8 +119,8 @@
     },
     "current_mapping": [
       {
-        "code": "13.1.2",
-        "description": "describe the structure of proteins and the factors causing denaturation.",
+        "code": "13.4.3",
+        "description": "explain the primary, secondary and tertiary structural features of protein molecule;",
         "topic": "Natural and Synthetic Polymers"
       }
     ],
@@ -166,16 +166,16 @@
     "current_mapping": [
       {
         "code": "15.2.2",
-        "description": "explain methods of removing permanent hardness of water using ion-exchange resins and their regeneration.",
+        "description": "apply methods to eliminate temporary and permanent hardness of water;",
         "topic": "Environmental Chemistry II: Water"
       }
     ],
     "stem": "An industrial plant receives hard water containing calcium and magnesium ions. The plant wants to make the water soft using an ion exchange resin.\n\na. Identify the type of hardness in water that will be removed by the ion exchanger. (1 Mark)\n\nb. Describe the process of removing this hardness from water through the ion exchange resin. (1 Mark)\n\nc. If the resin becomes saturated, suggest a practical method to regenerate it so that it can be reused. (1 Mark)",
-    "modelAnswer": "**Part a \u2014 Type of Hardness Removed (1 Mark):**\n**Permanent hardness** (as well as temporary hardness; ion exchangers remove both calcium and magnesium hardness completely).\n\n**Part b \u2014 Description of Hardness Removal (1 Mark):**\nWhen hard water passes through the column containing cation exchange resin (such as sodium zeolite or sulfonated synthetic resin, $R-Na$), the multivalent hardness-causing ions ($Ca^{2+}$ and $Mg^{2+}$) in the water are preferentially bound to the resin and exchanged for innocuous sodium ions ($Na^+$): \n$$2R-Na(s) + Ca^{2+}(aq) \\rightarrow R_2-Ca(s) + 2Na^+(aq)$$\nBecause calcium and magnesium ions remain trapped in the resin matrix, the emerging water is softened.\n\n**Part c \u2014 Practical Method to Regenerate Saturated Resin (1 Mark):**\nFlush the exhausted resin column with a **concentrated sodium chloride solution (brine, $10\\%\\text{ NaCl}$)**. The high concentration of $Na^+$ ions displaces the bound $Ca^{2+}$ and $Mg^{2+}$ ions from the resin into the wastewater, restoring the active sodium form of the resin ($R_2-Ca + 2NaCl \\rightarrow 2R-Na + CaCl_2$).",
+    "modelAnswer": "**Part a \u2014 Type of Hardness Removed (1 Mark):**\n**Both temporary and permanent hardness.** The resin removes the calcium and magnesium ions responsible for either type. The question does not specify their counter-ions, so the original type of hardness cannot be determined.\n\n**Part b \u2014 Description of Hardness Removal (1 Mark):**\nWhen hard water passes through the column containing cation exchange resin (such as sodium zeolite or sulfonated synthetic resin, $R-Na$), the multivalent hardness-causing ions ($Ca^{2+}$ and $Mg^{2+}$) in the water are preferentially bound to the resin and exchanged for innocuous sodium ions ($Na^+$): \n$$2R-Na(s) + Ca^{2+}(aq) \\rightarrow R_2-Ca(s) + 2Na^+(aq)$$\nBecause calcium and magnesium ions remain trapped in the resin matrix, the emerging water is softened.\n\n**Part c \u2014 Practical Method to Regenerate Saturated Resin (1 Mark):**\nFlush the exhausted resin column with a **concentrated sodium chloride solution (brine, $10\\%\\text{ NaCl}$)**. The high concentration of $Na^+$ ions displaces the bound $Ca^{2+}$ and $Mg^{2+}$ ions from the resin into the wastewater, restoring the active sodium form of the resin ($R_2-Ca + 2NaCl \\rightarrow 2R-Na + CaCl_2$).",
     "rubric": [
       {
         "marks": 1,
-        "description": "Identifies permanent hardness (or both temporary and permanent hardness)."
+        "description": "Identifies that the ion exchanger removes both temporary and permanent hardness."
       },
       {
         "marks": 1,
@@ -194,7 +194,7 @@
     "unitName": "Acids, Bases and Salts",
     "chapter": "Acids, Bases and Salts",
     "slo": "10.2.3",
-    "current_slo": "10.2.3",
+    "current_slo": "10.5.4",
     "cognitiveLevel": "A",
     "marks": 6,
     "isDiagram": false,
@@ -211,8 +211,8 @@
     },
     "current_mapping": [
       {
-        "code": "10.2.3",
-        "description": "perform volumetric titration calculations to determine molarity of unknown acid/base solutions.",
+        "code": "10.5.4",
+        "description": "solve problems based on acid-base titrations;",
         "topic": "Acids, Bases and Salts"
       }
     ],
@@ -244,7 +244,7 @@
     "unitName": "Hydrocarbons",
     "chapter": "Hydrocarbons",
     "slo": "12.2.2",
-    "current_slo": "12.2.2",
+    "current_slo": "12.6.2",
     "cognitiveLevel": "A",
     "marks": 6,
     "isDiagram": false,
@@ -261,8 +261,8 @@
     },
     "current_mapping": [
       {
-        "code": "12.2.2",
-        "description": "illustrate the oxidation reactions of alkenes and alkynes with potassium permanganate solution.",
+        "code": "12.6.2",
+        "description": "illustrate oxidation (with KMnO\u2084) of ethene and ethyne;",
         "topic": "Hydrocarbons"
       }
     ],
@@ -294,7 +294,7 @@
     "unitName": "Environmental Chemistry I: Atmosphere",
     "chapter": "Environmental Chemistry I: Atmosphere",
     "slo": "14.2.2",
-    "current_slo": "14.2.2",
+    "current_slo": "14.3.2",
     "cognitiveLevel": "E",
     "marks": 6,
     "isDiagram": false,
@@ -311,8 +311,8 @@
     },
     "current_mapping": [
       {
-        "code": "14.2.2",
-        "description": "evaluate the environmental impacts of vehicular emissions and urban air pollutants.",
+        "code": "14.3.2",
+        "description": "discuss the sources and effects of air pollutants (carbon dioxide, carbon monoxide, particulates, methane, oxides of nitrogen and sulphur dioxide) on the environment and human health;",
         "topic": "Environmental Chemistry I: Atmosphere"
       }
     ],
@@ -344,8 +344,8 @@
     "unitName": "Chemical Industries",
     "chapter": "Chemical Industries",
     "slo": "16.2.2",
-    "current_slo": "16.2.2",
-    "cognitiveLevel": "E",
+    "current_slo": "16.2.1",
+    "cognitiveLevel": "U",
     "marks": 6,
     "isDiagram": false,
     "diagramBased": false,
@@ -361,8 +361,8 @@
     },
     "current_mapping": [
       {
-        "code": "16.2.2",
-        "description": "evaluate the reactions and extraction of iron from haematite in a blast furnace.",
+        "code": "16.2.1",
+        "description": "describe the extraction of iron from hematite ore in the blast furnace;",
         "topic": "Chemical Industries"
       }
     ],

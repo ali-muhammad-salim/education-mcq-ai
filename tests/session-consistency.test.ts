@@ -7,9 +7,13 @@ const db = vi.hoisted(() => ({
   auditLog: { findFirst: vi.fn() },
 }));
 vi.mock('@/lib/prisma', () => ({ default: db }));
-import { getSessionUser } from '@/lib/auth';
+vi.mock('next/headers', () => ({
+  cookies: async () => ({ get: (name: string) => name === 'mcqs_session' ? { value: 'dashboard-session' } : undefined }),
+}));
+import { getSessionUser, sessionTokenHash } from '@/lib/auth';
 import { requireUser } from '@/lib/security';
 import { GET } from '@/app/api/account/route';
+import DashboardRootPage from '@/app/dashboard/page';
 
 const user = { id: 'user-1', email: 'teacher@example.test', name: 'Teacher', role: 'TEACHER', status: 'ACTIVE' };
 const session = () => ({ token: 'hashed', expiresAt: new Date(Date.now() + 60000), user: { ...user } });
@@ -62,5 +66,22 @@ describe('Account session totals', () => {
     expect(body.sessions).toHaveLength(20);
     expect(JSON.stringify(body.sessions)).not.toContain('private-hash');
     expect(db.userSession.count).toHaveBeenCalledWith({ where: { userId: user.id, expiresAt: { gt: expect.any(Date) } } });
+  });
+});
+
+describe('Dashboard navigation', () => {
+  it.each([
+    ['STUDENT', '/dashboard/student'],
+    ['TEACHER', '/dashboard/teacher'],
+    ['ADMIN', '/admin/users'],
+  ])('routes an active %s account to %s', async (role, destination) => {
+    db.userSession.findUnique.mockResolvedValue({ ...session(), user: { ...user, role } });
+    await expect(DashboardRootPage()).rejects.toMatchObject({
+      digest: expect.stringContaining(';' + destination + ';'),
+    });
+    expect(db.userSession.findUnique).toHaveBeenCalledWith({
+      where: { token: sessionTokenHash('dashboard-session') },
+      include: { user: true },
+    });
   });
 });

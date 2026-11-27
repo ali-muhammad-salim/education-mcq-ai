@@ -102,7 +102,7 @@ export default function TakeQuizModal({
 }: TakeQuizModalProps) {
   const officialDuration = /^PHY-IX-201[78]-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 35 : /^(?:CS-XI|PHY-IX)-2019-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 45 : /^(?:CS-XI-2021|BIO-XI-202[12])-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 130 : /^(?:CS-XII?(?:-20\d{2})?|BIO-XII?-MODEL-20\d{2}|BIO-XI-202[345])-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 90 : /^(?:BIO-(?:IX|X)-2022|PHY-IX-202[12])-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 100
     : /^(?:PHY-IX-202[36]|BIO-(?:IX-(?:MODEL-2026|2024)|X-(?:MODEL-2027|2023|2025)))-P1(?:-MCQS-\d+)?$/i.test(paperCode)
-      ? 70 : /^(?:PHY|BIO)-XI-201[78]-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 40 : /^PHY-XI-202[12]-P1$/i.test(paperCode) ? 130 : 50;
+      ? 70 : /^MTH-(?:(?:IX|X)-2026|X)-P1$/i.test(paperCode) ? 80 : /^(?:PHY|BIO)-XI-201[78]-P1(?:-MCQS-\d+)?$/i.test(paperCode) ? 40 : /^PHY-XI-202[12]-P1$/i.test(paperCode) ? 130 : 50;
   // Navigation / Phase State: 'auth' -> 'setup' -> 'active' -> 'completed'
   const [phase, setPhase] = useState<'auth' | 'setup' | 'active' | 'completed'>('setup');
   const [showFinishConfirmModal, setShowFinishConfirmModal] = useState<boolean>(false);

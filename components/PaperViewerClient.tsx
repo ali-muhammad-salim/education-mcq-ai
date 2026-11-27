@@ -17,7 +17,7 @@ import ResourceDocumentNav from '@/components/ResourceDocumentNav';
 import PaperViewSwitch from '@/components/PaperViewSwitch';
 import PracticeHud from '@/components/PracticeHud';
 import practice from '@/components/Practice.module.css';
-import {safePaperOriginal, paperAnswer, paperChoices, paperScoringAnswers} from '@/lib/paperPresentation';
+import {safePaperOriginal, paperAnswer, paperChoices, paperQuestionNumber, paperScoringAnswers} from '@/lib/paperPresentation';
 import { groupDuplicateQuestions } from '@/lib/uniqueQuestions';
 import {questionSyllabus} from '@/lib/questionSyllabus';
 import {scrollAndPulse} from '@/lib/anchorPulse';
@@ -188,6 +188,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
     };
   }).filter(item => item.correctKeys.length);
   const practiceTotal = practiceItems.length;
+  const useScorableQuizItems = isHssc || (!isPaper2 && paper.paperCode?.startsWith('MTH-'));
   const practiceAnswered = practiceItems.filter(item => userAnswers[item.qNum]).length;
   const practiceCorrect = practiceItems.filter(item => item.correctKeys.includes(userAnswers[item.qNum])).length;
 
@@ -669,6 +670,10 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                 const selectedOpt = userAnswers[qNum];
                 const isChecked = checkedAnswers[qNum];
                 const isCorrect = isChecked && scoringAnswers.includes(selectedOpt);
+                const questionNumbers = [qNum, ...groups[idx].slice(1).map(question => question.questionNumber)];
+                if (meta.group_question_number) questionNumbers.push(String(meta.group_question_number));
+                const alternateAnchors = new Set(questionNumbers.flatMap(number => [String(number), paperQuestionNumber(number)]));
+                alternateAnchors.delete(qNum);
 
                 return (
                   <div id={"question-"+qNum} key={q.id} style={{
@@ -676,13 +681,10 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                     paddingBottom: showCorrectAnswers ? '1.75rem' : '2.5rem',
                     borderBottom: idx === questions.length - 1 ? 'none' : '1px solid #e5e7eb'
                   }}>
-                    {meta.group_question_number && <span id={`question-${meta.group_question_number}`} />}
+                    {[...alternateAnchors].map(number => <span key={number} id={`question-${number}`} />)}
                     {readOnly && meta.choice_instruction && <p data-question-block style={{ fontWeight: 700 }}>{meta.choice_instruction}</p>}
-                    {[...new Set(groups[idx].slice(1).map(question => question.questionNumber))]
-                      .filter(number => String(number) !== qNum)
-                      .map(number => <span key={number} id={`question-${number}`} />)}
                     {meta.assessmentSection && (() => {
-                      const alternate = /^(?:BIO-(?:IX|X)-2022|PHY-IX-202[12])-P1$/.test(paper.paperCode || '');
+                      const alternate = /^(?:BIO-(?:IX|X)-2022|PHY-I?X-202[12])-P1$/.test(paper.paperCode || '');
                       const split = alternate ? '41' : '51';
                       if (qNum !== '1' && qNum !== split) return null;
                       const range = alternate ? (qNum === '1' ? '1–40' : '41–50') : (qNum === '1' ? '1–50' : '51–65');
@@ -730,16 +732,16 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                           <Link href={verifiedChapter} style={syllabusBadge}>
                             2025 Syllabus: {meta.chapter_name} ↗
                           </Link>
-                        ) : meta.mapping_status === 'MOVED_TO_GRADE_X' ? (
-                          <Link href={`/akueb/X/mathematics/syllabus#slo-${encodeURIComponent(meta.current_slo || '')}`}>
-                            Current syllabus: moved to Class X · SLO {meta.current_slo}
+                        ) : meta.mapping_status === 'MOVED_TO_GRADE_X' && mapping.href ? (
+                          <Link href={mapping.href}>
+                            Current syllabus: moved to Class X · SLO {sloCode}
                           </Link>
                         ) : mapping.status === 'mapped' && !meta.out_of_syllabus ? (
                           <Link
                             href={mapping.href!}
                             style={syllabusBadge}
                           >
-                            2025 Syllabus: {(sscComputerScience || hsscBiologyAnnual) && mappingLevel !== paper.academicClass?.level ? `Class ${({ 9: 'IX', 10: 'X', 11: 'XI', 12: 'XII' } as Record<number, string>)[mappingLevel]} · ` : ''}SLO {sloCode}{topicName ? ` • ${topicName}` : ''} ↗
+                            2025 Syllabus: {mappingLevel !== paper.academicClass?.level ? `Class ${({ 9: 'IX', 10: 'X', 11: 'XI', 12: 'XII' } as Record<number, string>)[mappingLevel]} · ` : ''}SLO {sloCode}{topicName ? ` • ${topicName}` : ''} ↗
                           </Link>
                         ) : (
                           <span style={{
@@ -1026,6 +1028,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                             <summary style={{ cursor: 'pointer', fontWeight: 700 }}>{meta.official_marking_notes || meta.better_response_image || meta.weaker_response_image ? 'Worked solution and e-marking examples' : 'Worked solution'}</summary>
                             <p><strong>Supplementary worked solution</strong> · {meta.model_answer_origin}</p>
                             <StructuredContent text={meta.model_answer || ''} />
+                            {meta.mapping_status === 'NO_DIRECT_OUTCOME' && meta.mapping_reason && <p role="note">{meta.mapping_reason}</p>}
                             {meta.official_marking_notes && <><h4>Official checking comments</h4><StructuredContent text={meta.official_marking_notes} /></>}
                             {meta.answer_review_note && <p role="note"><strong>Source discrepancy:</strong> {meta.answer_review_note}</p>}
                             {meta.original_reference_source && <p><a href={meta.original_reference_source} target="_blank" rel="noreferrer">Original board e-marking notes</a></p>}
@@ -1097,7 +1100,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
         paperTitle={paper.title}
         paperCode={paper.paperCode || 'PHY-IX-P1'}
         questions={questions.filter((question, index) =>
-          !isHssc || practiceItems.some(item => item.qNum === (question.questionNumber || String(index + 1)))
+          !useScorableQuizItems || practiceItems.some(item => item.qNum === (question.questionNumber || String(index + 1)))
         ).map(question => {
           const stem = parseSourceRegion(question.sourceRegion).quiz_stem;
           return typeof stem === 'string' ? { ...question, questionText: stem } : question;

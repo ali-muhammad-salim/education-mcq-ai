@@ -14,13 +14,18 @@ interface WrittenRow {
   checking: string;
   better: string;
   weaker: string;
+  paperPage?: number;
+  numerical?: boolean;
+  mappingReason?: string;
 }
 
-export function physicsIxAnnualWritten(rows: WrittenRow[], examYear: number) {
-  const paperCode = 'PHY-IX-' + examYear + '-P2';
-  const markingHref = '/resources/physics-ix-' + examYear + '-emarking';
-  const pdf = '/materials/ssc/physics/ssc-1/physics-ix-' + examYear + '-emarking.pdf';
-  const cropRoot = '/paper-crops/PHY-IX-' + examYear + '-EMARKING/';
+export function physicsIxAnnualWritten(rows: WrittenRow[], examYear: number, grade: 9 | 10 = 9) {
+  const roman = grade === 10 ? 'X' : 'IX';
+  const paperCode = 'PHY-' + roman + '-' + examYear + '-P2';
+  const fileStem = 'physics-' + roman.toLowerCase() + '-' + examYear + '-emarking';
+  const markingHref = '/resources/' + fileStem;
+  const pdf = '/materials/ssc/physics/ssc-' + (grade - 8) + '/' + fileStem + '.pdf';
+  const cropRoot = '/paper-crops/PHY-' + roman + '-' + examYear + '-EMARKING/';
   const marking = rows.map(row => ({
     ...row,
     example: {
@@ -33,7 +38,7 @@ export function physicsIxAnnualWritten(rows: WrittenRow[], examYear: number) {
   }));
 
   const questions: QuestionData[] = marking.map(row => {
-    const syllabusMapping = physicsIxSyllabusMapping(row.slo);
+    const syllabusMapping = physicsIxSyllabusMapping(row.slo, grade);
     const choice = row.number.endsWith('a') ? 'EITHER' : row.number.endsWith('b') ? 'OR' : undefined;
     return {
       ...syllabusMapping, id: paperCode + '-q' + row.number, questionNumber: row.number,
@@ -47,6 +52,9 @@ export function physicsIxAnnualWritten(rows: WrittenRow[], examYear: number) {
         model_answer: row.solution, model_answer_origin: 'RiseLearner worked solution',
         emarkingExamples: [row.example], choice_instruction: choice,
         group_question_number: choice === 'EITHER' ? Number.parseInt(row.number, 10) : undefined,
+        pageNumber: row.paperPage,
+        is_numerical: row.numerical,
+        mapping_reason: row.mappingReason,
       },
     };
   });
@@ -57,6 +65,7 @@ export function physicsIxAnnualWritten(rows: WrittenRow[], examYear: number) {
     questionNumber: question.questionNumber, questionText: question.questionText, marks: question.marks,
     sourceTitle: examYear + ' Annual Paper II', sourceHref: '/past-papers/' + paperCode + '#question-' + question.questionNumber,
     examYear, currentSlo: question.sourceRegion.current_slo ?? undefined,
+    numerical: question.sourceRegion.is_numerical,
     modelAnswer: question.sourceRegion.model_answer ?? '', solutionOrigin: 'supplied_resource',
     choiceInstruction: question.sourceRegion.choice_instruction,
     diagramUrl: question.sourceRegion.diagramUrl,

@@ -12,11 +12,13 @@ import Trail from "./rise/Trail";
 import styles from "./rise/discovery.module.css";
 import { studyScope, studyChapters } from "@/services/study/navigation";
 import { physicsUnit16Resource } from "@/lib/physicsUnit16Resource";
+import { physicsIxWorkshop } from '@/lib/physicsIxWorkshop';
 import { physicsUnit17Resource } from "@/lib/physicsUnit17Resources";
-import { subjectMaterialTypes } from "@/services/materials/catalog";
+import { subjectMaterialTypes, subjectPaperListings } from "@/services/materials/catalog";
 import { supportingMaterialLabels } from '@/lib/materialTypes';
 import { hsscBiologyStudyResources } from '@/lib/hsscBiologyStudyResources';
 import { mappedChapterGroups, mappedTheoryUnits } from '@/services/materials/practice';
+import { mathematicsStoreUnavailable } from '@/services/materials/mathematicsAvailability';
 import { hsscComputerScienceResources } from "@/lib/hsscComputerScienceResources";
 import { hsscComputerScienceSyllabus } from "@/lib/hsscComputerScienceSyllabus";
 import { hsscPhysicsSyllabus } from '@/lib/hsscPhysicsSyllabus';
@@ -24,7 +26,7 @@ import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 import { hsscBiologySyllabus } from '@/lib/hsscBiologySyllabus';
 import { hsscBiologyChapterTheory } from '@/lib/hsscBiologyChapterQuestions';
 import { sscBiologySyllabus } from '@/lib/sscBiologySyllabus';
-import prisma from '@/lib/prisma';
+import { sscComputerScienceTheory } from '@/lib/sscComputerScienceTheory';
 
 type Group = "papers" | "practice" | "study" | "lab" | "support";
 
@@ -49,41 +51,33 @@ export default async function SubjectMaterials({
   const senior = hsscPhysicsResources(scope.board.id, scope.classDef.level, scope.meta.slug);
   const seniorBiology = hsscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const biology = sscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
-  const [documents, chapters, biologyPapers] = await Promise.all([
+  const ssc = scope.board.id === "akueb" && (scope.classDef.level === 9 || scope.classDef.level === 10);
+  const legacy = ssc && scope.meta.slug === "physics";
+  const sscComputerScience = ssc && scope.meta.slug === "computer-science";
+  const chemistry = ssc && scope.meta.slug === "chemistry";
+  const mathematics = ssc && scope.meta.slug === "mathematics";
+  const includeStandard = scope.board.id === "akueb";
+  const [documents, chapters, models, pastPapers] = await Promise.all([
     subjectMaterialTypes(params.board, params.class, params.subject).catch(error => {
+      if (mathematics && mathematicsStoreUnavailable(error)) return new Set<string>();
       if ((hssc || biology || seniorBiology) && error.name === "PrismaClientInitializationError") return new Set<string>();
       throw error;
     }),
     studyChapters(scope),
-    biology ? prisma.pastPaper.findMany({
-      where: { paperCode: { startsWith: `BIO-${scope.classDef.roman}-` }, sourceHash: { not: null }, verificationStatus: "REVIEWED_WITH_SOURCE_NOTES" },
-      select: { examType: true },
-    }).catch(error => {
-      if (error.name === "PrismaClientInitializationError") return [];
-      throw error;
-    }) : [],
+    subjectPaperListings(scope, 'MODEL_EXAM', includeStandard),
+    subjectPaperListings(scope, 'ANNUAL', includeStandard),
   ]);
-  const biologyModel = biologyPapers.some(paper => paper.examType === "MODEL_EXAM");
-  const biologyAnnual = biologyPapers.some(paper => paper.examType === "ANNUAL");
-  const legacy =
-    scope.board.id === "akueb" &&
-    scope.meta.slug === "physics" &&
-    [9, 10].includes(scope.classDef.level);
-  const isCsIX = scope.board.id === "akueb" && scope.meta.slug === "computer-science" && scope.classDef.level === 9;
-  const isCsX = scope.board.id === "akueb" && scope.meta.slug === "computer-science" && scope.classDef.level === 10;
-  const isChemIX = scope.board.id === "akueb" && scope.meta.slug === "chemistry" && scope.classDef.level === 9;
-  const isChemX = scope.board.id === "akueb" && scope.meta.slug === "chemistry" && scope.classDef.level === 10;
-  const chemistry = isChemIX || isChemX;
-  const mathematics =
-    scope.board.id === "akueb" &&
-    scope.meta.slug === "mathematics" &&
-    [9, 10].includes(scope.classDef.level);
-  const [mathMcqs, mappedTheory] = await Promise.all([
-    mathematics || computerScience ? mappedChapterGroups(scope.board.shortCode, scope.classDef.level, scope.meta.title) : [],
+  const [chapterMcqs, mappedTheory] = await Promise.all([
+    mathematics || computerScience || biology ? mappedChapterGroups(scope.board.shortCode, scope.classDef.level, scope.meta.title) : [],
     seniorBiology ? hsscBiologyChapterTheory(scope.board.id, scope.classDef.level, scope.meta.slug) ?? []
-      : mathematics || computerScience || biologyPapers.length ? mappedTheoryUnits(scope.board.shortCode, scope.classDef.level, scope.meta.title) : [],
-  ]);
+      : sscComputerScience ? sscComputerScienceTheory(scope.classDef.level === 9 ? 9 : 10)
+      : mathematics || computerScience || biology || chemistry ? mappedTheoryUnits(scope.board.shortCode, scope.classDef.level, scope.meta.title) : [],
+  ]).catch(error => {
+    if (biology && error.name === "PrismaClientInitializationError") return [[], []] as const;
+    throw error;
+  });
   const available = (kind: string) => documents.has(kind);
+  const mathematicsMcqs = mathematics && [...models, ...pastPapers].some(paper => /-P1$/.test(paper.paperCode ?? '') && paper._count.questions > 0);
   const items: {
     label: string;
     href: string;
@@ -93,20 +87,20 @@ export default async function SubjectMaterials({
     {
       label: "Syllabus",
       href: scope.baseUrl + "/syllabus",
-      pending: !biology && !seniorBiology && !hssc && !legacy && !isCsIX && !isCsX && !chemistry && !mathematics && !available("syllabus"),
+      pending: !biology && !seniorBiology && !hssc && !legacy && !sscComputerScience && !chemistry && !mathematics && !available("syllabus"),
       group: "papers",
     },
     {
       label: "Model papers",
       href: scope.baseUrl + "/model-papers",
-      pending: !computerScience && !biologyModel && !seniorBiology && !senior && !legacy && !isCsIX && !chemistry && !available("model_paper"),
+      pending: !models.length && !seniorBiology && !available("model_paper"),
       group: "papers",
     },
     {
       label: "Past papers",
       href: scope.baseUrl + "/pastpapers",
       pending:
-        !biologyAnnual && !(seniorBiology && scope.classDef.level === 11) && !(computerScience?.grade === 11) && !(senior?.grade === 11) && !legacy && !isCsIX && !chemistry && !available("past_paper"),
+        !pastPapers.length && !available("past_paper"),
       group: "papers",
     },
     {
@@ -170,7 +164,7 @@ export default async function SubjectMaterials({
     {
       label: "MCQs (Chapter-wise, Past Papers & Full Book)",
       href: scope.baseUrl + "/mcqs",
-      pending: !computerScience && !seniorBiology && !biologyPapers.length && !senior && !legacy && !isCsIX && !chemistry && !mathMcqs.length && !available("mcq"),
+      pending: !computerScience && !seniorBiology && !senior && !legacy && !sscComputerScience && !chemistry && !mathematicsMcqs && !chapterMcqs.length && !available("mcq"),
       group: "practice",
     },
     ...(['crqs', 'erqs', 'numericals'] as const).filter(mode => mappedTheory.some(unit => unit[mode].length > 0)).map(mode => ({
@@ -226,10 +220,13 @@ export default async function SubjectMaterials({
         }))),
     {
       label: "Practicals",
-      href: biology ? biology.original + '#page=' + biology.practicalPage : scope.baseUrl + "/practicals",
-      pending: !biology && !seniorBiology && !hssc && !(legacy && scope.classDef.level === 9) && !chemistry && !available('practical_paper'),
+      href: scope.baseUrl + "/practicals",
+      pending: !biology && !seniorBiology && !hssc && !legacy && !sscComputerScience && !chemistry && !available('practical_paper'),
       group: "lab",
     },
+    ...(scope.baseUrl === physicsIxWorkshop.subjectHref
+      ? [{ label: 'Other resources', href: physicsIxWorkshop.resourcesHref, group: 'support' as Group }]
+      : []),
     ...(scope.board.id === 'akueb' && scope.classDef.level === 10 && scope.meta.slug === 'physics'
       ? [
           { label: 'Formula sheets', href: scope.baseUrl + '/study?kind=FORMULA_SHEET', group: 'study' as Group },
@@ -248,7 +245,8 @@ export default async function SubjectMaterials({
         group: "support" as Group,
       })),
   ];
-  const ready = items.filter((item) => !item.pending).length;
+  const visibleItems = biology ? items.filter(item => !item.pending) : items;
+  const ready = visibleItems.filter((item) => !item.pending).length;
   return (
     <div className="rise-ui">
       <section className={styles.shell}>
@@ -276,7 +274,7 @@ export default async function SubjectMaterials({
             <span className={styles.metaItem}>
               <span className={styles.metaKey}>Available now</span>
               <span className={styles.metaValue} data-r-num>
-                {ready} of {items.length} resources
+                {ready} of {visibleItems.length} resources
               </span>
             </span>
           </div>
@@ -295,7 +293,7 @@ export default async function SubjectMaterials({
 
         <div className={styles.groups}>
           {GROUPS.map((group) => {
-            const groupItems = items.filter((item) => item.group === group.id);
+            const groupItems = visibleItems.filter((item) => item.group === group.id);
             if (!groupItems.length) return null;
             const Icon = group.icon;
             const live = groupItems.filter((item) => !item.pending).length;

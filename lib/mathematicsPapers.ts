@@ -11,6 +11,9 @@ import manifest2022 from '@/data/mathematics/ssc1_2022_source_manifest.json';
 import { mathematics2023Papers } from './mathematics2023';
 import { mathematics2024Papers } from './mathematics2024';
 import { mathematics2025Papers } from './mathematics2025';
+import { mathematicsIx2026Papers } from './mathematicsIx2026';
+import { mathematicsX2026Papers } from './mathematicsX2026';
+import { mathematicsXModelPapers } from './mathematicsXModel';
 import { mathematicsX2017Papers } from './mathematicsX2017';
 import { mathematicsX2018Papers } from './mathematicsX2018';
 import { mathematicsX2019Papers } from './mathematicsX2019';
@@ -22,6 +25,7 @@ import { mathematicsX2025Papers } from './mathematicsX2025';
 import manifest2023 from '@/data/mathematics/ssc1_2023_source_manifest.json';
 import manifest2024 from '@/data/mathematics/ssc1_2024_source_manifest.json';
 import manifest2025 from '@/data/mathematics/ssc1_2025_source_manifest.json';
+import manifest2026 from '@/data/mathematics/ssc1_2026_source_manifest.json';
 import manifestX2017 from '@/data/mathematics/ssc2_2017_source_manifest.json';
 import manifestX2018 from '@/data/mathematics/ssc2_2018_source_manifest.json';
 import manifestX2019 from '@/data/mathematics/ssc2_2019_source_manifest.json';
@@ -59,6 +63,7 @@ export const reviewedMathematicsPapers = [
   ...mathematics2023Papers,
   ...mathematics2024Papers,
   ...mathematics2025Papers,
+  ...mathematicsIx2026Papers,
   ...mathematicsX2017Papers,
   ...mathematicsX2018Papers,
   ...mathematicsX2019Papers,
@@ -67,6 +72,8 @@ export const reviewedMathematicsPapers = [
   ...mathematicsX2023Papers,
   ...mathematicsX2024Papers,
   ...mathematicsX2025Papers,
+  ...mathematicsX2026Papers,
+  ...mathematicsXModelPapers,
 ];
 
 export const mathematicsPaperManifests: Record<
@@ -74,7 +81,7 @@ export const mathematicsPaperManifests: Record<
   {
     sources: {
       p1: typeof manifest2023.sources.p1;
-      key: typeof manifest2023.sources.key;
+      key?: typeof manifest2023.sources.key;
       p2?: typeof manifest2023.sources.p2;
       em?: typeof manifest2023.sources.em;
     };
@@ -89,4 +96,5 @@ export const mathematicsPaperManifests: Record<
   2023: manifest2023,
   2024: manifest2024,
   2025: manifest2025,
+  2026: manifest2026,
 };

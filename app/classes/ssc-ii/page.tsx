@@ -13,7 +13,7 @@ export default function SSC2Page() {
       {/* Universal Breadcrumb */}
       <Breadcrumbs
         items={[
-          { label: 'AKU-EB' },
+          { label: 'AKU-EB', href: '/akueb' },
           { label: 'Class X (SSC-II) Academic Portal', active: true }
         ]}
       />
