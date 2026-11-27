@@ -12,7 +12,7 @@ export const mathematicsXModelWritten: readonly ModelWritten[] = [
 | $y=x-1$ | $-3$ | $-2$ | $3$ |`,
     math`Plot $(-1,4)$ and $(4,-1)$ for the descending line, and $(-2,-3)$ and $(4,3)$ for the rising line. Extend each as a straight line. The graphs intersect at $(2,1)$. Both expressions give 1 when $x=2$.`],
   ['3',5,3,'17.3.5',true,math`If $s=(1-i)^2+\left(\frac1{i^2}\right)^2$, find $\overline s$.`,
-    math`Use $i^2=-1$. Then $(1-i)^2=-2i$ and $\left(1/i^2\right)^2=1$. Thus $s=1-2i$, so $\overline{s}=1+2i$.`],
+    math`Use $i^2=-1$. Then $(1-i)^2=-2i$. The reciprocal of $i^2$ is $-1$, and its square is 1. Thus $s=1-2i$, so $\overline{s}=1+2i$.`],
   ['4a',6,4,'18.5.8',true,math`For $A=\begin{bmatrix}2&3\\6&2\end{bmatrix}$, find (i) its determinant (1 mark) and inverse (1 mark). (ii) Use the inverse to show that $A^{-1}A=I$. (2 marks)`,
     math`$\det A=2\cdot2-3\cdot6=-14$. Thus $A^{-1}=-\frac1{14}\begin{bmatrix}2&-3\\-6&2\end{bmatrix}$. The product of the adjugate with $A$ is $\begin{bmatrix}-14&0\\0&-14\end{bmatrix}$, and multiplying by $-1/14$ gives $I$.`],
   ['4b',7,4,'18.5.9',true,math`For $A=\begin{bmatrix}1&2\\0&1\end{bmatrix}$ and $B=\begin{bmatrix}1&0\\0&1\end{bmatrix}$, verify $(AB)^{-1}=B^{-1}A^{-1}$.`,
