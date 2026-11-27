@@ -17,7 +17,9 @@ export default async function Unit17ResourcePage({
   return (
     <main className={styles.page}>
       <Breadcrumbs items={[
-        { label: 'Class 10 Physics', href: resource.chapterHref },
+        { label: 'AKU-EB', href: '/akueb' },
+        { label: 'Class X', href: '/akueb/X' },
+        { label: 'Physics', href: resource.chapterHref },
         { label: 'Chapter-wise notes', href: resource.chapterHref + '/chapter-notes#unit-17' },
         { label: resource.title, active: true },
       ]} />

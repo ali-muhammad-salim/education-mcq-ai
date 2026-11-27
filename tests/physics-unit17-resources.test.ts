@@ -41,9 +41,12 @@ test('Unit 17 routes show the four source packs and link matching practice secti
 
   const params = Promise.resolve({ board: 'akueb', class: 'X', subject: 'physics', unit: '17' });
   const crqs = renderToStaticMarkup(await ChapterTheoryUnitPage({ params, mode: 'crqs' }));
-  expect(crqs.match(/>Show solution<\/button>/g)).toHaveLength(91);
+  expect(crqs.match(/>Show solution<\/button>/g)).toHaveLength(93);
+  expect(crqs).toContain('/past-papers/PHY-X-2018-P2#question-6');
+  expect(crqs).toContain('/past-papers/PHY-X-2026-P2#question-2');
+  expect(crqs).toContain('/past-papers/PHY-X-2024-P2#question-2');
   expect(Array.from(crqs.matchAll(/>Q\.(\d+)\.</g), match => Number(match[1])))
-    .toEqual(Array.from({ length: 93 }, (_, index) => index + 1));
+    .toEqual(Array.from({ length: 96 }, (_, index) => index + 1));
   for (const q of supplements.crqs) {
     expect(q.modelAnswer).toBeTruthy();
     if (q.betterResponseImage) expect(existsSync('public' + q.betterResponseImage)).toBe(true);

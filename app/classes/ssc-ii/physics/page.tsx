@@ -139,8 +139,8 @@ export default function SSC2PhysicsPage() {
       {/* Navigation Breadcrumb */}
       <Breadcrumbs
         items={[
-          { label: 'AKU-EB' },
-          { label: 'Class X (SSC-II)', href: '/subjects/class-10/physics' },
+          { label: 'AKU-EB', href: '/akueb' },
+          { label: 'Class X (SSC-II)', href: '/akueb/X' },
           { label: 'Physics Complete Hub', active: true }
         ]}
       />

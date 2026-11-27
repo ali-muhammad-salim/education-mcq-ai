@@ -15,6 +15,7 @@ import mathIX from "@/data/mathematics/ssc1_exact_syllabus.json";
 import mathX from "@/data/mathematics/ssc2_exact_syllabus.json";
 import SyllabusClient from "./SyllabusClient";
 import {publishedCurriculum} from '@/services/materials/curriculum';
+import { isBundledMathematics, mathematicsStoreUnavailable } from '@/services/materials/mathematicsAvailability';
 import { hsscComputerScienceSyllabus, hsscComputerScienceSections } from "@/lib/hsscComputerScienceSyllabus";
 import { hsscPhysicsSyllabus } from "@/lib/hsscPhysicsSyllabus";
 import { physicsSyllabusSections } from "@/lib/physicsSyllabusSections";
@@ -34,7 +35,9 @@ export default async function Page({
   const computerScience = hsscComputerScienceSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const biology = sscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
   const seniorBiology = hsscBiologySyllabus(scope.board.id, scope.classDef.level, scope.meta.slug);
+  const isMathematics = isBundledMathematics(scope.board.id, scope.classDef.level, scope.meta.slug);
   const compiled = await publishedCurriculum(scope.board.shortCode,scope.classDef.level,scope.meta.title, seniorBiology?.id).catch(error => {
+    if (isMathematics && mathematicsStoreUnavailable(error)) return null;
     if ((hssc || biology || seniorBiology || computerScience) && error.name === "PrismaClientInitializationError") return null;
     throw error;
   });
@@ -44,6 +47,7 @@ export default async function Page({
     raw.subject,
     "syllabus",
   ).catch(error => {
+    if (isMathematics && mathematicsStoreUnavailable(error)) return [];
     if ((hssc || biology || seniorBiology || computerScience) && error.name === "PrismaClientInitializationError") return [];
     throw error;
   });
@@ -58,10 +62,6 @@ export default async function Page({
   const isChemistry =
     scope.board.id === "akueb" &&
     scope.meta.slug === "chemistry" &&
-    [9, 10].includes(scope.classDef.level);
-  const isMathematics =
-    scope.board.id === "akueb" &&
-    scope.meta.slug === "mathematics" &&
     [9, 10].includes(scope.classDef.level);
   const legacy = isPhysics || isComputerScience || isChemistry || isMathematics;
   const chemistry = isChemistry && scope.classDef.level === 9 ? sscChemistryIxSections : null;

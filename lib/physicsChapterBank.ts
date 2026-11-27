@@ -2,6 +2,12 @@ import bank from '@/data/physics/chapter_wise_theory_bank.json';
 import supplements from '@/data/physics/ssc2_unit17_resources.json';
 import { physicsUnit17Resource } from '@/lib/physicsUnit17Resources';
 import { physicsIx2026ChapterWritten } from '@/lib/physicsIx2026Papers';
+import { physicsX2017ChapterWritten } from '@/lib/physicsX2017Papers';
+import { physicsX2018ChapterWritten } from '@/lib/physicsX2018Papers';
+import { physicsX2019ChapterWritten } from '@/lib/physicsX2019Papers';
+import { physicsX2023ChapterWritten } from '@/lib/physicsX2023Papers';
+import { physicsX2024ChapterWritten } from '@/lib/physicsX2024Papers';
+import { physicsX2026ChapterWritten } from '@/lib/physicsX2026Papers';
 import { physicsIx2023ChapterWritten } from '@/lib/physicsIx2023Papers';
 import { physicsIx2019ChapterWritten } from '@/lib/physicsIx2019Papers';
 import { physicsIx2018ChapterWritten } from '@/lib/physicsIx2018Papers';
@@ -31,12 +37,25 @@ export const physicsChapterBank = {
       erqs: [...unit.erqs.filter(question => !duplicateIds.has(question.id)), ...reviewedQuestions.filter(question => question.extended)],
     };
   }),
-  '10': bank['10'].map(unit => unit.unitNumber === physicsUnit17Resource.unit ? {
-    ...unit,
-    crqs: [...unit.crqs, ...supplements.crqs.map(question => ({
-      ...question,
-      solutionOrigin: 'supplied_resource',
-    }))],
-    numericals: [...unit.numericals, ...supplements.numericals],
-  } : unit),
+  '10': bank['10'].map(unit => {
+    const annual = [...physicsX2026ChapterWritten, ...physicsX2024ChapterWritten, ...physicsX2023ChapterWritten, ...physicsX2019ChapterWritten, ...physicsX2018ChapterWritten, ...physicsX2017ChapterWritten].filter(question => question.unitNumber === unit.unitNumber);
+    const fissionCopy = annual.some(question => question.id === 'PHY-X-2019-P2-q8')
+      ? annual.find(question => question.id === 'PHY-X-2024-P2-q5')
+      : undefined;
+    const reviewed = annual.filter(question => question !== fissionCopy).map(question =>
+      fissionCopy && question.id === 'PHY-X-2019-P2-q8'
+        ? { ...question, additionalSources: [{ title: fissionCopy.sourceTitle, href: fissionCopy.sourceHref }] }
+        : question);
+    const hasSupplement = unit.unitNumber === physicsUnit17Resource.unit;
+    return {
+      ...unit,
+      crqs: [...unit.crqs, ...reviewed.filter(question => !question.extended), ...(hasSupplement ? supplements.crqs.map(question => ({
+        ...question, solutionOrigin: 'supplied_resource',
+      })) : [])],
+      erqs: [...unit.erqs, ...reviewed.filter(question => question.extended)],
+      numericals: [...unit.numericals, ...reviewed.filter(question => question.numerical).map(question => ({
+        ...question, problem: question.questionText, solution: question.modelAnswer,
+      })), ...(hasSupplement ? supplements.numericals : [])],
+    };
+  }),
 };

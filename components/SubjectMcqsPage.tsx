@@ -36,6 +36,14 @@ import prisma from '@/lib/prisma';
 import { paperAnswer, paperChoices, paperMetadata } from '@/lib/paperPresentation';
 import { combinedChemistryXArchives, getAllStandardPapers, getFallbackPaper } from '@/lib/paperDataService';
 import { physicsIx2026Papers } from '@/lib/physicsIx2026Papers';
+import { physicsX2017Papers } from '@/lib/physicsX2017Papers';
+import { physicsX2018Papers } from '@/lib/physicsX2018Papers';
+import { physicsX2019Papers } from '@/lib/physicsX2019Papers';
+import { physicsX2021Paper } from '@/lib/physicsX2021Paper';
+import { physicsX2022Paper } from '@/lib/physicsX2022Paper';
+import { physicsX2023Papers } from '@/lib/physicsX2023Papers';
+import { physicsX2024Papers } from '@/lib/physicsX2024Papers';
+import { physicsX2026Papers } from '@/lib/physicsX2026Papers';
 import { chemistryX2026Papers } from '@/lib/chemistryX2026';
 import { physicsIx2023Papers } from '@/lib/physicsIx2023Papers';
 import { physicsIx2019Papers } from '@/lib/physicsIx2019Papers';
@@ -79,9 +87,9 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
       const sources = new Map<string, HsscMcqsData['papers'][number]>();
       for (const q of new Map(mapped.map(q => [q.id, q])).values()) {
         const annual = q.examType === 'ANNUAL';
-        const paper = sources.get(q.paperCode) ?? {
+        const paper: HsscMcqsData['papers'][number] = sources.get(q.paperCode) ?? {
           code: q.paperCode, title: q.sourceTitle, session: annual ? String(q.examYear) : 'Model',
-          year: annual ? q.examYear : null, chapterOnly: q.sourceGrade !== classDef.level,
+          year: annual ? q.examYear ?? null : null, chapterOnly: q.sourceGrade !== classDef.level,
           paper: 'I', href: '/past-papers/' + q.sourcePaperId, questions: [],
         };
         paper.questions.push({
@@ -142,7 +150,8 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
             { label: board.name, href: `/${board.id}` },
             { label: `${classDef.name} (${classDef.stageLabel})`, href: `/${board.id}/${classRoman}` },
             { label: meta.title, href: base },
-            { label: hsscCategory?.label || 'MCQs', href: hsscCategory ? `${base}/mcqs/${hsscCategory.id}` : undefined, active: !chapterUnit },
+            { label: 'MCQs', href: base + '/mcqs' },
+            ...(hsscCategory ? [{ label: hsscCategory.label, href: `${base}/mcqs/${hsscCategory.id}` }] : []),
             ...(chapterUnit ? [{ label: chapterUnit.name, active: true }] : []),
           ]}
         />
@@ -170,7 +179,7 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
   const isChem = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'chemistry';
   const isMath = board.id === 'akueb' && ['IX', 'X'].includes(classRoman) && meta.slug === 'mathematics';
   const legacy = isPhysics || isCs || isChem || isMath;
-  const mappedChapters = category || !legacy ? await mappedChapterGroups(board.shortCode, classDef.level, meta.title) : [];
+  const mappedChapters = category || !legacy || isMath ? await mappedChapterGroups(board.shortCode, classDef.level, meta.title) : [];
   if (!legacy && !mappedChapters.length) return <ContentUnavailable title={classDef.name + ' ' + meta.title + ' resources'} />;
   const computerChapterQuestions = isCs && category ? getAllStandardPapers()
     .filter(paper => /^CS-(IX|X)-(?:\d{4}-)?P1$/.test(paper.paperCode))
@@ -223,7 +232,8 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
           { label: board.name, href: `/${board.id}` },
           { label: `${classDef.name} (${classDef.stageLabel})`, href: `/${board.id}/${classRoman}` },
           { label: meta.title, href: baseUrl },
-          { label: categoryDef?.label || 'MCQs', href: categoryDef ? `${baseUrl}/mcqs/${categoryDef.id}` : undefined, active: !chapterLabel },
+          { label: 'MCQs', href: baseUrl + '/mcqs' },
+          ...(categoryDef ? [{ label: categoryDef.label, href: `${baseUrl}/mcqs/${categoryDef.id}` }] : []),
           ...(chapterLabel ? [{ label: chapterLabel, active: true }] : []),
         ]}
       />
@@ -266,10 +276,10 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
           mappedChapters={mappedChapters}
           computerChapterQuestions={computerChapterQuestions}
           availableTheorySections={availableTheorySections}
-          reviewedPapers={(isMath ? reviewedMathematicsPapers : isChem ? [...chemistryX2026Papers, ...combinedChemistryXArchives.map(archive => archive.paper)] : isPhysics && classDef.level === 9 ? [...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers] : [])
+          reviewedPapers={(isMath ? reviewedMathematicsPapers : isChem ? [...chemistryX2026Papers, ...combinedChemistryXArchives.map(archive => archive.paper)] : isPhysics ? [...physicsX2026Papers, ...physicsX2024Papers, ...physicsX2023Papers, physicsX2022Paper, physicsX2021Paper, ...physicsX2019Papers, ...physicsX2018Papers, ...physicsX2017Papers, ...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers] : [])
             .filter(p => p.academicClass.level === classDef.level && p.paperCode.endsWith('-P1'))
             .sort((a,b) => b.examYear-a.examYear)
-            .map(p => ({ paperCode: p.paperCode, title: p.title, examYear: p.examYear, count: p.questions.length }))}
+            .map(p => ({ paperCode: p.paperCode, title: p.title, examYear: p.examYear, count: p.questions.length, model: p.examType === 'MODEL_EXAM' }))}
           initialCategory={category}
           initialChapter={chapter}
           useReviewedLegacy={isPhysics && !(await publishedCurriculum(board.shortCode, classDef.level, meta.title))}

@@ -7,6 +7,7 @@ import { studyScope } from "@/services/study/navigation";
 import { getSubjectMeta } from "@/lib/subjectMetadata";
 import { materialResourceTypes } from '@/lib/materialTypes';
 import { getAllStandardPapers } from '@/lib/paperDataService';
+import { isBundledMathematics, mathematicsStoreUnavailable } from './mathematicsAvailability';
 export const materialScopeWhere=(ids:string[]):Prisma.KnowledgeDocumentWhereInput=>({OR:[{subjectId:{in:ids}},...ids.map(id=>({catalogMetadata:{path:['scopeSubjectIds'],array_contains:[id]}}))]});
 
 export async function subjectPaperListings(
@@ -29,6 +30,7 @@ export async function subjectPaperListings(
     orderBy: { examYear: 'desc' },
     take: 100,
   }).catch(error => {
+    if (includeStandard && isBundledMathematics(scope.board.id, scope.classDef.level, scope.meta.slug) && mathematicsStoreUnavailable(error)) return [];
     if (includeStandard && error.name === 'PrismaClientInitializationError') return [];
     throw error;
   });

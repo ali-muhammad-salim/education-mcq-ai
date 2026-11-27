@@ -2,7 +2,11 @@
 import pathlib,json,re,pymupdf
 report=[];issues=[];total=0
 for p in sorted(pathlib.Path('data/mathematics').glob('*source_manifest.json')):
- m=json.loads(p.read_text(encoding='utf8'));d=pymupdf.open('public'+m['sources']['key']['url']);keys={};previous=0
+ m=json.loads(p.read_text(encoding='utf8'));source=m['sources'].get('key')
+ if not source:
+  report.append({'source':p.name,'status':'No printed key supplied'})
+  continue
+ d=pymupdf.open('public'+source['url']);keys={};previous=0
  for pg in d:
   for table in pg.find_tables().tables:
    for row in table.extract():
