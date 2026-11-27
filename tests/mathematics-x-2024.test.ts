@@ -102,6 +102,13 @@ describe('Mathematics X (SSC-II) annual 2024 source import', () => {
     const questions = getFallbackPaper('MTH-X-2024-P1')!.questions;
     for (const q of questions) {
       const ans = paperAnswer(q.sourceRegion, paperChoices(q.sourceRegion.choices));
+      if (q.questionNumber === '31') {
+        expect(ans).toBeUndefined();
+        expect(q.sourceRegion.official_answer).toBe('B');
+        expect(q.sourceRegion.answer_status).toBe('KEY_CONFLICT');
+        expect(q.sourceRegion.answer_review_note).toContain('None of the printed choices');
+        continue;
+      }
       expect(ans).toBeDefined();
       expect(['A', 'B', 'C', 'D']).toContain(ans);
     }

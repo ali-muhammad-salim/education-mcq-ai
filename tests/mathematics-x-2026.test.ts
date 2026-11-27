@@ -30,7 +30,7 @@ describe('Class X 2026 Mathematics papers', () => {
     const scorable = p1.questions.filter(q => paperScoringAnswers(q.sourceRegion, paperChoices(q.sourceRegion.choices)).length);
     expect(scorable).toHaveLength(42);
     expect(p1.questions.filter(q => !scorable.includes(q)).map(q => q.questionNumber)).toEqual(['10', '39', '43']);
-    expect(mapped.filter(row => row.paper === p1 && row.answers.length)).toHaveLength(40);
+    expect(new Set(mapped.filter(row => row.paper === p1 && row.answers.length).map(row => row.question.id)).size).toBe(40);
     expect(byGrade[0].some(row => row.paper === p1 && row.question.questionNumber === '7' && row.unit === 6)).toBe(true);
     expect(byGrade[1].some(row => row.paper === p1 && row.question.questionNumber === '22' && row.unit === 16)).toBe(true);
     expect(mapped.filter(row => row.paper === p2)).toHaveLength(13);
