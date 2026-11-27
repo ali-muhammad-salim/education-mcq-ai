@@ -257,7 +257,7 @@ export default function StructuredContent({ text, className = '', style = {} }: 
         {educationalLines(text).map((line, index) => !line.body.trim()
           ? <div key={index} style={{ height: '0.25rem' }} />
           : line.marker
-            ? <div key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', paddingLeft: line.kind === 'roman' ? '1.1rem' : '0.4rem' }}>
+            ? <div key={index} className={line.kind === 'roman' ? 'structured-roman-item' : undefined} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', paddingLeft: line.kind === 'roman' ? undefined : '0.4rem' }}>
                 <span style={{ fontWeight: line.kind === 'roman' ? 400 : 700, color: 'var(--primary-color, #0b5e4a)', minWidth: line.kind === 'roman' ? '1.65rem' : '1.35rem' }}>{line.marker}</span>
                 <span style={{ flex: 1, minWidth: 0 }}><MathText text={line.body} /></span>
               </div>

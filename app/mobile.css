@@ -264,7 +264,14 @@
   max-inline-size: 100%;
   block-size: auto;
 }
+.structured-roman-item {
+  padding-inline-start: 1.1rem;
+}
 @media (max-width: 700px) {
+  .main-content:has(> .chapter-mcq-page) { padding-inline: .45rem !important; }
+  .chapter-mcq-page { padding-inline: 0 !important; }
+  .structured-roman-item { padding-inline-start: 0; }
+  .structured-roman-item .math-inline .katex { font-size: 1em; }
   [data-question-head] { flex-wrap: wrap; }
   [data-question-head] > div { flex-basis: 100%; gap: .4rem !important; }
   [data-question-marks] { margin-inline-start: auto !important; }

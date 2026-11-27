@@ -225,7 +225,7 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
     : null;
 
   return (
-    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem 1rem 5rem 1rem', fontFamily: "'Inter', sans-serif" }}>
+    <div className={chapter ? "chapter-mcq-page" : undefined} style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem 1rem 5rem 1rem', fontFamily: "'Inter', sans-serif" }}>
       <Breadcrumbs
         items={[
           { label: 'Home', href: '/' },
