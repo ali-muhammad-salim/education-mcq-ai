@@ -32,7 +32,9 @@ export default async function Unit16ResourcePage({
   return (
     <main className={styles.page}>
       <Breadcrumbs items={[
-        { label: 'Class 10 Physics', href: classPath },
+        { label: 'AKU-EB', href: '/akueb' },
+        { label: 'Class X', href: '/akueb/X' },
+        { label: 'Physics', href: classPath },
         { label: 'Chapter-wise notes', href: classPath + '/chapter-notes#unit-16' },
         { label: 'D.C. Circuits', active: true },
       ]} />

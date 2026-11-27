@@ -1,3 +1,10 @@
+import { physicsX2017References } from '@/lib/physicsX2017Papers';
+import { physicsX2018References } from '@/lib/physicsX2018Papers';
+import { physicsX2019References } from '@/lib/physicsX2019Papers';
+import { physicsX2021Key } from '@/lib/physicsX2021Paper';
+import { physicsX2022Key } from '@/lib/physicsX2022Paper';
+import { physicsX2023References } from '@/lib/physicsX2023Papers';
+import { physicsX2024References } from '@/lib/physicsX2024Papers';
 import { physicsIx2023References } from '@/lib/physicsIx2023Papers';
 import { physicsIx2019References } from '@/lib/physicsIx2019Papers';
 import { physicsIx2018References } from '@/lib/physicsIx2018Papers';
@@ -35,6 +42,10 @@ import { computerScienceXi2025Resources } from '@/lib/hsscXiAnnualComputerScienc
 import { biologyXiAnnualArchives } from '@/lib/hsscXiAnnualBiology';
 import { biologyIx2026Notes } from '@/lib/biologyIx2026';
 import { chemistryX2026Notes } from '@/lib/chemistryX2026';
+import { chemistryIx2026Notes } from '@/lib/chemistryIx2026';
+import { mathematicsIx2026Notes } from '@/lib/mathematicsIx2026';
+import { mathematicsX2026Notes } from '@/lib/mathematicsX2026';
+import { mathematicsStoreUnavailable } from '@/services/materials/mathematicsAvailability';
 import { chemistryX2019Notes } from '@/lib/chemistryX2019';
 import { chemistryX2018Notes } from '@/lib/chemistryX2018';
 import { chemistryX2017Notes } from '@/lib/chemistryX2017';
@@ -68,8 +79,8 @@ export default async function SubjectResourceList({
   const mathematics = scope.board.id === 'akueb' && scope.meta.slug === 'mathematics';
   const biology = scope.board.id === 'akueb' && scope.meta.slug === 'biology';
   const biologyXiAnnual = biology && scope.classDef.level === 11 && type === 'past_paper';
-  const physicsIxAnnual = scope.board.id === 'akueb' && scope.meta.slug === 'physics' &&
-    scope.classDef.level === 9 && type === 'past_paper';
+  const sscPhysicsAnnual = scope.board.id === 'akueb' && scope.meta.slug === 'physics' &&
+    [9, 10].includes(scope.classDef.level) && type === 'past_paper';
   const documents = await subjectMaterials(
     params.board,
     params.class,
@@ -77,7 +88,8 @@ export default async function SubjectResourceList({
     type==='past_paper'?['past_paper','answer_key','e_marking']:type,
     after,
   ).catch(error => {
-    if ((hssc || computerScience || (biology && type !== "textbook") || physicsIxAnnual) && error.name === "PrismaClientInitializationError") return [];
+    if (mathematics && mathematicsStoreUnavailable(error)) return [];
+    if ((hssc || computerScience || (biology && type !== "textbook") || sscPhysicsAnnual) && error.name === "PrismaClientInitializationError") return [];
     throw error;
   });
   const items: MaterialItem[] = documents
@@ -110,11 +122,15 @@ export default async function SubjectResourceList({
     (legacy && scope.classDef.level === 9)
   );
   if (legacy && scope.classDef.level === 9 && type === "past_paper" && !after) items.push(...physicsIx2023References, physicsIx2022Key, physicsIx2021Key, ...physicsIx2019References, ...physicsIx2018References, ...physicsIx2017References);
-  if (legacy && type==='past_paper' && !after) items.push(...(scope.classDef.level===9 ? physics2025Resources : physicsX2025Resources));
+  if (legacy && type==='past_paper' && !after) items.push(...(scope.classDef.level===9 ? physics2025Resources : [...physicsX2025Resources, ...physicsX2024References, ...physicsX2023References, physicsX2022Key, physicsX2021Key, ...physicsX2019References, ...physicsX2018References, ...physicsX2017References]));
   if (hssc?.grade === 11 && type === "past_paper" && !after) items.push(...hsscXiAnnualResources);
   if (biologyXiAnnual && !after) items.push(...biologyXiAnnualArchives.flatMap(archive => archive.resources));
   if (biology && scope.classDef.level === 9 && type === 'past_paper' && !after) {
     items.push(biologyIx2026Notes, biologyIx2021Tabs[1], ...biologyIxAnnualArchives.flatMap(archive => archive.tabs.slice(2)));
+  }
+  if (mathematics && type === 'past_paper' && !after) {
+    if (scope.classDef.level === 9) items.push(mathematicsIx2026Notes);
+    if (scope.classDef.level === 10) items.push(mathematicsX2026Notes);
   }
   if (scope.board.id === 'akueb' && scope.meta.slug === 'computer-science' && scope.classDef.level === 11 && type === 'past_paper' && !after) {
     items.push(...computerScienceXi2025Resources);
@@ -124,6 +140,7 @@ export default async function SubjectResourceList({
   }
   if (scope.board.id === 'akueb' && scope.meta.slug === 'chemistry' && [9, 10].includes(scope.classDef.level) && type === 'past_paper' && !after) {
     items.push(...(scope.classDef.level === 9 ? chem2025Resources : chemXResources));
+    if (scope.classDef.level === 9) items.push(chemistryIx2026Notes);
     if (scope.classDef.level === 10) items.push(chemistryX2026Notes, chemistryX2019Notes, chemistryX2018Notes, chemistryX2017Notes, ...combinedChemistryXArchives.map(archive => archive.tabs[1]));
   }
   if (type !== "textbook" && !after) {
@@ -172,12 +189,17 @@ export default async function SubjectResourceList({
     const references = await prisma.book.findMany({
       where: { subject: { equals: mathematics ? 'Mathematics' : 'Biology', mode: 'insensitive' }, className: scope.classDef.name, boardAssociation: 'AKU-EB' },
       select: { sourceFile: true, publicationYear: true, metadata: true },
+    }).catch(error => {
+      if (mathematics && mathematicsStoreUnavailable(error)) return [];
+      throw error;
     });
     for (const reference of references) {
       const kind = (reference.metadata as Record<string, unknown> | null)?.resourceType;
       const href = safeDocumentUrl(reference.sourceFile);
       if (!href || !reference.publicationYear || !['answer_key', 'e_marking'].includes(String(kind))) continue;
-      const markingPage = /^\/materials\/ssc\/(?:mathematics|biology)\/ssc-[12]\/((?:mathematics|biology)-(?:ix|x)-(?:201[789]|202[345])-emarking)\.pdf$/.exec(href)?.[1];
+      const markingPage = href === mathematicsIx2026Notes.fileUrl ? 'mathematics-ix-2026-emarking'
+        : href === mathematicsX2026Notes.fileUrl ? 'mathematics-x-2026-emarking'
+        : /^\/materials\/ssc\/(?:mathematics|biology)\/ssc-[12]\/((?:mathematics|biology)-(?:ix|x)-(?:201[789]|202[345])-emarking)\.pdf$/.exec(href)?.[1];
       const keyPage = /^\/materials\/ssc\/biology\/ssc-[12]\/((?:biology-ix-202[35]|biology-x-(?:2017|2018|2019|2021|2024))-keys)\.pdf$/.exec(href)?.[1];
       const linkHref = kind === 'answer_key' ? (keyPage ? '/resources/' + keyPage.replace(/-keys$/, '-key') : href) : (markingPage ? '/resources/' + markingPage : href);
       items.push({ label: kind === 'answer_key' ? 'Paper 1 keys' : 'Paper 2 E-marking', href: linkHref, year: reference.publicationYear });

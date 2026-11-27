@@ -12,11 +12,13 @@ import Trail from "./rise/Trail";
 import styles from "./rise/discovery.module.css";
 import { studyScope, studyChapters } from "@/services/study/navigation";
 import { physicsUnit16Resource } from "@/lib/physicsUnit16Resource";
+import { physicsIxWorkshop } from '@/lib/physicsIxWorkshop';
 import { physicsUnit17Resource } from "@/lib/physicsUnit17Resources";
 import { subjectMaterialTypes, subjectPaperListings } from "@/services/materials/catalog";
 import { supportingMaterialLabels } from '@/lib/materialTypes';
 import { hsscBiologyStudyResources } from '@/lib/hsscBiologyStudyResources';
 import { mappedChapterGroups, mappedTheoryUnits } from '@/services/materials/practice';
+import { mathematicsStoreUnavailable } from '@/services/materials/mathematicsAvailability';
 import { hsscComputerScienceResources } from "@/lib/hsscComputerScienceResources";
 import { hsscComputerScienceSyllabus } from "@/lib/hsscComputerScienceSyllabus";
 import { hsscPhysicsSyllabus } from '@/lib/hsscPhysicsSyllabus';
@@ -57,6 +59,7 @@ export default async function SubjectMaterials({
   const includeStandard = scope.board.id === "akueb";
   const [documents, chapters, models, pastPapers] = await Promise.all([
     subjectMaterialTypes(params.board, params.class, params.subject).catch(error => {
+      if (mathematics && mathematicsStoreUnavailable(error)) return new Set<string>();
       if ((hssc || biology || seniorBiology) && error.name === "PrismaClientInitializationError") return new Set<string>();
       throw error;
     }),
@@ -221,6 +224,9 @@ export default async function SubjectMaterials({
       pending: !biology && !seniorBiology && !hssc && !legacy && !sscComputerScience && !chemistry && !available('practical_paper'),
       group: "lab",
     },
+    ...(scope.baseUrl === physicsIxWorkshop.subjectHref
+      ? [{ label: 'Other resources', href: physicsIxWorkshop.resourcesHref, group: 'support' as Group }]
+      : []),
     ...(scope.board.id === 'akueb' && scope.classDef.level === 10 && scope.meta.slug === 'physics'
       ? [
           { label: 'Formula sheets', href: scope.baseUrl + '/study?kind=FORMULA_SHEET', group: 'study' as Group },

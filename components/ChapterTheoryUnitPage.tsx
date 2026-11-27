@@ -9,7 +9,7 @@ import type { TheorySectionMode } from '@/components/ChapterTheoryPracticeClient
 import { physicsChapterBank } from '@/lib/physicsChapterBank';
 import { sscComputerScienceTheory } from '@/lib/sscComputerScienceTheory';
 import { hsscBiologyChapterTheory } from '@/lib/hsscBiologyChapterQuestions';
-import { mappedTheoryUnits } from '@/services/materials/practice';
+import { mappedChapterGroups, mappedTheoryUnits } from '@/services/materials/practice';
 
 interface PageProps {
   params: Promise<{ board: string; class: string; subject: string; unit: string }>;
@@ -41,11 +41,14 @@ export default async function ChapterTheoryUnitPage({ params, mode }: PageProps)
     return <ContentUnavailable title={`${classDef.name} ${meta.title} ${MODE_LABELS[mode]}`} />;
   }
 
-  const units = seniorBiology ?? (['mathematics', 'chemistry', 'biology'].includes(meta.slug)
-    ? await mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
-    : meta.slug === 'computer-science'
-      ? sscComputerScienceTheory(classRoman === 'IX' ? 9 : 10)
-      : (physicsChapterBank as any)[classRoman === 'IX' ? '9' : '10'] || []);
+  const [units, mathematicsGroups] = await Promise.all([
+    seniorBiology ?? (['mathematics', 'chemistry', 'biology'].includes(meta.slug)
+      ? mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
+      : meta.slug === 'computer-science'
+        ? sscComputerScienceTheory(classRoman === 'IX' ? 9 : 10)
+        : (physicsChapterBank as any)[classRoman === 'IX' ? '9' : '10'] || []),
+    meta.slug === 'mathematics' ? mappedChapterGroups(board.shortCode, classDef.level, meta.title) : undefined,
+  ]);
   const unitMatch = /^(\d+)/.exec(rawUnit);
   const unitNumber = unitMatch ? Number(unitMatch[1]) : NaN;
   const unit = units.find((u: any) => u.unitNumber === unitNumber);
@@ -73,6 +76,7 @@ export default async function ChapterTheoryUnitPage({ params, mode }: PageProps)
         mode={mode}
         unit={unit}
         paperQuestionsOnly={Boolean(seniorBiology)}
+        hasChapterMcqs={mathematicsGroups?.some(group => group.questions[0]?.unitNumber === unitNumber)}
       />
     </div>
   );

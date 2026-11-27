@@ -20,6 +20,7 @@ interface Props {
   mode: UnitSectionMode;
   unit: ChapterUnitData;
   paperQuestionsOnly?: boolean;
+  hasChapterMcqs?: boolean;
 }
 
 const SECTION_META: Record<UnitSectionMode, { paperLine: string; kind: string }> = {
@@ -40,7 +41,7 @@ const SECTION_META: Record<UnitSectionMode, { paperLine: string; kind: string }>
 const SERIF = "'Times New Roman', Times, serif";
 const SANS = "'Inter', sans-serif";
 
-export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl, mode, unit, paperQuestionsOnly = false }: Props) {
+export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl, mode, unit, paperQuestionsOnly = false, hasChapterMcqs = true }: Props) {
   const [revealedIds, setRevealedIds] = useState<Record<string, boolean>>({});
   const [draftResponses, setDraftResponses] = useState<Record<string, string>>({});
   const [showAllSolutions, setShowAllSolutions] = useState(false);
@@ -143,7 +144,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
         </Link>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.65rem' }}>
-          <Link
+          {hasChapterMcqs && <Link
             href={`${baseUrl}/mcqs/chapter-wise/${unit.unitNumber}?quiz=1`}
             style={{
               display: 'inline-flex',
@@ -161,7 +162,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
           >
             <Play size={15} aria-hidden="true" />
             <span>Start quiz</span>
-          </Link>
+          </Link>}
 
           {!paperQuestionsOnly && <button
             type="button"

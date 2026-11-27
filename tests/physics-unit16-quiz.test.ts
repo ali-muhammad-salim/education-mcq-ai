@@ -45,8 +45,15 @@ test('Unit 16 pages render chapter questions, worked numericals and document fil
   expect(chapter).not.toMatch(/>Q\d+ \(D\.C\. Circuits Notes\)/);
   expect(chapter).toContain('aria-label="D.C. Circuits Notes, original question 1"');
   expect(chapter).toContain('/past-papers/PHY-X-P1#question-18');
+  expect(chapter).toContain('/past-papers/PHY-X-2026-P1#question-18');
+  expect(chapter).toContain('/past-papers/PHY-X-2024-P1#question-20');
+  expect(chapter).toContain('/past-papers/PHY-X-2023-P1#question-20');
+  expect(chapter).toContain('/past-papers/PHY-X-2022-P1#question-47');
+  expect(chapter).toContain('/past-papers/PHY-X-2021-P1#question-30');
+  expect(chapter).toContain('/past-papers/PHY-X-2018-P1#question-11');
+  expect(chapter).toContain('/past-papers/PHY-X-2017-P1#question-10');
   const numbers = Array.from(chapter.matchAll(/>Q\.(\d+)\.</g), match => Number(match[1]));
-  expect(numbers).toHaveLength(39);
+  expect(numbers).toHaveLength(53);
   expect(numbers).toEqual(numbers.map((_, index) => index + 1));
   expect(chapter).not.toContain('/past-papers/PHY-X-P1#question-19');
   expect(chapter).not.toContain('/past-papers/PHY-X-P1#question-20');
@@ -62,6 +69,7 @@ test('Unit 16 pages render chapter questions, worked numericals and document fil
   for (const title of ['Example 1', 'Example 2', 'Q16 worked', 'Q36 extended']) {
     expect(numericals).toContain(title);
   }
+  expect(numericals).toContain('/past-papers/PHY-X-2026-P2#question-7b');
   for (const [view, heading] of [[undefined, 'Notes'], ['mcqs', 'MCQs'], ['original', 'Original PDF']] as const) {
     const page = renderToStaticMarkup(await Unit16ResourcePage({ searchParams: Promise.resolve({ view }) }));
     expect(page).toMatch(new RegExp(`<a [^>]*aria-current="page"[^>]*>(?:<svg[^]*?</svg><span>)?${heading}(?:</span>)?</a>`));
@@ -111,9 +119,12 @@ test('Class X chapter quizzes include notes in Unit 16 and the full bank with ma
   for (const [code, expected] of cases) {
     const quiz = await resolveQuiz(code);
     if (code === 'PHY-X-UNIT-16-ALL-ALL') {
-      expect(quiz.questions).toHaveLength(39);
+      expect(quiz.questions).toHaveLength(53);
       const paperKeys = ['C', 'A', 'D'];
-      for (const [index, question] of quiz.questions.slice(0, 3).entries()) {
+      const newCircuit = quiz.questions.find(question => normalizeQuestion(question.questionData).diagramUrl === '/paper-crops/PHY-X-2026-P1/q18.webp');
+      expect(newCircuit).toBeDefined();
+      expect(normalizeQuestion(newCircuit!.questionData).options.find(option => option.isCorrect)?.id).toBe('D');
+      for (const [index, question] of quiz.questions.filter(question => question !== newCircuit).slice(0, 3).entries()) {
         const content = normalizeQuestion(question.questionData);
         const frozen = { ...question, id: String(question.orderIndex), content };
         for (const option of content.options) {

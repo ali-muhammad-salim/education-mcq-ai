@@ -1,9 +1,10 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { getFallbackPaper } from '@/lib/paperDataService';
 import { groupDuplicateQuestions } from '@/lib/uniqueQuestions';
-const mocks = vi.hoisted(() => ({ topics: vi.fn(), topic: vi.fn(), questions: vi.fn(), document: vi.fn() }));
-vi.mock('@/lib/prisma', () => ({ default: { topic: { findMany: mocks.topics, findFirst: mocks.topic }, pastPaperQuestion: { findMany: mocks.questions }, knowledgeDocument: { findFirst: mocks.document } } }));
+const mocks = vi.hoisted(() => ({ topics: vi.fn(), topic: vi.fn(), questions: vi.fn(), document: vi.fn(), quiz: vi.fn() }));
+vi.mock('@/lib/prisma', () => ({ default: { topic: { findMany: mocks.topics, findFirst: mocks.topic }, pastPaperQuestion: { findMany: mocks.questions }, knowledgeDocument: { findFirst: mocks.document }, quiz: { findFirst: async () => null, upsert: mocks.quiz }, user: { upsert: async () => ({ id: 'library' }) } } }));
 import { chapterPaperIsPublished, mappedChapterGroups, mappedChapterQuestions, mappedTheoryUnits, sourceChoiceContent } from '@/services/materials/practice';
+import { resolveQuiz } from '@/services/assessment/service';
 
 const paper = { id: 'MTH-IX-2025-P1', paperCode: 'MTH-IX-2025-P1', title: 'Mathematics IX Annual 2025', examYear: 2025, sourceDocumentId: null, sourceDocument: null, sourceHash: 'a'.repeat(64), verificationStatus: 'REVIEWED_WITH_SOURCE_NOTES' };
 const topic = { id: 'factorisation', name: 'Factorisation', topicNumber: '5', subtopics: [], syllabusVersion: { id: 'current-ix', sourceDocumentId: null, subject: { name: 'Mathematics', academicClass: { level: 9 } } } };
@@ -18,6 +19,7 @@ beforeEach(() => {
   mocks.topic.mockResolvedValue(topic);
   mocks.questions.mockResolvedValue([]);
   mocks.document.mockResolvedValue(null);
+  mocks.quiz.mockImplementation(async ({ create }) => create);
 });
 
 describe('Automatic reviewed imports in chapter materials', () => {
@@ -30,14 +32,17 @@ describe('Automatic reviewed imports in chapter materials', () => {
   });
 
   it('reads newly imported mapped questions without copying a chapter file', async () => {
-    mocks.questions.mockResolvedValueOnce([row('18')]).mockResolvedValueOnce([row('18'), row('19')]);
+    const importedPaper = { ...paper, id: 'math-supplement', paperCode: 'math-supplement', examType: 'ANNUAL' };
+    const imported = (number: string) => ({ ...row(number), id: 'imported-' + number, pastPaperId: importedPaper.id, pastPaper: importedPaper });
+    mocks.questions.mockResolvedValueOnce([imported('18')]).mockResolvedValueOnce([imported('18'), imported('19')]);
     const before = await mappedChapterGroups('AKU-EB', 9, 'Mathematics');
     const after = await mappedChapterGroups('AKU-EB', 9, 'Mathematics');
-    expect(before[0].questions).toHaveLength(1);
-    expect(after[0].questions).toHaveLength(2);
-    expect(after[0].questions[0].correctOption).toBe('D');
-    expect(after[0].questions[0].rawQuestionNumber).toBe('18');
-    expect(after[0].questions[0].sourceRegion.official_answer).toBe('C');
+    const imports = (groups: typeof before) => groups.flatMap(group => group.questions).filter(question => question.paperCode === importedPaper.paperCode);
+    expect(imports(before)).toHaveLength(1);
+    expect(imports(after)).toHaveLength(2);
+    expect(imports(after)[0].correctOption).toBe('D');
+    expect(imports(after)[0].rawQuestionNumber).toBe('18');
+    expect(imports(after)[0].sourceRegion.official_answer).toBe('C');
   });
 
   it('uses the current target grade while retaining the historical paper reference', async () => {
@@ -56,7 +61,7 @@ describe('Automatic reviewed imports in chapter materials', () => {
     const q = row('8b', 'P2');
     mocks.questions.mockResolvedValue([q]);
     const units = await mappedTheoryUnits('AKU-EB', 9, 'Mathematics');
-    const entry = units[0].crqs[0];
+    const entry = units.flatMap(unit => unit.crqs).find(question => question.sourceHref === '/past-papers/MTH-IX-2025-P2#question-8b')!;
     expect(entry.modelAnswer).toContain('4.5');
     expect(entry.sourceNote).toContain('5.4');
     expect(entry.choiceInstruction).toContain('any two');
@@ -143,8 +148,8 @@ describe('Automatic reviewed imports in chapter materials', () => {
     const model = getFallbackPaper(`CHM-${roman}-P2`)!;
     expect(written.filter(q => q.sourceHref.startsWith('/past-papers/' + model.paperCode + '#')).map(q => q.id).sort()).toEqual(model.questions.map(q => q.id).sort());
     if (grade === 9) {
-      expect(listed.find(q => q.rawQuestionNumber === '24')?.correctOption).toBeUndefined();
-      expect((await mappedChapterQuestions('4')).questions.some(q => q.questionNumber === '24')).toBe(false);
+      expect(listed.find(q => q.paperCode === 'CHM-IX-P1' && q.rawQuestionNumber === '24')?.correctOption).toBeUndefined();
+      expect((await mappedChapterQuestions('4')).questions.some(q => q.pastPaper.paperCode === 'CHM-IX-P1' && q.questionNumber === '24')).toBe(false);
     }
     if (grade === 10) {
       const paper2017 = getFallbackPaper('CHM-X-2017-P1')!;
@@ -222,6 +227,103 @@ describe('Automatic reviewed imports in chapter materials', () => {
         expect(content.options.filter(option => option.isCorrect).map(option => option.id)).toEqual(letters.split(''));
       }
     }
+  });
+
+  it('integrates the complete 2026 Class IX Mathematics paper into its reviewed chapters', async () => {
+    const topics = Array.from({ length: 14 }, (_, index) => ({
+      ...topic, id: String(index + 1), topicNumber: String(index + 1),
+      syllabusVersion: {
+        ...topic.syllabusVersion,
+        fileUrl: '/materials/ssc/mathematics/ssc-1/mathematics-science-group-ssc-syllabus-2025.pdf',
+        subject: { name: 'Mathematics', academicClass: { level: 9 } },
+      },
+    }));
+    mocks.topics.mockResolvedValue(topics);
+    mocks.topic.mockImplementation(async ({ where }) => topics.find(chapter => chapter.id === where.id));
+    const paper = getFallbackPaper('MTH-IX-2026-P1')!;
+    const writtenPaper = getFallbackPaper('MTH-IX-2026-P2')!;
+    mocks.questions.mockImplementation(async ({ where }) => [paper, writtenPaper].flatMap(source =>
+      source.questions.filter(question => where.questionType.in.includes(question.questionType)
+        && String(question.topics?.[0]?.topic.topicNumber) === where.topics.some.topicId).map(question => ({
+          ...question, syllabusVersionId: 'current-ix', pastPaperId: source.paperCode,
+          pastPaper: { ...source, sourceDocumentId: null, sourceDocument: null, sourceHash: 'a'.repeat(64), verificationStatus: 'REVIEWED_WITH_SOURCE_NOTES' },
+        }))
+    ));
+    const added = (await mappedChapterGroups('AKU-EB', 9, 'Mathematics')).flatMap(group => group.questions)
+      .filter(question => question.paperCode === paper.paperCode);
+    expect(added).toHaveLength(45);
+    expect(new Set(added.map(question => question.id)).size).toBe(45);
+    for (const question of paper.questions) {
+      const content = sourceChoiceContent(question);
+      expect(content.options).toHaveLength(4);
+      expect(content.options.every(option => option.feedback)).toBe(true);
+      expect(content.options.filter(option => option.isCorrect).map(option => option.id)).toEqual([question.sourceRegion.correct_answer]);
+    }
+    for (const [newNumber, year, oldNumber] of [[3, 2019, 2], [7, 2021, 27], [8, 2017, 13], [39, 2019, 30]]) {
+      const old = getFallbackPaper(`MTH-IX-${year}-P1`)!.questions.find(question => question.questionNumber === String(oldNumber))!;
+      const recent = paper.questions[newNumber - 1];
+      expect(groupDuplicateQuestions([old, recent], question => question)).toEqual([[old, recent]]);
+    }
+    const chapters = await mappedTheoryUnits('AKU-EB', 9, 'Mathematics');
+    const written = chapters.flatMap(unit => unit.crqs).filter(question => question.sourceHref.startsWith('/past-papers/MTH-IX-2026-P2#'));
+    expect(written).toHaveLength(14);
+    const trig = chapters.find(unit => unit.unitNumber === 14);
+    expect(trig?.numericals.filter(question => question.sourceHref.startsWith('/past-papers/MTH-IX-2026-P2#')).map(question => question.questionNumber)).toEqual(['9a', '9c']);
+    expect(written.find(question => question.questionNumber === '9c')?.currentSlo).toBe('14.3.1');
+    expect(written.filter(question => ['9a', '9b', '9c'].includes(question.questionNumber)).every(question => question.choiceInstruction === 'Attempt any two parts of Question 9.')).toBe(true);
+  });
+
+  it('uses the same reviewed Mathematics questions and answer keys in chapter practice and timed quizzes', async () => {
+    mocks.topics.mockRejectedValue({ code: 'P2021' });
+    for (const [grade, roman, unitNumber, source] of [[9, 'IX', 5, 'MTH-IX-2025-P1'], [10, 'X', 18, 'MTH-IX-2025-P1']] as const) {
+      const groups = await mappedChapterGroups('AKU-EB', grade, 'Mathematics');
+      const annual = groups.find(group => group.id === `mathematics-${grade}-${unitNumber}`)!.questions.filter(question => question.examYear);
+      expect(annual.some(question => question.paperCode === source)).toBe(true);
+      const distinct = groupDuplicateQuestions(annual, question => question).map(([question]) => question);
+      await resolveQuiz(`MTH-${roman}-UNIT-${unitNumber}-PAST-ALL`);
+      const create = mocks.quiz.mock.lastCall![0].create;
+      expect(create.questions.create.map((item: { orderIndex: number }) => item.orderIndex)).toEqual(distinct.map((_, index) => index + 1));
+      expect(create.questions.create.map((item: { questionData: { options: Array<{ id: string; isCorrect: boolean }> } }) => item.questionData.options.filter(option => option.isCorrect).map(option => option.id))).toEqual(distinct.map(question => sourceChoiceContent({ questionText: question.stem, marks: question.marks, sourceRegion: question.sourceRegion }).options.filter(option => option.isCorrect).map(option => option.id)));
+    }
+  });
+
+  it('includes every 2026 Class IX Chemistry question once in its mapped chapter', async () => {
+    const topics = Array.from({ length: 8 }, (_, index) => ({
+      ...topic, id: String(index + 1), topicNumber: String(index + 1),
+      syllabusVersion: {
+        ...topic.syllabusVersion,
+        fileUrl: '/materials/ssc/chemistry/ssc-1/chemistry-ssc-full-syllabus-2025.pdf',
+        subject: { name: 'Chemistry', academicClass: { level: 9 } },
+      },
+    }));
+    mocks.topics.mockResolvedValue(topics);
+    mocks.topic.mockImplementation(async ({ where }) => topics.find(chapter => chapter.id === where.id));
+    const paper = getFallbackPaper('CHM-IX-2026-P1')!;
+    const written = getFallbackPaper('CHM-IX-2026-P2')!;
+    const listed = (await mappedChapterGroups('AKU-EB', 9, 'Chemistry')).flatMap(group => group.questions);
+    const added = listed.filter(question => question.paperCode === paper.paperCode);
+    expect(added).toHaveLength(40);
+    expect(new Set(added.map(question => question.id)).size).toBe(40);
+    for (const [newNumber, oldYear, oldNumber] of [[2, 2022, 1], [8, 2021, 3], [15, 2021, 23], [20, 2023, 15], [27, 2023, 23]]) {
+      const older = getFallbackPaper(`CHM-IX-${oldYear}-P1`)!.questions.find(question => question.questionNumber === String(oldNumber))!;
+      const recent = paper.questions[newNumber - 1];
+      expect(groupDuplicateQuestions([older, recent], question => question)).toEqual([[older, recent]]);
+    }
+    for (const question of paper.questions) {
+      const content = sourceChoiceContent(question);
+      expect(content.options).toHaveLength(4);
+      expect(content.options.every(option => option.feedback)).toBe(true);
+      expect(content.options.filter(option => option.isCorrect).map(option => option.id))
+        .toEqual(question.questionNumber === '11' ? ['C', 'D'] : [question.sourceRegion.correct_answer]);
+    }
+    const chapters = await mappedTheoryUnits('AKU-EB', 9, 'Chemistry');
+    for (const section of ['crqs', 'erqs'] as const) {
+      const added = chapters.flatMap(unit => unit[section]).filter(question => question.sourceHref.startsWith('/past-papers/CHM-IX-2026-P2#'));
+      expect(added).toHaveLength(4);
+    }
+    expect(written.questions.map(question => question.questionNumber)).toEqual(['1', '2', '3', '4', '5a', '5b', '6a', '6b']);
+    expect(chapters.find(unit => unit.unitNumber === 2)?.numericals.find(question => question.sourceHref === '/past-papers/CHM-IX-2026-P2#question-5a')?.solution)
+      .toContain('240 dm³');
   });
 
   it('includes reviewed Class IX Biology papers in their current syllabus chapters', async () => {

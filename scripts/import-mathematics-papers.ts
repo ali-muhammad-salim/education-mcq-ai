@@ -17,7 +17,7 @@ const sourceFor = (paper: (typeof yearPapers)[number]) => (manifest ? Object.val
 const papers = yearPapers.filter(sourceFor);
 
 async function main() {
-  if (!manifest || !papers.length) throw new Error('Choose a registered year using --year=2022 (or 2023 / 2024 / 2025).');
+  if (!manifest || !papers.length) throw new Error('Choose a registered Mathematics year with --year=YYYY.');
   for (const source of Object.values(manifest.sources)) {
     if (createHash('sha256').update(readFileSync(path.join(process.cwd(), 'public', source.url))).digest('hex') !== source.sha256) throw new Error(`Source PDF hash changed: ${source.filename}`);
   }
@@ -28,7 +28,11 @@ async function main() {
   });
   const scope = new Map<number, { subject: (typeof subjects)[number]; version: (typeof subjects)[number]['syllabusVersions'][number] }>();
   console.log(JSON.stringify({ syllabusCandidates: subjects.map(s => ({ id: s.id, name: s.name, grade: s.academicClass.level, board: s.academicClass.programme.board.shortCode, versions: s.syllabusVersions.map(v => ({ id: v.id, name: v.versionName, source: v.fileUrl, topics: v.topics.length })) })) }, null, 2));
-  for (const grade of [9, 10]) {
+  const grades = new Set(papers.flatMap(paper => [
+    paper.academicClass.level,
+    ...paper.questions.flatMap(question => question.sourceRegion.mapping_scope?.grade ?? []),
+  ]));
+  for (const grade of grades) {
     const matches = subjects.filter(s => s.academicClass.level === grade && s.academicClass.programme.board.shortCode.toLowerCase().replace(/[^a-z]/g, '') === 'akueb' && s.syllabusVersions.some(v => v.fileUrl?.endsWith('mathematics-science-group-ssc-syllabus-2025.pdf')));
     if (matches.length !== 1 || matches[0].syllabusVersions.length !== 1) throw new Error(`Grade ${grade}: require exactly one AKU-EB Mathematics subject and current syllabus before importing.`);
     scope.set(grade, { subject: matches[0], version: matches[0].syllabusVersions[0] });

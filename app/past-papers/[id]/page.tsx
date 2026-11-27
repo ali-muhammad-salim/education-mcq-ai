@@ -13,7 +13,16 @@ import PaperViewerClient from "./PaperViewerClient";
 import PaperResourceNav from "@/components/PaperResourceNav";
 import { combinedChemistryXArchives, getFallbackPaper } from "@/lib/paperDataService";
 import { physicsIx2026Tabs } from '@/lib/physicsIx2026Papers';
+import { physicsX2017Tabs } from '@/lib/physicsX2017Papers';
+import { physicsX2018Tabs } from '@/lib/physicsX2018Papers';
+import { physicsX2019Tabs } from '@/lib/physicsX2019Papers';
+import { physicsX2021Tabs } from '@/lib/physicsX2021Paper';
+import { physicsX2022Tabs } from '@/lib/physicsX2022Paper';
+import { physicsX2023Tabs } from '@/lib/physicsX2023Papers';
+import { physicsX2024Tabs } from '@/lib/physicsX2024Papers';
+import { physicsX2026Tabs } from '@/lib/physicsX2026Papers';
 import { chemistryX2026Tabs } from '@/lib/chemistryX2026';
+import { chemistryIx2026Tabs } from '@/lib/chemistryIx2026';
 import { chemistryX2019Tabs } from '@/lib/chemistryX2019';
 import { chemistryX2018Tabs } from '@/lib/chemistryX2018';
 import { chemistryX2017Tabs } from '@/lib/chemistryX2017';
@@ -24,6 +33,9 @@ import { physicsIx2017Tabs } from '@/lib/physicsIx2017Papers';
 import { physicsIx2022Tabs } from '@/lib/physicsIx2022Paper';
 import { physicsIx2021Tabs } from '@/lib/physicsIx2021Paper';
 import { mathematicsPaperManifests } from '@/lib/mathematicsPapers';
+import { mathematicsIx2026Tabs } from '@/lib/mathematicsIx2026';
+import { mathematicsX2026Tabs } from '@/lib/mathematicsX2026';
+import { mathematicsXModelTabs } from '@/lib/mathematicsXModel';
 import {publicMaterialWhere} from '@/lib/materialVisibility';
 import {
   annualOriginalReference,
@@ -34,6 +46,7 @@ import {
   physicsIx2025PaperTabs,
 } from '@/lib/legacyPaperEvidence';
 import { publishedCurriculum } from '@/services/materials/curriculum';
+import { mathematicsStoreUnavailable } from '@/services/materials/mathematicsAvailability';
 import { paperResources } from '@/services/materials/references';
 import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-review';
 import { applyAnswerDecision } from '@/lib/legacyAnswerReview';
@@ -57,6 +70,7 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
   const resolvedParams = await Promise.resolve(params);
   const rawId = resolvedParams.id;
   const cleanId = (rawId || "").replace(/\.html?$/i, "").trim();
+  const bundledPaper = getFallbackPaper(cleanId);
 
   // Search by UUID or by paperCode
   let paper: any = null;
@@ -76,27 +90,41 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
       },
     });
   } catch (err) {
-    console.error("Error fetching past paper detail:", err);
+    if (!bundledPaper || !mathematicsStoreUnavailable(err)) {
+      console.error("Error fetching past paper detail:", err);
+    }
   }
 
-  const fallback = getFallbackPaper(paper?.paperCode || cleanId);
+  const fallback = paper?.paperCode ? getFallbackPaper(paper.paperCode) : bundledPaper;
   const biologyIx2026 = /^BIO-IX-2026-P[12]$/.test(fallback?.paperCode || '');
   const biologyIx2021 = fallback?.paperCode === 'BIO-IX-2021-P1';
   const biologyIxArchive = biologyIxAnnualArchives.find(archive => archive.papers.some(entry => entry.paperCode === fallback?.paperCode))?.tabs;
   const chemistryModel = /^CHM-(IX|X)-P[12]$/.test(fallback?.paperCode || '');
-  const chemistryX2026 = /^CHM-X-2026-P[12]$/.test(fallback?.paperCode || '');
+  const mathematics2026Tabs = [mathematicsIx2026Tabs, mathematicsX2026Tabs]
+    .find(tabs => tabs.some(tab => tab.href === '/past-papers/' + fallback?.paperCode));
+  const mathematicsXModel = /^MTH-X-P[12]$/.test(fallback?.paperCode || '');
+  const chemistry2026Tabs = [chemistryIx2026Tabs, chemistryX2026Tabs]
+    .find(tabs => tabs.some(tab => tab.href === '/past-papers/' + fallback?.paperCode));
   const earlyChemistryTabs = [chemistryX2017Tabs, chemistryX2018Tabs, chemistryX2019Tabs]
     .find(tabs => tabs.some(tab => tab.href === '/past-papers/' + fallback?.paperCode));
   const combinedChemistry = combinedChemistryXArchives.find(archive => archive.paper.paperCode === fallback?.paperCode);
   const xiBiologyArchive = biologyXiAnnualArchives.find(archive => archive.papers.some(item => item.paperCode === fallback?.paperCode));
-  const physicsIx2026 = /^PHY-IX-2026-P[12]$/.test(fallback?.paperCode || '');
+  const physics2026Tabs = [physicsIx2026Tabs, physicsX2026Tabs]
+    .find(tabs => tabs.some(tab => tab.href === '/past-papers/' + fallback?.paperCode));
   const physicsTabs = /^PHY-IX-2017-P[12]$/.test(fallback?.paperCode || '') ? physicsIx2017Tabs
     : /^PHY-IX-2018-P[12]$/.test(fallback?.paperCode || '') ? physicsIx2018Tabs
     : /^PHY-IX-2019-P[12]$/.test(fallback?.paperCode || '') ? physicsIx2019Tabs
-    : /^PHY-IX-2023-P[12]$/.test(fallback?.paperCode || '') ? physicsIx2023Tabs : undefined;
+    : /^PHY-IX-2023-P[12]$/.test(fallback?.paperCode || '') ? physicsIx2023Tabs
+    : /^PHY-X-2024-P[12]$/.test(fallback?.paperCode || '') ? physicsX2024Tabs
+    : /^PHY-X-2023-P[12]$/.test(fallback?.paperCode || '') ? physicsX2023Tabs
+    : /^PHY-X-2019-P[12]$/.test(fallback?.paperCode || '') ? physicsX2019Tabs
+    : /^PHY-X-2018-P[12]$/.test(fallback?.paperCode || '') ? physicsX2018Tabs
+    : /^PHY-X-2017-P[12]$/.test(fallback?.paperCode || '') ? physicsX2017Tabs : undefined;
   const combinedPhysicsTabs = fallback?.paperCode === 'PHY-IX-2021-P1' ? physicsIx2021Tabs
-    : fallback?.paperCode === 'PHY-IX-2022-P1' ? physicsIx2022Tabs : undefined;
-  if (fallback && (chemistryModel || chemistryX2026 || earlyChemistryTabs || combinedChemistry || biologyIx2026 || biologyIx2021 || biologyIxArchive || xiBiologyArchive || physicsIx2026 || physicsTabs || combinedPhysicsTabs) && !paper?.sourceDocumentId) {
+    : fallback?.paperCode === 'PHY-IX-2022-P1' ? physicsIx2022Tabs
+    : fallback?.paperCode === 'PHY-X-2022-P1' ? physicsX2022Tabs
+    : fallback?.paperCode === 'PHY-X-2021-P1' ? physicsX2021Tabs : undefined;
+  if (fallback && (chemistryModel || mathematicsXModel || mathematics2026Tabs || chemistry2026Tabs || earlyChemistryTabs || combinedChemistry || biologyIx2026 || biologyIx2021 || biologyIxArchive || xiBiologyArchive || physics2026Tabs || physicsTabs || combinedPhysicsTabs) && !paper?.sourceDocumentId) {
     paper = fallback;
   } else if (!paper) {
     if (fallback) {
@@ -220,6 +248,7 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
   const csAnnual = /^CS-XI-2019-P[12]$/.test(paper.paperCode || '') ? hsscComputerScience2019Resources : paper.paperCode === 'CS-XI-2021-P1' ? hsscComputerScience2021Resources : /^CS-XI-2023-P[12]$/.test(paper.paperCode || '') ? hsscComputerScience2023Resources : /^CS-XI-2024-P[12]$/.test(paper.paperCode || '') ? hsscComputerScience2024Resources : null;
   const csResources = /^CS-XII?-P[12]$/.test(paper.paperCode || '') ? hsscComputerScienceResources('akueb', paper.academicClass.level, 'computer-science') : null;
   const biologyModel = /^BIO-(?:IX|X)-MODEL-20\d{2}-P[12]$/.test(paper.paperCode || '');
+  const isModelPaper = paper.examType === 'MODEL_EXAM' || fallback?.examType === 'MODEL_EXAM' || hsscModel || biologyModel;
   const biology2024 = /^BIO-IX-2024-P[12]$/.test(paper.paperCode || '');
   const biologyXArchive = /^BIO-X-2017-P[12]$/.test(paper.paperCode || '') ? biologyX2017Archive
     : /^BIO-X-2018-P[12]$/.test(paper.paperCode || '') ? biologyX2018Archive
@@ -281,37 +310,42 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
           },
           { label: subjectName, href: scope?.baseUrl || "/" },
           {
-            label: hsscModel || biologyModel ? "Model papers" : "Past papers",
-            href: scope ? scope.baseUrl + (hsscModel || biologyModel ? "/model-papers" : "/pastpapers") : "/past-papers",
+            label: isModelPaper ? "Model papers" : "Past papers",
+            href: (scope?.baseUrl || '') + (isModelPaper ? "/model-papers" : scope ? "/pastpapers" : "/past-papers"),
           },
           { label: paper.paperCode || paper.title, active: true },
         ]}
       />
       <h1 title={paper.title}>{paperLabel(paper.paperCode, paper.title)}</h1>
       {resources.length>0 && <nav className={styles.actions} aria-label="Paper resources">{resources.map(item=><Link className={styles.button} key={item.href} href={item.href}>{item.label}</Link>)}</nav>}
-      {mathematicsManifest && <PaperResourceNav tabs={[
+      {mathematicsManifest && !mathematics2026Tabs && <PaperResourceNav tabs={[
         { label: 'Digital Paper I', href: `/past-papers/MTH-IX-${paper.examYear}-P1` },
         ...(mathematicsManifest.sources.p2 ? [{ label: 'Digital Paper II and worked solutions', href: `/past-papers/MTH-IX-${paper.examYear}-P2` }] : []),
         { label: 'Original Paper I', href: mathematicsManifest.sources.p1.url },
         ...(mathematicsManifest.sources.p2 ? [{ label: 'Original Paper II', href: mathematicsManifest.sources.p2.url }] : []),
-        { label: 'Official MCQ key', href: mathematicsManifest.sources.key.url },
+        ...(mathematicsManifest.sources.key ? [{ label: 'Official MCQ key', href: mathematicsManifest.sources.key.url }] : []),
         ...(mathematicsManifest.sources.em ? [{ label: 'E-marking notes', href: `/resources/mathematics-ix-${paper.examYear}-emarking` }] : []),
       ]} />}
+      {mathematics2026Tabs && <PaperResourceNav tabs={mathematics2026Tabs} current={'/past-papers/' + paper.paperCode} />}
+      {mathematicsXModel && <PaperResourceNav tabs={mathematicsXModelTabs} current={'/past-papers/' + paper.paperCode} />}
+      {mathematicsXModel && paper.paperCode.endsWith('-P1') && <p>RiseLearner worked out the MCQ answers. Question 39 has multiple possible answers and is excluded from scored practice.</p>}
+      {mathematics2026Tabs && paper.paperCode.endsWith('-P1') && <p>RiseLearner worked out the MCQ answers. The board’s e-marking notes cover Paper II.</p>}
+      {paper.paperCode === 'MTH-X-2026-P1' && <p>Questions 10, 39 and 43 remain available for review and are excluded from scored practice.</p>}
       {!paper.sourceDocumentId && /^PHY-IX-2025-P[12]$/.test(paper.paperCode||'') && <PaperResourceNav tabs={physicsIx2025PaperTabs} />}
       {!paper.sourceDocumentId && /^PHY-IX-2024-P[12]$/.test(paper.paperCode||'') && <PaperResourceNav tabs={physicsIx2024PaperTabs} />}
       {combinedPhysicsTabs && <PaperResourceNav tabs={combinedPhysicsTabs} current={'/past-papers/' + paper.paperCode} />}
       {physicsTabs && <PaperResourceNav tabs={physicsTabs} current={'/past-papers/' + paper.paperCode} />}
-      {chemistryX2026 && !paper.sourceDocumentId && <>
-        <PaperResourceNav tabs={chemistryX2026Tabs} current={'/past-papers/' + paper.paperCode} />
-        {paper.paperCode === 'CHM-X-2026-P1' && <p>MCQ answers and explanations were prepared by RiseLearner. The board’s e-marking notes cover Paper II.</p>}
+      {chemistry2026Tabs && !paper.sourceDocumentId && <>
+        <PaperResourceNav tabs={chemistry2026Tabs} current={'/past-papers/' + paper.paperCode} />
+        {paper.paperCode.endsWith('-P1') && <p>MCQ answers and explanations were prepared by RiseLearner. The board’s e-marking notes cover Paper II.</p>}
       </>}
       {earlyChemistryTabs && !paper.sourceDocumentId && <PaperResourceNav tabs={earlyChemistryTabs} current={'/past-papers/' + paper.paperCode} />}
       {combinedChemistry && !earlyChemistryTabs && !paper.sourceDocumentId && <>
         <PaperResourceNav tabs={combinedChemistry.tabs} current={'/past-papers/' + paper.paperCode} />
         {combinedChemistry.paper.questions.length === 50 && <p>100 minutes · 50 marks · 40 Theory MCQs and 10 Alternate to Practical MCQs. The board scaled the Theory marks from 40 to 65 for examination results.</p>}
       </>}
-      {physicsIx2026 && !paper.sourceDocumentId && <>
-        <PaperResourceNav tabs={physicsIx2026Tabs} current={'/past-papers/' + paper.paperCode} />
+      {physics2026Tabs && !paper.sourceDocumentId && <>
+        <PaperResourceNav tabs={physics2026Tabs} current={'/past-papers/' + paper.paperCode} />
         <p>RiseLearner independently solved these questions. The answers and worked solutions are for practice.</p>
       </>}
       {/^PHY-XI-(?:201[7-9]|202[1-5])-P[12]$/.test(paper.paperCode || '') && <PaperResourceNav tabs={hsscXiAnnualResources.filter(item => item.year === paper.examYear)} />}

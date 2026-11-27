@@ -63,6 +63,7 @@ function syllabusChapters(scope: NonNullable<ReturnType<typeof studyScope>>) {
 // Shared with the public list: navigation must never advertise withdrawn evidence,
 // incomplete editions, or resources belonging to an outdated curriculum.
 export {publishedStudyWhere} from './visibility';
+import { isBundledMathematics, mathematicsStoreUnavailable } from '@/services/materials/mathematicsAvailability';
 export function studyScope(
   rawBoard: string,
   rawClass: string,
@@ -83,6 +84,15 @@ export function studyScope(
 }
 
 export async function studyChapters(
+  scope: NonNullable<ReturnType<typeof studyScope>>,
+) {
+  return storedStudyChapters(scope).catch(error => {
+    if (isBundledMathematics(scope.board.id, scope.classDef.level, scope.meta.slug) && mathematicsStoreUnavailable(error)) return syllabusChapters(scope);
+    throw error;
+  });
+}
+
+async function storedStudyChapters(
   scope: NonNullable<ReturnType<typeof studyScope>>,
 ) {
   const hssc = hsscPhysicsSyllabus(scope.board.id, scope.classDef.level, scope.meta.slug)

@@ -117,6 +117,7 @@ interface Props {
   baseUrl: string;
   mode: TheorySectionMode;
   units: ChapterUnitData[];
+  mcqUnits?: number[];
 }
 
 const SECTION_META: Record<
@@ -165,6 +166,7 @@ export default function ChapterTheoryPracticeClient({
   baseUrl,
   mode,
   units,
+  mcqUnits,
 }: Props) {
   const [selectedUnitNum, setSelectedUnitNum] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -187,6 +189,7 @@ export default function ChapterTheoryPracticeClient({
   };
 
   const totalItemsCount = units.reduce((acc, u) => acc + getUnitItems(u).length, 0);
+  const directoryUnits = meta.slug === 'mathematics' ? units.filter(unit => getUnitItems(unit).length > 0) : units;
 
   const activeUnits = selectedUnitNum
     ? units.filter(u => u.unitNumber === selectedUnitNum)
@@ -329,7 +332,9 @@ export default function ChapterTheoryPracticeClient({
       </nav>
 
       {/* Chapter Directory Cards */}
-      <div style={{ marginBottom: '2rem' }}>
+      {meta.slug === 'mathematics' && !totalItemsCount ? (
+        <p>{mode === 'erqs' ? 'The reviewed Mathematics papers have no separately labelled extended-response questions. Their written questions are available under Chapter-wise CRQs.' : 'No reviewed questions are available in this section yet.'}</p>
+      ) : <div style={{ marginBottom: '2rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
           <div>
             <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#111827', margin: 0 }}>
@@ -343,7 +348,7 @@ export default function ChapterTheoryPracticeClient({
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '0.85rem' }}>
-          {units.map(u => {
+          {directoryUnits.map(u => {
             const count = getUnitItems(u).length;
             const isSelected = selectedUnitNum === u.unitNumber;
             const directoryStyle: React.CSSProperties = {
@@ -384,7 +389,7 @@ export default function ChapterTheoryPracticeClient({
                 >
                   {unitCardBody}
                 </Link>
-                <Link
+                {(!mcqUnits || mcqUnits.includes(u.unitNumber)) && <Link
                   href={`${baseUrl}/mcqs/chapter-wise/${u.unitNumber}?quiz=1`}
                   style={{
                     display: 'inline-flex',
@@ -400,12 +405,12 @@ export default function ChapterTheoryPracticeClient({
                 >
                   <Play size={13} aria-hidden="true" />
                   <span>Start quiz</span>
-                </Link>
+                </Link>}
               </div>
             );
           })}
         </div>
-      </div>
+      </div>}
 
       </>)}
       {/* Chapter-by-Chapter Questions / Numericals / Notes Listing */}

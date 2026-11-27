@@ -1,3 +1,7 @@
+export function paperQuestionNumber(value: string | number): string {
+  return String(value).trim().replace(/^Q\.?\s*(?=\d)/i, '');
+}
+
 export function paperMetadata(value: unknown): Record<string, any> {
   if (typeof value === "string") {
     try {

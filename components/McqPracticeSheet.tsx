@@ -11,6 +11,7 @@ export type PracticeFilter = 'all' | 'Remembering' | 'Understanding' | 'Applicat
 
 export interface PracticeItem {
   key: string;
+  anchor?: string;
   stem: string;
   options: Record<string, string>;
   correct?: string;
@@ -305,6 +306,7 @@ export default function McqPracticeSheet({
             return (
               <div
                 key={rowKey}
+                id={item.anchor}
                 style={{
                   background: '#ffffff',
                   border: '1.5px solid #111827',

@@ -8,7 +8,7 @@ import ChapterTheoryPracticeClient, { type TheorySectionMode } from '@/component
 import { physicsChapterBank } from '@/lib/physicsChapterBank';
 import { sscComputerScienceTheory } from '@/lib/sscComputerScienceTheory';
 import { hsscBiologyChapterTheory } from '@/lib/hsscBiologyChapterQuestions';
-import { mappedTheoryUnits } from '@/services/materials/practice';
+import { mappedChapterGroups, mappedTheoryUnits } from '@/services/materials/practice';
 
 interface PageProps {
   params: Promise<{ board: string; class: string; subject: string }>;
@@ -45,19 +45,18 @@ export default async function SubjectTheoryPage({ params, mode }: PageProps) {
     return <ContentUnavailable title={`${classDef.name} ${meta.title} ${MODE_LABELS[mode]}`} />;
   }
 
-  const units = seniorBiology ?? (['mathematics', 'chemistry', 'biology'].includes(meta.slug) || (meta.slug === 'computer-science' && ['XI', 'XII'].includes(classRoman))
-    ? await mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
-    : meta.slug === 'computer-science'
-      ? sscComputerScienceTheory(classRoman === 'IX' ? 9 : 10)
-      : (physicsChapterBank as any)[classRoman === 'IX' ? '9' : '10'] || []);
+  const [units, mathematicsGroups] = await Promise.all([
+    seniorBiology ?? (['mathematics', 'chemistry', 'biology'].includes(meta.slug) || (meta.slug === 'computer-science' && ['XI', 'XII'].includes(classRoman))
+      ? mappedTheoryUnits(board.shortCode, classDef.level, meta.title)
+      : meta.slug === 'computer-science'
+        ? sscComputerScienceTheory(classRoman === 'IX' ? 9 : 10)
+        : (physicsChapterBank as any)[classRoman === 'IX' ? '9' : '10'] || []),
+    meta.slug === 'mathematics' ? mappedChapterGroups(board.shortCode, classDef.level, meta.title) : undefined,
+  ]);
 
   return (
     <div className={mode === 'notes' ? 'rise-ui' : undefined} style={{ maxWidth: '1280px', margin: '0 auto', padding: mode === 'notes' ? '0 0.25rem' : '1rem 1rem 0 1rem' }}>
-      {mode === 'notes' ? (
-        <Breadcrumbs items={[
-          { label: `${board.name} · ${classDef.name} · ${meta.title}`, href: baseUrl },
-        ]} />
-      ) : <Breadcrumbs
+      <Breadcrumbs
         items={[
           { label: 'Home', href: '/' },
           { label: board.name, href: `/${board.id}` },
@@ -65,7 +64,7 @@ export default async function SubjectTheoryPage({ params, mode }: PageProps) {
           { label: meta.title, href: baseUrl },
           { label: MODE_LABELS[mode], active: true },
         ]}
-      />}
+      />
       <ChapterTheoryPracticeClient
         board={board}
         classDef={classDef}
@@ -73,6 +72,7 @@ export default async function SubjectTheoryPage({ params, mode }: PageProps) {
         baseUrl={baseUrl}
         mode={mode}
         units={units}
+        mcqUnits={mathematicsGroups?.flatMap(group => group.questions.slice(0, 1).map(question => question.unitNumber))}
       />
     </div>
   );
