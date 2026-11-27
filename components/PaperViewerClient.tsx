@@ -1,5 +1,6 @@
 'use client';
 
+import { paperCropUrl } from '@/lib/paperCropUrl';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
@@ -790,9 +791,9 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                       const secondDiagram = hsscPhysics && isPaper2 ? meta.secondDiagramUrl : undefined;
                       return (secondDiagram ? [diagramSrc, secondDiagram] : [diagramSrc]).map((src, index) => (
                         <div key={src} data-question-block style={{ textAlign: 'center', margin: '1.25rem 0', marginLeft: '2.5rem' }}>
-                          <a className="question-figure-link" href={src} target="_blank" rel="noreferrer" aria-label="Open full-size diagram">
+                          <a className="question-figure-link" href={paperCropUrl(src)} target="_blank" rel="noreferrer" aria-label="Open full-size diagram">
                             <img
-                              src={src}
+                              src={paperCropUrl(src)}
                               alt={`Diagram for Question ${qNum}${secondDiagram ? (index === 0 ? 'a' : 'b') : ''}`}
                               loading="lazy"
                             />

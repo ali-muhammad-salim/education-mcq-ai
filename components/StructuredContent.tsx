@@ -1,5 +1,6 @@
 'use client';
 
+import { paperCropUrl } from '@/lib/paperCropUrl';
 import React from 'react';
 import MathText from '@/components/MathText';
 import CodeSnippet from '@/components/CodeSnippet';
@@ -90,7 +91,7 @@ function TableCellContent({ text }: { text: string }) {
 export default function StructuredContent({ text, className = '', style = {} }: StructuredContentProps) {
   if (!text) return null;
   const image = imageLine.exec(text);
-  if (image) return <img className={className} src={image[2]} alt={image[1]} loading="lazy" style={{maxWidth:'100%',height:'auto',...style}} />;
+  if (image) return <img className={className} src={paperCropUrl(image[2])} alt={image[1]} loading="lazy" style={{maxWidth:'100%',height:'auto',...style}} />;
   const blocks = contentBlocks(text);
   if (blocks.some(block => block.kind === 'code') || blocks.length > 1) {
     return <div className={`structured-content ${className}`} style={{ display: 'flex', flexDirection: 'column', minWidth: 0, maxWidth: '100%', gap: blocks.some(block => block.kind === 'table') ? '0.75rem' : '0.4rem', ...style }}>

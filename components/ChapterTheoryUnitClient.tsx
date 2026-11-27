@@ -1,5 +1,6 @@
 'use client';
 
+import { paperCropUrl } from '@/lib/paperCropUrl';
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Eye, EyeOff, Lightbulb, Play } from 'lucide-react';
@@ -283,9 +284,9 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
 
                   {item.diagramUrl && (
                     <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-                      <a className="question-figure-link" href={item.diagramUrl} target="_blank" rel="noreferrer" aria-label="Open full-size diagram">
+                      <a className="question-figure-link" href={paperCropUrl(item.diagramUrl)} target="_blank" rel="noreferrer" aria-label="Open full-size diagram">
                         <img
-                          src={item.diagramUrl}
+                          src={paperCropUrl(item.diagramUrl)}
                           alt={`Diagram for ${item.questionNumber}`}
                           loading="lazy"
                         />

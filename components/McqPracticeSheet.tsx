@@ -1,5 +1,6 @@
 'use client';
 
+import { paperCropUrl } from '@/lib/paperCropUrl';
 import React, { useState } from 'react';
 import { ArrowLeft, Award, BookOpen, CheckCircle2, Eye, EyeOff, Pencil, XCircle } from 'lucide-react';
 import MathText from '@/components/MathText';
@@ -325,9 +326,9 @@ export default function McqPracticeSheet({
 
                 {item.diagram && (
                   <div className={styles.questionFigure}>
-                    <a className="question-figure-link" href={item.diagram} target="_blank" rel="noreferrer" aria-label="Open full-size diagram">
+                    <a className="question-figure-link" href={paperCropUrl(item.diagram)} target="_blank" rel="noreferrer" aria-label="Open full-size diagram">
                       <img
-                        src={item.diagram}
+                        src={paperCropUrl(item.diagram)}
                         alt={`Diagram for Question ${idx + 1}`}
                         onError={(e) => { e.currentTarget.style.display = 'none'; }}
                         loading="lazy"
