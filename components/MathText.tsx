@@ -19,8 +19,8 @@ function cleanAndNormalizeMath(text: string): string {
     .replace(/20A\s*°?\s*C/g, '20°C')
     .replace(/A°C/g, '°C')
     .replace(/Â°C/g, '°C')
-    .replace(/\\\[([\s\S]*?)\\\]/g, '$$$1$$')
-    .replace(/\\\(([\s\S]*?)\\\)/g, '$$$1$');
+    .replace(/\\\[([\s\S]*?)\\\]/g, (_, content) => '$$' + content + '$$')
+    .replace(/\\\(([\s\S]*?)\\\)/g, (_, content) => '$' + content + '$');
 
   // Fix any $_{ without preceding anchor in existing math
   str = str.replace(/\$([^\$]*?)\$/g, (m, content) => {
@@ -44,16 +44,17 @@ function cleanAndNormalizeMath(text: string): string {
     });
 
     // 2. Unwrapped fractions: \frac{a}{b}
-    seg = seg.replace(/(\\frac\{[^{}]*\}\{[^{}]*\})/g, '$$$1$$');
+    seg = seg.replace(/([−-]?\\(?:[dt]?frac)\{[^{}]*\}\{[^{}]*\})/g, (_, content) => '$' + content + '$');
 
     // 3. Unwrapped sqrt: \sqrt{...}
-    seg = seg.replace(/(\\sqrt\{[^{}]*\})/g, '$$$1$$');
+    seg = seg.replace(/([−-]?\\sqrt\{[^{}]*\})/g, (_, content) => '$' + content + '$');
 
     // 4. Unwrapped scientific notation: 1.23 \times 10^3 or 10^{-9}
     seg = seg.replace(/([0-9.]+\s*\\times\s*10\^\{?-?[0-9]+\}?|10\^\{?-?[0-9]+\}?)/g, '$$$1$$');
 
     // 5. If whole segment is a formula with no spaces (and not an HTML tag/path or markdown)
     if (
+      !seg.includes('$') &&
       !seg.includes(' ') &&
       !seg.includes('<') &&
       !seg.includes('>') &&
@@ -63,10 +64,8 @@ function cleanAndNormalizeMath(text: string): string {
       !/^(?:[A-Za-z]:\\|\\\\)/.test(seg) &&
       (seg.includes('\\') || seg.includes('^') || seg.includes('_'))
     ) {
-      if (!seg.startsWith('$')) {
-        let trimmed = seg.replace(/^(\s*)_\{/g, '$1{}_{');
-        seg = '$' + trimmed + '$';
-      }
+      const trimmed = seg.replace(/^(\s*)_\{/g, '$1{}_{');
+      seg = '$' + trimmed + '$';
     }
 
     parts[i] = seg;
@@ -183,7 +182,8 @@ export default function MathText({ text, className, style }: MathTextProps) {
         <span
           key={`math-${match.index}`}
           dangerouslySetInnerHTML={{ __html: html }}
-          style={{ margin: isDisplayMode ? '0.5rem 0' : '0 2px', ...(isDisplayMode ? { display: 'block', maxWidth: '100%', overflowX: 'auto', overflowY: 'hidden' } : {}) }}
+          className={isDisplayMode ? 'math-display' : 'math-inline'}
+          tabIndex={isDisplayMode ? 0 : undefined}
         />
       );
     } catch {

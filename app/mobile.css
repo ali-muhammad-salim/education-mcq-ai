@@ -194,3 +194,81 @@
   [data-paper-summary] { padding: .6rem .4rem !important; }
   [data-paper-footer] { padding: .8rem .4rem !important; font-size: .62rem !important; }
 }
+
+/* Keep wide equations and tables inside their own reading area. */
+.structured-content {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+.content-table-scroll,
+.math-display {
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  overscroll-behavior-inline: contain;
+}
+.content-table-scroll {
+  inline-size: 100%;
+  margin-block: .35rem;
+}
+.content-table-scroll > table {
+  display: table;
+  max-inline-size: none;
+  overflow: visible;
+  min-inline-size: 100%;
+  inline-size: max-content;
+}
+.content-table-scroll :is(th, td) {
+  padding: clamp(.4rem, 1.5vw, .65rem) clamp(.5rem, 2vw, .85rem);
+  overflow-wrap: normal;
+  max-inline-size: 20rem;
+}
+.content-table-scroll:focus-visible,
+.math-display:focus-visible,
+.question-figure-link:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+.math-display {
+  display: block;
+  overflow-x: auto;
+}
+.math-display > .katex-display {
+  inline-size: max-content;
+  min-inline-size: 100%;
+  max-inline-size: none;
+  overflow: visible;
+  margin-block: .6em;
+}
+.math-inline {
+  display: inline-block;
+  max-inline-size: 100%;
+  vertical-align: middle;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding-block: .12em;
+}
+.content-table-scroll .math-inline {
+  max-inline-size: none;
+}
+.question-figure-link {
+  display: inline-block;
+  max-inline-size: min(100%, 580px);
+  padding: .35rem;
+  border: 1px solid var(--border-color, #cbd5e1);
+  border-radius: 8px;
+  background-color: white;
+  vertical-align: top;
+}
+.question-figure-link img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+@media (max-width: 700px) {
+  [data-question-head] { flex-wrap: wrap; }
+  [data-question-head] > div { flex-basis: 100%; gap: .4rem !important; }
+  [data-question-marks] { margin-inline-start: auto !important; }
+  .chapter-theory-sheet { padding-inline: 0 !important; }
+  .chapter-theory-sheet > div:first-child,
+  .chapter-theory-sheet article { padding: .85rem .75rem !important; }
+}

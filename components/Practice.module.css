@@ -445,3 +445,42 @@
   grid-column: 1 / -1;
   min-width: 0;
 }
+
+.questionCard {
+  min-inline-size: 0;
+  padding: 1.75rem 2rem 1.5rem;
+}
+.questionHeading {
+  flex: 1;
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: .75rem;
+}
+.questionMeta,
+.questionFigure,
+.questionBody {
+  margin-inline-start: 2.5rem;
+  min-inline-size: 0;
+}
+.questionFigure {
+  margin-block: 1rem;
+  text-align: center;
+}
+.readOption {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: .5rem;
+}
+@media (max-width: 700px) {
+  .questionCard { padding: .8rem .65rem; }
+  .questionHeading { gap: .4rem; }
+  .questionMeta,
+  .questionFigure,
+  .questionBody { margin-inline-start: 0; }
+  .questionFigure { margin-block: .8rem; }
+  .readOption { grid-template-columns: auto minmax(0, 1fr); }
+  .correctKey { grid-column: 2; justify-self: start; }
+}

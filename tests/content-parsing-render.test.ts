@@ -68,6 +68,24 @@ describe('content parsing rendered with real React and KaTeX', () => {
     expect(html.indexOf('Before')).toBeLessThan(html.indexOf('<code'));
     expect(html.indexOf('After')).toBeGreaterThan(html.indexOf('</code>'));
   });
+  it('renders a bare negative fraction as one expression', () => {
+    const html = render(String.raw`-\frac{25}{8}`, true);
+    expect(html).toContain('<mo>−</mo><mfrac>');
+    expect(html).not.toContain('$$');
+  });
+
+  it('keeps bracket-delimited formulas in display mode', () => {
+    const html = render('\\[x^2 + 2x + 1\\]', true);
+    expect(html).toContain('class="math-display"');
+    expect(html).toContain('class="katex-display"');
+  });
+
+  it('keeps a multi-line display equation intact beside question prose', () => {
+    const html = render('Solve:\n\\[\nx^2 + 2x + 1 = 0\n\\]\nGive both roots.');
+    expect(html).toContain('class="katex-display"');
+    expect(html).toContain('Give both roots.');
+  });
+
   it('keeps absolute-value math inside one table cell', () => {
     const html = render('| A | B |\n| --- | --- |\n| $|x|$ | 2 |');
     expect(html.match(/<td\b/g)).toHaveLength(2);
@@ -91,7 +109,7 @@ describe('content parsing rendered with real React and KaTeX', () => {
     const html = render('| A | B |\n| --- | --- |\n| one | two |');
     expect(tables(html)).toHaveLength(1);
     expect(html.match(/<td\b/g)).toHaveLength(2);
-    expect(html).toContain('padding:9px 14px');
+    expect(html).toContain('class="content-table-scroll" role="region" aria-label="Question table" tabindex="0"');
     const list = render('Items:\na. First\nb. Second');
     expect(list).toContain('>a.</span>');
     expect(list).toContain('>b.</span>');

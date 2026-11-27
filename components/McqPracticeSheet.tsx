@@ -1,5 +1,6 @@
 'use client';
 
+import { paperCropUrl } from '@/lib/paperCropUrl';
 import React, { useState } from 'react';
 import { ArrowLeft, Award, BookOpen, CheckCircle2, Eye, EyeOff, Pencil, XCircle } from 'lucide-react';
 import MathText from '@/components/MathText';
@@ -131,30 +132,7 @@ export default function McqPracticeSheet({
           </h2>
         </div>
 
-        {!readOnly && (
-          <button
-            type="button"
-            disabled={!items.length}
-            onClick={onTakeQuiz}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.45rem',
-              background: items.length ? '#0b5e4a' : '#e2e8f0',
-              color: items.length ? '#ffffff' : '#94a3b8',
-              border: 'none',
-              borderRadius: '8px',
-              padding: '9px 18px',
-              fontSize: '0.9rem',
-              fontWeight: 800,
-              cursor: items.length ? 'pointer' : 'not-allowed',
-              boxShadow: items.length ? '0 4px 12px rgba(11,94,74,0.2)' : 'none'
-            }}
-          >
-            <Award size={17} aria-hidden="true" />
-            <span>Start quiz</span>
-          </button>
-        )}
+
       </div>
 
       {!readOnly && <div className={styles.sheetControls} role="group" aria-label="MCQ practice controls">
@@ -217,8 +195,9 @@ export default function McqPracticeSheet({
             background: 'var(--card-bg, #ffffff)',
             color: 'var(--text-color, #111827)',
             fontSize: '0.82rem',
-            minWidth: '230px',
-            outline: 'none'
+            flex: '1 1 215px',
+            minWidth: 0,
+            minHeight: '44px'
           }}
         />
         {FILTERS.filter(f => !readOnly || f.id === 'all' || f.id === 'diagram').map(f => (
@@ -307,30 +286,29 @@ export default function McqPracticeSheet({
               <div
                 key={rowKey}
                 id={item.anchor}
+                className={styles.questionCard}
                 style={{
                   background: '#ffffff',
                   border: '1.5px solid #111827',
                   borderRadius: '4px',
-                  padding: '1.75rem 2rem 1.5rem',
                   boxShadow: '0 10px 30px rgba(0,0,0,0.06)',
                   fontFamily: "'Times New Roman', Times, serif, system-ui",
                   color: '#111827'
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.6rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', flexGrow: 1 }}>
+                  <div className={styles.questionHeading}>
                     <span style={{ fontSize: '1.15rem', fontWeight: 800, color: '#111827', minWidth: '32px' }}>
                       Q.{idx + 1}.
                     </span>
-                    <div style={{ fontSize: '1.1rem', color: '#1f2937', lineHeight: 1.6, flexGrow: 1 }}>
+                    <div style={{ fontSize: '1.1rem', color: '#1f2937', lineHeight: 1.55, minWidth: 0 }}>
                       <StructuredContent text={item.stem} />
                     </div>
                   </div>
                 </div>
 
                 {/* Compact provenance + SLO + cognitive row, mirroring the Digital Paper chips */}
-                <div style={{
-                  marginLeft: '2.5rem',
+                <div className={styles.questionMeta} style={{
                   marginBottom: '0.9rem',
                   padding: '0.4rem 0.7rem',
                   background: '#f8fafc',
@@ -347,27 +325,20 @@ export default function McqPracticeSheet({
                 </div>
 
                 {item.diagram && (
-                  <div style={{ textAlign: 'center', margin: '1.25rem 0', marginLeft: '2.5rem' }}>
-                    <img
-                      src={item.diagram}
-                      alt={`Diagram for Question ${idx + 1}`}
-                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                      style={{
-                        maxWidth: '100%',
-                        maxHeight: '300px',
-                        objectFit: 'contain',
-                        border: '1.5px solid #d1d5db',
-                        borderRadius: '8px',
-                        padding: '8px',
-                        background: '#ffffff',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
-                      }}
-                    />
+                  <div className={styles.questionFigure}>
+                    <a className="question-figure-link" href={paperCropUrl(item.diagram)} target="_blank" rel="noreferrer" aria-label="Open full-size diagram">
+                      <img
+                        src={paperCropUrl(item.diagram)}
+                        alt={`Diagram for Question ${idx + 1}`}
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                        loading="lazy"
+                      />
+                    </a>
                   </div>
                 )}
 
                 {/* Options — selectable in Practice Mode, paper layout otherwise */}
-                <div style={{ marginLeft: '2.5rem', marginBottom: '1rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                <div className={styles.questionBody} style={{ marginBottom: '1rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                   {interactiveMode && !item.unscored ? (
                     <div style={{ display: 'grid', gridTemplateColumns: Object.values(optionsObj).some(value => /^\s*\|/m.test(String(value))) ? 'minmax(0, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '0.65rem' }}>
                       {['A', 'B', 'C', 'D'].map(optKey => {
@@ -410,10 +381,8 @@ export default function McqPracticeSheet({
                         return (
                           <div
                             key={optKey}
+                            className={styles.readOption}
                             style={{
-                              display: 'flex',
-                              alignItems: 'flex-start',
-                              gap: '0.5rem',
                               padding: isAnswerKey ? '8px 12px' : '6px 0',
                               borderRadius: '6px',
                               background: isAnswerKey ? '#dcfce7' : 'transparent',
@@ -430,14 +399,13 @@ export default function McqPracticeSheet({
                               <StructuredContent text={String(optText)} />
                             </div>
                             {isAnswerKey && (
-                              <span style={{
+                              <span className={styles.correctKey} style={{
                                 background: '#16a34a',
                                 color: '#fff',
                                 fontSize: '0.74rem',
                                 fontWeight: 800,
                                 padding: '2px 8px',
                                 borderRadius: '4px',
-                                marginLeft: 'auto',
                                 whiteSpace: 'nowrap'
                               }}>
                                 ✓ Correct Key
@@ -494,7 +462,7 @@ export default function McqPracticeSheet({
                 </div>
 
                 {/* Solution — answer sheet when "Show correct answer only" is on, toggle otherwise */}
-                {(!readOnly || item.revealInPreview) && <div style={{ marginLeft: '2.5rem', marginTop: '0.5rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                {(!readOnly || item.revealInPreview) && <div className={styles.questionBody} style={{ marginTop: '0.5rem', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                   {showAllAnswers ? (
                     <div style={{
                       background: '#f0fdf4',

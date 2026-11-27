@@ -16,6 +16,7 @@ import { z } from 'zod';
 import StructuredContent from '@/components/StructuredContent';
 import styles from '@/components/rise/quiz.module.css';
 import { resolveQuestionDiagram } from '@/lib/diagramResolver';
+import { paperCropUrl } from '@/lib/paperCropUrl';
 import { decryptQuestionReveal } from '@/lib/quiz-crypto';
 import { paperScoringAnswers, paperChoices, paperMetadata } from '@/lib/paperPresentation';
 import {
@@ -348,7 +349,7 @@ export default function TakeQuizModal({
     for (const q of sourceList) {
       const qNum = (q as ShuffledQuestion).originalQuestionNumber || (q as Question).questionNumber || (q as ShuffledQuestion).displayNumber;
       const url = resolveQuestionDiagram(paperCode, qNum, q);
-      if (url) urls.push(url);
+      if (url) urls.push(paperCropUrl(url));
     }
     void preloadAllPaperDiagramsOffline(
       urls,
@@ -1965,12 +1966,13 @@ export default function TakeQuizModal({
                 {/* Cropped Diagram / Graph / Circuit with Offline Cache & Retry Fallback */}
                 {(() => {
                   if (currentQ.diagramBased === false || (currentQ as any).isDiagram === false) return null;
-                  const rawDiagramSrc = resolveQuestionDiagram(
+                  const diagram = resolveQuestionDiagram(
                     paperCode,
                     currentQ.originalQuestionNumber || currentQ.displayNumber,
                     currentQ
                   );
-                  if (!rawDiagramSrc) return null;
+                  if (!diagram) return null;
+                  const rawDiagramSrc = paperCropUrl(diagram);
                   const cachedSrc = getCachedDiagramSrc(rawDiagramSrc);
                   const failKey = `${currentQ.displayNumber}:${rawDiagramSrc}`;
                   const hasFailed = Boolean(diagramLoadFailed[failKey]);
