@@ -91,7 +91,15 @@ function TableCellContent({ text }: { text: string }) {
 export default function StructuredContent({ text, className = '', style = {} }: StructuredContentProps) {
   if (!text) return null;
   const image = imageLine.exec(text);
-  if (image) return <img className={className} src={paperCropUrl(image[2])} alt={image[1]} loading="lazy" style={{maxWidth:'100%',height:'auto',...style}} />;
+  if (image) {
+    const src = paperCropUrl(image[2]);
+    const figure = <img className={className} src={src} alt={image[1]} loading="lazy" style={{ maxWidth: '100%', height: 'auto', ...style }} />;
+    return src.startsWith('/paper-crops/CS-IX-') ? (
+      <div style={{ textAlign: 'center' }}>
+        <a className="question-figure-link" href={src} target="_blank" rel="noreferrer">{figure}</a>
+      </div>
+    ) : figure;
+  }
   const blocks = contentBlocks(text);
   if (blocks.some(block => block.kind === 'code') || blocks.length > 1) {
     return <div className={`structured-content ${className}`} style={{ display: 'flex', flexDirection: 'column', minWidth: 0, maxWidth: '100%', gap: blocks.some(block => block.kind === 'table') ? '0.75rem' : '0.4rem', ...style }}>

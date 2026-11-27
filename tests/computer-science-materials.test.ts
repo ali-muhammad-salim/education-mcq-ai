@@ -1,3 +1,5 @@
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { getAllStandardPapers, getFallbackPaper } from '@/lib/paperDataService';
 import { sscComputerScienceMapping, sscComputerScienceOutcomes } from '@/lib/sscComputerScienceSyllabus';
@@ -14,6 +16,47 @@ describe('Computer Science IX source materials', () => {
       expect(item.fileUrl).toMatch(/^\/materials\/ssc\/computer-science\//);
       expect(getFallbackPaper(item.paperCode)?.questions.length).toBeGreaterThan(0);
     }
+  });
+
+  it('publishes reviewed Class IX Paper II items in their current chapters and printed sections', () => {
+    const units = sscComputerScienceTheory(9);
+    const references = getAllStandardPapers().filter(p => /^CS-IX-(?:\d{4}-)?P2$/.test(p.paperCode));
+    expect(references).toHaveLength(7);
+    let audited = 0;
+    for (const reference of references) {
+      const paper = getFallbackPaper(reference.paperCode)!;
+      expect(paper.questions.reduce((sum, q) => sum + q.marks, 0)).toBe(paper.examYear <= 2019 ? 40 : 25);
+      for (const [index, question] of paper.questions.entries()) {
+        audited++;
+        const extended = index >= paper.questions.length - 2;
+        expect(question.questionType).toBe(extended ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE');
+        expect(question.sourceRegion.model_answer_origin).toBe('RiseLearner worked solution');
+        const source = '/past-papers/' + paper.paperCode + '#question-' + (index + 1);
+        for (const unit of units) {
+          const matches = question.sourceRegion.current_mapping?.some(entry => sscComputerScienceOutcomes.get(entry.code)?.unitNumber === unit.unitNumber);
+          const selected = unit[extended ? 'erqs' : 'crqs'].filter(item => item.sourceHref === source);
+          expect(selected).toHaveLength(matches ? 1 : 0);
+          expect(unit[extended ? 'crqs' : 'erqs'].some(item => item.sourceHref === source)).toBe(false);
+          if (matches) {
+            expect(selected[0].questionText).toBe(question.questionText);
+            expect(selected[0].modelAnswer).toBe(question.sourceRegion.model_answer);
+          }
+        }
+      }
+    }
+    expect(audited).toBe(46);
+  });
+
+  it('preserves all referenced Class IX Paper II figures and both images of 2019 question 4', () => {
+    const references = getAllStandardPapers().filter(p => /^CS-IX-(?:\d{4}-)?P2$/.test(p.paperCode));
+    const images = references.flatMap(paper => getFallbackPaper(paper.paperCode)!.questions.flatMap(question =>
+      [...question.questionText.matchAll(/!\[[^\]]+\]\((\/paper-crops\/[^)]+)\)/g)].map(match => match[1])));
+    expect(new Set(images).size).toBe(12);
+    for (const image of images) expect(existsSync(resolve('public', image.slice(1)))).toBe(true);
+    const q4 = getFallbackPaper('CS-IX-2019-P2')!.questions[3];
+    expect(q4.questionText).toMatch(/q4a\.png[\s\S]+q4c\.png/);
+    expect(getFallbackPaper('CS-IX-2017-P2')!.questions[0].sourceRegion.model_answer).not.toContain('Assembler');
+    expect(getFallbackPaper('CS-IX-2019-P2')!.questions[5].sourceRegion.model_answer).not.toContain('either order');
   });
 
   it('preserves exceptional board-key answers without a false single key', () => {
