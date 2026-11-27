@@ -708,7 +708,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                         </div>
                       </div>
                       {isPaper2 && (
-                        <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#111827', background: '#f3f4f6', padding: '3px 8px', borderRadius: '4px', whiteSpace: 'nowrap', marginLeft: '1rem' }}>
+                        <span data-question-marks style={{ fontSize: '0.85rem', fontWeight: 800, color: '#111827', background: '#f3f4f6', padding: '3px 8px', borderRadius: '4px', whiteSpace: 'nowrap', marginLeft: '1rem' }}>
                           (Total {marks} Marks)
                         </span>
                       )}
@@ -790,21 +790,13 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                       const secondDiagram = hsscPhysics && isPaper2 ? meta.secondDiagramUrl : undefined;
                       return (secondDiagram ? [diagramSrc, secondDiagram] : [diagramSrc]).map((src, index) => (
                         <div key={src} data-question-block style={{ textAlign: 'center', margin: '1.25rem 0', marginLeft: '2.5rem' }}>
-                          <img
-                            src={src}
-                            alt={`Diagram for Question ${qNum}${secondDiagram ? (index === 0 ? 'a' : 'b') : ''}`}
-                            onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                            style={{
-                              maxWidth: '100%',
-                              maxHeight: '300px',
-                              objectFit: 'contain',
-                              border: '1.5px solid var(--border-color, #d1d5db)',
-                              borderRadius: '8px',
-                              padding: '8px',
-                              background: '#ffffff',
-                              boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
-                            }}
-                          />
+                          <a className="question-figure-link" href={src} target="_blank" rel="noreferrer" aria-label="Open full-size diagram">
+                            <img
+                              src={src}
+                              alt={`Diagram for Question ${qNum}${secondDiagram ? (index === 0 ? 'a' : 'b') : ''}`}
+                              loading="lazy"
+                            />
+                          </a>
                         </div>
                       ));
                     })()}

@@ -59,7 +59,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
   };
 
   return (
-    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem 1rem 5rem 1rem', fontFamily: SANS }}>
+    <div className="chapter-theory-sheet" style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem 1rem 5rem 1rem', fontFamily: SANS }}>
       {/* Exam-paper masthead */}
       <div
         style={{
@@ -283,11 +283,13 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
 
                   {item.diagramUrl && (
                     <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-                      <img
-                        src={item.diagramUrl}
-                        alt={`Diagram for ${item.questionNumber}`}
-                        style={{ maxWidth: '100%', maxHeight: '260px', objectFit: 'contain', border: '1px solid #cbd5e1', borderRadius: '4px', padding: '6px', background: '#ffffff' }}
-                      />
+                      <a className="question-figure-link" href={item.diagramUrl} target="_blank" rel="noreferrer" aria-label="Open full-size diagram">
+                        <img
+                          src={item.diagramUrl}
+                          alt={`Diagram for ${item.questionNumber}`}
+                          loading="lazy"
+                        />
+                      </a>
                     </div>
                   )}
 

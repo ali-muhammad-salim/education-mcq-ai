@@ -101,7 +101,11 @@ export default function StructuredContent({ text, className = '', style = {} }: 
           : <StructuredContent key={index} text={block.text} />)}
     </div>;
   }
-  text = restoreInlineLetteredLists(text);
+  // Preserve display equations when the surrounding prose is split into lines.
+  text = restoreInlineLetteredLists(text.replace(
+    /\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\]/g,
+    formula => formula.replace(/\r?\n/g, ' '),
+  ));
 
   // 1. Check if text contains a Markdown table (| col1 | col2 |)
   if (text.includes('|') && text.split('\n').some(line => line.trim().startsWith('|') && line.trim().endsWith('|'))) {
@@ -119,13 +123,11 @@ export default function StructuredContent({ text, className = '', style = {} }: 
       return (
         <div className={`structured-content ${className}`} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', minWidth: 0, maxWidth: '100%', width: '100%', ...style }}>
 
-          <div style={{ overflowX: 'auto', minWidth: 0, maxWidth: '100%', width: '100%', margin: '0.6rem 0' }}>
+          <div className="content-table-scroll" role="region" aria-label="Question table" tabIndex={0} style={{ overflowX: 'auto' }}>
             <table style={{
-              width: '100%',
               borderCollapse: 'collapse',
               border: '1.5px solid var(--border-color, #cbd5e1)',
               borderRadius: '8px',
-              overflow: 'hidden',
               fontSize: '0.95rem'
             }}>
               <thead>
@@ -133,7 +135,6 @@ export default function StructuredContent({ text, className = '', style = {} }: 
                   {headerCells.map((cell, cIdx) => (
                     <th key={cIdx} scope="col" style={{
                       border: '1px solid var(--border-color, #cbd5e1)',
-                      padding: '10px 14px',
                       textAlign: alignment(cIdx),
                       fontWeight: 700,
                       color: 'var(--primary-color, #0b5e4a)'
@@ -152,7 +153,6 @@ export default function StructuredContent({ text, className = '', style = {} }: 
                     {row.map((cell, cIdx) => (
                       <td key={cIdx} style={{
                         border: '1px solid var(--border-color, #cbd5e1)',
-                        padding: '9px 14px',
                         textAlign: alignment(cIdx),
                         verticalAlign: 'top',
                         color: 'var(--text-color, #1e293b)'
@@ -207,20 +207,14 @@ export default function StructuredContent({ text, className = '', style = {} }: 
             </div>
           )}
 
-          <div style={{
-            margin: '0.5rem 0',
-            border: '1.5px solid var(--border-color, #cbd5e1)',
-            borderRadius: '10px',
-            overflow: 'hidden',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.04)'
-          }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.92rem' }}>
+          <div className="content-table-scroll" role="region" aria-label="Segment table" tabIndex={0} style={{ overflowX: 'auto' }}>
+            <table style={{ borderCollapse: 'collapse', fontSize: '0.92rem', border: '1px solid var(--border-color, #cbd5e1)' }}>
               <thead>
                 <tr style={{ background: 'var(--primary-light, #e6f0ed)', borderBottom: '1.5px solid var(--border-color, #cbd5e1)' }}>
-                  <th style={{ padding: '8px 12px', textAlign: 'left', fontWeight: 700, color: 'var(--primary-color, #0b5e4a)' }}>Segment</th>
-                  <th style={{ padding: '8px 12px', textAlign: 'left', fontWeight: 700, color: 'var(--primary-color, #0b5e4a)' }}>Distance Covered</th>
+                  <th style={{ textAlign: 'left', fontWeight: 700, color: 'var(--primary-color, #0b5e4a)' }}>Segment</th>
+                  <th style={{ textAlign: 'left', fontWeight: 700, color: 'var(--primary-color, #0b5e4a)' }}>Distance Covered</th>
                   {tableItems.some(i => i.extra) && (
-                    <th style={{ padding: '8px 12px', textAlign: 'left', fontWeight: 700, color: 'var(--primary-color, #0b5e4a)' }}>Notes / Displacement</th>
+                    <th style={{ textAlign: 'left', fontWeight: 700, color: 'var(--primary-color, #0b5e4a)' }}>Notes / Displacement</th>
                   )}
                 </tr>
               </thead>
@@ -230,10 +224,10 @@ export default function StructuredContent({ text, className = '', style = {} }: 
                     background: idx % 2 === 0 ? 'var(--card-bg, #ffffff)' : 'var(--bg-color, #f8fafc)',
                     borderBottom: '1px solid var(--border-color, #e2e8f0)'
                   }}>
-                    <td style={{ padding: '8px 12px', fontWeight: 700, color: 'var(--primary-color, #0b5e4a)' }}>{item.label}</td>
-                    <td style={{ padding: '8px 12px', color: 'var(--text-color, #1e293b)' }}><MathText text={item.value} /></td>
+                    <td style={{ fontWeight: 700, color: 'var(--primary-color, #0b5e4a)' }}>{item.label}</td>
+                    <td style={{ color: 'var(--text-color, #1e293b)' }}><MathText text={item.value} /></td>
                     {tableItems.some(i => i.extra) && (
-                      <td style={{ padding: '8px 12px', color: 'var(--text-light, #64748b)', fontSize: '0.88rem' }}>
+                      <td style={{ color: 'var(--text-light, #64748b)', fontSize: '0.88rem' }}>
                         {item.extra ? <MathText text={item.extra} /> : '-'}
                       </td>
                     )}
@@ -264,7 +258,7 @@ export default function StructuredContent({ text, className = '', style = {} }: 
           : line.marker
             ? <div key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', paddingLeft: line.kind === 'roman' ? '1.1rem' : '0.4rem' }}>
                 <span style={{ fontWeight: line.kind === 'roman' ? 400 : 700, color: 'var(--primary-color, #0b5e4a)', minWidth: line.kind === 'roman' ? '1.65rem' : '1.35rem' }}>{line.marker}</span>
-                <span style={{ flex: 1 }}><MathText text={line.body} /></span>
+                <span style={{ flex: 1, minWidth: 0 }}><MathText text={line.body} /></span>
               </div>
             : <div key={index}><MathText text={line.body} /></div>)}
       </div>
