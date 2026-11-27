@@ -407,6 +407,10 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
       const mapping = sscComputerScienceMapping(raw.paperCode, q.questionNumber, meta.out_of_syllabus ? null : meta.current_slo, q.questionText);
       if (!mapping) return q;
       const outcomes = mapping.current_mapping;
+      const gradeNineWritten = /^CS-IX-(?:\d{4}-)?P2$/.test(raw.paperCode);
+      const markingNotes = gradeNineWritten && raw.examType === 'ANNUAL'
+        ? `/materials/ssc/computer-science/ssc-1/computer-science-ix-${raw.examYear}-emarking.pdf`
+        : undefined;
       return {
         ...q,
         topics: [...new Map(outcomes.map(outcome => [outcome.unitNumber, {
@@ -417,6 +421,10 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
           ...meta,
           ...mapping,
           slo_text: outcomes[0]?.description,
+          ...(gradeNineWritten && meta.model_answer ? {
+            model_answer_origin: 'RiseLearner worked solution',
+            original_reference_source: markingNotes,
+          } : {}),
           ...(review ? { ...review, single_answer_review_required: true } : {}),
         },
       };

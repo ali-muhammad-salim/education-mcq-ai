@@ -519,7 +519,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                       {item.rubric && item.rubric.length > 0 && (
                         <div style={{ fontFamily: SANS, background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '6px', padding: '0.9rem 1.15rem' }}>
                           <div style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--text-color, #0f172a)', marginBottom: '0.35rem' }}>
-                            📋 Official Checking Hints (Marking Rubric · {item.marks} Marks)
+                            {item.solutionOrigin === 'project_worked_solution' ? 'Marking guidance' : '📋 Official Checking Hints'} (Marking Rubric · {item.marks} Marks)
                           </div>
                           <ul style={{ margin: 0, paddingLeft: '1.2rem', fontSize: '0.86rem', color: 'var(--text-light, #334155)', lineHeight: 1.5 }}>
                             {item.rubric.map((r, rIdx) => (
@@ -541,7 +541,7 @@ export default function ChapterTheoryUnitClient({ board, classDef, meta, baseUrl
                         </div>
                         {item.betterResponse && item.betterResponse !== item.modelAnswer && (
                           <p style={{ fontFamily: SANS, margin: '0.7rem 0 0 0', fontSize: '0.85rem', color: '#166534', lineHeight: 1.5 }}>
-                            <strong>Examiner Commentary (Better Responses):</strong> {item.betterResponse}
+                            <strong>{item.solutionOrigin === 'project_worked_solution' ? 'What a strong answer includes' : 'Examiner Commentary (Better Responses)'}:</strong> {item.betterResponse}
                           </p>
                         )}
                         {item.betterResponseImage && (
