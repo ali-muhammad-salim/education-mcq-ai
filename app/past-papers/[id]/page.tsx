@@ -148,13 +148,14 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
       if (!fbQ) return dbQ;
       const sscComputer = /^CS-(?:IX|X)-(?:\d{4}-)?P[12]$/.test(fallback.paperCode);
       const useBundledMcq = sscComputer && !paper.sourceDocumentId && fallback.paperCode.endsWith('-P1');
+      const useBundledMathReview = !paper.sourceDocumentId && fallback.paperCode === 'MTH-X-2024-P1' && ['31', '32'].includes(String(fbQ.questionNumber));
       return {
         ...dbQ,
         ...(useBundledMcq ? { questionText: fbQ.questionText } : {}),
         sourceRegion: {
           ...fbQ.sourceRegion,
           ...(typeof dbQ.sourceRegion === 'object' && dbQ.sourceRegion ? dbQ.sourceRegion : {}),
-          ...(useBundledMcq ? fbQ.sourceRegion : {}),
+          ...(useBundledMcq || useBundledMathReview ? fbQ.sourceRegion : {}),
           current_syllabus_reviewed: fbQ.sourceRegion.current_syllabus_reviewed ?? true,
           syllabus_reviewed: fbQ.sourceRegion.syllabus_reviewed ?? true,
           mapping_scope: fbQ.sourceRegion.mapping_scope,

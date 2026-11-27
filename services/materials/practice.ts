@@ -127,7 +127,7 @@ export async function mappedChapterGroups(board: string, grade: number, subject:
           diagramBased: question.diagramBased, option_feedback: question.sourceRegion.option_feedback,
           marks: question.marks,
           cognitiveLevel: mathematicsLevelLabels[mathematicsChapterCognitiveLevel(question) ?? ''] ?? 'Unspecified',
-          sourceRegion: paperMetadata({ ...question.sourceRegion, current_slo: mapping.code, current_mapping: [mapping] }),
+          sourceRegion: paperMetadata({ ...question.sourceRegion, current_slo: mapping.code, current_mapping: [mapping], mapping_scope: { board: 'AKU-EB', subject: 'Mathematics', grade } }),
         }));
       const imported = published.flatMap(group => group.questions).filter(q => q.unitNumber === unit.unitNumber);
       const questions = [...bundled, ...imported].map((question, index) => ({ ...question, questionNumber: index + 1 }));

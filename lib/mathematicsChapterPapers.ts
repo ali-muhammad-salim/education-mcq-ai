@@ -5,6 +5,7 @@ import { reviewedMathematicsPapers } from './mathematicsPapers';
 import type { PaperData } from './paperDataService';
 import { paperChoices, paperScoringAnswers } from './paperPresentation';
 import { syllabusLevel } from './syllabusPresentation';
+import { classXChapterReview, mathematicsChapterRepeats, removedClassXChapterMappings } from './mathematicsChapterReview';
 
 export const mathematicsChapterSyllabus = { 9: ix, 10: x };
 const modelCodes = ['MTH-IX-P1', 'MTH-IX-P2'];
@@ -41,22 +42,29 @@ export function mathematicsChapterCognitiveLevel(question: PaperData['questions'
 
 export function mathematicsChapterSources(papers: PaperData[], grade: 9 | 10) {
   const unitByOutcome = new Map(mathematicsChapterSyllabus[grade].flatMap(unit =>
-    unit.subtopics.flatMap(topic => topic.slos.map(slo => [slo.code, unit.unitNumber] as const)),
+    unit.subtopics.flatMap(topic => topic.slos.map(slo => [slo.code, {
+      code: slo.code, description: slo.description, unitNumber: unit.unitNumber, topic: unit.name, grade,
+    }] as const)),
   ));
   return papers.flatMap(paper => paper.questions.flatMap(original => {
     const region = original.sourceRegion;
-    if (!region.current_syllabus_reviewed || region.mapping_scope?.grade !== grade) return [];
-    // A question moved to another grade can be out of its original syllabus and still have a reviewed current outcome.
-    const mappings = (region.current_mapping ?? []).filter(mapping => unitByOutcome.has(mapping.code));
-    const units = [...new Set(mappings.map(mapping => unitByOutcome.get(mapping.code)!))];
-    const duplicate = mathematicsIx2026DuplicateKey(paper.paperCode, original.questionNumber);
+    if (!region.current_syllabus_reviewed) return [];
+    const reference = paper.paperCode + '/' + original.questionNumber;
+    if (grade === 10 && removedClassXChapterMappings.has(reference)) return [];
+    const primary = region.mapping_scope?.grade === grade ? region.current_mapping ?? [] : [];
+    const extraCode = grade === 10 ? classXChapterReview[paper.paperCode]?.[original.questionNumber] : undefined;
+    const codes = [...primary.map(mapping => mapping.code), ...(extraCode ? [extraCode] : [])];
+    const mappings = new Map<number, NonNullable<ReturnType<typeof unitByOutcome.get>>>();
+    for (const code of codes) {
+      const outcome = unitByOutcome.get(code);
+      if (outcome && !mappings.has(outcome.unitNumber)) mappings.set(outcome.unitNumber, outcome);
+    }
+    if (!mappings.size) return [];
+    const duplicate = mathematicsChapterRepeats.get(reference) ?? mathematicsIx2026DuplicateKey(paper.paperCode, original.questionNumber);
     const question = duplicate ? { ...original, sourceRegion: { ...region, reviewed_duplicate_key: duplicate } } : original;
     const options = paperChoices(region.choices);
     const answers = paperScoringAnswers(region, options);
-    return units.map(unit => ({
-      paper, question, unit, options, answers,
-      mapping: mappings.find(mapping => unitByOutcome.get(mapping.code) === unit)!,
-    }));
+    return [...mappings].map(([unit, mapping]) => ({ paper, question, unit, options, answers, mapping }));
   }));
 }
 
