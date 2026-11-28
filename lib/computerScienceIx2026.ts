@@ -1,6 +1,43 @@
 import type { PaperData, QuestionData } from './paperDataService';
+import mcqs from '@/data/computer-science/ssc1_2026_past_mcqs.json';
 
 const paperCode = 'CS-IX-2026-P2';
+const mcqPaperCode = 'CS-IX-2026-P1';
+
+export const computerScienceIx2026PaperI: PaperData = {
+  id: mcqPaperCode,
+  paperCode: mcqPaperCode,
+  title: 'Computer Science SSC-I 2026 Annual Examination Paper I (MCQ)',
+  examYear: 2026,
+  examSession: 'Annual Examination 2026',
+  examType: 'ANNUAL',
+  totalMarks: 40,
+  durationMinutes: 70,
+  questionCount: 40,
+  printedCode: 'S2601-0911110',
+  fileUrl: '/materials/ssc/computer-science/ssc-1/computer-science-ix-2026-paper-i.pdf',
+  academicClass: { name: 'Class IX', level: 9 },
+  subject: { id: 'computer-science-ix', name: 'Computer Science', code: 'CS' },
+  questions: mcqs.map((item): QuestionData => ({
+    id: `cs-ix-2026-p1-q${item.questionNumber}`,
+    questionNumber: String(item.questionNumber),
+    questionText: item.stem,
+    questionType: 'MULTIPLE_CHOICE',
+    marks: 1,
+    difficulty: item.cognitiveLevel,
+    diagramBased: item.isDiagram,
+    sourceRegion: {
+      choices: item.options,
+      correct_answer: item.correctOption,
+      answer_origin: 'PROJECT_SOLVED',
+      explanation: item.explanation,
+      current_slo: item.current_slo,
+      cognitive_level: item.cognitiveLevel,
+      pageNumber: item.pageNumber,
+      diagramUrl: item.diagramUrl,
+    },
+  })),
+};
 
 type WrittenQuestion = {
   number: string;

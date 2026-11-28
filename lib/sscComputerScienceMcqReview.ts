@@ -5,6 +5,11 @@ type AnswerReview = {
 };
 
 const reviews: Record<string, Record<number, AnswerReview>> = {
+  'CS-IX-2026-P1': {
+    17: { answer_review_note: 'The wording about software and the editor does not identify a unique false statement.' },
+    20: { answer_review_note: 'The CSS gives the table a border. The question asks about the cell, which has no border of its own.' },
+    29: { answer_review_note: 'Several choices describe the amount of data, so the question does not identify a unique answer.' },
+  },
   'CS-IX-2022-P1': {
     5: { official_answer: 'D', accepted_options: ['A', 'D'], answer_review_note: 'The printed key credits D. On modern processors L2 cache is on the processor, which also makes A false. Older systems sometimes placed L2 on the motherboard.' },
     39: { official_answer: 'D', answer_review_note: 'Choice D uses the intended CSS declarations, but the printed <style="…"> opening is invalid HTML. A valid solution sets background-color on an element such as body and color on the paragraph.' },

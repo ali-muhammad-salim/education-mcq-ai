@@ -1,0 +1,644 @@
+[
+  {
+    "questionNumber": 1,
+    "pageNumber": 2,
+    "current_slo": "1.1.1",
+    "cognitiveLevel": "U",
+    "stem": "A transportation system in the modern world is considered as a",
+    "options": {
+      "A": "network designed for the movement of people and goods efficiently.",
+      "B": "structure existing without any major role in national development.",
+      "C": "service that functions only within large urban cities and towns.",
+      "D": "setup mainly for recreation and leisure activities in society."
+    },
+    "correctOption": "A",
+    "explanation": "A transport system is a human-designed network for moving people and goods.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 2,
+    "pageNumber": 2,
+    "current_slo": "1.2.4",
+    "cognitiveLevel": "U",
+    "stem": "In a Von Neumann architecture diagram, the ALU (Arithmetic Logic Unit) connects directly with",
+    "options": {
+      "A": "input and output devices.",
+      "B": "main memory and control unit.",
+      "C": "secondary storage and cache memory.",
+      "D": "operating system and hardware drivers."
+    },
+    "correctOption": "B",
+    "explanation": "B is the intended choice in the simplified block diagram. The control unit directs the ALU, and the CPU exchanges instructions and data with main memory through the system buses.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 3,
+    "pageNumber": 2,
+    "current_slo": "1.3.1",
+    "cognitiveLevel": "K",
+    "stem": "The correct order of memory units from smallest to largest is",
+    "options": {
+      "A": "Byte → Kilobyte → Megabyte → Gigabyte",
+      "B": "Gigabyte → Megabyte → Kilobyte → Byte",
+      "C": "Byte → Kilobyte → Gigabyte → Megabyte",
+      "D": "Megabyte → Gigabyte → Kilobyte → Byte"
+    },
+    "correctOption": "A",
+    "explanation": "A byte is smaller than a kilobyte, which is smaller than a megabyte and then a gigabyte.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 4,
+    "pageNumber": 2,
+    "current_slo": "1.3.2",
+    "cognitiveLevel": "U",
+    "stem": "During program execution, data is lost from RAM when power is turned off, but instructions in ROM remain safe. This comparison highlights that",
+    "options": {
+      "A": "ROM is used for multitasking; RAM is used for storing BIOS.",
+      "B": "ROM can be modified easily; RAM cannot be modified.",
+      "C": "RAM is permanent; ROM is temporary.",
+      "D": "RAM is volatile; ROM is non-volatile."
+    },
+    "correctOption": "D",
+    "explanation": "Volatile memory loses its contents without power. ROM retains its contents.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 5,
+    "pageNumber": 2,
+    "current_slo": "1.5.4",
+    "cognitiveLevel": "U",
+    "stem": "Which option correctly differentiates between open-source software, shareware and freeware?",
+    "options": {
+      "A": "Open source: Can be modified. Shareware: Is trial-based. Freeware: Is free to use.",
+      "B": "Open source: Hides its code. Shareware: Hides its trial. Freeware: Hides its licence.",
+      "C": "Open source: Always costs money. Shareware: Is always free. Freeware: Has hidden charges.",
+      "D": "Open source: Is only for programmers. Shareware: Is only for businesses. Freeware: Is only for students."
+    },
+    "correctOption": "A",
+    "explanation": "Open-source licences allow modification. Shareware typically offers a trial or limited edition, and freeware is available to use without payment.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 6,
+    "pageNumber": 2,
+    "current_slo": "1.10.1",
+    "cognitiveLevel": "U",
+    "stem": "In packet switching, packets reach the destination by",
+    "options": {
+      "A": "staying on a fixed route and maintaining speed.",
+      "B": "taking separate paths and combining later.",
+      "C": "following one dedicated path.",
+      "D": "waiting for a clear channel."
+    },
+    "correctOption": "B",
+    "explanation": "Packets may travel over different routes. The receiving system can reassemble the data.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 7,
+    "pageNumber": 3,
+    "current_slo": "1.13.2",
+    "cognitiveLevel": "U",
+    "stem": "Person X studies in Karachi and has participated in an online global project to discuss environmental issues. Considering this situation, all of the following are advantages of using the internet EXCEPT that it will",
+    "options": {
+      "A": "take less time to resolve issues.",
+      "B": "strengthen communication networks.",
+      "C": "help to exchange knowledge and education.",
+      "D": "reduce physical interaction to build connections."
+    },
+    "correctOption": "D",
+    "explanation": "Reduced face-to-face interaction is a possible drawback of relying on online communication.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 8,
+    "pageNumber": 3,
+    "current_slo": "2.2.1",
+    "cognitiveLevel": "K",
+    "stem": "An algorithm is described as a",
+    "options": {
+      "A": "language used to communicate with the computer.",
+      "B": "clear sequence of steps to reach a solution.",
+      "C": "list of computer files stored in memory.",
+      "D": "set of rules for organising data only."
+    },
+    "correctOption": "B",
+    "explanation": "An algorithm specifies a sequence of steps to solve a problem or carry out a task.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 9,
+    "pageNumber": 3,
+    "current_slo": "2.1.1",
+    "cognitiveLevel": "U",
+    "stem": "A problem in computing is a well-defined task that can be solved using",
+    "options": {
+      "A": "programming languages only.",
+      "B": "hardware design techniques.",
+      "C": "step-by-step algorithms.",
+      "D": "data storage methods."
+    },
+    "correctOption": "C",
+    "explanation": "An algorithm describes the steps needed to solve the task. It can be expressed independently of a programming language.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 10,
+    "pageNumber": 3,
+    "current_slo": "2.2.2",
+    "cognitiveLevel": "A",
+    "stem": "Consider the algorithm that converts kilograms to grams. What is its output?\n\n```text\nStep 1: START\nStep 2: SET weight_kg = 3.5\nStep 3: SET weight_kg = weight_kg × 1000\nStep 4: PRINT weight_kg\nStep 5: END\n```",
+    "options": {
+      "A": "0.0035",
+      "B": "0.035",
+      "C": "3500",
+      "D": "35000"
+    },
+    "correctOption": "C",
+    "explanation": "The algorithm multiplies 3.5 by 1,000, producing 3,500 grams.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 11,
+    "pageNumber": 4,
+    "current_slo": "2.2.2",
+    "cognitiveLevel": "A",
+    "stem": "Consider the given algorithm. What is its output?\n\n```text\nStep 1: START\nStep 2: SET X = 10\nStep 3: SET Y = 15\nStep 4: IF X < Y THEN\n            PRINT X + Y * 2\n        ELSE\n            PRINT X - Y * (-2)\nStep 5: END\n```",
+    "options": {
+      "A": "−40",
+      "B": "20",
+      "C": "40",
+      "D": "50"
+    },
+    "correctOption": "C",
+    "explanation": "Since 10 is less than 15, the THEN branch runs. Multiplication comes first, so 10 + 15 × 2 = 40.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 12,
+    "pageNumber": 4,
+    "current_slo": "2.2.2",
+    "cognitiveLevel": "A",
+    "stem": "Which condition fills the blank so the algorithm identifies a negative number?\n\n```text\nStep 1: START\nStep 2: SET number = (-3)\nStep 3: IF (        ) THEN\n            PRINT \"Negative number\"\n        ELSE\n            PRINT \"Not negative\"\nStep 4: END\n```",
+    "options": {
+      "A": "`number > 0`",
+      "B": "`number < 0`",
+      "C": "`number = 0`",
+      "D": "`number == 3`"
+    },
+    "correctOption": "B",
+    "explanation": "A number is negative precisely when its value is less than zero.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 13,
+    "pageNumber": 4,
+    "current_slo": "2.2.1",
+    "cognitiveLevel": "A",
+    "stem": "What is the error in the given algorithm?\n\n```text\nStep 1: Input X, Y, Z\nStep 2: Sum = X + Y + Z\nStep 3: Count = 3\nStep 4: Average = Sum / (Count)\nStep 5: Average\n```",
+    "options": {
+      "A": "Forgetting to include the input numbers in the Sum.",
+      "B": "Using addition instead of division in the Sum step.",
+      "C": "The algorithm should include the display keyword.",
+      "D": "Initialising the variable Count = 3."
+    },
+    "correctOption": "C",
+    "explanation": "The calculation is correct. The final step needs an output instruction such as PRINT Average.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 14,
+    "pageNumber": 5,
+    "current_slo": "3.1.1",
+    "cognitiveLevel": "K",
+    "stem": "In a Uniform Resource Locator (URL), .com and .gov are examples of",
+    "options": {
+      "A": "file path.",
+      "B": "domain name.",
+      "C": "resource name.",
+      "D": "top-level domain."
+    },
+    "correctOption": "D",
+    "explanation": "These endings identify the top-level domain. A complete domain name also has labels to their left.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 15,
+    "pageNumber": 5,
+    "current_slo": "3.1.1",
+    "cognitiveLevel": "K",
+    "stem": "The statement that defines a search engine is that it",
+    "options": {
+      "A": "finds information on the web.",
+      "B": "displays a webpage to the user.",
+      "C": "stores web pages for future use.",
+      "D": "manages and controls a website."
+    },
+    "correctOption": "A",
+    "explanation": "A search engine retrieves relevant web information in response to a query.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 16,
+    "pageNumber": 5,
+    "current_slo": "3.1.2",
+    "cognitiveLevel": "U",
+    "stem": "In web development, back-end development focuses on",
+    "options": {
+      "A": "databases and server communication.",
+      "B": "adding animations for user interaction.",
+      "C": "styling the content using HTML and CSS.",
+      "D": "designing the visual layout of a web page."
+    },
+    "correctOption": "A",
+    "explanation": "The back end handles server-side processing, including database access and communication.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 17,
+    "pageNumber": 5,
+    "current_slo": "3.2.1",
+    "cognitiveLevel": "U",
+    "stem": "Which of the following statements is FALSE about HTML?",
+    "options": {
+      "A": "It is a markup language.",
+      "B": "It is used for creating software.",
+      "C": "Its code is usually written in notepad.",
+      "D": "It does not need a compiler for execution."
+    },
+    "correctOption": "",
+    "explanation": "HTML describes the structure of webpages and browsers interpret it directly. B appears to target the difference between markup and programming, but HTML is used in web software. C also depends on the editor chosen.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 18,
+    "pageNumber": 5,
+    "current_slo": "3.3.2",
+    "cognitiveLevel": "A",
+    "stem": "Which HTML correctly displays the text shown?",
+    "options": {
+      "A": "`<i>Hello World</i>`",
+      "B": "`</i>Hello World</i>`",
+      "C": "`<u>Hello World</u>`",
+      "D": "`</u>Hello World</u>`"
+    },
+    "correctOption": "C",
+    "explanation": "The u element renders the text underlined in the browser’s default styling. The i element is typically italic, and an opening tag cannot start with a slash.",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/CS-IX-2026-P1/q18.png"
+  },
+  {
+    "questionNumber": 19,
+    "pageNumber": 6,
+    "current_slo": "3.9.2",
+    "cognitiveLevel": "A",
+    "stem": "Which HTML code shows “Click here to open google” in white over a black background?",
+    "options": {
+      "A": "```html\n<style:\"background-color black;\">\n<p style:\"color white\">Click here to open google</p>\n```",
+      "B": "```html\n<style=\"background color<black>;\">\n<p style=\"color<white>\"> Click here to open google </p>\n```",
+      "C": "```html\n<style=\"background color=black;\">\n<p style=\"color=white\"> Click here to open google </p>\n```",
+      "D": "```html\n<body style=\"background-color:black;\">\n<p style=\"color:white;\">Click here to open google</p>\n```"
+    },
+    "correctOption": "D",
+    "explanation": "D places valid CSS declarations in inline style attributes. The body background is black and the paragraph text is white.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 20,
+    "pageNumber": 6,
+    "current_slo": "3.9.2",
+    "cognitiveLevel": "A",
+    "stem": "A student writes the following code to create a table. How does the table cell appear?\n\n```html\n<table style=\"border: 2px solid black; text-align: center;\">\n  <tr>\n    <td>Grade 9</td>\n  </tr>\n</table>\n```",
+    "options": {
+      "A": "Border of 2px solid black with text aligned vertically.",
+      "B": "Border of 2px solid black with text centred vertically.",
+      "C": "Border of 2px solid black with text aligned horizontally.",
+      "D": "Border of 2px solid black with text centred horizontally."
+    },
+    "correctOption": "",
+    "explanation": "The border is set on the table, while the cell inherits horizontal text centring. D describes the overall visible effect for this one-cell table, but the cell itself has no border set.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 21,
+    "pageNumber": 6,
+    "current_slo": "3.10.5",
+    "cognitiveLevel": "A",
+    "stem": "If the user enters 15, what does the code display?\n\n```html\n<script>\n  let age = prompt(\"Enter your age:\");\n  document.write(\"You are \" + age + \" years old\");\n</script>\n```",
+    "options": {
+      "A": "You are 15 age years old.",
+      "B": "You are 15 years old.",
+      "C": "Enter your age: 15.",
+      "D": "15 years old."
+    },
+    "correctOption": "B",
+    "explanation": "prompt returns the text 15. The two surrounding strings are concatenated with it and written to the page.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 22,
+    "pageNumber": 7,
+    "current_slo": "3.11.1",
+    "cognitiveLevel": "A",
+    "stem": "What is the output when the following code is executed in a browser?\n\n```html\n<script>\n  let radius = 2;\n  let height = 9;\n  let volume = (1 / 3) * 3.14 * radius * radius * height;\n  document.write(\"Volume = \" + volume);\n</script>\n```",
+    "options": {
+      "A": "Volume = 18.84",
+      "B": "Volume = 25.12",
+      "C": "Volume = 37.68",
+      "D": "Volume = 75.36"
+    },
+    "correctOption": "C",
+    "explanation": "The expression evaluates (1 ÷ 3) × 3.14 × 2 × 2 × 9, giving 37.68.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 23,
+    "pageNumber": 7,
+    "current_slo": "4.1.1",
+    "cognitiveLevel": "U",
+    "stem": "A common real-life application of Natural Language Processing (NLP) is",
+    "options": {
+      "A": "robotics motion control.",
+      "B": "hardware fault detection.",
+      "C": "detecting faces in digital photographs.",
+      "D": "recognising speech in virtual assistants."
+    },
+    "correctOption": "D",
+    "explanation": "Virtual assistants process spoken human language so they can interpret requests.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 24,
+    "pageNumber": 7,
+    "current_slo": "4.1.1",
+    "cognitiveLevel": "U",
+    "stem": "The role of machine learning in data science is to",
+    "options": {
+      "A": "design fixed rules for computers to follow step by step.",
+      "B": "save information through graphs and charts.",
+      "C": "collect and store large amounts of raw data.",
+      "D": "improve performance using data."
+    },
+    "correctOption": "D",
+    "explanation": "Machine learning draws patterns from data to improve performance on a task.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 25,
+    "pageNumber": 7,
+    "current_slo": "4.1.2",
+    "cognitiveLevel": "A",
+    "stem": "A sports team examines fitness data, match statistics and opponent videos to improve strategy. Which data science approach would help it counter an opponent’s play style?",
+    "options": {
+      "A": "Using predictive analytics to forecast player and team performance.",
+      "B": "Designing visualisation tools to compare players across matches.",
+      "C": "Building statistical models to evaluate the opponent’s team strategy.",
+      "D": "Applying machine learning to recognise opponent play patterns."
+    },
+    "correctOption": "D",
+    "explanation": "Recognising recurring opponent play patterns most directly addresses the stated goal. Those patterns can guide the team’s tactical response.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 26,
+    "pageNumber": 7,
+    "current_slo": "4.2.1",
+    "cognitiveLevel": "U",
+    "stem": "The statement that refers to qualitative data is",
+    "options": {
+      "A": "information such as colours or opinions.",
+      "B": "numerical values like age, height or weight.",
+      "C": "measurements collected using rulers or stopwatches.",
+      "D": "summarised information using averages or percentages."
+    },
+    "correctOption": "A",
+    "explanation": "Qualitative data represents categories, qualities or descriptions, such as colours and opinions.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 27,
+    "pageNumber": 8,
+    "current_slo": "4.3.1",
+    "cognitiveLevel": "U",
+    "stem": "Data interpretation through visualisation mainly helps in",
+    "options": {
+      "A": "changing unstructured data to structured.",
+      "B": "drawing useful conclusions from data.",
+      "C": "reducing the size of stored datasets.",
+      "D": "protecting data through encryption."
+    },
+    "correctOption": "B",
+    "explanation": "Visualisation makes patterns and comparisons easier to see and interpret.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 28,
+    "pageNumber": 8,
+    "current_slo": "4.3.1",
+    "cognitiveLevel": "U",
+    "stem": "During the COVID-19 pandemic, Pakistan’s examination boards gave SSC II students an additional 3% based on their SSC I scores. Which purpose of Big Data Analytics does this mainly illustrate?",
+    "options": {
+      "A": "Supporting decision-making through data-driven insights.",
+      "B": "Uncovering hidden patterns and trends in large datasets.",
+      "C": "Identifying relationships between different variables.",
+      "D": "Predicting future outcomes based on historical data."
+    },
+    "correctOption": "A",
+    "explanation": "The boards used existing results to inform a policy decision. The policy applies a marks adjustment rather than forecasting results.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 29,
+    "pageNumber": 8,
+    "current_slo": "4.3.1",
+    "cognitiveLevel": "U",
+    "stem": "In the three Vs of Big Data, what does Volume refer to?",
+    "options": {
+      "A": "Rapid growth in the amount of stored data.",
+      "B": "Increasing size of datasets across industries.",
+      "C": "Endless expansion of information generated daily.",
+      "D": "Data collected from various sources on massive scale."
+    },
+    "correctOption": "",
+    "explanation": "Volume is the amount or scale of data. Several options refer to increasing or large amounts. Rapid growth adds a velocity cue, while varied sources add a variety cue.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 30,
+    "pageNumber": 8,
+    "current_slo": "5.1.1",
+    "cognitiveLevel": "U",
+    "stem": "The importance of Artificial Intelligence (AI) in modern society can be described as",
+    "options": {
+      "A": "enhancing decision-making and automation in different fields.",
+      "B": "increasing data storage capacity of systems and cloud servers.",
+      "C": "improving network bandwidth for faster communication.",
+      "D": "displaying only visual effects in multimedia systems."
+    },
+    "correctOption": "A",
+    "explanation": "AI supports decisions and automates tasks across fields such as healthcare and manufacturing.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 31,
+    "pageNumber": 8,
+    "current_slo": "5.1.2",
+    "cognitiveLevel": "A",
+    "stem": "In a car factory, robotic arms change their grip and movement when sensors detect a difference in part sizes. Which statement represents the application of AI in the scenario?",
+    "options": {
+      "A": "Automated machines moving spare parts along a fixed conveyor system.",
+      "B": "Robots following fixed, pre-programmed movements without change.",
+      "C": "Robots adjusting their actions based on real-time feedback.",
+      "D": "Machines storing sensor data for later human analysis."
+    },
+    "correctOption": "C",
+    "explanation": "The scenario illustrates adaptive behaviour by using sensor feedback to adjust how the robot handles a part.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 32,
+    "pageNumber": 8,
+    "current_slo": "5.2.2",
+    "cognitiveLevel": "U",
+    "stem": "A machine learning model is trained using input data along with correct answers, such as example emails labelled spam or not spam. Which type of learning is this?",
+    "options": {
+      "A": "Reinforcement learning.",
+      "B": "Unsupervised learning.",
+      "C": "Supervised learning.",
+      "D": "Deep learning."
+    },
+    "correctOption": "C",
+    "explanation": "Supervised learning trains on examples paired with their expected outputs or labels.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 33,
+    "pageNumber": 9,
+    "current_slo": "5.2.3",
+    "cognitiveLevel": "U",
+    "stem": "Businesses recommend products to customers based on purchasing patterns and online activity. Which field does this machine learning application support?",
+    "options": {
+      "A": "Marketing.",
+      "B": "Distribution.",
+      "C": "Human resources.",
+      "D": "Supply chain management."
+    },
+    "correctOption": "A",
+    "explanation": "Product recommendations personalise what businesses promote to customers, which is a marketing application.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 34,
+    "pageNumber": 9,
+    "current_slo": "5.3.2",
+    "cognitiveLevel": "U",
+    "stem": "One application of cloud computing in the Internet of Things (IoT) is to",
+    "options": {
+      "A": "connect devices only within local offline networks.",
+      "B": "use virtual devices instead of physical sensors.",
+      "C": "remove sensors and reduce their functionality.",
+      "D": "manage and process real-time device data."
+    },
+    "correctOption": "D",
+    "explanation": "Cloud services can receive data from connected devices and process it as it arrives.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 35,
+    "pageNumber": 9,
+    "current_slo": "6.1.2",
+    "cognitiveLevel": "U",
+    "stem": "Students use computing technologies to attend online classes and access digital resources, making learning more flexible and inclusive. All of the following are impacts in this scenario EXCEPT",
+    "options": {
+      "A": "improved physical interaction.",
+      "B": "greater access to education for learners.",
+      "C": "more personalised learning through adaptive systems.",
+      "D": "improved collaboration among students via online platforms."
+    },
+    "correctOption": "A",
+    "explanation": "Online classes and digital resources directly support access and online interaction. The scenario does not show more in-person interaction.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 36,
+    "pageNumber": 9,
+    "current_slo": "6.2.2",
+    "cognitiveLevel": "U",
+    "stem": "A system restarts repeatedly after files are encrypted, and the screen says all files have been encrypted. Which malware does this symptom indicate?",
+    "options": {
+      "A": "Worm.",
+      "B": "Spyware.",
+      "C": "Trojan horse.",
+      "D": "Ransomware."
+    },
+    "correctOption": "D",
+    "explanation": "Ransomware commonly encrypts files to block access.",
+    "isDiagram": true,
+    "diagramUrl": "/paper-crops/CS-IX-2026-P1/q36.png"
+  },
+  {
+    "questionNumber": 37,
+    "pageNumber": 10,
+    "current_slo": "6.2.3",
+    "cognitiveLevel": "A",
+    "stem": "An employee opens an email attachment named “Salary_Slip.exe” and loses access to important files. Which measure could prevent this?",
+    "options": {
+      "A": "Uninstall unused desktop applications.",
+      "B": "Adjust the firewall to allow all traffic.",
+      "C": "Format the hard disk every month.",
+      "D": "Avoid suspicious attachments."
+    },
+    "correctOption": "D",
+    "explanation": "Avoiding unexpected executable attachments helps prevent malware delivered by email from running.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 38,
+    "pageNumber": 10,
+    "current_slo": "7.1.1",
+    "cognitiveLevel": "U",
+    "stem": "Entrepreneurship contributes to economic growth by",
+    "options": {
+      "A": "introducing innovation and creating wealth.",
+      "B": "increasing imports and reducing exports.",
+      "C": "raising taxes and regulating businesses.",
+      "D": "expanding supplies of existing goods."
+    },
+    "correctOption": "A",
+    "explanation": "Entrepreneurs create economic value by developing new products, services or ways of doing business.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 39,
+    "pageNumber": 10,
+    "current_slo": "7.2.2",
+    "cognitiveLevel": "A",
+    "stem": "A startup team freely shares digital business ideas, from e-commerce apps to online learning platforms, without immediate judgement. Which idea generation technique is it using?",
+    "options": {
+      "A": "Brainstorming.",
+      "B": "Mind mapping.",
+      "C": "SWOT analysis.",
+      "D": "Reverse engineering."
+    },
+    "correctOption": "A",
+    "explanation": "Generating ideas freely and postponing judgement is a defining feature of brainstorming.",
+    "isDiagram": false
+  },
+  {
+    "questionNumber": 40,
+    "pageNumber": 10,
+    "current_slo": "7.2.3",
+    "cognitiveLevel": "A",
+    "stem": "An online bookstore uses a mobile app to deliver e-books instantly and provides chat support for customer queries. Which Business Model Canvas components are illustrated?",
+    "options": {
+      "A": "Value proposition and key resources.",
+      "B": "Customer segment and key partners.",
+      "C": "Channel and customer relationships.",
+      "D": "Cost structure and revenue streams."
+    },
+    "correctOption": "C",
+    "explanation": "The app is a channel for delivering the product. Chat support is part of managing customer relationships.",
+    "isDiagram": false
+  }
+]

@@ -15,6 +15,7 @@ import ssc1Past2025Mcqs from '@/data/physics/ssc1_2025_past_mcqs.json';
 import ssc1Past2024Mcqs from '@/data/physics/ssc1_2024_past_mcqs.json';
 import ssc2Past2025Mcqs from '@/data/physics/ssc2_2025_past_mcqs.json';
 import cs1ModelMcqs from '@/data/computer-science/ssc1_model_mcqs.json';
+import cs1Past2026Mcqs from '@/data/computer-science/ssc1_2026_past_mcqs.json';
 import cs1Past2025Mcqs from '@/data/computer-science/ssc1_2025_past_mcqs.json';
 import cs1Past2024Mcqs from '@/data/computer-science/ssc1_2024_past_mcqs.json';
 import cs1Past2023Mcqs from '@/data/computer-science/ssc1_2023_past_mcqs.json';
@@ -202,6 +203,7 @@ export async function GET(req: NextRequest) {
         ];
       } else if (isClass9 && subject.toLowerCase().includes('computer')) {
         combinedRaw = [
+          ...cs1Past2026Mcqs.map(q => ({ raw: q, cls: 9, source: 'CS-IX-2026-P1', year: 2026 })),
           ...(cs1ModelMcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-P1', year: 2026 })),
           ...(cs1Past2025Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2025-P1', year: 2025 })),
           ...(cs1Past2024Mcqs as any[]).map((q: any) => ({ raw: q, cls: 9, source: 'CS-IX-2024-P1', year: 2024 })),

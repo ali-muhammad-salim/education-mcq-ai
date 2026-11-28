@@ -891,7 +891,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                   />
                 </HubSection>
               ) : combinedAnnualPool.length > 0 ? (
-                <HubSection title="Past-paper MCQs by unit" note="Original annual-examination MCQs with the official keys, grouped by their reviewed 2025 syllabus mappings.">
+                <HubSection title="Past-paper MCQs by unit" note="Annual examination MCQs with reviewed answers, grouped by the current syllabus.">
                   <UnitBrowser
                     noun="past MCQs"
                     units={unitsList.map((unit): UnitEntry => {
