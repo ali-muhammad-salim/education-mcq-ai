@@ -1,3 +1,4 @@
+import { mathematicsSupplementarySourceHref } from '@/lib/mathematicsSupplementary';
 import prisma from '@/lib/prisma';
 import { publicMaterialWhere } from '@/lib/materialVisibility';
 import { paperMetadata, paperChoices, paperAnswer, paperQuestionNumber, paperScoringAnswers } from '@/lib/paperPresentation';
@@ -120,6 +121,7 @@ export async function mappedChapterGroups(board: string, grade: number, subject:
         .map(({ paper, question, mapping, options }) => ({
           id: question.id, originalQuestionNumber: question.questionNumber, rawQuestionNumber: question.questionNumber,
           paperCode: paper.paperCode, sourceTitle: paper.title, sourcePaperId: paper.paperCode,
+          sourceHref: mathematicsSupplementarySourceHref(paper.paperCode, question.questionNumber),
           sourceYear: paper.examYear, examYear: paper.examType === 'ANNUAL' ? paper.examYear : undefined, examType: paper.examType ?? null,
           sourceGrade: paper.academicClass.level, unitNumber: unit.unitNumber, unitName: unit.name,
           current_slo: mapping.code, stem: question.questionText, options, correctOption: paperAnswer(question.sourceRegion, options),
@@ -196,7 +198,8 @@ export async function mappedTheoryUnits(board: string, grade: number, subject: s
         const meta = question.sourceRegion;
         const item = {
           id: question.id, questionNumber: question.questionNumber, sourceTitle: paper.title,
-          sourceHref: `/past-papers/${paper.paperCode}#question-${paperQuestionNumber(question.questionNumber)}`,
+          sourceHref: mathematicsSupplementarySourceHref(paper.paperCode, question.questionNumber)
+            ?? `/past-papers/${paper.paperCode}#question-${paperQuestionNumber(question.questionNumber)}`,
           examYear: paper.examType === 'ANNUAL' ? paper.examYear : undefined,
           questionText: question.questionText, marks: question.marks, cognitiveLevel: meta.cognitive_level,
           originalSlo: meta.slo, currentSlo: mapping.code, currentSloDescription: mapping.description,

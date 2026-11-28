@@ -1,0 +1,1806 @@
+{
+  "school-mcq-quiz": [
+    {
+      "number": "2",
+      "stem": "If the standard deviation of the data is 9, then the variance is:",
+      "solution": "Variance equals the square of the standard deviation: 9² = 81.",
+      "slo": "22.4.1",
+      "answer": "D",
+      "options": {
+        "A": "3",
+        "B": "9",
+        "C": "27",
+        "D": "81"
+      }
+    },
+    {
+      "number": "3",
+      "stem": "The arithmetic mean salary of 30 workers is Rs. 7,000. What is the total salary of the 30 workers?",
+      "solution": "Multiplying the mean salary by 30 gives Rs. 210,000.",
+      "slo": "22.3.3",
+      "answer": "C",
+      "options": {
+        "A": "Rs.70,000",
+        "B": "Rs.14,000",
+        "C": "Rs.2,10,000",
+        "D": "Rs.28,00,000"
+      }
+    },
+    {
+      "number": "4",
+      "stem": "The approximate value of mode in the figure is:",
+      "solution": "The histogram peaks in the 100–110 interval. Among the given options, its midpoint of 105 is the closest estimate of the mode.",
+      "slo": "22.3.4",
+      "answer": "C",
+      "options": {
+        "A": "25",
+        "B": "100",
+        "C": "105",
+        "D": "110"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q4.webp"
+    },
+    {
+      "number": "5",
+      "stem": "The angle of sector of website in the traffic analysis pie chart is:",
+      "solution": "60% of a full turn is 0.60 × 360° = 216°.",
+      "answer": "D",
+      "options": {
+        "A": "10°",
+        "B": "20°",
+        "C": "60°",
+        "D": "216°"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q5.webp"
+    },
+    {
+      "number": "6",
+      "stem": "Which option is closest to the median represented by the cumulative frequency graph?",
+      "solution": "The total cumulative frequency is about 50, so the median is read at about 25 on the vertical axis. The resulting length is closest to 30 among the choices.",
+      "slo": "22.3.4",
+      "answer": "C",
+      "options": {
+        "A": "16",
+        "B": "20",
+        "C": "30",
+        "D": "41"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q6.webp"
+    },
+    {
+      "number": "7",
+      "stem": "If the arithmetic mean of 8 numbers is 40, then the sum of all numbers will be equal to:",
+      "solution": "Sum = mean × number of observations = 40 × 8 = 320.",
+      "slo": "22.3.1",
+      "answer": "C",
+      "options": {
+        "A": "5",
+        "B": "32",
+        "C": "320",
+        "D": "3200"
+      }
+    },
+    {
+      "number": "8",
+      "stem": "What is the mean of the five frequencies shown in the Skittle bar graph?",
+      "solution": "The five frequencies total 50, so their mean is 50 ÷ 5 = 10.",
+      "slo": "22.3.3",
+      "answer": "B",
+      "options": {
+        "A": "5",
+        "B": "10",
+        "C": "15",
+        "D": "50"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q8.webp"
+    },
+    {
+      "number": "9",
+      "stem": "The range of the data 70, 65, 30, 80, 65, 55, 60 is:",
+      "solution": "Subtract the lowest value, 30, from the highest, 80. The range is 50.",
+      "slo": "22.4.1",
+      "answer": "B",
+      "options": {
+        "A": "30",
+        "B": "50",
+        "C": "65",
+        "D": "80"
+      }
+    },
+    {
+      "number": "10",
+      "stem": "The graph of frequency polygon is plotted between frequency and ________:",
+      "solution": "Plot class midpoints on the horizontal axis and frequencies on the vertical axis.",
+      "slo": "22.1.3",
+      "answer": "C",
+      "options": {
+        "A": "Cumulative frequency",
+        "B": "Class boundaries",
+        "C": "Mid points",
+        "D": "Class size"
+      }
+    },
+    {
+      "number": "11",
+      "stem": "Approximately what percentage of the teachers in the diagram teach Mathematics?",
+      "solution": "There are 77 teachers in all. The percentage teaching mathematics is 24 ÷ 77 × 100 ≈ 31.17%.",
+      "answer": "C",
+      "options": {
+        "A": "16.8%",
+        "B": "19.48%",
+        "C": "31.17%",
+        "D": "32.56%"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q11.webp"
+    },
+    {
+      "number": "13",
+      "stem": "The size of the class 110.5–130.5, 130.5–150.5 is:",
+      "solution": "The width is 130.5 − 110.5 = 20.",
+      "slo": "22.1.1",
+      "answer": "A",
+      "options": {
+        "A": "20",
+        "B": "20.5",
+        "C": "110.5",
+        "D": "130.5"
+      }
+    },
+    {
+      "number": "14",
+      "stem": "The mid point of the class 100.5–120.5 is:",
+      "solution": "Average the two class boundaries: (100.5 + 120.5) ÷ 2 = 110.5.",
+      "slo": "22.1.1",
+      "answer": "C",
+      "options": {
+        "A": "100.5",
+        "B": "110",
+        "C": "110.5",
+        "D": "120.5"
+      }
+    },
+    {
+      "number": "15",
+      "stem": "Approximately how many sellers does the graph show at a sales value of Rs. 200?",
+      "solution": "At a sales value of Rs. 200, the curve is near 3,000 sellers.",
+      "slo": "22.2.4",
+      "answer": "C",
+      "options": {
+        "A": "1000",
+        "B": "2000",
+        "C": "3000",
+        "D": "3500"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q15.webp"
+    },
+    {
+      "number": "16",
+      "stem": "What is the sum of the signed deviations of a data set from its arithmetic mean?",
+      "solution": "The signed deviations add to 0 because the sum of the observations equals their count times their mean.",
+      "slo": "22.3.1",
+      "answer": "A",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "10",
+        "D": "100"
+      }
+    },
+    {
+      "number": "17",
+      "stem": "The Highest Common Factor of 4p²q³r, 8p³q²r² and 16p²q⁴r³ is:",
+      "solution": "The coefficient HCF is 4. The lowest powers of p, q and r are 2, 2 and 1.",
+      "slo": "6.1.1",
+      "answer": "B",
+      "options": {
+        "A": "4p²q⁴r³",
+        "B": "4p²q²r",
+        "C": "16p²q²r",
+        "D": "16p²q⁴r³"
+      }
+    },
+    {
+      "number": "18",
+      "stem": "The L.C.M. of 35a²c³b, 42a³cb² and 30ac²b³ is:",
+      "solution": "The coefficient LCM is 210. Take the highest power of each variable, which is 3 in each case.",
+      "slo": "6.1.1",
+      "answer": "C",
+      "options": {
+        "A": "7a²b²c²",
+        "B": "210abc",
+        "C": "210a³b³c³",
+        "D": "210a²b²c²"
+      }
+    },
+    {
+      "number": "20",
+      "stem": "The highest common factor (H.C.F.) of (x+y)³ and x²+xy is:",
+      "solution": "Factor x² + xy as x(x + y). The common factor with (x + y)³ is x + y.",
+      "slo": "6.1.1",
+      "answer": "C",
+      "options": {
+        "A": "(x+y)³",
+        "B": "x²+xy",
+        "C": "(x+y)",
+        "D": "x(x+y)³"
+      }
+    },
+    {
+      "number": "21",
+      "stem": "The least common multiple of x, x² and x²−y² is:",
+      "solution": "The LCM needs x² and both factors of x² − y².",
+      "slo": "6.1.1",
+      "answer": "D",
+      "options": {
+        "A": "x",
+        "B": "x²",
+        "C": "x(x²−y²)",
+        "D": "x²(x²−y²)"
+      }
+    },
+    {
+      "number": "23",
+      "stem": "The factors of x²−17x−60 are:",
+      "solution": "The numbers −20 and 3 have product −60 and sum −17.",
+      "slo": "5.2.1",
+      "answer": "C",
+      "options": {
+        "A": "(x−12) and (x+5)",
+        "B": "(x−3) and (x+3)",
+        "C": "(x−20) and (x+3)",
+        "D": "(x+12) and (x−5)"
+      }
+    },
+    {
+      "number": "25",
+      "stem": "For real x ≠ 0, which option gives the algebraic square roots of (x² + 1/x² − 2)²?",
+      "solution": "The inner expression equals (x − 1/x)², so the two algebraic square roots are ±(x − 1/x)².",
+      "slo": "6.3.1",
+      "answer": "C",
+      "options": {
+        "A": "±(x²+1/x²)",
+        "B": "±(x−1/x)",
+        "C": "±(x−1/x)²",
+        "D": "±(x+1/x)"
+      }
+    },
+    {
+      "number": "27",
+      "stem": "Reduce 1/(a−b) − a/(a²+ab+b²) to a single fraction:",
+      "solution": "Use denominator a³ − b³. The numerator is a² + ab + b² − a(a − b) = 2ab + b².",
+      "slo": "6.2.2",
+      "answer": "C",
+      "options": {
+        "A": "ab/(a³−b³)",
+        "B": "(2a²+2b²)/(a³−b³)",
+        "C": "(2ab+b²)/(a³−b³)",
+        "D": "(2a²+ab−2b²)/(a³−b³)"
+      }
+    },
+    {
+      "number": "28",
+      "stem": "(1/(x+y) + 1/(x−y)) ÷ (2x/(x²−y²)) is equal to:",
+      "solution": "The sum in brackets is 2x/(x² − y²), equal to the divisor wherever both are defined.",
+      "slo": "6.2.2",
+      "answer": "A",
+      "options": {
+        "A": "1",
+        "B": "−1",
+        "C": "x",
+        "D": "2x"
+      }
+    },
+    {
+      "number": "29",
+      "stem": "If x − x/2 = 1 + x/3, then the value of 'x' is:",
+      "solution": "The net coefficient on the left after collecting x terms is 1/6, giving x = 6.",
+      "slo": "7.1.2",
+      "answer": "D",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "6"
+      }
+    },
+    {
+      "number": "30",
+      "stem": "If (x−3y)/x = 7, then the value of x/y is:",
+      "solution": "Multiplying by x gives −3y = 6x, so x/y = −1/2.",
+      "slo": "6.2.2",
+      "answer": "C",
+      "options": {
+        "A": "−2",
+        "B": "−8/3",
+        "C": "−1/2",
+        "D": "3/8"
+      }
+    },
+    {
+      "number": "31",
+      "stem": "If x²+px+6 = (x−5/2)² − 1/4, then the value of p is:",
+      "solution": "Expand (x − 5/2)² − 1/4 to get x² − 5x + 6.",
+      "slo": "15.2.1",
+      "answer": "C",
+      "options": {
+        "A": "1",
+        "B": "5",
+        "C": "−5",
+        "D": "6"
+      }
+    },
+    {
+      "number": "33",
+      "stem": "On simplification of (a−b)/(a²−b²) − (a+b)/(a+b)² the result is:",
+      "solution": "Both fractions simplify to 1/(a + b) on their common domain.",
+      "slo": "6.2.2",
+      "answer": "A",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2b/(a²−b²)",
+        "D": "2a/(a²−b²)"
+      }
+    },
+    {
+      "number": "35",
+      "stem": "If a number is added to two-third of itself the result is 45, then the number is:",
+      "solution": "If the number is x, then x + 2x/3 = 45. Thus x = 27.",
+      "slo": "7.1.3",
+      "answer": "C",
+      "options": {
+        "A": "9",
+        "B": "18",
+        "C": "27",
+        "D": "45"
+      }
+    },
+    {
+      "number": "37",
+      "stem": "If −2 < |x−1| − 5, then the solution set of the given in-equation is:",
+      "solution": "The inequality is |x − 1| > 3. Thus x − 1 < −3 or x − 1 > 3, so x < −2 or x > 4.",
+      "slo": "7.3.3",
+      "answer": "B",
+      "options": {
+        "A": "−2 < x < 4",
+        "B": "x < −2 or x > 4",
+        "C": "−3 > x > 3",
+        "D": "−3 < x < 3"
+      }
+    },
+    {
+      "number": "38",
+      "stem": "The solution set of |x/3| = 3 is:",
+      "solution": "The two cases are x/3 = 3 and x/3 = −3, giving x = 9 or x = −9.",
+      "slo": "7.2.2",
+      "answer": "D",
+      "options": {
+        "A": "{−3}",
+        "B": "{ }",
+        "C": "{9}",
+        "D": "{9, −9}"
+      }
+    },
+    {
+      "number": "39",
+      "stem": "The solution set of −2 < x+5 < 2 is:",
+      "solution": "Subtract 5 throughout to get −7 < x < −3.",
+      "slo": "7.3.2",
+      "answer": "D",
+      "options": {
+        "A": "x > −7",
+        "B": "x < −3",
+        "C": "−2 < x < −3",
+        "D": "−7 < x < −3"
+      }
+    },
+    {
+      "number": "40",
+      "stem": "If 2 is added to 1/4 of a number the result is 6, then the number is:",
+      "solution": "Subtract 2 from 6, then multiply by 4 to get 16.",
+      "slo": "7.1.3",
+      "answer": "C",
+      "options": {
+        "A": "1",
+        "B": "12",
+        "C": "16",
+        "D": "22"
+      }
+    },
+    {
+      "number": "41",
+      "stem": "The solution set of 5 − x/2 = 0 is:",
+      "solution": "From 5 − x/2 = 0 we get x/2 = 5, so x = 10.",
+      "slo": "7.1.2",
+      "answer": "B",
+      "options": {
+        "A": "0",
+        "B": "10",
+        "C": "25",
+        "D": "√5"
+      }
+    },
+    {
+      "number": "42",
+      "stem": "The solution set of |x−2| ≤ 5 is:",
+      "solution": "Rewrite as −5 ≤ x − 2 ≤ 5. Add 2 throughout.",
+      "slo": "7.3.3",
+      "answer": "C",
+      "options": {
+        "A": "−3 < x ≤ 7",
+        "B": "−7 ≥ x ≤ 7",
+        "C": "−3 ≤ x ≤ 7",
+        "D": "−3 ≤ x ≤ 3"
+      }
+    },
+    {
+      "number": "43",
+      "stem": "Which inequality describes the shaded portions of the number line?",
+      "solution": "The open endpoints are excluded. The arrows point away from the interval, so x < −1 or x > 2.",
+      "slo": "7.3.2",
+      "answer": "B",
+      "options": {
+        "A": "−1 < x < 2",
+        "B": "x < −1 or x > 2",
+        "C": "−1 ≥ x > 2",
+        "D": "−1 ≤ x < 2"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q43.webp"
+    },
+    {
+      "number": "44",
+      "stem": "The solution set of 3 + |y−1|/2 = 2 is:",
+      "solution": "The left-hand side is at least 3, so it cannot equal 2.",
+      "slo": "7.2.2",
+      "answer": "A",
+      "options": {
+        "A": "{ }",
+        "B": "{2}",
+        "C": "{5}",
+        "D": "{2, −2}"
+      }
+    },
+    {
+      "number": "45",
+      "stem": "Which inequality describes the shaded portion of the number line?",
+      "solution": "The filled endpoint at 2 is included and the open endpoint at 7 is excluded.",
+      "slo": "7.3.2",
+      "answer": "D",
+      "options": {
+        "A": "2 ≥ x < 7",
+        "B": "2 > x ≥ 7",
+        "C": "2 ≥ x > 7",
+        "D": "2 ≤ x < 7"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q45.webp"
+    },
+    {
+      "number": "46",
+      "stem": "Which inequality does the number line show?",
+      "solution": "The open endpoint at 3 is excluded and the shading goes to the right.",
+      "slo": "7.3.2",
+      "answer": "C",
+      "options": {
+        "A": "x ≥ 3",
+        "B": "x ≤ 3",
+        "C": "x > 3",
+        "D": "x < 3"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q46.webp"
+    },
+    {
+      "number": "47",
+      "stem": "Which inequality does the number line show?",
+      "solution": "The open endpoint at −1 is excluded and the shading goes to the left.",
+      "slo": "7.3.2",
+      "answer": "D",
+      "options": {
+        "A": "x ≥ −1",
+        "B": "x ≤ −1",
+        "C": "x > −1",
+        "D": "x < −1"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q47.webp"
+    },
+    {
+      "number": "48",
+      "stem": "Which inequality is represented by the closed endpoint at 8 and an arrow pointing left?",
+      "solution": "The shaded portion includes 8 and all smaller values.",
+      "slo": "7.3.2",
+      "answer": "B",
+      "options": {
+        "A": "x ≥ 8",
+        "B": "x ≤ 8",
+        "C": "1 ≥ x > 8",
+        "D": "1 > x ≥ 8"
+      }
+    },
+    {
+      "number": "49",
+      "stem": "Where does the line in the graph meet the y-axis?",
+      "solution": "The line crosses the vertical axis at y = 5, where x = 0.",
+      "slo": "16.1.2",
+      "answer": "D",
+      "options": {
+        "A": "(0, 0)",
+        "B": "(6, 3)",
+        "C": "(3, 4)",
+        "D": "(0, 5)"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q49.webp"
+    },
+    {
+      "number": "50",
+      "stem": "Which pair of intercepts belongs to the graph of y = −½x + 10?",
+      "solution": "Set x = 0 to get y = 10. Set y = 0 to get x = 20. The graph goes through both intercepts.",
+      "slo": "16.2.1",
+      "answer": "C",
+      "options": {
+        "A": "(−20, 0) and (0, 10)",
+        "B": "(10, 0) and (0, −20)",
+        "C": "(20, 0) and (0, 10)",
+        "D": "(10, 0) and (0, 20)"
+      }
+    },
+    {
+      "number": "51",
+      "stem": "If the point (−1, −2) lies on a line whose equation is y = −2x + m, what is the value of m?",
+      "solution": "Substitute (−1, −2) into y = −2x + m: −2 = 2 + m, giving m = −4.",
+      "slo": "16.1.2",
+      "answer": "D",
+      "options": {
+        "A": "−1",
+        "B": "0",
+        "C": "4",
+        "D": "−4"
+      }
+    },
+    {
+      "number": "52",
+      "stem": "Which ordered pair lies on the same line as the points shown in the figure?",
+      "solution": "The line has slope −2 and passes through the origin. Setting x = −2 gives y = 4.",
+      "slo": "16.1.2",
+      "answer": "B",
+      "options": {
+        "A": "(1, −1)",
+        "B": "(−2, 4)",
+        "C": "(−1, 1)",
+        "D": "(2, −3)"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q52.webp"
+    },
+    {
+      "number": "53",
+      "stem": "What is the equation of the red line in the figure?",
+      "solution": "Every point on the vertical line has x-coordinate 3.",
+      "answer": "C",
+      "options": {
+        "A": "Y = 3",
+        "B": "Y = −3",
+        "C": "X = 3",
+        "D": "X = −3"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q53.webp"
+    },
+    {
+      "number": "54",
+      "stem": "Which equation represents the line in the graph?",
+      "solution": "The rise is 3 over a run of 4, with vertical intercept 1/2. Hence y = 3x/4 + 1/2.",
+      "slo": "16.1.2",
+      "answer": "C",
+      "options": {
+        "A": "3x − 7y = 10",
+        "B": "y − 2x = 3",
+        "C": "8y − 6x = 4",
+        "D": "5x + 35/2 y = 25"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q54.webp"
+    },
+    {
+      "number": "55",
+      "stem": "What is the solution of the system represented by the two graphed lines?",
+      "solution": "The lines are distinct and parallel, so there is no point satisfying both equations.",
+      "slo": "16.1.2",
+      "answer": "B",
+      "options": {
+        "A": "The system has infinitely many solutions",
+        "B": "The system has no solution",
+        "C": "(0, 3)",
+        "D": "(1, 4) and (2, 5)"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q55.webp"
+    },
+    {
+      "number": "56",
+      "stem": "For y = 2 − ½x, what is the value of x when y = 0?",
+      "solution": "The horizontal intercept is 4. Substituting gives 2 − 4/2 = 0.",
+      "slo": "16.1.2",
+      "answer": "D",
+      "options": {
+        "A": "x = −2",
+        "B": "x = 2",
+        "C": "x = 3",
+        "D": "x = 4"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q56.webp"
+    },
+    {
+      "number": "57",
+      "stem": "Using the Celsius–Fahrenheit graph/table (5°C=41°F, 15°C=59°F, 25°C=77°F), what temperature in degrees Celsius is equivalent to −20°F?",
+      "solution": "Use C = 5(F − 32)/9. At −20°F this is −260/9°C, approximately −29°C.",
+      "slo": "16.3.1",
+      "answer": "C",
+      "options": {
+        "A": "−4°C",
+        "B": "−18°C",
+        "C": "−29°C",
+        "D": "−40°C"
+      }
+    },
+    {
+      "number": "58",
+      "stem": "For x + 3y = 3, the missing value of y in the table when x = 0 is:",
+      "solution": "At x = 0 the equation becomes 3y = 3, so y = 1.",
+      "slo": "16.2.1",
+      "answer": "C",
+      "options": {
+        "A": "−1",
+        "B": "0",
+        "C": "1",
+        "D": "3"
+      }
+    },
+    {
+      "number": "59",
+      "stem": "A wire from the top of a transmission tower to the ground is 250 feet long. The wire makes a 45° angle with the ground. About how tall is the transmission tower?",
+      "solution": "The height is the opposite side: 250 sin 45° ≈ 176.8 ft.",
+      "slo": "19.4.1",
+      "answer": "B",
+      "options": {
+        "A": "144.3 feet",
+        "B": "176.8 feet",
+        "C": "216.5 feet",
+        "D": "353.5 feet"
+      }
+    },
+    {
+      "number": "60",
+      "stem": "The hypotenuse of a 45°-45°-90° triangle is 26√2 inches. What is the length of each of the other sides?",
+      "solution": "The legs of a 45°–45°–90° triangle each equal the hypotenuse divided by √2, which gives 26 inches.",
+      "slo": "14.3.1",
+      "answer": "D",
+      "options": {
+        "A": "13 inches",
+        "B": "13√2 inches",
+        "C": "13√3 inches",
+        "D": "26 inches"
+      }
+    },
+    {
+      "number": "61",
+      "stem": "Which equation can be used to find the length of MN in triangle MNO?",
+      "solution": "Relative to 52°, ON is opposite and MN is adjacent. Tangent is opposite divided by adjacent.",
+      "slo": "19.2.3",
+      "answer": "C",
+      "options": {
+        "A": "tan 52° = MN/12",
+        "B": "sin 52° = MN/12",
+        "C": "tan 52° = 12/MN",
+        "D": "sin 52° = 12/MN"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q61.webp"
+    },
+    {
+      "number": "62",
+      "stem": "In the right triangle shown, b = 4√3. What is the length of the hypotenuse c?",
+      "solution": "Use cos 30° = b/c. Therefore c = 4√3 ÷ (√3/2) = 8.",
+      "slo": "14.3.1",
+      "answer": "A",
+      "options": {
+        "A": "8",
+        "B": "12",
+        "C": "8√3",
+        "D": "16"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q62.webp"
+    },
+    {
+      "number": "63",
+      "stem": "Convert 15°14′13″ into decimal form:",
+      "solution": "15 + 14/60 + 13/3600 = 15.236944…°, which rounds to 15.2369°.",
+      "slo": "14.1.2",
+      "answer": "A",
+      "options": {
+        "A": "15.2369°",
+        "B": "14.2376",
+        "C": "13.2376",
+        "D": "12.2376"
+      }
+    },
+    {
+      "number": "64",
+      "stem": "Convert 233.23° to DMS (Degrees, Minutes, Seconds):",
+      "solution": "0.23° is 13.8 minutes. The fractional 0.8 minute is 48 seconds.",
+      "slo": "14.1.2",
+      "answer": "B",
+      "options": {
+        "A": "233°14′48″",
+        "B": "233°13′48″",
+        "C": "232°14′48″",
+        "D": "223°14′48″"
+      }
+    },
+    {
+      "number": "65",
+      "stem": "sin⁴x − cos⁴x is equal to:",
+      "solution": "Factor as (sin²x − cos²x)(sin²x + cos²x) = 1 − 2cos²x.",
+      "slo": "14.4.2",
+      "answer": "C",
+      "options": {
+        "A": "1",
+        "B": "1−2sin²x",
+        "C": "1−2cos²x",
+        "D": "2cos²x+1"
+      }
+    },
+    {
+      "number": "66",
+      "stem": "(1−cos²x)/(sec²x−1) is equal to:",
+      "solution": "The numerator is sin²x and the denominator is tan²x, so their ratio is cos²x where defined.",
+      "slo": "14.4.2",
+      "answer": "B",
+      "options": {
+        "A": "sin²x",
+        "B": "cos²x",
+        "C": "sin x",
+        "D": "cos x"
+      }
+    },
+    {
+      "number": "67",
+      "stem": "Simplify the expression (1−cos²x)(csc x):",
+      "solution": "Replace 1 − cos²x by sin²x and multiply by 1/sin x.",
+      "slo": "14.4.2",
+      "answer": "A",
+      "options": {
+        "A": "sin x",
+        "B": "cos x",
+        "C": "tan x",
+        "D": "cosec x"
+      }
+    },
+    {
+      "number": "68",
+      "stem": "The angle of elevation of the top of a building from a point on the ground 30 m away from the foot of the building is 30°. The height of the building is:",
+      "solution": "The height is 30 tan 30° = 30/√3 m.",
+      "slo": "19.4.1",
+      "answer": "B",
+      "options": {
+        "A": "10 m",
+        "B": "30/√3 m",
+        "C": "√3/10 m",
+        "D": "30 m"
+      }
+    },
+    {
+      "number": "69",
+      "stem": "If a tower 6 m high casts a shadow of 2√3 m long on the ground, then the sun's elevation is:",
+      "solution": "The tangent of the angle is 6/(2√3) = √3, so the angle is 60°.",
+      "slo": "19.4.1",
+      "answer": "A",
+      "options": {
+        "A": "60°",
+        "B": "45°",
+        "C": "30°",
+        "D": "90°"
+      }
+    },
+    {
+      "number": "70",
+      "stem": "The angle of elevation of the top of a 30 m building from the foot of another building is 60°. What is the horizontal distance between the buildings?",
+      "solution": "Let d be the horizontal gap. From the foot of the other building, tan 60° = 30/d. Hence d = 10√3 m.",
+      "slo": "19.4.1",
+      "answer": "A",
+      "options": {
+        "A": "10√3 m",
+        "B": "15√3 m",
+        "C": "12√3 m",
+        "D": "36 m"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q70.webp"
+    },
+    {
+      "number": "71",
+      "stem": "(sin 30° + cos 60°) − (sin 60° + cos 30°) is equal to:",
+      "solution": "The first sum is 1/2 + 1/2 = 1 and the second is √3/2 + √3/2 = √3.",
+      "slo": "14.2.3",
+      "answer": "C",
+      "options": {
+        "A": "0",
+        "B": "1+2√3",
+        "C": "1−√3",
+        "D": "1+√3"
+      }
+    },
+    {
+      "number": "72",
+      "stem": "If x is acute and cos x = 2/3, what is tan x?",
+      "solution": "For an acute x, sin x = √(1 − 4/9) = √5/3. Dividing by cos x gives √5/2.",
+      "slo": "14.4.2",
+      "answer": "C",
+      "options": {
+        "A": "5/2",
+        "B": "√(5/2)",
+        "C": "√5/2",
+        "D": "2/√5"
+      }
+    },
+    {
+      "number": "74",
+      "stem": "The smaller squares in the figure have areas 36 cm² and 64 cm². What is the area of square ABCD?",
+      "solution": "The squares on the legs of a right triangle have total area 36 + 64 = 100 cm², equal to the area on the hypotenuse.",
+      "slo": "14.3.1",
+      "answer": "C",
+      "options": {
+        "A": "28 cm²",
+        "B": "81 cm²",
+        "C": "100 cm²",
+        "D": "144 cm²"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q74.webp"
+    },
+    {
+      "number": "75",
+      "stem": "Triangle ABC is drawn on a unit grid. What is the length of AC?",
+      "solution": "The horizontal and vertical differences are both 4 units. The length is √(4² + 4²) = 4√2 units.",
+      "slo": "14.3.1",
+      "answer": "C",
+      "options": {
+        "A": "2√3 units",
+        "B": "5 units",
+        "C": "4√2 units",
+        "D": "16 units"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q75.webp"
+    },
+    {
+      "number": "76",
+      "stem": "A group of singers is arranged on a semicircular stage of diameter 25 ft. The arc subtended is 30°. How long is the portion of the stage's circumference where the singers are standing?",
+      "solution": "The radius is 12.5 ft and the central angle is π/6 radians. The arc length is 12.5π/6 ≈ 6.54 ft.",
+      "answer": "B",
+      "options": {
+        "A": "3.27 ft",
+        "B": "6.54 ft",
+        "C": "13.08 ft",
+        "D": "40.89 ft"
+      }
+    },
+    {
+      "number": "77",
+      "stem": "The height of the isosceles triangle with equal sides = 5 and base = 6 will be:",
+      "solution": "The altitude bisects the base into lengths of 3. The height is √(5² − 3²) = 4.",
+      "slo": "14.3.1",
+      "answer": "B",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6"
+      }
+    },
+    {
+      "number": "80",
+      "stem": "Which of the sets of triples is NOT a Pythagorean Triple?",
+      "solution": "20² + 21² = 841, which is 29², whereas 28² = 784.",
+      "slo": "14.3.1",
+      "answer": "A",
+      "options": {
+        "A": "{20, 21, 28}",
+        "B": "{8, 15, 17}",
+        "C": "{9, 40, 41}",
+        "D": "{3, 4, 5}"
+      }
+    },
+    {
+      "number": "81",
+      "stem": "Find the exact value of cos 60° + sin 30° − tan 45°:",
+      "solution": "cos 60° = 1/2, sin 30° = 1/2 and tan 45° = 1. The result is 0.",
+      "slo": "14.2.3",
+      "answer": "A",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3"
+      }
+    },
+    {
+      "number": "82",
+      "stem": "The length of arc AB (radius = 13 in, central angle = π/6) is:",
+      "solution": "Using s = rθ with θ in radians gives 13π/6 inches.",
+      "answer": "A",
+      "options": {
+        "A": "13π/6",
+        "B": "6π/13",
+        "C": "π/6",
+        "D": "π/3"
+      }
+    },
+    {
+      "number": "85",
+      "stem": "Find x in the circle shown, where YX is tangent at X.",
+      "solution": "The diameter and tangent meet at 90°, leaving 60° between the chord and the diameter at X. The third vertex subtends a diameter and is also 90°, leaving x = 30°.",
+      "slo": "20.2.1",
+      "answer": "A",
+      "options": {
+        "A": "30",
+        "B": "45",
+        "C": "60",
+        "D": "90"
+      },
+      "diagram": "/paper-crops/MTH-X-SCHOOL-QUIZ/q85.webp"
+    },
+    {
+      "number": "87",
+      "stem": "Two tangents DE and DF from external point D, where DF = 14 ft and DE = (x−2) ft. The value of 'x' will be:",
+      "solution": "Tangents from the same external point have equal lengths: x − 2 = 14, so x = 16.",
+      "slo": "20.2.1",
+      "answer": "D",
+      "options": {
+        "A": "2",
+        "B": "10",
+        "C": "14",
+        "D": "16"
+      }
+    },
+    {
+      "number": "90",
+      "stem": "Two circles are internally tangent. Their radii are 5.5 cm and 3.2 cm. How far apart are their centres?",
+      "solution": "For internally tangent circles the centre distance is 5.5 − 3.2 = 2.3 cm.",
+      "slo": "20.2.1",
+      "answer": "A",
+      "options": {
+        "A": "2.3 cm",
+        "B": "2.7 cm",
+        "C": "8.3 cm",
+        "D": "8.7 cm"
+      }
+    },
+    {
+      "number": "92",
+      "stem": "Two circles with centres A and B touch internally. The diameter of the larger circle A is 24 cm and AB = 9 cm. What is the radius of circle B?",
+      "solution": "The bigger radius is 24 ÷ 2 = 12 cm. For internal tangency, 12 − r = 9, so r = 3 cm.",
+      "slo": "20.2.1",
+      "answer": "A",
+      "options": {
+        "A": "3 cm",
+        "B": "4 cm",
+        "C": "5 cm",
+        "D": "7 cm"
+      }
+    },
+    {
+      "number": "93",
+      "stem": "A circle of radius 1 cm touches a circle of radius 5 cm internally. The distance between the centres of the two circles is:",
+      "solution": "Internally tangent circles have centre distance equal to the difference of the radii: 5 − 1 = 4 cm.",
+      "slo": "20.2.1",
+      "answer": "A",
+      "options": {
+        "A": "4 cm",
+        "B": "5 cm",
+        "C": "8 cm",
+        "D": "12 cm"
+      }
+    },
+    {
+      "number": "94",
+      "stem": "Arcs AB and BC of the same circle are equal. The chord lengths are AB = 3x − 10 and BC = x + 20. Find x.",
+      "solution": "Equal arcs have equal chords. Solve 3x − 10 = x + 20 to get x = 15.",
+      "slo": "20.3.1",
+      "answer": "B",
+      "options": {
+        "A": "10",
+        "B": "15",
+        "C": "20",
+        "D": "30"
+      }
+    },
+    {
+      "number": "95",
+      "stem": "Congruent chords WX and YZ subtend arcs of (3p + 55)° and (7p + 15)°. Find p.",
+      "solution": "Congruent chords give equal arcs: 3p + 55 = 7p + 15. Thus p = 10.",
+      "slo": "20.3.1",
+      "answer": "C",
+      "options": {
+        "A": "4",
+        "B": "7",
+        "C": "10",
+        "D": "40"
+      }
+    },
+    {
+      "number": "96",
+      "stem": "The reflex central angle between the radii to A and B is 250°. An inscribed angle x intercepts the minor arc AB. Find x.",
+      "solution": "The intercepted arc is the nonreflex arc of 360° − 250° = 110°. An inscribed angle on it is 55°.",
+      "slo": "20.4.1",
+      "answer": "B",
+      "options": {
+        "A": "35",
+        "B": "55",
+        "C": "90",
+        "D": "125"
+      }
+    },
+    {
+      "number": "97",
+      "stem": "A triangle is inscribed in a semicircle with its base as the diameter. The angles at the ends of the diameter are (x + 10)° and 3x°. Find x.",
+      "solution": "The semicircle gives a 90° angle at the third vertex. Thus (x + 10) + 3x = 90 and x = 20.",
+      "slo": "20.4.1",
+      "answer": "B",
+      "options": {
+        "A": "10",
+        "B": "20",
+        "C": "30",
+        "D": "40"
+      }
+    },
+    {
+      "number": "98",
+      "stem": "The opposite angles of a cyclic quadrilateral are (x − 21)° and (x + 15)°. Find x.",
+      "solution": "Opposite angles of a cyclic quadrilateral add to 180°. Thus 2x − 6 = 180 and x = 93.",
+      "slo": "20.4.1",
+      "answer": "B",
+      "options": {
+        "A": "55",
+        "B": "93",
+        "C": "135",
+        "D": "163"
+      }
+    }
+  ],
+  "knowledge-platform-practice": [
+    {
+      "number": "2",
+      "stem": "Two polynomials $P_1$ and $P_2$ have HCF $H$. What is their LCM?",
+      "solution": "HCF × LCM = product of the two polynomials, using a consistent choice of constant factor.",
+      "slo": "6.1.2",
+      "answer": "B",
+      "options": {
+        "A": "$\\frac H{P_1}P_2$",
+        "B": "$\\frac{P_1P_2}H$",
+        "C": "$\\frac H{P_2}P_1$",
+        "D": "$HP_1P_2$"
+      }
+    },
+    {
+      "number": "3",
+      "stem": "Find the HCF of $x^2-9$ and $(x+3)^2$.",
+      "solution": "Factor the first expression as $(x+3)(x-3)$. Only $x+3$ is common.",
+      "slo": "6.1.1",
+      "answer": "A",
+      "options": {
+        "A": "$x+3$",
+        "B": "$x-3$",
+        "C": "$(x+3)^2(x-3)$",
+        "D": "$(x+3)^3(x-3)$"
+      }
+    },
+    {
+      "number": "4",
+      "stem": "Which expression squares to $x^2-\\frac{2x}{a}+\\frac{1}{a^2}$, where $a\\ne0$?",
+      "solution": "Expand $(x-\\frac1a)^2$ to get the given expression. The principal square root would be $|x-\\frac1a|$.",
+      "slo": "6.3.1",
+      "answer": "B",
+      "options": {
+        "A": "$x-\\frac2a$",
+        "B": "$x-\\frac1a$",
+        "C": "$x-\\frac1{a^2}$",
+        "D": "$x-\\sqrt{\\frac{2x}a}+\\frac1a$"
+      }
+    },
+    {
+      "number": "5",
+      "stem": "Which expression squares to $(x-4)(x+4)(x^2-16)$?",
+      "solution": "By the difference of squares, $(x-4)(x+4)=x^2-16$.",
+      "slo": "6.3.1",
+      "answer": "C",
+      "options": {
+        "A": "$x-4$",
+        "B": "$x+4$",
+        "C": "$x^2-16$",
+        "D": "$x^2+16$"
+      }
+    },
+    {
+      "number": "6",
+      "stem": "Find the HCF of $15x^2$ and $45xy$.",
+      "solution": "The number factor is 15 and the common variable factor is x.",
+      "slo": "6.1.1",
+      "answer": "A",
+      "options": {
+        "A": "$15x$",
+        "B": "$15x^2$",
+        "C": "$45xy$",
+        "D": "$45xy^2$"
+      }
+    },
+    {
+      "number": "7",
+      "stem": "Solve $\\frac{\\sqrt{x+2}}{2}=0$.",
+      "solution": "The root is 0 only when its radicand x + 2 is 0.",
+      "slo": "7.1.4",
+      "answer": "C",
+      "options": {
+        "A": "{1}",
+        "B": "{2}",
+        "C": "{−2}",
+        "D": "{−2, 2}"
+      }
+    },
+    {
+      "number": "8",
+      "stem": "Which interval represents the solution to $|x|<1$?",
+      "solution": "The distance of x from zero must be strictly less than 1.",
+      "slo": "7.3.3",
+      "answer": "A",
+      "options": {
+        "A": "$-1<x<1$",
+        "B": "$-1\\le x\\le1$",
+        "C": "$x\\le-1$ or $x\\ge1$",
+        "D": "$x<-1$ or $x>1$"
+      }
+    },
+    {
+      "number": "9",
+      "stem": "Solve $\\sqrt{\\frac{x-a}{a}}=1$ for $x$, where $a\\ne0$.",
+      "solution": "Squaring gives x − a = a. Substituting x = 2a into the original equation gives √1 = 1.",
+      "slo": "7.1.4",
+      "answer": "A",
+      "options": {
+        "A": "$\\{2a\\}$",
+        "B": "$\\{\\pm a^2\\}$",
+        "C": "$\\{\\pm2a\\}$",
+        "D": "$\\{a^2+a\\}$"
+      }
+    },
+    {
+      "number": "10",
+      "stem": "Which number line represents $x\\le2$?",
+      "solution": "Values smaller than 2 are to its left, and equality requires the endpoint to be included.",
+      "slo": "7.3.2",
+      "answer": "B",
+      "options": {
+        "A": "Open endpoint at 2, shaded left",
+        "B": "Closed endpoint at 2, shaded left",
+        "C": "Closed endpoint at −2, shaded right",
+        "D": "Open endpoint at −2, shaded right"
+      }
+    },
+    {
+      "number": "11",
+      "stem": "Solve $3=-\\frac32x$.",
+      "solution": "Multiply both sides by −2/3.",
+      "slo": "7.1.2",
+      "answer": "A",
+      "options": {
+        "A": "$-2$",
+        "B": "$2$",
+        "C": "$\\frac92$",
+        "D": "$-\\frac12$"
+      }
+    },
+    {
+      "number": "12",
+      "stem": "Solve $\\frac x2\\le\\frac12$ for whole numbers x.",
+      "solution": "After multiplying by 2, the whole numbers x ≤ 1 are 0 and 1.",
+      "slo": "7.3.2",
+      "answer": "C",
+      "options": {
+        "A": "{0}",
+        "B": "{1}",
+        "C": "{0, 1}",
+        "D": "{…, −2, −1, 0, 1}"
+      }
+    },
+    {
+      "number": "13",
+      "stem": "Find $\\csc^2 45^\\circ$.",
+      "solution": "Since sin 45° = 1/√2, its reciprocal squared equals 2.",
+      "slo": "14.2.3",
+      "answer": "A",
+      "options": {
+        "A": "$2$",
+        "B": "$\\frac12$",
+        "C": "$\\frac34$",
+        "D": "$\\frac43$"
+      }
+    },
+    {
+      "number": "14",
+      "stem": "Which trigonometric ratio is positive in the fourth quadrant?",
+      "solution": "The x-coordinate is positive and the y-coordinate is negative in quadrant IV.",
+      "slo": "14.2.2",
+      "answer": "B",
+      "options": {
+        "A": "$\\sin\\theta$",
+        "B": "$\\cos\\theta$",
+        "C": "$\\tan\\theta$",
+        "D": "$\\cot\\theta$"
+      }
+    },
+    {
+      "number": "16",
+      "stem": "A line through A, B and C is tangent to a circle with centre O at B. If ∠BCO = 10°, find ∠BOC.",
+      "solution": "OB is perpendicular to the tangent. The third angle of triangle BOC is 180° − 90° − 10° = 80°.",
+      "slo": "20.2.1",
+      "answer": "C",
+      "options": {
+        "A": "10°",
+        "B": "20°",
+        "C": "80°",
+        "D": "100°"
+      }
+    },
+    {
+      "number": "17",
+      "stem": "A right triangle has legs 9 cm and 40 cm. Find the hypotenuse.",
+      "solution": "The length is √(9² + 40²) = √1681 = 41 cm.",
+      "slo": "14.3.1",
+      "answer": "A",
+      "options": {
+        "A": "41 cm",
+        "B": "49 cm",
+        "C": "7√31 cm",
+        "D": "41√2 cm"
+      }
+    },
+    {
+      "number": "19",
+      "stem": "The mean of six numbers is 12. What is their sum?",
+      "solution": "Sum equals mean multiplied by 6.",
+      "slo": "22.3.1",
+      "answer": "A",
+      "options": {
+        "A": "72",
+        "B": "70",
+        "C": "21",
+        "D": "20"
+      }
+    },
+    {
+      "number": "20",
+      "stem": "The mean of 12, 13, 14 and 15 is 13.5. Which list has a mean of 23.5?",
+      "solution": "Adding 10 to each number raises the mean by 10.",
+      "slo": "22.3.1",
+      "answer": "B",
+      "options": {
+        "A": "12, 13, 14, 15",
+        "B": "22, 23, 24, 25",
+        "C": "12.5, 13.5, 14.5, 15.5",
+        "D": "22.5, 23.5, 24.5, 25.5"
+      }
+    },
+    {
+      "number": "21",
+      "stem": "The mean of six numbers is 10. One number is 5. Find the mean of the remaining five.",
+      "solution": "The remaining numbers total 60 − 5 = 55, giving mean 11.",
+      "slo": "22.3.1",
+      "answer": "B",
+      "options": {
+        "A": "10",
+        "B": "11",
+        "C": "12",
+        "D": "13"
+      }
+    },
+    {
+      "number": "23",
+      "stem": "Which line represents $x=-2$?",
+      "solution": "The x-coordinate stays fixed at −2 for every y.",
+      "answer": "B",
+      "options": {
+        "A": "Vertical, right of the y-axis",
+        "B": "Vertical, left of the y-axis",
+        "C": "Horizontal, below the x-axis",
+        "D": "Horizontal, above the x-axis"
+      }
+    },
+    {
+      "number": "24",
+      "stem": "What features describe the graph of $y=-3x-3$?",
+      "solution": "The slope is −3 and the intercept is −3.",
+      "slo": "16.2.1",
+      "answer": "D",
+      "options": {
+        "A": "Rises and passes through the origin",
+        "B": "Falls and passes through the origin",
+        "C": "Rises and has a negative y-intercept",
+        "D": "Falls and has a negative y-intercept"
+      }
+    },
+    {
+      "number": "25",
+      "stem": "In the circle, arcs KL and MN are congruent. The other two central angles are 116° and 104°. Find ∠MON.",
+      "solution": "The equal central angles share 360° − 116° − 104° = 140°.",
+      "slo": "20.3.1",
+      "answer": "D",
+      "options": {
+        "A": "220°",
+        "B": "140°",
+        "C": "110°",
+        "D": "70°"
+      }
+    },
+    {
+      "number": "26",
+      "stem": "Chords AB and CD are the same perpendicular distance from the centre O. Which statement follows?",
+      "solution": "Chords equally distant from a circle’s centre have equal lengths.",
+      "slo": "20.1.1",
+      "answer": "B",
+      "options": {
+        "A": "OC = OH",
+        "B": "AB = CD",
+        "C": "OB = OG",
+        "D": "Arc AD equals arc BC"
+      }
+    },
+    {
+      "number": "36",
+      "stem": "Find the intersection of the diagonals of a rectangle with opposite vertices (0, 0) and (10, 4).",
+      "solution": "The diagonals bisect one another, so take the midpoint of the opposite vertices.",
+      "slo": "9.2.1",
+      "answer": "B",
+      "options": {
+        "A": "(0, 2)",
+        "B": "(5, 2)",
+        "C": "(5, 4)",
+        "D": "(10, 2)"
+      }
+    },
+    {
+      "number": "II-2a",
+      "stem": "Simplify $\\left(\\frac1{x-1}+\\frac2{x+1}-\\frac3x\\right)\\div\\frac{3-x}{x(x+1)}$.",
+      "solution": "The sum in brackets reduces to $\\frac{3-x}{x(x-1)(x+1)}$. Multiply by the reciprocal and cancel common factors to get $\\frac1{x-1}$, with $x\\notin\\{-1,0,1,3\\}$.",
+      "slo": "6.2.2",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "II-2b",
+      "stem": "The HCF of two quadratic expressions is $5x+4$. Their LCM is $(3x+4)(2x-5)(5x+4)$. Find the two quadratics.",
+      "solution": "Each expression contains the HCF. The remaining factors $3x+4$ and $2x-5$ must be in different expressions, giving $(5x+4)(3x+4)$ and $(5x+4)(2x-5)$.",
+      "slo": "6.1.2",
+      "marks": 2,
+      "worked": true
+    },
+    {
+      "number": "II-3",
+      "stem": "a. Write $\\frac{x^2+1}{x^2+2x+1}$ as a polynomial and a proper fraction.\nb. Write the form used for its partial fraction decomposition.",
+      "solution": "Division gives $1-\\frac{2x}{(x+1)^2}$. The decomposition has form $1+\\frac{A}{x+1}+\\frac{B}{(x+1)^2}$. In fact, $-2x=-2(x+1)+2$, giving $A=-2$ and $B=2$.",
+      "slo": "6.4.3",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "II-4a",
+      "stem": "i. When a number is multiplied by 3 and increased by 7, the result is also obtained by multiplying it by 4 and subtracting 3. Find the number.\nii. Solve $x+3>-4$ for natural numbers x.",
+      "solution": "i. $3x+7=4x-3$ gives $x=10$.\nii. $x>-7$, so every natural number is a solution.",
+      "slo": "7.1.3",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "II-5c",
+      "stem": "The point $(1,a/2)$ solves $x+y=3$ and $2x+3y=8$. Plot the first line using two points, then find a.",
+      "solution": "Plot $(0,3)$ and $(3,0)$ for $x+y=3$. The lines meet at $(1,2)$, which satisfies both equations. Thus $a/2=2$ and $a=4$.",
+      "slo": "16.2.1",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "II-6",
+      "stem": "Find the area of a square whose diagonal is 10 cm.",
+      "solution": "The diagonal and two sides form a right triangle. If s is the side, $2s^2=100$. The area is $s^2=50$ cm².",
+      "slo": "14.3.1",
+      "marks": 4,
+      "worked": true
+    },
+    {
+      "number": "II-7a",
+      "stem": "A triangle has $A(8,4)$, $C(5,8)$, $AB=6$ units and $BC=4$ units. Show that it is scalene.",
+      "solution": "By the distance formula, $AC=\\sqrt{(8-5)^2+(4-8)^2}=5$. The side lengths 4, 5 and 6 are all different.",
+      "slo": "9.1.3",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "II-7b",
+      "stem": "A line segment has midpoint $(0,0)$ and one endpoint $(2a,-3b)$. Find the other endpoint.",
+      "solution": "The two x-coordinates must sum to 0, as must the two y-coordinates. Hence the other endpoint is $(-2a,3b)$.",
+      "slo": "9.2.1",
+      "marks": 2,
+      "worked": true
+    },
+    {
+      "number": "II-8b",
+      "stem": "Use a right triangle with a 45° acute angle to derive $\\sin45^\\circ$ and $\\tan45^\\circ$.",
+      "solution": "Both legs have the same length s. The hypotenuse is $s\\sqrt2$ by Pythagoras, so $\\sin45^\\circ=1/\\sqrt2$ and $\\tan45^\\circ=1$.",
+      "slo": "14.2.3",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "II-9a",
+      "stem": "Let a and b be positive integers with $a>b$. Show that lengths $2ab$, $a^2-b^2$ and $a^2+b^2$ form a right triangle.",
+      "solution": "Expanding gives $(2ab)^2+(a^2-b^2)^2=a^4+2a^2b^2+b^4=(a^2+b^2)^2$. All three lengths are positive, and the converse of Pythagoras establishes the right angle.",
+      "slo": "14.3.1",
+      "marks": 4,
+      "worked": true
+    },
+    {
+      "number": "II-9b",
+      "stem": "The angle of elevation to the top of a 30 m tower is 60°. Sketch the setup and find the horizontal distance to the foot of the tower.",
+      "solution": "The tower, ground and line of sight form a right triangle. The distance d satisfies $\\tan60^\\circ=30/d$. Therefore $d=10\\sqrt3$ m.",
+      "slo": "19.4.1",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "II-10a",
+      "stem": "Give the partial-fraction form of $\\frac{15x+3}{x^2(x-1)}$.",
+      "solution": "The repeated linear factor x contributes two terms, and the simple factor $x-1$ contributes one. The form is $\\frac Ax+\\frac B{x^2}+\\frac C{x-1}$.",
+      "slo": "6.4.3",
+      "marks": 1,
+      "worked": false
+    },
+    {
+      "number": "II-10b",
+      "stem": "Given $A(-2,-1)$, $B(3,-2)$, $C(3,2)$ and $D(-2,1)$, prove that AC and BD have equal lengths.",
+      "solution": "Both diagonals have absolute horizontal difference 5 and absolute vertical difference 3, so both are $\\sqrt{5^2+3^2}=\\sqrt{34}$.",
+      "slo": "9.1.3",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "II-11a",
+      "stem": "In the circle shown, is $\\angle 1+\\angle 3>\\angle 4$? Justify your answer.",
+      "solution": "Angles 2 and 4 are each inscribed angles subtending the diameter, so each is 90°. The other two angles of the upper triangle therefore add to 90°. Thus angle 1 plus angle 3 equals angle 4.",
+      "slo": "20.4.1",
+      "marks": 2,
+      "worked": true,
+      "diagram": "/paper-crops/MTH-X-SUPPLEMENTARY-KP/q11a.webp"
+    },
+    {
+      "number": "II-11b",
+      "stem": "Verify that diagonals AC and BD of the rectangle with vertices $A(0,0)$, $B(3,0)$, $C(3,2)$ and $D(0,2)$ have the same midpoint.",
+      "solution": "For AC, average 0 and 3 for x, and 0 and 2 for y. For BD the same pairs appear in the opposite order. Both midpoints are $(3/2,1)$.",
+      "slo": "9.2.1",
+      "marks": 2,
+      "worked": true
+    },
+    {
+      "number": "II-12",
+      "stem": "Construct an equilateral triangle of side 7 cm and draw the circle through its three vertices.",
+      "solution": "Draw a 7 cm segment. From both ends, draw arcs of radius 7 cm and join their intersection to the endpoints. Construct perpendicular bisectors of two sides. Use their intersection as centre and the distance to a vertex as radius.",
+      "slo": "21.2.2",
+      "marks": 5,
+      "worked": false
+    }
+  ],
+  "annotated-practice-paper": [
+    {
+      "number": "1",
+      "stem": "Find the modal class for the grouped data.\n\n| Class interval | Cumulative frequency |\n| --- | --- |\n| 11–15 | 3 |\n| 16–20 | 12 |\n| 21–25 | 16 |\n| 26–30 | 22 |\n| 31–35 | 25 |",
+      "solution": "Subtract successive cumulative totals. The class frequencies are 3, 9, 4, 6 and 3, so 16–20 has the highest frequency.",
+      "slo": "22.1.1",
+      "answer": "B",
+      "options": {
+        "A": "11–15",
+        "B": "16–20",
+        "C": "21–25",
+        "D": "26–30"
+      }
+    },
+    {
+      "number": "2",
+      "stem": "Five observations all have the same value. What is their variance?",
+      "solution": "Every deviation from the mean is 0.",
+      "slo": "22.4.1",
+      "answer": "A",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "5",
+        "D": "Undefined"
+      }
+    },
+    {
+      "number": "3",
+      "stem": "The following weights are in ascending order. If their median is 27, find p.\n\n9, 9, 10, 15, 17, 19, 23, 27, p, p, 32, 35, 35, 35, 37, 40, 40",
+      "solution": "There are 17 observations, so the ninth item is the median. That item is p.",
+      "slo": "22.3.1",
+      "answer": "C",
+      "options": {
+        "A": "23",
+        "B": "25",
+        "C": "27",
+        "D": "32"
+      }
+    },
+    {
+      "number": "4",
+      "stem": "The graph is a cumulative frequency curve for the heights of mangrove trees in Clifton, Karachi. How many trees were measured?",
+      "solution": "The final cumulative frequency is 150.",
+      "slo": "22.2.4",
+      "answer": "D",
+      "options": {
+        "A": "25",
+        "B": "75",
+        "C": "100",
+        "D": "150"
+      },
+      "diagram": "/paper-crops/MTH-X-SUPPLEMENTARY-SCAN/q4.webp"
+    },
+    {
+      "number": "5",
+      "stem": "Half the standard deviation of x is 2. Find the variance.",
+      "solution": "The standard deviation is 4, so the variance is 4² = 16.",
+      "slo": "22.4.1",
+      "answer": "D",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "4",
+        "D": "16"
+      }
+    },
+    {
+      "number": "6",
+      "stem": "If $y=3x$ and $x=4$, find y.",
+      "solution": "Substitute 4 for x to get 12.",
+      "answer": "A",
+      "options": {
+        "A": "12",
+        "B": "4",
+        "C": "3",
+        "D": "1"
+      }
+    },
+    {
+      "number": "9",
+      "stem": "Find the HCF of $2x^2+2x$ and $4x^2(x+1)$.",
+      "solution": "The first expression factors as $2x(x+1)$ and divides the second.",
+      "slo": "6.1.1",
+      "answer": "C",
+      "options": {
+        "A": "$2x$",
+        "B": "$4x$",
+        "C": "$2x(x+1)$",
+        "D": "$4x(x+1)$"
+      }
+    },
+    {
+      "number": "15",
+      "stem": "For a positive integer m, which inequality is equivalent to $m(x-1)>m$?",
+      "solution": "Divide both sides by positive m and add 1.",
+      "slo": "7.3.2",
+      "answer": "D",
+      "options": {
+        "A": "$x<m$",
+        "B": "$x>m$",
+        "C": "$x<2$",
+        "D": "$x>2$"
+      }
+    },
+    {
+      "number": "19",
+      "stem": "Solve $8|x|>8$.",
+      "solution": "Dividing by 8 gives distance from zero greater than 1.",
+      "slo": "7.3.3",
+      "answer": "B",
+      "options": {
+        "A": "$x>-1$ or $x<1$",
+        "B": "$x<-1$ or $x>1$",
+        "C": "$x<-1$ or $x<1$",
+        "D": "$x>-1$ or $x>1$"
+      }
+    },
+    {
+      "number": "22",
+      "slo": "16.1.2",
+      "stem": "Which equation represents the line in the graph?",
+      "options": {
+        "A": "$x=-1$",
+        "B": "$y=-1$",
+        "C": "$y=-x$",
+        "D": "$y=x+1$"
+      },
+      "answer": "D",
+      "solution": "The graph crosses the vertical axis at 1 and rises by 1 for every 1 unit to the right. Its equation is y = x + 1.",
+      "diagram": "/paper-crops/MTH-X-SUPPLEMENTARY-SCAN/q22.webp"
+    },
+    {
+      "number": "23",
+      "stem": "Twice the discriminant of which equation is 8?",
+      "solution": "Write option C as $3x^2+4x+1=0$. Its discriminant is $16-12=4$.",
+      "slo": "15.4.1",
+      "answer": "C",
+      "options": {
+        "A": "$2x^2+3x=2$",
+        "B": "$x^2+5x-1=0$",
+        "C": "$3x^2+4x=-1$",
+        "D": "$x^2+4x=-1$"
+      }
+    },
+    {
+      "number": "24",
+      "stem": "Which equation models the statement that the product of a number and five more than itself is 14?",
+      "solution": "Expand $x(x+5)=14$.",
+      "slo": "15.6.1",
+      "answer": "D",
+      "options": {
+        "A": "$x^2+5=14$",
+        "B": "$5x^2+x=14$",
+        "C": "$5x^2+5=14$",
+        "D": "$x^2+5x=14$"
+      }
+    },
+    {
+      "number": "25",
+      "stem": "For which listed value of k does $9x^2-kx+1=0$ have equal roots?",
+      "solution": "Equal roots require $k^2-36=0$. Of the listed values, only 6 works.",
+      "slo": "15.4.2",
+      "answer": "B",
+      "options": {
+        "A": "0",
+        "B": "6",
+        "C": "10",
+        "D": "36"
+      }
+    },
+    {
+      "number": "31",
+      "stem": "Convert 45°30′ to decimal degrees.",
+      "solution": "30 minutes is half a degree.",
+      "slo": "14.1.2",
+      "answer": "C",
+      "options": {
+        "A": "45.03°",
+        "B": "45.3°",
+        "C": "45.5°",
+        "D": "45.75°"
+      }
+    },
+    {
+      "number": "34",
+      "stem": "Which statement is true for an acute angle θ of an isosceles right triangle?",
+      "solution": "Both acute angles are 45°, where sine and cosine both equal $1/\\sqrt2$.",
+      "slo": "14.2.3",
+      "answer": "A",
+      "options": {
+        "A": "$\\sin\\theta=\\cos\\theta$",
+        "B": "$\\sin\\theta=\\csc\\theta$",
+        "C": "$\\sec\\theta=\\cos\\theta$",
+        "D": "$\\tan\\theta=\\sin\\theta=\\cos\\theta$"
+      }
+    },
+    {
+      "number": "35",
+      "stem": "What operation converts $\\sin^2\\theta+\\cos^2\\theta=1$ to $1+\\tan^2\\theta=\\sec^2\\theta$?",
+      "solution": "Dividing by $\\cos^2\\theta$ gives $\\tan^2\\theta+1=\\sec^2\\theta$ wherever $\\cos\\theta\\ne0$.",
+      "slo": "14.4.2",
+      "answer": "D",
+      "options": {
+        "A": "Add $\\sin\\theta$",
+        "B": "Add $\\cos^2\\theta$",
+        "C": "Divide by $\\sin\\theta$",
+        "D": "Divide by $\\cos^2\\theta$"
+      }
+    },
+    {
+      "number": "38",
+      "stem": "In a right isosceles triangle, the hypotenuse is 18 cm. How long is each leg?",
+      "solution": "Each leg is $18/\\sqrt2=9\\sqrt2$ cm.",
+      "slo": "14.3.1",
+      "answer": "B",
+      "options": {
+        "A": "12√2 cm",
+        "B": "9√2 cm",
+        "C": "6√2 cm",
+        "D": "3√2 cm"
+      }
+    }
+  ],
+  "practice-marking-guide": [
+    {
+      "number": "2b",
+      "stem": "The LCM is $(x+1)^2(x+2)^2$, the HCF is $x^2+3x+2$, and one polynomial is $(x^2+2x+1)(x+2)$. Prove that the other polynomial is $x^3+5x^2+8x+4$.",
+      "solution": "Use $pq=\\mathrm{HCF}\\times\\mathrm{LCM}$. Factor the HCF as $(x+1)(x+2)$ and $p$ as $(x+1)^2(x+2)$. This gives $q=(x+1)(x+2)^2=x^3+5x^2+8x+4$.",
+      "slo": "6.1.2",
+      "marks": 4,
+      "worked": true
+    },
+    {
+      "number": "3a",
+      "stem": "Given $a=a\\sqrt{y-3}+a^2\\sqrt{y-3}$ with $a>0$, show that $y-3=\\left(\\frac{1}{1+a}\\right)^2$.",
+      "solution": "Factor the right-hand side as $a(1+a)\\sqrt{y-3}$. Divide by $a(1+a)>0$ and square.",
+      "slo": "15.2.2",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "3b",
+      "stem": "Solve $|x-4|-1\\ge4$ and represent the solution on a number line.",
+      "solution": "The inequality is $|x-4|\\ge5$. Thus $x-4\\le-5$ or $x-4\\ge5$, giving $x\\le-1$ or $x\\ge9$. Use closed endpoints at −1 and 9 and shade outwards.",
+      "slo": "7.3.3",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "4",
+      "stem": "Solve $\\frac{4x-3}{3}-\\frac15=\\frac{7+x}{15}$.",
+      "solution": "Multiply by 15: $5(4x-3)-3=7+x$. This simplifies to $19x=25$, so $x=\\frac{25}{19}$.",
+      "slo": "7.1.2",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "5",
+      "stem": "Solve $5x^2+11x=4(3x+1)$ by completing the square.",
+      "solution": "Rearrange to $5x^2-x-4=0$. Divide by 5 and add $1/100$ to complete the square: $(x-1/10)^2=81/100$. Thus $x=1$ or $x=-4/5$.",
+      "slo": "15.2.1",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "6",
+      "stem": "Endpoints of a circle diameter are $P(-5,-2)$ and $Q(5,-4)$. Find the centre and radius.",
+      "solution": "The midpoint is $(0,-3)$. The radius is the distance from that midpoint to P, which is $\\sqrt{5^2+1^2}=\\sqrt{26}$.",
+      "slo": "9.2.1",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "7a",
+      "stem": "Using a trigonometric identity, prove that $\\sec^2\\theta+\\csc^2\\theta=\\sec^2\\theta\\csc^2\\theta$.",
+      "solution": "Add the reciprocals $1/\\cos^2\\theta$ and $1/\\sin^2\\theta$ over the common denominator. The numerator is $\\sin^2\\theta+\\cos^2\\theta=1$, giving the required product wherever both sides are defined.",
+      "slo": "14.4.2",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "7b",
+      "stem": "A ladder leans against a wall at 60° to the horizontal ground. Its foot is 3 m from the wall. Sketch the setup and find the ladder’s length.",
+      "solution": "The wall and ground form a right angle. The ground side of 3 m is adjacent to 60° and the ladder is the hypotenuse. Thus $\\cos60^\\circ=3/L$, giving $L=6$ m.",
+      "slo": "19.4.1",
+      "marks": 3,
+      "worked": true
+    },
+    {
+      "number": "8a",
+      "stem": "In the circle with centre O, chords MN and PQ are equal. Find OS and MN using the distances shown. The perpendicular distances are $OT=7x+13$ and $OS=10x-8$. The chord length is $MN=13x+1$.",
+      "solution": "Equal chords are equally distant from the centre: $7x+13=10x-8$, so $x=7$. Hence $OS=62$ and $MN=92$.",
+      "slo": "20.1.1",
+      "diagram": "/paper-crops/MTH-X-SUPPLEMENTARY-GUIDE/q8a.webp",
+      "marks": 4,
+      "worked": true
+    },
+    {
+      "number": "8b",
+      "stem": "In the circle with centre O, AB and CD are equal chords. Use the diagram to find ∠AEB and ∠ADC.",
+      "solution": "Equal chords give equal central angles, so $\\angle AOB=\\angle COD=120^\\circ$. The corresponding inscribed angle $\\angle AEB$ is 60°. Since A, O and D are collinear and $OC=OD$, $\\angle ADC=\\angle ODC=(180^\\circ-120^\\circ)/2=30^\\circ$.",
+      "slo": "20.4.1",
+      "diagram": "/paper-crops/MTH-X-SUPPLEMENTARY-GUIDE/q8b.webp",
+      "marks": 4,
+      "worked": true
+    },
+    {
+      "number": "10",
+      "stem": "Construct an equilateral triangle inscribed in the given circle.",
+      "solution": "Keep the compass open to the circle’s radius. Step off six equal chords around the circumference from any starting point. Join alternate points to form an equilateral triangle.",
+      "diagram": "/paper-crops/MTH-X-SUPPLEMENTARY-GUIDE/q10.webp",
+      "marks": 3,
+      "worked": false
+    }
+  ]
+}

@@ -838,9 +838,10 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
             >
               <UnitBrowser
                 units={unitsList.map((unit): UnitEntry => {
-                  const model = countQuestions((isMath ? currentMappedQuestions.filter(q => !q.examYear) : mappedModelPool).filter(q => belongsToUnit(q, unit, false)));
+                  const model = countQuestions((isMath ? currentMappedQuestions.filter(q => !q.examYear && q.examType !== 'SUPPLEMENTARY') : mappedModelPool).filter(q => belongsToUnit(q, unit, false)));
                   const past = countQuestions(combinedAnnualPool.filter(q => belongsToUnit(q, unit, true)));
-                  const extra = countQuestions(extraChapterQuestions.filter(q => belongsToUnit(q, unit, false)));
+                  const extraPool = isMath ? currentMappedQuestions.filter(q => q.examType === 'SUPPLEMENTARY') : extraChapterQuestions;
+                  const extra = countQuestions(extraPool.filter(q => belongsToUnit(q, unit, false)));
                   return {
                     id: `unit-${unit.unitNumber}`,
                     number: unit.unitNumber,
@@ -850,7 +851,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
                     breakdown: [
                       { label: 'model', value: model, tone: 'model' },
                       { label: 'past-paper', value: past, tone: 'past' },
-                      { label: 'from notes', value: extra, tone: 'model' },
+                      { label: isMath ? 'other resources' : 'from notes', value: extra, tone: 'model' },
                     ],
                     action: { label: 'Start quiz', href: `${baseUrl}/mcqs/chapter-wise/${unit.slug}?quiz=1`, icon: 'play' },
                     secondary: { label: `Open chapter ${unit.unitNumber}`, href: `${baseUrl}/mcqs/chapter-wise/${unit.slug}`, icon: 'arrow' },

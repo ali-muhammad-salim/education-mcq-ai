@@ -2,6 +2,7 @@ import ix from '@/data/mathematics/ssc1_exact_syllabus.json';
 import x from '@/data/mathematics/ssc2_exact_syllabus.json';
 import { mathematicsIx2026DuplicateKey } from './mathematicsIx2026';
 import { reviewedMathematicsPapers } from './mathematicsPapers';
+import { mathematicsSupplementaryPapers } from './mathematicsSupplementary';
 import type { PaperData } from './paperDataService';
 import { paperChoices, paperScoringAnswers } from './paperPresentation';
 import { syllabusLevel } from './syllabusPresentation';
@@ -9,7 +10,7 @@ import { classXChapterReview, mathematicsChapterRepeats, removedClassXChapterMap
 
 export const mathematicsChapterSyllabus = { 9: ix, 10: x };
 const modelCodes = ['MTH-IX-P1', 'MTH-IX-P2'];
-export const bundledMathematicsPaperCodes = new Set([...modelCodes, ...reviewedMathematicsPapers.map(paper => paper.paperCode)]);
+export const bundledMathematicsPaperCodes = new Set([...modelCodes, ...[...reviewedMathematicsPapers, ...mathematicsSupplementaryPapers].map(paper => paper.paperCode)]);
 
 // Paper II questions with a calculation or worked procedure. Identifiers are
 // from the printed papers and include alternatives and mixed calculation parts.
@@ -72,4 +73,5 @@ export const mathematicsChapterSourcesFor = (model: (code: string) => PaperData 
   mathematicsChapterSources([
     ...modelCodes.flatMap(code => model(code) ?? []),
     ...reviewedMathematicsPapers,
+    ...mathematicsSupplementaryPapers,
   ], grade);

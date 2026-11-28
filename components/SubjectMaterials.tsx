@@ -13,6 +13,7 @@ import styles from "./rise/discovery.module.css";
 import { studyScope, studyChapters } from "@/services/study/navigation";
 import { physicsUnit16Resource } from "@/lib/physicsUnit16Resource";
 import { physicsIxWorkshop } from '@/lib/physicsIxWorkshop';
+import { mathematicsXResourcesHref, mathematicsXSubjectHref } from '@/lib/mathematicsSupplementary';
 import { physicsUnit17Resource } from "@/lib/physicsUnit17Resources";
 import { subjectMaterialTypes, subjectPaperListings } from "@/services/materials/catalog";
 import { supportingMaterialLabels } from '@/lib/materialTypes';
@@ -224,6 +225,7 @@ export default async function SubjectMaterials({
       pending: !biology && !seniorBiology && !hssc && !legacy && !sscComputerScience && !chemistry && !available('practical_paper'),
       group: "lab",
     },
+    ...(scope.baseUrl === mathematicsXSubjectHref ? [{ label: 'Other resources', href: mathematicsXResourcesHref, group: 'support' as Group }] : []),
     ...(scope.baseUrl === physicsIxWorkshop.subjectHref
       ? [{ label: 'Other resources', href: physicsIxWorkshop.resourcesHref, group: 'support' as Group }]
       : []),
