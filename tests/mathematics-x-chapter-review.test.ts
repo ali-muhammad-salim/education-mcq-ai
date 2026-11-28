@@ -2,11 +2,14 @@ import { describe, expect, it } from 'vitest';
 import { mathematicsChapterSourcesFor } from '@/lib/mathematicsChapterPapers';
 import { getFallbackPaper } from '@/lib/paperDataService';
 import { groupDuplicateQuestions } from '@/lib/uniqueQuestions';
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { mathematicsSupplementaryPapers, mathematicsSupplementarySourceHref, mathematicsXResources } from '@/lib/mathematicsSupplementary';
 
 describe('Reviewed Class X Mathematics chapter placement', () => {
   const classX = mathematicsChapterSourcesFor(getFallbackPaper, 10);
   const classIx = mathematicsChapterSourcesFor(getFallbackPaper, 9);
-  const scored = (unit: number) => classX.filter(row => row.unit === unit && row.answers.length);
+  const scored = (unit: number) => classX.filter(row => row.paper.examType !== 'SUPPLEMENTARY' && row.unit === unit && row.answers.length);
   const reference = (row: typeof classX[number]) => `${row.paper.paperCode}/${row.question.questionNumber}`;
 
   it('uses real assessment outcomes and groups repeated source questions in chapter practice', () => {
@@ -21,6 +24,39 @@ describe('Reviewed Class X Mathematics chapter placement', () => {
     expect(groupDuplicateQuestions(scored(21), row => row.question)).toHaveLength(3);
     expect(scored(21).map(reference)).toContain('MTH-IX-2025-P1/42');
     expect(scored(21).map(reference)).not.toContain('MTH-IX-2017-P1/26');
+  });
+
+  it('includes reviewed supplementary items in the matching current grade and chapter', () => {
+    for (const [code, number, grade, unit, answer] of [
+      ['MTH-X-SCHOOL-QUIZ', '14', 10, 22, 'C'],
+      ['MTH-X-SCHOOL-QUIZ', '37', 9, 7, 'B'],
+      ['MTH-X-SCHOOL-QUIZ', '85', 10, 20, 'A'],
+      ['MTH-X-ANNOTATED-SCAN', '22', 10, 16, 'D'],
+      ['MTH-X-KP-PRACTICE', 'II-12', 10, 21, undefined],
+    ] as const) {
+      const source = (grade === 9 ? classIx : classX).find(row => row.paper.paperCode === code && row.question.questionNumber === number);
+      expect(source).toMatchObject({ unit, mapping: { grade }, answers: answer ? [answer] : [] });
+    }
+    expect(classX.some(row => reference(row) === 'MTH-X-SCHOOL-QUIZ/53')).toBe(false);
+  });
+
+  it('retains source and assets for each new resource question without duplicate anchors', () => {
+    expect(mathematicsSupplementaryPapers).toHaveLength(4);
+    for (const resource of mathematicsXResources) {
+      for (const pdf of [resource.original, resource.answers]) {
+        if (pdf) expect(existsSync(resolve('public', pdf.slice(1)))).toBe(true);
+      }
+      const paper = getFallbackPaper(resource.paperCode)!;
+      expect(paper.questions.length).toBeGreaterThan(0);
+      expect(new Set(paper.questions.map(q => q.questionNumber)).size).toBe(paper.questions.length);
+      for (const q of paper.questions) {
+        expect(mathematicsSupplementarySourceHref(paper.paperCode, q.questionNumber)).toBe(resource.href + '#question-' + q.questionNumber);
+        const region = q.sourceRegion;
+        if (region.diagramUrl) expect(existsSync(resolve('public', region.diagramUrl.slice(1)))).toBe(true);
+        if (region.choices) expect(region.choices[region.correct_answer!]).toBeTruthy();
+        expect(q.questionText + Object.values(region.choices ?? {}).join('') + region.explanation).not.toMatch(/[\x08\x0c\x0d\t]/);
+      }
+    }
   });
 
   it('keeps only gradable probability questions and applicable trigonometry questions', () => {

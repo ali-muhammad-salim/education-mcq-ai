@@ -77,6 +77,7 @@ import chem2Past2023Crqs from '@/data/chemistry/ssc2_2023_past_crqs.json';
 import mth1ModelMcqs from '@/data/mathematics/ssc1_model_mcqs.json';
 import mth1ModelCrqs from '@/data/mathematics/ssc1_model_crqs.json';
 import { reviewedMathematicsPapers } from '@/lib/mathematicsPapers';
+import { mathematicsSupplementaryPapers } from '@/lib/mathematicsSupplementary';
 import { mathematicsIx2026DuplicateKey } from '@/lib/mathematicsIx2026';
 import { reviewedBiologyPapers } from '@/lib/biologyPapers';
 import { additionalBiologyPapers } from '@/lib/biologyFallbackPapers';
@@ -849,7 +850,8 @@ function computeFallbackPaper(code: string): PaperData | null {
   if (reviewedSscPhysics) return reviewedSscPhysics;
   const hssc = [...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].find(paper => paper.paperCode === code);
   if (hssc) return hssc;
-  const mathematics = reviewedMathematicsPapers.find(paper => paper.paperCode === code);
+  const mathematics = reviewedMathematicsPapers.find(paper => paper.paperCode === code)
+    ?? mathematicsSupplementaryPapers.find(paper => paper.paperCode === code);
   if (mathematics) return { ...mathematics, questions: mathematics.questions.map(question => {
     const key = mathematicsIx2026DuplicateKey(code, question.questionNumber);
     return key ? { ...question, sourceRegion: { ...question.sourceRegion, reviewed_duplicate_key: key } } : question;
