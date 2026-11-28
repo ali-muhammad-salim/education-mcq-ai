@@ -728,6 +728,9 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
     const rawQNum = q.rawQuestionNumber || q.questionNumber || idx + 1;
     const correctKey = q.correctOption || q.correctAnswer;
     const qMeta = q.sourceRegion || q;
+    const repeatReview = qMeta.single_answer_review_required && qMeta.reviewed_duplicate_key
+      ? qMeta.answer_review_note
+      : undefined;
     const activeOutcome = isCs && selectedUnit
       ? qMeta.current_mapping?.find((outcome: { unitNumber?: number }) => outcome.unitNumber === selectedUnit.unitNumber)
       : undefined;
@@ -757,7 +760,7 @@ export default function McqsClient({ board, classDef, meta, baseUrl, questions,m
       correct: correctKey,
       unscored: qMeta.single_answer_review_required === true,
       correctOptions: qMeta.score_accepted_options === true ? paperScoringAnswers(qMeta, paperChoices(q.options || q.choices)) : undefined,
-      solution: qMeta.explanation || q.explanation || qMeta.better_response || qMeta.model_answer || (correctKey ? `Answer key: ${correctKey}.` : 'A reviewed answer key is not available for this question.'),
+      solution: repeatReview || qMeta.explanation || q.explanation || qMeta.better_response || qMeta.model_answer || (correctKey ? `Answer key: ${correctKey}.` : 'A reviewed answer key is not available for this question.'),
       optionFeedback: qMeta.option_feedback,
       diagram,
       meta: (

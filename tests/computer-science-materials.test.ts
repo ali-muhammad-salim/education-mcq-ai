@@ -9,6 +9,7 @@ import { paperAnswer, paperQuestionNumber } from '@/lib/paperPresentation';
 import { gradablePracticeQuestions, sourcePracticeQuestion } from '@/services/assessment/service';
 import { guestQuestionsFrom, quizQuestionDiagram } from '@/lib/guest-attempts';
 import { studentQuestion } from '@/services/assessment/scoring';
+import { groupDuplicateQuestions } from '@/lib/uniqueQuestions';
 
 describe('Computer Science IX source materials', () => {
   it('lists papers that have digital questions and original documents', () => {
@@ -161,7 +162,10 @@ describe('Computer Science IX source materials', () => {
     const annual = getFallbackPaper('CS-IX-2026-P1')!.questions;
     const model = getFallbackPaper('CS-IX-P1')!.questions;
     const quizCode = 'CS-IX-UNIT-2-ALL-ALL';
-    const sources = [...annual, ...model].filter(q => q.sourceRegion.current_mapping?.some(outcome => outcome.code.startsWith('2.')));
+    const sources = [
+      ...gradablePracticeQuestions('CS-IX-2026-P1', annual),
+      ...gradablePracticeQuestions('CS-IX-P1', model),
+    ].filter(q => q.sourceRegion.current_mapping?.some(outcome => outcome.code.startsWith('2.')));
     const guest = guestQuestionsFrom(quizCode, sources);
     expect(guest.find(q => q.stemText.includes('identifies a negative number'))?.orderIndex).toBe(12);
     expect(guest.map(quizQuestionDiagram)).toEqual(sources.map(q => q.sourceRegion.diagramUrl));
@@ -172,4 +176,27 @@ describe('Computer Science IX source materials', () => {
       expect(quizQuestionDiagram(studentQuestion(frozen))).toEqual(source.sourceRegion.diagramUrl);
     }
   });
+
+  it('groups repeated Chapter 2 questions across papers and excludes the disputed answer from scoring', () => {
+    const sources = getAllStandardPapers()
+      .filter(p => /^CS-(IX|X)-(?:\d{4}-)?P1$/.test(p.paperCode))
+      .flatMap(({ paperCode }) => getFallbackPaper(paperCode)!.questions
+        .filter(q => q.sourceRegion.current_mapping?.some(outcome => outcome.grade === 9 && outcome.code.startsWith('2.')))
+        .map(question => ({ paperCode, question })));
+    const study = groupDuplicateQuestions(sources, row => row.question);
+    const reference = ({ paperCode, question }: typeof sources[number]) => paperCode + '/' + question.questionNumber;
+    expect(study.filter(group => group.length > 1).map(group => group.map(reference))).toEqual([
+      ['CS-IX-P1/8', 'CS-X-2022-P1/5'],
+      ['CS-IX-P1/9', 'CS-X-2023-P1/1'],
+      ['CS-IX-P1/10', 'CS-X-2025-P1/2'],
+      ['CS-X-2024-P1/2', 'CS-X-2022-P1/6'],
+    ]);
+    const scored = sources.filter(({ paperCode, question }) => gradablePracticeQuestions(paperCode, [question]).length);
+    expect(study).toHaveLength(26);
+    expect(groupDuplicateQuestions(scored, row => row.question)).toHaveLength(25);
+    expect(study.find(group => reference(group[0]) === 'CS-IX-P1/8')?.every(
+      ({ question }) => question.sourceRegion.single_answer_review_required && question.sourceRegion.answer_review_note?.includes('credits A'),
+    )).toBe(true);
+  });
+
 });
