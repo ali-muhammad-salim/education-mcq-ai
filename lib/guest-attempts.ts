@@ -48,6 +48,12 @@ function sourceOptions(question: GuestQuestionSource): Record<string, string> {
   return paperChoices(question.options || question.choices || {});
 }
 
+// A quiz position or question number can refer to several different papers.
+export function quizQuestionDiagram(question: Pick<GuestQuestionSource, 'diagramUrl' | 'sourceRegion'>) {
+  const diagram = question.diagramUrl || metadata(question.sourceRegion).diagramUrl;
+  return typeof diagram === 'string' && diagram.trim() ? diagram : undefined;
+}
+
 export function guestQuestionsFrom(paperCode: string, source: GuestQuestionSource[]): StudentQuestion[] {
   return source.map((question, index) => {
     const meta = metadata(question.sourceRegion);
@@ -65,7 +71,7 @@ export function guestQuestionsFrom(paperCode: string, source: GuestQuestionSourc
       questionType: declaredType === 'MULTIPLE_CHOICE' ? 'MCQ_SINGLE' : declaredType || 'MCQ_SINGLE',
       stemText: stem,
       options: sortable.map(key => ({ id: key, text: String(choices[key]) })),
-      diagramUrl: typeof question.diagramUrl === 'string' ? question.diagramUrl : typeof meta.diagramUrl === 'string' ? meta.diagramUrl : undefined,
+      diagramUrl: quizQuestionDiagram({ diagramUrl: question.diagramUrl, sourceRegion: meta }),
       matchingLeft: Array.isArray(question.matchingLeft) ? question.matchingLeft : undefined,
       matchingRight: Array.isArray(question.matchingRight) ? question.matchingRight : undefined,
       encryptedReveal: typeof question.encryptedReveal === 'string' ? question.encryptedReveal : undefined,

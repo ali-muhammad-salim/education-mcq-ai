@@ -15,7 +15,7 @@ import { useSecureExam } from '@/lib/use-secure-exam';
 import { z } from 'zod';
 import StructuredContent from '@/components/StructuredContent';
 import styles from '@/components/rise/quiz.module.css';
-import { resolveQuestionDiagram } from '@/lib/diagramResolver';
+import { quizQuestionDiagram } from '@/lib/guest-attempts';
 import { paperCropUrl } from '@/lib/paperCropUrl';
 import { decryptQuestionReveal } from '@/lib/quiz-crypto';
 import { paperScoringAnswers, paperChoices, paperMetadata } from '@/lib/paperPresentation';
@@ -347,8 +347,7 @@ export default function TakeQuizModal({
     const sourceList = activeQuestions.length > 0 ? activeQuestions : questions || [];
     const urls: string[] = [];
     for (const q of sourceList) {
-      const qNum = (q as ShuffledQuestion).originalQuestionNumber || (q as Question).questionNumber || (q as ShuffledQuestion).displayNumber;
-      const url = resolveQuestionDiagram(paperCode, qNum, q);
+      const url = quizQuestionDiagram(q);
       if (url) urls.push(paperCropUrl(url));
     }
     void preloadAllPaperDiagramsOffline(
@@ -357,7 +356,7 @@ export default function TakeQuizModal({
       controller.signal
     );
     return () => controller.abort();
-  }, [isOpen, paperCode, questions, activeQuestions.length]);
+  }, [isOpen, questions, activeQuestions.length]);
 
   // Auto-retry any failed diagram immediately when the browser comes back online
   useEffect(() => {
@@ -1965,12 +1964,7 @@ export default function TakeQuizModal({
 
                 {/* Cropped Diagram / Graph / Circuit with Offline Cache & Retry Fallback */}
                 {(() => {
-                  if (currentQ.diagramBased === false || (currentQ as any).isDiagram === false) return null;
-                  const diagram = resolveQuestionDiagram(
-                    paperCode,
-                    currentQ.originalQuestionNumber || currentQ.displayNumber,
-                    currentQ
-                  );
+                  const diagram = quizQuestionDiagram(currentQ);
                   if (!diagram) return null;
                   const rawDiagramSrc = paperCropUrl(diagram);
                   const cachedSrc = getCachedDiagramSrc(rawDiagramSrc);

@@ -7,6 +7,8 @@ import { sscComputerScienceTheory } from '@/lib/sscComputerScienceTheory';
 import { questionSyllabus } from '@/lib/questionSyllabus';
 import { paperAnswer, paperQuestionNumber } from '@/lib/paperPresentation';
 import { gradablePracticeQuestions, sourcePracticeQuestion } from '@/services/assessment/service';
+import { guestQuestionsFrom, quizQuestionDiagram } from '@/lib/guest-attempts';
+import { studentQuestion } from '@/services/assessment/scoring';
 
 describe('Computer Science IX source materials', () => {
   it('lists papers that have digital questions and original documents', () => {
@@ -152,6 +154,22 @@ describe('Computer Science IX source materials', () => {
     expect(paper.questions.every(q => q.sourceRegion.answer_origin === 'PROJECT_SOLVED' && !q.sourceRegion.official_answer)).toBe(true);
     for (const question of paper.questions.filter(q => q.diagramBased)) {
       expect(existsSync(resolve('public', question.sourceRegion.diagramUrl!.slice(1)))).toBe(true);
+    }
+  });
+
+  it('keeps each Chapter 2 quiz diagram attached to its source question', () => {
+    const annual = getFallbackPaper('CS-IX-2026-P1')!.questions;
+    const model = getFallbackPaper('CS-IX-P1')!.questions;
+    const quizCode = 'CS-IX-UNIT-2-ALL-ALL';
+    const sources = [...annual, ...model].filter(q => q.sourceRegion.current_mapping?.some(outcome => outcome.code.startsWith('2.')));
+    const guest = guestQuestionsFrom(quizCode, sources);
+    expect(guest.find(q => q.stemText.includes('identifies a negative number'))?.orderIndex).toBe(12);
+    expect(guest.map(quizQuestionDiagram)).toEqual(sources.map(q => q.sourceRegion.diagramUrl));
+    expect(guest.map(quizQuestionDiagram).filter(Boolean)).toContain('/paper-crops/CS-IX-P1/q12.png');
+    expect(guest.map(quizQuestionDiagram).filter(Boolean)).toContain('/paper-crops/CS-IX-P1/q13.png');
+    for (const [index, source] of sources.entries()) {
+      const frozen = { id: source.id, orderIndex: index + 1, marks: source.marks, content: sourcePracticeQuestion(source) };
+      expect(quizQuestionDiagram(studentQuestion(frozen))).toEqual(source.sourceRegion.diagramUrl);
     }
   });
 });
