@@ -1,5 +1,6 @@
 import { mathematicsSupplementarySourceHref } from '@/lib/mathematicsSupplementary';
 import prisma from '@/lib/prisma';
+import { normalizeBoardId } from '@/lib/boardCatalog';
 import { publicMaterialWhere } from '@/lib/materialVisibility';
 import { paperMetadata, paperChoices, paperAnswer, paperQuestionNumber, paperScoringAnswers } from '@/lib/paperPresentation';
 import { combinedChemistryXArchives, getFallbackPaper } from '@/lib/paperDataService';
@@ -114,7 +115,7 @@ export async function mappedChapterQuestions(topicId: string, filter = 'ALL') {
 }
 export async function mappedChapterGroups(board: string, grade: number, subject: string) {
   if (isBundledMathematics(board, grade, subject)) {
-    const published = await optionalMathematicsImports(databaseChapterGroups(board, grade, subject, true));
+    const published = await optionalPublishedMaterials(databaseChapterGroups(board, grade, subject, true));
     const sources = mathematicsChapterSourcesFor(getFallbackPaper, grade);
     return mathematicsChapterSyllabus[grade].flatMap(unit => {
       const bundled = sources.filter(entry => entry.unit === unit.unitNumber && entry.question.questionType === 'MULTIPLE_CHOICE' && entry.answers.length)
@@ -136,7 +137,11 @@ export async function mappedChapterGroups(board: string, grade: number, subject:
       return questions.length ? [{ id: `mathematics-${grade}-${unit.unitNumber}`, name: unit.name, questions }] : [];
     });
   }
-  return databaseChapterGroups(board, grade, subject);
+  const chapters = databaseChapterGroups(board, grade, subject);
+  if (normalizeBoardId(board) === 'akueb' && (grade === 9 || grade === 10) && subject.toLowerCase() === 'computer science') {
+    return optionalPublishedMaterials(chapters);
+  }
+  return chapters;
 }
 
 async function databaseChapterGroups(board: string, grade: number, subject: string, supplemental = false) {
@@ -172,7 +177,7 @@ async function databaseChapterGroups(board: string, grade: number, subject: stri
 
 const mathematicsLevelLabels: Record<string, string> = { R: 'Remembering', U: 'Understanding', A: 'Application' };
 
-async function optionalMathematicsImports<T>(work: Promise<T[]>): Promise<T[]> {
+async function optionalPublishedMaterials<T>(work: Promise<T[]>): Promise<T[]> {
   try {
     return await work;
   } catch (error) {
@@ -184,7 +189,7 @@ async function optionalMathematicsImports<T>(work: Promise<T[]>): Promise<T[]> {
 /** Build the theory directory from reviewed syllabus mappings. */
 export async function mappedTheoryUnits(board: string, grade: number, subject: string): Promise<ChapterUnitData[]> {
   if (isBundledMathematics(board, grade, subject)) {
-    const published = await optionalMathematicsImports(databaseTheoryUnits(board, grade, subject, true));
+    const published = await optionalPublishedMaterials(databaseTheoryUnits(board, grade, subject, true));
     const sources = mathematicsChapterSourcesFor(getFallbackPaper, grade);
     return mathematicsChapterSyllabus[grade].map(unit => {
       const added = published.find(entry => entry.unitNumber === unit.unitNumber);

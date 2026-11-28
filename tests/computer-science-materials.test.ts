@@ -11,7 +11,7 @@ import { gradablePracticeQuestions, sourcePracticeQuestion } from '@/services/as
 describe('Computer Science IX source materials', () => {
   it('lists papers that have digital questions and original documents', () => {
     const papers = getAllStandardPapers().filter(p => p.paperCode.startsWith('CS-IX-'));
-    expect(papers.length).toBe(15);
+    expect(papers.length).toBe(16);
     for (const item of papers) {
       expect(item.fileUrl).toMatch(/^\/materials\/ssc\/computer-science\//);
       expect(getFallbackPaper(item.paperCode)?.questions.length).toBeGreaterThan(0);
@@ -77,9 +77,9 @@ describe('Computer Science IX source materials', () => {
 
   it('validates current mappings for all Grade IX and X model and past theory papers', () => {
     const papers = getAllStandardPapers().filter(p => /^CS-(IX|X)-/.test(p.paperCode));
-    expect(papers).toHaveLength(29);
+    expect(papers).toHaveLength(30);
     const questions = papers.flatMap(p => getFallbackPaper(p.paperCode)!.questions);
-    expect(questions).toHaveLength(624);
+    expect(questions).toHaveLength(664);
     for (const question of questions) {
       const meta = question.sourceRegion;
       const outcomes = meta.current_mapping!;
@@ -131,14 +131,27 @@ describe('Computer Science IX source materials', () => {
   it('validates every scorable Computer Science IX and X MCQ against the quiz format', () => {
     const papers = getAllStandardPapers().filter(paper => /^CS-(IX|X)(-\d{4})?-P1$/.test(paper.paperCode));
     const sources = papers.map(paper => getFallbackPaper(paper.paperCode)!);
-    expect(sources).toHaveLength(14);
-    expect(sources.flatMap(paper => paper.questions)).toHaveLength(520);
+    expect(sources).toHaveLength(15);
+    expect(sources.flatMap(paper => paper.questions)).toHaveLength(560);
     for (const paper of sources) {
       for (const question of gradablePracticeQuestions(paper.paperCode, paper.questions)) {
         const content = sourcePracticeQuestion(question);
         expect(content.options).toHaveLength(4);
         expect(content.options.filter(option => option.isCorrect)).toHaveLength(1);
       }
+    }
+  });
+
+  it('publishes all 40 questions from 2026 Paper I and keeps ambiguous items out of quizzes', () => {
+    const paper = getFallbackPaper('CS-IX-2026-P1')!;
+    const gradable = gradablePracticeQuestions(paper.paperCode, paper.questions);
+    expect(paper.durationMinutes).toBe(70);
+    expect(paper.questions.map(q => Number(q.questionNumber))).toEqual(Array.from({ length: 40 }, (_, index) => index + 1));
+    expect(paper.questions.filter(q => !gradable.includes(q)).map(q => q.questionNumber)).toEqual(['17', '20', '29']);
+    expect(gradable.filter(q => q.sourceRegion.current_slo?.startsWith('2.')).map(q => q.questionNumber)).toEqual(['8', '9', '10', '11', '12', '13']);
+    expect(paper.questions.every(q => q.sourceRegion.answer_origin === 'PROJECT_SOLVED' && !q.sourceRegion.official_answer)).toBe(true);
+    for (const question of paper.questions.filter(q => q.diagramBased)) {
+      expect(existsSync(resolve('public', question.sourceRegion.diagramUrl!.slice(1)))).toBe(true);
     }
   });
 });

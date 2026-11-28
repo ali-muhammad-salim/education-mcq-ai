@@ -643,7 +643,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                   ? 'Any option earns practice credit'
                   : sourceAcceptedOptions.length > 0
                   ? `${optionLabel}${!hasBoardAlternates && sourceAcceptedOptions.length > 1 ? 's' : ''}: ${sourceAcceptedOptions.join(', ')}`
-                  : correctKey ? `Correct Option: ${correctKey}`
+                  : correctKey ? `${meta.answer_origin === 'PROJECT_SOLVED' ? 'Worked answer' : 'Correct Option'}: ${correctKey}`
                     : meta.single_answer_review_required ? 'Excluded from single-answer scoring'
                       : meta.answer_status === 'KEY_CONFLICT' ? 'No unique valid answer' : 'Review pending';
                 const answerLabel = meta.answer_origin === 'PROJECT_SOLVED' ? 'Project-solved answer' : 'Answer key';
@@ -878,7 +878,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
                                       marginLeft: 'auto',
                                       whiteSpace: 'nowrap'
                                     }}>
-                                      {sourceAcceptedOptions.length > 0 ? `✓ ${optionLabel}` : '✓ Correct Key'}
+                                      {sourceAcceptedOptions.length > 0 ? `✓ ${optionLabel}` : meta.answer_origin === 'PROJECT_SOLVED' ? '✓ Worked answer' : '✓ Correct Key'}
                                     </span>
                                   )}
                                 </div>
