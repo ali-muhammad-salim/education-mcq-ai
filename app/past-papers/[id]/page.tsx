@@ -97,6 +97,7 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
 
   const fallback = paper?.paperCode ? getFallbackPaper(paper.paperCode) : bundledPaper;
   const biologyIx2026 = /^BIO-IX-2026-P[12]$/.test(fallback?.paperCode || '');
+  const classX2026Subject = /^(BIO|CS)-X-2026-P[12]$/.exec(fallback?.paperCode || '')?.[1];
   const biologyIx2021 = fallback?.paperCode === 'BIO-IX-2021-P1';
   const biologyIxArchive = biologyIxAnnualArchives.find(archive => archive.papers.some(entry => entry.paperCode === fallback?.paperCode))?.tabs;
   const chemistryModel = /^CHM-(IX|X)-P[12]$/.test(fallback?.paperCode || '');
@@ -124,7 +125,7 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
     : fallback?.paperCode === 'PHY-IX-2022-P1' ? physicsIx2022Tabs
     : fallback?.paperCode === 'PHY-X-2022-P1' ? physicsX2022Tabs
     : fallback?.paperCode === 'PHY-X-2021-P1' ? physicsX2021Tabs : undefined;
-  if (fallback && (chemistryModel || mathematicsXModel || mathematics2026Tabs || chemistry2026Tabs || earlyChemistryTabs || combinedChemistry || biologyIx2026 || biologyIx2021 || biologyIxArchive || xiBiologyArchive || physics2026Tabs || physicsTabs || combinedPhysicsTabs) && !paper?.sourceDocumentId) {
+  if (fallback && (chemistryModel || mathematicsXModel || mathematics2026Tabs || chemistry2026Tabs || earlyChemistryTabs || combinedChemistry || biologyIx2026 || classX2026Subject || biologyIx2021 || biologyIxArchive || xiBiologyArchive || physics2026Tabs || physicsTabs || combinedPhysicsTabs) && !paper?.sourceDocumentId) {
     paper = fallback;
   } else if (!paper) {
     if (fallback) {
@@ -328,6 +329,12 @@ export default async function PastPaperDetailPage({ params }: PageProps) {
         ...(mathematicsManifest.sources.em ? [{ label: 'E-marking notes', href: `/resources/mathematics-ix-${paper.examYear}-emarking` }] : []),
       ]} />}
       {mathematics2026Tabs && <PaperResourceNav tabs={mathematics2026Tabs} current={'/past-papers/' + paper.paperCode} />}
+      {classX2026Subject && !paper.sourceDocumentId && <>
+        <PaperResourceNav tabs={[1, 2].map(part => ({
+          year: 2026, label: `Paper ${part}`, href: `/past-papers/${classX2026Subject}-X-2026-P${part}`,
+        }))} current={'/past-papers/' + paper.paperCode} />
+        {paper.paperCode.endsWith('-P1') && <p>RiseLearner worked out the MCQ answers. Questions with ambiguous or invalid choices are excluded from scoring.</p>}
+      </>}
       {mathematicsXModel && <PaperResourceNav tabs={mathematicsXModelTabs} current={'/past-papers/' + paper.paperCode} />}
       {mathematicsXModel && paper.paperCode.endsWith('-P1') && <p>RiseLearner worked out the MCQ answers. Question 39 has multiple possible answers and is excluded from scored practice.</p>}
       {mathematics2026Tabs && paper.paperCode.endsWith('-P1') && <p>RiseLearner worked out the MCQ answers. The board’s e-marking notes cover Paper II.</p>}

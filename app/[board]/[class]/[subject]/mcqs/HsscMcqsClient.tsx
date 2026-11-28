@@ -7,6 +7,7 @@ import TakeQuizModal from '@/components/TakeQuizModal';
 import QuestionSource from '@/components/QuestionSource';
 import McqPracticeSheet, { type PracticeFilter, type PracticeItem } from '@/components/McqPracticeSheet';
 import { groupDuplicateQuestions, uniqueQuestions } from '@/lib/uniqueQuestions';
+import { paperMetadata } from '@/lib/paperPresentation';
 import { smartMatch } from '@/lib/smartSearch';
 import type { McqCategory } from '@/lib/mcqCategories';
 import {
@@ -144,8 +145,9 @@ export default function HsscMcqsClient({
   // every chapter question is backed by a reviewed key, so students can sit a quiz.
   const chapterPractice = !readOnly || category === 'chapter_wise';
   const launch = (title: string, code: string, questions: HsscQuizQuestion[]) => {
-    if (!chapterPractice || !questions.length) return;
-    setQuiz({ title, code, questions: uniqueQuestions(questions) });
+    if (!chapterPractice) return;
+    const scored = questions.filter(question => !paperMetadata(question.sourceRegion).single_answer_review_required);
+    if (scored.length) setQuiz({ title, code, questions: uniqueQuestions(scored) });
   };
 
   const launchUnit = (unit: HsscUnitView, group?: QuizGroup) => {
@@ -311,6 +313,7 @@ export default function HsscMcqsClient({
         stem: question.questionText,
         options: (region.choices || {}) as Record<string, string>,
         correct,
+        unscored: region.single_answer_review_required === true,
         correctOptions: region.score_accepted_options ? region.accepted_options : undefined,
         revealInPreview: paper.studyResource,
         solution: region.explanation || (correct ? `Answer key: ${correct}.` : 'A reviewed answer key is not available for this question.'),

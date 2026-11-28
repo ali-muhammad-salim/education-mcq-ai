@@ -24,6 +24,7 @@ import cs1ModelMcqs from '@/data/computer-science/ssc1_model_mcqs.json';
 import { sscComputerScienceChapterDuplicateKey, sscComputerScienceMcqReview } from '@/lib/sscComputerScienceMcqReview';
 import { sscComputerScienceMapping } from '@/lib/sscComputerScienceSyllabus';
 import { computerScienceIx2026PaperI, computerScienceIx2026PaperII } from '@/lib/computerScienceIx2026';
+import { classX2026DuplicateKey, computerScienceX2026Papers } from '@/lib/classX2026Papers';
 import cs1ModelCrqs from '@/data/computer-science/ssc1_model_crqs.json';
 import cs2ModelMcqs from '@/data/computer-science/ssc2_model_mcqs.json';
 import cs2ModelCrqs from '@/data/computer-science/ssc2_model_crqs.json';
@@ -405,7 +406,8 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
     ...raw,
     questions: raw.questions.map(q => {
       const review = sscComputerScienceMcqReview(raw.paperCode, q.questionNumber);
-      const duplicateKey = sscComputerScienceChapterDuplicateKey(raw.paperCode, q.questionNumber);
+      const duplicateKey = sscComputerScienceChapterDuplicateKey(raw.paperCode, q.questionNumber)
+        ?? classX2026DuplicateKey(raw.paperCode, q.questionNumber);
       const meta = q.sourceRegion;
       const mapping = sscComputerScienceMapping(raw.paperCode, q.questionNumber, meta.out_of_syllabus ? null : meta.current_slo, q.questionText);
       if (!mapping) return q;
@@ -842,6 +844,8 @@ function computeSpecPaper(code: string): PaperData | null {
 export const combinedChemistryXArchives = [chemistryX2017, chemistryX2018, chemistryX2019, chemistryX2021, chemistryX2022];
 
 function computeFallbackPaper(code: string): PaperData | null {
+  const computerScienceX2026 = computerScienceX2026Papers.find(paper => paper.paperCode === code);
+  if (computerScienceX2026) return computerScienceX2026;
   if (code === computerScienceIx2026PaperI.paperCode) return computerScienceIx2026PaperI;
   if (code === computerScienceIx2026PaperII.paperCode) return computerScienceIx2026PaperII;
   if (code === chemistryX2019PaperII.paperCode) return chemistryX2019PaperII;
@@ -862,7 +866,10 @@ function computeFallbackPaper(code: string): PaperData | null {
     return key ? { ...question, sourceRegion: { ...question.sourceRegion, reviewed_duplicate_key: key } } : question;
   }) };
   const biology = allBiologyPapers.find(paper => paper.paperCode === code);
-  if (biology) return biology;
+  if (biology) return { ...biology, questions: biology.questions.map(question => {
+    const key = classX2026DuplicateKey(code, question.questionNumber);
+    return key ? { ...question, sourceRegion: { ...question.sourceRegion, reviewed_duplicate_key: key } } : question;
+  }) };
   const annualBiology = biologyXiAnnualPapers.find(paper => paper.paperCode === code);
   if (annualBiology) return annualBiology;
   if (code.startsWith('BIO-')) return null;
@@ -3365,7 +3372,7 @@ export function getAllStandardPapers(): Array<{
   _count: { questions: number };
 }> {
   const basePapers = [
-    ...[computerScienceIx2026PaperI, computerScienceIx2026PaperII].map(paper => ({
+    ...[computerScienceIx2026PaperI, computerScienceIx2026PaperII, ...computerScienceX2026Papers].map(paper => ({
       id: paper.id, paperCode: paper.paperCode, title: paper.title,
       examSession: paper.examSession!, examYear: paper.examYear,
       fileUrl: paper.fileUrl!, academicClass: paper.academicClass,

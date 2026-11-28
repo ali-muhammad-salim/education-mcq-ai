@@ -326,6 +326,32 @@ describe('Automatic reviewed imports in chapter materials', () => {
       .toContain('240 dm³');
   });
 
+  it('includes reviewed 2026 Class X Biology questions in chapter practice', async () => {
+    const topics = Array.from({ length: 10 }, (_, index) => ({
+      ...topic, id: String(index + 10), topicNumber: String(index + 10),
+      syllabusVersion: {
+        ...topic.syllabusVersion,
+        fileUrl: '/materials/ssc/biology/biology-ssc-syllabus-2025.pdf',
+        subject: { name: 'Biology', academicClass: { level: 10 } },
+      },
+    }));
+    mocks.topics.mockResolvedValue(topics);
+    mocks.topic.mockImplementation(async ({ where }) => topics.find(chapter => chapter.id === where.id));
+    const listed = (await mappedChapterGroups('AKU-EB', 10, 'Biology')).flatMap(group => group.questions)
+      .filter(q => q.paperCode === 'BIO-X-2026-P1');
+    expect(listed).toHaveLength(40);
+    expect(listed.find(q => q.rawQuestionNumber === '6')).toMatchObject({ unitNumber: 12, correctOption: 'A' });
+    expect(listed.find(q => q.rawQuestionNumber === '38')?.sourceRegion.single_answer_review_required).toBe(true);
+    const quiz = await mappedChapterQuestions('19');
+    expect(quiz.questions.some(q => q.id === 'bio-x-2026-p1-q38')).toBe(false);
+    const written = await mappedTheoryUnits('AKU-EB', 10, 'Biology');
+    const linked = written.flatMap(unit => [...unit.crqs, ...unit.erqs])
+      .filter(q => q.sourceHref.startsWith('/past-papers/BIO-X-2026-P2#question-'));
+    expect(linked).toHaveLength(8);
+    expect(linked.find(q => q.questionNumber === '5a')?.modelAnswer).toContain('adrenal');
+    expect(linked.find(q => q.questionNumber === '5a')?.choiceInstruction).toContain('5(a)');
+  });
+
   it('includes reviewed Class IX Biology papers in their current syllabus chapters', async () => {
     const topics = Array.from({ length: 9 }, (_, index) => ({
       ...topic, id: String(index + 1), topicNumber: String(index + 1),
@@ -411,13 +437,13 @@ describe('Automatic reviewed imports in chapter materials', () => {
     mocks.topics.mockResolvedValue(gradeTenTopics);
     mocks.topic.mockImplementation(async ({ where }) => gradeTenTopics.find(chapter => chapter.id === where.id));
     const gradeTenTheory = await mappedTheoryUnits('AKU-EB', 10, 'Biology');
-    expect(gradeTenTheory.map(unit => [unit.unitNumber, unit.crqs.filter(q => q.examYear !== 2017).map(q => q.questionNumber)])).toEqual([[11, ['3']], [15, ['2']], [17, ['3']]]);
+    expect(gradeTenTheory.map(unit => [unit.unitNumber, unit.crqs.filter(q => q.examYear !== 2017 && q.sourceHref.startsWith('/past-papers/BIO-IX-')).map(q => q.questionNumber)])).toEqual([[11, ['3']], [15, ['2']], [17, ['3']]]);
     expect(gradeTenTheory.flatMap(unit => unit.crqs).filter(q => q.examYear === 2017).map(q => q.questionNumber)).toEqual(['3']);
     expect(gradeTenTheory.flatMap(unit => unit.erqs).filter(q => q.examYear === 2017).map(q => q.questionNumber)).toEqual(['8a', '9a']);
     const gradeTenMcqs = (await mappedChapterGroups('AKU-EB', 10, 'Biology')).flatMap(group => group.questions);
     for (const paperCode of ['BIO-IX-2017-P1', 'BIO-IX-2018-P1']) {
       expect(gradeTenMcqs.filter(q => q.paperCode === paperCode).map(q => q.rawQuestionNumber)).toEqual(['12', '13', '14', '15']);
     }
-    expect(gradeTenMcqs.every(q => q.sourceGrade === 9)).toBe(true);
+    expect(gradeTenMcqs.filter(q => q.paperCode.startsWith('BIO-IX-')).every(q => q.sourceGrade === 9)).toBe(true);
   });
 });

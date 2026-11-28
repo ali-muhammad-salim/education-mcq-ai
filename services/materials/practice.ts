@@ -13,6 +13,7 @@ import { chemistryX2019PaperII } from '@/lib/chemistryX2019';
 import { chemistryX2018PaperII } from '@/lib/chemistryX2018';
 import { chemistryX2017PaperII } from '@/lib/chemistryX2017';
 import { biologyIxAnnualArchives } from '@/lib/biologyPapers';
+import { classX2026DuplicateKey } from '@/lib/classX2026Papers';
 import { syllabusLevel } from '@/lib/syllabusPresentation';
 import { normalizeQuestion } from '@/services/assessment/scoring';
 import { ApiError } from '@/lib/api';
@@ -56,7 +57,11 @@ async function chapterSourceQuestions(topicId: string, questionTypes: string[], 
   ]
     : !version.sourceDocumentId && (grade === 9 || grade === 10) && version.subject.name === 'Biology'
       && version.fileUrl === '/materials/ssc/biology/biology-ssc-syllabus-2025.pdf'
-      ? [...biologyIxAnnualArchives.flatMap(archive => archive.papers.map(paper => paper.paperCode)), 'BIO-IX-2021-P1', 'BIO-IX-2026-P1', 'BIO-IX-2026-P2']
+      ? [
+        ...biologyIxAnnualArchives.flatMap(archive => archive.papers.map(paper => paper.paperCode)),
+        'BIO-IX-2021-P1', 'BIO-IX-2026-P1', 'BIO-IX-2026-P2',
+        ...(grade === 10 ? ['BIO-X-2026-P1', 'BIO-X-2026-P2'] : []),
+      ]
       : [];
   if (version.sourceDocumentId && !await prisma.knowledgeDocument.findFirst({ where: { ...publicMaterialWhere, id: version.sourceDocumentId }, select: { id: true } })) throw new ApiError(404, 'CURRICULUM_WITHDRAWN', 'This curriculum source is awaiting review.');
   const paperWhere = supplementalMathematics ? {
@@ -75,7 +80,8 @@ async function chapterSourceQuestions(topicId: string, questionTypes: string[], 
     return q.pastPaper.sourceDocumentId || (meta.current_syllabus_reviewed === true && meta.current_slo && meta.mapping_scope?.grade === version.subject.academicClass.level && String(meta.mapping_scope?.subject).toLowerCase() === version.subject.name.toLowerCase());
   }).map(q => {
     const duplicateKey = chemistryIx2026DuplicateKey(q.pastPaper.paperCode, q.questionNumber)
-      ?? mathematicsIx2026DuplicateKey(q.pastPaper.paperCode, q.questionNumber);
+      ?? mathematicsIx2026DuplicateKey(q.pastPaper.paperCode, q.questionNumber)
+      ?? classX2026DuplicateKey(q.pastPaper.paperCode, q.questionNumber);
     return {
       id: q.id, questionNumber: q.questionNumber, questionText: q.questionText, questionType: q.questionType,
       marks: q.marks, syllabusVersionId: q.syllabusVersionId, numericalOrConceptual: q.numericalOrConceptual,
@@ -152,7 +158,8 @@ async function databaseChapterGroups(board: string, grade: number, subject: stri
     const questions = result?.questions.filter(q => {
       const meta = paperMetadata(q.sourceRegion);
       return paperAnswer(meta, paperChoices(meta.choices))
-        || (q.pastPaper.paperCode === 'CHM-IX-P1' && meta.single_answer_review_required === true && meta.answer_review_note);
+        || (q.pastPaper.paperCode === 'CHM-IX-P1' && meta.single_answer_review_required === true && meta.answer_review_note)
+        || (q.pastPaper.paperCode === 'BIO-X-2026-P1' && meta.single_answer_review_required === true);
     });
     if (!questions?.length) continue;
     groups.push({ id: topic.id, name: topic.name, questions: questions.map((q, i) => {

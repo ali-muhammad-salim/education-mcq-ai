@@ -23,9 +23,9 @@ function reviewedItems<T extends { sourceHref: string; id: string; currentSlo?: 
   });
 }
 
-function gradeNineWrittenItems() {
+function reviewedWrittenItems(grade: 9 | 10) {
   return getAllStandardPapers()
-    .filter(paper => /^CS-IX-(?:\d{4}-)?P2$/.test(paper.paperCode))
+    .filter(paper => paper.paperCode === 'CS-X-2026-P2' || (grade === 9 && /^CS-IX-(?:\d{4}-)?P2$/.test(paper.paperCode)))
     .flatMap(reference => {
       const paper = getFallbackPaper(reference.paperCode);
       if (!paper) return [];
@@ -38,7 +38,7 @@ function gradeNineWrittenItems() {
         const outcomesByUnit = new Map<number, NonNullable<ReturnType<typeof sscComputerScienceOutcomes.get>>>();
         for (const entry of meta.current_mapping ?? []) {
           const outcome = sscComputerScienceOutcomes.get(entry.code);
-          if (outcome?.grade === 9 && !outcomesByUnit.has(outcome.unitNumber)) {
+          if (outcome?.grade === grade && !outcomesByUnit.has(outcome.unitNumber)) {
             outcomesByUnit.set(outcome.unitNumber, outcome);
           }
         }
@@ -49,7 +49,7 @@ function gradeNineWrittenItems() {
           item: {
             id: question.id,
             questionNumber: question.questionNumber,
-            sourceTitle: paper.examType === 'MODEL_EXAM' ? 'Class IX Model Paper II' : `Class IX ${paper.examYear} Paper II`,
+            sourceTitle: paper.examType === 'MODEL_EXAM' ? 'Class IX Model Paper II' : `${paper.academicClass.name} ${paper.examYear} Paper II`,
             sourceHref: `/past-papers/${paper.paperCode}#question-${paperQuestionNumber(question.questionNumber)}`,
             examYear: paper.examYear,
             questionText: question.questionText,
@@ -74,22 +74,13 @@ function gradeNineWrittenItems() {
 
 export function sscComputerScienceTheory(grade: 9 | 10): ChapterUnitData[] {
   const numericals = units.flatMap(unit => unit.numericals);
-  if (grade === 9) {
-    const writtenItems = gradeNineWrittenItems();
-    return bank[9].map(unit => ({
-      ...unit,
-      crqs: writtenItems.filter(row => row.unitNumber === unit.unitNumber && !row.extended).map(row => row.item),
-      erqs: writtenItems.filter(row => row.unitNumber === unit.unitNumber && row.extended).map(row => row.item),
-      numericals: reviewedItems(numericals, unit.unitNumber),
-    }));
-  }
-
-  const crqs = units.flatMap(unit => unit.crqs);
-  const erqs = units.flatMap(unit => unit.erqs);
+  const writtenItems = reviewedWrittenItems(grade);
+  const crqs = grade === 10 ? units.flatMap(unit => unit.crqs) : [];
+  const erqs = grade === 10 ? units.flatMap(unit => unit.erqs) : [];
   return bank[grade].map(unit => ({
     ...unit,
-    crqs: reviewedItems(crqs, unit.unitNumber),
-    erqs: reviewedItems(erqs, unit.unitNumber),
+    crqs: [...reviewedItems(crqs, unit.unitNumber), ...writtenItems.filter(row => row.unitNumber === unit.unitNumber && !row.extended).map(row => row.item)],
+    erqs: [...reviewedItems(erqs, unit.unitNumber), ...writtenItems.filter(row => row.unitNumber === unit.unitNumber && row.extended).map(row => row.item)],
     numericals: reviewedItems(numericals, unit.unitNumber),
   }));
 }

@@ -26,6 +26,7 @@ import { publishedAnswerDecisions } from '@/services/materials/legacy-answer-rev
 import { applyAnswerDecision } from '@/lib/legacyAnswerReview';
 import { reviewedMathematicsPapers } from '@/lib/mathematicsPapers';
 import { computerScienceIx2026PaperI } from '@/lib/computerScienceIx2026';
+import { computerScienceX2026Papers } from '@/lib/classX2026Papers';
 import { hsscComputerScienceResources } from '@/lib/hsscComputerScienceResources';
 import { hsscPhysicsResources } from '@/lib/hsscPhysicsResources';
 import { hsscMcqsData } from '@/lib/hsscMcqsData';
@@ -191,7 +192,7 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
         const region = q.sourceRegion;
         const options = paperChoices(region.choices);
         const correctOption = paperAnswer(region, options);
-        const ungraded = region.single_answer_review_required && (paperCode === computerScienceIx2026PaperI.paperCode || region.reviewed_duplicate_key);
+        const ungraded = region.single_answer_review_required && (/^CS-(IX|X)-2026-P1$/.test(paperCode) || region.reviewed_duplicate_key);
         if ((!correctOption && !ungraded) || !region.current_mapping?.some(outcome => outcome.grade === classDef.level)) return [];
         return [{
           id: q.id,
@@ -278,7 +279,7 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
           mappedChapters={mappedChapters}
           computerChapterQuestions={computerChapterQuestions}
           availableTheorySections={availableTheorySections}
-          reviewedPapers={(isCs ? [computerScienceIx2026PaperI] : isMath ? reviewedMathematicsPapers : isChem ? [...chemistryX2026Papers, ...combinedChemistryXArchives.map(archive => archive.paper)] : isPhysics ? [...physicsX2026Papers, ...physicsX2024Papers, ...physicsX2023Papers, physicsX2022Paper, physicsX2021Paper, ...physicsX2019Papers, ...physicsX2018Papers, ...physicsX2017Papers, ...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers] : [])
+          reviewedPapers={(isCs ? [computerScienceIx2026PaperI, ...computerScienceX2026Papers] : isMath ? reviewedMathematicsPapers : isChem ? [...chemistryX2026Papers, ...combinedChemistryXArchives.map(archive => archive.paper)] : isPhysics ? [...physicsX2026Papers, ...physicsX2024Papers, ...physicsX2023Papers, physicsX2022Paper, physicsX2021Paper, ...physicsX2019Papers, ...physicsX2018Papers, ...physicsX2017Papers, ...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers] : [])
             .filter(p => p.academicClass.level === classDef.level && p.paperCode.endsWith('-P1'))
             .sort((a,b) => b.examYear-a.examYear)
             .map(p => ({ paperCode: p.paperCode, title: p.title, examYear: p.examYear, count: p.questions.length, model: p.examType === 'MODEL_EXAM' }))}
