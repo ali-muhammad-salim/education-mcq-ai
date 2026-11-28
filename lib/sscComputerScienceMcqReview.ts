@@ -4,6 +4,8 @@ type AnswerReview = {
   answer_review_note: string;
 };
 
+const problemAnalysisReview = 'Class X 2022 Paper I credits A, defining the problem. The Class IX model paper solution credits B, analysing the problem. The prompt combines identifying what the problem asks with examining its information and requirements, so it does not have a clear single answer.';
+
 const reviews: Record<string, Record<number, AnswerReview>> = {
   'CS-IX-2026-P1': {
     17: { answer_review_note: 'The wording about software and the editor does not identify a unique false statement.' },
@@ -23,11 +25,15 @@ const reviews: Record<string, Record<number, AnswerReview>> = {
     39: { official_answer: '•', answer_review_note: 'The printed key shows a bullet. The educator solution is A, which correctly uses an HTML anchor with an href attribute.' },
   },
   'CS-IX-P1': {
+    8: { answer_review_note: problemAnalysisReview },
     14: { answer_review_note: 'B is the intended choice for an explicitly tagged HTML document. As written, statement IV is also false. An HTML fragment does not need an html closing tag, and a complete HTML document can omit it under the HTML syntax rules.' },
     20: { accepted_options: ['A', 'C'], answer_review_note: 'A declares a variable and stores the result of prompt. C also stores the result if name is already available in the scope. The question does not require a declaration.' },
   },
   'CS-X-2019-P1': {
     21: { official_answer: 'A,C', accepted_options: ['A', 'C'], answer_review_note: 'The printed key credits both A and C.' },
+  },
+  'CS-X-2022-P1': {
+    5: { official_answer: 'A', answer_review_note: problemAnalysisReview },
   },
   'CS-X-2023-P1': {
     37: { official_answer: 'D,B', accepted_options: ['D', 'B'], answer_review_note: 'The printed key credits both D and B.' },
@@ -48,4 +54,20 @@ const reviews: Record<string, Record<number, AnswerReview>> = {
 
 export function sscComputerScienceMcqReview(paperCode: string, questionNumber: number | string) {
   return reviews[paperCode]?.[Number(questionNumber)];
+}
+
+// Current Class IX Chapter 2 contains these questions from multiple paper editions.
+const chapterRepeats: Record<string, Record<number, string>> = {
+  'CS-IX-P1': {
+    8: 'cs-problem-analysis-actions',
+    9: 'cs-salar-candidate-solutions',
+    10: 'cs-flowchart-average-of-five-integers',
+  },
+  'CS-X-2022-P1': { 5: 'cs-problem-analysis-actions' },
+  'CS-X-2023-P1': { 1: 'cs-salar-candidate-solutions' },
+  'CS-X-2025-P1': { 2: 'cs-flowchart-average-of-five-integers' },
+};
+
+export function sscComputerScienceChapterDuplicateKey(paperCode: string, questionNumber: number | string) {
+  return chapterRepeats[paperCode]?.[Number(questionNumber)];
 }

@@ -21,7 +21,7 @@ import ssc1Past2024Crqs from '@/data/physics/ssc1_2024_past_crqs.json';
 import ssc2Past2025Mcqs from '@/data/physics/ssc2_2025_past_mcqs.json';
 import ssc2Past2025Crqs from '@/data/physics/ssc2_2025_past_crqs.json';
 import cs1ModelMcqs from '@/data/computer-science/ssc1_model_mcqs.json';
-import { sscComputerScienceMcqReview } from '@/lib/sscComputerScienceMcqReview';
+import { sscComputerScienceChapterDuplicateKey, sscComputerScienceMcqReview } from '@/lib/sscComputerScienceMcqReview';
 import { sscComputerScienceMapping } from '@/lib/sscComputerScienceSyllabus';
 import { computerScienceIx2026PaperI, computerScienceIx2026PaperII } from '@/lib/computerScienceIx2026';
 import cs1ModelCrqs from '@/data/computer-science/ssc1_model_crqs.json';
@@ -405,6 +405,7 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
     ...raw,
     questions: raw.questions.map(q => {
       const review = sscComputerScienceMcqReview(raw.paperCode, q.questionNumber);
+      const duplicateKey = sscComputerScienceChapterDuplicateKey(raw.paperCode, q.questionNumber);
       const meta = q.sourceRegion;
       const mapping = sscComputerScienceMapping(raw.paperCode, q.questionNumber, meta.out_of_syllabus ? null : meta.current_slo, q.questionText);
       if (!mapping) return q;
@@ -423,6 +424,7 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
           ...meta,
           ...mapping,
           slo_text: outcomes[0]?.description,
+          ...(duplicateKey ? { reviewed_duplicate_key: duplicateKey } : {}),
           ...(gradeNineWritten && meta.model_answer ? {
             model_answer_origin: 'RiseLearner worked solution',
             original_reference_source: markingNotes,

@@ -191,7 +191,7 @@ export default async function SubjectMcqsPage({ params, category, chapter }: Pag
         const region = q.sourceRegion;
         const options = paperChoices(region.choices);
         const correctOption = paperAnswer(region, options);
-        const ungraded = paperCode === computerScienceIx2026PaperI.paperCode && region.single_answer_review_required;
+        const ungraded = region.single_answer_review_required && (paperCode === computerScienceIx2026PaperI.paperCode || region.reviewed_duplicate_key);
         if ((!correctOption && !ungraded) || !region.current_mapping?.some(outcome => outcome.grade === classDef.level)) return [];
         return [{
           id: q.id,
