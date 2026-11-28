@@ -5,13 +5,13 @@ import { getAllStandardPapers, getFallbackPaper } from '@/lib/paperDataService';
 import { sscComputerScienceMapping, sscComputerScienceOutcomes } from '@/lib/sscComputerScienceSyllabus';
 import { sscComputerScienceTheory } from '@/lib/sscComputerScienceTheory';
 import { questionSyllabus } from '@/lib/questionSyllabus';
-import { paperAnswer } from '@/lib/paperPresentation';
+import { paperAnswer, paperQuestionNumber } from '@/lib/paperPresentation';
 import { gradablePracticeQuestions, sourcePracticeQuestion } from '@/services/assessment/service';
 
 describe('Computer Science IX source materials', () => {
   it('lists papers that have digital questions and original documents', () => {
     const papers = getAllStandardPapers().filter(p => p.paperCode.startsWith('CS-IX-'));
-    expect(papers.length).toBe(14);
+    expect(papers.length).toBe(15);
     for (const item of papers) {
       expect(item.fileUrl).toMatch(/^\/materials\/ssc\/computer-science\//);
       expect(getFallbackPaper(item.paperCode)?.questions.length).toBeGreaterThan(0);
@@ -21,17 +21,19 @@ describe('Computer Science IX source materials', () => {
   it('publishes reviewed Class IX Paper II items in their current chapters and printed sections', () => {
     const units = sscComputerScienceTheory(9);
     const references = getAllStandardPapers().filter(p => /^CS-IX-(?:\d{4}-)?P2$/.test(p.paperCode));
-    expect(references).toHaveLength(7);
+    expect(references).toHaveLength(8);
     let audited = 0;
     for (const reference of references) {
       const paper = getFallbackPaper(reference.paperCode)!;
-      expect(paper.questions.reduce((sum, q) => sum + q.marks, 0)).toBe(paper.examYear <= 2019 ? 40 : 25);
-      for (const [index, question] of paper.questions.entries()) {
+      const marks = new Map(paper.questions.map(q => [paperQuestionNumber(q.questionNumber).replace(/[ab]$/, ''), q.marks]));
+      expect([...marks.values()].reduce((sum, mark) => sum + mark, 0)).toBe(paper.examYear <= 2019 ? 40 : 25);
+      for (const question of paper.questions) {
         audited++;
-        const extended = index >= paper.questions.length - 2;
+        const number = paperQuestionNumber(question.questionNumber);
+        const extended = Number.parseInt(number, 10) > marks.size - 2;
         expect(question.questionType).toBe(extended ? 'EXTENDED_RESPONSE' : 'CONSTRUCTED_RESPONSE');
         expect(question.sourceRegion.model_answer_origin).toBe('RiseLearner worked solution');
-        const source = '/past-papers/' + paper.paperCode + '#question-' + (index + 1);
+        const source = '/past-papers/' + paper.paperCode + '#question-' + number;
         for (const unit of units) {
           const matches = question.sourceRegion.current_mapping?.some(entry => sscComputerScienceOutcomes.get(entry.code)?.unitNumber === unit.unitNumber);
           const selected = unit[extended ? 'erqs' : 'crqs'].filter(item => item.sourceHref === source);
@@ -44,7 +46,13 @@ describe('Computer Science IX source materials', () => {
         }
       }
     }
-    expect(audited).toBe(46);
+    expect(audited).toBe(55);
+    const chapterTwo = units.find(unit => unit.unitNumber === 2)!;
+    expect(chapterTwo.crqs).toEqual(expect.arrayContaining([
+      expect.objectContaining({ sourceHref: '/past-papers/CS-IX-P2#question-1', currentSlo: '2.3.3' }),
+      expect.objectContaining({ sourceHref: '/past-papers/CS-IX-2026-P2#question-1', currentSlo: '2.2.2' }),
+    ]));
+    expect(existsSync(resolve('public', 'paper-crops/CS-IX-2026-P2/q4.png'))).toBe(true);
   });
 
   it('preserves all referenced Class IX Paper II figures and both images of 2019 question 4', () => {
@@ -67,11 +75,11 @@ describe('Computer Science IX source materials', () => {
     expect(q2024.sourceRegion.official_answer).toBe('D,A');
   });
 
-  it('validates current mappings for all 28 Grade IX and X model and past theory papers', () => {
+  it('validates current mappings for all Grade IX and X model and past theory papers', () => {
     const papers = getAllStandardPapers().filter(p => /^CS-(IX|X)-/.test(p.paperCode));
-    expect(papers).toHaveLength(28);
+    expect(papers).toHaveLength(29);
     const questions = papers.flatMap(p => getFallbackPaper(p.paperCode)!.questions);
-    expect(questions).toHaveLength(615);
+    expect(questions).toHaveLength(624);
     for (const question of questions) {
       const meta = question.sourceRegion;
       const outcomes = meta.current_mapping!;

@@ -23,6 +23,7 @@ import ssc2Past2025Crqs from '@/data/physics/ssc2_2025_past_crqs.json';
 import cs1ModelMcqs from '@/data/computer-science/ssc1_model_mcqs.json';
 import { sscComputerScienceMcqReview } from '@/lib/sscComputerScienceMcqReview';
 import { sscComputerScienceMapping } from '@/lib/sscComputerScienceSyllabus';
+import { computerScienceIx2026PaperII } from '@/lib/computerScienceIx2026';
 import cs1ModelCrqs from '@/data/computer-science/ssc1_model_crqs.json';
 import cs2ModelMcqs from '@/data/computer-science/ssc2_model_mcqs.json';
 import cs2ModelCrqs from '@/data/computer-science/ssc2_model_crqs.json';
@@ -409,7 +410,7 @@ export function getFallbackPaper(paperCodeOrId: string): PaperData | null {
       if (!mapping) return q;
       const outcomes = mapping.current_mapping;
       const gradeNineWritten = /^CS-IX-(?:\d{4}-)?P2$/.test(raw.paperCode);
-      const markingNotes = gradeNineWritten && raw.examType === 'ANNUAL'
+      const markingNotes = gradeNineWritten && raw.examType === 'ANNUAL' && raw.paperCode !== computerScienceIx2026PaperII.paperCode
         ? `/materials/ssc/computer-science/ssc-1/computer-science-ix-${raw.examYear}-emarking.pdf`
         : undefined;
       return {
@@ -839,6 +840,7 @@ function computeSpecPaper(code: string): PaperData | null {
 export const combinedChemistryXArchives = [chemistryX2017, chemistryX2018, chemistryX2019, chemistryX2021, chemistryX2022];
 
 function computeFallbackPaper(code: string): PaperData | null {
+  if (code === computerScienceIx2026PaperII.paperCode) return computerScienceIx2026PaperII;
   if (code === chemistryX2019PaperII.paperCode) return chemistryX2019PaperII;
   if (code === chemistryX2018PaperII.paperCode) return chemistryX2018PaperII;
   if (code === chemistryX2017PaperII.paperCode) return chemistryX2017PaperII;
@@ -3360,6 +3362,17 @@ export function getAllStandardPapers(): Array<{
   _count: { questions: number };
 }> {
   const basePapers = [
+    {
+      id: computerScienceIx2026PaperII.id,
+      paperCode: computerScienceIx2026PaperII.paperCode,
+      title: computerScienceIx2026PaperII.title,
+      examYear: computerScienceIx2026PaperII.examYear,
+      examSession: computerScienceIx2026PaperII.examSession!,
+      fileUrl: computerScienceIx2026PaperII.fileUrl!,
+      academicClass: computerScienceIx2026PaperII.academicClass,
+      subject: computerScienceIx2026PaperII.subject,
+      _count: { questions: computerScienceIx2026PaperII.questionCount! },
+    },
     ...[...chemistryIx2026Papers, ...chemistryX2026Papers, chemistryX2019PaperII, chemistryX2018PaperII, chemistryX2017PaperII, ...combinedChemistryXArchives.map(archive => archive.paper), ...physicsX2026Papers, ...physicsX2024Papers, ...physicsX2023Papers, physicsX2022Paper, physicsX2021Paper, ...physicsX2019Papers, ...physicsX2018Papers, ...physicsX2017Papers, ...physicsIx2026Papers, ...physicsIx2023Papers, physicsIx2022Paper, physicsIx2021Paper, ...physicsIx2019Papers, ...physicsIx2018Papers, ...physicsIx2017Papers, ...allBiologyPapers, ...biologyXiAnnualPapers, ...reviewedMathematicsPapers, ...hsscPhysicsPapers, ...hsscComputerSciencePapers, ...hsscComputerScience2024Papers, ...hsscComputerScience2023Papers, ...hsscComputerScience2022Papers, ...hsscComputerScience2021Papers, ...hsscComputerScience2019Papers, ...hsscXiAnnualPapers].map(paper => ({
       id: paper.id, paperCode: paper.paperCode, title: paper.title,
       examSession: paper.examSession!, examYear: paper.examYear,

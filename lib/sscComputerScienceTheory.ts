@@ -60,6 +60,7 @@ function gradeNineWrittenItems() {
             currentSloDescription: outcome.description,
             currentTopic: outcome.topic,
             diagramUrl: meta.diagramUrl,
+            choiceInstruction: meta.choice_instruction,
             rubric: meta.rubric,
             modelAnswer,
             betterResponse: meta.better_response,
