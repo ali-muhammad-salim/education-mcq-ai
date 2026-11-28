@@ -1,5 +1,6 @@
 import { biology2025Papers } from './biology2025';
 import { biologyIx2026Papers } from './biologyIx2026';
+import { biologyX2026Papers } from './classX2026Papers';
 import { biologyIx2021Paper } from './biologyIx2021';
 import { biologyIx2019 } from './biologyIx2019';
 import { biologyIx2018 } from './biologyIx2018';
@@ -39,6 +40,7 @@ export const biologyIxAnnualArchives = [biologyIx2017, biologyIx2018, biologyIx2
 
 export const reviewedBiologyPapers = [
   ...biologyIx2026Papers,
+  ...biologyX2026Papers,
   biologyIx2021Paper,
   ...biologyIxAnnualArchives.flatMap(archive => archive.papers),
   ...biology2025Papers,

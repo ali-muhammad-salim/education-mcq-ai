@@ -1,0 +1,607 @@
+[
+  {
+    "number": 1,
+    "page": 2,
+    "outcome": "2.3.2",
+    "stem": "Which task is represented by this flowchart symbol?",
+    "choices": {
+      "A": "input the age of two students.",
+      "B": "output the age of two students.",
+      "C": "compare the age of two students.",
+      "D": "calculate the average age of two students."
+    },
+    "answer": "C",
+    "explanation": "A diamond is a decision symbol. Comparing two ages produces a condition with two possible outcomes.",
+    "figure": "q1",
+    "level": "U"
+  },
+  {
+    "number": 2,
+    "page": 2,
+    "outcome": "2.3.2",
+    "stem": "Sajid plans to represent these steps in a flowchart.\n\nI. Input product prices.\nII. Compare the prices.\nIII. Calculate the average price.\nIV. Output the largest price and the average.\n\nWhich step uses a process symbol?",
+    "choices": {
+      "A": "I.",
+      "B": "II.",
+      "C": "III.",
+      "D": "IV."
+    },
+    "answer": "C",
+    "explanation": "Calculating an average is a processing operation, represented by a rectangle.",
+    "level": "U"
+  },
+  {
+    "number": 3,
+    "page": 2,
+    "outcome": "9.1.1",
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: X = 8, Y = 5\nStep 3: If X + Y < 20 Then X = X * 2 Else Y = Y + 3\nStep 4: Z = X - Y\nStep 5: Output Z\nStep 6: End\n```\n\nThe output of this algorithm is",
+    "choices": {
+      "A": "0",
+      "B": "8",
+      "C": "11",
+      "D": "16"
+    },
+    "answer": "C",
+    "explanation": "The condition is true since 8 + 5 is 13. X doubles to 16 and Z is 16 − 5 = 11.",
+    "level": "A"
+  },
+  {
+    "number": 4,
+    "page": 3,
+    "outcome": "9.1.1",
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: A = 12, B = 4\nStep 3: If (A / B > 2) AND (A - B > 5)\nThen\nC = A + B\nElse\nC = A * B\nStep 4: Output C\nStep 5: End\n```\n\nThe output of this algorithm is",
+    "choices": {
+      "A": "3",
+      "B": "8",
+      "C": "16",
+      "D": "48"
+    },
+    "answer": "C",
+    "explanation": "Both comparisons are true. A / B is 3 and A − B is 8, so C becomes 12 + 4 = 16.",
+    "level": "A"
+  },
+  {
+    "number": 5,
+    "page": 3,
+    "outcome": "9.1.1",
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: Set N = 2\nStep 3: While N <10\nOutput N\nStep 5: N = N + 2\nStep 6: End While\nStep 7: Stop\n```\n\nThe output of this algorithm is",
+    "choices": {
+      "A": "2 4 6 8",
+      "B": "0 2 4 6 8",
+      "C": "4 6 8 10",
+      "D": "2 4 6 8 10"
+    },
+    "answer": "A",
+    "explanation": "The loop prints 2, 4, 6 and 8. At 10 the strict condition is false.",
+    "level": "A"
+  },
+  {
+    "number": 6,
+    "page": 4,
+    "outcome": "9.1.1",
+    "stem": "Consider the given algorithm.\n\n```text\nStep 1: Start\nStep 2: Set S = 0, N = 1\nStep 3: While N < 5\nStep 4: S = S + N\nStep 5: N = N + 1\nStep 6: Output S\nStep 7: End\n```\n\nThe algorithm is used to find the sum of numbers from 1 to 5. During execution, it produces an incorrect result of 10 instead of 15. The step that needs correction to produce the CORRECT output is the",
+    "choices": {
+      "A": "condition in Step 3 should be N ≤ 5.",
+      "B": "variable S in Step 2 should be initialised to 1.",
+      "C": "loop in Step 3 should decrease N instead of increase.",
+      "D": "output statement in Step 6 should be placed before the loop."
+    },
+    "answer": "A",
+    "explanation": "Using N ≤ 5 includes the missing final addend 5 and gives a sum of 15.",
+    "level": "A"
+  },
+  {
+    "number": 7,
+    "page": 4,
+    "outcome": "3.10.2",
+    "stem": "The objective of writing comments in a C program is to",
+    "choices": {
+      "A": "help the compiler in generating faster machine code.",
+      "B": "support programmers in understanding the logic.",
+      "C": "remove unused variables from the source code.",
+      "D": "reduce memory consumption during runtime."
+    },
+    "answer": "B",
+    "explanation": "Comments document intent and help people understand the code. They do not change the running program.",
+    "level": "U"
+  },
+  {
+    "number": 8,
+    "page": 4,
+    "outcome": null,
+    "stem": "The INVALID declaration of a character variable in the C language is",
+    "choices": {
+      "A": "`char letter = X;`",
+      "B": "`char code = '9';`",
+      "C": "`char grade = 'y';`",
+      "D": "`char symbol = '#';`"
+    },
+    "answer": "A",
+    "explanation": "The character literal X would need single quotes. Without a declared identifier named X, the printed declaration cannot compile.",
+    "level": "A"
+  },
+  {
+    "number": 9,
+    "page": 4,
+    "outcome": null,
+    "stem": "The statement that CORRECTLY exemplifies explicit typecasting in C language is",
+    "choices": {
+      "A": "`char c = 'B'; int val = c;`",
+      "B": "`int x = 20; double y = x;`",
+      "C": "`float f = 3.0; double d = f;`",
+      "D": "`double x = 5.7; int y = (int)x;`"
+    },
+    "answer": "D",
+    "explanation": "The cast (int)x explicitly converts the floating-point value to an integer. The other conversions happen implicitly.",
+    "level": "A"
+  },
+  {
+    "number": 10,
+    "page": 5,
+    "outcome": "10.1.2",
+    "stem": "Consider the following properties of a type of language. • Directly understood by computers • Highly efficient in terms of execution speed • Typically generated by compilers or assemblers The type of language described in the given information is",
+    "choices": {
+      "A": "machine language.",
+      "B": "structured language.",
+      "C": "procedural language.",
+      "D": "object oriented programming language."
+    },
+    "answer": "A",
+    "explanation": "The processor directly executes machine-code instructions. Compilers and assemblers can produce them.",
+    "level": "U"
+  },
+  {
+    "number": 11,
+    "page": 5,
+    "outcome": null,
+    "stem": "The CORRECT categorisation of built-in functions on the basis of pre-processor directives is",
+    "choices": {
+      "A": "`<stdio.h>`: `printf()`. `<conio.h>`: `scanf()`.",
+      "B": "`<stdio.h>`: `clrscr()`. `<conio.h>`: `getch()`.",
+      "C": "`<stdio.h>`: `printf()`. `<conio.h>`: `clrscr()`.",
+      "D": "`<stdio.h>`: `getch()`. `<conio.h>`: `scanf()`."
+    },
+    "answer": "C",
+    "explanation": "printf belongs to the standard I/O header stdio.h. clrscr is provided by conio.h in some older C environments.",
+    "level": "U"
+  },
+  {
+    "number": 12,
+    "page": 5,
+    "outcome": "10.1.1",
+    "stem": "The rules of a programming language to write a program are referred as",
+    "choices": {
+      "A": "syntax.",
+      "B": "semantic.",
+      "C": "debugging.",
+      "D": "compilation."
+    },
+    "answer": "A",
+    "explanation": "Syntax is the set of rules governing how legal source code is written.",
+    "level": "K"
+  },
+  {
+    "number": 13,
+    "page": 5,
+    "outcome": "10.4.1",
+    "stem": "In structured languages, the fundamental elements are\nI.           selection\nII.          sequence\nIII.         functions\nIV.         repetition",
+    "choices": {
+      "A": "II and III.",
+      "B": "I, II and III.",
+      "C": "I, II and IV.",
+      "D": "II, III and IV."
+    },
+    "answer": "C",
+    "explanation": "The basic control structures are sequence, selection and repetition.",
+    "level": "K"
+  },
+  {
+    "number": 14,
+    "page": 5,
+    "outcome": "10.3.5",
+    "stem": "An example of logic operator in C programming language is",
+    "choices": {
+      "A": "`&`",
+      "B": "`&&`",
+      "C": "`!=`",
+      "D": "`==`"
+    },
+    "answer": "B",
+    "explanation": "The double ampersand is logical AND. A single ampersand between integers is bitwise AND.",
+    "level": "K"
+  },
+  {
+    "number": 15,
+    "page": 6,
+    "outcome": "10.3.8",
+    "stem": "Consider the given expression.\n\n```c\nX = 5 + 6 / 2 * 3;\n```\n\nThe value that will be stored in variable X upon evaluation is",
+    "choices": {
+      "A": "1.83",
+      "B": "6",
+      "C": "14",
+      "D": "24"
+    },
+    "answer": "C",
+    "explanation": "Division and multiplication come first from left to right. The result is 5 + (6 / 2) × 3 = 14.",
+    "level": "A"
+  },
+  {
+    "number": 16,
+    "page": 6,
+    "outcome": null,
+    "stem": "In C programming, the escape sequence used to give a space of tab on text is",
+    "choices": {
+      "A": "`\\t`",
+      "B": "`/t`",
+      "C": "`\\r`",
+      "D": "`/r`"
+    },
+    "answer": "A",
+    "explanation": "The backslash-t escape inserts a horizontal tab.",
+    "level": "K"
+  },
+  {
+    "number": 17,
+    "page": 6,
+    "outcome": "10.3.4",
+    "stem": "Which C expression represents $x^4y^4\\leq (10-6\\times 8)$?",
+    "choices": {
+      "A": "`X4*Y4 <= (10–6×8)`",
+      "B": "`X*X*X*X*Y*Y*Y*Y <= (10-6*8)`",
+      "C": "`(X*X*X*X) * (Y*Y*Y*Y) => (10-6×8);`",
+      "D": "`(X*X*X*X) * (Y*Y*Y*Y) <= (10-6*8);`"
+    },
+    "answer": null,
+    "explanation": "B and D both multiply four copies of each variable and use the same comparison. The parentheses in D do not make its expression different.",
+    "level": "A"
+  },
+  {
+    "number": 18,
+    "page": 6,
+    "outcome": "10.3.4",
+    "stem": "Consider the given C code.\n\n```c\nint W, X;\nW=15-7%3;\n```\n\nThe condition W >= X will be FALSE only when the value of X will be",
+    "choices": {
+      "A": "12",
+      "B": "13",
+      "C": "14",
+      "D": "16"
+    },
+    "answer": "D",
+    "explanation": "The remainder 7 % 3 is 1, so W is 14. Of the choices, only 16 makes W ≥ X false.",
+    "level": "A"
+  },
+  {
+    "number": 19,
+    "page": 7,
+    "outcome": null,
+    "stem": "Consider the given program.\n\n```c\n#include <stdio.h>\nint main( )\n{\nint a = 9.3;\nfloat b = 10.5;\nfloat c = a + b;\nprintf(\"c = %.2f\", c);\nreturn 0;\n}\n```\n\nIf the data type of variable c is changed to integer, then the output of the program will be",
+    "choices": {
+      "A": "20",
+      "B": "19.8",
+      "C": "19.3",
+      "D": "19"
+    },
+    "answer": null,
+    "explanation": "Changing c to int without changing the %.2f specifier gives undefined behaviour in C. If the format is also changed to %d, the converted integer is 19.",
+    "level": "A"
+  },
+  {
+    "number": 20,
+    "page": 7,
+    "outcome": null,
+    "stem": "An example of unary operator is",
+    "choices": {
+      "A": "`+`",
+      "B": "`/`",
+      "C": "`!`",
+      "D": "`&&`"
+    },
+    "answer": null,
+    "explanation": "Both unary plus and logical NOT are unary operators in C. A and C are both valid.",
+    "level": "U"
+  },
+  {
+    "number": 21,
+    "page": 7,
+    "outcome": "10.3.4",
+    "stem": "Consider the given statement.\n\n```c\nQ = 3 + 4 / 2;\n```\n\nThe condition Q < P will be TRUE only when the value of P is",
+    "choices": {
+      "A": "6",
+      "B": "5",
+      "C": "3",
+      "D": "2"
+    },
+    "answer": "A",
+    "explanation": "Integer division gives 4 / 2 = 2, so Q is 5. Only P = 6 satisfies Q < P.",
+    "level": "A"
+  },
+  {
+    "number": 22,
+    "page": 7,
+    "outcome": "10.4.3",
+    "stem": "When a number is divisible by 2, the if statement that print \"Even\" will be",
+    "choices": {
+      "A": "`if (num % 2 == 0) printf(\"Even\");`",
+      "B": "`if (num / 2 == 0) printf(\"Even\");`",
+      "C": "`if (num / 2 = 0) printf(\"Even\");`",
+      "D": "`if (num % 2) printf(\"Even\");`"
+    },
+    "answer": "A",
+    "explanation": "An integer is even when the remainder on division by 2 is zero.",
+    "level": "A"
+  },
+  {
+    "number": 23,
+    "page": 8,
+    "outcome": "10.4.2",
+    "stem": "Consider the given C program.\n\n```c\n#include <stdio.h>\nint main( )\n{\nint n = -12;\nif (n > 0 && n % 2 == 0)\nprintf(\"Positive Even\");\nelse if (n > 0 && n % 2 != 0)\nprintf(\"Positive Odd!!\");\nelse if (n < 0 && n % 2 == 0)\nprintf(\"Negative Even\");\nelse\nprintf(\"Negative Odd!\");\nreturn 0;\n}\n```\n\nThe output of this program is",
+    "choices": {
+      "A": "Positive Even",
+      "B": "Positive Odd!!",
+      "C": "Negative Even",
+      "D": "Negative Odd!"
+    },
+    "answer": "C",
+    "explanation": "The first two tests fail because n is negative. The third succeeds because −12 is negative and even.",
+    "level": "A"
+  },
+  {
+    "number": 24,
+    "page": 8,
+    "outcome": "10.4.4",
+    "stem": "If more than two conditions need to be tested, then the conditional statement(s) that should be\nused is/ are\nI.          IF statement\nII.        IF-ELSE statement\nIII.       IF-ELSE-IF statement",
+    "choices": {
+      "A": "I only.",
+      "B": "III only.",
+      "C": "I and II.",
+      "D": "II and III."
+    },
+    "answer": null,
+    "explanation": "An if–else-if chain is appropriate for several mutually exclusive cases. Separate if statements or nested if–else statements can also test multiple conditions, so the printed question does not establish a unique choice.",
+    "level": "U"
+  },
+  {
+    "number": 25,
+    "page": 9,
+    "outcome": "10.5.4",
+    "stem": "Consider the given C program.\n\n```c\n#include <stdio.h>\nint main( )\n{\nint i = 1, sum = 0;\nwhile (i <= 5)\n{\nsum += i;\ni++;\n}\nprintf(\"%d\", sum);\nreturn 0;\n}\n```\n\nThe output of this program is",
+    "choices": {
+      "A": "10",
+      "B": "15",
+      "C": "20",
+      "D": "25"
+    },
+    "answer": "B",
+    "explanation": "The loop adds the integers 1 through 5. Their sum is 15.",
+    "level": "A"
+  },
+  {
+    "number": 26,
+    "page": 9,
+    "outcome": "10.5.4",
+    "stem": "Consider the given C program.\n\n```c\n#include <stdio.h>\nint main( )\n{\nint n, i, result = 1;\nprintf(\"Enter a number: \");\nscanf(\"%d\", &n);\nfor (i = 1; i <= n; i++) {\nresult *= i;\n}\nprintf(\"%d\", result);\nreturn 0;\n}\n```\n\nIf n = 5, then the output of this program is",
+    "choices": {
+      "A": "15",
+      "B": "24",
+      "C": "120",
+      "D": "720"
+    },
+    "answer": "C",
+    "explanation": "The loop multiplies 1 × 2 × 3 × 4 × 5 to obtain 120.",
+    "level": "A"
+  },
+  {
+    "number": 27,
+    "page": 10,
+    "outcome": "10.5.4",
+    "stem": "Consider the given C program.\n\n```c\n#include<stdio.h>\nint main( )\n{\nint g = 28, h = 45;\nwhile(g <= h)\n{\ng = g + 7;\nh = h - 5;\n}\nprintf(\"%d, %d \", g, h);\nreturn 0;\n}\n```\n\nThe output of this program is",
+    "choices": {
+      "A": "28, 45",
+      "B": "35, 42",
+      "C": "42, 35",
+      "D": "42, 45"
+    },
+    "answer": "C",
+    "explanation": "After the first pass the pair is 35, 40. After the second it is 42, 35, which fails the loop condition.",
+    "level": "A"
+  },
+  {
+    "number": 28,
+    "page": 10,
+    "outcome": "10.5.4",
+    "stem": "Consider the given C program.\n\n```c\n#include<stdio.h>\nint main( )\n{\nint i = 15, j = 8;\ndo\n{\nprintf(\"Data Science \\n\");\n}\nwhile (i-- > j++);\nreturn 0;\n}\n```\n\nHow many times the output Data Science will be shown?",
+    "choices": {
+      "A": "1",
+      "B": "3",
+      "C": "5",
+      "D": "7"
+    },
+    "answer": "C",
+    "explanation": "The do–while prints before each test. Comparisons 15 > 8, 14 > 9, 13 > 10 and 12 > 11 succeed, then 11 > 12 fails after the fifth print.",
+    "level": "A"
+  },
+  {
+    "number": 29,
+    "page": 11,
+    "outcome": "10.5.4",
+    "stem": "Consider the given C program.\n\n```c\n#include <stdio.h>\nint main( )\n{\nint n;\nfor (n = 10; n > 1 ; n--)\n{\nprintf(\"%d \", n);\n}\nreturn 0;\n}\n```\n\nThe output of this program is",
+    "choices": {
+      "A": "1 2 3 4 5 6 7 8 9 10",
+      "B": "10 9 8 7 6 5 4 3 2 1",
+      "C": "2 3 4 5 6 7 8 9 10",
+      "D": "10 9 8 7 6 5 4 3 2"
+    },
+    "answer": "D",
+    "explanation": "The loop starts at 10, decrements after printing, and stops before printing 1.",
+    "level": "A"
+  },
+  {
+    "number": 30,
+    "page": 11,
+    "outcome": "10.5.1",
+    "stem": "The loop that is also known as counter loop is",
+    "choices": {
+      "A": "for loop.",
+      "B": "while loop.",
+      "C": "do-while loop.",
+      "D": "repeat-until loop."
+    },
+    "answer": "A",
+    "explanation": "A for loop is commonly used when a counter controls the number of repetitions.",
+    "level": "K"
+  },
+  {
+    "number": 31,
+    "page": 11,
+    "outcome": "10.5.5",
+    "stem": "A statement, when encountered in a loop, takes the control of the program to the beginning of the loop for next iteration. This is known as",
+    "choices": {
+      "A": "switch statement.",
+      "B": "continue statement.",
+      "C": "input function statement.",
+      "D": "output function statement."
+    },
+    "answer": "B",
+    "explanation": "Continue skips the remaining statements of the current iteration and moves to the next iteration.",
+    "level": "U"
+  },
+  {
+    "number": 32,
+    "page": 11,
+    "outcome": "8.1.1",
+    "stem": "Which binary sequence matches the bit stream shown?",
+    "choices": {
+      "A": "101100",
+      "B": "011010",
+      "C": "100101",
+      "D": "010011"
+    },
+    "answer": "A",
+    "explanation": "A high level represents 1 and a low level represents 0. The sequence is 101100.",
+    "figure": "q32",
+    "level": "A"
+  },
+  {
+    "number": 33,
+    "page": 12,
+    "outcome": null,
+    "stem": "Simplify the expression represented by this two-variable Karnaugh map. The blank cell represents 0.\n\n| | NOT Y | Y |\n| --- | --- | --- |\n| NOT X | 1 | 1 |\n| X | 1 | 0 |",
+    "choices": {
+      "A": "NOT X OR NOT Y",
+      "B": "X OR Y",
+      "C": "NOT X OR Y",
+      "D": "X OR NOT Y"
+    },
+    "answer": "A",
+    "explanation": "Grouping the two 1s in the top row gives NOT X. Grouping the two 1s in the left column gives NOT Y. The result is NOT X OR NOT Y.",
+    "level": "A"
+  },
+  {
+    "number": 34,
+    "page": 12,
+    "outcome": null,
+    "stem": "Consider the given image of a logic circuit. The number of NOR gate(s) in the given logic circuit is/ are",
+    "choices": {
+      "A": "one.",
+      "B": "two.",
+      "C": "three.",
+      "D": "four."
+    },
+    "answer": "A",
+    "explanation": "Only the lower OR-shaped gate has an inversion bubble at its output. The separate NOT gate is an inverter.",
+    "figure": "q34",
+    "level": "U"
+  },
+  {
+    "number": 35,
+    "page": 12,
+    "outcome": "13.2.2",
+    "stem": "The feature in spreadsheet applications that allows users to copy and paste cell content while retaining specific attributes such as values, formats or formulas is",
+    "choices": {
+      "A": "paste values.",
+      "B": "paste special.",
+      "C": "paste formats.",
+      "D": "paste formulas."
+    },
+    "answer": "B",
+    "explanation": "Paste Special lets you select which attributes to paste.",
+    "level": "U"
+  },
+  {
+    "number": 36,
+    "page": 13,
+    "outcome": "13.2.2",
+    "stem": "Which Microsoft Excel function returns 45 for the data shown?",
+    "choices": {
+      "A": "Min",
+      "B": "Max",
+      "C": "Sum",
+      "D": "Average"
+    },
+    "answer": "B",
+    "explanation": "MAX returns the largest value in the range, which is 45.",
+    "figure": "q36",
+    "level": "A"
+  },
+  {
+    "number": 37,
+    "page": 13,
+    "outcome": "13.2.2",
+    "stem": "Which Microsoft Excel formula counts the values greater than 23 in the data shown?",
+    "choices": {
+      "A": "`=COUNTIF(B1:B9,\">=23\")`",
+      "B": "`=COUNTIF(\">=23\", B1:B9)`",
+      "C": "`=COUNTIF(B1:B10,\">=24\")`",
+      "D": "`=COUNTIF(\">=24\", B1:B10)`"
+    },
+    "answer": "C",
+    "explanation": "COUNTIF takes the range first and the condition second. For these integer entries, at least 24 is equivalent to greater than 23.",
+    "figure": "q36",
+    "level": "A"
+  },
+  {
+    "number": 38,
+    "page": 13,
+    "outcome": "13.2.2",
+    "stem": "An absolute cell address begins with",
+    "choices": {
+      "A": "`$`",
+      "B": "`!`",
+      "C": "`%`",
+      "D": "`&`"
+    },
+    "answer": "A",
+    "explanation": "Dollar signs fix the column and row in an absolute reference, as in $B$5.",
+    "level": "K"
+  },
+  {
+    "number": 39,
+    "page": 13,
+    "outcome": "6.3.1",
+    "stem": "Trojan horse is often used for unauthorised access to data by a/ an",
+    "choices": {
+      "A": "hacker.",
+      "B": "programmer.",
+      "C": "administrator.",
+      "D": "computer operator."
+    },
+    "answer": "A",
+    "explanation": "A malicious actor can use a Trojan disguised as legitimate software to gain unauthorised access.",
+    "level": "U"
+  },
+  {
+    "number": 40,
+    "page": 14,
+    "outcome": "6.3.2",
+    "stem": "Abdullah has marked his attendance using retina scanning in his workplace. The authentication methodology used in the given scenario is",
+    "choices": {
+      "A": "biometrics.",
+      "B": "national identity card.",
+      "C": "username and password.",
+      "D": "personal identification number."
+    },
+    "answer": "A",
+    "explanation": "A retina scan checks a physical trait and is therefore biometric authentication.",
+    "level": "U"
+  }
+]

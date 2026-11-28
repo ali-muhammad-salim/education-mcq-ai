@@ -189,7 +189,7 @@ export default function PaperViewerClient({ paper, questions: sourceQuestions, b
     };
   }).filter(item => item.correctKeys.length);
   const practiceTotal = practiceItems.length;
-  const useScorableQuizItems = isHssc || (!isPaper2 && /^(?:MTH-|CS-(?:IX|X)-)/.test(paper.paperCode || ''));
+  const useScorableQuizItems = isHssc || (!isPaper2 && /^(?:MTH-|CS-(?:IX|X)-|BIO-X-2026-)/.test(paper.paperCode || ''));
   const practiceAnswered = practiceItems.filter(item => userAnswers[item.qNum]).length;
   const practiceCorrect = practiceItems.filter(item => item.correctKeys.includes(userAnswers[item.qNum])).length;
 

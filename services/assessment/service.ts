@@ -243,7 +243,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   }
 
   const subset = /^((?:PHY|CS|CHM|MTH)-(?:IX|X|XI|XII)(?:-20\d{2})?-P1)-SET-([0-9-]+)$/.exec(key);
-  const paperCode = subset?.[1] || practiceCodes[key] || key.replace(/^((?:PHY-X-(?:201[7-9]|202[1-46])|CS-XII?(?:-20\d{2})?|CHM-X-(?:201[7-9]|202[126])|BIO-XI-(?:201[7-9]|202[1-5])|BIO-IX-(?:201[7-9]|2021|2026))-P1)-MCQS-\d+$/, '$1');
+  const paperCode = subset?.[1] || practiceCodes[key] || key.replace(/^((?:PHY-X-(?:201[7-9]|202[1-46])|CS-XII?(?:-20\d{2})?|CHM-X-(?:201[7-9]|202[126])|BIO-XI-(?:201[7-9]|202[1-5])|BIO-IX-(?:201[7-9]|2021|2026)|BIO-X-2026)-P1)-MCQS-\d+$/, '$1');
   const biologyModel = hsscBiologyModelQuizPaper(paperCode);
   const workshop = paperCode === physicsIxWorkshop.quizCode
     ? { title: 'Class IX Physics · ' + physicsIxWorkshop.title, questions: physicsIxWorkshopQuestions, durationMinutes: 55 }
@@ -267,7 +267,7 @@ export async function resolveQuiz(identifier: string): Promise<LoadedQuiz> {
   });
   // A suspended, passwordless content owner can never authenticate.
   const owner = await prisma.user.upsert({ where: { email: 'practice-content@system.invalid' }, update: {}, create: { email: 'practice-content@system.invalid', name: 'Practice Library', role: 'TEACHER', status: 'SUSPENDED' } });
-  const hasPaperTiming = /^(?:PHY-X-(?:201[7-9]|202[1-46])|(?:PHY|BIO|CS)-IX-2026|MTH-(?:(?:IX|X)-2026|X)|BIO-IX-(?:201[7-9]|2021))-P1$/.test(paperCode) || /^CHM-(?:IX(?:-2026)?|X(?:-(?:201[7-9]|202[126]))?)-P1$/.test(paperCode) || /^(?:(?:PHY|CS)-XII?(?:-(?:201[7-9]|202[1-5]))?|BIO-XI-(?:201[7-9]|202[1-5]))-P1$/.test(paperCode);
+  const hasPaperTiming = /^(?:PHY-X-(?:201[7-9]|202[1-46])|(?:PHY|BIO|CS)-IX-2026|(?:BIO|CS)-X-2026|MTH-(?:(?:IX|X)-2026|X)|BIO-IX-(?:201[7-9]|2021))-P1$/.test(paperCode) || /^CHM-(?:IX(?:-2026)?|X(?:-(?:201[7-9]|202[126]))?)-P1$/.test(paperCode) || /^(?:(?:PHY|CS)-XII?(?:-(?:201[7-9]|202[1-5]))?|BIO-XI-(?:201[7-9]|202[1-5]))-P1$/.test(paperCode);
   const academic = paperCode.startsWith('MTH-') || hasPaperTiming ? await prisma.pastPaper.findFirst({ where: { paperCode }, select: { classId: true, subjectId: true } }) : null;
   // Revised content starts a fresh quiz so existing attempts keep their frozen questions.
   const revision = workshop || biologyModel || questions.length !== source.length || paperCode.startsWith('MTH-') || hasPaperTiming || /^CS-(IX|X)(-\d{4})?-P1$/.test(paperCode)

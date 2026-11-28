@@ -80,9 +80,9 @@ describe('Computer Science IX source materials', () => {
 
   it('validates current mappings for all Grade IX and X model and past theory papers', () => {
     const papers = getAllStandardPapers().filter(p => /^CS-(IX|X)-/.test(p.paperCode));
-    expect(papers).toHaveLength(30);
+    expect(papers).toHaveLength(32);
     const questions = papers.flatMap(p => getFallbackPaper(p.paperCode)!.questions);
-    expect(questions).toHaveLength(664);
+    expect(questions).toHaveLength(712);
     for (const question of questions) {
       const meta = question.sourceRegion;
       const outcomes = meta.current_mapping!;
@@ -134,8 +134,8 @@ describe('Computer Science IX source materials', () => {
   it('validates every scorable Computer Science IX and X MCQ against the quiz format', () => {
     const papers = getAllStandardPapers().filter(paper => /^CS-(IX|X)(-\d{4})?-P1$/.test(paper.paperCode));
     const sources = papers.map(paper => getFallbackPaper(paper.paperCode)!);
-    expect(sources).toHaveLength(15);
-    expect(sources.flatMap(paper => paper.questions)).toHaveLength(560);
+    expect(sources).toHaveLength(16);
+    expect(sources.flatMap(paper => paper.questions)).toHaveLength(600);
     for (const paper of sources) {
       for (const question of gradablePracticeQuestions(paper.paperCode, paper.questions)) {
         const content = sourcePracticeQuestion(question);
@@ -192,11 +192,33 @@ describe('Computer Science IX source materials', () => {
       ['CS-X-2024-P1/2', 'CS-X-2022-P1/6'],
     ]);
     const scored = sources.filter(({ paperCode, question }) => gradablePracticeQuestions(paperCode, [question]).length);
-    expect(study).toHaveLength(26);
-    expect(groupDuplicateQuestions(scored, row => row.question)).toHaveLength(25);
+    expect(study).toHaveLength(28);
+    expect(groupDuplicateQuestions(scored, row => row.question)).toHaveLength(27);
     expect(study.find(group => reference(group[0]) === 'CS-IX-P1/8')?.every(
       ({ question }) => question.sourceRegion.single_answer_review_required && question.sourceRegion.answer_review_note?.includes('credits A'),
     )).toBe(true);
+  });
+
+  it('publishes 2026 Class X papers and places written questions with transferable current outcomes', () => {
+    const mcqs = getFallbackPaper('CS-X-2026-P1')!;
+    const theory = getFallbackPaper('CS-X-2026-P2')!;
+    expect(mcqs.questions).toHaveLength(40);
+    expect(gradablePracticeQuestions(mcqs.paperCode, mcqs.questions)).toHaveLength(36);
+    expect(mcqs.questions.filter(q => !q.sourceRegion.current_slo).map(q => q.questionNumber))
+      .toEqual(['8', '9', '11', '16', '19', '20', '33', '34']);
+    expect(theory.questions.map(q => q.questionNumber)).toEqual(['1', '2', '3', '4', '5a', '5b', '6a', '6b']);
+    for (const [grade, expected] of [[9, ['1', '6a', '6b']], [10, ['2', '3', '5b']]] as const) {
+      const items = sscComputerScienceTheory(grade).flatMap(unit => [...unit.crqs, ...unit.erqs])
+        .filter(q => q.sourceHref.startsWith('/past-papers/CS-X-2026-P2#question-'));
+      expect(items.map(q => q.questionNumber)).toEqual(expected);
+      expect(items.every(q => q.modelAnswer)).toBe(true);
+    }
+    for (const paper of [mcqs, theory]) {
+      expect(existsSync(resolve('public', paper.fileUrl!.slice(1)))).toBe(true);
+      for (const q of paper.questions.filter(q => q.diagramBased)) {
+        expect(existsSync(resolve('public', q.sourceRegion.diagramUrl!.slice(1)))).toBe(true);
+      }
+    }
   });
 
 });
